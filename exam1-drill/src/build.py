@@ -53,4 +53,7 @@ out = os.path.join(HERE, '..', out_name)
 with open(out + '.tmp', 'w', encoding='utf-8') as fh:
     fh.write(html)
 os.replace(out + '.tmp', out)
+# GitHub Pages serves the repo root: keep index.html in step with the build
+import shutil
+shutil.copyfile(out, os.path.join(HERE, '..', '..', 'index.html'))
 print(f'wrote {os.path.normpath(out)}  ({len(html)/1024:.0f} KB)')
