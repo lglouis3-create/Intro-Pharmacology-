@@ -10,7 +10,7 @@ for (const q of QUESTIONS) {
   ALL_BANNED.forEach(r => { if (r.test(all)) bad(q.id, 'forbidden text ' + r); });
   (q.options || []).forEach(o => {
     if (/\b(because|since)\b/i.test(o.t)) bad(q.id, 'reasoning inside option text: ' + o.t);
-    if (/^(all|none) of the above$/i.test(o.t.trim())) bad(q.id, 'all/none of the above');
+    if (/^(all|none) of the above$/i.test(o.t.trim()) && !/poll/i.test(q.cite + (q.tags || []).join(' '))) bad(q.id, 'all/none of the above outside a professor poll');
   });
   if (/\?\s*\S/.test(q.stem.replace(/\?\s*Select all that apply\.$/, '?'))) {/* multi-sentence stems allowed */}
 }

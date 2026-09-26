@@ -446,7 +446,7 @@ function vData() {
   <label class="btn ghost">Import progress<input type="file" id="imp" accept=".json" style="display:none"></label>
   <button class="btn ghost" id="expmiss">Export missed questions (CSV)</button>
   <button class="btn ghost" id="reset">Reset this profile</button></div></div>
-  <p class="sub">${QUESTIONS.length} questions in the bank. Built from the course decks, lecture transcripts and the Exam 1 drug list; each question cites its deck and slide.</p>`;
+  <p class="sub">${QUESTIONS.length} questions in the bank. Built from the course decks, lecture transcripts and the Exam 1 drug list; each question cites its deck and slide. Slide numbers marked ~ were counted from the deck text and may be off by one or two.</p>`;
   $('#view').innerHTML = h;
   $('#setprof').onclick = () => { const v = $('#prof').value.trim(); if (!v) return; PROFILE = v; store.set(COURSE.ns + ':profile', v); S = loadState(); Q = null; EX = null; vData(); };
   $('#pace').onchange = e => { S.pace = e.target.value; save(); };

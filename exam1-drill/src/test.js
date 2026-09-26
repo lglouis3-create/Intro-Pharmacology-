@@ -13,7 +13,7 @@ for (const q of QUESTIONS) {
   if (!topics[q.topic]) bad(q.id, 'unknown topic ' + q.topic);
   else if (!topics[q.topic].has(q.sub)) bad(q.id, 'unknown sub ' + q.sub);
   const L = COURSE.lectures.find(l => l.id === q.lecture);
-  if (L && !q.cite.includes(L.deck)) bad(q.id, 'cite does not name the deck ' + L.deck);
+  if (L && !q.cite.includes(L.deck) && !(q.source === 'transcript' && /transcript/i.test(q.cite))) bad(q.id, 'cite names neither the deck ' + L.deck + ' nor, for a transcript item, the transcript');
   if (q.source && !['slide', 'transcript', 'both'].includes(q.source)) bad(q.id, 'bad source');
   if ((q.source === 'transcript' || q.source === 'both') && !/transcript/i.test(q.cite)) w(q.id, 'transcript-sourced but cite does not name the transcript');
   if (q.type === 'match') { if (!q.pairs || !q.left || !q.right) bad(q.id, 'match fields'); continue; }
