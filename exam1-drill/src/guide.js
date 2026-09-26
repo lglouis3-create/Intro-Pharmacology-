@@ -1,0 +1,1 @@
+const GUIDE_HTML = ``;
