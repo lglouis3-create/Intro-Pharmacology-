@@ -235,7 +235,7 @@ QUESTIONS.push(
 
 {id:'L01-009', lecture:'L01', prof:'Gottlieb', tier:'new', topic:'L01', sub:'nds', skill:'recall',
  concept:'fish-oil-evidence', tags:['nds','fish-oil'], source:'both',
- stem:'Which statement about omega-3 fish oil is supported by the NIH data presented?',
+ stem:'Which statement about omega-3 fish oil is correct?',
  options:[
   {t:'Lowers triglycerides; reduces cardiac death', correct:true, why:'Omega-3s lower triglycerides and reduce the risk of cardiac death, though not the risk of a cardiovascular event.'},
   {t:'Reduces the risk of having a cardiovascular event', correct:false, why:'The slide states omega-3s do not reduce the risk of a cardiovascular event.'},
@@ -277,7 +277,7 @@ QUESTIONS.push(
   {t:'Efficacy', correct:true, why:'Efficacy is the other factor intrinsic to the drug.'},
   {t:'The individual or tissue', correct:true, why:'Tissues differ in receptor expression, which changes potency.'},
   {t:'The brand name', correct:false, why:'Brand names have no role in potency and are not tested on Exam 1.'},
-  {t:'The drug’s chemical class name', correct:false, why:'Classification by structure does not set potency.'}],
+  {t:'The drug’s chemical class name', correct:false, why:'A class name is a label; potency depends on the individual or tissue, affinity and efficacy.'}],
  teach:'Potency depends on three things: the individual (tissue, organ or cell line, which differ in receptor expression), and two properties intrinsic to the drug, affinity and efficacy.',
  quote:'the potency of a drug is going to be dependent on three major things. One is... the individual, the tissue... But the two things that are intrinsic to the drug is going to be the affinity and the efficacy of that drug.',
  cite:'Pharmacodynamics-Day-1-2026s.pdf slide ~21; transcript 9/22'},
@@ -316,7 +316,8 @@ QUESTIONS.push(
   {t:'Efficacy', correct:false, why:'Efficacy is the drug’s effect on receptor state, not how much reaches it.'}],
  teach:'Pharmacological potency comes from the drug–receptor side: tissue sensitivity, receptor number and activity, affinity and efficacy. Apparent potency adds pharmacokinetics: age, absorption, distribution, elimination and DDIs, which set how much drug reaches the site of action. IV has 100% bioavailability and bypasses first-pass metabolism.',
  quote:'pharmokinetics is going to be affecting how much of the drug gets to the site of action. Because that’s how it’s going to produce its effects.',
- cite:'Pharmacodynamics-Day-1-2026s.pdf slides ~23, ~27; transcript 9/22'},
+ cite:'Pharmacodynamics-Day-1-2026s.pdf slides ~23, ~27; transcript 9/22',
+ note:'Slide ~27 lists absorption, distribution, elimination, age and DDIs under apparent potency. In the transcript he answers yes to whether ADME affects pharmacological potency and says pharmacological potency depends on absorption and metabolism. The slide grouping (apparent potency) is keyed.'},
 
 {id:'L01-016', lecture:'L01', prof:'Gottlieb', tier:'new', topic:'L01', sub:'potency', skill:'recall',
  concept:'potency-correct-poll', tags:['potency','poll'], source:'both',
@@ -355,7 +356,8 @@ QUESTIONS.push(
   {t:'Elimination by the kidney or liver', correct:false, why:'Elimination is a pharmacokinetic factor under apparent potency.'}],
  teach:'Pharmacological potency (pharmacodynamics): tissue sensitivity, receptor number, receptor activity, affinity, efficacy. Apparent potency (pharmacokinetics): age, absorption, distribution, elimination, DDIs.',
  quote:'Apparent Potency - Age - Absorption - Distribution - Elimination - DDI; Pharmacological Potency - Tissue sensitivity - Receptor # - Receptor Activity - Affinity - Efficacy',
- cite:'Pharmacodynamics-Day-1-2026s.pdf slide ~27'},
+ cite:'Pharmacodynamics-Day-1-2026s.pdf slide ~27',
+ note:'In the transcript he says pharmacological potency depends on absorption, metabolism and age; the slide places these under apparent potency. The slide grouping is keyed.'},
 
 {id:'L01-019', lecture:'L01', prof:'Gottlieb', tier:'new', topic:'L01', sub:'theory', skill:'recall',
  concept:'clark-occupancy', tags:['theory','affinity'], source:'both',
@@ -386,7 +388,7 @@ QUESTIONS.push(
  stem:'In the two-state model (D + R ⇄ DR resting; D + R* ⇄ DR* active), what does the constant L determine?',
  options:[
   {t:'How likely a receptor is active vs inactive', correct:true, why:'L sets how likely a receptor is found in the inactive versus the active state without drug.'},
-  {t:'How tightly the drug binds', correct:false, why:'Binding strength is affinity (Kd), not L.'},
+  {t:'How tightly the drug binds', correct:false, why:'Binding strength is affinity, not L.'},
   {t:'How many receptors the drug is able to occupy', correct:false, why:'Occupancy is Clark’s idea.'},
   {t:'How much drug reaches the site', correct:false, why:'That is pharmacokinetics.'}],
  teach:'In the two-state model receptors exist as active or inactive. L determines how likely a receptor is in the inactive versus the active state, and cells can move receptors back and forth and change receptor number. Drugs bound to the receptor shift this balance.',
@@ -667,7 +669,7 @@ QUESTIONS.push(
  cite:"Pharmacodynamics-Day_2_2026s copy.pdf slides ~10–~11, ~41; transcript 9/23"},
 
 {id:"L02-008", lecture:"L02", prof:"Gottlieb", tier:"new", topic:"L02", sub:"nuc", skill:"recall", multi:true,
- concept:"nuclear-receptor-ligands", tags:[], source:"slide",
+ concept:"nuclear-receptor-ligands", tags:[], source:"both",
  stem:"Which ligands act through nuclear hormone receptors? Select all that apply.",
  options:[
   {t:"Androgens", correct:true, why:"Androgens are listed among the steroid hormones acting on nuclear hormone receptors."},
@@ -679,7 +681,7 @@ QUESTIONS.push(
   {t:"Norepinephrine", correct:false, why:"Norepinephrine acts on G protein–coupled adrenergic receptors."}],
  teach:"Nuclear hormone receptors are a superfamily of 48 receptors whose proteins are transcription factor regulators. Ligands include androgens, estrogens, glucocorticoids, thyroid hormone and vitamin D; they regulate gene expression (protein synthesis or mRNA turnover) in reproduction, inflammation, development and metabolism. Co-repressor binding keeps the receptor inactive; co-activator binding makes it active.",
  quote:"Steroid hormones ... Androgens, estrogens, glucocorticoids, thyroid hormone, and Vit D ... Regulates gene expression",
- cite:"Pharmacodynamics-Day_2_2026s copy.pdf slide ~12"},
+ cite:"Pharmacodynamics-Day_2_2026s copy.pdf slides ~5, ~12; transcript 9/23"},
 
 {id:"L02-009", lecture:"L02", prof:"Gottlieb", tier:"new", topic:"L02", sub:"nuc", skill:"apply",
  concept:"aldosterone-mr-mechanism", tags:[], source:"both",
@@ -789,7 +791,7 @@ QUESTIONS.push(
   {t:"Decrease its efficacy", correct:true, why:"An allosteric antagonist can decrease the affinity and/or efficacy of another drug."},
   {t:"Have no effect on it", correct:true, why:"Depending on how the pocket changes, some allosteric drugs affect neither affinity nor efficacy."},
   {t:"Displace it by competing for its pocket", correct:false, why:"Competing for the pocket is orthosteric behavior; allosteric drugs bind elsewhere."},
-  {t:"Covalently lock the receptor inactive", correct:false, why:"As far as the lecture states, all allosteric agonists and antagonists are reversible."}],
+  {t:"Covalently lock the receptor inactive", correct:false, why:"All allosteric agonists and antagonists are described as reversible; they bind and come off."}],
  teach:"An allosteric (allotopic) drug binds at a different site and changes the orthosteric pocket. It can increase or decrease the affinity and/or efficacy of another drug, or have no effect, depending on what it does to the pocket. Allosteric agonists increase and allosteric antagonists decrease; both are reversible.",
  quote:"So some drugs may affect affinity, another drug may affect only the efficacy, another may affect the affinity in the efficacy, and others, they don't even know that it's there.",
  cite:"Pharmacodynamics-Day_2_2026s copy.pdf slides ~20, ~39, ~42–~44; transcript 9/23"},
@@ -817,7 +819,7 @@ QUESTIONS.push(
   {t:"AC", correct:false, why:"Adenylate cyclase is the effector (signal amplifier) that makes cAMP."},
   {t:"β1 receptor", correct:false, why:"The β1 receptor is the receptor, not a second messenger."},
   {t:"PLC", correct:false, why:"Phospholipase C is the effector that makes IP3."}],
- teach:"Second messengers are small molecules created, degraded or moved by an enzyme, ion channel or transport protein (the effector). They diffuse near their site of synthesis and convey information to many targets. Examples on the slide: cAMP, PKA, PKC, IP3 and Ca++; the receptor, adenylate cyclase and a calcium channel are not second messengers.",
+ teach:"Second messengers are small molecules created, degraded or moved by an enzyme, ion channel or transport protein (the effector). They diffuse near their site of synthesis and convey information to many targets. Examples: cAMP, PKA, protein kinase C (PKC), IP3 and Ca++; the receptor, adenylate cyclase and a calcium channel are not second messengers.",
  quote:"So on your exam, if I ask which of these is an example of a second messenger camp. If there is camp at PKA, then select all, right? But you shouldn't be picking the receptor or the AC or the calcium channel.",
  cite:"Pharmacodynamics-Day_2_2026s copy.pdf slide ~29; transcript 9/23"},
 
@@ -1041,7 +1043,7 @@ TOPICS.push({id:'L03', name:'Dose–response curves, potency and agonist interac
 QUESTIONS.push(
 {id:'L03-001', lecture:'L03', prof:'Gottlieb', tier:'new', topic:'L03', sub:'kd', skill:'recall',
  concept:'transporter-blocker-indirect-antagonist', tags:['poll'], source:'transcript',
- stem:'A drug inhibits a major transporter involved in removing norepinephrine from the neuronal synapse. The drug does not act at the receptor that norepinephrine binds. How is this drug classified?',
+ stem:'A drug inhibits a major transporter involved in removing norepinephrine from the neuronal synapse. How is this drug classified?',
  options:[
   {t:'Indirect antagonist', correct:true, why:'It acts upstream of the receptor (on the transporter), not at the norepinephrine binding site, so it is classified as indirect.'},
   {t:'Competitive antagonist', correct:false, why:'A competitive antagonist acts at the receptor binding pocket; this drug acts on the transporter.'},
@@ -1169,7 +1171,7 @@ QUESTIONS.push(
   {t:'Affinity is unchanged', correct:true, why:'The drug did not change, so affinity did not change.'},
   {t:'The tissue changed', correct:true, why:'Only the receptor population, a tissue factor, changed.'},
   {t:'The drug’s Kd became smaller', correct:false, why:'Kd is a property of the drug–receptor pair; the drug did not change.'},
-  {t:'The drug’s efficacy has increased', correct:false, why:'The professor stated affinity and efficacy have not changed; the tissue changed.'}],
+  {t:'The curve shifts to the right', correct:false, why:'More receptors make the drug appear more potent, which shifts the curve to the left.'}],
  teach:'Adding receptors does not change the drug: its Kd, affinity and efficacy stay the same. What changes is the tissue it acts on, which alters potency. The body can up-regulate or down-regulate receptors, for example building tolerance to nicotine.',
  quote:'We didn’t change the drug. It’s the same drug, same KD. Now it just have more receptors available, so the affinity and efficacy has not changed. What changes the tissue that is working on it.',
  cite:'transcript 9/24'},
@@ -1204,8 +1206,8 @@ QUESTIONS.push(
  options:[
   {t:'All receptors are occupied', correct:true, why:'Once every receptor is occupied, more drug cannot increase the response.'},
   {t:'The organ is at its physiological maximum', correct:true, why:'If a heart can only beat at 150 beats per minute, more norepinephrine cannot exceed that.'},
-  {t:'The drug has become irreversible', correct:false, why:'Reaching a ceiling does not change reversibility.'},
-  {t:'The dissociation constant (Kd) of the drug has increased', correct:false, why:'Kd is a property of the drug–receptor pair and does not change with dose.'}],
+  {t:'The drug has become irreversible', correct:false, why:'Irreversibility is not one of the two reasons for the plateau; agonists are reversible.'},
+  {t:'The dissociation constant (Kd) of the drug has increased', correct:false, why:'Kd is a binding measure and is not one of the two reasons for the plateau.'}],
  teach:'The ceiling (Emax) is reached either because all receptors are occupied or because the physiological system has reached its maximum capacity. Giving more drug beyond the ceiling produces no further benefit.',
  quote:'What are the two reasons why we have reached the Emacs and we can’t keep going up? All the receptors are occupied or I max out the physiological system, right?',
  cite:'transcript 9/24 (slide ~14 "Ceiling of effect")'},
@@ -1220,7 +1222,8 @@ QUESTIONS.push(
   {t:'The agonist becomes an antagonist', correct:false, why:'Reversibility refers to the effect ending, not a change in drug class.'}],
  teach:'In most drugs the effect is reversible: once the drug is stopped, it is excreted or metabolized and the effect goes back to zero. The professor stated he does not know of any agonist that is irreversible.',
  quote:'What it means once I stop giving the drug. The effect goes back to zero',
- cite:'Pharmacodynamics-Day_3_2026s.pdf slide ~15; transcript 9/24'},
+ cite:'Pharmacodynamics-Day_3_2026s.pdf slide ~15; transcript 9/24',
+ note:'The handwritten annotation on slide ~15 extracts as "all agonist are irreversible", while the transcript says "I do not know of any agonist that is irreversible. They’re all reversible." Keyed to the transcript.'},
 
 {id:'L03-016', lecture:'L03', prof:'Gottlieb', tier:'new', topic:'L03', sub:'drc', skill:'recall',
  concept:'threshold-definition', tags:[], source:'both',
@@ -1252,7 +1255,7 @@ QUESTIONS.push(
  options:[
   {t:'To eliminate biological variability', correct:true, why:'People start from different baselines (resting heart rates of 60, 70 or 40), so percent change allows comparison.'},
   {t:'To convert dose into log units', correct:false, why:'Log units apply to the x-axis (dose), not the y-axis.'},
-  {t:'To make the curve reach 100% for all drugs', correct:false, why:'Normalizing does not make partial agonists reach 100%.'},
+  {t:'To make the curve reach 100% for all drugs', correct:false, why:'Partial agonists never get to 100%; normalizing addresses different starting points between individuals.'},
   {t:'To measure the Kd directly', correct:false, why:'Kd comes from binding studies, not the response axis.'}],
  teach:'Individuals have different starting points (for example, resting heart rate). Expressing response as a percent change or % of maximum removes this biological variability so drugs can be compared directly.',
  quote:'Normalized data ... Eliminate biological variability',
@@ -1302,7 +1305,7 @@ QUESTIONS.push(
   {t:'It works more slowly after it is administered to a patient', correct:false, why:'A dose–response curve measures dose, not speed; the professor stressed it is not about time.'},
   {t:'It can never reach its maximal effect', correct:false, why:'Both drugs reach the maximum; they differ in dose range.'},
   {t:'Its effect cannot be reversed', correct:false, why:'Slope does not determine reversibility.'}],
- teach:'With a steep curve, a narrow dose range takes the response from none to maximal, so dosing errors matter. A shallower curve offers a greater range of doses before a toxic effect, allowing the dose to be increased over time. Which is preferred depends on the scenario.',
+ teach:'With a steep curve, a narrow dose range takes the response from none to maximal. A shallower curve offers a greater range of doses before a toxic effect, allowing the dose to be increased over time. Which is preferred depends on the scenario.',
  quote:'You’re going from having no effect at all to max it out all the way on the top, right?',
  cite:'transcript 9/24 (in-class poll; slide ~21 "Slope")'},
 
@@ -1332,7 +1335,7 @@ QUESTIONS.push(
 
 {id:'L03-025', lecture:'L03', prof:'Gottlieb', tier:'new', topic:'L03', sub:'terms', skill:'figure', multi:true,
  concept:'four-drug-potency-efficacy', tags:['exam-cue'], source:'transcript',
- stem:'Four drugs are tested in the same tissue. Drugs A and C are partial agonists; B and D reach the full maximal response. Curve A requires the smallest dose to produce an equivalent effect. Which statements are correct? Select all that apply.',
+ stem:'Four drugs are tested in the same tissue. Curves A and C plateau below 100%; curves B and D both plateau at 100%. Curve A requires the smallest dose to produce an equivalent effect. Which statements are correct? Select all that apply.',
  options:[
   {t:'A is the most potent', correct:true, why:'A requires the smallest dose to produce the equivalent effect.'},
   {t:'B and D are the most efficacious', correct:true, why:'Both reach the same maximal effect, just at different doses.'},

@@ -102,7 +102,7 @@ QUESTIONS.push(
  cite:"Pharmacodynamics-Day_2_2026s copy.pdf slides ~10–~11, ~41; transcript 9/23"},
 
 {id:"L02-008", lecture:"L02", prof:"Gottlieb", tier:"new", topic:"L02", sub:"nuc", skill:"recall", multi:true,
- concept:"nuclear-receptor-ligands", tags:[], source:"slide",
+ concept:"nuclear-receptor-ligands", tags:[], source:"both",
  stem:"Which ligands act through nuclear hormone receptors? Select all that apply.",
  options:[
   {t:"Androgens", correct:true, why:"Androgens are listed among the steroid hormones acting on nuclear hormone receptors."},
@@ -114,7 +114,7 @@ QUESTIONS.push(
   {t:"Norepinephrine", correct:false, why:"Norepinephrine acts on G protein–coupled adrenergic receptors."}],
  teach:"Nuclear hormone receptors are a superfamily of 48 receptors whose proteins are transcription factor regulators. Ligands include androgens, estrogens, glucocorticoids, thyroid hormone and vitamin D; they regulate gene expression (protein synthesis or mRNA turnover) in reproduction, inflammation, development and metabolism. Co-repressor binding keeps the receptor inactive; co-activator binding makes it active.",
  quote:"Steroid hormones ... Androgens, estrogens, glucocorticoids, thyroid hormone, and Vit D ... Regulates gene expression",
- cite:"Pharmacodynamics-Day_2_2026s copy.pdf slide ~12"},
+ cite:"Pharmacodynamics-Day_2_2026s copy.pdf slides ~5, ~12; transcript 9/23"},
 
 {id:"L02-009", lecture:"L02", prof:"Gottlieb", tier:"new", topic:"L02", sub:"nuc", skill:"apply",
  concept:"aldosterone-mr-mechanism", tags:[], source:"both",
@@ -224,7 +224,7 @@ QUESTIONS.push(
   {t:"Decrease its efficacy", correct:true, why:"An allosteric antagonist can decrease the affinity and/or efficacy of another drug."},
   {t:"Have no effect on it", correct:true, why:"Depending on how the pocket changes, some allosteric drugs affect neither affinity nor efficacy."},
   {t:"Displace it by competing for its pocket", correct:false, why:"Competing for the pocket is orthosteric behavior; allosteric drugs bind elsewhere."},
-  {t:"Covalently lock the receptor inactive", correct:false, why:"As far as the lecture states, all allosteric agonists and antagonists are reversible."}],
+  {t:"Covalently lock the receptor inactive", correct:false, why:"All allosteric agonists and antagonists are described as reversible; they bind and come off."}],
  teach:"An allosteric (allotopic) drug binds at a different site and changes the orthosteric pocket. It can increase or decrease the affinity and/or efficacy of another drug, or have no effect, depending on what it does to the pocket. Allosteric agonists increase and allosteric antagonists decrease; both are reversible.",
  quote:"So some drugs may affect affinity, another drug may affect only the efficacy, another may affect the affinity in the efficacy, and others, they don't even know that it's there.",
  cite:"Pharmacodynamics-Day_2_2026s copy.pdf slides ~20, ~39, ~42–~44; transcript 9/23"},
@@ -252,7 +252,7 @@ QUESTIONS.push(
   {t:"AC", correct:false, why:"Adenylate cyclase is the effector (signal amplifier) that makes cAMP."},
   {t:"β1 receptor", correct:false, why:"The β1 receptor is the receptor, not a second messenger."},
   {t:"PLC", correct:false, why:"Phospholipase C is the effector that makes IP3."}],
- teach:"Second messengers are small molecules created, degraded or moved by an enzyme, ion channel or transport protein (the effector). They diffuse near their site of synthesis and convey information to many targets. Examples on the slide: cAMP, PKA, PKC, IP3 and Ca++; the receptor, adenylate cyclase and a calcium channel are not second messengers.",
+ teach:"Second messengers are small molecules created, degraded or moved by an enzyme, ion channel or transport protein (the effector). They diffuse near their site of synthesis and convey information to many targets. Examples: cAMP, PKA, protein kinase C (PKC), IP3 and Ca++; the receptor, adenylate cyclase and a calcium channel are not second messengers.",
  quote:"So on your exam, if I ask which of these is an example of a second messenger camp. If there is camp at PKA, then select all, right? But you shouldn't be picking the receptor or the AC or the calcium channel.",
  cite:"Pharmacodynamics-Day_2_2026s copy.pdf slide ~29; transcript 9/23"},
 
