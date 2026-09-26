@@ -111,7 +111,7 @@ QUESTIONS.push(
 
 {id:'L01-009', lecture:'L01', prof:'Gottlieb', tier:'new', topic:'L01', sub:'nds', skill:'recall',
  concept:'fish-oil-evidence', tags:['nds','fish-oil'], source:'both',
- stem:'Which statement about omega-3 fish oil is supported by the NIH data presented?',
+ stem:'Which statement about omega-3 fish oil is correct?',
  options:[
   {t:'Lowers triglycerides; reduces cardiac death', correct:true, why:'Omega-3s lower triglycerides and reduce the risk of cardiac death, though not the risk of a cardiovascular event.'},
   {t:'Reduces the risk of having a cardiovascular event', correct:false, why:'The slide states omega-3s do not reduce the risk of a cardiovascular event.'},
@@ -153,7 +153,7 @@ QUESTIONS.push(
   {t:'Efficacy', correct:true, why:'Efficacy is the other factor intrinsic to the drug.'},
   {t:'The individual or tissue', correct:true, why:'Tissues differ in receptor expression, which changes potency.'},
   {t:'The brand name', correct:false, why:'Brand names have no role in potency and are not tested on Exam 1.'},
-  {t:'The drug’s chemical class name', correct:false, why:'Classification by structure does not set potency.'}],
+  {t:'The drug’s chemical class name', correct:false, why:'A class name is a label; potency depends on the individual or tissue, affinity and efficacy.'}],
  teach:'Potency depends on three things: the individual (tissue, organ or cell line, which differ in receptor expression), and two properties intrinsic to the drug, affinity and efficacy.',
  quote:'the potency of a drug is going to be dependent on three major things. One is... the individual, the tissue... But the two things that are intrinsic to the drug is going to be the affinity and the efficacy of that drug.',
  cite:'Pharmacodynamics-Day-1-2026s.pdf slide ~21; transcript 9/22'},
@@ -192,7 +192,8 @@ QUESTIONS.push(
   {t:'Efficacy', correct:false, why:'Efficacy is the drug’s effect on receptor state, not how much reaches it.'}],
  teach:'Pharmacological potency comes from the drug–receptor side: tissue sensitivity, receptor number and activity, affinity and efficacy. Apparent potency adds pharmacokinetics: age, absorption, distribution, elimination and DDIs, which set how much drug reaches the site of action. IV has 100% bioavailability and bypasses first-pass metabolism.',
  quote:'pharmokinetics is going to be affecting how much of the drug gets to the site of action. Because that’s how it’s going to produce its effects.',
- cite:'Pharmacodynamics-Day-1-2026s.pdf slides ~23, ~27; transcript 9/22'},
+ cite:'Pharmacodynamics-Day-1-2026s.pdf slides ~23, ~27; transcript 9/22',
+ note:'Slide ~27 lists absorption, distribution, elimination, age and DDIs under apparent potency. In the transcript he answers yes to whether ADME affects pharmacological potency and says pharmacological potency depends on absorption and metabolism. The slide grouping (apparent potency) is keyed.'},
 
 {id:'L01-016', lecture:'L01', prof:'Gottlieb', tier:'new', topic:'L01', sub:'potency', skill:'recall',
  concept:'potency-correct-poll', tags:['potency','poll'], source:'both',
@@ -231,7 +232,8 @@ QUESTIONS.push(
   {t:'Elimination by the kidney or liver', correct:false, why:'Elimination is a pharmacokinetic factor under apparent potency.'}],
  teach:'Pharmacological potency (pharmacodynamics): tissue sensitivity, receptor number, receptor activity, affinity, efficacy. Apparent potency (pharmacokinetics): age, absorption, distribution, elimination, DDIs.',
  quote:'Apparent Potency - Age - Absorption - Distribution - Elimination - DDI; Pharmacological Potency - Tissue sensitivity - Receptor # - Receptor Activity - Affinity - Efficacy',
- cite:'Pharmacodynamics-Day-1-2026s.pdf slide ~27'},
+ cite:'Pharmacodynamics-Day-1-2026s.pdf slide ~27',
+ note:'In the transcript he says pharmacological potency depends on absorption, metabolism and age; the slide places these under apparent potency. The slide grouping is keyed.'},
 
 {id:'L01-019', lecture:'L01', prof:'Gottlieb', tier:'new', topic:'L01', sub:'theory', skill:'recall',
  concept:'clark-occupancy', tags:['theory','affinity'], source:'both',
@@ -262,7 +264,7 @@ QUESTIONS.push(
  stem:'In the two-state model (D + R ⇄ DR resting; D + R* ⇄ DR* active), what does the constant L determine?',
  options:[
   {t:'How likely a receptor is active vs inactive', correct:true, why:'L sets how likely a receptor is found in the inactive versus the active state without drug.'},
-  {t:'How tightly the drug binds', correct:false, why:'Binding strength is affinity (Kd), not L.'},
+  {t:'How tightly the drug binds', correct:false, why:'Binding strength is affinity, not L.'},
   {t:'How many receptors the drug is able to occupy', correct:false, why:'Occupancy is Clark’s idea.'},
   {t:'How much drug reaches the site', correct:false, why:'That is pharmacokinetics.'}],
  teach:'In the two-state model receptors exist as active or inactive. L determines how likely a receptor is in the inactive versus the active state, and cells can move receptors back and forth and change receptor number. Drugs bound to the receptor shift this balance.',
