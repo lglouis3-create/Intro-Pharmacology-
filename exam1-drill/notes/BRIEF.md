@@ -9,6 +9,7 @@ Exam 1 lecturer: Dr. Helmut Gottlieb. Exam 1: Fri Oct 2, covers Sept 22 – Sept
 | L01 Day 1 (9/22) Pharmacodynamics-Day-1-2026s.pdf | 1ZUq-XlzGCPE5S38kiTu6AS5ajO-cizKO | 1w7jIllvAmTAPp7lZTbSyWTQ-WOULOqJj |
 | L02 Day 2 (9/23) Pharmacodynamics-Day_2_2026s copy.pdf | 1GYHkv_r9EXYOU78-aBrwWRElcxZXl1gK | 1k_ncKVlf9DeXGeLeCs3D8mdDgr8rtawW |
 | L03 Day 3 (9/24) Pharmacodynamics-Day_3_2026s.pdf | 1RNOXMuSLw0DgZHQ2wml5GJT9zFYxpoVV | 1ODwE2pYvFwi-V6YDudv8wnd3ZrBcIxbK |
+| L04 Day 4 (9/28) Pharmacodynamics-Day_4_-_5_2026s_pptx.pdf (full deck 1jMamPdxcMhadWcFy7vfC8Vbtb80iyjhn; the part covered on 9/28 is Pharmacodynamics-Day_4_&_5_2026s_Part 1.pdf, 1Rkta3BByKaiFOHEmOPOZbqFw9c_ieXU7) | see left | 1sVohhvh9hVGWWghT0oL7mW-XZuwRflKz |
 
 Exam 1 drug list (Exam_1_Drug_List_2026.pdf) — all reversible/competitive except phenoxybenzamine (irreversible):
 norepinephrine & epinephrine (α1, α2, β1, β2 agonist); acetylcholine (agonist M1–M3, Nn, Nm); tropicamide (muscarinic M1–M3 antagonist); prazosin (α1 antagonist); phenylephrine (α1 agonist); phenoxybenzamine (α1+α2 antagonist, irreversible); metoprolol (β1 antagonist); diazepam (GABA receptor allosteric agonist); albuterol (β2 partial agonist); varenicline (Nn partial agonist); histamine (H1, H2 agonist); loratadine (H1 inverse agonist); pindolol (β1, β2 partial agonist); diphenhydramine (non-selective histamine receptor antagonist).

@@ -2,6 +2,10 @@
 
 Newest first. The build embeds this file, and the Progress page shows it.
 
+## 2026-09-29 (Day 4 added)
+- Day 4 (9/28) lecture ingested: 35 questions on the two-state model, full and partial agonists in combination, inverse agonists and constitutive activity, allosteric agonists and antagonists, chemical and physiological antagonism, competitive and irreversible antagonists; 13 tell-apart rows, 4 reference tables, 10 new glossary terms (20 definition questions).
+- Day 3 questions written from slides deferred to today now share a concept with the Day 4 questions that cover what was said in class.
+
 ## 2026-09-29
 - Drug-class figure: six panels (full agonist, partial agonist, reversible antagonist, irreversible antagonist, inverse agonist, allosteric modulator) showing what sits in the pocket and what the response does. Shown on every drug-list question, on the drug-class terms, and on the Reference page with a comparison table.
 - A tell-apart row on the three questions a drug-class name answers at once: where it binds, whether it activates, whether it lets go.
