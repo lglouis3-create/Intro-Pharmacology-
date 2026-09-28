@@ -45,7 +45,7 @@ QUESTIONS.push(
  teach:'The law of mass action says that the more receptors or the more drug present, the greater the capacity to bind. This lets us define the concentration that binds 50% of the receptors, which depends on affinity.',
  quote:'the loss of mass action is all it is saying is the more I have either of the receptors or the more I have either the drug, the greater the capacity of binding to something is going to be, right?',
  cite:'transcript 9/24 (no matching slide text in Pharmacodynamics-Day_3_2026s.pdf)',
- reading:[{src:'Katzung 16e, Ch. 2', sec:'Relation Between Drug Concentration & Response — Concentration-Effect Curves & Receptor Binding of Agonists', t:'The hyperbolic relation between drug concentration and effect resembles the mass action law that describes the association between two molecules of a given affinity, which suggests that agonists act by binding to, or occupying, a distinct class of receptor molecules. Receptor-bound drug (B) rises with the concentration of free drug (C) according to B = Bmax × C / (C + Kd), where Bmax is the total concentration of receptor sites and Kd is the equilibrium dissociation constant. Raising the free drug concentration raises occupancy, and a worked example shows that when receptor number is increased tenfold a much lower agonist concentration is enough to occupy the same number of receptors.'}]},
+ reading:[{src:'Katzung 16e, Ch. 2', sec:'Relation Between Drug Concentration & Response — Concentration-Effect Curves & Receptor Binding of Agonists', t:'Receptor-bound drug rises with the concentration of free drug, and when receptor number is increased a much lower agonist concentration is enough to occupy the same number of receptors.'}]},
 
 {id:'L03-004', lecture:'L03', prof:'Gottlieb', tier:'new', topic:'L03', sub:'kd', skill:'recall',
  concept:'kd-inverse-affinity', tags:[], source:'both',
@@ -58,7 +58,7 @@ QUESTIONS.push(
  teach:'Kd = [R][A]/[AR]. The more drug–receptor complex present, the larger the denominator and the smaller the Kd. The smaller the Kd, the more likely the drug is to bind and stay bound, and the lower the dose needed.',
  quote:'So the take-home message is that the smaller the coefficient of dissociation is, the more drugs receptors are going to find together, and thus the greater the affinity is going to be.',
  cite:'Pharmacodynamics-Day_3_2026s.pdf slide ~31; transcript 9/24',
- reading:[{src:'Katzung 16e, Ch. 2', sec:'Concentration-Effect Curves & Receptor Binding of Agonists', t:'Kd, the equilibrium dissociation constant, is defined as the concentration of free drug at which half-maximal binding is observed on the binding curve. This constant characterizes the receptor’s affinity for binding the drug in a reciprocal fashion: if the Kd is low, binding affinity is high, and vice versa. Kd is a binding measure; the EC50 (the concentration producing 50% of the maximal effect) is read from the effect curve, and the two may be identical but need not be.'}]},
+ reading:[{src:'Katzung 16e, Ch. 2', sec:'Concentration-Effect Curves & Receptor Binding of Agonists', t:'Kd is the concentration of free drug at which receptor binding is half-maximal, a binding measure distinct from the EC50 read from the effect curve. It characterizes affinity reciprocally: a low Kd means high binding affinity, and vice versa.'}]},
 
 {id:'L03-005', lecture:'L03', prof:'Gottlieb', tier:'new', topic:'L03', sub:'kd', skill:'calc',
  concept:'kd-calculation', tags:[], source:'transcript',
@@ -71,7 +71,7 @@ QUESTIONS.push(
  teach:'Kd is the free drug times free receptor divided by the drug–receptor complex. For drug A: 9 × 9 / 1 = 81. For a drug with 1 free drug, 1 free receptor and 9 complexes, Kd = 1/9 = 0.11, a much smaller value and therefore a much greater affinity.',
  quote:'I have 9 receptors all alone, and I only have 1 drug bound to 1 receptor. So when I put in my little values, I come up with 81. That’s my value for my KD.',
  cite:'transcript 9/24 (no matching slide text in Pharmacodynamics-Day_3_2026s.pdf)',
- reading:[{src:'Katzung 16e, Ch. 2', sec:'Concentration-Effect Curves & Receptor Binding of Agonists', t:'Kd, the equilibrium dissociation constant, is defined from the binding curve rather than from counts of free and bound molecules: receptor-bound drug B = Bmax × C / (C + Kd), where C is the free drug concentration and Bmax is the total concentration of receptor sites, so Kd is the free drug concentration at which binding is half-maximal. In this form a drug that occupies a larger fraction of receptors at the same free concentration has the smaller Kd and the higher affinity, and the constant is described as characterizing affinity in a reciprocal fashion.'}]},
+ reading:[{src:'Katzung 16e, Ch. 2', sec:'Concentration-Effect Curves & Receptor Binding of Agonists', t:'Kd is the free drug concentration at which receptor binding is half-maximal. A drug that occupies a larger fraction of receptors at the same free concentration has the smaller Kd and the higher affinity.'}]},
 
 {id:'L03-006', lecture:'L03', prof:'Gottlieb', tier:'new', topic:'L03', sub:'kd', skill:'figure',
  concept:'binding-curve-affinity-x-axis', tags:[], source:'both',
@@ -84,7 +84,7 @@ QUESTIONS.push(
  teach:'Kd is the dose that binds 50% of the receptors on a binding curve. The further to the left a curve is, the smaller the dose required and the greater the affinity. Affinity is read on the x-axis.',
  quote:'Drug C because it requires less dose to bind 50% of the receptors, right?',
  cite:'Pharmacodynamics-Day_3_2026s.pdf slide ~3; transcript 9/24',
- reading:[{src:'Katzung 16e, Ch. 2', sec:'Concentration-Effect Curves & Receptor Binding of Agonists (Figure 2–1B)', t:'Figure 2–1B plots receptor-bound drug against the concentration of free drug, and Kd (the equilibrium dissociation constant) is the concentration at which receptor occupancy is half-maximal. Because Kd characterizes affinity reciprocally, a low Kd means high binding affinity. On such a plot the drug whose curve reaches half-maximal binding at the lowest concentration has the lowest Kd and therefore the highest affinity.'}]},
+ reading:[{src:'Katzung 16e, Ch. 2', sec:'Concentration-Effect Curves & Receptor Binding of Agonists (Figure 2–1B)', t:'On a plot of receptor-bound drug against free drug concentration, Kd is the concentration at which occupancy is half-maximal. The drug whose curve reaches half-maximal binding at the lowest concentration has the lowest Kd and therefore the highest affinity.'}]},
 
 {id:'L03-007', lecture:'L03', prof:'Gottlieb', tier:'new', topic:'L03', sub:'kd', skill:'apply',
  concept:'kd-units', tags:['poll','exam-cue'], source:'transcript',
@@ -97,7 +97,7 @@ QUESTIONS.push(
  teach:'Convert units before comparing Kd values: milli = 10^-3, micro = 10^-6, nano = 10^-9. 20 µM is much smaller than 1 mM, so drug B has the smaller Kd and greater affinity.',
  quote:'Because 20 micromolars is much smaller than 1 millimolar. So if you only focus on the number, you’re going to miss the question in the exam. You’ve got to look at the units as well.',
  cite:'transcript 9/24 (in-class poll; table not in deck text)',
- reading:[{src:'Katzung 16e, Ch. 2', sec:'Clinical Selectivity: Beneficial Versus Toxic Effects of Drugs; Case Study Answer', t:'Selectivity can be measured by comparing the binding affinities of a drug for different receptors, and affinity is expressed through Kd (the equilibrium dissociation constant) in a reciprocal way: a low Kd means high affinity. The case study answer applies this comparison directly, describing metoprolol as binding preferentially to the beta-1 adrenoceptor subtype and having a lower affinity, that is a higher Kd, for the beta-2 subtype that mediates bronchodilation. Ranking two drugs at the beta-2 receptor follows the same rule: the drug with the smaller Kd has the higher affinity.'}]},
+ reading:[{src:'Katzung 16e, Ch. 2', sec:'Clinical Selectivity: Beneficial Versus Toxic Effects of Drugs', t:'Affinity is expressed through Kd in a reciprocal way: a low Kd means high affinity, so of two drugs at the same receptor, the one with the smaller Kd has the higher affinity.'}]},
 
 {id:'L03-008', lecture:'L03', prof:'Gottlieb', tier:'new', topic:'L03', sub:'kd', skill:'calc',
  concept:'kd-units', tags:['poll'], source:'transcript',
@@ -110,7 +110,7 @@ QUESTIONS.push(
  teach:'Nano is 10^-9. Taking two zeros out of 100 × 10^-9 gives 1 × 10^-7 M. In the poll this was the smallest Kd of the five drugs, so drug C had the greatest affinity.',
  quote:'Yes, because C has 100 moles, which is 1 to -9. So what you’re gonna do is you take two 0s out of that 100, you have 1 times 10 to -7.',
  cite:'transcript 9/24 (in-class poll; table not in deck text)',
- reading:[{src:'Katzung 16e, Ch. 2', sec:'Concentration-Effect Curves & Receptor Binding of Agonists', t:'Kd, the equilibrium dissociation constant, is defined as a concentration: the concentration of free drug at which half-maximal receptor binding is observed. Because it is a concentration it is reported in concentration units, and drugs are compared by that value in a reciprocal way, since a low Kd indicates high binding affinity and a high Kd indicates low affinity.'}]},
+ reading:[{src:'Katzung 16e, Ch. 2', sec:'Concentration-Effect Curves & Receptor Binding of Agonists', t:'Kd is a concentration, the free drug concentration at which half-maximal receptor binding is observed, so it is reported in concentration units.'}]},
 
 {id:'L03-009', lecture:'L03', prof:'Gottlieb', tier:'new', topic:'L03', sub:'kd', skill:'recall', multi:true,
  concept:'covalent-bond-irreversible-affinity', tags:['poll'], source:'transcript',
@@ -124,7 +124,7 @@ QUESTIONS.push(
  teach:'Covalent bonds are the strongest bonds a drug can form and produce irreversible binding. Because the bond cannot be broken, the drug has the highest affinity and the smallest Kd; these are related.',
  quote:'a drug that forms covalent bond at body temperature is gonna be irreversible, right? As such, you won’t be able to break that bond and it’s gonna have the highest affinity and thus the smallest kg. All those are related.',
  cite:'transcript 9/24 (in-class poll; no matching slide text)',
- reading:[{src:'Katzung 16e, Ch. 2', sec:'Competitive & Irreversible Antagonists', t:'Noncompetitive antagonists in many cases bind to the receptor in an irreversible or nearly irreversible fashion, sometimes by forming a covalent bond with the receptor. Once such a drug has occupied the receptor it need not be present in unbound form to keep acting, so its duration of action is relatively independent of its own rate of elimination and depends instead on the rate of turnover of receptor molecules. Phenoxybenzamine, an irreversible alpha-adrenoceptor antagonist, is the example given: its blockade is maintained even when a pheochromocytoma releases very large amounts of catecholamine.'}]},
+ reading:[{src:'Katzung 16e, Ch. 2', sec:'Competitive & Irreversible Antagonists', t:'Drugs that form a covalent bond with the receptor bind in an irreversible or nearly irreversible fashion.'}]},
 
 {id:'L03-010', lecture:'L03', prof:'Gottlieb', tier:'new', topic:'L03', sub:'kd', skill:'apply',
  concept:'receptor-number-potency', tags:['poll'], source:'both',
@@ -137,7 +137,7 @@ QUESTIONS.push(
  teach:'By the law of mass action, more receptors increase the probability of binding. Less norepinephrine is needed to bind the same number of receptors, so it appears more potent. Potency depends on affinity, efficacy and the tissue.',
  quote:'Then it’s going to appear to have a greater potency than it does with less receptors. So the take home message over here is that potency is not only going to be defined by the efficacy of the affinity, but also the tissue that is going to be bound to.',
  cite:'Pharmacodynamics-Day_3_2026s.pdf slide ~7; transcript 9/24',
- reading:[{src:'Katzung 16e, Ch. 2', sec:'Receptor-Effector Coupling & Spare Receptors; Alterations in Number or Function of Receptors', t:'The sensitivity of a cell or tissue to a given concentration of agonist depends not only on the affinity of the receptor for the agonist, characterized by Kd (the equilibrium dissociation constant), but also on the total number of receptors present compared with the number needed to elicit a maximal response. In the worked example, a cell with 100 receptors and 100 effectors needs an agonist concentration equal to the Kd to produce a half-maximal response, but when receptor number rises tenfold to 1000 a much lower agonist concentration occupies 50 receptors and produces the same half-maximal response. It is therefore possible to change the sensitivity of a tissue by changing receptor number, and thyroid hormones are cited as increasing both the number of beta adrenoceptors in heart muscle and cardiac sensitivity to catecholamines.'}]},
+ reading:[{src:'Katzung 16e, Ch. 2', sec:'Receptor-Effector Coupling & Spare Receptors', t:'The sensitivity of a tissue to a given agonist concentration depends not only on the receptor’s affinity (Kd) but also on the total number of receptors present. With ten times more receptors, a much lower agonist concentration produces the same half-maximal response.'}]},
 
 {id:'L03-011', lecture:'L03', prof:'Gottlieb', tier:'new', topic:'L03', sub:'kd', skill:'tell', multi:true,
  concept:'receptor-number-potency', tags:[], source:'transcript',
@@ -151,7 +151,7 @@ QUESTIONS.push(
  teach:'Adding receptors does not change the drug: its Kd, affinity and efficacy stay the same. What changes is the tissue it acts on, which alters potency. The body can up-regulate or down-regulate receptors, for example building tolerance to nicotine.',
  quote:'We didn’t change the drug. It’s the same drug, same KD. Now it just have more receptors available, so the affinity and efficacy has not changed. What changes the tissue that is working on it.',
  cite:'transcript 9/24',
- reading:[{src:'Katzung 16e, Ch. 2', sec:'Receptor-Effector Coupling & Spare Receptors', t:'The Kd (equilibrium dissociation constant) of the agonist-receptor interaction determines what fraction of total receptors is occupied at a given free concentration of agonist regardless of the receptor concentration, so adding receptors does not alter the Kd or the affinity of the drug. What changes is the tissue: with more receptors, a lower agonist concentration occupies enough of them to give a half-maximal response, which is described as changing the sensitivity of the tissue by changing receptor number.'}]},
+ reading:[{src:'Katzung 16e, Ch. 2', sec:'Receptor-Effector Coupling & Spare Receptors', t:'Kd determines what fraction of receptors is occupied at a given free agonist concentration regardless of receptor number, so adding receptors does not alter Kd or affinity. It changes the tissue: a lower agonist concentration then gives a half-maximal response.'}]},
 
 {id:'L03-012', lecture:'L03', prof:'Gottlieb', tier:'new', topic:'L03', sub:'kd', skill:'recall',
  concept:'potency-triad', tags:[], source:'both',
@@ -164,7 +164,7 @@ QUESTIONS.push(
  teach:'Potency is a combination of affinity, efficacy and the cell, tissue, organ or organism (for example, number of receptors). The combination of the three makes a drug more or less potent.',
  quote:'Affinity - Efficacy - Cell/Tissue/Organ/Organism - e.g., # of receptors',
  cite:'Pharmacodynamics-Day_3_2026s.pdf slide ~7; transcript 9/24',
- reading:[{src:'Katzung 16e, Ch. 2', sec:'Dose & Response in Patients — Potency; Receptor-Effector Coupling & Spare Receptors', t:'Potency of a drug depends in part on the affinity (Kd, the equilibrium dissociation constant) of receptors for binding the drug and in part on the efficiency with which the drug-receptor interaction is coupled to response. Separately, the sensitivity of a cell or tissue to an agonist depends on that affinity and on the total number of receptors present compared with the number needed for a maximal response, so the responding tissue contributes as well. Kd by itself characterizes only the receptor’s affinity for binding the drug.'}]},
+ reading:[{src:'Katzung 16e, Ch. 2', sec:'Dose & Response in Patients — Potency; Receptor-Effector Coupling & Spare Receptors', t:'Potency depends partly on the affinity (Kd) of receptors for the drug and partly on how efficiently the drug-receptor interaction is coupled to response. Tissue sensitivity also depends on the total number of receptors present, so the responding tissue contributes as well.'}]},
 
 {id:'L03-013', lecture:'L03', prof:'Gottlieb', tier:'new', topic:'L03', sub:'drc', skill:'tell',
  concept:'ec50-vs-ed50', tags:[], source:'both',
@@ -177,7 +177,7 @@ QUESTIONS.push(
  teach:'EC50 is the concentration producing 50% of the maximal response, typically in vitro (a petri dish or isolated organ). ED50 is the dose producing 50% of the response, typically in vivo. In vivo, absorption, distribution, metabolism and excretion (ADME) affect how much drug reaches the site of action, giving an apparent potency.',
  quote:'The difference is, is that one is quantified on a dose, and typically we use that for in vivo studies, something that is living, breathing, and the other is a concentration.',
  cite:'Pharmacodynamics-Day_3_2026s.pdf slides ~8, ~21; transcript 9/24',
- reading:[{src:'Katzung 16e, Ch. 2', sec:'Relation Between Drug Concentration & Response; Dose & Response in Patients — Potency', t:'Potency refers to the concentration (EC50) or dose (ED50) of a drug required to produce 50% of that drug’s maximal effect, so the two terms differ in whether a concentration or a dose is on the axis. In carefully controlled in vitro systems the relation between concentration and effect is often simple and can be described with mathematical precision, whereas the relation between dose and the clinically observed response in patients is more complex. Part of that complexity is pharmacokinetic: patients differ in absorption, distribution and clearance, which alters the concentration of drug that reaches the receptors.'}]},
+ reading:[{src:'Katzung 16e, Ch. 2', sec:'Relation Between Drug Concentration & Response; Dose & Response in Patients — Potency', t:'Potency refers to the concentration (EC50) or dose (ED50) required to produce 50% of a drug’s maximal effect. In vitro, the concentration-effect relation is simple; in patients, absorption, distribution and clearance alter the concentration reaching the receptors, so dose and response are more complex.'}]},
 
 {id:'L03-014', lecture:'L03', prof:'Gottlieb', tier:'new', topic:'L03', sub:'drc', skill:'recall', multi:true,
  concept:'emax-reasons', tags:[], source:'transcript',
@@ -190,7 +190,7 @@ QUESTIONS.push(
  teach:'The ceiling (Emax) is reached either because all receptors are occupied or because the physiological system has reached its maximum capacity. Giving more drug beyond the ceiling produces no further benefit.',
  quote:'What are the two reasons why we have reached the Emacs and we can’t keep going up? All the receptors are occupied or I max out the physiological system, right?',
  cite:'transcript 9/24 (slide ~14 "Ceiling of effect")',
- reading:[{src:'Katzung 16e, Ch. 2', sec:'Receptor-Effector Coupling & Spare Receptors; Dose & Response in Patients — Maximal efficacy', t:'The total number of receptors may limit the maximal effect a drug can produce, and for some receptors, such as ligand-gated ion channels, the response is directly proportional to the number of receptors bound. For other receptors the biologic response reaches a maximum before full receptor occupancy is achieved, because the downstream signaling mediators or effectors, not the receptors, are the limiting component. Maximal efficacy may accordingly be determined by the drug’s mode of interaction with receptors or by characteristics of the receptor-effector system involved.'}]},
+ reading:[{src:'Katzung 16e, Ch. 2', sec:'Receptor-Effector Coupling & Spare Receptors', t:'The total number of receptors may limit the maximal effect a drug can produce. For some receptors the response reaches a maximum before full occupancy because downstream effectors, not the receptors, are the limiting component.'}]},
 
 {id:'L03-015', lecture:'L03', prof:'Gottlieb', tier:'new', topic:'L03', sub:'drc', skill:'recall',
  concept:'reversibility-of-effect', tags:[], source:'both',
@@ -228,7 +228,7 @@ QUESTIONS.push(
  teach:'The x-axis is the independent variable (dose), plotted in log units to give a sigmoid curve; affinity is read left–right. The y-axis is the dependent variable measured experimentally; efficacy is read up–down. Potency combines the two.',
  quote:'OK, so when you’re looking at the efficacy of a drug, we’re looking at the y axis, up or down. When you look at affinity x axis, left or right.',
  cite:'Pharmacodynamics-Day_3_2026s.pdf slides ~16–~18; transcript 9/24',
- reading:[{src:'Katzung 16e, Ch. 2', sec:'Dose & Response in Patients — Potency; Maximal efficacy', t:'Potency is read from the relative positions of dose-response curves along the dose axis: drugs A and B in Figure 2–15 are more potent than C and D because their curves lie further toward low doses. Maximal efficacy is the limit of the dose-response relation on the response axis. Potency depends in part on the affinity (Kd, the equilibrium dissociation constant) of receptors for the drug, so left-right position reflects affinity together with coupling efficiency, while curve height reflects efficacy.'}]},
+ reading:[{src:'Katzung 16e, Ch. 2', sec:'Dose & Response in Patients — Potency; Maximal efficacy', t:'Potency is read from the relative positions of curves along the dose axis, and maximal efficacy is the limit of the dose-response relation on the response axis. Potency depends partly on affinity (Kd), so left-right position reflects affinity, while curve height reflects efficacy.'}]},
 
 {id:'L03-018', lecture:'L03', prof:'Gottlieb', tier:'new', topic:'L03', sub:'drc', skill:'apply',
  concept:'normalized-y-axis', tags:[], source:'both',
@@ -253,7 +253,7 @@ QUESTIONS.push(
  teach:'When curves reach the same Emax, efficacy is equal and the difference is affinity. The curve requiring the lowest dose for an equivalent effect (furthest left) has the highest affinity and is the most potent.',
  quote:'First of all, do they all have the same efficacy? Yes. So what makes A more potent than B and C? Because they have a greater affinity, right?',
  cite:'Pharmacodynamics-Day_3_2026s.pdf slide ~17; transcript 9/24',
- reading:[{src:'Katzung 16e, Ch. 2', sec:'Dose & Response in Patients — Potency', t:'In Figure 2–15 drugs A, C and D have equal maximal efficacy, yet A is more potent because its curve lies further to the left along the dose axis, meaning a lower dose produces 50% of its maximal effect. Potency depends in part on the affinity (Kd, the equilibrium dissociation constant) of receptors for binding the drug and in part on the efficiency of coupling, so among drugs with the same maximal effect the leftmost curve is the most potent and the rightmost the least.'}]},
+ reading:[{src:'Katzung 16e, Ch. 2', sec:'Dose & Response in Patients — Potency', t:'Among drugs with equal maximal efficacy, the one whose curve lies further left along the dose axis is more potent, since a lower dose produces 50% of its maximal effect. Potency depends partly on the affinity (Kd) of receptors for the drug.'}]},
 
 {id:'L03-020', lecture:'L03', prof:'Gottlieb', tier:'new', topic:'L03', sub:'drc', skill:'figure',
  concept:'potency-vs-efficacy-mixed', tags:[], source:'both',
@@ -266,7 +266,7 @@ QUESTIONS.push(
  teach:'Efficacy is read from the height of each curve; affinity from left–right position. B and C share the same Emax, so the one further left (C) has higher affinity and is more potent. B has lower affinity than C and lower efficacy than A.',
  quote:'He has lowest affinity than C, but equal efficacy to C. Which is more potent. C, because it requires the smallest dose to produce an equivalent receptor that all three drugs can produce.',
  cite:'Pharmacodynamics-Day_3_2026s.pdf slide ~18; transcript 9/24',
- reading:[{src:'Katzung 16e, Ch. 2', sec:'Dose & Response in Patients — Potency', t:'Figure 2–15 shows that drug B, a partial agonist, is more potent than drug A because the EC50 (the concentration producing 50% of that drug’s maximal effect) of B is smaller, even though some doses of A produce larger effects than any dose of B. Potency is a position along the dose axis and maximal efficacy is a limit on the response axis, so two curves of the same height are compared for potency only by which lies further left.'}]},
+ reading:[{src:'Katzung 16e, Ch. 2', sec:'Dose & Response in Patients — Potency', t:'Potency is a position along the dose axis and maximal efficacy is a limit on the response axis. Two curves of the same height are compared for potency only by which lies further left, the one with the smaller EC50.'}]},
 
 {id:'L03-021', lecture:'L03', prof:'Gottlieb', tier:'new', topic:'L03', sub:'terms', skill:'recall',
  concept:'slope-linear-midsection', tags:[], source:'both',
@@ -291,7 +291,7 @@ QUESTIONS.push(
  teach:'With a steep curve, a narrow dose range takes the response from none to maximal. A shallower curve offers a greater range of doses before a toxic effect, allowing the dose to be increased over time. Which is preferred depends on the scenario.',
  quote:'You’re going from having no effect at all to max it out all the way on the top, right?',
  cite:'transcript 9/24 (in-class poll; slide ~21 "Slope")',
- reading:[{src:'Katzung 16e, Ch. 2', sec:'Dose & Response in Patients — Shape of Dose-Response Curves', t:'Extremely steep dose-response curves may have important clinical consequences if the upper portion of the curve represents an undesirable extent of response, the example given being coma caused by a sedative-hypnotic. In patients, steep curves can result from cooperative interactions of several different actions of a drug, such as effects on brain, heart and peripheral vessels all contributing to a fall in blood pressure. The concern is how large a response a small increase in dose can produce.'}]},
+ reading:[{src:'Katzung 16e, Ch. 2', sec:'Dose & Response in Patients — Shape of Dose-Response Curves', t:'Extremely steep dose-response curves may have important clinical consequences if the upper portion of the curve represents an undesirable extent of response. The concern is how large a response a small increase in dose can produce.'}]},
 
 {id:'L03-023', lecture:'L03', prof:'Gottlieb', tier:'new', topic:'L03', sub:'terms', skill:'recall',
  concept:'ec50-inverse-potency', tags:[], source:'both',
@@ -304,7 +304,7 @@ QUESTIONS.push(
  teach:'EC50/ED50 is the concentration or dose producing 50% of the maximal response to that drug. The smaller the EC50 or ED50, the further left the curve and the greater the potency; they are inversely proportional.',
  quote:'ED50/EC50↓ = ↑ Potency ... inversely proportional',
  cite:'Pharmacodynamics-Day_3_2026s.pdf slides ~22, ~29; transcript 9/24',
- reading:[{src:'Katzung 16e, Ch. 2', sec:'Dose & Response in Patients — Potency', t:'Potency refers to the concentration (EC50) or dose (ED50) of a drug required to produce 50% of that drug’s maximal effect. Drug A in Figure 2–15 is less potent than drug B because the EC50 of A is greater than the EC50 of B, so a larger EC50 means lower potency and a smaller EC50 means greater potency. Potency is distinct from maximal efficacy, which is the limit on the response axis.'}]},
+ reading:[{src:'Katzung 16e, Ch. 2', sec:'Dose & Response in Patients — Potency', t:'Potency refers to the concentration (EC50) or dose (ED50) required to produce 50% of a drug’s maximal effect, so a larger EC50 means lower potency and a smaller EC50 greater potency. Potency is distinct from maximal efficacy, the limit on the response axis.'}]},
 
 {id:'L03-024', lecture:'L03', prof:'Gottlieb', tier:'new', topic:'L03', sub:'terms', skill:'calc',
  concept:'relative-potency', tags:[], source:'both',
@@ -317,7 +317,7 @@ QUESTIONS.push(
  teach:'Relative potency = ED50B / ED50A. Drug A is 1000 times more potent than drug B because it requires 1000 times less drug to produce equivalent responses. The professor said exam math will be minimal and easy.',
  quote:'Relative Potency = ED50B/ED50A =1000X',
  cite:'Pharmacodynamics-Day_3_2026s.pdf slide ~23; transcript 9/24',
- reading:[{src:'Katzung 16e, Ch. 2', sec:'Dose & Response in Patients — Potency; Quantal Dose-Effect Curves', t:'Relative potency is defined as the ratio of equi-effective doses and may be used in comparing one drug with another. The quantal dose-effect section gives the form of the comparison: if the ED50 values (median effective dose) of two drugs are 5 mg and 500 mg, the first drug is said to be 100 times more potent than the second for that effect, that is, the larger ED50 divided by the smaller. For therapeutic purposes the potency of a drug should be stated in dosage units for a particular therapeutic end point.'}]},
+ reading:[{src:'Katzung 16e, Ch. 2', sec:'Dose & Response in Patients — Potency; Quantal Dose-Effect Curves', t:'Relative potency is the ratio of equi-effective doses. If the ED50 values of two drugs are 5 mg and 500 mg, the first is 100 times more potent than the second: the larger ED50 divided by the smaller.'}]},
 
 {id:'L03-025', lecture:'L03', prof:'Gottlieb', tier:'new', topic:'L03', sub:'terms', skill:'figure', multi:true,
  concept:'four-drug-potency-efficacy', tags:['exam-cue'], source:'transcript',
@@ -331,7 +331,7 @@ QUESTIONS.push(
  teach:'Potency is compared at equivalent effects, so the curve needing the smallest dose (A) is the most potent even if it is a partial agonist. Efficacy is the maximal effect, shared by B and D. Choosing a drug depends on the goal, for example a small blood pressure drop vs. killing all bacteria.',
  quote:'Now which of these is the most efficacious? Now we can say B and D, right? Because they both produce the same effect, they just require different doses to do that.',
  cite:'transcript 9/24 (figure not in deck text)',
- reading:[{src:'Katzung 16e, Ch. 2', sec:'Dose & Response in Patients — Potency; Maximal efficacy', t:'Figure 2–15 separates the two properties: drug B, a partial agonist, is the most potent because its EC50 (the concentration producing 50% of its own maximal effect) is the smallest, while drugs A, C and D share the greatest maximal efficacy and all exceed B on the response axis. Some doses of a less potent drug can therefore produce larger effects than any dose of a more potent partial agonist. Maximal efficacy is described as crucial for clinical decisions when a large response is needed, so the most potent drug is not automatically the drug of choice.'}]},
+ reading:[{src:'Katzung 16e, Ch. 2', sec:'Dose & Response in Patients — Potency; Maximal efficacy', t:'A partial agonist can be the most potent drug if its EC50 is the smallest, while drugs reaching the highest maximum share the greatest maximal efficacy. Maximal efficacy is crucial when a large response is needed, so the most potent drug is not automatically preferred.'}]},
 
 {id:'L03-026', lecture:'L03', prof:'Gottlieb', tier:'new', topic:'L03', sub:'terms', skill:'figure', multi:true,
  concept:'five-drug-classification', tags:['poll','exam-cue'], source:'transcript',
@@ -347,7 +347,7 @@ QUESTIONS.push(
  quote:'is A the right answer? Because it has the lowest affinity, the smallest KD is gonna be further to the left. … B as in boy for the highest, D for the lowest, right? … Which of these drugs is the full agonist? B, which you are partial. A, C, D, and E. If you can’t get your 100%, you’re not a full agonist, right?',
  note:'In the transcript the professor says A has "the lowest affinity" in the same sentence as "the smallest KD is gonna be further to the left"; the poll asked for the highest affinity and A was keyed, so "lowest" is treated as a slip.',
  cite:'transcript 9/24 (in-class poll; figure not in deck text)',
- reading:[{src:'Katzung 16e, Ch. 2', sec:'Partial Agonists; Dose & Response in Patients', t:'Agonists are divided by the maximal response they produce when all receptors are occupied: partial agonists produce a lower response at full receptor occupancy than full agonists do, and this failure is not due to decreased affinity for the receptor. Potency is a position along the dose axis and depends in part on affinity (Kd, the equilibrium dissociation constant), whereas maximal efficacy is the limit on the response axis. A curve can therefore lie furthest left, indicating the highest affinity, while plateauing below the full agonist, indicating a partial agonist.'}]},
+ reading:[{src:'Katzung 16e, Ch. 2', sec:'Partial Agonists; Dose & Response in Patients', t:'Partial agonists produce a lower response at full receptor occupancy than full agonists, and this is not due to decreased affinity for the receptor. A curve can lie furthest left, indicating the highest affinity, while plateauing below the full agonist, indicating a partial agonist.'}]},
 
 {id:'L03-027', lecture:'L03', prof:'Gottlieb', tier:'new', topic:'L03', sub:'terms', skill:'apply',
  concept:'most-efficacious-for-bacteria', tags:['poll'], source:'transcript',
@@ -360,7 +360,7 @@ QUESTIONS.push(
  teach:'When the goal is a complete effect, such as killing all bacteria, the most efficacious drug is chosen; bacteria left behind can grow again and become resistant. When a partial effect is enough, such as bringing systolic pressure from 136 to below 130, the most efficacious drug may not be needed.',
  quote:'hopefully you pick B because B will kill 100% of the bacteria colon is the most efficacious in doing that job.',
  cite:'transcript 9/24 (in-class poll; figure not in deck text)',
- reading:[{src:'Katzung 16e, Ch. 2', sec:'Dose & Response in Patients — Maximal efficacy', t:'Maximal efficacy reflects the limit of the dose-response relation on the response axis, and it is described as crucial for making clinical decisions when a large response is needed. A more potent drug with a lower maximal efficacy cannot match that response at any dose, since some doses of the more efficacious drug produce larger effects than any dose of the more potent partial agonist.'}]},
+ reading:[{src:'Katzung 16e, Ch. 2', sec:'Dose & Response in Patients — Maximal efficacy', t:'Maximal efficacy is the limit of the dose-response relation on the response axis and is crucial when a large response is needed. A more potent drug with lower maximal efficacy cannot match that response at any dose.'}]},
 
 {id:'L03-028', lecture:'L03', prof:'Gottlieb', tier:'new', topic:'L03', sub:'terms', skill:'figure',
  concept:'equal-ec50-efficacy-tiebreak', tags:['exam-cue'], source:'both',
@@ -374,7 +374,7 @@ QUESTIONS.push(
  quote:'So test question right here. Why would A be more potent than B? Because it has greater efficacy, right?',
  cite:'Pharmacodynamics-Day_3_2026s.pdf slide ~27; transcript 9/24',
  note:'Katzung 16e, Ch. 2 defines potency strictly as the EC50 or ED50 (position on the dose axis) and maximal efficacy as a separate parameter (the limit on the response axis); by that definition two drugs with equal EC50 are equally potent regardless of Emax. The deck (slide ~27, "equal ED50/EC50, ↑Efficacy = ↑Potency") and the transcript key "greater efficacy" as the reason A is more potent. The exam is written from the lecture, so this item keys efficacy.',
- reading:[{src:'Katzung 16e, Ch. 2', sec:'Dose & Response in Patients — Potency; Receptor-Effector Coupling & Spare Receptors', t:'Potency is defined as the concentration (EC50) or dose (ED50) required to produce 50% of that drug’s maximal effect, and it depends in part on the affinity (Kd, the equilibrium dissociation constant) of receptors for the drug and in part on the efficiency with which the drug-receptor interaction is coupled to response. Efficiency of coupling is the part of potency that separates a full agonist from a partial agonist of the same affinity, since full agonists shift the conformational equilibrium of receptors more strongly than partial agonists. By this definition, however, two drugs with identical EC50 values are equally potent even if one has the larger maximal efficacy; potency and maximal efficacy are treated as separate parameters.'}]},
+ reading:[{src:'Katzung 16e, Ch. 2', sec:'Dose & Response in Patients — Potency; Receptor-Effector Coupling & Spare Receptors', t:'Potency depends partly on affinity (Kd) and partly on how efficiently the drug-receptor interaction is coupled to response, which separates a full agonist from a partial agonist of equal affinity. By this definition, drugs with identical EC50 values are equally potent whatever their maximal efficacy.'}]},
 
 {id:'L03-029', lecture:'L03', prof:'Gottlieb', tier:'new', topic:'L03', sub:'terms', skill:'tell',
  concept:'intrinsic-activity-vs-efficacy', tags:[], source:'both',
@@ -387,7 +387,7 @@ QUESTIONS.push(
  teach:'Intrinsic activity (Ariëns) assigns full agonist = 1, partial agonist between 0 and 1, antagonist = 0, and depends on chemical structure. It did not account for the tissue, so it is incomplete. Efficacy is more comprehensive, includes the tissue, cannot be calculated directly, and is a relative measurement of ligands.',
  quote:'What he did not count was for the tissue, how many receptors are present in that system. So this is an incomplete theory that we can’t really use much',
  cite:'Pharmacodynamics-Day_3_2026s.pdf slides ~25–~26; transcript 9/24',
- reading:[{src:'Katzung 16e, Ch. 2', sec:'Dose & Response in Patients — Maximal efficacy (and its footnote); Receptor-Effector Coupling & Spare Receptors', t:'In an idealized in vitro system, efficacy denotes the relative maximal efficacy of agonists and partial agonists that act via the same receptor, whereas in therapeutics it denotes the extent of effect achievable in the intact patient and depends on a host of other factors. Maximal efficacy may be determined by the drug’s mode of interaction with receptors, as with partial agonists, or by characteristics of the receptor-effector system involved, so the responding tissue is part of the measure. Coupling of occupancy to response is set partly at the receptor, where full agonists shift the conformational equilibrium more strongly than partial agonists, and partly by downstream biochemical events in the cell.'}]},
+ reading:[{src:'Katzung 16e, Ch. 2', sec:'Dose & Response in Patients — Maximal efficacy (and its footnote)', t:'Efficacy denotes the relative maximal efficacy of agonists and partial agonists acting via the same receptor. Maximal efficacy may be determined by the drug’s mode of interaction with receptors or by characteristics of the receptor-effector system, so the responding tissue is part of the measure.'}]},
 
 {id:'L03-030', lecture:'L03', prof:'Gottlieb', tier:'new', topic:'L03', sub:'theory', skill:'recall', multi:true,
  concept:'basic-drug-receptor-theory', tags:[], source:'both',
@@ -401,7 +401,7 @@ QUESTIONS.push(
  teach:'Cells have receptors that recognize specific chemicals based on shape, size and other properties. Multiple chemicals may bind the same receptor, and one chemical may bind multiple receptors; ligands can be endogenous or exogenous. The less selective a drug is, the more effects (side effects) it produces.',
  quote:'Multiple chemicals may bind the same receptor ... A chemical may bind multiple receptors ... Endogenous as well as exogenous ... Receptors can be on the active or inactive state',
  cite:'Pharmacodynamics-Day_3_2026s.pdf slide ~30; transcript 9/24',
- reading:[{src:'Katzung 16e, Ch. 2', sec:'Introduction (the receptor concept); Receptor Classes & Drug Development', t:'The molecular size, shape and electrical charge of a drug determine whether, and with what affinity, it binds to a particular receptor among the many chemically different binding sites in a cell, tissue or patient. Agonists include both drugs and natural ligands such as hormones and neurotransmitters, so receptors respond to endogenous as well as exogenous chemicals. One chemical can act on different receptor classes: acetylcholine activates nicotinic receptors, which are ligand-gated ion channels, and muscarinic receptors, which are G protein-coupled receptors, and many biogenic amines such as norepinephrine, histamine and serotonin activate more than one receptor.'}]},
+ reading:[{src:'Katzung 16e, Ch. 2', sec:'Introduction (the receptor concept); Receptor Classes & Drug Development', t:'The molecular size, shape and electrical charge of a drug determine whether, and with what affinity, it binds to a particular receptor. Agonists include both drugs and natural ligands such as hormones and neurotransmitters, and one chemical can act on more than one receptor class.'}]},
 
 {id:'L03-031', lecture:'L03', prof:'Gottlieb', tier:'new', topic:'L03', sub:'theory', skill:'tell',
  concept:'full-vs-partial-agonist-summary', tags:[], source:'slide',
@@ -414,7 +414,7 @@ QUESTIONS.push(
  teach:'Full agonist: can reach 100% of the system’s max response, highest affinity for active-state receptors, positive efficacy. Partial agonist: same affinity preference and positive efficacy, but lower efficacy, Emax less than 100%, and cannot bring the response all the way to 100% or 0%.',
  quote:'Partial Agonist Summary ... Can NOT reach 100% of the system’s max response',
  cite:'Pharmacodynamics-Day_3_2026s.pdf slides ~41, ~63',
- reading:[{src:'Katzung 16e, Ch. 2', sec:'Partial Agonists; Receptor-Effector Coupling & Spare Receptors', t:'Based on the maximal pharmacologic response that occurs when all receptors are occupied, agonists are divided into two classes: partial agonists produce a lower response at full receptor occupancy than full agonists do. The failure of partial agonists to produce a maximal response is not due to decreased affinity for binding to receptors; even at concentrations that saturate all receptors they cannot cause the maximal response. Full agonists tend to shift the conformational equilibrium of receptors more strongly than partial agonists, which is the receptor-level basis of the difference.'}]},
+ reading:[{src:'Katzung 16e, Ch. 2', sec:'Partial Agonists; Receptor-Effector Coupling & Spare Receptors', t:'Partial agonists produce a lower response at full receptor occupancy than full agonists do, and this failure is not due to decreased affinity for the receptor. Full agonists shift the conformational equilibrium of receptors more strongly than partial agonists.'}]},
 
 {id:'L03-032', lecture:'L03', prof:'Gottlieb', tier:'new', topic:'L03', sub:'fafa', skill:'figure', multi:true,
  concept:'fa-plus-fa', tags:[], source:'slide',
@@ -440,7 +440,7 @@ QUESTIONS.push(
  teach:'Partial agonist table: albuterol (β2, bronchodilator), buprenorphine (μ-opioid, analgesic), oxymetazoline (α1, nasal decongestant), pilocarpine (muscarinic, glaucoma), varenicline (nicotinic Nn, smoking cessation), aripiprazole (D2, schizophrenia and bipolar). The professor noted that albuterol does not need to open airways 100% to help a patient with asthma breathe.',
  quote:'Albuterol β2 Bronchodilator',
  cite:'Pharmacodynamics-Day_3_2026s.pdf slide ~53; transcript 9/24',
- reading:[{src:'Katzung 16e, Ch. 2', sec:'Partial Agonists', t:'Buprenorphine is the worked example of a partial agonist: it is a partial agonist of mu-opioid receptors and is described as a generally safer analgesic than morphine and much safer than fentanyl, a full agonist, because it suppresses breathing less strongly upon binding opioid receptors in brainstem ventilatory neurons. This matches the pairing of buprenorphine with the mu-opioid receptor and analgesia. The same mixed agonist-antagonist property makes buprenorphine effectively antianalgesic when combined with more efficacious opioids.'}]},
+ reading:[{src:'Katzung 16e, Ch. 2', sec:'Partial Agonists', t:'Buprenorphine is a partial agonist of mu-opioid receptors and is used as an analgesic.'}]},
 
 {id:'L03-034', lecture:'L03', prof:'Gottlieb', tier:'new', topic:'L03', sub:'pa', skill:'tell', multi:true,
  concept:'fa-plus-pa-aripiprazole', tags:[], source:'slide',
@@ -455,7 +455,7 @@ QUESTIONS.push(
  quote:'Full Agonists Competing with a Partial agonist / Different Affinity & Efficacy / Dopamine (Emax =100%) / Aripiprazole (Emax = 60%)',
  cite:'Pharmacodynamics-Day_3_2026s.pdf slides ~53–~54, ~57, ~63',
  note:'Not covered in the 9/24 transcript (deferred to the next lecture). The manic-patient slides do not state in text what level the combined response reaches, so this item tests only what the slide text states.',
- reading:[{src:'Katzung 16e, Ch. 2', sec:'Partial Agonists (Figure 2–4)', t:'Because a partial agonist cannot cause a maximal response even when it saturates all receptors, partial agonists competitively inhibit the responses produced by full agonists, a mixed agonist-antagonist property. In Figure 2–4 a full agonist and a partial agonist compete for the same receptor sites: as partial agonist occupancy rises, binding of the full agonist falls, the fractional response from the full agonist decreases while the portion from the partial agonist increases, and the total response gradually decreases until it reaches the value produced by the partial agonist alone. The two drugs differ in efficacy at the receptor, since the partial agonist produces a lower maximal response at full occupancy.'}]},
+ reading:[{src:'Katzung 16e, Ch. 2', sec:'Partial Agonists (Figure 2–4)', t:'Because a partial agonist cannot cause a maximal response even when it saturates all receptors, it competitively inhibits the responses produced by a full agonist at the same receptor. The two differ in efficacy: the partial agonist produces a lower maximal response at full occupancy.'}]},
 
 {id:'L03-035', lecture:'L03', prof:'Gottlieb', tier:'new', topic:'L03', sub:'pa', skill:'recall',
  concept:'partial-agonist-dual-nature', tags:[], source:'slide',
@@ -468,5 +468,5 @@ QUESTIONS.push(
  teach:'A partial agonist can behave like an agonist or an antagonist depending on the physiological state (dual nature). The deck illustrates this with varenicline during smoking (nicotine present) and withdrawal.',
  quote:'It may act as an agonist or antagonist ... Depend on the Physiological State of the subject',
  cite:'Pharmacodynamics-Day_3_2026s.pdf slides ~63–~65',
- reading:[{src:'Katzung 16e, Ch. 2', sec:'Variation in Drug Responsiveness — Variation in Concentration of an Endogenous Receptor Ligand; Partial Agonists', t:'A partial agonist may exhibit dramatically different responses depending on the amount of endogenous agonist present: saralasin, a weak partial agonist at angiotensin II receptors, lowers blood pressure in patients with hypertension caused by increased angiotensin II production but raises blood pressure in patients who produce normal amounts of angiotensin. The same mixed agonist-antagonist property is described for buprenorphine, which is an analgesic on its own yet effectively antianalgesic when combined with more efficacious opioids and can precipitate withdrawal in opioid-dependent individuals. Whether a partial agonist acts as an agonist or as an antagonist therefore depends on the physiological state of the subject, specifically the level of full agonist it competes with.'}]}
+ reading:[{src:'Katzung 16e, Ch. 2', sec:'Variation in Drug Responsiveness — Variation in Concentration of an Endogenous Receptor Ligand; Partial Agonists', t:'A partial agonist may exhibit dramatically different responses depending on the amount of endogenous agonist present. Whether it acts as an agonist or as an antagonist depends on the physiological state of the subject, specifically the level of full agonist it competes with.'}]}
 );
