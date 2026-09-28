@@ -35,7 +35,7 @@ QUESTIONS.push(
   {t:"Gαq → AC → ↑ cAMP", correct:false, why:"AC and cAMP go with Gαs (increase) and Gαi (decrease), not Gαq."},
   {t:"Gαi → PLC → ↓ IP3 and Ca++", correct:false, why:"Gαi acts on AC, not PLC."}],
  teach:"The three α subunits are Gαs (stimulation), Gαi (inhibition) and Gαq (positive, through calcium). Gαs increases cAMP through AC, Gαi suppresses cAMP through AC, and Gαq increases IP3 and Ca++ through PLC. Adenylate cyclase pairs with cyclic AMP; phospholipase C pairs with IP3.",
- quote:"We know that the alpha S always is going to be associated with the AC and always is going to increase the camp. The alphai, which is the opposite, also is going to be associated with the AC, but in this case it's going to suppress the camp. And then the alpha Q is going to increase IP3 and calcium.",
+ quote:"The alphai, which is the opposite, also is going to be associated with the AC, but in this case it's going to suppress the camp. And then the alpha Q is going to increase IP3 and calcium.",
  reading:[{src:'Katzung 16e, Ch. 2', sec:'G Proteins & Second Messengers; Table 2–1 (p. 10–11 of 18)', t:'Gs stimulates adenylyl cyclase, which converts ATP to cAMP, while Gi proteins decrease adenylyl cyclase and lower cAMP. Gq stimulates phospholipase C, which raises IP3, diacylglycerol and cytoplasmic calcium.'}],
  cite:"Pharmacodynamics-Day_2_2026s copy.pdf slide ~3; transcript 9/23"},
 
@@ -48,7 +48,7 @@ QUESTIONS.push(
   {t:"cAMP is unchanged", correct:false, why:"An agonist at a Gαi-coupled receptor activates the inhibitory pathway; it does not leave cAMP unchanged."},
   {t:"IP3 (inositol phosphate 3) and Ca++ rise", correct:false, why:"IP3 and Ca++ are the Gαq second messengers (for example α1 receptors), not Gαi."}],
  teach:"An agonist activates whatever pathway the receptor is coupled to. The α2 adrenergic receptor is coupled to Gαi, which inhibits adenylate cyclase; less cAMP means less signaling, and drugs that activate α2 suppress sympathetic outflow. The pathway is reversed when the GTP is hydrolyzed back to GDP and norepinephrine unbinds.",
- quote:"What do you think the G alphai is going to do to the activity of the AC? What does the I stand for? Inhibitory, which means that it's going to cause an inhibition of the AC, and I'm going to have less camp being produced.",
+ quote:"What does the I stand for? Inhibitory, which means that it's going to cause an inhibition of the AC, and I'm going to have less camp being produced.",
  reading:[{src:'Katzung 16e, Ch. 2', sec:'Table 2–1 G proteins and their receptors and effectors; Variation in Drug Responsiveness (p. 11, 17 of 18)', t:'α2-Adrenergic receptors couple to the Gi family of G proteins. Gi decreases adenylyl cyclase activity and therefore decreases cAMP.'}],
  cite:"Pharmacodynamics-Day_2_2026s copy.pdf slide ~3; transcript 9/23"},
 
@@ -62,7 +62,7 @@ QUESTIONS.push(
   {t:"cAMP binds the receptor", correct:false, why:"cAMP is a downstream second messenger made by adenylate cyclase; it does not bind the receptor."},
   {t:"The agonist unbinds the receptor", correct:false, why:"Agonist unbinding is part of reversing the pathway, not activating it."}],
  teach:"Sequence: the agonist binds, the receptor is activated and changes shape, the G protein (transducer) senses the change, GDP comes off and GTP comes in, and the α subunit separates from βγ to act on an effector (adenylate cyclase or phospholipase C). Reversal: GTP is hydrolyzed to GDP naturally or faster with the RGS protein, the subunits reassociate, and the drug unbinds.",
- quote:"The GDP, the diphosphate, has to come off, and the GDP, as in taxes, the triphosphate has to come in. The removal of the GDP and replacement with the GDP is what triggers them to separate from each other.",
+ quote:"The GDP, as in diphosphate, has to come off, and the GTP, as in triphosphate, has to come in, right?",
  reading:[{src:'Katzung 16e, Ch. 2', sec:'G Proteins & Second Messengers; Figure 2–10 and Figure 2–11 (p. 10–11 of 18)', t:'Agonist binding reduces the nucleotide affinity of the G protein, so GDP dissociates and GTP replaces it. This exchange switches the G protein from its inactive GDP-bound form to its active GTP-bound form.'}],
  cite:"Pharmacodynamics-Day_2_2026s copy.pdf slide ~3; transcript 9/23"},
 
@@ -175,7 +175,7 @@ QUESTIONS.push(
   {t:"Norepinephrine", correct:false, why:"Norepinephrine is a reversible agonist; it binds and eventually pops off."},
   {t:"Diazepam (Valium)", correct:false, why:"Diazepam is an allosteric agonist, and allosteric agonists and antagonists are reversible."}],
  teach:"Drugs listed as forming covalent (irreversible) bonds include aspirin, omeprazole and phenoxybenzamine. Once phenoxybenzamine is bound, the receptor has to be internalized and recycled and the body must make new ones.",
- quote:"I have another example over here of orthostatic drug phenoxbenzammine. This is an irreversible antagonist, non-competitive, insurmountable. So what kind of bones does it form? Covalent.",
+ quote:"And phenoxbenzamine is an irreversible covalent bond forming drug.",
  reading:[{src:'Katzung 16e, Ch. 2', sec:'Competitive & Irreversible Antagonists (p. 6 of 18)', t:'Phenoxybenzamine is an irreversible α-adrenoceptor antagonist; its blockade is maintained even against very large amounts of catecholamine and cannot be reversed. Benzodiazepines such as diazepam act as allosteric modulators, and drugs acting at an allosteric site are often reversible.'}],
  cite:"Pharmacodynamics-Day_2_2026s copy.pdf slides ~15, ~18; transcript 9/23"},
 
@@ -212,7 +212,7 @@ QUESTIONS.push(
   {t:"Phenoxybenzamine has higher affinity than prazosin", correct:true, why:"Phenoxybenzamine forms covalent bonds and does not come off; prazosin forms weaker bonds and comes off."},
   {t:"In orthosteric interactions, two drugs can be bound at the same time", correct:false, why:"Orthosteric binding is one or the other; only one drug occupies the pocket at a time."}],
  teach:"Orthosteric drugs compete for the same binding pocket, so only one can be bound at a time. Allosteric drugs bind a different site and change the orthosteric pocket. The irreversible (covalent) antagonist phenoxybenzamine has the highest affinity; reversible prazosin binds and comes off.",
- quote:"Pnoxbenzammine has higher affinity than prazosin. ... So which of these can have the highest affinity? Pbenzamine, right? So that would be our correct answer.",
+ quote:"So which drug has the greatest affinity? The one that forms covalent bond all day long, which are, are irreversible drugs, right?",
  reading:[{src:'Katzung 16e, Ch. 2', sec:'Competitive & Irreversible Antagonists (p. 6 of 18)', t:'Allosteric modulators bind a site separate from the orthosteric site, so they do not compete for the orthosteric pocket. Phenoxybenzamine is an irreversible antagonist whose block agonists cannot surmount, whereas a competitive antagonist can be displaced by high agonist concentrations.'}],
  cite:"Pharmacodynamics-Day_2_2026s copy.pdf slides ~18–~20, ~37–~38; transcript 9/23"},
 
@@ -269,7 +269,7 @@ QUESTIONS.push(
   {t:"β1 receptor", correct:false, why:"The β1 receptor is the receptor, not a second messenger."},
   {t:"PLC", correct:false, why:"Phospholipase C is the effector that makes IP3."}],
  teach:"Second messengers are small molecules created, degraded or moved by an enzyme, ion channel or transport protein (the effector). They diffuse near their site of synthesis and convey information to many targets. Examples: cAMP, PKA, protein kinase C (PKC), IP3 and Ca++; the receptor, adenylate cyclase and a calcium channel are not second messengers.",
- quote:"So on your exam, if I ask which of these is an example of a second messenger camp. If there is camp at PKA, then select all, right? But you shouldn't be picking the receptor or the AC or the calcium channel.",
+ quote:"If there is camp at PKA, then select all, right? But you shouldn't be picking the receptor or the AC or the calcium channel.",
  note:'The textbook defines second messengers as nonprotein chemical mediators (cAMP, Ca++, IP3, diacylglycerol) and describes the cAMP-dependent protein kinase (PKA) as the kinase that cAMP stimulates rather than as a second messenger; the slide list includes PKA and PKC among second messengers, and the exam is written from the lecture.',
  reading:[{src:'Katzung 16e, Ch. 2', sec:'Signaling Mechanisms & Drug Action; G Proteins & Second Messengers (p. 7, 10 of 18)', t:'Second messengers are nonprotein chemical mediators inside the cell; named examples are cAMP, calcium ion and the phosphoinositides. Adenylyl cyclase (AC) is the effector enzyme that converts ATP to cAMP, and phospholipase C (PLC) is the effector that produces IP3.'}],
  cite:"Pharmacodynamics-Day_2_2026s copy.pdf slide ~29; transcript 9/23"},
@@ -353,7 +353,7 @@ QUESTIONS.push(
   {t:"Both leave cAMP at 50%", correct:false, why:"An inverse agonist has negative efficacy and shuts off active receptors."},
   {t:"Inverse agonist: rises to 100%; antagonist: to zero", correct:false, why:"Raising the signal is positive efficacy (agonist), not inverse agonism."}],
  teach:"An inverse agonist has highest affinity for inactive receptors and negative efficacy, so it shuts off receptors that are already active. A neutral antagonist has equal affinity for active and inactive states and zero efficacy; it only prevents agonists from binding and keeps receptors wherever they are.",
- quote:"So if I give an inverse agonist, I'm going to bring the production of camp to zero. Because it's going to shut it off. But if I give you a competitive antagonist, say it's at 50%, because it's not changing the activity of the receptors",
+ quote:"So if I give an inverse agonist, I'm going to bring the production of camp to zero. But if I give you a competitive antagonist, say it's at 50%, because it's not changing the activity of the receptors, it's just binding and staying bound, so they have affinity but zero efficacy.",
  reading:[{src:'Katzung 16e, Ch. 2', sec:'Competitive & Irreversible Antagonists (p. 5 of 18)', t:'A neutral antagonist binds receptors without activating them and leaves the basal level of receptor activity unchanged. An inverse agonist also reduces receptor activity below the basal level observed in the absence of any agonist.'}],
  cite:"Pharmacodynamics-Day_2_2026s copy.pdf slides ~35–~38; transcript 9/23"},
 
@@ -436,7 +436,7 @@ QUESTIONS.push(
   {t:"Drug B has greater efficacy than Drug A does", correct:false, why:"A binding curve measures receptor occupancy (affinity), not efficacy."},
   {t:"The two drugs have equal Kd values", correct:false, why:"Different concentrations at 50% bound mean different Kd values."}],
  teach:"On a binding curve, Bmax is 100% of the receptors bound and Kd is the concentration at 50% bound, read on the x-axis. The smaller the Kd, the greater the affinity of the drug for the receptor: it requires the least drug to bind the receptors.",
- quote:"The Kd (Coefficient of Dissociation) is the dose required to bind ... The smaller the Kd is, the greater the affinity of a drug for the receptor will be. Kd will be reflected in the x-axis.",
+ quote:"The smaller the Kd is, the greater the affinity of a drug for the receptor will be. Kd will be reflected in the x-axis.",
  reading:[{src:'Katzung 16e, Ch. 2', sec:'Concentration-Effect Curves & Receptor Binding of Agonists; Figure 2–1 (p. 4 of 18)', t:'On a binding curve, Bmax is the total concentration of receptor sites and Kd is the concentration at which binding is half-maximal. Kd characterizes affinity reciprocally, so the drug that reaches half-maximal binding at the lower concentration has the lower Kd and higher affinity.'}],
  cite:"Pharmacodynamics-Day_2_2026s copy.pdf slide ~50"},
 
@@ -449,7 +449,6 @@ QUESTIONS.push(
   {t:"M1 (gut)", correct:false, why:"1 mM is the largest Kd, so M1 is where affinity is lowest."},
   {t:"Equal at all three", correct:false, why:"The three Kd values differ, so affinity differs."}],
  teach:"Compare affinity by comparing Kd values after putting them in the same units: nM is smaller than μM, which is smaller than mM. The smallest Kd is the highest affinity.",
- quote:"Receptor Site ... β1 (Heart) ... β2 (Vasculature) ... M1 (Gut) ... Drug A (KD) 250 nM, 30 μM, 1 mM",
  note:"Drug B's column (100 nM, then 250 and 20 with units that are not legible in the extracted text) is not used.",
  reading:[{src:'Katzung 16e, Ch. 2', sec:'Clinical Selectivity: Beneficial Versus Toxic Effects of Drugs; Case Study Answer (p. 17–18 of 18)', t:'Selectivity is measured by comparing the binding affinities of a drug for different receptors. The receptor with the lowest Kd is the one the drug binds with the greatest affinity.'}],
  cite:"Pharmacodynamics-Day_2_2026s copy.pdf slide ~51"},
@@ -464,7 +463,6 @@ QUESTIONS.push(
   {t:"The higher the Kd, the greater the affinity of the drug", correct:false, why:"The smaller the dissociation constant (Kd), the greater the affinity."},
   {t:"Potency depends on affinity, efficacy and the tissue", correct:true, why:"Potency depends on the drug's affinity, its efficacy and the tissue (site of action)."}],
  teach:"Potency is determined by affinity (Kd), efficacy (stimulus) and the tissue or site of action. Norepinephrine at β1 in the heart produces tachycardia; the tissue's receptors and signaling determine the response.",
- quote:"94% chose pothesis of a drugs depending on the affinity, the efficacy, and the receptor which binds you, right? So that's gonna be the correct answer for us.",
  note:"The spoken answer names 'the receptor which binds'; the slide names 'Tissue (Site of Action)'. The option uses the slide wording. The textbook states that potency depends on affinity (Kd) and on the efficiency of receptor–effector coupling and treats maximal efficacy as a separate parameter; the exam is written from the lecture, which lists affinity, efficacy and tissue.",
  reading:[{src:'Katzung 16e, Ch. 2', sec:'Relation Between Drug Dose & Clinical Response — Potency; Maximal efficacy (p. 15 of 18)', t:'Potency is the concentration (EC50) or dose (ED50) that produces 50% of maximal effect. It depends partly on receptor affinity for the drug (Kd) and partly on how efficiently the drug–receptor interaction is coupled to response in the responding tissue.'}],
  cite:"Pharmacodynamics-Day_2_2026s copy.pdf slides ~52–~54; transcript 9/23"},
