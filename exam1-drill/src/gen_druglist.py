@@ -108,7 +108,7 @@ READING = {
     _B1B2],
  'moa-diazepam': [
     R(K2, 'Competitive & Irreversible Antagonists — allosteric modulators (printout p. 6/18)',
-      'Benzodiazepine drugs like diazepam bind to an allosteric site on ion channels that are physiologically activated by the neurotransmitter γ-aminobutyric acid (GABA); an allosteric site is a site on the receptor separate from the classical orthosteric site bound by the endogenous agonist. The chapter calls benzodiazepines positive allosteric modulators of GABA receptors because they potentiate, rather than inhibit, the ability of the orthosteric agonist GABA to increase channel conductance. A useful feature of this mechanism is that benzodiazepines have little activating effect on their own, which contributes to their relative safety in overdose unless combined with other sedating drugs.')],
+      'Benzodiazepine drugs like diazepam bind to an allosteric site on ion channels that are physiologically activated by the neurotransmitter γ-aminobutyric acid (GABA); an allosteric site is a site on the receptor separate from the classical orthosteric site bound by the endogenous agonist. Benzodiazepines are termed positive allosteric modulators of GABA receptors because they potentiate, rather than inhibit, the ability of the orthosteric agonist GABA to increase channel conductance. A useful feature of this mechanism is that benzodiazepines have little activating effect on their own, which contributes to their relative safety in overdose unless combined with other sedating drugs.')],
  'moa-albuterol': [_B2, _PARTIAL],
  'moa-varenicline': [
     R(K6, 'Autonomic Receptors, Table 6-2; Postsynaptic Regulation (printout p. 11, 16/20)',
