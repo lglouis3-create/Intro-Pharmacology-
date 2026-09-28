@@ -46,7 +46,7 @@ CLASS = {
  'inverse': ('Competitive & Irreversible Antagonists',
              'An inverse agonist binds the receptor and lowers its activity below the basal level seen with no agonist present, rather than merely blocking the agonist.'),
  'allosteric': ('Competitive & Irreversible Antagonists — allosteric modulators',
-             'Diazepam and the other benzodiazepines bind an allosteric site, not the site GABA binds, and increase the channel opening that GABA produces; on their own they have little effect.'),
+             'Diazepam binds the GABA receptor at a second site, not where GABA binds. On its own it does little; when GABA is also bound, it makes GABA open the channel more.'),
 }
 # What each receptor does when a ligand binds it (Katzung 16e Ch. 6, Table 6-2).
 RECEPTOR = {
@@ -77,14 +77,7 @@ def reading_for(cls, recs):
     return out[:2] if cls else out[:2]
 
 NOTE = {
- 'moa-diazepam': 'Two names for one mechanism. The Exam 1 drug list calls diazepam a GABA receptor allosteric agonist. Katzung Ch. 2 calls it a positive allosteric modulator: it binds a second site on the receptor, does little by itself, and makes the receptor respond more strongly to GABA. On the exam, use the drug list\u2019s name.',
-}
-# Figure shown with the explanation, by concept. The four-panel figure sets
-# agonist, reversible antagonist, irreversible antagonist and allosteric
-# modulator side by side; it belongs on the drugs that are one of each.
-FG = {
- 'moa-diazepam': 'classes', 'moa-phenoxybenzamine': 'classes', 'irreversible-drug': 'classes',
- 'moa-prazosin': 'classes', 'moa-phenylephrine': 'classes',
+ 'moa-diazepam': 'Two names for one mechanism. The Exam 1 drug list calls diazepam a GABA receptor allosteric agonist. Katzung Ch. 2 calls it a positive allosteric modulator: it binds a second site on the receptor, does little by itself, and makes the receptor respond more strongly to GABA. On the exam, use the drug list’s name.',
 }
 
 def lc(m):
@@ -114,11 +107,9 @@ qs = []
 n = 0
 def add(q):
     global n
-    q = dict(id=f'DL1-{n+1:03d}', lecture='DL1', prof='Gottlieb', tier='new', topic='DL1', skill='drug', source='slide', cite=CITE, **q)
+    q = dict(id=f'DL1-{n+1:03d}', lecture='DL1', prof='Gottlieb', tier='new', topic='DL1', skill='drug', source='slide', cite=CITE, fg='classes', **q)
     if q['concept'] in NOTE:
         q['note'] = NOTE[q['concept']]
-    if q['concept'] in FG:
-        q['fg'] = FG[q['concept']]
     opts = q['options']
     right = [o for o in opts if o['correct']]
     L = max(len(o['t']) for o in opts)

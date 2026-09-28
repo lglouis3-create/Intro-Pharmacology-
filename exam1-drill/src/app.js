@@ -521,7 +521,7 @@ function vTerms() {
 }
 
 /* ---------- static pages ---------- */
-function vRef() { $('#view').innerHTML = `<div class="tablewrap">${REFERENCE_HTML}</div>`; stackTables($('#view')); }
+function vRef() { $('#view').innerHTML = `<div class="tablewrap">${REFERENCE_HTML.replace(/<!--FIG:([\w-]+)-->/g, (m, k) => FIG(k))}</div>`; stackTables($('#view')); }
 function vTell() {
   $('#view').innerHTML = `<div class="tablewrap">${TELL_HTML}</div>
     <div class="row" style="margin-top:12px"><button class="btn" id="tellq">Drill every tell-apart question</button></div>`;

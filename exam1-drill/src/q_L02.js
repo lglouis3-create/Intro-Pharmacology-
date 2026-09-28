@@ -78,7 +78,7 @@ QUESTIONS.push(
   {t:"The α subunit activates adenylate cyclase (AC)", correct:false, why:"Activating AC makes more cAMP; it propagates the signal rather than ending it."}],
  teach:"Every pathway has a way forward and a way backward. G protein signaling stops when GTP is hydrolyzed to GDP (naturally, or faster with the RGS protein), the subunits reassociate and the agonist unbinds. The PDE enzyme lowers cAMP, which decreases amplification and the physiological response.",
  quote:"I have enzymes over here, for example, that the phosphorusase enzyme, the PDE, is gonna come and chew up that camp, and if I don't have camp, I can't activate the next one and the next one and the next one, and that's going to decrease the second messenger signing.",
- note:'The textbook states that a GTP-bound Gs protein can remain active for tens of seconds after a norepinephrine encounter lasting only tens of milliseconds, so it treats the rate of GTP hydrolysis, not agonist unbinding, as the determinant of signal duration; the lecture lists agonist unbinding among the reversal steps, and the exam is written from the lecture.',
+ note:'Lecture and textbook differ. The lecture lists the agonist coming off the receptor as one of the steps that ends the signal. The textbook says the G protein stays active for seconds after the agonist has left, so what ends the signal is the G protein splitting its GTP. Use the lecture list on the exam.',
  reading:[{src:'Katzung 16e, Ch. 2', sec:'G Proteins & Second Messengers; Well-Established Second Messengers — cAMP (p. 10, 13 of 18)', t:'G proteins hydrolyze GTP to GDP, and this hydrolysis inactivates the G protein. cAMP itself is degraded to 5′-AMP by cyclic nucleotide phosphodiesterases (PDEs).'}],
  cite:"Pharmacodynamics-Day_2_2026s copy.pdf slides ~3, ~29; transcript 9/23"},
 
@@ -270,7 +270,7 @@ QUESTIONS.push(
   {t:"PLC", correct:false, why:"Phospholipase C is the effector that makes IP3."}],
  teach:"Second messengers are small molecules created, degraded or moved by an enzyme, ion channel or transport protein (the effector). They diffuse near their site of synthesis and convey information to many targets. Examples: cAMP, PKA, protein kinase C (PKC), IP3 and Ca++; the receptor, adenylate cyclase and a calcium channel are not second messengers.",
  quote:"If there is camp at PKA, then select all, right? But you shouldn't be picking the receptor or the AC or the calcium channel.",
- note:'The textbook defines second messengers as nonprotein chemical mediators (cAMP, Ca++, IP3, diacylglycerol) and describes the cAMP-dependent protein kinase (PKA) as the kinase that cAMP stimulates rather than as a second messenger; the slide list includes PKA and PKC among second messengers, and the exam is written from the lecture.',
+ note:'Lecture and textbook differ. The slide lists PKA and PKC as second messengers. The textbook counts only the small non-protein molecules (cAMP, calcium, IP3, DAG) as second messengers and calls PKA the enzyme that cAMP switches on. Use the slide list on the exam.',
  reading:[{src:'Katzung 16e, Ch. 2', sec:'Signaling Mechanisms & Drug Action; G Proteins & Second Messengers (p. 7, 10 of 18)', t:'Second messengers are nonprotein chemical mediators inside the cell; named examples are cAMP, calcium ion and the phosphoinositides. Adenylyl cyclase (AC) is the effector enzyme that converts ATP to cAMP, and phospholipase C (PLC) is the effector that produces IP3.'}],
  cite:"Pharmacodynamics-Day_2_2026s copy.pdf slide ~29; transcript 9/23"},
 
@@ -463,7 +463,7 @@ QUESTIONS.push(
   {t:"The higher the Kd, the greater the affinity of the drug", correct:false, why:"The smaller the dissociation constant (Kd), the greater the affinity."},
   {t:"Potency depends on affinity, efficacy and the tissue", correct:true, why:"Potency depends on the drug's affinity, its efficacy and the tissue (site of action)."}],
  teach:"Potency is determined by affinity (Kd), efficacy (stimulus) and the tissue or site of action. Norepinephrine at β1 in the heart produces tachycardia; the tissue's receptors and signaling determine the response.",
- note:"The spoken answer names 'the receptor which binds'; the slide names 'Tissue (Site of Action)'. The option uses the slide wording. The textbook states that potency depends on affinity (Kd) and on the efficiency of receptor–effector coupling and treats maximal efficacy as a separate parameter; the exam is written from the lecture, which lists affinity, efficacy and tissue.",
+ note:"Three versions of this list. The slide: affinity, efficacy, tissue (site of action). In class: affinity, efficacy, the receptor. The textbook: affinity and how well the receptor is coupled to its response, with efficacy kept as a separate property. Use the slide wording on the exam.",
  reading:[{src:'Katzung 16e, Ch. 2', sec:'Relation Between Drug Dose & Clinical Response — Potency; Maximal efficacy (p. 15 of 18)', t:'Potency is the concentration (EC50) or dose (ED50) that produces 50% of maximal effect. It depends partly on receptor affinity for the drug (Kd) and partly on how efficiently the drug–receptor interaction is coupled to response in the responding tissue.'}],
  cite:"Pharmacodynamics-Day_2_2026s copy.pdf slides ~52–~54; transcript 9/23"},
 

@@ -344,7 +344,7 @@ QUESTIONS.push(
   {t:'A is a full agonist like drug B', correct:false, why:'A does not reach 100%; being furthest left reflects affinity, not efficacy.'}],
  teach:'Affinity is read left–right: the curve furthest left (A) has the smallest Kd and the highest affinity. Efficacy is read up–down: B has the highest and D the lowest. A full agonist reaches 100% of the maximal response, so B is the full agonist and A, C, D and E are partial agonists.',
  quote:'The smallest KD is gonna be further to the left. … If you can’t get your 100%, you’re not a full agonist, right?',
- note:'In the transcript the professor says A has "the lowest affinity" in the same sentence as "the smallest KD is gonna be further to the left"; the poll asked for the highest affinity and A was keyed, so "lowest" is treated as a slip.',
+ note:'In class he said A has "the lowest affinity" in the same breath as "the smallest Kd is further to the left". The poll asked for the highest affinity and A was the keyed answer, so "lowest" was a slip of the tongue.',
  cite:'transcript 9/24 (in-class poll; figure not in deck text)',
  reading:[{src:'Katzung 16e, Ch. 2', sec:'Partial Agonists; Dose & Response in Patients', t:'Partial agonists produce a lower response at full receptor occupancy than full agonists, and this is not due to decreased affinity for the receptor. A curve can lie furthest left, indicating the highest affinity, while plateauing below the full agonist, indicating a partial agonist.'}]},
 
@@ -372,7 +372,7 @@ QUESTIONS.push(
  teach:'When tissue and affinity are equal and EC50 is the same, efficacy breaks the tie: the drug with the higher maximal response is the more potent. The deck summarizes this as equal ED50/EC50 with higher efficacy giving higher potency, while potency is not the same as efficacy.',
  quote:'They all require the same dose to produce that 50%. So the tiebreak over here is gonna be the efficacy.',
  cite:'Pharmacodynamics-Day_3_2026s.pdf slide ~27; transcript 9/24',
- note:'Katzung 16e, Ch. 2 defines potency strictly as the EC50 or ED50 (position on the dose axis) and maximal efficacy as a separate parameter (the limit on the response axis); by that definition two drugs with equal EC50 are equally potent regardless of Emax. The deck (slide ~27, "equal ED50/EC50, ↑Efficacy = ↑Potency") and the transcript key "greater efficacy" as the reason A is more potent. The exam is written from the lecture, so this item keys efficacy.',
+ note:'Lecture and textbook differ. The lecture: when two drugs have the same EC50, the one with the higher maximal effect is the more potent. The textbook: potency is the EC50 alone, so equal EC50 means equal potency, and a higher maximal effect is called greater efficacy, not greater potency. Use the lecture rule on the exam.',
  reading:[{src:'Katzung 16e, Ch. 2', sec:'Dose & Response in Patients — Potency; Receptor-Effector Coupling & Spare Receptors', t:'Potency depends partly on affinity (Kd) and partly on how efficiently the drug-receptor interaction is coupled to response, which separates a full agonist from a partial agonist of equal affinity. By this definition, drugs with identical EC50 values are equally potent whatever their maximal efficacy.'}]},
 
 {id:'L03-029', fg:'partial', lecture:'L03', prof:'Gottlieb', tier:'new', topic:'L03', sub:'terms', skill:'tell',
@@ -451,7 +451,7 @@ QUESTIONS.push(
   {t:'Aripiprazole reaches 100% alone', correct:false, why:'Aripiprazole alone has an Emax of 60%.'}],
  teach:'Dopamine (Emax 100%) is a full agonist and aripiprazole (Emax 60%) is a D2 partial agonist used for schizophrenia and bipolar disorder; the pair is shown as a full agonist competing with a partial agonist, with different affinity and efficacy. A partial agonist cannot reach 100% of the system’s max response and can behave like an agonist or an antagonist depending on the physiological state.',
  cite:'Pharmacodynamics-Day_3_2026s.pdf slides ~53–~54, ~57, ~63',
- note:'Not covered in the 9/24 transcript (deferred to the next lecture). The manic-patient slides do not state in text what level the combined response reaches, so this item tests only what the slide text states.',
+ note:'This slide was pushed to the next lecture, so there is no transcript for it yet. The question tests only what the slide text states.',
  reading:[{src:'Katzung 16e, Ch. 2', sec:'Partial Agonists (Figure 2–4)', t:'Because a partial agonist cannot cause a maximal response even when it saturates all receptors, it competitively inhibits the responses produced by a full agonist at the same receptor. The two differ in efficacy: the partial agonist produces a lower maximal response at full occupancy.'}]},
 
 {id:'L03-035', lecture:'L03', prof:'Gottlieb', tier:'new', topic:'L03', sub:'pa', skill:'recall',

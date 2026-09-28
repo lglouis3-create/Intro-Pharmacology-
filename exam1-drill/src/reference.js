@@ -2,6 +2,18 @@ const REFERENCE_HTML = `
 <h2>Reference</h2>
 <p class="sub">Tables the questions return to. Nothing here is scored. Slide numbers marked ~ were counted from the deck text and may be off by one or two.</p>
 
+<h3>Drug classes at a receptor</h3>
+<!--FIG:classes-->
+<table class="reftab"><thead><tr><th>Class</th><th>At the binding site</th><th>Response</th><th>Drug-list examples</th></tr></thead><tbody>
+<tr><td>Full agonist</td><td>Binds the agonist pocket and activates the receptor</td><td>Rises to the full maximum</td><td>Norepinephrine, epinephrine, phenylephrine, acetylcholine, histamine</td></tr>
+<tr><td>Partial agonist</td><td>Binds the same pocket and activates it, but less</td><td>Rises, but plateaus below a full agonist even with every receptor occupied</td><td>Albuterol, pindolol, varenicline</td></tr>
+<tr><td>Reversible (competitive) antagonist</td><td>Binds the pocket without activating it, then comes off; more agonist wins the pocket back</td><td>Stays at basal; the agonist curve shifts right with the same maximum</td><td>Prazosin, metoprolol, tropicamide, diphenhydramine</td></tr>
+<tr><td>Irreversible antagonist</td><td>Binds the pocket and stays (covalent); agonist cannot displace it</td><td>Stays at basal; the agonist's maximum falls until new receptors are made</td><td>Phenoxybenzamine (the only one on the list)</td></tr>
+<tr><td>Inverse agonist</td><td>Binds the pocket and pushes the receptor to its inactive state</td><td>Falls below basal</td><td>Loratadine</td></tr>
+<tr><td>Allosteric modulator</td><td>Binds a second site, not the agonist pocket; changes what the agonist does there</td><td>Larger (or smaller) than the agonist alone would give; little effect by itself</td><td>Diazepam</td></tr>
+</tbody></table>
+<p class="sub">Classes from Katzung 16e Ch. 2 (agonists, partial agonists, competitive and irreversible antagonists, inverse agonists, allosteric modulators); examples from Exam_1_Drug_List_2026.pdf, Table 1.</p>
+
 <h3>Exam 1 drug list</h3>
 <table class="reftab"><thead><tr><th>Drug</th><th>Mechanism of action</th><th>Receptor family</th></tr></thead><tbody>
 <tr><td>Norepinephrine</td><td>α1, α2, β1 and β2 agonist</td><td>Adrenergic</td></tr>
