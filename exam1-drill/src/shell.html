@@ -28,6 +28,7 @@ html,body{margin:0;background:var(--bg);color:var(--ink);
 header{position:sticky;top:0;z-index:5;background:var(--panel);border-bottom:1px solid var(--line)}
 .bar{max-width:880px;margin:0 auto;padding:10px 16px;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
 .bar h1{font-size:15px;margin:0 10px 0 0;white-space:nowrap}
+.bar h1 .stamp{margin-left:6px}
 nav{display:flex;flex-wrap:wrap;gap:4px}
 nav button{border:1px solid var(--line);background:var(--chip);color:var(--ink);padding:5px 10px;border-radius:6px;font-size:14px;cursor:pointer}
 nav button.on{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
@@ -74,6 +75,23 @@ th{background:var(--chip)}
 .grid button.ans{background:var(--chip)} .grid button.cur{border-color:var(--accent)} .grid button.flag{outline:2px solid var(--warn)}
 select,input[type=text],input[type=number]{font-size:15px;padding:6px 8px;border:1px solid var(--line);border-radius:6px;background:var(--panel);color:var(--ink)}
 .empty{color:var(--muted);padding:12px 0}
+.stamp{font-weight:400;font-size:12px;color:var(--muted)}
+.stamp a{color:var(--accent)}
+.bar-meter.seen{display:block;margin-top:5px;max-width:220px;height:5px}
+.reading{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:8px;padding:10px 12px;margin:10px 0;font-size:15px}
+.reading h4{margin:0 0 4px;font-size:13px;color:var(--accent);text-transform:uppercase;letter-spacing:.03em}
+.reading .cite{margin-top:4px;margin-bottom:6px}
+.kbd{margin-top:10px;margin-bottom:0}
+@media (max-width:560px){
+  .kbd{display:none}
+  table.stack thead{display:none}
+  table.stack,table.stack tbody,table.stack tr,table.stack td{display:block;width:100%}
+  table.stack tr{border:1px solid var(--line);border-radius:8px;margin:0 0 10px;padding:4px 0;background:var(--panel)}
+  table.stack td{border:0;border-top:1px solid var(--line);padding:6px 10px}
+  table.stack td:first-child{border-top:0}
+  table.stack td::before{content:attr(data-label);display:block;font-size:11px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.03em;margin-bottom:2px}
+  table.stack td:empty{display:none}
+}
 @media (max-width:560px){ .why{margin-left:8px} .bar h1{width:100%} }
 </style>
 </head>

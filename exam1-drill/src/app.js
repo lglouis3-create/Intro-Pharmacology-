@@ -13,6 +13,34 @@ const LECT = {}; COURSE.lectures.forEach(l => { LECT[l.id] = l; });
 const SKILL = {}; COURSE.skills.forEach(s => { SKILL[s.id] = s; });
 const TOPIC = {}; TOPICS.forEach(t => { TOPIC[t.id] = t; });
 const lectureOf = q => LECT[q.lecture] || {};
+/* Slide ranges are stored as "~7–~12" (every number marked approximate);
+   print the mark once per range. */
+const fmtCite = s => String(s == null ? '' : s).replace(/–~/g, '–');
+const BUILD = typeof BUILD_INFO === 'undefined' ? {} : BUILD_INFO;
+const fmtDate = iso => { const d = new Date(iso); return isNaN(d) ? '' : d.toLocaleDateString(undefined, {month: 'short', day: 'numeric', year: 'numeric'}); };
+function daysToExam() {
+  const ex = COURSE.exams.find(e => e.id === COURSE.activeExam) || COURSE.exams[0];
+  if (!ex || !ex.when) return null;
+  const ms = new Date(ex.when) - Date.now();
+  return Math.ceil(ms / (24 * 3600 * 1000));
+}
+function examCountdown() {
+  const d = daysToExam();
+  if (d == null) return '';
+  if (d < 0) return 'Exam day has passed.';
+  if (d === 0) return 'Exam day is today.';
+  return `${d} day${d === 1 ? '' : 's'} until the exam.`;
+}
+/* On a phone a wide table becomes a stack of cards: each cell carries its
+   column heading as a label (CSS shows it under 560px). */
+function stackTables(root) {
+  root.querySelectorAll('table').forEach(t => {
+    const heads = [...t.querySelectorAll('thead th')].map(th => th.textContent.trim());
+    if (!heads.length) return;
+    t.classList.add('stack');
+    t.querySelectorAll('tbody tr').forEach(tr => [...tr.children].forEach((td, i) => { if (heads[i]) td.setAttribute('data-label', heads[i]); }));
+  });
+}
 const examOf = q => lectureOf(q).exam;
 
 /* ---------- storage: localStorage with an in-memory fallback ---------- */
@@ -88,7 +116,8 @@ function vTopics() {
   const ex = active(), pool = examPool();
   const seen = seenCount(pool), a = acc(pool);
   let h = `<h2>${esc(COURSE.short)}</h2>
-  <p class="sub">${esc(ex.name)} · ${esc(ex.date)} · ${ex.minutes ? ex.minutes + ' minutes allotted' : ''}${ex.questions ? ' · ' + ex.questions + ' questions' : ''}. ${esc(ex.blurb)}</p>
+  <p class="sub">${esc(ex.name)} · ${esc(ex.date)} · ${ex.minutes ? ex.minutes + ' minutes allotted' : ''}${ex.questions ? ' · ' + ex.questions + ' questions' : ''}. ${esc(ex.blurb)} <b>${esc(examCountdown())}</b></p>
+  <p class="sub stamp">Last updated ${esc(fmtDate(BUILD.built))}${BUILD.changelog && BUILD.changelog.length ? ' — ' + esc(BUILD.changelog[0].items[0] || '') + ' <a href="#" id="whatsnew">What changed</a>' : ''}</p>
   <div class="card"><div class="row" style="justify-content:space-between">
    <div><b>${pool.length}</b> questions in the bank · <b>${seen}</b> seen · accuracy <b>${a.pct == null ? '—' : a.pct + '%'}</b></div>
    <div class="row"><button class="btn" id="due">Study what is due</button><button class="btn ghost" id="all">One pass, all questions</button></div></div>
@@ -99,20 +128,25 @@ function vTopics() {
     const tq = pool.filter(q => q.topic === t.id && (FILT.skill === 'all' || q.skill === FILT.skill));
     if (!tq.length) return;
     const ta = acc(tq);
-    h += `<div class="card"><div class="topicrow"><span><b>${esc(t.name)}</b><small>${esc(t.cite || '')}</small></span>
-      <span class="row"><small>${seenCount(tq)}/${tq.length} seen · ${ta.pct == null ? '—' : ta.pct + '%'}</small>
+    const tseen = seenCount(tq);
+    h += `<div class="card"><div class="topicrow"><span><b>${esc(t.name)}</b><small>${esc(fmtCite(t.cite))}</small>
+      <span class="bar-meter seen"><span style="width:${Math.round(100 * tseen / tq.length)}%"></span></span></span>
+      <span class="row"><small>${tseen}/${tq.length} seen · ${ta.pct == null ? '—' : ta.pct + '%'}</small>
       <button class="btn ghost" data-topic="${t.id}">Drill</button></span></div>`;
     (t.subs || []).forEach(s => {
       const sq = tq.filter(q => q.sub === s.id);
       if (!sq.length) return;
       const sa = acc(sq);
-      h += `<div class="topicrow"><span>${esc(s.name)}<small>${sq.length} questions · ${esc(s.cite || '')}</small></span>
-        <span class="row"><small>${sa.pct == null ? '—' : sa.pct + '%'}</small><button class="btn ghost" data-topic="${t.id}" data-sub="${s.id}">Drill</button></span></div>`;
+      const sseen = seenCount(sq);
+      h += `<div class="topicrow"><span>${esc(s.name)}<small>${sq.length} questions · ${esc(fmtCite(s.cite))}</small>
+        <span class="bar-meter seen"><span style="width:${Math.round(100 * sseen / sq.length)}%"></span></span></span>
+        <span class="row"><small>${sseen}/${sq.length} seen · ${sa.pct == null ? '—' : sa.pct + '%'}</small><button class="btn ghost" data-topic="${t.id}" data-sub="${s.id}">Drill</button></span></div>`;
     });
     h += '</div>';
   });
   $('#view').innerHTML = h;
   $('#due').onclick = () => startQuiz(pool, 'Due and unseen', 'sr');
+  const wn = $('#whatsnew'); if (wn) wn.onclick = e => { e.preventDefault(); go('data'); };
   $('#all').onclick = () => startQuiz(shuffle(pool), 'All questions, one pass', 'pass');
   document.querySelectorAll('[data-sk]').forEach(c => c.onclick = () => { FILT.skill = c.dataset.sk; vTopics(); });
   document.querySelectorAll('[data-topic]').forEach(b => b.onclick = () => {
@@ -166,6 +200,12 @@ function teachHTML(t) {
   if (Array.isArray(t)) return t.map(s => `<h4>${esc(s.h)}</h4><div>${esc(s.t)}</div>`).join('');
   return esc(t);
 }
+/* Textbook notes: what the assigned reading says about the concept. */
+function readingHTML(r) {
+  if (!r) return '';
+  const list = Array.isArray(r) ? r : [r];
+  return `<div class="reading"><h4>From the textbook</h4>${list.map(x => `<div>${esc(x.t)}</div><div class="cite">${esc(x.src)}${x.sec ? ' — ' + esc(x.sec) : ''}</div>`).join('')}</div>`;
+}
 function metaLine(q) {
   const t = TOPIC[q.topic], sk = SKILL[q.skill];
   return `${esc(t ? t.name : q.topic)}${sk ? ' · ' + esc(sk.short) : ''}${q.multi ? ' · select all' : ''}`;
@@ -196,13 +236,14 @@ function renderQ() {
     if (q.type === 'match' && q.pairs) h += q.pairs.filter(p => p.why).map(p => `<div class="why"><b>${esc(p.l)}</b>: ${esc(p.why)}</div>`).join('');
     if (q.teach) h += `<div class="teach">${teachHTML(q.teach)}</div>`;
     if (q.note) h += `<div class="note">${esc(q.note)}</div>`;
+    h += readingHTML(q.reading);
     if (q.quote) h += `<div class="quote">“${esc(q.quote)}”</div>`;
-    h += `<div class="cite">${esc(q.cite || '')}</div>`;
+    h += `<div class="cite">${esc(fmtCite(q.cite))}</div>`;
     if (Q.ok) h += `<div class="row" style="margin-top:12px"><span class="meta" style="margin:0">How sure were you?</span>
       <button class="btn" data-c="sure">Knew it</button><button class="btn ghost" data-c="unsure">Not sure</button><button class="btn ghost" data-c="guess">I guessed</button></div>`;
     else h += `<div class="row" style="margin-top:12px"><button class="btn" data-c="wrong">Next</button></div>`;
   }
-  h += '</div>';
+  h += `<div class="meta kbd">Keys: A–E or 1–5 pick an option · Enter checks or continues</div></div>`;
   $('#view').innerHTML = h;
   document.querySelectorAll('[data-o]').forEach(b => b.onclick = () => pick(+b.dataset.o));
   document.querySelectorAll('select[data-l]').forEach(s => s.onchange = () => { Q.mpick = Q.mpick || {}; Q.mpick[+s.dataset.l] = s.value; });
@@ -405,8 +446,9 @@ function examResult() {
       q.options.forEach((o, oi) => { if (o.correct || pickedSet.has(oi)) h += `<div class="opt ${o.correct ? 'right' : 'wrong'}" style="cursor:default"><span>${esc(o.t)}</span></div><div class="why">${esc(o.why || '')}</div>`; });
       if (q.teach) h += `<div class="teach">${teachHTML(q.teach)}</div>`;
       if (q.note) h += `<div class="note">${esc(q.note)}</div>`;
+      h += readingHTML(q.reading);
     }
-    h += `<div class="cite">${esc(q.cite || '')}</div></div>`;
+    h += `<div class="cite">${esc(fmtCite(q.cite))}</div></div>`;
   });
   $('#view').innerHTML = h;
   $('#newx').onclick = () => { EX = null; vExam(); };
@@ -414,7 +456,7 @@ function examResult() {
 }
 
 /* ---------- static pages ---------- */
-function vRef() { $('#view').innerHTML = `<div class="tablewrap">${REFERENCE_HTML}</div>`; }
+function vRef() { $('#view').innerHTML = `<div class="tablewrap">${REFERENCE_HTML}</div>`; stackTables($('#view')); }
 function vTell() {
   $('#view').innerHTML = `<div class="tablewrap">${TELL_HTML}</div>
     <div class="row" style="margin-top:12px"><button class="btn" id="tellq">Drill every tell-apart question</button></div>`;
@@ -425,6 +467,7 @@ function vTell() {
     td.onclick = e => { e.preventDefault(); startQuiz([byId[td.dataset.q]], 'Tell apart', 'pass'); };
   });
   $('#tellq').onclick = () => startQuiz(shuffle(ids.map(id => byId[id])), 'Tell apart', 'pass');
+  stackTables($('#view'));
 }
 function vGuide() { $('#view').innerHTML = `<div class="tablewrap">${typeof GUIDE_HTML === 'undefined' ? '' : GUIDE_HTML}</div>`; }
 
@@ -446,6 +489,9 @@ function vData() {
   <label class="btn ghost">Import progress<input type="file" id="imp" accept=".json" style="display:none"></label>
   <button class="btn ghost" id="expmiss">Export missed questions (CSV)</button>
   <button class="btn ghost" id="reset">Reset this profile</button></div></div>
+  <h3>Last updated</h3>
+  <div class="card"><p style="margin:0 0 6px"><b>${esc(fmtDate(BUILD.built))}</b>${BUILD.commit ? ` · build ${esc(BUILD.commit)}` : ''} · ${QUESTIONS.length} questions · ${QUESTIONS.filter(q => q.reading).length} with textbook notes</p>
+  ${(BUILD.changelog || []).map(c => `<h4 style="margin:10px 0 4px">${esc(c.date)}</h4><ul style="margin:0;padding-left:20px">${c.items.map(i => `<li>${esc(i)}</li>`).join('')}</ul>`).join('')}</div>
   <p class="sub">${QUESTIONS.length} questions in the bank. Built from the course decks, lecture transcripts and the Exam 1 drug list; each question cites its deck and slide. Slide numbers marked ~ were counted from the deck text and may be off by one or two.</p>`;
   $('#view').innerHTML = h;
   $('#setprof').onclick = () => { const v = $('#prof').value.trim(); if (!v) return; PROFILE = v; store.set(COURSE.ns + ':profile', v); S = loadState(); Q = null; EX = null; vData(); };
@@ -461,6 +507,28 @@ function vData() {
   $('#reset').onclick = () => { if (confirm('Erase all progress for this profile?')) { S = {q: {}, log: [], pace: COURSE.paceDefault, exams: []}; save(); vData(); } };
 }
 
+document.addEventListener('keydown', e => {
+  if (e.target && /INPUT|SELECT|TEXTAREA/.test(e.target.tagName)) return;
+  if (e.metaKey || e.ctrlKey || e.altKey) return;
+  const k = e.key;
+  if (CUR === 'quiz' && Q && Q.cur && Q.cur.type !== 'match') {
+    let n = -1;
+    if (/^[1-9]$/.test(k)) n = +k - 1; else if (/^[a-jA-J]$/.test(k)) n = LETTERS.indexOf(k.toUpperCase());
+    if (n >= 0 && !Q.answered) { const oi = Q.order[n]; if (oi != null) { pick(oi); e.preventDefault(); } return; }
+    if (k === 'Enter') {
+      e.preventDefault();
+      if (!Q.answered) { if (Q.cur.multi) check(); }
+      else finish(Q.ok ? 'sure' : 'wrong');
+    }
+  } else if (CUR === 'exam' && EX && !EX.done) {
+    const q = byId[EX.qs[EX.i]], ord = EX.orders[EX.i];
+    let n = -1;
+    if (/^[1-9]$/.test(k)) n = +k - 1; else if (/^[a-jA-J]$/.test(k)) n = LETTERS.indexOf(k.toUpperCase());
+    if (n >= 0 && ord[n] != null) { const b = document.querySelector(`[data-o="${ord[n]}"]`); if (b) b.click(); e.preventDefault(); return; }
+    if (k === 'ArrowRight' || k === 'Enter') { if (EX.i < EX.qs.length - 1) { EX.i++; renderExam(); } e.preventDefault(); }
+    if (k === 'ArrowLeft') { if (EX.i > 0) { EX.i--; renderExam(); } e.preventDefault(); }
+  }
+});
 document.title = COURSE.title;
-$('#apptitle').textContent = COURSE.short;
+$('#apptitle').innerHTML = `${esc(COURSE.short)} <span class="stamp">updated ${esc(fmtDate(BUILD.built))}</span>`;
 nav(); go('topics');

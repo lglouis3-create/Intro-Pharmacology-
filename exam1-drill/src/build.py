@@ -28,7 +28,24 @@ course = open('course.js', encoding='utf-8').read()
 out_name = re.search(r"output:\s*'([^']+)'", course).group(1)
 title = re.search(r"title:\s*'([^']+)'", course).group(1)
 
-parts = [course, 'const TOPICS = [];\nconst QUESTIONS = [];\n']
+# Build stamp and change log, so the page can say when it was last updated.
+import datetime, re as _re
+def _git(*args):
+    try:
+        r = subprocess.run(['git'] + list(args), capture_output=True, text=True, cwd=HERE)
+        return r.stdout.strip() if r.returncode == 0 else ''
+    except OSError:
+        return ''
+now = datetime.datetime.now(datetime.timezone.utc)
+changelog = []
+cl_path = os.path.join(HERE, '..', 'CHANGELOG.md')
+if os.path.exists(cl_path):
+    for block in _re.split(r'^## ', open(cl_path, encoding='utf-8').read(), flags=_re.M)[1:]:
+        lines = block.strip().split('\n')
+        changelog.append({'date': lines[0].strip(), 'items': [l[2:].strip() for l in lines[1:] if l.startswith('- ')]})
+build_info = {'built': now.isoformat(timespec='minutes'), 'commit': _git('rev-parse', '--short', 'HEAD'),
+              'changelog': changelog}
+parts = ['const BUILD_INFO = ' + json.dumps(build_info, ensure_ascii=False) + ';', course, 'const TOPICS = [];\nconst QUESTIONS = [];\n']
 for f in DATA_FILES + PAGES:
     parts.append(open(f, encoding='utf-8').read())
 parts.append(open('app.js', encoding='utf-8').read())
