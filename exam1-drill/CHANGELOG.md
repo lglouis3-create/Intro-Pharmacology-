@@ -2,6 +2,10 @@
 
 Newest first. The build embeds this file, and the Progress page shows it.
 
+## 2026-09-28 (late)
+- Every lecture quote judged for insight: quotes that only read out the answer, tally a poll or restate an option are gone (20 deleted); 41 replaced with the professor's own explanation of the point; drug-list quotes dropped since the table row is the answer.
+- Reopening a topic never starts on the question just answered; due questions are shuffled.
+
 ## 2026-09-28 (evening)
 - Terms section: a 50-term glossary from the Day 1–3 lectures with drawn figures, a flashcard drill, and 98 generated definition questions (skill "Terms"; at most 15% of an exam paper).
 - Twelve drawn figures (dose–response curves for potency, efficacy, partial and inverse agonists, competitive and irreversible antagonists; binding curve with Kd; spare receptors; orthosteric vs allosteric sites; two-state model; GPCR chain) shown with the explanation on 33 lecture questions.

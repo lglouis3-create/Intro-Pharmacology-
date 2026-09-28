@@ -21,7 +21,7 @@ const TERMS = [
  def:'The study of the biochemical and physiological effects of drugs and their mechanisms of action. General rules: the drug must reach the site of action, must bind to and interact with a receptor, and does not create anything but changes the ongoing physiological system.',
  hook:'Spoken definition: “the study of how drugs interact with the biological system.” Its two basic concepts are affinity and efficacy.',
  confuse:['pharmacokinetics','pharmacology'],
- quote:'Pharmacodynamics: The study of biochemical and physiological effects of Drugs and its mechanisms of action ... General rules: 1) Drug must reach the site of action 2) Drug must bind to and interact with a receptor 3) Drug do not create anything, but change the ongoing phys. system',
+ quote:'General rules: 1) Drug must reach the site of action 2) Drug must bind to and interact with a receptor 3) Drug do not create anything, but change the ongoing phys. system',
  cite:'Pharmacodynamics-Day_2_2026s copy.pdf slide ~31; Pharmacodynamics-Day-1-2026s.pdf slide ~22; transcript 9/23',
  src:'both'},
 
@@ -45,7 +45,7 @@ const TERMS = [
  def:'Regulatory proteins involved in the transfer of chemical information carried by endogenous or exogenous mediators. Classified by the structure of the receptor protein and its transduction components: ion channels, 7-transmembrane (GPCR), 1-transmembrane (tyrosine kinases) and intracellular/nuclear receptors.',
  hook:'His picture: the gatekeeper that senses hormones, neurotransmitters and drugs; the message the receptor creates is the physiological response. Receptors come in two flavors, active or inactive.',
  confuse:['ligand','effector','transducer'],
- quote:'Receptors are regulatory proteins involved in the transfer of chemical information carried by various endogenous/exogenous mediators ... Classified by the structure of the receptor protein and transduction components',
+ quote:'Receptors are regulatory proteins involved in the transfer of chemical information carried by various endogenous/exogenous mediators',
  cite:'Pharmacodynamics-Day-1-2026s.pdf slides ~11, ~34–~36; transcript 9/22',
  src:'both'},
 
@@ -53,7 +53,7 @@ const TERMS = [
  def:'A chemical that a receptor recognizes and binds by its shape, size and other properties: endogenous (a hormone or neurotransmitter) or exogenous (a drug, a supplement, something eaten or drunk). A ligand induces a conformational change in the receptor.',
  hook:'Multiple chemicals may bind the same receptor, and one chemical may bind multiple receptors (acetylcholine at nicotinic and muscarinic). Ligand-gated channels are named for it.',
  confuse:['drug','receptor'],
- quote:'Cells have receptors that recognize specific chemicals ... Multiple chemicals may bind the same receptor ... A chemical may bind multiple receptors ... Endogenous as well as exogenous',
+ quote:'Cells have receptors that recognize specific chemicals ... Endogenous as well as exogenous',
  cite:'Pharmacodynamics-Day_3_2026s.pdf slides ~26, ~30; transcript 9/23; transcript 9/24',
  src:'both'},
 
@@ -69,7 +69,7 @@ const TERMS = [
  def:'Where the receptor the drug acts on is located (metoprolol: heart, kidneys and brain; thiazides: distal convoluted tubule). Knowing MOA plus SOA lets you predict the effect, side effects and drug–drug interactions without memorizing them.',
  hook:'Classifying a drug by chemical structure (benzothiadiazine ring) predicts little; MOA plus SOA (Na+/Cl− symporter antagonist at the distal tubule) predicts diuresis and hyponatremia.',
  confuse:['moa'],
- quote:'The things that you should know are going to be the sites of actions. Because if you know where the receptor is',
+ quote:'The things that you should know are going to be the sites of actions. Because if you know where the receptor is located and you know what it does to the receptor, now you can predict the effect, the side effect, the drug-drug interaction, contraindication, use.',
  cite:'Pharmacodynamics-Day-1-2026s.pdf slides ~7, ~9, ~33; transcript 9/22',
  src:'both'},
 
@@ -77,7 +77,7 @@ const TERMS = [
  def:'A product regulated as food, not as a drug, so with less FDA oversight; it stays on the market until it causes harm. Its label cannot state that it treats, cures, diagnoses or prevents disease, and natural does not mean safe or free of drug interactions.',
  hook:'Every option on his NDS poll was incorrect: labels cannot claim cure, the FDA does not test them like prescription drugs, centuries of use does not prove safety and effectiveness, and herbals interact with prescription/OTC drugs.',
  confuse:['drug'],
- quote:'Dietary supplements regulated as food ... Not Drugs (Less FDA oversight) ... until they cause harm ... What can’t it state? - Treat - Cure - Diagnose - Prevent',
+ quote:'Dietary supplements regulated as food ... Not Drugs (Less FDA oversight) ... until they cause harm',
  cite:'Pharmacodynamics-Day-1-2026s.pdf slides ~15–~16, ~18, ~20; transcript 9/22',
  src:'both'},
 
@@ -95,7 +95,7 @@ const TERMS = [
  hook:'Affinity is read on the x-axis (further left = higher affinity); efficacy on the y-axis. Poll trap: “the ability of a drug to bind and stay bound to a receptor” is affinity, not efficacy.',
  confuse:['efficacy','potency','kd'],
  fig:'binding-kd',
- quote:'Affinity: Represents the attraction of the ligand for the receptor. Dependent on the KD ... Remember, affinity is how likely a drug is to bind and stay bound to a receptor, and the binding of a drug to the receptor is going to be depending on what type of bonds they form covalent bonds, hydrogen bonds, ion bonds.',
+ quote:'Remember, affinity is how likely a drug is to bind and stay bound to a receptor, and the binding of a drug to the receptor is going to be depending on what type of bonds they form covalent bonds, hydrogen bonds, ion bonds.',
  cite:'Pharmacodynamics-Day_2_2026s copy.pdf slides ~31, ~55; Pharmacodynamics-Day-1-2026s.pdf slides ~21, ~37; transcript 9/22; transcript 9/23',
  src:'both'},
 
@@ -112,7 +112,7 @@ const TERMS = [
  def:'Ariëns’ number for the ability of a drug to produce a response, dependent on its chemical structure: full agonist = 1, partial agonist between 0 and 1, antagonist = 0.',
  hook:'It does not account for the tissue (how many receptors are present), so it is incomplete; efficacy is the more comprehensive term. The names and the formula are not tested.',
  confuse:['efficacy','occupancy-theory'],
- quote:'FA; IA = 1 / PA; IA = 0<β<1 / Antag.; IA = 0 ... What he did not count was for the tissue, how many receptors are present in that system. So this is an incomplete theory that we can’t really use much',
+ quote:'What he did not count was for the tissue, how many receptors are present in that system. So this is an incomplete theory that we can’t really use much',
  cite:'Pharmacodynamics-Day_3_2026s.pdf slides ~24–~26; Pharmacodynamics-Day-1-2026s.pdf slide ~28; transcript 9/22; transcript 9/24',
  src:'both'},
 
@@ -121,7 +121,7 @@ const TERMS = [
  hook:'Kd is read on the x-axis of a binding curve and says nothing about effect; EC50 is 50% of the response. Compare Kd values only after converting units (milli 10^-3, micro 10^-6, nano 10^-9): “the units ... about 10% of you are gonna miss it.”',
  confuse:['ec50','affinity','mass-action'],
  fig:'binding-kd',
- quote:'Define the drug concentration that binds 50% of available binding sites ... [D][R] / [DR] = K2 / K1 = KD ... K2 = Rate of Dissociation K1 = Rate of association ... ↓ Kd = ↑ Affinity',
+ quote:'So the take-home message is that the smaller the coefficient of dissociation is, the more drugs receptors are going to find together, and thus the greater the affinity is going to be.',
  cite:'Pharmacodynamics-Day_2_2026s copy.pdf slides ~45–~50; Pharmacodynamics-Day_3_2026s.pdf slide ~31; transcript 9/24',
  src:'both'},
 
@@ -130,7 +130,7 @@ const TERMS = [
  hook:'A binding curve shows binding only; a dose–response curve shows effect (Emax, EC50). Drug C “requires less dose to bind 50% of the receptors” so it has the highest affinity.',
  confuse:['drc','kd'],
  fig:'binding-kd',
- quote:'Bmax 100% of the receptors ... The Kd (Coefficient of Dissociation) is the dose required to bind [50% of the receptors] ... The smaller the Kd is, the greater the affinity of a drug for the receptor will be. Kd will be reflected in the x-axis.',
+ quote:'And the further the left you are, the smaller the dose is going to be required, and thus the more affinity a drug is gonna have for the receptor.',
  cite:'Pharmacodynamics-Day_2_2026s copy.pdf slide ~50; Pharmacodynamics-Day_3_2026s.pdf slide ~3; transcript 9/24',
  src:'both'},
 
@@ -138,7 +138,7 @@ const TERMS = [
  def:'The rate of a chemical reaction is proportional to the concentration (mass) of the reactants: the more drug or the more receptors present, the greater the chance of binding. It is the basis of Kd and of dose responsiveness.',
  hook:'More receptors in a tissue make the same dose of norepinephrine appear more potent (curve shifts left) while its Kd, affinity and efficacy are unchanged; what changed is the tissue.',
  confuse:['kd','occupancy-theory'],
- quote:'the loss of mass action is all it is saying is the more I have either of the receptors or the more I have either the drug, the greater the capacity of binding to something is going to be, right?',
+ quote:'The more I have either of the receptors or the more I have either the drug, the greater the capacity of binding to something is going to be, right?',
  cite:'Pharmacodynamics-Day_2_2026s copy.pdf slide ~45; transcript 9/24',
  src:'both'},
 
@@ -164,7 +164,7 @@ const TERMS = [
  hook:'“Where the magic in pharmacology is”: they don’t always do things by themselves but make other drugs much better or much worse. Poll traps: allosteric agonists do not compete for the orthosteric pocket and do not have the highest affinity for it.',
  confuse:['orthosteric','indirect-antagonist','allosteric-agonist'],
  fig:'sites',
- quote:'Allosteric: Binds at a different binding site in the receptor. Can increase/decrease the affinity and/or efficacy of another drug for the receptor',
+ quote:'These drugs do not bind or compete for the orthostatic binding pocket. They bind someplace else on the receptor.',
  cite:'Pharmacodynamics-Day_2_2026s copy.pdf slides ~19–~20, ~39, ~44; Pharmacodynamics-Day-1-2026s.pdf slide ~29; transcript 9/22; transcript 9/23',
  src:'both'},
 
@@ -181,7 +181,7 @@ const TERMS = [
  hook:'“This is gonna be home for us.” It explains inverse agonists, which occupancy theory could not. Most receptors sit in the inactive state to save energy.',
  confuse:['occupancy-theory','intrinsic-activity'],
  fig:'two-state',
- quote:'R = Receptor Inactive (Resting); R* = Receptor Active; L = Equilibrium constant between [R]/[R*]; Drugs (D) = have high affinity for R and/or R*; Kd = [R][A]/[AR]; Kd* = [R*][A]/[AR*]',
+ quote:'So this two-state model shows that we have receptor two confirmations, active and inactive, and that drugs can shift them once bound to the receptor from one confirmation to the other.',
  cite:'Pharmacodynamics-Day_3_2026s.pdf slide ~31; Pharmacodynamics-Day-1-2026s.pdf slide ~28; transcript 9/22; transcript 9/23',
  src:'both'},
 
@@ -191,7 +191,7 @@ const TERMS = [
  hook:'Same affinity preference as a partial agonist; the difference is efficacy (100% vs 1–99%). “I do not know of any agonist that is irreversible.”',
  confuse:['partial-agonist','inverse-agonist'],
  fig:'partial',
- quote:'Full Agonist Summary: Can reach 100% of the system’s max response; Has the highest affinity for receptors found in the active state; Has positive Efficacy',
+ quote:'Let’s think about that we can dim, so we have one that can kind of go full bright or just halfway bright, a full agonist or a partial.',
  cite:'Pharmacodynamics-Day_3_2026s.pdf slides ~33–~41; Pharmacodynamics-Day_2_2026s copy.pdf slides ~32–~34; transcript 9/23; transcript 9/24',
  src:'both'},
 
@@ -200,7 +200,7 @@ const TERMS = [
  hook:'Dual nature: it may act as an agonist or an antagonist depending on the physiological state (varenicline during smoking vs withdrawal). A partial agonist can still be the most potent drug on a graph.',
  confuse:['full-agonist','neutral-antagonist','inverse-agonist'],
  fig:'partial',
- quote:'Partial Agonist Summary: Can NOT reach 100% of the system’s max response ... Emax Less than 100% ... Can NOT bring the response all the way to 100 or 0% ... It can behave like an agonist or an antagonist Depending on the physiological state (Dual Nature)',
+ quote:'So sometimes we may use a partial agonist over a full agonist because we don’t need to get the max effect. We just need to get enough of it.',
  cite:'Pharmacodynamics-Day_3_2026s.pdf slides ~50–~65; Pharmacodynamics-Day_2_2026s copy.pdf slides ~32–~34; transcript 9/23; transcript 9/24',
  src:'both'},
 
@@ -209,7 +209,7 @@ const TERMS = [
  hook:'Petri dish with 50% of receptors naturally active: an inverse agonist brings cAMP production to zero; a competitive (neutral) antagonist leaves it at 50%.',
  confuse:['neutral-antagonist','partial-agonist'],
  fig:'inverse',
- quote:'Inverse agonist: Has highest affinity for inactive receptors; Has (-) Efficacy. Thus, if it binds to an active receptor, an inverse agonist can inhibit the receptor. E.g., Anti-Histamine (Loratadine)',
+ quote:'These drugs love to bind to receptors that are inactive and keep them inactive. But they have what is called negative efficacy, which means is if they bind to a receptor that is already active, producing a signal, once they are bound, they’re going to shut them off.',
  cite:'Pharmacodynamics-Day_2_2026s copy.pdf slides ~35–~36; Pharmacodynamics-Day-1-2026s.pdf slide ~28; transcript 9/22; transcript 9/23',
  src:'both'},
 
@@ -218,7 +218,7 @@ const TERMS = [
  hook:'“Just a straight line”: an antagonist does not change the balance of receptors; an inverse agonist wants to keep everybody inactive. Intrinsic activity of an antagonist is zero.',
  confuse:['inverse-agonist','competitive-antagonist','partial-agonist'],
  fig:'inverse',
- quote:'Neutral: No Efficacy (ε = zero); equal affinity for receptors in the active and inactive state ... All about Affinity',
+ quote:'Antagonists, they’re neutral. Like they don’t care if the receptor is active or inactive, they have equal affinity for both receptor states.',
  cite:'Pharmacodynamics-Day_2_2026s copy.pdf slides ~37–~38; transcript 9/23; transcript 9/24',
  src:'both'},
 
@@ -236,7 +236,7 @@ const TERMS = [
  hook:'Once phenoxybenzamine is bound the receptor has to be internalized and recycled and the body must make new ones. Poll: phenoxybenzamine has higher affinity than prazosin. The reduced-Emax curve is Day 4 material (deck preview slide ~68).',
  confuse:['competitive-antagonist','covalent-bond','inverse-agonist'],
  fig:'irreversible',
- quote:'This is an irreversible antagonist, non-competitive, insurmountable. So what kind of bones does it form? Covalent. ... Irreversible (Highest affinity)',
+ quote:'This is an irreversible antagonist, non-competitive, insurmountable. So what kind of bo[n]ds does it form? Covalent.',
  cite:'Pharmacodynamics-Day_2_2026s copy.pdf slides ~15, ~18, ~37–~38; transcript 9/23; transcript 9/24',
  src:'both'},
 
@@ -244,7 +244,7 @@ const TERMS = [
  def:'A drug that inhibits the generation of a biological response by binding to components upstream or downstream from the receptor rather than the receptor itself; it can be reversible or irreversible. Examples: caffeine blocking PDE, a cancer drug blocking RAS.',
  hook:'It can raise the response (caffeine on PDE raises cAMP; a norepinephrine transporter blocker makes norepinephrine appear more potent) or lower it (RAS blocker stops cell growth). It is not allosteric: it never touches the receptor.',
  confuse:['allosteric','competitive-antagonist'],
- quote:'Indirect Antagonists: Binds to components upstream or downstream from the receptor; Can be reversible or irreversible; Inhibit the generation of a biological response',
+ quote:'So, remember that indirect antagonists can work downstream from the receptor, but also upstream from the receptor, OK?',
  cite:'Pharmacodynamics-Day_2_2026s copy.pdf slides ~40–~41; transcript 9/23; transcript 9/24',
  src:'both'},
 
@@ -252,7 +252,7 @@ const TERMS = [
  def:'Binds at a different site on the receptor and increases the affinity and/or efficacy of another drug for the receptor (positive allosteric modulator, PAM). Diazepam and other benzodiazepines increase the affinity and/or efficacy of GABA at the GABA-A chloride channel.',
  hook:'Diazepam is the allosteric agonist on the drug list “that you have to know for your exam.” A benzodiazepine plus alcohol puts two allosteric agonists on one receptor.',
  confuse:['allosteric-antagonist','full-agonist','allosteric'],
- quote:'Allosteric Agonist: Binds at a different binding site in the receptor; Can increase the affinity and/or efficacy of another drug for the receptor ... Benzos increase the affinity And/or efficacy of GABA For its receptor',
+ quote:'Benzos increase the affinity And/or efficacy of GABA For its receptor',
  cite:'Pharmacodynamics-Day_2_2026s copy.pdf slides ~21–~24, ~42; transcript 9/23',
  src:'both'},
 
@@ -260,7 +260,6 @@ const TERMS = [
  def:'Binds at a different site on the receptor and decreases the affinity and/or efficacy of another drug for the receptor.',
  hook:'It does not compete for the orthosteric pocket; a competitive antagonist does. “As far as I know, all allosteric agonists and antagonists are reversible.”',
  confuse:['allosteric-agonist','competitive-antagonist','indirect-antagonist'],
- quote:'Allosteric Antagonist: Binds at a different binding site in the receptor; Can decrease the affinity and/or efficacy of another drug for the receptor',
  cite:'Pharmacodynamics-Day_2_2026s copy.pdf slide ~43; transcript 9/23',
  src:'both'},
 
@@ -270,7 +269,7 @@ const TERMS = [
  hook:'DRC: increasing individual doses in vivo (ADME, apparent potency). CRC: increasing concentration in vitro (molar, pharmacological potency). Affinity is on the x-axis, efficacy on the y-axis, potency a combination of the two.',
  confuse:['binding-curve','graded-response'],
  fig:'drc-basic',
- quote:'Graded Dose-Response Curve (DRC) or Concentration-Response Curve (CRC): Relates drug dose/concentration to intensity of effect; Measured in a single biological unit; Continuous scale',
+ quote:'So my dose is going to be on the bottom, on the X axis. My response is gonna be on the Y axis, which is on the up or down, OK?',
  cite:'Pharmacodynamics-Day_3_2026s.pdf slides ~8–~10, ~16–~18; Pharmacodynamics-Day_2_2026s copy.pdf slide ~56; transcript 9/24',
  src:'both'},
 
@@ -278,7 +277,7 @@ const TERMS = [
  def:'A response measured in a single biological unit on a continuous scale that increases by degrees as the dose is raised over a specific range (e.g., 10-fold steps); a graded DRC/CRC relates the dose to the intensity of the effect.',
  hook:'The y-axis is normalized (% of maximum response or response per tissue weight) to eliminate biological variability between individuals: “now I can compare apples with apples.”',
  confuse:['drc','threshold'],
- quote:'Graded response by multiple increases of drug doses over a specific range ... Measured in a single biological unit; Continuous scale',
+ quote:'Graded response by multiple increases of drug doses over a specific range',
  cite:'Pharmacodynamics-Day_3_2026s.pdf slides ~10, ~16, ~18; transcript 9/24',
  src:'slide'},
 
@@ -287,7 +286,7 @@ const TERMS = [
  hook:'Threshold is where the curve starts; EC50 is the halfway point; Emax is the ceiling.',
  confuse:['ec50','emax','slope'],
  fig:'drc-basic',
- quote:'Threshold: Concentration of the drug below which produces no response ... Remember that the threshold is the dose right before something happens, right? So I know that at any dose below this, no effect.',
+ quote:'Remember that the threshold is the dose right before something happens, right? So I know that at any dose below this, no effect.',
  cite:'Pharmacodynamics-Day_3_2026s.pdf slides ~20–~21; transcript 9/24',
  src:'both'},
 
@@ -304,7 +303,7 @@ const TERMS = [
  def:'The linear mid-section of the sigmoid curve, where the greatest change in effect comes from the smallest change in dose. A steep slope means a narrow dose range from no effect to maximum; a shallow slope means a wider range of doses before Emax.',
  hook:'Which is better “depends”: the steep curve goes from no effect to max all at once; the shallow one gives a greater range of doses before a toxic effect.',
  confuse:['threshold','emax','potency'],
- quote:'Slope: Linear mid section ... This is I’m going to get the greatest change in the response with the smallest change in the dose.',
+ quote:'In that slope in that area of the curve, this is when I’m going to get the most bang for my buck. This is I’m going to get the greatest change in the response with the smallest change in the dose.',
  cite:'Pharmacodynamics-Day_3_2026s.pdf slides ~20–~21; transcript 9/24',
  src:'both'},
 
@@ -313,7 +312,7 @@ const TERMS = [
  hook:'Kd is the concentration binding 50% of receptors (affinity, no effect); EC50 is 50% of the response (potency). Both are read on the x-axis. “Philosophically identical”: one is a dose, the other a concentration.',
  confuse:['kd','emax','potency'],
  fig:'drc-basic',
- quote:'Effective Concentration = EC50 : Effective concentration that produces 50% of the max response. ↑ Potency = ↓ EC50 or ED50',
+ quote:'So, the take-home message that you can’t forget is that the smallest the ED50 is or the [EC]50, the greater the potency is gonna be. They’re inverse proportional.',
  cite:'Pharmacodynamics-Day_2_2026s copy.pdf slides ~57–~58; Pharmacodynamics-Day_3_2026s.pdf slides ~20–~22, ~29; transcript 9/24',
  src:'both'},
 
@@ -322,7 +321,7 @@ const TERMS = [
  hook:'Potency ≠ efficacy: the most potent drug (smallest EC50) can be a partial agonist; the most efficacious has the highest Emax. “Affinity is gonna be on the bottom, efficacy is gonna be on the Y axis, and potency is gonna be a combination of the two.”',
  confuse:['efficacy','affinity','apparent-potency'],
  fig:'potency',
- quote:'Potency = EC50 ... Affinity - Efficacy - Cell/Tissue/Organ/Organism - e.g., # of receptors ... the take home message over here is that potency is not only going to be defined by the efficacy of the affinity, but also the tissue that is going to be bound to.',
+ quote:'The take home message over here is that potency is not only going to be defined by the efficacy of the affinity, but also the tissue that is going to be bound to.',
  cite:'Pharmacodynamics-Day_3_2026s.pdf slides ~7, ~22, ~27–~29; Pharmacodynamics-Day_2_2026s copy.pdf slides ~52–~54; Pharmacodynamics-Day-1-2026s.pdf slides ~21–~22, ~27; transcript 9/22; transcript 9/23; transcript 9/24',
  src:'both'},
 
@@ -330,7 +329,7 @@ const TERMS = [
  def:'The potency seen in vivo, where pharmacokinetics (age, absorption, distribution, elimination, drug–drug interactions) determines how much drug reaches the site of action. It is “apparent” because it is not the total concentration of the drug that acts; a DRC built in vivo (ED50) shows apparent potency.',
  hook:'Route of administration and first-pass metabolism change apparent potency (IV has 100% bioavailability); they do not change the drug’s affinity or efficacy, which set pharmacological potency.',
  confuse:['potency','pharmacokinetics'],
- quote:'Apparent Potency - Age - Absorption - Distribution - Elimination - DDI; Pharmacological Potency - Tissue sensitivity - Receptor # - Receptor Activity - Affinity - Efficacy',
+ quote:'So this is going to give us our apparent potency. Why is apparent? ... It’s only appearing because it’s not the total concentration of the drug.',
  cite:'Pharmacodynamics-Day-1-2026s.pdf slides ~23, ~27; Pharmacodynamics-Day_3_2026s.pdf slide ~8; transcript 9/22',
  src:'both'},
 
@@ -338,7 +337,7 @@ const TERMS = [
  def:'The ratio of two drugs’ ED50 (or EC50) values, ED50B / ED50A. A drug that needs 1000 times less drug to produce an equivalent response is 1000X more potent.',
  hook:'Compare potency at equivalent effects (e.g., 50%), not at 100%, because a partial agonist never reaches 100%. “Math is gonna be minimal.”',
  confuse:['potency','ec50'],
- quote:'Relative Potency = ED50B/ED50A =1000X',
+ quote:'We can say that a drug A is 1000 times more potent than drug B because it requires 1000 times less drug to produce equivalent responses.',
  cite:'Pharmacodynamics-Day_3_2026s.pdf slide ~23; transcript 9/24',
  src:'both'},
 
@@ -366,7 +365,7 @@ const TERMS = [
  hook:'Poll trap: “phospholipase C is an example of a second messenger” — no, PLC is the effector (his “factor system”); IP3 is its second messenger.',
  confuse:['second-messenger','transducer'],
  fig:'gpcr',
- quote:'Frequently, the proximal cellular effector protein is not the ultimate physiological target but rather is an enzyme, ion channel, or transport protein that creates, moves, or degrades a small molecule or ions ... Adenylate cyclase (AC), Phospholipase C (PLC), etc…',
+ quote:'Frequently, the proximal cellular effector protein is not the ultimate physiological target but rather is an enzyme, ion channel, or transport protein that creates, moves, or degrades a small molecule or ions',
  cite:'Pharmacodynamics-Day_2_2026s copy.pdf slides ~26–~28; transcript 9/23',
  src:'both'},
 
@@ -375,7 +374,7 @@ const TERMS = [
  hook:'“If there is cAMP and PKA, then select all ... you shouldn’t be picking the receptor or the AC or the calcium channel.” For the Gq pathway the two to know are IP3 and Ca++.',
  confuse:['effector','transducer'],
  fig:'gpcr',
- quote:'Second Messengers: Small molecules that have been created, degraded or moved by an enzyme, ion channel, or transport protein ... Cyclic AMP (cAMP), Protein Kinase A (PKA), Protein Kinase C (PKC), Inositol Phosphate (IP3), etc… Ca++',
+ quote:'The production of the second messenger, which then is going to activate another 2nd messenger and then another 2nd messenger, just like a domino cascade until I get the physiological response that I want.',
  cite:'Pharmacodynamics-Day_2_2026s copy.pdf slide ~29; Pharmacodynamics-Day-1-2026s.pdf slides ~52–~53; transcript 9/23',
  src:'both'},
 
@@ -384,7 +383,7 @@ const TERMS = [
  hook:'The G protein is the transducer. Poll trap: G proteins are defined by the α subunit, not the β subunit.',
  confuse:['gpcr','transducer','g-alpha'],
  fig:'gpcr',
- quote:'Heterotrimeric Guanine Nucleotide Binding Protein; Define and Regulated by the α Subunit; Coupled to 7 Transmembrane Receptors ... Binding, GDP Release, GTP-Mediated Dissociation, α-Mediated Activation ... GTPase Cleavage (hydrolyses), RGS-Enhanced Dissociation',
+ quote:'The GDP, the diphosphate, has to come off, and the G[T]P, as in taxes, the triphosphate has to come in. The removal of the GDP and replacement with the G[T]P is what triggers them to separate from each other.',
  cite:'Pharmacodynamics-Day-1-2026s.pdf slides ~49–~55; Pharmacodynamics-Day_2_2026s copy.pdf slide ~3; transcript 9/23',
  src:'both'},
 
@@ -402,7 +401,7 @@ const TERMS = [
  hook:'Four receptor classes: ion channels (L-type Ca++, GABA), 7-TM GPCRs, 1-TM (tyrosine kinases), intracellular/nuclear (steroid hormones). “If you know how they work, you’ve got 60% of the drugs in your pocket.”',
  confuse:['rtk','ion-channel','g-protein'],
  fig:'gpcr',
- quote:'7-Transmembrane Proteins: G proteins coupled receptor (GPCR); Largest single class of pharmacological receptors; Interact with 60% plus of active therapeutic drugs',
+ quote:'About 60 or more% of all drugs in the market target one of kind of these receptors. So if you know how they work, you’ve got 60% of the drugs in your pocket.',
  cite:'Pharmacodynamics-Day-1-2026s.pdf slides ~35–~36, ~49; transcript 9/22',
  src:'both'},
 
@@ -410,7 +409,7 @@ const TERMS = [
  def:'Transmembrane proteins (~232 types, expressed in all cells) that convey their signal by altering membrane potential or ionic composition (Na+, K+, Ca2+, Cl−); classified by the ions they conduct, their architecture and what opens them. Ligand-gated channels are usually closed with the binding pocket located in the channel (acetylcholine at the nicotinic receptor, GABA-A, 5HT3).',
  hook:'Passive: always open (resting potential, funny channel). Voltage-gated: open only at certain membrane potentials (Ca++ channels open as the membrane becomes more positive). Stretch: pressure sensitive (baroreceptors). Pumps: move ions against the gradient (Na+/K+ ATPase).',
  confuse:['gpcr','rtk'],
- quote:'Ligand Gated: Usually Closed; The Binding Pocket Located in the Channel; Acetylcholine, GABAA, Serotonin (5HT3), etc… ... Convey their signal by altering cell membrane potential or ionic composition (Na+, K+, Ca2+, and Cl–)',
+ quote:'You have a drug, a neurotransmitter, a hormone that is binding to a specific receptor. Once it’s bound, you can open it and allow things to move through it.',
  cite:'Pharmacodynamics-Day-1-2026s.pdf slides ~35–~36, ~39–~48; transcript 9/23',
  src:'both'},
 
@@ -418,7 +417,7 @@ const TERMS = [
  def:'A 1-transmembrane receptor linked to an intracellular enzyme: an extracellular binding domain outside and intrinsic enzymatic (catalytic) activity inside. Ligand binding to the inactive monomer induces dimerization, cross-phosphorylation of the kinase domains and docking sites for signaling complexes; a tyrosine phosphatase resets it. Receptors for insulin and growth factors (cell survival, proliferation, differentiation).',
  hook:'Downstream: Grb2 → GEF → RAS → RAF → MEK → ERK → gene transcription; 20–25% of cancers contain a RAS mutation, so a RAS blocker is an indirect antagonist that stops cell growth.',
  confuse:['gpcr','nuclear-receptor','ion-channel'],
- quote:'1. Inactive receptor is monomeric state 2. Ligand binding induces Dimerization (active) 3. Cross-phosphorylation of the kinase domain 4. Phosphorylation forms docking sites & signaling complexes 5. Tyrosine Phosphatase (TP)',
+ quote:'They have this binding pocket on the outside, and they have this enzymatic activity inside of the cell. Typically those are transcription factors like insulin growth factors.',
  cite:'Pharmacodynamics-Day_2_2026s copy.pdf slides ~4–~11; Pharmacodynamics-Day-1-2026s.pdf slides ~35–~36; transcript 9/23',
  src:'both'},
 
@@ -426,7 +425,7 @@ const TERMS = [
  def:'Intracellular receptors and transcriptional regulators: a superfamily of 48 receptor proteins that are transcription factor regulators. Ligands (androgens, estrogens, glucocorticoids, thyroid hormone, vitamin D) bind in the cytosol or nucleus and regulate gene expression (protein synthesis or mRNA turnover); co-repressor bound = inactive, co-activator bound = active.',
  hook:'Aldosterone at the mineralocorticoid receptor codes mRNA for more pumps and channels in the principal cell: sodium saving, potassium wasting. Exam ask: “what is the function of a nuclear receptor? How do they work”.',
  confuse:['rtk','gpcr'],
- quote:'Nuclear Hormone Receptors and Transcription Factors: Comprised of a superfamily of 48 receptor; Receptor proteins are transcription factor regulators ... Steroid hormones ... Regulates gene expression ... Protein synthesis or mRNA turnover',
+ quote:'Those are glucocor[tico]steroids. They are nuclear receptors. They affect DNA. They affect messenger RNA production.',
  cite:'Pharmacodynamics-Day_2_2026s copy.pdf slides ~12–~14; Pharmacodynamics-Day-1-2026s.pdf slides ~35–~36; transcript 9/23',
  src:'both'},
 
@@ -434,7 +433,7 @@ const TERMS = [
  def:'Interaction between signal transduction pathways within the same cell that yields a net response. In the heart, M2 (Gαi, ↓cAMP, ↓HR) and β1 (Gαs, ↑cAMP, ↑HR) both act on adenylate cyclase.',
  hook:'Two receptors, two G proteins, one effector (AC): the heart rate is the net of the two.',
  confuse:['g-alpha','second-messenger'],
- quote:'Cross-Talk: Interaction between signal transduction pathways within the same cell yields a net response.',
+ quote:'So we have multiple receptors that can be activated at the same time as we talked a little bit about that earlier in our heart, we have two major receptors, the beta 1s, which are sympathetic, and the M2s, muscarinics, which are parasympathetic, right?',
  cite:'Pharmacodynamics-Day_2_2026s copy.pdf slide ~30; transcript 9/23',
  src:'both'}
 ];
