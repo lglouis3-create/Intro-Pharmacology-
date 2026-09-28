@@ -204,7 +204,7 @@ QUESTIONS.push(
  quote:'pharmokinetics is going to be affecting how much of the drug gets to the site of action. Because that’s how it’s going to produce its effects.',
  reading:[{src:'Katzung 16e, Ch. 1', sec:'Drug-Body Interactions; Pharmacokinetic Principles', t:'Pharmacodynamics is what the drug does to the body; pharmacokinetics is what the body does to the drug: absorption, distribution and elimination. A drug must be absorbed and distributed to its site of action, so the oral–intravenous difference is pharmacokinetic.'}],
  cite:'Pharmacodynamics-Day-1-2026s.pdf slides ~23, ~27; transcript 9/22',
- note:'Slide ~27 lists absorption, distribution, elimination, age and DDIs under apparent potency. In the transcript he answers yes to whether ADME affects pharmacological potency and says pharmacological potency depends on absorption and metabolism. The slide grouping (apparent potency) is keyed.'},
+ note:'Slide and transcript disagree. The slide puts absorption, distribution, elimination, age and drug interactions under apparent potency. In class he said these affect pharmacological potency. Use the slide grouping on the exam.'},
 
 {id:'L01-016', lecture:'L01', prof:'Gottlieb', tier:'new', topic:'L01', sub:'potency', skill:'recall',
  concept:'potency-correct-poll', tags:['potency','poll'], source:'both',
@@ -244,7 +244,7 @@ QUESTIONS.push(
  teach:'Pharmacological potency (pharmacodynamics): tissue sensitivity, receptor number, receptor activity, affinity, efficacy. Apparent potency (pharmacokinetics): age, absorption, distribution, elimination, DDIs.',
  reading:[{src:'Katzung 16e, Ch. 1', sec:'Drug-Body Interactions; Confounding Factors in Clinical Trials', t:'Pharmacokinetic processes (the actions of the body on the drug) govern absorption, distribution and elimination, and age influences them. Absorption, elimination and age are therefore pharmacokinetic, while tissue sensitivity, receptor number and affinity concern the drug–receptor interaction.'}],
  cite:'Pharmacodynamics-Day-1-2026s.pdf slide ~27',
- note:'In the transcript he says pharmacological potency depends on absorption, metabolism and age; the slide places these under apparent potency. The slide grouping is keyed.'},
+ note:'Slide and transcript disagree. In class he said absorption, metabolism and age affect pharmacological potency; the slide puts them under apparent potency. Use the slide grouping on the exam.'},
 
 {id:'L01-019', lecture:'L01', prof:'Gottlieb', tier:'new', topic:'L01', sub:'theory', skill:'recall',
  concept:'clark-occupancy', tags:['theory','affinity'], source:'both',

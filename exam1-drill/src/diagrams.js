@@ -110,5 +110,45 @@ const FIG = (() => {
     return wrap(s, 'Signal transduction through a G protein–coupled receptor: the G protein is the transducer, the enzyme it turns on is the effector, and the effector makes the second messenger.', 120);
   };
 
+
+  /* Six drug classes side by side: what sits in the pocket, and the response
+     bar (basal level marked) that results. */
+  F['classes'] = () => {
+    const panels = [
+      ['Full agonist', 'binds, activates', 100, 'pocket', 'a', ''],
+      ['Partial agonist', 'binds, activates less', 55, 'pocket', 'a', ''],
+      ['Reversible antagonist', 'binds, no activation; comes off, more agonist overcomes it', 20, 'block', 'c', ''],
+      ['Irreversible antagonist', 'binds for good (covalent); agonist cannot overcome it', 20, 'block', 'b', 'lock'],
+      ['Inverse agonist', 'binds, turns activity below basal', 4, 'pocket', 'b', ''],
+      ['Allosteric modulator', 'binds a second site; changes what the agonist does', 100, 'both', 'a', 'plus']
+    ];
+    const pw = 120, ph = 120, cols = 3;
+    let out = '';
+    panels.forEach(([name, what, level, mode, cls, extra], i) => {
+      const x0 = (i % cols) * pw, y0 = Math.floor(i / cols) * ph;
+      const cx = x0 + 40, cy = y0 + 58;
+      out += `<g transform="translate(${x0} ${y0})">
+        <text class="lbl sm" x="${pw / 2}" y="14" text-anchor="middle">${name}</text>
+        <path class="shape" d="M14 44 C10 30 30 24 40 26 C50 24 70 30 66 44 C68 70 60 84 40 84 C20 84 12 70 14 44 Z"/>
+        <path class="pocket" d="M30 40 C30 32 50 32 50 40 L48 52 C46 60 34 60 32 52 Z"/>`;
+      if (mode === 'pocket' || mode === 'both') out += `<circle class="lig ${cls}" cx="40" cy="45" r="7"/>`;
+      if (mode === 'block') out += `<rect class="lig ${cls}" x="33" y="38" width="14" height="14" rx="2"/>`;
+      if (extra === 'lock') out += `<line class="ax" x1="40" y1="52" x2="40" y2="60"/><line class="ax" x1="36" y1="60" x2="44" y2="60"/><text class="lbl xs" x="40" y="70" text-anchor="middle">covalent</text>`;
+      if (extra === 'plus') out += `<path class="pocket" d="M14 54 C14 48 26 48 26 54 L25 62 C24 66 16 66 15 62 Z"/><circle class="lig b" cx="20" cy="57" r="5"/>`;
+      // response bar (the caption names it; the dashed line is basal activity)
+      const bx = 88, bh = 44, by = 26;
+      out += `<rect class="pocket" x="${bx}" y="${by}" width="14" height="${bh}" rx="2"/>
+        <line class="dash" x1="${bx - 4}" y1="${by + bh * 0.8}" x2="${bx + 18}" y2="${by + bh * 0.8}"/>
+        <rect class="lig ${cls}" x="${bx + 2}" y="${by + bh - bh * level / 100}" width="10" height="${bh * level / 100}"/>
+        <text class="lbl xs" x="${bx + 7}" y="${by + bh + 10}" text-anchor="middle">response</text>`;
+      // caption inside panel
+      const words = what.split(' '); const lines = []; let cur = '';
+      words.forEach(w => { if ((cur + ' ' + w).trim().length > 27) { lines.push(cur.trim()); cur = w; } else cur += ' ' + w; }); lines.push(cur.trim());
+      lines.slice(0, 3).forEach((l, k) => { out += `<text class="lbl xs" x="${pw / 2}" y="${94 + k * 9}" text-anchor="middle">${l}</text>`; });
+      out += '</g>';
+    });
+    return wrap(out, 'Drug classes at one receptor. Circle = drug in the agonist pocket; square = drug blocking the pocket; small circle at the side = a drug at a second (allosteric) site. The bar is the response; the dashed line is the receptor’s basal activity with nothing bound.', 240);
+  };
+
   return key => (F[key] ? F[key]() : '');
 })();

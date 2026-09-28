@@ -46,7 +46,7 @@ CLASS = {
  'inverse': ('Competitive & Irreversible Antagonists',
              'An inverse agonist binds the receptor and lowers its activity below the basal level seen with no agonist present, rather than merely blocking the agonist.'),
  'allosteric': ('Competitive & Irreversible Antagonists — allosteric modulators',
-             'Benzodiazepines such as diazepam bind an allosteric site, separate from the site GABA binds, and potentiate GABA’s opening of the channel; they have little effect on their own.'),
+             'Diazepam binds the GABA receptor at a second site, not where GABA binds. On its own it does little; when GABA is also bound, it makes GABA open the channel more.'),
 }
 # What each receptor does when a ligand binds it (Katzung 16e Ch. 6, Table 6-2).
 RECEPTOR = {
@@ -77,7 +77,7 @@ def reading_for(cls, recs):
     return out[:2] if cls else out[:2]
 
 NOTE = {
- 'moa-diazepam': 'Katzung Ch. 2 calls diazepam a positive allosteric modulator of the GABA receptor, one that potentiates GABA and has little activating effect on its own; the Exam 1 drug list classes it as a GABA receptor allosteric agonist. The exam is written from the drug list.',
+ 'moa-diazepam': 'Two labels for the same drug. The drug list says: allosteric agonist. The textbook says: positive allosteric modulator, because diazepam does not open the channel by itself; it makes GABA better at opening it. Use the drug list label on the exam.',
 }
 
 def lc(m):
@@ -107,7 +107,7 @@ qs = []
 n = 0
 def add(q):
     global n
-    q = dict(id=f'DL1-{n+1:03d}', lecture='DL1', prof='Gottlieb', tier='new', topic='DL1', skill='drug', source='slide', cite=CITE, **q)
+    q = dict(id=f'DL1-{n+1:03d}', lecture='DL1', prof='Gottlieb', tier='new', topic='DL1', skill='drug', source='slide', cite=CITE, fg='classes', **q)
     if q['concept'] in NOTE:
         q['note'] = NOTE[q['concept']]
     opts = q['options']

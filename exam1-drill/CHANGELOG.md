@@ -2,6 +2,10 @@
 
 Newest first. The build embeds this file, and the Progress page shows it.
 
+## 2026-09-29
+- Drug-class figure: six panels (full agonist, partial agonist, reversible antagonist, irreversible antagonist, inverse agonist, allosteric modulator) showing what sits in the pocket and what the response does. Shown on every drug-list question, on the drug-class terms, and on the Reference page with a comparison table.
+- Every "sources disagree" note rewritten in plain sentences: what the slide says, what was said in class or in the textbook, and which one to use on the exam.
+
 ## 2026-09-28 (late)
 - Every lecture quote judged for insight: quotes that only read out the answer, tally a poll or restate an option are gone (20 deleted); 41 replaced with the professor's own explanation of the point; drug-list quotes dropped since the table row is the answer.
 - Reopening a topic never starts on the question just answered; due questions are shuffled.
