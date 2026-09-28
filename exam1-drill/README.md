@@ -16,4 +16,4 @@ Build and checks (from `src/`):
 
 Each update gets an entry at the top of `CHANGELOG.md`; the build embeds it and the Progress page shows it with the build date.
 
-`q_DL1.js` is generated: edit `gen_druglist.py`, then run `python3 gen_druglist.py`.
+`q_TERMS.js` is generated from `glossary.js` by `gen_terms.py`, and `q_DL1.js` is generated: edit `gen_druglist.py`, then run `python3 gen_druglist.py`.

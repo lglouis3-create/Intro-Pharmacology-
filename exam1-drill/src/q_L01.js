@@ -33,7 +33,7 @@ QUESTIONS.push(
   {t:'Increased urination', correct:false, why:'Confuses the β1 blocker with the thiazide diuretic example.'}],
  teach:'If you know the mechanism of action (β1-selective antagonist) and the site of action (β1 receptors in the heart), the effect follows: the heart rate slows. The same reasoning predicts side effects such as bradycardia.',
  quote:'If I give you metoprolol, which is a beta 1 selective antagonist, and beta ones are in the heart, what kind of effect is it going to produce? ... Slow down the heart rate.',
- reading:[{src:'Katzung 16e, Ch. 6', sec:'Table 6–2 Major autonomic receptor types; Table 6–3 Direct effects of autonomic nerve activity; Table 6–5', t:'Table 6–2 places beta-1 (β1) adrenoceptors on postsynaptic effector cells “especially heart”, where ligand binding stimulates adenylyl cyclase and raises cyclic adenosine monophosphate (cAMP). Table 6–3 lists the sinoatrial node as accelerated by sympathetic activity through β1 and β2 receptors, and Table 6–5 describes a β-blocker (propranolol) as a drug that binds β receptors and prevents their activation. Removing the sympathetic acceleration at the sinoatrial node is what a β1 antagonist does, so the predicted effect is a slower heart rate.'}],
+ reading:[{src:'Katzung 16e, Ch. 6', sec:'Table 6–2 Major autonomic receptor types; Table 6–5', t:'β1 adrenoceptors are located especially in the heart, where sympathetic activity accelerates the sinoatrial node through them. A β-blocker binds β receptors and prevents their activation, removing that acceleration.'}],
  cite:'Pharmacodynamics-Day-1-2026s.pdf slide ~9; transcript 9/22'},
 
 {id:'L01-003', lecture:'L01', prof:'Gottlieb', tier:'new', topic:'L01', sub:'intro', skill:'apply', multi:true,
@@ -46,7 +46,7 @@ QUESTIONS.push(
   {t:'Hyponatremia', correct:false, why:'Hyponatremia was the thiazide diuretic example, from losing sodium.'}],
  teach:'Metoprolol blocks β1 receptors. In the heart that slows the rate, and too much slowing is bradycardia. β1 receptors are also in the brain, which he links to fatigue and patients forgetting things.',
  quote:'ADR - Bradycardia, fatigue, etc…',
- reading:[{src:'Katzung 16e, Ch. 6', sec:'Table 6–2 Major autonomic receptor types; Integration of Cardiovascular Function', t:'Table 6–2 lists the typical locations of β1 adrenoceptors as postsynaptic effector cells “especially heart, lipocytes, brain”, plus presynaptic nerve terminals and the juxtaglomerular apparatus of the kidney. Because the sinoatrial node is accelerated through β1 receptors (Table 6–3), blocking them slows the heart, and slowing it too far is bradycardia. In the intact resting human the heart rate is already dominated by parasympathetic (vagal) tone, which holds it at 70–80 beats per minute, so removing sympathetic drive lowers it further.'}],
+ reading:[{src:'Katzung 16e, Ch. 6', sec:'Table 6–2 Major autonomic receptor types', t:'β1 adrenoceptors are on postsynaptic effector cells, especially heart, lipocytes and brain. Because the sinoatrial node is accelerated through β1 receptors, blocking them slows the heart, and slowing it too far is bradycardia.'}],
  cite:'Pharmacodynamics-Day-1-2026s.pdf slide ~9; transcript 9/22'},
 
 {id:'L01-004', lecture:'L01', prof:'Gottlieb', tier:'new', topic:'L01', sub:'intro', skill:'recall',
@@ -59,7 +59,7 @@ QUESTIONS.push(
   {t:'They only mimic hormones', correct:false, why:'Some drugs mimic body products; others are unique. Either way they alter an existing system.'}],
  teach:'Drugs are chemical substances that alter an ongoing physiological or pathological function by interacting with components of the biological system. They can initiate, inhibit or modulate a signal, but they do not create a new pathway.',
  quote:'drugs don’t create anything new, they just change whatever is happening in the body.',
- reading:[{src:'Katzung 16e, Ch. 1', sec:'The Nature of Drugs; Pharmacology (opening definition)', t:'A drug is defined “in the most general sense” as any substance that brings about a change in biologic function through its chemical actions. In most cases the drug molecule interacts as an agonist (activator) or antagonist (inhibitor) with a target molecule that already plays a regulatory role in the biologic system; that target is called a receptor. Pharmacology is defined as the study of substances that bind regulatory molecules and thereby activate or inhibit normal body processes, which is the same idea as altering an ongoing function rather than creating a new one.'}],
+ reading:[{src:'Katzung 16e, Ch. 1', sec:'The Nature of Drugs; Pharmacology (opening definition)', t:'A drug is any substance that brings about a change in biologic function through its chemical actions. In most cases the drug molecule acts as an agonist or antagonist on a target molecule that already plays a regulatory role in the biologic system.'}],
  cite:'Pharmacodynamics-Day-1-2026s.pdf slides ~11, ~31; transcript 9/22'},
 
 {id:'L01-005', lecture:'L01', prof:'Gottlieb', tier:'new', topic:'L01', sub:'intro', skill:'recall',
@@ -72,7 +72,7 @@ QUESTIONS.push(
   {t:'The apparent potency', correct:false, why:'Apparent potency concerns how much drug reaches the site; it is not the response itself.'}],
  teach:'Receptors sense signals such as hormones, neurotransmitters and drugs. The message the receptor creates after binding is what we observe as the physiological response, for example increased cardiac output when norepinephrine binds β1.',
  quote:'The message that the receptor creates is the physiological response.',
- reading:[{src:'Katzung 16e, Ch. 1', sec:'Pharmacodynamic Principles; Receptors and Inert Binding Sites', t:'Drug binding is only the first step in a sequence: drug plus receptor forms a drug–receptor complex, which may act through a coupling molecule and an effector molecule, and the final change in function is accomplished by that effector mechanism. To count as a receptor, an endogenous molecule must change its function upon binding so that the function of the cell or tissue is altered; binding to a nonregulatory molecule such as plasma albumin produces no detectable change and is called an inert binding site. The rise in cardiac output is the altered function at the end of that sequence, the effect, not the binding itself.'}],
+ reading:[{src:'Katzung 16e, Ch. 1', sec:'Pharmacodynamic Principles', t:'Drug binding is only the first step: the drug–receptor complex acts through coupling and effector molecules, and the final change in function is accomplished by that effector mechanism. The rise in cardiac output is that altered function, the effect, not the binding itself.'}],
  cite:'Pharmacodynamics-Day-1-2026s.pdf slide ~11; transcript 9/22'},
 
 {id:'L01-006', lecture:'L01', prof:'Gottlieb', tier:'new', topic:'L01', sub:'nds', skill:'apply',
@@ -85,8 +85,7 @@ QUESTIONS.push(
   {t:'Stomach acid adds a charge', correct:false, why:'The charge is a property of the molecule itself.'}],
  teach:'Curare is a large molecule with a positive charge, so it is not absorbed when eaten. It was discovered when fish, whose gills are outside the body, became paralyzed and floated up. It was later used as a paralyzing agent for surgery.',
  quote:'if you eat this plant, nothing happens because karate is a very large positive charge molecule. What does that tell you to be large and have a charge to it, positive or negative? You can’t absorb, right?',
- reading:[{src:'Katzung 16e, Ch. 1', sec:'Drug Size; Ionization of Weak Acids and Weak Bases', t:'Most drugs have molecular weights between 100 and 1000; molecules much larger than 1000 do not diffuse readily between body compartments and often must be given directly into the compartment where they act. Separately, the electrostatic charge of an ionized molecule attracts water dipoles and makes it water-soluble and lipid-insoluble, so ionization may markedly reduce permeation across membranes, and quaternary amines are permanently charged and always in the poorly lipid-soluble form. A large, permanently charged molecule therefore fails both the size and the charge requirements for absorption from the gut.'},
-         {src:'Katzung 16e, Ch. 6', sec:'Table 6–5 Steps in autonomic transmission', t:'Tubocurarine is listed as acting at neuromuscular end plates, where it prevents activation of nicotinic receptors. That is the paralytic mechanism once the drug reaches skeletal muscle; the missing oral effect is a matter of the drug never reaching that site.'}],
+ reading:[{src:'Katzung 16e, Ch. 1', sec:'Drug Size; Ionization of Weak Acids and Weak Bases', t:'Molecules much larger than about 1000 molecular weight do not diffuse readily between body compartments. The charge of an ionized molecule makes it water-soluble and lipid-insoluble, so a permanently charged molecule permeates membranes poorly.'}],
  cite:'Pharmacodynamics-Day-1-2026s.pdf slide ~14; transcript 9/22'},
 
 {id:'L01-007', lecture:'L01', prof:'Gottlieb', tier:'new', topic:'L01', sub:'nds', skill:'recall', multi:true,
@@ -100,7 +99,7 @@ QUESTIONS.push(
   {t:'Being natural makes them safe', correct:false, why:'He answered this with cyanide and lead: natural does not mean safe.'}],
  teach:'NDS are regulated as food, so they receive less FDA oversight and remain on the market until they cause harm. Their labels cannot claim to treat, cure, diagnose or prevent disease. Natural does not mean safe.',
  quote:'when we look at natural dietary supplements, they are treated as food, which means they have less oversight by the FDA. Which means that until they cause harm, they’re still in the market',
- reading:[{src:'Katzung 16e, Ch. 1', sec:'Table 1–6 Some major legislation pertaining to drugs in the USA; The History of Pharmacology', t:'The Dietary Supplement Health and Education Act of 1994 established standards for dietary supplements but prohibited full Food and Drug Administration (FDA) review of supplements and botanicals as drugs; its labeling rules classify them as part of the food supply while allowing unregulated advertising. Substances promoted for health, but not promoted specifically as drugs, have thereby avoided meeting FDA standards. It also states that all substances can be toxic under some circumstances and that the chemicals in botanicals are no different from those in manufactured drugs except for a greater proportion of impurities.'}],
+ reading:[{src:'Katzung 16e, Ch. 1', sec:'Table 1–6 Some major legislation pertaining to drugs in the USA; The History of Pharmacology', t:'Under the Dietary Supplement Health and Education Act, supplements are part of the food supply and are not fully reviewed by the FDA as drugs. All substances can be toxic, and botanical chemicals are no different from manufactured drug chemicals except for more impurities.'}],
  cite:'Pharmacodynamics-Day-1-2026s.pdf slides ~15–~16; transcript 9/22'},
 
 {id:'L01-008', lecture:'L01', prof:'Gottlieb', tier:'new', topic:'L01', sub:'nds', skill:'recall',
@@ -114,7 +113,7 @@ QUESTIONS.push(
   {t:'All of the above', correct:true, why:'Every statement is incorrect: labels cannot claim cures, NDS are not FDA-tested like drugs, and natural or old does not mean safe or interaction-free.'}],
  teach:'All four statements are wrong. NDS labels cannot claim to cure, they are not tested by the FDA like prescription drugs, long use does not prove safety, and herbals can interact with prescription and OTC drugs. His test tip: if two answers other than a select-all are definitely correct, choose all of the above.',
  quote:'90% says all the above. What is the correct answer? I would say all the above, right?',
- reading:[{src:'Katzung 16e, Ch. 1', sec:'The History of Pharmacology (general principles); Table 1–6', t:'Three principles to remember: all substances can under certain circumstances be toxic; the chemicals in herbs and plant extracts (“nutraceuticals”) are no different from the chemicals in manufactured drugs except for more impurities; and all dietary supplements should meet the same standards of efficacy and safety as conventional drugs, ideally through the same randomized controlled trials. Under the Dietary Supplement Health and Education Act of 1994 they do not: full Food and Drug Administration (FDA) review of supplements as drugs is prohibited and advertising is unregulated. Each of the four statements contradicts one of these points, which is why none of them is correct.'}],
+ reading:[{src:'Katzung 16e, Ch. 1', sec:'The History of Pharmacology (general principles); Table 1–6', t:'All substances can be toxic, and the chemicals in herbs are no different from those in manufactured drugs except for more impurities. Full FDA review of supplements as drugs is prohibited, so they do not meet the same efficacy and safety standards.'}],
  cite:'Pharmacodynamics-Day-1-2026s.pdf slide ~18; transcript 9/22'},
 
 {id:'L01-009', lecture:'L01', prof:'Gottlieb', tier:'new', topic:'L01', sub:'nds', skill:'recall',
@@ -139,10 +138,10 @@ QUESTIONS.push(
   {t:'Herbals are fully FDA-tested', correct:false, why:'Supplements have not been fully tested.'}],
  teach:'Most patients do not consider supplements pertinent and do not report them. Herbals have active ingredients, can interact with prescription or OTC drugs, and can produce side effects because they have not been fully tested.',
  quote:'Herbal can interact with prescription/OTC drugs',
- reading:[{src:'Katzung 16e, Ch. 1', sec:'The History of Pharmacology (general principles); Confounding Factors in Clinical Trials; The Food & Drug Administration', t:'The chemicals in botanicals are no different from the chemicals in manufactured drugs apart from a greater proportion of impurities, so an herbal product carries active chemicals like any drug. In describing clinical trials it notes that other drugs and some foods alter the pharmacokinetics of many drugs, and that a proper pharmacologic history must include over-the-counter drugs and “supplements”. It also reports that so-called food supplements have been found to contain active drugs, for example sildenafil analogs in “energy food” supplements.'}],
+ reading:[{src:'Katzung 16e, Ch. 1', sec:'The History of Pharmacology (general principles); Confounding Factors in Clinical Trials', t:'Botanical chemicals are no different from those in manufactured drugs apart from more impurities, so an herbal product carries active chemicals like any drug. Other drugs alter the pharmacokinetics of many drugs, so a pharmacologic history must include over-the-counter drugs and supplements.'}],
  cite:'Pharmacodynamics-Day-1-2026s.pdf slide ~20; transcript 9/22'},
 
-{id:'L01-011', lecture:'L01', prof:'Gottlieb', tier:'new', topic:'L01', sub:'potency', skill:'apply',
+{id:'L01-011', fg:'potency', lecture:'L01', prof:'Gottlieb', tier:'new', topic:'L01', sub:'potency', skill:'apply',
  concept:'dose-selectivity', tags:['selectivity','metoprolol'], source:'transcript',
  stem:'Metoprolol is β1-selective at lower doses. What happens as the dose rises above about 200 mg?',
  options:[
@@ -177,10 +176,10 @@ QUESTIONS.push(
   {t:'Whether it activates the receptor', correct:false, why:'Changing receptor activity is efficacy; a drug can have affinity with no activity.'}],
  teach:'Affinity is how well a drug attaches to the receptor and stays bound. The kind of bonds formed (covalent, hydrogen, ionic, van der Waals) makes binding stronger or weaker.',
  quote:'depending on what kind of bonds they form, covalent bonds, hydrogen bonds, ion bonds, van der Waal bonds, they may have stronger or weaker binding',
- reading:[{src:'Katzung 16e, Ch. 1', sec:'Drug Reactivity & Drug-Receptor Bonds', t:'Drugs interact with receptors through chemical bonds of three major types: covalent, electrostatic and hydrophobic. Covalent bonds are very strong and often not reversible under biologic conditions (the acetyl group of aspirin stays bound to cyclooxygenase until new enzyme is made); electrostatic bonds range from relatively strong ionic linkages to weaker hydrogen bonds and very weak van der Waals forces, and are much more common than covalent bonds; hydrophobic bonds are usually quite weak. Drugs binding through weak bonds are generally more selective, because weak bonds require a very precise fit to the receptor.'}],
+ reading:[{src:'Katzung 16e, Ch. 1', sec:'Drug Reactivity & Drug-Receptor Bonds', t:'Drugs interact with receptors through covalent, electrostatic and hydrophobic bonds. Covalent bonds are very strong and often irreversible, electrostatic bonds range from relatively strong ionic linkages to weaker hydrogen bonds and very weak van der Waals forces, and hydrophobic bonds are usually weak.'}],
  cite:'Pharmacodynamics-Day-1-2026s.pdf slide ~37; transcript 9/22'},
 
-{id:'L01-014', lecture:'L01', prof:'Gottlieb', tier:'new', topic:'L01', sub:'potency', skill:'tell',
+{id:'L01-014', fg:'efficacy', lecture:'L01', prof:'Gottlieb', tier:'new', topic:'L01', sub:'potency', skill:'tell',
  concept:'efficacy-definition', tags:['efficacy','poll'], source:'both',
  stem:'Efficacy:',
  options:[
@@ -190,7 +189,7 @@ QUESTIONS.push(
   {t:'Is the ability of a drug to be absorbed at the level of the GI', correct:false, why:'Absorption is pharmacokinetics.'}],
  teach:'Affinity is binding and staying bound; efficacy is what the bound drug does to the receptor. Drugs that activate receptors have positive efficacy; drugs that shut receptors down have negative efficacy.',
  quote:'Some drugs are going to be activating receptors so they have positive efficacy. Others are going to be shutting down the receptors so they have negative efficacy.',
- reading:[{src:'Katzung 16e, Ch. 1', sec:'Agonists, Partial Agonists, and Inverse Agonists; Receptors and Inert Binding Sites', t:'Full agonists shift almost the whole receptor pool into the active drug-bound (Ra–D) form; partial agonists bind the same receptors but do not stabilize the active conformation as fully, leaving a fraction in the inactive drug-bound (Ri–D) pool, and are said to have low intrinsic efficacy. Inverse agonists stabilize the inactive form and reduce constitutive activity, producing effects opposite to agonists. Intrinsic efficacy is independent of affinity as usually measured, which separates the ability to change receptor state (efficacy) from the ability to bind (affinity).'}],
+ reading:[{src:'Katzung 16e, Ch. 1', sec:'Agonists, Partial Agonists, and Inverse Agonists', t:'Full agonists shift the receptor pool to the active form, partial agonists do so less fully (low intrinsic efficacy), and inverse agonists stabilize the inactive form. Intrinsic efficacy is independent of affinity, separating the ability to change receptor state from the ability to bind.'}],
  cite:'Pharmacodynamics-Day-1-2026s.pdf slide ~38; transcript 9/22'},
 
 {id:'L01-015', lecture:'L01', prof:'Gottlieb', tier:'new', topic:'L01', sub:'potency', skill:'tell',
@@ -203,7 +202,7 @@ QUESTIONS.push(
   {t:'Efficacy', correct:false, why:'Efficacy is the drug’s effect on receptor state, not how much reaches it.'}],
  teach:'Pharmacological potency comes from the drug–receptor side: tissue sensitivity, receptor number and activity, affinity and efficacy. Apparent potency adds pharmacokinetics: age, absorption, distribution, elimination and DDIs, which set how much drug reaches the site of action. IV has 100% bioavailability and bypasses first-pass metabolism.',
  quote:'pharmokinetics is going to be affecting how much of the drug gets to the site of action. Because that’s how it’s going to produce its effects.',
- reading:[{src:'Katzung 16e, Ch. 1', sec:'Drug-Body Interactions; Pharmacokinetic Principles; Drug Screening', t:'The actions of the drug on the body are pharmacodynamic processes; the actions of the body on the drug are pharmacokinetic processes, which govern absorption, distribution and elimination and are of great practical importance in choosing and administering a drug for a particular patient. A drug given by mouth must be absorbed into the blood from its site of administration and distributed to its site of action, permeating the barriers between compartments, whereas only rarely can a drug be applied directly to its target. In drug screening, oral administration studies may show a drug to be poorly absorbed or rapidly metabolized in the liver, prompting changes to improve bioavailability. The difference between the oral and intravenous patients lies on this pharmacokinetic side.'}],
+ reading:[{src:'Katzung 16e, Ch. 1', sec:'Drug-Body Interactions; Pharmacokinetic Principles', t:'Pharmacodynamics is what the drug does to the body; pharmacokinetics is what the body does to the drug: absorption, distribution and elimination. A drug must be absorbed and distributed to its site of action, so the oral–intravenous difference is pharmacokinetic.'}],
  cite:'Pharmacodynamics-Day-1-2026s.pdf slides ~23, ~27; transcript 9/22',
  note:'Slide ~27 lists absorption, distribution, elimination, age and DDIs under apparent potency. In the transcript he answers yes to whether ADME affects pharmacological potency and says pharmacological potency depends on absorption and metabolism. The slide grouping (apparent potency) is keyed.'},
 
@@ -230,7 +229,7 @@ QUESTIONS.push(
   {t:'Either one; they are equal', correct:false, why:'He ranks efficacy first when the safe drug does not work.'}],
  teach:'His answer: choose the efficacious drug if nothing safer works, because a safe drug that does not work wastes the patient’s health and money. If two drugs have equal efficacy, pick the safer one. Cancer drugs are the same case: toxic but needed.',
  quote:'Perhaps if I’m your patient, please choose the most efficacious drug. If there’s nothing else that is safer than that',
- reading:[{src:'Katzung 16e, Ch. 1', sec:'Preclinical Safety & Toxicity Testing; The Food & Drug Administration; New Drug Development', t:'“All chemicals are toxic in some individuals at some dose”, and no chemical can be certified as completely safe; the objective is to estimate the risk of a drug candidate “in the context of therapeutic needs” and the likely duration of use. Highly toxic drugs that are nevertheless considered valuable in lethal diseases may be approved for restricted use by specially trained practitioners. Thalidomide is the example given: despite its fetal toxicity it is now approved for limited use as an immunoregulatory agent and for certain forms of leprosy, because even the most serious toxicities may be avoided or managed if understood. A drug with no efficacy against a lethal infection offers no therapeutic benefit to weigh against its safety.'}],
+ reading:[{src:'Katzung 16e, Ch. 1', sec:'Preclinical Safety & Toxicity Testing; The Food & Drug Administration', t:'No drug is completely safe; risk is judged in the context of therapeutic need. Highly toxic drugs valuable in lethal diseases may be approved, since a drug with no efficacy offers no benefit to weigh against its safety.'}],
  cite:'Pharmacodynamics-Day-1-2026s.pdf slides ~25–~26; transcript 9/22'},
 
 {id:'L01-018', lecture:'L01', prof:'Gottlieb', tier:'new', topic:'L01', sub:'potency', skill:'tell', multi:true,
@@ -245,7 +244,7 @@ QUESTIONS.push(
   {t:'Elimination by the kidney or liver', correct:false, why:'Elimination is a pharmacokinetic factor under apparent potency.'}],
  teach:'Pharmacological potency (pharmacodynamics): tissue sensitivity, receptor number, receptor activity, affinity, efficacy. Apparent potency (pharmacokinetics): age, absorption, distribution, elimination, DDIs.',
  quote:'Apparent Potency - Age - Absorption - Distribution - Elimination - DDI; Pharmacological Potency - Tissue sensitivity - Receptor # - Receptor Activity - Affinity - Efficacy',
- reading:[{src:'Katzung 16e, Ch. 1', sec:'Drug-Body Interactions; Confounding Factors in Clinical Trials', t:'Drug–body interactions fall into two classes: pharmacodynamic processes, the actions of the drug on the body, and pharmacokinetic processes, the actions of the body on the drug. Pharmacokinetic processes govern absorption, distribution and elimination, and a patient with impaired renal function is given as the case where they decide drug choice; age, gender and pregnancy are also said to influence the pharmacokinetics of some drugs. Absorption, elimination and age therefore fall on the pharmacokinetic side, while tissue sensitivity, receptor number and affinity concern the drug–receptor interaction described under pharmacodynamics.'}],
+ reading:[{src:'Katzung 16e, Ch. 1', sec:'Drug-Body Interactions; Confounding Factors in Clinical Trials', t:'Pharmacokinetic processes (the actions of the body on the drug) govern absorption, distribution and elimination, and age influences them. Absorption, elimination and age are therefore pharmacokinetic, while tissue sensitivity, receptor number and affinity concern the drug–receptor interaction.'}],
  cite:'Pharmacodynamics-Day-1-2026s.pdf slide ~27',
  note:'In the transcript he says pharmacological potency depends on absorption, metabolism and age; the slide places these under apparent potency. The slide grouping is keyed.'},
 
@@ -259,7 +258,7 @@ QUESTIONS.push(
   {t:'It binds an allosteric site on the receptor', correct:false, why:'Allosteric binding is not part of the occupancy theory.'}],
  teach:'The first theory was based only on affinity: the more receptors a drug occupies, the greater the response. A full agonist occupies all receptors for 100% of the response; a partial agonist occupies, for example, 70% and gives 70%. It introduced affinity and full versus partial agonists but could not explain how all drugs work.',
  quote:'a full agonist will produce 100% of the response as a partial may produce a 70% of the response because it can only occupy 70% of the receptors, right? So it’s based on occupancy.',
- reading:[{src:'Katzung 16e, Ch. 1', sec:'Agonists, Partial Agonists, and Inverse Agonists', t:'Partial agonists are described as drugs that bind the same receptors as full agonists and activate them in the same way, “but do not evoke as great a response, no matter how high the concentration”. In the two-state model of Figure 1–3 this is explained by the partial agonist not stabilizing the active conformation as fully as a full agonist, so a significant fraction of drug-bound receptors stays inactive; such drugs are said to have low intrinsic efficacy. That later model attributes the submaximal response to the fraction of bound receptors held in the inactive state rather than to the fraction of receptors occupied, which is the older occupancy explanation. Because they occupy the same site, partial agonists can also block full agonists: pindolol acts as an agonist when no full agonist is present and as an antagonist when epinephrine is present.'}],
+ reading:[{src:'Katzung 16e, Ch. 1', sec:'Agonists, Partial Agonists, and Inverse Agonists', t:'Partial agonists bind the same receptors as full agonists but do not evoke as great a response, no matter how high the concentration. Occupancy theory attributes this to the fraction of receptors occupied; the later two-state model attributes it to bound receptors held inactive.'}],
  cite:'Pharmacodynamics-Day-1-2026s.pdf slide ~28; transcript 9/22'},
 
 {id:'L01-020', lecture:'L01', prof:'Gottlieb', tier:'new', topic:'L01', sub:'theory', skill:'recall',
@@ -272,7 +271,7 @@ QUESTIONS.push(
   {t:'Negative', correct:false, why:'Negative efficacy came later with the two-state model, not from intrinsic activity.'}],
  teach:'Changing R1 or R2 functional groups could turn a full agonist into a partial agonist or into something with no effect. This led to intrinsic activity: full agonist 100%, partial agonist 1–99%, antagonist zero. Antagonists have affinity but do nothing to the receptor.',
  quote:'my antagonist, there are zero intrinsic activity. They have affinity, they can bind the receptor, but they don’t do anything to the receptor.',
- reading:[{src:'Katzung 16e, Ch. 1', sec:'Agonists, Partial Agonists, and Inverse Agonists; Types of Drug-Receptor Interactions', t:'Conventional antagonists are described as having equal affinity for the inactive and active receptor forms, so they fix the drug-bound fractions in the same proportions as in the absence of drug: “no change in activity will be observed, so the drug will appear to be without effect”. Their presence at the receptor site still blocks access of agonists, which is termed neutral antagonism. Pharmacologic antagonists such as atropine compete with and prevent binding by agonists, and their action can be overcome by increasing the agonist dose. A drug that binds but changes nothing about receptor activity is what an intrinsic activity of zero describes.'}],
+ reading:[{src:'Katzung 16e, Ch. 1', sec:'Agonists, Partial Agonists, and Inverse Agonists', t:'Conventional antagonists have equal affinity for the inactive and active receptor forms, so the drug-bound fractions stay in the same proportions as without drug and no change in activity is observed. Their presence at the receptor still blocks access of agonists.'}],
  cite:'Pharmacodynamics-Day-1-2026s.pdf slide ~28; transcript 9/22'},
 
 {id:'L01-021', lecture:'L01', prof:'Gottlieb', tier:'new', topic:'L01', sub:'theory', skill:'recall',
@@ -285,10 +284,10 @@ QUESTIONS.push(
   {t:'How much drug reaches the site', correct:false, why:'That is pharmacokinetics.'}],
  teach:'In the two-state model receptors exist as active or inactive. L determines how likely a receptor is in the inactive versus the active state, and cells can move receptors back and forth and change receptor number. Drugs bound to the receptor shift this balance.',
  quote:'this L constant over here. Determines how likely a receptor should be found on the inactive versus the active state.',
- reading:[{src:'Katzung 16e, Ch. 1', sec:'Agonists, Partial Agonists, and Inverse Agonists (Figure 1–3)', t:'In the Figure 1–3 model the receptor can assume two conformations: an inactive form (Ri) that produces no effect even when a drug is bound, and an active form (Ra) that can activate downstream mechanisms. Thermodynamic considerations mean some of the receptor pool is in the Ra form some of the time even without agonist, producing constitutive or basal activity; in the absence of drugs the two isoforms are in equilibrium and the Ri form is favored. The constant asked about sets that drug-free balance between inactive and active receptors, and drugs act by shifting it: agonists have much higher affinity for Ra and inverse agonists for Ri.'}],
+ reading:[{src:'Katzung 16e, Ch. 1', sec:'Agonists, Partial Agonists, and Inverse Agonists (Figure 1–3)', t:'The receptor can assume an inactive form (Ri), which produces no effect even with drug bound, and an active form (Ra). Without drug the two are in equilibrium with Ri favored, and drugs act by shifting that balance: agonists prefer Ra, inverse agonists Ri.'}],
  cite:'Pharmacodynamics-Day-1-2026s.pdf slide ~28; transcript 9/22'},
 
-{id:'L01-022', lecture:'L01', prof:'Gottlieb', tier:'new', topic:'L01', sub:'theory', skill:'apply',
+{id:'L01-022', fg:'inverse', lecture:'L01', prof:'Gottlieb', tier:'new', topic:'L01', sub:'theory', skill:'apply',
  concept:'negative-efficacy-inverse-agonist', tags:['two-state','inverse-agonist'], source:'both',
  stem:'A drug binds active receptors and shifts them toward the inactive state. Which kind of drug does the two-state model use this to explain?',
  options:[
@@ -298,7 +297,7 @@ QUESTIONS.push(
   {t:'Antagonist', correct:false, why:'An antagonist binds but does not change receptor state.'}],
  teach:'Drugs that shift receptors toward the active state have positive efficacy; drugs that shift them toward the inactive state have negative efficacy. The two-state model lets us explain inverse agonists.',
  quote:'Are the drugs bound to receptors who are active and shift them to the negative or inactive state, does have a negative efficacy... And that allows us to explain inverse agonists',
- reading:[{src:'Katzung 16e, Ch. 1', sec:'Agonists, Partial Agonists, and Inverse Agonists', t:'A drug with much stronger affinity for the inactive (Ri) than the active (Ra) receptor state stabilizes a large fraction in the inactive drug-bound pool, reduces any constitutive activity, and produces effects opposite to those of conventional agonists; such drugs are termed inverse agonists. The example given is the gamma-aminobutyric acid type A (GABA-A) receptor chloride channel: benzodiazepine agonists enhance chloride entry and sedate, the neutral antagonist flumazenil reverses that sedation, and inverse agonists cause anxiety and agitation, the inverse of sedation. Inverse agonists have also been found for β adrenoceptors and histamine H1 and H2 receptors.'}],
+ reading:[{src:'Katzung 16e, Ch. 1', sec:'Agonists, Partial Agonists, and Inverse Agonists', t:'A drug with much stronger affinity for the inactive (Ri) than the active (Ra) receptor state stabilizes a large fraction in the inactive drug-bound pool, reduces any constitutive activity, and produces effects opposite to those of agonists; such drugs are inverse agonists.'}],
  cite:'Pharmacodynamics-Day-1-2026s.pdf slide ~28; transcript 9/22'},
 
 {id:'L01-023', lecture:'L01', prof:'Gottlieb', tier:'new', topic:'L01', sub:'drugs', skill:'tell',
@@ -311,8 +310,7 @@ QUESTIONS.push(
   {t:'Neither binds the H1 receptor', correct:false, why:'Both bind H1.'}],
  teach:'Drugs can be selective or non-selective. Loratadine is a selective H1 inverse agonist. Diphenhydramine binds H1, H2 and muscarinic receptors and is very non-selective; it is the ingredient in nighttime products and puts 9 of 10 people to sleep.',
  quote:'What is loratadine? It’s Claritin, which is a selective H1 inverse agonist... What about diphenhydramine?... Benadryl not only binds to the H1, it binds to the H2. It binds to muscarinic receptors. It’s very non-selective.',
- reading:[{src:'Katzung 16e, Ch. 1', sec:'Drug Size; Drug Reactivity & Drug-Receptor Bonds; Agonists, Partial Agonists, and Inverse Agonists', t:'To have a good fit to only one type of receptor, a drug molecule must be sufficiently unique in shape, charge and other properties to prevent its binding to other receptors, and drugs that bind through weak bonds are generally more selective because weak bonds require a very precise fit. Inverse agonists have been found for histamine H1 and H2 receptors, the class to which a selective H1 inverse agonist belongs. A drug whose structure fits several receptor types (H1, H2, muscarinic) is by this definition non-selective.'},
-         {src:'Katzung 16e, Ch. 6', sec:'Introduction (chemical transmission and autonomic drugs)', t:'“A very large number of drugs used for other purposes (eg, allergies, mental illness) have unwanted effects on autonomic function”. Muscarinic cholinoceptors are among the autonomic receptors it describes, so an allergy drug that also binds muscarinic receptors is the situation that sentence covers.'}],
+ reading:[{src:'Katzung 16e, Ch. 1', sec:'Drug Size', t:'To fit only one type of receptor, a drug molecule must be sufficiently unique in shape, charge and other properties to prevent its binding to other receptors. A drug whose structure fits several receptor types is by this definition non-selective.'}],
  cite:'Pharmacodynamics-Day-1-2026s.pdf slide ~29; transcript 9/22'},
 
 {id:'L01-024', lecture:'L01', prof:'Gottlieb', tier:'new', topic:'L01', sub:'drugs', skill:'recall',
@@ -325,7 +323,7 @@ QUESTIONS.push(
   {t:'Inverse agonists', correct:false, why:'Inverse agonists act by themselves with negative efficacy.'}],
  teach:'Drug classes by mechanism: agonists (full, partial, inverse), antagonists (direct or indirect; reversible or irreversible), and allosterics (agonist or antagonist). Allosterics do not always act alone but can make other drugs much better or much worse.',
  quote:'we have over here where the magic in pharmacology is, allosterics. These drugs, they don’t do things by themselves all the time, but they can make other drugs much, much better or much, much worse.',
- reading:[{src:'Katzung 16e, Ch. 1', sec:'Types of Drug-Receptor Interactions (Figure 1–2)', t:'Drugs that bind to the same receptor molecule as the agonist but do not prevent the agonist from binding are said to act allosterically, and they may enhance or inhibit the action of the agonist molecule. Allosteric activators may increase the efficacy of the agonist or its binding affinity, which in Figure 1–2 appears as a higher maximal response or a leftward shift of the agonist dose–response curve; allosteric inhibitors lower the response, and allosteric inhibition is usually not overcome by increasing the agonist dose. Changing the potency or efficacy of another drug, rather than competing with it, is what sets allosteric drugs apart from agonists and antagonists.'}],
+ reading:[{src:'Katzung 16e, Ch. 1', sec:'Types of Drug-Receptor Interactions (Figure 1–2)', t:'Drugs that bind the same receptor as the agonist without preventing agonist binding act allosterically and may enhance or inhibit the agonist’s action. Allosteric activators can increase the agonist’s efficacy or binding affinity; allosteric inhibitors lower the response.'}],
  cite:'Pharmacodynamics-Day-1-2026s.pdf slide ~29; transcript 9/22'},
 
 {id:'L01-025', lecture:'L01', prof:'Gottlieb', tier:'new', topic:'L01', sub:'drugs', skill:'recall',
@@ -338,7 +336,7 @@ QUESTIONS.push(
   {t:'Selectivity rises as the dose is increased', correct:false, why:'Reverses the rule; selectivity falls as dose rises.'}],
  teach:'Everything is dose dependent. Walter Straub stated there is only a quantitative difference between a drug and a poison: vitamin A helps eyesight but is lethal at polar bear liver amounts.',
  quote:'Walter Straub: there is only a quantitative difference between a drug and a poison',
- reading:[{src:'Katzung 16e, Ch. 1', sec:'The Nature of Drugs; The History of Pharmacology (general principles)', t:'Poisons are defined as drugs that have almost exclusively harmful effects, and Paracelsus’s statement follows that “the dose makes the poison”, meaning that any substance can be harmful if taken in the wrong dosage. Toxins are poisons of biologic origin, synthesized by plants or animals. Among the general principles the student should remember, the first is that all substances can under certain circumstances be toxic. The same quantitative rule is attributed to Paracelsus (1493–1541).'}],
+ reading:[{src:'Katzung 16e, Ch. 1', sec:'The Nature of Drugs', t:'Poisons are drugs that have almost exclusively harmful effects, and the dose makes the poison: any substance can be harmful if taken in the wrong dosage.'}],
  cite:'Pharmacodynamics-Day-1-2026s.pdf slide ~29; transcript 9/22'},
 
 {id:'L01-026', lecture:'L01', prof:'Gottlieb', tier:'new', topic:'L01', sub:'drugs', skill:'apply',
@@ -363,7 +361,7 @@ QUESTIONS.push(
   {t:'Intracellular receptors', correct:false, why:'This row lists steroid hormones.'}],
  teach:'Four receptor classes: ion channels (L-type Ca++ channels, GABA), 7-transmembrane G protein–coupled receptors (α and β adrenergic, 5HT, histamine), 1-transmembrane proteins (tyrosine kinases) and intracellular receptors / transcriptional regulators (steroid hormones).',
  quote:'Protein coupled receptors(GPCR) α & β adrenergic, 5HT, Histamine, etc…',
- reading:[{src:'Katzung 16e, Ch. 6', sec:'Table 6–2 Major autonomic receptor types; Presynaptic Regulation', t:'Table 6–2 gives the result of ligand binding for each autonomic receptor: α1 adrenoceptors form inositol trisphosphate (IP3) and diacylglycerol (DAG) and raise intracellular calcium; α2 receptors inhibit adenylyl cyclase and lower cyclic adenosine monophosphate (cAMP); β1, β2 and β3 receptors stimulate adenylyl cyclase and raise cAMP; muscarinic and dopamine receptors use the same IP3/DAG, adenylyl-cyclase or potassium-channel routes. The presynaptic α2 effect is called a “G protein–mediated” effect. Nicotinic receptors are the contrast: pentameric proteins whose ligand binding directly opens sodium and potassium channels, which is the ion-channel class rather than a coupled receptor.'}],
+ reading:[{src:'Katzung 16e, Ch. 6', sec:'Table 6–2 Major autonomic receptor types; Presynaptic Regulation', t:'Adrenoceptors signal through G proteins: α1 receptors form IP3 and DAG, α2 receptors inhibit adenylyl cyclase, and β receptors stimulate adenylyl cyclase and raise cAMP. Nicotinic receptors are the contrast: pentameric proteins whose ligand binding directly opens sodium and potassium channels, the ion-channel class.'}],
  cite:'Pharmacodynamics-Day-1-2026s.pdf slide ~36'},
 
 {id:'L01-028', lecture:'L01', prof:'Gottlieb', tier:'new', topic:'L01', sub:'ion', skill:'recall', multi:true,
@@ -376,8 +374,8 @@ QUESTIONS.push(
   {t:'There are about 7 distinct ones', correct:false, why:'There are about 232 distinct ion channels.'}],
  teach:'Ion channels are transmembrane proteins with various subunit combinations, expressed in all cells, about 232 distinct types. They are classified by the ions they conduct, their architecture and the mechanism that opens them (ligand, voltage or stretch). They signal by altering membrane potential or ionic composition (Na+, K+, Ca2+, Cl−), because the lipid bilayer is impermeable to ions.',
  quote:'Convey their signal by altering cell membrane potential or ionic composition (Na+, K+, Ca2+, and Cl–)',
- reading:[{src:'Katzung 16e, Ch. 6', sec:'Table 6–2; Postsynaptic Regulation (Figure 6–8); Table 6–5', t:'Ion-channel signaling is expressed as changes in membrane potential: nicotinic receptor activation opens sodium and potassium channels and depolarizes the postganglionic cell, producing a fast excitatory postsynaptic potential (EPSP) that fires an action potential if threshold is reached, while M2 muscarinic receptors open potassium channels and hyperpolarize the cell, producing a slow inhibitory postsynaptic potential (IPSP). Transmitter release depends on calcium entering through voltage-sensitive calcium channels in the nerve terminal, and local anesthetics act by blocking voltage-gated sodium channels in axons. Channels for several ions thus appear in axons, nerve terminals, ganglion cells and muscle.'},
-         {src:'Katzung 16e, Ch. 1', sec:'Ionization of Weak Acids and Weak Bases; Lipid diffusion; Special carriers', t:'The electrostatic charge of an ionized molecule attracts water dipoles and produces a polar, water-soluble and lipid-insoluble complex, so charged species do not readily cross lipid membranes; lipid diffusion is the most important limiting factor for permeation because lipid barriers separate the aqueous compartments of the body. Substances too large or too insoluble in lipid to diffuse passively cross by way of special carrier molecules, so the bilayer itself is not what lets charged ions through.'}],
+ reading:[{src:'Katzung 16e, Ch. 6', sec:'Postsynaptic Regulation (Figure 6–8)', t:'Ion-channel signaling is expressed as changes in membrane potential: opening sodium and potassium channels depolarizes a cell, and opening potassium channels hyperpolarizes it.'},
+         {src:'Katzung 16e, Ch. 1', sec:'Ionization of Weak Acids and Weak Bases; Lipid diffusion', t:'The charge of an ionized molecule makes it water-soluble and lipid-insoluble, so charged species do not readily cross lipid membranes; the bilayer itself is not what lets ions through.'}],
  cite:'Pharmacodynamics-Day-1-2026s.pdf slide ~39'},
 
 {id:'L01-029', lecture:'L01', prof:'Gottlieb', tier:'new', topic:'L01', sub:'ion', skill:'tell',
@@ -390,7 +388,7 @@ QUESTIONS.push(
   {t:'Pump', correct:false, why:'Pumps move ions against the concentration gradient.'}],
  teach:'Passive channels are always open (resting membrane potential). Voltage-gated channels are highly selective and open only at certain membrane potentials (calcium channels). Stretch channels are pressure sensitive. Ligand-gated channels are usually closed with the binding pocket in the channel (acetylcholine at nicotinic, GABA-A, 5HT3). Pumps move ions against the concentration gradient (Na+/K+ ATPase).',
  quote:'Ligand Gated: Usually Closed; The Binding Pocket Located in the Channel; Acetylcholine, GABAA, Serotonin (5HT3), etc…',
- reading:[{src:'Katzung 16e, Ch. 6', sec:'Table 6–2 Major autonomic receptor types; Table 6–5 Steps in autonomic transmission', t:'Nicotinic cholinoceptors are pentameric receptors: the neuronal type (NN) typically contains α- and β-type subunits, and the muscle type (NM) at skeletal neuromuscular end plates contains two α1 and β1 subunits plus γ and δ subunits. The result of ligand binding at both is “opening of Na+, K+ channels, depolarization”, and Table 6–5 states that nicotine binds nicotinic receptors and opens the ion channel in the postsynaptic membrane while tubocurarine prevents their activation. The channel opens when the ligand binds the receptor, which is the ligand-gated pattern; voltage-gated examples are the axonal sodium channels blocked by local anesthetics and the terminal calcium channels that open when an action potential arrives.'}],
+ reading:[{src:'Katzung 16e, Ch. 6', sec:'Table 6–2 Major autonomic receptor types; Table 6–5 Steps in autonomic transmission', t:'At nicotinic receptors, ligand binding opens the ion channel in the postsynaptic membrane (Na+ and K+ flow, depolarization); that is the ligand-gated pattern. Voltage-gated channels instead open when an action potential arrives.'}],
  cite:'Pharmacodynamics-Day-1-2026s.pdf slides ~40–~47'},
 
 {id:'L01-030', lecture:'L01', prof:'Gottlieb', tier:'new', topic:'L01', sub:'ion', skill:'recall',
@@ -403,7 +401,7 @@ QUESTIONS.push(
   {t:'The channel closes permanently', correct:false, why:'No such behavior is described.'}],
  teach:'Stretch channels are pressure sensitive and embedded in blood vessel walls (baroreceptors). The carotid sinus (glossopharyngeal nerve) monitors blood going to the brain and the aortic arch (vagus nerve) is close to the heart. Increased stretch increases nerve firing.',
  quote:'Increase Stretch = Increase Nerve Firing',
- reading:[{src:'Katzung 16e, Ch. 6', sec:'Integration of Cardiovascular Function; Functional Organization of Autonomic Activity', t:'The sensory carotid sinus baroreceptor fibers travel in the glossopharyngeal nerve and have a major influence on sympathetic outflow from the vasomotor center. When mean arterial pressure rises, for example during a norepinephrine infusion, the compensatory response “is mediated by increased firing by the baroreceptor nerves of the carotid sinus and the aortic arch”; increased baroreceptor activity causes decreased central sympathetic outflow and increased vagal (parasympathetic) outflow to the sinoatrial node, so the heart often slows even though the drug itself stimulates it. Higher pressure stretching the vessel wall means more baroreceptor firing.'}],
+ reading:[{src:'Katzung 16e, Ch. 6', sec:'Integration of Cardiovascular Function', t:'When mean arterial pressure rises, the compensatory response is mediated by increased firing of the baroreceptor nerves of the carotid sinus and aortic arch. Higher pressure stretching the vessel wall means more baroreceptor firing.'}],
  cite:'Pharmacodynamics-Day-1-2026s.pdf slide ~43'},
 
 {id:'L01-031', lecture:'L01', prof:'Gottlieb', tier:'new', topic:'L01', sub:'ion', skill:'apply',
@@ -416,7 +414,7 @@ QUESTIONS.push(
   {t:'The membrane becomes more negative', correct:false, why:'Na+ influx makes the membrane less negative.'}],
  teach:'Sequence: (1) acetylcholine binds 2 α subunits; (2) the channel opens, increasing Na+ influx and K+ outflow; (3) the membrane depolarizes (less negative); (4) voltage-sensitive Ca++ channels open; (5) intracellular Ca++ rises, increasing contraction; (6) the Na+/K+ ATPase restores membrane potential.',
  quote:'3. Depolarization of membrane potential (less negative) 4. Open Voltage Sensitive Ca++ Channels',
- reading:[{src:'Katzung 16e, Ch. 6', sec:'Table 6–2; Postsynaptic Regulation (Figure 6–8); Cholinergic Transmission; Case Study Answer', t:'Ligand binding at nicotinic receptors results in “opening of Na+, K+ channels, depolarization”; the muscle-type receptor contains two α1 subunits along with β1, γ and δ subunits. In the ganglion the resulting fast excitatory postsynaptic potential (EPSP) evokes a propagated action potential if threshold is reached. Contraction of skeletal muscle is triggered by exocytotic release of acetylcholine from motor nerves, and that release follows calcium influx through voltage-sensitive calcium channels once an action potential reaches the terminal. Depolarization is the immediate consequence of the channel opening, before any calcium-dependent step.'}],
+ reading:[{src:'Katzung 16e, Ch. 6', sec:'Table 6–2; Postsynaptic Regulation (Figure 6–8)', t:'Ligand binding at nicotinic receptors opens Na+ and K+ channels and depolarizes the membrane; depolarization is the immediate consequence of the channel opening, before any calcium-dependent step.'}],
  cite:'Pharmacodynamics-Day-1-2026s.pdf slide ~48'},
 
 {id:'L01-032', lecture:'L01', prof:'Gottlieb', tier:'new', topic:'L01', sub:'gpcr', skill:'recall',
@@ -431,7 +429,7 @@ QUESTIONS.push(
  quote:'about 60 or more% of all drugs in the market target one of kind of these receptors. So if you know how they work, you’ve got 60% of the drugs in your pocket.',
  cite:'Pharmacodynamics-Day-1-2026s.pdf slide ~49; transcript 9/22'},
 
-{id:'L01-033', lecture:'L01', prof:'Gottlieb', tier:'new', topic:'L01', sub:'gpcr', skill:'apply',
+{id:'L01-033', fg:'gpcr', lecture:'L01', prof:'Gottlieb', tier:'new', topic:'L01', sub:'gpcr', skill:'apply',
  concept:'gs-cascade-heart', tags:['gpcr','gs','beta1'], source:'slide',
  stem:'Norepinephrine binds β1 receptors in the heart. After GDP release and GTP binding, what does the αs subunit activate?',
  options:[
@@ -441,7 +439,7 @@ QUESTIONS.push(
   {t:'The Na+/K+ ATPase', correct:false, why:'That pump restores membrane potential in the nicotinic sequence.'}],
  teach:'At β1 in the heart: norepinephrine binds, GDP is released, GTP binds, and αs activates adenylate cyclase (AC). AC converts ATP to cAMP (amplification), the second messenger, leading to the physiological response of increased heart rate.',
  quote:'NE β1 ... αs ATP AC ... ATP cAMP ... Physiological Response (Increase in Heart Rate)',
- reading:[{src:'Katzung 16e, Ch. 6', sec:'Table 6–2; Table 6–3; Table 6–5', t:'For β1 adrenoceptors, located on postsynaptic effector cells “especially heart”, the result of ligand binding is “stimulation of adenylyl cyclase, increased cAMP” (cyclic adenosine monophosphate). Table 6–3 lists the sinoatrial node as accelerated and contractility as increased by sympathetic activity through β1 and β2 receptors, and Table 6–5 describes the β agonist isoproterenol as binding β receptors and activating adenylyl cyclase. Adenylyl cyclase is the enzyme downstream of the β1 receptor; formation of IP3 belongs to α1 and M1/M3 receptors, and inhibition of adenylyl cyclase to α2 and M2.'}],
+ reading:[{src:'Katzung 16e, Ch. 6', sec:'Table 6–2', t:'For β1 adrenoceptors, the result of ligand binding is stimulation of adenylyl cyclase and increased cAMP. Formation of IP3 belongs to α1 and M1/M3 receptors, and inhibition of adenylyl cyclase to α2 and M2.'}],
  cite:'Pharmacodynamics-Day-1-2026s.pdf slides ~51–~53'},
 
 {id:'L01-034', lecture:'L01', prof:'Gottlieb', tier:'new', topic:'L01', sub:'gpcr', skill:'recall', multi:true,
@@ -457,7 +455,7 @@ QUESTIONS.push(
  quote:'Regulators of G protein signaling (RGSs) - RGS proteins greatly accelerate the hydrolysis of GTP',
  cite:'Pharmacodynamics-Day-1-2026s.pdf slide ~54'},
 
-{id:'L01-035', lecture:'L01', prof:'Gottlieb', tier:'new', topic:'L01', sub:'gpcr', skill:'tell',
+{id:'L01-035', fg:'gpcr', lecture:'L01', prof:'Gottlieb', tier:'new', topic:'L01', sub:'gpcr', skill:'tell',
  concept:'gq-alpha1-plc', tags:['gpcr','gq','alpha1'], source:'slide',
  stem:'Norepinephrine binds α1 receptors on smooth muscle. Which pathway follows?',
  options:[
@@ -467,6 +465,6 @@ QUESTIONS.push(
   {t:'Enzymatic activity of the receptor', correct:false, why:'That describes 1-transmembrane receptors.'}],
  teach:'At α1 receptors on smooth muscle, norepinephrine or epinephrine activates αq, which activates phospholipase C (PLC). PLC converts PIP2 to IP3, and IP3 releases stored Ca2+ from the endoplasmic reticulum (ER).',
  quote:'α1 ... αq PLC e.g., Smooth Muscle PIP2 ... IP3 ... Ca2+ ER ... NE, Epi',
- reading:[{src:'Katzung 16e, Ch. 6', sec:'Table 6–2; Table 6–3; Table 6–5', t:'α1 adrenoceptors sit on postsynaptic effector cells, “especially smooth muscle”, and the result of ligand binding is “formation of IP3 and DAG, increased intracellular calcium” (inositol trisphosphate and diacylglycerol). Table 6–5 lists norepinephrine as binding and activating α receptors and causing contraction, and Table 6–3 shows skin and splanchnic vessels, the iris radial muscle and the gastrointestinal and bladder sphincters contracting through α receptors. The same IP3/DAG/calcium result is listed for M1, M3 and M5 muscarinic receptors, whereas β receptors act through adenylyl cyclase and cAMP.'}],
+ reading:[{src:'Katzung 16e, Ch. 6', sec:'Table 6–2', t:'For α1 adrenoceptors, located especially on smooth muscle, the result of ligand binding is formation of IP3 and DAG and increased intracellular calcium. β receptors act instead through adenylyl cyclase and cAMP.'}],
  cite:'Pharmacodynamics-Day-1-2026s.pdf slide ~55'}
 );

@@ -45,6 +45,16 @@ const out = path.join(__dirname, '..', course.match(/output:\s*'([^']+)'/)[1]);
   // last-updated stamp present
   await page.click('nav button[data-v="topics"]');
   if (!/Last updated \w+ \d+, \d{4}/.test(await page.textContent('#view'))) fail('last-updated stamp missing');
+  // terms: glossary renders figures, flashcard flips and grades, quiz starts
+  await page.click('nav button[data-v="terms"]');
+  if (!(await page.$$('.term')).length) fail('glossary shows no terms');
+  if (!(await page.$$('figure.fig svg')).length) fail('glossary shows no figures');
+  await page.click('[data-mode="flash"]'); await page.click('#fcshow');
+  if (!(await page.$$('[data-fc]')).length) fail('flashcard did not flip'); await page.click('[data-fc="sure"]');
+  if (!(await page.textContent('#view')).includes('1/')) fail('flashcard grade not recorded');
+  await page.click('[data-mode="quiz"]'); await page.click('#tq');
+  const topts = await page.$$('[data-o]'); if (!topts.length) fail('term quiz did not start'); await topts[0].click();
+  if (!(await page.$$('[data-c]')).length) fail('term question did not grade');
   // weak spots now populated
   await page.click('nav button[data-v="weak"]');
   if (!(await page.textContent('#view')).includes('By topic')) fail('weak spots did not populate');
@@ -52,6 +62,8 @@ const out = path.join(__dirname, '..', course.match(/output:\s*'([^']+)'/)[1]);
   await page.click('nav button[data-v="exam"]');
   await page.click('#startx');
   const total = await page.$$eval('.grid button', b => b.length);
+  const nTerm = await page.evaluate(() => EX.qs.filter(id => byId[id].skill === 'term').length);
+  if (nTerm > Math.round(total * 0.15) + 1) fail(`exam draws too many definition questions (${nTerm} of ${total})`);
   for (let i = 0; i < total; i++) {
     const opts = await page.$$('[data-o]'); await opts[0].click();
     const nx = await page.$('#next:not([disabled])'); if (nx) await nx.click();

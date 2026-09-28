@@ -15,6 +15,12 @@ Updated 2026-09-28.
 - Page: last-updated stamp + change log (CHANGELOG.md, embedded by build.py), exam countdown (`when` in course.js), phone-stacked tables, keyboard shortcuts, seen bars.
 - Chapter text carries only AccessMedicine printout pagination; `sec` cites section headings.
 
+## 2026-09-28 (evening) update
+- Terms: `glossary.js` (50 terms, sourced; disagreements in notes/GLOSSARY.md) → `gen_terms.py` → `q_TERMS.js` (98 questions, skill `term`). Exam draw caps term items at 15%.
+- Figures: `diagrams.js` FIG(key) inline SVG; keys drc-basic, potency, efficacy, partial, inverse, competitive, irreversible, binding-kd, spare, sites, two-state, gpcr. Attached via `fg` on 33 questions and on glossary terms.
+- Readings trimmed to ≤2 sentences / ≤45 words (TRIM_BRIEF.md); style check rejects "the chapter/textbook" phrasing and source references in definitions.
+- Bank: 230 questions (L01 35 + L02 35 + L03 35 + DL1 27 + TERMS 98).
+
 ## Sources (Google Drive: GoodNotes/FSOP/P2 Year/Fall 2026/Intro Pharmacology)
 - Syllabus: SyllabusF26_PHAR_4344_PT_II_Intro_to_Pharmacology_Final.pdf
 - Slides/Exam 1: Pharmacodynamics-Day-1-2026s.pdf, Pharmacodynamics-Day_2_2026s copy.pdf, Pharmacodynamics-Day_3_2026s.pdf (+ condensed), Exam_1_Drug_List_2026.pdf
