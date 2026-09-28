@@ -8,8 +8,14 @@ import os, re, subprocess, sys, tempfile, json
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 os.chdir(HERE)
-DATA_FILES = ['q_L01.js', 'q_L02.js', 'q_L03.js', 'q_DL1.js']
-PAGES = ['reference.js', 'tell.js', 'guide.js']
+DATA_FILES = ['q_L01.js', 'q_L02.js', 'q_L03.js', 'q_DL1.js', 'q_TERMS.js']
+PAGES = ['diagrams.js', 'glossary.js', 'reference.js', 'tell.js', 'guide.js']
+# generated banks: regenerate from their sources before checking
+for gen in ['gen_druglist.py', 'gen_terms.py']:
+    r = subprocess.run([sys.executable, gen], capture_output=True, text=True)
+    if r.returncode != 0:
+        sys.exit(f'ERROR: {gen} failed\n{(r.stderr or r.stdout).strip()}')
+    print('  ' + (r.stdout.strip() or gen))
 SOURCES = ['course.js'] + DATA_FILES + PAGES + ['app.js']
 
 def node_check(path, label):

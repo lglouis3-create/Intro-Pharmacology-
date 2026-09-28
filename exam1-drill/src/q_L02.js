@@ -150,7 +150,7 @@ QUESTIONS.push(
  quote:"Remember, affinity is how likely a drug is to bind and stay bound to a receptor, and the binding of a drug to the receptor is going to be depending on what type of bonds they form covalent bonds, hydrogen bonds, ion bonds.",
  cite:"Pharmacodynamics-Day_2_2026s copy.pdf slides ~15, ~31; transcript 9/23"},
 
-{id:"L02-011", lecture:"L02", prof:"Gottlieb", tier:"new", topic:"L02", sub:"bond", skill:"tell", multi:true,
+{id:"L02-011", fg:"irreversible", lecture:"L02", prof:"Gottlieb", tier:"new", topic:"L02", sub:"bond", skill:"tell", multi:true,
  concept:"covalent-irreversible-terms", tags:[], source:"both",
  stem:"Drug binding through a covalent bond is described by which terms? Select all that apply.",
  options:[
@@ -203,7 +203,7 @@ QUESTIONS.push(
  quote:"So, levo albuterol is the more potent isomer of the racemic mixture of albuterol, which has both confirmations of RNS, you know, isomers in it.",
  cite:"Pharmacodynamics-Day_2_2026s copy.pdf slide ~17; transcript 9/23"},
 
-{id:"L02-015", lecture:"L02", prof:"Gottlieb", tier:"new", topic:"L02", sub:"site", skill:"tell",
+{id:"L02-015", fg:"sites", lecture:"L02", prof:"Gottlieb", tier:"new", topic:"L02", sub:"site", skill:"tell",
  concept:"orthosteric-allosteric-poll", tags:["poll"], source:"both",
  stem:"Which of the following is correct?",
  options:[
@@ -216,7 +216,7 @@ QUESTIONS.push(
  reading:[{src:'Katzung 16e, Ch. 2', sec:'Competitive & Irreversible Antagonists (p. 6 of 18)', t:'Allosteric modulators bind a site separate from the orthosteric site, so they do not compete for the orthosteric pocket. Phenoxybenzamine is an irreversible antagonist whose block agonists cannot surmount, whereas a competitive antagonist can be displaced by high agonist concentrations.'}],
  cite:"Pharmacodynamics-Day_2_2026s copy.pdf slides ~18–~20, ~37–~38; transcript 9/23"},
 
-{id:"L02-016", lecture:"L02", prof:"Gottlieb", tier:"new", topic:"L02", sub:"site", skill:"apply",
+{id:"L02-016", fg:"sites", lecture:"L02", prof:"Gottlieb", tier:"new", topic:"L02", sub:"site", skill:"apply",
  concept:"orthosteric-competition", tags:[], source:"both",
  stem:"Prazosin is bound in the orthosteric pocket of an α1 receptor when norepinephrine arrives at that same receptor. What happens?",
  options:[
@@ -244,7 +244,7 @@ QUESTIONS.push(
  reading:[{src:'Katzung 16e, Ch. 2', sec:'Competitive & Irreversible Antagonists (p. 6 of 18)', t:'A drug can act noncompetitively by binding to a site separate from the agonist binding site and modifying receptor activity without blocking agonist binding; such actions are often reversible. Negative allosteric modulators reduce receptor activity, and others increase it.'}],
  cite:"Pharmacodynamics-Day_2_2026s copy.pdf slides ~20, ~39, ~42–~44; transcript 9/23"},
 
-{id:"L02-018", lecture:"L02", prof:"Gottlieb", tier:"new", topic:"L02", sub:"site", skill:"apply",
+{id:"L02-018", fg:"sites", lecture:"L02", prof:"Gottlieb", tier:"new", topic:"L02", sub:"site", skill:"apply",
  concept:"diazepam-gaba-pam", tags:["exam-cue"], source:"both",
  stem:"Diazepam binds the GABA-A receptor, a chloride (Cl−) ion channel, at a site separate from where GABA (γ-aminobutyric acid) binds. What is the result?",
  options:[
@@ -274,7 +274,7 @@ QUESTIONS.push(
  reading:[{src:'Katzung 16e, Ch. 2', sec:'Signaling Mechanisms & Drug Action; G Proteins & Second Messengers (p. 7, 10 of 18)', t:'Second messengers are nonprotein chemical mediators inside the cell; named examples are cAMP, calcium ion and the phosphoinositides. Adenylyl cyclase (AC) is the effector enzyme that converts ATP to cAMP, and phospholipase C (PLC) is the effector that produces IP3.'}],
  cite:"Pharmacodynamics-Day_2_2026s copy.pdf slide ~29; transcript 9/23"},
 
-{id:"L02-020", lecture:"L02", prof:"Gottlieb", tier:"new", topic:"L02", sub:"signal", skill:"tell",
+{id:"L02-020", fg:"gpcr", lecture:"L02", prof:"Gottlieb", tier:"new", topic:"L02", sub:"signal", skill:"tell",
  concept:"transducer-identify", tags:["exam-cue"], source:"both",
  stem:"In the pathway epinephrine → β1 receptor → Gαs → adenylate cyclase (AC) → cyclic AMP (cAMP), which component is the transducer?",
  options:[
@@ -316,7 +316,7 @@ QUESTIONS.push(
  reading:[{src:'Katzung 16e, Ch. 2', sec:'Introduction; Variation in Drug Responsiveness (p. 3–4, 16 of 18)', t:'Most drugs act by associating with a receptor, the cell component that interacts with the drug and initiates the events leading to the observed effect. Receptors normally mediate the actions of endogenous signals, so drugs acting on them modify regulation already in place.'}],
  cite:"Pharmacodynamics-Day_2_2026s copy.pdf slide ~31; transcript 9/23"},
 
-{id:"L02-023", lecture:"L02", prof:"Gottlieb", tier:"new", topic:"L02", sub:"class", skill:"tell",
+{id:"L02-023", fg:"efficacy", lecture:"L02", prof:"Gottlieb", tier:"new", topic:"L02", sub:"class", skill:"tell",
  concept:"efficacy-definition", tags:["poll"], source:"both",
  stem:"Which best describes efficacy?",
  options:[
@@ -329,7 +329,7 @@ QUESTIONS.push(
  reading:[{src:'Katzung 16e, Ch. 2', sec:'Introduction; Receptor-Effector Coupling & Spare Receptors (p. 4–5 of 18)', t:'Agonists activate the receptor by binding it, whereas antagonists bind but do not activate; the conformational change an agonist produces in the receptor protein is the basis of activation. Affinity is a separate property that determines the concentration required to form drug–receptor complexes.'}],
  cite:"Pharmacodynamics-Day_2_2026s copy.pdf slide ~31; transcript 9/23"},
 
-{id:"L02-024", lecture:"L02", prof:"Gottlieb", tier:"new", topic:"L02", sub:"class", skill:"tell",
+{id:"L02-024", fg:"partial", lecture:"L02", prof:"Gottlieb", tier:"new", topic:"L02", sub:"class", skill:"tell",
  concept:"full-vs-partial-agonist", tags:[], source:"both",
  stem:"A full agonist and a partial agonist both have greater affinity for active receptors. What separates them?",
  options:[
@@ -343,7 +343,7 @@ QUESTIONS.push(
  reading:[{src:'Katzung 16e, Ch. 2', sec:'Partial Agonists (p. 6 of 18)', t:'Partial agonists produce a lower response at full receptor occupancy than full agonists do. This failure is not due to decreased affinity: even at concentrations that saturate all receptors, a partial agonist cannot cause a maximal response.'}],
  cite:"Pharmacodynamics-Day_2_2026s copy.pdf slides ~32–~34; transcript 9/23"},
 
-{id:"L02-025", lecture:"L02", prof:"Gottlieb", tier:"new", topic:"L02", sub:"class", skill:"apply",
+{id:"L02-025", fg:"inverse", lecture:"L02", prof:"Gottlieb", tier:"new", topic:"L02", sub:"class", skill:"apply",
  concept:"inverse-agonist-vs-antagonist", tags:[], source:"transcript",
  stem:"A cell line has 50% of its receptors naturally active, producing cyclic AMP (cAMP). What happens to cAMP production after an inverse agonist compared with a competitive (neutral) antagonist?",
  options:[
@@ -370,7 +370,7 @@ QUESTIONS.push(
  reading:[{src:'Katzung 16e, Ch. 2', sec:'Competitive & Irreversible Antagonists (p. 5 of 18)', t:'Antagonists bind to receptors but do not activate them; they act by reducing the effects of agonists. An antagonist has no functional effect in the absence of an agonist, which distinguishes it from an inverse agonist that reduces receptor activity below basal level.'}],
  cite:"Pharmacodynamics-Day_2_2026s copy.pdf slides ~37–~38; transcript 9/23"},
 
-{id:"L02-027", lecture:"L02", prof:"Gottlieb", tier:"new", topic:"L02", sub:"class", skill:"apply",
+{id:"L02-027", fg:"inverse", lecture:"L02", prof:"Gottlieb", tier:"new", topic:"L02", sub:"class", skill:"apply",
  concept:"inverse-agonist-loratadine", tags:[], source:"both",
  stem:"Loratadine is taken during pollen season after histamine has already activated H1 receptors, and it shuts those receptors off. Which property allows this?",
  options:[
@@ -426,7 +426,7 @@ QUESTIONS.push(
  reading:[{src:'Katzung 16e, Ch. 2', sec:'Concentration-Effect Curves & Receptor Binding of Agonists; Receptor-Effector Coupling & Spare Receptors (p. 4–5 of 18)', t:'The relation between free drug and receptor-bound drug follows the law of mass action, and Kd characterizes affinity reciprocally: a low Kd means high binding affinity and a high Kd means low affinity.'}],
  cite:"Pharmacodynamics-Day_2_2026s copy.pdf slides ~48–~49"},
 
-{id:"L02-031", lecture:"L02", prof:"Gottlieb", tier:"new", topic:"L02", sub:"kd", skill:"figure",
+{id:"L02-031", fg:"binding-kd", lecture:"L02", prof:"Gottlieb", tier:"new", topic:"L02", sub:"kd", skill:"figure",
  concept:"kd-binding-curve", tags:[], source:"slide",
  stem:"A binding curve plots % receptors bound (0% to Bmax, 100%) against log[concentration]. Drug A reaches 50% bound at a lower concentration than Drug B. Which is correct?",
  options:[
@@ -454,7 +454,7 @@ QUESTIONS.push(
  reading:[{src:'Katzung 16e, Ch. 2', sec:'Clinical Selectivity: Beneficial Versus Toxic Effects of Drugs; Case Study Answer (p. 17–18 of 18)', t:'Selectivity is measured by comparing the binding affinities of a drug for different receptors. The receptor with the lowest Kd is the one the drug binds with the greatest affinity.'}],
  cite:"Pharmacodynamics-Day_2_2026s copy.pdf slide ~51"},
 
-{id:"L02-033", lecture:"L02", prof:"Gottlieb", tier:"new", topic:"L02", sub:"drc", skill:"tell",
+{id:"L02-033", fg:"potency", lecture:"L02", prof:"Gottlieb", tier:"new", topic:"L02", sub:"drc", skill:"tell",
  concept:"potency-determinants", tags:["poll"], source:"both",
  stem:"Which statement is correct?",
  options:[
@@ -469,7 +469,7 @@ QUESTIONS.push(
  reading:[{src:'Katzung 16e, Ch. 2', sec:'Relation Between Drug Dose & Clinical Response — Potency; Maximal efficacy (p. 15 of 18)', t:'Potency is the concentration (EC50) or dose (ED50) that produces 50% of maximal effect. It depends partly on receptor affinity for the drug (Kd) and partly on how efficiently the drug–receptor interaction is coupled to response in the responding tissue.'}],
  cite:"Pharmacodynamics-Day_2_2026s copy.pdf slides ~52–~54; transcript 9/23"},
 
-{id:"L02-034", lecture:"L02", prof:"Gottlieb", tier:"new", topic:"L02", sub:"drc", skill:"figure",
+{id:"L02-034", fg:"potency", lecture:"L02", prof:"Gottlieb", tier:"new", topic:"L02", sub:"drc", skill:"figure",
  concept:"ec50-potency-shift", tags:[], source:"slide",
  stem:"On log[concentration]–response curves, Drug B's curve is shifted to the right of Drug A's, with the same maximum response. EC50 is the effective concentration that produces 50% of the maximum response. Which drug is more potent?",
  options:[

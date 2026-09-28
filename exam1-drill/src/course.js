@@ -31,7 +31,8 @@ const COURSE = {
     {id:'apply',  label:'Apply to a scenario',         short:'Apply'},
     {id:'figure', label:'Read a curve or figure',      short:'Curves'},
     {id:'calc',   label:'Calculate',                   short:'Calculate'},
-    {id:'drug',   label:'Drug list: mechanism',        short:'Drug list'}
+    {id:'drug',   label:'Drug list: mechanism',        short:'Drug list'},
+    {id:'term',   label:'Define a term',              short:'Terms'}
   ],
   paceDefault: 'cram'
 };

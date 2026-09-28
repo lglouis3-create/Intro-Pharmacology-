@@ -82,6 +82,23 @@ select,input[type=text],input[type=number]{font-size:15px;padding:6px 8px;border
 .reading h4{margin:0 0 4px;font-size:13px;color:var(--accent);text-transform:uppercase;letter-spacing:.03em}
 .reading .cite{margin-top:4px;margin-bottom:6px}
 .kbd{margin-top:10px;margin-bottom:0}
+.fig{margin:10px 0;padding:8px 8px 4px;border:1px solid var(--line);border-radius:8px;background:var(--panel);max-width:520px}
+.fig svg{width:100%;height:auto;display:block;font:12px -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+.fig figcaption{font-size:13px;color:var(--muted);margin:6px 2px 4px}
+.fig .ax{stroke:var(--ink);stroke-width:1.2;fill:none}
+.fig .dash{stroke:var(--muted);stroke-width:1;stroke-dasharray:4 3;fill:none}
+.fig .cv{fill:none;stroke-width:2.4;stroke-linejoin:round}
+.fig .cv.a{stroke:var(--accent)} .fig .cv.b{stroke:var(--bad)} .fig .cv.c{stroke:var(--ok)}
+.fig .cl{font-size:11px;font-weight:600} .fig .cl.a{fill:var(--accent)} .fig .cl.b{fill:var(--bad)} .fig .cl.c{fill:var(--ok)}
+.fig .lbl{fill:var(--ink);font-size:11px} .fig .lbl.big{font-size:20px;font-weight:700} .fig .lbl.sm{font-size:10px;font-weight:600} .fig .lbl.xs{font-size:8.5px;fill:var(--muted)} .fig .lbl.sm2{font-size:10px}
+.fig .shape{fill:var(--chip);stroke:var(--line);stroke-width:1.5}
+.fig .pocket{fill:var(--bg);stroke:var(--muted);stroke-width:1}
+.fig .lig.a{fill:var(--accent)} .fig .lig.b{fill:var(--bad)}
+.fig .box{fill:var(--chip);stroke:var(--line);stroke-width:1.2}
+.fig .arrow{stroke:var(--muted);stroke-width:1.6;fill:none;marker-end:url(#arw)}
+.term{padding:10px 0;border-top:1px solid var(--line)} .term:first-child{border-top:0}
+.term b{font-size:16px} .term .hook{color:var(--muted);font-size:14px;margin-top:2px}
+.flash{min-height:120px;text-align:center;padding:24px 12px} .flash .t{font-size:24px;font-weight:600}
 @media (max-width:560px){
   .kbd{display:none}
   table.stack thead{display:none}

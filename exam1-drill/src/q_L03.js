@@ -60,7 +60,7 @@ QUESTIONS.push(
  cite:'Pharmacodynamics-Day_3_2026s.pdf slide ~31; transcript 9/24',
  reading:[{src:'Katzung 16e, Ch. 2', sec:'Concentration-Effect Curves & Receptor Binding of Agonists', t:'Kd is the concentration of free drug at which receptor binding is half-maximal, a binding measure distinct from the EC50 read from the effect curve. It characterizes affinity reciprocally: a low Kd means high binding affinity, and vice versa.'}]},
 
-{id:'L03-005', lecture:'L03', prof:'Gottlieb', tier:'new', topic:'L03', sub:'kd', skill:'calc',
+{id:'L03-005', fg:'binding-kd', lecture:'L03', prof:'Gottlieb', tier:'new', topic:'L03', sub:'kd', skill:'calc',
  concept:'kd-calculation', tags:[], source:'transcript',
  stem:'A dish contains 10 receptors and 10 molecules of drug A. At one moment, 9 drug molecules are free, 9 receptors are free, and 1 drug–receptor complex is formed. Using Kd = [D][R]/[DR], what is the dissociation constant (Kd)?',
  options:[
@@ -73,7 +73,7 @@ QUESTIONS.push(
  cite:'transcript 9/24 (no matching slide text in Pharmacodynamics-Day_3_2026s.pdf)',
  reading:[{src:'Katzung 16e, Ch. 2', sec:'Concentration-Effect Curves & Receptor Binding of Agonists', t:'Kd is the free drug concentration at which receptor binding is half-maximal. A drug that occupies a larger fraction of receptors at the same free concentration has the smaller Kd and the higher affinity.'}]},
 
-{id:'L03-006', lecture:'L03', prof:'Gottlieb', tier:'new', topic:'L03', sub:'kd', skill:'figure',
+{id:'L03-006', fg:'binding-kd', lecture:'L03', prof:'Gottlieb', tier:'new', topic:'L03', sub:'kd', skill:'figure',
  concept:'binding-curve-affinity-x-axis', tags:[], source:'both',
  stem:'Binding curves (percent of receptors bound vs. log dose) are drawn for drugs A, B and C. Drug C reaches 50% binding at the lowest dose, drug A in the middle, and drug B at a dose 1000-fold higher than C. Which drug has the highest affinity?',
  options:[
@@ -99,7 +99,7 @@ QUESTIONS.push(
  cite:'transcript 9/24 (in-class poll; table not in deck text)',
  reading:[{src:'Katzung 16e, Ch. 2', sec:'Clinical Selectivity: Beneficial Versus Toxic Effects of Drugs', t:'Affinity is expressed through Kd in a reciprocal way: a low Kd means high affinity, so of two drugs at the same receptor, the one with the smaller Kd has the higher affinity.'}]},
 
-{id:'L03-008', lecture:'L03', prof:'Gottlieb', tier:'new', topic:'L03', sub:'kd', skill:'calc',
+{id:'L03-008', fg:'binding-kd', lecture:'L03', prof:'Gottlieb', tier:'new', topic:'L03', sub:'kd', skill:'calc',
  concept:'kd-units', tags:['poll'], source:'transcript',
  stem:'Five drugs bind the beta-1 receptor. Drug C has a dissociation constant (Kd) of 100 nM. Expressed in molar, what is this Kd?',
  options:[
@@ -126,7 +126,7 @@ QUESTIONS.push(
  cite:'transcript 9/24 (in-class poll; no matching slide text)',
  reading:[{src:'Katzung 16e, Ch. 2', sec:'Competitive & Irreversible Antagonists', t:'Drugs that form a covalent bond with the receptor bind in an irreversible or nearly irreversible fashion.'}]},
 
-{id:'L03-010', lecture:'L03', prof:'Gottlieb', tier:'new', topic:'L03', sub:'kd', skill:'apply',
+{id:'L03-010', fg:'spare', lecture:'L03', prof:'Gottlieb', tier:'new', topic:'L03', sub:'kd', skill:'apply',
  concept:'receptor-number-potency', tags:['poll'], source:'both',
  stem:'Two isolated hearts are kept in identical baths (same pH, temperature, flow). One heart has 10 receptors and the other has 100 receptors. The same dose of norepinephrine is given to both and heart rate is measured. What effect does the larger receptor number have on the potency of norepinephrine?',
  options:[
@@ -139,7 +139,7 @@ QUESTIONS.push(
  cite:'Pharmacodynamics-Day_3_2026s.pdf slide ~7; transcript 9/24',
  reading:[{src:'Katzung 16e, Ch. 2', sec:'Receptor-Effector Coupling & Spare Receptors', t:'The sensitivity of a tissue to a given agonist concentration depends not only on the receptor’s affinity (Kd) but also on the total number of receptors present. With ten times more receptors, a much lower agonist concentration produces the same half-maximal response.'}]},
 
-{id:'L03-011', lecture:'L03', prof:'Gottlieb', tier:'new', topic:'L03', sub:'kd', skill:'tell', multi:true,
+{id:'L03-011', fg:'potency', lecture:'L03', prof:'Gottlieb', tier:'new', topic:'L03', sub:'kd', skill:'tell', multi:true,
  concept:'receptor-number-potency', tags:[], source:'transcript',
  stem:'A tissue gains more receptors while the same drug, norepinephrine, is applied. Which statements are correct? Select all that apply.',
  options:[
@@ -166,7 +166,7 @@ QUESTIONS.push(
  cite:'Pharmacodynamics-Day_3_2026s.pdf slide ~7; transcript 9/24',
  reading:[{src:'Katzung 16e, Ch. 2', sec:'Dose & Response in Patients — Potency; Receptor-Effector Coupling & Spare Receptors', t:'Potency depends partly on the affinity (Kd) of receptors for the drug and partly on how efficiently the drug-receptor interaction is coupled to response. Tissue sensitivity also depends on the total number of receptors present, so the responding tissue contributes as well.'}]},
 
-{id:'L03-013', lecture:'L03', prof:'Gottlieb', tier:'new', topic:'L03', sub:'drc', skill:'tell',
+{id:'L03-013', fg:'drc-basic', lecture:'L03', prof:'Gottlieb', tier:'new', topic:'L03', sub:'drc', skill:'tell',
  concept:'ec50-vs-ed50', tags:[], source:'both',
  stem:'What distinguishes an EC50 (effective concentration producing 50% of the maximal response) from an ED50 (effective dose producing 50% of the response)?',
  options:[
@@ -217,7 +217,7 @@ QUESTIONS.push(
  quote:'Concentration of the drug below which produces no response',
  cite:'Pharmacodynamics-Day_3_2026s.pdf slide ~21; transcript 9/24'},
 
-{id:'L03-017', lecture:'L03', prof:'Gottlieb', tier:'new', topic:'L03', sub:'drc', skill:'tell',
+{id:'L03-017', fg:'drc-basic', lecture:'L03', prof:'Gottlieb', tier:'new', topic:'L03', sub:'drc', skill:'tell',
  concept:'x-axis-affinity-y-axis-efficacy', tags:[], source:'both',
  stem:'On a dose–response curve with log dose on the x-axis, which pairing of axis and property is correct?',
  options:[
@@ -242,7 +242,7 @@ QUESTIONS.push(
  quote:'Normalized data ... Eliminate biological variability',
  cite:'Pharmacodynamics-Day_3_2026s.pdf slide ~18; transcript 9/24'},
 
-{id:'L03-019', lecture:'L03', prof:'Gottlieb', tier:'new', topic:'L03', sub:'drc', skill:'figure',
+{id:'L03-019', fg:'potency', lecture:'L03', prof:'Gottlieb', tier:'new', topic:'L03', sub:'drc', skill:'figure',
  concept:'same-emax-leftmost-most-potent', tags:[], source:'both',
  stem:'Drugs A, B and C all reach the same maximal response. Curve A lies furthest left, B in the middle, and C furthest right. Which statement is correct?',
  options:[
@@ -255,7 +255,7 @@ QUESTIONS.push(
  cite:'Pharmacodynamics-Day_3_2026s.pdf slide ~17; transcript 9/24',
  reading:[{src:'Katzung 16e, Ch. 2', sec:'Dose & Response in Patients — Potency', t:'Among drugs with equal maximal efficacy, the one whose curve lies further left along the dose axis is more potent, since a lower dose produces 50% of its maximal effect. Potency depends partly on the affinity (Kd) of receptors for the drug.'}]},
 
-{id:'L03-020', lecture:'L03', prof:'Gottlieb', tier:'new', topic:'L03', sub:'drc', skill:'figure',
+{id:'L03-020', fg:'efficacy', lecture:'L03', prof:'Gottlieb', tier:'new', topic:'L03', sub:'drc', skill:'figure',
  concept:'potency-vs-efficacy-mixed', tags:[], source:'both',
  stem:'Drug A reaches the highest maximal response. Drugs B and C reach the same, lower maximal response, and curve C lies to the left of curve B. Which statement is correct?',
  options:[
@@ -306,7 +306,7 @@ QUESTIONS.push(
  cite:'Pharmacodynamics-Day_3_2026s.pdf slides ~22, ~29; transcript 9/24',
  reading:[{src:'Katzung 16e, Ch. 2', sec:'Dose & Response in Patients — Potency', t:'Potency refers to the concentration (EC50) or dose (ED50) required to produce 50% of a drug’s maximal effect, so a larger EC50 means lower potency and a smaller EC50 greater potency. Potency is distinct from maximal efficacy, the limit on the response axis.'}]},
 
-{id:'L03-024', lecture:'L03', prof:'Gottlieb', tier:'new', topic:'L03', sub:'terms', skill:'calc',
+{id:'L03-024', fg:'potency', lecture:'L03', prof:'Gottlieb', tier:'new', topic:'L03', sub:'terms', skill:'calc',
  concept:'relative-potency', tags:[], source:'both',
  stem:'Drugs A and B are full agonists. The ED50 (dose producing 50% of the response) of A is 0.01 and the ED50 of B is 10 (same units). What is the relative potency of A compared with B (ED50 of B / ED50 of A)?',
  options:[
@@ -319,7 +319,7 @@ QUESTIONS.push(
  cite:'Pharmacodynamics-Day_3_2026s.pdf slide ~23; transcript 9/24',
  reading:[{src:'Katzung 16e, Ch. 2', sec:'Dose & Response in Patients — Potency; Quantal Dose-Effect Curves', t:'Relative potency is the ratio of equi-effective doses. If the ED50 values of two drugs are 5 mg and 500 mg, the first is 100 times more potent than the second: the larger ED50 divided by the smaller.'}]},
 
-{id:'L03-025', lecture:'L03', prof:'Gottlieb', tier:'new', topic:'L03', sub:'terms', skill:'figure', multi:true,
+{id:'L03-025', fg:'partial', lecture:'L03', prof:'Gottlieb', tier:'new', topic:'L03', sub:'terms', skill:'figure', multi:true,
  concept:'four-drug-potency-efficacy', tags:['exam-cue'], source:'transcript',
  stem:'Four drugs are tested in the same tissue. Curves A and C plateau below 100%; curves B and D both plateau at 100%. Curve A requires the smallest dose to produce an equivalent effect. Which statements are correct? Select all that apply.',
  options:[
@@ -333,7 +333,7 @@ QUESTIONS.push(
  cite:'transcript 9/24 (figure not in deck text)',
  reading:[{src:'Katzung 16e, Ch. 2', sec:'Dose & Response in Patients — Potency; Maximal efficacy', t:'A partial agonist can be the most potent drug if its EC50 is the smallest, while drugs reaching the highest maximum share the greatest maximal efficacy. Maximal efficacy is crucial when a large response is needed, so the most potent drug is not automatically preferred.'}]},
 
-{id:'L03-026', lecture:'L03', prof:'Gottlieb', tier:'new', topic:'L03', sub:'terms', skill:'figure', multi:true,
+{id:'L03-026', fg:'potency', lecture:'L03', prof:'Gottlieb', tier:'new', topic:'L03', sub:'terms', skill:'figure', multi:true,
  concept:'five-drug-classification', tags:['poll','exam-cue'], source:'transcript',
  stem:'Five drugs, A–E, are plotted as dose–response curves on one graph. Curve A lies furthest left. Drug B plateaus at 100% of the maximal response; drugs A, C, D and E plateau lower, with D lowest. Which statements are correct? Select all that apply.',
  options:[
@@ -362,7 +362,7 @@ QUESTIONS.push(
  cite:'transcript 9/24 (in-class poll; figure not in deck text)',
  reading:[{src:'Katzung 16e, Ch. 2', sec:'Dose & Response in Patients — Maximal efficacy', t:'Maximal efficacy is the limit of the dose-response relation on the response axis and is crucial when a large response is needed. A more potent drug with lower maximal efficacy cannot match that response at any dose.'}]},
 
-{id:'L03-028', lecture:'L03', prof:'Gottlieb', tier:'new', topic:'L03', sub:'terms', skill:'figure',
+{id:'L03-028', fg:'efficacy', lecture:'L03', prof:'Gottlieb', tier:'new', topic:'L03', sub:'terms', skill:'figure',
  concept:'equal-ec50-efficacy-tiebreak', tags:['exam-cue'], source:'both',
  stem:'Drugs A and B act in the same tissue with equal affinity and equal EC50 (concentration producing 50% of the maximal response). Drug A reaches a higher maximal response than B. Why is A more potent than B?',
  options:[
@@ -376,7 +376,7 @@ QUESTIONS.push(
  note:'Katzung 16e, Ch. 2 defines potency strictly as the EC50 or ED50 (position on the dose axis) and maximal efficacy as a separate parameter (the limit on the response axis); by that definition two drugs with equal EC50 are equally potent regardless of Emax. The deck (slide ~27, "equal ED50/EC50, ↑Efficacy = ↑Potency") and the transcript key "greater efficacy" as the reason A is more potent. The exam is written from the lecture, so this item keys efficacy.',
  reading:[{src:'Katzung 16e, Ch. 2', sec:'Dose & Response in Patients — Potency; Receptor-Effector Coupling & Spare Receptors', t:'Potency depends partly on affinity (Kd) and partly on how efficiently the drug-receptor interaction is coupled to response, which separates a full agonist from a partial agonist of equal affinity. By this definition, drugs with identical EC50 values are equally potent whatever their maximal efficacy.'}]},
 
-{id:'L03-029', lecture:'L03', prof:'Gottlieb', tier:'new', topic:'L03', sub:'terms', skill:'tell',
+{id:'L03-029', fg:'partial', lecture:'L03', prof:'Gottlieb', tier:'new', topic:'L03', sub:'terms', skill:'tell',
  concept:'intrinsic-activity-vs-efficacy', tags:[], source:'both',
  stem:'Which statement correctly distinguishes intrinsic activity from efficacy?',
  options:[
@@ -403,7 +403,7 @@ QUESTIONS.push(
  cite:'Pharmacodynamics-Day_3_2026s.pdf slide ~30; transcript 9/24',
  reading:[{src:'Katzung 16e, Ch. 2', sec:'Introduction (the receptor concept); Receptor Classes & Drug Development', t:'The molecular size, shape and electrical charge of a drug determine whether, and with what affinity, it binds to a particular receptor. Agonists include both drugs and natural ligands such as hormones and neurotransmitters, and one chemical can act on more than one receptor class.'}]},
 
-{id:'L03-031', lecture:'L03', prof:'Gottlieb', tier:'new', topic:'L03', sub:'theory', skill:'tell',
+{id:'L03-031', fg:'partial', lecture:'L03', prof:'Gottlieb', tier:'new', topic:'L03', sub:'theory', skill:'tell',
  concept:'full-vs-partial-agonist-summary', tags:[], source:'slide',
  stem:'Which feature separates a partial agonist from a full agonist?',
  options:[
@@ -442,7 +442,7 @@ QUESTIONS.push(
  cite:'Pharmacodynamics-Day_3_2026s.pdf slide ~53; transcript 9/24',
  reading:[{src:'Katzung 16e, Ch. 2', sec:'Partial Agonists', t:'Buprenorphine is a partial agonist of mu-opioid receptors and is used as an analgesic.'}]},
 
-{id:'L03-034', lecture:'L03', prof:'Gottlieb', tier:'new', topic:'L03', sub:'pa', skill:'tell', multi:true,
+{id:'L03-034', fg:'partial', lecture:'L03', prof:'Gottlieb', tier:'new', topic:'L03', sub:'pa', skill:'tell', multi:true,
  concept:'fa-plus-pa-aripiprazole', tags:[], source:'slide',
  stem:'Dopamine (maximal effect, Emax, 100%) and aripiprazole (Emax 60%) compete for the same dopamine D2 receptor. Which statements are correct? Select all that apply.',
  options:[

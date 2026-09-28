@@ -141,7 +141,7 @@ QUESTIONS.push(
  reading:[{src:'Katzung 16e, Ch. 1', sec:'The History of Pharmacology (general principles); Confounding Factors in Clinical Trials', t:'Botanical chemicals are no different from those in manufactured drugs apart from more impurities, so an herbal product carries active chemicals like any drug. Other drugs alter the pharmacokinetics of many drugs, so a pharmacologic history must include over-the-counter drugs and supplements.'}],
  cite:'Pharmacodynamics-Day-1-2026s.pdf slide ~20; transcript 9/22'},
 
-{id:'L01-011', lecture:'L01', prof:'Gottlieb', tier:'new', topic:'L01', sub:'potency', skill:'apply',
+{id:'L01-011', fg:'potency', lecture:'L01', prof:'Gottlieb', tier:'new', topic:'L01', sub:'potency', skill:'apply',
  concept:'dose-selectivity', tags:['selectivity','metoprolol'], source:'transcript',
  stem:'Metoprolol is β1-selective at lower doses. What happens as the dose rises above about 200 mg?',
  options:[
@@ -179,7 +179,7 @@ QUESTIONS.push(
  reading:[{src:'Katzung 16e, Ch. 1', sec:'Drug Reactivity & Drug-Receptor Bonds', t:'Drugs interact with receptors through covalent, electrostatic and hydrophobic bonds. Covalent bonds are very strong and often irreversible, electrostatic bonds range from relatively strong ionic linkages to weaker hydrogen bonds and very weak van der Waals forces, and hydrophobic bonds are usually weak.'}],
  cite:'Pharmacodynamics-Day-1-2026s.pdf slide ~37; transcript 9/22'},
 
-{id:'L01-014', lecture:'L01', prof:'Gottlieb', tier:'new', topic:'L01', sub:'potency', skill:'tell',
+{id:'L01-014', fg:'efficacy', lecture:'L01', prof:'Gottlieb', tier:'new', topic:'L01', sub:'potency', skill:'tell',
  concept:'efficacy-definition', tags:['efficacy','poll'], source:'both',
  stem:'Efficacy:',
  options:[
@@ -287,7 +287,7 @@ QUESTIONS.push(
  reading:[{src:'Katzung 16e, Ch. 1', sec:'Agonists, Partial Agonists, and Inverse Agonists (Figure 1–3)', t:'The receptor can assume an inactive form (Ri), which produces no effect even with drug bound, and an active form (Ra). Without drug the two are in equilibrium with Ri favored, and drugs act by shifting that balance: agonists prefer Ra, inverse agonists Ri.'}],
  cite:'Pharmacodynamics-Day-1-2026s.pdf slide ~28; transcript 9/22'},
 
-{id:'L01-022', lecture:'L01', prof:'Gottlieb', tier:'new', topic:'L01', sub:'theory', skill:'apply',
+{id:'L01-022', fg:'inverse', lecture:'L01', prof:'Gottlieb', tier:'new', topic:'L01', sub:'theory', skill:'apply',
  concept:'negative-efficacy-inverse-agonist', tags:['two-state','inverse-agonist'], source:'both',
  stem:'A drug binds active receptors and shifts them toward the inactive state. Which kind of drug does the two-state model use this to explain?',
  options:[
@@ -429,7 +429,7 @@ QUESTIONS.push(
  quote:'about 60 or more% of all drugs in the market target one of kind of these receptors. So if you know how they work, you’ve got 60% of the drugs in your pocket.',
  cite:'Pharmacodynamics-Day-1-2026s.pdf slide ~49; transcript 9/22'},
 
-{id:'L01-033', lecture:'L01', prof:'Gottlieb', tier:'new', topic:'L01', sub:'gpcr', skill:'apply',
+{id:'L01-033', fg:'gpcr', lecture:'L01', prof:'Gottlieb', tier:'new', topic:'L01', sub:'gpcr', skill:'apply',
  concept:'gs-cascade-heart', tags:['gpcr','gs','beta1'], source:'slide',
  stem:'Norepinephrine binds β1 receptors in the heart. After GDP release and GTP binding, what does the αs subunit activate?',
  options:[
@@ -455,7 +455,7 @@ QUESTIONS.push(
  quote:'Regulators of G protein signaling (RGSs) - RGS proteins greatly accelerate the hydrolysis of GTP',
  cite:'Pharmacodynamics-Day-1-2026s.pdf slide ~54'},
 
-{id:'L01-035', lecture:'L01', prof:'Gottlieb', tier:'new', topic:'L01', sub:'gpcr', skill:'tell',
+{id:'L01-035', fg:'gpcr', lecture:'L01', prof:'Gottlieb', tier:'new', topic:'L01', sub:'gpcr', skill:'tell',
  concept:'gq-alpha1-plc', tags:['gpcr','gq','alpha1'], source:'slide',
  stem:'Norepinephrine binds α1 receptors on smooth muscle. Which pathway follows?',
  options:[

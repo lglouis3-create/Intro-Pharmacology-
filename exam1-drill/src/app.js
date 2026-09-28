@@ -80,7 +80,7 @@ function schedule(id, outcome) {
 
 /* ---------- views ---------- */
 const VIEWS = [
-  ['topics', 'Topics'], ['quiz', 'Quiz'], ['weak', 'Weak spots'], ['exam', 'Exam sim'],
+  ['topics', 'Topics'], ['quiz', 'Quiz'], ['terms', 'Terms'], ['weak', 'Weak spots'], ['exam', 'Exam sim'],
   ['ref', 'Reference'], ['tell', 'Tell apart'], ['guide', 'Guides'], ['data', 'Progress']
 ];
 let CUR = 'topics';
@@ -92,7 +92,7 @@ function nav() {
 function go(v) {
   if (CUR === 'exam' && EX && !EX.done && v !== 'exam' && !confirm('Leave the exam in progress? It will be kept until you return.')) return;
   CUR = v; nav(); window.scrollTo(0, 0);
-  ({topics: vTopics, quiz: vQuiz, weak: vWeak, exam: vExam, ref: vRef, tell: vTell, guide: vGuide, data: vData})[v]();
+  ({topics: vTopics, quiz: vQuiz, terms: vTerms, weak: vWeak, exam: vExam, ref: vRef, tell: vTell, guide: vGuide, data: vData})[v]();
 }
 
 /* Questions eligible for practice and for the active exam. */
@@ -235,6 +235,7 @@ function renderQ() {
     h += `<div class="verdict ${Q.ok ? 'ok' : 'bad'}">${Q.ok ? '✓ Correct' : '✗ Not correct'}</div>`;
     if (q.type === 'match' && q.pairs) h += q.pairs.filter(p => p.why).map(p => `<div class="why"><b>${esc(p.l)}</b>: ${esc(p.why)}</div>`).join('');
     if (q.teach) h += `<div class="teach">${teachHTML(q.teach)}</div>`;
+    if (q.fg && typeof FIG === 'function') h += FIG(q.fg);
     if (q.note) h += `<div class="note">${esc(q.note)}</div>`;
     h += readingHTML(q.reading);
     if (q.quote) h += `<div class="quote">“${esc(q.quote)}”</div>`;
@@ -445,6 +446,7 @@ function examResult() {
     if (!ok) {
       q.options.forEach((o, oi) => { if (o.correct || pickedSet.has(oi)) h += `<div class="opt ${o.correct ? 'right' : 'wrong'}" style="cursor:default"><span>${esc(o.t)}</span></div><div class="why">${esc(o.why || '')}</div>`; });
       if (q.teach) h += `<div class="teach">${teachHTML(q.teach)}</div>`;
+      if (q.fg && typeof FIG === 'function') h += FIG(q.fg);
       if (q.note) h += `<div class="note">${esc(q.note)}</div>`;
       h += readingHTML(q.reading);
     }
@@ -453,6 +455,58 @@ function examResult() {
   $('#view').innerHTML = h;
   $('#newx').onclick = () => { EX = null; vExam(); };
   $('#missx').onclick = () => { const m = qsx.filter(q => !exRight(q, EX.ans[q.id])); EX = null; startQuiz(m, 'Missed on the exam', 'sr'); };
+}
+
+/* ---------- Terms: glossary with figures, flashcards, generated questions ---------- */
+let TM = {mode: 'glossary', group: 'all', card: null, shown: false};
+const termList = () => (typeof TERMS === 'undefined' ? [] : TERMS).filter(t => TM.group === 'all' || t.group === TM.group);
+const termKey = t => 'term:' + t.id;
+function vTerms() {
+  const all = typeof TERMS === 'undefined' ? [] : TERMS;
+  if (!all.length) { $('#view').innerHTML = '<h2>Terms</h2><div class="empty">No glossary in this build.</div>'; return; }
+  const groups = [...new Set(all.map(t => t.group))];
+  const tq = QUESTIONS.filter(q => q.topic === 'TERMS');
+  let h = `<h2>Terms</h2><p class="sub">${all.length} terms from the Day 1–3 lectures, each with its source. Figures show where a term is read off a curve or a diagram.</p>
+  <div class="card"><div class="row">${[['glossary', 'Glossary'], ['flash', 'Flashcards'], ['quiz', 'Quiz me']].map(([k, l]) => `<span class="chip ${TM.mode === k ? 'on' : ''}" data-mode="${k}">${l}</span>`).join('')}
+   <span class="meta" style="margin:0 0 0 12px">Group:</span>${['all'].concat(groups).map(g => `<span class="chip ${TM.group === g ? 'on' : ''}" data-group="${esc(g)}">${g === 'all' ? 'All' : esc(g)}</span>`).join('')}</div></div>`;
+  const list = termList();
+  if (TM.mode === 'glossary') {
+    groups.filter(g => TM.group === 'all' || g === TM.group).forEach(g => {
+      h += `<h3>${esc(g)}</h3><div class="card">` + all.filter(t => t.group === g).map(t => `<div class="term"><b>${esc(t.term)}</b><div>${esc(t.def)}</div>${t.hook ? `<div class="hook">${esc(t.hook)}</div>` : ''}${t.fig ? FIG(t.fig) : ''}<div class="cite">${esc(fmtCite(t.cite))}</div></div>`).join('') + '</div>';
+    });
+  } else if (TM.mode === 'flash') {
+    if (!TM.card || !list.includes(TM.card)) {
+      const now = Date.now();
+      const due = list.filter(t => S.q[termKey(t)] && S.q[termKey(t)].due <= now);
+      const unseen = list.filter(t => !S.q[termKey(t)]);
+      TM.card = (due.length ? shuffle(due) : unseen.length ? shuffle(unseen) : shuffle(list))[0]; TM.shown = false;
+    }
+    const t = TM.card, st = S.q[termKey(t)];
+    const seen = list.filter(x => S.q[termKey(x)]).length;
+    h += `<div class="meta">${seen}/${list.length} cards seen · ${st ? 'seen ' + st.n + '×' : 'new'}</div><div class="card"><div class="flash"><div class="meta">${esc(t.group)}</div><div class="t">${esc(t.term)}</div>`;
+    if (TM.shown) h += `<div style="text-align:left;margin-top:14px"><div>${esc(t.def)}</div>${t.hook ? `<div class="hook" style="color:var(--muted);margin-top:4px">${esc(t.hook)}</div>` : ''}${t.fig ? FIG(t.fig) : ''}<div class="cite">${esc(fmtCite(t.cite))}</div></div>
+      <div class="row" style="justify-content:center;margin-top:14px"><button class="btn" data-fc="sure">Knew it</button><button class="btn ghost" data-fc="unsure">Not sure</button><button class="btn ghost" data-fc="wrong">Did not know</button></div>`;
+    else h += `<div class="row" style="justify-content:center;margin-top:14px"><button class="btn" id="fcshow">Show definition</button></div>`;
+    h += `</div></div>`;
+  } else {
+    const pool = tq.filter(q => TM.group === 'all' || (TOPIC.TERMS.subs.find(s => s.id === q.sub) || {}).name === TM.group);
+    h += `<div class="card"><p>${pool.length} generated questions: pick the term for a definition, or the definition for a term. They count toward Weak spots under the skill "Terms".</p>
+      <div class="row"><button class="btn" id="tq">Start</button></div></div>`;
+  }
+  $('#view').innerHTML = h;
+  document.querySelectorAll('[data-mode]').forEach(c => c.onclick = () => { TM.mode = c.dataset.mode; vTerms(); });
+  document.querySelectorAll('[data-group]').forEach(c => c.onclick = () => { TM.group = c.dataset.group; TM.card = null; vTerms(); });
+  const sh = $('#fcshow'); if (sh) sh.onclick = () => { TM.shown = true; vTerms(); };
+  document.querySelectorAll('[data-fc]').forEach(b => b.onclick = () => {
+    const k = termKey(TM.card), st = qs(k), ok = b.dataset.fc !== 'wrong';
+    st.n++; if (b.dataset.fc === 'sure') st.ok++;
+    schedule(k, ok ? b.dataset.fc : 'wrong'); save();
+    TM.card = null; vTerms();
+  });
+  const tqb = $('#tq'); if (tqb) tqb.onclick = () => {
+    const pool = tq.filter(q => TM.group === 'all' || (TOPIC.TERMS.subs.find(s => s.id === q.sub) || {}).name === TM.group);
+    startQuiz(pool, 'Terms', 'sr');
+  };
 }
 
 /* ---------- static pages ---------- */
