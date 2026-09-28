@@ -2,6 +2,11 @@
 
 Newest first. The build embeds this file, and the Progress page shows it.
 
+## 2026-09-28 (night)
+- A four-panel figure sets an agonist, a reversible antagonist, an irreversible antagonist and an allosteric modulator side by side: where each binds, whether it turns the receptor on, and whether it lets go. Shown on the diazepam, phenoxybenzamine, prazosin and phenylephrine questions and on the allosteric terms.
+- The diazepam note and explanation rewritten in plain words: the drug list's "allosteric agonist" and the textbook's "positive allosteric modulator" are two names for one mechanism.
+- A tell-apart row on the three questions a drug-class name answers at once.
+
 ## 2026-09-28 (late)
 - Every lecture quote judged for insight: quotes that only read out the answer, tally a poll or restate an option are gone (20 deleted); 41 replaced with the professor's own explanation of the point; drug-list quotes dropped since the table row is the answer.
 - Reopening a topic never starts on the question just answered; due questions are shuffled.

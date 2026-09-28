@@ -110,5 +110,37 @@ const FIG = (() => {
     return wrap(s, 'Signal transduction through a G protein–coupled receptor: the G protein is the transducer, the enzyme it turns on is the effector, and the effector makes the second messenger.', 120);
   };
 
+  /* Four receptors side by side. Each panel answers three separate questions
+     about one drug: where it binds, whether it turns the receptor on, and
+     whether it lets go. The class names on the drug list are combinations of
+     those three answers, which is what makes "allosteric agonist" and
+     "irreversible antagonist" read as one word each when they are not. */
+  F['classes'] = () => {
+    const cell = (ox, oy, cls, title, status, lines, extra) => {
+      let s = `<text class="cl ${cls}" x="${ox + 90}" y="${oy + 16}" text-anchor="middle">${title}</text>
+        <rect class="box" x="${ox + 55}" y="${oy + 50}" width="70" height="36" rx="10"/>
+        <circle class="pocket" cx="${ox + 90}" cy="${oy + 50}" r="9"/>` + extra +
+        `<text class="lbl sm" x="${ox + 90}" y="${oy + 76}" text-anchor="middle">${status}</text>`;
+      lines.forEach((t, i) => { s += `<text class="lbl sm2" x="${ox + 90}" y="${oy + 102 + i * 13}" text-anchor="middle">${t}</text>`; });
+      return s;
+    };
+    const lig = (x, y, cls, r = 7, stroke = '') => `<circle class="lig ${cls}" cx="${x}" cy="${y}" r="${r}"${stroke}/>`;
+    const s =
+      cell(0, 0, 'a', 'Agonist', 'on',
+        ['binds the messenger\u2019s own pocket', 'and turns the receptor on', 'lets go again', 'phenylephrine at \u03b11'],
+        lig(90, 48, 'a')) +
+      cell(180, 0, 'b', 'Reversible antagonist', 'off',
+        ['same pocket, no activation', 'comes off, so more agonist can', 'push it out (surmountable)', 'prazosin at \u03b11'],
+        lig(270, 48, 'b') + `<path class="dash" d="M270 40 L270 24"/>` + lig(292, 22, 'a', 5)) +
+      cell(0, 150, 'b', 'Irreversible antagonist', 'off',
+        ['same pocket, bound by a covalent', 'bond; never comes off, so agonist', 'cannot push it out (insurmountable)', 'phenoxybenzamine at \u03b11 and \u03b12'],
+        lig(90, 198, 'b', 7, ' stroke="var(--ink)" stroke-width="3"') + lig(112, 172, 'a', 5)) +
+      cell(180, 150, 'c', 'Allosteric modulator', 'on, and more',
+        ['a second site, with GABA in the', 'pocket; little effect alone, but', 'GABA then works better; lets go', 'diazepam at the GABA receptor'],
+        lig(270, 198, 'c') + `<circle class="pocket" cx="238" cy="204" r="7"/>` + lig(238, 204, 'b', 5)) +
+      `<line class="dash" x1="0" y1="150" x2="360" y2="150"/><line class="dash" x1="180" y1="0" x2="180" y2="300"/>`;
+    return wrap(s, 'Three separate questions about any drug. Where does it bind: the messenger\u2019s pocket (orthosteric) or a second site (allosteric)? Does it turn the receptor on (agonist) or not (antagonist)? Does it let go (reversible) or stay bound (irreversible)? The drug list\u2019s \u201cGABA receptor allosteric agonist\u201d and Katzung\u2019s \u201cpositive allosteric modulator\u201d both describe the fourth panel.', 300);
+  };
+
   return key => (F[key] ? F[key]() : '');
 })();

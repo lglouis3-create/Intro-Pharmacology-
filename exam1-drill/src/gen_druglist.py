@@ -46,7 +46,7 @@ CLASS = {
  'inverse': ('Competitive & Irreversible Antagonists',
              'An inverse agonist binds the receptor and lowers its activity below the basal level seen with no agonist present, rather than merely blocking the agonist.'),
  'allosteric': ('Competitive & Irreversible Antagonists — allosteric modulators',
-             'Benzodiazepines such as diazepam bind an allosteric site, separate from the site GABA binds, and potentiate GABA’s opening of the channel; they have little effect on their own.'),
+             'Diazepam and the other benzodiazepines bind an allosteric site, not the site GABA binds, and increase the channel opening that GABA produces; on their own they have little effect.'),
 }
 # What each receptor does when a ligand binds it (Katzung 16e Ch. 6, Table 6-2).
 RECEPTOR = {
@@ -77,7 +77,14 @@ def reading_for(cls, recs):
     return out[:2] if cls else out[:2]
 
 NOTE = {
- 'moa-diazepam': 'Katzung Ch. 2 calls diazepam a positive allosteric modulator of the GABA receptor, one that potentiates GABA and has little activating effect on its own; the Exam 1 drug list classes it as a GABA receptor allosteric agonist. The exam is written from the drug list.',
+ 'moa-diazepam': 'Two names for one mechanism. The Exam 1 drug list calls diazepam a GABA receptor allosteric agonist. Katzung Ch. 2 calls it a positive allosteric modulator: it binds a second site on the receptor, does little by itself, and makes the receptor respond more strongly to GABA. On the exam, use the drug list\u2019s name.',
+}
+# Figure shown with the explanation, by concept. The four-panel figure sets
+# agonist, reversible antagonist, irreversible antagonist and allosteric
+# modulator side by side; it belongs on the drugs that are one of each.
+FG = {
+ 'moa-diazepam': 'classes', 'moa-phenoxybenzamine': 'classes', 'irreversible-drug': 'classes',
+ 'moa-prazosin': 'classes', 'moa-phenylephrine': 'classes',
 }
 
 def lc(m):
@@ -94,7 +101,7 @@ TEACH = {
  'Phenylephrine': 'Phenylephrine binds α1 and activates it; it does not act at α2 or β receptors. Prazosin binds the same receptor and blocks it.',
  'Phenoxybenzamine': 'Phenoxybenzamine binds α1 and α2 irreversibly, so the block cannot be overcome by more agonist. It is the only irreversible drug on the list; every other drug is reversible and competitive.',
  'Metoprolol': 'Metoprolol binds β1 without activating it and blocks agonists there reversibly. Pindolol acts at β1 too, but as a partial agonist and at β2 as well.',
- 'Diazepam': 'Diazepam binds the GABA receptor at an allosteric site, not the site GABA binds, and increases the receptor’s response to GABA.',
+ 'Diazepam': 'Diazepam does not bind where GABA binds. It binds a second site on the same GABA receptor, and while it sits there the receptor responds more strongly to GABA. Alone it does little; with GABA present it makes GABA work better.',
  'Albuterol': 'Albuterol activates β2 but reaches a lower maximal response than a full agonist would. It does not act at β1; pindolol is the partial agonist that does.',
  'Varenicline': 'Varenicline activates the neuronal nicotinic receptor Nn, but only to a submaximal response. Acetylcholine is the full agonist at Nn and at the other cholinergic receptors.',
  'Histamine': 'Histamine activates both H1 and H2. Loratadine and diphenhydramine oppose it: loratadine as an H1 inverse agonist, diphenhydramine as a non-selective antagonist.',
@@ -110,6 +117,8 @@ def add(q):
     q = dict(id=f'DL1-{n+1:03d}', lecture='DL1', prof='Gottlieb', tier='new', topic='DL1', skill='drug', source='slide', cite=CITE, **q)
     if q['concept'] in NOTE:
         q['note'] = NOTE[q['concept']]
+    if q['concept'] in FG:
+        q['fg'] = FG[q['concept']]
     opts = q['options']
     right = [o for o in opts if o['correct']]
     L = max(len(o['t']) for o in opts)

@@ -21,6 +21,11 @@ Updated 2026-09-28.
 - Readings trimmed to ≤2 sentences / ≤45 words (TRIM_BRIEF.md); style check rejects "the chapter/textbook" phrasing and source references in definitions.
 - Bank: 230 questions (L01 35 + L02 35 + L03 35 + DL1 27 + TERMS 98).
 
+## 2026-09-28 (night) update
+- Figure `classes` (diagrams.js): four receptors side by side, agonist / reversible antagonist / irreversible antagonist / allosteric modulator, each answering where it binds, whether it activates, whether it lets go. On DL1 diazepam (009, 020), phenoxybenzamine (moa + irreversible-drug), prazosin, phenylephrine; glossary allosteric-agonist and allosteric-antagonist.
+- Diazepam note and teach rewritten in plain words (gen_druglist.py NOTE / TEACH); key unchanged. Tell-apart row on the three questions a class name answers.
+- Checks: build.py, test.js, style_check.js, browser_test.js passing.
+
 ## Sources (Google Drive: GoodNotes/FSOP/P2 Year/Fall 2026/Intro Pharmacology)
 - Syllabus: SyllabusF26_PHAR_4344_PT_II_Intro_to_Pharmacology_Final.pdf
 - Slides/Exam 1: Pharmacodynamics-Day-1-2026s.pdf, Pharmacodynamics-Day_2_2026s copy.pdf, Pharmacodynamics-Day_3_2026s.pdf (+ condensed), Exam_1_Drug_List_2026.pdf

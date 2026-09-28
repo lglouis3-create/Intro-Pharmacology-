@@ -252,6 +252,7 @@ const TERMS = [
  def:'Binds at a different site on the receptor and increases the affinity and/or efficacy of another drug for the receptor (positive allosteric modulator, PAM). Diazepam and other benzodiazepines increase the affinity and/or efficacy of GABA at the GABA-A chloride channel.',
  hook:'Diazepam is the allosteric agonist on the drug list “that you have to know for your exam.” A benzodiazepine plus alcohol puts two allosteric agonists on one receptor.',
  confuse:['allosteric-antagonist','full-agonist','allosteric'],
+ fig:'classes',
  quote:'Benzos increase the affinity And/or efficacy of GABA For its receptor',
  cite:'Pharmacodynamics-Day_2_2026s copy.pdf slides ~21–~24, ~42; transcript 9/23',
  src:'both'},
@@ -260,6 +261,7 @@ const TERMS = [
  def:'Binds at a different site on the receptor and decreases the affinity and/or efficacy of another drug for the receptor.',
  hook:'It does not compete for the orthosteric pocket; a competitive antagonist does. “As far as I know, all allosteric agonists and antagonists are reversible.”',
  confuse:['allosteric-agonist','competitive-antagonist','indirect-antagonist'],
+ fig:'classes',
  cite:'Pharmacodynamics-Day_2_2026s copy.pdf slide ~43; transcript 9/23',
  src:'both'},
 
