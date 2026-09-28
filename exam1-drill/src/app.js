@@ -336,7 +336,13 @@ function vWeak() {
 let EX = null;
 function drawExam(n) {
   const ex = active(), pools = ex.pools;
-  const eligible = p => QUESTIONS.filter(q => inFilter(q, p.filter) && !q.lowYield && !q.type);
+  // Definition questions are capped at 15% of the paper, whatever their share of the bank.
+  const nTerm = Math.round(n * 0.15);
+  const termPool = shuffle(QUESTIONS.filter(q => q.skill === 'term' && !q.lowYield && pools.some(p => inFilter(q, p.filter))));
+  const termPick = []; const termSeen = new Set();
+  for (const q of termPool) { if (termPick.length >= nTerm) break; if (termSeen.has(q.concept)) continue; termPick.push(q); termSeen.add(q.concept); }
+  n -= termPick.length;
+  const eligible = p => QUESTIONS.filter(q => inFilter(q, p.filter) && !q.lowYield && !q.type && q.skill !== 'term');
   const sizes = pools.map(p => p.marks || eligible(p).length);
   const tot = sizes.reduce((a, b) => a + b, 0);
   let want = sizes.map(s => Math.floor(n * s / tot));
@@ -354,14 +360,14 @@ function drawExam(n) {
     }
     for (const q of list) { if (want[i] <= 0) break; if (!used.has(q.id)) { out.push(q); used.add(q.id); want[i]--; } }
   });
-  return shuffle(out);
+  return shuffle(out.concat(termPick));
 }
 function vExam() {
   const ex = active(), max = examPool().filter(q => !q.lowYield && !q.type).length;
   if (EX && !EX.done) return renderExam();
   const lens = [...new Set([ex.questions, 25, 50, max].filter(x => x && x <= max))].sort((a, b) => a - b);
   let h = `<h2>Exam simulator</h2><p class="sub">${esc(ex.name)}: ${ex.questions ? ex.questions + ' questions' : 'question count not yet announced'}, ${ex.minutes} minutes allotted.
-    Answers are not shown until you submit. Select-all items are scored all-or-nothing.</p>
+    Answers are not shown until you submit. Select-all items are scored all-or-nothing; definition questions make up at most 15% of the paper.</p>
     <div class="card"><div class="row"><span>Length:</span>${lens.map(n => `<span class="chip ${n === (ex.questions || lens[0]) ? 'on' : ''}" data-n="${n}">${n === max ? 'All ' + n : n}</span>`).join('')}</div>
     <div class="row" style="margin-top:10px"><label><input type="checkbox" id="scale" checked> Scale the clock to the length (${ex.minutes} min for the full paper)</label></div>
     <div class="row" style="margin-top:12px"><button class="btn" id="startx">Start</button></div></div>`;

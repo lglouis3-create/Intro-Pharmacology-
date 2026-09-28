@@ -21,7 +21,7 @@ const FIG = (() => {
   const dash = (x1, y1, x2, y2) => `<line class="dash" x1="${px(x1)}" y1="${py(y1)}" x2="${px(x2)}" y2="${py(y2)}"/>`;
   const tick = (x, t) => `<text class="lbl" x="${px(x)}" y="${py(0) + 14}" text-anchor="middle">${t}</text>`;
   const ytick = (y, t) => `<text class="lbl sm2" x="${L - 4}" y="${py(y) + 4}" text-anchor="end">${t}</text>`;
-  const wrap = (inner, cap) => `<figure class="fig"><svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${cap}"><defs><marker id="arw" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--muted)"/></marker></defs>${inner}</svg><figcaption>${cap}</figcaption></figure>`;
+  const wrap = (inner, cap, h = H) => `<figure class="fig"><svg viewBox="0 0 ${W} ${h}" role="img" aria-label="${cap}"><defs><marker id="arw" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--muted)"/></marker></defs>${inner}</svg><figcaption>${cap}</figcaption></figure>`;
   const F = {};
 
   F['drc-basic'] = () => wrap(axes('log dose', '% of maximal response') +
@@ -103,11 +103,11 @@ const FIG = (() => {
     steps.forEach(([a, b], i) => {
       const x = x0 + i * (w + gap);
       const [a1, a2, b2] = [a, b, steps[i][2]];
-      s += `<rect class="box" x="${x}" y="76" width="${w}" height="64" rx="6"/><text class="lbl sm" x="${x + w / 2}" y="${a2 ? 96 : 102}" text-anchor="middle">${a1}</text>${a2 ? `<text class="lbl sm" x="${x + w / 2}" y="108" text-anchor="middle">${a2}</text>` : ''}<text class="lbl xs" x="${x + w / 2}" y="128" text-anchor="middle">${b2}</text>`;
-      if (i < steps.length - 1) s += `<path class="arrow" d="M${x + w} 108 L${x + w + gap} 108"/>`;
+      s += `<rect class="box" x="${x}" y="16" width="${w}" height="64" rx="6"/><text class="lbl sm" x="${x + w / 2}" y="${a2 ? 36 : 42}" text-anchor="middle">${a1}</text>${a2 ? `<text class="lbl sm" x="${x + w / 2}" y="48" text-anchor="middle">${a2}</text>` : ''}<text class="lbl xs" x="${x + w / 2}" y="68" text-anchor="middle">${b2}</text>`;
+      if (i < steps.length - 1) s += `<path class="arrow" d="M${x + w} 48 L${x + w + gap} 48"/>`;
     });
-    s += `<text class="lbl" x="180" y="170" text-anchor="middle">Each step can amplify the one before it.</text>`;
-    return wrap(s, 'Signal transduction through a G protein–coupled receptor: the G protein is the transducer, the enzyme it turns on is the effector, and the effector makes the second messenger.');
+    s += `<text class="lbl" x="180" y="106" text-anchor="middle">Each step can amplify the one before it.</text>`;
+    return wrap(s, 'Signal transduction through a G protein–coupled receptor: the G protein is the transducer, the enzyme it turns on is the effector, and the effector makes the second messenger.', 120);
   };
 
   return key => (F[key] ? F[key]() : '');

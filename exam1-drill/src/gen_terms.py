@@ -9,7 +9,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 os.chdir(HERE)
 if not os.path.exists('glossary.js'):
     sys.exit('gen_terms.py: glossary.js not found')
-js = "const fs=require('fs');eval(fs.readFileSync('glossary.js','utf8'));process.stdout.write(JSON.stringify(TERMS))"
+js = "const fs=require('fs'),vm=require('vm');process.stdout.write(JSON.stringify(vm.runInNewContext(fs.readFileSync('glossary.js','utf8')+';TERMS',{})))"
 TERMS = json.loads(subprocess.run(['node', '-e', js], capture_output=True, text=True, check=True).stdout)
 by_id = {t['id']: t for t in TERMS}
 groups = {}
@@ -52,7 +52,7 @@ for t in TERMS:
     # 1. definition -> term
     d = pick_distractors(t, 'term', need_longer=True)
     if d:
-        opts = [{'t': t['term'], 'correct': True, 'why': 'This is the definition of ' + t['term'].lower() + '.'}]
+        opts = [{'t': t['term'], 'correct': True, 'why': 'This is the definition of ' + t['term'] + '.'}]
         for x in d:
             opts.append({'t': x['term'], 'correct': False, 'why': x['term'] + ': ' + x['def']})
         q1 = dict(base, id='T-' + t['id'] + '-1', stem='Which term is defined as: ' + t['def'].rstrip('.') + '?',
@@ -63,7 +63,7 @@ for t in TERMS:
     # 2. term -> definition (only when a longer wrong definition exists)
     d2 = pick_distractors(t, 'def', need_longer=True)
     if d2:
-        opts = [{'t': t['def'], 'correct': True, 'why': 'This is the definition of ' + t['term'].lower() + '.'}]
+        opts = [{'t': t['def'], 'correct': True, 'why': 'This is the definition of ' + t['term'] + '.'}]
         for x in d2:
             opts.append({'t': x['def'], 'correct': False, 'why': 'That defines ' + x['term'].lower() + '.'})
         q2 = dict(base, id='T-' + t['id'] + '-2', stem='What does the term "' + t['term'] + '" mean?', options=opts, teach=teach)

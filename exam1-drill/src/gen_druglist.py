@@ -13,20 +13,20 @@ K6 = 'Katzung 16e, Ch. 6'
 
 # drug -> (mechanism as listed, subtopic, class key, receptor keys)
 MOA = {
- 'Norepinephrine': ('α1, α2, β1 and β2 agonist', 'adr', 'agonist', ['a1', 'a2', 'b1', 'b2']),
- 'Epinephrine': ('α1, α2, β1 and β2 agonist', 'adr', 'agonist', ['a1', 'a2', 'b1', 'b2']),
- 'Acetylcholine': ('Muscarinic (M1, M2, M3) and nicotinic (Nn, Nm) agonist', 'chol', 'agonist', ['m', 'n']),
+ 'Norepinephrine': ('α1, α2, β1 and β2 agonist', 'adr', 'agonist', ['a1a2b1b2']),
+ 'Epinephrine': ('α1, α2, β1 and β2 agonist', 'adr', 'agonist', ['a1a2b1b2']),
+ 'Acetylcholine': ('Muscarinic (M1, M2, M3) and nicotinic (Nn, Nm) agonist', 'chol', 'agonist', ['mn']),
  'Tropicamide': ('Muscarinic (M1, M2, M3) antagonist, reversible', 'chol', 'antagonist', ['m']),
  'Prazosin': ('α1 antagonist, reversible', 'adr', 'antagonist', ['a1']),
  'Phenylephrine': ('α1 agonist', 'adr', 'agonist', ['a1']),
- 'Phenoxybenzamine': ('α1 and α2 antagonist, irreversible', 'adr', 'irreversible', ['a1', 'a2']),
+ 'Phenoxybenzamine': ('α1 and α2 antagonist, irreversible', 'adr', 'irreversible', ['a1a2']),
  'Metoprolol': ('β1 antagonist, reversible', 'adr', 'antagonist', ['b1']),
  'Diazepam': ('GABA receptor allosteric agonist', 'gaba', 'allosteric', ['gaba']),
  'Albuterol': ('β2 partial agonist', 'adr', 'partial', ['b2']),
  'Varenicline': ('Nicotinic (Nn) partial agonist', 'chol', 'partial', ['nn']),
  'Histamine': ('Histamine H1 and H2 agonist', 'hist', 'agonist', ['h']),
  'Loratadine': ('Histamine H1 inverse agonist', 'hist', 'inverse', ['h']),
- 'Pindolol': ('β1 and β2 partial agonist', 'adr', 'partial', ['b1', 'b2']),
+ 'Pindolol': ('β1 and β2 partial agonist', 'adr', 'partial', ['b1b2']),
  'Diphenhydramine': ('Non-selective histamine receptor antagonist', 'hist', 'antagonist', ['h']),
 }
 owner = {}
@@ -58,6 +58,10 @@ RECEPTOR = {
  'n':  'Nicotinic receptors are ligand-gated channels: binding opens sodium and potassium channels and depolarizes the cell (Nn on postganglionic neurons, Nm at the skeletal muscle end plate).',
  'nn': 'The Nn receptor on postganglionic neurons is a ligand-gated channel: binding opens sodium and potassium channels and depolarizes the neuron.',
  'gaba': 'The GABA receptor is an ion channel that the neurotransmitter GABA opens.',
+ 'a1a2b1b2': 'Ligand binding at α1 forms IP3 and DAG and raises calcium (smooth muscle contracts); at α2 it lowers cAMP; at β1 and β2 it raises cAMP (heart speeds up, bronchiolar smooth muscle relaxes).',
+ 'a1a2': 'α1 binding forms IP3 and DAG and raises calcium, contracting smooth muscle; α2 binding inhibits adenylyl cyclase and lowers cAMP.',
+ 'b1b2': 'β1 (heart) and β2 (smooth muscle) both raise cAMP through adenylyl cyclase: β1 speeds the sinoatrial node and increases contractility, β2 relaxes bronchiolar smooth muscle.',
+ 'mn':  'Muscarinic M1 and M3 signal through IP3, DAG and calcium and M2 opens potassium channels; nicotinic Nn and Nm are ligand-gated channels that open sodium and potassium channels and depolarize the cell.',
  'h':  'Histamine activates more than one receptor subtype, and each subtype can couple to a different G protein, which is what lets a drug be selective for one subtype.',
 }
 RECEPTOR_SRC = {'h': (K2, 'Receptor Classes & Drug Development'), 'gaba': (K2, 'Competitive & Irreversible Antagonists — allosteric modulators')}
@@ -148,7 +152,7 @@ for d, (m, sub, cls, recs) in MOA.items():
               {'t': 'Nn only', 'correct': False, 'why': 'Nn alone is where varenicline is a partial agonist; acetylcholine acts at all five listed receptors.'},
               {'t': 'Nn and Nm only', 'correct': False, 'why': 'Leaves out the muscarinic receptors M1, M2 and M3.'},
               {'t': 'M1, M2, M3, Nn, Nm, H1 and H2', 'correct': False, 'why': 'H1 and H2 are histamine receptors, listed for histamine, not acetylcholine.'}],
-             'teach': TEACH[d], 'reading': reading_for(None, ['m', 'n']),
+             'teach': TEACH[d], 'reading': reading_for(None, ['mn']),
              'quote': 'Acetylcholine — Agonist at muscarinic receptors (M1, M2, M3) and nicotinic receptors (Nn, Nm)'})
         continue
     opts = [{'t': m, 'correct': True, 'why': f'{d} is listed as {lc(m)}.'}]

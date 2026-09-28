@@ -2,6 +2,12 @@
 
 Newest first. The build embeds this file, and the Progress page shows it.
 
+## 2026-09-28 (evening)
+- Terms section: a 50-term glossary from the Day 1–3 lectures with drawn figures, a flashcard drill, and 98 generated definition questions (skill "Terms"; at most 15% of an exam paper).
+- Twelve drawn figures (dose–response curves for potency, efficacy, partial and inverse agonists, competitive and irreversible antagonists; binding curve with Kd; spare receptors; orthosteric vs allosteric sites; two-state model; GPCR chain) shown with the explanation on 33 lecture questions.
+- Every textbook note cut to at most two sentences on what the tested concept means; examples, history and figure numbers removed.
+- Drug-list explanations rewritten: one sentence on what the drug class means and one on what the receptor does.
+
 ## 2026-09-28
 - Textbook notes added to questions the assigned readings cover (Katzung 16e, Ch. 1, 2 and 6), shown after each answer as "From the textbook".
 - Last-updated stamp, days-to-exam counter and this change log on the page.
