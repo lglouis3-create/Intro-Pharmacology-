@@ -35,6 +35,16 @@ const out = path.join(__dirname, '..', course.match(/output:\s*'([^']+)'/)[1]);
     const c = await page.$$('[data-c]'); if (!c.length) { fail('no confidence/next buttons'); break; }
     await c[i % c.length].click(); answered++;
   }
+  // keyboard: pick with a letter, continue with Enter
+  const before = await page.textContent('#view');
+  await page.keyboard.press('a');
+  const ck2 = await page.$('#check'); if (ck2) await page.keyboard.press('Enter');
+  if (!(await page.$$('.why')).length) fail('keyboard pick did not answer the question');
+  await page.keyboard.press('Enter');
+  if ((await page.textContent('#view')) === before) fail('Enter did not advance the quiz');
+  // last-updated stamp present
+  await page.click('nav button[data-v="topics"]');
+  if (!/Last updated \w+ \d+, \d{4}/.test(await page.textContent('#view'))) fail('last-updated stamp missing');
   // weak spots now populated
   await page.click('nav button[data-v="weak"]');
   if (!(await page.textContent('#view')).includes('By topic')) fail('weak spots did not populate');
@@ -55,11 +65,14 @@ const out = path.join(__dirname, '..', course.match(/output:\s*'([^']+)'/)[1]);
   if (!/ answers /.test(await page.textContent('#view'))) fail('progress page missing counts');
   // phone width: no horizontal scroll on any view
   await page.setViewportSize({width: 375, height: 800});
-  for (const v of ['topics', 'ref', 'tell', 'exam', 'weak']) {
+  for (const v of ['topics', 'ref', 'tell', 'exam', 'weak', 'data']) {
     await page.click(`nav button[data-v="${v}"]`);
     const over = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
     if (over > 1) fail(`horizontal scroll on ${v} at 375px (${over}px)`);
   }
+  await page.click('nav button[data-v="tell"]');
+  const stacked = await page.evaluate(() => { const td = document.querySelector('table.stack tbody td'); return td && getComputedStyle(td).display === 'block' && td.getAttribute('data-label'); });
+  if (!stacked) fail('tables do not stack at phone width');
   if (errors.length) fail('page errors: ' + errors.join(' | '));
   console.log(`answered ${answered} quiz items (${multiSeen} select-all), exam of ${total}`);
   console.log(`browser_test.js: ${process.exitCode ? 'FAILED' : 'passed'}`);

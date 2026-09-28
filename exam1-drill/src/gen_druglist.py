@@ -56,9 +56,99 @@ TEACH = {
  'Diazepam': 'Diazepam is the only drug on the list that acts at a GABA receptor, and the list classes it as an allosteric agonist.',
  'Phenylephrine': 'Phenylephrine is the α1-selective agonist on the list; norepinephrine and epinephrine are agonists at α1, α2, β1 and β2.',
 }
-def why_wrong(m):
-    ds = owner.get(m, [])
-    return f'This is the listed mechanism of {" and ".join(ds)}.' if ds else 'No drug on the Exam 1 list has this mechanism.'
+# Textbook reading, keyed on the question's concept. Katzung 16e Ch. 2 and Ch. 6 only; every
+# sentence is traceable to the chapter text. Page numbers are those of the AccessMedicine printout
+# ("Page n / 20"), not the printed book. Drugs the chapters do not name (prazosin, albuterol,
+# pindolol, varenicline, tropicamide, loratadine, diphenhydramine) get receptor-class entries only.
+K2, K6 = 'Katzung 16e, Ch. 2', 'Katzung 16e, Ch. 6'
+def R(src, sec, t):
+    return {'src': src, 'sec': sec, 't': t}
+_PARTIAL = R(K2, 'Partial Agonists (printout p. 6/18)',
+    'Agonists are divided by the maximal response they produce when all receptors are occupied: partial agonists produce a lower response at full receptor occupancy than full agonists do, and this failure to reach the full maximum is not due to decreased affinity for the receptor. Because a partial agonist occupies the same receptor sites as a full agonist, it competitively inhibits the responses produced by full agonists, a mixed agonist-antagonist property that can be beneficial or deleterious in the clinic. Full agonists tend to shift the conformational equilibrium of the receptor more strongly than partial agonists.')
+_COMPET = R(K2, 'Competitive & Irreversible Antagonists (printout p. 5/18)',
+    'Receptor antagonists bind to receptors but do not activate them; their primary action is to reduce the effects of agonists that normally activate the receptor. In the presence of a fixed agonist concentration, increasing concentrations of a competitive antagonist progressively inhibit the response, but sufficiently high agonist concentrations can surmount the block, so the agonist concentration-effect curve shifts to the right while its maximal effect (Emax) stays the same. The degree of inhibition therefore depends both on the antagonist concentration and on the concentration of agonist competing for the receptor.')
+_IRREV = R(K2, 'Competitive & Irreversible Antagonists (printout p. 5-6/18)',
+    'Phenoxybenzamine is an irreversible α-adrenoceptor antagonist used to control the hypertension caused by catecholamines released from pheochromocytoma; once it lowers blood pressure, blockade is maintained even when the tumor episodically releases very large amounts of catecholamine. Noncompetitive antagonists of this kind bind the receptor irreversibly or nearly so, sometimes by a covalent bond, so agonists cannot surmount the inhibition whatever their concentration and the maximal effect of the agonist is reduced. Because such a drug need not remain present in unbound form to act, its duration of action depends on the rate of receptor turnover rather than on its own elimination, and an overdose must be antagonized physiologically with a pressor agent that does not act through α adrenoceptors.')
+_B2 = R(K6, 'Autonomic Receptors, Table 6-2; Table 6-3 (printout p. 11, 14/20)',
+    'The β2 adrenoceptor sits on postsynaptic effector cells, especially smooth muscle and cardiac muscle, and ligand binding stimulates adenylyl cyclase and increases cyclic adenosine monophosphate (cAMP); under some conditions it also activates cardiac Gi. Table 6-3 lists relaxation of bronchiolar smooth muscle, of skeletal muscle blood vessels, of the bladder wall and of the pregnant uterus as β2 effects of sympathetic activity, and acceleration of the sinoatrial node and increased contractility as β1 and β2 effects.')
+_B1B2 = R(K6, 'Autonomic Receptors, Table 6-2; Table 6-3 (printout p. 11, 14-15/20)',
+    'β1 receptors sit on postsynaptic effector cells, especially the heart, lipocytes and brain, as well as on presynaptic adrenergic and cholinergic nerve terminals and the juxtaglomerular apparatus; β2 receptors sit on postsynaptic effector cells, especially smooth muscle and cardiac muscle. Ligand binding at both stimulates adenylyl cyclase and increases cyclic adenosine monophosphate (cAMP). Table 6-3 assigns acceleration of the sinoatrial node and increased contractility to β1 and β2, renin release to β1, and relaxation of bronchiolar smooth muscle to β2.')
+_A1 = R(K6, 'Autonomic Receptors, Table 6-2; Table 6-3 (printout p. 11, 14/20)',
+    'The α1 adrenoceptor sits on postsynaptic effector cells, especially smooth muscle, and ligand binding leads to formation of inositol trisphosphate (IP3) and diacylglycerol (DAG) with increased intracellular calcium. Table 6-3 attributes to α1 the contraction of the iris radial muscle and of the gastrointestinal and bladder sphincters, and to α receptors the contraction of skin and splanchnic vessels. Within the α-adrenoceptor class, α1 and α2 receptors differ in both agonist and antagonist selectivity, and the development of more selective blocking drugs is what led to naming these subclasses.')
+_CATECHOL = R(K2, 'G Proteins & Second Messengers (printout p. 10/18)',
+    'The body responds to danger by using the catecholamines norepinephrine and epinephrine both to increase heart rate and to constrict blood vessels in the skin, acting on Gs-coupled β adrenoceptors and Gq-coupled α1 adrenoceptors respectively. A single endogenous ligand such as norepinephrine can thus bind receptors that couple to different G proteins, which lets it elicit different responses in different cells.')
+_MUSC = R(K6, 'Autonomic Receptors, Table 6-2; Box: Pharmacology of the Eye (printout p. 11, 19/20)',
+    'Table 6-2 places M1 receptors on central nervous system (CNS) neurons, sympathetic postganglionic neurons and some presynaptic sites, where ligand binding forms inositol trisphosphate (IP3) and diacylglycerol (DAG) and raises intracellular calcium; M2 on myocardium, smooth muscle and some presynaptic sites, where binding opens potassium channels and inhibits adenylyl cyclase; and M3 on exocrine glands and vessels (smooth muscle and endothelium), coupling like M1. In the eye, parasympathetic activity and muscarinic cholinomimetics contract the pupillary constrictor and ciliary muscles (M3 in Table 6-3), producing miosis and accommodation for near vision, and all of these effects are prevented or reversed by muscarinic blocking drugs.')
+_HIST = R(K2, 'G Proteins & Second Messengers, Table 2-1; Receptor Classes & Drug Development (printout p. 11, 14/18)',
+    'Table 2-1 lists histamine among the ligands for Gs-coupled receptors, whose effector pathway is stimulation of adenylyl cyclase and increased cyclic adenosine monophosphate (cAMP). Histamine is also given, with norepinephrine, acetylcholine and serotonin, as a biogenic amine that activates more than one receptor, each of which may activate a different G protein, and the existence of several receptor subtypes for one endogenous ligand is what creates the opportunity for subtype-selective drugs. Histamine and acetylcholine are also named as natural vasodilator agents that make vascular endothelial cells generate nitric oxide.')
+READING = {
+ 'moa-norepinephrine': [
+    R(K6, 'Neurotransmitter Chemistry — Adrenergic Transmission; Table 6-2; Presynaptic Regulation (printout p. 6, 11, 15/20)',
+      'Norepinephrine (noradrenaline) is the primary transmitter released by most postganglionic sympathetic fibers, and receptors that respond to catecholamines such as norepinephrine are called adrenoceptors. Table 6-2 lists the subtypes: α1 on postsynaptic effector cells, especially smooth muscle (formation of inositol trisphosphate (IP3) and diacylglycerol (DAG), increased intracellular calcium); α2 on presynaptic adrenergic nerve terminals, platelets, lipocytes and smooth muscle (inhibition of adenylyl cyclase, decreased cyclic adenosine monophosphate (cAMP)); β1 especially on the heart and β2 especially on smooth muscle and cardiac muscle (both stimulate adenylyl cyclase and increase cAMP). The α2 receptor on noradrenergic nerve terminals is an autoreceptor: its activation by norepinephrine diminishes further norepinephrine release.'),
+    _CATECHOL],
+ 'moa-epinephrine': [
+    R(K6, 'Neurotransmitter Chemistry — Adrenergic Transmission; Table 6-2; Table 6-4 (printout p. 6, 8, 11, 16/20)',
+      'Adrenal medullary cells, which are embryologically analogous to postganglionic sympathetic neurons, receive input from preganglionic sympathetic nerves and release a mixture of epinephrine and norepinephrine into the circulation; in the adrenal medulla some norepinephrine is converted to epinephrine. Epinephrine is a catecholamine, and the receptors that respond to catecholamines are the adrenoceptors of Table 6-2: α1 (formation of inositol trisphosphate and diacylglycerol, increased intracellular calcium), α2 (inhibition of adenylyl cyclase, decreased cyclic adenosine monophosphate (cAMP)), and β1 and β2 (stimulation of adenylyl cyclase, increased cAMP). Table 6-4 also lists epinephrine acting at presynaptic β2 receptors with an excitatory effect on transmitter release from adrenergic and somatic motor cholinergic terminals.'),
+    _CATECHOL],
+ 'moa-acetylcholine': [
+    R(K6, 'Autonomic Receptors, Table 6-2 (printout p. 11/20)',
+      'Cholinoceptor denotes any receptor, muscarinic or nicotinic, that responds to acetylcholine; the two subtypes were named after the alkaloids muscarine and nicotine originally used to identify them. Table 6-2 places M1 on central nervous system (CNS) neurons, sympathetic postganglionic neurons and some presynaptic sites (formation of inositol trisphosphate and diacylglycerol, increased intracellular calcium), M2 on myocardium, smooth muscle and some presynaptic sites (opening of potassium channels, inhibition of adenylyl cyclase) and M3 on exocrine glands and vessels (coupling like M1). The nicotinic receptors are NN on postganglionic neurons and some presynaptic cholinergic terminals and NM at skeletal muscle neuromuscular end plates; both are pentameric, and ligand binding opens sodium and potassium channels to depolarize the cell.'),
+    R(K2, 'Ion Channels; Receptor Classes & Drug Development; Table 2-1 (printout p. 9, 11, 14/18)',
+      'Acetylcholine is the example of one chemical acting on completely different structural receptor classes: it uses ligand-gated ion channels (nicotinic acetylcholine receptors) to produce a fast excitatory postsynaptic potential within milliseconds, and it also activates a separate class of G protein-coupled receptors (muscarinic receptors) that mediate slower modulatory effects over seconds to minutes on the same neurons. In Table 2-1, muscarinic receptors couple to Gi (decreased cyclic adenosine monophosphate (cAMP), opening of cardiac potassium channels and slowed heart rate) and to Gq (increased phospholipase C, inositol trisphosphate, diacylglycerol and cytoplasmic calcium).')],
+ 'moa-tropicamide': [_MUSC, _COMPET],
+ 'moa-prazosin': [_A1, _COMPET],
+ 'moa-phenylephrine': [
+    R(K6, 'Box: Pharmacology of the Eye; Autonomic Receptors; Table 6-3 (printout p. 19, 11, 14/20)',
+      'Alpha adrenoceptors mediate contraction of the radially oriented pupillary dilator muscle fibers of the iris, producing mydriasis (an increase in pupil size); this occurs during sympathetic discharge and when α-agonist drugs such as phenylephrine are placed in the conjunctival sac. Table 6-3 assigns contraction of the iris radial muscle to the α1 receptor, whose ligand binding forms inositol trisphosphate (IP3) and diacylglycerol (DAG) and raises intracellular calcium (Table 6-2). Phenylephrine is also named, with noradrenaline and isoproterenol, among the agonists whose names were not practicable for naming the receptors of noradrenergic nerves, which is why the term adrenoceptor is used instead.')],
+ 'moa-phenoxybenzamine': [_IRREV],
+ 'irreversible-drug': [_IRREV],
+ 'moa-metoprolol': [
+    R(K2, 'Case Study Answer; Competitive & Irreversible Antagonists (printout p. 18, 5/18)',
+      'Metoprolol is described as a more highly selective adrenoceptor antagonist than propranolol: it binds preferentially to the β1 subtype, a major β adrenoceptor in the heart, and has a lower affinity (a higher equilibrium dissociation constant, Kd) for the β2 subtype that mediates bronchodilation, so it is an alternative for a hypertensive patient whose asthma propranolol would worsen. For a competitive β-adrenoceptor antagonist such as propranolol, the degree of inhibition depends on the antagonist concentration and on the amount of endogenous norepinephrine and epinephrine competing for the receptors, so the surge of transmitter with exercise or stress may overcome the block.'),
+    _B1B2],
+ 'moa-diazepam': [
+    R(K2, 'Competitive & Irreversible Antagonists — allosteric modulators (printout p. 6/18)',
+      'Benzodiazepine drugs like diazepam bind to an allosteric site on ion channels that are physiologically activated by the neurotransmitter γ-aminobutyric acid (GABA); an allosteric site is a site on the receptor separate from the classical orthosteric site bound by the endogenous agonist. Benzodiazepines are termed positive allosteric modulators of GABA receptors because they potentiate, rather than inhibit, the ability of the orthosteric agonist GABA to increase channel conductance. A useful feature of this mechanism is that benzodiazepines have little activating effect on their own, which contributes to their relative safety in overdose unless combined with other sedating drugs.')],
+ 'moa-albuterol': [_B2, _PARTIAL],
+ 'moa-varenicline': [
+    R(K6, 'Autonomic Receptors, Table 6-2; Postsynaptic Regulation (printout p. 11, 16/20)',
+      'The neuronal nicotinic receptor (NN) is found on postganglionic neurons and some presynaptic cholinergic terminals; it is a pentameric receptor that typically contains α- and β-type subunits only, and ligand binding opens sodium and potassium channels, depolarizing the cell. In an autonomic ganglion, binding of an appropriate ligand to the NN receptor produces the fast excitatory postsynaptic potential that fires the postganglionic cell. NN is distinct from NM, the nicotinic receptor of skeletal muscle neuromuscular end plates, whose pentamer also contains γ and δ subunits.'),
+    _PARTIAL],
+ 'moa-histamine': [_HIST],
+ 'moa-loratadine': [
+    R(K2, 'Competitive & Irreversible Antagonists (printout p. 5/18)',
+      'Antagonists are traditionally thought to have no functional effect in the absence of an agonist, but some antagonists exhibit inverse agonist activity because they also reduce receptor activity below the basal level observed in the absence of any agonist at all. Like other antagonists, such a drug binds the receptor without activating generation of a signal and interferes with the ability of the agonist to activate it.')],
+ 'moa-pindolol': [_PARTIAL, _B1B2],
+ 'moa-diphenhydramine': [
+    R(K2, 'Receptors mediate the actions of agonists and antagonists; Receptor Classes & Drug Development (printout p. 4, 14/18)',
+      'Pharmacologic antagonists bind to receptors but do not activate generation of a signal, and consequently they interfere with the ability of an agonist to activate the receptor; some of the most useful drugs in clinical medicine are antagonists. Histamine is named as a biogenic amine that activates more than one receptor subtype, each of which may activate a different G protein, and the existence of several receptor subtypes for one endogenous ligand is what makes subtype-selective drugs possible.')],
+ 'partial-agonists': [_PARTIAL,
+    R(K2, 'Relation Between Drug Dose & Clinical Response — Potency; Maximal efficacy (printout p. 15/18)',
+      'In Figure 2-15, drug B is a partial agonist: it is more potent than drug A because its half-maximal effective concentration (EC50) is lower, yet some doses of drug A produce larger effects than any dose of drug B, because drug A has the greater maximal efficacy. Maximal efficacy may be set by the drug’s mode of interaction with receptors, as with partial agonists, or by the receptor-effector system.')],
+ 'alpha1-drugs': [_A1, _CATECHOL],
+ 'antagonists-list': [
+    R(K2, 'Receptors mediate the actions of agonists and antagonists; Competitive & Irreversible Antagonists (printout p. 4-6/18)',
+      'Agonists activate the receptor to signal as a direct result of binding to it; pharmacologic antagonists bind to receptors but do not activate generation of a signal and consequently interfere with the ability of an agonist to activate the receptor. Antagonists are divided into competitive antagonists, whose block can be surmounted by a high enough agonist concentration, and noncompetitive antagonists, which often bind irreversibly so that the block cannot be surmounted and the maximal response falls. Some antagonists also show inverse agonist activity, reducing receptor activity below basal levels, and drugs that bind a site different from the one bound by the endogenous ligand act as allosteric modulators.')],
+ 'histamine-drugs': [_HIST],
+ 'beta-drugs': [_B2,
+    R(K2, 'G Proteins & Second Messengers; Clinical Selectivity; Case Study Answer (printout p. 10, 17-18/18)',
+      'β adrenoceptors are Gs-coupled receptors: Gs stimulates adenylyl cyclase to raise cyclic adenosine monophosphate (cAMP) when activated by hormones and neurotransmitters acting through such receptors. β1 is a major β adrenoceptor in the heart while the β2 subtype mediates bronchodilation, and x-ray crystallography shows that the orthosteric binding sites of β1 and β2 are identical, so drugs discriminate between the subtypes by differences in the vestibule they traverse to reach that site.')],
+}
+# Where Katzung and the drug list use different terms for something a question tests.
+NOTE = {
+ 'moa-diazepam': 'Katzung Ch. 2 calls diazepam a positive allosteric modulator of the GABA receptor, one that potentiates GABA and has little activating effect on its own; the Exam 1 drug list classes it as a GABA receptor allosteric agonist. The exam is written from the drug list.',
+}
+
+def lc(m):
+    """Lower-case the first letter of a Table 1 mechanism string unless it starts with an acronym."""
+    return m if m.startswith('GABA') else m[0].lower() + m[1:]
+def why_wrong(m, d):
+    """Why option `m` is wrong for drug `d`: name the drug(s) Table 1 gives that mechanism to, then
+    restate d's own row so the distinguishing receptor or direction is on the page. Table 1 wording only."""
+    ds = [x.lower() for x in owner.get(m, [])]
+    if not ds:
+        return f'No drug on the Exam 1 list has this mechanism; {d.lower()} is listed as: {MOA[d][0]}.'
+    return f'This is the listed mechanism of {" and ".join(ds)} ({lc(m)}); {d.lower()} is listed as: {MOA[d][0]}.'
 
 qs = []
 n = 0
@@ -70,6 +160,10 @@ def add(q):
     L = max(len(o['t']) for o in opts)
     if not q.get('multi') and len(right[0]['t']) == L and sum(1 for o in opts if len(o['t']) == L) == 1:
         raise SystemExit(f"{q['id']}: correct option is the longest")
+    if q['concept'] in READING:
+        q['reading'] = READING[q['concept']]
+    if q['concept'] in NOTE:
+        q['note'] = NOTE[q['concept']]
     n += 1
     qs.append(q)
 
@@ -88,7 +182,7 @@ for d, (m, sub) in MOA.items():
         continue
     opts = [{'t': m, 'correct': True, 'why': f'Table 1 lists {d.lower()} as: {m}.'}]
     for x in DIS[d]:
-        opts.append({'t': x, 'correct': False, 'why': why_wrong(x)})
+        opts.append({'t': x, 'correct': False, 'why': why_wrong(x, d)})
     q = {'sub': sub, 'concept': f'moa-{d.lower()}', 'tags': ['drug-list'],
          'stem': f'Which of the following describes the mechanism of action of {d.lower()}?',
          'options': opts, 'quote': f'{d} — {m}'}

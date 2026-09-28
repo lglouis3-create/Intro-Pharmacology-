@@ -14,4 +14,6 @@ Build and checks (from `src/`):
     python3 build.py && node test.js && node style_check.js
     NODE_PATH=$(npm root -g) node browser_test.js
 
+Each update gets an entry at the top of `CHANGELOG.md`; the build embeds it and the Progress page shows it with the build date.
+
 `q_DL1.js` is generated: edit `gen_druglist.py`, then run `python3 gen_druglist.py`.

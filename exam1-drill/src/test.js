@@ -35,6 +35,11 @@ for (const q of QUESTIONS) {
   }
   q.options.forEach((o, i) => { if (!o.why) bad(q.id, 'option ' + i + ' has no why'); });
   if (!q.teach) w(q.id, 'no teach');
+  if (q.reading != null) {
+    const rs = Array.isArray(q.reading) ? q.reading : [q.reading];
+    if (!rs.length) bad(q.id, 'empty reading');
+    rs.forEach((r, i) => { if (!r || !r.src || !r.t) bad(q.id, 'reading ' + i + ' needs src and t'); else if (r.t.length < 40) w(q.id, 'reading ' + i + ' is very short'); });
+  }
   if (q.dupOf && !QUESTIONS.some(x => x.id === q.dupOf)) bad(q.id, 'dupOf points nowhere');
 }
 // every tell-apart row names a question id that exists
@@ -47,6 +52,7 @@ for (const ex of COURSE.exams) {
 }
 const per = {}; QUESTIONS.forEach(q => { per[q.lecture] = (per[q.lecture] || 0) + 1; });
 const sk = {}; QUESTIONS.forEach(q => { sk[q.skill] = (sk[q.skill] || 0) + 1; });
+console.log(`${QUESTIONS.filter(q => q.reading).length} with textbook notes`);
 console.log(`${QUESTIONS.length} questions · per lecture ${JSON.stringify(per)} · per skill ${JSON.stringify(sk)} · select-all ${QUESTIONS.filter(q => q.multi).length}`);
 console.log(`test.js: ${fail ? 'FAILED' : 'passed'} (${fail} failures, ${warn} warnings)`);
 process.exit(fail ? 1 : 0);

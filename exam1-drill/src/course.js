@@ -17,7 +17,7 @@ const COURSE = {
     {id:'DL1', deck:'Exam_1_Drug_List_2026.pdf', label:'Exam 1 drug list', prof:'Gottlieb', exam:1, module:1}
   ],
   exams: [
-    {id:1, name:'Exam 1', date:'Fri Oct 2, 9–11 am',
+    {id:1, name:'Exam 1', date:'Fri Oct 2, 9–11 am', when:'2026-10-02T09:00:00-05:00',  // syllabus: Exam I, Fri Oct 2, 9–11 am
      questions:null,             // count not yet announced; the simulator asks for a length
      minutes:120,                // syllabus: "A total of two hours is allotted for each of the major examinations"
      sata:null,

@@ -29,7 +29,7 @@ const REFERENCE_HTML = `
 <tr><td>1-transmembrane</td><td>Binding pocket outside, enzymatic activity inside</td><td>Tyrosine kinases, etc.</td></tr>
 <tr><td>Intracellular receptors & transcriptional regulators</td><td>Cytosolic / nuclear</td><td>Steroid hormones, etc.</td></tr>
 </table>
-<p class="sub">Pharmacodynamics-Day-1-2026s.pdf: slides ~35–~36 (Receptors Classification); transcript 9/22 for 1-TM and 7-TM descriptions.</p>
+<p class="sub">Pharmacodynamics-Day-1-2026s.pdf: slides ~35–36 (Receptors Classification); transcript 9/22 for 1-TM and 7-TM descriptions.</p>
 <table class="reftab">
 <tr><th>Apparent potency (PK)</th><th>Pharmacological potency (PD)</th></tr>
 <tr><td>Age; Absorption; Distribution; Elimination; DDI</td><td>Tissue sensitivity; Receptor #; Receptor activity; Affinity; Efficacy</td></tr>
@@ -76,7 +76,7 @@ const REFERENCE_HTML = `
 <tr><td>Hydrogen</td><td>electrostatic attraction between H and N, O, S; stable and reversible; selectivity and specificity</td><td>reversible, surmountable, competitive</td><td>—</td></tr>
 <tr><td>Van der Waals</td><td>weak; occurs when two atoms are brought close together; drug–receptor specificity; better fit means more bonds</td><td>reversible, surmountable, competitive</td><td>—</td></tr>
 </table>
-<p class="sub">Pharmacodynamics-Day_2_2026s copy.pdf: slides ~15–~16; transcript 9/23 (~70%).</p>
+<p class="sub">Pharmacodynamics-Day_2_2026s copy.pdf: slides ~15–16; transcript 9/23 (~70%).</p>
 <table class="reftab">
 <tr><th>class</th><th>affinity preference</th><th>efficacy</th><th>example</th></tr>
 <tr><td>Full agonist</td><td>greater affinity for active receptors</td><td>+ efficacy, 100%</td><td>norepinephrine, epinephrine</td></tr>
@@ -87,7 +87,7 @@ const REFERENCE_HTML = `
 <tr><td>Allosteric agonist / antagonist</td><td>binds a different site; ↑ / ↓ affinity and/or efficacy of another drug</td><td>—</td><td>diazepam (agonist, PAM)</td></tr>
 <tr><td>Indirect antagonist</td><td>binds components upstream/downstream of receptor</td><td>—</td><td>caffeine (PDE), RAS drug</td></tr>
 </table>
-<p class="sub">Pharmacodynamics-Day_2_2026s copy.pdf: slides ~18–~19, ~32–~44; transcript 9/23 (~78–99%).</p>
+<p class="sub">Pharmacodynamics-Day_2_2026s copy.pdf: slides ~18–19, ~32–44; transcript 9/23 (~78–99%).</p>
 <table class="reftab">
 <tr><th>Receptor site</th><th>Drug A (KD)</th><th>Drug B (KD)</th></tr>
 <tr><td>β1 (heart)</td><td>250 nM</td><td>100 nM</td></tr>
@@ -118,7 +118,7 @@ const REFERENCE_HTML = `
 <tr><td>Intrinsic activity</td><td>FA = 1; PA 0 &lt; β &lt; 1; antagonist = 0</td></tr>
 <tr><td>Unit prefixes</td><td>milli = 10^-3, micro = 10^-6, nano = 10^-9</td></tr>
 </table>
-<p class="sub">Pharmacodynamics-Day_3_2026s.pdf: Pharmacodynamics-Day_3_2026s.pdf slides ~3, ~21–~25; unit prefixes and Emax reasons from transcript 9/24.</p>
+<p class="sub">Pharmacodynamics-Day_3_2026s.pdf: Pharmacodynamics-Day_3_2026s.pdf slides ~3, ~21–25; unit prefixes and Emax reasons from transcript 9/24.</p>
 <table class="reftab">
 <tr><th>Full agonist + full agonist (THM)</th></tr>
 <tr><td>Increase apparent affinity of agonist for the receptor (shift to the left)</td></tr>

@@ -1,6 +1,6 @@
 # PHAR 4344 drill — state
 
-Updated 2026-09-26.
+Updated 2026-09-28.
 
 ## Delivered
 - `exam1-drill/PHAR4344_Exam1_Drill.html`, built from `exam1-drill/src/` (`python3 build.py`).
@@ -9,6 +9,11 @@ Updated 2026-09-26.
 - Checks run and passing: build.py, test.js, style_check.js, browser_test.js (Chromium).
 - Checks not built for this course: cite_check (needs the PDFs with page numbers), explain_check, coverage_check.
 - Adversarial review done on L01–L03 against deck text + transcript. No keyed answer changed. L03-034 was rewritten because the old key was inferred, not stated.
+
+## 2026-09-28 update
+- Textbook notes (`reading` field) on 114 of 132 questions from Katzung 16e Ch. 1, 2, 6 (Drive: Fall 2026/Intro Pharmacology/Readings). Keys unchanged. Conflicts noted on the question: diazepam (PAM vs allosteric agonist, DL1-009/020), potency definition (L02-033, L03-028), PKA as second messenger (L02-019), Gs signal duration (L02-005).
+- Page: last-updated stamp + change log (CHANGELOG.md, embedded by build.py), exam countdown (`when` in course.js), phone-stacked tables, keyboard shortcuts, seen bars.
+- Chapter text carries only AccessMedicine printout pagination; `sec` cites section headings.
 
 ## Sources (Google Drive: GoodNotes/FSOP/P2 Year/Fall 2026/Intro Pharmacology)
 - Syllabus: SyllabusF26_PHAR_4344_PT_II_Intro_to_Pharmacology_Final.pdf
