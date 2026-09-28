@@ -167,17 +167,22 @@ function startQuiz(list, label, mode) {
    what is due, then what is unseen, then the soonest due. */
 function pickSR() {
   const now = Date.now(), list = Q.list, recent = Q.cur ? Q.cur.id : null;
+  // A question answered in the last few minutes is not served again at the
+  // start of a new session; a fresh open of a topic begins somewhere else.
+  const fresh = id => !(S.q[id] && S.q[id].last > now - 3 * MIN) || id === (Q.retest[0] || {}).not;
   while (Q.retest.length) {
     const {concept, not} = Q.retest.shift();
     const sib = list.filter(q => q.concept === concept && q.id !== not && q.id !== recent);
     if (sib.length) return shuffle(sib)[0];
   }
-  const due = list.filter(q => S.q[q.id] && S.q[q.id].n && S.q[q.id].due <= now && q.id !== recent);
-  if (due.length) return due.sort((a, b) => S.q[a.id].box - S.q[b.id].box || S.q[a.id].due - S.q[b.id].due)[0];
+  const due = shuffle(list.filter(q => S.q[q.id] && S.q[q.id].n && S.q[q.id].due <= now && q.id !== recent && fresh(q.id)));
+  if (due.length) return due.sort((a, b) => S.q[a.id].box - S.q[b.id].box)[0];
   const unseen = list.filter(q => !(S.q[q.id] && S.q[q.id].n));
   if (unseen.length) return shuffle(unseen)[0];
-  const rest = list.filter(q => q.id !== recent).sort((a, b) => S.q[a.id].due - S.q[b.id].due);
-  return rest[0] || list[0];
+  const rest = shuffle(list.filter(q => q.id !== recent && fresh(q.id))).sort((a, b) => S.q[a.id].due - S.q[b.id].due);
+  // everything was answered minutes ago: anything but the very last one
+  const lastId = list.reduce((m, q) => (S.q[q.id] && (!m || S.q[q.id].last > S.q[m].last)) ? q.id : m, null);
+  return rest[0] || shuffle(list.filter(q => q.id !== recent && q.id !== lastId))[0] || list[0];
 }
 function nextQ() {
   let q;

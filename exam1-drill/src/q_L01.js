@@ -45,7 +45,7 @@ QUESTIONS.push(
   {t:'Tachycardia', correct:false, why:'A β1 antagonist slows the heart; tachycardia reverses the effect.'},
   {t:'Hyponatremia', correct:false, why:'Hyponatremia was the thiazide diuretic example, from losing sodium.'}],
  teach:'Metoprolol blocks β1 receptors. In the heart that slows the rate, and too much slowing is bradycardia. β1 receptors are also in the brain, which he links to fatigue and patients forgetting things.',
- quote:'ADR - Bradycardia, fatigue, etc…',
+ quote:'severe bradycardia that can be a side effect if you get to the brain or the beta ones are as well, it may cause fatigue. Patients may forget things.',
  reading:[{src:'Katzung 16e, Ch. 6', sec:'Table 6–2 Major autonomic receptor types', t:'β1 adrenoceptors are on postsynaptic effector cells, especially heart, lipocytes and brain. Because the sinoatrial node is accelerated through β1 receptors, blocking them slows the heart, and slowing it too far is bradycardia.'}],
  cite:'Pharmacodynamics-Day-1-2026s.pdf slide ~9; transcript 9/22'},
 
@@ -84,7 +84,7 @@ QUESTIONS.push(
   {t:'It is a partial agonist', correct:false, why:'Its lack of oral effect is about absorption, not intrinsic activity.'},
   {t:'Stomach acid adds a charge', correct:false, why:'The charge is a property of the molecule itself.'}],
  teach:'Curare is a large molecule with a positive charge, so it is not absorbed when eaten. It was discovered when fish, whose gills are outside the body, became paralyzed and floated up. It was later used as a paralyzing agent for surgery.',
- quote:'if you eat this plant, nothing happens because karate is a very large positive charge molecule. What does that tell you to be large and have a charge to it, positive or negative? You can’t absorb, right?',
+ quote:'What does that tell you to be large and have a charge to it, positive or negative? You can’t absorb, right?',
  reading:[{src:'Katzung 16e, Ch. 1', sec:'Drug Size; Ionization of Weak Acids and Weak Bases', t:'Molecules much larger than about 1000 molecular weight do not diffuse readily between body compartments. The charge of an ionized molecule makes it water-soluble and lipid-insoluble, so a permanently charged molecule permeates membranes poorly.'}],
  cite:'Pharmacodynamics-Day-1-2026s.pdf slide ~14; transcript 9/22'},
 
@@ -112,7 +112,7 @@ QUESTIONS.push(
   {t:'NDS are natural, so interaction risk is low', correct:false, why:'This is incorrect, but it is not the only incorrect statement.'},
   {t:'All of the above', correct:true, why:'Every statement is incorrect: labels cannot claim cures, NDS are not FDA-tested like drugs, and natural or old does not mean safe or interaction-free.'}],
  teach:'All four statements are wrong. NDS labels cannot claim to cure, they are not tested by the FDA like prescription drugs, long use does not prove safety, and herbals can interact with prescription and OTC drugs. His test tip: if two answers other than a select-all are definitely correct, choose all of the above.',
- quote:'90% says all the above. What is the correct answer? I would say all the above, right?',
+ quote:'if there are two answers other than a select all that you know absolutely are correct, just go for the all the above.',
  reading:[{src:'Katzung 16e, Ch. 1', sec:'The History of Pharmacology (general principles); Table 1–6', t:'All substances can be toxic, and the chemicals in herbs are no different from those in manufactured drugs except for more impurities. Full FDA review of supplements as drugs is prohibited, so they do not meet the same efficacy and safety standards.'}],
  cite:'Pharmacodynamics-Day-1-2026s.pdf slide ~18; transcript 9/22'},
 
@@ -137,7 +137,7 @@ QUESTIONS.push(
   {t:'Only prescription drugs can cause interactions', correct:false, why:'Herbals can interact with both prescription and OTC drugs.'},
   {t:'Herbals are fully FDA-tested', correct:false, why:'Supplements have not been fully tested.'}],
  teach:'Most patients do not consider supplements pertinent and do not report them. Herbals have active ingredients, can interact with prescription or OTC drugs, and can produce side effects because they have not been fully tested.',
- quote:'Herbal can interact with prescription/OTC drugs',
+ quote:'Herbal medications and supplements do have active ingredients... some of those active ingredients can have drug-drug interactions with their over the counter medications.',
  reading:[{src:'Katzung 16e, Ch. 1', sec:'The History of Pharmacology (general principles); Confounding Factors in Clinical Trials', t:'Botanical chemicals are no different from those in manufactured drugs apart from more impurities, so an herbal product carries active chemicals like any drug. Other drugs alter the pharmacokinetics of many drugs, so a pharmacologic history must include over-the-counter drugs and supplements.'}],
  cite:'Pharmacodynamics-Day-1-2026s.pdf slide ~20; transcript 9/22'},
 
@@ -216,7 +216,6 @@ QUESTIONS.push(
   {t:'Ion channels are typically expressed on cell membranes', correct:false, why:'True, but not the only true statement.'},
   {t:'All the above', correct:true, why:'Every statement is correct; the class answered 100% all the above.'}],
  teach:'Route and the ability to reach the site of action change apparent potency; drugs bind some receptors with higher affinity than others; ion channels are transmembrane proteins on the cell membrane.',
- quote:'We have 100%, says that it is all the above, uh, that’s the correct answer, right?',
  cite:'Pharmacodynamics-Day-1-2026s.pdf slide ~24; transcript 9/22'},
 
 {id:'L01-017', lecture:'L01', prof:'Gottlieb', tier:'new', topic:'L01', sub:'potency', skill:'apply',
@@ -243,7 +242,6 @@ QUESTIONS.push(
   {t:'Age', correct:false, why:'Age is listed under apparent potency.'},
   {t:'Elimination by the kidney or liver', correct:false, why:'Elimination is a pharmacokinetic factor under apparent potency.'}],
  teach:'Pharmacological potency (pharmacodynamics): tissue sensitivity, receptor number, receptor activity, affinity, efficacy. Apparent potency (pharmacokinetics): age, absorption, distribution, elimination, DDIs.',
- quote:'Apparent Potency - Age - Absorption - Distribution - Elimination - DDI; Pharmacological Potency - Tissue sensitivity - Receptor # - Receptor Activity - Affinity - Efficacy',
  reading:[{src:'Katzung 16e, Ch. 1', sec:'Drug-Body Interactions; Confounding Factors in Clinical Trials', t:'Pharmacokinetic processes (the actions of the body on the drug) govern absorption, distribution and elimination, and age influences them. Absorption, elimination and age are therefore pharmacokinetic, while tissue sensitivity, receptor number and affinity concern the drug–receptor interaction.'}],
  cite:'Pharmacodynamics-Day-1-2026s.pdf slide ~27',
  note:'In the transcript he says pharmacological potency depends on absorption, metabolism and age; the slide places these under apparent potency. The slide grouping is keyed.'},
@@ -309,7 +307,7 @@ QUESTIONS.push(
   {t:'Both are selective for H1', correct:false, why:'Diphenhydramine binds H1, H2 and muscarinic receptors.'},
   {t:'Neither binds the H1 receptor', correct:false, why:'Both bind H1.'}],
  teach:'Drugs can be selective or non-selective. Loratadine is a selective H1 inverse agonist. Diphenhydramine binds H1, H2 and muscarinic receptors and is very non-selective; it is the ingredient in nighttime products and puts 9 of 10 people to sleep.',
- quote:'What is loratadine? It’s Claritin, which is a selective H1 inverse agonist... What about diphenhydramine?... Benadryl not only binds to the H1, it binds to the H2. It binds to muscarinic receptors. It’s very non-selective.',
+ quote:'Benadryl not only binds to the H1, it binds to the H2... It’s very non-selective.',
  reading:[{src:'Katzung 16e, Ch. 1', sec:'Drug Size', t:'To fit only one type of receptor, a drug molecule must be sufficiently unique in shape, charge and other properties to prevent its binding to other receptors. A drug whose structure fits several receptor types is by this definition non-selective.'}],
  cite:'Pharmacodynamics-Day-1-2026s.pdf slide ~29; transcript 9/22'},
 
@@ -360,7 +358,7 @@ QUESTIONS.push(
   {t:'Ion channels', correct:false, why:'This row lists L-type Ca++ channels and GABA.'},
   {t:'Intracellular receptors', correct:false, why:'This row lists steroid hormones.'}],
  teach:'Four receptor classes: ion channels (L-type Ca++ channels, GABA), 7-transmembrane G protein–coupled receptors (α and β adrenergic, 5HT, histamine), 1-transmembrane proteins (tyrosine kinases) and intracellular receptors / transcriptional regulators (steroid hormones).',
- quote:'Protein coupled receptors(GPCR) α & β adrenergic, 5HT, Histamine, etc…',
+ quote:'We also have what is called 7 transmembrane receptors. Those cross the membrane 7 times, and they are unique because they have this protein inside of the cell which is heterotrimeric.',
  reading:[{src:'Katzung 16e, Ch. 6', sec:'Table 6–2 Major autonomic receptor types; Presynaptic Regulation', t:'Adrenoceptors signal through G proteins: α1 receptors form IP3 and DAG, α2 receptors inhibit adenylyl cyclase, and β receptors stimulate adenylyl cyclase and raise cAMP. Nicotinic receptors are the contrast: pentameric proteins whose ligand binding directly opens sodium and potassium channels, the ion-channel class.'}],
  cite:'Pharmacodynamics-Day-1-2026s.pdf slide ~36'},
 
@@ -387,7 +385,6 @@ QUESTIONS.push(
   {t:'Voltage-gated channel', correct:false, why:'These open at certain membrane potentials, e.g., calcium channels.'},
   {t:'Pump', correct:false, why:'Pumps move ions against the concentration gradient.'}],
  teach:'Passive channels are always open (resting membrane potential). Voltage-gated channels are highly selective and open only at certain membrane potentials (calcium channels). Stretch channels are pressure sensitive. Ligand-gated channels are usually closed with the binding pocket in the channel (acetylcholine at nicotinic, GABA-A, 5HT3). Pumps move ions against the concentration gradient (Na+/K+ ATPase).',
- quote:'Ligand Gated: Usually Closed; The Binding Pocket Located in the Channel; Acetylcholine, GABAA, Serotonin (5HT3), etc…',
  reading:[{src:'Katzung 16e, Ch. 6', sec:'Table 6–2 Major autonomic receptor types; Table 6–5 Steps in autonomic transmission', t:'At nicotinic receptors, ligand binding opens the ion channel in the postsynaptic membrane (Na+ and K+ flow, depolarization); that is the ligand-gated pattern. Voltage-gated channels instead open when an action potential arrives.'}],
  cite:'Pharmacodynamics-Day-1-2026s.pdf slides ~40–~47'},
 
@@ -400,7 +397,6 @@ QUESTIONS.push(
   {t:'Nerve firing does not change', correct:false, why:'Stretch channels are pressure sensitive, so firing changes.'},
   {t:'The channel closes permanently', correct:false, why:'No such behavior is described.'}],
  teach:'Stretch channels are pressure sensitive and embedded in blood vessel walls (baroreceptors). The carotid sinus (glossopharyngeal nerve) monitors blood going to the brain and the aortic arch (vagus nerve) is close to the heart. Increased stretch increases nerve firing.',
- quote:'Increase Stretch = Increase Nerve Firing',
  reading:[{src:'Katzung 16e, Ch. 6', sec:'Integration of Cardiovascular Function', t:'When mean arterial pressure rises, the compensatory response is mediated by increased firing of the baroreceptor nerves of the carotid sinus and aortic arch. Higher pressure stretching the vessel wall means more baroreceptor firing.'}],
  cite:'Pharmacodynamics-Day-1-2026s.pdf slide ~43'},
 
@@ -413,7 +409,6 @@ QUESTIONS.push(
   {t:'Intracellular Ca++ falls', correct:false, why:'Intracellular Ca++ increases once voltage-sensitive Ca++ channels open.'},
   {t:'The membrane becomes more negative', correct:false, why:'Na+ influx makes the membrane less negative.'}],
  teach:'Sequence: (1) acetylcholine binds 2 α subunits; (2) the channel opens, increasing Na+ influx and K+ outflow; (3) the membrane depolarizes (less negative); (4) voltage-sensitive Ca++ channels open; (5) intracellular Ca++ rises, increasing contraction; (6) the Na+/K+ ATPase restores membrane potential.',
- quote:'3. Depolarization of membrane potential (less negative) 4. Open Voltage Sensitive Ca++ Channels',
  reading:[{src:'Katzung 16e, Ch. 6', sec:'Table 6–2; Postsynaptic Regulation (Figure 6–8)', t:'Ligand binding at nicotinic receptors opens Na+ and K+ channels and depolarizes the membrane; depolarization is the immediate consequence of the channel opening, before any calcium-dependent step.'}],
  cite:'Pharmacodynamics-Day-1-2026s.pdf slide ~48'},
 
@@ -438,7 +433,6 @@ QUESTIONS.push(
   {t:'Phosphodiesterase', correct:false, why:'Phosphodiesterase (PDE) breaks down cAMP; it ends the signal.'},
   {t:'The Na+/K+ ATPase', correct:false, why:'That pump restores membrane potential in the nicotinic sequence.'}],
  teach:'At β1 in the heart: norepinephrine binds, GDP is released, GTP binds, and αs activates adenylate cyclase (AC). AC converts ATP to cAMP (amplification), the second messenger, leading to the physiological response of increased heart rate.',
- quote:'NE β1 ... αs ATP AC ... ATP cAMP ... Physiological Response (Increase in Heart Rate)',
  reading:[{src:'Katzung 16e, Ch. 6', sec:'Table 6–2', t:'For β1 adrenoceptors, the result of ligand binding is stimulation of adenylyl cyclase and increased cAMP. Formation of IP3 belongs to α1 and M1/M3 receptors, and inhibition of adenylyl cyclase to α2 and M2.'}],
  cite:'Pharmacodynamics-Day-1-2026s.pdf slides ~51–~53'},
 
@@ -464,7 +458,6 @@ QUESTIONS.push(
   {t:'Na+ influx through the receptor channel', correct:false, why:'That is the nicotinic ligand-gated channel.'},
   {t:'Enzymatic activity of the receptor', correct:false, why:'That describes 1-transmembrane receptors.'}],
  teach:'At α1 receptors on smooth muscle, norepinephrine or epinephrine activates αq, which activates phospholipase C (PLC). PLC converts PIP2 to IP3, and IP3 releases stored Ca2+ from the endoplasmic reticulum (ER).',
- quote:'α1 ... αq PLC e.g., Smooth Muscle PIP2 ... IP3 ... Ca2+ ER ... NE, Epi',
  reading:[{src:'Katzung 16e, Ch. 6', sec:'Table 6–2', t:'For α1 adrenoceptors, located especially on smooth muscle, the result of ligand binding is formation of IP3 and DAG and increased intracellular calcium. β receptors act instead through adenylyl cyclase and cAMP.'}],
  cite:'Pharmacodynamics-Day-1-2026s.pdf slide ~55'}
 );

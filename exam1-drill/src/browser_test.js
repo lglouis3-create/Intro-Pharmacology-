@@ -55,6 +55,18 @@ const out = path.join(__dirname, '..', course.match(/output:\s*'([^']+)'/)[1]);
   await page.click('[data-mode="quiz"]'); await page.click('#tq');
   const topts = await page.$$('[data-o]'); if (!topts.length) fail('term quiz did not start'); await topts[0].click();
   if (!(await page.$$('[data-c]')).length) fail('term question did not grade');
+  // reopening a topic after a miss does not start on the same question
+  let rep = 0;
+  for (let i = 0; i < 8; i++) {
+    await page.click('nav button[data-v="topics"]'); await page.click('[data-topic="L02"]');
+    const first = await page.evaluate(() => Q.cur.id);
+    const wrong = await page.evaluate(() => Q.cur.options.findIndex(o => !o.correct));
+    await page.click(`[data-o="${wrong}"]`); const ck3 = await page.$('#check'); if (ck3) await ck3.click();
+    await (await page.$('[data-c]')).click();
+    await page.click('nav button[data-v="topics"]'); await page.click('[data-topic="L02"]');
+    if ((await page.evaluate(() => Q.cur.id)) === first) rep++;
+  }
+  if (rep) fail(`reopened topic repeated the last question ${rep} of 8 times`);
   // weak spots now populated
   await page.click('nav button[data-v="weak"]');
   if (!(await page.textContent('#view')).includes('By topic')) fail('weak spots did not populate');

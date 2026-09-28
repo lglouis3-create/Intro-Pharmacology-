@@ -218,6 +218,7 @@ sata('beta-drugs', 'adr', 'Which drugs on the Exam 1 list act at β2 receptors?'
 for q in qs:
     if q.get('reading') is None:
         q.pop('reading', None)
+    q.pop('quote', None)   # the Table 1 row is already the correct option
 
 out = ["TOPICS.push({id:'DL1', name:'Exam 1 drug list', prof:'Gottlieb', lecture:'DL1',",
        "  cite:'Exam_1_Drug_List_2026.pdf, Table 1 (15 drugs)',",
