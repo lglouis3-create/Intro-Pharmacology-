@@ -77,7 +77,7 @@ def reading_for(cls, recs):
     return out[:2] if cls else out[:2]
 
 NOTE = {
- 'moa-diazepam': 'Two labels for the same drug. The drug list says: allosteric agonist. The textbook says: positive allosteric modulator, because diazepam does not open the channel by itself; it makes GABA better at opening it. Use the drug list label on the exam.',
+ 'moa-diazepam': 'Two names for one mechanism. The Exam 1 drug list calls diazepam a GABA receptor allosteric agonist. Katzung Ch. 2 calls it a positive allosteric modulator: it binds a second site on the receptor, does little by itself, and makes the receptor respond more strongly to GABA. On the exam, use the drug list’s name.',
 }
 
 def lc(m):
@@ -94,7 +94,7 @@ TEACH = {
  'Phenylephrine': 'Phenylephrine binds α1 and activates it; it does not act at α2 or β receptors. Prazosin binds the same receptor and blocks it.',
  'Phenoxybenzamine': 'Phenoxybenzamine binds α1 and α2 irreversibly, so the block cannot be overcome by more agonist. It is the only irreversible drug on the list; every other drug is reversible and competitive.',
  'Metoprolol': 'Metoprolol binds β1 without activating it and blocks agonists there reversibly. Pindolol acts at β1 too, but as a partial agonist and at β2 as well.',
- 'Diazepam': 'Diazepam binds the GABA receptor at an allosteric site, not the site GABA binds, and increases the receptor’s response to GABA.',
+ 'Diazepam': 'Diazepam does not bind where GABA binds. It binds a second site on the same GABA receptor, and while it sits there the receptor responds more strongly to GABA. Alone it does little; with GABA present it makes GABA work better.',
  'Albuterol': 'Albuterol activates β2 but reaches a lower maximal response than a full agonist would. It does not act at β1; pindolol is the partial agonist that does.',
  'Varenicline': 'Varenicline activates the neuronal nicotinic receptor Nn, but only to a submaximal response. Acetylcholine is the full agonist at Nn and at the other cholinergic receptors.',
  'Histamine': 'Histamine activates both H1 and H2. Loratadine and diphenhydramine oppose it: loratadine as an H1 inverse agonist, diphenhydramine as a non-selective antagonist.',
