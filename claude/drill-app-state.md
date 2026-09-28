@@ -19,7 +19,7 @@ Updated 2026-09-28.
 - Terms: `glossary.js` (50 terms, sourced; disagreements in notes/GLOSSARY.md) → `gen_terms.py` → `q_TERMS.js` (98 questions, skill `term`). Exam draw caps term items at 15%.
 - Figures: `diagrams.js` FIG(key) inline SVG; keys drc-basic, potency, efficacy, partial, inverse, competitive, irreversible, binding-kd, spare, sites, two-state, gpcr. Attached via `fg` on 33 questions and on glossary terms.
 - Readings trimmed to ≤2 sentences / ≤45 words (TRIM_BRIEF.md); style check rejects "the chapter/textbook" phrasing and source references in definitions.
-- Bank: 230 questions (L01 35 + L02 35 + L03 35 + DL1 27 + TERMS 98).
+- Bank: 285 questions (L01 35 + L02 35 + L03 35 + L04 35 + DL1 27 + TERMS 118).
 
 ## 2026-09-28 (night) update
 - Figure `classes` (diagrams.js): four receptors side by side, agonist / reversible antagonist / irreversible antagonist / allosteric modulator, each answering where it binds, whether it activates, whether it lets go. On DL1 diazepam (009, 020), phenoxybenzamine (moa + irreversible-drug), prazosin, phenylephrine; glossary allosteric-agonist and allosteric-antagonist.
@@ -36,8 +36,10 @@ Updated 2026-09-28.
 - No slide images in this build, so curve questions describe the curve in words.
 - Exam 1 question count and select-all count are not announced. The simulator asks for a length and uses the 120 minutes the syllabus allots.
 
+## Ingested 2026-09-29: L04 Day 4 (9/28)
+- Deck Pharmacodynamics-Day_4_-_5_2026s_pptx.pdf (Part 1 = pages 1–56 covered 9/28); transcript 09.28. 35 questions, notes/L04.md. Lecture stopped at slide ~56 (spare receptors, indirect antagonists, regulation, quantal, TI not yet taught).
+
 ## Next to ingest (Exam 1 = Sept 22 – Sept 30)
-- 9/28 Drug–receptor interactions I (agonist, inverse agonist, partial agonist)
 - 9/29 Drug–receptor interactions II (competitive and irreversible antagonists, allosteric)
 - 9/30 Receptor regulation, quantal responses, therapeutic index
 - Carried over from 9/24: two-state model and full + partial agonist combinations (L03-031–035 are slide-only for now)

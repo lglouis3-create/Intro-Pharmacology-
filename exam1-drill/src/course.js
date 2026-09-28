@@ -14,6 +14,7 @@ const COURSE = {
     {id:'L01', deck:'Pharmacodynamics-Day-1-2026s.pdf', label:'Day 1 (9/22): Course intro, drugs & receptors', prof:'Gottlieb', exam:1, module:1},
     {id:'L02', deck:'Pharmacodynamics-Day_2_2026s copy.pdf', label:'Day 2 (9/23): Drug–receptor interaction principles', prof:'Gottlieb', exam:1, module:1},
     {id:'L03', deck:'Pharmacodynamics-Day_3_2026s.pdf', label:'Day 3 (9/24): Dose–response curves', prof:'Gottlieb', exam:1, module:1},
+    {id:'L04', deck:'Pharmacodynamics-Day_4_-_5_2026s_pptx.pdf', label:'Day 4 (9/28): Drug–receptor interactions I', prof:'Gottlieb', exam:1, module:1},
     {id:'DL1', deck:'Exam_1_Drug_List_2026.pdf', label:'Exam 1 drug list', prof:'Gottlieb', exam:1, module:1}
   ],
   exams: [

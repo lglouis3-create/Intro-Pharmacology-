@@ -139,4 +139,43 @@ const REFERENCE_HTML = `
 </table>
 <p class="sub">Pharmacodynamics-Day_3_2026s.pdf: Pharmacodynamics-Day_3_2026s.pdf slide ~49 (not lectured on 9/24).</p>
 
+<h3>Day 4 (9/28) &mdash; Pharmacodynamics-Day_4_-_5_2026s_pptx.pdf</h3>
+<table class="reftab">
+<tr><th>Second drug added to a full agonist</th><th>Shift</th><th>Baseline</th><th>Emax</th><th>Shifts</th><th>Why</th></tr>
+<tr><td>Full agonist</td><td>Left</td><td>Up (until 100%)</td><td>No change</td><td>—</td><td>Equal efficacy, both help; mutual exclusion</td></tr>
+<tr><td>Partial agonist</td><td>—</td><td>Ends at the partial agonist's own efficacy (up from a low baseline, down from a high one)</td><td>Reached only by the full agonist alone</td><td>—</td><td>Competition by mass action; dual nature</td></tr>
+<tr><td>Inverse agonist</td><td>Right</td><td>Down to 0%, then no further change</td><td>No change</td><td>Continue toward infinity</td><td>Reversible; negative efficacy; competition</td></tr>
+<tr><td>Allosteric agonist</td><td>Left (affinity) and/or up (efficacy)</td><td>—</td><td>Up only if the agonist was partial</td><td>Asymmetrical, saturable</td><td>Two drugs bound at once; non-competitive</td></tr>
+<tr><td>Allosteric antagonist</td><td>Right (affinity) and/or down (efficacy)</td><td>—</td><td>Down if efficacy affected; cannot reach 0</td><td>Asymmetrical, saturable</td><td>Binds elsewhere; non-competitive; reversible</td></tr>
+<tr><td>Competitive antagonist</td><td>Right (↑ED50, appears less potent)</td><td>No change (neutral, no efficacy)</td><td>No change (reversible, outcompeted)</td><td>Symmetrical, toward infinity</td><td>Same pocket; law of mass action; 10× antagonist = 10× agonist</td></tr>
+<tr><td>Irreversible antagonist</td><td>Right (↑ED50)</td><td>No change (neutral)</td><td>Down, all the way to 0 (can abolish the DRC)</td><td>Symmetrical</td><td>Covalent; greatest affinity; lowers the receptor pool; spare receptors delay the Emax drop</td></tr>
+</table>
+<p class="sub">Pharmacodynamics-Day_4_-_5_2026s_pptx.pdf: Pharmacodynamics-Day_4_-_5_2026s_pptx.pdf slides ~21–~22, ~30–~34, ~38–~41, ~50, ~53–~54; Pharmacodynamics-Day_3_2026s.pdf slides ~49, ~63; transcript 9/28.</p>
+<table class="reftab">
+<tr><th>Class</th><th>Two-state affinity</th><th>Efficacy</th><th>Alone at baseline 0% / 50% / 100%</th></tr>
+<tr><td>Full agonist</td><td>Highest for active (R*)</td><td>Positive, 100%</td><td>→ 100 / → 100 / flat at 100</td></tr>
+<tr><td>Partial agonist</td><td>Highest for active (R*)</td><td>Positive, 1–99%</td><td>→ its Emax / → its Emax / down to its Emax</td></tr>
+<tr><td>Inverse agonist</td><td>Highest for inactive (R)</td><td>Negative</td><td>flat at 0 / → 0 / → 0</td></tr>
+<tr><td>Competitive antagonist</td><td>Equal for R and R* ("neutral")</td><td>None (affinity but no PCOL efficacy)</td><td>flat at 0 / flat at 50 / flat at 100</td></tr>
+<tr><td>Irreversible antagonist</td><td>Greatest affinity (covalent), neutral</td><td>None</td><td>flat (lowers the receptor pool)</td></tr>
+</table>
+<p class="sub">Pharmacodynamics-Day_4_-_5_2026s_pptx.pdf: Pharmacodynamics-Day_4_-_5_2026s_pptx.pdf slides ~4–~12, ~43–~44, ~51; Day 3 deck slides ~37–~41, ~59–~63; transcript 9/28.</p>
+<table class="reftab">
+<tr><th>Four characteristics (FA + multiple doses of allosteric agonist)</th><th>Yes / No</th></tr>
+<tr><td>Affinity affected</td><td>Yes (shift left)</td></tr>
+<tr><td>Efficacy affected</td><td>No (a full agonist is already at 100%; only visible with a partial agonist)</td></tr>
+<tr><td>Symmetrical shifts</td><td>No (asymmetrical; allosteric binding does not depend on the agonist)</td></tr>
+<tr><td>Saturability</td><td>Yes (once all allosteric sites are occupied the shifts stop)</td></tr>
+</table>
+<p class="sub">Pharmacodynamics-Day_4_-_5_2026s_pptx.pdf: Pharmacodynamics-Day_4_-_5_2026s_pptx.pdf slides ~30–~34; transcript 9/28.</p>
+<table class="reftab">
+<tr><th>Kinds of antagonism</th><th>Definition</th><th>Example</th></tr>
+<tr><td>Chemical</td><td>Direct chemical interaction between the agonist and antagonist</td><td>Chelating agents, dimercaprol (Au, Hg, As poisoning)</td></tr>
+<tr><td>Physiological</td><td>Two agonists acting independent of each other producing opposing effects</td><td>ACh and Epi in the heart</td></tr>
+<tr><td>Pharmacological: competitive (orthosteric)</td><td>Surmountable or reversible; agonist and antagonist compete for the same receptor site; most common in clinical practice</td><td>Metoprolol (poll)</td></tr>
+<tr><td>Pharmacological: nonequilibrium-competitive (orthosteric)</td><td>Binds irreversibly; insurmountable or irreversible; cannot be overcome by increasing the agonist</td><td>Phenoxybenzamine (poll)</td></tr>
+<tr><td>Pharmacological: allosteric (allotropic)</td><td>Non-competitive; decreases the agonist's affinity and/or efficacy from another site (NAM)</td><td>—</td></tr>
+<tr><td>Allosteric agonist</td><td>Positive allosteric modulator (PAM); increases affinity and/or efficacy</td><td>Diazepam (poll)</td></tr>
+</table>
+<p class="sub">Pharmacodynamics-Day_4_-_5_2026s_pptx.pdf: Pharmacodynamics-Day_4_-_5_2026s_pptx.pdf slides ~35–~37, ~55; transcript 9/28.</p>
 `;
