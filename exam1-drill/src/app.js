@@ -13,6 +13,10 @@ const LECT = {}; COURSE.lectures.forEach(l => { LECT[l.id] = l; });
 const SKILL = {}; COURSE.skills.forEach(s => { SKILL[s.id] = s; });
 const TOPIC = {}; TOPICS.forEach(t => { TOPIC[t.id] = t; });
 const lectureOf = q => LECT[q.lecture] || {};
+/* Options that name curves (A, B, C, D, None of the above) or True/False keep
+   their written order; shuffling them would put "C" under the letter B. */
+const fixedOrder = q => !q.multi && (q.options || []).every(o => /^((Drug|Curve|DRC) )?[A-E]$|^None of the above$|^All of the above$|^True$|^False$/i.test(o.t.trim()));
+const optOrder = q => fixedOrder(q) ? q.options.map((o, i) => i) : shuffle(q.options.map((o, i) => i));
 /* Slide ranges are stored as "~7–~12" (every number marked approximate);
    print the mark once per range. */
 const fmtCite = s => String(s == null ? '' : s).replace(/–~/g, '–');
@@ -188,7 +192,7 @@ function nextQ() {
   let q;
   if (Q.mode === 'pass') { if (Q.i >= Q.list.length) return quizDone(); q = Q.list[Q.i++]; }
   else q = pickSR();
-  Q.cur = q; Q.order = q.type === 'match' ? null : shuffle(q.options.map((o, i) => i));
+  Q.cur = q; Q.order = q.type === 'match' ? null : optOrder(q);
   Q.picked = q.multi ? new Set() : null; Q.answered = false; Q.t0 = Date.now();
   if (q.type === 'match') Q.rightOrder = shuffle(q.right.slice());
   renderQ();
@@ -384,7 +388,7 @@ function vExam() {
     const paper = drawExam(n);
     const full = ex.questions || max;
     const mins = $('#scale').checked ? Math.max(5, Math.round(ex.minutes * paper.length / full)) : ex.minutes;
-    EX = {qs: paper.map(q => q.id), i: 0, ans: {}, flag: {}, orders: paper.map(q => shuffle(q.options.map((o, k) => k))), ends: Date.now() + mins * MIN, done: false};
+    EX = {qs: paper.map(q => q.id), i: 0, ans: {}, flag: {}, orders: paper.map(q => optOrder(q)), ends: Date.now() + mins * MIN, done: false};
     renderExam();
   };
 }

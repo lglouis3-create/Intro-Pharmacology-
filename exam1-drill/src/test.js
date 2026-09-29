@@ -30,7 +30,7 @@ for (const q of QUESTIONS) {
     if (right.length !== 1) bad(q.id, right.length + ' correct options');
     else {
       const L2 = Math.max(...texts.map(t => t.length));
-      if (right[0].t.length === L2 && texts.filter(t => t.length === L2).length === 1) bad(q.id, 'correct option is the longest');
+      if (!isTF && right[0].t.length === L2 && texts.filter(t => t.length === L2).length === 1) bad(q.id, 'correct option is the longest');
     }
     if (/Select all/i.test(q.stem)) bad(q.id, 'single-answer stem says select all');
   }
