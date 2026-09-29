@@ -150,5 +150,31 @@ const FIG = (() => {
     return wrap(out, 'Drug classes at one receptor. Circle = drug in the agonist pocket; square = drug blocking the pocket; small circle at the side = a drug at a second (allosteric) site. The bar is the response; the dashed line is the receptor’s basal activity with nothing bound.', 240);
   };
 
-  return key => (F[key] ? F[key]() : '');
+
+  /* A question's own graph: dose–response curves labelled by letter, drawn
+     from a spec so the stem can show the figure the way a poll slide does.
+     spec = {curves:[{label:'A', ec:-1, emax:100, base:0, dashed:true, cls:'a'}],
+             base:0, x:'log dose', y:'% response', marks:[{x:-1,label:'EC50'}], caption:''}
+     ec is log10 of the EC50 on a −3…3 axis; emax and base are percent. */
+  const GRAPH = spec => {
+    if (!spec || !spec.curves) return '';
+    const cls = ['a', 'b', 'c', 'd', 'e'];
+    let inner = axes(spec.x || 'log dose', spec.y || '% of maximal response');
+    const b = spec.base || 0;
+    if (b) inner += dash(-3, b, 3, b) + ytick(b, 'basal');
+    (spec.marks || []).forEach(m => { inner += dash(m.x, 0, m.x, m.y == null ? 50 : m.y) + tick(m.x, m.label); });
+    spec.curves.forEach((c, i) => {
+      const pts = sig(c.ec, c.emax, c.n || 1, c.base == null ? b : c.base);
+      const k = c.cls || cls[i % cls.length];
+      inner += `<polyline class="cv ${k}${c.dashed ? ' dashed' : ''}" points="${pts}"/>`;
+      // label at the curve's own midpoint, on the left of it, where curves separate
+      const cb = c.base == null ? b : c.base, mid = cb + (c.emax - cb) / 2;
+      inner += `<text class="cl ${k}" x="${px(c.ec) - 6}" y="${py(mid) + 4}" text-anchor="end">${c.label}</text>`;
+    });
+    return wrap(inner, spec.caption || '');
+  };
+
+  const api = key => (F[key] ? F[key]() : '');
+  api.graph = GRAPH;
+  return api;
 })();

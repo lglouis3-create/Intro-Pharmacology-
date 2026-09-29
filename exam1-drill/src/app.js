@@ -219,7 +219,7 @@ function renderQ() {
   const q = Q.cur, st = S.q[q.id];
   let h = `<div class="row" style="justify-content:space-between"><span class="meta">${esc(Q.label || '')} · ${Q.done} answered${Q.done ? ' · ' + Q.right + ' right' : ''}</span>
     <span class="meta">${st && st.n ? 'seen ' + st.n + '×' : 'new'}</span></div>
-    <div class="card"><div class="meta">${metaLine(q)}</div><div class="stem">${esc(q.stem)}</div>`;
+    <div class="card"><div class="meta">${metaLine(q)}</div><div class="stem">${esc(q.stem)}</div>${q.graph ? `<div class="stemfig">${FIG.graph(q.graph)}</div>` : ''}`;
   if (q.type === 'match') {
     h += q.left.map((l, i) => `<div class="row" style="margin-bottom:8px"><span style="flex:1 1 200px">${esc(l)}</span>
       <select data-l="${i}" ${Q.answered ? 'disabled' : ''}><option value="">—</option>${Q.rightOrder.map(r => `<option ${Q.mpick && Q.mpick[i] === r ? 'selected' : ''}>${esc(r)}</option>`).join('')}</select>
@@ -395,7 +395,7 @@ function renderExam() {
   const q = byId[EX.qs[EX.i]], ord = EX.orders[EX.i], a = EX.ans[q.id];
   let h = `<div class="row" style="justify-content:space-between"><b>Question ${EX.i + 1} of ${EX.qs.length}</b><span class="timer" id="clock"></span></div>
     <div class="grid">${EX.qs.map((id, k) => `<button data-j="${k}" class="${EX.ans[id] != null && !(Array.isArray(EX.ans[id]) && !EX.ans[id].length) ? 'ans' : ''} ${k === EX.i ? 'cur' : ''} ${EX.flag[id] ? 'flag' : ''}">${k + 1}</button>`).join('')}</div>
-    <div class="card"><div class="stem">${esc(q.stem)}</div>`;
+    <div class="card"><div class="stem">${esc(q.stem)}</div>${q.graph ? `<div class="stemfig">${FIG.graph(q.graph)}</div>` : ''}`;
   ord.forEach((oi, n) => {
     const sel = q.multi ? (a || []).includes(oi) : a === oi;
     h += `<button class="opt ${sel ? 'sel' : ''}" data-o="${oi}"><span class="k">${q.multi ? (sel ? '☑' : '☐') : LETTERS[n]}</span><span>${esc(q.options[oi].t)}</span></button>`;
@@ -452,7 +452,7 @@ function examResult() {
     <h3>Review</h3>`;
   qsx.forEach((q, k) => {
     const a = EX.ans[q.id], ok = exRight(q, a), pickedSet = new Set([].concat(a == null ? [] : a));
-    h += `<div class="card"><div class="meta">${k + 1}. ${metaLine(q)}</div><div class="stem">${esc(q.stem)}</div>
+    h += `<div class="card"><div class="meta">${k + 1}. ${metaLine(q)}</div><div class="stem">${esc(q.stem)}</div>${q.graph ? `<div class="stemfig">${FIG.graph(q.graph)}</div>` : ''}
       <div class="verdict ${ok ? 'ok' : 'bad'}">${ok ? '✓ Correct' : a == null ? '✗ Not answered' : '✗ Not correct'}</div>`;
     if (!ok) {
       q.options.forEach((o, oi) => { if (o.correct || pickedSet.has(oi)) h += `<div class="opt ${o.correct ? 'right' : 'wrong'}" style="cursor:default"><span>${esc(o.t)}</span></div><div class="why">${esc(o.why || '')}</div>`; });

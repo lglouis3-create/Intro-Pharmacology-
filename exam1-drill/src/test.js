@@ -35,6 +35,11 @@ for (const q of QUESTIONS) {
   }
   q.options.forEach((o, i) => { if (!o.why) bad(q.id, 'option ' + i + ' has no why'); });
   if (!q.teach) w(q.id, 'no teach');
+  if (q.graph) {
+    if (!Array.isArray(q.graph.curves) || !q.graph.curves.length) bad(q.id, 'graph without curves');
+    else q.graph.curves.forEach((c, i) => { if (!c.label || typeof c.ec !== 'number' || typeof c.emax !== 'number') bad(q.id, 'graph curve ' + i + ' needs label, ec, emax'); });
+    if (!q.fg && !q.skill.match(/figure|apply|tell|drug/)) w(q.id, 'graph on a ' + q.skill + ' question');
+  }
   if (q.reading != null) {
     const rs = Array.isArray(q.reading) ? q.reading : [q.reading];
     if (!rs.length) bad(q.id, 'empty reading');
