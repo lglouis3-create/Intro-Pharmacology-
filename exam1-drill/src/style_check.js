@@ -13,7 +13,7 @@ for (const q of QUESTIONS) {
   const rtxt = q.reading ? (Array.isArray(q.reading) ? q.reading : [q.reading]).map(r => r.t || '').join(' ') : '';
   [/\bthe slide\b/i, /\bin class\b/i, /\bthe lecture\b/i, /\bthis drill\b/i, /\bthe professor\b/i, /\bthe chapter\b/i, /\bthe textbook\b/i].forEach(r => { if (r.test(rtxt)) bad(q.id, 'reading refers to the lecture or drill: ' + r); });
   (q.options || []).forEach(o => {
-    if (q.skill !== 'term' && /\b(because|since)\b/i.test(o.t)) bad(q.id, 'reasoning inside option text: ' + o.t);
+    if (q.skill !== 'term' && !((q.tags || []).includes('pollev') && q.sub === 'verbatim') && /\b(because|since)\b/i.test(o.t)) bad(q.id, 'reasoning inside option text: ' + o.t);
     if (/^(all|none) of the above$/i.test(o.t.trim()) && !/poll/i.test(q.cite + (q.tags || []).join(' ')) && !/^Which statement is (CORRECT|INCORRECT)/.test(q.stem)) bad(q.id, 'all/none of the above outside a professor poll format');
   });
   if (/\?\s*\S/.test(q.stem.replace(/\?\s*Select all that apply\.$/, '?'))) {/* multi-sentence stems allowed */}
