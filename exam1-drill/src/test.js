@@ -1,5 +1,7 @@
 // Bank integrity: schema, keys, option rules, topics, cites, blueprint pools.
 const {COURSE, TOPICS, QUESTIONS, TELL_HTML} = require('./load')();
+const fs0 = require('fs');
+const IMAGES_KEYS = new Set(fs0.existsSync(__dirname + '/images.json') ? Object.keys(JSON.parse(fs0.readFileSync(__dirname + '/images.json', 'utf8'))) : []);
 let fail = 0, warn = 0;
 const bad = (id, m) => { fail++; console.log('FAIL', id, m); };
 const w = (id, m) => { warn++; console.log('warn', id, m); };
@@ -36,6 +38,7 @@ for (const q of QUESTIONS) {
   }
   q.options.forEach((o, i) => { if (!o.why) bad(q.id, 'option ' + i + ' has no why'); });
   if (!q.teach) w(q.id, 'no teach');
+  if (q.img && !(IMAGES_KEYS.has(q.img))) bad(q.id, 'img key not in images.json: ' + q.img);
   if (q.graph) {
     if (!Array.isArray(q.graph.curves) || !q.graph.curves.length) bad(q.id, 'graph without curves');
     else q.graph.curves.forEach((c, i) => { if (!c.label || typeof c.ec !== 'number' || typeof c.emax !== 'number') bad(q.id, 'graph curve ' + i + ' needs label, ec, emax'); });
