@@ -2,6 +2,10 @@
 
 Newest first. The build embeds this file, and the Progress page shows it.
 
+## 2026-09-29 (PollEV bank)
+- His 27 PollEV questions word for word, with the answer he keyed, each with his own figure embedded (answer marks cropped off), plus 31 variants that ask a different question of the same figure. Topic "PollEV questions".
+- The Drug A / Drug B Kd table and the G-protein "which is CORRECT" poll now use the PollEV's own values and wording.
+
 ## 2026-09-29 (poll formats)
 - Questions reframed the way Dr. Gottlieb frames his PollEV questions: labelled dose–response curves A–E drawn in the question, "which drug is most likely drug E?" with drug-list names, "if DRC B is norepinephrine at β1 alone, which curve best represents it in the presence of …", the dotted-line "drug X is most likely" format, "Which statement is CORRECT / INCORRECT?" with all of the above, plain True/False, and select-all. 58 questions now carry a plot; 92 are in one of his poll formats; 58 poll-style questions added across the four lectures.
 

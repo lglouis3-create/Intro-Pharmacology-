@@ -1,5 +1,7 @@
 // Bank integrity: schema, keys, option rules, topics, cites, blueprint pools.
 const {COURSE, TOPICS, QUESTIONS, TELL_HTML} = require('./load')();
+const fs0 = require('fs');
+const IMAGES_KEYS = new Set(fs0.existsSync(__dirname + '/images.json') ? Object.keys(JSON.parse(fs0.readFileSync(__dirname + '/images.json', 'utf8'))) : []);
 let fail = 0, warn = 0;
 const bad = (id, m) => { fail++; console.log('FAIL', id, m); };
 const w = (id, m) => { warn++; console.log('warn', id, m); };
@@ -17,8 +19,9 @@ for (const q of QUESTIONS) {
   if (q.source && !['slide', 'transcript', 'both'].includes(q.source)) bad(q.id, 'bad source');
   if ((q.source === 'transcript' || q.source === 'both') && !/transcript/i.test(q.cite)) w(q.id, 'transcript-sourced but cite does not name the transcript');
   if (q.type === 'match') { if (!q.pairs || !q.left || !q.right) bad(q.id, 'match fields'); continue; }
+  const verbatim = (q.tags || []).includes('pollev') && q.sub === 'verbatim';   // his poll, word for word
   const isTF = Array.isArray(q.options) && q.options.length === 2 && q.options.every(o => /^(True|False)$/.test(o.t.trim()));
-  if (!Array.isArray(q.options) || (q.options.length < 3 && !isTF)) { bad(q.id, 'fewer than 3 options (a plain True/False pair is allowed)'); continue; }
+  if (!Array.isArray(q.options) || (q.options.length < 2) || (q.options.length < 3 && !isTF && !verbatim)) { bad(q.id, 'fewer than 3 options (a plain True/False pair or a verbatim poll is allowed)'); continue; }
   const texts = q.options.map(o => o.t);
   if (new Set(texts).size !== texts.length) bad(q.id, 'duplicate option text');
   const right = q.options.filter(o => o.correct);
@@ -30,12 +33,13 @@ for (const q of QUESTIONS) {
     if (right.length !== 1) bad(q.id, right.length + ' correct options');
     else {
       const L2 = Math.max(...texts.map(t => t.length));
-      if (!isTF && right[0].t.length === L2 && texts.filter(t => t.length === L2).length === 1) bad(q.id, 'correct option is the longest');
+      if (!isTF && !verbatim && right[0].t.length === L2 && texts.filter(t => t.length === L2).length === 1) bad(q.id, 'correct option is the longest');
     }
     if (/Select all/i.test(q.stem)) bad(q.id, 'single-answer stem says select all');
   }
   q.options.forEach((o, i) => { if (!o.why) bad(q.id, 'option ' + i + ' has no why'); });
   if (!q.teach) w(q.id, 'no teach');
+  if (q.img && !(IMAGES_KEYS.has(q.img))) bad(q.id, 'img key not in images.json: ' + q.img);
   if (q.graph) {
     if (!Array.isArray(q.graph.curves) || !q.graph.curves.length) bad(q.id, 'graph without curves');
     else q.graph.curves.forEach((c, i) => { if (!c.label || typeof c.ec !== 'number' || typeof c.emax !== 'number') bad(q.id, 'graph curve ' + i + ' needs label, ec, emax'); });

@@ -19,12 +19,16 @@ Updated 2026-09-28.
 - Terms: `glossary.js` (50 terms, sourced; disagreements in notes/GLOSSARY.md) → `gen_terms.py` → `q_TERMS.js` (98 questions, skill `term`). Exam draw caps term items at 15%.
 - Figures: `diagrams.js` FIG(key) inline SVG; keys drc-basic, potency, efficacy, partial, inverse, competitive, irreversible, binding-kd, spare, sites, two-state, gpcr. Attached via `fg` on 33 questions and on glossary terms.
 - Readings trimmed to ≤2 sentences / ≤45 words (TRIM_BRIEF.md); style check rejects "the chapter/textbook" phrasing and source references in definitions.
-- Bank: 343 questions (L01 50 + L02 50 + L03 48 + L04 50 + DL1 27 + TERMS 118). 58 carry a `graph` (curves drawn in the stem via FIG.graph); 92 tagged `poll` (his formats: graph poll, CORRECT/INCORRECT + all of the above, True/False pair, which-drug-is-a, scenario/predict, select-all). notes/POLL_BRIEF.md holds the formats. Curve-letter and T/F options are never shuffled.
+- Bank: 401 questions (PE 58 added) (L01 50 + L02 50 + L03 48 + L04 50 + DL1 27 + TERMS 118). 58 carry a `graph` (curves drawn in the stem via FIG.graph); 92 tagged `poll` (his formats: graph poll, CORRECT/INCORRECT + all of the above, True/False pair, which-drug-is-a, scenario/predict, select-all). notes/POLL_BRIEF.md holds the formats. Curve-letter and T/F options are never shuffled.
 
 ## 2026-09-28 (night) update
 - Figure `classes` (diagrams.js): four receptors side by side, agonist / reversible antagonist / irreversible antagonist / allosteric modulator, each answering where it binds, whether it activates, whether it lets go. On DL1 diazepam (009, 020), phenoxybenzamine (moa + irreversible-drug), prazosin, phenylephrine; glossary allosteric-agonist and allosteric-antagonist.
 - Diazepam note and teach rewritten in plain words (gen_druglist.py NOTE / TEACH); key unchanged. Tell-apart row on the three questions a class name answers.
 - Checks: build.py, test.js, style_check.js, browser_test.js passing.
+
+## PollEV PDF (2026-09-29)
+- PollEV_s.pdf (user upload, 3 pages): his polls with keyed answers. Figures cropped to images.json (keys pollev-*; raw screenshots in src/polls/, git-ignored). q_POLLS.js = 27 verbatim (sub 'verbatim', tags pollev, dupOf the lecture item) + 31 variants. Verbatim polls are exempt from the ≥3-option, longest-option and reasoning-word rules.
+- PDF keys that corrected the bank: Kd table values (L02-032), potency poll wording "# of receptors" (L02-033), "Which is more important?" = Safety (PE-003, note).
 
 ## Sources (Google Drive: GoodNotes/FSOP/P2 Year/Fall 2026/Intro Pharmacology)
 - Syllabus: SyllabusF26_PHAR_4344_PT_II_Intro_to_Pharmacology_Final.pdf

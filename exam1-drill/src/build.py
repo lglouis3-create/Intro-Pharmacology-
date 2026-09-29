@@ -8,7 +8,7 @@ import os, re, subprocess, sys, tempfile, json
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 os.chdir(HERE)
-DATA_FILES = ['q_L01.js', 'q_L02.js', 'q_L03.js', 'q_L04.js', 'q_DL1.js', 'q_TERMS.js']
+DATA_FILES = ['q_L01.js', 'q_L02.js', 'q_L03.js', 'q_L04.js', 'q_POLLS.js', 'q_DL1.js', 'q_TERMS.js']
 PAGES = ['diagrams.js', 'glossary.js', 'reference.js', 'tell.js', 'guide.js']
 # generated banks: regenerate from their sources before checking
 for gen in ['gen_druglist.py', 'gen_terms.py']:
@@ -51,7 +51,8 @@ if os.path.exists(cl_path):
         changelog.append({'date': lines[0].strip(), 'items': [l[2:].strip() for l in lines[1:] if l.startswith('- ')]})
 build_info = {'built': now.isoformat(timespec='minutes'), 'commit': _git('rev-parse', '--short', 'HEAD'),
               'changelog': changelog}
-parts = ['const BUILD_INFO = ' + json.dumps(build_info, ensure_ascii=False) + ';', course, 'const TOPICS = [];\nconst QUESTIONS = [];\n']
+images = json.load(open('images.json', encoding='utf-8')) if os.path.exists('images.json') else {}
+parts = ['const BUILD_INFO = ' + json.dumps(build_info, ensure_ascii=False) + ';', 'const IMAGES = ' + json.dumps(images) + ';', course, 'const TOPICS = [];\nconst QUESTIONS = [];\n']
 for f in DATA_FILES + PAGES:
     parts.append(open(f, encoding='utf-8').read())
 parts.append(open('app.js', encoding='utf-8').read())
