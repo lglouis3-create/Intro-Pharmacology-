@@ -251,7 +251,7 @@ QUESTIONS.push(
   {t:'C', correct:false, why:'C is to the right with a lower maximum; the agonist was made less potent and less effective, which a helper never does.'},
   {t:'D', correct:false, why:'D is to the right of B, so the agonist appears less potent; a second agonist helps, it does not compete it down.'},
   {t:'None of the above', correct:false, why:'Curve A does show the left shift that a second agonist of similar efficacy produces.'}],
- teach:'First decide whether the second drug helps or makes life harder for the agonist. A second agonist with similar efficacy helps, so only curves to the left are possible; C, D and E all make the agonist less potent and are eliminated at once. B is a full agonist (100%), and the helped curve is A.',
+ teach:'First decide whether the second drug adds to the agonist’s effect or opposes it. A second agonist with similar efficacy helps, so only curves to the left are possible; C, D and E all make the agonist less potent and are eliminated at once. B is a full agonist (100%), and the helped curve is A.',
  quote:'The majority says A, the best answer is A, right? So just by knowing that both drugs are going to work together and help each other, you already can eliminate C, D, and E because those drugs are making my agonist less potent.',
  cite:'PollEV_s.pdf page 2; transcript 9/28'},
 
@@ -429,7 +429,7 @@ QUESTIONS.push(
  img:'pollev-abcde-similar', imgAlt:'Five concentration-response curves A to E, response as percent of control against agonist concentration from 10^-9 to 10^-3 M', imgCap:'Response (% of control) vs [Agonist, M]',
  stem:'If DRC B is the DRC of a full agonist alone, which DRC best represents that agonist in the presence of a competitive antagonist?',
  options:[
-  {t:'A', correct:false, why:'A moved left: the agonist was helped. A competitive antagonist makes its life harder.'},
+  {t:'A', correct:false, why:'A moved left: the agonist was helped. A competitive antagonist opposes it, so the curve moves right.'},
   {t:'B', correct:false, why:'B is the point of reference; a drug competing for the same receptor changes the curve.'},
   {t:'C', correct:false, why:'C lost its maximum. A competitive antagonist is reversible, so enough agonist outcompetes it and the Emax is unchanged.'},
   {t:'D', correct:true, why:'Shift to the right with the same baseline and the same 100% maximum: the agonist appears less potent but still reaches its Emax.'},
@@ -627,7 +627,7 @@ QUESTIONS.push(
  stem:'The dotted line represents the DRC of norepinephrine alone and the solid lines represent the DRC of norepinephrine in the presence of increasing doses of drug "X." If drug X were phenoxybenzamine instead, which statement is CORRECT?',
  options:[
   {t:'The Emax would fall with each dose of X', correct:true, why:'Phenoxybenzamine forms covalent bonds and removes receptors from the pool, so with enough of it norepinephrine can no longer reach its maximal response.'},
-  {t:'The solid lines would shift to the left instead', correct:false, why:'A left shift is help; phenoxybenzamine is an antagonist and makes norepinephrine’s life harder.'},
+  {t:'The solid lines would shift to the left instead', correct:false, why:'A left shift means the agonist’s effect was added to; phenoxybenzamine is an antagonist and makes norepinephrine’s life harder.'},
   {t:'The baseline would rise', correct:false, why:'Phenoxybenzamine has no efficacy of its own; the baseline does not move.'},
   {t:'The figure would not change', correct:false, why:'Metoprolol (reversible) and phenoxybenzamine (irreversible) differ exactly in what happens to the Emax.'}],
  teach:'Phenoxybenzamine is the only irreversible antagonist on the drug list. Its covalent bonds cannot be reversed under normal metabolic function, so each dose removes receptors permanently: the curve still shifts right, the baseline stays, but the Emax falls and can be abolished. A reversible antagonist such as metoprolol never lowers the Emax.',
