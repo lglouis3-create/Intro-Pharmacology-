@@ -654,8 +654,7 @@ QUESTIONS.push(
  stem:'Potency of a drug is determined only by its affinity and its efficacy. True or false?',
  options:[
   {t:'True', correct:false, why:'Affinity and efficacy are two of the three factors; the tissue is the third.'},
-  {t:'False', correct:true, why:'Potency is defined by the triad of affinity, efficacy and the tissue (for example, the number of receptors); two hearts with different receptor numbers give norepinephrine different potencies.'},
-  {t:'True for EC50 but not for ED50', correct:false, why:'EC50 and ED50 are philosophically the same measure of potency; both depend on the tissue as well.'}],
+  {t:'False', correct:true, why:'Potency is defined by the triad of affinity, efficacy and the tissue (for example, the number of receptors); two hearts with different receptor numbers give norepinephrine different potencies.'}],
  teach:'Potency is a combination of affinity, efficacy and the cell, tissue, organ or organism the drug acts on, such as its number of receptors. The same drug, with the same Kd and efficacy, is more potent in a tissue with more receptors.',
  quote:'Potency is going to be defined by the triad over here, affinity, efficacy, and in the tissue, right? The combination of the three is going to make a drug more or less potent.',
  cite:'Pharmacodynamics-Day_3_2026s.pdf slide ~7; transcript 9/24',

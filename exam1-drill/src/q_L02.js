@@ -143,8 +143,7 @@ QUESTIONS.push(
  stem:"Affinity of a drug for the receptor is dependent on the type of chemical bonds it makes with that receptor. True or false?",
  options:[
   {t:"True", correct:true, why:"Covalent, ionic, hydrogen and van der Waals bonds dictate how likely a drug is to bind and stay bound; the class answer was true."},
-  {t:"False", correct:false, why:"Affinity is how likely a drug is to bind and stay bound, and that depends on the bonds it forms."},
-  {t:"True only if the bonds are covalent", correct:false, why:"Every bond type counts (covalent strong, van der Waals weak). Having to add an 'if' to make an answer right is his sign that the answer is wrong."}],
+  {t:"False", correct:false, why:"Affinity is how likely a drug is to bind and stay bound, and that depends on the bonds it forms."}],
  teach:"Affinity is how likely a drug is to bind and stay bound to a receptor. It depends on the molecular forces (bonds) between drug and receptor: covalent bonds are very strong, while van der Waals bonds are weak.",
  quote:"Remember, affinity is how likely a drug is to bind and stay bound to a receptor, and the binding of a drug to the receptor is going to be depending on what type of bonds they form covalent bonds, hydrogen bonds, ion bonds.",
  cite:"Pharmacodynamics-Day_2_2026s copy.pdf slides ~15, ~31; transcript 9/23"},
@@ -656,8 +655,7 @@ QUESTIONS.push(
  stem:"Efficacy is the ability of a drug to bind and stay bound to a receptor. True or false?",
  options:[
   {t:"True", correct:false, why:"The ability to bind and stay bound is affinity, the poll distractor he warned about."},
-  {t:"False", correct:true, why:"Efficacy is the ability of a drug to change the receptor behavior, its state from inactive to active or active to inactive; binding and staying bound is affinity."},
-  {t:"True only for full agonists", correct:false, why:"The definition does not change by drug class. Needing to add an 'if' or a condition to make an answer right is his sign that it is wrong."}],
+  {t:"False", correct:true, why:"Efficacy is the ability of a drug to change the receptor behavior, its state from inactive to active or active to inactive; binding and staying bound is affinity."}],
  teach:"Two basic concepts: affinity describes the association of the drug with the receptor (how likely it is to bind and stay bound, set by the bonds it forms); efficacy describes the mechanism by which the drug changes the receptor, its state from active to inactive or inactive to active.",
  quote:"The ability to bind and stay bound, that's affinity. Efficacy is the ability of that drug to change the receptor behavior.",
  reading:[{src:'Katzung 16e, Ch. 2', sec:'Introduction; Receptor-Effector Coupling & Spare Receptors (p. 4–5 of 18)', t:'Agonists activate the receptor by binding it, whereas antagonists bind but do not activate. Affinity is a separate property that determines the concentration required to form drug–receptor complexes.'}],
@@ -668,8 +666,7 @@ QUESTIONS.push(
  stem:"In orthosteric interactions, two drugs can be bound to the same receptor pocket at the same time. True or false?",
  options:[
   {t:"True", correct:false, why:"Orthosteric drugs compete for the same pocket; only one body can occupy the same space at the same time."},
-  {t:"False", correct:true, why:"Orthosteric binding is one or the other, never both, like the single seat in a Formula One car; binding both at once is the allosteric case."},
-  {t:"True only if both drugs are reversible", correct:false, why:"Reversibility changes how long a drug stays, not how many fit the pocket. Having to add an 'if' to an answer is his sign that it is wrong."}],
+  {t:"False", correct:true, why:"Orthosteric binding is one or the other, never both, like the single seat in a Formula One car; binding both at once is the allosteric case."}],
  teach:"Orthosteric drugs (norepinephrine, prazosin, phenoxybenzamine at α1) all use the same binding pocket, so it is one or the other and never both. Allosteric drugs bind someplace else, so an allosteric and an orthosteric drug can be bound at the same time, one helping or hindering the other.",
  quote:"According to the laws of physics, only one body can occupy the same space and time, right? ... So for orthostatic, it can either be one or the other, it can't be both.",
  reading:[{src:'Katzung 16e, Ch. 2', sec:'Competitive & Irreversible Antagonists (p. 5–6 of 18)', t:'A competitive antagonist and the agonist compete for binding to the receptors. Allosteric modulators instead bind a site separate from the orthosteric site.'}],

@@ -17,7 +17,8 @@ for (const q of QUESTIONS) {
   if (q.source && !['slide', 'transcript', 'both'].includes(q.source)) bad(q.id, 'bad source');
   if ((q.source === 'transcript' || q.source === 'both') && !/transcript/i.test(q.cite)) w(q.id, 'transcript-sourced but cite does not name the transcript');
   if (q.type === 'match') { if (!q.pairs || !q.left || !q.right) bad(q.id, 'match fields'); continue; }
-  if (!Array.isArray(q.options) || q.options.length < 3) { bad(q.id, 'fewer than 3 options'); continue; }
+  const isTF = Array.isArray(q.options) && q.options.length === 2 && q.options.every(o => /^(True|False)$/.test(o.t.trim()));
+  if (!Array.isArray(q.options) || (q.options.length < 3 && !isTF)) { bad(q.id, 'fewer than 3 options (a plain True/False pair is allowed)'); continue; }
   const texts = q.options.map(o => o.t);
   if (new Set(texts).size !== texts.length) bad(q.id, 'duplicate option text');
   const right = q.options.filter(o => o.correct);

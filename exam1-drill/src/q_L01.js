@@ -173,8 +173,7 @@ QUESTIONS.push(
  stem:'Affinity of a drug for the receptor is dependent on the type of chemical bonds it makes.',
  options:[
   {t:'True', correct:true, why:'Covalent, hydrogen, ionic and van der Waals bonds give stronger or weaker binding, and that sets how well the drug attaches and stays bound: affinity.'},
-  {t:'False', correct:false, why:'The bonds a drug forms are exactly what determine how strongly it binds; affinity is not set by route, first-pass metabolism or receptor activation.'},
-  {t:'True only for drugs that form covalent bonds', correct:false, why:'Every bond type counts: hydrogen, ionic and van der Waals bonds also make binding stronger or weaker, not only covalent bonds.'}],
+  {t:'False', correct:false, why:'The bonds a drug forms are exactly what determine how strongly it binds; affinity is not set by route, first-pass metabolism or receptor activation.'}],
  teach:'Affinity is how well a drug attaches to the receptor and stays bound. The kind of bonds formed (covalent, hydrogen, ionic, van der Waals) makes binding stronger or weaker.',
  quote:'depending on what kind of bonds they form, covalent bonds, hydrogen bonds, ion bonds, van der Waal bonds, they may have stronger or weaker binding',
  reading:[{src:'Katzung 16e, Ch. 1', sec:'Drug Reactivity & Drug-Receptor Bonds', t:'Drugs interact with receptors through covalent, electrostatic and hydrophobic bonds. Covalent bonds are very strong and often irreversible, electrostatic bonds range from relatively strong ionic linkages to weaker hydrogen bonds and very weak van der Waals forces, and hydrophobic bonds are usually weak.'}],
@@ -511,8 +510,7 @@ QUESTIONS.push(
  stem:'Efficacy is the ability of a drug to bind and stay bound to a receptor.',
  options:[
   {t:'True', correct:false, why:'Binding and staying bound is affinity; efficacy is what the bound drug does to the receptor.'},
-  {t:'False', correct:true, why:'Efficacy is the ability of a drug to change receptor activity or state, positive (activating) or negative (shutting down); binding and staying bound is affinity.'},
-  {t:'True only for antagonists', correct:false, why:'An antagonist binds and stays bound with zero intrinsic activity, which shows that binding is affinity and is separate from efficacy.'}],
+  {t:'False', correct:true, why:'Efficacy is the ability of a drug to change receptor activity or state, positive (activating) or negative (shutting down); binding and staying bound is affinity.'}],
  teach:'Affinity is how well a drug attaches to the receptor and stays bound, set by the bonds it forms. Efficacy is the effect the bound drug produces on the receptor: activating it (positive efficacy) or shutting it down (negative efficacy). An antagonist has affinity with zero intrinsic activity, so the two properties are separate.',
  quote:'What about efficacy? ... it’s going to be the effect that a drug is going to produce. Some drugs are going to be activating receptors so they have positive efficacy. Others are going to be shutting down the receptors so they have negative efficacy.',
  cite:'Pharmacodynamics-Day-1-2026s.pdf slides ~21, ~38; transcript 9/22'},
@@ -522,8 +520,7 @@ QUESTIONS.push(
  stem:'The larger the dose of a drug, the less selective the drug becomes.',
  options:[
   {t:'True', correct:true, why:'One of his rules: as the dose rises the drug starts to interact with other receptors; metoprolol is β1-selective up to about 200 mg and affects β2 above that.'},
-  {t:'False', correct:false, why:'Selectivity falls as dose rises; that is why he starts with the smallest dose that gives the desired effect.'},
-  {t:'True only for drugs that are already non-selective', correct:false, why:'The rule applies to selective drugs too: metoprolol is β1-selective at low doses and loses that selectivity above about 200 mg.'}],
+  {t:'False', correct:false, why:'Selectivity falls as dose rises; that is why he starts with the smallest dose that gives the desired effect.'}],
  teach:'Everything is dose dependent. As the dose rises, a drug starts to go around and interact with other receptors, so the larger the dose, the less selective the drug and the more side effects. Starting with the smallest dose that produces the desired effect keeps the drug at one receptor.',
  quote:'the larger the dose gets, the less selective a drug becomes. You start to go around and interact with other things.',
  cite:'Pharmacodynamics-Day-1-2026s.pdf slides ~21, ~29; transcript 9/22'},
@@ -635,8 +632,7 @@ QUESTIONS.push(
  stem:'Loratadine is a non-selective antihistamine that binds H1, H2 and muscarinic receptors.',
  options:[
   {t:'True', correct:false, why:'That description is diphenhydramine, which binds H1, H2 and muscarinic receptors and is very non-selective.'},
-  {t:'False', correct:true, why:'Loratadine is a selective H1 inverse agonist; diphenhydramine is the non-selective one that binds H1, H2 and muscarinic receptors.'},
-  {t:'True only at doses above the usual dose', correct:false, why:'The statement swaps the two drugs; loratadine is the selective antihistamine at its usual dose, and the non-selective profile described belongs to diphenhydramine.'}],
+  {t:'False', correct:true, why:'Loratadine is a selective H1 inverse agonist; diphenhydramine is the non-selective one that binds H1, H2 and muscarinic receptors.'}],
  teach:'Two antihistamines at the same H1 receptor: loratadine is a selective H1 inverse agonist; diphenhydramine binds H1, H2 and muscarinic receptors, is very non-selective, and is the ingredient in nighttime products that puts most people to sleep.',
  quote:'What about diphenhydramine? That’s Benadryl. Benadryl not only binds to the H1, it binds to the H2. It binds to muscarinic receptors. It’s very non-selective.',
  cite:'Pharmacodynamics-Day-1-2026s.pdf slide ~29; transcript 9/22'},
