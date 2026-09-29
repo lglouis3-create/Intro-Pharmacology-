@@ -627,7 +627,7 @@ QUESTIONS.push(
  stem:'The dotted line represents the DRC of norepinephrine alone and the solid lines represent the DRC of norepinephrine in the presence of increasing doses of drug "X." If drug X were phenoxybenzamine instead, which statement is CORRECT?',
  options:[
   {t:'The Emax would fall with each dose of X', correct:true, why:'Phenoxybenzamine forms covalent bonds and removes receptors from the pool, so with enough of it norepinephrine can no longer reach its maximal response.'},
-  {t:'The solid lines would shift to the left instead', correct:false, why:'A left shift means the agonist’s effect was added to; phenoxybenzamine is an antagonist and makes norepinephrine’s life harder.'},
+  {t:'The solid lines would shift to the left instead', correct:false, why:'A left shift means the agonist’s effect was added to; phenoxybenzamine is an antagonist, so the curve moves right, not left.'},
   {t:'The baseline would rise', correct:false, why:'Phenoxybenzamine has no efficacy of its own; the baseline does not move.'},
   {t:'The figure would not change', correct:false, why:'Metoprolol (reversible) and phenoxybenzamine (irreversible) differ exactly in what happens to the Emax.'}],
  teach:'Phenoxybenzamine is the only irreversible antagonist on the drug list. Its covalent bonds cannot be reversed under normal metabolic function, so each dose removes receptors permanently: the curve still shifts right, the baseline stays, but the Emax falls and can be abolished. A reversible antagonist such as metoprolol never lowers the Emax.',
