@@ -17,7 +17,8 @@ for (const q of QUESTIONS) {
   if (q.source && !['slide', 'transcript', 'both'].includes(q.source)) bad(q.id, 'bad source');
   if ((q.source === 'transcript' || q.source === 'both') && !/transcript/i.test(q.cite)) w(q.id, 'transcript-sourced but cite does not name the transcript');
   if (q.type === 'match') { if (!q.pairs || !q.left || !q.right) bad(q.id, 'match fields'); continue; }
-  if (!Array.isArray(q.options) || q.options.length < 3) { bad(q.id, 'fewer than 3 options'); continue; }
+  const isTF = Array.isArray(q.options) && q.options.length === 2 && q.options.every(o => /^(True|False)$/.test(o.t.trim()));
+  if (!Array.isArray(q.options) || (q.options.length < 3 && !isTF)) { bad(q.id, 'fewer than 3 options (a plain True/False pair is allowed)'); continue; }
   const texts = q.options.map(o => o.t);
   if (new Set(texts).size !== texts.length) bad(q.id, 'duplicate option text');
   const right = q.options.filter(o => o.correct);
@@ -29,12 +30,17 @@ for (const q of QUESTIONS) {
     if (right.length !== 1) bad(q.id, right.length + ' correct options');
     else {
       const L2 = Math.max(...texts.map(t => t.length));
-      if (right[0].t.length === L2 && texts.filter(t => t.length === L2).length === 1) bad(q.id, 'correct option is the longest');
+      if (!isTF && right[0].t.length === L2 && texts.filter(t => t.length === L2).length === 1) bad(q.id, 'correct option is the longest');
     }
     if (/Select all/i.test(q.stem)) bad(q.id, 'single-answer stem says select all');
   }
   q.options.forEach((o, i) => { if (!o.why) bad(q.id, 'option ' + i + ' has no why'); });
   if (!q.teach) w(q.id, 'no teach');
+  if (q.graph) {
+    if (!Array.isArray(q.graph.curves) || !q.graph.curves.length) bad(q.id, 'graph without curves');
+    else q.graph.curves.forEach((c, i) => { if (!c.label || typeof c.ec !== 'number' || typeof c.emax !== 'number') bad(q.id, 'graph curve ' + i + ' needs label, ec, emax'); });
+    if (!q.fg && !q.skill.match(/figure|apply|tell|drug/)) w(q.id, 'graph on a ' + q.skill + ' question');
+  }
   if (q.reading != null) {
     const rs = Array.isArray(q.reading) ? q.reading : [q.reading];
     if (!rs.length) bad(q.id, 'empty reading');

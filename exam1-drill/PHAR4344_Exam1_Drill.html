@@ -88,7 +88,9 @@ select,input[type=text],input[type=number]{font-size:15px;padding:6px 8px;border
 .fig .ax{stroke:var(--ink);stroke-width:1.2;fill:none}
 .fig .dash{stroke:var(--muted);stroke-width:1;stroke-dasharray:4 3;fill:none}
 .fig .cv{fill:none;stroke-width:2.4;stroke-linejoin:round}
-.fig .cv.a{stroke:var(--accent)} .fig .cv.b{stroke:var(--bad)} .fig .cv.c{stroke:var(--ok)}
+.fig .cv.a{stroke:var(--accent)} .fig .cv.b{stroke:var(--bad)} .fig .cv.c{stroke:var(--ok)} .fig .cv.d{stroke:var(--warn)} .fig .cv.e{stroke:var(--muted)} .fig .cv.dashed{stroke-dasharray:6 4}
+.fig .cl.d{fill:var(--warn)} .fig .cl.e{fill:var(--muted)}
+.stemfig{margin:0 0 12px}
 .fig .cl{font-size:11px;font-weight:600} .fig .cl.a{fill:var(--accent)} .fig .cl.b{fill:var(--bad)} .fig .cl.c{fill:var(--ok)}
 .fig .lbl{fill:var(--ink);font-size:11px} .fig .lbl.big{font-size:20px;font-weight:700} .fig .lbl.sm{font-size:10px;font-weight:600} .fig .lbl.xs{font-size:8.5px;fill:var(--muted)} .fig .lbl.sm2{font-size:10px}
 .fig .shape{fill:var(--chip);stroke:var(--line);stroke-width:1.5}
@@ -116,7 +118,7 @@ select,input[type=text],input[type=number]{font-size:15px;padding:6px 8px;border
 <header><div class="bar"><h1 id="apptitle"></h1><nav id="nav"></nav></div></header>
 <main id="view"></main>
 <script>
-const BUILD_INFO = {"built": "2026-09-28T20:39+00:00", "commit": "0f78129", "changelog": [{"date": "2026-09-29 (Day 4 added)", "items": ["Day 4 (9/28) lecture ingested: 35 questions on the two-state model, full and partial agonists in combination, inverse agonists and constitutive activity, allosteric agonists and antagonists, chemical and physiological antagonism, competitive and irreversible antagonists; 13 tell-apart rows, 4 reference tables, 10 new glossary terms (20 definition questions).", "Day 3 questions written from slides deferred to today now share a concept with the Day 4 questions that cover what was said in class."]}, {"date": "2026-09-29", "items": ["Drug-class figure: six panels (full agonist, partial agonist, reversible antagonist, irreversible antagonist, inverse agonist, allosteric modulator) showing what sits in the pocket and what the response does. Shown on every drug-list question, on the drug-class terms, and on the Reference page with a comparison table.", "A tell-apart row on the three questions a drug-class name answers at once: where it binds, whether it activates, whether it lets go.", "Every \"sources disagree\" note rewritten in plain sentences: what the slide says, what was said in class or in the textbook, and which one to use on the exam."]}, {"date": "2026-09-28 (late)", "items": ["Every lecture quote judged for insight: quotes that only read out the answer, tally a poll or restate an option are gone (20 deleted); 41 replaced with the professor's own explanation of the point; drug-list quotes dropped since the table row is the answer.", "Reopening a topic never starts on the question just answered; due questions are shuffled."]}, {"date": "2026-09-28 (evening)", "items": ["Terms section: a 50-term glossary from the Day 1–3 lectures with drawn figures, a flashcard drill, and 98 generated definition questions (skill \"Terms\"; at most 15% of an exam paper).", "Twelve drawn figures (dose–response curves for potency, efficacy, partial and inverse agonists, competitive and irreversible antagonists; binding curve with Kd; spare receptors; orthosteric vs allosteric sites; two-state model; GPCR chain) shown with the explanation on 33 lecture questions.", "Every textbook note cut to at most two sentences on what the tested concept means; examples, history and figure numbers removed.", "Drug-list explanations rewritten: one sentence on what the drug class means and one on what the receptor does."]}, {"date": "2026-09-28", "items": ["Textbook notes added to questions the assigned readings cover (Katzung 16e, Ch. 1, 2 and 6), shown after each answer as \"From the textbook\".", "Last-updated stamp, days-to-exam counter and this change log on the page.", "Slide ranges print as \"~7–12\" instead of \"~7–~12\".", "Reference and tell-apart tables stack into cards on a phone instead of scrolling sideways.", "Keyboard shortcuts in the quiz and exam: A–E or 1–5 pick an option, Enter checks or continues, arrow keys move between exam questions.", "Seen-so-far bar on every topic and subtopic."]}, {"date": "2026-09-26", "items": ["First build: Day 1–3 pharmacodynamics lectures (35 questions each) and the Exam 1 drug list (27), 132 in all; spaced-repetition quiz, weak spots, exam simulator, reference and tell-apart pages."]}]};
+const BUILD_INFO = {"built": "2026-09-29T01:33+00:00", "commit": "8117df7", "changelog": [{"date": "2026-09-29 (poll formats)", "items": ["Questions reframed the way Dr. Gottlieb frames his PollEV questions: labelled dose–response curves A–E drawn in the question, \"which drug is most likely drug E?\" with drug-list names, \"if DRC B is norepinephrine at β1 alone, which curve best represents it in the presence of …\", the dotted-line \"drug X is most likely\" format, \"Which statement is CORRECT / INCORRECT?\" with all of the above, plain True/False, and select-all. 58 questions now carry a plot; 92 are in one of his poll formats; 58 poll-style questions added across the four lectures."]}, {"date": "2026-09-29 (Day 4 added)", "items": ["Day 4 (9/28) lecture ingested: 35 questions on the two-state model, full and partial agonists in combination, inverse agonists and constitutive activity, allosteric agonists and antagonists, chemical and physiological antagonism, competitive and irreversible antagonists; 13 tell-apart rows, 4 reference tables, 10 new glossary terms (20 definition questions).", "Day 3 questions written from slides deferred to today now share a concept with the Day 4 questions that cover what was said in class."]}, {"date": "2026-09-29", "items": ["Drug-class figure: six panels (full agonist, partial agonist, reversible antagonist, irreversible antagonist, inverse agonist, allosteric modulator) showing what sits in the pocket and what the response does. Shown on every drug-list question, on the drug-class terms, and on the Reference page with a comparison table.", "A tell-apart row on the three questions a drug-class name answers at once: where it binds, whether it activates, whether it lets go.", "Every \"sources disagree\" note rewritten in plain sentences: what the slide says, what was said in class or in the textbook, and which one to use on the exam."]}, {"date": "2026-09-28 (late)", "items": ["Every lecture quote judged for insight: quotes that only read out the answer, tally a poll or restate an option are gone (20 deleted); 41 replaced with the professor's own explanation of the point; drug-list quotes dropped since the table row is the answer.", "Reopening a topic never starts on the question just answered; due questions are shuffled."]}, {"date": "2026-09-28 (evening)", "items": ["Terms section: a 50-term glossary from the Day 1–3 lectures with drawn figures, a flashcard drill, and 98 generated definition questions (skill \"Terms\"; at most 15% of an exam paper).", "Twelve drawn figures (dose–response curves for potency, efficacy, partial and inverse agonists, competitive and irreversible antagonists; binding curve with Kd; spare receptors; orthosteric vs allosteric sites; two-state model; GPCR chain) shown with the explanation on 33 lecture questions.", "Every textbook note cut to at most two sentences on what the tested concept means; examples, history and figure numbers removed.", "Drug-list explanations rewritten: one sentence on what the drug class means and one on what the receptor does."]}, {"date": "2026-09-28", "items": ["Textbook notes added to questions the assigned readings cover (Katzung 16e, Ch. 1, 2 and 6), shown after each answer as \"From the textbook\".", "Last-updated stamp, days-to-exam counter and this change log on the page.", "Slide ranges print as \"~7–12\" instead of \"~7–~12\".", "Reference and tell-apart tables stack into cards on a phone instead of scrolling sideways.", "Keyboard shortcuts in the quiz and exam: A–E or 1–5 pick an option, Enter checks or continues, arrow keys move between exam questions.", "Seen-so-far bar on every topic and subtopic."]}, {"date": "2026-09-26", "items": ["First build: Day 1–3 pharmacodynamics lectures (35 questions each) and the Exam 1 drug list (27), 132 in all; spaced-repetition quiz, weak spots, exam simulator, reference and tell-apart pages."]}]};
 /* Course manifest. Everything specific to PHAR 4344 lives here; the engine and
    every check read it. Exam facts come from
    SyllabusF26_PHAR_4344_PT_II_Intro_to_Pharmacology_Final.pdf (course outline
@@ -212,13 +214,14 @@ QUESTIONS.push(
  cite:'Pharmacodynamics-Day-1-2026s.pdf slide ~9; transcript 9/22'},
 
 {id:'L01-004', lecture:'L01', prof:'Gottlieb', tier:'new', topic:'L01', sub:'intro', skill:'recall',
- concept:'drugs-alter-ongoing-system', tags:['definition'], source:'both',
- stem:'Which statement describes what drugs do to a biological system?',
+ concept:'drugs-alter-ongoing-system', tags:['definition','poll'], source:'both',
+ stem:'Which statement is CORRECT about what drugs do to a biological system?',
  options:[
-  {t:'They alter an ongoing function', correct:true, why:'Drugs change an ongoing physiological or pathological function; they initiate, inhibit or modulate.'},
-  {t:'They create a new physiological pathway', correct:false, why:'He states drugs do not create anything new.'},
-  {t:'They only block receptors', correct:false, why:'Drugs can also initiate or modulate a signal.'},
-  {t:'They only mimic hormones', correct:false, why:'Some drugs mimic body products; others are unique. Either way they alter an existing system.'}],
+  {t:'Drugs alter an ongoing physiological or pathological function', correct:true, why:'Drugs change an ongoing physiological or pathological function; they initiate, inhibit or modulate.'},
+  {t:'Drugs create a new physiological pathway in the body', correct:false, why:'He states drugs do not create anything new.'},
+  {t:'Drugs can only block receptors', correct:false, why:'Drugs can also initiate or modulate a signal.'},
+  {t:'Drugs can only mimic hormones and neurotransmitters the body already makes', correct:false, why:'Some drugs mimic body products; others are unique. Either way they alter an existing system.'},
+  {t:'All of the above', correct:false, why:'Only the first statement is correct; drugs do not create new pathways, and they can initiate or modulate as well as block.'}],
  teach:'Drugs are chemical substances that alter an ongoing physiological or pathological function by interacting with components of the biological system. They can initiate, inhibit or modulate a signal, but they do not create a new pathway.',
  quote:'drugs don’t create anything new, they just change whatever is happening in the body.',
  reading:[{src:'Katzung 16e, Ch. 1', sec:'The Nature of Drugs; Pharmacology (opening definition)', t:'A drug is any substance that brings about a change in biologic function through its chemical actions. In most cases the drug molecule acts as an agonist or antagonist on a target molecule that already plays a regulatory role in the biologic system.'}],
@@ -279,13 +282,14 @@ QUESTIONS.push(
  cite:'Pharmacodynamics-Day-1-2026s.pdf slide ~18; transcript 9/22'},
 
 {id:'L01-009', lecture:'L01', prof:'Gottlieb', tier:'new', topic:'L01', sub:'nds', skill:'recall',
- concept:'fish-oil-evidence', tags:['nds','fish-oil'], source:'both',
- stem:'Which statement about omega-3 fish oil is correct?',
+ concept:'fish-oil-evidence', tags:['nds','fish-oil','poll'], source:'both',
+ stem:'Which statement is CORRECT about omega-3 fish oil?',
  options:[
-  {t:'Lowers triglycerides; reduces cardiac death', correct:true, why:'Omega-3s lower triglycerides and reduce the risk of cardiac death, though not the risk of a cardiovascular event.'},
-  {t:'Reduces the risk of having a cardiovascular event', correct:false, why:'The slide states omega-3s do not reduce the risk of a cardiovascular event.'},
-  {t:'Has no role in fetal development', correct:false, why:'Omega-3s are important for fetal development.'},
-  {t:'Has no effect on triglycerides', correct:false, why:'Omega-3s can lower triglycerides.'}],
+  {t:'Omega-3s lower triglycerides and reduce the risk of cardiac death', correct:true, why:'Omega-3s lower triglycerides and reduce the risk of cardiac death, though not the risk of a cardiovascular event.'},
+  {t:'Omega-3s reduce the risk of having a cardiovascular event', correct:false, why:'The slide states omega-3s do not reduce the risk of a cardiovascular event.'},
+  {t:'Omega-3s have no role in fetal development', correct:false, why:'Omega-3s are important for fetal development.'},
+  {t:'Omega-3s have no effect on triglycerides and act only on blood pressure', correct:false, why:'Omega-3s can lower triglycerides; blood pressure is not part of the fish-oil evidence he listed.'},
+  {t:'All of the above', correct:false, why:'Only one statement is correct; the others reverse what the NIH evidence says.'}],
  teach:'Omega-3s are important for fetal development and can lower triglycerides. They do not reduce the risk of a cardiovascular event, but appear to reduce the risk of cardiac death if an event occurs.',
  quote:'Although omega-3s can lower triglycerides, they don’t reduce the risk of cardiovascular event but reduce the risk of Cardiac death.',
  cite:'Pharmacodynamics-Day-1-2026s.pdf slide ~19; transcript 9/22'},
@@ -330,12 +334,10 @@ QUESTIONS.push(
 
 {id:'L01-013', lecture:'L01', prof:'Gottlieb', tier:'new', topic:'L01', sub:'potency', skill:'recall',
  concept:'affinity-chemical-bonds', tags:['affinity','poll'], source:'both',
- stem:'Affinity of a drug for the receptor is dependent on:',
+ stem:'Affinity of a drug for the receptor is dependent on the type of chemical bonds it makes.',
  options:[
-  {t:'The type of chemical bonds it makes', correct:true, why:'Covalent, hydrogen, ionic and van der Waals bonds give stronger or weaker binding, which sets affinity.'},
-  {t:'The route of administration of the drug', correct:false, why:'Route changes how much drug reaches the site (apparent potency), not how well it binds.'},
-  {t:'The first-pass effect in the liver', correct:false, why:'First-pass metabolism lowers bioavailability; it is pharmacokinetics, not binding.'},
-  {t:'Whether it activates the receptor', correct:false, why:'Changing receptor activity is efficacy; a drug can have affinity with no activity.'}],
+  {t:'True', correct:true, why:'Covalent, hydrogen, ionic and van der Waals bonds give stronger or weaker binding, and that sets how well the drug attaches and stays bound: affinity.'},
+  {t:'False', correct:false, why:'The bonds a drug forms are exactly what determine how strongly it binds; affinity is not set by route, first-pass metabolism or receptor activation.'}],
  teach:'Affinity is how well a drug attaches to the receptor and stays bound. The kind of bonds formed (covalent, hydrogen, ionic, van der Waals) makes binding stronger or weaker.',
  quote:'depending on what kind of bonds they form, covalent bonds, hydrogen bonds, ion bonds, van der Waal bonds, they may have stronger or weaker binding',
  reading:[{src:'Katzung 16e, Ch. 1', sec:'Drug Reactivity & Drug-Receptor Bonds', t:'Drugs interact with receptors through covalent, electrostatic and hydrophobic bonds. Covalent bonds are very strong and often irreversible, electrostatic bonds range from relatively strong ionic linkages to weaker hydrogen bonds and very weak van der Waals forces, and hydrophobic bonds are usually weak.'}],
@@ -408,9 +410,10 @@ QUESTIONS.push(
  cite:'Pharmacodynamics-Day-1-2026s.pdf slide ~27',
  note:'Slide and transcript disagree. In class he said absorption, metabolism and age affect pharmacological potency; the slide puts them under apparent potency. Use the slide grouping on the exam.'},
 
-{id:'L01-019', lecture:'L01', prof:'Gottlieb', tier:'new', topic:'L01', sub:'theory', skill:'recall',
+{id:'L01-019', fg:'partial', lecture:'L01', prof:'Gottlieb', tier:'new', topic:'L01', sub:'theory', skill:'figure',
  concept:'clark-occupancy', tags:['theory','affinity'], source:'both',
- stem:'Under the occupancy theory, why does a partial agonist give only part of the maximal response?',
+ stem:'Curve A is a full agonist and curve B is a partial agonist at the same receptor. Under the occupancy theory, why does curve B stop at 70% of the maximal response?',
+ graph:{curves:[{label:'A', ec:0, emax:100}, {label:'B', ec:0, emax:70}], x:'log dose', y:'% of maximal response', caption:'Full agonist (A) and partial agonist (B) at the same receptor'},
  options:[
   {t:'It occupies only part of the receptors', correct:true, why:'In the occupancy theory response depends on how many receptors are occupied; a partial agonist occupies a percentage.'},
   {t:'It shifts receptors to inactive', correct:false, why:'Shifting to the inactive state is negative efficacy from the later two-state model.'},
@@ -575,13 +578,14 @@ QUESTIONS.push(
  cite:'Pharmacodynamics-Day-1-2026s.pdf slide ~48'},
 
 {id:'L01-032', lecture:'L01', prof:'Gottlieb', tier:'new', topic:'L01', sub:'gpcr', skill:'recall',
- concept:'gpcr-largest-class', tags:['gpcr'], source:'both',
- stem:'Which statement about G protein–coupled receptors (GPCRs) is correct?',
+ concept:'gpcr-largest-class', tags:['gpcr','poll'], source:'both',
+ stem:'Which statement is CORRECT about G protein–coupled receptors (GPCRs)?',
  options:[
-  {t:'They interact with 60% plus of drugs', correct:true, why:'The slide states GPCRs interact with 60% plus of active therapeutic drugs.'},
-  {t:'They cross the membrane once', correct:false, why:'GPCRs are 7-transmembrane proteins.'},
-  {t:'Their G protein has one subunit', correct:false, why:'The G protein is heterotrimeric: α, β and γ.'},
-  {t:'They are the smallest receptor class', correct:false, why:'They are the largest single class of pharmacological receptors.'}],
+  {t:'GPCRs interact with 60% plus of active therapeutic drugs', correct:true, why:'The slide states GPCRs interact with 60% plus of active therapeutic drugs.'},
+  {t:'GPCRs cross the cell membrane a single time', correct:false, why:'GPCRs are 7-transmembrane proteins.'},
+  {t:'The G protein coupled to a GPCR has a single subunit', correct:false, why:'The G protein is heterotrimeric: α, β and γ.'},
+  {t:'GPCRs are the smallest class of pharmacological receptors', correct:false, why:'They are the largest single class of pharmacological receptors.'},
+  {t:'All of the above', correct:false, why:'Only the 60% statement is correct; GPCRs cross the membrane seven times, use a three-subunit G protein and are the largest receptor class.'}],
  teach:'GPCRs are 7-transmembrane proteins coupled to a heterotrimeric guanine nucleotide binding protein (α, β, γ). They are the largest single class of pharmacological receptors and interact with 60% plus of active therapeutic drugs. The G protein acts as the translator that dictates the signal.',
  quote:'about 60 or more% of all drugs in the market target one of kind of these receptors. So if you know how they work, you’ve got 60% of the drugs in your pocket.',
  cite:'Pharmacodynamics-Day-1-2026s.pdf slide ~49; transcript 9/22'},
@@ -621,7 +625,194 @@ QUESTIONS.push(
   {t:'Enzymatic activity of the receptor', correct:false, why:'That describes 1-transmembrane receptors.'}],
  teach:'At α1 receptors on smooth muscle, norepinephrine or epinephrine activates αq, which activates phospholipase C (PLC). PLC converts PIP2 to IP3, and IP3 releases stored Ca2+ from the endoplasmic reticulum (ER).',
  reading:[{src:'Katzung 16e, Ch. 6', sec:'Table 6–2', t:'For α1 adrenoceptors, located especially on smooth muscle, the result of ligand binding is formation of IP3 and DAG and increased intracellular calcium. β receptors act instead through adenylyl cyclase and cAMP.'}],
- cite:'Pharmacodynamics-Day-1-2026s.pdf slide ~55'}
+ cite:'Pharmacodynamics-Day-1-2026s.pdf slide ~55'},
+
+{id:'L01-036', fg:'inverse', lecture:'L01', prof:'Gottlieb', tier:'new', topic:'L01', sub:'drugs', skill:'figure',
+ concept:'five-curve-inverse-loratadine-d1', tags:['poll','loratadine','two-state'], source:'both',
+ stem:'I have 4 dose–response curves, A–D, of 4 different drugs, drawn in a tissue whose receptors have some activity with nothing bound (the basal line). Which drug is most likely drug D?',
+ graph:{curves:[{label:'A', ec:0, emax:100}, {label:'B', ec:0, emax:70}, {label:'C', ec:0, emax:30}, {label:'D', ec:0, emax:5}], base:30, x:'log dose', y:'% of maximal response', caption:'Basal activity 30%; each curve is one drug given alone'},
+ options:[
+  {t:'Loratadine', correct:true, why:'Curve D shuts the receptors down below their basal activity, which is negative efficacy; loratadine is the H1 inverse agonist he named.'},
+  {t:'Metoprolol', correct:false, why:'Metoprolol is a reversible antagonist: it binds with zero intrinsic activity and does nothing to the receptor, so its curve stays on the basal line (curve C).'},
+  {t:'Norepinephrine', correct:false, why:'Norepinephrine activates β1 receptors and increases heart rate, positive efficacy; its curve rises above the basal line.'},
+  {t:'Acetylcholine', correct:false, why:'Acetylcholine binds the nicotinic receptor and opens the channel, positive efficacy; its curve rises above the basal line.'}],
+ teach:'First classify the curve, then match the drug. Drugs with positive efficacy activate receptors, so their curves rise (A full, B partial). An antagonist binds but does nothing, so its curve stays on the basal line (C). A drug that shuts receptors down has negative efficacy, so its curve falls below baseline (D): an inverse agonist, and loratadine is the inverse agonist he named.',
+ quote:'Some drugs are going to be activating receptors so they have positive efficacy. Others are going to be shutting down the receptors so they have negative efficacy.',
+ reading:[{src:'Katzung 16e, Ch. 2', sec:'Receptor Antagonists (inverse agonist activity)', t:'Although antagonists are traditionally thought to have no functional effect without an agonist, some show inverse agonist activity because they reduce receptor activity below basal levels.'}],
+ cite:'Pharmacodynamics-Day-1-2026s.pdf slides ~28–~29, ~38; transcript 9/22'},
+
+{id:'L01-037', fg:'classes', lecture:'L01', prof:'Gottlieb', tier:'new', topic:'L01', sub:'drugs', skill:'figure',
+ concept:'antagonist-flat-curve-metoprolol', tags:['poll','metoprolol','theory'], source:'both',
+ stem:'The four curves, A–D, are four different drugs given alone in a tissue with 30% basal receptor activity. Which curve best represents metoprolol?',
+ graph:{curves:[{label:'A', ec:0, emax:5}, {label:'B', ec:0, emax:100}, {label:'C', ec:0, emax:30}, {label:'D', ec:0, emax:70}], base:30, x:'log dose', y:'% of maximal response', caption:'Basal activity 30%; each curve is one drug given alone'},
+ options:[
+  {t:'A', correct:false, why:'Curve A falls below the basal line, negative efficacy, which is an inverse agonist such as loratadine.'},
+  {t:'B', correct:false, why:'Curve B rises to 100%, a full agonist with positive efficacy.'},
+  {t:'C', correct:true, why:'Metoprolol is a reversible β1 antagonist: it has affinity but zero intrinsic activity, so it binds and does nothing, and the response stays on the basal line at every dose.'},
+  {t:'D', correct:false, why:'Curve D rises to 70%, a partial agonist that occupies part of the receptors.'},
+  {t:'None of the above', correct:false, why:'One curve does fit: an antagonist alone produces no change from basal activity, which is curve C.'}],
+ teach:'An antagonist has affinity, so it binds the receptor, but zero intrinsic activity, so it does not change the receptor state. Given alone it produces no response above or below the basal line, which drawn as a dose–response curve is a flat line at baseline. Metoprolol is the reversible β1 antagonist on the drug list.',
+ quote:'my antagonist, there are zero intrinsic activity. They have affinity, they can bind the receptor, but they don’t do anything to the receptor. They just kinda sit there and just kinda linger.',
+ cite:'Pharmacodynamics-Day-1-2026s.pdf slides ~9, ~28; transcript 9/22'},
+
+{id:'L01-038', fg:'partial', lecture:'L01', prof:'Gottlieb', tier:'new', topic:'L01', sub:'theory', skill:'figure',
+ concept:'clark-occupancy', tags:['poll','theory'], source:'both',
+ stem:'The curves are three different drugs given alone at the same receptor. Which of these drugs is a partial agonist?',
+ graph:{curves:[{label:'A', ec:0, emax:100}, {label:'B', ec:-1, emax:100}, {label:'C', ec:0, emax:70}], x:'log dose', y:'% of maximal response'},
+ options:[
+  {t:'A', correct:false, why:'Curve A reaches 100% of the maximal response, which is a full agonist.'},
+  {t:'B', correct:false, why:'Curve B also reaches 100%; reaching the full response makes it a full agonist, whatever its position.'},
+  {t:'C', correct:true, why:'Curve C plateaus at 70%: it produces only a percentage of the maximal response, which by the occupancy theory is a partial agonist that occupies only part of the receptors.'},
+  {t:'None of the above', correct:false, why:'Curve C plateaus below the maximal response, so one curve is a partial agonist.'}],
+ teach:'A full agonist produces 100% of the response; a partial agonist produces a percentage of it, for example 70%, because under the occupancy theory it occupies only that fraction of the receptors. Read the plateau, not the position: any curve that reaches 100% is a full agonist, and the one that stops short is the partial.',
+ quote:'a full agonist will produce 100% of the response as a partial may produce a 70% of the response because it can only occupy 70% of the receptors, right? So it’s based on occupancy.',
+ reading:[{src:'Katzung 16e, Ch. 2', sec:'Partial Agonists', t:'Partial agonists produce a lower response at full receptor occupancy than full agonists do. Their failure to produce a maximal response is not due to decreased affinity for the receptor.'}],
+ cite:'Pharmacodynamics-Day-1-2026s.pdf slide ~28; transcript 9/22'},
+
+{id:'L01-039', lecture:'L01', prof:'Gottlieb', tier:'new', topic:'L01', sub:'potency', skill:'recall',
+ concept:'efficacy-definition', tags:['efficacy','poll'], source:'both',
+ stem:'Efficacy is the ability of a drug to bind and stay bound to a receptor.',
+ options:[
+  {t:'True', correct:false, why:'Binding and staying bound is affinity; efficacy is what the bound drug does to the receptor.'},
+  {t:'False', correct:true, why:'Efficacy is the ability of a drug to change receptor activity or state, positive (activating) or negative (shutting down); binding and staying bound is affinity.'}],
+ teach:'Affinity is how well a drug attaches to the receptor and stays bound, set by the bonds it forms. Efficacy is the effect the bound drug produces on the receptor: activating it (positive efficacy) or shutting it down (negative efficacy). An antagonist has affinity with zero intrinsic activity, so the two properties are separate.',
+ quote:'What about efficacy? ... it’s going to be the effect that a drug is going to produce. Some drugs are going to be activating receptors so they have positive efficacy. Others are going to be shutting down the receptors so they have negative efficacy.',
+ cite:'Pharmacodynamics-Day-1-2026s.pdf slides ~21, ~38; transcript 9/22'},
+
+{id:'L01-040', lecture:'L01', prof:'Gottlieb', tier:'new', topic:'L01', sub:'potency', skill:'recall',
+ concept:'dose-selectivity', tags:['selectivity','metoprolol','poll'], source:'both',
+ stem:'The larger the dose of a drug, the less selective the drug becomes.',
+ options:[
+  {t:'True', correct:true, why:'One of his rules: as the dose rises the drug starts to interact with other receptors; metoprolol is β1-selective up to about 200 mg and affects β2 above that.'},
+  {t:'False', correct:false, why:'Selectivity falls as dose rises; that is why he starts with the smallest dose that gives the desired effect.'}],
+ teach:'Everything is dose dependent. As the dose rises, a drug starts to go around and interact with other receptors, so the larger the dose, the less selective the drug and the more side effects. Starting with the smallest dose that produces the desired effect keeps the drug at one receptor.',
+ quote:'the larger the dose gets, the less selective a drug becomes. You start to go around and interact with other things.',
+ cite:'Pharmacodynamics-Day-1-2026s.pdf slides ~21, ~29; transcript 9/22'},
+
+{id:'L01-041', lecture:'L01', prof:'Gottlieb', tier:'new', topic:'L01', sub:'intro', skill:'recall',
+ concept:'metoprolol-predict-effect', tags:['metoprolol','beta1','poll'], source:'both',
+ stem:'Which statement is CORRECT about metoprolol?',
+ options:[
+  {t:'Metoprolol is a reversible β1 receptor antagonist', correct:false, why:'True, but not the only true statement.'},
+  {t:'Its sites of action include the heart', correct:false, why:'True, but not the only true statement.'},
+  {t:'Bradycardia is a predictable adverse reaction', correct:false, why:'True, but not the only true statement.'},
+  {t:'Above about 200 mg it begins to affect β2 receptors', correct:false, why:'True, but not the only true statement.'},
+  {t:'All of the above', correct:true, why:'Every statement is correct: reversible β1 antagonist, site of action the heart (also kidneys and brain), bradycardia as an ADR, and loss of β1 selectivity above about 200 mg.'}],
+ teach:'Metoprolol is the Day 1 example drug: MOA reversible β1 receptor antagonist; SOA heart, kidneys and brain; ADR bradycardia and fatigue; DDI with other drugs that lower heart rate. It stays β1-selective up to about 200 mg. His test tip: when two statements other than a select-all are definitely correct, choose all of the above.',
+ quote:'if there are two answers other than a select all that you know absolutely are correct, just go for the all the above.',
+ cite:'Pharmacodynamics-Day-1-2026s.pdf slides ~9, ~21; transcript 9/22'},
+
+{id:'L01-042', lecture:'L01', prof:'Gottlieb', tier:'new', topic:'L01', sub:'theory', skill:'recall',
+ concept:'intrinsic-activity-antagonist', tags:['theory','poll'], source:'both',
+ stem:'Which statement is INCORRECT?',
+ options:[
+  {t:'Potency depends on affinity and efficacy', correct:false, why:'Correct: affinity and efficacy are the two factors intrinsic to the drug that set its potency, so this is not the incorrect statement.'},
+  {t:'Affinity depends on the bonds a drug forms', correct:false, why:'Correct: covalent, hydrogen, ionic and van der Waals bonds make binding stronger or weaker.'},
+  {t:'A partial agonist has an intrinsic activity of zero', correct:true, why:'Incorrect: zero intrinsic activity is the antagonist. A partial agonist has an intrinsic activity between 1% and 99%.'},
+  {t:'An antagonist has affinity but does nothing to the receptor', correct:false, why:'Correct: antagonists bind the receptor with zero intrinsic activity.'},
+  {t:'All of the above', correct:false, why:'Only one statement is incorrect; the other three are his own definitions.'}],
+ teach:'Intrinsic activity: full agonist 100%, partial agonist 1–99%, antagonist zero. An antagonist has affinity, so it binds, but does nothing to the receptor. Affinity comes from the bonds the drug forms, and potency depends on affinity, efficacy and the tissue.',
+ quote:'100% is your full agonist, between 1% and 99% is your partial, and my antagonist, there are zero intrinsic activity. They have affinity, they can bind the receptor, but they don’t do anything to the receptor.',
+ cite:'Pharmacodynamics-Day-1-2026s.pdf slides ~21, ~28; transcript 9/22'},
+
+{id:'L01-043', lecture:'L01', prof:'Gottlieb', tier:'new', topic:'L01', sub:'intro', skill:'apply',
+ concept:'metoprolol-ddi', tags:['metoprolol','ddi'], source:'both',
+ stem:'A patient taking metoprolol, a β1 receptor antagonist with its site of action in the heart, starts a second drug that also lowers heart rate. What drug–drug interaction is predicted?',
+ options:[
+  {t:'Heart rate would fall too far', correct:true, why:'Anything that also lowers heart rate adds to the β1 block in the heart; the predicted interaction is excessive slowing, the bradycardia he lists as the ADR.'},
+  {t:'Heart rate would rise', correct:false, why:'Both drugs lower heart rate; neither one speeds the heart.'},
+  {t:'No interaction, the drugs act at different receptors', correct:false, why:'The interaction is predicted from the shared effect on the heart, not from sharing a receptor.'},
+  {t:'The patient would become hyponatremic', correct:false, why:'Hyponatremia is the thiazide diuretic prediction from losing sodium.'}],
+ teach:'Knowing MOA (β1 antagonist) and SOA (heart) lets you predict the DDI without memorizing it: any drug that also lowers heart rate adds to metoprolol and slows the heart too far. His listed examples are verapamil, diltiazem and clonidine.',
+ quote:'And what kind of drug drug interaction? Anything that would affect the heart and lower the heart rate.',
+ reading:[{src:'Katzung 16e, Ch. 2', sec:'Pharmacodynamic variation: Changes in Components of Response Distal to the Receptor', t:'Because the response to a drug depends on the physiologic system it acts on, drugs that converge on the same downstream effect, here heart rate, add together in the patient even when they act through different mechanisms.'}],
+ cite:'Pharmacodynamics-Day-1-2026s.pdf slide ~9; transcript 9/22'},
+
+{id:'L01-044', lecture:'L01', prof:'Gottlieb', tier:'new', topic:'L01', sub:'potency', skill:'apply',
+ concept:'pharmacological-vs-apparent-potency', tags:['potency','pk'], source:'both',
+ stem:'A drug with a large first-pass effect is switched from the oral route to IV, which has 100% bioavailability. What effect would that have on the apparent potency of the drug?',
+ options:[
+  {t:'Would increase the apparent potency', correct:true, why:'IV bypasses first-pass metabolism, so more of the dose reaches the site of action; the same dose now appears more potent.'},
+  {t:'Would lower the apparent potency', correct:false, why:'Lower potency would follow from less drug reaching the site, the opposite of removing first-pass metabolism.'},
+  {t:'Would have no effect on the apparent potency', correct:false, why:'Apparent potency depends on how much drug gets to the site of action, and the route changes exactly that.'}],
+ teach:'First-pass metabolism in the liver decreases bioavailability, so less of an oral dose reaches the site of action; IV has 100% bioavailability. Pharmacokinetics sets how much drug gets to the site, and that is the apparent potency: the same dose appears more potent when more of it arrives.',
+ quote:'pharmokinetics is going to be affecting how much of the drug gets to the site of action. Because that’s how it’s going to produce its effects.',
+ cite:'Pharmacodynamics-Day-1-2026s.pdf slides ~23–~24, ~27; transcript 9/22',
+ note:'Slide and transcript disagree on the label. The slide puts absorption, distribution and elimination under apparent potency; in class he said ADME affects pharmacological potency. Use the slide grouping on the exam.'},
+
+{id:'L01-045', lecture:'L01', prof:'Gottlieb', tier:'new', topic:'L01', sub:'drugs', skill:'drug',
+ concept:'negative-efficacy-inverse-agonist', tags:['poll','loratadine','drug-list'], source:'both',
+ stem:'Which of the following drugs is an inverse agonist?',
+ options:[
+  {t:'Loratadine', correct:true, why:'Loratadine is a selective H1 inverse agonist: it shuts the receptor down, negative efficacy.'},
+  {t:'Metoprolol', correct:false, why:'Metoprolol is a reversible β1 antagonist: affinity with zero intrinsic activity.'},
+  {t:'Norepinephrine', correct:false, why:'Norepinephrine activates β1 and α1 receptors; positive efficacy, an agonist.'},
+  {t:'Acetylcholine', correct:false, why:'Acetylcholine binds the nicotinic receptor and opens its channel; positive efficacy, an agonist.'},
+  {t:'Hydrochlorothiazide', correct:false, why:'Hydrochlorothiazide blocks the Na+/Cl− symporter in the distal tubule; it is the diuretic example, not an inverse agonist.'}],
+ teach:'Drug classes by mechanism: agonists have efficacy, positive (full and partial) or negative (inverse); antagonists bind with zero intrinsic activity; allosterics change other drugs’ potency. Loratadine is the inverse agonist he named on Day 1; metoprolol is the antagonist; norepinephrine and acetylcholine activate their receptors.',
+ quote:'What is loratadine? It’s Claritin, which is a selective H1 inverse agonist, right?',
+ cite:'Pharmacodynamics-Day-1-2026s.pdf slides ~9, ~29, ~33, ~48, ~51; transcript 9/22'},
+
+{id:'L01-046', lecture:'L01', prof:'Gottlieb', tier:'new', topic:'L01', sub:'drugs', skill:'drug',
+ concept:'intrinsic-activity-antagonist', tags:['poll','metoprolol','drug-list'], source:'both',
+ stem:'Which of the following drugs is a reversible antagonist?',
+ options:[
+  {t:'Norepinephrine', correct:false, why:'Norepinephrine binds β1 in the heart and increases heart rate; it activates the receptor.'},
+  {t:'Epinephrine', correct:false, why:'Epinephrine, like norepinephrine, activates α1 receptors on smooth muscle; it is an agonist.'},
+  {t:'Metoprolol', correct:true, why:'Metoprolol is the reversible β1 receptor antagonist (blocker): affinity with zero intrinsic activity.'},
+  {t:'Loratadine', correct:false, why:'Loratadine is an inverse agonist; it has negative efficacy rather than zero intrinsic activity.'},
+  {t:'Acetylcholine', correct:false, why:'Acetylcholine binds the nicotinic receptor and opens the channel; it is an agonist.'}],
+ teach:'Antagonists have affinity but zero intrinsic activity: they bind and do nothing to the receptor. Metoprolol is a reversible β1 receptor antagonist. Norepinephrine, epinephrine and acetylcholine activate their receptors, and loratadine shuts H1 down (inverse agonist).',
+ quote:'Metoprolol (Tropol XL) MOA: Reversible β1 receptor antagonist (blocker)',
+ cite:'Pharmacodynamics-Day-1-2026s.pdf slides ~9, ~28–~29, ~48, ~55; transcript 9/22'},
+
+{id:'L01-047', lecture:'L01', prof:'Gottlieb', tier:'new', topic:'L01', sub:'drugs', skill:'recall', multi:true,
+ concept:'negative-efficacy-inverse-agonist', tags:['classes'], source:'both',
+ stem:'Which of these drug classes have efficacy, positive or negative? Select all that apply.',
+ options:[
+  {t:'Full agonist', correct:true, why:'A full agonist activates the receptor: positive efficacy, intrinsic activity of 100%.'},
+  {t:'Partial agonist', correct:true, why:'A partial agonist activates the receptor to a percentage of the maximal response: positive efficacy.'},
+  {t:'Inverse agonist', correct:true, why:'An inverse agonist shuts the receptor down: negative efficacy.'},
+  {t:'Antagonist', correct:false, why:'An antagonist has affinity but zero intrinsic activity; it binds and does nothing to the receptor.'}],
+ teach:'Agonists are the drugs that have efficacy: full and partial agonists have positive efficacy, inverse agonists have negative efficacy. Antagonists, direct or indirect, reversible or irreversible, bind with zero intrinsic activity. Allosterics act on other drugs’ potency.',
+ quote:'They can be divided into agonists. Those are drugs that have efficacy, positive and negative. So we have a full agonist, a partial agonist, and an inverse agonist.',
+ cite:'Pharmacodynamics-Day-1-2026s.pdf slides ~28–~29; transcript 9/22'},
+
+{id:'L01-048', lecture:'L01', prof:'Gottlieb', tier:'new', topic:'L01', sub:'theory', skill:'recall',
+ concept:'two-state-model-l', tags:['theory','two-state','poll'], source:'both',
+ stem:'Which statement is CORRECT about the two-state model?',
+ options:[
+  {t:'Receptors exist in an active or an inactive state', correct:false, why:'True, but not the only true statement.'},
+  {t:'The constant L sets how likely a receptor is inactive versus active', correct:false, why:'True, but not the only true statement.'},
+  {t:'A drug with positive efficacy shifts receptors toward the active state', correct:false, why:'True, but not the only true statement.'},
+  {t:'Cells can change receptor activity and number on their own', correct:false, why:'True, but not the only true statement.'},
+  {t:'All of the above', correct:true, why:'Every statement is part of the two-state model: two receptor states, L setting their balance, drugs shifting that balance by their efficacy, and the cell having a say in receptor activity and number.'}],
+ teach:'The two-state model is home base: receptors come as active or inactive; L determines how likely a receptor is found inactive versus active; cells move receptors back and forth and change their number; a bound drug with positive efficacy shifts the balance to active, one with negative efficacy shifts it to inactive.',
+ quote:'this L constant over here. Determines how likely a receptor should be found on the inactive versus the active state. So ourselves can move them back and forth how they wanted.',
+ cite:'Pharmacodynamics-Day-1-2026s.pdf slide ~28; transcript 9/22'},
+
+{id:'L01-049', lecture:'L01', prof:'Gottlieb', tier:'new', topic:'L01', sub:'drugs', skill:'tell',
+ concept:'loratadine-vs-diphenhydramine', tags:['selectivity','histamine','poll'], source:'both',
+ stem:'Loratadine is a non-selective antihistamine that binds H1, H2 and muscarinic receptors.',
+ options:[
+  {t:'True', correct:false, why:'That description is diphenhydramine, which binds H1, H2 and muscarinic receptors and is very non-selective.'},
+  {t:'False', correct:true, why:'Loratadine is a selective H1 inverse agonist; diphenhydramine is the non-selective one that binds H1, H2 and muscarinic receptors.'}],
+ teach:'Two antihistamines at the same H1 receptor: loratadine is a selective H1 inverse agonist; diphenhydramine binds H1, H2 and muscarinic receptors, is very non-selective, and is the ingredient in nighttime products that puts most people to sleep.',
+ quote:'What about diphenhydramine? That’s Benadryl. Benadryl not only binds to the H1, it binds to the H2. It binds to muscarinic receptors. It’s very non-selective.',
+ cite:'Pharmacodynamics-Day-1-2026s.pdf slide ~29; transcript 9/22'},
+
+{id:'L01-050', lecture:'L01', prof:'Gottlieb', tier:'new', topic:'L01', sub:'nds', skill:'recall',
+ concept:'nds-regulation', tags:['nds','poll'], source:'both',
+ stem:'Which statement is CORRECT about natural dietary supplements (NDS)?',
+ options:[
+  {t:'NDS are regulated as food, with less FDA oversight than drugs', correct:false, why:'True, but not the only true statement.'},
+  {t:'NDS stay on the market until they cause harm', correct:false, why:'True, but not the only true statement.'},
+  {t:'Herbal products can interact with prescription and OTC drugs', correct:false, why:'True, but not the only true statement.'},
+  {t:'Most patients do not report the supplements they take', correct:false, why:'True, but not the only true statement.'},
+  {t:'All of the above', correct:true, why:'Every statement is correct: NDS are food, not drugs, so they get less oversight and stay on the market until harm is shown; herbals have active ingredients that interact; patients do not think supplements are pertinent.'}],
+ teach:'NDS are regulated as food, not drugs, so the FDA oversees them less and they stay on the market until they cause harm. Herbals have active ingredients that can interact with prescription and OTC drugs and can cause side effects. Most patients do not think supplements are pertinent and do not report them. He expects about two common-sense supplement questions.',
+ quote:'when we look at natural dietary supplements, they are treated as food, which means they have less oversight by the FDA. Which means that until they cause harm, they’re still in the market',
+ cite:'Pharmacodynamics-Day-1-2026s.pdf slides ~16, ~20; transcript 9/22'}
 );
 
 TOPICS.push({id:"L02", name:"Receptor signaling, drug–receptor binding & affinity", prof:"Gottlieb", lecture:"L02",
@@ -766,12 +957,10 @@ QUESTIONS.push(
 
 {id:"L02-010", lecture:"L02", prof:"Gottlieb", tier:"new", topic:"L02", sub:"bond", skill:"recall",
  concept:"affinity-depends-on-bonds", tags:["poll"], source:"both",
- stem:"Affinity of a drug for the receptor is dependent on which of the following?",
+ stem:"Affinity of a drug for the receptor is dependent on the type of chemical bonds it makes with that receptor. True or false?",
  options:[
-  {t:"The type of chemical bonds it forms", correct:true, why:"Covalent, ionic, hydrogen and van der Waals bonds dictate how likely a drug is to bind and stay bound."},
-  {t:"The number of receptors the cell makes", correct:false, why:"Receptor number is the cell's business, not a property of the drug's binding."},
-  {t:"Its ability to change the receptor state", correct:false, why:"Changing the receptor state is efficacy, not affinity."},
-  {t:"How well the drug is absorbed", correct:false, why:"Absorption is pharmacokinetics, not drug–receptor binding."}],
+  {t:"True", correct:true, why:"Covalent, ionic, hydrogen and van der Waals bonds dictate how likely a drug is to bind and stay bound; the class answer was true."},
+  {t:"False", correct:false, why:"Affinity is how likely a drug is to bind and stay bound, and that depends on the bonds it forms."}],
  teach:"Affinity is how likely a drug is to bind and stay bound to a receptor. It depends on the molecular forces (bonds) between drug and receptor: covalent bonds are very strong, while van der Waals bonds are weak.",
  quote:"Remember, affinity is how likely a drug is to bind and stay bound to a receptor, and the binding of a drug to the receptor is going to be depending on what type of bonds they form covalent bonds, hydrogen bonds, ion bonds.",
  cite:"Pharmacodynamics-Day_2_2026s copy.pdf slides ~15, ~31; transcript 9/23"},
@@ -792,14 +981,15 @@ QUESTIONS.push(
  reading:[{src:'Katzung 16e, Ch. 2', sec:'Competitive & Irreversible Antagonists (p. 6 of 18)', t:'A noncompetitive antagonist, which often binds irreversibly by forming a covalent bond, cannot be surmounted by agonists irrespective of their concentration. Its duration of action depends on receptor turnover rather than on its own elimination.'}],
  cite:"Pharmacodynamics-Day_2_2026s copy.pdf slide ~15; transcript 9/23"},
 
-{id:"L02-012", lecture:"L02", prof:"Gottlieb", tier:"new", topic:"L02", sub:"bond", skill:"recall",
- concept:"phenoxybenzamine-covalent", tags:[], source:"both",
- stem:"Which drug binds its receptor irreversibly through a covalent bond?",
+{id:"L02-012", lecture:"L02", prof:"Gottlieb", tier:"new", topic:"L02", sub:"bond", skill:"drug",
+ concept:"phenoxybenzamine-covalent", tags:["poll"], source:"both",
+ stem:"Which of the following drugs is an irreversible antagonist?",
  options:[
   {t:"Phenoxybenzamine", correct:true, why:"Phenoxybenzamine is an irreversible, non-competitive, insurmountable antagonist that forms covalent bonds."},
   {t:"Prazosin", correct:false, why:"Prazosin is a reversible, competitive, surmountable antagonist that forms weaker bonds."},
-  {t:"Norepinephrine", correct:false, why:"Norepinephrine is a reversible agonist; it binds and eventually pops off."},
-  {t:"Diazepam (Valium)", correct:false, why:"Diazepam is an allosteric agonist, and allosteric agonists and antagonists are reversible."}],
+  {t:"Norepinephrine (NE)", correct:false, why:"Norepinephrine is a reversible agonist; it binds and eventually pops off."},
+  {t:"Diazepam", correct:false, why:"Diazepam is an allosteric agonist, and allosteric agonists and antagonists are reversible."},
+  {t:"Loratadine", correct:false, why:"Loratadine is the inverse agonist on the drug list; it binds reversibly."}],
  teach:"Drugs listed as forming covalent (irreversible) bonds include aspirin, omeprazole and phenoxybenzamine. Once phenoxybenzamine is bound, the receptor has to be internalized and recycled and the body must make new ones.",
  quote:"And phenoxbenzamine is an irreversible covalent bond forming drug.",
  reading:[{src:'Katzung 16e, Ch. 2', sec:'Competitive & Irreversible Antagonists (p. 6 of 18)', t:'Phenoxybenzamine is an irreversible α-adrenoceptor antagonist; its blockade is maintained even against very large amounts of catecholamine and cannot be reversed. Benzodiazepines such as diazepam act as allosteric modulators, and drugs acting at an allosteric site are often reversible.'}],
@@ -1054,7 +1244,9 @@ QUESTIONS.push(
 
 {id:"L02-031", fg:"binding-kd", lecture:"L02", prof:"Gottlieb", tier:"new", topic:"L02", sub:"kd", skill:"figure",
  concept:"kd-binding-curve", tags:[], source:"slide",
- stem:"A binding curve plots % receptors bound (0% to Bmax, 100%) against log[concentration]. Drug A reaches 50% bound at a lower concentration than Drug B. Which is correct?",
+ stem:"The binding curves of Drug A and Drug B at the same receptor are plotted as % receptors bound (0% to Bmax, 100%) against log[concentration]. Which is correct?",
+ graph:{curves:[{label:"A", ec:-1, emax:100}, {label:"B", ec:1, emax:100}], y:"% receptors bound", x:"log[concentration]",
+        marks:[{x:-1, label:"Kd A"}, {x:1, label:"Kd B"}], caption:"Binding curves of two drugs at one receptor; Bmax = 100% of the receptors bound."},
  options:[
   {t:"Drug A has the smaller Kd and greater affinity", correct:true, why:"Kd is read on the x-axis at 50% bound; the lower concentration is the smaller Kd, which means greater affinity."},
   {t:"Drug B has the smaller Kd and the greater affinity", correct:false, why:"Drug B needs more drug to bind 50%, so its Kd is larger."},
@@ -1095,7 +1287,9 @@ QUESTIONS.push(
 
 {id:"L02-034", fg:"potency", lecture:"L02", prof:"Gottlieb", tier:"new", topic:"L02", sub:"drc", skill:"figure",
  concept:"ec50-potency-shift", tags:[], source:"slide",
- stem:"On log[concentration]–response curves, Drug B's curve is shifted to the right of Drug A's, with the same maximum response. EC50 is the effective concentration that produces 50% of the maximum response. Which drug is more potent?",
+ stem:"Drug A and Drug B are plotted as log[concentration]–response curves. EC50 is the effective concentration that produces 50% of the maximum response. Which drug is more potent?",
+ graph:{curves:[{label:"A", ec:-1, emax:100}, {label:"B", ec:1, emax:100}], x:"log[concentration]",
+        marks:[{x:-1, label:"EC50 A"}, {x:1, label:"EC50 B"}], caption:"Two drugs with the same Emax; EC50 is read on the x-axis at 50% of the maximum response."},
  options:[
   {t:"Drug A", correct:true, why:"Drug A reaches 50% of the maximum at a lower concentration, a lower EC50; lower EC50 means higher potency."},
   {t:"Drug B", correct:false, why:"A right-shifted curve needs more drug for 50% of the maximum, a higher EC50 and lower potency."},
@@ -1118,7 +1312,224 @@ QUESTIONS.push(
  teach:"Pharmacodynamics defines concentration and dose responses of a drug, predicts and compares drugs, and determines potency (Potency = ED50). Dose–response curves serve as models of prediction or comparison.",
  quote:"Defines: Concentration and dose responses of a drug; Predict and compare drugs; Determine the Potency; Potency = ED50",
  reading:[{src:'Katzung 16e, Ch. 2', sec:'Relation Between Drug Dose & Clinical Response; Quantal Dose-Effect Curves (p. 14–16 of 18)', t:'Graded dose–response curves give the relative potency and maximal efficacy of drugs, which the prescriber needs to choose among drugs and determine doses. Comparing the ED50 values of two drugs states how many times more potent one is than the other.'}],
- cite:"Pharmacodynamics-Day_2_2026s copy.pdf slide ~56"}
+ cite:"Pharmacodynamics-Day_2_2026s copy.pdf slide ~56"},
+
+{id:"L02-036", lecture:"L02", prof:"Gottlieb", tier:"new", topic:"L02", sub:"kd", skill:"figure",
+ concept:"kd-binding-curve", tags:["poll"], source:"both",
+ stem:"Binding curves A–E are five drugs binding the α1 receptor, plotted as % receptors bound against log[concentration]. Which curve is most likely phenoxybenzamine?",
+ graph:{curves:[{label:"A", ec:1, emax:100}, {label:"B", ec:-2, emax:100}, {label:"C", ec:0, emax:100}, {label:"D", ec:-1, emax:100}, {label:"E", ec:2, emax:100}],
+        y:"% receptors bound", x:"log[concentration]", caption:"Five binding curves at one receptor; every curve reaches Bmax (100% of the receptors bound). Kd is the concentration at 50% bound."},
+ options:[
+  {t:"A", correct:false, why:"A needs more drug than B, C and D to bind 50% of the receptors, so its Kd is larger and its affinity lower."},
+  {t:"B", correct:true, why:"B binds 50% of the receptors at the lowest concentration: the smallest Kd and the greatest affinity, which belongs to the covalent, irreversible drug phenoxybenzamine."},
+  {t:"C", correct:false, why:"C sits in the middle; two curves reach 50% bound at lower concentrations, so C does not have the greatest affinity."},
+  {t:"D", correct:false, why:"D has the second-smallest Kd; phenoxybenzamine, bound by covalent bonds that never come off, has the highest affinity of all."},
+  {t:"E", correct:false, why:"E is the furthest right: the largest Kd and the lowest affinity, the opposite of an irreversible drug."}],
+ teach:"Kd is read on the x-axis at 50% of the receptors bound, and the smaller the Kd, the greater the affinity. Phenoxybenzamine forms covalent bonds and does not come off, so it has the greatest affinity of any drug on the list and needs the least drug to bind half the receptors: the curve furthest left.",
+ quote:"So which drug has the greatest affinity? The one that forms covalent bond all day long, which are, are irreversible drugs, right?",
+ reading:[{src:'Katzung 16e, Ch. 2', sec:'Concentration-Effect Curves & Receptor Binding of Agonists; Competitive & Irreversible Antagonists (p. 4, 6 of 18)', t:'Kd is the concentration at which half-maximal binding is observed; if the Kd is low, binding affinity is high. Phenoxybenzamine is an irreversible antagonist whose block is maintained even against very large amounts of catecholamine.'}],
+ cite:"Pharmacodynamics-Day_2_2026s copy.pdf slides ~37, ~49–~50; transcript 9/23"},
+
+{id:"L02-037", lecture:"L02", prof:"Gottlieb", tier:"new", topic:"L02", sub:"kd", skill:"figure",
+ concept:"kd-binding-curve", tags:["poll"], source:"slide",
+ stem:"Binding curves A–E are five drugs binding the β1 receptor, plotted as % receptors bound against log[concentration]. Which of these drugs has the lowest affinity for the receptor?",
+ graph:{curves:[{label:"A", ec:-1, emax:100}, {label:"B", ec:0, emax:100}, {label:"C", ec:2, emax:100}, {label:"D", ec:-2, emax:100}, {label:"E", ec:1, emax:100}],
+        y:"% receptors bound", x:"log[concentration]", caption:"Five binding curves at one receptor; every curve reaches Bmax. Kd is the concentration at 50% bound."},
+ options:[
+  {t:"A", correct:false, why:"A reaches 50% bound at the second-lowest concentration; its Kd is small and its affinity high."},
+  {t:"B", correct:false, why:"B is in the middle of the group; two drugs need more concentration than B to bind half the receptors."},
+  {t:"C", correct:true, why:"C needs the highest concentration to bind 50% of the receptors: the largest Kd, and Kd and affinity are inversely related."},
+  {t:"D", correct:false, why:"D is the furthest left, the smallest Kd and therefore the greatest affinity, the opposite of what is asked."},
+  {t:"E", correct:false, why:"E needs less drug than C to reach 50% bound, so its Kd is smaller and its affinity higher than C's."}],
+ teach:"Affinity is inversely proportional to Kd: the smaller the Kd, the greater the affinity, and Kd is reflected on the x-axis at 50% of the receptors bound. The curve furthest right needs the most drug to occupy half the receptors, so it has the largest Kd and the lowest affinity.",
+ reading:[{src:'Katzung 16e, Ch. 2', sec:'Concentration-Effect Curves & Receptor Binding of Agonists; Figure 2–1 (p. 4 of 18)', t:'Kd characterizes the receptor’s affinity for binding the drug in a reciprocal fashion: if the Kd is low, binding affinity is high, and vice versa.'}],
+ cite:"Pharmacodynamics-Day_2_2026s copy.pdf slides ~49–~50"},
+
+{id:"L02-038", lecture:"L02", prof:"Gottlieb", tier:"new", topic:"L02", sub:"kd", skill:"figure",
+ concept:"phenoxybenzamine-vs-prazosin-affinity", tags:["poll"], source:"both",
+ stem:"Curve C is the binding curve of prazosin at the α1 receptor (% receptors bound against log[concentration]). Which curve best represents phenoxybenzamine binding the same receptor?",
+ graph:{curves:[{label:"A", ec:1, emax:100}, {label:"B", ec:-1.5, emax:100}, {label:"C", ec:0, emax:100, dashed:true}, {label:"D", ec:2, emax:100}],
+        y:"% receptors bound", x:"log[concentration]", marks:[{x:0, label:"Kd C"}], caption:"Dashed curve C is prazosin, the point of reference; the solid curves are three other drugs at the same receptor."},
+ options:[
+  {t:"A", correct:false, why:"A needs more drug than prazosin to bind half the receptors: a larger Kd and a lower affinity than prazosin."},
+  {t:"B", correct:true, why:"Phenoxybenzamine forms covalent bonds and does not come off, so it has higher affinity than prazosin: a smaller Kd, a curve to the left of C."},
+  {t:"C", correct:false, why:"C is prazosin itself; a drug with higher affinity has a different (smaller) Kd."},
+  {t:"D", correct:false, why:"D has the largest Kd of all, the lowest affinity; the irreversible drug has the highest."},
+  {t:"None of the above", correct:false, why:"One curve (B) does show a smaller Kd than prazosin's, which is what higher affinity looks like."}],
+ teach:"Phenoxybenzamine is irreversible: its covalent bonds bind and do not come off, so it has higher affinity than prazosin, which forms weaker bonds, binds and comes off. On a binding curve, higher affinity is a smaller Kd, and Kd sits on the x-axis at 50% bound, so phenoxybenzamine's curve lies to the left of prazosin's.",
+ quote:"it's an irreversible, which means they form what covalent bonds, which means they bind and they don't come off asprazocene is reversible form all the weaker bonds they're gonna bind, they're gonna come off. So which of these can have the highest affinity? Pbenzamine, right?",
+ reading:[{src:'Katzung 16e, Ch. 2', sec:'Concentration-Effect Curves & Receptor Binding of Agonists; Competitive & Irreversible Antagonists (p. 4–6 of 18)', t:'If the Kd is low, binding affinity is high. A competitive antagonist such as prazosin can be surmounted by agonist, whereas the irreversible antagonist phenoxybenzamine forms a covalent bond and its blockade cannot be reversed.'}],
+ cite:"Pharmacodynamics-Day_2_2026s copy.pdf slides ~18, ~37, ~49–~50; transcript 9/23"},
+
+{id:"L02-039", lecture:"L02", prof:"Gottlieb", tier:"new", topic:"L02", sub:"class", skill:"figure",
+ concept:"full-vs-partial-agonist", tags:["poll"], source:"both",
+ stem:"Dose–response curves A–D are four different drugs acting on the same receptor. Which of these drugs is a partial agonist?",
+ graph:{curves:[{label:"A", ec:-1, emax:100}, {label:"B", ec:0.5, emax:100}, {label:"C", ec:0, emax:45}, {label:"D", ec:1.5, emax:100}],
+        caption:"Four drugs on one receptor; the y-axis is % of the maximal response of the system."},
+ options:[
+  {t:"A", correct:false, why:"A reaches 100% of the maximal response, so it activates receptors at 100%: a full agonist, and the most potent one here."},
+  {t:"B", correct:false, why:"B also reaches 100%; being further right only makes it less potent, not partial."},
+  {t:"C", correct:true, why:"C plateaus at about 45% no matter how much dose is added: positive efficacy lower than the full agonist (1–99%), which defines a partial agonist."},
+  {t:"D", correct:false, why:"D is the least potent curve, but it still reaches 100%, so its efficacy is that of a full agonist."},
+  {t:"None of the above", correct:false, why:"One curve (C) never reaches the full response, and that is the partial agonist."}],
+ teach:"A full agonist activates receptors at 100% of the response; a partial agonist has positive efficacy but lower than the full agonist (1–99%), and it only activates to its own efficacy, like a lifter who can only bench 100 pounds no matter what is loaded. Left or right position is potency, not efficacy.",
+ quote:"the partial is producing a different signal that only produces, say, 25% of the response or 75 or 39 or 68. It doesn't matter. But they have different efficacies",
+ reading:[{src:'Katzung 16e, Ch. 2', sec:'Partial Agonists (p. 6 of 18)', t:'Partial agonists produce a lower response at full receptor occupancy than full agonists do. Even at concentrations that saturate all receptors, a partial agonist cannot cause a maximal response.'}],
+ cite:"Pharmacodynamics-Day_2_2026s copy.pdf slides ~32–~34; transcript 9/23"},
+
+{id:"L02-040", lecture:"L02", prof:"Gottlieb", tier:"new", topic:"L02", sub:"class", skill:"figure",
+ concept:"inverse-agonist-vs-antagonist", tags:["poll"], source:"transcript",
+ stem:"A cell line has 50% of its receptors naturally active and producing cyclic AMP (cAMP); the dashed line is that baseline. Curves A–C show the cAMP signal as increasing doses of three different drugs are added. Which drug is most likely drug B?",
+ graph:{base:50, curves:[{label:"A", ec:0, emax:50}, {label:"B", ec:0, emax:2}, {label:"C", ec:0, emax:100}],
+        y:"cAMP signal (% of max)", caption:"Receptors that are 50% active with no drug present; each curve is one drug added at increasing doses."},
+ options:[
+  {t:"Loratadine", correct:true, why:"An inverse agonist has negative efficacy: it binds active receptors and shuts them off, bringing cAMP production from 50% down to zero."},
+  {t:"Prazosin", correct:false, why:"A neutral antagonist has zero efficacy; it keeps receptors wherever they are, so the signal stays flat at 50% (curve A)."},
+  {t:"Norepinephrine", correct:false, why:"A full agonist activates inactive receptors and raises the signal toward 100% (curve C)."},
+  {t:"Diazepam", correct:false, why:"Diazepam is an allosteric agonist that helps GABA increase its signal; it does not shut active receptors off."},
+  {t:"Phenoxybenzamine", correct:false, why:"An antagonist has no efficacy and does not change the state of the receptors; the signal it leaves is the flat line, not a drop to zero."}],
+ teach:"In a dish where 50% of the receptors are naturally active, an inverse agonist (negative efficacy) shuts off active receptors and brings cAMP to zero; a neutral antagonist has affinity but zero efficacy, so cAMP stays at 50%; an agonist has positive efficacy and raises the signal. Loratadine is the inverse agonist on the drug list.",
+ quote:"So if I give an inverse agonist, I'm going to bring the production of camp to zero. Because it's going to shut it off. But if I give you a competitive antagonist, say it's at 50%, because it's not changing the activity of the receptors",
+ reading:[{src:'Katzung 16e, Ch. 2', sec:'Competitive & Irreversible Antagonists (p. 5 of 18)', t:'An inverse agonist reduces receptor activity below the basal level observed in the absence of any agonist. A neutral antagonist binds receptors without activating them and leaves the basal level of receptor activity unchanged.'}],
+ cite:"Day 2 (9/23) petri-dish example (Pharmacodynamics-Day_2_2026s copy.pdf slides ~35–~38); transcript 9/23"},
+
+{id:"L02-041", lecture:"L02", prof:"Gottlieb", tier:"new", topic:"L02", sub:"class", skill:"figure",
+ concept:"neutral-antagonist-properties", tags:["poll"], source:"transcript",
+ stem:"A cell line has 50% of its receptors naturally active and producing cyclic AMP (cAMP); the dashed line is that baseline. Curves A–C show the cAMP signal as increasing doses of three different drugs are added. Which curve best represents prazosin?",
+ graph:{base:50, curves:[{label:"A", ec:0, emax:100}, {label:"B", ec:0, emax:50}, {label:"C", ec:0, emax:2}],
+        y:"cAMP signal (% of max)", caption:"Receptors that are 50% active with no drug present; each curve is one drug added at increasing doses."},
+ options:[
+  {t:"A", correct:false, why:"A raises the signal: positive efficacy, an agonist such as norepinephrine, not a neutral antagonist."},
+  {t:"B", correct:true, why:"Prazosin is a neutral antagonist with affinity but zero efficacy: it binds and stays bound without changing receptor state, so cAMP stays at 50%."},
+  {t:"C", correct:false, why:"C brings the signal to zero: negative efficacy, which is an inverse agonist such as loratadine."},
+  {t:"None of the above", correct:false, why:"One curve (B) is the flat line a neutral antagonist leaves at baseline."}],
+ teach:"Antagonists are neutral: equal affinity for active and inactive receptors and zero efficacy. They work by occupying receptors and preventing agonists from binding, keeping each receptor in whatever state it already has. With 50% of receptors active, cAMP stays at 50%; only an inverse agonist brings it to zero.",
+ quote:"if I give you a competitive antagonist, say it's at 50%, because it's not changing the activity of the receptors, it's just binding and staying bound, so they have affinity but zero efficacy.",
+ reading:[{src:'Katzung 16e, Ch. 2', sec:'Competitive & Irreversible Antagonists (p. 5 of 18)', t:'A neutral antagonist binds receptors without activating them and leaves the basal level of receptor activity unchanged, which distinguishes it from an inverse agonist that reduces activity below basal.'}],
+ cite:"Day 2 (9/23) petri-dish example (Pharmacodynamics-Day_2_2026s copy.pdf slides ~37–~38); transcript 9/23"},
+
+{id:"L02-042", lecture:"L02", prof:"Gottlieb", tier:"new", topic:"L02", sub:"drc", skill:"figure",
+ concept:"ec50-potency-shift", tags:["poll"], source:"slide",
+ stem:"Dose–response curves A–C are three drugs acting on the same receptor and reaching the same maximum response. Which of these drugs is most potent?",
+ graph:{curves:[{label:"A", ec:1, emax:100}, {label:"B", ec:-1, emax:100}, {label:"C", ec:0, emax:100}],
+        x:"log[concentration]", caption:"Three drugs with the same Emax. EC50 is the concentration that produces 50% of the maximum response."},
+ options:[
+  {t:"A", correct:false, why:"A needs the highest concentration to reach 50% of the maximum: the largest EC50 and the lowest potency."},
+  {t:"B", correct:true, why:"B reaches 50% of the maximum response at the lowest concentration: the smallest EC50, and higher potency means a lower EC50."},
+  {t:"C", correct:false, why:"C's EC50 is between A's and B's; one drug (B) still needs less concentration for the same response."},
+  {t:"They are equally potent", correct:false, why:"Equal Emax does not mean equal potency; the curves sit at different EC50 values on the x-axis."}],
+ teach:"Potency = EC50 (or ED50): the effective concentration that produces 50% of the maximum response. Higher potency means a lower EC50, so among curves with the same Emax the one furthest left is the most potent. Potency is read on the x-axis; efficacy (Emax) on the y-axis.",
+ quote:"Effective Concentration = EC50 : Effective concentration that produces 50% of the max response. ↑ Potency = ↓ EC50 or ED50",
+ reading:[{src:'Katzung 16e, Ch. 2', sec:'Relation Between Drug Dose & Clinical Response — Potency; Figure 2–15 (p. 15 of 18)', t:'Potency refers to the concentration (EC50) or dose (ED50) of a drug required to produce 50% of that drug’s maximal effect, and is judged from the relative positions of dose–response curves along the dose axis.'}],
+ cite:"Pharmacodynamics-Day_2_2026s copy.pdf slides ~57–~59"},
+
+{id:"L02-043", lecture:"L02", prof:"Gottlieb", tier:"new", topic:"L02", sub:"bond", skill:"figure",
+ concept:"stereoisomerism-potency", tags:["poll"], source:"both",
+ stem:"Dose–response curve B is racemic albuterol at the β2 receptor. Which curve best represents levalbuterol at the same receptor?",
+ graph:{curves:[{label:"A", ec:1, emax:100}, {label:"B", ec:0, emax:100, dashed:true}, {label:"C", ec:-1, emax:100}, {label:"D", ec:0, emax:50}],
+        x:"log[concentration]", marks:[{x:0, label:"EC50 B"}], caption:"Dashed curve B is racemic albuterol, the point of reference; the solid curves are three candidates."},
+ options:[
+  {t:"A", correct:false, why:"A needs a higher concentration than B for the same response: a larger EC50, less potent, the opposite of the more potent isomer."},
+  {t:"B", correct:false, why:"B is the racemic mixture itself; the more potent isomer has a different (lower) EC50."},
+  {t:"C", correct:true, why:"Levalbuterol is the more potent isomer of the racemic mixture, and higher potency means a lower EC50: the same response at a lower concentration, a curve to the left of B."},
+  {t:"D", correct:false, why:"D plateaus at half the response: a smaller maximal response, not the greater potency that separates the isomers."},
+  {t:"None of the above", correct:false, why:"One curve (C) shows the lower EC50 of a more potent drug."}],
+ teach:"Isomers are mirror images with the same components; how they are oriented can make a drug more or less potent. Levalbuterol is the more potent isomer of racemic albuterol, and higher potency means a lower EC50, so its curve reaches the same response at a lower concentration: to the left of the racemic mixture.",
+ quote:"So, levo albuterol is the more potent isomer of the racemic mixture of albuterol, which has both confirmations of RNS, you know, isomers in it.",
+ reading:[{src:'Katzung 16e, Ch. 2', sec:'Relation Between Drug Dose & Clinical Response — Potency (p. 15 of 18)', t:'Potency refers to the concentration (EC50) required to produce 50% of a drug’s maximal effect; drugs are more potent because of the relative positions of their dose–response curves along the dose axis.'}],
+ cite:"Pharmacodynamics-Day_2_2026s copy.pdf slides ~17, ~58; transcript 9/23"},
+
+{id:"L02-044", lecture:"L02", prof:"Gottlieb", tier:"new", topic:"L02", sub:"gprot", skill:"recall",
+ concept:"g-alpha-effector-messenger", tags:["poll"], source:"both",
+ stem:"Which statement is CORRECT?",
+ options:[
+  {t:"G proteins are defined and regulated by the α subunit", correct:false, why:"True, but not the only true statement."},
+  {t:"Gαs activates adenylate cyclase and increases cyclic AMP", correct:false, why:"True, but not the only true statement."},
+  {t:"Gαq activates phospholipase C and increases IP3 and Ca++", correct:false, why:"True, but not the only true statement."},
+  {t:"Gαi acts on adenylate cyclase and suppresses cyclic AMP", correct:false, why:"True, but not the only true statement."},
+  {t:"All of the above", correct:true, why:"Every statement is correct; when two or more are definitely right, all of the above is the answer."}],
+ teach:"G proteins are defined by the α subunit, and there are three types to know: Gαs (stimulation) increases cAMP through adenylate cyclase, Gαi (inhibition) also acts on adenylate cyclase but suppresses cAMP, and Gαq increases IP3 and Ca++ through phospholipase C.",
+ quote:"G proteins are defined and regulated by the beta subunit, no, by who? The alpha, right?",
+ reading:[{src:'Katzung 16e, Ch. 2', sec:'G Proteins & Second Messengers; Table 2–1 (p. 10–11 of 18)', t:'Gs stimulates adenylyl cyclase, which converts ATP to cAMP, while Gi proteins decrease adenylyl cyclase and lower cAMP. Gq stimulates phospholipase C, which raises IP3, diacylglycerol and cytoplasmic calcium.'}],
+ cite:"Pharmacodynamics-Day_2_2026s copy.pdf slide ~3; transcript 9/23"},
+
+{id:"L02-045", lecture:"L02", prof:"Gottlieb", tier:"new", topic:"L02", sub:"site", skill:"tell",
+ concept:"orthosteric-allosteric-poll", tags:["poll"], source:"both",
+ stem:"Which statement is INCORRECT?",
+ options:[
+  {t:"Covalent bonds are irreversible at body temperature", correct:false, why:"Correct: once a covalent bond forms, the drug is bound unless something else breaks the bond."},
+  {t:"Prazosin and norepinephrine compete for the same binding pocket", correct:false, why:"Correct: both are orthosteric at the α1 receptor, and only one can occupy the pocket at a time."},
+  {t:"Allosteric drugs compete for the orthosteric binding pocket", correct:true, why:"Incorrect: allosteric drugs do not bind or compete for the orthosteric pocket; they bind someplace else on the receptor and change the pocket."},
+  {t:"Van der Waals bonds are weak interactions between atoms brought close together", correct:false, why:"Correct: van der Waals bonds are weak, so the fit in the pocket has to be close for enough of them to form."},
+  {t:"All of the above", correct:false, why:"Only one statement is wrong; the other three are correct."}],
+ teach:"Orthosteric drugs share one binding pocket, so it is one or the other, never both. Allosteric (allotopic) drugs bind a different site and change the orthosteric pocket, affecting the affinity and/or efficacy of the drug in it. Covalent bonds are irreversible at body temperature; van der Waals bonds are weak.",
+ quote:"These drugs do not bind or compete for the orthostatic binding pocket. They bind someplace else on the receptor.",
+ reading:[{src:'Katzung 16e, Ch. 2', sec:'Competitive & Irreversible Antagonists (p. 6 of 18)', t:'Allosteric modulators bind a site separate from the orthosteric site, so they do not compete for the orthosteric pocket. A noncompetitive antagonist often binds irreversibly by forming a covalent bond.'}],
+ cite:"Pharmacodynamics-Day_2_2026s copy.pdf slides ~15–~16, ~18–~20; transcript 9/23"},
+
+{id:"L02-046", lecture:"L02", prof:"Gottlieb", tier:"new", topic:"L02", sub:"class", skill:"tell",
+ concept:"efficacy-definition", tags:["poll"], source:"both",
+ stem:"Efficacy is the ability of a drug to bind and stay bound to a receptor. True or false?",
+ options:[
+  {t:"True", correct:false, why:"The ability to bind and stay bound is affinity, the poll distractor he warned about."},
+  {t:"False", correct:true, why:"Efficacy is the ability of a drug to change the receptor behavior, its state from inactive to active or active to inactive; binding and staying bound is affinity."}],
+ teach:"Two basic concepts: affinity describes the association of the drug with the receptor (how likely it is to bind and stay bound, set by the bonds it forms); efficacy describes the mechanism by which the drug changes the receptor, its state from active to inactive or inactive to active.",
+ quote:"The ability to bind and stay bound, that's affinity. Efficacy is the ability of that drug to change the receptor behavior.",
+ reading:[{src:'Katzung 16e, Ch. 2', sec:'Introduction; Receptor-Effector Coupling & Spare Receptors (p. 4–5 of 18)', t:'Agonists activate the receptor by binding it, whereas antagonists bind but do not activate. Affinity is a separate property that determines the concentration required to form drug–receptor complexes.'}],
+ cite:"Pharmacodynamics-Day_2_2026s copy.pdf slide ~31; transcript 9/23"},
+
+{id:"L02-047", lecture:"L02", prof:"Gottlieb", tier:"new", topic:"L02", sub:"site", skill:"tell",
+ concept:"orthosteric-competition", tags:["poll"], source:"both",
+ stem:"In orthosteric interactions, two drugs can be bound to the same receptor pocket at the same time. True or false?",
+ options:[
+  {t:"True", correct:false, why:"Orthosteric drugs compete for the same pocket; only one body can occupy the same space at the same time."},
+  {t:"False", correct:true, why:"Orthosteric binding is one or the other, never both, like the single seat in a Formula One car; binding both at once is the allosteric case."}],
+ teach:"Orthosteric drugs (norepinephrine, prazosin, phenoxybenzamine at α1) all use the same binding pocket, so it is one or the other and never both. Allosteric drugs bind someplace else, so an allosteric and an orthosteric drug can be bound at the same time, one helping or hindering the other.",
+ quote:"According to the laws of physics, only one body can occupy the same space and time, right? ... So for orthostatic, it can either be one or the other, it can't be both.",
+ reading:[{src:'Katzung 16e, Ch. 2', sec:'Competitive & Irreversible Antagonists (p. 5–6 of 18)', t:'A competitive antagonist and the agonist compete for binding to the receptors. Allosteric modulators instead bind a site separate from the orthosteric site.'}],
+ cite:"Pharmacodynamics-Day_2_2026s copy.pdf slides ~18–~20; transcript 9/23"},
+
+{id:"L02-048", lecture:"L02", prof:"Gottlieb", tier:"new", topic:"L02", sub:"class", skill:"tell",
+ concept:"neutral-antagonist-properties", tags:["poll"], source:"both",
+ stem:"Which statement is INCORRECT?",
+ options:[
+  {t:"The smaller the Kd, the greater the affinity of the drug for the receptor", correct:false, why:"Correct: Kd and affinity are inversely proportional."},
+  {t:"Potency depends on affinity, efficacy and the tissue (site of action)", correct:false, why:"Correct: those are the three determinants of potency."},
+  {t:"EC50 is the concentration that produces 50% of the maximum response", correct:false, why:"Correct: that is the definition of the effective concentration 50."},
+  {t:"A neutral antagonist has negative efficacy", correct:true, why:"Incorrect: a neutral antagonist has no efficacy (ε = zero) and equal affinity for active and inactive receptors; negative efficacy belongs to an inverse agonist."},
+  {t:"All of the above", correct:false, why:"Only one statement is wrong; the other three are correct."}],
+ teach:"Neutral antagonists have affinity but zero efficacy: they occupy receptors and keep them in whatever state they are in. Negative efficacy (shutting off active receptors) is the inverse agonist. Kd is inversely related to affinity; EC50 is the concentration giving 50% of the maximum response; potency depends on affinity, efficacy and tissue.",
+ quote:"they have affinity but zero efficacy. They're neutral You have a switch stuck. You can't change it what it is.",
+ reading:[{src:'Katzung 16e, Ch. 2', sec:'Competitive & Irreversible Antagonists; Relation Between Drug Dose & Clinical Response (p. 5, 15 of 18)', t:'A neutral antagonist binds receptors without activating them and leaves basal receptor activity unchanged, whereas an inverse agonist reduces activity below basal. Potency refers to the concentration (EC50) that produces 50% of a drug’s maximal effect.'}],
+ cite:"Pharmacodynamics-Day_2_2026s copy.pdf slides ~35–~38, ~49, ~52–~54, ~57; transcript 9/23"},
+
+{id:"L02-049", lecture:"L02", prof:"Gottlieb", tier:"new", topic:"L02", sub:"gprot", skill:"recall",
+ concept:"gtp-exchange-dissociation", tags:["poll"], source:"transcript",
+ stem:"Put the G protein pathway (agonist at a Gαs-coupled receptor) into its sequence of steps. Which order is correct?",
+ options:[
+  {t:"Agonist binds → receptor activates → GDP off, GTP on → α separates → AC activated → cAMP made", correct:true, why:"Binding is always the first step; the activated receptor triggers the GDP/GTP exchange, α separates and activates the effector (AC), which makes the second messenger."},
+  {t:"GDP off, GTP on → agonist binds → receptor activates → α separates → AC activated → cAMP made", correct:false, why:"The nucleotide exchange cannot come first; the agonist binding and activating the receptor is what triggers the α subunit to swap GDP for GTP."},
+  {t:"Agonist binds → receptor activates → α separates → GDP off, GTP on → AC activated → cAMP made", correct:false, why:"GDP has to come off and GTP come in before the α subunit separates; the exchange is the trigger for separation."},
+  {t:"Agonist binds → receptor activates → GDP off, GTP on → cAMP made → AC activated → α separates", correct:false, why:"cAMP is made by AC, so AC must be activated first, and α must separate before it can activate AC."}],
+ teach:"Sequence: the agonist binds the receptor, the receptor becomes activated, that triggers the α subunit (s, i or q) to let GDP come off and GTP come in, α dissociates and activates an effector such as AC or PLC, and the effector makes the second messenger (cAMP). Reversal removes the extra phosphate (GTP to GDP) and the drug pops off.",
+ quote:"first step is you have to bind to the receptor ... receptor is going to become activated ... that's the trigger for the alpha S I or Q to change its behavior, which allows the GDP to come off and the GDP [GTP] comes in. So alpha S going to dissociate ... It's going to activate in a factor system ... such as the AC or the PLC.",
+ reading:[{src:'Katzung 16e, Ch. 2', sec:'G Proteins & Second Messengers; Figure 2–10 and Figure 2–11 (p. 10–11 of 18)', t:'Agonist binding reduces the nucleotide affinity of the G protein, so GDP dissociates and GTP replaces it, switching the G protein to its active form, which then regulates the effector enzyme that produces the second messenger.'}],
+ cite:"Day 1 material reviewed in class (no Day 2 slide); transcript 9/23"},
+
+{id:"L02-050", lecture:"L02", prof:"Gottlieb", tier:"new", topic:"L02", sub:"class", skill:"figure",
+ concept:"efficacy-definition", tags:["poll"], source:"both",
+ stem:"Dose–response curves A–D are four different drugs acting on the same receptor. Which of these drugs has the highest efficacy?",
+ graph:{curves:[{label:"A", ec:-1, emax:60}, {label:"B", ec:0, emax:100}, {label:"C", ec:1, emax:30}, {label:"D", ec:0.5, emax:80}],
+        caption:"Four drugs on one receptor; the y-axis is % of the maximal response of the system."},
+ options:[
+  {t:"A", correct:false, why:"A is the most potent (furthest left) but plateaus at 60%: a partial agonist with lower efficacy than B."},
+  {t:"B", correct:true, why:"B produces the greatest response, 100% of the maximum: the full agonist, and efficacy is the size of the signal the drug produces."},
+  {t:"C", correct:false, why:"C produces the smallest response (about 30%), the lowest efficacy of the four."},
+  {t:"D", correct:false, why:"D reaches 80%, positive efficacy but still lower than the full agonist's 100%."}],
+ teach:"Efficacy is the property of the drug that lets it produce the signal seen as the physiological response: a full agonist produces 100% of the response, a partial agonist a smaller one (25, 39, 68%...). The plateau of each curve shows its efficacy; how far left it sits shows potency, a different property.",
+ quote:"my partial agony [full agonist] is creating a signal that is producing 100% of the response as the partial is producing a different signal that only produces, say, 25% of the response or 75 or 39 or 68.",
+ reading:[{src:'Katzung 16e, Ch. 2', sec:'Relation Between Drug Dose & Clinical Response — Maximal efficacy (p. 15 of 18)', t:'The maximal efficacy of a drug is the greatest response it can produce; a partial agonist produces a lower maximal response than a full agonist even at full receptor occupancy.'}],
+ cite:"Pharmacodynamics-Day_2_2026s copy.pdf slides ~32–~34, ~58; transcript 9/23"}
 );
 
 TOPICS.push({id:'L03', name:'Dose–response curves, potency and agonist interactions', prof:'Gottlieb', lecture:'L03',
@@ -1197,8 +1608,10 @@ QUESTIONS.push(
  reading:[{src:'Katzung 16e, Ch. 2', sec:'Concentration-Effect Curves & Receptor Binding of Agonists', t:'Kd is the free drug concentration at which receptor binding is half-maximal. A drug that occupies a larger fraction of receptors at the same free concentration has the smaller Kd and the higher affinity.'}]},
 
 {id:'L03-006', fg:'binding-kd', lecture:'L03', prof:'Gottlieb', tier:'new', topic:'L03', sub:'kd', skill:'figure',
- concept:'binding-curve-affinity-x-axis', tags:[], source:'both',
- stem:'Binding curves (percent of receptors bound vs. log dose) are drawn for drugs A, B and C. Drug C reaches 50% binding at the lowest dose, drug A in the middle, and drug B at a dose 1000-fold higher than C. Which drug has the highest affinity?',
+ concept:'binding-curve-affinity-x-axis', tags:['poll'], source:'both',
+ stem:'Binding curves (percent of receptors bound vs. log dose) are drawn for drugs A, B and C in the same tissue. Which of these drugs has the highest affinity?',
+ graph:{curves:[{label:'C', ec:-2, emax:100}, {label:'A', ec:-0.5, emax:100}, {label:'B', ec:1, emax:100}],
+        y:'% of receptors bound', marks:[{x:-2, label:'Kd C'}, {x:1, label:'Kd B'}], caption:'Binding curves: B needs a 1000-fold higher dose than C to bind 50% of the receptors'},
  options:[
   {t:'Drug C', correct:true, why:'C needs the smallest dose to bind 50% of receptors, so it has the smallest Kd and highest affinity.'},
   {t:'Drug B', correct:false, why:'B is furthest right; it has the largest Kd and the lowest affinity of the three.'},
@@ -1366,8 +1779,10 @@ QUESTIONS.push(
  cite:'Pharmacodynamics-Day_3_2026s.pdf slide ~18; transcript 9/24'},
 
 {id:'L03-019', fg:'potency', lecture:'L03', prof:'Gottlieb', tier:'new', topic:'L03', sub:'drc', skill:'figure',
- concept:'same-emax-leftmost-most-potent', tags:[], source:'both',
- stem:'Drugs A, B and C all reach the same maximal response. Curve A lies furthest left, B in the middle, and C furthest right. Which statement is correct?',
+ concept:'same-emax-leftmost-most-potent', tags:['poll'], source:'both',
+ stem:'Dose–response curves for drugs A, B and C are drawn in the same tissue. Which statement is CORRECT?',
+ graph:{curves:[{label:'A', ec:-1.5, emax:100}, {label:'B', ec:0, emax:100}, {label:'C', ec:1.5, emax:100}],
+        caption:'Three drugs, same maximal response'},
  options:[
   {t:'A is most potent; C has the lowest affinity', correct:true, why:'Equal efficacy, so the leftmost curve (A) has the greatest affinity and potency; C is furthest right.'},
   {t:'A is most efficacious; C is least', correct:false, why:'All three reach the same maximum, so efficacy is equal.'},
@@ -1379,8 +1794,10 @@ QUESTIONS.push(
  reading:[{src:'Katzung 16e, Ch. 2', sec:'Dose & Response in Patients — Potency', t:'Among drugs with equal maximal efficacy, the one whose curve lies further left along the dose axis is more potent, since a lower dose produces 50% of its maximal effect. Potency depends partly on the affinity (Kd) of receptors for the drug.'}]},
 
 {id:'L03-020', fg:'efficacy', lecture:'L03', prof:'Gottlieb', tier:'new', topic:'L03', sub:'drc', skill:'figure',
- concept:'potency-vs-efficacy-mixed', tags:[], source:'both',
- stem:'Drug A reaches the highest maximal response. Drugs B and C reach the same, lower maximal response, and curve C lies to the left of curve B. Which statement is correct?',
+ concept:'potency-vs-efficacy-mixed', tags:['poll'], source:'both',
+ stem:'Dose–response curves for drugs A, B and C are drawn in the same tissue. Which statement is CORRECT?',
+ graph:{curves:[{label:'A', ec:0, emax:100}, {label:'C', ec:-1, emax:60}, {label:'B', ec:1, emax:60}],
+        caption:'If two curves look the same height, they are the same height'},
  options:[
   {t:'C is more potent than B', correct:true, why:'B and C have equal efficacy, and C needs a smaller dose for an equivalent response.'},
   {t:'B is more potent than C', correct:false, why:'B is to the right of C, so it has lower affinity and lower potency.'},
@@ -1405,6 +1822,8 @@ QUESTIONS.push(
 {id:'L03-022', lecture:'L03', prof:'Gottlieb', tier:'new', topic:'L03', sub:'terms', skill:'apply',
  concept:'steep-slope-risk', tags:['poll'], source:'transcript',
  stem:'Drug red has a very steep dose–response curve; drug black reaches the same maximum over a much wider dose range. What is the risk of the drug with the very steep curve?',
+ graph:{curves:[{label:'Red', ec:-1, emax:100, n:4}, {label:'Black', ec:1, emax:100, n:0.5}],
+        caption:'Drug red (steep) and drug black (shallow) reach the same Emax'},
  options:[
   {t:'Small dose change: no effect to maximal effect', correct:true, why:'The steep curve moves from no effect to the maximum over a narrow dose range.'},
   {t:'It works more slowly after it is administered to a patient', correct:false, why:'A dose–response curve measures dose, not speed; the professor stressed it is not about time.'},
@@ -1442,8 +1861,10 @@ QUESTIONS.push(
  reading:[{src:'Katzung 16e, Ch. 2', sec:'Dose & Response in Patients — Potency; Quantal Dose-Effect Curves', t:'Relative potency is the ratio of equi-effective doses. If the ED50 values of two drugs are 5 mg and 500 mg, the first is 100 times more potent than the second: the larger ED50 divided by the smaller.'}]},
 
 {id:'L03-025', fg:'partial', lecture:'L03', prof:'Gottlieb', tier:'new', topic:'L03', sub:'terms', skill:'figure', multi:true,
- concept:'four-drug-potency-efficacy', tags:['exam-cue'], source:'transcript',
- stem:'Four drugs are tested in the same tissue. Curves A and C plateau below 100%; curves B and D both plateau at 100%. Curve A requires the smallest dose to produce an equivalent effect. Which statements are correct? Select all that apply.',
+ concept:'four-drug-potency-efficacy', tags:['poll','exam-cue'], source:'transcript',
+ stem:'Four drugs, A–D, are tested in the same tissue of the same animal and their dose–response curves are drawn. Which statements are correct? Select all that apply.',
+ graph:{curves:[{label:'A', ec:-2, emax:60}, {label:'B', ec:-0.5, emax:100}, {label:'C', ec:0.5, emax:40}, {label:'D', ec:1.5, emax:100}],
+        caption:'Four drugs in the same tissue'},
  options:[
   {t:'A is the most potent', correct:true, why:'A requires the smallest dose to produce the equivalent effect.'},
   {t:'B and D are the most efficacious', correct:true, why:'Both reach the same maximal effect, just at different doses.'},
@@ -1457,7 +1878,9 @@ QUESTIONS.push(
 
 {id:'L03-026', fg:'potency', lecture:'L03', prof:'Gottlieb', tier:'new', topic:'L03', sub:'terms', skill:'figure', multi:true,
  concept:'five-drug-classification', tags:['poll','exam-cue'], source:'transcript',
- stem:'Five drugs, A–E, are plotted as dose–response curves on one graph. Curve A lies furthest left. Drug B plateaus at 100% of the maximal response; drugs A, C, D and E plateau lower, with D lowest. Which statements are correct? Select all that apply.',
+ stem:'Five dose–response curves, A–E, of five different drugs are plotted on one graph. Which statements are correct? Select all that apply.',
+ graph:{curves:[{label:'A', ec:-2, emax:70}, {label:'B', ec:-0.5, emax:100}, {label:'C', ec:0.5, emax:60}, {label:'D', ec:1, emax:25}, {label:'E', ec:1.5, emax:45}],
+        caption:'Five different drugs, one tissue'},
  options:[
   {t:'A has the highest affinity', correct:true, why:'A is furthest left, so it has the smallest Kd and the highest affinity.'},
   {t:'B has the highest efficacy', correct:true, why:'B reaches the highest maximum (100%).'},
@@ -1473,7 +1896,9 @@ QUESTIONS.push(
 
 {id:'L03-027', lecture:'L03', prof:'Gottlieb', tier:'new', topic:'L03', sub:'terms', skill:'apply',
  concept:'most-efficacious-for-bacteria', tags:['poll'], source:'transcript',
- stem:'Drug A reaches a partial maximal effect at low doses. Drug B requires a higher dose but reaches 100% of the maximal effect. Which drug is most likely to kill 100% of a bacterial colony?',
+ stem:'Dose–response curves for drugs A and B, tested against the same bacterial colony, are drawn. Which of these drugs is most likely to kill 100% of the bacterial colony?',
+ graph:{curves:[{label:'A', ec:-1.5, emax:60}, {label:'B', ec:0.5, emax:100}], y:'% of colony killed',
+        caption:'Two antibacterial drugs, same colony'},
  options:[
   {t:'Drug B', correct:true, why:'B is the most efficacious; it reaches 100%.'},
   {t:'Drug A', correct:false, why:'A is more potent but cannot reach 100%, leaving bacteria behind.'},
@@ -1485,8 +1910,10 @@ QUESTIONS.push(
  reading:[{src:'Katzung 16e, Ch. 2', sec:'Dose & Response in Patients — Maximal efficacy', t:'Maximal efficacy is the limit of the dose-response relation on the response axis and is crucial when a large response is needed. A more potent drug with lower maximal efficacy cannot match that response at any dose.'}]},
 
 {id:'L03-028', fg:'efficacy', lecture:'L03', prof:'Gottlieb', tier:'new', topic:'L03', sub:'terms', skill:'figure',
- concept:'equal-ec50-efficacy-tiebreak', tags:['exam-cue'], source:'both',
- stem:'Drugs A and B act in the same tissue with equal affinity and equal EC50 (concentration producing 50% of the maximal response). Drug A reaches a higher maximal response than B. Why is A more potent than B?',
+ concept:'equal-ec50-efficacy-tiebreak', tags:['poll','exam-cue'], source:'both',
+ stem:'Drugs A and B act in the same tissue and have equal affinity for the receptor; their dose–response curves are drawn. Why would A be more potent than B?',
+ graph:{curves:[{label:'A', ec:0, emax:100}, {label:'B', ec:0, emax:50}], marks:[{x:0, label:'EC50 A = EC50 B'}],
+        caption:'Same tissue, same affinity'},
  options:[
   {t:'It has greater efficacy', correct:true, why:'With tissue and affinity held constant, efficacy is the only difference.'},
   {t:'It has greater affinity', correct:false, why:'Affinity is stated to be equal.'},
@@ -1540,7 +1967,9 @@ QUESTIONS.push(
 
 {id:'L03-032', lecture:'L03', prof:'Gottlieb', tier:'new', topic:'L03', sub:'fafa', skill:'figure', multi:true,
  concept:'fa-plus-fa', tags:[], source:'slide',
- stem:'Drug B, a full agonist, is given as a pretreatment, and a concentration–response curve (CRC) for drug A, a full agonist at the same receptor, is then built. Which changes to A’s curve occur? Select all that apply.',
+ stem:'The dotted line is the concentration–response curve (CRC) of drug A, a full agonist, alone. The solid line is the CRC of drug A after pretreatment with drug B, a full agonist at the same receptor. Which changes to A’s curve occur? Select all that apply.',
+ graph:{curves:[{label:'A alone', ec:0, emax:100, base:0, dashed:true}, {label:'A + B', ec:-1, emax:100, base:30}],
+        x:'log [A]', caption:'Drug A alone (dotted) and after pretreatment with full agonist B (solid)'},
  options:[
   {t:'Shift to the left', correct:true, why:'The apparent affinity of A increases.'},
   {t:'Increased baseline', correct:true, why:'Receptor activity is raised before A is added.'},
@@ -1587,7 +2016,199 @@ QUESTIONS.push(
   {t:'Its intrinsic activity value of exactly 1', correct:false, why:'A partial agonist has intrinsic activity between 0 and 1.'}],
  teach:'A partial agonist can behave like an agonist or an antagonist depending on the physiological state (dual nature). The deck illustrates this with varenicline during smoking (nicotine present) and withdrawal.',
  cite:'Pharmacodynamics-Day_3_2026s.pdf slides ~63–~65',
- reading:[{src:'Katzung 16e, Ch. 2', sec:'Variation in Drug Responsiveness — Variation in Concentration of an Endogenous Receptor Ligand; Partial Agonists', t:'A partial agonist may exhibit dramatically different responses depending on the amount of endogenous agonist present. Whether it acts as an agonist or as an antagonist depends on the physiological state of the subject, specifically the level of full agonist it competes with.'}]}
+ reading:[{src:'Katzung 16e, Ch. 2', sec:'Variation in Drug Responsiveness — Variation in Concentration of an Endogenous Receptor Ligand; Partial Agonists', t:'A partial agonist may exhibit dramatically different responses depending on the amount of endogenous agonist present. Whether it acts as an agonist or as an antagonist depends on the physiological state of the subject, specifically the level of full agonist it competes with.'}]},
+
+{id:'L03-036', fg:'potency', lecture:'L03', prof:'Gottlieb', tier:'new', topic:'L03', sub:'terms', skill:'figure',
+ concept:'five-drug-classification', tags:['poll','exam-cue'], source:'transcript',
+ stem:'Five dose–response curves, A–E, of five different drugs are drawn on one graph. Which of these drugs has the highest affinity?',
+ graph:{curves:[{label:'D', ec:-2, emax:70}, {label:'C', ec:-0.5, emax:100}, {label:'E', ec:0.5, emax:55}, {label:'A', ec:1, emax:25}, {label:'B', ec:1.5, emax:45}],
+        caption:'Five different drugs, one tissue'},
+ options:[
+  {t:'Drug D', correct:true, why:'D is furthest left, so it needs the smallest dose for an equivalent effect; the smallest Kd is furthest to the left.'},
+  {t:'Drug C', correct:false, why:'C reaches the highest maximum (efficacy, y-axis), but it lies to the right of D on the x-axis.'},
+  {t:'Drug A', correct:false, why:'A is far to the right and has one of the lowest plateaus; a low curve does not mean high affinity.'},
+  {t:'Drug B', correct:false, why:'B is furthest right, so it has the lowest affinity.'},
+  {t:'Drug E', correct:false, why:'E lies to the right of both D and C.'}],
+ teach:'Affinity is read left–right on the x-axis: the curve furthest left has the smallest Kd and the highest affinity, whether or not it reaches 100%. A partial agonist can have the highest affinity in the figure. Efficacy is a separate reading, up–down on the y-axis.',
+ quote:'The smallest KD is gonna be further to the left.',
+ cite:'transcript 9/24 (in-class poll; figure not in deck text)',
+ reading:[{src:'Katzung 16e, Ch. 2', sec:'Partial Agonists; Dose & Response in Patients', t:'Partial agonists produce a lower response at full receptor occupancy than full agonists, and this is not due to decreased affinity for the receptor. A curve can lie furthest left, indicating the highest affinity, while plateauing below the full agonist.'}]},
+
+{id:'L03-037', fg:'efficacy', lecture:'L03', prof:'Gottlieb', tier:'new', topic:'L03', sub:'terms', skill:'figure',
+ concept:'five-drug-classification', tags:['poll','exam-cue'], source:'transcript',
+ stem:'Five dose–response curves, A–E, of five different drugs are drawn on one graph. Which of these drugs has the highest efficacy?',
+ graph:{curves:[{label:'B', ec:-2, emax:70}, {label:'E', ec:-0.5, emax:100}, {label:'A', ec:0.5, emax:55}, {label:'D', ec:1, emax:25}, {label:'C', ec:1.5, emax:45}],
+        caption:'Five different drugs, one tissue'},
+ options:[
+  {t:'Drug E', correct:true, why:'E reaches the highest maximal response (100%); efficacy is read up–down on the y-axis.'},
+  {t:'Drug B', correct:false, why:'B is furthest left (highest affinity) but plateaus below 100%, so it is not the most efficacious.'},
+  {t:'Drug A', correct:false, why:'A plateaus at about half of the maximal response.'},
+  {t:'Drug D', correct:false, why:'D has the lowest plateau, so it has the lowest efficacy.'},
+  {t:'Drug C', correct:false, why:'C plateaus well below 100%.'}],
+ teach:'Efficacy is read on the y-axis: the curve with the highest plateau has the highest efficacy, and the curve with the lowest plateau has the lowest. The curve furthest left has the highest affinity, which is a different reading. Only the curve that reaches 100% is a full agonist.',
+ quote:'Which has the lowest efficacy, D as in David, B as in boy for the highest, D for the lowest, right?',
+ cite:'transcript 9/24 (in-class poll follow-up; figure not in deck text)',
+ reading:[{src:'Katzung 16e, Ch. 2', sec:'Dose & Response in Patients — Maximal efficacy', t:'Maximal efficacy is the limit of the dose-response relation on the response axis. It is read from the height of the curve, not from its position along the dose axis.'}]},
+
+{id:'L03-038', fg:'partial', lecture:'L03', prof:'Gottlieb', tier:'new', topic:'L03', sub:'terms', skill:'figure', multi:true,
+ concept:'five-drug-classification', tags:['poll'], source:'transcript',
+ stem:'Five dose–response curves, A–E, of five different drugs are drawn on one graph. Which of these drugs are partial agonists? Select all that apply.',
+ graph:{curves:[{label:'C', ec:-2, emax:70}, {label:'A', ec:-0.5, emax:100}, {label:'E', ec:0.5, emax:55}, {label:'B', ec:1, emax:25}, {label:'D', ec:1.5, emax:45}],
+        caption:'Five different drugs, one tissue'},
+ options:[
+  {t:'Drug C', correct:true, why:'C is furthest left but plateaus below 100%, so it is a partial agonist with high affinity.'},
+  {t:'Drug E', correct:true, why:'E plateaus at about half of the maximal response.'},
+  {t:'Drug B', correct:true, why:'B has the lowest plateau; it is still a partial agonist.'},
+  {t:'Drug D', correct:true, why:'D plateaus well below 100%.'},
+  {t:'Drug A', correct:false, why:'A reaches 100% of the maximal response, so it is the full agonist.'}],
+ teach:'A full agonist reaches 100% of the maximal response. Any curve that plateaus below 100% is a partial agonist, no matter how far left it lies. In the five-drug figure, one drug reaches 100% (the full agonist) and the other four are partial agonists.',
+ quote:'Which of these drugs is the full agonist? B, which you are partial. A, C, D, and E. If you can’t get your 100%, you’re not a full agonist, right?',
+ cite:'transcript 9/24 (in-class poll follow-up; figure not in deck text)',
+ reading:[{src:'Katzung 16e, Ch. 2', sec:'Partial Agonists', t:'Partial agonists produce a lower response, at full receptor occupancy, than do full agonists. Many drugs used clinically as antagonists are in fact weak partial agonists.'}]},
+
+{id:'L03-039', fg:'potency', lecture:'L03', prof:'Gottlieb', tier:'new', topic:'L03', sub:'terms', skill:'figure',
+ concept:'five-drug-classification', tags:['poll'], source:'transcript',
+ stem:'Five dose–response curves, A–E, of five different drugs are drawn on one graph. Which statement is CORRECT?',
+ graph:{curves:[{label:'E', ec:-2, emax:70}, {label:'B', ec:-0.5, emax:100}, {label:'A', ec:0.5, emax:55}, {label:'D', ec:1, emax:25}, {label:'C', ec:1.5, emax:45}],
+        caption:'Five different drugs, one tissue'},
+ options:[
+  {t:'E has the highest affinity', correct:false, why:'This is correct (E is furthest left), but it is not the only correct statement.'},
+  {t:'B is the only full agonist', correct:false, why:'This is correct (only B reaches 100%), but it is not the only correct statement.'},
+  {t:'D has the lowest efficacy', correct:false, why:'This is correct (D has the lowest plateau), but it is not the only correct statement.'},
+  {t:'All of the above', correct:true, why:'Affinity is read left–right (E), efficacy up–down (D lowest), and only the curve reaching 100% is the full agonist (B).'}],
+ teach:'Three readings from one figure: affinity from the x-axis (furthest left = highest affinity), efficacy from the y-axis (highest plateau = highest efficacy, lowest plateau = lowest), and full vs. partial agonist from whether the curve reaches 100%. When every statement checks out, the answer is all of the above.',
+ cite:'transcript 9/24 (in-class poll and follow-ups; figure not in deck text)'},
+
+{id:'L03-042', fg:'spare', lecture:'L03', prof:'Gottlieb', tier:'new', topic:'L03', sub:'kd', skill:'figure',
+ concept:'receptor-number-potency', tags:['poll'], source:'both',
+ stem:'Two isolated hearts sit in identical baths (same pH, temperature and flow). The dotted line (B) is the dose–response curve of norepinephrine on a heart with 10 receptors. Which curve best represents norepinephrine on a heart with 100 receptors?',
+ graph:{curves:[{label:'B', ec:0, emax:100, dashed:true}, {label:'C', ec:-1, emax:100}, {label:'A', ec:1, emax:100}, {label:'D', ec:0, emax:50}],
+        caption:'Dotted line: norepinephrine on the heart with 10 receptors'},
+ options:[
+  {t:'A', correct:false, why:'A is shifted to the right, which would mean norepinephrine became less potent; more receptors make it more potent.'},
+  {t:'B', correct:false, why:'B is the point of reference; the potency does change, so the curve does not stay put.'},
+  {t:'C', correct:true, why:'More receptors raise the probability of binding, so less norepinephrine is needed: the curve shifts to the left with no change in maximal response.'},
+  {t:'D', correct:false, why:'D lowers the maximal response; the drug and its efficacy are unchanged, only the tissue changed.'},
+  {t:'None of the above', correct:false, why:'One curve, the left-shifted one, matches the change.'}],
+ teach:'By the law of mass action, more receptors mean a greater probability of binding, so fewer norepinephrine molecules are needed to bind the same number of receptors. Norepinephrine appears more potent, and on a graph its curve shifts to the left. The drug’s Kd, affinity and efficacy are unchanged; the tissue changed.',
+ quote:'Then it’s going to appear to have a greater potency than it does with less receptors. … if that was a graph, right, would that shift to the left? Correct.',
+ cite:'Pharmacodynamics-Day_3_2026s.pdf slide ~7; transcript 9/24 (in-class poll)',
+ reading:[{src:'Katzung 16e, Ch. 2', sec:'Receptor-Effector Coupling & Spare Receptors', t:'The sensitivity of a tissue to a given agonist concentration depends not only on the receptor’s affinity (Kd) but also on the total number of receptors present. With ten times more receptors, a much lower agonist concentration produces the same half-maximal response.'}]},
+
+{id:'L03-043', fg:'potency', lecture:'L03', prof:'Gottlieb', tier:'new', topic:'L03', sub:'kd', skill:'figure',
+ concept:'transporter-blocker-increases-apparent-potency', tags:['poll'], source:'transcript',
+ stem:'The dotted line (C) is the dose–response curve of norepinephrine alone. Drug X inhibits the transporter that removes norepinephrine from the neuronal synapse. Which curve best represents norepinephrine in the presence of drug X?',
+ graph:{curves:[{label:'C', ec:0, emax:100, dashed:true}, {label:'D', ec:-1, emax:100}, {label:'A', ec:1, emax:100}, {label:'B', ec:0, emax:50}],
+        caption:'Dotted line: norepinephrine alone'},
+ options:[
+  {t:'A', correct:false, why:'A is shifted to the right, which would mean norepinephrine became less potent; blocking its removal makes it more potent.'},
+  {t:'B', correct:false, why:'B lowers the maximal response; drug X does not touch the norepinephrine receptor, so the effect norepinephrine can produce is unchanged.'},
+  {t:'C', correct:false, why:'C is norepinephrine alone; the transporter blocker changes how much norepinephrine is available, so the curve moves.'},
+  {t:'D', correct:true, why:'More norepinephrine stays in the synapse longer, so less of it is needed to produce its effect: it appears more potent, and a more potent drug lies further to the left.'},
+  {t:'None of the above', correct:false, why:'The left-shifted curve matches the increase in apparent potency.'}],
+ teach:'A drug that blocks the transporter removing norepinephrine is an indirect antagonist acting upstream of the receptor. It leaves more norepinephrine in the synapse for longer, so less is required to bind the receptors and produce the effect: norepinephrine appears more potent. The smaller the EC50, the further left the curve.',
+ quote:'So it’s going to make norepinephrine appear to be more potent because it’s going to require less of it to bind the receptors to produce its effects, right?',
+ cite:'transcript 9/24 (in-class poll; no matching slide text in Pharmacodynamics-Day_3_2026s.pdf)',
+ reading:[{src:'Katzung 16e, Ch. 2', sec:'Dose & Response in Patients — Potency', t:'Potency refers to the concentration or dose required to produce 50% of a drug’s maximal effect, so a drug that needs less to produce the same effect has its curve further left along the dose axis.'}]},
+
+{id:'L03-044', fg:'partial', lecture:'L03', prof:'Gottlieb', tier:'new', topic:'L03', sub:'terms', skill:'figure',
+ concept:'four-drug-potency-efficacy', tags:['poll','exam-cue'], source:'transcript',
+ stem:'Four drugs, A–D, are tested in the same tissue of the same animal and their dose–response curves are drawn. Which of these drugs is the most potent?',
+ graph:{curves:[{label:'C', ec:-2, emax:60}, {label:'A', ec:-0.5, emax:100}, {label:'B', ec:0.5, emax:40}, {label:'D', ec:1.5, emax:100}],
+        caption:'Four drugs in the same tissue'},
+ options:[
+  {t:'Drug C', correct:true, why:'C requires the smallest dose to produce an equivalent effect, so it is the most potent even though it never reaches 100%.'},
+  {t:'Drug A', correct:false, why:'A reaches 100% but needs a larger dose than C for an equivalent effect; it is more efficacious, not more potent.'},
+  {t:'Drug B', correct:false, why:'B is a partial agonist that lies to the right of C.'},
+  {t:'Drug D', correct:false, why:'D reaches 100% but needs the largest dose of all; it is the least potent.'}],
+ teach:'With the tissue held constant, potency is compared at equivalent effects, so the curve needing the smallest dose is the most potent. Since two of the drugs never reach 100%, the comparison cannot be made at 100%; it is made at an effect all of them can produce. The most potent drug here is a partial agonist.',
+ quote:'Which of these four drugs is the most potent? … A, right? Because it requires the smallest dose to produce the equivalent.',
+ cite:'transcript 9/24 (figure not in deck text)',
+ reading:[{src:'Katzung 16e, Ch. 2', sec:'Dose & Response in Patients — Potency', t:'A partial agonist can be the most potent drug if its EC50 is the smallest, while drugs reaching the highest maximum share the greatest maximal efficacy.'}]},
+
+{id:'L03-045', fg:'efficacy', lecture:'L03', prof:'Gottlieb', tier:'new', topic:'L03', sub:'terms', skill:'figure', multi:true,
+ concept:'four-drug-potency-efficacy', tags:['poll'], source:'transcript',
+ stem:'Four drugs, A–D, are tested in the same tissue of the same animal and their dose–response curves are drawn. Which of these drugs are the most efficacious? Select all that apply.',
+ graph:{curves:[{label:'A', ec:-2, emax:60}, {label:'B', ec:-0.5, emax:100}, {label:'D', ec:0.5, emax:40}, {label:'C', ec:1.5, emax:100}],
+        caption:'Four drugs in the same tissue'},
+ options:[
+  {t:'Drug B', correct:true, why:'B reaches 100% of the maximal response.'},
+  {t:'Drug C', correct:true, why:'C also reaches 100%; it just needs a larger dose than B to get there.'},
+  {t:'Drug A', correct:false, why:'A is the most potent (furthest left) but plateaus at about 60%.'},
+  {t:'Drug D', correct:false, why:'D plateaus at about 40%, the lowest efficacy in the figure.'}],
+ teach:'Efficacy is the maximal effect, read on the y-axis. Two curves that both reach 100% are equally efficacious; they differ only in the dose needed to get there, which is potency. The most potent drug in the figure is a partial agonist and is not among the most efficacious.',
+ quote:'Now which of these is the most efficacious? Now we can say B and D, right? Because they both produce the same effect, they just require different doses to do that.',
+ cite:'transcript 9/24 (figure not in deck text)',
+ reading:[{src:'Katzung 16e, Ch. 2', sec:'Dose & Response in Patients — Potency; Maximal efficacy', t:'Potency is a position along the dose axis and maximal efficacy is a limit on the response axis. Two curves of the same height share the same maximal efficacy whatever their potency.'}]},
+
+{id:'L03-046', fg:'efficacy', lecture:'L03', prof:'Gottlieb', tier:'new', topic:'L03', sub:'terms', skill:'figure',
+ concept:'most-efficacious-for-bacteria', tags:['poll'], source:'transcript',
+ stem:'Four antibacterial drugs, A–D, are tested against the same bacterial colony and their dose–response curves are drawn. Which of these drugs is most likely to kill 100% of the bacterial colony?',
+ graph:{curves:[{label:'A', ec:-2, emax:50}, {label:'B', ec:-1, emax:75}, {label:'C', ec:0.5, emax:100}, {label:'D', ec:1, emax:30}],
+        y:'% of colony killed', caption:'Four drugs, same colony'},
+ options:[
+  {t:'Drug C', correct:true, why:'C is the only curve that reaches 100%; it is the most efficacious drug for this job.'},
+  {t:'Drug A', correct:false, why:'A is the most potent but plateaus at 50%, leaving half the colony behind to grow again.'},
+  {t:'Drug B', correct:false, why:'B plateaus at 75%; the bacteria left behind can come back resistant.'},
+  {t:'Drug D', correct:false, why:'D has the lowest maximal effect of the four.'}],
+ teach:'When the goal is a complete effect, such as killing all of the bacteria, choose the most efficacious drug, the one whose curve reaches 100%. Bacteria left behind by a more potent but less efficacious drug can grow again and come back resistant. When only a partial effect is needed, the most efficacious drug may not be necessary.',
+ quote:'Hopefully you pick B because B will kill 100% of the bacteria colon is the most efficacious in doing that job. Why would I take any of the other ones and leave some bacteria behind to grow again?',
+ cite:'transcript 9/24 (in-class poll; figure not in deck text)',
+ reading:[{src:'Katzung 16e, Ch. 2', sec:'Dose & Response in Patients — Maximal efficacy', t:'Maximal efficacy is crucial when a large response is needed. A more potent drug with lower maximal efficacy cannot match that response at any dose.'}]},
+
+{id:'L03-047', lecture:'L03', prof:'Gottlieb', tier:'new', topic:'L03', sub:'kd', skill:'recall',
+ concept:'kd-inverse-affinity', tags:['poll'], source:'both',
+ stem:'Which statement is CORRECT about the dissociation constant (Kd) and affinity?',
+ options:[
+  {t:'The smaller the Kd, the greater the affinity', correct:false, why:'This is correct (Kd and affinity are inversely proportional), but it is not the only correct statement.'},
+  {t:'Kd is the dose that binds 50% of the receptors', correct:false, why:'This is correct (Kd is read on the x-axis of a binding curve), but it is not the only correct statement.'},
+  {t:'A drug that forms a covalent bond at body temperature has the smallest Kd', correct:false, why:'This is correct (irreversible binding gives the highest affinity and the smallest Kd), but it is not the only correct statement.'},
+  {t:'All of the above', correct:true, why:'All three statements follow from Kd = [R][A]/[AR]: more complex, smaller Kd, greater affinity; Kd is found at 50% binding; a covalent bond cannot be broken, so that drug has the highest affinity.'}],
+ teach:'Kd = [R][A]/[AR]: the more drug–receptor complex, the smaller the Kd and the greater the affinity. On a binding curve, Kd is the dose that binds 50% of the receptors, read on the x-axis. A covalent bond at body temperature is irreversible, so that drug has the highest affinity and the smallest Kd.',
+ quote:'As long as you know that the smaller KD is, the greater the affinity is gonna be.',
+ cite:'Pharmacodynamics-Day_3_2026s.pdf slides ~3, ~31; transcript 9/24',
+ reading:[{src:'Katzung 16e, Ch. 2', sec:'Concentration-Effect Curves & Receptor Binding of Agonists', t:'Kd is the concentration of free drug at which receptor binding is half-maximal. It characterizes affinity reciprocally: a low Kd means high binding affinity, and vice versa.'}]},
+
+{id:'L03-048', lecture:'L03', prof:'Gottlieb', tier:'new', topic:'L03', sub:'terms', skill:'tell',
+ concept:'potency-vs-efficacy-mixed', tags:['poll'], source:'both',
+ stem:'Which statement is INCORRECT about potency and efficacy?',
+ options:[
+  {t:'The smaller the EC50, the greater the potency', correct:false, why:'This is correct: EC50/ED50 and potency are inversely proportional.'},
+  {t:'Potency is determined by affinity, efficacy and the tissue', correct:false, why:'This is correct: the triad of affinity, efficacy and the tissue (for example, number of receptors) defines potency.'},
+  {t:'The most potent drug is always the most efficacious', correct:true, why:'This is incorrect: a partial agonist can be the most potent drug in a figure while never reaching 100%; potency and efficacy are different readings.'},
+  {t:'Efficacy is read on the y-axis of a dose–response curve', correct:false, why:'This is correct: efficacy is read up–down; affinity is read left–right.'},
+  {t:'All of the above', correct:false, why:'Only one statement is incorrect.'}],
+ teach:'Potency is the smallest EC50/ED50 (x-axis position combined with efficacy and the tissue); efficacy is the maximal response (y-axis). The two are not the same: the most potent drug can be a partial agonist that never reaches 100%, and the most efficacious drug can need the largest dose.',
+ quote:'Affinity is gonna be on the bottom, efficacy is gonna be on the Y axis, and potency is gonna be a combination of the two.',
+ cite:'Pharmacodynamics-Day_3_2026s.pdf slides ~7, ~22, ~27; transcript 9/24',
+ reading:[{src:'Katzung 16e, Ch. 2', sec:'Dose & Response in Patients — Potency; Maximal efficacy', t:'Potency refers to the concentration or dose required to produce 50% of a drug’s maximal effect, and is distinct from maximal efficacy, the limit of the dose-response relation on the response axis.'}]},
+
+{id:'L03-049', lecture:'L03', prof:'Gottlieb', tier:'new', topic:'L03', sub:'kd', skill:'recall',
+ concept:'potency-triad', tags:['poll'], source:'both',
+ stem:'Potency of a drug is determined only by its affinity and its efficacy. True or false?',
+ options:[
+  {t:'True', correct:false, why:'Affinity and efficacy are two of the three factors; the tissue is the third.'},
+  {t:'False', correct:true, why:'Potency is defined by the triad of affinity, efficacy and the tissue (for example, the number of receptors); two hearts with different receptor numbers give norepinephrine different potencies.'}],
+ teach:'Potency is a combination of affinity, efficacy and the cell, tissue, organ or organism the drug acts on, such as its number of receptors. The same drug, with the same Kd and efficacy, is more potent in a tissue with more receptors.',
+ quote:'Potency is going to be defined by the triad over here, affinity, efficacy, and in the tissue, right? The combination of the three is going to make a drug more or less potent.',
+ cite:'Pharmacodynamics-Day_3_2026s.pdf slide ~7; transcript 9/24',
+ reading:[{src:'Katzung 16e, Ch. 2', sec:'Dose & Response in Patients — Potency; Receptor-Effector Coupling & Spare Receptors', t:'Potency depends partly on the affinity (Kd) of receptors for the drug and partly on how efficiently the drug-receptor interaction is coupled to response. Tissue sensitivity also depends on the total number of receptors present.'}]},
+
+{id:'L03-050', lecture:'L03', prof:'Gottlieb', tier:'new', topic:'L03', sub:'terms', skill:'figure',
+ concept:'steep-slope-risk', tags:['poll'], source:'transcript',
+ stem:'Drugs A and B reach the same maximal response; their dose–response curves are drawn. Which statement is INCORRECT?',
+ graph:{curves:[{label:'A', ec:1, emax:100, n:0.5}, {label:'B', ec:-1, emax:100, n:4}],
+        caption:'Two drugs, same Emax, different slopes'},
+ options:[
+  {t:'A small change in the dose of B moves the response from none to maximal', correct:false, why:'This is correct: a steep curve goes from no effect to the maximum over a narrow dose range.'},
+  {t:'A gives a wider range of doses before its maximal effect is reached', correct:false, why:'This is correct: a shallow curve needs a much wider range of doses before Emax.'},
+  {t:'B produces its effect faster than A after it is given', correct:true, why:'This is incorrect: a dose–response curve measures dose, not speed or time.'},
+  {t:'A and B are equally efficacious', correct:false, why:'This is correct: both reach the same maximal response.'},
+  {t:'All of the above', correct:false, why:'Only one statement is incorrect.'}],
+ teach:'The slope is the linear mid-section of the curve. A steep curve takes the response from no effect to maximal over a small dose range, which is the risk of that drug; a shallow curve offers a greater range of doses before the maximum or a toxic effect. Slope says nothing about speed: the curve is dose vs. effect, not time.',
+ quote:'So remember, we’re not measuring speed, right? … It’s a dose effect response. So it’s not about the speed, it’s about the dose range that I’m gonna give.',
+ cite:'transcript 9/24 (in-class poll; slide ~21 "Slope")',
+ reading:[{src:'Katzung 16e, Ch. 2', sec:'Dose & Response in Patients — Shape of Dose-Response Curves', t:'Extremely steep dose-response curves may have important clinical consequences if the upper portion of the curve represents an undesirable extent of response. The concern is how large a response a small increase in dose can produce.'}]}
 );
 
 TOPICS.push({id:'L04', name:'Drug–receptor interactions I: two-state model, inverse agonists, allosterics, antagonists', prof:'Gottlieb', lecture:'L04',
@@ -1627,8 +2248,9 @@ QUESTIONS.push(
  cite:'transcript 9/28; Pharmacodynamics-Day_3_2026s.pdf slides ~37–~40'},
 
 {id:'L04-003', fg:'partial', lecture:'L04', prof:'Gottlieb', tier:'new', topic:'L04', sub:'recap', skill:'figure', multi:true,
- concept:'partial-agonist-range', tags:[], source:'transcript',
- stem:'Five drugs at the same receptor reach these maximal effects on their own: drug A 80%, drug B 75%, drug C 25%, drug D 5% and drug E 100%. Which are partial agonists? Select all that apply.',
+ concept:'partial-agonist-range', tags:['poll'], source:'transcript',
+ stem:'Five drugs at the same receptor are plotted as dose–response curves, A–E, each given on its own. Which of these drugs are partial agonists? Select all that apply.',
+ graph:{curves:[{label:'A', ec:-1.2, emax:80}, {label:'B', ec:0.2, emax:75}, {label:'C', ec:-0.4, emax:25}, {label:'D', ec:0.6, emax:5}, {label:'E', ec:-0.5, emax:100}], base:0, x:'log dose', y:'% of maximal response'},
  options:[
   {t:'Drug A (80%)', correct:true, why:'Any effect between 1% and 99% is a partial agonist; 80% is close to the top but not 100%.'},
   {t:'Drug B (75%)', correct:true, why:'75% lies between 1% and 99%.'},
@@ -1642,19 +2264,21 @@ QUESTIONS.push(
 
 {id:'L04-004', fg:'drc-basic', lecture:'L04', prof:'Gottlieb', tier:'new', topic:'L04', sub:'recap', skill:'figure',
  concept:'fa-plus-fa', tags:[], source:'transcript',
- stem:'Norepinephrine and Levophed (synthetic norepinephrine) are full agonists at the same receptor. A pretreatment dose of Levophed that by itself produces 40% of the maximal effect is given, then a norepinephrine dose–response curve is built. How does norepinephrine’s curve change?',
+ stem:'Norepinephrine and Levophed (synthetic norepinephrine) are full agonists at the same receptor. The dotted line is norepinephrine alone. A pretreatment dose of Levophed that by itself produces 40% of the maximal effect is given, then the norepinephrine dose–response curve is rebuilt. Which solid curve shows the result?',
+ graph:{curves:[{label:'NE', ec:0, emax:100, dashed:true}, {label:'A', ec:-1, emax:100, base:40}, {label:'B', ec:1, emax:100}, {label:'C', ec:-1, emax:60, base:40}, {label:'D', ec:1, emax:100, base:40}], base:0, x:'log dose norepinephrine', y:'% of maximal response'},
  options:[
-  {t:'Starts at 40%, shifts left, still reaches 100%', correct:true, why:'Levophed has already activated enough receptors for 40%, norepinephrine needs fewer receptors of its own (shift left), and both drugs reach the same Emax.'},
-  {t:'Starts at 0%, shifts right, still reaches 100%', correct:false, why:'A second full agonist helps; a right shift belongs to drugs that compete against the agonist.'},
-  {t:'Starts at 40%, shifts left, plateaus at 60%', correct:false, why:'Emax does not change: the heart cannot beat faster than its maximum whether one or two full agonists are present.'},
-  {t:'Starts at 0%, no shift, reaches 100%', correct:false, why:'A dose that already produces 40% raises the starting point, and the shared work shifts the curve left.'}],
+  {t:'A: starts at 40%, shifts left, still reaches 100%', correct:true, why:'Levophed has already activated enough receptors for 40%, norepinephrine needs fewer receptors of its own (shift left), and both drugs reach the same Emax.'},
+  {t:'B: starts at 0%, shifts right, still reaches 100%', correct:false, why:'A second full agonist helps; a right shift belongs to drugs that compete against the agonist.'},
+  {t:'C: starts at 40%, shifts left, plateaus at 60%', correct:false, why:'Emax does not change: the heart cannot beat faster than its maximum whether one or two full agonists are present.'},
+  {t:'D: starts at 40%, shifts right, reaches 100%', correct:false, why:'The raised starting point is right, but a right shift means norepinephrine was made less potent; a second full agonist shares the work and shifts the curve left.'}],
  teach:'A full agonist in the presence of another full agonist: the second drug activates some receptors on the first drug’s behalf, so the first drug appears more potent (shift left, apparent affinity increased); a pretreatment dose that already produces an effect raises the baseline; and Emax is unchanged since both are reversible and both want the same maximal effect.',
  quote:'now norepinephrine still goes to 100%, but it’s further to the left and the baseline has going up, right? Because levofed has efficacy, positive efficacy.',
  cite:'transcript 9/28; Pharmacodynamics-Day_3_2026s.pdf slides ~42–~49'},
 
 {id:'L04-005', fg:'potency', lecture:'L04', prof:'Gottlieb', tier:'new', topic:'L04', sub:'recap', skill:'figure',
  concept:'fa-plus-fa', tags:['poll'], source:'both',
- stem:'Dose–response curve B is norepinephrine binding to the β1 receptor alone. Curve A lies to the left of B with the same maximum; the remaining curves lie to the right of B or below it. Which curve best represents norepinephrine in the presence of epinephrine?',
+ stem:'If DRC B is the DRC of norepinephrine binding to the β1 receptor alone, which DRC best represents the DRC of norepinephrine in the presence of epinephrine?',
+ graph:{curves:[{label:'A', ec:-1, emax:100}, {label:'B', ec:0, emax:100}, {label:'C', ec:1, emax:100}, {label:'D', ec:1, emax:50}], base:0, x:'log dose norepinephrine', y:'% of maximal response'},
  options:[
   {t:'A', correct:true, why:'Norepinephrine and epinephrine are both full agonists at β1; each makes the other appear more potent, so the curve moves left.'},
   {t:'B', correct:false, why:'B is the point of reference (norepinephrine alone); a second full agonist changes the curve.'},
@@ -1744,7 +2368,8 @@ QUESTIONS.push(
 
 {id:'L04-012', fg:'inverse', lecture:'L04', prof:'Gottlieb', tier:'new', topic:'L04', sub:'ia', skill:'figure', multi:true,
  concept:'fa-plus-inverse-agonist', tags:['histamine','loratadine'], source:'both',
- stem:'Histamine (full agonist) dose–response curves are built in a system with 50% of receptors active, first alone and then after increasing pretreatment doses of loratadine (Claritin), an inverse agonist. Which changes appear in histamine’s curve? Select all that apply.',
+ stem:'Histamine (full agonist) dose–response curves are built in a system with 50% of receptors active, first alone (dotted line) and then after increasing pretreatment doses of loratadine (Claritin), an inverse agonist. Which changes appear in histamine’s curve? Select all that apply.',
+ graph:{curves:[{label:'H', ec:-0.5, emax:100, dashed:true}, {label:'+L', ec:0.5, emax:100, base:25}, {label:'+10L', ec:1.5, emax:100, base:3}], base:50, x:'log dose histamine', y:'% of maximal response'},
  options:[
   {t:'Baseline decreases', correct:true, why:'Each loratadine dose shuts off more of the receptors that were active on their own, lowering the starting point toward 0%.'},
   {t:'Shift to the right', correct:true, why:'Histamine must reach a higher concentration to outcompete loratadine, so it appears less potent.'},
@@ -1795,7 +2420,8 @@ QUESTIONS.push(
 
 {id:'L04-016', fg:'classes', lecture:'L04', prof:'Gottlieb', tier:'new', topic:'L04', sub:'ia', skill:'figure',
  concept:'five-curve-e-loratadine', tags:['poll','loratadine'], source:'both',
- stem:'Five dose–response curves (A–E) of five different drugs are drawn in a system with an elevated baseline. Curve E starts at the baseline and falls to 0% as the dose increases. Curve E most likely represents the curve of which drug?',
+ stem:'The DRCs below represent the individual DRCs of five different drugs. DRC E most likely represents the DRC of:',
+ graph:{curves:[{label:'A', ec:-1, emax:100}, {label:'B', ec:0.6, emax:100}, {label:'C', ec:0, emax:75}, {label:'D', ec:0, emax:50}, {label:'E', ec:0, emax:0}], base:50, x:'log dose', y:'% of maximal response'},
  options:[
   {t:'Loratadine', correct:true, why:'A curve that brings the baseline to 0% is an inverse agonist, and loratadine is the inverse agonist on the drug list.'},
   {t:'Norepinephrine', correct:false, why:'Norepinephrine is a full agonist; its curve rises to 100%.'},
@@ -1820,7 +2446,8 @@ QUESTIONS.push(
 
 {id:'L04-018', fg:'potency', lecture:'L04', prof:'Gottlieb', tier:'new', topic:'L04', sub:'allo', skill:'figure',
  concept:'allosteric-agonist-affinity-only', tags:['poll'], source:'both',
- stem:'Dose–response curve B is a full agonist alone. Curve A lies to the left of B with the same maximum, D lies to the right with the same maximum, and C and E have a lower maximum. Which curve best represents agonist B in the presence of an allosteric agonist that affects only the affinity?',
+ stem:'If DRC B is the DRC of an agonist alone, which curve would best represent agonist B in the presence of an allosteric agonist that affects only the affinity?',
+ graph:{curves:[{label:'A', ec:-1.2, emax:100}, {label:'B', ec:0, emax:100}, {label:'C', ec:-0.6, emax:60}, {label:'D', ec:1.2, emax:100}, {label:'E', ec:1, emax:45}], base:0, x:'log dose', y:'% of maximal response'},
  options:[
   {t:'A', correct:true, why:'An allosteric agonist helps, so the curve moves left; affinity-only means the maximal response is untouched.'},
   {t:'B', correct:false, why:'B is the point of reference; an allosteric agonist changes the agonist’s curve.'},
@@ -1833,19 +2460,21 @@ QUESTIONS.push(
 
 {id:'L04-019', fg:'efficacy', lecture:'L04', prof:'Gottlieb', tier:'new', topic:'L04', sub:'allo', skill:'figure',
  concept:'allosteric-agonist-efficacy-only', tags:[], source:'both',
- stem:'Drug A alone plateaus at 60% (a partial agonist). An allosteric agonist that affects only the efficacy of drug A is added. How does A’s curve change?',
+ stem:'The dotted line is drug A alone, which plateaus at 60% (a partial agonist). An allosteric agonist that affects only the efficacy of drug A is added. Which solid curve shows the result?',
+ graph:{curves:[{label:'A', ec:0, emax:60, dashed:true}, {label:'W', ec:0, emax:100}, {label:'X', ec:-1.2, emax:60}, {label:'Y', ec:1.2, emax:35}, {label:'Z', ec:-1.2, emax:100}], base:0, x:'log dose drug A', y:'% of maximal response'},
  options:[
-  {t:'Rises to a higher maximum with no shift left or right', correct:true, why:'Efficacy is read on the y-axis: the partial agonist now behaves like a full agonist, while its EC50 position is unchanged.'},
-  {t:'Shifts left with the same 60% maximum', correct:false, why:'A pure left shift is an affinity effect, not an efficacy effect.'},
-  {t:'Shifts right with a lower maximum', correct:false, why:'A right shift plus lower maximum is an allosteric antagonist affecting both affinity and efficacy.'},
-  {t:'Shifts left and also rises to a higher maximum than before', correct:false, why:'Both changes together mean affinity and efficacy were affected; the stem says efficacy only.'}],
+  {t:'W: rises to a higher maximum with no shift left or right', correct:true, why:'Efficacy is read on the y-axis: the partial agonist now behaves like a full agonist, while its EC50 position is unchanged.'},
+  {t:'X: shifts left with the same 60% maximum', correct:false, why:'A pure left shift is an affinity effect, not an efficacy effect.'},
+  {t:'Y: shifts right with a lower maximum', correct:false, why:'A right shift plus lower maximum is an allosteric antagonist affecting both affinity and efficacy.'},
+  {t:'Z: shifts left and also rises to a higher maximum than before', correct:false, why:'Both changes together mean affinity and efficacy were affected; the stem says efficacy only.'}],
  teach:'An allosteric agonist affecting efficacy only does not move the curve left or right; it moves it up, so a partial agonist can be converted into a full agonist. Affecting affinity only shifts the curve left. Affecting both shifts left and raises the maximum. A full agonist already at 100% cannot show an efficacy effect, so only the affinity shift is visible.',
  quote:'I have that drug in the presence of an allosteric agonist that affects efficacy only now it’s not moving left or right, it’s moving what up ... It went from being a partial agonist to a full agonist, right?',
  cite:'Pharmacodynamics-Day_4_-_5_2026s_pptx.pdf slides ~27–~29; transcript 9/28'},
 
 {id:'L04-020', lecture:'L04', prof:'Gottlieb', tier:'new', topic:'L04', sub:'allo', skill:'figure', multi:true,
  concept:'allosteric-characteristics', tags:[], source:'both',
- stem:'A full agonist’s curve is rebuilt after each of several increasing doses of an allosteric agonist. Which features are seen? Select all that apply.',
+ stem:'A full agonist’s curve (dotted line) is rebuilt after each of several increasing doses of an allosteric agonist (solid lines, 1×, 10× and 100×). Which features are seen? Select all that apply.',
+ graph:{curves:[{label:'alone', ec:0.6, emax:100, dashed:true}, {label:'1×', ec:-0.3, emax:100}, {label:'10×', ec:-1.1, emax:100}, {label:'100×', ec:-1.7, emax:100}], base:0, x:'log dose agonist', y:'% of maximal response'},
  options:[
   {t:'Shifts to the left', correct:true, why:'The allosteric agonist increases the agonist’s affinity, so it appears more potent.'},
   {t:'Shifts of unequal size', correct:true, why:'Binding at the allosteric site is non-competitive and does not depend on the agonist, so each dose occupies an unpredictable fraction; the shifts are asymmetrical.'},
@@ -1896,7 +2525,8 @@ QUESTIONS.push(
 
 {id:'L04-024', fg:'efficacy', lecture:'L04', prof:'Gottlieb', tier:'new', topic:'L04', sub:'allo', skill:'figure',
  concept:'allosteric-antagonist-effects', tags:['poll'], source:'both',
- stem:'Dose–response curve D is a full agonist alone. Curve E lies to the right of D with a lower maximum; curve C lies to the left of D with a lower maximum; A and B lie to the left with the same maximum. Which curve best represents agonist D in the presence of an allosteric antagonist that affects both the affinity and the efficacy of D?',
+ stem:'If DRC D is the DRC of an agonist alone, which curve would best represent agonist D in the presence of an allosteric antagonist that affects the affinity and efficacy of D?',
+ graph:{curves:[{label:'A', ec:-1.6, emax:100}, {label:'B', ec:-0.8, emax:100}, {label:'C', ec:-1, emax:55}, {label:'D', ec:0, emax:100}, {label:'E', ec:1.1, emax:55}], base:0, x:'log dose', y:'% of maximal response'},
  options:[
   {t:'E', correct:true, why:'Lower affinity shifts the curve right and lower efficacy brings the maximum down.'},
   {t:'C', correct:false, why:'C moves left (affinity improved) but drops the maximum (efficacy reduced); no drug does that.'},
@@ -1935,7 +2565,8 @@ QUESTIONS.push(
 
 {id:'L04-027', fg:'competitive', lecture:'L04', prof:'Gottlieb', tier:'new', topic:'L04', sub:'comp', skill:'figure', multi:true,
  concept:'competitive-antagonist-shift', tags:[], source:'both',
- stem:'Drug A is a full agonist and drug B is a competitive antagonist at the same receptor. A’s curve is rebuilt after increasing doses of B. Which statements describe the result? Select all that apply.',
+ stem:'Drug A is a full agonist and drug B is a competitive antagonist at the same receptor. A’s curve (dotted line) is rebuilt after increasing doses of B (solid lines). Which statements describe the result? Select all that apply.',
+ graph:{curves:[{label:'A', ec:-1.5, emax:100, dashed:true}, {label:'+B', ec:-0.5, emax:100}, {label:'+10B', ec:0.5, emax:100}, {label:'+100B', ec:1.5, emax:100}], base:0, x:'log dose drug A', y:'% of maximal response'},
  options:[
   {t:'Shift to the right', correct:true, why:'A must reach a higher concentration to outcompete B for the receptors, so its ED50 rises and it appears less potent.'},
   {t:'No change to the baseline', correct:true, why:'B is neutral: it has no efficacy, so it neither raises nor lowers the starting point.'},
@@ -1976,7 +2607,8 @@ QUESTIONS.push(
 
 {id:'L04-030', fg:'irreversible', lecture:'L04', prof:'Gottlieb', tier:'new', topic:'L04', sub:'irrev', skill:'figure',
  concept:'irreversible-antagonist-curve', tags:[], source:'both',
- stem:'A full agonist’s curve is rebuilt after increasing doses of an irreversible antagonist. Which set of changes is seen?',
+ stem:'A full agonist’s curve (dotted line) is rebuilt after increasing doses of an irreversible antagonist (solid lines). Which set of changes is seen?',
+ graph:{curves:[{label:'alone', ec:-1.5, emax:100, dashed:true}, {label:'1×', ec:-0.5, emax:100}, {label:'10×', ec:0.4, emax:65}, {label:'100×', ec:1, emax:25}], base:0, x:'log dose agonist', y:'% of maximal response'},
  options:[
   {t:'Shift right, Emax falls, baseline unchanged', correct:true, why:'Fewer receptors remain, so a higher agonist dose is needed and the maximum drops, eventually to zero; the neutral antagonist does not move the baseline.'},
   {t:'Shift right, Emax unchanged, baseline unchanged', correct:false, why:'An unchanged Emax is the competitive antagonist; an irreversible one is not outcompeted.'},
@@ -2003,7 +2635,8 @@ QUESTIONS.push(
 
 {id:'L04-032', fg:'competitive', lecture:'L04', prof:'Gottlieb', tier:'new', topic:'L04', sub:'comp', skill:'figure',
  concept:'dotted-line-drug-x-competitive', tags:['poll'], source:'both',
- stem:'The dotted line represents the dose–response curve of an agonist alone and the solid lines represent the curve of the agonist in the presence of increasing doses of drug "X." The solid lines are shifted to the right with no change in the baseline or the maximal response. Drug X is most likely:',
+ stem:'The dotted line represents the DRC of the agonist alone and the solid lines represent the DRC of the agonist in the presence of increasing doses of drug "X." Drug X is most likely:',
+ graph:{curves:[{label:'alone', ec:-1.5, emax:100, dashed:true}, {label:'X', ec:-0.5, emax:100}, {label:'10X', ec:0.5, emax:100}, {label:'100X', ec:1.5, emax:100}], base:0, x:'log dose agonist', y:'% of maximal response'},
  options:[
   {t:'A competitive antagonist', correct:true, why:'Right shift with the baseline and the Emax unchanged is the competitive antagonist’s signature.'},
   {t:'A full agonist', correct:false, why:'A full agonist would help and move the curve to the left.'},
@@ -2017,7 +2650,8 @@ QUESTIONS.push(
 
 {id:'L04-033', fg:'competitive', lecture:'L04', prof:'Gottlieb', tier:'new', topic:'L04', sub:'comp', skill:'apply',
  concept:'drug-x-metoprolol', tags:['poll','metoprolol'], source:'both',
- stem:'The dotted line represents the dose–response curve of norepinephrine alone and the solid lines represent the curve of norepinephrine in the presence of increasing doses of drug "X." The solid lines are shifted to the right with no change to the baseline or the maximal response. Drug X is most likely:',
+ stem:'The dotted line represents the DRC of norepinephrine alone and the solid lines represent the DRC of norepinephrine in the presence of increasing doses of drug "X." Drug X is most likely:',
+ graph:{curves:[{label:'NE', ec:-1.5, emax:100, dashed:true}, {label:'X', ec:-0.5, emax:100}, {label:'10X', ec:0.5, emax:100}, {label:'100X', ec:1.5, emax:100}], base:0, x:'log dose norepinephrine', y:'% of maximal response'},
  options:[
   {t:'Metoprolol', correct:true, why:'The figure shows a competitive, reversible, surmountable antagonist, and metoprolol is the β1 competitive antagonist on the drug list.'},
   {t:'Epinephrine', correct:false, why:'Epinephrine is a full agonist and would shift norepinephrine to the left.'},
@@ -2052,7 +2686,218 @@ QUESTIONS.push(
   {t:'An irreversible antagonist', correct:false, why:'It removes receptors, so more agonist is needed and the maximum falls.'}],
  teach:'Before looking at any figure, ask whether the second drug helps the agonist or makes its life more difficult. Helpers (another full agonist, an allosteric agonist) make the agonist appear more potent: shift to the left. Drugs that compete or block (competitive antagonist, inverse agonist, irreversible antagonist, allosteric antagonist affecting affinity) make it appear less potent: shift to the right. That one question eliminates most of the options.',
  quote:'would you assume that this other drug is gonna help or is gonna make the life more difficult for your agonist? And that should allow you to eliminate a lot of the answers.',
- cite:'transcript 9/28; Pharmacodynamics-Day_4_-_5_2026s_pptx.pdf slides ~3, ~22, ~42, ~50'}
+ cite:'transcript 9/28; Pharmacodynamics-Day_4_-_5_2026s_pptx.pdf slides ~3, ~22, ~42, ~50'},
+
+{id:'L04-036', fg:'competitive', lecture:'L04', prof:'Gottlieb', tier:'new', topic:'L04', sub:'comp', skill:'figure',
+ concept:'competitive-antagonist-shift', tags:['poll','metoprolol'], source:'both',
+ stem:'If DRC B is the DRC of norepinephrine binding to the β1 receptor alone, which DRC best represents the DRC of norepinephrine in the presence of metoprolol?',
+ graph:{curves:[{label:'A', ec:-1, emax:100}, {label:'B', ec:0, emax:100}, {label:'C', ec:1, emax:55}, {label:'D', ec:1, emax:100}], base:0, x:'log dose norepinephrine', y:'% of maximal response'},
+ options:[
+  {t:'A', correct:false, why:'A moved left: norepinephrine was helped. Metoprolol competes for the β1 receptor, so it makes norepinephrine’s life harder, not easier.'},
+  {t:'B', correct:false, why:'B is the point of reference (norepinephrine alone); an antagonist that competes for the same receptor changes the curve.'},
+  {t:'C', correct:false, why:'C lost its maximum. Metoprolol is reversible, so enough norepinephrine outcompetes it and Emax is unchanged; only an irreversible or efficacy-lowering allosteric antagonist drops the Emax.'},
+  {t:'D', correct:true, why:'Metoprolol is a competitive, reversible β1 antagonist: shift to the right (norepinephrine appears less potent), no change to the baseline and no change to the Emax.'},
+  {t:'None of the above', correct:false, why:'D shows exactly the competitive antagonist’s signature: right shift, same baseline, same maximum.'}],
+ teach:'First ask whether metoprolol helps norepinephrine or makes its life more difficult: it competes for the β1 receptor, so the curves to the left are out. Then apply the competitive antagonist rule: shift to the right, no change to the baseline (no efficacy), no change to Emax (reversible, so norepinephrine can outcompete it). A lower maximum would need an irreversible antagonist.',
+ quote:'One is competitive antagonist, also known as reversible antagonists, also known as surmountable antagonists, different names for the same drug. They bind and they come off.',
+ cite:'Pharmacodynamics-Day_4_-_5_2026s_pptx.pdf slides ~3, ~45–~50, ~55; transcript 9/28',
+ reading:[{src:'Katzung 16e, Ch. 2', sec:'Competitive & Irreversible Antagonists', t:'A competitive antagonist increases the agonist concentration required for a given response, shifting the agonist curve to the right, while the Emax for the agonist stays the same at any fixed antagonist concentration.'}]},
+
+{id:'L04-037', fg:'irreversible', lecture:'L04', prof:'Gottlieb', tier:'new', topic:'L04', sub:'irrev', skill:'figure',
+ concept:'irreversible-antagonist-curve', tags:['poll','phenoxybenzamine'], source:'both',
+ stem:'If DRC B is the DRC of norepinephrine alone, which DRC best represents the DRC of norepinephrine in the presence of phenoxybenzamine?',
+ graph:{curves:[{label:'A', ec:-1, emax:100}, {label:'B', ec:0, emax:100}, {label:'C', ec:1, emax:55}, {label:'D', ec:1, emax:100}], base:0, x:'log dose norepinephrine', y:'% of maximal response'},
+ options:[
+  {t:'A', correct:false, why:'A moved left, which means norepinephrine was helped; an antagonist makes its life more difficult.'},
+  {t:'B', correct:false, why:'B is the point of reference (norepinephrine alone); an antagonist that removes receptors changes the curve.'},
+  {t:'C', correct:true, why:'Phenoxybenzamine is the only irreversible antagonist on the drug list: covalent bonds remove receptors from the pool, so the curve shifts right and the Emax falls.'},
+  {t:'D', correct:false, why:'D keeps its maximum, which is the competitive (reversible) antagonist; norepinephrine cannot outcompete a drug that never comes off.'},
+  {t:'None of the above', correct:false, why:'C shows the irreversible antagonist’s two changes: shift to the right and a lower Emax.'}],
+ teach:'Phenoxybenzamine forms covalent bonds that cannot be reversed under normal metabolic function, so the receptors it occupies are gone. Norepinephrine needs a higher dose for the receptors that remain (shift right) and, once too few remain, cannot reach the maximal response (Emax falls). Anything that lowers the Emax has to be an irreversible antagonist or an allosteric antagonist affecting efficacy.',
+ quote:'If you see something that it lowers the Emacs, you know that has to be either an irreversible antagonist or an allosteric antagonist that affects efficacy, right? Those are the only two that can affect the Emacs.',
+ cite:'Pharmacodynamics-Day_4_-_5_2026s_pptx.pdf slides ~3, ~51–~55; transcript 9/28',
+ reading:[{src:'Katzung 16e, Ch. 2', sec:'Competitive & Irreversible Antagonists', t:'After an irreversible antagonist occupies some proportion of receptors, the number of unoccupied receptors may be too low for the agonist, even at high concentrations, to produce the previous maximal response.'}]},
+
+{id:'L04-038', fg:'potency', lecture:'L04', prof:'Gottlieb', tier:'new', topic:'L04', sub:'allo', skill:'figure',
+ concept:'allosteric-agonist-affinity-only', tags:['poll'], source:'both',
+ stem:'If DRC C is the DRC of norepinephrine binding to the β1 receptor alone, which DRC best represents the DRC of norepinephrine in the presence of an allosteric agonist that affects only the affinity?',
+ graph:{curves:[{label:'A', ec:1, emax:100}, {label:'B', ec:-1, emax:60}, {label:'C', ec:0, emax:100}, {label:'D', ec:-1, emax:100}], base:0, x:'log dose norepinephrine', y:'% of maximal response'},
+ options:[
+  {t:'A', correct:false, why:'A moved to the right, so norepinephrine was made less potent; that is an allosteric antagonist affecting affinity, not an agonist.'},
+  {t:'B', correct:false, why:'B moved left but lost its maximum, so efficacy was affected; the stem says affinity only, and no drug raises affinity while lowering efficacy.'},
+  {t:'C', correct:false, why:'C is the point of reference (norepinephrine alone); an allosteric agonist changes the curve.'},
+  {t:'D', correct:true, why:'An allosteric agonist helps: it makes the pocket easier to bind, so norepinephrine appears more potent (shift left) and, affinity only, the Emax is untouched.'},
+  {t:'None of the above', correct:false, why:'D shows the affinity-only allosteric agonist: shift to the left with the same maximum.'}],
+ teach:'Same poll, different point of reference. An allosteric agonist binds someplace else on the receptor and helps the agonist, so only curves to the left are possible. Affinity only means the ability to produce the effect is untouched: the maximum does not move. A curve whose maximum changed (B) involves efficacy; a curve to the right (A) means the agonist was made less potent.',
+ quote:'Help, which means you’re gonna make the drug more potent, right? And it because it only affects affinity, you’re not affecting the ability to produce its effect, is moving to the left.',
+ cite:'Pharmacodynamics-Day_4_-_5_2026s_pptx.pdf slides ~26, ~42; transcript 9/28'},
+
+{id:'L04-039', fg:'classes', lecture:'L04', prof:'Gottlieb', tier:'new', topic:'L04', sub:'comp', skill:'figure',
+ concept:'competitive-antagonist-neutral-alone', tags:['poll','metoprolol'], source:'both',
+ stem:'The DRCs below represent the individual DRCs of five different drugs given on their own to a system in which half the receptors are active. DRC C most likely represents the DRC of:',
+ graph:{curves:[{label:'A', ec:-1, emax:100}, {label:'B', ec:0, emax:0}, {label:'C', ec:0, emax:50}, {label:'D', ec:0.4, emax:100}, {label:'E', ec:0.6, emax:80}], base:50, x:'log dose', y:'% of maximal response'},
+ options:[
+  {t:'Loratadine', correct:false, why:'Loratadine is the inverse agonist; alone it brings a raised baseline down to 0%, which is curve B, not C.'},
+  {t:'Metoprolol', correct:true, why:'A flat line at the baseline is a drug with affinity but no efficacy: the neutral competitive antagonist. Metoprolol is the competitive antagonist on the list.'},
+  {t:'Epinephrine', correct:false, why:'Epinephrine is a full agonist; alone it rises from the baseline to 100%.'},
+  {t:'Albuterol', correct:false, why:'Albuterol is a partial agonist; alone it rises from the 50% baseline toward its own plateau below 100%.'}],
+ teach:'Two steps: classify curve C, then match the class to the drug list. A competitive antagonist has equal affinity for active and inactive receptors and does not evoke a change, so alone it leaves the balance where it found it: 50 stays 50. Full and partial agonists go up from the baseline; an inverse agonist goes down to 0%. Metoprolol is the competitive antagonist.',
+ quote:'they don’t care what the receptor is, active or inactive, they hang out with both types. They don’t discriminate as such, they don’t change the balance of the receptor activity.',
+ cite:'Pharmacodynamics-Day_4_-_5_2026s_pptx.pdf slides ~24, ~43–~44; transcript 9/28',
+ reading:[{src:'Katzung 16e, Ch. 2', sec:'Competitive & Irreversible Antagonists', t:'Receptor antagonists bind to receptors but do not activate them; their primary action is to reduce the effects of agonists that normally activate the receptor.'}]},
+
+{id:'L04-040', fg:'partial', lecture:'L04', prof:'Gottlieb', tier:'new', topic:'L04', sub:'recap', skill:'figure',
+ concept:'partial-agonist-table', tags:['poll','albuterol'], source:'both',
+ stem:'The DRCs below represent the individual DRCs of five different drugs. DRC B most likely represents the DRC of:',
+ graph:{curves:[{label:'A', ec:0, emax:100}, {label:'B', ec:0.3, emax:60}, {label:'C', ec:-1, emax:100}, {label:'D', ec:0, emax:0}, {label:'E', ec:1, emax:100}], base:0, x:'log dose', y:'% of maximal response'},
+ options:[
+  {t:'Norepinephrine', correct:false, why:'Norepinephrine is a full agonist and would reach 100%, like A, C or E.'},
+  {t:'Loratadine', correct:false, why:'Loratadine is the inverse agonist; with the baseline already at 0% it gives a flat line at zero, like D.'},
+  {t:'Albuterol', correct:true, why:'A curve that rises but plateaus between 1% and 99% is a partial agonist, and albuterol is the partial agonist on the drug list.'},
+  {t:'Metoprolol', correct:false, why:'Metoprolol has no efficacy; alone it gives a flat line at the baseline, like D.'},
+  {t:'Epinephrine', correct:false, why:'Epinephrine is a full agonist and would reach 100%.'}],
+ teach:'Classify first, then match. Curve B produces a positive effect but plateaus at 60%, which makes it a partial agonist (any maximum from 1% to 99%). On the drug list the partial agonist is albuterol, which opens the airways just enough for an asthma patient without opening them 100%. Full agonists reach 100%; drugs with no positive efficacy stay flat at a 0% baseline.',
+ quote:'If your patient has asthma, albuterol, which is a partial agonist, is going to open up your airways just enough for you to breathe better in and out. You don’t have to open your lungs 100%.',
+ cite:'Pharmacodynamics-Day_4_-_5_2026s_pptx.pdf slides ~3, ~24; transcript 9/28',
+ reading:[{src:'Katzung 16e, Ch. 2', sec:'Partial Agonists', t:'Partial agonists produce a lower response at full receptor occupancy than full agonists do.'}]},
+
+{id:'L04-041', fg:'irreversible', lecture:'L04', prof:'Gottlieb', tier:'new', topic:'L04', sub:'irrev', skill:'figure',
+ concept:'irreversible-antagonist-curve', tags:['poll'], source:'both',
+ stem:'The dotted line represents the DRC of the agonist alone and the solid lines represent the DRC of the agonist in the presence of increasing doses of drug "X." Drug X is most likely:',
+ graph:{curves:[{label:'alone', ec:-1.5, emax:100, dashed:true}, {label:'X', ec:-0.5, emax:100}, {label:'10X', ec:0.4, emax:65}, {label:'100X', ec:1, emax:25}], base:0, x:'log dose agonist', y:'% of maximal response'},
+ options:[
+  {t:'A full agonist', correct:false, why:'A full agonist would help and move the curve to the left.'},
+  {t:'A partial agonist', correct:false, why:'A partial agonist has efficacy and would raise the baseline; here the baseline never moves.'},
+  {t:'A competitive (reversible) antagonist', correct:false, why:'A competitive antagonist shifts right but is reversible, so the Emax would be unchanged; here the maximum keeps falling.'},
+  {t:'An irreversible antagonist', correct:true, why:'Shift to the right, no change to the baseline and an Emax that falls with each dose: fewer receptors remain, so the agonist cannot outcompete it.'},
+  {t:'An allosteric agonist', correct:false, why:'An allosteric agonist would help the agonist and shift it to the left.'}],
+ teach:'Process of elimination. Helpers (full agonist, allosteric agonist) move the curve left, so they are out. A partial agonist would change the baseline. That leaves the two antagonists that shift right; only one lowers the Emax. Anything that lowers the Emax has to be an irreversible antagonist or an allosteric antagonist affecting efficacy, and only the irreversible one can abolish the response completely.',
+ quote:'What could this be, uh, irreversible? It’s not changing, right? The Emacs is staying the same, so the best answer here is what? ... If you see something that it lowers the Emacs, you know that has to be either an irreversible antagonist or an allosteric antagonist that affects efficacy.',
+ cite:'Pharmacodynamics-Day_4_-_5_2026s_pptx.pdf slides ~53–~55; transcript 9/28',
+ reading:[{src:'Katzung 16e, Ch. 2', sec:'Competitive & Irreversible Antagonists', t:'An irreversible antagonist reduces the maximal effect the agonist can achieve, and high agonist concentrations cannot overcome it.'}]},
+
+{id:'L04-042', fg:'irreversible', lecture:'L04', prof:'Gottlieb', tier:'new', topic:'L04', sub:'irrev', skill:'figure',
+ concept:'drug-x-phenoxybenzamine', tags:['poll','phenoxybenzamine'], source:'both',
+ stem:'The dotted line represents the DRC of norepinephrine alone and the solid lines represent the DRC of norepinephrine in the presence of increasing doses of drug "X." Drug X is most likely:',
+ graph:{curves:[{label:'NE', ec:-1.5, emax:100, dashed:true}, {label:'X', ec:-0.5, emax:100}, {label:'10X', ec:0.4, emax:65}, {label:'100X', ec:1, emax:25}], base:0, x:'log dose norepinephrine', y:'% of maximal response'},
+ options:[
+  {t:'Epinephrine (adrenaline)', correct:false, why:'Epinephrine is a full agonist and would shift norepinephrine to the left.'},
+  {t:'Albuterol', correct:false, why:'Albuterol is the partial agonist; it has efficacy and would change the baseline.'},
+  {t:'Phenoxybenzamine', correct:true, why:'The figure shows an irreversible antagonist (shift right, falling Emax), and phenoxybenzamine is the only irreversible antagonist on the drug list.'},
+  {t:'Metoprolol', correct:false, why:'Metoprolol is a competitive, reversible antagonist: it would shift the curve right without lowering the Emax.'},
+  {t:'Diazepam', correct:false, why:'Diazepam is the allosteric agonist on the list and would help norepinephrine, shifting it left.'}],
+ teach:'Same figure, now with drug names. First read the class: right shift with a falling Emax is an irreversible antagonist. Then match the list: epinephrine is a full agonist, albuterol the partial agonist, metoprolol the competitive reversible surmountable antagonist, diazepam the allosteric agonist, and phenoxybenzamine the only irreversible antagonist on the list.',
+ quote:'Fenoxbenzammine is the only irreversible that is on your list, and diazepam is your allosteric agonist.',
+ cite:'Pharmacodynamics-Day_4_-_5_2026s_pptx.pdf slides ~53–~55; transcript 9/28'},
+
+{id:'L04-043', fg:'drc-basic', lecture:'L04', prof:'Gottlieb', tier:'new', topic:'L04', sub:'recap', skill:'figure',
+ concept:'fa-plus-fa', tags:['poll'], source:'both',
+ stem:'The dotted line represents the DRC of norepinephrine alone and the solid lines represent the DRC of norepinephrine in the presence of increasing doses of drug "X." Drug X is most likely:',
+ graph:{curves:[{label:'NE', ec:0, emax:100, dashed:true}, {label:'X', ec:-0.7, emax:100, base:20}, {label:'10X', ec:-1.4, emax:100, base:45}, {label:'100X', ec:-2.1, emax:100, base:70}], base:0, x:'log dose norepinephrine', y:'% of maximal response'},
+ options:[
+  {t:'Epinephrine', correct:true, why:'Two full agonists at the same receptor help each other: each dose of epinephrine activates receptors on norepinephrine’s behalf, raising the baseline and shifting the curve left with the same Emax.'},
+  {t:'Albuterol', correct:false, why:'Albuterol is a partial agonist; a partial agonist can only bring the response to its own efficacy, so the curves would not all finish at 100% from wherever they start.'},
+  {t:'Phenoxybenzamine', correct:false, why:'Phenoxybenzamine is the irreversible antagonist; it would shift the curve right and lower the Emax.'},
+  {t:'Metoprolol', correct:false, why:'Metoprolol competes for the receptor and would shift the curve to the right with no change to the baseline.'},
+  {t:'Loratadine', correct:false, why:'Loratadine is the inverse agonist; it would shift the curve right and bring the baseline down, not up.'}],
+ teach:'A drug that shifts the agonist to the left is a helper. Because drug X has positive efficacy of its own, each pretreatment dose also raises the starting point, and because both drugs are full agonists at the same receptor every curve still reaches 100%. On the drug list the full agonist is epinephrine: norepinephrine makes epinephrine more potent and epinephrine makes norepinephrine more potent.',
+ quote:'now norepinephrine still goes to 100%, but it’s further to the left and the baseline has going up, right? Because levofed has efficacy, positive efficacy.',
+ cite:'Pharmacodynamics-Day_4_-_5_2026s_pptx.pdf slides ~3, ~55; Pharmacodynamics-Day_3_2026s.pdf slides ~42–~49; transcript 9/28'},
+
+{id:'L04-044', fg:'inverse', lecture:'L04', prof:'Gottlieb', tier:'new', topic:'L04', sub:'ia', skill:'figure',
+ concept:'fa-plus-inverse-agonist', tags:['poll','histamine','loratadine'], source:'both',
+ stem:'The dotted line represents the DRC of histamine alone in a system in which half the receptors are active, and the solid lines represent the DRC of histamine in the presence of increasing doses of drug "X." Drug X is most likely:',
+ graph:{curves:[{label:'H', ec:-0.5, emax:100, dashed:true}, {label:'X', ec:0.3, emax:100, base:25}, {label:'10X', ec:1, emax:100, base:8}, {label:'100X', ec:1.7, emax:100, base:1}], base:50, x:'log dose histamine', y:'% of maximal response'},
+ options:[
+  {t:'Epinephrine', correct:false, why:'Epinephrine is a full agonist; a helper would raise the baseline and shift the curve left.'},
+  {t:'Albuterol', correct:false, why:'Albuterol is a partial agonist with positive efficacy; it cannot bring a baseline down toward 0%.'},
+  {t:'Loratadine', correct:true, why:'Baseline falling toward 0%, shift to the right and no change to the Emax: an inverse agonist that histamine can still outcompete. Loratadine is the inverse agonist on the list.'},
+  {t:'Metoprolol', correct:false, why:'A competitive antagonist would shift the curve right but has no efficacy, so the baseline would not move.'},
+  {t:'Phenoxybenzamine', correct:false, why:'The irreversible antagonist leaves the baseline alone and lowers the Emax; here the Emax is unchanged.'}],
+ teach:'Read the three changes: baseline down (negative efficacy shuts off receptors that were active on their own), shift to the right (histamine must outcompete the drug, so it appears less potent) and no change to the Emax (the drug is reversible). Only an inverse agonist lowers the baseline, and the one inverse agonist to know is loratadine, an antihistamine.',
+ quote:'So, take home message over here, it’s gonna bring the baseline down to 0, and it’s gonna shift to the right with no change to the Emax, right?',
+ cite:'Pharmacodynamics-Day_4_-_5_2026s_pptx.pdf slides ~13–~24, ~55; transcript 9/28',
+ reading:[{src:'Katzung 16e, Ch. 2', sec:'Competitive & Irreversible Antagonists', t:'Some antagonists show inverse agonist activity: they reduce receptor activity below the basal level observed in the absence of any agonist.'}]},
+
+{id:'L04-045', lecture:'L04', prof:'Gottlieb', tier:'new', topic:'L04', sub:'allo', skill:'figure',
+ concept:'allosteric-characteristics', tags:['poll'], source:'both',
+ stem:'The dotted line represents the DRC of the agonist alone and the solid lines represent the DRC of the agonist in the presence of increasing doses of drug "X" (1×, 10× and 100×). Drug X is most likely:',
+ graph:{curves:[{label:'alone', ec:0.6, emax:100, dashed:true}, {label:'1×', ec:-0.3, emax:100}, {label:'10×', ec:-1.1, emax:100}, {label:'100×', ec:-1.7, emax:100}], base:0, x:'log dose agonist', y:'% of maximal response'},
+ options:[
+  {t:'A full agonist', correct:false, why:'A second full agonist also shifts left, but it has efficacy of its own, so each pretreatment dose would raise the baseline; here the baseline never moves.'},
+  {t:'A partial agonist', correct:false, why:'A partial agonist has efficacy and would change the baseline.'},
+  {t:'A competitive antagonist', correct:false, why:'A competitive antagonist makes the agonist less potent: shift to the right, in equal (symmetrical) steps.'},
+  {t:'An allosteric agonist', correct:true, why:'Shift to the left with the same Emax, shifts of unequal size that stop growing at high doses (saturable) and no change to the baseline: the drug binds someplace else and only raises the agonist’s affinity.'},
+  {t:'An inverse agonist', correct:false, why:'An inverse agonist makes the agonist’s life harder: shift to the right and, with active receptors present, a lower baseline.'}],
+ teach:'The curve moved left, so drug X helps. Then look at the shifts: they are asymmetrical (unequal sizes) and saturable (the 100× dose barely moves the curve beyond the 10× dose), which is how an allosteric drug is recognized on a figure; an orthosteric competitor keeps shifting in equal steps. Emax is unchanged because a full agonist is already at 100%, so only affinity can be seen.',
+ quote:'I can keep giving more and more of my allosteric, and he can’t go more to the left. He has maxed out all that he can do to the system.',
+ cite:'Pharmacodynamics-Day_4_-_5_2026s_pptx.pdf slides ~30–~34, ~55; transcript 9/28',
+ reading:[{src:'Katzung 16e, Ch. 2', sec:'Competitive & Irreversible Antagonists', t:'Allosteric modulators bind a site on the receptor separate from the orthosteric site bound by the agonist, so they modify receptor activity without blocking agonist binding.'}]},
+
+{id:'L04-046', fg:'two-state', lecture:'L04', prof:'Gottlieb', tier:'new', topic:'L04', sub:'recap', skill:'recall',
+ concept:'full-vs-partial-agonist-summary', tags:['poll'], source:'transcript',
+ stem:'Which of the following is CORRECT about a full agonist?',
+ options:[
+  {t:'Its Emax is 100% of the system’s response', correct:false, why:'True, but not the only true statement; a full agonist gets all the way up to the maximal response.'},
+  {t:'It has the highest affinity for receptors in the active state', correct:false, why:'True, but not the only true statement; full agonists love receptors that are active.'},
+  {t:'If it binds a receptor that is inactive, it can activate it', correct:false, why:'True, but not the only true statement; that is its positive efficacy.'},
+  {t:'It shifts the DRC of another full agonist to the left', correct:false, why:'True, but not the only true statement; two full agonists help each other.'},
+  {t:'All of the above', correct:true, why:'Every statement is correct: Emax of 100%, highest affinity for active receptors, positive efficacy on inactive receptors, and a left shift of another full agonist’s curve.'}],
+ teach:'Four facts that all hold for a full agonist: its Emax is 100% (it gets all the way up to the response); it has the highest affinity for receptors in the active state; if it binds a receptor that is inactive, it can activate it (positive efficacy); and it shifts the dose–response curve of another full agonist to the left because the two help each other. When every statement is right, the answer is all of the above.',
+ quote:'I have all the above. Is that the correct answer? Yes, right. It’s Emacs is 100%. It gets all the way up to the response. It has the highest affinity for receptors on the active state. However, if you bind into receptors that are inactive, it can activate them, right? And a full agonist will shift the dose response curve on another full agonist to the left because they’re gonna be helping each other.',
+ cite:'Pharmacodynamics-Day_3_2026s.pdf slides ~33–~49 (lectured 9/28); transcript 9/28',
+ reading:[{src:'Katzung 16e, Ch. 2', sec:'Receptor-Effector Coupling & Spare Receptors', t:'Full agonists shift the conformational equilibrium of receptors more strongly than partial agonists do.'}]},
+
+{id:'L04-047', fg:'competitive', lecture:'L04', prof:'Gottlieb', tier:'new', topic:'L04', sub:'comp', skill:'recall',
+ concept:'competitive-antagonist-shift', tags:['poll'], source:'both',
+ stem:'Which statement is INCORRECT about a competitive antagonist?',
+ options:[
+  {t:'It has equal affinity for receptors in the active and inactive states', correct:false, why:'This is correct: the competitive antagonist is neutral (R = affinity = R*).'},
+  {t:'It has affinity but no pharmacological efficacy', correct:false, why:'This is correct: it binds but does not evoke a change in the receptor.'},
+  {t:'It shifts a full agonist’s DRC to the right in symmetrical steps', correct:false, why:'This is correct: a tenfold increase in antagonist needs a tenfold increase in agonist.'},
+  {t:'It lowers the Emax of a full agonist', correct:true, why:'This is the incorrect statement: a competitive antagonist is reversible, so enough agonist outcompetes it and the Emax is unchanged. Only an irreversible antagonist or an allosteric antagonist affecting efficacy lowers the Emax.'}],
+ teach:'The competitive antagonist is neutral in the two-state model (equal affinity for both states, affinity but no efficacy) and reversible. In the presence of a full agonist it shifts the curve to the right in symmetrical steps with no change to the baseline and no change to the Emax, because the agonist can always outcompete it. A lower Emax points to an irreversible antagonist or an allosteric antagonist affecting efficacy.',
+ quote:'Everybody else is competitive. Everybody else is reversible, no change to the Emacs.',
+ cite:'Pharmacodynamics-Day_4_-_5_2026s_pptx.pdf slides ~43–~50; transcript 9/28',
+ reading:[{src:'Katzung 16e, Ch. 2', sec:'Competitive & Irreversible Antagonists', t:'Sufficiently high concentrations of agonist can surmount the effect of a given concentration of a competitive antagonist, whereas agonists cannot surmount a noncompetitive antagonist irrespective of their concentration.'}]},
+
+{id:'L04-048', lecture:'L04', prof:'Gottlieb', tier:'new', topic:'L04', sub:'allo', skill:'recall',
+ concept:'noncompetitive-two-reasons', tags:['poll'], source:'both',
+ stem:'An allosteric antagonist binds irreversibly to the receptor. True / False',
+ options:[
+  {t:'True', correct:false, why:'The allosteric antagonist binds reversibly, at another site in the receptor; it is called non-competitive because it binds someplace else, not because it never comes off.'},
+  {t:'False', correct:true, why:'An allosteric antagonist binds reversibly to the receptor at another site. Only the irreversible antagonist forms covalent bonds; all allosterics are reversible.'}],
+ teach:'Two different reasons give the same non-competitive label. The irreversible antagonist forms covalent bonds in the orthosteric pocket and never comes off. The allosteric antagonist binds reversibly at another site in the receptor, so the agonist cannot overcome it by competition, the shifts are asymmetrical, and there is no irreversible binding: every allosteric drug is reversible.',
+ quote:'For a purpose in this class, all allosterics are reversible. There is no that forms irreversible binding.',
+ cite:'Pharmacodynamics-Day_4_-_5_2026s_pptx.pdf slides ~36, ~38–~41; transcript 9/28',
+ reading:[{src:'Katzung 16e, Ch. 2', sec:'Competitive & Irreversible Antagonists', t:'Once a receptor is bound by a noncompetitive antagonist, agonists cannot surmount the inhibition; some noncompetitive antagonists bind irreversibly, others bind reversibly at a separate allosteric site.'}]},
+
+{id:'L04-049', fg:'spare', lecture:'L04', prof:'Gottlieb', tier:'new', topic:'L04', sub:'irrev', skill:'apply',
+ concept:'spare-receptors-irreversible', tags:['poll'], source:'transcript',
+ stem:'An agonist has to occupy 10% of a tissue’s receptors to produce its maximal response. A dose of an irreversible antagonist that blocks 75% of the receptors is given. What effect would that have on the Emax of the agonist?',
+ options:[
+  {t:'Would lower it', correct:false, why:'Emax only falls once fewer receptors remain than the agonist needs; 25% are still available and the agonist needs 10%.'},
+  {t:'Would increase it', correct:false, why:'An irreversible antagonist has no efficacy and removes receptors; it can never raise the maximal response.'},
+  {t:'No effect', correct:true, why:'25% of the receptors remain, more than the 10% required, so the maximal response is still reached; only a higher agonist dose is needed (shift to the right).'}],
+ teach:'Agonists do not have to occupy 100% of the receptors to produce a response; the rest are spare receptors. If the agonist needs 10% and the irreversible antagonist leaves 25% available, the maximum is still reached with more agonist (the curve only shifts right). Once fewer than 10% remain the Emax falls, all the way to zero if every receptor is blocked.',
+ quote:'if I give a dose of the irreversible that blocks 75% of the receptors, but I still have 25 available, can I still make the max response? Yes, because I want to require what? 10.',
+ cite:'transcript 9/28; Pharmacodynamics-Day_4_-_5_2026s_pptx.pdf slides ~54, ~56',
+ reading:[{src:'Katzung 16e, Ch. 2', sec:'Receptor-Effector Coupling & Spare Receptors', t:'With spare receptors, a lower dose of irreversible antagonist can leave enough receptors for the maximal response, though a higher agonist concentration is required.'}]},
+
+{id:'L04-050', fg:'efficacy', lecture:'L04', prof:'Gottlieb', tier:'new', topic:'L04', sub:'allo', skill:'figure',
+ concept:'allosteric-antagonist-effects', tags:['poll'], source:'both',
+ stem:'If DRC D is the DRC of an agonist alone, which curve would best represent agonist D in the presence of an allosteric antagonist that affects only the affinity of D?',
+ graph:{curves:[{label:'A', ec:-1, emax:100}, {label:'B', ec:1.1, emax:55}, {label:'C', ec:1.2, emax:100}, {label:'D', ec:0, emax:100}, {label:'E', ec:0, emax:55}], base:0, x:'log dose', y:'% of maximal response'},
+ options:[
+  {t:'A', correct:false, why:'A moved to the left, which means the agonist was helped; an antagonist makes its life more difficult.'},
+  {t:'B', correct:false, why:'B moved right and lost its maximum, so both affinity and efficacy were affected; the stem says affinity only.'},
+  {t:'C', correct:true, why:'Affinity only: the agonist appears less potent (shift to the right) but can still reach the maximal response at higher doses.'},
+  {t:'D', correct:false, why:'D is the point of reference; an allosteric antagonist changes the curve.'},
+  {t:'E', correct:false, why:'E did not move but lost its maximum, which is an allosteric antagonist affecting efficacy only.'}],
+ teach:'Whatever the allosteric agonist does, the allosteric antagonist does the opposite. Affinity only: shift to the right, Emax still reached at higher doses. Efficacy only: no shift, the maximum falls (a full agonist behaves like a partial agonist). Both: right and down. Since the stem says affinity only, any curve whose maximum changed is out, and a curve to the left was helped.',
+ quote:'what would happen to the dose response curve of this agonist in the presence of an allosteric antagonist that only affects affinity? What would you predict to do? It’s gonna shift to the right. Without affecting the ability to get the max response.',
+ cite:'Pharmacodynamics-Day_4_-_5_2026s_pptx.pdf slides ~38–~42; transcript 9/28',
+ reading:[{src:'Katzung 16e, Ch. 2', sec:'Competitive & Irreversible Antagonists', t:'Negative allosteric modulators bind an allosteric site to reduce receptor activity; positive allosteric modulators bind an allosteric site to increase it.'}]}
 );
 
 TOPICS.push({id:'DL1', name:'Exam 1 drug list', prof:'Gottlieb', lecture:'DL1',
@@ -2366,7 +3211,33 @@ const FIG = (() => {
     return wrap(out, 'Drug classes at one receptor. Circle = drug in the agonist pocket; square = drug blocking the pocket; small circle at the side = a drug at a second (allosteric) site. The bar is the response; the dashed line is the receptor’s basal activity with nothing bound.', 240);
   };
 
-  return key => (F[key] ? F[key]() : '');
+
+  /* A question's own graph: dose–response curves labelled by letter, drawn
+     from a spec so the stem can show the figure the way a poll slide does.
+     spec = {curves:[{label:'A', ec:-1, emax:100, base:0, dashed:true, cls:'a'}],
+             base:0, x:'log dose', y:'% response', marks:[{x:-1,label:'EC50'}], caption:''}
+     ec is log10 of the EC50 on a −3…3 axis; emax and base are percent. */
+  const GRAPH = spec => {
+    if (!spec || !spec.curves) return '';
+    const cls = ['a', 'b', 'c', 'd', 'e'];
+    let inner = axes(spec.x || 'log dose', spec.y || '% of maximal response');
+    const b = spec.base || 0;
+    if (b) inner += dash(-3, b, 3, b) + ytick(b, 'basal');
+    (spec.marks || []).forEach(m => { inner += dash(m.x, 0, m.x, m.y == null ? 50 : m.y) + tick(m.x, m.label); });
+    spec.curves.forEach((c, i) => {
+      const pts = sig(c.ec, c.emax, c.n || 1, c.base == null ? b : c.base);
+      const k = c.cls || cls[i % cls.length];
+      inner += `<polyline class="cv ${k}${c.dashed ? ' dashed' : ''}" points="${pts}"/>`;
+      // label at the curve's own midpoint, on the left of it, where curves separate
+      const cb = c.base == null ? b : c.base, mid = cb + (c.emax - cb) / 2;
+      inner += `<text class="cl ${k}" x="${px(c.ec) - 6}" y="${py(mid) + 4}" text-anchor="end">${c.label}</text>`;
+    });
+    return wrap(inner, spec.caption || '');
+  };
+
+  const api = key => (F[key] ? F[key]() : '');
+  api.graph = GRAPH;
+  return api;
 })();
 
 /* Exam 1 glossary — PHAR 4344, Dr. Gottlieb, Days 1–3 (9/22–9/24).
@@ -3169,6 +4040,10 @@ const LECT = {}; COURSE.lectures.forEach(l => { LECT[l.id] = l; });
 const SKILL = {}; COURSE.skills.forEach(s => { SKILL[s.id] = s; });
 const TOPIC = {}; TOPICS.forEach(t => { TOPIC[t.id] = t; });
 const lectureOf = q => LECT[q.lecture] || {};
+/* Options that name curves (A, B, C, D, None of the above) or True/False keep
+   their written order; shuffling them would put "C" under the letter B. */
+const fixedOrder = q => !q.multi && (q.options || []).every(o => /^((Drug|Curve|DRC) )?[A-E]$|^None of the above$|^All of the above$|^True$|^False$/i.test(o.t.trim()));
+const optOrder = q => fixedOrder(q) ? q.options.map((o, i) => i) : shuffle(q.options.map((o, i) => i));
 /* Slide ranges are stored as "~7–~12" (every number marked approximate);
    print the mark once per range. */
 const fmtCite = s => String(s == null ? '' : s).replace(/–~/g, '–');
@@ -3344,7 +4219,7 @@ function nextQ() {
   let q;
   if (Q.mode === 'pass') { if (Q.i >= Q.list.length) return quizDone(); q = Q.list[Q.i++]; }
   else q = pickSR();
-  Q.cur = q; Q.order = q.type === 'match' ? null : shuffle(q.options.map((o, i) => i));
+  Q.cur = q; Q.order = q.type === 'match' ? null : optOrder(q);
   Q.picked = q.multi ? new Set() : null; Q.answered = false; Q.t0 = Date.now();
   if (q.type === 'match') Q.rightOrder = shuffle(q.right.slice());
   renderQ();
@@ -3375,7 +4250,7 @@ function renderQ() {
   const q = Q.cur, st = S.q[q.id];
   let h = `<div class="row" style="justify-content:space-between"><span class="meta">${esc(Q.label || '')} · ${Q.done} answered${Q.done ? ' · ' + Q.right + ' right' : ''}</span>
     <span class="meta">${st && st.n ? 'seen ' + st.n + '×' : 'new'}</span></div>
-    <div class="card"><div class="meta">${metaLine(q)}</div><div class="stem">${esc(q.stem)}</div>`;
+    <div class="card"><div class="meta">${metaLine(q)}</div><div class="stem">${esc(q.stem)}</div>${q.graph ? `<div class="stemfig">${FIG.graph(q.graph)}</div>` : ''}`;
   if (q.type === 'match') {
     h += q.left.map((l, i) => `<div class="row" style="margin-bottom:8px"><span style="flex:1 1 200px">${esc(l)}</span>
       <select data-l="${i}" ${Q.answered ? 'disabled' : ''}><option value="">—</option>${Q.rightOrder.map(r => `<option ${Q.mpick && Q.mpick[i] === r ? 'selected' : ''}>${esc(r)}</option>`).join('')}</select>
@@ -3540,7 +4415,7 @@ function vExam() {
     const paper = drawExam(n);
     const full = ex.questions || max;
     const mins = $('#scale').checked ? Math.max(5, Math.round(ex.minutes * paper.length / full)) : ex.minutes;
-    EX = {qs: paper.map(q => q.id), i: 0, ans: {}, flag: {}, orders: paper.map(q => shuffle(q.options.map((o, k) => k))), ends: Date.now() + mins * MIN, done: false};
+    EX = {qs: paper.map(q => q.id), i: 0, ans: {}, flag: {}, orders: paper.map(q => optOrder(q)), ends: Date.now() + mins * MIN, done: false};
     renderExam();
   };
 }
@@ -3551,7 +4426,7 @@ function renderExam() {
   const q = byId[EX.qs[EX.i]], ord = EX.orders[EX.i], a = EX.ans[q.id];
   let h = `<div class="row" style="justify-content:space-between"><b>Question ${EX.i + 1} of ${EX.qs.length}</b><span class="timer" id="clock"></span></div>
     <div class="grid">${EX.qs.map((id, k) => `<button data-j="${k}" class="${EX.ans[id] != null && !(Array.isArray(EX.ans[id]) && !EX.ans[id].length) ? 'ans' : ''} ${k === EX.i ? 'cur' : ''} ${EX.flag[id] ? 'flag' : ''}">${k + 1}</button>`).join('')}</div>
-    <div class="card"><div class="stem">${esc(q.stem)}</div>`;
+    <div class="card"><div class="stem">${esc(q.stem)}</div>${q.graph ? `<div class="stemfig">${FIG.graph(q.graph)}</div>` : ''}`;
   ord.forEach((oi, n) => {
     const sel = q.multi ? (a || []).includes(oi) : a === oi;
     h += `<button class="opt ${sel ? 'sel' : ''}" data-o="${oi}"><span class="k">${q.multi ? (sel ? '☑' : '☐') : LETTERS[n]}</span><span>${esc(q.options[oi].t)}</span></button>`;
@@ -3608,7 +4483,7 @@ function examResult() {
     <h3>Review</h3>`;
   qsx.forEach((q, k) => {
     const a = EX.ans[q.id], ok = exRight(q, a), pickedSet = new Set([].concat(a == null ? [] : a));
-    h += `<div class="card"><div class="meta">${k + 1}. ${metaLine(q)}</div><div class="stem">${esc(q.stem)}</div>
+    h += `<div class="card"><div class="meta">${k + 1}. ${metaLine(q)}</div><div class="stem">${esc(q.stem)}</div>${q.graph ? `<div class="stemfig">${FIG.graph(q.graph)}</div>` : ''}
       <div class="verdict ${ok ? 'ok' : 'bad'}">${ok ? '✓ Correct' : a == null ? '✗ Not answered' : '✗ Not correct'}</div>`;
     if (!ok) {
       q.options.forEach((o, oi) => { if (o.correct || pickedSet.has(oi)) h += `<div class="opt ${o.correct ? 'right' : 'wrong'}" style="cursor:default"><span>${esc(o.t)}</span></div><div class="why">${esc(o.why || '')}</div>`; });

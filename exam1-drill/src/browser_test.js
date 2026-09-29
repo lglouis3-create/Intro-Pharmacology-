@@ -67,6 +67,12 @@ const out = path.join(__dirname, '..', course.match(/output:\s*'([^']+)'/)[1]);
     if ((await page.evaluate(() => Q.cur.id)) === first) rep++;
   }
   if (rep) fail(`reopened topic repeated the last question ${rep} of 8 times`);
+  // a question with its own graph shows it above the options
+  const hasGraphQ = await page.evaluate(() => QUESTIONS.some(q => q.graph));
+  if (hasGraphQ) {
+    await page.evaluate(() => startQuiz(QUESTIONS.filter(q => q.graph), 'graph', 'pass'));
+    if (!(await page.$('.stemfig svg'))) fail('graph question did not draw its plot in the stem');
+  }
   // weak spots now populated
   await page.click('nav button[data-v="weak"]');
   if (!(await page.textContent('#view')).includes('By topic')) fail('weak spots did not populate');

@@ -19,7 +19,7 @@ Updated 2026-09-28.
 - Terms: `glossary.js` (50 terms, sourced; disagreements in notes/GLOSSARY.md) → `gen_terms.py` → `q_TERMS.js` (98 questions, skill `term`). Exam draw caps term items at 15%.
 - Figures: `diagrams.js` FIG(key) inline SVG; keys drc-basic, potency, efficacy, partial, inverse, competitive, irreversible, binding-kd, spare, sites, two-state, gpcr. Attached via `fg` on 33 questions and on glossary terms.
 - Readings trimmed to ≤2 sentences / ≤45 words (TRIM_BRIEF.md); style check rejects "the chapter/textbook" phrasing and source references in definitions.
-- Bank: 285 questions (L01 35 + L02 35 + L03 35 + L04 35 + DL1 27 + TERMS 118).
+- Bank: 343 questions (L01 50 + L02 50 + L03 48 + L04 50 + DL1 27 + TERMS 118). 58 carry a `graph` (curves drawn in the stem via FIG.graph); 92 tagged `poll` (his formats: graph poll, CORRECT/INCORRECT + all of the above, True/False pair, which-drug-is-a, scenario/predict, select-all). notes/POLL_BRIEF.md holds the formats. Curve-letter and T/F options are never shuffled.
 
 ## 2026-09-28 (night) update
 - Figure `classes` (diagrams.js): four receptors side by side, agonist / reversible antagonist / irreversible antagonist / allosteric modulator, each answering where it binds, whether it activates, whether it lets go. On DL1 diazepam (009, 020), phenoxybenzamine (moa + irreversible-drug), prazosin, phenylephrine; glossary allosteric-agonist and allosteric-antagonist.

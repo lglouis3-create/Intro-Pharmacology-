@@ -2,6 +2,9 @@
 
 Newest first. The build embeds this file, and the Progress page shows it.
 
+## 2026-09-29 (poll formats)
+- Questions reframed the way Dr. Gottlieb frames his PollEV questions: labelled dose–response curves A–E drawn in the question, "which drug is most likely drug E?" with drug-list names, "if DRC B is norepinephrine at β1 alone, which curve best represents it in the presence of …", the dotted-line "drug X is most likely" format, "Which statement is CORRECT / INCORRECT?" with all of the above, plain True/False, and select-all. 58 questions now carry a plot; 92 are in one of his poll formats; 58 poll-style questions added across the four lectures.
+
 ## 2026-09-29 (Day 4 added)
 - Day 4 (9/28) lecture ingested: 35 questions on the two-state model, full and partial agonists in combination, inverse agonists and constitutive activity, allosteric agonists and antagonists, chemical and physiological antagonism, competitive and irreversible antagonists; 13 tell-apart rows, 4 reference tables, 10 new glossary terms (20 definition questions).
 - Day 3 questions written from slides deferred to today now share a concept with the Day 4 questions that cover what was said in class.
