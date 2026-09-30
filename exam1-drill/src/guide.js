@@ -428,6 +428,7 @@ const GUIDE_HTML = `
 
 <h4>How to read it on a figure</h4>
 <!--FIG:gpcr-->
+<!--FIG:gpcr-steps-->
 <!--IMG:pollev-gs-cascade-->
 <ul>
 <li>Left to right on the poll figure: NE at β1 → Gs (yellow dot = the nucleotide swap) → AC → ATP to cAMP → PKA → Ca++ channel and sarcoplasmic reticulum (SR) Ca++ → increase contractile force; calmodulin/Ca++-Cal is a side branch. <small>PollEV p.1 figure; Day 1 slides ~51–~53</small></li>
@@ -596,6 +597,8 @@ const GUIDE_HTML = `
 <li>Exogenous vs endogenous: the slide's only text is "From nerves" and "From you"; the pair was not explained aloud. <small>Part 2 pages 14–15</small></li>
 <li>Enhancement of drug effects: addition (two drugs, same effect, result = the sum: trimethoprim + sulfamethoxazole); synergism (result greater than the sum: penicillin + gentamicin, "1 plus 1 and you get 5"); potentiation (one drug has no effect alone but increases the other: carbidopa + dopa, carbidopa being an indirect antagonist of the gut enzyme that breaks down dopa). "I don't think I have any of these drugs on your drug list ... it's just FYI." <small>Part 2 pages 30–31; (T) 9/29</small></li>
 </ul>
+<h4>Indirect antagonists: where each drug acts</h4>
+<div class="shiftgrid"><!--FIG:ind-snri--><!--FIG:ind-ssri--><!--FIG:ind-ache--><!--FIG:ind-carbidopa--><!--FIG:ind-pde--><!--FIG:ind-ras--></div>
 <!--IMG:pollev-abcde-duloxetine-->
 <ul>
 <li>On the NE-alone figure, the reuptake blocker moves B to A (left, same Emax). He then ran the other permutations aloud: competitive antagonist → D; irreversible → "either C or E, depending on how much spare receptors they would have"; allosteric antagonist affinity only → D; affinity and efficacy → C and E; allosteric agonist affinity only or another full agonist → A. "I guarantee you, you're going to see this figure in your exam." <small>PollEV (v2) p.5; (T) 9/29</small></li>
@@ -613,6 +616,9 @@ const GUIDE_HTML = `
 <li><b>Long-term down-regulation</b>: with continued stimulation β-arrestin facilitates uptake into coated pits, endocytosis engulfs the receptor, then recycling or lysosomal degradation. Cocaine (an indirect antagonist that blocks NE reuptake) and opioids drive it: tolerance, "instead of having one little sniff, you go to two sniffs". <small>Part 2 pages 25–27; (T) 9/29</small></li>
 <li>Clinical down-regulation: tolerance ("the effects that follow continued exposure to the same concentration of drug is diminished": opioid analgesics, α-adrenoceptor nasal decongestants) and myasthenia gravis (antibody to the nicotinic receptor at the neuromuscular junction). <small>Part 2 page 29; (T) 9/29</small></li>
 </ul>
+<h4>Receptor regulation: the receptor at each step</h4>
+<div class="shiftgrid"><!--FIG:desens-rapid--><!--FIG:desens-long--></div>
+<!--FIG:regulation-->
 
 <h4>How to read it on a curve</h4>
 <!--GRAPH:{"curves":[{"label":"high","ec":-1.5,"emax":100},{"label":"mid","ec":0.2,"emax":75},{"label":"low","ec":1.4,"emax":30}],"base":0,"x":"log [agonist]","y":"fractional response (%)","caption":"One agonist in three tissues of falling receptor density (Part 2 page 28): with fewer receptors the ED50 moves right (about 10^-7 to 10^-4.5 to 10^-3.5 on his slide) and the maximal response falls, the same picture as an irreversible antagonist."}-->

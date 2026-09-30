@@ -2,6 +2,11 @@
 
 Newest first. The build embeds this file, and the Progress page shows it.
 
+## 2026-09-30 (titles, bullet captions, indirect antagonists, GPCR steps, regulation, colour-safe palette)
+- Every drawn panel now carries a title naming the pair it shows (for example "Full agonist + reversible antagonist · NE + metoprolol at β1"), and the caption under each is a bulleted list (Start / Shift / Curve / Rule) instead of a paragraph.
+- New figures, on Tell apart and in guides 6 and 9: the GPCR process step by step (NE at β1: binding, GDP/GTP swap, αs to adenylate cyclase, cAMP, PKA, Ca++, and the three things that end it); one panel per indirect antagonist showing where it acts, upstream or downstream of the receptor, with the agonist's curve (duloxetine, fluoxetine, physostigmine, carbidopa, milrinone/caffeine, cancer drug X on RAS); rapid desensitization (GRK, β-arrestin, the cAMP trace); long-term down-regulation (coated pit, endocytosis, recycle or lysosome); up- versus down-regulation (receptor count and curve). Glossary terms link to them.
+- Figure colours changed to a palette checked for red–green and blue–yellow colour blindness (blue, vermilion, bluish green, amber, purple; separate dark-mode steps), with shape carrying the meaning as well: circle = agonist, translucent circle = partial agonist, square = antagonist, square with a lock = irreversible, side circle = allosteric, dashed = before, solid = after.
+
 ## 2026-09-30 (shift panels: receptors at the start and at the shift)
 - Each shift panel now shows five receptors in the membrane at one agonist dose twice: with the full agonist alone (the start, dashed curve) and after the second drug is added (the shift, solid curve). A filled receptor with an arrow into the cell is active, an empty one inactive, a bar under each row is the response at that dose; the inverse-agonist panel starts with receptors that are active with an empty pocket (constitutive activity), the irreversible panel marks receptors removed from the pool, and the allosteric panels show the second site. The curve sits below, full width.
 
