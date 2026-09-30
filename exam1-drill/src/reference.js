@@ -178,4 +178,37 @@ const REFERENCE_HTML = `
 <tr><td>Allosteric agonist</td><td>Positive allosteric modulator (PAM); increases affinity and/or efficacy</td><td>Diazepam (poll)</td></tr>
 </table>
 <p class="sub">Pharmacodynamics-Day_4_-_5_2026s_pptx.pdf: Pharmacodynamics-Day_4_-_5_2026s_pptx.pdf slides ~35–~37, ~55; transcript 9/28.</p>
+<h3>Day 5 (9/29) &mdash; Pharmacodynamics-Day_4_-_5_2026s_pptx Part 2.pdf</h3>
+<table class="reftab">
+<tr><th>Situation</th><th>Agonist potency</th><th>Antagonist potency</th><th>Emax with an irreversible antagonist</th></tr>
+<tr><td>Tissue with a lot of receptors (spare receptors, up-regulation)</td><td>Higher (more sensitive; shift left)</td><td>Lower (less sensitive)</td><td>Holds at first (looks competitive), drops later</td></tr>
+<tr><td>Tissue with fewer receptors (down-regulation)</td><td>Lower (less sensitive; shift right)</td><td>Higher (more sensitive)</td><td>Drops faster</td></tr>
+</table>
+<p class="sub">Pharmacodynamics-Day_4_-_5_2026s_pptx Part 2.pdf: Pharmacodynamics-Day_4_-_5_2026s_pptx Part 2.pdf pages 2–3, 17–18, 25–28; transcript 9/29.</p>
+<table class="reftab">
+<tr><th>Indirect antagonist</th><th>Target</th><th>Effect on the agonist's curve</th></tr>
+<tr><td>Milrinone, caffeine (PDE inhibitors)</td><td>Phosphodiesterase (breaks down cAMP)</td><td>Increases potency; shift left (partial can look full)</td></tr>
+<tr><td>Cancer drug X</td><td>RAS (GEF → RAS → RAF → MEK → ERK)</td><td>Decreases potency and efficacy; shift right and down</td></tr>
+<tr><td>Fluoxetine (SSRI), duloxetine (SNRI), cocaine</td><td>Reuptake transporter (SERT / norepinephrine transporter)</td><td>Neurotransmitter more potent; shift left, same Emax</td></tr>
+<tr><td>Physostigmine (any -stigmine)</td><td>Acetylcholinesterase enzyme</td><td>Acetylcholine more potent; shift left, same Emax</td></tr>
+<tr><td>Carbidopa</td><td>Enzyme in the gut that breaks down dopa</td><td>More dopa reaches the brain (potentiation)</td></tr>
+</table>
+<p class="sub">Pharmacodynamics-Day_4_-_5_2026s_pptx Part 2.pdf: Pharmacodynamics-Day_4_-_5_2026s_pptx Part 2.pdf pages 4–13, 31; transcript 9/29.</p>
+<table class="reftab">
+<tr><th>Drug–drug interaction</th><th>Definition (slide)</th><th>Example</th></tr>
+<tr><td>Addition</td><td>Two different drugs with the same effect are given together; result equals the sum of the individual effects</td><td>Trimethoprim and sulfamethoxazole (folic acid synthesis, bacterial growth)</td></tr>
+<tr><td>Synergism</td><td>Two different drugs with the same effect are given together; result greater in magnitude than the sum of each drug alone</td><td>Penicillin and gentamicin (antipseudomonal)</td></tr>
+<tr><td>Potentiation</td><td>One drug lacks an effect on its own but increases the effect of another</td><td>Carbidopa and dopa (inactive analog blocks the breakdown of dopa)</td></tr>
+</table>
+<p class="sub">Pharmacodynamics-Day_4_-_5_2026s_pptx Part 2.pdf: Pharmacodynamics-Day_4_-_5_2026s_pptx Part 2.pdf pages 30–31; transcript 9/29.</p>
+<table class="reftab">
+<tr><th>Quantity</th><th>Definition</th><th>Numbers on the slides</th></tr>
+<tr><td>ED50</td><td>Dose of the drug that protects/treats 50% of the population</td><td>Epinephrine in dogs ≈ 29 ng/kg/min (spoken); acetaminophen ≈ 325 mg (spoken); 10 mg (page 40); 100 μg/kg (page 41 right); 0.1 (page 42)</td></tr>
+<tr><td>LD50</td><td>Dose of the drug that kills 50% of the population</td><td>160 mg (page 40); 400 μg/kg (page 41 right); 100 (page 42)</td></tr>
+<tr><td>TI = LD50/ED50</td><td>Margin of safety; "statement of how selective a drug is in producing a desired effect"; larger = safer</td><td>Phenobarbital 40/4 = 10; alprazolam 2500; 160/10 = 16; codeine figure 40; hypnosis/death 400/100 = 4; sleep/death 100/0.1 = 1000</td></tr>
+<tr><td>SI = LD1/ED99</td><td>Safety index (safety ratio); for a safe drug ED99 &lt; LD1; larger = safer</td><td>1/10 = 0.1 (page 42)</td></tr>
+<tr><td>Therapeutic window</td><td>Range of steady-state concentrations providing therapeutic efficacy with minimal toxicity</td><td>Acceptable risk depends on severity: headache vs Hodgkin's lymphoma</td></tr>
+<tr><td>Acetaminophen</td><td>Regular 325 mg/tablet, Extra Strength 500 mg/tablet, 4–6 hrs</td><td>&gt; 4000 mg/day ⇒ liver toxicity</td></tr>
+</table>
+<p class="sub">Pharmacodynamics-Day_4_-_5_2026s_pptx Part 2.pdf: Pharmacodynamics-Day_4_-_5_2026s_pptx Part 2.pdf pages 34, 36–42; transcript 9/29. Arithmetic checked: 40/4 = 10; 160/10 = 16; 400/100 = 4; 100/0.1 = 1000; 1/10 = 0.1.</p>
 `;

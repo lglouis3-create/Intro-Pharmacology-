@@ -26,6 +26,12 @@ Updated 2026-09-28.
 - Diazepam note and teach rewritten in plain words (gen_druglist.py NOTE / TEACH); key unchanged. Tell-apart row on the three questions a class name answers.
 - Checks: build.py, test.js, style_check.js, browser_test.js passing.
 
+## 2026-09-30: L05 + guides
+- L05 Day 5 (9/29): Part 2 deck (Drive 1cPh8uE-c_Vhyp3y2jnlHcOHSyScHx63N; 44 pages, all lectured), transcript 09.29 (Drive 1rE_AnXhO-HdJ-rRVWnL_FupJfcdJgN1s). 45 questions, notes/L05.md. Conflicts: page-26 handwriting "shift left" vs slide/transcript right; SI 0.1 (slide) vs "1.1" spoken.
+- PollEV’s.pdf v2 (Drive 1z1I--AB79jydLVR4VW4aAP0wm1VvUicK, 6 pages): pages 4–5 are the 9/29 polls (PE-059…080). Pink-card green highlights are STUDENT responses; keys come from transcripts. PE-003 keyed Efficacy.
+- guide.js: nine guides (GUIDE_BRIEF.md). Figure markers <!--FIG:-->, <!--IMG:-->, <!--GRAPH:{json}--> expanded by expandFigs() on Guides and Reference.
+- Bank: 500 questions. Remaining Exam 1 lecture: 9/30 (a few Part 2 slides + review/Jeopardy).
+
 ## PollEV PDF (2026-09-29)
 - PollEV_s.pdf (user upload, 3 pages): his polls with keyed answers. Figures cropped to images.json (keys pollev-*; raw screenshots in src/polls/, git-ignored). q_POLLS.js = 27 verbatim (sub 'verbatim', tags pollev, dupOf the lecture item) + 31 variants. Verbatim polls are exempt from the ≥3-option, longest-option and reasoning-word rules.
 - PDF keys that corrected the bank: Kd table values (L02-032), potency poll wording "# of receptors" (L02-033), "Which is more important?" = Safety (PE-003, note).
