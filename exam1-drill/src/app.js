@@ -536,7 +536,7 @@ function vTerms() {
 /* ---------- static pages ---------- */
 function vRef() { $('#view').innerHTML = `<div class="tablewrap">${expandFigs(REFERENCE_HTML)}</div>`; stackTables($('#view')); }
 function vTell() {
-  $('#view').innerHTML = `<div class="tablewrap">${TELL_HTML}</div>
+  $('#view').innerHTML = `<div class="tablewrap">${expandFigs(TELL_HTML)}</div>
     <div class="row" style="margin-top:12px"><button class="btn" id="tellq">Drill every tell-apart question</button></div>`;
   const ids = [...document.querySelectorAll('[data-q]')].map(td => td.dataset.q).filter(id => byId[id]);
   document.querySelectorAll('[data-q]').forEach(td => {

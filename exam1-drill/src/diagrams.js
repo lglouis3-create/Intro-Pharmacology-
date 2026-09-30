@@ -171,6 +171,72 @@ const FIG = (() => {
     return wrap(inner, 'Quantal dose–response curves: each point is the percentage of the population that shows the all-or-none response at that dose. ED50 is the dose effective in half the population, LD50 the dose lethal to half. Therapeutic index = LD50 / ED50; here 400 / 100 = 4. When the ED99 sits to the right of the LD1 the two curves overlap: some patients reach the toxic dose before the last patients respond.');
   };
 
+  /* Drug–drug at one receptor: what is bound where (left) and what the
+     agonist's dose–response curve does (right). Dashed = the full agonist
+     alone (the point of reference); solid = with the second drug. Rules from
+     the Day 3–4 slides and the 9/28 lecture (notes/L04.md). */
+  const SHIFT = (() => {
+    const X0 = 128, PW = 222, Y0 = 18, PH = 140;
+    const lpx = x => X0 + (x + 3) / 6 * PW, lpy = y => Y0 + (1 - y / 100) * PH;
+    const lsig = (ec, emax, base, n = 1) => { const pts = []; for (let x = -3; x <= 3.001; x += 0.1) { const y = base + (emax - base) * Math.pow(10, n * x) / (Math.pow(10, n * x) + Math.pow(10, n * ec)); pts.push(`${lpx(x).toFixed(1)},${lpy(y).toFixed(1)}`); } return pts.join(' '); };
+    const curve = (ec, emax, base, cls, dashed) => `<polyline class="cv ${cls}${dashed ? ' dashed' : ''}" points="${lsig(ec, emax, base)}"/>`;
+    const axes = () => `<line class="ax" x1="${X0}" y1="${lpy(0)}" x2="${X0 + PW}" y2="${lpy(0)}"/><line class="ax" x1="${X0}" y1="${lpy(0)}" x2="${X0}" y2="${Y0}"/>
+      <text class="lbl xs" x="${X0 + PW / 2}" y="${lpy(0) + 12}" text-anchor="middle">log dose of the agonist</text>
+      <text class="lbl xs" x="${X0 - 4}" y="${lpy(100) + 3}" text-anchor="end">100%</text><text class="lbl xs" x="${X0 - 4}" y="${lpy(0) + 3}" text-anchor="end">0</text>`;
+    const arrowH = (x1, x2, y, cls) => `<path class="arrow ${cls}" d="M${lpx(x1)} ${lpy(y)} L${lpx(x2)} ${lpy(y)}"/>`;
+    const arrowV = (x, y1, y2, cls) => `<path class="arrow ${cls}" d="M${lpx(x)} ${lpy(y1)} L${lpx(x)} ${lpy(y2)}"/>`;
+    // receptor cartoon at left: what sits in the pocket and at the side site
+    const receptor = (pocket, side, note) => {
+      let g = `<g transform="translate(6 30)"><path class="shape" d="M14 44 C10 30 30 24 40 26 C50 24 70 30 66 44 C68 70 60 84 40 84 C20 84 12 70 14 44 Z"/>
+        <path class="pocket" d="M30 40 C30 32 50 32 50 40 L48 52 C46 60 34 60 32 52 Z"/>`;
+      pocket.forEach((k, i) => {
+        const cx = 40 + (pocket.length > 1 ? (i ? 7 : -7) : 0);
+        if (k === 'ag') g += `<circle class="lig a" cx="${cx}" cy="45" r="6"/>`;
+        if (k === 'ag2') g += `<circle class="lig c" cx="${cx}" cy="45" r="6"/>`;
+        if (k === 'pa') g += `<circle class="lig c" cx="${cx}" cy="45" r="6" opacity="0.45"/><circle class="pocket" cx="${cx}" cy="45" r="6" fill="none"/>`;
+        if (k === 'inv') g += `<circle class="lig b" cx="${cx}" cy="45" r="6"/>`;
+        if (k === 'ant') g += `<rect class="lig c" x="${cx - 6}" y="39" width="12" height="12" rx="2"/>`;
+        if (k === 'irr') g += `<rect class="lig b" x="${cx - 6}" y="39" width="12" height="12" rx="2"/><line class="ax" x1="${cx}" y1="51" x2="${cx}" y2="58"/><line class="ax" x1="${cx - 4}" y1="58" x2="${cx + 4}" y2="58"/>`;
+      });
+      if (side) g += `<path class="pocket" d="M10 56 C10 50 22 50 22 56 L21 64 C20 68 12 68 11 64 Z"/><circle class="lig ${side === 'pam' ? 'c' : 'b'}" cx="16" cy="59" r="4.5"/>`;
+      g += `</g><text class="lbl xs" x="60" y="128" text-anchor="middle">${note[0] || ''}</text><text class="lbl xs" x="60" y="138" text-anchor="middle">${note[1] || ''}</text>`;
+      return g;
+    };
+    const legend = (lines) => lines.map((t, i) => `<text class="lbl xs" x="${X0 + PW}" y="${lpy(0) + 26 + i * 10}" text-anchor="end">${t}</text>`).join('');
+    const panel = (inner, cap) => wrap(inner, cap, 200);
+    const F2 = {};
+    F2['shift-fafa'] = () => panel(receptor(['ag', 'ag2'], null, ['second full agonist', 'competes for the same pocket']) + axes() +
+      curve(0, 100, 0, 'a', true) + curve(-1, 100, 30, 'c') + arrowH(0, -1, 50, '') + arrowV(-2.6, 2, 28, '') +
+      legend(['shift LEFT · baseline UP · Emax same']),
+      'Full agonist + a second full agonist (norepinephrine + epinephrine at β1): either drug produces the same effect, so the agonist appears more potent (left), the baseline rises once the second drug is present, and the maximum is unchanged.');
+    F2['shift-fapa'] = () => panel(receptor(['ag', 'pa'], null, ['partial agonist shares', 'the pocket; less efficacy']) + axes() +
+      curve(0, 100, 0, 'a', true) + curve(0, 60, 40, 'c') + arrowV(-2.6, 2, 38, '') + arrowV(2.6, 98, 62, '') +
+      legend(['response ENDS AT the partial agonist’s own Emax', 'low baseline: up · full response: pulled down']),
+      'Full agonist + partial agonist (dopamine + aripiprazole): by mass action the partial agonist takes over receptors, so the response is pulled toward the partial agonist’s own maximum: up from a low baseline, down from a full response. The full agonist alone is the only way to reach 100%.');
+    F2['shift-inverse'] = () => panel(receptor(['ag', 'inv'], null, ['inverse agonist competes;', 'prefers inactive receptors']) + axes() +
+      curve(0, 100, 30, 'a', true) + curve(1, 100, 0, 'b') + arrowH(0, 1, 50, '') + arrowV(-2.6, 28, 2, '') +
+      legend(['shift RIGHT · baseline DOWN to 0 · Emax same']),
+      'Full agonist + inverse agonist (histamine + loratadine at a constitutively active receptor): the baseline drops to zero, the agonist needs more dose (right), and enough agonist still reaches the same maximum because the inverse agonist is reversible.');
+    F2['shift-competitive'] = () => panel(receptor(['ag', 'ant'], null, ['reversible antagonist', 'in the same pocket; comes off']) + axes() +
+      curve(0, 100, 0, 'a', true) + curve(1, 100, 0, 'c') + curve(2, 100, 0, 'c') + arrowH(0, 1, 50, '') +
+      legend(['shift RIGHT · baseline same · Emax same', 'symmetrical steps, no limit']),
+      'Full agonist + reversible (competitive) antagonist (norepinephrine + metoprolol): the antagonist occupies pockets but comes off, so more agonist wins them back: parallel shifts to the right, equal steps for equal doses, the same maximum, and the baseline untouched (no efficacy).');
+    F2['shift-irreversible'] = () => panel(receptor(['ag', 'irr'], null, ['irreversible antagonist bound', 'for good (covalent)']) + axes() +
+      curve(0, 100, 0, 'a', true) + curve(0.7, 100, 0, 'b') + curve(1.2, 60, 0, 'b') + curve(1.6, 25, 0, 'b') + arrowH(0, 0.7, 50, '') + arrowV(2.6, 98, 27, '') +
+      legend(['shift RIGHT, then Emax DOWN toward 0', 'spare receptors delay the drop']),
+      'Full agonist + irreversible antagonist (norepinephrine + phenoxybenzamine): each dose removes receptors from the pool. While spare receptors remain the curve only shifts right; once too few receptors are left the maximum falls, and enough antagonist abolishes the response.');
+    F2['shift-allo-agonist'] = () => panel(receptor(['ag'], 'pam', ['allosteric agonist at a', 'second site; both bound']) + axes() +
+      curve(0, 100, 0, 'a', true) + curve(-0.6, 100, 0, 'c') + curve(-0.95, 100, 0, 'c') + curve(-1.1, 100, 0, 'c') + arrowH(0, -1.1, 50, '') +
+      legend(['affinity: shift LEFT, shrinking steps, then stop', 'efficacy: curve rises (only if the agonist was partial)']),
+      'Full agonist + allosteric agonist (positive allosteric modulator, e.g. diazepam at the GABA receptor): the modulator binds elsewhere while the agonist stays in its pocket. Affinity effect: leftward shifts that get smaller and stop once every allosteric site is filled (asymmetrical, saturable). Efficacy effect: a partial agonist’s curve rises; a full agonist is already at 100%.');
+    F2['shift-allo-antagonist'] = () => panel(receptor(['ag'], 'nam', ['allosteric antagonist at a', 'second site; agonist still binds']) + axes() +
+      curve(0, 100, 0, 'a', true) + curve(0.6, 100, 0, 'b') + curve(0.95, 75, 0, 'b') + curve(1.1, 60, 0, 'b') + arrowH(0, 0.6, 50, '') + arrowV(2.6, 98, 62, '') +
+      legend(['affinity: shift RIGHT (asymmetrical, saturable)', 'efficacy: Emax DOWN, but never to 0']),
+      'Full agonist + allosteric antagonist (negative allosteric modulator): reversible and bound at a second site, so the shifts are unequal and stop when its sites are full. Affinity effect: right shift with the same maximum. Efficacy effect: the maximum falls, but it cannot abolish the response the way an irreversible antagonist can.');
+    return F2;
+  })();
+  Object.assign(F, SHIFT);
+
   /* A question's own graph: dose–response curves labelled by letter, drawn
      from a spec so the stem can show the figure the way a poll slide does.
      spec = {curves:[{label:'A', ec:-1, emax:100, base:0, dashed:true, cls:'a'}],

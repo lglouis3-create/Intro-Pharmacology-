@@ -2,6 +2,9 @@
 
 Newest first. The build embeds this file, and the Progress page shows it.
 
+## 2026-09-30 (shift panels)
+- Tell apart opens with "The shifts at a glance": seven drawn panels, each with the receptor (what is bound in the pocket or at the second site) beside the agonist's curve with the shift marked — full + full, full + partial, + inverse agonist, + reversible antagonist, + irreversible antagonist, + allosteric agonist, + allosteric antagonist — and a one-line table of shift, baseline and Emax for each. The same panels sit in guide 5's case sections.
+
 ## 2026-09-30
 - Day 5 (9/29) lecture ingested from Part 2 of the deck and the 9/29 transcript: 45 questions on spare receptors, indirect antagonists, receptor regulation and desensitization, quantal responses, therapeutic index and safety index; 14 tell-apart rows, 4 reference tables, 16 glossary terms.
 - Guides tab: nine concept guides with figures (affinity/efficacy/potency; agonist classes; antagonists; orthosteric vs allosteric; drug–drug on one receptor; receptors and signalling; drug basics; the drug list; Day 5), each bullet cited to a slide, the transcript or a poll page, with his poll stems and keys and the traps.

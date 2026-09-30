@@ -1,6 +1,21 @@
 const TELL_HTML = `
 <h2>Tell apart</h2>
 <p class="sub">Slide numbers marked ~ were counted from the deck text and may be off by one or two. Pairs that share wording. Each row gives the feature that separates them and the trap a question sets. Nothing here is scored.</p>
+<h3>The shifts at a glance: what is bound, and what the curve does</h3>
+<p class="sub">Dashed curve = the full agonist alone (the point of reference). Solid = with the second drug. Left panel = what sits in the agonist pocket and at the second (allosteric) site. Rules from Day 3–4 slides and the 9/28 lecture.</p>
+<table class="reftab"><thead><tr><th style="width:22%">Second drug</th><th>At the receptor</th><th>Shift</th><th>Baseline</th><th>Emax</th></tr></thead><tbody>
+<tr><td>Full agonist</td><td>Competes for the same pocket; either one activates</td><td>Left</td><td>Up</td><td>Same</td></tr>
+<tr><td>Partial agonist</td><td>Competes for the pocket; activates less</td><td>—</td><td>Ends at the partial agonist’s own Emax (up from low, down from full)</td><td>Only the full agonist alone reaches it</td></tr>
+<tr><td>Inverse agonist</td><td>Competes; holds the receptor inactive</td><td>Right</td><td>Down to 0</td><td>Same (reversible)</td></tr>
+<tr><td>Reversible (competitive) antagonist</td><td>Same pocket, no activation, comes off</td><td>Right, symmetrical, no limit</td><td>Same</td><td>Same</td></tr>
+<tr><td>Irreversible antagonist</td><td>Same pocket, covalent, never comes off</td><td>Right</td><td>Same</td><td>Down toward 0 once spare receptors are used up</td></tr>
+<tr><td>Allosteric agonist (PAM)</td><td>Second site; agonist stays bound</td><td>Left (affinity), asymmetrical, saturable</td><td>—</td><td>Up only if the agonist was partial</td></tr>
+<tr><td>Allosteric antagonist (NAM)</td><td>Second site; agonist stays bound; reversible</td><td>Right (affinity), asymmetrical, saturable</td><td>—</td><td>Down if efficacy is affected; never to 0</td></tr>
+</tbody></table>
+<p class="sub">Day 3 slides ~42–~49; Day 4 slides ~13–~55; transcript 9/28. Only the irreversible antagonist and the allosteric antagonist acting on efficacy lower Emax.</p>
+<div class="shiftgrid">
+<!--FIG:shift-fafa--><!--FIG:shift-fapa--><!--FIG:shift-inverse--><!--FIG:shift-competitive--><!--FIG:shift-irreversible--><!--FIG:shift-allo-agonist--><!--FIG:shift-allo-antagonist-->
+</div>
 <h3>Day 1 (9/22) &mdash; Pharmacodynamics-Day-1-2026s.pdf</h3>
 <table class="reftab"><thead><tr><th style="width:20%">Looks alike</th><th>What separates them</th><th style="width:26%">The trap</th><th style="width:9%">Slides</th><th style="width:9%">Question</th></tr></thead><tbody>
 <tr><td>Must know vs should know</td><td>Must know = mechanism of action (MOA); should know = site of action (SOA); effect/ADR/DDI are "would be nice to know" (predicted)</td><td>Swapping MOA and SOA; thinking brand names/dose are tested</td><td>~7–8</td><td data-q="L01-001">L01-001</td></tr>
