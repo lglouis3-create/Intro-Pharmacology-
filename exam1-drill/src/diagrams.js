@@ -159,13 +159,13 @@ const FIG = (() => {
     const cum = (ed, n) => { const pts = []; for (let x = 25; x <= 1600; x *= 1.06) { const y = 100 * Math.pow(x, n) / (Math.pow(x, n) + Math.pow(ed, n)); pts.push(`${xs(x).toFixed(1)},${py(y).toFixed(1)}`); } return pts.join(' '); };
     const vline = (x, y, cls) => `<line class="dash" x1="${xs(x)}" y1="${py(0)}" x2="${xs(x)}" y2="${py(y)}"/>`;
     let inner = `<line class="ax" x1="${L}" y1="${py(0)}" x2="${W - R}" y2="${py(0)}"/><line class="ax" x1="${L}" y1="${py(0)}" x2="${L}" y2="${T}"/>
-      <text class="lbl" x="${(L + W - R) / 2}" y="${H - 8}" text-anchor="middle">dose (µg/kg, log scale)</text>
+      <text class="lbl" x="${(L + W - R) / 2}" y="${H - 1}" text-anchor="middle">dose (µg/kg, log scale)</text>
       <text class="lbl" transform="translate(11 ${(T + py(0)) / 2}) rotate(-90)" text-anchor="middle">% of individuals responding</text>`;
     [50, 100, 200, 400, 800].forEach(v => { inner += `<text class="lbl sm2" x="${xs(v)}" y="${py(0) + 14}" text-anchor="middle">${v}</text>`; });
     inner += dash(-3, 50, 3, 50) + ytick(50, '50%') + ytick(100, '100%');
     inner += vline(100, 50) + vline(400, 50) + vline(200, 99) + vline(175, 1);
     inner += `<polyline class="cv a" points="${cum(100, 4)}"/><polyline class="cv b" points="${cum(400, 4)}"/>`;
-    inner += `<text class="cl a" x="${xs(60)}" y="${py(80)}">effect (hypnosis)</text><text class="cl b" x="${xs(430)}" y="${py(80)}">toxic (death)</text>`;
+    inner += `<text class="cl a" x="${xs(30)}" y="${py(92)}">effect (hypnosis)</text><text class="cl b" x="${xs(1500)}" y="${py(40)}" text-anchor="end">toxic (death)</text>`;
     inner += `<text class="cl a" x="${xs(100)}" y="${py(0) + 26}" text-anchor="middle">ED50</text><text class="cl b" x="${xs(400)}" y="${py(0) + 26}" text-anchor="middle">LD50</text>
       <text class="cl a" x="${xs(215)}" y="${py(99) - 4}" text-anchor="start">ED99</text><text class="cl b" x="${xs(168)}" y="${py(1) - 8}" text-anchor="end">LD1</text>`;
     return wrap(inner, 'Quantal dose–response curves: each point is the percentage of the population that shows the all-or-none response at that dose. ED50 is the dose effective in half the population, LD50 the dose lethal to half. Therapeutic index = LD50 / ED50; here 400 / 100 = 4. When the ED99 sits to the right of the LD1 the two curves overlap: some patients reach the toxic dose before the last patients respond.');
