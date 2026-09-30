@@ -310,7 +310,7 @@ const GUIDE_HTML = `
 <li>"I promise you, you're gonna have that figure in your exam. I'm just gonna ask a different question. So you can memorize all the 100 permutations of it, or you can just learn the principle and apply it." <small>(T) 9/28</small></li>
 </ul>
 
-<h4>Case 1: full agonist + full agonist</h4>
+<h4>Case 1: full agonist + full agonist</h4><!--FIG:shift-fafa-->
 <!--GRAPH:{"curves":[{"label":"A","ec":0,"emax":100,"dashed":true},{"label":"+B 1e-7","ec":-0.7,"emax":100},{"label":"+B 1e-6","ec":-1.4,"emax":100,"base":40},{"label":"+B 1e-5","ec":-2,"emax":100,"base":80}],"base":0,"x":"log [agonist A]","y":"% of maximal response","caption":"Full agonist A alone (dashed) and with rising doses of a second full agonist B (norepinephrine + Levophed): shift to the left, baseline rises, Emax unchanged (Day 3 slides ~45–~49)."}-->
 <ul>
 <li>Shift <b>left</b> ("Increase apparent affinity of agonist for the receptor"); baseline <b>up</b> once the second drug's dose is above its own threshold ("I'm starting at 40 because levofed already activated enough receptors"); Emax <b>unchanged</b> ("If my heart, all it can beat is 106 beats per minute, doesn't matter how much the drug I have"). <small>Day 3 slides ~42–~49 (THM); (T) 9/28</small></li>
@@ -320,7 +320,7 @@ const GUIDE_HTML = `
 <div class="poll"><b>"If DRC B is the DRC of NE binding to the beta 1 receptor alone, which DRC best represents the DRC of NE in the presence of epinephrine?"</b> A / B / C / D / None of the above<br>Key: <b>A</b>. "Two full agonists, norepinephrine and Epi, that binds to the same receptor ... thus shifting to the left. Norepinephrine is going to make epi more potent, and epi is going to make norepinephrine more potent." <small>PollEV p.3; Day 4 slide ~3; (T) 9/28</small></div>
 <div class="poll"><b>"If DRC B is the DRC of an agonist alone, which DRC would best represent that agonist in the presence of another agonist with similar efficacy?"</b> A / B / C / D / None of the above<br>Key: <b>A</b>. "Just by knowing that both drugs are going to work together and help each other, you already can eliminate C, D, and E because those drugs are making my agonist less potent." <small>PollEV p.2; (T) 9/28</small></div>
 
-<h4>Case 2: full agonist + partial agonist</h4>
+<h4>Case 2: full agonist + partial agonist</h4><!--FIG:shift-fapa-->
 <!--GRAPH:{"curves":[{"label":"DA","ec":0,"emax":100,"dashed":true},{"label":"ARI","ec":0.4,"emax":60},{"label":"DA+ARI","ec":0.4,"emax":60,"base":100}],"base":0,"x":"log [drug]","y":"% of maximal response","caption":"Dopamine alone (dashed, Emax 100%), aripiprazole alone (Emax 60%), and aripiprazole given to a manic patient whose dopamine has the system at 100%: the response comes down to 60%, the partial agonist's own efficacy (Day 3 slides ~54–~58; (T) 9/28)."}-->
 <ul>
 <li>The partial agonist has a <b>dual nature</b>: from a low baseline it behaves like an agonist (up to its Emax); when the full agonist has the system high it competes for the receptors and brings the response <b>down to its own Emax</b>: dopamine (100%) plus aripiprazole (60%) in a manic patient ends at 60%. <small>Day 3 slides ~54–~58, ~64–~65; (T) 9/28 "Instead of going to 100%, now I have a dose response curve that is going to what? 60%"</small></li>
@@ -331,7 +331,7 @@ const GUIDE_HTML = `
 </ul>
 <!--FIG:partial-->
 
-<h4>Case 3: full agonist + inverse agonist</h4>
+<h4>Case 3: full agonist + inverse agonist</h4><!--FIG:shift-inverse-->
 <!--GRAPH:{"curves":[{"label":"H","ec":0,"emax":100,"dashed":true,"base":50},{"label":"+L 1e-7","ec":0.6,"emax":100,"base":22},{"label":"+L 1e-6","ec":1.2,"emax":100,"base":0},{"label":"+L 1e-5","ec":1.8,"emax":100,"base":0}],"base":50,"x":"log [histamine]","y":"% of maximal response","caption":"Histamine alone from a 50% baseline (dashed) and with rising doses of loratadine: baseline falls (to about 22%, then 0%), curve shifts right, Emax unchanged; once the baseline is 0 it changes no further (Day 4 slides ~16–~22)."}-->
 <ul>
 <li>Shift <b>right</b> ("Decrease apparent affinity of agonist for the receptor"), baseline <b>down to 0%</b> and then "No more Δ to the baseline, once it reaches zero" ("once you're dead, you can't die again"); Emax <b>unchanged</b>; the shifts continue "to infinity" as long as the agonist can outcompete. <small>Day 4 slides ~13–~22 (THM); (T) 9/28</small></li>
@@ -341,7 +341,7 @@ const GUIDE_HTML = `
 </ul>
 <div class="poll"><b>"The dotted line represents the DRC of the agonist alone and the solid lines represent the DRC of the agonist in the presence of increasing doses of drug "X." Drug X is most likely:"</b> (dotted curve from a 50% baseline; solid curves start lower, then at 0%, and sit to the right) Metoprolol / Epinephrine / Tropicamide / Loratadine / Histamine<br>Key: <b>Loratadine</b>: the baseline falls to zero (negative efficacy), the curve shifts right, the Emax holds. Metoprolol and tropicamide (neutral antagonists) would leave the baseline where it is. Settled in class: (T) 9/29 “the only inverse agonist is going to be loratadine. And why it's inverse? Because it's bringing the baseline down to zero.” / duloxetine: “make it norepinephrine more potent, shifting to the left.” <small>PollEV (v2) p.5; (T) 9/29</small></div>
 
-<h4>Case 4: full agonist + competitive antagonist</h4>
+<h4>Case 4: full agonist + competitive antagonist</h4><!--FIG:shift-competitive-->
 <!--FIG:competitive-->
 <ul>
 <li>Shift <b>right</b> (higher ED50, "appears less potent"); baseline <b>no change</b> ("B has no efficacy"); Emax <b>no change</b> ("A can outcompete B", "B is reversible"); shifts <b>symmetrical</b> (10× antagonist = 10× agonist), toward infinity. <small>Day 4 slides ~45–~50; (T) 9/28</small></li>
@@ -350,7 +350,7 @@ const GUIDE_HTML = `
 <!--IMG:pollev-dotted-x-->
 <div class="poll"><b>"The dotted line represents the DRC of the agonist alone and the solid lines represent the DRC of the agonist in the presence of increasing doses of drug "X." Drug X is most likely:"</b> A full agonist / A partial agonist / A competitive antagonist / An irreversible antagonist / An allosteric agonist<br>Key: <b>A competitive antagonist</b> (right, same baseline, same Emax). Same figure with the drug list: <b>Metoprolol</b>. <small>PollEV p.3; Day 4 slide ~55; (T) 9/28</small></div>
 
-<h4>Case 5: full agonist + irreversible antagonist</h4>
+<h4>Case 5: full agonist + irreversible antagonist</h4><!--FIG:shift-irreversible-->
 <!--FIG:irreversible-->
 <ul>
 <li>Shift <b>right</b>, baseline <b>no change</b>, Emax <b>falls</b> with each dose, "all the way to 0"; shifts symmetrical; the receptor pool is being removed ("I'm gonna put a glue on the chair"). <small>Day 4 slides ~51–~54 (THM); (T) 9/28</small></li>
@@ -358,7 +358,7 @@ const GUIDE_HTML = `
 <li>Emax rule for the whole tab: only an irreversible antagonist or an allosteric antagonist that affects efficacy lowers Emax; "Everybody else is competitive. Everybody else is reversible, no change to the Emax." <small>(T) 9/28</small></li>
 </ul>
 
-<h4>Case 6: full agonist + allosteric agonist or antagonist</h4>
+<h4>Case 6: full agonist + allosteric agonist or antagonist</h4><!--FIG:shift-allo-agonist--><!--FIG:shift-allo-antagonist-->
 <!--IMG:pollev-abcde-allo-ag-->
 <ul>
 <li>Allosteric agonist: <b>left</b> (affinity) and/or <b>up</b> (efficacy, only if the agonist was partial); shifts asymmetrical and saturable; two drugs bound at once. Key on the slide-42 poll: A. <small>Day 4 slides ~25–~34, ~42; (T) 9/28</small></li>
