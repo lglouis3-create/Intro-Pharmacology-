@@ -2,6 +2,13 @@
 
 Newest first. The build embeds this file, and the Progress page shows it.
 
+## 2026-09-30
+- Day 5 (9/29) lecture ingested from Part 2 of the deck and the 9/29 transcript: 45 questions on spare receptors, indirect antagonists, receptor regulation and desensitization, quantal responses, therapeutic index and safety index; 14 tell-apart rows, 4 reference tables, 16 glossary terms.
+- Guides tab: nine concept guides with figures (affinity/efficacy/potency; agonist classes; antagonists; orthosteric vs allosteric; drug–drug on one receptor; receptors and signalling; drug basics; the drug list; Day 5), each bullet cited to a slide, the transcript or a poll page, with his poll stems and keys and the traps.
+- Eight more PollEV questions (9/29 polls) verbatim with keys settled from the transcript, plus 14 variants; his Day 5 figures embedded.
+- "Which is more important?" is keyed Efficacy from the transcript; the green highlight on that poll card was a student response, not the key.
+- A drawn quantal dose–response figure (ED50, LD50, ED99, LD1; TI = LD50/ED50).
+
 ## 2026-09-29 (PollEV bank)
 - His 27 PollEV questions word for word, with the answer he keyed, each with his own figure embedded (answer marks cropped off), plus 31 variants that ask a different question of the same figure. Topic "PollEV questions".
 - The Drug A / Drug B Kd table and the G-protein "which is CORRECT" poll now use the PollEV's own values and wording.

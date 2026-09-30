@@ -785,7 +785,7 @@ QUESTIONS.push(
 /* ---------------- Day 5 (9/29) polls, PollEV_s.pdf pages 4–5, keyed from the 9/29 transcript ---------------- */
 /* Part 1: verbatim */
 {id:'PE-059', lecture:'PE', prof:'Gottlieb', tier:'new', topic:'PE', sub:'verbatim', skill:'figure',
- concept:'four-drug-potency-efficacy', dupOf:'L03-044', tags:['poll','pollev','potency'], source:'both',
+ concept:'four-drug-potency-efficacy', dupOf:'L05-005', tags:['poll','pollev','potency'], source:'both',
  img:'pollev-four-drc-potency', imgAlt:'Four coloured dose-response curves A (black), B (red), C (blue) and D (green), response % against log[A] from .01 to 100 M', imgCap:'Response % vs Log[A] M; four drugs, one receptor',
  stem:'The DRCs below represent the DRC of five different drugs acting on the same receptor. Which drug has the highest potency?',
  options:[
@@ -799,7 +799,7 @@ QUESTIONS.push(
  note:'The stem says five drugs; the figure shows four curves (A–D). Kept as he wrote it. "potnecy" in the original is a typo he acknowledged in class ("Sorry, I misspelled potency").',
  cite:'PollEV_s.pdf page 4; transcript 9/29'},
 
-{id:'PE-060', lecture:'PE', prof:'Gottlieb', tier:'new', topic:'PE', sub:'verbatim', skill:'figure',
+{id:'PE-060', dupOf:'L05-006', lecture:'PE', prof:'Gottlieb', tier:'new', topic:'PE', sub:'verbatim', skill:'figure',
  concept:'same-emax-leftmost-most-potent', tags:['poll','pollev','potency'], source:'both',
  img:'pollev-five-drc-correct', imgAlt:'Five dose-response curves A to E, effect against log dose, with a dotted horizontal line Y; A and B on the left, C and D in the middle, E on the right', imgCap:'Effect vs log Dose; Y is a dotted horizontal line',
  stem:'Which of the following is CORRECT?',
@@ -828,7 +828,7 @@ QUESTIONS.push(
  cite:'PollEV_s.pdf page 5; transcript 9/29'},
 
 {id:'PE-062', lecture:'PE', prof:'Gottlieb', tier:'new', topic:'PE', sub:'verbatim', skill:'figure',
- concept:'transporter-blocker-increases-apparent-potency', dupOf:'L03-002', tags:['poll','pollev','potency','duloxetine'], source:'both',
+ concept:'transporter-blocker-increases-apparent-potency', dupOf:'L05-012', tags:['poll','pollev','potency','duloxetine'], source:'both',
  img:'pollev-abcde-duloxetine', imgAlt:'Five concentration-response curves A to E, response as percent of control against agonist concentration from 10^-9 to 10^-3 M; A is furthest left, B next, C and E are lower and to the right, D is right of B at full height', imgCap:'Response (% of control) vs [Agonist, M]; B is norepinephrine alone',
  stem:'DRC "B" represents the DRC of NE alone. Which DRC best represent NE in the presence of duloxetine (NET antagonist)?',
  options:[
@@ -841,7 +841,7 @@ QUESTIONS.push(
  quote:'99% says A, is that the correct answer? That’s your final answer. That is correct. So remember that in this case, we’re blocking the reuptake of norepinephrine, which means we’re gonna have norepinephrine floating around for a longer period of time in that synapse and thus make it norepinephrine more potent, shifting to the left.',
  cite:'PollEV_s.pdf page 5; transcript 9/29'},
 
-{id:'PE-063', lecture:'PE', prof:'Gottlieb', tier:'new', topic:'PE', sub:'verbatim', skill:'recall',
+{id:'PE-063', dupOf:'L05-018', lecture:'PE', prof:'Gottlieb', tier:'new', topic:'PE', sub:'verbatim', skill:'recall',
  concept:'receptor-number-potency', tags:['poll','pollev','regulation'], source:'both',
  stem:'Which statement is CORRECT?',
  options:[
@@ -854,7 +854,7 @@ QUESTIONS.push(
  note:'In the PollEV file the green highlight marks the student’s response; the transcript confirms the same answer (D). His handwritten "it will down-regulate" and "long term" are the student’s notes on why A and B are wrong.',
  cite:'PollEV_s.pdf page 5; transcript 9/29'},
 
-{id:'PE-064', lecture:'PE', prof:'Gottlieb', tier:'new', topic:'PE', sub:'verbatim', skill:'recall',
+{id:'PE-064', dupOf:'L05-019', lecture:'PE', prof:'Gottlieb', tier:'new', topic:'PE', sub:'verbatim', skill:'recall',
  concept:'receptor-regulation-all-correct', tags:['poll','pollev','regulation'], source:'both',
  stem:'Which statement is CORRECT?',
  options:[
@@ -867,7 +867,7 @@ QUESTIONS.push(
  quote:'99 says E, that’s the correct answer, right? They’re all correct. OK. Very good.',
  cite:'PollEV_s.pdf page 5; transcript 9/29'},
 
-{id:'PE-065', lecture:'PE', prof:'Gottlieb', tier:'new', topic:'PE', sub:'verbatim', skill:'calc',
+{id:'PE-065', dupOf:'L05-038', lecture:'PE', prof:'Gottlieb', tier:'new', topic:'PE', sub:'verbatim', skill:'calc',
  concept:'therapeutic-index-calc', tags:['poll','pollev','therapeutic-index'], source:'both',
  img:'pollev-quantal-ti', imgAlt:'Two quantal curves, percentage of individuals responding against dose in µg/kg: hypnosis on the left with ED50 at 100 and ED99 at 200; death on the right with LD1 at about 200 and LD50 at 400', imgCap:'Quantal dose-response curves for hypnosis and death; dose in µg/kg',
  stem:'What is the TI of this drug?',
@@ -882,7 +882,7 @@ QUESTIONS.push(
  note:'The transcript records the poll (97% agreed) and his formula but not the number spoken aloud; the key is his formula applied to the labelled values, 400/100 = 4. He said the exam figures will not be labelled and the numbers will be far enough apart that approximating the lines is enough.',
  cite:'PollEV_s.pdf page 5; transcript 9/29'},
 
-{id:'PE-066', lecture:'PE', prof:'Gottlieb', tier:'new', topic:'PE', sub:'verbatim', skill:'figure',
+{id:'PE-066', dupOf:'L05-039', lecture:'PE', prof:'Gottlieb', tier:'new', topic:'PE', sub:'verbatim', skill:'figure',
  concept:'safety-index-ed99-ld1', tags:['poll','pollev','therapeutic-index'], source:'both',
  img:'pollev-quantal-safe', imgAlt:'Two quantal curves, percentage of individuals responding against dose in µg/kg: hypnosis on the left with ED50 at 100 and ED99 at 200; death on the right with LD1 at about 200 and LD50 at 400', imgCap:'Quantal dose-response curves for hypnosis and death; dose in µg/kg',
  stem:'Is this drug safe?',
