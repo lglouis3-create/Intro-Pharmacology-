@@ -9,18 +9,21 @@
   --bg:#f7f7f4; --panel:#ffffff; --ink:#1d1f22; --muted:#5d636b; --line:#dcdfe3;
   --accent:#2f5d8a; --accent-ink:#ffffff; --ok:#1f7a4a; --ok-bg:#e5f4ea;
   --bad:#a8322d; --bad-bg:#fbe9e7; --warn:#8a5a00; --warn-bg:#fff4dc; --chip:#eef1f4;
+  --figA:#0072b2; --figB:#d55e00; --figC:#009e73; --figD:#e69f00; --figE:#cc79a7;
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
     --bg:#15171a; --panel:#1e2125; --ink:#e7e9ec; --muted:#9aa1a9; --line:#33383e;
     --accent:#7fb0e0; --accent-ink:#0d1620; --ok:#6fd49a; --ok-bg:#16301f;
     --bad:#f08a82; --bad-bg:#3a1a18; --warn:#f0c060; --warn-bg:#352a10; --chip:#2a2e33;
+    --figA:#3d95cc; --figB:#d9702e; --figC:#1fa27f; --figD:#bd8a26; --figE:#bf6e9e;
   }
 }
 :root[data-theme="dark"]{
   --bg:#15171a; --panel:#1e2125; --ink:#e7e9ec; --muted:#9aa1a9; --line:#33383e;
   --accent:#7fb0e0; --accent-ink:#0d1620; --ok:#6fd49a; --ok-bg:#16301f;
   --bad:#f08a82; --bad-bg:#3a1a18; --warn:#f0c060; --warn-bg:#352a10; --chip:#2a2e33;
+  --figA:#3d95cc; --figB:#d9702e; --figC:#1fa27f; --figD:#bd8a26; --figE:#bf6e9e;
 }
 *{box-sizing:border-box}
 html,body{margin:0;background:var(--bg);color:var(--ink);
@@ -89,14 +92,16 @@ select,input[type=text],input[type=number]{font-size:15px;padding:6px 8px;border
 .fig .ax{stroke:var(--ink);stroke-width:1.2;fill:none}
 .fig .dash{stroke:var(--muted);stroke-width:1;stroke-dasharray:4 3;fill:none}
 .fig .cv{fill:none;stroke-width:2.4;stroke-linejoin:round}
-.fig .cv.a{stroke:var(--accent)} .fig .cv.b{stroke:var(--bad)} .fig .cv.c{stroke:var(--ok)} .fig .cv.d{stroke:var(--warn)} .fig .cv.e{stroke:var(--muted)} .fig .cv.dashed{stroke-dasharray:6 4}
-.fig .cl.d{fill:var(--warn)} .fig .cl.e{fill:var(--muted)}
+.fig .cv.a{stroke:var(--figA)} .fig .cv.b{stroke:var(--figB)} .fig .cv.c{stroke:var(--figC)} .fig .cv.d{stroke:var(--figD)} .fig .cv.e{stroke:var(--figE)} .fig .cv.dashed{stroke-dasharray:6 4}
+.fig .cl.d{fill:var(--figD)} .fig .cl.e{fill:var(--figE)}
 .stemfig{margin:0 0 12px}
-.fig .cl{font-size:11px;font-weight:600} .fig .cl.a{fill:var(--accent)} .fig .cl.b{fill:var(--bad)} .fig .cl.c{fill:var(--ok)}
+.fig .cl{font-size:11px;font-weight:600} .fig .cl.a{fill:var(--figA)} .fig .cl.b{fill:var(--figB)} .fig .cl.c{fill:var(--figC)}
 .fig .lbl{fill:var(--ink);font-size:11px} .fig .lbl.big{font-size:20px;font-weight:700} .fig .lbl.sm{font-size:10px;font-weight:600} .fig .lbl.xs{font-size:8.5px;fill:var(--muted)} .fig .lbl.sm2{font-size:10px}
 .fig .shape{fill:var(--chip);stroke:var(--line);stroke-width:1.5}
 .fig .pocket{fill:var(--bg);stroke:var(--muted);stroke-width:1}
-.fig .lig.a{fill:var(--accent)} .fig .lig.b{fill:var(--bad)} .fig .lig.c{fill:var(--ok)}
+.fig .lig.a{fill:var(--figA)} .fig .lig.b{fill:var(--figB)} .fig .lig.c{fill:var(--figC)}
+.fig .title{fill:var(--ink);font-size:11px;font-weight:700}
+.fig figcaption ul{margin:4px 0 2px;padding-left:18px} .fig figcaption li{margin:2px 0}
 .fig .box{fill:var(--chip);stroke:var(--line);stroke-width:1.2}
 .fig .arrow{stroke:var(--muted);stroke-width:1.6;fill:none;marker-end:url(#arw)}
 .shiftgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(400px,1fr));gap:12px;margin:8px 0 18px} .shiftgrid .fig{max-width:none;margin:0}

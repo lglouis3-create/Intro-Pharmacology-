@@ -2,7 +2,7 @@ const TELL_HTML = `
 <h2>Tell apart</h2>
 <p class="sub">Slide numbers marked ~ were counted from the deck text and may be off by one or two. Pairs that share wording. Each row gives the feature that separates them and the trap a question sets. Nothing here is scored.</p>
 <h3>The shifts at a glance: what is bound, and what the curve does</h3>
-<p class="sub">Each panel: top left, five receptors in the membrane at one agonist dose with the full agonist alone (the start; dashed curve); top right, the same receptors after the second drug is added (the shift; solid curve). A filled receptor with an arrow into the cell is active; an empty one is inactive; the bar is the response at that dose. Bottom: what the agonist’s curve does. Rules from Day 3–4 slides and the 9/28 lecture.</p>
+<p class="sub">Each panel is titled with the pair it shows. Top left: five receptors in the membrane at one agonist dose with the full agonist alone (the start; dashed curve). Top right: the same receptors after the second drug is added (the shift; solid curve). A filled receptor with an arrow into the cell is active; an empty one is inactive; the bar is the response at that dose. Bottom: what the agonist’s curve does. Every drug is told apart by shape as well as colour (circle = agonist, translucent circle = partial agonist, square = antagonist, square with a lock = irreversible, small circle at the side = allosteric), and the curve colours were chosen to stay distinct for red–green and blue–yellow colour blindness. Rules from Day 3–4 slides and the 9/28 lecture.</p>
 <table class="reftab"><thead><tr><th style="width:22%">Second drug</th><th>At the receptor</th><th>Shift</th><th>Baseline</th><th>Emax</th></tr></thead><tbody>
 <tr><td>Full agonist</td><td>Competes for the same pocket; either one activates</td><td>Left</td><td>Up</td><td>Same</td></tr>
 <tr><td>Partial agonist</td><td>Competes for the pocket; activates less</td><td>—</td><td>Ends at the partial agonist’s own Emax (up from low, down from full)</td><td>Only the full agonist alone reaches it</td></tr>
@@ -15,6 +15,24 @@ const TELL_HTML = `
 <p class="sub">Day 3 slides ~42–~49; Day 4 slides ~13–~55; transcript 9/28. Only the irreversible antagonist and the allosteric antagonist acting on efficacy lower Emax.</p>
 <div class="shiftgrid">
 <!--FIG:shift-fafa--><!--FIG:shift-fapa--><!--FIG:shift-inverse--><!--FIG:shift-competitive--><!--FIG:shift-irreversible--><!--FIG:shift-allo-agonist--><!--FIG:shift-allo-antagonist-->
+</div>
+<h3>Indirect antagonists: where each drug acts, upstream or downstream of the receptor</h3>
+<p class="sub">The receptor itself is never touched. Upstream drugs change how much agonist reaches it (a transporter or an enzyme); downstream drugs change what happens to the signal after it (phosphodiesterase, RAS). Part 2 pages 4–13, 31; 9/29 lecture.</p>
+<table class="reftab"><thead><tr><th style="width:24%">Drug</th><th>Target</th><th>Upstream or downstream</th><th>Agonist’s curve</th></tr></thead><tbody>
+<tr><td>Duloxetine (SNRI), cocaine</td><td>Norepinephrine reuptake transporter</td><td>Upstream: more norepinephrine stays in the synapse</td><td>Left, same Emax</td></tr>
+<tr><td>Fluoxetine (SSRI)</td><td>Serotonin reuptake transporter (SERT)</td><td>Upstream: more serotonin stays in the cleft</td><td>Left, same Emax</td></tr>
+<tr><td>Physostigmine (any -stigmine)</td><td>Acetylcholinesterase</td><td>Upstream: acetylcholine is not broken down</td><td>Left, same Emax</td></tr>
+<tr><td>Carbidopa</td><td>Enzyme in the gut that breaks down dopa</td><td>Upstream: more dopa reaches the brain (potentiation; no effect alone)</td><td>L-dopa left</td></tr>
+<tr><td>Milrinone, caffeine</td><td>Phosphodiesterase (breaks down cAMP)</td><td>Downstream: cAMP builds up behind the same signal</td><td>Left; a partial agonist can reach the full response</td></tr>
+<tr><td>Cancer drug X</td><td>RAS in the GEF → RAS → RAF → MEK → ERK cascade</td><td>Downstream: the message is cut after the receptor</td><td>Right and Emax down</td></tr>
+</tbody></table>
+<div class="shiftgrid">
+<!--FIG:ind-snri--><!--FIG:ind-ssri--><!--FIG:ind-ache--><!--FIG:ind-carbidopa--><!--FIG:ind-pde--><!--FIG:ind-ras-->
+</div>
+<h3>The GPCR process and receptor regulation</h3>
+<p class="sub">The forward steps and what ends them (Day 1 slides ~51–~54; 9/23 lecture), then what the cell does to the receptor after too much or too little stimulation (Part 2 pages 16–29; 9/29 lecture).</p>
+<div class="shiftgrid">
+<!--FIG:gpcr-steps--><!--FIG:desens-rapid--><!--FIG:desens-long--><!--FIG:regulation-->
 </div>
 <h3>Day 1 (9/22) &mdash; Pharmacodynamics-Day-1-2026s.pdf</h3>
 <table class="reftab"><thead><tr><th style="width:20%">Looks alike</th><th>What separates them</th><th style="width:26%">The trap</th><th style="width:9%">Slides</th><th style="width:9%">Question</th></tr></thead><tbody>
