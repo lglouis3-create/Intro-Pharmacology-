@@ -16,7 +16,7 @@ const out = path.join(__dirname, '..', course.match(/output:\s*'([^']+)'/)[1]);
   page.on('dialog', d => d.accept());
   await page.goto('file://' + out);
   const fail = m => { console.log('FAIL', m); process.exitCode = 1; };
-  for (const v of ['topics', 'quiz', 'weak', 'exam', 'ref', 'tell', 'guide', 'data']) {
+  for (const v of ['topics', 'quiz', 'weak', 'exam', 'map', 'ref', 'tell', 'guide', 'data']) {
     const b = await page.$(`nav button[data-v="${v}"]`);
     if (!b) { if (v !== 'guide') fail('no nav button ' + v); continue; }
     await b.click();
@@ -93,9 +93,24 @@ const out = path.join(__dirname, '..', course.match(/output:\s*'([^']+)'/)[1]);
   await page.reload();
   await page.click('nav button[data-v="data"]');
   if (!/ answers /.test(await page.textContent('#view'))) fail('progress page missing counts');
+  // question map: every pool question has a tile; answered ones are marked; a tile opens its question
+  await page.click('nav button[data-v="map"]');
+  const mp = await page.evaluate(() => ({tiles: document.querySelectorAll('.qt[data-q]').length, marked: document.querySelectorAll('.qt.right[data-q], .qt.wrong[data-q]').length, unseen: document.querySelectorAll('.qt.unseen[data-q]').length}));
+  if (mp.tiles !== mp.marked + mp.unseen) fail('map tiles do not add up: ' + JSON.stringify(mp));
+  if (mp.marked < 1) fail('map shows no answered questions after a quiz');
+  await page.click('[data-show="wrong"]');
+  if (await page.evaluate(() => document.querySelectorAll('.qt[data-q]:not(.wrong)').length)) fail('wrong filter shows other tiles');
+  await page.click('[data-show="all"]');
+  await page.click('.qt[data-q]');
+  if (!(await page.$('.opt'))) fail('map tile did not open a question');
+  // theme control
+  await page.selectOption('#theme', 'dark');
+  if ((await page.getAttribute('html', 'data-theme')) !== 'dark') fail('theme select did not apply dark');
+  await page.selectOption('#theme', 'system');
+  if (await page.getAttribute('html', 'data-theme')) fail('system theme left data-theme set');
   // phone width: no horizontal scroll on any view
   await page.setViewportSize({width: 375, height: 800});
-  for (const v of ['topics', 'ref', 'tell', 'exam', 'weak', 'data']) {
+  for (const v of ['topics', 'ref', 'tell', 'exam', 'weak', 'map', 'data']) {
     await page.click(`nav button[data-v="${v}"]`);
     const over = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
     if (over > 1) fail(`horizontal scroll on ${v} at 375px (${over}px)`);

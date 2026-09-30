@@ -2,6 +2,10 @@
 
 Newest first. The build embeds this file, and the Progress page shows it.
 
+## 2026-09-30 (question map, theme control)
+- New "Question map" tab: every question in the bank as a tile, grouped by lecture and concept, colour-coded and marked by the most recent answer (dashed = unseen, ✓ = last answer right, ✗ = last answer wrong) with a correct-over-attempts count. Filter chips for all / unseen / right / wrong; per-lecture "Redo wrong" and "Drill unseen" buttons; clicking a tile opens that question.
+- Theme control in the header: System, Light or Dark, remembered in the browser.
+
 ## 2026-09-30 (titles, bullet captions, indirect antagonists, GPCR steps, regulation, colour-safe palette)
 - Every drawn panel now carries a title naming the pair it shows (for example "Full agonist + reversible antagonist · NE + metoprolol at β1"), and the caption under each is a bulleted list (Start / Shift / Curve / Rule) instead of a paragraph.
 - New figures, on Tell apart and in guides 6 and 9: the GPCR process step by step (NE at β1: binding, GDP/GTP swap, αs to adenylate cyclase, cAMP, PKA, Ca++, and the three things that end it); one panel per indirect antagonist showing where it acts, upstream or downstream of the receptor, with the agonist's curve (duloxetine, fluoxetine, physostigmine, carbidopa, milrinone/caffeine, cancer drug X on RAS); rapid desensitization (GRK, β-arrestin, the cAMP trace); long-term down-regulation (coated pit, endocytosis, recycle or lysosome); up- versus down-regulation (receptor count and curve). Glossary terms link to them.
