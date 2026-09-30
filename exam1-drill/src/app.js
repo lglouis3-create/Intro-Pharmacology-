@@ -534,7 +534,7 @@ function vTerms() {
 }
 
 /* ---------- static pages ---------- */
-function vRef() { $('#view').innerHTML = `<div class="tablewrap">${REFERENCE_HTML.replace(/<!--FIG:([\w-]+)-->/g, (m, k) => FIG(k))}</div>`; stackTables($('#view')); }
+function vRef() { $('#view').innerHTML = `<div class="tablewrap">${expandFigs(REFERENCE_HTML)}</div>`; stackTables($('#view')); }
 function vTell() {
   $('#view').innerHTML = `<div class="tablewrap">${TELL_HTML}</div>
     <div class="row" style="margin-top:12px"><button class="btn" id="tellq">Drill every tell-apart question</button></div>`;
@@ -547,7 +547,19 @@ function vTell() {
   $('#tellq').onclick = () => startQuiz(shuffle(ids.map(id => byId[id])), 'Tell apart', 'pass');
   stackTables($('#view'));
 }
-function vGuide() { $('#view').innerHTML = `<div class="tablewrap">${typeof GUIDE_HTML === 'undefined' ? '' : GUIDE_HTML}</div>`; }
+/* Static pages carry figure markers: <!--FIG:key-->, <!--IMG:key--> (one of his
+   poll figures) and <!--GRAPH:{json}--> (a drawn dose–response plot). */
+function expandFigs(html) {
+  return html
+    .replace(/<!--FIG:([\w-]+)-->/g, (m, k) => FIG(k))
+    .replace(/<!--IMG:([\w-]+)-->/g, (m, k) => IMG[k] ? `<figure class="fig"><img src="${IMG[k]}" alt="${esc(k)}"></figure>` : '')
+    .replace(/<!--GRAPH:([\s\S]*?)-->/g, (m, j) => { try { return FIG.graph(JSON.parse(j)); } catch (e) { return ''; } });
+}
+function vGuide() {
+  $('#view').innerHTML = `<div class="tablewrap">${expandFigs(typeof GUIDE_HTML === 'undefined' ? '' : GUIDE_HTML)}</div>`;
+  stackTables($('#view'));
+  document.querySelectorAll('.guidenav a').forEach(a => a.onclick = e => { const t = document.querySelector(a.getAttribute('href')); if (t) { e.preventDefault(); t.scrollIntoView({behavior: 'smooth'}); } });
+}
 
 /* ---------- Progress: profile, pace, export ---------- */
 function download(name, text, type) {
