@@ -2,7 +2,7 @@ const TELL_HTML = `
 <h2>Tell apart</h2>
 <p class="sub">Slide numbers marked ~ were counted from the deck text and may be off by one or two. Pairs that share wording. Each row gives the feature that separates them and the trap a question sets. Nothing here is scored.</p>
 <h3>The shifts at a glance: what is bound, and what the curve does</h3>
-<p class="sub">Dashed curve = the full agonist alone (the point of reference). Solid = with the second drug. Left panel = what sits in the agonist pocket and at the second (allosteric) site. Rules from Day 3–4 slides and the 9/28 lecture.</p>
+<p class="sub">Each panel: top left, five receptors in the membrane at one agonist dose with the full agonist alone (the start; dashed curve); top right, the same receptors after the second drug is added (the shift; solid curve). A filled receptor with an arrow into the cell is active; an empty one is inactive; the bar is the response at that dose. Bottom: what the agonist’s curve does. Rules from Day 3–4 slides and the 9/28 lecture.</p>
 <table class="reftab"><thead><tr><th style="width:22%">Second drug</th><th>At the receptor</th><th>Shift</th><th>Baseline</th><th>Emax</th></tr></thead><tbody>
 <tr><td>Full agonist</td><td>Competes for the same pocket; either one activates</td><td>Left</td><td>Up</td><td>Same</td></tr>
 <tr><td>Partial agonist</td><td>Competes for the pocket; activates less</td><td>—</td><td>Ends at the partial agonist’s own Emax (up from low, down from full)</td><td>Only the full agonist alone reaches it</td></tr>

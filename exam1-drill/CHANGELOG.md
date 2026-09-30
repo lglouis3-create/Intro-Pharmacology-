@@ -2,6 +2,9 @@
 
 Newest first. The build embeds this file, and the Progress page shows it.
 
+## 2026-09-30 (shift panels: receptors at the start and at the shift)
+- Each shift panel now shows five receptors in the membrane at one agonist dose twice: with the full agonist alone (the start, dashed curve) and after the second drug is added (the shift, solid curve). A filled receptor with an arrow into the cell is active, an empty one inactive, a bar under each row is the response at that dose; the inverse-agonist panel starts with receptors that are active with an empty pocket (constitutive activity), the irreversible panel marks receptors removed from the pool, and the allosteric panels show the second site. The curve sits below, full width.
+
 ## 2026-09-30 (shift panels)
 - Tell apart opens with "The shifts at a glance": seven drawn panels, each with the receptor (what is bound in the pocket or at the second site) beside the agonist's curve with the shift marked — full + full, full + partial, + inverse agonist, + reversible antagonist, + irreversible antagonist, + allosteric agonist, + allosteric antagonist — and a one-line table of shift, baseline and Emax for each. The same panels sit in guide 5's case sections.
 
