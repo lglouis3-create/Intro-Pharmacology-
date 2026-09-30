@@ -63,6 +63,16 @@ const store = {
   set(k, v) { MEM[k] = v; try { localStorage.setItem(k, v); } catch (e) {} }
 };
 let PROFILE = store.get(COURSE.ns + ':profile') || 'default';
+/* Theme: 'system' follows the device setting; 'light' or 'dark' overrides it
+   through the data-theme attribute the stylesheet reads. */
+const THEMES = [['system', 'System'], ['light', 'Light'], ['dark', 'Dark']];
+function applyTheme(v) {
+  if (v === 'light' || v === 'dark') document.documentElement.setAttribute('data-theme', v);
+  else document.documentElement.removeAttribute('data-theme');
+  store.set(COURSE.ns + ':theme', v);
+}
+const themeSelect = () => `<select id="theme" title="Theme" aria-label="Theme">${THEMES.map(([k, l]) => `<option value="${k}" ${k === (store.get(COURSE.ns + ':theme') || 'system') ? 'selected' : ''}>${l}</option>`).join('')}</select>`;
+applyTheme(store.get(COURSE.ns + ':theme') || 'system');
 const KEY = () => COURSE.ns + ':p:' + PROFILE;
 function loadState() {
   try { const s = JSON.parse(store.get(KEY()) || 'null'); if (s && s.q) return s; } catch (e) {}
@@ -94,18 +104,19 @@ function schedule(id, outcome) {
 /* ---------- views ---------- */
 const VIEWS = [
   ['topics', 'Topics'], ['quiz', 'Quiz'], ['terms', 'Terms'], ['weak', 'Weak spots'], ['exam', 'Exam sim'],
-  ['ref', 'Reference'], ['tell', 'Tell apart'], ['guide', 'Guides'], ['data', 'Progress']
+  ['map', 'Question map'], ['ref', 'Reference'], ['tell', 'Tell apart'], ['guide', 'Guides'], ['data', 'Progress']
 ];
 let CUR = 'topics';
 function nav() {
   $('#nav').innerHTML = VIEWS.filter(([k]) => k !== 'guide' || (typeof GUIDE_HTML !== 'undefined' && GUIDE_HTML.trim()))
-    .map(([k, l]) => `<button data-v="${k}" class="${k === CUR ? 'on' : ''}">${l}</button>`).join('');
+    .map(([k, l]) => `<button data-v="${k}" class="${k === CUR ? 'on' : ''}">${l}</button>`).join('') + themeSelect();
   $('#nav').querySelectorAll('button').forEach(b => b.onclick = () => go(b.dataset.v));
+  $('#theme').onchange = e => applyTheme(e.target.value);
 }
 function go(v) {
   if (CUR === 'exam' && EX && !EX.done && v !== 'exam' && !confirm('Leave the exam in progress? It will be kept until you return.')) return;
   CUR = v; nav(); window.scrollTo(0, 0);
-  ({topics: vTopics, quiz: vQuiz, terms: vTerms, weak: vWeak, exam: vExam, ref: vRef, tell: vTell, guide: vGuide, data: vData})[v]();
+  ({topics: vTopics, quiz: vQuiz, terms: vTerms, weak: vWeak, exam: vExam, map: vMap, ref: vRef, tell: vTell, guide: vGuide, data: vData})[v]();
 }
 
 /* Questions eligible for practice and for the active exam. */
@@ -567,6 +578,57 @@ function download(name, text, type) {
   a.href = URL.createObjectURL(new Blob([text], {type}));
   a.download = name; document.body.appendChild(a); a.click(); a.remove();
 }
+/* ---------- Question map: every question in the bank, colour-coded ----------
+   unseen = never answered; right / wrong = the outcome of the most recent
+   answer (quiz, exam simulator or term quiz). Colour is backed by a mark
+   (✓, ✗, blank) so the states read without colour. */
+function lastOutcome(q) {
+  const st = S.q[q.id];
+  if (!st || !st.n) return 'unseen';
+  for (let i = S.log.length - 1; i >= 0; i--) if (S.log[i].id === q.id) return S.log[i].ok ? 'right' : 'wrong';
+  return st.ok >= st.n ? 'right' : 'wrong';
+}
+let MAPF = {show: 'all'};
+function vMap() {
+  const pool = examPool();
+  const counts = {unseen: 0, right: 0, wrong: 0};
+  const state = {}; pool.forEach(q => { state[q.id] = lastOutcome(q); counts[state[q.id]]++; });
+  const mark = {unseen: '', right: '✓', wrong: '✗'};
+  const tile = q => { const k = state[q.id], st = S.q[q.id]; return `<button class="qt ${k}" data-q="${q.id}" title="${esc(q.stem)}"><span class="qm">${mark[k]}</span><span class="qid">${esc(q.id)}</span>${st && st.n ? `<span class="qn">${st.ok}/${st.n}</span>` : ''}<span class="qs">${esc(q.stem.slice(0, 64))}${q.stem.length > 64 ? '…' : ''}</span></button>`; };
+  let h = `<h2>Question map</h2>
+  <p class="sub">Every question in the bank, grouped by lecture and concept. The colour and mark show the most recent answer; a count shows correct answers over attempts. Click a tile to open that question.</p>
+  <div class="card"><div class="row">
+    ${[['all', `All ${pool.length}`], ['unseen', `Unseen ${counts.unseen}`], ['right', `Right ${counts.right}`], ['wrong', `Wrong ${counts.wrong}`]].map(([k, l]) => `<span class="chip ${MAPF.show === k ? 'on' : ''} lg-${k}" data-show="${k}">${l}</span>`).join('')}
+  </div>
+  <div class="row" style="margin-top:8px"><span class="qt unseen lg"><span class="qm"></span>unseen</span><span class="qt right lg"><span class="qm">✓</span>last answer right</span><span class="qt wrong lg"><span class="qm">✗</span>last answer wrong</span></div></div>`;
+  TOPICS.forEach(t => {
+    const tq = pool.filter(q => q.topic === t.id);
+    if (!tq.length) return;
+    const tc = {unseen: 0, right: 0, wrong: 0}; tq.forEach(q => tc[state[q.id]]++);
+    const sel = tq.filter(q => MAPF.show === 'all' || state[q.id] === MAPF.show);
+    h += `<div class="card"><div class="topicrow"><span><b>${esc(t.name)}</b><small>${tq.length} questions · ${tc.unseen} unseen · ${tc.right} right · ${tc.wrong} wrong</small></span>
+      <span class="row">${tc.wrong ? `<button class="btn ghost" data-drill="${t.id}" data-what="wrong">Redo wrong</button>` : ''}${tc.unseen ? `<button class="btn ghost" data-drill="${t.id}" data-what="unseen">Drill unseen</button>` : ''}</span></div>`;
+    const subs = (t.subs || []).slice();
+    const known = new Set(subs.map(x => x.id));
+    tq.forEach(q => { if (q.sub && !known.has(q.sub)) { known.add(q.sub); subs.push({id: q.sub, name: q.sub}); } });
+    if (tq.some(q => !q.sub)) subs.push({id: null, name: 'Other'});
+    subs.forEach(sb => {
+      const sq = sel.filter(q => (q.sub || null) === sb.id);
+      if (!sq.length) return;
+      h += `<h4 class="mapsub">${esc(sb.name)}</h4><div class="qgrid">${sq.map(tile).join('')}</div>`;
+    });
+    if (!sel.length) h += `<p class="empty">Nothing in this section matches the filter.</p>`;
+    h += '</div>';
+  });
+  $('#view').innerHTML = h;
+  document.querySelectorAll('[data-show]').forEach(c => c.onclick = () => { MAPF.show = c.dataset.show; vMap(); });
+  document.querySelectorAll('.qt[data-q]').forEach(b => b.onclick = () => startQuiz([byId[b.dataset.q]], 'From the question map', 'pass'));
+  document.querySelectorAll('[data-drill]').forEach(b => b.onclick = () => {
+    const list = pool.filter(q => q.topic === b.dataset.drill && state[q.id] === b.dataset.what);
+    startQuiz(shuffle(list), `${(TOPIC[b.dataset.drill] || {}).name}: ${b.dataset.what}`, 'pass');
+  });
+}
+
 function vData() {
   const pool = examPool(), a = acc(pool);
   let h = `<h2>Progress</h2>
