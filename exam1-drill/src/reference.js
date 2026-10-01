@@ -173,7 +173,7 @@ const REFERENCE_HTML = `
 <p class="sub">PollEV_s.pdf pages 1&ndash;2; Pharmacodynamics-Day_2_2026s copy.pdf slide ~51; transcript 9/24: &ldquo;I&rsquo;m gonna give you a very similar question on your exam with uh 3 more options than those two, and about 10% of you are gonna miss it. It happens every year.&rdquo;</p>
 
 <h3>5. Receptors and signalling</h3>
-<!--FIG:superfamilies-->
+<!--FIG:superfamilies--><!--FIG:galpha-->
 <p class="sub">What you are looking up: the four receptor classes, which G&alpha; subunit goes with which effector and second messenger, and the steps of the GPCR cascade.</p>
 <table class="reftab"><thead><tr><th>Receptor class</th><th>Structure</th><th>Examples on the slide</th><th>Why</th></tr></thead><tbody>
 <tr><td>Ion channels</td><td>Transmembrane proteins; signal by membrane potential and ionic composition</td><td>L-type Ca++ channels, GABA</td><td><ul style="margin:0;padding-left:16px"><li>Passive: always open. Voltage-gated: open at a membrane potential. Ligand-gated: usually closed, binding pocket in the channel. Pump: moves ions against the gradient.</li><li>Nicotinic sequence: acetylcholine binds 2 &alpha; subunits; Na+ in, K+ out; depolarization; voltage-sensitive Ca++ channels open; Ca++ up, contraction; Na+/K+ ATPase restores the potential.</li></ul></td></tr>

@@ -3,6 +3,7 @@
 Newest first. The build embeds this file, and the Progress page shows it.
 
 ## 2026-10-01 (Graphs tab, chain from regulation to the curve, Day 1 figures)
+- Gs, Gi, Gq side by side (β1 → αs → adenylate cyclase → cAMP up; M2 → αi → the same enzyme inhibited → cAMP down; α1 → αq → phospholipase C → IP3 → Ca++), with a six-step walk-through and two questions in his 9/30 words ("defined by the alpha subunit"; S for stimulation, I for inhibition, Q for stimulation through calcium).
 - Full + partial agonist split into its two scenarios: the partial agonist alone from a baseline of 0 (rises to its own 60%) and the partial agonist added to a manic patient's full dopamine response (falls to 60%); each has its own step-through. Every shift panel now states whether its shifts are symmetrical and why. The irreversible panel states that the baseline stays put. The MOA/SOA card is gone. The 50%-active cell-line questions now show their dashed baseline.
 - Graphs tab: his own figures (PollEV, Jeopardy, the 9/30 review, Part 3), 20 in all, each with every question written on it (52 new ones, so each figure has at least five, asked with different drug-list drugs). A wrong answer names the reading question you skipped (shift, baseline, Emax, symmetry, helping or hurting, potency, efficacy, affinity, class, steps, therapeutic index); the end of a pass lists the ones you keep skipping, and the figure card carries that tally.
 - Each drug–drug shift panel now has a step-through beside it (agonist alone, the second drug binds, the curve moves, the reading).

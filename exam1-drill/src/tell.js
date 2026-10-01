@@ -42,6 +42,7 @@ const TELL_HTML = `
 <h3>The G protein–coupled receptor (GPCR) process and receptor regulation</h3>
 <p class="sub">The forward steps and what ends them (Day 1 slides ~51–~54; 9/23 lecture), then what the cell does to the receptor after too much or too little stimulation (Part 2 pages 16–29; 9/29 lecture).</p>
 <div class="pair"><!--FIG:gpcr-steps--><!--FIG:gpcr-anim--></div>
+<div class="pair"><!--FIG:galpha--><!--FIG:galpha-anim--></div>
 <div class="pair"><!--FIG:desens-rapid--><!--FIG:desens-rapid-anim--></div>
 <div class="pair"><!--FIG:desens-long--><!--FIG:desens-long-anim--></div>
 <div class="pair"><!--FIG:upreg--><!--FIG:upreg-anim--></div>
