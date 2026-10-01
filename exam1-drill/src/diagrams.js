@@ -780,6 +780,45 @@ const FIG = (() => {
         '<b>Must know:</b> "Is a beta 1 selective or a beta 1 beta 2 non-selective or alpha 1? Those are things that you must know" (metoprolol β1-selective; albuterol β2; prazosin α1).'], 186);
     };
 
+    /* ---------- before and after: the eight things a second drug can do to a curve (Review pages 5–11; Day 4 slides) ---------- */
+    F3['outcomes'] = () => {
+      // one mini plot: x0,y0 top-left, w×h; curves as (ec, emax, base)
+      const mp = (x0, y0, w, h) => {
+        const X = x => x0 + (x + 3) / 6 * w, Y = y => y0 + h - y / 100 * h;
+        const pts = (ec, emax, base) => { const o = []; for (let x = -3; x <= 3.001; x += 0.15) { const y = base + (emax - base) * Math.pow(10, x) / (Math.pow(10, x) + Math.pow(10, ec)); o.push(`${X(x).toFixed(1)},${Y(y).toFixed(1)}`); } return o.join(' '); };
+        return {
+          ax: `<line class="ax" x1="${x0}" y1="${y0 + h}" x2="${x0 + w}" y2="${y0 + h}"/><line class="ax" x1="${x0}" y1="${y0 + h}" x2="${x0}" y2="${y0}"/>`,
+          cv: (ec, emax, base, cls, dashed) => `<polyline class="cv ${cls}${dashed ? ' dashed' : ''}" points="${pts(ec, emax, base)}" style="stroke-width:1.6"/>`
+        };
+      };
+      const cols = [6, 94, 182, 270], W = 82, H = 46;
+      const panels = [
+        // [row, col, title, lines, draw]
+        [0, 0, 'LEFT, same top', ['allosteric agonist', '(affinity), or more', 'transmitter (SSRI)'], P => P.cv(0, 100, 0, 'a', true) + P.cv(-1, 100, 0, 'c')],
+        [0, 1, 'LEFT, baseline UP', ['second full agonist', '(responds on its own)'], P => P.cv(0, 100, 0, 'a', true) + P.cv(-1, 100, 30, 'c')],
+        [0, 2, 'RIGHT, same top', ['competitive antagonist', '(or inverse agonist', 'when baseline is 0)'], P => P.cv(0, 100, 0, 'a', true) + P.cv(1, 100, 0, 'c')],
+        [0, 3, 'RIGHT, baseline DOWN', ['inverse agonist', '(takes it to 0)'], P => P.cv(0, 100, 30, 'a', true) + P.cv(1, 100, 0, 'b')],
+        [1, 0, 'RIGHT, top DOWN', ['irreversible antagonist', '(or allosteric', 'antagonist, efficacy)'], P => P.cv(0, 100, 0, 'a', true) + P.cv(0.7, 100, 0, 'b') + P.cv(1.2, 55, 0, 'b')],
+        [1, 1, 'RIGHT, unequal', ['allosteric antagonist', '(affinity): steps', 'shrink and stop'], P => P.cv(0, 100, 0, 'a', true) + P.cv(0.7, 100, 0, 'b') + P.cv(1.0, 100, 0, 'b') + P.cv(1.1, 100, 0, 'b')],
+        [1, 2, 'LEFT, unequal', ['allosteric agonist', '(affinity): steps', 'shrink and stop'], P => P.cv(0, 100, 0, 'a', true) + P.cv(-0.7, 100, 0, 'c') + P.cv(-1.0, 100, 0, 'c') + P.cv(-1.1, 100, 0, 'c')],
+        [1, 3, 'TOP UP, no shift', ['partial becomes full:', 'allosteric (efficacy),', 'PDE inhibitor'], P => P.cv(0, 55, 0, 'a', true) + P.cv(0, 100, 0, 'c')]
+      ];
+      let g = title('Before and after: what one added drug can do to the curve');
+      panels.forEach(([r, c, t, lines, draw]) => {
+        const x0 = cols[c], y0 = 24 + r * 108;
+        const P = mp(x0, y0 + 10, W, H);
+        g += `<text class="cl ${/DOWN|RIGHT/.test(t) && !/same top/.test(t) ? 'b' : 'c'}" style="font-size:8.5px" x="${x0 + W / 2}" y="${y0 + 6}" text-anchor="middle">${t}</text>` + P.ax + draw(P);
+        g += lines.map((l, i) => `<text class="lbl xs" x="${x0 + W / 2}" y="${y0 + H + 22 + i * 9.5}" text-anchor="middle">${l}</text>`).join('');
+      });
+      g += xs(6, 244, 'dashed = before (the agonist alone, the point of reference) · solid = after the second drug', 'start');
+      return wrap(g, ['<b>Read every pair the same way.</b> Dashed is the agonist alone. Solid is what the added drug did. Ask in order: did it move left (helping) or right (making life more difficult)? did the baseline move? did the top move? if several solid curves, are the steps equal?',
+        '<b>Left:</b> only something that helps the agonist: a second agonist (baseline up too), an allosteric agonist, more transmitter (an indirect antagonist upstream), more receptors.',
+        '<b>Right, same top:</b> a reversible drug in the pocket: competitive antagonist; an inverse agonist looks the same when the baseline is already 0, and lowers the baseline when it is not.',
+        '<b>Right, top down:</b> receptors taken out of the pool: irreversible antagonist (or an allosteric antagonist that affects efficacy).',
+        '<b>Unequal steps that stop:</b> a second site that fills up: allosteric, agonist if left, antagonist if right.',
+        '<b>Top up without a shift:</b> the agonist was partial and something downstream or at a second site made the response bigger.'], 252);
+    };
+
     /* ---------- the chain from regulation to the curve (Part 2 pages 17–28; transcript 9/29) ---------- */
     const chainRow = (y, cls, head, boxes, curveFn) => {
       let g = `<text class="cl ${cls}" x="6" y="${y - 6}" text-anchor="start">${head}</text>`;
