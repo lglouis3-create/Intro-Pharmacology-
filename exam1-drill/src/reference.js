@@ -99,7 +99,7 @@ const REFERENCE_HTML = `
 </tbody></table>
 <p class="sub">Pharmacodynamics-Day_4_-_5_2026s_pptx.pdf slides ~13&ndash;~22, ~25&ndash;~34, ~38&ndash;~41, ~45&ndash;~54; Pharmacodynamics-Day_3_2026s.pdf slides ~42&ndash;~49, ~54&ndash;~63; transcript 9/28, 9/29, 9/30. The Emax rule: &ldquo;If you see something that it lowers the Emax, you know that has to be either an irreversible antagonist or an allosteric antagonist that affects efficacy, right? Those are the only two that can affect the Emax. Everybody else is competitive. Everybody else is reversible, no change to the Emax.&rdquo; (T 9/28)</p>
 <div class="shiftgrid">
-<!--FIG:shift-fafa--><!--FIG:shift-fapa--><!--FIG:shift-inverse--><!--FIG:shift-competitive--><!--FIG:shift-irreversible--><!--FIG:shift-allo-agonist--><!--FIG:shift-allo-antagonist-->
+<!--FIG:shift-fafa--><!--FIG:shift-fapa--><!--FIG:shift-fapa-down--><!--FIG:shift-inverse--><!--FIG:shift-competitive--><!--FIG:shift-irreversible--><!--FIG:shift-allo-agonist--><!--FIG:shift-allo-antagonist-->
 </div>
 <table class="reftab"><thead><tr><th>Four characteristics of an allosteric drug (full agonist + several doses)</th><th>Yes / No</th><th>Why</th></tr></thead><tbody>
 <tr><td>Affinity affected</td><td>Yes (shift left for an agonist, right for an antagonist)</td><td>&mdash;</td></tr>
@@ -264,7 +264,7 @@ const REFERENCE_HTML = `
 <p class="sub">Pharmacodynamics-Day_4_-_5_2026s_pptx Part 2.pdf pages 32&ndash;43; transcript 9/29. Arithmetic checked: 40/4 = 10; 160/10 = 16; 400/100 = 4; 100/0.1 = 1000; 1/10 = 0.1. &ldquo;if you can divide, you&rsquo;ll be OK ... I&rsquo;m gonna use whole numbers with zero&rdquo; (T 9/29).</p>
 
 <h3>9. Drug basics: MOA vs SOA, supplements, safety vs efficacy, selectivity, desired vs undesired</h3>
-<div class="pair"><!--FIG:selectivity--><!--FIG:moa-soa--></div>
+<!--FIG:selectivity-->
 <p class="sub">What you are looking up: the Day 1 words: mechanism (MOA) vs site of action (SOA), supplements, safety vs efficacy, selectivity and dose, desired vs undesired effects.</p>
 <table class="reftab"><thead><tr><th>Term</th><th>Rule</th><th>Why</th></tr></thead><tbody>
 <tr><td>Must know vs should know</td><td>Must know = MOA (Exam 1). Should know = SOA. Effect, adverse drug reactions (ADR) and drug&ndash;drug interactions (DDI) would be nice to know (Exam 2). Not tested: use, dose, route, brand names</td><td>Must know means the receptor and the selectivity: &beta;1-selective, &beta;1/&beta;2 non-selective, &alpha;1.</td></tr>

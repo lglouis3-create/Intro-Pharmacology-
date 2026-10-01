@@ -463,6 +463,7 @@ const GUIDE_HTML = `
 <div class="poll"><b>"If DRC B is the DRC of an agonist alone, which DRC would best represent that agonist in the presence of another agonist with similar efficacy?"</b> A / B / C / D / None of the above<br>Key: <b>A</b>. "Just by knowing that both drugs are going to work together and help each other, you already can eliminate C, D, and E because those drugs are making my agonist less potent." <small>PollEV p.2; (T) 9/28</small></div>
 
 <h4>Case 2: full agonist + partial agonist</h4><div class="pair"><!--FIG:shift-fapa--><!--FIG:shift-fapa-anim--></div>
+<div class="pair"><!--FIG:shift-fapa-down--><!--FIG:shift-fapa-down-anim--></div>
 <!--GRAPH:{"curves":[{"label":"DA","ec":0,"emax":100,"dashed":true},{"label":"ARI","ec":0.4,"emax":60},{"label":"DA+ARI","ec":0.4,"emax":60,"base":100}],"base":0,"x":"log [drug]","y":"% of maximal response","caption":"Dopamine alone (dashed, Emax 100%), aripiprazole alone (Emax 60%), and aripiprazole given to a manic patient whose dopamine has the system at 100%: the response comes down to 60%, the partial agonist's own efficacy (Day 3 slides ~54–~58; (T) 9/28)."}-->
 <ul>
 <li>The partial agonist has a <b>dual nature</b>: from a low baseline it behaves like an agonist (up to its Emax); when the full agonist has the system high it competes for the receptors and brings the response <b>down to its own Emax</b>: dopamine (100%) plus aripiprazole (60%) in a manic patient ends at 60%. <small>Day 3 slides ~54–~58, ~64–~65; (T) 9/28 "Instead of going to 100%, now I have a dose response curve that is going to what? 60%"</small></li>
@@ -643,7 +644,7 @@ const GUIDE_HTML = `
 <!-- ===================================================================== -->
 <section class="guide" id="g-basics">
 <h3>7. Drug basics he tests</h3>
-<div class="pair"><!--FIG:selectivity--><!--FIG:moa-soa--></div>
+<!--FIG:selectivity-->
 <h4>What it is</h4>
 <ul>
 <li><b>Must know</b> = mechanism of action (MOA): "Is a beta 1 selective or a beta 1 beta 2 non-selective or alpha 1? Those are things that you must know." <b>Should know</b> = site of action (SOA). Effect, adverse drug reactions (ADR) and drug–drug interactions (DDI) are "would be nice to know" because they can be predicted from MOA + SOA. <small>Day 1 slides ~7–~8; (T) 9/22</small></li>
