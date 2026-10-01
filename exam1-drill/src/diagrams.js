@@ -556,6 +556,42 @@ const FIG = (() => {
     return wrap(inner, spec.caption || '');
   };
 
+
+  /* Step-through of the Gs cascade (NE at β1), forward and back. Each step is
+     an SVG group with data-step; the engine shows one at a time through the
+     buttons under the figure (data-anim). Steps from Day 1 slides ~51–54 and
+     the 9/23 and 9/30 transcripts (notes/L06.md, J9). */
+  F['gpcr-anim'] = () => {
+    const xs = (x, y, t, anchor = 'start', extra = '') => `<text class="lbl xs" x="${x}" y="${y}" text-anchor="${anchor}" ${extra}>${t}</text>`;
+    const box = (x, y, w, h, t) => `<rect class="box" x="${x}" y="${y}" width="${w}" height="${h}" rx="4"/><text class="lbl sm" x="${x + w / 2}" y="${y + h / 2 + 4}" text-anchor="middle">${t}</text>`;
+    const arr = (x1, y1, x2, y2) => `<path class="arrow" d="M${x1} ${y1} L${x2} ${y2}"/>`;
+    const alpha = (x, y, nt) => `<circle cx="${x}" cy="${y}" r="9" fill="var(--figA)" fill-opacity="0.25" stroke="var(--figA)" stroke-width="1.3"/>` + xs(x, y + 3, 'αs', 'middle') + xs(x, y + 16, nt, 'middle');
+    const bg = (x, y) => `<circle cx="${x}" cy="${y}" r="6" class="box"/><circle cx="${x + 9}" cy="${y + 12}" r="5" class="box"/>` + xs(x, y + 3, 'β', 'middle') + xs(x + 9, y + 15, 'γ', 'middle');
+    const base = `<rect x="6" y="46" width="348" height="14" fill="var(--chip)" opacity="0.7"/>` + xs(6, 40, 'outside') + xs(6, 74, 'inside the cell') + box(152, 40, 44, 26, 'AC');
+    const rec = (active, lig) => `<rect x="43" y="26" width="20" height="28" rx="5" ${active ? 'fill="var(--figA)" fill-opacity="0.28" stroke="var(--figA)"' : 'fill="var(--chip)" stroke="var(--muted)"'} stroke-width="1.3"/><path class="pocket" d="M48 26 a5 5 0 0 0 10 0 Z"/>` + (lig ? `<circle class="lig a" cx="53" cy="27" r="4.6"/>` : '') + xs(68, 30, lig ? 'NE on β1' : 'β1 empty', 'start');
+    const role = (t) => `<text class="cl a" x="354" y="30" text-anchor="end">${t}</text>`;
+    const steps = [
+      ['NE (the signal) binds the β1 receptor', rec(false, true) + alpha(72, 88, 'GDP') + bg(92, 80) + role('signal → receptor')],
+      ['The receptor changes shape; the diphosphate (GDP) comes off the α subunit and GTP comes on', rec(true, true) + alpha(72, 88, 'GDP → GTP') + bg(92, 80) + role('receptor activated')],
+      ['With GTP on board, αs separates from β/γ (the transducer carries the message)', rec(true, true) + alpha(116, 92, 'GTP') + bg(70, 76) + arr(90, 92, 104, 92) + role('transducer: Gs')],
+      ['αs turns on adenylate cyclase (AC), the effector', rec(true, true) + alpha(130, 80, 'GTP') + bg(76, 78) + arr(140, 72, 160, 66) + `<rect x="152" y="40" width="44" height="26" rx="4" fill="var(--figA)" fill-opacity="0.2" stroke="var(--figA)"/>` + role('effector: AC')],
+      ['AC makes cAMP from ATP: the second messenger; one AC makes many cAMP (amplification)', rec(true, true) + alpha(130, 80, 'GTP') + bg(76, 78) + arr(174, 66, 174, 80) + xs(174, 92, 'ATP → cAMP', 'middle') + [216, 228, 240, 252].map((x, i) => `<circle cx="${x}" cy="${86 + (i % 2) * 8}" r="3" fill="var(--figC)"/>`).join('') + xs(260, 92, 'cAMP ×n (amplified)') + role('second messenger: cAMP')],
+      ['cAMP activates protein kinase A (PKA)', rec(true, true) + alpha(130, 80, 'GTP') + bg(76, 78) + xs(174, 92, 'ATP → cAMP', 'middle') + arr(174, 96, 174, 108) + box(156, 110, 36, 16, 'PKA') + role('cell signalling')],
+      ['Ca++ enters: faster, stronger heartbeat (the physiological response)', rec(true, true) + alpha(130, 80, 'GTP') + bg(76, 78) + xs(174, 92, 'ATP → cAMP', 'middle') + box(156, 110, 36, 16, 'PKA') + arr(192, 118, 220, 118) + xs(224, 121, 'Ca++ in → ↑ heart rate') + role('response')],
+      ['BACK 1: the extra phosphate is cut off (GTPase; the RGS protein speeds it up): GTP → GDP, and αs rejoins β/γ', rec(true, true) + alpha(72, 88, 'GTP → GDP') + bg(92, 80) + `<text class="cl b" x="130" y="92" text-anchor="start">RGS · GTPase</text>` + role('reset the transducer')],
+      ['BACK 2: phosphodiesterase (PDE) breaks down cAMP', rec(true, true) + alpha(72, 88, 'GDP') + bg(92, 80) + xs(174, 92, 'cAMP', 'middle') + arr(174, 96, 174, 108) + `<text class="cl b" x="174" y="120" text-anchor="middle">PDE</text>` + xs(174, 132, 'cAMP broken down', 'middle') + role('reset the second messenger')],
+      ['BACK 3: NE comes off; the receptor is reset and can start again', rec(false, false) + alpha(72, 88, 'GDP') + bg(92, 80) + role('reset the receptor')]
+    ];
+    let g = `<text class="title" x="180" y="11" text-anchor="middle">The Gs cascade step by step: NE at β1, forward and back</text>`;
+    steps.forEach((st, i) => {
+      g += `<g class="st${i === 0 ? ' on' : ''}" data-step="${i + 1}">${base}${st[1]}<text class="lbl sm" x="6" y="148" text-anchor="start">Step ${i + 1} of ${steps.length}${i >= 7 ? ' (reverse)' : ''}</text><text class="lbl xs" x="6" y="160" text-anchor="start">${st[0].length > 78 ? st[0].slice(0, st[0].lastIndexOf(' ', 78)) : st[0]}</text><text class="lbl xs" x="6" y="170" text-anchor="start">${st[0].length > 78 ? st[0].slice(st[0].lastIndexOf(' ', 78) + 1) : ''}</text></g>`;
+    });
+    const controls = `<div class="row anim" data-anim="gpcr" style="margin:6px 0 2px"><button class="btn ghost" data-go="-1">◀ Back</button><button class="btn ghost" data-go="1">Next ▶</button><button class="btn ghost" data-go="play">Play</button><span class="meta" style="margin:0">Forward 1–7, back 8–10. Signal → receptor → transducer → effector → second messenger → response.</span></div>`;
+    return wrap(g, ['<b>Forward (1–7):</b> NE binds β1; the receptor changes shape; GDP off, GTP on; αs leaves β/γ; αs activates adenylate cyclase; ATP becomes cAMP (amplified); cAMP activates PKA; Ca++ enters and the heart beats faster and harder.',
+      '<b>Back (8–10):</b> GTP is hydrolysed to GDP (RGS speeds it) and αs rejoins β/γ; PDE breaks down cAMP; NE comes off and the receptor resets.',
+      '<b>Roles he asks:</b> signal = NE; receptor = β1; transducer = Gs (αs, β, γ); effector = AC (or PLC for Gq); second messengers = cAMP, IP3, Ca++, PKA.'], 176).replace('</svg><figcaption>', '</svg>' + controls + '<figcaption>');
+  };
+
   const api = key => (F[key] ? F[key]() : '');
   api.graph = GRAPH;
   return api;
