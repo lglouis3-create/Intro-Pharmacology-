@@ -139,14 +139,20 @@ const LINKS = [
   [/gpcr|g-protein|signal|transduc|effector|messenger|cross|alpha|camp|plc|gs-|gi-|gq-|steps/, [['guide', 'guide-6', 'Guide 6: receptors and signalling'], ['tell', 'tell-gpcr', 'Tell apart: the GPCR process'], ['ref', 'ref-5', 'Reference: receptors and signalling']]],
   [/quantal|therapeutic|ti-|safety|ld50|graded|window/, [['guide', 'guide-9', 'Guide 9: quantal responses and TI'], ['ref', 'ref-8', 'Reference: quantal, TI and SI']]],
   [/enhance|synerg|addition|potentiation/, [['tell', 'tell-enhance', 'Tell apart: addition, synergism, potentiation'], ['guide', 'guide-9', 'Guide 9: enhancement of drug effects']]],
-  [/nds|supplement|moa|soa|selectiv|receptor-class|ion-chan|superfam|drug-def|must-know|desired|undesired|side-effect/, [['guide', 'guide-7', 'Guide 7: drug basics he tests'], ['ref', 'ref-9', 'Reference: drug basics'], ['tell', 'tell-day1', 'Tell apart: Day 1']]]
+  [/nds|supplement|moa|soa|selectiv|receptor-class|ion-chan|superfam|drug-def|must-know|desired|undesired|side-effect|metoprolol-predict|ddi|poison|pharmacolog|pharmacokinet|pharmacodynam|term-drug|term-receptor/, [['guide', 'guide-7', 'Guide 7: drug basics he tests'], ['ref', 'ref-9', 'Reference: drug basics'], ['tell', 'tell-day1', 'Tell apart: Day 1']]],
+  [/slope|threshold|drc|normalized|ligand|reversibility|theory|lowest-effective/, [['guide', 'guide-1', 'Guide 1: affinity, efficacy, potency'], ['ref', 'ref-1', 'Reference: reading a curve']]],
+  [/orthosteric|mass-action|saturab|pam-nam|site|diazepam/, [['guide', 'guide-4', 'Guide 4: orthosteric vs allosteric'], ['tell', 'tell-day2', 'Tell apart: Day 2']]],
+  [/chemical|physiological|antagonism|antag/, [['guide', 'guide-3', 'Guide 3: kinds of antagonists'], ['ref', 'ref-2', 'Reference: drug classes and the curve']]],
+  [/rtk|nuclear|aldosterone|gtp|gprotein|voltage|ion|review/, [['guide', 'guide-6', 'Guide 6: receptors and signalling'], ['ref', 'ref-5', 'Reference: receptors and signalling']]]
 ];
+const BY_LECTURE = {L01: ['guide', 'guide-7', 'Guide 7: drug basics he tests'], L02: ['guide', 'guide-6', 'Guide 6: receptors and signalling'], L03: ['guide', 'guide-1', 'Guide 1: affinity, efficacy, potency'], L04: ['guide', 'guide-2', 'Guide 2: agonist classes'], L05: ['guide', 'guide-9', 'Guide 9: Day 5'], L06: ['guide', 'guide-10', 'Guide 10: how to read a curve'], PE: ['guide', 'guide-10', 'Guide 10: how to read a curve'], JP: ['guide', 'guide-10', 'Guide 10: how to read a curve'], FG: ['guide', 'guide-10', 'Guide 10: how to read a curve']};
+const BY_GROUP = {g1: ['guide', 'guide-7', 'Guide 7: drug basics he tests'], g2: ['guide', 'guide-4', 'Guide 4: orthosteric vs allosteric'], g3: ['guide', 'guide-2', 'Guide 2: agonist classes'], g4: ['guide', 'guide-1', 'Guide 1: affinity, efficacy, potency'], g5: ['guide', 'guide-6', 'Guide 6: receptors and signalling']};
 function linksFor(q) {
   if (q.lecture === 'DL1') return [['guide', 'guide-8', 'Guide 8: the drug list'], ['ref', 'ref-druglist', 'Reference: the drug list']];
   const key = [q.concept, q.fg, q.sub, (q.tags || []).join(' ')].join(' ').toLowerCase();
   for (const [re, links] of LINKS) if (re.test(key)) return links;
-  if (q.lecture === 'TERMS') return [['guide', 'guide-7', 'Guide 7: drug basics he tests']];
-  return [];
+  if (BY_GROUP[q.sub]) return [BY_GROUP[q.sub]];
+  return BY_LECTURE[q.lecture] ? [BY_LECTURE[q.lecture]] : [];
 }
 const explainHTML = q => { const l = linksFor(q); return l.length ? `<div class="row explain"><span class="meta" style="margin:0">Explain more:</span>${l.map(([v, a, t]) => `<button type="button" class="chip" data-jump="${v}:${a}">${esc(t)}</button>`).join('')}</div>` : ''; };
 function jump(view, anchor) {
