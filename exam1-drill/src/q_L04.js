@@ -1,12 +1,12 @@
-TOPICS.push({id:'L04', name:'Drug–receptor interactions I: two-state model, inverse agonists, allosterics, antagonists', prof:'Gottlieb', lecture:'L04',
-  cite:'Day 4 (9/28) — Pharmacodynamics-Day_4_-_5_2026s_pptx.pdf (Part 1) and the Day 3 recap slides',
+TOPICS.push({id:'L04', name:'Day 4: inverse agonists, allosterics, antagonists', prof:'Gottlieb', lecture:'L04',
+  cite:'Day 4 (9/28) — Pharmacodynamics-Day_4_-_5_2026s_pptx.pdf (Part 1)',
   subs:[
-    {id:'recap', name:'Two-state recap: full agonist, partial agonist, FA + FA, FA + PA', cite:'Day 3 deck slides ~31–~65 (lectured 9/28); Day 4 deck slide ~3'},
-    {id:'ia', name:'Inverse agonist alone and full agonist + inverse agonist', cite:'slides ~4–~24'},
+    {id:'recap', name:'Two-state recap: full and partial agonists', cite:'Day 3 deck slides ~31–~65 (lectured 9/28); Day 4 deck slide ~3'},
+    {id:'ia', name:'Inverse agonists', cite:'slides ~4–~24'},
     {id:'allo', name:'Allosteric agonists and antagonists', cite:'slides ~25–~34, ~36–~42'},
-    {id:'antag', name:'Kinds of antagonism and antagonist names', cite:'slides ~35–~37'},
+    {id:'antag', name:'Kinds of antagonism', cite:'slides ~35–~37'},
     {id:'comp', name:'Competitive antagonist', cite:'slides ~43–~50, ~55'},
-    {id:'irrev', name:'Irreversible antagonist, Emax rule and spare receptors', cite:'slides ~51–~56'}
+    {id:'irrev', name:'Irreversible antagonist and spare receptors', cite:'slides ~51–~56'}
   ]});
 QUESTIONS.push(
 {id:'L04-001', fg:'two-state', lecture:'L04', prof:'Gottlieb', tier:'new', topic:'L04', sub:'recap', skill:'tell',

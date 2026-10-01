@@ -1,15 +1,15 @@
-TOPICS.push({id:"L02", name:"Receptor signaling, drug–receptor binding & affinity", prof:"Gottlieb", lecture:"L02",
+TOPICS.push({id:"L02", name:"Day 2: signaling, binding and affinity", prof:"Gottlieb", lecture:"L02",
   cite:"Day 2 (9/23) — Pharmacodynamics-Day_2_2026s copy.pdf",
   subs:[
-    {id:"review", name:"Day 1 review taught 9/23 (ion channels)", cite:"transcript 9/23"},
-    {id:"gprot", name:"G proteins & tyrosine kinase receptors", cite:"slides ~3–~11"},
+    {id:"review", name:"Day 1 review (ion channels)", cite:"transcript 9/23"},
+    {id:"gprot", name:"G proteins and tyrosine kinase receptors", cite:"slides ~3–~11"},
     {id:"nuc", name:"Nuclear hormone receptors", cite:"slides ~12–~14"},
     {id:"bond", name:"Drug–receptor binding forces", cite:"slides ~15–~17"},
     {id:"site", name:"Orthosteric vs allosteric binding", cite:"slides ~18–~24"},
-    {id:"signal", name:"Signal transduction & crosstalk", cite:"slides ~25–~30"},
-    {id:"class", name:"Affinity, efficacy & drug classes", cite:"slides ~31–~44"},
-    {id:"kd", name:"Dissociation constant (Kd) & affinity", cite:"slides ~45–~51"},
-    {id:"drc", name:"Potency & dose–response curves", cite:"slides ~52–~59"}
+    {id:"signal", name:"Signal transduction and cross-talk", cite:"slides ~25–~30"},
+    {id:"class", name:"Affinity, efficacy and drug classes", cite:"slides ~31–~44"},
+    {id:"kd", name:"Kd and affinity", cite:"slides ~45–~51"},
+    {id:"drc", name:"Potency and dose–response curves", cite:"slides ~52–~59"}
   ]});
 QUESTIONS.push(
 {id:"L02-001", lecture:"L02", prof:"Gottlieb", tier:"new", topic:"L02", sub:"review", skill:"tell",

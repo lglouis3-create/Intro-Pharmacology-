@@ -7,8 +7,7 @@ try { ({chromium} = require('playwright')); } catch (e) { console.log('browser_t
 const course = fs.readFileSync(path.join(__dirname, 'course.js'), 'utf8');
 const out = path.join(__dirname, '..', course.match(/output:\s*'([^']+)'/)[1]);
 (async () => {
-  const exe = fs.existsSync('/opt/pw-browsers/chromium') ? undefined : undefined;
-  const browser = await chromium.launch(exe ? {executablePath: exe} : {});
+  const browser = await chromium.launch();
   const page = await browser.newPage();
   const errors = [];
   page.on('pageerror', e => errors.push(e.message));
@@ -29,7 +28,7 @@ const out = path.join(__dirname, '..', course.match(/output:\s*'([^']+)'/)[1]);
   let multiSeen = 0, answered = 0;
   for (let i = 0; i < 40; i++) {
     const isMulti = await page.$('#check');
-    if (isMulti) { multiSeen++; const opts = await page.$$('[data-o]'); await opts[0].click(); await page.click('#check'); }
+    if (isMulti) { multiSeen++; const opts = await page.$$('[data-o]'); if (opts.length) await opts[0].click(); else for (const sel of await page.$$('select[data-l]')) await sel.selectOption({index: 1}); await page.click('#check'); }
     else { const opts = await page.$$('[data-o]'); if (!opts.length) { fail('no options on quiz item'); break; } await opts[i % opts.length].click(); }
     const why = await page.$$('.why'); if (!why.length) fail('no explanations shown after answering');
     const c = await page.$$('[data-c]'); if (!c.length) { fail('no confidence/next buttons'); break; }
@@ -110,7 +109,7 @@ const out = path.join(__dirname, '..', course.match(/output:\s*'([^']+)'/)[1]);
   if (gc.reg) {
     await page.click('.gcard [data-g]');
     if (!(await page.$('.stemfig img'))) fail('graph drill did not open a question with its figure');
-    await page.click('.opt');
+    await page.click('.opt'); const gck = await page.$('#check'); if (gck) await gck.click();
     if (!(await page.$('.gread'))) fail('graph drill answer shows no figure reading');
   }
   // flags and the all-on-one-page layout
@@ -124,11 +123,28 @@ const out = path.join(__dirname, '..', course.match(/output:\s*'([^']+)'/)[1]);
   const nCards = await page.evaluate(() => document.querySelectorAll('.qcard').length);
   if (nCards < 2) fail('all-on-one-page drill shows ' + nCards + ' cards');
   const logBefore = await page.evaluate(() => S.log.length);
-  await (await page.$$('.qcard [data-o]'))[0].click();
+  await page.evaluate(() => { const c = [...document.querySelectorAll('.qcard')].find(x => !x.querySelector('[data-check]') && x.querySelector('[data-o]')); c.querySelector('[data-o]').click(); });
   if ((await page.evaluate(() => S.log.length)) !== logBefore + 1) fail('all-on-one-page answer was not recorded');
   await page.click('nav button[data-v="map"]'); await page.click('[data-show="flagged"]');
   if (!(await page.$('.qt.flagged'))) fail('question map flagged filter shows no flagged tile');
   await page.click('nav button[data-v="topics"]'); await page.click('[data-layout="one"]');
+  // regressions: Enter on a finished pass records nothing; a flag on the exam result keeps the result; profile switch with an exam open throws nothing
+  await page.click('nav button[data-v="map"]'); await page.click('.qt[data-q]');
+  const o1 = await page.$('[data-o]'); if (o1) { await o1.click(); const ck4 = await page.$('#check'); if (ck4) await ck4.click(); }
+  const c1 = await page.$('[data-c]'); if (c1) await c1.click();
+  const logN = await page.evaluate(() => S.log.length);
+  await page.keyboard.press('Enter'); await page.keyboard.press('Enter');
+  if ((await page.evaluate(() => S.log.length)) !== logN) fail('Enter on the finished pass recorded an answer');
+  await page.click('nav button[data-v="exam"]'); await page.click('[data-layout="all"]'); await page.click('#startx');
+  await page.click('.qcard [data-o]'); await page.click('#submit');
+  if (!/Exam result/.test(await page.textContent('#view'))) fail('exam all-on-one-page did not submit');
+  await page.click('[data-flag]');
+  if (!/Exam result/.test(await page.textContent('#view'))) fail('flag on the exam result replaced the result page');
+  await page.click('nav button[data-v="topics"]'); await page.click('[data-layout="one"]');
+  await page.click('nav button[data-v="exam"]'); await page.click('#startx');
+  await page.click('nav button[data-v="data"]'); await page.fill('#prof', 'other'); await page.click('#setprof');
+  await page.waitForTimeout(1500);
+  await page.fill('#prof', 'default'); await page.click('#setprof');
   // theme control
   await page.selectOption('#theme', 'dark');
   if ((await page.getAttribute('html', 'data-theme')) !== 'dark') fail('theme select did not apply dark');

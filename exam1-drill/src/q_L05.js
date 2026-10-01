@@ -1,12 +1,12 @@
-TOPICS.push({id:'L05', name:'Drug–receptor interactions II: spare receptors, indirect antagonists, receptor regulation, quantal responses, therapeutic index', prof:'Gottlieb', lecture:'L05',
+TOPICS.push({id:'L05', name:'Day 5: spare receptors, regulation, quantal, TI', prof:'Gottlieb', lecture:'L05',
   cite:'Day 5 (9/29) — Pharmacodynamics-Day_4_-_5_2026s_pptx Part 2.pdf (pages 1–44)',
   subs:[
-    {id:'spare', name:'Spare receptors: response vs occupancy, tissues with many or few receptors', cite:'Part 2 pages 1–3'},
-    {id:'ind', name:'Indirect antagonists: PDE inhibitors, RAS blockers, SSRIs/SNRIs, acetylcholinesterase inhibitors', cite:'Part 2 pages 4–15'},
-    {id:'reg', name:'Receptor regulation: up-/down-regulation, rapid desensitization, long-term down-regulation, tolerance', cite:'Part 2 pages 16–29'},
-    {id:'enh', name:'Enhancement of drug effects: addition, synergism, potentiation', cite:'Part 2 pages 30–31'},
-    {id:'quant', name:'Individual vs population: graded vs quantal responses', cite:'Part 2 pages 32–38'},
-    {id:'ti', name:'Therapeutic index, safety index, therapeutic window, effect vs side effect', cite:'Part 2 pages 35, 39–44'}
+    {id:'spare', name:'Spare receptors', cite:'Part 2 pages 1–3'},
+    {id:'ind', name:'Indirect antagonists', cite:'Part 2 pages 4–15'},
+    {id:'reg', name:'Receptor regulation and desensitization', cite:'Part 2 pages 16–29'},
+    {id:'enh', name:'Addition, synergism, potentiation', cite:'Part 2 pages 30–31'},
+    {id:'quant', name:'Graded vs quantal responses', cite:'Part 2 pages 32–38'},
+    {id:'ti', name:'Therapeutic index and safety index', cite:'Part 2 pages 35, 39–44'}
   ]});
 QUESTIONS.push(
 /* ---------------- Spare receptors (pages 1–3) ---------------- */
