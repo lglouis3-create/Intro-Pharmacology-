@@ -2,6 +2,10 @@
 
 Newest first. The build embeds this file, and the Progress page shows it.
 
+## 2026-10-01 (step-throughs, Reference rebuilt by concept)
+- Four step-through figures with Back / Next / Play: the Gs cascade (the G protein now sits directly under the receptor, GDP falls off, a new GTP binds, then αs lets go and moves to adenylate cyclase; 12 steps forward and back), desensitization (rapid GRK/β-arrestin, then long-term endocytosis with the cAMP trace advancing step by step), up- and down-regulation (a chronic antagonist adds receptors, a chronic agonist removes them, with the response to one dose at each step), and the indirect antagonists (each drug in turn, upstream or downstream, with the curve it produces). On Tell apart and in guides 6 and 9.
+- Reference tab rebuilt by concept instead of by lecture day: every table ends with a "why / his words" column, multi-point cells are bullets, and a new section explains which receptor state each drug class prefers and why (two-state model). The illegible Kd table is gone; his real Kd poll table is shown with the lessons he keyed on it.
+
 ## 2026-10-01 (terms: recognise the idea, not the wording)
 - GPCR figure: the step-through now shows GDP falling off and a new GTP binding as two separate steps (an exchange, not a phosphate added), and the reverse step as one phosphate cut off GTP. The static figure's R1–R3 are labelled as the reverse steps, its caption is numbered lists (Forward, Back, Vocabulary he tests), and the step-through appears under it wherever it is shown.
 - Surmountable / insurmountable: rewritten as the question to ask ("can more agonist still reach the maximum?"), with the drug-list examples and the curve each gives.
