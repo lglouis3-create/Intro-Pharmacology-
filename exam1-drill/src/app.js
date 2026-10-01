@@ -264,7 +264,7 @@ function renderQ() {
     h += `<div class="verdict ${Q.ok ? 'ok' : 'bad'}">${Q.ok ? '✓ Correct' : '✗ Not correct'}</div>`;
     if (q.type === 'match' && q.pairs) h += q.pairs.filter(p => p.why).map(p => `<div class="why"><b>${esc(p.l)}</b>: ${esc(p.why)}</div>`).join('');
     if (q.teach) h += `<div class="teach">${teachHTML(q.teach)}</div>`;
-    if (q.fg && typeof FIG === 'function') h += FIG(q.fg);
+    if (q.fg) h += figHTML(q.fg);
     if (q.note) h += `<div class="note">${esc(q.note)}</div>`;
     h += readingHTML(q.reading);
     if (q.quote) h += `<div class="quote">“${esc(q.quote)}”</div>`;
@@ -481,7 +481,7 @@ function examResult() {
     if (!ok) {
       q.options.forEach((o, oi) => { if (o.correct || pickedSet.has(oi)) h += `<div class="opt ${o.correct ? 'right' : 'wrong'}" style="cursor:default"><span>${esc(o.t)}</span></div><div class="why">${esc(o.why || '')}</div>`; });
       if (q.teach) h += `<div class="teach">${teachHTML(q.teach)}</div>`;
-      if (q.fg && typeof FIG === 'function') h += FIG(q.fg);
+      if (q.fg) h += figHTML(q.fg);
       if (q.note) h += `<div class="note">${esc(q.note)}</div>`;
       h += readingHTML(q.reading);
     }
@@ -507,7 +507,7 @@ function vTerms() {
   const list = termList();
   if (TM.mode === 'glossary') {
     groups.filter(g => TM.group === 'all' || g === TM.group).forEach(g => {
-      h += `<h3>${esc(g)}</h3><div class="card">` + all.filter(t => t.group === g).map(t => `<div class="term"><b>${esc(t.term)}</b>${t.gist ? `<div class="gist">${esc(t.gist)}</div>` : ''}<div>${esc(t.def)}</div>${t.scene ? `<div class="hook"><b>In action:</b> ${esc(t.scene)}</div>` : ''}${t.hook ? `<div class="hook">${esc(t.hook)}</div>` : ''}${t.fig ? FIG(t.fig) : ''}<div class="cite">${esc(fmtCite(t.cite))}</div></div>`).join('') + '</div>';
+      h += `<h3>${esc(g)}</h3><div class="card">` + all.filter(t => t.group === g).map(t => `<div class="term"><b>${esc(t.term)}</b>${t.gist ? `<div class="gist">${esc(t.gist)}</div>` : ''}<div>${esc(t.def)}</div>${t.scene ? `<div class="hook"><b>In action:</b> ${esc(t.scene)}</div>` : ''}${t.hook ? `<div class="hook">${esc(t.hook)}</div>` : ''}${t.fig ? figHTML(t.fig) : ''}<div class="cite">${esc(fmtCite(t.cite))}</div></div>`).join('') + '</div>';
     });
   } else if (TM.mode === 'flash') {
     if (!TM.card || !list.includes(TM.card)) {
@@ -522,7 +522,7 @@ function vTerms() {
     // front of the card: the situation, with the term hidden; the term and its meaning come on the back
     if (t.scene && !TM.shown) h += `<div class="meta" style="margin-bottom:6px">Which term is this?</div><div style="font-size:18px">${esc(t.scene)}</div>`;
     else h += `<div class="t">${esc(t.term)}</div>${t.gist ? `<div class="gist" style="margin-top:4px">${esc(t.gist)}</div>` : ''}`;
-    if (TM.shown) h += `<div style="text-align:left;margin-top:14px">${t.scene ? `<div class="hook" style="margin-bottom:6px"><b>In action:</b> ${esc(t.scene)}</div>` : ''}<div>${esc(t.def)}</div>${t.hook ? `<div class="hook" style="color:var(--muted);margin-top:4px">${esc(t.hook)}</div>` : ''}${t.fig ? FIG(t.fig) : ''}<div class="cite">${esc(fmtCite(t.cite))}</div></div>
+    if (TM.shown) h += `<div style="text-align:left;margin-top:14px">${t.scene ? `<div class="hook" style="margin-bottom:6px"><b>In action:</b> ${esc(t.scene)}</div>` : ''}<div>${esc(t.def)}</div>${t.hook ? `<div class="hook" style="color:var(--muted);margin-top:4px">${esc(t.hook)}</div>` : ''}${t.fig ? figHTML(t.fig) : ''}<div class="cite">${esc(fmtCite(t.cite))}</div></div>
       <div class="row" style="justify-content:center;margin-top:14px"><button class="btn" data-fc="sure">Knew it</button><button class="btn ghost" data-fc="unsure">Not sure</button><button class="btn ghost" data-fc="wrong">Did not know</button></div>`;
     else h += `<div class="row" style="justify-content:center;margin-top:14px"><button class="btn" id="fcshow">${t.scene ? 'Show the term' : 'Show definition'}</button></div>`;
     h += `</div></div>`;
@@ -578,6 +578,8 @@ document.addEventListener('click', e => {
   }
   show((cur + (+b.dataset.go) + steps.length) % steps.length);
 });
+/* A question's or term's figure; the static GPCR figure brings the step-through with it. */
+const figHTML = key => (typeof FIG === 'function' && key) ? FIG(key) + (key === 'gpcr-steps' ? FIG('gpcr-anim') : '') : '';
 function expandFigs(html) {
   return html
     .replace(/<!--FIG:([\w-]+)-->/g, (m, k) => FIG(k))

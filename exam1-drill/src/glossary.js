@@ -574,16 +574,15 @@ const TERMS = [
  src:'both'},
 
 {id:'surmountable', term:'Surmountable / insurmountable', lecture:'L04', group:'Drug classes',
- def:'The pair of names for whether an agonist can overcome an antagonist by increasing its concentration: yes when the antagonist binds and comes off (competitive = reversible), no when it binds irreversibly (irreversible = nonequilibrium-competitive = non-competitive).',
- hook:'Different names for the same drug. Surmountable drugs never change the Emax; insurmountable ones lower it.',
- gist:'Whether more agonist can overcome the antagonist: yes if reversible, no if irreversible.',
+ def:'Surmountable antagonism: giving more agonist overcomes the antagonist, because the antagonist binds and comes off; the agonist still reaches its full Emax, only at a higher dose (competitive = reversible = surmountable). Insurmountable antagonism: no dose of agonist overcomes it, because the antagonist is bound for good; the Emax falls (irreversible = nonequilibrium-competitive = insurmountable).',
+ hook:'When to apply it: ask "can the agonist still reach its maximum if I give enough?" Yes, curve shifted right with the same top = surmountable (metoprolol, prazosin). No, the top comes down = insurmountable (phenoxybenzamine).',
+ gist:'Surmountable: more agonist wins back the full Emax. Insurmountable: the Emax is lost.',
  scene:'With prazosin on board, raising norepinephrine enough restores the top response; with phenoxybenzamine on board, no amount of norepinephrine brings it back.',
  confuse:['competitive-antagonist','irreversible-antagonist'],
- fig:'competitive',
+ fig:'shift-competitive',
  quote:'One is competitive antagonist, also known as reversible antagonists, also known as surmountable antagonists, different names for the same drug. They bind and they come off.',
  cite:'Pharmacodynamics-Day_4_-_5_2026s_pptx.pdf slide ~36; transcript 9/28',
  src:'both'},
-
 
 {id:'symmetrical-shift', term:'Symmetrical vs asymmetrical shifts', lecture:'L04', group:'Dose–response curves',
  def:'Equal steps between successive curves come from increasing doses of an orthosteric competitor (competitive antagonist, inverse agonist, irreversible antagonist), because a tenfold increase in one drug needs a tenfold increase in the other; unequal steps come from allosteric agonists and antagonists, whose binding at the other site does not depend on the agonist.',
