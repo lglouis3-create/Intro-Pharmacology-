@@ -819,6 +819,39 @@ const FIG = (() => {
         '<b>Top up without a shift:</b> the agonist was partial and something downstream or at a second site made the response bigger.'], 252);
     };
 
+    /* ---------- graded (one individual) vs quantal (a population): Part 2 pages 32–34; transcript 9/29 ---------- */
+    F3['graded-quantal'] = () => {
+      // left panel: one sample, how much
+      const L1 = { x0: 30, y0: 40, w: 140, h: 80 };
+      const lx = x => L1.x0 + (x + 3) / 6 * L1.w, ly = y => L1.y0 + L1.h - y / 100 * L1.h;
+      const sigpts = () => { const o = []; for (let x = -3; x <= 3.001; x += 0.15) { const y = 100 * Math.pow(10, x) / (Math.pow(10, x) + 1); o.push(`${lx(x).toFixed(1)},${ly(y).toFixed(1)}`); } return o.join(' '); };
+      let g = title('Graded vs quantal responses');
+      g += `<text class="cl a" x="${L1.x0 + L1.w / 2}" y="30" text-anchor="middle">GRADED: one sample</text>`;
+      g += `<line class="ax" x1="${L1.x0}" y1="${ly(0)}" x2="${L1.x0 + L1.w}" y2="${ly(0)}"/><line class="ax" x1="${L1.x0}" y1="${ly(0)}" x2="${L1.x0}" y2="${L1.y0}"/>`;
+      g += `<polyline class="cv a" points="${sigpts()}"/>` + `<line class="dash" x1="${L1.x0}" y1="${ly(100)}" x2="${L1.x0 + L1.w}" y2="${ly(100)}"/>` + xs(L1.x0 + 4, ly(100) - 3, 'Emax', 'start') + `<line class="dash" x1="${lx(0)}" y1="${ly(0)}" x2="${lx(0)}" y2="${ly(50)}"/>` + xs(lx(0), ly(0) + 10, 'EC50', 'middle') + xs(L1.x0 - 3, ly(50) + 3, '50%', 'end') + xs(L1.x0 - 3, ly(0) + 3, '0', 'end');
+      g += xs(L1.x0 + L1.w / 2, ly(0) + 20, 'log dose', 'middle') + `<text class="lbl xs" transform="translate(7 ${L1.y0 + L1.h / 2}) rotate(-90)" text-anchor="middle">% of max response</text>`;
+      g += xs(L1.x0 + L1.w / 2, 152, 'one muscle strip, one dog: how MUCH', 'middle') + xs(L1.x0 + L1.w / 2, 162, 'contraction, how much paralysis', 'middle') + xs(L1.x0 + L1.w / 2, 172, 'read: Emax (efficacy), EC50 (potency)', 'middle');
+      // right panel: a population; bars = dogs responding at each dose, line = cumulative %
+      const R1 = { x0: 212, y0: 40, w: 140, h: 80 };
+      const doses = [7.7, 10, 13, 17, 22, 29, 38, 49, 64, 83, 108];
+      const rx = x => R1.x0 + (Math.log10(x) - Math.log10(7.7)) / (Math.log10(108) - Math.log10(7.7)) * R1.w, ry = y => R1.y0 + R1.h - y / 100 * R1.h;
+      g += `<text class="cl c" x="${R1.x0 + R1.w / 2}" y="30" text-anchor="middle">QUANTAL: a population</text>`;
+      g += `<line class="ax" x1="${R1.x0}" y1="${ry(0)}" x2="${R1.x0 + R1.w}" y2="${ry(0)}"/><line class="ax" x1="${R1.x0}" y1="${ry(0)}" x2="${R1.x0}" y2="${R1.y0}"/>`;
+      // bell of "dogs responding first at this dose" (heights are a drawing, not counts), then the cumulative curve
+      const bell = [4, 10, 20, 34, 48, 56, 48, 34, 20, 10, 4];
+      doses.forEach((d, i) => { const bw = 7, bh = bell[i] * R1.h / 100 * 0.55; g += `<rect x="${rx(d) - bw / 2}" y="${ry(0) - bh}" width="${bw}" height="${bh}" fill="var(--figC)" opacity="0.35"/>`; });
+      let cumv = 0; const total = bell.reduce((a, b) => a + b, 0); const cpts = doses.map((d, i) => { cumv += bell[i]; return `${rx(d).toFixed(1)},${ry(100 * cumv / total).toFixed(1)}`; });
+      g += `<polyline class="cv c" points="${cpts.join(' ')}"/>`;
+      g += `<line class="dash" x1="${R1.x0}" y1="${ry(50)}" x2="${rx(29)}" y2="${ry(50)}"/><line class="dash" x1="${rx(29)}" y1="${ry(0)}" x2="${rx(29)}" y2="${ry(50)}"/>` + xs(rx(29), ry(0) + 10, 'ED50 ≈ 29', 'middle') + xs(R1.x0 - 3, ry(50) + 3, '50%', 'end') + xs(R1.x0 + 4, ry(100) - 3, '100%', 'start') + xs(R1.x0 - 3, ry(0) + 3, '0', 'end');
+      g += xs(rx(7.7), ry(0) + 10, '7.7', 'middle') + xs(rx(108), ry(0) + 10, '108', 'middle') + xs(R1.x0 + R1.w / 2, ry(0) + 20, 'epinephrine, ng/kg/min (log)', 'middle') + `<text class="lbl xs" transform="translate(188 ${R1.y0 + R1.h / 2}) rotate(-90)" text-anchor="middle">% of dogs responding</text>`;
+      g += xs(R1.x0 + R1.w / 2, 152, 'many dogs, each one yes or no:', 'middle') + xs(R1.x0 + R1.w / 2, 162, 'bars = who responds first at each dose', 'middle') + xs(R1.x0 + R1.w / 2, 172, 'line = cumulative %; read ED50, LD50, TI', 'middle');
+      return wrap(g, ['<b>Graded</b> (left): one individual, and the question is how much. The y-axis is the size of the response in that one sample (degree of contraction with nicotine, degree of paralysis with curare), from no effect to maximum. From it you read Emax (efficacy) and EC50 (potency).',
+        '<b>Quantal</b> (right): a population, and the question is yes or no for each individual: "Either you have an effect or you don\'t. Either you\'re dead or alive. You can\'t be in between." The response is defined first (blood pressure up by a set amount, hypnosis, death), then each dose is given and the individuals who respond are counted.',
+        '<b>Two pictures of the same dogs:</b> the bars are how many dogs respond for the first time at each dose, sensitive ones at 7.7 ng/kg/min, resistant ones at 108, most in the middle ("this bell curve effect"). A dog that responds at 7.7 also responds at every higher dose, so adding the bars up gives the cumulative curve, "an old sigmoid curve that we did before".',
+        '<b>What the cumulative curve gives:</b> the smallest dose that does anything, the dose that covers 100%, and the dose that treats 50% of the population, the ED50 ("about 29 nanograms per kilogram"). The same curve drawn for a toxic effect gives the TD50 or LD50, and LD50 ÷ ED50 is the therapeutic index.',
+        '<b>The tell on the exam:</b> y-axis "% of maximal response" with one curve per drug = graded; y-axis "% of individuals responding" or "number responding" = quantal. On a quantal curve 50% means half the people responded, not half an effect, and Emax is not read from it.'], 184);
+    };
+
     /* ---------- the chain from regulation to the curve (Part 2 pages 17–28; transcript 9/29) ---------- */
     const chainRow = (y, cls, head, boxes, curveFn) => {
       let g = `<text class="cl ${cls}" x="6" y="${y - 6}" text-anchor="start">${head}</text>`;

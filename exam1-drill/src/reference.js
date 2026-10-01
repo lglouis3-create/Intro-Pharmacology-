@@ -252,7 +252,7 @@ const REFERENCE_HTML = `
 
 <h3 id="ref-8">8. Quantal responses, TI and SI</h3>
 <p class="sub">What you are looking up: how a population curve differs from a single-sample curve, and how the ED50, LD50, TI and SI are read and divided.</p>
-<!--FIG:quantal-->
+<!--FIG:graded-quantal--><!--FIG:quantal-->
 <table class="reftab"><thead><tr><th>Quantity</th><th>Definition</th><th>Numbers on the slides</th><th>Why</th></tr></thead><tbody>
 <tr><td>Graded response</td><td>One biological unit; a continuous scale from no effect to maximum</td><td>Contraction with nicotine, paralysis by curare</td><td>&mdash;</td></tr>
 <tr><td>Quantal response</td><td>A population; binary: any effect or none, alive or dead</td><td>Dogs and epinephrine 7.7&ndash;108 ng/kg/min; bars joined give a normal distribution; the cumulative form gives a sigmoid</td><td>On a quantal curve 50% means half the population responded, not half an effect.</td></tr>

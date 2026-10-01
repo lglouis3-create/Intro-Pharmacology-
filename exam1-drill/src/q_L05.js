@@ -413,7 +413,7 @@ QUESTIONS.push(
  cite:'Pharmacodynamics-Day_4_-_5_2026s_pptx Part 2.pdf page 31; transcript 9/29'},
 
 /* ---------------- Individual vs population, quantal responses (pages 32–38) ---------------- */
-{id:'L05-032', lecture:'L05', prof:'Gottlieb', tier:'new', topic:'L05', sub:'quant', skill:'tell',
+{id:'L05-032', fg:'graded-quantal', lecture:'L05', prof:'Gottlieb', tier:'new', topic:'L05', sub:'quant', skill:'tell',
  concept:'graded-vs-quantal', tags:[], source:'both',
  stem:'Which statement is CORRECT about graded and quantal responses?',
  options:[
@@ -421,12 +421,12 @@ QUESTIONS.push(
   {t:'A quantal response is a binary measurement: any effect or none', correct:false, why:'Correct statement (alive or dead, a 5% increase in blood pressure or not), but not the only correct one.'},
   {t:'Populations are usually studied with quantal responses', correct:false, why:'Correct statement, but not the only correct one.'},
   {t:'All of the above', correct:true, why:'All three statements are correct.'}],
- teach:'Until now every example was one sample: degree of muscle contraction with nicotine, degree of paralysis by curare, measured from no effect to maximum, a graded response. A population is usually studied with a quantal response: a binary measurement, any effect or none, alive or dead, a defined response such as a 5% increase in blood pressure. Does this drug take care of your back pain, yes or no.',
+ teach:'Two questions, two kinds of curve. Graded: one individual, how much? The y-axis is the size of the response in that one sample (degree of contraction with nicotine, degree of paralysis with curare), from no effect to maximum, and you read Emax and EC50 from it. Quantal: a population, yes or no? A response is defined first (blood pressure up by a set amount, asleep, dead), each dose is given to many individuals, and the ones who respond are counted; the y-axis is the number or percentage of individuals responding. Sensitive dogs respond at 7.7 ng/kg/min of epinephrine, resistant ones need 108, most sit in the middle, and adding them up dose by dose gives a sigmoid whose 50% point is the ED50, the dose that treats half the population. Populations are studied this way because a population cannot have one Emax; it has a spread of sensitivities.',
  quote:'So it’s going to be a binary measurement. It’s either yes or no, OK? Either you have an effect or you don’t. Either you’re either you’re dead or alive. You can’t be in between',
  cite:'Pharmacodynamics-Day_4_-_5_2026s_pptx Part 2.pdf pages 32–33; transcript 9/29',
  reading:[{src:'Katzung 16e, Ch. 2', sec:'Quantal Dose-Effect Curves', t:'A graded dose–response curve shows the maximal efficacy of a drug; a quantal dose–effect curve shows the variability of responsiveness among individuals.'}]},
 
-{id:'L05-033', lecture:'L05', prof:'Gottlieb', tier:'new', topic:'L05', sub:'quant', skill:'figure',
+{id:'L05-033', fg:'graded-quantal', lecture:'L05', prof:'Gottlieb', tier:'new', topic:'L05', sub:'quant', skill:'figure',
  concept:'quantal-cumulative-sigmoid', tags:[], source:'both',
  stem:'Which statement is CORRECT? Dogs of different breeds are given rising doses of epinephrine (7.7 to 108 ng/kg/min) and the number of dogs whose blood pressure rises at each dose is plotted as bars.',
  options:[
