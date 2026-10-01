@@ -26,6 +26,15 @@ Updated 2026-09-28.
 - Diazepam note and teach rewritten in plain words (gen_druglist.py NOTE / TEACH); key unchanged. Tell-apart row on the three questions a class name answers.
 - Checks: build.py, test.js, style_check.js, browser_test.js passing.
 
+## 2026-10-01: L06 (9/30) + Jeopardy + bank review
+- L06 Day 6 (9/30): Part 3 deck (Drive 1oyAam1CYFWz9rv2pOnzHG4lGKSbOGv6g, 2 pages), review slides Pharmacodynamics reviews.pdf (Drive 1n1TKj61a3hsnw6cciHrYdRcWoMjSVjDo, 11 pages), transcript 09.30 (Drive 1RNbCiQ44t_i3fpyyEFHbF3jafBuym7ZK; read in full; ~60% is Exam 1, the rest is Exam 2 autonomic material). 35 questions q_L06.js (incl. 4 match items: classify A–E, what each question rules in, G-protein steps forward and reverse), notes/L06.md. Review figures cropped: rev-rt-figure, rev-shifts-base0/50, rev-dotted-left/right, rev-allo-ant, rev-pindolol, p3-therapeutic-efficacy.
+- Jeopardy (9/30): Drive folder "Jeopardy Questions" (IMG_3010–3018, IMG_9313–9321); 18 items verbatim + the 9/30 PollEV page-6 poll as q_JEOP.js (JP-001…019, topic JP, tags include 'pollev' for the verbatim exemptions in test.js). Keys all from the transcript (notes/L06.md table). New figure crops jeop-abcde-effect, jeop-a-plus-b. Conflicts: curve E on the 50% figure keyed inverse agonist (his Jeopardy key) though he first said "irreversible"; J11 stem he called wrong (SSRI); J2 "I changed the question".
+- PollEV’s Exam 1.pdf (Drive 1z1I--AB79jydLVR4VW4aAP0wm1VvUicK) updated 10/01: only page 6 new (irreversible antagonist = phenoxybenzamine). L02-012 now mirrors it.
+- Guide 10 "How to tackle a curve question" (first in guide.js) + guide 6 "How he will ask it (9/30)" + FIG gpcr-anim (step-through Gs cascade with Back/Next/Play; click handler in app.js, `.st` groups). Tell apart: Day 6 table, indirect/regulation grids, stepper.
+- Adversarial review (notes/REVIEW_BRIEF.md; findings notes/review/*.json): 78 bank findings, 77 applied (L01-009 kept); 34 glossary findings applied (occupancy-theory and nam terms removed; defs no longer name their own term); 5 tell rows fixed. No keyed answer was found wrong; two re-keys sourced to his words (L01-019 partial agonist = efficacy 1–99%; L01-034 reverse step = α rejoins β/γ).
+- Bank: 550 questions. course.js lectures now L01–L06, JP, PE, DL1; lecture entries may carry `decks:[…]` (test.js accepts any of them in the cite).
+- Exam facts 9/30: ~50 questions × 2 points, backwards navigation, select-all 2–3 max, one 9/29 poll verbatim plus a Jeopardy bonus; "which is the signal/receptor/transducer/effector/second messenger" and the steps forward/back will be asked; know cAMP and IP3.
+
 ## 2026-09-30: L05 + guides
 - L05 Day 5 (9/29): Part 2 deck (Drive 1cPh8uE-c_Vhyp3y2jnlHcOHSyScHx63N; 44 pages, all lectured), transcript 09.29 (Drive 1rE_AnXhO-HdJ-rRVWnL_FupJfcdJgN1s). 45 questions, notes/L05.md. Conflicts: page-26 handwriting "shift left" vs slide/transcript right; SI 0.1 (slide) vs "1.1" spoken.
 - PollEV’s.pdf v2 (Drive 1z1I--AB79jydLVR4VW4aAP0wm1VvUicK, 6 pages): pages 4–5 are the 9/29 polls (PE-059…080). Pink-card green highlights are STUDENT responses; keys come from transcripts. PE-003 keyed Efficacy.

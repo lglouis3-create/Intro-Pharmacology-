@@ -211,4 +211,32 @@ const REFERENCE_HTML = `
 <tr><td>Acetaminophen</td><td>Regular 325 mg/tablet, Extra Strength 500 mg/tablet, 4–6 hrs</td><td>&gt; 4000 mg/day ⇒ liver toxicity</td></tr>
 </table>
 <p class="sub">Pharmacodynamics-Day_4_-_5_2026s_pptx Part 2.pdf: Pharmacodynamics-Day_4_-_5_2026s_pptx Part 2.pdf pages 34, 36–42; transcript 9/29. Arithmetic checked: 40/4 = 10; 160/10 = 16; 400/100 = 4; 100/0.1 = 1000; 1/10 = 0.1.</p>
+<h3>Day 6 (9/30): the three questions for any curve figure</h3>
+<table class="reftab">
+<tr><th>Question</th><th>Answer</th><th>Rules in</th><th>Rules out</th></tr>
+<tr><td>0. Where is the point of reference?</td><td>The drug alone (dotted or dashed)</td><td>Every other curve is read against it</td><td>&mdash;</td></tr>
+<tr><td>1. Is it shifting? Left (helping) or right (making life more difficult)?</td><td>Left</td><td>Full agonist, allosteric agonist, indirect antagonist that raises the signal (PDE inhibitor), more receptors</td><td>Competitive antagonist, inverse agonist, irreversible antagonist, allosteric antagonist</td></tr>
+<tr><td></td><td>Right</td><td>Competitive antagonist, inverse agonist, irreversible antagonist, allosteric antagonist</td><td>Full agonist, partial agonist, allosteric agonist (any kind)</td></tr>
+<tr><td>2. Is the baseline changing?</td><td>Down to 0</td><td>Inverse agonist</td><td>Everything neutral (competitive, irreversible, allosteric antagonist)</td></tr>
+<tr><td></td><td>Up</td><td>A second agonist (full or partial)</td><td>Antagonists of every kind</td></tr>
+<tr><td></td><td>No change, baseline already at 0</td><td>Cannot tell competitive from inverse</td><td>Nothing</td></tr>
+<tr><td>3. Is the Emax changing?</td><td>Down</td><td>Irreversible antagonist; allosteric antagonist on efficacy</td><td>Competitive antagonist, inverse agonist (both competitive: never affect the Emax)</td></tr>
+<tr><td></td><td>Up (partial becomes full)</td><td>Allosteric agonist on efficacy, PDE inhibitor, more receptors</td><td>Anything that affects affinity only</td></tr>
+<tr><td></td><td>No change</td><td>Competitive antagonist, inverse agonist, allosteric on affinity only (and, with few shifts, irreversible with spare receptors)</td><td>Irreversible antagonist once several shifts show no drop; anything on efficacy</td></tr>
+<tr><td>4. Are the shifts symmetrical? (only with several shifts)</td><td>Equal steps, no limit</td><td>Competitive (orthosteric) antagonist, inverse agonist</td><td>Allosteric</td></tr>
+<tr><td></td><td>Unequal, saturating</td><td>Allosteric (then: agonist or antagonist; affinity, efficacy or both)</td><td>Competitive antagonist, inverse agonist</td></tr>
+</table>
+<p class="sub">Pharmacodynamics reviews.pdf pages 5&ndash;11; transcript 9/30 (&ldquo;Remember that I asked you to ask 3 questions ... ED 50, you got baseline and shifts&rdquo;; &ldquo;if you see a figure in your exam that the shifts are not symmetric, you already know it&rsquo;s allosteric&rdquo;). One right shift with no other change: competitive antagonist as the one best answer; as a select-all, competitive, inverse, irreversible with spare receptors and allosteric antagonist on affinity all stay open.</p>
+<!--IMG:rev-shifts-base0-->
+<p class="sub">Page 6: A dashed, then A + B, A + 10X B, A + 100X B in equal steps from a baseline of 0, same top. His key: competitive antagonist (the baseline at 0 cannot separate it from an inverse agonist; the symmetrical steps rule out allosteric).</p>
+<!--IMG:rev-shifts-base50-->
+<p class="sub">Page 7: the same shifts, but A starts at about 50% and the baseline falls to 0 with each dose of B. His key: inverse agonist.</p>
+<!--IMG:rev-dotted-left-->
+<p class="sub">Page 8: the dotted curve (agonist + drug X) is to the LEFT of the solid agonist alone, same top. His key: full agonist and allosteric agonist affecting affinity (two answers).</p>
+<!--IMG:rev-dotted-right-->
+<p class="sub">Page 9: ONE shift to the right, same top, baseline 0. His key: competitive antagonist, inverse agonist and irreversible antagonist are all left open; one best answer is competitive (or inverse), never irreversible; a select-all can add an allosteric antagonist affecting only affinity.</p>
+<!--IMG:rev-allo-ant-->
+<p class="sub">Page 10: three right shifts with UNEQUAL spacing, same top. His key: allosteric antagonist (affinity); the tell is the non-symmetrical shifts.</p>
+<!--IMG:rev-pindolol-->
+<p class="sub">Page 11: one drug in two systems, from 100% down to about 50% and from 0 up to about 50%. His key: partial agonist (pindolol); it has efficacy, it does not go to 0, it does not reach 100%.</p>
 `;
