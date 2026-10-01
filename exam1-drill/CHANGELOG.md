@@ -2,6 +2,15 @@
 
 Newest first. The build embeds this file, and the Progress page shows it.
 
+## 2026-10-01 (Graphs tab, chain from regulation to the curve, Day 1 figures)
+- Graphs tab: his own figures (PollEV, Jeopardy, the 9/30 review, Part 3), 20 in all, each with every question written on it (52 new ones, so each figure has at least five, asked with different drug-list drugs). A wrong answer names the reading question you skipped (shift, baseline, Emax, symmetry, helping or hurting, potency, efficacy, affinity, class, steps, therapeutic index); the end of a pass lists the ones you keep skipping, and the figure card carries that tally.
+- Each drug–drug shift panel now has a step-through beside it (agonist alone, the second drug binds, the curve moves, the reading).
+- Indirect-antagonist step-throughs show the transporter taking the transmitter back (or the enzyme breaking it down) before the drug sits on it and blocks it; 5-HT is spelled out as serotonin; the PDE figure names the full and the partial agonist curves.
+- Addition, synergism and potentiation: a bar figure with his numbers (50 + 50 = 100; 30 + 50 → 100; carbidopa none alone) and a step-through, after the indirect antagonists.
+- Receptor regulation captions rewritten from his 9/29 words (what the body does, why it matters, what he tests), and a chain figure that links down-regulation to the right shift and the falling Emax, with its mirror for up-regulation.
+- Day 1 figures he expects: the four receptor classes, bonds and affinity, selectivity (loratadine vs diphenhydramine), and the metoprolol MOA → SOA → effect card.
+- Review fixes: the irreversible-antagonist figure now shifts right as well as lowering the Emax; the inverse agonist goes all the way to 0; the exam clock no longer submits from another tab; a second figure's Play no longer leaves the first stuck; five Tell apart rows had their cells realigned; abbreviations spelled out on first use; Jeopardy A–E figure heights corrected (B and E reach 100%); drug-list and term generators tightened (no stem gives away the term; select-alls keep at most three keys).
+
 ## 2026-10-01 (separate step-throughs, one per drug; shorter text; stems in his wording)
 - Step-throughs are now one process each: rapid desensitization, long-term down-regulation, up-regulation, down-regulation, and one per indirect-antagonist drug (fluoxetine, duloxetine, physostigmine, carbidopa, milrinone/caffeine, cancer drug X). Each sits to the right of its static figure; captions are numbered steps.
 - Tell apart intro cut to two lines; the colour note removed. Reference "why" column trimmed to the rows where it adds a reason or his rule.

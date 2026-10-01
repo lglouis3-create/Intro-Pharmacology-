@@ -124,7 +124,7 @@ const GRAPHS = [
  asks:['B is: Competitive antagonist / Irreversible antagonist / Full agonist / Allosteric agonist / Partial agonist', 'A is norepinephrine: B is most likely (drug-list names)', 'Which feature of the figure rules out phenoxybenzamine as B?', 'Which statement is CORRECT about B?']},
 
 {key:'jeop-abcde-effect', alts:[],
- title:'Jeopardy: five curves A–E, Effect against Log [Agonist]; B and C reach 100%', group:'Potency and efficacy', source:'Jeopardy 9/30 (IMG_3015, IMG_9316, IMG_9320)',
+ title:'Jeopardy: five curves A–E, Effect against Log [Agonist]; B and E reach 100%', group:'Potency and efficacy', source:'Jeopardy 9/30 (IMG_3015, IMG_9316, IMG_9320)',
  read:[
   'Order left to right A, B, C, D, E: A has the smallest ED50 (most potent, highest affinity); E the largest (least potent, lowest affinity).',
   'B and E reach 100% (the full agonists); C plateaus at about 85%, D at about 70%, A at about 65% (the lowest efficacy).',
