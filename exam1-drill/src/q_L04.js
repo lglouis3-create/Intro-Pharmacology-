@@ -143,15 +143,16 @@ QUESTIONS.push(
 
 {id:'L04-011', fg:'inverse', lecture:'L04', prof:'Gottlieb', tier:'new', topic:'L04', sub:'ia', skill:'apply',
  concept:'inverse-agonist-needs-raised-baseline', tags:[], source:'both',
- stem:'An inverse agonist is given in increasing doses to a system in which nearly all receptors are inactive (baseline 0%). What does its dose–response curve look like?',
+ stem:'An inverse agonist is given alone, in increasing doses, to a tissue in which the receptors are mostly in the inactive state (R > R*). What would its DRC look like?',
  options:[
   {t:'A flat line at 0%', correct:true, why:'The receptors are already inactive, which is what the inverse agonist wants; there is nothing to bring down.'},
-  {t:'A curve falling from 0% to below 0%', correct:false, why:'Zero is the floor; a response cannot go lower than no effect.'},
+  {t:'A flat line at 100%', correct:false, why:'A flat line at 100% is the starting point of a system in which every receptor is active (R <<< R*) before the drug is added; the inverse agonist would bring it down, not leave it there.'},
   {t:'A curve rising to 100%', correct:false, why:'Rising to 100% is the full agonist; the inverse agonist has negative efficacy.'},
-  {t:'A curve falling from 100% to 0%', correct:false, why:'That is the inverse agonist’s curve only when the baseline has been raised, for example in a cell line whose receptors are naturally active.'}],
+  {t:'A sigmoid curve falling from 100% to 0%', correct:false, why:'That is the inverse agonist’s curve only when the baseline has been raised, for example in a cell line whose receptors are naturally active (R <<< R*).'}],
  teach:'To see what an inverse agonist does, the baseline must be raised: the drug must be put into a system whose receptors are active by themselves (for example a cancer cell line in which 100% of the receptors are active). Then the curve goes from the baseline down to 0%. At a baseline of 0% every dose gives a straight line at 0%.',
- quote:'in order for us to see what an inverse actually does, we need to raise the baseline. We need to put that drug in a system that receptors are naturally active by themselves.',
- cite:'Pharmacodynamics-Day_4_-_5_2026s_pptx.pdf slides ~9–~11; transcript 9/28'},
+ quote:'if I give you my inverse agonist, where all the receptors are inactive, what would be my baseline? 0. What would it do to that baseline? Stays at zero because it\'s already doing what I want.',
+ note:'His Jeopardy form of this idea (J16): "What effect an inverse agonist would have on a full agonist DRC? Assume that the tissue has 50% of receptor present in the active state (R = R*)", keyed "decrease the baseline and shift the DRC to the right". Expect the receptor state to be given as R > R*, R = R* or R <<< R*, as on Day 4 slides 7–11.',
+ cite:'Pharmacodynamics-Day_4_-_5_2026s_pptx.pdf slides ~7–~11; transcript 9/28'},
 
 {id:'L04-012', fg:'inverse', lecture:'L04', prof:'Gottlieb', tier:'new', topic:'L04', sub:'ia', skill:'figure', multi:true,
  concept:'fa-plus-inverse-agonist', tags:['histamine','loratadine'], source:'both',
