@@ -704,7 +704,7 @@ const GUIDE_HTML = `
 </ul>
 
 <h4>How to read it on a curve</h4>
-<!--FIG:quantal-->
+<!--FIG:graded-quantal--><!--FIG:quantal-->
 <!--IMG:pollev-quantal-ti-->
 <ul>
 <li>y-axis: percent of individuals responding (cumulative); x-axis: dose. Draw the 50% line: the left curve gives the ED50, the right curve the LD50; divide. <small>Part 2 p.39–40; (T) 9/29</small></li>

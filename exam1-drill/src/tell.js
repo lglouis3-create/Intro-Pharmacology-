@@ -122,6 +122,7 @@ const TELL_HTML = `
 <tr><td>Therapeutic index vs therapeutic window</td><td>TI: one number, a ratio of doses. Window: a range of steady-state concentrations giving efficacy with minimal toxicity</td><td>Defining the window as a ratio</td><td>39, 43</td><td data-q="L05-044">L05-044</td></tr>
 <tr><td>Same drug, two therapeutic indices (codeine)</td><td>The TI is per effect measured: cough (huge) vs pain (very small). "No drug produces a single effect."</td><td>Treating the TI as a property of the drug alone</td><td>41</td><td data-q="L05-043">L05-043</td></tr>
 </tbody></table>
+<!--FIG:graded-quantal-->
 <h3 id="tell-druglist">Exam 1 drug list</h3>
 <table class="reftab"><thead><tr><th style="width:24%">Looks alike</th><th>What separates them</th><th style="width:28%">The trap</th><th style="width:10%">Question</th></tr></thead><tbody>
 <tr><td><b>Prazosin</b> vs <b>phenoxybenzamine</b></td><td>Prazosin blocks α1 only and is reversible. Phenoxybenzamine blocks α1 and α2 and is irreversible.</td><td>Calling both reversible; the list names phenoxybenzamine as its only irreversible drug.</td><td data-q="DL1-016">DL1-016</td></tr>
