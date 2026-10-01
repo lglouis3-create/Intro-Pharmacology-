@@ -501,13 +501,13 @@ function vTerms() {
   if (!all.length) { $('#view').innerHTML = '<h2>Terms</h2><div class="empty">No glossary in this build.</div>'; return; }
   const groups = [...new Set(all.map(t => t.group))];
   const tq = QUESTIONS.filter(q => q.topic === 'TERMS');
-  let h = `<h2>Terms</h2><p class="sub">${all.length} terms from the Day 1–3 lectures, each with its source. Figures show where a term is read off a curve or a diagram.</p>
+  let h = `<h2>Terms</h2><p class="sub">${all.length} terms from the Day 1–6 lectures, each with its source. Each term has a one-line meaning, a situation that shows it in action, and, where one applies, a figure.</p>
   <div class="card"><div class="row">${[['glossary', 'Glossary'], ['flash', 'Flashcards'], ['quiz', 'Quiz me']].map(([k, l]) => `<span class="chip ${TM.mode === k ? 'on' : ''}" data-mode="${k}">${l}</span>`).join('')}
    <span class="meta" style="margin:0 0 0 12px">Group:</span>${['all'].concat(groups).map(g => `<span class="chip ${TM.group === g ? 'on' : ''}" data-group="${esc(g)}">${g === 'all' ? 'All' : esc(g)}</span>`).join('')}</div></div>`;
   const list = termList();
   if (TM.mode === 'glossary') {
     groups.filter(g => TM.group === 'all' || g === TM.group).forEach(g => {
-      h += `<h3>${esc(g)}</h3><div class="card">` + all.filter(t => t.group === g).map(t => `<div class="term"><b>${esc(t.term)}</b><div>${esc(t.def)}</div>${t.hook ? `<div class="hook">${esc(t.hook)}</div>` : ''}${t.fig ? FIG(t.fig) : ''}<div class="cite">${esc(fmtCite(t.cite))}</div></div>`).join('') + '</div>';
+      h += `<h3>${esc(g)}</h3><div class="card">` + all.filter(t => t.group === g).map(t => `<div class="term"><b>${esc(t.term)}</b>${t.gist ? `<div class="gist">${esc(t.gist)}</div>` : ''}<div>${esc(t.def)}</div>${t.scene ? `<div class="hook"><b>In action:</b> ${esc(t.scene)}</div>` : ''}${t.hook ? `<div class="hook">${esc(t.hook)}</div>` : ''}${t.fig ? FIG(t.fig) : ''}<div class="cite">${esc(fmtCite(t.cite))}</div></div>`).join('') + '</div>';
     });
   } else if (TM.mode === 'flash') {
     if (!TM.card || !list.includes(TM.card)) {
@@ -518,14 +518,17 @@ function vTerms() {
     }
     const t = TM.card, st = S.q[termKey(t)];
     const seen = list.filter(x => S.q[termKey(x)]).length;
-    h += `<div class="meta">${seen}/${list.length} cards seen · ${st ? 'seen ' + st.n + '×' : 'new'}</div><div class="card"><div class="flash"><div class="meta">${esc(t.group)}</div><div class="t">${esc(t.term)}</div>`;
-    if (TM.shown) h += `<div style="text-align:left;margin-top:14px"><div>${esc(t.def)}</div>${t.hook ? `<div class="hook" style="color:var(--muted);margin-top:4px">${esc(t.hook)}</div>` : ''}${t.fig ? FIG(t.fig) : ''}<div class="cite">${esc(fmtCite(t.cite))}</div></div>
+    h += `<div class="meta">${seen}/${list.length} cards seen · ${st ? 'seen ' + st.n + '×' : 'new'}</div><div class="card"><div class="flash"><div class="meta">${esc(t.group)}</div>`;
+    // front of the card: the situation, with the term hidden; the term and its meaning come on the back
+    if (t.scene && !TM.shown) h += `<div class="meta" style="margin-bottom:6px">Which term is this?</div><div style="font-size:18px">${esc(t.scene)}</div>`;
+    else h += `<div class="t">${esc(t.term)}</div>${t.gist ? `<div class="gist" style="margin-top:4px">${esc(t.gist)}</div>` : ''}`;
+    if (TM.shown) h += `<div style="text-align:left;margin-top:14px">${t.scene ? `<div class="hook" style="margin-bottom:6px"><b>In action:</b> ${esc(t.scene)}</div>` : ''}<div>${esc(t.def)}</div>${t.hook ? `<div class="hook" style="color:var(--muted);margin-top:4px">${esc(t.hook)}</div>` : ''}${t.fig ? FIG(t.fig) : ''}<div class="cite">${esc(fmtCite(t.cite))}</div></div>
       <div class="row" style="justify-content:center;margin-top:14px"><button class="btn" data-fc="sure">Knew it</button><button class="btn ghost" data-fc="unsure">Not sure</button><button class="btn ghost" data-fc="wrong">Did not know</button></div>`;
-    else h += `<div class="row" style="justify-content:center;margin-top:14px"><button class="btn" id="fcshow">Show definition</button></div>`;
+    else h += `<div class="row" style="justify-content:center;margin-top:14px"><button class="btn" id="fcshow">${t.scene ? 'Show the term' : 'Show definition'}</button></div>`;
     h += `</div></div>`;
   } else {
     const pool = tq.filter(q => TM.group === 'all' || (TOPIC.TERMS.subs.find(s => s.id === q.sub) || {}).name === TM.group);
-    h += `<div class="card"><p>${pool.length} generated questions: pick the term for a definition, or the definition for a term. They count toward Weak spots under the skill "Terms".</p>
+    h += `<div class="card"><p>${pool.length} questions in three forms: recognise the term from a situation, pick the term's one-line meaning, or name the term from its definition. They count toward Weak spots under the skill "Terms".</p>
       <div class="row"><button class="btn" id="tq">Start</button></div></div>`;
   }
   $('#view').innerHTML = h;
