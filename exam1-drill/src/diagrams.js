@@ -28,7 +28,7 @@ const FIG = (() => {
     cap.forEach(t => { if (/^<(ol|ul)\b/.test(t)) { if (open) { out += '</ul>'; open = false; } out += t; } else { if (!open) { out += '<ul>'; open = true; } out += `<li>${t}</li>`; } });
     return out + (open ? '</ul>' : '');
   };
-  const wrap = (inner, cap, h = H) => `<figure class="fig"><svg viewBox="0 0 ${W} ${h}" role="img" aria-label="${capText(cap).replace(/"/g, '&quot;')}"><defs><marker id="arw" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--muted)"/></marker></defs>${inner}</svg><figcaption>${capHTML(cap)}</figcaption></figure>`;
+  const wrap = (inner, cap, h = H) => `<figure class="fig"><svg viewBox="0 0 ${W} ${h}" role="img" aria-label="${capText(cap).replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim().replace(/"/g, '&quot;')}"><defs><marker id="arw" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--muted)"/></marker></defs>${inner}</svg><figcaption>${capHTML(cap)}</figcaption></figure>`;
   const F = {};
 
   F['drc-basic'] = () => wrap(axes('log dose', '% of maximal response') +
@@ -55,7 +55,7 @@ const FIG = (() => {
     dash(-3, 30, 3, 30) + ytick(30, 'basal') +
     curve(sig(0, 100, 1, 30), 'a', 'agonist', [3, 100]) +
     `<polyline class="cv c" points="${px(-3)},${py(30)} ${px(3)},${py(30)}"/><text class="cl c" x="${px(3)}" y="${py(30) - 5}" text-anchor="end">antagonist</text>` +
-    curve(sig(0, 5, 1, 30), 'b', 'inverse agonist', [3, 5], true),
+    curve(sig(0, 0, 1, 30), 'b', 'inverse agonist', [3, 0], true),
     'Against a receptor with basal (constitutive) activity: an agonist raises activity, a neutral antagonist leaves it at basal, an inverse agonist lowers it below basal.');
 
   F['competitive'] = () => wrap(axes('log agonist dose', '% of maximal response') +
@@ -66,8 +66,8 @@ const FIG = (() => {
 
   F['irreversible'] = () => wrap(axes('log agonist dose', '% of maximal response') +
     dash(-3, 100, 3, 100) + ytick(100, 'Emax') + dash(-3, 45, 3, 45) + ytick(45, 'Emax′') +
-    curve(sig(0, 100), 'a', 'agonist alone', [3, 100]) + curve(sig(0, 45), 'b', '+ irreversible antagonist', [3, 45], true),
-    'An irreversible (non-competitive) antagonist removes receptors from use, so the maximal response falls; no agonist dose restores it.');
+    curve(sig(0, 100), 'a', 'agonist alone', [-2.9, 80]) + curve(sig(0.8, 45), 'b', '+ irreversible antagonist', [3, 45], true) + `<path class="arrow" d="M${px(-0.2)} ${py(55)} L${px(0.6)} ${py(55)}"/>`,
+    'An irreversible (non-competitive) antagonist binds covalently and takes receptors out of the pool: the curve shifts right and the maximal response falls; no agonist dose restores it (spare receptors delay the drop).');
 
   F['binding-kd'] = () => wrap(axes('log [drug]', '% of receptors bound') +
     dash(-3, 100, 3, 100) + ytick(100, '100%') + dash(0, 0, 0, 50) + dash(-3, 50, 0, 50) + ytick(50, '50%') + tick(0, 'Kd') +
@@ -127,7 +127,7 @@ const FIG = (() => {
       ['Reversible antagonist', 'alone: stays at basal; with an agonist: shifts it right, same Emax', 20, 'block', 'c', ''],
       ['Irreversible antagonist', 'alone: stays at basal; with an agonist: Emax falls toward 0', 20, 'block', 'b', 'lock'],
       ['Inverse agonist', 'binds, turns activity below basal', 4, 'pocket', 'b', ''],
-      ['Allosteric modulator', 'binds a second site; changes what the agonist does', 100, 'both', 'a', 'plus']
+      ['Allosteric modulator', 'alone: nothing; with an agonist: changes what it does', 20, 'side', 'a', 'plus']
     ];
     const pw = 120, ph = 120, cols = 3;
     let out = '';
@@ -170,11 +170,12 @@ const FIG = (() => {
       <text class="lbl" transform="translate(11 ${(T + py(0)) / 2}) rotate(-90)" text-anchor="middle">% of individuals responding</text>`;
     [50, 100, 200, 400, 800].forEach(v => { inner += `<text class="lbl sm2" x="${xs(v)}" y="${py(0) + 14}" text-anchor="middle">${v}</text>`; });
     inner += dash(-3, 50, 3, 50) + ytick(50, '50%') + ytick(100, '100%');
-    inner += vline(100, 50) + vline(400, 50) + vline(200, 99) + vline(175, 1);
+    const ED99 = 100 * Math.pow(99, 1 / 4), LD1 = 400 / Math.pow(99, 1 / 4);
+    inner += vline(100, 50) + vline(400, 50) + vline(ED99, 99) + vline(LD1, 1);
     inner += `<polyline class="cv a" points="${cum(100, 4)}"/><polyline class="cv b" points="${cum(400, 4)}"/>`;
     inner += `<text class="cl a" x="${xs(30)}" y="${py(92)}">effect (hypnosis)</text><text class="cl b" x="${xs(1500)}" y="${py(40)}" text-anchor="end">toxic (death)</text>`;
     inner += `<text class="cl a" x="${xs(100)}" y="${py(0) + 26}" text-anchor="middle">ED50</text><text class="cl b" x="${xs(400)}" y="${py(0) + 26}" text-anchor="middle">LD50</text>
-      <text class="cl a" x="${xs(215)}" y="${py(99) - 4}" text-anchor="start">ED99</text><text class="cl b" x="${xs(168)}" y="${py(1) - 8}" text-anchor="end">LD1</text>`;
+      <text class="cl a" x="${xs(ED99) + 3}" y="${py(99) - 4}" text-anchor="start">ED99</text><text class="cl b" x="${xs(LD1) - 3}" y="${py(1) - 8}" text-anchor="end">LD1</text>`;
     return wrap(inner, 'Quantal dose–response curves: each point is the percentage of the population that shows the all-or-none response at that dose. ED50 is the dose effective in half the population, LD50 the dose lethal to half. Therapeutic index = LD50 / ED50; here 400 / 100 = 4. When the ED99 sits to the right of the LD1 the two curves overlap: some patients reach the toxic dose before the last patients respond.');
   };
 
@@ -207,7 +208,7 @@ const FIG = (() => {
      one at a time through the Back / Next / Play buttons (data-anim). steps =
      [[caption, inner, tag?], ...]; h = panel height; the caption of the active
      step is drawn in the band at the bottom of the panel. */
-  const wrapLines = (t, n = 76) => { const out = []; let cur = ''; t.split(' ').forEach(w => { if ((cur + ' ' + w).trim().length > n) { out.push(cur.trim()); cur = w; } else cur += ' ' + w; }); out.push(cur.trim()); return out.slice(0, 3); };
+  const wrapLines = (t, n = 76) => { const out = []; let cur = ''; t.split(' ').forEach(w => { if ((cur + ' ' + w).trim().length > n) { out.push(cur.trim()); cur = w; } else cur += ' ' + w; }); out.push(cur.trim()); if (out.length > 3) { out.length = 3; out[2] = out[2].replace(/.{2}$/, '…'); } return out; };
   const stepper = (key, title, steps, h, cap, footer) => {
     let g = `<text class="title" x="180" y="11" text-anchor="middle">${title}</text>`;
     steps.forEach((st, i) => {
@@ -312,7 +313,7 @@ const FIG = (() => {
           '<b>Shift:</b> phenoxybenzamine binds covalently and never comes off, so those receptors leave the pool for good.',
           '<b>Curve:</b> while spare receptors remain the curve only shifts right; once too few receptors are left the maximum falls.',
           '<b>Rule:</b> enough antagonist abolishes the response.'] },
-      'shift-allo-agonist': { title: 'Full agonist + allosteric agonist (PAM) · GABA + diazepam',
+      'shift-allo-agonist': { title: 'Full agonist + allosteric agonist (positive modulator, PAM) · GABA + diazepam',
         start: [START, 0.6, ['3 of 5 receptors active', 'at this agonist dose']],
         shift: ['SHIFT: + allosteric agonist', 'c', [R('ag', 1, { side: 'pam' }), R('ag', 1, { side: 'pam' }), R('ag', 1, { side: 'pam' }), R(null, 0, { side: 'pam' }), R('ag', 1, { side: 'pam' })], 0.8, ['second site; agonist stays in its pocket', 'binds better (affinity): more are active']],
         base: 0, curves: curve(-0.6, 100, 0, 'c') + curve(-0.95, 100, 0, 'c') + curve(-1.1, 100, 0, 'c'), arrows: arrowH(0, -1.1, 50),
@@ -321,15 +322,16 @@ const FIG = (() => {
           '<b>Shift:</b> diazepam binds a second site while GABA stays in its pocket; GABA now binds better, so more receptors are active at the same dose.',
           '<b>Curve (affinity):</b> leftward shifts that get smaller and stop once every allosteric site is filled (asymmetrical, saturable).',
           '<b>Curve (efficacy):</b> a partial agonist’s curve rises; a full agonist is already at 100%.'] },
-      'shift-allo-antagonist': { title: 'Full agonist + allosteric antagonist (NAM) · agonist + modulator',
+      'shift-allo-antagonist': { title: 'Full agonist + allosteric antagonist (negative modulator, NAM)',
         start: [START, 0.6, ['3 of 5 receptors active', 'at this agonist dose']],
         shift: ['SHIFT: + allosteric antagonist', 'b', [R('ag', 0.5, { side: 'nam' }), R(null, 0, { side: 'nam' }), R('ag', 0.5, { side: 'nam' }), R(null, 0, { side: 'nam' }), R('ag', 0.5, { side: 'nam' })], 0.3, ['second site; the agonist still binds', 'but each bound receptor signals less']],
         base: 0, curves: curve(0.6, 100, 0, 'b') + curve(0.95, 75, 0, 'b') + curve(1.1, 60, 0, 'b'), arrows: arrowH(0, 0.6, 50) + arrowV(2.6, 98, 62),
-        legend: ['affinity: shift RIGHT (asymmetrical, saturable)', 'efficacy: Emax DOWN, but never to 0'],
+        legend: ['drawn: affinity AND efficacy, RIGHT and DOWN, unequal steps', 'affinity only: same top · efficacy only: no shift'],
         cap: ['<b>Start:</b> three of five receptors hold the agonist and signal.',
           '<b>Shift:</b> the modulator binds a second site and is reversible; the agonist still binds.',
           '<b>Curve (affinity):</b> right shift with the same maximum; the sites fill up, so the shifts are unequal and stop.',
-          '<b>Curve (efficacy):</b> each bound receptor signals less, so the maximum falls, but never to zero the way an irreversible antagonist can take it.'] }
+          '<b>Curve (efficacy):</b> each bound receptor signals less, so the maximum falls, but never to zero the way an irreversible antagonist can take it.',
+          '<b>Drawn here:</b> a modulator that affects both, so the curves move right and down together.'] }
     };
     const plain = t => t.replace(/<[^>]+>/g, '');
     Object.keys(DEFS).forEach(key => {
@@ -403,11 +405,10 @@ const FIG = (() => {
       g += `<line class="dash" x1="6" y1="148" x2="354" y2="148"/>`;
       g += notes(6, 162, ['1  NE (signal) binds β1 (receptor)', '2  receptor changes shape: GDP falls off, a new', '    GTP binds (exchange); αs (transducer) leaves β/γ', '3  αs turns on adenylate cyclase (effector)', '4  AC makes cAMP from ATP (2nd messenger);', '    one AC makes many cAMP: amplification', '5  cAMP activates protein kinase A (PKA)', '6  Ca++ enters: faster, stronger heartbeat']);
       g += `<text class="cl b" x="200" y="162" text-anchor="start">What ends it (R = reverse step)</text>`;
-      g += notes(200, 174, ['R1 one phosphate is cut off GTP (GTPase,', '    sped up by RGS): GDP; α rejoins β/γ', 'R2 PDE breaks down cAMP', 'R3 NE comes off the receptor']);
+      g += notes(200, 174, ['R1 GTPase cuts a phosphate off GTP', '    (sped up by RGS, regulator of G-protein signalling)', 'R2 phosphodiesterase (PDE) breaks down cAMP', 'R3 NE comes off the receptor']);
       return wrap(g, ['<b>Forward (1–6)</b><ol><li>NE, the signal, binds β1, the receptor.</li><li>The receptor changes shape; GDP falls off the α subunit and a new GTP binds in its place (an exchange, not a phosphate added); αs separates from β/γ.</li><li>αs turns on adenylate cyclase, the effector.</li><li>AC makes cAMP from ATP: the second messenger; one AC makes many cAMP (amplification).</li><li>cAMP activates protein kinase A.</li><li>Ca++ enters: faster, stronger heartbeat.</li></ol>',
         '<b>Back (R1–R3, the reverse steps that end the signal)</b><ol><li>One phosphate is cut off the GTP (GTPase; RGS speeds it): it is GDP again and α rejoins β/γ.</li><li>PDE breaks down cAMP.</li><li>NE comes off the receptor.</li></ol>',
-        '<b>Vocabulary he tests</b><ul><li>signal: NE</li><li>receptor: β1</li><li>transducer: the G protein (αs, αi or αq)</li><li>effector: adenylate cyclase or phospholipase C</li><li>second messenger: cAMP, PKA, PKC, IP3, Ca++</li><li>Gαi uses the same AC in the opposite direction (less cAMP); Gαq uses PLC → IP3 and Ca++</li></ul>',
-        '<b>Step through it:</b> the figure below walks the same cascade one step at a time.'], 246);
+        '<b>Vocabulary he tests</b><ul><li>signal: NE</li><li>receptor: β1</li><li>transducer: the G protein (αs, αi or αq)</li><li>effector: adenylate cyclase or phospholipase C</li><li>second messenger: cAMP, PKA, PKC, IP3, Ca++</li><li>Gαi uses the same AC in the opposite direction (less cAMP); Gαq uses PLC → IP3 and Ca++</li></ul>'], 246);
     };
 
     /* ---------- indirect antagonists ---------- */
@@ -419,7 +420,7 @@ const FIG = (() => {
       g += band(6, 118, 184) + xs(188, 146, 'target cell', 'end');
       g += cell(34, 104, { lig: 'ag', act: 1 }) + cell(68, 104, { lig: null, act: 0 }) + cell(102, 104, { lig: 'ag', act: 1 });
       if (target.kind === 'transporter') {
-        g += box(132, 46, 34, 20, target.name) + xs(149, 42, 'transporter', 'middle') + arr(118, 92, 138, 68) + xs(146, 92, 'reuptake:') + xs(146, 101, 'taken back') + (target.drug ? block(146, 78, '') + `<text class="cl b" x="152" y="82" text-anchor="start">${target.drug}</text>` + xs(146, 110, 'blocked', 'start', 'b') : dot(126, 78, 'a') + dot(134, 72, 'a'));
+        g += box(132, 46, 34, 20, target.name) + xs(149, 42, 'transporter', 'middle') + arr(118, 92, 138, 68) + xs(146, 92, 'reuptake:') + xs(146, 101, 'taken back') + (target.drug ? block(146, 78, '') + block(118, 26, '') + `<text class="cl b" x="126" y="30" text-anchor="start">${target.drug}</text>` + xs(146, 110, 'blocked', 'start', 'b') : dot(126, 78, 'a') + dot(134, 72, 'a'));
       } else {
         g += `<path class="box" d="M160 76 L176 88 L160 100 L144 88 Z"/>` + xs(160, 91, target.name, 'middle') + xs(160, 70, 'enzyme', 'middle') + arr(110, 93, 142, 89) + (target.drug ? block(160, 56, '') + `<text class="cl b" x="160" y="46" text-anchor="middle">${target.drug}</text>` + xs(160, 110, 'blocked', 'middle', 'b') : xs(160, 110, 'breaks it down', 'middle') + dot(128, 84, 'a'));
       }
@@ -486,7 +487,7 @@ const FIG = (() => {
       const side = ['DOWNSTREAM of the receptor:', 'phosphodiesterase (PDE) is the enzyme', 'that breaks down cAMP. Block it and', 'cAMP builds up behind the same', 'receptor signal.', '', 'The agonist looks more potent (LEFT);', 'a partial agonist can now reach the', 'full response ("behaving like a full', 'agonist").'];
       g += notes(200, 30, side) + P.axes('log dose of the agonist', ['dashed = agonist alone', 'solid = with the PDE inhibitor']) + P.curve(0, 100, 0, 'a', true) + P.curve(-1, 100, 0, 'c') + P.curve(0.3, 55, 0, 'd', true) + P.curve(-0.7, 100, 0, 'd') + P.arrowH(0, -1, 50) + xs(P.lpx(3) - 2, P.lpy(55) + 10, 'partial agonist alone (dashed)', 'end') + xs(P.lpx(3) - 2, P.lpy(100) + 22, 'full agonist alone (dashed)', 'end') + `<text class="cl c" x="${P.lpx(-2.9)}" y="${P.lpy(96)}" style="font-size:8.5px">solid green: full + inhibitor</text><text class="cl d" x="${P.lpx(-2.9)}" y="${P.lpy(86)}" style="font-size:8.5px">solid yellow: partial + inhibitor</text>` + P.legend(['full agonist: LEFT · partial agonist: LEFT and UP']);
       return wrap(g, ['<b>Where it acts:</b> phosphodiesterase, downstream of the receptor, in the cascade the receptor started.',
-        '<b>Receptor:</b> untouched; the second messenger it makes is broken down more slowly, so more of it accumulates.',
+        '<b>Receptor:</b> untouched; the cAMP its cascade makes (through adenylate cyclase) is broken down more slowly, so more of it accumulates.',
         '<b>Curve:</b> the agonist shifts left ("increasing the potency of an agonist"); a partial agonist’s curve can rise to the full response.',
         '<b>Slide examples:</b> milrinone, caffeine; the cAMP → PKA cascade of Day 1.'], 300);
     };
@@ -539,7 +540,7 @@ const FIG = (() => {
       g += cell(44, 16, { lig: 'ag', act: 1 }) + xs(40, 82, 'too much agonist,', 'middle') + xs(40, 92, 'too long', 'middle');
       g += arr(72, 44, 84, 44) + cell(91, 36, { lig: 'ag', act: 0 }) + `<ellipse cx="104" cy="82" rx="14" ry="6" fill="var(--figB)" fill-opacity="0.3" stroke="var(--figB)" stroke-width="1.2"/>` + xs(104, 85, 'β-arr', 'middle') + xs(104, 100, 'coated pit', 'middle');
       g += arr(122, 60, 150, 96) + `<circle cx="180" cy="118" r="22" class="box"/>` + cell(167, 96, { lig: null, act: 0 }) + xs(180, 152, 'endocytosis: receptor', 'middle') + xs(180, 162, 'now inside a vesicle', 'middle');
-      g += arr(200, 108, 236, 60) + `<text class="cl c" x="238" y="70" text-anchor="start">recycle back</text>` + `<text class="cl c" x="238" y="80" text-anchor="start">to the surface</text>` + cell(280, 16, { lig: null, act: 0 });
+      g += arr(200, 108, 236, 60) + `<text class="cl c" x="238" y="70" text-anchor="start">recycle back</text>` + `<text class="cl c" x="238" y="82" text-anchor="start">to the surface</text>` + cell(280, 16, { lig: null, act: 0 });
       g += arr(202, 122, 236, 122) + `<rect x="238" y="106" width="60" height="32" rx="4" fill="var(--figB)" fill-opacity="0.15" stroke="var(--figB)"/>` + `<text class="cl b" x="268" y="120" text-anchor="middle">lysosome</text>` + `<text class="cl b" x="268" y="131" text-anchor="middle">degrade</text>`;
       g += xs(180, 180, 'fewer receptors at the surface: the agonist is less potent (shift RIGHT) and its Emax can fall', 'middle');
       return wrap(g, ['<b>What happens:</b> "If it\'s not coming off, now we\'re going to go into the long process": β-arrestin takes the receptor into coated pits, endocytosis brings it inside, and the cell either recycles it to the surface or breaks it down in a lysosome. "That takes time" (the slide: seconds, minutes, hours or days).',
@@ -754,16 +755,15 @@ const FIG = (() => {
     };
     F3['reg-chain'] = () => {
       let g = title('Regulation to the curve, link by link');
-      g += chainRow(26, 'b', 'DOWN-regulation: chronic agonist (opioids, Afrin, NE drip)',
+      g += chainRow(32, 'b', 'DOWN-regulation: chronic agonist (opioids, Afrin, NE drip)',
         [['chronic', 'AGONIST', 'too much', 'stimulation'], ['body does the', 'opposite:', 'removes', 'receptors'], ['same dose', 'finds fewer', 'receptors:', 'smaller response'], ['needs more', 'dose: curve', 'RIGHT', 'potency DOWN'], ['receptors', 'run short:', 'Emax DOWN', 'like irreversible']]);
-      g += chainRow(100, 'c', 'UP-regulation: chronic antagonist (a β-blocker)',
+      g += chainRow(106, 'c', 'UP-regulation: chronic antagonist (a β-blocker)',
         [['chronic', 'ANTAGONIST', 'too little', 'stimulation'], ['body does the', 'opposite:', 'adds', 'receptors'], ['same dose', 'finds more', 'receptors', '(more spare)'], ['agonist', 'curve LEFT', 'partial can', 'reach full'], ['stop suddenly:', 'unblocked', 'receptors →', 'hypertensive', 'crisis']]);
-      g += `<text class="lbl sm" x="6" y="166" text-anchor="start">Rule: "how your body would oppose" the drug: agonist → down, antagonist → up.</text>`;
-      g += `<text class="lbl xs" x="6" y="178" text-anchor="start">Consequences: tolerance (down); "Do not go cold turkey", wean off a β-blocker (up).</text>`;
-      return wrap(g, ['<b>Read each row left to right:</b> the drug, what the body does in answer, what one dose now finds, what the curve does, and what happens at the end.',
-        '<b>Down-regulation:</b> fewer receptors → "I have to increase the concentration" → curve RIGHT (potency down). The Emax holds while spare receptors cover the loss; when "I don\'t have enough receptors available" it falls, "just like I would with any irreversible antagonist".',
+      g += `<text class="lbl sm" x="6" y="172" text-anchor="start">Rule: the body opposes the drug. Agonist → down, antagonist → up.</text>`;
+      g += `<text class="lbl xs" x="6" y="184" text-anchor="start">Consequences: tolerance (down); "Do not go cold turkey", wean off a β-blocker (up).</text>`;
+      return wrap(g, ['<b>Down-regulation:</b> fewer receptors → "I have to increase the concentration" → curve RIGHT (potency down). The Emax holds while spare receptors cover the loss; when "I don\'t have enough receptors available" it falls, "just like I would with any irreversible antagonist".',
         '<b>Up-regulation:</b> more receptors → "the more spare receptors I have, the more potent my agonist" → curve LEFT; a partial agonist "become[s] a full agonist because now I have enough receptors"; the antagonist is weaker ("more chairs to cover").',
-        '<b>Why it matters:</b> tolerance (opioids, cocaine, Afrin: the same dose does less); stop a norepinephrine drip and "they\'re gonna tank it out"; stop a β-blocker suddenly and "that patient is going to be very likely to go into ... hypertensive crisis", so "wean themselves off".'], 186);
+        '<b>Why it matters:</b> tolerance (opioids, cocaine, Afrin: the same dose does less); stop a norepinephrine drip and "they\'re gonna tank it out"; stop a β-blocker suddenly and "that patient is going to be very likely to go into ... hypertensive crisis", so "wean themselves off".'], 192);
     };
 
     /* ---------- addition, synergism, potentiation (Part 2 pages 30–31; transcript 9/29) ---------- */
@@ -797,7 +797,7 @@ const FIG = (() => {
     ], 234, ['<ol><li>Addition: 50% + 50% = 100%, the sum.</li><li>Synergism: 30% + 50% → 100%, more than the sum.</li><li>Potentiation: carbidopa 0 alone; L-dopa does more with it.</li><li>The tell: does each drug have an effect on its own?</li></ol>'], 'Four steps.');
 
     F3['ind-pde-anim'] = () => {
-      const P = plot(60, 56, 215, 135);
+      const P = plot(60, 56, 226, 126);
       const casc = (blocked, built) => {
         let g = band(6, 24, 184) + cell(20, 4, { lig: 'ag', act: 1 }) + xs(50, 30, 'agonist bound, receptor signalling');
         const bx = [6, 44, 82, 120, 158];
@@ -920,5 +920,6 @@ const FIG = (() => {
 
   const api = key => (F[key] ? F[key]() : '');
   api.graph = GRAPH;
+  api.keys = () => Object.keys(F);
   return api;
 })();

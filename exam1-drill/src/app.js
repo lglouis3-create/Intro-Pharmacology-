@@ -395,6 +395,7 @@ function drawExam(n) {
 }
 function vExam() {
   const ex = active(), max = examPool().filter(q => !q.lowYield && !q.type).length;
+  if (EX && !EX.done && EX.expired) { submitExam(); return; }
   if (EX && !EX.done) return renderExam();
   const lens = [...new Set([ex.questions, 25, 50, max].filter(x => x && x <= max))].sort((a, b) => a - b);
   let h = `<h2>Exam simulator</h2><p class="sub">${esc(ex.name)}: ${ex.questions ? ex.questions + ' questions' : 'question count not yet announced'}, ${ex.minutes} minutes allotted.
@@ -447,7 +448,7 @@ function renderExam() {
   };
   const tick = () => {
     const ms = EX.ends - Date.now(), el = $('#clock');
-    if (ms <= 0) { clearInterval(TICK); submitExam(); return; }
+    if (ms <= 0) { clearInterval(TICK); if (CUR === 'exam') submitExam(); else EX.expired = true; return; }
     if (el) el.textContent = `${Math.floor(ms / HOUR)}:${String(Math.floor(ms % HOUR / MIN)).padStart(2, '0')}:${String(Math.floor(ms % MIN / 1000)).padStart(2, '0')} left`;
   };
   tick(); TICK = setInterval(tick, 1000);
@@ -566,16 +567,17 @@ function vTell() {
 /* Static pages carry figure markers: <!--FIG:key-->, <!--IMG:key--> (one of his
    poll figures) and <!--GRAPH:{json}--> (a drawn dose–response plot). */
 /* Step-through figures: buttons under a figure move between its data-step groups. */
-let ANIM_TIMER = null;
+let ANIM = null;   // the one figure playing: {t: interval, b: its Play button}
 document.addEventListener('click', e => {
   const b = e.target.closest('[data-anim] button'); if (!b) return;
   const fig = b.closest('figure'); const steps = [...fig.querySelectorAll('.st')]; if (!steps.length) return;
   const cur = steps.findIndex(s => s.classList.contains('on'));
   const show = i => steps.forEach((s, j) => s.classList.toggle('on', j === i));
+  const stop = () => { if (ANIM) { clearInterval(ANIM.t); ANIM.b.textContent = 'Play'; ANIM = null; } };
   if (b.dataset.go === 'play') {
-    if (ANIM_TIMER) { clearInterval(ANIM_TIMER); ANIM_TIMER = null; b.textContent = 'Play'; return; }
-    b.textContent = 'Pause'; let i = cur;
-    ANIM_TIMER = setInterval(() => { if (!document.body.contains(fig)) { clearInterval(ANIM_TIMER); ANIM_TIMER = null; return; } i = (i + 1) % steps.length; show(i); if (i === steps.length - 1) { clearInterval(ANIM_TIMER); ANIM_TIMER = null; b.textContent = 'Play'; } }, 1800);
+    const same = ANIM && ANIM.b === b; stop(); if (same) return;
+    b.textContent = 'Pause';
+    ANIM = {b, t: setInterval(() => { if (!document.body.contains(fig)) return stop(); const i = (steps.findIndex(s => s.classList.contains('on')) + 1) % steps.length; show(i); if (i === steps.length - 1) stop(); }, 1800)};
     return;
   }
   show((cur + (+b.dataset.go) + steps.length) % steps.length);
@@ -623,7 +625,7 @@ const MISS = {
   affinity: ['Affinity', 'The smaller the Kd, the greater the affinity; check the units (nM < µM < mM).'],
   class: ['Drug class', 'The reading was right; match it to the class: which drug on the list produces that curve?'],
   steps: ['Steps', 'Signal → receptor → transducer (G protein) → effector → second messenger; GDP off, GTP on.'],
-  ti: ['Therapeutic index', 'TI = TD50 / ED50 from the quantal curves; the larger, the safer.'],
+  ti: ['Therapeutic index', 'TI = LD50 / ED50: find both 50% points on the quantal curves and divide; the larger, the safer.'],
   read: ['Read the figure', 'Axes, legend and point of reference first: which curve is the agonist alone?']
 };
 const graphOf = img => GR.find(g => g.key === img || (g.alts || []).includes(img));
@@ -660,7 +662,7 @@ function graphDone() {
 }
 function startGraph(key) {
   const g = GR.find(x => x.key === key); if (!g) return;
-  const list = shuffle(graphQs(g));
+  const list = shuffle(graphQs(g)); if (!list.length) { alert('No questions on this figure yet.'); return; }
   startQuiz(list, g.title, 'pass'); Q.graph = key;
 }
 function vGraphs() {
@@ -685,7 +687,7 @@ function vGraphs() {
   $('#view').innerHTML = h;
   document.querySelectorAll('[data-g]').forEach(b => b.onclick = () => {
     const g = GR.find(x => x.key === b.dataset.g);
-    if (b.dataset.wrong) { const list = graphQs(g).filter(q => lastOutcome(q) === 'wrong'); startQuiz(shuffle(list), g.title + ' · wrong', 'pass'); Q.graph = g.key; }
+    if (b.dataset.wrong) { const list = graphQs(g).filter(q => lastOutcome(q) === 'wrong'); if (!list.length) return; startQuiz(shuffle(list), g.title + ' · wrong', 'pass'); Q.graph = g.key; }
     else startGraph(g.key);
   });
 }

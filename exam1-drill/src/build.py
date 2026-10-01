@@ -8,8 +8,8 @@ import os, re, subprocess, sys, tempfile, json
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 os.chdir(HERE)
-DATA_FILES = ['q_L01.js', 'q_L02.js', 'q_L03.js', 'q_L04.js', 'q_L05.js', 'q_L06.js', 'q_POLLS.js', 'q_JEOP.js', 'q_DL1.js', 'q_TERMS.js']
-PAGES = ['diagrams.js', 'glossary.js', 'reference.js', 'tell.js', 'guide.js']
+DATA_FILES = ['q_L01.js', 'q_L02.js', 'q_L03.js', 'q_L04.js', 'q_L05.js', 'q_L06.js', 'q_POLLS.js', 'q_JEOP.js', 'q_FIGS.js', 'q_DL1.js', 'q_TERMS.js']
+PAGES = ['graphs.js', 'diagrams.js', 'glossary.js', 'reference.js', 'tell.js', 'guide.js']
 # generated banks: regenerate from their sources before checking
 for gen in ['gen_druglist.py', 'gen_terms.py']:
     r = subprocess.run([sys.executable, gen], capture_output=True, text=True)

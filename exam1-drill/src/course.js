@@ -19,6 +19,7 @@ const COURSE = {
     {id:'L06', deck:'Pharmacodynamics reviews.pdf', decks:['Pharmacodynamics reviews.pdf', 'Pharmacodynamics-Day_4_&_5_2026s_Part 3.pdf'], label:'Day 6 (9/30): Desired vs undesired effects, therapeutic efficacy, the PD review (how to read a curve question)', prof:'Gottlieb', exam:1, module:1},
     {id:'JP', deck:'Jeopardy 9/30', label:'Jeopardy (9/30): his review-game questions, verbatim, with his keys', prof:'Gottlieb', exam:1, module:1},
     {id:'PE', deck:'PollEV_s.pdf', label:'PollEV questions (his polls, verbatim, with his keys)', prof:'Gottlieb', exam:1, module:1},
+    {id:'FG', deck:'his figures', decks:['PollEV_s.pdf', 'Pharmacodynamics reviews.pdf', 'Jeopardy 9/30', 'Pharmacodynamics-Day_4_&_5_2026s_Part 3.pdf'], label:'Figure drills: his PollEV, Jeopardy and review figures, asked every way he asks', prof:'Gottlieb', exam:1, module:1},
     {id:'DL1', deck:'Exam_1_Drug_List_2026.pdf', label:'Exam 1 drug list', prof:'Gottlieb', exam:1, module:1}
   ],
   exams: [
