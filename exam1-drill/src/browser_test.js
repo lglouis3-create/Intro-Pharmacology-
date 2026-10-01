@@ -145,6 +145,20 @@ const out = path.join(__dirname, '..', course.match(/output:\s*'([^']+)'/)[1]);
   await page.click('nav button[data-v="data"]'); await page.fill('#prof', 'other'); await page.click('#setprof');
   await page.waitForTimeout(1500);
   await page.fill('#prof', 'default'); await page.click('#setprof');
+  // explain-more link: jumps to a page section and the back button restores the question
+  await page.click('nav button[data-v="quiz"]');
+  { const o5 = await page.$('[data-o]'); if (o5) await o5.click(); const ck5 = await page.$('#check'); if (ck5) await ck5.click(); }
+  const jl = await page.$('[data-jump]');
+  if (!jl) fail('answered question shows no explain-more link');
+  else {
+    const qid = await page.evaluate(() => Q.cur.id);
+    const target = (await jl.getAttribute('data-jump')).split(':')[1];
+    await jl.click();
+    if (!(await page.$('#' + target))) fail('explain-more anchor missing: ' + target);
+    if (!(await page.$('#backbtn'))) fail('no back button after an explain-more jump');
+    await page.click('#backbtn');
+    if ((await page.evaluate(() => CUR)) !== 'quiz' || (await page.evaluate(() => Q.cur.id)) !== qid) fail('back button did not return to the same question');
+  }
   // theme control
   await page.selectOption('#theme', 'dark');
   if ((await page.getAttribute('html', 'data-theme')) !== 'dark') fail('theme select did not apply dark');

@@ -118,7 +118,7 @@ let CUR = 'topics';
 function nav() {
   $('#nav').innerHTML = VIEWS.filter(([k]) => k !== 'guide' || (typeof GUIDE_HTML !== 'undefined' && GUIDE_HTML.trim()))
     .map(([k, l]) => `<button data-v="${k}" class="${k === CUR ? 'on' : ''}">${l}</button>`).join('') + themeSelect();
-  $('#nav').querySelectorAll('button').forEach(b => b.onclick = () => go(b.dataset.v));
+  $('#nav').querySelectorAll('button').forEach(b => b.onclick = () => { RET.length = 0; backBtn(); go(b.dataset.v); });
   $('#theme').onchange = e => applyTheme(e.target.value);
 }
 const clearView = () => { const v = $('#view'); v.onclick = null; v.onchange = null; };
@@ -127,6 +127,48 @@ function go(v) {
   CUR = v; nav(); window.scrollTo(0, 0); clearView();
   VIEWFN[v]();
 }
+/* "Explain more": a question links to the pages that teach its concept. The link
+   keeps the quiz or exam exactly where it was and a floating button brings the
+   student back to it, scroll position included. */
+const RET = [];
+const LINKS = [
+  [/fa-plus|competitive|inverse|irreversible|allosteric|shift|three-questions|five-drug|drug-x|rule-out|pindolol|partial|classif|baseline|symmetr|antagonist-syn|intrinsic|negative-efficacy|two-state|neutral|classes/, [['guide', 'guide-10', 'Guide 10: how to read a curve'], ['tell', 'tell-shifts', 'Tell apart: the shift panels'], ['ref', 'ref-2', 'Reference: drug classes and the curve']]],
+  [/potency|efficacy|emax|ed50|ec50|kd|affinity|bond|covalent|most-potent|leftmost|units/, [['guide', 'guide-1', 'Guide 1: affinity, efficacy, potency'], ['ref', 'ref-1', 'Reference: reading a curve'], ['ref', 'ref-4', 'Reference: affinity, bonds and Kd']]],
+  [/transporter|indirect|pde|ras|carbidopa|ache|cholinesterase|ssri|snri|upstream|downstream/, [['guide', 'guide-9', 'Guide 9: indirect antagonists'], ['tell', 'tell-indirect', 'Tell apart: where each drug acts'], ['ref', 'ref-7', 'Reference: indirect antagonists']]],
+  [/regulat|desens|tolerance|spare|receptor-number|arrestin|endocyt|up-reg|down-reg/, [['guide', 'guide-9', 'Guide 9: spare receptors and regulation'], ['tell', 'tell-gpcr', 'Tell apart: the GPCR process and regulation'], ['ref', 'ref-6', 'Reference: spare receptors and regulation']]],
+  [/gpcr|g-protein|signal|transduc|effector|messenger|cross|alpha|camp|plc|gs-|gi-|gq-|steps/, [['guide', 'guide-6', 'Guide 6: receptors and signalling'], ['tell', 'tell-gpcr', 'Tell apart: the GPCR process'], ['ref', 'ref-5', 'Reference: receptors and signalling']]],
+  [/quantal|therapeutic|ti-|safety|ld50|graded|window/, [['guide', 'guide-9', 'Guide 9: quantal responses and TI'], ['ref', 'ref-8', 'Reference: quantal, TI and SI']]],
+  [/enhance|synerg|addition|potentiation/, [['tell', 'tell-enhance', 'Tell apart: addition, synergism, potentiation'], ['guide', 'guide-9', 'Guide 9: enhancement of drug effects']]],
+  [/nds|supplement|moa|soa|selectiv|receptor-class|ion-chan|superfam|drug-def|must-know|desired|undesired|side-effect|metoprolol-predict|ddi|poison|pharmacolog|pharmacokinet|pharmacodynam|term-drug|term-receptor/, [['guide', 'guide-7', 'Guide 7: drug basics he tests'], ['ref', 'ref-9', 'Reference: drug basics'], ['tell', 'tell-day1', 'Tell apart: Day 1']]],
+  [/slope|threshold|drc|normalized|ligand|reversibility|theory|lowest-effective/, [['guide', 'guide-1', 'Guide 1: affinity, efficacy, potency'], ['ref', 'ref-1', 'Reference: reading a curve']]],
+  [/orthosteric|mass-action|saturab|pam-nam|site|diazepam/, [['guide', 'guide-4', 'Guide 4: orthosteric vs allosteric'], ['tell', 'tell-day2', 'Tell apart: Day 2']]],
+  [/chemical|physiological|antagonism|antag/, [['guide', 'guide-3', 'Guide 3: kinds of antagonists'], ['ref', 'ref-2', 'Reference: drug classes and the curve']]],
+  [/rtk|nuclear|aldosterone|gtp|gprotein|voltage|ion|review/, [['guide', 'guide-6', 'Guide 6: receptors and signalling'], ['ref', 'ref-5', 'Reference: receptors and signalling']]]
+];
+const BY_LECTURE = {L01: ['guide', 'guide-7', 'Guide 7: drug basics he tests'], L02: ['guide', 'guide-6', 'Guide 6: receptors and signalling'], L03: ['guide', 'guide-1', 'Guide 1: affinity, efficacy, potency'], L04: ['guide', 'guide-2', 'Guide 2: agonist classes'], L05: ['guide', 'guide-9', 'Guide 9: Day 5'], L06: ['guide', 'guide-10', 'Guide 10: how to read a curve'], PE: ['guide', 'guide-10', 'Guide 10: how to read a curve'], JP: ['guide', 'guide-10', 'Guide 10: how to read a curve'], FG: ['guide', 'guide-10', 'Guide 10: how to read a curve']};
+const BY_GROUP = {g1: ['guide', 'guide-7', 'Guide 7: drug basics he tests'], g2: ['guide', 'guide-4', 'Guide 4: orthosteric vs allosteric'], g3: ['guide', 'guide-2', 'Guide 2: agonist classes'], g4: ['guide', 'guide-1', 'Guide 1: affinity, efficacy, potency'], g5: ['guide', 'guide-6', 'Guide 6: receptors and signalling']};
+function linksFor(q) {
+  if (q.lecture === 'DL1') return [['guide', 'guide-8', 'Guide 8: the drug list'], ['ref', 'ref-druglist', 'Reference: the drug list']];
+  const key = [q.concept, q.fg, q.sub, (q.tags || []).join(' ')].join(' ').toLowerCase();
+  for (const [re, links] of LINKS) if (re.test(key)) return links;
+  if (BY_GROUP[q.sub]) return [BY_GROUP[q.sub]];
+  return BY_LECTURE[q.lecture] ? [BY_LECTURE[q.lecture]] : [];
+}
+const explainHTML = q => { const l = linksFor(q); return l.length ? `<div class="row explain"><span class="meta" style="margin:0">Explain more:</span>${l.map(([v, a, t]) => `<button type="button" class="chip" data-jump="${v}:${a}">${esc(t)}</button>`).join('')}</div>` : ''; };
+function jump(view, anchor) {
+  RET.push({view: CUR, y: window.scrollY});
+  go(view);
+  const t = document.getElementById(anchor);
+  if (t) { t.scrollIntoView({block: 'start'}); window.scrollBy(0, -70); }
+  backBtn();
+}
+function backBtn() {
+  let b = document.getElementById('backbtn');
+  if (!RET.length) { if (b) b.remove(); return; }
+  if (!b) { b = document.createElement('button'); b.id = 'backbtn'; b.type = 'button'; b.className = 'btn'; document.body.appendChild(b); b.onclick = () => { const r = RET.pop(); backBtn(); go(r.view); window.scrollTo(0, r.y); }; }
+  b.textContent = '← Back to ' + ({quiz: 'the question', exam: 'the exam', graphs: 'the figures', map: 'the map', terms: 'the terms'}[RET[RET.length - 1].view] || 'where you were');
+}
+document.addEventListener('click', e => { const j = e.target.closest('[data-jump]'); if (j) { const [v, a] = j.dataset.jump.split(':'); jump(v, a); } });
 const VIEWFN = {topics: vTopics, quiz: vQuiz, terms: vTerms, weak: vWeak, exam: vExam, map: vMap, graphs: vGraphs, ref: vRef, tell: vTell, guide: vGuide, data: vData};
 const rerender = () => { const y = window.scrollY; if (CUR === 'quiz' && Q) renderQ(); else if (CUR === 'exam' && EX && !EX.done) renderExam(); else if (CUR === 'exam' && EX && EX.done) examResult(); else VIEWFN[CUR](); window.scrollTo(0, y); };
 document.addEventListener('click', e => {
@@ -217,6 +259,7 @@ let Q = null;
 function startQuiz(list, label, mode, opts = {}) {
   if (!list.length) { alert('No questions match that selection.'); return; }
   Q = {list: list.slice(), label, mode, i: 0, done: 0, right: 0, retest: [], doneIds: new Set(), st: {}, graph: opts.graph || null};
+  RET.length = 0; backBtn();
   CUR = 'quiz'; nav(); nextQ();
 }
 const allDone = () => Q.list.every(q => Q.doneIds.has(q.id));
@@ -306,7 +349,7 @@ function qCard(q, st, opts = {}) {
     if (q.note) h += `<div class="note">${esc(q.note)}</div>`;
     h += readingHTML(q.reading);
     if (q.quote) h += `<div class="quote">“${esc(q.quote)}”</div>`;
-    h += `<div class="cite">${esc(fmtCite(q.cite))}</div>`;
+    h += `<div class="cite">${esc(fmtCite(q.cite))}</div>` + explainHTML(q);
     if (opts.conf) h += opts.conf(st);
   }
   if (opts.foot) h += opts.foot;
@@ -648,7 +691,7 @@ function examResult() {
       if (q.note) h += `<div class="note">${esc(q.note)}</div>`;
       h += readingHTML(q.reading);
     }
-    h += `<div class="cite">${esc(fmtCite(q.cite))}</div></div>`;
+    h += `<div class="cite">${esc(fmtCite(q.cite))}</div>${explainHTML(q)}</div>`;
   });
   $('#view').innerHTML = h;
   $('#newx').onclick = () => { endExam(); vExam(); };
