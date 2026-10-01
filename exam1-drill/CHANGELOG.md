@@ -3,6 +3,8 @@
 Newest first. The build embeds this file, and the Progress page shows it.
 
 ## 2026-10-01 (terms: recognise the idea, not the wording)
+- GPCR figure: the step-through now shows GDP falling off and a new GTP binding as two separate steps (an exchange, not a phosphate added), and the reverse step as one phosphate cut off GTP. The static figure's R1–R3 are labelled as the reverse steps, its caption is numbered lists (Forward, Back, Vocabulary he tests), and the step-through appears under it wherever it is shown.
+- Surmountable / insurmountable: rewritten as the question to ask ("can more agonist still reach the maximum?"), with the drug-list examples and the curve each gives.
 - Every term now has a one-line meaning and a situation that shows it in action (his own examples: the heart cell, the petri dish, Afrin, the β-blocker taper, the five-curve figure). The term quiz asks three ways: which term fits this situation (term names as the options), what the term means (short one-line meanings as the options), and which term matches the full definition. The long definition-versus-definition form is gone.
 - Flashcards show the situation first with the term hidden ("Which term is this?"), then the term, its one-line meaning, the definition and the figure.
 - New cross-talk figure (one heart cell, β1 with Gαs and M2 with Gαi acting on the same adenylate cyclase; the heart rate is the net).
