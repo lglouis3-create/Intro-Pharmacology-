@@ -75,10 +75,17 @@ const themeSelect = () => `<select id="theme" title="Theme" aria-label="Theme">$
 applyTheme(store.get(COURSE.ns + ':theme') || 'system');
 const KEY = () => COURSE.ns + ':p:' + PROFILE;
 function loadState() {
-  try { const s = JSON.parse(store.get(KEY()) || 'null'); if (s && s.q) return s; } catch (e) {}
-  return {q: {}, log: [], pace: COURSE.paceDefault, exams: []};
+  try { const s = JSON.parse(store.get(KEY()) || 'null'); if (s && s.q) { s.flags = s.flags || {}; s.layout = s.layout || 'one'; return s; } } catch (e) {}
+  return {q: {}, log: [], pace: COURSE.paceDefault, exams: [], flags: {}, layout: 'one'};
 }
 let S = loadState();
+/* Flags: the student marks any question to come back to; the set is a drill of its own. */
+const isFlagged = id => !!(S.flags && S.flags[id]);
+function toggleFlag(id) { S.flags = S.flags || {}; if (S.flags[id]) delete S.flags[id]; else S.flags[id] = Date.now(); save(); }
+const flagBtn = id => `<button class="btn ghost flagb ${isFlagged(id) ? 'on' : ''}" data-flag="${id}" title="Flag this question to come back to it">⚑ ${isFlagged(id) ? 'Flagged' : 'Flag'}</button>`;
+const flaggedPool = () => examPool().filter(q => isFlagged(q.id));
+/* Layout: one question at a time, or every question of the drill on one page. */
+const layoutToggle = () => `<span class="row layoutsel" style="gap:4px"><span class="chip ${S.layout === 'one' ? 'on' : ''}" data-layout="one">One at a time</span><span class="chip ${S.layout === 'all' ? 'on' : ''}" data-layout="all">All on one page</span></span>`;
 const save = () => store.set(KEY(), JSON.stringify(S));
 const qs = id => (S.q[id] = S.q[id] || {n: 0, ok: 0, box: 0, due: 0, last: 0});
 
@@ -116,8 +123,14 @@ function nav() {
 function go(v) {
   if (CUR === 'exam' && EX && !EX.done && v !== 'exam' && !confirm('Leave the exam in progress? It will be kept until you return.')) return;
   CUR = v; nav(); window.scrollTo(0, 0);
-  ({topics: vTopics, quiz: vQuiz, terms: vTerms, weak: vWeak, exam: vExam, map: vMap, graphs: vGraphs, ref: vRef, tell: vTell, guide: vGuide, data: vData})[v]();
+  VIEWFN[v]();
 }
+const VIEWFN = {topics: vTopics, quiz: vQuiz, terms: vTerms, weak: vWeak, exam: vExam, map: vMap, graphs: vGraphs, ref: vRef, tell: vTell, guide: vGuide, data: vData};
+const rerender = () => { const y = window.scrollY; if (CUR === 'quiz' && Q) renderQ(); else if (CUR === 'exam' && EX && !EX.done) renderExam(); else VIEWFN[CUR](); window.scrollTo(0, y); };
+document.addEventListener('click', e => {
+  const f = e.target.closest('[data-flag]'); if (f) { toggleFlag(f.dataset.flag); rerender(); return; }
+  const l = e.target.closest('[data-layout]'); if (l) { S.layout = l.dataset.layout; save(); rerender(); }
+});
 
 /* Questions eligible for practice and for the active exam. */
 const active = () => COURSE.exams.find(e => e.id === COURSE.activeExam) || COURSE.exams[0];
@@ -145,6 +158,8 @@ function vTopics() {
   <div class="card"><div class="row" style="justify-content:space-between">
    <div><b>${pool.length}</b> questions in the bank · <b>${seen}</b> seen · accuracy <b>${a.pct == null ? '—' : a.pct + '%'}</b></div>
    <div class="row"><button class="btn" id="due">Study what is due</button><button class="btn ghost" id="all">One pass, all questions</button></div></div>
+   <div class="row" style="margin-top:10px;justify-content:space-between"><span class="row"><span class="meta" style="margin:0">Answer:</span>${layoutToggle()}</span>
+   <span class="row"><span class="meta" style="margin:0">⚑ Flagged: <b>${flaggedPool().length}</b></span>${flaggedPool().length ? `<button class="btn ghost" id="drillflag">Drill flagged</button><button class="btn ghost" id="clearflag">Clear flags</button>` : ''}</span></div>
    <div class="row" style="margin-top:10px"><span class="meta" style="margin:0">Skill:</span>
    ${['all'].concat(COURSE.skills.map(s => s.id)).filter(k => k === 'all' || pool.some(q => q.skill === k))
      .map(k => `<span class="chip ${FILT.skill === k ? 'on' : ''}" data-sk="${k}">${k === 'all' ? 'All' : esc(SKILL[k].short)}</span>`).join('')}</div></div>`;
@@ -172,6 +187,8 @@ function vTopics() {
   $('#due').onclick = () => startQuiz(pool, 'Due and unseen', 'sr');
   const wn = $('#whatsnew'); if (wn) wn.onclick = e => { e.preventDefault(); go('data'); };
   $('#all').onclick = () => startQuiz(shuffle(pool), 'All questions, one pass', 'pass');
+  const df = $('#drillflag'); if (df) df.onclick = () => startQuiz(flaggedPool(), 'Flagged questions', 'pass');
+  const cf = $('#clearflag'); if (cf) cf.onclick = () => { if (confirm('Remove every flag?')) { S.flags = {}; save(); vTopics(); } };
   document.querySelectorAll('[data-sk]').forEach(c => c.onclick = () => { FILT.skill = c.dataset.sk; vTopics(); });
   document.querySelectorAll('[data-topic]').forEach(b => b.onclick = () => {
     const list = pool.filter(q => q.topic === b.dataset.topic && (!b.dataset.sub || q.sub === b.dataset.sub) && (FILT.skill === 'all' || q.skill === FILT.skill));
@@ -240,48 +257,119 @@ function metaLine(q) {
   const t = TOPIC[q.topic], sk = SKILL[q.skill];
   return `${esc(t ? t.name : q.topic)}${sk ? ' · ' + esc(sk.short) : ''}${q.multi ? ' · select all' : ''}`;
 }
-function renderQ() {
-  const q = Q.cur, st = S.q[q.id];
-  let h = `<div class="row" style="justify-content:space-between"><span class="meta">${esc(Q.label || '')} · ${Q.done} answered${Q.done ? ' · ' + Q.right + ' right' : ''}</span>
-    <span class="meta">${st && st.n ? 'seen ' + st.n + '×' : 'new'}</span></div>
-    <div class="card"><div class="meta">${metaLine(q)}</div><div class="stem">${esc(q.stem)}</div>${stemMedia(q)}`;
+/* One question card. `st` holds the answer state (order, rightOrder, picked, mpick, answered, ok);
+   in the one-at-a-time view that is Q itself, on the all-on-one-page view one object per question. */
+function qCard(q, st, opts = {}) {
+  const sq = S.q[q.id], tag = opts.idx != null ? `${opts.idx + 1}. ` : '';
+  let h = `<div class="card qcard" data-qid="${q.id}"><div class="row" style="justify-content:space-between"><span class="meta">${tag}${metaLine(q)}${opts.seen ? ' · ' + (sq && sq.n ? 'seen ' + sq.n + '×' : 'new') : ''}</span>${flagBtn(q.id)}</div><div class="stem">${esc(q.stem)}</div>${stemMedia(q)}`;
   if (q.type === 'match') {
     h += q.left.map((l, i) => `<div class="row" style="margin-bottom:8px"><span style="flex:1 1 200px">${esc(l)}</span>
-      <select data-l="${i}" ${Q.answered ? 'disabled' : ''}><option value="">—</option>${Q.rightOrder.map(r => `<option ${Q.mpick && Q.mpick[i] === r ? 'selected' : ''}>${esc(r)}</option>`).join('')}</select>
-      ${Q.answered ? (Q.mpick[i] === pairOf(q, l) ? '<b style="color:var(--ok)">✓</b>' : `<b style="color:var(--bad)">✗ ${esc(pairOf(q, l))}</b>`) : ''}</div>`).join('');
+      <select data-qid="${q.id}" data-l="${i}" ${st.answered ? 'disabled' : ''}><option value="">—</option>${st.rightOrder.map(r => `<option ${st.mpick && st.mpick[i] === r ? 'selected' : ''}>${esc(r)}</option>`).join('')}</select>
+      ${st.answered ? (st.mpick[i] === pairOf(q, l) ? '<b style="color:var(--ok)">✓</b>' : `<b style="color:var(--bad)">✗ ${esc(pairOf(q, l))}</b>`) : ''}</div>`).join('');
   } else {
-    Q.order.forEach((oi, n) => {
+    st.order.forEach((oi, n) => {
       const o = q.options[oi];
       let cls = 'opt';
-      const sel = q.multi ? Q.picked.has(oi) : Q.picked === oi;
-      if (Q.answered) { if (o.correct) cls += ' right'; else if (sel) cls += ' wrong'; }
+      const sel = q.multi ? st.picked.has(oi) : st.picked === oi;
+      if (st.answered) { if (o.correct) cls += ' right'; else if (sel) cls += ' wrong'; }
       else if (sel) cls += ' sel';
-      h += `<button class="${cls}" data-o="${oi}" ${Q.answered ? 'disabled' : ''}><span class="k">${q.multi ? (sel ? '☑' : '☐') : LETTERS[n]}</span><span>${esc(o.t)}</span></button>`;
-      if (Q.answered && o.why) h += `<div class="why">${esc(o.why)}</div>`;
+      h += `<button class="${cls}" data-qid="${q.id}" data-o="${oi}" ${st.answered ? 'disabled' : ''}><span class="k">${q.multi ? (sel ? '☑' : '☐') : LETTERS[n]}</span><span>${esc(o.t)}</span></button>`;
+      if (st.answered && o.why) h += `<div class="why">${esc(o.why)}</div>`;
     });
   }
-  if (!Q.answered && (q.multi || q.type === 'match')) h += `<button class="btn" id="check">Check</button>`;
-  if (Q.answered) {
-    h += `<div class="verdict ${Q.ok ? 'ok' : 'bad'}">${Q.ok ? '✓ Correct' : '✗ Not correct'}</div>`;
+  if (!st.answered && (q.multi || q.type === 'match')) h += `<button class="btn" ${opts.single ? 'id="check"' : ''} data-qid="${q.id}" data-check="1">Check</button>`;
+  if (st.answered) {
+    h += `<div class="verdict ${st.ok ? 'ok' : 'bad'}">${st.ok ? '✓ Correct' : '✗ Not correct'}</div>`;
     if (q.type === 'match' && q.pairs) h += q.pairs.filter(p => p.why).map(p => `<div class="why"><b>${esc(p.l)}</b>: ${esc(p.why)}</div>`).join('');
     if (q.teach) h += `<div class="teach">${teachHTML(q.teach)}</div>`;
     if (q.fg) h += figHTML(q.fg);
-    h += graphFeedback(q);
+    h += graphFeedback(q, st);
     if (q.note) h += `<div class="note">${esc(q.note)}</div>`;
     h += readingHTML(q.reading);
     if (q.quote) h += `<div class="quote">“${esc(q.quote)}”</div>`;
     h += `<div class="cite">${esc(fmtCite(q.cite))}</div>`;
-    if (Q.ok) h += `<div class="row" style="margin-top:12px"><span class="meta" style="margin:0">How sure were you?</span>
-      <button class="btn" data-c="sure">Knew it</button><button class="btn ghost" data-c="unsure">Not sure</button><button class="btn ghost" data-c="guess">I guessed</button></div>`;
-    else h += `<div class="row" style="margin-top:12px"><button class="btn" data-c="wrong">Next</button></div>`;
+    if (opts.conf) h += opts.conf(st);
   }
-  h += `<div class="meta kbd">Keys: A–E or 1–5 pick an option · Enter checks or continues</div></div>`;
+  if (opts.foot) h += opts.foot;
+  return h + '</div>';
+}
+function renderQ() {
+  if (S.layout === 'all') return renderAll();
+  const q = Q.cur;
+  let h = `<div class="row" style="justify-content:space-between"><span class="meta">${esc(Q.label || '')} · ${Q.done} answered${Q.done ? ' · ' + Q.right + ' right' : ''}</span>${layoutToggle()}</div>`;
+  h += qCard(q, Q, {seen: true, single: true,
+    conf: () => Q.ok ? `<div class="row" style="margin-top:12px"><span class="meta" style="margin:0">How sure were you?</span>
+      <button class="btn" data-c="sure">Knew it</button><button class="btn ghost" data-c="unsure">Not sure</button><button class="btn ghost" data-c="guess">I guessed</button></div>`
+      : `<div class="row" style="margin-top:12px"><button class="btn" data-c="wrong">Next</button></div>`,
+    foot: `<div class="meta kbd">Keys: A–E or 1–5 pick an option · Enter checks or continues</div>`});
   $('#view').innerHTML = h;
   document.querySelectorAll('[data-o]').forEach(b => b.onclick = () => pick(+b.dataset.o));
   document.querySelectorAll('select[data-l]').forEach(s => s.onchange = () => { Q.mpick = Q.mpick || {}; Q.mpick[+s.dataset.l] = s.value; });
-  const ck = $('#check'); if (ck) ck.onclick = check;
+  const ck = document.querySelector('[data-check]'); if (ck) ck.onclick = check;
   document.querySelectorAll('[data-c]').forEach(b => b.onclick = () => finish(b.dataset.c));
 }
+/* All on one page: every question of the drill in order, each graded as it is answered.
+   A wrong answer is recorded at once; a right one is recorded as "Knew it" and can be
+   downgraded with "Not sure" or "I guessed". SR drills take their due-first order; 40 show at a time. */
+function allList() {
+  if (Q.allList) return Q.allList;
+  let list = Q.list.slice();
+  if (Q.mode === 'sr') {
+    const now = Date.now(), due = [], unseen = [], rest = [];
+    list.forEach(q => { const st = S.q[q.id]; if (!(st && st.n)) unseen.push(q); else if (st.due <= now) due.push(q); else rest.push(q); });
+    list = due.sort((a, b) => S.q[a.id].box - S.q[b.id].box).concat(shuffle(unseen), rest.sort((a, b) => S.q[a.id].due - S.q[b.id].due));
+  }
+  Q.allList = list; Q.allN = 40; Q.st = Q.st || {};
+  return list;
+}
+function renderAll() {
+  const list = allList(), shown = list.slice(0, Q.allN);
+  shown.forEach(q => { if (!Q.st[q.id]) Q.st[q.id] = {order: q.type === 'match' ? null : optOrder(q), rightOrder: q.type === 'match' ? shuffle(q.right.slice()) : null, picked: q.multi ? new Set() : null, mpick: null, answered: false, ok: null, t0: Date.now()}; });
+  const done = shown.filter(q => Q.st[q.id].answered).length, right = shown.filter(q => Q.st[q.id].ok).length;
+  let h = `<div class="row allhead" style="justify-content:space-between"><span class="meta">${esc(Q.label || '')} · ${done} of ${shown.length} answered${done ? ' · ' + right + ' right' : ''}${list.length > shown.length ? ' · ' + list.length + ' in the drill' : ''}</span>${layoutToggle()}</div>`;
+  shown.forEach((q, i) => {
+    const st = Q.st[q.id];
+    h += qCard(q, st, {idx: i, conf: s2 => s2.ok ? `<div class="row" style="margin-top:10px"><span class="meta" style="margin:0">Recorded as ${s2.conf === 'guess' ? '"I guessed"' : s2.conf === 'unsure' ? '"Not sure"' : '"Knew it"'}</span>${s2.conf === 'sure' ? `<button class="btn ghost" data-qid="${q.id}" data-down="unsure">Not sure</button><button class="btn ghost" data-qid="${q.id}" data-down="guess">I guessed</button>` : ''}</div>` : ''});
+  });
+  if (list.length > shown.length) h += `<div class="row"><button class="btn" id="more">Show the next ${Math.min(40, list.length - shown.length)}</button></div>`;
+  else h += `<div class="row"><button class="btn ghost" id="alldone">Finish: ${right} of ${done} right</button></div>`;
+  $('#view').innerHTML = h;
+  const view = $('#view');
+  view.querySelectorAll('[data-o]').forEach(b => b.onclick = () => pickAll(b.dataset.qid, +b.dataset.o));
+  view.querySelectorAll('select[data-l]').forEach(s => s.onchange = () => { const st = Q.st[s.dataset.qid]; st.mpick = st.mpick || {}; st.mpick[+s.dataset.l] = s.value; });
+  view.querySelectorAll('[data-check]').forEach(b => b.onclick = () => checkAll(b.dataset.qid));
+  view.querySelectorAll('[data-down]').forEach(b => b.onclick = () => downgrade(b.dataset.qid, b.dataset.down));
+  const more = $('#more'); if (more) more.onclick = () => { Q.allN += 40; renderAll(); };
+  const fin = $('#alldone'); if (fin) fin.onclick = () => { Q = null; go('topics'); };
+}
+function pickAll(id, oi) {
+  const q = byId[id], st = Q.st[id]; if (st.answered) return;
+  if (q.multi) { st.picked.has(oi) ? st.picked.delete(oi) : st.picked.add(oi); renderAllKeep(); return; }
+  st.picked = oi; checkAll(id);
+}
+function checkAll(id) {
+  const q = byId[id], st = Q.st[id];
+  if (q.type === 'match') { st.mpick = st.mpick || {}; st.ok = q.left.every((l, i) => st.mpick[i] === pairOf(q, l)); }
+  else if (q.multi) { if (!st.picked.size) return; st.ok = gradeMulti(q, st.picked); }
+  else st.ok = q.options[st.picked].correct;
+  st.answered = true; st.conf = st.ok ? 'sure' : 'wrong';
+  const sq = qs(q.id); sq.n++; if (st.ok) sq.ok++;
+  const picked = q.type === 'match' ? st.mpick : q.multi ? [...st.picked] : st.picked;
+  S.log.push({id: q.id, t: Date.now(), ok: st.ok, conf: st.conf, picked, ms: Date.now() - st.t0});
+  if (S.log.length > 5000) S.log = S.log.slice(-5000);
+  schedule(q.id, st.conf);
+  Q.done++; if (st.ok) Q.right++;
+  save(); renderAllKeep();
+}
+function downgrade(id, conf) {
+  const st = Q.st[id]; if (!st.answered || !st.ok || st.conf !== 'sure') return;
+  st.conf = conf; const sq = qs(id);
+  if (conf === 'guess') sq.ok = Math.max(0, sq.ok - 1);
+  for (let i = S.log.length - 1; i >= 0; i--) if (S.log[i].id === id) { S.log[i].conf = conf; break; }
+  schedule(id, conf); save(); renderAllKeep();
+}
+/* re-render without losing the scroll position */
+function renderAllKeep() { const y = window.scrollY; renderAll(); window.scrollTo(0, y); }
 const pairOf = (q, l) => (q.pairs.find(p => p.l === l) || {}).r;
 function pick(oi) {
   const q = Q.cur; if (Q.answered) return;
@@ -402,6 +490,7 @@ function vExam() {
     Answers are not shown until you submit. Select-all items are scored all-or-nothing; definition questions make up at most 15% of the paper.</p>
     <div class="card"><div class="row"><span>Length:</span>${lens.map(n => `<span class="chip ${n === (ex.questions || lens[0]) ? 'on' : ''}" data-n="${n}">${n === max ? 'All ' + n : n}</span>`).join('')}</div>
     <div class="row" style="margin-top:10px"><label><input type="checkbox" id="scale" checked> Scale the clock to the length (${ex.minutes} min for the full paper)</label></div>
+    <div class="row" style="margin-top:10px"><span class="meta" style="margin:0">Answer:</span>${layoutToggle()}</div>
     <div class="row" style="margin-top:12px"><button class="btn" id="startx">Start</button></div></div>`;
   if (S.exams && S.exams.length) h += `<h3>Past attempts</h3><div class="card">${S.exams.slice(-8).reverse().map(e => `<div class="topicrow"><span>${new Date(e.t).toLocaleString()}</span><span>${e.score}/${e.n} (${Math.round(100 * e.score / e.n)}%)</span></div>`).join('')}</div>`;
   $('#view').innerHTML = h;
@@ -416,42 +505,65 @@ function vExam() {
   };
 }
 let TICK = null;
-function renderExam() {
-  clearInterval(TICK);
-  if (EX.done) return examResult();
-  const q = byId[EX.qs[EX.i]], ord = EX.orders[EX.i], a = EX.ans[q.id];
-  let h = `<div class="row" style="justify-content:space-between"><b>Question ${EX.i + 1} of ${EX.qs.length}</b><span class="timer" id="clock"></span></div>
-    <div class="grid">${EX.qs.map((id, k) => `<button data-j="${k}" class="${EX.ans[id] != null && !(Array.isArray(EX.ans[id]) && !EX.ans[id].length) ? 'ans' : ''} ${k === EX.i ? 'cur' : ''} ${EX.flag[id] ? 'flag' : ''}">${k + 1}</button>`).join('')}</div>
-    <div class="card"><div class="stem">${esc(q.stem)}</div>${stemMedia(q)}`;
-  ord.forEach((oi, n) => {
-    const sel = q.multi ? (a || []).includes(oi) : a === oi;
-    h += `<button class="opt ${sel ? 'sel' : ''}" data-o="${oi}"><span class="k">${q.multi ? (sel ? '☑' : '☐') : LETTERS[n]}</span><span>${esc(q.options[oi].t)}</span></button>`;
-  });
-  h += `</div><div class="row"><button class="btn ghost" id="prev" ${EX.i ? '' : 'disabled'}>Previous</button>
-    <button class="btn ghost" id="flag">${EX.flag[q.id] ? 'Unflag' : 'Flag'}</button>
-    <button class="btn ghost" id="next" ${EX.i < EX.qs.length - 1 ? '' : 'disabled'}>Next</button>
-    <button class="btn" id="submit">Submit exam</button></div>`;
-  $('#view').innerHTML = h;
-  document.querySelectorAll('[data-o]').forEach(b => b.onclick = () => {
-    const oi = +b.dataset.o;
-    if (q.multi) { const s = new Set(EX.ans[q.id] || []); s.has(oi) ? s.delete(oi) : s.add(oi); EX.ans[q.id] = [...s]; }
-    else EX.ans[q.id] = oi;
-    renderExam();
-  });
-  document.querySelectorAll('[data-j]').forEach(b => b.onclick = () => { EX.i = +b.dataset.j; renderExam(); });
-  $('#prev').onclick = () => { EX.i--; renderExam(); };
-  $('#next').onclick = () => { EX.i++; renderExam(); };
-  $('#flag').onclick = () => { EX.flag[q.id] = !EX.flag[q.id]; renderExam(); };
-  $('#submit').onclick = () => {
-    const left = EX.qs.filter(id => EX.ans[id] == null || (Array.isArray(EX.ans[id]) && !EX.ans[id].length)).length;
-    if (confirm(left ? `${left} unanswered. Submit anyway?` : 'Submit the exam?')) submitExam();
-  };
+const examTick = () => {
   const tick = () => {
     const ms = EX.ends - Date.now(), el = $('#clock');
     if (ms <= 0) { clearInterval(TICK); if (CUR === 'exam') submitExam(); else EX.expired = true; return; }
     if (el) el.textContent = `${Math.floor(ms / HOUR)}:${String(Math.floor(ms % HOUR / MIN)).padStart(2, '0')}:${String(Math.floor(ms % MIN / 1000)).padStart(2, '0')} left`;
   };
   tick(); TICK = setInterval(tick, 1000);
+};
+const examAnswered = id => EX.ans[id] != null && !(Array.isArray(EX.ans[id]) && !EX.ans[id].length);
+function examPick(q, oi) {
+  if (q.multi) { const s = new Set(EX.ans[q.id] || []); s.has(oi) ? s.delete(oi) : s.add(oi); EX.ans[q.id] = [...s]; }
+  else EX.ans[q.id] = oi;
+}
+function askSubmit() {
+  const left = EX.qs.filter(id => !examAnswered(id)).length;
+  if (confirm(left ? `${left} unanswered. Submit anyway?` : 'Submit the exam?')) submitExam();
+}
+/* Every exam question on one page; answers are kept in EX.ans exactly as in the one-at-a-time view. */
+function renderExamAll() {
+  const n = EX.qs.filter(examAnswered).length;
+  let h = `<div class="row allhead" style="justify-content:space-between"><b>${n} of ${EX.qs.length} answered</b><span class="row"><span class="timer" id="clock"></span>${layoutToggle()}<button class="btn" id="submit">Submit exam</button></span></div>`;
+  EX.qs.forEach((id, k) => {
+    const q = byId[id], ord = EX.orders[k], a = EX.ans[id];
+    h += `<div class="card qcard" id="xq${k}"><div class="row" style="justify-content:space-between"><b>Question ${k + 1}</b>${flagBtn(id)}</div><div class="stem">${esc(q.stem)}</div>${stemMedia(q)}`;
+    ord.forEach((oi, m) => {
+      const sel = q.multi ? (a || []).includes(oi) : a === oi;
+      h += `<button class="opt ${sel ? 'sel' : ''}" data-k="${k}" data-o="${oi}"><span class="k">${q.multi ? (sel ? '☑' : '☐') : LETTERS[m]}</span><span>${esc(q.options[oi].t)}</span></button>`;
+    });
+    h += '</div>';
+  });
+  h += `<div class="row"><button class="btn" id="submit2">Submit exam</button></div>`;
+  $('#view').innerHTML = h;
+  document.querySelectorAll('[data-k][data-o]').forEach(b => b.onclick = () => { examPick(byId[EX.qs[+b.dataset.k]], +b.dataset.o); const y = window.scrollY; renderExamAll(); window.scrollTo(0, y); });
+  $('#submit').onclick = askSubmit; $('#submit2').onclick = askSubmit;
+  examTick();
+}
+function renderExam() {
+  clearInterval(TICK);
+  if (EX.done) return examResult();
+  if (S.layout === 'all') return renderExamAll();
+  const q = byId[EX.qs[EX.i]], ord = EX.orders[EX.i], a = EX.ans[q.id];
+  let h = `<div class="row" style="justify-content:space-between"><b>Question ${EX.i + 1} of ${EX.qs.length}</b><span class="row"><span class="timer" id="clock"></span>${layoutToggle()}</span></div>
+    <div class="grid">${EX.qs.map((id, k) => `<button data-j="${k}" class="${examAnswered(id) ? 'ans' : ''} ${k === EX.i ? 'cur' : ''} ${isFlagged(id) ? 'flag' : ''}">${k + 1}</button>`).join('')}</div>
+    <div class="card"><div class="stem">${esc(q.stem)}</div>${stemMedia(q)}`;
+  ord.forEach((oi, n) => {
+    const sel = q.multi ? (a || []).includes(oi) : a === oi;
+    h += `<button class="opt ${sel ? 'sel' : ''}" data-o="${oi}"><span class="k">${q.multi ? (sel ? '☑' : '☐') : LETTERS[n]}</span><span>${esc(q.options[oi].t)}</span></button>`;
+  });
+  h += `</div><div class="row"><button class="btn ghost" id="prev" ${EX.i ? '' : 'disabled'}>Previous</button>
+    ${flagBtn(q.id)}
+    <button class="btn ghost" id="next" ${EX.i < EX.qs.length - 1 ? '' : 'disabled'}>Next</button>
+    <button class="btn" id="submit">Submit exam</button></div>`;
+  $('#view').innerHTML = h;
+  document.querySelectorAll('[data-o]').forEach(b => b.onclick = () => { examPick(q, +b.dataset.o); renderExam(); });
+  document.querySelectorAll('[data-j]').forEach(b => b.onclick = () => { EX.i = +b.dataset.j; renderExam(); });
+  $('#prev').onclick = () => { EX.i--; renderExam(); };
+  $('#next').onclick = () => { EX.i++; renderExam(); };
+  $('#submit').onclick = askSubmit;
+  examTick();
 }
 const exRight = (q, a) => q.multi ? (Array.isArray(a) && gradeMulti(q, new Set(a))) : (a != null && q.options[a].correct);
 function submitExam() {
@@ -479,7 +591,7 @@ function examResult() {
     <h3>Review</h3>`;
   qsx.forEach((q, k) => {
     const a = EX.ans[q.id], ok = exRight(q, a), pickedSet = new Set([].concat(a == null ? [] : a));
-    h += `<div class="card"><div class="meta">${k + 1}. ${metaLine(q)}</div><div class="stem">${esc(q.stem)}</div>${stemMedia(q)}
+    h += `<div class="card"><div class="row" style="justify-content:space-between"><span class="meta">${k + 1}. ${metaLine(q)}</span>${flagBtn(q.id)}</div><div class="stem">${esc(q.stem)}</div>${stemMedia(q)}
       <div class="verdict ${ok ? 'ok' : 'bad'}">${ok ? '✓ Correct' : a == null ? '✗ Not answered' : '✗ Not correct'}</div>`;
     if (!ok) {
       q.options.forEach((o, oi) => { if (o.correct || pickedSet.has(oi)) h += `<div class="opt ${o.correct ? 'right' : 'wrong'}" style="cursor:default"><span>${esc(o.t)}</span></div><div class="why">${esc(o.why || '')}</div>`; });
@@ -640,15 +752,15 @@ function missTally(g) {
   });
   return Object.entries(t).sort((a, b) => b[1] - a[1]);
 }
-function graphFeedback(q) {
+function graphFeedback(q, st) {
   const g = q.img && graphOf(q.img); if (!g) return '';
-  let h = '';
-  if (!Q.ok && q.type !== 'match') {
-    const picked = [].concat(Q.picked == null ? [] : Q.picked instanceof Set ? [...Q.picked] : Q.picked);
+  let h = ''; st = st || Q;
+  if (!st.ok && q.type !== 'match') {
+    const picked = [].concat(st.picked == null ? [] : st.picked instanceof Set ? [...st.picked] : st.picked);
     const misses = [...new Set(picked.map(i => q.options[i]).filter(o => o && !o.correct && o.miss).map(o => o.miss))];
     if (misses.length) h += `<div class="gskip"><b>The question you skipped:</b> ${misses.map(m => `<span class="chip on">${esc(MISS[m][0])}</span> ${esc(MISS[m][1])}`).join('<br>')}</div>`;
   }
-  h += `<details class="gread"${Q.ok ? '' : ' open'}><summary>Read this figure his way</summary><ul>${(g.read || []).map(r => `<li>${esc(r)}</li>`).join('')}</ul>${g.method ? `<div class="meta">${esc(g.method)}</div>` : ''}</details>`;
+  h += `<details class="gread"${st.ok ? '' : ' open'}><summary>Read this figure his way</summary><ul>${(g.read || []).map(r => `<li>${esc(r)}</li>`).join('')}</ul>${g.method ? `<div class="meta">${esc(g.method)}</div>` : ''}</details>`;
   return h;
 }
 function graphDone() {
@@ -698,20 +810,20 @@ function vMap() {
   const counts = {unseen: 0, right: 0, wrong: 0};
   const state = {}; pool.forEach(q => { state[q.id] = lastOutcome(q); counts[state[q.id]]++; });
   const mark = {unseen: '', right: '✓', wrong: '✗'};
-  const tile = q => { const k = state[q.id], st = S.q[q.id]; return `<button class="qt ${k}" data-q="${q.id}" title="${esc(q.stem)}"><span class="qm">${mark[k]}</span><span class="qid">${esc(q.id)}</span>${st && st.n ? `<span class="qn">${st.ok}/${st.n}</span>` : ''}<span class="qs">${esc(q.stem.slice(0, 64))}${q.stem.length > 64 ? '…' : ''}</span></button>`; };
+  const tile = q => { const k = state[q.id], st = S.q[q.id]; return `<button class="qt ${k}${isFlagged(q.id) ? ' flagged' : ''}" data-q="${q.id}" title="${esc(q.stem)}"><span class="qm">${mark[k]}</span><span class="qid">${esc(q.id)}${isFlagged(q.id) ? ' ⚑' : ''}</span>${st && st.n ? `<span class="qn">${st.ok}/${st.n}</span>` : ''}<span class="qs">${esc(q.stem.slice(0, 64))}${q.stem.length > 64 ? '…' : ''}</span></button>`; };
   let h = `<h2>Question map</h2>
   <p class="sub">Every question in the bank, grouped by lecture and concept. The colour and mark show the most recent answer; a count shows correct answers over attempts. Click a tile to open that question.</p>
   <div class="card"><div class="row">
-    ${[['all', `All ${pool.length}`], ['unseen', `Unseen ${counts.unseen}`], ['right', `Right ${counts.right}`], ['wrong', `Wrong ${counts.wrong}`]].map(([k, l]) => `<span class="chip ${MAPF.show === k ? 'on' : ''} lg-${k}" data-show="${k}">${l}</span>`).join('')}
+    ${[['all', `All ${pool.length}`], ['unseen', `Unseen ${counts.unseen}`], ['right', `Right ${counts.right}`], ['wrong', `Wrong ${counts.wrong}`], ['flagged', `⚑ Flagged ${pool.filter(q => isFlagged(q.id)).length}`]].map(([k, l]) => `<span class="chip ${MAPF.show === k ? 'on' : ''} lg-${k}" data-show="${k}">${l}</span>`).join('')}
   </div>
   <div class="row" style="margin-top:8px"><span class="qt unseen lg"><span class="qm"></span>unseen</span><span class="qt right lg"><span class="qm">✓</span>last answer right</span><span class="qt wrong lg"><span class="qm">✗</span>last answer wrong</span></div></div>`;
   TOPICS.forEach(t => {
     const tq = pool.filter(q => q.topic === t.id);
     if (!tq.length) return;
     const tc = {unseen: 0, right: 0, wrong: 0}; tq.forEach(q => tc[state[q.id]]++);
-    const sel = tq.filter(q => MAPF.show === 'all' || state[q.id] === MAPF.show);
+    const sel = tq.filter(q => MAPF.show === 'all' || (MAPF.show === 'flagged' ? isFlagged(q.id) : state[q.id] === MAPF.show));
     h += `<div class="card"><div class="topicrow"><span><b>${esc(t.name)}</b><small>${tq.length} questions · ${tc.unseen} unseen · ${tc.right} right · ${tc.wrong} wrong</small></span>
-      <span class="row">${tc.wrong ? `<button class="btn ghost" data-drill="${t.id}" data-what="wrong">Redo wrong</button>` : ''}${tc.unseen ? `<button class="btn ghost" data-drill="${t.id}" data-what="unseen">Drill unseen</button>` : ''}</span></div>`;
+      <span class="row">${tq.some(q => isFlagged(q.id)) ? `<button class="btn ghost" data-drill="${t.id}" data-what="flagged">Drill flagged</button>` : ''}${tc.wrong ? `<button class="btn ghost" data-drill="${t.id}" data-what="wrong">Redo wrong</button>` : ''}${tc.unseen ? `<button class="btn ghost" data-drill="${t.id}" data-what="unseen">Drill unseen</button>` : ''}</span></div>`;
     const subs = (t.subs || []).slice();
     const known = new Set(subs.map(x => x.id));
     tq.forEach(q => { if (q.sub && !known.has(q.sub)) { known.add(q.sub); subs.push({id: q.sub, name: q.sub}); } });
@@ -728,7 +840,7 @@ function vMap() {
   document.querySelectorAll('[data-show]').forEach(c => c.onclick = () => { MAPF.show = c.dataset.show; vMap(); });
   document.querySelectorAll('.qt[data-q]').forEach(b => b.onclick = () => startQuiz([byId[b.dataset.q]], 'From the question map', 'pass'));
   document.querySelectorAll('[data-drill]').forEach(b => b.onclick = () => {
-    const list = pool.filter(q => q.topic === b.dataset.drill && state[q.id] === b.dataset.what);
+    const list = pool.filter(q => q.topic === b.dataset.drill && (b.dataset.what === 'flagged' ? isFlagged(q.id) : state[q.id] === b.dataset.what));
     startQuiz(shuffle(list), `${(TOPIC[b.dataset.drill] || {}).name}: ${b.dataset.what}`, 'pass');
   });
 }
@@ -760,14 +872,14 @@ function vData() {
       (q.options || []).filter(o => o.correct).map(o => o.t).join(' | '), q.cite]));
     download(`${COURSE.ns}-missed.csv`, rows.map(r => r.map(c => '"' + String(c == null ? '' : c).replace(/"/g, '""') + '"').join(',')).join('\n'), 'text/csv');
   };
-  $('#reset').onclick = () => { if (confirm('Erase all progress for this profile?')) { S = {q: {}, log: [], pace: COURSE.paceDefault, exams: []}; save(); vData(); } };
+  $('#reset').onclick = () => { if (confirm('Erase all progress for this profile?')) { S = {q: {}, log: [], pace: COURSE.paceDefault, exams: [], flags: {}, layout: S.layout || 'one'}; save(); vData(); } };
 }
 
 document.addEventListener('keydown', e => {
   if (e.target && /INPUT|SELECT|TEXTAREA/.test(e.target.tagName)) return;
   if (e.metaKey || e.ctrlKey || e.altKey) return;
   const k = e.key;
-  if (CUR === 'quiz' && Q && Q.cur && Q.cur.type !== 'match') {
+  if (CUR === 'quiz' && Q && Q.cur && Q.cur.type !== 'match' && S.layout !== 'all') {
     let n = -1;
     if (/^[1-9]$/.test(k)) n = +k - 1; else if (/^[a-jA-J]$/.test(k)) n = LETTERS.indexOf(k.toUpperCase());
     if (n >= 0 && !Q.answered) { const oi = Q.order[n]; if (oi != null) { pick(oi); e.preventDefault(); } return; }
@@ -776,7 +888,7 @@ document.addEventListener('keydown', e => {
       if (!Q.answered) { if (Q.cur.multi) check(); }
       else finish(Q.ok ? 'sure' : 'wrong');
     }
-  } else if (CUR === 'exam' && EX && !EX.done) {
+  } else if (CUR === 'exam' && EX && !EX.done && S.layout !== 'all') {
     const q = byId[EX.qs[EX.i]], ord = EX.orders[EX.i];
     let n = -1;
     if (/^[1-9]$/.test(k)) n = +k - 1; else if (/^[a-jA-J]$/.test(k)) n = LETTERS.indexOf(k.toUpperCase());
