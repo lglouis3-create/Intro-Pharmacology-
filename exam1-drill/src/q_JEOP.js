@@ -1,5 +1,5 @@
-TOPICS.push({id:'JP', name:'Jeopardy questions (9/30)', prof:'Gottlieb', lecture:'JP', cite:'Jeopardy 9/30 screenshots (his keys from the transcript)',
-  subs:[{id:'verbatim', name:'His Jeopardy stems, word for word, with the keys he gave in class', cite:'Jeopardy 9/30 (IMG_3010–3018, IMG_9313–9321); PollEV_s.pdf page 6'}]});
+TOPICS.push({id:'JP', name:'Jeopardy (9/30)', prof:'Gottlieb', lecture:'JP', cite:'Jeopardy 9/30, his keys from the transcript',
+  subs:[{id:'verbatim', name:'His stems, word for word', cite:'Jeopardy 9/30 (IMG_3010–3018, IMG_9313–9321); PollEV_s.pdf page 6'}]});
 QUESTIONS.push(
 {id:'JP-001', fg:'two-state', lecture:'JP', prof:'Gottlieb', tier:'new', topic:'JP', sub:'verbatim', skill:'figure',
  concept:'baseline50-classify-five', dupOf:'L04-026', tags:['poll','pollev','jeopardy'], source:'both',

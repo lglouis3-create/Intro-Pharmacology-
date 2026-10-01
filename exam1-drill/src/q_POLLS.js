@@ -1,4 +1,4 @@
-TOPICS.push({id:'PE', name:'PollEV questions', prof:'Gottlieb', lecture:'PE', cite:'PollEV_s.pdf (his polls with his keys)',
+TOPICS.push({id:'PE', name:'PollEV polls', prof:'Gottlieb', lecture:'PE', cite:'PollEV_s.pdf (his polls with his keys)',
   subs:[{id:'verbatim', name:'His polls, word for word', cite:'PollEV_s.pdf'},{id:'variant', name:'Same figure, different point of reference', cite:'PollEV_s.pdf'}]});
 QUESTIONS.push(
 /* ---------------- Part 1: verbatim polls, keyed as the PDF highlights ---------------- */

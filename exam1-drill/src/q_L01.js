@@ -1,8 +1,8 @@
-TOPICS.push({id:'L01', name:'Pharmacodynamics intro: drugs, receptors, potency', prof:'Gottlieb', lecture:'L01',
+TOPICS.push({id:'L01', name:'Day 1: drugs, receptors, potency', prof:'Gottlieb', lecture:'L01',
   cite:'Day 1 (9/22) — Pharmacodynamics-Day-1-2026s.pdf',
   subs:[
-    {id:'intro', name:'Must know vs should know; relevance', cite:'slides ~7–~12'},
-    {id:'nds', name:'Drug discovery and natural dietary supplements', cite:'slides ~13–~20'},
+    {id:'intro', name:'Must know vs should know', cite:'slides ~7–~12'},
+    {id:'nds', name:'Drug discovery and supplements', cite:'slides ~13–~20'},
     {id:'potency', name:'Affinity, efficacy and potency', cite:'slides ~21–~27, ~37–~38'},
     {id:'theory', name:'Receptor theories and the two-state model', cite:'slides ~28–~29'},
     {id:'drugs', name:'Drugs, selectivity and drug classes', cite:'slides ~29–~33'},

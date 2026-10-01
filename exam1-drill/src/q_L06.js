@@ -1,11 +1,11 @@
-TOPICS.push({id:'L06', name:'Day 6 review: how to read a curve question; desired vs undesired effects', prof:'Gottlieb', lecture:'L06',
+TOPICS.push({id:'L06', name:'Day 6: reading a curve question', prof:'Gottlieb', lecture:'L06',
   cite:'Day 6 (9/30) — Pharmacodynamics reviews.pdf, Part 3',
   subs:[
-    {id:'p3', name:'Part 3: desired vs undesired effects; therapeutic efficacy', cite:'Part 3 pages 1–2'},
-    {id:'recap', name:'Recap figure A–E: potency, efficacy, affinity, and what a second drug does', cite:'reviews page 3'},
-    {id:'base50', name:'The 50% baseline figure: classify the five drugs', cite:'reviews page 4'},
-    {id:'method', name:'The three questions for any curve figure: shift, baseline, Emax (and symmetry)', cite:'reviews pages 5–11'},
-    {id:'signal', name:'Signal transduction in his words: signal, transducer, effector, second messenger, the steps', cite:'transcript 9/30'}
+    {id:'p3', name:'Desired vs undesired effects', cite:'Part 3 pages 1–2'},
+    {id:'recap', name:'Recap figure A–E', cite:'reviews page 3'},
+    {id:'base50', name:'The 50% baseline figure', cite:'reviews page 4'},
+    {id:'method', name:'The three questions for any curve', cite:'reviews pages 5–11'},
+    {id:'signal', name:'Signal transduction in his words', cite:'transcript 9/30'}
   ]});
 QUESTIONS.push(
 /* ---------------- Part 3: desired vs undesired effects (pages 1–2) ---------------- */

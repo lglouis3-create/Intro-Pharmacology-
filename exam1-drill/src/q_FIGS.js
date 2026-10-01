@@ -1,10 +1,10 @@
-TOPICS.push({id:'FG', name:'Figure drills: his PollEV, Jeopardy and review figures, asked every way he asks', prof:'Gottlieb', lecture:'FG',
+TOPICS.push({id:'FG', name:'Figure drills: his PollEV, Jeopardy and review figures', prof:'Gottlieb', lecture:'FG',
   cite:'PollEV_s.pdf; Pharmacodynamics reviews.pdf; Jeopardy 9/30; Part 3',
   subs:[
-    {id:'read', name:'Read the figure: potency, efficacy, affinity, full or partial', cite:'PollEV_s.pdf pages 2–5; Jeopardy 9/30'},
-    {id:'which', name:'Which curve, which drug: a point of reference and a drug from the list', cite:'PollEV_s.pdf pages 3 and 5; Pharmacodynamics reviews.pdf pages 5–11'},
-    {id:'why', name:'Why: which feature of the figure rules a class in or out', cite:'Pharmacodynamics reviews.pdf pages 5–11'},
-    {id:'predict', name:'Predict: what you would see if the drug were different', cite:'PollEV_s.pdf; Pharmacodynamics reviews.pdf'}
+    {id:'read', name:'Read the figure', cite:'PollEV_s.pdf pages 2–5; Jeopardy 9/30'},
+    {id:'which', name:'Which curve, which drug', cite:'PollEV_s.pdf pages 3 and 5; Pharmacodynamics reviews.pdf pages 5–11'},
+    {id:'why', name:'Which feature rules a class in or out', cite:'Pharmacodynamics reviews.pdf pages 5–11'},
+    {id:'predict', name:'Predict the curve for a different drug', cite:'PollEV_s.pdf; Pharmacodynamics reviews.pdf'}
   ]});
 QUESTIONS.push(
 /* ---------------- Four coloured curves A–D (PollEV_s.pdf page 4) ---------------- */

@@ -1,12 +1,12 @@
-TOPICS.push({id:'L03', name:'Dose–response curves, potency and agonist interactions', prof:'Gottlieb', lecture:'L03',
+TOPICS.push({id:'L03', name:'Day 3: dose–response curves and agonists', prof:'Gottlieb', lecture:'L03',
   cite:'Day 3 (9/24) — Pharmacodynamics-Day_3_2026s.pdf',
   subs:[
     {id:'kd', name:'Affinity, Kd and mass action', cite:'slides ~3–~7; transcript 9/24'},
-    {id:'drc', name:'Building and reading the dose–response curve', cite:'slides ~8–~18'},
-    {id:'terms', name:'EC50/ED50, potency, intrinsic activity and efficacy', cite:'slides ~19–~29'},
-    {id:'theory', name:'Receptor theory, two-state model and full agonists', cite:'slides ~30–~41'},
+    {id:'drc', name:'Reading the dose–response curve', cite:'slides ~8–~18'},
+    {id:'terms', name:'EC50, potency and efficacy', cite:'slides ~19–~29'},
+    {id:'theory', name:'Two-state model and full agonists', cite:'slides ~30–~41'},
     {id:'fafa', name:'Full agonist plus full agonist', cite:'slides ~42–~49'},
-    {id:'pa', name:'Partial agonists and full agonist plus partial agonist', cite:'slides ~50–~65'}
+    {id:'pa', name:'Partial agonists', cite:'slides ~50–~65'}
   ]});
 QUESTIONS.push(
 {id:'L03-001', lecture:'L03', prof:'Gottlieb', tier:'new', topic:'L03', sub:'kd', skill:'recall',
