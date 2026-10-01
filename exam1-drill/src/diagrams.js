@@ -671,6 +671,76 @@ const FIG = (() => {
         ['L-dopa looks more potent (curve LEFT); carbidopa alone gives no response (flat line): potentiation.', gutScene(true, true) + mini(true)]
       ], 206, ['<ol><li>L-dopa alone: broken down in the gut.</li><li>Carbidopa blocks the gut enzyme (upstream).</li><li>More dopa reaches the brain.</li><li>L-dopa curve LEFT; carbidopa alone does nothing.</li></ol>', '<b>Name for it:</b> potentiation (one drug has no effect alone but increases the other); the slide also marks it as an indirect antagonist.'], 'Four steps.');
     };
+    /* ---------- Day 1–3 concepts he expects: receptor superfamilies, bonds, selectivity, MOA vs SOA ---------- */
+    F3['superfamilies'] = () => {
+      let g = title('The four receptor classes (Day 1 slides 35–36)') + band(6, 60, 348) + xs(354, 56, 'outside', 'end') + xs(354, 86, 'inside', 'end');
+      const col = (cx, name, lines) => `<text class="cl a" x="${cx}" y="110" text-anchor="middle">${name}</text>` + lines.map((t, i) => `<text class="lbl xs" style="font-size:7.6px" x="${cx}" y="${121 + i * 10}" text-anchor="middle">${t}</text>`).join('');
+      // 1 ion channel: two halves with a pore
+      g += `<rect class="box" x="30" y="48" width="12" height="38" rx="3"/><rect class="box" x="52" y="48" width="12" height="38" rx="3"/>` + dot(47, 42, 'a') + arr(47, 50, 47, 94);
+      g += col(47, 'ion channel', ['pore opens: ions flow', 'GABA, nicotinic, Ca++', 'diazepam, varenicline']);
+      // 2 7-TM GPCR
+      g += cell(127, 46, { lig: 'ag', act: 1 }) + `<circle cx="135" cy="94" r="6" fill="var(--figA)" opacity="0.8"/><circle cx="147" cy="96" r="5" fill="var(--figE)"/><circle cx="156" cy="92" r="4" fill="var(--figE)"/>` + xs(135, 97, 'α', 'middle');
+      g += col(137, '7-TM (GPCR)', ['crosses 7×, G protein αβγ', 'α1 β1 β2 H1 M2 5-HT', 'most Exam 1 drugs']);
+      // 3 1-TM pair with kinase tails
+      g += `<rect class="box" x="214" y="40" width="9" height="56" rx="3"/><rect class="box" x="231" y="40" width="9" height="56" rx="3"/>` + dot(227, 36, 'a') + `<rect x="212" y="84" width="13" height="10" rx="2" fill="var(--figC)"/><rect x="229" y="84" width="13" height="10" rx="2" fill="var(--figC)"/>`;
+      g += col(227, '1-TM', ['pocket out, enzyme in', 'tyrosine kinases', 'two chains pair up']);
+      // 4 intracellular
+      g += `<path class="arrow" d="M312 40 L312 70" stroke-dasharray="3 2"/>` + dot(312, 36, 'a') + `<rect class="box" x="298" y="72" width="28" height="18" rx="4"/>` + xs(312, 84, 'receptor', 'middle');
+      g += col(312, 'intracellular', ['crosses the membrane', 'steroid hormones', 'acts on the nucleus']);
+      return wrap(g, ['<b>Ion channels:</b> transmembrane proteins whose pore passes ions; passive (always open), voltage-gated (open at a membrane potential), ligand-gated (closed until a ligand binds in the channel), or a pump (moves ions against the gradient). Diazepam at GABA and varenicline at nicotinic act on ligand-gated channels.',
+        '<b>7-transmembrane (7-TM, GPCR):</b> crosses the membrane seven times and works through a heterotrimeric G protein (α, β, γ): α and β adrenergic, serotonin (5-HT) and histamine receptors. Most of the Exam 1 drug list acts here.',
+        '<b>1-transmembrane (1-TM):</b> binding pocket outside, enzymatic activity inside (tyrosine kinases); two chains pair up when the ligand binds.',
+        '<b>Intracellular receptors and transcriptional regulators:</b> cytosolic or nuclear; steroid hormones cross the membrane to reach them.',
+        '<b>His cue:</b> "those are gonna be your basic 4 types of receptors that we\'re gonna be talking about during this module"; the trap is putting an adrenergic or histamine receptor under 1-TM or ion channel.'], 150);
+    };
+
+    F3['bonds'] = () => {
+      let g = title('Bonds and affinity: stronger bond, longer bound');
+      const names = [['van der Waals', 'weakest'], ['hydrogen', ''], ['ionic', ''], ['covalent', 'strongest']];
+      names.forEach((n, i) => {
+        const x = 30 + i * 86, h = 18 + i * 16;
+        g += `<rect x="${x}" y="${100 - h}" width="56" height="${h}" rx="3" fill="var(--fig${i === 3 ? 'B' : 'A'})" opacity="${0.45 + i * 0.18}"/>` + `<text class="cl ${i === 3 ? 'b' : 'a'}" x="${x + 28}" y="114" text-anchor="middle">${n[0]}</text>` + (n[1] ? xs(x + 28, 124, n[1], 'middle') : '');
+      });
+      g += arr(30, 134, 330, 134) + xs(180, 146, 'affinity increases; the drug stays bound longer', 'middle');
+      g += xs(58, 160, 'reversible: comes off', 'middle') + xs(302, 160, 'irreversible: never comes off', 'middle') + xs(302, 170, '(phenoxybenzamine)', 'middle');
+      g += xs(144, 170, 'weaker bonds must fit "like a hand in a glove"', 'middle');
+      return wrap(g, ['<b>Affinity</b> is "how good a drug can attach to the receptor ... depending on what kind of bonds they form, covalent bonds, hydrogen bonds, ion bonds, van der Waal bonds, they may have stronger or weaker binding".',
+        '<b>Covalent = irreversible:</b> "a drug that forms covalent bond at body temperature is gonna be irreversible ... you won\'t be able to break that bond"; "which drug has the greatest affinity? The one that forms covalent bond all day long, which are irreversible drugs" (phenoxybenzamine).',
+        '<b>Weaker bonds need a better fit:</b> drugs that form weaker bonds "have to be more specific than drugs that form covalent bonds ... it has to be like a hand in a glove".',
+        '<b>Poll (Day 1 slide 37):</b> "Affinity of a drug for the receptor is dependent on the type of chemical bonds it makes" → True.'], 176);
+    };
+
+    F3['selectivity'] = () => {
+      let g = title('Selectivity: how many receptor types a drug fits (Day 1 slide 29)');
+      const recs = ['H1', 'H2', 'M'];
+      const row = (y, drug, fits, cls) => {
+        let r = `<text class="cl ${cls}" x="6" y="${y + 14}" text-anchor="start">${drug}</text>`;
+        recs.forEach((n, i) => { const x = 190 + i * 56; r += cell(x, y, { lig: fits.includes(n) ? 'ag' : null, act: fits.includes(n) ? 1 : 0 }) + xs(x + 10, y + 56, n + (n === 'M' ? ' (muscarinic)' : ''), 'middle'); });
+        return r;
+      };
+      g += band(180, 32, 174) + row(22, 'loratadine (Claritin)', ['H1'], 'c') + xs(6, 46, 'selective: H1 only', 'start');
+      g += band(180, 102, 174) + row(92, 'diphenhydramine (Benadryl)', ['H1', 'H2', 'M'], 'b') + xs(6, 116, 'non-selective: H1, H2, M', 'start') + xs(6, 126, '"more effects ... more side effects"', 'start');
+      g += arr(30, 166, 330, 166) + xs(30, 178, 'low dose: selective', 'start') + xs(330, 178, 'high dose: "the less selective drugs become"', 'end');
+      return wrap(g, ['<b>Selective:</b> loratadine "is Claritin, which is a selective H1 inverse agonist".',
+        '<b>Non-selective:</b> "Benadryl not only binds to the H1, it binds to the H2. It binds to muscarinic receptors. It\'s very non-selective", and "the less selective drug is, the more effects it\'s going to produce. That\'s the more side effects".',
+        '<b>Dose:</b> "the larger the dose is, the less selective drugs become": at high dose a drug reaches receptors it fits less well.',
+        '<b>Must know:</b> "Is a beta 1 selective or a beta 1 beta 2 non-selective or alpha 1? Those are things that you must know" (metoprolol β1-selective; albuterol β2; prazosin α1).'], 186);
+    };
+
+    F3['moa-soa'] = () => {
+      let g = title('MOA, SOA and effect: the metoprolol card (Day 1 slides 7–9)');
+      const tier = (y, cls, head, body, body2) => `<rect class="box" x="6" y="${y}" width="348" height="30" rx="4"/><text class="cl ${cls}" x="14" y="${y + 13}" text-anchor="start">${head}</text>` + xs(14, y + 24, body, 'start') + (body2 ? xs(354, y + 24, body2, 'end') : '');
+      g += tier(22, 'a', 'MUST know · mechanism of action (MOA)', 'metoprolol = reversible β1 receptor antagonist', 'Exam 1');
+      g += arr(180, 52, 180, 58);
+      g += tier(58, 'c', 'SHOULD know · site of action (SOA)', 'heart (also kidneys and brain)', 'Exam 2');
+      g += arr(180, 88, 180, 94);
+      g += tier(94, 'b', 'Would be nice to know · effect, ADR, DDI', 'heart rate down; bradycardia, fatigue; verapamil, diltiazem', 'Exam 2');
+      g += `<rect x="6" y="130" width="348" height="22" rx="4" fill="var(--chip)" opacity="0.6"/>` + xs(14, 144, 'NOT tested: use or indication, dose, route, brand names', 'start');
+      return wrap(g, ['<b>MOA (must know):</b> "for this particular class ... it\'s going to be the mechanism of action of the drugs": what the drug does at the receptor (class, receptor, reversible or not). Exam 1 = MOA.',
+        '<b>SOA (should know):</b> "The things that you should know are going to be the sites of actions, because that\'s going to dictate that drug receptor interaction": the tissue, which predicts the effect.',
+        '<b>Put together:</b> name the drug → its MOA → its SOA → the effect. Metoprolol blocks β1; β1 sits in the heart; heart rate falls. Exam 2 adds SOA, ADRs and DDIs; use, dose, route and brand names are not tested.'], 158);
+    };
+
     /* ---------- the chain from regulation to the curve (Part 2 pages 17–28; transcript 9/29) ---------- */
     const chainRow = (y, cls, head, boxes, curveFn) => {
       let g = `<text class="cl ${cls}" x="6" y="${y - 6}" text-anchor="start">${head}</text>`;

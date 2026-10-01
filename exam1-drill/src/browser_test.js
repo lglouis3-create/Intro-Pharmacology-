@@ -16,7 +16,7 @@ const out = path.join(__dirname, '..', course.match(/output:\s*'([^']+)'/)[1]);
   page.on('dialog', d => d.accept());
   await page.goto('file://' + out);
   const fail = m => { console.log('FAIL', m); process.exitCode = 1; };
-  for (const v of ['topics', 'quiz', 'weak', 'exam', 'map', 'ref', 'tell', 'guide', 'data']) {
+  for (const v of ['topics', 'quiz', 'weak', 'exam', 'graphs', 'map', 'ref', 'tell', 'guide', 'data']) {
     const b = await page.$(`nav button[data-v="${v}"]`);
     if (!b) { if (v !== 'guide') fail('no nav button ' + v); continue; }
     await b.click();
@@ -103,6 +103,16 @@ const out = path.join(__dirname, '..', course.match(/output:\s*'([^']+)'/)[1]);
   await page.click('[data-show="all"]');
   await page.click('.qt[data-q]');
   if (!(await page.$('.opt'))) fail('map tile did not open a question');
+  // graphs: one card per registered figure; Drill opens a question on that figure with its image
+  await page.click('nav button[data-v="graphs"]');
+  const gc = await page.evaluate(() => ({cards: document.querySelectorAll('.gcard').length, reg: typeof GRAPHS === 'undefined' ? 0 : GRAPHS.length}));
+  if (gc.reg && gc.cards !== gc.reg) fail('graphs cards do not match the registry: ' + JSON.stringify(gc));
+  if (gc.reg) {
+    await page.click('.gcard [data-g]');
+    if (!(await page.$('.stemfig img'))) fail('graph drill did not open a question with its figure');
+    await page.click('.opt');
+    if (!(await page.$('.gread'))) fail('graph drill answer shows no figure reading');
+  }
   // theme control
   await page.selectOption('#theme', 'dark');
   if ((await page.getAttribute('html', 'data-theme')) !== 'dark') fail('theme select did not apply dark');
@@ -110,7 +120,7 @@ const out = path.join(__dirname, '..', course.match(/output:\s*'([^']+)'/)[1]);
   if (await page.getAttribute('html', 'data-theme')) fail('system theme left data-theme set');
   // phone width: no horizontal scroll on any view
   await page.setViewportSize({width: 375, height: 800});
-  for (const v of ['topics', 'ref', 'tell', 'exam', 'weak', 'map', 'data']) {
+  for (const v of ['topics', 'ref', 'tell', 'exam', 'weak', 'map', 'graphs', 'data']) {
     await page.click(`nav button[data-v="${v}"]`);
     const over = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
     if (over > 1) fail(`horizontal scroll on ${v} at 375px (${over}px)`);

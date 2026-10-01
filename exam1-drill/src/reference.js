@@ -142,7 +142,7 @@ const REFERENCE_HTML = `
 
 <h3>4. Affinity, bonds and Kd</h3>
 <p class="sub">What you are looking up: what affinity is, which bond gives the most of it, how the dissociation constant (Kd) measures it, and how to compare two Kd values.</p>
-<!--FIG:binding-kd-->
+<!--FIG:binding-kd--><!--FIG:bonds-->
 <table class="reftab"><thead><tr><th>Bond</th><th>Description</th><th>Binding class</th><th>Examples</th><th>Why</th></tr></thead><tbody>
 <tr><td>Covalent</td><td>Two atoms share a pair of electrons; irreversible at body temperature; long duration of action</td><td>Irreversible, insurmountable, non-competitive</td><td>Aspirin, omeprazole, phenoxybenzamine</td><td>The strongest bond, so the greatest affinity: the drug binds and does not come off.</td></tr>
 <tr><td>Ionic</td><td>Electrostatic attraction between + and &minus; charged ions; most receptors have ionizable functional groups</td><td>Reversible, surmountable, competitive</td><td>&mdash;</td><td rowspan="3">Weaker bonds need a better fit, &ldquo;like a hand in a glove&rdquo;, to stay bound long enough to produce the effect.</td></tr>
@@ -173,6 +173,7 @@ const REFERENCE_HTML = `
 <p class="sub">PollEV_s.pdf pages 1&ndash;2; Pharmacodynamics-Day_2_2026s copy.pdf slide ~51; transcript 9/24: &ldquo;I&rsquo;m gonna give you a very similar question on your exam with uh 3 more options than those two, and about 10% of you are gonna miss it. It happens every year.&rdquo;</p>
 
 <h3>5. Receptors and signalling</h3>
+<!--FIG:superfamilies-->
 <p class="sub">What you are looking up: the four receptor classes, which G&alpha; subunit goes with which effector and second messenger, and the steps of the GPCR cascade.</p>
 <table class="reftab"><thead><tr><th>Receptor class</th><th>Structure</th><th>Examples on the slide</th><th>Why</th></tr></thead><tbody>
 <tr><td>Ion channels</td><td>Transmembrane proteins; signal by membrane potential and ionic composition</td><td>L-type Ca++ channels, GABA</td><td><ul style="margin:0;padding-left:16px"><li>Passive: always open. Voltage-gated: open at a membrane potential. Ligand-gated: usually closed, binding pocket in the channel. Pump: moves ions against the gradient.</li><li>Nicotinic sequence: acetylcholine binds 2 &alpha; subunits; Na+ in, K+ out; depolarization; voltage-sensitive Ca++ channels open; Ca++ up, contraction; Na+/K+ ATPase restores the potential.</li></ul></td></tr>
@@ -263,6 +264,7 @@ const REFERENCE_HTML = `
 <p class="sub">Pharmacodynamics-Day_4_-_5_2026s_pptx Part 2.pdf pages 32&ndash;43; transcript 9/29. Arithmetic checked: 40/4 = 10; 160/10 = 16; 400/100 = 4; 100/0.1 = 1000; 1/10 = 0.1. &ldquo;if you can divide, you&rsquo;ll be OK ... I&rsquo;m gonna use whole numbers with zero&rdquo; (T 9/29).</p>
 
 <h3>9. Drug basics: MOA vs SOA, supplements, safety vs efficacy, selectivity, desired vs undesired</h3>
+<div class="pair"><!--FIG:selectivity--><!--FIG:moa-soa--></div>
 <p class="sub">What you are looking up: the Day 1 words: mechanism (MOA) vs site of action (SOA), supplements, safety vs efficacy, selectivity and dose, desired vs undesired effects.</p>
 <table class="reftab"><thead><tr><th>Term</th><th>Rule</th><th>Why</th></tr></thead><tbody>
 <tr><td>Must know vs should know</td><td>Must know = MOA (Exam 1). Should know = SOA. Effect, adverse drug reactions (ADR) and drug&ndash;drug interactions (DDI) would be nice to know (Exam 2). Not tested: use, dose, route, brand names</td><td>Must know means the receptor and the selectivity: &beta;1-selective, &beta;1/&beta;2 non-selective, &alpha;1.</td></tr>

@@ -176,7 +176,7 @@ const GUIDE_HTML = `
 
 <h4>How to read it on a curve</h4>
 <!--FIG:drc-basic-->
-<!--FIG:binding-kd-->
+<!--FIG:binding-kd--><!--FIG:bonds-->
 <ul>
 <li>x-axis = dose (log scale), the independent variable; y-axis = response as a percent of the maximum, the dependent variable. <small>Day 3 slides ~16–~18; (T) 9/24 "I have an independent variable, which is the dose ... on the x axis"</small></li>
 <li>The y-axis is normalized (percent change, not raw beats per minute) because starting points differ between people: "My resting heart rate may be 60 beats per minute, yours may be 70 ... So now I can compare apples with apples." <small>Day 3 slide ~18; (T) 9/24</small></li>
@@ -569,7 +569,7 @@ const GUIDE_HTML = `
 </ul>
 
 <h4>How to read it on a figure</h4>
-<!--FIG:gpcr-->
+<!--FIG:superfamilies--><!--FIG:gpcr-->
 <div class="pair"><!--FIG:gpcr-steps--><!--FIG:gpcr-anim--></div>
 <h4>How he will ask it (9/30)</h4>
 <ul>
@@ -643,6 +643,7 @@ const GUIDE_HTML = `
 <!-- ===================================================================== -->
 <section class="guide" id="g-basics">
 <h3>7. Drug basics he tests</h3>
+<div class="pair"><!--FIG:selectivity--><!--FIG:moa-soa--></div>
 <h4>What it is</h4>
 <ul>
 <li><b>Must know</b> = mechanism of action (MOA): "Is a beta 1 selective or a beta 1 beta 2 non-selective or alpha 1? Those are things that you must know." <b>Should know</b> = site of action (SOA). Effect, adverse drug reactions (ADR) and drug–drug interactions (DDI) are "would be nice to know" because they can be predicted from MOA + SOA. <small>Day 1 slides ~7–~8; (T) 9/22</small></li>

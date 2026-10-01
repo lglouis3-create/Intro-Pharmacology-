@@ -58,6 +58,8 @@ const TELL_HTML = `
 <tr><td>Passive vs voltage-gated vs ligand-gated vs pump</td><td>Passive: always open; voltage-gated: open at certain membrane potentials; ligand-gated: usually closed, binding pocket in channel; pump: moves ions against gradient</td><td>Calling the nicotinic receptor voltage-gated</td><td>~40–47</td><td data-q="L01-029">L01-029</td></tr>
 <tr><td>Gs (β1, heart) vs Gq (α1, smooth muscle)</td><td>Gs: αs → adenylate cyclase → ATP → cAMP → ↑ heart rate; Gq: αq → PLC → PIP2 → IP3 → Ca2+ from ER</td><td>Assigning PLC to β1 or adenylate cyclase to α1</td><td>~51–55</td><td data-q="L01-033">L01-033</td></tr>
 </tbody></table>
+<div class="pair"><!--FIG:superfamilies--><!--FIG:bonds--></div>
+<div class="pair"><!--FIG:selectivity--><!--FIG:moa-soa--></div>
 <h3>Day 2 (9/23) &mdash; Pharmacodynamics-Day_2_2026s copy.pdf</h3>
 <table class="reftab"><thead><tr><th style="width:20%">Looks alike</th><th>What separates them</th><th style="width:26%">The trap</th><th style="width:9%">Slides</th><th style="width:9%">Question</th></tr></thead><tbody>
 <tr><td>Gαs vs Gαi vs Gαq</td><td>Gαs → AC → ↑cAMP; Gαi → AC → ↓cAMP; Gαq → PLC → ↑IP3, Ca++</td><td>Gαi also uses AC, so it is easy to give it PLC or an increase in cAMP</td><td>~3</td><td data-q="L02-002">L02-002</td></tr>
