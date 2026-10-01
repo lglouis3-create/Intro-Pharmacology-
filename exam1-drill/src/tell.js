@@ -13,9 +13,13 @@ const TELL_HTML = `
 <tr><td>Allosteric antagonist (NAM)</td><td>Second site; agonist stays bound; reversible</td><td>Right (affinity), asymmetrical, saturable</td><td>—</td><td>Down if efficacy is affected; never to 0</td></tr>
 </tbody></table>
 <p class="sub">Day 3 slides ~42–~49; Day 4 slides ~13–~55; transcript 9/28. Only the irreversible antagonist and the allosteric antagonist acting on efficacy lower Emax.</p>
-<div class="shiftgrid">
-<!--FIG:shift-fafa--><!--FIG:shift-fapa--><!--FIG:shift-inverse--><!--FIG:shift-competitive--><!--FIG:shift-irreversible--><!--FIG:shift-allo-agonist--><!--FIG:shift-allo-antagonist-->
-</div>
+<div class="pair"><!--FIG:shift-fafa--><!--FIG:shift-fafa-anim--></div>
+<div class="pair"><!--FIG:shift-fapa--><!--FIG:shift-fapa-anim--></div>
+<div class="pair"><!--FIG:shift-inverse--><!--FIG:shift-inverse-anim--></div>
+<div class="pair"><!--FIG:shift-competitive--><!--FIG:shift-competitive-anim--></div>
+<div class="pair"><!--FIG:shift-irreversible--><!--FIG:shift-irreversible-anim--></div>
+<div class="pair"><!--FIG:shift-allo-agonist--><!--FIG:shift-allo-agonist-anim--></div>
+<div class="pair"><!--FIG:shift-allo-antagonist--><!--FIG:shift-allo-antagonist-anim--></div>
 <h3>Indirect antagonists: where each drug acts, upstream or downstream of the receptor</h3>
 <p class="sub">The receptor itself is never touched. Upstream drugs change how much agonist reaches it (a transporter or an enzyme); downstream drugs change what happens to the signal after it (phosphodiesterase, RAS). Part 2 pages 4–13, 31; 9/29 lecture.</p>
 <table class="reftab"><thead><tr><th style="width:24%">Drug</th><th>Target</th><th>Upstream or downstream</th><th>Agonist’s curve</th></tr></thead><tbody>
@@ -30,6 +34,7 @@ const TELL_HTML = `
 <div class="pair"><!--FIG:ind-ssri--><!--FIG:ind-ssri-anim--></div>
 <div class="pair"><!--FIG:ind-ache--><!--FIG:ind-ache-anim--></div>
 <div class="pair"><!--FIG:ind-carbidopa--><!--FIG:ind-carbidopa-anim--></div>
+<div class="pair"><!--FIG:enhance--><!--FIG:enhance-anim--></div>
 <div class="pair"><!--FIG:ind-pde--><!--FIG:ind-pde-anim--></div>
 <div class="pair"><!--FIG:ind-ras--><!--FIG:ind-ras-anim--></div>
 <h3>The GPCR process and receptor regulation</h3>
