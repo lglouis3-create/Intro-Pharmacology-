@@ -215,7 +215,7 @@ const REFERENCE_HTML = `
 </tbody></table>
 <p class="sub">Pharmacodynamics-Day_4_-_5_2026s_pptx Part 2.pdf pages 1&ndash;3, 28; transcript 9/28, 9/29.</p>
 <div class="shiftgrid">
-<!--FIG:regulation--><!--FIG:desens-rapid--><!--FIG:desens-long-->
+<!--FIG:regulation--><!--FIG:reg-chain--><!--FIG:desens-rapid--><!--FIG:desens-long-->
 </div>
 <table class="reftab"><thead><tr><th>Process</th><th>Follows</th><th>Mechanism</th><th>Effect on the agonist&rsquo;s curve</th><th>Why</th></tr></thead><tbody>
 <tr><td>Up-regulation</td><td>Chronic reduction of stimulation: an antagonist (or inverse agonist), denervation, thyroid hormone</td><td>More receptors made; more spare receptors; a compensatory mechanism</td><td>Full agonist more potent (left); partial agonist more potent and/or higher maximum</td><td><ul style="margin:0;padding-left:16px"><li>&ldquo;An antagonist will up regulate, an agonist is going to down regulate because our body is going to do the opposite.&rdquo;</li><li>Stopping a &beta;-blocker: the up-regulated receptors are unblocked, so taper stepwise.</li></ul></td></tr>

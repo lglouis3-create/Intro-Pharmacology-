@@ -527,9 +527,10 @@ const FIG = (() => {
       };
       g += state(6, { lig: 'ag', act: 1 }, 1) + state(126, { lig: 'ag', act: 0 }, 2) + state(246, { lig: null, act: 0 }, 3);
       g += xs(61, 192, '1 · agonist on: αs signals', 'middle') + xs(181, 192, '2 · GRK phosphorylates the tail;', 'middle') + xs(181, 202, 'β-arrestin binds, blocks αs', 'middle') + xs(301, 192, '3 · agonist off: tail cleaned,', 'middle') + xs(301, 202, 'αs back, reset', 'middle');
-      return wrap(g, ['<b>What happens:</b> the agonist-bound receptor is a substrate for a GPCR kinase (GRK); GRK phosphorylates the receptor tail, which lets β-arrestin bind and stop the signal, so cAMP production goes flat while the agonist is still on.',
-        '<b>Time course:</b> milliseconds; reversible. Once the agonist comes off the phosphates are removed, αs reassociates and the receptor can respond again ("like a band-aid").',
-        '<b>Trap:</b> short-term regulation does not move the receptor into the cell; that is long-term down-regulation.'], 212);
+      return wrap(g, ['<b>What happens:</b> with the agonist still bound, a GPCR kinase (GRK) "phosphorylate[s] that tail end of the seven-transmembrane receptor", which "allows another protein called the beta arrestin" to bind; αs cannot reassociate, so "I\'m not gonna make any more cAMP": the flat line in the trace.',
+        '<b>Time and reversal:</b> "within milliseconds"; "like a band-aid. You put it on and you can take it off right away": once the agonist comes off, the phosphates are removed, αs reassociates and the cycle restarts.',
+        '<b>Why the body does it:</b> "regulatory proteins within our cells that can stop our receptors from resetting and keep firing"; the cell is protected from too much stimulation.',
+        '<b>What he tests:</b> rapid versus long-term ("my goal for you is that you can ... differentiate between a rapid effect and a long-term effect"); short-term regulation does NOT relocate the receptor into the cell (his poll); cAMP is the second messenger ("test question right there"). Not the full mechanism: "not for you to reproduce this for me in the exams".'], 212);
     };
 
     F3['desens-long'] = () => {
@@ -541,9 +542,10 @@ const FIG = (() => {
       g += arr(200, 108, 236, 60) + `<text class="cl c" x="238" y="70" text-anchor="start">recycle back</text>` + `<text class="cl c" x="238" y="80" text-anchor="start">to the surface</text>` + cell(280, 16, { lig: null, act: 0 });
       g += arr(202, 122, 236, 122) + `<rect x="238" y="106" width="60" height="32" rx="4" fill="var(--figB)" fill-opacity="0.15" stroke="var(--figB)"/>` + `<text class="cl b" x="268" y="120" text-anchor="middle">lysosome</text>` + `<text class="cl b" x="268" y="131" text-anchor="middle">degrade</text>`;
       g += xs(180, 180, 'fewer receptors at the surface: the agonist is less potent (shift RIGHT) and its Emax can fall', 'middle');
-      return wrap(g, ['<b>What happens:</b> with continued over-stimulation β-arrestin facilitates uptake into coated pits; endocytosis takes the receptor inside; it is then recycled back to the surface or degraded in a lysosome.',
-        '<b>Time course:</b> hours to days ("that takes time"); the receptor pool at the surface shrinks, which is analogous to an irreversible antagonist.',
-        '<b>Result:</b> tolerance (opioids, Afrin-type nasal decongestants); a receptor that is not in the membrane cannot bind anything.'], 188);
+      return wrap(g, ['<b>What happens:</b> "If it\'s not coming off, now we\'re going to go into the long process": β-arrestin takes the receptor into coated pits, endocytosis brings it inside, and the cell either recycles it to the surface or breaks it down in a lysosome. "That takes time" (the slide: seconds, minutes, hours or days).',
+        '<b>Why the body does it:</b> "if I keep stimulating and stimulating and stimulating ... we\'re just gonna have to get rid of the receptors and keep them low"; a receptor that is not in the membrane "can\'t bind to anything".',
+        '<b>Curve:</b> fewer receptors at the surface, so "I have to increase the concentration" to get the old response: the curve moves RIGHT (potency down). The Emax holds while spare receptors cover the loss and falls when receptors run short, "just like I would with any irreversible antagonist".',
+        '<b>Why it matters:</b> tolerance (opioids, cocaine, Afrin after "2 to 3 days": the same dose does less); stop a norepinephrine drip suddenly and "they\'re gonna tank it out because there\'s just not enough receptors to do the job".'], 188);
     };
 
     F3['regulation'] = () => {
@@ -559,10 +561,10 @@ const FIG = (() => {
       g += card(186, 'DOWN: after a chronic agonist', 'b', 3, 2, ['fewer receptors (spare receptors used up):', 'the same dose finds fewer to bind', 'agonist LESS potent · Emax can fall']);
       g += `<line class="dash" x1="2" y1="${150 - 12}" x2="358" y2="${150 - 12}"/>`;
       g += P.axes('log dose of the agonist', ['dashed = before regulation', 'solid = after']) + P.curve(0, 100, 0, 'a', true) + P.curve(-1, 100, 0, 'c') + P.curve(1, 55, 0, 'b') + P.arrowH(0, -1, 50) + P.arrowH(0.2, 1.1, 40) + P.arrowV(2.6, 98, 57) + xs(P.lpx(-1.4), P.lpy(70), 'up', 'end') + xs(P.lpx(1.6), P.lpy(35), 'down') + P.legend(['up: LEFT · down: RIGHT, then DOWN']);
-      return wrap(g, ['<b>Up-regulation</b> follows chronic reduction of receptor stimulation (an antagonist or inverse agonist); the body adds receptors. The full agonist shifts left; a partial agonist gains potency and can reach the full response.',
-        '<b>Down-regulation</b> follows chronic exposure to an agonist; the body removes receptors, which is analogous to an irreversible antagonist. The agonist shifts right and, when receptors run short, its maximum falls.',
-        '<b>Clinical:</b> stopping a β-blocker cold turkey leaves up-regulated receptors unblocked (hypertensive crisis; taper stepwise); tolerance to opioids and Afrin is down-regulation.',
-        '<b>Rule:</b> "an antagonist will up regulate, an agonist is going to down regulate because our body is going to do the opposite".'], 296);
+      return wrap(g, ['<b>Rule:</b> "an antagonist will up regulate, an agonist is going to down regulate because our body is going to do the opposite to maintain that homeostasis. So just think about it, what the drug function is ... and how your body would oppose that."',
+        '<b>Up-regulation</b> (chronic antagonist or inverse agonist): more receptors, "we just have more spare receptors now to go around". The full agonist shifts LEFT ("the more spare receptors I have, the more potent my agonist"); a partial agonist can reach the full response; the antagonist is weaker ("more chairs to cover").',
+        '<b>Down-regulation</b> (chronic agonist): fewer receptors, "analogous to the effects of irreversible acting antagonists". The agonist shifts RIGHT and, when receptors run short, its Emax falls.',
+        '<b>Why it matters:</b> β-blocker: "Do not go cold turkey ... hypertensive crisis ... wean themselves off"; tolerance to opioids and Afrin is down-regulation.'], 296);
     };
     /* ---------- step-throughs ---------- */
     const alphaS = (x, y, on) => `<circle cx="${x}" cy="${y}" r="7" fill="var(--figA)" fill-opacity="${on ? 0.25 : 0.08}" stroke="var(--figA)" stroke-width="1.2"${on ? '' : ' stroke-dasharray="2 2"'}/>` + xs(x, y + 3, 'αs', 'middle');
@@ -582,7 +584,7 @@ const FIG = (() => {
       ['The phosphorylated tail lets β-arrestin bind; αs can no longer couple, so cAMP production stops while the agonist is still on.', scene({ lig: 'ag', act: 0 }, alphaS(50, 80, false) + tail(83, 54, true) + barrestin(100, 92) + xs(84, 108, 'no cAMP')) + trace(7)],
       ['The agonist comes off: the phosphates are removed, β-arrestin leaves and αs couples again. Milliseconds, reversible.', scene({ lig: null, act: 0 }, alphaS(70, 76, true) + tail(83, 54, false) + xs(84, 80, 'ready again')) + trace(9)]
     ], 176, ['<ol><li>Agonist on: αs signals, cAMP rises.</li><li>GRK phosphorylates the receptor tail.</li><li>β-arrestin binds the tail and blocks αs: no cAMP while the agonist is still bound.</li><li>Agonist off: phosphates removed, β-arrestin leaves, reset.</li></ol>',
-      '<b>Time course:</b> milliseconds; reversible. <b>Trap:</b> the receptor does not leave the membrane here; that is long-term down-regulation.'], 'Four steps, all at the cell surface.');
+      '<b>Time course:</b> "within milliseconds"; reversible, "like a band-aid". <b>Trap:</b> the receptor does not leave the membrane here; that is long-term down-regulation.'], 'Four steps, all at the cell surface.');
 
     F3['desens-long-anim'] = () => {
       const P = plot(60, 56, 215, 135);
@@ -594,7 +596,7 @@ const FIG = (() => {
         ['Fate 2: the receptor is degraded in a lysosome and is gone.', membrane() + `<circle cx="84" cy="100" r="20" class="box"/>` + cell(71, 80, { lig: null, act: 0 }) + arr(104, 104, 130, 104) + `<rect x="132" y="94" width="52" height="22" rx="4" fill="var(--figB)" fill-opacity="0.15" stroke="var(--figB)"/><text class="cl b" x="158" y="108" text-anchor="middle">lysosome</text>`],
         ['Fewer receptors at the surface: the agonist needs more dose (curve right) and, when receptors run short, cannot reach its old maximum. Hours to days.', band(6, 40, 184) + xs(6, 34, 'outside') + cell(40, 20, { lig: 'ag', act: 1 }) + cell(110, 20, { lig: null, act: 0 }) + xs(96, 80, 'two receptors left of five', 'middle') + P.axes('log dose', ['dashed = before', 'solid = after down-regulation']) + P.curve(0, 100, 0, 'a', true) + P.curve(1, 55, 0, 'b') + P.arrowH(0, 1, 50)]
       ], 176, ['<ol><li>Stimulation continues; β-arrestin stays on the tail.</li><li>β-arrestin pulls the receptor into a coated pit.</li><li>Endocytosis: the receptor is inside a vesicle.</li><li>Recycled back to the surface, or</li><li>degraded in a lysosome.</li><li>Fewer surface receptors: agonist less potent, Emax can fall.</li></ol>',
-        '<b>Time course:</b> hours to days. <b>Result:</b> tolerance (opioids, Afrin-type decongestants); analogous to an irreversible antagonist.'], 'Six steps; the receptor leaves the membrane.');
+        '<b>Time course:</b> "that takes time" (seconds to days on the slide). <b>Result:</b> tolerance (opioids, Afrin-type decongestants); "analogous to the effects of irreversible acting antagonists": curve RIGHT, then Emax down.'], 'Six steps; the receptor leaves the membrane.');
     };
 
     // regulation: static halves and one step-through each
@@ -612,10 +614,10 @@ const FIG = (() => {
     };
     F3['upreg'] = () => regStatic('upreg', 'Up-regulation: after a chronic antagonist, more receptors', 'c', 6, 5,
       ['more receptors (more spare receptors)', 'the same dose finds more to bind', 'agonist MORE potent (curve LEFT)', 'a partial can reach the full response'], -1, 100,
-      ['<b>Cause:</b> chronic reduction of receptor stimulation (an antagonist or inverse agonist for weeks).', '<b>Body’s answer:</b> add receptors.', '<b>Curve:</b> the agonist shifts left; a partial agonist gains potency and can reach 100%.', '<b>Clinical:</b> stopping a β-blocker suddenly leaves the extra receptors unblocked (hypertensive crisis), so taper.']);
+      ['<b>Cause:</b> "chronic exposure to an antagonist or an inverse agonist"; the body does the opposite and adds receptors ("a compensatory mechanism").', '<b>Curve:</b> "with the up regulation, I can make a full agonist more potent by shifting it to the left"; "a drug who behaves like a partial agonist [can] become a full agonist because now I have enough receptors"; the antagonist is less potent.', '<b>Why it matters:</b> stop a β-blocker suddenly and "you have lots of receptors that are being up regulated and no antagonists to block it ... hypertensive crisis"; "they have to wean themselves off, decrease the dose gradually".']);
     F3['downreg'] = () => regStatic('downreg', 'Down-regulation: after a chronic agonist, fewer receptors', 'b', 3, 2,
       ['fewer receptors (spare used up)', 'the same dose finds fewer to bind', 'agonist LESS potent (curve RIGHT)', 'the maximum can fall'], 1, 55,
-      ['<b>Cause:</b> chronic exposure to an agonist (too much stimulation).', '<b>Body’s answer:</b> remove receptors (desensitization, internalization, degradation), like an irreversible antagonist taking them out of the pool.', '<b>Curve:</b> the agonist shifts right and, when receptors run short, its maximum falls.', '<b>Clinical:</b> tolerance (opioids, Afrin-type decongestants); stop a Levophed drip and the pressure drops.']);
+      ['<b>Cause:</b> "too much stimulation": the body does the opposite and removes receptors (desensitization, internalization, degradation), "analogous to the effects of irreversible acting antagonists".', '<b>Curve, link by link:</b> fewer receptors → "I have to increase the concentration" to get the same effect → curve RIGHT, potency down → when receptors run short, "I don\'t have enough receptors available" for the maximum: Emax falls.', '<b>Clinical:</b> tolerance (opioids, Afrin-type decongestants); stop a Levophed drip and the pressure drops.']);
     F3['upreg-anim'] = () => stepper('upreg', 'Up-regulation step by step', [
       ['Start: a tissue with five receptors. One agonist dose binds some of them and gives this response.', regRow(5, everyOther) + regBar(0.6, 'the point of reference')],
       ['A chronic antagonist (a β-blocker for weeks) sits in the pockets. The receptors are stimulated less than normal.', regRow(5, i => ({ lig: 'ant', act: 0 })) + regBar(0.1, 'blocked: little stimulation') + `<text class="cl c" x="206" y="98" text-anchor="start">chronic antagonist</text>`],
@@ -628,7 +630,7 @@ const FIG = (() => {
       ['A chronic agonist (an Afrin-type decongestant every day, a Levophed drip) keeps every receptor stimulated.', regRow(5, i => ({ lig: 'ag', act: 1 })) + regBar(1, 'too much stimulation') + `<text class="cl b" x="206" y="98" text-anchor="start">chronic agonist</text>`],
       ['The body does the opposite of the drug: it removes receptors (desensitization, internalization, degradation).', regRow(3, i => ({ lig: 'ag', act: 1 })) + regBar(0.6, 'fewer receptors') + `<text class="cl b" x="206" y="98" text-anchor="start">down-regulated: 3 receptors</text>`],
       ['The same dose now finds fewer receptors: a smaller response (tolerance). More drug is needed, and the maximum can fall.', regRow(3, everyOther) + regBar(0.3, 'same dose, smaller response') + `<text class="cl b" x="206" y="98" text-anchor="start">LESS potent · Emax can fall</text>`]
-    ], 150, ['<ol><li>Five receptors; one dose gives the reference response.</li><li>Chronic agonist: every receptor stimulated.</li><li>The body removes receptors (down-regulation).</li><li>The same dose gives a smaller response: tolerance; the maximum can fall.</li></ol>',
+    ], 150, ['<ol><li>Five receptors; one dose gives the reference response.</li><li>Chronic agonist: every receptor stimulated.</li><li>The body removes receptors (down-regulation).</li><li>The same dose finds fewer receptors: smaller response (tolerance), "I have to increase the concentration" (curve RIGHT); when receptors run short the Emax falls.</li></ol>',
       '<b>Rule:</b> "an agonist is going to down regulate because our body is going to do the opposite." Analogous to an irreversible antagonist.'], 'Four steps.');
 
     // indirect antagonists: one step-through per drug
@@ -669,6 +671,31 @@ const FIG = (() => {
         ['L-dopa looks more potent (curve LEFT); carbidopa alone gives no response (flat line): potentiation.', gutScene(true, true) + mini(true)]
       ], 206, ['<ol><li>L-dopa alone: broken down in the gut.</li><li>Carbidopa blocks the gut enzyme (upstream).</li><li>More dopa reaches the brain.</li><li>L-dopa curve LEFT; carbidopa alone does nothing.</li></ol>', '<b>Name for it:</b> potentiation (one drug has no effect alone but increases the other); the slide also marks it as an indirect antagonist.'], 'Four steps.');
     };
+    /* ---------- the chain from regulation to the curve (Part 2 pages 17–28; transcript 9/29) ---------- */
+    const chainRow = (y, cls, head, boxes, curveFn) => {
+      let g = `<text class="cl ${cls}" x="6" y="${y - 6}" text-anchor="start">${head}</text>`;
+      const bw = 62, gap = 6, x0 = 6;
+      boxes.forEach((lines, i) => {
+        const x = x0 + i * (bw + gap);
+        g += `<rect class="box" x="${x}" y="${y}" width="${bw}" height="50" rx="4"/>` + lines.map((t, k) => xs(x + bw / 2, y + 11 + k * 9.5, t, 'middle')).join('');
+        if (i < boxes.length - 1) g += arr(x + bw, y + 25, x + bw + gap, y + 25);
+      });
+      return g;
+    };
+    F3['reg-chain'] = () => {
+      let g = title('Regulation to the curve, link by link');
+      g += chainRow(26, 'b', 'DOWN-regulation: chronic agonist (opioids, Afrin, NE drip)',
+        [['chronic', 'AGONIST', 'too much', 'stimulation'], ['body does the', 'opposite:', 'removes', 'receptors'], ['same dose', 'finds fewer', 'receptors:', 'smaller response'], ['needs more', 'dose: curve', 'RIGHT', 'potency DOWN'], ['receptors', 'run short:', 'Emax DOWN', 'like irreversible']]);
+      g += chainRow(100, 'c', 'UP-regulation: chronic antagonist (a β-blocker)',
+        [['chronic', 'ANTAGONIST', 'too little', 'stimulation'], ['body does the', 'opposite:', 'adds', 'receptors'], ['same dose', 'finds more', 'receptors', '(more spare)'], ['agonist', 'curve LEFT', 'partial can', 'reach full'], ['stop suddenly:', 'unblocked', 'receptors →', 'hypertensive', 'crisis']]);
+      g += `<text class="lbl sm" x="6" y="166" text-anchor="start">Rule: "how your body would oppose" the drug: agonist → down, antagonist → up.</text>`;
+      g += `<text class="lbl xs" x="6" y="178" text-anchor="start">Consequences: tolerance (down); "Do not go cold turkey", wean off a β-blocker (up).</text>`;
+      return wrap(g, ['<b>Read each row left to right:</b> the drug, what the body does in answer, what one dose now finds, what the curve does, and what happens at the end.',
+        '<b>Down-regulation:</b> fewer receptors → "I have to increase the concentration" → curve RIGHT (potency down). The Emax holds while spare receptors cover the loss; when "I don\'t have enough receptors available" it falls, "just like I would with any irreversible antagonist".',
+        '<b>Up-regulation:</b> more receptors → "the more spare receptors I have, the more potent my agonist" → curve LEFT; a partial agonist "become[s] a full agonist because now I have enough receptors"; the antagonist is weaker ("more chairs to cover").',
+        '<b>Why it matters:</b> tolerance (opioids, cocaine, Afrin: the same dose does less); stop a norepinephrine drip and "they\'re gonna tank it out"; stop a β-blocker suddenly and "that patient is going to be very likely to go into ... hypertensive crisis", so "wean themselves off".'], 186);
+    };
+
     /* ---------- addition, synergism, potentiation (Part 2 pages 30–31; transcript 9/29) ---------- */
     // three bar groups: drug A alone, drug B alone, A + B; heights are the percentages he spoke, where he gave them
     const enhGroup = (x, name, bars, names, rule, cls, hi) => {

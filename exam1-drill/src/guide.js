@@ -801,6 +801,7 @@ const GUIDE_HTML = `
 <div class="pair"><!--FIG:desens-long--><!--FIG:desens-long-anim--></div>
 <div class="pair"><!--FIG:upreg--><!--FIG:upreg-anim--></div>
 <div class="pair"><!--FIG:downreg--><!--FIG:downreg-anim--></div>
+<!--FIG:reg-chain-->
 
 <h4>How to read it on a curve</h4>
 <!--GRAPH:{"curves":[{"label":"high","ec":-1.5,"emax":100},{"label":"mid","ec":0.2,"emax":75},{"label":"low","ec":1.4,"emax":30}],"base":0,"x":"log [agonist]","y":"fractional response (%)","caption":"One agonist in three tissues of falling receptor density (Part 2 page 28): with fewer receptors the ED50 moves right (about 10^-7 to 10^-4.5 to 10^-3.5 on his slide) and the maximal response falls, the same picture as an irreversible antagonist."}-->

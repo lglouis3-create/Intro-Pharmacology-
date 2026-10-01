@@ -44,6 +44,7 @@ const TELL_HTML = `
 <div class="pair"><!--FIG:desens-long--><!--FIG:desens-long-anim--></div>
 <div class="pair"><!--FIG:upreg--><!--FIG:upreg-anim--></div>
 <div class="pair"><!--FIG:downreg--><!--FIG:downreg-anim--></div>
+<!--FIG:reg-chain-->
 <h3>Day 1 (9/22) &mdash; Pharmacodynamics-Day-1-2026s.pdf</h3>
 <table class="reftab"><thead><tr><th style="width:20%">Looks alike</th><th>What separates them</th><th style="width:26%">The trap</th><th style="width:9%">Slides</th><th style="width:9%">Question</th></tr></thead><tbody>
 <tr><td>Affinity vs efficacy</td><td>Affinity = how well a drug binds and stays bound (bond types); efficacy = ability to change receptor activity/state (positive or negative)</td><td>Picking "bind and stay bound" for efficacy</td><td>~21, ~37–38</td><td data-q="L01-013">L01-013</td></tr>
