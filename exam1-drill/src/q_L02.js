@@ -217,7 +217,7 @@ QUESTIONS.push(
 
 {id:"L02-016", fg:"sites", lecture:"L02", prof:"Gottlieb", tier:"new", topic:"L02", sub:"site", skill:"apply",
  concept:"orthosteric-competition", tags:[], source:"both",
- stem:"Prazosin is bound in the orthosteric pocket of an α1 receptor when norepinephrine arrives at that same receptor. What happens?",
+ stem:"Prazosin is bound to an α1 receptor when norepinephrine arrives at that same receptor. What happens?",
  options:[
   {t:"Norepinephrine cannot activate that receptor", correct:true, why:"Both bind the same pocket, so while prazosin occupies it norepinephrine cannot bind and activate."},
   {t:"Both drugs bind and the effect is additive", correct:false, why:"Orthosteric binding is one or the other, never both at once."},
@@ -245,7 +245,7 @@ QUESTIONS.push(
 
 {id:"L02-018", fg:"sites", lecture:"L02", prof:"Gottlieb", tier:"new", topic:"L02", sub:"site", skill:"apply",
  concept:"diazepam-gaba-pam", tags:["exam-cue"], source:"both",
- stem:"Diazepam binds the GABA-A receptor, a chloride (Cl−) ion channel, at a site separate from where GABA (γ-aminobutyric acid) binds. What is the result?",
+ stem:"GABA (γ-aminobutyric acid) is bound to its GABA-A receptor, a chloride (Cl−) ion channel, when diazepam is added. What is the result?",
  options:[
   {t:"GABA binds better; more Cl− enters", correct:true, why:"Diazepam is a positive allosteric modulator: it increases the affinity and/or efficacy of GABA, so more chloride enters."},
   {t:"GABA is displaced; less Cl− enters", correct:false, why:"Diazepam does not compete for the GABA site; it binds someplace else."},

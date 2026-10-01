@@ -2,7 +2,7 @@ const TELL_HTML = `
 <h2>Tell apart</h2>
 <p class="sub">Slide numbers marked ~ were counted from the deck text and may be off by one or two. Pairs that share wording. Each row gives the feature that separates them and the trap a question sets. Nothing here is scored.</p>
 <h3>The shifts at a glance: what is bound, and what the curve does</h3>
-<p class="sub">Each panel is titled with the pair it shows. Top left: five receptors in the membrane at one agonist dose with the full agonist alone (the start; dashed curve). Top right: the same receptors after the second drug is added (the shift; solid curve). A filled receptor with an arrow into the cell is active; an empty one is inactive; the bar is the response at that dose. Bottom: what the agonist’s curve does. Every drug is told apart by shape as well as colour (circle = agonist, translucent circle = partial agonist, square = antagonist, square with a lock = irreversible, small circle at the side = allosteric), and the curve colours were chosen to stay distinct for red–green and blue–yellow colour blindness. Rules from Day 3–4 slides and the 9/28 lecture.</p>
+<p class="sub">Dashed curve = the agonist alone. Solid = with the second drug. Circle = agonist, square = antagonist, lock = irreversible, small side circle = allosteric.</p>
 <table class="reftab"><thead><tr><th style="width:22%">Second drug</th><th>At the receptor</th><th>Shift</th><th>Baseline</th><th>Emax</th></tr></thead><tbody>
 <tr><td>Full agonist</td><td>Competes for the same pocket; either one activates</td><td>Left</td><td>Up</td><td>Same</td></tr>
 <tr><td>Partial agonist</td><td>Competes for the pocket; activates less</td><td>—</td><td>Ends at the partial agonist’s own Emax (up from low, down from full)</td><td>Only the full agonist alone reaches it</td></tr>
@@ -26,17 +26,21 @@ const TELL_HTML = `
 <tr><td>Milrinone, caffeine</td><td>Phosphodiesterase (breaks down cAMP)</td><td>Downstream: cAMP builds up behind the same signal</td><td>Left; a partial agonist can reach the full response</td></tr>
 <tr><td>Cancer drug X</td><td>RAS in the GEF → RAS → RAF → MEK → ERK cascade</td><td>Downstream: the message is cut after the receptor</td><td>Right and Emax down</td></tr>
 </tbody></table>
-<div class="shiftgrid">
-<!--FIG:indirect-anim--><!--FIG:ind-snri--><!--FIG:ind-ssri--><!--FIG:ind-ache--><!--FIG:ind-carbidopa--><!--FIG:ind-pde--><!--FIG:ind-ras-->
-</div>
+<div class="pair"><!--FIG:ind-snri--><!--FIG:ind-snri-anim--></div>
+<div class="pair"><!--FIG:ind-ssri--><!--FIG:ind-ssri-anim--></div>
+<div class="pair"><!--FIG:ind-ache--><!--FIG:ind-ache-anim--></div>
+<div class="pair"><!--FIG:ind-carbidopa--><!--FIG:ind-carbidopa-anim--></div>
+<div class="pair"><!--FIG:ind-pde--><!--FIG:ind-pde-anim--></div>
+<div class="pair"><!--FIG:ind-ras--><!--FIG:ind-ras-anim--></div>
 <h3>The GPCR process and receptor regulation</h3>
 <p class="sub">The forward steps and what ends them (Day 1 slides ~51–~54; 9/23 lecture), then what the cell does to the receptor after too much or too little stimulation (Part 2 pages 16–29; 9/29 lecture).</p>
-<div class="shiftgrid">
-<!--FIG:gpcr-steps--><!--FIG:gpcr-anim--><!--FIG:desens-anim--><!--FIG:desens-rapid--><!--FIG:desens-long--><!--FIG:regulation-anim--><!--FIG:regulation-->
-</div>
+<div class="pair"><!--FIG:gpcr-steps--><!--FIG:gpcr-anim--></div>
+<div class="pair"><!--FIG:desens-rapid--><!--FIG:desens-rapid-anim--></div>
+<div class="pair"><!--FIG:desens-long--><!--FIG:desens-long-anim--></div>
+<div class="pair"><!--FIG:upreg--><!--FIG:upreg-anim--></div>
+<div class="pair"><!--FIG:downreg--><!--FIG:downreg-anim--></div>
 <h3>Day 1 (9/22) &mdash; Pharmacodynamics-Day-1-2026s.pdf</h3>
 <table class="reftab"><thead><tr><th style="width:20%">Looks alike</th><th>What separates them</th><th style="width:26%">The trap</th><th style="width:9%">Slides</th><th style="width:9%">Question</th></tr></thead><tbody>
-<tr><td>Must know vs should know</td><td>Must know = mechanism of action (MOA); should know = site of action (SOA); effect/ADR/DDI are "would be nice to know" (predicted)</td><td>Swapping MOA and SOA; thinking brand names/dose are tested</td><td>~7–8</td><td data-q="L01-001">L01-001</td></tr>
 <tr><td>Affinity vs efficacy</td><td>Affinity = how well a drug binds and stays bound (bond types); efficacy = ability to change receptor activity/state (positive or negative)</td><td>Picking "bind and stay bound" for efficacy</td><td>~21, ~37–38</td><td data-q="L01-013">L01-013</td></tr>
 <tr><td>Pharmacological vs apparent potency</td><td>Pharmacological: tissue sensitivity, receptor #, receptor activity, affinity, efficacy; apparent adds PK: age, absorption, distribution, elimination, DDI</td><td>Putting absorption/age/elimination under pharmacological potency</td><td>~22–23, ~27</td><td data-q="L01-015">L01-015</td></tr>
 <tr><td>Safety vs efficacy</td><td>If the safe drug does not work, choose the efficacious one; if efficacy is equal, choose the safer</td><td>Choosing "very safe but not efficacious" for fungal pneumonia</td><td>~25–26</td><td data-q="L01-017">L01-017</td></tr>

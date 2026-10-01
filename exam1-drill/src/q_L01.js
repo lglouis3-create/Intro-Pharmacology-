@@ -11,21 +11,9 @@ TOPICS.push({id:'L01', name:'Pharmacodynamics intro: drugs, receptors, potency',
     {id:'gpcr', name:'G protein–coupled receptors', cite:'slides ~49–~55'}
   ]});
 QUESTIONS.push(
-{id:'L01-001', lecture:'L01', prof:'Gottlieb', tier:'new', topic:'L01', sub:'intro', skill:'tell',
- concept:'must-know-moa-should-know-soa', tags:['moa','soa'], source:'both',
- stem:'For drugs in this course, which pairing matches the item that must be known with the item that should be known?',
- options:[
-  {t:'Must: mechanism of action (MOA); should: site of action (SOA)', correct:true, why:'The MOA (what the drug does to which receptor) is the must-know; the SOA (where the receptor is) is the should-know that lets you predict the rest.'},
-  {t:'Must: site of action (SOA); should: mechanism of action (MOA)', correct:false, why:'Reverses the two tiers; the MOA is the starting point that must be known.'},
-  {t:'Must: brand name; should: dose', correct:false, why:'Brand names and dose are listed as things Exam 1 will not test.'},
-  {t:'Must: adverse drug reactions; should: route', correct:false, why:'Adverse reactions are predicted from MOA plus SOA; route is listed as not tested.'}],
- teach:'The must-know for every drug is its mechanism of action: which receptor it binds and whether it activates, inhibits or just binds. The should-know is the site of action, where that receptor is located. Knowing both lets you predict the effect, side effects, drug–drug interactions, contraindications and use without memorizing them.',
- quote:'there are going to be things that are going to tell you that you must know, and for this particular class in therapeutics it’s going to be the mechanism of action of the drugs... The things that you should know are going to be the sites of actions.',
- cite:'Pharmacodynamics-Day-1-2026s.pdf slide ~7; transcript 9/22'},
-
 {id:'L01-002', lecture:'L01', prof:'Gottlieb', tier:'new', topic:'L01', sub:'intro', skill:'apply',
  concept:'metoprolol-predict-effect', tags:['metoprolol','beta1'], source:'both',
- stem:'Metoprolol is a reversible β1 receptor antagonist, and β1 receptors are located in the heart. What effect on the heart is predicted when a patient takes it?',
+ stem:'What effect would metoprolol have on heart rate?',
  options:[
   {t:'Slower heart rate', correct:true, why:'Blocking the heart’s β1 receptors slows the heart rate; this is the prediction he asked the class to make.'},
   {t:'Faster heart rate', correct:false, why:'Treats an antagonist as if it were an agonist at β1.'},
@@ -38,7 +26,7 @@ QUESTIONS.push(
 
 {id:'L01-003', lecture:'L01', prof:'Gottlieb', tier:'new', topic:'L01', sub:'intro', skill:'apply', multi:true,
  concept:'metoprolol-predict-adr', tags:['metoprolol','adr'], source:'both',
- stem:'Metoprolol is a β1 receptor antagonist; its sites of action include the heart, kidneys and brain. Which adverse drug reactions (ADRs) fit this mechanism and site? Select all that apply.',
+ stem:'Which adverse drug reactions (ADRs) would metoprolol be expected to produce? Select all that apply.',
  options:[
   {t:'Bradycardia', correct:true, why:'Blocking β1 in the heart can slow it too much; bradycardia is listed as an ADR.'},
   {t:'Fatigue', correct:true, why:'Fatigue is listed as an ADR and he ties it to β1 receptors in the brain.'},
@@ -145,7 +133,7 @@ QUESTIONS.push(
 
 {id:'L01-011', fg:'potency', lecture:'L01', prof:'Gottlieb', tier:'new', topic:'L01', sub:'potency', skill:'apply',
  concept:'dose-selectivity', tags:['selectivity','metoprolol'], source:'transcript',
- stem:'Metoprolol is β1-selective at lower doses. What happens as the dose rises above about 200 mg?',
+ stem:'What happens to metoprolol as its dose rises above about 200 mg?',
  options:[
   {t:'It starts to affect β2 receptors', correct:true, why:'The larger the dose, the less selective the drug; above about 200 mg metoprolol affects β2.'},
   {t:'It becomes more β1-selective', correct:false, why:'Reverses the rule; selectivity falls as dose rises.'},
@@ -554,7 +542,7 @@ QUESTIONS.push(
 
 {id:'L01-043', lecture:'L01', prof:'Gottlieb', tier:'new', topic:'L01', sub:'intro', skill:'apply',
  concept:'metoprolol-ddi', tags:['metoprolol','ddi'], source:'both',
- stem:'A patient taking metoprolol, a β1 receptor antagonist with its site of action in the heart, starts a second drug that also lowers heart rate. What drug–drug interaction is predicted?',
+ stem:'A patient taking metoprolol starts a second drug that also lowers heart rate. What drug–drug interaction is predicted?',
  options:[
   {t:'Heart rate would fall too far', correct:true, why:'Anything that also lowers heart rate adds to the β1 block in the heart; the predicted interaction is excessive slowing, the bradycardia he lists as the ADR.'},
   {t:'Heart rate would rise', correct:false, why:'Both drugs lower heart rate; neither one speeds the heart.'},

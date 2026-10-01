@@ -51,7 +51,7 @@ QUESTIONS.push(
 
 {id:'L04-004', fg:'drc-basic', lecture:'L04', prof:'Gottlieb', tier:'new', topic:'L04', sub:'recap', skill:'figure',
  concept:'fa-plus-fa', tags:[], source:'transcript',
- stem:'Norepinephrine and Levophed (synthetic norepinephrine) are full agonists at the same receptor. The dotted line is norepinephrine alone. A pretreatment dose of Levophed that by itself produces 40% of the maximal effect is given, then the norepinephrine dose–response curve is rebuilt. Which solid curve shows the result?',
+ stem:'Levophed is synthetic norepinephrine. The dotted line is norepinephrine alone. A pretreatment dose of Levophed that by itself produces 40% of the maximal effect is given, then the norepinephrine dose–response curve is rebuilt. Which solid curve shows the result?',
  graph:{curves:[{label:'NE', ec:0, emax:100, dashed:true}, {label:'A', ec:-1, emax:100, base:40}, {label:'B', ec:1, emax:100}, {label:'C', ec:-1, emax:60, base:40}, {label:'D', ec:1, emax:100, base:40}], base:0, x:'log dose norepinephrine', y:'% of maximal response'},
  options:[
   {t:'A: starts at 40%, shifts left, still reaches 100%', correct:true, why:'Levophed has already activated enough receptors for 40%, norepinephrine needs fewer receptors of its own (shift left), and both drugs reach the same Emax.'},
@@ -103,7 +103,7 @@ QUESTIONS.push(
 
 {id:'L04-008', lecture:'L04', prof:'Gottlieb', tier:'new', topic:'L04', sub:'recap', skill:'apply',
  concept:'partial-agonist-dual-nature', tags:['varenicline'], source:'transcript',
- stem:'A patient taking varenicline, a nicotinic partial agonist, for smoking cessation smokes one cigarette. Compared with smoking before therapy, what does that cigarette do?',
+ stem:'A patient taking varenicline for smoking cessation smokes one cigarette. Compared with smoking before therapy, what does that cigarette do?',
  options:[
   {t:'Produces less effect than before', correct:true, why:'Varenicline is present at a concentration high enough to outcompete the nicotine from one cigarette, so the receptors signal at the partial agonist’s level.'},
   {t:'Produces a larger effect than before', correct:false, why:'A partial agonist occupying receptors competes with nicotine; it does not add to a full agonist’s effect.'},
@@ -155,7 +155,7 @@ QUESTIONS.push(
 
 {id:'L04-012', fg:'inverse', lecture:'L04', prof:'Gottlieb', tier:'new', topic:'L04', sub:'ia', skill:'figure', multi:true,
  concept:'fa-plus-inverse-agonist', tags:['histamine','loratadine'], source:'both',
- stem:'Histamine (full agonist) dose–response curves are built in a system with 50% of receptors active, first alone (dotted line) and then after increasing pretreatment doses of loratadine, an inverse agonist. Which changes appear in histamine’s curve? Select all that apply.',
+ stem:'Histamine dose–response curves are built in a system with 50% of receptors active, first alone (dotted line) and then after increasing pretreatment doses of loratadine. Which changes appear in histamine’s curve? Select all that apply.',
  graph:{curves:[{label:'H', ec:-0.5, emax:100, dashed:true}, {label:'+L', ec:0.5, emax:100, base:25}, {label:'+10L', ec:1.5, emax:100, base:3}], base:50, x:'log dose histamine', y:'% of maximal response'},
  options:[
   {t:'Baseline decreases', correct:true, why:'Each loratadine dose shuts off more of the receptors that were active on their own, lowering the starting point toward 0%.'},
