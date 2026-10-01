@@ -113,6 +113,22 @@ const out = path.join(__dirname, '..', course.match(/output:\s*'([^']+)'/)[1]);
     await page.click('.opt');
     if (!(await page.$('.gread'))) fail('graph drill answer shows no figure reading');
   }
+  // flags and the all-on-one-page layout
+  await page.click('nav button[data-v="quiz"]');
+  await page.click('[data-flag]');
+  if (!(await page.evaluate(() => Object.keys(S.flags).length))) fail('flag button did not flag the question');
+  await page.click('nav button[data-v="topics"]');
+  if (!(await page.$('#drillflag'))) fail('topics page shows no flagged drill after flagging');
+  await page.click('[data-layout="all"]');
+  await (await page.$$('[data-topic]'))[0].click();
+  const nCards = await page.evaluate(() => document.querySelectorAll('.qcard').length);
+  if (nCards < 2) fail('all-on-one-page drill shows ' + nCards + ' cards');
+  const logBefore = await page.evaluate(() => S.log.length);
+  await (await page.$$('.qcard [data-o]'))[0].click();
+  if ((await page.evaluate(() => S.log.length)) !== logBefore + 1) fail('all-on-one-page answer was not recorded');
+  await page.click('nav button[data-v="map"]'); await page.click('[data-show="flagged"]');
+  if (!(await page.$('.qt.flagged'))) fail('question map flagged filter shows no flagged tile');
+  await page.click('nav button[data-v="topics"]'); await page.click('[data-layout="one"]');
   // theme control
   await page.selectOption('#theme', 'dark');
   if ((await page.getAttribute('html', 'data-theme')) !== 'dark') fail('theme select did not apply dark');
