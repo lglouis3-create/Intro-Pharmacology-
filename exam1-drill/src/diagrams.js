@@ -409,6 +409,39 @@ const FIG = (() => {
     const notes = (x, y, lines) => lines.map((t, i) => xs(x, y + i * 10, t)).join('');
 
     /* ---------- GPCR steps ---------- */
+    /* ---------- the three α subunits: Gs, Gi, Gq (Day 1 slides ~51–55, Day 2 slide ~30, 9/30 review, J15) ---------- */
+    const GA = [
+      { cx: 62, rec: 'β1', lig: 'NE', a: 'αs', cls: 'A', eff: 'AC', sign: '+', msg: '↑ cAMP', out: 'heart rate UP', word: 'S for stimulation' },
+      { cx: 180, rec: 'M2', lig: 'ACh', a: 'αi', cls: 'B', eff: 'AC', sign: '−', msg: '↓ cAMP', out: 'heart rate DOWN', word: 'I for inhibition' },
+      { cx: 298, rec: 'α1', lig: 'NE', a: 'αq', cls: 'C', eff: 'PLC', sign: '+', msg: '↑ IP3 → Ca++', out: 'smooth muscle contracts', word: 'Q: stimulation too (calcium)' }
+    ];
+    const gaCol = (c, stage) => {   // stage: 0 receptor bound, 1 α on the effector, 2 second messenger, 3 effect
+      const k = c.cls.toLowerCase();
+      let g = cell(c.cx - 10, 36, { lig: stage >= 0 ? 'ag' : null, act: stage >= 0 ? 1 : 0 }) + `<text class="cl ${k}" x="${c.cx}" y="30" text-anchor="middle">${c.rec} + ${c.lig}</text>`;
+      g += `<circle cx="${c.cx + (stage >= 1 ? 0 : -14)}" cy="${stage >= 1 ? 108 : 84}" r="8" fill="var(--fig${c.cls})" fill-opacity="0.3" stroke="var(--fig${c.cls})" stroke-width="1.2"/>` + xs(c.cx + (stage >= 1 ? 0 : -14), stage >= 1 ? 111 : 87, c.a, 'middle');
+      if (stage < 1) g += `<circle cx="${c.cx + 2}" cy="${86}" r="5" class="box"/><circle cx="${c.cx + 9}" cy="${94}" r="4" class="box"/>`;
+      g += `<rect class="box" x="${c.cx - 24}" y="122" width="48" height="18" rx="4"/>` + sm(c.cx, 134, c.eff) + (stage >= 1 ? `<text class="cl ${k}" x="${c.cx + 30}" y="135" text-anchor="start">${c.sign}</text>` : '');
+      if (stage >= 2) g += arr(c.cx, 140, c.cx, 152) + `<text class="cl ${k}" x="${c.cx}" y="163" text-anchor="middle">${c.msg}</text>`;
+      if (stage >= 3) g += xs(c.cx, 175, c.out, 'middle');
+      return g;
+    };
+    const gaBase = band(6, 44, 348) + xs(6, 40, 'outside') + xs(354, 70, 'inside', 'end');
+    F3['galpha'] = () => wrap(title('One receptor family, three α subunits: Gs, Gi, Gq') + gaBase + GA.map(c => gaCol(c, 3)).join('') +
+      xs(62, 188, 'S for stimulation', 'middle') + xs(180, 188, 'I for inhibition', 'middle') + xs(298, 188, 'Q: stimulation too, via calcium', 'middle'),
+      ['<b>Defined by the α subunit:</b> "a G protein, remember they\'re gonna be defined by the alpha subunit. It\'s alpha S, alpha I, alpha Q" (his Jeopardy key, J15). β and γ stay together; "the alpha subunit is gonna be the dictator of the function of that receptor".',
+       '<b>Gs (β1, β2):</b> αs stimulates adenylate cyclase (AC): ATP → cAMP goes up; in the heart, rate up. "It\'s alpha S for stimulation."',
+       '<b>Gi (M2):</b> αi inhibits the same adenylate cyclase: cAMP goes down; in the heart, rate down. "Alpha I for inhibition." Cross-talk: β1 and M2 pull on one AC from opposite sides.',
+       '<b>Gq (α1):</b> αq stimulates phospholipase C (PLC): PIP2 → IP3 → Ca++ released from the ER; smooth muscle contracts. "Alpha Q for stimulation as well because it increased calcium."',
+       '<b>What he asks:</b> which is the signal, the receptor, the transducer (αs, αi or αq), the effector (AC or PLC: "there\'s 2") and the second messenger (cAMP, IP3, Ca++).'], 196);
+    F3['galpha-anim'] = () => stepper('galpha', 'Gs, Gi, Gq step by step', [
+      ['Gs: norepinephrine binds β1; the G protein underneath swaps GDP for GTP and αs leaves β/γ.', gaBase + gaCol(GA[0], 0)],
+      ['αs stimulates adenylate cyclase (AC): ATP → cAMP goes up; heart rate up.', gaBase + gaCol(GA[0], 3)],
+      ['Gi: acetylcholine binds M2; the same swap, but the subunit is αi.', gaBase + gaCol(GA[0], 3) + gaCol(GA[1], 0)],
+      ['αi inhibits the same adenylate cyclase: cAMP goes down; heart rate down. One effector, two directions.', gaBase + gaCol(GA[0], 3) + gaCol(GA[1], 3)],
+      ['Gq: norepinephrine binds α1; the subunit is αq and the effector is a different enzyme.', gaBase + gaCol(GA[0], 3) + gaCol(GA[1], 3) + gaCol(GA[2], 0)],
+      ['αq stimulates phospholipase C (PLC): IP3, then Ca++ from the ER; smooth muscle contracts. Stimulation, through calcium instead of cAMP.', gaBase + gaCol(GA[0], 3) + gaCol(GA[1], 3) + gaCol(GA[2], 3)]
+    ], 222, ['<ol><li>Gs: β1 + NE → αs → AC stimulated → ↑ cAMP → heart rate up.</li><li>Gi: M2 + ACh → αi → AC inhibited → ↓ cAMP → heart rate down.</li><li>Gq: α1 + NE → αq → PLC → ↑ IP3 → Ca++ → smooth muscle contracts.</li></ol>', '<b>Same steps every time</b> (GDP off, GTP on, α leaves β/γ); what differs is which α subunit, which effector, and which direction.'], 'Six steps: three subunits, two effectors.');
+
     F3['gpcr-steps'] = () => {
       let g = title('GPCR signalling: NE at β1 in the heart, forward and back');
       g += xs(6, 34, 'outside') + band(6, 40, 348) + xs(6, 68, 'inside the cell');

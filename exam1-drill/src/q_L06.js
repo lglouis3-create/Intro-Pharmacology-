@@ -493,5 +493,29 @@ QUESTIONS.push(
   {l:'Resets the receptor', r:'The agonist comes off the receptor', why:'With the agonist gone the receptor pops back to its resting shape.'}],
  teach:'Reverse: PDE breaks down cAMP (the other way to regulate cAMP besides making it with AC; caffeine inhibits PDE); the extra phosphate is removed so GTP becomes GDP, sped up by RGS; the α subunit reassembles with β and γ; and the agonist comes off so the receptor resets.',
  quote:'How do we reverse that? ... PDE breaking down the cAMP ... the actual phosphate is removed. So we go from a GTP to a GDP ... the alpha reassemble with the beta and the gamma and the receptor kind of pops up',
- cite:'Pharmacodynamics-Day-1-2026s.pdf slides ~52–54; transcript 9/30'}
+ cite:'Pharmacodynamics-Day-1-2026s.pdf slides ~52–54; transcript 9/30'},
+{id:'L06-036', fg:'galpha', lecture:'L06', prof:'Gottlieb', tier:'new', topic:'L06', sub:'signal', skill:'recall',
+ concept:'g-protein-alpha-defines', tags:['poll','g-protein'], source:'transcript',
+ stem:'Which statement about G proteins is CORRECT?',
+ options:[
+  {t:'αs stimulates adenylate cyclase and raises cAMP', correct:false, why:'Correct ("alpha S for stimulation"), but not the only correct statement.'},
+  {t:'αi inhibits adenylate cyclase and lowers cAMP', correct:false, why:'Correct ("alpha I for inhibition"), but not the only correct statement.'},
+  {t:'αq stimulates phospholipase C and raises calcium', correct:false, why:'Correct ("alpha Q for stimulation as well because it increased calcium"), but not the only correct statement.'},
+  {t:'G proteins are defined by their α subunit', correct:false, why:'Correct (his Jeopardy key), but not the only correct statement.'},
+  {t:'All of the above', correct:true, why:'Every statement is his: the α subunit names the G protein and decides the direction, S and Q stimulate, I inhibits.'}],
+ teach:'The α subunit defines the G protein and dictates what the receptor does: αs stimulates adenylate cyclase (cAMP up), αi inhibits it (cAMP down), αq stimulates phospholipase C (IP3, then calcium up). β and γ stay together.',
+ quote:'The alpha subunit is gonna be the dictator of the function of that receptor. It\'s alpha S for stimulation, it\'s alpha I for inhibition, it\'s alpha Q for stimulation as well because it increased calcium.',
+ cite:'transcript 9/30; Pharmacodynamics-Day-1-2026s.pdf slides ~51–~55'},
+
+{id:'L06-037', fg:'galpha', lecture:'L06', prof:'Gottlieb', tier:'new', topic:'L06', sub:'signal', skill:'recall',
+ concept:'alpha1-gq-plc', tags:['poll','g-protein','norepinephrine'], source:'transcript',
+ stem:'Norepinephrine binds an α1 receptor on smooth muscle. Which transducer and effector carry the signal?',
+ options:[
+  {t:'αs, then adenylate cyclase', correct:false, why:'αs with adenylate cyclase is the β1 (and β2) pathway: cAMP.'},
+  {t:'αi, then adenylate cyclase', correct:false, why:'αi inhibits adenylate cyclase; that is the M2 pathway in the heart.'},
+  {t:'αq, then phospholipase C', correct:true, why:'α1 couples to Gq: αq activates phospholipase C, PIP2 → IP3 → calcium from the ER.'},
+  {t:'αq, then adenylate cyclase', correct:false, why:'αq works through phospholipase C, not adenylate cyclase; "there\'s 2" effectors and they do not mix.'}],
+ teach:'Signal: norepinephrine. Receptor: α1. Transducer: αq. Effector: phospholipase C. Second messengers: IP3 and calcium. The β receptors are the Gs, adenylate cyclase, cAMP pathway instead.',
+ quote:'If it\'s GQ, who is activating PLC and increasing IP3 and calcium, right? So right there, if you know your G protein and your receptor, you already can figure out what it\'s going to be.',
+ cite:'transcript 9/30; Pharmacodynamics-Day-1-2026s.pdf slides ~51–~55'}
 );
