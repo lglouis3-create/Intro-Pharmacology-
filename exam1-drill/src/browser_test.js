@@ -128,7 +128,7 @@ const out = path.join(__dirname, '..', course.match(/output:\s*'([^']+)'/)[1]);
   if ((await page.evaluate(() => S.log.length)) !== logBefore + 1) fail('all-on-one-page answer was not recorded');
   await page.click('nav button[data-v="map"]'); await page.click('[data-show="flagged"]');
   if (!(await page.$('.qt.flagged'))) fail('question map flagged filter shows no flagged tile');
-  await page.click('[data-layout="one"]');
+  await page.click('nav button[data-v="topics"]'); await page.click('[data-layout="one"]');
   // theme control
   await page.selectOption('#theme', 'dark');
   if ((await page.getAttribute('html', 'data-theme')) !== 'dark') fail('theme select did not apply dark');
