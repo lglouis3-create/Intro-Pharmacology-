@@ -773,6 +773,7 @@ const GUIDE_HTML = `
 <li>Enhancement of drug effects: addition (two drugs, same effect, result = the sum: trimethoprim + sulfamethoxazole); synergism (result greater than the sum: penicillin + gentamicin, "1 plus 1 and you get 5"); potentiation (one drug has no effect alone but increases the other: carbidopa + dopa, carbidopa being an indirect antagonist of the gut enzyme that breaks down dopa). "I don't think I have any of these drugs on your drug list ... it's just FYI." <small>Part 2 pages 30–31; (T) 9/29</small></li>
 </ul>
 <h4>Indirect antagonists: where each drug acts</h4>
+<!--FIG:indirect-anim-->
 <div class="shiftgrid"><!--FIG:ind-snri--><!--FIG:ind-ssri--><!--FIG:ind-ache--><!--FIG:ind-carbidopa--><!--FIG:ind-pde--><!--FIG:ind-ras--></div>
 <!--IMG:pollev-abcde-duloxetine-->
 <ul>
@@ -792,6 +793,7 @@ const GUIDE_HTML = `
 <li>Clinical down-regulation: tolerance ("the effects that follow continued exposure to the same concentration of drug is diminished": opioid analgesics, α-adrenoceptor nasal decongestants) and myasthenia gravis (antibody to the nicotinic receptor at the neuromuscular junction). <small>Part 2 page 29; (T) 9/29</small></li>
 </ul>
 <h4>Receptor regulation: the receptor at each step</h4>
+<div class="shiftgrid"><!--FIG:desens-anim--><!--FIG:regulation-anim--></div>
 <div class="shiftgrid"><!--FIG:desens-rapid--><!--FIG:desens-long--></div>
 <!--FIG:regulation-->
 

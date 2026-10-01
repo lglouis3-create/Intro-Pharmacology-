@@ -27,12 +27,12 @@ const TELL_HTML = `
 <tr><td>Cancer drug X</td><td>RAS in the GEF → RAS → RAF → MEK → ERK cascade</td><td>Downstream: the message is cut after the receptor</td><td>Right and Emax down</td></tr>
 </tbody></table>
 <div class="shiftgrid">
-<!--FIG:ind-snri--><!--FIG:ind-ssri--><!--FIG:ind-ache--><!--FIG:ind-carbidopa--><!--FIG:ind-pde--><!--FIG:ind-ras-->
+<!--FIG:indirect-anim--><!--FIG:ind-snri--><!--FIG:ind-ssri--><!--FIG:ind-ache--><!--FIG:ind-carbidopa--><!--FIG:ind-pde--><!--FIG:ind-ras-->
 </div>
 <h3>The GPCR process and receptor regulation</h3>
 <p class="sub">The forward steps and what ends them (Day 1 slides ~51–~54; 9/23 lecture), then what the cell does to the receptor after too much or too little stimulation (Part 2 pages 16–29; 9/29 lecture).</p>
 <div class="shiftgrid">
-<!--FIG:gpcr-steps--><!--FIG:gpcr-anim--><!--FIG:desens-rapid--><!--FIG:desens-long--><!--FIG:regulation-->
+<!--FIG:gpcr-steps--><!--FIG:gpcr-anim--><!--FIG:desens-anim--><!--FIG:desens-rapid--><!--FIG:desens-long--><!--FIG:regulation-anim--><!--FIG:regulation-->
 </div>
 <h3>Day 1 (9/22) &mdash; Pharmacodynamics-Day-1-2026s.pdf</h3>
 <table class="reftab"><thead><tr><th style="width:20%">Looks alike</th><th>What separates them</th><th style="width:26%">The trap</th><th style="width:9%">Slides</th><th style="width:9%">Question</th></tr></thead><tbody>
