@@ -103,7 +103,7 @@ QUESTIONS.push(
 
 {id:'L04-008', lecture:'L04', prof:'Gottlieb', tier:'new', topic:'L04', sub:'recap', skill:'apply',
  concept:'partial-agonist-dual-nature', tags:['varenicline'], source:'transcript',
- stem:'A patient taking varenicline (Chantix), a nicotinic partial agonist, for smoking cessation smokes one cigarette. Compared with smoking before therapy, what does that cigarette do?',
+ stem:'A patient taking varenicline, a nicotinic partial agonist, for smoking cessation smokes one cigarette. Compared with smoking before therapy, what does that cigarette do?',
  options:[
   {t:'Produces less effect than before', correct:true, why:'Varenicline is present at a concentration high enough to outcompete the nicotine from one cigarette, so the receptors signal at the partial agonist’s level.'},
   {t:'Produces a larger effect than before', correct:false, why:'A partial agonist occupying receptors competes with nicotine; it does not add to a full agonist’s effect.'},
@@ -155,7 +155,7 @@ QUESTIONS.push(
 
 {id:'L04-012', fg:'inverse', lecture:'L04', prof:'Gottlieb', tier:'new', topic:'L04', sub:'ia', skill:'figure', multi:true,
  concept:'fa-plus-inverse-agonist', tags:['histamine','loratadine'], source:'both',
- stem:'Histamine (full agonist) dose–response curves are built in a system with 50% of receptors active, first alone (dotted line) and then after increasing pretreatment doses of loratadine (Claritin), an inverse agonist. Which changes appear in histamine’s curve? Select all that apply.',
+ stem:'Histamine (full agonist) dose–response curves are built in a system with 50% of receptors active, first alone (dotted line) and then after increasing pretreatment doses of loratadine, an inverse agonist. Which changes appear in histamine’s curve? Select all that apply.',
  graph:{curves:[{label:'H', ec:-0.5, emax:100, dashed:true}, {label:'+L', ec:0.5, emax:100, base:25}, {label:'+10L', ec:1.5, emax:100, base:3}], base:50, x:'log dose histamine', y:'% of maximal response'},
  options:[
   {t:'Baseline decreases', correct:true, why:'Each loratadine dose shuts off more of the receptors that were active on their own, lowering the starting point toward 0%.'},
@@ -183,11 +183,12 @@ QUESTIONS.push(
 {id:'L04-014', fg:'classes', lecture:'L04', prof:'Gottlieb', tier:'new', topic:'L04', sub:'ia', skill:'tell',
  concept:'inverse-vs-competitive-need-baseline', tags:[], source:'both',
  stem:'A full agonist’s curve is built with the baseline at 0%, then rebuilt after pretreatment with drug B. B shifts the curve to the right with no change to the baseline or the Emax. Which classification of B cannot be ruled out from this figure alone?',
+ graph:{curves:[{label:'A alone', ec:-0.5, emax:100, dashed:true}, {label:'A + B', ec:0.7, emax:100}], base:0, x:'log dose agonist', y:'% of maximal response'},
  options:[
   {t:'Inverse agonist or competitive antagonist', correct:true, why:'At a baseline of 0% an inverse agonist has nothing to lower, so it looks exactly like a neutral competitive antagonist; a raised baseline is needed to tell them apart.'},
   {t:'Full agonist or allosteric agonist', correct:false, why:'Both would help the agonist and shift the curve to the left.'},
   {t:'Partial agonist or full agonist', correct:false, why:'A partial agonist has positive efficacy and would change the baseline; a full agonist shifts left.'},
-  {t:'Irreversible antagonist or allosteric antagonist affecting efficacy', correct:false, why:'Both lower the Emax, which is unchanged here.'}],
+  {t:'Irreversible antagonist or allosteric antagonist affecting efficacy', correct:false, why:'An allosteric antagonist affecting efficacy always lowers the Emax, so this pair is out; the irreversible antagonist is only excluded once enough shifts are drawn without a drop (spare receptors can delay it).'}],
  teach:'The system must have receptors in the active state (R = R*) to distinguish a full agonist plus inverse agonist from a full agonist plus competitive antagonist. With the baseline already at 0% both give a right shift with no change in baseline or Emax. Antihistamines were classed as antagonists until cell lines with naturally active receptors showed that they shut activity down.',
  quote:'if I give you that figure in the right, you can’t differentiate between a competitive and an inverse because you’re at 0 and there’s no change. I have to give you something different for you to see a change to occur.',
  cite:'Pharmacodynamics-Day_4_-_5_2026s_pptx.pdf slides ~15, ~22; transcript 9/28'},
@@ -505,7 +506,7 @@ QUESTIONS.push(
  cite:'Pharmacodynamics-Day_4_-_5_2026s_pptx.pdf slides ~3, ~51–~55; transcript 9/28',
  reading:[{src:'Katzung 16e, Ch. 2', sec:'Competitive & Irreversible Antagonists', t:'After an irreversible antagonist occupies some proportion of receptors, the number of unoccupied receptors may be too low for the agonist, even at high concentrations, to produce the previous maximal response.'}]},
 
-{id:'L04-038', fg:'potency', lecture:'L04', prof:'Gottlieb', tier:'new', topic:'L04', sub:'allo', skill:'figure',
+{id:'L04-038', dupOf:'L04-018', fg:'potency', lecture:'L04', prof:'Gottlieb', tier:'new', topic:'L04', sub:'allo', skill:'figure',
  concept:'allosteric-agonist-affinity-only', tags:['poll'], source:'both',
  stem:'If DRC C is the DRC of norepinephrine binding to the β1 receptor alone, which DRC best represents the DRC of norepinephrine in the presence of an allosteric agonist that affects only the affinity?',
  graph:{curves:[{label:'A', ec:1, emax:100}, {label:'B', ec:-1, emax:60}, {label:'C', ec:0, emax:100}, {label:'D', ec:-1, emax:100}], base:0, x:'log dose norepinephrine', y:'% of maximal response'},
@@ -527,7 +528,7 @@ QUESTIONS.push(
   {t:'Loratadine', correct:false, why:'Loratadine is the inverse agonist; alone it brings a raised baseline down to 0%, which is curve B, not C.'},
   {t:'Metoprolol', correct:true, why:'A flat line at the baseline is a drug with affinity but no efficacy: the neutral competitive antagonist. Metoprolol is the competitive antagonist on the list.'},
   {t:'Epinephrine', correct:false, why:'Epinephrine is a full agonist; alone it rises from the baseline to 100%.'},
-  {t:'Albuterol', correct:false, why:'Albuterol is a partial agonist; alone it rises from the 50% baseline toward its own plateau below 100%.'}],
+  {t:'Albuterol', correct:false, why:'Albuterol is a partial agonist; alone it goes up or down from the 50% baseline to its own efficacy. (A partial agonist with exactly 50% efficacy would also sit flat, but with no more information a flat line is read as the competitive antagonist.)'}],
  teach:'Two steps: classify curve C, then match the class to the drug list. A competitive antagonist has equal affinity for active and inactive receptors and does not evoke a change, so alone it leaves the balance where it found it: 50 stays 50. Full and partial agonists go up from the baseline; an inverse agonist goes down to 0%. Metoprolol is the competitive antagonist.',
  quote:'they don’t care what the receptor is, active or inactive, they hang out with both types. They don’t discriminate as such, they don’t change the balance of the receptor activity.',
  cite:'Pharmacodynamics-Day_4_-_5_2026s_pptx.pdf slides ~24, ~43–~44; transcript 9/28',
@@ -583,7 +584,7 @@ QUESTIONS.push(
  graph:{curves:[{label:'NE', ec:0, emax:100, dashed:true}, {label:'X', ec:-0.7, emax:100, base:20}, {label:'10X', ec:-1.4, emax:100, base:45}, {label:'100X', ec:-2.1, emax:100, base:70}], base:0, x:'log dose norepinephrine', y:'% of maximal response'},
  options:[
   {t:'Epinephrine', correct:true, why:'Two full agonists at the same receptor help each other: each dose of epinephrine activates receptors on norepinephrine’s behalf, raising the baseline and shifting the curve left with the same Emax.'},
-  {t:'Albuterol', correct:false, why:'Albuterol is a partial agonist; a partial agonist can only bring the response to its own efficacy, so the curves would not all finish at 100% from wherever they start.'},
+  {t:'Albuterol', correct:false, why:'Albuterol is a partial agonist: it would raise the baseline only to its own efficacy and, competing for the pocket, make norepinephrine’s life harder rather than easier; a baseline climbing toward 100% with a left shift is two full agonists.'},
   {t:'Phenoxybenzamine', correct:false, why:'Phenoxybenzamine is the irreversible antagonist; it would shift the curve right and lower the Emax.'},
   {t:'Metoprolol', correct:false, why:'Metoprolol competes for the receptor and would shift the curve to the right with no change to the baseline.'},
   {t:'Loratadine', correct:false, why:'Loratadine is the inverse agonist; it would shift the curve right and bring the baseline down, not up.'}],
@@ -611,7 +612,7 @@ QUESTIONS.push(
  stem:'The dotted line represents the DRC of the agonist alone and the solid lines represent the DRC of the agonist in the presence of increasing doses of drug "X" (1×, 10× and 100×). Drug X is most likely:',
  graph:{curves:[{label:'alone', ec:0.6, emax:100, dashed:true}, {label:'1×', ec:-0.3, emax:100}, {label:'10×', ec:-1.1, emax:100}, {label:'100×', ec:-1.7, emax:100}], base:0, x:'log dose agonist', y:'% of maximal response'},
  options:[
-  {t:'A full agonist', correct:false, why:'A second full agonist also shifts left, but it has efficacy of its own, so each pretreatment dose would raise the baseline; here the baseline never moves.'},
+  {t:'A full agonist', correct:false, why:'A second full agonist also shifts left, but as an orthosteric drug its shifts would be symmetrical and keep going; here the shifts are unequal and stop growing, which is allosteric.'},
   {t:'A partial agonist', correct:false, why:'A partial agonist has efficacy and would change the baseline.'},
   {t:'A competitive antagonist', correct:false, why:'A competitive antagonist makes the agonist less potent: shift to the right, in equal (symmetrical) steps.'},
   {t:'An allosteric agonist', correct:true, why:'Shift to the left with the same Emax, shifts of unequal size that stop growing at high doses (saturable) and no change to the baseline: the drug binds someplace else and only raises the agonist’s affinity.'},
@@ -659,8 +660,8 @@ QUESTIONS.push(
  cite:'Pharmacodynamics-Day_4_-_5_2026s_pptx.pdf slides ~36, ~38–~41; transcript 9/28',
  reading:[{src:'Katzung 16e, Ch. 2', sec:'Competitive & Irreversible Antagonists', t:'Once a receptor is bound by a noncompetitive antagonist, agonists cannot surmount the inhibition; some noncompetitive antagonists bind irreversibly, others bind reversibly at a separate allosteric site.'}]},
 
-{id:'L04-049', fg:'spare', lecture:'L04', prof:'Gottlieb', tier:'new', topic:'L04', sub:'irrev', skill:'apply',
- concept:'spare-receptors-irreversible', tags:['poll'], source:'transcript',
+{id:'L04-049', dupOf:'L04-034', fg:'spare', lecture:'L04', prof:'Gottlieb', tier:'new', topic:'L04', sub:'irrev', skill:'apply',
+ concept:'spare-receptors-irreversible', tags:[], source:'transcript',
  stem:'An agonist has to occupy 10% of a tissue’s receptors to produce its maximal response. A dose of an irreversible antagonist that blocks 75% of the receptors is given. What effect would that have on the Emax of the agonist?',
  options:[
   {t:'Would lower it', correct:false, why:'Emax only falls once fewer receptors remain than the agonist needs; 25% are still available and the agonist needs 10%.'},

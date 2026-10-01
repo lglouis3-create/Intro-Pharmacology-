@@ -16,6 +16,8 @@ const COURSE = {
     {id:'L03', deck:'Pharmacodynamics-Day_3_2026s.pdf', label:'Day 3 (9/24): Dose–response curves', prof:'Gottlieb', exam:1, module:1},
     {id:'L04', deck:'Pharmacodynamics-Day_4_-_5_2026s_pptx.pdf', label:'Day 4 (9/28): Drug–receptor interactions I', prof:'Gottlieb', exam:1, module:1},
     {id:'L05', deck:'Pharmacodynamics-Day_4_-_5_2026s_pptx Part 2.pdf', label:'Day 5 (9/29): Spare receptors, indirect antagonists, receptor regulation, quantal responses, therapeutic index', prof:'Gottlieb', exam:1, module:1},
+    {id:'L06', deck:'Pharmacodynamics reviews.pdf', decks:['Pharmacodynamics reviews.pdf', 'Pharmacodynamics-Day_4_&_5_2026s_Part 3.pdf'], label:'Day 6 (9/30): Desired vs undesired effects, therapeutic efficacy, the PD review (how to read a curve question)', prof:'Gottlieb', exam:1, module:1},
+    {id:'JP', deck:'Jeopardy 9/30', label:'Jeopardy (9/30): his review-game questions, verbatim, with his keys', prof:'Gottlieb', exam:1, module:1},
     {id:'PE', deck:'PollEV_s.pdf', label:'PollEV questions (his polls, verbatim, with his keys)', prof:'Gottlieb', exam:1, module:1},
     {id:'DL1', deck:'Exam_1_Drug_List_2026.pdf', label:'Exam 1 drug list', prof:'Gottlieb', exam:1, module:1}
   ],

@@ -1,4 +1,4 @@
-/* Exam 1 glossary — PHAR 4344, Dr. Gottlieb, Days 1–3 (9/22–9/24).
+/* Exam 1 glossary — PHAR 4344, Dr. Gottlieb, Days 1–5 (9/22–9/29).
    Definitions come from the lecture decks and transcripts (slide wording first;
    his spoken wording in hook/quote where the two differ). Slide numbers marked ~
    were counted from the deck text and may be off by one or two.
@@ -10,7 +10,7 @@ const TERMS = [
 
 /* ---------------- Drug basics ---------------- */
 {id:'pharmacology', term:'Pharmacology', lecture:'L01', group:'Drug basics',
- def:'The study of the interaction of drugs with biological systems: which drug, what it does and where, and how much (the smallest dose that gives the desired effect). It determines mechanisms of action, dose–response relationships, therapeutic dose, potency, minimal and maximal effect, and safety.',
+ def:'The whole field (pharmacokinetics plus pharmacodynamics): the study of the interaction of drugs with biological systems: which drug, what it does and where, and how much (the smallest dose that gives the desired effect). It determines mechanisms of action, dose–response relationships, therapeutic dose, potency, minimal and maximal effect, and safety.',
  hook:'The pharmacology diagram splits it in two: pharmacokinetics (absorption, distribution, metabolism, excretion) and pharmacodynamics (drug–receptor signaling that gives the physiological response).',
  confuse:['pharmacodynamics','pharmacokinetics'],
  quote:'Pharmacology: “the study of the interaction of “Drugs” with biological systems” ... Which, What, & Where? How much? Smallest dose => Desired effect?',
@@ -109,16 +109,16 @@ const TERMS = [
  src:'both'},
 
 {id:'intrinsic-activity', term:'Intrinsic activity', lecture:'L03', group:'Drug–receptor binding',
- def:'Ariëns’ number for the ability of a drug to produce a response, dependent on its chemical structure: full agonist = 1, partial agonist between 0 and 1, antagonist = 0.',
+ def:'A number for the ability of a drug to produce a response: full agonist = 1, partial agonist between 0 and 1, antagonist = 0. It does not count the tissue (how many receptors are present), so efficacy is the term used instead.',
  hook:'It does not account for the tissue (how many receptors are present), so it is incomplete; efficacy is the more comprehensive term. The names and the formula are not tested.',
- confuse:['efficacy','occupancy-theory'],
+ confuse:['efficacy'],
  quote:'What he did not count was for the tissue, how many receptors are present in that system. So this is an incomplete theory that we can’t really use much',
  cite:'Pharmacodynamics-Day_3_2026s.pdf slides ~24–~26; Pharmacodynamics-Day-1-2026s.pdf slide ~28; transcript 9/22; transcript 9/24',
  src:'both'},
 
 {id:'kd', term:'Kd (dissociation constant)', lecture:'L02', group:'Drug–receptor binding',
- def:'The coefficient of dissociation (also written Ki, Ka): the drug concentration that binds 50% of the available binding sites. From the law of mass action, Kd = [D][R]/[DR] = K2/K1 (rate of dissociation over rate of association). The smaller the Kd, the greater the affinity: they are inversely proportional.',
- hook:'Kd is read on the x-axis of a binding curve and says nothing about effect; EC50 is 50% of the response. Compare Kd values only after converting units (milli 10^-3, micro 10^-6, nano 10^-9): “the units ... about 10% of you are gonna miss it.”',
+ def:'The drug concentration that binds 50% of the available binding sites (also written Ki, Ka). From the law of mass action it equals K2/K1, the rate of dissociation over the rate of association. The smaller it is, the greater the affinity: inversely proportional.',
+ hook:'Read on the x-axis of a binding curve; it says nothing about effect. Convert units before comparing (milli 10^-3, micro 10^-6, nano 10^-9): “the units ... about 10% of you are gonna miss it.”',
  confuse:['ec50','affinity','mass-action'],
  fig:'binding-kd',
  quote:'So the take-home message is that the smaller the coefficient of dissociation is, the more drugs receptors are going to find together, and thus the greater the affinity is going to be.',
@@ -137,13 +137,13 @@ const TERMS = [
 {id:'mass-action', term:'Law of mass action', lecture:'L02', group:'Drug–receptor binding',
  def:'The rate of a chemical reaction is proportional to the concentration (mass) of the reactants: the more drug or the more receptors present, the greater the chance of binding. It is the basis of Kd and of dose responsiveness.',
  hook:'More receptors in a tissue make the same dose of norepinephrine appear more potent (curve shifts left) while its Kd, affinity and efficacy are unchanged; what changed is the tissue.',
- confuse:['kd','occupancy-theory'],
+ confuse:['kd'],
  quote:'The more I have either of the receptors or the more I have either the drug, the greater the capacity of binding to something is going to be, right?',
  cite:'Pharmacodynamics-Day_2_2026s copy.pdf slide ~45; transcript 9/24',
  src:'both'},
 
 {id:'covalent-bond', term:'Covalent (irreversible) bond', lecture:'L02', group:'Drug–receptor binding',
- def:'Two atoms share a pair of electrons; the bond is irreversible at body temperature and gives a long duration of action. Covalent binding is called irreversible, insurmountable or non-competitive, three names for one property; ionic, hydrogen and van der Waals bonds are reversible, surmountable, competitive.',
+ def:'Two atoms share a pair of electrons; the bond cannot be broken at body temperature and gives a long duration of action. Drugs that bind this way are called irreversible, insurmountable or non-competitive, three names for one property; ionic, hydrogen and van der Waals bonds are reversible, surmountable, competitive.',
  hook:'Aspirin, omeprazole and phenoxybenzamine form covalent bonds; a covalent binder has the highest affinity and the smallest Kd. Weak-bond drugs must fit the pocket like a hand in a glove, which is where selectivity comes from.',
  confuse:['irreversible-antagonist','affinity'],
  quote:'They can be classified as irreversible, insurmountable, and non-competitive, which means is They all mean the same thing ... What does that mean? Once they are bound, they’re not coming off, OK?',
@@ -151,7 +151,7 @@ const TERMS = [
  src:'both'},
 
 {id:'orthosteric', term:'Orthosteric site', lecture:'L02', group:'Drug–receptor binding',
- def:'The receptor’s own binding pocket, where the endogenous agonist binds. Orthosteric drugs (phenylephrine, prazosin, phenoxybenzamine at α1) compete for that one pocket, so only one can be bound at a time: either one or the other, not both.',
+ def:'The receptor’s own binding pocket, where the endogenous agonist binds. Drugs that bind there (phenylephrine, prazosin, phenoxybenzamine at α1) compete for that one pocket, so only one can be bound at a time: either one or the other, not both.',
  hook:'Orthosteric: one or the other. Allosteric: one and the other. Spoken as “orthostatic” in the transcripts; the slide term is orthosteric.',
  confuse:['allosteric'],
  fig:'sites',
@@ -160,7 +160,7 @@ const TERMS = [
  src:'both'},
 
 {id:'allosteric', term:'Allosteric site / modulator', lecture:'L02', group:'Drug–receptor binding',
- def:'A different (allotopic) binding site on the receptor. An allosteric drug binds there and can increase or decrease the affinity and/or efficacy of another drug for the receptor, or have no effect; it does not compete for the orthosteric pocket, so both drugs can be bound at once.',
+ def:'A different (allotopic) binding site on the receptor. A drug binding there can increase or decrease the affinity and/or efficacy of another drug for the receptor, or have no effect; it does not compete for the orthosteric pocket, so both drugs can be bound at once.',
  hook:'“Where the magic in pharmacology is”: they don’t always do things by themselves but make other drugs much better or much worse. Poll traps: allosteric agonists do not compete for the orthosteric pocket and do not have the highest affinity for it.',
  confuse:['orthosteric','indirect-antagonist','allosteric-agonist'],
  fig:'classes',
@@ -168,18 +168,11 @@ const TERMS = [
  cite:'Pharmacodynamics-Day_2_2026s copy.pdf slides ~19–~20, ~39, ~44; Pharmacodynamics-Day-1-2026s.pdf slide ~29; transcript 9/22; transcript 9/23',
  src:'both'},
 
-{id:'occupancy-theory', term:'Receptor occupancy theory', lecture:'L01', group:'Drug–receptor binding',
- def:'Clark’s first theory of how drugs work: the response is proportional to the number of receptors occupied, so it rests on affinity alone (D + R ⇄ DR → stimulus). A full agonist occupies all receptors for 100% of the response; a partial agonist occupies a fraction (e.g., 70%) and gives that fraction.',
- hook:'It could not explain antagonists or inverse agonists. Ariëns added intrinsic activity; Stephenson, Furchgott and Nickerson added efficacy and the two-state model. The names are FYI, not tested.',
- confuse:['intrinsic-activity','two-state','mass-action'],
- quote:'a full agonist will produce 100% of the response as a partial may produce a 70% of the response because it can only occupy 70% of the receptors, right? So it’s based on occupancy.',
- cite:'Pharmacodynamics-Day-1-2026s.pdf slide ~28; transcript 9/22',
- src:'both'},
 
 {id:'two-state', term:'Two-state model', lecture:'L03', group:'Drug–receptor binding',
  def:'Receptors exist in two states, inactive/resting (R) and active (R*), and move between them on their own; L is the equilibrium constant between [R] and [R*]. Drugs have affinity for R and/or R* (Kd and Kd*) and shift the balance: toward R* is positive efficacy, toward R is negative efficacy.',
  hook:'“This is gonna be home for us.” It explains inverse agonists, which occupancy theory could not. Most receptors sit in the inactive state to save energy.',
- confuse:['occupancy-theory','intrinsic-activity'],
+ confuse:['intrinsic-activity'],
  fig:'two-state',
  quote:'So this two-state model shows that we have receptor two confirmations, active and inactive, and that drugs can shift them once bound to the receptor from one confirmation to the other.',
  cite:'Pharmacodynamics-Day_3_2026s.pdf slide ~31; Pharmacodynamics-Day-1-2026s.pdf slide ~28; transcript 9/22; transcript 9/23',
@@ -214,17 +207,17 @@ const TERMS = [
  src:'both'},
 
 {id:'neutral-antagonist', term:'Antagonist (neutral, reversible)', lecture:'L02', group:'Drug classes',
- def:'A drug with no efficacy (ε = zero) and equal affinity for receptors in the active and inactive state: it occupies the receptor and keeps agonists from binding but does not change the receptor’s state. All about affinity. Examples: prazosin (α1), metoprolol (β1).',
+ def:'The two-state description of the competitive antagonist: no efficacy (ε = zero) and equal affinity for receptors in the active and inactive state, so it occupies the receptor and keeps agonists from binding but does not change the balance of receptor states. Examples: prazosin (α1), metoprolol (β1).',
  hook:'“Just a straight line”: an antagonist does not change the balance of receptors; an inverse agonist wants to keep everybody inactive. Intrinsic activity of an antagonist is zero.',
- confuse:['inverse-agonist','competitive-antagonist','partial-agonist'],
+ confuse:['inverse-agonist','partial-agonist'],
  fig:'classes',
  quote:'Antagonists, they’re neutral. Like they don’t care if the receptor is active or inactive, they have equal affinity for both receptor states.',
  cite:'Pharmacodynamics-Day_2_2026s copy.pdf slides ~37–~38; transcript 9/23; transcript 9/24',
  src:'both'},
 
 {id:'competitive-antagonist', term:'Competitive (reversible) antagonist', lecture:'L02', group:'Drug classes',
- def:'An antagonist held by reversible bonds (ionic, hydrogen, van der Waals): reversible, surmountable and competitive are three names for the same property. It competes with the agonist for the orthosteric pocket, binds and comes off, and can be outcompeted by agonist. Example: prazosin at α1.',
- hook:'Every drug on the Exam 1 drug list is reversible and competitive except phenoxybenzamine (drug-list PDF). The rightward-shift curve is Day 4 material (deck preview slide ~68).',
+ def:'An antagonist held by ionic, hydrogen or van der Waals bonds: it competes with the agonist for the orthosteric pocket, binds and comes off, and can be outcompeted by more agonist (the agonist still reaches its Emax). Example: prazosin at α1.',
+ hook:'Every drug on the Exam 1 drug list is reversible and competitive except phenoxybenzamine. On the curve: shift to the right, symmetrical shifts toward infinity, no change to the baseline, no change to the Emax, because they bind and they come off.',
  confuse:['irreversible-antagonist','neutral-antagonist','indirect-antagonist'],
  fig:'classes',
  quote:'when we think about uh ionic bonds, hydrogen bonds, [van der Waals] bonds, those are going to be reversible, surmountable, competitive. Different words ... they’re gonna bind and they’re gonna come off.',
@@ -232,8 +225,8 @@ const TERMS = [
  src:'both'},
 
 {id:'irreversible-antagonist', term:'Irreversible (non-competitive) antagonist', lecture:'L02', group:'Drug classes',
- def:'An antagonist that binds by a covalent bond, so once bound it does not come off at body temperature: irreversible, insurmountable, non-competitive. It has the highest affinity (smallest Kd) of the drug classes. Example: phenoxybenzamine (α1 and α2).',
- hook:'Once phenoxybenzamine is bound the receptor has to be internalized and recycled and the body must make new ones. Poll: phenoxybenzamine has higher affinity than prazosin. The reduced-Emax curve is Day 4 material (deck preview slide ~68).',
+ def:'An antagonist that binds by a covalent bond, so once bound it does not come off at body temperature and the agonist cannot outcompete it. It has the highest affinity (smallest Kd). Example: phenoxybenzamine (α1 and α2).',
+ hook:'Once phenoxybenzamine is bound the receptor has to be internalized and recycled and the body must make new ones. Poll: phenoxybenzamine has higher affinity than prazosin. On the curve: shift right, no change to the baseline, Emax down, all the way to 0 (can abolish the DRC); spare receptors delay the drop.',
  confuse:['competitive-antagonist','covalent-bond','inverse-agonist'],
  fig:'classes',
  quote:'This is an irreversible antagonist, non-competitive, insurmountable. So what kind of bo[n]ds does it form? Covalent.',
@@ -245,7 +238,7 @@ const TERMS = [
  hook:'It can raise the response (caffeine on PDE raises cAMP; a norepinephrine transporter blocker makes norepinephrine appear more potent) or lower it (RAS blocker stops cell growth). It is not allosteric: it never touches the receptor.',
  confuse:['allosteric','competitive-antagonist'],
  quote:'So, remember that indirect antagonists can work downstream from the receptor, but also upstream from the receptor, OK?',
- cite:'Pharmacodynamics-Day_2_2026s copy.pdf slides ~40–~41; transcript 9/23; transcript 9/24',
+ cite:'Pharmacodynamics-Day_2_2026s copy.pdf slides ~40–~41; Pharmacodynamics-Day_4_-_5_2026s_pptx Part 2.pdf pages 4–13; transcript 9/23; transcript 9/24; transcript 9/29',
  src:'both'},
 
 {id:'allosteric-agonist', fig:'classes', term:'Allosteric agonist (PAM)', lecture:'L02', group:'Drug classes',
@@ -257,17 +250,18 @@ const TERMS = [
  cite:'Pharmacodynamics-Day_2_2026s copy.pdf slides ~21–~24, ~42; transcript 9/23',
  src:'both'},
 
-{id:'allosteric-antagonist', fig:'classes', term:'Allosteric antagonist', lecture:'L02', group:'Drug classes',
+{id:'allosteric-antagonist', fig:'classes', term:'Allosteric antagonist (NAM)', lecture:'L02', group:'Drug classes',
  def:'Binds at a different site on the receptor and decreases the affinity and/or efficacy of another drug for the receptor.',
- hook:'It does not compete for the orthosteric pocket; a competitive antagonist does. “As far as I know, all allosteric agonists and antagonists are reversible.”',
+ hook:'Literature name: negative allosteric modulator (NAM); the allosteric agonist is the PAM. It does not compete for the orthosteric pocket; a competitive antagonist does. “As far as I know, all allosteric agonists and antagonists are reversible.”',
  confuse:['allosteric-agonist','competitive-antagonist','indirect-antagonist'],
  fig:'classes',
+ quote:'Allosteric Antagonist: Binds at a different binding site in the receptor; Can decrease the affinity and/or efficacy of another drug for the receptor',
  cite:'Pharmacodynamics-Day_2_2026s copy.pdf slide ~43; transcript 9/23',
  src:'both'},
 
 /* ---------------- Dose–response curves ---------------- */
 {id:'drc', term:'Dose–response curve (DRC / CRC)', lecture:'L03', group:'Dose–response curves',
- def:'A graph relating drug dose (DRC) or concentration (CRC) on the x-axis (independent variable, log units, sigmoid curve) to the intensity of effect on the y-axis (dependent variable, normalized as % of maximum response). It is the model used to predict and compare drugs and determine potency.',
+ def:'A graph relating drug dose or concentration on the x-axis (independent variable, log units, sigmoid curve) to the intensity of effect on the y-axis (dependent variable, normalized as % of maximum response). It is the model used to predict and compare drugs and determine potency.',
  hook:'DRC: increasing individual doses in vivo (ADME, apparent potency). CRC: increasing concentration in vitro (molar, pharmacological potency). Affinity is on the x-axis, efficacy on the y-axis, potency a combination of the two.',
  confuse:['binding-curve','graded-response'],
  fig:'drc-basic',
@@ -293,7 +287,7 @@ const TERMS = [
  src:'both'},
 
 {id:'emax', term:'Emax (maximal response, ceiling)', lecture:'L03', group:'Dose–response curves',
- def:'The plateau of the dose–response curve (ceiling of effect), reached either because all receptors are occupied or because the physiological system has maxed out. The height of Emax reflects efficacy.',
+ def:'The plateau of the dose–response curve (ceiling of effect), reached either because all receptors are occupied or because the physiological system has maxed out. Its height reflects efficacy.',
  hook:'Giving more drug past the ceiling does no more good. Curves with equal Emax differ by affinity; when EC50 is equal, greater efficacy makes the drug more potent (Relative Efficacy slide).',
  confuse:['ec50','efficacy','threshold'],
  fig:'drc-basic',
@@ -310,7 +304,7 @@ const TERMS = [
  src:'both'},
 
 {id:'ec50', term:'EC50 / ED50', lecture:'L03', group:'Dose–response curves',
- def:'EC50: the effective concentration that produces 50% of a drug’s maximal response (in vitro). ED50: the effective dose that produces 50% of the response (in vivo). It is the indicator of potency: the smaller the EC50/ED50, the greater the potency (inversely proportional).',
+ def:'The effective concentration (in vitro) or effective dose (in vivo) that produces 50% of a drug’s maximal response: the indicator of potency. The smaller it is, the greater the potency (inversely proportional).',
  hook:'Kd is the concentration binding 50% of receptors (affinity, no effect); EC50 is 50% of the response (potency). Both are read on the x-axis. “Philosophically identical”: one is a dose, the other a concentration.',
  confuse:['kd','emax','potency'],
  fig:'drc-basic',
@@ -319,7 +313,7 @@ const TERMS = [
  src:'both'},
 
 {id:'potency', term:'Potency (pharmacological)', lecture:'L03', group:'Dose–response curves',
- def:'Potency = EC50 or ED50: how much drug is needed for a given response, read on the x-axis (further left = more potent). It is a combination of affinity, efficacy and the tissue (cell/tissue/organ/organism, e.g., number of receptors); the Day 1 slide lists tissue sensitivity, receptor number, receptor activity, affinity and efficacy.',
+ def:'How much drug is needed for a given response, measured by the EC50 or ED50 and read on the x-axis (further left = more potent). It is a combination of affinity, efficacy and the tissue (number of receptors).',
  hook:'Potency ≠ efficacy: the most potent drug (smallest EC50) can be a partial agonist; the most efficacious has the highest Emax. “Affinity is gonna be on the bottom, efficacy is gonna be on the Y axis, and potency is gonna be a combination of the two.”',
  confuse:['efficacy','affinity','apparent-potency'],
  fig:'potency',
@@ -328,7 +322,7 @@ const TERMS = [
  src:'both'},
 
 {id:'apparent-potency', term:'Apparent potency', lecture:'L01', group:'Dose–response curves',
- def:'The potency seen in vivo, where pharmacokinetics (age, absorption, distribution, elimination, drug–drug interactions) determines how much drug reaches the site of action. It is “apparent” because it is not the total concentration of the drug that acts; a DRC built in vivo (ED50) shows apparent potency.',
+ def:'The potency seen in vivo, where pharmacokinetics (age, absorption, distribution, elimination, drug–drug interactions) determines how much drug reaches the site of action; it is not the total concentration of the drug that acts. A DRC built in vivo (ED50) shows it.',
  hook:'Route of administration and first-pass metabolism change apparent potency (IV has 100% bioavailability); they do not change the drug’s affinity or efficacy, which set pharmacological potency.',
  confuse:['potency','pharmacokinetics'],
  quote:'So this is going to give us our apparent potency. Why is apparent? ... It’s only appearing because it’s not the total concentration of the drug.',
@@ -363,7 +357,7 @@ const TERMS = [
  src:'both'},
 
 {id:'effector', term:'Effector (signal amplifier)', lecture:'L02', group:'Receptors and signaling',
- def:'An enzyme, ion channel or transport protein that creates, moves or degrades a small molecule or ions, e.g., adenylate cyclase (AC), phospholipase C (PLC). It amplifies the signal; frequently the proximal effector protein is not the ultimate physiological target.',
+ def:'An enzyme, ion channel or transport protein that creates, moves or degrades a small molecule or ions, e.g., adenylate cyclase (AC), phospholipase C (PLC). It amplifies the signal (his “factor system”) and is frequently not the ultimate physiological target.',
  hook:'Poll trap: “phospholipase C is an example of a second messenger” — no, PLC is the effector (his “factor system”); IP3 is its second messenger.',
  confuse:['second-messenger','transducer'],
  fig:'gpcr-steps',
@@ -381,7 +375,7 @@ const TERMS = [
  src:'both'},
 
 {id:'g-protein', term:'G protein (heterotrimeric)', lecture:'L01', group:'Receptors and signaling',
- def:'Heterotrimeric guanine nucleotide binding protein (α, β, γ subunits) coupled to 7-transmembrane receptors, defined and regulated by the α subunit. Cycle: agonist binds, the receptor activates, GDP comes off and GTP comes on, α dissociates and activates the effector (AC or PLC); intrinsic GTPase cleavage of GTP, accelerated by RGS, reverses it.',
+ def:'Heterotrimeric guanine nucleotide binding protein (α, β, γ subunits) coupled to 7-transmembrane receptors, defined and regulated by the α subunit. Cycle: agonist binds, the receptor activates, GDP comes off and GTP comes on, α dissociates and activates the effector (AC or PLC). Reverse: the extra phosphate is removed (GTP → GDP), α reassociates with β/γ and the receptor resets; PDE breaks down the cAMP.',
  hook:'The G protein is the transducer. Poll trap: G proteins are defined by the α subunit, not the β subunit.',
  confuse:['gpcr','transducer','g-alpha'],
  fig:'gpcr-steps',
@@ -390,7 +384,7 @@ const TERMS = [
  src:'both'},
 
 {id:'g-alpha', term:'Gαs, Gαi and Gαq', lecture:'L02', group:'Receptors and signaling',
- def:'The three α subunit types to know. Gαs (stimulation) activates adenylate cyclase and increases cAMP (β1 in the heart, ↑HR). Gαi (inhibition) inhibits adenylate cyclase and decreases cAMP (M2 in the heart, ↓HR; α2 in the CNS). Gαq activates phospholipase C, which converts PIP2 to IP3 and releases Ca++ from the ER (α1 in smooth muscle).',
+ def:'The three α subunit types to know: one (stimulation) activates adenylate cyclase and increases cAMP (β1 in the heart, ↑HR); one (inhibition) inhibits adenylate cyclase and decreases cAMP (M2 in the heart, ↓HR; α2 in the CNS); one activates phospholipase C, which converts PIP2 to IP3 and releases Ca++ from the ER (α1 in smooth muscle).',
  hook:'His cue: adenylate cyclase goes with cyclic AMP; αq goes with phospholipase C and IP3. Gαi is the trap: same effector as Gαs, opposite direction.',
  confuse:['g-protein','effector','cross-talk'],
  fig:'gpcr',
@@ -449,7 +443,7 @@ const TERMS = [
  src:'both'},
 
 {id:'constitutive-activity', term:'Constitutive activity', lecture:'L04', group:'Receptors and signaling',
- def:'Receptor activity that is present by itself, without any drug, hormone or neurotransmitter. Receptors that have constitutive activity are more sensitive to inverse agonists; it is what an inverse agonist shuts down.',
+ def:'Receptor activity that is present by itself, without any drug, hormone or neurotransmitter (a baseline above 0%). Receptors that have it are more sensitive to inverse agonists; it is what an inverse agonist shuts down.',
  hook:'Antihistamines were called antagonists until cell lines with naturally active receptors showed that loratadine and cetirizine bring the activity to zero. Listed receptors: histamine, opioid, cannabinoid, dopamine, bradykinin, adenosine.',
  confuse:['inverse-agonist','neutral-antagonist'],
  fig:'inverse',
@@ -474,7 +468,7 @@ const TERMS = [
  src:'both'},
 
 {id:'surmountable', term:'Surmountable / insurmountable', lecture:'L04', group:'Drug classes',
- def:'Surmountable: an antagonist that the agonist can overcome by increasing its concentration, because the antagonist binds and comes off (competitive = reversible = surmountable). Insurmountable: cannot be overcome by increasing the agonist concentration, because the antagonist binds irreversibly (irreversible = insurmountable = nonequilibrium-competitive = non-competitive).',
+ def:'The pair of names for whether an agonist can overcome an antagonist by increasing its concentration: yes when the antagonist binds and comes off (competitive = reversible), no when it binds irreversibly (irreversible = nonequilibrium-competitive = non-competitive).',
  hook:'Different names for the same drug. Surmountable drugs never change the Emax; insurmountable ones lower it.',
  confuse:['competitive-antagonist','irreversible-antagonist'],
  fig:'competitive',
@@ -482,17 +476,9 @@ const TERMS = [
  cite:'Pharmacodynamics-Day_4_-_5_2026s_pptx.pdf slide ~36; transcript 9/28',
  src:'both'},
 
-{id:'nam', term:'Negative allosteric modulator (NAM)', lecture:'L04', group:'Drug classes',
- def:'The literature name for an allosteric antagonist: binds reversibly at another site in the receptor and decreases the agonist’s affinity, efficacy or both. The positive allosteric modulator (PAM) is the allosteric agonist and does the opposite.',
- hook:'If you know what the positive one does, the negative is the opposite: half of the memorization.',
- confuse:['allosteric-antagonist','allosteric-agonist','inverse-agonist'],
- fig:'classes',
- quote:'Allosteric Ligands: Agonist; Positive allosteric modulators (PAMs). Antagonist; Negative allosteric modulators (NAMs)',
- cite:'Pharmacodynamics-Day_4_-_5_2026s_pptx.pdf slide ~37; transcript 9/28',
- src:'both'},
 
 {id:'symmetrical-shift', term:'Symmetrical vs asymmetrical shifts', lecture:'L04', group:'Dose–response curves',
- def:'Symmetrical shifts: successive rightward shifts of equal size produced by increasing doses of an orthosteric competitor (competitive antagonist, inverse agonist, irreversible antagonist), because a tenfold increase in one drug needs a tenfold increase in the other. Asymmetrical shifts: shifts of unequal size produced by allosteric agonists and antagonists, whose binding at the other site does not depend on the agonist.',
+ def:'Equal steps between successive curves come from increasing doses of an orthosteric competitor (competitive antagonist, inverse agonist, irreversible antagonist), because a tenfold increase in one drug needs a tenfold increase in the other; unequal steps come from allosteric agonists and antagonists, whose binding at the other site does not depend on the agonist.',
  hook:'Asymmetrical plus saturable is how an allosteric drug is recognized on a figure.',
  confuse:['saturability','allosteric'],
  fig:'competitive',
@@ -510,15 +496,15 @@ const TERMS = [
 
 {id:'spare-receptors', term:'Spare receptors', lecture:'L04', group:'Receptors and signaling',
  def:'Receptors beyond the fraction an agonist needs to occupy to produce its maximal response: agonists do not have to occupy 100% of the receptors to produce the maximal effect. With spare receptors an irreversible antagonist first only shifts the agonist’s curve to the right; the Emax falls once the receptors left are fewer than the agonist needs.',
- hook:'Worked example: agonist needs 10%; blocking 75% or 85% still allows the max response at a higher dose; below 10% available the Emax drops toward zero. Full treatment deferred to 9/29 (slides 57–59).',
+ hook:'Worked example: agonist needs 10%; blocking 75% or 85% still allows the max response at a higher dose; below 10% available the Emax drops toward zero. Take-home 9/29: the more spare receptors, the more potent the agonist; a tissue with many receptors responds to an irreversible antagonist as if it were competitive at first.',
  confuse:['irreversible-antagonist','emax'],
  fig:'spare',
  quote:'Our agonists don’t have to occupy 100% of the receptors to produce a response. They only have to occupy a certain percentage of those receptors to do so.',
- cite:'transcript 9/28; Pharmacodynamics-Day_4_-_5_2026s_pptx.pdf slides ~54, ~56',
- src:'transcript'},
+ cite:'transcript 9/28; Pharmacodynamics-Day_4_-_5_2026s_pptx.pdf slides ~54, ~56; Pharmacodynamics-Day_4_-_5_2026s_pptx Part 2.pdf pages 1–3; transcript 9/29',
+ src:'both'},
 
 {id:'withdrawal-syndrome', term:'Withdrawal syndrome', lecture:'L04', group:'Drug basics',
- def:'The opposite of what the drug produces, appearing when the drug is stopped: if nicotine relaxes, lowers appetite and raises blood pressure, withdrawal brings irritability, overeating and lower blood pressure. A partial agonist such as varenicline raises the inactive receptors enough to remove the cravings without full activation.',
+ def:'The opposite of what the drug produces, appearing when the drug is stopped: if nicotine relaxes, lowers appetite and raises blood pressure, withdrawal brings irritability, overeating and lower blood pressure. A partial agonist such as varenicline activates enough of the inactive receptors to take the cravings away without the full effect of nicotine.',
  hook:'The reason people cannot stop smoking; the reason a partial agonist is used for smoking cessation.',
  confuse:['partial-agonist'],
  fig:'partial',
@@ -536,7 +522,7 @@ const TERMS = [
  src:'both'},
 
 {id:'down-regulation', term:'Down-regulation / desensitization', lecture:'L05', group:'Receptors and signaling',
- def:'A reduction in the total number of receptors in a cell or tissue over seconds, minutes, hours or days after prolonged exposure to an agonist (too much stimulation). Analogous to an irreversible antagonist: fewer receptors, so the agonist becomes less potent (shift right) and may lose its maximal effect.',
+ def:'The umbrella for what the cell does after prolonged exposure to an agonist (too much stimulation): rapid desensitization, then a reduction in the total number of receptors. Analogous to an irreversible antagonist: fewer receptors, so the agonist becomes less potent (shift right) and may lose its maximal effect.',
  hook:'Clinical manifestations: tolerance (opioids, Afrin-type nasal decongestants, cocaine) and myasthenia gravis. Shut off a Levophed drip and the pressure tanks.',
  confuse:['up-regulation','irreversible-antagonist','tolerance'],
  fig:'regulation',
@@ -571,7 +557,7 @@ const TERMS = [
  src:'both'},
 
 {id:'reuptake-inhibitor', term:'Reuptake inhibitor (SSRI / SNRI)', lecture:'L05', group:'Drug classes',
- def:'An indirect antagonist that blocks the transporter returning a neurotransmitter to the neuron (fluoxetine/Prozac at SERT; duloxetine/Cymbalta at the serotonin and norepinephrine transporters). More neurotransmitter stays in the synapse, so it appears more potent: its curve shifts left with the same Emax.',
+ def:'An indirect antagonist that blocks the transporter returning a neurotransmitter to the neuron (fluoxetine at SERT; duloxetine at the serotonin and norepinephrine transporters). More neurotransmitter stays in the synapse, so it appears more potent: its curve shifts left with the same Emax.',
  hook:'Same principle, different target as physostigmine (enzyme blocker). Cocaine blocks norepinephrine reuptake the same way and leads to down-regulation.',
  confuse:['indirect-antagonist','allosteric-agonist'],
  fig:'ind-ssri',
@@ -621,7 +607,7 @@ const TERMS = [
  src:'both'},
 
 {id:'ed50-population', term:'ED50 / LD50 (population)', lecture:'L05', group:'Dose–response curves',
- def:'On a cumulative quantal curve, the ED50 is the dose of the drug that protects (treats) 50% of the population and the LD50 the dose that kills 50% of the population. The lethal curve lies to the right of the effective curve; their ratio is the therapeutic index.',
+ def:'On a cumulative quantal curve, the dose of the drug that protects (treats) 50% of the population and the dose that kills 50% of the population. The lethal curve lies to the right of the effective curve; their ratio is the therapeutic index.',
  hook:'Acetaminophen headache study: ED50 ≈ 325 mg, the regular-strength tablet; > 4000 mg/day is liver toxicity. LD50 comes from animals or from overdoses after marketing (warfarin).',
  confuse:['ec50','therapeutic-index'],
  quote:'Dose of the drug that protects 50% of the population (ED50) ... Dose of the drug that kills 50% of the population (LD50)',
@@ -629,7 +615,7 @@ const TERMS = [
  src:'both'},
 
 {id:'therapeutic-index', term:'Therapeutic index (TI)', lecture:'L05', group:'Dose–response curves',
- def:'An estimate of a drug’s margin of safety from quantal data: the ratio of the toxic (lethal or sub-lethal) effect to the therapeutic effect, TI = LD50/ED50. A statement of how selective a drug is in producing a desired effect. The larger the ratio, the safer the drug.',
+ def:'An estimate of a drug’s margin of safety from quantal data: the ratio of the toxic (lethal or sub-lethal) effect to the therapeutic effect, LD50/ED50. A statement of how selective a drug is in producing a desired effect. The larger the ratio, the safer the drug.',
  hook:'Phenobarbital 40/4 = 10, alprazolam 2500; figure 160/10 = 16; hypnosis/death 400/100 = 4. Codeine has a huge TI for cough and a tiny one for pain: it is per effect measured. Distractors invert the ratio.',
  confuse:['safety-index','therapeutic-window'],
  quote:'The larger the ratio the safer the drug',
@@ -637,7 +623,7 @@ const TERMS = [
  src:'both'},
 
 {id:'safety-index', term:'Safety index (safety ratio)', lecture:'L05', group:'Dose–response curves',
- def:'SI = LD1/ED99: the dose that kills 1% of patients divided by the dose that treats 99%. For a drug to be safe the ED99 should be less than the LD1; the bigger the SI, the safer. A large TI (1000) can hide an SI of 0.1: 99 of 100 patients sleep and one dies.',
+ def:'The dose that kills 1% of patients divided by the dose that treats 99% (LD1/ED99). For a drug to be safe the ED99 should be less than the LD1; the bigger the ratio, the safer. A large TI (1000) can hide a value of 0.1: 99 of 100 patients sleep and one dies.',
  hook:'Example: ED99 = 10, LD1 = 1 → SI = 1/10 = 0.1, not a safe drug even with TI = 100/0.1 = 1000.',
  confuse:['therapeutic-index','therapeutic-window'],
  quote:'For a drug to be safe the ED99 should be less than the LD1',

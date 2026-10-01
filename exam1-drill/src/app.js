@@ -560,6 +560,21 @@ function vTell() {
 }
 /* Static pages carry figure markers: <!--FIG:key-->, <!--IMG:key--> (one of his
    poll figures) and <!--GRAPH:{json}--> (a drawn dose–response plot). */
+/* Step-through figures: buttons under a figure move between its data-step groups. */
+let ANIM_TIMER = null;
+document.addEventListener('click', e => {
+  const b = e.target.closest('[data-anim] button'); if (!b) return;
+  const fig = b.closest('figure'); const steps = [...fig.querySelectorAll('.st')]; if (!steps.length) return;
+  const cur = steps.findIndex(s => s.classList.contains('on'));
+  const show = i => steps.forEach((s, j) => s.classList.toggle('on', j === i));
+  if (b.dataset.go === 'play') {
+    if (ANIM_TIMER) { clearInterval(ANIM_TIMER); ANIM_TIMER = null; b.textContent = 'Play'; return; }
+    b.textContent = 'Pause'; let i = cur;
+    ANIM_TIMER = setInterval(() => { if (!document.body.contains(fig)) { clearInterval(ANIM_TIMER); ANIM_TIMER = null; return; } i = (i + 1) % steps.length; show(i); if (i === steps.length - 1) { clearInterval(ANIM_TIMER); ANIM_TIMER = null; b.textContent = 'Play'; } }, 1800);
+    return;
+  }
+  show((cur + (+b.dataset.go) + steps.length) % steps.length);
+});
 function expandFigs(html) {
   return html
     .replace(/<!--FIG:([\w-]+)-->/g, (m, k) => FIG(k))

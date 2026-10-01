@@ -37,7 +37,7 @@ QUESTIONS.push(
   {t:'None of the above', correct:false, why:'He does not treat the choice as irrelevant; he argues for efficacy and closes with "99% of you agree with me".'}],
  teach:'Efficacy. If two drugs have equal efficacy, pick the safer one; but a drug that does not work wastes the patient’s health and money. For a fatal disease he takes the efficacious drug that may harm the liver over the safe drug that does nothing. The fungal-pneumonia poll is the same idea.',
  quote:'if your patient is not going to survive, why is the matter that the drug is safe? ... Perhaps if I’m your patient, please choose the most efficacious drug.',
- note:'In the PollEV file the green highlight on this card marks a student response (Safety), not the key. The transcript gives his answer: efficacy, and he closes the poll with "at least 99% of you agree with me". Keyed to the transcript.',
+ note:'In the PollEV file the green highlight on this card is the student’s response (Efficacy); the key comes from the transcript, which gives the same answer: efficacy, and he closes the poll with "at least 99% of you agree with me".',
  cite:'PollEV_s.pdf page 1; transcript 9/22'},
 {id:'PE-004', lecture:'PE', prof:'Gottlieb', tier:'new', topic:'PE', sub:'verbatim', skill:'apply',
  concept:'safety-vs-efficacy', dupOf:'L01-017', tags:['poll','pollev','efficacy'], source:'both',
@@ -392,7 +392,7 @@ QUESTIONS.push(
   {t:'D', correct:false, why:'D has the lowest efficacy (y-axis), but E lies further right on the x-axis; lowest efficacy is not lowest affinity.'},
   {t:'E', correct:true, why:'E is furthest to the right: it needs the largest dose for an equivalent effect, so it has the largest Kd and the lowest affinity.'}],
  teach:'Affinity is read on the x-axis. The farther left, the more affinity; the farther right, the more drug is required just to bind enough receptors, so the lowest affinity is the curve furthest right, E. D has the lowest efficacy, which is the y-axis reading.',
- quote:'So the farther to the left you are, the more affinity I’m going to have. The farther the right I am, so drug C has the lowest affinity, does require even more drug just to bind enough receptors and stay bound.',
+ quote:'is A the right answer? Because it has the lowest affinity [highest], the smallest KD is gonna be further to the left. ... Which has the lowest affinity?',
  cite:'PollEV_s.pdf page 2; transcript 9/24'},
 
 {id:'PE-031', lecture:'PE', prof:'Gottlieb', tier:'new', topic:'PE', sub:'variant', skill:'figure',
@@ -533,8 +533,8 @@ QUESTIONS.push(
   {t:'D', correct:false, why:'D reaches 100%, only at a higher concentration; the least potent full agonist, not a partial one.'},
   {t:'E', correct:true, why:'E plateaus at about 75%; a partial agonist with the lowest affinity.'}],
  teach:'A partial agonist has positive efficacy somewhere between 1% and 99% of the system’s maximum. Read the plateau, not the position: C and E stop at about 75%, so both are partial agonists; A, B and D all reach 100% and are full agonists, D simply the least potent of them.',
- quote:'All those are partial agonists because they are above 1 and they less than 99, right? So for your exam, if this is a select hall. You pick it all',
- cite:'PollEV_s.pdf pages 2–3; transcript 9/28'},
+ quote:'Which of these drugs is the full agonist? B, which you are partial. A, C, D, and E. If you can’t get your 100%, you’re not a full agonist, right?',
+ cite:'PollEV_s.pdf pages 2–3; transcript 9/24, 9/28'},
 
 /* Figure 1 (page 3): 50% baseline */
 {id:'PE-041', lecture:'PE', prof:'Gottlieb', tier:'new', topic:'PE', sub:'variant', skill:'figure',
@@ -851,7 +851,7 @@ QUESTIONS.push(
   {t:'Decreasing the number of receptors may lead to decrease in the potency of an agonist', correct:true, why:'Fewer receptors means more agonist is needed to bind the same number, so its potency falls (shift to the right). 100% of the class chose D and he confirmed it.'}],
  teach:'More receptors, better for the agonist; fewer receptors, better for the antagonist. Down-regulation lowers the number of receptors, so the agonist needs a higher dose for the same effect and loses potency. The body down-regulates after too much agonist activation and up-regulates after chronic antagonist. Relocating receptors into the cell is the long-term process; indirect antagonists work upstream or downstream of the receptor.',
  quote:'100% says D as in David. Is that correct? Yes. Why is A incorrect? If you want to get exposed to too much activation by an agonist, the body is going up regulate, uh uh, down regulate, right? Do the opposite. Short term regulation of receptors involve in a relocation inside of the cell, uh uh, that’s. Long term, right, chronic the indirect antagonists are allosteric drugs that binds at another site within the receptor, right? They bind upstream or downstream from the receptor',
- note:'In the PollEV file the green highlight marks the student’s response; the transcript confirms the same answer (D). His handwritten "it will down-regulate" and "long term" are the student’s notes on why A and B are wrong.',
+ note:'In the PollEV file the green highlight marks the student’s response; the transcript confirms the same answer (D). The handwritten "it will down-regulate" and "long term" on the card are the student’s notes on why A and B are wrong.',
  cite:'PollEV_s.pdf page 5; transcript 9/29'},
 
 {id:'PE-064', dupOf:'L05-019', lecture:'PE', prof:'Gottlieb', tier:'new', topic:'PE', sub:'verbatim', skill:'recall',
@@ -918,7 +918,8 @@ QUESTIONS.push(
   {t:'C', correct:false, why:'C reaches the highest response of the four; it is the least potent, not the least efficacious.'},
   {t:'D', correct:true, why:'D plateaus lowest on the y-axis, so it produces the smallest maximal response.'}],
  teach:'Efficacy is read on the y-axis as the height of the plateau. D levels off lowest, so it is the least efficacious drug even though it is more potent than B and C. Potency (x-axis) and efficacy (y-axis) are judged separately.',
- quote:'Now, if I ask which one is the most efficacious or least efficacious, now we have one right answer',
+ quote:'Potency is all about the ED50 ... Now, if I ask which one is the most efficacious or least efficacious, now we have one right answer',
+ note:'The quote was said about the five-curve figure; on this four-curve figure D (green) has the lowest plateau.',
  cite:'PollEV_s.pdf page 4; transcript 9/29'},
 
 /* Five B/W curves with the Y line (page 4) */
@@ -946,7 +947,7 @@ QUESTIONS.push(
   {t:'C', correct:false, why:'C matches A in efficacy and lies to its right.'},
   {t:'D', correct:false, why:'D is the least efficacious drug in the figure.'},
   {t:'E', correct:false, why:'E is the least potent drug; its height does not exceed B.'}],
- teach:'Potency questions on this figure can have several defensible orderings, but efficacy has one answer: read the highest plateau. B is the most efficacious and D the least. A is the most potent but not the most efficacious.',
+ teach:'Efficacy is read on the y-axis: the highest plateau is the most efficacious, B; D is the least. A is the most potent (smallest ED50) but not the most efficacious.',
  quote:'Now, if I ask which one is the most efficacious or least efficacious, now we have one right answer, B or D, right? Respectively.',
  cite:'PollEV_s.pdf page 4; transcript 9/29'},
 
@@ -1006,7 +1007,7 @@ QUESTIONS.push(
  cite:'PollEV_s.pdf page 5; transcript 9/29'},
 
 /* A–E figure with B as norepinephrine (page 5) */
-{id:'PE-075', lecture:'PE', prof:'Gottlieb', tier:'new', topic:'PE', sub:'variant', skill:'drug',
+{id:'PE-075', dupOf:'PE-033', lecture:'PE', prof:'Gottlieb', tier:'new', topic:'PE', sub:'variant', skill:'drug',
  concept:'competitive-antagonist-shift', tags:['poll','pollev','metoprolol','drug-list'], source:'both',
  img:'pollev-abcde-duloxetine', imgAlt:'Five concentration-response curves A to E, response as percent of control against agonist concentration from 10^-9 to 10^-3 M; A is furthest left, B next, C and E are lower and to the right, D is right of B at full height', imgCap:'Response (% of control) vs [Agonist, M]; B is norepinephrine alone',
  stem:'DRC "B" represents the DRC of NE alone. Which DRC best represents NE in the presence of metoprolol?',
@@ -1020,7 +1021,7 @@ QUESTIONS.push(
  quote:'If it was just like a competitive antagonist. ... OK, so D would be the best answer for that.',
  cite:'PollEV_s.pdf page 5; transcript 9/29'},
 
-{id:'PE-076', lecture:'PE', prof:'Gottlieb', tier:'new', topic:'PE', sub:'variant', skill:'drug', multi:true,
+{id:'PE-076', dupOf:'PE-034', lecture:'PE', prof:'Gottlieb', tier:'new', topic:'PE', sub:'variant', skill:'drug', multi:true,
  concept:'irreversible-antagonist-curve', tags:['poll','pollev','phenoxybenzamine','drug-list'], source:'both',
  img:'pollev-abcde-duloxetine', imgAlt:'Five concentration-response curves A to E, response as percent of control against agonist concentration from 10^-9 to 10^-3 M; A is furthest left, B next, C and E are lower and to the right, D is right of B at full height', imgCap:'Response (% of control) vs [Agonist, M]; B is norepinephrine alone',
  stem:'DRC "B" represents the DRC of NE alone. Which DRCs could represent NE in the presence of phenoxybenzamine? Select all that apply.',
