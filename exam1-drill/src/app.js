@@ -335,8 +335,9 @@ function renderQ() {
    downgraded with "Not sure" or "I guessed". SR drills take their due-first order; 40 show at a time. */
 function allList() {
   // the order is fixed once; questions answered one at a time (no card state) drop out each time
-  if (Q.allList) return Q.allList.filter(q => !Q.doneIds.has(q.id) || Q.st[q.id]);
-  let list = Q.list.filter(q => !Q.doneIds.has(q.id) || Q.st[q.id]);
+  const keep = q => !Q.doneIds.has(q.id) || (Q.st[q.id] && Q.st[q.id].answered);
+  if (Q.allList) return Q.allList.filter(keep);
+  let list = Q.list.filter(keep);
   if (Q.mode === 'sr') {
     const now = Date.now(), due = [], unseen = [], rest = [];
     list.forEach(q => { const st = S.q[q.id]; if (!(st && st.n)) unseen.push(q); else if (st.due <= now) due.push(q); else rest.push(q); });
