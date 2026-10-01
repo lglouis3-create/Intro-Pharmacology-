@@ -52,6 +52,41 @@ for (const q of QUESTIONS) {
   }
   if (q.dupOf && !QUESTIONS.some(x => x.id === q.dupOf)) bad(q.id, 'dupOf points nowhere');
 }
+// graph registry: every GRAPHS key and alt is an image, and every image a question uses belongs to exactly one entry
+const MISS_TAGS = new Set(['shift', 'baseline', 'emax', 'symmetry', 'direction', 'potency', 'efficacy', 'affinity', 'class', 'steps', 'ti', 'read']);
+const GRAPH_GROUPS = new Set(['Potency and efficacy', 'Shifts: which curve is which drug', 'Dotted-line figures', 'Affinity and Kd', 'Signal transduction', 'Quantal and therapeutic index', 'Other']);
+if (fs0.existsSync(__dirname + '/graphs.js')) {
+  const GRAPHS = require('vm').runInNewContext(fs0.readFileSync(__dirname + '/graphs.js', 'utf8') + ';GRAPHS', {});
+  const owner = {};
+  for (const g of GRAPHS) {
+    for (const k of ['key', 'title', 'group', 'source', 'method']) if (!g[k]) bad('graphs ' + (g.key || '?'), 'missing ' + k);
+    if (!GRAPH_GROUPS.has(g.group)) bad('graphs ' + g.key, 'unknown group ' + g.group);
+    if (!Array.isArray(g.read) || g.read.length < 3 || g.read.length > 6) bad('graphs ' + g.key, 'read needs 3–6 lines');
+    if (!Array.isArray(g.asks) || g.asks.length < 2 || g.asks.length > 4) bad('graphs ' + g.key, 'asks needs 2–4 items');
+    for (const k of [g.key].concat(g.alts || [])) {
+      if (!IMAGES_KEYS.has(k)) bad('graphs ' + g.key, 'image key not in images.json: ' + k);
+      if (owner[k]) bad('graphs ' + g.key, 'image key also in entry ' + owner[k] + ': ' + k);
+      owner[k] = g.key;
+    }
+  }
+  const perGraph = {};
+  for (const q of QUESTIONS) {
+    if (!q.img) continue;
+    if (!owner[q.img]) bad(q.id, 'img key in no GRAPHS entry: ' + q.img);
+    else perGraph[owner[q.img]] = (perGraph[owner[q.img]] || 0) + 1;
+  }
+  for (const g of GRAPHS) if ((perGraph[g.key] || 0) < 5) bad('graphs ' + g.key, 'fewer than 5 questions on this figure (' + (perGraph[g.key] || 0) + ')');
+  console.log(`${GRAPHS.length} figures in the graph registry · questions per figure ${JSON.stringify(perGraph)}`);
+}
+// miss tags: every wrong option of a figure question names the reading question skipped
+for (const q of QUESTIONS) {
+  if (!q.img || !Array.isArray(q.options)) continue;
+  q.options.forEach((o, i) => {
+    if (o.correct) { if (o.miss) bad(q.id, 'option ' + i + ' is correct but has a miss tag'); return; }
+    if (!o.miss) bad(q.id, 'wrong option ' + i + ' has no miss tag');
+    else if (!MISS_TAGS.has(o.miss)) bad(q.id, 'option ' + i + ' unknown miss tag ' + o.miss);
+  });
+}
 // every tell-apart row names a question id that exists
 const tellIds = [...TELL_HTML.matchAll(/data-q="([^"]+)"/g)].map(m => m[1]);
 tellIds.forEach(id => { if (!ids.has(id)) bad('tell', 'row cites missing question ' + id); });

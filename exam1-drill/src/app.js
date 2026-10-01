@@ -104,7 +104,7 @@ function schedule(id, outcome) {
 /* ---------- views ---------- */
 const VIEWS = [
   ['topics', 'Topics'], ['quiz', 'Quiz'], ['terms', 'Terms'], ['weak', 'Weak spots'], ['exam', 'Exam sim'],
-  ['map', 'Question map'], ['ref', 'Reference'], ['tell', 'Tell apart'], ['guide', 'Guides'], ['data', 'Progress']
+  ['graphs', 'Graphs'], ['map', 'Question map'], ['ref', 'Reference'], ['tell', 'Tell apart'], ['guide', 'Guides'], ['data', 'Progress']
 ];
 let CUR = 'topics';
 function nav() {
@@ -116,7 +116,7 @@ function nav() {
 function go(v) {
   if (CUR === 'exam' && EX && !EX.done && v !== 'exam' && !confirm('Leave the exam in progress? It will be kept until you return.')) return;
   CUR = v; nav(); window.scrollTo(0, 0);
-  ({topics: vTopics, quiz: vQuiz, terms: vTerms, weak: vWeak, exam: vExam, map: vMap, ref: vRef, tell: vTell, guide: vGuide, data: vData})[v]();
+  ({topics: vTopics, quiz: vQuiz, terms: vTerms, weak: vWeak, exam: vExam, map: vMap, graphs: vGraphs, ref: vRef, tell: vTell, guide: vGuide, data: vData})[v]();
 }
 
 /* Questions eligible for practice and for the active exam. */
@@ -218,6 +218,7 @@ function nextQ() {
   renderQ();
 }
 function quizDone() {
+  if (Q.graph) return graphDone();
   $('#view').innerHTML = `<div class="card"><h2>Pass finished</h2><p>${Q.right} of ${Q.done} correct.</p>
     <button class="btn" id="again">Study what is due</button></div>`;
   $('#again').onclick = () => startQuiz(examPool(), 'Due and unseen', 'sr');
@@ -265,6 +266,7 @@ function renderQ() {
     if (q.type === 'match' && q.pairs) h += q.pairs.filter(p => p.why).map(p => `<div class="why"><b>${esc(p.l)}</b>: ${esc(p.why)}</div>`).join('');
     if (q.teach) h += `<div class="teach">${teachHTML(q.teach)}</div>`;
     if (q.fg) h += figHTML(q.fg);
+    h += graphFeedback(q);
     if (q.note) h += `<div class="note">${esc(q.note)}</div>`;
     h += readingHTML(q.reading);
     if (q.quote) h += `<div class="quote">“${esc(q.quote)}”</div>`;
@@ -393,6 +395,7 @@ function drawExam(n) {
 }
 function vExam() {
   const ex = active(), max = examPool().filter(q => !q.lowYield && !q.type).length;
+  if (EX && !EX.done && EX.expired) { submitExam(); return; }
   if (EX && !EX.done) return renderExam();
   const lens = [...new Set([ex.questions, 25, 50, max].filter(x => x && x <= max))].sort((a, b) => a - b);
   let h = `<h2>Exam simulator</h2><p class="sub">${esc(ex.name)}: ${ex.questions ? ex.questions + ' questions' : 'question count not yet announced'}, ${ex.minutes} minutes allotted.
@@ -445,7 +448,7 @@ function renderExam() {
   };
   const tick = () => {
     const ms = EX.ends - Date.now(), el = $('#clock');
-    if (ms <= 0) { clearInterval(TICK); submitExam(); return; }
+    if (ms <= 0) { clearInterval(TICK); if (CUR === 'exam') submitExam(); else EX.expired = true; return; }
     if (el) el.textContent = `${Math.floor(ms / HOUR)}:${String(Math.floor(ms % HOUR / MIN)).padStart(2, '0')}:${String(Math.floor(ms % MIN / 1000)).padStart(2, '0')} left`;
   };
   tick(); TICK = setInterval(tick, 1000);
@@ -564,16 +567,17 @@ function vTell() {
 /* Static pages carry figure markers: <!--FIG:key-->, <!--IMG:key--> (one of his
    poll figures) and <!--GRAPH:{json}--> (a drawn dose–response plot). */
 /* Step-through figures: buttons under a figure move between its data-step groups. */
-let ANIM_TIMER = null;
+let ANIM = null;   // the one figure playing: {t: interval, b: its Play button}
 document.addEventListener('click', e => {
   const b = e.target.closest('[data-anim] button'); if (!b) return;
   const fig = b.closest('figure'); const steps = [...fig.querySelectorAll('.st')]; if (!steps.length) return;
   const cur = steps.findIndex(s => s.classList.contains('on'));
   const show = i => steps.forEach((s, j) => s.classList.toggle('on', j === i));
+  const stop = () => { if (ANIM) { clearInterval(ANIM.t); ANIM.b.textContent = 'Play'; ANIM = null; } };
   if (b.dataset.go === 'play') {
-    if (ANIM_TIMER) { clearInterval(ANIM_TIMER); ANIM_TIMER = null; b.textContent = 'Play'; return; }
-    b.textContent = 'Pause'; let i = cur;
-    ANIM_TIMER = setInterval(() => { if (!document.body.contains(fig)) { clearInterval(ANIM_TIMER); ANIM_TIMER = null; return; } i = (i + 1) % steps.length; show(i); if (i === steps.length - 1) { clearInterval(ANIM_TIMER); ANIM_TIMER = null; b.textContent = 'Play'; } }, 1800);
+    const same = ANIM && ANIM.b === b; stop(); if (same) return;
+    b.textContent = 'Pause';
+    ANIM = {b, t: setInterval(() => { if (!document.body.contains(fig)) return stop(); const i = (steps.findIndex(s => s.classList.contains('on')) + 1) % steps.length; show(i); if (i === steps.length - 1) stop(); }, 1800)};
     return;
   }
   show((cur + (+b.dataset.go) + steps.length) % steps.length);
@@ -608,6 +612,86 @@ function lastOutcome(q) {
   for (let i = S.log.length - 1; i >= 0; i--) if (S.log[i].id === q.id) return S.log[i].ok ? 'right' : 'wrong';
   return st.ok >= st.n ? 'right' : 'wrong';
 }
+/* ---------- Graphs: drill one of his figures ---------- */
+const GR = typeof GRAPHS === 'undefined' ? [] : GRAPHS;
+const MISS = {
+  shift: ['Shift', 'Did the curve move left or right of the point of reference (the agonist alone)?'],
+  baseline: ['Baseline', 'Where does the curve start? Only an agonist raises it; only an inverse agonist takes it down to 0.'],
+  emax: ['Emax', 'Does the maximum change? Only an irreversible antagonist, or an allosteric antagonist that affects efficacy, lowers it.'],
+  symmetry: ['Symmetry', 'Are the steps equal for equal doses (competitive, no limit) or shrinking and then stopping (allosteric, saturable)?'],
+  direction: ['Helping or hurting', 'Is the second drug helping the agonist (left) or making life more difficult (right)?'],
+  potency: ['Potency', 'Which curve reaches the response at the lowest dose? The one furthest left (smallest ED50).'],
+  efficacy: ['Efficacy', 'Which curve reaches the highest maximum? Potency says nothing about how high it goes.'],
+  affinity: ['Affinity', 'The smaller the Kd, the greater the affinity; check the units (nM < µM < mM).'],
+  class: ['Drug class', 'The reading was right; match it to the class: which drug on the list produces that curve?'],
+  steps: ['Steps', 'Signal → receptor → transducer (G protein) → effector → second messenger; GDP off, GTP on.'],
+  ti: ['Therapeutic index', 'TI = LD50 / ED50: find both 50% points on the quantal curves and divide; the larger, the safer.'],
+  read: ['Read the figure', 'Axes, legend and point of reference first: which curve is the agonist alone?']
+};
+const graphOf = img => GR.find(g => g.key === img || (g.alts || []).includes(img));
+const graphQs = g => examPool().filter(q => q.img && (q.img === g.key || (g.alts || []).includes(q.img)));
+/* What the student skipped on this figure: the miss tags of the wrong options they chose, across the log. */
+function missTally(g) {
+  const ids = {}; graphQs(g).forEach(q => ids[q.id] = q);
+  const t = {};
+  S.log.forEach(e => {
+    const q = ids[e.id]; if (!q || e.ok || q.type === 'match') return;
+    [].concat(e.picked == null ? [] : e.picked).forEach(i => { const o = q.options[i]; if (o && !o.correct && o.miss) t[o.miss] = (t[o.miss] || 0) + 1; });
+  });
+  return Object.entries(t).sort((a, b) => b[1] - a[1]);
+}
+function graphFeedback(q) {
+  const g = q.img && graphOf(q.img); if (!g) return '';
+  let h = '';
+  if (!Q.ok && q.type !== 'match') {
+    const picked = [].concat(Q.picked == null ? [] : Q.picked instanceof Set ? [...Q.picked] : Q.picked);
+    const misses = [...new Set(picked.map(i => q.options[i]).filter(o => o && !o.correct && o.miss).map(o => o.miss))];
+    if (misses.length) h += `<div class="gskip"><b>The question you skipped:</b> ${misses.map(m => `<span class="chip on">${esc(MISS[m][0])}</span> ${esc(MISS[m][1])}`).join('<br>')}</div>`;
+  }
+  h += `<details class="gread"${Q.ok ? '' : ' open'}><summary>Read this figure his way</summary><ul>${(g.read || []).map(r => `<li>${esc(r)}</li>`).join('')}</ul>${g.method ? `<div class="meta">${esc(g.method)}</div>` : ''}</details>`;
+  return h;
+}
+function graphDone() {
+  const g = GR.find(x => x.key === Q.graph);
+  const tally = missTally(g);
+  $('#view').innerHTML = `<div class="card"><h2>${esc(g.title)}: pass finished</h2><p>${Q.right} of ${Q.done} correct.</p>
+    ${tally.length ? `<p><b>What you keep skipping on this figure</b></p><ul>${tally.map(([m, n]) => `<li><b>${esc(MISS[m][0])}</b> (${n}×): ${esc(MISS[m][1])}</li>`).join('')}</ul>` : '<p>No reading question was skipped on this pass.</p>'}
+    <div class="row"><button class="btn" id="gagain">Drill this figure again</button><button class="btn ghost" id="gback">All figures</button></div></div>`;
+  $('#gagain').onclick = () => startGraph(g.key);
+  $('#gback').onclick = () => go('graphs');
+}
+function startGraph(key) {
+  const g = GR.find(x => x.key === key); if (!g) return;
+  const list = shuffle(graphQs(g)); if (!list.length) { alert('No questions on this figure yet.'); return; }
+  startQuiz(list, g.title, 'pass'); Q.graph = key;
+}
+function vGraphs() {
+  const pool = examPool();
+  if (!GR.length) { $('#view').innerHTML = '<h2>Graphs</h2><div class="empty">No figures are registered.</div>'; return; }
+  let h = `<h2>Graphs</h2><p class="sub">His own figures (PollEV, Jeopardy, the 9/30 review, Part 3). Pick one and every question written on it is asked in turn; a wrong answer names the reading question you skipped, and the end of the pass shows which one you keep skipping.</p>`;
+  const groups = {}; GR.forEach(g => (groups[g.group || 'Other'] = groups[g.group || 'Other'] || []).push(g));
+  Object.entries(groups).forEach(([name, gs]) => {
+    h += `<h3>${esc(name)}</h3><div class="ggrid">`;
+    gs.forEach(g => {
+      const qs = graphQs(g); const c = {unseen: 0, right: 0, wrong: 0}; qs.forEach(q => c[lastOutcome(q)]++);
+      const tally = missTally(g).slice(0, 3);
+      h += `<div class="card gcard"><div class="gthumb">${IMG[g.key] ? `<img src="${IMG[g.key]}" alt="${esc(g.title)}">` : ''}</div>
+        <div><b>${esc(g.title)}</b><div class="meta">${qs.length} questions · ${c.unseen} unseen · ${c.right} right · ${c.wrong} wrong${g.source ? ' · ' + esc(g.source) : ''}</div>
+        ${g.asks && g.asks.length ? `<div class="meta">He asks: ${g.asks.map(esc).join(' · ')}</div>` : ''}
+        ${tally.length ? `<div class="meta">You skip: ${tally.map(([m, n]) => esc(MISS[m][0]) + ' ×' + n).join(', ')}</div>` : ''}
+        <div class="row" style="margin-top:6px"><button class="btn" data-g="${g.key}" ${qs.length ? '' : 'disabled'}>Drill this figure</button>
+        ${c.wrong ? `<button class="btn ghost" data-g="${g.key}" data-wrong="1">Redo wrong</button>` : ''}</div></div></div>`;
+    });
+    h += '</div>';
+  });
+  $('#view').innerHTML = h;
+  document.querySelectorAll('[data-g]').forEach(b => b.onclick = () => {
+    const g = GR.find(x => x.key === b.dataset.g);
+    if (b.dataset.wrong) { const list = graphQs(g).filter(q => lastOutcome(q) === 'wrong'); if (!list.length) return; startQuiz(shuffle(list), g.title + ' · wrong', 'pass'); Q.graph = g.key; }
+    else startGraph(g.key);
+  });
+}
+
 let MAPF = {show: 'all'};
 function vMap() {
   const pool = examPool();

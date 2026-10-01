@@ -446,9 +446,9 @@ QUESTIONS.push(
  stem:"For which receptor does Drug A have the greatest affinity?",
  options:[
   {t:"M1 (gut)", correct:true, why:"250 nM is the smallest of Drug A's three Kd values, and the smallest Kd means the greatest affinity."},
-  {t:"β1 (heart)", correct:false, why:"30 μM is larger than 250 nM, so Drug A's affinity at β1 is lower than at M1."},
-  {t:"β2 (vasculature)", correct:false, why:"1 mM is Drug A's largest Kd, so β2 is where its affinity is lowest."},
-  {t:"Equal at all three", correct:false, why:"The three Kd values differ, so affinity differs."}],
+  {t:"β1 (heart)", correct:false, miss:"read", why:"30 μM is larger than 250 nM, so Drug A's affinity at β1 is lower than at M1."},
+  {t:"β2 (vasculature)", correct:false, miss:"affinity", why:"1 mM is Drug A's largest Kd, so β2 is where its affinity is lowest."},
+  {t:"Equal at all three", correct:false, miss:"read", why:"The three Kd values differ, so affinity differs."}],
  teach:"Compare affinity by comparing Kd values after putting them in the same units: nM is smaller than μM, which is smaller than mM. The smallest Kd is the highest affinity. Drug A: β1 30 μM, β2 1 mM, M1 250 nM. Drug B: β1 100 nM, β2 20 μM, M1 250 nM.",
  reading:[{src:'Katzung 16e, Ch. 2', sec:'Clinical Selectivity: Beneficial Versus Toxic Effects of Drugs; Case Study Answer (p. 17–18 of 18)', t:'Selectivity is measured by comparing the binding affinities of a drug for different receptors. The receptor with the lowest Kd is the one the drug binds with the greatest affinity.'}],
  cite:"PollEV_s.pdf page 1 (Kd table); Pharmacodynamics-Day_2_2026s copy.pdf slide ~51"},

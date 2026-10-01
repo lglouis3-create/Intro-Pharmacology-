@@ -46,7 +46,7 @@ const GUIDE_HTML = `
 <ul>
 <li>A dashed is the agonist alone; A+B, A+10X B, A+100X B step to the right in equal steps from a 0 baseline with the same top. Shift right → "I already can eliminate those two possibilities" (the two agonists). <small>Review p.6; (T) 9/30</small></li>
 <li>Baseline? "No, so it doesn't help us much." Emax? "To the best of my drawing, no, right? So who can eliminate? An allosteric antagonist that affects efficacy. Because there's no change to the efficacy and an irreversible antagonist." <small>Review p.6; (T) 9/30</small></li>
-<li>What the figure cannot separate: "Because my baseline is 0, the inverse wants to keep at 0, and the competitive doesn't care if it's 0 or not." Symmetrical? "It's another double wing that can't be allosteric, right? Because as best as they can draw, the shifts are very close to each other in distances." <small>Review p.6; (T) 9/30</small></li>
+<li>What the figure cannot separate: "Because my baseline is 0, the inverse wants to keep at 0, and the competitive doesn't care if it's 0 or not." Symmetrical? "[Yes, so] that can't be allosteric, right? Because as best as they can draw, the shifts are very close to each other in distances." <small>Review p.6; (T) 9/30</small></li>
 <li>Key: <b>a) competitive antagonist</b> (the options run a) competitive antagonist … g) allosteric agonist, affinity only). <small>Review p.6</small></li>
 </ul>
 <!--IMG:rev-shifts-base50-->
@@ -110,7 +110,7 @@ const GUIDE_HTML = `
 <tr><td>Several shifts right, same Emax: symmetrical vs not</td><td>Equal steps that keep going = competitive (reversible) antagonist; unequal, saturating steps = allosteric ("you already know it's allosteric"). Then decide agonist vs antagonist by direction and affinity vs efficacy by Emax.</td></tr>
 <tr><td>Flat line at a 50% baseline: antagonist vs partial agonist with 50% efficacy</td><td>From one figure "it's a competitive based on the information that I gave you"; the same drug in a cell line where most receptors are inactive would rise to 50% if it is a partial agonist and stay flat if it is an antagonist (then select all B, C, D as partial agonists).</td></tr>
 <tr><td>Shift left: full agonist vs allosteric agonist (affinity) vs indirect antagonist that raises the signal vs more receptors</td><td>All move the curve left. A second full agonist raises the baseline; an allosteric agonist does not and its shifts are unequal; a PDE inhibitor raises cAMP so "your signal got bigger" and a partial can become full; more receptors make the drug "behave more potent" (and a partial can reach the max). On the "mysterious drug Y" poll, with a partial-to-full shift left, the key was <b>All of the above</b>.</td></tr>
-<tr><td>Allosteric antagonist vs indirect antagonist</td><td>"Allosteric binds to the receptor but at a different site of it"; "drugs that bind downstream or upstream from the receptor, those are indirect antagonists" (Prozac at the SERT transporter; a PDE inhibitor).</td></tr>
+<tr><td>Allosteric antagonist vs indirect antagonist</td><td>"Allosteric binds to the receptor but at a different site of it"; "drugs that bind downstream or upstream from the receptor, those are indirect antagonists" (Prozac at the serotonin transporter, SERT; a phosphodiesterase inhibitor).</td></tr>
 <tr><td>Full agonist vs inverse agonist: affinity for R* vs R</td><td>"Full agonist has the highest affinity for that receptor that are active because they wanna keep them active. The inverse has the highest affinity for receptor that are inactive, and they wanna keep them inactive."</td></tr>
 <tr><td>Prozac at 5HT (indirect antagonist) vs allosteric agonist on 5HT</td><td>Prozac only raises the concentration of serotonin: "it's still serotonin. You didn't change the drug ... if serotonin was a partial agonist here, it's going to be a partial agonist there too" (same plateau, shifted left); an allosteric agonist on affinity and efficacy could also raise the plateau.</td></tr>
 </tbody></table>
@@ -176,7 +176,7 @@ const GUIDE_HTML = `
 
 <h4>How to read it on a curve</h4>
 <!--FIG:drc-basic-->
-<!--FIG:binding-kd-->
+<!--FIG:binding-kd--><!--FIG:bonds-->
 <ul>
 <li>x-axis = dose (log scale), the independent variable; y-axis = response as a percent of the maximum, the dependent variable. <small>Day 3 slides ~16–~18; (T) 9/24 "I have an independent variable, which is the dose ... on the x axis"</small></li>
 <li>The y-axis is normalized (percent change, not raw beats per minute) because starting points differ between people: "My resting heart rate may be 60 beats per minute, yours may be 70 ... So now I can compare apples with apples." <small>Day 3 slide ~18; (T) 9/24</small></li>
@@ -240,7 +240,7 @@ const GUIDE_HTML = `
 <li>"The higher the Kd, the greater the affinity" is the reverse of the rule; Kd and affinity are inversely proportional. <small>PollEV p.1 distractor; (T) 9/24</small></li>
 <li>"They all have equal efficacy since they all can produce 50% of the effect": every curve crosses 50% of its own maximum; efficacy is the plateau, not the crossing. <small>PollEV p.2 distractor; Day 3 slide ~21</small></li>
 <li>Reading the number and not the unit: 250 nM is smaller than 30 µM and 1 mM; "about 10% of you are gonna miss it. It happens every year". <small>(T) 9/24</small></li>
-<li>Answering "no change" on the two-hearts poll because the dose is the same, or saying the Kd changed. The cupcake argument lost; the chairs argument won. <small>(T) 9/24</small></li>
+<li>Answering "no change" on the two-hearts poll because the dose is the same, or saying the Kd changed. His picture: blindfolded students in a room with 10 chairs versus 100, “who is going to be more likely to find and bind the receptor?” <small>(T) 9/24</small></li>
 <li>His own slip on the five-drug poll: "A ... Because it has the lowest affinity, the smallest KD is gonna be further to the left." He meant highest affinity; A was keyed. <small>(T) 9/24; bank note L03-026</small></li>
 <li>Picking "greater affinity" when the stem says affinity is equal and only Emax differs; the tiebreak is efficacy. <small>Day 3 slide ~27; (T) 9/24</small></li>
 <li>Assuming the most potent drug is the one to use; for hypertension at 136 the small dose of a partial may do, for an infection "give me the drug that kills all the bacteria". <small>(T) 9/24</small></li>
@@ -324,7 +324,7 @@ const GUIDE_HTML = `
 <li>The names come from the bonds: covalent = "irreversible, insurmountable, and non-competitive ... They all mean the same thing"; ionic, hydrogen and van der Waals = "reversible, surmountable, competitive. Different words to refer to the same property." Covalent examples: aspirin, omeprazole, clopidogrel, phenoxybenzamine, organophosphates. <small>Day 2 slides ~15–~16; (T) 9/23</small></li>
 <li><b>Competitive antagonist</b> in the two-state model: binds reversibly, equal affinity for R and R* ("neutral"), "DO NOT evoke a change", affinity but no pharmacological efficacy; competes with the agonist for the same pocket by the law of mass action ("whoever has the greatest concentration is gonna occupy the most receptors"). Most common in clinical practice. <small>Day 4 slides ~43–~47; (T) 9/28</small></li>
 <li><b>Irreversible antagonist:</b> binds irreversibly (covalent), greatest affinity and smallest Kd, also neutral, no pharmacological efficacy; "lowering of the amount of receptors available"; the receptor has to be internalized and replaced. Only one on the drug list: phenoxybenzamine. "What property do they have that should be like red light blinking in your head during the exam? They form covalent bonds." <small>Day 4 slide ~51; Day 2 slide ~18; (T) 9/23; (T) 9/28</small></li>
-<li><b>Indirect antagonist:</b> binds a component upstream or downstream of the receptor, not the receptor. Caffeine blocks the PDE enzyme that chews up cAMP, so cAMP rises and the response is <i>enhanced</i>; a RAS-blocking cancer drug lowers the signal. A drug that blocks the norepinephrine reuptake transporter is an indirect antagonist that <i>increases</i> the potency of norepinephrine. <small>Day 2 slides ~40–~41; (T) 9/23; (T) 9/24 "indirect antagonists can work downstream from the receptor, but also upstream"</small></li>
+<li><b>Indirect antagonist:</b> binds a component upstream or downstream of the receptor, not the receptor. Caffeine blocks phosphodiesterase (PDE), the enzyme that chews up cAMP, so cAMP rises and the response is <i>enhanced</i>; a RAS-blocking cancer drug lowers the signal. A drug that blocks the norepinephrine reuptake transporter is an indirect antagonist that <i>increases</i> the potency of norepinephrine. <small>Day 2 slides ~40–~41; (T) 9/23; (T) 9/24 "indirect antagonists can work downstream from the receptor, but also upstream"</small></li>
 <li>When an irreversible antagonist is wanted: "severe gastric acid production ... to give my body a chance to heal itself" (omeprazole, a covalent drug, was his Day 2 example; no drug was named on Day 4). <small>Day 2 slide ~15; (T) 9/23; (T) 9/28</small></li>
 </ul>
 
@@ -361,7 +361,7 @@ const GUIDE_HTML = `
 <!--IMG:pollev-dotted-ne-->
 <div class="poll"><b>"The dotted line represents the DRC of norepinephrine alone and the solid lines represent the DRC of the agonist in the presence of increasing doses of drug "X." Drug X is most likely:"</b> Epinephrine / Albuterol / Phenoxybenzamine / Metoprolol / Diazepam<br>Key: <b>Metoprolol</b>. "Epinephrine is a full agonist. Albuterol is your partial ... Phenoxybenzamine is the only irreversible that is on your list, and diazepam is your allosteric agonist." <small>PollEV p.3; Day 4 slide ~55; (T) 9/28</small></div>
 <div class="poll"><b>"A drug inhibits the major transporter involved in the removal of NE from the neuron synapsis. What effect would have on the potency of that NE?"</b> Decrease / Increase / No change<br>Key: <b>Increase</b>. First classify drug X: an indirect antagonist ("it's not directly affecting the receptor"). "It's going to make norepinephrine appear to be more potent because it's going to require less of it." <small>PollEV p.1; (T) 9/24</small></div>
-<div class="poll"><b>"DRC "B" represents the DRC of NE alone. Which DRC best represent NE in the presence of duloxetine (NET antagonist)?"</b> A / B / C / D / E<br>Key: <b>A</b> (shift left; the reuptake blocker is the same indirect antagonist as the 9/24 poll). Settled in class: (T) 9/29 “the only inverse agonist is going to be loratadine. And why it's inverse? Because it's bringing the baseline down to zero.” / duloxetine: “make it norepinephrine more potent, shifting to the left.” <small>PollEV (v2) p.5; (T) 9/29</small></div>
+<div class="poll"><b>"DRC "B" represents the DRC of NE alone. Which DRC best represent NE in the presence of duloxetine (NET antagonist)?"</b> A / B / C / D / E<br>Key: <b>A</b> (shift left; the reuptake blocker is the same indirect antagonist as the 9/24 poll). Settled in class: (T) 9/29 “we’re blocking the reuptake of norepinephrine … make it norepinephrine more potent, shifting to the left.” <small>PollEV (v2) p.5; (T) 9/29</small></div>
 <div class="poll"><b>Spoken:</b> "So what would happen if I give now 10 times the dose of my antagonist? Well, I have to increase the dose of my agonist by 10 times in order to outcompete that drug." <small>(T) 9/28</small></div>
 <div class="poll"><b>Spoken:</b> "So which drug has the greatest affinity?" (red, yellow, purple, gray drugs) — "The one that forms covalent bond all day long, which are, are irreversible drugs." <small>(T) 9/23</small></div>
 
@@ -452,7 +452,7 @@ const GUIDE_HTML = `
 <li>"I promise you, you're gonna have that figure in your exam. I'm just gonna ask a different question. So you can memorize all the 100 permutations of it, or you can just learn the principle and apply it." <small>(T) 9/28</small></li>
 </ul>
 
-<h4>Case 1: full agonist + full agonist</h4><!--FIG:shift-fafa-->
+<h4>Case 1: full agonist + full agonist</h4><div class="pair"><!--FIG:shift-fafa--><!--FIG:shift-fafa-anim--></div>
 <!--GRAPH:{"curves":[{"label":"A","ec":0,"emax":100,"dashed":true},{"label":"+B 1e-7","ec":-0.7,"emax":100},{"label":"+B 1e-6","ec":-1.4,"emax":100,"base":40},{"label":"+B 1e-5","ec":-2,"emax":100,"base":80}],"base":0,"x":"log [agonist A]","y":"% of maximal response","caption":"Full agonist A alone (dashed) and with rising doses of a second full agonist B (norepinephrine + Levophed): shift to the left, baseline rises, Emax unchanged (Day 3 slides ~45–~49)."}-->
 <ul>
 <li>Shift <b>left</b> ("Increase apparent affinity of agonist for the receptor"); baseline <b>up</b> once the second drug's dose is above its own threshold ("I'm starting at 40 because levofed already activated enough receptors"); Emax <b>unchanged</b> ("If my heart, all it can beat is 106 beats per minute, doesn't matter how much the drug I have"). <small>Day 3 slides ~42–~49 (THM); (T) 9/28</small></li>
@@ -462,7 +462,7 @@ const GUIDE_HTML = `
 <div class="poll"><b>"If DRC B is the DRC of NE binding to the beta 1 receptor alone, which DRC best represents the DRC of NE in the presence of epinephrine?"</b> A / B / C / D / None of the above<br>Key: <b>A</b>. "Two full agonists, norepinephrine and Epi, that binds to the same receptor ... thus shifting to the left. Norepinephrine is going to make epi more potent, and epi is going to make norepinephrine more potent." <small>PollEV p.3; Day 4 slide ~3; (T) 9/28</small></div>
 <div class="poll"><b>"If DRC B is the DRC of an agonist alone, which DRC would best represent that agonist in the presence of another agonist with similar efficacy?"</b> A / B / C / D / None of the above<br>Key: <b>A</b>. "Just by knowing that both drugs are going to work together and help each other, you already can eliminate C, D, and E because those drugs are making my agonist less potent." <small>PollEV p.2; (T) 9/28</small></div>
 
-<h4>Case 2: full agonist + partial agonist</h4><!--FIG:shift-fapa-->
+<h4>Case 2: full agonist + partial agonist</h4><div class="pair"><!--FIG:shift-fapa--><!--FIG:shift-fapa-anim--></div>
 <!--GRAPH:{"curves":[{"label":"DA","ec":0,"emax":100,"dashed":true},{"label":"ARI","ec":0.4,"emax":60},{"label":"DA+ARI","ec":0.4,"emax":60,"base":100}],"base":0,"x":"log [drug]","y":"% of maximal response","caption":"Dopamine alone (dashed, Emax 100%), aripiprazole alone (Emax 60%), and aripiprazole given to a manic patient whose dopamine has the system at 100%: the response comes down to 60%, the partial agonist's own efficacy (Day 3 slides ~54–~58; (T) 9/28)."}-->
 <ul>
 <li>The partial agonist has a <b>dual nature</b>: from a low baseline it behaves like an agonist (up to its Emax); when the full agonist has the system high it competes for the receptors and brings the response <b>down to its own Emax</b>: dopamine (100%) plus aripiprazole (60%) in a manic patient ends at 60%. <small>Day 3 slides ~54–~58, ~64–~65; (T) 9/28 "Instead of going to 100%, now I have a dose response curve that is going to what? 60%"</small></li>
@@ -473,7 +473,7 @@ const GUIDE_HTML = `
 </ul>
 <!--FIG:partial-->
 
-<h4>Case 3: full agonist + inverse agonist</h4><!--FIG:shift-inverse-->
+<h4>Case 3: full agonist + inverse agonist</h4><div class="pair"><!--FIG:shift-inverse--><!--FIG:shift-inverse-anim--></div>
 <!--GRAPH:{"curves":[{"label":"H","ec":0,"emax":100,"dashed":true,"base":50},{"label":"+L 1e-7","ec":0.6,"emax":100,"base":22},{"label":"+L 1e-6","ec":1.2,"emax":100,"base":0},{"label":"+L 1e-5","ec":1.8,"emax":100,"base":0}],"base":50,"x":"log [histamine]","y":"% of maximal response","caption":"Histamine alone from a 50% baseline (dashed) and with rising doses of loratadine: baseline falls (to about 22%, then 0%), curve shifts right, Emax unchanged; once the baseline is 0 it changes no further (Day 4 slides ~16–~22)."}-->
 <ul>
 <li>Shift <b>right</b> ("Decrease apparent affinity of agonist for the receptor"), baseline <b>down to 0%</b> and then "No more Δ to the baseline, once it reaches zero" ("once you're dead, you can't die again"); Emax <b>unchanged</b>; the shifts continue "to infinity" as long as the agonist can outcompete. <small>Day 4 slides ~13–~22 (THM); (T) 9/28</small></li>
@@ -481,18 +481,18 @@ const GUIDE_HTML = `
 <li>The slide qualifies the Emax rule ("No Effect on Emax against a high efficacy agonist"); in class it was stated without the qualifier for histamine, a full agonist. Use the class rule: a reversible drug never changes a full agonist's Emax. <small>Day 4 slide ~22; (T) 9/28; bank note L04-012</small></li>
 <li>Histamine and loratadine are "competing for the receptors, right, because they have opposite effects". The first dose of loratadine took the 50% baseline "to what? 22, 23%". <small>Day 4 slides ~13–~15; (T) 9/28</small></li>
 </ul>
-<div class="poll"><b>"The dotted line represents the DRC of the agonist alone and the solid lines represent the DRC of the agonist in the presence of increasing doses of drug "X." Drug X is most likely:"</b> (dotted curve from a 50% baseline; solid curves start lower, then at 0%, and sit to the right) Metoprolol / Epinephrine / Tropicamide / Loratadine / Histamine<br>Key: <b>Loratadine</b>: the baseline falls to zero (negative efficacy), the curve shifts right, the Emax holds. Metoprolol and tropicamide (neutral antagonists) would leave the baseline where it is. Settled in class: (T) 9/29 “the only inverse agonist is going to be loratadine. And why it's inverse? Because it's bringing the baseline down to zero.” / duloxetine: “make it norepinephrine more potent, shifting to the left.” <small>PollEV (v2) p.5; (T) 9/29</small></div>
+<div class="poll"><b>"The dotted line represents the DRC of the agonist alone and the solid lines represent the DRC of the agonist in the presence of increasing doses of drug "X." Drug X is most likely:"</b> (dotted curve from a 50% baseline; solid curves start lower, then at 0%, and sit to the right) Metoprolol / Epinephrine / Tropicamide / Loratadine / Histamine<br>Key: <b>Loratadine</b>: the baseline falls to zero (negative efficacy), the curve shifts right, the Emax holds. Metoprolol and tropicamide (neutral antagonists) would leave the baseline where it is. Settled in class: (T) 9/29 “We’re not changing the Emax of that agonist, but we’re lowering the baseline … the only inverse agonist is going to be loratadine.” <small>PollEV (v2) p.5; (T) 9/29</small></div>
 
-<h4>Case 4: full agonist + competitive antagonist</h4><!--FIG:shift-competitive-->
+<h4>Case 4: full agonist + competitive antagonist</h4><div class="pair"><!--FIG:shift-competitive--><!--FIG:shift-competitive-anim--></div>
 <!--FIG:competitive-->
 <ul>
 <li>Shift <b>right</b> (higher ED50, "appears less potent"); baseline <b>no change</b> ("B has no efficacy"); Emax <b>no change</b> ("A can outcompete B", "B is reversible"); shifts <b>symmetrical</b> (10× antagonist = 10× agonist), toward infinity. <small>Day 4 slides ~45–~50; (T) 9/28</small></li>
-<li>His pictures: the third wheel with "affinity for the girl, but no efficacy"; musical chairs where everyone has to stand up again. <small>(T) 9/28</small></li>
+<li>His pictures: the third wheel with "affinity for the girl, but no efficacy" (the chair game is his partial-agonist picture; the glued chair his irreversible one). <small>(T) 9/28</small></li>
 </ul>
 <!--IMG:pollev-dotted-x-->
 <div class="poll"><b>"The dotted line represents the DRC of the agonist alone and the solid lines represent the DRC of the agonist in the presence of increasing doses of drug "X." Drug X is most likely:"</b> A full agonist / A partial agonist / A competitive antagonist / An irreversible antagonist / An allosteric agonist<br>Key: <b>A competitive antagonist</b> (right, same baseline, same Emax). Same figure with the drug list: <b>Metoprolol</b>. <small>PollEV p.3; Day 4 slide ~55; (T) 9/28</small></div>
 
-<h4>Case 5: full agonist + irreversible antagonist</h4><!--FIG:shift-irreversible-->
+<h4>Case 5: full agonist + irreversible antagonist</h4><div class="pair"><!--FIG:shift-irreversible--><!--FIG:shift-irreversible-anim--></div>
 <!--FIG:irreversible-->
 <ul>
 <li>Shift <b>right</b>, baseline <b>no change</b>, Emax <b>falls</b> with each dose, "all the way to 0"; shifts symmetrical; the receptor pool is being removed ("I'm gonna put a glue on the chair"). <small>Day 4 slides ~51–~54 (THM); (T) 9/28</small></li>
@@ -500,7 +500,7 @@ const GUIDE_HTML = `
 <li>Emax rule for the whole tab: only an irreversible antagonist or an allosteric antagonist that affects efficacy lowers Emax; "Everybody else is competitive. Everybody else is reversible, no change to the Emax." <small>(T) 9/28</small></li>
 </ul>
 
-<h4>Case 6: full agonist + allosteric agonist or antagonist</h4><!--FIG:shift-allo-agonist--><!--FIG:shift-allo-antagonist-->
+<h4>Case 6: full agonist + allosteric agonist or antagonist</h4><div class="pair"><!--FIG:shift-allo-agonist--><!--FIG:shift-allo-agonist-anim--></div><div class="pair"><!--FIG:shift-allo-antagonist--><!--FIG:shift-allo-antagonist-anim--></div>
 <!--IMG:pollev-abcde-allo-ag-->
 <ul>
 <li>Allosteric agonist: <b>left</b> (affinity) and/or <b>up</b> (efficacy, only if the agonist was partial); shifts asymmetrical and saturable; two drugs bound at once. Key on the slide-42 poll: A. <small>Day 4 slides ~25–~34, ~42; (T) 9/28</small></li>
@@ -569,7 +569,7 @@ const GUIDE_HTML = `
 </ul>
 
 <h4>How to read it on a figure</h4>
-<!--FIG:gpcr-->
+<!--FIG:superfamilies--><!--FIG:gpcr-->
 <div class="pair"><!--FIG:gpcr-steps--><!--FIG:gpcr-anim--></div>
 <h4>How he will ask it (9/30)</h4>
 <ul>
@@ -643,6 +643,7 @@ const GUIDE_HTML = `
 <!-- ===================================================================== -->
 <section class="guide" id="g-basics">
 <h3>7. Drug basics he tests</h3>
+<div class="pair"><!--FIG:selectivity--><!--FIG:moa-soa--></div>
 <h4>What it is</h4>
 <ul>
 <li><b>Must know</b> = mechanism of action (MOA): "Is a beta 1 selective or a beta 1 beta 2 non-selective or alpha 1? Those are things that you must know." <b>Should know</b> = site of action (SOA). Effect, adverse drug reactions (ADR) and drug–drug interactions (DDI) are "would be nice to know" because they can be predicted from MOA + SOA. <small>Day 1 slides ~7–~8; (T) 9/22</small></li>
@@ -704,7 +705,7 @@ const GUIDE_HTML = `
 <tr><td>Prazosin</td><td>α1 antagonist (reversible)</td><td>Adrenergic</td><td>The reversible, competitive, surmountable antagonist compared with phenoxybenzamine ("any drug that has an -osin in it"); poll: phenoxybenzamine has the higher affinity. <small>Day 2 slides ~18, ~37; PollEV p.1; (T) 9/23</small></td></tr>
 <tr><td>Phenoxybenzamine</td><td>α1 and α2 antagonist (<b>irreversible</b>, covalent)</td><td>Adrenergic</td><td>The only irreversible drug; the irreversible-antagonist distractor on the dotted-line poll; highest affinity (smallest Kd); less selective than the α1-selective drugs. <small>Day 2 slide ~18; Day 4 slides ~51, ~55; PollEV p.1, p.3; (T) 9/23; (T) 9/28</small></td></tr>
 <tr><td>Metoprolol</td><td>β1 antagonist (reversible)</td><td>Adrenergic</td><td>The must-know MOA example (slows the heart, β1-selective up to ~200 mg); the competitive antagonist keyed on the dotted-line poll (drug X = metoprolol). <small>Day 1 slide ~9; Day 4 slide ~55; PollEV p.3; (T) 9/22; (T) 9/28</small></td></tr>
-<tr><td>Albuterol</td><td>β2 partial agonist</td><td>Adrenergic</td><td>The partial agonist keyed on "Which of the following drugs is a partial agonist?"; the partial distractor on the dotted-line poll; "You don't have to open up your airways 100%"; levalbuterol is the more potent isomer. <small>Day 3 slide ~53; PollEV p.2, p.3; (T) 9/23; (T) 9/24; (T) 9/28</small></td></tr>
+<tr><td>Albuterol</td><td>β2 partial agonist</td><td>Adrenergic</td><td>The partial agonist keyed on "Which of the following drugs is a partial agonist?"; the partial distractor on the dotted-line poll; "You don't have to open up your airways 100%". <small>Day 3 slide ~53; PollEV p.2, p.3; (T) 9/23; (T) 9/24; (T) 9/28</small></td></tr>
 <tr><td>Pindolol</td><td>β1 and β2 partial agonist</td><td>Adrenergic</td><td>Named only in the Day 3 recap as a partial agonist (the numbers in the transcript are garbled). <small>Drug list Table 1; (T) 9/24</small></td></tr>
 <tr><td>Acetylcholine (ACh)</td><td>Agonist at muscarinic (M1, M2, M3) and nicotinic (Nn, Nm) receptors</td><td>Cholinergic</td><td>The ligand for the ligand-gated nicotinic channel (binds two α subunits, Na+ in); M2 in the heart is Gαi (↓ heart rate); physiological antagonist of epinephrine in the heart. <small>Day 1 slides ~44–~48; Day 2 slide ~30; Day 4 slide ~35; (T) 9/23; (T) 9/28</small></td></tr>
 <tr><td>Tropicamide</td><td>Muscarinic (M1, M2, M3) antagonist (reversible)</td><td>Cholinergic</td><td>Drug list only; a neutral-antagonist distractor on the loratadine dotted-line poll. <small>Drug list Table 1; PollEV (v2) p.5</small></td></tr>
@@ -778,6 +779,8 @@ const GUIDE_HTML = `
 <div class="pair"><!--FIG:ind-carbidopa--><!--FIG:ind-carbidopa-anim--></div>
 <div class="pair"><!--FIG:ind-pde--><!--FIG:ind-pde-anim--></div>
 <div class="pair"><!--FIG:ind-ras--><!--FIG:ind-ras-anim--></div>
+<h3>Addition, synergism, potentiation (Part 2 pages 30–31)</h3>
+<div class="pair"><!--FIG:enhance--><!--FIG:enhance-anim--></div>
 <!--IMG:pollev-abcde-duloxetine-->
 <ul>
 <li>On the NE-alone figure, the reuptake blocker moves B to A (left, same Emax). He then ran the other permutations aloud: competitive antagonist → D; irreversible → "either C or E, depending on how much spare receptors they would have"; allosteric antagonist affinity only → D; affinity and efficacy → C and E; allosteric agonist affinity only or another full agonist → A. "I guarantee you, you're going to see this figure in your exam." <small>PollEV (v2) p.5; (T) 9/29</small></li>
@@ -800,6 +803,7 @@ const GUIDE_HTML = `
 <div class="pair"><!--FIG:desens-long--><!--FIG:desens-long-anim--></div>
 <div class="pair"><!--FIG:upreg--><!--FIG:upreg-anim--></div>
 <div class="pair"><!--FIG:downreg--><!--FIG:downreg-anim--></div>
+<!--FIG:reg-chain-->
 
 <h4>How to read it on a curve</h4>
 <!--GRAPH:{"curves":[{"label":"high","ec":-1.5,"emax":100},{"label":"mid","ec":0.2,"emax":75},{"label":"low","ec":1.4,"emax":30}],"base":0,"x":"log [agonist]","y":"fractional response (%)","caption":"One agonist in three tissues of falling receptor density (Part 2 page 28): with fewer receptors the ED50 moves right (about 10^-7 to 10^-4.5 to 10^-3.5 on his slide) and the maximal response falls, the same picture as an irreversible antagonist."}-->
@@ -845,7 +849,7 @@ const GUIDE_HTML = `
 <tr><td>Indirect antagonist vs allosteric drug</td><td>Indirect: upstream or downstream of the receptor (transporter, enzyme, cascade); can raise or lower the response. Allosteric: another site on the receptor itself. The poll distractor merges the two.</td></tr>
 <tr><td>Up-regulation vs down-regulation</td><td>Up follows chronic antagonist/inverse agonist (β-blocker; taper, do not stop cold turkey); agonist curve shifts left. Down follows chronic agonist (Afrin, opioids, cocaine); curve shifts right and Emax can fall; tolerance.</td></tr>
 <tr><td>Rapid vs long-term regulation</td><td>Rapid: GRK phosphorylates, β-arrestin binds, milliseconds, reversible when the drug comes off. Long-term: synthesis, degradation, internalization by endocytosis (coated pits, recycling or lysosome); takes time.</td></tr>
-<tr><td>Graded vs quantal response</td><td>Graded: one individual, scale from none to maximum, y = % of maximal effect. Quantal: population, all-or-none, y = % of individuals responding; ED50/TD50/LD50 are population doses.</td></tr>
+<tr><td>Graded vs quantal response</td><td>Graded: one individual, scale from none to maximum, y = % of maximal effect. Quantal: population, all-or-none, y = % of individuals responding; ED50 and LD50 are population doses.</td></tr>
 <tr><td>Therapeutic index vs safety index</td><td>TI = LD50/ED50 (midpoints). SI = LD1/ED99 (tails). A drug can have a large TI and a bad SI (TI 1000, SI 0.1); both must be large.</td></tr>
 <tr><td>Therapeutic index vs therapeutic window</td><td>TI is a ratio of two doses. The window is the range of steady-state concentrations that treats with minimal toxicity; how much toxicity is acceptable depends on the disease.</td></tr>
 <tr><td>Addition vs synergism vs potentiation</td><td>Sum of two effects; more than the sum (both drugs active); one drug inactive alone but boosts the other (carbidopa + dopa, an indirect antagonist).</td></tr>

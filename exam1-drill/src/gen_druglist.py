@@ -40,7 +40,7 @@ CLASS = {
  'antagonist': ('Competitive & Irreversible Antagonists',
              'A reversible (competitive) antagonist binds the receptor without activating it and blocks the agonist; enough agonist can surmount the block, so the agonist curve shifts right with the same maximum.'),
  'irreversible': ('Competitive & Irreversible Antagonists',
-             'An irreversible antagonist binds the receptor irreversibly (sometimes covalently), so no agonist concentration can surmount the block and the maximal agonist effect falls; the block lasts until new receptors are made.'),
+             'An irreversible antagonist forms covalent bonds with the receptor, so no agonist concentration can surmount the block; the receptors are removed (chemically down-regulated) and the agonist can no longer reach its Emax.'),
  'partial': ('Partial Agonists',
              'A partial agonist activates the receptor but produces a lower maximal response at full receptor occupancy than a full agonist does, and it competes with a full agonist for the same sites.'),
  'inverse': ('Competitive & Irreversible Antagonists',
@@ -62,7 +62,7 @@ RECEPTOR = {
  'a1a2': 'α1 binding forms IP3 and DAG and raises calcium, contracting smooth muscle; α2 binding inhibits adenylyl cyclase and lowers cAMP.',
  'b1b2': 'β1 (heart) and β2 (smooth muscle) both raise cAMP through adenylyl cyclase: β1 speeds the sinoatrial node and increases contractility, β2 relaxes bronchiolar smooth muscle.',
  'mn':  'Muscarinic M1 and M3 signal through IP3, DAG and calcium and M2 opens potassium channels; nicotinic Nn and Nm are ligand-gated channels that open sodium and potassium channels and depolarize the cell.',
- 'h':  'Histamine activates more than one receptor subtype, and each subtype can couple to a different G protein, which is what lets a drug be selective for one subtype.',
+ 'h':  'Histamine is the full agonist at H1 and H2; loratadine (H1 inverse agonist) and diphenhydramine (non-selective antagonist) oppose it at the same receptors.',
 }
 RECEPTOR_SRC = {'h': (K2, 'Receptor Classes & Drug Development'), 'gaba': (K2, 'Competitive & Irreversible Antagonists — allosteric modulators')}
 
@@ -118,11 +118,13 @@ def add(q):
     n += 1
     qs.append(q)
 
+moa_id = {}   # drug -> id of its MOA item, so the rev() mirror items can carry dupOf
+
 def why_wrong(m, d):
     ds = owner.get(m, [])
     if not ds:
         return 'No drug on the Exam 1 list has this mechanism.'
-    return f'That is {" and ".join(x.lower() for x in ds)}; {d.lower()} is listed as {lc(MOA[d][0])}.'
+    return f'That is {" and ".join(x.lower() for x in ds)}.'
 
 # distractors per drug: look-alike rows on the same list
 DIS = {
@@ -154,6 +156,7 @@ for d, (m, sub, cls, recs) in MOA.items():
               {'t': 'M1, M2, M3, Nn, Nm, H1 and H2', 'correct': False, 'why': 'H1 and H2 are histamine receptors, listed for histamine, not acetylcholine.'}],
              'teach': TEACH[d], 'reading': reading_for(None, ['mn']),
              'quote': 'Acetylcholine — Agonist at muscarinic receptors (M1, M2, M3) and nicotinic receptors (Nn, Nm)'})
+        moa_id[d] = qs[-1]['id']
         continue
     opts = [{'t': m, 'correct': True, 'why': f'{d} is listed as {lc(m)}.'}]
     for x in DIS[d]:
@@ -161,6 +164,7 @@ for d, (m, sub, cls, recs) in MOA.items():
     add({'sub': sub, 'concept': f'moa-{d.lower()}', 'tags': ['drug-list'],
          'stem': f'Which of the following describes the mechanism of action of {d.lower()}?',
          'options': opts, 'teach': TEACH[d], 'reading': reading_for(cls, recs), 'quote': f'{d} — {m}'})
+    moa_id[d] = qs[-1]['id']
 
 add({'sub': 'adr', 'concept': 'irreversible-drug', 'tags': ['drug-list'],
      'stem': 'Phenoxybenzamine differs from every other drug on the Exam 1 list in which way?',
@@ -176,7 +180,7 @@ def rev(concept, sub, stem, right, wrongs, cls, recs):
     opts = [{'t': right, 'correct': True, 'why': f'{right} is listed as {lc(MOA[right][0])}.'}]
     for w in wrongs:
         opts.append({'t': w, 'correct': False, 'why': f'{w} is listed as {lc(MOA[w][0])}.'})
-    add({'sub': sub, 'concept': concept, 'tags': ['drug-list'], 'stem': stem, 'options': opts,
+    add({'sub': sub, 'concept': concept, 'tags': ['drug-list'], 'stem': stem, 'options': opts, 'dupOf': moa_id[right],
          'teach': TEACH[right], 'reading': reading_for(cls, recs), 'quote': f'{right} — {MOA[right][0]}'})
 
 rev('moa-loratadine', 'hist', 'Which drug is a histamine H1 receptor inverse agonist?', 'Loratadine',
@@ -202,12 +206,12 @@ def sata(concept, sub, stem, rights, wrongs, teach, cls):
 sata('partial-agonists', 'gen', 'Which drugs on the Exam 1 list are partial agonists?', ['Albuterol', 'Varenicline', 'Pindolol'],
      ['Metoprolol', 'Loratadine', 'Phenylephrine'],
      'Three drugs on the list are partial agonists: albuterol (β2), varenicline (Nn) and pindolol (β1 and β2). Loratadine is an inverse agonist, metoprolol an antagonist, phenylephrine a full α1 agonist.', 'partial')
-sata('alpha1-drugs', 'adr', 'Which drugs on the Exam 1 list act at the α1 receptor?', ['Norepinephrine', 'Prazosin', 'Phenylephrine', 'Phenoxybenzamine'],
-     ['Metoprolol', 'Albuterol'],
-     'Five rows name α1: norepinephrine and epinephrine (agonists at α1, α2, β1, β2), phenylephrine (α1 agonist), prazosin (α1 antagonist) and phenoxybenzamine (α1 and α2 antagonist, irreversible). Metoprolol and albuterol act at β receptors only.', None)
-sata('antagonists-list', 'gen', 'Which drugs on the Exam 1 list are antagonists?', ['Tropicamide', 'Prazosin', 'Metoprolol', 'Diphenhydramine'],
-     ['Loratadine', 'Pindolol', 'Diazepam'],
-     'The antagonists on the list are tropicamide, prazosin, phenoxybenzamine, metoprolol and diphenhydramine. Loratadine is classed as an inverse agonist, pindolol as a partial agonist and diazepam as an allosteric agonist.', 'antagonist')
+sata('alpha1-drugs', 'adr', 'Which drugs on the Exam 1 list act at the α1 receptor?', ['Prazosin', 'Phenylephrine', 'Phenoxybenzamine'],
+     ['Metoprolol', 'Albuterol', 'Varenicline'],
+     'Five rows name α1: norepinephrine and epinephrine (agonists at α1, α2, β1, β2), phenylephrine (α1 agonist), prazosin (α1 antagonist) and phenoxybenzamine (α1 and α2 antagonist, irreversible). Metoprolol and albuterol act at β receptors only; varenicline at Nn.', None)
+sata('antagonists-list', 'gen', 'Which drugs on the Exam 1 list are antagonists?', ['Tropicamide', 'Prazosin', 'Metoprolol'],
+     ['Phenylephrine', 'Histamine', 'Diazepam'],
+     'The antagonists on the list are tropicamide, prazosin, phenoxybenzamine, metoprolol and diphenhydramine. Phenylephrine, histamine and diazepam are agonists. Loratadine is classed as an inverse agonist and pindolol as a partial agonist (a partial agonist can also behave as an antagonist by competing with the agonist).', 'antagonist')
 sata('histamine-drugs', 'hist', 'Which drugs on the Exam 1 list act at histamine receptors?', ['Histamine', 'Loratadine', 'Diphenhydramine'],
      ['Tropicamide', 'Diazepam', 'Varenicline'],
      'Histamine (H1 and H2 agonist), loratadine (H1 inverse agonist) and diphenhydramine (non-selective histamine receptor antagonist) are the histamine-receptor drugs on the list.', None)
