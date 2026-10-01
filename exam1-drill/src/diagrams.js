@@ -119,8 +119,8 @@ const FIG = (() => {
     const panels = [
       ['Full agonist', 'binds, activates', 100, 'pocket', 'a', ''],
       ['Partial agonist', 'binds, activates less', 55, 'pocket', 'a', ''],
-      ['Reversible antagonist', 'binds, no activation; comes off, more agonist overcomes it', 20, 'block', 'c', ''],
-      ['Irreversible antagonist', 'binds for good (covalent); agonist cannot overcome it', 20, 'block', 'b', 'lock'],
+      ['Reversible antagonist', 'alone: stays at basal; with an agonist: shifts it right, same Emax', 20, 'block', 'c', ''],
+      ['Irreversible antagonist', 'alone: stays at basal; with an agonist: Emax falls toward 0', 20, 'block', 'b', 'lock'],
       ['Inverse agonist', 'binds, turns activity below basal', 4, 'pocket', 'b', ''],
       ['Allosteric modulator', 'binds a second site; changes what the agonist does', 100, 'both', 'a', 'plus']
     ];
@@ -149,7 +149,7 @@ const FIG = (() => {
       lines.slice(0, 3).forEach((l, k) => { out += `<text class="lbl xs" x="${pw / 2}" y="${94 + k * 9}" text-anchor="middle">${l}</text>`; });
       out += '</g>';
     });
-    return wrap(out, 'Drug classes at one receptor. Circle = drug in the agonist pocket; square = drug blocking the pocket; small circle at the side = a drug at a second (allosteric) site. The bar is the response; the dashed line is the receptor’s basal activity with nothing bound.', 240);
+    return wrap(out, 'Drug classes at one receptor, each drug given ALONE. Circle = drug in the agonist pocket; square = drug blocking the pocket; small circle at the side = a drug at a second (allosteric) site. The bar is the response; the dashed line is the receptor’s basal activity with nothing bound. Neither antagonist moves the response off basal on its own (no efficacy); only the inverse agonist takes it below basal. What an antagonist does to an agonist’s curve is shown in the shift panels on Tell apart.', 240);
   };
 
 

@@ -3,6 +3,7 @@
 Newest first. The build embeds this file, and the Progress page shows it.
 
 ## 2026-10-01 (9/30 lecture, Jeopardy, review method, bank review)
+- Drug-classes figure: each panel now says it shows the drug ALONE (an antagonist alone keeps the response at basal; only the inverse agonist goes below basal) and what the two antagonists do to an agonist's Emax.
 - Day 6 (9/30) ingested: the last Part 3 slides (desired vs undesired effects, therapeutic efficacy) and his PD review slides with the way he reads a curve question (the point of reference, "is it helping or making life more difficult", then shift? baseline? Emax? symmetrical?). New topic "Day 6 review" and a guide "How to tackle a curve question" that walks each of his review figures to his key.
 - Jeopardy (9/30): all 18 of his review-game questions verbatim with his keys from the transcript, as their own topic, with the figures; the five that were confusing are walked through in the guide. The 9/30 PollEV poll (irreversible antagonist = phenoxybenzamine) added.
 - Signal transduction the way he will ask it: which is the signal / receptor / transducer / effector / second messenger, the steps forward and back, and a step-through figure of the Gs cascade (Back / Next / Play) in guide 6 and on Tell apart.
