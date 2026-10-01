@@ -2,7 +2,7 @@ const TELL_HTML = `
 <h2>Tell apart</h2>
 <p class="sub">Slide numbers marked ~ were counted from the deck text and may be off by one or two. Pairs that share wording. Each row gives the feature that separates them and the trap a question sets. Nothing here is scored.</p>
 <h3>The shifts at a glance: what is bound, and what the curve does</h3>
-<p class="sub">Dashed curve = the agonist alone. Solid = with the second drug. Circle = agonist, square = antagonist, lock = irreversible, small side circle = allosteric.</p>
+<p class="sub">Dashed curve = the agonist alone. Solid = with the second drug. Symmetry of the shifts depends on where the second drug binds, not on the scenario: a drug in the agonist’s pocket gives equal steps for equal doses; a drug at a second site gives shrinking steps that stop (allosteric). Circle = agonist, square = antagonist, lock = irreversible, small side circle = allosteric.</p>
 <table class="reftab"><thead><tr><th style="width:22%">Second drug</th><th>At the receptor</th><th>Shift</th><th>Baseline</th><th>Emax</th></tr></thead><tbody>
 <tr><td>Full agonist</td><td>Competes for the same pocket; either one activates</td><td>Left</td><td>Up</td><td>Same</td></tr>
 <tr><td>Partial agonist</td><td>Competes for the pocket; activates less</td><td>—</td><td>Ends at the partial agonist’s own Emax (up from low, down from full)</td><td>Only the full agonist alone reaches it</td></tr>
@@ -15,6 +15,7 @@ const TELL_HTML = `
 <p class="sub">Day 3 slides ~42–~49; Day 4 slides ~13–~55; transcript 9/28. Only the irreversible antagonist and the allosteric antagonist acting on efficacy lower Emax.</p>
 <div class="pair"><!--FIG:shift-fafa--><!--FIG:shift-fafa-anim--></div>
 <div class="pair"><!--FIG:shift-fapa--><!--FIG:shift-fapa-anim--></div>
+<div class="pair"><!--FIG:shift-fapa-down--><!--FIG:shift-fapa-down-anim--></div>
 <div class="pair"><!--FIG:shift-inverse--><!--FIG:shift-inverse-anim--></div>
 <div class="pair"><!--FIG:shift-competitive--><!--FIG:shift-competitive-anim--></div>
 <div class="pair"><!--FIG:shift-irreversible--><!--FIG:shift-irreversible-anim--></div>
@@ -60,7 +61,7 @@ const TELL_HTML = `
 <tr><td>Gs (β1, heart) vs Gq (α1, smooth muscle)</td><td>Gs: αs → adenylate cyclase → ATP → cAMP → ↑ heart rate; Gq: αq → PLC → PIP2 → IP3 → Ca2+ from ER</td><td>Assigning PLC to β1 or adenylate cyclase to α1</td><td>~51–55</td><td data-q="L01-033">L01-033</td></tr>
 </tbody></table>
 <div class="pair"><!--FIG:superfamilies--><!--FIG:bonds--></div>
-<div class="pair"><!--FIG:selectivity--><!--FIG:moa-soa--></div>
+<!--FIG:selectivity-->
 <h3>Day 2 (9/23) &mdash; Pharmacodynamics-Day_2_2026s copy.pdf</h3>
 <table class="reftab"><thead><tr><th style="width:20%">Looks alike</th><th>What separates them</th><th style="width:26%">The trap</th><th style="width:9%">Slides</th><th style="width:9%">Question</th></tr></thead><tbody>
 <tr><td>Gαs vs Gαi vs Gαq</td><td>Gαs → AC → ↑cAMP; Gαi → AC → ↓cAMP; Gαq → PLC → ↑IP3, Ca++</td><td>Gαi also uses AC, so it is easy to give it PLC or an increase in cAMP</td><td>~3</td><td data-q="L02-002">L02-002</td></tr>
