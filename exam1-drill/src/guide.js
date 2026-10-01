@@ -571,6 +571,7 @@ const GUIDE_HTML = `
 <h4>How to read it on a figure</h4>
 <!--FIG:gpcr-->
 <!--FIG:gpcr-steps-->
+<!--FIG:gpcr-anim-->
 <h4>How he will ask it (9/30)</h4>
 <ul>
 <li>"No fill in the blanks ... I can ask like, which of these is a second messenger, which of these is a factor [effector], which of this is a transducer, right, which of this is a signal, uh, I could ask, you know, what are the steps involved in transduction, right? So GDP comes up." <small>(T) 9/30</small></li>
