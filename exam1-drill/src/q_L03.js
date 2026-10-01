@@ -476,7 +476,7 @@ QUESTIONS.push(
 
 {id:'L03-035', lecture:'L03', prof:'Gottlieb', tier:'new', topic:'L03', sub:'pa', skill:'recall',
  concept:'partial-agonist-dual-nature', tags:[], source:'slide',
- stem:'Varenicline, a partial agonist at the nicotinic receptor, may act as an agonist or as an antagonist. What determines which?',
+ stem:'Varenicline may act as an agonist or as an antagonist at the nicotinic receptor. What determines which?',
  options:[
   {t:'The physiological state of the subject', correct:true, why:'The deck states it depends on the physiological state of the subject (dual nature).'},
   {t:'Whether it binds covalently', correct:false, why:'Partial agonists are listed as reversible interactions.'},

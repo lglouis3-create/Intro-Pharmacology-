@@ -570,8 +570,7 @@ const GUIDE_HTML = `
 
 <h4>How to read it on a figure</h4>
 <!--FIG:gpcr-->
-<!--FIG:gpcr-steps-->
-<!--FIG:gpcr-anim-->
+<div class="pair"><!--FIG:gpcr-steps--><!--FIG:gpcr-anim--></div>
 <h4>How he will ask it (9/30)</h4>
 <ul>
 <li>"No fill in the blanks ... I can ask like, which of these is a second messenger, which of these is a factor [effector], which of this is a transducer, right, which of this is a signal, uh, I could ask, you know, what are the steps involved in transduction, right? So GDP comes up." <small>(T) 9/30</small></li>
@@ -773,8 +772,12 @@ const GUIDE_HTML = `
 <li>Enhancement of drug effects: addition (two drugs, same effect, result = the sum: trimethoprim + sulfamethoxazole); synergism (result greater than the sum: penicillin + gentamicin, "1 plus 1 and you get 5"); potentiation (one drug has no effect alone but increases the other: carbidopa + dopa, carbidopa being an indirect antagonist of the gut enzyme that breaks down dopa). "I don't think I have any of these drugs on your drug list ... it's just FYI." <small>Part 2 pages 30–31; (T) 9/29</small></li>
 </ul>
 <h4>Indirect antagonists: where each drug acts</h4>
-<!--FIG:indirect-anim-->
-<div class="shiftgrid"><!--FIG:ind-snri--><!--FIG:ind-ssri--><!--FIG:ind-ache--><!--FIG:ind-carbidopa--><!--FIG:ind-pde--><!--FIG:ind-ras--></div>
+<div class="pair"><!--FIG:ind-snri--><!--FIG:ind-snri-anim--></div>
+<div class="pair"><!--FIG:ind-ssri--><!--FIG:ind-ssri-anim--></div>
+<div class="pair"><!--FIG:ind-ache--><!--FIG:ind-ache-anim--></div>
+<div class="pair"><!--FIG:ind-carbidopa--><!--FIG:ind-carbidopa-anim--></div>
+<div class="pair"><!--FIG:ind-pde--><!--FIG:ind-pde-anim--></div>
+<div class="pair"><!--FIG:ind-ras--><!--FIG:ind-ras-anim--></div>
 <!--IMG:pollev-abcde-duloxetine-->
 <ul>
 <li>On the NE-alone figure, the reuptake blocker moves B to A (left, same Emax). He then ran the other permutations aloud: competitive antagonist → D; irreversible → "either C or E, depending on how much spare receptors they would have"; allosteric antagonist affinity only → D; affinity and efficacy → C and E; allosteric agonist affinity only or another full agonist → A. "I guarantee you, you're going to see this figure in your exam." <small>PollEV (v2) p.5; (T) 9/29</small></li>
@@ -793,9 +796,10 @@ const GUIDE_HTML = `
 <li>Clinical down-regulation: tolerance ("the effects that follow continued exposure to the same concentration of drug is diminished": opioid analgesics, α-adrenoceptor nasal decongestants) and myasthenia gravis (antibody to the nicotinic receptor at the neuromuscular junction). <small>Part 2 page 29; (T) 9/29</small></li>
 </ul>
 <h4>Receptor regulation: the receptor at each step</h4>
-<div class="shiftgrid"><!--FIG:desens-anim--><!--FIG:regulation-anim--></div>
-<div class="shiftgrid"><!--FIG:desens-rapid--><!--FIG:desens-long--></div>
-<!--FIG:regulation-->
+<div class="pair"><!--FIG:desens-rapid--><!--FIG:desens-rapid-anim--></div>
+<div class="pair"><!--FIG:desens-long--><!--FIG:desens-long-anim--></div>
+<div class="pair"><!--FIG:upreg--><!--FIG:upreg-anim--></div>
+<div class="pair"><!--FIG:downreg--><!--FIG:downreg-anim--></div>
 
 <h4>How to read it on a curve</h4>
 <!--GRAPH:{"curves":[{"label":"high","ec":-1.5,"emax":100},{"label":"mid","ec":0.2,"emax":75},{"label":"low","ec":1.4,"emax":30}],"base":0,"x":"log [agonist]","y":"fractional response (%)","caption":"One agonist in three tissues of falling receptor density (Part 2 page 28): with fewer receptors the ED50 moves right (about 10^-7 to 10^-4.5 to 10^-3.5 on his slide) and the maximal response falls, the same picture as an irreversible antagonist."}-->

@@ -106,6 +106,8 @@ select,input[type=text],input[type=number]{font-size:15px;padding:6px 8px;border
 .fig .st{display:none} .fig .st.on{display:inline}
 .fig .arrow{stroke:var(--muted);stroke-width:1.6;fill:none;marker-end:url(#arw)}
 .shiftgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(400px,1fr));gap:12px;margin:8px 0 18px} .shiftgrid .fig{max-width:none;margin:0}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:8px 0 18px} .pair .fig{max-width:none;margin:0} .pair h4{grid-column:1/-1;margin:0}
+@media (max-width:760px){.pair{grid-template-columns:1fr}}
 @media (max-width:560px){.shiftgrid{grid-template-columns:1fr}}
 nav select{font-size:13px;padding:4px 6px;border:1px solid var(--line);border-radius:6px;background:var(--chip);color:var(--ink)}
 .qgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:6px;margin:4px 0 10px}
