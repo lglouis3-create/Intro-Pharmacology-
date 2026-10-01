@@ -2,6 +2,12 @@
 
 Newest first. The build embeds this file, and the Progress page shows it.
 
+## 2026-10-01 (terms: recognise the idea, not the wording)
+- Every term now has a one-line meaning and a situation that shows it in action (his own examples: the heart cell, the petri dish, Afrin, the β-blocker taper, the five-curve figure). The term quiz asks three ways: which term fits this situation (term names as the options), what the term means (short one-line meanings as the options), and which term matches the full definition. The long definition-versus-definition form is gone.
+- Flashcards show the situation first with the term hidden ("Which term is this?"), then the term, its one-line meaning, the definition and the figure.
+- New cross-talk figure (one heart cell, β1 with Gαs and M2 with Gαi acting on the same adenylate cyclase; the heart rate is the net).
+- Exam 2 material (the autonomic nervous system, taught from the second half of 9/30) is deliberately not on the site until after Exam 1.
+
 ## 2026-10-01 (9/30 lecture, Jeopardy, review method, bank review)
 - Drug-classes figure: each panel now says it shows the drug ALONE (an antagonist alone keeps the response at basal; only the inverse agonist goes below basal) and what the two antagonists do to an agonist's Emax.
 - Day 6 (9/30) ingested: the last Part 3 slides (desired vs undesired effects, therapeutic efficacy) and his PD review slides with the way he reads a curve question (the point of reference, "is it helping or making life more difficult", then shift? baseline? Emax? symmetrical?). New topic "Day 6 review" and a guide "How to tackle a curve question" that walks each of his review figures to his key.

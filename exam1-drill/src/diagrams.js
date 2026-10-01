@@ -592,6 +592,26 @@ const FIG = (() => {
       '<b>Roles he asks:</b> signal = NE; receptor = β1; transducer = Gs (αs, β, γ); effector = AC (or PLC for Gq); second messengers = cAMP, IP3, Ca++, PKA.'], 176).replace('</svg><figcaption>', '</svg>' + controls + '<figcaption>');
   };
 
+
+  /* Cross-talk in one heart cell: two receptors, two G proteins, one effector.
+     Day 2 slide ~30; transcript 9/23 and 9/30 (M2 is Gαi, β1 is Gαs). */
+  F['crosstalk'] = () => {
+    const xs = (x, y, t, anchor = 'start') => `<text class="lbl xs" x="${x}" y="${y}" text-anchor="${anchor}">${t}</text>`;
+    const box = (x, y, w, h, t) => `<rect class="box" x="${x}" y="${y}" width="${w}" height="${h}" rx="4"/><text class="lbl sm" x="${x + w / 2}" y="${y + h / 2 + 4}" text-anchor="middle">${t}</text>`;
+    const arr = (x1, y1, x2, y2) => `<path class="arrow" d="M${x1} ${y1} L${x2} ${y2}"/>`;
+    let g = `<text class="title" x="180" y="11" text-anchor="middle">Cross-talk: one heart cell, two receptors, one effector</text>`;
+    g += xs(6, 32, 'outside') + `<rect x="6" y="36" width="348" height="14" fill="var(--chip)" opacity="0.7"/>` + xs(6, 64, 'inside the cell');
+    g += cell(60, 20, { lig: 'ag', act: 1 }) + xs(90, 26, 'NE on β1') + xs(90, 35, '(sympathetic)') + cell(260, 20, { lig: 'ag2', act: 1 }) + xs(256, 26, 'ACh on M2', 'end') + xs(256, 35, '(parasympathetic)', 'end');
+    g += `<circle cx="100" cy="78" r="9" fill="var(--figA)" fill-opacity="0.25" stroke="var(--figA)" stroke-width="1.2"/>` + xs(100, 81, 'αs', 'middle') + arr(73, 56, 92, 70);
+    g += `<circle cx="233" cy="78" r="9" fill="var(--figB)" fill-opacity="0.25" stroke="var(--figB)" stroke-width="1.2"/>` + xs(233, 81, 'αi', 'middle') + arr(273, 56, 241, 70);
+    g += box(142, 66, 50, 24, 'AC') + arr(109, 78, 142, 78) + arr(224, 78, 192, 78);
+    g += `<text class="cl a" x="124" y="100" text-anchor="middle">+ more cAMP</text><text class="cl b" x="212" y="100" text-anchor="middle">− less cAMP</text>`;
+    g += arr(167, 90, 167, 108) + xs(167, 120, 'cAMP = the net of the two', 'middle') + arr(167, 124, 167, 136) + xs(167, 148, 'heart rate: up with sympathetic NE, down with parasympathetic ACh', 'middle');
+    return wrap(g, ['<b>What it is:</b> two signal transduction pathways in the same cell act on one effector, adenylate cyclase; the response is the net of both.',
+      '<b>In the heart:</b> β1 (Gαs) raises cAMP and the heart rate, M2 (Gαi) lowers cAMP and the heart rate; the heart rate that results is the balance.',
+      '<b>Why it matters for drugs:</b> a β-blocker and a muscarinic antagonist act on the same cAMP from opposite sides.'], 156);
+  };
+
   const api = key => (F[key] ? F[key]() : '');
   api.graph = GRAPH;
   return api;

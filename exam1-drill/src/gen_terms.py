@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
-"""Generate q_TERMS.js from glossary.js: two questions per term, one asking for
-the term from its definition and one asking for the definition from the term.
+"""Generate q_TERMS.js from glossary.js: up to three questions per term: a
+situation to recognise (scene -> term), the term's one-line meaning (term ->
+gist, short options), and the full definition -> term.
 Distractors come from the term's `confuse` list first, then its group. The
 second question is `dupOf` the first so one exam paper never carries both."""
 import json, random, subprocess, os, sys
@@ -49,29 +50,43 @@ for t in TERMS:
                 skill='term', concept='term-' + t['id'], tags=['term'], source=t.get('src', 'slide'),
                 cite=cite, quote=t.get('quote', ''))
     teach = t['def'] + (' ' + t['hook'] if t.get('hook') else '')
-    # 1. definition -> term
-    d = pick_distractors(t, 'term', need_longer=True)
-    if d:
-        opts = [{'t': t['term'], 'correct': True, 'why': 'This is the definition of ' + t['term'] + '.'}]
-        for x in d:
-            opts.append({'t': x['term'], 'correct': False, 'why': x['term'] + ': ' + x['def']})
-        q1 = dict(base, id='T-' + t['id'] + '-1', stem='Which term is defined as: ' + t['def'].rstrip('.') + '?',
-                  options=opts, teach=teach)
+    def fig(q):
         if t.get('fig'):
-            q1['fg'] = t['fig']
-        qs.append(q1)
-    # 2. term -> definition (only when a longer wrong definition exists)
-    d2 = pick_distractors(t, 'def', need_longer=True)
-    if d2:
-        opts = [{'t': t['def'], 'correct': True, 'why': 'This is the definition of ' + t['term'] + '.'}]
-        for x in d2:
-            opts.append({'t': x['def'], 'correct': False, 'why': 'That defines ' + x['term'].lower() + '.'})
-        q2 = dict(base, id='T-' + t['id'] + '-2', stem='What does the term "' + t['term'] + '" mean?', options=opts, teach=teach)
+            q['fg'] = t['fig']
+        return q
+    first = None
+    # 1. a situation -> the term (the term named nowhere in the stem)
+    if t.get('scene'):
+        d = pick_distractors(t, 'term', need_longer=True)
         if d:
-            q2['dupOf'] = 'T-' + t['id'] + '-1'
-        if t.get('fig'):
-            q2['fg'] = t['fig']
-        qs.append(q2)
+            opts = [{'t': t['term'], 'correct': True, 'why': 'This situation is ' + t['term'].lower() + ': ' + (t.get('gist') or t['def'])}]
+            for x in d:
+                opts.append({'t': x['term'], 'correct': False, 'why': x['term'] + ' would be: ' + (x.get('gist') or x['def'])})
+            first = 'T-' + t['id'] + '-1'
+            qs.append(fig(dict(base, id=first, stem='Which term fits this situation? ' + t['scene'], options=opts, teach=teach)))
+    # 2. the term -> its one-line meaning (short options; a longer wrong gist must exist)
+    if t.get('gist'):
+        d2 = pick_distractors(t, 'gist', need_longer=True)
+        if d2:
+            opts = [{'t': t['gist'], 'correct': True, 'why': 'That is ' + t['term'].lower() + '.'}]
+            for x in d2:
+                opts.append({'t': x['gist'], 'correct': False, 'why': 'That is ' + x['term'].lower() + ', not ' + t['term'].lower() + '.'})
+            q2 = fig(dict(base, id='T-' + t['id'] + '-2', stem=t['term'] + ' means:', options=opts, teach=teach))
+            if first:
+                q2['dupOf'] = first
+            else:
+                first = q2['id']
+            qs.append(q2)
+    # 3. the full definition -> the term
+    d3 = pick_distractors(t, 'term', need_longer=True)
+    if d3:
+        opts = [{'t': t['term'], 'correct': True, 'why': 'This is the definition of ' + t['term'] + '.'}]
+        for x in d3:
+            opts.append({'t': x['term'], 'correct': False, 'why': x['term'] + ': ' + (x.get('gist') or x['def'])})
+        q3 = fig(dict(base, id='T-' + t['id'] + '-3', stem='Which term is defined as: ' + t['def'].rstrip('.') + '?', options=opts, teach=teach))
+        if first:
+            q3['dupOf'] = first
+        qs.append(q3)
 
 out = ["TOPICS.push({id:'TERMS', name:'Terminology', prof:'Gottlieb', lecture:'L01',",
        "  cite:'Definitions from the Day 1–5 decks and transcripts',",
