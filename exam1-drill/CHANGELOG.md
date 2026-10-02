@@ -2,6 +2,9 @@
 
 Newest first. The build embeds this file; the Topics page shows what is new since your last visit, and the Progress page shows all of it. Keep each bullet to one short line.
 
+## 2026-10-02 (drug classes explained)
+- Reference: a Why? card for each drug class (prefers R or R*, efficacy, each baseline).
+
 ## 2026-10-02 (review fixes)
 - What's new card on Topics; update notes rewritten as short bullets.
 - Step-through shapes slide again on every step, not only the first.
