@@ -127,7 +127,7 @@ const REFERENCE_HTML = `
 <ul>
 <li>Receptors sit in equilibrium R (inactive) &#8652; R* (active); the cell moves them between the two by itself, and most sit inactive, to save energy (T 9/23; Day 3 slide ~31).</li>
 <li>A drug that binds one state more tightly pulls the equilibrium toward that state and keeps it there (T 9/28). Positive efficacy moves R to R*; negative efficacy moves R* to R.</li>
-<li>Background only: Clark (occupancy, affinity), Ari&euml;ns (intrinsic activity: full 1, partial between 0 and 1, antagonist 0), Stephenson, Furchgott and Nickerson (efficacy, the two-state model); the names are not on the exam (T 9/22; Day 1 slide ~28).</li>
+<li>Background only: Clark (occupancy, affinity), Ari&euml;ns (intrinsic activity: full 100% (1), partial 1&ndash;99% (0.01&ndash;0.99), antagonist 0), Stephenson, Furchgott and Nickerson (efficacy, the two-state model); the names are not on the exam (T 9/22; Day 1 slide ~28).</li>
 </ul>
 <table class="reftab"><thead><tr><th>Class</th><th>Prefers</th><th>What binding does to R &#8652; R*</th><th>Efficacy</th><th>Alone at baseline 0% / 50% / 100%</th><th>Examples</th><th>Why</th></tr></thead><tbody>
 <tr><td>Full agonist</td><td>R* (greater affinity for active receptors)</td><td>Pulls receptors to active; activates the inactive ones it binds</td><td>Positive, 100%</td><td>&rarr; 100 / &rarr; 100 / flat at 100</td><td>Norepinephrine, epinephrine, histamine, acetylcholine</td><td>&mdash;</td></tr>
