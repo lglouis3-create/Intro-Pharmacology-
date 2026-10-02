@@ -474,8 +474,10 @@ const GUIDE_HTML = `
 <h4>How to read it on a figure</h4>
 <!--FIG:superfamilies--><!--FIG:gpcr-->
 <div class="pair"><!--FIG:rtk-steps--><!--FIG:rtk-anim--></div>
+<!--FIG:rtk-scenarios-anim-->
 <ul>
 <li>1-TM receptors (receptor tyrosine kinases, RTKs): binding pocket outside, enzyme (kinase) inside, and no G protein. His five activation steps, in order: (1) the inactive receptor is a monomer; (2) the ligand binds and two receptors join (dimerization), the active form; (3) the two kinase domains phosphorylate each other (cross-phosphorylation); (4) the phosphorylated sites form docking sites for signaling complexes; (5) a tyrosine phosphatase removes the phosphates and ends the signal. Downstream, the cascade Grb2 → GEF → RAS → RAF → MEK → ERK drives cell growth. <small>Day 2 ~4–~11; (T) 9/23</small></li>
+<li>His three RAS scenarios: (1) in many cancers the pathway is over-stimulated (20–25% of cancers contain a RAS mutation), so the cells grow and divide very fast; (2) drug X binds RAS and stops it, so there is no RAF, MEK or ERK and the cells do not grow or divide, although the receptor still binds and dimerizes; (3) because drug X acts downstream of the receptor, it is an indirect antagonist, and the growth factor's curve shifts right with a lower Emax. <small>Day 2 ~10–~11, ~41; Day 4–5 Part 2 pages ~7–~8; (T) 9/23</small></li>
 <li>Trap: GDP/GTP exchange, GTPase, PDE and cAMP are G-protein (GPCR) steps; none of them is an RTK step. The enzyme that ends RTK signaling is the tyrosine phosphatase. <small>Day 2 ~7–~9</small></li>
 <li>Nuclear receptors: aldosterone binds the mineralocorticoid receptor, more mRNA for Na+/K+ pumps and channels, sodium saved, potassium wasted, water follows sodium. <small>Day 2 ~12–~14; (T) 9/23</small></li>
 <li>More calcium inside the cell speeds the SA node (the heart's pacemaker) and strengthens contraction; a calcium channel blocker slows and weakens them. <small>(T) 9/23</small></li>
