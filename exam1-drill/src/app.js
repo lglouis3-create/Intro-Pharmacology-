@@ -955,6 +955,25 @@ document.addEventListener('click', e => {
   if (go === 'dot') return stepTo(fig, cur, +b.dataset.i);
   stepTo(fig, cur, (cur + (+go) + n) % n);
 });
+/* "Explain one": a select (or a Why? button in a table row) shows the matching
+   <template data-x> card under the table; the card's button scrolls to that drug's panels. */
+// scroll an element to just below the sticky header
+const scrollToEl = el => { const hd = document.querySelector('header'), off = (hd ? hd.getBoundingClientRect().height : 0) + 8; window.scrollTo({top: el.getBoundingClientRect().top + window.scrollY - off, behavior: RM() ? 'auto' : 'smooth'}); };
+function showExplain(group, key) {
+  const out = document.querySelector(`[data-xout="${group}"]`), sel = document.querySelector(`[data-xsel="${group}"]`);
+  if (!out) return;
+  const t = key && document.querySelector(`template[data-x="${group}:${key}"]`);
+  out.innerHTML = t ? t.innerHTML : '';
+  if (sel) sel.value = key || '';
+  return out;
+}
+document.addEventListener('change', e => { const s = e.target.closest('select[data-xsel]'); if (s) showExplain(s.dataset.xsel, s.value); });
+document.addEventListener('click', e => {
+  const w = e.target.closest('[data-xpick]');
+  if (w) { const [g, k] = w.dataset.xpick.split(':'); const out = showExplain(g, k); if (out) scrollToEl(out.closest('.xpick')); return; }
+  const g = e.target.closest('[data-xgo]');
+  if (g) { const el = document.getElementById(g.dataset.xgo); if (el) scrollToEl(el); }
+});
 /* A question's or term's figure; the static GPCR figure brings the step-through with it. */
 const figHTML = key => (typeof FIG === 'function' && key) ? FIG(key) + (key === 'gpcr-steps' ? FIG('gpcr-anim') : '') : '';
 function expandFigs(html) {
@@ -1066,7 +1085,7 @@ function vDiagrams() {
     body += `<h3 id="dgg-${gi}">${esc(name)}</h3><div class="shiftgrid">${figs.map(f => `<div id="dg-${f.k}">${f.html}</div>`).join('')}</div>`;
   });
   $('#view').innerHTML = `<h2>Diagrams</h2><p class="sub">Every process diagram in one place. ▶ marks a step-through figure: use Next, Play all or the step dots under it.</p>${toc}${body}`;
-  $('#view').querySelectorAll('[data-dg]').forEach(a => a.onclick = e => { e.preventDefault(); const el = document.getElementById('dg-' + a.dataset.dg); if (el) el.scrollIntoView({behavior: RM() ? 'auto' : 'smooth', block: 'start'}); });
+  $('#view').querySelectorAll('[data-dg]').forEach(a => a.onclick = e => { e.preventDefault(); const el = document.getElementById('dg-' + a.dataset.dg); if (el) scrollToEl(el); });
 }
 function vGraphs() {
   const pool = examPool();
