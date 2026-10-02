@@ -124,7 +124,7 @@ function nav() {
 const clearView = () => { const v = $('#view'); v.onclick = null; v.onchange = null; };
 function go(v) {
   if (CUR === 'exam' && EX && !EX.done && v !== 'exam' && !confirm('Leave the exam in progress? It will be kept until you return.')) return;
-  CUR = v; nav(); window.scrollTo(0, 0); clearView(); if (typeof xBack === 'function') xBack(null);
+  CUR = v; nav(); window.scrollTo(0, 0); clearView(); if (typeof xBack === 'function') xBack(null); { const tb = document.getElementById('tback'); if (tb) tb.remove(); }
   VIEWFN[v]();
 }
 /* "Explain more": a question links to the pages that teach its concept. The link
@@ -822,7 +822,60 @@ function examResult() {
 let TM = {mode: 'glossary', group: 'all', card: null, shown: false};
 const termList = () => (typeof TERMS === 'undefined' ? [] : TERMS).filter(t => TM.group === 'all' || t.group === TM.group);
 const termKey = t => 'term:' + t.id;
+/* Glossary search and A–Z: the search box filters as you type (term, one-line
+   meaning, definition, example), the letter bar jumps to a letter (switching to
+   A–Z order), and a floating button returns to the search bar once it is off screen. */
+const LETTERS_AZ = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').concat('#');
+const termLetter = t => { const c = (t.term.match(/[A-Za-z]/) || [''])[0].toUpperCase(); return /^[A-Za-z]/.test(t.term.trim()) ? c : '#'; };
+const termHTML = t => `<div class="term" id="term-${esc(t.id)}"><b>${esc(t.term)}</b>${t.gist ? `<div class="gist">${esc(t.gist)}</div>` : ''}<div>${esc(t.def)}</div>${t.scene ? `<div class="hook"><b>In action:</b> ${esc(t.scene)}</div>` : ''}${t.hook ? `<div class="hook">${esc(t.hook)}</div>` : ''}${t.fig ? figHTML(t.fig) : ''}<div class="cite">${esc(fmtCite(t.cite))}</div></div>`;
+function glossWire(all, groups) {
+  const box = $('#tsearch'), list = $('#glist');
+  const draw = () => {
+    const q = (TM.q || '').trim().toLowerCase();
+    let pool = all.filter(t => TM.group === 'all' || t.group === TM.group);
+    if (q) pool = pool.filter(t => [t.term, t.gist, t.def, t.scene].join(' ').toLowerCase().includes(q));
+    const az = q || TM.order === 'az';
+    let h = '';
+    if (!pool.length) h = `<div class="card empty">No term matches “${esc(TM.q)}”. Try a shorter word, or pick a letter above.</div>`;
+    else if (q) {
+      // a search lists terms whose name matches first, then terms that only mention the word
+      const named = pool.filter(t => t.term.toLowerCase().includes(q)), rest = pool.filter(t => !named.includes(t));
+      const srt = l => l.slice().sort((a, b) => a.term.localeCompare(b.term, undefined, {sensitivity: 'base'}));
+      if (named.length) h += `<h3>Term names with “${esc(TM.q.trim())}”</h3><div class="card">${srt(named).map(termHTML).join('')}</div>`;
+      if (rest.length) h += `<h3>Also mentioned in</h3><div class="card">${srt(rest).map(termHTML).join('')}</div>`;
+    } else if (az) {
+      const sorted = pool.slice().sort((a, b) => a.term.localeCompare(b.term, undefined, {sensitivity: 'base'}));
+      const byL = {}; sorted.forEach(t => (byL[termLetter(t)] = byL[termLetter(t)] || []).push(t));
+      LETTERS_AZ.filter(L => byL[L]).forEach(L => { h += `<h3 id="tl-${L === '#' ? 'num' : L}">${L}</h3><div class="card">${byL[L].map(termHTML).join('')}</div>`; });
+    } else groups.filter(g => TM.group === 'all' || g === TM.group).forEach(g => { const ts = pool.filter(t => t.group === g); if (ts.length) h += `<h3>${esc(g)}</h3><div class="card">${ts.map(termHTML).join('')}</div>`; });
+    list.innerHTML = h;
+    $('#tcount').textContent = q ? `${pool.length} match${pool.length === 1 ? '' : 'es'}` : `${pool.length} terms`;
+    $('#tclear').hidden = !TM.q;
+  };
+  box.oninput = () => { TM.q = box.value; draw(); };
+  $('#tclear').onclick = () => { TM.q = ''; box.value = ''; draw(); box.focus(); };
+  document.querySelectorAll('[data-order]').forEach(c => c.onclick = () => { TM.order = c.dataset.order; document.querySelectorAll('[data-order]').forEach(x => x.classList.toggle('on', x === c)); draw(); });
+  document.querySelectorAll('[data-lt]').forEach(b => b.onclick = () => {
+    if (TM.q) { TM.q = ''; box.value = ''; }
+    if (TM.order !== 'az') { TM.order = 'az'; document.querySelectorAll('[data-order]').forEach(x => x.classList.toggle('on', x.dataset.order === 'az')); }
+    draw();
+    const el = document.getElementById('tl-' + (b.dataset.lt === '#' ? 'num' : b.dataset.lt)); if (el) scrollToEl(el);
+  });
+  draw();
+  // floating "back to search" once the bar has scrolled away
+  const bar = $('#tbar');
+  if (window.IntersectionObserver) {
+    const io = new IntersectionObserver(([e]) => {
+      let b = document.getElementById('tback');
+      if (e.isIntersecting || CUR !== 'terms' || TM.mode !== 'glossary' || !document.body.contains(bar)) { if (b) b.remove(); if (!document.body.contains(bar)) io.disconnect(); return; }
+      if (!b) { b = document.createElement('button'); b.id = 'tback'; b.type = 'button'; b.className = 'btn'; b.textContent = '↑ Search or pick a letter'; document.body.appendChild(b); }
+      b.onclick = () => { scrollToEl(bar); b.remove(); };
+    }, {rootMargin: '-120px 0px 0px 0px'});
+    io.observe(bar);
+  }
+}
 function vTerms() {
+  { const tb = document.getElementById('tback'); if (tb) tb.remove(); }
   const all = typeof TERMS === 'undefined' ? [] : TERMS;
   if (!all.length) { $('#view').innerHTML = '<h2>Terms</h2><div class="empty">No glossary in this build.</div>'; return; }
   const groups = [...new Set(all.map(t => t.group))];
@@ -832,9 +885,13 @@ function vTerms() {
    <span class="meta" style="margin:0 0 0 12px">Group:</span>${['all'].concat(groups).map(g => `<span class="chip ${TM.group === g ? 'on' : ''}" data-group="${esc(g)}">${g === 'all' ? 'All' : esc(g)}</span>`).join('')}</div></div>`;
   const list = termList();
   if (TM.mode === 'glossary') {
-    groups.filter(g => TM.group === 'all' || g === TM.group).forEach(g => {
-      h += `<h3>${esc(g)}</h3><div class="card">` + all.filter(t => t.group === g).map(t => `<div class="term"><b>${esc(t.term)}</b>${t.gist ? `<div class="gist">${esc(t.gist)}</div>` : ''}<div>${esc(t.def)}</div>${t.scene ? `<div class="hook"><b>In action:</b> ${esc(t.scene)}</div>` : ''}${t.hook ? `<div class="hook">${esc(t.hook)}</div>` : ''}${t.fig ? figHTML(t.fig) : ''}<div class="cite">${esc(fmtCite(t.cite))}</div></div>`).join('') + '</div>';
-    });
+    const pool = all.filter(t => TM.group === 'all' || t.group === TM.group);
+    const have = new Set(pool.map(termLetter));
+    h += `<div class="card tbar" id="tbar"><div class="row" style="flex-wrap:nowrap"><input id="tsearch" type="search" placeholder="Search the terms (name, meaning or example)…" value="${esc(TM.q || '')}" autocomplete="off" aria-label="Search the terms">
+      <button class="btn ghost" id="tclear" type="button" ${TM.q ? '' : 'hidden'}>Clear</button></div>
+      <div class="letters" role="navigation" aria-label="Jump to a letter">${LETTERS_AZ.filter(L => L !== '#' || have.has('#')).map(L => `<button type="button" class="lt" data-lt="${L}" ${have.has(L) ? '' : 'disabled'}>${L}</button>`).join('')}</div>
+      <div class="row" style="margin-top:6px"><span class="meta" style="margin:0">Order:</span>${[['group', 'By group'], ['az', 'A–Z']].map(([k, l]) => `<span class="chip ${(TM.order || 'group') === k ? 'on' : ''}" data-order="${k}">${l}</span>`).join('')}<span class="meta" id="tcount" style="margin:0 0 0 auto"></span></div></div>
+      <div id="glist"></div>`;
   } else if (TM.mode === 'flash') {
     if (!TM.card || !list.includes(TM.card)) {
       const now = Date.now();
@@ -858,6 +915,7 @@ function vTerms() {
       <div class="row"><button class="btn" id="tq">Start</button></div></div>`;
   }
   $('#view').innerHTML = h;
+  if (TM.mode === 'glossary') glossWire(all, groups);
   document.querySelectorAll('[data-mode]').forEach(c => c.onclick = () => { TM.mode = c.dataset.mode; vTerms(); });
   document.querySelectorAll('[data-group]').forEach(c => c.onclick = () => { TM.group = c.dataset.group; TM.card = null; vTerms(); });
   const sh = $('#fcshow'); if (sh) sh.onclick = () => { TM.shown = true; vTerms(); };
