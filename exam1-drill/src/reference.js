@@ -212,6 +212,7 @@ const REFERENCE_HTML = `
 <p class="sub">Pharmacodynamics-Day-1-2026s.pdf slides ~51&ndash;~55; transcript 9/23, 9/30. Poll trap: the option saying the GTP has to be released for dissociation is wrong; it is the GDP that leaves (Jeopardy 9/30).</p>
 
 <div class="pair"><!--FIG:rtk-steps--><!--FIG:rtk-anim--></div>
+<!--FIG:rtk-scenarios-anim-->
 <table class="reftab"><thead><tr><th>Step</th><th>Receptor tyrosine kinase (RTK) activation</th><th>Why</th></tr></thead><tbody>
 <tr><td>1</td><td>The inactive receptor is a monomer</td><td>One receptor alone cannot phosphorylate itself.</td></tr>
 <tr><td>2</td><td>Ligand binding induces dimerization (the active form)</td><td>Two receptors side by side put their kinase domains next to each other.</td></tr>

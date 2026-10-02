@@ -1004,6 +1004,46 @@ const FIG = (() => {
         ['Full agonist: curve LEFT (more potent), same Emax. Partial agonist: LEFT and UP, now reaching the full response ("behaving like a full agonist").', casc(true, true) + mini(true)]
       ], 206, ['<ol><li>Agonist alone: cAMP made by adenylate cyclase (AC), broken down by phosphodiesterase (PDE).</li><li>The PDE inhibitor (milrinone, caffeine) blocks PDE, downstream of the receptor.</li><li>cAMP builds up behind the same receptor signal.</li><li>Full agonist: curve LEFT, same Emax. Partial agonist: LEFT and UP to the full response.</li></ol>', '<b>Why it is indirect:</b> it binds an enzyme after the receptor, not the receptor.'], 'Four steps.');
     };
+    /* The RTK → RAS pathway, one scenario per step (transcript 9/23; Day 2 slides ~7–~11;
+       Day 4–5 deck Part 2 pages ~7–~8). Every shape has a data-k so the steps animate. */
+    F3['rtk-scenarios-anim'] = () => {
+      const P = plot(122, 48);
+      const K = ['Grb2', 'GEF', 'RAS', 'RAF', 'MEK', 'ERK'], bx = i => 6 + i * 42;
+      const scene = st => {
+        let g = band(6, 30, 348) + `<text data-k="sc-out" class="lbl xs" x="354" y="27" text-anchor="end">outside</text><text data-k="sc-in" class="lbl xs" x="354" y="54" text-anchor="end">inside the cell</text>`;
+        const pos = st.dimer ? [40, 56] : [24, 72];
+        pos.forEach((x, j) => {
+          const s = j ? 'R' : 'L';
+          if (st.lig) g += `<circle data-k="sc-lig${s}" cx="${x}" cy="12" r="5" fill="var(--figC)" fill-opacity="0.35" stroke="var(--figC)"/>`;
+          g += `<rect data-k="sc-b${s}" x="${x - 7}" y="18" width="14" height="12" rx="3" fill="var(--figA)" fill-opacity="0.2" stroke="var(--figA)"/><rect data-k="sc-s${s}" x="${x - 2}" y="30" width="4" height="14" fill="var(--figA)" fill-opacity="0.6"/><rect data-k="sc-t${s}" x="${x - 7}" y="44" width="14" height="12" rx="3" fill="var(--figB)" fill-opacity="0.15" stroke="var(--figB)"/>`;
+          if (st.p) g += `<circle data-k="sc-p${s}" cx="${j ? x + 11 : x - 11}" cy="50" r="4" fill="var(--figD)" fill-opacity="0.4" stroke="var(--figD)"/>`;
+        });
+        g += `<text data-k="sc-rl" class="lbl xs" x="96" y="20" text-anchor="start">${st.rl}</text>`;
+        g += `<path data-k="sc-a0" class="arrow" d="M48 58 L${bx(0) + 17} 68" opacity="${st.flow ? 1 : 0.25}"/>`;
+        K.forEach((k, i) => {
+          const on = st.flow && !(st.cut && i > 2), hot = st.hot && i >= 2;
+          g += `<rect data-k="sc-k${i}" x="${bx(i)}" y="70" width="34" height="16" rx="4" fill="${hot ? 'var(--figB)' : 'var(--figA)'}" fill-opacity="${on ? (hot ? 0.35 : 0.2) : 0.04}" stroke="${hot ? 'var(--figB)' : 'var(--figA)'}" stroke-opacity="${on ? 1 : 0.35}"/><text data-k="sc-kt${i}" class="lbl xs" x="${bx(i) + 17}" y="81" text-anchor="middle" opacity="${on ? 1 : 0.4}">${k}</text>`;
+          if (i < 5) g += `<path data-k="sc-ka${i}" class="arrow" d="M${bx(i) + 34} 78 L${bx(i + 1)} 78" opacity="${on && !(st.cut && i >= 2) ? 1 : 0.25}"/>`;
+        });
+        g += `<path data-k="sc-ka5" class="arrow" d="M${bx(5) + 34} 78 L262 78" opacity="${st.flow && !st.cut ? 1 : 0.25}"/><rect data-k="sc-o" x="262" y="66" width="92" height="24" rx="4" class="box"/><text data-k="sc-ot" class="lbl xs" x="308" y="76" text-anchor="middle">${st.o1}</text><text data-k="sc-ot2" class="lbl xs" x="308" y="86" text-anchor="middle">${st.o2}</text>`;
+        if (st.cut) g += `<g data-k="sc-x">${block(bx(2) + 17, 100, '')}</g><text data-k="sc-xt" class="cl b" x="${bx(2) + 26}" y="104" text-anchor="start">drug X binds RAS: nothing after it</text>`;
+        if (st.hot) g += `<text data-k="sc-ht" class="cl b" x="${bx(2)}" y="104" text-anchor="start">20–25% of cancers contain a RAS mutation</text>`;
+        if (st.tp) g += `<rect data-k="sc-tp" x="96" y="96" width="140" height="16" rx="4" fill="var(--figE)" fill-opacity="0.2" stroke="var(--figE)"/><text data-k="sc-tpt" class="cl e" x="166" y="108" text-anchor="middle">tyrosine phosphatase</text>`;
+        if (st.curve) g += P.axes('log dose of the growth factor', ['dashed = growth factor alone', 'solid = with drug X']) + P.curve(0, 100, 0, 'a', true) + P.curve(1, 55, 0, 'b') + P.arrowH(0, 1, 50) + P.legend(['shift RIGHT and Emax DOWN']);
+        return `<g transform="translate(0 16)">${g}</g>`;
+      };
+      const steps = [
+        ['The growth factor (an agonist) binds, the two receptors dimerize, and their tails are phosphorylated. The signal runs Grb2 → GEF → RAS → RAF → MEK → ERK, and the cell grows and divides.', scene({lig: 1, dimer: 1, p: 1, flow: 1, rl: 'growth factor bound: dimer, phosphorylated', o1: 'cell grows', o2: 'and divides'}), 'Normal growth-factor signal'],
+        ['"A lot of cancers has a higher stimulation of those receptors. They are growing and dividing really, really fast" (9/23). His slide: 20–25% of cancers contain a RAS mutation.', scene({lig: 1, dimer: 1, p: 1, flow: 1, hot: 1, rl: 'higher stimulation of the pathway', o1: 'grows and divides', o2: 'really fast'}), 'Cancer: the pathway is over-stimulated'],
+        ['Drug X binds RAS and stops it from functioning. His answer: no RAF, no MEK, no ERK, so the cells do not grow and do not divide.', scene({lig: 1, dimer: 1, p: 1, flow: 1, cut: 1, rl: 'receptor still binds, dimerizes, phosphorylates', o1: 'cells do not grow', o2: 'or divide'}), 'Drug X blocks RAS'],
+        ['Drug X never touches the receptor, so it is an indirect antagonist acting downstream. On the growth factor\'s curve it shifts RIGHT and the Emax falls ("decreasing the potency of an agonist").', scene({lig: 1, dimer: 1, p: 1, flow: 1, cut: 1, curve: 1, rl: 'indirect antagonist: downstream of the receptor', o1: 'less signal', o2: 'gets through'}), 'Drug X on the dose–response curve'],
+        ['Reset: "a tyrosine phosphatase ... cuts that extra phosphate out, and as it does that, you stop the process, they separate from each other, and now you can start the whole process again" (9/23).', scene({tp: 1, rl: 'phosphates removed: receptors separate', o1: 'signal stops;', o2: 'ready to start again'}), 'Reset: tyrosine phosphatase']
+      ];
+      return stepper('rtk-scenarios', 'The RTK → RAS pathway: each scenario he covered', steps, 290,
+        ['<b>Sources:</b> transcript 9/23 (activation, reset, pancreatic cancer, drug X); Pharmacodynamics Day 2 slides ~7–~11 (RTK activation; Grb2/GEF/RAS/RAF/MEK/ERK; 20–25% of cancers contain a RAS mutation; RAS blocked); Day 4–5 deck Part 2, pages ~7–~8 (drug X as an indirect antagonist: curve right and down).',
+         '<b>What he tests:</b> the activation steps in order, what tyrosine phosphatase does, and what blocking RAS does downstream (no RAF, MEK or ERK; no growth) and to the curve.']);
+    };
+
     F3['ind-ras-anim'] = () => {
       const P = plot(60, 56, 215, 135);
       const ras = (blocked, cut) => {
