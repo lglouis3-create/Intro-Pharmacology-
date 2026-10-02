@@ -18,5 +18,10 @@ for (const q of QUESTIONS) {
   });
   if (/\?\s*\S/.test(q.stem.replace(/\?\s*Select all that apply\.$/, '?'))) {/* multi-sentence stems allowed */}
 }
+// update notes are shown to learners as short bullets: one line each
+{
+  const cl = require('fs').readFileSync(require('path').join(__dirname, '..', 'CHANGELOG.md'), 'utf8');
+  cl.split('\n').filter(l => l.startsWith('- ')).forEach(l => { if (l.length > 120) bad('CHANGELOG', 'bullet longer than one short line: ' + l.slice(0, 60) + '…'); });
+}
 console.log(`style_check.js: ${fail ? 'FAILED' : 'passed'} (${fail} failures)`);
 process.exit(fail ? 1 : 0);
