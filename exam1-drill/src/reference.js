@@ -211,6 +211,16 @@ const REFERENCE_HTML = `
 </tbody></table>
 <p class="sub">Pharmacodynamics-Day-1-2026s.pdf slides ~51&ndash;~55; transcript 9/23, 9/30. Poll trap: the option saying the GTP has to be released for dissociation is wrong; it is the GDP that leaves (Jeopardy 9/30).</p>
 
+<!--FIG:rtk-steps-->
+<table class="reftab"><thead><tr><th>Step</th><th>Receptor tyrosine kinase (RTK) activation</th><th>Why</th></tr></thead><tbody>
+<tr><td>1</td><td>The inactive receptor is a monomer</td><td>One receptor alone cannot phosphorylate itself.</td></tr>
+<tr><td>2</td><td>Ligand binding induces dimerization (the active form)</td><td>Two receptors side by side put their kinase domains next to each other.</td></tr>
+<tr><td>3</td><td>Cross-phosphorylation of the kinase domains</td><td>Each kinase domain phosphorylates its partner.</td></tr>
+<tr><td>4</td><td>Phosphorylation forms docking sites and signaling complexes</td><td>The docked proteins carry the signal on (Grb2 &rarr; GEF &rarr; RAS &rarr; RAF &rarr; MEK &rarr; ERK).</td></tr>
+<tr><td>5 (ends it)</td><td>Tyrosine phosphatase (TP)</td><td>Removes the phosphates, so the docking sites are gone.</td></tr>
+</tbody></table>
+<p class="sub">Pharmacodynamics-Day_2_2026s copy.pdf slides ~7&ndash;~9; transcript 9/23 (&ldquo;all I need you to understand is how these receptors function and how they produce their signals&rdquo;). No G protein, no GDP/GTP exchange, no cAMP: those are GPCR steps.</p>
+
 <h3 id="ref-6">6. Spare receptors and receptor regulation</h3>
 <p class="sub">What you are looking up: what receptor number does to each drug class, and what the cell does to its receptors after too much or too little stimulation.</p>
 <!--FIG:spare-->
