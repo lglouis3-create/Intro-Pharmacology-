@@ -110,9 +110,9 @@ select,input[type=text],input[type=number]{font-size:15px;padding:6px 8px;border
 .fig figcaption ul{margin:4px 0 2px;padding-left:18px} .fig figcaption li{margin:2px 0}
 .fig .box{fill:var(--chip);stroke:var(--line);stroke-width:1.2}
 .fig .st{display:none} .fig .st.on{display:inline}
-.fig .st-out{pointer-events:none;animation:stOut .5s ease forwards} .fig .st .fadein{animation:stIn .5s ease both}
+.fig .st-out{pointer-events:none;animation:stOut .5s ease forwards} .fig .st .fadein{animation:stIn .5s ease backwards}
 .fig .st .glide{transition:transform .9s ease}
-@keyframes stIn{from{opacity:0}to{opacity:1}} @keyframes stOut{from{opacity:1}to{opacity:0}}
+@keyframes stIn{from{opacity:0}} @keyframes stOut{to{opacity:0}}
 @media (prefers-reduced-motion:reduce){.fig .st-out{display:none} .fig .st .fadein{animation:none} .fig .st .glide{transition:none}}
 .sdots{display:inline-flex;gap:6px;align-items:center;margin-left:auto} .sdot{width:12px;height:12px;border-radius:50%;background:var(--line);border:none;padding:0;cursor:pointer} .sdot.on{background:var(--accent)} .sdot:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .fig .arrow{stroke:var(--muted);stroke-width:1.6;fill:none;marker-end:url(#arw)}
