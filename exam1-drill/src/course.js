@@ -25,9 +25,18 @@ const COURSE = {
   ],
   exams: [
     {id:1, name:'Exam 1', date:'Fri Oct 2, 9–11 am', when:'2026-10-02T09:00:00-05:00',  // syllabus: Exam I, Fri Oct 2, 9–11 am
-     questions:null,             // count not yet announced; the simulator asks for a length
+     questions:50,               // 50 questions (student report, 10/2)
+     // Topic counts Dr. Gottlieb gave a classmate in person (relayed in the class group chat, 10/1–10/2; secondhand, not on the syllabus).
+     // reg is a range: each paper draws 3, 4 or 5. graph: "majority" of the paper, so at least 26 of 50.
+     blueprint:{sata:2, parts:[
+       {key:'galpha', name:'α subunit type (Gs, Gi, Gq)', n:3},
+       {key:'rtk', name:'RTK activation (dimerization, phosphorylation)', n:1},
+       {key:'reg', name:'Up- and down-regulation', n:[3, 5]},
+       {key:'ti', name:'Therapeutic index and safety index', n:2},
+       {key:'graph', name:'Graphs: agonist, antagonist or inverse agonist', min:26},
+       {key:'other', name:'Everything else in Exam 1', rest:true}]},
      minutes:120,                // syllabus: "A total of two hours is allotted for each of the major examinations"
-     sata:null,
+     sata:2,                     // two select-all questions (same report)
      blurb:'Covers the Sept 22 – Sept 30 lectures (syllabus). 23% of the course grade.',
      pools:[{key:'exam1', name:'Exam 1 material', marks:null, filter:{exam:1}}]}
   ],
