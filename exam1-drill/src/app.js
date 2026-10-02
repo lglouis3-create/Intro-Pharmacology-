@@ -562,14 +562,59 @@ function drawExam(n) {
   });
   return shuffle(out.concat(termPick));
 }
+/* Blueprint paper: the topic counts in COURSE.exams[].blueprint. Each question
+   falls in one topic by keyword (first match wins: rtk, reg, ti, galpha), else
+   graph (a figure question) or other. Definition drills (skill 'term') are left
+   out because his papers ask definitions inside his own stems. */
+const BP_RX = {
+  rtk: /tyrosine kinase|\bRTKs?\b|dimeri[sz]/i,
+  reg: /up-?regulat|down-?regulat|desensiti[sz]|internali[sz]|tachyphylaxis|receptor[- ]regulation|\bGRK|arrestin|tolerance/i,
+  ti: /therapeutic index|safety index|therapeutic window|\bTI\b|\bSI\b|LD50|ED99|\bLD1\b|TD50|ti-from|safety-index|therapeutic-index/i,
+  galpha: /\bG[sqi]\b|\bGα[sqi]\b|α[sqi]\b|alpha[- ]?[sqi]\b|transducer|second messenger|effector|G[- ]protein/i
+};
+const bpCat = q => {
+  const t = [q.stem, q.concept, (q.tags || []).join(' ')].join(' ');
+  for (const k of ['rtk', 'reg', 'ti']) if (BP_RX[k].test(t)) return k;
+  const curve = q.img || q.graph || /\bDRC\b|curve|dashed|dotted/i.test(q.stem);
+  if (BP_RX.galpha.test(t) && !curve) return 'galpha';
+  return curve || q.skill === 'figure' ? 'graph' : 'other';
+};
+function drawBlueprint(bp) {
+  const elig = examPool().filter(q => !q.lowYield && !q.type && q.skill !== 'term');
+  const by = {}; elig.forEach(q => (by[bpCat(q)] = by[bpCat(q)] || []).push(q));
+  const total = active().questions, out = [], used = new Set();
+  const ok = q => !used.has(q.id) && !(q.dupOf && used.has(q.dupOf)) && ![...used].some(u => byId[u].dupOf === q.id);
+  const cat = new Map();
+  const take = (key, n) => {
+    const list = shuffle((by[key] || []).slice()), seen = new Set();
+    const firsts = list.filter(q => !seen.has(q.concept) && seen.add(q.concept));   // one per concept before repeats
+    for (const q of firsts.concat(list)) { if (n <= 0) break; if (!ok(q)) continue; out.push(q); used.add(q.id); cat.set(q.id, key); n--; }
+  };
+  let left = total;
+  bp.parts.forEach(p => { if (p.rest || p.min) return; const n = Array.isArray(p.n) ? p.n[0] + Math.floor(Math.random() * (p.n[1] - p.n[0] + 1)) : p.n; take(p.key, n); left -= n; });
+  const g = bp.parts.find(p => p.min); if (g) { take(g.key, g.min); left -= g.min; }
+  const r = bp.parts.find(p => p.rest); if (r) take(r.key, left);
+  // exactly bp.sata select-all items: swap one for another in the same topic
+  const swap = (from, wantMulti) => {
+    for (const q of shuffle(out.filter(x => !!x.multi === from))) {
+      const k = cat.get(q.id), alt = shuffle((by[k] || []).slice()).find(x => !!x.multi === wantMulti && ok(x));
+      if (alt) { out[out.indexOf(q)] = alt; used.delete(q.id); used.add(alt.id); cat.set(alt.id, k); return true; }
+    }
+    return false;
+  };
+  while (out.filter(q => q.multi).length > bp.sata && swap(true, false));
+  while (out.filter(q => q.multi).length < bp.sata && swap(false, true));
+  return shuffle(out);
+}
 function vExam() {
   const ex = active(), max = examPool().filter(q => !q.lowYield && !q.type).length;
   if (EX && !EX.done && EX.expired) { submitExam(); return; }
   if (EX && !EX.done) return renderExam();
   const lens = [...new Set([ex.questions, 25, 50, max].filter(x => x && x <= max))].sort((a, b) => a - b);
   let h = `<h2>Exam simulator</h2><p class="sub">${esc(ex.name)}: ${ex.questions ? ex.questions + ' questions' : 'question count not yet announced'}, ${ex.minutes} minutes allotted.
-    Answers are not shown until you submit. Select-all items are scored all-or-nothing; definition questions make up at most 15% of the paper.</p>
+    Answers are not shown until you submit. Select-all items are scored all-or-nothing. ${ex.blueprint ? 'With his topic counts on, the paper follows them; otherwise' : ''} definition questions make up at most 15% of the paper.</p>
     <div class="card"><div class="row"><span>Length:</span>${lens.map(n => `<span class="chip ${n === (ex.questions || lens[0]) ? 'on' : ''}" data-n="${n}">${n === max ? 'All ' + n : n}</span>`).join('')}</div>
+    ${ex.blueprint ? `<div class="row" style="margin-top:10px"><label><input type="checkbox" id="bp" checked> Match his topic counts at ${ex.questions} questions: ${ex.blueprint.parts.map(p => esc(p.name) + ' ' + (p.rest ? '(the rest)' : p.min ? '(at least ' + p.min + ')' : Array.isArray(p.n) ? p.n.join('–') : p.n)).join(' · ')} · ${ex.blueprint.sata} select-all</label></div><p class="meta">Counts as Dr. Gottlieb told a classmate (relayed secondhand, not on the syllabus).</p>` : ''}
     <div class="row" style="margin-top:10px"><label><input type="checkbox" id="scale" checked> Scale the clock to the length (${ex.minutes} min for the full paper)</label></div>
     <div class="row" style="margin-top:10px"><span class="meta" style="margin:0">Answer:</span>${layoutToggle()}</div>
     <div class="row" style="margin-top:12px"><button class="btn" id="startx">Start</button></div></div>`;
@@ -579,7 +624,7 @@ function vExam() {
   document.querySelectorAll('[data-n]').forEach(c => c.onclick = () => { n = +c.dataset.n; document.querySelectorAll('[data-n]').forEach(x => x.classList.toggle('on', x === c)); });
   // (the layout chips on this page only restyle themselves: see the delegated handler)
   $('#startx').onclick = () => {
-    const paper = drawExam(n);
+    const paper = ex.blueprint && n === ex.questions && $('#bp') && $('#bp').checked ? drawBlueprint(ex.blueprint) : drawExam(n);
     const full = ex.questions || max;
     const mins = $('#scale').checked ? Math.max(5, Math.round(ex.minutes * paper.length / full)) : ex.minutes;
     EX = {qs: paper.map(q => q.id), i: 0, ans: {}, flag: {}, orders: paper.map(q => optOrder(q)), ends: Date.now() + mins * MIN, done: false};
