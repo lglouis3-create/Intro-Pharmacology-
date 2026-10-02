@@ -2,6 +2,9 @@
 
 Newest first. The build embeds this file, and the Progress page shows it.
 
+## 2026-10-02 (his practice questions)
+- His practice questions 1–25 added as a topic, word for word with his keys (24 of them; question 21's figure is not in the file). Figure 2 and the dotted-line figure are his images; Figure 1, Figure 3, the therapeutic-index curves and the two cell lines are redrawn. Every option explains why it is right or wrong, aimed at the four ideas the graded attempt missed: the receptor-state notation and the baseline, therapeutic index versus safety, efficacy versus potency, and which added drug moves the curve which way.
+
 ## 2026-10-01 (Graphs tab, chain from regulation to the curve, Day 1 figures)
 - Graded vs quantal: a side-by-side figure (one sample, how much, Emax and EC50; a population of dogs, yes or no, the bars that add up to the cumulative curve and its ED50) on the two questions, Guide 9, Reference 8 and Tell apart Day 5, with a fuller explanation on the questions.
 - Guides, Reference and Tell apart rewritten to teach first: five-line procedure and a decision table for any curve question, a before-and-after grid of the eight things an added drug can do to a curve, a four-cell reading strip (shift, baseline, Emax, symmetry, answer) under every review figure, three-column distinctions, five-bullet sections with at most one short quote each.

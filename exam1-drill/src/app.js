@@ -23,7 +23,7 @@ const IMG = typeof IMAGES === 'undefined' ? {} : IMAGES;
 function stemMedia(q) {
   let h = '';
   if (q.img && IMG[q.img]) h += `<figure class="fig stemfig"><img src="${IMG[q.img]}" alt="${esc(q.imgAlt || 'figure')}">${q.imgCap ? `<figcaption>${esc(q.imgCap)}</figcaption>` : ''}</figure>`;
-  if (q.graph) h += `<div class="stemfig">${FIG.graph(q.graph)}</div>`;
+  if (q.graph) h += [].concat(q.graph).map(g => `<div class="stemfig">${FIG.graph(g)}</div>`).join('');
   return h;
 }
 /* Slide ranges are stored as "~7–~12" (every number marked approximate);
