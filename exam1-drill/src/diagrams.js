@@ -166,7 +166,7 @@ const FIG = (() => {
     const cum = (ed, n) => { const pts = []; for (let x = 25; x <= 1600; x *= 1.06) { const y = 100 * Math.pow(x, n) / (Math.pow(x, n) + Math.pow(ed, n)); pts.push(`${xs(x).toFixed(1)},${py(y).toFixed(1)}`); } return pts.join(' '); };
     const vline = (x, y, cls) => `<line class="dash" x1="${xs(x)}" y1="${py(0)}" x2="${xs(x)}" y2="${py(y)}"/>`;
     let inner = `<line class="ax" x1="${L}" y1="${py(0)}" x2="${W - R}" y2="${py(0)}"/><line class="ax" x1="${L}" y1="${py(0)}" x2="${L}" y2="${T}"/>
-      <text class="lbl" x="${(L + W - R) / 2}" y="${H - 1}" text-anchor="middle">dose (µg/kg, log scale)</text>
+      <text class="lbl" x="${(L + W - R) / 2}" y="${H + 8}" text-anchor="middle">dose (µg/kg, log scale)</text>
       <text class="lbl" transform="translate(11 ${(T + py(0)) / 2}) rotate(-90)" text-anchor="middle">% of individuals responding</text>`;
     [50, 100, 200, 400, 800].forEach(v => { inner += `<text class="lbl sm2" x="${xs(v)}" y="${py(0) + 14}" text-anchor="middle">${v}</text>`; });
     inner += dash(-3, 50, 3, 50) + ytick(50, '50%') + ytick(100, '100%');
@@ -176,7 +176,7 @@ const FIG = (() => {
     inner += `<text class="cl a" x="${xs(30)}" y="${py(92)}">effect (hypnosis)</text><text class="cl b" x="${xs(1500)}" y="${py(40)}" text-anchor="end">toxic (death)</text>`;
     inner += `<text class="cl a" x="${xs(100)}" y="${py(0) + 26}" text-anchor="middle">ED50</text><text class="cl b" x="${xs(400)}" y="${py(0) + 26}" text-anchor="middle">LD50</text>
       <text class="cl a" x="${xs(ED99) + 3}" y="${py(99) - 4}" text-anchor="start">ED99</text><text class="cl b" x="${xs(LD1) - 3}" y="${py(1) - 8}" text-anchor="end">LD1</text>`;
-    return wrap(inner, 'Quantal dose–response curves: each point is the percentage of the population that shows the all-or-none response at that dose. ED50 is the dose effective in half the population, LD50 the dose lethal to half. Therapeutic index = LD50 / ED50; here 400 / 100 = 4. When the ED99 sits to the right of the LD1 the two curves overlap: some patients reach the toxic dose before the last patients respond.');
+    return wrap(inner, 'Quantal dose–response curves: each point is the percentage of the population that shows the all-or-none response at that dose. ED50 is the dose effective in half the population, LD50 the dose lethal to half. Therapeutic index = LD50 / ED50; here 400 / 100 = 4. When the ED99 sits to the right of the LD1 the two curves overlap: some patients reach the toxic dose before the last patients respond.', H + 14);
   };
 
   /* One receptor in the membrane, 26 wide × 48 tall from (x, y). r = {lig, side, act (0, 0.5, 1), dead}.
@@ -329,22 +329,22 @@ const FIG = (() => {
           '<b>Rule:</b> enough antagonist abolishes the response.',
           '<b>Baseline:</b> stays where it was (here 0). An antagonist has no efficacy, so it cannot move the baseline; only an agonist raises it and only an inverse agonist lowers it. The tell for the irreversible antagonist is the Emax, not the baseline.',
           '<b>Symmetry:</b> not the question for this drug: ask about the Emax instead, which falls once the spare receptors are used up.'] },
-      'shift-allo-agonist': { title: 'Full agonist + allosteric agonist (positive modulator, PAM) · GABA + diazepam',
+      'shift-allo-agonist': { title: 'Allosteric agonist (PAM) · GABA + diazepam',
         start: [START, 0.6, ['3 of 5 receptors active', 'at this agonist dose']],
         shift: ['SHIFT: + allosteric agonist', 'c', [R('ag', 1, { side: 'pam' }), R('ag', 1, { side: 'pam' }), R('ag', 1, { side: 'pam' }), R(null, 0, { side: 'pam' }), R('ag', 1, { side: 'pam' })], 0.8, ['second site; agonist stays in its pocket', 'binds better (affinity): more are active']],
         base: 0, curves: curve(-0.6, 100, 0, 'c') + curve(-0.95, 100, 0, 'c') + curve(-1.1, 100, 0, 'c'), arrows: arrowH(0, -1.1, 50),
         legend: ['affinity: shift LEFT, shrinking steps, then stop', 'efficacy: rises only if the agonist is partial'],
-        cap: ['<b>Start:</b> three of five receptors hold GABA and signal.',
+        cap: ['<b>Start:</b> three of five receptors hold GABA and signal. (PAM = positive allosteric modulator, a drug at a second site that helps the agonist.)',
           '<b>Shift:</b> diazepam binds a second site while GABA stays in its pocket; GABA now binds better, so more receptors are active at the same dose.',
           '<b>Curve (affinity):</b> leftward shifts that get smaller and stop once every allosteric site is filled (asymmetrical, saturable).',
           '<b>Curve (efficacy):</b> a partial agonist’s curve rises; a full agonist is already at 100%.',
           '<b>Symmetry:</b> no. The second site fills up, so each step is smaller than the last and then stops: "if you see a figure in your exam that the shifts are not symmetric, you already know it\'s allosteric."'] },
-      'shift-allo-antagonist': { title: 'Full agonist + allosteric antagonist (negative modulator, NAM)',
+      'shift-allo-antagonist': { title: 'Allosteric antagonist (NAM) · agonist + modulator',
         start: [START, 0.6, ['3 of 5 receptors active', 'at this agonist dose']],
         shift: ['SHIFT: + allosteric antagonist', 'b', [R('ag', 0.5, { side: 'nam' }), R(null, 0, { side: 'nam' }), R('ag', 0.5, { side: 'nam' }), R(null, 0, { side: 'nam' }), R('ag', 0.5, { side: 'nam' })], 0.3, ['second site; the agonist still binds', 'but each bound receptor signals less']],
         base: 0, curves: curve(0.6, 100, 0, 'b') + curve(0.95, 75, 0, 'b') + curve(1.1, 60, 0, 'b'), arrows: arrowH(0, 0.6, 50) + arrowV(2.6, 98, 62),
-        legend: ['drawn: affinity AND efficacy, RIGHT and DOWN, unequal steps', 'affinity only: same top · efficacy only: no shift'],
-        cap: ['<b>Start:</b> three of five receptors hold the agonist and signal.',
+        legend: ['drawn: RIGHT and DOWN, unequal steps', '(affinity and efficacy both cut)'],
+        cap: ['<b>Start:</b> three of five receptors hold the agonist and signal. (NAM = negative allosteric modulator, a drug at a second site that hinders the agonist.)',
           '<b>Shift:</b> the modulator binds a second site and is reversible; the agonist still binds.',
           '<b>Curve (affinity):</b> right shift with the same maximum; the sites fill up, so the shifts are unequal and stop.',
           '<b>Curve (efficacy):</b> each bound receptor signals less, so the maximum falls, but never to zero the way an irreversible antagonist can take it.',
@@ -448,18 +448,18 @@ const FIG = (() => {
       g += cell(60, 20, { lig: 'ag', act: 1 }) + num(50, 24, '1') + num(94, 38, 'R3', 'b');
       g += `<circle cx="66" cy="92" r="8" fill="var(--figA)" fill-opacity="0.25" stroke="var(--figA)" stroke-width="1.2"/>` + xs(66, 95, 'αs', 'middle') +
            `<circle cx="84" cy="82" r="6" class="box"/><circle cx="92" cy="96" r="5" class="box"/>` + xs(84, 85, 'β', 'middle') + xs(92, 99, 'γ', 'middle') +
-           xs(66, 112, 'GDP off · GTP on', 'middle') + num(44, 86, '2') + num(112, 110, 'R1', 'b');
+           xs(66, 112, 'GDP off · GTP on', 'middle') + num(44, 86, '2') + num(112, 110, 'R2', 'b');
       g += arr(76, 88, 150, 56) + box(152, 36, 44, 24, 'AC') + num(206, 40, '3');
-      g += arr(174, 60, 174, 72) + xs(174, 84, 'ATP → cAMP', 'middle') + num(216, 82, '4') + num(140, 82, 'R2', 'b');
+      g += arr(174, 60, 174, 72) + xs(174, 84, 'ATP → cAMP', 'middle') + num(216, 82, '4') + num(140, 82, 'R1', 'b');
       g += arr(174, 88, 174, 98) + box(156, 100, 36, 16, 'PKA') + num(206, 108, '5');
       g += arr(174, 116, 174, 126) + xs(174, 138, 'Ca++ in → ↑ heart rate', 'middle') + num(238, 136, '6');
       g += notes(250, 34, ['signal = NE', 'receptor = β1', 'transducer = Gs (αs, β, γ)', 'effector = AC', 'second messengers =', '  cAMP, PKA, Ca++', 'response = ↑ heart rate']);
       g += `<line class="dash" x1="6" y1="148" x2="354" y2="148"/>`;
       g += notes(6, 162, ['1  NE (signal) binds β1 (receptor)', '2  receptor changes shape: GDP falls off, a new', '    GTP binds (exchange); αs (transducer) leaves β/γ', '3  αs turns on adenylate cyclase (effector)', '4  AC makes cAMP from ATP (2nd messenger);', '    one AC makes many cAMP: amplification', '5  cAMP activates protein kinase A (PKA)', '6  Ca++ enters: faster, stronger heartbeat']);
-      g += `<text class="cl b" x="200" y="162" text-anchor="start">What ends it (R = reverse step)</text>`;
-      g += notes(200, 174, ['R1 GTPase cuts a phosphate off GTP', '    (RGS speeds it up): GDP again', 'R2 PDE (phosphodiesterase) breaks cAMP', 'R3 NE comes off the receptor']);
+      g += `<text class="cl b" x="214" y="162" text-anchor="start">What ends it (R steps)</text>`;
+      g += notes(214, 174, ['R1 PDE breaks down cAMP', 'R2 GTP → GDP (a phosphate', '    is cut off); α rejoins β/γ', 'R3 the receptor resets']);
       return wrap(g, ['<b>Forward (1–6)</b><ol><li>NE, the signal, binds β1, the receptor.</li><li>The receptor changes shape; GDP falls off the α subunit and a new GTP binds in its place (an exchange, not a phosphate added); αs separates from β/γ.</li><li>αs turns on adenylate cyclase, the effector.</li><li>AC makes cAMP from ATP: the second messenger; one AC makes many cAMP (amplification).</li><li>cAMP activates protein kinase A.</li><li>Ca++ enters: faster, stronger heartbeat.</li></ol>',
-        '<b>Back (R1–R3, the reverse steps that end the signal)</b><ol><li>One phosphate is cut off the GTP (GTPase; RGS speeds it): it is GDP again and α rejoins β/γ.</li><li>PDE breaks down cAMP.</li><li>NE comes off the receptor.</li></ol>',
+        '<b>Back (R1–R3, the reverse steps that end the signal)</b><ol><li>PDE breaks down cAMP.</li><li>One phosphate is cut off the GTP (GTPase; RGS speeds it): it is GDP again and α rejoins β/γ.</li><li>The receptor resets (NE comes off).</li></ol>',
         '<b>Vocabulary he tests</b><ul><li>signal: NE</li><li>receptor: β1</li><li>transducer: the G protein (αs, αi or αq)</li><li>effector: adenylate cyclase or phospholipase C</li><li>second messenger: cAMP, PKA, PKC, IP3, Ca++</li><li>Gαi uses the same AC in the opposite direction (less cAMP); Gαq uses PLC → IP3 and Ca++</li></ul>'], 246);
     };
 
@@ -828,8 +828,8 @@ const FIG = (() => {
       let g = title('Graded vs quantal responses');
       g += `<text class="cl a" x="${L1.x0 + L1.w / 2}" y="30" text-anchor="middle">GRADED: one sample</text>`;
       g += `<line class="ax" x1="${L1.x0}" y1="${ly(0)}" x2="${L1.x0 + L1.w}" y2="${ly(0)}"/><line class="ax" x1="${L1.x0}" y1="${ly(0)}" x2="${L1.x0}" y2="${L1.y0}"/>`;
-      g += `<polyline class="cv a" points="${sigpts()}"/>` + `<line class="dash" x1="${L1.x0}" y1="${ly(100)}" x2="${L1.x0 + L1.w}" y2="${ly(100)}"/>` + xs(L1.x0 + 4, ly(100) - 3, 'Emax', 'start') + `<line class="dash" x1="${lx(0)}" y1="${ly(0)}" x2="${lx(0)}" y2="${ly(50)}"/>` + xs(lx(0), ly(0) + 10, 'EC50', 'middle') + xs(L1.x0 - 3, ly(50) + 3, '50%', 'end') + xs(L1.x0 - 3, ly(0) + 3, '0', 'end');
-      g += xs(L1.x0 + L1.w / 2, ly(0) + 20, 'log dose', 'middle') + `<text class="lbl xs" transform="translate(7 ${L1.y0 + L1.h / 2}) rotate(-90)" text-anchor="middle">% of max response</text>`;
+      g += `<polyline class="cv a" points="${sigpts()}"/>` + `<line class="dash" x1="${L1.x0}" y1="${ly(100)}" x2="${L1.x0 + L1.w}" y2="${ly(100)}"/>` + xs(L1.x0 + L1.w, ly(100) + 9, 'Emax', 'end') + `<line class="dash" x1="${lx(0)}" y1="${ly(0)}" x2="${lx(0)}" y2="${ly(50)}"/>` + xs(lx(0), ly(0) + 10, 'EC50', 'middle') + xs(L1.x0 - 3, ly(50) + 3, '50%', 'end') + xs(L1.x0 - 3, ly(0) + 3, '0', 'end');
+      g += xs(L1.x0 + L1.w / 2, ly(0) + 20, 'log dose', 'middle') + `<text class="lbl xs" transform="translate(8 ${L1.y0 + L1.h / 2 + 22}) rotate(-90)" text-anchor="middle">% of max</text>`;
       g += xs(L1.x0 + L1.w / 2, 152, 'one muscle strip, one dog: how MUCH', 'middle') + xs(L1.x0 + L1.w / 2, 162, 'contraction, how much paralysis', 'middle') + xs(L1.x0 + L1.w / 2, 172, 'read: Emax (efficacy), EC50 (potency)', 'middle');
       // right panel: a population; bars = dogs responding at each dose, line = cumulative %
       const R1 = { x0: 212, y0: 40, w: 140, h: 80 };
@@ -842,8 +842,8 @@ const FIG = (() => {
       doses.forEach((d, i) => { const bw = 7, bh = bell[i] * R1.h / 100 * 0.55; g += `<rect x="${rx(d) - bw / 2}" y="${ry(0) - bh}" width="${bw}" height="${bh}" fill="var(--figC)" opacity="0.35"/>`; });
       let cumv = 0; const total = bell.reduce((a, b) => a + b, 0); const cpts = doses.map((d, i) => { cumv += bell[i]; return `${rx(d).toFixed(1)},${ry(100 * cumv / total).toFixed(1)}`; });
       g += `<polyline class="cv c" points="${cpts.join(' ')}"/>`;
-      g += `<line class="dash" x1="${R1.x0}" y1="${ry(50)}" x2="${rx(29)}" y2="${ry(50)}"/><line class="dash" x1="${rx(29)}" y1="${ry(0)}" x2="${rx(29)}" y2="${ry(50)}"/>` + xs(rx(29), ry(0) + 10, 'ED50 ≈ 29', 'middle') + xs(R1.x0 - 3, ry(50) + 3, '50%', 'end') + xs(R1.x0 + 4, ry(100) - 3, '100%', 'start') + xs(R1.x0 - 3, ry(0) + 3, '0', 'end');
-      g += xs(rx(7.7), ry(0) + 10, '7.7', 'middle') + xs(rx(108), ry(0) + 10, '108', 'middle') + xs(R1.x0 + R1.w / 2, ry(0) + 20, 'epinephrine, ng/kg/min (log)', 'middle') + `<text class="lbl xs" transform="translate(188 ${R1.y0 + R1.h / 2}) rotate(-90)" text-anchor="middle">% of dogs responding</text>`;
+      g += `<line class="dash" x1="${R1.x0}" y1="${ry(50)}" x2="${rx(29)}" y2="${ry(50)}"/><line class="dash" x1="${rx(29)}" y1="${ry(0)}" x2="${rx(29)}" y2="${ry(50)}"/>` + xs(rx(29), ry(0) + 10, 'ED50 ≈ 29', 'middle') + xs(R1.x0 - 3, ry(50) + 3, '50', 'end') + xs(R1.x0 - 3, ry(100) + 3, '100', 'end') + xs(R1.x0 - 3, ry(0) - 1, '0', 'end');
+      g += xs(rx(7.7), ry(0) + 10, '7.7', 'middle') + xs(rx(108), ry(0) + 10, '108', 'middle') + xs(R1.x0 + R1.w / 2, ry(0) + 20, 'epinephrine, ng/kg/min (log)', 'middle') + `<text class="lbl xs" transform="translate(192 ${R1.y0 + R1.h / 2}) rotate(-90)" text-anchor="middle">% of dogs</text>`;
       g += xs(R1.x0 + R1.w / 2, 152, 'many dogs, each one yes or no:', 'middle') + xs(R1.x0 + R1.w / 2, 162, 'bars = who responds first at each dose', 'middle') + xs(R1.x0 + R1.w / 2, 172, 'line = cumulative %; read ED50, LD50, TI', 'middle');
       return wrap(g, ['<b>Graded</b> (left): one individual, and the question is how much. The y-axis is the size of the response in that one sample (degree of contraction with nicotine, degree of paralysis with curare), from no effect to maximum. From it you read Emax (efficacy) and EC50 (potency).',
         '<b>Quantal</b> (right): a population, and the question is yes or no for each individual: "Either you have an effect or you don\'t. Either you\'re dead or alive. You can\'t be in between." The response is defined first (blood pressure up by a set amount, hypnosis, death), then each dose is given and the individuals who respond are counted.',
@@ -996,14 +996,14 @@ const FIG = (() => {
       ['AC makes cAMP from ATP: the second messenger; one AC makes many cAMP (amplification).', rec(true, true) + freeBG + alpha(134, 78, 'GTP') + arr(174, 66, 174, 80) + camp + [216, 228, 240, 252].map((x, i) => `<circle cx="${x}" cy="${86 + (i % 2) * 8}" r="3" fill="var(--figC)"/>`).join('') + xs(260, 92, 'cAMP ×n (amplified)') + role('second messenger: cAMP')],
       ['cAMP activates protein kinase A (PKA).', rec(true, true) + freeBG + alpha(134, 78, 'GTP') + camp + arr(174, 96, 174, 108) + box(156, 110, 36, 16, 'PKA') + role('cell signalling')],
       ['Ca++ enters: faster, stronger heartbeat (the physiological response).', rec(true, true) + freeBG + alpha(134, 78, 'GTP') + camp + box(156, 110, 36, 16, 'PKA') + arr(192, 118, 220, 118) + xs(224, 121, 'Ca++ in → ↑ heart rate') + role('response')],
-      ['BACK 1: one phosphate is CUT OFF the GTP (hydrolysis by GTPase; RGS speeds it): GTP becomes GDP.', rec(true, true) + freeBG + alpha(134, 78, 'GTP → GDP', 'b') + `<text class="cl b" x="134" y="112" text-anchor="middle">GTPase · RGS: − one phosphate</text>` + role('reset the transducer'), 'reverse'],
-      ['BACK 1 continued: αs, now holding GDP, returns and rejoins β/γ under the receptor.', rec(true, true) + trimer('GDP') + arr(124, 96, 66, 84) + role('trimer reformed'), 'reverse'],
-      ['BACK 2: phosphodiesterase (PDE) breaks down cAMP.', rec(true, true) + trimer('GDP') + xs(174, 92, 'cAMP', 'middle') + arr(174, 96, 174, 108) + `<text class="cl b" x="174" y="120" text-anchor="middle">PDE</text>` + xs(174, 132, 'cAMP broken down', 'middle') + role('reset the second messenger'), 'reverse'],
+      ['BACK 1: phosphodiesterase (PDE) breaks down cAMP.', rec(true, true) + freeBG + alpha(134, 78, 'GTP') + xs(174, 92, 'cAMP', 'middle') + arr(174, 96, 174, 108) + `<text class="cl b" x="174" y="120" text-anchor="middle">PDE</text>` + xs(174, 132, 'cAMP broken down', 'middle') + role('reset the second messenger'), 'reverse'],
+      ['BACK 2: one phosphate is CUT OFF the GTP (hydrolysis by GTPase; RGS speeds it): GTP becomes GDP.', rec(true, true) + freeBG + alpha(134, 78, 'GTP → GDP', 'b') + `<text class="cl b" x="134" y="112" text-anchor="middle">GTPase · RGS: − one phosphate</text>` + role('reset the transducer'), 'reverse'],
+      ['BACK 2 continued: αs, now holding GDP, returns and rejoins β/γ under the receptor.', rec(true, true) + trimer('GDP') + arr(124, 96, 66, 84) + role('trimer reformed'), 'reverse'],
       ['BACK 3: NE comes off; the receptor is reset and can start again.', rec(false, false) + trimer('GDP') + role('reset the receptor'), 'reverse']
     ].map(st => [st[0], base + st[1], st[2]]);
     return stepper('gpcr', 'The Gs cascade step by step: NE at β1, forward and back', steps, 186,
       ['<b>Forward</b><ol><li>NE binds β1; the G protein (αs with GDP, plus β/γ) sits directly under the receptor.</li><li>The receptor changes shape; GDP falls off the α subunit.</li><li>A new GTP binds in its place (an exchange: GDP out, GTP in).</li><li>αs, now carrying GTP, lets go of the receptor and of β/γ.</li><li>αs turns on adenylate cyclase.</li><li>AC makes cAMP from ATP (one AC makes many cAMP).</li><li>cAMP activates PKA.</li><li>Ca++ enters: faster, stronger heartbeat.</li></ol>',
-       '<b>Back</b><ol><li>One phosphate is cut off GTP (GTPase, sped up by RGS): GTP becomes GDP, and αs returns to β/γ under the receptor.</li><li>PDE breaks down cAMP.</li><li>NE comes off; the receptor resets.</li></ol>',
+       '<b>Back</b> (the order he gave in the 9/30 review)<ol><li>PDE breaks down cAMP.</li><li>One phosphate is cut off GTP (GTPase, sped up by RGS): GTP becomes GDP, and αs returns to β/γ under the receptor.</li><li>NE comes off; the receptor resets.</li></ol>',
        '<b>GDP and GTP:</b> going forward the whole GDP leaves and a separate GTP binds (an exchange); going back one phosphate is cut off the bound GTP, which turns it into GDP (hydrolysis).',
        '<b>Roles he asks</b><ul><li>signal = NE</li><li>receptor = β1</li><li>transducer = Gs (αs, β, γ)</li><li>effector = AC (PLC for Gq)</li><li>second messengers = cAMP, IP3, Ca++, PKA</li></ul>'],
       'Forward 1–8, back 9–12. Signal → receptor → transducer → effector → second messenger → response.');
