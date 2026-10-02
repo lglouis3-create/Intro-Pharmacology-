@@ -918,6 +918,7 @@ function stepTo(fig, from, to) {
     const q = before.get(sigOf(el)), m = q && q.shift();
     if (!m) { el.classList.add('fadein'); return; }
     used.add(m.el);
+    if (el.hasAttribute('transform')) return;          // a CSS transform would replace its rotate()
     const c = centre(el), dx = (m.c[0] - c[0]) * scale, dy = (m.c[1] - c[1]) * scale;
     if (Math.abs(dx) < 0.5 && Math.abs(dy) < 0.5) return;
     el.style.transform = `translate(${dx}px,${dy}px)`;
