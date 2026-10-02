@@ -124,7 +124,7 @@ function nav() {
 const clearView = () => { const v = $('#view'); v.onclick = null; v.onchange = null; };
 function go(v) {
   if (CUR === 'exam' && EX && !EX.done && v !== 'exam' && !confirm('Leave the exam in progress? It will be kept until you return.')) return;
-  CUR = v; nav(); window.scrollTo(0, 0); clearView();
+  CUR = v; nav(); window.scrollTo(0, 0); clearView(); if (typeof xBack === 'function') xBack(null);
   VIEWFN[v]();
 }
 /* "Explain more": a question links to the pages that teach its concept. The link
@@ -972,8 +972,15 @@ document.addEventListener('click', e => {
   const w = e.target.closest('[data-xpick]');
   if (w) { const [g, k] = w.dataset.xpick.split(':'); const out = showExplain(g, k); if (out) scrollToEl(out.closest('.xpick')); return; }
   const g = e.target.closest('[data-xgo]');
-  if (g) { const el = document.getElementById(g.dataset.xgo); if (el) scrollToEl(el); }
+  if (g) { const el = document.getElementById(g.dataset.xgo); if (el) { xBack(g.closest('.xpick')); scrollToEl(el); } }
 });
+/* After "See its panels", a floating button returns to the explanation it came from. */
+function xBack(target) {
+  let b = document.getElementById('xback');
+  if (!target) { if (b) b.remove(); return; }
+  if (!b) { b = document.createElement('button'); b.id = 'xback'; b.type = 'button'; b.className = 'btn'; b.textContent = '↑ Back to the explanation'; document.body.appendChild(b); }
+  b.onclick = () => { if (document.body.contains(target)) scrollToEl(target); xBack(null); };
+}
 /* A question's or term's figure; the static GPCR figure brings the step-through with it. */
 const figHTML = key => (typeof FIG === 'function' && key) ? FIG(key) + (key === 'gpcr-steps' ? FIG('gpcr-anim') : '') : '';
 function expandFigs(html) {
