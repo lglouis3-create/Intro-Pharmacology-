@@ -361,7 +361,7 @@ function renderQ() {
   // the current question may have been answered on the all-on-one-page view
   if (Q.cur && !Q.answered && Q.doneIds.has(Q.cur.id)) return nextQ();
   const q = Q.cur; clearView();
-  let h = `<div class="row" style="justify-content:space-between"><span class="meta">${esc(Q.label || '')} · ${Q.done} answered${Q.done ? ' · ' + Q.right + ' right' : ''}</span>${layoutToggle()}</div>`;
+  let h = `<div class="row" style="justify-content:space-between"><span class="meta">${esc(Q.label || '')} · ${Q.done} answered${Q.done ? ' · ' + Q.right + ' right' : ''}</span>${layoutToggle()}</div><div class="row" style="margin:-4px 0 8px">${sessStrip()}</div>`;
   h += qCard(q, Q, {seen: true, single: true,
     conf: () => Q.ok ? `<div class="row" style="margin-top:12px"><span class="meta" style="margin:0">How sure were you?</span>
       <button class="btn" data-c="sure">Knew it</button><button class="btn ghost" data-c="unsure">Not sure</button><button class="btn ghost" data-c="guess">I guessed</button></div>`
@@ -394,7 +394,7 @@ function renderAll() {
   shown.forEach(q => { if (!Q.st[q.id]) Q.st[q.id] = {order: q.type === 'match' ? null : optOrder(q), rightOrder: q.type === 'match' ? shuffle(q.right.slice()) : null, picked: q.multi ? new Set() : null, mpick: null, answered: false, ok: null, t0: Date.now()}; });
   const done = shown.filter(q => Q.st[q.id].answered).length, right = shown.filter(q => Q.st[q.id].ok).length;
   const earlier = Q.list.length - list.length;
-  let h = `<div class="row allhead" style="justify-content:space-between"><span class="meta" id="allcount">${esc(Q.label || '')} · ${done} of ${shown.length} answered${done ? ' · ' + right + ' right' : ''}${list.length > shown.length ? ' · ' + list.length + ' in the drill' : ''}${earlier ? ' · ' + earlier + ' answered one at a time' : ''}</span>${layoutToggle()}</div>`;
+  let h = `<div class="row allhead" style="justify-content:space-between"><span class="meta" id="allcount">${esc(Q.label || '')} · ${done} of ${shown.length} answered${done ? ' · ' + right + ' right' : ''}${list.length > shown.length ? ' · ' + list.length + ' in the drill' : ''}${earlier ? ' · ' + earlier + ' answered one at a time' : ''}</span>${layoutToggle()}</div><div class="row" style="margin:-4px 0 8px">${sessStrip()}</div>`;
   shown.forEach((q, i) => {
     const st = Q.st[q.id];
     h += qCard(q, st, {idx: i, conf: s2 => allConf(q, s2)});
@@ -437,6 +437,7 @@ function checkAll(id) {
   const sq = qs(q.id); st.box0 = sq.box; sq.n++; if (st.ok) sq.ok++;
   const picked = q.type === 'match' ? st.mpick : q.multi ? [...st.picked] : st.picked;
   S.log.push({id: q.id, t: Date.now(), ok: st.ok, conf: st.conf, picked, ms: Date.now() - st.t0});
+  setTimeout(refreshSess, 0);
   if (S.log.length > 5000) S.log = S.log.slice(-5000);
   schedule(q.id, st.conf);
   Q.done++; if (st.ok) Q.right++; Q.doneIds.add(q.id);
@@ -475,6 +476,7 @@ function finish(conf) {
   st.n++; if (Q.ok && conf !== 'guess') st.ok++;
   const picked = q.type === 'match' ? Q.mpick : q.multi ? [...Q.picked] : Q.picked;
   S.log.push({id: q.id, t: Date.now(), ok: Q.ok, conf, picked, ms: Date.now() - Q.t0});
+  setTimeout(refreshSess, 0);
   if (S.log.length > 5000) S.log = S.log.slice(-5000);
   schedule(q.id, Q.ok ? conf : 'wrong');
   if (!Q.ok || conf === 'guess') Q.retest.push({concept: q.concept, not: q.id});
@@ -483,44 +485,115 @@ function finish(conf) {
 }
 
 /* ---------- Weak spots ---------- */
+/* ---------- Session progress ----------
+   A session is the run of answers with no gap longer than 30 minutes, ending with
+   the latest answer, so it survives a page reload. sessStrip() is the one-line
+   version shown above the quiz and refreshed after every answer. */
+const SESSION_GAP = 30 * MIN;
+function sessionLog() {
+  const L = S.log; if (!L.length) return [];
+  let k = L.length - 1;
+  while (k > 0 && L[k].t - L[k - 1].t < SESSION_GAP) k--;
+  return Date.now() - L[L.length - 1].t < SESSION_GAP ? L.slice(k) : [];
+}
+const solid = e => e.ok && e.conf !== 'guess';
+function sessStrip() {
+  const ses = sessionLog(); if (!ses.length) return '<span class="meta" id="sess" style="margin:0">This session: no answers yet</span>';
+  const ok = ses.filter(solid).length, last = ses.slice(-10);
+  return `<span class="meta" id="sess" style="margin:0">This session: ${ok}/${ses.length} (${Math.round(100 * ok / ses.length)}%) · last ${last.length}: <span class="sdots10">${last.map(e => `<i class="${solid(e) ? 'y' : 'n'}" title="${esc(e.id)}"></i>`).join('')}</span></span>`;
+}
+const refreshSess = () => { const el = $('#sess'); if (el) el.outerHTML = sessStrip(); };
+
+/* ---------- Weak spots ----------
+   1. This session: answers, accuracy, the last 20 in order, first half vs second half.
+   2. What to review next: questions not yet solid (last three answers, a correct
+      "I guessed" counts as a miss), grouped by the guide section that teaches them,
+      ranked by how much is missing. Each area lists the concepts, the wrong option
+      chosen most recently with why it is wrong, the idea to learn, where to read it,
+      and a drill button. 3. By topic and by skill, folded away. */
 function vWeak() {
   const pool = examPool();
-  if (!S.log.length) { $('#view').innerHTML = '<h2>Weak spots</h2><div class="empty">Answer some questions and this fills in by topic, by skill, and with the wrong options you keep choosing.</div>'; return; }
-  const recent = {}; // last 3 answers per question
+  if (!S.log.length) { $('#view').innerHTML = '<h2>Weak spots</h2><div class="empty">Answer some questions and this fills in: your progress this session, the concepts to review first, what you keep choosing and why it is wrong, and where to read about each one.</div>'; return; }
+  const recent = {};
   S.log.forEach(e => { (recent[e.id] = recent[e.id] || []).push(e); });
-  const score = q => { const r = (recent[q.id] || []).slice(-3); if (!r.length) return null; return r.filter(e => e.ok && e.conf !== 'guess').length / r.length; };
+  const score = q => { const r = (recent[q.id] || []).slice(-3); if (!r.length) return null; return r.filter(solid).length / r.length; };
+  const notSolid = pool.filter(q => score(q) != null && score(q) < 1);
+  let h = `<h2>Weak spots</h2>`, retryList = [];
+
+  // 1. this session
+  const ses = sessionLog();
+  if (ses.length) {
+    const ok = ses.filter(solid).length, pct = Math.round(100 * ok / ses.length);
+    const half = Math.floor(ses.length / 2), a = ses.slice(0, half), b = ses.slice(half);
+    const pa = a.length ? Math.round(100 * a.filter(solid).length / a.length) : null, pb = b.length ? Math.round(100 * b.filter(solid).length / b.length) : null;
+    const missedNow = [...new Set(ses.filter(e => !solid(e)).map(e => e.id))].filter(id => byId[id] && score(byId[id]) < 1).map(id => byId[id]);
+    const mins = Math.max(1, Math.round((ses[ses.length - 1].t - ses[0].t) / MIN));
+    h += `<h3>This session</h3><div class="card"><div class="row" style="justify-content:space-between;flex-wrap:wrap;gap:12px">
+      <span><b style="font-size:22px">${pct}%</b> <span class="meta" style="margin:0">${ok} of ${ses.length} solid in ${mins} min</span></span>
+      ${pa != null && ses.length >= 6 ? `<span class="meta" style="margin:0">first half ${pa}% → second half ${pb}%</span>` : ''}</div>
+      <div class="sdots10 big" style="margin:10px 0 4px">${ses.slice(-20).map(e => `<i class="${solid(e) ? 'y' : 'n'}" title="${esc(e.id)}${e.conf === 'guess' ? ' (guessed)' : ''}"></i>`).join('')}</div>
+      <div class="meta" style="margin:0">Last ${Math.min(20, ses.length)} answers, oldest on the left; filled = solid, outlined = missed or guessed. A session ends after 30 minutes with no answer.</div>
+      ${missedNow.length ? `<div class="row" style="margin-top:10px"><button class="btn" id="retrysess">Retry the ${missedNow.length} missed this session</button></div>` : ''}</div>`;
+    retryList = missedNow;
+  }
+
+  // 2. what to review next
+  const areas = {};
+  notSolid.forEach(q => {
+    const l = linksFor(q)[0] || ['', '', 'Other'];
+    const A = areas[l[2]] = areas[l[2]] || {name: l[2], links: linksFor(q), qs: [], gap: 0, concepts: {}};
+    A.qs.push(q); A.gap += 1 - score(q);
+    const c = A.concepts[q.concept] = A.concepts[q.concept] || {qs: [], last: null};
+    c.qs.push(q);
+    const lastMiss = (recent[q.id] || []).filter(e => !solid(e)).pop();
+    if (lastMiss && (!c.last || lastMiss.t > c.last.e.t)) c.last = {e: lastMiss, q};
+  });
+  const ranked = Object.values(areas).sort((x, y) => y.gap - x.gap);
+  const firstSentence = t => { const m = String(t || '').replace(/<[^>]+>/g, '').match(/^(.*?[.!?](\s|$)){1,2}/); const r = (m ? m[0] : String(t || '')).trim(); return r.length > 320 ? r.slice(0, 317) + '…' : r; };
+  const cap1 = t => t.charAt(0).toUpperCase() + t.slice(1);
+  const pickedText = (q, e) => { const p = [].concat(e.picked == null ? [] : e.picked); return p.map(i => q.options && q.options[i]).filter(Boolean); };
+  if (ranked.length) {
+    h += `<h3>What to review next</h3><p class="sub">${notSolid.length} question${notSolid.length === 1 ? '' : 's'} not yet solid, grouped by the section that teaches them, most missing first. Read the section, then drill its questions.</p>`;
+    ranked.slice(0, 6).forEach((A, ai) => {
+      const cs = Object.entries(A.concepts).sort((x, y) => y[1].qs.length - x[1].qs.length);
+      h += `<div class="card plan"><div class="row" style="justify-content:space-between;flex-wrap:wrap"><b>${ai + 1}. ${esc(cap1(A.name.replace(/^(Guide|Reference|Tell apart) ?\d*: ?/, '')))}</b><span class="meta" style="margin:0">${A.qs.length} question${A.qs.length === 1 ? '' : 's'} · ${cs.length} concept${cs.length === 1 ? '' : 's'}</span></div>`;
+      cs.slice(0, 4).forEach(([cid, c]) => {
+        const q = (c.last && c.last.q) || c.qs[0], wrong = c.last ? pickedText(c.last.q, c.last.e).filter(o => !o.correct) : [];
+        const right = (q.options || []).filter(o => o.correct).map(o => o.t);
+        h += `<div class="pconcept"><div class="pq">${esc(q.stem.length > 160 ? q.stem.slice(0, 160) + '…' : q.stem)}</div>`;
+        if (wrong.length) h += `<div class="pw"><b>You chose:</b> ${esc(wrong.map(o => o.t).join(' · '))}<br><span class="meta" style="margin:0">Why it is not the answer: ${esc(wrong.map(o => o.why || '').join(' '))}</span></div>`;
+        else if (c.last && c.last.e.conf === 'guess') h += `<div class="pw"><b>You got it right but marked it a guess.</b></div>`;
+        if (right.length) h += `<div class="pr"><b>Answer:</b> ${esc(right.join(' · '))}</div>`;
+        if (q.teach) h += `<div class="pi"><b>The idea:</b> ${esc(firstSentence(q.teach))}</div>`;
+        if (c.qs.length > 1) h += `<div class="meta" style="margin:2px 0 0">${c.qs.length} questions on this concept are not solid.</div>`;
+        h += `</div>`;
+      });
+      if (cs.length > 4) h += `<div class="meta">+ ${cs.length - 4} more concept${cs.length - 4 === 1 ? '' : 's'} in this section.</div>`;
+      h += `<div class="row" style="margin-top:8px;flex-wrap:wrap">${A.links.map(([v, a, t]) => `<button type="button" class="chip" data-jump="${v}:${a}">Read: ${esc(t)}</button>`).join('')}<button class="btn" data-area="${ai}">Drill these ${A.qs.length}</button></div></div>`;
+    });
+    if (ranked.length > 6) h += `<p class="meta">${ranked.length - 6} more section${ranked.length - 6 === 1 ? '' : 's'} have questions to review; they appear here as these are solved.</p>`;
+    h += `<div class="row" style="margin:6px 0 14px"><button class="btn ghost" id="missall">Drill all ${notSolid.length} not-solid questions</button></div>`;
+  } else h += `<div class="card">Every question you have answered is solid on its last three answers.</div>`;
+
+  // 3. by topic / by skill (folded)
   const group = (keyFn, nameFn) => {
     const g = {};
     pool.forEach(q => { const k = keyFn(q); (g[k] = g[k] || []).push(q); });
     return Object.entries(g).map(([k, list]) => {
       const sc = list.map(score).filter(x => x != null);
-      return {k, name: nameFn(k), n: list.length, seen: sc.length, pct: sc.length ? Math.round(100 * sc.reduce((a, b) => a + b, 0) / sc.length) : null,
-        miss: list.filter(q => score(q) != null && score(q) < 1)};
+      return {k, name: nameFn(k), n: list.length, seen: sc.length, pct: sc.length ? Math.round(100 * sc.reduce((a, b) => a + b, 0) / sc.length) : null, miss: list.filter(q => score(q) != null && score(q) < 1)};
     }).sort((a, b) => (a.pct == null ? 101 : a.pct) - (b.pct == null ? 101 : b.pct));
   };
-  const table = (rows, title) => `<h3>${title}</h3><div class="card">${rows.map(r => `<div class="topicrow"><span>${esc(r.name)}<small>${r.seen}/${r.n} seen</small></span>
+  const table = (rows, title) => `<details class="gread"><summary>${title}</summary><div class="card">${rows.map(r => `<div class="topicrow"><span>${esc(r.name)}<small>${r.seen}/${r.n} seen</small></span>
     <span class="row"><span class="bar-meter"><span style="width:${r.pct || 0}%"></span></span><small>${r.pct == null ? '—' : r.pct + '%'}</small>
-    ${r.miss.length ? `<button class="btn ghost" data-miss="${esc(title)}|${esc(r.k)}">Drill ${r.miss.length} missed</button>` : ''}</span></div>`).join('')}</div>`;
+    ${r.miss.length ? `<button class="btn ghost" data-miss="${esc(title)}|${esc(r.k)}">Drill ${r.miss.length}</button>` : ''}</span></div>`).join('')}</div></details>`;
   const byTopic = group(q => q.topic, k => (TOPIC[k] || {}).name || k);
   const bySkill = group(q => q.skill, k => (SKILL[k] || {}).label || k);
-  const allMiss = pool.filter(q => score(q) != null && score(q) < 1);
-  // confusions: wrong option picked vs right
-  const conf = {};
-  S.log.filter(e => !e.ok && byId[e.id] && typeof e.picked === 'number').forEach(e => {
-    const q = byId[e.id], w = q.options[e.picked]; if (!w) return;
-    const key = e.id + '|' + e.picked;
-    conf[key] = conf[key] || {q, wrong: w.t, right: q.options.filter(o => o.correct).map(o => o.t).join(' · '), n: 0};
-    conf[key].n++;
-  });
-  const confs = Object.values(conf).sort((a, b) => b.n - a.n).slice(0, 12);
-  let h = `<h2>Weak spots</h2><p class="sub">Scored on the last three answers to each question; a correct answer marked "I guessed" counts as a miss.</p>
-    <div class="card row" style="justify-content:space-between"><span><b>${allMiss.length}</b> questions not yet solid</span>
-    <button class="btn" id="missall" ${allMiss.length ? '' : 'disabled'}>Drill all of them</button></div>`;
-  h += table(byTopic, 'By topic') + table(bySkill, 'By skill');
-  if (confs.length) h += `<h3>Wrong answers you chose</h3><div class="card tablewrap"><table><thead><tr><th>Question</th><th>You chose</th><th>Answer</th><th>×</th></tr></thead><tbody>
-    ${confs.map(c => `<tr><td>${esc(c.q.stem.slice(0, 110))}${c.q.stem.length > 110 ? '…' : ''}</td><td>${esc(c.wrong)}</td><td>${esc(c.right)}</td><td>${c.n}</td></tr>`).join('')}</tbody></table></div>`;
+  h += `<h3>All-time, by topic and by skill</h3>` + table(byTopic, 'By topic') + table(bySkill, 'By skill');
   $('#view').innerHTML = h;
-  $('#missall').onclick = () => startQuiz(allMiss, 'Weak spots', 'sr');
+  const ma = $('#missall'); if (ma) ma.onclick = () => startQuiz(notSolid, 'Weak spots', 'sr');
+  const rs = $('#retrysess'); if (rs) rs.onclick = () => startQuiz(retryList, 'Missed this session', 'sr');
+  document.querySelectorAll('[data-area]').forEach(b => b.onclick = () => { const A = ranked[+b.dataset.area]; startQuiz(A.qs, A.name, 'sr'); });
   document.querySelectorAll('[data-miss]').forEach(b => b.onclick = () => {
     const [t, k] = b.dataset.miss.split('|');
     const rows = t === 'By topic' ? byTopic : bySkill;
