@@ -472,7 +472,8 @@ const GUIDE_HTML = `
 </ul>
 
 <h4>How to read it on a figure</h4>
-<!--FIG:superfamilies--><!--FIG:gpcr--><!--FIG:rtk-steps-->
+<!--FIG:superfamilies--><!--FIG:gpcr-->
+<div class="pair"><!--FIG:rtk-steps--><!--FIG:rtk-anim--></div>
 <ul>
 <li>1-TM receptors (receptor tyrosine kinases, RTKs): binding pocket outside, enzyme (kinase) inside, and no G protein. His five activation steps, in order: (1) the inactive receptor is a monomer; (2) the ligand binds and two receptors join (dimerization), the active form; (3) the two kinase domains phosphorylate each other (cross-phosphorylation); (4) the phosphorylated sites form docking sites for signaling complexes; (5) a tyrosine phosphatase removes the phosphates and ends the signal. Downstream, the cascade Grb2 → GEF → RAS → RAF → MEK → ERK drives cell growth. <small>Day 2 ~4–~11; (T) 9/23</small></li>
 <li>Trap: GDP/GTP exchange, GTPase, PDE and cAMP are G-protein (GPCR) steps; none of them is an RTK step. The enzyme that ends RTK signaling is the tyrosine phosphatase. <small>Day 2 ~7–~9</small></li>

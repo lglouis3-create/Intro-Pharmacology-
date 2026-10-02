@@ -132,6 +132,39 @@ const FIG = (() => {
     return wrap(s, ['<b>Receptor tyrosine kinase (RTK) activation</b>, his five steps (Day 2 slides ~7–~9):', '<ol><li>The inactive receptor is a monomer (one receptor on its own).</li><li>The ligand binds and two receptors join (dimerization): this pair is the active form.</li><li>The two kinase domains inside the cell phosphorylate each other (cross-phosphorylation).</li><li>The phosphorylated sites form docking sites, where signaling complexes attach and pass the signal on.</li><li>A tyrosine phosphatase removes the phosphates and ends the signal.</li></ol>', 'An RTK crosses the membrane once (1-TM): binding pocket outside, enzyme (kinase) inside. It has no α subunit, no GDP/GTP exchange and no cAMP; those belong to GPCRs.'], 116);
   };
 
+  /* RTK activation as a step-through (Day 2 slides ~7–~9). Every shape carries a
+     data-k, so between steps the receptors slide together and apart, and the
+     ligand, phosphates and boxes fade in and out (stepTo in app.js). */
+  F['rtk-anim'] = () => {
+    const t = (k, x, y, txt, cls = 'lbl xs', a = 'middle') => `<text data-k="${k}" class="${cls}" x="${x}" y="${y}" text-anchor="${a}">${txt}</text>`;
+    const rec = (s, x, st) => {
+      let g = '';
+      if (st.lig) g += `<circle data-k="${s}-lig" cx="${x}" cy="22" r="9" fill="var(--figC)" fill-opacity="0.3" stroke="var(--figC)"/>` + t(`${s}-ligt`, x, 25, 'L', 'cl c');
+      g += `<rect data-k="${s}-bind" x="${x - 18}" y="34" width="36" height="38" rx="5" fill="var(--figA)" fill-opacity="0.15" stroke="var(--figA)"/>` + t(`${s}-b1`, x, 51, 'binding') + t(`${s}-b2`, x, 61, 'domain');
+      g += `<rect data-k="${s}-stem" x="${x - 3}" y="72" width="6" height="18" fill="var(--figA)" fill-opacity="0.6"/>`;
+      g += `<rect data-k="${s}-tail" x="${x - 18}" y="90" width="36" height="38" rx="5" fill="var(--figB)" fill-opacity="${st.on ? 0.3 : 0.1}" stroke="var(--figB)"/>` + t(`${s}-k1`, x, 107, 'kinase') + t(`${s}-k2`, x, 117, 'domain');
+      if (st.p) { const px = s === 'L' ? x - 27 : x + 27; [100, 120].forEach((y, i) => { g += `<circle data-k="${s}-p${i}" cx="${px}" cy="${y}" r="7" fill="var(--figD)" fill-opacity="0.3" stroke="var(--figD)"/>` + t(`${s}-pt${i}`, px, y + 3, 'P', 'cl d'); }); }
+      return g;
+    };
+    const base = `<rect data-k="mem" x="0" y="72" width="360" height="18" fill="var(--chip)"/>` + t('o', 4, 40, 'outside', 'lbl xs', 'start') + t('m', 4, 84, 'membrane', 'lbl xs', 'start') + t('i', 4, 112, 'inside the cell', 'lbl xs', 'start');
+    const frame = st => {
+      const [xl, xr] = st.dimer ? [158, 202] : [110, 250];
+      let g = base + rec('L', xl, st) + rec('R', xr, st);
+      if (st.dock) g += `<path data-k="dock-arr" class="arrow" d="M180 130 L180 144"/><rect data-k="dock" x="40" y="146" width="280" height="22" rx="5" class="box"/>` + t('dock-t', 180, 160, 'signaling complex: Grb2 → GEF → RAS → RAF → MEK → ERK');
+      if (st.tp) g += `<rect data-k="tp" x="95" y="146" width="170" height="22" rx="5" fill="var(--figE)" fill-opacity="0.2" stroke="var(--figE)"/>` + t('tp-t', 180, 161, 'tyrosine phosphatase (TP)', 'cl e');
+      return g;
+    };
+    const steps = [
+      ['Each RTK crosses the membrane once (1-TM) and sits alone. No ligand is bound and the kinase domain is off.', frame({}), 'Inactive receptor is monomeric state'],
+      ['The ligand (L), such as insulin or a growth factor, binds the extracellular domain, and two receptors pair up: the dimer is the active form.', frame({lig: 1, dimer: 1}), 'Ligand binding induces Dimerization (active)'],
+      ['With the two receptors side by side, each kinase domain adds phosphates (P) to the tyrosines of the other one.', frame({lig: 1, dimer: 1, on: 1, p: 1}), 'Cross-phosphorylation of the kinase domain'],
+      ['Signaling proteins bind the phosphorylated tyrosines (the docking sites) and pass the signal on down the RAS pathway.', frame({lig: 1, dimer: 1, on: 1, p: 1, dock: 1}), 'Phosphorylation forms docking sites & signaling complexes'],
+      ['Tyrosine phosphatase removes the phosphates: the docking sites are gone, signaling stops and the receptors return to the inactive monomer state.', frame({tp: 1}), 'Tyrosine Phosphatase (TP)']
+    ];
+    return stepper('rtk', 'RTK activation step by step', steps, 214,
+      ['Step titles are the wording on his "RTKs Activation" slide (Pharmacodynamics Day 2, slides ~7–~9; transcript 9/23).', 'No G protein, no GDP/GTP exchange and no cAMP: those are GPCR steps. The enzyme that ends RTK signaling is the tyrosine phosphatase.']);
+  };
+
   /* Six drug classes side by side: what sits in the pocket, and the response
      bar (basal level marked) that results. */
   F['classes'] = () => {
@@ -227,9 +260,13 @@ const FIG = (() => {
     let g = `<text class="title" x="180" y="11" text-anchor="middle">${title}</text>`;
     steps.forEach((st, i) => {
       const lines = wrapLines(st[0]);
-      g += `<g class="st${i === 0 ? ' on' : ''}" data-step="${i + 1}">${st[1]}<text class="lbl sm" x="6" y="${h - 12 - lines.length * 10}" text-anchor="start">Step ${i + 1} of ${steps.length}${st[2] ? ' · ' + st[2] : ''}</text>${lines.map((l, k) => `<text class="lbl xs" x="6" y="${h - 2 - (lines.length - 1 - k) * 10}" text-anchor="start">${l}</text>`).join('')}</g>`;
+      g += `<g class="st${i === 0 ? ' on' : ''}" data-step="${i + 1}">${st[1]}<text class="lbl sm capt" x="6" y="${h - 12 - lines.length * 10}" text-anchor="start">Step ${i + 1} of ${steps.length}${st[2] ? ' · ' + st[2] : ''}</text>${lines.map((l, k) => `<text class="lbl xs capt" x="6" y="${h - 2 - (lines.length - 1 - k) * 10}" text-anchor="start">${l}</text>`).join('')}</g>`;
     });
-    const controls = `<div class="row anim" data-anim="${key}" style="margin:6px 0 2px"><button class="btn ghost" data-go="-1">◀ Back</button><button class="btn ghost" data-go="1">Next ▶</button><button class="btn ghost" data-go="play">Play</button><span class="meta" style="margin:0">${footer || ''}</span></div>`;
+    // Controls (same pattern for every step-through figure): Back and Next wrap around, Replay
+    // replays the move into the current step, Play all runs from step 1 and stops at the last,
+    // and a dot per step jumps to it. The motion itself is done in app.js (stepTo).
+    const dots = steps.map((st, i) => `<button class="sdot${i === 0 ? ' on' : ''}" data-go="dot" data-i="${i}" aria-label="Go to step ${i + 1}"></button>`).join('');
+    const controls = `<div class="row anim" data-anim="${key}" style="margin:6px 0 2px"><button class="btn ghost" data-go="-1">◀ Back</button><button class="btn ghost" data-go="1">Next ▶</button><button class="btn ghost" data-go="replay">↻ Replay step</button><button class="btn ghost" data-go="play">▶ Play all</button><span class="sdots">${dots}</span><span class="meta" style="margin:0">${footer || ''}</span></div>`;
     return wrap(g, cap, h).replace('</svg><figcaption>', '</svg>' + controls + '<figcaption>');
   };
 
