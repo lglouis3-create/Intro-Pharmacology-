@@ -816,21 +816,70 @@ function vTell() {
 }
 /* Static pages carry figure markers: <!--FIG:key-->, <!--IMG:key--> (one of his
    poll figures) and <!--GRAPH:{json}--> (a drawn dose–response plot). */
-/* Step-through figures: buttons under a figure move between its data-step groups. */
+/* Step-through figures: buttons under a figure move between its data-step groups.
+   Moving between two steps animates the change: a shape or label present in both
+   steps glides from its old position to its new one (matched by data-k, else by
+   tag + text + class in order), shapes that are new fade in, and shapes that are
+   gone fade out. Only end positions are set here; CSS does the motion, and
+   prefers-reduced-motion turns it off. */
 let ANIM = null;   // the one figure playing: {t: interval, b: its Play button}
+const RM = () => window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+const leafSel = 'text,circle,rect,ellipse,line,polyline,polygon,path';
+const sigOf = el => el.getAttribute('data-k') || [el.tagName, el.getAttribute('class') || '', el.tagName === 'text' ? el.textContent : (el.getAttribute('fill') || '')].join('|');
+const centre = el => { const r = el.getBoundingClientRect(); return [r.left + r.width / 2, r.top + r.height / 2, r.width + r.height]; };
+function stepTo(fig, from, to) {
+  const steps = [...fig.querySelectorAll('.st')], svg = fig.querySelector('svg');
+  fig.querySelectorAll('.st-out').forEach(n => n.remove());
+  const old = from != null && from !== to ? steps[from] : null;
+  const before = new Map();   // signature → queue of old screen positions
+  if (old && !RM()) old.querySelectorAll(leafSel).forEach(el => { if (el.classList.contains('capt')) return; const k = sigOf(el), c = centre(el); if (c[2]) (before.get(k) || before.set(k, []).get(k)).push({el, c}); });
+  steps.forEach((s, j) => s.classList.toggle('on', j === to));
+  fig.querySelectorAll('.sdot').forEach((d, j) => { d.classList.toggle('on', j === to); d.setAttribute('aria-current', j === to ? 'step' : 'false'); });
+  if (RM()) return;
+  const now = steps[to], scale = svg.viewBox.baseVal.width / (svg.getBoundingClientRect().width || 1), used = new Set();
+  const leaves = [...now.querySelectorAll(leafSel)];
+  leaves.forEach(el => { el.classList.remove('fadein', 'glide'); el.style.transform = ''; });
+  svg.getBoundingClientRect();                        // restart the fade-in animations
+  leaves.forEach(el => {
+    if (el.classList.contains('capt')) { el.classList.add('fadein'); return; }
+    const q = before.get(sigOf(el)), m = q && q.shift();
+    if (!m) { el.classList.add('fadein'); return; }
+    used.add(m.el);
+    const c = centre(el), dx = (m.c[0] - c[0]) * scale, dy = (m.c[1] - c[1]) * scale;
+    if (Math.abs(dx) < 0.5 && Math.abs(dy) < 0.5) return;
+    el.style.transform = `translate(${dx}px,${dy}px)`;
+    el.getBoundingClientRect();                       // commit the start position
+    el.classList.add('glide'); el.style.transform = '';
+  });
+  if (!old) return;
+  // the shapes that are gone fade out from where they were
+  const ghost = old.cloneNode(true); ghost.classList.remove('on', 'st'); ghost.classList.add('st-out'); ghost.removeAttribute('data-step');
+  const oldLeaves = [...old.querySelectorAll(leafSel)], ghostLeaves = [...ghost.querySelectorAll(leafSel)];
+  oldLeaves.forEach((el, k) => { if (used.has(el) || el.classList.contains('capt')) ghostLeaves[k].remove(); });
+  svg.appendChild(ghost); setTimeout(() => ghost.remove(), 600);
+}
 document.addEventListener('click', e => {
   const b = e.target.closest('[data-anim] button'); if (!b) return;
   const fig = b.closest('figure'); const steps = [...fig.querySelectorAll('.st')]; if (!steps.length) return;
-  const cur = steps.findIndex(s => s.classList.contains('on'));
-  const show = i => steps.forEach((s, j) => s.classList.toggle('on', j === i));
-  const stop = () => { if (ANIM) { clearInterval(ANIM.t); ANIM.b.textContent = 'Play'; ANIM = null; } };
-  if (b.dataset.go === 'play') {
+  const cur = steps.findIndex(s => s.classList.contains('on')), n = steps.length;
+  const playBtn = fig.querySelector('[data-go="play"]');
+  const stop = () => { if (ANIM) { clearInterval(ANIM.t); ANIM.b.textContent = '▶ Play all'; ANIM = null; } };
+  const go = b.dataset.go;
+  if (go === 'play') {
     const same = ANIM && ANIM.b === b; stop(); if (same) return;
-    b.textContent = 'Pause';
-    ANIM = {b, t: setInterval(() => { if (!document.body.contains(fig)) return stop(); const i = (steps.findIndex(s => s.classList.contains('on')) + 1) % steps.length; show(i); if (i === steps.length - 1) stop(); }, 1800)};
+    b.textContent = '❚❚ Pause'; stepTo(fig, null, 0);
+    ANIM = {b, t: setInterval(() => {
+      if (!document.body.contains(fig)) return stop();
+      const i = steps.findIndex(s => s.classList.contains('on'));
+      if (i >= n - 1) return stop();
+      stepTo(fig, i, i + 1); if (i + 1 === n - 1) stop();
+    }, 3200)};
     return;
   }
-  show((cur + (+b.dataset.go) + steps.length) % steps.length);
+  if (ANIM && ANIM.b === playBtn) stop();
+  if (go === 'replay') return stepTo(fig, cur > 0 ? cur - 1 : null, cur);
+  if (go === 'dot') return stepTo(fig, cur, +b.dataset.i);
+  stepTo(fig, cur, (cur + (+go) + n) % n);
 });
 /* A question's or term's figure; the static GPCR figure brings the step-through with it. */
 const figHTML = key => (typeof FIG === 'function' && key) ? FIG(key) + (key === 'gpcr-steps' ? FIG('gpcr-anim') : '') : '';
