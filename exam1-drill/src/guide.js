@@ -170,7 +170,7 @@ const GUIDE_HTML = `
 <tr><td>Potency vs efficacy</td><td>Left–right position or plateau height</td><td>Smallest ED50: most potent. Highest plateau: most efficacious</td></tr>
 <tr><td>Pharmacological vs apparent potency</td><td>Does the list name age, absorption, elimination, DDI (drug–drug interactions)</td><td>Yes: apparent, because these are pharmacokinetics (what the body does to the drug). Tissue, receptors, affinity, efficacy: pharmacological</td></tr>
 <tr><td>More receptors vs a changed drug</td><td>Did the drug's Kd change</td><td>No, curve moved left: more receptors, same drug</td></tr>
-<tr><td>Intrinsic activity vs efficacy</td><td>Is the tissue counted</td><td>No (full agonist 1, partial between 0 and 1, antagonist 0): intrinsic activity. Yes, and only relative between drugs: efficacy</td></tr>
+<tr><td>Intrinsic activity vs efficacy</td><td>Is the tissue counted</td><td>No (full agonist 100% (1), partial 1&ndash;99% (0.01&ndash;0.99), antagonist 0): intrinsic activity. Yes, and only relative between drugs: efficacy</td></tr>
 <tr><td>Same ED50, different Emax</td><td>The stem says affinity is equal</td><td>The higher plateau is more potent by efficacy</td></tr>
 </tbody></table>
 <p class="sub">Day 1 ~21–~28; Day 2 ~31, ~45–~58; Day 3 ~3–~8, ~21–~29; (T) 9/22, 9/23, 9/24.</p>

@@ -133,10 +133,10 @@ const TERMS = [
  src:'both'},
 
 {id:'intrinsic-activity', term:'Intrinsic activity', lecture:'L03', group:'Drug–receptor binding',
- def:'A number for the ability of a drug to produce a response: full agonist = 1, partial agonist between 0 and 1, antagonist = 0. It does not count the tissue (how many receptors are present), so efficacy is the term used instead.',
+ def:'A number for the ability of a drug to produce a response: full agonist = 100% (1), partial agonist 1–99% (0.01–0.99), antagonist = 0. It does not count the tissue (how many receptors are present), so efficacy is the term used instead.',
  hook:'It does not account for the tissue (how many receptors are present), so it is incomplete; efficacy is the more comprehensive term. The names and the formula are not tested.',
  gist:'A number: full agonist 1, partial 0 to 1, antagonist 0; ignores the tissue.',
- scene:'Ariëns assigned each drug a single value, norepinephrine 1, albuterol somewhere between 0 and 1, metoprolol 0, without counting how many receptors the tissue has, so the theory is incomplete.',
+ scene:'Ariëns assigned each drug a single value, norepinephrine 1, albuterol somewhere from 1% to 99%, metoprolol 0, without counting how many receptors the tissue has, so the theory is incomplete.',
  confuse:['efficacy'],
  quote:'What he did not count was for the tissue, how many receptors are present in that system. So this is an incomplete theory that we can’t really use much',
  cite:'Pharmacodynamics-Day_3_2026s.pdf slides ~24–~26; Pharmacodynamics-Day-1-2026s.pdf slide ~28; transcript 9/22; transcript 9/24',
