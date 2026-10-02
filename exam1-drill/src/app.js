@@ -112,7 +112,7 @@ function schedule(id, outcome) {
 /* ---------- views ---------- */
 const VIEWS = [
   ['topics', 'Topics'], ['quiz', 'Quiz'], ['terms', 'Terms'], ['weak', 'Weak spots'], ['exam', 'Exam sim'],
-  ['graphs', 'Graphs'], ['map', 'Question map'], ['ref', 'Reference'], ['tell', 'Tell apart'], ['guide', 'Guides'], ['data', 'Progress']
+  ['graphs', 'Graphs'], ['diagrams', 'Diagrams'], ['map', 'Question map'], ['ref', 'Reference'], ['tell', 'Tell apart'], ['guide', 'Guides'], ['data', 'Progress']
 ];
 let CUR = 'topics';
 function nav() {
@@ -169,7 +169,7 @@ function backBtn() {
   b.textContent = '← Back to ' + ({quiz: 'the question', exam: 'the exam', graphs: 'the figures', map: 'the map', terms: 'the terms'}[RET[RET.length - 1].view] || 'where you were');
 }
 document.addEventListener('click', e => { const j = e.target.closest('[data-jump]'); if (j) { const [v, a] = j.dataset.jump.split(':'); jump(v, a); } });
-const VIEWFN = {topics: vTopics, quiz: vQuiz, terms: vTerms, weak: vWeak, exam: vExam, map: vMap, graphs: vGraphs, ref: vRef, tell: vTell, guide: vGuide, data: vData};
+const VIEWFN = {topics: vTopics, quiz: vQuiz, terms: vTerms, weak: vWeak, exam: vExam, map: vMap, graphs: vGraphs, diagrams: vDiagrams, ref: vRef, tell: vTell, guide: vGuide, data: vData};
 const rerender = () => { const y = window.scrollY; if (CUR === 'quiz' && Q) renderQ(); else if (CUR === 'exam' && EX && !EX.done) renderExam(); else if (CUR === 'exam' && EX && EX.done) examResult(); else VIEWFN[CUR](); window.scrollTo(0, y); };
 document.addEventListener('click', e => {
   const f = e.target.closest('[data-flag]');
@@ -971,6 +971,28 @@ function startGraph(key) {
   const g = GR.find(x => x.key === key); if (!g) return;
   const list = shuffle(graphQs(g)); if (!list.length) { alert('No questions on this figure yet.'); return; }
   startQuiz(list, g.title, 'pass', {graph: key});
+}
+/* Diagrams: every process diagram and step-through figure on one page, grouped,
+   with a contents list at the top that jumps to each one. */
+const DIAGRAMS = [
+  ['Signal transduction', ['gpcr-steps', 'gpcr-anim', 'galpha-chain', 'galpha-anim', 'rtk-steps', 'rtk-anim']],
+  ['Two drugs at one receptor: how the curve moves', ['shift-competitive-anim', 'shift-irreversible-anim', 'shift-inverse-anim', 'shift-fafa-anim', 'shift-fapa-anim', 'shift-fapa-down-anim', 'shift-allo-agonist-anim', 'shift-allo-antagonist-anim']],
+  ['Indirect antagonists and drug combinations', ['ind-ssri-anim', 'ind-snri-anim', 'ind-ache-anim', 'ind-carbidopa-anim', 'ind-pde-anim', 'ind-ras-anim', 'enhance-anim']],
+  ['Receptor regulation', ['reg-chain', 'desens-rapid-anim', 'desens-long-anim', 'upreg-anim', 'downreg-anim']]
+];
+const DG_NAMES = {'rtk-steps': 'RTK activation: the five steps'};
+function vDiagrams() {
+  const have = new Set(typeof FIG === 'function' ? FIG.keys() : []);
+  const titleOf = html => { const m = html.match(/<text class="title"[^>]*>([^<]*)</); return m ? m[1] : ''; };
+  let toc = '', body = '';
+  DIAGRAMS.forEach(([name, keys], gi) => {
+    const ks = keys.filter(k => have.has(k)); if (!ks.length) return;
+    const figs = ks.map(k => { const html = FIG(k); return {k, html, t: (DG_NAMES[k] || titleOf(html) || k).replace(/ ?·? step by step/, '')}; });
+    toc += `<div class="card"><b>${esc(name)}</b><div class="row" style="flex-wrap:wrap;margin-top:6px">${figs.map(f => `<a class="chip" href="#dg-${f.k}" data-dg="${f.k}">${esc(f.t)}${/-anim$/.test(f.k) ? ' ▶' : ''}</a>`).join('')}</div></div>`;
+    body += `<h3 id="dgg-${gi}">${esc(name)}</h3><div class="shiftgrid">${figs.map(f => `<div id="dg-${f.k}">${f.html}</div>`).join('')}</div>`;
+  });
+  $('#view').innerHTML = `<h2>Diagrams</h2><p class="sub">Every process diagram in one place. ▶ marks a step-through figure: use Next, Play all or the step dots under it.</p>${toc}${body}`;
+  $('#view').querySelectorAll('[data-dg]').forEach(a => a.onclick = e => { e.preventDefault(); const el = document.getElementById('dg-' + a.dataset.dg); if (el) el.scrollIntoView({behavior: RM() ? 'auto' : 'smooth', block: 'start'}); });
 }
 function vGraphs() {
   const pool = examPool();
