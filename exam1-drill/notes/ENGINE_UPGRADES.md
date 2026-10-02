@@ -40,6 +40,47 @@ Port **behaviour, not content**. Do not copy Exam 1 questions, figures, quotes o
    - `course.js` `exams[].blueprint = {sata, parts: [{key, name, n | [min,max] | min | rest}]}`; `drawBlueprint()` and `bpCat()` in app.js.
    - `bpCat` keyword regexes are course-specific; rewrite them for the target course.
 
+## Terms tab: how the glossary is set up
+
+Files: `src/glossary.js` (the data), `src/gen_terms.py` (writes `src/q_TERMS.js`), `vTerms()` and `glossWire()` in app.js.
+
+1. **Data: one object per term in `glossary.js`** (`const TERMS = [...]`, listed in `build.py` PAGES):
+   ```js
+   {id:'rtk', term:'Receptor tyrosine kinase (RTK, 1-TM)', lecture:'L02', group:'Receptors and signaling',
+    def:'Full definition in slide wording.',
+    gist:'One-line meaning (≤ ~15 words).',
+    scene:'A situation that shows the term in action, without naming it.',
+    hook:'Optional: the professor’s example or the trap.',
+    confuse:['gpcr','nuclear-receptor'],   // ids of look-alike terms, used as distractors
+    fig:'gpcr',                             // optional figure key from diagrams.js
+    quote:'Optional verbatim lecture quote.', cite:'Deck file slides ~N; transcript date', src:'both'}
+   ```
+   - 4–6 `group` names per course (for PK, e.g. Absorption, Distribution, Metabolism, Elimination, Dosing equations).
+   - Every field must come from the course's decks or transcripts; `cite` names the deck and slide.
+2. **Questions: `gen_terms.py`** runs inside `build.py` and writes up to three questions per term into `q_TERMS.js` (topic `TERMS`, skill `term`):
+   - scene → which term (term names as options);
+   - term → its one-line meaning (gists as options);
+   - full definition → which term.
+   - Distractors come from `confuse` first, then the same group; the stem never contains the term's own words; the second question is `dupOf` the first so one exam paper never carries both.
+   - The exam draw caps term questions at 15% of a paper (`nTerm` in `drawExam`).
+3. **Terms tab modes** (`vTerms`): Glossary (cards with gist, definition, "In action" scene, hook, figure, cite), Flashcards (scene first with the term hidden, then the term and meaning; Knew it / Not sure / Did not know feed spaced repetition under `term:<id>`), Quiz me (the generated questions, counted in Weak spots under the skill "Terms"). A group filter applies to all three.
+4. **Search and A–Z** (see item 6 above): `glossWire()` builds the search box, the letter bar, the By group / A–Z toggle and the back-to-search button.
+5. Tests: `test.js` checks each term question; `style_check.js` checks that no definition names its own source.
+
+## "Explain more" after every answer
+
+After a question is answered (one at a time, all on one page, or in the exam review), the explanation ends with a row of buttons that open the page section teaching that concept, and a floating button brings the learner back to the same question with their place kept.
+
+- **Where it is drawn:** `explainHTML(q)` is appended after the cite line in `qCard()` and in the exam review.
+- **How a question finds its sections:** `linksFor(q)` returns up to three `[view, anchor id, label]` links:
+  1. `LINKS`: a list of `[regex, links]`; the regex is tested against `q.concept`, `q.fg`, `q.sub` and `q.tags`; the first match wins. This is the course-specific part: write one row per concept family.
+  2. Fallbacks: `BY_GROUP[q.sub]` (term questions), then `BY_LECTURE[q.lecture]`.
+  3. A drug-list question always links to the drug-list guide and reference.
+- **Targets:** every section a link points to needs an `id`: guide sections `guide-N`, reference `ref-N`, tell apart `tell-<name>`, diagrams `dg-<figure key>`. For a PK drill add an Equations page (`equations.js`, a view `eq`, sections `eq-<name>` such as `eq-half-life`, `eq-clearance`, `eq-vd`, `eq-loading-dose`) and use `['eq', 'eq-half-life', 'Equations: half-life']` in `LINKS`.
+- **Going and coming back:** `jump(view, anchor)` pushes `{view, scroll position}` onto `RET`, opens the view and scrolls to the anchor; `backBtn()` shows "← Back to the question" (or the exam, the figures, the map); clicking it pops `RET`, reopens the view and restores the scroll. The quiz and exam state (`Q`, `EX`) are global, so the question is exactly as it was.
+- Use `scrollToEl()` (header-aware) in `jump` so the section title is not hidden under the sticky header.
+- **Check:** a test that every `LINKS`/`BY_*` anchor id exists in the rendered pages, and that every question resolves to at least one link.
+
 ## Fixes to carry over
 
 - Exam countdown counts calendar days and shows "today", "in progress" or "over" (`daysToExam`, `examCountdown`).
