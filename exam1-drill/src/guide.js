@@ -479,6 +479,7 @@ const GUIDE_HTML = `
 <li>More calcium inside the cell speeds the SA node (the heart's pacemaker) and strengthens contraction; a calcium channel blocker slows and weakens them. <small>(T) 9/23</small></li>
 </ul>
 <div class="pair"><!--FIG:gpcr-steps--><!--FIG:gpcr-anim--></div>
+<!--FIG:galpha-chain-->
 <div class="pair"><!--FIG:galpha--><!--FIG:galpha-anim--></div>
 <h4>How he will ask it (9/30)</h4>
 <ul>
