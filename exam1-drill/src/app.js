@@ -205,6 +205,20 @@ function acc(list) {
 }
 const seenCount = list => list.filter(q => S.q[q.id] && S.q[q.id].n).length;
 
+/* ---------- What's new ----------
+   The change log entries newer than the last one this browser marked as seen
+   (all entries share one key per course), shown as short bullets on Topics. */
+const NEWS_KEY = COURSE.ns + ':newsSeen';
+const newsId = c => c ? c.date + '|' + c.items.join('').length : '';   // changes if bullets are added under the same heading
+function newsCard() {
+  const log = BUILD.changelog || []; if (!log.length) return '';
+  const seen = store.get(NEWS_KEY, null), i = seen ? log.findIndex(c => newsId(c) === seen) : 1;
+  const fresh = log.slice(0, i < 0 ? 1 : i); if (!fresh.length) return '';
+  const items = fresh.flatMap(c => c.items), show = items.slice(0, 8);
+  return `<div class="card news" id="news"><div class="row" style="justify-content:space-between"><b>What’s new</b><span class="meta" style="margin:0">${esc(fresh[0].date.replace(/ \(.*\)$/, ''))}</span></div>
+    <ul>${show.map(t => `<li>${esc(t)}</li>`).join('')}</ul>${items.length > show.length ? `<div class="meta" style="margin:0 0 6px">+ ${items.length - show.length} more</div>` : ''}
+    <div class="row"><button class="btn" id="newsok">Got it</button><button class="btn ghost" id="newsall">All changes</button></div></div>`;
+}
 /* ---------- Topics ---------- */
 let FILT = {skill: 'all'};
 function vTopics() {
@@ -212,7 +226,7 @@ function vTopics() {
   const seen = seenCount(pool), a = acc(pool);
   let h = `<h2>${esc(COURSE.short)}</h2>
   <p class="sub">${esc(ex.name)} · ${esc(ex.date)} · ${ex.minutes ? ex.minutes + ' minutes allotted' : ''}${ex.questions ? ' · ' + ex.questions + ' questions' : ''}. ${esc(ex.blurb)} <b>${esc(examCountdown())}</b></p>
-  <p class="sub stamp">Last updated ${esc(fmtDate(BUILD.built))}${BUILD.changelog && BUILD.changelog.length ? ' — ' + esc(BUILD.changelog[0].items[0] || '') + ' <a href="#" id="whatsnew">What changed</a>' : ''}</p>
+  <p class="sub stamp">Last updated ${esc(fmtDate(BUILD.built))}${BUILD.changelog && BUILD.changelog.length ? ' · <a href="#" id="whatsnew">All changes</a>' : ''}</p>${newsCard()}
   <div class="card"><div class="row" style="justify-content:space-between">
    <div><b>${pool.length}</b> questions in the bank · <b>${seen}</b> seen · accuracy <b>${a.pct == null ? '—' : a.pct + '%'}</b></div>
    <div class="row"><button class="btn" id="due">Study what is due</button><button class="btn ghost" id="all">One pass, all questions</button></div></div>
@@ -244,6 +258,8 @@ function vTopics() {
   $('#view').innerHTML = h;
   $('#due').onclick = () => startQuiz(pool, 'Due and unseen', 'sr');
   const wn = $('#whatsnew'); if (wn) wn.onclick = e => { e.preventDefault(); go('data'); };
+  const nok = $('#newsok'); if (nok) nok.onclick = () => { store.set(NEWS_KEY, newsId(BUILD.changelog[0])); const c = $('#news'); if (c) c.remove(); };
+  const nall = $('#newsall'); if (nall) nall.onclick = () => go('data');
   $('#all').onclick = () => startQuiz(shuffle(pool), 'All questions, one pass', 'pass');
   const df = $('#drillflag'); if (df) df.onclick = () => startQuiz(flaggedPool(), 'Flagged questions', 'pass');
   const cf = $('#clearflag'); if (cf) cf.onclick = () => { if (confirm('Remove every flag?')) { S.flags = {}; save(); vTopics(); } };
