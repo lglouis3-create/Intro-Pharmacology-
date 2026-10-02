@@ -118,6 +118,20 @@ const FIG = (() => {
   };
 
 
+  /* RTK activation, Day 2 slides ~7–~9: the five steps in his order */
+  F['rtk-steps'] = () => {
+    const steps = [['1 Monomer', '', 'inactive'], ['2 Dimer', '', 'ligand binds'], ['3 Kinases', 'phosphorylate', 'each other'], ['4 Docking', 'sites', 'signal complexes'], ['5 Tyrosine', 'phosphatase', 'ends the signal']];
+    const w = 64, gap = 8, x0 = 4;
+    let s = '';
+    steps.forEach(([a1, a2, b2], i) => {
+      const x = x0 + i * (w + gap);
+      s += `<rect class="box" x="${x}" y="16" width="${w}" height="64" rx="6"/><text class="lbl xs" style="font-weight:700" x="${x + w / 2}" y="${a2 ? 38 : 44}" text-anchor="middle">${a1}</text>${a2 ? `<text class="lbl xs" style="font-weight:700${a2.length > 12 ? ';font-size:7.5px' : ''}" x="${x + w / 2}" y="48" text-anchor="middle">${a2}</text>` : ''}<text class="lbl xs" style="${b2.length > 14 ? 'font-size:7.5px' : ''}" x="${x + w / 2}" y="68" text-anchor="middle">${b2}</text>`;
+      if (i < steps.length - 1) s += `<path class="arrow" d="M${x + w + 1} 48 L${x + w + gap - 2} 48"/>`;
+    });
+    s += `<text class="lbl" x="180" y="100" text-anchor="middle">No G protein: the receptor is the enzyme.</text>`;
+    return wrap(s, ['<b>Receptor tyrosine kinase (RTK) activation</b>, his five steps (Day 2 slides ~7–~9):', '<ol><li>The inactive receptor is a monomer (one receptor on its own).</li><li>The ligand binds and two receptors join (dimerization): this pair is the active form.</li><li>The two kinase domains inside the cell phosphorylate each other (cross-phosphorylation).</li><li>The phosphorylated sites form docking sites, where signaling complexes attach and pass the signal on.</li><li>A tyrosine phosphatase removes the phosphates and ends the signal.</li></ol>', 'An RTK crosses the membrane once (1-TM): binding pocket outside, enzyme (kinase) inside. It has no α subunit, no GDP/GTP exchange and no cAMP; those belong to GPCRs.'], 116);
+  };
+
   /* Six drug classes side by side: what sits in the pocket, and the response
      bar (basal level marked) that results. */
   F['classes'] = () => {
