@@ -2,6 +2,13 @@
 
 Newest first. The build embeds this file; the Topics page shows what is new since your last visit, and the Progress page shows all of it. Keep each bullet to one short line.
 
+## 2026-10-02 (review fixes)
+- What's new card on Topics; update notes rewritten as short bullets.
+- Step-through shapes slide again on every step, not only the first.
+- Exam countdown shows today, in progress or over, not "1 day" on exam day.
+- Matching-question dropdowns fit a phone screen.
+- Floating back buttons no longer cover each other on a phone.
+
 ## 2026-10-02 (Terms search, Tell apart explanations, Weak spots plan)
 - Terms: search box and an A–Z letter bar; a button returns you to them.
 - Tell apart: a Why? button and Explain-one card for each drug shift.

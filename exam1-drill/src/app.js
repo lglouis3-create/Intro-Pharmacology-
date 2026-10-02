@@ -31,17 +31,21 @@ function stemMedia(q) {
 const fmtCite = s => String(s == null ? '' : s).replace(/–~/g, '–');
 const BUILD = typeof BUILD_INFO === 'undefined' ? {} : BUILD_INFO;
 const fmtDate = iso => { const d = new Date(iso); return isNaN(d) ? '' : d.toLocaleDateString(undefined, {month: 'short', day: 'numeric', year: 'numeric'}); };
+// Calendar days between today and the exam date (local time), not hours rounded up.
 function daysToExam() {
   const ex = COURSE.exams.find(e => e.id === COURSE.activeExam) || COURSE.exams[0];
   if (!ex || !ex.when) return null;
-  const ms = new Date(ex.when) - Date.now();
-  return Math.ceil(ms / (24 * 3600 * 1000));
+  const day = d => { const x = new Date(d); x.setHours(0, 0, 0, 0); return x; };
+  return Math.round((day(ex.when) - day(Date.now())) / (24 * 3600 * 1000));
 }
 function examCountdown() {
+  const ex = COURSE.exams.find(e => e.id === COURSE.activeExam) || COURSE.exams[0];
   const d = daysToExam();
   if (d == null) return '';
-  if (d < 0) return 'Exam day has passed.';
-  if (d === 0) return 'Exam day is today.';
+  const start = new Date(ex.when).getTime(), end = start + (ex.minutes || 0) * 60000, now = Date.now();
+  if (now >= end) return 'This exam is over.';
+  if (now >= start) return 'The exam is in progress.';
+  if (d <= 0) return 'Exam day is today.';
   return `${d} day${d === 1 ? '' : 's'} until the exam.`;
 }
 /* On a phone a wide table becomes a stack of cards: each cell carries its
@@ -124,7 +128,7 @@ function nav() {
 const clearView = () => { const v = $('#view'); v.onclick = null; v.onchange = null; };
 function go(v) {
   if (CUR === 'exam' && EX && !EX.done && v !== 'exam' && !confirm('Leave the exam in progress? It will be kept until you return.')) return;
-  CUR = v; nav(); window.scrollTo(0, 0); clearView(); if (typeof xBack === 'function') xBack(null); { const tb = document.getElementById('tback'); if (tb) tb.remove(); }
+  CUR = v; nav(); window.scrollTo(0, 0); clearView(); if (typeof xBack === 'function') xBack(null); { const tb = document.getElementById('tback'); if (tb) tb.remove(); if (TIO) { TIO.disconnect(); TIO = null; } }
   VIEWFN[v]();
 }
 /* "Explain more": a question links to the pages that teach its concept. The link
@@ -881,17 +885,19 @@ function glossWire(all, groups) {
   // floating "back to search" once the bar has scrolled away
   const bar = $('#tbar');
   if (window.IntersectionObserver) {
-    const io = new IntersectionObserver(([e]) => {
+    const hd = document.querySelector('header'), top = Math.round((hd ? hd.getBoundingClientRect().height : 0) + 4);
+    const io = TIO = new IntersectionObserver(([e]) => {
       let b = document.getElementById('tback');
       if (e.isIntersecting || CUR !== 'terms' || TM.mode !== 'glossary' || !document.body.contains(bar)) { if (b) b.remove(); if (!document.body.contains(bar)) io.disconnect(); return; }
       if (!b) { b = document.createElement('button'); b.id = 'tback'; b.type = 'button'; b.className = 'btn'; b.textContent = '↑ Search or pick a letter'; document.body.appendChild(b); }
       b.onclick = () => { scrollToEl(bar); b.remove(); };
-    }, {rootMargin: '-120px 0px 0px 0px'});
+    }, {rootMargin: `-${top}px 0px 0px 0px`});
     io.observe(bar);
   }
 }
+let TIO = null;   // the glossary's scroll watcher; one at a time
 function vTerms() {
-  { const tb = document.getElementById('tback'); if (tb) tb.remove(); }
+  { const tb = document.getElementById('tback'); if (tb) tb.remove(); if (TIO) { TIO.disconnect(); TIO = null; } }
   const all = typeof TERMS === 'undefined' ? [] : TERMS;
   if (!all.length) { $('#view').innerHTML = '<h2>Terms</h2><div class="empty">No glossary in this build.</div>'; return; }
   const groups = [...new Set(all.map(t => t.group))];
@@ -972,7 +978,8 @@ function vTell() {
 let ANIM = null;   // the one figure playing: {t: interval, b: its Play button}
 const RM = () => window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
 const leafSel = 'text,circle,rect,ellipse,line,polyline,polygon,path';
-const sigOf = el => el.getAttribute('data-k') || [el.tagName, el.getAttribute('class') || '', el.tagName === 'text' ? el.textContent : (el.getAttribute('fill') || '')].join('|');
+const sigOf = el => el.getAttribute('data-k') || [el.tagName, (el.getAttribute('class') || '').replace(/\b(fadein|glide)\b/g, '').trim(),   // leave out the animation classes stepTo adds
+  el.tagName === 'text' ? el.textContent : (el.getAttribute('fill') || '')].join('|');
 const centre = el => { const r = el.getBoundingClientRect(); return [r.left + r.width / 2, r.top + r.height / 2, r.width + r.height]; };
 function stepTo(fig, from, to) {
   const steps = [...fig.querySelectorAll('.st')], svg = fig.querySelector('svg');
