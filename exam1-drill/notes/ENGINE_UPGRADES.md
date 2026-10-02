@@ -81,6 +81,26 @@ After a question is answered (one at a time, all on one page, or in the exam rev
 - Use `scrollToEl()` (header-aware) in `jump` so the section title is not hidden under the sticky header.
 - **Check:** a test that every `LINKS`/`BY_*` anchor id exists in the rendered pages, and that every question resolves to at least one link.
 
+## Answer layout: one at a time or all on one page
+
+- `S.layout` is `'one'` or `'all'`, saved with the learner's progress (`normalize()` defaults it to `'one'`).
+- `layoutToggle()` draws two chips, "One at a time" and "All on one page"; it appears on Topics, in the quiz header and on the exam start page. One delegated click handler on `[data-layout]` saves the choice and re-renders.
+- Quiz: `renderQ()` sends `'all'` to `renderAll()`, which shows the first 40 cards of the drill with a "show more" button; each card is answered in place and only that card re-renders (`refreshCard()`).
+- Exam: `renderExam()` sends `'all'` to `renderExamAll()`; the clock, flags and Submit work the same in both layouts.
+- Both layouts share one record of what was answered (`Q.doneIds`), so switching mid-drill never asks a question twice.
+
+## Light, dark or system theme
+
+- A select in the header (`themeSelect()`): System, Light, Dark; saved in the browser under `<ns>:theme`; `applyTheme()` sets `data-theme="light"` or `"dark"` on `<html>` (System removes it).
+- CSS: colours are variables on `:root`; dark values are set twice, under `@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {...} }` and under `:root[data-theme="dark"] {...}`, so System follows the device and Light/Dark override it.
+- Figures use the same variables (`--ink`, `--muted`, `--line`, `--chip`, `--figA`…`--figE`), so every SVG switches with the theme.
+
+## No name prompt on first visit
+
+- The Intro Pharm drill never asks for a name. Progress is saved under a profile that defaults to `'default'` (`PROFILE = store.get(<ns>:profile) || 'default'`).
+- Anyone who shares a browser can type a different profile name on the Progress page (Profile → Switch); that is optional and never shown as a pop-up.
+- To remove a first-visit prompt from another drill: delete the `prompt(...)` call at start-up and use the default profile, keeping the optional switch on the Progress page.
+
 ## Fixes to carry over
 
 - Exam countdown counts calendar days and shows "today", "in progress" or "over" (`daysToExam`, `examCountdown`).
