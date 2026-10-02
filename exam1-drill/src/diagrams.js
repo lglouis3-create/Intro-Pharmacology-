@@ -105,13 +105,13 @@ const FIG = (() => {
 
   F['gpcr'] = () => {
     const steps = [['Drug', '', 'ligand'], ['Receptor', '', '7-TM'], ['G', 'protein', 'transducer'], ['Effector', '', 'e.g. AC'], ['Second', 'messenger', 'e.g. cAMP'], ['Response', '', 'in the cell']];
-    const w = 54, gap = 6, x0 = 3;
+    const w = 51, gap = 10, x0 = 2;
     let s = '';
     steps.forEach(([a, b], i) => {
       const x = x0 + i * (w + gap);
       const [a1, a2, b2] = [a, b, steps[i][2]];
-      s += `<rect class="box" x="${x}" y="16" width="${w}" height="64" rx="6"/><text class="lbl sm" x="${x + w / 2}" y="${a2 ? 36 : 42}" text-anchor="middle">${a1}</text>${a2 ? `<text class="lbl sm" x="${x + w / 2}" y="48" text-anchor="middle">${a2}</text>` : ''}<text class="lbl xs" x="${x + w / 2}" y="68" text-anchor="middle">${b2}</text>`;
-      if (i < steps.length - 1) s += `<path class="arrow" d="M${x + w} 48 L${x + w + gap} 48"/>`;
+      s += `<rect class="box" x="${x}" y="16" width="${w}" height="64" rx="6"/><text class="lbl xs" style="font-weight:700" x="${x + w / 2}" y="${a2 ? 38 : 44}" text-anchor="middle">${a1}</text>${a2 ? `<text class="lbl xs" style="font-weight:700" x="${x + w / 2}" y="48" text-anchor="middle">${a2}</text>` : ''}<text class="lbl xs" x="${x + w / 2}" y="68" text-anchor="middle">${b2}</text>`;
+      if (i < steps.length - 1) s += `<path class="arrow" d="M${x + w + 1} 48 L${x + w + gap - 2} 48"/>`;
     });
     s += `<text class="lbl" x="180" y="106" text-anchor="middle">Each step can amplify the one before it.</text>`;
     return wrap(s, 'Signal transduction through a G protein–coupled receptor: the G protein is the transducer, the enzyme it turns on is the effector, and the effector makes the second messenger.', 120);
@@ -433,6 +433,35 @@ const FIG = (() => {
        '<b>Gi (M2):</b> αi inhibits the same adenylate cyclase: cAMP goes down; in the heart, rate down. "Alpha I for inhibition." Cross-talk: β1 and M2 pull on one AC from opposite sides.',
        '<b>Gq (α1):</b> αq stimulates phospholipase C (PLC): PIP2 → IP3 → Ca++ released from the ER; smooth muscle contracts. "Alpha Q for stimulation as well because it increased calcium."',
        '<b>What he asks:</b> which is the signal, the receptor, the transducer (αs, αi or αq), the effector (AC or PLC: "there\'s 2") and the second messenger (cAMP, IP3, Ca++).'], 196);
+    /* the same six-box chain as F['gpcr'], one row per α subunit */
+    F3['galpha-chain'] = () => {
+      const cols = [['Drug'], ['Receptor'], ['G protein'], ['Effector'], ['Second', 'messenger'], ['Response']];
+      const rows = [
+        { cls: 'A', head: 'Gs: S for stimulation', cells: [['NE'], ['β1'], ['αs'], ['AC', 'stimulated'], ['↑ cAMP'], ['heart rate', 'UP']] },
+        { cls: 'B', head: 'Gi: I for inhibition', cells: [['ACh'], ['M2'], ['αi'], ['AC', 'inhibited'], ['↓ cAMP'], ['heart rate', 'DOWN']] },
+        { cls: 'C', head: 'Gq: stimulation too, through calcium', cells: [['NE'], ['α1'], ['αq'], ['PLC', 'stimulated'], ['↑ IP3', '→ ↑ Ca++'], ['smooth', 'muscle', 'contracts']] }
+      ];
+      const w = 50, gap = 10, x0 = 5, bh = 38;
+      const cx = i => x0 + i * (w + gap) + w / 2;
+      let g = title('The chain for each α subunit: Gs, Gi, Gq');
+      cols.forEach((c, i) => c.forEach((t, j) => { g += xs(cx(i), 26 + j * 9, t, 'middle'); }));
+      rows.forEach((r, ri) => {
+        const y = 52 + ri * 52, k = r.cls.toLowerCase();
+        g += `<text class="cl ${k}" x="${x0}" y="${y - 3}" text-anchor="start">${r.head}</text>`;
+        r.cells.forEach((lines, i) => {
+          const x = x0 + i * (w + gap);
+          g += `<rect x="${x}" y="${y}" width="${w}" height="${bh}" rx="5" fill="var(--fig${r.cls})" fill-opacity="${i === 2 ? 0.25 : 0.08}" stroke="var(--fig${r.cls})" stroke-width="1"/>`;
+          const top = y + bh / 2 + 3 - (lines.length - 1) * 4.5;
+          lines.forEach((t, j) => { g += (i === 2 || j === 0 && lines.length < 3 && i !== 5) ? sm(cx(i), top + j * 9, t) : xs(cx(i), top + j * 9, t, 'middle'); });
+          if (i < 5) g += `<path class="arrow" d="M${x + w + 1} ${y + bh / 2} L${x + w + gap - 2} ${y + bh / 2}"/>`;
+        });
+      });
+      g += xs(180, 210, 'Same G-protein steps in every row (GDP off, GTP on, α leaves β/γ);', 'middle') + xs(180, 220, 'the α subunit decides the effector and the direction.', 'middle');
+      return wrap(g, ['<b>Read across each row:</b> drug → receptor → α subunit (the transducer) → effector → second messenger → response.',
+        '<b>Gs and Gi share one effector:</b> both act on adenylate cyclase (AC); αs turns it on (cAMP up) and αi turns it off (cAMP down). This is why β1 (Gs) and M2 (Gi) push the heart rate in opposite directions.',
+        '<b>Gq uses a different effector:</b> phospholipase C (PLC) makes IP3, and IP3 releases Ca++ from the ER. It is still stimulation, through calcium instead of cAMP.',
+        '<b>What he asks:</b> name the signal, the receptor, the transducer (αs, αi or αq), the effector (AC or PLC) and the second messenger (cAMP, IP3, Ca++). Sources: Day 1 slides ~51–55; Day 2 slide ~30; 9/30 review and Jeopardy J15.'], 228);
+    };
     F3['galpha-anim'] = () => stepper('galpha', 'Gs, Gi, Gq step by step', [
       ['Gs: norepinephrine binds β1; the G protein underneath swaps GDP for GTP and αs leaves β/γ.', gaBase + gaCol(GA[0], 0)],
       ['αs stimulates adenylate cyclase (AC): ATP → cAMP goes up; heart rate up.', gaBase + gaCol(GA[0], 3)],
