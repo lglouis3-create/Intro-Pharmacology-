@@ -14,6 +14,8 @@ const out = path.join(__dirname, '..', course.match(/output:\s*'([^']+)'/)[1]);
   page.on('console', m => { if (m.type() === 'error') errors.push(m.text()); });
   page.on('dialog', d => d.accept());
   await page.goto('file://' + out);
+  // the flows below drive Exam 1 items, so study Exam 1 (its groups open); the group check covers both
+  await page.evaluate(() => localStorage.setItem(COURSE.ns + ':exam', '1')); await page.reload();
   const fail = m => { console.log('FAIL', m); process.exitCode = 1; };
   for (const v of ['topics', 'quiz', 'weak', 'exam', 'graphs', 'map', 'ref', 'tell', 'guide', 'data']) {
     const b = await page.$(`nav button[data-v="${v}"]`);
