@@ -9,7 +9,9 @@ Root: `/tmp/claude-0/-home-user-Intro-Pharmacology-/b3094785-cacf-58b3-9d24-8d3c
 - `decks/ANS_Autonomic_Nervous_System.txt` — text of "Autonomic Nervous System.pdf" (54 pages), pages marked `=== page N`. PDF: `/root/.claude/uploads/b3094785-cacf-58b3-9d24-8d3cafd9359e/0fb525ba-Autonomic_Nervous_System.pdf`
 - `decks/PCOL-NMJ_PCOL_2026s_pptx.txt` (51 pages). PDF: `/root/.claude/uploads/b3094785-cacf-58b3-9d24-8d3cafd9359e/ac23cdb2-PCOL-NMJ_PCOL_2026s_pptx.pdf`
 - `decks/PCOL-Cholinergic-26s.txt` (33 pages). PDF: `/root/.claude/uploads/b3094785-cacf-58b3-9d24-8d3cafd9359e/7c58048e-PCOL-Cholinergic-26s.pdf`
-- `decks/Pharmacology_Exam_2_Drug_List.txt` (10 pages). PDF: `/root/.claude/uploads/b3094785-cacf-58b3-9d24-8d3cafd9359e/15b34769-Pharmacology_Exam_2_Drug_List.pdf`. NOTE: headed "Courtesy of Joshua Farias (Class of 2025)": a student-compiled table posted in the course's Exam 2 folder. Treat it as secondary to the slides and transcripts: where it disagrees with a slide, the slide wins and you record the conflict.
+- `decks/Pharmacology_Exam_2_Drug_List.txt` (10 pages). PDF: `/root/.claude/uploads/b3094785-cacf-58b3-9d24-8d3cafd9359e/15b34769-Pharmacology_Exam_2_Drug_List.pdf`. The course's official Exam 2 drug list (the PDF header credits Joshua Farias, Class of 2025). Where it disagrees with a slide, key the slide and record the conflict in a `note`.
+
+Posting rule (from the student, 10/5): post questions only on topics whose slides AND lecture transcript have been received. Adrenergic, nitric oxide and RAAS questions wait for their decks and transcripts.
 - `transcripts/2026-09-30_transcript.txt` — 9/30; the second part starts the autonomic nervous system (the first part is the Exam 1 review/Jeopardy: ignore that part).
 - `transcripts/2026-10-01_transcript.txt` — 10/1 lecture (autonomic nervous system overview).
 - `readings/Katzung_Ch8_Cholinoceptor_Blocking.txt`, `Katzung_Ch9_Adrenoceptor_Agonists.txt`, `Katzung_Ch10_Adrenoceptor_Antagonists.txt`, `Katzung_Ch17_Vasoactive_Peptides.txt`, `Katzung_Ch19_Nitric_Oxide.txt`; Ch 6 (autonomic intro) at `../../ch6.clean.txt` (scratchpad root).

@@ -9,7 +9,8 @@ Newest first. The build embeds this file; the Topics page shows what is new sinc
 - Day 8 (neuromuscular junction, nicotinic): 40 questions.
 - Day 9 (cholinergic, muscarinic): 40 questions.
 - His six Exam 2 polls word for word, keyed from his explanations in lecture.
-- Exam 2 drug list: 88 questions; list-vs-slide conflicts noted on each.
+- Exam 2 drug list: 45 questions on the neuromuscular and cholinergic drugs.
+- Adrenergic, nitric oxide and RAAS questions wait for their slides and transcripts.
 - Progress shows each exam on its own line.
 
 ## 2026-10-02 (drug classes explained)
