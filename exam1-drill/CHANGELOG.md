@@ -2,6 +2,17 @@
 
 Newest first. The build embeds this file; the Topics page shows what is new since your last visit, and the Progress page shows all of it. Keep each bullet to one short line.
 
+## 2026-10-05 (Exam 2 started)
+- Every tab groups Exam 1 and Exam 2 material in its own collapsible section.
+- "Studying for" switch picks the exam; its section opens and its questions drill.
+- Day 7 (9/30–10/1): autonomic nervous system overview, 40 questions.
+- Day 8 (neuromuscular junction, nicotinic): 40 questions.
+- Day 9 (cholinergic, muscarinic): 40 questions.
+- His six Exam 2 polls word for word, keyed from his explanations in lecture.
+- Exam 2 drug list: 45 questions on the neuromuscular and cholinergic drugs.
+- Adrenergic, nitric oxide and RAAS questions wait for their slides and transcripts.
+- Progress shows each exam on its own line.
+
 ## 2026-10-02 (drug classes explained)
 - Reference: a Why? card for each drug class (prefers R or R*, efficacy, each baseline).
 

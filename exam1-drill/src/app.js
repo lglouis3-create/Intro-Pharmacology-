@@ -33,13 +33,13 @@ const BUILD = typeof BUILD_INFO === 'undefined' ? {} : BUILD_INFO;
 const fmtDate = iso => { const d = new Date(iso); return isNaN(d) ? '' : d.toLocaleDateString(undefined, {month: 'short', day: 'numeric', year: 'numeric'}); };
 // Calendar days between today and the exam date (local time), not hours rounded up.
 function daysToExam() {
-  const ex = COURSE.exams.find(e => e.id === COURSE.activeExam) || COURSE.exams[0];
+  const ex = active();
   if (!ex || !ex.when) return null;
   const day = d => { const x = new Date(d); x.setHours(0, 0, 0, 0); return x; };
   return Math.round((day(ex.when) - day(Date.now())) / (24 * 3600 * 1000));
 }
 function examCountdown() {
-  const ex = COURSE.exams.find(e => e.id === COURSE.activeExam) || COURSE.exams[0];
+  const ex = active();
   const d = daysToExam();
   if (d == null) return '';
   const start = new Date(ex.when).getTime(), end = start + (ex.minutes || 0) * 60000, now = Date.now();
@@ -163,7 +163,7 @@ function jump(view, anchor) {
   RET.push({view: CUR, y: window.scrollY});
   go(view);
   const t = document.getElementById(anchor);
-  if (t) { t.scrollIntoView({block: 'start'}); window.scrollBy(0, -70); }
+  if (t) { openTo(t); t.scrollIntoView({block: 'start'}); window.scrollBy(0, -(document.querySelector('header') ? document.querySelector('header').getBoundingClientRect().height + 8 : 70)); }
   backBtn();
 }
 function backBtn() {
@@ -195,7 +195,20 @@ document.addEventListener('click', e => {
 function endExam() { clearInterval(TICK); TICK = null; EX = null; }
 
 /* Questions eligible for practice and for the active exam. */
-const active = () => COURSE.exams.find(e => e.id === COURSE.activeExam) || COURSE.exams[0];
+/* The exam being studied: the learner's choice (stored per browser), else the course default. */
+const EXAM_KEY = COURSE.ns + ':exam';
+const activeId = () => { const v = +store.get(EXAM_KEY); return COURSE.exams.some(e => e.id === v) ? v : COURSE.activeExam; };
+const active = () => COURSE.exams.find(e => e.id === activeId()) || COURSE.exams[0];
+const examSwitch = () => COURSE.exams.length < 2 ? '' : `<span class="row exsw" style="gap:4px"><span class="meta" style="margin:0">Studying for:</span>${COURSE.exams.map(e => `<button type="button" class="chip ${e.id === activeId() ? 'on' : ''}" data-exsw="${e.id}" aria-pressed="${e.id === activeId()}">${esc(e.name)}</button>`).join('')}</span>`;
+document.addEventListener('click', e => {
+  const b = e.target.closest('[data-exsw]'); if (!b) return;
+  store.set(EXAM_KEY, b.dataset.exsw); GQ = null; if (typeof Q !== 'undefined' && CUR !== 'quiz') Q = null;
+  VIEWFN[CUR] ? VIEWFN[CUR]() : null;
+});
+/* One collapsible group per exam; the exam being studied opens by default. */
+const exTitle = e => `${esc(e.name)}${e.scope ? ` <span class="meta" style="margin:0">· ${esc(e.scope)}</span>` : ''}`;
+const exGroup = (e, body) => `<details class="exgroup" data-ex="${e.id}" ${e.id === activeId() ? 'open' : ''}><summary>${exTitle(e)}</summary><div class="exbody">${body}</div></details>`;
+const lecExam = id => (COURSE.lectures.find(l => l.id === id) || {}).exam;
 const inFilter = (q, f) => Object.keys(f).every(k => {
   const want = [].concat(f[k]);
   const have = k === 'exam' ? examOf(q) : k === 'lecture' ? q.lecture : q[k];
@@ -229,6 +242,7 @@ function vTopics() {
   const ex = active(), pool = examPool();
   const seen = seenCount(pool), a = acc(pool);
   let h = `<h2>${esc(COURSE.short)}</h2>
+  <div class="row" style="margin:-4px 0 8px">${examSwitch()}</div>
   <p class="sub">${esc(ex.name)} · ${esc(ex.date)} · ${ex.minutes ? ex.minutes + ' minutes allotted' : ''}${ex.questions ? ' · ' + ex.questions + ' questions' : ''}. ${esc(ex.blurb)} <b>${esc(examCountdown())}</b></p>
   <p class="sub stamp">Last updated ${esc(fmtDate(BUILD.built))}${BUILD.changelog && BUILD.changelog.length ? ' · <a href="#" id="whatsnew">All changes</a>' : ''}</p>${newsCard()}
   <div class="card"><div class="row" style="justify-content:space-between">
@@ -239,25 +253,28 @@ function vTopics() {
    <div class="row" style="margin-top:10px"><span class="meta" style="margin:0">Skill:</span>
    ${['all'].concat(COURSE.skills.map(s => s.id)).filter(k => k === 'all' || pool.some(q => q.skill === k))
      .map(k => `<span class="chip ${FILT.skill === k ? 'on' : ''}" data-sk="${k}">${k === 'all' ? 'All' : esc(SKILL[k].short)}</span>`).join('')}</div></div>`;
-  TOPICS.forEach(t => {
-    const tq = pool.filter(q => q.topic === t.id && (FILT.skill === 'all' || q.skill === FILT.skill));
-    if (!tq.length) return;
-    const ta = acc(tq);
-    const tseen = seenCount(tq);
-    h += `<div class="card"><div class="topicrow"><span><b>${esc(t.name)}</b><small>${esc(fmtCite(t.cite))}</small>
+  // one collapsible group per exam: its topics, each with its sections
+  const topicCard = (t, tq) => {
+    const ta = acc(tq), tseen = seenCount(tq);
+    let c = `<div class="card"><div class="topicrow"><span><b>${esc(t.name)}</b><small>${esc(fmtCite(t.cite))}</small>
       <span class="bar-meter seen"><span style="width:${Math.round(100 * tseen / tq.length)}%"></span></span></span>
       <span class="row"><small>${tseen}/${tq.length} seen · ${ta.pct == null ? '—' : ta.pct + '%'}</small>
-      <button class="btn ghost" data-topic="${t.id}">Drill</button></span></div>`;
+      <button class="btn ghost" data-topic="${t.id}" data-ex="${examOf(tq[0])}">Drill</button></span></div>`;
     const subs = (t.subs || []).filter(sb => tq.some(q => q.sub === sb.id));
-    if (subs.length > 1) subs.forEach(s => {
-      const sq = tq.filter(q => q.sub === s.id);
-      const sa = acc(sq);
-      const sseen = seenCount(sq);
-      h += `<div class="topicrow subrow"><span>${esc(s.name)}<small>${sq.length} questions${s.cite && s.cite !== t.cite ? ' · ' + esc(fmtCite(s.cite)) : ''}</small>
+    if (subs.length > 1) subs.forEach(sb => {
+      const sq = tq.filter(q => q.sub === sb.id), sa = acc(sq), sseen = seenCount(sq);
+      c += `<div class="topicrow subrow"><span>${esc(sb.name)}<small>${sq.length} questions${sb.cite && sb.cite !== t.cite ? ' · ' + esc(fmtCite(sb.cite)) : ''}</small>
         <span class="bar-meter seen"><span style="width:${Math.round(100 * sseen / sq.length)}%"></span></span></span>
-        <span class="row"><small>${sseen}/${sq.length} seen · ${sa.pct == null ? '—' : sa.pct + '%'}</small><button class="btn ghost" data-topic="${t.id}" data-sub="${s.id}">Drill</button></span></div>`;
+        <span class="row"><small>${sseen}/${sq.length} seen · ${sa.pct == null ? '—' : sa.pct + '%'}</small><button class="btn ghost" data-topic="${t.id}" data-sub="${sb.id}" data-ex="${examOf(sq[0])}">Drill</button></span></div>`;
     });
-    h += '</div>';
+    return c + '</div>';
+  };
+  COURSE.exams.forEach(e => {
+    const eq = QUESTIONS.filter(q => examOf(q) === e.id && (FILT.skill === 'all' || q.skill === FILT.skill));
+    let body = '';
+    TOPICS.forEach(t => { const tq = eq.filter(q => q.topic === t.id); if (tq.length) body += topicCard(t, tq); });
+    if (!body) body = `<div class="empty">${e.id === activeId() ? 'Questions for this exam are added as its lectures are written.' : 'No questions match this filter.'}</div>`;
+    h += exGroup(e, body);
   });
   $('#view').innerHTML = h;
   $('#due').onclick = () => startQuiz(pool, 'Due and unseen', 'sr');
@@ -269,7 +286,7 @@ function vTopics() {
   const cf = $('#clearflag'); if (cf) cf.onclick = () => { if (confirm('Remove every flag?')) { S.flags = {}; save(); vTopics(); } };
   document.querySelectorAll('[data-sk]').forEach(c => c.onclick = () => { FILT.skill = c.dataset.sk; vTopics(); });
   document.querySelectorAll('[data-topic]').forEach(b => b.onclick = () => {
-    const list = pool.filter(q => q.topic === b.dataset.topic && (!b.dataset.sub || q.sub === b.dataset.sub) && (FILT.skill === 'all' || q.skill === FILT.skill));
+    const list = QUESTIONS.filter(q => q.topic === b.dataset.topic && examOf(q) === +b.dataset.ex && (!b.dataset.sub || q.sub === b.dataset.sub) && (FILT.skill === 'all' || q.skill === FILT.skill));
     startQuiz(list, (TOPIC[b.dataset.topic] || {}).name, 'sr');
   });
 }
@@ -538,7 +555,7 @@ function vWeak() {
   S.log.forEach(e => { (recent[e.id] = recent[e.id] || []).push(e); });
   const score = q => { const r = (recent[q.id] || []).slice(-3); if (!r.length) return null; return r.filter(solid).length / r.length; };
   const notSolid = pool.filter(q => score(q) != null && score(q) < 1);
-  let h = `<h2>Weak spots</h2>`, retryList = [];
+  let h = `<h2>Weak spots</h2><div class="row" style="margin:-4px 0 8px">${examSwitch()}</div>`, retryList = [];
 
   // 1. this session
   const ses = sessionLog();
@@ -704,7 +721,7 @@ function vExam() {
   if (EX && !EX.done && EX.expired) { submitExam(); return; }
   if (EX && !EX.done) return renderExam();
   const lens = [...new Set([ex.questions, 25, 50, max].filter(x => x && x <= max))].sort((a, b) => a - b);
-  let h = `<h2>Exam simulator</h2><p class="sub">${esc(ex.name)}: ${ex.questions ? ex.questions + ' questions' : 'question count not yet announced'}, ${ex.minutes} minutes allotted.
+  let h = `<h2>Exam simulator</h2><div class="row" style="margin:-4px 0 8px">${examSwitch()}</div><p class="sub">${esc(ex.name)}: ${ex.questions ? ex.questions + ' questions' : 'question count not yet announced'}, ${ex.minutes} minutes allotted.
     Answers are not shown until you submit. Select-all items are scored all-or-nothing. ${ex.blueprint ? 'With his topic counts on, the paper follows them; otherwise' : ''} definition questions make up at most 15% of the paper.</p>
     <div class="card"><div class="row"><span>Length:</span>${lens.map(n => `<span class="chip ${n === (ex.questions || lens[0]) ? 'on' : ''}" data-n="${n}">${n === max ? 'All ' + n : n}</span>`).join('')}</div>
     ${ex.blueprint ? `<div class="row" style="margin-top:10px"><label><input type="checkbox" id="bp" checked> Match his topic counts at ${ex.questions} questions: ${ex.blueprint.parts.map(p => esc(p.name) + ' ' + (p.rest ? '(the rest)' : p.min ? '(at least ' + p.min + ')' : Array.isArray(p.n) ? p.n.join('–') : p.n)).join(' · ')} · ${ex.blueprint.sata} select-all</label></div>` : ''}
@@ -867,7 +884,12 @@ function glossWire(all, groups) {
       const sorted = pool.slice().sort((a, b) => a.term.localeCompare(b.term, undefined, {sensitivity: 'base'}));
       const byL = {}; sorted.forEach(t => (byL[termLetter(t)] = byL[termLetter(t)] || []).push(t));
       LETTERS_AZ.filter(L => byL[L]).forEach(L => { h += `<h3 id="tl-${L === '#' ? 'num' : L}">${L}</h3><div class="card">${byL[L].map(termHTML).join('')}</div>`; });
-    } else groups.filter(g => TM.group === 'all' || g === TM.group).forEach(g => { const ts = pool.filter(t => t.group === g); if (ts.length) h += `<h3>${esc(g)}</h3><div class="card">${ts.map(termHTML).join('')}</div>`; });
+    } else h = COURSE.exams.map(e => {
+      // by group: one collapsible section per exam; search and A–Z list both exams together
+      const mine = pool.filter(t => (lecExam(t.lecture) || 1) === e.id);
+      const body = groups.filter(g => TM.group === 'all' || g === TM.group).map(g => { const ts = mine.filter(t => t.group === g); return ts.length ? `<h3>${esc(g)}</h3><div class="card">${ts.map(termHTML).join('')}</div>` : ''; }).join('');
+      return exGroup(e, body || '<div class="empty">This exam\'s terms are added as its lectures are written.</div>');
+    }).join('');
     list.innerHTML = h;
     $('#tcount').textContent = q ? `${pool.length} match${pool.length === 1 ? '' : 'es'}` : `${pool.length} terms`;
     $('#tclear').hidden = !TM.q;
@@ -902,7 +924,7 @@ function vTerms() {
   if (!all.length) { $('#view').innerHTML = '<h2>Terms</h2><div class="empty">No glossary in this build.</div>'; return; }
   const groups = [...new Set(all.map(t => t.group))];
   const tq = QUESTIONS.filter(q => q.topic === 'TERMS');
-  let h = `<h2>Terms</h2><p class="sub">${all.length} terms from the Day 1–6 lectures, each with its source. Each term has a one-line meaning, a situation that shows it in action, and, where one applies, a figure.</p>
+  let h = `<h2>Terms</h2><p class="sub">${all.length} terms, each with its source, grouped by exam. Each term has a one-line meaning, a situation that shows it in action, and, where one applies, a figure.</p>
   <div class="card"><div class="row">${[['glossary', 'Glossary'], ['flash', 'Flashcards'], ['quiz', 'Quiz me']].map(([k, l]) => `<span class="chip ${TM.mode === k ? 'on' : ''}" data-mode="${k}">${l}</span>`).join('')}
    <span class="meta" style="margin:0 0 0 12px">Group:</span>${['all'].concat(groups).map(g => `<span class="chip ${TM.group === g ? 'on' : ''}" data-group="${esc(g)}">${g === 'all' ? 'All' : esc(g)}</span>`).join('')}</div></div>`;
   const list = termList();
@@ -954,9 +976,18 @@ function vTerms() {
 }
 
 /* ---------- static pages ---------- */
-function vRef() { $('#view').innerHTML = `<div class="tablewrap">${expandFigs(REFERENCE_HTML)}</div>`; stackTables($('#view')); }
+/* Guides, Reference and Tell apart: the page title stays on top and each exam's
+   content sits in its own collapsible group (Exam 2 content from guide2.js,
+   reference2.js and tell2.js when they exist). */
+const PAGE2 = {guide: () => typeof GUIDE2_HTML === 'undefined' ? '' : GUIDE2_HTML, ref: () => typeof REFERENCE2_HTML === 'undefined' ? '' : REFERENCE2_HTML, tell: () => typeof TELL2_HTML === 'undefined' ? '' : TELL2_HTML};
+function examPage(html1, key) {
+  const m = html1.match(/^\s*<h2>([^<]*)<\/h2>/), title = m ? m[1] : '';
+  const body1 = m ? html1.slice(m[0].length) : html1, body2 = PAGE2[key]();
+  return `<h2>${title}</h2>` + COURSE.exams.map(e => exGroup(e, e.id === 1 ? expandFigs(body1) : body2 ? expandFigs(body2) : '<div class="empty">This exam\'s sections are added as its lectures are written.</div>')).join('');
+}
+function vRef() { $('#view').innerHTML = `<div class="tablewrap">${examPage(REFERENCE_HTML, 'ref')}</div>`; stackTables($('#view')); }
 function vTell() {
-  $('#view').innerHTML = `<div class="tablewrap">${expandFigs(TELL_HTML)}</div>
+  $('#view').innerHTML = `<div class="tablewrap">${examPage(TELL_HTML, 'tell')}</div>
     <div class="row" style="margin-top:12px"><button class="btn" id="tellq">Drill every tell-apart question</button></div>`;
   const ids = [...document.querySelectorAll('[data-q]')].map(td => td.dataset.q).filter(id => byId[id]);
   document.querySelectorAll('[data-q]').forEach(td => {
@@ -1039,7 +1070,8 @@ document.addEventListener('click', e => {
 /* "Explain one": a select (or a Why? button in a table row) shows the matching
    <template data-x> card under the table; the card's button scrolls to that drug's panels. */
 // scroll an element to just below the sticky header
-const scrollToEl = el => { const hd = document.querySelector('header'), off = (hd ? hd.getBoundingClientRect().height : 0) + 8; window.scrollTo({top: el.getBoundingClientRect().top + window.scrollY - off, behavior: RM() ? 'auto' : 'smooth'}); };
+const openTo = el => { for (let d = el && el.closest('details'); d; d = d.parentElement && d.parentElement.closest('details')) d.open = true; };
+const scrollToEl = el => { openTo(el); const hd = document.querySelector('header'), off = (hd ? hd.getBoundingClientRect().height : 0) + 8; window.scrollTo({top: el.getBoundingClientRect().top + window.scrollY - off, behavior: RM() ? 'auto' : 'smooth'}); };
 function showExplain(group, key) {
   const out = document.querySelector(`[data-xout="${group}"]`), sel = document.querySelector(`[data-xsel="${group}"]`);
   if (!out) return;
@@ -1071,9 +1103,9 @@ function expandFigs(html) {
     .replace(/<!--GRAPH:([\s\S]*?)-->/g, (m, j) => { try { return FIG.graph(JSON.parse(j)); } catch (e) { return ''; } });
 }
 function vGuide() {
-  $('#view').innerHTML = `<div class="tablewrap">${expandFigs(typeof GUIDE_HTML === 'undefined' ? '' : GUIDE_HTML)}</div>`;
+  $('#view').innerHTML = `<div class="tablewrap">${examPage(typeof GUIDE_HTML === 'undefined' ? '' : GUIDE_HTML, 'guide')}</div>`;
   stackTables($('#view'));
-  document.querySelectorAll('.guidenav a').forEach(a => a.onclick = e => { const t = document.querySelector(a.getAttribute('href')); if (t) { e.preventDefault(); t.scrollIntoView({behavior: 'smooth'}); } });
+  document.querySelectorAll('.guidenav a').forEach(a => a.onclick = e => { const t = document.querySelector(a.getAttribute('href')); if (t) { e.preventDefault(); scrollToEl(t); } });
 }
 
 /* ---------- Progress: profile, pace, export ---------- */
@@ -1117,7 +1149,7 @@ const MISS = {
 };
 const graphOf = img => GR.find(g => g.key === img || (g.alts || []).includes(img));
 let GQ = null;   // image key → questions, built once
-const graphQs = g => { if (!GQ) { GQ = {}; examPool().forEach(q => { if (q.img) (GQ[q.img] = GQ[q.img] || []).push(q); }); } return [g.key].concat(g.alts || []).flatMap(k => GQ[k] || []); };
+const graphQs = g => { if (!GQ) { GQ = {}; QUESTIONS.forEach(q => { if (q.img) (GQ[q.img] = GQ[q.img] || []).push(q); }); } return [g.key].concat(g.alts || []).flatMap(k => GQ[k] || []); };
 /* What the student skipped on this figure: the miss tags of the wrong options they chose, across the log. */
 function missTally(g) {
   const ids = {}; graphQs(g).forEach(q => ids[q.id] = q);
@@ -1165,21 +1197,28 @@ const DG_NAMES = {'rtk-steps': 'RTK activation: the five steps'};
 function vDiagrams() {
   const have = new Set(typeof FIG === 'function' ? FIG.keys() : []);
   const titleOf = html => { const m = html.match(/<text class="title"[^>]*>([^<]*)</); return m ? m[1] : ''; };
+  let out = '';
+  COURSE.exams.forEach(e => {
   let toc = '', body = '';
-  DIAGRAMS.forEach(([name, keys], gi) => {
+  DIAGRAMS.forEach(([name, keys, ex], gi) => {
+    if ((ex || 1) !== e.id) return;
     const ks = keys.filter(k => have.has(k)); if (!ks.length) return;
     const figs = ks.map(k => { const html = FIG(k); return {k, html, t: (DG_NAMES[k] || titleOf(html) || k).replace(/ ?·? step by step/, '')}; });
     toc += `<div class="card"><b>${esc(name)}</b><div class="row" style="flex-wrap:wrap;margin-top:6px">${figs.map(f => `<a class="chip" href="#dg-${f.k}" data-dg="${f.k}">${esc(f.t)}${/-anim$/.test(f.k) ? ' ▶' : ''}</a>`).join('')}</div></div>`;
     body += `<h3 id="dgg-${gi}">${esc(name)}</h3><div class="shiftgrid">${figs.map(f => `<div id="dg-${f.k}">${f.html}</div>`).join('')}</div>`;
   });
-  $('#view').innerHTML = `<h2>Diagrams</h2><p class="sub">Every process diagram in one place. ▶ marks a step-through figure: use Next, Play all or the step dots under it.</p>${toc}${body}`;
+  out += exGroup(e, toc + body || '<div class="empty">This exam\'s diagrams are added as its lectures are written.</div>');
+  });
+  $('#view').innerHTML = `<h2>Diagrams</h2><p class="sub">Every process diagram in one place. ▶ marks a step-through figure: use Next, Play all or the step dots under it.</p>${out}`;
   $('#view').querySelectorAll('[data-dg]').forEach(a => a.onclick = e => { e.preventDefault(); const el = document.getElementById('dg-' + a.dataset.dg); if (el) scrollToEl(el); });
 }
 function vGraphs() {
   const pool = examPool();
   if (!GR.length) { $('#view').innerHTML = '<h2>Graphs</h2><div class="empty">No figures are registered.</div>'; return; }
   let h = `<h2>Graphs</h2><p class="sub">His own figures (PollEV, Jeopardy, the 9/30 review, Part 3). Pick one and every question written on it is asked in turn; a wrong answer names the reading question you skipped, and the end of the pass shows which one you keep skipping.</p>`;
-  const groups = {}; GR.forEach(g => (groups[g.group || 'Other'] = groups[g.group || 'Other'] || []).push(g));
+  COURSE.exams.forEach(e => {
+  const groups = {}; GR.filter(g => (g.exam || 1) === e.id).forEach(g => (groups[g.group || 'Other'] = groups[g.group || 'Other'] || []).push(g));
+  let hh = h; h = '';
   Object.entries(groups).forEach(([name, gs]) => {
     h += `<h3>${esc(name)}</h3><div class="ggrid">`;
     gs.forEach(g => {
@@ -1194,6 +1233,8 @@ function vGraphs() {
     });
     h += '</div>';
   });
+  h = hh + exGroup(e, h || '<div class="empty">His figures for this exam are added as they come up in class.</div>');
+  });
   $('#view').innerHTML = h;
   document.querySelectorAll('[data-g]').forEach(b => b.onclick = () => {
     const g = GR.find(x => x.key === b.dataset.g);
@@ -1204,7 +1245,7 @@ function vGraphs() {
 
 let MAPF = {show: 'all'};
 function vMap() {
-  const pool = examPool();
+  const pool = QUESTIONS;
   const counts = {unseen: 0, right: 0, wrong: 0};
   const state = {}; pool.forEach(q => { state[q.id] = lastOutcome(q); counts[state[q.id]]++; });
   const mark = {unseen: '', right: '✓', wrong: '✗'};
@@ -1215,13 +1256,15 @@ function vMap() {
     ${[['all', `All ${pool.length}`], ['unseen', `Unseen ${counts.unseen}`], ['right', `Right ${counts.right}`], ['wrong', `Wrong ${counts.wrong}`], ['flagged', `⚑ Flagged ${pool.filter(q => isFlagged(q.id)).length}`]].map(([k, l]) => `<span class="chip ${MAPF.show === k ? 'on' : ''} lg-${k}" data-show="${k}">${l}</span>`).join('')}
   </div>
   <div class="row" style="margin-top:8px"><span class="qt unseen lg"><span class="qm"></span>unseen</span><span class="qt right lg"><span class="qm">✓</span>last answer right</span><span class="qt wrong lg"><span class="qm">✗</span>last answer wrong</span></div></div>`;
+  COURSE.exams.forEach(e => {
+  let g = '';
   TOPICS.forEach(t => {
-    const tq = pool.filter(q => q.topic === t.id);
+    const tq = pool.filter(q => q.topic === t.id && examOf(q) === e.id);
     if (!tq.length) return;
     const tc = {unseen: 0, right: 0, wrong: 0}; tq.forEach(q => tc[state[q.id]]++);
     const sel = tq.filter(q => MAPF.show === 'all' || (MAPF.show === 'flagged' ? isFlagged(q.id) : state[q.id] === MAPF.show));
-    h += `<div class="card"><div class="topicrow"><span><b>${esc(t.name)}</b><small>${tq.length} questions · ${tc.unseen} unseen · ${tc.right} right · ${tc.wrong} wrong</small></span>
-      <span class="row">${tq.some(q => isFlagged(q.id)) ? `<button class="btn ghost" data-drill="${t.id}" data-what="flagged">Drill flagged</button>` : ''}${tc.wrong ? `<button class="btn ghost" data-drill="${t.id}" data-what="wrong">Redo wrong</button>` : ''}${tc.unseen ? `<button class="btn ghost" data-drill="${t.id}" data-what="unseen">Drill unseen</button>` : ''}</span></div>`;
+    g += `<div class="card"><div class="topicrow"><span><b>${esc(t.name)}</b><small>${tq.length} questions · ${tc.unseen} unseen · ${tc.right} right · ${tc.wrong} wrong</small></span>
+      <span class="row">${tq.some(q => isFlagged(q.id)) ? `<button class="btn ghost" data-drill="${t.id}" data-ex="${e.id}" data-what="flagged">Drill flagged</button>` : ''}${tc.wrong ? `<button class="btn ghost" data-drill="${t.id}" data-ex="${e.id}" data-what="wrong">Redo wrong</button>` : ''}${tc.unseen ? `<button class="btn ghost" data-drill="${t.id}" data-ex="${e.id}" data-what="unseen">Drill unseen</button>` : ''}</span></div>`;
     const subs = (t.subs || []).slice();
     const known = new Set(subs.map(x => x.id));
     tq.forEach(q => { if (q.sub && !known.has(q.sub)) { known.add(q.sub); subs.push({id: q.sub, name: q.sub}); } });
@@ -1229,28 +1272,30 @@ function vMap() {
     subs.forEach(sb => {
       const sq = sel.filter(q => (q.sub || null) === sb.id);
       if (!sq.length) return;
-      h += `<h4 class="mapsub">${esc(sb.name)}</h4><div class="qgrid">${sq.map(tile).join('')}</div>`;
+      g += `<h4 class="mapsub">${esc(sb.name)}</h4><div class="qgrid">${sq.map(tile).join('')}</div>`;
     });
-    if (!sel.length) h += `<p class="empty">Nothing in this section matches the filter.</p>`;
-    h += '</div>';
+    if (!sel.length) g += `<p class="empty">Nothing in this section matches the filter.</p>`;
+    g += '</div>';
+  });
+  h += exGroup(e, g || '<div class="empty">Questions for this exam are added as its lectures are written.</div>');
   });
   $('#view').innerHTML = h;
   document.querySelectorAll('[data-show]').forEach(c => c.onclick = () => { MAPF.show = c.dataset.show; vMap(); });
   document.querySelectorAll('.qt[data-q]').forEach(b => b.onclick = () => startQuiz([byId[b.dataset.q]], 'From the question map', 'pass'));
   document.querySelectorAll('[data-drill]').forEach(b => b.onclick = () => {
-    const list = pool.filter(q => q.topic === b.dataset.drill && (b.dataset.what === 'flagged' ? isFlagged(q.id) : state[q.id] === b.dataset.what));
+    const list = pool.filter(q => q.topic === b.dataset.drill && examOf(q) === +b.dataset.ex && (b.dataset.what === 'flagged' ? isFlagged(q.id) : state[q.id] === b.dataset.what));
     startQuiz(shuffle(list), `${(TOPIC[b.dataset.drill] || {}).name}: ${b.dataset.what}`, 'pass');
   });
 }
 
 function vData() {
-  const pool = examPool(), a = acc(pool);
+  const pool = examPool();
   let h = `<h2>Progress</h2>
   <div class="card"><div class="row"><span>Profile:</span><input type="text" id="prof" value="${esc(PROFILE)}" style="width:12em"><button class="btn ghost" id="setprof">Switch</button></div>
   <p class="sub" style="margin-top:8px">Progress is kept in this browser under the profile name. Two people on one device keep separate histories.</p></div>
   <div class="card"><div class="row"><span>Pace:</span><select id="pace">${Object.entries(PACES).map(([k, p]) => `<option value="${k}" ${k === (S.pace || COURSE.paceDefault) ? 'selected' : ''}>${esc(p.label)}</option>`).join('')}</select></div>
   <p class="sub" style="margin-top:8px">The pace and the confidence buttons set how soon a question returns: a wrong answer or "I guessed" brings it back at once, "Not sure" holds it at its current interval, "Knew it" lengthens the interval.</p></div>
-  <div class="card"><p>${seenCount(pool)} of ${pool.length} seen · ${a.n} answers · accuracy ${a.pct == null ? '—' : a.pct + '%'}</p>
+  <div class="card">${COURSE.exams.map(e => { const ep = QUESTIONS.filter(q => examOf(q) === e.id), ea = acc(ep); return `<p style="margin:0 0 6px"><b>${esc(e.name)}:</b> ${seenCount(ep)} of ${ep.length} seen · ${ea.n} answers · accuracy ${ea.pct == null ? '—' : ea.pct + '%'}</p>`; }).join('')}
   <div class="row"><button class="btn ghost" id="exp">Export progress (JSON)</button>
   <label class="btn ghost">Import progress<input type="file" id="imp" accept=".json" style="display:none"></label>
   <button class="btn ghost" id="expmiss">Export missed questions (CSV)</button>
@@ -1258,7 +1303,7 @@ function vData() {
   <h3>Last updated</h3>
   <div class="card"><p style="margin:0 0 6px"><b>${esc(fmtDate(BUILD.built))}</b>${BUILD.commit ? ` · build ${esc(BUILD.commit)}` : ''} · ${QUESTIONS.length} questions · ${QUESTIONS.filter(q => q.reading).length} with textbook notes</p>
   ${(BUILD.changelog || []).map(c => `<h4 style="margin:10px 0 4px">${esc(c.date)}</h4><ul style="margin:0;padding-left:20px">${c.items.map(i => `<li>${esc(i)}</li>`).join('')}</ul>`).join('')}</div>
-  <p class="sub">${QUESTIONS.length} questions in the bank. Built from the course decks, lecture transcripts and the Exam 1 drug list; each question cites its deck and slide. Slide numbers marked ~ were counted from the deck text and may be off by one or two.</p>`;
+  <p class="sub">${QUESTIONS.length} questions in the bank. Built from the course decks, lecture transcripts and the drug lists; each question cites its deck and slide. Slide numbers marked ~ were counted from the deck text and may be off by one or two.</p>`;
   $('#view').innerHTML = h;
   $('#setprof').onclick = () => { const v = $('#prof').value.trim(); if (!v) return; PROFILE = v; store.set(COURSE.ns + ':profile', v); S = loadState(); Q = null; endExam(); GQ = null; vData(); };
   $('#pace').onchange = e => { S.pace = e.target.value; save(); };
