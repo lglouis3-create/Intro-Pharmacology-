@@ -19,6 +19,12 @@ transcript have both been received. The adrenergic, nitric oxide/cGMP and RAAS
 items are written but held back (HELD) until those decks and transcripts arrive;
 they keep their ids so they return unchanged.
 
+Transcript 10/5 (rest of the NMJ deck, whole cholinergic deck): every NMJ and
+cholinergic item he discussed carries his words as its quote, '; transcript 10/5'
+in its cite and source 'both'.  Where he is explicit he wins over list and slide
+(the other version goes in a `note`); his exam-scope statements remove items
+(REMOVED, ids kept) or rewrite them.
+
 Run from src/:  python3 gen_druglist2.py
 """
 import json, re, os
@@ -224,25 +230,26 @@ ROWS = [
 # --------------------------------------------------------------------------
 # Disagreements and gaps (list vs slide).  The slide wins.
 # --------------------------------------------------------------------------
-CONFLICTS = [
- ('Norepinephrine', 'List page 8: “α1, β1 agonist”.', f'{ANS} slide 13 draws norepinephrine as the neurotransmitter at α1 (blood vessels), α2 (CNS) and β1 (heart, kidney), with β2 “typically not innervated”; slides 45–47: NE acts at α2 in the GI tract (“Inhibition of Ach Release”).', 'Slide wins: norepinephrine is keyed as an agonist at α1, α2 and β1 (DL2 item carries a note). The Exam 1 drug list called it an α1, α2, β1 and β2 agonist.'),
- ('Epinephrine', 'List page 8: “β1, β2 agonist (blood vessels)”, with “Low dose: β1 & β2 / High dose: everything”.', f'{ANS} slides 35 and 42 show epinephrine (adrenal medulla) acting at β2 (bronchial dilation, smooth-muscle vasodilation); the slides say nothing on α receptors for epinephrine. The Exam 1 drug list called it an α1, α2, β1 and β2 agonist.', 'No direct contradiction with a slide. Keyed with the list’s dose wording (β1 and β2 at low dose; all receptors at high dose). Re-check when the adrenergic deck is available.'),
- ('Varenicline', 'List page 1 ADRs: headache, insomnia, suicidal thoughts, depression, flatulence.', f'{NMJ} slide 9: most common GI: nausea (16–40%) & vomiting; CNS: headache, insomnia, depression. No suicidal thoughts or flatulence on the slide; the list omits nausea and vomiting.', 'Slide wins: the ADR item keys nausea/vomiting, headache, insomnia and depression; suicidal thoughts and flatulence are not asked.'),
- ('Scopolamine', 'List page 3: “Non-selective muscarinic antagonist (M1, M2, M3)”.', f'{CHO} slide 17: “Scopolamine — Antagonist to the Muscarinic, Histamine and serotonin receptors”.', 'Slide wins: scopolamine is keyed as an antagonist at muscarinic, histamine and serotonin receptors.'),
- ('Solifenacin, darifenacin, trospium', 'List page 4: “Most selective for M3 → least likely to cause anti-DUMBbELSS”.', f'{CHO} slide 30: “All have the potential to cause anti-DUMBBELSS; xerostomia (dry mouth) and constipation — M3, all musc. antag”; the M3-selective three sit lowest in the “order of drugs with CNS effects (drowsiness, dizziness, & confusion)”: oxybutynin (M1 & M3) > tolterodine, fesoterodine (M1 & M3) > solifenacin, darifenacin, trospium (M3).', 'Slide wins: the three are keyed as least likely to cause CNS effects, not as least likely to cause anti-DUMBBELSS.'),
- ('Succinylcholine (hyperthermia)', 'List page 1 places “hyperthermia” among the ADRs.', f'{NMJ} slide 26 places malignant hyperthermia under “Succinylcholine (SCh) DDI”: with inhaled anesthetics (e.g., halothane); abnormal release of Ca++ from skeletal-muscle stores; dantrolene (ryanodine receptor antagonist).', 'Slide wins: keyed as a drug–drug interaction with inhaled anesthetics.'),
- ('Curare-like drugs (ADRs)', 'List page 2: “Histamine release, hypotension & tachycardia”; no CNS effect.', f'{NMJ} slide 32: respiratory paralysis; tachycardia — pancuronium; allergic reactions: histamine release (bronchial spasms, marked hypotension) — atracurium; *** no CNS effect. Slide 30: histamine release +++ for atracurium, + for the others; pancuronium “+ Block” at autonomic ganglia.', 'Slide wins: respiratory paralysis (missing from the list) is keyed; tachycardia is tied to pancuronium; atracurium (strongest histamine release) is not on the list.'),
- ('Galantamine', 'List page 2: “Longer t1/2 than physostigmine”.', f'{NMJ} slide 40 groups donepezil, rivastigmine and galantamine under “Reversible with longer duration of action; High affinity for the AChE; lipophilic (cross the BBB)”; slide 39 uses the same “reversible with longer duration of action” heading for physostigmine. No slide compares galantamine with physostigmine.', 'List-only claim; not asked.'),
- ('Atropine (drowsiness)', 'List page 3 ADRs end with “drowsiness”.', f'{CHO} slides 19 and 32 give the CNS effect of muscarinic antagonists as “hallucinations, restlessness, & coma” (dose-dependent); drowsiness appears on slide 24 for scopolamine.', 'Slide wins: drowsiness is not keyed for atropine; it is keyed for scopolamine.'),
- ('Echothiophate', 'List page 2: “Organophosphate inhibitor of acetylcholinesterase enzyme” (reversibility not stated).', f'{NMJ} slides 42–43: organophosphates form a covalent bond with the enzyme (irreversible) and irreversibly phosphorylate cholinesterases; slide 45 names echothiophate an organophosphate inhibitor.', 'Slide adds “irreversible”; keyed so.'),
- ('Botulinum toxin', 'List colours it red (antagonist).', f'{NMJ} slides 46–50 describe it as preventing ACh release by cleaving SNARE proteins (endopeptidase); no slide calls it a receptor antagonist.', 'Mechanism keyed as the slide states it (blocks release); “antagonist” not used as its class.'),
- ('Aclidinium, umeclidinium', 'List page 4: “Muscarinic antagonist … Long-acting muscarinic antagonist (LAMA)”.', f'{CHO} slide 28: “High affinity for the M3 (reversible, but slow dissociation)”; the LAMA label on the slide is attached to tiotropium only.', 'Slide wording keyed (high M3 affinity, slow dissociation); LAMA for these two is list only.'),
- ('Tiotropium', 'List page 3: “Heart rate not affected because it does not target M2”.', f'{CHO} slide 28 gives tiotropium as “M1 and M3; LAMA: Long acting (1x/Day)”; slide 10 puts M2 at the AV & SA node. The heart-rate sentence itself is not on a slide.', 'Receptor keyed from the slide; heart-rate sentence cited to the list.'),
- ('Edrophonium', 'List page 2: “No CNS effects”.', f'{NMJ} slide 38 gives short duration, readily reversible, diagnosis of myasthenia gravis; it does not mention CNS effects.', 'List only; not asked.'),
- ('Nitrates and PDE inhibitors (SOA)', 'List page 4 gives the SOA as “Endothelium of blood vessels (M3)”.', f'No slide names these drugs. {ANS} slide 4 and {CHO} slides 13 and 15 say M3 on vascular endothelium raises Ca++ → NOS → NO (vasodilation via nitric oxide).', 'List only; the “(M3)” in the SOA is not asked.'),
- ('Benztropine', 'List page 3: non-selective muscarinic antagonist; CNS; Parkinson’s.', f'{CHO} slide 25 names benztropine (Parkinson’s patients treated with L-dopa; tremor & rigidity) inside the muscarinic-antagonist section but does not state its receptor selectivity.', 'Class confirmed by section only; receptor list (M1, M2, M3) cited to the list.'),
- ('Cocaine', 'List page 5 key information: “Used with lidocaine to control arrythmias (Na+ channel blocker)”.', 'No slide.', 'Unclear wording; not asked.'),
- ('Medoxomil', 'List page 9 prints “Medoxomil” as its own line in the ARB group.', 'No slide.', 'Parsed as part of the ARB row; not asked as a drug.'),
+CONFLICTS = [  # (drug, list says, slide says, transcript 10/5 says, resolution)
+ ('Norepinephrine', 'List page 8: “α1, β1 agonist”.', 'Autonomic Nervous System.pdf slide 13 draws norepinephrine as the neurotransmitter at α1 (blood vessels), α2 (CNS) and β1 (heart, kidney), with β2 “typically not innervated”; slides 45–47: NE acts at α2 in the GI tract (“Inhibition of Ach Release”).', '—', 'Slide wins: norepinephrine is keyed as an agonist at α1, α2 and β1 (DL2 item carries a note). The Exam 1 drug list called it an α1, α2, β1 and β2 agonist.'),
+ ('Epinephrine', 'List page 8: “β1, β2 agonist (blood vessels)”, with “Low dose: β1 & β2 / High dose: everything”.', 'Autonomic Nervous System.pdf slides 35 and 42 show epinephrine (adrenal medulla) acting at β2 (bronchial dilation, smooth-muscle vasodilation); the slides say nothing on α receptors for epinephrine. The Exam 1 drug list called it an α1, α2, β1 and β2 agonist.', '—', 'No direct contradiction with a slide. Keyed with the list’s dose wording (β1 and β2 at low dose; all receptors at high dose). Re-check when the adrenergic deck is available.'),
+ ('Varenicline', 'List page 1 ADRs: headache, insomnia, suicidal thoughts, depression, flatulence.', 'PCOL-NMJ_PCOL_2026s_pptx.pdf slide 9: most common GI: nausea (16–40%) & vomiting; CNS: headache, insomnia, depression. No suicidal thoughts or flatulence on the slide; the list omits nausea and vomiting.', 'Names depression and sleeplessness (brain site) and “some GI side effects”: “flatulence is a complaint for the patients. They get a lot of gas.” Nothing on suicidal thoughts.', 'Resolved: the ADR item (DL2-004) keys the slide’s nausea/vomiting, headache, insomnia and depression plus flatulence, which he confirmed. Suicidal thoughts (list only) are not asked.'),
+ ('Scopolamine', 'List page 3: “Non-selective muscarinic antagonist (M1, M2, M3)”.', 'PCOL-Cholinergic-26s.pdf slide 17: “Scopolamine — Antagonist to the Muscarinic, Histamine and serotonin receptors”.', '“That one is really non-selective. That not only blocks all the muscarinics, but also histamine and serotonin receptors.”', 'Resolved for the slide: keyed as an antagonist at muscarinic, histamine and serotonin receptors (DL2-035).'),
+ ('Solifenacin, darifenacin, trospium', 'List page 4: “Most selective for M3 → least likely to cause anti-DUMBbELSS”.', 'PCOL-Cholinergic-26s.pdf slide 30: “All have the potential to cause anti-DUMBBELSS; xerostomia (dry mouth) and constipation — M3, all musc. antag”; the M3-selective three sit lowest in the “order of drugs with CNS effects (drowsiness, dizziness, & confusion)”: oxybutynin (M1 & M3) > tolterodine, fesoterodine (M1 & M3) > solifenacin, darifenacin, trospium (M3).', 'The more M3-selective drugs act more in the bladder and cause “less of the anti-dumbbells everywhere else”, but “If I give enough of VESIcare, I’m gonna get all the anti-dumbbells.” Oxybutynin (M1 and M3) causes sedation. For the exam: oxybutynin, trospium and solifenacin only.', 'Resolved: both are true by dose. DL2-044 keys oxybutynin as more sedating than solifenacin and rejects “only oxybutynin can cause anti-DUMBBELSS”; darifenacin, tolterodine and fesoterodine are not asked.'),
+ ('Succinylcholine (hyperthermia)', 'List page 1 places “hyperthermia” among the ADRs.', 'PCOL-NMJ_PCOL_2026s_pptx.pdf slide 26 places malignant hyperthermia under “Succinylcholine (SCh) DDI”: with inhaled anesthetics (e.g., halothane); abnormal release of Ca++ from skeletal-muscle stores; dantrolene (ryanodine receptor antagonist).', 'Lists hyperthermia among the adverse effects (“patients can get actually hyperthermia. They get too hot”) and separately malignant hyperthermia when combined with an anesthetic “such as halotane”.', 'Resolved: both are keyed. Hyperthermia is an adverse reaction in DL2-007; malignant hyperthermia with inhaled anesthetics is the drug–drug interaction in DL2-009.'),
+ ('Curare-like drugs (ADRs)', 'List page 2: “Histamine release, hypotension & tachycardia”; no CNS effect.', 'PCOL-NMJ_PCOL_2026s_pptx.pdf slide 32: respiratory paralysis; tachycardia — pancuronium; allergic reactions: histamine release (bronchial spasms, marked hypotension) — atracurium; *** no CNS effect. Slide 30: histamine release +++ for atracurium, + for the others; pancuronium “+ Block” at autonomic ganglia.', 'Most common: paralysis of the diaphragm; tachycardia “with pancuronium more often than the others”; massive histamine release with atracurium; “more drug dependent”. For Exam 2 he needs only “any karate-like drug is … A competitive, reversible NM antagonist” causing paralysis. In his rocuronium question he also said it “may cause bronchodilation because of the release of histamine”, while the slide and his own earlier sentence give bronchial spasms.', 'Resolved by scope: DL2-012 now asks his rocuronium question and keys paralysis; the drug-specific reactions are teach text only. The bronchodilation/bronchospasm wording is not asked.'),
+ ('Galantamine', 'List page 2: “Longer t1/2 than physostigmine”.', 'PCOL-NMJ_PCOL_2026s_pptx.pdf slide 40 groups donepezil, rivastigmine and galantamine under “Reversible with longer duration of action; High affinity for the AChE; lipophilic (cross the BBB)”; slide 39 uses the same “reversible with longer duration of action” heading for physostigmine. No slide compares galantamine with physostigmine.', '“For our exam purpose, I only need you to know rivastigamine and donepezil.” He said nothing on galantamine’s half-life.', 'Resolved by scope: galantamine is not asked (removed from DL2-016 options and teach text); the half-life claim stays list only.'),
+ ('Atropine (drowsiness)', 'List page 3 ADRs end with “drowsiness”.', 'PCOL-Cholinergic-26s.pdf slides 19 and 32 give the CNS effect of muscarinic antagonists as “hallucinations, restlessness, & coma” (dose-dependent); drowsiness appears on slide 24 for scopolamine.', 'Atropine’s anti-DUMBBELSS: constipation, cannot urinate, mydriasis, bronchial dilation, cannot cry or sweat, “and you’re gonna go sedated”; at higher doses “mad as a hatter” (hallucination).', 'Resolved for the list: sedation is keyed for atropine in DL2-032 (M1 block in the brain).'),
+ ('Echothiophate', 'List page 2: “Organophosphate inhibitor of acetylcholinesterase enzyme” (reversibility not stated).', 'PCOL-NMJ_PCOL_2026s_pptx.pdf slides 42–43: organophosphates form a covalent bond with the enzyme (irreversible) and irreversibly phosphorylate cholinesterases; slide 45 names echothiophate an organophosphate inhibitor.', '“Those are irreversible antagonists to the acetylchonasterase enzyme.” Topical eye drops for glaucoma; miosis, blurred vision, lacrimation, stinging, redness.', 'Resolved: irreversible (slide and transcript).'),
+ ('Botulinum toxin', 'List colours it red (antagonist).', 'PCOL-NMJ_PCOL_2026s_pptx.pdf slides 46–50 describe it as preventing ACh release by cleaving SNARE proteins (endopeptidase); no slide calls it a receptor antagonist.', '“Botox is an enzyme that breaks down the snare protein … you can’t release the cetylcholine.” He does not call it an antagonist.', 'Unchanged: mechanism keyed as blocking release; “antagonist” not used as its class.'),
+ ('Aclidinium, umeclidinium', 'List page 4: “Muscarinic antagonist … Long-acting muscarinic antagonist (LAMA)”.', 'PCOL-Cholinergic-26s.pdf slide 28: “High affinity for the M3 (reversible, but slow dissociation)”; the LAMA label on the slide is attached to tiotropium only.', '“Those are really long acting”; “a very high affinity, and they’re more selective to the M3s” than ipratropium and tiotropium.', 'Resolved for the list: long acting, high M3 affinity and slow dissociation are keyed (DL2-041).'),
+ ('Tiotropium', 'List page 3: “Heart rate not affected because it does not target M2”.', 'PCOL-Cholinergic-26s.pdf slide 28 gives tiotropium as “M1 and M3; LAMA: Long acting (1x/Day)”; slide 10 puts M2 at the AV & SA node. The heart-rate sentence itself is not on a slide.', '“The ipratropium and the tiotropium are less selective”; low bioavailability keeps them in the lungs: “even though they can affect the M2s or the M3s, it’s very likely, unlikely because they don’t get systemic.”', 'Resolved by the transcript against both list and slide: heart rate is spared because tiotropium stays in the lungs (DL2-040, rewritten), not because it lacks M2 affinity. DL2-039 no longer keys receptor profiles; it keys short-acting ipratropium versus long-acting tiotropium.'),
+ ('Edrophonium', 'List page 2: “No CNS effects”.', 'PCOL-NMJ_PCOL_2026s_pptx.pdf slide 38 gives short duration, readily reversible, diagnosis of myasthenia gravis; it does not mention CNS effects.', '“For our purpose on the exam, I’m not too worried about” edrophonium (IV, diagnostic, very water soluble, “gonna stay within the blood”). No explicit statement on CNS effects.', 'Resolved by scope: DL2-019 removed; the “no CNS effects” claim is not asked.'),
+ ('Nitrates and PDE inhibitors (SOA)', 'List page 4 gives the SOA as “Endothelium of blood vessels (M3)”.', 'No slide names these drugs. Autonomic Nervous System.pdf slide 4 and PCOL-Cholinergic-26s.pdf slides 13 and 15 say M3 on vascular endothelium raises Ca++ → NOS → NO (vasodilation via nitric oxide).', '—', 'List only; the “(M3)” in the SOA is not asked.'),
+ ('Benztropine', 'List page 3: non-selective muscarinic antagonist; CNS; Parkinson’s.', 'PCOL-Cholinergic-26s.pdf slide 25 names benztropine (Parkinson’s patients treated with L-dopa; tremor & rigidity) inside the muscarinic-antagonist section but does not state its receptor selectivity.', '“An analog of atropine called benztropine … used for treatment of Parkinson’s disease”, an adjunct to L-dopa; “more selective to … the M1s in the brain, and it’s gonna have less of those anti-dumbbells”; “about half of the affinity of atropine.”', 'Resolved against the list: benztropine is more M1-selective, not a plain non-selective (M1, M2, M3) antagonist. DL2-037 keys only its site (central nervous system) and carries a note.'),
+ ('Cocaine', 'List page 5 key information: “Used with lidocaine to control arrythmias (Na+ channel blocker)”.', 'No slide.', '—', 'Unclear wording; not asked.'),
+ ('Medoxomil', 'List page 9 prints “Medoxomil” as its own line in the ARB group.', 'No slide.', '—', 'Parsed as part of the ARB row; not asked as a drug.'),
+ ('Muscarinic agonists (blood pressure)', 'List page 2–3: muscarinic agonist ADRs given as DUMBBELSS.', 'PCOL-Cholinergic-26s.pdf slide 13 lists the organ effects of muscarinic agonists.', '“They may get hypertension due to the release of nitric oxide, which is a vasodilator, so that’s a little bit of an exception to the rule” — “hypertension” beside “vasodilator” looks like a transcription or speaking slip.', 'Uncertain: blood pressure is not asked for the muscarinic agonists.'),
 ]
 
 # --------------------------------------------------------------------------
@@ -309,13 +316,14 @@ add('nmj', 'adr-varenicline',
  [('Nausea and vomiting', R, 'Listed as the most common GI side effect (nausea 16–40%).'),
   ('Headache', R, 'Listed under central nervous system side effects.'),
   ('Insomnia', R, 'Listed under central nervous system side effects.'),
-  ('Depression', R, 'Listed under central nervous system side effects.'),
+  ('Depression', R, 'Listed under central nervous system side effects; the site of action is the brain.'),
+  ('Flatulence', R, 'A gastrointestinal complaint: patients “get a lot of gas”.'),
   ('Hyperkalemia', W, 'Hyperkalemia is a succinylcholine adverse reaction (muscle cells lose K+).'),
   ('Histamine release with hypotension', W, 'That is a curare-like drug adverse reaction (most with atracurium).')],
- 'Varenicline’s most common side effects are gastrointestinal (nausea and vomiting) and central nervous system effects (headache, insomnia, depression). The drug list also warns of mood and behavioral changes.',
+ 'Varenicline acts in the brain, so its side effects include central nervous system effects (headache, insomnia, depression); it is a partial agonist, so it still activates the receptor somewhat. Its gastrointestinal side effects are nausea and vomiting (most common) and flatulence. The drug list also warns of mood and behavioral changes.',
  'Side Effects. Most common: GI: Nausea (16-40%) & Vomiting. CNS: Headache, Insomnia, Depression',
  cite(1, (NMJ, '9')), multi=True,
- note='The drug list gives headache, insomnia, suicidal thoughts, depression and flatulence and does not list nausea; the slide lists nausea and vomiting as the most common and does not list suicidal thoughts or flatulence. Keyed to the slide.')
+ note='The drug list gives headache, insomnia, suicidal thoughts, depression and flatulence and does not list nausea; the slide lists nausea and vomiting as the most common and does not list suicidal thoughts or flatulence. On 10/5 he added flatulence (“I don’t think if I listed for you guys, but flatulence is a complaint”), so flatulence is keyed with the slide’s effects; suicidal thoughts are not asked.')
 
 add('nmj', 'moa-succinylcholine',
  'Which of the following describes the mechanism of action of succinylcholine?',
@@ -342,10 +350,11 @@ sch_adr = add('nmj', 'adr-succinylcholine',
  [('Hyperkalemia', R, 'The muscle cell loses K+ (and gains Ca++ and Na+).'),
   ('Hypertension and arrhythmias', R, 'Listed as the cardiovascular adverse reactions.'),
   ('Post-operative muscle pain (myalgia)', R, 'Caused by unsynchronized contractions.'),
+  ('Hyperthermia', R, 'The muscle fibers keep contracting out of sync, and the patient gets too hot.'),
   ('Histamine release with marked hypotension', W, 'That is a curare-like drug reaction (atracurium most).'),
   ('Miosis and lacrimation', W, 'Those are echothiophate (eye) reactions.'),
   ('Insomnia and depression', W, 'Those are varenicline reactions.')],
- 'Succinylcholine’s adverse reactions are hyperkalemia (muscle cells lose K+), hypertension and arrhythmias, and post-operative muscle pain from unsynchronized contractions. It is avoided in renal-deficient and dehydrated patients.',
+ 'Succinylcholine’s adverse reactions are hyperkalemia (muscle cells lose K+), hypertension and arrhythmias, post-operative muscle pain and hyperthermia from unsynchronized contractions. It is avoided in renal-deficient and dehydrated patients.',
  'Succinylcholine (SCh) ADRs: Hyperkalemia — Muscle cell loss of K+ & gain of Ca++, & Na+; Cardiovascular — Hypertension & Arrhythmias; Post-operative muscle pain — Myalgia; Unsynchronized contractions',
  cite(1, (NMJ, '25')), multi=True)
 
@@ -368,7 +377,7 @@ add('nmj', 'ddi-succinylcholine',
  'With inhaled anesthetics, succinylcholine is associated with malignant hyperthermia: abnormal release of Ca++ from stores in skeletal muscle and heat production by skeletal muscle. Dantrolene is an antagonist at the ryanodine receptor and lowers intracellular Ca++.',
  'Succinylcholine (SCh) DDI: Inhaled anesthetics (e.g., halothane) — Malignant hyperthermia. Caused by: Abnormal release of Ca++ from stores in skeletal muscle; Skeletal muscle heat production. Dantrolene — Antagonist to the Ryanodine receptor',
  cite(1, (NMJ, '26')),
- note='The drug list places hyperthermia among succinylcholine’s adverse reactions; the slide places malignant hyperthermia under drug–drug interactions with inhaled anesthetics. Keyed to the slide.')
+ note='The drug list places hyperthermia among succinylcholine’s adverse reactions; the slide places malignant hyperthermia under drug–drug interactions with inhaled anesthetics. On 10/5 he gave both: hyperthermia as an adverse reaction (unsynchronized contraction) and malignant hyperthermia when it is combined with an anesthetic such as halothane. This item keys the interaction.')
 
 add('nmj', 'moa-curare',
  'Which of the following describes the mechanism of action of rocuronium?',
@@ -388,22 +397,21 @@ add('nmj', 'group-nondepolarizing',
   ('Mivacurium', R, 'A curare-like competitive antagonist at Nm.'),
   ('Succinylcholine', W, 'Succinylcholine is the depolarizing agent (an agonist).'),
   ('Neostigmine', W, 'Neostigmine is a cholinesterase inhibitor; it reverses curare-like drugs.'),
-  ('Edrophonium', W, 'Edrophonium is a short-acting cholinesterase inhibitor.')],
- 'Both drug types cause paralysis. Depolarizing: succinylcholine (agonist, opens nicotinic channels). Non-depolarizing: curare (prototype), mivacurium, vecuronium, rocuronium and pancuronium (competitive antagonists, stop the nicotinic channels from opening).',
+  ('Varenicline', W, 'Varenicline is a partial agonist at α4β2 neuronal nicotinic (Nn) receptors in the brain; it does not paralyze.')],
+ 'Both drug types cause paralysis. Depolarizing: succinylcholine (agonist, opens nicotinic channels). Non-depolarizing: curare (prototype), mivacurium, vecuronium, rocuronium and pancuronium (competitive antagonists, stop the nicotinic channels from opening). A drug with “cur” in the middle of its name is curare-like: a competitive, reversible muscle nicotinic (Nm) antagonist.',
  'Depolarizing: Succinylcholine. Non-depolarizing: Curare (prototype), Mivacurium, Vecuronium, Rocuronium, Pancuronium',
  cite(2, (NMJ, '19')), multi=True)
 
 add('nmj', 'adr-curare',
- 'Which adverse drug reactions are listed for the curare-like (non-depolarizing) drugs?',
- [('Respiratory paralysis', R, 'Listed first among the curare-like drug adverse reactions.'),
-  ('Tachycardia (pancuronium)', R, 'Listed, with pancuronium as the example.'),
-  ('Histamine release with bronchial spasm and hypotension', R, 'Listed as an allergic reaction (atracurium most).'),
-  ('Sedation and drowsiness from central action', W, 'The curare-like drugs have no CNS effect.'),
-  ('Hyperkalemia from loss of muscle K+', W, 'That is succinylcholine.')],
- 'Curare-like drugs cause respiratory paralysis, tachycardia (pancuronium) and allergic reactions with histamine release (bronchial spasms, marked hypotension; atracurium most). They have no central nervous system (CNS) effect.',
+ 'A patient is administered rocuronium. Which of the following is most likely to occur?',
+ [('Paralysis', R, 'Rocuronium blocks the muscle nicotinic (Nm) receptor, so paralysis occurs every time; it is what the drug is used for.'),
+  ('Diarrhea', W, 'Gut motility is driven through muscarinic receptors; rocuronium blocks only the muscle nicotinic (Nm) receptor.'),
+  ('Vasoconstriction', W, 'Blood vessels respond through adrenergic (sympathetic) receptors; rocuronium blocks the muscle nicotinic (Nm) receptor.'),
+  ('Sedation', W, 'Curare-like drugs do not cross the blood–brain barrier and do not put the patient to sleep.')],
+ 'Rocuronium is a curare-like drug: a competitive, reversible muscle nicotinic (Nm) antagonist, so paralysis always occurs. The other adverse reactions depend on the drug: paralysis of the diaphragm (respiratory paralysis), tachycardia more often with pancuronium, and massive histamine release with atracurium. They have no central nervous system (CNS) effect.',
  'Curare Like-Drugs ADRs: Respiratory paralysis; Tachycardia — Pancuronium; Allergic reactions — Histamine release - Bronchial spasms - Marked Hypotension — Atracurium. *** No CNS Effect',
- cite(2, (NMJ, '30, 32')), multi=True,
- note='The drug list gives histamine release, hypotension and tachycardia and omits respiratory paralysis; the slide lists respiratory paralysis first, ties tachycardia to pancuronium and histamine release mainly to atracurium (not on the list). Keyed to the slide.')
+ cite(2, (NMJ, '27, 30, 32')),
+ note='The drug list gives histamine release, hypotension and tachycardia and omits respiratory paralysis; the slide lists respiratory paralysis first, ties tachycardia to pancuronium and histamine release mainly to atracurium (not on the list). On 10/5 he called these drug-dependent and said that for Exam 2 he needs only that any curare-like drug is a competitive, reversible Nm antagonist that causes paralysis, so this item keys paralysis (his in-class question on rocuronium).')
 
 add('nmj', 'cns-curare',
  'Which statement about the curare-like drugs (for example vecuronium) is CORRECT?',
@@ -429,7 +437,7 @@ add('nmj', 'physostigmine-use',
  'A patient is poisoned with atropine. Which cholinesterase inhibitor is the drug of choice?',
  [('Physostigmine', R, 'Drug of choice for poisoning by anti-muscarinic agents such as atropine; it reaches the central nervous system.'),
   ('Neostigmine', W, 'Neostigmine does not cross the blood–brain barrier; its uses are myasthenia gravis and curare reversal.'),
-  ('Edrophonium', W, 'Edrophonium is short-acting and used to diagnose myasthenia gravis.'),
+  ('Pyridostigmine', W, 'Pyridostigmine does not cross the blood–brain barrier; it stays in the periphery.'),
   ('Echothiophate', W, 'Echothiophate is an organophosphate used in the eye for glaucoma.')],
  'Atropine blocks muscarinic receptors in the brain and periphery. Physostigmine raises acetylcholine by inhibiting acetylcholinesterase and, as a tertiary amine, reaches the central nervous system too, so it is the drug of choice for anti-muscarinic poisoning.',
  'Drug of choice for treating poisoning due to anti-muscarinic agents (e.g., atropine)',
@@ -440,10 +448,9 @@ add('nmj', 'bbb-ache',
  [('Physostigmine', R, 'Tertiary amine; readily penetrates the central nervous system.'),
   ('Donepezil', R, 'Lipophilic; crosses the blood–brain barrier (Alzheimer’s disease).'),
   ('Rivastigmine', R, 'Lipophilic; crosses the blood–brain barrier (Alzheimer’s disease).'),
-  ('Galantamine', R, 'Lipophilic; crosses the blood–brain barrier (Alzheimer’s disease).'),
   ('Neostigmine', W, 'Quaternary amine; does NOT cross the blood–brain barrier.'),
   ('Pyridostigmine', W, 'Quaternary amine; does NOT cross the blood–brain barrier.')],
- 'Physostigmine (tertiary amine) and the Alzheimer’s drugs donepezil, rivastigmine and galantamine (lipophilic) cross the blood–brain barrier. Pyridostigmine and neostigmine are quaternary amines and do not, so they act at the neuromuscular junction without central effects.',
+ 'Physostigmine (tertiary amine) and the Alzheimer’s drugs donepezil and rivastigmine (very lipid soluble) cross the blood–brain barrier. Pyridostigmine and neostigmine are quaternary amines and do not, so they act at the neuromuscular junction without central effects.',
  'Physostigmine: Tertiary amine and readily Penetrate the CNS. PyriDOstigmine & Neostigmine: Quaternary amine and DO NOT cross the BBB. Donepezil, Rivastigmine and Galantamine: Lipophilic (Cross the BBB)',
  cite('1–2', (NMJ, '39–40')), multi=True)
 
@@ -451,7 +458,7 @@ add('nmj', 'neostigmine',
  'Which statement about neostigmine and pyridostigmine is CORRECT?',
  [('They do not cross the blood–brain barrier', R, 'They are quaternary amines and do NOT cross the blood–brain barrier, so their site of action is the neuromuscular junction.'),
   ('They are the drugs of choice for atropine poisoning', W, 'That is physostigmine, which reaches the brain.'),
-  ('They are used for early Alzheimer’s disease', W, 'That is donepezil, rivastigmine and galantamine.'),
+  ('They are used for early Alzheimer’s disease', W, 'That is donepezil and rivastigmine, which cross the blood–brain barrier.'),
   ('They block the muscle nicotinic receptor directly', W, 'They inhibit acetylcholinesterase (indirect); direct block of Nm is the curare-like drugs.')],
  'Pyridostigmine and neostigmine are reversible acetylcholinesterase inhibitors with a longer duration of action. They are quaternary amines that do not cross the blood–brain barrier, so they act at the neuromuscular junction: they treat myasthenia gravis and reverse curare-like overdose.',
  'PyriDOstigmine (Mestinon) & Neostigmine (Prostigmin): Quaternary amine and DO NOT cross the BBB. Uses: Treatment of myasthenia gravis & to reverse curare-like overdose',
@@ -490,13 +497,13 @@ add('nmj', 'adr-ache',
 add('nmj', 'moa-echothiophate',
  'Which of the following describes the mechanism of action of echothiophate?',
  [('Irreversible inhibitor of acetylcholinesterase', R, 'Echothiophate is an organophosphate inhibitor of acetylcholinesterase; organophosphates bind the enzyme covalently (irreversible).'),
-  ('Reversible, short-acting inhibitor of acetylcholinesterase', W, 'That is edrophonium.'),
+  ('Reversible inhibitor of acetylcholinesterase in the brain', W, 'That is donepezil and rivastigmine; organophosphates bind the enzyme covalently.'),
   ('Non-selective muscarinic agonist', W, 'That is pilocarpine and carbachol, which act at the receptor directly.'),
   ('Muscarinic antagonist in the eye', W, 'That is tropicamide, which dilates the pupil.')],
  'Echothiophate is an organophosphate: it inhibits acetylcholinesterase and raises acetylcholine, which increases M3 activation in the ciliary muscle and lowers intraocular pressure by increasing aqueous humor outflow (glaucoma). Organophosphates form a stable covalent bond with the enzyme, so the inhibition is irreversible.',
  'Echothiophate (Phospholine) MOA: Organophosphate inhibitor of the acetylcholinesterase enzyme & ↑ Ach levels. Organophosphates: Forms a covalent bond with the enzyme that is very stable and slow (Irreversible)',
  cite(2, (NMJ, '42, 45')),
- note='The drug list does not say whether echothiophate is reversible; the slides call organophosphates irreversible. Keyed to the slides.')
+ note='The drug list does not say whether echothiophate is reversible; the slides call organophosphates irreversible, and on 10/5 he called echothiophate an irreversible acetylcholinesterase antagonist. Keyed so.')
 
 add('nmj', 'soa-adr-echothiophate',
  'Echothiophate acts through M3 receptors in the ciliary muscle of the eye. Which adverse reactions does it cause?',
@@ -524,12 +531,12 @@ add('nmj', 'group-indirect-nmj',
  'Which drugs act as indirect antagonists by inhibiting acetylcholinesterase?',
  [('Physostigmine', R, 'Cholinesterase inhibitor (acetylcholinesterase antagonist).'),
   ('Pyridostigmine', R, 'Cholinesterase inhibitor (acetylcholinesterase antagonist).'),
-  ('Edrophonium', R, 'Cholinesterase inhibitor (acetylcholinesterase antagonist).'),
+  ('Neostigmine', R, 'Cholinesterase inhibitor (acetylcholinesterase antagonist).'),
   ('Rivastigmine', R, 'Cholinesterase inhibitor (acetylcholinesterase antagonist).'),
   ('Succinylcholine', W, 'A direct depolarizing agonist at Nm.'),
   ('Varenicline', W, 'A direct partial agonist at α4β2 Nn.'),
   ('Botulinum toxin', W, 'Prevents acetylcholine release; it does not inhibit acetylcholinesterase.')],
- 'Indirect drugs at the neuromuscular junction bind the enzyme that breaks down acetylcholine, not the receptor: acetylcholinesterase antagonists such as physostigmine, pyridostigmine, neostigmine, edrophonium, donepezil, rivastigmine, galantamine and echothiophate. Blocking the enzyme raises synaptic acetylcholine.',
+ 'Indirect drugs at the neuromuscular junction bind the enzyme that breaks down acetylcholine, not the receptor: acetylcholinesterase antagonists such as physostigmine, pyridostigmine, neostigmine, donepezil, rivastigmine and echothiophate. A drug name ending in “stigmine” marks a cholinesterase inhibitor. Blocking the enzyme raises synaptic acetylcholine.',
  'Indirect Antagonist: Acetylcholinesterase enzyme antagonist — Blocks the breakdown of Ach, which ↑ Ach synaptic levels',
  cite('1–2', (NMJ, '10, 12')), multi=True)
 
@@ -552,7 +559,7 @@ add('chol', 'moa-bethanechol',
   ('Non-selective, reversible muscarinic (M1–M3) antagonist', W, 'That is atropine.'),
   ('Reversible inhibitor of acetylcholinesterase', W, 'That is physostigmine and neostigmine (indirect).'),
   ('Partial agonist at neuronal nicotinic (Nn) receptors', W, 'That is varenicline.')],
- 'Acetylcholine, methacholine, carbachol, bethanechol, pilocarpine and cevimeline are non-selective, reversible agonists at the muscarinic receptors (M1, M2, M3). They differ in hydrolysis by acetylcholinesterase and in which organs respond most.',
+ 'Acetylcholine, methacholine, carbachol, bethanechol and pilocarpine are non-selective, reversible agonists at the muscarinic receptors (M1, M2, M3); being reversible and competitive, an overdose can be outcompeted by an antagonist. Apart from acetylcholine, they act only at muscarinic receptors, not nicotinic ones.',
  'Muscarinic Agonist MOA: Non-selective agonist for the muscarinic receptors (M1-3); Reversible',
  cite(2, (CHO, '11–12')))
 
@@ -561,11 +568,10 @@ add('chol', 'group-musc-agonists',
  [('Methacholine', R, 'Non-selective muscarinic agonist (M1–M3).'),
   ('Carbachol', R, 'Non-selective muscarinic agonist (M1–M3).'),
   ('Pilocarpine', R, 'Non-selective muscarinic agonist (M1–M3).'),
-  ('Cevimeline', R, 'Non-selective muscarinic agonist (M1–M3).'),
   ('Scopolamine', W, 'A muscarinic antagonist.'),
   ('Tiotropium', W, 'A muscarinic (M1 and M3) antagonist.'),
   ('Physostigmine', W, 'An acetylcholinesterase inhibitor; it raises acetylcholine but does not bind the receptor.')],
- 'The direct muscarinic agonists are acetylcholine, methacholine, carbachol, bethanechol, pilocarpine and cevimeline; all are non-selective (M1, M2, M3) and reversible. Physostigmine reaches the same receptors indirectly by raising acetylcholine.',
+ 'The direct muscarinic agonists are acetylcholine, methacholine, carbachol, bethanechol and pilocarpine; all are non-selective (M1, M2, M3) and reversible. The “chol” in methacholine, carbachol and bethanechol marks them as cholinergic; pilocarpine has no “chol” and has to be known by name. Physostigmine reaches the same receptors indirectly by raising acetylcholine.',
  'Muscarinic Agonist: Acetylcholine, Methacholine, Carbachol, Bethanechol, Pilocarpine & Cevimeline — Non-selective (M1, M2, & M3s), Reversible',
  cite('2–3', (CHO, '11')), multi=True)
 
@@ -581,11 +587,11 @@ add('chol', 'hydrolysis-agonists',
 
 add('chol', 'pilocarpine',
  'Which statement about pilocarpine is CORRECT?',
- [('It has no effect on nicotinic receptors', R, 'Pilocarpine is a non-ester alkaloid, not hydrolyzed, with no effect on nicotinic receptors.'),
-  ('It is rapidly hydrolyzed by acetylcholinesterase', W, 'Pilocarpine is a non-ester and is not hydrolyzed.'),
+ [('It has no effect on nicotinic receptors', R, 'Pilocarpine binds only muscarinic receptors; it does not bind or activate nicotinic receptors.'),
+  ('It binds muscarinic receptors irreversibly', W, 'The muscarinic agonists are all reversible and competitive; they bind and come off.'),
   ('It is selective for the M2 receptor', W, 'It is a non-selective muscarinic agonist (M1, M2, M3).'),
   ('It blocks muscarinic receptors and dries the mouth', W, 'It activates muscarinic receptors; it is used to treat dry mouth.')],
- 'Pilocarpine is a non-selective, reversible muscarinic agonist. As an alkaloid it is a non-ester, is not hydrolyzed and has no effect on nicotinic receptors. It is used topically for glaucoma and to treat dry mouth (M3 on salivary glands → salivation).',
+ 'Pilocarpine is a non-selective, reversible muscarinic agonist (M1, M2, M3). It does not bind or activate nicotinic receptors; among the cholinergic agonists only acetylcholine acts at both nicotinic and muscarinic receptors. At the salivary glands (M3, Gq, ↑Ca++) it causes salivation.',
  'Pilocarpine (Alkaloids): Non-Ester and not hydrolyzed; No effect on Nicotinic receptors; Used topically to treat glaucoma and to treat dry mouth',
  cite(3, (CHO, '14')))
 
@@ -616,13 +622,13 @@ add('chol', 'adr-atropine',
   ('Mydriasis', R, 'M3 block in the pupil → mydriasis.'),
   ('Constipation', R, 'M3 block in the gastrointestinal tract → constipation.'),
   ('Dry mouth', R, 'M3 block on glands → dry mouth.'),
+  ('Sedation', R, 'M1 block in the brain → sedation; at higher doses, hallucinations (“mad as a hatter”).'),
   ('Bronchial constriction', W, 'Atropine causes bronchial dilation; constriction is a muscarinic agonist effect.'),
-  ('Miosis', W, 'Miosis is a muscarinic agonist effect; atropine dilates the pupil.'),
-  ('Salivation', W, 'Salivation is a muscarinic agonist effect.')],
- 'Atropine overdose gives anti-DUMBBELSS: M2 block in the heart raises heart rate; M3 block causes mydriasis, constipation, dry mouth and bronchial dilation. Toxicity is summarized as dry as a bone, hot as a pistol, red as a beet, blind as a bat, mad as a hatter.',
+  ('Miosis', W, 'Miosis is a muscarinic agonist effect; atropine dilates the pupil.')],
+ 'Atropine overdose gives anti-DUMBBELSS: M2 block in the heart raises heart rate; M3 block causes mydriasis, constipation, dry mouth and bronchial dilation; M1 block in the brain causes sedation. Toxicity is summarized as dry as a bone, hot as a pistol, red as a beet, blind as a bat, mad as a hatter.',
  'Atropine OD of Muscarinic Antagonist — Anti-DUMBBELSS: M2 Heart = Gi = ↑ HR; M3 Pupil = Gq = Mydriasis; M3 GI = Gq = Constipation. Pharmacological effects: Dry mouth & constipation; Tachycardia; Bronchial dilation; Pupil dilation',
  cite(3, (CHO, '19, 32')), multi=True,
- note='The drug list also gives drowsiness for atropine; the slides give its central effects as hallucinations, restlessness and coma (dose-dependent) and give drowsiness for scopolamine. Drowsiness is not keyed here.')
+ note='The drug list gives drowsiness for atropine; the slides give its central effects as hallucinations, restlessness and coma (dose-dependent) and give drowsiness for scopolamine. On 10/5 he listed sedation among atropine’s anti-DUMBBELSS effects (“you’re gonna go sedated”), so sedation is keyed.')
 
 add('chol', 'atropine-heart',
  'Atropine raises heart rate by blocking which receptor?',
@@ -647,33 +653,34 @@ add('chol', 'atropine-organophosphate',
 add('chol', 'moa-scopolamine',
  'Which of the following describes the mechanism of action of scopolamine?',
  [('Muscarinic, histamine and serotonin antagonist', R, 'Scopolamine is a non-selective, reversible alkaloid antagonist at muscarinic, histamine and serotonin receptors.'),
-  ('Selective antagonist at M3 receptors in the bladder', W, 'That is solifenacin, darifenacin and trospium.'),
+  ('Selective antagonist at M3 receptors in the bladder', W, 'That is solifenacin and trospium.'),
   ('Non-selective muscarinic (M1–M3) agonist', W, 'That is pilocarpine and the other agonists.'),
   ('Inhibitor of acetylcholinesterase in the brain', W, 'That is donepezil and the other lipophilic cholinesterase inhibitors.')],
  'Scopolamine, like atropine, is a naturally occurring, non-selective and reversible muscarinic antagonist; it also antagonizes histamine and serotonin receptors. It penetrates the central nervous system more rapidly than atropine and is used for motion sickness.',
  'Scopolamine — Antagonist to the Muscarinic, Histamine and serotonin receptors',
  cite(3, (CHO, '17')),
- note='The drug list calls scopolamine a non-selective muscarinic antagonist (M1, M2, M3) and does not mention histamine or serotonin receptors; the slide does. Keyed to the slide.')
+ note='The drug list calls scopolamine a non-selective muscarinic antagonist (M1, M2, M3) and does not mention histamine or serotonin receptors; the slide does, and on 10/5 he said the same (“not only blocks all the muscarinics, but also histamine and serotonin receptors”). Keyed to the slide and transcript.')
 
 add('chol', 'scopolamine-cns',
  'Which statement about scopolamine is CORRECT?',
- [('It penetrates the CNS more rapidly', R, 'Scopolamine penetrates the central nervous system (CNS) more rapidly; its effects include drowsiness, euphoria and amnesia, and it is used for motion sickness.'),
+ [('It causes drowsiness', R, 'Scopolamine acts in the central nervous system (CNS), which it penetrates more rapidly; drowsiness is among its effects, with euphoria and amnesia.'),
   ('It does not cross into the CNS', W, 'Not crossing the blood–brain barrier describes neostigmine and pyridostigmine.'),
-  ('It is used to dilate the pupil for eye exams', W, 'That is tropicamide.'),
-  ('It is a short-acting inhaled bronchodilator', W, 'That is ipratropium.')],
- 'Scopolamine is a muscarinic antagonist whose site of action is mainly the central nervous system (CNS), which it penetrates more rapidly. It causes drowsiness, euphoria and amnesia, and produces anti-DUMBBELSS effects; it is used for motion sickness.',
+  ('It causes salivation and diarrhea', W, 'Those are muscarinic agonist (DUMBBELSS) effects; scopolamine causes dry mouth and constipation.'),
+  ('It blocks only the M2 receptor', W, 'Scopolamine is very non-selective: all muscarinic receptors plus histamine and serotonin receptors.')],
+ 'Scopolamine is a muscarinic antagonist whose site of action is mainly the central nervous system (CNS), which it penetrates more rapidly. It causes drowsiness, euphoria and amnesia; it blocks emesis, but the other anti-DUMBBELSS effects (dry mouth, constipation, urinary retention) come with it.',
  'Scopolamine: Penetrates the CNS more rapidly; Motion sickness; Drowsiness, euphoria, amnesia; Anti-DUMBBELSS',
  cite(3, (CHO, '24')))
 
 add('chol', 'benztropine',
  'Benztropine is a muscarinic antagonist. Where is its site of action?',
- [('The central nervous system', R, 'Benztropine is used in Parkinson’s patients for tremor and rigidity; it acts in the central nervous system.'),
+ [('The central nervous system', R, 'Benztropine, an atropine analog, blocks M1 in the brain; it is used in Parkinson’s patients for tremor and rigidity.'),
   ('The lungs, by inhalation', W, 'That is ipratropium, tiotropium, aclidinium and umeclidinium.'),
   ('M3 receptors in the bladder', W, 'That is the overactive-bladder antagonists.'),
   ('The eye (pupil)', W, 'That is tropicamide.')],
- 'In Parkinson’s disease, 70–80% of the dopaminergic neurons from the substantia nigra to the striatum are lost and acetylcholine activity is left unopposed. Benztropine blocks muscarinic receptors in the central nervous system and is used for tremor and rigidity in Parkinson’s patients treated with L-dopa.',
+ 'In Parkinson’s disease, 70–80% of the dopaminergic neurons from the substantia nigra to the striatum are lost and acetylcholine activity is left unopposed. Benztropine, an analog of atropine, is more selective for M1 receptors in the brain, so it has fewer anti-DUMBBELSS effects elsewhere; it is an add-on to L-dopa for tremor and rigidity.',
  'Benztropine (Cogentin): Parkinson’s Pts treated with L-Dopa; Tremor & rigidity; Basal Ganglia; Dopaminergic Neuron 70-80% loss',
- cite(3, (CHO, '25')))
+ cite(3, (CHO, '25')),
+ note='The drug list calls benztropine a non-selective muscarinic antagonist (M1, M2, M3); the slide names the drug and its use without its selectivity. On 10/5 he said benztropine is more selective for M1 in the brain than atropine, with fewer anti-DUMBBELSS effects elsewhere. Only the site of action (central nervous system) is keyed.')
 
 add('chol', 'tropicamide',
  'Tropicamide dilates the pupil. Which mechanism explains this?',
@@ -687,31 +694,33 @@ add('chol', 'tropicamide',
 
 add('chol', 'ipra-vs-tio',
  'Which statement correctly tells ipratropium and tiotropium apart?',
- [('Ipratropium blocks M1, M2 and M3; tiotropium blocks M1 and M3', R, 'Ipratropium: M1, M2 and M3, short acting (SAMA, 3–4 times a day). Tiotropium: M1 and M3, long acting (LAMA, once a day).'),
-  ('Ipratropium blocks M1 and M3; tiotropium blocks M1, M2 and M3', W, 'Reverses the two receptor profiles.'),
+ [('Ipratropium is short acting; tiotropium is long acting', R, 'Ipratropium is the short-acting muscarinic antagonist (SAMA, 3–4 times a day); tiotropium is a long-acting muscarinic antagonist (LAMA, once a day).'),
+  ('Ipratropium is long acting; tiotropium is short acting', W, 'Reverses the two: ipratropium is the SAMA, tiotropium the LAMA.'),
   ('Both are agonists at M3 in bronchial smooth muscle', W, 'Both are antagonists; M3 activation constricts the bronchi.'),
-  ('Ipratropium is long acting; tiotropium is short acting', W, 'Reversed: ipratropium is the short-acting muscarinic antagonist (SAMA), tiotropium the long-acting one (LAMA).')],
- 'Both are inhaled muscarinic antagonists used in the lungs, where M3 (Gq → IP3, Ca++) constricts bronchial smooth muscle and only the parasympathetic system innervates. Ipratropium (M1, M2, M3) is a short-acting muscarinic antagonist (SAMA); tiotropium (M1 and M3) is a long-acting muscarinic antagonist (LAMA).',
+  ('Both reach high levels in the blood after inhaling', W, 'Both were built for very low bioavailability, so they stay mainly in the lungs.')],
+ 'Both are inhaled muscarinic antagonists used in the lungs, where M3 (Gq → IP3, Ca++) constricts bronchial smooth muscle and only the parasympathetic system innervates. Ipratropium is a short-acting muscarinic antagonist (SAMA); tiotropium is a long-acting muscarinic antagonist (LAMA). Both have very low bioavailability and stay mainly in the airways.',
  'Ipratropium (Atrovent): M1, M2, and M3; SAMA: Short acting (3-4x/Day). Tiotropium (Spiriva): M1 and M3; LAMA: Long acting (1x/Day)',
- cite(3, (CHO, '28')), tags=['tell'])
+ cite(3, (CHO, '28')), tags=['tell'],
+ note='The slide gives ipratropium as M1, M2 and M3 and tiotropium as M1 and M3. On 10/5 he called both “less selective” and said either could affect M2 or M3 if it got into the circulation. The receptor profiles are therefore not keyed; short versus long acting is.')
 
-add('chol', 'moa-tiotropium',
- 'Which inhaled muscarinic antagonist blocks M1 and M3 but not M2?',
- [('Tiotropium', R, 'Tiotropium: M1 and M3; long-acting muscarinic antagonist (LAMA).'),
-  ('Ipratropium', W, 'Ipratropium blocks M1, M2 and M3.'),
-  ('Atropine', W, 'Atropine blocks M1, M2 and M3 and is not the inhaled agent.'),
-  ('Scopolamine', W, 'Scopolamine is a non-selective antagonist acting mainly in the central nervous system.')],
- 'Tiotropium blocks M1 and M3 and is long acting (once a day). Because M2 sits at the SA and AV node, the drug list notes that tiotropium does not affect heart rate.',
+add('chol', 'tiotropium-heart-rate',
+ 'Inhaled tiotropium is unlikely to change heart rate. Which of the following is the reason?',
+ [('It stays mainly in the lungs', R, 'Its structure gives very low bioavailability, so it stays in the airways and rarely reaches M2 in the heart.'),
+  ('It does not bind M2 receptors', W, 'Tiotropium is one of the less selective inhaled antagonists; it could affect M2 if it got into the circulation.'),
+  ('It is an agonist at M2 in the heart', W, 'Tiotropium is a muscarinic antagonist, not an agonist.'),
+  ('It activates β1 receptors in the heart', W, 'β1 is an adrenergic receptor; tiotropium is a muscarinic antagonist.')],
+ 'M2 receptors at the SA and AV node slow the heart, so blocking them would raise heart rate. Tiotropium and ipratropium are less selective inhaled muscarinic antagonists, but their chemical structure gives very low bioavailability, so they stay mainly in the lungs and seldom reach the heart.',
  'Tiotropium (Spiriva): M1 and M3; LAMA: Long acting (1x/Day)',
- cite(3, (CHO, '28')))
+ cite(3, (CHO, '10, 28')),
+ note='The drug list says heart rate is not affected because tiotropium does not target M2, and the slide gives tiotropium as M1 and M3. On 10/5 he said tiotropium is less selective and could affect M2 if it went systemic, and that its low bioavailability keeps it in the lungs. Keyed to what he said.')
 
 add('chol', 'aclidinium',
  'Which statement about aclidinium and umeclidinium is CORRECT?',
- [('They have high affinity for M3 and dissociate slowly', R, 'They have high affinity for M3; binding is reversible, but dissociation is slow. Site of action: the lungs.'),
+ [('They have high affinity for M3 and dissociate slowly', R, 'They bind M3 tightly (high affinity); binding is reversible, but dissociation is slow, so they are very long acting. Site of action: the lungs.'),
   ('They are irreversible M3 antagonists', W, 'They are reversible, with slow dissociation.'),
-  ('They are muscarinic agonists for dry mouth', W, 'Agonists for dry mouth are pilocarpine and cevimeline.'),
+  ('They are muscarinic agonists for dry mouth', W, 'The muscarinic agonist used for dry mouth is pilocarpine.'),
   ('They act on M3 in the bladder for overactive bladder', W, 'That is oxybutynin and the other overactive-bladder drugs.')],
- 'Aclidinium and umeclidinium are inhaled muscarinic antagonists acting in the lungs. They bind M3 with high affinity; the binding is reversible, but they dissociate slowly. The drug list classes them as long-acting muscarinic antagonists.',
+ 'Aclidinium and umeclidinium are inhaled muscarinic antagonists acting in the lungs. They bind M3 with high affinity and are more selective for M3 than ipratropium and tiotropium; the binding is reversible, but they dissociate slowly, so they are very long acting (long-acting muscarinic antagonists).',
  'Aclidinium and Umeclidinium: High affinity for the M3 (reversible, but slow dissociation)',
  cite(4, (CHO, '28')))
 
@@ -733,21 +742,20 @@ add('chol', 'moa-oab',
   ('β3 agonist in bladder smooth muscle', W, 'That is mirabegron.'),
   ('Non-selective muscarinic agonist', W, 'That is bethanechol, used for urinary retention.'),
   ('α1 antagonist in the urethra', W, 'That is prazosin, terazosin, doxazosin and tamsulosin.')],
- 'Oxybutynin, tolterodine, fesoterodine, solifenacin, darifenacin and trospium are reversible muscarinic antagonists, more selective toward the M3 receptors in the bladder. They decrease urgency, frequency and leakage in overactive bladder.',
+ 'Oxybutynin, trospium and solifenacin are reversible muscarinic antagonists designed to be more selective toward the M3 receptors in the bladder. Blocking bladder M3 relaxes the bladder and decreases urgency, frequency and leakage in overactive bladder.',
  'Muscarinic Antagonists for Overactive Bladder Disorders … MOA: Non-selective, reversible, and hepatic metabolism (3A4 or 2D6); More selective towards the M3 receptors in the bladder',
  cite(4, (CHO, '29')))
 
 add('chol', 'oab-cns',
- 'Which overactive-bladder muscarinic antagonist is most likely to cause central effects (drowsiness, dizziness, confusion)?',
- [('Oxybutynin', R, 'Oxybutynin (M1 and M3) is at the top of the order of drugs with central effects.'),
-  ('Solifenacin', W, 'Solifenacin (M3) is in the group with the fewest central effects.'),
-  ('Darifenacin', W, 'Darifenacin (M3) is in the group with the fewest central effects.'),
-  ('Trospium', W, 'Trospium (M3) is in the group with the fewest central effects.'),
-  ('Fesoterodine', W, 'Fesoterodine (M1 and M3) is in the middle group, with tolterodine.')],
- 'All overactive-bladder antagonists can cause anti-DUMBBELSS, especially dry mouth and constipation (M3). Central effects (drowsiness, dizziness, confusion) follow M1 block: oxybutynin (M1 and M3) most, then tolterodine and fesoterodine, and least solifenacin, darifenacin and trospium (M3).',
+ 'Which statement about oxybutynin and solifenacin is CORRECT?',
+ [('Oxybutynin is more likely to cause sedation', R, 'Oxybutynin is less selective: it blocks M1 in the brain as well as M3, so it causes sedation; solifenacin is more selective for M3.'),
+  ('Solifenacin is more likely to cause sedation', W, 'Reversed: solifenacin is the more M3-selective drug, with fewer central effects.'),
+  ('Only oxybutynin can cause anti-DUMBBELSS', W, 'All of them can; a high enough dose of solifenacin gives all the anti-DUMBBELSS effects.'),
+  ('Both act mainly on M2 in the bladder', W, 'The bladder target is M3; M2 is the cardiac muscarinic receptor.')],
+ 'All overactive-bladder antagonists can cause anti-DUMBBELSS, especially dry mouth and constipation (M3). Central effects (drowsiness, dizziness, confusion) follow M1 block: oxybutynin (M1 and M3, the oldest and cheapest) most, and least the M3-selective solifenacin and trospium. At therapeutic doses the M3-selective drugs act more on the bladder and cause fewer anti-DUMBBELSS effects; at higher doses they cause them all.',
  'Order of drugs with CNS effects (Drowsiness, dizziness, & confusion): M1 & M3 — Oxybutynin; M1 & M3 — Tolterodine, Fesoterodine; M3 — Solifenacin, Darifenacin, Trospium',
  cite(4, (CHO, '30')), tags=['tell'],
- note='The drug list says solifenacin, darifenacin and trospium are “least likely to cause anti-DUMBBELSS”; the slide says all of them can cause anti-DUMBBELSS and places the three lowest for central effects. Keyed to the slide.')
+ note='The drug list says solifenacin, darifenacin and trospium are “least likely to cause anti-DUMBBELSS”; the slide says all of them can cause anti-DUMBBELSS and places the three lowest for central effects. On 10/5 he said both: the M3-selective drugs cause fewer anti-DUMBBELSS effects at therapeutic doses, but “if I give enough of VESIcare, I’m gonna get all the anti-dumbbells”. He named oxybutynin, trospium and solifenacin as the three overactive-bladder drugs for the exam.')
 
 add('chol', 'adr-oab',
  'Which adverse effects are shared by all the overactive-bladder muscarinic antagonists?',
@@ -756,7 +764,7 @@ add('chol', 'adr-oab',
   ('Diarrhea', W, 'Diarrhea is a muscarinic agonist (DUMBBELSS) effect.'),
   ('Miosis', W, 'Miosis is an agonist effect; antagonists dilate the pupil.'),
   ('Bradycardia', W, 'Bradycardia is an agonist effect (M2); antagonists raise heart rate.')],
- 'All overactive-bladder antagonists have the potential to cause anti-DUMBBELSS. The effects shared by all muscarinic antagonists through M3 are xerostomia (dry mouth) and constipation.',
+ 'All overactive-bladder antagonists (oxybutynin, trospium, solifenacin and the others) have the potential to cause anti-DUMBBELSS; the more M3-selective ones need a higher dose to do so. The effects shared by all muscarinic antagonists through M3 are xerostomia (dry mouth) and constipation.',
  'All have the potential to cause anti-DUMBBELSS: Xerostomia (dry mouth) and constipation — M3 — All Musc. Antag',
  cite(4, (CHO, '30')), multi=True)
 
@@ -1214,6 +1222,88 @@ add('raas', 'metoprolol-renin',
  cite(10), tags=['apply'])
 
 # --------------------------------------------------------------------------
+# Transcript 10/5 (NMJ deck end + whole cholinergic deck, drug by drug).
+# Every NMJ / cholinergic item he discussed gets his words as its quote,
+# '; transcript 10/5' in its cite and source 'both'.  Quotes are verbatim from
+# the transcript file (its spellings kept, e.g. "karate" for curare); ' … '
+# joins separate spans.
+# --------------------------------------------------------------------------
+TQ = {
+ 'DL2-001': "Now, this group is gonna be divided in two different categories, depolarizing, which is the same thing as an agonist, it is activating the receptors, and non-depolarizing, which is gonna be the antagonist. … Acetylcholine is an agonist, but it's broken down very quickly.",
+ 'DL2-002': "So what is the mechanism of action for Chantix? So it's a partial agonist to what? The alpha 4, beta 2, nicotinic, what type of nicotinic receptor? And for what neuronal.",
+ 'DL2-003': "If it's neuronal, that should be a key that the site of action that drugs where in the brain.",
+ 'DL2-004': "As such, some of the side effects are gonna be where in the brain, depression, lack of being able to sleep because you are activating the receptors … Uh, there's also some GI side effects. Uh, I don't think if I listed for you guys, but flatulence is a complaint for the patients. They get a lot of gas.",
+ 'DL2-005': "You must know that a sucycholine is an agonist that depolarize or open those ion channels. That's the mechanism of action.",
+ 'DL2-006': "And the first one is that opening of all the receptors. That's called phase one. And then if it stays around longer, now it actually can get lodged inside of that channel. And that will be a phase 2. Now it's blocking anything from going through.",
+ 'DL2-007': "so they may get hyperkalemia … So patients can get actually hyperthermia. They get too hot, right, because they can't, their muscles. … so your blood pressure is gonna go up, hypertension, and your heart is gonna be fighting between the parasympathetic and the sympathetic … And patients actually complain of uh muscle pain, myalgia",
+ 'DL2-008': "So if you infuse for a longer period of time, you're gonna start to open those nicotinic receptors in the ganglia, which is gonna increase your parasympathetic and sympathetic at the same time.",
+ 'DL2-009': "Uh, this is what I was telling you about that malignant hyperthermia. Their, their body pressure gets really, really high, uh, especially if you combine with an anesthetic that put them to sleep, such as halotane.",
+ 'DL2-010': "But for our purpose on exam two, all I need you to know is that any karate-like drug is what? A competitive, reversible NM antagonist, and by blocking the NM, what are you gonna get? Paralysis, right?",
+ 'DL2-011': "However, if you know that it is a C U R in the middle, it doesn't matter if it's vecuronio, Rocuronio, Pencuronio. They're all the same.",
+ 'DL2-012': "If a patient is administered Rocuronium. Which of the following is most likely to occur? … So what we have over here is paralysis. That's always going to happen.",
+ 'DL2-013': "The key thing for you to remember is these drugs don't cross the blood brain barrier. They have no effect on memory or putting your patient to sleep. They just paralyze your patients.",
+ 'DL2-014': "So one over here, they're both reversible, right, but physostigamine, it crosses the brain, the blood vein barrier, penetrates the blood vein barrier, as neostigimine or pyredos stigmine do not cross the blood vein barrier.",
+ 'DL2-015': "So, uh, Pfizostigamine typically is gonna be used for as an antidote if somebody has this, uh, you know, overdose on, say, atropine",
+ 'DL2-016': "physostigamine, it crosses the brain, the blood vein barrier, penetrates the blood vein barrier, as neostigimine or pyredos stigmine do not cross the blood vein barrier. … For our exam purpose, I only need you to know rivastigamine and donepezil … And those drugs are extremely lipid soluble. They will get to the brain",
+ 'DL2-017': "as neostigimine or pyredos stigmine do not cross the blood vein barrier. … But for myasthenia gravis patients, let's keep the one that stays in the periphery",
+ 'DL2-018': "So neo stigamine, which does not cross the blood brain barrier but can increase the levels of acetylcholine in the synapse of your skeletal muscle, would give you a better chance of outcompeting karate and regain some movement for your friend. Yes. I have a question similar to this in the exam every year, and about 30% of the class misses it.",
+ 'DL2-019': "So for our purpose on the exam, I'm not too worried about androfomia, right? What I worry about is the one that you're gonna be dispensing to your patients.",
+ 'DL2-020': "So what kind of side effects do you expect this drug to produce? Dumbbells across the border, right? … So diarrhea, urination, meiosis, bronchial constriction, bradycardia, emesis, which is the same thing as vomiting, lachrymation, salivation, and stimulation of the brain",
+ 'DL2-021': "So what we can do is we can get echothiofate. … Those are irreversible antagonists to the acetylchonasterase enzyme.",
+ 'DL2-022': "Uh, as a side effect over here, right, it's gonna cause some of meiosis, blurred vision, because your pupils are gonna get smaller. You can't help that. You can get the the lachrymation. Anything that you put in the eye is gonna sting, it's gonna cause a little bit of uh redness to the eye.",
+ 'DL2-023': "So Botox is an enzyme that breaks down the snare protein, and if you don't have the snare protein, your vesicles can't bind properly and thus you can't release the cetylcholine.",
+ 'DL2-024': "Now, the key for you in the exam is anytime you see a drug that has a stickyine in it, you know it has to do what with the pseudocholinesterase enzyme. … and rivasciamine is an antagonist to the psytocholesterase enzyme.",
+ 'DL2-025': "Pennyline is a partial agonist to the NN receptor. Succylcholine is an agonist to the nicotinic receptor. … Acetylcholine is an agonist, but it's broken down very quickly.",
+ 'DL2-026': "Well, for these drugs, all of them are gonna be non-selective agonists to the M1s, M2s, and M3s. … They're all reversible, so they're all competitive, they're gonna bind, and they're gonna come off.",
+ 'DL2-027': "So, I have over here methylcholine, carbacol, Bethenacol, so they all have that call for cholinergic, right? … but for our purpose on the exam, I'm gonna expect you to know pilocarpine as one of the two, OK?",
+ 'DL2-028': "I don't care if you know that it is an aure, that is not hydrolyzed, that's mad Kim kind of stuff, right?",
+ 'DL2-029': "What I need you to know is that it does not bind or activate the nicotinic receptors. It only has affinity for the muscarinics.",
+ 'DL2-030': "So when we give an agonist, we're gonna produce what the dumbbells, right? We're gonna increase motilage in tone, so diarrhea, cramping, increased urination, uh, meiosis, which makes your pupil small, bradycardia, bronchial constriction, emesis",
+ 'DL2-031': "So when you see drugs like atropine with a trope, what you should be thinking about, those are non-selective muscarinic antagonists that is going to block the M1s, the M2s, and the M3s everywhere else. … This drug is going to be also reversible as well.",
+ 'DL2-032': "The anti-dumbbells, if it is for diarrhea, you get constipation. … Meiosis, you get the midriasis. Your pupils dilate, instead of getting the bronchial constriction, you get bronchial dilation. You can't cry. You can't sweat, and you're gonna go sedated.",
+ 'DL2-033': "So if I block the M2s, now the sympathetic is unopposed, I'm going to get what? tachycardia.",
+ 'DL2-034': "You wanna give to pm to break some of those bonds, but it can't stop the dumbbells, right? So how can we manage the dumbbells? By giving atropine.",
+ 'DL2-035': "We also have the scopolamine, which is a non-selective muscarin. That one is really non-selective. That not only blocks all the muscarinics, but also histamine and serotonin receptors.",
+ 'DL2-036': "Typical typically people use dromamine or scopolamine for motion sickness. … You're drowsy, but you have to take about 3 hours before you get on the boat",
+ 'DL2-037': "Uh, we can also use an analog of atropine called benztropine. This is a drug used for treatment of Parkinson's disease. … benzotropine is more selective to the beta 1s in the to the M1s in the brain, and it's gonna have less of those anti-dumbbells that you can get, uh, someplace else.",
+ 'DL2-038': "Well, we know that the sympathetic cause pupil dilation. The parasympathetic cause pupil constriction. … So by blocking those M3s, I'm gonna get, instead of pupil constriction, I'm gonna get pupil dilation, also known as madriasis.",
+ 'DL2-039': "So we have, for example, ipratropium, that's the short acting called SAA, right? Or the teotropin-like drugs, which are called the lemmas.",
+ 'DL2-040': "The ipratropium and the tiotropium are less selective, but what we have done for them is change their chemical structure so that they have very low bioavailability, so they stay primarily within the lungs. So even though they can affect the M2s or the M3s, it's very likely, unlikely because they don't get systemic.",
+ 'DL2-041': "And we have two drugs, the clinidiums in the bottom. Those are really long acting. … So they have a very high tight binding, so a very high affinity, and they're more selective to the M3s.",
+ 'DL2-042': "So for example, if your patient has COPD and they use an inhaler, where do you want the drug to be at? In the lungs. … so that they have very low bioavailability, so they stay primarily within the lungs.",
+ 'DL2-043': "So by giving this muscarinic antagonist and blocking the M3s in the bladder, we're gonna relax the bladder so you don't have that urgency of having to go potty all the time. … these drugs, they are designed, bless you, to be more selective to the M3s in the bladder",
+ 'DL2-044': "Now, oxybutynin over here, uh, when we look at their anti-muscarin effect, they are less selective. They can affect the M1s and they can affect the M3s. What effect they would have by affecting the M1s? What would be the site of action? The brain, right? So they'll cause sedation.",
+ 'DL2-045': "If I give enough of VESIcare, I'm gonna get all the anti-dumbbells.",
+}
+
+# His exam-scope statements on 10/5 that take items out of the bank.  The item
+# stays in the generator so later ids do not shift; it is not posted.
+SCOPE = [
+ ('Brand names', "Uh, you don't need to know brand names for the exam, just generic", 'No stem or option names a brand.'),
+ ('Use', "I'm not testing you on the use. I'm testing you on the mechanism of action, the site of actions, and the effects this drug is gonna produce, OK?", 'Use items kept only where he asked them himself (curare reversal with neostigmine, physostigmine for atropine overdose, atropine for organophosphate poisoning).'),
+ ('Curare-like drugs', "But for our purpose on exam two, all I need you to know is that any karate-like drug is what? A competitive, reversible NM antagonist, and by blocking the NM, what are you gonna get? Paralysis, right?", 'DL2-012 rewritten to his rocuronium question (paralysis); drug-specific reactions kept as teach only.'),
+ ('Half-lives of curare-like drugs', "Again, I'm not asking you to know the half-life of these drugs, this is just for information.", 'Not asked.'),
+ ('Edrophonium', "So for our purpose on the exam, I'm not too worried about androfomia, right?", 'DL2-019 removed; edrophonium dropped from the DL2-011, DL2-015, DL2-021 and DL2-024 options.'),
+ ('Alzheimer’s drugs', "For our exam purpose, I only need you to know rivastigamine and donepezil because those are your top more prescribed drugs for that purpose.", 'Galantamine removed from DL2-016 options and from DL2-017 and DL2-024 text; its half-life is not asked.'),
+ ('Muscarinic agonists', "but for our purpose on the exam, I'm gonna expect you to know pilocarpine as one of the two, OK?", 'Cevimeline removed from DL2-027 options and teach text.'),
+ ('Pilocarpine chemistry', "I don't care if you know that it is an aure, that is not hydrolyzed, that's mad Kim kind of stuff, right?", 'DL2-028 (hydrolysis by acetylcholinesterase) removed; hydrolysis distractor in DL2-029 replaced.'),
+ ('Agonist efficacy', "But for exam purpose, we're gonna assume they all have equal efficacies, OK, and affinities", 'Carbachol versus pilocarpine in the heart is not asked.'),
+ ('Overactive bladder', "So, those are gonna be the three that are gonna be responsible for me on the exam.", 'Oxybutynin, trospium and solifenacin only; DL2-044 rewritten without darifenacin and fesoterodine.'),
+ ('Dose–response curves', "but on your exam too, there will not be any dose response curves, OK?", 'No DL2 item uses a curve.'),
+]
+REMOVED = {
+ 'DL2-019': 'edrophonium: “I’m not too worried about” it for the exam (diagnostic only)',
+ 'DL2-028': 'hydrolysis by acetylcholinesterase: pilocarpine’s chemistry is “FYI”, not tested',
+}
+for q in qs:
+    if q['id'] in TQ:
+        q['source'] = 'both'
+        q['cite'] += '; transcript 10/5'
+        q['quote'] = TQ[q['id']]
+    if q['id'] in REMOVED:
+        q['removed'] = REMOVED[q['id']]
+
+# --------------------------------------------------------------------------
 # Checks
 # --------------------------------------------------------------------------
 ABBR = {
@@ -1261,7 +1351,7 @@ out = ["TOPICS.push({id:'DL2', name:'Exam 2 drug list', prof:'Gottlieb', lecture
 for q in qs:
     if q['concept'] in ('moa-nitrates', 'moa-pde', 'group-cgmp'):
         q['sub'] = 'no'
-posted = [q for q in qs if q['sub'] not in HELD]
+posted = [q for q in qs if q['sub'] not in HELD and not q.get('removed')]
 out.append(',\n'.join(json.dumps(q, ensure_ascii=False) for q in posted))
 out.append(');')
 open(os.path.join(here, 'q_DL2.js'), 'w', encoding='utf-8').write('\n'.join(out) + '\n')
@@ -1276,7 +1366,7 @@ md = ['# DL2 — Exam 2 drug list', '',
       '',
       'Generated by `src/gen_druglist2.py` (writes `src/q_DL2.js` and this file). Parsing method: the text extraction (`decks/Pharmacology_Exam_2_Drug_List.txt`) was read alongside page renders of the PDF to assign each cell to its column; rows that run across a page break are given both pages.',
       '',
-      'Verification decks: `Autonomic Nervous System.pdf`, `PCOL-NMJ_PCOL_2026s_pptx.pdf`, `PCOL-Cholinergic-26s.pdf`. The adrenergic and RAAS decks are not available yet, so every adrenergic and RAAS drug except epinephrine and norepinephrine is “list only”. Day 1 slide 8 (Exam 1 deck) says Exam 2 tests MOA, SOA, ADRs and DDIs and not use/indication, dose, route or brand names, so the bank asks few use items and no brand names.',
+      'Verification decks: `Autonomic Nervous System.pdf`, `PCOL-NMJ_PCOL_2026s_pptx.pdf`, `PCOL-Cholinergic-26s.pdf`. The adrenergic and RAAS decks are not available yet, so every adrenergic and RAAS drug except epinephrine and norepinephrine is “list only”. Day 1 slide 8 (Exam 1 deck) says Exam 2 tests MOA, SOA, ADRs and DDIs and not use/indication, dose, route or brand names, so the bank asks few use items and no brand names. On 10/5 he repeated it: “you don’t need to know brand names for the exam, just generic” (see Exam scope below).',
       '']
 for sec in ['nmj', 'chol', 'adr', 'raas']:
     md += [f'## {SEC[sec]}', '', '| Drug(s) | Colour | MOA | SOA | ADRs | Key information | Page | Verified |', '|---|---|---|---|---|---|---|---|']
@@ -1290,16 +1380,24 @@ unv_drugs = [d for r in ROWS if r['status'] == 'list' for d in r['drugs']]
 md += ['## Verification status', '',
        f'Confirmed on a slide ({len(ver_drugs)} entries): ' + '; '.join(ver_drugs) + '.', '',
        f'List only, no slide yet ({len(unv_drugs)} entries): ' + '; '.join(unv_drugs) + '.', '',
-       '## Conflicts / uncertain (list vs slide; the slide wins)', '',
-       '| Drug | Drug list says | Slide says | Resolution |', '|---|---|---|---|']
-for d, a, b, c in CONFLICTS:
-    md.append(f'| {esc(d)} | {esc(a)} | {esc(b)} | {esc(c)} |')
+       '## Conflicts / uncertain (list vs slide vs transcript 10/5)', '',
+       'The slide wins over the list; where the 10/5 transcript is explicit, his words win over both.', '',
+       '| Drug | Drug list says | Slide says | Transcript 10/5 says | Resolution |', '|---|---|---|---|---|']
+for d, a, b, t, c in CONFLICTS:
+    md.append(f'| {esc(d)} | {esc(a)} | {esc(b)} | {esc(t)} | {esc(c)} |')
+md += ['', '## Exam scope from transcript 10/5', '',
+       'His statements on 10/5 about what Exam 2 asks, and what the bank does about each. Removed items keep their ids in the generator so later ids do not shift; they are not posted.', '',
+       '| Topic | His words (10/5) | Effect on the bank |', '|---|---|---|']
+for k, w, e in SCOPE:
+    md.append(f'| {esc(k)} | “{esc(w)}” | {esc(e)} |')
+md += ['', 'Removed: ' + '; '.join(f'{i} ({r})' for i, r in REMOVED.items()) + '.', '',
+       f"Transcript 10/5 (`transcripts/2026-10-05_transcript.txt`) covers the rest of the NMJ deck and the whole cholinergic deck; {sum(1 for q in qs if q['id'] in TQ and not q.get('removed'))} posted items carry his words as their quote (source `both`).", '']
 md += ['', '## Questions', '']
 per = {}
 for q in qs: per[q['sub']] = per.get(q['sub'], 0) + 1
-md.append(f"{len(qs)} questions written, {len(posted)} posted (all skill `drug`; {sum(1 for q in qs if q.get('multi'))} select-all). Per sub: " + ', '.join(f'{k} {v}' for k, v in per.items()) + '.')
+md.append(f"{len(qs)} questions written, {len(posted)} posted, {len(REMOVED)} removed by his exam-scope statements (all skill `drug`; {sum(1 for q in qs if q.get('multi'))} select-all). Per sub: " + ', '.join(f'{k} {v}' for k, v in per.items()) + '.')
 md.append('')
 for q in qs:
-    md.append(f"- {q['id']} ({q['sub']}{', HELD' if q['sub'] in HELD else ''}{', select-all' if q.get('multi') else ''}{', note' if q.get('note') else ''}): {q['stem']}")
+    md.append(f"- {q['id']} ({q['sub']}{', HELD' if q['sub'] in HELD else ''}{', REMOVED' if q.get('removed') else ''}{', select-all' if q.get('multi') else ''}{', note' if q.get('note') else ''}{', transcript 10/5' if q['source'] == 'both' else ''}): {q['stem']}")
 open(os.path.join(here, '..', 'notes', 'DL2.md'), 'w', encoding='utf-8').write('\n'.join(md) + '\n')
-print(len(posted), 'drug-list questions posted,', len(qs) - len(posted), 'held until their slides and transcripts arrive;', 'per sub', per)
+print(len(posted), 'drug-list questions posted,', len(REMOVED), 'removed,', len(qs) - len(posted) - len(REMOVED), 'held until their slides and transcripts arrive;', 'per sub', per)

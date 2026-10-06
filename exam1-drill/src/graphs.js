@@ -219,5 +219,16 @@ const GRAPHS = [
   'Did it reach 100%? No, it wants the system at about 50%: a partial agonist, pindolol, which brings a low heart rate up and a high heart rate down.',
   'The trap: a curve that goes down is not automatically an inverse agonist; look at where it stops.'],
  method:'Ask: does it have efficacy, did it go to 0, did it go to 100%; the answers yes, no, no are a partial agonist.',
- asks:['This drug is: Full agonist / Partial agonist / Inverse agonist / Competitive antagonist / Irreversible antagonist', 'This drug is most likely: (drug-list names)', 'Which feature rules out an inverse agonist / a neutral antagonist?', 'Why might pindolol be chosen for a hypertensive patient with a low heart rate?']}
+ asks:['This drug is: Full agonist / Partial agonist / Inverse agonist / Competitive antagonist / Irreversible antagonist', 'This drug is most likely: (drug-list names)', 'Which feature rules out an inverse agonist / a neutral antagonist?', 'Why might pindolol be chosen for a hypertensive patient with a low heart rate?']},
+
+{key:'pe2-gi-tracing', alts:[], exam:2,
+ title:'GI smooth muscle tone: pilocarpine before and after drug X (PollEV, Exam 2)', group:'Other', source:'PollEV’s Exam 2.pdf (poll screenshot)',
+ read:[
+  'This is a tracing, not a dose–response curve: the y-axis is GI smooth muscle tone over time; the dotted lines mark the two pilocarpine doses and the arrow marks drug X.',
+  'First pilocarpine: tone rises and comes back down. Pilocarpine is a muscarinic agonist; on GI M3 (Gq, ↑Ca++) it increases motility and tone.',
+  'Drug X: tone falls a little below the starting line; the resting parasympathetic (PNS) tone of the gut has been blocked.',
+  'Second pilocarpine: no rise at all. The receptor pilocarpine acts on is blocked, so X is a muscarinic (M3) antagonist: atropine.',
+  'The trap: a drug that stops acetylcholine release (Botox) or blocks Nm (rocuronium) would not stop a direct muscarinic agonist on smooth muscle; a cholinesterase inhibitor or another agonist would raise tone.'],
+ method:'Name the agonist and its receptor, read what it does before X, then ask whether X helped (bigger response) or made life more difficult (smaller or none), and pick the drug that blocks that receptor.',
+ asks:['Drug X is most likely to be: Carbachol / Neostigmine / Rocuronium / Atropine / Varenicline', 'What does pilocarpine do to GI tone, and through which receptor?', 'Why does the second pilocarpine dose produce no rise?', 'Which other drug could be drug X?']}
 ];

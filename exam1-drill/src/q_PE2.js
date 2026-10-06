@@ -132,7 +132,7 @@ QUESTIONS.push(
   {t:'All of the above', correct:true, why:'All four statements are true; the class answered E and he confirmed “All the above.”'}],
  teach:'Ganglia of both the parasympathetic (PNS) and sympathetic (SNS) divisions use acetylcholine on Nn receptors. Cyclic AMP (cAMP) is a second messenger in many functions. The autonomic system is involuntary, with PNS and SNS branches. β2 receptors are typically not innervated. His test-taking tip: when at least two statements are right, go for all of the above.',
  quote:'54321 services. My ja says E, is that the correct answer? It is, right? All the above. Very good.',
- note:'The 9/30 audio does not read this poll’s stem aloud. The one clicker question he keyed on 9/30 after the neurotransmission slides was answered “E … All the above”, and every statement in this poll was taught on 9/30 before that point; polls 1–3, 5 and 6 are all keyed on 10/1. The match of this poll to that 9/30 answer is by elimination, not by a spoken stem.',
+ note:'The 9/30 audio does not read this poll’s stem aloud. The one clicker question he keyed on 9/30 after the neurotransmission slides was answered “E … All the above”, and every statement in this poll was taught on 9/30 before that point; polls 1–3, 5 and 6 are all keyed on 10/1. The match of this poll to that 9/30 answer is by elimination, not by a spoken stem; the updated poll sheet (10/6) highlights All of the above as the class key.',
  cite:'PollEV’s Exam 2.pdf poll 4; transcript 9/30; Autonomic Nervous System.pdf slides 7, 11–13'},
 
 {id:'PE2-011', lecture:'PE2', prof:'Gottlieb', tier:'new', topic:'PE2', sub:'variant', skill:'recall',
@@ -235,5 +235,241 @@ QUESTIONS.push(
   {t:'Muscarinic M1 receptors in the brain', correct:false, why:'Varenicline is nicotinic, not muscarinic.'}],
  teach:'Neuronal nicotinic (Nn) receptors are built from α2–α9 and β2–β4 subunits; the combination to know is α4β2. Varenicline is a selective partial agonist there, so it acts on the brain sites of nicotine addiction and leaves the ganglia and the skeletal muscle alone. Because the site of action is the brain, most side effects are in the brain.',
  quote:'This drug is a selective partial agonist to that specific combination of alpha 4, beta 2, nicotinic receptors. What it means is it\'s going to leave the nicotinic receptors in the ganglia alone, the nicotinic receptors in the skeletal muscle alone.',
- cite:'PollEV’s Exam 2.pdf poll 6 (variant); transcript 10/1'}
+ cite:'PollEV’s Exam 2.pdf poll 6 (variant); transcript 10/1'},
+
+/* ================ 10/5 polls (verbatim, keys highlighted on his sheet) ================ */
+/* ---------------- Poll 7: paralysis by antagonizing ACh at Nm ---------------- */
+{id:'PE2-019', lecture:'PE2', prof:'Gottlieb', tier:'new', topic:'PE2', sub:'verbatim', skill:'tell',
+ concept:'rocuronium-antagonist-paralysis', tags:['poll','pollev','verbatim'], source:'both',
+ stem:'Which of the following drugs causes paralysis by antagonizing the binding of ACh to the Nm receptor?',
+ options:[
+  {t:'Varenicline', correct:false, why:'Varenicline is a partial agonist at the α4/β2 neuronal nicotinic (Nn) receptor in the brain; it does not cause paralysis.'},
+  {t:'Succinycholine', correct:false, why:'Succinylcholine does cause paralysis, but as an agonist: it opens the Nm channel and does not compete with acetylcholine (ACh).'},
+  {t:'Rocuronium', correct:true, why:'His key: rocuronium is a curare-like competitive, reversible Nm antagonist; it stops ACh from binding and opening the channel, so the muscle is paralyzed.'},
+  {t:'Norepinephrine', correct:false, why:'Norepinephrine is an adrenergic agonist; it does not act at the Nm receptor and does not cause paralysis.'}],
+ teach:'Two of the four options cause paralysis at the muscle nicotinic (Nm) receptor, by opposite mechanisms. Succinylcholine is a depolarizing agonist that opens the channel; curare-like drugs (any drug with -cur- in its name, such as rocuronium) are non-depolarizing competitive antagonists with affinity but no efficacy. The stem asks for the antagonist, so the agonist is out.',
+ quote:'So out of these questions, just based on the stem, you should be able to eliminate two options, right? Right off the bat because two of them may cause paralysis, the other two do not cause paralysis ... Why is not B as in boy? Because they don\'t compete with a pseudocholine. They\'re both agonists. ... Uh, so, uh, Roqueron will be the best answer.',
+ note:'“Succinycholine” is his spelling on the poll (succinylcholine); kept as written. Bonus-point poll on 10/5. Green highlight on the sheet: Rocuronium; in the audio he keys C and rules out B because it is an agonist.',
+ cite:'PollEV’s Exam 2.pdf poll 7; transcript 10/5; PCOL-NMJ_PCOL_2026s_pptx.pdf slide 19'},
+
+/* ---------------- Poll 8: rocuronium, most likely effect ---------------- */
+{id:'PE2-020', lecture:'PE2', prof:'Gottlieb', tier:'new', topic:'PE2', sub:'verbatim', skill:'apply',
+ concept:'rocuronium-effect-paralysis', tags:['poll','pollev','verbatim'], source:'both',
+ stem:'If a patient is administered rocuronium, which of the following is most likely to occur?',
+ options:[
+  {t:'diarrhea', correct:false, why:'The gut is controlled by muscarinic receptors; rocuronium blocks Nm at skeletal muscle.'},
+  {t:'increase urination', correct:false, why:'The bladder needs muscarinic or adrenergic receptors; rocuronium does not act there.'},
+  {t:'hypertension', correct:false, why:'Blood vessels are controlled only by adrenergic (sympathetic) receptors; rocuronium does not act on them.'},
+  {t:'paralysis', correct:true, why:'His key: blocking the muscle nicotinic (Nm) receptor causes paralysis every time; it is what the drug is used for.'},
+  {t:'bronchial constriction', correct:false, why:'Bronchial constriction is a muscarinic effect; bronchial spasm from histamine release is a curare-like side effect with a very small chance for rocuronium.'}],
+ teach:'Rocuronium is a curare-like competitive Nm antagonist, so paralysis happens 100% of the time. To affect an organ, a drug needs the receptor that controls it: the gut is muscarinic, the bladder muscarinic or adrenergic, and the blood vessels adrenergic. Histamine release may or may not happen with some curare-like drugs, and with rocuronium the chance is very small.',
+ quote:'All right, what is the best answer? Paralysis, right? Remember, in order to affect the gut, it has to be what? muscarinic. In order to affect the bladder, it has to be muscarinic or adrenergic, right? Uh, in order to affect the blood vessel has to be adrenergic because that\'s the only, uh, sympathetic that we have. ... So what we have over here is paralysis. That\'s always going to happen.',
+ note:'Green highlight: paralysis; he keyed paralysis aloud on 10/5. A student argued for a histamine effect; he answered that paralysis happens every time while histamine release may or may not, “But Rocuronium, very small chance”. In the same answer he said it “may cause bronchodilation because of the release of histamine”; slides 30 and 32 list bronchial spasm from histamine release, so that remark is treated as misspoken.',
+ cite:'PollEV’s Exam 2.pdf poll 8; transcript 10/5; PCOL-NMJ_PCOL_2026s_pptx.pdf slides 19, 30, 32'},
+
+/* ---------------- Poll 9: rivastigmine ---------------- */
+{id:'PE2-021', lecture:'PE2', prof:'Gottlieb', tier:'new', topic:'PE2', sub:'verbatim', skill:'apply',
+ concept:'stigmine-dumbbelss', tags:['poll','pollev','verbatim','druglist'], source:'both',
+ stem:'Rivastigmine is most likely to produce:',
+ options:[
+  {t:'Constipation', correct:false, why:'Constipation is an anti-DUMBBELSS (antagonist) effect; a -stigmine raises acetylcholine and causes diarrhea.'},
+  {t:'Tachycardia', correct:false, why:'-stigmines cause bradycardia, part of DUMBBELSS.'},
+  {t:'Salivation', correct:true, why:'His key (C): rivastigmine inhibits the cholinesterase enzyme, acetylcholine becomes more potent everywhere, and salivation is the S of DUMBBELSS.'},
+  {t:'Decrease urination', correct:false, why:'Anti-DUMBBELSS; more acetylcholine squeezes the bladder and increases urination.'},
+  {t:'Pupil dilation', correct:false, why:'Anti-DUMBBELSS; -stigmines cause miosis (pupil constriction).'}],
+ teach:'Any drug with -stigmine in its name inhibits the cholinesterase enzyme, so acetylcholine is not broken down and is more potent all over the body. The side effects are DUMBBELSS: diarrhea, urination, miosis, bronchial constriction, bradycardia, emesis, lacrimation, salivation and stimulation of the brain. Every wrong option here is an anti-DUMBBELSS effect.',
+ quote:'So as far as side effects go, they\'re going to cause the dumbbells. Why? Because you\'re making acetylcholine more potent all over the body. ... What is the best answer? We have uh C as in cat, is that part of the process? Yes, that\'s the dumbbells, right?',
+ note:'Green highlight: Salivation (option C). On 10/5, before showing the results, he said “Are you sure it\'s not D as in David? OK. Just trying to help.”; D (Decrease urination) is anti-DUMBBELSS, and he then keyed C.',
+ cite:'PollEV’s Exam 2.pdf poll 9; transcript 10/5; PCOL-NMJ_PCOL_2026s_pptx.pdf slides 40–41'},
+
+/* ---------------- Poll 10: curare arrow (NTK) ---------------- */
+{id:'PE2-022', lecture:'PE2', prof:'Gottlieb', tier:'new', topic:'PE2', sub:'verbatim', skill:'apply',
+ concept:'curare-reversal-neostigmine', tags:['poll','pollev','verbatim','exam-cue','ntk','druglist'], source:'both',
+ stem:'While hunting, your friend had an accident and pocked himself with an arrow tip (contain curare). Which of these would you have to do to reverse the effects?',
+ options:[
+  {t:'Succinylcholine', correct:false, why:'Succinylcholine also causes paralysis; adding another paralytic agent stops the diaphragm and breathing.'},
+  {t:'Rocuronium', correct:false, why:'Rocuronium has -cur- in its name and belongs to the same class as curare; it doubles the paralysis.'},
+  {t:'Neostigmine', correct:true, why:'His key: neostigmine does not cross the blood–brain barrier but raises acetylcholine at the skeletal muscle synapse, which outcompetes curare.'},
+  {t:'Varenicline', correct:false, why:'Varenicline acts on neuronal nicotinic receptors in the brain; curare has no effect in the brain, so it gives no benefit.'},
+  {t:'Tickle your friend', correct:false, why:'A paralyzed friend cannot laugh or move; tickling does nothing to the block at the receptor.'}],
+ teach:'Any drug with -cur- in its name is a competitive, reversible antagonist at the muscle nicotinic (Nm) receptor and causes paralysis. Reversal needs the opposite effect: more acetylcholine at the skeletal muscle synapse. A cholinesterase inhibitor such as neostigmine blocks acetylcholine breakdown and lets acetylcholine outcompete curare.',
+ quote:'So neo stigamine, which does not cross the blood brain barrier but can increase the levels of acetylcholine in the synapse of your skeletal muscle, would give you a better chance of outcompeting karate and regain some movement for your friend. Yes. I have a question similar to this in the exam every year, and about 30% of the class misses it.',
+ note:'“pocked” and “(contain curare)” are as written on the poll; “karate” in the audio is curare. Bonus-point poll on 10/5; green highlight: Neostigmine, and he keyed C aloud (“I have over here, see, is that the correct answer?”). Handwritten on the student’s sheet: “NTK, similar question on exam” (NTK = need to know); in the audio he said a question similar to this is on the exam every year and about 30% of the class misses it.',
+ cite:'PollEV’s Exam 2.pdf poll 10; transcript 10/5; PCOL-NMJ_PCOL_2026s_pptx.pdf slides 19, 39'},
+
+/* ---------------- Poll 11: decreases ACh release ---------------- */
+{id:'PE2-023', lecture:'PE2', prof:'Gottlieb', tier:'new', topic:'PE2', sub:'verbatim', skill:'tell',
+ concept:'ach-release-botulinum', tags:['poll','pollev','verbatim'], source:'both',
+ stem:'Which of the following decreases the release of Ach from pre-synaptic neurons?',
+ options:[
+  {t:'Varenicline', correct:false, why:'Varenicline is a partial agonist at the neuronal nicotinic (Nn) receptor; it acts after release.'},
+  {t:'Succinylcholine', correct:false, why:'Succinylcholine is an agonist at the nicotinic receptor; it acts after release.'},
+  {t:'Rocuronium', correct:false, why:'Rocuronium is an antagonist at the nicotinic receptor; it acts after release.'},
+  {t:'Rivastigmine', correct:false, why:'Rivastigmine is an antagonist of the cholinesterase enzyme; it keeps released acetylcholine around longer.'},
+  {t:'Botox', correct:true, why:'His key: botulinum toxin breaks down the SNARE proteins, so vesicles cannot dock and acetylcholine (Ach) is not released.'}],
+ teach:'Four of these drugs act after acetylcholine is released: at the receptor (varenicline, succinylcholine, rocuronium) or at the enzyme that breaks it down (rivastigmine). Botulinum toxin acts before release: it is an enzyme that cleaves the SNARE proteins that anchor the vesicle to the membrane, so the vesicles stay full and acetylcholine is not released.',
+ quote:'Pennyline is a partial agonist to the NN receptor. Succylcholine is an agonist to the nicotinic receptor. Rocurono is an antagonist to the nicotinic receptor, and rivasciamine is an antagonist to the psytocholesterase enzyme. So the only one that decreases the release of acetylcholine would be the Botox toxin.',
+ note:'Green highlight: Botox; on 10/5: “Hopefully, you pick Botox, and that would be the correct answer, right?”',
+ cite:'PollEV’s Exam 2.pdf poll 11; transcript 10/5; PCOL-NMJ_PCOL_2026s_pptx.pdf slides 46–50'},
+
+/* ---------------- Poll 12: cholinergic agonist overdose ---------------- */
+{id:'PE2-024', lecture:'PE2', prof:'Gottlieb', tier:'new', topic:'PE2', sub:'verbatim', skill:'apply',
+ concept:'cholinergic-overdose-poll', tags:['poll','pollev','verbatim'], source:'both',
+ stem:'If one overdose on a cholinergic agonist, which of the symptoms is most likely to occur?',
+ options:[
+  {t:'Diarrhea', correct:false, why:'Occurs (the D of DUMBBELSS), but it is not the only listed symptom that occurs.'},
+  {t:'Can\'t urinate', correct:false, why:'Does not occur: the agonist squeezes the bladder and the patient urinates more. He keyed “all the above” with the exception of this option.'},
+  {t:'Miosis', correct:false, why:'Occurs (M3 squeezes the circular muscle of the pupil), but it is not the only one.'},
+  {t:'Bradycardia', correct:false, why:'Occurs (M2, Gi, in the heart), but it is not the only one.'},
+  {t:'All of the above', correct:true, why:'His key: diarrhea, miosis and bradycardia all occur; he said “all the above with the exception of” B, Can\'t urinate.'}],
+ teach:'A cholinergic agonist overdose gives DUMBBELSS: diarrhea, urination (more, not less), miosis, bradycardia, bronchial constriction, emesis, lacrimation, salivation and stimulation. Can\'t urinate is the antagonist (anti-DUMBBELSS) effect. As keyed, “All of the above” stands for the three DUMBBELSS options, not the urination option.',
+ quote:'I think I changed this answer because B is not uh the correct answer. Remember that if you activate the bladder, you\'re gonna squeeze the bladder, you\'re gonna increase urination. So, out of these questions, uh, B is you urinate more, it\'s not that you can\'t urinate. So, that\'s uh, that answer. But yes, you get diarrhea, you get meiosis, you get bradycardia, and you\'re gonna get, uh, it would be all the above with the exception of uh B as in boy, OK? Maybe last year was which of these would not occur and that was the right answer, but uh I didn\'t catch that.',
+ note:'Green highlight: All of the above. Handwritten next to “Can\'t urinate” on the student’s sheet: “not included”. In the 10/5 audio he says B is not correct, keys “all the above with the exception of” B, and says last year’s version may have asked which symptom would NOT occur, with B as the answer (“I didn\'t catch that”). Read literally, “All of the above” would include Can\'t urinate, which does not occur; his key is all of the above except B.',
+ cite:'PollEV’s Exam 2.pdf poll 12; transcript 10/5; PCOL-Cholinergic-26s.pdf slide 13'},
+
+/* ---------------- Poll 13: carbachol ---------------- */
+{id:'PE2-025', lecture:'PE2', prof:'Gottlieb', tier:'new', topic:'PE2', sub:'verbatim', skill:'apply',
+ concept:'carbachol-poll', tags:['poll','pollev','verbatim'], source:'both',
+ stem:'Carbachol is most likely to cause:',
+ options:[
+  {t:'Dry mouth', correct:false, why:'Anti-DUMBBELSS; a muscarinic agonist causes salivation.'},
+  {t:'Bradycardia', correct:true, why:'His key: the “chol” marks a cholinergic (muscarinic) agonist; at the heart’s M2 (Gi) it slows the heart.'},
+  {t:'Constipation', correct:false, why:'Anti-DUMBBELSS; an agonist increases GI motility and tone (diarrhea).'},
+  {t:'Bronchial dilation', correct:false, why:'An agonist constricts the bronchi through M3.'},
+  {t:'Decrease in vomiting', correct:false, why:'An agonist causes emesis (the E of DUMBBELSS), not less vomiting.'}],
+ teach:'The “chol” in carbachol links it to the mechanism: a non-selective muscarinic agonist. Knowing the site of action predicts the effect: heart M2 (Gi) gives bradycardia, and the M3 sites give the rest of the DUMBBELSS. The effects of a muscarinic agonist mirror activation of the cholinergic system.',
+ quote:'when you see carbacol, there is something on that drug name that is gonna allow you to associate with the mechanism of action of a drug, and then if you know the site of action, you can predict what it would do. ... What is the best answer? Uh, B as in bravo, bravo, bradycardia, right?',
+ note:'Green highlight: Bradycardia; keyed aloud on 10/5 (“B as in bravo”).',
+ cite:'PollEV’s Exam 2.pdf poll 13; transcript 10/5; PCOL-Cholinergic-26s.pdf slides 11–13'},
+
+/* ---------------- Poll 14: atropine ---------------- */
+{id:'PE2-026', lecture:'PE2', prof:'Gottlieb', tier:'new', topic:'PE2', sub:'verbatim', skill:'recall',
+ concept:'atropine-poll', tags:['poll','pollev','verbatim'], source:'both',
+ stem:'Atropine:',
+ options:[
+  {t:'Activates the M1, M2, and M3 receptors', correct:false, why:'Atropine binds M1, M2 and M3 but blocks them; it is the prototype muscarinic antagonist, not an agonist.'},
+  {t:'Block the ability of NE to bind and activate its receptors', correct:false, why:'Norepinephrine (NE) acts on adrenergic receptors; atropine has affinity only for muscarinic receptors.'},
+  {t:'Competitively antagonize the activations of muscarinic receptors', correct:true, why:'His key (C): atropine is a non-selective, reversible (competitive) muscarinic antagonist.'},
+  {t:'Causes severe diarrhea as an ADR', correct:false, why:'Diarrhea is an agonist (DUMBBELSS) effect; atropine causes constipation as an adverse drug reaction (ADR).'},
+  {t:'Causes paralysis by blocking Nm receptors', correct:false, why:'Blocking Nm is what the curare-like drugs (rocuronium) do; atropine has no affinity for nicotinic receptors.'}],
+ teach:'Atropine is the prototype muscarinic antagonist: a natural alkaloid, non-selective (M1, M2, M3) and reversible, so it competes with acetylcholine and can be outcompeted. It gives anti-DUMBBELSS effects (tachycardia, mydriasis, constipation, dry mouth). It does not bind nicotinic or adrenergic receptors.',
+ quote:'service says the majority says C and that is the correct answer. What if I had a set one of the answer choice where it\'s gonna block the ability of acetylcholine to bind to the nicotinic receptors? Would that be true or false? False, right? Because these drugs only have affinity for what? Muscarinic receptors, OK.',
+ note:'Green highlight: option C; keyed aloud on 10/5. “Block”, “antagonize” and “activations” are as written on the poll.',
+ cite:'PollEV’s Exam 2.pdf poll 14; transcript 10/5; PCOL-Cholinergic-26s.pdf slides 17, 19'},
+
+/* ---------------- Poll 15: trospium ---------------- */
+{id:'PE2-027', lecture:'PE2', prof:'Gottlieb', tier:'new', topic:'PE2', sub:'verbatim', skill:'apply',
+ concept:'trospium-decrease-urination', tags:['poll','pollev','verbatim','druglist'], source:'both',
+ stem:'Trospium is most likely to:',
+ options:[
+  {t:'Cause bronchial constriction', correct:false, why:'Bronchial constriction is an agonist (M3) effect; a muscarinic antagonist relaxes the bronchi.'},
+  {t:'Evoke salivation', correct:false, why:'Salivation is an agonist effect; the bladder antimuscarinics cause dry mouth (xerostomia).'},
+  {t:'Decrease urination', correct:true, why:'Trospium is an atropine-like (“trop”) muscarinic antagonist for overactive bladder: blocking bladder M3 decreases urgency, frequency and leakage.'},
+  {t:'Increase GI motility', correct:false, why:'Increased motility is an agonist effect; blocking GI M3 gives constipation.'},
+  {t:'Excitation', correct:false, why:'Blocking M1 in the brain gives sedation, not excitation; trospium is at the bottom of the slide’s list of bladder drugs with CNS effects (drowsiness, dizziness, confusion).'}],
+ teach:'Any drug with “trop” in its name is an atropine-like muscarinic antagonist. Trospium is one of his three overactive-bladder drugs (with oxybutynin and solifenacin): blocking M3 in the bladder decreases urgency, frequency and leakage, so the patient urinates less. All of them can cause anti-DUMBBELSS effects such as dry mouth and constipation.',
+ quote:'And then we have here trospium, which has that trope in it, so it kinda help you figure out that it\'s atropine-like drug. ... So the goal over here is to stop urination. They all can do that.',
+ note:'Green highlight: Decrease urination. This poll is not in the 10/5 audio: after the bladder slides he looked for a clicker question (“Oh, where is the clear question? I don\'t have.”) and ended the class. The key is from the highlighted sheet; it matches what he taught.',
+ cite:'PollEV’s Exam 2.pdf poll 15; transcript 10/5; PCOL-Cholinergic-26s.pdf slides 29–30'},
+
+/* ---------------- Poll 16: severe bradycardia ---------------- */
+{id:'PE2-028', lecture:'PE2', prof:'Gottlieb', tier:'new', topic:'PE2', sub:'verbatim', skill:'apply',
+ concept:'atropine-bradycardia', tags:['poll','pollev','verbatim'], source:'both',
+ stem:'If your patient is having severe bradycardia, which of the following drugs would be most beneficial?',
+ options:[
+  {t:'Carbachol', correct:false, why:'A muscarinic agonist; at M2 it slows the heart further.'},
+  {t:'Succinylcholine', correct:false, why:'An Nm agonist used to cause paralysis; it is not given to raise heart rate.'},
+  {t:'Atropine', correct:true, why:'Blocking M2 (Gi) in the heart raises heart rate; bradycardia and atrioventricular nodal block are uses of atropine.'},
+  {t:'Rocuronium', correct:false, why:'An Nm antagonist that causes paralysis; it does not act at the heart’s M2.'},
+  {t:'Neostigmine', correct:false, why:'A cholinesterase inhibitor raises acetylcholine, which adds bradycardia (DUMBBELSS).'}],
+ teach:'M2 receptors on the sinoatrial (SA) and atrioventricular (AV) nodes are coupled to Gi and slow the heart. An agonist brings a fast heart rate down; an antagonist brings a slow one up. Atropine, a non-selective muscarinic antagonist, is given for severe bradycardia or AV nodal block.',
+ quote:'So these drugs are gonna be given in case if your patient has too much of a tachycardia, we\'re gonna give an agonist to bring it down, or if they have severe bradycardia, we can give an antagonist to bring it up, depending on what we\'re trying to do.',
+ note:'Green highlight: Atropine. This poll is not in the 10/5 audio; the key is from the highlighted sheet, and it matches what he taught on 10/5 (“patients with severe low heart rate so we can give atropine to bring their heart rate up”).',
+ cite:'PollEV’s Exam 2.pdf poll 16; transcript 10/5; PCOL-Cholinergic-26s.pdf slides 19–20'},
+
+/* ---------------- Poll 17: α1 in the arteries (9/30 bonus) ---------------- */
+{id:'PE2-029', lecture:'PE2', prof:'Gottlieb', tier:'new', topic:'PE2', sub:'verbatim', skill:'apply',
+ concept:'alpha1-gq-plc-ip3', tags:['poll','pollev','verbatim'], source:'both',
+ stem:'Activation of alpha 1 receptors in the arteries by an agonist will produce which of the following?',
+ options:[
+  {t:'Activation of Gi=>inhibition of AC=>vasodilation', correct:false, why:'Gi inhibiting adenylyl cyclase (AC) belongs to α2 and M2, not α1.'},
+  {t:'Activation of Gs=>activation of AC=>vasodilation', correct:false, why:'Gs activating AC belongs to the β receptors (β2 relaxes smooth muscle), not α1.'},
+  {t:'Activation of Gq=>activation of PLC=>vasoconstriction', correct:true, why:'His key: α1 is coupled to Gq, which activates phospholipase C (PLC); IP3 raises Ca++ and the arterial smooth muscle constricts.'},
+  {t:'Opening of Nm receptors=>Increase in Ca++=>Vasoconstriction', correct:false, why:'Nm is the ion-channel receptor of skeletal muscle; α1 is a G protein–coupled receptor.'},
+  {t:'Increase pupil dilation', correct:false, why:'α1 in the eye does cause mydriasis, but the stem asks about α1 in the arteries.'}],
+ teach:'On his quick table, α1 sits on the Gq row: phospholipase C (PLC), then inositol trisphosphate (IP3), then a rise in Ca++. A rise in calcium is, as a general rule, a signal for something positive, so arterial smooth muscle constricts. Knowing the receptor and its G protein predicts the effect.',
+ quote:'So, what is alpha 1 Kappa 2 on your quick stable? I would say GQ. If it\'s GQ, who is activating PLC and increasing IP3 and calcium, right? So right there, if you know your G protein and your receptor, you already can figure out what it\'s going to be.',
+ note:'Green highlight: the Gq option. This is the 9/30 clicker question “for exam 2 for the bonus”. He read it aloud in other words (“So which of the following is most likely to occur when an alpha-1 receptor is activated by norepinephrine, which is a what? An agonist.”) and keyed it by naming Gq and PLC.',
+ cite:'PollEV’s Exam 2.pdf poll 17; transcript 9/30; Autonomic Nervous System.pdf slides 4, 31'},
+
+/* ---------------- Poll 18: GI smooth muscle tracing (figure) ---------------- */
+{id:'PE2-030', lecture:'PE2', prof:'Gottlieb', tier:'new', topic:'PE2', sub:'verbatim', skill:'figure',
+ concept:'gi-tracing-drug-x-atropine', tags:['poll','pollev','verbatim','figure-drill'], source:'both',
+ img:'pe2-gi-tracing', imgAlt:'Tracing of GI smooth muscle tone over time: flat baseline, a rise and fall after the first pilocarpine dose, an arrow marked X where tone dips slightly, then no rise after the second pilocarpine dose', imgCap:'GI smooth muscle tone: pilocarpine, drug X at the arrow, then pilocarpine again',
+ stem:'The figure below shows tracing of GI smooth muscle in response to pilocarpine before and after drug X. Drug X is most likely to be:',
+ options:[
+  {t:'Carbachol', correct:false, miss:'direction', why:'A muscarinic agonist would help pilocarpine and raise tone; after X, pilocarpine has no effect at all.'},
+  {t:'Neostigmine', correct:false, miss:'direction', why:'A cholinesterase inhibitor makes acetylcholine more potent and would raise GI tone, not abolish the pilocarpine response.'},
+  {t:'Rocuronium', correct:false, miss:'class', why:'Rocuronium blocks Nm at skeletal muscle; GI smooth muscle tone is controlled by muscarinic M3 receptors.'},
+  {t:'Atropine', correct:true, why:'After X, pilocarpine no longer raises tone: X blocks the muscarinic (M3) receptor that pilocarpine activates. Atropine is a non-selective, reversible muscarinic antagonist.'},
+  {t:'Varenicline', correct:false, miss:'class', why:'A partial agonist at α4/β2 Nn receptors in the brain; it does not act on GI smooth muscle muscarinic receptors.'}],
+ teach:'Read the tracing in order. Pilocarpine alone raises GI smooth muscle tone (a muscarinic agonist on M3, Gq, ↑Ca++, contraction). Drug X is given at the arrow, tone drifts slightly below the starting line, and the second dose of pilocarpine produces no rise; a drug that removes the response to a muscarinic agonist is a muscarinic antagonist, atropine.',
+ quote:'If it\'s in the M3, depending where it is, let\'s say it\'s on the GI tract, I\'m gonna increase motility and tone.',
+ note:'On the sheet this poll is a PollEV screenshot with no green highlight. The screenshot shows Atropine as the recorded response, with the student’s handwritten “Ant M3” (M3 antagonist) beside it and “muscarinic agonist (M1, M2, M3)” under the first “Pilocarpine”. The poll is not in the 10/5 audio, so the key rests on the sheet; it matches what he taught about pilocarpine and atropine.',
+ cite:'PollEV’s Exam 2.pdf poll 18; transcript 10/5; PCOL-Cholinergic-26s.pdf slides 12–14, 17, 19'},
+
+{id:'PE2-031', lecture:'PE2', prof:'Gottlieb', tier:'new', topic:'PE2', sub:'variant', skill:'figure',
+ concept:'gi-tracing-pilocarpine-m3', tags:['poll','pollev','figure-drill'], source:'both',
+ img:'pe2-gi-tracing', imgAlt:'Tracing of GI smooth muscle tone over time: flat baseline, a rise and fall after the first pilocarpine dose, an arrow marked X where tone dips slightly, then no rise after the second pilocarpine dose', imgCap:'GI smooth muscle tone: pilocarpine, drug X at the arrow, then pilocarpine again',
+ stem:'In the tracing below, what does the first dose of pilocarpine do to GI smooth muscle tone, and through which receptor?',
+ options:[
+  {t:'Raises tone through M3 (Gq)', correct:true, why:'The tracing rises after pilocarpine: a muscarinic agonist on M3 (Gq, PLC, IP3, ↑Ca++) contracts GI smooth muscle, increasing motility and tone.'},
+  {t:'Lowers tone through M2 (Gi)', correct:false, miss:'read', why:'The tracing goes up, not down, and GI smooth muscle tone is an M3 effect.'},
+  {t:'Raises tone through Nm (ion channel)', correct:false, miss:'class', why:'Pilocarpine has no effect on nicotinic receptors; Nm is at skeletal muscle.'},
+  {t:'Lowers tone through α2 (Gi)', correct:false, miss:'read', why:'α2 activation is what decreases GI activity, but pilocarpine is a muscarinic agonist and the tracing goes up.'},
+  {t:'No change in tone', correct:false, miss:'read', why:'The tracing clearly rises and falls back after the first pilocarpine dose.'}],
+ teach:'Pilocarpine is a non-selective, reversible muscarinic agonist with no effect on nicotinic receptors. In the gastrointestinal (GI) tract, M3 (Gq) raises Ca++ and increases motility and tone, which is the first peak on the tracing. Sympathetic α2 does the opposite (decreased GI activity).',
+ quote:'If it\'s in the M3, depending where it is, let\'s say it\'s on the GI tract, I\'m gonna increase motility and tone.',
+ cite:'PollEV’s Exam 2.pdf poll 18 (variant); transcript 10/5; PCOL-Cholinergic-26s.pdf slides 12–14; Autonomic Nervous System.pdf slide 31'},
+
+{id:'PE2-032', lecture:'PE2', prof:'Gottlieb', tier:'new', topic:'PE2', sub:'variant', skill:'figure',
+ concept:'gi-tracing-m3-blocked', tags:['poll','pollev','figure-drill'], source:'both',
+ img:'pe2-gi-tracing', imgAlt:'Tracing of GI smooth muscle tone over time: flat baseline, a rise and fall after the first pilocarpine dose, an arrow marked X where tone dips slightly, then no rise after the second pilocarpine dose', imgCap:'GI smooth muscle tone: pilocarpine, drug X at the arrow, then pilocarpine again',
+ stem:'In the tracing below, why does the second dose of pilocarpine produce no rise in tone?',
+ options:[
+  {t:'Drug X blocks the M3 receptors', correct:true, why:'Pilocarpine acts directly on muscarinic M3 receptors; once X occupies them, pilocarpine cannot activate them, so tone does not rise.'},
+  {t:'Drug X blocks the Nm receptors', correct:false, miss:'class', why:'Nm is at skeletal muscle; pilocarpine acts on muscarinic receptors of smooth muscle.'},
+  {t:'Drug X inhibits cholinesterase', correct:false, miss:'direction', why:'A cholinesterase inhibitor makes acetylcholine more potent, which would raise tone.'},
+  {t:'Drug X stops acetylcholine release', correct:false, miss:'class', why:'Stopping acetylcholine release (Botox) does not stop pilocarpine, a direct agonist that binds the muscarinic receptor itself.'},
+  {t:'Pilocarpine is broken down by cholinesterase', correct:false, miss:'read', why:'Pilocarpine is not an ester and is not hydrolyzed by the enzyme.'}],
+ teach:'Pilocarpine is a direct-acting muscarinic agonist that is not an ester and is not hydrolyzed by cholinesterase. The only way to remove its effect is to block the receptor it binds: a muscarinic antagonist such as atropine. A drug acting before the receptor (less acetylcholine release) or on the enzyme would leave the pilocarpine response in place or raise tone.',
+ quote:'What I need you to know is that it does not bind or activate the nicotinic receptors. It only has affinity for the muscarinics. That\'s going to be a very key information for you',
+ cite:'PollEV’s Exam 2.pdf poll 18 (variant); transcript 10/5; PCOL-Cholinergic-26s.pdf slides 14, 19; PCOL-NMJ_PCOL_2026s_pptx.pdf slides 46–50'},
+
+{id:'PE2-033', lecture:'PE2', prof:'Gottlieb', tier:'new', topic:'PE2', sub:'variant', skill:'figure',
+ concept:'gi-tracing-pns-tone', tags:['poll','pollev','figure-drill'], source:'both',
+ img:'pe2-gi-tracing', imgAlt:'Tracing of GI smooth muscle tone over time: flat baseline, a rise and fall after the first pilocarpine dose, an arrow marked X where tone dips slightly, then no rise after the second pilocarpine dose', imgCap:'GI smooth muscle tone: pilocarpine, drug X at the arrow, then pilocarpine again',
+ stem:'In the tracing below, tone falls slightly below the starting line when drug X is given, before the second pilocarpine dose. Which explains the fall?',
+ options:[
+  {t:'X blocks the resting PNS tone', correct:true, why:'The GI tract has a predominant parasympathetic (PNS) tone through M3; blocking it lowers tone below the starting line (anti-DUMBBELSS constipation).'},
+  {t:'X activates GI M3 receptors', correct:false, miss:'direction', why:'Activating M3 would raise tone, and pilocarpine would still work.'},
+  {t:'X blocks Nm receptors in the gut', correct:false, miss:'class', why:'Nm receptors are at skeletal muscle; GI smooth muscle tone is muscarinic.'},
+  {t:'X inhibits cholinesterase', correct:false, miss:'direction', why:'More acetylcholine would raise tone, not lower it.'}],
+ teach:'At rest the gastrointestinal (GI) tract runs on a predominant parasympathetic (PNS) tone through M3. A muscarinic antagonist blocks that tone as well as any added agonist: tone falls a little when X is given, and pilocarpine then cannot raise it. This is the anti-DUMBBELSS constipation of atropine.',
+ quote:'And if you know what the agonist is going to do, what do you think the antagonist is going to do? The opposite, the anti-dumbbells, constipation, can\'t pee, can\'t cry, can\'t sweat, can\'t see, right?',
+ cite:'PollEV’s Exam 2.pdf poll 18 (variant); transcript 10/5; PCOL-Cholinergic-26s.pdf slides 13, 19'},
+
+{id:'PE2-034', lecture:'PE2', prof:'Gottlieb', tier:'new', topic:'PE2', sub:'variant', skill:'figure',
+ concept:'gi-tracing-other-antagonist', tags:['poll','pollev','figure-drill'], source:'both',
+ img:'pe2-gi-tracing', imgAlt:'Tracing of GI smooth muscle tone over time: flat baseline, a rise and fall after the first pilocarpine dose, an arrow marked X where tone dips slightly, then no rise after the second pilocarpine dose', imgCap:'GI smooth muscle tone: pilocarpine, drug X at the arrow, then pilocarpine again',
+ stem:'Which of the following could also be drug X in the tracing below?',
+ options:[
+  {t:'Scopolamine', correct:true, why:'Like atropine, scopolamine is a natural, non-selective, reversible muscarinic antagonist; it blocks GI M3 and gives constipation.'},
+  {t:'Bethanechol', correct:false, miss:'direction', why:'A “chol” muscarinic agonist; it would raise GI tone like pilocarpine.'},
+  {t:'Neostigmine', correct:false, miss:'direction', why:'A cholinesterase inhibitor raises acetylcholine and increases GI tone.'},
+  {t:'Succinylcholine', correct:false, miss:'class', why:'An Nm agonist at skeletal muscle; it does not act on GI smooth muscle M3.'},
+  {t:'Botox', correct:false, miss:'class', why:'Stopping acetylcholine release does not stop pilocarpine, which binds the M3 receptor directly.'}],
+ teach:'Drug X behaves like a muscarinic antagonist. Atropine and scopolamine are the natural, non-selective, reversible muscarinic antagonists, and any “trop” drug is atropine-like as well. Agonists (the “chol” drugs, pilocarpine) and cholinesterase inhibitors (the -stigmines) would raise tone instead.',
+ quote:'So scopolamine is a non-selective muscarinic antagonist, uh, most times we use for motion sickness.',
+ cite:'PollEV’s Exam 2.pdf poll 18 (variant); transcript 10/5; PCOL-Cholinergic-26s.pdf slides 11, 17, 24'}
 );

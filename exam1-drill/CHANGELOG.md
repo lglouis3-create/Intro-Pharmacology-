@@ -2,6 +2,13 @@
 
 Newest first. The build embeds this file; the Topics page shows what is new since your last visit, and the Progress page shows all of it. Keep each bullet to one short line.
 
+## 2026-10-06 (10/5 lecture)
+- Days 8 and 9 now quote his 10/5 lecture; 14 new questions from his class questions.
+- His 12 new Exam 2 polls word for word with his keys, including the GI tracing figure.
+- Graphs tab: the GI tracing figure under Exam 2, with 5 questions.
+- Removed or rewritten what he said is not tested (dose–response curves, M4/M5, uses, brand names).
+- Drug list: edrophonium and galantamine questions dropped, as he said in lecture.
+
 ## 2026-10-05 (Exam 2 started)
 - Every tab groups Exam 1 and Exam 2 material in its own collapsible section.
 - "Studying for" switch picks the exam; its section opens and its questions drill.
