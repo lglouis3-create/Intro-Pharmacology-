@@ -13,7 +13,7 @@ TOPICS.push({id:"L07", name:"Day 7: signal transduction and the autonomic nervou
 QUESTIONS.push(
 /* ---------------- G proteins and the quick table (slides 3–4) ---------------- */
 {id:"L07-001", lecture:"L07", prof:"Gottlieb", tier:"new", topic:"L07", sub:"gprot", skill:"apply",
- concept:"alpha1-gq-plc-ip3", tags:["poll"], source:"both",
+ concept:"alpha1-gq-plc-ip3", dupOf:"PE2-029", tags:["poll"], source:"both",
  stem:"Norepinephrine, an agonist, activates an α1 adrenergic receptor. Which of the following is most likely to occur in that cell?",
  options:[
   {t:"Gq activates PLC; IP3 and Ca++ rise", correct:true, why:"α1 is coupled to Gq, which activates phospholipase C (PLC) and raises inositol triphosphate (IP3) and calcium."},
@@ -22,6 +22,7 @@ QUESTIONS.push(
   {t:"An ion channel opens and Na+ enters the cell", correct:false, why:"Sodium entry through a channel is the nicotinic receptor; α1 is a G protein–coupled receptor."}],
  teach:"On the quick table, α1 sits on the Gq row: effector phospholipase C (PLC), second messenger inositol triphosphate (IP3), and a rise in Ca++. A rise in calcium is, as a general rule, a signal for something positive: contraction, neurotransmitter release, excitation. Knowing the receptor and its G protein lets you predict the effect without memorizing it.",
  quote:"So, what is alpha 1 Kappa 2 on your quick stable? I would say GQ. If it's GQ, who is activating PLC and increasing IP3 and calcium, right?",
+ note:"His spoken 9/30 wording of the bonus clicker question. The poll sheet words it as \"Activation of alpha 1 receptors in the arteries by an agonist will produce which of the following?\" and keys Activation of Gq=>activation of PLC=>vasoconstriction.",
  cite:"Autonomic Nervous System.pdf slide 4; transcript 9/30"},
 
 {id:"L07-002", lecture:"L07", prof:"Gottlieb", tier:"new", topic:"L07", sub:"gprot", skill:"apply",
