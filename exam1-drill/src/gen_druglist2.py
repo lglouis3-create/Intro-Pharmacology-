@@ -15,9 +15,18 @@ slide names (the adrenergic and RAAS decks are not available yet) keep the
 list's wording and are cited to the list only.
 
 Posting rule: questions are posted only for topics whose slides and lecture
-transcript have both been received. The adrenergic, nitric oxide/cGMP and RAAS
-items are written but held back (HELD) until those decks and transcripts arrive;
-they keep their ids so they return unchanged.
+transcript have both been received. The nitric oxide/cGMP and RAAS items are
+written but held back (HELD subs) until those decks and transcripts arrive; they
+keep their ids so they return unchanged.  The adrenergic deck
+(PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf) was taught on 10/6 from slide 1 through
+mirtazapine (slide 32): adrenergic items whose drugs he taught that day are
+posted (ADR_RELEASED, by concept); the rest (β agonists and blockers,
+epinephrine, norepinephrine, dobutamine, isoproterenol, mirabegron,
+phenoxybenzamine, mirtazapine's adverse reactions) stay held (HELD_CONCEPTS).
+
+Transcript 10/6 (adrenergic deck slides 1–32): each released adrenergic item
+carries his words as its quote, the deck slide and '; transcript 10/6' in its
+cite and source 'both' (TQ6).
 
 Transcript 10/5 (rest of the NMJ deck, whole cholinergic deck): every NMJ and
 cholinergic item he discussed carries his words as its quote, '; transcript 10/5'
@@ -32,6 +41,7 @@ import json, re, os
 LIST = 'Pharmacology_Exam_2_Drug_List.pdf'
 NMJ = 'PCOL-NMJ_PCOL_2026s_pptx.pdf'
 CHO = 'PCOL-Cholinergic-26s.pdf'
+ADR = 'PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf'
 ANS = 'Autonomic Nervous System.pdf'
 
 def cite(page, *slides):
@@ -137,38 +147,38 @@ ROWS = [
  dict(sec='adr', page='4', colour='agonist', drugs=['Phenylephrine'],
       moa='α1 agonist', soa='Blood vessels; eyes', adr='HTN, burning & nasal discharge, rebound congestion',
       key='Used as nasal decongestant and ophthalmics (mydriasis); down-reg → rebound congestion; avoid in patients with HTN',
-      status='list', slides=''),
+      status='slide', slides=f'{ADR} slides 9, 17–18 (10/6)'),
  dict(sec='adr', page='5', colour='indirect antagonist', drugs=['Cocaine'],
       moa='NE reuptake inhibitor', soa='CNS', adr='HTN, tachycardia, arrythmias, restlessness',
-      key='Used with lidocaine to control arrythmias (Na+ channel blocker)', status='list', slides=''),
+      key='Used with lidocaine to control arrythmias (Na+ channel blocker)', status='slide', slides=f'{ADR} slides 9–10 (10/6; CONFLICT on the lidocaine use)'),
  dict(sec='adr', page='5', colour='indirect antagonist', drugs=['Dextroamphetamine & amphetamine (Adderall)', 'Methylphenidate (Concerta, Ritalin)', 'Lisdexamphetamine (Vyvanse)', 'Dexmethylphenidate (Focalin)'],
       moa='Stimulate pre-synaptic release of NE & DA', soa='CNS', adr='HTN, tachycardia, arrythmias, restlessness, loss of appetite',
-      key='Used for ADHD', status='list', slides=''),
+      key='Used for ADHD', status='slide', slides=f'{ADR} slides 9, 11–12 (10/6)'),
  dict(sec='adr', page='5', colour='indirect antagonist', drugs=['Phenelzine'],
       moa='Non-selective MAO-A & MAO-B irreversible antagonist (printed “MOA-A & MOA-B”)', soa='CNS', adr='HTN, tachycardia, arrythmias, restlessness',
-      key='Inhibits breakdown of NE; serious ADR → HTN crisis due to dietary tyramine', status='list', slides=''),
+      key='Inhibits breakdown of NE; serious ADR → HTN crisis due to dietary tyramine', status='slide', slides=f'{ADR} slides 13–15 (10/6)'),
  dict(sec='adr', page='5', colour='indirect antagonist', drugs=['Selegiline', 'Rasagiline'],
       moa='SELECTIVE MAO-B irreversible antagonist', soa='CNS', adr='HTN, tachycardia, arrythmias, restlessness',
-      key='Inhibits breakdown of NE; used for depression & Parkinson’s', status='list', slides=''),
+      key='Inhibits breakdown of NE; used for depression & Parkinson’s', status='slide', slides=f'{ADR} slides 14–15 (10/6; selegiline only, rasagiline not on a slide)'),
  dict(sec='adr', page='5', colour='antagonist', drugs=['Prazosin', 'Terazosin (Hytrin)', 'Doxazosin (Cardura)', 'Tamsulosin (Flomax) → α1a'],
       moa='SELECTIVE α1 antagonist, reversible', soa='Brain, eye, nose, blood vessels, urethra',
       adr='Headache, blurred vision, orthostatic hypotension → reflex tachycardia, sexual dysfunction',
-      key='Used to treat HTN, BPH, and PTSD (prazosin only); decrease preload and afterload (blood vessels)', status='list', slides=''),
+      key='Used to treat HTN, BPH, and PTSD (prazosin only); decrease preload and afterload (blood vessels)', status='slide', slides=f'{ADR} slides 27–30 (10/6)'),
  dict(sec='adr', page='5–6', colour='antagonist', drugs=['Phenoxybenzamine'],
       moa='Non-selective α1 & α2 antagonist, irreversible; decrease peripheral resistance', soa='Brain, eye, nose, blood vessels, urethra, GI',
       adr='Orthostatic hypotension → reflex tachycardia; GI stimulation (α2 on PNS fiber blocked); headache, miosis',
       key='Can be used for HTN crisis caused by phenelzine (short term control); longer duration of action (irreversible → highest affinity for α1)',
-      status='list', slides=''),
+      status='slide', slides=f'{ADR} slide 27 (classification, 10/6); its own slides 34–38 not yet taught'),
  dict(sec='adr', page='6', colour='antagonist', drugs=['Mirtazapine (Remeron)'],
       moa='NON-SELECTIVE: α2 antagonist, α1 antagonist, muscarinic antagonist, H1 antagonist, 5-HT2a antagonist',
       soa='CNS; enhances release of NE & 5-HT (serotonin); blocks H1 → drowsiness',
       adr='Drowsiness, weight gain, increased cholesterol, xerostomia, constipation, peripheral edema, HTN',
       key='Used for MDD; rare side effect: agranulocytosis; α2’s located in small blood vessels cause vasoconstriction → antagonist will cause vasodilation → peripheral edema',
-      status='list', slides=''),
+      status='slide', slides=f'{ADR} slides 21, 27, 31–32 (10/6; ADR slide 33 not yet taught)'),
  dict(sec='adr', page='6', colour='agonist', drugs=['Clonidine (Catapres)', 'Brimonidine (Alphagan P)', 'Tizanidine (Zanaflex)', 'Guanfacine (Intuniv)', 'Dexmedetomidine (Precedex)'],
       moa='α2 agonist', soa='CNS; enhance inhibitory / suppress SNS',
       adr='Sedation, dry mouth, hypotension, bradycardia, sexual dysfunction, depression, constipation (activates GI inhibitory negative feedback pathway → less ACh)',
-      key='Hypertensive crisis can occur if taken off drug abruptly due to up-regulation of receptors', status='list', slides=''),
+      key='Hypertensive crisis can occur if taken off drug abruptly due to up-regulation of receptors', status='slide', slides=f'{ADR} slides 21–24, 26 (10/6)'),
  dict(sec='adr', page='6', colour='agonist', drugs=['Dobutamine'],
       moa='β1 agonist', soa='Heart, kidneys, brain',
       adr='Increased heart rate and contractility; tachycardia / arrythmias; increased RAAS; CNS stimulation',
@@ -247,7 +257,13 @@ CONFLICTS = [  # (drug, list says, slide says, transcript 10/5 says, resolution)
  ('Edrophonium', 'List page 2: “No CNS effects”.', 'PCOL-NMJ_PCOL_2026s_pptx.pdf slide 38 gives short duration, readily reversible, diagnosis of myasthenia gravis; it does not mention CNS effects.', '“For our purpose on the exam, I’m not too worried about” edrophonium (IV, diagnostic, very water soluble, “gonna stay within the blood”). No explicit statement on CNS effects.', 'Resolved by scope: DL2-019 removed; the “no CNS effects” claim is not asked.'),
  ('Nitrates and PDE inhibitors (SOA)', 'List page 4 gives the SOA as “Endothelium of blood vessels (M3)”.', 'No slide names these drugs. Autonomic Nervous System.pdf slide 4 and PCOL-Cholinergic-26s.pdf slides 13 and 15 say M3 on vascular endothelium raises Ca++ → NOS → NO (vasodilation via nitric oxide).', '—', 'List only; the “(M3)” in the SOA is not asked.'),
  ('Benztropine', 'List page 3: non-selective muscarinic antagonist; CNS; Parkinson’s.', 'PCOL-Cholinergic-26s.pdf slide 25 names benztropine (Parkinson’s patients treated with L-dopa; tremor & rigidity) inside the muscarinic-antagonist section but does not state its receptor selectivity.', '“An analog of atropine called benztropine … used for treatment of Parkinson’s disease”, an adjunct to L-dopa; “more selective to … the M1s in the brain, and it’s gonna have less of those anti-dumbbells”; “about half of the affinity of atropine.”', 'Resolved against the list: benztropine is more M1-selective, not a plain non-selective (M1, M2, M3) antagonist. DL2-037 keys only its site (central nervous system) and carries a note.'),
- ('Cocaine', 'List page 5 key information: “Used with lidocaine to control arrythmias (Na+ channel blocker)”.', 'No slide.', '—', 'Unclear wording; not asked.'),
+ ('Cocaine', 'List page 5 key information: “Used with lidocaine to control arrythmias (Na+ channel blocker)”; SOA “CNS”.', 'PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slide 10: “Cocaine (Reuptake inhibitor) MOA: NE transporter (NET) antagonist; Increase NE at the synapse; PCOL Effect: Heart, Blood vessels, CNS”. No lidocaine on the slide.', '10/6: cocaine or another powerful vasoconstrictor is added to lidocaine “because the lidocaine can stop your heart. So you want to stay local. So by vasoconstricting those blood vessels, you decrease the bleeding while you’re suturing, and also you prevent the systemic distribution of our drug into the heart.”', 'Resolved against the list: the vasoconstrictor keeps lidocaine away from the heart (preventing arrhythmias); cocaine is not the antiarrhythmic. Use not asked in DL2 (DL2 cocaine item carries a note); L10-022 asks it as low yield. Sites: heart, blood vessels and CNS, not CNS only.'),
+ ('Phenylephrine', 'List page 4: “down-reg → rebound congestion”; ADRs HTN, burning & nasal discharge, rebound congestion.', 'PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slide 18 ADR: burning, rebound congestion, careful in HTN pts, blurred vision. No down-regulation; no nasal discharge.', '10/6: “burning, blurred vision, uh, you may have rebound congestion ... you don’t use for more than 3 days.” Gives no mechanism for the rebound. On the agonist and the urethra he said “you’re gonna relax the sphincter, which can allow you to urinate” — the opposite of what α1 activation of a sphincter would do; not asked.', 'Rebound congestion keyed without its cause (DL2 item note); blurred vision added from the slide.'),
+ ('Selegiline, rasagiline', 'List page 5: both selective MAO-B irreversible antagonists; depression & Parkinson’s.', 'PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slide 14: “Selective MAO-B Antagonist; Depression & Parkinson’s; Drug: Selegiline (Low doses); Irreversible antagonist”. Rasagiline is not on a slide.', '10/6: only selegiline (“a better MAO inhibitor, uh, selegiline, which is selective to the MAOB”; no cheese effect).', 'Rasagiline not asked; replaced by selegiline in the indirect-drug select-all.'),
+ ('Mirtazapine', 'List page 6: α2, α1, muscarinic, H1 and 5-HT2a antagonist; blocks H1 → drowsiness; ADRs incl. peripheral edema from α2 block in small vessels.', 'PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 27, 31–32: α2, H1, muscarinic and α1 (no 5-HT2a); “Norepinephrine and 5-HT ⇒ Decrease depression”; H1 and muscarinic → sedation. Slide 33 (not taught 10/6): peripheral edema from “Blockade of alpha 1”, not α2.', '10/6: “this drug blocks histamine and muscarinic type one in the brain ... Sedation”; “it can also have some effects on the alpha 1 as well.” He stopped before slide 33.', 'Mechanism item released (H1 keyed, note added). The peripheral-edema item stays held: the list blames α2 block, slide 33 blames α1 block; resolve when he teaches slide 33.'),
+ ('Clonidine group', 'List page 6: clonidine, brimonidine, tizanidine, guanfacine, dexmedetomidine: α2 agonists; ADRs incl. constipation “(activates GI inhibitory negative feedback pathway → less Ach)”.', 'PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 21–24, 26 (clonidine, brimonidine, apraclonidine, tizanidine, guanfacine, dexmedetomidine; ADRs sedation, nightmares, depression, dry mouth, constipation, hypotension, bradycardia, sexual dysfunction, hypertensive crisis on withdrawal from up-regulation).', '10/6: the “-idine” rule; “for our purpose ... we’re gonna focus on clonidine because that’s our prototypical drug.” Constipation: “by suppressing acetylcholine release, we don’t activate the M3s.” The transcript says “hypertension and bradycardia” where the slide says hypotension.', 'Agrees; hypotension keyed (slide). Guanfacine lacks -idine; he called it similar to clonidine.'),
+ ('Prazosin group', 'List page 5: prazosin, terazosin, doxazosin, tamsulosin (α1a); uses HTN, BPH, PTSD (prazosin only); ADRs headache, blurred vision, orthostatic hypotension → reflex tachycardia, sexual dysfunction; SOA includes brain.', 'PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 27–30: selective, reversible α1 antagonist (1000×); uroselective group; BPH: terazosin, doxazosin, tamsulosin & silodosin (α1A and 1D > α1B); ADRs first-dose orthostatic hypotension & syncope (30–90 min), reflex tachycardia (palpitations), dizziness, blurred vision, headache. No PTSD, no sexual dysfunction.', '10/6: “all I need to know if you see a drug with OC is a selective alpha-1 antagonist”; α1A/α1B “just FYI”; sites nose, eye, blood vessels, urethra. The transcript says “first dose orthostatic hypertension” where the slide says hypotension.', 'Agrees on mechanism; hypotension keyed (slide); PTSD and sexual dysfunction (list only) not asked; uroselectivity not asked.'),
+ ('Phenoxybenzamine', 'List page 5–6: non-selective α1 & α2 irreversible antagonist; GI stimulation; HTN crisis from phenelzine.', 'PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slide 27 lists it as the irreversible, non-selective α1 and α2 antagonist; slides 34–38 (its MOA, uses, ADRs) were not taught on 10/6.', '10/6, answering a student: “phenoxbenzamine is a non-selective alpha 1 and alpha 2 irreversible antagonists ... we’re gonna get a little bit ahead of us, so just wait”.', 'Its DL2 items stay held until slides 34–38 are taught; L10-048 asks only the slide 27 classification.'),
  ('Medoxomil', 'List page 9 prints “Medoxomil” as its own line in the ARB group.', 'No slide.', '—', 'Parsed as part of the ARB row; not asked as a drug.'),
  ('Muscarinic agonists (blood pressure)', 'List page 2–3: muscarinic agonist ADRs given as DUMBBELSS.', 'PCOL-Cholinergic-26s.pdf slide 13 lists the organ effects of muscarinic agonists.', '“They may get hypertension due to the release of nitric oxide, which is a vasodilator, so that’s a little bit of an exception to the rule” — “hypertension” beside “vasodilator” looks like a transcription or speaking slip.', 'Uncertain: blood pressure is not asked for the muscarinic agonists.'),
 ]
@@ -255,7 +271,13 @@ CONFLICTS = [  # (drug, list says, slide says, transcript 10/5 says, resolution)
 # --------------------------------------------------------------------------
 # Questions
 # --------------------------------------------------------------------------
-HELD = {'adr', 'raas', 'no'}   # no slides + transcript yet: written, not posted
+HELD = {'raas', 'no'}   # no slides + transcript yet: written, not posted
+# Adrenergic deck taught 10/6 through slide 32 (mirtazapine).  Released by concept;
+# every other adrenergic concept stays held (β drugs, catecholamines, phenoxybenzamine,
+# mirtazapine's adverse reactions) until the slides that teach it have audio.
+ADR_RELEASED = {'moa-phenylephrine', 'adr-phenylephrine', 'moa-cocaine', 'moa-amphetamine', 'phenelzine',
+                'mao-tell', 'group-indirect-adr', 'moa-prazosin', 'adr-alpha1-block', 'mirtazapine',
+                'moa-clonidine', 'clonidine-withdrawal', 'adr-alpha2-agonist', 'group-alpha-block'}
 SUBS = [('nmj', 'Neuromuscular drugs', 'pages 1–2'), ('chol', 'Cholinergic drugs', 'pages 2–4'),
         ('adr', 'Adrenergic drugs', 'pages 4–8'), ('raas', 'RAAS drugs', 'pages 8–10'), ('no', 'Nitric oxide and cGMP drugs', 'page 4')]
 qs = []
@@ -807,17 +829,17 @@ add('adr', 'moa-phenylephrine',
   ('α2 agonist', W, 'That is clonidine, brimonidine, tizanidine, guanfacine and dexmedetomidine.'),
   ('Selective α1 antagonist', W, 'That is prazosin, terazosin, doxazosin and tamsulosin.'),
   ('β1 agonist', W, 'That is dobutamine.')],
- 'Phenylephrine activates α1 receptors on blood vessels (vasoconstriction; nasal decongestant) and in the eye (mydriasis). Its adverse reactions are hypertension, burning and nasal discharge, and rebound congestion from receptor down-regulation.',
+ 'Phenylephrine activates α1 receptors (Gq, ↑Ca++) on blood vessels (vasoconstriction; nasal decongestant; higher preload and afterload) and in the eye (mydriasis). Its adverse reactions are burning, blurred vision, rebound congestion and higher blood pressure (care in patients with hypertension).',
  'Phenylephrine (agonist): α1 agonist; SOA: Blood vessels, Eyes',
  cite(4))
 
 add('adr', 'adr-phenylephrine',
  'Which adverse reaction is listed for phenylephrine used as a nasal decongestant?',
- [('Rebound congestion from receptor down-regulation', R, 'Listed: down-regulation → rebound congestion.'),
+ [('Rebound congestion', R, 'Listed on the slide and the list; he adds that the box says not to use it for more than 3 days.'),
   ('Orthostatic hypotension followed by reflex tachycardia', W, 'That is the α1 antagonists (prazosin and others).'),
-  ('Bronchospasm in asthma patients', W, 'That is the non-selective β blockers (propranolol and others).'),
-  ('Peripheral edema', W, 'That is mirtazapine (α2 block in small blood vessels).')],
- 'Phenylephrine’s listed adverse reactions are hypertension, burning and nasal discharge, and rebound congestion. Repeated α1 activation down-regulates the receptors, which gives rebound congestion; the list says to avoid it in patients with hypertension.',
+  ('Dry mouth', W, 'Dry mouth is the common complaint with clonidine (α2 agonist).'),
+  ('Hypertensive crisis on abrupt withdrawal', W, 'That is clonidine (receptor up-regulation).')],
+ 'Phenylephrine’s adverse reactions are burning, blurred vision, rebound congestion (do not use for more than 3 days) and higher blood pressure, so care is needed in patients with hypertension. The list attributes the rebound congestion to receptor down-regulation; that cause was not given in lecture.',
  'HTN, Burning & nasal discharge, rebound congestion … Down-reg → rebound congestion; Avoid in patients with HTN',
  cite(4))
 
@@ -827,37 +849,37 @@ add('adr', 'moa-cocaine',
   ('Stimulates presynaptic release of norepinephrine and dopamine', W, 'That is amphetamine and methylphenidate.'),
   ('Irreversible inhibitor of MAO-A and MAO-B', W, 'That is phenelzine (monoamine oxidase inhibitor).'),
   ('α1 agonist', W, 'That is phenylephrine, a direct agonist.')],
- 'Cocaine blocks reuptake of norepinephrine, so more norepinephrine stays in the synapse; its site of action is the central nervous system. Its listed adverse reactions are hypertension, tachycardia, arrhythmias and restlessness.',
+ 'Cocaine is a reuptake inhibitor: it blocks the norepinephrine transporter (NET), so more norepinephrine stays in the synapse and activates the postsynaptic receptors. Effects: severe vasoconstriction in blood vessels (α1; nosebleeds and septum damage when snorted), excitation in the central nervous system, and a faster heart that can lead to a heart attack.',
  'Cocaine (indirect antagonist): NE reuptake inhibitor; CNS; HTN, tachycardia, arrythmias, restlessness',
  cite(5))
 
 add('adr', 'moa-amphetamine',
- 'Which of the following describes the mechanism of action of methylphenidate?',
- [('Stimulates release of norepinephrine and dopamine', R, 'Listed for amphetamine, lisdexamphetamine, methylphenidate and dexmethylphenidate.'),
-  ('Norepinephrine reuptake inhibitor', W, 'That is cocaine.'),
-  ('Selective, irreversible monoamine oxidase B inhibitor', W, 'That is selegiline and rasagiline.'),
+ 'Which of the following describes the primary mechanism of action of methylphenidate?',
+ [('Stimulates release of norepinephrine and dopamine', R, 'Listed for amphetamine, lisdexamphetamine, methylphenidate and dexmethylphenidate; on 10/6 he added serotonin to the catecholamines released.'),
+  ('Norepinephrine reuptake inhibitor', W, 'That is cocaine, a complete NET blocker; the amphetamine-like drugs inhibit reuptake only weakly, as a secondary action.'),
+  ('Selective, irreversible monoamine oxidase B inhibitor', W, 'That is selegiline.'),
   ('Central α2 agonist', W, 'That is clonidine and guanfacine.')],
- 'Dextroamphetamine/amphetamine, methylphenidate, lisdexamphetamine and dexmethylphenidate stimulate presynaptic release of norepinephrine and dopamine in the central nervous system. Adverse reactions: hypertension, tachycardia, arrhythmias, restlessness and loss of appetite.',
+ 'Dextroamphetamine/amphetamine, methylphenidate, lisdexamphetamine and dexmethylphenidate work mainly by stimulating presynaptic release of norepinephrine, dopamine and serotonin, with weak-to-moderate inhibition of reuptake and of monoamine oxidase. More sympathetic outflow gives higher blood pressure and heart rate, tremor, sweating and loss of appetite.',
  'Stimulate pre-synaptic release of NE & DA (indirect antagonist); CNS; HTN, tachycardia, arrythmias, restlessness, loss of appetite',
  cite(5))
 
 add('adr', 'phenelzine',
  'Which statement about phenelzine is CORRECT?',
  [('It can cause a hypertensive crisis with dietary tyramine', R, 'Listed serious adverse reaction: hypertensive crisis due to dietary tyramine.'),
-  ('It is a selective, reversible monoamine oxidase B inhibitor', W, 'Phenelzine is non-selective (MAO-A and MAO-B) and irreversible; selegiline and rasagiline are the selective MAO-B drugs.'),
+  ('It is a selective, reversible monoamine oxidase B inhibitor', W, 'Phenelzine is non-selective (MAO-A and MAO-B) and irreversible; selegiline is the selective MAO-B drug.'),
   ('It blocks norepinephrine reuptake', W, 'That is cocaine.'),
   ('It is a direct α1 agonist', W, 'That is phenylephrine.')],
- 'Phenelzine irreversibly inhibits both monoamine oxidase A and B (MAO-A and MAO-B), so the breakdown of norepinephrine is inhibited. Its serious adverse reaction is a hypertensive crisis from dietary tyramine; the list notes phenoxybenzamine can be used short term for that crisis.',
+ 'Phenelzine irreversibly inhibits both monoamine oxidase A and B (MAO-A and MAO-B), so the breakdown of norepinephrine is inhibited. Its serious adverse reaction is a hypertensive crisis from dietary tyramine in fermented foods (cheese, bread, wine): the “cheese effect”.',
  'Phenelzine: Non-selective MOA-A & MOA-B irreversible antagonist; Inhibits breakdown of NE; Serious ADR → HTN crisis due to dietary Tyramine',
  cite(5))
 
 add('adr', 'mao-tell',
  'Which drug is a selective, irreversible inhibitor of monoamine oxidase B (MAO-B)?',
- [('Selegiline', R, 'Selegiline and rasagiline: selective MAO-B irreversible antagonists.'),
+ [('Selegiline', R, 'Selegiline: selective MAO-B irreversible antagonist (low doses).'),
   ('Phenelzine', W, 'Phenelzine inhibits both MAO-A and MAO-B (non-selective).'),
   ('Cocaine', W, 'Cocaine is a norepinephrine reuptake inhibitor.'),
-  ('Mirtazapine', W, 'Mirtazapine is an α2 (and α1, muscarinic, H1, 5-HT2a) antagonist.')],
- 'Both monoamine oxidase (MAO) drug groups inhibit breakdown of norepinephrine and are irreversible. Phenelzine blocks MAO-A and MAO-B (non-selective); selegiline and rasagiline block MAO-B selectively and are listed for depression and Parkinson’s.',
+  ('Mirtazapine', W, 'Mirtazapine is an α2 (and α1, muscarinic, H1) antagonist.')],
+ 'Both monoamine oxidase (MAO) drug groups inhibit breakdown of norepinephrine and are irreversible. Phenelzine blocks MAO-A and MAO-B (non-selective); selegiline blocks MAO-B (B for brain) selectively, so it carries no tyramine “cheese effect”.',
  'Selegiline, Rasagiline: SELECTIVE MAO-B irreversible antagonist; Inhibits breakdown of NE',
  cite(5), tags=['tell'])
 
@@ -866,11 +888,11 @@ add('adr', 'group-indirect-adr',
  [('Cocaine', R, 'Norepinephrine reuptake inhibitor.'),
   ('Methylphenidate', R, 'Stimulates presynaptic release of norepinephrine and dopamine.'),
   ('Phenelzine', R, 'Inhibits monoamine oxidase, the enzyme that breaks down norepinephrine.'),
-  ('Rasagiline', R, 'Inhibits monoamine oxidase B (MAO-B).'),
+  ('Selegiline', R, 'Inhibits monoamine oxidase B (MAO-B).'),
   ('Phenylephrine', W, 'A direct α1 agonist.'),
   ('Clonidine', W, 'A direct α2 agonist.'),
   ('Prazosin', W, 'A direct α1 antagonist.')],
- 'The list’s indirect adrenergic drugs act on norepinephrine handling, not on the receptor: cocaine blocks reuptake; amphetamines and methylphenidate stimulate release; phenelzine, selegiline and rasagiline inhibit breakdown by monoamine oxidase (MAO).',
+ 'The list’s indirect adrenergic drugs act on norepinephrine handling, not on the receptor: cocaine blocks reuptake; amphetamines and methylphenidate stimulate release; phenelzine and selegiline inhibit breakdown by monoamine oxidase (MAO).',
  'Cocaine: NE reuptake inhibitor. Amphetamine/Methylphenidate: Stimulate pre-synaptic release of NE & DA. Phenelzine, Selegiline, Rasagiline: Inhibits breakdown of NE',
  cite(5), multi=True)
 
@@ -879,7 +901,7 @@ add('adr', 'moa-prazosin',
  [('Selective, reversible α1 antagonist', R, 'Prazosin, terazosin, doxazosin and tamsulosin (α1a) are selective, reversible α1 antagonists.'),
   ('Non-selective, irreversible α1 and α2 antagonist', W, 'That is phenoxybenzamine.'),
   ('α2 agonist', W, 'That is clonidine and the related α2 agonists.'),
-  ('β1, β2 and α1 antagonist', W, 'That is carvedilol and labetalol.')],
+  ('β1, β2 and α1 antagonist', W, 'That is carvedilol.')],
  'Prazosin, terazosin, doxazosin and tamsulosin block α1 receptors selectively and reversibly (tamsulosin is listed for α1a). Sites listed: brain, eye, nose, blood vessels and urethra. Blocking α1 on blood vessels decreases preload and afterload.',
  'Prazosin, Terazosin, Doxazosin, Tamsulosin → α1a: SELECTIVE α1 antagonist reversible',
  cite(5))
@@ -889,8 +911,8 @@ add('adr', 'adr-alpha1-block',
  [('Orthostatic hypotension leading to reflex tachycardia', R, 'Listed with headache, blurred vision and sexual dysfunction.'),
   ('Rebound congestion', W, 'That is phenylephrine (α1 agonist).'),
   ('Hypertensive crisis when the drug is stopped abruptly', W, 'That is the α2 agonists (clonidine and others).'),
-  ('Masking of hypoglycemia symptoms', W, 'That is the non-selective β blockers and carvedilol/labetalol.')],
- 'Blocking α1 on blood vessels lowers resistance; on standing this gives orthostatic hypotension, followed by reflex tachycardia. The other listed reactions of the α1 antagonists are headache, blurred vision and sexual dysfunction.',
+  ('Dry mouth', W, 'Dry mouth is the common complaint with clonidine (α2 agonist).')],
+ 'Blocking α1 relaxes veins (blood pools, orthostatic hypotension and syncope, the first-dose effect) and arteries (the baroreceptors respond with reflex tachycardia). Blurred vision (α1 in the eye) and headache (common to vasodilators) complete the slide’s list; the drug list adds sexual dysfunction.',
  'Headache; Blurred vision; Orthostatic hypotension → reflex tachycardia; Sexual dysfunction',
  cite(5))
 
@@ -920,7 +942,7 @@ add('adr', 'mirtazapine',
   ('α1', W, 'Mirtazapine blocks α1 too, but the list ties drowsiness to H1 block.'),
   ('α2', W, 'α2 block enhances release of norepinephrine and serotonin; the list ties drowsiness to H1.'),
   ('β1', W, 'Mirtazapine is not listed as acting at β receptors.')],
- 'Mirtazapine is a non-selective antagonist at α2, α1, muscarinic, H1 and 5-HT2a receptors, acting in the central nervous system. α2 block enhances release of norepinephrine and serotonin; H1 block causes drowsiness.',
+ 'Mirtazapine is a non-selective antagonist at α2, α1, muscarinic and H1 receptors (the list adds 5-HT2a), acting in the central nervous system. α2 block enhances release of norepinephrine and serotonin; blocking H1 and muscarinic receptors causes drowsiness (sedation).',
  'Mirtazapine: NON-SELECTIVE α2 antagonist, α1 antagonist, Muscarinic antagonist, H1 antagonist, 5-HT2a antagonist; Enhances release of NE & 5-HT (serotonin); Blocks H1 release → drowsiness',
  cite(6))
 
@@ -939,7 +961,7 @@ add('adr', 'moa-clonidine',
  [('α2 agonist', R, 'Clonidine, brimonidine, tizanidine, guanfacine and dexmedetomidine are α2 agonists.'),
   ('α2 antagonist', W, 'That is mirtazapine.'),
   ('α1 agonist', W, 'That is phenylephrine.'),
-  ('β1 antagonist', W, 'That is metoprolol, atenolol and nebivolol.')],
+  ('Selective α1 antagonist', W, 'That is prazosin and the other -osins.')],
  'The α2 agonists act in the central nervous system, where they enhance inhibition and suppress the sympathetic nervous system. Their listed adverse reactions are sedation, dry mouth, hypotension, bradycardia, sexual dysfunction, depression and constipation.',
  'Clonidine, Brimonidine, Tizanidine, Guanfacine, Dexmedetomidine: α2 agonist; CNS; Enhance inhibitory / suppress SNS',
  cite(6))
@@ -947,9 +969,9 @@ add('adr', 'moa-clonidine',
 add('adr', 'clonidine-withdrawal',
  'A patient stops clonidine abruptly. Which reaction is listed, and why?',
  [('Hypertensive crisis, from up-regulated receptors', R, 'Listed: hypertensive crisis can occur if taken off drug abruptly due to up-regulation of receptors.'),
-  ('Bronchospasm, from β2 block', W, 'Bronchospasm risk is the non-selective β blockers; clonidine is an α2 agonist.'),
+  ('Bradycardia, from extra parasympathetic tone', W, 'Stopping clonidine removes the brake on the sympathetic system; pressure and heart rate rise.'),
   ('Rebound congestion, from down-regulated α1 receptors', W, 'That is phenylephrine.'),
-  ('Hypoglycemia, from masked symptoms', W, 'Masked hypoglycemia is the β blockers.')],
+  ('Orthostatic hypotension, from α1 block', W, 'That is the first-dose effect of prazosin.')],
  'Clonidine activates central α2 receptors and suppresses sympathetic outflow. During treatment the receptors up-regulate, so stopping the drug abruptly can cause a hypertensive crisis.',
  'Hypertensive crisis can occur if taken off drug abruptly due to up-regulation of receptors',
  cite(6), tags=['apply'])
@@ -960,7 +982,7 @@ add('adr', 'adr-alpha2-agonist',
   ('Dry mouth', R, 'Listed.'),
   ('Bradycardia', R, 'Listed (suppressed sympathetic outflow).'),
   ('Hypotension', R, 'Listed.'),
-  ('Tachycardia and arrhythmias', W, 'Those are the indirect sympathomimetics (cocaine, amphetamines) and dobutamine.'),
+  ('Tachycardia and arrhythmias', W, 'Those follow from more sympathetic drive, as with cocaine and the amphetamines.'),
   ('Rebound nasal congestion', W, 'That is phenylephrine.')],
  'α2 agonists suppress the sympathetic nervous system from the central nervous system. Listed reactions: sedation, dry mouth, hypotension, bradycardia, sexual dysfunction, depression and constipation (the list says through a gastrointestinal inhibitory feedback pathway → less acetylcholine).',
  'Sedation, dry mouth, hypotension, bradycardia, sexual dysfunction, depression, constipation',
@@ -1116,13 +1138,13 @@ add('adr', 'isoproterenol',
 add('adr', 'group-alpha-block',
  'Which drugs block α1 receptors?',
  [('Terazosin', R, 'Selective, reversible α1 antagonist.'),
-  ('Phenoxybenzamine', R, 'Non-selective α1 and α2 antagonist, irreversible.'),
+  ('Prazosin', R, 'Selective, reversible α1 antagonist.'),
   ('Carvedilol', R, 'β1, β2 and α1 antagonist.'),
   ('Mirtazapine', R, 'Listed as an α1 antagonist among its receptors.'),
   ('Phenylephrine', W, 'Phenylephrine activates α1.'),
-  ('Metoprolol', W, 'Metoprolol blocks β1 only.'),
+  ('Selegiline', W, 'Selegiline inhibits monoamine oxidase B; it does not block α1.'),
   ('Clonidine', W, 'Clonidine activates α2.')],
- 'α1 block appears in four rows of the list: the selective α1 antagonists (prazosin, terazosin, doxazosin, tamsulosin), phenoxybenzamine (α1 and α2, irreversible), carvedilol and labetalol (with β1 and β2), and mirtazapine (with α2, muscarinic, H1 and 5-HT2a).',
+ 'α1 block appears in four rows of the list: the selective α1 antagonists (prazosin, terazosin, doxazosin, tamsulosin), phenoxybenzamine (α1 and α2, irreversible), carvedilol and labetalol (with β1 and β2), and mirtazapine (with α2, muscarinic and H1).',
  'SELECTIVE α1 antagonist reversible … Non-selective α1 & α2 antagonist irreversible … β1 & β2 antagonist, & α1 antagonist … α1 antagonist (mirtazapine)',
  cite('5–7'), multi=True)
 
@@ -1277,6 +1299,38 @@ TQ = {
 }
 
 # His exam-scope statements on 10/5 that take items out of the bank.  The item
+# --------------------------------------------------------------------------
+# Transcript 10/6 (adrenergic deck slides 1–32).  Released adrenergic items get
+# his words as their quote, the deck slides and '; transcript 10/6' in the cite,
+# and source 'both'.  Quotes are verbatim from the transcript file (its spellings
+# kept); ' … ' joins separate spans.
+# --------------------------------------------------------------------------
+TQ6 = {  # concept: (deck slides, quote)
+ 'moa-phenylephrine': ('9, 17–18', "on the selective side, I have phenyphrine as a selected alpha 1 agonist. Pheenyphrine sounds like epinephrine, norepinephrine, so you know it's affecting the alpha 1 receptor in a way. … Yes, it's an agonist to the alpha 1, so it's gonna activate it and it's gonna activate the GQ pathway which is gonna increase calcium inside of those smooth muscles which leads to vasoconstriction, right."),
+ 'adr-phenylephrine': ('18', "And then there are some side effects associated with that, which of course if you put anything in the eye, it's going to cause some burning, blurred vision, uh, you may have rebound congestion. As such, if you read in the back of the box, it tells you you don't use for more than 3 days."),
+ 'moa-cocaine': ('10', "So cocaine is a reuptake inhibitor. This drug blocks the net transporter, and if I block the net transporter, what is going to happen to the levels of norepinephrine? Would increase, which means is it's gonna cause what activation of those postsynaptic receptors, right?"),
+ 'moa-amphetamine': ('11', "So they do not work typically by binding and activating the receptors. They are indirectly enhancing the release, so they stimulate the release of catecholamine, such as norepinephrine, serotonin, and dopamine, OK?"),
+ 'phenelzine': ('14–15', "We have the non-selectives, and I picked phenelzine as our prototypical drug. This drug is an irreversible antagonist, which means is, once you bind that enzyme, your body has to make new ones. … you have the inability to break down that dietary tyramine that you're consuming, and those fermented foods have high levels of tyramine, and that can cause what is called a hypertensive crisis."),
+ 'mao-tell': ('14–15', "And then we have a better MAO inhibitor, uh, selegiline, which is selective to the MAOB. … So there is no cheese effect with the selective irreversible MAOB inhibitors in that process."),
+ 'group-indirect-adr': ('9', "The other ones over here that are indirectly we have the amphetamine-like drugs. … We have drugs like cocaine that are used recreationally … And then we have some of the MAO inhibitors that by blocking the enzyme that breaks down catecholamines, we can increase the levels in the brain"),
+ 'moa-prazosin': ('27–28', "So this is a reversible antagonist that is highly selective to the alpha ones. … For our exam purpose, all I need to know if you see a drug with OC is a selective alpha-1 antagonist."),
+ 'adr-alpha1-block': ('30', "So we have that first dose effect that is gonna cause the reflex tachycardia because your barrels are gonna sense that your blood pressure is too low. You can't get enough blood to the heart, not enough blood to the head."),
+ 'mirtazapine': ('31–32', "Furthermore, this drug blocks histamine and muscarinic type one in the brain. What is the side effect of having a drug that blocks the muscarinic and the histamine receptors? Sedation, right?"),
+ 'moa-clonidine': ('21–22', "So here are our list for our alpha 2 agonists, but if you know clonidine, most of these drugs when needine, it's gonna be an alpha 2 agonist. … we add the Intuniv, which is a similar drug to it"),
+ 'clonidine-withdrawal': ('26', "So what is the one education point that you have to make to your patients? You got to wean yourself off because if you go cold turkey, you got all these receptors, now norepinephrine is flowing like there's no tomorrow, and you go into a hypertensive crisis, right?"),
+ 'adr-alpha2-agonist': ('26', "So when it comes to side effects, the most common side effects with this drug can be sedation because you're inhibiting the CNS. Patients may complain of nightmares and maybe depression. Dry mouth is very common. … lower blood pressure, lower heart rate, so hypertension and bradycardia can be severe if the dose is too high."),
+ 'group-alpha-block': ('7, 27, 31', "Carvedilol is a non-selective beta blocker, right? And carvedilol can not only block the beta ones and the beta 2s, but they can also block the alpha ones. … Mirtazapine is our alpha-2 antagonist, but also can block H1s, it can block muscarinics, and it can block alpha-1s."),
+}
+NOTE6 = {
+ 'adr-phenylephrine': 'The drug list gives the cause of rebound congestion as receptor down-regulation; in lecture he gave the warning (do not use for more than 3 days) but not the cause. Not keyed.',
+ 'moa-cocaine': 'The drug list says cocaine is “used with lidocaine to control arrythmias (Na+ channel blocker)”. On 10/6 he said the opposite: cocaine (or epinephrine) is added to lidocaine as a vasoconstrictor to decrease bleeding and keep lidocaine from reaching the heart, where it can cause arrhythmias. Not asked here (uses are not tested); see L10-022.',
+ 'mao-tell': 'The drug list adds rasagiline as a second selective MAO-B inhibitor; the deck and the 10/6 lecture name only selegiline (“low doses”), so rasagiline is not asked.',
+ 'group-indirect-adr': 'Rasagiline (drug list only) was replaced by selegiline, the MAO-B inhibitor he taught on 10/6.',
+ 'mirtazapine': 'The drug list ties drowsiness to H1 block; on 10/6 he named histamine and muscarinic block for the sedation (slide 33 also lists “Blockade of Muscarinic & Histamine (H1)”). H1 is keyed; muscarinic is not among the options.',
+ 'moa-clonidine': 'Guanfacine does not end in -idine; on 10/6 he named it (as Intuniv) “a similar drug to it” (clonidine). For the exam he focuses on clonidine as the prototype.',
+ 'group-alpha-block': 'Carvedilol was named on 10/6 only as an example on the MAP-equation slide; the β-blocker slides are not yet taught. Phenoxybenzamine (slide 27, irreversible) is left out of the options until its slides are taught.',
+}
+
 # stays in the generator so later ids do not shift; it is not posted.
 SCOPE = [
  ('Brand names', "Uh, you don't need to know brand names for the exam, just generic", 'No stem or option names a brand.'),
@@ -1302,6 +1356,19 @@ for q in qs:
         q['quote'] = TQ[q['id']]
     if q['id'] in REMOVED:
         q['removed'] = REMOVED[q['id']]
+ADR_ALL = {q['concept'] for q in qs if q['sub'] == 'adr'}
+assert ADR_RELEASED <= ADR_ALL, ADR_RELEASED - ADR_ALL
+HELD_CONCEPTS = ADR_ALL - ADR_RELEASED      # adrenergic concepts still held (ids kept)
+for q in qs:
+    if q['concept'] in TQ6 and q['sub'] == 'adr':
+        sl, quote = TQ6[q['concept']]
+        q['source'] = 'both'
+        q['cite'] += f"; {ADR} slide{'s' if re.search('[–,]', sl) else ''} {sl}; transcript 10/6"
+        q['quote'] = quote
+        if q['concept'] in NOTE6:
+            q['note'] = (q.get('note', '') + ' ' + NOTE6[q['concept']]).strip()
+assert set(TQ6) == ADR_RELEASED, set(TQ6) ^ ADR_RELEASED
+def is_held(q): return q['sub'] in HELD or q['concept'] in HELD_CONCEPTS
 
 # --------------------------------------------------------------------------
 # Checks
@@ -1343,7 +1410,7 @@ if fail:
 # --------------------------------------------------------------------------
 here = os.path.dirname(os.path.abspath(__file__))
 out = ["TOPICS.push({id:'DL2', name:'Exam 2 drug list', prof:'Gottlieb', lecture:'DL2',",
-       "  cite:'Pharmacology_Exam_2_Drug_List.pdf, checked against the ANS, NMJ and cholinergic decks',",
+       "  cite:'Pharmacology_Exam_2_Drug_List.pdf, checked against the ANS, NMJ, cholinergic and adrenergic decks',",
        "  subs:[" + ','.join(f"{{id:'{k}', name:'{n}', cite:'{c}'}}" for k, n, c in SUBS if k not in HELD) + "]});",
        '/* Generated by gen_druglist2.py from Pharmacology_Exam_2_Drug_List.pdf. Edit the generator, not this file. */',
        'QUESTIONS.push(']
@@ -1351,7 +1418,7 @@ out = ["TOPICS.push({id:'DL2', name:'Exam 2 drug list', prof:'Gottlieb', lecture
 for q in qs:
     if q['concept'] in ('moa-nitrates', 'moa-pde', 'group-cgmp'):
         q['sub'] = 'no'
-posted = [q for q in qs if q['sub'] not in HELD and not q.get('removed')]
+posted = [q for q in qs if not is_held(q) and not q.get('removed')]
 out.append(',\n'.join(json.dumps(q, ensure_ascii=False) for q in posted))
 out.append(');')
 open(os.path.join(here, 'q_DL2.js'), 'w', encoding='utf-8').write('\n'.join(out) + '\n')
@@ -1362,11 +1429,11 @@ open(os.path.join(here, 'q_DL2.js'), 'w', encoding='utf-8').write('\n'.join(out)
 SEC = {'nmj': 'Neuromuscular', 'chol': 'Cholinergic', 'adr': 'Adrenergic (printed “ADNRENERGIC”)', 'raas': 'RAAS'}
 def esc(s): return s.replace('|', '/')
 md = ['# DL2 — Exam 2 drug list', '',
-      'Source: `Pharmacology_Exam_2_Drug_List.pdf` (10 pages), the course’s official Exam 2 drug list (the PDF header credits Joshua Farias, Class of 2025). Columns: Drug / MOA / SOA / Side effects-ADRs / Extra-key information. Colour code: green = agonist, red = antagonist, blue = indirect antagonist, purple = donor. Where it disagrees with a slide, the question follows the slide and states the disagreement in a `note` (see Conflicts). Questions on the adrenergic, nitric oxide/cGMP and RAAS sections are written but held back until those slides and transcripts are received.',
+      'Source: `Pharmacology_Exam_2_Drug_List.pdf` (10 pages), the course’s official Exam 2 drug list (the PDF header credits Joshua Farias, Class of 2025). Columns: Drug / MOA / SOA / Side effects-ADRs / Extra-key information. Colour code: green = agonist, red = antagonist, blue = indirect antagonist, purple = donor. Where it disagrees with a slide, the question follows the slide and states the disagreement in a `note` (see Conflicts). Questions on the nitric oxide/cGMP and RAAS sections are written but held back until those slides and transcripts are received. Adrenergic questions are posted drug by drug as he teaches them: on 10/6 he taught the adrenergic deck through mirtazapine (slide 32), so the items on phenylephrine, cocaine, the amphetamines and methylphenidate, phenelzine, selegiline, prazosin and the -osins, clonidine and the α2 agonists, and mirtazapine’s mechanism are posted; the β drugs, epinephrine, norepinephrine, dobutamine, isoproterenol, mirabegron, phenoxybenzamine and mirtazapine’s adverse reactions stay held.',
       '',
       'Generated by `src/gen_druglist2.py` (writes `src/q_DL2.js` and this file). Parsing method: the text extraction (`decks/Pharmacology_Exam_2_Drug_List.txt`) was read alongside page renders of the PDF to assign each cell to its column; rows that run across a page break are given both pages.',
       '',
-      'Verification decks: `Autonomic Nervous System.pdf`, `PCOL-NMJ_PCOL_2026s_pptx.pdf`, `PCOL-Cholinergic-26s.pdf`. The adrenergic and RAAS decks are not available yet, so every adrenergic and RAAS drug except epinephrine and norepinephrine is “list only”. Day 1 slide 8 (Exam 1 deck) says Exam 2 tests MOA, SOA, ADRs and DDIs and not use/indication, dose, route or brand names, so the bank asks few use items and no brand names. On 10/5 he repeated it: “you don’t need to know brand names for the exam, just generic” (see Exam scope below).',
+      'Verification decks: `Autonomic Nervous System.pdf`, `PCOL-NMJ_PCOL_2026s_pptx.pdf`, `PCOL-Cholinergic-26s.pdf`, `PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf` (slides 1–32 taught 10/6; text from the student’s annotated copy). The RAAS deck is not available yet, and the adrenergic β-receptor slides are not yet taught, so those drugs are “list only”. Day 1 slide 8 (Exam 1 deck) says Exam 2 tests MOA, SOA, ADRs and DDIs and not use/indication, dose, route or brand names, so the bank asks few use items and no brand names. On 10/5 he repeated it: “you don’t need to know brand names for the exam, just generic” (see Exam scope below).',
       '']
 for sec in ['nmj', 'chol', 'adr', 'raas']:
     md += [f'## {SEC[sec]}', '', '| Drug(s) | Colour | MOA | SOA | ADRs | Key information | Page | Verified |', '|---|---|---|---|---|---|---|---|']
@@ -1380,9 +1447,9 @@ unv_drugs = [d for r in ROWS if r['status'] == 'list' for d in r['drugs']]
 md += ['## Verification status', '',
        f'Confirmed on a slide ({len(ver_drugs)} entries): ' + '; '.join(ver_drugs) + '.', '',
        f'List only, no slide yet ({len(unv_drugs)} entries): ' + '; '.join(unv_drugs) + '.', '',
-       '## Conflicts / uncertain (list vs slide vs transcript 10/5)', '',
-       'The slide wins over the list; where the 10/5 transcript is explicit, his words win over both.', '',
-       '| Drug | Drug list says | Slide says | Transcript 10/5 says | Resolution |', '|---|---|---|---|---|']
+       '## Conflicts / uncertain (list vs slide vs transcript)', '',
+       'The slide wins over the list; where the transcript (10/5 or 10/6) is explicit, his words win over both.', '',
+       '| Drug | Drug list says | Slide says | Transcript says | Resolution |', '|---|---|---|---|---|']
 for d, a, b, t, c in CONFLICTS:
     md.append(f'| {esc(d)} | {esc(a)} | {esc(b)} | {esc(t)} | {esc(c)} |')
 md += ['', '## Exam scope from transcript 10/5', '',
@@ -1391,13 +1458,15 @@ md += ['', '## Exam scope from transcript 10/5', '',
 for k, w, e in SCOPE:
     md.append(f'| {esc(k)} | “{esc(w)}” | {esc(e)} |')
 md += ['', 'Removed: ' + '; '.join(f'{i} ({r})' for i, r in REMOVED.items()) + '.', '',
-       f"Transcript 10/5 (`transcripts/2026-10-05_transcript.txt`) covers the rest of the NMJ deck and the whole cholinergic deck; {sum(1 for q in qs if q['id'] in TQ and not q.get('removed'))} posted items carry his words as their quote (source `both`).", '']
+       f"Transcript 10/5 (`transcripts/2026-10-05_transcript.txt`) covers the rest of the NMJ deck and the whole cholinergic deck; {sum(1 for q in qs if q['id'] in TQ and not q.get('removed'))} posted items carry his words as their quote (source `both`).", '',
+       f"Transcript 10/6 (`transcripts/2026-10-06_transcript.txt`) covers the adrenergic deck from slide 1 through mirtazapine (slide 32); {len(ADR_RELEASED)} adrenergic items are released with his words as their quote; {len(HELD_CONCEPTS)} adrenergic items stay held: " + ', '.join(q['id'] + ' (' + q['concept'] + ')' for q in qs if q['concept'] in HELD_CONCEPTS) + '.', '']
 md += ['', '## Questions', '']
 per = {}
 for q in qs: per[q['sub']] = per.get(q['sub'], 0) + 1
 md.append(f"{len(qs)} questions written, {len(posted)} posted, {len(REMOVED)} removed by his exam-scope statements (all skill `drug`; {sum(1 for q in qs if q.get('multi'))} select-all). Per sub: " + ', '.join(f'{k} {v}' for k, v in per.items()) + '.')
 md.append('')
 for q in qs:
-    md.append(f"- {q['id']} ({q['sub']}{', HELD' if q['sub'] in HELD else ''}{', REMOVED' if q.get('removed') else ''}{', select-all' if q.get('multi') else ''}{', note' if q.get('note') else ''}{', transcript 10/5' if q['source'] == 'both' else ''}): {q['stem']}")
+    md.append(f"- {q['id']} ({q['sub']}{', HELD' if is_held(q) else ''}{', REMOVED' if q.get('removed') else ''}{', select-all' if q.get('multi') else ''}{', note' if q.get('note') else ''}{', transcript 10/6' if q['concept'] in TQ6 and q['sub'] == 'adr' else (', transcript 10/5' if q['source'] == 'both' else '')}): {q['stem']}")
 open(os.path.join(here, '..', 'notes', 'DL2.md'), 'w', encoding='utf-8').write('\n'.join(md) + '\n')
 print(len(posted), 'drug-list questions posted,', len(REMOVED), 'removed,', len(qs) - len(posted) - len(REMOVED), 'held until their slides and transcripts arrive;', 'per sub', per)
+print('adrenergic released:', ', '.join(q['id'] for q in qs if q['sub'] == 'adr' and not is_held(q)))

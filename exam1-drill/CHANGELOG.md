@@ -2,6 +2,13 @@
 
 Newest first. The build embeds this file; the Topics page shows what is new since your last visit, and the Progress page shows all of it. Keep each bullet to one short line.
 
+## 2026-10-07 (10/6 lecture)
+- Day 10 (10/6): adrenergic drugs through mirtazapine, 60 questions.
+- Three new polls word for word: NET blocker, phenylephrine decongestant, clonidine.
+- Polls from 10/5 and 10/6 marked: he will use one from each day word for word on the exam.
+- Drug list: 14 adrenergic questions posted for the drugs he taught on 10/6.
+- Day 8 and Day 9 dates corrected (10/1 and 10/5).
+
 ## 2026-10-06 (10/5 lecture)
 - Days 8 and 9 now quote his 10/5 lecture; 14 new questions from his class questions.
 - His 12 new Exam 2 polls word for word with his keys, including the GI tracing figure.
