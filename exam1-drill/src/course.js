@@ -24,8 +24,9 @@ const COURSE = {
     {id:'DL1', deck:'Exam_1_Drug_List_2026.pdf', label:'Exam 1 drug list', prof:'Gottlieb', exam:1, module:1},
     // Exam 2 (syllabus: Exam II covers the Oct 1 – Oct 8 lectures)
     {id:'L07', deck:'Autonomic Nervous System.pdf', label:'Day 7 (9/30–10/1): Signal transduction, overview of the autonomic nervous system', prof:'Gottlieb', exam:2, module:2},
-    {id:'L08', deck:'PCOL-NMJ_PCOL_2026s_pptx.pdf', label:'Day 8 (10/5): Neuromuscular junction pharmacology, nicotinic receptors', prof:'Gottlieb', exam:2, module:2},
-    {id:'L09', deck:'PCOL-Cholinergic-26s.pdf', label:'Day 9 (10/6): Cholinergic pharmacology, muscarinic receptors', prof:'Gottlieb', exam:2, module:2},
+    {id:'L08', deck:'PCOL-NMJ_PCOL_2026s_pptx.pdf', label:'Day 8 (10/1, 10/5): Neuromuscular junction pharmacology, nicotinic receptors', prof:'Gottlieb', exam:2, module:2},
+    {id:'L09', deck:'PCOL-Cholinergic-26s.pdf', label:'Day 9 (10/5): Cholinergic pharmacology, muscarinic receptors', prof:'Gottlieb', exam:2, module:2},
+    {id:'L10', deck:'PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf', label:'Day 10 (10/6): Adrenergic pharmacology, indirect-acting drugs and α receptors', prof:'Gottlieb', exam:2, module:2},
     {id:'PE2', deck:'PollEV’s Exam 2.pdf', label:'His Exam 2 polls (verbatim, with his keys)', prof:'Gottlieb', exam:2, module:2},
     {id:'DL2', deck:'Pharmacology_Exam_2_Drug_List.pdf', label:'Exam 2 drug list', prof:'Gottlieb', exam:2, module:2}
   ],

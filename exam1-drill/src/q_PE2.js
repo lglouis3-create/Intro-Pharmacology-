@@ -240,7 +240,7 @@ QUESTIONS.push(
 /* ================ 10/5 polls (verbatim, keys highlighted on his sheet) ================ */
 /* ---------------- Poll 7: paralysis by antagonizing ACh at Nm ---------------- */
 {id:'PE2-019', lecture:'PE2', prof:'Gottlieb', tier:'new', topic:'PE2', sub:'verbatim', skill:'tell',
- concept:'rocuronium-antagonist-paralysis', tags:['poll','pollev','verbatim'], source:'both',
+ concept:'rocuronium-antagonist-paralysis', tags:['poll','pollev','verbatim','on-exam-verbatim'], source:'both',
  stem:'Which of the following drugs causes paralysis by antagonizing the binding of ACh to the Nm receptor?',
  options:[
   {t:'Varenicline', correct:false, why:'Varenicline is a partial agonist at the α4/β2 neuronal nicotinic (Nn) receptor in the brain; it does not cause paralysis.'},
@@ -249,12 +249,12 @@ QUESTIONS.push(
   {t:'Norepinephrine', correct:false, why:'Norepinephrine is an adrenergic agonist; it does not act at the Nm receptor and does not cause paralysis.'}],
  teach:'Two of the four options cause paralysis at the muscle nicotinic (Nm) receptor, by opposite mechanisms. Succinylcholine is a depolarizing agonist that opens the channel; curare-like drugs (any drug with -cur- in its name, such as rocuronium) are non-depolarizing competitive antagonists with affinity but no efficacy. The stem asks for the antagonist, so the agonist is out.',
  quote:'So out of these questions, just based on the stem, you should be able to eliminate two options, right? Right off the bat because two of them may cause paralysis, the other two do not cause paralysis ... Why is not B as in boy? Because they don\'t compete with a pseudocholine. They\'re both agonists. ... Uh, so, uh, Roqueron will be the best answer.',
- note:'“Succinycholine” is his spelling on the poll (succinylcholine); kept as written. Bonus-point poll on 10/5. Green highlight on the sheet: Rocuronium; in the audio he keys C and rules out B because it is an agonist.',
+ note:'“Succinycholine” is his spelling on the poll (succinylcholine); kept as written. Bonus-point poll on 10/5. Green highlight on the sheet: Rocuronium; in the audio he keys C and rules out B because it is an agonist. He said on 10/6 that one of the 10/5 polls and one of the 10/6 polls will be on Exam 2 word for word (“one of the questions today and one of the questions yesterday I\'m gonna use verbatim, word by word on your exam”), without naming which; every poll run on those two days is tagged on-exam-verbatim.',
  cite:'PollEV’s Exam 2.pdf poll 7; transcript 10/5; PCOL-NMJ_PCOL_2026s_pptx.pdf slide 19'},
 
 /* ---------------- Poll 8: rocuronium, most likely effect ---------------- */
 {id:'PE2-020', lecture:'PE2', prof:'Gottlieb', tier:'new', topic:'PE2', sub:'verbatim', skill:'apply',
- concept:'rocuronium-effect-paralysis', tags:['poll','pollev','verbatim'], source:'both',
+ concept:'rocuronium-effect-paralysis', tags:['poll','pollev','verbatim','on-exam-verbatim'], source:'both',
  stem:'If a patient is administered rocuronium, which of the following is most likely to occur?',
  options:[
   {t:'diarrhea', correct:false, why:'The gut is controlled by muscarinic receptors; rocuronium blocks Nm at skeletal muscle.'},
@@ -264,12 +264,12 @@ QUESTIONS.push(
   {t:'bronchial constriction', correct:false, why:'Bronchial constriction is a muscarinic effect; bronchial spasm from histamine release is a curare-like side effect with a very small chance for rocuronium.'}],
  teach:'Rocuronium is a curare-like competitive Nm antagonist, so paralysis happens 100% of the time. To affect an organ, a drug needs the receptor that controls it: the gut is muscarinic, the bladder muscarinic or adrenergic, and the blood vessels adrenergic. Histamine release may or may not happen with some curare-like drugs, and with rocuronium the chance is very small.',
  quote:'All right, what is the best answer? Paralysis, right? Remember, in order to affect the gut, it has to be what? muscarinic. In order to affect the bladder, it has to be muscarinic or adrenergic, right? Uh, in order to affect the blood vessel has to be adrenergic because that\'s the only, uh, sympathetic that we have. ... So what we have over here is paralysis. That\'s always going to happen.',
- note:'Green highlight: paralysis; he keyed paralysis aloud on 10/5. A student argued for a histamine effect; he answered that paralysis happens every time while histamine release may or may not, “But Rocuronium, very small chance”. In the same answer he said it “may cause bronchodilation because of the release of histamine”; slides 30 and 32 list bronchial spasm from histamine release, so that remark is treated as misspoken.',
+ note:'Green highlight: paralysis; he keyed paralysis aloud on 10/5. A student argued for a histamine effect; he answered that paralysis happens every time while histamine release may or may not, “But Rocuronium, very small chance”. In the same answer he said it “may cause bronchodilation because of the release of histamine”; slides 30 and 32 list bronchial spasm from histamine release, so that remark is treated as misspoken. He said on 10/6 that one of the 10/5 polls and one of the 10/6 polls will be on Exam 2 word for word (“one of the questions today and one of the questions yesterday I\'m gonna use verbatim, word by word on your exam”), without naming which; every poll run on those two days is tagged on-exam-verbatim.',
  cite:'PollEV’s Exam 2.pdf poll 8; transcript 10/5; PCOL-NMJ_PCOL_2026s_pptx.pdf slides 19, 30, 32'},
 
 /* ---------------- Poll 9: rivastigmine ---------------- */
 {id:'PE2-021', lecture:'PE2', prof:'Gottlieb', tier:'new', topic:'PE2', sub:'verbatim', skill:'apply',
- concept:'stigmine-dumbbelss', tags:['poll','pollev','verbatim','druglist'], source:'both',
+ concept:'stigmine-dumbbelss', tags:['poll','pollev','verbatim','druglist','on-exam-verbatim'], source:'both',
  stem:'Rivastigmine is most likely to produce:',
  options:[
   {t:'Constipation', correct:false, why:'Constipation is an anti-DUMBBELSS (antagonist) effect; a -stigmine raises acetylcholine and causes diarrhea.'},
@@ -279,12 +279,12 @@ QUESTIONS.push(
   {t:'Pupil dilation', correct:false, why:'Anti-DUMBBELSS; -stigmines cause miosis (pupil constriction).'}],
  teach:'Any drug with -stigmine in its name inhibits the cholinesterase enzyme, so acetylcholine is not broken down and is more potent all over the body. The side effects are DUMBBELSS: diarrhea, urination, miosis, bronchial constriction, bradycardia, emesis, lacrimation, salivation and stimulation of the brain. Every wrong option here is an anti-DUMBBELSS effect.',
  quote:'So as far as side effects go, they\'re going to cause the dumbbells. Why? Because you\'re making acetylcholine more potent all over the body. ... What is the best answer? We have uh C as in cat, is that part of the process? Yes, that\'s the dumbbells, right?',
- note:'Green highlight: Salivation (option C). On 10/5, before showing the results, he said “Are you sure it\'s not D as in David? OK. Just trying to help.”; D (Decrease urination) is anti-DUMBBELSS, and he then keyed C.',
+ note:'Green highlight: Salivation (option C). On 10/5, before showing the results, he said “Are you sure it\'s not D as in David? OK. Just trying to help.”; D (Decrease urination) is anti-DUMBBELSS, and he then keyed C. He said on 10/6 that one of the 10/5 polls and one of the 10/6 polls will be on Exam 2 word for word (“one of the questions today and one of the questions yesterday I\'m gonna use verbatim, word by word on your exam”), without naming which; every poll run on those two days is tagged on-exam-verbatim.',
  cite:'PollEV’s Exam 2.pdf poll 9; transcript 10/5; PCOL-NMJ_PCOL_2026s_pptx.pdf slides 40–41'},
 
 /* ---------------- Poll 10: curare arrow (NTK) ---------------- */
 {id:'PE2-022', lecture:'PE2', prof:'Gottlieb', tier:'new', topic:'PE2', sub:'verbatim', skill:'apply',
- concept:'curare-reversal-neostigmine', tags:['poll','pollev','verbatim','exam-cue','ntk','druglist'], source:'both',
+ concept:'curare-reversal-neostigmine', tags:['poll','pollev','verbatim','exam-cue','ntk','druglist','on-exam-verbatim'], source:'both',
  stem:'While hunting, your friend had an accident and pocked himself with an arrow tip (contain curare). Which of these would you have to do to reverse the effects?',
  options:[
   {t:'Succinylcholine', correct:false, why:'Succinylcholine also causes paralysis; adding another paralytic agent stops the diaphragm and breathing.'},
@@ -294,12 +294,12 @@ QUESTIONS.push(
   {t:'Tickle your friend', correct:false, why:'A paralyzed friend cannot laugh or move; tickling does nothing to the block at the receptor.'}],
  teach:'Any drug with -cur- in its name is a competitive, reversible antagonist at the muscle nicotinic (Nm) receptor and causes paralysis. Reversal needs the opposite effect: more acetylcholine at the skeletal muscle synapse. A cholinesterase inhibitor such as neostigmine blocks acetylcholine breakdown and lets acetylcholine outcompete curare.',
  quote:'So neo stigamine, which does not cross the blood brain barrier but can increase the levels of acetylcholine in the synapse of your skeletal muscle, would give you a better chance of outcompeting karate and regain some movement for your friend. Yes. I have a question similar to this in the exam every year, and about 30% of the class misses it.',
- note:'“pocked” and “(contain curare)” are as written on the poll; “karate” in the audio is curare. Bonus-point poll on 10/5; green highlight: Neostigmine, and he keyed C aloud (“I have over here, see, is that the correct answer?”). Handwritten on the student’s sheet: “NTK, similar question on exam” (NTK = need to know); in the audio he said a question similar to this is on the exam every year and about 30% of the class misses it.',
+ note:'“pocked” and “(contain curare)” are as written on the poll; “karate” in the audio is curare. Bonus-point poll on 10/5; green highlight: Neostigmine, and he keyed C aloud (“I have over here, see, is that the correct answer?”). Handwritten on the student’s sheet: “NTK, similar question on exam” (NTK = need to know); in the audio he said a question similar to this is on the exam every year and about 30% of the class misses it. He said on 10/6 that one of the 10/5 polls and one of the 10/6 polls will be on Exam 2 word for word (“one of the questions today and one of the questions yesterday I\'m gonna use verbatim, word by word on your exam”), without naming which; every poll run on those two days is tagged on-exam-verbatim.',
  cite:'PollEV’s Exam 2.pdf poll 10; transcript 10/5; PCOL-NMJ_PCOL_2026s_pptx.pdf slides 19, 39'},
 
 /* ---------------- Poll 11: decreases ACh release ---------------- */
 {id:'PE2-023', lecture:'PE2', prof:'Gottlieb', tier:'new', topic:'PE2', sub:'verbatim', skill:'tell',
- concept:'ach-release-botulinum', tags:['poll','pollev','verbatim'], source:'both',
+ concept:'ach-release-botulinum', tags:['poll','pollev','verbatim','on-exam-verbatim'], source:'both',
  stem:'Which of the following decreases the release of Ach from pre-synaptic neurons?',
  options:[
   {t:'Varenicline', correct:false, why:'Varenicline is a partial agonist at the neuronal nicotinic (Nn) receptor; it acts after release.'},
@@ -309,12 +309,12 @@ QUESTIONS.push(
   {t:'Botox', correct:true, why:'His key: botulinum toxin breaks down the SNARE proteins, so vesicles cannot dock and acetylcholine (Ach) is not released.'}],
  teach:'Four of these drugs act after acetylcholine is released: at the receptor (varenicline, succinylcholine, rocuronium) or at the enzyme that breaks it down (rivastigmine). Botulinum toxin acts before release: it is an enzyme that cleaves the SNARE proteins that anchor the vesicle to the membrane, so the vesicles stay full and acetylcholine is not released.',
  quote:'Pennyline is a partial agonist to the NN receptor. Succylcholine is an agonist to the nicotinic receptor. Rocurono is an antagonist to the nicotinic receptor, and rivasciamine is an antagonist to the psytocholesterase enzyme. So the only one that decreases the release of acetylcholine would be the Botox toxin.',
- note:'Green highlight: Botox; on 10/5: “Hopefully, you pick Botox, and that would be the correct answer, right?”',
+ note:'Green highlight: Botox; on 10/5: “Hopefully, you pick Botox, and that would be the correct answer, right?” He said on 10/6 that one of the 10/5 polls and one of the 10/6 polls will be on Exam 2 word for word (“one of the questions today and one of the questions yesterday I\'m gonna use verbatim, word by word on your exam”), without naming which; every poll run on those two days is tagged on-exam-verbatim.',
  cite:'PollEV’s Exam 2.pdf poll 11; transcript 10/5; PCOL-NMJ_PCOL_2026s_pptx.pdf slides 46–50'},
 
 /* ---------------- Poll 12: cholinergic agonist overdose ---------------- */
 {id:'PE2-024', lecture:'PE2', prof:'Gottlieb', tier:'new', topic:'PE2', sub:'verbatim', skill:'apply',
- concept:'cholinergic-overdose-poll', tags:['poll','pollev','verbatim'], source:'both',
+ concept:'cholinergic-overdose-poll', tags:['poll','pollev','verbatim','on-exam-verbatim'], source:'both',
  stem:'If one overdose on a cholinergic agonist, which of the symptoms is most likely to occur?',
  options:[
   {t:'Diarrhea', correct:false, why:'Occurs (the D of DUMBBELSS), but it is not the only listed symptom that occurs.'},
@@ -324,12 +324,12 @@ QUESTIONS.push(
   {t:'All of the above', correct:true, why:'His key: diarrhea, miosis and bradycardia all occur; he said “all the above with the exception of” B, Can\'t urinate.'}],
  teach:'A cholinergic agonist overdose gives DUMBBELSS: diarrhea, urination (more, not less), miosis, bradycardia, bronchial constriction, emesis, lacrimation, salivation and stimulation. Can\'t urinate is the antagonist (anti-DUMBBELSS) effect. As keyed, “All of the above” stands for the three DUMBBELSS options, not the urination option.',
  quote:'I think I changed this answer because B is not uh the correct answer. Remember that if you activate the bladder, you\'re gonna squeeze the bladder, you\'re gonna increase urination. So, out of these questions, uh, B is you urinate more, it\'s not that you can\'t urinate. So, that\'s uh, that answer. But yes, you get diarrhea, you get meiosis, you get bradycardia, and you\'re gonna get, uh, it would be all the above with the exception of uh B as in boy, OK? Maybe last year was which of these would not occur and that was the right answer, but uh I didn\'t catch that.',
- note:'Green highlight: All of the above. Handwritten next to “Can\'t urinate” on the student’s sheet: “not included”. In the 10/5 audio he says B is not correct, keys “all the above with the exception of” B, and says last year’s version may have asked which symptom would NOT occur, with B as the answer (“I didn\'t catch that”). Read literally, “All of the above” would include Can\'t urinate, which does not occur; his key is all of the above except B.',
+ note:'Green highlight: All of the above. Handwritten next to “Can\'t urinate” on the student’s sheet: “not included”. In the 10/5 audio he says B is not correct, keys “all the above with the exception of” B, and says last year’s version may have asked which symptom would NOT occur, with B as the answer (“I didn\'t catch that”). Read literally, “All of the above” would include Can\'t urinate, which does not occur; his key is all of the above except B. He said on 10/6 that one of the 10/5 polls and one of the 10/6 polls will be on Exam 2 word for word (“one of the questions today and one of the questions yesterday I\'m gonna use verbatim, word by word on your exam”), without naming which; every poll run on those two days is tagged on-exam-verbatim.',
  cite:'PollEV’s Exam 2.pdf poll 12; transcript 10/5; PCOL-Cholinergic-26s.pdf slide 13'},
 
 /* ---------------- Poll 13: carbachol ---------------- */
 {id:'PE2-025', lecture:'PE2', prof:'Gottlieb', tier:'new', topic:'PE2', sub:'verbatim', skill:'apply',
- concept:'carbachol-poll', tags:['poll','pollev','verbatim'], source:'both',
+ concept:'carbachol-poll', tags:['poll','pollev','verbatim','on-exam-verbatim'], source:'both',
  stem:'Carbachol is most likely to cause:',
  options:[
   {t:'Dry mouth', correct:false, why:'Anti-DUMBBELSS; a muscarinic agonist causes salivation.'},
@@ -339,12 +339,12 @@ QUESTIONS.push(
   {t:'Decrease in vomiting', correct:false, why:'An agonist causes emesis (the E of DUMBBELSS), not less vomiting.'}],
  teach:'The “chol” in carbachol links it to the mechanism: a non-selective muscarinic agonist. Knowing the site of action predicts the effect: heart M2 (Gi) gives bradycardia, and the M3 sites give the rest of the DUMBBELSS. The effects of a muscarinic agonist mirror activation of the cholinergic system.',
  quote:'when you see carbacol, there is something on that drug name that is gonna allow you to associate with the mechanism of action of a drug, and then if you know the site of action, you can predict what it would do. ... What is the best answer? Uh, B as in bravo, bravo, bradycardia, right?',
- note:'Green highlight: Bradycardia; keyed aloud on 10/5 (“B as in bravo”).',
+ note:'Green highlight: Bradycardia; keyed aloud on 10/5 (“B as in bravo”). He said on 10/6 that one of the 10/5 polls and one of the 10/6 polls will be on Exam 2 word for word (“one of the questions today and one of the questions yesterday I\'m gonna use verbatim, word by word on your exam”), without naming which; every poll run on those two days is tagged on-exam-verbatim.',
  cite:'PollEV’s Exam 2.pdf poll 13; transcript 10/5; PCOL-Cholinergic-26s.pdf slides 11–13'},
 
 /* ---------------- Poll 14: atropine ---------------- */
 {id:'PE2-026', lecture:'PE2', prof:'Gottlieb', tier:'new', topic:'PE2', sub:'verbatim', skill:'recall',
- concept:'atropine-poll', tags:['poll','pollev','verbatim'], source:'both',
+ concept:'atropine-poll', tags:['poll','pollev','verbatim','on-exam-verbatim'], source:'both',
  stem:'Atropine:',
  options:[
   {t:'Activates the M1, M2, and M3 receptors', correct:false, why:'Atropine binds M1, M2 and M3 but blocks them; it is the prototype muscarinic antagonist, not an agonist.'},
@@ -354,12 +354,12 @@ QUESTIONS.push(
   {t:'Causes paralysis by blocking Nm receptors', correct:false, why:'Blocking Nm is what the curare-like drugs (rocuronium) do; atropine has no affinity for nicotinic receptors.'}],
  teach:'Atropine is the prototype muscarinic antagonist: a natural alkaloid, non-selective (M1, M2, M3) and reversible, so it competes with acetylcholine and can be outcompeted. It gives anti-DUMBBELSS effects (tachycardia, mydriasis, constipation, dry mouth). It does not bind nicotinic or adrenergic receptors.',
  quote:'service says the majority says C and that is the correct answer. What if I had a set one of the answer choice where it\'s gonna block the ability of acetylcholine to bind to the nicotinic receptors? Would that be true or false? False, right? Because these drugs only have affinity for what? Muscarinic receptors, OK.',
- note:'Green highlight: option C; keyed aloud on 10/5. “Block”, “antagonize” and “activations” are as written on the poll.',
+ note:'Green highlight: option C; keyed aloud on 10/5. “Block”, “antagonize” and “activations” are as written on the poll. He said on 10/6 that one of the 10/5 polls and one of the 10/6 polls will be on Exam 2 word for word (“one of the questions today and one of the questions yesterday I\'m gonna use verbatim, word by word on your exam”), without naming which; every poll run on those two days is tagged on-exam-verbatim.',
  cite:'PollEV’s Exam 2.pdf poll 14; transcript 10/5; PCOL-Cholinergic-26s.pdf slides 17, 19'},
 
 /* ---------------- Poll 15: trospium ---------------- */
 {id:'PE2-027', lecture:'PE2', prof:'Gottlieb', tier:'new', topic:'PE2', sub:'verbatim', skill:'apply',
- concept:'trospium-decrease-urination', tags:['poll','pollev','verbatim','druglist'], source:'both',
+ concept:'trospium-decrease-urination', tags:['poll','pollev','verbatim','druglist','on-exam-verbatim'], source:'both',
  stem:'Trospium is most likely to:',
  options:[
   {t:'Cause bronchial constriction', correct:false, why:'Bronchial constriction is an agonist (M3) effect; a muscarinic antagonist relaxes the bronchi.'},
@@ -368,13 +368,13 @@ QUESTIONS.push(
   {t:'Increase GI motility', correct:false, why:'Increased motility is an agonist effect; blocking GI M3 gives constipation.'},
   {t:'Excitation', correct:false, why:'Blocking M1 in the brain gives sedation, not excitation; trospium is at the bottom of the slide’s list of bladder drugs with CNS effects (drowsiness, dizziness, confusion).'}],
  teach:'Any drug with “trop” in its name is an atropine-like muscarinic antagonist. Trospium is one of his three overactive-bladder drugs (with oxybutynin and solifenacin): blocking M3 in the bladder decreases urgency, frequency and leakage, so the patient urinates less. All of them can cause anti-DUMBBELSS effects such as dry mouth and constipation.',
- quote:'And then we have here trospium, which has that trope in it, so it kinda help you figure out that it\'s atropine-like drug. ... So the goal over here is to stop urination. They all can do that.',
- note:'Green highlight: Decrease urination. This poll is not in the 10/5 audio: after the bladder slides he looked for a clicker question (“Oh, where is the clear question? I don\'t have.”) and ended the class. The key is from the highlighted sheet; it matches what he taught.',
- cite:'PollEV’s Exam 2.pdf poll 15; transcript 10/5; PCOL-Cholinergic-26s.pdf slides 29–30'},
+ quote:'So trospium, uh, decreased urination. Well, that\'s what we use the drug for, right? It\'s gonna relax the bladder because it\'s a muscarinic M3 antagonist, and as you relax the bladder, you have less need to go to the potty.',
+ note:'Green highlight: Decrease urination. He looked for this poll at the end of 10/5 (“Oh, where is the clear question? I don\'t have.”) and ran it as the first poll of 10/6 (“we have another bonus point on the table”); he keyed decreased urination aloud and ruled out the agonist effects (bronchial constriction, salivation, GI motility, excitation). He said on 10/6 that one of the 10/5 polls and one of the 10/6 polls will be on Exam 2 word for word (“one of the questions today and one of the questions yesterday I\'m gonna use verbatim, word by word on your exam”), without naming which; every poll run on those two days is tagged on-exam-verbatim.',
+ cite:'PollEV’s Exam 2.pdf poll 15; transcript 10/5; transcript 10/6; PCOL-Cholinergic-26s.pdf slides 29–30'},
 
 /* ---------------- Poll 16: severe bradycardia ---------------- */
 {id:'PE2-028', lecture:'PE2', prof:'Gottlieb', tier:'new', topic:'PE2', sub:'verbatim', skill:'apply',
- concept:'atropine-bradycardia', tags:['poll','pollev','verbatim'], source:'both',
+ concept:'atropine-bradycardia', tags:['poll','pollev','verbatim','on-exam-verbatim'], source:'both',
  stem:'If your patient is having severe bradycardia, which of the following drugs would be most beneficial?',
  options:[
   {t:'Carbachol', correct:false, why:'A muscarinic agonist; at M2 it slows the heart further.'},
@@ -384,12 +384,12 @@ QUESTIONS.push(
   {t:'Neostigmine', correct:false, why:'A cholinesterase inhibitor raises acetylcholine, which adds bradycardia (DUMBBELSS).'}],
  teach:'M2 receptors on the sinoatrial (SA) and atrioventricular (AV) nodes are coupled to Gi and slow the heart. An agonist brings a fast heart rate down; an antagonist brings a slow one up. Atropine, a non-selective muscarinic antagonist, is given for severe bradycardia or AV nodal block.',
  quote:'So these drugs are gonna be given in case if your patient has too much of a tachycardia, we\'re gonna give an agonist to bring it down, or if they have severe bradycardia, we can give an antagonist to bring it up, depending on what we\'re trying to do.',
- note:'Green highlight: Atropine. This poll is not in the 10/5 audio; the key is from the highlighted sheet, and it matches what he taught on 10/5 (“patients with severe low heart rate so we can give atropine to bring their heart rate up”).',
- cite:'PollEV’s Exam 2.pdf poll 16; transcript 10/5; PCOL-Cholinergic-26s.pdf slides 19–20'},
+ note:'Green highlight: Atropine. Not in the 10/5 audio; run on 10/6: “So the majority says C, uh, the best answer is C.” (C = Atropine on the sheet.) He ruled out carbachol (“we\'re gonna activate the M2s ... You\'re gonna stop their heart”), succinylcholine and rocuronium (paralysis) and neostigmine (more acetylcholine, lower heart rate): “So atropine, by blocking the parasympathetic tone, you\'re gonna allow the sympathetic to take over, and it\'s gonna raise the heart rate.” He said on 10/6 that one of the 10/5 polls and one of the 10/6 polls will be on Exam 2 word for word (“one of the questions today and one of the questions yesterday I\'m gonna use verbatim, word by word on your exam”), without naming which; every poll run on those two days is tagged on-exam-verbatim.',
+ cite:'PollEV’s Exam 2.pdf poll 16; transcript 10/5; transcript 10/6; PCOL-Cholinergic-26s.pdf slides 19–20'},
 
 /* ---------------- Poll 17: α1 in the arteries (9/30 bonus) ---------------- */
 {id:'PE2-029', lecture:'PE2', prof:'Gottlieb', tier:'new', topic:'PE2', sub:'verbatim', skill:'apply',
- concept:'alpha1-gq-plc-ip3', tags:['poll','pollev','verbatim'], source:'both',
+ concept:'alpha1-gq-plc-ip3', tags:['poll','pollev','verbatim','on-exam-verbatim'], source:'both',
  stem:'Activation of alpha 1 receptors in the arteries by an agonist will produce which of the following?',
  options:[
   {t:'Activation of Gi=>inhibition of AC=>vasodilation', correct:false, why:'Gi inhibiting adenylyl cyclase (AC) belongs to α2 and M2, not α1.'},
@@ -399,12 +399,12 @@ QUESTIONS.push(
   {t:'Increase pupil dilation', correct:false, why:'α1 in the eye does cause mydriasis, but the stem asks about α1 in the arteries.'}],
  teach:'On his quick table, α1 sits on the Gq row: phospholipase C (PLC), then inositol trisphosphate (IP3), then a rise in Ca++. A rise in calcium is, as a general rule, a signal for something positive, so arterial smooth muscle constricts. Knowing the receptor and its G protein predicts the effect.',
  quote:'So, what is alpha 1 Kappa 2 on your quick stable? I would say GQ. If it\'s GQ, who is activating PLC and increasing IP3 and calcium, right? So right there, if you know your G protein and your receptor, you already can figure out what it\'s going to be.',
- note:'Green highlight: the Gq option. This is the 9/30 clicker question “for exam 2 for the bonus”. He read it aloud in other words (“So which of the following is most likely to occur when an alpha-1 receptor is activated by norepinephrine, which is a what? An agonist.”) and keyed it by naming Gq and PLC.',
- cite:'PollEV’s Exam 2.pdf poll 17; transcript 9/30; Autonomic Nervous System.pdf slides 4, 31'},
+ note:'Green highlight: the Gq option. This is the 9/30 clicker question “for exam 2 for the bonus”. He read it aloud in other words (“So which of the following is most likely to occur when an alpha-1 receptor is activated by norepinephrine, which is a what? An agonist.”) and keyed it by naming Gq and PLC. He ran it again on 10/6 at the start of the adrenergic deck (read aloud: “activation of the alpha one receptor in the arteries. Uh, by an agonist such as norepinephrine will produce which of the following”): “100% says C. If you know that alpha 1 is GQ, you already could eliminate what? C, oh, D and what? A and B, right? ... Would it cause pupil dilation. I\'m not talking about the pupils, I\'m talking about the arteries.” He said on 10/6 that one of the 10/5 polls and one of the 10/6 polls will be on Exam 2 word for word (“one of the questions today and one of the questions yesterday I\'m gonna use verbatim, word by word on your exam”), without naming which; every poll run on those two days is tagged on-exam-verbatim.',
+ cite:'PollEV’s Exam 2.pdf poll 17; transcript 9/30; transcript 10/6; Autonomic Nervous System.pdf slides 4, 31'},
 
 /* ---------------- Poll 18: GI smooth muscle tracing (figure) ---------------- */
 {id:'PE2-030', lecture:'PE2', prof:'Gottlieb', tier:'new', topic:'PE2', sub:'verbatim', skill:'figure',
- concept:'gi-tracing-drug-x-atropine', tags:['poll','pollev','verbatim','figure-drill'], source:'both',
+ concept:'gi-tracing-drug-x-atropine', tags:['poll','pollev','verbatim','figure-drill','on-exam-verbatim','exam-cue'], source:'both',
  img:'pe2-gi-tracing', imgAlt:'Tracing of GI smooth muscle tone over time: flat baseline, a rise and fall after the first pilocarpine dose, an arrow marked X where tone dips slightly, then no rise after the second pilocarpine dose', imgCap:'GI smooth muscle tone: pilocarpine, drug X at the arrow, then pilocarpine again',
  stem:'The figure below shows tracing of GI smooth muscle in response to pilocarpine before and after drug X. Drug X is most likely to be:',
  options:[
@@ -415,8 +415,8 @@ QUESTIONS.push(
   {t:'Varenicline', correct:false, miss:'class', why:'A partial agonist at α4/β2 Nn receptors in the brain; it does not act on GI smooth muscle muscarinic receptors.'}],
  teach:'Read the tracing in order. Pilocarpine alone raises GI smooth muscle tone (a muscarinic agonist on M3, Gq, ↑Ca++, contraction). Drug X is given at the arrow, tone drifts slightly below the starting line, and the second dose of pilocarpine produces no rise; a drug that removes the response to a muscarinic agonist is a muscarinic antagonist, atropine.',
  quote:'If it\'s in the M3, depending where it is, let\'s say it\'s on the GI tract, I\'m gonna increase motility and tone.',
- note:'On the sheet this poll is a PollEV screenshot with no green highlight. The screenshot shows Atropine as the recorded response, with the student’s handwritten “Ant M3” (M3 antagonist) beside it and “muscarinic agonist (M1, M2, M3)” under the first “Pilocarpine”. The poll is not in the 10/5 audio, so the key rests on the sheet; it matches what he taught about pilocarpine and atropine.',
- cite:'PollEV’s Exam 2.pdf poll 18; transcript 10/5; PCOL-Cholinergic-26s.pdf slides 12–14, 17, 19'},
+ note:'On the sheet this poll is a PollEV screenshot with no green highlight. The screenshot shows Atropine as the recorded response, with the student’s handwritten “Ant M3” (M3 antagonist) beside it and “muscarinic agonist (M1, M2, M3)” under the first “Pilocarpine”. Not in the 10/5 audio; run on 10/6, where he walked through it (up = constriction, down = relaxation; pilocarpine on M3; X makes pilocarpine\'s job harder; carbachol, neostigmine, rocuronium and varenicline eliminated): “So the best answer would be what atropine. So atropine is blocking the ability of pilocarpine to bind and activate those receptors and produce that constriction.” Before the walk-through he read the class result as “C as in cat” and said it was correct, but on the sheet Atropine is option D; the key is atropine. Exam cue the same day: “you\'re gonna get 1 to 2 of these little graphs on your uh test, and this is how you\'re gonna apply the knowledge, right?” He said on 10/6 that one of the 10/5 polls and one of the 10/6 polls will be on Exam 2 word for word (“one of the questions today and one of the questions yesterday I\'m gonna use verbatim, word by word on your exam”), without naming which; every poll run on those two days is tagged on-exam-verbatim.',
+ cite:'PollEV’s Exam 2.pdf poll 18; transcript 10/5; transcript 10/6; PCOL-Cholinergic-26s.pdf slides 12–14, 17, 19'},
 
 {id:'PE2-031', lecture:'PE2', prof:'Gottlieb', tier:'new', topic:'PE2', sub:'variant', skill:'figure',
  concept:'gi-tracing-pilocarpine-m3', tags:['poll','pollev','figure-drill'], source:'both',
@@ -471,5 +471,49 @@ QUESTIONS.push(
   {t:'Botox', correct:false, miss:'class', why:'Stopping acetylcholine release does not stop pilocarpine, which binds the M3 receptor directly.'}],
  teach:'Drug X behaves like a muscarinic antagonist. Atropine and scopolamine are the natural, non-selective, reversible muscarinic antagonists, and any “trop” drug is atropine-like as well. Agonists (the “chol” drugs, pilocarpine) and cholinesterase inhibitors (the -stigmines) would raise tone instead.',
  quote:'So scopolamine is a non-selective muscarinic antagonist, uh, most times we use for motion sickness.',
- cite:'PollEV’s Exam 2.pdf poll 18 (variant); transcript 10/5; PCOL-Cholinergic-26s.pdf slides 11, 17, 24'}
+ cite:'PollEV’s Exam 2.pdf poll 18 (variant); transcript 10/5; PCOL-Cholinergic-26s.pdf slides 11, 17, 24'},
+
+/* ---------------- Poll 19 (10/6): NET blocker ---------------- */
+{id:'PE2-035', lecture:'PE2', prof:'Gottlieb', tier:'new', topic:'PE2', sub:'verbatim', skill:'tell',
+ concept:'net-blocker-cocaine', tags:['poll','pollev','verbatim','on-exam-verbatim','druglist'], source:'both',
+ stem:'Which of the following drugs increase the potency of NE by blocking the NET?',
+ options:[
+  {t:'Amphetamine', correct:false, why:'Amphetamine is only a weak inhibitor of the norepinephrine transporter (NET); its primary mechanism is increased release of norepinephrine.'},
+  {t:'Selegiline', correct:false, why:'Selegiline is a selective, irreversible MAO-B inhibitor; it blocks breakdown, not the transporter.'},
+  {t:'Cocaine', correct:true, why:'His key: cocaine is a reuptake inhibitor that fully blocks the NET, so norepinephrine (NE) stays in the synapse and acts on the postsynaptic receptors.'},
+  {t:'Atropine', correct:false, why:'Atropine is a muscarinic antagonist; it does not act on norepinephrine handling.'},
+  {t:'Rivastigmine', correct:false, why:'Rivastigmine is a cholinesterase inhibitor; it raises acetylcholine, not norepinephrine.'}],
+ teach:'NE = norepinephrine; NET = norepinephrine transporter, which takes released norepinephrine back into the nerve. Cocaine blocks the NET completely, so norepinephrine accumulates and becomes more potent at its receptors. Amphetamine also weakly inhibits the NET, but it works mainly by releasing norepinephrine; selegiline blocks monoamine oxidase B.',
+ quote:'We have over here uh C for cocaine as the greatest answer. So cocaine is the best. So amphetamine is a weaker inhibitor of the net, but its primary side effect mechanism of action is what? Increase the release of norepinephrine, right? So, cocaine is a 100% inhibitor of the net process.',
+ note:'Green highlight: Cocaine; keyed aloud on 10/6 (“C for cocaine”). He added that on the exam he would probably not put amphetamine and cocaine side by side: “So, for example, I would not probably use those two because they\'re close. I\'ll pick something else other than amphetamine, but before in class, I think it\'s OK.” He introduced it with: “if you get the bonus today, you\'re gonna go already with two questions on the exam that you know what they are.” He said on 10/6 that one of the 10/5 polls and one of the 10/6 polls will be on Exam 2 word for word (“one of the questions today and one of the questions yesterday I\'m gonna use verbatim, word by word on your exam”), without naming which; every poll run on those two days is tagged on-exam-verbatim.',
+ cite:'PollEV’s Exam 2.pdf poll 19; transcript 10/6; PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 10–11'},
+
+/* ---------------- Poll 20 (10/6): phenylephrine as a decongestant ---------------- */
+{id:'PE2-036', lecture:'PE2', prof:'Gottlieb', tier:'new', topic:'PE2', sub:'verbatim', skill:'recall',
+ concept:'phenylephrine-decongestant-alpha1', tags:['poll','pollev','verbatim','on-exam-verbatim','druglist'], source:'both',
+ stem:'Phenylephrine can be used as a decongestant because:',
+ options:[
+  {t:'it activates muscarinic (M3) receptors, thus activating the Gi pathway', correct:false, why:'Phenylephrine is adrenergic, not muscarinic, and M3 is Gq, not Gi.'},
+  {t:'it blocks Nm receptors, which increase Gs activity', correct:false, why:'Nm is the skeletal-muscle ion channel; blocking it causes paralysis, and it has no G protein.'},
+  {t:'It is an alpha4/beta2 partial agonist', correct:false, why:'That is varenicline at the neuronal nicotinic (Nn) receptor.'},
+  {t:'it activates alpha 1, which increases Ca++ in smooth muscle', correct:true, why:'His key: phenylephrine is an α1 agonist; Gq raises Ca++ in the nasal vascular smooth muscle, the vessels constrict and the congestion clears.'}],
+ teach:'Phenylephrine is a selective α1 agonist. α1 is coupled to Gq, which raises Ca++ inside smooth muscle; in the blood vessels of the nose this causes vasoconstriction, squeezing out the extra fluid of congestion. Its adverse effects are burning, blurred vision, rebound congestion and higher blood pressure.',
+ quote:'Uh, Major says D as in delta or drug, right? Uh, is that the correct answer? Yes, it\'s an agonist to the alpha 1, so it\'s gonna activate it and it\'s gonna activate the GQ pathway which is gonna increase calcium inside of those smooth muscles which leads to vasoconstriction, right.',
+ note:'Green highlight: option D (it activates alpha 1 ...); keyed aloud on 10/6 (“D as in delta”). Capitalization of the options is as written on the poll. He said on 10/6 that one of the 10/5 polls and one of the 10/6 polls will be on Exam 2 word for word (“one of the questions today and one of the questions yesterday I\'m gonna use verbatim, word by word on your exam”), without naming which; every poll run on those two days is tagged on-exam-verbatim.',
+ cite:'PollEV’s Exam 2.pdf poll 20; transcript 10/6; PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 17–18'},
+
+/* ---------------- Poll 21 (10/6): which drug lowers blood pressure ---------------- */
+{id:'PE2-037', lecture:'PE2', prof:'Gottlieb', tier:'new', topic:'PE2', sub:'verbatim', skill:'apply',
+ concept:'clonidine-lowers-bp', tags:['poll','pollev','verbatim','on-exam-verbatim','druglist'], source:'both',
+ stem:'Which of the following drugs is most likely to decrease blood pressure?',
+ options:[
+  {t:'Atropine', correct:false, why:'A muscarinic antagonist; he said it is not going to be messing with blood pressure.'},
+  {t:'Phenylephrine', correct:false, why:'An α1 agonist: it constricts arteries and veins and raises blood pressure.'},
+  {t:'Clonidine', correct:true, why:'His key: an α2 agonist that activates the inhibitory (Gi) pathway, decreasing sympathetic outflow, cardiac output and blood pressure.'},
+  {t:'Rocuronium', correct:false, why:'An Nm antagonist that causes paralysis; it is not a blood-pressure drug.'},
+  {t:'Cocaine', correct:false, why:'Cocaine raises synaptic norepinephrine and may increase blood pressure, especially systemically at high doses.'}],
+ teach:'Clonidine is a selective α2 agonist. α2 is coupled to Gi, so activating it suppresses norepinephrine release and sympathetic outflow: lower heart rate and cardiac output, relaxed arteries and veins (lower afterload and preload), lower blood pressure. Phenylephrine and cocaine push pressure up; atropine and rocuronium do not target it.',
+ quote:'Majora speaks C as in clonidine, and that is the correct answer. Remember, clonidine is an agonist to the alpha 2, but it is an inhibitory. Pathway. So that\'s gonna decrease blood pressure, cardiac output, and the sympathetic outflow as an overall process.',
+ note:'Green highlight: Clonidine; keyed aloud on 10/6 (“C as in clonidine”). He said on 10/6 that one of the 10/5 polls and one of the 10/6 polls will be on Exam 2 word for word (“one of the questions today and one of the questions yesterday I\'m gonna use verbatim, word by word on your exam”), without naming which; every poll run on those two days is tagged on-exam-verbatim.',
+ cite:'PollEV’s Exam 2.pdf poll 21; transcript 10/6; PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 21, 23–24'}
 );

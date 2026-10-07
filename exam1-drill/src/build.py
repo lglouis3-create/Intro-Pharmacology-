@@ -9,7 +9,7 @@ import os, re, subprocess, sys, tempfile, json
 HERE = os.path.dirname(os.path.abspath(__file__))
 os.chdir(HERE)
 DATA_FILES = ['q_L01.js', 'q_L02.js', 'q_L03.js', 'q_L04.js', 'q_L05.js', 'q_L06.js', 'q_POLLS.js', 'q_JEOP.js', 'q_PQ.js', 'q_FIGS.js', 'q_DL1.js', 'q_TERMS.js',
-              'q_L07.js', 'q_L08.js', 'q_L09.js', 'q_PE2.js', 'q_DL2.js']
+              'q_L07.js', 'q_L08.js', 'q_L09.js', 'q_L10.js', 'q_PE2.js', 'q_DL2.js']
 # Exam 2 banks are written lecture by lecture; one not written yet is skipped
 DATA_FILES = [f for f in DATA_FILES if os.path.exists(f) or f in ('q_DL2.js',) and os.path.exists('gen_druglist2.py')]
 PAGES = ['graphs.js', 'diagrams.js', 'glossary.js', 'reference.js', 'tell.js', 'guide.js']
