@@ -2,6 +2,14 @@
 
 Newest first. The build embeds this file; the Topics page shows what is new since your last visit, and the Progress page shows all of it. Keep each bullet to one short line.
 
+## 2026-10-09 (10/7 and 10/8 lectures: all Exam 2 material)
+- Day 11 (10/7): β receptors, epinephrine and norepinephrine, β blockers, nitric oxide; 74 questions.
+- Day 12 (10/8): renin–angiotensin–aldosterone system, 64 questions.
+- Two more polls word for word: vasodilation (prazosin), greatest BP drop (phenoxybenzamine).
+- His 10/7 and 10/8 class and Jeopardy questions added from what he said aloud.
+- Drug list complete: all 86 questions posted, each checked against his slides and lecture.
+- Renin: slides and 10/8 lecture confirm renin makes angiotensin I from angiotensinogen.
+
 ## 2026-10-07 (10/6 lecture)
 - Day 10 (10/6): adrenergic drugs through mirtazapine, 60 questions.
 - Three new polls word for word: NET blocker, phenylephrine decongestant, clonidine.

@@ -4,9 +4,9 @@ Source: "PollEV’s Exam 2.pdf", version updated 10/6 by the student (one page, 
 
 Polls 1–6 (PE2-001 … PE2-018, written 10/1–10/5 from the earlier, unkeyed file): the green highlights on the updated sheet agree with every key already in the bank (Salivation; Diarrhea; SNS is the major autonomic nervous system component in the kidneys; All of the above ×3). PE2-010's key had been matched to the 9/30 audio by elimination; the highlight now confirms it.
 
-Polls 7–18 are numbered here in the order he ran them in class (7–14 in the 10/5 audio order; 15–16 and 18 are not in the 10/5 audio but were run on 10/6; 17 is the 9/30 bonus question, run again on 10/6). Polls 19–21 are new on the sheet updated 10/7 (`scratchpad/sources/exam2/PollEV_Exam2_1007.pdf`, 2 pages, 792×1224 pt, rendered with PyMuPDF at 110–200 dpi to read the green highlights) and were run on 10/6.
+Polls 7–18 are numbered here in the order he ran them in class (7–14 in the 10/5 audio order; 15–16 and 18 are not in the 10/5 audio but were run on 10/6; 17 is the 9/30 bonus question, run again on 10/6). Polls 19–21 are new on the sheet updated 10/7 (`scratchpad/sources/exam2/PollEV_Exam2_1007.pdf`, 2 pages, 792×1224 pt, rendered with PyMuPDF at 110–200 dpi to read the green highlights) and were run on 10/6. Polls 22–23 are the last two on page 2 of that sheet (re-rendered at 150 dpi on 10/9 to confirm the highlights) and were run on 10/7; they were held until the 10/7 transcript and are now posted.
 
-## 10/5 and 10/6 polls (verbatim, keys highlighted on his sheet)
+## 10/5, 10/6 and 10/7 polls (verbatim, keys highlighted on his sheet)
 
 | poll | id | stem (verbatim) | options (verbatim, key in bold) | key check |
 |---|---|---|---|---|
@@ -25,6 +25,8 @@ Polls 7–18 are numbered here in the order he ran them in class (7–14 in the 
 | 19 | PE2-035 | Which of the following drugs increase the potency of NE by blocking the NET? | Amphetamine / Selegiline / **Cocaine** / Atropine / Rivastigmine | Highlight = 10/6 audio: “We have over here uh C for cocaine as the greatest answer. So cocaine is the best. So amphetamine is a weaker inhibitor of the net ... cocaine is a 100% inhibitor of the net process.” On the exam he would swap amphetamine: “I would not probably use those two because they're close. I'll pick something else other than amphetamine”. |
 | 20 | PE2-036 | Phenylephrine can be used as a decongestant because: | it activates muscarinic (M3) receptors, thus activating the Gi pathway / it blocks Nm receptors, which increase Gs activity / It is an alpha4/beta2 partial agonist / **it activates alpha 1, which increases Ca++ in smooth muscle** | Highlight = 10/6 audio: “Uh, Major says D as in delta or drug, right? Uh, is that the correct answer? Yes, it's an agonist to the alpha 1”. Four options; capitalization as on the sheet. |
 | 21 | PE2-037 | Which of the following drugs is most likely to decrease blood pressure? | Atropine / Phenylephrine / **Clonidine** / Rocuronium / Cocaine | Highlight = 10/6 audio: “Majora speaks C as in clonidine, and that is the correct answer.” |
+| 22 | PE2-038 | Which of these drugs is most likely to produce vasodilation | **Prazosin** / Selegiline / Succinylcholine / Dextroamphetamine / Phenylephrine | Run on 10/7 (first poll of the day). Highlight = 10/7 audio: “The majority says uh prazosin or razosin, that's the selective alpha one antagonist. ... So A is the correct answer.” No question mark on the sheet; kept. |
+| 23 | PE2-039 | Which drug produces the greatest drop in blood pressure? | Prazosin / **Phenoxybenzamine** / Equal potency | Run on 10/7 after the phenoxybenzamine slides, with a class debate. Highlight = 10/7 audio: “So the correct answer is B as in boy. ... It's covalently bound. It's irreversible. You can't outcompete ... Fenoxbenzammine is the most potent of the two.” Three options. Variant: L11-011. |
 
 Figure: the tracing (white panel only) was cropped from the embedded screenshot image, which sits under the handwriting layer, so the crop is clean (no red ink). Stored in `src/images.json` as `pe2-gi-tracing` (662×429 PNG); registered in `src/graphs.js` with `exam:2` (group Other); 5 questions use it (PE2-030 verbatim; PE2-031 pilocarpine M3/Gq; PE2-032 why no second response; PE2-033 why tone dips below baseline at X; PE2-034 which other drug could be X).
 
@@ -33,10 +35,26 @@ Figure: the tracing (white panel only) was cropped from the embedded screenshot 
 - Kept as a non-poll variant: L09-042 (the "would NOT occur" version he attributes to last year; tags `variant`, note explains).
 - Kept as a second wording: L07-001 (`dupOf:'PE2-029'`).
 
-## Held until the 10/7 transcript
-Two polls on the 10/7 sheet (page 2) are not in the 10/6 audio; they were probably run on 10/7. Not posted until the 10/7 transcript confirms the wording and his key.
-- “Which of these drugs is most likely to produce vasodilation” — Prazosin / Selegiline / Succinylcholine / Dextroamphetamine / Phenylephrine; green highlight: **Prazosin**.
-- “Which drug produces the greatest drop in blood pressure?” — Prazosin / Phenoxybenzamine / Equal potency; green highlight: **Phenoxybenzamine**. On 10/6 he deferred phenoxybenzamine: “we're gonna get a little bit ahead of us, so just wait, I'll come back uh with the quiz.”
+## Held until the 10/7 transcript — now posted
+Both polls were run on 10/7 with the wording and keys on the sheet; posted as PE2-038 (prazosin, vasodilation) and PE2-039 (phenoxybenzamine, greatest drop in blood pressure).
+
+## His other 10/7 and 10/8 questions (not on the sheet)
+He ran more clicker questions on 10/7 and on the adrenergic part of 10/8 that are not on the PollEV sheet. They are written as in-class questions in `src/q_L11.js` (tag `in-class`, not `pollev`), stem as he read it, options only where he read them (the rest are marked as added in each `note`). If the student sends the updated sheet, they can move here as verbatim polls.
+- 10/7, epinephrine overdose (slide 52): “Which one would you give first? A alpha one antagonist or a beta one antagonist” — prazosin or metoprolol; key prazosin. → L11-033.
+- 10/7: “which of the following drugs relax the bladder smooth muscle, thus decreasing urination?” — key A (the β3 agonist; he added that with trospium it becomes a select-all). → L11-022, L11-023.
+- 10/7, double or nothing: five identical twins on propranolol / metoprolol / carvedilol / carbachol / neostigmine, who comes first in a 5K? — key B, metoprolol; the class picked E and lost a bonus. → L11-049.
+- 10/7: “which of the following drugs may cause marked hypertension [hypotension] if they mixed with nitroglycerin?” — key C, sildenafil. → L11-058.
+- 10/7, lab: blood pressure tracing, norepinephrine alone and with drug B (rise abolished) — key B, prazosin (he eliminated phenylephrine, metoprolol, cocaine, then atropine). → L11-066.
+- 10/8, first poll (“This is our last chance to get a bonus for exam 2”): blood vessel with receptors A and B, epinephrine at low and high concentration — receptor A = α1. → L11-067.
+- 10/8 Jeopardy (polled): compound 1 + epinephrine gives a greater vasoconstriction — key B, propranolol. → L11-068.
+- 10/8 Jeopardy (polled): “Which of the following drugs inhibits the GQ pathway?” — key E, all of the above (losartan, prazosin, phenoxybenzamine, atropine). → L12-064 (RAAS writer).
+- 10/8 Jeopardy (polled): edrophonium side effects during myasthenia gravis testing, “Which of the following drugs would decrease the side effects” — key atropine. → L11-070.
+- 10/8 Jeopardy (polled): rivastigmine for Alzheimer's, which side effects — key E, all of the above. → L11-074.
+- 10/8 Jeopardy “Prazosin” (100 points): key E; stem and options never read aloud, so not written.
+- 10/8 Jeopardy (polled): patient with no adrenal glands — key bronchial dilation. → L11-071.
+
+## Bonus and exam cue, 10/7
+On 10/7 the class held two bonus points (“You already have two going into it”) and lost one on the double-or-nothing twins question (“So I guess we went from 2 bonus to 1 bonus”); on 10/8 he said “you're going with one bonus, right? Since we doubled down yesterday.” At the bladder poll he said: “I'll guarantee you, I'm gonna use one of the questions that we asked today in a different shape or form, but very similar. So, if you know the concept, you should be able to get on the exam as well. So, you got like a bonus and a half.” He did not say which question, so PE2-038 and PE2-039 and the 10/7 in-class questions (L11-022, 023, 033, 049, 058, 066; variant L11-011) are tagged `exam-cue`.
 
 ## Bonus: one 10/5 poll and one 10/6 poll will be on Exam 2 word for word
 End of 10/6: “and then you got your second bonus point of the exam 2. So one of the questions today and one of the questions yesterday I'm gonna use verbatim, word by word on your exam and as long as you know the right answer or you understand the right answer, it's gonna be 34 points for you on the exam.” (“34 points” as transcribed.) Then: “Now you're in a row. We got 2 in a row.”

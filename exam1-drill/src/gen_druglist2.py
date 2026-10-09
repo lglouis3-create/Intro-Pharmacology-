@@ -20,13 +20,16 @@ written but held back (HELD subs) until those decks and transcripts arrive; they
 keep their ids so they return unchanged.  The adrenergic deck
 (PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf) was taught on 10/6 from slide 1 through
 mirtazapine (slide 32): adrenergic items whose drugs he taught that day are
-posted (ADR_RELEASED, by concept); the rest (β agonists and blockers,
-epinephrine, norepinephrine, dobutamine, isoproterenol, mirabegron,
-phenoxybenzamine, mirtazapine's adverse reactions) stay held (HELD_CONCEPTS).
+posted (ADR_RELEASED, by concept).  On 10/7 he taught the rest of the deck
+(slides 33–85), which releases every remaining adrenergic item (TQ7).  The
+nitric oxide/PDE items are released by concept too (NO_RELEASED, from TQ7); they
+post once the 'no' sub is taken out of HELD.  Anything not released stays held
+(HELD_CONCEPTS).
 
-Transcript 10/6 (adrenergic deck slides 1–32): each released adrenergic item
-carries his words as its quote, the deck slide and '; transcript 10/6' in its
-cite and source 'both' (TQ6).
+Transcripts 10/6 and 10/7 (adrenergic deck slides 1–32 and 33–85): each released
+adrenergic or nitric oxide item carries his words as its quote, the deck slides
+and '; transcript 10/6' or '; transcript 10/7' in its cite, and source 'both'
+(TQ6, TQ7).
 
 Transcript 10/5 (rest of the NMJ deck, whole cholinergic deck): every NMJ and
 cholinergic item he discussed carries his words as its quote, '; transcript 10/5'
@@ -43,6 +46,7 @@ NMJ = 'PCOL-NMJ_PCOL_2026s_pptx.pdf'
 CHO = 'PCOL-Cholinergic-26s.pdf'
 ADR = 'PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf'
 ANS = 'Autonomic Nervous System.pdf'
+RAAS = 'PCOL-RAAS_26s.pdf'
 
 def cite(page, *slides):
     """page: list page (int or 'N–M'); slides: (deck, 'slide N' text) pairs."""
@@ -139,10 +143,10 @@ ROWS = [
       status='slide', slides=f'{CHO} slides 29–30'),
  dict(sec='chol', page='4', colour='donor', drugs=['Nitroglycerine', 'Nitroprusside', 'Isosorbide di / mononitrate'],
       moa='Donate nitric oxide; NO → sGC → ↑cGMP', soa='Endothelium of blood vessels (M3)', adr='Vasodilation; lower blood pressure',
-      key='cGMP is a potent vasodilator', status='list', slides=''),
+      key='cGMP is a potent vasodilator', status='slide', slides=f'{ADR} slides 62, 67, 74 (10/7; CONFLICT: the NO donors bypass endothelial M3)'),
  dict(sec='chol', page='4', colour='indirect antagonist', drugs=['Sildenafil (Viagra)', 'Tadalafil (Cialis)', 'Vardenafil'],
       moa='Blocks PDE → increase cGMP', soa='Endothelium of blood vessels (M3)', adr='Vasodilation; lower blood pressure',
-      key='Blocks enzyme that breaks down cGMP = more cGMP; used to treat erectile dysfunction', status='list', slides=''),
+      key='Blocks enzyme that breaks down cGMP = more cGMP; used to treat erectile dysfunction', status='slide', slides=f'{ADR} slides 68–74 (PDE; 10/7, sildenafil and tadalafil named aloud, vardenafil not)'),
  # ---------------- ADRENERGIC ----------------
  dict(sec='adr', page='4', colour='agonist', drugs=['Phenylephrine'],
       moa='α1 agonist', soa='Blood vessels; eyes', adr='HTN, burning & nasal discharge, rebound congestion',
@@ -168,13 +172,13 @@ ROWS = [
       moa='Non-selective α1 & α2 antagonist, irreversible; decrease peripheral resistance', soa='Brain, eye, nose, blood vessels, urethra, GI',
       adr='Orthostatic hypotension → reflex tachycardia; GI stimulation (α2 on PNS fiber blocked); headache, miosis',
       key='Can be used for HTN crisis caused by phenelzine (short term control); longer duration of action (irreversible → highest affinity for α1)',
-      status='slide', slides=f'{ADR} slide 27 (classification, 10/6); its own slides 34–38 not yet taught'),
+      status='slide', slides=f'{ADR} slides 27 (10/6), 34–38 (10/7)'),
  dict(sec='adr', page='6', colour='antagonist', drugs=['Mirtazapine (Remeron)'],
       moa='NON-SELECTIVE: α2 antagonist, α1 antagonist, muscarinic antagonist, H1 antagonist, 5-HT2a antagonist',
       soa='CNS; enhances release of NE & 5-HT (serotonin); blocks H1 → drowsiness',
       adr='Drowsiness, weight gain, increased cholesterol, xerostomia, constipation, peripheral edema, HTN',
       key='Used for MDD; rare side effect: agranulocytosis; α2’s located in small blood vessels cause vasoconstriction → antagonist will cause vasodilation → peripheral edema',
-      status='slide', slides=f'{ADR} slides 21, 27, 31–32 (10/6; ADR slide 33 not yet taught)'),
+      status='slide', slides=f'{ADR} slides 21, 27, 31–32 (10/6), 33 (10/7; CONFLICT: edema from α1 block)'),
  dict(sec='adr', page='6', colour='agonist', drugs=['Clonidine (Catapres)', 'Brimonidine (Alphagan P)', 'Tizanidine (Zanaflex)', 'Guanfacine (Intuniv)', 'Dexmedetomidine (Precedex)'],
       moa='α2 agonist', soa='CNS; enhance inhibitory / suppress SNS',
       adr='Sedation, dry mouth, hypotension, bradycardia, sexual dysfunction, depression, constipation (activates GI inhibitory negative feedback pathway → less ACh)',
@@ -182,67 +186,68 @@ ROWS = [
  dict(sec='adr', page='6', colour='agonist', drugs=['Dobutamine'],
       moa='β1 agonist', soa='Heart, kidneys, brain',
       adr='Increased heart rate and contractility; tachycardia / arrythmias; increased RAAS; CNS stimulation',
-      key='LOW dose: β1 selective; HIGH dose: β1 > β2 > α1; used in patients with systolic dysfunction and congestive heart failure', status='list', slides=''),
+      key='LOW dose: β1 selective; HIGH dose: β1 > β2 > α1; used in patients with systolic dysfunction and congestive heart failure', status='slide', slides=f'{ADR} slides 9, 40–41 (10/7; dose wording list only)'),
  dict(sec='adr', page='6–7', colour='antagonist', drugs=['Metoprolol (Lopressor or Toprol)', 'Atenolol (Tenormin)', 'Nebivolol (Bystolic)'],
       moa='SELECTIVE β1 antagonist (“β1 beta-blockers”, “MAN”)', soa='Heart, kidneys, brain',
       adr='Decreased heart rate and contractility; fatigue / dizziness; bradycardia; decreased RAAS; CNS depression', key='',
-      status='list', slides=''),
+      status='slide', slides=f'{ADR} slides 40, 54, 56–59 (10/7)'),
  dict(sec='adr', page='7', colour='agonist', drugs=['Albuterol (Ventolin) – SABA', 'Levalbuterol (Xopenex) – SABA', 'Salmeterol – LABA', 'Formoterol – LABA'],
       moa='β2 agonist', soa='Lungs, vasculature, CNS', adr='Bronchial dilation, vasodilation, excitation', key='',
-      status='list', slides=''),
+      status='slide', slides=f'{ADR} slides 9, 42–43 (10/7)'),
  dict(sec='adr', page='7', colour='antagonist', drugs=['Propranolol (Inderal)', 'Pindolol (PARTIAL AGONIST)', 'Timolol (Betimol)'],
       moa='NON-SELECTIVE beta-blockers; β1 & β2 antagonist', soa='Heart, kidneys, brain, lungs, vasculature',
       adr='Decreased heart rate and contractility; fatigue / dizziness; bradycardia; decreased RAAS; CNS depression',
       key='Mask symptoms of hypoglycemia → no nervousness / tremors; propranolol given at low dose for anxiety (target β1 in brain); contraindicated for asthma pts',
-      status='list', slides=''),
+      status='slide', slides=f'{ADR} slides 54–59 (10/7; CONFLICT: anxiety via central β2; timolol on slide 54 only)'),
  dict(sec='adr', page='7', colour='antagonist', drugs=['Carvedilol (Coreg)', 'Labetalol (Trandate)'],
       moa='β1 & β2 antagonist, & α1 antagonist', soa='Heart, kidneys, brain, lungs, vasculature',
       adr='Decreased heart rate and contractility; fatigue / dizziness; bradycardia; decreased RAAS; CNS depression',
-      key='Mask symptoms of hypoglycemia → no nervousness / tremors; contraindicated for asthma pts', status='list', slides=''),
+      key='Mask symptoms of hypoglycemia → no nervousness / tremors; contraindicated for asthma pts', status='slide', slides=f'{ADR} slides 7 (10/6), 54, 59 (10/7)'),
  dict(sec='adr', page='7', colour='agonist', drugs=['Mirabegron'],
       moa='β3 agonist', soa='Bladder', adr='Relief for overactive bladder', key='Less side effects than muscarinic antagonists',
-      status='list', slides=''),
+      status='slide', slides=f'{ADR} slides 9, 44 (10/7)'),
  dict(sec='adr', page='8', colour='agonist', drugs=['Epinephrine'],
       moa='β1, β2 agonist (blood vessels)', soa='Heart and vasculature', adr='Adrenergic receptors; SNS activation',
       key='Low dose: β1 & β2; high dose: everything; used for shock (life support) / anaphylaxis; patients must be weaned off due to down regulation of receptors',
-      status='slide', slides=f'{ANS} slides 35, 42 (β2 only)'),
+      status='slide', slides=f'{ANS} slides 35, 42 (β2 only); {ADR} slides 46–52, 84 (10/7)'),
  dict(sec='adr', page='8', colour='agonist', drugs=['Norepinephrine (Levophed)'],
       moa='α1, β1 agonist', soa='Heart & vasculature', adr='Increase TPR, heart rate, contractility', key='Used for shock (life support)',
-      status='slide', slides=f'{ANS} slides 13, 45–47 (CONFLICT: slide adds α2)'),
+      status='slide', slides=f'{ANS} slides 13, 45–47 (CONFLICT: slide adds α2); {ADR} slide 53 (α1, β1; 10/7), slide 84 (α1, α2, β1)'),
  dict(sec='adr', page='8', colour='agonist', drugs=['Isoproterenol'],
       moa='β1, β2 agonist (lungs)', soa='Heart & lungs', adr='Hyperglycemia, palpitations, tachycardia, arrythmias',
-      key='Used for asthma (not 1st line), bradycardia, and heart block (AV)', status='list', slides=''),
+      key='Used for asthma (not 1st line), bradycardia, and heart block (AV)', status='slide', slides=f'{ADR} slides 9, 45 (10/7; hyperglycemia list only)'),
  # ---------------- RAAS ----------------
  dict(sec='raas', page='8', colour='antagonist', drugs=['Aliskiren'],
       moa='Selective renin inhibitor; REVERSIBLE antagonist', soa='Blood stream (renin – 1st step in RAAS pathway)',
       adr='Lower TPR, lower aldosterone, decrease sodium and water reabsorption; angioedema, hypotension, cough, headache, diarrhea, skin rash',
-      key='Low drug bioavailability but high affinity for renin; renin is the rate limiting enzyme for the RAAS pathway', status='list', slides=''),
+      key='Low drug bioavailability but high affinity for renin; renin is the rate limiting enzyme for the RAAS pathway', status='slide',
+      slides=f'{RAAS} slides 4, 8, 19, 23–29; transcript 10/8 (CONFLICT: cough and angioedema are ACE-inhibitor effects on slide 19; slide 19 adds hyperkalemia)'),
  dict(sec='raas', page='9', colour='antagonist', drugs=['Captopril', 'Enalapril (Vasotec)', 'Lisinopril (Prinivil)', 'Benazepril (Lotensin)', 'Quinapril (Accupril)', 'Ramipril (Altace)'],
       moa='ACE inhibitor (angiotensin converting enzyme inhibitor); REVERSIBLE antagonists', soa='Blood stream',
       adr='Lower TPR, lower aldosterone, decrease sodium and water reabsorption; dry cough, hyperkalemia, angioedema, first dose hypotension, fetopathic potential',
       key='Primary effect: inhibit ACE (converts Ang I to Ang II & breaks down bradykinin); bonus 1: Ang I → angiotensin 1-7 → AT2 (oppose AT1); bonus 2: increased bradykinin (dilator) → dry cough; most are pro-drugs; 1st line for HTN',
-      status='list', slides=''),
+      status='slide', slides=f'{RAAS} slides 4, 9–12, 19, 26, 29; transcript 10/8 (CONFLICT: the angiotensin 1-7 “bonus 1” was not taught; captopril and lisinopril are active, the rest prodrugs)'),
  dict(sec='raas', page='9', colour='antagonist', drugs=['Losartan (Cozaar)', 'Valsartan (Diovan)', 'Olmesartan (Benicar)', 'Telmisartan (Micardis)', 'Irbesartan (Avapro)', 'Medoxomil (printed as its own entry)'],
       moa='ARB (angiotensin II receptor blocker); REVERSIBLE antagonists', soa='Blood stream',
       adr='Lower TPR, lower aldosterone, decrease sodium and water reabsorption; hyperkalemia, angioedema',
       key='Primary effect: block AT1; bonus: increase AT2 activation (oppose AT1); losartan is an active drug that turns into an even more active metabolite; most are pro-drugs; high affinity for AT1',
-      status='list', slides=''),
+      status='slide', slides=f'{RAAS} slides 4, 13–14, 18–19, 26–30; transcript 10/8 (CONFLICT: angioedema is listed under ACE inhibitors on slide 19)'),
  dict(sec='raas', page='9–10', colour='antagonist', drugs=['Spironolactone', 'Eplerenone'],
       moa='Potassium-sparing diuretic; mineralocorticoid (MR) receptor antagonist', soa='Kidney → collecting duct of nephron',
       adr='Hyperkalemia, diarrhea, drowsiness; males: gynecomastia & impotence',
       key='Aldosterone antagonists; they bind the same space as aldosterone → fewer Na+/K+ channels and pumps made → less Na+ reabsorption',
-      status='list', slides=''),
+      status='slide', slides=f'{RAAS} slides 20–22, 24–25; transcript 10/8 (site: late distal tubule and collecting duct)'),
  dict(sec='raas', page='10', colour='antagonist', drugs=['Metoprolol'],
       moa='Selective β1 blocker', soa='Kidney', adr='Less renin production → no RAAS pathway', key='',
-      status='list', slides=''),
+      status='slide', slides=f'{RAAS} slides 7, 24–25, 29; transcript 10/8 (CONFLICT: renin is suppressed, not abolished)'),
 ]
 
 # --------------------------------------------------------------------------
 # Disagreements and gaps (list vs slide).  The slide wins.
 # --------------------------------------------------------------------------
 CONFLICTS = [  # (drug, list says, slide says, transcript 10/5 says, resolution)
- ('Norepinephrine', 'List page 8: “α1, β1 agonist”.', 'Autonomic Nervous System.pdf slide 13 draws norepinephrine as the neurotransmitter at α1 (blood vessels), α2 (CNS) and β1 (heart, kidney), with β2 “typically not innervated”; slides 45–47: NE acts at α2 in the GI tract (“Inhibition of Ach Release”).', '—', 'Slide wins: norepinephrine is keyed as an agonist at α1, α2 and β1 (DL2 item carries a note). The Exam 1 drug list called it an α1, α2, β1 and β2 agonist.'),
- ('Epinephrine', 'List page 8: “β1, β2 agonist (blood vessels)”, with “Low dose: β1 & β2 / High dose: everything”.', 'Autonomic Nervous System.pdf slides 35 and 42 show epinephrine (adrenal medulla) acting at β2 (bronchial dilation, smooth-muscle vasodilation); the slides say nothing on α receptors for epinephrine. The Exam 1 drug list called it an α1, α2, β1 and β2 agonist.', '—', 'No direct contradiction with a slide. Keyed with the list’s dose wording (β1 and β2 at low dose; all receptors at high dose). Re-check when the adrenergic deck is available.'),
+ ('Norepinephrine', 'List page 8: “α1, β1 agonist”.', 'Autonomic Nervous System.pdf slide 13 draws norepinephrine as the neurotransmitter at α1 (blood vessels), α2 (CNS) and β1 (heart, kidney), with β2 “typically not innervated”; slides 45–47: NE acts at α2 in the GI tract (“Inhibition of Ach Release”).', '10/7: “norepinephrine appears to have a higher affinity for the beta ones and the alpha ones, OK, than it does for the beta 2s or the alpha 2s. Although it can bind and activate those receptors.” Adrenergic deck slide 53: binds α1 and β1; slide 84: NE α1, α2, β1.', 'Resolved on 10/7: the item now asks for the highest-affinity receptors (α1 and β1), on which the list, slide 53 and his words agree; α2 is noted. The Exam 1 drug list called it an α1, α2, β1 and β2 agonist.'),
+ ('Epinephrine', 'List page 8: “β1, β2 agonist (blood vessels)”, with “Low dose: β1 & β2 / High dose: everything”.', 'Autonomic Nervous System.pdf slides 35 and 42 show epinephrine (adrenal medulla) acting at β2 (bronchial dilation, smooth-muscle vasodilation); the slides say nothing on α receptors for epinephrine. The Exam 1 drug list called it an α1, α2, β1 and β2 agonist.', '10/7: “At low doses, uh, epinephrine has the highest affinity for the beta 1 and the beta 2 receptor … the rank of affinity is gonna be beta one beta choose, alpha one, and then alpha 2.” Adrenergic deck slide 47: β1, β2 at low doses; α1, α2 at high doses (epinephrine reversal).', 'Agrees: keyed with the dose wording (β1 and β2 at low dose; all receptors at high dose), now confirmed by slide 47 and the audio.'),
  ('Varenicline', 'List page 1 ADRs: headache, insomnia, suicidal thoughts, depression, flatulence.', 'PCOL-NMJ_PCOL_2026s_pptx.pdf slide 9: most common GI: nausea (16–40%) & vomiting; CNS: headache, insomnia, depression. No suicidal thoughts or flatulence on the slide; the list omits nausea and vomiting.', 'Names depression and sleeplessness (brain site) and “some GI side effects”: “flatulence is a complaint for the patients. They get a lot of gas.” Nothing on suicidal thoughts.', 'Resolved: the ADR item (DL2-004) keys the slide’s nausea/vomiting, headache, insomnia and depression plus flatulence, which he confirmed. Suicidal thoughts (list only) are not asked.'),
  ('Scopolamine', 'List page 3: “Non-selective muscarinic antagonist (M1, M2, M3)”.', 'PCOL-Cholinergic-26s.pdf slide 17: “Scopolamine — Antagonist to the Muscarinic, Histamine and serotonin receptors”.', '“That one is really non-selective. That not only blocks all the muscarinics, but also histamine and serotonin receptors.”', 'Resolved for the slide: keyed as an antagonist at muscarinic, histamine and serotonin receptors (DL2-035).'),
  ('Solifenacin, darifenacin, trospium', 'List page 4: “Most selective for M3 → least likely to cause anti-DUMBbELSS”.', 'PCOL-Cholinergic-26s.pdf slide 30: “All have the potential to cause anti-DUMBBELSS; xerostomia (dry mouth) and constipation — M3, all musc. antag”; the M3-selective three sit lowest in the “order of drugs with CNS effects (drowsiness, dizziness, & confusion)”: oxybutynin (M1 & M3) > tolterodine, fesoterodine (M1 & M3) > solifenacin, darifenacin, trospium (M3).', 'The more M3-selective drugs act more in the bladder and cause “less of the anti-dumbbells everywhere else”, but “If I give enough of VESIcare, I’m gonna get all the anti-dumbbells.” Oxybutynin (M1 and M3) causes sedation. For the exam: oxybutynin, trospium and solifenacin only.', 'Resolved: both are true by dose. DL2-044 keys oxybutynin as more sedating than solifenacin and rejects “only oxybutynin can cause anti-DUMBBELSS”; darifenacin, tolterodine and fesoterodine are not asked.'),
@@ -255,23 +260,34 @@ CONFLICTS = [  # (drug, list says, slide says, transcript 10/5 says, resolution)
  ('Aclidinium, umeclidinium', 'List page 4: “Muscarinic antagonist … Long-acting muscarinic antagonist (LAMA)”.', 'PCOL-Cholinergic-26s.pdf slide 28: “High affinity for the M3 (reversible, but slow dissociation)”; the LAMA label on the slide is attached to tiotropium only.', '“Those are really long acting”; “a very high affinity, and they’re more selective to the M3s” than ipratropium and tiotropium.', 'Resolved for the list: long acting, high M3 affinity and slow dissociation are keyed (DL2-041).'),
  ('Tiotropium', 'List page 3: “Heart rate not affected because it does not target M2”.', 'PCOL-Cholinergic-26s.pdf slide 28 gives tiotropium as “M1 and M3; LAMA: Long acting (1x/Day)”; slide 10 puts M2 at the AV & SA node. The heart-rate sentence itself is not on a slide.', '“The ipratropium and the tiotropium are less selective”; low bioavailability keeps them in the lungs: “even though they can affect the M2s or the M3s, it’s very likely, unlikely because they don’t get systemic.”', 'Resolved by the transcript against both list and slide: heart rate is spared because tiotropium stays in the lungs (DL2-040, rewritten), not because it lacks M2 affinity. DL2-039 no longer keys receptor profiles; it keys short-acting ipratropium versus long-acting tiotropium.'),
  ('Edrophonium', 'List page 2: “No CNS effects”.', 'PCOL-NMJ_PCOL_2026s_pptx.pdf slide 38 gives short duration, readily reversible, diagnosis of myasthenia gravis; it does not mention CNS effects.', '“For our purpose on the exam, I’m not too worried about” edrophonium (IV, diagnostic, very water soluble, “gonna stay within the blood”). No explicit statement on CNS effects.', 'Resolved by scope: DL2-019 removed; the “no CNS effects” claim is not asked.'),
- ('Nitrates and PDE inhibitors (SOA)', 'List page 4 gives the SOA as “Endothelium of blood vessels (M3)”.', 'No slide names these drugs. Autonomic Nervous System.pdf slide 4 and PCOL-Cholinergic-26s.pdf slides 13 and 15 say M3 on vascular endothelium raises Ca++ → NOS → NO (vasodilation via nitric oxide).', '—', 'List only; the “(M3)” in the SOA is not asked.'),
+ ('Nitrates and PDE inhibitors (SOA)', 'List page 4 gives the SOA as “Endothelium of blood vessels (M3)”.', 'PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slide 62 names nitroglycerine, nitroprusside and isosorbide dinitrate; slides 67–74 draw M3 on the endothelium → Ca++–calmodulin → NOS → NO → sGC → cGMP in the smooth muscle, with PDE breaking cGMP down; slide 74: “PDE inhibitors increase the potency of NO”. No slide names sildenafil, tadalafil or vardenafil.', '10/7: the nitrates are “nitric oxide donors”; nitroglycerin’s NO “is going to bypass all of this and go straight into the subglonola cyclase” (it does not act through M3). Sildenafil and Cialis named as PDE inhibitors; “I would like for you to tell me on an exam is why it’s bad to take Sadenophil with a nitric oxide donor”.', 'Mechanisms agree. The “(M3)” in the SOA is not keyed for the nitrates (they bypass M3). Items DL2-046 to DL2-048 are checked and quoted (10/7) and released by concept; group-cgmp’s bethanechol distractor was replaced (a muscarinic agonist on endothelial M3 does raise cGMP).'),
  ('Benztropine', 'List page 3: non-selective muscarinic antagonist; CNS; Parkinson’s.', 'PCOL-Cholinergic-26s.pdf slide 25 names benztropine (Parkinson’s patients treated with L-dopa; tremor & rigidity) inside the muscarinic-antagonist section but does not state its receptor selectivity.', '“An analog of atropine called benztropine … used for treatment of Parkinson’s disease”, an adjunct to L-dopa; “more selective to … the M1s in the brain, and it’s gonna have less of those anti-dumbbells”; “about half of the affinity of atropine.”', 'Resolved against the list: benztropine is more M1-selective, not a plain non-selective (M1, M2, M3) antagonist. DL2-037 keys only its site (central nervous system) and carries a note.'),
  ('Cocaine', 'List page 5 key information: “Used with lidocaine to control arrythmias (Na+ channel blocker)”; SOA “CNS”.', 'PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slide 10: “Cocaine (Reuptake inhibitor) MOA: NE transporter (NET) antagonist; Increase NE at the synapse; PCOL Effect: Heart, Blood vessels, CNS”. No lidocaine on the slide.', '10/6: cocaine or another powerful vasoconstrictor is added to lidocaine “because the lidocaine can stop your heart. So you want to stay local. So by vasoconstricting those blood vessels, you decrease the bleeding while you’re suturing, and also you prevent the systemic distribution of our drug into the heart.”', 'Resolved against the list: the vasoconstrictor keeps lidocaine away from the heart (preventing arrhythmias); cocaine is not the antiarrhythmic. Use not asked in DL2 (DL2 cocaine item carries a note); L10-022 asks it as low yield. Sites: heart, blood vessels and CNS, not CNS only.'),
  ('Phenylephrine', 'List page 4: “down-reg → rebound congestion”; ADRs HTN, burning & nasal discharge, rebound congestion.', 'PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slide 18 ADR: burning, rebound congestion, careful in HTN pts, blurred vision. No down-regulation; no nasal discharge.', '10/6: “burning, blurred vision, uh, you may have rebound congestion ... you don’t use for more than 3 days.” Gives no mechanism for the rebound. On the agonist and the urethra he said “you’re gonna relax the sphincter, which can allow you to urinate” — the opposite of what α1 activation of a sphincter would do; not asked.', 'Rebound congestion keyed without its cause (DL2 item note); blurred vision added from the slide.'),
  ('Selegiline, rasagiline', 'List page 5: both selective MAO-B irreversible antagonists; depression & Parkinson’s.', 'PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slide 14: “Selective MAO-B Antagonist; Depression & Parkinson’s; Drug: Selegiline (Low doses); Irreversible antagonist”. Rasagiline is not on a slide.', '10/6: only selegiline (“a better MAO inhibitor, uh, selegiline, which is selective to the MAOB”; no cheese effect).', 'Rasagiline not asked; replaced by selegiline in the indirect-drug select-all.'),
- ('Mirtazapine', 'List page 6: α2, α1, muscarinic, H1 and 5-HT2a antagonist; blocks H1 → drowsiness; ADRs incl. peripheral edema from α2 block in small vessels.', 'PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 27, 31–32: α2, H1, muscarinic and α1 (no 5-HT2a); “Norepinephrine and 5-HT ⇒ Decrease depression”; H1 and muscarinic → sedation. Slide 33 (not taught 10/6): peripheral edema from “Blockade of alpha 1”, not α2.', '10/6: “this drug blocks histamine and muscarinic type one in the brain ... Sedation”; “it can also have some effects on the alpha 1 as well.” He stopped before slide 33.', 'Mechanism item released (H1 keyed, note added). The peripheral-edema item stays held: the list blames α2 block, slide 33 blames α1 block; resolve when he teaches slide 33.'),
+ ('Mirtazapine', 'List page 6: α2, α1, muscarinic, H1 and 5-HT2a antagonist; blocks H1 → drowsiness; ADRs incl. peripheral edema from α2 block in small vessels.', 'PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 27, 31–32: α2, H1, muscarinic and α1 (no 5-HT2a); “Norepinephrine and 5-HT ⇒ Decrease depression”; H1 and muscarinic → sedation. Slide 33 (not taught 10/6): peripheral edema from “Blockade of alpha 1”, not α2.', '10/6: “this drug blocks histamine and muscarinic type one in the brain ... Sedation”; “it can also have some effects on the alpha 1 as well.” He stopped before slide 33.', 'Mechanism item released (H1 keyed, note added). Slide 33 taught 10/7: “you can get peripheral edema by blocking the alpha-1s”. Resolved against the list: DL2-061 now keys α1 block (note), and is released.'),
  ('Clonidine group', 'List page 6: clonidine, brimonidine, tizanidine, guanfacine, dexmedetomidine: α2 agonists; ADRs incl. constipation “(activates GI inhibitory negative feedback pathway → less Ach)”.', 'PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 21–24, 26 (clonidine, brimonidine, apraclonidine, tizanidine, guanfacine, dexmedetomidine; ADRs sedation, nightmares, depression, dry mouth, constipation, hypotension, bradycardia, sexual dysfunction, hypertensive crisis on withdrawal from up-regulation).', '10/6: the “-idine” rule; “for our purpose ... we’re gonna focus on clonidine because that’s our prototypical drug.” Constipation: “by suppressing acetylcholine release, we don’t activate the M3s.” The transcript says “hypertension and bradycardia” where the slide says hypotension.', 'Agrees; hypotension keyed (slide). Guanfacine lacks -idine; he called it similar to clonidine.'),
  ('Prazosin group', 'List page 5: prazosin, terazosin, doxazosin, tamsulosin (α1a); uses HTN, BPH, PTSD (prazosin only); ADRs headache, blurred vision, orthostatic hypotension → reflex tachycardia, sexual dysfunction; SOA includes brain.', 'PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 27–30: selective, reversible α1 antagonist (1000×); uroselective group; BPH: terazosin, doxazosin, tamsulosin & silodosin (α1A and 1D > α1B); ADRs first-dose orthostatic hypotension & syncope (30–90 min), reflex tachycardia (palpitations), dizziness, blurred vision, headache. No PTSD, no sexual dysfunction.', '10/6: “all I need to know if you see a drug with OC is a selective alpha-1 antagonist”; α1A/α1B “just FYI”; sites nose, eye, blood vessels, urethra. The transcript says “first dose orthostatic hypertension” where the slide says hypotension.', 'Agrees on mechanism; hypotension keyed (slide); PTSD and sexual dysfunction (list only) not asked; uroselectivity not asked.'),
- ('Phenoxybenzamine', 'List page 5–6: non-selective α1 & α2 irreversible antagonist; GI stimulation; HTN crisis from phenelzine.', 'PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slide 27 lists it as the irreversible, non-selective α1 and α2 antagonist; slides 34–38 (its MOA, uses, ADRs) were not taught on 10/6.', '10/6, answering a student: “phenoxbenzamine is a non-selective alpha 1 and alpha 2 irreversible antagonists ... we’re gonna get a little bit ahead of us, so just wait”.', 'Its DL2 items stay held until slides 34–38 are taught; L10-048 asks only the slide 27 classification.'),
- ('Medoxomil', 'List page 9 prints “Medoxomil” as its own line in the ARB group.', 'No slide.', '—', 'Parsed as part of the ARB row; not asked as a drug.'),
+ ('Phenoxybenzamine', 'List page 5–6: non-selective α1 & α2 irreversible antagonist; GI stimulation; HTN crisis from phenelzine.', 'PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slide 27 lists it as the irreversible, non-selective α1 and α2 antagonist; slides 34–38 (its MOA, uses, ADRs) were not taught on 10/6.', '10/6, answering a student: “phenoxbenzamine is a non-selective alpha 1 and alpha 2 irreversible antagonists ... we’re gonna get a little bit ahead of us, so just wait”.', 'Taught 10/7 (slides 34–38): irreversible (covalent), non-selective α1 and α2; uses pheochromocytoma and the MAO-inhibitor hypertensive crisis; GI stimulation explained by α2 block on the parasympathetic nerve, as on the list. The list’s “highest affinity for α1” is not on a slide, and when a student attributed it to him he said “I don’t recall saying that”; not keyed. In the poll discussion he said phenoxybenzamine “also block[s] the release of norepinephrine”, against slide 36 (“Enhance Norepinephrine Secretion”) and his own key; not used. DL2-058 and DL2-059 released.'),
+ ('Dobutamine', 'List page 6: “LOW dose: β1 selective; HIGH dose: β1 > β2 > α1”; used in systolic dysfunction and congestive heart failure.', 'PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slide 40: selective agonist (β1); slide 41: β agonist of choice for short-term treatment of cardiac decompensation; + inotropic action and increased HR; tolerance limits long-term use; major ADR tachycardia & arrhythmias. No dose wording.', '10/7: “a selective beta1 ago agonist, such as dobutamine. This is an IV drug”; tolerance through down-regulation; long-term use raises mortality.', 'Keyed as the selective β1 agonist (slide 40); the dose wording is list only and was removed from the stem of DL2-065.'),
+ ('β2 agonists (SABA / LABA)', 'List page 7: albuterol, levalbuterol (SABA); salmeterol, formoterol (LABA); β2 agonist.', 'PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slide 43: SABA (2–6 hrs) albuterol, levalbuterol, terbutaline; LABA (12 hrs or more) salmeterol, formoterol, arformoterol, indacaterol, olodaterol.', '10/7: “If you know that a terol is a beta2 agonist, that’s good for me. It doesn’t matter if it’s short acting or long acting.” He also called albuterol a partial agonist and salmeterol and formoterol full agonists (not on the slide or list).', 'Resolved by scope: DL2-068 rewritten from “which are LABA?” to “which are β2 agonists?”; partial versus full agonism not asked.'),
+ ('Propranolol (anxiety)', 'List page 7: “propranolol given at low dose for anxiety (target β1 in brain)”.', 'PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 56–57: β blockers reduce CNS sympathetic output (slide 57 adds α2 with “-+”). No receptor named for anxiety.', '10/7: “the beta 2s in the brain are involving the positive feedback … So by blocking those beta 2 receptors in the CNS, we’re going to have less sympathetic output. And thus decrease your anxiety”.', 'Resolved against the list: the anxiety effect is through central β2, not β1 (L11-043). Not asked in DL2 (DL2-070 note).'),
+ ('Non-selective β blockers (timolol)', 'List page 7: propranolol, pindolol, timolol, β1 & β2 antagonists; contraindicated in asthma; mask hypoglycemia.', 'PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slide 54: non-subtype selective (1st generation, β1 & β2): nadolol, penbutolol, pindolol (PA), propranolol, timolol; slide 59: careful in reactive airway disease (non-selective) and insulin-dependent diabetes (mask hypoglycemia).', '10/7: the β blockers to know are propranolol (prototype), pindolol, metoprolol, atenolol, nebivolol (“MAN”), carvedilol and labetalol; timolol was not named. All β blockers mask the tachycardia of hypoglycemia; non-selective ones also mask tremor and nervousness.', 'Timolol kept where the slide supports it (non-selective, asthma); the hypoglycemia part of DL2-072 was dropped from the stem because he applies it (tachycardia) to every β blocker.'),
+ ('Isoproterenol (hyperglycemia)', 'List page 8 ADRs: hyperglycemia, palpitations, tachycardia, arrythmias.', 'PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slide 45: equal affinity for β1 and β2; ADR palpitations, tachycardia and cardiac ischemia; uses severe bradycardia or heart block. No hyperglycemia.', '10/7: “iso equal”; replaced by albuterol for asthma because of “the palpitation and tachycardia and arrhythmias”. Nothing on blood glucose.', 'Hyperglycemia not keyed (removed from the DL2-078 stem).'),
+ ('Medoxomil', 'List page 9 prints “Medoxomil” as its own line in the ARB group.', 'PCOL-RAAS_26s.pdf slide 4 prints “Olmesartan Medoxomil”: medoxomil is part of olmesartan’s name, not a separate drug.', '10/8: names losartan and valsartan; “It doesn’t matter what sartan you have.”', 'Resolved by the slide: not a separate drug; not asked.'),
+ ('Aliskiren (adverse reactions)', 'List page 8: “angioedema, hypotension, cough, headache, diarrhea, skin rash”; no hyperkalemia.', 'PCOL-RAAS_26s.pdf slide 19 “Adverse Effects (Ri, ACEi & ARBs)”: hyperkalemia (renal compromised pts), “First-Dose” hypotension, fetopathic potential; dry cough and angioedema only under “ACEi”.', '10/8: “all three can cause hyperkalemia”; hyperkalemia poll keyed “E, all the above … the ACEs, the ARBs, and the RAIN inhibitors can also cause hyperkalemia”; dry cough “is more with the ACEs than you would get with the ARBs or the RAI inhibitors”. Headache, diarrhea and skin rash were not mentioned.', 'Resolved against the list: aliskiren is keyed with hyperkalemia (DL2-087); cough and angioedema are keyed as ACE-inhibitor (bradykinin) effects; headache, diarrhea and skin rash are list only and not asked.'),
+ ('ACE inhibitors (key information)', 'List page 9: “bonus 1: Ang I → angiotensin 1-7 → AT2 (oppose AT1)”; “most are pro-drugs”.', 'PCOL-RAAS_26s.pdf slides 9, 12: primary effect, inhibit conversion of Ang I to Ang II; second effect, more bradykinin (= ↑ prostaglandins). No angiotensin 1-7. Slide 11: captopril and lisinopril active, the other eight prodrugs.', '10/8: “Remember, primary effect is to block the ACE enzyme and decrease angiotensin 2. Secondary effect, increase the levels of bradykinin”; nothing on angiotensin 1-7. “captopril and lisinopril, they are the active ... everybody else is a pro-drug ... for our purpose over here, all we need to know is the mechanism of action”.', 'Angiotensin 1-7 not asked (not taught). Prodrug status not keyed in DL2 (lisinopril, the item’s drug, is active).'),
+ ('ARBs (angioedema)', 'List page 9: ARB ADRs “hyperkalemia, angioedema”.', 'PCOL-RAAS_26s.pdf slide 19 lists angioedema under ACEi only (bradykinin); hyperkalemia, first-dose hypotension and fetopathic potential for Ri, ACEi and ARBs.', '10/8: angioedema is one of “two side effects that seem to be more common associated with [ACE inhibitors] because of the bradykinin”; “if you have angioedema to the ace, you can try the ARB. Because there’s no cross ... class effect.”', 'Resolved against the list: DL2-085 now keys dry cough and angioedema as the ACE-inhibitor effects (more common than with ARBs).'),
+ ('Losartan (metabolite)', 'List page 9: “losartan is an active drug that turns into an even more active metabolite; most are pro-drugs”.', 'PCOL-RAAS_26s.pdf slide 13: candesartan, olmesartan marked “Prodrugs”; valsartan “Active”; losartan “Active, but EXP3174”; slide 14: 14% of an oral dose converted to EXP 3174.', '10/8: “losartan is active, but one of its metabolites is also active ... the metabolite that XXP 3174 has a greater affinity than losartan does”. One garbled sentence (“Losartan is a prodrug and is the most powerful of them all”) appears to be about candesartan. “I don’t care if you know which one is the most potent.”', 'Agrees with the list on losartan; potency and prodrug status not asked in DL2.'),
+ ('Metoprolol (renin)', 'List page 10: “Less renin production → no RAAS pathway”.', 'PCOL-RAAS_26s.pdf slides 7, 24–25: β1 on the juxtaglomerular cells is one of three controls of renin release (with the macula densa and the intrarenal baroreceptor).', '10/8: “by blocking the beta ones in the kidney, you’re also gonna decrease renin production, right? You’re not gonna abolish because you you have the sodium component and the, the barrel receptor component, but you can suppress it.”', 'Resolved against the list: renin is suppressed, not abolished (DL2-088).'),
+ ('Spironolactone, eplerenone (SOA)', 'List page 9–10: “Kidney → collecting duct of nephron”.', 'PCOL-RAAS_26s.pdf slide 21: site of action “Late distal tubule and collecting duct”; slide 22: gynecomastia & impotence “Not with Eplerenone”.', '10/8: eplerenone is “the most selective MR in the kidney”, so no breast growth in men; GI effects common to both.', 'Agrees; DL2-086 adds the late distal tubule and the eplerenone difference.'),
  ('Muscarinic agonists (blood pressure)', 'List page 2–3: muscarinic agonist ADRs given as DUMBBELSS.', 'PCOL-Cholinergic-26s.pdf slide 13 lists the organ effects of muscarinic agonists.', '“They may get hypertension due to the release of nitric oxide, which is a vasodilator, so that’s a little bit of an exception to the rule” — “hypertension” beside “vasodilator” looks like a transcription or speaking slip.', 'Uncertain: blood pressure is not asked for the muscarinic agonists.'),
 ]
 
 # --------------------------------------------------------------------------
 # Questions
 # --------------------------------------------------------------------------
-HELD = {'raas', 'no'}   # no slides + transcript yet: written, not posted
+HELD = set()   # sections without slides + transcript are held here (all Exam 2 sections now taught)
 # Adrenergic deck taught 10/6 through slide 32 (mirtazapine).  Released by concept;
 # every other adrenergic concept stays held (β drugs, catecholamines, phenoxybenzamine,
 # mirtazapine's adverse reactions) until the slides that teach it have audio.
@@ -816,7 +832,7 @@ add('chol', 'group-cgmp',
   ('Isosorbide mononitrate', R, 'Nitric oxide donor → ↑ cGMP.'),
   ('Tadalafil', R, 'Blocks phosphodiesterase → ↑ cGMP.'),
   ('Prazosin', W, 'Prazosin lowers blood pressure by blocking α1 receptors, not through cGMP.'),
-  ('Bethanechol', W, 'A muscarinic agonist used for urinary retention.'),
+  ('Albuterol', W, 'A β2 agonist: it raises cyclic AMP (cAMP), not cGMP.'),
   ('Atropine', W, 'A muscarinic antagonist.')],
  'Two groups on the list end in more cyclic guanosine monophosphate (cGMP): nitric oxide donors (nitroglycerin, nitroprusside, isosorbide), which make more of it, and phosphodiesterase blockers (sildenafil, tadalafil, vardenafil), which stop its breakdown. Both give vasodilation and lower blood pressure.',
  'Donate nitric oxide; NO → sGC → ↑cGMP … Blocks PDE → increase cGMP … Vasodilation; Lower blood pressure',
@@ -927,8 +943,8 @@ add('adr', 'phenoxybenzamine',
  cite('5–6'))
 
 add('adr', 'phenoxybenzamine-gi',
- 'Phenoxybenzamine causes gastrointestinal (GI) stimulation. Which explanation does the drug list give?',
- [('α2 on parasympathetic fibers is blocked', R, 'Listed: “GI stimulation (α2 on PNS fiber blocked)”; the list’s α2-agonist row gives the reverse: less acetylcholine in the gut.'),
+ 'Phenoxybenzamine causes gastrointestinal (GI) stimulation. Which mechanism explains it?',
+ [('α2 on parasympathetic fibers is blocked', R, 'Listed: “GI stimulation (α2 on PNS fiber blocked)”: without the α2 brake, more acetylcholine reaches gut M3; the list’s α2-agonist row gives the reverse, less acetylcholine in the gut.'),
   ('α1 receptors on gut smooth muscle are activated', W, 'Phenoxybenzamine is an antagonist; it does not activate receptors.'),
   ('Acetylcholinesterase in the gut is inhibited', W, 'That is the cholinesterase inhibitors.'),
   ('M3 receptors in the gut are blocked', W, 'Blocking gut M3 causes constipation, not stimulation.')],
@@ -948,13 +964,14 @@ add('adr', 'mirtazapine',
 
 add('adr', 'mirtazapine-edema',
  'Why does mirtazapine cause peripheral edema?',
- [('α2 block in small vessels dilates them', R, 'Listed: α2 in small blood vessels causes vasoconstriction, so the antagonist causes vasodilation → peripheral edema.'),
-  ('H1 block in the brain causes fluid retention', W, 'The list ties H1 block to drowsiness.'),
+ [('α1 block relaxes the peripheral vessels', R, 'Slide 33: peripheral edema from “Blockade of alpha 1”; on 10/7 he gave the same cause.'),
+  ('H1 block in the brain causes fluid retention', W, 'H1 block (with muscarinic block) is tied to drowsiness.'),
   ('Muscarinic block in the gut causes edema', W, 'Muscarinic block is tied to xerostomia and constipation.'),
-  ('α1 activation in the kidney retains sodium', W, 'Mirtazapine blocks α1; it does not activate it.')],
- 'The list explains mirtazapine’s peripheral edema through α2: α2 receptors in small blood vessels cause vasoconstriction, so blocking them causes vasodilation and fluid collects peripherally. Other listed reactions are drowsiness, weight gain, increased cholesterol, xerostomia, constipation and hypertension.',
+  ('More norepinephrine release constricts the veins', W, 'More norepinephrine release (α2 block) is tied to hypertension, not edema.')],
+ 'Mirtazapine’s adverse reactions follow its receptors: drowsiness (muscarinic and H1 block), weight gain and increased cholesterol (serotonin), xerostomia and constipation (muscarinic block), peripheral edema (α1 block) and hypertension (more norepinephrine release). The α1 and norepinephrine effects pull in opposite directions, so blood pressure varies from patient to patient.',
  'α2’s located in small blood vessels cause vasoconstriction → antagonist will cause vasodilation → peripheral edema',
- cite(6), tags=['apply'])
+ cite(6), tags=['apply'],
+ note='The drug list blames peripheral edema on α2 block in small blood vessels; slide 33 (“Peripheral edema — Blockade of alpha 1”) and the 10/7 lecture give α1 block. Keyed to the slide and his words.')
 
 add('adr', 'moa-clonidine',
  'Which of the following describes the mechanism of action of guanfacine?',
@@ -989,12 +1006,12 @@ add('adr', 'adr-alpha2-agonist',
  cite(6), multi=True)
 
 add('adr', 'moa-dobutamine',
- 'Which drug is a β1 agonist that is β1 selective at low dose?',
- [('Dobutamine', R, 'Listed: β1 agonist; low dose β1 selective; high dose β1 > β2 > α1.'),
+ 'Which drug is a selective β1 agonist?',
+ [('Dobutamine', R, 'Slide 40: selective β1 agonist (+ inotropic action and increased heart rate).'),
   ('Isoproterenol', W, 'Isoproterenol is a β1 and β2 agonist.'),
   ('Albuterol', W, 'Albuterol is a β2 agonist.'),
   ('Metoprolol', W, 'Metoprolol is a selective β1 antagonist.')],
- 'Dobutamine activates β1 in the heart (increased heart rate and contractility). At low dose it is β1 selective; at high dose it acts at β1 > β2 > α1. The list notes tachycardia, arrhythmias, increased renin–angiotensin–aldosterone system (RAAS) activity and central nervous system stimulation as effects.',
+ 'Dobutamine activates β1 in the heart: stronger contraction and higher heart rate. It is given intravenously for short-term cardiac decompensation; tolerance (receptor down-regulation) limits long-term use, and its major adverse reactions are tachycardia and arrhythmias. The list adds that at high dose it acts at β1 > β2 > α1, and increased renin–angiotensin–aldosterone system (RAAS) activity and central nervous system stimulation.',
  'Dobutamine: β1 agonist; LOW dose: β1 selective; HIGH dose: β1 > β2 > α1',
  cite(6))
 
@@ -1018,19 +1035,21 @@ add('adr', 'adr-beta1-block',
  'Decreased heart rate and contractility; Fatigue / dizziness; Bradycardia; Decreased RAAS; CNS depression',
  cite('6–7'))
 
-add('adr', 'saba-laba',
- 'Which drugs are long-acting β2 agonists (LABA)?',
- [('Salmeterol', R, 'Listed under LABA.'),
-  ('Formoterol', R, 'Listed under LABA.'),
-  ('Albuterol', W, 'Listed under SABA (short-acting β2 agonist).'),
-  ('Levalbuterol', W, 'Listed under SABA (short-acting β2 agonist).'),
-  ('Tiotropium', W, 'Tiotropium is a long-acting muscarinic antagonist, not a β2 agonist.')],
- 'The list’s β2 agonists are short-acting (SABA: albuterol, levalbuterol) and long-acting (LABA: salmeterol, formoterol). Sites: lungs, vasculature and the central nervous system; effects: bronchial dilation, vasodilation and excitation.',
+add('adr', 'terol-beta2',
+ 'Which drugs are β2 agonists?',
+ [('Salmeterol', R, 'A -terol: long-acting β2 agonist (LABA).'),
+  ('Formoterol', R, 'A -terol: long-acting β2 agonist (LABA).'),
+  ('Albuterol', R, 'A -terol: short-acting β2 agonist (SABA), the prototype.'),
+  ('Levalbuterol', R, 'A -terol: short-acting β2 agonist (SABA), an isomer of albuterol.'),
+  ('Tiotropium', W, 'Tiotropium is a long-acting muscarinic antagonist, not a β2 agonist.'),
+  ('Mirabegron', W, 'Mirabegron is the β3 agonist.'),
+  ('Dobutamine', W, 'Dobutamine is the β1 agonist.')],
+ 'Every -terol is a β2 agonist: albuterol and levalbuterol are short acting (SABA), salmeterol and formoterol long acting (LABA). For this exam he needs only the class, not short versus long acting. Sites: lungs, vasculature and the central nervous system; effects: bronchial dilation, vasodilation and excitation.',
  'SABA: Albuterol (Ventolin), Levalbuterol (Xopenex). LABA: Salmeterol, Formoterol. β2 agonist',
  cite(7), multi=True, tags=['tell'])
 
 add('adr', 'soa-beta2',
- 'Albuterol is a β2 agonist. Which effects are listed for the β2 agonists?',
+ 'Albuterol is a β2 agonist. Which effects do the β2 agonists produce?',
  [('Bronchial dilation', R, 'Listed (lungs).'),
   ('Vasodilation', R, 'Listed (vasculature).'),
   ('Excitation', R, 'Listed (central nervous system).'),
@@ -1051,8 +1070,8 @@ add('adr', 'moa-propranolol',
  cite(7))
 
 add('adr', 'pindolol',
- 'Which drug in the non-selective β-blocker group is marked as a partial agonist?',
- [('Pindolol', R, 'Listed as “Pindolol (PARTIAL AGONIST)” in the non-selective β1 and β2 group.'),
+ 'Which β blocker is a partial agonist?',
+ [('Pindolol', R, 'Listed as “Pindolol (PARTIAL AGONIST)” in the non-selective β1 and β2 group; slide 54: “Pindolol (PA)”.'),
   ('Propranolol', W, 'Propranolol is listed as a non-selective β antagonist without partial agonism.'),
   ('Timolol', W, 'Timolol is listed as a non-selective β antagonist without partial agonism.'),
   ('Metoprolol', W, 'Metoprolol is a selective β1 antagonist.')],
@@ -1061,15 +1080,15 @@ add('adr', 'pindolol',
  cite(7))
 
 add('adr', 'group-asthma',
- 'Which drugs are listed as contraindicated in asthma patients and as masking symptoms of hypoglycemia?',
+ 'Which β blockers need the most care in a patient with asthma?',
  [('Propranolol', R, 'Non-selective β blocker: blocks β2 in the lungs.'),
-  ('Timolol', R, 'Non-selective β blocker.'),
+  ('Timolol', R, 'Non-selective β blocker (β1 and β2).'),
   ('Carvedilol', R, 'β1, β2 and α1 antagonist.'),
   ('Labetalol', R, 'β1, β2 and α1 antagonist.'),
-  ('Albuterol', W, 'A β2 agonist; it dilates the bronchi.'),
-  ('Dobutamine', W, 'A β1 agonist.'),
-  ('Clonidine', W, 'A central α2 agonist.')],
- 'The drugs that block β2 as well as β1 — propranolol, pindolol, timolol, carvedilol and labetalol — are listed as contraindicated for asthma patients and as masking symptoms of hypoglycemia (no nervousness or tremors).',
+  ('Metoprolol', W, 'β1 selective: it leaves the lung β2 receptors alone, so it is the choice in asthma.'),
+  ('Atenolol', W, 'β1 selective (“MAN”).'),
+  ('Albuterol', W, 'A β2 agonist; it dilates the bronchi.')],
+ 'The drugs that block β2 as well as β1 — propranolol, pindolol, timolol, carvedilol and labetalol — are listed as contraindicated for asthma patients (slide 59: reactive airway disease, non-selective). Blocking lung β2 means more puffs of the β2 agonist are needed to outcompete the blocker. The same non-selective drugs mask more of the warning signs of hypoglycemia (nervousness and tremor).',
  'Mask symptoms of hypoglycemia → no nervousness / tremors … Contraindicated for asthma pts',
  cite(7), multi=True)
 
@@ -1105,33 +1124,33 @@ add('adr', 'oab-tell',
 
 add('adr', 'epinephrine',
  'Which statement about epinephrine’s receptor actions is CORRECT?',
- [('β1, β2 at low dose; all at high dose', R, 'Listed: low dose β1 & β2; high dose: everything.'),
+ [('β1, β2 at low dose; all at high dose', R, 'Listed: low dose β1 & β2; high dose: everything. Slide 47: β1 and β2 at low doses, α1 and α2 at high doses.'),
   ('α1 only at every dose', W, 'α1 alone is phenylephrine.'),
-  ('β1 only at low dose; β1 > β2 > α1 at high dose', W, 'That is dobutamine.'),
+  ('α1 and α2 at low dose; β at high dose', W, 'Reversed: the β receptors have the highest affinity and are reached first.'),
   ('α2 only, acting in the brain', W, 'α2 agonism in the brain is clonidine and the related drugs.')],
- 'Epinephrine is released from the adrenal medulla and acts at β2 on smooth muscle (bronchial dilation, vasodilation). The drug list gives β1 and β2 at low dose and all adrenergic receptors at high dose, used for shock and anaphylaxis; patients must be weaned off because the receptors down-regulate.',
+ 'Epinephrine has different affinities for the adrenergic receptors: β1 and β2 at low doses, then α1 and finally α2 as the dose rises. In blood vessels a low dose dilates (β2) and a high dose constricts (α1 overrides β2) — epinephrine reversal. It is used for anaphylaxis and shock; patients must be weaned off because the receptors down-regulate.',
  'Epinephrine: β1, β2 agonist (blood vessels); Low dose: β1 & β2; High dose: everything. β2 Agonists - Epinephrine',
  cite(8, (ANS, '35, 42')),
- note='The Exam 1 drug list called epinephrine an α1, α2, β1 and β2 agonist; this list gives β1 and β2 at low dose and all receptors at high dose. The autonomic slides show epinephrine at β2 only. Re-check against the adrenergic deck when it is available.')
+ note='The Exam 1 drug list called epinephrine an α1, α2, β1 and β2 agonist; this list gives β1 and β2 at low dose and all receptors at high dose. Slide 47 of the adrenergic deck and the 10/7 lecture agree with the dose wording (rank: β1, β2, α1, then α2).')
 
 add('adr', 'norepinephrine',
- 'Norepinephrine released from sympathetic nerves acts as an agonist at which receptors?',
- [('α1, α2 and β1', R, 'Norepinephrine is the neurotransmitter at α1, α2 and β1; β2 is “typically not innervated”. In the gut, norepinephrine acts at α2 to inhibit acetylcholine release.'),
-  ('α1 and β1 only', W, 'Leaves out α2 (presynaptic sympathetic neurons, brain, gut).'),
-  ('β1 and β2 only', W, 'That is isoproterenol.'),
+ 'Norepinephrine has its highest affinity for which receptors?',
+ [('α1 and β1', R, 'Listed: α1, β1 agonist; slide 53: binds α1 (vasoconstriction, more total peripheral resistance) and β1 (more heart rate and contractility).'),
+  ('β1 and β2', W, 'That is isoproterenol, and epinephrine at low doses.'),
+  ('α2 and β2', W, 'Norepinephrine can bind these, but with lower affinity.'),
   ('α1 only', W, 'That is phenylephrine.')],
- 'Norepinephrine is the adrenergic neurotransmitter at α1 (blood vessels), α2 (presynaptic sympathetic neurons, brain, gut) and β1 (heart, kidney). β2 receptors are typically not innervated. The drug list adds increased total peripheral resistance, heart rate and contractility, used for shock.',
- 'Adrenergic — Norepinephrine — α1, α2, β1; β2 Typically Not innervated. SNS — NE — α2 = Inhibition of Ach Release',
+ 'Norepinephrine binds α1 (vasoconstriction, increased total peripheral resistance) and β1 (increased heart rate and myocardial contractility) with the highest affinity; it can also bind α2 and β2. As the sympathetic neurotransmitter it also acts at presynaptic α2. Kept on long term it increases the heart’s oxygen demand and is toxic to the heart, so it is a short-term drug for shock.',
+ 'Norepinephrine (Levophed): α1, β1 agonist; Heart & vasculature; Increase TPR, heart rate, contractility',
  cite(8, (ANS, '13, 45')),
- note='The drug list gives norepinephrine as an α1, β1 agonist. The autonomic slides show it acting at α1, α2 and β1 (and at α2 in the gut). Keyed to the slides. The Exam 1 drug list called it an α1, α2, β1 and β2 agonist.')
+ note='The drug list gives norepinephrine as an α1, β1 agonist, as does slide 53 of the adrenergic deck. Slide 84 of that deck and the autonomic slides add α2 (as the neurotransmitter); on 10/7 he said it has a higher affinity for α1 and β1 than for α2 or β2 “although it can bind and activate those receptors”. Keyed to the highest affinity, so all three sources agree. The Exam 1 drug list called it an α1, α2, β1 and β2 agonist.')
 
 add('adr', 'isoproterenol',
- 'Which drug is listed as a β1 and β2 agonist that can cause hyperglycemia, palpitations and tachycardia?',
- [('Isoproterenol', R, 'Listed: β1, β2 agonist (lungs); heart and lungs; hyperglycemia, palpitations, tachycardia, arrhythmias.'),
-  ('Dobutamine', W, 'Dobutamine is β1 selective at low dose.'),
+ 'Which drug is a non-selective β1 and β2 agonist whose adverse reactions include palpitations and tachycardia?',
+ [('Isoproterenol', R, 'Listed: β1, β2 agonist (lungs); heart and lungs; hyperglycemia, palpitations, tachycardia, arrhythmias. Slide 45: equal affinity for β1 and β2.'),
+  ('Dobutamine', W, 'Dobutamine is the selective β1 agonist.'),
   ('Phenylephrine', W, 'Phenylephrine is an α1 agonist.'),
   ('Propranolol', W, 'Propranolol blocks β1 and β2.')],
- 'Isoproterenol activates β1 and β2; its listed sites are the heart and lungs. Its listed adverse reactions are hyperglycemia, palpitations, tachycardia and arrhythmias.',
+ 'Isoproterenol activates β1 and β2 with equal affinity (“iso” = equal); its sites are the heart and lungs. β2 gives bronchodilation, but β1 gives palpitations, tachycardia and arrhythmias, which is why albuterol replaced it for asthma. The list adds hyperglycemia.',
  'Isoproterenol: β1, β2 agonist (lungs); Heart & lungs; Hyperglycemia, Palpitations, Tachycardia, Arrythmias',
  cite(8))
 
@@ -1154,7 +1173,7 @@ add('adr', 'group-beta-agonists',
   ('Levalbuterol', R, 'β2 agonist (SABA).'),
   ('Mirabegron', R, 'β3 agonist.'),
   ('Isoproterenol', R, 'β1 and β2 agonist.'),
-  ('Pindolol', W, 'Listed in the β-blocker row (marked partial agonist), coloured as an antagonist.'),
+  ('Metoprolol', W, 'Selective β1 antagonist.'),
   ('Nebivolol', W, 'Selective β1 antagonist.'),
   ('Labetalol', W, 'β1, β2 and α1 antagonist.')],
  'The β agonists on the list are dobutamine (β1), albuterol, levalbuterol, salmeterol and formoterol (β2), mirabegron (β3), isoproterenol (β1, β2) and epinephrine (β1, β2 at low dose). Pindolol is listed with the β blockers although marked as a partial agonist.',
@@ -1162,86 +1181,101 @@ add('adr', 'group-beta-agonists',
  cite('6–8'), multi=True)
 
 # ======================= RAAS (raas) =======================
-add('raas', 'aliskiren',
+# Verified 10/8 against PCOL-RAAS_26s.pdf and the 10/8 transcript: every item
+# quotes him, cites list page + deck slides + transcript 10/8, source 'both'.
+# Where the list disagrees, the slide/lecture is keyed and the item has a note
+# (see CONFLICTS).  No RAAS item is removed: every drug in the section was taught.
+def raas(*a, **k):
+    qid = add(*a, **k)
+    qs[-1]['source'] = 'both'
+    return qid
+
+raas('raas', 'aliskiren',
  'Which of the following describes the mechanism of action of aliskiren?',
- [('Selective, reversible renin inhibitor', R, 'Listed: selective renin inhibitor, reversible; renin is the first and rate-limiting step of the RAAS pathway.'),
+ [('Selective, reversible renin inhibitor', R, 'Aliskiren binds plasma renin with high affinity and blocks it reversibly; renin is the first, rate-limiting step of the pathway.'),
   ('Angiotensin-converting enzyme inhibitor', W, 'That is captopril, enalapril, lisinopril and the other “-prils”.'),
   ('Angiotensin II (AT1) receptor blocker', W, 'That is losartan, valsartan and the other “-sartans”.'),
   ('Mineralocorticoid receptor antagonist', W, 'That is spironolactone and eplerenone.')],
- 'Aliskiren inhibits renin in the blood stream; renin is the first and rate-limiting enzyme of the renin–angiotensin–aldosterone system (RAAS). It has low bioavailability but high affinity for renin, and it lowers total peripheral resistance and aldosterone.',
- 'Aliskiren: Selective Renin inhibitor; REVERSIBLE antagonist; Blood stream (Renin - 1st step in RAAS pathway); Renin is the rate limiting enzyme for the RAAS pathway',
- cite(8))
+ 'Aliskiren is the renin inhibitor: it binds plasma renin with high affinity (enough to work despite a bioavailability of about 2 to 3%) and blocks it reversibly. Renin is the rate-limiting enzyme of the renin–angiotensin–aldosterone system, so everything downstream falls: angiotensin I, angiotensin II, AT1 and AT2 activation, total peripheral resistance and aldosterone.',
+ "The first one over here is gonna be alicain, and this is gonna be easier for you to remember because you tell it's an antagonist to the renin enzyme, right? … So we can predict that this drug can reversibly inhibit that rest system.",
+ f'{LIST} page 8; {RAAS} slides 4, 8; transcript 10/8')
 
-add('raas', 'acei',
+raas('raas', 'acei',
  'Which of the following describes the mechanism of action of lisinopril?',
- [('Reversible angiotensin-converting enzyme inhibitor', R, 'Listed: ACE inhibitor, reversible; ACE converts angiotensin I to angiotensin II and breaks down bradykinin.'),
-  ('Reversible angiotensin II type 1 (AT1) receptor blocker', W, 'That is losartan and the other angiotensin receptor blockers.'),
+ [('Reversible angiotensin-converting enzyme inhibitor', R, 'Every “-pril” selectively and reversibly inhibits ACE, which converts angiotensin I to angiotensin II and breaks down bradykinin.'),
+  ('Reversible angiotensin II type 1 (AT1) receptor blocker', W, 'That is losartan and the other “-sartans”.'),
   ('Selective renin inhibitor', W, 'That is aliskiren.'),
   ('Selective β1 blocker in the kidney', W, 'That is metoprolol, which lowers renin production.')],
- 'Captopril, enalapril, lisinopril, benazepril, quinapril and ramipril inhibit angiotensin-converting enzyme (ACE), which converts angiotensin I to angiotensin II and breaks down bradykinin. Less angiotensin II lowers total peripheral resistance and aldosterone; most are pro-drugs.',
- 'ACE inhibitor (Angiotensin converting enzyme inhibitor); REVERSIBLE antagonists. Primary effect: inhibit ACE (ACE converts Ang I to Ang II & breaks down bradykinin)',
- cite(9))
+ 'Lisinopril, like every “-pril” (captopril, enalapril, benazepril, quinapril, ramipril), inhibits angiotensin-converting enzyme (ACE) selectively and reversibly. Primary effect: angiotensin I is not converted to angiotensin II, so total peripheral resistance, Na+ and water retention and aldosterone fall. Secondary effect: ACE no longer breaks down bradykinin, a potent vasodilator.',
+ "So the mechanism of action of all the ACE inhibitors, so you just need to know one is gonna be to inhibit the conversion of N1 into H2, OK, so that's gonna be the primary. … so it doesn't matter what pril you have, that's gonna be an ACE inhibitor.",
+ f'{LIST} page 9; {RAAS} slides 9–12; transcript 10/8',
+ note='The drug list adds a “bonus 1” (angiotensin I → angiotensin 1-7 → AT2) and says most ACE inhibitors are prodrugs. Angiotensin 1-7 was not taught on 10/8; he named captopril and lisinopril as the active ones and said only the mechanism of action is needed. Neither is asked.')
 
-add('raas', 'acei-cough',
+raas('raas', 'acei-cough',
  'Why do angiotensin-converting enzyme (ACE) inhibitors such as enalapril cause a dry cough?',
- [('ACE no longer breaks down bradykinin', R, 'Listed: increased levels of bradykinin (a dilator) → dry cough.'),
+ [('ACE no longer breaks down bradykinin', R, 'Bradykinin accumulates when ACE is blocked; the dry cough is its most common adverse effect.'),
   ('Angiotensin II activates AT1 in the airway', W, 'ACE inhibitors lower angiotensin II.'),
   ('Aldosterone rises and retains sodium', W, 'ACE inhibitors lower aldosterone.'),
-  ('β2 receptors in the lungs are blocked', W, 'β2 block in the lungs is the non-selective β blockers.')],
- 'Angiotensin-converting enzyme (ACE) also breaks down bradykinin. Inhibiting ACE raises bradykinin, a dilator, which is the list’s explanation for the dry cough. The other listed reactions are hyperkalemia, angioedema, first-dose hypotension and fetopathic potential.',
- 'Bonus effect 2: Increase levels of bradkykinin (dilator) → dry cough',
- cite(9), tags=['apply'])
+  ('β2 receptors in the lungs are blocked', W, 'ACE inhibitors act on an enzyme, not on β2 receptors; the cough comes from bradykinin.')],
+ 'Dry cough is the most common adverse effect of angiotensin-converting enzyme (ACE) inhibitors: 5 to 20% of patients, usually between 1 week and 6 months, from accumulation of bradykinin, which ACE normally breaks down. Most patients get past it; those who cannot tolerate it can switch to another class, such as an angiotensin II receptor blocker.',
+ "Do you know what is the most common side effect associated with ACE inhibitors? That dry cough. … And then if you can't tolerate that, then you can go to a different class, right?",
+ f'{LIST} page 9; {RAAS} slides 12, 19; transcript 10/8', tags=['apply'])
 
-add('raas', 'arb',
+raas('raas', 'arb',
  'Which of the following describes the mechanism of action of losartan?',
- [('Reversible angiotensin II (AT1) receptor blocker', R, 'Listed: ARB (angiotensin II receptor blocker), reversible; primary effect: block AT1.'),
+ [('Reversible angiotensin II (AT1) receptor blocker', R, 'Any “-sartan” is an ARB (angiotensin II receptor blocker): a reversible, selective AT1 antagonist.'),
   ('Reversible angiotensin-converting enzyme inhibitor', W, 'That is the “-prils” (captopril, lisinopril and others).'),
   ('Selective renin inhibitor', W, 'That is aliskiren.'),
   ('Mineralocorticoid receptor antagonist', W, 'That is spironolactone and eplerenone.')],
- 'Losartan, valsartan, olmesartan, telmisartan and irbesartan are angiotensin II receptor blockers (ARBs) with high affinity for AT1. Blocking AT1 lowers total peripheral resistance and aldosterone, and more AT2 activation opposes AT1. Losartan is active and turns into an even more active metabolite.',
- 'ARB (Angiotensin II receptor blocker); REVERSIBLE antagonists. Primary effect: Block AT1. Bonus effect 1: increase AT2 activation (oppose AT1). High affinity for AT1',
- cite(9))
+ 'Losartan, valsartan, olmesartan, telmisartan and irbesartan are angiotensin II receptor blockers (ARBs): reversible, selective AT1 antagonists with about 10,000-fold higher affinity for AT1 than for AT2. Blocking AT1 lowers total peripheral resistance, Na+ and water retention and aldosterone; angiotensin II, which rises, then activates AT2, which opposes AT1. Losartan is active, and its metabolite EXP 3174 is active too.',
+ "So as long as you know one, you know them all, and those drugs are directly binding and inhibiting the AT1 receptor and thus preventing the binding of angiotensin 2.",
+ f'{LIST} page 9; {RAAS} slides 4, 13–14; transcript 10/8')
 
-add('raas', 'acei-vs-arb',
- 'Which adverse reaction is listed for ACE inhibitors but not for angiotensin II receptor blockers (ARBs)?',
- [('Dry cough', R, 'Listed for ACE (angiotensin-converting enzyme) inhibitors, from increased bradykinin; not listed for ARBs.'),
-  ('Hyperkalemia', W, 'Listed for both groups.'),
-  ('Angioedema', W, 'Listed for both groups.'),
-  ('Lower aldosterone', W, 'Listed as an effect of both groups.')],
- 'Both groups lower total peripheral resistance and aldosterone and are listed with hyperkalemia and angioedema. Only the ACE (angiotensin-converting enzyme) inhibitors raise bradykinin, which the list ties to dry cough; for ARBs it lists only hyperkalemia and angioedema.',
- 'ACE inhibitor: Dry cough, hyperkalemia, angioedema, first dose hypotension, fetopathic potential. ARB: Hyperkalemia, angioedema',
- cite(9), tags=['tell'])
+raas('raas', 'acei-vs-arb',
+ 'Which adverse reactions are more common with ACE (angiotensin-converting enzyme) inhibitors than with angiotensin II receptor blockers (ARBs)?',
+ [('Dry cough', R, 'From accumulation of bradykinin; more with ACE inhibitors than with ARBs or renin inhibitors.'),
+  ('Angioedema', R, 'Also a bradykinin effect of ACE inhibitors; a patient with angioedema on an ACE inhibitor can try an ARB.'),
+  ('Hyperkalemia', W, 'Shared by the renin inhibitor, the ACE inhibitors and the ARBs.'),
+  ('First-dose hypotension', W, 'Shared by all three classes.'),
+  ('Fetopathic potential', W, 'Shared by all three classes.')],
+ 'Only ACE inhibitors raise bradykinin, and two adverse reactions follow from it: dry cough and angioedema (swelling of the lips, face and airway). Hyperkalemia, first-dose hypotension and fetopathic potential are shared by the renin inhibitor, the ACE inhibitors and the ARBs.',
+ "Now with the ACE inhibitors we have two side effects that seem to be more common associated with it because of the bradykinin. One is the dry cough that is more with the ACEs than you would get with the ARBs or the RAI inhibitors, and the other one is angioedema.",
+ f'{LIST} page 9; {RAAS} slide 19; transcript 10/8', multi=True, tags=['tell'], dupOf='L12-049',
+ note='The drug list gives angioedema for the ARBs (and aliskiren) and only dry cough as ACE-specific. Slide 19 puts both dry cough and angioedema under ACE inhibitors, and on 10/8 he called both more common with ACE inhibitors because of bradykinin. Keyed to the slide and lecture.')
 
-add('raas', 'spironolactone',
+raas('raas', 'spironolactone',
  'Which statement about spironolactone and eplerenone is CORRECT?',
- [('They block the mineralocorticoid receptor', R, 'Listed: mineralocorticoid (MR) receptor antagonists, potassium-sparing diuretics; site: collecting duct of the nephron.'),
+ [('They block the mineralocorticoid receptor', R, 'They are mineralocorticoid receptor (aldosterone) antagonists and potassium-sparing diuretics, acting at the late distal tubule and collecting duct.'),
   ('They inhibit renin in the blood stream', W, 'That is aliskiren.'),
   ('They block AT1 receptors in the blood stream', W, 'That is the angiotensin II receptor blockers.'),
-  ('They cause hypokalemia', W, 'They are potassium-sparing; hyperkalemia is listed.')],
- 'Spironolactone and eplerenone are aldosterone antagonists at the mineralocorticoid receptor (MR) in the collecting duct. Aldosterone normally increases production of Na+/K+ channels and pumps; blocking it gives less Na+ reabsorption. Listed reactions: hyperkalemia, diarrhea, drowsiness, and in males gynecomastia and impotence.',
- 'Spironolactone, Eplerenone: Potassium-sparing diuretic; Mineralocorticoid (MR) receptor antagonist; Kidney → Collecting duct of nephron; Hyperkalemia, diarrhea, drowsiness; Males: gynecomastia & impotence',
- cite('9–10'))
+  ('They cause hypokalemia', W, 'They spare potassium; hyperkalemia is the expected reaction.')],
+ 'Spironolactone and eplerenone are mineralocorticoid receptor (MR) antagonists, also called aldosterone antagonists or potassium-sparing diuretics. Aldosterone acts on this nuclear receptor to make more Na+ channels, K+ channels and Na+/K+-ATPase pumps; blocking it means Na+ is lost and K+ is kept. Reactions: hyperkalemia, gastrointestinal effects (diarrhea), drowsiness, and with spironolactone (not eplerenone, the more kidney-selective MR blocker) gynecomastia and impotence in men.',
+ "And then we have over here spironolactone, which is our aldosterone antagonist, also known as MR antagonist or potassium sparing diuretics.",
+ f'{LIST} page 9–10; {RAAS} slides 20–22; transcript 10/8')
 
-add('raas', 'group-hyperkalemia',
- 'Which renin–angiotensin–aldosterone system (RAAS) drugs are listed with hyperkalemia as an adverse reaction?',
- [('Ramipril', R, 'Angiotensin-converting enzyme (ACE) inhibitor: hyperkalemia listed.'),
-  ('Valsartan', R, 'Angiotensin II receptor blocker (ARB): hyperkalemia listed.'),
-  ('Eplerenone', R, 'Mineralocorticoid receptor antagonist: hyperkalemia listed.'),
-  ('Aliskiren', W, 'Aliskiren’s listed reactions are angioedema, hypotension, cough, headache, diarrhea and skin rash.'),
-  ('Metoprolol', W, 'In the RAAS section metoprolol is listed for less renin production; no hyperkalemia is listed.')],
- 'Hyperkalemia is listed for the ACE inhibitors, the angiotensin II receptor blockers and the mineralocorticoid receptor antagonists (potassium-sparing diuretics). It is not listed for aliskiren.',
- 'ACE inhibitor: … hyperkalemia … ARB: Hyperkalemia, angioedema. Spironolactone/Eplerenone: Hyperkalemia, diarrhea, drowsiness',
- cite('8–10'), multi=True)
+raas('raas', 'group-hyperkalemia',
+ 'Which of the following may cause hyperkalemia?',
+ [('Ramipril', R, 'An angiotensin-converting enzyme (ACE) inhibitor: hyperkalemia, more so with renal dysfunction.'),
+  ('Valsartan', R, 'An angiotensin II receptor blocker (ARB): hyperkalemia.'),
+  ('Eplerenone', R, 'A mineralocorticoid receptor antagonist (potassium-sparing diuretic): hyperkalemia.'),
+  ('Aliskiren', R, 'The renin inhibitor can also cause hyperkalemia, like the ACE inhibitors and ARBs.'),
+  ('Excess aldosterone', W, 'Aldosterone is the potassium-wasting hormone: more aldosterone means more K+ loss.')],
+ 'The potassium-sparing diuretics (spironolactone, eplerenone) cause hyperkalemia, and so can the angiotensin-converting enzyme (ACE) inhibitors, the angiotensin II receptor blockers (ARBs) and the renin inhibitor aliskiren, more so with renal dysfunction. Aldosterone does the opposite: it retains Na+ at the cost of K+.',
+ "But remember that both the ACEs, the ARBs, and the RAIN inhibitors can also cause hyperkalemia. That can be even more predominant if you have renal dysfunction.",
+ f'{LIST} page 8–10; {RAAS} slides 19–22; transcript 10/8', multi=True, dupOf='L12-051',
+ note='The drug list does not give hyperkalemia for aliskiren; slide 19 (“Adverse Effects (Ri, ACEi & ARBs)”) and his 10/8 hyperkalemia poll (key: all of the above) include it. Keyed to the slide and lecture. Metoprolol, the distractor in the list-only version, was replaced: hyperkalemia was not discussed for it.')
 
-add('raas', 'metoprolol-renin',
+raas('raas', 'metoprolol-renin',
  'How does metoprolol lower renin–angiotensin–aldosterone system (RAAS) activity?',
- [('It blocks renal β1, so less renin is made', R, 'Listed: selective β1 blocker; site kidney; less renin production.'),
-  ('It inhibits angiotensin-converting enzyme', W, 'That is the ACE inhibitors.'),
+ [('It blocks renal β1, so less renin is made', R, 'A selective β1 blocker: on the juxtaglomerular cells this suppresses renin production.'),
+  ('It inhibits angiotensin-converting enzyme', W, 'That is the “-prils”.'),
   ('It blocks the mineralocorticoid receptor', W, 'That is spironolactone and eplerenone.'),
-  ('It inhibits renin directly in the blood stream', W, 'Direct renin inhibition is aliskiren.')],
- 'The RAAS section lists metoprolol, a selective β1 blocker, with the kidney as its site: blocking β1 there means less renin production, so the renin–angiotensin–aldosterone pathway is not started. The adrenergic section lists decreased RAAS among the effects of the β1 blockers.',
- 'Metoprolol: Selective β1 blocker; Kidney; Less renin production → no RAAS pathway',
- cite(10), tags=['apply'])
+  ('It inhibits renin directly in the blood stream', W, 'Direct renin inhibition is aliskiren.'),
+  ('It abolishes renin release', W, 'The macula densa (sodium) and baroreceptor controls remain, so renin is suppressed, not abolished.')],
+ 'Metoprolol is a selective β1 antagonist; all β blockers block β1 and so can lower renin production. Blocking β1 on the juxtaglomerular cells suppresses renin, but the macula densa and intrarenal baroreceptor controls remain, so renin is not abolished. Less renin means less angiotensin I, angiotensin II and aldosterone.',
+ "And by blocking the beta ones in the kidney, you're also gonna decrease renin production, right? You're not gonna abolish because you you have the sodium component and the, the barrel receptor component, but you can suppress it.",
+ f'{LIST} page 10; {RAAS} slides 7, 24–25; transcript 10/8', tags=['apply'],
+ note='The drug list says “Less renin production → no RAAS pathway”; on 10/8 he said renin is suppressed, not abolished. Keyed to the lecture.')
 
 # --------------------------------------------------------------------------
 # Transcript 10/5 (NMJ deck end + whole cholinergic deck, drug by drug).
@@ -1328,8 +1362,54 @@ NOTE6 = {
  'group-indirect-adr': 'Rasagiline (drug list only) was replaced by selegiline, the MAO-B inhibitor he taught on 10/6.',
  'mirtazapine': 'The drug list ties drowsiness to H1 block; on 10/6 he named histamine and muscarinic block for the sedation (slide 33 also lists “Blockade of Muscarinic & Histamine (H1)”). H1 is keyed; muscarinic is not among the options.',
  'moa-clonidine': 'Guanfacine does not end in -idine; on 10/6 he named it (as Intuniv) “a similar drug to it” (clonidine). For the exam he focuses on clonidine as the prototype.',
- 'group-alpha-block': 'Carvedilol was named on 10/6 only as an example on the MAP-equation slide; the β-blocker slides are not yet taught. Phenoxybenzamine (slide 27, irreversible) is left out of the options until its slides are taught.',
+ 'group-alpha-block': 'Carvedilol was named on 10/6 as an example on the MAP-equation slide and taught on 10/7 with labetalol as a β1, β2 and α1 blocker (slide 54). Phenoxybenzamine (irreversible α1 and α2, taught 10/7) is not among the options.',
 }
+
+# --------------------------------------------------------------------------
+# Transcript 10/7 (adrenergic deck slides 33–85: mirtazapine's adverse reactions,
+# phenoxybenzamine, β receptors, epinephrine, norepinephrine, β blockers, nitric
+# oxide).  Same treatment as TQ6, cite '; transcript 10/7'.  Quotes verbatim.
+# --------------------------------------------------------------------------
+TQ7 = {  # concept: (deck slides, quote)
+ 'phenoxybenzamine': ('34–35', "This is an irreversible non-selective alpha 1, alpha 2 adrenergic receptor antagonist, which means it's going to form covalent bonds. … So by permanently blocking with covalent bonds, that means that I can produce all the epi and norepinephrine that I want, I can't outcompete those because I'm covalently bound to it."),
+ 'phenoxybenzamine-gi': ('36–38', "Typically, the sympathetic inhibits the parasympathetic by releasing norepinephrine, which would bind to the alpha-2 receptor on the parasympathetic nerve. Alpha 2s are G alphai, which means they're gonna be inhibitory. … However, phenoxybenzamine is an irreversible alpha 2 antagonist. So if I block that, I take away the inhibition. Now too much parasympathetic tone, cramping, diarrhea, and so on."),
+ 'mirtazapine-edema': ('33', "and uh you can get peripheral edema by blocking the alpha-1s, but that can be overcome by increase of the sympathetic and norepinephrine which causes increase in blood pressure. So it varies from patient to patient."),
+ 'moa-dobutamine': ('40–41', "We can activate the system through a selective beta1 ago agonist, such as dobutamine. This is an IV drug. We're really going to use this drug in a very, uh, you know, ICU ER situation."),
+ 'moa-metoprolol': ('54', "How about if we spell man. Man, right? So, we have metoprolol, atenolol, and nabivolol. Those are gonna be your beta one selectives, right?"),
+ 'adr-beta1-block': ('56–59', "So if I block the ability of my norepinephrine to bind and activate the beta ones, because all beta blockers blocks beta ones, who's gonna take over? Parasympathetic. So you're gonna get what? Bradycardia, right?"),
+ 'terol-beta2': ('43', "If you know that a terol is a beta2 agonist, that's good for me. It doesn't matter if it's short acting or long acting. That's not the point over here. The point over here is for you to identify. Which of these is a beta2 agonist? OK."),
+ 'soa-beta2': ('42', "All right, so in the vascular and bronchius moo muscle, beta 2s are gonna cause dilation. In the CNS it's gonna stimulate."),
+ 'moa-propranolol': ('54', "And then you know that your propranolol, pinolol is your beta 1, beta 2, and then your carvedilol, labetalol is your beta 1, beta 2, and alpha 1, right?"),
+ 'pindolol': ('54, 59', "I also include Pinool because you already kind of learned about that, right? That's the partial agonist that we talked about back in for exam one."),
+ 'group-asthma': ('54, 59', "If you have a beta blocker that is non-selective and we're blocking the beta 2, it's going to require more puffs of your saba or your laba to outcompete the beta blocker"),
+ 'moa-carvedilol': ('54', "I would like for you to know about labetalol and carvedilol. Those are mixed beta blockers. They're gonna block beta ones, beta2s, and alpha ones."),
+ 'mirabegron': ('44', "The beta 3s, there's only one drug over here, uh, mitaegron, and this is a beta 3 selective agonist."),
+ 'oab-tell': ('44', "This drug is more selective to the beta 3s in the bladder and thus doesn't have the side effects of the antimuscarinics, right, like atropine or trospium or VESIcare and all those drugs"),
+ 'epinephrine': ('47', "At low doses, uh, epinephrine has the highest affinity for the beta 1 and the beta 2 receptor. … So, the, the, the rank of affinity is gonna be beta one beta choose, alpha one, and then alpha 2."),
+ 'norepinephrine': ('53', "All right, so norepinephrine is different than Api because norepinephrine appears to have a higher affinity for the beta ones and the alpha ones, OK, than it does for the beta 2s or the alpha 2s. Although it can bind and activate those receptors."),
+ 'isoproterenol': ('45', "So this is a non-selective beta 1, beta2 agonist. So iso equal, right, equal affinity and efficacy for the beta 1s and the beta 2s. … Yeah, it produced a beautiful bronchodilation, but also the palpitation and tachycardia and arrhythmias"),
+ 'group-beta-agonists': ('40–45', "So the easiest part for you is that it doesn't matter if it's a beta 1, a beta 2, or beta 3, they are all linked to GS, which means they're going to stimulate."),
+ 'moa-nitrates': ('62, 67', "It's either nitroglycerin or nitro pruide, so they are what we call nitric oxide donors. As these drugs get metabolized, they give away nitric oxide, and nitric oxide can then go and do its business, OK."),
+ 'moa-pde': ('68–74', "So what do you think is going to happen if I give a drug that blocks the PDE? What is going to happen to the potency of nitric oxide? It's gonna increase."),
+ 'group-cgmp': ('67–74', "I need you to know that if you either activate the M3s on the endothelium or if you take nitroglycerin, you're going to be either producing nitric oxide, and nitric oxide is a powerful vasodilator because it activates the solublegla cyclase and produces cyclic GMP."),
+}
+NOTE7 = {
+ 'phenoxybenzamine': 'The drug list adds “longer duration of action (irreversible → highest affinity for α1)”; slides 34–38 do not say it, and on 10/7, when a student said he had stated that phenoxybenzamine works on α1 better than α2, he answered “I don’t recall saying that.” Not keyed.',
+ 'moa-dobutamine': 'The drug list’s dose wording (low dose β1 selective; high dose β1 > β2 > α1) is not on slides 40–41 and he did not say it; the stem asks only for the selective β1 agonist (slide 40).',
+ 'terol-beta2': 'Rewritten from “Which drugs are long-acting β2 agonists (LABA)?”: on 10/7 he said short versus long acting is not the point for this exam. He also called albuterol a partial agonist and salmeterol and formoterol full agonists; not asked.',
+ 'moa-propranolol': 'The drug list says propranolol is given at low dose for anxiety by targeting β1 in the brain; on 10/7 he explained the anxiety effect through β2 in the central nervous system (positive feedback on norepinephrine release). Not asked here; L11-043 keys his version.',
+ 'pindolol': 'On 10/7 he said partial agonists were covered for Exam 1 and will not be discussed much for this exam.',
+ 'group-asthma': 'Rewritten from the list’s pairing of asthma and hypoglycemia: on 10/7 he said every β blocker masks the tachycardia of hypoglycemia, and the non-selective ones also mask tremor and nervousness. Timolol is on the list and on slide 54 (non-selective) but he did not name it on 10/7.',
+ 'isoproterenol': 'Hyperglycemia (drug list) is not on slide 45 and he did not mention it; it is no longer in the stem.',
+ 'group-beta-agonists': 'Pindolol, a partial agonist that he says can “behave like an agonist and behave like an antagonist”, was replaced by metoprolol among the distractors.',
+ 'moa-nitrates': 'The drug list gives the site of action as “Endothelium of blood vessels (M3)”; on 10/7 he said the nitric oxide from nitroglycerin bypasses the endothelial M3 and NOS steps and goes straight to soluble guanylyl cyclase in the smooth muscle. The M3 site is not keyed.',
+ 'group-cgmp': 'Bethanechol was replaced by albuterol among the distractors: on 10/7 he taught that a muscarinic agonist acting on endothelial M3 makes nitric oxide and raises cGMP.',
+}
+# Released by the 10/7 lecture: every adrenergic item still held, and the three
+# nitric-oxide / PDE items (NO_RELEASED; they post once 'no' leaves HELD).
+NO_CONCEPTS = {'moa-nitrates', 'moa-pde', 'group-cgmp'}
+NO_RELEASED = {'moa-nitrates', 'moa-pde', 'group-cgmp'}
+ADR_RELEASED |= set(TQ7) - NO_CONCEPTS
 
 # stays in the generator so later ids do not shift; it is not posted.
 SCOPE = [
@@ -1344,6 +1424,12 @@ SCOPE = [
  ('Agonist efficacy', "But for exam purpose, we're gonna assume they all have equal efficacies, OK, and affinities", 'Carbachol versus pilocarpine in the heart is not asked.'),
  ('Overactive bladder', "So, those are gonna be the three that are gonna be responsible for me on the exam.", 'Oxybutynin, trospium and solifenacin only; DL2-044 rewritten without darifenacin and fesoterodine.'),
  ('Dose–response curves', "but on your exam too, there will not be any dose response curves, OK?", 'No DL2 item uses a curve.'),
+ ('Question mix (10/7)', "So that will be about 20% of your questions on your exam will be about effects uh that your drugs will produce. Another 20% will be side effects and perhaps some drug-drug interactions. And then we're gonna have about 10% of those questions that, you know, uh, hopefully will challenge you a little bit more.", 'Recorded; DL2 items stay on mechanism, site, effects and adverse reactions.'),
+ ('Mirtazapine agranulocytosis (10/7)', "Uh, and there is one rare side effect, uh, but we're not gonna worry too much about this. It's just FYI for us right now, OK?", 'Agranulocytosis not asked.'),
+ ('SABA versus LABA (10/7)', "If you know that a terol is a beta2 agonist, that's good for me. It doesn't matter if it's short acting or long acting.", 'DL2-068 rewritten to identify the β2 agonists.'),
+ ('β-blocker generations (10/7)', "Now, I don't want you to memorize which one is the 1st generation versus the 3rd generation. That's not the point over here.", 'Generations not asked; selectivity is (“that’s a must-know information for you”).'),
+ ('Partial agonists (10/7)', "We're not gonna be talking about much about the partial agonists for this purpose because we already addressed that in the exam one, right?", 'Pindolol asked only as the partial agonist in the β-blocker group (DL2-071).'),
+ ('Nitric oxide cascade (10/7)', "I'm never going to ask you to walk through every single one of these steps.", 'Nitric oxide items ask donor versus PDE block and cGMP, not the cascade steps.'),
 ]
 REMOVED = {
  'DL2-019': 'edrophonium: “I’m not too worried about” it for the exam (diagnostic only)',
@@ -1367,7 +1453,17 @@ for q in qs:
         q['quote'] = quote
         if q['concept'] in NOTE6:
             q['note'] = (q.get('note', '') + ' ' + NOTE6[q['concept']]).strip()
-assert set(TQ6) == ADR_RELEASED, set(TQ6) ^ ADR_RELEASED
+for q in qs:
+    if q['concept'] in TQ7 and (q['sub'] == 'adr' or q['concept'] in NO_CONCEPTS):
+        sl, quote = TQ7[q['concept']]
+        q['source'] = 'both'
+        q['cite'] += f"; {ADR} slide{'s' if re.search('[–,]', sl) else ''} {sl}; transcript 10/7"
+        q['quote'] = quote
+        if q['concept'] in NOTE7:
+            q['note'] = (q.get('note', '') + ' ' + NOTE7[q['concept']]).strip()
+assert set(TQ6) | (set(TQ7) - NO_CONCEPTS) == ADR_RELEASED, (set(TQ6) | set(TQ7)) ^ ADR_RELEASED
+assert NO_RELEASED <= NO_CONCEPTS <= set(TQ7) and NO_CONCEPTS <= {q['concept'] for q in qs}
+HELD_CONCEPTS |= NO_CONCEPTS - NO_RELEASED   # nitric-oxide items not yet taught (none after 10/7)
 def is_held(q): return q['sub'] in HELD or q['concept'] in HELD_CONCEPTS
 
 # --------------------------------------------------------------------------
@@ -1429,11 +1525,11 @@ open(os.path.join(here, 'q_DL2.js'), 'w', encoding='utf-8').write('\n'.join(out)
 SEC = {'nmj': 'Neuromuscular', 'chol': 'Cholinergic', 'adr': 'Adrenergic (printed “ADNRENERGIC”)', 'raas': 'RAAS'}
 def esc(s): return s.replace('|', '/')
 md = ['# DL2 — Exam 2 drug list', '',
-      'Source: `Pharmacology_Exam_2_Drug_List.pdf` (10 pages), the course’s official Exam 2 drug list (the PDF header credits Joshua Farias, Class of 2025). Columns: Drug / MOA / SOA / Side effects-ADRs / Extra-key information. Colour code: green = agonist, red = antagonist, blue = indirect antagonist, purple = donor. Where it disagrees with a slide, the question follows the slide and states the disagreement in a `note` (see Conflicts). Questions on the nitric oxide/cGMP and RAAS sections are written but held back until those slides and transcripts are received. Adrenergic questions are posted drug by drug as he teaches them: on 10/6 he taught the adrenergic deck through mirtazapine (slide 32), so the items on phenylephrine, cocaine, the amphetamines and methylphenidate, phenelzine, selegiline, prazosin and the -osins, clonidine and the α2 agonists, and mirtazapine’s mechanism are posted; the β drugs, epinephrine, norepinephrine, dobutamine, isoproterenol, mirabegron, phenoxybenzamine and mirtazapine’s adverse reactions stay held.',
+      'Source: `Pharmacology_Exam_2_Drug_List.pdf` (10 pages), the course’s official Exam 2 drug list (the PDF header credits Joshua Farias, Class of 2025). Columns: Drug / MOA / SOA / Side effects-ADRs / Extra-key information. Colour code: green = agonist, red = antagonist, blue = indirect antagonist, purple = donor. Where it disagrees with a slide, the question follows the slide and states the disagreement in a `note` (see Conflicts). Questions on the nitric oxide/cGMP and RAAS sections are written but held back until those slides and transcripts are received. Adrenergic questions are posted drug by drug as he teaches them: on 10/6 he taught the adrenergic deck through mirtazapine (slide 32), so the items on phenylephrine, cocaine, the amphetamines and methylphenidate, phenelzine, selegiline, prazosin and the -osins, clonidine and the α2 agonists, and mirtazapine’s mechanism were posted; on 10/7 he taught the rest of the deck (mirtazapine’s adverse reactions, phenoxybenzamine, the β agonists and β blockers, epinephrine, norepinephrine, cross-talk, nitric oxide and part of the lab tracings), so every adrenergic item is now posted. The three nitric oxide/PDE items are checked against slides 62–74 and the 10/7 audio and released by concept (NO_RELEASED); they post when the `no` sub leaves HELD.',
       '',
       'Generated by `src/gen_druglist2.py` (writes `src/q_DL2.js` and this file). Parsing method: the text extraction (`decks/Pharmacology_Exam_2_Drug_List.txt`) was read alongside page renders of the PDF to assign each cell to its column; rows that run across a page break are given both pages.',
       '',
-      'Verification decks: `Autonomic Nervous System.pdf`, `PCOL-NMJ_PCOL_2026s_pptx.pdf`, `PCOL-Cholinergic-26s.pdf`, `PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf` (slides 1–32 taught 10/6; text from the student’s annotated copy). The RAAS deck is not available yet, and the adrenergic β-receptor slides are not yet taught, so those drugs are “list only”. Day 1 slide 8 (Exam 1 deck) says Exam 2 tests MOA, SOA, ADRs and DDIs and not use/indication, dose, route or brand names, so the bank asks few use items and no brand names. On 10/5 he repeated it: “you don’t need to know brand names for the exam, just generic” (see Exam scope below).',
+      'Verification decks: `Autonomic Nervous System.pdf`, `PCOL-NMJ_PCOL_2026s_pptx.pdf`, `PCOL-Cholinergic-26s.pdf`, `PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf` (slides 1–32 taught 10/6, slides 33–85 taught 10/7; text from the student’s annotated copy, re-read 10/8). The RAAS deck is not available yet, so those drugs are “list only”. Day 1 slide 8 (Exam 1 deck) says Exam 2 tests MOA, SOA, ADRs and DDIs and not use/indication, dose, route or brand names, so the bank asks few use items and no brand names. On 10/5 he repeated it: “you don’t need to know brand names for the exam, just generic” (see Exam scope below).',
       '']
 for sec in ['nmj', 'chol', 'adr', 'raas']:
     md += [f'## {SEC[sec]}', '', '| Drug(s) | Colour | MOA | SOA | ADRs | Key information | Page | Verified |', '|---|---|---|---|---|---|---|---|']
@@ -1448,25 +1544,27 @@ md += ['## Verification status', '',
        f'Confirmed on a slide ({len(ver_drugs)} entries): ' + '; '.join(ver_drugs) + '.', '',
        f'List only, no slide yet ({len(unv_drugs)} entries): ' + '; '.join(unv_drugs) + '.', '',
        '## Conflicts / uncertain (list vs slide vs transcript)', '',
-       'The slide wins over the list; where the transcript (10/5 or 10/6) is explicit, his words win over both.', '',
+       'The slide wins over the list; where the transcript (10/5, 10/6, 10/7 or 10/8) is explicit, his words win over both.', '',
        '| Drug | Drug list says | Slide says | Transcript says | Resolution |', '|---|---|---|---|---|']
 for d, a, b, t, c in CONFLICTS:
     md.append(f'| {esc(d)} | {esc(a)} | {esc(b)} | {esc(t)} | {esc(c)} |')
-md += ['', '## Exam scope from transcript 10/5', '',
-       'His statements on 10/5 about what Exam 2 asks, and what the bank does about each. Removed items keep their ids in the generator so later ids do not shift; they are not posted.', '',
-       '| Topic | His words (10/5) | Effect on the bank |', '|---|---|---|']
+md += ['', '## Exam scope from transcripts 10/5 and 10/7', '',
+       'His statements on 10/5 and 10/7 about what Exam 2 asks, and what the bank does about each. Removed items keep their ids in the generator so later ids do not shift; they are not posted.', '',
+       '| Topic | His words (10/5 unless marked) | Effect on the bank |', '|---|---|---|']
 for k, w, e in SCOPE:
     md.append(f'| {esc(k)} | “{esc(w)}” | {esc(e)} |')
 md += ['', 'Removed: ' + '; '.join(f'{i} ({r})' for i, r in REMOVED.items()) + '.', '',
        f"Transcript 10/5 (`transcripts/2026-10-05_transcript.txt`) covers the rest of the NMJ deck and the whole cholinergic deck; {sum(1 for q in qs if q['id'] in TQ and not q.get('removed'))} posted items carry his words as their quote (source `both`).", '',
-       f"Transcript 10/6 (`transcripts/2026-10-06_transcript.txt`) covers the adrenergic deck from slide 1 through mirtazapine (slide 32); {len(ADR_RELEASED)} adrenergic items are released with his words as their quote; {len(HELD_CONCEPTS)} adrenergic items stay held: " + ', '.join(q['id'] + ' (' + q['concept'] + ')' for q in qs if q['concept'] in HELD_CONCEPTS) + '.', '']
+       f"Transcript 10/6 (`transcripts/2026-10-06_transcript.txt`) covers the adrenergic deck from slide 1 through mirtazapine (slide 32); {len(TQ6)} adrenergic items were released with his words as their quote.", '',
+       f"Transcript 10/7 (`transcripts/2026-10-07_transcript.txt`) covers the rest of the adrenergic deck (slides 33–85: mirtazapine’s adverse reactions, phenoxybenzamine, β receptors and agonists, epinephrine and epinephrine reversal, norepinephrine, β blockers, cross-talk, nitric oxide, lab tracings); {len(set(TQ7) - NO_CONCEPTS)} more adrenergic items are released with his words as their quote, cite the deck slides and '; transcript 10/7': " + ', '.join(q['id'] + ' (' + q['concept'] + ')' for q in qs if q['concept'] in TQ7 and q['concept'] not in NO_CONCEPTS) + f". The nitric oxide/PDE items ({', '.join(q['id'] for q in qs if q['concept'] in NO_CONCEPTS)}) are checked and quoted the same way and released by concept (NO_RELEASED); they post once `no` is taken out of HELD. Adrenergic or nitric oxide items still held: " + (', '.join(q['id'] + ' (' + q['concept'] + ')' for q in qs if q['concept'] in HELD_CONCEPTS) or 'none') + '.', '']
+md += [f"Transcript 10/8 (`transcripts/2026-10-08_transcript.txt`) covers the whole RAAS deck (`{RAAS}`, slides 1–30, then Jeopardy). All {sum(1 for q in qs if q['sub'] == 'raas')} RAAS items were checked against the slides and the audio: each quotes him, cites list page, deck slides and transcript 10/8, and has source `both`; none was removed (every drug in the section was taught). Conflicts with the list are in the table above.", '']
 md += ['', '## Questions', '']
 per = {}
 for q in qs: per[q['sub']] = per.get(q['sub'], 0) + 1
 md.append(f"{len(qs)} questions written, {len(posted)} posted, {len(REMOVED)} removed by his exam-scope statements (all skill `drug`; {sum(1 for q in qs if q.get('multi'))} select-all). Per sub: " + ', '.join(f'{k} {v}' for k, v in per.items()) + '.')
 md.append('')
 for q in qs:
-    md.append(f"- {q['id']} ({q['sub']}{', HELD' if is_held(q) else ''}{', REMOVED' if q.get('removed') else ''}{', select-all' if q.get('multi') else ''}{', note' if q.get('note') else ''}{', transcript 10/6' if q['concept'] in TQ6 and q['sub'] == 'adr' else (', transcript 10/5' if q['source'] == 'both' else '')}): {q['stem']}")
+    md.append(f"- {q['id']} ({q['sub']}{', HELD' if is_held(q) else ''}{', REMOVED' if q.get('removed') else ''}{', select-all' if q.get('multi') else ''}{', note' if q.get('note') else ''}{', transcript 10/6' if q['concept'] in TQ6 and q['sub'] == 'adr' else (', transcript 10/7' if q['concept'] in TQ7 and (q['sub'] == 'adr' or q['concept'] in NO_CONCEPTS) else (', transcript 10/5' if q['source'] == 'both' else ''))}): {q['stem']}")
 open(os.path.join(here, '..', 'notes', 'DL2.md'), 'w', encoding='utf-8').write('\n'.join(md) + '\n')
 print(len(posted), 'drug-list questions posted,', len(REMOVED), 'removed,', len(qs) - len(posted) - len(REMOVED), 'held until their slides and transcripts arrive;', 'per sub', per)
 print('adrenergic released:', ', '.join(q['id'] for q in qs if q['sub'] == 'adr' and not is_held(q)))
