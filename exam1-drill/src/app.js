@@ -691,7 +691,9 @@ const bpCat = q => {
 };
 function drawBlueprint(bp) {
   const elig = examPool().filter(q => !q.lowYield && !q.type && q.skill !== 'term');
-  const by = {}; elig.forEach(q => (by[bpCat(q)] = by[bpCat(q)] || []).push(q));
+  // a blueprint whose parts carry their own tests (Exam 2) sorts by those; otherwise the Exam 1 keyword rules
+  const catOf = bp.parts.some(p => p.test) ? q => (bp.parts.find(p => p.test && p.test(q)) || bp.parts.find(p => p.rest)).key : bpCat;
+  const by = {}; elig.forEach(q => (by[catOf(q)] = by[catOf(q)] || []).push(q));
   const total = active().questions, out = [], used = new Set();
   const ok = q => !used.has(q.id) && !(q.dupOf && used.has(q.dupOf)) && ![...used].some(u => byId[u].dupOf === q.id);
   const cat = new Map();
