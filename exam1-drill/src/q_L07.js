@@ -25,7 +25,7 @@ QUESTIONS.push(
  note:"His spoken 9/30 wording of the bonus clicker question. The poll sheet words it as \"Activation of alpha 1 receptors in the arteries by an agonist will produce which of the following?\" and keys Activation of Gq=>activation of PLC=>vasoconstriction.",
  cite:"Autonomic Nervous System.pdf slide 4; transcript 9/30"},
 
-{id:"L07-002", lecture:"L07", prof:"Gottlieb", tier:"new", topic:"L07", sub:"gprot", skill:"apply",
+{id:"L07-002", lecture:"L07", prof:"Gottlieb", tier:"new", level:1, topic:"L07", sub:"gprot", skill:"apply",
  concept:"beta1-gs-tachycardia", tags:["poll"], source:"both",
  stem:"An agonist activates β1 adrenergic receptors in the heart. Which of the following is most likely to occur?",
  options:[
@@ -64,7 +64,7 @@ QUESTIONS.push(
  reading:[{src:"Katzung 16e, Ch. 6", sec:"Autonomic Receptors, Table 6–2", t:"Katzung lists M3 receptors in exocrine glands and in vessels, both in the smooth muscle and in the endothelium, with the same result of binding as M1: formation of IP3 and DAG and increased intracellular calcium. Its organ table lists activation of NO synthase as the parasympathetic (M3) effect on vascular endothelium."}],
  cite:"Autonomic Nervous System.pdf slide 4; transcript 9/30"},
 
-{id:"L07-005", lecture:"L07", prof:"Gottlieb", tier:"new", topic:"L07", sub:"gprot", skill:"apply",
+{id:"L07-005", lecture:"L07", prof:"Gottlieb", tier:"new", level:1, topic:"L07", sub:"gprot", skill:"apply",
  concept:"m1-agonist-antagonist-brain", tags:[], source:"transcript",
  stem:"M1 receptors in the brain are coupled to Gq. What does an M1 antagonist most likely produce?",
  options:[
@@ -241,7 +241,7 @@ QUESTIONS.push(
  quote:"The sympathetic is different. You have a short fiber and then a long fiber to the organ. Most of it, the parasympathetic is typically like 1 to 1. ... The sympathetic is one to many.",
  cite:"Autonomic Nervous System.pdf slides 21, 23, 29; transcript 10/1"},
 
-{id:"L07-019", lecture:"L07", prof:"Gottlieb", tier:"new", topic:"L07", sub:"pns", skill:"recall",
+{id:"L07-019", lecture:"L07", prof:"Gottlieb", tier:"new", level:1, topic:"L07", sub:"pns", skill:"recall",
  concept:"dumbbelss-members", tags:[], source:"both",
  stem:"Overactivation of the cholinergic system causes a cholinergic crisis (DUMBBELSS). Which of the following is NOT part of DUMBBELSS?",
  options:[
@@ -254,7 +254,7 @@ QUESTIONS.push(
  quote:"And if you're confused on the exam between meiosis and midriasis, meiosis is the smaller name. Mydrisis is the longer word, so large pupils, small pupils, right?",
  cite:"Autonomic Nervous System.pdf slides 24, 27; transcript 9/30, 10/1"},
 
-{id:"L07-020", lecture:"L07", prof:"Gottlieb", tier:"new", topic:"L07", sub:"pns", skill:"apply",
+{id:"L07-020", lecture:"L07", prof:"Gottlieb", tier:"new", level:1, topic:"L07", sub:"pns", skill:"apply",
  concept:"anti-dumbbelss", tags:[], source:"both", multi:true,
  stem:"A patient overdoses on a muscarinic antagonist. Which effects are expected? Select all that apply.",
  options:[
@@ -268,7 +268,7 @@ QUESTIONS.push(
  quote:"The antagonists cause what? Anti dumbbells. You can't poop, can't pee, can't see because your pupils dilate. You get tachycardia. You get the opposite effect.",
  cite:"Autonomic Nervous System.pdf slide 24; transcript 9/30"},
 
-{id:"L07-021", lecture:"L07", prof:"Gottlieb", tier:"new", topic:"L07", sub:"pns", skill:"apply",
+{id:"L07-021", lecture:"L07", prof:"Gottlieb", tier:"new", level:1, topic:"L07", sub:"pns", skill:"apply",
  concept:"m3-bladder-agonist", tags:[], source:"both",
  stem:"A patient cannot urinate. A drug that activates which receptor on the bladder smooth muscle would help squeeze the bladder?",
  options:[
@@ -280,7 +280,7 @@ QUESTIONS.push(
  quote:"If it's the bladder on the smooth muscle, we have M3s, we increase calcium, we're going to squeeze the bladder, so patients going to urinate. Those are going to be good for patients who may have a problem urinating, and then we can use an antagonist to patients who can't control their bladder.",
  cite:"Autonomic Nervous System.pdf slide 27; transcript 10/1"},
 
-{id:"L07-022", lecture:"L07", prof:"Gottlieb", tier:"new", topic:"L07", sub:"pns", skill:"apply",
+{id:"L07-022", lecture:"L07", prof:"Gottlieb", tier:"new", level:1, topic:"L07", sub:"pns", skill:"apply",
  concept:"antimuscarinic-antiemetic", tags:[], source:"transcript",
  stem:"A patient with a stomach virus has severe vomiting and diarrhea. Which drug class would stop both, based on where the receptors are?",
  options:[
@@ -318,7 +318,7 @@ QUESTIONS.push(
  reading:[{src:"Katzung 16e, Ch. 6", sec:"Neurotransmitter Chemistry of the Autonomic Nervous System", t:"Adrenal medullary cells are embryologically analogous to postganglionic sympathetic neurons; they receive input from preganglionic sympathetic nerves and release a mixture of epinephrine and norepinephrine into the circulation. Some sympathetic postganglionic fibers release acetylcholine rather than norepinephrine."}],
  cite:"Autonomic Nervous System.pdf slides 30, 35; transcript 10/1"},
 
-{id:"L07-025", lecture:"L07", prof:"Gottlieb", tier:"new", topic:"L07", sub:"sns", skill:"tell",
+{id:"L07-025", lecture:"L07", prof:"Gottlieb", tier:"new", level:1, topic:"L07", sub:"sns", skill:"tell",
  concept:"sns-organ-receptor", tags:[], source:"both",
  stem:"Which pairing of a sympathetic effect and the receptor that mediates it is correct?",
  options:[
@@ -331,7 +331,7 @@ QUESTIONS.push(
  quote:"And uh on the gut, uh, we have alpha juice, which also inhibitory, which is gonna cause constipation. So the parasympathetic cause diarrhea, the sympathetic causes constipation.",
  cite:"Autonomic Nervous System.pdf slides 31, 35; transcript 10/1"},
 
-{id:"L07-026", lecture:"L07", prof:"Gottlieb", tier:"new", topic:"L07", sub:"sns", skill:"apply",
+{id:"L07-026", lecture:"L07", prof:"Gottlieb", tier:"new", level:1, topic:"L07", sub:"sns", skill:"apply",
  concept:"sns-activation-effects", tags:[], source:"both", multi:true,
  stem:"A person is being chased by a dog, and the sympathetic nervous system is fully activated. Which effects are expected? Select all that apply.",
  options:[
@@ -345,7 +345,7 @@ QUESTIONS.push(
  quote:"So it's kind of sort of an anti-dumbbells with just a few minor difference that we have before.",
  cite:"Autonomic Nervous System.pdf slides 31, 34–35; transcript 10/1"},
 
-{id:"L07-027", lecture:"L07", prof:"Gottlieb", tier:"new", topic:"L07", sub:"sns", skill:"apply",
+{id:"L07-027", lecture:"L07", prof:"Gottlieb", tier:"new", level:1, topic:"L07", sub:"sns", skill:"apply",
  concept:"alpha2-agonist-sedation", tags:[], source:"both",
  stem:"Clonidine is an α2 agonist. α2 receptors in the central nervous system are coupled to Gi. What does clonidine most likely produce in the brain?",
  options:[
@@ -357,7 +357,7 @@ QUESTIONS.push(
  quote:"If we start in the brain, if I activate the alpha 1s and the betas, now I get excitation. If I activate the alpha 2, now I get sedation. And on your drug list, you're gonna find alpha-2 agonists, such as clonidine",
  cite:"Autonomic Nervous System.pdf slide 34; transcript 10/1"},
 
-{id:"L07-028", lecture:"L07", prof:"Gottlieb", tier:"new", topic:"L07", sub:"sns", skill:"apply",
+{id:"L07-028", lecture:"L07", prof:"Gottlieb", tier:"new", level:1, topic:"L07", sub:"sns", skill:"apply",
  concept:"propranolol-exercise", tags:[], source:"transcript",
  stem:"A person takes propranolol, a lipid-soluble β blocker that crosses the blood–brain barrier, before running a mile. Which outcome is most likely?",
  options:[
@@ -369,7 +369,7 @@ QUESTIONS.push(
  quote:"But the reason being is because you block the heart, your heart can increase the cardiac output. You block the lungs, you can't bronchodilate, right? So, you can't maintain that exercise capacity.",
  cite:"transcript 10/1 (Autonomic Nervous System.pdf slide 29)"},
 
-{id:"L07-029", lecture:"L07", prof:"Gottlieb", tier:"new", topic:"L07", sub:"sns", skill:"tell",
+{id:"L07-029", lecture:"L07", prof:"Gottlieb", tier:"new", level:1, topic:"L07", sub:"sns", skill:"tell",
  concept:"alpha1-vs-beta2-vessels", tags:[], source:"both",
  stem:"During fight or flight, why do skeletal muscle blood vessels dilate while most arteries and veins constrict?",
  options:[
@@ -407,7 +407,7 @@ QUESTIONS.push(
  quote:"You know what is one of the most common, uh, uh, side effects of taking a bronchodilator, such as a beta2 agonist or muscarinic antagonist. Airway infections, right? The bigger your airways are, more things can get deeper and thus you start to get airway infections.",
  cite:"transcript 10/1 (Autonomic Nervous System.pdf slides 39–42)"},
 
-{id:"L07-032", lecture:"L07", prof:"Gottlieb", tier:"new", topic:"L07", sub:"innerv", skill:"recall",
+{id:"L07-032", lecture:"L07", prof:"Gottlieb", tier:"new", level:1, topic:"L07", sub:"innerv", skill:"recall",
  concept:"kidney-sns-renin", tags:[], source:"both",
  stem:"The sympathetic nervous system is the only autonomic input to the kidney. What does sympathetic activation of the kidney lead to?",
  options:[

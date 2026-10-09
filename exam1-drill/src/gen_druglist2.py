@@ -1467,6 +1467,48 @@ HELD_CONCEPTS |= NO_CONCEPTS - NO_RELEASED   # nitric-oxide items not yet taught
 def is_held(q): return q['sub'] in HELD or q['concept'] in HELD_CONCEPTS
 
 # --------------------------------------------------------------------------
+# His tiers (student's report, 10/9 review), stored as `level`: 1 = predict a receptor's effect,
+# 2 = two drugs together (good and bad interactions), 3 = reverse a drug's effect. Pure recall
+# (class, MOA name, definition) gets no level. `ladder` joins the rungs of one ladder across files
+# (see notes/BRIEF_EXAM2.md, Tiers and ladders). The existing `tier` field is not touched.
+# --------------------------------------------------------------------------
+LADDER_NAMES = {
+    'atropine-poisoning': 'Atropine poisoning and physostigmine',
+    'succinylcholine': 'Succinylcholine, halothane and dantrolene',
+}
+LEVELS = {
+    'DL2-009': (2, 'succinylcholine'),
+    'DL2-012': (1, None),
+    'DL2-015': (3, 'atropine-poisoning'),
+    'DL2-018': (3, None),
+    'DL2-020': (1, None),
+    'DL2-022': (1, None),
+    'DL2-030': (1, None),
+    'DL2-032': (1, 'atropine-poisoning'),
+    'DL2-033': (1, None),
+    'DL2-034': (3, None),
+    'DL2-038': (1, None),
+    'DL2-045': (1, None),
+    'DL2-053': (2, None),
+    'DL2-059': (1, None),
+    'DL2-060': (1, None),
+    'DL2-061': (1, None),
+    'DL2-063': (3, None),
+    'DL2-067': (1, None),
+    'DL2-069': (1, None),
+    'DL2-072': (1, None),
+    'DL2-087': (1, None),
+    'DL2-088': (1, None),
+}
+_ids = {q['id'] for q in qs}
+assert set(LEVELS) <= _ids, set(LEVELS) - _ids
+for q in qs:
+    if q['id'] in LEVELS:
+        q['level'], lad = LEVELS[q['id']]
+        if lad:
+            q['ladder'], q['ladderName'] = lad, LADDER_NAMES[lad]
+
+# --------------------------------------------------------------------------
 # Checks
 # --------------------------------------------------------------------------
 ABBR = {

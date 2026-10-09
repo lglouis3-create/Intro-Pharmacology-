@@ -27,7 +27,7 @@ QUESTIONS.push(
  quote:"So, we're gonna get your drowsiness because we're blocking the muscarinic antihistamine receptors, uh, weight gain, as you're gonna learn in the CNS, any drug that affects serotonin can have an effect on the weight, uh, of our patients. Uh, by blocking those muscarinics, you're gonna get. The anti-dumbbells, so you can't salivate, you're gonna get dry, dry mouth",
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slide 33; transcript 10/7"},
 
-{id:"L11-002", lecture:"L11", prof:"Gottlieb", tier:"new", topic:"L11", sub:"mirt", skill:"apply",
+{id:"L11-002", lecture:"L11", prof:"Gottlieb", tier:"new", level:1, topic:"L11", sub:"mirt", skill:"apply",
  concept:"mirtazapine-edema-alpha1", tags:[], source:"both",
  stem:"A patient on mirtazapine develops peripheral edema. Which receptor blockade explains it?",
  options:[
@@ -40,7 +40,7 @@ QUESTIONS.push(
  note:"The drug list (page 6) blames peripheral edema on α2 block in small blood vessels; slide 33 and the 10/7 audio give α1 block. Keyed to the slide and his words.",
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slide 33; transcript 10/7"},
 
-{id:"L11-003", lecture:"L11", prof:"Gottlieb", tier:"new", topic:"L11", sub:"mirt", skill:"tell",
+{id:"L11-003", lecture:"L11", prof:"Gottlieb", tier:"new", level:1, topic:"L11", sub:"mirt", skill:"tell",
  concept:"mirtazapine-adr-causes", tags:[], source:"both",
  stem:"Which pairing of a mirtazapine adverse reaction and its cause is CORRECT?",
  options:[
@@ -53,7 +53,7 @@ QUESTIONS.push(
  quote:"Uh, the GI, you know, you're gonna have, uh, uh, dry mouth and constipation associated with that because of the muscarinic blockade that you're gonna have, as well as some maybe hypertension, uh, and peripheral edema on the periphery.",
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slide 33; transcript 10/7"},
 
-{id:"L11-004", lecture:"L11", prof:"Gottlieb", tier:"new", topic:"L11", sub:"mirt", skill:"apply",
+{id:"L11-004", lecture:"L11", prof:"Gottlieb", tier:"new", level:1, topic:"L11", sub:"mirt", skill:"apply",
  concept:"mirtazapine-htn-ne", tags:[], source:"both",
  stem:"Some patients on mirtazapine develop hypertension. Which action explains it?",
  options:[
@@ -91,7 +91,7 @@ QUESTIONS.push(
  note:"A use; his 10/5 rule is that uses are not tested, so this is marked low yield. The mechanism behind it (irreversible, cannot be outcompeted) is the testable point.",
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 34–35; transcript 10/7"},
 
-{id:"L11-007", lecture:"L11", prof:"Gottlieb", tier:"new", topic:"L11", sub:"pbz", skill:"apply",
+{id:"L11-007", lecture:"L11", prof:"Gottlieb", tier:"new", level:1, topic:"L11", sub:"pbz", skill:"apply",
  concept:"phenoxybenzamine-gi-stimulation", tags:["in-class"], source:"both",
  stem:"Phenoxybenzamine causes cramping and diarrhea. Which mechanism explains this?",
  options:[
@@ -104,7 +104,7 @@ QUESTIONS.push(
  note:"He asked the class “What is the function of the alpha 2s on the gut?” and answered it himself. The transcript renders “alpha 2s” as “alpha juice/chews”.",
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 36–38; transcript 10/7"},
 
-{id:"L11-008", lecture:"L11", prof:"Gottlieb", tier:"new", topic:"L11", sub:"pbz", skill:"apply", multi:true,
+{id:"L11-008", lecture:"L11", prof:"Gottlieb", tier:"new", level:1, topic:"L11", sub:"pbz", skill:"apply", multi:true,
  concept:"phenoxybenzamine-adrs", tags:[], source:"both",
  stem:"Which adverse reactions are expected with phenoxybenzamine? Select all that apply.",
  options:[
@@ -120,7 +120,7 @@ QUESTIONS.push(
  note:"In the audio he says “You're going to get the hypertension, which may cause the orthostatic hypertension”; slides 36–38 say orthostatic hypotension, and he describes people passing out. Keyed to the slide.",
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 36–38; transcript 10/7"},
 
-{id:"L11-009", lecture:"L11", prof:"Gottlieb", tier:"new", topic:"L11", sub:"pbz", skill:"apply",
+{id:"L11-009", lecture:"L11", prof:"Gottlieb", tier:"new", level:1, topic:"L11", sub:"pbz", skill:"apply",
  concept:"phenoxybenzamine-miosis", tags:[], source:"both",
  stem:"A patient on phenoxybenzamine complains of poor vision at night. Which explains it?",
  options:[
@@ -144,7 +144,7 @@ QUESTIONS.push(
  quote:"So similar to prazosin, the difference is irreversible and also blocks the alpha-2s, OK?",
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 27, 34–38; transcript 10/7"},
 
-{id:"L11-011", lecture:"L11", prof:"Gottlieb", tier:"new", topic:"L11", sub:"pbz", skill:"apply",
+{id:"L11-011", lecture:"L11", prof:"Gottlieb", tier:"new", level:3, ladder:"prazosin", ladderName:"Prazosin, norepinephrine and phenoxybenzamine", topic:"L11", sub:"pbz", skill:"apply",
  concept:"prazosin-reversible-competition", tags:["exam-cue"], source:"both",
  stem:"As prazosin lowers blood pressure, the body releases more norepinephrine. Why does this weaken prazosin's effect but not phenoxybenzamine's?",
  options:[
@@ -158,7 +158,7 @@ QUESTIONS.push(
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 27, 34–35; transcript 10/7"},
 
 /* ---------------- β receptors (slides 39–45) ---------------- */
-{id:"L11-012", lecture:"L11", prof:"Gottlieb", tier:"new", topic:"L11", sub:"beta", skill:"recall", multi:true,
+{id:"L11-012", lecture:"L11", prof:"Gottlieb", tier:"new", level:1, topic:"L11", sub:"beta", skill:"recall", multi:true,
  concept:"beta-sites-effects", tags:[], source:"both",
  stem:"Which pairings of β receptor site and effect are CORRECT? Select all that apply.",
  options:[
@@ -171,7 +171,7 @@ QUESTIONS.push(
  quote:"So the easiest part for you is that it doesn't matter if it's a beta 1, a beta 2, or beta 3, they are all linked to GS, which means they're going to stimulate. The difference over here is the location and the function they're going to have, OK.",
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 39–44; transcript 10/7"},
 
-{id:"L11-013", lecture:"L11", prof:"Gottlieb", tier:"new", topic:"L11", sub:"beta", skill:"recall",
+{id:"L11-013", lecture:"L11", prof:"Gottlieb", tier:"new", level:1, topic:"L11", sub:"beta", skill:"recall",
  concept:"beta1-gs-heart-kidney", tags:[], source:"both",
  stem:"β1 receptors are located mainly in the heart and kidney. What does their activation do?",
  options:[
@@ -208,7 +208,7 @@ QUESTIONS.push(
  note:"He asked the class how tolerance develops and answered it himself.",
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slide 41; transcript 10/7"},
 
-{id:"L11-016", lecture:"L11", prof:"Gottlieb", tier:"new", topic:"L11", sub:"beta", skill:"apply",
+{id:"L11-016", lecture:"L11", prof:"Gottlieb", tier:"new", level:1, topic:"L11", sub:"beta", skill:"apply",
  concept:"dobutamine-arrhythmia", tags:[], source:"both",
  stem:"What is the major adverse reaction of dobutamine as the dose is pushed higher?",
  options:[
@@ -220,7 +220,7 @@ QUESTIONS.push(
  quote:"The faster your heart is beating, the more likely it's going to go to out of the rails. They're going to arrhythmias, out of sync because the heart has a rhythm, right?",
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slide 41; transcript 10/7"},
 
-{id:"L11-017", lecture:"L11", prof:"Gottlieb", tier:"new", topic:"L11", sub:"beta", skill:"recall", multi:true,
+{id:"L11-017", lecture:"L11", prof:"Gottlieb", tier:"new", level:1, topic:"L11", sub:"beta", skill:"recall", multi:true,
  concept:"beta2-effects", tags:[], source:"both",
  stem:"Which effects follow β2 receptor activation? Select all that apply.",
  options:[
@@ -246,7 +246,7 @@ QUESTIONS.push(
  quote:"If you know that a terol is a beta2 agonist, that's good for me. It doesn't matter if it's short acting or long acting. That's not the point over here. The point over here is for you to identify. Which of these is a beta2 agonist? OK.",
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slide 43; transcript 10/7"},
 
-{id:"L11-019", lecture:"L11", prof:"Gottlieb", tier:"new", topic:"L11", sub:"beta", skill:"apply", multi:true,
+{id:"L11-019", lecture:"L11", prof:"Gottlieb", tier:"new", level:1, topic:"L11", sub:"beta", skill:"apply", multi:true,
  concept:"albuterol-systemic-effects", tags:["in-class"], source:"both",
  stem:"A child swallows much of an albuterol dose instead of inhaling it. Which effects are likely? Select all that apply.",
  options:[
@@ -284,7 +284,7 @@ QUESTIONS.push(
  quote:"And even better is not going to produce the anti-dumbbell effects that the anti-muscarinics produce. So you don't have to worry about the constipation. You don't have to worry about the blurring in the eye, in the vision, the effects in the heart, in the lungs, and all the other stuff.",
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slide 44; transcript 10/7"},
 
-{id:"L11-023", lecture:"L11", prof:"Gottlieb", tier:"new", topic:"L11", sub:"beta", skill:"apply", multi:true,
+{id:"L11-023", lecture:"L11", prof:"Gottlieb", tier:"new", level:1, topic:"L11", sub:"beta", skill:"apply", multi:true,
  concept:"bladder-relaxer-select-all", tags:["in-class","variant","exam-cue"], source:"both",
  stem:"Which of the following drugs relax the bladder smooth muscle, thus decreasing urination? Select all that apply.",
  options:[
@@ -298,7 +298,7 @@ QUESTIONS.push(
  note:"The select-all form he described aloud right after his 10/7 bladder poll (PE2-041, which has one key, mirabegron): “What if I had to put trosium in there too? Would that be true? Now we have a selectol, right?” Kept as a variant because it asks something different: with trospium among the options, both the β3 agonist and the M3 antagonist are correct. One of the 10/7 questions will be reused “in a different shape or form”.",
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slide 44; transcript 10/7"},
 
-{id:"L11-024", lecture:"L11", prof:"Gottlieb", tier:"new", topic:"L11", sub:"beta", skill:"apply",
+{id:"L11-024", lecture:"L11", prof:"Gottlieb", tier:"new", level:1, topic:"L11", sub:"beta", skill:"apply",
  concept:"isoproterenol-replaced", tags:["in-class"], source:"both",
  stem:"Isoproterenol produces good bronchodilation but is no longer used for asthma. Why?",
  options:[
@@ -336,7 +336,7 @@ QUESTIONS.push(
  quote:"At low doses, uh, epinephrine has the highest affinity for the beta 1 and the beta 2 receptor. ... So, the, the, the rank of affinity is gonna be beta one beta choose, alpha one, and then alpha 2. OK?",
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slide 47; transcript 10/7"},
 
-{id:"L11-027", lecture:"L11", prof:"Gottlieb", tier:"new", topic:"L11", sub:"epi", skill:"apply",
+{id:"L11-027", lecture:"L11", prof:"Gottlieb", tier:"new", level:1, ladder:"epinephrine", ladderName:"Epinephrine: α1 and β2, its blockers, and the EpiPen overdose", topic:"L11", sub:"epi", skill:"apply",
  concept:"epinephrine-dose-vessels", tags:[], source:"both",
  stem:"What does epinephrine do to arterial tone at a low dose and at a high dose?",
  options:[
@@ -348,7 +348,7 @@ QUESTIONS.push(
  quote:"which is called epinephrine reversal, which means that at low doses, epinephrine is causing vasodilation, but a higher dose is going to cause vasoconstriction. So it has this reversal of the effect, and that's due to the affinity of the drug for the different types of adrenergic receptors.",
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 47–48; transcript 10/7"},
 
-{id:"L11-028", lecture:"L11", prof:"Gottlieb", tier:"new", topic:"L11", sub:"epi", skill:"figure",
+{id:"L11-028", lecture:"L11", prof:"Gottlieb", tier:"new", level:2, ladder:"epinephrine", ladderName:"Epinephrine: α1 and β2, its blockers, and the EpiPen overdose", topic:"L11", sub:"epi", skill:"figure",
  concept:"epinephrine-reversal-prazosin", tags:["in-class"], source:"both",
  stem:"A blood pressure tracing: a high dose of epinephrine raises blood pressure. After prazosin is given, the same epinephrine dose lowers blood pressure. Which explains the change?",
  options:[
@@ -362,7 +362,7 @@ QUESTIONS.push(
  reading:[{"src":"Katzung 16e, Ch. 10","sec":"Pharmacologic Effects — Cardiovascular Effects","t":"Activation of both α and β receptors in the vasculature can produce opposite responses. Blocking α adrenoceptors unmasks the effect of epinephrine on β receptors, so a pressor response to epinephrine becomes a fall in blood pressure; this is called epinephrine reversal."}],
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 48–51; transcript 10/7"},
 
-{id:"L11-029", lecture:"L11", prof:"Gottlieb", tier:"new", topic:"L11", sub:"epi", skill:"figure",
+{id:"L11-029", lecture:"L11", prof:"Gottlieb", tier:"new", level:1, topic:"L11", sub:"epi", skill:"figure",
  concept:"phenylephrine-vs-epinephrine-pressor", tags:["in-class"], source:"both",
  stem:"Blood pressure tracings compare a high dose of epinephrine with phenylephrine. Phenylephrine gives the larger rise. Why?",
  options:[
@@ -374,7 +374,7 @@ QUESTIONS.push(
  quote:"So I can predict that the vasoconstriction produced by epinephrine or by phenophrine is gonna be greater than. Because it's only bind me to the alpha ones. I have no beta 2. So here in the bottom when I give feennuafrin, all of this is going to be alpha 1 mediated.",
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 49–51; transcript 10/7"},
 
-{id:"L11-030", lecture:"L11", prof:"Gottlieb", tier:"new", topic:"L11", sub:"epi", skill:"figure",
+{id:"L11-030", lecture:"L11", prof:"Gottlieb", tier:"new", level:2, topic:"L11", sub:"epi", skill:"figure",
  concept:"phenylephrine-after-prazosin", tags:[], source:"both",
  stem:"Phenylephrine is given after prazosin, and the blood pressure response is abolished with no fall in pressure. What does this show?",
  options:[
@@ -386,7 +386,7 @@ QUESTIONS.push(
  quote:"And then if I repeat the same experiment and give feuaphrine in the presence of prazosin, which is the antagonist, look what happens. All is blocked. ... The reversal is gone, and that further proves that there's no beta 2 involvement with phenyphrine. It's only activating the alpha ones.",
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 50–51; transcript 10/7"},
 
-{id:"L11-031", lecture:"L11", prof:"Gottlieb", tier:"new", topic:"L11", sub:"epi", skill:"apply",
+{id:"L11-031", lecture:"L11", prof:"Gottlieb", tier:"new", level:3, topic:"L11", sub:"epi", skill:"apply",
  concept:"epinephrine-wean", tags:[], source:"both",
  stem:"Why must a hospitalized patient on an epinephrine infusion be weaned off rather than stopped abruptly?",
  options:[
@@ -398,7 +398,7 @@ QUESTIONS.push(
  quote:"You got to wean them off because you're giving an agonist and now your patient is down regulating the receptors. If you shut off that epinephrine, now you have no epi, no receptors, the cardiovascular is going to collapse, right?",
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slide 52; transcript 10/7"},
 
-{id:"L11-032", lecture:"L11", prof:"Gottlieb", tier:"new", topic:"L11", sub:"epi", skill:"recall",
+{id:"L11-032", lecture:"L11", prof:"Gottlieb", tier:"new", level:1, ladder:"epinephrine", ladderName:"Epinephrine: α1 and β2, its blockers, and the EpiPen overdose", topic:"L11", sub:"epi", skill:"recall",
  concept:"epinephrine-overdose-receptors", tags:[], source:"both",
  stem:"In an epinephrine overdose, which receptors predominate in the response?",
  options:[
@@ -490,7 +490,7 @@ QUESTIONS.push(
  quote:"but I would like for you to know propranolol because that's the prototypical drug that was one of the first beta blockers that we had in the market, and that drug is now the standard to which any other beta blocker that is discovered has to be measured against.",
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slide 54; transcript 10/7"},
 
-{id:"L11-040", lecture:"L11", prof:"Gottlieb", tier:"new", topic:"L11", sub:"bb", skill:"apply", multi:true,
+{id:"L11-040", lecture:"L11", prof:"Gottlieb", tier:"new", level:1, ladder:"beta-blocker", ladderName:"β blockers: the heart, insulin, and stopping abruptly", topic:"L11", sub:"bb", skill:"apply", multi:true,
  concept:"beta-blocker-heart-effects", tags:[], source:"both",
  stem:"Which cardiac effects do all β blockers share? Select all that apply.",
  options:[
@@ -503,7 +503,7 @@ QUESTIONS.push(
  quote:"So if I block the ability of my norepinephrine to bind and activate the beta ones, because all beta blockers blocks beta ones, who's gonna take over? Parasympathetic. So you're gonna get what? Bradycardia, right?",
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 56–58; transcript 10/7"},
 
-{id:"L11-041", lecture:"L11", prof:"Gottlieb", tier:"new", topic:"L11", sub:"bb", skill:"recall",
+{id:"L11-041", lecture:"L11", prof:"Gottlieb", tier:"new", level:1, topic:"L11", sub:"bb", skill:"recall",
  concept:"beta-blocker-primary-effect", tags:[], source:"both",
  stem:"What is the primary effect of β blockers on the circulation?",
  options:[
@@ -515,7 +515,7 @@ QUESTIONS.push(
  quote:"So the way we're going to do this over here is the primary effect of our beta blockers, it's going to be to decrease the cardiac output. So this is number one. This is our primary effect. All these other guys over here are the cherry on top.",
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 56–57; transcript 10/7"},
 
-{id:"L11-042", lecture:"L11", prof:"Gottlieb", tier:"new", topic:"L11", sub:"bb", skill:"apply",
+{id:"L11-042", lecture:"L11", prof:"Gottlieb", tier:"new", level:1, topic:"L11", sub:"bb", skill:"apply",
  concept:"beta-blocker-renin", tags:[], source:"both",
  stem:"Besides slowing the heart, how do β blockers lower angiotensin II?",
  options:[
@@ -527,7 +527,7 @@ QUESTIONS.push(
  quote:"Also, it's going to block the beta 1s in the kidney, in the gestic glomera cells which are involved in the production of renin and production of angiotensin 2.",
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 56–57; transcript 10/7"},
 
-{id:"L11-043", lecture:"L11", prof:"Gottlieb", tier:"new", topic:"L11", sub:"bb", skill:"apply",
+{id:"L11-043", lecture:"L11", prof:"Gottlieb", tier:"new", level:1, topic:"L11", sub:"bb", skill:"apply",
  concept:"propranolol-anxiety-cns", tags:[], source:"both",
  stem:"Propranolol taken before a public speech lowers anxiety. Which mechanism explains this?",
  options:[
@@ -539,7 +539,7 @@ QUESTIONS.push(
  quote:"And the beta 2s in the brain are involving the positive feedback. So remember that alpha 2s are G alphai, so they are inhibitory. This is the negative feedback, as beta 2s are G alphaS, so they're going to be positive. ... So by blocking those beta 2 receptors in the CNS, we're going to have less sympathetic output. And thus decrease your anxiety",
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 56–57; transcript 10/7"},
 
-{id:"L11-044", lecture:"L11", prof:"Gottlieb", tier:"new", topic:"L11", sub:"bb", skill:"apply",
+{id:"L11-044", lecture:"L11", prof:"Gottlieb", tier:"new", level:1, ladder:"beta-blocker-asthma", ladderName:"β blocker in asthma, with albuterol", topic:"L11", sub:"bb", skill:"apply",
  concept:"asthma-metoprolol", tags:["in-class"], source:"both",
  stem:"A patient with asthma needs a β blocker to slow the heart. Which choice is better, and why?",
  options:[
@@ -553,7 +553,7 @@ QUESTIONS.push(
  note:"Katzung goes further than the lecture: even β1-selective blockers should generally be avoided in asthma. He framed it as a choice between the two drugs; keyed to him.",
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 54, 59; transcript 10/7"},
 
-{id:"L11-045", lecture:"L11", prof:"Gottlieb", tier:"new", topic:"L11", sub:"bb", skill:"apply",
+{id:"L11-045", lecture:"L11", prof:"Gottlieb", tier:"new", level:2, ladder:"beta-blocker", ladderName:"β blockers: the heart, insulin, and stopping abruptly", topic:"L11", sub:"bb", skill:"apply",
  concept:"beta-blocker-hypoglycemia", tags:[], source:"both",
  stem:"An insulin-dependent diabetic on propranolol becomes hypoglycemic. Which warning sign is still present?",
  options:[
@@ -565,7 +565,7 @@ QUESTIONS.push(
  quote:"It's even worse if you have a non-selective beta blocker because now you're blocking the nervousness, you block the tremor, all we have is the sweat palms.",
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slide 59; transcript 10/7"},
 
-{id:"L11-046", lecture:"L11", prof:"Gottlieb", tier:"new", topic:"L11", sub:"bb", skill:"apply",
+{id:"L11-046", lecture:"L11", prof:"Gottlieb", tier:"new", level:2, topic:"L11", sub:"bb", skill:"apply",
  concept:"diabetic-beta1-selective", tags:["in-class"], source:"both",
  stem:"If a β blocker must be given to an insulin-dependent diabetic, which type is preferred?",
  options:[
@@ -577,7 +577,7 @@ QUESTIONS.push(
  quote:"But even at that, if I had to choose, if I must choose a beta-blocker to an insulin-dependent diabetic, which one would I pick? I said beta one selective, right? Cause at least I leave the tremor and the nervousness out of that mix.",
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slide 59; transcript 10/7"},
 
-{id:"L11-047", lecture:"L11", prof:"Gottlieb", tier:"new", topic:"L11", sub:"bb", skill:"apply",
+{id:"L11-047", lecture:"L11", prof:"Gottlieb", tier:"new", level:3, ladder:"beta-blocker", ladderName:"β blockers: the heart, insulin, and stopping abruptly", topic:"L11", sub:"bb", skill:"apply",
  concept:"beta-blocker-withdrawal", tags:[], source:"both",
  stem:"A patient stops metoprolol abruptly while traveling. What is the risk, and why?",
  options:[
@@ -690,7 +690,7 @@ QUESTIONS.push(
  note:"“you can get the dilation effect” in the transcript reads as “you can't get”; the next sentence, “the other one just stays constricted”, confirms it. The slide 64 picture (intact vs damaged endothelium) could not be seen; the experiment is described from his words.",
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slide 64; transcript 10/7"},
 
-{id:"L11-057", lecture:"L11", prof:"Gottlieb", tier:"new", topic:"L11", sub:"no", skill:"figure",
+{id:"L11-057", lecture:"L11", prof:"Gottlieb", tier:"new", level:1, topic:"L11", sub:"no", skill:"figure",
  concept:"furchgott-epi-dose", tags:["in-class"], source:"both",
  stem:"In the isolated-artery experiment, epinephrine constricted the artery. Was the epinephrine dose high or low?",
  options:[
@@ -714,7 +714,7 @@ QUESTIONS.push(
  quote:"So the phosphodiesterase enzyme can break both cyclic EMP and cyclic GMP, our second messengers. So we have this cross stalk that has this additive vasodilation process.",
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 68–74; transcript 10/7"},
 
-{id:"L11-060", lecture:"L11", prof:"Gottlieb", tier:"new", topic:"L11", sub:"no", skill:"apply",
+{id:"L11-060", lecture:"L11", prof:"Gottlieb", tier:"new", level:2, ladder:"nitroglycerin", ladderName:"Nitroglycerin and sildenafil", topic:"L11", sub:"no", skill:"apply",
  concept:"pde-inhibitor-potency", tags:["in-class"], source:"both",
  stem:"A drug blocks phosphodiesterase (PDE). What happens to the potency of nitric oxide?",
  options:[
@@ -726,7 +726,7 @@ QUESTIONS.push(
  quote:"So what do you think is going to happen if I give a drug that blocks the PDE? What is going to happen to the potency of nitric oxide? It's gonna increase.",
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slide 74; transcript 10/7"},
 
-{id:"L11-061", lecture:"L11", prof:"Gottlieb", tier:"new", topic:"L11", sub:"no", skill:"apply",
+{id:"L11-061", lecture:"L11", prof:"Gottlieb", tier:"new", level:1, ladder:"nitroglycerin", ladderName:"Nitroglycerin and sildenafil", topic:"L11", sub:"no", skill:"apply",
  concept:"aging-endothelium-nitrates", tags:[], source:"both",
  stem:"With age, damage to the blood vessels reduces nitric oxide production. What is the expected result, and how can a drug replace it?",
  options:[
@@ -752,7 +752,7 @@ QUESTIONS.push(
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slide 74; transcript 10/7"},
 
 /* ---------------- Lab tracings (slides 75–85, 10/7) ---------------- */
-{id:"L11-063", lecture:"L11", prof:"Gottlieb", tier:"new", topic:"L11", sub:"lab", skill:"figure",
+{id:"L11-063", lecture:"L11", prof:"Gottlieb", tier:"new", level:1, ladder:"ach-rat", ladderName:"Acetylcholine, atropine and blood pressure in the rat", topic:"L11", sub:"lab", skill:"figure",
  concept:"ach-bolus-reflex-tachycardia", tags:["in-class"], source:"both",
  stem:"In an anesthetized rat, an intravenous bolus of acetylcholine makes blood pressure fall and heart rate rise. Why does heart rate rise when acetylcholine on M2 should slow it?",
  options:[
@@ -765,7 +765,7 @@ QUESTIONS.push(
  note:"He asked the class why heart rate rose; a student began with M2 being Gi, and he finished the answer. The tracing pictures (slides 77, 80) could not be seen; the tracing is described from his words.",
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 75–77; transcript 10/7"},
 
-{id:"L11-064", lecture:"L11", prof:"Gottlieb", tier:"new", topic:"L11", sub:"lab", skill:"figure",
+{id:"L11-064", lecture:"L11", prof:"Gottlieb", tier:"new", level:2, ladder:"ach-rat", ladderName:"Acetylcholine, atropine and blood pressure in the rat", topic:"L11", sub:"lab", skill:"figure",
  concept:"atropine-pretreatment-ach", tags:["in-class"], source:"both",
  stem:"The rat is pretreated with atropine, and the same acetylcholine dose is given. Blood pressure no longer falls. Why?",
  options:[
@@ -777,7 +777,7 @@ QUESTIONS.push(
  quote:"So when I repeat this experiment, look over there now. I'm blocking the M3s in the blood vessels. There's no drop in blood pressure, but I'm also blocking who the M2s in the heart. So who is unopposed? The sympathetics.",
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 78–80; transcript 10/7"},
 
-{id:"L11-065", lecture:"L11", prof:"Gottlieb", tier:"new", topic:"L11", sub:"lab", skill:"figure",
+{id:"L11-065", lecture:"L11", prof:"Gottlieb", tier:"new", level:3, ladder:"ach-rat", ladderName:"Acetylcholine, atropine and blood pressure in the rat", topic:"L11", sub:"lab", skill:"figure",
  concept:"atropine-surmountable", tags:["in-class"], source:"both",
  stem:"After atropine, how can acetylcholine's fall in blood pressure and reflex tachycardia be restored?",
  options:[
@@ -817,5 +817,33 @@ QUESTIONS.push(
   {t:"It cannot activate α2", correct:false, why:"α2 is the last receptor it reaches as the dose rises."}],
  teach:"Epinephrine is an endogenous catecholamine with different affinities: β1 and β2 at low doses, then α1 and α2 as the dose rises. In blood vessels the high-dose α1 effect overrides β2 (constriction); with α1 blocked, the β2 dilation shows (epinephrine reversal). Treatment down-regulates its receptors, so patients are weaned off.",
  quote:"But the key thing over here for you to remember is that epinephrine has different affinities. At low doses, they're the ones better choose. At higher doses, everybody, but alpha ones wins.",
- cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 47–52; transcript 10/7"}
+ cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 47–52; transcript 10/7"},
+
+/* ---------------- Ladder rungs (Tier 3): reversing a drug's effect ---------------- */
+{id:"L11-075", lecture:"L11", prof:"Gottlieb", tier:"new", level:3, ladder:"mao-inhibitor", ladderName:"MAO inhibitor, tyramine and the hypertensive crisis", topic:"L11", sub:"pbz", skill:"apply",
+ concept:"phenoxybenzamine-mao-crisis", tags:["reversal"], source:"both",
+ stem:"A patient taking phenelzine eats aged cheese and drinks wine, then arrives with a hypertensive crisis. Which drug could lower the pressure, and why?",
+ options:[
+  {t:"Phenoxybenzamine: irreversible α1 and α2 block", correct:true, why:"Its covalent α1 block cannot be outcompeted by the flood of norepinephrine, so the vessels dilate and the pressure falls."},
+  {t:"Selegiline: it blocks MAO-B in the brain", correct:false, why:"Another monoamine oxidase (MAO) inhibitor adds to the problem; it does not block the receptors that norepinephrine is acting on."},
+  {t:"Phenylephrine: it activates α1 in the vessels", correct:false, why:"An α1 agonist constricts the vessels and raises the pressure further."},
+  {t:"Dextroamphetamine: it releases norepinephrine", correct:false, why:"Releasing more norepinephrine adds to the crisis."},
+  {t:"Cocaine: it blocks the norepinephrine transporter", correct:false, why:"Blocking reuptake leaves more norepinephrine at the receptors and raises the pressure further."}],
+ teach:"Phenelzine irreversibly blocks MAO-A and MAO-B, so more norepinephrine is stored and released. With MAO-A blocked in the gut, dietary tyramine from fermented foods (cheese, bread, wine) cannot be broken down, and the result is the cheese effect: a hypertensive crisis. Phenoxybenzamine is an irreversible (covalent) α1 and α2 antagonist; because the excess norepinephrine cannot outcompete it, it can lower the pressure, and slide 34 lists hypertensive crisis from MAO inhibitors as one of its uses.",
+ quote:"Uh, in the old days we also used to treat those patients who are getting that non-selective MAO inhibitors. Remember we have the cheese effect that we talked about it. They get that hypertensive crisis. So if you had a patient. who have a hypertensive crisis, we could use fenoxybenzammine to kind of lower their blood pressure and manage them a little bit better due to that uh cheese effect that you get.",
+ note:"He said this use is less common now (\"We don't use it as often because people are not on an MAO and, you know, as often as they used to\"). The item asks the reversal through the mechanism, which he tests, rather than the use itself.",
+ cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 14–15, 34; transcript 10/6; transcript 10/7"},
+
+{id:"L11-076", lecture:"L11", prof:"Gottlieb", tier:"new", level:3, ladder:"beta-blocker-asthma", ladderName:"β blocker in asthma, with albuterol", topic:"L11", sub:"bb", skill:"apply",
+ concept:"albuterol-outcompete-beta-blocker", tags:["reversal"], source:"both",
+ stem:"A patient with asthma uses albuterol. Propranolol is started for his heart, and his wheezing returns. What will it take for albuterol to open his airways again, and why?",
+ options:[
+  {t:"More puffs, to outcompete propranolol at β2", correct:true, why:"Propranolol blocks lung β2 reversibly, so a higher amount of the β2 agonist can outcompete it, at more cost and more time to bronchodilate."},
+  {t:"Nothing works; propranolol binds β2 covalently", correct:false, why:"Propranolol is a competitive β blocker; it can be outcompeted."},
+  {t:"Fewer puffs; propranolol raises β2 activity", correct:false, why:"Propranolol is an antagonist; it lowers β2 activity in the lungs."},
+  {t:"Add metoprolol to free the β2 receptors", correct:false, why:"Metoprolol is a selective β1 antagonist; it does not free β2 receptors from propranolol."},
+  {t:"The same puffs; propranolol blocks only β1", correct:false, why:"Propranolol is non-selective: it blocks β1 and β2, including β2 in the lungs."}],
+ teach:"Albuterol is a β2 agonist (Gs, more cyclic AMP) that relaxes bronchial smooth muscle. Propranolol is a non-selective β1 and β2 blocker, so in the lungs it blocks the β2 that albuterol needs and makes asthma worse. The block is competitive, so it takes more puffs of the short-acting or long-acting β2 agonist (SABA or LABA) to outcompete it, which costs the patient money and quality of life. The better choice for such a patient is a β1-selective blocker such as metoprolol.",
+ quote:"If you have a beta blocker that is non-selective and we're blocking the beta 2, it's going to require more puffs of your saba or your laba to outcompete the beta blocker, which means it's going to cost your patient more money. And it's going to cost them also quality of life because it's going to take longer for them to get to a level where they can bronchodilate.",
+ cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 42–43, 54, 59; transcript 10/7"}
 );

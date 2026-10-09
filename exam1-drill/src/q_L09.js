@@ -103,7 +103,7 @@ QUESTIONS.push(
  quote:"So we know that M1 and M3 are GQ. ... So, ion channels are nicotinic receptors. These guys are G protein coupled receptors, so that's different.",
  cite:"PCOL-Cholinergic-26s.pdf slide 9; transcript 10/5"},
 
-{id:"L09-008", lecture:"L09", prof:"Gottlieb", tier:"new", topic:"L09", sub:"transd", skill:"apply",
+{id:"L09-008", lecture:"L09", prof:"Gottlieb", tier:"new", level:1, topic:"L09", sub:"transd", skill:"apply",
  concept:"gq-predict-effect", tags:[], source:"both",
  stem:"M3 receptors on gastrointestinal (GI) smooth muscle couple to Gq. What does a muscarinic agonist produce there?",
  options:[
@@ -181,7 +181,7 @@ QUESTIONS.push(
  note:"Rewritten from a drug–use pairing item: for the agonists he said 'I'm not testing you on the use' and 'no brand name'.",
  cite:"PCOL-Cholinergic-26s.pdf slide 11; transcript 10/5"},
 
-{id:"L09-014", lecture:"L09", prof:"Gottlieb", tier:"new", topic:"L09", sub:"agon", skill:"apply",
+{id:"L09-014", lecture:"L09", prof:"Gottlieb", tier:"new", level:1, ladder:"bladder-m3", ladderName:"The bladder M3: agonist, antimuscarinic and reversal", topic:"L09", sub:"agon", skill:"apply",
  concept:"agonist-bladder-urination", tags:[], source:"both",
  stem:"Bethanechol activates M3 receptors on the urinary bladder. What is the expected effect?",
  options:[
@@ -194,7 +194,7 @@ QUESTIONS.push(
  note:"Rewritten from 'which agonist is used for urinary retention': for the agonists he tests mechanism, site of action and effects, not the use.",
  cite:"PCOL-Cholinergic-26s.pdf slide 13; slide 11; transcript 10/5"},
 
-{id:"L09-015", lecture:"L09", prof:"Gottlieb", tier:"new", topic:"L09", sub:"agon", skill:"apply",
+{id:"L09-015", lecture:"L09", prof:"Gottlieb", tier:"new", level:1, topic:"L09", sub:"agon", skill:"apply",
  concept:"pilocarpine-salivation-m3", tags:[], source:"both",
  stem:"Radiation destroyed a patient's salivary glands, and pilocarpine is given to help the patient salivate. Through which receptor and G protein does pilocarpine cause salivation?",
  options:[
@@ -248,7 +248,7 @@ QUESTIONS.push(
  note:"Key changed from 'an alkaloid not hydrolyzed by AChE' to 'does not activate nicotinic receptors': he called the alkaloid/hydrolysis point FYI and the nicotinic point key.",
  cite:"PCOL-Cholinergic-26s.pdf slide 14; transcript 10/5"},
 
-{id:"L09-019", lecture:"L09", prof:"Gottlieb", tier:"new", topic:"L09", sub:"dumb", skill:"apply",
+{id:"L09-019", lecture:"L09", prof:"Gottlieb", tier:"new", level:1, topic:"L09", sub:"dumb", skill:"apply",
  concept:"agonist-organ-effects", tags:[], source:"both",
  stem:"A muscarinic agonist is given systemically. Which effect is most likely?",
  options:[
@@ -261,7 +261,7 @@ QUESTIONS.push(
  quote:"We're gonna increase motilage in tone, so diarrhea, cramping, increased urination, uh, meiosis, which makes your pupil small, bradycardia, bronchial constriction, emesis, uh, secretion, salivation, lachrymation, uh, and, uh, stimulation of the CNS.",
  cite:"PCOL-Cholinergic-26s.pdf slide 13; transcript 10/5"},
 
-{id:"L09-020", lecture:"L09", prof:"Gottlieb", tier:"new", topic:"L09", sub:"dumb", skill:"apply",
+{id:"L09-020", lecture:"L09", prof:"Gottlieb", tier:"new", level:1, topic:"L09", sub:"dumb", skill:"apply",
  concept:"dumbbelss-select", tags:[], multi:true, source:"both",
  stem:"Which effects are expected after a muscarinic agonist such as bethanechol? Select all that apply.",
  options:[
@@ -275,7 +275,7 @@ QUESTIONS.push(
  quote:"So when we give an agonist, we're gonna produce what the dumbbells, right? We're gonna increase motilage in tone, so diarrhea, cramping, increased urination, uh, meiosis, which makes your pupil small, bradycardia",
  cite:"PCOL-Cholinergic-26s.pdf slide 13; slide 11; transcript 10/5"},
 
-{id:"L09-021", lecture:"L09", prof:"Gottlieb", tier:"new", topic:"L09", sub:"dumb", skill:"apply",
+{id:"L09-021", lecture:"L09", prof:"Gottlieb", tier:"new", level:1, topic:"L09", sub:"dumb", skill:"apply",
  concept:"pilocarpine-receptor-map", tags:[], source:"both",
  stem:"A patient taking pilocarpine vomits. Which receptor and G protein most likely mediate this effect?",
  options:[
@@ -288,7 +288,7 @@ QUESTIONS.push(
  note:"The transcript renders 'emesis' as 'MSS' in 'CNS M1s GQ MSS'; the slide reads 'CNS = M1 = Gq = Emesis'.",
  cite:"PCOL-Cholinergic-26s.pdf slide 14; transcript 10/5"},
 
-{id:"L09-022", lecture:"L09", prof:"Gottlieb", tier:"new", topic:"L09", sub:"dumb", skill:"apply",
+{id:"L09-022", lecture:"L09", prof:"Gottlieb", tier:"new", level:1, topic:"L09", sub:"dumb", skill:"apply",
  concept:"pilocarpine-heart-m2", tags:[], source:"both",
  stem:"Pilocarpine is given for dry mouth. What does it most likely do to the heart, and through which receptor?",
  options:[
@@ -300,7 +300,7 @@ QUESTIONS.push(
  quote:"So for example, if it's the heart, we get what? M2s, M2s G alpha I is inhibitory, so I get what? bradycardia. Your heart becomes much slower.",
  cite:"PCOL-Cholinergic-26s.pdf slide 14; slide 12; transcript 10/5"},
 
-{id:"L09-023", lecture:"L09", prof:"Gottlieb", tier:"new", topic:"L09", sub:"dumb", skill:"apply",
+{id:"L09-023", lecture:"L09", prof:"Gottlieb", tier:"new", level:1, topic:"L09", sub:"dumb", skill:"apply",
  concept:"agonist-hypotension-no", tags:[], source:"both",
  stem:"A muscarinic agonist lowers blood pressure. Which mechanism is responsible?",
  options:[
@@ -314,7 +314,7 @@ QUESTIONS.push(
  reading:[{"src":"Katzung 16e, Ch. 8","sec":"Organ System Effects — 3. Cardiovascular system","t":"Almost all vessels contain endothelial muscarinic receptors that mediate vasodilation, and these receptors are readily blocked by antimuscarinic drugs. The cardiovascular effects of administered direct-acting muscarinic agonists are easily prevented by atropine."}],
  cite:"PCOL-Cholinergic-26s.pdf slide 15; slide 13; slide 5; transcript 10/5"},
 
-{id:"L09-024", lecture:"L09", prof:"Gottlieb", tier:"new", topic:"L09", sub:"dumb", skill:"recall",
+{id:"L09-024", lecture:"L09", prof:"Gottlieb", tier:"new", level:1, topic:"L09", sub:"dumb", skill:"recall",
  concept:"agonist-adr-accommodation", tags:[], source:"both",
  stem:"A patient using a muscarinic agonist reports difficulty in visual accommodation. Which effect underlies this?",
  options:[
@@ -351,7 +351,7 @@ QUESTIONS.push(
  quote:"That one is really non-selective. That not only blocks all the muscarinics, but also histamine and serotonin receptors. So you're gonna have a much broader effect.",
  cite:"PCOL-Cholinergic-26s.pdf slide 17; transcript 10/5"},
 
-{id:"L09-027", lecture:"L09", prof:"Gottlieb", tier:"new", topic:"L09", sub:"atrop", skill:"apply",
+{id:"L09-027", lecture:"L09", prof:"Gottlieb", tier:"new", level:1, ladder:"atropine-poisoning", ladderName:"Atropine poisoning and physostigmine", topic:"L09", sub:"atrop", skill:"apply",
  concept:"atropine-toxicity", tags:[], multi:true, source:"both",
  stem:"A child eats berries of Atropa belladonna. Which findings are expected? Select all that apply.",
  options:[
@@ -366,7 +366,7 @@ QUESTIONS.push(
  reading:[{"src":"Katzung 16e, Ch. 8","sec":"Adverse Effects","t":"Atropine-poisoned individuals show dry mouth, mydriasis, tachycardia, hot and flushed skin, agitation and delirium, often with elevated body temperature. Infants and children are especially sensitive to the hyperthermic effects of atropine."}],
  cite:"PCOL-Cholinergic-26s.pdf slide 18; slide 19; transcript 10/5"},
 
-{id:"L09-028", lecture:"L09", prof:"Gottlieb", tier:"new", topic:"L09", sub:"atrop", skill:"apply",
+{id:"L09-028", lecture:"L09", prof:"Gottlieb", tier:"new", level:1, ladder:"carbachol-heart", ladderName:"Carbachol, atropine and the heart", topic:"L09", sub:"atrop", skill:"apply",
  concept:"atropine-heart-m2", tags:[], source:"both",
  stem:"Why does atropine increase heart rate?",
  options:[
@@ -392,7 +392,7 @@ QUESTIONS.push(
  note:"Dose: the slide gives 2–5 mg every 10–15 min; Katzung Ch. 8 gives 1–2 mg atropine sulfate IV every 5–15 minutes. He did not give a dose in the audio, so the dose is not tested.",
  cite:"PCOL-Cholinergic-26s.pdf slide 20; transcript 10/5"},
 
-{id:"L09-030", lecture:"L09", prof:"Gottlieb", tier:"new", topic:"L09", sub:"atrop", skill:"apply",
+{id:"L09-030", lecture:"L09", prof:"Gottlieb", tier:"new", level:3, ladder:"organophosphate", ladderName:"Organophosphate poisoning and its antidotes", topic:"L09", sub:"atrop", skill:"apply",
  concept:"organophosphate-atropine", tags:[], source:"both",
  stem:"A patient sprays an organophosphate insecticide on his food and arrives at the hospital with severe DUMBBELSS. Why is atropine given?",
  options:[
@@ -432,7 +432,7 @@ QUESTIONS.push(
  reading:[{"src":"Katzung 16e, Ch. 8","sec":"Organ System Effects — 1. Central nervous system","t":"Parkinsonian tremor and rigidity seem to result from a relative excess of cholinergic activity because of a deficiency of dopaminergic activity in the basal ganglia–striatum system. Combining an antimuscarinic agent with levodopa can sometimes give more effective therapy than either drug alone."}],
  cite:"PCOL-Cholinergic-26s.pdf slide 25; transcript 10/5"},
 
-{id:"L09-033", lecture:"L09", prof:"Gottlieb", tier:"new", topic:"L09", sub:"uses", skill:"apply",
+{id:"L09-033", lecture:"L09", prof:"Gottlieb", tier:"new", level:1, topic:"L09", sub:"uses", skill:"apply",
  concept:"tropicamide-mydriasis", tags:[], source:"both",
  stem:"Tropicamide drops are placed in the eye before an exam. Why does the pupil dilate?",
  options:[
@@ -471,7 +471,7 @@ QUESTIONS.push(
  reading:[{"src":"Katzung 16e, Ch. 8","sec":"Therapeutic Applications — C. Respiratory Disorders","t":"Ipratropium, tiotropium, aclidinium and umeclidinium are synthetic atropine analogs used by inhalation in COPD, alone or with a long-acting β agonist. Tiotropium and umeclidinium can be given once daily because they dissociate slowly from M3 receptors; aclidinium is given twice daily."}],
  cite:"PCOL-Cholinergic-26s.pdf slide 28; transcript 10/5"},
 
-{id:"L09-036", lecture:"L09", prof:"Gottlieb", tier:"new", topic:"L09", sub:"uses", skill:"apply",
+{id:"L09-036", lecture:"L09", prof:"Gottlieb", tier:"new", level:1, topic:"L09", sub:"uses", skill:"apply",
  concept:"copd-rationale", tags:[], source:"both",
  stem:"Why does an inhaled muscarinic antagonist relieve airflow obstruction in chronic obstructive pulmonary disease (COPD)?",
  options:[
@@ -509,7 +509,7 @@ QUESTIONS.push(
  note:"Exam drugs are oxybutynin, trospium and solifenacin. One deck slide ranks CNS effects oxybutynin (M1 & M3) > tolterodine, fesoterodine (M1 & M3) > solifenacin, darifenacin, trospium (M3); in the audio he ranks only oxybutynin (top, least selective) and Vesicare (bottom, most selective) and does not place trospium. Katzung calls trospium nonselective. Trospium's rank is not keyed.",
  cite:"PCOL-Cholinergic-26s.pdf slide 30; transcript 10/5"},
 
-{id:"L09-039", lecture:"L09", prof:"Gottlieb", tier:"new", topic:"L09", sub:"bladder", skill:"recall",
+{id:"L09-039", lecture:"L09", prof:"Gottlieb", tier:"new", level:1, topic:"L09", sub:"bladder", skill:"recall",
  concept:"oab-xerostomia-m3", tags:[], source:"both",
  stem:"Which adverse effects occur with all the overactive bladder antimuscarinics, and through which receptor?",
  options:[
@@ -522,7 +522,7 @@ QUESTIONS.push(
  note:"The student drug list says solifenacin, darifenacin and trospium are least likely to cause anti-DUMBBELSS. In the audio he agrees that the more M3-selective drug (Vesicare) has fewer anti-DUMBBELSS effects at therapeutic doses, but says all are dose-dependent: enough of any of them gives all the anti-DUMBBELSS.",
  cite:"PCOL-Cholinergic-26s.pdf slide 30; transcript 10/5"},
 
-{id:"L09-040", lecture:"L09", prof:"Gottlieb", tier:"new", topic:"L09", sub:"bladder", skill:"apply",
+{id:"L09-040", lecture:"L09", prof:"Gottlieb", tier:"new", level:1, topic:"L09", sub:"bladder", skill:"apply",
  concept:"anti-dumbbelss-effects", tags:[], multi:true, source:"both",
  stem:"Which pharmacological effects are expected from a muscarinic antagonist? Select all that apply.",
  options:[
@@ -536,7 +536,7 @@ QUESTIONS.push(
  quote:"The anti-dumbbells, if it is for diarrhea, you get constipation. You for urination, you can't pee. Meiosis, you get the midriasis. Your pupils dilate, instead of getting the bronchial constriction, you get bronchial dilation.",
  cite:"PCOL-Cholinergic-26s.pdf slide 32; transcript 10/5"},
 
-{id:"L09-042", lecture:"L09", prof:"Gottlieb", tier:"new", topic:"L09", sub:"dumb", skill:"apply",
+{id:"L09-042", lecture:"L09", prof:"Gottlieb", tier:"new", level:1, topic:"L09", sub:"dumb", skill:"apply",
  concept:"cholinergic-overdose-not-occur", tags:["variant"], source:"both",
  stem:"If one overdoses on a cholinergic agonist, which of the following symptoms would NOT occur?",
  options:[
@@ -550,7 +550,7 @@ QUESTIONS.push(
  note:"Not this year's poll. This year's 10/5 poll asked which symptom is most likely to occur (Diarrhea / Can't urinate / Miosis / Bradycardia / All of the above) and he keyed all of the above with the exception of B, can't urinate; he then said, \"Maybe last year was which of these would not occur and that was the right answer\". This item asks that NOT version, with decreased urination (can't urinate) as the answer.",
  cite:"PCOL-Cholinergic-26s.pdf slide 13; transcript 10/5 (last year's version of the 10/5 poll)"},
 
-{id:"L09-045", lecture:"L09", prof:"Gottlieb", tier:"new", topic:"L09", sub:"dumb", skill:"apply",
+{id:"L09-045", lecture:"L09", prof:"Gottlieb", tier:"new", level:1, topic:"L09", sub:"dumb", skill:"apply",
  concept:"agonist-asthma-contraindication", tags:["in-class"], source:"both",
  stem:"Which patient would be contraindicated to receive a muscarinic agonist?",
  options:[
@@ -586,7 +586,7 @@ QUESTIONS.push(
  quote:"Now if we have to guess, why do you think a D2 is going to be copper 2? Remember, the two alpha 2s are G alpha I, M2s or G alphaI, D2, G alpha I, right? So, most of the chews, not all of them, but a lot of them are alpha I. So, they're gonna be inhibitory.",
  cite:"PCOL-Cholinergic-26s.pdf slide 25; transcript 10/5"},
 
-{id:"L09-048", lecture:"L09", prof:"Gottlieb", tier:"new", topic:"L09", sub:"bladder", skill:"apply",
+{id:"L09-048", lecture:"L09", prof:"Gottlieb", tier:"new", level:1, topic:"L09", sub:"bladder", skill:"apply",
  concept:"oxybutynin-m1-sedation", tags:["in-class"], source:"both",
  stem:"Oxybutynin blocks M1 as well as M3 receptors. Which effect follows from the M1 blockade?",
  options:[
@@ -610,7 +610,7 @@ QUESTIONS.push(
  quote:"Our prototypical agent over here is gonna be atropine. So, any drug that has a trope in it, atropine, tiotropium, ipratropium, is gonna be what? an antagonist like atropine, right?",
  cite:"PCOL-Cholinergic-26s.pdf slides 17, 25, 28, 29; transcript 10/5"},
 
-{id:"L09-050", lecture:"L09", prof:"Gottlieb", tier:"new", topic:"L09", sub:"atrop", skill:"apply",
+{id:"L09-050", lecture:"L09", prof:"Gottlieb", tier:"new", level:1, topic:"L09", sub:"atrop", skill:"apply",
  concept:"dramamine-anticholinergic", tags:["in-class"], source:"transcript",
  stem:"Dramamine, used for nausea and motion sickness, blocks muscarinic and some histamine receptors. A patient taking it to fall asleep reports constipation. Which explains the constipation?",
  options:[
@@ -647,7 +647,7 @@ QUESTIONS.push(
  quote:"So what I have done for here is rank it up for you, the level of non-selectivity. The ones on the top are very non-selective, as the one in the bottom, like VESIcare is more selective than M3, less anti-dumbbell side effects, OK? But all those dependent, right? If I give enough of VESIcare, I'm gonna get all the anti-dumbbells.",
  cite:"PCOL-Cholinergic-26s.pdf slides 29–30; transcript 10/5"},
 
-{id:"L09-053", lecture:"L09", prof:"Gottlieb", tier:"new", topic:"L09", sub:"atrop", skill:"apply",
+{id:"L09-053", lecture:"L09", prof:"Gottlieb", tier:"new", level:1, topic:"L09", sub:"atrop", skill:"apply",
  concept:"scopolamine-side-effects", tags:[], multi:true, source:"both",
  stem:"A traveler takes scopolamine to prevent vomiting from motion sickness. Which effects are also expected? Select all that apply.",
  options:[
@@ -661,7 +661,7 @@ QUESTIONS.push(
  quote:"So the goal over here is to block the emesis, the vomiting, right? But you can't avoid the other dumbbells. You're still gonna get the constipation. The inability to urinate, the dry mouth, and the other components.",
  cite:"PCOL-Cholinergic-26s.pdf slide 24; transcript 10/5"},
 
-{id:"L09-054", lecture:"L09", prof:"Gottlieb", tier:"new", topic:"L09", sub:"agon", skill:"apply",
+{id:"L09-054", lecture:"L09", prof:"Gottlieb", tier:"new", level:3, ladder:"bladder-m3", ladderName:"The bladder M3: agonist, antimuscarinic and reversal", topic:"L09", sub:"agon", skill:"apply",
  concept:"agonist-reversible-outcompete", tags:["exam-cue"], source:"both",
  stem:"A patient overdoses on bethanechol. Why can a muscarinic antagonist reverse the effects?",
  options:[
@@ -671,5 +671,46 @@ QUESTIONS.push(
   {t:"Bethanechol acts at nicotinic receptors", correct:false, why:"Bethanechol binds only muscarinic receptors."}],
  teach:"All the muscarinic agonists are reversible, so they are competitive: they bind and come off. In an overdose, the opposite drug (a muscarinic antagonist such as atropine) can outcompete them at the receptor. Atropine also treats muscarinic agonist overdose with bradycardia or atrioventricular nodal block.",
  quote:"They're all reversible, so they're all competitive, they're gonna bind, and they're gonna come off. So if we have an overdose, we can always give the opposite to try to outcompete them, OK?",
- cite:"PCOL-Cholinergic-26s.pdf slide 11; slide 20; transcript 10/5"}
+ cite:"PCOL-Cholinergic-26s.pdf slide 11; slide 20; transcript 10/5"},
+
+/* ---------------- Ladder rungs (Tier 2): two cholinergic drugs together (10/6 recap) ---------------- */
+{id:"L09-055", lecture:"L09", prof:"Gottlieb", tier:"new", level:2, ladder:"bladder-m3", ladderName:"The bladder M3: agonist, antimuscarinic and reversal", topic:"L09", sub:"bladder", skill:"apply",
+ concept:"agonist-antagonist-negative-ddi", tags:["ddi"], source:"both",
+ stem:"A patient takes bethanechol, a muscarinic agonist, to help the bladder empty. Another prescriber adds oxybutynin, a muscarinic antagonist, for urgency. What is the most likely result at the bladder?",
+ options:[
+  {t:"Oxybutynin outcompetes bethanechol; emptying is lost", correct:true, why:"Both bind bladder M3 reversibly; the antagonist outcompetes the agonist, so bethanechol's squeeze on the bladder is defeated (a negative drug–drug interaction)."},
+  {t:"The two add up; urination increases further", correct:false, why:"Effects add up when two agonists (or an agonist and a cholinesterase inhibitor) are combined; an antagonist works against the agonist."},
+  {t:"No change; the two drugs act on different receptors", correct:false, why:"Both act on the same receptor, the M3 on bladder smooth muscle."},
+  {t:"Oxybutynin blocks the breakdown of bethanechol", correct:false, why:"Oxybutynin is a receptor antagonist; it does not act on any enzyme."},
+  {t:"Bethanechol binds covalently, so oxybutynin cannot act", correct:false, why:"The muscarinic agonists are reversible and competitive, not covalent."}],
+ teach:"Bethanechol activates M3 on the bladder (Gq, more Ca++), squeezing it and increasing urination; oxybutynin blocks the same M3 to relax the bladder and decrease urgency, frequency and leakage. Both are reversible, so they compete for the receptor. Adding an antagonist to an agonist outcompetes it and defeats its purpose: a negative drug–drug interaction. Adding a second agonist or a cholinesterase inhibitor is the opposite case: more DUMBBELSS.",
+ quote:"What would be a negative drug-drug interaction? If you add an antagonist to outcompete it, so you're defeating the purpose. So the drug-drug interaction can be negative or positive, right? Too much of a good thing, not enough of what I need.",
+ note:"His worked example of the negative drug–drug interaction (10/6 recap) was carbachol with an antagonist; this item applies the same rule to bethanechol and oxybutynin, the bladder agonist and antagonist on the drug list.",
+ cite:"PCOL-Cholinergic-26s.pdf slides 11, 13, 29; transcript 10/6"},
+
+{id:"L09-056", lecture:"L09", prof:"Gottlieb", tier:"new", level:2, ladder:"cholinesterase-inhibitor", ladderName:"Cholinesterase inhibitors: DUMBBELSS, add-ons and atropine", topic:"L09", sub:"dumb", skill:"apply",
+ concept:"agonist-plus-ache-inhibitor-ddi", tags:["ddi"], source:"both",
+ stem:"A patient receiving carbachol is also given rivastigmine, an acetylcholinesterase inhibitor. Which outcome is most likely?",
+ options:[
+  {t:"More acetylcholine on board: more DUMBBELSS", correct:true, why:"Carbachol already activates muscarinic receptors; rivastigmine stops the breakdown of acetylcholine, so the two add up to more DUMBBELSS."},
+  {t:"Rivastigmine outcompetes carbachol at M3", correct:false, why:"Rivastigmine binds the enzyme, not the muscarinic receptor; it raises acetylcholine rather than blocking the receptor."},
+  {t:"Anti-DUMBBELSS from the two drugs together", correct:false, why:"Anti-DUMBBELSS comes from muscarinic antagonists such as atropine; both drugs here push the system the same way."},
+  {t:"No interaction; they act at different sites", correct:false, why:"Different targets, same end: both lead to more muscarinic activation, so the effects add up."},
+  {t:"Rivastigmine speeds the breakdown of carbachol", correct:false, why:"Rivastigmine inhibits the enzyme; it does not speed any breakdown."}],
+ teach:"Carbachol is a non-selective muscarinic agonist (M1, M2, M3), so its effect is DUMBBELSS and its side effect is too much DUMBBELSS. A cholinesterase inhibitor such as rivastigmine blocks the breakdown of acetylcholine, so even more acetylcholine is on board. Together they give a positive (additive) drug–drug interaction: a lot of DUMBBELSS, which is unpleasant for the patient.",
+ quote:"What would be a possible drug-drug interaction? Well, if add another agonist, now you're really gonna get a lot of dumbbells, right? Or if we add one of those acetylcholesterase enzyme antagonists, because now we even have more acetylcholine on board, that's gonna be bad. That's gonna be very unpleasant.",
+ cite:"PCOL-Cholinergic-26s.pdf slides 11, 16; PCOL-NMJ_PCOL_2026s_pptx.pdf slides 40–41; transcript 10/6"},
+
+{id:"L09-057", lecture:"L09", prof:"Gottlieb", tier:"new", level:2, ladder:"carbachol-heart", ladderName:"Carbachol, atropine and the heart", topic:"L09", sub:"atrop", skill:"apply",
+ concept:"carbachol-atropine-heart-ddi", tags:["ddi"], source:"both",
+ stem:"A patient receiving carbachol also receives atropine. What happens to carbachol's effect on heart rate?",
+ options:[
+  {t:"Atropine outcompetes it at M2; less bradycardia", correct:true, why:"Both are reversible at the cardiac M2 receptor; the antagonist outcompetes the agonist, so carbachol's bradycardia is blunted (a negative drug–drug interaction)."},
+  {t:"The two add up; bradycardia is deeper", correct:false, why:"Effects add up only when both drugs push the same way; atropine is the opposite drug."},
+  {t:"Atropine blocks carbachol's breakdown; more bradycardia", correct:false, why:"Atropine is a receptor antagonist; it does not act on any enzyme."},
+  {t:"No change; atropine acts only at M3", correct:false, why:"Atropine is non-selective: it blocks M1, M2 and M3, including M2 in the heart."},
+  {t:"Atropine blocks nicotinic receptors on the heart", correct:false, why:"Atropine has affinity only for muscarinic receptors; the heart's receptor here is M2."}],
+ teach:"In the heart, carbachol acts on M2 (Gi), which slows the heart: bradycardia. Atropine is a non-selective, reversible muscarinic antagonist that blocks M2, and with the parasympathetic tone removed the heart rate goes up. Given together, the antagonist outcompetes the agonist and defeats its purpose, a negative drug–drug interaction; the same opposition is why atropine treats a muscarinic agonist overdose with bradycardia.",
+ quote:"What would be a negative drug-drug interaction? If you add an antagonist to outcompete it, so you're defeating the purpose. So the drug-drug interaction can be negative or positive, right? Too much of a good thing, not enough of what I need.",
+ cite:"PCOL-Cholinergic-26s.pdf slides 11, 19–20; transcript 10/6"}
 );

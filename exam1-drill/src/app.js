@@ -300,7 +300,7 @@ function vTopics() {
     });
     return c + '</div>';
   };
-  const tiered = pool.filter(q => q.level);
+  const tiered = pool.filter(q => q.level && !q.lowYield);
   if (tiered.length) {
     const ladders = [...new Set(tiered.filter(q => q.ladder).map(q => q.ladder))].filter(k => ladderQs(k).length > 1);
     h += `<div class="card"><b>Tiers, as he described them</b><p class="sub" style="margin:4px 0 8px">Tier 1: predict what a receptor does. Tier 2: two drugs together, the good and bad interactions. Tier 3: reverse a drug's effect. "A tier 3 question would require knowledge of tier 2 and 1."</p>
@@ -320,7 +320,7 @@ function vTopics() {
   const nok = $('#newsok'); if (nok) nok.onclick = () => { store.set(NEWS_KEY, newsId(BUILD.changelog[0])); const c = $('#news'); if (c) c.remove(); };
   const nall = $('#newsall'); if (nall) nall.onclick = () => go('data');
   $('#all').onclick = () => startQuiz(shuffle(pool), 'All questions, one pass', 'pass');
-  document.querySelectorAll('[data-tier]').forEach(b => b.onclick = () => startQuiz(pool.filter(q => q.level === +b.dataset.tier), 'Tier ' + b.dataset.tier, 'sr'));
+  document.querySelectorAll('[data-tier]').forEach(b => b.onclick = () => startQuiz(pool.filter(q => q.level === +b.dataset.tier && !q.lowYield), 'Tier ' + b.dataset.tier, 'sr'));
   const ld = $('#ladders'); if (ld) ld.onclick = () => {
     // every ladder in turn, each from Tier 1 up
     const keys = shuffle([...new Set(pool.filter(q => q.ladder).map(q => q.ladder))].filter(k => ladderQs(k).length > 1));

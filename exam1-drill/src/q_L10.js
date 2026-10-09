@@ -94,7 +94,7 @@ QUESTIONS.push(
  quote:"The higher the afterload is, the work, the more work my heart has to do to open that valve and squeeze it out. So that's going to decrease my cardiac output. ... At the same token, if we give vasodilators ... now I have to work less to open the valve and I have more energy to squeeze the blood out, thus increasing the cardiac output.",
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slide 6; transcript 10/6"},
 
-{id:"L10-007", lecture:"L10", prof:"Gottlieb", tier:"new", topic:"L10", sub:"map", skill:"tell",
+{id:"L10-007", lecture:"L10", prof:"Gottlieb", tier:"new", level:1, topic:"L10", sub:"map", skill:"tell",
  concept:"cv-receptor-roles", tags:[], source:"both",
  stem:"Which pairing of adrenergic receptor and cardiovascular role is CORRECT?",
  options:[
@@ -107,7 +107,7 @@ QUESTIONS.push(
  quote:"So in the heart, within the heart, the beta ones run the show. Those are the receptors that are going to affect how fast your heart is beating and how strongly it is contracting in the arteries. It's going to be our alpha 1 adrenergic receptors.",
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 4–5; transcript 10/6"},
 
-{id:"L10-008", lecture:"L10", prof:"Gottlieb", tier:"new", topic:"L10", sub:"map", skill:"apply",
+{id:"L10-008", lecture:"L10", prof:"Gottlieb", tier:"new", level:1, topic:"L10", sub:"map", skill:"apply",
  concept:"venous-alpha1-preload", tags:[], source:"both",
  stem:"Sympathetic activity to the α1 receptors in the veins increases. Which change is most likely?",
  options:[
@@ -119,7 +119,7 @@ QUESTIONS.push(
  quote:"So, as I squeeze the veins, depending on how much tone of my sympathetics are activating those alpha-1 in the veins, that's gonna determine how much blood returns to the heart and how much blood comes out of the heart.",
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slide 5; transcript 10/6"},
 
-{id:"L10-009", lecture:"L10", prof:"Gottlieb", tier:"new", topic:"L10", sub:"map", skill:"recall",
+{id:"L10-009", lecture:"L10", prof:"Gottlieb", tier:"new", level:1, topic:"L10", sub:"map", skill:"recall",
  concept:"beta1-kidney-renin", tags:[], source:"both",
  stem:"Activation of β1 receptors in the kidney mainly increases the production of which substance?",
  options:[
@@ -144,7 +144,7 @@ QUESTIONS.push(
  quote:"Some drugs are going to be more selective to one component versus the other, but the goal over here is for us to be able to predict what component of the aminote pressure formula is being affected by our drugs.",
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slide 7; transcript 10/6"},
 
-{id:"L10-011", lecture:"L10", prof:"Gottlieb", tier:"new", topic:"L10", sub:"map", skill:"apply",
+{id:"L10-011", lecture:"L10", prof:"Gottlieb", tier:"new", level:1, topic:"L10", sub:"map", skill:"apply",
  concept:"carvedilol-map", tags:[], source:"both",
  stem:"Carvedilol blocks β1, β2 and α1 receptors. Which describes its effect on the mean arterial pressure (MAP) equation?",
  options:[
@@ -168,7 +168,7 @@ QUESTIONS.push(
  quote:"And there's a rule that we need to follow, and the rule is blood blood pressure rules. What do I mean by that? If my blood pressure goes down, heart rate goes up. If my blood pressure goes up, heart rate goes down.",
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slide 5; transcript 10/6"},
 
-{id:"L10-013", lecture:"L10", prof:"Gottlieb", tier:"new", topic:"L10", sub:"map", skill:"recall",
+{id:"L10-013", lecture:"L10", prof:"Gottlieb", tier:"new", level:1, topic:"L10", sub:"map", skill:"recall",
  concept:"beta1-rate-of-relaxation", tags:[], source:"both",
  stem:"Besides heart rate and contractility, which cardiac function does β1 activation increase?",
  options:[
@@ -273,7 +273,7 @@ QUESTIONS.push(
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slide 9; transcript 10/6"},
 
 /* ---------------- Cocaine, amphetamines (slides 10–12) ---------------- */
-{id:"L10-021", lecture:"L10", prof:"Gottlieb", tier:"new", topic:"L10", sub:"indirect", skill:"apply",
+{id:"L10-021", lecture:"L10", prof:"Gottlieb", tier:"new", level:1, topic:"L10", sub:"indirect", skill:"apply",
  concept:"cocaine-nasal-vasoconstriction", tags:["in-class"], source:"both",
  stem:"A person who snorts cocaine has repeated nosebleeds and damage to the nasal septum. Which mechanism explains it?",
  options:[
@@ -288,7 +288,7 @@ QUESTIONS.push(
  reading:[{"src":"Katzung 16e, Ch. 9","sec":"The Norepinephrine Transporter","t":"Blocking the norepinephrine transporter, for example by the non-selective psychostimulant cocaine, impairs the main route by which norepinephrine is removed from the synapse, so synaptic norepinephrine levels rise and adrenergic receptors are stimulated more."}],
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slide 10; transcript 10/6"},
 
-{id:"L10-022", lecture:"L10", prof:"Gottlieb", tier:"new", topic:"L10", sub:"indirect", skill:"apply",
+{id:"L10-022", lecture:"L10", prof:"Gottlieb", tier:"new", level:2, topic:"L10", sub:"indirect", skill:"apply",
  concept:"cocaine-lidocaine-local", tags:[], source:"transcript", lowYield:true,
  stem:"Cocaine or another strong vasoconstrictor is sometimes added to lidocaine when a cut is sutured. What is the rationale?",
  options:[
@@ -327,7 +327,7 @@ QUESTIONS.push(
  quote:"You also have a secondary effect of being a very weaker inhibitor of the reuptake and the enzyme that breaks down catecholamine. So it has multiple mechanisms of action. The primary is releasing of norepinephrine with a very weak to moderate inhibition of the reuptake as well as the breakdown of catecholamines.",
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slide 11; transcript 10/6"},
 
-{id:"L10-025", lecture:"L10", prof:"Gottlieb", tier:"new", topic:"L10", sub:"indirect", skill:"apply", multi:true,
+{id:"L10-025", lecture:"L10", prof:"Gottlieb", tier:"new", level:1, topic:"L10", sub:"indirect", skill:"apply", multi:true,
  concept:"stimulant-effects", tags:[], source:"both",
  stem:"A patient takes increasing doses of dextroamphetamine. Which effects are expected? Select all that apply.",
  options:[
@@ -340,7 +340,7 @@ QUESTIONS.push(
  quote:"So these drugs are gonna increase the sympathetic outflow as a side effect. So it may increase your blood pressure, increase your, your heart rate, it cause tremors, right, because you're activating those beta 2s",
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slide 12; transcript 10/6"},
 
-{id:"L10-026", lecture:"L10", prof:"Gottlieb", tier:"new", topic:"L10", sub:"indirect", skill:"apply",
+{id:"L10-026", lecture:"L10", prof:"Gottlieb", tier:"new", level:2, topic:"L10", sub:"indirect", skill:"apply",
  concept:"stimulant-caffeine-ddi", tags:[], source:"transcript",
  stem:"A student taking a prescribed stimulant drinks several caffeinated energy shots while studying overnight. Which drug–drug interaction is most likely?",
  options:[
@@ -390,7 +390,7 @@ QUESTIONS.push(
  quote:"This drug is an irreversible antagonist, which means is, once you bind that enzyme, your body has to make new ones. That one is, is toasted, right?",
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slide 14; transcript 10/6"},
 
-{id:"L10-030", lecture:"L10", prof:"Gottlieb", tier:"new", topic:"L10", sub:"mao", skill:"apply",
+{id:"L10-030", lecture:"L10", prof:"Gottlieb", tier:"new", level:2, ladder:"mao-inhibitor", ladderName:"MAO inhibitor, tyramine and the hypertensive crisis", topic:"L10", sub:"mao", skill:"apply",
  concept:"cheese-effect-crisis", tags:[], source:"both",
  stem:"A patient taking phenelzine eats aged cheese and drinks wine at a party. Which is most likely?",
  options:[
@@ -404,7 +404,7 @@ QUESTIONS.push(
  reading:[{"src":"Katzung 16e, Ch. 9","sec":"Specific Sympathomimetic Drugs — Tyramine","t":"In patients treated with MAO inhibitors, particularly those inhibiting the MAO-A isoform, the sympathomimetic effect of tyramine can be greatly intensified, with marked increases in blood pressure. This follows from greater bioavailability of tyramine and larger neuronal stores of catecholamines, so these patients should avoid tyramine-containing foods such as aged cheese, cured meats and pickled food."}],
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slide 15; transcript 10/6"},
 
-{id:"L10-031", lecture:"L10", prof:"Gottlieb", tier:"new", topic:"L10", sub:"mao", skill:"tell",
+{id:"L10-031", lecture:"L10", prof:"Gottlieb", tier:"new", level:2, ladder:"mao-inhibitor", ladderName:"MAO inhibitor, tyramine and the hypertensive crisis", topic:"L10", sub:"mao", skill:"tell",
  concept:"no-cheese-effect-mao-b", tags:[], source:"both",
  stem:"Which monoamine oxidase inhibitor carries no “cheese effect” with dietary tyramine?",
  options:[
@@ -416,7 +416,7 @@ QUESTIONS.push(
  quote:"So, if we need to choose one and your patient, money is not an issue, I'd rather pick the selective MOAB because that only blocks in the brain and you don't have to worry about the cheese effect associated with your patients, OK?",
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slide 15; transcript 10/6"},
 
-{id:"L10-032", lecture:"L10", prof:"Gottlieb", tier:"new", topic:"L10", sub:"mao", skill:"apply",
+{id:"L10-032", lecture:"L10", prof:"Gottlieb", tier:"new", level:1, ladder:"mao-inhibitor", ladderName:"MAO inhibitor, tyramine and the hypertensive crisis", topic:"L10", sub:"mao", skill:"apply",
  concept:"maoi-more-ne-stored", tags:[], source:"both",
  stem:"Why does blocking monoamine oxidase (MAO) increase the amount of norepinephrine released?",
  options:[
@@ -443,7 +443,7 @@ QUESTIONS.push(
  quote:"So, the way I remember when I was in school is I see and smell bloody urine, right? ... So think about, uh, those sites as our major sites of action.",
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 16–17; transcript 10/6"},
 
-{id:"L10-034", lecture:"L10", prof:"Gottlieb", tier:"new", topic:"L10", sub:"a1", skill:"apply",
+{id:"L10-034", lecture:"L10", prof:"Gottlieb", tier:"new", level:1, topic:"L10", sub:"a1", skill:"apply",
  concept:"phenylephrine-eye", tags:[], source:"both",
  stem:"Phenylephrine drops are placed in the eye. Which effect is most likely?",
  options:[
@@ -455,7 +455,7 @@ QUESTIONS.push(
  quote:"So if activate the alpha 1 is in the eyes, they are in these transverse fibers, so we're going to pull them apart by constricting and you're going to get pupil dilation, also known as madriasis, right?",
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slide 18; transcript 10/6"},
 
-{id:"L10-035", lecture:"L10", prof:"Gottlieb", tier:"new", topic:"L10", sub:"a1", skill:"apply",
+{id:"L10-035", lecture:"L10", prof:"Gottlieb", tier:"new", level:1, topic:"L10", sub:"a1", skill:"apply",
  concept:"phenylephrine-preload-afterload", tags:[], source:"both",
  stem:"Phenylephrine reaches the systemic arteries and veins. Which change is most likely?",
  options:[
@@ -531,7 +531,7 @@ QUESTIONS.push(
  quote:"So clonidine is an agonist that activates the inhibitory pathway. So he's behaving like an antagonist, but he's actually an agonist.",
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 21, 23–24; transcript 10/6"},
 
-{id:"L10-041", lecture:"L10", prof:"Gottlieb", tier:"new", topic:"L10", sub:"a2", skill:"apply", multi:true,
+{id:"L10-041", lecture:"L10", prof:"Gottlieb", tier:"new", level:1, ladder:"clonidine", ladderName:"Clonidine: α2, an add-on, and stopping it", topic:"L10", sub:"a2", skill:"apply", multi:true,
  concept:"clonidine-effects", tags:[], source:"both",
  stem:"Which effects does clonidine produce? Select all that apply.",
  options:[
@@ -546,7 +546,7 @@ QUESTIONS.push(
  reading:[{"src":"Katzung 16e, Ch. 9","sec":"Cardiovascular System — Blood Vessels","t":"Selective α2 agonists such as clonidine act in the central nervous system to reduce sympathetic activity and are therefore called central sympatholytics; they are used to treat hypertension."}],
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 23–24; transcript 10/6"},
 
-{id:"L10-042", lecture:"L10", prof:"Gottlieb", tier:"new", topic:"L10", sub:"a2", skill:"apply",
+{id:"L10-042", lecture:"L10", prof:"Gottlieb", tier:"new", level:1, topic:"L10", sub:"a2", skill:"apply",
  concept:"clonidine-dry-mouth", tags:["in-class"], source:"both",
  stem:"Which is one of the major complaints of patients taking clonidine?",
  options:[
@@ -560,7 +560,7 @@ QUESTIONS.push(
  reading:[{"src":"Katzung 16e, Ch. 9","sec":"Other Organ Systems","t":"The salivary glands contain adrenoceptors that regulate secretion of amylase and water, and α2 agonists such as clonidine produce dry mouth; central nervous system effects are likely responsible for this side effect."}],
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slide 26; transcript 10/6"},
 
-{id:"L10-043", lecture:"L10", prof:"Gottlieb", tier:"new", topic:"L10", sub:"a2", skill:"apply",
+{id:"L10-043", lecture:"L10", prof:"Gottlieb", tier:"new", level:3, ladder:"clonidine", ladderName:"Clonidine: α2, an add-on, and stopping it", topic:"L10", sub:"a2", skill:"apply",
  concept:"clonidine-withdrawal-crisis", tags:["exam-cue"], source:"both",
  stem:"A patient stops clonidine abruptly after months of use. Which is most likely, and why?",
  options:[
@@ -572,7 +572,7 @@ QUESTIONS.push(
  quote:"We're gonna make more receptors, right? We're gonna cause up regulation. So what is the one education point that you have to make to your patients? You got to wean yourself off because if you go cold turkey, you got all these receptors, now norepinephrine is flowing like there's no tomorrow, and you go into a hypertensive crisis, right?",
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slide 26; transcript 10/6"},
 
-{id:"L10-044", lecture:"L10", prof:"Gottlieb", tier:"new", topic:"L10", sub:"a2", skill:"apply",
+{id:"L10-044", lecture:"L10", prof:"Gottlieb", tier:"new", level:1, topic:"L10", sub:"a2", skill:"apply",
  concept:"clonidine-constipation", tags:["in-class"], source:"both",
  stem:"Why does clonidine cause constipation?",
  options:[
@@ -613,7 +613,7 @@ QUESTIONS.push(
  note:"“exam one” in the quote is a slip for Exam 2, the exam this lecture belongs to.",
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 17, 22; transcript 10/6"},
 
-{id:"L10-047", lecture:"L10", prof:"Gottlieb", tier:"new", topic:"L10", sub:"a2", skill:"apply",
+{id:"L10-047", lecture:"L10", prof:"Gottlieb", tier:"new", level:1, topic:"L10", sub:"a2", skill:"apply",
  concept:"clonidine-everywhere", tags:["in-class"], source:"both",
  stem:"How can clonidine lower blood pressure and cause dry mouth at the same time?",
  options:[
@@ -654,7 +654,7 @@ QUESTIONS.push(
  reading:[{"src":"Katzung 16e, Ch. 10","sec":"Specific Agents — Prazosin, terazosin, doxazosin","t":"Prazosin, terazosin and doxazosin are highly selective for α1 receptors. They dilate both arterial and venous smooth muscle, and smooth muscle in the prostate, by blocking α1 receptors; they are used as second-line treatment for hypertension and for urinary symptoms of benign prostatic hyperplasia."}],
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 27–28; transcript 10/6"},
 
-{id:"L10-050", lecture:"L10", prof:"Gottlieb", tier:"new", topic:"L10", sub:"a1ant", skill:"apply",
+{id:"L10-050", lecture:"L10", prof:"Gottlieb", tier:"new", level:1, topic:"L10", sub:"a1ant", skill:"apply",
  concept:"alpha1-block-vasodilation", tags:[], source:"both",
  stem:"How does blocking α1 receptors lower blood pressure in a patient with hypertension?",
  options:[
@@ -666,7 +666,7 @@ QUESTIONS.push(
  quote:"if I block it, norepinephrine can't bind to that receptor. As such, I have less GQ. If I have less GQ, I'm gonna have less calcium, and if I have less calcium, I have more vasodilation.",
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slide 29; transcript 10/6"},
 
-{id:"L10-051", lecture:"L10", prof:"Gottlieb", tier:"new", topic:"L10", sub:"a1ant", skill:"apply",
+{id:"L10-051", lecture:"L10", prof:"Gottlieb", tier:"new", level:1, topic:"L10", sub:"a1ant", skill:"apply",
  concept:"alpha1-block-vein-orthostatic", tags:["in-class"], source:"both",
  stem:"What would you think would be a side effect of taking a drug that antagonizes the alpha one receptor in the vein?",
  options:[
@@ -679,7 +679,7 @@ QUESTIONS.push(
  quote:"So if it's an alpha one antagonist in the veins, what that's gonna do to the vein, the venous tone? Is it gonna be constricted or relaxed? Relax. Relax. So if blood is, if your blood is pooling in my feet, what is not gonna go? It's not gonna go to the heart, it's not gonna go to the brain. So, you're gonna Fall off, right?",
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 29–30; transcript 10/6"},
 
-{id:"L10-052", lecture:"L10", prof:"Gottlieb", tier:"new", topic:"L10", sub:"a1ant", skill:"apply",
+{id:"L10-052", lecture:"L10", prof:"Gottlieb", tier:"new", level:1, ladder:"prazosin", ladderName:"Prazosin, norepinephrine and phenoxybenzamine", topic:"L10", sub:"a1ant", skill:"apply",
  concept:"alpha1-block-reflex-tachycardia", tags:["in-class"], source:"both",
  stem:"Prazosin dilates the resistance arteries. Which response follows through the baroreceptors?",
  options:[
@@ -719,7 +719,7 @@ QUESTIONS.push(
  quote:"So when you vasodilate those blood vessels, you increase the pressure in the head and you get the flushing and the headache associated with that. So one of the good general rules is if you are a vasodilator, most likely you're gonna get a headache for your patient, OK?",
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slide 30; transcript 10/6"},
 
-{id:"L10-055", lecture:"L10", prof:"Gottlieb", tier:"new", topic:"L10", sub:"a1ant", skill:"apply",
+{id:"L10-055", lecture:"L10", prof:"Gottlieb", tier:"new", level:1, topic:"L10", sub:"a1ant", skill:"apply",
  concept:"alpha1-antagonist-nose", tags:[], source:"both",
  stem:"What would an α1 antagonist do to nasal congestion?",
  options:[
@@ -770,7 +770,7 @@ QUESTIONS.push(
  quote:"Mirtazapine is our alpha-2 antagonist, but also can block H1s, it can block muscarinics, and it can block alpha-1s. So that's gonna be a fun drug to take, right?",
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 27, 31–32; transcript 10/6"},
 
-{id:"L10-059", lecture:"L10", prof:"Gottlieb", tier:"new", topic:"L10", sub:"mirt", skill:"apply",
+{id:"L10-059", lecture:"L10", prof:"Gottlieb", tier:"new", level:1, topic:"L10", sub:"mirt", skill:"apply",
  concept:"mirtazapine-sedation", tags:["in-class"], source:"both",
  stem:"Mirtazapine helps depressed patients who also have insomnia fall asleep. Which receptor blockade accounts for this?",
  options:[
@@ -792,5 +792,20 @@ QUESTIONS.push(
   {t:"Mirtazapine: activates α2 receptors", correct:false, why:"Mirtazapine is the α2 antagonist."}],
  teach:"Same receptor, opposite drugs. Clonidine (α2 agonist) activates the Gi pathway: less norepinephrine, less sympathetic (↓CNS). Mirtazapine (α2 antagonist) removes that brake: more norepinephrine, more sympathetic (↑CNS).",
  quote:"So if you think about the CNS, clonidine is going to activate the inhibitory pathway, I get less sympathetic, as mirtazapine is going to enhance the sympathetic.",
- cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slide 21; transcript 10/6"}
+ cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slide 21; transcript 10/6"},
+
+/* ---------------- Ladder rung (Tier 2): an α2 agonist added to a stimulant ---------------- */
+{id:"L10-061", lecture:"L10", prof:"Gottlieb", tier:"new", level:2, ladder:"clonidine", ladderName:"Clonidine: α2, an add-on, and stopping it", topic:"L10", sub:"a2", skill:"apply",
+ concept:"alpha2-agonist-plus-stimulant", tags:["ddi"], source:"both",
+ stem:"A boy with attention deficit hyperactivity disorder (ADHD) needs a high dose of methylphenidate and has lost his appetite. Guanfacine, an α2 agonist similar to clonidine, is added, and the methylphenidate dose is lowered. Why can the dose be lowered?",
+ options:[
+  {t:"The two drugs have an additive effect on attention", correct:true, why:"The α2 agonist adds to the stimulant, so attention is kept with less methylphenidate and less loss of appetite."},
+  {t:"Guanfacine blocks the norepinephrine transporter", correct:false, why:"Blocking the norepinephrine transporter (NET) is cocaine's mechanism; guanfacine is an α2 agonist."},
+  {t:"Guanfacine raises the release of norepinephrine", correct:false, why:"An α2 agonist acts on an inhibitory (Gi) receptor and suppresses norepinephrine release."},
+  {t:"Guanfacine slows the breakdown of methylphenidate", correct:false, why:"Guanfacine acts on the α2 receptor, not on how methylphenidate is broken down."},
+  {t:"Guanfacine is an α1 agonist that raises blood pressure", correct:false, why:"Guanfacine is an α2 agonist; like clonidine it lowers sympathetic tone."}],
+ teach:"Methylphenidate is a stimulant: it mainly releases norepinephrine and dopamine, which improves focus but decreases appetite. Clonidine and guanfacine are α2 agonists, and slide 22 lists both for ADHD. Adding guanfacine to the stimulant gave an additive effect, so the stimulant dose could come down and attention was kept without the loss of appetite: a good drug–drug interaction.",
+ quote:"He was in such a high dose of Ritalin that we had to lower the dose and add a clonidine, so we didn't really add, we add the Intuniv, which is a similar drug to it, so that way they have this additive effect and he could maintain his attention without affecting his appetite.",
+ note:"Taken from his own example on 10/6 (methylphenidate with guanfacine, which he called similar to clonidine). The -idine rule does not fit guanfacine; slide 22 lists it with the α2 agonists.",
+ cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 11–12, 22; transcript 10/6"}
 );

@@ -2,7 +2,7 @@ TOPICS.push({id:'PE2', name:'His Exam 2 polls (verbatim)', prof:'Gottlieb', lect
   subs:[{id:'verbatim', name:'His polls, word for word', cite:'PollEV’s Exam 2.pdf'},{id:'variant', name:'Same idea, different correct option', cite:'PollEV’s Exam 2.pdf'}]});
 QUESTIONS.push(
 /* ---------------- Poll 1: activation of the SNS ---------------- */
-{id:'PE2-001', lecture:'PE2', prof:'Gottlieb', tier:'new', topic:'PE2', sub:'verbatim', skill:'apply',
+{id:'PE2-001', lecture:'PE2', prof:'Gottlieb', tier:'new', level:1, topic:'PE2', sub:'verbatim', skill:'apply',
  concept:'sns-activation-salivation', tags:['poll','pollev'], source:'both',
  stem:'Activation of the SNS is most likely to evoke:',
  options:[
@@ -16,7 +16,7 @@ QUESTIONS.push(
  note:'In the 10/1 audio he does not read out a letter; he explains the key by pointing out that both systems cause salivation and that sympathetic activation retains (not excretes) sodium. Every other option is a parasympathetic effect or the opposite of a sympathetic effect.',
  cite:'PollEV’s Exam 2.pdf poll 1; transcript 10/1; Autonomic Nervous System.pdf slides 30, 35'},
 
-{id:'PE2-002', lecture:'PE2', prof:'Gottlieb', tier:'new', topic:'PE2', sub:'variant', skill:'apply',
+{id:'PE2-002', lecture:'PE2', prof:'Gottlieb', tier:'new', level:1, topic:'PE2', sub:'variant', skill:'apply',
  concept:'sns-activation-mydriasis', tags:['poll','pollev'], source:'both',
  stem:'Activation of the sympathetic nervous system (SNS) is most likely to evoke:',
  options:[
@@ -29,7 +29,7 @@ QUESTIONS.push(
  quote:'Uh, in the eye, we have the alpha 1, so we\'re gonna pull the eyes open, so we\'re gonna get madriasis or pupil dilation, OK.',
  cite:'PollEV’s Exam 2.pdf poll 1 (variant); transcript 10/1; Autonomic Nervous System.pdf slide 31'},
 
-{id:'PE2-003', lecture:'PE2', prof:'Gottlieb', tier:'new', topic:'PE2', sub:'variant', skill:'apply',
+{id:'PE2-003', lecture:'PE2', prof:'Gottlieb', tier:'new', level:1, topic:'PE2', sub:'variant', skill:'apply',
  concept:'sns-activation-na-retention', tags:['poll','pollev'], source:'both',
  stem:'Activation of the sympathetic nervous system (SNS) is most likely to evoke:',
  options:[
@@ -43,7 +43,7 @@ QUESTIONS.push(
  cite:'PollEV’s Exam 2.pdf poll 1 (variant); transcript 10/1; Autonomic Nervous System.pdf slides 31, 43'},
 
 /* ---------------- Poll 2: activation of the cholinergic system ---------------- */
-{id:'PE2-004', lecture:'PE2', prof:'Gottlieb', tier:'new', topic:'PE2', sub:'verbatim', skill:'apply',
+{id:'PE2-004', lecture:'PE2', prof:'Gottlieb', tier:'new', level:1, topic:'PE2', sub:'verbatim', skill:'apply',
  concept:'cholinergic-activation-diarrhea', tags:['poll','pollev'], source:'both',
  stem:'Activation of the cholinergic system will most likely produce which of the following?',
  options:[
@@ -57,7 +57,7 @@ QUESTIONS.push(
  note:'“Mydrasis” is his spelling in the poll (mydriasis, pupil dilation); kept as written.',
  cite:'PollEV’s Exam 2.pdf poll 2; transcript 10/1; Autonomic Nervous System.pdf slide 27'},
 
-{id:'PE2-005', lecture:'PE2', prof:'Gottlieb', tier:'new', topic:'PE2', sub:'variant', skill:'apply',
+{id:'PE2-005', lecture:'PE2', prof:'Gottlieb', tier:'new', level:1, topic:'PE2', sub:'variant', skill:'apply',
  concept:'cholinergic-activation-bradycardia', tags:['poll','pollev'], source:'both',
  stem:'Activation of the cholinergic system will most likely produce which of the following?',
  options:[
@@ -70,7 +70,7 @@ QUESTIONS.push(
  quote:'M2s are in the heart. That\'s our second stop. M2s are GI, not the gastrointestinal system, right? The G alpha I. Alpha I is for inhibitory, so it\'s going to cause what? Last camp, bradycardia, decreased contactile force.',
  cite:'PollEV’s Exam 2.pdf poll 2 (variant); transcript 9/30; Autonomic Nervous System.pdf slide 24'},
 
-{id:'PE2-006', lecture:'PE2', prof:'Gottlieb', tier:'new', topic:'PE2', sub:'variant', skill:'apply',
+{id:'PE2-006', lecture:'PE2', prof:'Gottlieb', tier:'new', level:1, topic:'PE2', sub:'variant', skill:'apply',
  concept:'cholinergic-blockade-dry-mouth', tags:['poll','pollev'], source:'both',
  stem:'Blocking the muscarinic receptors of the cholinergic system will most likely produce which of the following?',
  options:[
@@ -253,7 +253,7 @@ QUESTIONS.push(
  cite:'PollEV’s Exam 2.pdf poll 7; transcript 10/5; PCOL-NMJ_PCOL_2026s_pptx.pdf slide 19'},
 
 /* ---------------- Poll 8: rocuronium, most likely effect ---------------- */
-{id:'PE2-020', lecture:'PE2', prof:'Gottlieb', tier:'new', topic:'PE2', sub:'verbatim', skill:'apply',
+{id:'PE2-020', lecture:'PE2', prof:'Gottlieb', tier:'new', level:1, ladder:"curare", ladderName:"Curare-like paralysis and its reversal", topic:'PE2', sub:'verbatim', skill:'apply',
  concept:'rocuronium-effect-paralysis', tags:['poll','pollev','verbatim','on-exam-verbatim'], source:'both',
  stem:'If a patient is administered rocuronium, which of the following is most likely to occur?',
  options:[
@@ -268,7 +268,7 @@ QUESTIONS.push(
  cite:'PollEV’s Exam 2.pdf poll 8; transcript 10/5; PCOL-NMJ_PCOL_2026s_pptx.pdf slides 19, 30, 32'},
 
 /* ---------------- Poll 9: rivastigmine ---------------- */
-{id:'PE2-021', lecture:'PE2', prof:'Gottlieb', tier:'new', topic:'PE2', sub:'verbatim', skill:'apply',
+{id:'PE2-021', lecture:'PE2', prof:'Gottlieb', tier:'new', level:1, ladder:"cholinesterase-inhibitor", ladderName:"Cholinesterase inhibitors: DUMBBELSS, add-ons and atropine", topic:'PE2', sub:'verbatim', skill:'apply',
  concept:'stigmine-dumbbelss', tags:['poll','pollev','verbatim','druglist','on-exam-verbatim'], source:'both',
  stem:'Rivastigmine is most likely to produce:',
  options:[
@@ -283,7 +283,7 @@ QUESTIONS.push(
  cite:'PollEV’s Exam 2.pdf poll 9; transcript 10/5; PCOL-NMJ_PCOL_2026s_pptx.pdf slides 40–41'},
 
 /* ---------------- Poll 10: curare arrow (NTK) ---------------- */
-{id:'PE2-022', lecture:'PE2', prof:'Gottlieb', tier:'new', topic:'PE2', sub:'verbatim', skill:'apply',
+{id:'PE2-022', lecture:'PE2', prof:'Gottlieb', tier:'new', level:3, ladder:"curare", ladderName:"Curare-like paralysis and its reversal", topic:'PE2', sub:'verbatim', skill:'apply',
  concept:'curare-reversal-neostigmine', tags:['poll','pollev','verbatim','exam-cue','ntk','druglist','on-exam-verbatim'], source:'both',
  stem:'While hunting, your friend had an accident and pocked himself with an arrow tip (contain curare). Which of these would you have to do to reverse the effects?',
  options:[
@@ -313,7 +313,7 @@ QUESTIONS.push(
  cite:'PollEV’s Exam 2.pdf poll 11; transcript 10/5; PCOL-NMJ_PCOL_2026s_pptx.pdf slides 46–50'},
 
 /* ---------------- Poll 12: cholinergic agonist overdose ---------------- */
-{id:'PE2-024', lecture:'PE2', prof:'Gottlieb', tier:'new', topic:'PE2', sub:'verbatim', skill:'apply',
+{id:'PE2-024', lecture:'PE2', prof:'Gottlieb', tier:'new', level:1, topic:'PE2', sub:'verbatim', skill:'apply',
  concept:'cholinergic-overdose-poll', tags:['poll','pollev','verbatim','on-exam-verbatim'], source:'both',
  stem:'If one overdose on a cholinergic agonist, which of the symptoms is most likely to occur?',
  options:[
@@ -328,7 +328,7 @@ QUESTIONS.push(
  cite:'PollEV’s Exam 2.pdf poll 12; transcript 10/5; PCOL-Cholinergic-26s.pdf slide 13'},
 
 /* ---------------- Poll 13: carbachol ---------------- */
-{id:'PE2-025', lecture:'PE2', prof:'Gottlieb', tier:'new', topic:'PE2', sub:'verbatim', skill:'apply',
+{id:'PE2-025', lecture:'PE2', prof:'Gottlieb', tier:'new', level:1, ladder:"carbachol-heart", ladderName:"Carbachol, atropine and the heart", topic:'PE2', sub:'verbatim', skill:'apply',
  concept:'carbachol-poll', tags:['poll','pollev','verbatim','on-exam-verbatim'], source:'both',
  stem:'Carbachol is most likely to cause:',
  options:[
@@ -358,7 +358,7 @@ QUESTIONS.push(
  cite:'PollEV’s Exam 2.pdf poll 14; transcript 10/5; PCOL-Cholinergic-26s.pdf slides 17, 19'},
 
 /* ---------------- Poll 15: trospium ---------------- */
-{id:'PE2-027', lecture:'PE2', prof:'Gottlieb', tier:'new', topic:'PE2', sub:'verbatim', skill:'apply',
+{id:'PE2-027', lecture:'PE2', prof:'Gottlieb', tier:'new', level:1, ladder:"bladder-m3", ladderName:"The bladder M3: agonist, antimuscarinic and reversal", topic:'PE2', sub:'verbatim', skill:'apply',
  concept:'trospium-decrease-urination', tags:['poll','pollev','verbatim','druglist','on-exam-verbatim'], source:'both',
  stem:'Trospium is most likely to:',
  options:[
@@ -373,7 +373,7 @@ QUESTIONS.push(
  cite:'PollEV’s Exam 2.pdf poll 15; transcript 10/5; transcript 10/6; PCOL-Cholinergic-26s.pdf slides 29–30'},
 
 /* ---------------- Poll 16: severe bradycardia ---------------- */
-{id:'PE2-028', lecture:'PE2', prof:'Gottlieb', tier:'new', topic:'PE2', sub:'verbatim', skill:'apply',
+{id:'PE2-028', lecture:'PE2', prof:'Gottlieb', tier:'new', level:3, ladder:"carbachol-heart", ladderName:"Carbachol, atropine and the heart", topic:'PE2', sub:'verbatim', skill:'apply',
  concept:'atropine-bradycardia', tags:['poll','pollev','verbatim','on-exam-verbatim'], source:'both',
  stem:'If your patient is having severe bradycardia, which of the following drugs would be most beneficial?',
  options:[
@@ -388,7 +388,7 @@ QUESTIONS.push(
  cite:'PollEV’s Exam 2.pdf poll 16; transcript 10/5; transcript 10/6; PCOL-Cholinergic-26s.pdf slides 19–20'},
 
 /* ---------------- Poll 17: α1 in the arteries (9/30 bonus) ---------------- */
-{id:'PE2-029', lecture:'PE2', prof:'Gottlieb', tier:'new', topic:'PE2', sub:'verbatim', skill:'apply',
+{id:'PE2-029', lecture:'PE2', prof:'Gottlieb', tier:'new', level:1, topic:'PE2', sub:'verbatim', skill:'apply',
  concept:'alpha1-gq-plc-ip3', tags:['poll','pollev','verbatim','on-exam-verbatim'], source:'both',
  stem:'Activation of alpha 1 receptors in the arteries by an agonist will produce which of the following?',
  options:[
@@ -403,7 +403,7 @@ QUESTIONS.push(
  cite:'PollEV’s Exam 2.pdf poll 17; transcript 9/30; transcript 10/6; Autonomic Nervous System.pdf slides 4, 31'},
 
 /* ---------------- Poll 18: GI smooth muscle tracing (figure) ---------------- */
-{id:'PE2-030', lecture:'PE2', prof:'Gottlieb', tier:'new', topic:'PE2', sub:'verbatim', skill:'figure',
+{id:'PE2-030', lecture:'PE2', prof:'Gottlieb', tier:'new', level:2, ladder:"atropine-poisoning", ladderName:"Atropine poisoning and physostigmine", topic:'PE2', sub:'verbatim', skill:'figure',
  concept:'gi-tracing-drug-x-atropine', tags:['poll','pollev','verbatim','figure-drill','on-exam-verbatim','exam-cue'], source:'both',
  img:'pe2-gi-tracing', imgAlt:'Tracing of GI smooth muscle tone over time: flat baseline, a rise and fall after the first pilocarpine dose, an arrow marked X where tone dips slightly, then no rise after the second pilocarpine dose', imgCap:'GI smooth muscle tone: pilocarpine, drug X at the arrow, then pilocarpine again',
  stem:'The figure below shows tracing of GI smooth muscle in response to pilocarpine before and after drug X. Drug X is most likely to be:',
@@ -418,7 +418,7 @@ QUESTIONS.push(
  note:'On the sheet this poll is a PollEV screenshot with no green highlight. The screenshot shows Atropine as the recorded response, with the student’s handwritten “Ant M3” (M3 antagonist) beside it and “muscarinic agonist (M1, M2, M3)” under the first “Pilocarpine”. Not in the 10/5 audio; run on 10/6, where he walked through it (up = constriction, down = relaxation; pilocarpine on M3; X makes pilocarpine\'s job harder; carbachol, neostigmine, rocuronium and varenicline eliminated): “So the best answer would be what atropine. So atropine is blocking the ability of pilocarpine to bind and activate those receptors and produce that constriction.” Before the walk-through he read the class result as “C as in cat” and said it was correct, but on the sheet Atropine is option D; the key is atropine. Exam cue the same day: “you\'re gonna get 1 to 2 of these little graphs on your uh test, and this is how you\'re gonna apply the knowledge, right?” He said on 10/6 that one of the 10/5 polls and one of the 10/6 polls will be on Exam 2 word for word (“one of the questions today and one of the questions yesterday I\'m gonna use verbatim, word by word on your exam”), without naming which; every poll run on those two days is tagged on-exam-verbatim.',
  cite:'PollEV’s Exam 2.pdf poll 18; transcript 10/5; transcript 10/6; PCOL-Cholinergic-26s.pdf slides 12–14, 17, 19'},
 
-{id:'PE2-031', lecture:'PE2', prof:'Gottlieb', tier:'new', topic:'PE2', sub:'variant', skill:'figure',
+{id:'PE2-031', lecture:'PE2', prof:'Gottlieb', tier:'new', level:1, topic:'PE2', sub:'variant', skill:'figure',
  concept:'gi-tracing-pilocarpine-m3', tags:['poll','pollev','figure-drill'], source:'both',
  img:'pe2-gi-tracing', imgAlt:'Tracing of GI smooth muscle tone over time: flat baseline, a rise and fall after the first pilocarpine dose, an arrow marked X where tone dips slightly, then no rise after the second pilocarpine dose', imgCap:'GI smooth muscle tone: pilocarpine, drug X at the arrow, then pilocarpine again',
  stem:'In the tracing below, what does the first dose of pilocarpine do to GI smooth muscle tone, and through which receptor?',
@@ -432,7 +432,7 @@ QUESTIONS.push(
  quote:'If it\'s in the M3, depending where it is, let\'s say it\'s on the GI tract, I\'m gonna increase motility and tone.',
  cite:'PollEV’s Exam 2.pdf poll 18 (variant); transcript 10/5; PCOL-Cholinergic-26s.pdf slides 12–14; Autonomic Nervous System.pdf slide 31'},
 
-{id:'PE2-032', lecture:'PE2', prof:'Gottlieb', tier:'new', topic:'PE2', sub:'variant', skill:'figure',
+{id:'PE2-032', lecture:'PE2', prof:'Gottlieb', tier:'new', level:2, ladder:"atropine-poisoning", ladderName:"Atropine poisoning and physostigmine", topic:'PE2', sub:'variant', skill:'figure',
  concept:'gi-tracing-m3-blocked', tags:['poll','pollev','figure-drill'], source:'both',
  img:'pe2-gi-tracing', imgAlt:'Tracing of GI smooth muscle tone over time: flat baseline, a rise and fall after the first pilocarpine dose, an arrow marked X where tone dips slightly, then no rise after the second pilocarpine dose', imgCap:'GI smooth muscle tone: pilocarpine, drug X at the arrow, then pilocarpine again',
  stem:'In the tracing below, why does the second dose of pilocarpine produce no rise in tone?',
@@ -446,7 +446,7 @@ QUESTIONS.push(
  quote:'What I need you to know is that it does not bind or activate the nicotinic receptors. It only has affinity for the muscarinics. That\'s going to be a very key information for you',
  cite:'PollEV’s Exam 2.pdf poll 18 (variant); transcript 10/5; PCOL-Cholinergic-26s.pdf slides 14, 19; PCOL-NMJ_PCOL_2026s_pptx.pdf slides 46–50'},
 
-{id:'PE2-033', lecture:'PE2', prof:'Gottlieb', tier:'new', topic:'PE2', sub:'variant', skill:'figure',
+{id:'PE2-033', lecture:'PE2', prof:'Gottlieb', tier:'new', level:1, topic:'PE2', sub:'variant', skill:'figure',
  concept:'gi-tracing-pns-tone', tags:['poll','pollev','figure-drill'], source:'both',
  img:'pe2-gi-tracing', imgAlt:'Tracing of GI smooth muscle tone over time: flat baseline, a rise and fall after the first pilocarpine dose, an arrow marked X where tone dips slightly, then no rise after the second pilocarpine dose', imgCap:'GI smooth muscle tone: pilocarpine, drug X at the arrow, then pilocarpine again',
  stem:'In the tracing below, tone falls slightly below the starting line when drug X is given, before the second pilocarpine dose. Which explains the fall?',
@@ -459,7 +459,7 @@ QUESTIONS.push(
  quote:'And if you know what the agonist is going to do, what do you think the antagonist is going to do? The opposite, the anti-dumbbells, constipation, can\'t pee, can\'t cry, can\'t sweat, can\'t see, right?',
  cite:'PollEV’s Exam 2.pdf poll 18 (variant); transcript 10/5; PCOL-Cholinergic-26s.pdf slides 13, 19'},
 
-{id:'PE2-034', lecture:'PE2', prof:'Gottlieb', tier:'new', topic:'PE2', sub:'variant', skill:'figure',
+{id:'PE2-034', lecture:'PE2', prof:'Gottlieb', tier:'new', level:2, topic:'PE2', sub:'variant', skill:'figure',
  concept:'gi-tracing-other-antagonist', tags:['poll','pollev','figure-drill'], source:'both',
  img:'pe2-gi-tracing', imgAlt:'Tracing of GI smooth muscle tone over time: flat baseline, a rise and fall after the first pilocarpine dose, an arrow marked X where tone dips slightly, then no rise after the second pilocarpine dose', imgCap:'GI smooth muscle tone: pilocarpine, drug X at the arrow, then pilocarpine again',
  stem:'Which of the following could also be drug X in the tracing below?',
@@ -489,7 +489,7 @@ QUESTIONS.push(
  cite:'PollEV’s Exam 2.pdf poll 19; transcript 10/6; PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 10–11'},
 
 /* ---------------- Poll 20 (10/6): phenylephrine as a decongestant ---------------- */
-{id:'PE2-036', lecture:'PE2', prof:'Gottlieb', tier:'new', topic:'PE2', sub:'verbatim', skill:'recall',
+{id:'PE2-036', lecture:'PE2', prof:'Gottlieb', tier:'new', level:1, topic:'PE2', sub:'verbatim', skill:'recall',
  concept:'phenylephrine-decongestant-alpha1', tags:['poll','pollev','verbatim','on-exam-verbatim','druglist'], source:'both',
  stem:'Phenylephrine can be used as a decongestant because:',
  options:[
@@ -503,7 +503,7 @@ QUESTIONS.push(
  cite:'PollEV’s Exam 2.pdf poll 20; transcript 10/6; PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 17–18'},
 
 /* ---------------- Poll 21 (10/6): which drug lowers blood pressure ---------------- */
-{id:'PE2-037', lecture:'PE2', prof:'Gottlieb', tier:'new', topic:'PE2', sub:'verbatim', skill:'apply',
+{id:'PE2-037', lecture:'PE2', prof:'Gottlieb', tier:'new', level:1, ladder:"clonidine", ladderName:"Clonidine: α2, an add-on, and stopping it", topic:'PE2', sub:'verbatim', skill:'apply',
  concept:'clonidine-lowers-bp', tags:['poll','pollev','verbatim','on-exam-verbatim','druglist'], source:'both',
  stem:'Which of the following drugs is most likely to decrease blood pressure?',
  options:[
@@ -518,7 +518,7 @@ QUESTIONS.push(
  cite:'PollEV’s Exam 2.pdf poll 21; transcript 10/6; PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 21, 23–24'},
 
 /* ---------------- Poll 22 (10/7): which drug produces vasodilation ---------------- */
-{id:'PE2-038', lecture:'PE2', prof:'Gottlieb', tier:'new', topic:'PE2', sub:'verbatim', skill:'apply',
+{id:'PE2-038', lecture:'PE2', prof:'Gottlieb', tier:'new', level:1, ladder:"prazosin", ladderName:"Prazosin, norepinephrine and phenoxybenzamine", topic:'PE2', sub:'verbatim', skill:'apply',
  concept:'prazosin-vasodilation', tags:['poll','pollev','verbatim','exam-cue','druglist'], source:'both',
  stem:'Which of these drugs is most likely to produce vasodilation',
  options:[
@@ -533,7 +533,7 @@ QUESTIONS.push(
  cite:'PollEV’s Exam 2.pdf poll 22; transcript 10/7; PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 9, 17, 28–29'},
 
 /* ---------------- Poll 23 (10/7): prazosin or phenoxybenzamine, greatest drop in blood pressure ---------------- */
-{id:'PE2-039', lecture:'PE2', prof:'Gottlieb', tier:'new', topic:'PE2', sub:'verbatim', skill:'apply',
+{id:'PE2-039', lecture:'PE2', prof:'Gottlieb', tier:'new', level:2, ladder:"prazosin", ladderName:"Prazosin, norepinephrine and phenoxybenzamine", topic:'PE2', sub:'verbatim', skill:'apply',
  concept:'phenoxybenzamine-greatest-drop', tags:['poll','pollev','verbatim','exam-cue','druglist'], source:'both',
  stem:'Which drug produces the greatest drop in blood pressure?',
  options:[
@@ -546,7 +546,7 @@ QUESTIONS.push(
  cite:'PollEV’s Exam 2.pdf poll 23; transcript 10/7; PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 27, 34–36'},
 
 /* ---------------- Poll 24 (10/7): epinephrine overdose, which antagonist first ---------------- */
-{id:'PE2-040', lecture:'PE2', prof:'Gottlieb', tier:'new', topic:'PE2', sub:'verbatim', skill:'apply',
+{id:'PE2-040', lecture:'PE2', prof:'Gottlieb', tier:'new', level:3, ladder:"epinephrine", ladderName:"Epinephrine: α1 and β2, its blockers, and the EpiPen overdose", topic:'PE2', sub:'verbatim', skill:'apply',
  concept:'epinephrine-overdose-prazosin-first', tags:['poll','pollev','verbatim','exam-cue','druglist'], source:'both',
  stem:'Your pt OD on his epi pen. He shows up to the ER and the physician ask which one should he give it first?',
  options:[
@@ -559,7 +559,7 @@ QUESTIONS.push(
  cite:'PollEV’s Exam 2.pdf poll 24; transcript 10/7; PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slide 52'},
 
 /* ---------------- Poll 25 (10/7): which drug relaxes the bladder ---------------- */
-{id:'PE2-041', lecture:'PE2', prof:'Gottlieb', tier:'new', topic:'PE2', sub:'verbatim', skill:'apply',
+{id:'PE2-041', lecture:'PE2', prof:'Gottlieb', tier:'new', level:1, topic:'PE2', sub:'verbatim', skill:'apply',
  concept:'bladder-relaxer-poll', tags:['poll','pollev','verbatim','exam-cue','druglist'], source:'both',
  stem:'Which of the following drugs relax the bladder smooth muscle, thus decreasing urination?',
  options:[
@@ -574,7 +574,7 @@ QUESTIONS.push(
  cite:'PollEV’s Exam 2.pdf poll 25; transcript 10/7; PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slide 44'},
 
 /* ---------------- Poll 26 (10/7): identical twins run a 5K (double or nothing) ---------------- */
-{id:'PE2-042', lecture:'PE2', prof:'Gottlieb', tier:'new', topic:'PE2', sub:'verbatim', skill:'apply',
+{id:'PE2-042', lecture:'PE2', prof:'Gottlieb', tier:'new', level:1, ladder:"beta-blocker-asthma", ladderName:"β blocker in asthma, with albuterol", topic:'PE2', sub:'verbatim', skill:'apply',
  concept:'twins-run-metoprolol', tags:['poll','pollev','verbatim','exam-cue','druglist'], source:'both',
  stem:'You have a set of four identical twins with same weight, height, diet, and exercise regiment. You ask them to run a 5k lap and give each one a different drug. Who comes 1st?',
  options:[
@@ -589,7 +589,7 @@ QUESTIONS.push(
  cite:'PollEV’s Exam 2.pdf poll 26; transcript 10/7; PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 54, 59'},
 
 /* ---------------- Poll 27 (10/7): marked hypotension with nitroglycerin ---------------- */
-{id:'PE2-043', lecture:'PE2', prof:'Gottlieb', tier:'new', topic:'PE2', sub:'verbatim', skill:'apply',
+{id:'PE2-043', lecture:'PE2', prof:'Gottlieb', tier:'new', level:2, ladder:"nitroglycerin", ladderName:"Nitroglycerin and sildenafil", topic:'PE2', sub:'verbatim', skill:'apply',
  concept:'pde-nitrate-ddi', tags:['poll','pollev','verbatim','exam-cue','druglist'], source:'both',
  stem:'Which of the following drugs may cause marked hypotension if mixed with nitroglycerine?',
  options:[
@@ -605,7 +605,7 @@ QUESTIONS.push(
  cite:'PollEV’s Exam 2.pdf poll 27; transcript 10/7; PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 68–74'},
 
 /* ---------------- Poll 28 (10/7): norepinephrine and drug B (figure) ---------------- */
-{id:'PE2-044', lecture:'PE2', prof:'Gottlieb', tier:'new', topic:'PE2', sub:'verbatim', skill:'figure',
+{id:'PE2-044', lecture:'PE2', prof:'Gottlieb', tier:'new', level:2, ladder:"prazosin", ladderName:"Prazosin, norepinephrine and phenoxybenzamine", topic:'PE2', sub:'verbatim', skill:'figure',
  concept:'ne-drug-b-prazosin', tags:['poll','pollev','verbatim','figure-drill','exam-cue','druglist'], source:'both',
  img:'pe2-ne-drug-b', imgAlt:'Hand-drawn tracing of constriction over time with a 1-minute scale bar: regular oscillations at a steady level, a gradual rise after arrow A, then a steep fall after arrow B to a flat line below the starting level', imgCap:'Constriction tracing: drug A (norepinephrine) at arrow A, then drug B at arrow B',
  stem:'The tracing show the effects of drug A (NE) on BP. Which drug is most likely drug B?',
@@ -620,7 +620,7 @@ QUESTIONS.push(
  note:'On the sheet this poll is a PollEV screenshot (“You can respond once”) with prazosin highlighted green; options as on the screen, lower case except Cocaine. Run on 10/7 as the last poll of the lecture, after the acetylcholine and atropine tracings (slides 84–85): “So what we have over here, I have the tracing of blood pressure. And the effects of norepinephrine either alone or in the presence of drug B.” Keyed aloud: “I would say B as in boy”, and prazosin is option B on the screenshot. The drawing\'s y-axis is labelled “Constriction”; he read it as blood pressure (“the constriction, the tone of the blood pressure is going up”). “walk, hypertension” reads as hypotension. Tracing cues: on 10/6, “you\'re gonna get 1 to 2 of these little graphs on your uh test”; on 10/8, “for your exam, you may get, you know, a tracing, but they\'re just one effect.” Later on 10/7 he said: “I\'ll guarantee you, I\'m gonna use one of the questions that we asked today in a different shape or form, but very similar” — he did not say which, so every 10/7 poll is tagged exam-cue.',
  cite:'PollEV’s Exam 2.pdf poll 28; transcript 10/7; PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 84–85'},
 
-{id:'PE2-045', lecture:'PE2', prof:'Gottlieb', tier:'new', topic:'PE2', sub:'variant', skill:'figure',
+{id:'PE2-045', lecture:'PE2', prof:'Gottlieb', tier:'new', level:1, topic:'PE2', sub:'variant', skill:'figure',
  concept:'ne-tracing-alpha1', tags:['poll','pollev','figure-drill'], source:'both',
  img:'pe2-ne-drug-b', imgAlt:'Hand-drawn tracing of constriction over time with a 1-minute scale bar: regular oscillations at a steady level, a gradual rise after arrow A, then a steep fall after arrow B to a flat line below the starting level', imgCap:'Constriction tracing: drug A (norepinephrine) at arrow A, then drug B at arrow B',
  stem:'In the tracing below, drug A is norepinephrine. Through which receptor does it raise the constriction in the blood vessels?',
@@ -634,7 +634,7 @@ QUESTIONS.push(
  quote:'So if you look at it over here, would you agree with me that A is norepinephrine? ... As he activates the alpha-1 receptors, it\'s gonna cause what? Constriction, right? Blood pressure is going up.',
  cite:'PollEV’s Exam 2.pdf poll 28 (variant); transcript 10/7; PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 53, 84'},
 
-{id:'PE2-046', lecture:'PE2', prof:'Gottlieb', tier:'new', topic:'PE2', sub:'variant', skill:'figure',
+{id:'PE2-046', lecture:'PE2', prof:'Gottlieb', tier:'new', level:2, topic:'PE2', sub:'variant', skill:'figure',
  concept:'ne-tracing-cocaine', tags:['poll','pollev','figure-drill'], source:'both',
  img:'pe2-ne-drug-b', imgAlt:'Hand-drawn tracing of constriction over time with a 1-minute scale bar: regular oscillations at a steady level, a gradual rise after arrow A, then a steep fall after arrow B to a flat line below the starting level', imgCap:'Constriction tracing: drug A (norepinephrine) at arrow A, then drug B at arrow B',
  stem:'If drug B in the tracing below were cocaine instead, what would the tracing most likely show after arrow B?',
@@ -647,7 +647,7 @@ QUESTIONS.push(
  quote:'Can eliminate cocaine. What is cocaine? Remember, cocaine is the reuptake inhibitor of the net transporter. So if I block the net transporter, I get more norepinephrine, which means I get more. High blood pressure. So no, cocaine would help that, would constrict even more.',
  cite:'PollEV’s Exam 2.pdf poll 28 (variant); transcript 10/7; PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 84–85'},
 
-{id:'PE2-047', lecture:'PE2', prof:'Gottlieb', tier:'new', topic:'PE2', sub:'variant', skill:'figure',
+{id:'PE2-047', lecture:'PE2', prof:'Gottlieb', tier:'new', level:2, topic:'PE2', sub:'variant', skill:'figure',
  concept:'ne-tracing-not-metoprolol', tags:['poll','pollev','figure-drill'], source:'both',
  img:'pe2-ne-drug-b', imgAlt:'Hand-drawn tracing of constriction over time with a 1-minute scale bar: regular oscillations at a steady level, a gradual rise after arrow A, then a steep fall after arrow B to a flat line below the starting level', imgCap:'Constriction tracing: drug A (norepinephrine) at arrow A, then drug B at arrow B',
  stem:'In the tracing below, why can metoprolol be eliminated as drug B?',
@@ -661,7 +661,7 @@ QUESTIONS.push(
  quote:'Can eliminatean you offering? Yes, because this is the alpha 1 agonist. This would make norepinephrine even more potent. Because now we have two agonists activating the same receptor at the same time, yes. Can I remove Metoprolol? What is metoprolol? It\'s a beta one selective antagonist. Where\'s the beta one located? In the heart. It\'s not even near close the blood vessels are.',
  cite:'PollEV’s Exam 2.pdf poll 28 (variant); transcript 10/7; PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 54, 84–85'},
 
-{id:'PE2-048', lecture:'PE2', prof:'Gottlieb', tier:'new', topic:'PE2', sub:'variant', skill:'figure',
+{id:'PE2-048', lecture:'PE2', prof:'Gottlieb', tier:'new', level:2, topic:'PE2', sub:'variant', skill:'figure',
  concept:'ne-tracing-not-atropine', tags:['poll','pollev','figure-drill'], source:'both',
  img:'pe2-ne-drug-b', imgAlt:'Hand-drawn tracing of constriction over time with a 1-minute scale bar: regular oscillations at a steady level, a gradual rise after arrow A, then a steep fall after arrow B to a flat line below the starting level', imgCap:'Constriction tracing: drug A (norepinephrine) at arrow A, then drug B at arrow B',
  stem:'Atropine and prazosin both block a receptor in the blood vessels. Why is atropine not drug B in the tracing below?',
@@ -676,7 +676,7 @@ QUESTIONS.push(
  cite:'PollEV’s Exam 2.pdf poll 28 (variant); transcript 10/7; PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 74, 84–85'},
 
 /* ---------------- Poll 29 (10/8): epinephrine at receptors A and B (figure) ---------------- */
-{id:'PE2-049', lecture:'PE2', prof:'Gottlieb', tier:'new', topic:'PE2', sub:'verbatim', skill:'figure',
+{id:'PE2-049', lecture:'PE2', prof:'Gottlieb', tier:'new', level:1, ladder:"epinephrine", ladderName:"Epinephrine: α1 and β2, its blockers, and the EpiPen overdose", topic:'PE2', sub:'verbatim', skill:'figure',
  concept:'epi-receptor-a-alpha1', tags:['poll','pollev','verbatim','figure-drill','exam-cue','druglist'], source:'both',
  img:'pe2-epi-two-receptors', imgAlt:'Diagram titled Blood Vessels, Figure 1: a vessel with receptor A (round site) and receptor B (V-shaped site); with epinephrine at low concentration only B is bound and vessel C is wide; at high concentration A and B are both bound and vessel D is narrow', imgCap:'Epinephrine at receptors A and B: low concentration (vessel C) and high concentration (vessel D)',
  stem:'The figure below represents the binding of Epi to two receptors. Receptor A is most likely?',
@@ -691,7 +691,7 @@ QUESTIONS.push(
  note:'On the sheet this poll is a PollEV screenshot (“This poll is locked.”) with Alpha 1 receptors as the recorded response; there is no green highlight. Read aloud on 10/8 in other words: “Epinephrine can bind to receptor B and produce what appears to be a vasodilation at lower concentration or bind to receptor A and B at higher concentration and produce a vasoconstriction. As such, which receptor A is most likely?” Keyed aloud: “the majority says uh. Alpha 1 receptor”. His first poll of 10/8, introduced with: “This is our last chance to get a bonus for exam 2. I guess, you\'re going with one bonus, right? Since we doubled down yesterday.” A bonus poll is one he may use word for word on the exam (his 9/30 and 10/6 rule), so it is tagged exam-cue.',
  cite:'PollEV’s Exam 2.pdf poll 29; transcript 10/8; PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 47–48'},
 
-{id:'PE2-050', lecture:'PE2', prof:'Gottlieb', tier:'new', topic:'PE2', sub:'variant', skill:'figure',
+{id:'PE2-050', lecture:'PE2', prof:'Gottlieb', tier:'new', level:1, topic:'PE2', sub:'variant', skill:'figure',
  concept:'epi-receptor-b-beta2', tags:['poll','pollev','figure-drill'], source:'both',
  img:'pe2-epi-two-receptors', imgAlt:'Diagram titled Blood Vessels, Figure 1: a vessel with receptor A (round site) and receptor B (V-shaped site); with epinephrine at low concentration only B is bound and vessel C is wide; at high concentration A and B are both bound and vessel D is narrow', imgCap:'Epinephrine at receptors A and B: low concentration (vessel C) and high concentration (vessel D)',
  stem:'The figure below represents the binding of epinephrine to two receptors. Receptor B is most likely:',
@@ -705,7 +705,7 @@ QUESTIONS.push(
  quote:'At low doses, epinephrine has a high affinity for the beta 2, and that will be receptor B because once it binds, beta 2 cause dilation, so relax the arteries. ... So, uh. Receptor B is for the beta 2s, receptor A is for the alpha-1 receptors.',
  cite:'PollEV’s Exam 2.pdf poll 29 (variant); transcript 10/8; PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 47–48'},
 
-{id:'PE2-051', lecture:'PE2', prof:'Gottlieb', tier:'new', topic:'PE2', sub:'variant', skill:'figure',
+{id:'PE2-051', lecture:'PE2', prof:'Gottlieb', tier:'new', level:1, topic:'PE2', sub:'variant', skill:'figure',
  concept:'epi-low-vs-high-c-d', tags:['poll','pollev','figure-drill'], source:'both',
  img:'pe2-epi-two-receptors', imgAlt:'Diagram titled Blood Vessels, Figure 1: a vessel with receptor A (round site) and receptor B (V-shaped site); with epinephrine at low concentration only B is bound and vessel C is wide; at high concentration A and B are both bound and vessel D is narrow', imgCap:'Epinephrine at receptors A and B: low concentration (vessel C) and high concentration (vessel D)',
  stem:'In the figure below, which responses do vessel C (low concentration of epinephrine) and vessel D (high concentration) show?',
@@ -718,7 +718,7 @@ QUESTIONS.push(
  quote:'So remember that yesterday we talked about epinephrine have different affinities for receptors, uh, beta 2 receptors and alpha 1 receptors. At low doses, epinephrine has a high affinity for the beta 2, and that will be receptor B because once it binds, beta 2 cause dilation, so relax the arteries. However, once you go into a higher concentration, After you start to bunch of the alpha ones and the alpha one\'s gonna override whatever the beta 2s are trying to do and that\'s gonna cause vasoconstriction.',
  cite:'PollEV’s Exam 2.pdf poll 29 (variant); transcript 10/8; transcript 10/7; PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 47–48'},
 
-{id:'PE2-052', lecture:'PE2', prof:'Gottlieb', tier:'new', topic:'PE2', sub:'variant', skill:'figure',
+{id:'PE2-052', lecture:'PE2', prof:'Gottlieb', tier:'new', level:2, ladder:"epinephrine", ladderName:"Epinephrine: α1 and β2, its blockers, and the EpiPen overdose", topic:'PE2', sub:'variant', skill:'figure',
  concept:'epi-figure-beta2-blocked', tags:['poll','pollev','figure-drill'], source:'both',
  img:'pe2-epi-two-receptors', imgAlt:'Diagram titled Blood Vessels, Figure 1: a vessel with receptor A (round site) and receptor B (V-shaped site); with epinephrine at low concentration only B is bound and vessel C is wide; at high concentration A and B are both bound and vessel D is narrow', imgCap:'Epinephrine at receptors A and B: low concentration (vessel C) and high concentration (vessel D)',
  stem:'The vessel in the figure below is first given propranolol, then the high concentration of epinephrine. Compared with vessel D, the response is most likely:',
@@ -731,7 +731,7 @@ QUESTIONS.push(
  quote:'If you\'re vasoconstricting, this is alpha one, and you can only activate alpha one if it\'s a high dose. So remember that in the blood vessels, alpha ones are going to compete with beta 2s, and by giving compound one, I\'m blocking the beta 2s. So I\'m taking away the beta 2 now, all I have is what? alpha one effect, right? Associated with that. So it\'s helping the effect of the alpha one by taking the physiological antagonist of the system.',
  cite:'PollEV’s Exam 2.pdf poll 29 (variant); transcript 10/8; PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 47–51, 54'},
 
-{id:'PE2-053', lecture:'PE2', prof:'Gottlieb', tier:'new', topic:'PE2', sub:'variant', skill:'figure',
+{id:'PE2-053', lecture:'PE2', prof:'Gottlieb', tier:'new', level:2, ladder:"epinephrine", ladderName:"Epinephrine: α1 and β2, its blockers, and the EpiPen overdose", topic:'PE2', sub:'variant', skill:'figure',
  concept:'epi-figure-alpha1-blocked', tags:['poll','pollev','figure-drill'], source:'both',
  img:'pe2-epi-two-receptors', imgAlt:'Diagram titled Blood Vessels, Figure 1: a vessel with receptor A (round site) and receptor B (V-shaped site); with epinephrine at low concentration only B is bound and vessel C is wide; at high concentration A and B are both bound and vessel D is narrow', imgCap:'Epinephrine at receptors A and B: low concentration (vessel C) and high concentration (vessel D)',
  stem:'The vessel in the figure below is first given prazosin, then the high concentration of epinephrine. The response is most likely:',
@@ -745,7 +745,7 @@ QUESTIONS.push(
  cite:'PollEV’s Exam 2.pdf poll 29 (variant); transcript 10/7; PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 48–51'},
 
 /* ---------------- Poll 30 (10/8): lisinopril ---------------- */
-{id:'PE2-054', lecture:'PE2', prof:'Gottlieb', tier:'new', topic:'PE2', sub:'verbatim', skill:'apply',
+{id:'PE2-054', lecture:'PE2', prof:'Gottlieb', tier:'new', level:1, ladder:"ace-inhibitor", ladderName:"ACE inhibitor, spironolactone, potassium and the cough", topic:'PE2', sub:'verbatim', skill:'apply',
  concept:'lisinopril-poll', tags:['poll','pollev','verbatim','exam-cue','druglist'], source:'both',
  stem:'Lisinopril:',
  options:[
@@ -760,7 +760,7 @@ QUESTIONS.push(
  cite:'PollEV’s Exam 2.pdf poll 30; transcript 10/8; PCOL-RAAS_26s.pdf slides 9, 12, 29'},
 
 /* ---------------- Poll 31 (10/8): valsartan ---------------- */
-{id:'PE2-055', lecture:'PE2', prof:'Gottlieb', tier:'new', topic:'PE2', sub:'verbatim', skill:'apply',
+{id:'PE2-055', lecture:'PE2', prof:'Gottlieb', tier:'new', level:1, topic:'PE2', sub:'verbatim', skill:'apply',
  concept:'valsartan-poll', tags:['poll','pollev','verbatim','exam-cue','druglist'], source:'both',
  stem:'Valsartan:',
  options:[
@@ -775,7 +775,7 @@ QUESTIONS.push(
  cite:'PollEV’s Exam 2.pdf poll 31; transcript 10/8; PCOL-RAAS_26s.pdf slides 4, 13, 27'},
 
 /* ---------------- Poll 32 (10/8): which drugs may cause hyperkalemia ---------------- */
-{id:'PE2-056', lecture:'PE2', prof:'Gottlieb', tier:'new', topic:'PE2', sub:'verbatim', skill:'recall',
+{id:'PE2-056', lecture:'PE2', prof:'Gottlieb', tier:'new', level:1, topic:'PE2', sub:'verbatim', skill:'recall',
  concept:'hyperkalemia-poll', tags:['poll','pollev','verbatim','exam-cue','druglist'], source:'both',
  stem:'Which of the following drugs may causes hyperkalemia?',
  options:[
@@ -790,7 +790,7 @@ QUESTIONS.push(
  cite:'PollEV’s Exam 2.pdf poll 32; transcript 10/8; PCOL-RAAS_26s.pdf slides 19–22'},
 
 /* ---------------- Jeopardy 10/8 (PollEV screenshots, verbatim) ---------------- */
-{id:"PE2-057", lecture:'PE2', prof:'Gottlieb', tier:'new', topic:'PE2', sub:"verbatim", skill:"apply",
+{id:"PE2-057", lecture:'PE2', prof:'Gottlieb', tier:'new', level:3, ladder:"cholinesterase-inhibitor", ladderName:"Cholinesterase inhibitors: DUMBBELSS, add-ons and atropine", topic:'PE2', sub:"verbatim", skill:"apply",
  concept:"edrophonium-adr-atropine", tags:["poll", "pollev", "verbatim", "jeopardy"], source:"both",
  stem:"Patient is going to be tested for MS and IV infused with endrophonium. During the procedure, the patient may experience certain ADRs. Which of the following drugs would decrease the ADR produced by endrophonium?",
  options:[
@@ -805,7 +805,7 @@ QUESTIONS.push(
  cite:"Jeopardy 10/8 (screenshot); transcript 10/8; PCOL-NMJ_PCOL_2026s_pptx.pdf slides 38, 41; PCOL-Cholinergic-26s.pdf slides 17–19"},
 
 /* Jeopardy 10/8 (4000): bronchomotor tone matching (figure). He said it will not be on the exam: low yield */
-{id:"PE2-058", lecture:'PE2', prof:'Gottlieb', tier:'new', topic:'PE2', sub:"verbatim", skill:"figure",
+{id:"PE2-058", lecture:'PE2', prof:'Gottlieb', tier:'new', level:2, topic:'PE2', sub:"verbatim", skill:"figure",
  concept:"bronchomotor-matching-acdeb", lowYield:true, tags:["poll", "pollev", "verbatim", "jeopardy", "figure-drill"], source:"both",
  img:"pe2-bronchomotor-tone", imgAlt:"Bar chart of bronchomotor tone (increase above the line, decrease below) for procedures 1 to 5 in five panels: control, after physostigmine, after atropine, after propranolol and after cocaine; below it the instruction to match procedures 1 to 5 with A carbachol, B sympathetic nerve stimulation, C vagal nerve stimulation, D histamine, E isoproterenol", imgCap:"Bronchomotor tone, procedures 1–5: control and after physostigmine, atropine, propranolol and cocaine. He said: “This is not gonna be on the exam. This is for Jeopardy process only.”",
  stem:"What is the correct matching",
@@ -819,7 +819,7 @@ QUESTIONS.push(
  note:"Jeopardy 10/8 (4000 points), PollEV screenshot (“This poll is locked.”); no question mark, as on the screen. He said: “This is not gonna be on the exam. This is for Jeopardy process only.” (and before it: “I'm not planning to use that in, uh, our exam”), so this figure and its four variants are low yield. Key ACDEB: his 10/8 walk-through (“we know that carbachol is gonna be uh A, so I have A, C, and D ... ISO is E”; for procedure 5 the student said “To sympathetic stimulation.”, then “OK B.”, and he said “So that's the correct answer, which means that you didn't get it”), and the photo of his projected slide, with the key written beside the procedures (1 Carb. A, 2 Ach C, 3 Hist D, 4 Iso E, 5 Cocaine B) and “AChE Inh.”, “Musc Antag.”, “β1&2 Antag.” and “Re-uptake Inhibitor” under the four drug panels. Before the poll he told the class that histamine is procedure 3 and gave the mechanism of the four drugs. The group that chose the question answered option D (EBDAC), which was wrong.",
  cite:"Jeopardy 10/8 (screenshot and photo of his slide); transcript 10/8; PCOL-NMJ_PCOL_2026s_pptx.pdf slide 39; PCOL-Cholinergic-26s.pdf slides 12, 17; PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 10, 42, 45, 54"},
 
-{id:"PE2-059", lecture:'PE2', prof:'Gottlieb', tier:'new', topic:'PE2', sub:"variant", skill:"figure",
+{id:"PE2-059", lecture:'PE2', prof:'Gottlieb', tier:'new', level:2, topic:'PE2', sub:"variant", skill:"figure",
  concept:"bronchomotor-vagal-physostigmine", lowYield:true, tags:["poll", "pollev", "figure-drill", "jeopardy"], source:"both",
  img:"pe2-bronchomotor-tone", imgAlt:"Bar chart of bronchomotor tone (increase above the line, decrease below) for procedures 1 to 5 in five panels: control, after physostigmine, after atropine, after propranolol and after cocaine; below it the instruction to match procedures 1 to 5 with A carbachol, B sympathetic nerve stimulation, C vagal nerve stimulation, D histamine, E isoproterenol", imgCap:"Bronchomotor tone, procedures 1–5: control and after physostigmine, atropine, propranolol and cocaine. He said: “This is not gonna be on the exam. This is for Jeopardy process only.”",
  stem:"In the figure below, which procedure is vagal nerve stimulation, and which panel identifies it?",
@@ -834,7 +834,7 @@ QUESTIONS.push(
  note:"A variant on his 10/8 Jeopardy figure (PE2-058). He said: “This is not gonna be on the exam. This is for Jeopardy process only.” Low yield.",
  cite:"Jeopardy 10/8 (screenshot, variant); transcript 10/8; PCOL-NMJ_PCOL_2026s_pptx.pdf slide 39; PCOL-Cholinergic-26s.pdf slide 12"},
 
-{id:"PE2-060", lecture:'PE2', prof:'Gottlieb', tier:'new', topic:'PE2', sub:"variant", skill:"figure",
+{id:"PE2-060", lecture:'PE2', prof:'Gottlieb', tier:'new', level:2, topic:'PE2', sub:"variant", skill:"figure",
  concept:"bronchomotor-histamine-atropine", lowYield:true, tags:["poll", "pollev", "figure-drill", "jeopardy"], source:"both",
  img:"pe2-bronchomotor-tone", imgAlt:"Bar chart of bronchomotor tone (increase above the line, decrease below) for procedures 1 to 5 in five panels: control, after physostigmine, after atropine, after propranolol and after cocaine; below it the instruction to match procedures 1 to 5 with A carbachol, B sympathetic nerve stimulation, C vagal nerve stimulation, D histamine, E isoproterenol", imgCap:"Bronchomotor tone, procedures 1–5: control and after physostigmine, atropine, propranolol and cocaine. He said: “This is not gonna be on the exam. This is for Jeopardy process only.”",
  stem:"In the figure below, why does bar 3 keep its height after atropine while bars 1 and 2 almost disappear?",
@@ -849,7 +849,7 @@ QUESTIONS.push(
  note:"A variant on his 10/8 Jeopardy figure (PE2-058). He said: “This is not gonna be on the exam. This is for Jeopardy process only.” Low yield. His slide marks histamine “Gq, bronchial smooth muscle”.",
  cite:"Jeopardy 10/8 (screenshot, variant); transcript 10/8; PCOL-Cholinergic-26s.pdf slides 17, 19"},
 
-{id:"PE2-061", lecture:'PE2', prof:'Gottlieb', tier:'new', topic:'PE2', sub:"variant", skill:"figure",
+{id:"PE2-061", lecture:'PE2', prof:'Gottlieb', tier:'new', level:2, topic:'PE2', sub:"variant", skill:"figure",
  concept:"bronchomotor-cocaine-sympathetic", lowYield:true, tags:["poll", "pollev", "figure-drill", "jeopardy"], source:"both",
  img:"pe2-bronchomotor-tone", imgAlt:"Bar chart of bronchomotor tone (increase above the line, decrease below) for procedures 1 to 5 in five panels: control, after physostigmine, after atropine, after propranolol and after cocaine; below it the instruction to match procedures 1 to 5 with A carbachol, B sympathetic nerve stimulation, C vagal nerve stimulation, D histamine, E isoproterenol", imgCap:"Bronchomotor tone, procedures 1–5: control and after physostigmine, atropine, propranolol and cocaine. He said: “This is not gonna be on the exam. This is for Jeopardy process only.”",
  stem:"In the figure below, why does cocaine deepen bar 5 but leave bar 4 unchanged?",
@@ -864,7 +864,7 @@ QUESTIONS.push(
  note:"A variant on his 10/8 Jeopardy figure (PE2-058). He said: “This is not gonna be on the exam. This is for Jeopardy process only.” Low yield. “nor and Api” / “Nor an aid” in the transcript = norepinephrine and epinephrine.",
  cite:"Jeopardy 10/8 (screenshot, variant); transcript 10/8; PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 10, 42, 45"},
 
-{id:"PE2-062", lecture:'PE2', prof:'Gottlieb', tier:'new', topic:'PE2', sub:"variant", skill:"figure",
+{id:"PE2-062", lecture:'PE2', prof:'Gottlieb', tier:'new', level:2, topic:'PE2', sub:"variant", skill:"figure",
  concept:"bronchomotor-propranolol-beta2", lowYield:true, tags:["poll", "pollev", "figure-drill", "jeopardy"], source:"both",
  img:"pe2-bronchomotor-tone", imgAlt:"Bar chart of bronchomotor tone (increase above the line, decrease below) for procedures 1 to 5 in five panels: control, after physostigmine, after atropine, after propranolol and after cocaine; below it the instruction to match procedures 1 to 5 with A carbachol, B sympathetic nerve stimulation, C vagal nerve stimulation, D histamine, E isoproterenol", imgCap:"Bronchomotor tone, procedures 1–5: control and after physostigmine, atropine, propranolol and cocaine. He said: “This is not gonna be on the exam. This is for Jeopardy process only.”",
  stem:"In the figure below, why does propranolol shrink bars 4 and 5 but leave bars 1 to 3 unchanged?",
@@ -879,7 +879,7 @@ QUESTIONS.push(
  note:"A variant on his 10/8 Jeopardy figure (PE2-058). He said: “This is not gonna be on the exam. This is for Jeopardy process only.” Low yield. “beta juice” in the transcript = β2s.",
  cite:"Jeopardy 10/8 (screenshot, variant); transcript 10/8; PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 42, 45, 54"},
 
-{id:"PE2-063", lecture:'PE2', prof:'Gottlieb', tier:'new', topic:'PE2', sub:"verbatim", skill:"apply",
+{id:"PE2-063", lecture:'PE2', prof:'Gottlieb', tier:'new', level:1, topic:'PE2', sub:"verbatim", skill:"apply",
  concept:"rivastigmine-jeopardy-all", dupOf:"PE2-021", tags:["poll", "pollev", "verbatim", "jeopardy"], source:"both",
  stem:"Your patient has been taking Rivastigmine (Exelon) for his Alzheimer's and he is most likely complaining of which?",
  options:[
@@ -921,7 +921,7 @@ QUESTIONS.push(
  note:"Jeopardy 10/8 (100 points), PollEV screenshot; “alpha 1 agonist” and “alpha1 antagonist” are spaced as on the screen. Key = 10/8 audio: “Prazosing, uh, I think I just gave you the answer for that. E as in elephant ... is that correct? It is.” Selective reversible alpha1 antagonist is option E. The stem and options were not read aloud, so the item was not written until the screenshot. The first sentence of the quote is from 10/6. L10-049 (“Which of the following describes prazosin?”) asks the same fact and is now dupOf this item.",
  cite:"Jeopardy 10/8 (screenshot); transcript 10/8; transcript 10/6; PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 17, 27–28, 34"},
 
-{id:"PE2-066", lecture:'PE2', prof:'Gottlieb', tier:'new', topic:'PE2', sub:"verbatim", skill:"apply",
+{id:"PE2-066", lecture:'PE2', prof:'Gottlieb', tier:'new', level:1, topic:'PE2', sub:"verbatim", skill:"apply",
  concept:"no-adrenal-bronchodilation", tags:["poll", "pollev", "verbatim", "jeopardy"], source:"both",
  stem:"Your patient had his adrenal glands removed due to a tumor? Which of the following physiological responses would this pt have difficulty achieving?",
  options:[
@@ -936,7 +936,7 @@ QUESTIONS.push(
  cite:"Jeopardy 10/8 (screenshot); transcript 10/8; Autonomic Nervous System.pdf slides 13, 35; PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 39, 42"},
 
 /* Jeopardy 10/8 (Hail Mary 500): epinephrine and compounds 1, 2, 3 (figure) */
-{id:"PE2-067", lecture:'PE2', prof:'Gottlieb', tier:'new', topic:'PE2', sub:"verbatim", skill:"figure",
+{id:"PE2-067", lecture:'PE2', prof:'Gottlieb', tier:'new', level:2, topic:'PE2', sub:"verbatim", skill:"figure",
  concept:"compound1-propranolol", tags:["poll", "pollev", "verbatim", "jeopardy", "figure-drill", "druglist"], source:"both",
  img:"pe2-epi-compounds", imgAlt:"Hand-drawn blood pressure tracing over time with epinephrine (E) given four times: the first E gives a rise and then a dip below the starting level; after compound 1, E gives a much larger, sustained rise; after compound 2, E gives a fall; after compound 3, E gives no change", imgCap:"Blood pressure: epinephrine (E) alone and after compounds 1, 2 and 3",
  stem:"The figure below shows the tracing for blood pressure in response to epinephrine before and after 3 different drugs. Compound 1 is most likely to be:",
@@ -951,7 +951,7 @@ QUESTIONS.push(
  note:"Jeopardy 10/8 (Hail Mary 500), PollEV screenshot; “this will be our last poll for the day”. Read aloud: “I'm giving epinephrine and I get a vasoconstriction and then after a period of time it kind of goes away and goes back to baseline. Then I give compound 1 plus epinephrine and I get a greater vasoconstriction. And if I give compound 2 plus epinephrine, now I get a vasodilation and compound 3 plus epinephrine blocks the response completely.” Key = 10/8 audio: “B for propranolol? Is that your final answer? ... Is that the correct answer? it is.” Propranolol is option B on the screenshot. He did not name compounds 2 or 3. Tracing cue the same day: “So for your exam, you may get, you know, a tracing, but they're just one effect.” Replaces L11-068, which was rebuilt from his spoken words.",
  cite:"Jeopardy 10/8 (screenshot); transcript 10/8; PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 47–51, 54"},
 
-{id:"PE2-068", lecture:'PE2', prof:'Gottlieb', tier:'new', topic:'PE2', sub:"variant", skill:"figure",
+{id:"PE2-068", lecture:'PE2', prof:'Gottlieb', tier:'new', level:2, topic:'PE2', sub:"variant", skill:"figure",
  concept:"compound2-alpha1-blocker", tags:["poll", "pollev", "figure-drill", "jeopardy"], source:"both",
  img:"pe2-epi-compounds", imgAlt:"Hand-drawn blood pressure tracing over time with epinephrine (E) given four times: the first E gives a rise and then a dip below the starting level; after compound 1, E gives a much larger, sustained rise; after compound 2, E gives a fall; after compound 3, E gives no change", imgCap:"Blood pressure: epinephrine (E) alone and after compounds 1, 2 and 3",
  stem:"In the tracing below, epinephrine given after compound 2 lowers blood pressure instead of raising it. Which drug fits compound 2?",
@@ -966,7 +966,7 @@ QUESTIONS.push(
  note:"A variant on his 10/8 Jeopardy figure (PE2-067). He did not name compound 2 on 10/8 (“if I give compound 2 plus epinephrine, now I get a vasodilation”); the key comes from his 10/7 epinephrine-reversal teaching (prazosin before epinephrine gives vasodilation). Moved here from L11-069, with atropine added as a fifth option.",
  cite:"Jeopardy 10/8 (screenshot, variant); transcript 10/8; transcript 10/7; PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 48–51"},
 
-{id:"PE2-069", lecture:'PE2', prof:'Gottlieb', tier:'new', topic:'PE2', sub:"variant", skill:"figure",
+{id:"PE2-069", lecture:'PE2', prof:'Gottlieb', tier:'new', level:2, topic:'PE2', sub:"variant", skill:"figure",
  concept:"compound3-alpha1-beta2-blocked", tags:["poll", "pollev", "figure-drill", "jeopardy"], source:"both",
  img:"pe2-epi-compounds", imgAlt:"Hand-drawn blood pressure tracing over time with epinephrine (E) given four times: the first E gives a rise and then a dip below the starting level; after compound 1, E gives a much larger, sustained rise; after compound 2, E gives a fall; after compound 3, E gives no change", imgCap:"Blood pressure: epinephrine (E) alone and after compounds 1, 2 and 3",
  stem:"In the tracing below, epinephrine given after compound 3 produces no change in blood pressure. Which receptors must be blocked at that point?",
@@ -981,7 +981,7 @@ QUESTIONS.push(
  note:"A variant on his 10/8 Jeopardy figure (PE2-067). He did not identify compound 3 (“compound 3 plus epinephrine blocks the response completely”); the key is the reading of the tracing with his rules for the vessels (α1 and β2; 10/7 tracings, slides 47–51). The tracing is one continuous run, so compound 3 may have been added on top of compound 2; no drug is keyed.",
  cite:"Jeopardy 10/8 (screenshot, variant); transcript 10/8; transcript 10/7; PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 47–51"},
 
-{id:"PE2-070", lecture:'PE2', prof:'Gottlieb', tier:'new', topic:'PE2', sub:"variant", skill:"figure",
+{id:"PE2-070", lecture:'PE2', prof:'Gottlieb', tier:'new', level:1, topic:'PE2', sub:"variant", skill:"figure",
  concept:"compound-tracing-high-dose", tags:["poll", "pollev", "figure-drill", "jeopardy"], source:"both",
  img:"pe2-epi-compounds", imgAlt:"Hand-drawn blood pressure tracing over time with epinephrine (E) given four times: the first E gives a rise and then a dip below the starting level; after compound 1, E gives a much larger, sustained rise; after compound 2, E gives a fall; after compound 3, E gives no change", imgCap:"Blood pressure: epinephrine (E) alone and after compounds 1, 2 and 3",
  stem:"In the tracing below, is the first dose of epinephrine (before compound 1) a low or a high dose, and why?",
@@ -995,7 +995,7 @@ QUESTIONS.push(
  note:"A variant on his 10/8 Jeopardy figure (PE2-067), from the first step of his 10/8 explanation.",
  cite:"Jeopardy 10/8 (screenshot, variant); transcript 10/8; transcript 10/7; PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slide 47"},
 
-{id:"PE2-071", lecture:'PE2', prof:'Gottlieb', tier:'new', topic:'PE2', sub:"variant", skill:"figure",
+{id:"PE2-071", lecture:'PE2', prof:'Gottlieb', tier:'new', level:2, topic:'PE2', sub:"variant", skill:"figure",
  concept:"compound2-phenylephrine-abolished", tags:["poll", "pollev", "figure-drill", "jeopardy"], source:"both",
  img:"pe2-epi-compounds", imgAlt:"Hand-drawn blood pressure tracing over time with epinephrine (E) given four times: the first E gives a rise and then a dip below the starting level; after compound 1, E gives a much larger, sustained rise; after compound 2, E gives a fall; after compound 3, E gives no change", imgCap:"Blood pressure: epinephrine (E) alone and after compounds 1, 2 and 3",
  stem:"In the tracing below, phenylephrine is given instead of epinephrine after compound 2 (prazosin). What would the tracing most likely show?",
@@ -1024,7 +1024,7 @@ QUESTIONS.push(
  note:"Friday 10/9 review (PollEV screenshot, 12:59 pm). There is no recording or transcript of the review, so he gave no recorded answer; the screenshot shows only the student’s own response, not a key. The stem is the drug name alone, with no colon. Key from the RAAS slides (13–14: losartan, reversible, selective AT1 antagonist; 24–25: the CLAMS drugs) and his 10/8 lecture. DL2-084 (losartan's mechanism) is now dupOf this item.",
  cite:"Review 10/9 (screenshot); PCOL-RAAS_26s.pdf slides 13–14, 24–25, 30; transcript 10/8"},
 
-{id:"PE2-073", lecture:'PE2', prof:'Gottlieb', tier:'new', topic:'PE2', sub:"verbatim", skill:"apply",
+{id:"PE2-073", lecture:'PE2', prof:'Gottlieb', tier:'new', level:1, topic:'PE2', sub:"verbatim", skill:"apply",
  concept:"carbachol-gi-gq-plc", tags:["poll", "pollev", "verbatim", "review"], source:"both",
  stem:"Carbachol will evoke which of the following schemes in the GI?",
  options:[
@@ -1051,7 +1051,7 @@ QUESTIONS.push(
  note:"Friday 10/9 review (PollEV screenshot, 1:03 pm). There is no recording or transcript of the review, so he gave no recorded answer; the screenshot shows only the student’s own response, not a key. “of of” is as on the screen. Three options come from the RAAS slides (9, 12: ACE inhibition, less angiotensin II, bradykinin) and his 10/8 lecture (“if I don't have angiotensin 2, I can't activate the A1 or the 82”). Angiotensin 1-7 is not on his slides or in the 10/8 audio; it is supported only by the official drug list (Pharmacology_Exam_2_Drug_List.pdf page 9, ACE inhibitor row: “Bonus effect 1: Ang 1 goes down alternate pathway and is converted to Angiotensin 1-7 which bind to AT2 → oppose AT1”). Slide 3 shows an “Endopeptidase” arrow leaving angiotensin I with its product unlabeled. With the drug list, all four statements hold, so the key is All the above.",
  cite:"Review 10/9 (screenshot); PCOL-RAAS_26s.pdf slides 3, 9, 12, 26; Pharmacology_Exam_2_Drug_List.pdf page 9; transcript 10/8"},
 
-{id:"PE2-075", lecture:'PE2', prof:'Gottlieb', tier:'new', topic:'PE2', sub:"verbatim", skill:"apply",
+{id:"PE2-075", lecture:'PE2', prof:'Gottlieb', tier:'new', level:1, topic:'PE2', sub:"verbatim", skill:"apply",
  concept:"lisinopril-review-angII", dupOf:"PE2-054", tags:["poll", "pollev", "verbatim", "review", "exam-cue"], source:"both",
  stem:"Lisinopril will decrease the plasma levels of:",
  options:[
@@ -1065,7 +1065,7 @@ QUESTIONS.push(
  cite:"Review 10/9 (screenshot); PCOL-RAAS_26s.pdf slides 3, 9, 12, 29; transcript 10/8"},
 
 /* Review 10/9: acetylcholine in skeletal muscle and drug X (figure) */
-{id:"PE2-076", lecture:'PE2', prof:'Gottlieb', tier:'new', topic:'PE2', sub:"verbatim", skill:"figure",
+{id:"PE2-076", lecture:'PE2', prof:'Gottlieb', tier:'new', level:2, ladder:"rocuronium-tracing", ladderName:"Rocuronium in the skeletal muscle tracing", topic:'PE2', sub:"verbatim", skill:"figure",
  concept:"skm-drug-x-rocuronium", tags:["poll", "pollev", "verbatim", "review", "figure-drill", "druglist"], source:"both",
  img:"pe2-skm-drug-x", imgAlt:"Tracing labelled SKM: a flat line with one small rise after an arrow marked Ach, then a second arrow marked Drug “X” followed by Ach, after which the line stays flat", imgCap:"Skeletal muscle (SKM): acetylcholine alone, then drug X followed by acetylcholine",
  stem:"The tracing below shows the effects of Ach in the skeletal muscle alone or in the presence of drug \"X.\" Drug \"X\" is most likely?",
@@ -1080,7 +1080,7 @@ QUESTIONS.push(
  note:"Friday 10/9 review (PollEV screenshot, 1:07 pm). There is no recording or transcript of the review, so he gave no recorded answer; the screenshot shows only the student’s own response, not a key. “Veranicline” (varenicline) is his spelling, kept. Key from the NMJ slides (19: rocuronium, non-depolarizing, competitive antagonist; 27, 30, 32) and his 10/5 lecture (“karate-like” = curare-like); the same mechanism as his 10/5 poll PE2-019. Tracing cue (10/8): “for your exam, you may get, you know, a tracing, but they're just one effect.”",
  cite:"Review 10/9 (screenshot); PCOL-NMJ_PCOL_2026s_pptx.pdf slides 7–8, 19, 27; PCOL-Cholinergic-26s.pdf slides 12, 29; transcript 10/5"},
 
-{id:"PE2-077", lecture:'PE2', prof:'Gottlieb', tier:'new', topic:'PE2', sub:"variant", skill:"figure",
+{id:"PE2-077", lecture:'PE2', prof:'Gottlieb', tier:'new', level:1, ladder:"rocuronium-tracing", ladderName:"Rocuronium in the skeletal muscle tracing", topic:'PE2', sub:"variant", skill:"figure",
  concept:"skm-tracing-nm-receptor", tags:["poll", "pollev", "figure-drill", "review"], source:"both",
  img:"pe2-skm-drug-x", imgAlt:"Tracing labelled SKM: a flat line with one small rise after an arrow marked Ach, then a second arrow marked Drug “X” followed by Ach, after which the line stays flat", imgCap:"Skeletal muscle (SKM): acetylcholine alone, then drug X followed by acetylcholine",
  stem:"In the tracing below, through which receptor does acetylcholine produce the first response in skeletal muscle?",
@@ -1095,7 +1095,7 @@ QUESTIONS.push(
  note:"A variant on his 10/9 review figure (PE2-076); he gave no recorded answer at the review. ",
  cite:"Review 10/9 (screenshot, variant); PCOL-NMJ_PCOL_2026s_pptx.pdf slides 13–17; transcript 9/30; transcript 10/5"},
 
-{id:"PE2-078", lecture:'PE2', prof:'Gottlieb', tier:'new', topic:'PE2', sub:"variant", skill:"figure",
+{id:"PE2-078", lecture:'PE2', prof:'Gottlieb', tier:'new', level:2, ladder:"rocuronium-tracing", ladderName:"Rocuronium in the skeletal muscle tracing", topic:'PE2', sub:"variant", skill:"figure",
  concept:"skm-tracing-succinylcholine", tags:["poll", "pollev", "figure-drill", "review"], source:"both",
  img:"pe2-skm-drug-x", imgAlt:"Tracing labelled SKM: a flat line with one small rise after an arrow marked Ach, then a second arrow marked Drug “X” followed by Ach, after which the line stays flat", imgCap:"Skeletal muscle (SKM): acetylcholine alone, then drug X followed by acetylcholine",
  stem:"If drug X in the tracing below were succinylcholine, a depolarizing agent, what would the tracing most likely show?",
@@ -1109,7 +1109,7 @@ QUESTIONS.push(
  note:"A variant on his 10/9 review figure (PE2-076); he gave no recorded answer at the review. His tracing shows the rocuronium pattern (no response at X); the fasciculation step is his 10/5 description of succinylcholine, not a tracing he showed.",
  cite:"Review 10/9 (screenshot, variant); PCOL-NMJ_PCOL_2026s_pptx.pdf slides 19–25; transcript 10/5"},
 
-{id:"PE2-079", lecture:'PE2', prof:'Gottlieb', tier:'new', topic:'PE2', sub:"variant", skill:"figure",
+{id:"PE2-079", lecture:'PE2', prof:'Gottlieb', tier:'new', level:2, ladder:"rocuronium-tracing", ladderName:"Rocuronium in the skeletal muscle tracing", topic:'PE2', sub:"variant", skill:"figure",
  concept:"skm-tracing-not-muscarinic", tags:["poll", "pollev", "figure-drill", "review"], source:"both",
  img:"pe2-skm-drug-x", imgAlt:"Tracing labelled SKM: a flat line with one small rise after an arrow marked Ach, then a second arrow marked Drug “X” followed by Ach, after which the line stays flat", imgCap:"Skeletal muscle (SKM): acetylcholine alone, then drug X followed by acetylcholine",
  stem:"Why could neither oxybutynin nor carbachol be drug X in the tracing below?",
@@ -1124,7 +1124,7 @@ QUESTIONS.push(
  note:"A variant on his 10/9 review figure (PE2-076); he gave no recorded answer at the review. ",
  cite:"Review 10/9 (screenshot, variant); PCOL-Cholinergic-26s.pdf slides 11–12, 29; PCOL-NMJ_PCOL_2026s_pptx.pdf slide 19; transcript 10/5"},
 
-{id:"PE2-080", lecture:'PE2', prof:'Gottlieb', tier:'new', topic:'PE2', sub:"variant", skill:"figure",
+{id:"PE2-080", lecture:'PE2', prof:'Gottlieb', tier:'new', level:3, ladder:"rocuronium-tracing", ladderName:"Rocuronium in the skeletal muscle tracing", topic:'PE2', sub:"variant", skill:"figure",
  concept:"skm-tracing-neostigmine-reversal", tags:["poll", "pollev", "figure-drill", "review"], source:"both",
  img:"pe2-skm-drug-x", imgAlt:"Tracing labelled SKM: a flat line with one small rise after an arrow marked Ach, then a second arrow marked Drug “X” followed by Ach, after which the line stays flat", imgCap:"Skeletal muscle (SKM): acetylcholine alone, then drug X followed by acetylcholine",
  stem:"After drug X (rocuronium) in the tracing below, which drug would most likely bring back the response to acetylcholine?",
@@ -1139,7 +1139,7 @@ QUESTIONS.push(
  note:"A variant on his 10/9 review figure (PE2-076); he gave no recorded answer at the review. The reversal is his 10/5 curare poll (PE2-022: “I have a question similar to this in the exam every year”).",
  cite:"Review 10/9 (screenshot, variant); PCOL-NMJ_PCOL_2026s_pptx.pdf slides 19, 39; transcript 10/5"},
 
-{id:"PE2-081", lecture:'PE2', prof:'Gottlieb', tier:'new', topic:'PE2', sub:"verbatim", skill:"apply",
+{id:"PE2-081", lecture:'PE2', prof:'Gottlieb', tier:'new', level:1, topic:'PE2', sub:"verbatim", skill:"apply",
  concept:"carvedilol-hr-afterload", tags:["poll", "pollev", "verbatim", "review", "druglist"], source:"both",
  stem:"Which of the following drugs can decrease heart rate and afterload?",
  options:[
@@ -1153,7 +1153,7 @@ QUESTIONS.push(
  note:"Friday 10/9 review (PollEV screenshot, 1:11 pm). There is no recording or transcript of the review, so he gave no recorded answer; the screenshot shows only the student’s own response, not a key. Key from the adrenergic slides (7, 54: carvedilol β1, β2, α1) and his 10/6 and 10/7 lectures (10/7: “mixed beta blockers like carvedilol, that can block the beta ones and the alpha ones, and thus decrease the heart rate and the mean arterial pressure”); prazosin's reflex tachycardia is his 10/6 teaching (slide 30).",
  cite:"Review 10/9 (screenshot); PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 7, 10, 18, 30, 54; PCOL-Cholinergic-26s.pdf slide 19; transcript 10/6; transcript 10/7"},
 
-{id:"PE2-082", lecture:'PE2', prof:'Gottlieb', tier:'new', topic:'PE2', sub:"verbatim", skill:"apply",
+{id:"PE2-082", lecture:'PE2', prof:'Gottlieb', tier:'new', level:1, topic:'PE2', sub:"verbatim", skill:"apply",
  concept:"carvedilol-adr-all", tags:["poll", "pollev", "verbatim", "review", "druglist"], source:"both",
  stem:"Carvedilol will most likely cause:",
  options:[
@@ -1181,7 +1181,7 @@ QUESTIONS.push(
  note:"Friday 10/9 review (PollEV screenshot, 1:14 pm). There is no recording or transcript of the review, so he gave no recorded answer; the screenshot shows only the student’s own response, not a key. The stem is the drug name alone. Key from NMJ slide 40 (“AChE Antagonists ... Reversible ... High affinity for the AChE ... Donepezil (Aricept), Rivastigmine (Exelon)”) and his 10/5 and 10/6 lectures. “Selective reversible alpha1 antagonist” is the wording of the key of his 10/8 Prazosin question (PE2-065).",
  cite:"Review 10/9 (screenshot); PCOL-NMJ_PCOL_2026s_pptx.pdf slides 40–41; transcript 10/5; transcript 10/6"},
 
-{id:"PE2-084", lecture:'PE2', prof:'Gottlieb', tier:'new', topic:'PE2', sub:"verbatim", skill:"apply",
+{id:"PE2-084", lecture:'PE2', prof:'Gottlieb', tier:'new', level:2, ladder:"beta-blocker-asthma", ladderName:"β blocker in asthma, with albuterol", topic:'PE2', sub:"verbatim", skill:"apply",
  concept:"albuterol-asthma-propranolol", tags:["poll", "pollev", "verbatim", "review", "druglist"], source:"both",
  stem:"If your patient takes albuterol for his asthma, which of the following is most likely to worsen his condition?",
  options:[
@@ -1236,7 +1236,7 @@ QUESTIONS.push(
  note:"Friday 10/9 review (PollEV screenshot, 1:20 pm). There is no recording or transcript of the review, so he gave no recorded answer; the screenshot shows only the student’s own response, not a key. Key from NMJ slide 7 (“Varenicline (Chantix) =>Selective partial agonist” at α4β2 NN receptors) and his 10/1 and 10/5 lectures. L08-008 and DL2-002 (varenicline's mechanism) are now dupOf this item.",
  cite:"Review 10/9 (screenshot); PCOL-NMJ_PCOL_2026s_pptx.pdf slides 7–8; PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 40–41; transcript 10/1; transcript 10/5"},
 
-{id:"PE2-088", lecture:'PE2', prof:'Gottlieb', tier:'new', topic:'PE2', sub:"verbatim", skill:"apply",
+{id:"PE2-088", lecture:'PE2', prof:'Gottlieb', tier:'new', level:1, topic:'PE2', sub:"verbatim", skill:"apply",
  concept:"trospium-least-likely-urination", dupOf:"PE2-027", tags:["poll", "pollev", "verbatim", "review"], source:"both",
  stem:"Which of the following would be the least likely side effect of trospium?",
  options:[
