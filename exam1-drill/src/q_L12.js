@@ -82,7 +82,7 @@ QUESTIONS.push(
  quote:"Angiotensin II AT1 (Receptor, Gq) & AT2 (Receptor, Gi) … The AT2 is called to a G alphai. So what do you think it's going to do? The opposite of the AT1.",
  cite:"PCOL-RAAS_26s.pdf slides 3, 18; transcript 10/8"},
 
-{id:"L12-006", lecture:"L12", prof:"Gottlieb", tier:"new", topic:"L12", sub:"casc", skill:"apply", multi:true,
+{id:"L12-006", lecture:"L12", prof:"Gottlieb", tier:"new", level:1, topic:"L12", sub:"casc", skill:"apply", multi:true,
  concept:"at1-effects", tags:["in-class"], source:"both",
  stem:"Angiotensin II binds the AT1 receptor, which is coupled to Gq. Which effects follow? Select all that apply.",
  options:[
@@ -261,7 +261,7 @@ QUESTIONS.push(
  note:"He asked the class whether renin goes up or down with low sodium, then answered.",
  cite:"PCOL-RAAS_26s.pdf slides 5–6; transcript 10/8"},
 
-{id:"L12-019", lecture:"L12", prof:"Gottlieb", tier:"new", topic:"L12", sub:"renin", skill:"apply",
+{id:"L12-019", lecture:"L12", prof:"Gottlieb", tier:"new", level:1, topic:"L12", sub:"renin", skill:"apply",
  concept:"diuretic-compensation", tags:[], source:"transcript",
  stem:"A patient taking a diuretic loses Na+ in the urine. Which compensation is most likely?",
  options:[
@@ -302,7 +302,7 @@ QUESTIONS.push(
  note:"He asked the class what it means to be the rate-limiting enzyme; a student answered “You run out of it. If you run out of it, no reaction” and he added that it is the first step.",
  cite:"PCOL-RAAS_26s.pdf slide 8; transcript 10/8"},
 
-{id:"L12-022", lecture:"L12", prof:"Gottlieb", tier:"new", topic:"L12", sub:"alisk", skill:"apply", multi:true,
+{id:"L12-022", lecture:"L12", prof:"Gottlieb", tier:"new", level:1, topic:"L12", sub:"alisk", skill:"apply", multi:true,
  concept:"aliskiren-effects", tags:[], source:"both",
  stem:"A patient starts aliskiren. Which changes are expected? Select all that apply.",
  options:[
@@ -372,7 +372,7 @@ QUESTIONS.push(
  reading:[{src:"Katzung 16e, Ch. 17", sec:"Angiotensin-Converting Enzyme Inhibitors", t:"ACE inhibitors block the conversion of angiotensin I to angiotensin II and also inhibit the degradation of bradykinin. Inhibiting bradykinin metabolism contributes significantly to their hypotensive action, and bradykinin is apparently responsible for some adverse effects, including cough and angioedema."}],
  cite:"PCOL-RAAS_26s.pdf slides 9, 12; transcript 10/8"},
 
-{id:"L12-028", lecture:"L12", prof:"Gottlieb", tier:"new", topic:"L12", sub:"acei", skill:"apply", multi:true,
+{id:"L12-028", lecture:"L12", prof:"Gottlieb", tier:"new", level:1, topic:"L12", sub:"acei", skill:"apply", multi:true,
  concept:"acei-up-down", tags:[], source:"both",
  stem:"Which changes are expected with an angiotensin-converting enzyme (ACE) inhibitor? Select all that apply.",
  options:[
@@ -439,7 +439,7 @@ QUESTIONS.push(
  quote:"So, when we look, bless you, when we look at the mechanism of action of our RBs, these drugs are 10,000 fold higher affinity for the 81 than 82",
  cite:"PCOL-RAAS_26s.pdf slides 13–14; transcript 10/8"},
 
-{id:"L12-033", lecture:"L12", prof:"Gottlieb", tier:"new", topic:"L12", sub:"arb", skill:"apply", multi:true,
+{id:"L12-033", lecture:"L12", prof:"Gottlieb", tier:"new", level:1, topic:"L12", sub:"arb", skill:"apply", multi:true,
  concept:"arb-up-down", tags:["in-class"], source:"both",
  stem:"A patient takes losartan. Which changes are expected? Select all that apply.",
  options:[
@@ -455,7 +455,7 @@ QUESTIONS.push(
  reading:[{src:"Katzung 16e, Ch. 17", sec:"Angiotensin Receptor Blockers", t:"The available ARBs are selective for the AT1 receptor. Prolonged treatment disinhibits renin release and increases circulating angiotensin II levels, so there may be increased stimulation of AT2 receptors, whose activation causes vasodilation and other beneficial effects."}],
  cite:"PCOL-RAAS_26s.pdf slides 13, 27, 29; transcript 10/8"},
 
-{id:"L12-034", lecture:"L12", prof:"Gottlieb", tier:"new", topic:"L12", sub:"arb", skill:"tell",
+{id:"L12-034", lecture:"L12", prof:"Gottlieb", tier:"new", level:1, topic:"L12", sub:"arb", skill:"tell",
  concept:"arb-at2-bonus", tags:["in-class"], source:"both",
  stem:"An ARB (angiotensin II receptor blocker) leaves the AT2 receptor unblocked. What is the result?",
  options:[
@@ -483,7 +483,7 @@ QUESTIONS.push(
  note:"One sentence in the audio reads “Losartan is a prodrug and is the most powerful of them all”, apparently a garbled sentence about candesartan; slide 13 marks losartan “Active, but EXP3174” and puts it last in the rank order, and he later said losartan “is an active ingredient, but one of its metabolites is also active”. Keyed to the slides. He also said “I don't care if you know which one is the most potent”, so this item is low yield.",
  cite:"PCOL-RAAS_26s.pdf slides 13–14; transcript 10/8"},
 
-{id:"L12-037", lecture:"L12", prof:"Gottlieb", tier:"new", topic:"L12", sub:"arb", skill:"apply",
+{id:"L12-037", lecture:"L12", prof:"Gottlieb", tier:"new", level:3, ladder:"ace-inhibitor", ladderName:"ACE inhibitor, spironolactone, potassium and the cough", topic:"L12", sub:"arb", skill:"apply",
  concept:"arb-when", tags:[], source:"transcript",
  stem:"Which patient taking lisinopril is the best candidate to switch to an angiotensin II receptor blocker (ARB)?",
  options:[
@@ -497,7 +497,7 @@ QUESTIONS.push(
  reading:[{src:"Katzung 16e, Ch. 17", sec:"Angiotensin Receptor Blockers", t:"ARBs such as losartan and valsartan are competitive AT1 antagonists whose efficacy in hypertension is similar to that of ACE inhibitors, but they are associated with a lower incidence of cough. They provide a useful alternative when ACE inhibitors are not well tolerated, and should not be used in pregnancy."}],
  cite:"PCOL-RAAS_26s.pdf slides 13, 19; transcript 10/8"},
 
-{id:"L12-038", lecture:"L12", prof:"Gottlieb", tier:"new", topic:"L12", sub:"arb", skill:"apply", multi:true,
+{id:"L12-038", lecture:"L12", prof:"Gottlieb", tier:"new", level:1, topic:"L12", sub:"arb", skill:"apply", multi:true,
  concept:"losartan-map", tags:["exam-cue"], source:"both",
  stem:"Losartan blocks AT1 receptors (Gq) in the veins and the arteries. Which effects on the mean arterial pressure (MAP) equation follow? Select all that apply.",
  options:[
@@ -607,7 +607,7 @@ QUESTIONS.push(
  quote:"Typically maybe they might get too much hypotension, so we're gonna start low and go slow, right? Uh, they can get hyperkalemia, OK, so all three can cause hyperkalemia, especially if our patient has kidney disease. … Now, all three drugs can also cause fetus damage.",
  cite:"PCOL-RAAS_26s.pdf slide 19; transcript 10/8"},
 
-{id:"L12-046", lecture:"L12", prof:"Gottlieb", tier:"new", topic:"L12", sub:"adr", skill:"apply",
+{id:"L12-046", lecture:"L12", prof:"Gottlieb", tier:"new", level:1, topic:"L12", sub:"adr", skill:"apply",
  concept:"hyperkalemia-risk", tags:["in-class"], source:"both",
  stem:"An ACE (angiotensin-converting enzyme) inhibitor is about to be started. Which patient is at greatest risk of hyperkalemia?",
  options:[
@@ -634,7 +634,7 @@ QUESTIONS.push(
  note:"He asked the class for the most common side effect of ACE inhibitors and answered it.",
  cite:"PCOL-RAAS_26s.pdf slide 19; transcript 10/8"},
 
-{id:"L12-048", lecture:"L12", prof:"Gottlieb", tier:"new", topic:"L12", sub:"adr", skill:"apply",
+{id:"L12-048", lecture:"L12", prof:"Gottlieb", tier:"new", level:3, topic:"L12", sub:"adr", skill:"apply",
  concept:"angioedema-switch", tags:[], source:"both",
  stem:"A patient taking enalapril develops swelling of the lips, face and airway. What is the best next step?",
  options:[
@@ -770,7 +770,7 @@ QUESTIONS.push(
  quote:"Weak inhibitor of the androgen receptor and of testosterone synthesis … you can take a small doses of spironolactone. It's gonna kinda inhibit the, the, the male hormone.",
  cite:"PCOL-RAAS_26s.pdf slide 22; transcript 10/8"},
 
-{id:"L12-059", lecture:"L12", prof:"Gottlieb", tier:"new", topic:"L12", sub:"aldo", skill:"apply",
+{id:"L12-059", lecture:"L12", prof:"Gottlieb", tier:"new", level:2, ladder:"ace-inhibitor", ladderName:"ACE inhibitor, spironolactone, potassium and the cough", topic:"L12", sub:"aldo", skill:"apply",
  concept:"spironolactone-acei-ddi", tags:[], source:"both",
  stem:"Spironolactone is added to lisinopril as adjunct therapy. Which drug–drug interaction is the main concern?",
  options:[
@@ -784,7 +784,7 @@ QUESTIONS.push(
  cite:"PCOL-RAAS_26s.pdf slides 19, 22, 25; transcript 10/8"},
 
 /* ---------------- Predicting drug effects; β blockers (slides 24–31) ---------------- */
-{id:"L12-060", lecture:"L12", prof:"Gottlieb", tier:"new", topic:"L12", sub:"predict", skill:"apply",
+{id:"L12-060", lecture:"L12", prof:"Gottlieb", tier:"new", level:1, topic:"L12", sub:"predict", skill:"apply",
  concept:"metoprolol-renin", tags:["in-class"], source:"both",
  stem:"How does metoprolol affect the renin–angiotensin–aldosterone system (RAAS)?",
  options:[
@@ -799,7 +799,7 @@ QUESTIONS.push(
  reading:[{src:"Katzung 16e, Ch. 17", sec:"Inhibition of the Renin-Angiotensin System — Drugs That Block Renin Release", t:"Drugs that block the sympathetic nervous system inhibit the release of renin. Propranolol and other β-adrenoceptor-blocking drugs act by blocking the renal β1 receptors that mediate the sympathetic control of renin release."}],
  cite:"PCOL-RAAS_26s.pdf slides 7, 24–25; transcript 10/8"},
 
-{id:"L12-061", lecture:"L12", prof:"Gottlieb", tier:"new", topic:"L12", sub:"predict", skill:"tell",
+{id:"L12-061", lecture:"L12", prof:"Gottlieb", tier:"new", level:1, ladder:"ace-inhibitor", ladderName:"ACE inhibitor, spironolactone, potassium and the cough", topic:"L12", sub:"predict", skill:"tell",
  concept:"which-raises-bradykinin", tags:[], source:"both",
  stem:"Which of these drugs raises bradykinin?",
  options:[
@@ -812,7 +812,7 @@ QUESTIONS.push(
  quote:"What is gonna be the mechanism of action of the ACE inhibitors like lisinopril to block the ACE enzyme? What is it gonna do? It's gonna lower angiotensin 2, and if I don't have angiotensin 2, I can't activate the A1 or the 82, and I'm gonna lower everything downstream from that, right? It can also increase the levels of bradykinin, so that's sort of like the cherry on top.",
  cite:"PCOL-RAAS_26s.pdf slides 26, 29; transcript 10/8"},
 
-{id:"L12-062", lecture:"L12", prof:"Gottlieb", tier:"new", topic:"L12", sub:"predict", skill:"tell",
+{id:"L12-062", lecture:"L12", prof:"Gottlieb", tier:"new", level:1, topic:"L12", sub:"predict", skill:"tell",
  concept:"which-raises-at2", tags:["exam-cue"], source:"both",
  stem:"Which of these drugs increases AT2 receptor activation?",
  options:[
@@ -825,7 +825,7 @@ QUESTIONS.push(
  quote:"They block the 81, which blocks the activation of the 81, but enhance the activation of the 82. Why is that good? Because it opposes the 81.",
  cite:"PCOL-RAAS_26s.pdf slides 26–29; transcript 10/8"},
 
-{id:"L12-063", lecture:"L12", prof:"Gottlieb", tier:"new", topic:"L12", sub:"predict", skill:"tell",
+{id:"L12-063", lecture:"L12", prof:"Gottlieb", tier:"new", level:1, topic:"L12", sub:"predict", skill:"tell",
  concept:"ang1-acei-vs-ri", tags:["exam-cue"], source:"both",
  stem:"How do lisinopril and aliskiren differ in their effect on angiotensin I?",
  options:[
@@ -838,17 +838,18 @@ QUESTIONS.push(
  quote:"So what I have done for you over here for you to study for the exam is a little table where you can practice drawing out the cascade and see who increases and who decreases what in the process, because I guarantee you you're gonna have at least 1 to 2 questions on the effects of these drugs in the cascade.",
  cite:"PCOL-RAAS_26s.pdf slides 8, 12, 29; transcript 10/8"},
 
-{id:"L12-064", lecture:"L12", prof:"Gottlieb", tier:"new", topic:"L12", sub:"predict", skill:"apply", multi:true,
- concept:"gq-inhibitors-jeopardy", tags:["in-class", "jeopardy"], source:"both",
- stem:"Which of the following drugs inhibit the Gq pathway? Select all that apply.",
+/* ---------------- Ladder rung (Tier 3): switching away from the ACE inhibitor ---------------- */
+{id:"L12-065", lecture:"L12", prof:"Gottlieb", tier:"new", level:3, ladder:"ace-inhibitor", ladderName:"ACE inhibitor, spironolactone, potassium and the cough", topic:"L12", sub:"adr", skill:"apply",
+ concept:"ace-to-arb-switch-potassium", tags:["reversal"], source:"both",
+ stem:"A patient takes lisinopril with spironolactone as adjunct therapy. He develops a dry cough, and his potassium is 5.4. Lisinopril is switched to losartan. What is expected?",
  options:[
-  {t:"Losartan", correct:true, why:"Losartan blocks AT1, which is Gq."},
-  {t:"Prazosin", correct:true, why:"Prazosin blocks α1, which is Gq."},
-  {t:"Phenoxybenzamine", correct:true, why:"Phenoxybenzamine blocks α1 (Gq) and α2."},
-  {t:"Atropine", correct:true, why:"Atropine blocks M1 and M3, which are Gq."},
-  {t:"Metoprolol", correct:false, why:"Metoprolol blocks β1, which is Gs."}],
- teach:"Work from the receptor table: AT1, α1, M1 and M3 are Gq. Losartan (AT1), prazosin (α1), phenoxybenzamine (α1 and α2) and atropine (M1, M2, M3) all block a Gq receptor. The β receptors are Gs, so metoprolol does not. The receptor table may be written on scratch paper during the exam, from memory.",
- quote:"Yes, because losartan blocks the AT1, which is GQ. … Prazosin blocks 2, Alpha 1, which is GQ. Fenoxbenzammine blocks alpha 1, which is GQ and alpha 2, right? So that's gonna include the anatropine blocks the M3s and M1s, which are also GQ.",
- note:"Jeopardy question (“Drug receptor 200”) on 10/8. The options were not read aloud; the answer was E (all of the above), with the student's reason for losartan and his for prazosin, phenoxybenzamine and atropine. Here it is asked as select-all with metoprolol (β1, Gs) as the wrong choice. He added: “if you want to write the quick stable in your test, I have no problem with that when you scratch paper ... You just can't do it from your notes. Got to do from memory.”",
- cite:"PCOL-RAAS_26s.pdf slides 3, 31; transcript 10/8"}
+  {t:"The cough eases; the hyperkalemia risk remains", correct:true, why:"The cough comes from bradykinin, which only the ACE inhibitor raises; losartan and spironolactone both still cause hyperkalemia."},
+  {t:"The cough eases; potassium returns to normal", correct:false, why:"Angiotensin II receptor blockers (ARBs) also cause hyperkalemia, and spironolactone still spares potassium; the risk stays."},
+  {t:"The cough persists; potassium returns to normal", correct:false, why:"Losartan does not raise bradykinin, so the cough should ease; and the potassium risk does not go away."},
+  {t:"The cough persists; the hyperkalemia risk remains", correct:false, why:"The hyperkalemia part is right, but the cough is a bradykinin effect of the ACE inhibitor that losartan does not share."},
+  {t:"Both resolve; losartan blocks the MR receptor", correct:false, why:"Losartan blocks AT1; the mineralocorticoid receptor (MR) antagonist here is spironolactone, which keeps potassium up."}],
+ teach:"Lisinopril blocks the angiotensin-converting enzyme (ACE): angiotensin II falls, and bradykinin, which ACE normally breaks down, builds up and causes the dry cough. Spironolactone, an MR antagonist and potassium-sparing diuretic, adds its hyperkalemia to the ACE inhibitor's when given as adjunct therapy. Switching to an ARB such as losartan removes the bradykinin effect, since there is no cross-class effect, but renin inhibitors, ACE inhibitors and ARBs all cause hyperkalemia, so with spironolactone the potassium (normal about 3 to 5) still has to be watched.",
+ quote:"it can be used as adjunct therapy to an AC or ARB, assuming their potassium is not too high, because remember, both drugs cause hyperkalemia. We may have an additive effect.",
+ note:"On the cough he said: \"One is the dry cough that is more with the ACEs than you would get with the ARBs or the RAI inhibitors\" and \"if you have angioedema to the ace, you can try the ARB. Because there's no cross, you know, class effect.\" (transcript 10/8).",
+ cite:"PCOL-RAAS_26s.pdf slides 19, 22, 26–27; transcript 10/8"}
 );

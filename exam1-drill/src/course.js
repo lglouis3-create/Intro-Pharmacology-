@@ -29,7 +29,7 @@ const COURSE = {
     {id:'L10', deck:'PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf', label:'Day 10 (10/6): Adrenergic pharmacology, indirect-acting drugs and α receptors', prof:'Gottlieb', exam:2, module:2},
     {id:'L11', deck:'PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf', label:'Day 11 (10/7, 10/8): β receptors, epinephrine and norepinephrine, tracings, nitric oxide', prof:'Gottlieb', exam:2, module:2},
     {id:'L12', deck:'PCOL-RAAS_26s.pdf', label:'Day 12 (10/8): Renin–angiotensin–aldosterone system', prof:'Gottlieb', exam:2, module:2},
-    {id:'PE2', deck:'PollEV’s Exam 2.pdf', label:'His Exam 2 polls (verbatim, with his keys)', prof:'Gottlieb', exam:2, module:2},
+    {id:'PE2', deck:'PollEV’s Exam 2.pdf', decks:['PollEV’s Exam 2.pdf', 'Jeopardy 10/8', 'Review 10/9'], label:'His Exam 2 polls (verbatim, with his keys)', prof:'Gottlieb', exam:2, module:2},
     {id:'DL2', deck:'Pharmacology_Exam_2_Drug_List.pdf', label:'Exam 2 drug list', prof:'Gottlieb', exam:2, module:2}
   ],
   exams: [
@@ -49,9 +49,21 @@ const COURSE = {
      blurb:'Covers the Sept 22 – Sept 30 lectures (syllabus). 23% of the course grade.',
      pools:[{key:'exam1', name:'Exam 1 material', marks:null, filter:{exam:1}}]},
     {id:2, name:'Exam 2', scope:'Autonomic, cholinergic, adrenergic, nitric oxide, RAAS (10/1–10/8)', date:'Mon Oct 12, 8:30–10:30 am', when:'2026-10-12T08:30:00-05:00',  // syllabus: Exam II, Mon Oct 12, 8:30–10:30 am
-     questions:null,             // count not yet announced; the simulator asks for a length
+     questions:50,               // Exam 2 format the student reported on 10/9 (from the review; secondhand, not on the syllabus)
+     // Topic counts from the same report. Counts he did not give (drug pairs/DDIs, reversing a drug) stay in "the rest".
+     // Each question is sorted by the first test it passes, in this order; the tests are keyword rules, so the sort is approximate.
+     blueprint:{sata:2, parts:[
+       {key:'graph', name:'Graph (tissue tracing)', n:2, test:q => !!q.img},
+       {key:'drug', name:'Drug list: MOA, receptors, SOA (20%)', n:10, test:q => q.lecture === 'DL2'},
+       {key:'ans', name:'Autonomic system: dual innervation, exceptions', n:[2, 3],
+        test:q => q.lecture === 'L07' && /innervat|dual|exception|gangli|adrenal medulla|sweat|\b[PS]NS\b|parasympathetic|sympathetic/i.test(q.stem)},
+       {key:'organ', name:'Receptors on an organ and their responses', n:[3, 4],
+        test:q => q.lecture === 'L07' || /\blocated\b|\blocation\b|site of action|\bSOA\b|which receptors?\b|receptors? (?:on|in) the\b/i.test(q.stem)},
+       {key:'predict', name:'Tier 1: predict the effect of a receptor (DUMBBELSS)', n:[5, 7],
+        test:q => q.level === 1 || /DUMBBEL|most likely (?:to )?(?:produce|cause|evoke|occur|experience)|side effects?|adverse|overdose/i.test(q.stem)},
+       {key:'other', name:'Everything else, including Tier 2 (drug pairs, DDIs) and Tier 3 (reversing a drug)', rest:true}]},
      minutes:120,
-     sata:null,
+     sata:2,                     // two select-all questions (same report)
      blurb:'Covers the Oct 1 – Oct 8 lectures (syllabus): autonomic nervous system, neuromuscular junction, cholinergic, adrenergic, nitric oxide, RAAS. 24% of the course grade.',
      pools:[{key:'exam2', name:'Exam 2 material', marks:null, filter:{exam:2}}]}
   ],

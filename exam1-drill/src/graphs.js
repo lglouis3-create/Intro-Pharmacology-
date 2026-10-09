@@ -252,5 +252,39 @@ const GRAPHS = [
   'Block β2 (propranolol) and the constriction at high dose gets greater; block α1 (prazosin) and the high dose dilates instead (epinephrine reversal).',
   'The trap: α2 is Gi and inhibitory, β1 is in the heart, and epinephrine does not bind muscarinic receptors.'],
  method:'Name the receptors in the blood vessels, recall which ones epinephrine binds at low and at high dose, then decide who runs the show at each dose.',
- asks:['The figure below represents the binding of Epi to two receptors. Receptor A is most likely? Alpha 2 / Beta 1 / Alpha 1 / Beta 2 / Muscarinic receptors', 'Receptor B is most likely?', 'Which responses do vessels C and D show?', 'What would propranolol or prazosin given first change at high concentration?']}
+ asks:['The figure below represents the binding of Epi to two receptors. Receptor A is most likely? Alpha 2 / Beta 1 / Alpha 1 / Beta 2 / Muscarinic receptors', 'Receptor B is most likely?', 'Which responses do vessels C and D show?', 'What would propranolol or prazosin given first change at high concentration?']},
+
+{key:'pe2-bronchomotor-tone', alts:[], exam:2,
+ title:'Bronchomotor tone: procedures 1–5 after physostigmine, atropine, propranolol and cocaine (Jeopardy 10/8, Exam 2)', group:'Other', source:'Jeopardy 10/8 (PollEV screenshot; key on his slide). He said: “This is not gonna be on the exam. This is for Jeopardy process only.”',
+ read:[
+  'Bars above the line raise bronchomotor tone (constriction: carbachol, vagal stimulation, histamine; Gq); bars below lower it (dilation: isoproterenol, sympathetic stimulation; β2, Gs).',
+  'After physostigmine only bar 2 grows: the cholinesterase inhibitor helps acetylcholine released by the vagus; carbachol is synthetic and not broken down. Procedure 2 = vagal stimulation (C), procedure 1 = carbachol (A).',
+  'After atropine bars 1 and 2 almost disappear and bar 3 stays: histamine on its own receptor. Procedure 3 = histamine (D).',
+  'After propranolol bars 4 and 5 shrink: both are β2 effects. After cocaine only bar 5 deepens: norepinephrine and epinephrine released by the nerves; isoproterenol is synthetic. Procedure 5 = sympathetic stimulation (B), 4 = isoproterenol (E): ACDEB.',
+  'The trap: physostigmine and cocaine change only what the body releases (bars 2 and 5), not the synthetic drugs (bars 1 and 4).'],
+ method:'Sort the five into constrictors and dilators first, then ask of each panel which bars grew, shrank or stayed, and match the drug mechanism (AChE inhibitor, muscarinic antagonist, β1 and β2 antagonist, reuptake inhibitor) to the bar it changed.',
+ asks:['What is the correct matching (ACDEB / BEDCA / CADBE / EBDAC)', 'Which procedure is vagal nerve stimulation, and which panel identifies it?', 'Why does bar 3 survive atropine?', 'Why does cocaine deepen only bar 5; why does propranolol shrink 4 and 5?']},
+
+{key:'pe2-epi-compounds', alts:[], exam:2,
+ title:'Blood pressure: epinephrine before and after compounds 1, 2 and 3 (Jeopardy 10/8, Exam 2)', group:'Other', source:'Jeopardy 10/8 (PollEV screenshot)',
+ read:[
+  'This is a blood pressure tracing over time; E marks each dose of epinephrine and the vertical lines mark compounds 1, 2 and 3.',
+  'First E: a rise. A rise (vasoconstriction) is α1, which epinephrine reaches only at a high dose; β2 in the same vessels opposes it.',
+  'After compound 1: a much greater, sustained rise. β2, the physiological antagonist of α1, was removed: propranolol (β1 and β2 antagonist).',
+  'After compound 2: a fall. α1 was removed and β2 is left alone: epinephrine reversal, an α1 blocker such as prazosin.',
+  'After compound 3: no change. Neither α1 nor β2 is left for epinephrine.',
+  'The trap: a β1-selective blocker (metoprolol) or a muscarinic antagonist (atropine) does not change the vascular response; an α1 blocker reverses it instead of enlarging it.'],
+ method:'List the receptors in the blood vessels (α1, β2), recall which ones epinephrine binds at a high dose, then ask after each compound whether the rise grew (β2 removed), reversed (α1 removed) or vanished (both removed).',
+ asks:['Compound 1 is most likely to be: Metoprolol / Propranolol / Atropine / Prazosin / Phenoxybenzamine', 'Which drug fits compound 2?', 'Which receptors must be blocked after compound 3?', 'Is the first epinephrine dose low or high? What would phenylephrine show after compound 2?']},
+
+{key:'pe2-skm-drug-x', alts:[], exam:2,
+ title:'Skeletal muscle: acetylcholine alone, then drug X followed by acetylcholine (review 10/9, Exam 2)', group:'Other', source:'Review 10/9 (PollEV screenshot); no recorded answer',
+ read:[
+  'SKM = skeletal muscle. The first arrow (Ach) gives a small rise: a contraction through the muscle nicotinic (Nm) receptor, a ligand-gated ion channel.',
+  'After drug X, the same acetylcholine gives no rise at all: X took away the Nm response.',
+  'A competitive Nm antagonist (rocuronium, curare-like) keeps the channel shut, with no contraction when X is given.',
+  'Drugs on other receptors leave the response alone: carbachol and oxybutynin (muscarinic), norepinephrine (adrenergic), varenicline (Nn in the brain).',
+  'The trap: a depolarizing agent (succinylcholine) also paralyzes, but it would first give brief contractions (fasciculations) at X; a cholinesterase inhibitor (neostigmine) would bring the response back.'],
+ method:'Name the tissue and its receptor (skeletal muscle, Nm), read what acetylcholine does before X, then ask whether X helped or abolished it and which drug acts on Nm.',
+ asks:['Drug "X" is most likely? Carbachol / Norepinephrine / Veranicline / Oxybutynin / Rocuronium', 'Through which receptor does acetylcholine contract skeletal muscle?', 'What would succinylcholine as drug X show?', 'Which drug would bring the response back?']}
 ];

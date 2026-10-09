@@ -337,7 +337,7 @@ add('nmj', 'moa-varenicline',
   ('Reversible inhibitor of acetylcholinesterase', W, 'That is physostigmine, neostigmine and the other cholinesterase inhibitors (indirect antagonists).')],
  'Varenicline binds the α4β2 neuronal nicotinic (Nn) receptor in the central nervous system with high affinity and activates it only partially. That decreases craving and withdrawal and blunts the effect of nicotine, so it is used for smoking cessation.',
  'Varenicline (Chantix) => Selective partial agonist α4β2 NN receptors. MOA: High affinity and Partial Agonist at the α4/β2 central nicotinic (NN) receptor; Decrease craving and withdrawal; Blunt nicotine effect',
- cite(1, (NMJ, '7–8')))
+ cite(1, (NMJ, '7–8')), dupOf='PE2-087')
 
 add('nmj', 'soa-varenicline',
  'Where is the site of action of varenicline?',
@@ -1229,7 +1229,7 @@ raas('raas', 'arb',
   ('Mineralocorticoid receptor antagonist', W, 'That is spironolactone and eplerenone.')],
  'Losartan, valsartan, olmesartan, telmisartan and irbesartan are angiotensin II receptor blockers (ARBs): reversible, selective AT1 antagonists with about 10,000-fold higher affinity for AT1 than for AT2. Blocking AT1 lowers total peripheral resistance, Na+ and water retention and aldosterone; angiotensin II, which rises, then activates AT2, which opposes AT1. Losartan is active, and its metabolite EXP 3174 is active too.',
  "So as long as you know one, you know them all, and those drugs are directly binding and inhibiting the AT1 receptor and thus preventing the binding of angiotensin 2.",
- f'{LIST} page 9; {RAAS} slides 4, 13–14; transcript 10/8')
+ f'{LIST} page 9; {RAAS} slides 4, 13–14; transcript 10/8', dupOf='PE2-072')
 
 raas('raas', 'acei-vs-arb',
  'Which adverse reactions are more common with ACE (angiotensin-converting enzyme) inhibitors than with angiotensin II receptor blockers (ARBs)?',
@@ -1465,6 +1465,48 @@ assert set(TQ6) | (set(TQ7) - NO_CONCEPTS) == ADR_RELEASED, (set(TQ6) | set(TQ7)
 assert NO_RELEASED <= NO_CONCEPTS <= set(TQ7) and NO_CONCEPTS <= {q['concept'] for q in qs}
 HELD_CONCEPTS |= NO_CONCEPTS - NO_RELEASED   # nitric-oxide items not yet taught (none after 10/7)
 def is_held(q): return q['sub'] in HELD or q['concept'] in HELD_CONCEPTS
+
+# --------------------------------------------------------------------------
+# His tiers (student's report, 10/9 review), stored as `level`: 1 = predict a receptor's effect,
+# 2 = two drugs together (good and bad interactions), 3 = reverse a drug's effect. Pure recall
+# (class, MOA name, definition) gets no level. `ladder` joins the rungs of one ladder across files
+# (see notes/BRIEF_EXAM2.md, Tiers and ladders). The existing `tier` field is not touched.
+# --------------------------------------------------------------------------
+LADDER_NAMES = {
+    'atropine-poisoning': 'Atropine poisoning and physostigmine',
+    'succinylcholine': 'Succinylcholine, halothane and dantrolene',
+}
+LEVELS = {
+    'DL2-009': (2, 'succinylcholine'),
+    'DL2-012': (1, None),
+    'DL2-015': (3, 'atropine-poisoning'),
+    'DL2-018': (3, None),
+    'DL2-020': (1, None),
+    'DL2-022': (1, None),
+    'DL2-030': (1, None),
+    'DL2-032': (1, 'atropine-poisoning'),
+    'DL2-033': (1, None),
+    'DL2-034': (3, None),
+    'DL2-038': (1, None),
+    'DL2-045': (1, None),
+    'DL2-053': (2, None),
+    'DL2-059': (1, None),
+    'DL2-060': (1, None),
+    'DL2-061': (1, None),
+    'DL2-063': (3, None),
+    'DL2-067': (1, None),
+    'DL2-069': (1, None),
+    'DL2-072': (1, None),
+    'DL2-087': (1, None),
+    'DL2-088': (1, None),
+}
+_ids = {q['id'] for q in qs}
+assert set(LEVELS) <= _ids, set(LEVELS) - _ids
+for q in qs:
+    if q['id'] in LEVELS:
+        q['level'], lad = LEVELS[q['id']]
+        if lad:
+            q['ladder'], q['ladderName'] = lad, LADDER_NAMES[lad]
 
 # --------------------------------------------------------------------------
 # Checks

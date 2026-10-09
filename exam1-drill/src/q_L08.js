@@ -103,7 +103,7 @@ QUESTIONS.push(
  quote:"This is what kind of antagonist that is in direct antagonist, because it's affecting somewhere else other than the receptor, right?",
  cite:"PCOL-NMJ_PCOL_2026s_pptx.pdf slide 3; transcript 10/1; transcript 10/5"},
 
-{id:"L08-008", lecture:"L08", prof:"Gottlieb", tier:"new", topic:"L08", sub:"nnag", skill:"recall",
+{id:"L08-008", dupOf:"PE2-087", lecture:"L08", prof:"Gottlieb", tier:"new", topic:"L08", sub:"nnag", skill:"recall",
  concept:"varenicline-moa", tags:["druglist"], source:"both",
  stem:"Varenicline (Chantix) is best described as:",
  options:[
@@ -116,7 +116,7 @@ QUESTIONS.push(
  quote:"So it's a partial agonist to what? The alpha 4, beta 2, nicotinic, what type of nicotinic receptor? And for what neuronal.",
  cite:"PCOL-NMJ_PCOL_2026s_pptx.pdf slides 7–8; transcript 10/1; transcript 10/5"},
 
-{id:"L08-009", lecture:"L08", prof:"Gottlieb", tier:"new", topic:"L08", sub:"nnag", skill:"apply", multi:true,
+{id:"L08-009", lecture:"L08", prof:"Gottlieb", tier:"new", level:1, topic:"L08", sub:"nnag", skill:"apply", multi:true,
  concept:"varenicline-effects", tags:["druglist"], source:"both",
  stem:"A patient trying to stop smoking starts varenicline. Which effects follow from its mechanism? Select all that apply.",
  options:[
@@ -208,7 +208,7 @@ QUESTIONS.push(
  quote:"There are like two molecules of acetylcholine combined together, OK?",
  cite:"PCOL-NMJ_PCOL_2026s_pptx.pdf slide 20; transcript 10/1; transcript 10/5"},
 
-{id:"L08-016", lecture:"L08", prof:"Gottlieb", tier:"new", topic:"L08", sub:"sch", skill:"apply",
+{id:"L08-016", lecture:"L08", prof:"Gottlieb", tier:"new", level:1, ladder:"succinylcholine", ladderName:"Succinylcholine, halothane and dantrolene", topic:"L08", sub:"sch", skill:"apply",
  concept:"sch-ganglia-high-dose", tags:[], source:"both",
  stem:"A patient receives a high dose of succinylcholine (SCh). Besides the neuromuscular junction, which site can SCh stimulate, producing cardiovascular effects?",
  options:[
@@ -259,7 +259,7 @@ QUESTIONS.push(
  quote:"as you open those nicotinic channels, sodium comes in what gets out potassium, so they may get hyperkalemia",
  cite:"PCOL-NMJ_PCOL_2026s_pptx.pdf slide 25; transcript 10/5"},
 
-{id:"L08-020", lecture:"L08", prof:"Gottlieb", tier:"new", topic:"L08", sub:"sch", skill:"apply",
+{id:"L08-020", lecture:"L08", prof:"Gottlieb", tier:"new", level:3, ladder:"succinylcholine", ladderName:"Succinylcholine, halothane and dantrolene", topic:"L08", sub:"sch", skill:"apply",
  concept:"sch-halothane-mh-dantrolene", tags:[], source:"both",
  stem:"During surgery a patient receives halothane and succinylcholine and develops a rising body temperature from skeletal muscle heat production. Which drug is given, and how does it act?",
  options:[
@@ -272,7 +272,7 @@ QUESTIONS.push(
  quote:"So by blocking that, uh, we can prevent that increase in intracellular calcium.",
  cite:"PCOL-NMJ_PCOL_2026s_pptx.pdf slide 26; transcript 10/5"},
 
-{id:"L08-021", lecture:"L08", prof:"Gottlieb", tier:"new", topic:"L08", sub:"curare", skill:"apply",
+{id:"L08-021", lecture:"L08", prof:"Gottlieb", tier:"new", level:2, ladder:"curare", ladderName:"Curare-like paralysis and its reversal", topic:"L08", sub:"curare", skill:"apply",
  concept:"curare-no-anesthesia", tags:[], source:"both",
  stem:"A patient is given rocuronium during surgery, but the general anesthetic is omitted. What is the patient most likely to experience?",
  options:[
@@ -298,7 +298,7 @@ QUESTIONS.push(
  quote:"However, if you know that it is a C U R in the middle, it doesn't matter if it's vecuronio, Rocuronio, Pencuronio. They're all the same.",
  cite:"PCOL-NMJ_PCOL_2026s_pptx.pdf slides 19, 27; transcript 10/1; transcript 10/5"},
 
-{id:"L08-023", lecture:"L08", prof:"Gottlieb", tier:"new", topic:"L08", sub:"curare", skill:"recall",
+{id:"L08-023", lecture:"L08", prof:"Gottlieb", tier:"new", level:2, ladder:"curare", ladderName:"Curare-like paralysis and its reversal", topic:"L08", sub:"curare", skill:"recall",
  concept:"curare-competitive-reversible", tags:[], source:"both",
  stem:"Curare occupies the same binding site on the muscle nicotinic (Nm) receptor that acetylcholine (ACh) binds to. Which statement about this block is CORRECT?",
  options:[
@@ -326,7 +326,7 @@ QUESTIONS.push(
  note:"Before the 10/5 lecture this question asked which curare-like drug blocks autonomic ganglia (pancuronium, slides 30 and 32). On 10/5 he said that for Exam 2 all he needs is that any curare-like drug is a competitive, reversible Nm antagonist that causes paralysis.",
  cite:"PCOL-NMJ_PCOL_2026s_pptx.pdf slides 19, 27, 30, 32; transcript 10/5"},
 
-{id:"L08-025", lecture:"L08", prof:"Gottlieb", tier:"new", topic:"L08", sub:"curare", skill:"recall",
+{id:"L08-025", lecture:"L08", prof:"Gottlieb", tier:"new", level:1, ladder:"curare", ladderName:"Curare-like paralysis and its reversal", topic:"L08", sub:"curare", skill:"recall",
  concept:"curare-adr-respiratory", tags:[], source:"both",
  stem:"What is the most common adverse drug reaction (ADR) of curare-like drugs?",
  options:[
@@ -353,7 +353,7 @@ QUESTIONS.push(
  quote:"So a better choice is let's give a drug that blocks that blocks the breakdown of acetylcholine and thus increase its synaptic synaptic level, and that's what we do for overdose, OK?",
  cite:"PCOL-NMJ_PCOL_2026s_pptx.pdf slides 33–34; transcript 10/5"},
 
-{id:"L08-027", lecture:"L08", prof:"Gottlieb", tier:"new", topic:"L08", sub:"ache", skill:"apply",
+{id:"L08-027", lecture:"L08", prof:"Gottlieb", tier:"new", level:2, ladder:"organophosphate", ladderName:"Organophosphate poisoning and its antidotes", topic:"L08", sub:"ache", skill:"apply",
  concept:"ache-inhibitor-potency-up", tags:["poll"], source:"both",
  stem:"What happens to the potency of acetylcholine when an acetylcholinesterase (AChE) inhibitor is given?",
  options:[
@@ -406,7 +406,7 @@ QUESTIONS.push(
  reading:[{src:"Katzung 16e, Ch. 8", sec:"Cholinesterase regenerator compounds; Ganglion-Blocking Drugs — Central nervous system (p. 10–11 of 14)", t:"Drugs with positively charged quaternary ammonium groups, such as pralidoxime, do not enter the central nervous system. Tertiary or secondary amines such as atropine and mecamylamine cross the blood–brain barrier and act centrally."}],
  cite:"PCOL-NMJ_PCOL_2026s_pptx.pdf slide 39; transcript 10/5"},
 
-{id:"L08-031", lecture:"L08", prof:"Gottlieb", tier:"new", topic:"L08", sub:"ache", skill:"apply",
+{id:"L08-031", lecture:"L08", prof:"Gottlieb", tier:"new", level:3, ladder:"atropine-poisoning", ladderName:"Atropine poisoning and physostigmine", topic:"L08", sub:"ache", skill:"apply",
  concept:"physostigmine-antimuscarinic-poisoning", tags:["druglist"], source:"both",
  stem:"A patient has poisoning from an anti-muscarinic agent (atropine), with central and peripheral signs. Which drug is the drug of choice?",
  options:[
@@ -421,7 +421,7 @@ QUESTIONS.push(
  note:"Katzung Ch. 8 says poison control experts discourage physostigmine for atropine overdose; the slide and the 10/5 lecture both name physostigmine as the antidote for atropine overdose, so the key follows them.",
  cite:"PCOL-NMJ_PCOL_2026s_pptx.pdf slide 39; transcript 10/5"},
 
-{id:"L08-032", lecture:"L08", prof:"Gottlieb", tier:"new", topic:"L08", sub:"ache", skill:"apply",
+{id:"L08-032", lecture:"L08", prof:"Gottlieb", tier:"new", level:3, ladder:"curare", ladderName:"Curare-like paralysis and its reversal", topic:"L08", sub:"ache", skill:"apply",
  concept:"neostigmine-reverse-curare-mg", tags:["druglist"], source:"both",
  stem:"After surgery, a patient still has muscle weakness from a curare-like overdose. Which drug reverses it?",
  options:[
@@ -448,7 +448,7 @@ QUESTIONS.push(
  note:"Slide 40 also lists galantamine (Razadyne). On 10/5 he said that for the exam he only needs rivastigmine and donepezil, the most prescribed of the three, so galantamine was removed from this question.",
  cite:"PCOL-NMJ_PCOL_2026s_pptx.pdf slide 40; transcript 10/1; transcript 10/5"},
 
-{id:"L08-034", lecture:"L08", prof:"Gottlieb", tier:"new", topic:"L08", sub:"ache", skill:"recall",
+{id:"L08-034", lecture:"L08", prof:"Gottlieb", tier:"new", level:1, ladder:"cholinesterase-inhibitor", ladderName:"Cholinesterase inhibitors: DUMBBELSS, add-ons and atropine", topic:"L08", sub:"ache", skill:"recall",
  concept:"ache-inhibitor-adrs", tags:[], source:"both",
  stem:"Which adverse drug reactions (ADRs) are expected from reversible cholinesterase inhibitors?",
  options:[
@@ -473,7 +473,7 @@ QUESTIONS.push(
  quote:"So these drugs, they're going to form covalent bonds and as we discussed before, if you form covalent bonds that tells you they are irreversible, right?",
  cite:"PCOL-NMJ_PCOL_2026s_pptx.pdf slides 42–43; transcript 10/5"},
 
-{id:"L08-036", lecture:"L08", prof:"Gottlieb", tier:"new", topic:"L08", sub:"op", skill:"apply", multi:true,
+{id:"L08-036", lecture:"L08", prof:"Gottlieb", tier:"new", level:1, ladder:"organophosphate", ladderName:"Organophosphate poisoning and its antidotes", topic:"L08", sub:"op", skill:"apply", multi:true,
  concept:"organophosphate-toxicity", tags:[], source:"both",
  stem:"A farm worker is exposed to parathion. Which toxic effects are expected? Select all that apply.",
  options:[
@@ -488,7 +488,7 @@ QUESTIONS.push(
  note:"In lecture he also listed bradycardia among the DUMBBELSS effects of organophosphate poisoning, since both sympathetic and parasympathetic ganglia are stimulated; the slide lists tachycardia under SNS ganglia, and this question keys the slide's list.",
  cite:"PCOL-NMJ_PCOL_2026s_pptx.pdf slide 43; transcript 10/5"},
 
-{id:"L08-037", lecture:"L08", prof:"Gottlieb", tier:"new", topic:"L08", sub:"op", skill:"apply",
+{id:"L08-037", lecture:"L08", prof:"Gottlieb", tier:"new", level:3, ladder:"organophosphate", ladderName:"Organophosphate poisoning and its antidotes", topic:"L08", sub:"op", skill:"apply",
  concept:"organophosphate-antidote", tags:[], source:"both",
  stem:"Which pair of drugs treats poisoning with an organophosphate acetylcholinesterase inhibitor such as sarin?",
  options:[

@@ -151,14 +151,45 @@ const LINKS = [
 ];
 const BY_LECTURE = {L01: ['guide', 'guide-7', 'Guide 7: drug basics he tests'], L02: ['guide', 'guide-6', 'Guide 6: receptors and signalling'], L03: ['guide', 'guide-1', 'Guide 1: affinity, efficacy, potency'], L04: ['guide', 'guide-2', 'Guide 2: agonist classes'], L05: ['guide', 'guide-9', 'Guide 9: Day 5'], L06: ['guide', 'guide-10', 'Guide 10: how to read a curve'], PE: ['guide', 'guide-10', 'Guide 10: how to read a curve'], JP: ['guide', 'guide-10', 'Guide 10: how to read a curve'], FG: ['guide', 'guide-10', 'Guide 10: how to read a curve']};
 const BY_GROUP = {g1: ['guide', 'guide-7', 'Guide 7: drug basics he tests'], g2: ['guide', 'guide-4', 'Guide 4: orthosteric vs allosteric'], g3: ['guide', 'guide-2', 'Guide 2: agonist classes'], g4: ['guide', 'guide-1', 'Guide 1: affinity, efficacy, potency'], g5: ['guide', 'guide-6', 'Guide 6: receptors and signalling']};
+/* Exam 2: keyword rows first (tested against concept, sub and tags), then the lecture's guide. */
+const G2 = (n, t) => ['guide', 'guide2-' + n, 'Guide: ' + t];
+const LINKS2 = [
+  [/tracing|compound|drug-?x|skm-|ne-drug-b|epi-two|gi-tracing/, [G2(8, 'reading his tracings')]],
+  [/organophos|echothio|pralidox|stigmine|cholinesterase|\bache\b|donepezil|rivastig|physostig|neostig|edroph/, [G2(3, 'cholinesterase inhibitors'), ['diagrams', 'dg-e2-chol-synapse-anim', 'Diagram: cholinergic synapse'], ['tell', 'tell2-ache', 'Tell apart: reversible vs irreversible'], ['tell', 'tell2-direct-indirect', 'Tell apart: direct vs indirect']]],
+  [/varenicl|succinyl|curare|rocuron|pancuron|\bnm\b|\bnn\b|nicotinic|botul|ganglion/, [G2(2, 'nicotinic receptors, NMJ'), ['ref', 'ref2-nmj', 'Reference: NMJ drugs'], ['tell', 'tell2-depolarizing', 'Tell apart: depolarizing vs not']]],
+  [/muscarin|atropine|scopol|pilocarp|carbachol|bethanechol|oxybut|trospium|solifen|tiotrop|ipratrop|benztrop|dumbbel/, [G2(4, 'muscarinic drugs'), ['ref', 'ref2-chol', 'Reference: muscarinic drugs'], ['tell', 'tell2-antimuscarinic', 'Tell apart: the antimuscarinics']]],
+  [/nitric|nitro|sildenafil|\bpde\b|cgmp|\bsgc\b|\bnos\b/, [G2(9, 'nitric oxide'), ['diagrams', 'dg-e2-no-pathway-anim', 'Diagram: nitric oxide'], ['ref', 'ref2-no', 'Reference: nitric oxide drugs'], ['tell', 'tell2-nitrate-pde', 'Tell apart: nitrate vs PDE inhibitor']]],
+  [/renin|angiotens|\bace\b|ace-inhib|\barbs?\b|losartan|valsartan|lisinopril|captopril|aliskiren|spironol|eplerenone|aldosteron|bradykinin|hyperkal|raas/, [G2(10, 'RAAS'), ['diagrams', 'dg-e2-raas-anim', 'Diagram: RAAS cascade'], ['ref', 'ref2-4', 'Reference: what each RAAS drug changes'], ['tell', 'tell2-raas', 'Tell apart: ACE inhibitor vs ARB vs others']]],
+  [/cocaine|amphet|methylphen|\bmao|phenelzine|selegil|tyramine|reuptake|\bnet\b|ephedrine/, [G2(5, 'indirect-acting adrenergic drugs'), ['diagrams', 'dg-e2-adr-synapse-anim', 'Diagram: adrenergic synapse'], ['ref', 'ref2-ind', 'Reference: indirect-acting drugs'], ['tell', 'tell2-indirect-adrenergic', 'Tell apart: cocaine vs amphetamine vs MAOI']]],
+  [/beta|β|metoprolol|propranolol|carvedilol|labetalol|atenolol|pindolol|albuterol|dobutamine|isoproterenol|mirabegron|epinephrine|reversal/, [G2(7, 'β drugs, epinephrine, NE'), ['ref', 'ref2-beta', 'Reference: β drugs'], ['tell', 'tell2-beta-blockers', 'Tell apart: β blockers (MAN)']]],
+  [/alpha|α|phenylephr|prazosin|tamsulosin|clonidine|mirtazap|phenoxybenz|oxymetaz/, [G2(6, 'α1 and α2 drugs'), ['ref', 'ref2-alpha', 'Reference: α drugs'], ['tell', 'tell2-alpha', 'Tell apart: α1 vs α2 drugs']]]
+];
+const BY_LECTURE2 = {L07: G2(1, 'the autonomic layout'), L07ref: ['ref', 'ref2-2', 'Reference: organ by organ, PNS vs SNS'], L08: G2(2, 'nicotinic receptors, NMJ'), L09: G2(4, 'muscarinic drugs'), L10: G2(5, 'indirect-acting adrenergic drugs'), L11: G2(7, 'β drugs, epinephrine, NE'), L12: G2(10, 'RAAS'), PE2: G2(1, 'the autonomic layout')};
+const TERM_SUB2 = {g6: G2(1, 'the autonomic layout'), g7: G2(1, 'the autonomic layout'), g8: G2(4, 'muscarinic drugs'), g9: G2(6, 'α1 and α2 drugs'), g10: G2(9, 'nitric oxide'), g11: G2(10, 'RAAS')};
+const DL2_SUB = {nmj: G2(2, 'nicotinic receptors, NMJ'), chol: G2(4, 'muscarinic drugs'), adr: G2(6, 'α1 and α2 drugs'), no: G2(9, 'nitric oxide'), raas: G2(10, 'RAAS')};
 function linksFor(q) {
+  if (examOf(q) === 2 && typeof GUIDE2_HTML !== 'undefined') {
+    const key = [q.concept, q.sub, (q.tags || []).join(' '), q.img || ''].join(' ').toLowerCase();
+    for (const [re, links] of LINKS2) if (re.test(key)) return links;
+    if (q.lecture === 'DL2' && DL2_SUB[q.sub]) return [DL2_SUB[q.sub]];
+    if (q.topic === 'TERMS' && TERM_SUB2[q.sub]) return [TERM_SUB2[q.sub]];
+    return BY_LECTURE2[q.lecture] ? [BY_LECTURE2[q.lecture]].concat(q.lecture === 'L07' ? [BY_LECTURE2.L07ref, ['ref', 'ref2-1', 'Reference: receptors and G proteins']] : []) : [];
+  }
   if (q.lecture === 'DL1') return [['guide', 'guide-8', 'Guide 8: the drug list'], ['ref', 'ref-druglist', 'Reference: the drug list']];
   const key = [q.concept, q.fg, q.sub, (q.tags || []).join(' ')].join(' ').toLowerCase();
   for (const [re, links] of LINKS) if (re.test(key)) return links;
   if (BY_GROUP[q.sub]) return [BY_GROUP[q.sub]];
   return BY_LECTURE[q.lecture] ? [BY_LECTURE[q.lecture]] : [];
 }
-const explainHTML = q => { const l = linksFor(q); return l.length ? `<div class="row explain"><span class="meta" style="margin:0">Explain more:</span>${l.map(([v, a, t]) => `<button type="button" class="chip" data-jump="${v}:${a}">${esc(t)}</button>`).join('')}</div>` : ''; };
+/* Tiers (Exam 2, as he described them): Tier 1 predicts a receptor's effect, Tier 2 puts two drugs
+   together, Tier 3 reverses a drug's effect, and each tier needs the ones below it. Questions of one
+   ladder share `ladder`; climbing it asks them in tier order. The tier number is the field `level`
+   (the older field `tier` holds the content tier and is unrelated). */
+const ladderQs = key => QUESTIONS.filter(q => q.ladder === key).sort((a, b) => (a.level || 0) - (b.level || 0));
+const climbLadder = key => { const l = ladderQs(key); if (l.length) startQuiz(l, 'Ladder: ' + (l[0].ladderName || key), 'pass'); };
+const ladderChip = q => q.ladder && ladderQs(q.ladder).length > 1 ? `<button type="button" class="chip" data-climb="${esc(q.ladder)}">${q.level > 1 ? 'Build up: Tier 1 → ' + q.level + ' on this' : 'Climb this ladder to Tier 3'}</button>` : '';
+const explainHTML = q => { const l = linksFor(q), c = ladderChip(q); return l.length || c ? `<div class="row explain"><span class="meta" style="margin:0">Explain more:</span>${l.map(([v, a, t]) => `<button type="button" class="chip" data-jump="${v}:${a}">${esc(t)}</button>`).join('')}${c}</div>` : ''; };
+document.addEventListener('click', e => { const b = e.target.closest('[data-climb]'); if (!b) return; if (EX && !EX.done) return; climbLadder(b.dataset.climb); });
 function jump(view, anchor) {
   RET.push({view: CUR, y: window.scrollY});
   go(view);
@@ -269,6 +300,13 @@ function vTopics() {
     });
     return c + '</div>';
   };
+  const tiered = pool.filter(q => q.level && !q.lowYield);
+  if (tiered.length) {
+    const ladders = [...new Set(tiered.filter(q => q.ladder).map(q => q.ladder))].filter(k => ladderQs(k).length > 1);
+    h += `<div class="card"><b>Tiers, as he described them</b><p class="sub" style="margin:4px 0 8px">Tier 1: predict what a receptor does. Tier 2: two drugs together, the good and bad interactions. Tier 3: reverse a drug's effect. "A tier 3 question would require knowledge of tier 2 and 1."</p>
+      <div class="row">${[1, 2, 3].map(t => { const tq = tiered.filter(q => q.level === t), ta = acc(tq); return tq.length ? `<button class="btn ghost" data-tier="${t}">Tier ${t} · ${tq.length} questions${ta.pct == null ? '' : ' · ' + ta.pct + '%'}</button>` : ''; }).join('')}
+      ${ladders.length ? `<button class="btn" id="ladders">Climb the ${ladders.length} ladders (Tier 1 → 3)</button>` : ''}</div></div>`;
+  }
   COURSE.exams.forEach(e => {
     const eq = QUESTIONS.filter(q => examOf(q) === e.id && (FILT.skill === 'all' || q.skill === FILT.skill));
     let body = '';
@@ -282,6 +320,12 @@ function vTopics() {
   const nok = $('#newsok'); if (nok) nok.onclick = () => { store.set(NEWS_KEY, newsId(BUILD.changelog[0])); const c = $('#news'); if (c) c.remove(); };
   const nall = $('#newsall'); if (nall) nall.onclick = () => go('data');
   $('#all').onclick = () => startQuiz(shuffle(pool), 'All questions, one pass', 'pass');
+  document.querySelectorAll('[data-tier]').forEach(b => b.onclick = () => startQuiz(pool.filter(q => q.level === +b.dataset.tier && !q.lowYield), 'Tier ' + b.dataset.tier, 'sr'));
+  const ld = $('#ladders'); if (ld) ld.onclick = () => {
+    // every ladder in turn, each from Tier 1 up
+    const keys = shuffle([...new Set(pool.filter(q => q.ladder).map(q => q.ladder))].filter(k => ladderQs(k).length > 1));
+    startQuiz(keys.flatMap(ladderQs), 'Ladders, Tier 1 → 3', 'pass');
+  };
   const df = $('#drillflag'); if (df) df.onclick = () => startQuiz(flaggedPool(), 'Flagged questions', 'pass');
   const cf = $('#clearflag'); if (cf) cf.onclick = () => { if (confirm('Remove every flag?')) { S.flags = {}; save(); vTopics(); } };
   document.querySelectorAll('[data-sk]').forEach(c => c.onclick = () => { FILT.skill = c.dataset.sk; vTopics(); });
@@ -354,7 +398,7 @@ function readingHTML(r) {
 }
 function metaLine(q) {
   const t = TOPIC[q.topic], sk = SKILL[q.skill];
-  return `${esc(t ? t.name : q.topic)}${sk ? ' · ' + esc(sk.short) : ''}${q.multi ? ' · select all' : ''}`;
+  return `${esc(t ? t.name : q.topic)}${sk ? ' · ' + esc(sk.short) : ''}${q.level ? ' · Tier ' + q.level : ''}${q.multi ? ' · select all' : ''}`;
 }
 /* One question card. `st` holds the answer state (order, rightOrder, picked, mpick, answered, ok);
    in the one-at-a-time view that is Q itself, on the all-on-one-page view one object per question. */
@@ -691,7 +735,9 @@ const bpCat = q => {
 };
 function drawBlueprint(bp) {
   const elig = examPool().filter(q => !q.lowYield && !q.type && q.skill !== 'term');
-  const by = {}; elig.forEach(q => (by[bpCat(q)] = by[bpCat(q)] || []).push(q));
+  // a blueprint whose parts carry their own tests (Exam 2) sorts by those; otherwise the Exam 1 keyword rules
+  const catOf = bp.parts.some(p => p.test) ? q => (bp.parts.find(p => p.test && p.test(q)) || bp.parts.find(p => p.rest)).key : bpCat;
+  const by = {}; elig.forEach(q => (by[catOf(q)] = by[catOf(q)] || []).push(q));
   const total = active().questions, out = [], used = new Set();
   const ok = q => !used.has(q.id) && !(q.dupOf && used.has(q.dupOf)) && ![...used].some(u => byId[u].dupOf === q.id);
   const cat = new Map();
@@ -834,6 +880,7 @@ function examResult() {
     <div class="row"><button class="btn" id="newx">New exam</button><button class="btn ghost" id="missx">Drill the ones I missed</button></div>
     <h3>By topic</h3><div class="tablewrap"><table><thead><tr><th>Topic</th><th>Right</th><th>%</th></tr></thead><tbody>${by(q => q.topic, k => (TOPIC[k] || {}).name || k)}</tbody></table></div>
     <h3>By skill</h3><div class="tablewrap"><table><thead><tr><th>Skill</th><th>Right</th><th>%</th></tr></thead><tbody>${by(q => q.skill, k => (SKILL[k] || {}).label || k)}</tbody></table></div>
+    ${qsx.some(q => q.level) ? `<h3>By tier</h3><div class="tablewrap"><table><thead><tr><th>Tier</th><th>Right</th><th>%</th></tr></thead><tbody>${by(q => q.level ? 'Tier ' + q.level : 'No tier', k => k)}</tbody></table></div>` : ''}
     <h3>Review</h3>`;
   qsx.forEach((q, k) => {
     const a = EX.ans[q.id], ok = exRight(q, a), pickedSet = new Set([].concat(a == null ? [] : a));
@@ -857,7 +904,7 @@ function examResult() {
 
 /* ---------- Terms: glossary with figures, flashcards, generated questions ---------- */
 let TM = {mode: 'glossary', group: 'all', card: null, shown: false};
-const termList = () => (typeof TERMS === 'undefined' ? [] : TERMS).filter(t => TM.group === 'all' || t.group === TM.group);
+const termList = () => (typeof TERMS === 'undefined' ? [] : TERMS).filter(t => (lecExam(t.lecture) || 1) === activeId() && (TM.group === 'all' || t.group === TM.group));
 const termKey = t => 'term:' + t.id;
 /* Glossary search and A–Z: the search box filters as you type (term, one-line
    meaning, definition, example), the letter bar jumps to a letter (switching to
@@ -923,10 +970,13 @@ function vTerms() {
   const all = typeof TERMS === 'undefined' ? [] : TERMS;
   if (!all.length) { $('#view').innerHTML = '<h2>Terms</h2><div class="empty">No glossary in this build.</div>'; return; }
   const groups = [...new Set(all.map(t => t.group))];
-  const tq = QUESTIONS.filter(q => q.topic === 'TERMS');
-  let h = `<h2>Terms</h2><p class="sub">${all.length} terms, each with its source, grouped by exam. Each term has a one-line meaning, a situation that shows it in action, and, where one applies, a figure.</p>
+  // flashcards and the term quiz use the exam being studied; the glossary shows both exams
+  const tq = QUESTIONS.filter(q => q.topic === 'TERMS' && (TM.mode === 'glossary' || examOf(q) === activeId()));
+  const chipGroups = TM.mode === 'glossary' ? groups : [...new Set(all.filter(t => (lecExam(t.lecture) || 1) === activeId()).map(t => t.group))];
+  if (TM.group !== 'all' && !chipGroups.includes(TM.group)) TM.group = 'all';
+  let h = `<h2>Terms</h2><div class="row" style="margin:-4px 0 8px">${examSwitch()}</div><p class="sub">${all.length} terms, each with its source, grouped by exam; flashcards and Quiz me use the exam you are studying for. Each term has a one-line meaning, a situation that shows it in action, and, where one applies, a figure.</p>
   <div class="card"><div class="row">${[['glossary', 'Glossary'], ['flash', 'Flashcards'], ['quiz', 'Quiz me']].map(([k, l]) => `<span class="chip ${TM.mode === k ? 'on' : ''}" data-mode="${k}">${l}</span>`).join('')}
-   <span class="meta" style="margin:0 0 0 12px">Group:</span>${['all'].concat(groups).map(g => `<span class="chip ${TM.group === g ? 'on' : ''}" data-group="${esc(g)}">${g === 'all' ? 'All' : esc(g)}</span>`).join('')}</div></div>`;
+   <span class="meta" style="margin:0 0 0 12px">Group:</span>${['all'].concat(chipGroups).map(g => `<span class="chip ${TM.group === g ? 'on' : ''}" data-group="${esc(g)}">${g === 'all' ? 'All' : esc(g)}</span>`).join('')}</div></div>`;
   const list = termList();
   if (TM.mode === 'glossary') {
     const pool = all.filter(t => TM.group === 'all' || t.group === TM.group);
@@ -1191,7 +1241,10 @@ const DIAGRAMS = [
   ['Signal transduction', ['gpcr-steps', 'gpcr-anim', 'galpha-chain', 'galpha-anim', 'rtk-steps', 'rtk-anim', 'rtk-scenarios-anim']],
   ['Two drugs at one receptor: how the curve moves', ['shift-competitive-anim', 'shift-irreversible-anim', 'shift-inverse-anim', 'shift-fafa-anim', 'shift-fapa-anim', 'shift-fapa-down-anim', 'shift-allo-agonist-anim', 'shift-allo-antagonist-anim']],
   ['Indirect antagonists and drug combinations', ['ind-ssri-anim', 'ind-snri-anim', 'ind-ache-anim', 'ind-carbidopa-anim', 'ind-pde-anim', 'ind-ras-anim', 'enhance-anim']],
-  ['Receptor regulation', ['reg-chain', 'desens-rapid-anim', 'desens-long-anim', 'upreg-anim', 'downreg-anim']]
+  ['Receptor regulation', ['reg-chain', 'desens-rapid-anim', 'desens-long-anim', 'upreg-anim', 'downreg-anim']],
+  ['Autonomic layout and receptors', ['e2-ans-layout', 'e2-receptor-map'], 2],
+  ['Synapses: where each drug acts', ['e2-chol-synapse-anim', 'e2-adr-synapse-anim'], 2],
+  ['Epinephrine, nitric oxide and RAAS', ['e2-epi-reversal-anim', 'e2-no-pathway-anim', 'e2-raas-anim'], 2]
 ];
 const DG_NAMES = {'rtk-steps': 'RTK activation: the five steps'};
 function vDiagrams() {
