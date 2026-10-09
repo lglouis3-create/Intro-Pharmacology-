@@ -2,6 +2,16 @@
 
 Newest first. The build embeds this file; the Topics page shows what is new since your last visit, and the Progress page shows all of it. Keep each bullet to one short line.
 
+## 2026-10-09 (Exam 2 study pages and tiers)
+- Terms: 69 Exam 2 terms with flashcards and a term quiz; both follow the exam you study.
+- Guides: 11 Exam 2 sections, each teaching first, then his polls, cues and traps.
+- Reference: Exam 2 receptor, organ and drug tables with 42 Why? cards; RAAS slide 29 table.
+- Tell apart: 11 Exam 2 comparisons, 100 rows, each with a question to try.
+- Diagrams: 7 Exam 2 figures, 5 as step-throughs (synapses, epinephrine, nitric oxide, RAAS).
+- Tiers 1–3 as he described them; 17 ladders that climb from Tier 1 to Tier 3.
+- Exam sim for Exam 2: 50 questions, 2 select-all, 2 graphs, his topic counts.
+- Every Exam 2 question links to its guide, and most to a table, comparison or diagram.
+
 ## 2026-10-09 (Jeopardy and review questions)
 - His 10/8 Jeopardy questions word for word from PollEV screenshots, with keys from the 10/8 lecture.
 - His 10/9 review questions word for word; keys from his slides and lectures (the review was not recorded).

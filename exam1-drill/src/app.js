@@ -155,12 +155,12 @@ const BY_GROUP = {g1: ['guide', 'guide-7', 'Guide 7: drug basics he tests'], g2:
 const G2 = (n, t) => ['guide', 'guide2-' + n, 'Guide: ' + t];
 const LINKS2 = [
   [/tracing|compound|drug-?x|skm-|ne-drug-b|epi-two|gi-tracing/, [G2(8, 'reading his tracings')]],
-  [/organophos|echothio|pralidox|stigmine|cholinesterase|\bache\b|donepezil|rivastig|physostig|neostig|edroph/, [G2(3, 'cholinesterase inhibitors'), ['tell', 'tell2-ache', 'Tell apart: reversible vs irreversible'], ['tell', 'tell2-direct-indirect', 'Tell apart: direct vs indirect']]],
+  [/organophos|echothio|pralidox|stigmine|cholinesterase|\bache\b|donepezil|rivastig|physostig|neostig|edroph/, [G2(3, 'cholinesterase inhibitors'), ['diagrams', 'dg-e2-chol-synapse-anim', 'Diagram: cholinergic synapse'], ['tell', 'tell2-ache', 'Tell apart: reversible vs irreversible'], ['tell', 'tell2-direct-indirect', 'Tell apart: direct vs indirect']]],
   [/varenicl|succinyl|curare|rocuron|pancuron|\bnm\b|\bnn\b|nicotinic|botul|ganglion/, [G2(2, 'nicotinic receptors, NMJ'), ['ref', 'ref2-nmj', 'Reference: NMJ drugs'], ['tell', 'tell2-depolarizing', 'Tell apart: depolarizing vs not']]],
   [/muscarin|atropine|scopol|pilocarp|carbachol|bethanechol|oxybut|trospium|solifen|tiotrop|ipratrop|benztrop|dumbbel/, [G2(4, 'muscarinic drugs'), ['ref', 'ref2-chol', 'Reference: muscarinic drugs'], ['tell', 'tell2-antimuscarinic', 'Tell apart: the antimuscarinics']]],
-  [/nitric|nitro|sildenafil|\bpde\b|cgmp|\bsgc\b|\bnos\b/, [G2(9, 'nitric oxide'), ['ref', 'ref2-no', 'Reference: nitric oxide drugs'], ['tell', 'tell2-nitrate-pde', 'Tell apart: nitrate vs PDE inhibitor']]],
-  [/renin|angiotens|\bace\b|ace-inhib|\barbs?\b|losartan|valsartan|lisinopril|captopril|aliskiren|spironol|eplerenone|aldosteron|bradykinin|hyperkal|raas/, [G2(10, 'RAAS'), ['ref', 'ref2-4', 'Reference: what each RAAS drug changes'], ['tell', 'tell2-raas', 'Tell apart: ACE inhibitor vs ARB vs others']]],
-  [/cocaine|amphet|methylphen|\bmao|phenelzine|selegil|tyramine|reuptake|\bnet\b|ephedrine/, [G2(5, 'indirect-acting adrenergic drugs'), ['ref', 'ref2-ind', 'Reference: indirect-acting drugs'], ['tell', 'tell2-indirect-adrenergic', 'Tell apart: cocaine vs amphetamine vs MAOI']]],
+  [/nitric|nitro|sildenafil|\bpde\b|cgmp|\bsgc\b|\bnos\b/, [G2(9, 'nitric oxide'), ['diagrams', 'dg-e2-no-pathway-anim', 'Diagram: nitric oxide'], ['ref', 'ref2-no', 'Reference: nitric oxide drugs'], ['tell', 'tell2-nitrate-pde', 'Tell apart: nitrate vs PDE inhibitor']]],
+  [/renin|angiotens|\bace\b|ace-inhib|\barbs?\b|losartan|valsartan|lisinopril|captopril|aliskiren|spironol|eplerenone|aldosteron|bradykinin|hyperkal|raas/, [G2(10, 'RAAS'), ['diagrams', 'dg-e2-raas-anim', 'Diagram: RAAS cascade'], ['ref', 'ref2-4', 'Reference: what each RAAS drug changes'], ['tell', 'tell2-raas', 'Tell apart: ACE inhibitor vs ARB vs others']]],
+  [/cocaine|amphet|methylphen|\bmao|phenelzine|selegil|tyramine|reuptake|\bnet\b|ephedrine/, [G2(5, 'indirect-acting adrenergic drugs'), ['diagrams', 'dg-e2-adr-synapse-anim', 'Diagram: adrenergic synapse'], ['ref', 'ref2-ind', 'Reference: indirect-acting drugs'], ['tell', 'tell2-indirect-adrenergic', 'Tell apart: cocaine vs amphetamine vs MAOI']]],
   [/beta|β|metoprolol|propranolol|carvedilol|labetalol|atenolol|pindolol|albuterol|dobutamine|isoproterenol|mirabegron|epinephrine|reversal/, [G2(7, 'β drugs, epinephrine, NE'), ['ref', 'ref2-beta', 'Reference: β drugs'], ['tell', 'tell2-beta-blockers', 'Tell apart: β blockers (MAN)']]],
   [/alpha|α|phenylephr|prazosin|tamsulosin|clonidine|mirtazap|phenoxybenz|oxymetaz/, [G2(6, 'α1 and α2 drugs'), ['ref', 'ref2-alpha', 'Reference: α drugs'], ['tell', 'tell2-alpha', 'Tell apart: α1 vs α2 drugs']]]
 ];
@@ -1241,7 +1241,10 @@ const DIAGRAMS = [
   ['Signal transduction', ['gpcr-steps', 'gpcr-anim', 'galpha-chain', 'galpha-anim', 'rtk-steps', 'rtk-anim', 'rtk-scenarios-anim']],
   ['Two drugs at one receptor: how the curve moves', ['shift-competitive-anim', 'shift-irreversible-anim', 'shift-inverse-anim', 'shift-fafa-anim', 'shift-fapa-anim', 'shift-fapa-down-anim', 'shift-allo-agonist-anim', 'shift-allo-antagonist-anim']],
   ['Indirect antagonists and drug combinations', ['ind-ssri-anim', 'ind-snri-anim', 'ind-ache-anim', 'ind-carbidopa-anim', 'ind-pde-anim', 'ind-ras-anim', 'enhance-anim']],
-  ['Receptor regulation', ['reg-chain', 'desens-rapid-anim', 'desens-long-anim', 'upreg-anim', 'downreg-anim']]
+  ['Receptor regulation', ['reg-chain', 'desens-rapid-anim', 'desens-long-anim', 'upreg-anim', 'downreg-anim']],
+  ['Autonomic layout and receptors', ['e2-ans-layout', 'e2-receptor-map'], 2],
+  ['Synapses: where each drug acts', ['e2-chol-synapse-anim', 'e2-adr-synapse-anim'], 2],
+  ['Epinephrine, nitric oxide and RAAS', ['e2-epi-reversal-anim', 'e2-no-pathway-anim', 'e2-raas-anim'], 2]
 ];
 const DG_NAMES = {'rtk-steps': 'RTK activation: the five steps'};
 function vDiagrams() {
