@@ -59,9 +59,9 @@ const COURSE = {
         test:q => q.lecture === 'L07' && /innervat|dual|exception|gangli|adrenal medulla|sweat|\b[PS]NS\b|parasympathetic|sympathetic/i.test(q.stem)},
        {key:'organ', name:'Receptors on an organ and their responses', n:[3, 4],
         test:q => q.lecture === 'L07' || /\blocated\b|\blocation\b|site of action|\bSOA\b|which receptors?\b|receptors? (?:on|in) the\b/i.test(q.stem)},
-       {key:'predict', name:'Predict the effect of a receptor (DUMBBELSS)', n:[5, 7],
-        test:q => /DUMBBEL|most likely (?:to )?(?:produce|cause|evoke|occur|experience)|side effects?|adverse|overdose/i.test(q.stem)},
-       {key:'other', name:'Everything else, including drug pairs (DDIs) and reversing a drug', rest:true}]},
+       {key:'predict', name:'Tier 1: predict the effect of a receptor (DUMBBELSS)', n:[5, 7],
+        test:q => q.tier === 1 || /DUMBBEL|most likely (?:to )?(?:produce|cause|evoke|occur|experience)|side effects?|adverse|overdose/i.test(q.stem)},
+       {key:'other', name:'Everything else, including Tier 2 (drug pairs, DDIs) and Tier 3 (reversing a drug)', rest:true}]},
      minutes:120,
      sata:2,                     // two select-all questions (same report)
      blurb:'Covers the Oct 1 – Oct 8 lectures (syllabus): autonomic nervous system, neuromuscular junction, cholinergic, adrenergic, nitric oxide, RAAS. 24% of the course grade.',

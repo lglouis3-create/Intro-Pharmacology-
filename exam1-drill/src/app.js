@@ -158,7 +158,14 @@ function linksFor(q) {
   if (BY_GROUP[q.sub]) return [BY_GROUP[q.sub]];
   return BY_LECTURE[q.lecture] ? [BY_LECTURE[q.lecture]] : [];
 }
-const explainHTML = q => { const l = linksFor(q); return l.length ? `<div class="row explain"><span class="meta" style="margin:0">Explain more:</span>${l.map(([v, a, t]) => `<button type="button" class="chip" data-jump="${v}:${a}">${esc(t)}</button>`).join('')}</div>` : ''; };
+/* Tiers (Exam 2, as he described them): Tier 1 predicts a receptor's effect, Tier 2 puts two drugs
+   together, Tier 3 reverses a drug's effect, and each tier needs the ones below it. Questions of one
+   ladder share `ladder`; climbing it asks them in tier order. */
+const ladderQs = key => QUESTIONS.filter(q => q.ladder === key).sort((a, b) => (a.tier || 0) - (b.tier || 0));
+const climbLadder = key => { const l = ladderQs(key); if (l.length) startQuiz(l, 'Ladder: ' + (l[0].ladderName || key), 'pass'); };
+const ladderChip = q => q.ladder && ladderQs(q.ladder).length > 1 ? `<button type="button" class="chip" data-climb="${esc(q.ladder)}">${q.tier > 1 ? 'Build up: Tier 1 → ' + q.tier + ' on this' : 'Climb this ladder to Tier 3'}</button>` : '';
+const explainHTML = q => { const l = linksFor(q), c = ladderChip(q); return l.length || c ? `<div class="row explain"><span class="meta" style="margin:0">Explain more:</span>${l.map(([v, a, t]) => `<button type="button" class="chip" data-jump="${v}:${a}">${esc(t)}</button>`).join('')}${c}</div>` : ''; };
+document.addEventListener('click', e => { const b = e.target.closest('[data-climb]'); if (!b) return; if (EX && !EX.done) return; climbLadder(b.dataset.climb); });
 function jump(view, anchor) {
   RET.push({view: CUR, y: window.scrollY});
   go(view);
@@ -269,6 +276,13 @@ function vTopics() {
     });
     return c + '</div>';
   };
+  const tiered = pool.filter(q => q.tier);
+  if (tiered.length) {
+    const ladders = [...new Set(tiered.filter(q => q.ladder).map(q => q.ladder))].filter(k => ladderQs(k).length > 1);
+    h += `<div class="card"><b>Tiers, as he described them</b><p class="sub" style="margin:4px 0 8px">Tier 1: predict what a receptor does. Tier 2: two drugs together, the good and bad interactions. Tier 3: reverse a drug's effect. "A tier 3 question would require knowledge of tier 2 and 1."</p>
+      <div class="row">${[1, 2, 3].map(t => { const tq = tiered.filter(q => q.tier === t), ta = acc(tq); return tq.length ? `<button class="btn ghost" data-tier="${t}">Tier ${t} · ${tq.length} questions${ta.pct == null ? '' : ' · ' + ta.pct + '%'}</button>` : ''; }).join('')}
+      ${ladders.length ? `<button class="btn" id="ladders">Climb the ${ladders.length} ladders (Tier 1 → 3)</button>` : ''}</div></div>`;
+  }
   COURSE.exams.forEach(e => {
     const eq = QUESTIONS.filter(q => examOf(q) === e.id && (FILT.skill === 'all' || q.skill === FILT.skill));
     let body = '';
@@ -282,6 +296,12 @@ function vTopics() {
   const nok = $('#newsok'); if (nok) nok.onclick = () => { store.set(NEWS_KEY, newsId(BUILD.changelog[0])); const c = $('#news'); if (c) c.remove(); };
   const nall = $('#newsall'); if (nall) nall.onclick = () => go('data');
   $('#all').onclick = () => startQuiz(shuffle(pool), 'All questions, one pass', 'pass');
+  document.querySelectorAll('[data-tier]').forEach(b => b.onclick = () => startQuiz(pool.filter(q => q.tier === +b.dataset.tier), 'Tier ' + b.dataset.tier, 'sr'));
+  const ld = $('#ladders'); if (ld) ld.onclick = () => {
+    // every ladder in turn, each from Tier 1 up
+    const keys = shuffle([...new Set(pool.filter(q => q.ladder).map(q => q.ladder))].filter(k => ladderQs(k).length > 1));
+    startQuiz(keys.flatMap(ladderQs), 'Ladders, Tier 1 → 3', 'pass');
+  };
   const df = $('#drillflag'); if (df) df.onclick = () => startQuiz(flaggedPool(), 'Flagged questions', 'pass');
   const cf = $('#clearflag'); if (cf) cf.onclick = () => { if (confirm('Remove every flag?')) { S.flags = {}; save(); vTopics(); } };
   document.querySelectorAll('[data-sk]').forEach(c => c.onclick = () => { FILT.skill = c.dataset.sk; vTopics(); });
@@ -354,7 +374,7 @@ function readingHTML(r) {
 }
 function metaLine(q) {
   const t = TOPIC[q.topic], sk = SKILL[q.skill];
-  return `${esc(t ? t.name : q.topic)}${sk ? ' · ' + esc(sk.short) : ''}${q.multi ? ' · select all' : ''}`;
+  return `${esc(t ? t.name : q.topic)}${sk ? ' · ' + esc(sk.short) : ''}${q.tier ? ' · Tier ' + q.tier : ''}${q.multi ? ' · select all' : ''}`;
 }
 /* One question card. `st` holds the answer state (order, rightOrder, picked, mpick, answered, ok);
    in the one-at-a-time view that is Q itself, on the all-on-one-page view one object per question. */
@@ -836,6 +856,7 @@ function examResult() {
     <div class="row"><button class="btn" id="newx">New exam</button><button class="btn ghost" id="missx">Drill the ones I missed</button></div>
     <h3>By topic</h3><div class="tablewrap"><table><thead><tr><th>Topic</th><th>Right</th><th>%</th></tr></thead><tbody>${by(q => q.topic, k => (TOPIC[k] || {}).name || k)}</tbody></table></div>
     <h3>By skill</h3><div class="tablewrap"><table><thead><tr><th>Skill</th><th>Right</th><th>%</th></tr></thead><tbody>${by(q => q.skill, k => (SKILL[k] || {}).label || k)}</tbody></table></div>
+    ${qsx.some(q => q.tier) ? `<h3>By tier</h3><div class="tablewrap"><table><thead><tr><th>Tier</th><th>Right</th><th>%</th></tr></thead><tbody>${by(q => q.tier ? 'Tier ' + q.tier : 'No tier', k => k)}</tbody></table></div>` : ''}
     <h3>Review</h3>`;
   qsx.forEach((q, k) => {
     const a = EX.ans[q.id], ok = exRight(q, a), pickedSet = new Set([].concat(a == null ? [] : a));
