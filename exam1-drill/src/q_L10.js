@@ -640,7 +640,7 @@ QUESTIONS.push(
  note:"He described phenoxybenzamine aloud (“a non-selective alpha 1 and alpha 2 irreversible antagonists”) while answering a student question, then said “we're gonna get a little bit ahead of us, so just wait”; its own slides (34–38) were not taught on 10/6.",
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slide 27; transcript 10/6"},
 
-{id:"L10-049", lecture:"L10", prof:"Gottlieb", tier:"new", topic:"L10", sub:"a1ant", skill:"tell",
+{id:"L10-049", dupOf:"PE2-065", lecture:"L10", prof:"Gottlieb", tier:"new", topic:"L10", sub:"a1ant", skill:"tell",
  concept:"prazosin-moa", tags:["exam-cue"], source:"both",
  stem:"Which of the following describes prazosin?",
  options:[

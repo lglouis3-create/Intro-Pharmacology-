@@ -29,7 +29,7 @@ const COURSE = {
     {id:'L10', deck:'PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf', label:'Day 10 (10/6): Adrenergic pharmacology, indirect-acting drugs and α receptors', prof:'Gottlieb', exam:2, module:2},
     {id:'L11', deck:'PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf', label:'Day 11 (10/7, 10/8): β receptors, epinephrine and norepinephrine, tracings, nitric oxide', prof:'Gottlieb', exam:2, module:2},
     {id:'L12', deck:'PCOL-RAAS_26s.pdf', label:'Day 12 (10/8): Renin–angiotensin–aldosterone system', prof:'Gottlieb', exam:2, module:2},
-    {id:'PE2', deck:'PollEV’s Exam 2.pdf', label:'His Exam 2 polls (verbatim, with his keys)', prof:'Gottlieb', exam:2, module:2},
+    {id:'PE2', deck:'PollEV’s Exam 2.pdf', decks:['PollEV’s Exam 2.pdf', 'Jeopardy 10/8', 'Review 10/9'], label:'His Exam 2 polls (verbatim, with his keys)', prof:'Gottlieb', exam:2, module:2},
     {id:'DL2', deck:'Pharmacology_Exam_2_Drug_List.pdf', label:'Exam 2 drug list', prof:'Gottlieb', exam:2, module:2}
   ],
   exams: [

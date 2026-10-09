@@ -2,6 +2,13 @@
 
 Newest first. The build embeds this file; the Topics page shows what is new since your last visit, and the Progress page shows all of it. Keep each bullet to one short line.
 
+## 2026-10-09 (Jeopardy and review questions)
+- His 10/8 Jeopardy questions word for word from PollEV screenshots, with keys from the 10/8 lecture.
+- His 10/9 review questions word for word; keys from his slides and lectures (the review was not recorded).
+- Three figures on the Graphs tab: bronchial tone bars, epinephrine with compounds 1–3, skeletal muscle with drug X.
+- Bronchial tone figure marked low yield: he said it will not be on the exam.
+- Class questions rebuilt from his spoken Jeopardy answers removed; the real questions replace them.
+
 ## 2026-10-09 (his 10/7 and 10/8 polls)
 - Nine more polls word for word with his keys: epi overdose, bladder, twins, nitroglycerin, RAAS.
 - Two figure polls on the Graphs tab: NE plus drug B tracing, epinephrine at receptors A and B.

@@ -1,5 +1,5 @@
 TOPICS.push({id:"L11", name:"Day 11: β receptors, epinephrine and norepinephrine, β blockers, nitric oxide", prof:"Gottlieb", lecture:"L11",
-  cite:"Day 11 (10/7, with the epinephrine tracing questions of 10/8) — PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf (slides 33–85 taught)",
+  cite:"Day 11 (10/7) — PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf (slides 33–85 taught)",
   subs:[
     {id:"mirt", name:"Mirtazapine's adverse reactions", cite:"slide 33"},
     {id:"pbz", name:"Phenoxybenzamine", cite:"slides 34–38"},
@@ -9,9 +9,7 @@ TOPICS.push({id:"L11", name:"Day 11: β receptors, epinephrine and norepinephrin
     {id:"bb", name:"β blockers", cite:"slides 54–59"},
     {id:"xtalk", name:"Review and cross-talk", cite:"slides 60–61"},
     {id:"no", name:"Nitric oxide, cGMP and PDE inhibitors", cite:"slides 62–74"},
-    {id:"lab", name:"Lab tracings: acetylcholine, atropine, norepinephrine", cite:"slides 75–85"},
-    {id:"epitrace", name:"Epinephrine tracings (10/8)", cite:"slides 47–51; transcript 10/8"},
-    {id:"jeop", name:"10/8 Jeopardy review: cholinergic", cite:"transcript 10/8"}
+    {id:"lab", name:"Lab tracings: acetylcholine, atropine, norepinephrine", cite:"slides 75–85"}
   ]});
 QUESTIONS.push(
 /* ---------------- Mirtazapine's adverse reactions (slide 33) ---------------- */
@@ -792,58 +790,7 @@ QUESTIONS.push(
  note:"Slide 77 labels the first dose “Acetylcholine, 5 mcg/kg”; he said “I went from 5 to 500”.",
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 77, 83; transcript 10/7"},
 
-/* ---------------- Epinephrine tracings and adrenergic questions (10/8) ---------------- */
-{id:"L11-068", lecture:"L11", prof:"Gottlieb", tier:"new", topic:"L11", sub:"epitrace", skill:"figure",
- concept:"compound1-propranolol", tags:["in-class","poll"], source:"both",
- stem:"A blood pressure tracing: epinephrine gives a vasoconstriction that returns to baseline. Compound 1 plus epinephrine gives a greater vasoconstriction; compound 2 plus epinephrine gives a vasodilation; compound 3 plus epinephrine gives no response. What is compound 1 most likely to be?",
- options:[
-  {t:"Prazosin", correct:false, why:"Blocking α1 would turn the constriction into a dilation (compound 2's result)."},
-  {t:"Propranolol", correct:true, why:"His key (B): blocking β2 removes the physiological antagonist of α1, so the constriction grows."},
-  {t:"Metoprolol", correct:false, why:"A β1 blocker acts in the heart; it does not change the vessel response."},
-  {t:"Isoproterenol", correct:false, why:"A β1 and β2 agonist adds β2 dilation; the constriction would shrink."}],
- teach:"A constriction from epinephrine means a high dose acting on α1, opposed by β2. Compound 1 blocks β2 (propranolol blocks β1 and β2), taking away the physiological antagonist of α1, so the α1 constriction is larger. Work it by listing the receptors in the blood vessel, the receptors epinephrine binds, and whether each drug helps or opposes.",
- quote:"If you're vasoconstricting, this is alpha one, and you can only activate alpha one if it's a high dose. So remember that in the blood vessels, alpha ones are going to compete with beta 2s, and by giving compound one, I'm blocking the beta 2s. So I'm taking away the beta 2 now, all I have is what? alpha one effect, right?",
- note:"A 10/8 Jeopardy question answered by the class through the poll (“B for propranolol? ... it is”). He read only the key; the other options are added here. He did not identify compounds 2 or 3.",
- cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 47–51; transcript 10/8"},
-
-{id:"L11-069", lecture:"L11", prof:"Gottlieb", tier:"new", topic:"L11", sub:"epitrace", skill:"figure",
- concept:"compound2-alpha1-blocker", tags:["variant"], source:"both",
- stem:"In the same tracing, compound 2 plus epinephrine turns epinephrine's vasoconstriction into a vasodilation. Which drug fits compound 2?",
- options:[
-  {t:"Prazosin", correct:true, why:"An α1 antagonist unmasks β2: epinephrine reversal."},
-  {t:"Propranolol", correct:false, why:"Blocking β2 enlarges the constriction (compound 1)."},
-  {t:"Phenylephrine", correct:false, why:"An α1 agonist adds to the constriction."},
-  {t:"Metoprolol", correct:false, why:"A β1 blocker acts in the heart; the vessel response is unchanged."}],
- teach:"Turning a pressor response to epinephrine into a depressor response is epinephrine reversal: with α1 blocked by prazosin, epinephrine's β2 dilation is left unopposed.",
- quote:"So here I'm blocking the alpha ones with prazosin, and now all I have is the beta 2 all alone to bind to the epinephrine and thus I'm going to get a vasodilation. That is what is called the epinephrine reversal.",
- note:"He did not name compound 2 on 10/8; the key comes from his 10/7 epinephrine-reversal teaching (prazosin before epinephrine gives vasodilation).",
- cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 50–51; transcript 10/7; transcript 10/8"},
-
-{id:"L11-070", lecture:"L11", prof:"Gottlieb", tier:"new", topic:"L11", sub:"jeop", skill:"apply",
- concept:"edrophonium-side-effects-atropine", tags:["in-class","poll"], source:"transcript",
- stem:"A patient being tested for myasthenia gravis is given an intravenous infusion of edrophonium and may have side effects during the test. Which of the following drugs would decrease those side effects?",
- options:[
-  {t:"Atropine", correct:true, why:"His key: edrophonium raises acetylcholine and causes the DUMBBELSS; a muscarinic antagonist gives the opposite (anti-DUMBBELSS)."},
-  {t:"Neostigmine", correct:false, why:"Another cholinesterase inhibitor: it adds more acetylcholine and more DUMBBELSS."},
-  {t:"Carbachol", correct:false, why:"A muscarinic agonist: it causes the DUMBBELSS itself."},
-  {t:"Prazosin", correct:false, why:"An α1 antagonist; it does not oppose the muscarinic effects of acetylcholine."}],
- teach:"Edrophonium is an acetylcholinesterase inhibitor used to test for myasthenia gravis. More acetylcholine at muscarinic receptors gives the DUMBBELSS (diarrhea, urination, miosis, bradycardia, bronchoconstriction, emesis, lacrimation, salivation). The drug that opposes them is a muscarinic antagonist such as atropine (anti-DUMBBELSS). It is a two-step question: first the side effect, then the drug that opposes it.",
- quote:"It is because remember that acetocho estase enzyme antagonist or cholinergic agonist is going to cause the dumbbells, so you need an antagonist that calls the anti-dumbbells.",
- note:"A 10/8 Jeopardy question (the student answered atropine; the class poll agreed; “Is that the correct answer? It is”). The transcript renders edrophonium as “hydrofoamium/hydrofonium”. He did not read the options; the three wrong options are added here. On 10/5 he said of edrophonium “for our purpose on the exam, I'm not too worried about” it (DL2 removed its edrophonium item); here he used it only as a cholinesterase inhibitor whose effects atropine opposes.",
- cite:"PCOL-NMJ_PCOL_2026s_pptx.pdf slide 38; PCOL-Cholinergic-26s.pdf slides 17–19; transcript 10/8"},
-
-{id:"L11-071", lecture:"L11", prof:"Gottlieb", tier:"new", topic:"L11", sub:"epitrace", skill:"apply",
- concept:"no-adrenal-bronchodilation", tags:["in-class","poll"], source:"both",
- stem:"A patient has no adrenal glands. Which of the following will he be unable to do well?",
- options:[
-  {t:"Bronchodilate", correct:true, why:"Bronchial β2 receptors are not innervated by the sympathetic; they depend on circulating epinephrine from the adrenal glands."},
-  {t:"Raise heart rate", correct:false, why:"The heart has sympathetic nerves to β1."},
-  {t:"Constrict arteries", correct:false, why:"Arterial α1 receptors are innervated by sympathetic nerves."},
-  {t:"Slow GI motility", correct:false, why:"The gut has its own autonomic nerve supply."}],
- teach:"The lungs have parasympathetic innervation only; bronchial β2 receptors are reached by epinephrine (and norepinephrine) carried in the blood from the adrenal glands. The heart, the blood vessels (α1), the bladder and the gut have sympathetic nerves, so losing the adrenals affects them much less.",
- quote:"Because remember, in order for you to bronchodilate, you have to have your healthy adrenal glands to produce epinephrine and norepinephrine, which is going to flow in your blood and then get you those beta tubes which are not innervated by the sympathetic. Remember, the lungs is parasympathetic only.",
- note:"A 10/8 Jeopardy question, polled by the class (the class picked C and was wrong); he named it as review of the autonomic nervous system lecture. The options are not known; these follow the organs he walked through in the answer.",
- cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 39, 42; transcript 10/8"},
+/* ---------------- β blocker and epinephrine summaries (10/7) ---------------- */
 {id:"L11-072", lecture:"L11", prof:"Gottlieb", tier:"new", topic:"L11", sub:"bb", skill:"tell", multi:true,
  concept:"beta-blockers-block-beta2", tags:["exam-cue"], source:"both",
  stem:"Which β blockers also block β2 receptors? Select all that apply.",
@@ -870,18 +817,5 @@ QUESTIONS.push(
   {t:"It cannot activate α2", correct:false, why:"α2 is the last receptor it reaches as the dose rises."}],
  teach:"Epinephrine is an endogenous catecholamine with different affinities: β1 and β2 at low doses, then α1 and α2 as the dose rises. In blood vessels the high-dose α1 effect overrides β2 (constriction); with α1 blocked, the β2 dilation shows (epinephrine reversal). Treatment down-regulates its receptors, so patients are weaned off.",
  quote:"But the key thing over here for you to remember is that epinephrine has different affinities. At low doses, they're the ones better choose. At higher doses, everybody, but alpha ones wins.",
- cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 47–52; transcript 10/7"},
-{id:"L11-074", lecture:"L11", prof:"Gottlieb", tier:"new", topic:"L11", sub:"jeop", skill:"apply",
- concept:"rivastigmine-dumbbells-jeopardy", tags:["in-class","poll"], source:"transcript",
- stem:"Your patient is taking rivastigmine for his Alzheimer's. Which side effects is he most likely to complain of?",
- options:[
-  {t:"Diarrhea", correct:false, why:"A DUMBBELSS effect, but not the only one."},
-  {t:"Salivation and lacrimation", correct:false, why:"DUMBBELSS effects, but not the only ones."},
-  {t:"Bradycardia", correct:false, why:"A DUMBBELSS effect (M2), but not the only one."},
-  {t:"Miosis", correct:false, why:"A DUMBBELSS effect, but not the only one."},
-  {t:"All of the above", correct:true, why:"His key (E): rivastigmine enhances the cholinergic system, giving the whole DUMBBELSS."}],
- teach:"Rivastigmine is a lipophilic, reversible acetylcholinesterase inhibitor that crosses into the brain (Alzheimer's disease). Raising acetylcholine everywhere gives the DUMBBELSS: diarrhea, urination, miosis, bradycardia, bronchoconstriction, emesis, lacrimation, salivation.",
- quote:"Is that the correct answer? All the above. Remember to produce the dumbbells, right? Because it's gonna enhance the cholinergic system. Very good.",
- note:"A 10/8 Jeopardy question (the student chose “E as in elephant”, all of the above; the class poll agreed). He read only the stem; the four effects listed are added here as DUMBBELSS effects, matching his key of all of the above. Same idea as his 10/5 poll “Rivastigmine is most likely to produce:” (PE2-021, key salivation).",
- cite:"PCOL-NMJ_PCOL_2026s_pptx.pdf slides 40–41; transcript 10/8"}
+ cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 47–52; transcript 10/7"}
 );

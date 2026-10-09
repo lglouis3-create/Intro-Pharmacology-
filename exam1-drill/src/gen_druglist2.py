@@ -337,7 +337,7 @@ add('nmj', 'moa-varenicline',
   ('Reversible inhibitor of acetylcholinesterase', W, 'That is physostigmine, neostigmine and the other cholinesterase inhibitors (indirect antagonists).')],
  'Varenicline binds the α4β2 neuronal nicotinic (Nn) receptor in the central nervous system with high affinity and activates it only partially. That decreases craving and withdrawal and blunts the effect of nicotine, so it is used for smoking cessation.',
  'Varenicline (Chantix) => Selective partial agonist α4β2 NN receptors. MOA: High affinity and Partial Agonist at the α4/β2 central nicotinic (NN) receptor; Decrease craving and withdrawal; Blunt nicotine effect',
- cite(1, (NMJ, '7–8')))
+ cite(1, (NMJ, '7–8')), dupOf='PE2-087')
 
 add('nmj', 'soa-varenicline',
  'Where is the site of action of varenicline?',
@@ -1229,7 +1229,7 @@ raas('raas', 'arb',
   ('Mineralocorticoid receptor antagonist', W, 'That is spironolactone and eplerenone.')],
  'Losartan, valsartan, olmesartan, telmisartan and irbesartan are angiotensin II receptor blockers (ARBs): reversible, selective AT1 antagonists with about 10,000-fold higher affinity for AT1 than for AT2. Blocking AT1 lowers total peripheral resistance, Na+ and water retention and aldosterone; angiotensin II, which rises, then activates AT2, which opposes AT1. Losartan is active, and its metabolite EXP 3174 is active too.',
  "So as long as you know one, you know them all, and those drugs are directly binding and inhibiting the AT1 receptor and thus preventing the binding of angiotensin 2.",
- f'{LIST} page 9; {RAAS} slides 4, 13–14; transcript 10/8')
+ f'{LIST} page 9; {RAAS} slides 4, 13–14; transcript 10/8', dupOf='PE2-072')
 
 raas('raas', 'acei-vs-arb',
  'Which adverse reactions are more common with ACE (angiotensin-converting enzyme) inhibitors than with angiotensin II receptor blockers (ARBs)?',

@@ -103,7 +103,7 @@ QUESTIONS.push(
  quote:"This is what kind of antagonist that is in direct antagonist, because it's affecting somewhere else other than the receptor, right?",
  cite:"PCOL-NMJ_PCOL_2026s_pptx.pdf slide 3; transcript 10/1; transcript 10/5"},
 
-{id:"L08-008", lecture:"L08", prof:"Gottlieb", tier:"new", topic:"L08", sub:"nnag", skill:"recall",
+{id:"L08-008", dupOf:"PE2-087", lecture:"L08", prof:"Gottlieb", tier:"new", topic:"L08", sub:"nnag", skill:"recall",
  concept:"varenicline-moa", tags:["druglist"], source:"both",
  stem:"Varenicline (Chantix) is best described as:",
  options:[

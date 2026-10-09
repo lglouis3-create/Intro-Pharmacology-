@@ -836,19 +836,5 @@ QUESTIONS.push(
   {t:"Neither changes it", correct:false, why:"Both change it, in opposite directions."}],
  teach:"Use the rule downstream goes down, upstream goes up. Aliskiren blocks renin, the first step, so angiotensin I falls. Lisinopril blocks ACE, the step after angiotensin I, so angiotensin I builds up. Both lower angiotensin II and aldosterone. He promised 1 to 2 exam questions on these up-or-down predictions.",
  quote:"So what I have done for you over here for you to study for the exam is a little table where you can practice drawing out the cascade and see who increases and who decreases what in the process, because I guarantee you you're gonna have at least 1 to 2 questions on the effects of these drugs in the cascade.",
- cite:"PCOL-RAAS_26s.pdf slides 8, 12, 29; transcript 10/8"},
-
-{id:"L12-064", lecture:"L12", prof:"Gottlieb", tier:"new", topic:"L12", sub:"predict", skill:"apply", multi:true,
- concept:"gq-inhibitors-jeopardy", tags:["in-class", "jeopardy"], source:"both",
- stem:"Which of the following drugs inhibit the Gq pathway? Select all that apply.",
- options:[
-  {t:"Losartan", correct:true, why:"Losartan blocks AT1, which is Gq."},
-  {t:"Prazosin", correct:true, why:"Prazosin blocks α1, which is Gq."},
-  {t:"Phenoxybenzamine", correct:true, why:"Phenoxybenzamine blocks α1 (Gq) and α2."},
-  {t:"Atropine", correct:true, why:"Atropine blocks M1 and M3, which are Gq."},
-  {t:"Metoprolol", correct:false, why:"Metoprolol blocks β1, which is Gs."}],
- teach:"Work from the receptor table: AT1, α1, M1 and M3 are Gq. Losartan (AT1), prazosin (α1), phenoxybenzamine (α1 and α2) and atropine (M1, M2, M3) all block a Gq receptor. The β receptors are Gs, so metoprolol does not. The receptor table may be written on scratch paper during the exam, from memory.",
- quote:"Yes, because losartan blocks the AT1, which is GQ. … Prazosin blocks 2, Alpha 1, which is GQ. Fenoxbenzammine blocks alpha 1, which is GQ and alpha 2, right? So that's gonna include the anatropine blocks the M3s and M1s, which are also GQ.",
- note:"Jeopardy question (“Drug receptor 200”) on 10/8. The options were not read aloud; the answer was E (all of the above), with the student's reason for losartan and his for prazosin, phenoxybenzamine and atropine. Here it is asked as select-all with metoprolol (β1, Gs) as the wrong choice. He added: “if you want to write the quick stable in your test, I have no problem with that when you scratch paper ... You just can't do it from your notes. Got to do from memory.”",
- cite:"PCOL-RAAS_26s.pdf slides 3, 31; transcript 10/8"}
+ cite:"PCOL-RAAS_26s.pdf slides 8, 12, 29; transcript 10/8"}
 );
