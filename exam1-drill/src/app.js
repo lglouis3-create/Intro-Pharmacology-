@@ -165,12 +165,14 @@ const LINKS2 = [
   [/alpha|α|phenylephr|prazosin|tamsulosin|clonidine|mirtazap|phenoxybenz|oxymetaz/, [G2(6, 'α1 and α2 drugs'), ['ref', 'ref2-alpha', 'Reference: α drugs'], ['tell', 'tell2-alpha', 'Tell apart: α1 vs α2 drugs']]]
 ];
 const BY_LECTURE2 = {L07: G2(1, 'the autonomic layout'), L07ref: ['ref', 'ref2-2', 'Reference: organ by organ, PNS vs SNS'], L08: G2(2, 'nicotinic receptors, NMJ'), L09: G2(4, 'muscarinic drugs'), L10: G2(5, 'indirect-acting adrenergic drugs'), L11: G2(7, 'β drugs, epinephrine, NE'), L12: G2(10, 'RAAS'), PE2: G2(1, 'the autonomic layout')};
+const TERM_SUB2 = {g6: G2(1, 'the autonomic layout'), g7: G2(1, 'the autonomic layout'), g8: G2(4, 'muscarinic drugs'), g9: G2(6, 'α1 and α2 drugs'), g10: G2(9, 'nitric oxide'), g11: G2(10, 'RAAS')};
 const DL2_SUB = {nmj: G2(2, 'nicotinic receptors, NMJ'), chol: G2(4, 'muscarinic drugs'), adr: G2(6, 'α1 and α2 drugs'), no: G2(9, 'nitric oxide'), raas: G2(10, 'RAAS')};
 function linksFor(q) {
   if (examOf(q) === 2 && typeof GUIDE2_HTML !== 'undefined') {
     const key = [q.concept, q.sub, (q.tags || []).join(' '), q.img || ''].join(' ').toLowerCase();
     for (const [re, links] of LINKS2) if (re.test(key)) return links;
     if (q.lecture === 'DL2' && DL2_SUB[q.sub]) return [DL2_SUB[q.sub]];
+    if (q.topic === 'TERMS' && TERM_SUB2[q.sub]) return [TERM_SUB2[q.sub]];
     return BY_LECTURE2[q.lecture] ? [BY_LECTURE2[q.lecture]].concat(q.lecture === 'L07' ? [BY_LECTURE2.L07ref, ['ref', 'ref2-1', 'Reference: receptors and G proteins']] : []) : [];
   }
   if (q.lecture === 'DL1') return [['guide', 'guide-8', 'Guide 8: the drug list'], ['ref', 'ref-druglist', 'Reference: the drug list']];
@@ -181,10 +183,11 @@ function linksFor(q) {
 }
 /* Tiers (Exam 2, as he described them): Tier 1 predicts a receptor's effect, Tier 2 puts two drugs
    together, Tier 3 reverses a drug's effect, and each tier needs the ones below it. Questions of one
-   ladder share `ladder`; climbing it asks them in tier order. */
-const ladderQs = key => QUESTIONS.filter(q => q.ladder === key).sort((a, b) => (a.tier || 0) - (b.tier || 0));
+   ladder share `ladder`; climbing it asks them in tier order. The tier number is the field `level`
+   (the older field `tier` holds the content tier and is unrelated). */
+const ladderQs = key => QUESTIONS.filter(q => q.ladder === key).sort((a, b) => (a.level || 0) - (b.level || 0));
 const climbLadder = key => { const l = ladderQs(key); if (l.length) startQuiz(l, 'Ladder: ' + (l[0].ladderName || key), 'pass'); };
-const ladderChip = q => q.ladder && ladderQs(q.ladder).length > 1 ? `<button type="button" class="chip" data-climb="${esc(q.ladder)}">${q.tier > 1 ? 'Build up: Tier 1 → ' + q.tier + ' on this' : 'Climb this ladder to Tier 3'}</button>` : '';
+const ladderChip = q => q.ladder && ladderQs(q.ladder).length > 1 ? `<button type="button" class="chip" data-climb="${esc(q.ladder)}">${q.level > 1 ? 'Build up: Tier 1 → ' + q.level + ' on this' : 'Climb this ladder to Tier 3'}</button>` : '';
 const explainHTML = q => { const l = linksFor(q), c = ladderChip(q); return l.length || c ? `<div class="row explain"><span class="meta" style="margin:0">Explain more:</span>${l.map(([v, a, t]) => `<button type="button" class="chip" data-jump="${v}:${a}">${esc(t)}</button>`).join('')}${c}</div>` : ''; };
 document.addEventListener('click', e => { const b = e.target.closest('[data-climb]'); if (!b) return; if (EX && !EX.done) return; climbLadder(b.dataset.climb); });
 function jump(view, anchor) {
@@ -297,11 +300,11 @@ function vTopics() {
     });
     return c + '</div>';
   };
-  const tiered = pool.filter(q => q.tier);
+  const tiered = pool.filter(q => q.level);
   if (tiered.length) {
     const ladders = [...new Set(tiered.filter(q => q.ladder).map(q => q.ladder))].filter(k => ladderQs(k).length > 1);
     h += `<div class="card"><b>Tiers, as he described them</b><p class="sub" style="margin:4px 0 8px">Tier 1: predict what a receptor does. Tier 2: two drugs together, the good and bad interactions. Tier 3: reverse a drug's effect. "A tier 3 question would require knowledge of tier 2 and 1."</p>
-      <div class="row">${[1, 2, 3].map(t => { const tq = tiered.filter(q => q.tier === t), ta = acc(tq); return tq.length ? `<button class="btn ghost" data-tier="${t}">Tier ${t} · ${tq.length} questions${ta.pct == null ? '' : ' · ' + ta.pct + '%'}</button>` : ''; }).join('')}
+      <div class="row">${[1, 2, 3].map(t => { const tq = tiered.filter(q => q.level === t), ta = acc(tq); return tq.length ? `<button class="btn ghost" data-tier="${t}">Tier ${t} · ${tq.length} questions${ta.pct == null ? '' : ' · ' + ta.pct + '%'}</button>` : ''; }).join('')}
       ${ladders.length ? `<button class="btn" id="ladders">Climb the ${ladders.length} ladders (Tier 1 → 3)</button>` : ''}</div></div>`;
   }
   COURSE.exams.forEach(e => {
@@ -317,7 +320,7 @@ function vTopics() {
   const nok = $('#newsok'); if (nok) nok.onclick = () => { store.set(NEWS_KEY, newsId(BUILD.changelog[0])); const c = $('#news'); if (c) c.remove(); };
   const nall = $('#newsall'); if (nall) nall.onclick = () => go('data');
   $('#all').onclick = () => startQuiz(shuffle(pool), 'All questions, one pass', 'pass');
-  document.querySelectorAll('[data-tier]').forEach(b => b.onclick = () => startQuiz(pool.filter(q => q.tier === +b.dataset.tier), 'Tier ' + b.dataset.tier, 'sr'));
+  document.querySelectorAll('[data-tier]').forEach(b => b.onclick = () => startQuiz(pool.filter(q => q.level === +b.dataset.tier), 'Tier ' + b.dataset.tier, 'sr'));
   const ld = $('#ladders'); if (ld) ld.onclick = () => {
     // every ladder in turn, each from Tier 1 up
     const keys = shuffle([...new Set(pool.filter(q => q.ladder).map(q => q.ladder))].filter(k => ladderQs(k).length > 1));
@@ -395,7 +398,7 @@ function readingHTML(r) {
 }
 function metaLine(q) {
   const t = TOPIC[q.topic], sk = SKILL[q.skill];
-  return `${esc(t ? t.name : q.topic)}${sk ? ' · ' + esc(sk.short) : ''}${q.tier ? ' · Tier ' + q.tier : ''}${q.multi ? ' · select all' : ''}`;
+  return `${esc(t ? t.name : q.topic)}${sk ? ' · ' + esc(sk.short) : ''}${q.level ? ' · Tier ' + q.level : ''}${q.multi ? ' · select all' : ''}`;
 }
 /* One question card. `st` holds the answer state (order, rightOrder, picked, mpick, answered, ok);
    in the one-at-a-time view that is Q itself, on the all-on-one-page view one object per question. */
@@ -877,7 +880,7 @@ function examResult() {
     <div class="row"><button class="btn" id="newx">New exam</button><button class="btn ghost" id="missx">Drill the ones I missed</button></div>
     <h3>By topic</h3><div class="tablewrap"><table><thead><tr><th>Topic</th><th>Right</th><th>%</th></tr></thead><tbody>${by(q => q.topic, k => (TOPIC[k] || {}).name || k)}</tbody></table></div>
     <h3>By skill</h3><div class="tablewrap"><table><thead><tr><th>Skill</th><th>Right</th><th>%</th></tr></thead><tbody>${by(q => q.skill, k => (SKILL[k] || {}).label || k)}</tbody></table></div>
-    ${qsx.some(q => q.tier) ? `<h3>By tier</h3><div class="tablewrap"><table><thead><tr><th>Tier</th><th>Right</th><th>%</th></tr></thead><tbody>${by(q => q.tier ? 'Tier ' + q.tier : 'No tier', k => k)}</tbody></table></div>` : ''}
+    ${qsx.some(q => q.level) ? `<h3>By tier</h3><div class="tablewrap"><table><thead><tr><th>Tier</th><th>Right</th><th>%</th></tr></thead><tbody>${by(q => q.level ? 'Tier ' + q.level : 'No tier', k => k)}</tbody></table></div>` : ''}
     <h3>Review</h3>`;
   qsx.forEach((q, k) => {
     const a = EX.ans[q.id], ok = exRight(q, a), pickedSet = new Set([].concat(a == null ? [] : a));
@@ -901,7 +904,7 @@ function examResult() {
 
 /* ---------- Terms: glossary with figures, flashcards, generated questions ---------- */
 let TM = {mode: 'glossary', group: 'all', card: null, shown: false};
-const termList = () => (typeof TERMS === 'undefined' ? [] : TERMS).filter(t => TM.group === 'all' || t.group === TM.group);
+const termList = () => (typeof TERMS === 'undefined' ? [] : TERMS).filter(t => (lecExam(t.lecture) || 1) === activeId() && (TM.group === 'all' || t.group === TM.group));
 const termKey = t => 'term:' + t.id;
 /* Glossary search and A–Z: the search box filters as you type (term, one-line
    meaning, definition, example), the letter bar jumps to a letter (switching to
@@ -967,10 +970,13 @@ function vTerms() {
   const all = typeof TERMS === 'undefined' ? [] : TERMS;
   if (!all.length) { $('#view').innerHTML = '<h2>Terms</h2><div class="empty">No glossary in this build.</div>'; return; }
   const groups = [...new Set(all.map(t => t.group))];
-  const tq = QUESTIONS.filter(q => q.topic === 'TERMS');
-  let h = `<h2>Terms</h2><p class="sub">${all.length} terms, each with its source, grouped by exam. Each term has a one-line meaning, a situation that shows it in action, and, where one applies, a figure.</p>
+  // flashcards and the term quiz use the exam being studied; the glossary shows both exams
+  const tq = QUESTIONS.filter(q => q.topic === 'TERMS' && (TM.mode === 'glossary' || examOf(q) === activeId()));
+  const chipGroups = TM.mode === 'glossary' ? groups : [...new Set(all.filter(t => (lecExam(t.lecture) || 1) === activeId()).map(t => t.group))];
+  if (TM.group !== 'all' && !chipGroups.includes(TM.group)) TM.group = 'all';
+  let h = `<h2>Terms</h2><div class="row" style="margin:-4px 0 8px">${examSwitch()}</div><p class="sub">${all.length} terms, each with its source, grouped by exam; flashcards and Quiz me use the exam you are studying for. Each term has a one-line meaning, a situation that shows it in action, and, where one applies, a figure.</p>
   <div class="card"><div class="row">${[['glossary', 'Glossary'], ['flash', 'Flashcards'], ['quiz', 'Quiz me']].map(([k, l]) => `<span class="chip ${TM.mode === k ? 'on' : ''}" data-mode="${k}">${l}</span>`).join('')}
-   <span class="meta" style="margin:0 0 0 12px">Group:</span>${['all'].concat(groups).map(g => `<span class="chip ${TM.group === g ? 'on' : ''}" data-group="${esc(g)}">${g === 'all' ? 'All' : esc(g)}</span>`).join('')}</div></div>`;
+   <span class="meta" style="margin:0 0 0 12px">Group:</span>${['all'].concat(chipGroups).map(g => `<span class="chip ${TM.group === g ? 'on' : ''}" data-group="${esc(g)}">${g === 'all' ? 'All' : esc(g)}</span>`).join('')}</div></div>`;
   const list = termList();
   if (TM.mode === 'glossary') {
     const pool = all.filter(t => TM.group === 'all' || t.group === TM.group);
