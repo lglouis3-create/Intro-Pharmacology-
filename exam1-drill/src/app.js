@@ -151,7 +151,28 @@ const LINKS = [
 ];
 const BY_LECTURE = {L01: ['guide', 'guide-7', 'Guide 7: drug basics he tests'], L02: ['guide', 'guide-6', 'Guide 6: receptors and signalling'], L03: ['guide', 'guide-1', 'Guide 1: affinity, efficacy, potency'], L04: ['guide', 'guide-2', 'Guide 2: agonist classes'], L05: ['guide', 'guide-9', 'Guide 9: Day 5'], L06: ['guide', 'guide-10', 'Guide 10: how to read a curve'], PE: ['guide', 'guide-10', 'Guide 10: how to read a curve'], JP: ['guide', 'guide-10', 'Guide 10: how to read a curve'], FG: ['guide', 'guide-10', 'Guide 10: how to read a curve']};
 const BY_GROUP = {g1: ['guide', 'guide-7', 'Guide 7: drug basics he tests'], g2: ['guide', 'guide-4', 'Guide 4: orthosteric vs allosteric'], g3: ['guide', 'guide-2', 'Guide 2: agonist classes'], g4: ['guide', 'guide-1', 'Guide 1: affinity, efficacy, potency'], g5: ['guide', 'guide-6', 'Guide 6: receptors and signalling']};
+/* Exam 2: keyword rows first (tested against concept, sub and tags), then the lecture's guide. */
+const G2 = (n, t) => ['guide', 'guide2-' + n, 'Guide: ' + t];
+const LINKS2 = [
+  [/tracing|compound|drug-?x|skm-|ne-drug-b|epi-two|gi-tracing/, [G2(8, 'reading his tracings')]],
+  [/organophos|echothio|pralidox|stigmine|cholinesterase|\bache\b|donepezil|rivastig|physostig|neostig|edroph/, [G2(3, 'cholinesterase inhibitors')]],
+  [/varenicl|succinyl|curare|rocuron|pancuron|\bnm\b|\bnn\b|nicotinic|botul|ganglion/, [G2(2, 'nicotinic receptors, NMJ')]],
+  [/muscarin|atropine|scopol|pilocarp|carbachol|bethanechol|oxybut|trospium|solifen|tiotrop|ipratrop|benztrop|dumbbel/, [G2(4, 'muscarinic drugs')]],
+  [/nitric|nitro|sildenafil|\bpde\b|cgmp|\bsgc\b|\bnos\b/, [G2(9, 'nitric oxide')]],
+  [/renin|angiotens|\bace\b|ace-inhib|\barbs?\b|losartan|valsartan|lisinopril|captopril|aliskiren|spironol|eplerenone|aldosteron|bradykinin|hyperkal|raas/, [G2(10, 'RAAS')]],
+  [/cocaine|amphet|methylphen|\bmao|phenelzine|selegil|tyramine|reuptake|\bnet\b|ephedrine/, [G2(5, 'indirect-acting adrenergic drugs')]],
+  [/beta|β|metoprolol|propranolol|carvedilol|labetalol|atenolol|pindolol|albuterol|dobutamine|isoproterenol|mirabegron|epinephrine|reversal/, [G2(7, 'β drugs, epinephrine, NE')]],
+  [/alpha|α|phenylephr|prazosin|tamsulosin|clonidine|mirtazap|phenoxybenz|oxymetaz/, [G2(6, 'α1 and α2 drugs')]]
+];
+const BY_LECTURE2 = {L07: G2(1, 'the autonomic layout'), L08: G2(2, 'nicotinic receptors, NMJ'), L09: G2(4, 'muscarinic drugs'), L10: G2(5, 'indirect-acting adrenergic drugs'), L11: G2(7, 'β drugs, epinephrine, NE'), L12: G2(10, 'RAAS'), PE2: G2(1, 'the autonomic layout')};
+const DL2_SUB = {nmj: G2(2, 'nicotinic receptors, NMJ'), chol: G2(4, 'muscarinic drugs'), adr: G2(6, 'α1 and α2 drugs'), no: G2(9, 'nitric oxide'), raas: G2(10, 'RAAS')};
 function linksFor(q) {
+  if (examOf(q) === 2 && typeof GUIDE2_HTML !== 'undefined') {
+    const key = [q.concept, q.sub, (q.tags || []).join(' '), q.img || ''].join(' ').toLowerCase();
+    for (const [re, links] of LINKS2) if (re.test(key)) return links;
+    if (q.lecture === 'DL2' && DL2_SUB[q.sub]) return [DL2_SUB[q.sub]];
+    return BY_LECTURE2[q.lecture] ? [BY_LECTURE2[q.lecture]] : [];
+  }
   if (q.lecture === 'DL1') return [['guide', 'guide-8', 'Guide 8: the drug list'], ['ref', 'ref-druglist', 'Reference: the drug list']];
   const key = [q.concept, q.fg, q.sub, (q.tags || []).join(' ')].join(' ').toLowerCase();
   for (const [re, links] of LINKS) if (re.test(key)) return links;
