@@ -155,23 +155,23 @@ const BY_GROUP = {g1: ['guide', 'guide-7', 'Guide 7: drug basics he tests'], g2:
 const G2 = (n, t) => ['guide', 'guide2-' + n, 'Guide: ' + t];
 const LINKS2 = [
   [/tracing|compound|drug-?x|skm-|ne-drug-b|epi-two|gi-tracing/, [G2(8, 'reading his tracings')]],
-  [/organophos|echothio|pralidox|stigmine|cholinesterase|\bache\b|donepezil|rivastig|physostig|neostig|edroph/, [G2(3, 'cholinesterase inhibitors')]],
-  [/varenicl|succinyl|curare|rocuron|pancuron|\bnm\b|\bnn\b|nicotinic|botul|ganglion/, [G2(2, 'nicotinic receptors, NMJ')]],
-  [/muscarin|atropine|scopol|pilocarp|carbachol|bethanechol|oxybut|trospium|solifen|tiotrop|ipratrop|benztrop|dumbbel/, [G2(4, 'muscarinic drugs')]],
-  [/nitric|nitro|sildenafil|\bpde\b|cgmp|\bsgc\b|\bnos\b/, [G2(9, 'nitric oxide')]],
-  [/renin|angiotens|\bace\b|ace-inhib|\barbs?\b|losartan|valsartan|lisinopril|captopril|aliskiren|spironol|eplerenone|aldosteron|bradykinin|hyperkal|raas/, [G2(10, 'RAAS')]],
-  [/cocaine|amphet|methylphen|\bmao|phenelzine|selegil|tyramine|reuptake|\bnet\b|ephedrine/, [G2(5, 'indirect-acting adrenergic drugs')]],
-  [/beta|β|metoprolol|propranolol|carvedilol|labetalol|atenolol|pindolol|albuterol|dobutamine|isoproterenol|mirabegron|epinephrine|reversal/, [G2(7, 'β drugs, epinephrine, NE')]],
-  [/alpha|α|phenylephr|prazosin|tamsulosin|clonidine|mirtazap|phenoxybenz|oxymetaz/, [G2(6, 'α1 and α2 drugs')]]
+  [/organophos|echothio|pralidox|stigmine|cholinesterase|\bache\b|donepezil|rivastig|physostig|neostig|edroph/, [G2(3, 'cholinesterase inhibitors'), ['tell', 'tell2-ache', 'Tell apart: reversible vs irreversible'], ['tell', 'tell2-direct-indirect', 'Tell apart: direct vs indirect']]],
+  [/varenicl|succinyl|curare|rocuron|pancuron|\bnm\b|\bnn\b|nicotinic|botul|ganglion/, [G2(2, 'nicotinic receptors, NMJ'), ['ref', 'ref2-nmj', 'Reference: NMJ drugs'], ['tell', 'tell2-depolarizing', 'Tell apart: depolarizing vs not']]],
+  [/muscarin|atropine|scopol|pilocarp|carbachol|bethanechol|oxybut|trospium|solifen|tiotrop|ipratrop|benztrop|dumbbel/, [G2(4, 'muscarinic drugs'), ['ref', 'ref2-chol', 'Reference: muscarinic drugs'], ['tell', 'tell2-antimuscarinic', 'Tell apart: the antimuscarinics']]],
+  [/nitric|nitro|sildenafil|\bpde\b|cgmp|\bsgc\b|\bnos\b/, [G2(9, 'nitric oxide'), ['ref', 'ref2-no', 'Reference: nitric oxide drugs'], ['tell', 'tell2-nitrate-pde', 'Tell apart: nitrate vs PDE inhibitor']]],
+  [/renin|angiotens|\bace\b|ace-inhib|\barbs?\b|losartan|valsartan|lisinopril|captopril|aliskiren|spironol|eplerenone|aldosteron|bradykinin|hyperkal|raas/, [G2(10, 'RAAS'), ['ref', 'ref2-4', 'Reference: what each RAAS drug changes'], ['tell', 'tell2-raas', 'Tell apart: ACE inhibitor vs ARB vs others']]],
+  [/cocaine|amphet|methylphen|\bmao|phenelzine|selegil|tyramine|reuptake|\bnet\b|ephedrine/, [G2(5, 'indirect-acting adrenergic drugs'), ['ref', 'ref2-ind', 'Reference: indirect-acting drugs'], ['tell', 'tell2-indirect-adrenergic', 'Tell apart: cocaine vs amphetamine vs MAOI']]],
+  [/beta|β|metoprolol|propranolol|carvedilol|labetalol|atenolol|pindolol|albuterol|dobutamine|isoproterenol|mirabegron|epinephrine|reversal/, [G2(7, 'β drugs, epinephrine, NE'), ['ref', 'ref2-beta', 'Reference: β drugs'], ['tell', 'tell2-beta-blockers', 'Tell apart: β blockers (MAN)']]],
+  [/alpha|α|phenylephr|prazosin|tamsulosin|clonidine|mirtazap|phenoxybenz|oxymetaz/, [G2(6, 'α1 and α2 drugs'), ['ref', 'ref2-alpha', 'Reference: α drugs'], ['tell', 'tell2-alpha', 'Tell apart: α1 vs α2 drugs']]]
 ];
-const BY_LECTURE2 = {L07: G2(1, 'the autonomic layout'), L08: G2(2, 'nicotinic receptors, NMJ'), L09: G2(4, 'muscarinic drugs'), L10: G2(5, 'indirect-acting adrenergic drugs'), L11: G2(7, 'β drugs, epinephrine, NE'), L12: G2(10, 'RAAS'), PE2: G2(1, 'the autonomic layout')};
+const BY_LECTURE2 = {L07: G2(1, 'the autonomic layout'), L07ref: ['ref', 'ref2-2', 'Reference: organ by organ, PNS vs SNS'], L08: G2(2, 'nicotinic receptors, NMJ'), L09: G2(4, 'muscarinic drugs'), L10: G2(5, 'indirect-acting adrenergic drugs'), L11: G2(7, 'β drugs, epinephrine, NE'), L12: G2(10, 'RAAS'), PE2: G2(1, 'the autonomic layout')};
 const DL2_SUB = {nmj: G2(2, 'nicotinic receptors, NMJ'), chol: G2(4, 'muscarinic drugs'), adr: G2(6, 'α1 and α2 drugs'), no: G2(9, 'nitric oxide'), raas: G2(10, 'RAAS')};
 function linksFor(q) {
   if (examOf(q) === 2 && typeof GUIDE2_HTML !== 'undefined') {
     const key = [q.concept, q.sub, (q.tags || []).join(' '), q.img || ''].join(' ').toLowerCase();
     for (const [re, links] of LINKS2) if (re.test(key)) return links;
     if (q.lecture === 'DL2' && DL2_SUB[q.sub]) return [DL2_SUB[q.sub]];
-    return BY_LECTURE2[q.lecture] ? [BY_LECTURE2[q.lecture]] : [];
+    return BY_LECTURE2[q.lecture] ? [BY_LECTURE2[q.lecture]].concat(q.lecture === 'L07' ? [BY_LECTURE2.L07ref, ['ref', 'ref2-1', 'Reference: receptors and G proteins']] : []) : [];
   }
   if (q.lecture === 'DL1') return [['guide', 'guide-8', 'Guide 8: the drug list'], ['ref', 'ref-druglist', 'Reference: the drug list']];
   const key = [q.concept, q.fg, q.sub, (q.tags || []).join(' ')].join(' ').toLowerCase();
