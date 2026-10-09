@@ -372,20 +372,6 @@ QUESTIONS.push(
  reading:[{src:"Katzung 16e, Ch. 17", sec:"Angiotensin-Converting Enzyme Inhibitors", t:"ACE inhibitors block the conversion of angiotensin I to angiotensin II and also inhibit the degradation of bradykinin. Inhibiting bradykinin metabolism contributes significantly to their hypotensive action, and bradykinin is apparently responsible for some adverse effects, including cough and angioedema."}],
  cite:"PCOL-RAAS_26s.pdf slides 9, 12; transcript 10/8"},
 
-{id:"L12-027", lecture:"L12", prof:"Gottlieb", tier:"new", topic:"L12", sub:"acei", skill:"apply",
- concept:"lisinopril-poll", tags:["in-class"], source:"both",
- stem:"Lisinopril is most likely to produce which change in the renin–angiotensin–aldosterone system (RAAS)?",
- options:[
-  {t:"Decrease in angiotensin II", correct:true, why:"Lisinopril blocks angiotensin-converting enzyme (ACE), so angiotensin II falls, and with it aldosterone and AT1 activation."},
-  {t:"Decrease in renin", correct:false, why:"Renin is upstream of the block; it is not decreased."},
-  {t:"Decrease in angiotensin I", correct:false, why:"Angiotensin I is upstream of ACE; it builds up."},
-  {t:"Increase in aldosterone release", correct:false, why:"Less angiotensin II means less aldosterone."},
-  {t:"Increase in AT1 activation", correct:false, why:"With less angiotensin II, AT1 activation falls."}],
- teach:"An ACE inhibitor blocks the step from angiotensin I to angiotensin II. Downstream goes down: angiotensin II, AT1 and AT2 activation, aldosterone. Upstream goes up: renin, angiotensinogen and a buildup of angiotensin I.",
- quote:"Yes, so it's not gonna decrease renin, that's upstream from the inhibition point. It's not gonna decrease angiotensin 1, actually it's gonna increase the left because it's upstream from that, but we'll decrease angiotensin 2. And we'll decrease aldosterone and we'll decrease the activation of A1, right?",
- note:"In-class poll on 10/8 (“lisinopril, what lisinopril is going to do to the rest system”). The options were not read aloud; the class majority chose C and he confirmed it, then explained why renin and angiotensin I are not decreased and angiotensin II, aldosterone and AT1 activation are. The options here are rebuilt from that explanation.",
- cite:"PCOL-RAAS_26s.pdf slides 9, 12, 29; transcript 10/8"},
-
 {id:"L12-028", lecture:"L12", prof:"Gottlieb", tier:"new", topic:"L12", sub:"acei", skill:"apply", multi:true,
  concept:"acei-up-down", tags:[], source:"both",
  stem:"Which changes are expected with an angiotensin-converting enzyme (ACE) inhibitor? Select all that apply.",
@@ -482,20 +468,6 @@ QUESTIONS.push(
  quote:"Furthermore, it leaves the 82 alone. Is that a good thing or a bad thing? It's the cherry on top because that's the physiological antagonist, so you not only inhibit the activation, but now you can start activating the receptor that's gonna further lower everything down, right?",
  note:"He asked the class whether leaving AT2 alone is “a good thing or a bad thing” and answered it.",
  cite:"PCOL-RAAS_26s.pdf slides 13, 18, 26–27; transcript 10/8"},
-
-{id:"L12-035", lecture:"L12", prof:"Gottlieb", tier:"new", topic:"L12", sub:"arb", skill:"apply",
- concept:"valsartan-poll", tags:["in-class"], source:"both",
- stem:"Which statement about valsartan is CORRECT?",
- options:[
-  {t:"It blocks the AT1 receptor", correct:true, why:"The “-sartan” makes it an ARB: it binds and blocks AT1."},
-  {t:"It decreases plasma angiotensin II", correct:false, why:"It acts at the receptor; if anything the body makes more angiotensin II to compensate."},
-  {t:"It decreases AT2 activation", correct:false, why:"It enhances AT2 activation, shifting angiotensin II from AT1 to AT2."},
-  {t:"It inhibits angiotensin-converting enzyme", correct:false, why:"That is the “-prils”."},
-  {t:"It inhibits renin", correct:false, why:"That is aliskiren."}],
- teach:"Valsartan is an angiotensin II receptor blocker (ARB): from the “-sartan” you know its class, and from the cascade you predict its effects. It blocks AT1, does not lower plasma angiotensin II (the body makes more) and increases AT2 activation.",
- quote:"It will not decrease the plasma of angiotensin 2. It binds to the AT1 receptor. If anything, your body is gonna make more of it to compensate for that, right? It's not gonna decrease the activation of AT2. Actually it's gonna enhance it because now we're gonna shift from being going to the 81 into the 82.",
- note:"In-class poll on 10/8 (“So, what can you tell me about Valsartan?”). The options were not read aloud; the class majority chose B and he confirmed it, ruling out a decrease in plasma angiotensin II, a decrease in AT2 activation and “all the above”. The options here are rebuilt from that explanation.",
- cite:"PCOL-RAAS_26s.pdf slides 4, 13; transcript 10/8"},
 
 {id:"L12-036", lecture:"L12", prof:"Gottlieb", tier:"new", topic:"L12", sub:"arb", skill:"recall",
  concept:"losartan-metabolite", tags:[], source:"both", lowYield:true,
@@ -704,20 +676,6 @@ QUESTIONS.push(
  quote:"So if you are a woman who is pregnant or wants to get pregnant, you have to be discontinued from an ACE inhibitor or ARRB or a RN inhibitor because it can cause harm to the baby, especially during the first trimester.",
  reading:[{src:"Katzung 16e, Ch. 17", sec:"Inhibition of the Renin-Angiotensin System", t:"ACE inhibitors are contraindicated in pregnancy because they cause fetal kidney damage. ARBs should not be used in pregnancy, and aliskiren is also contraindicated in pregnancy."}],
  cite:"PCOL-RAAS_26s.pdf slide 19; transcript 10/8"},
-
-{id:"L12-051", lecture:"L12", prof:"Gottlieb", tier:"new", topic:"L12", sub:"adr", skill:"apply", multi:true,
- concept:"hyperkalemia-poll", tags:["in-class"], source:"both",
- stem:"Which of the following may cause hyperkalemia? Select all that apply.",
- options:[
-  {t:"Spironolactone", correct:true, why:"A potassium-sparing diuretic: it keeps K+ while Na+ is lost."},
-  {t:"Lisinopril", correct:true, why:"angiotensin-converting enzyme (ACE) inhibitors can cause hyperkalemia, more so with renal dysfunction."},
-  {t:"Losartan", correct:true, why:"angiotensin II receptor blockers (ARBs) can cause hyperkalemia."},
-  {t:"Aliskiren", correct:true, why:"The renin inhibitor can also cause hyperkalemia."},
-  {t:"Excess aldosterone", correct:false, why:"Aldosterone is the potassium-wasting hormone: more aldosterone means more K+ loss."}],
- teach:"Spironolactone is the obvious one, as a potassium-sparing diuretic, but the ACE inhibitors, ARBs and renin inhibitors can all cause hyperkalemia too, especially with renal dysfunction. Aldosterone itself does the opposite: it retains Na+ at the cost of K+.",
- quote:"Hopefully pick E, all the above, because the spironolactone definitely, right? Because that's the potassium sparing diuretic. But remember that both the ACEs, the ARBs, and the RAIN inhibitors can also cause hyperkalemia. That can be even more predominant if you have renal dysfunction.",
- note:"In-class poll on 10/8: “Which of the following drugs may cause hyperkalemia as a side effect?” The options were not read aloud; his key was E, all of the above, covering spironolactone, the ACE inhibitors, the ARBs and the renin inhibitors. Here it is asked as select-all with aldosterone as the one wrong choice. On the exam: “If you get that on the exam, you should be smiling”.",
- cite:"PCOL-RAAS_26s.pdf slides 19–22; transcript 10/8"},
 
 /* ---------------- Aldosterone, spironolactone, eplerenone (slides 20–22) ---------------- */
 {id:"L12-052", lecture:"L12", prof:"Gottlieb", tier:"new", topic:"L12", sub:"aldo", skill:"recall",
