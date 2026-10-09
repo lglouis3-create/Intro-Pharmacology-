@@ -515,5 +515,33 @@ QUESTIONS.push(
  teach:'Clonidine is a selective α2 agonist. α2 is coupled to Gi, so activating it suppresses norepinephrine release and sympathetic outflow: lower heart rate and cardiac output, relaxed arteries and veins (lower afterload and preload), lower blood pressure. Phenylephrine and cocaine push pressure up; atropine and rocuronium do not target it.',
  quote:'Majora speaks C as in clonidine, and that is the correct answer. Remember, clonidine is an agonist to the alpha 2, but it is an inhibitory. Pathway. So that\'s gonna decrease blood pressure, cardiac output, and the sympathetic outflow as an overall process.',
  note:'Green highlight: Clonidine; keyed aloud on 10/6 (“C as in clonidine”). He said on 10/6 that one of the 10/5 polls and one of the 10/6 polls will be on Exam 2 word for word (“one of the questions today and one of the questions yesterday I\'m gonna use verbatim, word by word on your exam”), without naming which; every poll run on those two days is tagged on-exam-verbatim.',
- cite:'PollEV’s Exam 2.pdf poll 21; transcript 10/6; PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 21, 23–24'}
+ cite:'PollEV’s Exam 2.pdf poll 21; transcript 10/6; PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 21, 23–24'},
+
+/* ---------------- Poll 22 (10/7): which drug produces vasodilation ---------------- */
+{id:'PE2-038', lecture:'PE2', prof:'Gottlieb', tier:'new', topic:'PE2', sub:'verbatim', skill:'apply',
+ concept:'prazosin-vasodilation', tags:['poll','pollev','verbatim','exam-cue','druglist'], source:'both',
+ stem:'Which of these drugs is most likely to produce vasodilation',
+ options:[
+  {t:'Prazosin', correct:true, why:'His key: the selective α1 antagonist; blocking norepinephrine at α1 in the arteries and veins dilates them and lowers blood pressure.'},
+  {t:'Selegiline', correct:false, why:'An MAO-B inhibitor that raises norepinephrine in the brain; if anything it raises blood pressure by increasing sympathetic activity.'},
+  {t:'Succinylcholine', correct:false, why:'An Nm agonist (paralysis); if it reaches the ganglia it opens the Nn receptors there and causes hypertension, since the arteries have only sympathetic innervation.'},
+  {t:'Dextroamphetamine', correct:false, why:'A stimulant that increases sympathetic activity.'},
+  {t:'Phenylephrine', correct:false, why:'An α1 agonist: direct vasoconstriction.'}],
+ teach:'Know the drug, its mechanism of action and its sites of action, and most options eliminate themselves. Prazosin blocks α1 in arteries and veins (vasodilation). Selegiline (monoamine oxidase B inhibitor), dextroamphetamine (releasing agent) and phenylephrine (α1 agonist) all push toward constriction; succinylcholine at the ganglia raises sympathetic outflow to the arteries.',
+ quote:'The majority says uh prazosin or razosin, that\'s the selective alpha one antagonist. It\'s gonna work on the arteries and the veins, and by blocking the ability of norepinephrine to activate those alpha-one receptors, we\'re gonna dilate the slowing blood pressure. ... So by knowing the mechanism of actions and the site of actions, you will be able to predict a lot of how this drug is going to produce their effects. You don\'t have to kind of memorize it. So A is the correct answer.',
+ note:'Green highlight: Prazosin; keyed aloud on 10/7 (“So A is the correct answer”). Stem as written on the poll, without a question mark. While the class answered he gave the exam mix: about 20% of questions on drug effects, 20% on side effects and drug–drug interactions, about 10% more challenging. Later on 10/7 he said: “I\'ll guarantee you, I\'m gonna use one of the questions that we asked today in a different shape or form, but very similar” — he did not say which, so every 10/7 poll is tagged exam-cue.',
+ cite:'PollEV’s Exam 2.pdf poll 22; transcript 10/7; PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 9, 17, 28–29'},
+
+/* ---------------- Poll 23 (10/7): prazosin or phenoxybenzamine, greatest drop in blood pressure ---------------- */
+{id:'PE2-039', lecture:'PE2', prof:'Gottlieb', tier:'new', topic:'PE2', sub:'verbatim', skill:'apply',
+ concept:'phenoxybenzamine-greatest-drop', tags:['poll','pollev','verbatim','exam-cue','druglist'], source:'both',
+ stem:'Which drug produces the greatest drop in blood pressure?',
+ options:[
+  {t:'Prazosin', correct:false, why:'Prazosin is reversible: as pressure falls, the extra norepinephrine released competes with it and weakens its effect.'},
+  {t:'Phenoxybenzamine', correct:true, why:'His key (B): it is covalently bound to α1 (and α2), so the extra norepinephrine cannot outcompete it.'},
+  {t:'Equal potency', correct:false, why:'They are not equally potent; the irreversible drug gives the greater drop.'}],
+ teach:'Both drugs block α1 in the arteries and lower blood pressure. Phenoxybenzamine also blocks presynaptic α2, so more norepinephrine is released — but it is irreversible (covalent bonds), so the extra norepinephrine cannot compete. Prazosin is reversible: the norepinephrine released as pressure falls binds, comes off and competes. The question asks about the size of the drop, not its duration.',
+ quote:'So the correct answer is B as in boy. Why is that? Because even though you are increasing the levels of norepinephrine being released, it doesn\'t matter. It\'s covalently bound. It\'s irreversible. You can\'t outcompete, right? ... They\'re not equal potent. Fenoxbenzammine is the most potent of the two.',
+ note:'Green highlight: Phenoxybenzamine; keyed aloud on 10/7 (“the correct answer is B as in boy”). Three options as on the sheet. He drew the setup first: a blood pressure tracing with a baseline, then either drug — “not the longest in duration, the greatest drop in blood pressure”. During the discussion he said “phenoxbenzammine also block the release of norepinephrine, which means you have less beta effect”, which conflicts with slide 36 (“Enhance Norepinephrine Secretion”) and with his own key; not used. One of the 10/7 questions will be reused “in a different shape or form, but very similar”, so this poll is tagged exam-cue (variant: L11-011).',
+ cite:'PollEV’s Exam 2.pdf poll 23; transcript 10/7; PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 27, 34–36'}
 );
