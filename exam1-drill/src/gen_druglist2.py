@@ -1262,7 +1262,7 @@ raas('raas', 'group-hyperkalemia',
   ('Excess aldosterone', W, 'Aldosterone is the potassium-wasting hormone: more aldosterone means more K+ loss.')],
  'The potassium-sparing diuretics (spironolactone, eplerenone) cause hyperkalemia, and so can the angiotensin-converting enzyme (ACE) inhibitors, the angiotensin II receptor blockers (ARBs) and the renin inhibitor aliskiren, more so with renal dysfunction. Aldosterone does the opposite: it retains Na+ at the cost of K+.',
  "But remember that both the ACEs, the ARBs, and the RAIN inhibitors can also cause hyperkalemia. That can be even more predominant if you have renal dysfunction.",
- f'{LIST} page 8–10; {RAAS} slides 19–22; transcript 10/8', multi=True, dupOf='L12-051',
+ f'{LIST} page 8–10; {RAAS} slides 19–22; transcript 10/8', multi=True, dupOf='PE2-056',
  note='The drug list does not give hyperkalemia for aliskiren; slide 19 (“Adverse Effects (Ri, ACEi & ARBs)”) and his 10/8 hyperkalemia poll (key: all of the above) include it. Keyed to the slide and lecture. Metoprolol, the distractor in the list-only version, was replaced: hyperkalemia was not discussed for it.')
 
 raas('raas', 'metoprolol-renin',

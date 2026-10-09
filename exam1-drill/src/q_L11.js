@@ -286,22 +286,8 @@ QUESTIONS.push(
  quote:"And even better is not going to produce the anti-dumbbell effects that the anti-muscarinics produce. So you don't have to worry about the constipation. You don't have to worry about the blurring in the eye, in the vision, the effects in the heart, in the lungs, and all the other stuff.",
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slide 44; transcript 10/7"},
 
-{id:"L11-022", lecture:"L11", prof:"Gottlieb", tier:"new", topic:"L11", sub:"beta", skill:"apply",
- concept:"bladder-relaxer-poll", tags:["in-class","exam-cue"], source:"both",
- stem:"Which of the following drugs relax the bladder smooth muscle, thus decreasing urination?",
- options:[
-  {t:"Mirabegron", correct:true, why:"His key (option A): the β3 agonist relaxes the bladder smooth muscle."},
-  {t:"Carbachol", correct:false, why:"A muscarinic agonist: it contracts the bladder (M3) and increases urination."},
-  {t:"Neostigmine", correct:false, why:"More acetylcholine on bladder M3 increases urination."},
-  {t:"Dobutamine", correct:false, why:"A β1 agonist acting on the heart, not the bladder."},
-  {t:"Phenylephrine", correct:false, why:"An α1 agonist; it tightens the sphincter but does not relax the bladder muscle."}],
- teach:"Two classes relax the bladder and decrease urination: the β3 agonist (mirabegron) and the muscarinic M3 antagonists (trospium and the others). Bladder M3 agonists and cholinesterase inhibitors do the opposite.",
- quote:"Major says A, A would be the correct answer. What if I had to put trosium in there too? Would that be true? Now we have a selectol, right? Because remember, the anti-muscarinics can also block the M3s in the bladder and prevent urination. So it's either gonna be your beta 3 agonist or your muscarinic type 3 antagonist to do that.",
- note:"His 10/7 poll, stem as he read it; it is not on the PollEV sheet, and he did not read the options, so all options except the keyed class are added here. Just before it he said: “I'll guarantee you, I'm gonna use one of the questions that we asked today in a different shape or form, but very similar.” He did not say which of the day's questions.",
- cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slide 44; transcript 10/7"},
-
 {id:"L11-023", lecture:"L11", prof:"Gottlieb", tier:"new", topic:"L11", sub:"beta", skill:"apply", multi:true,
- concept:"bladder-relaxer-select-all", tags:["in-class","exam-cue"], source:"both",
+ concept:"bladder-relaxer-select-all", tags:["in-class","variant","exam-cue"], source:"both",
  stem:"Which of the following drugs relax the bladder smooth muscle, thus decreasing urination? Select all that apply.",
  options:[
   {t:"Mirabegron", correct:true, why:"β3 agonist: relaxes the bladder."},
@@ -311,7 +297,7 @@ QUESTIONS.push(
   {t:"Isoproterenol", correct:false, why:"β1 and β2 agonist acting on the heart and lungs; it has no β3 action."}],
  teach:"The select-all version he described: with trospium added, both the β3 agonist and the M3 antagonist are correct. Either activating β3 or blocking M3 relaxes the detrusor and decreases urination.",
  quote:"What if I had to put trosium in there too? Would that be true? Now we have a selectol, right? ... So, one of the best of one or a select all.",
- note:"The select-all form he described aloud after the 10/7 bladder poll (L11-022). One of the 10/7 questions will be reused “in a different shape or form”.",
+ note:"The select-all form he described aloud right after his 10/7 bladder poll (PE2-041, which has one key, mirabegron): “What if I had to put trosium in there too? Would that be true? Now we have a selectol, right?” Kept as a variant because it asks something different: with trospium among the options, both the β3 agonist and the M3 antagonist are correct. One of the 10/7 questions will be reused “in a different shape or form”.",
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slide 44; transcript 10/7"},
 
 {id:"L11-024", lecture:"L11", prof:"Gottlieb", tier:"new", topic:"L11", sub:"beta", skill:"apply",
@@ -424,19 +410,6 @@ QUESTIONS.push(
   {t:"α2 and β3", correct:false, why:"Neither drives the overdose picture."}],
  teach:"Slide 52: “OD of Epi α1 & β1 predominates.” α1 constricts the resistance arteries (afterload and blood pressure rise) and β1 drives the heart rate up. The question then is which to block first.",
  quote:"Now, in the case of an overdose of a epinephrine, your alpha ones and your beta ones are gonna be predominant on that process. They're gonna have the highest effects, OK?",
- cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slide 52; transcript 10/7"},
-
-{id:"L11-033", lecture:"L11", prof:"Gottlieb", tier:"new", topic:"L11", sub:"epi", skill:"apply",
- concept:"epinephrine-overdose-prazosin-first", tags:["in-class","exam-cue"], source:"both",
- stem:"A patient in the emergency room has received 100 EpiPens: very high heart rate and blood pressure. Carvedilol and labetalol are out of stock. Which drug would you give first?",
- options:[
-  {t:"Prazosin", correct:true, why:"His key: vasodilate first so blood keeps moving forward, then slow the heart."},
-  {t:"Metoprolol", correct:false, why:"Slowing the heart first leaves the arteries clamped; the heart cannot overcome the afterload."},
-  {t:"Atropine", correct:false, why:"Atropine blocks muscarinic M2 and would raise heart rate further."},
-  {t:"Phenylephrine", correct:false, why:"An α1 agonist would constrict the arteries even more."}],
- teach:"In an epinephrine overdose α1 (afterload) and β1 (heart rate) predominate. Giving the β1 blocker first slows the heart while the resistance arteries stay clamped, so it cannot pump blood forward against the afterload (blood backs up into the lungs). Vasodilating first with the α1 antagonist keeps blood flowing to the organs; then the β blocker brings heart rate down. A β1, β2 and α1 blocker would do both at once.",
- quote:"Because if you give the beta block first. You're slowing down the heart, you're slowing down the constriction, but you're still clamped up, so you can't overcome that afterload and pump blood forward into the circle. But if you vasodilate first, your heart is still pumping, your flow is still going through it, right? And then you can give the beta blocker to bring it down as needed.",
- note:"His 10/7 clicker question (slide 52, “Which antagonist would you give 1st?”); it is not on the PollEV sheet. He read only the two choices prazosin and metoprolol (“A alpha one antagonist or a beta one antagonist”); atropine and phenylephrine are added here. The class majority picked A and he keyed prazosin. One of the 10/7 questions will be reused “in a different shape or form”.",
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slide 52; transcript 10/7"},
 
 /* ---------------- Norepinephrine (slide 53) ---------------- */
@@ -631,20 +604,6 @@ QUESTIONS.push(
  note:"He said partial agonists were covered for Exam 1 and will not be discussed much for this exam (“We're not gonna be talking about much about the partial agonists for this purpose because we already addressed that in the exam one”); this is the one use of pindolol he gave on 10/7.",
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 54–55, 59; transcript 10/7"},
 
-{id:"L11-049", lecture:"L11", prof:"Gottlieb", tier:"new", topic:"L11", sub:"bb", skill:"apply",
- concept:"twins-run-metoprolol", tags:["in-class","exam-cue"], source:"both",
- stem:"Five identical twins run a 5K after each takes one drug: propranolol, metoprolol, carvedilol, carbachol or neostigmine. Who comes first?",
- options:[
-  {t:"Propranolol", correct:false, why:"It blocks β1 and also β2, so the airways cannot open."},
-  {t:"Metoprolol", correct:true, why:"His key (B): all three β blockers lower cardiac output, but only the β1-selective twin can still breathe."},
-  {t:"Carvedilol", correct:false, why:"It blocks β2 as well, and its α1 block lowers blood pressure."},
-  {t:"Carbachol", correct:false, why:"A muscarinic agonist: the DUMBBELSS, bradycardia and bronchoconstriction."},
-  {t:"Neostigmine", correct:false, why:"The class majority's pick; more acetylcholine gives the DUMBBELSS and a twin who comes in last."}],
- teach:"All three β blockers block β1, so cardiac output is lowered equally. Metoprolol is β1 selective, so that twin's airways still open (β2) and he gets more oxygen. Propranolol and carvedilol also block β2; carvedilol adds α1 block. Carbachol and neostigmine give the DUMBBELSS (diarrhea, urination, bradycardia, bronchoconstriction) and finish last.",
- quote:"They all block beta 1s, so they don't have any difference in the cardiac output. Would you agree with that? But at least the metoprolol guy can breathe. His lungs are going to be opening up. He can get more oxygen than everybody else, and thus he can run a little bit faster and further",
- note:"His 10/7 double-or-nothing clicker question (not on the PollEV sheet); options are the five drugs in the order he read them. The class majority chose E (neostigmine) and lost a bonus point (“So I guess we went from 2 bonus to 1 bonus”). He said “carvedilol is going to make you hypertensive”, which reads as a slip for hypotensive (α1 block). One of the 10/7 questions will be reused “in a different shape or form”.",
- cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 54, 59; transcript 10/7"},
-
 {id:"L11-050", lecture:"L11", prof:"Gottlieb", tier:"new", topic:"L11", sub:"bb", skill:"tell",
  concept:"metoprolol-vs-propranolol-brain", tags:[], source:"both",
  stem:"Why is metoprolol (Toprol XL) less likely than propranolol to cause fatigue and brain fog?",
@@ -745,21 +704,6 @@ QUESTIONS.push(
  quote:"Is this a high or low dose of epi? What is the affinity profile of epinephrine? It has to be high, right, because if it's low, it's activating the beta 2. But because we're getting a vasoconstriction, that means that we are activating the alpha 1 at a very high dose of epinephrine.",
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 47, 64; transcript 10/7"},
 
-{id:"L11-058", lecture:"L11", prof:"Gottlieb", tier:"new", topic:"L11", sub:"no", skill:"apply",
- concept:"pde-nitrate-ddi", tags:["in-class","exam-cue"], source:"both",
- stem:"Which of the following drugs may cause marked hypotension if mixed with nitroglycerin?",
- options:[
-  {t:"Atropine", correct:false, why:"A muscarinic antagonist; it does not act on the cGMP pathway."},
-  {t:"Phenylephrine", correct:false, why:"An α1 agonist; it constricts vessels."},
-  {t:"Sildenafil", correct:true, why:"His key (C): blocking PDE leaves nothing to break down the cGMP that the nitrate keeps making."},
-  {t:"Cocaine", correct:false, why:"A norepinephrine reuptake inhibitor; it raises blood pressure."},
-  {t:"Dobutamine", correct:false, why:"A β1 agonist acting on the heart; it does not touch the cGMP pathway."}],
- teach:"Phosphodiesterase (PDE) breaks down cyclic GMP (cGMP). A PDE inhibitor (sildenafil, tadalafil) potentiates nitric oxide severalfold; combined with a nitric oxide donor (nitroglycerin, nitroprusside, isosorbide), cGMP keeps rising and blood pressure drops unsafely. He wants this interaction explained on the exam.",
- quote:"But the key thing over here is we have a very bad drug-drug interaction. And I would like for you to tell me on an exam is why it's bad to take Sadenophil with a nitric oxide donor, right? Because you have this additive effect to the drugs.",
- note:"His 10/7 clicker question, not on the PollEV sheet; he did not read the options, only “Hopefully you pick C as in cat, so then it fail because you block the PDE enzyme” (“so then it fail” = sildenafil). The other options are added here. The transcript reads “may cause marked hypertension”; his explanation (“causing an unsafe drop in blood pressure”) shows he meant hypotension, so the stem says hypotension. One of the 10/7 questions will be reused “in a different shape or form”.",
- reading:[{"src":"Katzung 16e, Ch. 19","sec":"Augmenting the Effects of Endogenous Nitric Oxide — Phosphodiesterase inhibitors","t":"Nitric oxide signaling is ended by phosphodiesterase enzymes, which break cGMP down to GMP. Inhibiting phosphodiesterase lets cGMP persist longer and accumulate to higher levels; type 5 phosphodiesterase is present in vascular smooth muscle and lung and is enriched in the corpus cavernosa, where sildenafil acts."},{"src":"Katzung 16e, Ch. 19","sec":"Nitric Oxide Donors — Organic nitrites","t":"Combining an organic nitrite such as amyl nitrite with a phosphodiesterase inhibitor such as sildenafil can cause lethal hypotension; in clinical use amyl nitrite has largely been replaced by nitrates such as nitroglycerin."}],
- cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 68–74; transcript 10/7"},
-
 {id:"L11-059", lecture:"L11", prof:"Gottlieb", tier:"new", topic:"L11", sub:"no", skill:"tell",
  concept:"camp-cgmp-pde-crosstalk", tags:[], source:"both",
  stem:"β2 activation and nitric oxide both relax vascular smooth muscle. Which statement about them is CORRECT?",
@@ -848,35 +792,7 @@ QUESTIONS.push(
  note:"Slide 77 labels the first dose “Acetylcholine, 5 mcg/kg”; he said “I went from 5 to 500”.",
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 77, 83; transcript 10/7"},
 
-{id:"L11-066", lecture:"L11", prof:"Gottlieb", tier:"new", topic:"L11", sub:"lab", skill:"figure",
- concept:"ne-drug-b-prazosin", tags:["in-class","exam-cue"], source:"both",
- stem:"A blood pressure tracing: norepinephrine alone raises blood pressure. In the presence of drug B, the rise is abolished. What is drug B most likely to be?",
- options:[
-  {t:"Phenylephrine", correct:false, why:"An α1 agonist would make norepinephrine's effect larger, not abolish it."},
-  {t:"Prazosin", correct:true, why:"His key (B): blocks α1 so norepinephrine cannot constrict the vessels."},
-  {t:"Metoprolol", correct:false, why:"A β1 antagonist acts in the heart, not in the blood vessels."},
-  {t:"Cocaine", correct:false, why:"Blocking the norepinephrine transporter (NET) leaves more norepinephrine: an even greater rise."},
-  {t:"Atropine", correct:false, why:"Vascular M3 receptors are not innervated and are quiet at rest; blocking them does not stop norepinephrine."}],
- teach:"His method: know which receptors are in the blood vessels (α1, β2, uninnervated M3), which receptors norepinephrine binds, and ask whether each drug helps norepinephrine or makes life harder for it. Phenylephrine and cocaine help it; metoprolol acts in the heart; atropine's M3 targets are quiet. Prazosin takes away α1 and with it the rise in pressure.",
- quote:"but if I give a prazosin and I take away the ability of norepinephrine to bind and activate those receptors, walk, hypertension, right? So do you see how I approach the process. You've got to know the mechanism of action. You've got to know the receptors, and then through the process of elimination you ask the question, Is it helping or not?",
- note:"His 10/7 clicker question, not on the PollEV sheet. He did not read the option letters aloud except the key (“B as in boy”); he eliminated phenylephrine, metoprolol and cocaine, then chose prazosin over atropine, so those five are the options, in an order that puts prazosin at B. He said “walk, hypertension” for the result of blocking α1, which reads as “hypotension”. One of the 10/7 questions will be reused “in a different shape or form”.",
- cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 84–85; transcript 10/7"},
-
 /* ---------------- Epinephrine tracings and adrenergic questions (10/8) ---------------- */
-{id:"L11-067", lecture:"L11", prof:"Gottlieb", tier:"new", topic:"L11", sub:"epitrace", skill:"figure",
- concept:"epi-receptor-a-alpha1", tags:["in-class","poll","exam-cue"], source:"both",
- stem:"A blood vessel has two receptors, A and B. Epinephrine binds receptor B and produces vasodilation at lower concentration, or binds receptors A and B at higher concentration and produces vasoconstriction. Which receptor is A most likely to be?",
- options:[
-  {t:"α1", correct:true, why:"His key: at high concentration epinephrine reaches α1, which overrides β2 and constricts."},
-  {t:"α2", correct:false, why:"α2 is Gαi and inhibitory; it should not cause constriction."},
-  {t:"β1", correct:false, why:"β1 is in the heart, not in the blood vessels."},
-  {t:"β2", correct:false, why:"β2 is receptor B: the low-dose dilation."},
-  {t:"Muscarinic", correct:false, why:"Epinephrine does not act on muscarinic receptors."}],
- teach:"At low doses epinephrine has a high affinity for β2 (receptor B), which dilates the arteries. At higher concentrations it also binds α1 (receptor A), and α1 overrides β2, so the vessel constricts. The question tests epinephrine's affinities and who runs the show in the blood vessels.",
- quote:"At low doses, epinephrine has a high affinity for the beta 2, and that will be receptor B because once it binds, beta 2 cause dilation, so relax the arteries. However, once you go into a higher concentration, After you start to bunch of the alpha ones and the alpha one's gonna override whatever the beta 2s are trying to do and that's gonna cause vasoconstriction.",
- note:"His first clicker question of 10/8, introduced with “This is our last chance to get a bonus for exam 2. I guess, you're going with one bonus, right? Since we doubled down yesterday.” A bonus poll is one he may use word for word on the exam (his 10/6 rule), so it is tagged exam-cue. It is not on the PollEV sheet. Stem as he read it. He did not read the options as a list; the five options are the ones he walked through in his answer (α1, α2, β1, β2 as receptor B, muscarinic: “muscarinic goceptors nobody picked”).",
- cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 47–48; transcript 10/8"},
-
 {id:"L11-068", lecture:"L11", prof:"Gottlieb", tier:"new", topic:"L11", sub:"epitrace", skill:"figure",
  concept:"compound1-propranolol", tags:["in-class","poll"], source:"both",
  stem:"A blood pressure tracing: epinephrine gives a vasoconstriction that returns to baseline. Compound 1 plus epinephrine gives a greater vasoconstriction; compound 2 plus epinephrine gives a vasodilation; compound 3 plus epinephrine gives no response. What is compound 1 most likely to be?",

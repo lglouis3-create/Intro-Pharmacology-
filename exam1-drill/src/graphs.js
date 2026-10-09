@@ -230,5 +230,27 @@ const GRAPHS = [
   'Second pilocarpine: no rise at all. The receptor pilocarpine acts on is blocked, so X is a muscarinic (M3) antagonist: atropine.',
   'The trap: a drug that stops acetylcholine release (Botox) or blocks Nm (rocuronium) would not stop a direct muscarinic agonist on smooth muscle; a cholinesterase inhibitor or another agonist would raise tone.'],
  method:'Name the agonist and its receptor, read what it does before X, then ask whether X helped (bigger response) or made life more difficult (smaller or none), and pick the drug that blocks that receptor.',
- asks:['Drug X is most likely to be: Carbachol / Neostigmine / Rocuronium / Atropine / Varenicline', 'What does pilocarpine do to GI tone, and through which receptor?', 'Why does the second pilocarpine dose produce no rise?', 'Which other drug could be drug X?']}
+ asks:['Drug X is most likely to be: Carbachol / Neostigmine / Rocuronium / Atropine / Varenicline', 'What does pilocarpine do to GI tone, and through which receptor?', 'Why does the second pilocarpine dose produce no rise?', 'Which other drug could be drug X?']},
+
+{key:'pe2-ne-drug-b', alts:[], exam:2,
+ title:'Constriction tracing: norepinephrine (drug A), then drug B (PollEV 10/7, Exam 2)', group:'Other', source:'PollEV’s Exam 2.pdf page 2 (poll screenshot)',
+ read:[
+  'This is a tracing over time (1-minute scale bar), not a dose–response curve; the y-axis is constriction, which he read as blood pressure.',
+  'At arrow A, norepinephrine: the tracing rises. In the blood vessels norepinephrine acts on α1 (Gq, ↑Ca++), so the vessels constrict and blood pressure goes up.',
+  'At arrow B, the tracing falls steeply and stays low: drug B took away norepinephrine\'s effect, so it makes life more difficult for norepinephrine.',
+  'Eliminate the helpers (phenylephrine, another α1 agonist; cocaine, which blocks the NET), the drug acting elsewhere (metoprolol, β1 in the heart) and the drug whose target is quiet (atropine; vascular M3 is not innervated). Prazosin, the α1 antagonist, is left.',
+  'The trap: atropine also blocks a receptor in the blood vessels, but with no muscarinic agonist on board those M3 receptors are not active.'],
+ method:'List the receptors in the blood vessels (α1, β2, uninnervated M3) and the receptors norepinephrine binds (α1, α2, β1); then for each option ask whether it helps norepinephrine or makes life more difficult, and where it acts.',
+ asks:['The tracing show the effects of drug A (NE) on BP. Which drug is most likely drug B? metoprolol / prazosin / atropine / phenylephrine / Cocaine', 'Through which receptor does norepinephrine raise the tracing?', 'What would the tracing show if drug B were cocaine?', 'Why can metoprolol / atropine be eliminated?']},
+
+{key:'pe2-epi-two-receptors', alts:[], exam:2,
+ title:'Blood Vessels Figure 1: epinephrine at receptors A and B, low and high concentration (PollEV 10/8, Exam 2)', group:'Other', source:'PollEV’s Exam 2.pdf page 2 (poll screenshot)',
+ read:[
+  'Two receptors on one vessel: A (round site) and B (V-shaped site). At low concentration epinephrine binds only B and vessel C is wide (dilated); at high concentration it binds A and B and vessel D is narrow (constricted).',
+  'Epinephrine\'s order of affinity: β1 and β2 at low doses, then α1, then α2. In the blood vessels the low-dose receptor is β2 (dilation): receptor B.',
+  'The receptor added at high concentration that wins is α1: receptor A. α1 overrides β2, so the net response at D is constriction (α1 effect minus β2 effect).',
+  'Block β2 (propranolol) and the constriction at high dose gets greater; block α1 (prazosin) and the high dose dilates instead (epinephrine reversal).',
+  'The trap: α2 is Gi and inhibitory, β1 is in the heart, and epinephrine does not bind muscarinic receptors.'],
+ method:'Name the receptors in the blood vessels, recall which ones epinephrine binds at low and at high dose, then decide who runs the show at each dose.',
+ asks:['The figure below represents the binding of Epi to two receptors. Receptor A is most likely? Alpha 2 / Beta 1 / Alpha 1 / Beta 2 / Muscarinic receptors', 'Receptor B is most likely?', 'Which responses do vessels C and D show?', 'What would propranolol or prazosin given first change at high concentration?']}
 ];

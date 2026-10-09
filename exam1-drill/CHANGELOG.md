@@ -2,6 +2,11 @@
 
 Newest first. The build embeds this file; the Topics page shows what is new since your last visit, and the Progress page shows all of it. Keep each bullet to one short line.
 
+## 2026-10-09 (his 10/7 and 10/8 polls)
+- Nine more polls word for word with his keys: epi overdose, bladder, twins, nitroglycerin, RAAS.
+- Two figure polls on the Graphs tab: NE plus drug B tracing, epinephrine at receptors A and B.
+- Class questions that copied these polls removed; the polls replace them.
+
 ## 2026-10-09 (10/7 and 10/8 lectures: all Exam 2 material)
 - Day 11 (10/7): β receptors, epinephrine and norepinephrine, β blockers, nitric oxide; 74 questions.
 - Day 12 (10/8): renin–angiotensin–aldosterone system, 64 questions.
