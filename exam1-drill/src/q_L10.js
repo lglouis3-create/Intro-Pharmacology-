@@ -15,7 +15,7 @@ TOPICS.push({id:"L10", name:"Day 10: adrenergic receptors, indirect-acting drugs
 QUESTIONS.push(
 /* ---------------- Receptors and G proteins (slide 3) ---------------- */
 {id:"L10-001", lecture:"L10", prof:"Gottlieb", tier:"new", topic:"L10", sub:"rec", skill:"recall",
- concept:"adrenergic-g-proteins", tags:[], source:"both",
+ concept:"adrenergic-g-proteins", tags:["alpha"], source:"both",
  stem:"Which pairing of adrenergic receptor and G protein is CORRECT?",
  options:[
   {t:"α2: Gi", correct:true, why:"α2 is coupled to Gi: inhibition of adenylyl cyclase (AC) and less cyclic AMP (cAMP)."},
@@ -23,13 +23,13 @@ QUESTIONS.push(
   {t:"β1: Gi", correct:false, why:"All β receptors are Gs; β1 activates AC and raises cAMP."},
   {t:"β2: Gq", correct:false, why:"β2 is Gs (activation of AC, more cAMP)."},
   {t:"β3: Gi", correct:false, why:"β3 is also Gs: it increases AC and cAMP."}],
- teach:"The adrenergic table: α1 → Gq → phospholipase C (PLC) → IP3; α2 → Gi → inhibition of adenylyl cyclase (AC) → less cyclic AMP (cAMP); β1, β2 and β3 → Gs → activation of AC → more cAMP. All the β receptors are Gs, so they act in the same direction on the second messenger.",
+ teach:"Adrenergic receptors and their G proteins: α1 → Gq → phospholipase C (PLC) → IP3; α2 → Gi → inhibition of adenylyl cyclase (AC) → less cyclic AMP (cAMP); β1, β2 and β3 → Gs → activation of AC → more cAMP. All the β receptors are Gs, so they act in the same direction on the second messenger.",
  quote:"We have alpha 1s, alpha 2s, beta 1s, beta 2s, and beta 3s. The good news is all betas are GS, so you kind of know what they're going to do ... alpha 2s are GI, and alpha 1s are GQ.",
  note:"In the same sentence he also said “alpha 2s are GQ” before correcting himself to “alpha 2s are GI”; the slide table gives α2 = Gi. Keyed to the slide.",
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slide 3; transcript 10/6"},
 
 {id:"L10-002", lecture:"L10", prof:"Gottlieb", tier:"new", topic:"L10", sub:"rec", skill:"tell",
- concept:"alpha-like-muscarinic", tags:[], source:"both",
+ concept:"alpha2-like-m2-alpha1-like-m3", tags:[], source:"both",
  stem:"Which adrenergic receptor uses the same G protein and second-messenger change as the muscarinic M2 receptor?",
  options:[
   {t:"α2", correct:true, why:"M2 and α2 are both Gi: inhibition of adenylyl cyclase and less cAMP."},
@@ -45,17 +45,17 @@ QUESTIONS.push(
  concept:"beta3-bladder", tags:[], source:"both",
  stem:"Where do β3 receptors have their greatest effect?",
  options:[
-  {t:"Bladder", correct:true, why:"His one point to remember about β3: its primary location, where it has the greatest effect, is the bladder."},
+  {t:"Bladder", correct:true, why:"β3 (Gs, more cAMP) has its primary location, where it has its greatest effect, in the bladder, which it relaxes."},
   {t:"Heart", correct:false, why:"The heart is run by β1."},
   {t:"Resistance arteries", correct:false, why:"Arteries and veins are run by α1 (with β2 causing vasodilation)."},
-  {t:"Brain", correct:false, why:"In the brain the adrenergic receptor he stresses is α2, which suppresses the sympathetic system."},
+  {t:"Brain", correct:false, why:"In the brain the key adrenergic receptor is α2 (Gi), which suppresses sympathetic outflow."},
   {t:"Salivary glands", correct:false, why:"No β3 site was given for the glands."}],
  teach:"β3 is coupled to Gs like β1 and β2: it increases adenylyl cyclase (AC) and cyclic AMP (cAMP). Its primary site, where it has the greatest effect, is the bladder, which lets drugs act there with fewer side effects.",
  quote:"The one thing that you need to remember about beta 3 is their primary location where they have the greatest effect is gonna be in the bladder, OK?",
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slide 3; transcript 10/6"},
 
 {id:"L10-004", lecture:"L10", prof:"Gottlieb", tier:"new", topic:"L10", sub:"rec", skill:"recall", multi:true,
- concept:"camp-raising-receptors", tags:[], source:"both",
+ concept:"beta-gs-camp-raising", tags:[], source:"both",
  stem:"Activation of which adrenergic receptors increases cyclic AMP (cAMP)? Select all that apply.",
  options:[
   {t:"β1", correct:true, why:"β1 → Gs → activation of adenylyl cyclase (AC) → more cAMP."},
@@ -69,7 +69,7 @@ QUESTIONS.push(
 
 /* ---------------- Heart, circulation, MAP (slides 4–7) ---------------- */
 {id:"L10-005", lecture:"L10", prof:"Gottlieb", tier:"new", topic:"L10", sub:"map", skill:"tell",
- concept:"preload-vs-afterload", tags:["in-class"], source:"both",
+ concept:"preload-vs-afterload", tags:["in-class","alpha1"], source:"both",
  stem:"Which statement about preload and afterload is CORRECT?",
  options:[
   {t:"Preload is the blood in the ventricle at end diastole", correct:true, why:"Preload = end-diastolic volume (diastolic pressure): how much blood is in the relaxed ventricle, ready to be pumped."},
@@ -83,27 +83,27 @@ QUESTIONS.push(
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 4, 6; transcript 10/6"},
 
 {id:"L10-006", lecture:"L10", prof:"Gottlieb", tier:"new", topic:"L10", sub:"map", skill:"apply",
- concept:"afterload-cardiac-output", tags:[], source:"both",
+ concept:"afterload-cardiac-output", tags:["alpha1"], source:"both",
  stem:"With nothing else changed, an increase in afterload is most likely to do which of the following?",
  options:[
   {t:"Decrease stroke volume", correct:true, why:"More of the heart's work goes into opening the valve, leaving less to push blood out: stroke volume and cardiac output fall."},
   {t:"Increase stroke volume", correct:false, why:"That is what lowering afterload (a vasodilator) does."},
-  {t:"Decrease preload directly", correct:false, why:"The slide says a fall in stroke volume must be compensated by an increase in preload, not a decrease."},
+  {t:"Decrease preload directly", correct:false, why:"A fall in stroke volume from higher afterload is compensated by an increase in preload, not a decrease."},
   {t:"Leave cardiac output unchanged", correct:false, why:"Afterload affects how much the heart can eject, so cardiac output changes."}],
  teach:"Afterload is the pressure the ventricle must overcome to open the valve. The higher it is, the more work the heart does just to open the valve and the less blood it squeezes out, so stroke volume and cardiac output fall; this must be compensated by an increase in preload. A vasodilator lowers afterload and frees the heart to eject more.",
  quote:"The higher the afterload is, the work, the more work my heart has to do to open that valve and squeeze it out. So that's going to decrease my cardiac output. ... At the same token, if we give vasodilators ... now I have to work less to open the valve and I have more energy to squeeze the blood out, thus increasing the cardiac output.",
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slide 6; transcript 10/6"},
 
 {id:"L10-007", lecture:"L10", prof:"Gottlieb", tier:"new", level:1, topic:"L10", sub:"map", skill:"tell",
- concept:"cv-receptor-roles", tags:[], source:"both",
+ concept:"cv-receptor-roles", tags:["beta1"], source:"both",
  stem:"Which pairing of adrenergic receptor and cardiovascular role is CORRECT?",
  options:[
-  {t:"β1: heart rate and contractility", correct:true, why:"Within the heart, the β1s run the show: how fast it beats and how strongly it contracts."},
+  {t:"β1: heart rate and contractility", correct:true, why:"Within the heart, β1 (Gs, more cAMP) controls how fast it beats and how strongly it contracts."},
   {t:"α1 in veins: afterload", correct:false, why:"α1 in the veins sets preload (venous return); afterload is α1 in the resistance arteries."},
   {t:"α1 in arteries: preload", correct:false, why:"α1 in the resistance arteries sets afterload."},
   {t:"α2 in brain: more sympathetic outflow", correct:false, why:"α2 is Gi and inhibitory; in the brain it suppresses the sympathetic system."},
   {t:"β2: vasoconstriction", correct:false, why:"β2 causes vasodilation, a check on α1 vasoconstriction."}],
- teach:"The cardiovascular map: α1 in the veins (preload) and in the resistance arteries (afterload), both directly innervated by the sympathetic system; β1 in the heart (heart rate, contractility, rate of relaxation) and kidney (renin); β2 causes vasodilation to counter constriction; α2 in the brain and on nerves suppresses sympathetic outflow.",
+ teach:"The cardiovascular map: α1 in the veins (preload) and in the resistance arteries (afterload), both directly innervated by the sympathetic system; β1 in the heart (heart rate, contractility, rate of relaxation) and kidney (renin); β2 causes vasodilation to counter constriction; α2 in the brain and on nerves suppresses sympathetic outflow. Placing a receptor on the mean arterial pressure equation predicts what a drug acting there will do.",
  quote:"So in the heart, within the heart, the beta ones run the show. Those are the receptors that are going to affect how fast your heart is beating and how strongly it is contracting in the arteries. It's going to be our alpha 1 adrenergic receptors.",
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 4–5; transcript 10/6"},
 
@@ -115,7 +115,7 @@ QUESTIONS.push(
   {t:"Preload falls", correct:false, why:"Relaxed veins pool blood in the feet and lower preload; α1 activation does the opposite."},
   {t:"Heart rate falls through β1", correct:false, why:"Venous α1 does not act on β1; the question is about venous tone."},
   {t:"Veins dilate through Gi", correct:false, why:"α1 is Gq: more calcium and constriction, not Gi."}],
- teach:"Venous return depends on venous tone. Norepinephrine released by sympathetic nerves activates α1 (Gq → ↑Ca++ → constriction) in the veins, squeezing blood back to the heart and raising preload. Relaxed veins act like a water-filled balloon: blood stays in the feet.",
+ teach:"Venous return depends on venous tone. Norepinephrine released by sympathetic nerves activates α1 (Gq → ↑Ca++ → constriction) in the veins, squeezing blood back to the heart and raising preload. When the veins relax, blood stays in the feet and preload falls.",
  quote:"So, as I squeeze the veins, depending on how much tone of my sympathetics are activating those alpha-1 in the veins, that's gonna determine how much blood returns to the heart and how much blood comes out of the heart.",
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slide 5; transcript 10/6"},
 
@@ -127,15 +127,15 @@ QUESTIONS.push(
   {t:"Nitric oxide", correct:false, why:"Nitric oxide comes from endothelial M3 activation, not renal β1."},
   {t:"Acetylcholine", correct:false, why:"Acetylcholine is released by cholinergic nerves, not made by renal β1."},
   {t:"Norepinephrine", correct:false, why:"Norepinephrine is released by sympathetic nerves; β1 is the receptor it acts on."}],
- teach:"The kidney is the long-term regulator of blood pressure. β1 receptors there increase renin production, which makes more angiotensin II, a vasoconstrictor (the renin–angiotensin system is a later lecture).",
+ teach:"The kidney is the long-term regulator of blood pressure. β1 receptors there increase renin production, which makes more angiotensin II, a vasoconstrictor that raises blood pressure. Blocking renal β1 therefore lowers renin release.",
  quote:"And finally, we have a long-term component over here that is involved in the long-term regulation of blood pressure, and that's gonna be the kidneys. OK, and in the kidneys, the beta ones also can affect its function. Primarily by increasing the production of what? Ren, which it makes more gen testing 2, which is a vasoconstrictor, right?",
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slide 5; transcript 10/6"},
 
 {id:"L10-010", lecture:"L10", prof:"Gottlieb", tier:"new", topic:"L10", sub:"map", skill:"recall",
- concept:"map-equation", tags:["exam-cue"], source:"both",
+ concept:"map-equation", tags:["exam-cue","alpha1"], source:"both",
  stem:"Which equation gives mean arterial pressure (MAP)?",
  options:[
-  {t:"MAP = CO × TPR", correct:true, why:"MAP = cardiac output (CO, which is HR × SV) × total peripheral resistance (TPR)."},
+  {t:"MAP = CO × TPR", correct:true, why:"Mean arterial pressure equals cardiac output (CO) times total peripheral resistance (TPR), and CO = heart rate (HR) × stroke volume (SV)."},
   {t:"MAP = CO + TPR", correct:false, why:"The two terms multiply, not add."},
   {t:"MAP = CO ÷ TPR", correct:false, why:"Raising resistance raises pressure; it does not divide it."},
   {t:"MAP = HR × TPR", correct:false, why:"Heart rate alone is incomplete: cardiac output is HR × stroke volume."},
@@ -157,10 +157,10 @@ QUESTIONS.push(
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slide 7; transcript 10/6"},
 
 {id:"L10-012", lecture:"L10", prof:"Gottlieb", tier:"new", topic:"L10", sub:"map", skill:"apply",
- concept:"blood-pressure-rules", tags:[], source:"both",
+ concept:"blood-pressure-rules", tags:["alpha1"], source:"both",
  stem:"A drug lowers a patient's blood pressure. Which reflex change is most likely?",
  options:[
-  {t:"Heart rate goes up", correct:true, why:"His rule, “blood pressure rules”: if blood pressure goes down, heart rate goes up."},
+  {t:"Heart rate goes up", correct:true, why:"“Blood pressure rules”: the baroreceptors sense the fall and raise sympathetic drive, so heart rate goes up to restore mean arterial pressure."},
   {t:"Heart rate goes down", correct:false, why:"Heart rate falls when blood pressure rises, not when it falls."},
   {t:"Heart rate does not change", correct:false, why:"The body defends mean arterial pressure, so heart rate responds."},
   {t:"The veins dilate further", correct:false, why:"The compensation is more sympathetic drive, which constricts rather than dilates."}],
@@ -185,7 +185,7 @@ QUESTIONS.push(
  concept:"ne-synthesis", tags:[], source:"both",
  stem:"Which sequence shows the synthesis of norepinephrine?",
  options:[
-  {t:"Tyrosine → L-Dopa → dopamine → norepinephrine", correct:true, why:"The precursor chain drawn in the nerve terminal."},
+  {t:"Tyrosine → L-Dopa → dopamine → norepinephrine", correct:true, why:"In the sympathetic nerve terminal tyrosine is made into L-Dopa, L-Dopa into dopamine, and dopamine into norepinephrine, which is stored in vesicles."},
   {t:"L-Dopa → tyrosine → dopamine → norepinephrine", correct:false, why:"Tyrosine comes first; L-Dopa is made from it."},
   {t:"Tyrosine → dopamine → L-Dopa → norepinephrine", correct:false, why:"L-Dopa comes before dopamine."},
   {t:"Dopamine → tyrosine → L-Dopa → norepinephrine", correct:false, why:"Dopamine is made from L-Dopa, which is made from tyrosine."}],
@@ -197,12 +197,12 @@ QUESTIONS.push(
  concept:"presynaptic-alpha2-feedback", tags:[], source:"both",
  stem:"What does activation of the presynaptic α2 receptor do?",
  options:[
-  {t:"Suppresses norepinephrine release", correct:true, why:"Presynaptic α2 is negative feedback, the gatekeeper that suppresses release of norepinephrine."},
+  {t:"Suppresses norepinephrine release", correct:true, why:"Presynaptic α2 (Gi) is negative feedback: activating it suppresses further release of norepinephrine."},
   {t:"Increases norepinephrine release", correct:false, why:"That is what blocking α2 does (mirtazapine)."},
   {t:"Breaks down norepinephrine", correct:false, why:"Breakdown is done by the enzymes COMT and MAO."},
   {t:"Recycles norepinephrine into vesicles", correct:false, why:"Recycling is the norepinephrine transporter (NET)."},
   {t:"Contracts the effector cell", correct:false, why:"The effector cell carries postsynaptic α1 and β receptors, not the presynaptic α2."}],
- teach:"Postsynaptically, norepinephrine acts on α1 or β receptors. Presynaptically sits α2, coupled to Gi: it is negative feedback that suppresses further norepinephrine release (the gatekeeper).",
+ teach:"Postsynaptically, norepinephrine acts on α1 or β receptors. Presynaptically sits α2, coupled to Gi: it is negative feedback that suppresses further norepinephrine release.",
  quote:"Typically, on the post-synaptic side, we're gonna have either alpha one or beta ones, OK? On the pre-synaptic side, we're typically gonna have alpha-2s. Which are negative feedback. This is what's going to suppress the release of norepinephrine. This is our gatekeeper.",
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slide 8; transcript 10/6"},
 
@@ -281,7 +281,7 @@ QUESTIONS.push(
   {t:"More acetylcholine on M3 → vasodilation", correct:false, why:"Cocaine acts on norepinephrine reuptake, not acetylcholine."},
   {t:"β2 activation → vasodilation", correct:false, why:"The damage comes from too much constriction, not dilation."},
   {t:"α2 activation → less norepinephrine", correct:false, why:"Cocaine raises synaptic norepinephrine; it does not lower it."},
-  {t:"MAO block → tyramine crisis", correct:false, why:"MAO block is phenelzine and selegiline; cocaine blocks the NET."}],
+  {t:"MAO block → tyramine crisis", correct:false, why:"Monoamine oxidase (MAO) block is phenelzine and selegiline; cocaine blocks the norepinephrine transporter (NET)."}],
  teach:"Cocaine is a reuptake inhibitor: it blocks the norepinephrine transporter (NET), raising synaptic norepinephrine and activating the postsynaptic receptors. In nasal blood vessels the α1 vasoconstriction is severe enough to kill the mucosa and destroy the septum, so users bleed from the nose. In the central nervous system it causes excitation; in the heart, higher heart rate and risk of a heart attack.",
  quote:"You're releasing norepinephrine, you're vasoconstricting those blood vessels so much that it starts to kill your mucosa of your sinus and destroy your septum and everything else in there. And that's gonna lead to bleeding on their nose. So, in the blood vessels, this drug can cause severe vasoconstriction.",
  note:"He asked the class “do you know why that is happening?” about the nosebleeds and answered himself.",
@@ -322,7 +322,7 @@ QUESTIONS.push(
   {t:"Block monoamine oxidase (MAO)", correct:true, why:"Second, moderate action: blocks MAO, the enzyme that breaks catecholamines down."},
   {t:"Activate presynaptic α2", correct:false, why:"Activating α2 would lower release; that is clonidine."},
   {t:"Block postsynaptic α1", correct:false, why:"Blocking α1 is prazosin."},
-  {t:"Activate COMT", correct:false, why:"No drug in this lecture activates COMT."}],
+  {t:"Activate COMT", correct:false, why:"Catechol-O-methyltransferase (COMT) breaks norepinephrine down; activating it would lower synaptic norepinephrine, the opposite of a stimulant."}],
  teach:"Primary mechanism: release of norepinephrine, dopamine and serotonin. Secondary, weak-to-moderate mechanisms: inhibition of reuptake and inhibition of monoamine oxidase (MAO). The drug touches several steps of norepinephrine handling.",
  quote:"You also have a secondary effect of being a very weaker inhibitor of the reuptake and the enzyme that breaks down catecholamine. So it has multiple mechanisms of action. The primary is releasing of norepinephrine with a very weak to moderate inhibition of the reuptake as well as the breakdown of catecholamines.",
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slide 11; transcript 10/6"},
@@ -331,8 +331,8 @@ QUESTIONS.push(
  concept:"stimulant-effects", tags:[], source:"both",
  stem:"A patient takes increasing doses of dextroamphetamine. Which effects are expected? Select all that apply.",
  options:[
-  {t:"Decreased appetite", correct:true, why:"Central effect on the slide: decreased sleep and appetite."},
-  {t:"Tremor", correct:true, why:"Peripheral effect; he ties it to activation of β2."},
+  {t:"Decreased appetite", correct:true, why:"Central effect of more norepinephrine and dopamine in the brain: less sleep and less appetite."},
+  {t:"Tremor", correct:true, why:"Peripheral effect of higher sympathetic outflow: activated β2 receptors cause tremor."},
   {t:"Increased heart rate", correct:true, why:"Increased sympathetic outflow raises heart rate and blood pressure."},
   {t:"Sedation", correct:false, why:"Stimulants increase energy and decrease sleep."},
   {t:"Bradycardia", correct:false, why:"More sympathetic tone raises, not lowers, heart rate."}],
@@ -348,7 +348,7 @@ QUESTIONS.push(
   {t:"Caffeine cancels the stimulant", correct:false, why:"Both drugs stimulate; their effects add."},
   {t:"No interaction", correct:false, why:"Two stimulants together have an additive effect."},
   {t:"Sedation from both drugs", correct:false, why:"Neither drug sedates."}],
- teach:"Caffeine is a stimulant, so combining it with an amphetamine-like drug is additive: the therapeutic window shrinks toward the side-effect end. His example was a student who ended up in the emergency room with arrhythmias after drinking energy shots all night before an exam.",
+ teach:"Caffeine is a stimulant, so combining it with an amphetamine-like drug is additive: the therapeutic window shrinks toward the side-effect end. For example, a student drinking energy shots all night before an exam on top of a stimulant ended up in the emergency room with arrhythmias.",
  quote:"Caffeine is a stimulant. So if you are taking a stimulant and then you add caffeine and Red Bull in 5 minutes, you know, whatever crap that is, uh, you're just compounding. ... She was in the ER because she was having arrhythmias.",
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slide 12; transcript 10/6"},
 
@@ -358,10 +358,10 @@ QUESTIONS.push(
  stem:"Which statement about the two monoamine oxidase (MAO) subtypes is CORRECT?",
  options:[
   {t:"MAO-B is mainly in the brain", correct:true, why:"MAO-B is present in the CNS striatum and breaks down dopamine (“B for brain”)."},
-  {t:"MAO-A is only in the brain", correct:false, why:"MAO-A is in the brain, liver and gut; he stresses the gut."},
+  {t:"MAO-A is only in the brain", correct:false, why:"MAO-A is in the brain, liver and gut; its gut location is why non-selective inhibitors cause the tyramine reaction."},
   {t:"MAO-B is mainly in the gut", correct:false, why:"The gut enzyme is MAO-A."},
   {t:"MAO-B breaks down acetylcholine", correct:false, why:"MAO breaks down catecholamines (norepinephrine, dopamine), not acetylcholine."}],
- teach:"Both monoamine oxidase (MAO) subtypes break down catecholamines. MAO-A is in the brain, liver and gastrointestinal tract and breaks down norepinephrine and dopamine; MAO-B is in the central nervous system (striatum) and breaks down dopamine. His memory aid: B for brain.",
+ teach:"Both monoamine oxidase (MAO) subtypes break down catecholamines. MAO-A is in the brain, liver and gastrointestinal tract and breaks down norepinephrine and dopamine; MAO-B is in the central nervous system (striatum) and breaks down dopamine. Memory aid: B for brain.",
  quote:"So the older drugs. They are less selective, so they can inhibit both enzymes, the MAOA that is in the gut, as well as the MAOB that is for the brain. So if you're not sure, think about B for brain",
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slide 13; transcript 10/6"},
 
@@ -373,7 +373,7 @@ QUESTIONS.push(
   {t:"Selegiline: MAO-A and MAO-B", correct:false, why:"Selegiline is selective for MAO-B (at low doses)."},
   {t:"Phenelzine: MAO-B only", correct:false, why:"Phenelzine is non-selective."},
   {t:"Selegiline: norepinephrine transporter", correct:false, why:"Blocking the norepinephrine transporter is cocaine."},
-  {t:"Phenelzine: COMT", correct:false, why:"No drug in this lecture blocks catechol-O-methyltransferase (COMT)."}],
+  {t:"Phenelzine: COMT", correct:false, why:"Phenelzine blocks monoamine oxidase (both subtypes), not catechol-O-methyltransferase (COMT)."}],
  teach:"Phenelzine: non-selective inhibitor of monoamine oxidase A and B (MAO-A and MAO-B), irreversible. Selegiline (low doses): selective MAO-B inhibitor, irreversible. Both raise catecholamines by blocking their breakdown.",
  quote:"There are MOA inhibitors. We have the non-selectives, and I picked phenelzine as our prototypical drug. ... And then we have a better MAO inhibitor, uh, selegiline, which is selective to the MAOB.",
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slide 14; transcript 10/6"},
@@ -383,7 +383,7 @@ QUESTIONS.push(
  stem:"How do phenelzine and selegiline bind monoamine oxidase?",
  options:[
   {t:"Irreversibly", correct:true, why:"Both are irreversible antagonists: once bound, the enzyme is out and the body has to make new ones."},
-  {t:"Reversibly and competitively", correct:false, why:"The slide marks both as irreversible antagonists."},
+  {t:"Reversibly and competitively", correct:false, why:"Both are irreversible: once bound, that enzyme stays blocked until the body makes new enzyme."},
   {t:"As partial agonists", correct:false, why:"They block (antagonize) the enzyme; they do not activate it."},
   {t:"Phenelzine reversibly, selegiline irreversibly", correct:false, why:"Both are irreversible."}],
  teach:"Phenelzine and selegiline are both irreversible antagonists of monoamine oxidase (MAO). Once the drug binds, that enzyme molecule no longer works; activity returns only when the body makes new enzyme.",
@@ -398,8 +398,8 @@ QUESTIONS.push(
   {t:"Severe hypotension", correct:false, why:"The tyramine reaction raises blood pressure."},
   {t:"Bradycardia from vagal tone", correct:false, why:"The reaction is sympathetic and hypertensive."},
   {t:"No reaction", correct:false, why:"Fermented foods are high in tyramine, which the patient cannot break down."},
-  {t:"Sedation", correct:false, why:"The reaction is a hypertensive crisis; his colleague passed out from the very high pressure."}],
- teach:"A non-selective monoamine oxidase (MAO) inhibitor blocks MAO in the gut as well as the brain, so dietary tyramine from fermented foods (cheese, bread, wine) is not broken down. The result is a hypertensive crisis, the “cheese effect”. His example: a professor on the drug ate cheese at a party and left in an ambulance.",
+  {t:"Sedation", correct:false, why:"The tyramine reaction is sympathetic: blood pressure climbs to a hypertensive crisis; it does not sedate."}],
+ teach:"A non-selective monoamine oxidase (MAO) inhibitor blocks MAO in the gut as well as the brain, so dietary tyramine from fermented foods (cheese, bread, wine) is not broken down. The result is a hypertensive crisis, the “cheese effect”. A patient on the drug who eats cheese can pass out from the very high pressure and need emergency care.",
  quote:"You cannot eat anything that is fermented. Like cheese and bread and wine, all of those are off the plate, right? And the reason being is because you have the inability to break down that dietary tyramine that you're consuming, and those fermented foods have high levels of tyramine, and that can cause what is called a hypertensive crisis.",
  reading:[{"src":"Katzung 16e, Ch. 9","sec":"Specific Sympathomimetic Drugs — Tyramine","t":"In patients treated with MAO inhibitors, particularly those inhibiting the MAO-A isoform, the sympathomimetic effect of tyramine can be greatly intensified, with marked increases in blood pressure. This follows from greater bioavailability of tyramine and larger neuronal stores of catecholamines, so these patients should avoid tyramine-containing foods such as aged cheese, cured meats and pickled food."}],
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slide 15; transcript 10/6"},
@@ -412,7 +412,7 @@ QUESTIONS.push(
   {t:"Phenelzine", correct:false, why:"Phenelzine also blocks gut MAO-A, so tyramine causes a hypertensive crisis."},
   {t:"Both phenelzine and selegiline", correct:false, why:"Only the non-selective drug causes the cheese effect."},
   {t:"Neither drug", correct:false, why:"Selegiline is the one without it."}],
- teach:"No cheese effect for selective MAO-B inhibitors: selegiline blocks monoamine oxidase B in the brain and leaves gut MAO-A free to break down dietary tyramine. That is why, money aside, he would choose the selective MAO-B drug.",
+ teach:"No cheese effect for selective MAO-B inhibitors: selegiline blocks monoamine oxidase B in the brain and leaves gut MAO-A free to break down dietary tyramine. So, when cost is not an issue, the selective MAO-B inhibitor is preferred.",
  quote:"So, if we need to choose one and your patient, money is not an issue, I'd rather pick the selective MOAB because that only blocks in the brain and you don't have to worry about the cheese effect associated with your patients, OK?",
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slide 15; transcript 10/6"},
 
@@ -438,8 +438,8 @@ QUESTIONS.push(
   {t:"Arteries and veins", correct:true, why:"“bloody”: α1 sets afterload and preload."},
   {t:"Urethra (bladder sphincter, prostate vessels)", correct:true, why:"“urine”: α1 on the sphincter and the blood vessels around the prostate."},
   {t:"Sinoatrial node", correct:false, why:"The heart is run by β1."},
-  {t:"Bronchial smooth muscle", correct:false, why:"The lungs have M3 (parasympathetic only) and β2; α1 is not listed there."}],
- teach:"His memory aid for α1 sites: “I see and smell bloody urine”: eye (pupil dilation), nose (nasal blood vessels), blood vessels (systemic arteries for afterload, veins for preload) and urethra (bladder sphincter and the blood vessels of the prostate). α1 is Gq: phospholipase C, IP3, more Ca++.",
+  {t:"Bronchial smooth muscle", correct:false, why:"The lungs have M3 (parasympathetic only) and β2; α1 is not a lung receptor."}],
+ teach:"Memory aid for α1 sites: “I see and smell bloody urine”: eye (pupil dilation), nose (nasal blood vessels), blood vessels (systemic arteries for afterload, veins for preload) and urethra (bladder sphincter and the blood vessels of the prostate). α1 is Gq: phospholipase C, IP3, more Ca++.",
  quote:"So, the way I remember when I was in school is I see and smell bloody urine, right? ... So think about, uh, those sites as our major sites of action.",
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 16–17; transcript 10/6"},
 
@@ -471,9 +471,9 @@ QUESTIONS.push(
  concept:"phenylephrine-adr", tags:[], source:"both",
  stem:"Which adverse effects of phenylephrine should a patient be warned about? Select all that apply.",
  options:[
-  {t:"Burning", correct:true, why:"Listed ADR; anything put in the eye or nose can burn."},
-  {t:"Rebound congestion", correct:true, why:"Listed ADR; the box says not to use for more than 3 days."},
-  {t:"Blurred vision", correct:true, why:"Listed ADR (eye use)."},
+  {t:"Burning", correct:true, why:"Anything put in the eye or nose can burn; burning is a listed adverse reaction."},
+  {t:"Rebound congestion", correct:true, why:"Used for more than 3 days, the nasal decongestant gives rebound congestion."},
+  {t:"Blurred vision", correct:true, why:"Used in the eye, α1 activation dilates the pupil, and vision blurs."},
   {t:"Higher blood pressure", correct:true, why:"Careful in patients with hypertension: α1 raises preload and afterload."},
   {t:"Dry mouth", correct:false, why:"Dry mouth is the complaint with clonidine."},
   {t:"Orthostatic hypotension", correct:false, why:"That is the α1 antagonists (prazosin); phenylephrine raises pressure."}],
@@ -526,7 +526,7 @@ QUESTIONS.push(
   {t:"It activates an inhibitory Gi receptor", correct:true, why:"α2 is Gi: activating it suppresses norepinephrine release, so the sympathetic system is turned down."},
   {t:"It blocks α1 receptors", correct:false, why:"Blocking α1 is prazosin; clonidine activates α2."},
   {t:"It blocks the norepinephrine transporter", correct:false, why:"That is cocaine, which raises sympathetic activity."},
-  {t:"It irreversibly blocks MAO", correct:false, why:"That is phenelzine and selegiline, which raise norepinephrine."}],
+  {t:"It irreversibly blocks MAO", correct:false, why:"Irreversible monoamine oxidase (MAO) block is phenelzine and selegiline, which raise norepinephrine."}],
  teach:"Clonidine is a selective α2 agonist. Because α2 is coupled to Gαi, activating it is inhibitory: less cAMP, less norepinephrine release and less sympathetic outflow. It behaves like an antagonist of the sympathetic system but is an agonist at its receptor.",
  quote:"So clonidine is an agonist that activates the inhibitory pathway. So he's behaving like an antagonist, but he's actually an agonist.",
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 21, 23–24; transcript 10/6"},
@@ -564,11 +564,11 @@ QUESTIONS.push(
  concept:"clonidine-withdrawal-crisis", tags:["exam-cue"], source:"both",
  stem:"A patient stops clonidine abruptly after months of use. Which is most likely, and why?",
  options:[
-  {t:"Hypertensive crisis from up-regulated receptors", correct:true, why:"Chronic suppression of sympathetic tone makes the body add receptors; without the drug, norepinephrine floods them."},
+  {t:"Hypertensive crisis from up-regulated receptors", correct:true, why:"Chronic suppression of sympathetic tone makes the body add receptors; without the drug, the released norepinephrine acts on many more receptors."},
   {t:"Hypotension from down-regulated α1 receptors", correct:false, why:"Chronic suppression up-regulates receptors, and the result is high, not low, pressure."},
-  {t:"Bradycardia from extra parasympathetic tone", correct:false, why:"Stopping the drug removes the brake on the sympathetic system."},
+  {t:"Bradycardia from extra parasympathetic tone", correct:false, why:"Stopping the drug ends the suppression of the sympathetic system, so heart rate rises rather than falls."},
   {t:"Bronchoconstriction from unopposed parasympathetic tone", correct:false, why:"Withdrawal unleashes sympathetic activity; it does not constrict the airways."}],
- teach:"Months of suppressed sympathetic tone cause receptor up-regulation. Stopping clonidine cold turkey leaves many receptors and a surge of norepinephrine: a hypertensive crisis. His major counseling point: patients must be weaned off.",
+ teach:"Months of suppressed sympathetic tone cause receptor up-regulation. Stopping clonidine cold turkey leaves many receptors and a surge of norepinephrine: a hypertensive crisis. The major counseling point: patients must be weaned off, not stopped abruptly.",
  quote:"We're gonna make more receptors, right? We're gonna cause up regulation. So what is the one education point that you have to make to your patients? You got to wean yourself off because if you go cold turkey, you got all these receptors, now norepinephrine is flowing like there's no tomorrow, and you go into a hypertensive crisis, right?",
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slide 26; transcript 10/6"},
 
@@ -590,17 +590,17 @@ QUESTIONS.push(
  options:[
   {t:"Sedation", correct:true, why:"Central nervous system inhibition; CNS side effects are the most common."},
   {t:"Hypotension", correct:true, why:"Too much of the wanted effect; with bradycardia, it raises the risk of falls."},
-  {t:"Sexual dysfunction", correct:true, why:"Sympathetic suppressed while parasympathetic is left working (“all show and no go”)."},
-  {t:"Nightmares and depression", correct:true, why:"Listed CNS side effects."},
+  {t:"Sexual dysfunction", correct:true, why:"Sexual function needs both divisions working together; clonidine suppresses the sympathetic side."},
+  {t:"Nightmares and depression", correct:true, why:"Central nervous system (CNS) inhibition also brings nightmares and depression."},
   {t:"Tachycardia", correct:false, why:"Clonidine causes bradycardia."},
   {t:"Diarrhea", correct:false, why:"Clonidine causes constipation."}],
- teach:"Clonidine's adverse reactions: CNS effects (sedation, nightmares, depression), dry mouth and constipation, hypotension and bradycardia (risk of falls), sexual dysfunction, and a hypertensive crisis on abrupt withdrawal from receptor up-regulation.",
+ teach:"Clonidine's adverse reactions: CNS effects (sedation, nightmares, depression), dry mouth and constipation, hypotension and bradycardia (risk of falls), sexual dysfunction, and a hypertensive crisis on abrupt withdrawal from receptor up-regulation. Each follows from suppressed sympathetic outflow; the constipation comes from less acetylcholine released onto gut M3.",
  quote:"So when it comes to side effects, the most common side effects with this drug can be sedation because you're inhibiting the CNS. Patients may complain of nightmares and maybe depression. Dry mouth is very common. ... so hypertension and bradycardia can be severe if the dose is too high. It may cause sexual dysfunction.",
  note:"The transcript has “hypertension and bradycardia” where the slide says “Hypotension & Bradycardia”; in context (“lower blood pressure, lower heart rate”) it is hypotension. Keyed to the slide.",
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slide 26; transcript 10/6"},
 
 {id:"L10-046", lecture:"L10", prof:"Gottlieb", tier:"new", topic:"L10", sub:"a2", skill:"tell",
- concept:"idine-osin-names", tags:[], source:"both",
+ concept:"idine-osin-names", tags:["alpha"], source:"both",
  stem:"A drug name ends in “-idine” (for example, brimonidine or tizanidine). Which mechanism should you predict?",
  options:[
   {t:"α2 agonist", correct:true, why:"Most drugs ending in -idine are α2 agonists like clonidine."},
@@ -608,7 +608,7 @@ QUESTIONS.push(
   {t:"Muscarinic antagonist", correct:false, why:"Atropine-like drugs carry “trop”."},
   {t:"Cholinesterase inhibitor", correct:false, why:"Those end in -stigmine."},
   {t:"α1 agonist", correct:false, why:"Phenylephrine “sounds like” epinephrine and norepinephrine."}],
- teach:"Name cues: -idine (clonidine, brimonidine, tizanidine) → α2 agonist; -osin (prazosin, terazosin, doxazosin) → selective α1 antagonist; phenylephrine sounds like epinephrine and norepinephrine → α1 agonist. For the exam he focuses on clonidine as the prototype α2 agonist.",
+ teach:"Name cues: -idine (clonidine, brimonidine, tizanidine) → α2 agonist; -osin (prazosin, terazosin, doxazosin) → selective α1 antagonist; phenylephrine sounds like epinephrine and norepinephrine → α1 agonist. Clonidine is the prototype α2 agonist.",
  quote:"It doesn't matter if it's clonidine or brimonidine or, you know, tizanidine. They all have this edine with it, and it's gonna tell you where they're gonna fall, OK? So for our purpose on exam one, we're gonna focus on clonidine because that's our prototypical drug.",
  note:"“exam one” in the quote is a slip for Exam 2, the exam this lecture belongs to.",
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 17, 22; transcript 10/6"},
@@ -635,7 +635,7 @@ QUESTIONS.push(
   {t:"Terazosin", correct:false, why:"An -osin: reversible, selective α1."},
   {t:"None; all are reversible", correct:false, why:"Phenoxybenzamine is the irreversible one."},
   {t:"Mirtazapine", correct:false, why:"Mirtazapine is a reversible α2 (and H1, muscarinic, α1) antagonist."}],
- teach:"The α-antagonist table: irreversible, non-selective α1 and α2: phenoxybenzamine. Reversible, α1 selective: prazosin, terazosin, doxazosin, alfuzosin, tamsulosin, silodosin (the -osins). Reversible, α2 non-selective: mirtazapine (α2, H1, muscarinic, α1).",
+ teach:"The α antagonists: irreversible, non-selective α1 and α2: phenoxybenzamine. Reversible, α1 selective: prazosin, terazosin, doxazosin, alfuzosin, tamsulosin, silodosin (the -osins). Reversible, α2 non-selective: mirtazapine (α2, H1, muscarinic, α1).",
  quote:"So all the other drugs are gonna be reversible and then we have here alpha-1 selectives all the zosin or Osin, right?",
  note:"He described phenoxybenzamine aloud (“a non-selective alpha 1 and alpha 2 irreversible antagonists”) while answering a student question, then said “we're gonna get a little bit ahead of us, so just wait”; its own slides (34–38) were not taught on 10/6.",
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slide 27; transcript 10/6"},
@@ -659,7 +659,7 @@ QUESTIONS.push(
  stem:"How does blocking α1 receptors lower blood pressure in a patient with hypertension?",
  options:[
   {t:"Less Gq signaling → less Ca++ → vasodilation", correct:true, why:"Norepinephrine cannot bind α1, so less Gq, PLC and IP3, less calcium, and the vessels relax: lower TPR."},
-  {t:"More Gi signaling → less cAMP → vasodilation", correct:false, why:"That describes α2 activation, not α1 blockade."},
+  {t:"More Gi signaling → less cAMP → vasodilation", correct:false, why:"Gi lowering cyclic AMP (cAMP) describes α2 activation, not α1 blockade."},
   {t:"Less β1 signaling → lower heart rate", correct:false, why:"Prazosin does not block β1; heart rate actually rises by reflex."},
   {t:"More nitric oxide → vasodilation", correct:false, why:"Nitric oxide comes from endothelial M3; α1 block works on smooth-muscle calcium."}],
  teach:"In the arteries and veins, α1 is the main receptor and the sympathetic system the only (and so the primary physiological) tone: they are always constricting through Gq → PLC → IP3 → Ca++. Blocking α1 lowers that calcium, the vessels dilate, and systemic vascular resistance (total peripheral resistance, TPR) falls.",
@@ -675,7 +675,7 @@ QUESTIONS.push(
   {t:"Bradycardia from a baroreceptor reflex", correct:false, why:"Falling pressure raises, not lowers, heart rate by reflex."},
   {t:"Bronchial constriction", correct:false, why:"α1 is not the airway receptor."},
   {t:"Higher preload", correct:false, why:"Venous relaxation lowers preload."}],
- teach:"His spoken question. First ask what the vein does: return blood to the heart (preload). An α1 antagonist relaxes venous tone, blood pools in the feet, does not reach the heart or the brain, and the patient falls: orthostatic hypotension and syncope. The side effect is predicted from mechanism and site, not memorized.",
+ teach:"First ask what the vein does: return blood to the heart (preload). An α1 antagonist relaxes venous tone, blood pools in the feet, does not reach the heart or the brain, and the patient falls: orthostatic hypotension and syncope. The side effect is predicted from mechanism and site, not memorized.",
  quote:"So if it's an alpha one antagonist in the veins, what that's gonna do to the vein, the venous tone? Is it gonna be constricted or relaxed? Relax. Relax. So if blood is, if your blood is pooling in my feet, what is not gonna go? It's not gonna go to the heart, it's not gonna go to the brain. So, you're gonna Fall off, right?",
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 29–30; transcript 10/6"},
 
@@ -708,14 +708,14 @@ QUESTIONS.push(
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slide 30; transcript 10/6"},
 
 {id:"L10-054", lecture:"L10", prof:"Gottlieb", tier:"new", topic:"L10", sub:"a1ant", skill:"apply",
- concept:"vasodilator-headache", tags:[], source:"both",
+ concept:"vasodilator-headache", tags:["prazosin"], source:"both",
  stem:"Why do vasodilators such as prazosin commonly cause headache?",
  options:[
   {t:"Raised pressure inside the skull", correct:true, why:"The brain is enclosed by the rigid skull; dilating its vessels raises pressure in the head (with flushing)."},
   {t:"They block α2 in the brain", correct:false, why:"Prazosin is selective for α1."},
   {t:"They constrict vessels in the brain", correct:false, why:"They dilate, not constrict."},
   {t:"They lower acetylcholine in the brain", correct:false, why:"Prazosin does not act on acetylcholine."}],
- teach:"A general rule he will use again in cardiovascular: a vasodilator most likely causes headache. Vessels in the face and brain dilate, and the brain sits inside the hard skull with little room, so pressure in the head rises; flushing goes with it.",
+ teach:"A general rule: a vasodilator most likely causes headache. Vessels in the face and brain dilate, and the brain sits inside the hard skull with little room, so pressure in the head rises; flushing goes with it.",
  quote:"So when you vasodilate those blood vessels, you increase the pressure in the head and you get the flushing and the headache associated with that. So one of the good general rules is if you are a vasodilator, most likely you're gonna get a headache for your patient, OK?",
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slide 30; transcript 10/6"},
 
@@ -732,7 +732,7 @@ QUESTIONS.push(
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slide 28; transcript 10/6"},
 
 {id:"L10-056", lecture:"L10", prof:"Gottlieb", tier:"new", topic:"L10", sub:"a1ant", skill:"recall",
- concept:"arteries-veins-sympathetic-only", tags:[], source:"both",
+ concept:"arteries-veins-sympathetic-only", tags:["alpha1"], source:"both",
  stem:"Which statement about the arteries and veins is CORRECT?",
  options:[
   {t:"They have only sympathetic innervation", correct:true, why:"Sympathetic is the only (primary physiological) tone, so α1 always keeps some constriction."},
@@ -740,7 +740,7 @@ QUESTIONS.push(
   {t:"Their main receptor is β1", correct:false, why:"Their main receptor is α1."},
   {t:"They are relaxed unless a drug is given", correct:false, why:"They are always constricting to some degree to maintain blood pressure."}],
  teach:"The arteries and veins are one of the autonomic exceptions: sympathetic innervation only, with α1 as the predominant receptor. They are always constricting; the question is how much. Removing that sympathetic tone (clonidine centrally, prazosin at the receptor) relaxes them.",
- quote:"There's only sympathetic to the arteries and the veins, right? So, you're always constricting. The question is how much. So, are you constricting a lot or not a lot. You have to constrict somehow in order to maintain your blood pressure. But if you don't have sympathetics, relax",
+ quote:"There's only sympathetic to the arteries and the veins, right? So, you're always constricting. The question is how much you're constricting. So, are you constricting a lot or not a lot. You have to constrict somehow in order to maintain your blood pressure. But if you don't have sympathetics, relax",
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slide 29; transcript 10/6"},
 
 /* ---------------- Mirtazapine (slides 31–32) ---------------- */
@@ -748,7 +748,7 @@ QUESTIONS.push(
  concept:"mirtazapine-inhibit-inhibitor", tags:["in-class"], source:"both",
  stem:"How does blocking presynaptic α2 receptors with mirtazapine increase norepinephrine release?",
  options:[
-  {t:"It removes the inhibitor of release", correct:true, why:"α2 is the inhibitory (Gi) gatekeeper; blocking the inhibitor gives a positive effect: more norepinephrine."},
+  {t:"It removes the inhibitor of release", correct:true, why:"α2 is the inhibitory (Gi) autoreceptor; blocking the inhibitor gives a positive effect: more norepinephrine."},
   {t:"It blocks the norepinephrine transporter", correct:false, why:"That is cocaine."},
   {t:"It activates α1 on the nerve", correct:false, why:"Mirtazapine blocks α1; it activates nothing."},
   {t:"It inhibits monoamine oxidase", correct:false, why:"That is phenelzine and selegiline."}],
@@ -786,11 +786,11 @@ QUESTIONS.push(
  concept:"clonidine-vs-mirtazapine", tags:[], source:"both",
  stem:"Which pairing of α2 drug and central effect is CORRECT?",
  options:[
-  {t:"Clonidine: less norepinephrine release", correct:true, why:"Clonidine activates the inhibitory α2 pathway: less sympathetic (↓CNS on the slide)."},
+  {t:"Clonidine: less norepinephrine release", correct:true, why:"Clonidine activates the inhibitory (Gi) α2 pathway: less norepinephrine release, less sympathetic outflow (↓CNS)."},
   {t:"Mirtazapine: less norepinephrine release", correct:false, why:"Mirtazapine blocks α2 and enhances release (↑CNS)."},
   {t:"Clonidine: more norepinephrine release", correct:false, why:"Activating α2 suppresses release."},
   {t:"Mirtazapine: activates α2 receptors", correct:false, why:"Mirtazapine is the α2 antagonist."}],
- teach:"Same receptor, opposite drugs. Clonidine (α2 agonist) activates the Gi pathway: less norepinephrine, less sympathetic (↓CNS). Mirtazapine (α2 antagonist) removes that brake: more norepinephrine, more sympathetic (↑CNS).",
+ teach:"Same receptor, opposite drugs. Clonidine (α2 agonist) activates the Gi pathway: less norepinephrine, less sympathetic (↓CNS). Mirtazapine (α2 antagonist) removes that inhibition: more norepinephrine, more sympathetic (↑CNS).",
  quote:"So if you think about the CNS, clonidine is going to activate the inhibitory pathway, I get less sympathetic, as mirtazapine is going to enhance the sympathetic.",
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slide 21; transcript 10/6"},
 
@@ -804,7 +804,7 @@ QUESTIONS.push(
   {t:"Guanfacine raises the release of norepinephrine", correct:false, why:"An α2 agonist acts on an inhibitory (Gi) receptor and suppresses norepinephrine release."},
   {t:"Guanfacine slows the breakdown of methylphenidate", correct:false, why:"Guanfacine acts on the α2 receptor, not on how methylphenidate is broken down."},
   {t:"Guanfacine is an α1 agonist that raises blood pressure", correct:false, why:"Guanfacine is an α2 agonist; like clonidine it lowers sympathetic tone."}],
- teach:"Methylphenidate is a stimulant: it mainly releases norepinephrine and dopamine, which improves focus but decreases appetite. Clonidine and guanfacine are α2 agonists, and slide 22 lists both for ADHD. Adding guanfacine to the stimulant gave an additive effect, so the stimulant dose could come down and attention was kept without the loss of appetite: a good drug–drug interaction.",
+ teach:"Methylphenidate is a stimulant: it mainly releases norepinephrine and dopamine, which improves focus but decreases appetite. Clonidine and guanfacine are α2 agonists, and both are used for ADHD. Adding guanfacine to the stimulant gave an additive effect, so the stimulant dose could come down and attention was kept without the loss of appetite: a good drug–drug interaction.",
  quote:"He was in such a high dose of Ritalin that we had to lower the dose and add a clonidine, so we didn't really add, we add the Intuniv, which is a similar drug to it, so that way they have this additive effect and he could maintain his attention without affecting his appetite.",
  note:"Taken from his own example on 10/6 (methylphenidate with guanfacine, which he called similar to clonidine). The -idine rule does not fit guanfacine; slide 22 lists it with the α2 agonists.",
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 11–12, 22; transcript 10/6"}
