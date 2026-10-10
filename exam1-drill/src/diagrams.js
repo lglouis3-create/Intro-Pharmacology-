@@ -28,7 +28,7 @@ const FIG = (() => {
     cap.forEach(t => { if (/^<(ol|ul)\b/.test(t)) { if (open) { out += '</ul>'; open = false; } out += t; } else { if (!open) { out += '<ul>'; open = true; } out += `<li>${t}</li>`; } });
     return out + (open ? '</ul>' : '');
   };
-  const wrap = (inner, cap, h = H, w = W) => `<figure class="fig"><svg viewBox="0 0 ${w} ${h}"${w < W ? ' style="max-width:400px;margin:0 auto"' : ''} role="img" aria-label="${capText(cap).replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim().replace(/"/g, '&quot;')}"><defs><marker id="arw" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--muted)"/></marker></defs>${inner}</svg><figcaption>${capHTML(cap)}</figcaption></figure>`;
+  const wrap = (inner, cap, h = H, w = W) => `<figure class="fig"><div class="svgx"><svg viewBox="0 0 ${w} ${h}"${w < W ? ' style="max-width:400px;margin:0 auto"' : ''} role="img" aria-label="${capText(cap).replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim().replace(/"/g, '&quot;')}"><defs><marker id="arw" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--muted)"/></marker></defs>${inner}</svg></div><figcaption>${capHTML(cap)}</figcaption></figure>`;
   const F = {};
 
   F['drc-basic'] = () => wrap(axes('log dose', '% of maximal response') +
@@ -271,7 +271,7 @@ const FIG = (() => {
     // and a dot per step jumps to it. The motion itself is done in app.js (stepTo).
     const dots = steps.map((st, i) => `<button class="sdot${i === 0 ? ' on' : ''}" data-go="dot" data-i="${i}" aria-label="Go to step ${i + 1}"></button>`).join('');
     const controls = `<div class="row anim" data-anim="${key}" style="margin:6px 0 2px"><button class="btn ghost" data-go="-1">◀ Back</button><button class="btn ghost" data-go="1">Next ▶</button><button class="btn ghost" data-go="replay">↻ Replay step</button><button class="btn ghost" data-go="play">▶ Play all</button><span class="sdots">${dots}</span><span class="meta" style="margin:0">${footer || ''}</span></div>`;
-    return wrap(g, cap, h - band, w).replace('</svg><figcaption>', '</svg>' + caps + controls + '<figcaption>');
+    return wrap(g, cap, h - band, w).replace('</svg></div><figcaption>', '</svg></div>' + caps + controls + '<figcaption>');
   };
 
   /* Drug–drug at one receptor. Top: five receptors in the membrane at one
@@ -1107,9 +1107,10 @@ const FIG = (() => {
     const base = `<rect x="6" y="46" width="348" height="14" fill="var(--chip)" opacity="0.7"/>` + xs(6, 40, 'outside') + xs(354, 74, 'inside the cell', 'end') + box(152, 40, 44, 26, 'AC');
     const rec = (active, lig) => `<rect x="43" y="26" width="20" height="28" rx="5" ${active ? 'fill="var(--figA)" fill-opacity="0.28" stroke="var(--figA)"' : 'fill="var(--chip)" stroke="var(--muted)"'} stroke-width="1.3"/><path class="pocket" d="M48 26 a5 5 0 0 0 10 0 Z"/>` + (lig ? `<circle class="lig a" cx="53" cy="27" r="4.6"/>` : '') + xs(68, 30, lig ? 'NE on β1' : 'β1 empty', 'start');
     const role = (t) => `<text class="cl a" x="354" y="30" text-anchor="end">${t}</text>`;
-    // the trimer sits directly under the receptor: αs touches the receptor, β/γ hang on αs
-    const trimer = (nt) => alpha(53, 70, nt) + bg(70, 64);
-    const freeBG = bg(70, 64);
+    // the trimer sits directly under the receptor: αs touches the receptor, β/γ hang on αs on the
+    // side away from AC, so αs never passes over the β/γ labels as it leaves (step 4) or returns (step 11)
+    const trimer = (nt) => alpha(53, 70, nt) + bg(29, 64);
+    const freeBG = bg(29, 64);
     const camp = xs(174, 92, 'ATP → cAMP', 'middle');
     const steps = [
       ['NE (the signal) binds the β1 receptor. Under the receptor sits the G protein: αs holding GDP, with β and γ attached.', rec(false, true) + trimer('GDP') + role('signal → receptor')],
@@ -1313,7 +1314,7 @@ const FIG = (() => {
       const CLEFT = [[122, 104], [146, 114], [166, 100], [184, 116], [134, 126], [170, 128]];
       const scene = st => {
         let g = `<rect data-k="term" class="box" x="70" y="26" width="160" height="60" rx="12"/>` + T('term-t', 150, 42, 'motor nerve terminal', 's');
-        VES.forEach(([x, y], i) => { g += `<circle data-k="v${i}" cx="${x}" cy="${y}" r="11" fill="var(--bg)" stroke="var(--muted)" stroke-width="1"/>`; });
+        VES.forEach(([x, y], i) => { g += `<circle data-k="v${i}" cx="${x}" cy="${y}" r="11" class="ves" stroke-width="1"/>`; });
         IN.forEach(([dx, dy], j) => { g += dot(`v2d${j}`, VES[2][0] + dx, VES[2][1] + dy, 'a', 2.8); });
         g += band('mem', 150);
         const open = st.open;
@@ -1409,7 +1410,7 @@ const FIG = (() => {
       const CLEFT = [[214, 100], [196, 112], [226, 120], [178, 98], [238, 104], [206, 128]];
       const scene = st => {
         let g = `<rect data-k="term" class="box" x="70" y="24" width="160" height="58" rx="12"/>` + T('term-t', 150, 40, 'parasympathetic ending', 's');
-        VES.forEach(([x, y], i) => { g += `<circle data-k="v${i}" cx="${x}" cy="${y}" r="12" fill="var(--bg)" stroke="var(--muted)" stroke-width="1"/>`; });
+        VES.forEach(([x, y], i) => { g += `<circle data-k="v${i}" cx="${x}" cy="${y}" r="12" class="ves" stroke-width="1"/>`; });
         g += band('mem', 160);
         g += rcp('m', 151, 150, 'A', st.on ? 1 : 0);
         for (let i = 0; i < 6; i++) {
@@ -1486,7 +1487,7 @@ const FIG = (() => {
       g += box('net', 96, 100, 40, 18, 'C', 0.24) + T('net-t', 116, 113.5, 'NET', 'l');
       g += rcp('a2', 216, 100, 'E', st.bound && !st.mirt ? 1 : 0, true) + T('a2-t', 232, 116, 'α2 · Gi', 'l', 'start');
       g += band('mem', 176) + rcp('r1', 100, 164, 'A', st.bound) + rcp('rb', 180, 164, 'A', st.bound);
-      g += `<circle data-k="ves" cx="${VES_A[0]}" cy="${VES_A[1]}" r="14" fill="var(--bg)" stroke="var(--muted)" stroke-width="1"/>`;
+      g += `<circle data-k="ves" cx="${VES_A[0]}" cy="${VES_A[1]}" r="14" class="ves" stroke-width="1"/>`;
       for (let i = 0; i < 6; i++) {
         if (!st.ne) break;
         let p = st.ne === 'in' ? [VES_A[0] + IN_A[i][0], VES_A[1] + IN_A[i][1]] : CLEFT_A[i];
@@ -1669,7 +1670,7 @@ const FIG = (() => {
           T('e1', 10, 236, '↑Ca++: vasoconstriction (↑TPR),', 'm', 'start', 2) + T('e2', 10, 251, 'aldosterone ↑ (Na+, H2O kept,', 'm', 'start', 2) + T('e3', 10, 266, 'K+ lost), ↓ renal blood flow', 'm', 'start', 2) +
           T('e4', 290, 236, 'vasodilation,', 'm', 'end', 3) + T('e5', 290, 251, 'Na+ excretion', 'm', 'end', 3) + T('e6', 290, 266, 'the opposite', 's', 'end', 3);
         if (st.bk) g += T('bk', 120, 123, 'ACE also breaks down', 's', 'start') + T('bk2', 120, 136, 'bradykinin (a dilator)', 'c11', 'start');
-        if (st.tr) g += T('tr0', 178, 34, 'renin ↑ when:', 'l', 'start', 0) + T('tr1', 178, 50, 'SNS → β1 (JG cells)', 'm', 'start', 1) + T('tr2', 178, 64, 'renal pressure ↓', 'm', 'start', 2) + T('tr3', 178, 78, 'Na+ (macula densa) ↓', 'm', 'start', 3) + A('tr-a', 175, 60, 116, 68, false, 3);
+        if (st.tr) g += T('tr0', 178, 34, 'renin ↑ when:', 'l', 'start', 0) + T('tr1', 178, 50, 'SNS → β1 (JG cells)', 'm', 'start', 1) + T('tr2', 178, 64, 'renal pressure ↓', 'm', 'start', 2) + T('tr3', 178, 78, 'Na+ (macula densa) ↓', 'm', 'start', 3) + A('tr-a', 167, 62, 117, 68, false, 3);
         return g;
       };
       const steps = [

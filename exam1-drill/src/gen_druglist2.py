@@ -306,7 +306,7 @@ qs = []
 def add(sub, concept, stem, opts, teach, quote, cite_, multi=False, note=None, dupOf=None, tags=None):
     q = dict(id=f'DL2-{len(qs)+1:03d}', lecture='DL2', prof='Gottlieb', tier='new', topic='DL2', sub=sub,
              skill='drug', concept=concept, tags=['drug-list'] + (tags or []) + (['list'] if multi else []),
-             source='slide', fg='classes')
+             source='slide')   # no figure: the Exam 1 'classes' figure does not fit an Exam 2 drug
     if multi:
         q['multi'] = True
         if not stem.endswith('Select all that apply.'):

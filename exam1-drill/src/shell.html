@@ -11,6 +11,7 @@
   --bad:#a8322d; --bad-bg:#fbe9e7; --warn:#8a5a00; --warn-bg:#fff4dc; --chip:#eef1f4;
   --figA:#0072b2; --figB:#d55e00; --figC:#009e73; --figD:#e69f00; --figE:#cc79a7;
   --mapR:#007253; --mapW:#994400;   /* map filter chips: figC/figB darkened so white text passes 4.5:1 */
+  --vesF:var(--bg); --vesS:var(--muted);   /* an empty vesicle in the synapse figures */
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
@@ -18,7 +19,7 @@
     --accent:#7fb0e0; --accent-ink:#0d1620; --ok:#6fd49a; --ok-bg:#16301f;
     --bad:#f08a82; --bad-bg:#3a1a18; --warn:#f0c060; --warn-bg:#352a10; --chip:#2a2e33;
     --figA:#3d95cc; --figB:#d9702e; --figC:#1fa27f; --figD:#bd8a26; --figE:#bf6e9e;
-    --mapR:#1fa27f; --mapW:#d9702e;
+    --mapR:#1fa27f; --mapW:#d9702e; --vesF:#36424e; --vesS:#aab3bd;
   }
 }
 :root[data-theme="dark"]{
@@ -26,7 +27,7 @@
   --accent:#7fb0e0; --accent-ink:#0d1620; --ok:#6fd49a; --ok-bg:#16301f;
   --bad:#f08a82; --bad-bg:#3a1a18; --warn:#f0c060; --warn-bg:#352a10; --chip:#2a2e33;
   --figA:#3d95cc; --figB:#d9702e; --figC:#1fa27f; --figD:#bd8a26; --figE:#bf6e9e;
-  --mapR:#1fa27f; --mapW:#d9702e;
+  --mapR:#1fa27f; --mapW:#d9702e; --vesF:#36424e; --vesS:#aab3bd;
 }
 *{box-sizing:border-box}
 html,body{margin:0;background:var(--bg);color:var(--ink);
@@ -116,6 +117,7 @@ select,input[type=text],input[type=number]{font-size:15px;padding:6px 8px;border
 .fig .title{fill:var(--ink);font-size:11px;font-weight:700}
 .fig figcaption ul{margin:4px 0 2px;padding-left:18px} .fig figcaption li{margin:2px 0}
 .fig .box{fill:var(--chip);stroke:var(--line);stroke-width:1.2}
+.fig .ves{fill:var(--vesF);stroke:var(--vesS)}
 .fig .st{display:none} .fig .st.on{display:inline}
 /* step-through motion runs in app.js (stepTo, Web Animations API: transform and opacity only);
    .fadein / .glide / .xfade only mark what entered, moved or changed; .st-out is the fading old step */
@@ -189,10 +191,27 @@ select[data-l]{max-width:100%;min-width:0;flex:1 1 220px;font:inherit;font-size:
   nav{flex-wrap:nowrap;overflow-x:auto;width:100%;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding-bottom:2px}
   nav::-webkit-scrollbar{display:none} nav button,nav select{flex:0 0 auto}
   .qgrid{grid-template-columns:repeat(auto-fill,minmax(118px,1fr));gap:5px} .qt .qs{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-  .readstrip{table-layout:fixed} .readstrip th,.readstrip td{overflow-wrap:anywhere;padding:4px 5px}
+  /* read-strips: stacked like the other tables (label, then value, one per line); only a token wider than the box breaks */
+  .readstrip{table-layout:fixed} .readstrip th,.readstrip td{overflow-wrap:break-word;hyphens:auto;padding:4px 5px}
+  table.stack tr.shead{display:none}
+  table.readstrip.stack tr{margin:0;padding:2px 0}
+  table.readstrip.stack td{padding:3px 10px} table.readstrip.stack td::before{display:inline;margin-right:6px}
+}
+/* phone: an Exam 1 picture keeps 10 px labels and scrolls sideways in its own box (fitFigs in app.js) */
+.swipe{font-size:12px;color:var(--muted);margin:3px 2px 0}
+@media (max-width:560px){
+  .fig .svgx.fit{overflow-x:auto;overscroll-behavior-x:contain}
+  .fig .svgx.fit>svg{min-width:var(--minw,0)}
+  .shiftgrid>*,.pair>*{min-width:0}
 }
 /* the all-on-one-page exam keeps its clock, count and Submit in sight */
 .xhead{position:sticky;top:var(--hdr,56px);z-index:4;background:var(--bg);border-bottom:1px solid var(--line);margin:0 -4px 10px;padding:6px 4px}
+@media (max-width:560px){
+  .xhead{flex-wrap:nowrap;gap:8px;padding:4px} .xhead>span.row{flex-wrap:nowrap;gap:8px} .xhead b,.xhead .timer{white-space:nowrap;font-size:14px}
+  .xhead .btn{padding:6px 12px} .xhead .xlong{display:none}
+}
+/* a finished one-question drill has its own "Back to …" button: the floating one is not shown twice */
+body:has(#qback) #backbtn{display:none}
 .exgroup>summary>span{flex:1 1 0;min-width:0}
 .exlabel{font-size:11px;font-weight:600;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:0 6px;margin-left:6px;vertical-align:2px}
 </style>

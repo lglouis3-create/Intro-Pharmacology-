@@ -2,6 +2,16 @@
 
 Newest first. The build embeds this file; the Topics page shows what is new since your last visit, and the Progress page shows all of it. Keep each bullet to one short line.
 
+## 2026-10-10 (re-audit fixes)
+- Weak spots: "The idea" no longer repeats the answer shown above it.
+- Session line above the quiz counts the exam you study and says guesses are not counted.
+- Exam result: Studying-for switch and past attempts (dates like Oct 10, 2026, 4:12 AM).
+- Phone: read-strip tables stack instead of splitting words; exam bar is one row.
+- Phone: Exam 1 figures keep 10 px labels and scroll sideways in their box.
+- Tier buttons follow the skill filter; section drills are named "Topic: section".
+- Exam 2 drug-list questions no longer show an Exam 1 figure; Guide 1 shows the receptor map.
+- Figures: vesicles visible in dark mode; GPCR and RAAS labels no longer touch.
+
 ## 2026-10-10 (full review)
 - Every Exam 2 question reviewed: whys explain the mechanism, stems in his format; 4 out-of-scope keys rewritten.
 - Exam 2 guides, reference, tell apart and terms checked against his slides; 9 factual fixes.

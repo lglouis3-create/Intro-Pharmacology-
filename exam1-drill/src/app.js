@@ -31,6 +31,8 @@ function stemMedia(q) {
 const fmtCite = s => String(s == null ? '' : s).replace(/–~/g, '–');
 const BUILD = typeof BUILD_INFO === 'undefined' ? {} : BUILD_INFO;
 const fmtDate = iso => { const d = new Date(iso); return isNaN(d) ? '' : d.toLocaleDateString(undefined, {month: 'short', day: 'numeric', year: 'numeric'}); };
+// the same style with the time: "Oct 10, 2026, 4:12 AM"
+const fmtDateTime = t => { const d = new Date(t); return isNaN(d) ? '' : d.toLocaleString(undefined, {month: 'short', day: 'numeric', year: 'numeric', hour: 'numeric', minute: '2-digit'}); };
 // a change-log heading "2026-10-09 (title)" reads "Oct 9, 2026 (title)"; the date is a calendar day, so no time-zone shift
 const fmtDay = t => String(t || '').replace(/^(\d{4})-(\d{2})-(\d{2})/, (m, y, mo, d) => new Date(+y, +mo - 1, +d).toLocaleDateString(undefined, {month: 'short', day: 'numeric', year: 'numeric'}));
 // Calendar days between today and the exam date (local time), not hours rounded up.
@@ -54,10 +56,12 @@ function examCountdown() {
    column heading as a label (CSS shows it under 560px). */
 function stackTables(root) {
   root.querySelectorAll('table').forEach(t => {
-    const heads = [...t.querySelectorAll('thead th')].map(th => th.textContent.trim());
+    let heads = [...t.querySelectorAll('thead th')].map(th => th.textContent.trim()), headRow = null;
+    // a read-strip carries its headings in its first row (no thead); on a phone it stacks too, so words are not split mid-word
+    if (!heads.length && t.classList.contains('readstrip')) { const r0 = t.querySelector('tr'); if (r0 && r0.children.length > 1 && [...r0.children].every(c => c.tagName === 'TH')) { headRow = r0; heads = [...r0.children].map(th => th.textContent.trim()); } }
     if (!heads.length) return;
-    t.classList.add('stack');
-    t.querySelectorAll('tbody tr').forEach(tr => [...tr.children].forEach((td, i) => { if (heads[i]) td.setAttribute('data-label', heads[i]); }));
+    t.classList.add('stack'); if (headRow) headRow.classList.add('shead');
+    t.querySelectorAll('tbody tr').forEach(tr => { if (tr !== headRow) [...tr.children].forEach((td, i) => { if (heads[i]) td.setAttribute('data-label', heads[i]); }); });
   });
 }
 const examOf = q => lectureOf(q).exam;
@@ -339,7 +343,8 @@ function newsCard() {
 /* ---------- Topics ---------- */
 let FILT = {skill: 'all'};
 function vTopics() {
-  // the skill filter applies to the counts, both study buttons and the topic list; tiers and flags use the whole bank
+  // the skill filter applies to the counts, both study buttons, the tier buttons and the topic list; flags and the ladders
+  // (each one a chain across skills, climbed whole) use the whole bank
   const ex = active(), pool0 = examPool();
   if (FILT.skill !== 'all' && !pool0.some(q => q.skill === FILT.skill)) FILT.skill = 'all';   // a skill the other exam has, this one not
   const pool = FILT.skill === 'all' ? pool0 : pool0.filter(q => q.skill === FILT.skill);
@@ -372,12 +377,14 @@ function vTopics() {
     });
     return c + '</div>';
   };
-  const tiered = pool0.filter(q => q.level && !q.lowYield);
-  if (tiered.length) {
-    const ladders = [...new Set(tiered.filter(q => q.ladder).map(q => q.ladder))].filter(k => ladderQs(k).length > 1);
+  const tieredAll = pool0.filter(q => q.level && !q.lowYield), tiered = pool.filter(q => q.level && !q.lowYield);
+  const skName = FILT.skill === 'all' ? '' : (SKILL[FILT.skill] || {}).short || FILT.skill;
+  if (tieredAll.length) {
+    const ladders = [...new Set(tieredAll.filter(q => q.ladder).map(q => q.ladder))].filter(k => ladderQs(k).length > 1);
     h += `<div class="card"><b>Tiers, as he described them</b><p class="sub" style="margin:4px 0 8px">Tier 1: predict what a receptor does. Tier 2: two drugs together, the good and bad interactions. Tier 3: reverse a drug's effect. "A tier 3 question would require knowledge of tier 2 and 1."</p>
-      <div class="row">${[1, 2, 3].map(t => { const tq = tiered.filter(q => q.level === t), ta = acc(tq); return tq.length ? `<button class="btn ghost" data-tier="${t}">Tier ${t} · ${tq.length} questions${ta.pct == null ? '' : ' · ' + ta.pct + '%'}</button>` : ''; }).join('')}
-      ${ladders.length ? `<button class="btn" id="ladders">Climb the ${ladders.length} ladders (Tier 1 → 3)</button>` : ''}</div></div>`;
+      <div class="row">${[1, 2, 3].map(t => { const tq = tiered.filter(q => q.level === t), ta = acc(tq); return tq.length ? `<button class="btn ghost" data-tier="${t}">Tier ${t} · ${tq.length} ${esc(skName ? skName + ' ' : '')}question${tq.length === 1 ? '' : 's'}${ta.pct == null ? '' : ' · ' + ta.pct + '%'}</button>` : ''; }).join('')}
+      ${skName && !tiered.length ? `<span class="meta" style="margin:0">No tiered ${esc(skName)} questions.</span>` : ''}
+      ${ladders.length ? `<button class="btn" id="ladders">Climb the ${ladders.length} ladders (Tier 1 → 3)${skName ? ' · all skills' : ''}</button>` : ''}</div></div>`;
   }
   COURSE.exams.forEach(e => {
     const eq = QUESTIONS.filter(q => examOf(q) === e.id && (FILT.skill === 'all' || q.skill === FILT.skill));
@@ -392,7 +399,7 @@ function vTopics() {
   const nok = $('#newsok'); if (nok) nok.onclick = () => { store.set(NEWS_KEY, newsId(BUILD.changelog[0])); const c = $('#news'); if (c) c.remove(); };
   const nall = $('#newsall'); if (nall) nall.onclick = () => go('data');
   $('#all').onclick = () => startQuiz(shuffle(pool), 'All questions, one pass', 'pass');
-  document.querySelectorAll('[data-tier]').forEach(b => b.onclick = () => startQuiz(pool0.filter(q => q.level === +b.dataset.tier && !q.lowYield), 'Tier ' + b.dataset.tier, 'sr'));
+  document.querySelectorAll('[data-tier]').forEach(b => b.onclick = () => startQuiz(pool.filter(q => q.level === +b.dataset.tier && !q.lowYield), 'Tier ' + b.dataset.tier + (skName ? ' · ' + skName : ''), 'sr'));
   const ld = $('#ladders'); if (ld) ld.onclick = () => {
     // every ladder in turn, each from Tier 1 up
     const keys = shuffle([...new Set(pool0.filter(q => q.ladder).map(q => q.ladder))].filter(k => ladderQs(k).length > 1));
@@ -403,7 +410,8 @@ function vTopics() {
   document.querySelectorAll('[data-sk]').forEach(c => c.onclick = () => { FILT.skill = c.dataset.sk; vTopics(); });
   document.querySelectorAll('[data-topic]').forEach(b => b.onclick = () => {
     const list = QUESTIONS.filter(q => q.topic === b.dataset.topic && examOf(q) === +b.dataset.ex && (!b.dataset.sub || q.sub === b.dataset.sub) && (FILT.skill === 'all' || q.skill === FILT.skill));
-    startQuiz(list, (TOPIC[b.dataset.topic] || {}).name, 'sr');
+    const t = TOPIC[b.dataset.topic] || {}, sb = b.dataset.sub && (t.subs || []).find(x => x.id === b.dataset.sub);
+    startQuiz(list, sb ? `${t.name}: ${sb.name}` : t.name, 'sr');
   });
 }
 
@@ -660,9 +668,11 @@ function sessionLog() {
 }
 const solid = e => e.ok && e.conf !== 'guess';
 function sessStrip() {
-  const ses = sessionLog(); if (!ses.length) return '<span class="meta" id="sess" style="margin:0">This session: no answers yet</span>';
-  const ok = ses.filter(solid).length, last = ses.slice(-10);
-  return `<span class="meta" id="sess" style="margin:0"><span title="Solid: right and not marked &quot;I guessed&quot; (the count above includes guessed right answers)">This session: ${ok}/${ses.length} solid (${Math.round(100 * ok / ses.length)}%)</span> · last ${last.length}: <span class="sdots10">${last.map(e => `<i class="${solid(e) ? 'y' : 'n'}" title="${esc(e.id)}"></i>`).join('')}</span></span>`;
+  // the exam being studied only, as Weak spots counts it; a right answer marked "I guessed" is not solid
+  const ex = active(), ses = sessionLog().filter(e => byId[e.id] && examOf(byId[e.id]) === ex.id);
+  if (!ses.length) return `<span class="meta" id="sess" style="margin:0">This session (${esc(ex.name)}): no answers yet</span>`;
+  const ok = ses.filter(solid).length, last = ses.slice(-10), guessed = ses.filter(e => e.ok && e.conf === 'guess').length;
+  return `<span class="meta" id="sess" style="margin:0">This session (${esc(ex.name)}): ${ok}/${ses.length} solid (${Math.round(100 * ok / ses.length)}%, guesses not counted)${guessed ? ` · ${guessed} right but guessed` : ''} · last ${last.length}: <span class="sdots10">${last.map(e => `<i class="${solid(e) ? 'y' : 'n'}" title="${esc(e.id)}"></i>`).join('')}</span></span>`;
 }
 const refreshSess = () => { const el = $('#sess'); if (el) el.outerHTML = sessStrip(); };
 
@@ -673,6 +683,31 @@ const refreshSess = () => { const el = $('#sess'); if (el) el.outerHTML = sessSt
       ranked by how much is missing. Each area lists the concepts, the wrong option
       chosen most recently with why it is wrong, the idea to learn, where to read it,
       and a drill button. 3. By topic and by skill, folded away. */
+/* "The idea" in the review plan: the first one or two sentences of the teach, without
+   repeating the answer shown just above it. A teach that opens with the answer as a whole
+   sentence (a term's meaning, then "Twins poll: …") drops that sentence; one that opens with
+   the answer as its subject ("Phenoxybenzamine is the one irreversible …") reads "It is …", and one that
+   opens "Answer: definition" keeps the definition.
+   Nothing left, or only the answer again: no line. */
+const firstSentence = t => { const m = String(t || '').replace(/<[^>]+>/g, '').match(/^(.*?[.!?](\s|$)){1,2}/); const r = (m ? m[0] : String(t || '')).trim(); return r.length > 320 ? r.slice(0, 317) + '…' : r; };
+const bareTxt = x => String(x).toLowerCase().replace(/[^a-z0-9α-ω]+/g, '');
+function planIdea(q) {
+  let t = String(q.teach || '').replace(/<[^>]+>/g, '').trim();
+  const right = (q.options || []).filter(o => o.correct).map(o => o.t.trim());
+  if (right.length === 1) {
+    const a = right[0].replace(/[.!?]+$/, '');
+    if (a && t.toLowerCase().startsWith(a.toLowerCase())) {
+      const rest = t.slice(a.length);
+      if (!rest.trim() || /^[.!?]+(\s|$)/.test(rest)) t = rest.replace(/^[.!?]*\s*/, '');
+      else if (/^: \S/.test(rest)) t = rest.slice(2).replace(/^[a-z]/, c => c.toUpperCase());   // "Potentiation: one drug …" → "One drug …"
+      else if (/^ (is|was|are|binds|activates|blocks|does|has|acts|sits|penetrates|inhibits|stimulates|causes|lowers|raises|reduces|increases|prevents|releases|works)\b/.test(rest)) t = 'It' + rest;
+    }
+  }
+  const idea = t ? firstSentence(t) : '';
+  // what is left only restates the answer (a definition question): say it once
+  if (!idea || (right.length && bareTxt(idea).includes(bareTxt(right.join(' '))) && bareTxt(idea).length < bareTxt(right.join(' ')).length + 40)) return '';
+  return idea;
+}
 function vWeak() {
   const pool = examPool(), ex = active(), mineId = id => byId[id] && examOf(byId[id]) === ex.id;
   // everything on this page is about the exam being studied
@@ -712,14 +747,15 @@ function vWeak() {
     if (lastMiss && (!c.last || lastMiss.t > c.last.e.t)) c.last = {e: lastMiss, q};
   });
   const ranked = Object.values(areas).sort((x, y) => y.gap - x.gap);
-  const firstSentence = t => { const m = String(t || '').replace(/<[^>]+>/g, '').match(/^(.*?[.!?](\s|$)){1,2}/); const r = (m ? m[0] : String(t || '')).trim(); return r.length > 320 ? r.slice(0, 317) + '…' : r; };
   const cap1 = t => /^[a-z]/.test(t) ? t.charAt(0).toUpperCase() + t.slice(1) : t;   // "β drugs" stays β, not Greek capital Β
+  // a section's name without its page ("Guide 6: ", "Guide: ", "Reference: "), as its heading and its drill label
+  const areaName = n => cap1(String(n).replace(/^(Guide|Reference|Tell apart|Diagram) ?\d*: ?/, ''));
   const pickedText = (q, e) => { const p = [].concat(e.picked == null ? [] : e.picked); return p.map(i => q.options && q.options[i]).filter(Boolean); };
   if (ranked.length) {
     h += `<h3>What to review next</h3><p class="sub">${notSolid.length} question${notSolid.length === 1 ? '' : 's'} not yet solid, grouped by the section that teaches them, most missing first. Read the section, then drill its questions.</p>`;
     ranked.slice(0, 6).forEach((A, ai) => {
       const cs = Object.entries(A.concepts).sort((x, y) => y[1].qs.length - x[1].qs.length);
-      h += `<div class="card plan"><div class="row" style="justify-content:space-between;flex-wrap:wrap"><b>${ai + 1}. ${esc(cap1(A.name.replace(/^(Guide|Reference|Tell apart) ?\d*: ?/, '')))}</b><span class="meta" style="margin:0">${A.qs.length} question${A.qs.length === 1 ? '' : 's'} · ${cs.length} concept${cs.length === 1 ? '' : 's'}</span></div>`;
+      h += `<div class="card plan"><div class="row" style="justify-content:space-between;flex-wrap:wrap"><b>${ai + 1}. ${esc(areaName(A.name))}</b><span class="meta" style="margin:0">${A.qs.length} question${A.qs.length === 1 ? '' : 's'} · ${cs.length} concept${cs.length === 1 ? '' : 's'}</span></div>`;
       cs.slice(0, 4).forEach(([cid, c]) => {
         const q = (c.last && c.last.q) || c.qs[0], wrong = c.last ? pickedText(c.last.q, c.last.e).filter(o => !o.correct) : [];
         const right = (q.options || []).filter(o => o.correct).map(o => o.t);
@@ -727,9 +763,8 @@ function vWeak() {
         if (wrong.length) h += `<div class="pw"><b>You chose:</b> ${esc(wrong.map(o => o.t).join(' · '))}<br><span class="meta" style="margin:0">Why it is not the answer: ${esc(wrong.map(o => o.why || '').join(' '))}</span></div>`;
         else if (c.last && c.last.e.conf === 'guess') h += `<div class="pw"><b>You got it right but marked it a guess.</b></div>`;
         if (right.length) h += `<div class="pr"><b>Answer:</b> ${esc(right.join(' · '))}</div>`;
-        const idea = q.teach ? firstSentence(q.teach) : '', bare = x => String(x).toLowerCase().replace(/[^a-z0-9α-ω]+/g, '');
-        // a definition question's teach often restates its answer: say it once
-        if (idea && !(right.length && bare(idea).includes(bare(right.join(' '))) && bare(idea).length < bare(right.join(' ')).length + 40)) h += `<div class="pi"><b>The idea:</b> ${esc(idea)}</div>`;
+        const idea = planIdea(q);
+        if (idea) h += `<div class="pi"><b>The idea:</b> ${esc(idea)}</div>`;
         if (c.qs.length > 1) h += `<div class="meta" style="margin:2px 0 0">${c.qs.length} questions on this concept are not solid.</div>`;
         h += `</div>`;
       });
@@ -758,7 +793,7 @@ function vWeak() {
   $('#view').innerHTML = h;
   const ma = $('#missall'); if (ma) ma.onclick = () => startQuiz(notSolid, 'Weak spots', 'sr');
   const rs = $('#retrysess'); if (rs) rs.onclick = () => startQuiz(retryList, 'Missed this session', 'sr');
-  document.querySelectorAll('[data-area]').forEach(b => b.onclick = () => { const A = ranked[+b.dataset.area]; startQuiz(A.qs, A.name, 'sr'); });
+  document.querySelectorAll('[data-area]').forEach(b => b.onclick = () => { const A = ranked[+b.dataset.area]; startQuiz(A.qs, areaName(A.name), 'sr'); });
   document.querySelectorAll('[data-miss]').forEach(b => b.onclick = () => {
     const [t, k] = b.dataset.miss.split('|');
     const rows = t === 'By topic' ? byTopic : bySkill;
@@ -866,9 +901,9 @@ function vExam() {
     <div class="row" style="margin-top:10px"><label><input type="checkbox" id="scale" checked> Scale the clock to the length (${ex.minutes} min for the full paper)</label></div>
     <div class="row" style="margin-top:10px"><span class="meta" style="margin:0">Answer:</span>${layoutToggle()}</div>
     <div class="row" style="margin-top:12px"><button class="btn" id="startx">Start</button></div></div>`;
-  // attempts saved before papers named their exam show under both exams
-  const past = (S.exams || []).filter(e => !e.exam || e.exam === ex.id);
-  if (past.length) h += `<h3>Past attempts: ${esc(ex.name)}</h3><div class="card">${past.slice(-8).reverse().map(e => `<div class="topicrow"><span>${esc(new Date(+e.t).toLocaleString())}</span><span>${+e.score}/${+e.n} (${Math.round(100 * e.score / e.n)}%)</span></div>`).join('')}</div>`;
+  // a finished paper of the other exam is kept: say where it is
+  if (EX && EX.done && EX.exam && EX.exam !== ex.id) { const o = COURSE.exams.find(e => e.id === EX.exam); h += `<p class="sub" id="keptres">Your last ${esc(o ? o.name : 'other exam')} paper (${EX.score}/${EX.qs.length}) is kept: choose ${esc(o ? o.name : 'it')} above to see its result.</p>`; }
+  h += pastAttempts(ex);
   $('#view').innerHTML = h;
   let n = ex.questions || lens[0];
   document.querySelectorAll('[data-n]').forEach(c => c.onclick = () => { n = +c.dataset.n; document.querySelectorAll('[data-n]').forEach(x => { x.classList.toggle('on', x === c); x.setAttribute('aria-pressed', x === c); }); });
@@ -880,6 +915,11 @@ function vExam() {
     EX = {exam: ex.id, name: ex.name, qs: paper.map(q => q.id), i: 0, ans: {}, flag: {}, orders: paper.map(q => optOrder(q)), ends: Date.now() + mins * MIN, done: false};
     renderExam();
   };
+}
+/* The last eight papers of one exam, newest first; attempts saved before papers named their exam show under both. */
+function pastAttempts(ex) {
+  const past = (S.exams || []).filter(e => !e.exam || e.exam === ex.id);
+  return past.length ? `<h3>Past attempts: ${esc(ex.name)}</h3><div class="card" id="pastx">${past.slice(-8).reverse().map(e => `<div class="topicrow"><span>${esc(fmtDateTime(+e.t))}</span><span>${+e.score}/${+e.n} (${Math.round(100 * e.score / e.n)}%)</span></div>`).join('')}</div>` : '';
 }
 let TICK = null;
 const examTick = () => {
@@ -900,10 +940,12 @@ function askSubmit() {
   const left = EX.qs.filter(id => !examAnswered(id)).length;
   if (confirm(left ? `${left} unanswered. Submit anyway?` : 'Submit the exam?')) submitExam();
 }
+const xCount = n => `${n} of ${EX.qs.length}<span class="xlong"> answered</span>`;
 /* Every exam question on one page; answers are kept in EX.ans exactly as in the one-at-a-time view. */
 function renderExamAll() {
   const n = EX.qs.filter(examAnswered).length;
-  let h = `<div class="row allhead xhead" style="justify-content:space-between"><b id="xcount">${n} of ${EX.qs.length} answered</b><span class="row"><span class="timer" id="clock" role="timer"></span>${layoutToggle()}<button class="btn" id="submit">Submit exam</button></span></div>`;
+  // the layout chips sit above the sticky bar, so on a phone the bar is one row: count · clock · Submit
+  let h = `<div class="row" style="justify-content:flex-end;margin:0 0 6px">${layoutToggle()}</div><div class="row allhead xhead" style="justify-content:space-between"><b id="xcount">${xCount(n)}</b><span class="row"><span class="timer" id="clock" role="timer"></span><button class="btn" id="submit">Submit<span class="xlong"> exam</span></button></span></div>`;
   EX.qs.forEach((id, k) => {
     const q = byId[id], ord = EX.orders[k], a = EX.ans[id];
     h += `<div class="card qcard" id="xq${k}"><div class="row" style="justify-content:space-between"><b>Question ${k + 1}</b>${flagBtn(id)}</div><div class="stem">${esc(q.stem)}</div>${stemMedia(q)}`;
@@ -920,7 +962,7 @@ function renderExamAll() {
     const k = +b.dataset.k, q = byId[EX.qs[k]]; examPick(q, +b.dataset.o);
     const card = $('#xq' + k), a = EX.ans[q.id];
     card.querySelectorAll('[data-o]').forEach((o, m) => { const oi = +o.dataset.o, sel = q.multi ? (a || []).includes(oi) : a === oi; o.classList.toggle('sel', sel); if (q.multi) o.querySelector('.k').textContent = sel ? '☑' : '☐'; });
-    const n = EX.qs.filter(examAnswered).length; const hd = $('#xcount'); if (hd) hd.textContent = `${n} of ${EX.qs.length} answered`;
+    const n = EX.qs.filter(examAnswered).length; const hd = $('#xcount'); if (hd) hd.innerHTML = xCount(n);
   };
   $('#submit').onclick = askSubmit; $('#submit2').onclick = askSubmit;
   examTick();
@@ -972,11 +1014,14 @@ function examResult() {
   const qsx = EX.qs.map(id => byId[id]);
   const by = (fn, nm) => { const g = {}; qsx.forEach(q => { const k = fn(q); g[k] = g[k] || {n: 0, ok: 0}; g[k].n++; if (exRight(q, EX.ans[q.id])) g[k].ok++; });
     return Object.entries(g).sort((x, y) => (x[0] === 'No tier') - (y[0] === 'No tier') || x[0].localeCompare(y[0], undefined, {numeric: true})).map(([k, v]) => `<tr><td>${esc(nm(k))}</td><td>${v.ok}/${v.n}</td><td>${Math.round(100 * v.ok / v.n)}%</td></tr>`).join(''); };
-  let h = `<h2>Exam result: ${EX.score}/${EX.qs.length} (${Math.round(100 * EX.score / EX.qs.length)}%)</h2>${EX.name ? `<p class="sub">${esc(EX.name)}</p>` : ''}
+  // switching exam here opens the other exam's start page; this result stays until "New exam" and shows again on switching back
+  const exr = COURSE.exams.find(e => e.id === EX.exam);
+  let h = `<h2>Exam result: ${EX.score}/${EX.qs.length} (${Math.round(100 * EX.score / EX.qs.length)}%)</h2><div class="row" style="margin:-4px 0 8px">${examSwitch()}</div>${EX.name ? `<p class="sub">${esc(EX.name)}</p>` : ''}
     <div class="row"><button class="btn" id="newx">New exam</button><button class="btn ghost" id="missx">Drill the ones I missed</button></div>
     <h3>By topic</h3><div class="tablewrap"><table><thead><tr><th>Topic</th><th>Right</th><th>%</th></tr></thead><tbody>${by(q => q.topic, k => (TOPIC[k] || {}).name || k)}</tbody></table></div>
     <h3>By skill</h3><div class="tablewrap"><table><thead><tr><th>Skill</th><th>Right</th><th>%</th></tr></thead><tbody>${by(q => q.skill, k => (SKILL[k] || {}).label || k)}</tbody></table></div>
     ${qsx.some(q => q.level) ? `<h3>By tier</h3><div class="tablewrap"><table><thead><tr><th>Tier</th><th>Right</th><th>%</th></tr></thead><tbody>${by(q => q.level ? 'Tier ' + q.level : 'No tier', k => k)}</tbody></table></div>` : ''}
+    ${exr ? pastAttempts(exr) : ''}
     <h3>Review</h3>`;
   qsx.forEach((q, k) => {
     const a = EX.ans[q.id], ok = exRight(q, a), pickedSet = new Set([].concat(a == null ? [] : a));
@@ -1366,6 +1411,35 @@ function xBack(target) {
   if (!b) { b = document.createElement('button'); b.id = 'xback'; b.type = 'button'; b.className = 'btn'; b.textContent = '↑ Back to the explanation'; document.body.appendChild(b); }
   b.onclick = () => { if (document.body.contains(target)) scrollToEl(target); xBack(null); };
 }
+/* Phone: the Exam 1 figures are drawn on a 360-wide canvas with labels down to 7.5–8.5 units, which a
+   375 px phone shows at 6–7 px. Under 560 px each picture gets the minimum width at which its smallest
+   label is 10 px and scrolls sideways inside its own box (never the page), with a hint under it.
+   Pictures whose labels are already 10 px or more (the Exam 2 figures) are left as they are. */
+const PHONE = window.matchMedia ? matchMedia('(max-width:560px)') : null;
+const FIG_MIN_PX = 10;
+const swipeHint = box => { const h = box.nextElementSibling; if (h && h.classList.contains('swipe') && box.clientWidth) h.hidden = box.scrollWidth <= box.clientWidth + 1; };
+function fitFigs(root) {
+  if (!PHONE || !PHONE.matches || !root) return;
+  root.querySelectorAll('.fig .svgx > svg:not([data-fit])').forEach(svg => {
+    svg.setAttribute('data-fit', '1');
+    const vb = svg.viewBox && svg.viewBox.baseVal ? svg.viewBox.baseVal.width : 0; if (!vb) return;
+    let min = Infinity;
+    svg.querySelectorAll('text').forEach(t => { if (t.textContent.trim()) { const f = parseFloat(getComputedStyle(t).fontSize); if (f > 0 && f < min) min = f; } });
+    if (!(min < Infinity) || vb * FIG_MIN_PX / min <= 300) return;   // fits a phone as drawn
+    svg.style.setProperty('--minw', Math.ceil(vb * FIG_MIN_PX / min) + 'px');
+    const box = svg.parentElement; box.classList.add('fit');
+    if (!(box.nextElementSibling && box.nextElementSibling.classList.contains('swipe'))) box.insertAdjacentHTML('afterend', '<div class="swipe" hidden>↔ Scroll the picture sideways to see all of it, or pinch to zoom.</div>');
+    swipeHint(box);
+  });
+}
+const allHints = () => document.querySelectorAll('.svgx.fit').forEach(swipeHint);
+if (window.MutationObserver) {
+  let pend = false;
+  new MutationObserver(() => { if (pend || !PHONE || !PHONE.matches) return; pend = true; requestAnimationFrame(() => { pend = false; fitFigs($('#view')); }); }).observe($('#view'), {childList: true, subtree: true});
+}
+window.addEventListener('resize', () => { fitFigs($('#view')); allHints(); });
+// a figure inside a closed section has no width until the section opens
+document.addEventListener('toggle', e => { if (e.target.open && e.target.querySelectorAll) e.target.querySelectorAll('.svgx.fit').forEach(swipeHint); }, true);
 /* A question's or term's figure; the static GPCR figure brings the step-through with it. */
 const figHTML = key => (typeof FIG === 'function' && key) ? FIG(key) + (key === 'gpcr-steps' ? FIG('gpcr-anim') : '') : '';
 function expandFigs(html) {
