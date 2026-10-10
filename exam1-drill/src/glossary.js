@@ -889,7 +889,7 @@ const TERMS = [
  src:'both'},
 
 {id:'adrenal-medulla', term:'Adrenal medulla', lecture:'L07', group:'Autonomic layout',
- def:'A sympathetic exception: the preganglionic fiber releases acetylcholine onto a nicotinic receptor on the adrenal medulla instead of an adrenergic receptor, and the gland releases epinephrine and norepinephrine (about 80% to 20%) into the blood. Circulating epinephrine is how the non-innervated β2 receptors are activated (bronchial dilation, vasodilation in skeletal muscle).',
+ def:'A sympathetic exception: the preganglionic fiber releases acetylcholine onto a neuronal nicotinic (Nn) receptor on the adrenal medulla, with no postganglionic neuron releasing norepinephrine, and the gland releases epinephrine and norepinephrine (about 80% to 20%) into the blood. Circulating epinephrine is how the non-innervated β2 receptors are activated (bronchial dilation, vasodilation in skeletal muscle).',
  hook:'A patient without adrenal glands cannot bronchodilate well: the lungs have no sympathetic nerves.',
  gist:'Acetylcholine on its nicotinic receptor sends epinephrine into the blood to reach β2.',
  scene:'A dog chases a runner; a gland sitting on top of the kidney pours epinephrine into the blood, and the airways open although no sympathetic nerve reaches the bronchi.',
@@ -983,7 +983,7 @@ const TERMS = [
  src:'both'},
 
 {id:'alpha1', term:'α1 (alpha-1 adrenergic receptor)', lecture:'L10', group:'Autonomic receptors',
- def:'The adrenergic receptor coupled to Gq: phospholipase C → inositol trisphosphate (IP3) → Ca++ → smooth-muscle contraction. Sites: blood vessels (systemic arteries set afterload, veins set preload), eye (pupil dilation), nose, and the vessels of the sinus and prostate (“I see and smell bloody urine”). Agonist phenylephrine constricts; antagonist prazosin dilates.',
+ def:'The adrenergic receptor coupled to Gq: phospholipase C → inositol trisphosphate (IP3) → Ca++ → smooth-muscle contraction. Sites (“I see and smell bloody urine”: eye, nose, blood vessels, urethra): blood vessels (systemic arteries set afterload, veins set preload; the slide adds the vessels of the sinus and prostate), eye (pupil dilation), nose and urethra. Agonist phenylephrine constricts; antagonist prazosin dilates.',
  gist:'Gq on vascular smooth muscle: calcium up, vessels constrict, pupils dilate.',
  scene:'Phenylephrine nasal spray shrinks the swollen vessels in the nose and also widens the pupil, both through raised calcium in smooth muscle.',
  confuse:['alpha2','m3','beta2'],
@@ -1048,7 +1048,7 @@ const TERMS = [
  src:'both'},
 
 {id:'cholinesterase-inhibitor', term:'Cholinesterase inhibitor (indirect antagonist)', lecture:'L08', group:'Cholinergic drugs',
- def:'A drug that acts somewhere other than the receptor, upstream or downstream of it. His example: acetylcholinesterase inhibitors (the -stigmines, donepezil, rivastigmine) bind the enzyme that breaks down acetylcholine, so acetylcholine rises at every synapse where it is released, becomes more potent at its receptors and gives DUMBBELSS. They reverse curare-like drugs.',
+ def:'A drug that blocks acetylcholinesterase, the enzyme that breaks down acetylcholine (the -stigmines, donepezil, rivastigmine). The slides file it as an indirect antagonist because it acts somewhere other than the receptor (upstream of it), yet acetylcholine rises at every synapse where it is released, becomes more potent at its receptors and gives DUMBBELSS. It reverses curare-like drugs.',
  hook:'Despite the name it raises acetylcholine: the enzyme, not the receptor, is antagonized.',
  gist:'Acts off the receptor: blocks the enzyme, so acetylcholine builds up everywhere.',
  scene:'Neostigmine is given to a hunter paralyzed by a curare-tipped arrow; more acetylcholine stays in the synapse and outcompetes curare at the muscle.',
@@ -1140,7 +1140,7 @@ const TERMS = [
  src:'both'},
 
 {id:'mao-a', term:'MAO-A (monoamine oxidase A)', lecture:'L10', group:'Adrenergic drugs',
- def:'The form of monoamine oxidase in the gut (slide: brain, liver and GI tract) that breaks down norepinephrine and dopamine, including dietary tyramine. Non-selective inhibitors that block MAO-A and MAO-B (phenelzine, irreversible) raise stored norepinephrine for depression but make tyramine-rich food dangerous (hypertensive crisis).',
+ def:'The form of monoamine oxidase in the brain, liver and GI tract (he calls it the gut form) that breaks down norepinephrine and dopamine; in the gut it also breaks down dietary tyramine. Non-selective inhibitors that block MAO-A and MAO-B (phenelzine, irreversible) raise stored norepinephrine for depression but make tyramine-rich food dangerous (hypertensive crisis).',
  gist:'The gut form: breaks down norepinephrine, dopamine and dietary tyramine.',
  scene:'Phenelzine stops the enzyme in the intestine from breaking down the tyramine in aged, fermented food, and the blood pressure climbs to a crisis.',
  confuse:['mao-b','cheese-effect'],
