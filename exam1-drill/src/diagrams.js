@@ -28,7 +28,7 @@ const FIG = (() => {
     cap.forEach(t => { if (/^<(ol|ul)\b/.test(t)) { if (open) { out += '</ul>'; open = false; } out += t; } else { if (!open) { out += '<ul>'; open = true; } out += `<li>${t}</li>`; } });
     return out + (open ? '</ul>' : '');
   };
-  const wrap = (inner, cap, h = H) => `<figure class="fig"><svg viewBox="0 0 ${W} ${h}" role="img" aria-label="${capText(cap).replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim().replace(/"/g, '&quot;')}"><defs><marker id="arw" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--muted)"/></marker></defs>${inner}</svg><figcaption>${capHTML(cap)}</figcaption></figure>`;
+  const wrap = (inner, cap, h = H, w = W) => `<figure class="fig"><svg viewBox="0 0 ${w} ${h}"${w < W ? ' style="max-width:400px;margin:0 auto"' : ''} role="img" aria-label="${capText(cap).replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim().replace(/"/g, '&quot;')}"><defs><marker id="arw" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--muted)"/></marker></defs>${inner}</svg><figcaption>${capHTML(cap)}</figcaption></figure>`;
   const F = {};
 
   F['drc-basic'] = () => wrap(axes('log dose', '% of maximal response') +
@@ -143,7 +143,7 @@ const FIG = (() => {
       g += `<rect data-k="${s}-bind" x="${x - 18}" y="34" width="36" height="38" rx="5" fill="var(--figA)" fill-opacity="0.15" stroke="var(--figA)"/>` + t(`${s}-b1`, x, 51, 'binding') + t(`${s}-b2`, x, 61, 'domain');
       g += `<rect data-k="${s}-stem" x="${x - 3}" y="72" width="6" height="18" fill="var(--figA)" fill-opacity="0.6"/>`;
       g += `<rect data-k="${s}-tail" x="${x - 18}" y="90" width="36" height="38" rx="5" fill="var(--figB)" fill-opacity="${st.on ? 0.3 : 0.1}" stroke="var(--figB)"/>` + t(`${s}-k1`, x, 107, 'kinase') + t(`${s}-k2`, x, 117, 'domain');
-      if (st.p) { const px = s === 'L' ? x - 27 : x + 27; [100, 120].forEach((y, i) => { g += `<circle data-k="${s}-p${i}" cx="${px}" cy="${y}" r="7" fill="var(--figD)" fill-opacity="0.3" stroke="var(--figD)"/>` + t(`${s}-pt${i}`, px, y + 3, 'P', 'cl d'); }); }
+      if (st.p) { const px = s === 'L' ? x - 27 : x + 27; [100, 120].forEach((y, i) => { g += `<circle data-k="${s}-p${i}" cx="${px}" cy="${y}" r="7" fill="var(--figD)" fill-opacity="0.3" stroke="var(--figD)"/>` + t(`${s}-pt${i}`, px, y + 3, 'P', 'lbl sm'); }); }
       return g;
     };
     const base = `<rect data-k="mem" x="0" y="72" width="360" height="18" fill="var(--chip)"/>` + t('o', 4, 40, 'outside', 'lbl xs', 'start') + t('m', 4, 84, 'membrane', 'lbl xs', 'start') + t('i', 4, 112, 'inside the cell', 'lbl xs', 'start');
@@ -255,19 +255,23 @@ const FIG = (() => {
      one at a time through the Back / Next / Play buttons (data-anim). steps =
      [[caption, inner, tag?], ...]; h = panel height; the caption of the active
      step is drawn in the band at the bottom of the panel. */
-  const wrapLines = (t, n = 76) => { const out = []; let cur = ''; t.split(' ').forEach(w => { if ((cur + ' ' + w).trim().length > n) { out.push(cur.trim()); cur = w; } else cur += ' ' + w; }); out.push(cur.trim()); if (out.length > 3) { out.length = 3; out[2] = out[2].replace(/.{2}$/, '…'); } return out; };
-  const stepper = (key, title, steps, h, cap, footer) => {
-    let g = `<text class="title" x="180" y="11" text-anchor="middle">${title}</text>`;
-    steps.forEach((st, i) => {
-      const lines = wrapLines(st[0]);
-      g += `<g class="st${i === 0 ? ' on' : ''}" data-step="${i + 1}">${st[1]}<text class="lbl sm capt" x="6" y="${h - 12 - lines.length * 10}" text-anchor="start">Step ${i + 1} of ${steps.length}${st[2] ? ' · ' + st[2] : ''}</text>${lines.map((l, k) => `<text class="lbl xs capt" x="6" y="${h - 2 - (lines.length - 1 - k) * 10}" text-anchor="start">${l}</text>`).join('')}</g>`;
-    });
+  // o.w: canvas width (Exam 2 figures use a 300-wide canvas so their text stays ≥ 11 px on a phone);
+  // o.band: the height of the old in-picture caption band, taken off the picture now that the
+  // step's text is HTML under it (Exam 1 figures were drawn with that band; Exam 2 pass 0)
+  const stepper = (key, title, steps, h, cap, footer, o = {}) => {
+    const w = o.w || W, band = o.band == null ? 44 : o.band;
+    let g = `<text class="title" x="${w / 2}" y="${w < W ? 14 : 11}" text-anchor="middle"${w < W ? ' style="font-size:13px"' : ''}>${title}</text>`;
+    steps.forEach((st, i) => { g += `<g class="st${i === 0 ? ' on' : ''}" data-step="${i + 1}">${st[1]}</g>`; });
+    // the step's own text, as HTML under the picture: all steps stacked in one grid cell (the box keeps
+    // the height of the longest, so the buttons do not jump); stepTo shows one and cross-fades them
+    const caps = `<div class="stcap" aria-live="polite" style="display:grid;margin:6px 2px 2px;font-size:14px;line-height:1.4;color:var(--ink)">${steps.map((st, i) =>
+      `<p data-i="${i}" aria-hidden="${i ? 'true' : 'false'}" style="grid-area:1/1;margin:0${i ? ';visibility:hidden' : ''}"><b>Step ${i + 1} of ${steps.length}</b>${st[2] ? ` · <i>${st[2]}</i>` : ''}<br>${st[0]}</p>`).join('')}</div>`;
     // Controls (same pattern for every step-through figure): Back and Next wrap around, Replay
     // replays the move into the current step, Play all runs from step 1 and stops at the last,
     // and a dot per step jumps to it. The motion itself is done in app.js (stepTo).
     const dots = steps.map((st, i) => `<button class="sdot${i === 0 ? ' on' : ''}" data-go="dot" data-i="${i}" aria-label="Go to step ${i + 1}"></button>`).join('');
     const controls = `<div class="row anim" data-anim="${key}" style="margin:6px 0 2px"><button class="btn ghost" data-go="-1">◀ Back</button><button class="btn ghost" data-go="1">Next ▶</button><button class="btn ghost" data-go="replay">↻ Replay step</button><button class="btn ghost" data-go="play">▶ Play all</button><span class="sdots">${dots}</span><span class="meta" style="margin:0">${footer || ''}</span></div>`;
-    return wrap(g, cap, h).replace('</svg><figcaption>', '</svg>' + controls + '<figcaption>');
+    return wrap(g, cap, h - band, w).replace('</svg><figcaption>', '</svg>' + caps + controls + '<figcaption>');
   };
 
   /* Drug–drug at one receptor. Top: five receptors in the membrane at one
@@ -729,7 +733,7 @@ const FIG = (() => {
         ['Fate 2: the receptor is degraded in a lysosome and is gone.', membrane() + `<circle cx="84" cy="100" r="20" class="box"/>` + cell(71, 80, { lig: null, act: 0 }) + arr(104, 104, 130, 104) + `<rect x="132" y="94" width="52" height="22" rx="4" fill="var(--figB)" fill-opacity="0.15" stroke="var(--figB)"/><text class="cl b" x="158" y="108" text-anchor="middle">lysosome</text>`],
         ['Fewer receptors at the surface: the agonist needs more dose (curve right) and, when receptors run short, cannot reach its old maximum. Hours to days.', band(6, 40, 184) + xs(6, 34, 'outside') + cell(40, 20, { lig: 'ag', act: 1 }) + cell(110, 20, { lig: null, act: 0 }) + xs(96, 80, 'two receptors left of five', 'middle') + P.axes('log dose', ['dashed = before', 'solid = after down-regulation']) + P.curve(0, 100, 0, 'a', true) + P.curve(1, 55, 0, 'b') + P.arrowH(0, 1, 50)]
       ], 176, ['<ol><li>Stimulation continues; β-arrestin stays on the tail.</li><li>β-arrestin pulls the receptor into a coated pit.</li><li>Endocytosis: the receptor is inside a vesicle.</li><li>Recycled back to the surface, or</li><li>degraded in a lysosome.</li><li>Fewer surface receptors: agonist less potent, Emax can fall.</li></ol>',
-        '<b>Time course:</b> "that takes time" (seconds to days on the slide). <b>Result:</b> tolerance (opioids, Afrin-type decongestants); "analogous to the effects of irreversible acting antagonists": curve RIGHT, then Emax down.'], 'Six steps; the receptor leaves the membrane.');
+        '<b>Time course:</b> "that takes time" (seconds to days on the slide). <b>Result:</b> tolerance (opioids, Afrin-type decongestants); "analogous to the effects of irreversible acting antagonists": curve RIGHT, then Emax down.'], 'Six steps; the receptor leaves the membrane.', {band: 18});
     };
 
     // regulation: static halves and one step-through each
@@ -1148,326 +1152,505 @@ const FIG = (() => {
       '<b>Why it matters for drugs:</b> a β-blocker and a muscarinic antagonist act on the same cAMP from opposite sides.'], 156);
   };
 
-  /* Exam 2 process figures (keys 'e2-…'). Sources: Autonomic Nervous System.pdf,
-     PCOL-NMJ_PCOL_2026s_pptx.pdf, PCOL-Cholinergic-26s.pdf, PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf,
-     PCOL-RAAS_26s.pdf and the 9/30–10/8 transcripts (notes/L07.md … L12.md). Every
-     shape that persists across steps carries a data-k, so stepTo glides it. */
+  /* Exam 2 figures (keys 'e2-…'). Sources: Autonomic Nervous System.pdf, PCOL-NMJ_PCOL_2026s_pptx.pdf,
+     PCOL-Cholinergic-26s.pdf, PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf, PCOL-RAAS_26s.pdf and the
+     9/30–10/8 transcripts (notes/L07.md … L12.md). Drawn on a 300-wide canvas with no text under
+     11 px, so on a 375 px phone (canvas shown about 307 px wide) every label stays ≥ 11 px; a step's
+     words are HTML under the picture (stepper). One process per figure. Every shape that persists
+     across steps carries a data-k, so stepTo glides it; data-o stages a chain link by link. */
   const E2 = (() => {
-    const F4 = {};
-    const T = (k, x, y, t, cls = 'lbl xs', a = 'middle', st = '') => `<text${k ? ` data-k="${k}"` : ''} class="${cls}" x="${x}" y="${y}" text-anchor="${a}"${st ? ` style="${st}"` : ''}>${t}</text>`;
-    const title = t => `<text class="title" x="180" y="11" text-anchor="middle">${t}</text>`;
-    const tint = (c, o = 0.18) => `fill="var(--fig${c})" fill-opacity="${o}" stroke="var(--fig${c})"`;
-    const box = (k, x, y, w, h, c, o) => `<rect${k ? ` data-k="${k}"` : ''} x="${x}" y="${y}" width="${w}" height="${h}" rx="4" ${c ? tint(c, o) : 'class="box"'} stroke-width="1.2"/>`;
-    const A = (k, x1, y1, x2, y2, dashed) => `<path${k ? ` data-k="${k}"` : ''} class="arrow" d="M${x1} ${y1} L${x2} ${y2}"${dashed ? ' stroke-dasharray="3 2"' : ''}/>`;
-    const DR = 'font-size:9.5px';                                   // drug names
-    const drug = (k, x, y, t, cls = 'b', a = 'middle') => T(k, x, y, t, `cl ${cls}`, a, DR);
-    const blk = (k, x, y) => `<rect data-k="${k}-sq" class="lig b" x="${x - 6}" y="${y - 6}" width="12" height="12" rx="2"/><path data-k="${k}-x" d="M${x - 3.5} ${y - 3.5} L${x + 3.5} ${y + 3.5} M${x + 3.5} ${y - 3.5} L${x - 3.5} ${y + 3.5}" stroke="#fff" stroke-width="1.6"/>`;
-    const dot = (k, x, y, cls = 'a', r = 3.2) => `<circle data-k="${k}" class="lig ${cls}" cx="${x}" cy="${y}" r="${r}"/>`;
-    const panel = (lines, y0 = 204, k = 'p') => lines.map((t, i) => T(`${k}${i}`, 6, y0 + i * 10, t, 'lbl xs', 'start')).join('');
+    const F4 = {}, W2 = 300;
+    const FS = {l: 'font-size:12px;font-weight:600;fill:var(--ink)', n: 'font-size:12px;fill:var(--ink)', m: 'font-size:11px;fill:var(--ink)', s: 'font-size:11px;fill:var(--muted)'};
+    // T(key, x, y, text, kind, anchor, order): kind l (label), n (12 px), m (11 px ink), s (11 px muted),
+    // or a colour letter a–e (bold, figure colour; inkMix darkens it for contrast), e.g. 'b' or 'b11'
+    const T = (k, x, y, t, kind = 'n', a = 'middle', o) => {
+      const c = /^([a-e])(\d+)?$/.exec(kind);
+      return `<text${k ? ` data-k="${k}"` : ''}${o ? ` data-o="${o}"` : ''} class="${c ? 'cl ' + c[1] : 'e2' + kind}" x="${x}" y="${y}" text-anchor="${a}" style="${c ? `font-size:${c[2] || 12}px;font-weight:700` : FS[kind]}">${t}</text>`;
+    };
+    const tint = (c, op = 0.18) => `fill="var(--fig${c})" fill-opacity="${op}" stroke="var(--fig${c})"`;
+    const box = (k, x, y, w, h, c, op, o) => `<rect${k ? ` data-k="${k}"` : ''}${o ? ` data-o="${o}"` : ''} x="${x}" y="${y}" width="${w}" height="${h}" rx="5" ${c ? tint(c, op) : 'class="box"'} stroke-width="1.2"/>`;
+    const A = (k, x1, y1, x2, y2, dashed, o) => `<path${k ? ` data-k="${k}"` : ''}${o ? ` data-o="${o}"` : ''} class="arrow" d="M${x1} ${y1} L${x2} ${y2}"${dashed ? ' stroke-dasharray="4 3"' : ''}/>`;
+    const blk = (k, x, y, o) => `<rect data-k="${k}-sq"${o ? ` data-o="${o}"` : ''} class="lig b" x="${x - 7}" y="${y - 7}" width="14" height="14" rx="2"/><path data-k="${k}-x"${o ? ` data-o="${o}"` : ''} d="M${x - 4} ${y - 4} L${x + 4} ${y + 4} M${x + 4} ${y - 4} L${x - 4} ${y + 4}" stroke="#fff" stroke-width="1.8"/>`;
+    const dot = (k, x, y, c = 'a', r = 3.5, o) => `<circle data-k="${k}"${o ? ` data-o="${o}"` : ''} class="lig ${c}" cx="${x}" cy="${y}" r="${r}"/>`;
+    const band = (k, y, h = 14, x = 4, w = 292) => `<rect data-k="${k}" x="${x}" y="${y}" width="${w}" height="${h}" fill="var(--chip)" stroke="var(--line)" stroke-width="0.8"/>`;
+    // a receptor in a membrane: body 20 × 28 from (cx − 10, y), pocket on top (up) or bottom (down)
+    const rcp = (k, cx, y, c, on, down) => `<rect data-k="${k}" x="${cx - 10}" y="${y}" width="20" height="28" rx="5" ${on === 'off' ? 'fill="var(--chip)" stroke="var(--muted)"' : tint(c, on ? 0.34 : 0.12)} stroke-width="1.3"/><path data-k="${k}-p" class="pocket" d="M${cx - 5} ${down ? y + 28 : y} a5 5 0 0 ${down ? 1 : 0} 10 0 Z"/>`;
+    const title = t => `<text class="title" x="150" y="14" text-anchor="middle" style="font-size:13px">${t}</text>`;
+    const wrap2 = (inner, cap, h) => wrap(inner, cap, h, W2);
+    const step2 = (key, ttl, steps, h, cap, footer) => stepper(key, ttl, steps, h, cap, footer, {w: W2, band: 0});
 
-    /* ---------- 1. Layout of the somatic and autonomic pathways (ANS slides 12, 23, 29–30, 35; 9/30, 10/1) ---------- */
+    /* ---------- Layout of the somatic and autonomic pathways (ANS slides 12, 23, 29–30, 35; 9/30, 10/1) ---------- */
     F4['e2-ans-layout'] = () => {
-      const nerve = (x1, x2, y, my) => `<line x1="${x1}" y1="${y}" x2="${x2}" y2="${y}" stroke="var(--ink)" stroke-width="${my ? 2.4 : 1}"/>`;
-      const chip = (x, y, w, t, c) => `<rect x="${x}" y="${y - 7}" width="${w}" height="14" rx="3" ${tint(c, 0.22)} stroke-width="1"/>` + T('', x + w / 2, y + 3.5, t, 'lbl sm');
-      const nt = (x, y, t) => T('', x - 2, y - 4, t, 'lbl xs', 'end');
-      const organ = (y, lines) => `<rect class="box" x="280" y="${y - 12}" width="76" height="24" rx="4"/>` + lines.map((t, i) => T('', 318, y + 3 - (lines.length - 1) * 4.5 + i * 9, t)).join('');
-      const head = (y, t, c) => T('', 26, y - 18, t, `cl ${c}`, 'start', 'font-size:10px');
-      const gang = (x, y) => T('', x + 11, y + 15, 'ganglion');
-      let g = title('Somatic vs autonomic: transmitter and receptor');
-      g += `<rect x="6" y="28" width="10" height="222" rx="3" fill="var(--chip)" stroke="var(--line)"/>` + T('', 11, 24, 'CNS');
-      // somatic
-      let y = 48;
-      g += head(y, 'Somatic (voluntary): one myelinated neuron', 'd') + nerve(16, 248, y, 1) + nt(250, y, 'ACh') + chip(250, y, 26, 'Nm', 'D') + organ(y, ['skeletal muscle']);
-      // parasympathetic
-      y = 96;
-      g += head(y, 'Parasympathetic: long pre, short post, 1:1', 'c') + nerve(16, 198, y, 1) + nt(200, y, 'ACh') + chip(200, y, 22, 'Nn', 'C') + gang(200, y) + nerve(222, 248, y) + nt(250, y, 'ACh') + chip(250, y, 26, 'M', 'C') + organ(y, ['heart (M2);', 'most organs (M3)']);
-      // sympathetic
-      y = 144;
-      g += head(y, 'Sympathetic: short pre, long post, 1:20', 'b') + nerve(16, 58, y, 1) + nt(60, y, 'ACh') + chip(60, y, 22, 'Nn', 'B') + gang(60, y) + nerve(82, 248, y) + nt(250, y, 'NE') + chip(250, y, 26, 'α / β', 'B') + organ(y, ['heart β1;', 'vessels α1, β2']);
-      // adrenal medulla
-      y = 192;
-      g += head(y, 'Adrenal medulla (sympathetic exception)', 'e') + nerve(16, 198, y, 1) + nt(200, y, 'ACh') + chip(200, y, 22, 'Nn', 'E') +
-        `<rect class="box" x="226" y="${y - 12}" width="46" height="24" rx="4"/>` + T('', 249, y - 1.5, 'adrenal') + T('', 249, y + 7.5, 'medulla') + A('', 272, y, 282, y) +
-        T('', 286, y - 6, 'into the blood:', 'lbl xs', 'start') + T('', 286, y + 4, 'epinephrine ~80%', 'lbl xs', 'start') + T('', 286, y + 14, 'NE ~20%', 'lbl xs', 'start');
-      // salivary glands
-      y = 240;
-      g += head(y, 'Salivary glands (sympathetic exception)', 'a') + nerve(16, 58, y, 1) + nt(60, y, 'ACh') + chip(60, y, 22, 'Nn', 'A') + gang(60, y) + nerve(82, 248, y) + nt(250, y, 'ACh') + chip(250, y, 26, 'M3', 'A') + organ(y, ['salivary glands']);
-      return wrap(g, ['<b>Somatic:</b> one myelinated neuron from the CNS to skeletal muscle; acetylcholine (ACh) acts on Nm (nicotinic <i>muscle</i>).',
+      const nerve = (x1, x2, y, my) => `<line x1="${x1}" y1="${y}" x2="${x2}" y2="${y}" stroke="var(--ink)" stroke-width="${my ? 3 : 1.2}"/>`;
+      const nt = (x, y, t) => T('', x - 3, y - 6, t, 's', 'end');
+      const chip = (x, y, t, c) => `<rect x="${x}" y="${y - 10}" width="30" height="20" rx="4" ${tint(c, 0.24)} stroke-width="1.1"/>` + T('', x + 15, y + 4.5, t, 'l');
+      const organ = (y, lines) => `<rect class="box" x="214" y="${y - 16}" width="82" height="32" rx="5"/>` + lines.map((t, i) => T('', 255, y + 4 - (lines.length - 1) * 6.5 + i * 13, t, 'm')).join('');
+      const head = (y, t, c) => T('', 18, y - 22, t, c, 'start');
+      let g = title('Somatic vs autonomic: transmitter, receptor');
+      g += `<rect x="4" y="22" width="9" height="270" rx="3" fill="var(--chip)" stroke="var(--line)"/>` + T('', 8, 304, 'CNS', 's', 'start');
+      let y = 52;
+      g += head(y, 'Somatic: one myelinated neuron', 'd') + nerve(13, 180, y, 1) + nt(180, y, 'ACh') + chip(180, y, 'Nm', 'D') + organ(y, ['skeletal', 'muscle']);
+      y = 108;
+      g += head(y, 'Parasympathetic: long pre, short post', 'c') + nerve(13, 112, y, 1) + nt(112, y, 'ACh') + chip(112, y, 'Nn', 'C') + T('', 127, y + 22, 'ganglion', 's') +
+        nerve(142, 180, y) + T('', 161, y + 18, '1:1', 's') + nt(180, y, 'ACh') + chip(180, y, 'M', 'C') + organ(y, ['heart: M2', 'others: M3']);
+      y = 164;
+      g += head(y, 'Sympathetic: short pre, long post', 'b') + nerve(13, 50, y, 1) + nt(50, y, 'ACh') + chip(50, y, 'Nn', 'B') + T('', 65, y + 22, 'ganglion', 's') +
+        nerve(80, 180, y) + T('', 130, y + 18, '1:20', 's') + nt(180, y, 'NE') + chip(180, y, 'α/β', 'B') + organ(y, ['heart: β1', 'vessels: α1, β2']);
+      y = 220;
+      g += head(y, 'Adrenal medulla (SNS exception)', 'e') + nerve(13, 112, y, 1) + nt(112, y, 'ACh') + chip(112, y, 'Nn', 'E') +
+        `<rect class="box" x="150" y="${y - 16}" width="60" height="32" rx="5"/>` + T('', 180, y - 2.5, 'adrenal', 'm') + T('', 180, y + 10.5, 'medulla', 'm') + A('', 211, y, 222, y) +
+        T('', 226, y - 9, 'into blood:', 'm', 'start') + T('', 226, y + 4, 'epi ~80%', 'm', 'start') + T('', 226, y + 17, 'NE ~20%', 'm', 'start');
+      y = 276;
+      g += head(y, 'Salivary glands (SNS exception)', 'a') + nerve(13, 50, y, 1) + nt(50, y, 'ACh') + chip(50, y, 'Nn', 'A') + T('', 65, y + 22, 'ganglion', 's') +
+        nerve(80, 180, y) + nt(180, y, 'ACh') + chip(180, y, 'M3', 'A') + organ(y, ['salivary', 'glands']);
+      return wrap2(g, ['<b>Somatic:</b> one myelinated neuron from the CNS to skeletal muscle; acetylcholine (ACh) acts on Nm (nicotinic <i>muscle</i>).',
         '<b>Both autonomic divisions:</b> ACh on Nn (nicotinic <i>neuronal</i>) in the ganglion. Parasympathetic: long preganglionic fiber, ganglion near the organ, 1:1, ACh on muscarinic receptors (M2 heart, M3 everywhere else). Sympathetic: short preganglionic fiber, 1:20 ("you can control more at once"), norepinephrine (NE) on α or β.',
         '<b>Adrenal medulla:</b> the sympathetic fiber releases ACh onto Nn and the medulla releases epinephrine and NE "at about like 80 to 20 ratio" into the blood; that is how the non-innervated β2 in the lungs is reached (10/1).',
-        '<b>Salivary glands:</b> a sympathetic fiber releases ACh onto M3, so both divisions cause salivation (10/1, poll 1).',
-        'Thick line = myelinated (somatic and preganglionic); thin = unmyelinated postganglionic. Autonomic Nervous System.pdf slides 12, 23, 29–30, 35; transcripts 9/30, 10/1.'], 264);
+        '<b>Salivary glands:</b> "on the salivary gland, we also have a sympathetic fiber that is actually releasing acetylcholine and activating a muscarinic receptor" (10/1), so both divisions cause salivation (poll 1).',
+        'Thick line = myelinated (somatic and preganglionic); thin = unmyelinated postganglionic. Autonomic Nervous System.pdf slides 12, 23, 29–30, 35; transcripts 9/30, 10/1.'], 312);
     };
 
-    /* ---------- 2. Cholinergic synapse and its drugs (NMJ slides 13–19, 33–50; Cholinergic slides 9, 17–21; 10/1, 10/5) ---------- */
-    F4['e2-chol-synapse-anim'] = () => {
-      const VES = [[136, 48], [172, 52], [208, 48]];
-      const IN = [[-4, -3], [4, -3], [0, 4]];
-      const CLEFT = [[150, 92], [168, 102], [186, 92], [204, 102], [222, 92], [218, 112]];
+    /* ---------- Receptor maps (ANS slide 4 quick table; slides 13, 24, 27, 31, 34; Adrenergic slides 17, 21, 40, 42, 44) ---------- */
+    const card = (y, h, c, r, gp, l1, l2) => `<rect x="4" y="${y}" width="292" height="${h}" rx="6" ${tint(c, 0.06)} stroke-width="1"/><rect x="4" y="${y}" width="66" height="${h}" rx="6" ${tint(c, 0.24)} stroke-width="1"/>` +
+      T('', 37, y + h / 2 - 1, r, 'l') + T('', 37, y + h / 2 + 13, gp, 's') + T('', 78, y + h / 2 - 2, l1, 'l', 'start') + T('', 78, y + h / 2 + 13, l2, 'm', 'start');
+    F4['e2-receptor-map'] = () => {
+      let g = title('Adrenergic receptors: α and β');
+      g += T('', 150, 34, 'Gq ↑Ca++ (+) · Gi ↓cAMP (−) · Gs ↑cAMP (+)', 's');
+      [['C', 'α1', 'Gq', 'eye, brain, blood vessels', 'vasoconstriction, mydriasis'],
+       ['B', 'α2', 'Gi', 'presynaptic nerve, brain', '↓ NE release, sedation'],
+       ['A', 'β1', 'Gs', 'heart, kidney', '↑ HR and force, renin release'],
+       ['A', 'β2', 'Gs', 'smooth muscle: lungs, vessels', 'bronchodilation, vasodilation'],
+       ['A', 'β3', 'Gs', 'bladder smooth muscle', 'relaxes it: urine retained']].forEach((r, i) => { g += card(44 + i * 50, 44, ...r); });
+      g += T('', 150, 308, 'β2: typically not innervated (epinephrine)', 's');
+      return wrap2(g, ['<b>His quick table</b> (Autonomic Nervous System.pdf slide 4, "Courtesy of Andrea Vasquez"): Gq (α1: PLC → IP3 → ↑Ca++), Gi (α2: AC inhibited → ↓cAMP), Gs (β1, β2, β3: AC → ↑cAMP).',
+        '<b>Sites</b> as he says them: α1 eye, brain, blood vessels; α2 presynaptic SNS neurons and brain; β1 heart (and kidney); β2 smooth muscle (lungs), typically not innervated; β3 bladder smooth muscle.',
+        '<b>Effects</b> (slides 31, 34–35; Adrenergic slides 17, 21, 40, 42, 44; 10/1, 10/6, 10/7): agonist effect shown; an antagonist does the opposite.',
+        '<b>On the exam:</b> "if you want to write the quick stable in your test, I have no problem with that when you scratch paper ... Got to do from memory" (10/8).'], 316);
+    };
+    F4['e2-musc-map'] = () => {
+      let g = title('Muscarinic receptors and DUMBBELSS');
+      [['C', 'M1', 'Gq', 'brain (CNS)', '↑Ca++: stimulation, emesis'],
+       ['B', 'M2', 'Gi', 'heart', '↓cAMP: bradycardia'],
+       ['C', 'M3', 'Gq', 'everywhere else', '↑Ca++: smooth muscle, glands']].forEach((r, i) => { g += card(24 + i * 46, 40, ...r); });
+      g += T('', 150, 178, 'DUMBBELSS: what a muscarinic agonist does', 'l');
+      [['D', 'diarrhea', 'GI · M3'], ['U', 'urination', 'bladder · M3'], ['M', 'miosis', 'eye · M3'], ['B', 'bradycardia', 'heart · M2'], ['B', 'bronchial constriction', 'lungs · M3'],
+       ['E', 'emesis', 'CNS · M1'], ['L', 'lacrimation', 'glands · M3'], ['S', 'salivation', 'glands · M3'], ['S', 'stimulation (CNS)', 'brain · M1']].forEach(([l, w, o], i) => {
+        const y = 198 + i * 16;
+        g += T('', 12, y, l, 'b', 'middle') + T('', 26, y, w, 'n', 'start') + T('', 294, y, o, 's', 'end');
+      });
+      g += T('', 150, 352, 'atropine (antagonist): anti-DUMBBELSS', 'b11');
+      return wrap2(g, ['<b>Muscarinic receptors</b> (Autonomic Nervous System.pdf slides 4, 24; Cholinergic slide 9): M1 brain and M3 everywhere else are Gq (↑Ca++, excitatory); M2 heart is Gi (↓cAMP). "M1 in the brain, M2 in the heart, M3 everywhere else."',
+        '<b>DUMBBELSS</b> (slides 24, 27; Cholinergic slides 13–14): diarrhea, urination, miosis, bradycardia (M2), bronchial constriction, emesis (M1, CNS), lacrimation, salivation, stimulation of the brain (M1). Every other letter is M3.',
+        '<b>Antagonists</b> (atropine, Cholinergic slides 19, 32): the opposite, anti-DUMBBELSS: tachycardia (M2), dry mouth, constipation, mydriasis, bronchial dilation, CNS effects.',
+        '<b>Nicotinic</b> Nn and Nm are ion channels with no G protein; muscarinic agonists do not bind them (10/5).'], 360);
+    };
+    /* β blockers by receptor (Adrenergic slides 54, 56–59; 10/7 "MAN"; the twins poll) */
+    F4['e2-beta-blockers'] = () => {
+      let g = title('β blockers: which receptors each blocks');
+      const cx = [214, 248, 282];
+      ['β1', 'β2', 'α1'].forEach((r, i) => { g += T('', cx[i], 36, r, 'l'); });
+      const rows = [['a', 'β1-selective (MAN)', 'metoprolol, atenolol,', 'nebivolol: lungs spared', [1, 0, 0]],
+        ['b', 'β1 + β2 (non-selective)', 'propranolol, pindolol', 'β2 block: bronchospasm', [1, 1, 0]],
+        ['e', 'β1 + β2 + α1', 'carvedilol, labetalol', 'α1 block: vasodilation', [1, 1, 1]]];
+      rows.forEach(([c, h, d1, d2, bl], i) => {
+        const y = 44 + i * 76;
+        g += `<rect x="4" y="${y}" width="292" height="68" rx="6" class="box"/>` + T('', 12, y + 19, h, c, 'start') + T('', 12, y + 38, d1, 'n', 'start') + T('', 12, y + 56, d2, 'm', 'start');
+        bl.forEach((b, j) => { g += b ? blk('', cx[j], y + 36) : `<rect x="${cx[j] - 9}" y="${y + 26}" width="18" height="20" rx="4" fill="var(--chip)" stroke="var(--muted)" stroke-width="1.1"/>`; });
+      });
+      g += T('', 150, 290, 'All of them block β1: ↓ HR, ↓ CO, ↓ renin', 'm') + T('', 150, 306, '■ = blocked · □ = left alone', 's');
+      return wrap2(g, ['<b>"All beta blockers ⇒ β1"</b> (Adrenergic slide 54): every β blocker slows the heart, lowers cardiac output and lowers renin (β1 on the juxtaglomerular cells, slides 56–57).',
+        '<b>MAN</b> (10/7): metoprolol, atenolol and nebivolol are β1-selective; propranolol (the prototype) and pindolol (a partial agonist) block β1 and β2; carvedilol and labetalol block β1, β2 and α1. "It will be silly for you to miss a question exam but not knowing which of the beta blockers is the selective or not."',
+        '<b>Why it matters</b> (slide 59): blocking β2 closes the airways (asthma: pick metoprolol, the twins poll); blocking α1 adds vasodilation (↓TPR). Stopping any of them suddenly: rebound hypertension (up-regulation).'], 314);
+    };
+
+    /* ---------- Baroreceptor reflex on standing (ANS slides 49–52; 10/1); prazosin first dose (Adrenergic slide 30; 10/6) ---------- */
+    F4['e2-baroreflex-anim'] = () => {
+      const POS = {lie: [[46, 200], [62, 210], [78, 200], [112, 197], [132, 211], [152, 197]],
+        even: [[56, 94], [72, 94], [56, 110], [72, 110], [57, 150], [71, 150]],
+        pool: [[57, 160], [71, 160], [57, 172], [71, 172], [57, 184], [71, 184]]};
+      const body = (lie, blood, fire, extra) => {
+        let g = '';
+        if (lie) g += `<circle data-k="head" cx="22" cy="205" r="13" class="box"/>` + `<rect data-k="torso" x="37" y="191" width="58" height="28" rx="6" class="box"/>` +
+          `<rect data-k="leg1" x="96" y="192" width="70" height="11" rx="4" class="box"/><rect data-k="leg2" x="96" y="207" width="70" height="11" rx="4" class="box"/>` +
+          `<line data-k="floor" x1="6" y1="226" x2="172" y2="226" stroke="var(--muted)" stroke-width="1.2"/>`;
+        else g += `<circle data-k="head" cx="64" cy="42" r="13" class="box"/>` + `<rect data-k="torso" x="46" y="60" width="36" height="60" rx="6" class="box"/>` +
+          `<rect data-k="leg1" x="51" y="122" width="12" height="70" rx="4" class="box"/><rect data-k="leg2" x="65" y="122" width="12" height="70" rx="4" class="box"/>` +
+          `<line data-k="floor" x1="24" y1="196" x2="104" y2="196" stroke="var(--muted)" stroke-width="1.2"/>` + T('heart', 64, 80, 'heart', 's') + T('veins', 64, 212, 'leg veins', 's');
+        POS[blood].forEach(([x, y], i) => { g += dot(`bl${i}`, x, y, 'b', 3.5); });
+        if (!lie) { g += `<circle data-k="baro" cx="64" cy="58" r="4" ${tint('E', 0.5)} stroke-width="1.2"/>`; for (let i = 0; i < 3; i++) if (i < fire) g += `<line data-k="f${i}" x1="${74 + i * 6}" y1="52" x2="${74 + i * 6}" y2="62" stroke="var(--figE)" stroke-width="2"/>`; }
+        return g + (extra || '');
+      };
+      const chips = (pns, sns) => `<rect data-k="pns" x="118" y="150" width="82" height="22" rx="5" ${pns === 'on' ? tint('C', 0.24) : 'fill="var(--chip)" stroke="var(--muted)"'} stroke-width="1.2"/>` + T('pns-t', 159, 165.5, pns === 'on' ? 'PNS on' : 'PNS off', pns === 'on' ? 'l' : 's') +
+        `<rect data-k="sns" x="208" y="150" width="82" height="22" rx="5" ${sns === 'on' ? tint('B', 0.26) : 'fill="var(--chip)" stroke="var(--muted)"'} stroke-width="1.2"/>` + T('sns-t', 249, 165.5, sns === 'on' ? 'SNS on' : 'SNS off', sns === 'on' ? 'l' : 's');
+      const line = (k, y, t, kind = 'n', o) => T(k, 118, y, t, kind, 'start', o);
+      const chain = n => [line('c1', 46, 'gravity: blood pools', 'n', 0), line('c1b', 62, 'in the leg veins', 'n', 0), line('c2', 80, '→ venous return ↓', 'n', 1), line('c3', 98, '→ filling ↓ → SV, BP ↓', 'n', 2),
+        line('c4', 122, 'baroreceptors stretched', 'n', 0), line('c4b', 138, 'less: firing ↓', 'e', 1)].slice(0, n).join('');
+      const steps = [
+        ['Lying down (supine), blood is spread evenly and the parasympathetic system is in control: "I\'m resting and digesting".',
+          body(true, 'lie', 3) + chips('on') + line('c0', 46, 'lying down: blood', 'n') + line('c0b', 62, 'spread evenly', 'n'), 'Gravity vs. Baroreceptors: supine'],
+        ['Standing up: gravity pools blood in the leg veins, so less returns to the heart, the ventricles fill less, and stroke volume and blood pressure fall.',
+          body(false, 'pool', 3) + chips('on') + chain(4), 'Upright position'],
+        ['The baroreceptors (pink dot at the neck: carotid sinus, nerve IX; aortic arch, nerve X) are stretched less, so they fire less (fewer pink ticks). Less firing = more sympathetic activity.',
+          body(false, 'pool', 1) + chips('on') + chain(6), 'Baroreceptors Firing & BP'],
+        ['The CNS answers: "let\'s shut it down parasympathetic, let\'s enhance the sympathetic."',
+          body(false, 'pool', 1) + chips('off', 'on') + chain(6), 'Baroreceptor reflex'],
+        ['The sympathetic system squeezes the veins and constricts the vessels (α1) and the heart beats faster and harder (β1): blood returns to the heart and the brain, and the pressure recovers.',
+          body(false, 'even', 3) + chips('off', 'on') + line('c5', 192, 'veins squeezed (α1),', 'c', 0) + line('c6', 208, 'heart faster (β1): BP ↑', 'c', 1), 'SVR, venous capacitance and return, SV ↑'],
+        ['With prazosin (first dose) α1 is blocked: the veins cannot be squeezed, blood stays in the legs and the patient faints (orthostatic hypotension, syncope); the heart still speeds up: reflex tachycardia.',
+          body(false, 'pool', 1, blk('praz', 64, 140)) + chips('off', 'on') + line('c5', 192, 'prazosin: α1 blocked,', 'b', 0) + line('c6', 208, 'BP stays low: syncope', 'b', 1) + line('c7', 224, 'β1 on: reflex tachycardia', 'm', 2), 'Prazosin\'s ADR: 1st dose effect']
+      ];
+      return step2('e2-baro', 'Standing up: the baroreceptor reflex', steps, 232,
+        ['<b>Gravity vs. baroreceptors</b> (Autonomic Nervous System.pdf slide 52, 10/1): supine → upright: peripheral pooling ↑, venous return ↓, ventricle filling ↓, stroke volume and BP ↓ → baroreceptors stretched less, fire less → parasympathetic off, sympathetic on → SVR, venous return and SV ↑.',
+         '<b>His words:</b> "the barrels are gonna be less stretched. They\'re going to fire less. We\'re going to shut off the parasympathetic, and we\'re going to activate the sympathetics ... that\'s going to cause the squeezing of the blood in my veins" (10/1). Slide 52 prints a single ↓ beside "SNS and PNS"; his spoken version is drawn.',
+         '<b>Firing and BP</b> (slides 50–51): ↑ baroreceptor firing = SNS activity ↓; least firing at decreasing pressure.',
+         '<b>Prazosin</b> (Adrenergic slide 30; 10/6): "first dose orthostatic hypotension ... your blood vessel muscles are relaxed and you can\'t control them through the barrels", plus "the reflex tachycardia".'],
+        'Six steps.');
+    };
+
+    /* ---------- Neuromuscular junction (NMJ slides 12–19, 27–29, 39, 46–50; 10/1, 10/5) ---------- */
+    F4['e2-nmj-anim'] = () => {
+      const VES = [[112, 64], [150, 68], [188, 64]], IN = [[-4, -3], [4, -3], [0, 4]];
+      const CLEFT = [[122, 104], [146, 114], [166, 100], [184, 116], [134, 126], [170, 128]];
       const scene = st => {
-        let g = `<rect data-k="mem" x="6" y="140" width="348" height="14" fill="var(--chip)" opacity="0.7"/>` + T('post', 6, 168, 'postsynaptic cell', 'lbl xs', 'start');
-        g += `<rect data-k="term" class="box" x="104" y="18" width="152" height="56" rx="10"/>` + T('term-t', 180, 29, 'cholinergic nerve terminal');
+        let g = `<rect data-k="term" class="box" x="70" y="26" width="160" height="60" rx="12"/>` + T('term-t', 150, 42, 'motor nerve terminal', 's');
         VES.forEach(([x, y], i) => { g += `<circle data-k="v${i}" cx="${x}" cy="${y}" r="11" fill="var(--bg)" stroke="var(--muted)" stroke-width="1"/>`; });
-        IN.forEach(([dx, dy], j) => { g += dot(`v2d${j}`, VES[2][0] + dx, VES[2][1] + dy, 'a', 2.6); });
-        // the six ACh molecules of vesicles 0 and 1: inside, released, bound, or gone
+        IN.forEach(([dx, dy], j) => { g += dot(`v2d${j}`, VES[2][0] + dx, VES[2][1] + dy, 'a', 2.8); });
+        g += band('mem', 150);
+        const open = st.open;
+        g += `<rect data-k="n-l" x="${open ? 102 : 105}" y="138" width="10" height="40" rx="3" ${tint('A', open ? 0.36 : 0.14)} stroke-width="1.2"/><rect data-k="n-r" x="${open ? 123 : 120}" y="138" width="10" height="40" rx="3" ${tint('A', open ? 0.36 : 0.14)} stroke-width="1.2"/>`;
         for (let i = 0; i < 6; i++) {
           let p = st.rel ? CLEFT[i] : [VES[i < 3 ? 0 : 1][0] + IN[i % 3][0], VES[i < 3 ? 0 : 1][1] + IN[i % 3][1]];
-          if (st.bound && i === 0) p = [124.5, 123];
-          if (st.bound && i === 1) p = [135.5, 123];
-          if (st.bound && !st.atr && i === 5) p = [246, 131];
-          if (st.split && i !== 2 && i !== 4) continue;
-          g += dot(`a${i}`, p[0], p[1], 'a', st.rel ? 3.2 : 2.6);
+          if (st.bound && i === 0) p = [110, 140];
+          if (st.bound && i === 1) p = [127, 140];
+          if (st.split && (i === 0 || i === 1 || i === 3)) continue;
+          if (st.split && i === 5) p = [210, 112];
+          g += dot(`a${i}`, p[0], p[1], 'a', st.rel ? 3.4 : 2.8);
         }
-        if (st.more) [[160, 116], [196, 118], [234, 104], [176, 84]].forEach(([x, y], i) => { g += dot(`m${i}`, x, y); });
-        // Ca++ channel
-        g += `<rect data-k="ca" x="250" y="56" width="8" height="14" rx="2" ${tint('D', st.rel && !st.bot ? 0.6 : 0.2)} stroke-width="1"/>`;
-        if (st.rel && !st.bound && !st.split) g += T('ca-t', 246, 70, 'Ca++ in', 'lbl xs', 'end');
-        // nicotinic receptor: an ion channel (two halves that open)
-        const open = st.bound && !st.split;
-        g += `<rect data-k="n-l" x="${open ? 117 : 120}" y="126" width="9" height="40" rx="3" ${tint('A', open ? 0.32 : 0.14)} stroke-width="1.2"/><rect data-k="n-r" x="${open ? 134 : 131}" y="126" width="9" height="40" rx="3" ${tint('A', open ? 0.32 : 0.14)} stroke-width="1.2"/>`;
-        if (open && st.na) g += T('na', 148, 164, 'Na+ in', 'lbl xs', 'start');
-        g += T('n-lab1', 130, 178, 'nicotinic: ion channel') + T('n-lab2', 130, 188, 'Nn ganglia, brain · Nm muscle');
-        // muscarinic receptor: a GPCR with an open pocket
-        const mOn = st.bound && !st.atr && !st.split;
-        g += `<rect data-k="m" x="236" y="130" width="20" height="32" rx="5" ${tint('A', mOn ? 0.32 : 0.12)} stroke-width="1.2"/><path data-k="m-p" class="pocket" d="M241 130 a5 5 0 0 0 10 0 Z"/>`;
-        g += T('m-lab1', 246, 178, 'muscarinic: GPCR') + T('m-lab2', 246, 188, 'M1, M3 Gq · M2 Gi');
-        // acetylcholinesterase in the cleft
-        g += `<path data-k="ache" class="box" d="M296 116 L312 104 L328 116 L312 128 Z"/>` + T('ache-t', 312, 119, 'AChE');
-        if (st.split) g += T('prod', 312, 138, 'choline + acetate');
-        // drug sites
+        if (st.more) [[150, 96], [176, 138], [96, 132], [160, 140]].forEach(([x, y], i) => { g += dot(`m${i}`, x, y); });
+        g += `<rect data-k="ca" x="216" y="70" width="9" height="16" rx="2" ${tint('D', st.ca ? 0.7 : 0.22)} stroke-width="1"/>`;
+        if (st.ca) g += T('ca-t', 228, 98, 'Ca++ in', 'm', 'start');
+        if (open) g += A('na', 117.5, 128, 117.5, 186) + T('na-t', 138, 190, 'Na+ in', 'm', 'start');
+        g += T('n-t', 117.5, 204, 'Nm (ion channel)', 'l') + T('mus-l', 8, 230, 'skeletal muscle:', 's', 'start') + T('mus', 98, 230, st.mus || 'at rest', st.musK || 's', 'start');
+        g += `<path data-k="ache" class="box" d="M188 124 L212 108 L236 124 L212 140 Z"/>` + T('ache-t', 212, 128, 'AChE', 'l');
+        if (st.split) g += T('prod', 294, 100, 'choline + acetate', 's', 'end');
         const d = st.drug || '';
-        const all = d === 'all';
-        if (d === 'bot' || all) g += blk('bot', 112, 64) + drug('bot-t', 98, 46, 'botulinum toxin', 'b', 'end') + T('bot-n', 98, 57, 'cuts SNARE', 'lbl xs', 'end');
-        if (d === 'nic' || all) g += drug('var-t', 114, 104, 'varenicline', 'c', 'end') + drug('sux-t', 114, 116, 'succinylcholine', 'c', 'end') + drug('cur-t', 114, 128, 'curare-like', 'b', 'end') + `<line data-k="nic-l" class="dash" x1="116" y1="114" x2="121" y2="125"/>`;
-        if (d === 'ache' || d === 'op' || all) g += blk('ache-b', 312, 96);
-        if (d === 'ache' || all) g += drug('neo-t', 354, 38, 'neostigmine', 'b', 'end') + drug('phy-t', 354, 48, 'physostigmine', 'b', 'end') + drug('riv-t', 354, 58, 'rivastigmine', 'b', 'end') + drug('don-t', 354, 68, 'donepezil', 'b', 'end');
-        if (d === 'op' || all) g += drug('op-t', 354, 82, 'organophosphates', 'b', 'end') + drug('pam-t', 354, 137, '+ pralidoxime', 'e', 'end');
-        if (d === 'op') g += T('cov', 290, 98, 'covalent', 'lbl xs', 'end');
-        if (d === 'atr' || all) g += blk('atr', 246, 129) + drug('atr-t', 232, 122, 'atropine', 'b', 'end');
-        return g + panel(st.p || []);
-      };
-      const steps = [
-        ['Acetylcholine (ACh) is made and stored in vesicles in the nerve terminal. Across the cleft wait the receptors and the enzyme that breaks ACh down (AChE).',
-          scene({ p: ['Receptors for ACh: nicotinic (ion channels: Nn, Nm), muscarinic (GPCRs: M1, M2, M3).', 'AChE (acetylcholinesterase) sits in the cleft.'] }), 'NM (1) At Rest'],
-        ['An action potential opens Ca++ channels; Ca++ enters and the vesicles release ACh into the cleft (release is Ca++ dependent).',
-          scene({ rel: 1, p: ['5 steps of neurotransmission: synthesized, stored (vesicles), released (Ca++ dependent),', 'bind (post- and/or presynaptic), removed (transporters, enzymes).'] }), 'NM (2) ACh Release'],
-        ['ACh binds both receptor families: the nicotinic channel opens (Na+ in, skeletal muscle contracts) and the muscarinic GPCR is activated. Only ACh itself activates both.',
-          scene({ rel: 1, bound: 1, na: 1, p: ['Nicotinic: Nn (autonomic ganglia, brain), Nm (skeletal muscle).', 'Muscarinic: M1 brain, M2 heart, M3 everywhere else.', 'The muscarinic agonist drugs (carbachol, pilocarpine…) bind only muscarinic receptors.'] }), 'NM (3) Activation'],
-        ['AChE splits ACh into choline + acetate; the channel closes and the signal ends.',
-          scene({ rel: 1, split: 1, p: ['Two drug targets at this synapse: Direct (the receptor) and Indirect (AChE).'] }), 'NM (4) Recovery'],
-        ['Botulinum toxin is an endopeptidase that cuts the SNARE proteins, so the vesicle cannot release ACh: the muscle relaxes.',
-          scene({ drug: 'bot', bot: 1, p: ['Botulinum toxin: presynaptic; SNARE proteins are its substrate → ↓ ACh release.', 'Effect: muscle relaxation (cosmetic, excessive drooling or sweating).'] }), 'BOTOX Summary'],
-        ['At nicotinic receptors: varenicline is a partial agonist at α4/β2 Nn (brain); succinylcholine opens Nm (depolarizing); curare-like drugs block Nm. Both Nm drugs paralyze.',
-          scene({ rel: 1, bound: 1, drug: 'nic', p: ['Varenicline: high-affinity partial agonist at the α4/β2 Nn receptor in the CNS.', 'Succinylcholine: Nm agonist (depolarizing) → paralysis; reaches the ganglia at high doses.', 'Curare-like (rocuronium, vecuronium): competitive, reversible Nm antagonists → paralysis.'] }), 'NMJ Agents: Both Drugs Causes Paralysis'],
-        ['Reversible AChE inhibitors stop the breakdown, so more ACh stays in the cleft at every cholinergic synapse: DUMBBELSS.',
-          scene({ rel: 1, bound: 1, more: 1, drug: 'ache', p: ['Neostigmine, pyridostigmine: do not cross the BBB (myasthenia gravis; reverse curare).', 'Physostigmine: crosses into the CNS (antidote for atropine poisoning).', 'Rivastigmine, donepezil: cross the BBB (Alzheimer’s disease).'] }), 'Cholinesterase Inhibitors'],
-        ['Organophosphates bind AChE covalently: irreversible, so ACh piles up (DUMBBELSS, then paralysis). Pralidoxime reactivates the enzyme; atropine blocks the muscarinic effects.',
-          scene({ rel: 1, bound: 1, more: 1, drug: 'op', p: ['Organophosphates: malathion, parathion; nerve gas (soman, sarin, tabun).', 'Pralidoxime (2-PAM): cholinesterase reactivator, dephosphorylates the enzyme.', 'Atropine: muscarinic antagonist for the DUMBBELSS (anti-DUMBBELSS).'] }), 'Antidote for Overdose of Organophosphate AChE inhibitor'],
-        ['Atropine competitively blocks M1, M2 and M3 (reversible, non-selective): anti-DUMBBELSS. It has no affinity for nicotinic receptors, so ACh still opens Nn and Nm.',
-          scene({ rel: 1, bound: 1, na: 1, atr: 1, drug: 'atr', p: ['Atropine: dry mouth, constipation, tachycardia (M2), bronchial dilation, mydriasis, CNS (M1).', 'It does not cause paralysis: Nm is untouched.'] }), 'Muscarinic Antagonist’s MOA'],
-        ['Every site at once: release (botulinum toxin), the nicotinic receptor, the muscarinic receptor (atropine) and the enzyme (AChE inhibitors, organophosphates).',
-          scene({ rel: 1, bound: 1, atr: 1, drug: 'all', p: ['Red = blocks that site. Green = agonist at the receptor (varenicline, succinylcholine).', 'Pink = pralidoxime, which reactivates AChE after an organophosphate.', 'Blocking AChE raises ACh: an "indirect antagonist" of the enzyme, a cholinergic effect overall.'] }), 'Recap']
-      ];
-      return stepper('e2-chol', 'The cholinergic synapse and where each drug acts', steps, 296,
-        ['<b>Physiology</b> (NMJ slides 13–17): ACh stored in vesicles → released when Ca++ enters → binds Nm (channel opens, Na+ in) → split by AChE into choline + acetate.',
-         '<b>Release:</b> botulinum toxin cuts SNARE (slides 46–50). <b>Nicotinic:</b> varenicline (α4/β2 Nn partial agonist), succinylcholine (Nm agonist), curare-like drugs (Nm competitive antagonists) (slides 7–8, 19, 27).',
-         '<b>AChE:</b> reversible -stigmines and donepezil; organophosphates irreversible, reversed by pralidoxime (slides 33–44). <b>Muscarinic:</b> atropine, a competitive M1–M3 antagonist (Cholinergic slides 17–21).',
-         'His trap: "they think that our muscarinic agonists can also bind to the nicotinic receptors, and they don\'t" (10/5). Transcripts 10/1, 10/5.'],
-        'Ten steps.');
-    };
-
-    /* ---------- 3. Adrenergic synapse and its drugs (Adrenergic slides 8–15, 21–24, 31–32; 10/6) ---------- */
-    F4['e2-adr-synapse-anim'] = () => {
-      const VES = [232, 72];
-      const IN = [[-7, -5], [1, -6], [8, 0], [-8, 4], [0, 4], [6, 8]];
-      const CLEFT = [[150, 120], [172, 130], [192, 118], [212, 128], [176, 112], [196, 140]];
-      const scene = st => {
-        let g = `<rect data-k="mem" x="6" y="152" width="348" height="14" fill="var(--chip)" opacity="0.7"/>` + T('post', 6, 178, 'effector cell', 'lbl xs', 'start');
-        g += `<rect data-k="term" class="box" x="64" y="18" width="208" height="80" rx="10"/>` + T('term-t', 168, 29, 'sympathetic nerve terminal');
-        g += T('syn', 142, 44, 'tyrosine → L-Dopa → dopamine → NE') + A('syn-a', 220, 46, 227, 55);
-        g += `<circle data-k="ves" cx="${VES[0]}" cy="${VES[1]}" r="15" fill="var(--bg)" stroke="var(--muted)" stroke-width="1"/>`;
-        // NE molecules
-        const extra = st.coc || st.amph || st.maoi || st.mirt;
-        for (let i = 0; i < 6; i++) {
-          let p = st.rel ? CLEFT[i] : [VES[0] + IN[i][0], VES[1] + IN[i][1]];
-          if (st.bound && i === 0) p = [140, 141];
-          if (st.bound && i === 3) p = [214, 141];
-          if (st.bound && i === 2) p = st.clon || st.mirt ? [158, 126] : [246, 117];
-          if (st.rm && i === 1) p = [140, 112];
-          if (st.rm && i === 5) p = [292, 124];
-          if (st.rm && i === 4) p = [VES[0] - 2, VES[1] + 1];
-          g += dot(`n${i}`, p[0], p[1], 'c', st.rel ? 3.2 : 2.6);
-        }
-        if (extra) [[160, 106], [228, 112], [184, 146], [156, 136]].forEach(([x, y], i) => { g += dot(`x${i}`, x, y, 'c'); });
-        // MAO, NET, presynaptic α2
-        g += box('mao', 78, 60, 32, 18) + T('mao-t', 94, 72.5, 'MAO', 'lbl sm');
-        g += box('net', 124, 90, 32, 16, 'C', 0.2) + T('net-t', 140, 101.5, 'NET', 'lbl sm');
-        g += `<rect data-k="a2" x="236" y="92" width="20" height="24" rx="5" ${tint('E', st.bound && !st.mirt ? 0.32 : 0.14)} stroke-width="1.2"/><path data-k="a2-p" class="pocket" d="M241 116 a5 5 0 0 1 10 0 Z"/>` + T('a2-t', 262, 108, 'α2 (Gi)', 'cl e', 'start');
-        // postsynaptic α1 and β
-        const rec = (k, x, on) => `<rect data-k="${k}" x="${x - 10}" y="140" width="20" height="28" rx="5" ${tint('A', on ? 0.32 : 0.12)} stroke-width="1.2"/><path data-k="${k}-p" class="pocket" d="M${x - 5} 140 a5 5 0 0 0 10 0 Z"/>` + (on ? A(`${k}-arr`, x, 170, x, 182) : '');
-        g += rec('r1', 140, st.bound) + rec('rb', 214, st.bound);
-        g += T('r1-t', 140, 194, 'α1 (Gq): ↑Ca++') + T('rb-t', 214, 194, 'β1, β2 (Gs): ↑cAMP');
-        // COMT
-        g += box('comt', 300, 116, 44, 16) + T('comt-t', 322, 127.5, 'COMT', 'lbl sm') + T('met', 354, 144, 'inactive metabolites', 'lbl xs', 'end');
-        // drugs
-        const d = st.drug || '', all = d === 'all';
-        if (d === 'coc' || all) g += blk('coc', 140, 116) + drug('coc-t', 126, 120, 'cocaine', 'b', 'end');
-        if (d === 'amph' || all) g += drug('amph-t', 166, 70, 'amphetamine', 'e') + A('amph-a', 198, 68, 214, 70);
-        if (d === 'maoi' || all) g += blk('maoi', 118, 69) + drug('phen-t', 60, 62, 'phenelzine', 'b', 'end') + drug('sele-t', 60, 74, 'selegiline', 'b', 'end');
-        if (d === 'clon') g += dot('clon', 246, 117, 'c', 4.6);
-        if (d === 'mirt') g += blk('mirt', 246, 116);
-        if (d === 'clon' || all) g += drug('clon-t', 232, all ? 112 : 124, 'clonidine', 'c', 'end');
-        if (d === 'mirt' || all) g += drug('mirt-t', 232, 124, 'mirtazapine', 'b', 'end');
-        return g + panel(st.p || [], 214);
-      };
-      const steps = [
-        ['Synthesis: tyrosine → L-Dopa → dopamine → norepinephrine (NE), stored in a vesicle in the sympathetic nerve terminal.',
-          scene({ p: ['Postsynaptic: α1 and β receptors. Presynaptic: α2. Removal: NET, MAO, COMT.'] }), 'Adrenergic Receptors'],
-        ['An action potential releases NE from the vesicle into the synapse.',
-          scene({ rel: 1, p: ['"very similar to ... the acetylcholines": made from a precursor, stored in a vesicle,', 'released upon an action potential (10/6).'] }), 'Adrenergic Receptors'],
-        ['NE binds α1 (Gq, ↑Ca++) and β (Gs, ↑cAMP) on the effector cell, and α2 (Gi) on the terminal itself: negative feedback, "our gatekeeper", which suppresses NE release.',
-          scene({ rel: 1, bound: 1, p: ['α1: blood vessels, eye, nose, urethra → constriction.', 'β1: heart, kidney. β2: smooth muscle (vessels, lungs).', 'α2 presynaptic (Gi, ↓cAMP): less NE released.'] }), 'α2 Pre-Synaptic Receptor; α1, βs Post-Synaptic Receptor'],
-        ['Removal: the NET takes NE back and recycles it into the vesicle; MAO and COMT break NE down to inactive metabolites.',
-          scene({ rel: 1, rm: 1, p: ['"If we have too much of it, the enzymes come and break it. If we don\'t have enough,', 'we might shunt more through the transporter pathways" (10/6).'] }), 'COMT, MAO: Inactive Metabolites'],
-        ['Cocaine blocks the NET (reuptake inhibitor): NE stays in the synapse, so there is more NE at α1 and β: heart, blood vessels, CNS.',
-          scene({ rel: 1, bound: 1, coc: 1, drug: 'coc', p: ['Cocaine: NE transporter (NET) antagonist, "a 100% inhibitor of the net process".', 'Effects: ↑ heart rate, severe vasoconstriction (nosebleeds), CNS excitation.'] }), 'Indirect Acting Antagonist: Cocaine (Reuptake inhibitor)'],
-        ['Amphetamines mainly push NE (and dopamine, serotonin) out of the terminal; a moderate second effect: less reuptake, MAO blocked.',
-          scene({ rel: 1, bound: 1, amph: 1, drug: 'amph', p: ['Dextroamphetamine, amphetamine, lisdexamfetamine, methylphenidate, dexmethylphenidate.', '1º: stimulate presynaptic release of NE, DA, 5HT. 2nd (moderate): ↓ reuptake, block MAO.'] }), 'Indirect Acting MOAs'],
-        ['MAO inhibitors block the enzyme that breaks NE down, so more NE is stored and released. Both are irreversible.',
-          scene({ rel: 1, bound: 1, maoi: 1, drug: 'maoi', p: ['Phenelzine: non-selective MAO-A and MAO-B; dietary tyramine → hypertensive crisis.', 'Selegiline (low doses): selective MAO-B (brain), no "cheese effect".'] }), 'Monoamine Oxidase Inhibitors'],
-        ['Clonidine activates the presynaptic α2 (Gi): less NE is released, so sympathetic tone falls: vasodilation, bradycardia.',
-          scene({ rel: 1, bound: 1, clon: 1, drug: 'clon', p: ['Clonidine: α2 agonist at the nerve ending (CNS) → ↓ CNS.', 'ADRs: sedation, dry mouth, hypotension, bradycardia; hypertensive crisis on withdrawal.'] }), 'Clonidine MOA'],
-        ['Mirtazapine blocks the presynaptic α2 autoreceptor: the brake is off, so more NE (and 5-HT) is released, which treats depression.',
-          scene({ rel: 1, bound: 1, mirt: 1, drug: 'mirt', p: ['Mirtazapine: α2 antagonist (↑ CNS); also blocks H1 and muscarinic (sedation) and α1.', '"What happens if I inhibit the inhibitor? I get positive effect." (10/6)'] }), 'Mirtazapine (Remeron)'],
-        ['Every site at once: release (amphetamine), reuptake (cocaine), breakdown (MAO inhibitors) and the presynaptic α2 brake (clonidine on, mirtazapine off).',
-          scene({ rel: 1, bound: 1, drug: 'all', p: ['Indirect-acting drugs raise NE without touching α1 or β; clonidine and mirtazapine', 'act at α2 in opposite directions.'] }), 'Adrenergic Receptor Agonist']
-      ];
-      return stepper('e2-adr', 'The adrenergic synapse and where each drug acts', steps, 304,
-        ['<b>NE life cycle</b> (Adrenergic slide 8, 10/6): tyrosine → L-Dopa → dopamine → norepinephrine, stored in a vesicle, released, then α1/β postsynaptic and α2 presynaptic (negative feedback); removed by the NET (recycled into the vesicle) or broken down by MAO and COMT.',
-         '<b>Indirect-acting</b> (slides 9–15): cocaine blocks the NET; amphetamines release NE (weak reuptake and MAO block); phenelzine (MAO-A + B) and selegiline (MAO-B) block MAO.',
-         '<b>α2</b> (slides 21–24, 31–32): clonidine, agonist → less NE (↓ sympathetic tone); mirtazapine, antagonist → more NE and 5-HT.',
-         'Transcript 10/6; PollEV: “Which of the following drugs increase the potency of NE by blocking the NET?” → cocaine.'],
-        'Ten steps.');
-    };
-
-    /* ---------- 4. Receptor map: G protein, second messenger, site, effect (ANS slide 4 quick table; slides 13, 24, 31, 34) ---------- */
-    F4['e2-receptor-map'] = () => {
-      const cols = [
-        { c: 'C', k: 'c', g: 'Gq', l1: 'PLC → IP3 → ↑Ca++', l2: 'excitatory (+)', cards: [
-          ['α1 (adrenergic)', 'eye, brain, blood vessels', 'vasoconstriction,', 'mydriasis (pupil dilates)'],
-          ['M1 (muscarinic)', 'brain', '↑ excitation', '(CNS stimulation)'],
-          ['M3 (muscarinic)', 'everywhere else', 'contraction, secretion;', 'endothelium → NO, dilates']] },
-        { c: 'B', k: 'b', g: 'Gi', l1: 'AC inhibited → ↓cAMP', l2: 'inhibitory (−)', cards: [
-          ['α2 (adrenergic)', 'presynaptic nerve, brain', '↓ NE release,', 'sedation'],
-          ['M2 (muscarinic)', 'heart', '↓ CO (bradycardia)'],
-          ['Nn, Nm (nicotinic)', 'ion channels:', 'no G protein', '(Na+ in)', 'dash']] },
-        { c: 'A', k: 'a', g: 'Gs', l1: 'AC activated → ↑cAMP', l2: 'stimulatory (+)', cards: [
-          ['β1 (adrenergic)', 'heart, kidney', '↑ CO (tachycardia),', 'renin release'],
-          ['β2 (adrenergic)', 'smooth muscle, e.g. lungs', 'bronchodilation,', 'vasodilation'],
-          ['β3 (adrenergic)', 'bladder smooth muscle', 'relaxation:', 'urine retained']] }
-      ];
-      let g = title('Receptor map: G protein, messenger, site, effect');
-      cols.forEach((col, i) => {
-        const x = 4 + i * 118, w = 114, cx = x + w / 2;
-        g += `<rect x="${x}" y="20" width="${w}" height="40" rx="5" ${tint(col.c, 0.25)} stroke-width="1.2"/>` + T('', cx, 34, col.g, `cl ${col.k}`) + T('', cx, 46, col.l1) + T('', cx, 56, col.l2);
-        col.cards.forEach((cd, j) => {
-          const y = 66 + j * 56, dash = cd[cd.length - 1] === 'dash', lines = dash ? cd.slice(0, -1) : cd;
-          g += `<rect x="${x}" y="${y}" width="${w}" height="50" rx="5" ${tint(col.c, 0.07)} stroke-width="1"${dash ? ' stroke-dasharray="4 3"' : ''}/>`;
-          g += T('', cx, y + 13, lines[0], 'lbl sm') + lines.slice(1).map((t, n) => T('', cx, y + 25 + n * 9.5, t)).join('');
-        });
-      });
-      g += T('', 180, 242, 'Gq raises Ca++ and excites, except M3 on the endothelium: Ca++ → NOS → NO → dilation.');
-      return wrap(g, ['<b>His quick table</b> (Autonomic Nervous System.pdf slide 4, "Courtesy of Andrea Vasquez"): Q = Gq (M1, M3, α1: PLC → IP3 → ↑Ca++), I = Gi (M2, α2: AC → ↓cAMP), S = Gs (β1, β2, β3: AC → ↑cAMP).',
-        '<b>Sites</b> as he says them: "M1 in the brain, M2 in the heart, M3 everywhere else"; α1 eye, brain, blood vessels; α2 presynaptic SNS neurons and brain; β1 heart (and kidney); β2 smooth muscle (lungs), typically not innervated; β3 bladder smooth muscle.',
-        '<b>Effects</b> (slides 24, 27, 31, 34–35; 9/30, 10/1, 10/6): agonist effect shown; an antagonist does the opposite.',
-        '<b>On the exam:</b> "if you want to write the quick stable in your test, I have no problem with that when you scratch paper ... Got to do from memory" (10/8).'], 250);
-    };
-
-    /* ---------- 5. Epinephrine reversal (Adrenergic slides 47–51; 10/7; 10/8 poll and Jeopardy) ---------- */
-    F4['e2-epi-reversal-anim'] = () => {
-      const rec = (k, cx, st) => {
-        const body = st.on ? tint('A', 0.32) : st.blk ? `fill="var(--chip)" stroke="var(--figB)"` : `fill="var(--chip)" stroke="var(--muted)"`;
-        let g = `<rect data-k="${k}" x="${cx - 10}" y="36" width="20" height="28" rx="5" ${body} stroke-width="1.3"/><path data-k="${k}-p" class="pocket" d="M${cx - 5} 36 a5 5 0 0 0 10 0 Z"/>`;
-        if (st.epi) g += dot(`${k}-epi`, cx, 37, 'a', 4.6);
-        if (st.blk) g += `<rect data-k="${k}-blk" class="lig b" x="${cx - 5}" y="32" width="10" height="10" rx="1.5"/>`;
-        if (st.on) g += A(`${k}-arr`, cx, 66, cx, 76);
+        if (d === 'bot') g += blk('bot', 86, 78) + T('bot-t', 66, 60, 'botulinum', 'b', 'end') + T('bot-t2', 66, 74, 'toxin', 'b', 'end') + T('bot-n', 150, 100, 'no ACh release', 'm');
+        if (d === 'sux') g += `<circle data-k="s1" class="lig c" cx="107" cy="138" r="4.2"/><circle data-k="s2" class="lig c" cx="128" cy="138" r="4.2"/><line data-k="s3" x1="107" y1="138" x2="128" y2="138" stroke="var(--figC)" stroke-width="2.4"/>` +
+          T('sux-t', 8, 112, 'succinylcholine', 'c', 'start') + T('sux-n', 8, 126, 'opens Nm, stays', 'm', 'start');
+        if (d === 'cur' || d === 'neo') g += `<rect data-k="c1" class="lig b" x="${d === 'neo' ? 84 : 101}" y="${d === 'neo' ? 110 : 128}" width="10" height="10" rx="2"/><rect data-k="c2" class="lig b" x="${d === 'neo' ? 142 : 124}" y="${d === 'neo' ? 128 : 128}" width="10" height="10" rx="2"/>`;
+        if (d === 'cur') g += T('cur-t', 8, 104, 'curare-like', 'b', 'start') + T('cur-n', 8, 118, '(-cur-: rocuronium)', 'm', 'start');
+        if (d === 'neo') g += blk('neo', 236, 124) + T('neo-t', 212, 102, 'neostigmine', 'b');
         return g;
       };
-      const PX = i => 6 + i * 88;
-      const frame = i => `<rect data-k="f${i}" x="${PX(i)}" y="130" width="84" height="98" rx="4" fill="none" stroke="var(--line)"/>` +
-        `<line data-k="b${i}" class="dash" x1="${PX(i) + 6}" y1="186" x2="${PX(i) + 78}" y2="186"/>` + T(`ft${i}`, PX(i) + 42, 142, ['epi, low dose', 'epi, high dose', 'propranolol → epi', 'prazosin → epi'][i]);
-      const AMP = [16, -22, -36, 22], LAB = ['dilation', 'net pressor', 'bigger rise', 'reversal: fall'], CLS = ['c', 'b', 'b', 'c'];
-      const trace = i => { const x = PX(i), d = AMP[i]; return `<polyline data-k="t${i}" class="cv ${CLS[i]}" points="${x + 6},186 ${x + 24},186 ${x + 32},${186 + d} ${x + 48},${186 + d} ${x + 58},186 ${x + 78},186"/>` + T(`tl${i}`, x + 42, 222, LAB[i], `cl ${CLS[i]}`, 'middle', 'font-size:9.5px'); };
-      const scene = (st, n) => {
-        let g = `<rect data-k="mem" x="40" y="48" width="280" height="14" fill="var(--chip)" opacity="0.7"/>` + T('vsm', 180, 28, 'vascular smooth muscle (arteries and veins)');
-        g += rec('a1', 120, st.a1) + rec('b2', 240, st.b2) + T('a1-n', 102, 46, 'α1 · Gq', 'cl a', 'end') + T('b2-n', 258, 46, 'β2 · Gs', 'cl a', 'start');
-        if (st.a1.blk) g += drug('a1-d', 102, 58, 'prazosin', 'b', 'end');
-        if (st.b2.blk) g += drug('b2-d', 258, 58, 'propranolol', 'b', 'start');
-        g += T('a1-e', 120, 90, st.a1.on ? '↑Ca++ → constriction' : st.a1.blk ? 'blocked' : 'not activated', st.a1.on ? 'cl b' : 'lbl xs', 'middle', st.a1.on ? 'font-size:10px' : '');
-        g += T('b2-e', 240, 90, st.b2.on ? '↑cAMP → dilation' : st.b2.blk ? 'blocked' : 'not activated', st.b2.on ? 'cl c' : 'lbl xs', 'middle', st.b2.on ? 'font-size:10px' : '');
-        if (st.net) g += T('net', 180, 112, st.net, 'lbl sm');
-        for (let i = 0; i < 4; i++) g += frame(i) + (i < n ? trace(i) : '');
-        return g + T('bp', 6, 244, 'BP trace, schematic (no scale): up = vasoconstriction (pressor), down = dilation', 'lbl xs', 'start');
+      const steps = [
+        ['At rest: acetylcholine (ACh) is made and stored in vesicles in the motor nerve terminal. Across the cleft wait the nicotinic muscle receptor (Nm, an ion channel) and the enzyme that breaks ACh down (AChE).', scene({}), 'Nicotinic Receptors (NM) (1) At Rest'],
+        ['An action potential opens Ca++ channels; Ca++ enters and the vesicles release ACh into the cleft (release is Ca++ dependent).', scene({rel: 1, ca: 1}), 'Nicotinic Receptors (NM) (2) ACh Release'],
+        ['ACh binds both α subunits of Nm: the channel opens, Na+ rushes in and the skeletal muscle contracts.', scene({rel: 1, bound: 1, open: 1, mus: 'contracts', musK: 'c'}), 'Nicotinic Receptors (NM) (3) Activation'],
+        ['AChE splits ACh into choline + acetate; the channel closes and the muscle relaxes. Two drug targets: the receptor (direct) and AChE (indirect).', scene({rel: 1, split: 1}), 'Nicotinic Receptors (NM) (4) Recovery; (6) Drug Targets'],
+        ['Botulinum toxin is an endopeptidase that cuts the SNARE proteins: the vesicles cannot release ACh, so the muscle relaxes (cosmetic Botox, drooling).', scene({drug: 'bot', mus: 'relaxed', musK: 'a'}), 'BOTOX Summary'],
+        ['Succinylcholine (depolarizing) is an Nm agonist: it opens the channel like ACh but is not broken down effectively, so the end plate stays depolarized: paralysis. (The phases are in the next figure.)', scene({rel: 1, open: 1, drug: 'sux', mus: 'paralysed', musK: 'b'}), 'NMJ Agents: Depolarizing'],
+        ['Curare-like drugs (non-depolarizing: rocuronium, vecuronium, pancuronium; "-cur-") are competitive, reversible Nm antagonists: the channel cannot open, so ACh cannot act: paralysis. "Both drugs cause paralysis."', scene({rel: 1, drug: 'cur', mus: 'paralysed', musK: 'b'}), 'Non-depolarizing: Competitive Antagonist'],
+        ['To reverse curare, block AChE with neostigmine (does not cross the BBB): more ACh stays in the cleft and outcompetes curare, so the channel opens again ("a question similar to this in the exam every year").', scene({rel: 1, bound: 1, open: 1, more: 1, drug: 'neo', mus: 'moves again', musK: 'c'}), 'PyriDOstigmine & Neostigmine: reverse curare']
+      ];
+      return step2('e2-nmj', 'Neuromuscular junction: drug sites', steps, 240,
+        ['<b>Physiology</b> (NMJ slides 13–18): ACh stored in vesicles → released when Ca++ enters → binds Nm (ion channel opens, Na+ in, contraction) → split by AChE into choline + acetate.',
+         '<b>Drugs</b> (slides 19, 27–29, 39, 46–50): botulinum toxin cuts SNARE (no ACh release); succinylcholine opens Nm (depolarizing); curare-like drugs block Nm competitively (non-depolarizing); neostigmine blocks AChE and reverses curare (PollEV, PE2-022).',
+         '<b>Not at this synapse:</b> varenicline is a partial agonist at the α4/β2 Nn receptor in the brain; muscarinic drugs and atropine act at the parasympathetic synapse (next figures).',
+         'His scope (10/5): "if I give an agonist, I can get constriction, and if I give an antagonist, I get relaxation, paralysis."'],
+        'Eight steps.');
+    };
+
+    /* ---------- Succinylcholine phase I and II (NMJ slides 20–24, 28; 10/5) ---------- */
+    F4['e2-sch-phases-anim'] = () => {
+      const X0 = 40, X1 = 290, YB = 226, YT = 182;
+      const trace = kind => {
+        const up = YT + 4, pts = {
+          rest: [[X0, YB], [X1, YB]],
+          one: [[X0, YB], [90, YB], [100, up], [112, YB], [X1, YB]],
+          rep: [[X0, YB], [70, YB], [80, up], [92, YB], [130, YB], [140, up], [152, YB], [190, YB], [200, up], [212, YB], [250, YB], [260, up], [272, YB], [X1, YB]],
+          held: [[X0, YB], [90, YB], [100, up], [X1, up]]}[kind];
+        return `<polyline data-k="tr" class="cv ${kind === 'rest' ? 'a' : kind === 'held' ? 'b' : 'c'}" points="${pts.map(p => p.join(',')).join(' ')}"/>`;
+      };
+      const scene = st => {
+        let g = T('out', 8, 40, 'cleft', 's', 'start') + band('mem', 72, 26) + T('in', 8, 118, 'muscle cell', 's', 'start');
+        const open = st.open;
+        g += `<rect data-k="h-l" x="${open ? 116 : 128}" y="52" width="22" height="66" rx="5" ${tint('A', open ? 0.36 : 0.14)} stroke-width="1.3"/><rect data-k="h-r" x="${open ? 162 : 150}" y="52" width="22" height="66" rx="5" ${tint('A', open ? 0.36 : 0.14)} stroke-width="1.3"/>`;
+        const sx = open ? [127, 173] : [139, 161];
+        if (st.ach) sx.forEach((x, i) => { g += dot(`l${i}`, x, 50, 'a', 5); });
+        if (st.sch === 'site') sx.forEach((x, i) => { g += dot(`s${i}a`, x - 5, 50, 'c', 4.2) + dot(`s${i}b`, x + 5, 50, 'c', 4.2) + `<line data-k="s${i}l" x1="${x - 5}" y1="50" x2="${x + 5}" y2="50" stroke="var(--figC)" stroke-width="2.2"/>`; });
+        if (st.sch === 'pore') { g += dot('s0a', 150, 76, 'c', 4.2) + dot('s0b', 150, 90, 'c', 4.2) + `<line data-k="s0l" x1="150" y1="76" x2="150" y2="90" stroke="var(--figC)" stroke-width="2.2"/>`; }
+        if (st.cur) sx.forEach((x, i) => { g += `<rect data-k="c${i}" class="lig b" x="${x - 6}" y="${44}" width="12" height="12" rx="2"/>`; });
+        if (st.na) g += A('na', 150, 34, 150, 128) + T('na-t', 156, 132, st.na, 'm', 'start');
+        g += `<path data-k="ache" class="box" d="M232 42 L252 30 L272 42 L252 54 Z"/>` + T('ache-t', 252, 46, 'AChE', 's');
+        if (st.ache) g += T('ache-n', 294, 66, st.ache, 'm', 'end');
+        g += T('state', 150, 152, st.state, st.stK || 'l');
+        g += `<rect data-k="trb" x="4" y="164" width="292" height="72" rx="5" fill="none" stroke="var(--line)"/>` + T('trl', 10, 178, 'end plate', 's', 'start') + `<line data-k="trbase" class="dash" x1="${X0}" y1="${YB}" x2="${X1}" y2="${YB}"/>` + trace(st.tr);
+        return g;
       };
       const steps = [
-        ['Arteries and veins carry two major receptors: α1 (Gq: constriction) and β2 (Gs: dilation). Epinephrine binds both, with different affinities: β1, β2 first, then α1, then α2.',
-          scene({ a1: {}, b2: {}, net: 'epinephrine: β1, β2 (low doses) > α1 > α2 (high doses)' }, 0), 'Epinephrine Diverse Responses'],
-        ['Low dose: epinephrine binds β2 best, so the vessel dilates (receptor B in his 10/8 poll).',
-          scene({ a1: {}, b2: { epi: 1, on: 1 }, net: 'low dose: β2 only → vasodilation' }, 1), 'Low doses'],
-        ['High dose: α1 joins in and overrides β2: vasoconstriction, BP up. The trace is a net effect, α1 minus β2 ("net pressor effect").',
-          scene({ a1: { epi: 1, on: 1 }, b2: { epi: 1, on: 1 }, net: 'high dose: α1 − β2 → net vasoconstriction' }, 2), 'Epinephrine Reversal: Epi (large dose) Net pressor effect'],
-        ['Propranolol first (his compound 1): β2, the physiological antagonist of α1, is blocked, so α1 acts alone and the rise in BP is greater.',
-          scene({ a1: { epi: 1, on: 1 }, b2: { blk: 1 }, net: 'β2 blocked: α1 alone → greater vasoconstriction' }, 3), 'Compound 1 + epinephrine (10/8)'],
-        ['Prazosin first: α1 is blocked, β2 is unopposed, and the same high dose now dilates and BP falls: epinephrine reversal ("net depressor effect").',
-          scene({ a1: { blk: 1 }, b2: { epi: 1, on: 1 }, net: 'α1 blocked: β2 alone → vasodilation (reversal)' }, 4), 'After Alpha blockade: Net depressor effect']
+        ['ACh binds both α subunits of Nm and opens the channel: Na+ in, the end plate depolarizes and the muscle contracts.', scene({ach: 1, open: 1, na: 'Na+ in', state: 'depolarized: contraction', stK: 'c', tr: 'one'}), 'Depolarizing agents: ACh MOA'],
+        ['ACh is quickly metabolized by AChE, the end plate repolarizes ("re-priming") and can fire again: repetitive firing = muscle tension.', scene({state: 'repolarized: fires again', stK: 'c', ache: 'ACh split fast', tr: 'rep'}), 'Depolarizing agents: ACh MOA'],
+        ['Succinylcholine looks like two ACh joined at the alkyl ends. It opens Nm like ACh, but it is not metabolized effectively at the synapse (longer synaptic t½).', scene({sch: 'site', open: 1, na: 'Na+ in', state: 'depolarized', stK: 'l', ache: 'SCh not split well', tr: 'held'}), 'Succinylcholine (SCh)'],
+        ['Phase I block: the end plate stays depolarized, so it cannot re-prime and fire again: no repetitive firing, so paralysis.', scene({sch: 'site', open: 1, state: 'stays depolarized: paralysis', stK: 'b', tr: 'held'}), 'Succinylcholine MOA: Phase I'],
+        ['Phase II block: with a prolonged infusion succinylcholine lodges inside the channel pore: Na+/K+ cannot move and the paralysis is prolonged.', scene({sch: 'pore', open: 1, state: 'pore blocked: paralysis longer', stK: 'b', tr: 'held'}), 'Succinylcholine MOA: Phase II'],
+        ['Compare curare-like drugs (non-depolarizing): competitive antagonists that keep the channel from opening; the end plate never depolarizes. Both cause paralysis.', scene({cur: 1, state: 'never depolarizes: paralysis', stK: 'b', tr: 'rest'}), 'MOA: Curare Binding']
       ];
-      return stepper('e2-epi', 'Epinephrine at α1 and β2: dose and blockers', steps, 300,
-        ['<b>Affinity</b> (slide 47, 10/7): "At low doses, epinephrine has the highest affinity for the beta 1 and the beta 2 receptor ... I\'m also gonna be activating the alpha ones and eventually the alpha-2s."',
-         '<b>High dose:</b> "once I activate the alpha one ... It overrides it"; the response is "a net effect of the alpha 1 effect minus the beta 2 effect" (slides 48–49).',
-         '<b>Propranolol</b> (10/8 Jeopardy, compound 1): blocking β2 removes the physiological antagonist, so constriction is greater. <b>Prazosin</b> (slides 50–51): β2 unopposed → dilation, the epinephrine reversal.',
-         '<b>Phenylephrine</b> (α1 only): a larger rise than epinephrine, and after prazosin no response at all; there is no β2 to unmask. The traces are drawn schematically, not to scale.'],
+      return step2('e2-sch', 'Succinylcholine: phase I and phase II block', steps, 242,
+        ['<b>ACh</b> (NMJ slide 21): 1) repetitive firing = muscle tension; 2) ACh is quickly metabolized; 3) the motor end plate repolarizes (re-priming).',
+         '<b>Phase I</b> (slides 22, 24): succinylcholine is an agonist that opens the channel, but it is "not metabolized effectively at the synapse"; the end plate stays depolarized, cannot re-prime, so there is no repetitive firing: paralysis.',
+         '<b>Phase II</b> (slides 23–24; 10/5): "channel blockade prevent movement of Na+/K+ and prolongs the paralysis"; with prolonged infusion "it actually can get lodged inside of that channel".',
+         '<b>Curare-like</b> (slides 19, 28): competitive Nm antagonists stop the channel from opening. The end-plate trace is schematic, no scale.'],
+        'Six steps.');
+    };
+
+    /* ---------- Parasympathetic synapse: muscarinic drugs and AChE inhibitors (Cholinergic slides 9–14, 17–21, 32; NMJ slides 33–41; 10/5, 10/6) ---------- */
+    F4['e2-chol-synapse-anim'] = () => {
+      const VES = [[128, 62], [172, 62]], IN = [[-4, -3], [4, -3], [0, 4]];
+      const CLEFT = [[214, 100], [196, 112], [226, 120], [178, 98], [238, 104], [206, 128]];
+      const scene = st => {
+        let g = `<rect data-k="term" class="box" x="70" y="24" width="160" height="58" rx="12"/>` + T('term-t', 150, 40, 'parasympathetic ending', 's');
+        VES.forEach(([x, y], i) => { g += `<circle data-k="v${i}" cx="${x}" cy="${y}" r="12" fill="var(--bg)" stroke="var(--muted)" stroke-width="1"/>`; });
+        g += band('mem', 160);
+        g += rcp('m', 151, 150, 'A', st.on ? 1 : 0);
+        for (let i = 0; i < 6; i++) {
+          if (!st.ach) break;
+          let p = st.ach === 'in' ? [VES[i < 3 ? 0 : 1][0] + IN[i % 3][0], VES[i < 3 ? 0 : 1][1] + IN[i % 3][1]] : CLEFT[i];
+          if (st.bound && i === 0) p = [151, 151];
+          if (st.split && (i === 1 || i === 2 || i === 4)) continue;
+          g += dot(`a${i}`, p[0], p[1], 'a', st.ach === 'in' ? 2.8 : 3.4);
+        }
+        if (st.more) [[188, 124], [220, 92], [172, 114], [242, 126]].forEach(([x, y], i) => { g += dot(`m${i}`, x, y); });
+        g += T('m-t', 151, 196, 'muscarinic (GPCR)', 'l') + T('m-t2', 151, 210, 'M2 heart · M3 everywhere else', 's');
+        g += T('eff-l', 8, 234, 'effect:', 's', 'start') + T('eff', 50, 234, st.eff || 'none', st.effK || 's', 'start');
+        g += `<path data-k="ache" class="box" d="M240 140 L264 124 L288 140 L264 156 Z"/>` + T('ache-t', 264, 144, 'AChE', 'l');
+        if (st.split) g += T('prod', 294, 114, 'choline + acetate', 's', 'end');
+        const d = st.drug || '';
+        if (d === 'ag') g += dot('ag', 151, 151, 'c', 5) + T('ag-t', 8, 104, 'pilocarpine, carbachol,', 'c', 'start') + T('ag-t2', 8, 120, 'bethanechol: agonists', 'c', 'start');
+        if (d === 'atr') g += blk('atr', 151, 150) + T('atr-t', 136, 136, 'atropine', 'b', 'end');
+        if (d === 'ache') g += blk('ache-b', 288, 140) + T('i1', 8, 100, 'neostigmine,', 'b', 'start') + T('i2', 8, 116, 'physostigmine,', 'b', 'start') + T('i3', 8, 132, 'rivastigmine, donepezil', 'b', 'start');
+        return g;
+      };
+      const steps = [
+        ['A parasympathetic (postganglionic) nerve ending releases acetylcholine (ACh) onto muscarinic receptors on the effector cell.', scene({ach: 'rel'}), 'Cholinergic Signaling Pathway'],
+        ['ACh activates the muscarinic receptor, a GPCR: M2 in the heart (Gi, ↓ heart rate), M3 everywhere else (Gq, ↑Ca++). AChE then splits ACh into choline + acetate.', scene({ach: 'rel', bound: 1, split: 1, on: 1, eff: 'PNS response', effK: 'a'}), 'Muscarinic Receptors'],
+        ['Muscarinic agonists (pilocarpine, carbachol, bethanechol, methacholine) are non-selective (M1–M3) and reversible: DUMBBELSS. They do not bind nicotinic receptors.', scene({drug: 'ag', on: 1, eff: 'DUMBBELSS', effK: 'c'}), 'Muscarinic Agonist MOA'],
+        ['Atropine is a competitive, reversible, non-selective antagonist at M1, M2 and M3: anti-DUMBBELSS (tachycardia, dry mouth, mydriasis, bronchial dilation). It has no affinity for nicotinic receptors.', scene({ach: 'rel', drug: 'atr', eff: 'anti-DUMBBELSS', effK: 'b'}), 'Muscarinic Antagonist\'s MOA'],
+        ['Reversible AChE inhibitors (the -stigmines, donepezil) stop the breakdown: ACh piles up at every cholinergic synapse: DUMBBELSS. Neostigmine stays in the periphery; physostigmine, rivastigmine and donepezil cross the BBB.', scene({ach: 'rel', bound: 1, more: 1, on: 1, drug: 'ache', eff: 'DUMBBELSS', effK: 'c'}), 'Cholinesterase Inhibitors']
+      ];
+      return step2('e2-chol', 'Parasympathetic synapse: drug sites', steps, 242,
+        ['<b>Receptors</b> (Cholinergic slides 5, 9): M1 brain, M2 heart (Gi), M3 smooth muscle, glands, eye, endothelium (Gq).',
+         '<b>Agonists</b> (slides 11–14): ACh, methacholine, carbachol, bethanechol, pilocarpine; non-selective, reversible; "No effect on Nicotinic receptors" (pilocarpine). <b>Atropine</b> (slides 17–20, 32): M1, M2, M3 antagonist, anti-DUMBBELSS.',
+         '<b>AChE inhibitors</b> (NMJ slides 33–41): "Anywhere Ach is released"; side effects DUMBBELSS. Physostigmine is the antidote for atropine poisoning; neostigmine and pyridostigmine do not cross the BBB; rivastigmine and donepezil do (Alzheimer\'s). Organophosphates: next figure.',
+         'His trap: "they think that our muscarinic agonists can also bind to the nicotinic receptors, and they don\'t" (10/5).'],
         'Five steps.');
     };
 
-    /* ---------- 6. Nitric oxide pathway (Adrenergic slides 62–74; 10/7) ---------- */
-    F4['e2-no-pathway-anim'] = () => {
-      const chain = [['gq', 20, 24, 'Gq'], ['plc', 54, 28, 'PLC'], ['ip3', 92, 26, 'IP3'], ['er', 128, 44, 'ER: Ca++'], ['cal', 180, 64, 'Ca–calmodulin'], ['nos', 254, 30, 'NOS']];
+    /* ---------- Organophosphate poisoning: AChE, pralidoxime, atropine (NMJ slides 39, 42–44; Cholinergic slides 20–23; 10/5) ---------- */
+    F4['e2-op-anim'] = () => {
       const scene = st => {
-        let g = `<rect data-k="endo" x="6" y="34" width="348" height="70" rx="6" fill="var(--chip)" stroke="var(--line)"/>` + T('endo-t', 350, 47, 'endothelium', 'lbl xs', 'end');
-        g += `<rect data-k="sm" x="6" y="112" width="348" height="92" rx="6" ${tint('D', 0.07)} stroke-width="1"/>` + T('sm-t', 350, 199, 'vascular smooth muscle', 'lbl xs', 'end');
-        g += T('lumen', 6, 26, 'blood', 'lbl xs', 'start');
-        g += `<rect data-k="m3" x="30" y="24" width="20" height="26" rx="5" ${tint('A', st.ag ? 0.32 : 0.12)} stroke-width="1.2"/><path data-k="m3-p" class="pocket" d="M35 24 a5 5 0 0 0 10 0 Z"/>` + (st.ag ? dot('ag', 40, 25, 'a', 4.6) : '') + T('m3-t', 56, 30, 'agonist on M3 (Gq), not innervated', 'lbl xs', 'start');
-        chain.forEach(([k, x, w, t], i) => {
-          if (i > st.ch) return;
-          const font = t.length > 6 ? 'lbl xs' : 'lbl sm';
-          g += box(k, x, 62, w, 18, i === 4 && st.ch >= 4 ? 'E' : i === 5 ? 'E' : null, 0.2) + T(`${k}-t`, x + w / 2, t.length > 6 ? 74 : 75, t, font);
-          if (i > 0) g += A(`${k}-a`, chain[i - 1][1] + chain[i - 1][2] + 1, 71, x - 1, 71);
-        });
-        if (st.ch >= 5) g += T('rx', 188, 95, 'L-arginine → L-citrulline + NO', 'lbl xs', 'start');
-        if (st.no) { const [x, y] = st.no; g += `<circle data-k="no" cx="${x}" cy="${y}" r="8" ${tint('E', 0.35)} stroke-width="1.2"/>` + T('no-t', x, y + 3, 'NO', 'lbl xs'); }
-        if (st.sgc) g += box('sgc', 300, 122, 44, 18, 'C', 0.22) + T('sgc-t', 322, 134.5, 'sGC', 'lbl sm') + T('gtp', 322, 152, 'GTP → cGMP') + A('vd-a', 322, 156, 322, 166) + T('vd', 352, 178, st.dil === 0 ? 'dilation ends' : 'vasodilation', st.dil === 0 ? 'lbl xs' : 'cl c', 'end', st.dil === 0 ? '' : 'font-size:10.5px');
-        if (st.pde) g += box('pde', 200, 143, 36, 16) + T('pde-t', 218, 154.5, 'PDE', 'lbl sm') + A('pde-a', 296, 149, 238, 151) + T('pde-n', 218, 171, 'breaks down cGMP');
-        if (st.nit) g += box('nit', 14, 120, 122, 32, 'E', 0.14) + T('nit-t', 75, 132, 'nitrates (NO donors)', 'lbl sm') + T('nit-n', 75, 145, 'nitroglycerin, isosorbide') + A('nit-a', 137, 128, 298, 128, true);
-        if (st.sil) g += blk('sil', 218, 138) + drug('sil-t', 196, 155, 'sildenafil', 'b', 'end') + drug('hyp', 14, 196, 'nitrate + sildenafil → marked hypotension', 'b', 'start');
+        let g = `<rect data-k="enz" x="20" y="64" width="128" height="74" rx="18" ${tint('A', 0.12)} stroke-width="1.4"/><path data-k="site" class="pocket" d="M72 64 a12 12 0 0 0 24 0 Z"/>` + T('enz-t', 84, 108, 'AChE', 'l') + T('enz-s', 84, 124, st.enz || 'active', st.enzK || 's');
+        if (st.ach) g += dot('ach', 84, 42, 'a', 5) + A('ach-a', 84, 48, 84, 60) + T('ach-t', 96, 40, 'ACh', 'm', 'start');
+        if (st.prod) g += T('prod', 84, 156, 'choline + acetate', 'm');
+        if (st.inh === 'rev') g += `<rect data-k="inh" class="lig c" x="77" y="58" width="14" height="14" rx="2"/>` + T('inh-t', 84, 40, 'neostigmine: on and off', 'c11');
+        if (st.inh === 'op' || st.inh === 'pam') g += `<rect data-k="inh" class="lig b" x="${st.inh === 'pam' ? 116 : 77}" y="${st.inh === 'pam' ? 30 : 58}" width="14" height="14" rx="2"/>` + T('inh-p', st.inh === 'pam' ? 123 : 84, st.inh === 'pam' ? 41 : 69, 'P', 'n') + (st.inh === 'op' ? T('inh-t', 8, 40, 'organophosphate', 'b', 'start') : '');
+        if (st.inh === 'op') g += T('cov', 84, 156, 'covalent: irreversible', 'b11');
+        if (st.inh === 'pam') g += `<circle data-k="pam" cx="104" cy="44" r="9" ${tint('E', 0.4)} stroke-width="1.2"/>` + T('pam-t', 8, 40, 'pralidoxime', 'e', 'start') + T('pam-n', 84, 156, 'phosphate pulled off', 'e11');
+        // right: how much ACh, and what it does
+        g += T('lv-t', 166, 70, 'ACh in synapses', 's', 'start') + `<rect data-k="lv-bg" x="166" y="76" width="126" height="12" rx="6" fill="var(--chip)" stroke="var(--line)" stroke-width="0.8"/><rect data-k="lv" x="166" y="76" width="${st.lv}" height="12" rx="6" fill="var(--figA)"/>`;
+        (st.fx || []).forEach((t, i) => { g += T(`fx${i}`, 166, 110 + i * 16, t, st.fxK || 'm', 'start', i); });
+        g += band('mem', 196, 12, 4, 292) + rcp('rm', 120, 184, 'A', st.mOn ? 1 : 0) + T('rm-t', 120, 228, 'M', 'l') + rcp('rn', 200, 184, 'A', st.nOn ? 1 : 0) + T('rn-t', 200, 228, 'Nm', 'l');
+        if (st.atr) g += blk('atr', 120, 184) + T('atr-t', 104, 182, 'atropine', 'b', 'end');
         return g;
       };
       const steps = [
-        ['M3 receptors sit on the endothelium and are not innervated. A muscarinic agonist (ACh, or carbachol in his example) binds M3, which is coupled to Gq.',
-          scene({ ag: 1, ch: -1 }), 'Take-Home Message about NO'],
-        ['Gq activates PLC, which makes IP3; IP3 opens its receptor on the ER and Ca++ rushes into the cytoplasm of the endothelium.',
-          scene({ ag: 1, ch: 3 }), 'Endothelial Vasculature of Smooth Muscle'],
-        ['Ca++ joins calmodulin; the Ca–calmodulin complex activates NOS, which turns L-arginine into L-citrulline with NO as the by-product.',
-          scene({ ag: 1, ch: 5, no: [341, 92] }), 'Nitric Oxide Synthase'],
-        ['NO is a gas: it dissolves across into the smooth muscle and activates soluble guanylate cyclase (sGC): GTP → cGMP → vasodilation.',
-          scene({ ag: 1, ch: 5, no: [322, 112], sgc: 1 }), 'Nitric Oxide'],
-        ['PDE breaks cGMP down and the dilation ends. NO itself is broken down quickly; how much NO and how much PDE are the two limits.',
-          scene({ ag: 1, ch: 5, sgc: 1, pde: 1, dil: 0 }), 'Endothelial Vasculature of Smooth Muscle'],
-        ['Nitrates (nitroglycerin, nitroprusside, isosorbide) give away NO, which bypasses M3 and NOS and goes straight to sGC: more cGMP, vasodilation.',
-          scene({ ch: 5, no: [322, 112], sgc: 1, pde: 1, nit: 1 }), 'Drugs that can affect this system?'],
-        ['Sildenafil blocks PDE, so cGMP is not broken down ("PDE inhibitors increase the potency of NO"). With a nitrate, cGMP piles up: marked hypotension.',
-          scene({ ch: 5, no: [322, 112], sgc: 1, pde: 1, nit: 1, sil: 1 }), 'PDE inhibitors increase the potency of NO']
+        ['AChE splits acetylcholine (ACh) into choline + acetate, so ACh acts briefly.', scene({ach: 1, prod: 1, lv: 22, fx: ['normal signalling'], fxK: 's'}), 'MOA: Normal AChE'],
+        ['A reversible inhibitor (neostigmine, the -stigmines) binds the active site and comes off again: ACh rises for a while.', scene({inh: 'rev', enz: 'blocked for a while', lv: 64, mOn: 1, nOn: 1, fx: ['more ACh: DUMBBELSS'], fxK: 'm'}), 'AChE Antagonist: Reversible'],
+        ['An organophosphate (malathion, parathion; nerve gas: sarin, soman, tabun) phosphorylates the active site: a covalent, very stable bond, so the enzyme stays off and ACh piles up everywhere.', scene({inh: 'op', enz: 'phosphorylated', enzK: 'b11', lv: 126, mOn: 1, nOn: 1, fx: ['M: DUMBBELSS', 'Nm: paralysis', 'ganglia: ↑HR, ↑BP'], fxK: 'b11'}), 'Organophosphates; Toxicity'],
+        ['Pralidoxime (2-PAM), the cholinesterase reactivator, is given first (within about an hour): it pulls the phosphate off and the enzyme works again.', scene({inh: 'pam', enz: 'reactivated', enzK: 'c11', lv: 60, mOn: 1, nOn: 1, fx: ['ACh coming down'], fxK: 'm'}), 'Antidote: cholinesterase reactivator'],
+        ['Atropine then blocks M1, M2 and M3: anti-DUMBBELSS. It does nothing at Nm, so it does not treat the muscle paralysis.', scene({inh: 'pam', enz: 'reactivated', enzK: 'c11', lv: 60, nOn: 1, atr: 1, fx: ['M: anti-DUMBBELSS', 'Nm untouched'], fxK: 'm'}), 'Antidote: atropine (M1, M2, & M3 antag)']
       ];
-      return stepper('e2-no', 'Nitric oxide: endothelium to smooth muscle', steps, 262,
+      return step2('e2-op', 'Organophosphates and their antidotes', steps, 236,
+        ['<b>Organophosphates</b> (NMJ slides 42–43): "Forms a covalent bond with the enzyme that is very stable and slow (Irreversible)"; insecticides (malathion, parathion), nerve gas (soman, sarin, tabun); toxicity at SNS ganglia (tachycardia, hypertension), the NMJ (cramps, weakness, respiratory paralysis) and the CNS.',
+         '<b>Antidote</b> (slide 44; 10/5): pralidoxime (2-PAM) dephosphorylates the enzyme, given first, within about an hour of exposure; then atropine (M1, M2, M3 antagonist) for the DUMBBELSS (Cholinergic slides 20–23).',
+         '<b>Reversible inhibitors</b> (slides 39–40): neostigmine, pyridostigmine, physostigmine, rivastigmine, donepezil. The level bar is schematic.'],
+        'Five steps.');
+    };
+
+    /* ---------- Adrenergic synapse (Adrenergic slides 8–15, 21–24, 31–32; ANS slide 14; 10/6) ---------- */
+    const VES_A = [192, 82], IN_A = [[-6, -5], [2, -6], [7, 1], [-7, 4], [0, 4], [6, 8]];
+    const CLEFT_A = [[112, 138], [140, 148], [162, 134], [204, 146], [128, 128], [186, 132]];
+    const adrScene = st => {
+      let g = `<rect data-k="term" class="box" x="20" y="24" width="210" height="84" rx="12"/>` + T('term-t', 125, 40, 'sympathetic nerve terminal', 's');
+      if (st.syn) [['tyrosine', 30], ['→ L-Dopa', 78], ['→ dopamine', 136], ['→ NE', 202]].forEach(([t, x], i) => { g += T(`syn${i}`, x, 60, t, i === 3 ? 'l' : 'm', 'start', i); });
+      g += box('mao', 34, 78, 40, 20) + T('mao-t', 54, 92.5, 'MAO', 'l');
+      g += box('net', 96, 100, 40, 18, 'C', 0.24) + T('net-t', 116, 113.5, 'NET', 'l');
+      g += rcp('a2', 216, 100, 'E', st.bound && !st.mirt ? 1 : 0, true) + T('a2-t', 232, 116, 'α2 · Gi', 'l', 'start');
+      g += band('mem', 176) + rcp('r1', 100, 164, 'A', st.bound) + rcp('rb', 180, 164, 'A', st.bound);
+      g += `<circle data-k="ves" cx="${VES_A[0]}" cy="${VES_A[1]}" r="14" fill="var(--bg)" stroke="var(--muted)" stroke-width="1"/>`;
+      for (let i = 0; i < 6; i++) {
+        if (!st.ne) break;
+        let p = st.ne === 'in' ? [VES_A[0] + IN_A[i][0], VES_A[1] + IN_A[i][1]] : CLEFT_A[i];
+        if (st.bound && i === 0) p = [100, 165];
+        if (st.bound && i === 3) p = [180, 165];
+        if (st.bound && !st.mirt && i === 2) p = st.clon ? [150, 136] : [216, 127];
+        if (st.rm && i === 1) p = [116, 93];
+        if (st.rm && i === 4) p = [VES_A[0] - 2, VES_A[1] + 1];
+        if (st.rm && i === 5) p = [228, 140];
+        if (st.rm && i === 2) p = [84, 90];
+        if (st.few && (i === 1 || i === 4 || i === 5)) continue;
+        g += dot(`n${i}`, p[0], p[1], 'c', st.ne === 'in' ? 2.6 : 3.4, st.ne === 'in' ? 0 : i % 3);
+      }
+      if (st.extra) [[150, 158], [120, 150], [196, 156], [168, 146]].forEach(([x, y], i) => { g += dot(`x${i}`, x, y, 'c', 3.4, i % 2); });
+      g += T('r1-t', 100, 208, 'α1 · Gq', 'l') + T('r1-s', 100, 222, '↑Ca++', 's') + T('rb-t', 180, 208, 'β · Gs', 'l') + T('rb-s', 180, 222, '↑cAMP', 's') + T('eff', 294, 208, 'effector cell', 's', 'end');
+      g += box('comt', 236, 128, 52, 18) + T('comt-t', 262, 141.5, 'COMT', 'l');
+      if (st.rm) g += T('met1', 262, 160, 'inactive', 's');
+      const d = st.drug || '';
+      if (d === 'coc') g += blk('coc', 96, 109) + T('coc-t', 86, 134, 'cocaine', 'b', 'end');
+      if (d === 'amph') g += T('amph-t', 172, 80, 'amphetamine', 'e', 'end') + A('amph-a', 184, 98, 170, 124);
+      if (d === 'maoi') g += blk('maoi', 74, 72) + T('mao1', 82, 84, 'phenelzine,', 'b', 'start') + T('mao2', 82, 97, 'selegiline', 'b', 'start');
+      if (d === 'clon') g += dot('clon', 216, 126, 'c', 5) + T('clon-t', 296, 98, 'clonidine', 'c', 'end');
+      if (d === 'mirt') g += blk('mirt', 216, 126) + T('mirt-t', 296, 98, 'mirtazapine', 'b', 'end');
+      if (st.lvl) g += T('lvl', 8, 236, st.lvl, st.lvlK || 'm', 'start');
+      return g;
+    };
+    F4['e2-adr-cycle-anim'] = () => {
+      const steps = [
+        ['Synthesis in the sympathetic nerve terminal: tyrosine → L-Dopa → dopamine → norepinephrine (NE).', adrScene({syn: 1}), 'Adrenergic Receptors: synthesis'],
+        ['Storage: NE is packed into vesicles.', adrScene({syn: 1, ne: 'in'}), '5 Key Steps: Storage (Vesicles)'],
+        ['Release: an action potential releases NE from the vesicle into the synapse (Ca++ dependent).', adrScene({syn: 1, ne: 'out'}), '5 Key Steps: Released'],
+        ['Binding: NE binds α1 (Gq, ↑Ca++) and β (Gs, ↑cAMP) on the effector cell, and α2 (Gi) on the terminal itself: negative feedback, "our gatekeeper", which suppresses NE release.', adrScene({syn: 1, ne: 'out', bound: 1}), 'α2 Pre-Synaptic Receptor; α1, βs Post-Synaptic Receptor'],
+        ['Removal: the NE transporter (NET) takes NE back into the terminal and recycles it into the vesicle; MAO (inside the terminal) and COMT break NE down to inactive metabolites.', adrScene({syn: 1, ne: 'out', rm: 1}), 'COMT, MAO: Inactive Metabolites']
+      ];
+      return step2('e2-adrc', 'NE: made, stored, released, removed', steps, 244,
+        ['<b>NE life cycle</b> (Adrenergic slide 8; ANS slide 14; 10/6): tyrosine → L-Dopa → dopamine → norepinephrine, stored in a vesicle, released, bound postsynaptically (α1, β) and presynaptically (α2, negative feedback), removed by the NET (recycled) or broken down by MAO and COMT.',
+         '"very similar to ... the acetylcholines": made from a precursor, stored in a vesicle, released upon an action potential (10/6).',
+         '"If we have too much of it, the enzymes come and break it. If we don\'t have enough, we might shunt more through the transporter pathways" (10/6). Where each drug acts: next figure.'],
+        'Five steps.');
+    };
+    F4['e2-adr-synapse-anim'] = () => {
+      const base = {syn: 0, ne: 'out', bound: 1};
+      const steps = [
+        ['Cocaine blocks the NE transporter (NET), "a 100% inhibitor of the net process": NE stays in the synapse, more NE at α1 and β (heart, vessels, CNS).', adrScene(Object.assign({drug: 'coc', extra: 1, lvl: 'more NE at α1 and β', lvlK: 'b11'}, base)), 'Indirect Acting Antagonist: Cocaine (Reuptake inhibitor)'],
+        ['Amphetamines mainly push NE (and dopamine, serotonin) out of the terminal; second, moderate effects: less reuptake, MAO blocked.', adrScene(Object.assign({drug: 'amph', extra: 1, lvl: 'NE pushed out: ↑ SNS', lvlK: 'b11'}, base)), 'Indirect Acting MOAs'],
+        ['MAO inhibitors block the enzyme that breaks NE down, so more NE is stored and released. Phenelzine (MAO-A and B) and selegiline (MAO-B) are irreversible.', adrScene(Object.assign({drug: 'maoi', extra: 1, lvl: 'more NE stored and released', lvlK: 'b11'}, base)), 'Monoamine Oxidase Inhibitors'],
+        ['Clonidine is an α2 agonist (Gi) at the nerve ending: less NE is released, so sympathetic tone falls: vasodilation, bradycardia.', adrScene(Object.assign({drug: 'clon', clon: 1, few: 1, lvl: 'less NE: ↓ sympathetic tone', lvlK: 'a11'}, base)), 'Clonidine MOA'],
+        ['Mirtazapine blocks the presynaptic α2 autoreceptor: the brake is off, so more NE (and 5-HT) is released: "What happens if I inhibit the inhibitor? I get positive effect."', adrScene(Object.assign({drug: 'mirt', mirt: 1, extra: 1, lvl: 'brake off: more NE, 5-HT', lvlK: 'b11'}, base)), 'Mirtazapine (Remeron)']
+      ];
+      return step2('e2-adr', 'Adrenergic synapse: drug sites', steps, 244,
+        ['<b>Indirect-acting</b> (Adrenergic slides 9–15): cocaine blocks the NET; amphetamines release NE (weak reuptake and MAO block); phenelzine (MAO-A + B) and selegiline (MAO-B) block MAO. None of them binds α1 or β itself.',
+         '<b>α2</b> (slides 21–24, 31–32): clonidine, agonist → less NE (↓ sympathetic tone); mirtazapine, antagonist → more NE and 5-HT. The same receptor, opposite directions.',
+         'PollEV: "Which of the following drugs increase the potency of NE by blocking the NET?" → cocaine. Transcript 10/6.'],
+        'Five steps.');
+    };
+
+    /* ---------- MAO inhibitors and dietary tyramine (Adrenergic slides 13–15; 10/6) ---------- */
+    F4['e2-maoi-tyramine-anim'] = () => {
+      const scene = st => {
+        let g = `<rect data-k="gut" x="4" y="24" width="140" height="112" rx="8" ${tint('D', 0.08)} stroke-width="1"/>` + T('gut-t', 74, 40, 'gut (and liver)', 'l');
+        g += `<rect data-k="brain" x="156" y="24" width="140" height="112" rx="8" ${tint('A', 0.08)} stroke-width="1"/>` + T('brain-t', 226, 40, 'brain', 'l');
+        g += T('food', 74, 58, 'cheese, wine: tyramine', 's');
+        g += box('mao-a', 44, 92, 60, 22, st.a ? null : 'C', 0.2) + T('mao-a-t', 74, 107.5, 'MAO-A', 'l') + box('mao-b', 196, 92, 60, 22, st.b ? null : 'C', 0.2) + T('mao-b-t', 226, 107.5, 'MAO-B', 'l');
+        if (st.a) g += blk('ba', 104, 92);
+        if (st.b) g += blk('bb', 256, 92);
+        g += band('blood', 148, 16) + T('blood-t', 8, 176, 'blood', 's', 'start');
+        const TY = st.a ? [[40, 156], [62, 160], [84, 154], [106, 158]] : [[30, 76], [50, 80], [96, 78], [118, 74]];
+        TY.forEach(([x, y], i) => { g += dot(`ty${i}`, x, y, 'b', 3.4, i % 2); });
+        if (!st.a) g += T('broke', 74, 130, 'tyramine broken down', 'm');
+        const DA = st.b ? [[204, 66], [222, 72], [240, 64], [258, 74], [214, 80]] : [[214, 70], [238, 74]];
+        DA.forEach(([x, y], i) => { g += dot(`da${i}`, x, y, 'a', 3.2); });
+        g += T('da-t', 226, 130, st.b ? 'more dopamine' : 'dopamine broken down', 'm');
+        g += T('bp', 150, 200, st.bp, st.bpK || 'm');
+        if (st.drug) g += T('drug', 150, 220, st.drug, 'b');
+        return g;
+      };
+      const steps = [
+        ['MAO-A (gut, liver) breaks down dietary tyramine and NE; MAO-B ("think about B for brain") breaks down dopamine.', scene({bp: 'blood pressure normal'}), 'Indirect Acting MOAs: MAO inhibitors'],
+        ['Phenelzine is non-selective (MAO-A and MAO-B) and irreversible: tyramine from fermented food (cheese, bread, wine) is no longer broken down: hypertensive crisis, the "cheese effect".', scene({a: 1, b: 1, bp: 'hypertensive crisis', bpK: 'b', drug: 'phenelzine'}), 'Monoamine Oxidase Inhibitors: Dietary Tyramine'],
+        ['Selegiline (low doses) blocks only MAO-B in the brain: more dopamine (depression, Parkinson\'s), while MAO-A in the gut still breaks tyramine down: no cheese effect.', scene({b: 1, bp: 'no "cheese effect"', bpK: 'c', drug: 'selegiline'}), 'No "Cheese Effect" for Selective MAO-B']
+      ];
+      return step2('e2-maoi', 'MAO inhibitors: the "cheese effect"', steps, 228,
+        ['<b>MAO-A and MAO-B</b> (Adrenergic slide 13): MAO-A in the brain, liver and GI breaks down NE and DA; MAO-B in the CNS striatum breaks down DA. "If you\'re not sure, think about B for brain" (10/6).',
+         '<b>Phenelzine</b> (slides 14–15): non-selective, irreversible; "you\'re gonna inhibit the breakdown in the gut and you\'re gonna inhibit the breakdown in the brain ... you have the inability to break down that dietary tyramine ... and that can cause what is called a hypertensive crisis" (10/6).',
+         '<b>Selegiline</b> (low doses): selective MAO-B, irreversible; "No \'Cheese Effect\' for Selective MAO-B". Dots are schematic.'],
+        'Three steps.');
+    };
+
+    /* ---------- Epinephrine at α1 and β2 (Adrenergic slides 47–51; 10/7; 10/8 poll and Jeopardy) ---------- */
+    F4['e2-epi-reversal-anim'] = () => {
+      const rec = (k, cx, st) => {
+        let g = `<rect data-k="${k}" x="${cx - 11}" y="48" width="22" height="30" rx="5" ${st.on ? tint('A', 0.34) : st.blk ? 'fill="var(--chip)" stroke="var(--figB)"' : 'fill="var(--chip)" stroke="var(--muted)"'} stroke-width="1.3"/><path data-k="${k}-p" class="pocket" d="M${cx - 5} 48 a5 5 0 0 0 10 0 Z"/>`;
+        if (st.epi) g += dot(`${k}-epi`, cx, 49, 'a', 5);
+        if (st.blk) g += blk(`${k}-blk`, cx, 48);
+        if (st.on) g += A(`${k}-arr`, cx, 80, cx, 90);
+        return g;
+      };
+      const P = [[6, 136], [152, 136], [6, 222], [152, 222]], PW = 142, PH = 82;
+      const AMP = [12, -16, -26, 14], LAB = ['dilation (BP ↓)', 'net pressor (BP ↑)', 'bigger rise', 'reversal (BP ↓)'], CLS = ['c', 'b', 'b', 'c'];
+      const TTL = ['epi, low dose', 'epi, high dose', 'propranolol → epi', 'prazosin → epi'];
+      const panel = (i, on) => { const [x, y] = P[i], yb = y + 50, d = AMP[i];
+        let g = `<rect data-k="f${i}" x="${x}" y="${y}" width="${PW}" height="${PH}" rx="5" fill="none" stroke="var(--line)"/>` + T(`ft${i}`, x + PW / 2, y + 15, TTL[i], 's') + `<line data-k="b${i}" class="dash" x1="${x + 8}" y1="${yb}" x2="${x + PW - 8}" y2="${yb}"/>`;
+        if (on) g += `<polyline data-k="t${i}" class="cv ${CLS[i]}" points="${x + 8},${yb} ${x + 40},${yb} ${x + 52},${yb + d} ${x + 88},${yb + d} ${x + 100},${yb} ${x + PW - 8},${yb}"/>` + T(`tl${i}`, x + PW / 2, y + 76, LAB[i], `${CLS[i]}11`);
+        return g; };
+      const scene = (st, n) => {
+        let g = T('vsm', 150, 34, 'vascular smooth muscle (arteries, veins)', 's') + band('mem', 62, 14, 20, 260);
+        g += rec('a1', 104, st.a1) + rec('b2', 196, st.b2) + T('a1-n', 88, 60, 'α1 · Gq', 'l', 'end') + T('b2-n', 212, 60, 'β2 · Gs', 'l', 'start');
+        if (st.a1.blk) g += T('a1-d', 88, 76, 'prazosin', 'b', 'end');
+        if (st.b2.blk) g += T('b2-d', 212, 76, 'propranolol', 'b', 'start');
+        g += T('a1-e', 104, 106, st.a1.on ? 'constrict' : st.a1.blk ? 'blocked' : 'not bound', st.a1.on ? 'b' : 's');
+        g += T('b2-e', 196, 106, st.b2.on ? 'dilate' : st.b2.blk ? 'blocked' : 'not bound', st.b2.on ? 'c' : 's');
+        g += T('net', 150, 126, st.net, 'l');
+        for (let i = 0; i < 4; i++) g += panel(i, i < n);
+        return g;
+      };
+      const steps = [
+        ['Arteries and veins carry α1 (Gq, ↑Ca++: constriction) and β2 (Gs, ↑cAMP: dilation). Epinephrine binds both, with different affinities: β1, β2 at low doses; α1, then α2 at high doses.',
+          scene({a1: {}, b2: {}, net: 'affinity: β1, β2 > α1 > α2'}, 0), 'Epinephrine Diverse Responses'],
+        ['Low dose: epinephrine binds β2 best, so the vessel dilates (receptor B in his 10/8 poll).',
+          scene({a1: {}, b2: {epi: 1, on: 1}, net: 'low dose: β2 only → dilation'}, 1), 'Low doses'],
+        ['High dose: α1 joins in and overrides β2: vasoconstriction, BP up. The trace is a net effect, α1 minus β2 ("net pressor effect"); receptor A in the poll is α1.',
+          scene({a1: {epi: 1, on: 1}, b2: {epi: 1, on: 1}, net: 'high dose: α1 − β2 → constriction'}, 2), 'Epinephrine Reversal: Net pressor effect'],
+        ['Propranolol first (his compound 1): β2, the physiological antagonist of α1, is blocked, so α1 acts alone and the rise in BP is greater.',
+          scene({a1: {epi: 1, on: 1}, b2: {blk: 1}, net: 'β2 blocked: α1 alone, bigger rise'}, 3), 'Compound 1 + epinephrine (10/8)'],
+        ['Prazosin first: α1 is blocked, β2 is unopposed, and the same high dose now dilates and BP falls: epinephrine reversal ("net depressor effect").',
+          scene({a1: {blk: 1}, b2: {epi: 1, on: 1}, net: 'α1 blocked: β2 alone → reversal'}, 4), 'After Alpha blockade: Net depressor effect']
+      ];
+      return step2('e2-epi', 'Epinephrine at α1 and β2: dose and blockers', steps, 308,
+        ['<b>Affinity</b> (slide 47, 10/7): "At low doses, epinephrine has the highest affinity for the beta 1 and the beta 2 receptor ... I\'m also gonna be activating the alpha ones and eventually the alpha-2s."',
+         '<b>High dose:</b> "once I activate the alpha one ... It overrides it"; the response is "a net effect of the alpha 1 effect minus the beta 2 effect" (slides 48–49).',
+         '<b>Propranolol</b> (10/8 Jeopardy, compound 1): blocking β2 removes the physiological antagonist, so constriction is greater. <b>Prazosin</b> (slides 50–51): β2 unopposed → dilation, the epinephrine reversal.',
+         '<b>Phenylephrine</b> (α1 only): a larger rise than epinephrine, and after prazosin no response at all; there is no β2 to unmask. Blood-pressure traces are schematic, not to scale.'],
+        'Five steps.');
+    };
+
+    /* ---------- Nitric oxide (Adrenergic slides 62–74; 10/7) ---------- */
+    F4['e2-no-pathway-anim'] = () => {
+      const R1 = [['gq', 44, 34, 'Gq'], ['plc', 90, 38, 'PLC'], ['ip3', 140, 36, 'IP3'], ['er', 188, 66, 'ER: Ca++']];
+      const R2 = [['cal', 164, 104, 'Ca–calmodulin'], ['nos', 96, 44, 'NOS']];
+      const scene = st => {
+        let g = T('lumen', 294, 30, 'blood', 's', 'end') + `<rect data-k="endo" x="4" y="38" width="292" height="100" rx="6" fill="var(--chip)" stroke="var(--line)"/>` + T('endo-t', 290, 52, 'endothelium', 's', 'end');
+        g += rcp('m3', 22, 24, 'A', st.ag ? 1 : 0) + (st.ag ? dot('ag', 22, 25, 'a', 5) : '') + T('m3-t', 38, 32, st.ag ? 'agonist on M3 (Gq)' : 'M3, not innervated', 's', 'start');
+        R1.forEach(([k, x, w, t], i) => { if (i > st.ch) return; g += box(k, x, 60, w, 22, null, 0, i) + T(`${k}-t`, x + w / 2, 75.5, t, 'l', 'middle', i) + (i ? A(`${k}-a`, R1[i - 1][1] + R1[i - 1][2] + 1, 71, x - 1, 71, false, i) : A('m3-a', 32, 54, x - 1, 66, false, 0)); });
+        if (st.ch >= 4) g += box('cal', 164, 96, 104, 22, 'E', 0.2, 0) + T('cal-t', 216, 111.5, 'Ca–calmodulin', 'l', 'middle', 0) + A('cal-a', 221, 83, 221, 95, false, 0);
+        if (st.ch >= 5) g += box('nos', 96, 96, 44, 22, 'E', 0.2, 1) + T('nos-t', 118, 111.5, 'NOS', 'l', 'middle', 1) + A('nos-a', 163, 107, 141, 107, false, 1) + A('no-a', 95, 107, 65, 107, false, 2) + T('rx', 150, 132, 'L-arginine → L-citrulline + NO', 's', 'middle', 2);
+        if (st.no) { const [x, y] = st.no, o = st.sgc ? 0 : 3; g += `<circle data-k="no" data-o="${o}" cx="${x}" cy="${y}" r="11" ${tint('E', 0.4)} stroke-width="1.2"/>` + T('no-t', x, y + 4, 'NO', 'l', 'middle', o); }   // made after NOS; in the muscle it moves first
+        g += `<rect data-k="sm" x="4" y="146" width="292" height="104" rx="6" ${tint('D', 0.07)} stroke-width="1"/>` + T('sm-t', 290, 160, 'vascular smooth muscle', 's', 'end');
+        if (st.sgc) g += box('sgc', 30, 168, 44, 22, 'C', 0.22, 1) + T('sgc-t', 52, 183.5, 'sGC', 'l', 'middle', 1) + A('sgc-a', 75, 179, 89, 179, false, 2) + box('cg', 90, 168, 82, 22, null, 0, 2) + T('cg-t', 131, 183.5, 'GTP → cGMP', 'm', 'middle', 2) +
+          A('vd-a', 173, 179, 185, 179, false, 3) + T('vd', 188, 184, st.dil === 0 ? 'dilation ends' : 'vasodilation', st.dil === 0 ? 'm' : 'c', 'start', 3);
+        if (st.pde) g += box('pde', 140, 206, 44, 22) + T('pde-t', 162, 221.5, 'PDE', 'l') + A('pde-a', 162, 205, 162, 192) + T('pde-n', 190, 221, 'breaks down cGMP', 's', 'start');
+        if (st.nit) g += box('nit', 10, 204, 88, 34, 'E', 0.16) + T('nit-t', 54, 218, 'nitrates', 'l') + T('nit-n', 54, 232, 'NO donors', 's') + A('nit-a', 52, 203, 52, 192, true);
+        if (st.sil) g += blk('sil', 140, 206) + T('sil-t', 162, 244, 'sildenafil', 'b') + T('hyp', 150, 268, 'nitrate + sildenafil: marked hypotension', 'b11');
+        return g;
+      };
+      const steps = [
+        ['M3 receptors sit on the endothelium and are not innervated. A muscarinic agonist (ACh, or carbachol in his example) binds M3, which is coupled to Gq.', scene({ag: 1, ch: -1}), 'Take-Home Message about NO'],
+        ['Gq activates PLC, which makes IP3; IP3 opens its receptor on the ER and Ca++ rushes into the cytoplasm of the endothelium.', scene({ag: 1, ch: 3}), 'Endothelial Vasculature of Smooth Muscle'],
+        ['Ca++ joins calmodulin; the Ca–calmodulin complex activates NOS, which turns L-arginine into L-citrulline with NO as the by-product.', scene({ag: 1, ch: 5, no: [52, 107]}), 'Nitric Oxide Synthase'],
+        ['NO is a gas: it dissolves across into the smooth muscle and activates soluble guanylate cyclase (sGC): GTP → cGMP → vasodilation.', scene({ag: 1, ch: 5, no: [52, 152], sgc: 1}), 'Nitric Oxide'],
+        ['PDE breaks cGMP down and the dilation ends.', scene({ag: 1, ch: 5, sgc: 1, pde: 1, dil: 0}), 'Endothelial Vasculature of Smooth Muscle'],
+        ['Nitrates (nitroglycerin, nitroprusside, isosorbide) give away NO, which bypasses M3 and NOS and goes straight to sGC: more cGMP, vasodilation.', scene({ch: 5, no: [52, 152], sgc: 1, pde: 1, nit: 1}), 'Drugs that can affect this system?'],
+        ['Sildenafil blocks PDE, so cGMP is not broken down ("PDE inhibitors increase the potency of NO"). With a nitrate, cGMP piles up: marked hypotension.', scene({ch: 5, no: [52, 152], sgc: 1, pde: 1, nit: 1, sil: 1}), 'PDE inhibitors increase the potency of NO']
+      ];
+      return step2('e2-no', 'Nitric oxide: endothelium to smooth muscle', steps, 276,
         ['<b>Endothelium</b> (slides 63, 67–73): agonist on M3 → Gq → PLC → IP3 → Ca++ from the ER → Ca–calmodulin → NOS: L-arginine → L-citrulline + NO.',
          '<b>Smooth muscle:</b> NO diffuses in → soluble guanylate cyclase (sGC) → cGMP → vasodilation; PDE breaks cGMP down. β2 does the same with cAMP, and PDE breaks down both.',
          '<b>What he needs you to know</b> (10/7): "if you either activate the M3s on the endothelium or if you take nitroglycerin, you\'re going to be either producing nitric oxide, and nitric oxide is a powerful vasodilator"; "I\'m never going to ask you to walk through every single one of these steps".',
@@ -1475,68 +1658,90 @@ const FIG = (() => {
         'Seven steps.');
     };
 
-    /* ---------- 7. RAAS and its drugs (RAAS slides 3–9, 12–13, 18, 20–30; 10/8) ---------- */
-    F4['e2-raas-anim'] = () => {
+    /* ---------- RAAS (RAAS slides 3–9, 12–13, 15, 18–29; Adrenergic slides 56–57; 10/8) ---------- */
+    const raasCol = (k, y, l1, l2) => box(k, 50, y, 120, 30) + T(`${k}-t`, 110, y + (l2 ? 13 : 19.5), l1, 'l') + (l2 ? T(`${k}-s`, 110, y + 26, l2, 's') : '');
+    F4['e2-raas-cascade-anim'] = () => {
       const scene = st => {
-        let g = box('agt', 4, 56, 92, 28) + T('agt-t', 50, 68, 'angiotensinogen', 'lbl sm') + T('agt-s', 50, 78, '(liver)');
-        g += A('ar1', 97, 70, 136, 70) + T('renin', 116, 52, 'renin', 'cl a', 'middle', 'font-size:10px');
-        g += box('a1', 138, 56, 44, 28) + T('a1-t', 160, 68, 'Ang I', 'lbl sm') + T('a1-s', 160, 78, 'inactive');
-        g += A('ar2', 183, 70, 222, 70) + T('ace', 202, 52, 'ACE', 'cl a', 'middle', 'font-size:10px');
-        g += box('a2', 224, 56, 44, 28) + T('a2-t', 246, 68, 'Ang II', 'lbl sm') + T('a2-s', 246, 78, 'active');
-        if (st.rec) {
-          g += A('ar3', 269, 64, 290, 57) + A('ar4', 269, 78, 290, 96);
-          g += box('at1', 292, 46, 62, 20, 'B', 0.2) + T('at1-t', 323, 59.5, 'AT1 (Gq)', 'lbl sm') + box('at2', 292, 88, 62, 20, 'C', 0.2) + T('at2-t', 323, 101.5, 'AT2 (Gi)', 'lbl sm');
-          g += T('e0', 160, 132, 'AT1 (Gq, ↑Ca++):', 'cl b', 'start', 'font-size:10px') + T('e1', 160, 144, '• vasoconstriction (↑TPR), ↓ renal blood flow', 'lbl xs', 'start') +
-            T('e2', 160, 154, '• aldosterone ↑ → MR in the kidney:', 'lbl xs', 'start') + T('e3', 168, 164, 'Na+ and H2O retained, K+ lost', 'lbl xs', 'start') +
-            T('e4', 160, 178, 'AT2 (Gi): vasodilation, Na+ excretion', 'cl c', 'start', 'font-size:9.5px');
-        }
-        if (st.bk) g += T('bk', 136, 104, 'bradykinin (dilator)', 'lbl xs', 'start') + A('bk-a', 214, 101, 242, 101) + T('bk-ace', 228, 94, 'ACE') + T('bk-i', 245, 104, 'inactive', 'lbl xs', 'start');
-        if (st.tr) g += A('tr-a', 116, 96, 116, 78) + T('tr0', 6, 106, '↑ renin release:', 'lbl sm', 'start') + T('tr1', 6, 118, 'β1 (SNS) on JG cells', 'lbl xs', 'start') + T('tr2', 6, 128, '↓ pressure (intrarenal)', 'lbl xs', 'start') + T('tr3', 6, 138, '↓ Na+/Cl− (macula densa)', 'lbl xs', 'start');
-        const d = st.drug || '', all = d === 'all';
-        if (d === 'ali' || all) g += blk('ali', 116, 70) + drug('ali-t', 116, 40, 'aliskiren');
-        if (d === 'acei' || all) g += blk('acei', 202, 70) + drug('acei-t', 202, 40, 'ACE inhibitors (-pril)');
-        if (d === 'acei') g += blk('acei2', 228, 101);
-        if (d === 'arb' || all) g += blk('arb', 290, 56) + drug('arb-t', 354, 38, 'ARBs (-sartan)', 'b', 'end');
-        if (d === 'spi' || all) g += blk('spi', 152, 151) + drug('spi-t', 142, 156, 'spironolactone,', 'b', 'end') + drug('epl-t', 142, 167, 'eplerenone', 'b', 'end');
-        if (d === 'bb' || all) g += blk('bb', 106, 114) + drug('bb-t', 116, 118, 'metoprolol', 'b', 'start');
-        return g + panel(st.p || [], 196);
+        let g = raasCol('agt', 24, 'angiotensinogen', '(liver)') + A('ar1', 110, 55, 110, 81) + T('renin', 102, 72, 'renin', 'a', 'end');
+        g += raasCol('a1', 82, 'angiotensin I', 'inactive') + A('ar2', 110, 113, 110, 139) + T('ace', 102, 130, 'ACE', 'a', 'end');
+        g += raasCol('a2', 140, 'angiotensin II', 'active');
+        if (st.rec) g += A('ar3', 84, 171, 56, 193, false, 0) + A('ar4', 136, 171, 214, 193, false, 0) + box('at1', 10, 194, 90, 24, 'B', 0.22, 1) + T('at1-t', 55, 210, 'AT1 · Gq', 'l', 'middle', 1) + box('at2', 200, 194, 90, 24, 'C', 0.22, 1) + T('at2-t', 245, 210, 'AT2 · Gi', 'l', 'middle', 1) +
+          T('e1', 10, 236, '↑Ca++: vasoconstriction (↑TPR),', 'm', 'start', 2) + T('e2', 10, 251, 'aldosterone ↑ (Na+, H2O kept,', 'm', 'start', 2) + T('e3', 10, 266, 'K+ lost), ↓ renal blood flow', 'm', 'start', 2) +
+          T('e4', 290, 236, 'vasodilation,', 'm', 'end', 3) + T('e5', 290, 251, 'Na+ excretion', 'm', 'end', 3) + T('e6', 290, 266, 'the opposite', 's', 'end', 3);
+        if (st.bk) g += T('bk', 120, 123, 'ACE also breaks down', 's', 'start') + T('bk2', 120, 136, 'bradykinin (a dilator)', 'c11', 'start');
+        if (st.tr) g += T('tr0', 178, 34, 'renin ↑ when:', 'l', 'start', 0) + T('tr1', 178, 50, 'SNS → β1 (JG cells)', 'm', 'start', 1) + T('tr2', 178, 64, 'renal pressure ↓', 'm', 'start', 2) + T('tr3', 178, 78, 'Na+ (macula densa) ↓', 'm', 'start', 3) + A('tr-a', 175, 60, 116, 68, false, 3);
+        return g;
       };
-      const R = { rec: 1, bk: 1, tr: 1 };
       const steps = [
-        ['Angiotensinogen (made in the liver) is cut by renin (from the kidney) into angiotensin I, which is inactive; ACE converts angiotensin I into angiotensin II, the active peptide.',
-          scene({}), 'Renin-Angiotensin Aldosterone System (RAAS)'],
-        ['Angiotensin II acts at AT1 (Gq, ↑Ca++): vasoconstriction, aldosterone release (Na+ and water kept, K+ lost). AT2 (Gi) does the opposite: the physiological antagonist.',
-          scene({ rec: 1 }), 'AT1 & AT2 have Opposite Effects'],
-        ['ACE also breaks down bradykinin, a potent dilator.',
-          scene({ rec: 1, bk: 1 }), 'ACE Inhibitors MOA'],
-        ['Renin is the rate-limiting enzyme. Its release goes up with sympathetic β1 on the JG cells, with low pressure in the kidney and with low Na+ at the macula densa.',
-          scene(R), 'Control of Renin Release'],
-        ['Aliskiren binds renin, the rate-limiting enzyme: everything downstream goes down.',
-          scene(Object.assign({ drug: 'ali', p: ['Aliskiren (renin inhibitor, reversible): Ang I ↓, Ang II ↓, AT1 ↓, AT2 ↓, aldosterone ↓.', '"if you block that, everything downstream from that goes down" (10/8).'] }, R)), 'Aliskiren'],
-        ['ACE inhibitors (-prils) block ACE: angiotensin I builds up, angiotensin II falls, and bradykinin is not broken down (dry cough, angioedema).',
-          scene(Object.assign({ drug: 'acei', p: ['ACE inhibitor (lisinopril, captopril): Ang I ↑, Ang II ↓, bradykinin ↑, AT1 ↓, AT2 ↓,', 'aldosterone ↓. Renin is upstream, so it does not fall.'] }, R)), 'ACE Inhibitors MOA'],
-        ['ARBs (-sartans) block AT1 (10,000-fold over AT2): angiotensin II rises, and AT2 activation goes up, "the cherry on top".',
-          scene(Object.assign({ drug: 'arb', p: ['ARB (losartan, valsartan): Ang I ↑, Ang II ↑, AT1 ↓, AT2 ↑, aldosterone ↓.', 'PollEV: valsartan → "Decrease activation of AT1 receptors".'] }, R)), 'ARB MOA'],
-        ['Spironolactone and eplerenone block the aldosterone (mineralocorticoid, MR) receptor in the kidney: Na+ and water are lost, K+ is spared.',
-          scene(Object.assign({ drug: 'spi', p: ['MR antagonists = potassium-sparing diuretics (late distal tubule) → hyperkalemia.', 'Spironolactone only: gynecomastia and impotence ("Not with Eplerenone").'] }, R)), 'Potassium-sparing diuretics: aldosterone receptor blockers'],
-        ['β1 blockers (metoprolol) block β1 on the JG cells: less renin is released, suppressed but not abolished.',
-          scene(Object.assign({ drug: 'bb', p: ['Metoprolol: "by blocking the beta ones in the kidney, you\'re also gonna decrease renin', 'production ... You\'re not gonna abolish" (10/8).'] }, R)), 'Drugs that can affect the RAAS'],
-        ['Five drugs, five block points (CLAMS): captopril, losartan, aliskiren, metoprolol, spironolactone.',
-          scene(Object.assign({ drug: 'all', p: ['Hyperkalemia: all of them (renin inhibitor, ACE inhibitors, ARBs, spironolactone).', 'Dry cough and angioedema: ACE inhibitors (bradykinin).'] }, R)), 'Drugs that can affect the RAAS']
+        ['Angiotensinogen (made in the liver) is cut by renin (from the kidney) into angiotensin I, which is inactive; ACE converts angiotensin I into angiotensin II, the active peptide.', scene({}), 'Renin-Angiotensin Aldosterone System (RAAS)'],
+        ['Angiotensin II acts at AT1 (Gq, ↑Ca++): vasoconstriction, aldosterone release (Na+ and water kept, K+ lost), less renal blood flow. AT2 (Gi) does the opposite: the physiological antagonist.', scene({rec: 1}), 'AT1 & AT2 have Opposite Effects'],
+        ['ACE also breaks down bradykinin, a potent dilator.', scene({rec: 1, bk: 1}), 'ACE Inhibitors MOA'],
+        ['Renin is the rate-limiting enzyme. Its release goes up with sympathetic β1 on the juxtaglomerular (JG) cells, with low pressure in the kidney and with low Na+/Cl− at the macula densa.', scene({rec: 1, bk: 1, tr: 1}), 'Control of Renin Release']
       ];
-      return stepper('e2-raas', 'The RAAS cascade and where each drug blocks it', steps, 270,
-        ['<b>Cascade</b> (slides 3, 23): angiotensinogen (liver) —renin (kidney)→ angiotensin I —ACE→ angiotensin II → AT1 (Gq) and AT2 (Gi). "You should be able to tell me what comes first and what comes last, and how our drugs gonna modify their concentration or activity" (10/8).',
-         '<b>AT1:</b> TPR ↑, Na+ and water excretion ↓, aldosterone ↑ (slide 3), ↓ renal blood flow (slide 15). <b>AT2:</b> vasodilation, Na+ excretion, remodeling ↓ (slide 18).',
-         '<b>Renin release</b> (slides 5–7): macula densa (Na+/Cl−), intrarenal baroreceptor, and β1 through the CNS (sympathetic).',
-         '<b>Block points</b> (slides 4, 8–14, 21–28): aliskiren at renin, -prils at ACE, -sartans at AT1, spironolactone and eplerenone at the aldosterone receptor, β blockers at renin release. Slide 29: "at least 1 to 2 questions on the effects of these drugs in the cascade".'],
-        'Ten steps.');
+      return step2('e2-raasc', 'The RAAS cascade', steps, 274,
+        ['<b>Cascade</b> (RAAS slides 3, 23): angiotensinogen (liver) —renin (kidney)→ angiotensin I —ACE→ angiotensin II → AT1 (Gq) and AT2 (Gi). "You should be able to tell me what comes first and what comes last, and how our drugs gonna modify their concentration or activity" (10/8).',
+         '<b>AT1:</b> TPR ↑, Na+ and water excretion ↓, aldosterone ↑ (slide 3), ↓ renal blood flow (slide 15). <b>AT2:</b> vasodilation, Na+ excretion, remodeling ↓ (slide 18). ACE also breaks down bradykinin, "a potent dilator" (slide 9).',
+         '<b>Renin release</b> (slides 5–7): macula densa (Na+/Cl−), intrarenal baroreceptor, and β1 through the CNS (sympathetic). Where each drug blocks: next figure.'],
+        'Four steps.');
+    };
+    F4['e2-raas-anim'] = () => {
+      const UP = '↑', DN = '↓';
+      // a level badge: a small pill with ↑ (orange) or ↓ (blue); it cross-fades when the level flips
+      const badge = (k, x, y, v) => v ? `<rect data-k="bd-${k}" data-o="1" x="${x}" y="${y - 13}" width="18" height="18" rx="9" ${tint(v === UP ? 'B' : 'A', 0.22)} stroke-width="1.2"/>` + T(`bdt-${k}`, x + 9, y + 1.5, v, v === UP ? 'b14' : 'a14', 'middle', 1) : '';
+      const scene = st => {
+        const lv = st.lv || {};
+        let g = raasCol('agt', 24, 'angiotensinogen', '(liver)') + A('ar1', 110, 55, 110, 81) + T('renin', 102, 72, 'renin', 'a', 'end') + badge('renin', 40, 72, lv.renin);
+        g += box('jg', 186, 24, 104, 24, null) + T('jg-t', 238, 40, 'β1 on JG cells', 'm') + A('jg-a', 186, 44, 116, 64);
+        g += raasCol('a1', 82, 'angiotensin I', '') + badge('a1', 176, 102, lv.a1) + A('ar2', 110, 113, 110, 139) + T('ace', 102, 130, 'ACE', 'a', 'end');
+        g += T('bk', 210, 102, 'bradykinin', 'm', 'start') + badge('bk', 276, 102, lv.bk);
+        g += raasCol('a2', 140, 'angiotensin II', '') + badge('a2', 176, 160, lv.a2) + A('ar3', 84, 171, 56, 189) + A('ar4', 136, 171, 164, 189);
+        g += box('at1', 10, 190, 90, 24, 'B', 0.22) + T('at1-t', 55, 206, 'AT1 act.', 'l') + badge('at1', 104, 206, lv.at1) + box('at2', 130, 190, 90, 24, 'C', 0.22) + T('at2-t', 175, 206, 'AT2 act.', 'l') + badge('at2', 224, 206, lv.at2);
+        g += A('ar5', 55, 215, 55, 237) + box('ald', 10, 238, 124, 24, null) + T('ald-t', 72, 254, 'aldosterone → MR', 'm') + badge('ald', 138, 254, lv.ald);
+        const d = st.drug || '', all = d === 'all';
+        if (d === 'bb' || all) g += blk('bb', 186, 36) + T('bb-t', 238, 64, 'metoprolol', 'b');
+        if (d === 'ali' || all) g += blk('ali', 110, 67) + T('ali-t', 124, 78, 'aliskiren', 'b', 'start');
+        if (d === 'acei' || all) g += blk('acei', 110, 125) + T('acei-t', 124, 130, 'ACE inhibitors (-pril)', 'b', 'start');
+        if (d === 'arb' || all) g += blk('arb', 55, 190) + T('arb-t', 104, 232, 'ARBs (-sartan)', 'b', 'start');
+        if (d === 'spi' || all) g += blk('spi', 134, 250) + T('spi-t', 148, 254, 'spironolactone,', 'b', 'start') + T('spi-t2', 148, 268, 'eplerenone', 'b', 'start');
+        if (st.note) g += T('note', 150, 290, st.note, st.noteK || 'm');
+        return g;
+      };
+      const steps = [
+        ['Metoprolol (β1 blocker) blocks β1 on the JG cells: less renin is released, "you\'re not gonna abolish", so everything downstream is lower.',
+          scene({drug: 'bb', lv: {renin: DN, a1: DN, a2: DN, at1: DN, at2: DN, ald: DN}, note: 'renin release suppressed, not abolished'}), 'Drugs that can affect the RAAS'],
+        ['Aliskiren binds renin, the rate-limiting enzyme (reversible): "if you block that, everything downstream from that goes down".',
+          scene({drug: 'ali', lv: {a1: DN, a2: DN, at1: DN, at2: DN, ald: DN}, note: 'everything downstream ↓'}), 'Aliskiren'],
+        ['ACE inhibitors (-prils: lisinopril, captopril) block ACE: angiotensin I builds up, angiotensin II falls, and bradykinin is not broken down (dry cough, angioedema). Renin is upstream, so it does not fall.',
+          scene({drug: 'acei', lv: {a1: UP, a2: DN, bk: UP, at1: DN, at2: DN, ald: DN}, note: 'bradykinin ↑: dry cough, angioedema', noteK: 'b11'}), 'ACE Inhibitors MOA'],
+        ['ARBs (-sartans: losartan, valsartan) block AT1 (10,000-fold over AT2): angiotensin II rises, and AT2 activation goes up, "the cherry on top".',
+          scene({drug: 'arb', lv: {a1: UP, a2: UP, at1: DN, at2: UP, ald: DN}, note: 'AT2 ↑: the physiological antagonist', noteK: 'c11'}), 'ARB MOA'],
+        ['Spironolactone and eplerenone block the aldosterone (mineralocorticoid, MR) receptor in the kidney: potassium-sparing diuretics: Na+ and water lost, K+ kept (hyperkalemia).',
+          scene({drug: 'spi', note: 'Na+, H2O lost; K+ kept: hyperkalemia', noteK: 'b11'}), 'Potassium-Sparing Diuretics: Aldosterone Receptor Blockers'],
+        ['Five drugs, five block points (CLAMS): captopril, losartan, aliskiren, metoprolol, spironolactone. Hyperkalemia: all of them; dry cough and angioedema: ACE inhibitors only.',
+          scene({drug: 'all', note: 'hyperkalemia: all of them', noteK: 'b11'}), 'Drugs that can affect the RAAS']
+      ];
+      return step2('e2-raas', 'RAAS drugs and what goes up or down', steps, 298,
+        ['<b>Block points</b> (RAAS slides 4, 8–14, 21–28; Adrenergic slides 56–57): metoprolol at renin release (β1 on JG cells), aliskiren at renin, -prils at ACE, -sartans at AT1, spironolactone and eplerenone at the aldosterone (MR) receptor.',
+         '<b>↑ / ↓</b> are his spoken answers to the slide 29 table (10/8): lisinopril "not gonna decrease renin, that\'s upstream ... increase [Ang I] ... decrease angiotensin 2 ... aldosterone ... the activation of A1"; valsartan "It will not decrease the plasma of angiotensin 2 ... your body is gonna make more of it ... It\'s not gonna decrease the activation of AT2. Actually it\'s gonna enhance it". Metoprolol: "suppressed, not abolished".',
+         '<b>Exam cue</b> (slide 29): "I guarantee you you\'re gonna have at least 1 to 2 questions on the effects of these drugs in the cascade." Adverse effects (slide 19): hyperkalemia for all; dry cough, angioedema for ACE inhibitors (bradykinin).'],
+        'Six steps.');
     };
 
     return F4;
   })();
   Object.assign(F, E2);
 
-  const api = key => (F[key] ? F[key]() : '');
+  /* Coloured labels (class "cl a" … "cl e") are drawn in their figure colour mixed 55:45 with the
+     ink colour, so every coloured label reaches 4.5:1 against the panel and the chip grey in both
+     themes (the plain figure colours are 2.3–3.9:1 for orange, green and pink in the light theme).
+     Browsers without color-mix keep the class colour. */
+  const inkMix = html => html.replace(/<text\b([^>]*)>/g, (m, at) => {
+    const k = at.match(/class="cl ([a-e])\b/); if (!k) return m;
+    const f = `fill:color-mix(in srgb,var(--fig${k[1].toUpperCase()}) 55%,var(--ink))`;
+    return /style="/.test(at) ? m.replace('style="', `style="${f};`) : `<text${at} style="${f}">`;
+  });
+  const ALIAS = {};   // retired keys → the figure that replaced them (none yet)
+  const api = key => { const k = F[key] ? key : ALIAS[key]; return k ? inkMix(F[k]()) : ''; };
   api.graph = GRAPH;
   api.keys = () => Object.keys(F);
   return api;

@@ -2,6 +2,15 @@
 
 Newest first. The build embeds this file; the Topics page shows what is new since your last visit, and the Progress page shows all of it. Keep each bullet to one short line.
 
+## 2026-10-10 (full review)
+- Every Exam 2 question reviewed: whys explain the mechanism, stems in his format; 4 out-of-scope keys rewritten.
+- Exam 2 guides, reference, tell apart and terms checked against his slides; 9 factual fixes.
+- Tell apart (Exam 2): a Why? card and Explain-one menu for each of the 100 rows.
+- Diagrams: crowded figures split, 6 new figures, larger labels on phones, smoother step motion.
+- Fixed: exam results lost after Explain more; Enter after Flag; exam switch ending a drill.
+- Back buttons from the question map and Try it; shorter phone header; Weak spots per exam.
+- Explain more now opens the matching diagram, table and comparison for most Exam 2 questions.
+
 ## 2026-10-09 (Exam 2 study pages and tiers)
 - Terms: 69 Exam 2 terms with flashcards and a term quiz; both follow the exam you study.
 - Guides: 11 Exam 2 sections, each teaching first, then his polls, cues and traps.

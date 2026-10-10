@@ -31,6 +31,8 @@ function stemMedia(q) {
 const fmtCite = s => String(s == null ? '' : s).replace(/–~/g, '–');
 const BUILD = typeof BUILD_INFO === 'undefined' ? {} : BUILD_INFO;
 const fmtDate = iso => { const d = new Date(iso); return isNaN(d) ? '' : d.toLocaleDateString(undefined, {month: 'short', day: 'numeric', year: 'numeric'}); };
+// a change-log heading "2026-10-09 (title)" reads "Oct 9, 2026 (title)"; the date is a calendar day, so no time-zone shift
+const fmtDay = t => String(t || '').replace(/^(\d{4})-(\d{2})-(\d{2})/, (m, y, mo, d) => new Date(+y, +mo - 1, +d).toLocaleDateString(undefined, {month: 'short', day: 'numeric', year: 'numeric'}));
 // Calendar days between today and the exam date (local time), not hours rounded up.
 function daysToExam() {
   const ex = active();
@@ -64,8 +66,19 @@ const examOf = q => lectureOf(q).exam;
 const MEM = {};
 const store = {
   get(k) { try { const v = localStorage.getItem(k); return v == null ? (MEM[k] || null) : v; } catch (e) { return MEM[k] || null; } },
-  set(k, v) { MEM[k] = v; try { localStorage.setItem(k, v); } catch (e) {} }
+  // true when the browser kept it; false when storage is full or blocked (it is then kept for this visit only)
+  set(k, v) { MEM[k] = v; try { localStorage.setItem(k, v); return true; } catch (e) { return false; } }
 };
+/* Progress that cannot be saved (storage full, blocked, or a private window) would be lost on
+   reload without a word: say so once, and point to the export. */
+let SAVE_WARNED = false;
+function saveWarn() {
+  if (SAVE_WARNED || !document.body) return; SAVE_WARNED = true;
+  const d = document.createElement('div'); d.id = 'savewarn'; d.setAttribute('role', 'alert');
+  d.innerHTML = 'This browser did not save your progress (storage is full or blocked). It is kept until you close the page: use <b>Progress → Export progress</b> to keep a copy. <button type="button" class="btn ghost">OK</button>';
+  d.querySelector('button').onclick = () => d.remove();
+  document.body.appendChild(d);
+}
 let PROFILE = store.get(COURSE.ns + ':profile') || 'default';
 /* Theme: 'system' follows the device setting; 'light' or 'dark' overrides it
    through the data-theme attribute the stylesheet reads. */
@@ -78,7 +91,20 @@ function applyTheme(v) {
 const themeSelect = () => `<select id="theme" title="Theme" aria-label="Theme">${THEMES.map(([k, l]) => `<option value="${k}" ${k === (store.get(COURSE.ns + ':theme') || 'system') ? 'selected' : ''}>${l}</option>`).join('')}</select>`;
 applyTheme(store.get(COURSE.ns + ':theme') || 'system');
 const KEY = () => COURSE.ns + ':p:' + PROFILE;
-const normalize = s => { s.q = s.q || {}; s.log = s.log || []; s.pace = s.pace || COURSE.paceDefault; s.exams = s.exams || []; s.flags = s.flags || {}; s.layout = s.layout === 'all' ? 'all' : 'one'; return s; };
+/* Saved or imported progress is checked field by field: an export from another version, or an
+   edited file, must not break the scheduler or put markup on the page. */
+const isObj = x => !!x && typeof x === 'object' && !Array.isArray(x);
+const normalize = s => {
+  s = isObj(s) ? s : {};
+  s.q = isObj(s.q) ? s.q : {};
+  Object.keys(s.q).forEach(k => { const v = s.q[k]; if (!isObj(v)) { delete s.q[k]; return; } ['n', 'ok', 'box', 'due', 'last'].forEach(f => { v[f] = Number.isFinite(+v[f]) ? +v[f] : 0; }); });
+  s.log = Array.isArray(s.log) ? s.log.filter(e => isObj(e) && typeof e.id === 'string') : [];
+  s.pace = ['cram', 'weekly', 'semester'].includes(s.pace) ? s.pace : COURSE.paceDefault;
+  s.exams = Array.isArray(s.exams) ? s.exams.filter(e => isObj(e) && Number.isFinite(+e.n) && +e.n > 0 && Number.isFinite(+e.score)).map(e => Object.assign(e, {n: +e.n, score: +e.score, t: +e.t || 0})) : [];
+  s.flags = isObj(s.flags) ? s.flags : {};
+  s.layout = s.layout === 'all' ? 'all' : 'one';
+  return s;
+};
 function loadState() {
   try { const s = JSON.parse(store.get(KEY()) || 'null'); if (s && s.q) return normalize(s); } catch (e) {}
   return normalize({});
@@ -91,7 +117,7 @@ const flagBtn = id => `<button type="button" class="btn ghost flagb ${isFlagged(
 const flaggedPool = () => examPool().filter(q => isFlagged(q.id));
 /* Layout: one question at a time, or every question of the drill on one page. */
 const layoutToggle = () => `<span class="row layoutsel" style="gap:4px">${[['one', 'One at a time'], ['all', 'All on one page']].map(([k, l]) => `<button type="button" class="chip ${S.layout === k ? 'on' : ''}" aria-pressed="${S.layout === k}" data-layout="${k}">${l}</button>`).join('')}</span>`;
-const save = () => store.set(KEY(), JSON.stringify(S));
+const save = () => { if (!store.set(KEY(), JSON.stringify(S))) saveWarn(); };
 const qs = id => (S.q[id] = S.q[id] || {n: 0, ok: 0, box: 0, due: 0, last: 0});
 
 /* ---------- scheduler ----------
@@ -105,7 +131,7 @@ const PACES = {
   semester: {label:'Semester (spread out)', steps:[0, HOUR, DAY, 3*DAY, 7*DAY, 21*DAY]}
 };
 function schedule(id, outcome) {
-  const st = qs(id), steps = PACES[S.pace || COURSE.paceDefault].steps, now = Date.now();
+  const st = qs(id), steps = (PACES[S.pace] || PACES[COURSE.paceDefault] || PACES.cram).steps, now = Date.now();
   if (outcome === 'wrong' || outcome === 'guess') st.box = 0;
   else if (outcome === 'unsure') st.box = Math.max(1, st.box);
   else st.box = Math.min(steps.length - 1, st.box + 1);
@@ -121,15 +147,37 @@ const VIEWS = [
 let CUR = 'topics';
 function nav() {
   $('#nav').innerHTML = VIEWS.filter(([k]) => k !== 'guide' || (typeof GUIDE_HTML !== 'undefined' && GUIDE_HTML.trim()))
-    .map(([k, l]) => `<button data-v="${k}" class="${k === CUR ? 'on' : ''}">${l}</button>`).join('') + themeSelect();
-  $('#nav').querySelectorAll('button').forEach(b => b.onclick = () => { RET.length = 0; backBtn(); go(b.dataset.v); });
+    .map(([k, l]) => `<button type="button" data-v="${k}" class="${k === CUR ? 'on' : ''}"${k === CUR ? ' aria-current="page"' : ''}>${l}</button>`).join('') + themeSelect();
+  $('#nav').querySelectorAll('button').forEach(b => b.onclick = e => {
+    const v = b.dataset.v;
+    if (!go(v)) return;           // the learner chose to stay in the exam: keep the way back too
+    RET.length = 0; backBtn();
+    // the nav is redrawn, so a keyboard user would lose their place: put focus back on this tab
+    if (e.detail === 0) { const nb = $('#nav').querySelector(`[data-v="${v}"]`); if (nb) nb.focus(); }
+  });
   $('#theme').onchange = e => applyTheme(e.target.value);
+  // on a phone the tabs scroll sideways in one row: keep the open one in sight
+  const on = $('#nav .on'), nv = $('#nav'); if (on && nv.scrollWidth > nv.clientWidth) nv.scrollLeft = on.offsetLeft - nv.offsetLeft - 40;
+  hdrVar();
 }
+/* The header's height, for things that stick under it (the exam clock on the all-on-one-page paper). */
+const hdrVar = () => { const hd = document.querySelector('header'); if (hd) document.documentElement.style.setProperty('--hdr', hd.getBoundingClientRect().height + 'px'); };
+window.addEventListener('resize', hdrVar);
 const clearView = () => { const v = $('#view'); v.onclick = null; v.onchange = null; };
-function go(v) {
-  if (CUR === 'exam' && EX && !EX.done && v !== 'exam' && !confirm('Leave the exam in progress? It will be kept until you return.')) return;
-  CUR = v; nav(); window.scrollTo(0, 0); clearView(); if (typeof xBack === 'function') xBack(null); { const tb = document.getElementById('tback'); if (tb) tb.remove(); if (TIO) { TIO.disconnect(); TIO = null; } }
-  VIEWFN[v]();
+/* Leaving a page: back to the top, and the floating buttons and scroll watcher of the old page go. */
+function leaveView() {
+  window.scrollTo(0, 0); clearView();
+  if (typeof xBack === 'function') xBack(null);
+  const tb = document.getElementById('tback'); if (tb) tb.remove();
+  if (TIO) { TIO.disconnect(); TIO = null; }
+}
+/* Open a view. Returns false when the learner stays in a running exam. `back` is set by the
+   "Back to …" button: the exam then reopens on its result page, not on a new paper. */
+function go(v, back) {
+  if (CUR === 'exam' && EX && !EX.done && v !== 'exam' && !confirm('Leave the exam in progress? It will be kept until you return.')) return false;
+  CUR = v; nav(); leaveView();
+  (back && v === 'exam' && EX && EX.done ? examResult : VIEWFN[v])();
+  return true;
 }
 /* "Explain more": a question links to the pages that teach its concept. The link
    keeps the quiz or exam exactly where it was and a floating button brings the
@@ -155,14 +203,22 @@ const BY_GROUP = {g1: ['guide', 'guide-7', 'Guide 7: drug basics he tests'], g2:
 const G2 = (n, t) => ['guide', 'guide2-' + n, 'Guide: ' + t];
 const LINKS2 = [
   [/tracing|compound|drug-?x|skm-|ne-drug-b|epi-two|gi-tracing/, [G2(8, 'reading his tracings')]],
-  [/organophos|echothio|pralidox|stigmine|cholinesterase|\bache\b|donepezil|rivastig|physostig|neostig|edroph/, [G2(3, 'cholinesterase inhibitors'), ['diagrams', 'dg-e2-chol-synapse-anim', 'Diagram: cholinergic synapse'], ['tell', 'tell2-ache', 'Tell apart: reversible vs irreversible'], ['tell', 'tell2-direct-indirect', 'Tell apart: direct vs indirect']]],
-  [/varenicl|succinyl|curare|rocuron|pancuron|\bnm\b|\bnn\b|nicotinic|botul|ganglion/, [G2(2, 'nicotinic receptors, NMJ'), ['ref', 'ref2-nmj', 'Reference: NMJ drugs'], ['tell', 'tell2-depolarizing', 'Tell apart: depolarizing vs not']]],
-  [/muscarin|atropine|scopol|pilocarp|carbachol|bethanechol|oxybut|trospium|solifen|tiotrop|ipratrop|benztrop|dumbbel/, [G2(4, 'muscarinic drugs'), ['ref', 'ref2-chol', 'Reference: muscarinic drugs'], ['tell', 'tell2-antimuscarinic', 'Tell apart: the antimuscarinics']]],
+  [/baroref|barorecept|stand-?up|orthostat/, [G2(1, 'the autonomic layout'), ['diagrams', 'dg-e2-baroreflex-anim', 'Diagram: baroreceptor reflex'], ['ref', 'ref2-2', 'Reference: organ by organ, PNS vs SNS']]],
+  [/who-runs|\borgan\b|dual-?innerv|predominant|lungs-pns|receptor-map|g-?protein-table/, [G2(1, 'the autonomic layout'), ['ref', 'ref2-2', 'Reference: organ by organ, PNS vs SNS'], ['ref', 'ref2-1', 'Reference: receptors and G proteins']]],
+  [/organophos|echothio|pralidox/, [G2(3, 'cholinesterase inhibitors'), ['diagrams', 'dg-e2-op-anim', 'Diagram: organophosphates'], ['tell', 'tell2-ache', 'Tell apart: reversible vs irreversible']]],
+  [/stigmine|cholinesterase|\bache\b|donepezil|rivastig|physostig|neostig|edroph/, [G2(3, 'cholinesterase inhibitors'), ['diagrams', 'dg-e2-chol-synapse-anim', 'Diagram: cholinergic synapse'], ['tell', 'tell2-ache', 'Tell apart: reversible vs irreversible'], ['tell', 'tell2-direct-indirect', 'Tell apart: direct vs indirect']]],
+  [/nn-?vs-?nm|varenicl|alpha4|α4|\bnn\b|ganglion/, [G2(2, 'nicotinic receptors, NMJ'), ['ref', 'ref2-nmj', 'Reference: NMJ drugs'], ['tell', 'tell2-nn-nm', 'Tell apart: Nn vs Nm']]],
+  [/succinyl|curare|rocuron|pancuron|\bnm\b|nicotinic|botul|depolariz/, [G2(2, 'nicotinic receptors, NMJ'), ['diagrams', 'dg-e2-nmj-anim', 'Diagram: neuromuscular junction'], ['ref', 'ref2-nmj', 'Reference: NMJ drugs'], ['tell', 'tell2-depolarizing', 'Tell apart: depolarizing vs not']]],
+  [/muscarin|atropine|scopol|pilocarp|carbachol|bethanechol|oxybut|trospium|solifen|tiotrop|ipratrop|benztrop|dumbbel/, [G2(4, 'muscarinic drugs'), ['diagrams', 'dg-e2-musc-map', 'Diagram: muscarinic receptors'], ['ref', 'ref2-chol', 'Reference: muscarinic drugs'], ['tell', 'tell2-antimuscarinic', 'Tell apart: the antimuscarinics']]],
   [/nitric|nitro|sildenafil|\bpde\b|cgmp|\bsgc\b|\bnos\b/, [G2(9, 'nitric oxide'), ['diagrams', 'dg-e2-no-pathway-anim', 'Diagram: nitric oxide'], ['ref', 'ref2-no', 'Reference: nitric oxide drugs'], ['tell', 'tell2-nitrate-pde', 'Tell apart: nitrate vs PDE inhibitor']]],
-  [/renin|angiotens|\bace\b|ace-inhib|\barbs?\b|losartan|valsartan|lisinopril|captopril|aliskiren|spironol|eplerenone|aldosteron|bradykinin|hyperkal|raas/, [G2(10, 'RAAS'), ['diagrams', 'dg-e2-raas-anim', 'Diagram: RAAS cascade'], ['ref', 'ref2-4', 'Reference: what each RAAS drug changes'], ['tell', 'tell2-raas', 'Tell apart: ACE inhibitor vs ARB vs others']]],
-  [/cocaine|amphet|methylphen|\bmao|phenelzine|selegil|tyramine|reuptake|\bnet\b|ephedrine/, [G2(5, 'indirect-acting adrenergic drugs'), ['diagrams', 'dg-e2-adr-synapse-anim', 'Diagram: adrenergic synapse'], ['ref', 'ref2-ind', 'Reference: indirect-acting drugs'], ['tell', 'tell2-indirect-adrenergic', 'Tell apart: cocaine vs amphetamine vs MAOI']]],
-  [/beta|β|metoprolol|propranolol|carvedilol|labetalol|atenolol|pindolol|albuterol|dobutamine|isoproterenol|mirabegron|epinephrine|reversal/, [G2(7, 'β drugs, epinephrine, NE'), ['ref', 'ref2-beta', 'Reference: β drugs'], ['tell', 'tell2-beta-blockers', 'Tell apart: β blockers (MAN)']]],
-  [/alpha|α|phenylephr|prazosin|tamsulosin|clonidine|mirtazap|phenoxybenz|oxymetaz/, [G2(6, 'α1 and α2 drugs'), ['ref', 'ref2-alpha', 'Reference: α drugs'], ['tell', 'tell2-alpha', 'Tell apart: α1 vs α2 drugs']]]
+  [/renin|angiotens|\bace\b|ace-inhib|\barbs?\b|losartan|valsartan|lisinopril|captopril|aliskiren|spironol|eplerenone|aldosteron|bradykinin|hyperkal|raas/, [G2(10, 'RAAS'), ['diagrams', 'dg-e2-raas-anim', 'Diagram: RAAS drugs'], ['ref', 'ref2-4', 'Reference: what each RAAS drug changes'], ['ref', 'ref2-raas', 'Reference: RAAS drugs'], ['tell', 'tell2-raas', 'Tell apart: ACE inhibitor vs ARB vs others']]],
+  [/phenoxybenz|hypertensive-?crisis/, [G2(6, 'α1 and α2 drugs'), ['ref', 'ref2-alpha', 'Reference: α drugs'], ['tell', 'tell2-alpha', 'Tell apart: α1 vs α2 drugs']]],
+  [/\bmao|phenelzine|selegil|tyramine/, [G2(5, 'indirect-acting adrenergic drugs'), ['diagrams', 'dg-e2-maoi-tyramine-anim', 'Diagram: MAO inhibitors and tyramine'], ['ref', 'ref2-ind', 'Reference: indirect-acting drugs'], ['tell', 'tell2-indirect-adrenergic', 'Tell apart: cocaine vs amphetamine vs MAOI']]],
+  [/cocaine|amphet|methylphen|reuptake|\bnet\b|ephedrine/, [G2(5, 'indirect-acting adrenergic drugs'), ['diagrams', 'dg-e2-adr-synapse-anim', 'Diagram: adrenergic synapse'], ['ref', 'ref2-ind', 'Reference: indirect-acting drugs'], ['tell', 'tell2-indirect-adrenergic', 'Tell apart: cocaine vs amphetamine vs MAOI']]],
+  [/blocker|olol\b|metoprolol|propranolol|carvedilol|labetalol|atenolol|pindolol|nebivolol/, [G2(7, 'β drugs, epinephrine, NE'), ['diagrams', 'dg-e2-beta-blockers', 'Diagram: β blockers (MAN)'], ['ref', 'ref2-beta', 'Reference: β drugs'], ['tell', 'tell2-beta-blockers', 'Tell apart: β blockers (MAN)']]],
+  [/epinephrine|reversal|epi-/, [G2(7, 'β drugs, epinephrine, NE'), ['diagrams', 'dg-e2-epi-reversal-anim', 'Diagram: epinephrine at α1 and β2'], ['ref', 'ref2-beta', 'Reference: β drugs'], ['tell', 'tell2-catecholamines', 'Tell apart: the catecholamines']]],
+  [/beta|β|albuterol|dobutamine|isoproterenol|mirabegron|catechol|-terol/, [G2(7, 'β drugs, epinephrine, NE'), ['ref', 'ref2-beta', 'Reference: β drugs'], ['tell', 'tell2-catecholamines', 'Tell apart: the catecholamines']]],
+  [/alpha|α|phenylephr|prazosin|tamsulosin|clonidine|mirtazap|oxymetaz/, [G2(6, 'α1 and α2 drugs'), ['ref', 'ref2-alpha', 'Reference: α drugs'], ['tell', 'tell2-alpha', 'Tell apart: α1 vs α2 drugs']]]
 ];
 const BY_LECTURE2 = {L07: G2(1, 'the autonomic layout'), L07ref: ['ref', 'ref2-2', 'Reference: organ by organ, PNS vs SNS'], L08: G2(2, 'nicotinic receptors, NMJ'), L09: G2(4, 'muscarinic drugs'), L10: G2(5, 'indirect-acting adrenergic drugs'), L11: G2(7, 'β drugs, epinephrine, NE'), L12: G2(10, 'RAAS'), PE2: G2(1, 'the autonomic layout')};
 const TERM_SUB2 = {g6: G2(1, 'the autonomic layout'), g7: G2(1, 'the autonomic layout'), g8: G2(4, 'muscarinic drugs'), g9: G2(6, 'α1 and α2 drugs'), g10: G2(9, 'nitric oxide'), g11: G2(10, 'RAAS')};
@@ -186,13 +242,15 @@ function linksFor(q) {
    ladder share `ladder`; climbing it asks them in tier order. The tier number is the field `level`
    (the older field `tier` holds the content tier and is unrelated). */
 const ladderQs = key => QUESTIONS.filter(q => q.ladder === key).sort((a, b) => (a.level || 0) - (b.level || 0));
-const climbLadder = key => { const l = ladderQs(key); if (l.length) startQuiz(l, 'Ladder: ' + (l[0].ladderName || key), 'pass'); };
-const ladderChip = q => q.ladder && ladderQs(q.ladder).length > 1 ? `<button type="button" class="chip" data-climb="${esc(q.ladder)}">${q.level > 1 ? 'Build up: Tier 1 → ' + q.level + ' on this' : 'Climb this ladder to Tier 3'}</button>` : '';
+// "Build up" on a Tier 2 question climbs Tier 1 → 2 only (upto); "Climb" goes all the way
+const climbLadder = (key, upto) => { const l = ladderQs(key).filter(q => !upto || (q.level || 0) <= upto); if (l.length) startQuiz(l, 'Ladder: ' + (l[0].ladderName || key), 'pass'); };
+const ladderChip = q => q.ladder && ladderQs(q.ladder).length > 1 ? `<button type="button" class="chip" data-climb="${esc(q.ladder)}"${q.level > 1 ? ` data-upto="${q.level}"` : ''}>${q.level > 1 ? 'Build up: Tier 1 → ' + q.level + ' on this' : 'Climb this ladder to Tier 3'}</button>` : '';
 const explainHTML = q => { const l = linksFor(q), c = ladderChip(q); return l.length || c ? `<div class="row explain"><span class="meta" style="margin:0">Explain more:</span>${l.map(([v, a, t]) => `<button type="button" class="chip" data-jump="${v}:${a}">${esc(t)}</button>`).join('')}${c}</div>` : ''; };
-document.addEventListener('click', e => { const b = e.target.closest('[data-climb]'); if (!b) return; if (EX && !EX.done) return; climbLadder(b.dataset.climb); });
+// ignored only on the exam's own pages; with an exam kept in the background, a quiz may still climb
+document.addEventListener('click', e => { const b = e.target.closest('[data-climb]'); if (!b) return; if (CUR === 'exam' && EX && !EX.done) return; climbLadder(b.dataset.climb, +b.dataset.upto || 0); });
 function jump(view, anchor) {
   RET.push({view: CUR, y: window.scrollY});
-  go(view);
+  if (!go(view)) { RET.pop(); return; }
   const t = document.getElementById(anchor);
   if (t) { openTo(t); t.scrollIntoView({block: 'start'}); window.scrollBy(0, -(document.querySelector('header') ? document.querySelector('header').getBoundingClientRect().height + 8 : 70)); }
   backBtn();
@@ -200,9 +258,11 @@ function jump(view, anchor) {
 function backBtn() {
   let b = document.getElementById('backbtn');
   if (!RET.length) { if (b) b.remove(); return; }
-  if (!b) { b = document.createElement('button'); b.id = 'backbtn'; b.type = 'button'; b.className = 'btn'; document.body.appendChild(b); b.onclick = () => { const r = RET.pop(); backBtn(); go(r.view); window.scrollTo(0, r.y); }; }
-  b.textContent = '← Back to ' + ({quiz: 'the question', exam: 'the exam', graphs: 'the figures', map: 'the map', terms: 'the terms'}[RET[RET.length - 1].view] || 'where you were');
+  if (!b) { b = document.createElement('button'); b.id = 'backbtn'; b.type = 'button'; b.className = 'btn'; document.body.appendChild(b); b.onclick = goBack; }
+  b.textContent = backLabel();
 }
+const backLabel = () => '← Back to ' + ({quiz: 'the question', exam: 'the exam', graphs: 'the figures', map: 'the map', terms: 'the terms', weak: 'Weak spots', tell: 'Tell apart', ref: 'the reference', guide: 'the guide', diagrams: 'the diagrams'}[(RET[RET.length - 1] || {}).view] || 'where you were');
+function goBack() { const r = RET.pop(); if (!r) return; backBtn(); go(r.view, true); window.scrollTo(0, r.y); }
 document.addEventListener('click', e => { const j = e.target.closest('[data-jump]'); if (j) { const [v, a] = j.dataset.jump.split(':'); jump(v, a); } });
 const VIEWFN = {topics: vTopics, quiz: vQuiz, terms: vTerms, weak: vWeak, exam: vExam, map: vMap, graphs: vGraphs, diagrams: vDiagrams, ref: vRef, tell: vTell, guide: vGuide, data: vData};
 const rerender = () => { const y = window.scrollY; if (CUR === 'quiz' && Q) renderQ(); else if (CUR === 'exam' && EX && !EX.done) renderExam(); else if (CUR === 'exam' && EX && EX.done) examResult(); else VIEWFN[CUR](); window.scrollTo(0, y); };
@@ -210,8 +270,12 @@ document.addEventListener('click', e => {
   const f = e.target.closest('[data-flag]');
   if (f) {
     toggleFlag(f.dataset.flag);
+    // a mouse click leaves focus on the button, where Enter would flag again instead of continuing
+    if (e.detail) f.blur();
     // only the buttons for this id change; a full re-render would reset in-progress forms
     document.querySelectorAll(`[data-flag="${f.dataset.flag}"]`).forEach(b => { b.classList.toggle('on', isFlagged(f.dataset.flag)); b.setAttribute('aria-pressed', isFlagged(f.dataset.flag)); b.textContent = '⚑ ' + (isFlagged(f.dataset.flag) ? 'Flagged' : 'Flag'); });
+    // the exam's question grid marks flagged numbers too
+    if (EX && !EX.done) document.querySelectorAll('.grid [data-j]').forEach(b => { if (EX.qs[+b.dataset.j] === f.dataset.flag) b.classList.toggle('flag', isFlagged(f.dataset.flag)); });
     if (CUR === 'topics' || CUR === 'map') rerender();
     return;
   }
@@ -233,12 +297,17 @@ const active = () => COURSE.exams.find(e => e.id === activeId()) || COURSE.exams
 const examSwitch = () => COURSE.exams.length < 2 ? '' : `<span class="row exsw" style="gap:4px"><span class="meta" style="margin:0">Studying for:</span>${COURSE.exams.map(e => `<button type="button" class="chip ${e.id === activeId() ? 'on' : ''}" data-exsw="${e.id}" aria-pressed="${e.id === activeId()}">${esc(e.name)}</button>`).join('')}</span>`;
 document.addEventListener('click', e => {
   const b = e.target.closest('[data-exsw]'); if (!b) return;
-  store.set(EXAM_KEY, b.dataset.exsw); GQ = null; if (typeof Q !== 'undefined' && CUR !== 'quiz') Q = null;
+  if (+b.dataset.exsw === activeId()) return;   // already studying it: nothing changes, the drill goes on
+  store.set(EXAM_KEY, b.dataset.exsw);
+  // a drill in progress is kept unless it holds the other exam's questions
+  if (Q && Q.list.some(q => examOf(q) !== activeId())) Q = null;
   VIEWFN[CUR] ? VIEWFN[CUR]() : null;
 });
 /* One collapsible group per exam; the exam being studied opens by default. */
-const exTitle = e => `${esc(e.name)}${e.scope ? ` <span class="meta" style="margin:0">· ${esc(e.scope)}</span>` : ''}`;
-const exGroup = (e, body) => `<details class="exgroup" data-ex="${e.id}" ${e.id === activeId() ? 'open' : ''}><summary>${exTitle(e)}</summary><div class="exbody">${body}</div></details>`;
+// one inline run (the summary is a flex row): a long scope wraps inside its words, never as a line starting with "·"
+const exTitle = e => `<span>${esc(e.name)}${e.scope ? `&nbsp;<span class="meta" style="margin:0">·&nbsp;${esc(e.scope)}</span>` : ''}</span>`;
+// `open` overrides the default (open = the exam being studied), e.g. when only the other exam has matches
+const exGroup = (e, body, open) => `<details class="exgroup" data-ex="${e.id}" ${(open == null ? e.id === activeId() : open) ? 'open' : ''}><summary>${exTitle(e)}</summary><div class="exbody">${body}</div></details>`;
 const lecExam = id => (COURSE.lectures.find(l => l.id === id) || {}).exam;
 const inFilter = (q, f) => Object.keys(f).every(k => {
   const want = [].concat(f[k]);
@@ -263,27 +332,30 @@ function newsCard() {
   const seen = store.get(NEWS_KEY, null), i = seen ? log.findIndex(c => newsId(c) === seen) : 1;
   const fresh = log.slice(0, i < 0 ? 1 : i); if (!fresh.length) return '';
   const items = fresh.flatMap(c => c.items), show = items.slice(0, 8);
-  return `<div class="card news" id="news"><div class="row" style="justify-content:space-between"><b>What’s new</b><span class="meta" style="margin:0">${esc(fresh[0].date.replace(/ \(.*\)$/, ''))}</span></div>
+  return `<div class="card news" id="news"><div class="row" style="justify-content:space-between"><b>What’s new</b><span class="meta" style="margin:0">${esc(fmtDay(fresh[0].date.replace(/ \(.*\)$/, '')))}</span></div>
     <ul>${show.map(t => `<li>${esc(t)}</li>`).join('')}</ul>${items.length > show.length ? `<div class="meta" style="margin:0 0 6px">+ ${items.length - show.length} more</div>` : ''}
     <div class="row"><button class="btn" id="newsok">Got it</button><button class="btn ghost" id="newsall">All changes</button></div></div>`;
 }
 /* ---------- Topics ---------- */
 let FILT = {skill: 'all'};
 function vTopics() {
-  const ex = active(), pool = examPool();
+  // the skill filter applies to the counts, both study buttons and the topic list; tiers and flags use the whole bank
+  const ex = active(), pool0 = examPool();
+  if (FILT.skill !== 'all' && !pool0.some(q => q.skill === FILT.skill)) FILT.skill = 'all';   // a skill the other exam has, this one not
+  const pool = FILT.skill === 'all' ? pool0 : pool0.filter(q => q.skill === FILT.skill);
   const seen = seenCount(pool), a = acc(pool);
   let h = `<h2>${esc(COURSE.short)}</h2>
   <div class="row" style="margin:-4px 0 8px">${examSwitch()}</div>
   <p class="sub">${esc(ex.name)} · ${esc(ex.date)} · ${ex.minutes ? ex.minutes + ' minutes allotted' : ''}${ex.questions ? ' · ' + ex.questions + ' questions' : ''}. ${esc(ex.blurb)} <b>${esc(examCountdown())}</b></p>
   <p class="sub stamp">Last updated ${esc(fmtDate(BUILD.built))}${BUILD.changelog && BUILD.changelog.length ? ' · <a href="#" id="whatsnew">All changes</a>' : ''}</p>${newsCard()}
   <div class="card"><div class="row" style="justify-content:space-between">
-   <div><b>${pool.length}</b> questions in the bank · <b>${seen}</b> seen · accuracy <b>${a.pct == null ? '—' : a.pct + '%'}</b></div>
+   <div><b>${pool.length}</b> ${FILT.skill === 'all' ? '' : esc((SKILL[FILT.skill] || {}).short || '') + ' '}questions in the bank · <b>${seen}</b> seen · accuracy <b>${a.pct == null ? '—' : a.pct + '%'}</b></div>
    <div class="row"><button class="btn" id="due">Study what is due</button><button class="btn ghost" id="all">One pass, all questions</button></div></div>
    <div class="row" style="margin-top:10px;justify-content:space-between"><span class="row"><span class="meta" style="margin:0">Answer:</span>${layoutToggle()}</span>
    <span class="row"><span class="meta" style="margin:0">⚑ Flagged: <b>${flaggedPool().length}</b></span>${flaggedPool().length ? `<button class="btn ghost" id="drillflag">Drill flagged</button><button class="btn ghost" id="clearflag">Clear flags</button>` : ''}</span></div>
    <div class="row" style="margin-top:10px"><span class="meta" style="margin:0">Skill:</span>
-   ${['all'].concat(COURSE.skills.map(s => s.id)).filter(k => k === 'all' || pool.some(q => q.skill === k))
-     .map(k => `<span class="chip ${FILT.skill === k ? 'on' : ''}" data-sk="${k}">${k === 'all' ? 'All' : esc(SKILL[k].short)}</span>`).join('')}</div></div>`;
+   ${['all'].concat(COURSE.skills.map(s => s.id)).filter(k => k === 'all' || pool0.some(q => q.skill === k))
+     .map(k => `<button type="button" class="chip ${FILT.skill === k ? 'on' : ''}" aria-pressed="${FILT.skill === k}" data-sk="${k}">${k === 'all' ? 'All' : esc(SKILL[k].short)}</button>`).join('')}</div></div>`;
   // one collapsible group per exam: its topics, each with its sections
   const topicCard = (t, tq) => {
     const ta = acc(tq), tseen = seenCount(tq);
@@ -300,7 +372,7 @@ function vTopics() {
     });
     return c + '</div>';
   };
-  const tiered = pool.filter(q => q.level && !q.lowYield);
+  const tiered = pool0.filter(q => q.level && !q.lowYield);
   if (tiered.length) {
     const ladders = [...new Set(tiered.filter(q => q.ladder).map(q => q.ladder))].filter(k => ladderQs(k).length > 1);
     h += `<div class="card"><b>Tiers, as he described them</b><p class="sub" style="margin:4px 0 8px">Tier 1: predict what a receptor does. Tier 2: two drugs together, the good and bad interactions. Tier 3: reverse a drug's effect. "A tier 3 question would require knowledge of tier 2 and 1."</p>
@@ -320,10 +392,10 @@ function vTopics() {
   const nok = $('#newsok'); if (nok) nok.onclick = () => { store.set(NEWS_KEY, newsId(BUILD.changelog[0])); const c = $('#news'); if (c) c.remove(); };
   const nall = $('#newsall'); if (nall) nall.onclick = () => go('data');
   $('#all').onclick = () => startQuiz(shuffle(pool), 'All questions, one pass', 'pass');
-  document.querySelectorAll('[data-tier]').forEach(b => b.onclick = () => startQuiz(pool.filter(q => q.level === +b.dataset.tier && !q.lowYield), 'Tier ' + b.dataset.tier, 'sr'));
+  document.querySelectorAll('[data-tier]').forEach(b => b.onclick = () => startQuiz(pool0.filter(q => q.level === +b.dataset.tier && !q.lowYield), 'Tier ' + b.dataset.tier, 'sr'));
   const ld = $('#ladders'); if (ld) ld.onclick = () => {
     // every ladder in turn, each from Tier 1 up
-    const keys = shuffle([...new Set(pool.filter(q => q.ladder).map(q => q.ladder))].filter(k => ladderQs(k).length > 1));
+    const keys = shuffle([...new Set(pool0.filter(q => q.ladder).map(q => q.ladder))].filter(k => ladderQs(k).length > 1));
     startQuiz(keys.flatMap(ladderQs), 'Ladders, Tier 1 → 3', 'pass');
   };
   const df = $('#drillflag'); if (df) df.onclick = () => startQuiz(flaggedPool(), 'Flagged questions', 'pass');
@@ -340,8 +412,11 @@ let Q = null;
 function startQuiz(list, label, mode, opts = {}) {
   if (!list.length) { alert('No questions match that selection.'); return; }
   Q = {list: list.slice(), label, mode, i: 0, done: 0, right: 0, retest: [], doneIds: new Set(), st: {}, graph: opts.graph || null};
-  RET.length = 0; backBtn();
-  CUR = 'quiz'; nav(); nextQ();
+  // opts.back: opened from a page the learner will want to return to (a map tile, a Tell apart row)
+  const from = opts.back && CUR !== 'quiz' ? {view: CUR, y: window.scrollY} : null;
+  RET.length = 0; if (from) RET.push(from); backBtn();
+  // opened from deep in a long page (Tell apart, the map): start at the top, without the old page's floating buttons
+  CUR = 'quiz'; nav(); leaveView(); nextQ();
 }
 const allDone = () => Q.list.every(q => Q.doneIds.has(q.id));
 /* Pick the next question. Pass mode walks the list once. SR mode takes a
@@ -371,15 +446,18 @@ function nextQ() {
   if (Q.mode === 'pass') { while (Q.i < Q.list.length && Q.doneIds.has(Q.list[Q.i].id)) Q.i++; if (Q.i >= Q.list.length) return quizDone(); q = Q.list[Q.i++]; }
   else { if (allDone()) return quizDone(); q = pickSR(); }
   Q.cur = q; Q.order = q.type === 'match' ? null : optOrder(q);
-  Q.picked = q.multi ? new Set() : null; Q.answered = false; Q.t0 = Date.now();
+  // mpick too: a matching question must not start with the last one's choices
+  Q.picked = q.multi ? new Set() : null; Q.mpick = null; Q.answered = false; Q.t0 = Date.now();
   if (q.type === 'match') Q.rightOrder = shuffle(q.right.slice());
+  window.scrollTo(0, 0);   // the next question starts at its stem, not where the last explanation ended
   renderQ();
 }
 function quizDone() {
   Q.finished = true; Q.answered = false; clearView();
   if (Q.graph) return graphDone();
   $('#view').innerHTML = `<div class="card"><h2>Pass finished</h2><p>${Q.right} of ${Q.done} correct.</p>
-    <div class="row"><button class="btn" id="again">Study what is due</button><button class="btn ghost" id="totopics">Topics</button></div></div>`;
+    <div class="row">${RET.length ? `<button class="btn" id="qback">${esc(backLabel())}</button>` : ''}<button class="btn${RET.length ? ' ghost' : ''}" id="again">Study what is due</button><button class="btn ghost" id="totopics">Topics</button></div></div>`;
+  const qb = $('#qback'); if (qb) qb.onclick = goBack;
   $('#again').onclick = () => startQuiz(examPool(), 'Due and unseen', 'sr');
   $('#totopics').onclick = () => go('topics');
 }
@@ -407,7 +485,7 @@ function qCard(q, st, opts = {}) {
   let h = `<div class="card qcard" data-qid="${q.id}"><div class="row" style="justify-content:space-between"><span class="meta">${tag}${metaLine(q)}${opts.seen ? ' · ' + (sq && sq.n ? 'seen ' + sq.n + '×' : 'new') : ''}</span>${flagBtn(q.id)}</div><div class="stem">${esc(q.stem)}</div>${stemMedia(q)}`;
   if (q.type === 'match') {
     h += q.left.map((l, i) => `<div class="row" style="margin-bottom:8px"><span style="flex:1 1 200px">${esc(l)}</span>
-      <select data-qid="${q.id}" data-l="${i}" ${st.answered ? 'disabled' : ''}><option value="">—</option>${st.rightOrder.map(r => `<option ${st.mpick && st.mpick[i] === r ? 'selected' : ''}>${esc(r)}</option>`).join('')}</select>
+      <select data-qid="${q.id}" data-l="${i}" ${st.answered ? 'disabled' : ''}><option value="">—</option>${st.rightOrder.map(r => `<option value="${esc(r)}" ${st.mpick && st.mpick[i] === r ? 'selected' : ''}>${esc(r)}</option>`).join('')}</select>
       ${st.answered ? (st.mpick[i] === pairOf(q, l) ? '<b style="color:var(--ok)">✓</b>' : `<b style="color:var(--bad)">✗ ${esc(pairOf(q, l))}</b>`) : ''}</div>`).join('');
   } else {
     st.order.forEach((oi, n) => {
@@ -442,7 +520,7 @@ function renderQ() {
   // the current question may have been answered on the all-on-one-page view
   if (Q.cur && !Q.answered && Q.doneIds.has(Q.cur.id)) return nextQ();
   const q = Q.cur; clearView();
-  let h = `<div class="row" style="justify-content:space-between"><span class="meta">${esc(Q.label || '')} · ${Q.done} answered${Q.done ? ' · ' + Q.right + ' right' : ''}</span>${layoutToggle()}</div><div class="row" style="margin:-4px 0 8px">${sessStrip()}</div>`;
+  let h = `<div class="row" style="justify-content:space-between"><span class="meta">${esc(Q.label || '')} · ${Q.done} answered${Q.done ? ' · ' + Q.right + ' right' : ''}</span>${layoutToggle()}</div><div class="row" style="margin:4px 0 10px">${sessStrip()}</div>`;
   h += qCard(q, Q, {seen: true, single: true,
     conf: () => Q.ok ? `<div class="row" style="margin-top:12px"><span class="meta" style="margin:0">How sure were you?</span>
       <button class="btn" data-c="sure">Knew it</button><button class="btn ghost" data-c="unsure">Not sure</button><button class="btn ghost" data-c="guess">I guessed</button></div>`
@@ -473,9 +551,7 @@ function allList() {
 function renderAll() {
   const list = allList(), shown = list.slice(0, Q.allN);
   shown.forEach(q => { if (!Q.st[q.id]) Q.st[q.id] = {order: q.type === 'match' ? null : optOrder(q), rightOrder: q.type === 'match' ? shuffle(q.right.slice()) : null, picked: q.multi ? new Set() : null, mpick: null, answered: false, ok: null, t0: Date.now()}; });
-  const done = shown.filter(q => Q.st[q.id].answered).length, right = shown.filter(q => Q.st[q.id].ok).length;
-  const earlier = Q.list.length - list.length;
-  let h = `<div class="row allhead" style="justify-content:space-between"><span class="meta" id="allcount">${esc(Q.label || '')} · ${done} of ${shown.length} answered${done ? ' · ' + right + ' right' : ''}${list.length > shown.length ? ' · ' + list.length + ' in the drill' : ''}${earlier ? ' · ' + earlier + ' answered one at a time' : ''}</span>${layoutToggle()}</div><div class="row" style="margin:-4px 0 8px">${sessStrip()}</div>`;
+  let h = `<div class="row allhead" style="justify-content:space-between"><span class="meta" id="allcount">${esc(allCount(list, shown))}</span>${layoutToggle()}</div><div class="row" style="margin:4px 0 10px">${sessStrip()}</div>`;
   shown.forEach((q, i) => {
     const st = Q.st[q.id];
     h += qCard(q, st, {idx: i, conf: s2 => allConf(q, s2)});
@@ -501,8 +577,12 @@ function refreshCard(id) {
   const idx = [...document.querySelectorAll('.qcard')].indexOf(el);
   const tmp = document.createElement('div'); tmp.innerHTML = qCard(byId[id], Q.st[id], {idx, conf: s2 => allConf(byId[id], s2)});
   el.replaceWith(tmp.firstElementChild);
-  const list = allList(), shown = list.slice(0, Q.allN), done = shown.filter(q => Q.st[q.id] && Q.st[q.id].answered).length, right = shown.filter(q => Q.st[q.id] && Q.st[q.id].ok).length;
-  const c = $('#allcount'); if (c) c.textContent = `${Q.label || ''} · ${done} of ${shown.length} answered${done ? ' · ' + right + ' right' : ''}`;
+  const list = allList(), c = $('#allcount'); if (c) c.textContent = allCount(list, list.slice(0, Q.allN));
+}
+/* The count line over the all-on-one-page drill (drawn whole, then refreshed after each answer). */
+function allCount(list, shown) {
+  const done = shown.filter(q => Q.st[q.id] && Q.st[q.id].answered).length, right = shown.filter(q => Q.st[q.id] && Q.st[q.id].ok).length, earlier = Q.list.length - list.length;
+  return `${Q.label || ''} · ${done} of ${shown.length} answered${done ? ' · ' + right + ' right' : ''}${list.length > shown.length ? ' · ' + list.length + ' in the drill' : ''}${earlier ? ' · ' + earlier + ' answered one at a time' : ''}`;
 }
 function pickAll(id, oi) {
   const q = byId[id], st = Q.st[id]; if (st.answered) return;
@@ -511,7 +591,7 @@ function pickAll(id, oi) {
 }
 function checkAll(id) {
   const q = byId[id], st = Q.st[id];
-  if (q.type === 'match') { st.mpick = st.mpick || {}; st.ok = q.left.every((l, i) => st.mpick[i] === pairOf(q, l)); }
+  if (q.type === 'match') { st.mpick = st.mpick || {}; if (!Object.values(st.mpick).some(Boolean)) return; st.ok = q.left.every((l, i) => st.mpick[i] === pairOf(q, l)); }
   else if (q.multi) { if (!st.picked.size) return; st.ok = gradeMulti(q, st.picked); }
   else st.ok = q.options[st.picked].correct;
   st.answered = true; st.conf = st.ok ? 'sure' : 'wrong';
@@ -544,6 +624,7 @@ function check() {
   const q = Q.cur;
   if (q.type === 'match') {
     Q.mpick = Q.mpick || {};
+    if (!Object.values(Q.mpick).some(Boolean)) return;   // nothing chosen yet: Check does nothing, as with select-all
     Q.ok = q.left.every((l, i) => Q.mpick[i] === pairOf(q, l));
   } else if (q.multi) {
     if (!Q.picked.size) return;
@@ -581,7 +662,7 @@ const solid = e => e.ok && e.conf !== 'guess';
 function sessStrip() {
   const ses = sessionLog(); if (!ses.length) return '<span class="meta" id="sess" style="margin:0">This session: no answers yet</span>';
   const ok = ses.filter(solid).length, last = ses.slice(-10);
-  return `<span class="meta" id="sess" style="margin:0">This session: ${ok}/${ses.length} (${Math.round(100 * ok / ses.length)}%) · last ${last.length}: <span class="sdots10">${last.map(e => `<i class="${solid(e) ? 'y' : 'n'}" title="${esc(e.id)}"></i>`).join('')}</span></span>`;
+  return `<span class="meta" id="sess" style="margin:0"><span title="Solid: right and not marked &quot;I guessed&quot; (the count above includes guessed right answers)">This session: ${ok}/${ses.length} solid (${Math.round(100 * ok / ses.length)}%)</span> · last ${last.length}: <span class="sdots10">${last.map(e => `<i class="${solid(e) ? 'y' : 'n'}" title="${esc(e.id)}"></i>`).join('')}</span></span>`;
 }
 const refreshSess = () => { const el = $('#sess'); if (el) el.outerHTML = sessStrip(); };
 
@@ -593,16 +674,17 @@ const refreshSess = () => { const el = $('#sess'); if (el) el.outerHTML = sessSt
       chosen most recently with why it is wrong, the idea to learn, where to read it,
       and a drill button. 3. By topic and by skill, folded away. */
 function vWeak() {
-  const pool = examPool();
-  if (!S.log.length) { $('#view').innerHTML = '<h2>Weak spots</h2><div class="empty">Answer some questions and this fills in: your progress this session, the concepts to review first, what you keep choosing and why it is wrong, and where to read about each one.</div>'; return; }
+  const pool = examPool(), ex = active(), mineId = id => byId[id] && examOf(byId[id]) === ex.id;
+  // everything on this page is about the exam being studied
+  if (!S.log.some(e => mineId(e.id))) { $('#view').innerHTML = `<h2>Weak spots</h2><div class="row" style="margin:-4px 0 8px">${examSwitch()}</div><div class="empty">No ${esc(ex.name)} answers yet. Answer some questions and this fills in: your progress this session, the concepts to review first, what you keep choosing and why it is wrong, and where to read about each one.</div>`; return; }
   const recent = {};
   S.log.forEach(e => { (recent[e.id] = recent[e.id] || []).push(e); });
   const score = q => { const r = (recent[q.id] || []).slice(-3); if (!r.length) return null; return r.filter(solid).length / r.length; };
   const notSolid = pool.filter(q => score(q) != null && score(q) < 1);
   let h = `<h2>Weak spots</h2><div class="row" style="margin:-4px 0 8px">${examSwitch()}</div>`, retryList = [];
 
-  // 1. this session
-  const ses = sessionLog();
+  // 1. this session (its answers on this exam's questions)
+  const ses = sessionLog().filter(e => mineId(e.id));
   if (ses.length) {
     const ok = ses.filter(solid).length, pct = Math.round(100 * ok / ses.length);
     const half = Math.floor(ses.length / 2), a = ses.slice(0, half), b = ses.slice(half);
@@ -631,7 +713,7 @@ function vWeak() {
   });
   const ranked = Object.values(areas).sort((x, y) => y.gap - x.gap);
   const firstSentence = t => { const m = String(t || '').replace(/<[^>]+>/g, '').match(/^(.*?[.!?](\s|$)){1,2}/); const r = (m ? m[0] : String(t || '')).trim(); return r.length > 320 ? r.slice(0, 317) + '…' : r; };
-  const cap1 = t => t.charAt(0).toUpperCase() + t.slice(1);
+  const cap1 = t => /^[a-z]/.test(t) ? t.charAt(0).toUpperCase() + t.slice(1) : t;   // "β drugs" stays β, not Greek capital Β
   const pickedText = (q, e) => { const p = [].concat(e.picked == null ? [] : e.picked); return p.map(i => q.options && q.options[i]).filter(Boolean); };
   if (ranked.length) {
     h += `<h3>What to review next</h3><p class="sub">${notSolid.length} question${notSolid.length === 1 ? '' : 's'} not yet solid, grouped by the section that teaches them, most missing first. Read the section, then drill its questions.</p>`;
@@ -645,7 +727,9 @@ function vWeak() {
         if (wrong.length) h += `<div class="pw"><b>You chose:</b> ${esc(wrong.map(o => o.t).join(' · '))}<br><span class="meta" style="margin:0">Why it is not the answer: ${esc(wrong.map(o => o.why || '').join(' '))}</span></div>`;
         else if (c.last && c.last.e.conf === 'guess') h += `<div class="pw"><b>You got it right but marked it a guess.</b></div>`;
         if (right.length) h += `<div class="pr"><b>Answer:</b> ${esc(right.join(' · '))}</div>`;
-        if (q.teach) h += `<div class="pi"><b>The idea:</b> ${esc(firstSentence(q.teach))}</div>`;
+        const idea = q.teach ? firstSentence(q.teach) : '', bare = x => String(x).toLowerCase().replace(/[^a-z0-9α-ω]+/g, '');
+        // a definition question's teach often restates its answer: say it once
+        if (idea && !(right.length && bare(idea).includes(bare(right.join(' '))) && bare(idea).length < bare(right.join(' ')).length + 40)) h += `<div class="pi"><b>The idea:</b> ${esc(idea)}</div>`;
         if (c.qs.length > 1) h += `<div class="meta" style="margin:2px 0 0">${c.qs.length} questions on this concept are not solid.</div>`;
         h += `</div>`;
       });
@@ -654,7 +738,7 @@ function vWeak() {
     });
     if (ranked.length > 6) h += `<p class="meta">${ranked.length - 6} more section${ranked.length - 6 === 1 ? '' : 's'} have questions to review; they appear here as these are solved.</p>`;
     h += `<div class="row" style="margin:6px 0 14px"><button class="btn ghost" id="missall">Drill all ${notSolid.length} not-solid questions</button></div>`;
-  } else h += `<div class="card">Every question you have answered is solid on its last three answers.</div>`;
+  } else h += `<div class="card">Every ${esc(ex.name)} question you have answered is solid on its last three answers.</div>`;
 
   // 3. by topic / by skill (folded)
   const group = (keyFn, nameFn) => {
@@ -744,12 +828,16 @@ function drawBlueprint(bp) {
   const take = (key, n) => {
     const list = shuffle((by[key] || []).slice()), seen = new Set();
     const firsts = list.filter(q => !seen.has(q.concept) && seen.add(q.concept));   // one per concept before repeats
-    for (const q of firsts.concat(list)) { if (n <= 0) break; if (!ok(q)) continue; out.push(q); used.add(q.id); cat.set(q.id, key); n--; }
+    let got = 0;
+    for (const q of firsts.concat(list)) { if (got >= n) break; if (!ok(q)) continue; out.push(q); used.add(q.id); cat.set(q.id, key); got++; }
+    return got;   // fewer than asked when the topic is short of questions
   };
   let left = total;
-  bp.parts.forEach(p => { if (p.rest || p.min) return; const n = Array.isArray(p.n) ? p.n[0] + Math.floor(Math.random() * (p.n[1] - p.n[0] + 1)) : p.n; take(p.key, n); left -= n; });
-  const g = bp.parts.find(p => p.min); if (g) { take(g.key, g.min); left -= g.min; }
-  const r = bp.parts.find(p => p.rest); if (r) take(r.key, left);
+  bp.parts.forEach(p => { if (p.rest || p.min) return; const n = Array.isArray(p.n) ? p.n[0] + Math.floor(Math.random() * (p.n[1] - p.n[0] + 1)) : p.n; left -= take(p.key, n); });
+  const g = bp.parts.find(p => p.min); if (g) left -= take(g.key, g.min);
+  const r = bp.parts.find(p => p.rest); if (r) left -= take(r.key, left);
+  // a topic short of questions still leaves a full-length paper: fill from the rest of the bank
+  for (const q of shuffle(elig)) { if (left <= 0) break; if (ok(q)) { out.push(q); used.add(q.id); cat.set(q.id, catOf(q)); left--; } }
   // exactly bp.sata select-all items: swap one for another in the same topic
   const swap = (from, wantMulti) => {
     for (const q of shuffle(out.filter(x => !!x.multi === from))) {
@@ -763,27 +851,33 @@ function drawBlueprint(bp) {
   return shuffle(out);
 }
 function vExam() {
-  const ex = active(), max = examPool().filter(q => !q.lowYield && !q.type).length;
+  // "All": every question the draw can use (definition questions held to 15% of the paper, as drawExam does)
+  const ex = active(), xp = examPool().filter(q => !q.lowYield && !q.type), nonTerm = xp.filter(q => q.skill !== 'term').length;
+  const max = nonTerm + Math.min(new Set(xp.filter(q => q.skill === 'term').map(q => q.concept)).size, Math.floor(nonTerm * 0.15 / 0.85));
   if (EX && !EX.done && EX.expired) { submitExam(); return; }
   if (EX && !EX.done) return renderExam();
+  // a finished paper stays on its result page until "New exam" (or the learner switches exam)
+  if (EX && EX.done && (!EX.exam || EX.exam === ex.id)) return examResult();
   const lens = [...new Set([ex.questions, 25, 50, max].filter(x => x && x <= max))].sort((a, b) => a - b);
   let h = `<h2>Exam simulator</h2><div class="row" style="margin:-4px 0 8px">${examSwitch()}</div><p class="sub">${esc(ex.name)}: ${ex.questions ? ex.questions + ' questions' : 'question count not yet announced'}, ${ex.minutes} minutes allotted.
     Answers are not shown until you submit. Select-all items are scored all-or-nothing. ${ex.blueprint ? 'With his topic counts on, the paper follows them; otherwise' : ''} definition questions make up at most 15% of the paper.</p>
-    <div class="card"><div class="row"><span>Length:</span>${lens.map(n => `<span class="chip ${n === (ex.questions || lens[0]) ? 'on' : ''}" data-n="${n}">${n === max ? 'All ' + n : n}</span>`).join('')}</div>
+    <div class="card"><div class="row"><span>Length:</span>${lens.map(n => `<button type="button" class="chip ${n === (ex.questions || lens[0]) ? 'on' : ''}" aria-pressed="${n === (ex.questions || lens[0])}" data-n="${n}">${n === max ? 'All ' + n : n}</button>`).join('')}</div>
     ${ex.blueprint ? `<div class="row" style="margin-top:10px"><label><input type="checkbox" id="bp" checked> Match his topic counts at ${ex.questions} questions: ${ex.blueprint.parts.map(p => esc(p.name) + ' ' + (p.rest ? '(the rest)' : p.min ? '(at least ' + p.min + ')' : Array.isArray(p.n) ? p.n.join('–') : p.n)).join(' · ')} · ${ex.blueprint.sata} select-all</label></div>` : ''}
     <div class="row" style="margin-top:10px"><label><input type="checkbox" id="scale" checked> Scale the clock to the length (${ex.minutes} min for the full paper)</label></div>
     <div class="row" style="margin-top:10px"><span class="meta" style="margin:0">Answer:</span>${layoutToggle()}</div>
     <div class="row" style="margin-top:12px"><button class="btn" id="startx">Start</button></div></div>`;
-  if (S.exams && S.exams.length) h += `<h3>Past attempts</h3><div class="card">${S.exams.slice(-8).reverse().map(e => `<div class="topicrow"><span>${new Date(e.t).toLocaleString()}</span><span>${e.score}/${e.n} (${Math.round(100 * e.score / e.n)}%)</span></div>`).join('')}</div>`;
+  // attempts saved before papers named their exam show under both exams
+  const past = (S.exams || []).filter(e => !e.exam || e.exam === ex.id);
+  if (past.length) h += `<h3>Past attempts: ${esc(ex.name)}</h3><div class="card">${past.slice(-8).reverse().map(e => `<div class="topicrow"><span>${esc(new Date(+e.t).toLocaleString())}</span><span>${+e.score}/${+e.n} (${Math.round(100 * e.score / e.n)}%)</span></div>`).join('')}</div>`;
   $('#view').innerHTML = h;
   let n = ex.questions || lens[0];
-  document.querySelectorAll('[data-n]').forEach(c => c.onclick = () => { n = +c.dataset.n; document.querySelectorAll('[data-n]').forEach(x => x.classList.toggle('on', x === c)); });
+  document.querySelectorAll('[data-n]').forEach(c => c.onclick = () => { n = +c.dataset.n; document.querySelectorAll('[data-n]').forEach(x => { x.classList.toggle('on', x === c); x.setAttribute('aria-pressed', x === c); }); });
   // (the layout chips on this page only restyle themselves: see the delegated handler)
   $('#startx').onclick = () => {
     const paper = ex.blueprint && n === ex.questions && $('#bp') && $('#bp').checked ? drawBlueprint(ex.blueprint) : drawExam(n);
     const full = ex.questions || max;
     const mins = $('#scale').checked ? Math.max(5, Math.round(ex.minutes * paper.length / full)) : ex.minutes;
-    EX = {qs: paper.map(q => q.id), i: 0, ans: {}, flag: {}, orders: paper.map(q => optOrder(q)), ends: Date.now() + mins * MIN, done: false};
+    EX = {exam: ex.id, name: ex.name, qs: paper.map(q => q.id), i: 0, ans: {}, flag: {}, orders: paper.map(q => optOrder(q)), ends: Date.now() + mins * MIN, done: false};
     renderExam();
   };
 }
@@ -809,7 +903,7 @@ function askSubmit() {
 /* Every exam question on one page; answers are kept in EX.ans exactly as in the one-at-a-time view. */
 function renderExamAll() {
   const n = EX.qs.filter(examAnswered).length;
-  let h = `<div class="row allhead" style="justify-content:space-between"><b id="xcount">${n} of ${EX.qs.length} answered</b><span class="row"><span class="timer" id="clock"></span>${layoutToggle()}<button class="btn" id="submit">Submit exam</button></span></div>`;
+  let h = `<div class="row allhead xhead" style="justify-content:space-between"><b id="xcount">${n} of ${EX.qs.length} answered</b><span class="row"><span class="timer" id="clock" role="timer"></span>${layoutToggle()}<button class="btn" id="submit">Submit exam</button></span></div>`;
   EX.qs.forEach((id, k) => {
     const q = byId[id], ord = EX.orders[k], a = EX.ans[id];
     h += `<div class="card qcard" id="xq${k}"><div class="row" style="justify-content:space-between"><b>Question ${k + 1}</b>${flagBtn(id)}</div><div class="stem">${esc(q.stem)}</div>${stemMedia(q)}`;
@@ -836,8 +930,10 @@ function renderExam() {
   if (EX.done) return examResult();
   if (S.layout === 'all') return renderExamAll();
   clearView();
+  // moving to another question starts at its stem; picking an option keeps the page where it is
+  if (EX.shown !== EX.i) { EX.shown = EX.i; window.scrollTo(0, 0); }
   const q = byId[EX.qs[EX.i]], ord = EX.orders[EX.i], a = EX.ans[q.id];
-  let h = `<div class="row" style="justify-content:space-between"><b>Question ${EX.i + 1} of ${EX.qs.length}</b><span class="row"><span class="timer" id="clock"></span>${layoutToggle()}</span></div>
+  let h = `<div class="row" style="justify-content:space-between"><b>${EX.name ? esc(EX.name) + ' · ' : ''}Question ${EX.i + 1} of ${EX.qs.length}</b><span class="row"><span class="timer" id="clock" role="timer"></span>${layoutToggle()}</span></div>
     <div class="grid">${EX.qs.map((id, k) => `<button data-j="${k}" class="${examAnswered(id) ? 'ans' : ''} ${k === EX.i ? 'cur' : ''} ${isFlagged(id) ? 'flag' : ''}">${k + 1}</button>`).join('')}</div>
     <div class="card"><div class="stem">${esc(q.stem)}</div>${stemMedia(q)}`;
   ord.forEach((oi, n) => {
@@ -868,15 +964,15 @@ function submitExam() {
     S.log.push({id, t: Date.now(), ok, conf: 'exam', picked: a, ms: 0});
     schedule(id, ok ? 'unsure' : 'wrong');
   });
-  S.exams = S.exams || []; S.exams.push({t: Date.now(), n: EX.qs.length, score});
+  S.exams = S.exams || []; S.exams.push({t: Date.now(), n: EX.qs.length, score, exam: EX.exam});
   EX.score = score; save(); examResult();
 }
 function examResult() {
   clearView();
   const qsx = EX.qs.map(id => byId[id]);
   const by = (fn, nm) => { const g = {}; qsx.forEach(q => { const k = fn(q); g[k] = g[k] || {n: 0, ok: 0}; g[k].n++; if (exRight(q, EX.ans[q.id])) g[k].ok++; });
-    return Object.entries(g).map(([k, v]) => `<tr><td>${esc(nm(k))}</td><td>${v.ok}/${v.n}</td><td>${Math.round(100 * v.ok / v.n)}%</td></tr>`).join(''); };
-  let h = `<h2>Exam result: ${EX.score}/${EX.qs.length} (${Math.round(100 * EX.score / EX.qs.length)}%)</h2>
+    return Object.entries(g).sort((x, y) => (x[0] === 'No tier') - (y[0] === 'No tier') || x[0].localeCompare(y[0], undefined, {numeric: true})).map(([k, v]) => `<tr><td>${esc(nm(k))}</td><td>${v.ok}/${v.n}</td><td>${Math.round(100 * v.ok / v.n)}%</td></tr>`).join(''); };
+  let h = `<h2>Exam result: ${EX.score}/${EX.qs.length} (${Math.round(100 * EX.score / EX.qs.length)}%)</h2>${EX.name ? `<p class="sub">${esc(EX.name)}</p>` : ''}
     <div class="row"><button class="btn" id="newx">New exam</button><button class="btn ghost" id="missx">Drill the ones I missed</button></div>
     <h3>By topic</h3><div class="tablewrap"><table><thead><tr><th>Topic</th><th>Right</th><th>%</th></tr></thead><tbody>${by(q => q.topic, k => (TOPIC[k] || {}).name || k)}</tbody></table></div>
     <h3>By skill</h3><div class="tablewrap"><table><thead><tr><th>Skill</th><th>Right</th><th>%</th></tr></thead><tbody>${by(q => q.skill, k => (SKILL[k] || {}).label || k)}</tbody></table></div>
@@ -885,7 +981,7 @@ function examResult() {
   qsx.forEach((q, k) => {
     const a = EX.ans[q.id], ok = exRight(q, a), pickedSet = new Set([].concat(a == null ? [] : a));
     h += `<div class="card"><div class="row" style="justify-content:space-between"><span class="meta">${k + 1}. ${metaLine(q)}</span>${flagBtn(q.id)}</div><div class="stem">${esc(q.stem)}</div>${stemMedia(q)}
-      <div class="verdict ${ok ? 'ok' : 'bad'}">${ok ? '✓ Correct' : a == null ? '✗ Not answered' : '✗ Not correct'}</div>`;
+      <div class="verdict ${ok ? 'ok' : 'bad'}">${ok ? '✓ Correct' : !examAnswered(q.id) ? '✗ Not answered' : '✗ Not correct'}</div>`;
     if (!ok) {
       q.options.forEach((o, oi) => { if (o.correct || pickedSet.has(oi)) h += `<div class="opt ${o.correct ? 'right' : 'wrong'}" style="cursor:default"><span>${esc(o.t)}</span></div><div class="why">${esc(o.why || '')}</div>`; });
       if (q.teach) h += `<div class="teach">${teachHTML(q.teach)}</div>`;
@@ -911,7 +1007,8 @@ const termKey = t => 'term:' + t.id;
    A–Z order), and a floating button returns to the search bar once it is off screen. */
 const LETTERS_AZ = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').concat('#');
 const termLetter = t => { const c = (t.term.match(/[A-Za-z]/) || [''])[0].toUpperCase(); return /^[A-Za-z]/.test(t.term.trim()) ? c : '#'; };
-const termHTML = t => `<div class="term" id="term-${esc(t.id)}"><b>${esc(t.term)}</b>${t.gist ? `<div class="gist">${esc(t.gist)}</div>` : ''}<div>${esc(t.def)}</div>${t.scene ? `<div class="hook"><b>In action:</b> ${esc(t.scene)}</div>` : ''}${t.hook ? `<div class="hook">${esc(t.hook)}</div>` : ''}${t.fig ? figHTML(t.fig) : ''}<div class="cite">${esc(fmtCite(t.cite))}</div></div>`;
+// withExam: search and A–Z mix both exams, so each card says which exam it belongs to
+const termHTML = (t, withExam) => `<div class="term" id="term-${esc(t.id)}"><b>${esc(t.term)}</b>${withExam ? ` <span class="exlabel">Exam ${lecExam(t.lecture) || 1}</span>` : ''}${t.gist ? `<div class="gist">${esc(t.gist)}</div>` : ''}<div>${esc(t.def)}</div>${t.scene ? `<div class="hook"><b>In action:</b> ${esc(t.scene)}</div>` : ''}${t.hook ? `<div class="hook">${esc(t.hook)}</div>` : ''}${t.fig ? figHTML(t.fig) : ''}<div class="cite">${esc(fmtCite(t.cite))}</div></div>`;
 function glossWire(all, groups) {
   const box = $('#tsearch'), list = $('#glist');
   const draw = () => {
@@ -925,28 +1022,34 @@ function glossWire(all, groups) {
       // a search lists terms whose name matches first, then terms that only mention the word
       const named = pool.filter(t => t.term.toLowerCase().includes(q)), rest = pool.filter(t => !named.includes(t));
       const srt = l => l.slice().sort((a, b) => a.term.localeCompare(b.term, undefined, {sensitivity: 'base'}));
-      if (named.length) h += `<h3>Term names with “${esc(TM.q.trim())}”</h3><div class="card">${srt(named).map(termHTML).join('')}</div>`;
-      if (rest.length) h += `<h3>Also mentioned in</h3><div class="card">${srt(rest).map(termHTML).join('')}</div>`;
+      if (named.length) h += `<h3>Term names with “${esc(TM.q.trim())}”</h3><div class="card">${srt(named).map(t => termHTML(t, true)).join('')}</div>`;
+      if (rest.length) h += `<h3>Also mentioned in</h3><div class="card">${srt(rest).map(t => termHTML(t, true)).join('')}</div>`;
     } else if (az) {
       const sorted = pool.slice().sort((a, b) => a.term.localeCompare(b.term, undefined, {sensitivity: 'base'}));
       const byL = {}; sorted.forEach(t => (byL[termLetter(t)] = byL[termLetter(t)] || []).push(t));
-      LETTERS_AZ.filter(L => byL[L]).forEach(L => { h += `<h3 id="tl-${L === '#' ? 'num' : L}">${L}</h3><div class="card">${byL[L].map(termHTML).join('')}</div>`; });
-    } else h = COURSE.exams.map(e => {
-      // by group: one collapsible section per exam; search and A–Z list both exams together
-      const mine = pool.filter(t => (lecExam(t.lecture) || 1) === e.id);
-      const body = groups.filter(g => TM.group === 'all' || g === TM.group).map(g => { const ts = mine.filter(t => t.group === g); return ts.length ? `<h3>${esc(g)}</h3><div class="card">${ts.map(termHTML).join('')}</div>` : ''; }).join('');
-      return exGroup(e, body || '<div class="empty">This exam\'s terms are added as its lectures are written.</div>');
-    }).join('');
+      LETTERS_AZ.filter(L => byL[L]).forEach(L => { h += `<h3 id="tl-${L === '#' ? 'num' : L}">${L}</h3><div class="card">${byL[L].map(t => termHTML(t, true)).join('')}</div>`; });
+    } else {
+      // by group: one collapsible section per exam; search and A–Z list both exams together.
+      // A group chip of the other exam opens that exam's section (the studied one would be empty).
+      const has = e => pool.some(t => (lecExam(t.lecture) || 1) === e.id);
+      h = COURSE.exams.map(e => {
+        const mine = pool.filter(t => (lecExam(t.lecture) || 1) === e.id);
+        const body = groups.filter(g => TM.group === 'all' || g === TM.group).map(g => { const ts = mine.filter(t => t.group === g); return ts.length ? `<h3>${esc(g)}</h3><div class="card">${ts.map(t => termHTML(t)).join('')}</div>` : ''; }).join('');
+        const open = TM.group === 'all' ? null : has(e);
+        return exGroup(e, body || (TM.group === 'all' ? '<div class="empty">This exam\'s terms are added as its lectures are written.</div>' : '<div class="empty">No terms of this group in this exam.</div>'), open);
+      }).join('');
+    }
     list.innerHTML = h;
     $('#tcount').textContent = q ? `${pool.length} match${pool.length === 1 ? '' : 'es'}` : `${pool.length} terms`;
     $('#tclear').hidden = !TM.q;
   };
   box.oninput = () => { TM.q = box.value; draw(); };
   $('#tclear').onclick = () => { TM.q = ''; box.value = ''; draw(); box.focus(); };
-  document.querySelectorAll('[data-order]').forEach(c => c.onclick = () => { TM.order = c.dataset.order; document.querySelectorAll('[data-order]').forEach(x => x.classList.toggle('on', x === c)); draw(); });
+  const orderOn = k => document.querySelectorAll('[data-order]').forEach(x => { x.classList.toggle('on', x.dataset.order === k); x.setAttribute('aria-pressed', x.dataset.order === k); });
+  document.querySelectorAll('[data-order]').forEach(c => c.onclick = () => { TM.order = c.dataset.order; orderOn(TM.order); draw(); });
   document.querySelectorAll('[data-lt]').forEach(b => b.onclick = () => {
     if (TM.q) { TM.q = ''; box.value = ''; }
-    if (TM.order !== 'az') { TM.order = 'az'; document.querySelectorAll('[data-order]').forEach(x => x.classList.toggle('on', x.dataset.order === 'az')); }
+    if (TM.order !== 'az') { TM.order = 'az'; orderOn('az'); }
     draw();
     const el = document.getElementById('tl-' + (b.dataset.lt === '#' ? 'num' : b.dataset.lt)); if (el) scrollToEl(el);
   });
@@ -975,8 +1078,8 @@ function vTerms() {
   const chipGroups = TM.mode === 'glossary' ? groups : [...new Set(all.filter(t => (lecExam(t.lecture) || 1) === activeId()).map(t => t.group))];
   if (TM.group !== 'all' && !chipGroups.includes(TM.group)) TM.group = 'all';
   let h = `<h2>Terms</h2><div class="row" style="margin:-4px 0 8px">${examSwitch()}</div><p class="sub">${all.length} terms, each with its source, grouped by exam; flashcards and Quiz me use the exam you are studying for. Each term has a one-line meaning, a situation that shows it in action, and, where one applies, a figure.</p>
-  <div class="card"><div class="row">${[['glossary', 'Glossary'], ['flash', 'Flashcards'], ['quiz', 'Quiz me']].map(([k, l]) => `<span class="chip ${TM.mode === k ? 'on' : ''}" data-mode="${k}">${l}</span>`).join('')}
-   <span class="meta" style="margin:0 0 0 12px">Group:</span>${['all'].concat(chipGroups).map(g => `<span class="chip ${TM.group === g ? 'on' : ''}" data-group="${esc(g)}">${g === 'all' ? 'All' : esc(g)}</span>`).join('')}</div></div>`;
+  <div class="card"><div class="row">${[['glossary', 'Glossary'], ['flash', 'Flashcards'], ['quiz', 'Quiz me']].map(([k, l]) => `<button type="button" class="chip ${TM.mode === k ? 'on' : ''}" aria-pressed="${TM.mode === k}" data-mode="${k}">${l}</button>`).join('')}
+   <span class="meta" style="margin:0 0 0 12px">Group:</span>${['all'].concat(chipGroups).map(g => `<button type="button" class="chip ${TM.group === g ? 'on' : ''}" aria-pressed="${TM.group === g}" data-group="${esc(g)}">${g === 'all' ? 'All' : esc(g)}</button>`).join('')}</div></div>`;
   const list = termList();
   if (TM.mode === 'glossary') {
     const pool = all.filter(t => TM.group === 'all' || t.group === TM.group);
@@ -984,8 +1087,10 @@ function vTerms() {
     h += `<div class="card tbar" id="tbar"><div class="row" style="flex-wrap:nowrap"><input id="tsearch" type="search" placeholder="Search the terms (name, meaning or example)…" value="${esc(TM.q || '')}" autocomplete="off" aria-label="Search the terms">
       <button class="btn ghost" id="tclear" type="button" ${TM.q ? '' : 'hidden'}>Clear</button></div>
       <div class="letters" role="navigation" aria-label="Jump to a letter">${LETTERS_AZ.filter(L => L !== '#' || have.has('#')).map(L => `<button type="button" class="lt" data-lt="${L}" ${have.has(L) ? '' : 'disabled'}>${L}</button>`).join('')}</div>
-      <div class="row" style="margin-top:6px"><span class="meta" style="margin:0">Order:</span>${[['group', 'By group'], ['az', 'A–Z']].map(([k, l]) => `<span class="chip ${(TM.order || 'group') === k ? 'on' : ''}" data-order="${k}">${l}</span>`).join('')}<span class="meta" id="tcount" style="margin:0 0 0 auto"></span></div></div>
+      <div class="row" style="margin-top:6px"><span class="meta" style="margin:0">Order:</span>${[['group', 'By group'], ['az', 'A–Z']].map(([k, l]) => `<button type="button" class="chip ${(TM.order || 'group') === k ? 'on' : ''}" aria-pressed="${(TM.order || 'group') === k}" data-order="${k}">${l}</button>`).join('')}<span class="meta" id="tcount" aria-live="polite" style="margin:0 0 0 auto"></span></div></div>
       <div id="glist"></div>`;
+  } else if (TM.mode === 'flash' && !list.length) {
+    h += `<div class="card empty">No flashcards for ${esc(active().name)} in this group yet.</div>`;
   } else if (TM.mode === 'flash') {
     if (!TM.card || !list.includes(TM.card)) {
       const now = Date.now();
@@ -1030,86 +1135,202 @@ function vTerms() {
    content sits in its own collapsible group (Exam 2 content from guide2.js,
    reference2.js and tell2.js when they exist). */
 const PAGE2 = {guide: () => typeof GUIDE2_HTML === 'undefined' ? '' : GUIDE2_HTML, ref: () => typeof REFERENCE2_HTML === 'undefined' ? '' : REFERENCE2_HTML, tell: () => typeof TELL2_HTML === 'undefined' ? '' : TELL2_HTML};
+/* The pages are fixed for a build, so each body is expanded once (figures drawn, markers replaced);
+   the exam groups around them are drawn each time, since the open one follows the exam studied. */
+const PAGE_CACHE = {};
 function examPage(html1, key) {
-  const m = html1.match(/^\s*<h2>([^<]*)<\/h2>/), title = m ? m[1] : '';
-  const body1 = m ? html1.slice(m[0].length) : html1, body2 = PAGE2[key]();
-  return `<h2>${title}</h2>` + COURSE.exams.map(e => exGroup(e, e.id === 1 ? expandFigs(body1) : body2 ? expandFigs(body2) : '<div class="empty">This exam\'s sections are added as its lectures are written.</div>')).join('');
+  const P = PAGE_CACHE[key] || (PAGE_CACHE[key] = (() => {
+    const m = html1.match(/^\s*<h2>([^<]*)<\/h2>/), body2 = PAGE2[key]();
+    return {title: m ? m[1] : '', b1: expandFigs(m ? html1.slice(m[0].length) : html1), b2: body2 ? expandFigs(body2) : ''};
+  })());
+  return `<h2>${P.title}</h2>` + COURSE.exams.map(e => exGroup(e, e.id === 1 ? P.b1 : P.b2 || '<div class="empty">This exam\'s sections are added as its lectures are written.</div>')).join('');
 }
-function vRef() { $('#view').innerHTML = `<div class="tablewrap">${examPage(REFERENCE_HTML, 'ref')}</div>`; stackTables($('#view')); }
+/* His figures are data URLs of up to a few hundred KB each. Pages carry only the key
+   (<img data-img>) and the picture is attached after the page is built, so the browser does
+   not parse megabytes of base64 as page markup on every visit (the Guides page held 2 MB). */
+const imgTag = (k, alt) => `<img data-img="${esc(k)}" alt="${esc(alt)}" decoding="async">`;
+const fillImgs = root => root.querySelectorAll('img[data-img]').forEach(i => { if (!i.getAttribute('src') && IMG[i.dataset.img]) i.src = IMG[i.dataset.img]; });
+function vRef() { $('#view').innerHTML = `<div class="tablewrap">${examPage(REFERENCE_HTML, 'ref')}</div>`; fillImgs($('#view')); stackTables($('#view')); }
 function vTell() {
+  const ex = active();
   $('#view').innerHTML = `<div class="tablewrap">${examPage(TELL_HTML, 'tell')}</div>
-    <div class="row" style="margin-top:12px"><button class="btn" id="tellq">Drill every tell-apart question</button></div>`;
-  const ids = [...document.querySelectorAll('[data-q]')].map(td => td.dataset.q).filter(id => byId[id]);
+    <div class="row" style="margin-top:12px"><button class="btn" id="tellq">Drill every ${esc(ex.name)} tell-apart question</button></div>`;
+  fillImgs($('#view'));
+  // the drill follows the exam being studied, as the other drills do
+  const ids = [...new Set([...document.querySelectorAll('[data-q]')].map(td => td.dataset.q))].filter(id => byId[id] && examOf(byId[id]) === ex.id);
   document.querySelectorAll('[data-q]').forEach(td => {
     if (!byId[td.dataset.q]) return;
     td.innerHTML = `<a href="#" style="color:var(--accent)">Try it</a>`;
-    td.onclick = e => { e.preventDefault(); startQuiz([byId[td.dataset.q]], 'Tell apart', 'pass'); };
+    td.onclick = e => { e.preventDefault(); startQuiz([byId[td.dataset.q]], 'Tell apart', 'pass', {back: true}); };
   });
   $('#tellq').onclick = () => startQuiz(shuffle(ids.map(id => byId[id])), 'Tell apart', 'pass');
+  if (!ids.length) $('#tellq').disabled = true;
   stackTables($('#view'));
 }
 /* Static pages carry figure markers: <!--FIG:key-->, <!--IMG:key--> (one of his
    poll figures) and <!--GRAPH:{json}--> (a drawn dose–response plot). */
 /* Step-through figures: buttons under a figure move between its data-step groups.
-   Moving between two steps animates the change: a shape or label present in both
-   steps glides from its old position to its new one (matched by data-k, else by
-   tag + text + class in order), shapes that are new fade in, and shapes that are
-   gone fade out. Only end positions are set here; CSS does the motion, and
-   prefers-reduced-motion turns it off. */
-let ANIM = null;   // the one figure playing: {t: interval, b: its Play button}
+   Moving between two steps animates the change with the Web Animations API, in
+   three overlapping stages with one easing (ease-in-out cubic):
+   1. exit: shapes that are gone fade (and shrink slightly) out from where they were;
+   2. move: a shape or label present in both steps glides from its old position to
+      its new one (FLIP: measure, invert, play; matched by data-k, else by tag +
+      class + text/fill in order). If it also looks different (new fill, new text,
+      new size), the old copy cross-fades into the new one as they travel; text
+      fades out before the new text fades in, so two labels never overlap;
+   3. enter: new shapes fade and scale in, new lines and labels fade in.
+   data-o="n" on a shape delays its move or entry by n × MO.stagger, so a chain
+   (ligand → receptor → G protein → effector) builds one link after another.
+   Only transform and opacity are animated; nothing is left inline when a move
+   ends. prefers-reduced-motion: the step changes at once with no motion. */
+let ANIM = null;   // the one figure playing: {t: timer, b: its Play button}
 const RM = () => window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
 const leafSel = 'text,circle,rect,ellipse,line,polyline,polygon,path';
-const sigOf = el => el.getAttribute('data-k') || [el.tagName, (el.getAttribute('class') || '').replace(/\b(fadein|glide)\b/g, '').trim(),   // leave out the animation classes stepTo adds
+const sigOf = el => el.getAttribute('data-k') || [el.tagName, (el.getAttribute('class') || '').replace(/\b(fadein|glide|xfade)\b/g, '').trim(),   // leave out the animation classes stepTo adds
   el.tagName === 'text' ? el.textContent : (el.getAttribute('fill') || '')].join('|');
 const centre = el => { const r = el.getBoundingClientRect(); return [r.left + r.width / 2, r.top + r.height / 2, r.width + r.height]; };
+// timing (ms): exit 0–280, move 120–740, enter from 380; stagger per data-o step
+const MO = {ease: 'cubic-bezier(.65,0,.35,1)', out: 280, moveAt: 120, move: 620, inAt: 380, inDur: 480, stagger: 150, captOut: 180, captIn: 420};
+// what a shape looks like apart from where it is (a change means cross-fade, not just glide)
+const LOOK_SKIP = /^(x|y|cx|cy|x1|y1|x2|y2|d|points|transform|data-k|data-o|class|style)$/;
+const lookOf = el => {
+  let s = el.tagName + '|' + (el.getAttribute('class') || '').replace(/\b(fadein|glide|xfade)\b/g, '').trim() + '|' + (el.tagName === 'text' ? el.textContent : '');
+  for (const a of el.attributes) if (!LOOK_SKIP.test(a.name)) s += '|' + a.name + '=' + a.value;
+  try { const b = el.getBBox(); s += '|' + Math.round(b.width) + 'x' + Math.round(b.height); } catch (e) { /* not rendered */ }
+  return s;
+};
+// the same without its size: a box or a dot that only grew or shrank is scaled, not cross-faded
+const formOf = el => { let s = el.tagName; for (const a of el.attributes) if (!LOOK_SKIP.test(a.name) && !/^(width|height|r|rx|ry)$/.test(a.name)) s += '|' + a.name + '=' + a.value; return s; };
+// an SVG transform attribute as a CSS transform (CSS replaces the attribute while it runs)
+const cssTf = t => {
+  if (!t) return '';
+  if (/matrix|skew/.test(t)) return null;
+  return t.replace(/(translate|scale|rotate)\(([^)]*)\)/g, (m, f, a) => {
+    const v = a.trim().split(/[\s,]+/).map(Number);
+    if (f === 'translate') return `translate(${v[0]}px,${v[1] || 0}px)`;
+    if (f === 'scale') return `scale(${v[0]},${v[1] == null ? v[0] : v[1]})`;
+    return v.length === 3 ? `translate(${v[1]}px,${v[2]}px) rotate(${v[0]}deg) translate(${-v[1]}px,${-v[2]}px)` : `rotate(${v[0]}deg)`;
+  });
+};
+const isShape = el => /^(circle|rect|ellipse|polygon)$/.test(el.tagName) || (el.tagName === 'path' && !el.classList.contains('arrow') && !el.getAttribute('marker-end'));
+const orderOf = el => { const o = el.closest('[data-o]'); return o ? Math.min(+o.getAttribute('data-o') || 0, 4) : 0; };
+// run one animation; fill-box / centre origin only while a scale runs
+const anim = (el, frames, o, scale) => {
+  if (scale) { el.style.transformBox = 'fill-box'; el.style.transformOrigin = 'center'; }
+  const a = el.animate(frames, Object.assign({easing: MO.ease, fill: 'backwards'}, o));
+  if (scale) a.onfinish = a.oncancel = () => { el.style.transformBox = ''; el.style.transformOrigin = ''; };
+  return a;
+};
 function stepTo(fig, from, to) {
   const steps = [...fig.querySelectorAll('.st')], svg = fig.querySelector('svg');
-  fig.querySelectorAll('.st-out').forEach(n => n.remove());
+  const motion = !RM() && typeof svg.animate === 'function';
   const old = from != null && from !== to ? steps[from] : null;
-  const before = new Map();   // signature → queue of old screen positions
-  if (old && !RM()) old.querySelectorAll(leafSel).forEach(el => { if (el.classList.contains('capt')) return; const k = sigOf(el), c = centre(el); if (c[2]) (before.get(k) || before.set(k, []).get(k)).push({el, c}); });
+  // First: where every shape of the old step is now (mid-move if a move is still running)
+  const before = new Map();   // signature → queue of {el, c, look}
+  if (old && motion) old.querySelectorAll(leafSel).forEach(el => { if (el.classList.contains('capt')) return; const k = sigOf(el), c = centre(el), r = el.getBoundingClientRect(); if (c[2]) (before.get(k) || before.set(k, []).get(k)).push({el, c, w: r.width, h: r.height, look: lookOf(el), form: formOf(el)}); });
+  if (svg.getAnimations) svg.getAnimations({subtree: true}).forEach(a => a.cancel());
+  fig.querySelectorAll('.st-out').forEach(n => n.remove());
   steps.forEach((s, j) => s.classList.toggle('on', j === to));
+  // the step's text is HTML under the picture (.stcap, one <p> per step stacked in one grid cell,
+  // so the box keeps the height of the longest and nothing below it jumps)
+  const caps = [...fig.querySelectorAll('.stcap > p')], prevCap = caps.findIndex(p => p.style.visibility !== 'hidden');
+  const showCap = (p, on) => { p.style.visibility = on ? '' : 'hidden'; p.setAttribute('aria-hidden', on ? 'false' : 'true'); };
+  caps.forEach(p => { if (p.getAnimations) p.getAnimations().forEach(a => a.cancel()); });
+  caps.forEach((p, j) => showCap(p, j === to));
   fig.querySelectorAll('.sdot').forEach((d, j) => { d.classList.toggle('on', j === to); d.setAttribute('aria-current', j === to ? 'step' : 'false'); });
-  if (RM()) return;
-  const now = steps[to], scale = svg.viewBox.baseVal.width / (svg.getBoundingClientRect().width || 1), used = new Set();
-  const leaves = [...now.querySelectorAll(leafSel)];
-  leaves.forEach(el => { el.classList.remove('fadein', 'glide'); el.style.transform = ''; });
-  svg.getBoundingClientRect();                        // restart the fade-in animations
+  const now = steps[to], leaves = [...now.querySelectorAll(leafSel)];
+  leaves.forEach(el => el.classList.remove('fadein', 'glide', 'xfade'));
+  if (!motion) return;
+  if (caps[to]) {   // the old text fades out, then the new text fades in (never both at once)
+    const p0 = prevCap >= 0 && prevCap !== to && old ? caps[prevCap] : null;
+    if (p0) { showCap(p0, true); const a = p0.animate([{opacity: 1}, {opacity: 0}], {duration: MO.captOut, easing: MO.ease, fill: 'forwards'}); a.onfinish = () => { if (!caps[to] || caps.indexOf(p0) !== [...fig.querySelectorAll('.st')].findIndex(s => s.classList.contains('on'))) showCap(p0, false); a.cancel(); }; }
+    caps[to].animate([{opacity: 0}, {opacity: 1}], {duration: MO.captIn, delay: p0 ? MO.captOut : 0, easing: MO.ease, fill: 'backwards'});
+  }
+  // Last, Invert, Play
+  const scale = svg.viewBox.baseVal.width / (svg.getBoundingClientRect().width || 1), used = new Map();
   leaves.forEach(el => {
-    if (el.classList.contains('capt')) { el.classList.add('fadein'); return; }
-    const q = before.get(sigOf(el)), m = q && q.shift();
-    if (!m) { el.classList.add('fadein'); return; }
-    used.add(m.el);
-    if (el.hasAttribute('transform')) return;          // a CSS transform would replace its rotate()
+    const op = +getComputedStyle(el).opacity, ord = orderOf(el);
+    if (el.classList.contains('capt')) {
+      el.classList.add('fadein');
+      anim(el, [{opacity: 0}, {opacity: op}], {duration: MO.captIn, delay: old ? MO.captOut : 0});
+      return;
+    }
+    // its old self: same signature; of several, one that looks the same, else the nearest
+    const q = before.get(sigOf(el)); let m = null;
+    if (q && q.length) {
+      const lk = lookOf(el), c0 = centre(el); let k = q.findIndex(o => o.look === lk);
+      if (k < 0) { let best = Infinity; q.forEach((o, j) => { const d = Math.hypot(o.c[0] - c0[0], o.c[1] - c0[1]); if (d < best) { best = d; k = j; } }); }
+      m = q.splice(k, 1)[0];
+    }
+    if (!m) {   // new: fades (and scales) in after the exits and moves have started
+      el.classList.add('fadein');
+      const sc = isShape(el) && !el.hasAttribute('transform');
+      const delay = (old ? MO.inAt : 0) + ord * MO.stagger;
+      anim(el, sc ? [{opacity: 0, transform: 'scale(.6)'}, {opacity: op, transform: 'scale(1)'}] : [{opacity: 0}, {opacity: op}], {duration: MO.inDur, delay}, sc);
+      return;
+    }
     const c = centre(el), dx = (m.c[0] - c[0]) * scale, dy = (m.c[1] - c[1]) * scale;
-    if (Math.abs(dx) < 0.5 && Math.abs(dy) < 0.5) return;
-    el.style.transform = `translate(${dx}px,${dy}px)`;
-    el.getBoundingClientRect();                       // commit the start position
-    el.classList.add('glide'); el.style.transform = '';
+    const r = el.getBoundingClientRect(), base = cssTf(el.getAttribute('transform'));
+    let moved = Math.abs(dx) > 0.5 || Math.abs(dy) > 0.5, changed = m.look !== lookOf(el);
+    const delay = MO.moveAt + ord * MO.stagger;
+    // only its size changed (a bar, a box, a dot): grow or shrink it while it moves
+    const resized = changed && !base && /^(rect|circle|ellipse)$/.test(el.tagName) && m.form === formOf(el) && r.width > 0 && r.height > 0;
+    if (resized) {
+      changed = false; el.classList.add('glide');
+      anim(el, [{transform: `translate(${dx}px,${dy}px) scale(${m.w / r.width},${m.h / r.height})`}, {transform: 'translate(0px,0px) scale(1,1)'}], {duration: MO.move, delay}, true);
+    } else if (moved && base != null) {
+      el.classList.add('glide');
+      anim(el, [{transform: `translate(${dx}px,${dy}px) ${base}`}, {transform: base || 'translate(0px,0px)'}], {duration: MO.move, delay});
+    }
+    used.set(m.el, {dx, dy, moved: moved && base != null, changed, delay, text: el.tagName === 'text'});
+    if (changed) {   // the new look fades in over the old one (text: after the old text has gone)
+      el.classList.add('xfade');
+      const t = el.tagName === 'text', d2 = t ? delay + MO.move * 0.45 : delay, dur = t ? MO.move * 0.55 : MO.move * 0.6;
+      anim(el, [{opacity: 0}, {opacity: op}], {duration: dur, delay: d2});
+    }
   });
   if (!old) return;
-  // the shapes that are gone fade out from where they were
-  const ghost = old.cloneNode(true); ghost.classList.remove('on', 'st'); ghost.classList.add('st-out'); ghost.removeAttribute('data-step');
+  // the old step as a ghost: gone shapes fade out where they were; changed shapes travel and fade
+  const ghost = old.cloneNode(true); ghost.classList.remove('on', 'st'); ghost.classList.add('st-out'); ghost.removeAttribute('data-step'); ghost.setAttribute('aria-hidden', 'true');
   const oldLeaves = [...old.querySelectorAll(leafSel)], ghostLeaves = [...ghost.querySelectorAll(leafSel)];
-  oldLeaves.forEach((el, k) => { if (used.has(el) || el.classList.contains('capt')) ghostLeaves[k].remove(); });
-  svg.appendChild(ghost); setTimeout(() => ghost.remove(), 600);
+  svg.appendChild(ghost);
+  let gEnd = MO.out;
+  oldLeaves.forEach((el, k) => {
+    const g = ghostLeaves[k], u = used.get(el), op = +getComputedStyle(el).opacity;
+    if (el.classList.contains('capt')) { anim(g, [{opacity: op}, {opacity: 0}], {duration: MO.captOut, fill: 'forwards'}); return; }
+    if (!u) { const sc = isShape(g) && !g.hasAttribute('transform'); anim(g, sc ? [{opacity: op, transform: 'scale(1)'}, {opacity: 0, transform: 'scale(.85)'}] : [{opacity: op}, {opacity: 0}], {duration: MO.out, fill: 'forwards'}, sc); return; }
+    if (!u.changed) { g.remove(); return; }
+    g.classList.add('xfade');   // the old look of a shape that stays (not a shape that left)
+    const dur = u.text ? MO.move * 0.4 : MO.move * 0.6, base = cssTf(g.getAttribute('transform')) || '';
+    anim(g, [{opacity: op}, {opacity: 0}], {duration: dur, delay: u.delay, fill: 'both'});
+    if (u.moved) anim(g, [{transform: `translate(0px,0px) ${base}`}, {transform: `translate(${-u.dx}px,${-u.dy}px) ${base}`}], {duration: MO.move, delay: u.delay, fill: 'both'});
+    gEnd = Math.max(gEnd, u.delay + dur);
+  });
+  setTimeout(() => ghost.remove(), gEnd + 40);
 }
+// Play all: from the step shown (from step 1 again if at the last), one step every 3.2 s, stops at the last; Pause keeps the step
+const PLAY_MS = 3200;
 document.addEventListener('click', e => {
   const b = e.target.closest('[data-anim] button'); if (!b) return;
   const fig = b.closest('figure'); const steps = [...fig.querySelectorAll('.st')]; if (!steps.length) return;
   const cur = steps.findIndex(s => s.classList.contains('on')), n = steps.length;
   const playBtn = fig.querySelector('[data-go="play"]');
-  const stop = () => { if (ANIM) { clearInterval(ANIM.t); ANIM.b.textContent = '▶ Play all'; ANIM = null; } };
+  const stop = () => { if (ANIM) { clearTimeout(ANIM.t); ANIM.b.textContent = '▶ Play all'; ANIM.b.setAttribute('aria-pressed', 'false'); ANIM = null; } };
   const go = b.dataset.go;
   if (go === 'play') {
     const same = ANIM && ANIM.b === b; stop(); if (same) return;
-    b.textContent = '❚❚ Pause'; stepTo(fig, null, 0);
-    ANIM = {b, t: setInterval(() => {
+    b.textContent = '❚❚ Pause'; b.setAttribute('aria-pressed', 'true');
+    // Play resumes from the step shown; from the last step it glides back to step 1 first
+    const restart = cur >= n - 1; if (restart) stepTo(fig, cur, 0);
+    const tick = () => {
       if (!document.body.contains(fig)) return stop();
       const i = steps.findIndex(s => s.classList.contains('on'));
       if (i >= n - 1) return stop();
-      stepTo(fig, i, i + 1); if (i + 1 === n - 1) stop();
-    }, 3200)};
+      stepTo(fig, i, i + 1);
+      if (i + 1 === n - 1) return stop();
+      ANIM.t = setTimeout(tick, PLAY_MS);
+    };
+    ANIM = {b, t: setTimeout(tick, restart ? PLAY_MS : PLAY_MS / 2)};
     return;
   }
   if (ANIM && ANIM.b === playBtn) stop();
@@ -1121,12 +1342,13 @@ document.addEventListener('click', e => {
    <template data-x> card under the table; the card's button scrolls to that drug's panels. */
 // scroll an element to just below the sticky header
 const openTo = el => { for (let d = el && el.closest('details'); d; d = d.parentElement && d.parentElement.closest('details')) d.open = true; };
-const scrollToEl = el => { openTo(el); const hd = document.querySelector('header'), off = (hd ? hd.getBoundingClientRect().height : 0) + 8; window.scrollTo({top: el.getBoundingClientRect().top + window.scrollY - off, behavior: RM() ? 'auto' : 'smooth'}); };
+// a long way (over two screens, e.g. a Why? button far above its explanation) jumps at once, so the target is there when the tap ends
+const scrollToEl = el => { openTo(el); const hd = document.querySelector('header'), off = (hd ? hd.getBoundingClientRect().height : 0) + 8, top = el.getBoundingClientRect().top + window.scrollY - off; window.scrollTo({top, behavior: RM() || Math.abs(top - window.scrollY) > 2 * innerHeight ? 'auto' : 'smooth'}); };
 function showExplain(group, key) {
   const out = document.querySelector(`[data-xout="${group}"]`), sel = document.querySelector(`[data-xsel="${group}"]`);
   if (!out) return;
   const t = key && document.querySelector(`template[data-x="${group}:${key}"]`);
-  out.innerHTML = t ? t.innerHTML : '';
+  out.innerHTML = t ? t.innerHTML : ''; fillImgs(out);
   if (sel) sel.value = key || '';
   return out;
 }
@@ -1149,12 +1371,12 @@ const figHTML = key => (typeof FIG === 'function' && key) ? FIG(key) + (key === 
 function expandFigs(html) {
   return html
     .replace(/<!--FIG:([\w-]+)-->/g, (m, k) => FIG(k))
-    .replace(/<!--IMG:([\w-]+)-->/g, (m, k) => IMG[k] ? `<figure class="fig"><img src="${IMG[k]}" alt="${esc(k)}"></figure>` : '')
+    .replace(/<!--IMG:([\w-]+)-->/g, (m, k) => IMG[k] ? `<figure class="fig">${imgTag(k, k)}</figure>` : '')
     .replace(/<!--GRAPH:([\s\S]*?)-->/g, (m, j) => { try { return FIG.graph(JSON.parse(j)); } catch (e) { return ''; } });
 }
 function vGuide() {
   $('#view').innerHTML = `<div class="tablewrap">${examPage(typeof GUIDE_HTML === 'undefined' ? '' : GUIDE_HTML, 'guide')}</div>`;
-  stackTables($('#view'));
+  fillImgs($('#view')); stackTables($('#view'));
   document.querySelectorAll('.guidenav a').forEach(a => a.onclick = e => { const t = document.querySelector(a.getAttribute('href')); if (t) { e.preventDefault(); scrollToEl(t); } });
 }
 
@@ -1163,16 +1385,20 @@ function download(name, text, type) {
   const a = document.createElement('a');
   a.href = URL.createObjectURL(new Blob([text], {type}));
   a.download = name; document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(a.href), 1000);   // free the copy once the download has started
 }
 /* ---------- Question map: every question in the bank, colour-coded ----------
    unseen = never answered; right / wrong = the outcome of the most recent
    answer (quiz, exam simulator or term quiz). Colour is backed by a mark
    (✓, ✗, blank) so the states read without colour. */
 /* The most recent answer per question, built once per render. */
-let LAST = null, LAST_N = -1;
+/* Keyed on the log itself and its newest entry, not its length: the log is capped at 5000 (the
+   length then stops changing) and a profile switch or import can bring a log of the same length. */
+let LAST = null, LAST_LOG = null, LAST_K = '';
 function lastMap() {
-  if (LAST && LAST_N === S.log.length) return LAST;
-  LAST = {}; S.log.forEach(e => LAST[e.id] = e.ok); LAST_N = S.log.length; return LAST;
+  const L = S.log, k = L.length + ':' + (L.length ? L[L.length - 1].t + L[L.length - 1].id : '');
+  if (LAST && LAST_LOG === L && LAST_K === k) return LAST;
+  LAST = {}; L.forEach(e => LAST[e.id] = e.ok); LAST_LOG = L; LAST_K = k; return LAST;
 }
 function lastOutcome(q) {
   const st = S.q[q.id];
@@ -1197,6 +1423,15 @@ const MISS = {
   ti: ['Therapeutic index', 'TI = LD50 / ED50: find both 50% points on the quantal curves and divide; the larger, the safer.'],
   read: ['Read the figure', 'Axes, legend and point of reference first: which curve is the agonist alone?']
 };
+/* Exam 2 figures are tissue tracings (tone or pressure over time), not dose–response curves:
+   the same miss tags, worded for a tracing. */
+const MISS2 = {
+  direction: ['Helping or hurting', 'Which way does the response go after the drug, and does the second drug help the first (more of the same response) or block it?'],
+  class: ['Which drug', 'The reading was right; now name it: which receptor does the drug act on (agonist, antagonist, indirect), and which drug on the list does that?'],
+  read: ['Read the tracing', 'Tissue, response and arrows first: what is measured, what was given when, and what was the response before the drug?'],
+  affinity: ['Which receptor', 'Which receptor does the drug act on in this tissue (M3, β1, β2, α1, Nm), and what does that receptor do here?']
+};
+const missOf = (g, m) => (g && g.exam === 2 && MISS2[m]) || MISS[m] || [m, ''];
 const graphOf = img => GR.find(g => g.key === img || (g.alts || []).includes(img));
 let GQ = null;   // image key → questions, built once
 const graphQs = g => { if (!GQ) { GQ = {}; QUESTIONS.forEach(q => { if (q.img) (GQ[q.img] = GQ[q.img] || []).push(q); }); } return [g.key].concat(g.alts || []).flatMap(k => GQ[k] || []); };
@@ -1216,16 +1451,16 @@ function graphFeedback(q, st) {
   if (!st.ok && q.type !== 'match') {
     const picked = [].concat(st.picked == null ? [] : st.picked instanceof Set ? [...st.picked] : st.picked);
     const misses = [...new Set(picked.map(i => q.options[i]).filter(o => o && !o.correct && o.miss).map(o => o.miss))];
-    if (misses.length) h += `<div class="gskip"><b>The question you skipped:</b> ${misses.map(m => { const d = MISS[m] || [m, '']; return `<span class="chip on">${esc(d[0])}</span> ${esc(d[1])}`; }).join('<br>')}</div>`;
+    if (misses.length) h += `<div class="gskip"><b>The question you skipped:</b> ${misses.map(m => { const d = missOf(g, m); return `<span class="chip on">${esc(d[0])}</span> ${esc(d[1])}`; }).join('<br>')}</div>`;
   }
-  h += `<details class="gread"${st.ok ? '' : ' open'}><summary>Read this figure his way</summary><ul>${(g.read || []).map(r => `<li>${esc(r)}</li>`).join('')}</ul>${g.method ? `<div class="meta">${esc(g.method)}</div>` : ''}</details>`;
+  h += `<details class="gread"${st.ok ? '' : ' open'}><summary>${g.exam === 2 ? 'Read this tracing his way' : 'Read this figure his way'}</summary><ul>${(g.read || []).map(r => `<li>${esc(r)}</li>`).join('')}</ul>${g.method ? `<div class="meta">${esc(g.method)}</div>` : ''}</details>`;
   return h;
 }
 function graphDone() {
   const g = GR.find(x => x.key === Q.graph);
   const tally = missTally(g);
   $('#view').innerHTML = `<div class="card"><h2>${esc(g.title)}: pass finished</h2><p>${Q.right} of ${Q.done} correct.</p>
-    ${tally.length ? `<p><b>What you keep skipping on this figure</b></p><ul>${tally.map(([m, n]) => { const d = MISS[m] || [m, '']; return `<li><b>${esc(d[0])}</b> (${n}×): ${esc(d[1])}</li>`; }).join('')}</ul>` : '<p>No reading question was skipped on this pass.</p>'}
+    ${tally.length ? `<p><b>What you keep skipping on this figure</b></p><ul>${tally.map(([m, n]) => { const d = missOf(g, m); return `<li><b>${esc(d[0])}</b> (${n}×): ${esc(d[1])}</li>`; }).join('')}</ul>` : '<p>No reading question was skipped on this pass.</p>'}
     <div class="row"><button class="btn" id="gagain">Drill this figure again</button><button class="btn ghost" id="gback">All figures</button></div></div>`;
   $('#gagain').onclick = () => startGraph(g.key);
   $('#gback').onclick = () => go('graphs');
@@ -1242,9 +1477,11 @@ const DIAGRAMS = [
   ['Two drugs at one receptor: how the curve moves', ['shift-competitive-anim', 'shift-irreversible-anim', 'shift-inverse-anim', 'shift-fafa-anim', 'shift-fapa-anim', 'shift-fapa-down-anim', 'shift-allo-agonist-anim', 'shift-allo-antagonist-anim']],
   ['Indirect antagonists and drug combinations', ['ind-ssri-anim', 'ind-snri-anim', 'ind-ache-anim', 'ind-carbidopa-anim', 'ind-pde-anim', 'ind-ras-anim', 'enhance-anim']],
   ['Receptor regulation', ['reg-chain', 'desens-rapid-anim', 'desens-long-anim', 'upreg-anim', 'downreg-anim']],
-  ['Autonomic layout and receptors', ['e2-ans-layout', 'e2-receptor-map'], 2],
-  ['Synapses: where each drug acts', ['e2-chol-synapse-anim', 'e2-adr-synapse-anim'], 2],
-  ['Epinephrine, nitric oxide and RAAS', ['e2-epi-reversal-anim', 'e2-no-pathway-anim', 'e2-raas-anim'], 2]
+  ['Autonomic layout, receptors and the baroreceptor reflex', ['e2-ans-layout', 'e2-receptor-map', 'e2-musc-map', 'e2-baroreflex-anim'], 2],
+  ['Cholinergic synapses: where each drug acts', ['e2-nmj-anim', 'e2-sch-phases-anim', 'e2-chol-synapse-anim', 'e2-op-anim'], 2],
+  ['Adrenergic synapse: where each drug acts', ['e2-adr-cycle-anim', 'e2-adr-synapse-anim', 'e2-maoi-tyramine-anim', 'e2-beta-blockers'], 2],
+  ['Epinephrine and nitric oxide', ['e2-epi-reversal-anim', 'e2-no-pathway-anim'], 2],
+  ['Renin–angiotensin–aldosterone system', ['e2-raas-cascade-anim', 'e2-raas-anim'], 2]
 ];
 const DG_NAMES = {'rtk-steps': 'RTK activation: the five steps'};
 function vDiagrams() {
@@ -1268,19 +1505,21 @@ function vDiagrams() {
 function vGraphs() {
   const pool = examPool();
   if (!GR.length) { $('#view').innerHTML = '<h2>Graphs</h2><div class="empty">No figures are registered.</div>'; return; }
-  let h = `<h2>Graphs</h2><p class="sub">His own figures (PollEV, Jeopardy, the 9/30 review, Part 3). Pick one and every question written on it is asked in turn; a wrong answer names the reading question you skipped, and the end of the pass shows which one you keep skipping.</p>`;
+  let h = `<h2>Graphs</h2><p class="sub">His own figures. Pick one and every question written on it is asked in turn; a wrong answer names the reading question you skipped, and the end of the pass shows which one you keep skipping.</p>`;
+  const INTRO = {1: 'Dose–response curves from his PollEV polls, Jeopardy, the 9/30 review and Part 3: read the shift, the baseline and the maximum.',
+    2: 'Tissue tracings from his Exam 2 polls and review: read which tissue and response are measured, which receptor the drug acts on, and whether the response is helped or blocked.'};
   COURSE.exams.forEach(e => {
   const groups = {}; GR.filter(g => (g.exam || 1) === e.id).forEach(g => (groups[g.group || 'Other'] = groups[g.group || 'Other'] || []).push(g));
-  let hh = h; h = '';
+  let hh = h; h = Object.keys(groups).length && INTRO[e.id] ? `<p class="sub">${INTRO[e.id]}</p>` : '';
   Object.entries(groups).forEach(([name, gs]) => {
-    h += `<h3>${esc(name)}</h3><div class="ggrid">`;
+    h += `<h3>${esc(e.id === 2 && name === 'Other' ? 'Tissue tracings' : name)}</h3><div class="ggrid">`;
     gs.forEach(g => {
       const qs = graphQs(g); const c = {unseen: 0, right: 0, wrong: 0}; qs.forEach(q => c[lastOutcome(q)]++);
       const tally = missTally(g).slice(0, 3);
-      h += `<div class="card gcard"><div class="gthumb">${IMG[g.key] ? `<img src="${IMG[g.key]}" alt="${esc(g.title)}">` : ''}</div>
+      h += `<div class="card gcard"><div class="gthumb">${IMG[g.key] ? imgTag(g.key, g.title) : ''}</div>
         <div><b>${esc(g.title)}</b><div class="meta">${qs.length} questions · ${c.unseen} unseen · ${c.right} right · ${c.wrong} wrong${g.source ? ' · ' + esc(g.source) : ''}</div>
         ${g.asks && g.asks.length ? `<div class="meta">He asks: ${g.asks.map(esc).join(' · ')}</div>` : ''}
-        ${tally.length ? `<div class="meta">You skip: ${tally.map(([m, n]) => esc((MISS[m] || [m])[0]) + ' ×' + n).join(', ')}</div>` : ''}
+        ${tally.length ? `<div class="meta">You skip: ${tally.map(([m, n]) => esc(missOf(g, m)[0]) + ' ×' + n).join(', ')}</div>` : ''}
         <div class="row" style="margin-top:6px"><button class="btn" data-g="${g.key}" ${qs.length ? '' : 'disabled'}>Drill this figure</button>
         ${c.wrong ? `<button class="btn ghost" data-g="${g.key}" data-wrong="1">Redo wrong</button>` : ''}</div></div></div>`;
     });
@@ -1288,7 +1527,7 @@ function vGraphs() {
   });
   h = hh + exGroup(e, h || '<div class="empty">His figures for this exam are added as they come up in class.</div>');
   });
-  $('#view').innerHTML = h;
+  $('#view').innerHTML = h; fillImgs($('#view'));
   document.querySelectorAll('[data-g]').forEach(b => b.onclick = () => {
     const g = GR.find(x => x.key === b.dataset.g);
     if (b.dataset.wrong) { const list = graphQs(g).filter(q => lastOutcome(q) === 'wrong'); if (!list.length) return; startQuiz(shuffle(list), g.title + ' · wrong', 'pass', {graph: g.key}); }
@@ -1306,7 +1545,7 @@ function vMap() {
   let h = `<h2>Question map</h2>
   <p class="sub">Every question in the bank, grouped by lecture and concept. The colour and mark show the most recent answer; a count shows correct answers over attempts. Click a tile to open that question.</p>
   <div class="card"><div class="row">
-    ${[['all', `All ${pool.length}`], ['unseen', `Unseen ${counts.unseen}`], ['right', `Right ${counts.right}`], ['wrong', `Wrong ${counts.wrong}`], ['flagged', `⚑ Flagged ${pool.filter(q => isFlagged(q.id)).length}`]].map(([k, l]) => `<span class="chip ${MAPF.show === k ? 'on' : ''} lg-${k}" data-show="${k}">${l}</span>`).join('')}
+    ${[['all', `All ${pool.length}`], ['unseen', `Unseen ${counts.unseen}`], ['right', `Right ${counts.right}`], ['wrong', `Wrong ${counts.wrong}`], ['flagged', `⚑ Flagged ${pool.filter(q => isFlagged(q.id)).length}`]].map(([k, l]) => `<button type="button" class="chip ${MAPF.show === k ? 'on' : ''} lg-${k}" aria-pressed="${MAPF.show === k}" data-show="${k}">${l}</button>`).join('')}
   </div>
   <div class="row" style="margin-top:8px"><span class="qt unseen lg"><span class="qm"></span>unseen</span><span class="qt right lg"><span class="qm">✓</span>last answer right</span><span class="qt wrong lg"><span class="qm">✗</span>last answer wrong</span></div></div>`;
   COURSE.exams.forEach(e => {
@@ -1316,6 +1555,7 @@ function vMap() {
     if (!tq.length) return;
     const tc = {unseen: 0, right: 0, wrong: 0}; tq.forEach(q => tc[state[q.id]]++);
     const sel = tq.filter(q => MAPF.show === 'all' || (MAPF.show === 'flagged' ? isFlagged(q.id) : state[q.id] === MAPF.show));
+    if (!sel.length) return;   // with a filter on, a topic with nothing to show is left out
     g += `<div class="card"><div class="topicrow"><span><b>${esc(t.name)}</b><small>${tq.length} questions · ${tc.unseen} unseen · ${tc.right} right · ${tc.wrong} wrong</small></span>
       <span class="row">${tq.some(q => isFlagged(q.id)) ? `<button class="btn ghost" data-drill="${t.id}" data-ex="${e.id}" data-what="flagged">Drill flagged</button>` : ''}${tc.wrong ? `<button class="btn ghost" data-drill="${t.id}" data-ex="${e.id}" data-what="wrong">Redo wrong</button>` : ''}${tc.unseen ? `<button class="btn ghost" data-drill="${t.id}" data-ex="${e.id}" data-what="unseen">Drill unseen</button>` : ''}</span></div>`;
     const subs = (t.subs || []).slice();
@@ -1327,14 +1567,13 @@ function vMap() {
       if (!sq.length) return;
       g += `<h4 class="mapsub">${esc(sb.name)}</h4><div class="qgrid">${sq.map(tile).join('')}</div>`;
     });
-    if (!sel.length) g += `<p class="empty">Nothing in this section matches the filter.</p>`;
     g += '</div>';
   });
-  h += exGroup(e, g || '<div class="empty">Questions for this exam are added as its lectures are written.</div>');
+  h += exGroup(e, g || `<div class="empty">${MAPF.show === 'all' ? 'Questions for this exam are added as its lectures are written.' : 'No question of this exam matches the filter.'}</div>`);
   });
   $('#view').innerHTML = h;
   document.querySelectorAll('[data-show]').forEach(c => c.onclick = () => { MAPF.show = c.dataset.show; vMap(); });
-  document.querySelectorAll('.qt[data-q]').forEach(b => b.onclick = () => startQuiz([byId[b.dataset.q]], 'From the question map', 'pass'));
+  document.querySelectorAll('.qt[data-q]').forEach(b => b.onclick = () => startQuiz([byId[b.dataset.q]], 'From the question map', 'pass', {back: true}));
   document.querySelectorAll('[data-drill]').forEach(b => b.onclick = () => {
     const list = pool.filter(q => q.topic === b.dataset.drill && examOf(q) === +b.dataset.ex && (b.dataset.what === 'flagged' ? isFlagged(q.id) : state[q.id] === b.dataset.what));
     startQuiz(shuffle(list), `${(TOPIC[b.dataset.drill] || {}).name}: ${b.dataset.what}`, 'pass');
@@ -1355,7 +1594,7 @@ function vData() {
   <button class="btn ghost" id="reset">Reset this profile</button></div></div>
   <h3>Last updated</h3>
   <div class="card"><p style="margin:0 0 6px"><b>${esc(fmtDate(BUILD.built))}</b>${BUILD.commit ? ` · build ${esc(BUILD.commit)}` : ''} · ${QUESTIONS.length} questions · ${QUESTIONS.filter(q => q.reading).length} with textbook notes</p>
-  ${(BUILD.changelog || []).map(c => `<h4 style="margin:10px 0 4px">${esc(c.date)}</h4><ul style="margin:0;padding-left:20px">${c.items.map(i => `<li>${esc(i)}</li>`).join('')}</ul>`).join('')}</div>
+  ${(BUILD.changelog || []).map(c => `<h4 style="margin:10px 0 4px">${esc(fmtDay(c.date))}</h4><ul style="margin:0;padding-left:20px">${c.items.map(i => `<li>${esc(i)}</li>`).join('')}</ul>`).join('')}</div>
   <p class="sub">${QUESTIONS.length} questions in the bank. Built from the course decks, lecture transcripts and the drug lists; each question cites its deck and slide. Slide numbers marked ~ were counted from the deck text and may be off by one or two.</p>`;
   $('#view').innerHTML = h;
   $('#setprof').onclick = () => { const v = $('#prof').value.trim(); if (!v) return; PROFILE = v; store.set(COURSE.ns + ':profile', v); S = loadState(); Q = null; endExam(); GQ = null; vData(); };
@@ -1372,7 +1611,10 @@ function vData() {
 }
 
 document.addEventListener('keydown', e => {
-  if (e.target && /INPUT|SELECT|TEXTAREA|BUTTON|A/.test(e.target.tagName)) return;
+  // typing in a field is never a shortcut; on a focused button or link, Enter and Space keep their own meaning
+  const tg = e.target && e.target.tagName || '';
+  if (/^(INPUT|SELECT|TEXTAREA)$/.test(tg) || (e.target && e.target.isContentEditable)) return;
+  if (/^(BUTTON|A|SUMMARY)$/.test(tg) && (e.key === 'Enter' || e.key === ' ')) return;
   if (e.metaKey || e.ctrlKey || e.altKey) return;
   const k = e.key;
   if (CUR === 'quiz' && Q && Q.cur && !Q.finished && Q.cur.type !== 'match' && S.layout !== 'all') {
