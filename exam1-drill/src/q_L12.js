@@ -47,11 +47,11 @@ QUESTIONS.push(
  concept:"ace-converts", tags:[], source:"both",
  stem:"Which statement about angiotensin-converting enzyme (ACE) is CORRECT?",
  options:[
-  {t:"It converts inactive angiotensin I to active angiotensin II", correct:true, why:"ACE cuts angiotensin I (inactive) into angiotensin II (active), and does so within milliseconds."},
-  {t:"It cleaves angiotensinogen into angiotensin I", correct:false, why:"That step belongs to renin."},
-  {t:"It converts angiotensin II into angiotensin I", correct:false, why:"The direction is reversed: angiotensin I becomes angiotensin II."},
-  {t:"It makes bradykinin, a vasodilator", correct:false, why:"ACE breaks bradykinin down; it does not make it."},
-  {t:"It works so slowly that angiotensin I builds up and acts on its own receptors in the vessels", correct:false, why:"Angiotensin I is converted to angiotensin II within milliseconds; angiotensin I is the inactive peptide."}],
+  {t:"It converts angiotensin I to angiotensin II", correct:true, why:"ACE cuts angiotensin I (inactive) into angiotensin II (active), and does so within milliseconds."},
+  {t:"It cleaves angiotensinogen into angiotensin I", correct:false, why:"That step belongs to renin, the enzyme from the kidney."},
+  {t:"It converts angiotensin II into angiotensin I", correct:false, why:"The direction is reversed: angiotensin I (inactive) becomes angiotensin II (active)."},
+  {t:"It makes bradykinin, a vasodilator", correct:false, why:"ACE breaks bradykinin down; it does not make it. That is why ACE inhibitors raise bradykinin."},
+  {t:"It is the rate-limiting enzyme of the system", correct:false, why:"The rate-limiting enzyme is renin, the first step; ACE acts one step later."}],
  teach:"Angiotensin-converting enzyme (ACE) cleaves angiotensin I, which is inactive, into the smaller, active angiotensin II. The conversion is so fast that angiotensin I and II were once both thought to be active. ACE also breaks down bradykinin, which matters for the ACE inhibitors.",
  quote:"For the longest time we thought that ANG1 and H2 were two active peptides, but A1 is converted to H2 like in no tomorrow, like within milliseconds. And that occurs by the angiotensin converting enzyme or the ACE enzyme.",
  cite:"PCOL-RAAS_26s.pdf slides 3, 9; transcript 10/8"},
@@ -70,7 +70,7 @@ QUESTIONS.push(
  cite:"PCOL-RAAS_26s.pdf slides 3, 23; transcript 10/8"},
 
 {id:"L12-005", lecture:"L12", prof:"Gottlieb", tier:"new", topic:"L12", sub:"casc", skill:"recall",
- concept:"at-g-proteins", tags:[], source:"both",
+ concept:"at-g-proteins", tags:["raas"], source:"both",
  stem:"Which pairing of angiotensin II receptor and G protein is CORRECT?",
  options:[
   {t:"AT1: Gq; AT2: Gi", correct:true, why:"AT1 is Gq (more Ca++); AT2 is Gi (less cyclic AMP (cAMP)), so they act in opposite directions."},
@@ -83,7 +83,7 @@ QUESTIONS.push(
  cite:"PCOL-RAAS_26s.pdf slides 3, 18; transcript 10/8"},
 
 {id:"L12-006", lecture:"L12", prof:"Gottlieb", tier:"new", level:1, topic:"L12", sub:"casc", skill:"apply", multi:true,
- concept:"at1-effects", tags:["in-class"], source:"both",
+ concept:"at1-effects", tags:["in-class","raas"], source:"both",
  stem:"Angiotensin II binds the AT1 receptor, which is coupled to Gq. Which effects follow? Select all that apply.",
  options:[
   {t:"More Ca++ and vasoconstriction", correct:true, why:"Gq raises Ca++ in arterial and venous smooth muscle, which constricts them and raises blood pressure."},
@@ -97,7 +97,7 @@ QUESTIONS.push(
  cite:"PCOL-RAAS_26s.pdf slides 3, 18; transcript 10/8"},
 
 {id:"L12-007", lecture:"L12", prof:"Gottlieb", tier:"new", topic:"L12", sub:"casc", skill:"tell",
- concept:"at2-physiological-antagonist", tags:[], source:"both",
+ concept:"at2-physiological-antagonist", tags:["raas"], source:"both",
  stem:"Which term describes how the AT2 receptor relates to the AT1 receptor?",
  options:[
   {t:"Physiological antagonist", correct:true, why:"AT2 acts through its own pathway (Gi) to produce the opposite effects of AT1; it does not block AT1."},
@@ -110,7 +110,7 @@ QUESTIONS.push(
  cite:"PCOL-RAAS_26s.pdf slides 3, 18; transcript 10/8"},
 
 {id:"L12-008", lecture:"L12", prof:"Gottlieb", tier:"new", topic:"L12", sub:"casc", skill:"recall",
- concept:"ang2-affinity", tags:[], source:"both",
+ concept:"ang2-affinity", tags:["raas"], source:"both",
  stem:"Angiotensin II binds mainly to which receptor?",
  options:[
   {t:"AT1", correct:true, why:"Angiotensin II has its highest affinity for AT1; about 9 out of 10 times, AT1 is what it binds."},
@@ -152,7 +152,7 @@ QUESTIONS.push(
 
 /* ---------------- Drug targets (slides 4, 23–25) ---------------- */
 {id:"L12-011", lecture:"L12", prof:"Gottlieb", tier:"new", topic:"L12", sub:"targets", skill:"tell",
- concept:"drug-target-pairs", tags:[], source:"both",
+ concept:"drug-target-pairs", tags:["raas"], source:"both",
  stem:"Which pairing of drug and target in the renin–angiotensin–aldosterone system (RAAS) is CORRECT?",
  options:[
   {t:"Aliskiren: renin", correct:true, why:"Aliskiren is the renin inhibitor (Ri)."},
@@ -165,7 +165,7 @@ QUESTIONS.push(
  cite:"PCOL-RAAS_26s.pdf slides 4, 23–25; transcript 10/8"},
 
 {id:"L12-012", lecture:"L12", prof:"Gottlieb", tier:"new", topic:"L12", sub:"targets", skill:"recall",
- concept:"sartan-suffix", tags:[], source:"both",
+ concept:"sartan-suffix", tags:["raas"], source:"both",
  stem:"A drug's generic name ends in “-sartan”. What is its mechanism of action?",
  options:[
   {t:"It blocks the AT1 receptor", correct:true, why:"Any “-sartan” is an angiotensin II receptor blocker (ARB): it binds and inhibits AT1."},
@@ -178,7 +178,7 @@ QUESTIONS.push(
  cite:"PCOL-RAAS_26s.pdf slides 4, 13; transcript 10/8"},
 
 {id:"L12-013", lecture:"L12", prof:"Gottlieb", tier:"new", topic:"L12", sub:"targets", skill:"recall",
- concept:"pril-suffix", tags:[], source:"both",
+ concept:"pril-suffix", tags:["raas"], source:"both",
  stem:"Which of these drugs is an angiotensin-converting enzyme (ACE) inhibitor?",
  options:[
   {t:"Quinapril", correct:true, why:"Every “-pril” is an ACE inhibitor."},
@@ -289,7 +289,7 @@ QUESTIONS.push(
  cite:"PCOL-RAAS_26s.pdf slides 4, 8; transcript 10/8"},
 
 {id:"L12-021", lecture:"L12", prof:"Gottlieb", tier:"new", topic:"L12", sub:"alisk", skill:"recall",
- concept:"rate-limiting-enzyme", tags:["in-class"], source:"both",
+ concept:"rate-limiting-enzyme", tags:["in-class","raas"], source:"both",
  stem:"Renin is the rate-limiting enzyme of the renin–angiotensin–aldosterone system (RAAS). What follows from blocking it?",
  options:[
   {t:"Every step downstream of renin goes down", correct:true, why:"Renin is the first crucial step; without it there is no angiotensin I, no angiotensin II and no receptor activation."},
@@ -325,7 +325,7 @@ QUESTIONS.push(
   {t:"It binds renin irreversibly", correct:false, why:"Aliskiren is a reversible antagonist."},
   {t:"It also blocks AT1 receptors", correct:false, why:"AT1 block is the angiotensin II receptor blockers (ARBs); aliskiren acts on renin."},
   {t:"It also inhibits angiotensin-converting enzyme", correct:false, why:"That is the ACE inhibitors."},
-  {t:"Its metabolite is more potent", correct:false, why:"An active metabolite with greater affinity (EXP 3174) belongs to losartan."}],
+  {t:"It also blocks β1 on juxtaglomerular cells", correct:false, why:"Lowering renin release through β1 is metoprolol; aliskiren blocks the renin enzyme itself."}],
  teach:"Aliskiren has a low bioavailability, about 2 to 3%, but it has such a high affinity for renin that only a little drug is needed. It is the newest of the renin–angiotensin–aldosterone system (RAAS) drugs, more expensive, and has less data behind it than the ACE inhibitors.",
  quote:"Alicekin has a bioavailability of about like 2 to 3%. That's pretty low. Would you agree with me? But that's so potent, it has such a high affinity for the renin enzyme, you don't need a lot. You just need a little sprinkle.",
  cite:"PCOL-RAAS_26s.pdf slide 8; transcript 10/8"},
@@ -345,7 +345,7 @@ QUESTIONS.push(
 
 /* ---------------- ACE inhibitors (slides 9–12) ---------------- */
 {id:"L12-025", lecture:"L12", prof:"Gottlieb", tier:"new", topic:"L12", sub:"acei", skill:"recall",
- concept:"acei-primary-moa", tags:[], source:"both",
+ concept:"acei-primary-moa", tags:["raas"], source:"both",
  stem:"What is the primary mechanism of action of angiotensin-converting enzyme (ACE) inhibitors?",
  options:[
   {t:"Block conversion of angiotensin I to II", correct:true, why:"They inhibit ACE reversibly and selectively, so less angiotensin II is made."},
@@ -359,7 +359,7 @@ QUESTIONS.push(
  cite:"PCOL-RAAS_26s.pdf slides 9–10, 12; transcript 10/8"},
 
 {id:"L12-026", lecture:"L12", prof:"Gottlieb", tier:"new", topic:"L12", sub:"acei", skill:"recall", multi:true,
- concept:"acei-two-mechanisms", tags:["exam-cue"], source:"both",
+ concept:"acei-two-mechanisms", tags:["exam-cue","raas"], source:"both",
  stem:"By which mechanisms do angiotensin-converting enzyme (ACE) inhibitors lower blood pressure? Select all that apply.",
  options:[
   {t:"Less angiotensin II is made", correct:true, why:"Primary mechanism: ACE is blocked, so angiotensin I is not converted to angiotensin II."},
@@ -373,7 +373,7 @@ QUESTIONS.push(
  cite:"PCOL-RAAS_26s.pdf slides 9, 12; transcript 10/8"},
 
 {id:"L12-028", lecture:"L12", prof:"Gottlieb", tier:"new", level:1, topic:"L12", sub:"acei", skill:"apply", multi:true,
- concept:"acei-up-down", tags:[], source:"both",
+ concept:"acei-up-down", tags:["raas"], source:"both",
  stem:"Which changes are expected with an angiotensin-converting enzyme (ACE) inhibitor? Select all that apply.",
  options:[
   {t:"Angiotensin I builds up", correct:true, why:"Angiotensin I is upstream of the blocked enzyme and has nowhere to go."},
@@ -399,17 +399,18 @@ QUESTIONS.push(
  quote:"So what we're gonna learn in cardio is that drugs that save lives are first line. Because that's what we wanna do. We wanna save our patients' lives for the long term, and we want to improve their quality of life, so they can live a more productive life. And this drug does both, OK?",
  cite:"PCOL-RAAS_26s.pdf slides 9–10; transcript 10/8"},
 
-{id:"L12-030", lecture:"L12", prof:"Gottlieb", tier:"new", topic:"L12", sub:"acei", skill:"recall",
- concept:"acei-prodrugs", tags:[], source:"both", lowYield:true,
- stem:"Which angiotensin-converting enzyme (ACE) inhibitor is an active drug rather than a prodrug?",
+{id:"L12-030", lecture:"L12", prof:"Gottlieb", tier:"new", topic:"L12", sub:"acei", skill:"apply",
+ concept:"acei-same-moa", tags:["raas"], source:"both",
+ stem:"A patient's captopril is replaced with quinapril. Which statement is CORRECT?",
  options:[
-  {t:"Lisinopril", correct:true, why:"Captopril and lisinopril are active; the other ACE inhibitors are prodrugs."},
-  {t:"Enalapril", correct:false, why:"A prodrug that must be metabolized to its active form."},
-  {t:"Ramipril", correct:false, why:"A prodrug."},
-  {t:"Quinapril", correct:false, why:"A prodrug."},
-  {t:"Benazepril", correct:false, why:"A prodrug."}],
- teach:"The ACE inhibitors share one mechanism and differ in potency, affinity and pharmacokinetics, including whether they are a drug or a prodrug. Captopril and lisinopril are active compounds; the rest are prodrugs that must be metabolized to the active form. For the exam he needs the mechanism of action, not which one is a prodrug.",
- quote:"Well, perhaps captopril and lisinopril, they are the active, active compounds in this drug, as everybody else is a pro-drug. What does it mean to be a prodrug? You have to be metabolizing to the active ingredient, right? But for our purpose over here, all we need to know is the mechanism of action and what they're gonna do.",
+  {t:"Both inhibit angiotensin-converting enzyme", correct:true, why:"Both are “-prils”: every ACE inhibitor has the same mechanism of action, so angiotensin II still falls and bradykinin still rises."},
+  {t:"Quinapril blocks the AT1 receptor instead", correct:false, why:"Blocking AT1 is the “-sartans” (angiotensin II receptor blockers, ARBs); quinapril is a “-pril”."},
+  {t:"Quinapril inhibits renin instead", correct:false, why:"The renin inhibitor is aliskiren; quinapril acts one step later, at ACE."},
+  {t:"Quinapril no longer raises bradykinin", correct:false, why:"Blocking ACE always stops the breakdown of bradykinin, so bradykinin rises with any “-pril”."},
+  {t:"Quinapril blocks the mineralocorticoid receptor", correct:false, why:"That is spironolactone and eplerenone, at the end of the cascade."}],
+ teach:"The ACE inhibitors all end in “-pril” (captopril, enalapril, lisinopril, quinapril, ramipril and others) and share one mechanism: they reversibly and selectively inhibit angiotensin-converting enzyme (ACE), so less angiotensin II is made and more bradykinin is left. They differ in potency, affinity and pharmacokinetics, including whether the drug is given as a prodrug that must be metabolized to its active form, and none of that is tested. Knowing one ACE inhibitor pharmacologically means knowing them all.",
+ quote:"I don't care which one you know. If you know one pharmacologically, you know them all, so it makes life much easier. … But for our purpose over here, all we need to know is the mechanism of action and what they're gonna do.",
+ note:"Rewritten 10/10: the item used to ask which ACE inhibitor is active rather than a prodrug (slide 11), which he set aside (“all we need to know is the mechanism of action and what they're gonna do”). The id now asks the point he does test: every “-pril” has the same mechanism.",
  cite:"PCOL-RAAS_26s.pdf slides 10–11; transcript 10/8"},
 
 {id:"L12-031", lecture:"L12", prof:"Gottlieb", tier:"new", topic:"L12", sub:"acei", skill:"recall",
@@ -469,19 +470,19 @@ QUESTIONS.push(
  note:"He asked the class whether leaving AT2 alone is “a good thing or a bad thing” and answered it.",
  cite:"PCOL-RAAS_26s.pdf slides 13, 18, 26–27; transcript 10/8"},
 
-{id:"L12-036", lecture:"L12", prof:"Gottlieb", tier:"new", topic:"L12", sub:"arb", skill:"recall",
- concept:"losartan-metabolite", tags:[], source:"both", lowYield:true,
- stem:"Which statement about losartan is CORRECT?",
+{id:"L12-036", lecture:"L12", prof:"Gottlieb", tier:"new", level:1, topic:"L12", sub:"arb", skill:"apply",
+ concept:"arb-not-outcompeted", tags:["raas"], source:"both",
+ stem:"A patient takes losartan, and the body compensates by making more angiotensin II. Which statement is CORRECT?",
  options:[
-  {t:"Its metabolite EXP 3174 also blocks AT1", correct:true, why:"Losartan is active, and its metabolite EXP 3174 is active too, with greater affinity than losartan."},
-  {t:"It forms a covalent bond with the AT1 receptor", correct:false, why:"Losartan is reversible; the tight-binding angiotensin II receptor blockers (ARBs) still do not form covalent bonds."},
-  {t:"It binds AT2 more than AT1", correct:false, why:"It has about 10,000-fold higher affinity for AT1."},
-  {t:"It is inactive until it is metabolized", correct:false, why:"The slide marks losartan as active; its metabolite adds a second phase of AT1 block."},
-  {t:"It is the most potent ARB", correct:false, why:"Losartan is last in the rank order of affinity; candesartan is the most potent."}],
- teach:"Losartan is a reversible, selective AT1 antagonist; about 14% of an oral dose is converted to EXP 3174, an active metabolite with greater affinity than losartan, so the effect comes in two phases. It is the least potent ARB in the rank order (candesartan the most), so it may need a higher dose. For the exam he needs only that an ARB is an AT1 receptor antagonist.",
- quote:"Out of these drugs, valsartan is an active drug, and losartan is active, but one of its metabolites is also active, so you get like a double bang, and actually the metabolite that XXP 3174 has a greater affinity than losartan does.",
- note:"One sentence in the audio reads “Losartan is a prodrug and is the most powerful of them all”, apparently a garbled sentence about candesartan; slide 13 marks losartan “Active, but EXP3174” and puts it last in the rank order, and he later said losartan “is an active ingredient, but one of its metabolites is also active”. Keyed to the slides. He also said “I don't care if you know which one is the most potent”, so this item is low yield.",
- cite:"PCOL-RAAS_26s.pdf slides 13–14; transcript 10/8"},
+  {t:"AT1 stays blocked despite the extra angiotensin II", correct:true, why:"Angiotensin II receptor blockers (ARBs) bind AT1 so tightly that the body's upstream compensation cannot outcompete them; the extra angiotensin II goes to AT2 instead."},
+  {t:"The extra angiotensin II overcomes the AT1 block", correct:false, why:"The block holds: the body raises renin, angiotensin I and angiotensin II, but it cannot outcompete the ARB at AT1."},
+  {t:"Losartan forms a covalent bond with AT1", correct:false, why:"ARBs do not form covalent bonds; they bind so tightly and stay on so long that they behave almost as if irreversible."},
+  {t:"Aldosterone rises with the extra angiotensin II", correct:false, why:"Aldosterone release is an AT1 effect; with AT1 blocked, aldosterone falls."},
+  {t:"The extra angiotensin II is converted back to angiotensin I", correct:false, why:"ACE converts angiotensin I to angiotensin II, not back; angiotensin II and angiotensin I both rise."}],
+ teach:"Blocking AT1, the last step, makes the body compensate upstream: renin, angiotensin I and angiotensin II all rise. With an angiotensin II receptor blocker (ARB) such as losartan this does not matter, because the drug binds AT1 with very high affinity (about 10,000-fold over AT2) and the extra angiotensin II cannot outcompete it; there is no covalent bond, yet in the body the drug stays on so long that it behaves almost as if irreversible. The extra angiotensin II binds AT2, the physiological antagonist, which further lowers blood pressure.",
+ quote:"So your body is gonna try to up regulate upstream from that, but it doesn't matter because it's such a powerful blocker that you can't outcompete it. OK? So it's gonna be very efficacious.",
+ note:"Rewritten 10/10: the item used to ask about losartan's active metabolite (EXP 3174) and the ARB potency rank (slides 13–14), which he set aside (“I don't care if you know which one is the most potent. I just need you to tell me that it's H1 receptor antagonist.”). Slide 14 calls losartan reversible; he said ARBs “in vitro they look reversible, but in real life they bounce for such a long period of time that they kind of behave like if they are irreversible” and “they're not forming covalent bones”. The key rests only on his “you can't outcompete it”; reversibility itself is not asked.",
+ cite:"PCOL-RAAS_26s.pdf slides 13–14, 27; transcript 10/8"},
 
 {id:"L12-037", lecture:"L12", prof:"Gottlieb", tier:"new", level:3, ladder:"ace-inhibitor", ladderName:"ACE inhibitor, spironolactone, potassium and the cough", topic:"L12", sub:"arb", skill:"apply",
  concept:"arb-when", tags:[], source:"transcript",
@@ -512,7 +513,7 @@ QUESTIONS.push(
 
 /* ---------------- Angiotensin II actions, remodeling, AT1 vs AT2 (slides 15–18) ---------------- */
 {id:"L12-039", lecture:"L12", prof:"Gottlieb", tier:"new", topic:"L12", sub:"ang2", skill:"recall", multi:true,
- concept:"ang2-actions", tags:[], source:"both",
+ concept:"ang2-actions", tags:["raas"], source:"both",
  stem:"Which are actions of angiotensin II? Select all that apply.",
  options:[
   {t:"Direct vasoconstriction", correct:true, why:"Through AT1 (Gq, more Ca++) it constricts vascular smooth muscle."},
@@ -527,7 +528,7 @@ QUESTIONS.push(
  cite:"PCOL-RAAS_26s.pdf slide 15; transcript 10/8"},
 
 {id:"L12-040", lecture:"L12", prof:"Gottlieb", tier:"new", topic:"L12", sub:"ang2", skill:"figure",
- concept:"ang2-tracing", tags:[], source:"both",
+ concept:"ang2-pressure-renal-flow", tags:["raas"], source:"both",
  stem:"Two tracings run together. Right after angiotensin II is injected, blood pressure jumps from about 120 to almost 200 mm Hg, while renal blood flow drops close to zero and then slowly recovers. What do the tracings show?",
  options:[
   {t:"Vasoconstriction that shunts blood away from the kidney", correct:true, why:"Angiotensin II constricts vessels (pressure up) and the renal vessels (renal blood flow down), sending blood to the main circulation."},
@@ -567,7 +568,7 @@ QUESTIONS.push(
  cite:"PCOL-RAAS_26s.pdf slides 17–18; transcript 10/8"},
 
 {id:"L12-043", lecture:"L12", prof:"Gottlieb", tier:"new", topic:"L12", sub:"ang2", skill:"tell",
- concept:"at1-vs-at2", tags:[], source:"both",
+ concept:"at1-vs-at2", tags:["raas"], source:"both",
  stem:"Which statement contrasting the AT1 and AT2 receptors is CORRECT?",
  options:[
   {t:"AT2 causes vasodilation and Na+ excretion", correct:true, why:"AT2 (Gi, less cyclic AMP (cAMP)) opposes AT1: vasodilation, less remodeling, more Na+ excretion."},
@@ -595,7 +596,7 @@ QUESTIONS.push(
 
 /* ---------------- Adverse effects (slide 19) ---------------- */
 {id:"L12-045", lecture:"L12", prof:"Gottlieb", tier:"new", topic:"L12", sub:"adr", skill:"recall", multi:true,
- concept:"shared-adrs", tags:[], source:"both",
+ concept:"shared-adrs", tags:["raas"], source:"both",
  stem:"Which adverse effects are shared by renin inhibitors, ACE (angiotensin-converting enzyme) inhibitors and ARBs (angiotensin II receptor blockers)? Select all that apply.",
  options:[
   {t:"Hyperkalemia", correct:true, why:"All three can cause hyperkalemia, especially in patients with kidney disease."},
@@ -621,7 +622,7 @@ QUESTIONS.push(
  cite:"PCOL-RAAS_26s.pdf slide 19; transcript 10/8"},
 
 {id:"L12-047", lecture:"L12", prof:"Gottlieb", tier:"new", topic:"L12", sub:"adr", skill:"recall",
- concept:"acei-cough", tags:["in-class"], source:"both",
+ concept:"acei-cough", tags:["in-class","raas"], source:"both",
  stem:"What causes the dry cough of ACE (angiotensin-converting enzyme) inhibitors?",
  options:[
   {t:"Accumulation of bradykinin", correct:true, why:"ACE normally breaks down bradykinin; with ACE blocked, bradykinin accumulates."},
@@ -635,7 +636,7 @@ QUESTIONS.push(
  cite:"PCOL-RAAS_26s.pdf slide 19; transcript 10/8"},
 
 {id:"L12-048", lecture:"L12", prof:"Gottlieb", tier:"new", level:3, topic:"L12", sub:"adr", skill:"apply",
- concept:"angioedema-switch", tags:[], source:"both",
+ concept:"angioedema-switch", tags:["raas"], source:"both",
  stem:"A patient taking enalapril develops swelling of the lips, face and airway. What is the best next step?",
  options:[
   {t:"Stop enalapril and try an ARB", correct:true, why:"Angioedema is a bradykinin effect of angiotensin-converting enzyme (ACE) inhibitors; an ARB (angiotensin II receptor blocker) has no cross-class effect."},
@@ -649,7 +650,7 @@ QUESTIONS.push(
  cite:"PCOL-RAAS_26s.pdf slide 19; transcript 10/8"},
 
 {id:"L12-049", lecture:"L12", prof:"Gottlieb", tier:"new", topic:"L12", sub:"adr", skill:"tell", multi:true,
- concept:"acei-specific-adrs", tags:[], source:"both",
+ concept:"acei-specific-adrs", tags:["raas"], source:"both",
  stem:"Which adverse effects are more common with ACE (angiotensin-converting enzyme) inhibitors than with ARBs (angiotensin II receptor blockers), because of bradykinin? Select all that apply.",
  options:[
   {t:"Dry cough", correct:true, why:"From accumulation of bradykinin; more with ACE inhibitors than with ARBs or renin inhibitors."},
@@ -692,7 +693,7 @@ QUESTIONS.push(
  cite:"PCOL-RAAS_26s.pdf slides 20–21; transcript 10/8"},
 
 {id:"L12-053", lecture:"L12", prof:"Gottlieb", tier:"new", topic:"L12", sub:"aldo", skill:"recall",
- concept:"potassium-wasting", tags:[], source:"both",
+ concept:"potassium-wasting", tags:["raas"], source:"both",
  stem:"Aldosterone is called a “potassium-wasting hormone”. Why?",
  options:[
   {t:"It retains Na+ at the cost of losing K+", correct:true, why:"More channels and Na+/K+-ATPase pumps move Na+ back into the circulation and drive K+ out."},
@@ -746,7 +747,7 @@ QUESTIONS.push(
 
 {id:"L12-057", lecture:"L12", prof:"Gottlieb", tier:"new", topic:"L12", sub:"aldo", skill:"tell",
  concept:"eplerenone-vs-spironolactone", tags:[], source:"both",
- stem:"Which statement distinguishes eplerenone from spironolactone?",
+ stem:"Which statement about eplerenone and spironolactone is CORRECT?",
  options:[
   {t:"Eplerenone is more selective for the kidney MR", correct:true, why:"Eplerenone is the most selective for the mineralocorticoid receptor (MR) in the kidney and leaves MRs elsewhere alone, so no gynecomastia."},
   {t:"Eplerenone causes more gynecomastia", correct:false, why:"Gynecomastia and impotence occur with spironolactone, not with eplerenone."},
@@ -803,7 +804,7 @@ QUESTIONS.push(
  concept:"which-raises-bradykinin", tags:[], source:"both",
  stem:"Which of these drugs raises bradykinin?",
  options:[
-  {t:"Lisinopril", correct:true, why:"angiotensin-converting enzyme (ACE) inhibitors stop ACE from breaking down bradykinin."},
+  {t:"Lisinopril", correct:true, why:"Angiotensin-converting enzyme (ACE) inhibitors stop ACE from breaking down bradykinin."},
   {t:"Losartan", correct:false, why:"Losartan blocks AT1; bradykinin breakdown by ACE is untouched."},
   {t:"Aliskiren", correct:false, why:"Aliskiren blocks renin, before ACE; ACE still breaks down bradykinin."},
   {t:"Metoprolol", correct:false, why:"Metoprolol lowers renin release through β1."},
@@ -813,7 +814,7 @@ QUESTIONS.push(
  cite:"PCOL-RAAS_26s.pdf slides 26, 29; transcript 10/8"},
 
 {id:"L12-062", lecture:"L12", prof:"Gottlieb", tier:"new", level:1, topic:"L12", sub:"predict", skill:"tell",
- concept:"which-raises-at2", tags:["exam-cue"], source:"both",
+ concept:"which-raises-at2", tags:["exam-cue","raas"], source:"both",
  stem:"Which of these drugs increases AT2 receptor activation?",
  options:[
   {t:"Losartan", correct:true, why:"Blocking AT1 leaves angiotensin II only AT2 to bind, so AT2 activation rises."},
@@ -826,7 +827,7 @@ QUESTIONS.push(
  cite:"PCOL-RAAS_26s.pdf slides 26–29; transcript 10/8"},
 
 {id:"L12-063", lecture:"L12", prof:"Gottlieb", tier:"new", level:1, topic:"L12", sub:"predict", skill:"tell",
- concept:"ang1-acei-vs-ri", tags:["exam-cue"], source:"both",
+ concept:"ang1-acei-vs-ri", tags:["exam-cue","raas"], source:"both",
  stem:"How do lisinopril and aliskiren differ in their effect on angiotensin I?",
  options:[
   {t:"Lisinopril raises it; aliskiren lowers it", correct:true, why:"Angiotensin I is upstream of angiotensin-converting enzyme (ACE) (it builds up with lisinopril) and downstream of renin (it falls with aliskiren)."},

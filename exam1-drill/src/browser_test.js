@@ -143,7 +143,10 @@ const out = path.join(__dirname, '..', course.match(/output:\s*'([^']+)'/)[1]);
   await page.click('[data-flag]');
   if (!/Exam result/.test(await page.textContent('#view'))) fail('flag on the exam result replaced the result page');
   await page.click('nav button[data-v="topics"]'); await page.click('[data-layout="one"]');
-  await page.click('nav button[data-v="exam"]'); await page.click('#startx');
+  // a finished paper stays on its result page until "New exam"
+  await page.click('nav button[data-v="exam"]');
+  if (!/Exam result/.test(await page.textContent('#view'))) fail('returning to the exam tab after submitting did not show the result');
+  await page.click('#newx'); await page.click('#startx');
   await page.click('nav button[data-v="data"]'); await page.fill('#prof', 'other'); await page.click('#setprof');
   await page.waitForTimeout(1500);
   await page.fill('#prof', 'default'); await page.click('#setprof');
@@ -176,6 +179,208 @@ const out = path.join(__dirname, '..', course.match(/output:\s*'([^']+)'/)[1]);
   await page.click('nav button[data-v="tell"]');
   const stacked = await page.evaluate(() => { const td = document.querySelector('table.stack tbody td'); return td && getComputedStyle(td).display === 'block' && td.getAttribute('data-label'); });
   if (!stacked) fail('tables do not stack at phone width');
+  // ---- regressions (engine review, 10/10) ----
+  await page.setViewportSize({width: 1100, height: 800});
+  await page.evaluate(() => { localStorage.setItem(COURSE.ns + ':exam', '1'); }); await page.reload();
+  // a matching question does not inherit the previous matching question's choices
+  const mt = await page.evaluate(() => {
+    const ms = QUESTIONS.filter(q => q.type === 'match'); if (ms.length < 2) return 'skip';
+    S.layout = 'one'; startQuiz(ms.slice(0, 2), 'match', 'pass');
+    document.querySelectorAll('select[data-l]').forEach(s => { s.selectedIndex = 1; s.dispatchEvent(new Event('change')); });
+    check(); finish(Q.ok ? 'sure' : 'wrong');
+    return Q.mpick == null && ![...document.querySelectorAll('select[data-l]')].some(s => s.value);
+  });
+  if (mt === false) fail('a matching question started with the previous one\'s choices');
+  // the question map's last-answer cache follows a profile switch with a log of the same length
+  const lm = await page.evaluate(() => {
+    const keep = S, q = QUESTIONS[0];
+    S = normalize({q: {[q.id]: {n: 1, ok: 1}}, log: [{id: q.id, t: 1, ok: true}]}); const a = lastOutcome(q);
+    S = normalize({q: {[q.id]: {n: 1, ok: 0}}, log: [{id: q.id, t: 1, ok: false}]}); const b = lastOutcome(q);
+    S = keep; return a === 'right' && b === 'wrong';
+  });
+  if (!lm) fail('question map kept the last answers of another profile');
+  // a bad import neither breaks the scheduler nor puts markup on the page
+  const bi = await page.evaluate(() => {
+    const keep = S; let err = '';
+    S = normalize({q: {}, log: 'x', pace: 'zzz', exams: [{t: 1, n: 2, score: '<img id=pwn>'}, {t: 2, n: 4, score: 3}]});
+    try { schedule(QUESTIONS[0].id, 'sure'); } catch (e) { err = e.message; }
+    EX = null; go('exam'); const inj = !!document.getElementById('pwn'), n = S.exams.length;
+    S = keep; return {err, inj, n};
+  });
+  if (bi.err || bi.inj || bi.n !== 1) fail('bad import: ' + JSON.stringify(bi));
+  // opening a question from deep in a long page starts at the top
+  await page.click('nav button[data-v="tell"]');
+  await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
+  await page.evaluate(() => [...document.querySelectorAll('[data-q] a')].pop().click());
+  if (await page.evaluate(() => scrollY) > 0) fail('a question opened from the Tell apart page kept the old scroll position');
+  // a ladder chip works in a quiz while an exam waits in the background; the review's back button returns to the result
+  await page.click('nav button[data-v="exam"]'); await page.click('#startx');
+  const lad = await page.evaluate(() => {
+    CUR = 'map';   // left the exam page (the exam is kept)
+    const lq = QUESTIONS.find(q => q.ladder && !q.multi && !q.type && ladderQs(q.ladder).length > 1); if (!lq) return 'skip';
+    startQuiz([lq], 'one', 'pass'); pick(Q.order[0]);
+    document.querySelector('[data-climb]').click();
+    return /^Ladder/.test(Q.label) && EX && !EX.done;
+  });
+  if (lad === false) fail('ladder chip ignored while an exam was kept in the background');
+  await page.click('nav button[data-v="exam"]');
+  const nv = await page.evaluate(() => { const k = EX.qs.findIndex(id => byId[id].multi); if (k >= 0) EX.ans[EX.qs[k]] = []; submitExam(); return k >= 0 ? byId[EX.qs[k]].stem : null; });
+  if (nv) { const v = await page.evaluate(s => [...document.querySelectorAll('#view .card')].find(c => c.querySelector('.stem') && c.querySelector('.stem').textContent === s).querySelector('.verdict').textContent, nv); if (!/Not answered/.test(v)) fail('an emptied select-all was graded "' + v + '", not "Not answered"'); }
+  await page.click('#view [data-jump]'); await page.click('#backbtn');
+  if (!/Exam result/.test(await page.textContent('#view'))) fail('back from an exam-review link did not return to the result');
+  // keyboard shortcuts work with focus on a tab (not only on the page)
+  await page.evaluate(() => { endExam(); S.layout = 'one'; startQuiz(QUESTIONS.filter(q => !q.multi && !q.type).slice(0, 2), 'keys', 'pass'); document.querySelector('#nav button').focus(); });
+  await page.keyboard.press('a');
+  if (!(await page.evaluate(() => Q.answered))) fail('letter shortcut ignored while a tab had focus');
+  // filter chips are buttons; pictures are attached after a page is built
+  await page.click('nav button[data-v="topics"]');
+  if (await page.$('span.chip[data-sk], span.chip[data-show], span.chip[data-mode], span.chip[data-n]')) fail('a filter chip is not a button');
+  for (const v of ['guide', 'graphs']) { await page.click(`nav button[data-v="${v}"]`); if (await page.evaluate(() => document.querySelectorAll('#view img[data-img]:not([src])').length)) fail(v + ': a figure has no picture'); }
+  // Exam 2: blueprint paper, "All" length, tiers, tell-apart drill and flashcards follow the exam studied
+  await page.evaluate(() => { localStorage.setItem(COURSE.ns + ':exam', '2'); }); await page.reload();
+  const e2 = await page.evaluate(() => {
+    const ex = active(), bad = [];
+    for (let i = 0; i < 40; i++) {
+      const p = drawBlueprint(ex.blueprint);
+      if (p.length !== ex.questions) bad.push('paper of ' + p.length);
+      if (p.filter(q => q.multi).length !== ex.blueprint.sata) bad.push('select-all ' + p.filter(q => q.multi).length);
+      if (p.some(q => q.lowYield || q.type || q.skill === 'term' || examOf(q) !== 2)) bad.push('ineligible question drawn');
+      const ids = new Set(p.map(q => q.id)); if (ids.size !== p.length || p.some(q => q.dupOf && ids.has(q.dupOf))) bad.push('duplicate or dupOf pair');
+    }
+    // a topic with too few questions still gives a full paper
+    const short = drawBlueprint({sata: ex.blueprint.sata, parts: [{key: 'none', name: 'none', n: 5, test: () => false}].concat(ex.blueprint.parts)});
+    if (short.length !== ex.questions) bad.push('short topic left a paper of ' + short.length);
+    go('exam'); const all = [...document.querySelectorAll('[data-n]')].pop(), n = +all.dataset.n;
+    if (drawExam(n).length !== n) bad.push('"All ' + n + '" drew ' + drawExam(n).length);
+    go('topics'); if (!document.querySelector('[data-tier]')) bad.push('no tier buttons');
+    go('tell'); const tl = document.getElementById('tellq'); tl.click(); if (Q.list.some(q => examOf(q) !== 2)) bad.push('tell-apart drill mixes exams');
+    TM.mode = 'flash'; TM.card = null; go('terms'); if (!TM.card || lecExam(TM.card.lecture) !== 2) bad.push('flashcard not from Exam 2');
+    TM.mode = 'glossary';
+    return [...new Set(bad)];
+  });
+  if (e2.length) fail('Exam 2: ' + e2.join('; '));
+  // every Why? button on the Exam 2 reference fills its group's explanation box
+  await page.click('nav button[data-v="ref"]');
+  const xb = await page.evaluate(() => [...document.querySelectorAll('details[data-ex="2"] [data-xpick]')].filter(w => { w.click(); const o = document.querySelector(`[data-xout="${w.dataset.xpick.split(':')[0]}"]`); return !o || o.textContent.trim().length < 20; }).map(w => w.dataset.xpick));
+  if (xb.length) fail('Why? buttons with no explanation: ' + xb.join(', '));
+  // ---- regressions from the student audit (10/10) ----
+  // B2: after a mouse click on Flag, letter keys and Enter still drive the quiz (and Enter does not unflag)
+  await page.evaluate(() => { S.layout = 'one'; startQuiz(examPool().filter(q => !q.multi && !q.type).slice(0, 3), 'flag', 'pass'); });
+  const fid = await page.evaluate(() => Q.cur.id);
+  await page.click('.qcard [data-flag]'); await page.keyboard.press('a');
+  if (!(await page.evaluate(() => Q.answered))) fail('letter key ignored after clicking Flag');
+  await page.keyboard.press('Enter');
+  const fl = await page.evaluate(id => ({moved: Q.cur.id !== id, flagged: isFlagged(id)}), fid);
+  if (!fl.moved || !fl.flagged) fail('Enter after Flag: ' + JSON.stringify(fl));
+  await page.evaluate(id => toggleFlag(id), fid);
+  // B3: the "Studying for" chip of the exam already studied keeps the drill; the other exam's chip ends a drill of this exam
+  await page.click('nav button[data-v="topics"]');
+  const keepQ = await page.evaluate(() => { const q0 = Q; document.querySelector('[data-exsw="2"]').click(); const same = Q === q0; document.querySelector('[data-exsw="1"]').click(); const gone = Q === null; document.querySelector('[data-exsw="2"]').click(); return same && gone; });
+  if (!keepQ) fail('Studying-for chip: drill kept/ended wrongly');
+  // C12: the skill filter applies to "Study what is due"
+  const sk = await page.evaluate(() => { document.querySelector('[data-sk="recall"]').click(); document.getElementById('due').click(); const ok = Q.list.every(q => q.skill === 'recall'); FILT.skill = 'all'; return ok; });
+  if (!sk) fail('skill filter ignored by Study what is due');
+  // C1: a map tile opens its question with a way back, and the finished one-question drill offers it too
+  await page.click('nav button[data-v="map"]'); await page.click('details[open] .qt[data-q]');
+  if (!/map/.test(await page.textContent('#backbtn').catch(() => ''))) fail('map tile question has no back button');
+  { const o = await page.$('[data-o]'); if (o) await o.click(); const ck = await page.$('#check'); if (ck) await ck.click(); const c = await page.$('[data-c]'); if (c) await c.click(); }
+  if (!(await page.$('#qback'))) fail('finished one-question drill offers no way back');
+  // re-audit 5: the finish card's own back button is the only one shown (the floating one is hidden)
+  if (await page.evaluate(() => { const b = document.getElementById('backbtn'); return b && getComputedStyle(b).display !== 'none'; })) fail('finish card shows two "Back to the map" buttons');
+  await page.click('#qback'); if ((await page.evaluate(() => CUR)) !== 'map') fail('back from a map question did not reopen the map');
+  // C5: Check on an untouched matching question records nothing
+  const m5 = await page.evaluate(() => { const m = QUESTIONS.find(q => q.type === 'match'); if (!m) return true; startQuiz([m], 'm', 'pass'); const n = S.log.length; check(); return S.log.length === n && !Q.answered; });
+  if (!m5) fail('empty matching Check was graded');
+  // C13: "Build up: Tier 1 → 2" drills only up to Tier 2
+  const c13 = await page.evaluate(() => { const q = QUESTIONS.find(x => x.ladder && x.level === 2 && ladderQs(x.ladder).some(y => y.level === 3)); if (!q) return true; climbLadder(q.ladder, 2); return Q.list.every(x => (x.level || 0) <= 2); });
+  if (!c13) fail('Build up to Tier 2 included Tier 3');
+  // C3: Weak spots shows only the exam studied
+  const c3 = await page.evaluate(() => { const keep = S; S = normalize({q: {}, log: [{id: examPool()[0].id, t: Date.now(), ok: false, conf: 'wrong'}]}); localStorage.setItem(COURSE.ns + ':exam', '1'); go('weak'); const t = document.getElementById('view').textContent; localStorage.setItem(COURSE.ns + ':exam', '2'); S = keep; return /No Exam 1 answers yet/.test(t) && !/Retry the/.test(t); });
+  if (!c3) fail('Weak spots for Exam 1 showed Exam 2 answers');
+  // C9, C10: a group chip of the other exam opens that exam's section; search results name their exam
+  const c9 = await page.evaluate(() => { TM.mode = 'glossary'; TM.q = ''; TM.order = 'group'; go('terms'); const g1 = TERMS.find(t => (lecExam(t.lecture) || 1) === 1).group; TM.group = g1; go('terms'); const open = document.querySelector('details.exgroup[data-ex="1"]').open; TM.group = 'all'; TM.q = 'receptor'; go('terms'); const lab = !!document.querySelector('.term .exlabel'); TM.q = ''; go('terms'); return open && lab; });
+  if (!c9) fail('glossary: other exam group stayed closed or search cards carry no exam label');
+  // C8: an Exam 2 tracing names tracing questions, not curve questions
+  const c8 = await page.evaluate(() => { const g = GR.find(x => x.exam === 2); if (!g) return true; const q = graphQs(g).find(x => x.options && x.options.some(o => !o.correct && o.miss)); if (!q) return true; const wrong = q.options.findIndex(o => !o.correct && o.miss); const h = graphFeedback(q, {ok: false, picked: wrong}), skip = (h.match(/<div class="gskip">[\s\S]*?<\/div>/) || [''])[0]; return skip && !/curve/i.test(skip) && /tracing/.test(h); });
+  if (!c8) fail('Exam 2 tracing feedback uses curve wording');
+  // K2, K3: dates read "Oct 9, 2026"; tiers in order
+  await page.click('nav button[data-v="data"]');
+  if (/\b\d{4}-\d{2}-\d{2}\b/.test(await page.textContent('#view'))) fail('change log shows ISO dates');
+  const k3 = await page.evaluate(() => { EX = {exam: 2, qs: examPool().filter(q => q.level && q.options && !q.type).slice(0, 30).concat(examPool().filter(q => !q.level && q.options && !q.type).slice(0, 2)).map(q => q.id), ans: {}, done: true, score: 0, i: 0}; CUR = 'exam'; examResult(); const h = [...document.querySelectorAll('h3')].find(x => x.textContent === 'By tier'); const rows = h ? [...h.nextElementSibling.querySelectorAll('tbody td:first-child')].map(td => td.textContent) : []; endExam(); return rows.join(','); });
+  if (k3 && !/^(Tier 1,)?(Tier 2,)?(Tier 3,)?(No tier)?$/.test(k3)) fail('By tier rows out of order: ' + k3);
+  // C7: the all-on-one-page exam keeps its clock bar in sight
+  await page.click('nav button[data-v="topics"]'); await page.click('[data-layout="all"]');
+  await page.click('nav button[data-v="exam"]'); await page.click('#startx');
+  await page.evaluate(() => window.scrollTo(0, 3000));
+  const c7 = await page.evaluate(() => { const r = document.querySelector('.xhead').getBoundingClientRect(); return r.top >= 0 && r.bottom < innerHeight; });
+  if (!c7) fail('exam clock bar scrolled off screen');
+  await page.evaluate(() => { endExam(); S.layout = 'one'; save(); }); await page.click('nav button[data-v="topics"]');
+  // phone: compact header (C2), denser map (C15), read-strips fit (K10), a Why? card scrolls into view
+  await page.setViewportSize({width: 375, height: 800});
+  await page.click('nav button[data-v="topics"]');
+  const hh = await page.evaluate(() => document.querySelector('header').getBoundingClientRect().height);
+  if (hh > 110) fail('phone header is ' + Math.round(hh) + ' px tall');
+  await page.click('nav button[data-v="map"]');
+  const cols = await page.evaluate(() => getComputedStyle(document.querySelector('details[open] .qgrid')).gridTemplateColumns.split(' ').length);
+  if (cols < 2) fail('question map shows one tile per row on a phone');
+  await page.evaluate(() => { const b = document.createElement('div'); b.id = 'rs'; b.innerHTML = '<table class="readstrip"><tr><th>Receptor</th><th>Agonist</th><th>Antagonist</th><th>Where</th></tr><tr><td>muscarinic-M3-receptor-on-smooth-muscle</td><td>bethanechol-pilocarpine-carbachol</td><td>atropine-scopolamine-ipratropium</td><td>bladder-gut-bronchi-eye</td></tr></table>'; document.querySelector('.card').appendChild(b); });
+  if (await page.evaluate(() => { const t = document.querySelector('#rs table'); return t.getBoundingClientRect().width > t.parentElement.getBoundingClientRect().width + 1; })) fail('read-strip table wider than its box on a phone');
+  await page.click('nav button[data-v="ref"]');
+  await page.evaluate(() => { const w = document.querySelector('details[open] [data-xpick]'); w.scrollIntoView(); w.click(); });
+  await page.waitForTimeout(1200);
+  const wy = await page.evaluate(() => { const w = document.querySelector('details[open] [data-xpick]'); const o = document.querySelector(`[data-xout="${w.dataset.xpick.split(':')[0]}"]`); return o.getBoundingClientRect().top - document.querySelector('header').getBoundingClientRect().height; });
+  if (wy < -5 || wy > 160) fail('Why? card not scrolled into view (' + Math.round(wy) + ' px below the header)');
+  await page.setViewportSize({width: 1100, height: 800});
+  // ---- regressions from the re-audit (10/10) ----
+  // 1: "The idea" in the review plan never opens with the answer it sits under (a term's meaning, JP-019)
+  const r1 = await page.evaluate(() => {
+    const bad = QUESTIONS.filter(q => { const r = (q.options || []).filter(o => o.correct); if (r.length !== 1 || !q.teach) return false; const a = r[0].t.trim().replace(/[.!?]+$/, '').toLowerCase(); const i = planIdea(q).toLowerCase(); return a.length > 3 && i.startsWith(a) && /^([.!?:]|\s(is|was|binds|activates|blocks)\b|$)/.test(i.slice(a.length)); }).map(q => q.id);
+    const tw = QUESTIONS.find(q => /^T-.*-2$/.test(q.id) && /Twins poll/.test(q.teach || ''));
+    if (tw && !/^Twins poll/.test(planIdea(tw))) bad.push(tw.id + ' lost its second sentence');
+    return bad;
+  });
+  if (r1.length) fail('review plan idea repeats the answer: ' + r1.slice(0, 5).join(', '));
+  // 2: the session strip counts the exam studied only, and says that guesses are not counted
+  const r2 = await page.evaluate(() => {
+    const keep = S, e1 = QUESTIONS.find(q => examOf(q) === 1), e2 = QUESTIONS.filter(q => examOf(q) === 2).slice(0, 2), now = Date.now();
+    S = normalize({q: {}, log: [{id: e1.id, t: now - 3000, ok: true, conf: 'sure'}, {id: e2[0].id, t: now - 2000, ok: true, conf: 'guess'}, {id: e2[1].id, t: now - 1000, ok: true, conf: 'sure'}]});
+    store.set(EXAM_KEY, '2'); const t = document.createElement('div'); t.innerHTML = sessStrip(); S = keep; return t.textContent;
+  });
+  if (!/1\/2 solid/.test(r2) || !/guesses not counted/.test(r2) || !/1 right but guessed/.test(r2)) fail('session strip: ' + r2);
+  // 6: the exam result page has the exam switch and the past attempts (dates as "Oct 10, 2026, 4:12 AM"); switching keeps the result
+  const r6 = await page.evaluate(() => {
+    const bad = [], keep = S.exams.slice(); store.set(EXAM_KEY, '2'); S.layout = 'one'; go('exam'); document.getElementById('startx').click(); submitExam();
+    if (!document.querySelector('#view [data-exsw="1"]')) bad.push('no exam switch on the result');
+    const past = document.getElementById('pastx'); if (!past) bad.push('no past attempts on the result');
+    else if (!/^[A-Z][a-z]{2} \d{1,2}, \d{4}, \d{1,2}:\d{2}\s?[AP]M$/.test(past.querySelector('span').textContent.trim())) bad.push('past attempt date "' + past.querySelector('span').textContent + '"');
+    document.querySelector('#view [data-exsw="1"]').click();
+    if (!document.getElementById('startx') || !document.getElementById('keptres')) bad.push('switching exam from the result did not open the other start page with the kept result noted');
+    document.querySelector('#view [data-exsw="2"]').click();
+    if (!/Exam result/.test(document.querySelector('#view h2').textContent)) bad.push('switching back did not show the kept result');
+    endExam(); S.exams = keep; save(); return bad;
+  });
+  if (r6.length) fail('exam result: ' + r6.join('; '));
+  // 9: a section drill is labelled "Topic: section"; a Weak spots area drill has no "Guide:" prefix
+  const r9 = await page.evaluate(() => {
+    const bad = []; FILT.skill = 'all'; go('topics');
+    const b = document.querySelector('details[open] [data-sub]'); b.click();
+    const t = TOPIC[b.dataset.topic], sb = t.subs.find(x => x.id === b.dataset.sub);
+    if (Q.label !== t.name + ': ' + sb.name) bad.push('section drill label "' + Q.label + '"');
+    const keep = S; S = normalize({q: {}, log: examPool().filter(q => q.options && !q.type).slice(0, 20).map((q, i) => ({id: q.id, t: Date.now() - 1000 + i, ok: false, conf: 'wrong', picked: q.options.findIndex(o => !o.correct)}))});
+    go('weak'); const a = document.querySelector('[data-area]'); if (a) { a.click(); if (/^(Guide|Reference|Tell apart)\b/.test(Q.label)) bad.push('area drill label "' + Q.label + '"'); } else bad.push('no area drill');
+    S = keep; Q = null; return bad;
+  });
+  if (r9.length) fail('drill labels: ' + r9.join('; '));
+  // 10: the tier buttons follow the skill filter, with their counts
+  const r10 = await page.evaluate(() => {
+    const bad = []; store.set(EXAM_KEY, '2'); go('topics');
+    for (const k of [...document.querySelectorAll('[data-sk]')].map(c => c.dataset.sk)) {
+      FILT.skill = k; go('topics');
+      for (const b of [...document.querySelectorAll('[data-tier]')]) { const n = +(b.textContent.match(/· (\d+) /) || [])[1]; b.click(); if (Q.list.length !== n || (k !== 'all' && Q.list.some(q => q.skill !== k))) bad.push(k + ' ' + b.textContent); go('topics'); }
+    }
+    FILT.skill = 'all'; Q = null; return bad;
+  });
+  if (r10.length) fail('tier buttons ignore the skill filter: ' + r10.slice(0, 3).join('; '));
   if (errors.length) fail('page errors: ' + errors.join(' | '));
   console.log(`answered ${answered} quiz items (${multiSeen} select-all), exam of ${total}`);
   console.log(`browser_test.js: ${process.exitCode ? 'FAILED' : 'passed'}`);

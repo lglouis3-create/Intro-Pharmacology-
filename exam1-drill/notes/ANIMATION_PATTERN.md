@@ -1,3 +1,5 @@
+> Updated 10/10: the motion engine is now the Web Animations API with FLIP; see notes/ENGINE_UPGRADES.md item 3 for timings, staging (`data-o`) and the HTML step text. The authoring rules below (one process per figure, `data-k` keys, colours via CSS variables) still apply; the CSS durations mentioned below are superseded.
+
 # Step-through figures: the pattern
 
 Reference: `notes/ref/rtk_activation_stepper.html` and its notes. The drill applies the same pattern to every step-through figure through one engine, so each figure only supplies its steps.

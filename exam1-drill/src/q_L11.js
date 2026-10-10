@@ -13,16 +13,16 @@ TOPICS.push({id:"L11", name:"Day 11: β receptors, epinephrine and norepinephrin
   ]});
 QUESTIONS.push(
 /* ---------------- Mirtazapine's adverse reactions (slide 33) ---------------- */
-{id:"L11-001", lecture:"L11", prof:"Gottlieb", tier:"new", topic:"L11", sub:"mirt", skill:"recall", multi:true,
+{id:"L11-001", lecture:"L11", prof:"Gottlieb", tier:"new", level:1, topic:"L11", sub:"mirt", skill:"recall", multi:true,
  concept:"mirtazapine-adrs", tags:[], source:"both",
  stem:"Which adverse reactions are expected with mirtazapine? Select all that apply.",
  options:[
   {t:"Drowsiness", correct:true, why:"Blockade of muscarinic and histamine (H1) receptors in the brain causes sedation."},
-  {t:"Weight gain", correct:true, why:"Listed under endocrine effects (with increased cholesterol); he tied it to the serotonin effect."},
+  {t:"Weight gain", correct:true, why:"Listed under endocrine effects with increased serum cholesterol, from mirtazapine's action on serotonin (5-HT)."},
   {t:"Dry mouth and constipation", correct:true, why:"Muscarinic blockade gives these anti-DUMBBELSS effects."},
   {t:"Peripheral edema", correct:true, why:"Blockade of α1 relaxes the vessels in the periphery."},
   {t:"Diarrhea", correct:false, why:"Diarrhea is a muscarinic agonist effect; mirtazapine blocks muscarinic receptors (constipation)."},
-  {t:"Miosis", correct:false, why:"Miosis is a muscarinic agonist effect; no pupil effect was given for mirtazapine."}],
+  {t:"Bradycardia", correct:false, why:"Mirtazapine blocks muscarinic receptors; blocking cardiac M2 removes the parasympathetic brake on the heart, so it does not slow the heart rate."}],
  teach:"Mirtazapine blocks presynaptic α2, histamine H1, muscarinic and α1 receptors. Its adverse reactions follow: drowsiness (H1 and muscarinic block), weight gain and increased serum cholesterol (serotonin), dry mouth (xerostomia) and constipation (muscarinic block), peripheral edema (α1 block) and hypertension (more norepinephrine release). Agranulocytosis is a rare effect he called FYI.",
  quote:"So, we're gonna get your drowsiness because we're blocking the muscarinic antihistamine receptors, uh, weight gain, as you're gonna learn in the CNS, any drug that affects serotonin can have an effect on the weight, uh, of our patients. Uh, by blocking those muscarinics, you're gonna get. The anti-dumbbells, so you can't salivate, you're gonna get dry, dry mouth",
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slide 33; transcript 10/7"},
@@ -34,7 +34,7 @@ QUESTIONS.push(
   {t:"α1", correct:true, why:"Blocking α1 relaxes the arteries and veins of the periphery; fluid collects there."},
   {t:"Histamine H1", correct:false, why:"H1 block (with muscarinic block) is tied to drowsiness."},
   {t:"Muscarinic", correct:false, why:"Muscarinic block is tied to dry mouth and constipation (and sedation)."},
-  {t:"β1", correct:false, why:"Mirtazapine does not block β1."}],
+  {t:"β1", correct:false, why:"Mirtazapine blocks α2, α1, histamine H1 and muscarinic receptors, not β1; β1 block would slow the heart, not pool fluid in the periphery."}],
  teach:"Slide 33 lists peripheral edema under cardiovascular effects with “Blockade of alpha 1”. Without α1 tone the peripheral vessels relax. The same patient may instead become hypertensive, because α2 block raises norepinephrine release, so the net effect varies from patient to patient.",
  quote:"and uh you can get peripheral edema by blocking the alpha-1s, but that can be overcome by increase of the sympathetic and norepinephrine which causes increase in blood pressure. So it varies from patient to patient.",
  note:"The drug list (page 6) blames peripheral edema on α2 block in small blood vessels; slide 33 and the 10/7 audio give α1 block. Keyed to the slide and his words.",
@@ -72,7 +72,7 @@ QUESTIONS.push(
  options:[
   {t:"Covalently and irreversibly", correct:true, why:"It forms covalent bonds with α1 and α2; norepinephrine cannot outcompete it."},
   {t:"Reversibly and competitively", correct:false, why:"That is prazosin, a reversible α1 antagonist."},
-  {t:"As a partial agonist", correct:false, why:"Phenoxybenzamine is an antagonist; pindolol is the partial agonist in this deck."},
+  {t:"As a partial agonist", correct:false, why:"Phenoxybenzamine is a full antagonist at α1 and α2; the partial agonist among the adrenergic drugs is the β blocker pindolol."},
   {t:"At an allosteric site that raises potency", correct:false, why:"It blocks the receptors; it does not enhance them."}],
  teach:"Phenoxybenzamine is an irreversible, non-selective α1 and α2 antagonist. It forms covalent bonds with the receptors, so however much epinephrine or norepinephrine the body makes, it cannot outcompete the drug; activity returns only as new receptors are made.",
  quote:"This is an irreversible non-selective alpha 1, alpha 2 adrenergic receptor antagonist, which means it's going to form covalent bonds.",
@@ -134,7 +134,7 @@ QUESTIONS.push(
 
 {id:"L11-010", lecture:"L11", prof:"Gottlieb", tier:"new", topic:"L11", sub:"pbz", skill:"tell",
  concept:"prazosin-vs-phenoxybenzamine", tags:[], source:"both",
- stem:"Which statement correctly tells prazosin and phenoxybenzamine apart?",
+ stem:"Which statement about prazosin and phenoxybenzamine is CORRECT?",
  options:[
   {t:"Only phenoxybenzamine is irreversible", correct:true, why:"Phenoxybenzamine binds covalently; prazosin is reversible."},
   {t:"Only prazosin blocks α2", correct:false, why:"Prazosin is selective for α1; phenoxybenzamine blocks α1 and α2."},
@@ -152,7 +152,7 @@ QUESTIONS.push(
   {t:"Prazosin also blocks α2", correct:false, why:"Prazosin is α1 selective; it is phenoxybenzamine that blocks α2."},
   {t:"Prazosin activates β2", correct:false, why:"Prazosin is an α1 antagonist; it has no β2 action."},
   {t:"Phenoxybenzamine stops norepinephrine release", correct:false, why:"Blocking presynaptic α2 increases, not stops, norepinephrine release."}],
- teach:"With a reversible antagonist such as prazosin, extra norepinephrine (released by the baroreceptor reflex) binds, comes off and competes for α1, so the drop in pressure is partly undone. Phenoxybenzamine is covalently bound, so more norepinephrine makes no difference; it gives the greater drop in blood pressure (see his poll, PE2-039).",
+ teach:"With a reversible antagonist such as prazosin, extra norepinephrine (released by the baroreceptor reflex) binds, comes off and competes for α1, so the drop in pressure is partly undone. Phenoxybenzamine is covalently bound, so more norepinephrine makes no difference; it gives the greater drop in blood pressure.",
  quote:"Because even though you are increasing the levels of norepinephrine being released, it doesn't matter. It's covalently bound. It's irreversible. You can't outcompete, right? ... Noreprazosin is reversible, so you can actually produce more norepinephrine as you sense that blood pressure going down, and that may decrease its effects because now you have competition",
  note:"Variant of his 10/7 poll “Which drug produces the greatest drop in blood pressure?” (PE2-039). On 10/7 he said he will use one of that day's questions on the exam “in a different shape or form, but very similar” (see notes/L11.md, Exam cues).",
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 27, 34–35; transcript 10/7"},
@@ -178,7 +178,7 @@ QUESTIONS.push(
   {t:"Raises cardiac output and renin", correct:true, why:"Gs → adenylyl cyclase → more cAMP and cytosolic calcium: higher cardiac output, more renin."},
   {t:"Lowers cardiac output and renin", correct:false, why:"That is what a β blocker does."},
   {t:"Raises cardiac output, lowers renin", correct:false, why:"Renal β1 increases renin."},
-  {t:"Relaxes the heart muscle", correct:false, why:"In cardiac myocytes β1 increases contraction; relaxation is the β2 effect on smooth muscle."}],
+  {t:"Slows the heart rate", correct:false, why:"β1 is Gs and raises heart rate; slowing comes from acetylcholine on M2 (Gi) or from a β blocker."}],
  teach:"β1 is linked to Gs: activation of adenylate cyclase, more cyclic AMP (cAMP) and more cytosolic calcium. In the heart that raises cardiac output; in the kidney it raises renin and so angiotensin II. The design is to bring blood pressure up. Selective agonist: dobutamine; selective antagonist: metoprolol.",
  quote:"So the GS over here for the beta 1s in the heart and the kidney is going to increase camp, which is going to increase the cardiac output and increase the production of renin. This is designed to bring up your blood pressure.",
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slide 40; transcript 10/7"},
@@ -242,7 +242,7 @@ QUESTIONS.push(
   {t:"β2 antagonist", correct:false, why:"β blockers end in -olol."},
   {t:"Muscarinic antagonist", correct:false, why:"The inhaled muscarinic antagonists are -tropium or -clidinium drugs."},
   {t:"β1 agonist", correct:false, why:"The selective β1 agonist is dobutamine."}],
- teach:"Albuterol and levalbuterol are short acting (SABA, 2–6 hours); salmeterol and formoterol are long acting (LABA, 12 hours or more). For this exam he only needs the class: a -terol is a β2 agonist; short versus long acting is for the pulmonary module.",
+ teach:"Albuterol, levalbuterol, salmeterol and formoterol all end in -terol, and every -terol is a β2 agonist: it activates β2 (Gs, more cyclic AMP) on bronchial smooth muscle and dilates the airways. Which ones are short acting and which long acting is left for the pulmonary module; this exam asks only that a -terol is a β2 agonist.",
  quote:"If you know that a terol is a beta2 agonist, that's good for me. It doesn't matter if it's short acting or long acting. That's not the point over here. The point over here is for you to identify. Which of these is a beta2 agonist? OK.",
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slide 43; transcript 10/7"},
 
@@ -251,7 +251,7 @@ QUESTIONS.push(
  stem:"A child swallows much of an albuterol dose instead of inhaling it. Which effects are likely? Select all that apply.",
  options:[
   {t:"Higher heart rate", correct:true, why:"Outside the lungs the drug increases sympathetic effects on the heart."},
-  {t:"Higher blood pressure", correct:true, why:"He listed increased blood pressure among the effects outside the lungs."},
+  {t:"Higher blood pressure", correct:true, why:"Absorbed into the body, the drug raises sympathetic effects, including on blood pressure, outside the lungs."},
   {t:"Agitation", correct:true, why:"β2 in the brain is excitatory."},
   {t:"Bronchoconstriction", correct:false, why:"A β2 agonist dilates the bronchi."},
   {t:"Sedation", correct:false, why:"β2 activation in the brain excites rather than sedates."}],
@@ -292,7 +292,7 @@ QUESTIONS.push(
   {t:"Trospium", correct:true, why:"Muscarinic M3 antagonist: blocks bladder M3 and prevents urination."},
   {t:"Carbachol", correct:false, why:"Muscarinic agonist: contracts the bladder."},
   {t:"Neostigmine", correct:false, why:"Cholinesterase inhibitor: more acetylcholine, more urination."},
-  {t:"Isoproterenol", correct:false, why:"β1 and β2 agonist acting on the heart and lungs; it has no β3 action."}],
+  {t:"Isoproterenol", correct:false, why:"Isoproterenol is the β1 and β2 agonist (heart and lungs); the β agonist that relaxes the bladder is the β3 agonist mirabegron."}],
  teach:"The select-all version he described: with trospium added, both the β3 agonist and the M3 antagonist are correct. Either activating β3 or blocking M3 relaxes the detrusor and decreases urination.",
  quote:"What if I had to put trosium in there too? Would that be true? Now we have a selectol, right? ... So, one of the best of one or a select all.",
  note:"The select-all form he described aloud right after his 10/7 bladder poll (PE2-041, which has one key, mirabegron): “What if I had to put trosium in there too? Would that be true? Now we have a selectol, right?” Kept as a variant because it asks something different: with trospium among the options, both the β3 agonist and the M3 antagonist are correct. One of the 10/7 questions will be reused “in a different shape or form”.",
@@ -375,7 +375,7 @@ QUESTIONS.push(
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 49–51; transcript 10/7"},
 
 {id:"L11-030", lecture:"L11", prof:"Gottlieb", tier:"new", level:2, topic:"L11", sub:"epi", skill:"figure",
- concept:"phenylephrine-after-prazosin", tags:[], source:"both",
+ concept:"phenylephrine-no-reversal", tags:[], source:"both",
  stem:"Phenylephrine is given after prazosin, and the blood pressure response is abolished with no fall in pressure. What does this show?",
  options:[
   {t:"Phenylephrine has no β2 action", correct:true, why:"With α1 blocked nothing is left; no reversal means no β2 involvement."},
@@ -403,9 +403,9 @@ QUESTIONS.push(
  stem:"In an epinephrine overdose, which receptors predominate in the response?",
  options:[
   {t:"α1 and β1", correct:true, why:"Heart rate and blood pressure both go as high as possible."},
-  {t:"β2 and α2", correct:false, why:"These are not the ones that predominate in the overdose."},
-  {t:"β2 only", correct:false, why:"β2 alone is the low-dose vasodilation."},
-  {t:"α2 and β3", correct:false, why:"Neither drives the overdose picture."}],
+  {t:"β2 and α2", correct:false, why:"β2 dilates vessels and α2 (Gi) is inhibitory; neither drives the racing heart and soaring blood pressure of the overdose."},
+  {t:"β2 only", correct:false, why:"β2 alone is the low-dose picture: vasodilation. At an overdose α1 overrides β2 in the vessels."},
+  {t:"α2 and β3", correct:false, why:"α2 is inhibitory and β3 relaxes the bladder; the overdose is high heart rate (β1) and high pressure (α1)."}],
  teach:"Slide 52: “OD of Epi α1 & β1 predominates.” α1 constricts the resistance arteries (afterload and blood pressure rise) and β1 drives the heart rate up. The question then is which to block first.",
  quote:"Now, in the case of an overdose of a epinephrine, your alpha ones and your beta ones are gonna be predominant on that process. They're gonna have the highest effects, OK?",
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slide 52; transcript 10/7"},
@@ -431,7 +431,7 @@ QUESTIONS.push(
   {t:"It raises the heart's oxygen demand", correct:true, why:"It works the heart harder (more cardiac output and afterload)."},
   {t:"It is directly toxic to the heart", correct:true, why:"Kept on long term it becomes toxic and the heart starts to fail."},
   {t:"It decreases blood flow to other organs", correct:true, why:"α1 constriction diverts flow (slide 53, problems)."},
-  {t:"It causes bronchoconstriction", correct:false, why:"Bronchoconstriction is not among its listed problems."},
+  {t:"It causes bronchoconstriction", correct:false, why:"Norepinephrine acts at α1 and β1; bronchoconstriction comes from M3 activation or β2 block, and it is not among its problems."},
   {t:"It causes severe bradycardia", correct:false, why:"β1 activation raises heart rate."}],
  teach:"Slide 53 problems: decreased blood flow to other organs, increased oxygen demand of the heart, direct toxicity to tissue, pulmonary edema, stroke and arrhythmias. Like dobutamine, norepinephrine (Levophed) is kept for life-threatening situations; the harder the heart is worked, the less it lasts, which is why β blockers save lives.",
  quote:"But the problem with norepinephrine, levofed, same thing with butamine, is that you can't keep your patients on long term because it becomes toxic. To the heart and the heart starts to fail.",
@@ -439,12 +439,12 @@ QUESTIONS.push(
 
 {id:"L11-036", lecture:"L11", prof:"Gottlieb", tier:"new", topic:"L11", sub:"ne", skill:"tell",
  concept:"epinephrine-vs-norepinephrine", tags:[], source:"both",
- stem:"Which statement correctly tells epinephrine and norepinephrine apart?",
+ stem:"Which statement about epinephrine and norepinephrine is CORRECT?",
  options:[
-  {t:"Low-dose epinephrine favors β2", correct:true, why:"Epinephrine binds β1 and β2 best at low doses; norepinephrine favors α1 and β1."},
-  {t:"Norepinephrine favors β2", correct:false, why:"Norepinephrine has its highest affinity for α1 and β1."},
-  {t:"Epinephrine cannot activate α1", correct:false, why:"At high doses epinephrine activates α1 (vasoconstriction)."},
-  {t:"Norepinephrine cannot activate β1", correct:false, why:"β1 is one of norepinephrine's two main receptors."}],
+  {t:"Low-dose epinephrine acts at β1 and β2", correct:true, why:"Epinephrine binds β1 and β2 best at low doses (β2 dilates vessels); norepinephrine favors α1 and β1."},
+  {t:"Norepinephrine has its highest affinity for β2", correct:false, why:"Norepinephrine has its highest affinity for α1 and β1; it binds β2 less well."},
+  {t:"Epinephrine cannot activate α1 at any dose", correct:false, why:"At high doses epinephrine activates α1 and constricts vessels."},
+  {t:"Norepinephrine cannot activate cardiac β1", correct:false, why:"β1 is one of norepinephrine's two main receptors: it raises heart rate and contractility."}],
  teach:"Epinephrine: β1 and β2 at low doses (vasodilation in vessels), α1 and then α2 at high doses (vasoconstriction). Norepinephrine: highest affinity for α1 and β1 (more total peripheral resistance, heart rate and contractility). That is why low-dose epinephrine can dilate vessels while norepinephrine constricts them.",
  quote:"Now, the key thing over here is going to be their affinities, and the epinephrine, for example, has different affinities for the different receptors.",
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 47, 53; transcript 10/7"},
@@ -482,7 +482,7 @@ QUESTIONS.push(
  stem:"Which drug is the prototype β blocker against which newer β blockers are measured?",
  options:[
   {t:"Propranolol", correct:true, why:"One of the first β blockers; non-selective (β1 and β2)."},
-  {t:"Metoprolol", correct:false, why:"Metoprolol is a β1-selective blocker from a later group."},
+  {t:"Metoprolol", correct:false, why:"Metoprolol is β1 selective; the prototype every β blocker is measured against is the non-selective propranolol."},
   {t:"Nebivolol", correct:false, why:"Nebivolol is the newest β blocker on his list."},
   {t:"Labetalol", correct:false, why:"Labetalol is a mixed β1, β2 and α1 blocker."},
   {t:"Isoproterenol", correct:false, why:"Isoproterenol is a non-selective β agonist, not a blocker."}],
@@ -603,8 +603,8 @@ QUESTIONS.push(
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 54–55, 59; transcript 10/7"},
 
 {id:"L11-050", lecture:"L11", prof:"Gottlieb", tier:"new", topic:"L11", sub:"bb", skill:"tell",
- concept:"metoprolol-vs-propranolol-brain", tags:[], source:"both",
- stem:"Why is metoprolol (Toprol XL) less likely than propranolol to cause fatigue and brain fog?",
+ concept:"metoprolol-vs-propranolol-brain", tags:[], source:"both", lowYield:true,
+ stem:"Why is metoprolol less likely than propranolol to cause fatigue and brain fog?",
  options:[
   {t:"Poor bioavailability to the brain", correct:true, why:"Propranolol is very lipophilic and gets everywhere, including the brain."},
   {t:"It blocks β2 in the brain", correct:false, why:"Metoprolol is β1 selective."},
@@ -612,7 +612,7 @@ QUESTIONS.push(
   {t:"It also blocks α1", correct:false, why:"α1 block belongs to carvedilol and labetalol."}],
  teach:"Slide 55: β blockers differ in lipid solubility, receptor selectivity and partial agonist activity. Propranolol is very lipophilic and reaches the brain (fatigue, brain fog, depression); metoprolol has poor bioavailability to the brain. For the exam he focuses on receptor selectivity.",
  quote:"Also, the Toprol XL has poor bioavailability to the brain. So it may be more or less likely to cause fatigue, uh, brain fog, you know, anxiety, right? Depression, things like that, as propranolol is very lipophilic, it's gonna get everywhere.",
- note:"A brand name appears only because he used it; the exam asks generic names.",
+ note:"Low yield: right after this he said “So for our purpose on the exam, we're gonna focus primarily on the fact that which receptors. My beta blockers are gonna be working on it.” The quote names the brand (Toprol XL) because he did; brand names are not asked (“Don't worry about the brand names”).",
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slide 55; transcript 10/7"},
 
 /* ---------------- Cross-talk (slides 60–61) ---------------- */
@@ -646,27 +646,27 @@ QUESTIONS.push(
  stem:"Nitric oxide (NO) diffuses into vascular smooth muscle. What does it do there?",
  options:[
   {t:"Activates sGC to make cGMP", correct:true, why:"NO activates soluble guanylyl cyclase (sGC), which makes cyclic GMP (cGMP): vasodilation."},
-  {t:"Activates adenylyl cyclase to make cAMP", correct:false, why:"That is β2 (Gs); NO uses the guanylyl cyclase pathway."},
-  {t:"Activates PLC to make IP3", correct:false, why:"PLC and IP3 are the Gq pathway (α1, M3)."},
+  {t:"Activates adenylyl cyclase to make cAMP", correct:false, why:"Adenylyl cyclase making cyclic AMP (cAMP) is the β2 (Gs) pathway; NO uses the guanylyl cyclase pathway."},
+  {t:"Activates PLC to make IP3", correct:false, why:"Phospholipase C (PLC) making inositol trisphosphate (IP3) is the Gq pathway (α1, M3)."},
   {t:"Blocks PDE to keep cGMP", correct:false, why:"Phosphodiesterase (PDE) blockers are drugs such as sildenafil; NO activates sGC."}],
  teach:"Nitric oxide (NO) is a gas, very lipophilic, and crosses membranes easily. In the smooth muscle it activates soluble guanylyl cyclase (sGC) — like adenylyl cyclase but floating in the cytoplasm instead of on the membrane — which makes cyclic guanosine monophosphate (cGMP), a potent vasodilator. The more cGMP, the greater the vasodilation.",
  quote:"So instead of having the AC, we have the JC, but it's not on the membrane, it's floating on the cytoplasma, and that's what makes cyclic GMP. Which is a vasodilatory process.",
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 67, 70; transcript 10/7"},
 
 {id:"L11-054", lecture:"L11", prof:"Gottlieb", tier:"new", topic:"L11", sub:"no", skill:"apply",
- concept:"endothelial-m3-vasodilation", tags:[], source:"both",
+ concept:"endothelial-m3-vasodilation", tags:["nitric-oxide"], source:"both",
  stem:"M3 receptors are Gq-coupled, yet activating them on blood vessels causes vasodilation. Why?",
  options:[
   {t:"They are on the endothelium and make NO", correct:true, why:"Calcium in the endothelium activates NOS; nitric oxide (NO) relaxes the smooth muscle underneath."},
   {t:"They are Gi-coupled in vessels", correct:false, why:"M3 is Gq everywhere; the location makes the difference."},
   {t:"They lower calcium in smooth muscle", correct:false, why:"Gq raises calcium, in the endothelial cell."},
   {t:"They are innervated by the parasympathetic", correct:false, why:"Vascular M3 receptors are not innervated."}],
- teach:"Vascular M3 receptors are on the endothelium and are not innervated. M3 (Gq) → PLC → IP3 → calcium release from the endoplasmic reticulum → calcium–calmodulin → nitric oxide synthase (NOS) → nitric oxide (NO), which diffuses into the smooth muscle, activates soluble guanylyl cyclase and raises cGMP: vasodilation. This is the M3 exception he flagged in the G-protein table.",
+ teach:"Vascular M3 receptors are on the endothelium and are not innervated. M3 (Gq) → phospholipase C (PLC) → inositol trisphosphate (IP3) → calcium release from the endoplasmic reticulum → calcium–calmodulin → nitric oxide synthase (NOS) → nitric oxide (NO), which diffuses into the smooth muscle, activates soluble guanylyl cyclase and raises cGMP: vasodilation. This is the M3 exception he flagged in the G-protein table.",
  quote:"And this was one of our exceptions on the quick stable on the M3s on the endothelium. It does not cause constriction. It's going to cause dilation, and that's because calcium is one of the activators of the NS enzyme.",
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 68–74; transcript 10/7"},
 
 {id:"L11-055", lecture:"L11", prof:"Gottlieb", tier:"new", topic:"L11", sub:"no", skill:"recall",
- concept:"nitrates-no-donors", tags:[], source:"both",
+ concept:"nitrates-no-donors", tags:["nitric-oxide"], source:"both",
  stem:"How do nitroglycerin and nitroprusside cause vasodilation?",
  options:[
   {t:"They donate NO that activates sGC directly", correct:true, why:"As they are metabolized they give off nitric oxide (NO), bypassing M3 and NOS."},
@@ -678,14 +678,14 @@ QUESTIONS.push(
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 62, 67; transcript 10/7"},
 
 {id:"L11-056", lecture:"L11", prof:"Gottlieb", tier:"new", topic:"L11", sub:"no", skill:"figure",
- concept:"furchgott-endothelium", tags:[], source:"both",
+ concept:"furchgott-endothelium", tags:["nitric-oxide"], source:"both",
  stem:"Two labs test isolated rat femoral arteries. In both, epinephrine constricts the artery. Acetylcholine then relaxes the artery in lab 1 but not in lab 2, whose technician damaged the endothelium. Which explains the difference?",
  options:[
   {t:"No endothelium, no NO", correct:true, why:"Nitric oxide (NO) is made in the endothelium; strip it and acetylcholine has nothing to act through."},
   {t:"Lab 2 used a low epinephrine dose", correct:false, why:"Both labs got the same constriction from epinephrine."},
   {t:"Smooth muscle M3 was blocked in lab 2", correct:false, why:"The vascular M3 receptors are on the endothelium, which lab 2 removed."},
   {t:"Acetylcholine constricts smooth muscle directly", correct:false, why:"Neither lab saw acetylcholine constrict the artery."}],
- teach:"The 1998 Nobel Prize work (Furchgott, Ignarro, Murad): with intact endothelium, acetylcholine activates endothelial M3, calcium rises, NOS makes nitric oxide (NO), and the artery relaxes. With damaged endothelium there is no NO and acetylcholine cannot relax the epinephrine-constricted artery. The scientists' names are for information only.",
+ teach:"This is the experiment that showed nitric oxide comes from the endothelium: with intact endothelium, acetylcholine activates endothelial M3, calcium rises, NOS makes nitric oxide (NO), and the artery relaxes. With damaged endothelium there is no NO and acetylcholine cannot relax the epinephrine-constricted artery. What is tested is the cause: no endothelium, no NO, no dilation.",
  quote:"In the second one, because you're ripping off the endothelium, there was no nitric oxide being produced, so you can get the dilation effect that they had, right? Does that kinda make sense? So, being careful in the lab can make a whole difference, right?",
  note:"“you can get the dilation effect” in the transcript reads as “you can't get”; the next sentence, “the other one just stays constricted”, confirms it. The slide 64 picture (intact vs damaged endothelium) could not be seen; the experiment is described from his words.",
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slide 64; transcript 10/7"},
@@ -722,12 +722,12 @@ QUESTIONS.push(
   {t:"It decreases", correct:false, why:"PDE ends the signal; blocking it prolongs and strengthens it."},
   {t:"It does not change", correct:false, why:"PDE activity is one of the two rate-limiting parts of the pathway."},
   {t:"It reverses to vasoconstriction", correct:false, why:"More cGMP means more vasodilation."}],
- teach:"Two components limit the nitric oxide response: how much nitric oxide there is (it has a very short half-life) and how much phosphodiesterase (PDE) activity there is to break down cGMP. Slide 74: “PDE inhibitors increase the potency of NO.”",
+ teach:"Two components limit the nitric oxide response: how much nitric oxide there is (it has a very short half-life) and how much phosphodiesterase (PDE) activity there is to break down cyclic GMP (cGMP). Slide 74: “PDE inhibitors increase the potency of NO.”",
  quote:"So what do you think is going to happen if I give a drug that blocks the PDE? What is going to happen to the potency of nitric oxide? It's gonna increase.",
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slide 74; transcript 10/7"},
 
 {id:"L11-061", lecture:"L11", prof:"Gottlieb", tier:"new", level:1, ladder:"nitroglycerin", ladderName:"Nitroglycerin and sildenafil", topic:"L11", sub:"no", skill:"apply",
- concept:"aging-endothelium-nitrates", tags:[], source:"both",
+ concept:"aging-endothelium-nitrates", tags:["nitric-oxide"], source:"both",
  stem:"With age, damage to the blood vessels reduces nitric oxide production. What is the expected result, and how can a drug replace it?",
  options:[
   {t:"Blood pressure rises; a nitrate donates NO", correct:true, why:"Without endogenous nitric oxide (NO) the vessels cannot dilate; a NO donor supplies it."},
@@ -739,11 +739,11 @@ QUESTIONS.push(
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 62, 74; transcript 10/7"},
 
 {id:"L11-062", lecture:"L11", prof:"Gottlieb", tier:"new", topic:"L11", sub:"no", skill:"recall", multi:true,
- concept:"no-take-home", tags:[], source:"both",
+ concept:"no-take-home", tags:["nitric-oxide"], source:"both",
  stem:"Which statements about the nitric oxide system are CORRECT? Select all that apply.",
  options:[
   {t:"Vascular M3 receptors are not innervated", correct:true, why:"Slide 74: “M3 are located on the endothelium & Not-innervated”."},
-  {t:"Nitric oxide is a potent vasodilator", correct:true, why:"It diffuses into the smooth muscle and raises cGMP."},
+  {t:"Nitric oxide is a potent vasodilator", correct:true, why:"It diffuses into the smooth muscle and raises cyclic GMP (cGMP)."},
   {t:"PDE inhibitors increase its potency", correct:true, why:"They stop the breakdown of cGMP."},
   {t:"Nitric oxide is made in the smooth muscle", correct:false, why:"It is made in the endothelium and diffuses into the smooth muscle."},
   {t:"Nitric oxide has a long half-life", correct:false, why:"It is broken down very quickly."}],
@@ -753,7 +753,7 @@ QUESTIONS.push(
 
 /* ---------------- Lab tracings (slides 75–85, 10/7) ---------------- */
 {id:"L11-063", lecture:"L11", prof:"Gottlieb", tier:"new", level:1, ladder:"ach-rat", ladderName:"Acetylcholine, atropine and blood pressure in the rat", topic:"L11", sub:"lab", skill:"figure",
- concept:"ach-bolus-reflex-tachycardia", tags:["in-class"], source:"both",
+ concept:"ach-bolus-reflex-tachycardia", tags:["in-class","tracing"], source:"both",
  stem:"In an anesthetized rat, an intravenous bolus of acetylcholine makes blood pressure fall and heart rate rise. Why does heart rate rise when acetylcholine on M2 should slow it?",
  options:[
   {t:"A baroreceptor reflex through β1", correct:true, why:"The fall in pressure (endothelial M3 → nitric oxide) triggers sympathetic drive to β1, overriding M2."},
@@ -766,7 +766,7 @@ QUESTIONS.push(
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 75–77; transcript 10/7"},
 
 {id:"L11-064", lecture:"L11", prof:"Gottlieb", tier:"new", level:2, ladder:"ach-rat", ladderName:"Acetylcholine, atropine and blood pressure in the rat", topic:"L11", sub:"lab", skill:"figure",
- concept:"atropine-pretreatment-ach", tags:["in-class"], source:"both",
+ concept:"atropine-pretreatment-ach", tags:["in-class","tracing"], source:"both",
  stem:"The rat is pretreated with atropine, and the same acetylcholine dose is given. Blood pressure no longer falls. Why?",
  options:[
   {t:"Atropine blocks endothelial M3", correct:true, why:"No M3 activation, no nitric oxide, no drop in blood pressure (and no baroreceptor reflex)."},
@@ -778,11 +778,11 @@ QUESTIONS.push(
  cite:"PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf slides 78–80; transcript 10/7"},
 
 {id:"L11-065", lecture:"L11", prof:"Gottlieb", tier:"new", level:3, ladder:"ach-rat", ladderName:"Acetylcholine, atropine and blood pressure in the rat", topic:"L11", sub:"lab", skill:"figure",
- concept:"atropine-surmountable", tags:["in-class"], source:"both",
+ concept:"atropine-surmountable", tags:["in-class","tracing"], source:"both",
  stem:"After atropine, how can acetylcholine's fall in blood pressure and reflex tachycardia be restored?",
  options:[
   {t:"Give a much higher acetylcholine dose", correct:true, why:"Atropine is competitive; 100-fold more acetylcholine (5 to 500) outcompetes it."},
-  {t:"Give neostigmine with the same dose", correct:false, why:"Not the step he described; he raised the agonist dose to outcompete atropine."},
+  {t:"Give a lower acetylcholine dose", correct:false, why:"Less agonist loses the competition: atropine keeps M3 and M2 occupied and nothing returns."},
   {t:"Nothing: atropine is irreversible", correct:false, why:"Atropine is a reversible, competitive antagonist."},
   {t:"Give prazosin first to free the M3 receptors", correct:false, why:"Prazosin blocks α1 and does not remove atropine from M3."}],
  teach:"Atropine is a reversible competitive antagonist, so a high enough agonist dose overcomes it. Raising acetylcholine 100-fold (from 5 to 500) brings back the drop in blood pressure and the reflex tachycardia.",

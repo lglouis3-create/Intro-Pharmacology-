@@ -19,10 +19,13 @@ Port **behaviour, not content**. Do not copy Exam 1 questions, figures, quotes o
    - `picked` may be a number, an array (select-all) or an object (matching); handle all three.
 
 3. **Step-through figures with motion**
-   - `stepper(key, title, steps, h, cap, footer)` in diagrams.js renders Back, Next, Replay step, Play all/Pause and step dots.
-   - `stepTo(fig, from, to)` in app.js: shapes present in both steps glide (matched by `data-k`, else tag + class + text/fill; the signature must ignore the `fadein`/`glide` classes), new shapes fade in, removed shapes fade out from a ghost copy; elements with an SVG `transform` attribute do not glide; CSS does the motion; off under `prefers-reduced-motion`.
-   - Fade-in keyframes animate only `from{opacity:0}` so shapes keep their own opacity.
-   - `notes/ANIMATION_PATTERN.md` explains authoring; `stepper_test.js` checks every step-through (settle state, no shape fades out and back in).
+   - `stepper(key, title, steps, h, cap, footer)` in diagrams.js renders Back, Next, Replay step, Play all/Pause and step dots. The step words are HTML under the picture (14 px), in a box that keeps the height of the longest step so the buttons do not jump.
+   - `stepTo(fig, from, to)` in app.js (rewritten 10/10) uses the Web Animations API with FLIP (measure, invert, play), animating only transform and opacity and leaving nothing inline afterwards. One easing: `cubic-bezier(.65,0,.35,1)`. Staging: leaving shapes fade and shrink out (280 ms); shapes present in both steps glide (620 ms, from 120 ms; matched by `data-k`, else tag + class + text/fill, ignoring motion classes); new shapes fade and scale in from 380 ms (480 ms); `data-o="n"` delays a shape by n × 150 ms so a chain builds link by link. Shapes that change size morph; colour or text changes cross-fade; a new click picks up mid-motion; rotated labels glide.
+   - Play after Pause resumes from the step shown. `prefers-reduced-motion` turns all motion off.
+   - Coloured SVG labels mix the figure colour 55:45 with the ink colour (`color-mix`) to keep ≥4.5:1 contrast in both themes.
+   - Exam 2 figures are drawn on a 300-wide canvas with no text under 11 units (≥11 px on a 375 px phone).
+   - `stepper_test.js` checks every step-through (settle state, no shape fades out and back in).
+   - Sources: aerotwist.com/blog/flip-your-animations, MDN transform-box, web.dev animations-and-performance.
 
 4. **Diagrams tab**
    - `vDiagrams()` with a `DIAGRAMS` list of `[group name, [figure keys]]` (course-specific list), a contents card per group, chips that jump to each figure.
@@ -106,6 +109,9 @@ After a question is answered (one at a time, all on one page, or in the exam rev
 - Exam countdown counts calendar days and shows "today", "in progress" or "over" (`daysToExam`, `examCountdown`).
 - Matching-question dropdowns: `select[data-l]{max-width:100%;min-width:0;flex:1 1 220px}` so they fit a phone.
 - Floating buttons: `body:has(#backbtn) #xback, body:has(#backbtn) #tback{bottom:64px}`.
+- Phone figures: `wrap()` puts each SVG in `.svgx`; `fitFigs()` (app.js, a MutationObserver on `#view`) gives a picture whose smallest label would be under 10 px a `--minw` so it scrolls sideways in its own box under 560 px, with a "Scroll the picture sideways" hint.
+- Read-strip tables (first row of `th`, no `thead`) stack on a phone like the other tables (`stackTables`), so words are not split.
+- `sessStrip()` counts the exam being studied only, as Weak spots does; `planIdea(q)` drops a teach's opening sentence when it is the answer.
 - Figure labels: render every figure and every step-through step and check no text runs outside the SVG or overlaps other text (the Exam 1 work used a Playwright scan; wait for transitions before measuring).
 
 ## Checks to run after porting
