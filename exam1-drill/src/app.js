@@ -1353,7 +1353,8 @@ function examResult() {
 }
 
 /* ---------- Terms: glossary with figures, flashcards, generated questions ---------- */
-let TM = {mode: 'glossary', group: 'all', card: null, shown: false};
+let TM = {mode: 'glossary', group: 'all', card: null, shown: false, scope: 'exam'};   // scope: the glossary lists this exam's terms, or both exams'
+const termExam = t => lecExam(t.lecture) || 1;
 const termList = () => (typeof TERMS === 'undefined' ? [] : TERMS).filter(t => (lecExam(t.lecture) || 1) === activeId() && (TM.group === 'all' || t.group === TM.group));
 const termKey = t => 'term:' + t.id;
 /* Glossary search and A–Z: the search box filters as you type (term, one-line
@@ -1367,7 +1368,8 @@ function glossWire(all, groups) {
   const box = $('#tsearch'), list = $('#glist');
   const draw = () => {
     const q = (TM.q || '').trim().toLowerCase();
-    let pool = all.filter(t => TM.group === 'all' || t.group === TM.group);
+    const both = TM.scope === 'both';
+    let pool = all.filter(t => (both || termExam(t) === activeId()) && (TM.group === 'all' || t.group === TM.group));
     if (q) pool = pool.filter(t => [t.term, t.gist, t.def, t.scene].join(' ').toLowerCase().includes(q));
     const az = q || TM.order === 'az';
     let h = '';
@@ -1376,18 +1378,22 @@ function glossWire(all, groups) {
       // a search lists terms whose name matches first, then terms that only mention the word
       const named = pool.filter(t => t.term.toLowerCase().includes(q)), rest = pool.filter(t => !named.includes(t));
       const srt = l => l.slice().sort((a, b) => a.term.localeCompare(b.term, undefined, {sensitivity: 'base'}));
-      if (named.length) h += `<h3>Term names with “${esc(TM.q.trim())}”</h3><div class="card">${srt(named).map(t => termHTML(t, true)).join('')}</div>`;
-      if (rest.length) h += `<h3>Also mentioned in</h3><div class="card">${srt(rest).map(t => termHTML(t, true)).join('')}</div>`;
+      if (named.length) h += `<h3>Term names with “${esc(TM.q.trim())}”</h3><div class="card">${srt(named).map(t => termHTML(t, both)).join('')}</div>`;
+      if (rest.length) h += `<h3>Also mentioned in</h3><div class="card">${srt(rest).map(t => termHTML(t, both)).join('')}</div>`;
     } else if (az) {
       const sorted = pool.slice().sort((a, b) => a.term.localeCompare(b.term, undefined, {sensitivity: 'base'}));
       const byL = {}; sorted.forEach(t => (byL[termLetter(t)] = byL[termLetter(t)] || []).push(t));
-      LETTERS_AZ.filter(L => byL[L]).forEach(L => { h += `<h3 id="tl-${L === '#' ? 'num' : L}">${L}</h3><div class="card">${byL[L].map(t => termHTML(t, true)).join('')}</div>`; });
+      LETTERS_AZ.filter(L => byL[L]).forEach(L => { h += `<h3 id="tl-${L === '#' ? 'num' : L}">${L}</h3><div class="card">${byL[L].map(t => termHTML(t, both)).join('')}</div>`; });
+    } else if (!both) {
+      // this exam only: one section per group, no exam fold
+      h = groups.filter(g => TM.group === 'all' || g === TM.group).map(g => { const ts = pool.filter(t => t.group === g); return ts.length ? `<h3>${esc(g)}</h3><div class="card">${ts.map(t => termHTML(t)).join('')}</div>` : ''; }).join('')
+        || `<div class="card empty">No terms of this group for ${esc(active().name)} yet.</div>`;
     } else {
       // by group: one collapsible section per exam; search and A–Z list both exams together.
       // A group chip of the other exam opens that exam's section (the studied one would be empty).
-      const has = e => pool.some(t => (lecExam(t.lecture) || 1) === e.id);
+      const has = e => pool.some(t => termExam(t) === e.id);
       h = COURSE.exams.map(e => {
-        const mine = pool.filter(t => (lecExam(t.lecture) || 1) === e.id);
+        const mine = pool.filter(t => termExam(t) === e.id);
         const body = groups.filter(g => TM.group === 'all' || g === TM.group).map(g => { const ts = mine.filter(t => t.group === g); return ts.length ? `<h3>${esc(g)}</h3><div class="card">${ts.map(t => termHTML(t)).join('')}</div>` : ''; }).join('');
         const open = TM.group === 'all' ? null : has(e);
         return exGroup(e, body || (TM.group === 'all' ? '<div class="empty">This exam\'s terms are added as its lectures are written.</div>' : '<div class="empty">No terms of this group in this exam.</div>'), open);
@@ -1401,6 +1407,7 @@ function glossWire(all, groups) {
   $('#tclear').onclick = () => { TM.q = ''; box.value = ''; draw(); box.focus(); };
   const orderOn = k => document.querySelectorAll('[data-order]').forEach(x => { x.classList.toggle('on', x.dataset.order === k); x.setAttribute('aria-pressed', x.dataset.order === k); });
   document.querySelectorAll('[data-order]').forEach(c => c.onclick = () => { TM.order = c.dataset.order; orderOn(TM.order); draw(); });
+  document.querySelectorAll('[data-scope]').forEach(c => c.onclick = () => { TM.scope = c.dataset.scope; TM.q = ''; box.value = ''; vTerms(); });
   document.querySelectorAll('[data-lt]').forEach(b => b.onclick = () => {
     if (TM.q) { TM.q = ''; box.value = ''; }
     if (TM.order !== 'az') { TM.order = 'az'; orderOn('az'); }
@@ -1429,19 +1436,20 @@ function vTerms() {
   const groups = [...new Set(all.map(t => t.group))];
   // flashcards and the term quiz use the exam being studied; the glossary shows both exams
   const tq = QUESTIONS.filter(q => q.topic === 'TERMS' && (TM.mode === 'glossary' || examOf(q) === activeId()));
-  const chipGroups = TM.mode === 'glossary' ? groups : [...new Set(all.filter(t => (lecExam(t.lecture) || 1) === activeId()).map(t => t.group))];
+  const mine = all.filter(t => termExam(t) === activeId());
+  const chipGroups = TM.mode === 'glossary' && TM.scope === 'both' ? groups : [...new Set(mine.map(t => t.group))];
   if (TM.group !== 'all' && !chipGroups.includes(TM.group)) TM.group = 'all';
-  let h = `<h2>Terms</h2><div class="row" style="margin:-4px 0 8px">${examSwitch()}</div><p class="sub">${all.length} terms, each with its source, grouped by exam; flashcards and Quiz me use the exam you are studying for. Each term has a one-line meaning, a situation that shows it in action, and, where one applies, a figure.</p>
+  let h = `<h2>Terms</h2><div class="row" style="margin:-4px 0 8px">${examSwitch()}</div><p class="sub">${mine.length} terms for ${esc(active().name)}, each with its source (${all.length} across both exams; the glossary can show both). Each term has a one-line meaning, a situation that shows it in action, and, where one applies, a figure.</p>
   <div class="card"><div class="row">${[['glossary', 'Glossary'], ['flash', 'Flashcards'], ['quiz', 'Quiz me']].map(([k, l]) => `<button type="button" class="chip ${TM.mode === k ? 'on' : ''}" aria-pressed="${TM.mode === k}" data-mode="${k}">${l}</button>`).join('')}
    <span class="meta" style="margin:0 0 0 12px">Group:</span>${['all'].concat(chipGroups).map(g => `<button type="button" class="chip ${TM.group === g ? 'on' : ''}" aria-pressed="${TM.group === g}" data-group="${esc(g)}">${g === 'all' ? 'All' : esc(g)}</button>`).join('')}</div></div>`;
   const list = termList();
   if (TM.mode === 'glossary') {
-    const pool = all.filter(t => TM.group === 'all' || t.group === TM.group);
+    const pool = (TM.scope === 'both' ? all : mine).filter(t => TM.group === 'all' || t.group === TM.group);
     const have = new Set(pool.map(termLetter));
     h += `<div class="card tbar" id="tbar"><div class="row" style="flex-wrap:nowrap"><input id="tsearch" type="search" placeholder="Search the terms (name, meaning or example)…" value="${esc(TM.q || '')}" autocomplete="off" aria-label="Search the terms">
       <button class="btn ghost" id="tclear" type="button" ${TM.q ? '' : 'hidden'}>Clear</button></div>
       <div class="letters" role="navigation" aria-label="Jump to a letter">${LETTERS_AZ.filter(L => L !== '#' || have.has('#')).map(L => `<button type="button" class="lt" data-lt="${L}" ${have.has(L) ? '' : 'disabled'}>${L}</button>`).join('')}</div>
-      <div class="row" style="margin-top:6px"><span class="meta" style="margin:0">Order:</span>${[['group', 'By group'], ['az', 'A–Z']].map(([k, l]) => `<button type="button" class="chip ${(TM.order || 'group') === k ? 'on' : ''}" aria-pressed="${(TM.order || 'group') === k}" data-order="${k}">${l}</button>`).join('')}<span class="meta" id="tcount" aria-live="polite" style="margin:0 0 0 auto"></span></div></div>
+      <div class="row" style="margin-top:6px"><span class="meta" style="margin:0">Order:</span>${[['group', 'By group'], ['az', 'A–Z']].map(([k, l]) => `<button type="button" class="chip ${(TM.order || 'group') === k ? 'on' : ''}" aria-pressed="${(TM.order || 'group') === k}" data-order="${k}">${l}</button>`).join('')}${COURSE.exams.length > 1 ? `<span class="meta" style="margin:0 0 0 8px">Show:</span>${[['exam', esc(active().name) + ' only'], ['both', 'Both exams']].map(([k, l]) => `<button type="button" class="chip ${TM.scope === k ? 'on' : ''}" aria-pressed="${TM.scope === k}" data-scope="${k}">${l}</button>`).join('')}` : ''}<span class="meta" id="tcount" aria-live="polite" style="margin:0 0 0 auto"></span></div></div>
       <div id="glist"></div>`;
   } else if (TM.mode === 'flash' && !list.length) {
     h += `<div class="card empty">No flashcards for ${esc(active().name)} in this group yet.</div>`;
@@ -1784,6 +1792,7 @@ document.addEventListener('click', e => {
   if (go === 'play') {
     const same = ANIM && ANIM.b === b; stop(); if (same) return;
     b.textContent = '❚❚ Pause'; b.setAttribute('aria-pressed', 'true');
+    { const r = fig.getBoundingClientRect(); if (r.top < hdrOff() || r.top > innerHeight - 200) scrollToEl(fig); }
     // Play resumes from the step shown; from the last step it glides back to step 1 first
     const restart = cur >= n - 1; if (restart) stepTo(fig, cur, 0);
     // With narration on, a step lasts as long as its reading and the next starts a moment after;
@@ -1863,8 +1872,18 @@ function narrStop() {
 /* Read step i of the figure. Returns true when a reading started (done(true) follows once it ends),
    false when there is nothing to read (narration off, muted, no voice, no text); done is not called then. */
 let NARR_NEXT = null;
+/* The words being read, under the caption: a recorded script says more than the caption, so the line
+   read for this step is printed while it plays (and in Captions only). The transcript's line is marked too. */
+function narrShow(fig, i) {
+  fig.querySelectorAll('.ntr li').forEach(li => li.classList.toggle('on', +li.dataset.ni === i));
+  let d = fig.querySelector('.nsaid');
+  const e = narrEntry(fig, i), show = NAR.mode !== 'off' && !!e.text;
+  if (!show) { if (d) d.remove(); return; }
+  if (!d) { d = document.createElement('div'); d.className = 'nsaid'; const a = fig.querySelector('[data-anim]'); if (a) a.insertAdjacentElement('beforebegin', d); else fig.appendChild(d); }
+  d.textContent = e.text;
+}
 function narrSpeak(fig, i, done) {
-  narrStop(); if (!narrOn()) return false;
+  narrStop(); narrShow(fig, i); if (!narrOn()) return false;
   const text = narrText(fig, i), src = narrClip(fig, i); if (!text) return false;
   if (!src && !narrCan()) return false;
   const cur = NAR.cur = {fig, i, t: null}; fig.classList.add('speaking');
@@ -1893,7 +1912,7 @@ function narrSpeak(fig, i, done) {
   } else synth();
   return true;
 }
-function setNarr(mode) { NAR.mode = mode; store.set(COURSE.ns + ':narr', mode); narrStop(); narrFill(document); document.querySelectorAll('[data-nmode]').forEach(b => { b.classList.toggle('on', b.dataset.nmode === mode); b.setAttribute('aria-pressed', b.dataset.nmode === mode); }); }
+function setNarr(mode) { NAR.mode = mode; store.set(COURSE.ns + ':narr', mode); narrStop(); if (mode === 'off') document.querySelectorAll('.nsaid').forEach(d => d.remove()); narrFill(document); document.querySelectorAll('[data-nmode]').forEach(b => { b.classList.toggle('on', b.dataset.nmode === mode); b.setAttribute('aria-pressed', b.dataset.nmode === mode); }); }
 function setRate(r) { NAR.rate = r; store.set(COURSE.ns + ':narr-rate', String(r)); document.querySelectorAll('.nrate').forEach(s => s.value = String(r)); if (NARR_AUDIO) NARR_AUDIO.playbackRate = r; }
 const rateSel = () => `<label class="meta" style="margin:0">Speed <select class="nrate msel" aria-label="Narration speed">${NAR_RATES.map(r => `<option value="${r}" ${r === NAR.rate ? 'selected' : ''}>${r}×</option>`).join('')}</select></label>`;
 function fillVoices(sel) { sel.innerHTML = `<option value="">Automatic</option>` + VOICES.map(v => `<option value="${esc(v.name)}" ${v.name === NAR.voice ? 'selected' : ''}>${esc(v.name)}</option>`).join(''); }
