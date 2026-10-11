@@ -2,6 +2,13 @@
 
 Newest first. The build embeds this file; the Topics page shows what is new since your last visit, and the Progress page shows all of it. Keep each bullet to one short line.
 
+## 2026-10-11 (narrated walkthrough of the Exam 2 drug list)
+
+- All drugs page: a narrated walkthrough of the Exam 2 list, 7 parts in his table order, one card per drug (42).
+- Each card is the verified reference row; Back, Next, dots and Play all move through a class as on the figures.
+- 42 scripts and recorded clips (narrator JK) explain each drug's MOA, receptor, site, ADRs and his exam point.
+- The Diagrams narration card links to the walkthrough.
+
 ## 2026-10-11 (recorded narration, Exam 2)
 
 - All 73 clips re-recorded after the narrator voice JK was adjusted; same scripts, same file names.
