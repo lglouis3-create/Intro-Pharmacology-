@@ -13,10 +13,15 @@ Port **behaviour, not content**. Do not copy Exam 1 questions, figures, quotes o
    - `style_check.js` fails on any change-log bullet over 120 characters.
    - Rule: every update adds its bullets to the change log in the same commit.
 
-2. **Weak spots: session progress + review plan**
+2. **Weak spots: session progress + concept-level remediation**
    - `sessionLog()` (answers with no gap over 30 min, ending at the latest), `sessStrip()` (one line above the quiz, refreshed after every answer via `refreshSess()`), `vWeak()`.
-   - Review plan: questions not solid on their last three answers, grouped by the first "Explain more" link (`linksFor(q)[0]`), ranked by how much is missing; per concept shows the option chosen and its `why`, the correct answer, the first one or two sentences of `teach`, Read links and a Drill button.
-   - `picked` may be a number, an array (select-all) or an object (matching); handle all three.
+   - Concepts, not questions: answers are grouped by `q.concept` (`conceptOf(q)`, `CQ`, `logByConcept()`); every answer goes through `noteAnswer(q, entry)` (the three former `S.log.push` sites: the quiz, the all-on-one-page drill, the exam), which pushes the log entry and refreshes `S.c[concept] = {s, m, hist, box, due, r}`. `rebuildConcepts()` derives the whole of `S.c` from `S.log` when it is missing (older exports), so the log stays the source of truth; `syncConcepts()` recomputes it on each render of the page.
+   - Status rules (`conceptRecord()`; a miss = wrong, or right but marked "I guessed"): `unfamiliar` seen once and missed once · `struggling` ≥2 misses, or under 60% on the last 5 with ≥2 attempts · `improving` missed before, last 2 solid, not mastered · `mastered` ≥3 solid answers on ≥2 different questions across ≥2 sessions, no miss in the last 3 · `returning` was mastered then missed (listed with the strugglers, marked "returned") · `learning` right so far, not weak, not mastered. One right answer never masters.
+   - Card per weak concept (`conceptStats()`, `conceptTitle()`, `conceptLine()`): status with its evidence line (exact counts), the wrong option chosen more than once with its `why`, partial credit on a select-all ("2 of 3 right, 1 wrong tick", from the stored `picked`), the answer, the idea (`planIdea`), a folded "More" with the full teach, Practice concept and the Read links (`linksFor`). Strugglers first (misses × recency × tier; verbatim polls weigh 1.5×), then unfamiliar, then improving; mastered concepts fold away.
+   - Practice concept (quiz mode `'concept'`: `startConceptQuiz()`, `pickConcept()`, `conceptDone()`): the concept's other wordings first (a `dupOf` sibling of the one missed, then one not seen this session), two of them when it has two, then one step up (the next ladder tier, else a question from the same section); the same question is not served twice within 10 minutes while another exists; three per concept at most; the session ends with a per-concept summary ("2 of 2 right, now improving").
+   - Spaced review: a mastered concept gets a check at the pace's box intervals (`box` 3 at mastery, one up per solid answer; `conceptDue()` = the later of that and its questions' due); "Due for spaced review (n)" lists and runs them (one question each); a missed check makes it `returning`.
+   - Stable identifiers: `ID_ALIASES` (old question id → new) is applied in `normalize()` to `S.log`, `S.q` (records merged) and `S.flags`; `CONCEPT_ALIASES` (old concept → new) to `S.c` and every concept lookup. Log entries whose id is no longer in the bank stay in `S.log` and are ignored by every view. Concepts are derived from the current bank at render time, so a renamed concept regroups. **Rule: when an id or a concept changes, add the old → new pair to `ID_ALIASES` / `CONCEPT_ALIASES`.**
+   - `picked` may be a number, an array (select-all) or an object (matching); `wrongPicks()` handles all three.
 
 3. **Step-through figures with motion**
    - `stepper(key, title, steps, h, cap, footer)` in diagrams.js renders Back, Next, Replay step, Play all/Pause and step dots. The step words are HTML under the picture (14 px), in a box that keeps the height of the longest step so the buttons do not jump.
@@ -112,6 +117,7 @@ After a question is answered (one at a time, all on one page, or in the exam rev
 - Phone figures: `wrap()` puts each SVG in `.svgx`; `fitFigs()` (app.js, a MutationObserver on `#view`) gives a picture whose smallest label would be under 10 px a `--minw` so it scrolls sideways in its own box under 560 px, with a "Scroll the picture sideways" hint.
 - Read-strip tables (first row of `th`, no `thead`) stack on a phone like the other tables (`stackTables`), so words are not split.
 - `sessStrip()` counts the exam being studied only, as Weak spots does; `planIdea(q)` drops a teach's opening sentence when it is the answer.
+- Weak spots reads a question's history through its `concept` (item 2); `S.c` is rebuilt from the log when an older export has none.
 - Figure labels: render every figure and every step-through step and check no text runs outside the SVG or overlaps other text (the Exam 1 work used a Playwright scan; wait for transitions before measuring).
 
 ## Checks to run after porting

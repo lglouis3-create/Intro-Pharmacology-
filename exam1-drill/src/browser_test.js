@@ -367,7 +367,7 @@ const out = path.join(__dirname, '..', course.match(/output:\s*'([^']+)'/)[1]);
     const t = TOPIC[b.dataset.topic], sb = t.subs.find(x => x.id === b.dataset.sub);
     if (Q.label !== t.name + ': ' + sb.name) bad.push('section drill label "' + Q.label + '"');
     const keep = S; S = normalize({q: {}, log: examPool().filter(q => q.options && !q.type).slice(0, 20).map((q, i) => ({id: q.id, t: Date.now() - 1000 + i, ok: false, conf: 'wrong', picked: q.options.findIndex(o => !o.correct)}))});
-    go('weak'); const a = document.querySelector('[data-area]'); if (a) { a.click(); if (/^(Guide|Reference|Tell apart)\b/.test(Q.label)) bad.push('area drill label "' + Q.label + '"'); } else bad.push('no area drill');
+    go('weak'); const a = document.querySelector('[data-practice]'); if (a) { a.click(); if (/^(Guide|Reference|Tell apart)\b/.test(Q.label)) bad.push('concept drill label "' + Q.label + '"'); } else bad.push('no concept drill');
     S = keep; Q = null; return bad;
   });
   if (r9.length) fail('drill labels: ' + r9.join('; '));
@@ -381,6 +381,110 @@ const out = path.join(__dirname, '..', course.match(/output:\s*'([^']+)'/)[1]);
     FILT.skill = 'all'; Q = null; return bad;
   });
   if (r10.length) fail('tier buttons ignore the skill filter: ' + r10.slice(0, 3).join('; '));
+  // ---- Weak spots: concept-level remediation (10/11) ----
+  const wk = await page.evaluate(() => {
+    const bad = [], keep = S, keepEx = store.get(EXAM_KEY), H = 3600e3, now = Date.now();
+    store.set(EXAM_KEY, '2'); FILT.skill = 'all';
+    const pool = examPool(), poolIds = new Set(pool.map(q => q.id));
+    const plain = q => q.options && !q.type && !q.multi && poolIds.has(q.id);
+    const cc = Object.keys(CQ).filter(c => CQ[c].length >= 2 && CQ[c].every(plain));
+    const c1 = cc.find(c => CQ[c].some(q => q.ladder && ladderQs(q.ladder).some(y => (y.level || 0) > (q.level || 0)))) || cc[0];
+    const [qa, qb] = CQ[c1], cOther = cc.find(c => c !== c1), qo = CQ[cOther][0];
+    const wrongOf = q => q.options.findIndex(o => !o.correct), rightOf = q => q.options.findIndex(o => o.correct);
+    const E = (q, t, ok, conf, picked) => ({id: q.id, t, ok, conf, picked: picked == null ? (ok ? rightOf(q) : wrongOf(q)) : picked, ms: 1});
+    const render = () => { go('weak'); return document.getElementById('view'); };
+    const stat = c => (S.c[c] || {}).s, card = (v, c) => v.querySelector(`.wcard[data-c="${c}"]`);
+    try {
+      // empty history
+      S = normalize({q: {}, log: []}); let v = render();
+      if (!/No Exam 2 answers yet/.test(v.textContent)) bad.push('empty history: ' + v.textContent.slice(0, 80));
+      // one miss: unfamiliar, never "struggling"
+      S = normalize({q: {}, log: [E(qa, now - 1000, false, 'wrong')]}); v = render();
+      if (stat(c1) !== 'unfamiliar') bad.push('one miss → ' + stat(c1));
+      let k = card(v, c1); if (!k || !/Unfamiliar/.test(k.textContent) || /Struggling/.test(k.textContent) || !/Seen once, missed once/.test(k.textContent)) bad.push('one-miss card');
+      // one right answer never masters, and is not weak
+      S = normalize({q: {}, log: [E(qa, now - 1000, true, 'sure')]}); v = render();
+      if (stat(c1) !== 'learning' || card(v, c1)) bad.push('one right answer → ' + stat(c1) + (card(v, c1) ? ' with a card' : ''));
+      // repeated misses, the same wrong option twice: struggling, the option and its why, exact counts; a one-miss concept sorts after it
+      S = normalize({q: {}, log: [E(qa, now - 3 * H, false, 'wrong'), E(qb, now - 2 * H, false, 'wrong'), E(qo, now - 2000, false, 'wrong'), E(qa, now - 1000, false, 'wrong')]}); v = render();
+      if (stat(c1) !== 'struggling') bad.push('three misses → ' + stat(c1));
+      k = card(v, c1); const why = qa.options[wrongOf(qa)].why;
+      if (!k) bad.push('no struggling card');
+      else {
+        if (!/You keep choosing \(2×\):/.test(k.textContent) || !k.textContent.includes(qa.options[wrongOf(qa)].t) || !k.textContent.includes(why)) bad.push('recurring wrong option or its why missing');
+        if (!/Missed 3 of 3 · 2 questions · 0 retests passed · 3 sessions/.test(k.querySelector('.wreason').textContent)) bad.push('reason line: ' + k.querySelector('.wreason').textContent);
+        if (!k.querySelector('.wmore .teach') && qa.teach) bad.push('no folded teach');
+        if (!k.querySelector('[data-practice]') || !k.querySelector('[data-jump]')) bad.push('card lacks Practice or Read');
+      }
+      const order = [...v.querySelectorAll('.wcard')].map(x => x.dataset.c);
+      if (order[0] !== c1 || order.indexOf(cOther) < 0) bad.push('sort order: ' + order.slice(0, 3).join(','));
+      if (!/Struggling/.test(card(v, c1).textContent) || !/Unfamiliar/.test(card(v, cOther).textContent)) bad.push('chips');
+      // partial credit on a select-all
+      const qm = pool.find(q => q.multi && q.options.filter(o => o.correct).length >= 2), rights = qm.options.map((o, i) => o.correct ? i : -1).filter(i => i >= 0);
+      S = normalize({q: {}, log: [E(qm, now - 1000, false, 'wrong', [rights[0], wrongOf(qm)])]}); v = render();
+      k = card(v, conceptOf(qm)); if (!k || !k.textContent.includes(`Select all: 1 of ${rights.length} right, 1 wrong tick`)) bad.push('partial credit: ' + (k ? k.querySelector('.wclar').textContent.slice(0, 100) : 'no card'));
+      // practice concept: a different wording first, then the summary, status improving
+      S = normalize({q: {}, log: [E(qa, now - 2 * H, false, 'wrong'), E(qa, now - 1000, false, 'wrong')]}); v = render();
+      card(v, c1).querySelector('[data-practice]').click();
+      if (Q.mode !== 'concept' || Q.cur.id === qa.id || conceptOf(Q.cur) !== c1) bad.push('practice did not open another wording of the concept first (' + (Q.cur && Q.cur.id) + ')');
+      pick(rightOf(Q.cur)); finish('sure');
+      if (!Q.finished && Q.cur && conceptOf(Q.cur) === c1) { pick(rightOf(Q.cur)); finish('sure'); }   // a second wording, when the concept has one
+      let guard = 0; while (!Q.finished && guard++ < 5) { const q = Q.cur; if (q.type === 'match') { Q.mpick = {}; q.left.forEach((l, i) => { Q.mpick[i] = pairOf(q, l); }); check(); } else if (q.multi) { Q.picked = new Set(q.options.map((o, i) => o.correct ? i : -1).filter(i => i >= 0)); check(); } else pick(rightOf(q)); finish('sure'); }
+      const sum = document.getElementById('view').textContent;
+      if (!Q.finished || !/Practice finished/.test(sum) || !sum.includes(conceptTitle(c1)) || !/now improving/.test(sum)) bad.push('practice summary: ' + sum.slice(0, 160));
+      if (stat(c1) !== 'improving') bad.push('after practice → ' + stat(c1));
+      // the same question is not served twice in a row within 10 minutes when another exists
+      startConceptQuiz([c1], 't'); const first = Q.cur.id; pick(wrongOf(Q.cur)); finish('wrong');
+      if (!Q.finished && Q.cur.id === first) bad.push('same question served twice in a row');
+      // mastery: 3 solid on 2 questions across 2 sessions; a later miss → returning; the spaced check comes due
+      S = normalize({q: {}, log: [E(qa, now - 8 * H, true, 'sure'), E(qb, now - 8 * H + 60e3, true, 'sure'), E(qa, now - 7 * H, true, 'unsure')]});
+      if (S.c !== null) bad.push('normalize kept a missing S.c'); v = render();
+      if (stat(c1) !== 'mastered' || !S.c[c1].m) bad.push('mastery → ' + stat(c1));
+      if (card(v, c1)) bad.push('mastered concept shown as weak');
+      if (!/Mastered \(1\)/.test(v.textContent)) bad.push('no folded mastered list');
+      if (!/Due for spaced review \(1\)/.test(v.textContent)) bad.push('spaced check not due (due ' + new Date(conceptDue(c1)).toISOString() + ')');
+      S = normalize({q: {}, log: [E(qa, now - 2 * H, true, 'sure'), E(qb, now - 2 * H + 60e3, true, 'sure'), E(qa, now - 1 * H, true, 'unsure')]}); v = render();
+      if (stat(c1) !== 'mastered' || /Due for spaced review/.test(v.textContent)) bad.push('spaced check due too early');
+      if (!/3 solid on 2 questions across 2 sessions/.test(v.textContent)) bad.push('mastered reason line');
+      // the same answers in one session do not master
+      S = normalize({q: {}, log: [E(qa, now - 3000, true, 'sure'), E(qb, now - 2000, true, 'sure'), E(qa, now - 1000, true, 'sure')]}); render();
+      if (stat(c1) === 'mastered') bad.push('mastered within one session');
+      // a missed spaced check → returning, back with the strugglers
+      S = normalize({q: {}, log: [E(qa, now - 8 * H, true, 'sure'), E(qb, now - 8 * H + 60e3, true, 'sure'), E(qa, now - 7 * H, true, 'unsure')]}); v = render();
+      document.getElementById('duecheck').click();
+      if (Q.mode !== 'concept' || !Q.cq.check || conceptOf(Q.cur) !== c1) bad.push('spaced check did not open the concept');
+      pick(wrongOf(Q.cur)); finish('wrong');
+      if (!Q.finished || !/Spaced review finished/.test(document.getElementById('view').textContent)) bad.push('spaced check did not end with its summary');
+      if (stat(c1) !== 'returning') bad.push('missed check → ' + stat(c1));
+      v = render(); k = card(v, c1);
+      if (!k || !/Returned/.test(k.textContent) || !/Was mastered, missed again/.test(k.textContent)) bad.push('returning card');
+      // a log entry whose question is gone never crashes a view and is ignored
+      S = normalize({q: {}, log: [E(qa, now - 1000, false, 'wrong'), {id: 'ghost-id', t: now - 500, ok: false, conf: 'wrong', picked: 0, ms: 1}]}); v = render();
+      if (!card(v, c1) || Object.keys(S.c).length !== 1) bad.push('ghost log entry');
+      // ID_ALIASES remaps an old id in the log, the record and the flags
+      ID_ALIASES['old-id-x'] = qa.id;
+      const t = normalize({q: {'old-id-x': {n: 1, ok: 0, box: 0, due: 0, last: 5}, [qa.id]: {n: 2, ok: 2, box: 1, due: 9, last: 3}}, log: [{id: 'old-id-x', t: 1, ok: false, conf: 'wrong'}], flags: {'old-id-x': 7}});
+      delete ID_ALIASES['old-id-x'];
+      if (t.q['old-id-x'] || t.q[qa.id].n !== 3 || t.q[qa.id].last !== 5 || t.log[0].id !== qa.id || t.flags[qa.id] !== 7) bad.push('ID_ALIASES: ' + JSON.stringify([t.q[qa.id], t.log[0].id, t.flags]));
+      // export/import round trip keeps S.c; reload keeps it
+      S = normalize({q: {}, log: [E(qa, now - 3 * H, false, 'wrong'), E(qb, now - 1000, false, 'wrong')]}); render();
+      const back = normalize(JSON.parse(JSON.stringify(S)));
+      if (JSON.stringify(back.c) !== JSON.stringify(S.c) || back.c[c1].s !== 'struggling') bad.push('export/import lost S.c');
+      save();
+    } catch (e) { bad.push('threw: ' + e.message); }
+    return {bad, c1, keepEx};
+  });
+  if (wk.bad.length) fail('weak spots: ' + wk.bad.join('; '));
+  await page.reload();
+  const kept = await page.evaluate(c => S.c && S.c[c] && S.c[c].s, wk.c1);
+  if (kept !== 'struggling') fail('reload lost the concept record (' + kept + ')');
+  await page.setViewportSize({width: 375, height: 800});
+  await page.click('nav button[data-v="weak"]');
+  const wover = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
+  if (wover > 1) fail('horizontal scroll on Weak spots with concept cards at 375px (' + wover + 'px)');
+  if (!(await page.$('.wcard'))) fail('no concept card at phone width');
+  await page.setViewportSize({width: 1100, height: 800});
+  await page.evaluate(ex => { S = normalize({q: {}, log: []}); save(); store.set(EXAM_KEY, ex || '2'); }, wk.keepEx);
   if (errors.length) fail('page errors: ' + errors.join(' | '));
   console.log(`answered ${answered} quiz items (${multiSeen} select-all), exam of ${total}`);
   console.log(`browser_test.js: ${process.exitCode ? 'FAILED' : 'passed'}`);

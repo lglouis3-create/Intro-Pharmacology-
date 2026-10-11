@@ -9,6 +9,14 @@ const $ = sel => document.querySelector(sel);
 const esc = s => String(s == null ? '' : s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const shuffle = a => { a = a.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
 const byId = {}; QUESTIONS.forEach(q => { byId[q.id] = q; });
+/* Stable identifiers: a renamed question or concept keeps its history. When an id or a concept
+   changes, add the old → new pair here (ENGINE_UPGRADES.md, item 2). ID_ALIASES is applied to
+   S.log, S.q and S.flags in normalize(); CONCEPT_ALIASES to S.c and to every concept lookup. */
+const ID_ALIASES = {};
+const CONCEPT_ALIASES = {};
+const aliasId = id => ID_ALIASES[id] || id;
+const conceptOf = q => CONCEPT_ALIASES[q.concept] || q.concept;
+const CSTAT = ['unfamiliar', 'struggling', 'improving', 'mastered', 'returning', 'learning'];
 const LECT = {}; COURSE.lectures.forEach(l => { LECT[l.id] = l; });
 const SKILL = {}; COURSE.skills.forEach(s => { SKILL[s.id] = s; });
 const TOPIC = {}; TOPICS.forEach(t => { TOPIC[t.id] = t; });
@@ -107,6 +115,20 @@ const normalize = s => {
   s.exams = Array.isArray(s.exams) ? s.exams.filter(e => isObj(e) && Number.isFinite(+e.n) && +e.n > 0 && Number.isFinite(+e.score)).map(e => Object.assign(e, {n: +e.n, score: +e.score, t: +e.t || 0})) : [];
   s.flags = isObj(s.flags) ? s.flags : {};
   s.layout = s.layout === 'all' ? 'all' : 'one';
+  // renamed questions: the old id's record moves to the new id (merged when both exist), as do its log entries and flag
+  Object.keys(ID_ALIASES).forEach(o => {
+    const n = ID_ALIASES[o], a = s.q[o], b = s.q[n];
+    if (a) { s.q[n] = b ? {n: a.n + b.n, ok: a.ok + b.ok, box: Math.max(a.box, b.box), due: Math.max(a.due, b.due), last: Math.max(a.last, b.last)} : a; delete s.q[o]; }
+    if (s.flags[o] != null) { if (s.flags[n] == null) s.flags[n] = s.flags[o]; delete s.flags[o]; }
+  });
+  s.log.forEach(e => { e.id = aliasId(e.id); });
+  // per-concept records; missing (an older export) → null, rebuilt from the log by ensureC()
+  if (isObj(s.c)) Object.keys(s.c).forEach(k => {
+    const v = s.c[k]; if (!isObj(v) || !CSTAT.includes(v.s)) { delete s.c[k]; return; }
+    v.m = +v.m || 0; v.box = +v.box || 0; v.due = +v.due || 0; v.r = v.r ? 1 : 0;
+    v.hist = Array.isArray(v.hist) ? v.hist.filter(x => Array.isArray(x) && Number.isFinite(+x[0])).map(x => [+x[0], x[1] ? 1 : 0]).slice(-10) : [];
+    const n = CONCEPT_ALIASES[k]; if (n && n !== k) { if (!s.c[n]) s.c[n] = v; delete s.c[k]; }
+  }); else s.c = null;
   return s;
 };
 function loadState() {
@@ -452,6 +474,7 @@ function pickSR() {
 function nextQ() {
   let q;
   if (Q.mode === 'pass') { while (Q.i < Q.list.length && Q.doneIds.has(Q.list[Q.i].id)) Q.i++; if (Q.i >= Q.list.length) return quizDone(); q = Q.list[Q.i++]; }
+  else if (Q.mode === 'concept') { q = pickConcept(); if (!q) return quizDone(); }
   else { if (allDone()) return quizDone(); q = pickSR(); }
   Q.cur = q; Q.order = q.type === 'match' ? null : optOrder(q);
   // mpick too: a matching question must not start with the last one's choices
@@ -463,6 +486,7 @@ function nextQ() {
 function quizDone() {
   Q.finished = true; Q.answered = false; clearView();
   if (Q.graph) return graphDone();
+  if (Q.mode === 'concept') return conceptDone();
   $('#view').innerHTML = `<div class="card"><h2>Pass finished</h2><p>${Q.right} of ${Q.done} correct.</p>
     <div class="row">${RET.length ? `<button class="btn" id="qback">${esc(backLabel())}</button>` : ''}<button class="btn${RET.length ? ' ghost' : ''}" id="again">Study what is due</button><button class="btn ghost" id="totopics">Topics</button></div></div>`;
   const qb = $('#qback'); if (qb) qb.onclick = goBack;
@@ -605,7 +629,7 @@ function checkAll(id) {
   st.answered = true; st.conf = st.ok ? 'sure' : 'wrong';
   const sq = qs(q.id); st.box0 = sq.box; sq.n++; if (st.ok) sq.ok++;
   const picked = q.type === 'match' ? st.mpick : q.multi ? [...st.picked] : st.picked;
-  S.log.push({id: q.id, t: Date.now(), ok: st.ok, conf: st.conf, picked, ms: Date.now() - st.t0});
+  noteAnswer(q, {id: q.id, t: Date.now(), ok: st.ok, conf: st.conf, picked, ms: Date.now() - st.t0});
   setTimeout(refreshSess, 0);
   if (S.log.length > 5000) S.log = S.log.slice(-5000);
   schedule(q.id, st.conf);
@@ -645,7 +669,7 @@ function finish(conf) {
   const q = Q.cur, st = qs(q.id);
   st.n++; if (Q.ok && conf !== 'guess') st.ok++;
   const picked = q.type === 'match' ? Q.mpick : q.multi ? [...Q.picked] : Q.picked;
-  S.log.push({id: q.id, t: Date.now(), ok: Q.ok, conf, picked, ms: Date.now() - Q.t0});
+  noteAnswer(q, {id: q.id, t: Date.now(), ok: Q.ok, conf, picked, ms: Date.now() - Q.t0});
   setTimeout(refreshSess, 0);
   if (S.log.length > 5000) S.log = S.log.slice(-5000);
   schedule(q.id, Q.ok ? conf : 'wrong');
@@ -676,13 +700,209 @@ function sessStrip() {
 }
 const refreshSess = () => { const el = $('#sess'); if (el) el.outerHTML = sessStrip(); };
 
+/* ---------- Concepts ----------
+   Weak spots works on concepts (q.concept: one idea behind several wordings), not on
+   questions. The record per concept, S.c[concept] = {s, m, hist, box, due, r}, is derived
+   from S.log by noteAnswer() after every answer and rebuilt whole when missing (old
+   histories, an import without it), so the log stays the source of truth:
+     s     unfamiliar: seen once, missed once · struggling: 2 or more misses, or under 60%
+           on the last 5 with 2 or more attempts · improving: missed before, last 2 solid,
+           not yet mastered · mastered: 3 or more solid answers on 2 or more different
+           questions in 2 or more separate sessions, no miss in the last 3 · returning: was
+           mastered, then missed (back with the strugglers, marked "returned") · learning:
+           right so far, not yet mastered (one right answer never masters).
+     m     when it was mastered (0 = never); r = 1 once it has returned
+     hist  the last 10 answers as [time, 1 solid | 0 missed]
+     box, due  the spaced check of a mastered concept: box 3 of the pace's steps at mastery,
+           one box up per further solid answer; due = the last solid answer + that step.
+   A miss is a wrong answer or a right one marked "I guessed"; solid is the opposite.
+   Sessions are the 30-minute-gap runs sessionLog() uses, over the whole log. */
+const CQ = {}; QUESTIONS.forEach(q => { (CQ[conceptOf(q)] = CQ[conceptOf(q)] || []).push(q); });
+const conceptQs = c => CQ[c] || [];
+const RECENT_N = 5, CONCEPT_BOX0 = 3, REPEAT_GAP = 10 * MIN;
+const paceSteps = () => (PACES[S.pace] || PACES[COURSE.paceDefault] || PACES.cram).steps;
+/* The session index of every log entry (same 30-minute rule as sessionLog), by time. */
+function sessionIds(log) {
+  const order = log.map((e, i) => i).sort((a, b) => log[a].t - log[b].t), sid = new Array(log.length);
+  let s = 0, prev = null;
+  order.forEach(i => { const t = +log[i].t || 0; if (prev != null && t - prev >= SESSION_GAP) s++; sid[i] = s; prev = t; });
+  return sid;
+}
+/* The log grouped by concept, each entry with its question and session index, in time order.
+   Entries whose question is no longer in the bank are left out (kept in S.log, never shown). */
+function logByConcept(log) {
+  const sid = sessionIds(log), g = {};
+  log.forEach((e, i) => { const q = byId[e.id]; if (!q) return; const c = conceptOf(q); (g[c] = g[c] || []).push(Object.assign({}, e, {sid: sid[i], q})); });
+  Object.values(g).forEach(l => l.sort((a, b) => a.t - b.t));
+  return g;
+}
+const masteredBy = list => { const sol = list.filter(solid); return sol.length >= 3 && new Set(sol.map(e => e.id)).size >= 2 && new Set(sol.map(e => e.sid)).size >= 2 && list.slice(-3).every(solid); };
+function conceptRecord(list) {
+  const steps = paceSteps(), top = steps.length - 1;
+  let m = 0, was = false, r = 0, box = 0, due = 0;
+  list.forEach((e, i) => {
+    if (was) {
+      if (solid(e)) { box = Math.min(top, box + 1); due = e.t + steps[box]; }
+      else { was = false; r = 1; }
+    } else if (masteredBy(list.slice(0, i + 1))) { was = true; m = e.t; box = Math.min(top, CONCEPT_BOX0); due = e.t + steps[box]; }
+  });
+  const n = list.length, misses = list.filter(e => !solid(e)).length, recent = list.slice(-RECENT_N), acc = recent.length ? recent.filter(solid).length / recent.length : 1;
+  const last2 = n >= 2 && list.slice(-2).every(solid);
+  let s;
+  if (was) s = 'mastered';
+  else if (!misses) s = 'learning';
+  else if (last2) s = 'improving';
+  else if (r) s = 'returning';
+  else if (misses >= 2 || (recent.length >= 2 && acc < 0.6)) s = 'struggling';
+  else if (n === 1) s = 'unfamiliar';
+  else s = 'learning';   // one slip after two or more solid answers: not weak on this evidence
+  return {s, m, hist: list.slice(-10).map(e => [e.t, solid(e) ? 1 : 0]), box, due, r};
+}
+function rebuildConcepts() { const g = logByConcept(S.log), c = {}; Object.keys(g).forEach(k => { c[k] = conceptRecord(g[k]); }); S.c = c; }
+const ensureC = () => { if (!S.c) rebuildConcepts(); };
+/* Every answer goes through here (the quiz, the all-on-one-page drill, the exam). */
+function noteAnswer(q, e) {
+  S.log.push(e); ensureC();
+  const c = conceptOf(q), list = logByConcept(S.log)[c] || [];
+  if (list.length) S.c[c] = conceptRecord(list); else delete S.c[c];
+}
+/* Recompute every record from the log (a "Not sure"/"I guessed" downgrade edits the log in place). */
+function syncConcepts() {
+  ensureC();
+  const g = logByConcept(S.log), c = {};
+  Object.keys(g).forEach(k => { c[k] = conceptRecord(g[k]); });
+  if (JSON.stringify(c) !== JSON.stringify(S.c)) { S.c = c; save(); }
+  return g;
+}
+const STATUS_WORD = {unfamiliar: 'Unfamiliar', struggling: 'Struggling', improving: 'Improving', mastered: 'Mastered', returning: 'Returned', learning: 'On track'};
+/* Concept-level due: the stored concept interval or the latest of its questions' due, whichever is later. */
+const conceptDue = c => Math.max((S.c[c] || {}).due || 0, ...conceptQs(c).map(q => (S.q[q.id] && S.q[q.id].n) ? S.q[q.id].due : 0));
+const dueConcepts = (exId, now = Date.now()) => { ensureC(); return Object.keys(S.c).filter(c => S.c[c].s === 'mastered' && conceptQs(c).some(q => examOf(q) === exId) && conceptDue(c) <= now); };
+/* The wrong choices in one answer: [{k, o}] with o = {t, why} (a matching answer gives its wrong pairs). */
+function wrongPicks(q, e) {
+  const p = e.picked;
+  if (q.type === 'match') { if (!isObj(p)) return []; return q.left.map((l, i) => { const want = pairOf(q, l); return p[i] && p[i] !== want ? {k: 'm' + i, o: {t: l + ' → ' + p[i], why: (q.pairs.find(x => x.l === l) || {}).why || ''}} : null; }).filter(Boolean); }
+  if (!q.options) return [];
+  return [].concat(p == null ? [] : p).map(i => q.options[i] && !q.options[i].correct ? {k: String(i), o: q.options[i]} : null).filter(Boolean);
+}
+const agoText = t => { const d = Date.now() - t; if (d < MIN) return 'just now'; if (d < HOUR) return Math.round(d / MIN) + ' min ago'; if (d < DAY) return Math.round(d / HOUR) + ' h ago'; const n = Math.round(d / DAY); return n === 1 ? 'yesterday' : n + ' days ago'; };
+const inText = t => { const d = t - Date.now(); if (d <= 0) return 'now'; if (d < HOUR) return 'in ' + Math.max(1, Math.round(d / MIN)) + ' min'; if (d < DAY) return 'in ' + Math.round(d / HOUR) + ' h'; return 'in ' + Math.round(d / DAY) + ' day' + (Math.round(d / DAY) === 1 ? '' : 's'); };
+const plural = (n, w) => n + ' ' + w + (n === 1 ? '' : 's');
+/* Everything a card shows, computed from the concept's entries (exact counts, never estimates). */
+function conceptStats(c, list) {
+  const seen = new Set(list.map(e => e.id)), misses = list.filter(e => !solid(e)), wrong = list.filter(e => !e.ok), guessed = list.filter(e => e.ok && e.conf === 'guess');
+  const recent = list.slice(-RECENT_N), sessions = new Set(list.map(e => e.sid));
+  const firstMiss = list.findIndex(e => !solid(e)), retests = firstMiss < 0 ? 0 : list.slice(firstMiss + 1).filter(solid).length;
+  const picks = {};
+  list.forEach(e => { if (e.ok) return; const q = byId[e.id]; wrongPicks(q, e).forEach(({k, o}) => { const key = e.id + ':' + k; const P = picks[key] = picks[key] || {q, o, n: 0, t: 0}; P.n++; P.t = Math.max(P.t, e.t); }); });
+  const errs = Object.values(picks).sort((a, b) => b.n - a.n || b.t - a.t);
+  const lastMulti = list.slice().reverse().find(e => !e.ok && byId[e.id].multi && Array.isArray(e.picked));
+  let partial = null;
+  if (lastMulti) { const q = byId[lastMulti.id], right = q.options.map((o, i) => o.correct ? i : -1).filter(i => i >= 0), set = new Set(lastMulti.picked); partial = {q, hit: right.filter(i => set.has(i)).length, of: right.length, bad: lastMulti.picked.filter(i => !(q.options[i] && q.options[i].correct)).length}; }
+  const lastMiss = list.slice().reverse().find(e => !solid(e)), last = list[list.length - 1];
+  return {seen: seen.size, n: list.length, misses: misses.length, wrong: wrong.length, guessed: guessed.length, acc: recent.length ? recent.filter(solid).length / recent.length : null, recentN: recent.length,
+    sessions: sessions.size, retests, errs, recurring: errs.filter(x => x.n > 1), partial, lastMiss, last, best: byId[(lastMiss || last).id], solidN: list.filter(solid).length, solidQs: new Set(list.filter(solid).map(e => e.id)).size, solidSess: new Set(list.filter(solid).map(e => e.sid)).size};
+}
+/* A readable title from the concept id: a term's name, "Drug: mechanism of action" and the
+   like for the common id shapes, else the id's words with the course's abbreviations. */
+const ABBR = {ache: 'AChE', ach: 'ACh', adr: 'ADR', adrs: 'ADRs', ddi: 'DDI', moa: 'MOA', soa: 'SOA', nds: 'NDS', gq: 'Gq', gs: 'Gs', kd: 'Kd', emax: 'Emax', ec50: 'EC50', ed50: 'ED50', ed99: 'ED99', ld1: 'LD1', ld50: 'LD50', ti: 'TI', gpcr: 'GPCR', rtk: 'RTK', pde: 'PDE', cgmp: 'cGMP', camp: 'cAMP', ip3: 'IP3', plc: 'PLC', ac: 'AC', sgc: 'sGC', nos: 'NOS', raas: 'RAAS', ace: 'ACE', acei: 'ACE inhibitor', arb: 'ARB', arbs: 'ARBs', at1: 'AT1', at2: 'AT2', ang2: 'Ang II', mao: 'MAO', maoi: 'MAOI', nmj: 'NMJ', nn: 'Nn', nm: 'Nm', m1: 'M1', m2: 'M2', m3: 'M3', ne: 'NE', sch: 'SCh', mh: 'malignant hyperthermia', mg: 'myasthenia gravis', pns: 'PNS', sns: 'SNS', ans: 'ANS', cns: 'CNS', bp: 'BP', hr: 'HR', map: 'MAP', oab: 'overactive bladder', skm: 'skeletal muscle', bbb: 'BBB', fa: 'full agonist', pa: 'partial agonist', pam: 'PAM', nam: 'NAM', drc: 'DRC', gtp: 'GTP', gaba: 'GABA', net: 'NET', snare: 'SNARE', ssri: 'SSRI', grk: 'GRK', mr: 'MR', na: 'Na', x: 'X', y: 'Y', alpha: 'α', alpha1: 'α1', alpha2: 'α2', beta: 'β', beta1: 'β1', beta2: 'β2', beta3: 'β3', alpha4beta2: 'α4β2', dumbbelss: 'DUMBBELSS', op: 'organophosphate', d1: 'D1', d2: 'D2', k: 'K⁺', vs: 'vs', ras: 'RAS', ia: 'inverse agonist', bbs: 'β blockers', ad: 'Alzheimer’s', pd: 'PD'};
+const capFirst = s => s.replace(/^[a-z]/, ch => ch.toUpperCase());
+function conceptWords(id) {
+  const toks = id.split('-');
+  return toks.map((t, i) => {
+    if (t === 'gi') return /^(alpha2|m2|d2)$/.test(toks[i - 1] || '') || toks[i + 1] === 'alpha2' ? 'Gi' : 'GI';
+    if (t === 'no') return /^(sgc|cgmp|donor|donors|nitrates|endothelium|hypotension|term)$/.test(toks[i - 1] || '') || /^(sgc|cgmp|donor|donors|vasodilation)$/.test(toks[i + 1] || '') ? 'NO' : 'no';
+    return ABBR[t] || t;
+  }).join(' ');
+}
+function conceptTitle(c) {
+  if (/^term-/.test(c)) { const t = (typeof TERMS === 'undefined' ? [] : TERMS).find(x => x.id === c.slice(5)); if (t) return 'Term: ' + t.term.replace(/\s*\([^)]*\)\s*$/, ''); }
+  const forms = [[/^moa-(.+)$|^(.+)-moa$/, 'mechanism of action'], [/^soa-(.+)$|^(.+)-soa$/, 'site of action'], [/^adrs?-(.+)$|^(.+)-adrs?$/, 'adverse reactions'], [/^ddi-(.+)$|^(.+)-ddi$/, 'drug interactions']];
+  for (const [re, tail] of forms) { const m = c.match(re); if (m) return capFirst(conceptWords(m[1] || m[2])) + ': ' + tail; }
+  const p = c.match(/^(.+)-predict-(.+)$/); if (p) return capFirst(conceptWords(p[1])) + ': predict the ' + conceptWords(p[2]);
+  return capFirst(conceptWords(c));
+}
+/* Under the title: the ladder it belongs to or the first section that teaches it, then topic · section. */
+function conceptLine(c) {
+  const q = conceptQs(c)[0] || {}, t = TOPIC[q.topic], sb = t && (t.subs || []).find(x => x.id === q.sub);
+  const where = q.ladderName || (linksFor(q)[0] || [])[2] || '';
+  return [where ? capFirst(where.replace(/^(Guide|Reference|Tell apart|Diagram) ?\d*: ?/, '')) : '', t ? t.name : '', sb ? sb.name : ''].filter(Boolean).join(' · ');
+}
+/* How much an exam question on it would cost: the highest tier among its questions, a verbatim poll weighs more. */
+const relevance = c => Math.max(1, ...conceptQs(c).map(q => (q.level || 1) * ((q.tags || []).includes('pollev') && q.sub === 'verbatim' ? 1.5 : 1)));
+const isWeak = s => s === 'struggling' || s === 'returning' || s === 'unfamiliar' || s === 'improving';
+/* ---------- Practice concept: the adaptive retest (quiz mode 'concept') ----------
+   Each concept in turn: its other questions first (a dupOf sibling of the one missed, then a
+   wording not seen this session, then any), and once the student has it right, one step up
+   (the next tier of its ladder, else a question from the same section). Three questions per
+   concept at most; a spaced check asks one. The same question is not served twice within
+   10 minutes while another is available. The session ends with a summary per concept. */
+let CPLAN = null, WK = {all: false};
+function startConceptQuiz(concepts, label, opts = {}) {
+  concepts = [...new Set(concepts)].filter(c => conceptQs(c).length);
+  if (!concepts.length) { alert('No questions match that selection.'); return; }
+  // every question the session may draw on, for the count line and the all-on-one-page layout
+  const list = [...new Set(concepts.flatMap(c => conceptQs(c).concat(stepUpPool(c))))];
+  CPLAN = {items: concepts.map(c => ({c, asked: [], upAsked: null, max: opts.check ? 1 : Math.min(3, Math.max(2, conceptQs(c).length))})), i: 0, t0: Date.now(), check: !!opts.check, concepts};
+  startQuiz(list, label, 'concept', opts);
+}
+const stepUpPool = c => { const qsOf = conceptQs(c), lad = qsOf.find(q => q.ladder), lvl = Math.max(0, ...qsOf.map(q => q.level || 0)); if (lad) { const up = ladderQs(lad.ladder).filter(q => (q.level || 0) > lvl); if (up.length) return up; } const q0 = qsOf[0]; return q0 ? examPool().filter(q => q.topic === q0.topic && q.sub === q0.sub && conceptOf(q) !== c) : []; };
+/* Of several candidates, not the one answered in the last 10 minutes nor the one just shown, then a fresh wording this session. */
+function prefer(cands, sesIds, lastId) {
+  if (!cands.length) return null;
+  const now = Date.now();
+  let c = cands.filter(q => q.id !== lastId && !(S.q[q.id] && S.q[q.id].last > now - REPEAT_GAP)); if (!c.length) c = cands.filter(q => q.id !== lastId); if (!c.length) c = cands;
+  const fresh = c.filter(q => !sesIds.has(q.id));
+  return shuffle(fresh.length ? fresh : c)[0];
+}
+function pickConcept() {
+  if (!Q.cq) { Q.cq = CPLAN || {items: [], i: 0, t0: Date.now(), concepts: []}; CPLAN = null; }
+  const P = Q.cq, sesIds = new Set(sessionLog().map(e => e.id)), lastId = Q.cur ? Q.cur.id : null;
+  while (P.i < P.items.length) {
+    const it = P.items[P.i], c = it.c, asked = new Set(it.asked);
+    if (it.upAsked) { P.i++; continue; }
+    const ans = S.log.filter(e => e.t >= P.t0 && byId[e.id] && conceptOf(byId[e.id]) === c), gotRight = ans.some(solid);
+    // the concept's own wordings: until one is right and two have been asked (one, for a spaced check)
+    if (it.asked.length < it.max && (!gotRight || it.asked.length < Math.min(2, it.max))) {
+      const qsOf = conceptQs(c), lastMiss = ans.slice().reverse().find(e => !solid(e)) || (logByConcept(S.log)[c] || []).slice().reverse().find(e => !solid(e));
+      const open = qsOf.filter(q => !asked.has(q.id));
+      const sib = lastMiss ? open.filter(q => q.dupOf === lastMiss.id || byId[lastMiss.id].dupOf === q.id) : [];
+      let q = prefer(sib, sesIds, lastId) || prefer(open, sesIds, lastId);
+      if (!q && qsOf.length === 1 && !gotRight) q = qsOf[0];   // the only wording, still missed: once more
+      if (q) { it.asked.push(q.id); return q; }
+    }
+    if (gotRight && !P.check) {
+      const up = prefer(stepUpPool(c).filter(q => !asked.has(q.id)), sesIds, lastId);
+      if (up) { it.upAsked = up.id; return up; }
+    }
+    P.i++;
+  }
+  return null;
+}
+function conceptDone() {
+  const P = Q.cq || {items: [], t0: Date.now(), concepts: []}; syncConcepts();
+  const rows = P.items.map(it => {
+    const ans = S.log.filter(e => e.t >= P.t0 && byId[e.id] && conceptOf(byId[e.id]) === it.c), r = ans.filter(solid).length, rec = S.c[it.c];
+    const upE = it.upAsked && S.log.slice().reverse().find(e => e.t >= P.t0 && e.id === it.upAsked), upQ = it.upAsked && byId[it.upAsked];
+    return `<li><b>${esc(conceptTitle(it.c))}</b>: ${r} of ${ans.length} right${upE ? ` · step up${upQ && upQ.level ? ' (Tier ' + upQ.level + ')' : ''} ${solid(upE) ? 'right' : 'missed'}` : ''}${rec ? `, now ${esc(STATUS_WORD[rec.s].toLowerCase())}` : ''}</li>`;
+  });
+  $('#view').innerHTML = `<div class="card"><h2>${P.check ? 'Spaced review finished' : 'Practice finished'}</h2><p>${Q.right} of ${Q.done} correct.</p>${rows.length ? `<ul class="wsum">${rows.join('')}</ul>` : ''}
+    <div class="row"><button class="btn" id="toweak">Weak spots</button><button class="btn ghost" id="cagain">Practice again</button><button class="btn ghost" id="totopics">Topics</button></div></div>`;
+  $('#toweak').onclick = () => go('weak');
+  $('#cagain').onclick = () => startConceptQuiz(P.concepts, Q.label, {check: P.check});
+  $('#totopics').onclick = () => go('topics');
+}
+ensureC();
+
+
 /* ---------- Weak spots ----------
    1. This session: answers, accuracy, the last 20 in order, first half vs second half.
-   2. What to review next: questions not yet solid (last three answers, a correct
-      "I guessed" counts as a miss), grouped by the guide section that teaches them,
-      ranked by how much is missing. Each area lists the concepts, the wrong option
-      chosen most recently with why it is wrong, the idea to learn, where to read it,
-      and a drill button. 3. By topic and by skill, folded away. */
+   2. Concepts: "Due for spaced review" (mastered concepts whose check is due), then one
+      card per weak concept (strugglers first, weighted by misses × recency × tier, then
+      unfamiliar, then improving): status with its evidence, the option(s) chosen more than
+      once with why each is wrong, partial credit on a select-all, the answer, the idea,
+      a folded "More" with the full teach, Practice concept and the Read links. Mastered
+      concepts sit in a folded list. 3. By topic and by skill, folded away. */
 /* "The idea" in the review plan: the first one or two sentences of the teach, without
    repeating the answer shown just above it. A teach that opens with the answer as a whole
    sentence (a term's meaning, then "Twins poll: …") drops that sentence; one that opens with
@@ -709,15 +929,15 @@ function planIdea(q) {
   return idea;
 }
 function vWeak() {
-  const pool = examPool(), ex = active(), mineId = id => byId[id] && examOf(byId[id]) === ex.id;
+  const pool = examPool(), ex = active(), mineId = id => byId[id] && examOf(byId[id]) === ex.id, now = Date.now();
   // everything on this page is about the exam being studied
-  if (!S.log.some(e => mineId(e.id))) { $('#view').innerHTML = `<h2>Weak spots</h2><div class="row" style="margin:-4px 0 8px">${examSwitch()}</div><div class="empty">No ${esc(ex.name)} answers yet. Answer some questions and this fills in: your progress this session, the concepts to review first, what you keep choosing and why it is wrong, and where to read about each one.</div>`; return; }
+  if (!S.log.some(e => mineId(e.id))) { $('#view').innerHTML = `<h2>Weak spots</h2><div class="row" style="margin:-4px 0 8px">${examSwitch()}</div><div class="empty">No ${esc(ex.name)} answers yet. Answer some questions and this fills in: your progress this session, the concepts to review first with what you keep choosing and why it is wrong, and where to read about each one.</div>`; return; }
+  const G = syncConcepts();
   const recent = {};
   S.log.forEach(e => { (recent[e.id] = recent[e.id] || []).push(e); });
   const score = q => { const r = (recent[q.id] || []).slice(-3); if (!r.length) return null; return r.filter(solid).length / r.length; };
   const notSolid = pool.filter(q => score(q) != null && score(q) < 1);
   let h = `<h2>Weak spots</h2><div class="row" style="margin:-4px 0 8px">${examSwitch()}</div>`, retryList = [];
-
   // 1. this session (its answers on this exam's questions)
   const ses = sessionLog().filter(e => mineId(e.id));
   if (ses.length) {
@@ -735,45 +955,50 @@ function vWeak() {
     retryList = missedNow;
   }
 
-  // 2. what to review next
-  const areas = {};
-  notSolid.forEach(q => {
-    const l = linksFor(q)[0] || ['', '', 'Other'];
-    const A = areas[l[2]] = areas[l[2]] || {name: l[2], links: linksFor(q), qs: [], gap: 0, concepts: {}};
-    A.qs.push(q); A.gap += 1 - score(q);
-    const c = A.concepts[q.concept] = A.concepts[q.concept] || {qs: [], last: null};
-    c.qs.push(q);
-    const lastMiss = (recent[q.id] || []).filter(e => !solid(e)).pop();
-    if (lastMiss && (!c.last || lastMiss.t > c.last.e.t)) c.last = {e: lastMiss, q};
-  });
-  const ranked = Object.values(areas).sort((x, y) => y.gap - x.gap);
-  const cap1 = t => /^[a-z]/.test(t) ? t.charAt(0).toUpperCase() + t.slice(1) : t;   // "β drugs" stays β, not Greek capital Β
-  // a section's name without its page ("Guide 6: ", "Guide: ", "Reference: "), as its heading and its drill label
-  const areaName = n => cap1(String(n).replace(/^(Guide|Reference|Tell apart|Diagram) ?\d*: ?/, ''));
-  const pickedText = (q, e) => { const p = [].concat(e.picked == null ? [] : e.picked); return p.map(i => q.options && q.options[i]).filter(Boolean); };
-  if (ranked.length) {
-    h += `<h3>What to review next</h3><p class="sub">${notSolid.length} question${notSolid.length === 1 ? '' : 's'} not yet solid, grouped by the section that teaches them, most missing first. Read the section, then drill its questions.</p>`;
-    ranked.slice(0, 6).forEach((A, ai) => {
-      const cs = Object.entries(A.concepts).sort((x, y) => y[1].qs.length - x[1].qs.length);
-      h += `<div class="card plan"><div class="row" style="justify-content:space-between;flex-wrap:wrap"><b>${ai + 1}. ${esc(areaName(A.name))}</b><span class="meta" style="margin:0">${A.qs.length} question${A.qs.length === 1 ? '' : 's'} · ${cs.length} concept${cs.length === 1 ? '' : 's'}</span></div>`;
-      cs.slice(0, 4).forEach(([cid, c]) => {
-        const q = (c.last && c.last.q) || c.qs[0], wrong = c.last ? pickedText(c.last.q, c.last.e).filter(o => !o.correct) : [];
-        const right = (q.options || []).filter(o => o.correct).map(o => o.t);
-        h += `<div class="pconcept"><div class="pq">${esc(q.stem.length > 160 ? q.stem.slice(0, 160) + '…' : q.stem)}</div>`;
-        if (wrong.length) h += `<div class="pw"><b>You chose:</b> ${esc(wrong.map(o => o.t).join(' · '))}<br><span class="meta" style="margin:0">Why it is not the answer: ${esc(wrong.map(o => o.why || '').join(' '))}</span></div>`;
-        else if (c.last && c.last.e.conf === 'guess') h += `<div class="pw"><b>You got it right but marked it a guess.</b></div>`;
-        if (right.length) h += `<div class="pr"><b>Answer:</b> ${esc(right.join(' · '))}</div>`;
-        const idea = planIdea(q);
-        if (idea) h += `<div class="pi"><b>The idea:</b> ${esc(idea)}</div>`;
-        if (c.qs.length > 1) h += `<div class="meta" style="margin:2px 0 0">${c.qs.length} questions on this concept are not solid.</div>`;
-        h += `</div>`;
-      });
-      if (cs.length > 4) h += `<div class="meta">+ ${cs.length - 4} more concept${cs.length - 4 === 1 ? '' : 's'} in this section.</div>`;
-      h += `<div class="row" style="margin-top:8px;flex-wrap:wrap">${A.links.map(([v, a, t]) => `<button type="button" class="chip" data-jump="${v}:${a}">Read: ${esc(t)}</button>`).join('')}<button class="btn" data-area="${ai}">Drill these ${A.qs.length}</button></div></div>`;
-    });
-    if (ranked.length > 6) h += `<p class="meta">${ranked.length - 6} more section${ranked.length - 6 === 1 ? '' : 's'} have questions to review; they appear here as these are solved.</p>`;
-    h += `<div class="row" style="margin:6px 0 14px"><button class="btn ghost" id="missall">Drill all ${notSolid.length} not-solid questions</button></div>`;
-  } else h += `<div class="card">Every ${esc(ex.name)} question you have answered is solid on its last three answers.</div>`;
+  // 2. concepts: every concept of this exam with answers, its record and its counts
+  const cs = Object.keys(G).filter(c => G[c].some(e => examOf(e.q) === ex.id)).map(c => { const list = G[c].filter(e => examOf(e.q) === ex.id); return {c, list, rec: S.c[c], st: conceptStats(c, list)}; });
+  const lastMissT = x => x.st.lastMiss ? x.st.lastMiss.t : 0;
+  const weight = x => x.st.misses * (1 / (1 + (now - lastMissT(x)) / DAY)) * relevance(x.c);
+  const strug = cs.filter(x => x.rec.s === 'struggling' || x.rec.s === 'returning').sort((p, q) => weight(q) - weight(p));
+  const unfam = cs.filter(x => x.rec.s === 'unfamiliar').sort((p, q) => lastMissT(q) - lastMissT(p));
+  const impr = cs.filter(x => x.rec.s === 'improving').sort((p, q) => lastMissT(q) - lastMissT(p));
+  const weak = strug.concat(unfam, impr), mastered = cs.filter(x => x.rec.s === 'mastered').sort((p, q) => conceptDue(p.c) - conceptDue(q.c)), onTrack = cs.filter(x => x.rec.s === 'learning');
+  const due = mastered.filter(x => conceptDue(x.c) <= now);
+  const chip = s => `<span class="wchip s-${s}">${STATUS_WORD[s]}</span>`;
+  const reason = x => {
+    const {st, rec} = x, when = st.last ? agoText(st.last.t) : '';
+    if (rec.s === 'unfamiliar') return `Seen once, missed once · ${when}`;
+    if (rec.s === 'improving') return `Missed ${st.misses} of ${st.n}, last 2 solid · ${plural(st.seen, 'question')} · ${plural(st.sessions, 'session')} · ${when}`;
+    if (rec.s === 'mastered') return `${st.solidN} solid on ${plural(st.solidQs, 'question')} across ${plural(st.solidSess, 'session')} · check due ${inText(conceptDue(x.c))}`;
+    if (rec.s === 'learning') return `${plural(st.n, 'right answer')}, no miss · not yet mastered`;
+    return `${rec.s === 'returning' || rec.r ? 'Was mastered, missed again · ' : ''}Missed ${st.misses} of ${st.n}${st.guessed ? ` (${st.guessed} guessed)` : ''} · ${plural(st.seen, 'question')} · ${plural(st.retests, 'retest')} passed · ${plural(st.sessions, 'session')} · ${when}`;
+  };
+  const card = x => {
+    const {c, st} = x, q = st.best, right = (q.options || []).filter(o => o.correct).map(o => o.t), errs = st.recurring.length ? st.recurring : st.errs.slice(0, 1);
+    let b = `<div class="card wcard" data-c="${esc(c)}"><div class="wtitle"><b>${esc(conceptTitle(c))}</b>${chip(x.rec.s)}</div><div class="meta wline">${esc(conceptLine(c))}</div><div class="wreason">${esc(reason(x))}</div>`;
+    b += `<div class="wclar"><b>What needs clarification</b>`;
+    errs.forEach(er => { b += `<div class="pw"><b>${er.n > 1 ? `You keep choosing (${er.n}×):` : 'You chose:'}</b> ${esc(er.o.t)}${er.o.why ? `<br><span class="meta">Why it is not the answer: ${esc(er.o.why)}</span>` : ''}</div>`; });
+    if (!errs.length && st.guessed) b += `<div class="pw"><b>Right, but marked a guess${st.guessed > 1 ? ` (${st.guessed}×)` : ''}.</b></div>`;
+    if (st.partial) b += `<div class="pw"><b>Select all:</b> ${st.partial.hit} of ${st.partial.of} right, ${plural(st.partial.bad, 'wrong tick')}</div>`;
+    if (right.length) b += `<div class="pr"><b>Answer:</b> ${esc(right.join(' · '))}</div>`;
+    else if (q.type === 'match' && q.pairs) b += `<div class="pr"><b>Answer:</b> ${esc(q.pairs.map(p => p.l + ' → ' + p.r).join(' · '))}</div>`;
+    const idea = planIdea(q); if (idea) b += `<div class="pi"><b>The idea:</b> ${esc(idea)}</div>`;
+    b += `<details class="wmore"><summary>More</summary><div class="meta" style="margin:6px 0 2px">${esc(q.stem)}</div>${q.teach ? `<div class="teach">${teachHTML(q.teach)}</div>` : ''}<div class="cite">${esc(fmtCite(q.cite))}</div></details></div>`;
+    b += `<div class="row wact"><button class="btn" data-practice="${esc(c)}">Practice concept</button>${linksFor(q).map(([v, a, t]) => `<button type="button" class="chip" data-jump="${v}:${a}">Read: ${esc(t)}</button>`).join('')}</div></div>`;
+    return b;
+  };
+  if (due.length) h += `<h3>Due for spaced review (${due.length})</h3><div class="card">${due.map(x => `<div class="wrow"><span>${esc(conceptTitle(x.c))}<small class="meta" style="display:block;margin:0">${esc(reason(x))}</small></span><button class="btn ghost" data-practice="${esc(x.c)}" data-check="1">Check</button></div>`).join('')}
+    <div class="row" style="margin-top:8px"><button class="btn" id="duecheck">Run the ${due.length === 1 ? 'check' : due.length + ' checks'}</button></div></div>`;
+  if (weak.length) {
+    const top = weak.slice(0, 6);
+    h += `<h3>Concepts to review (${weak.length})</h3><p class="sub">${strug.length ? plural(strug.length, 'struggling') + ' · ' : ''}${unfam.length ? plural(unfam.length, 'unfamiliar') + ' · ' : ''}${impr.length ? impr.length + ' improving · ' : ''}strugglers first, weighted by misses, how recent and the tier. Each card says what you chose, why it is wrong, and the idea; Practice asks a different wording first.</p>
+      <div class="row" style="margin:0 0 12px"><button class="btn" id="reviewweak">Review weak spots (${top.length === 1 ? '1 concept' : top.length + ' concepts'})</button></div>`;
+    const shown = WK.all ? weak : weak.slice(0, 8);
+    h += shown.map(card).join('');
+    if (weak.length > shown.length) h += `<div class="row" style="margin:0 0 12px"><button class="btn ghost" id="wkmore">Show ${weak.length - shown.length} more</button></div>`;
+  } else h += `<h3>Concepts to review</h3><div class="card">No ${esc(ex.name)} concept is weak on the evidence so far.${onTrack.length || mastered.length ? '' : ' Answer more questions and the weak ones appear here.'}</div>`;
+  if (onTrack.length) h += `<p class="meta">${plural(onTrack.length, 'concept')} right so far but not yet mastered (one right answer never masters: it takes 3 solid answers on 2 questions in 2 sessions).</p>`;
+  if (mastered.length) h += `<details class="gread"><summary>Mastered (${mastered.length})</summary><div class="card">${mastered.map(x => `<div class="wrow"><span>${esc(conceptTitle(x.c))}<small class="meta" style="display:block;margin:0">${esc(reason(x))}</small></span><button class="btn ghost" data-practice="${esc(x.c)}" data-check="1">Check</button></div>`).join('')}</div></details>`;
 
   // 3. by topic / by skill (folded)
   const group = (keyFn, nameFn) => {
@@ -790,10 +1015,14 @@ function vWeak() {
   const byTopic = group(q => q.topic, k => (TOPIC[k] || {}).name || k);
   const bySkill = group(q => q.skill, k => (SKILL[k] || {}).label || k);
   h += `<h3>All-time, by topic and by skill</h3>` + table(byTopic, 'By topic') + table(bySkill, 'By skill');
+  if (notSolid.length) h += `<div class="row" style="margin:6px 0 14px"><button class="btn ghost" id="missall">Drill all ${notSolid.length} not-solid questions</button></div>`;
   $('#view').innerHTML = h;
   const ma = $('#missall'); if (ma) ma.onclick = () => startQuiz(notSolid, 'Weak spots', 'sr');
   const rs = $('#retrysess'); if (rs) rs.onclick = () => startQuiz(retryList, 'Missed this session', 'sr');
-  document.querySelectorAll('[data-area]').forEach(b => b.onclick = () => { const A = ranked[+b.dataset.area]; startQuiz(A.qs, areaName(A.name), 'sr'); });
+  const rw = $('#reviewweak'); if (rw) rw.onclick = () => startConceptQuiz(weak.slice(0, 6).map(x => x.c), 'Weak spots');
+  const dc = $('#duecheck'); if (dc) dc.onclick = () => startConceptQuiz(due.map(x => x.c), 'Spaced review', {check: true});
+  const wm = $('#wkmore'); if (wm) wm.onclick = () => { WK.all = true; vWeak(); };
+  document.querySelectorAll('[data-practice]').forEach(b => b.onclick = () => startConceptQuiz([b.dataset.practice], conceptTitle(b.dataset.practice), {check: !!b.dataset.check}));
   document.querySelectorAll('[data-miss]').forEach(b => b.onclick = () => {
     const [t, k] = b.dataset.miss.split('|');
     const rows = t === 'By topic' ? byTopic : bySkill;
@@ -1003,7 +1232,7 @@ function submitExam() {
     const q = byId[id], a = EX.ans[id], ok = exRight(q, a);
     if (ok) score++;
     const st = qs(id); st.n++; if (ok) st.ok++;
-    S.log.push({id, t: Date.now(), ok, conf: 'exam', picked: a, ms: 0});
+    noteAnswer(q, {id, t: Date.now(), ok, conf: 'exam', picked: a, ms: 0});
     schedule(id, ok ? 'unsure' : 'wrong');
   });
   S.exams = S.exams || []; S.exams.push({t: Date.now(), n: EX.qs.length, score, exam: EX.exam});
