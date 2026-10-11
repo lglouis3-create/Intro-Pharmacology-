@@ -2,6 +2,12 @@
 
 Newest first. The build embeds this file; the Topics page shows what is new since your last visit, and the Progress page shows all of it. Keep each bullet to one short line.
 
+## 2026-10-11 (Terms follow the exam; the words read are shown)
+
+- Terms: the glossary lists the exam you are studying for (groups, A–Z and search); "Both exams" shows the other too.
+- Narration: the line being read is printed under the caption while it plays, and in Captions only.
+- The transcript marks the line being read. Play all brings a figure under the header when it is off screen.
+
 ## 2026-10-11 (narrated walkthrough of the Exam 2 drug list)
 
 - All drugs page: a narrated walkthrough of the Exam 2 list, 7 parts in his table order, one card per drug (42).

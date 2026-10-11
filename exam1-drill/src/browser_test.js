@@ -301,7 +301,10 @@ const out = path.join(__dirname, '..', course.match(/output:\s*'([^']+)'/)[1]);
   const c3 = await page.evaluate(() => { const keep = S; S = normalize({q: {}, log: [{id: examPool()[0].id, t: Date.now(), ok: false, conf: 'wrong'}]}); localStorage.setItem(COURSE.ns + ':exam', '1'); go('weak'); const t = document.getElementById('view').textContent; localStorage.setItem(COURSE.ns + ':exam', '2'); S = keep; return /No Exam 1 answers yet/.test(t) && !/Retry the/.test(t); });
   if (!c3) fail('Weak spots for Exam 1 showed Exam 2 answers');
   // C9, C10: a group chip of the other exam opens that exam's section; search results name their exam
-  const c9 = await page.evaluate(() => { TM.mode = 'glossary'; TM.q = ''; TM.order = 'group'; go('terms'); const g1 = TERMS.find(t => (lecExam(t.lecture) || 1) === 1).group; TM.group = g1; go('terms'); const open = document.querySelector('details.exgroup[data-ex="1"]').open; TM.group = 'all'; TM.q = 'receptor'; go('terms'); const lab = !!document.querySelector('.term .exlabel'); TM.q = ''; go('terms'); return open && lab; });
+  // the glossary follows the exam studied: with Exam 2 active no Exam 1 term and no exam fold is on the page, in any order or a search
+  const c9a = await page.evaluate(() => { TM.mode = 'glossary'; TM.scope = 'exam'; TM.group = 'all'; TM.q = ''; TM.order = 'group'; go('terms'); const ex1 = () => [...document.querySelectorAll('.term')].some(d => { const t = TERMS.find(x => 'term-' + x.id === d.id); return t && lecExam(t.lecture) === 1; }); const r1 = !ex1() && !document.querySelector('.exgroup') && document.querySelectorAll('.term').length === TERMS.filter(t => lecExam(t.lecture) === 2).length; TM.order = 'az'; go('terms'); const r2 = !ex1() && !document.querySelector('.term .exlabel'); TM.q = 'receptor'; go('terms'); const r3 = !ex1() && document.querySelectorAll('.term').length > 0; const chips = [...document.querySelectorAll('[data-group]')].map(c => c.dataset.group); const r4 = !chips.some(g => g !== 'all' && !TERMS.some(t => t.group === g && lecExam(t.lecture) === 2)); TM.q = ''; TM.order = 'group'; go('terms'); return r1 && r2 && r3 && r4; });
+  if (!c9a) fail('glossary shows Exam 1 terms or groups while Exam 2 is studied');
+  const c9 = await page.evaluate(() => { TM.mode = 'glossary'; TM.scope = 'both'; TM.q = ''; TM.order = 'group'; go('terms'); const g1 = TERMS.find(t => (lecExam(t.lecture) || 1) === 1).group; TM.group = g1; go('terms'); const open = document.querySelector('details.exgroup[data-ex="1"]').open; TM.group = 'all'; TM.q = 'receptor'; go('terms'); const lab = !!document.querySelector('.term .exlabel'); TM.q = ''; TM.scope = 'exam'; go('terms'); return open && lab; });
   if (!c9) fail('glossary: other exam group stayed closed or search cards carry no exam label');
   // C8: an Exam 2 tracing names tracing questions, not curve questions
   const c8 = await page.evaluate(() => { const g = GR.find(x => x.exam === 2); if (!g) return true; const q = graphQs(g).find(x => x.options && x.options.some(o => !o.correct && o.miss)); if (!q) return true; const wrong = q.options.findIndex(o => !o.correct && o.miss); const h = graphFeedback(q, {ok: false, picked: wrong}), skip = (h.match(/<div class="gskip">[\s\S]*?<\/div>/) || [''])[0]; return skip && !/curve/i.test(skip) && /tracing/.test(h); });
@@ -542,6 +545,16 @@ const out = path.join(__dirname, '..', course.match(/output:\s*'([^']+)'/)[1]);
   const tp = await page.evaluate(() => { const n = document.getElementById('news'), d = document.getElementById('due'); return {news: !!n, open: n && n.open, newsH: n ? Math.round(n.getBoundingClientRect().height) : 0, dueBottom: d ? Math.round(d.getBoundingClientRect().bottom) : 9999, h2: document.querySelectorAll('#view h2').length, hdr: Math.round(document.querySelector('header').getBoundingClientRect().height)}; });
   if (!tp.news || tp.open || tp.newsH > 70 || tp.dueBottom > 844 || tp.h2 || tp.hdr > 110) fail('Topics first screen at 390px: ' + JSON.stringify(tp));
   await page.setViewportSize({width: 1100, height: 800});
+  // 9: the words read for a step are printed under its caption (Captions only: no sound), the transcript marks the
+  // line, a figure without a script shows no line, and Off removes it
+  const ns = await page.evaluate(() => {
+    go('diagrams'); setNarr('cap'); const a = document.querySelector('[data-anim="e2-adrc"]'); if (!a) return {nofig: true};
+    const fig = a.closest('figure'); openTo(fig); a.querySelector('[data-go="1"]').click();
+    const i = [...fig.querySelectorAll('.st')].findIndex(s => s.classList.contains('on')), d = fig.querySelector('.nsaid');
+    const r = {i, said: !!d && d.textContent === NARRATION['e2-adrc'].steps[i].text, li: [...fig.querySelectorAll('.ntr li.on')].map(l => +l.dataset.ni).join(), order: d && fig.querySelector('.stcap').getBoundingClientRect().bottom <= d.getBoundingClientRect().top + 1 && d.getBoundingClientRect().bottom <= a.getBoundingClientRect().top + 1, cur: !!NAR.cur};
+    const b = [...document.querySelectorAll('[data-anim]')].find(x => !NARRATION[x.dataset.anim]); if (b) { openTo(b); b.querySelector('[data-go="1"]').click(); r.plain = !b.closest('figure').querySelector('.nsaid'); }
+    setNarr('off'); r.off = !document.querySelector('.nsaid'); return r; });
+  if (ns.nofig || !ns.said || ns.li !== String(ns.i) || !ns.order || ns.cur || ns.plain === false || !ns.off) fail('narration line under the caption: ' + JSON.stringify(ns));
   await page.evaluate(ex => { S = normalize({q: {}, log: []}); save(); store.set(EXAM_KEY, ex || '2'); endExam(); }, wk.keepEx);
   if (errors.length) fail('page errors: ' + errors.join(' | '));
   console.log(`answered ${answered} quiz items (${multiSeen} select-all), exam of ${total}`);
