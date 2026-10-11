@@ -2,6 +2,14 @@
 
 Newest first. The build embeds this file; the Topics page shows what is new since your last visit, and the Progress page shows all of it. Keep each bullet to one short line.
 
+## 2026-10-11 (recorded narration, Exam 2)
+
+- All 73 Exam 2 narration steps are now recorded clips in the narrator voice JK (the user's own ElevenLabs voice).
+- With narration on, an Exam 2 figure plays its clip; Play all moves on when the clip ends; speed applies to clips.
+- If a clip cannot load (offline, missing), the device's voice reads the same script instead.
+- The next step's clip is fetched while the current one plays. Figures without recordings keep the device voice.
+- Clip files live in exam1-drill/audio (about 22 MB, 22 minutes); each loads only when played.
+
 ## 2026-10-11 (narration scripts, Exam 2)
 
 - Narration scripts written for all 14 Exam 2 step-through figures (73 steps), from the figures' verified captions.
