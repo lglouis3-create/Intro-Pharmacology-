@@ -1795,7 +1795,7 @@ const SPEAK = [[/→/g, ' leads to '], [/↑/g, ' more '], [/↓/g, ' less '], [
   [/\bNE\b/g, 'norepinephrine'], [/\bEpi\b/g, 'epinephrine'], [/\bNMJ\b/g, 'neuromuscular junction'], [/\bSNS\b/g, 'sympathetic'], [/\bPNS\b/g, 'parasympathetic'],
   [/\bHR\b/g, 'heart rate'], [/\bBP\b/g, 'blood pressure'], [/\bNO\b/g, 'nitric oxide'], [/\bSCh\b/g, 'succinylcholine'], [/\b([MNH])([123nm])\b/g, '$1 $2'],
   [/\bCa\+\+|\bCa2\+/g, 'calcium'], [/\bK\+/g, 'potassium'], [/\bNa\+/g, 'sodium'], [/\bEmax\b/g, 'E max'], [/\b(E[CD])50\b/g, '$1 50'], [/\bKd\b/g, 'K D'],
-  [/\b(GTP|GDP|GPCR|RTK|MAO|RAAS|ACE|AT1|AT2|PDE|PLC|DAG|IP3|PKA|ATP|GRK|ARB|CNS|GI|NET|SERT|VMAT|DUMBBELSS|sGC|AV|SA)\b/g, m => m.split('').join(' ')]];
+  [/DUMBBELSS/g, 'dumbbells'], [/\b(GTP|GDP|GPCR|RTK|MAO|RAAS|ACE|AT1|AT2|PDE|PLC|DAG|IP3|PKA|ATP|GRK|ARB|CNS|GI|NET|SERT|VMAT|COMT|sGC|AV|SA|JG)\b/g, m => m.split('').join(' ')]];
 const speakable = t => SPEAK.reduce((x, [re, r]) => x.replace(re, r), t).replace(/\s+/g, ' ').trim();
 const narrKey = fig => { const a = fig.querySelector('[data-anim]'); return a ? a.dataset.anim : ''; };
 const narrEntry = (fig, i) => { const n = typeof NARRATION === 'undefined' ? null : NARRATION[narrKey(fig)]; return n && n.steps && n.steps[i] || {}; };
