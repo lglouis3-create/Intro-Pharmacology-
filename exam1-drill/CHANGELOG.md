@@ -2,6 +2,15 @@
 
 Newest first. The build embeds this file; the Topics page shows what is new since your last visit, and the Progress page shows all of it. Keep each bullet to one short line.
 
+## 2026-10-11 (guides: sequences as steps beside their figures)
+
+- Every sequence that ran inside a guide paragraph is now a numbered step list set beside its step-through figure.
+- Exam 2 guide: predicting an organ effect, standing up, the NMJ, succinylcholine phases, cholinesterase inhibitors,
+  organophosphate poisoning, NE made to removed, three ways to raise NE, epinephrine in a vessel, his tracing method,
+  the nitric oxide sequence, the RAAS cascade; the matching figures now sit in the guide, with the muscarinic map,
+  innervation map, gut brake, MAO figure, ACh bolus and RAAS drug figure.
+- Exam 1 guide 6: the G-protein chains, the signalling vocabulary, the five RTK steps and the poll figure chain.
+
 ## 2026-10-11 (guided narration)
 
 - Every step-through figure can be read aloud: one setting (Off, Narrate when tapped, Captions only).
