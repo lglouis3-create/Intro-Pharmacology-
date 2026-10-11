@@ -1799,6 +1799,15 @@ const SPEAK = [[/→/g, ' leads to '], [/↑/g, ' more '], [/↓/g, ' less '], [
 const speakable = t => SPEAK.reduce((x, [re, r]) => x.replace(re, r), t).replace(/\s+/g, ' ').trim();
 const narrKey = fig => { const a = fig.querySelector('[data-anim]'); return a ? a.dataset.anim : ''; };
 const narrEntry = (fig, i) => { const n = typeof NARRATION === 'undefined' ? null : NARRATION[narrKey(fig)]; return n && n.steps && n.steps[i] || {}; };
+// the clips live in exam1-drill/audio/, next to the drill: from the drill's own page that is audio/; from the
+// index at the repository root, or from the artifact page, it is exam1-drill/audio/
+const NAR_BASE = () => /\/exam1-drill\//.test(location.pathname) ? 'audio/' : 'exam1-drill/audio/';
+function narrClip(fig, i) {
+  const e = narrEntry(fig, i); if (e.src) return NAR_BASE() + e.src;
+  const n = typeof NARRATION === 'undefined' ? null : NARRATION[narrKey(fig)];
+  return n && n.clip && n.steps && n.steps[i] ? NAR_BASE() + n.clip + '-' + (i + 1) + '.mp3' : '';
+}
+const narrHasClips = fig => { const n = typeof NARRATION === 'undefined' ? null : NARRATION[narrKey(fig)]; return !!(n && (n.clip || (n.steps || []).some(s => s.src))); };
 // the step's words: its script when one is written, else its caption without the "Step i of n" lead and the slide title
 function narrText(fig, i) {
   const e = narrEntry(fig, i); if (e.text) return e.text;
@@ -1822,25 +1831,35 @@ function narrStop() {
 }
 /* Read step i of the figure. Returns true when a reading started (done(true) follows once it ends),
    false when there is nothing to read (narration off, muted, no voice, no text); done is not called then. */
+let NARR_NEXT = null;
 function narrSpeak(fig, i, done) {
   narrStop(); if (!narrOn()) return false;
-  const text = narrText(fig, i), src = narrEntry(fig, i).src; if (!text) return false;
+  const text = narrText(fig, i), src = narrClip(fig, i); if (!text) return false;
   if (!src && !narrCan()) return false;
   const cur = NAR.cur = {fig, i, t: null}; fig.classList.add('speaking');
   const finish = () => { if (NAR.cur !== cur) return; clearTimeout(cur.t); NAR.cur = null; fig.classList.remove('speaking'); if (done) done(true); };
-  if (src) {
-    const a = NARR_AUDIO || (NARR_AUDIO = new Audio()); a.src = src; a.playbackRate = NAR.rate; a.onended = a.onerror = finish;
-    a.play().catch(finish);
-  } else {
+  // a voice that never reports its end must not stall Play all: give it the words' worth of time, then move on
+  const guard = ms => { clearTimeout(cur.t); cur.t = setTimeout(finish, ms); };
+  const synth = () => {
+    if (!narrCan()) return finish();
     const v = narrVoice(); let last = null;
     (speakable(text).match(/[^.;:!?]+[.;:!?]*/g) || [text]).forEach(part => {
       if (!part.trim()) return; const u = new SpeechSynthesisUtterance(part.trim()); u.rate = NAR.rate; u.lang = 'en-US'; if (v) u.voice = v; last = u; speechSynthesis.speak(u);
     });
-    if (!last) { finish(); return true; }
+    if (!last) return finish();
     last.onend = last.onerror = finish;
-  }
-  // a voice that never reports its end must not stall Play all: give it the words' worth of time, then move on
-  cur.t = setTimeout(finish, (2000 + text.split(/\s+/).length * 450) / NAR.rate);
+    guard((2000 + text.split(/\s+/).length * 450) / NAR.rate);
+  };
+  if (src) {
+    // the recorded clip; if it cannot be loaded (offline, a missing file), the device's voice reads the script instead
+    const a = NARR_AUDIO || (NARR_AUDIO = new Audio()); a.preload = 'auto'; a.src = src; a.playbackRate = NAR.rate;
+    a.onended = finish; a.onerror = () => { if (NAR.cur === cur) synth(); };
+    a.onloadedmetadata = () => { if (NAR.cur === cur && isFinite(a.duration)) guard(a.duration * 1000 / NAR.rate + 4000); };
+    guard((4000 + text.split(/\s+/).length * 450) / NAR.rate);
+    a.play().catch(() => { if (NAR.cur === cur) synth(); });
+    // the next step's clip is fetched now, so Play all does not wait on the network between steps
+    const next = narrClip(fig, i + 1); if (next) { NARR_NEXT = NARR_NEXT || new Audio(); if (NARR_NEXT.src !== next) { NARR_NEXT.preload = 'auto'; NARR_NEXT.src = next; NARR_NEXT.load(); } }
+  } else synth();
   return true;
 }
 function setNarr(mode) { NAR.mode = mode; store.set(COURSE.ns + ':narr', mode); narrStop(); narrFill(document); document.querySelectorAll('[data-nmode]').forEach(b => { b.classList.toggle('on', b.dataset.nmode === mode); b.setAttribute('aria-pressed', b.dataset.nmode === mode); }); }
@@ -1855,7 +1874,9 @@ function narrRowHTML(fig) {
   const n = fig.querySelectorAll('.stcap > p').length;
   const tr = `<details class="ntr"><summary>Transcript</summary><ol>${Array.from({length: n}, (_, i) => `<li data-ni="${i}">${esc(narrText(fig, i))}</li>`).join('')}</ol></details>`;
   if (NAR.mode === 'cap') return sel + tr;
-  return sel + (narrCan() ? rateSel() + `<button type="button" class="chip nmute" aria-pressed="${NAR.muted}">${NAR.muted ? '🔇 Muted' : '🔊 Sound on'}</button>` : '<span class="meta" style="margin:0">This browser has no voice: captions only.</span>') + tr;
+  const rec = narrHasClips(fig);
+  const who = `<span class="meta" style="margin:0">${rec ? 'Recorded narrator' : 'Device voice'}</span>`;
+  return sel + (rec || narrCan() ? who + rateSel() + `<button type="button" class="chip nmute" aria-pressed="${NAR.muted}">${NAR.muted ? '🔇 Muted' : '🔊 Sound on'}</button>` : '<span class="meta" style="margin:0">This browser has no voice: captions only.</span>') + tr;
 }
 const narrFill = root => root.querySelectorAll('.narrow').forEach(d => { const fig = d.closest('figure'); if (fig) d.innerHTML = narrRowHTML(fig); });
 // figures arrive with each page (and with a question's explanation): their rows are filled as they appear
@@ -1863,8 +1884,8 @@ new MutationObserver(ms => { for (const m of ms) m.addedNodes.forEach(nd => { if
   .observe(document.body, {childList: true, subtree: true});
 // the setting card at the top of the Diagrams page
 const narrCard = () => `<div class="card narrcard"><b>Guided narration</b><div class="row" style="margin-top:6px">${NAR_MODES.map(([k, l]) => `<button type="button" class="chip ${NAR.mode === k ? 'on' : ''}" aria-pressed="${NAR.mode === k}" data-nmode="${k}">${l}</button>`).join('')}</div>
-  ${narrCan() ? `<div class="row" style="margin-top:6px"><label class="meta" style="margin:0">Voice <select class="nvoice msel" aria-label="Narration voice"></select></label>${rateSel()}</div>` : ''}
-  <p class="sub" style="margin:6px 0 0">Narrate when tapped: Back, Next, the step dots and Play all read the step aloud with this device’s voice (the voice differs by device), and Play all moves on when the reading ends. Captions only: no sound, and a transcript of every step opens under each figure. Nothing plays until you tap a figure’s controls.</p></div>`;
+  <div class="row" style="margin-top:6px">${narrCan() ? `<label class="meta" style="margin:0">Device voice <select class="nvoice msel" aria-label="Device voice for figures without recordings"></select></label>` : ''}${rateSel()}</div>
+  <p class="sub" style="margin:6px 0 0">Narrate when tapped: Back, Next, the step dots and Play all read the step aloud, and Play all moves on when the reading ends. The Exam 2 figures are read by a recorded narrator; figures without recordings use this device’s voice (which differs by device). Captions only: no sound, and a transcript of every step opens under each figure. Nothing plays until you tap a figure’s controls.</p></div>`;
 document.addEventListener('change', e => {
   const t = e.target;
   if (t.classList.contains('nsel')) setNarr(t.value);
