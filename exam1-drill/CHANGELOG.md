@@ -2,6 +2,14 @@
 
 Newest first. The build embeds this file; the Topics page shows what is new since your last visit, and the Progress page shows all of it. Keep each bullet to one short line.
 
+## 2026-10-11 (guided narration)
+
+- Every step-through figure can be read aloud: one setting (Off, Narrate when tapped, Captions only).
+- Narrate: Back, Next, the dots and Play all read the step with the device's voice; Play all waits for it.
+- Speed 0.75x to 1.5x, mute, voice choice on the Diagrams page; a transcript folds under each figure.
+- Nothing plays until a figure's controls are tapped; the setting is kept on the device.
+- Scripts and recorded clips can be added per step in narration.js; until then the step's words are read.
+
 ## 2026-10-11 (All drugs page)
 
 - New tab All drugs: every drug on the Exam 1 and Exam 2 lists in one table, built from the reference tables.

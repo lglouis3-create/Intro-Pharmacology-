@@ -198,6 +198,7 @@ function leaveView() {
   if (typeof xBack === 'function') xBack(null);
   const tb = document.getElementById('tback'); if (tb) tb.remove();
   if (TIO) { TIO.disconnect(); TIO = null; }
+  if (typeof narrStop === 'function') narrStop();
 }
 /* Open a view. Returns false when the learner stays in a running exam. `back` is set by the
    "Back to …" button: the exam then reopens on its result page, not on a new paper. */
@@ -1747,28 +1748,140 @@ document.addEventListener('click', e => {
   const fig = b.closest('figure'); const steps = [...fig.querySelectorAll('.st')]; if (!steps.length) return;
   const cur = steps.findIndex(s => s.classList.contains('on')), n = steps.length;
   const playBtn = fig.querySelector('[data-go="play"]');
-  const stop = () => { if (ANIM) { clearTimeout(ANIM.t); ANIM.b.textContent = '▶ Play all'; ANIM.b.setAttribute('aria-pressed', 'false'); ANIM = null; } };
+  const stop = () => { narrStop(); if (ANIM) { clearTimeout(ANIM.t); ANIM.b.textContent = '▶ Play all'; ANIM.b.setAttribute('aria-pressed', 'false'); ANIM = null; } };
   const go = b.dataset.go;
   if (go === 'play') {
     const same = ANIM && ANIM.b === b; stop(); if (same) return;
     b.textContent = '❚❚ Pause'; b.setAttribute('aria-pressed', 'true');
     // Play resumes from the step shown; from the last step it glides back to step 1 first
     const restart = cur >= n - 1; if (restart) stepTo(fig, cur, 0);
+    // With narration on, a step lasts as long as its reading and the next starts a moment after;
+    // otherwise (off, muted, no voice) it lasts its words' worth of time.
+    const hold = (i, ms) => { if (!ANIM) return; if (!narrSpeak(fig, i, () => { if (ANIM) ANIM.t = setTimeout(tick, NAR_GAP); })) ANIM.t = setTimeout(tick, ms); };
     const tick = () => {
       if (!document.body.contains(fig)) return stop();
       const i = steps.findIndex(s => s.classList.contains('on'));
       if (i >= n - 1) return stop();
       stepTo(fig, i, i + 1);
-      if (i + 1 === n - 1) return stop();
-      ANIM.t = setTimeout(tick, playMs(fig, i + 1));
+      if (i + 1 === n - 1) { if (!narrSpeak(fig, n - 1, stop)) stop(); return; }
+      hold(i + 1, playMs(fig, i + 1));
     };
-    ANIM = {b, t: setTimeout(tick, restart ? playMs(fig, 0) : playMs(fig, cur) / 2)};
+    ANIM = {b, t: null, tick, fig};
+    hold(restart ? 0 : cur, restart ? playMs(fig, 0) : playMs(fig, cur) / 2);
     return;
   }
   if (ANIM && ANIM.b === playBtn) stop();
-  if (go === 'replay') return stepTo(fig, cur > 0 ? cur - 1 : null, cur);
-  if (go === 'dot') return stepTo(fig, cur, +b.dataset.i);
-  stepTo(fig, cur, (cur + (+go) + n) % n);
+  let to = cur;
+  if (go === 'replay') stepTo(fig, cur > 0 ? cur - 1 : null, cur);
+  else if (go === 'dot') { to = +b.dataset.i; stepTo(fig, cur, to); }
+  else { to = (cur + (+go) + n) % n; stepTo(fig, cur, to); }
+  narrSpeak(fig, to);
+});
+/* ---------- Guided narration ----------
+   Every step-through figure can be read aloud: the device's voice (Web Speech) reads the step's text,
+   or a recorded clip plays when narration.js names one for that step, and Play all moves on when the
+   reading ends. One setting serves the whole drill (Off · Narrate when tapped · Captions only), kept
+   on this device. Nothing plays on its own: a reading starts only from a tap on a figure's controls,
+   which is also what phones require before they play sound. Long readings are spoken a sentence at a
+   time, since some browsers cut a single long utterance short. */
+const NAR = {mode: store.get(COURSE.ns + ':narr') || 'off', rate: +store.get(COURSE.ns + ':narr-rate') || 1, voice: store.get(COURSE.ns + ':narr-voice') || '', muted: false, cur: null};
+const NAR_MODES = [['off', 'Off'], ['tap', 'Narrate when tapped'], ['cap', 'Captions only']];
+const NAR_RATES = [0.75, 1, 1.25, 1.5], NAR_GAP = 500;
+const narrCan = () => typeof speechSynthesis !== 'undefined' && typeof SpeechSynthesisUtterance === 'function';
+const narrOn = () => NAR.mode === 'tap' && !NAR.muted;
+// what the voice says for the written forms: arrows, Greek letters and the course's abbreviations
+const SPEAK = [[/→/g, ' leads to '], [/↑/g, ' more '], [/↓/g, ' less '], [/α/g, 'alpha '], [/β/g, 'beta '], [/MAO-([AB])\b/g, 'M A O $1'],
+  [/\bG([sqi])\b/g, 'G $1'], [/\bcAMP\b/g, 'cyclic A M P'], [/\bcGMP\b/g, 'cyclic G M P'], [/\bAChE\b/g, 'acetylcholinesterase'], [/\bACh\b/g, 'acetylcholine'],
+  [/\bNE\b/g, 'norepinephrine'], [/\bEpi\b/g, 'epinephrine'], [/\bNMJ\b/g, 'neuromuscular junction'], [/\bSNS\b/g, 'sympathetic'], [/\bPNS\b/g, 'parasympathetic'],
+  [/\bHR\b/g, 'heart rate'], [/\bBP\b/g, 'blood pressure'], [/\bNO\b/g, 'nitric oxide'], [/\bSCh\b/g, 'succinylcholine'], [/\b([MNH])([123nm])\b/g, '$1 $2'],
+  [/\bCa\+\+|\bCa2\+/g, 'calcium'], [/\bK\+/g, 'potassium'], [/\bNa\+/g, 'sodium'], [/\bEmax\b/g, 'E max'], [/\b(E[CD])50\b/g, '$1 50'], [/\bKd\b/g, 'K D'],
+  [/\b(GTP|GDP|GPCR|RTK|MAO|RAAS|ACE|AT1|AT2|PDE|PLC|DAG|IP3|PKA|ATP|GRK|ARB|CNS|GI|NET|SERT|VMAT|DUMBBELSS|sGC|AV|SA)\b/g, m => m.split('').join(' ')]];
+const speakable = t => SPEAK.reduce((x, [re, r]) => x.replace(re, r), t).replace(/\s+/g, ' ').trim();
+const narrKey = fig => { const a = fig.querySelector('[data-anim]'); return a ? a.dataset.anim : ''; };
+const narrEntry = (fig, i) => { const n = typeof NARRATION === 'undefined' ? null : NARRATION[narrKey(fig)]; return n && n.steps && n.steps[i] || {}; };
+// the step's words: its script when one is written, else its caption without the "Step i of n" lead and the slide title
+function narrText(fig, i) {
+  const e = narrEntry(fig, i); if (e.text) return e.text;
+  const p = fig.querySelectorAll('.stcap > p')[i]; if (!p) return '';
+  const c = p.cloneNode(true); c.querySelectorAll('b, i').forEach(x => x.remove());
+  return c.textContent.replace(/^[\s·]+/, '').trim();
+}
+let VOICES = [], NARR_AUDIO = null;
+const loadVoices = () => { if (narrCan()) VOICES = speechSynthesis.getVoices().filter(v => /^en/i.test(v.lang)); };
+if (narrCan()) { loadVoices(); speechSynthesis.addEventListener('voiceschanged', () => { loadVoices(); document.querySelectorAll('.nvoice').forEach(fillVoices); }); }
+// the chosen voice, else a male English voice the device offers, else its default English voice
+function narrVoice() {
+  if (NAR.voice) { const v = VOICES.find(v => v.name === NAR.voice); if (v) return v; }
+  return VOICES.find(v => /\b(Daniel|Aaron|Alex|David|Guy|Arthur|Fred|Rishi|Male)\b/i.test(v.name)) || VOICES.find(v => v.default) || VOICES[0] || null;
+}
+function narrStop() {
+  const cur = NAR.cur; NAR.cur = null;
+  if (cur) { clearTimeout(cur.t); cur.fig.classList.remove('speaking'); }
+  if (NARR_AUDIO) { NARR_AUDIO.onended = NARR_AUDIO.onerror = null; NARR_AUDIO.pause(); }
+  if (narrCan()) speechSynthesis.cancel();
+}
+/* Read step i of the figure. Returns true when a reading started (done(true) follows once it ends),
+   false when there is nothing to read (narration off, muted, no voice, no text); done is not called then. */
+function narrSpeak(fig, i, done) {
+  narrStop(); if (!narrOn()) return false;
+  const text = narrText(fig, i), src = narrEntry(fig, i).src; if (!text) return false;
+  if (!src && !narrCan()) return false;
+  const cur = NAR.cur = {fig, i, t: null}; fig.classList.add('speaking');
+  const finish = () => { if (NAR.cur !== cur) return; clearTimeout(cur.t); NAR.cur = null; fig.classList.remove('speaking'); if (done) done(true); };
+  if (src) {
+    const a = NARR_AUDIO || (NARR_AUDIO = new Audio()); a.src = src; a.playbackRate = NAR.rate; a.onended = a.onerror = finish;
+    a.play().catch(finish);
+  } else {
+    const v = narrVoice(); let last = null;
+    (speakable(text).match(/[^.;:!?]+[.;:!?]*/g) || [text]).forEach(part => {
+      if (!part.trim()) return; const u = new SpeechSynthesisUtterance(part.trim()); u.rate = NAR.rate; u.lang = 'en-US'; if (v) u.voice = v; last = u; speechSynthesis.speak(u);
+    });
+    if (!last) { finish(); return true; }
+    last.onend = last.onerror = finish;
+  }
+  // a voice that never reports its end must not stall Play all: give it the words' worth of time, then move on
+  cur.t = setTimeout(finish, (2000 + text.split(/\s+/).length * 450) / NAR.rate);
+  return true;
+}
+function setNarr(mode) { NAR.mode = mode; store.set(COURSE.ns + ':narr', mode); narrStop(); narrFill(document); document.querySelectorAll('[data-nmode]').forEach(b => { b.classList.toggle('on', b.dataset.nmode === mode); b.setAttribute('aria-pressed', b.dataset.nmode === mode); }); }
+function setRate(r) { NAR.rate = r; store.set(COURSE.ns + ':narr-rate', String(r)); document.querySelectorAll('.nrate').forEach(s => s.value = String(r)); if (NARR_AUDIO) NARR_AUDIO.playbackRate = r; }
+const rateSel = () => `<label class="meta" style="margin:0">Speed <select class="nrate msel" aria-label="Narration speed">${NAR_RATES.map(r => `<option value="${r}" ${r === NAR.rate ? 'selected' : ''}>${r}×</option>`).join('')}</select></label>`;
+function fillVoices(sel) { sel.innerHTML = `<option value="">Automatic</option>` + VOICES.map(v => `<option value="${esc(v.name)}" ${v.name === NAR.voice ? 'selected' : ''}>${esc(v.name)}</option>`).join(''); }
+/* The row under a figure's controls: the setting (always, so it can be found), and when narration is on
+   the speed, a mute switch and a transcript of every step (a line of it jumps to that step). */
+function narrRowHTML(fig) {
+  const sel = `<label class="meta" style="margin:0">Narration <select class="nsel msel" aria-label="Guided narration">${NAR_MODES.map(([k, l]) => `<option value="${k}" ${k === NAR.mode ? 'selected' : ''}>${l}</option>`).join('')}</select></label>`;
+  if (NAR.mode === 'off') return sel;
+  const n = fig.querySelectorAll('.stcap > p').length;
+  const tr = `<details class="ntr"><summary>Transcript</summary><ol>${Array.from({length: n}, (_, i) => `<li data-ni="${i}">${esc(narrText(fig, i))}</li>`).join('')}</ol></details>`;
+  if (NAR.mode === 'cap') return sel + tr;
+  return sel + (narrCan() ? rateSel() + `<button type="button" class="chip nmute" aria-pressed="${NAR.muted}">${NAR.muted ? '🔇 Muted' : '🔊 Sound on'}</button>` : '<span class="meta" style="margin:0">This browser has no voice: captions only.</span>') + tr;
+}
+const narrFill = root => root.querySelectorAll('.narrow').forEach(d => { const fig = d.closest('figure'); if (fig) d.innerHTML = narrRowHTML(fig); });
+// figures arrive with each page (and with a question's explanation): their rows are filled as they appear
+new MutationObserver(ms => { for (const m of ms) m.addedNodes.forEach(nd => { if (nd.nodeType !== 1) return; if (nd.matches && nd.matches('.narrow') && !nd.firstChild) narrFill({querySelectorAll: () => [nd]}); else if (nd.querySelectorAll) nd.querySelectorAll('.narrow:empty').forEach(d => { const fig = d.closest('figure'); if (fig) d.innerHTML = narrRowHTML(fig); }); }); })
+  .observe(document.body, {childList: true, subtree: true});
+// the setting card at the top of the Diagrams page
+const narrCard = () => `<div class="card narrcard"><b>Guided narration</b><div class="row" style="margin-top:6px">${NAR_MODES.map(([k, l]) => `<button type="button" class="chip ${NAR.mode === k ? 'on' : ''}" aria-pressed="${NAR.mode === k}" data-nmode="${k}">${l}</button>`).join('')}</div>
+  ${narrCan() ? `<div class="row" style="margin-top:6px"><label class="meta" style="margin:0">Voice <select class="nvoice msel" aria-label="Narration voice"></select></label>${rateSel()}</div>` : ''}
+  <p class="sub" style="margin:6px 0 0">Narrate when tapped: Back, Next, the step dots and Play all read the step aloud with this device’s voice (the voice differs by device), and Play all moves on when the reading ends. Captions only: no sound, and a transcript of every step opens under each figure. Nothing plays until you tap a figure’s controls.</p></div>`;
+document.addEventListener('change', e => {
+  const t = e.target;
+  if (t.classList.contains('nsel')) setNarr(t.value);
+  else if (t.classList.contains('nrate')) setRate(+t.value);
+  else if (t.classList.contains('nvoice')) { NAR.voice = t.value; store.set(COURSE.ns + ':narr-voice', t.value); }
+});
+document.addEventListener('click', e => {
+  const m = e.target.closest('[data-nmode]'); if (m) return setNarr(m.dataset.nmode);
+  const mu = e.target.closest('.nmute');
+  if (mu) {
+    NAR.muted = !NAR.muted; document.querySelectorAll('.nmute').forEach(b => { b.setAttribute('aria-pressed', NAR.muted); b.textContent = NAR.muted ? '🔇 Muted' : '🔊 Sound on'; });
+    // muted mid-reading: Play all goes on at the reading pace of the words
+    if (NAR.cur && ANIM && ANIM.fig === NAR.cur.fig) { const i = NAR.cur.i; narrStop(); ANIM.t = setTimeout(ANIM.tick, playMs(ANIM.fig, i)); } else narrStop();
+    return;
+  }
+  const li = e.target.closest('.ntr li[data-ni]');
+  if (li) { const fig = li.closest('figure'), dot = fig && fig.querySelector(`.sdot[data-i="${li.dataset.ni}"]`); if (dot) dot.click(); }
 });
 /* "Explain one": a select (or a Why? button in a table row) shows the matching
    <template data-x> card under the table; the card's button scrolls to that drug's panels. */
@@ -1977,7 +2090,8 @@ function vDiagrams() {
   return toc + body || '<div class="empty">This exam\'s diagrams are added as its lectures are written.</div>';
   }));
   });
-  $('#view').innerHTML = `<h2>Diagrams</h2><p class="sub">Every process diagram in one place. ▶ marks a step-through figure: use Next, Play all or the step dots under it.</p>${out}`;
+  $('#view').innerHTML = `<h2>Diagrams</h2><p class="sub">Every process diagram in one place. ▶ marks a step-through figure: use Next, Play all or the step dots under it.</p>${narrCard()}${out}`;
+  $('#view').querySelectorAll('.nvoice').forEach(fillVoices);
   $('#view').querySelectorAll('[data-dg]').forEach(a => a.onclick = e => { e.preventDefault(); const el = document.getElementById('dg-' + a.dataset.dg); if (el) scrollToEl(el); });
 }
 function vGraphs() {
