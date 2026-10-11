@@ -39,6 +39,14 @@ header{position:sticky;top:0;z-index:5;background:var(--panel);border-bottom:1px
 @media (max-width:560px){.bar h1{white-space:normal;margin-right:0}}
 nav{display:flex;flex-wrap:wrap;gap:4px}
 nav button{border:1px solid var(--line);background:var(--chip);color:var(--ink);padding:5px 10px;border-radius:6px;font-size:14px;cursor:pointer}
+/* wider than a phone: the title row carries the theme select at its right, and the tabs get the whole width below it in one compact row */
+@media (min-width:561px){
+  .bar{position:relative;padding:7px 16px 6px;gap:3px 6px}
+  .bar h1{flex:1 1 100%;margin:0 90px 0 0;min-height:26px;display:flex;align-items:center}
+  nav{flex:1 1 100%;gap:2px}
+  nav button{padding:3px 7px;font-size:13px}
+  nav select{position:absolute;right:16px;top:7px;font-size:12px;padding:3px 4px}
+}
 nav button.on{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
 main{max-width:880px;margin:0 auto;padding:16px}
 h2{font-size:20px;margin:6px 0 8px}
@@ -119,7 +127,7 @@ select,input[type=text],input[type=number]{font-size:15px;padding:6px 8px;border
 .fig .cl.d{fill:var(--figD)} .fig .cl.e{fill:var(--figE)}
 .stemfig{margin:0 0 12px}
 .fig .cl{font-size:11px;font-weight:600} .fig .cl.a{fill:var(--figA)} .fig .cl.b{fill:var(--figB)} .fig .cl.c{fill:var(--figC)}
-.fig .lbl{fill:var(--ink);font-size:11px} .fig .lbl.big{font-size:20px;font-weight:700} .fig .lbl.sm{font-size:10px;font-weight:600} .fig .lbl.xs{font-size:8.5px;fill:var(--muted)} .fig .lbl.sm2{font-size:10px}
+.fig .lbl{fill:var(--ink);font-size:11px} .fig .lbl.big{font-size:20px;font-weight:700} .fig .lbl.sm{font-size:10px;font-weight:600} .fig .lbl.xs{font-size:10px;fill:var(--muted)} .fig .lbl.sm2{font-size:10px}
 .fig .shape{fill:var(--chip);stroke:var(--line);stroke-width:1.5}
 .fig .pocket{fill:var(--bg);stroke:var(--muted);stroke-width:1}
 .fig .lig.a{fill:var(--figA)} .fig .lig.b{fill:var(--figB)} .fig .lig.c{fill:var(--figC)}
@@ -133,7 +141,9 @@ select,input[type=text],input[type=number]{font-size:15px;padding:6px 8px;border
 .fig .st-out{pointer-events:none}
 .sdot{transition:background-color .3s cubic-bezier(.65,0,.35,1)}
 @media (prefers-reduced-motion:reduce){.fig .st-out{display:none} .sdot{transition:none}}
-.sdots{display:inline-flex;gap:6px;align-items:center;margin-left:auto} .sdot{width:12px;height:12px;border-radius:50%;background:var(--line);border:none;padding:0;cursor:pointer} .sdot.on{background:var(--accent)} .sdot:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.sdots{display:inline-flex;gap:6px;align-items:center;margin-left:auto} .sdot{position:relative;width:12px;height:12px;border-radius:50%;background:var(--line);border:none;padding:0;cursor:pointer} .sdot.on{background:var(--accent)} .sdot:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+/* a step dot is drawn 12 px wide but takes a 24 px tap */
+.sdot::after{content:'';position:absolute;inset:-6px;border-radius:50%}
 .fig .arrow{stroke:var(--muted);stroke-width:1.6;fill:none;marker-end:url(#arw)}
 .shiftgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(400px,1fr));gap:12px;margin:8px 0 18px} .shiftgrid .fig{max-width:none;margin:0}
 .pair{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:8px 0 18px} .pair .fig{max-width:none;margin:0} .pair h4{grid-column:1/-1;margin:0}
@@ -157,8 +167,22 @@ nav select{font-size:13px;padding:4px 6px;border:1px solid var(--line);border-ra
 .letters{display:flex;flex-wrap:wrap;gap:4px;margin-top:8px} .letters .lt{font:inherit;font-size:13px;font-weight:600;min-width:28px;height:28px;padding:0 4px;border:1px solid var(--line);border-radius:6px;background:var(--chip);color:var(--ink);cursor:pointer} .letters .lt:disabled{opacity:.35;cursor:default} .letters .lt:not(:disabled):hover{border-color:var(--accent)} .letters .lt:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
 #tback{position:fixed;left:50%;transform:translateX(-50%);bottom:14px;white-space:nowrap;z-index:20;box-shadow:0 2px 10px rgba(0,0,0,.25)}
 .news{border-left:4px solid var(--accent)} .news ul{margin:6px 0 8px;padding-left:20px} .news li{margin:2px 0}
-/* the centred floating buttons sit above "Back to the question" when both are shown */
+/* folds: "More" under an answer, the legend at the top of a page, the topic counts, What's new on a phone */
+.fold>summary{cursor:pointer;color:var(--accent);font-size:13px;list-style:none;user-select:none} .fold>summary::-webkit-details-marker{display:none}
+.fold>summary::after{content:' ▸';display:inline-block;transition:transform .15s} .fold[open]>summary::after{transform:rotate(90deg)}
+.news>summary{font-size:15px;color:var(--ink)} .news>summary b{color:var(--ink)}
+.qmore{margin-top:8px} .qmore>summary{padding:4px 0} .qmore .why{margin-left:8px}
+.legend{margin:0 0 10px} .legend .sub{margin:6px 0 0}
+.bpl{margin-top:4px} .bpcols{margin:4px 0 0;padding-left:20px;font-size:14px;columns:2;column-gap:20px} .bpcols li{break-inside:avoid;margin:1px 0}
+@media (max-width:560px){.bpcols{columns:1}}
+label:has(input:disabled){opacity:.5}
+.btn.sm{padding:4px 10px;font-size:13px}
+.notice{color:var(--warn)}
+/* the centred floating buttons sit above "Back to the question" when both are shown; the page keeps room under them */
 body:has(#backbtn) #xback, body:has(#backbtn) #tback{bottom:64px}
+body:has(#backbtn) main, body:has(#xback) main, body:has(#tback) main{padding-bottom:96px}
+/* figure cards and guide sections off screen are not laid out until they scroll near (jumps force the target to render) */
+.fig,.guide{content-visibility:auto;contain-intrinsic-size:auto 340px} .guide{contain-intrinsic-size:auto 1400px}
 /* a matching question's dropdown wraps under its prompt on a phone instead of widening the page */
 select[data-l]{max-width:100%;min-width:0;flex:1 1 220px;font:inherit;font-size:14px;padding:4px 6px;border:1px solid var(--line);border-radius:6px;background:var(--chip);color:var(--ink)}
 #savewarn{position:fixed;left:12px;right:12px;top:12px;z-index:30;max-width:720px;margin:0 auto;background:var(--warn-bg);color:var(--ink);border:1px solid var(--warn);border-radius:8px;padding:10px 12px;font-size:14px;box-shadow:0 2px 10px rgba(0,0,0,.25)} #savewarn .btn{margin-left:8px;padding:4px 10px}

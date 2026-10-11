@@ -43,9 +43,10 @@ const out = path.join(__dirname, '..', course.match(/output:\s*'([^']+)'/)[1]);
   if (!(await page.$$('.why')).length) fail('keyboard pick did not answer the question');
   await page.keyboard.press('Enter');
   if ((await page.textContent('#view')) === before) fail('Enter did not advance the quiz');
-  // last-updated stamp present
+  // last-updated stamp present (in the header, once; the Topics page no longer repeats it)
   await page.click('nav button[data-v="topics"]');
-  if (!/Last updated \w+ \d+, \d{4}/.test(await page.textContent('#view'))) fail('last-updated stamp missing');
+  if (!/updated \w+ \d+, \d{4}/.test(await page.textContent('#apptitle'))) fail('last-updated stamp missing from the header');
+  if (/Last updated/.test(await page.textContent('#view')) || (await page.$$('#view h2')).length) fail('Topics repeats the header title or stamp');
   // terms: glossary renders figures, flashcard flips and grades, quiz starts
   await page.click('nav button[data-v="terms"]');
   if (!(await page.$$('.term')).length) fail('glossary shows no terms');
@@ -137,7 +138,9 @@ const out = path.join(__dirname, '..', course.match(/output:\s*'([^']+)'/)[1]);
   const logN = await page.evaluate(() => S.log.length);
   await page.keyboard.press('Enter'); await page.keyboard.press('Enter');
   if ((await page.evaluate(() => S.log.length)) !== logN) fail('Enter on the finished pass recorded an answer');
-  await page.click('nav button[data-v="exam"]'); await page.click('[data-layout="all"]'); await page.click('#startx');
+  // (the submitted paper above is kept across the reload, on its result page: start afresh)
+  await page.click('nav button[data-v="exam"]'); { const nx0 = await page.$('#newx'); if (nx0) await nx0.click(); }
+  await page.click('[data-layout="all"]'); await page.click('#startx');
   await page.click('.qcard [data-o]'); await page.click('#submit');
   if (!/Exam result/.test(await page.textContent('#view'))) fail('exam all-on-one-page did not submit');
   await page.click('[data-flag]');
@@ -485,6 +488,61 @@ const out = path.join(__dirname, '..', course.match(/output:\s*'([^']+)'/)[1]);
   if (!(await page.$('.wcard'))) fail('no concept card at phone width');
   await page.setViewportSize({width: 1100, height: 800});
   await page.evaluate(ex => { S = normalize({q: {}, log: []}); save(); store.set(EXAM_KEY, ex || '2'); }, wk.keepEx);
+  // ---- regressions from the independent audit (10/11) ----
+  // 1: a paper in progress survives a reload: same questions, same answers, clock still counting; an expired one is submitted
+  await page.click('nav button[data-v="topics"]'); await page.click('[data-layout="one"]');
+  await page.click('nav button[data-v="exam"]'); await page.click('#startx');
+  const px = await page.evaluate(() => { for (let k = 0; k < 3; k++) { EX.i = k; renderExam(); document.querySelector('[data-o]').click(); } return {qs: EX.qs.slice(), ans: Object.assign({}, EX.ans), ends: EX.ends, saved: !!localStorage.getItem(EXKEY())}; });
+  if (!px.saved || Object.keys(px.ans).length !== 3) fail('exam not saved after answering: ' + JSON.stringify({saved: px.saved, n: Object.keys(px.ans).length}));
+  await page.reload();
+  const px2 = await page.evaluate(() => ({cur: CUR, qs: EX && EX.qs, ans: EX && EX.ans, ends: EX && EX.ends, clock: (document.getElementById('clock') || {}).textContent, ticking: TICK != null}));
+  if (px2.cur !== 'exam' || JSON.stringify(px2.qs) !== JSON.stringify(px.qs) || JSON.stringify(px2.ans) !== JSON.stringify(px.ans) || px2.ends !== px.ends || !/left/.test(px2.clock || '') || !px2.ticking) fail('reload lost the exam: ' + JSON.stringify({cur: px2.cur, same: JSON.stringify(px2.qs) === JSON.stringify(px.qs), ans: px2.ans, clock: px2.clock}));
+  await page.evaluate(() => { EX.ends = Date.now() - 1000; saveExam(); });
+  await page.reload();
+  if (!/Exam result: \d+\/\d+/.test(await page.textContent('#view'))) fail('an expired saved paper was not submitted on return');
+  if (await page.evaluate(() => { const s = (S.exams || []).slice(-1)[0]; return !s || Date.now() - s.t > 10000; })) fail('the auto-submitted paper was not recorded');
+  await page.click('#newx');
+  if (await page.evaluate(() => !!localStorage.getItem(EXKEY()) || EX)) fail('New exam did not clear the saved paper');
+  // 2: matching: the all-or-nothing note, "n of m pairs right" after a partial answer, Enter continues
+  const mp2 = await page.evaluate(() => {
+    const m = QUESTIONS.find(q => q.type === 'match' && q.left.length >= 2); if (!m) return 'skip';
+    S.layout = 'one'; startQuiz([m, QUESTIONS[0]], 'match', 'pass');
+    const note = /scored all-or-nothing/.test(document.querySelector('.qcard').textContent);
+    Q.mpick = {}; m.left.forEach((l, i) => { Q.mpick[i] = i === 0 ? pairOf(m, l) : m.right.find(r => r !== pairOf(m, l)); });
+    check(); const txt = document.querySelector('.verdict').textContent;
+    return {note, verdict: txt, ok: Q.ok, answered: Q.answered};
+  });
+  if (mp2 !== 'skip') { if (!mp2.note || mp2.ok || !/1 of \d+ pairs right/.test(mp2.verdict)) fail('matching feedback: ' + JSON.stringify(mp2)); await page.keyboard.press('Enter'); if (await page.evaluate(() => Q.cur.type === 'match')) fail('Enter did not continue after a matching answer'); }
+  // 3: after a write the browser refuses, store.get returns the value kept in memory, not the stale stored one
+  const sg = await page.evaluate(() => { const k = COURSE.ns + ':probe'; localStorage.setItem(k, 'old'); const orig = Storage.prototype.setItem; Storage.prototype.setItem = function () { throw new Error('quota'); }; const ok = store.set(k, 'new'); const got = store.get(k); Storage.prototype.setItem = orig; const ok2 = store.set(k, 'new2'); const got2 = store.get(k); store.del(k); return {ok, got, ok2, got2, gone: store.get(k)}; });
+  if (sg.ok || sg.got !== 'new' || !sg.ok2 || sg.got2 !== 'new2' || sg.gone !== null) fail('store.get after a failed write: ' + JSON.stringify(sg));
+  // 4: an Exam 1 Why? card fills its explanation box
+  await page.evaluate(() => { store.set(EXAM_KEY, '1'); go('ref'); });
+  const w1 = await page.evaluate(() => { const w = document.querySelector('details[data-ex="1"] [data-xpick]'); if (!w) return 'none'; w.click(); const o = document.querySelector(`[data-xout="${w.dataset.xpick.split(':')[0]}"]`); return o ? o.textContent.trim().length : 0; });
+  if (w1 === 'none' || w1 < 20) fail('Exam 1 Why? card empty (' + w1 + ')');
+  // 5: an import with box 99 is clamped to the top box and still schedules
+  const b99 = await page.evaluate(() => { const q = QUESTIONS[0]; const t = normalize({q: {[q.id]: {n: 1, ok: 1, box: 99, due: 0, last: 0}}, log: []}); const keep = S; S = t; let err = ''; try { schedule(q.id, 'sure'); } catch (e) { err = e.message; } const r = {box: S.q[q.id].box, due: S.q[q.id].due > Date.now(), err}; S = keep; return r; });
+  if (b99.err || b99.box !== 5 || !b99.due) fail('box 99 import: ' + JSON.stringify(b99));
+  // 6: the folded answer card: the chosen and right whys show, the other options' whys sit behind "More" (closed), the cite too
+  const fold = await page.evaluate(() => {
+    const q = examPool().find(x => x.options && !x.type && !x.multi && x.options.length >= 4 && x.options.every(o => o.why)); S.layout = 'one'; startQuiz([q], 'fold', 'pass');
+    const wrong = q.options.findIndex(o => !o.correct); pick(wrong);
+    const card = document.querySelector('.qcard'), more = card.querySelector('details.qmore');
+    const visibleWhys = [...card.querySelectorAll(':scope > .why')].length, hiddenWhys = more ? more.querySelectorAll('.why').length : -1;
+    const r = {visibleWhys, hiddenWhys, open: more && more.open, citeInMore: !!(more && more.querySelector('.cite')), citeOutside: !!card.querySelector(':scope > .cite'), explain: !!card.querySelector('[data-jump]'), teach: !!card.querySelector(':scope > .teach') || !q.teach};
+    more.open = true; r.opens = more.querySelector('.why').getBoundingClientRect().height > 0; return r;
+  });
+  if (fold.visibleWhys !== 2 || fold.hiddenWhys < 1 || fold.open || !fold.citeInMore || fold.citeOutside || !fold.explain || !fold.teach || !fold.opens) fail('folded answer card: ' + JSON.stringify(fold));
+  // 7: flashcards: "Did not know" does not serve the same card straight back; the meta line counts due and new
+  const fc = await page.evaluate(() => { TM.mode = 'flash'; TM.group = 'all'; TM.card = null; TM.last = null; go('terms'); let rep = 0; for (let i = 0; i < 6; i++) { const id = TM.card.id; document.getElementById('fcshow').click(); document.querySelector('[data-fc="wrong"]').click(); if (TM.card.id === id) rep++; } const meta = ([...document.querySelectorAll('#view .meta')].find(m => /cards seen/.test(m.textContent)) || {}).textContent || ''; TM.mode = 'glossary'; return {rep, meta}; });
+  if (fc.rep || !/\d+ due · \d+ new/.test(fc.meta)) fail('flashcards: ' + JSON.stringify(fc));
+  // 8: Topics first screen on a phone: What's new folded to one line, study buttons above the fold, no duplicate title
+  await page.setViewportSize({width: 390, height: 844});
+  await page.evaluate(() => { store.del(NEWS_KEY); go('topics'); });
+  const tp = await page.evaluate(() => { const n = document.getElementById('news'), d = document.getElementById('due'); return {news: !!n, open: n && n.open, newsH: n ? Math.round(n.getBoundingClientRect().height) : 0, dueBottom: d ? Math.round(d.getBoundingClientRect().bottom) : 9999, h2: document.querySelectorAll('#view h2').length, hdr: Math.round(document.querySelector('header').getBoundingClientRect().height)}; });
+  if (!tp.news || tp.open || tp.newsH > 70 || tp.dueBottom > 844 || tp.h2 || tp.hdr > 110) fail('Topics first screen at 390px: ' + JSON.stringify(tp));
+  await page.setViewportSize({width: 1100, height: 800});
+  await page.evaluate(ex => { S = normalize({q: {}, log: []}); save(); store.set(EXAM_KEY, ex || '2'); endExam(); }, wk.keepEx);
   if (errors.length) fail('page errors: ' + errors.join(' | '));
   console.log(`answered ${answered} quiz items (${multiSeen} select-all), exam of ${total}`);
   console.log(`browser_test.js: ${process.exitCode ? 'FAILED' : 'passed'}`);
