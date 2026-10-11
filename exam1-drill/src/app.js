@@ -231,6 +231,8 @@ const BY_GROUP = {g1: ['guide', 'guide-7', 'Guide 7: drug basics he tests'], g2:
 const G2 = (n, t) => ['guide', 'guide2-' + n, 'Guide: ' + t];
 const LINKS2 = [
   [/tracing|compound|drug-?x|skm-|ne-drug-b|epi-two|gi-tracing/, [G2(8, 'reading his tracings')]],
+  [/ach-?bolus|reflex-?tachy|polygraph|atropine-pretreat/, [G2(8, 'reading his tracings'), ['diagrams', 'dg-e2-ach-bolus-anim', 'Diagram: the acetylcholine bolus tracing'], ['tell', 'tell2-heart', 'Tell apart: M2 vs β1 at the heart']]],
+  [/dual-?innerv|single-?innerv|gut-?alpha2|alpha2-?gut|constipat|innervation-?map|exceptions?/, [G2(1, 'the autonomic layout'), ['diagrams', 'dg-e2-innervation-map', 'Diagram: dual innervation and its exceptions'], ['diagrams', 'dg-e2-gi-dual-anim', 'Diagram: the gut α2 brake'], ['tell', 'tell2-organ', 'Tell apart: SNS vs PNS per organ']]],
   [/baroref|barorecept|stand-?up|orthostat/, [G2(1, 'the autonomic layout'), ['diagrams', 'dg-e2-baroreflex-anim', 'Diagram: baroreceptor reflex'], ['ref', 'ref2-2', 'Reference: organ by organ, PNS vs SNS'], ['tell', 'tell2-organ', 'Tell apart: SNS vs PNS per organ']]],
   [/cross-?talk|ach-?bolus|atropine-pretreat|m2-vs-b1|predominant-?tone/, [G2(7, 'β drugs, epinephrine, NE'), ['tell', 'tell2-heart', 'Tell apart: M2 vs β1 at the heart'], ['diagrams', 'dg-crosstalk', 'Diagram: cross-talk']]],
   [/who-runs|\borgan\b|dual-?innerv|predominant|lungs-pns|receptor-map|g-?protein-table/, [G2(1, 'the autonomic layout'), ['ref', 'ref2-2', 'Reference: organ by organ, PNS vs SNS'], ['ref', 'ref2-1', 'Reference: receptors and G proteins'], ['tell', 'tell2-organ', 'Tell apart: SNS vs PNS per organ']]],
@@ -1872,7 +1874,7 @@ function startGraph(key) {
 /* Diagrams: every process diagram and step-through figure on one page, grouped,
    with a contents list at the top that jumps to each one. */
 const DIAGRAMS = [
-  ['Signal transduction', ['gpcr-steps', 'gpcr-anim', 'galpha-chain', 'galpha-anim', 'rtk-steps', 'rtk-anim', 'rtk-scenarios-anim']],
+  ['Signal transduction', ['gpcr-steps', 'gpcr-anim', 'galpha-chain', 'galpha-anim', 'crosstalk', 'rtk-steps', 'rtk-anim', 'rtk-scenarios-anim']],
   ['Two drugs at one receptor: how the curve moves', ['shift-competitive-anim', 'shift-irreversible-anim', 'shift-inverse-anim', 'shift-fafa-anim', 'shift-fapa-anim', 'shift-fapa-down-anim', 'shift-allo-agonist-anim', 'shift-allo-antagonist-anim']],
   ['Indirect antagonists and drug combinations', ['ind-ssri-anim', 'ind-snri-anim', 'ind-ache-anim', 'ind-carbidopa-anim', 'ind-pde-anim', 'ind-ras-anim', 'enhance-anim']],
   ['Receptor regulation', ['reg-chain', 'desens-rapid-anim', 'desens-long-anim', 'upreg-anim', 'downreg-anim']],

@@ -26,9 +26,9 @@ Port **behaviour, not content**. Do not copy Exam 1 questions, figures, quotes o
 3. **Step-through figures with motion**
    - `stepper(key, title, steps, h, cap, footer)` in diagrams.js renders Back, Next, Replay step, Play all/Pause and step dots. The step words are HTML under the picture (14 px), in a box that keeps the height of the longest step so the buttons do not jump.
    - `stepTo(fig, from, to)` in app.js (rewritten 10/10) uses the Web Animations API with FLIP (measure, invert, play), animating only transform and opacity and leaving nothing inline afterwards. One easing: `cubic-bezier(.65,0,.35,1)`. Staging: leaving shapes fade and shrink out (280 ms); shapes present in both steps glide (620 ms, from 120 ms; matched by `data-k`, else tag + class + text/fill, ignoring motion classes); new shapes fade and scale in from 380 ms (480 ms); `data-o="n"` delays a shape by n × 150 ms so a chain builds link by link. Shapes that change size morph; colour or text changes cross-fade; a new click picks up mid-motion; rotated labels glide.
-   - Play after Pause resumes from the step shown. `prefers-reduced-motion` turns all motion off.
+   - Play after Pause resumes from the step shown; Play pacing is 1.4 s of motion plus 150 ms per word of the step text, clamped to 3.2–8 s. `prefers-reduced-motion` turns all motion off.
    - Coloured SVG labels mix the figure colour 55:45 with the ink colour (`color-mix`) to keep ≥4.5:1 contrast in both themes.
-   - Exam 2 figures are drawn on a 300-wide canvas with no text under 11 units (≥11 px on a 375 px phone).
+   - Exam 2 figures are drawn on a 300-wide canvas with no text under 11 units (≥11 px on a 375 px phone); Exam 1 figures use `.lbl.xs` at 10 units (was 8.5) and scroll sideways inside the figure on phones.
    - `stepper_test.js` checks every step-through (settle state, no shape fades out and back in).
    - Sources: aerotwist.com/blog/flip-your-animations, MDN transform-box, web.dev animations-and-performance.
 

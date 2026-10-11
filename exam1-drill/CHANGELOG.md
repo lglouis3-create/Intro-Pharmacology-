@@ -2,6 +2,14 @@
 
 Newest first. The build embeds this file; the Topics page shows what is new since your last visit, and the Progress page shows all of it. Keep each bullet to one short line.
 
+## 2026-10-11 (diagrams and practice set)
+- Three new figures: dual innervation and its exceptions, the gut α2 brake, the acetylcholine bolus tracing.
+- Exam 1 figure labels enlarged to 10 units; every label passes contrast in both themes; overlaps fixed.
+- MAO figure now shows MAO-A in brain, liver and gut (slide 13); nitric oxide step names his example, ACh.
+- Play all paces each step by its words; step dots are easier to tap.
+- Exam 2 practice set: 70 questions on organs, drug pairs, reversals and his formats.
+- Content audit applied: one overdose key moved to slide 32, 9 out-of-scope items low-yield, stems in his forms.
+
 ## 2026-10-11 (engine fixes from the independent audit)
 - Exam sim: a paper in progress is saved; a reload or a closed tab brings it back with its clock running.
 - Exam sim: a paper whose time ran out while you were away is submitted as it stands when you return.
