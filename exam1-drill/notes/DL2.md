@@ -164,6 +164,14 @@ Every posted item was re-checked against the list, the slides and the 10/5–10/
 - Explain-more links: app.js links Exam 2 questions by keyword on concept, sub and tags, with the sub as fallback (adr → the α guide). Concepts renamed so each item reaches the section that teaches it: DL2-018 reverse-curare-neostigmine and DL2-024 group-indirect-ache (cholinesterase inhibitors, guide 3, not the NMJ guide), DL2-055 group-indirect-reuptake-release (indirect adrenergic drugs, guide 5, not α), DL2-072 group-asthma-beta-blockers and DL2-075 oab-tell-mirabegron (β drugs, guide 7, not α). Checked with linksFor in the built page.
 
 
+## Review 10/11 (independent content audit)
+
+- DL2-040 (tiotropium spares the heart): the distractor “It does not bind M2 receptors” was defensible from slide 28 (M1 and M3) and the list (“does not target M2”); replaced by “It blocks nicotinic, not muscarinic, receptors”. Key unchanged: “It stays mainly in the lungs” (10/5 “they don’t get systemic”).
+- DL2-032 (atropine overdose): keyed “Sedation” until 10/11; now keys the slide-32 overdose effects (“Hallucinations and restlessness”, dose-dependent). Convention: sedation at anti-DUMBBELSS doses (10/5 “you’re gonna go sedated”), hallucinations, restlessness and coma at overdose (slide 32). L09-040 and L09-027 carry the same note.
+- Explanations by mechanism: DL2-009 (Ca++ release from skeletal muscle with halothane), DL2-073 (which receptors labetalol binds and what follows), DL2-036 (drowsiness via central M1/H1 block), DL2-015 (why echothiophate cannot be the antidote: irreversible organophosphate, eye drops only), and the remaining “Listed …” / “That is X” whys in DL2-004, -007, -017, -022, -046, -047, -050, -070, -076, -077.
+- Stems put in his forms: DL2-038, DL2-059, DL2-061, DL2-083, DL2-088 (“X is most likely to cause … by:”, “… comes from:”).
+
+
 ## Questions
 
 88 questions written, 86 posted, 2 removed by his exam-scope statements (all skill `drug`; 22 select-all). Per sub: nmj 25, chol 20, no 3, adr 32, raas 8.
@@ -205,7 +213,7 @@ Every posted item was re-checked against the list, the slides and the 10/5–10/
 - DL2-035 (chol, note, transcript 10/5): Which of the following describes the mechanism of action of scopolamine?
 - DL2-036 (chol, transcript 10/5): Which statement about scopolamine is CORRECT?
 - DL2-037 (chol, note, transcript 10/5): Benztropine is a muscarinic antagonist. Where is its site of action?
-- DL2-038 (chol, transcript 10/5): Tropicamide dilates the pupil. Which mechanism explains this?
+- DL2-038 (chol, transcript 10/5): Tropicamide dilates the pupil by:
 - DL2-039 (chol, note, transcript 10/5): Which statement correctly tells ipratropium and tiotropium apart?
 - DL2-040 (chol, note, transcript 10/5): Inhaled tiotropium is unlikely to change heart rate. Which of the following is the reason?
 - DL2-041 (chol, transcript 10/5): Which statement about aclidinium and umeclidinium is CORRECT?
@@ -226,9 +234,9 @@ Every posted item was re-checked against the list, the slides and the 10/5–10/
 - DL2-056 (adr, transcript 10/6): Which of the following describes the mechanism of action of doxazosin?
 - DL2-057 (adr, transcript 10/6): Prazosin is most likely to cause which of the following?
 - DL2-058 (adr, note, transcript 10/7): Which statement about phenoxybenzamine is CORRECT?
-- DL2-059 (adr, transcript 10/7): Phenoxybenzamine causes gastrointestinal (GI) stimulation. Which mechanism explains it?
+- DL2-059 (adr, transcript 10/7): Phenoxybenzamine is most likely to cause gastrointestinal (GI) stimulation by:
 - DL2-060 (adr, note, transcript 10/6): Which receptor does mirtazapine block to cause drowsiness?
-- DL2-061 (adr, note, transcript 10/7): Why does mirtazapine cause peripheral edema?
+- DL2-061 (adr, note, transcript 10/7): Mirtazapine is most likely to cause peripheral edema through:
 - DL2-062 (adr, note, transcript 10/6): Which of the following describes the mechanism of action of guanfacine?
 - DL2-063 (adr, transcript 10/6): A patient stops clonidine abruptly. Which of the following is most likely to occur, and why?
 - DL2-064 (adr, select-all, transcript 10/6): Clonidine is most likely to cause which of the following? Select all that apply.
@@ -250,9 +258,9 @@ Every posted item was re-checked against the list, the slides and the 10/5–10/
 - DL2-080 (adr, select-all, note, transcript 10/7): Which drugs are β agonists? Select all that apply.
 - DL2-081 (raas, transcript 10/8): Which of the following describes the mechanism of action of aliskiren?
 - DL2-082 (raas, note, transcript 10/8): Which of the following describes the mechanism of action of lisinopril?
-- DL2-083 (raas, transcript 10/8): Why do angiotensin-converting enzyme (ACE) inhibitors such as enalapril cause a dry cough?
+- DL2-083 (raas, transcript 10/8): The dry cough of enalapril, an angiotensin-converting enzyme (ACE) inhibitor, comes from:
 - DL2-084 (raas, transcript 10/8): Which of the following describes the mechanism of action of losartan?
 - DL2-085 (raas, select-all, note, transcript 10/8): Which adverse reactions are more common with ACE (angiotensin-converting enzyme) inhibitors than with angiotensin II receptor blockers (ARBs)? Select all that apply.
 - DL2-086 (raas, transcript 10/8): Which statement about spironolactone and eplerenone is CORRECT?
 - DL2-087 (raas, select-all, note, transcript 10/8): Which of the following may cause hyperkalemia? Select all that apply.
-- DL2-088 (raas, note, transcript 10/8): How does metoprolol lower renin–angiotensin–aldosterone system (RAAS) activity?
+- DL2-088 (raas, note, transcript 10/8): Metoprolol lowers renin–angiotensin–aldosterone system (RAAS) activity by:

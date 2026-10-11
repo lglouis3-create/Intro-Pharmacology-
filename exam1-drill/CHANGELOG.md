@@ -2,6 +2,43 @@
 
 Newest first. The build embeds this file; the Topics page shows what is new since your last visit, and the Progress page shows all of it. Keep each bullet to one short line.
 
+## 2026-10-11 (diagrams and practice set)
+- Three new figures: dual innervation and its exceptions, the gut α2 brake, the acetylcholine bolus tracing.
+- Exam 1 figure labels enlarged to 10 units; every label passes contrast in both themes; overlaps fixed.
+- MAO figure now shows MAO-A in brain, liver and gut (slide 13); nitric oxide step names his example, ACh.
+- Play all paces each step by its words; step dots are easier to tap.
+- Exam 2 practice set: 70 questions on organs, drug pairs, reversals and his formats.
+- Content audit applied: one overdose key moved to slide 32, 9 out-of-scope items low-yield, stems in his forms.
+
+## 2026-10-11 (engine fixes from the independent audit)
+- Exam sim: a paper in progress is saved; a reload or a closed tab brings it back with its clock running.
+- Exam sim: a paper whose time ran out while you were away is submitted as it stands when you return.
+- Answers: the whys of your option and the right one show first; the rest fold behind "More".
+- Right answer: Next records "Knew it"; "Not sure" and "I guessed" sit beside it (keys 1, 2, 3).
+- Matching questions: scored all-or-nothing, said up front; "n of m pairs right" after Check; Enter continues.
+- Flashcards: "Did not know" does not serve the same card straight back; the line says how many are due and new.
+- Study what is due: when nothing is due, the quiz says it is reviewing the soonest due.
+- Topics on a phone: What's new folds to one line; the title and the updated stamp are not repeated.
+- Header: the tabs sit in one compact row on a laptop and at most two on an iPad.
+- Reference, Tell apart, Guides: the notation and source legends fold away at the top of the page.
+- Exam start: his topic counts in a short list; the checkbox greys out unless the full paper is chosen.
+- Faster pages on a phone: figures and guide sections off screen are not laid out until you scroll near.
+- Weak spots: readable concept titles (ladder names, "A vs B", a location in brackets, else the question).
+- Small fixes: room under the floating buttons; "3 unfamiliar"; saved progress with a bad box number is repaired.
+
+## 2026-10-11 (comparisons and study pages)
+- Tell apart (Exam 2): SNS vs PNS per organ and M2 vs β1 at the heart; inhaler and bladder rows.
+- Why? cards: a Key difference line on every card; long detail folded away.
+- Guides: short teach first, then how he asks it; long detail in fold-outs.
+
+## 2026-10-11 (Weak spots rebuilt)
+- Weak spots now tracks concepts, not questions: unfamiliar, struggling, improving, mastered, returning.
+- Each card says why it was flagged, the option you keep choosing and why it is wrong, and the idea.
+- Practice concept asks a different wording first, then one tier up; ends with a short summary.
+- Mastery needs 3 solid answers on 2 questions across 2 sessions; mastered concepts get spaced checks.
+- Select-all answers show partial credit (right ticks and wrong ticks).
+- Progress history survives question renames (id and concept aliases).
+
 ## 2026-10-10 (re-audit fixes)
 - Weak spots: "The idea" no longer repeats the answer shown above it.
 - Session line above the quiz counts the exam you study and says guesses are not counted.

@@ -324,7 +324,7 @@ QUESTIONS.push(
   {t:'All of the above', correct:true, why:'His key: diarrhea, miosis and bradycardia all occur; he said “all the above with the exception of” B, Can\'t urinate.'}],
  teach:'A cholinergic agonist overdose gives DUMBBELSS: diarrhea, urination (more, not less), miosis, bradycardia, bronchial constriction, emesis, lacrimation, salivation and stimulation. Can\'t urinate is the antagonist (anti-DUMBBELSS) effect. As keyed, “All of the above” stands for the three DUMBBELSS options, not the urination option.',
  quote:'I think I changed this answer because B is not uh the correct answer. Remember that if you activate the bladder, you\'re gonna squeeze the bladder, you\'re gonna increase urination. So, out of these questions, uh, B is you urinate more, it\'s not that you can\'t urinate. So, that\'s uh, that answer. But yes, you get diarrhea, you get meiosis, you get bradycardia, and you\'re gonna get, uh, it would be all the above with the exception of uh B as in boy, OK? Maybe last year was which of these would not occur and that was the right answer, but uh I didn\'t catch that.',
- note:'Green highlight: All of the above. Handwritten next to “Can\'t urinate” on the student’s sheet: “not included”. In the 10/5 audio he says B is not correct, keys “all the above with the exception of” B, and says last year’s version may have asked which symptom would NOT occur, with B as the answer (“I didn\'t catch that”). Read literally, “All of the above” would include Can\'t urinate, which does not occur; his key is all of the above except B. He said on 10/6 that one of the 10/5 polls and one of the 10/6 polls will be on Exam 2 word for word (“one of the questions today and one of the questions yesterday I\'m gonna use verbatim, word by word on your exam”), without naming which; every poll run on those two days is tagged on-exam-verbatim.',
+ note:'He excluded “Can’t urinate”: his key is “all the above with the exception of B”, so All of the above stands for diarrhea, miosis and bradycardia only. He said last year’s version asked which symptom would NOT occur (answer: Can’t urinate), so the exam may use the NOT form; L09-042 drills it. Green highlight: All of the above. Handwritten next to “Can\'t urinate” on the student’s sheet: “not included”. In the 10/5 audio he says B is not correct, keys “all the above with the exception of” B, and says last year’s version may have asked which symptom would NOT occur, with B as the answer (“I didn\'t catch that”). Read literally, “All of the above” would include Can\'t urinate, which does not occur; his key is all of the above except B. He said on 10/6 that one of the 10/5 polls and one of the 10/6 polls will be on Exam 2 word for word (“one of the questions today and one of the questions yesterday I\'m gonna use verbatim, word by word on your exam”), without naming which; every poll run on those two days is tagged on-exam-verbatim.',
  cite:'PollEV’s Exam 2.pdf poll 12; transcript 10/5; PCOL-Cholinergic-26s.pdf slide 13'},
 
 /* ---------------- Poll 13: carbachol ---------------- */
@@ -637,7 +637,7 @@ QUESTIONS.push(
 {id:'PE2-046', lecture:'PE2', prof:'Gottlieb', tier:'new', level:2, topic:'PE2', sub:'variant', skill:'figure',
  concept:'ne-tracing-cocaine', tags:['poll','pollev','figure-drill'], source:'both',
  img:'pe2-ne-drug-b', imgAlt:'Hand-drawn tracing of constriction over time with a 1-minute scale bar: regular oscillations at a steady level, a gradual rise after arrow A, then a steep fall after arrow B to a flat line below the starting level', imgCap:'Constriction tracing: drug A (norepinephrine) at arrow A, then drug B at arrow B',
- stem:'If drug B in the tracing below were cocaine instead, what would the tracing most likely show after arrow B?',
+ stem:'If drug B in the tracing below were cocaine instead, the tracing after arrow B is most likely to show:',
  options:[
   {t:'A further rise in constriction', correct:true, why:'Cocaine blocks the norepinephrine transporter (NET): more norepinephrine stays at α1, so the vessel constricts even more.'},
   {t:'A fall below the starting level', correct:false, miss:'direction', why:'That is what the α1 antagonist prazosin produced; cocaine helps norepinephrine.'},
@@ -650,7 +650,7 @@ QUESTIONS.push(
 {id:'PE2-047', lecture:'PE2', prof:'Gottlieb', tier:'new', level:2, topic:'PE2', sub:'variant', skill:'figure',
  concept:'ne-tracing-not-metoprolol', tags:['poll','pollev','figure-drill'], source:'both',
  img:'pe2-ne-drug-b', imgAlt:'Hand-drawn tracing of constriction over time with a 1-minute scale bar: regular oscillations at a steady level, a gradual rise after arrow A, then a steep fall after arrow B to a flat line below the starting level', imgCap:'Constriction tracing: drug A (norepinephrine) at arrow A, then drug B at arrow B',
- stem:'In the tracing below, why can metoprolol be eliminated as drug B?',
+ stem:'In the tracing below, metoprolol cannot be drug B. Which of the following statements is CORRECT?',
  options:[
   {t:'Its β1 targets are in the heart', correct:true, why:'Metoprolol is a β1-selective antagonist; β1 is in the heart, so it does not touch the α1 constriction in the vessels.'},
   {t:'It is an α1 agonist', correct:false, miss:'class', why:'That is phenylephrine; metoprolol is a β1 antagonist.'},
@@ -664,7 +664,7 @@ QUESTIONS.push(
 {id:'PE2-048', lecture:'PE2', prof:'Gottlieb', tier:'new', level:2, topic:'PE2', sub:'variant', skill:'figure',
  concept:'ne-tracing-not-atropine', tags:['poll','pollev','figure-drill'], source:'both',
  img:'pe2-ne-drug-b', imgAlt:'Hand-drawn tracing of constriction over time with a 1-minute scale bar: regular oscillations at a steady level, a gradual rise after arrow A, then a steep fall after arrow B to a flat line below the starting level', imgCap:'Constriction tracing: drug A (norepinephrine) at arrow A, then drug B at arrow B',
- stem:'Atropine and prazosin both block a receptor in the blood vessels. Why is atropine not drug B in the tracing below?',
+ stem:'Atropine and prazosin both block a receptor in the blood vessels, yet atropine cannot be drug B in the tracing below. Which of the following statements is CORRECT?',
  options:[
   {t:'Vascular M3 receptors are quiet at rest', correct:true, why:'Vascular M3 receptors are not innervated; unless a muscarinic agonist is given they are not active, so blocking them changes nothing.'},
   {t:'Atropine is an α1 agonist', correct:false, miss:'class', why:'Atropine is a muscarinic antagonist; the α1 agonist is phenylephrine.'},
@@ -822,7 +822,7 @@ QUESTIONS.push(
 {id:"PE2-059", lecture:'PE2', prof:'Gottlieb', tier:'new', level:2, topic:'PE2', sub:"variant", skill:"figure",
  concept:"bronchomotor-vagal-physostigmine", lowYield:true, tags:["poll", "pollev", "figure-drill", "jeopardy"], source:"both",
  img:"pe2-bronchomotor-tone", imgAlt:"Bar chart of bronchomotor tone (increase above the line, decrease below) for procedures 1 to 5 in five panels: control, after physostigmine, after atropine, after propranolol and after cocaine; below it the instruction to match procedures 1 to 5 with A carbachol, B sympathetic nerve stimulation, C vagal nerve stimulation, D histamine, E isoproterenol", imgCap:"Bronchomotor tone, procedures 1–5: control and after physostigmine, atropine, propranolol and cocaine. He said: “This is not gonna be on the exam. This is for Jeopardy process only.”",
- stem:"In the figure below, which procedure is vagal nerve stimulation, and which panel identifies it?",
+ stem:"In the figure below, which procedure is vagal nerve stimulation?",
  options:[
   {t:"Procedure 2; it grows after physostigmine", correct:true, why:"Physostigmine blocks the breakdown of acetylcholine, so only the response to acetylcholine released by the vagus grows: bar 2."},
   {t:"Procedure 1; it grows after physostigmine", correct:false, miss:"read", why:"Bar 1 is unchanged after physostigmine: it is carbachol, which the enzyme does not break down."},
@@ -837,7 +837,7 @@ QUESTIONS.push(
 {id:"PE2-060", lecture:'PE2', prof:'Gottlieb', tier:'new', level:2, topic:'PE2', sub:"variant", skill:"figure",
  concept:"bronchomotor-histamine-atropine", lowYield:true, tags:["poll", "pollev", "figure-drill", "jeopardy"], source:"both",
  img:"pe2-bronchomotor-tone", imgAlt:"Bar chart of bronchomotor tone (increase above the line, decrease below) for procedures 1 to 5 in five panels: control, after physostigmine, after atropine, after propranolol and after cocaine; below it the instruction to match procedures 1 to 5 with A carbachol, B sympathetic nerve stimulation, C vagal nerve stimulation, D histamine, E isoproterenol", imgCap:"Bronchomotor tone, procedures 1–5: control and after physostigmine, atropine, propranolol and cocaine. He said: “This is not gonna be on the exam. This is for Jeopardy process only.”",
- stem:"In the figure below, why does bar 3 keep its height after atropine while bars 1 and 2 almost disappear?",
+ stem:"In the figure below, bar 3 keeps its height after atropine while bars 1 and 2 almost disappear. Which of the following statements is CORRECT?",
  options:[
   {t:"Procedure 3 is histamine on its own receptor", correct:true, why:"Histamine constricts the airways through its own receptor, which atropine does not block."},
   {t:"Procedure 3 is carbachol, a synthetic agonist", correct:false, miss:"class", why:"Carbachol is a muscarinic agonist; atropine blocks it (bar 1)."},
@@ -852,7 +852,7 @@ QUESTIONS.push(
 {id:"PE2-061", lecture:'PE2', prof:'Gottlieb', tier:'new', level:2, topic:'PE2', sub:"variant", skill:"figure",
  concept:"bronchomotor-cocaine-sympathetic", lowYield:true, tags:["poll", "pollev", "figure-drill", "jeopardy"], source:"both",
  img:"pe2-bronchomotor-tone", imgAlt:"Bar chart of bronchomotor tone (increase above the line, decrease below) for procedures 1 to 5 in five panels: control, after physostigmine, after atropine, after propranolol and after cocaine; below it the instruction to match procedures 1 to 5 with A carbachol, B sympathetic nerve stimulation, C vagal nerve stimulation, D histamine, E isoproterenol", imgCap:"Bronchomotor tone, procedures 1–5: control and after physostigmine, atropine, propranolol and cocaine. He said: “This is not gonna be on the exam. This is for Jeopardy process only.”",
- stem:"In the figure below, why does cocaine deepen bar 5 but leave bar 4 unchanged?",
+ stem:"In the figure below, cocaine deepens bar 5 but leaves bar 4 unchanged. Which of the following statements is CORRECT?",
  options:[
   {t:"Bar 5 is released norepinephrine and epinephrine", correct:true, why:"Sympathetic nerve stimulation releases norepinephrine and epinephrine; cocaine blocks their reuptake, so the dilation grows."},
   {t:"Bar 5 is isoproterenol, which cocaine potentiates", correct:false, miss:"class", why:"Isoproterenol is a synthetic drug, not a transmitter the nerves release and take back up; it is bar 4."},
@@ -867,7 +867,7 @@ QUESTIONS.push(
 {id:"PE2-062", lecture:'PE2', prof:'Gottlieb', tier:'new', level:2, topic:'PE2', sub:"variant", skill:"figure",
  concept:"bronchomotor-propranolol-beta2", lowYield:true, tags:["poll", "pollev", "figure-drill", "jeopardy"], source:"both",
  img:"pe2-bronchomotor-tone", imgAlt:"Bar chart of bronchomotor tone (increase above the line, decrease below) for procedures 1 to 5 in five panels: control, after physostigmine, after atropine, after propranolol and after cocaine; below it the instruction to match procedures 1 to 5 with A carbachol, B sympathetic nerve stimulation, C vagal nerve stimulation, D histamine, E isoproterenol", imgCap:"Bronchomotor tone, procedures 1–5: control and after physostigmine, atropine, propranolol and cocaine. He said: “This is not gonna be on the exam. This is for Jeopardy process only.”",
- stem:"In the figure below, why does propranolol shrink bars 4 and 5 but leave bars 1 to 3 unchanged?",
+ stem:"In the figure below, propranolol shrinks bars 4 and 5 but leaves bars 1 to 3 unchanged. Which of the following statements is CORRECT?",
  options:[
   {t:"Procedures 4 and 5 lower tone through β2", correct:true, why:"Isoproterenol and sympathetic stimulation dilate bronchial smooth muscle through β2 (Gs); propranolol blocks β2."},
   {t:"Procedures 4 and 5 act on M3", correct:false, miss:"class", why:"M3 (Gq) constricts the airways and is blocked by atropine; bars 4 and 5 are dilations, which propranolol removes, so they are β2."},
@@ -914,7 +914,7 @@ QUESTIONS.push(
   {t:"Selective reversible muscarinic agonist", correct:false, why:"Prazosin blocks adrenergic α1 receptors; a muscarinic agonist (a “chol” drug or pilocarpine) activates M receptors."},
   {t:"A non-depolarizing agent", correct:false, why:"That is the curare-like drugs (rocuronium) at the muscle nicotinic (Nm) receptor."},
   {t:"Non-selective irreversible adrenergic antagonist", correct:false, why:"That is phenoxybenzamine (α1 and α2, covalently bound)."},
-  {t:"Selective reversible alpha 1 agonist", correct:false, why:"That is phenylephrine; prazosin blocks α1."},
+  {t:"Selective reversible alpha 1 agonist", correct:false, why:"A selective reversible α1 agonist (phenylephrine) activates Gq and constricts; prazosin binds α1 with no efficacy, so norepinephrine cannot constrict and the vessels dilate."},
   {t:"Selective reversible alpha1 antagonist", correct:true, why:"His key (E): an “-osin” drug, a selective, reversible α1 antagonist; it blocks norepinephrine and epinephrine from binding α1."}],
  teach:"Every drug ending in -osin (prazosin, terazosin, doxazosin, tamsulosin) is a selective, reversible α1 antagonist. Blocking α1 (Gq) in the arteries and veins lowers Ca++ in the smooth muscle and dilates them, so blood pressure falls. Phenoxybenzamine is the irreversible α1 and α2 antagonist, and phenylephrine is the α1 agonist.",
  quote:"For our exam purpose, all I need to know if you see a drug with OC is a selective alpha-1 antagonist. ... Prazosing, uh, I think I just gave you the answer for that. E as in elephant, uh, let's see what the class is saying. They seem to agree with you, is that correct? It is.",
@@ -1048,7 +1048,7 @@ QUESTIONS.push(
   {t:"All the above", correct:true, why:"Less angiotensin II, less AT1 activation, more bradykinin, and (drug list) more angiotensin 1-7 all lower blood pressure."}],
  teach:"Ang = angiotensin. Lisinopril, a “-pril”, is a reversible angiotensin-converting enzyme (ACE) inhibitor: primary effect, less angiotensin II, so less AT1 activation (indirect, through the agonist) and less aldosterone. Secondary effect: ACE also breaks down bradykinin, so bradykinin, a potent vasodilator, rises. The official drug list adds that angiotensin I is shunted to angiotensin 1-7, which acts on AT2 and opposes AT1.",
  quote:"So primary mechanism of action, block the ACE enzyme, secondary, increase levels of bradykinin, which is the potent uh vasodilator. This makes a fantastic selectto question because it gives me more than one right answer to ask you, right?",
- note:"Friday 10/9 review (PollEV screenshot, 1:03 pm). There is no recording or transcript of the review, so he gave no recorded answer; the screenshot shows only the student’s own response, not a key. “of of” is as on the screen. Three options come from the RAAS slides (9, 12: ACE inhibition, less angiotensin II, bradykinin) and his 10/8 lecture (“if I don't have angiotensin 2, I can't activate the A1 or the 82”). Angiotensin 1-7 is not on his slides or in the 10/8 audio; it is supported only by the official drug list (Pharmacology_Exam_2_Drug_List.pdf page 9, ACE inhibitor row: “Bonus effect 1: Ang 1 goes down alternate pathway and is converted to Angiotensin 1-7 which bind to AT2 → oppose AT1”). Slide 3 shows an “Endopeptidase” arrow leaving angiotensin I with its product unlabeled. With the drug list, all four statements hold, so the key is All the above.",
+ note:"“Increase plasma level of angiotensin 1-7” is supported only by the official drug list (Pharmacology_Exam_2_Drug_List.pdf page 9), not by his RAAS slides and not by the 10/8 audio; the 10/9 review where this poll ran was not recorded, so his spoken key is unknown. Friday 10/9 review (PollEV screenshot, 1:03 pm). There is no recording or transcript of the review, so he gave no recorded answer; the screenshot shows only the student’s own response, not a key. “of of” is as on the screen. Three options come from the RAAS slides (9, 12: ACE inhibition, less angiotensin II, bradykinin) and his 10/8 lecture (“if I don't have angiotensin 2, I can't activate the A1 or the 82”). Angiotensin 1-7 is not on his slides or in the 10/8 audio; it is supported only by the official drug list (Pharmacology_Exam_2_Drug_List.pdf page 9, ACE inhibitor row: “Bonus effect 1: Ang 1 goes down alternate pathway and is converted to Angiotensin 1-7 which bind to AT2 → oppose AT1”). Slide 3 shows an “Endopeptidase” arrow leaving angiotensin I with its product unlabeled. With the drug list, all four statements hold, so the key is All the above.",
  cite:"Review 10/9 (screenshot); PCOL-RAAS_26s.pdf slides 3, 9, 12, 26; Pharmacology_Exam_2_Drug_List.pdf page 9; transcript 10/8"},
 
 {id:"PE2-075", lecture:'PE2', prof:'Gottlieb', tier:'new', level:1, topic:'PE2', sub:"verbatim", skill:"apply",
@@ -1112,7 +1112,7 @@ QUESTIONS.push(
 {id:"PE2-079", lecture:'PE2', prof:'Gottlieb', tier:'new', level:2, ladder:"rocuronium-tracing", ladderName:"Rocuronium in the skeletal muscle tracing", topic:'PE2', sub:"variant", skill:"figure",
  concept:"skm-tracing-not-muscarinic", tags:["poll", "pollev", "figure-drill", "review"], source:"both",
  img:"pe2-skm-drug-x", imgAlt:"Tracing labelled SKM: a flat line with one small rise after an arrow marked Ach, then a second arrow marked Drug “X” followed by Ach, after which the line stays flat", imgCap:"Skeletal muscle (SKM): acetylcholine alone, then drug X followed by acetylcholine",
- stem:"Why could neither oxybutynin nor carbachol be drug X in the tracing below?",
+ stem:"Neither oxybutynin nor carbachol could be drug X in the tracing below. Which of the following statements is CORRECT?",
  options:[
   {t:"Both act on muscarinic, not Nm, receptors", correct:true, why:"Oxybutynin blocks and carbachol activates muscarinic receptors; skeletal muscle contracts through Nm."},
   {t:"Both block the Nm receptor", correct:false, miss:"class", why:"Neither binds Nm; a drug that did block Nm could be drug X."},
