@@ -504,18 +504,18 @@ QUESTIONS.push(
 
 {id:'L03-037', fg:'efficacy', lecture:'L03', prof:'Gottlieb', tier:'new', topic:'L03', sub:'terms', skill:'figure',
  concept:'five-drug-classification', tags:['poll','exam-cue'], source:'transcript',
- stem:'Five dose–response curves, A–E, of five different drugs are drawn on one graph. Which of these drugs has the highest efficacy?',
+ stem:'Five dose–response curves, A–E, of five different drugs are drawn on the graph below; the letters belong to this drawing only. Which of these drugs has the highest efficacy?',
  graph:{curves:[{label:'B', ec:-2, emax:70}, {label:'E', ec:-0.5, emax:100}, {label:'A', ec:0.5, emax:55}, {label:'D', ec:1, emax:25}, {label:'C', ec:1.5, emax:45}],
         caption:'Five different drugs, one tissue'},
  options:[
-  {t:'Drug E', correct:true, why:'E reaches the highest maximal response (100%); efficacy is read up–down on the y-axis.'},
-  {t:'Drug B', correct:false, why:'B is furthest left (highest affinity) but plateaus below 100%, so it is not the most efficacious.'},
+  {t:'Drug E', correct:true, why:'In this drawing E reaches the highest maximal response (100%); efficacy is read up–down on the y-axis, so the curve with the highest plateau wins whatever its letter.'},
+  {t:'Drug B', correct:false, why:'In this drawing B is furthest left (highest affinity) but plateaus below 100%, so it is not the most efficacious. On his 9/24 poll figure the letters differ and B is the 100% curve; the reading is the same: highest plateau.'},
   {t:'Drug A', correct:false, why:'A plateaus at about half of the maximal response.'},
   {t:'Drug D', correct:false, why:'D has the lowest plateau, so it has the lowest efficacy.'},
   {t:'Drug C', correct:false, why:'C plateaus well below 100%.'}],
  teach:'Efficacy is read on the y-axis: the curve with the highest plateau has the highest efficacy, and the curve with the lowest plateau has the lowest. The curve furthest left has the highest affinity, which is a different reading. Only the curve that reaches 100% is a full agonist.',
  quote:'OK, so when you’re looking at the efficacy of a drug, we’re looking at the y axis, up or down. When you look at affinity x axis, left or right.',
- cite:'transcript 9/24 (in-class poll follow-up; figure not in deck text)',
+ cite:'transcript 9/24 (in-class poll follow-up; figure not in deck text)', note:'This item draws its own five curves (a graph object, not the poll image) and assigns the letters so that E is the 100% curve; it is keyed E for that drawing. His 9/24 poll on the five-curve figure (PE-031 in q_POLLS.js; L03-026) keys B for the highest efficacy (“B as in boy for the highest”), because on that figure B is the 100% curve. The stem now says the letters belong to this drawing, so the two keys do not conflict: both read efficacy as the highest plateau.',
  reading:[{src:'Katzung 16e, Ch. 2', sec:'Dose & Response in Patients — Maximal efficacy', t:'Maximal efficacy is the limit of the dose-response relation on the response axis. It is read from the height of the curve, not from its position along the dose axis.'}]},
 
 {id:'L03-038', fg:'partial', lecture:'L03', prof:'Gottlieb', tier:'new', topic:'L03', sub:'terms', skill:'figure', multi:true,

@@ -86,9 +86,33 @@ for t in TERMS:
     base = dict(lecture=t['lecture'], prof='Gottlieb', tier='new', topic='TERMS', sub=group_ids[t['group']],
                 skill='term', concept='term-' + t['id'], tags=['term'], source=t.get('src', 'slide'),
                 cite=cite, quote=t.get('quote', ''))
-    # gist (or def) + hook; the -3 item's stem already carries the def, so it gets the hook (or gist) only
-    teach = (t.get('gist') or t['def']) + (' ' + t['hook'] if t.get('hook') else '')
-    teach3 = t.get('hook') or t.get('gist') or t['def']
+    # Explanations: a wrong option's why says what that term IS (its gist) and the distinguishing
+    # point versus the right term; the right option's why gives the gist plus the key feature.
+    # Term names keep their display capitalisation. Teach adds the hook and the scene when present,
+    # so it never just repeats the definition.
+    def first_sentence(s):
+        m = re.match(r'(.+?[.!?])(\s|$)', s.strip())
+        return m.group(1) if m else s.strip()
+    def gist_of(x):
+        return (x.get('gist') or first_sentence(x['def'])).strip()
+    def key_feature(x):
+        fs = first_sentence(x['def'])
+        if x.get('gist') and fs.lower() != x['gist'].lower():
+            return fs
+        return x.get('hook', '')
+    def wrong_why(x, lead):
+        return f"{x['term']}: {gist_of(x)} {lead} {t['term']}: {gist_of(t)}"
+    def teach_with(scene_in_stem):
+        parts = [gist_of(t)]
+        if t.get('hook'):
+            parts.append(t['hook'])
+        if t.get('scene') and not scene_in_stem:
+            parts.append('Scene: ' + t['scene'])
+        if len(parts) == 1:
+            kf = key_feature(t)
+            if kf and kf != parts[0]:
+                parts.append(kf)
+        return ' '.join(parts)
     def fig(q):
         if t.get('fig'):
             q['fg'] = t['fig']
@@ -98,19 +122,19 @@ for t in TERMS:
     if t.get('scene'):
         d = pick_distractors(t, 'term', need_longer=True)
         if d:
-            opts = [{'t': plain(t['term']), 'correct': True, 'why': 'This situation is ' + t['term'].lower() + ': ' + (t.get('gist') or t['def'])}]
+            opts = [{'t': plain(t['term']), 'correct': True, 'why': f"This situation is {t['term']}: {gist_of(t)} {key_feature(t)}".strip()}]
             for x in d:
-                opts.append({'t': plain(x['term']), 'correct': False, 'why': x['term'] + ' would be: ' + (x.get('gist') or x['def'])})
+                opts.append({'t': plain(x['term']), 'correct': False, 'why': wrong_why(x, 'The situation described is')})
             first = 'T-' + t['id'] + '-1'
-            qs.append(fig(dict(base, id=first, stem='Which term fits this situation? ' + t['scene'], options=opts, teach=teach)))
+            qs.append(fig(dict(base, id=first, stem='Which term fits this situation? ' + t['scene'], options=opts, teach=teach_with(True))))
     # 2. the term -> its one-line meaning (short options; a longer wrong gist must exist)
     if t.get('gist'):
         d2 = pick_distractors(t, 'gist', need_longer=True)
         if d2:
-            opts = [{'t': t['gist'], 'correct': True, 'why': 'That is ' + t['term'].lower() + '.'}]
+            opts = [{'t': t['gist'], 'correct': True, 'why': f"{t['term']}: {gist_of(t)} {key_feature(t)}".strip()}]
             for x in d2:
-                opts.append({'t': x['gist'], 'correct': False, 'why': 'That is ' + x['term'].lower() + ', not ' + t['term'].lower() + '.'})
-            q2 = fig(dict(base, id='T-' + t['id'] + '-2', stem=plain(t['term']) + ' means:', options=opts, teach=teach))
+                opts.append({'t': x['gist'], 'correct': False, 'why': wrong_why(x, 'The term asked for is')})
+            q2 = fig(dict(base, id='T-' + t['id'] + '-2', stem=plain(t['term']) + ' means:', options=opts, teach=teach_with(False)))
             if first:
                 q2['dupOf'] = first
             else:
@@ -125,10 +149,10 @@ for t in TERMS:
         text3 = t['gist']
     d3 = pick_distractors(t, 'term', need_longer=True) if text3 else None
     if d3:
-        opts = [{'t': plain(t['term']), 'correct': True, 'why': 'This is the definition of ' + t['term'] + '.'}]
+        opts = [{'t': plain(t['term']), 'correct': True, 'why': f"This defines {t['term']}: {gist_of(t)} {t.get('hook', '')}".strip()}]
         for x in d3:
-            opts.append({'t': plain(x['term']), 'correct': False, 'why': x['term'] + ': ' + (x.get('gist') or x['def'])})
-        q3 = fig(dict(base, id='T-' + t['id'] + '-3', stem='Which term is defined as: ' + text3.rstrip('.') + '?', options=opts, teach=teach3))
+            opts.append({'t': plain(x['term']), 'correct': False, 'why': wrong_why(x, 'The definition given is')})
+        q3 = fig(dict(base, id='T-' + t['id'] + '-3', stem='Which term is defined as: ' + text3.rstrip('.') + '?', options=opts, teach=teach_with(False)))
         if first:
             q3['dupOf'] = first
         qs.append(q3)
