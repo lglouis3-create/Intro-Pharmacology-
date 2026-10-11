@@ -170,7 +170,7 @@ function schedule(id, outcome) {
 /* ---------- views ---------- */
 const VIEWS = [
   ['topics', 'Topics'], ['quiz', 'Quiz'], ['terms', 'Terms'], ['weak', 'Weak spots'], ['exam', 'Exam sim'],
-  ['graphs', 'Graphs'], ['diagrams', 'Diagrams'], ['map', 'Question map'], ['ref', 'Reference'], ['tell', 'Tell apart'], ['guide', 'Guides'], ['data', 'Progress']
+  ['graphs', 'Graphs'], ['diagrams', 'Diagrams'], ['map', 'Question map'], ['drugs', 'All drugs'], ['ref', 'Reference'], ['tell', 'Tell apart'], ['guide', 'Guides'], ['data', 'Progress']
 ];
 let CUR = 'topics';
 function nav() {
@@ -254,7 +254,9 @@ const LINKS2 = [
 const BY_LECTURE2 = {L07: G2(1, 'the autonomic layout'), L07ref: ['ref', 'ref2-2', 'Reference: organ by organ, PNS vs SNS'], L08: G2(2, 'nicotinic receptors, NMJ'), L09: G2(4, 'muscarinic drugs'), L10: G2(5, 'indirect-acting adrenergic drugs'), L11: G2(7, 'β drugs, epinephrine, NE'), L12: G2(10, 'RAAS'), PE2: G2(1, 'the autonomic layout')};
 const TERM_SUB2 = {g6: G2(1, 'the autonomic layout'), g7: G2(1, 'the autonomic layout'), g8: G2(4, 'muscarinic drugs'), g9: G2(6, 'α1 and α2 drugs'), g10: G2(9, 'nitric oxide'), g11: G2(10, 'RAAS')};
 const DL2_SUB = {nmj: G2(2, 'nicotinic receptors, NMJ'), chol: G2(4, 'muscarinic drugs'), adr: G2(6, 'α1 and α2 drugs'), no: G2(9, 'nitric oxide'), raas: G2(10, 'RAAS')};
-function linksFor(q) {
+const DRUGS_LINK = ['drugs', 'drugs-top', 'All drugs: both lists in one table'];
+function linksFor(q) { const l = linksFor0(q); return q.lecture === 'DL1' || q.lecture === 'DL2' ? l.concat([DRUGS_LINK]) : l; }
+function linksFor0(q) {
   if (examOf(q) === 2 && typeof GUIDE2_HTML !== 'undefined') {
     const key = [q.concept, q.sub, (q.tags || []).join(' '), q.img || ''].join(' ').toLowerCase();
     for (const [re, links] of LINKS2) if (re.test(key)) return links;
@@ -301,10 +303,12 @@ function backBtn() {
   if (!b) { b = document.createElement('button'); b.id = 'backbtn'; b.type = 'button'; b.className = 'btn'; document.body.appendChild(b); b.onclick = goBack; }
   b.textContent = backLabel();
 }
-const backLabel = () => '← Back to ' + ({quiz: 'the question', exam: 'the exam', graphs: 'the figures', map: 'the map', terms: 'the terms', weak: 'Weak spots', tell: 'Tell apart', ref: 'the reference', guide: 'the guide', diagrams: 'the diagrams'}[(RET[RET.length - 1] || {}).view] || 'where you were');
+const backLabel = () => '← Back to ' + ({quiz: 'the question', exam: 'the exam', graphs: 'the figures', map: 'the map', terms: 'the terms', weak: 'Weak spots', tell: 'Tell apart', ref: 'the reference', guide: 'the guide', diagrams: 'the diagrams', drugs: 'the drug table'}[(RET[RET.length - 1] || {}).view] || 'where you were');
 function goBack() { const r = RET.pop(); if (!r) return; backBtn(); go(r.view, true); window.scrollTo(0, r.y); }
 document.addEventListener('click', e => { const j = e.target.closest('[data-jump]'); if (j) { const [v, a] = j.dataset.jump.split(':'); jump(v, a); } });
-const VIEWFN = {topics: vTopics, quiz: vQuiz, terms: vTerms, weak: vWeak, exam: vExam, map: vMap, graphs: vGraphs, diagrams: vDiagrams, ref: vRef, tell: vTell, guide: vGuide, data: vData};
+/* "view:anchor:group:key": jump to the page, then open that explanation card (the reference's "Why?" cards). */
+document.addEventListener('click', e => { const j = e.target.closest('[data-jumpx]'); if (!j) return; const [v, a, g, k] = j.dataset.jumpx.split(':'); jump(v, a); const out = showExplain(g, k); if (out) scrollToEl(out.closest('.xpick')); });
+const VIEWFN = {topics: vTopics, quiz: vQuiz, terms: vTerms, weak: vWeak, exam: vExam, map: vMap, graphs: vGraphs, diagrams: vDiagrams, drugs: vDrugs, ref: vRef, tell: vTell, guide: vGuide, data: vData};
 const rerender = () => { const y = window.scrollY; if (CUR === 'quiz' && Q) renderQ(); else if (CUR === 'exam' && EX && !EX.done) renderExam(); else if (CUR === 'exam' && EX && EX.done) examResult(); else VIEWFN[CUR](); window.scrollTo(0, y); };
 document.addEventListener('click', e => {
   const f = e.target.closest('[data-flag]');
@@ -1512,6 +1516,70 @@ function examPage(html1, key) {
    not parse megabytes of base64 as page markup on every visit (the Guides page held 2 MB). */
 const imgTag = (k, alt) => `<img data-img="${esc(k)}" alt="${esc(alt)}" decoding="async">`;
 const fillImgs = root => root.querySelectorAll('img[data-img]').forEach(i => { if (!i.getAttribute('src') && IMG[i.dataset.img]) i.src = IMG[i.dataset.img]; });
+/* ---------- All drugs: the Exam 1 list and the Exam 2 list in one table ----------
+   Rows come from drugs.js (generated from the two reference pages and the official Exam 2 list's
+   colour code; nothing is typed here). The table can be searched, limited to one class or one
+   exam, and regrouped by receptor family so the drugs that meet at one receptor sit together. */
+const DR = {q: '', exam: 0, by: 'list', cls: ''};
+const DR_CLS = [['agonist', 'Agonist'], ['antagonist', 'Antagonist'], ['indirect', 'Indirect'], ['donor', 'Donor'], ['inverse', 'Inverse agonist'], ['allosteric', 'Allosteric'], ['slide', 'Slide only']];
+const DR_FAM = ['Nicotinic', 'Muscarinic', 'α adrenergic', 'β adrenergic', 'Histamine', 'Serotonin', 'GABA', 'Angiotensin AT1', 'Mineralocorticoid', 'No receptor: enzyme, transporter or release', 'Other'];
+const drText = r => [r.name, r.also.join(' '), r.sec, r.fam.join(' '), r.clsLabel, r.sub.join(' '), r.moa, r.rec, r.soa, r.adr, r.why].join(' ').replace(/<[^>]+>/g, '').toLowerCase();
+const drName = r => r.name.replace(/<[^>]+>/g, '').replace(/\s*\(.*$/, '');
+function drRows() {
+  const all = typeof DRUGS_ALL === 'undefined' ? [] : DRUGS_ALL, q = DR.q.trim().toLowerCase().split(/\s+/).filter(Boolean);
+  return all.filter(r => (!DR.exam || r.exam === DR.exam) && (!DR.cls || r.cls === DR.cls) && (!q.length || q.every(w => drText(r).includes(w))));
+}
+function drRow(r) {
+  const ex = `<span class="dex" title="Exam ${r.exam} list">E${r.exam}</span>`;
+  const why = r.why ? `<button type="button" class="chip xwhy" data-jumpx="ref:${r.anchor}:${esc(r.id)}">Why?</button>` : `<button type="button" class="chip xwhy" data-jump="ref:${r.anchor}">List</button>`;
+  const also = r.also.length ? `<div class="sub dalso">Also on the list: ${esc(r.also.join(', '))}</div>` : '';
+  const cls = `<div class="sub dcl"><span class="dcls ${r.cls}">${esc(r.clsLabel)}</span>${r.sub.length ? ' · ' + esc(r.sub.join(', ')) : ''}</div>`;
+  return `<tr><td>${ex} ${r.name} ${why}${cls}${also}</td><td>${r.moa}${r.why ? `<div class="sub">${r.why}</div>` : ''}</td><td>${r.rec}</td><td>${r.soa}</td><td>${r.adr}</td></tr>`;
+}
+const drTable = rows => `<table class="reftab drugtab"><thead><tr><th>Drug and class</th><th>MOA, and why</th><th>Receptor</th><th>Site of action</th><th>Key ADRs / DDIs</th></tr></thead><tbody>${rows.map(drRow).join('')}</tbody></table>`;
+function drGroups(rows) {
+  if (DR.by === 'az') return [['A to Z', [...rows].sort((a, b) => drName(a).localeCompare(drName(b)))]];
+  if (DR.by === 'cls') return DR_CLS.map(([k, l]) => [l + 's', rows.filter(r => r.cls === k)]);
+  if (DR.by === 'fam') return DR_FAM.map(f => [f, rows.filter(r => r.fam.includes(f))]);
+  if (DR.by === 'exam') return [[COURSE.exams[0].name + ' list', rows.filter(r => r.exam === 1)], [COURSE.exams[1].name + ' list', rows.filter(r => r.exam === 2)]];
+  const secs = []; rows.forEach(r => { const g = secs.find(s => s[0] === r.sec); g ? g[1].push(r) : secs.push([r.sec, [r]]); }); return secs;
+}
+function drList() {
+  const rows = drRows(), all = typeof DRUGS_ALL === 'undefined' ? 0 : DRUGS_ALL.length, groups = drGroups(rows).filter(g => g[1].length);
+  let h = groups.map(([t, rs]) => `<h3 class="dgh">${esc(t)} <span class="meta">${rs.length}</span></h3>${drTable(rs)}`).join('');
+  if (!rows.length) h = '<div class="card empty">No drug matches. Clear the search or the filters.</div>';
+  if (DR.by === 'fam' && rows.length) h = '<p class="sub">A drug that binds more than one family is listed under each of them.</p>' + h;
+  const q = DR.q.trim().toLowerCase();
+  const both = (typeof DRUGS_BOTH === 'undefined' ? [] : DRUGS_BOTH).filter(b => !q || b.drug.toLowerCase().includes(q)).map(b => [b, DRUGS_ALL.find(r => r.id === b.e1), DRUGS_ALL.find(r => r.id === b.e2)]).filter(x => x[1] && x[2]);
+  if (both.length && !DR.cls && !DR.exam) {
+    h += `<h3 class="dgh" id="drugs-both">The same drug on both lists <span class="meta">${both.length}</span></h3>
+      <p class="sub">Each list is reproduced as written, and each exam asks from its own list. Where the two differ, the row shows both wordings side by side.</p>
+      <table class="reftab drugtab"><thead><tr><th>Drug</th><th>Exam 1 list says</th><th>Exam 2 table says</th></tr></thead><tbody>${both.map(([b, r1, r2]) => `<tr><td>${esc(b.drug)}</td><td>${r1.moa}</td><td>${r2.moa}<div class="sub">${r2.rec} <button type="button" class="chip xwhy" data-jumpx="ref:${r2.anchor}:${esc(r2.id)}">Why?</button></div></td></tr>`).join('')}</tbody></table>`;
+  }
+  if (typeof DRUGS_LIST_ONLY !== 'undefined' && DRUGS_LIST_ONLY.length && !DR.exam && !DR.cls && !q) h += `<p class="sub">On the official Exam 2 list but left out of his tables (his words on it are under the reference table of its section): ${esc(DRUGS_LIST_ONLY.join(', '))}.</p>`;
+  const el = $('#dlist'); if (el) { el.innerHTML = h; stackTables(el); }
+  const c = $('#dcount'); if (c) c.textContent = rows.length === all ? `${all} rows` : `${rows.length} of ${all} rows`;
+}
+function vDrugs() {
+  const chips = (list, cur, attr) => list.map(([k, l]) => `<button type="button" class="chip ${cur === k ? 'on' : ''}" aria-pressed="${cur === k}" data-${attr}="${k}">${l}</button>`).join('');
+  $('#view').innerHTML = `<h2 id="drugs-top">All drugs</h2>
+    <p class="sub">Every drug on the Exam 1 list and the Exam 2 list in one table, taken from the reference tables. Class follows the official Exam 2 list’s colour code (agonist, antagonist, indirect, donor) and the Exam 1 list’s own words. Regroup by receptor family to see which drugs meet at one receptor; Why? opens the drug’s card on the Reference page.</p>
+    <div class="card tbar" id="dbar"><div class="row" style="flex-wrap:nowrap"><input id="dsearch" type="search" placeholder="Search the drugs (name, receptor, site, ADR, suffix)…" value="${esc(DR.q)}" autocomplete="off" aria-label="Search the drugs">
+      <button class="btn ghost" id="dclear" type="button" ${DR.q ? '' : 'hidden'}>Clear</button></div>
+      <div class="row" style="margin-top:6px"><span class="meta" style="margin:0">Group by:</span>${chips([['list', 'His tables'], ['fam', 'Receptor family'], ['cls', 'Class'], ['exam', 'Exam'], ['az', 'A to Z']], DR.by, 'by')}</div>
+      <div class="row" style="margin-top:6px"><span class="meta" style="margin:0">Show:</span>${chips([[0, 'Both lists'], [1, 'Exam 1 list'], [2, 'Exam 2 list']], DR.exam, 'ex')}<label class="meta" style="margin:0 0 0 6px">Class: <select id="dclsel" aria-label="Keep one class">${[['', 'All']].concat(DR_CLS).map(([k, l]) => `<option value="${k}" ${DR.cls === k ? 'selected' : ''}>${l}</option>`).join('')}</select></label><span class="meta" id="dcount" aria-live="polite" style="margin:0 0 0 auto"></span></div></div>
+    <div class="tablewrap" id="dlist"></div>`;
+  const box = $('#dsearch');
+  box.oninput = () => { DR.q = box.value; $('#dclear').hidden = !DR.q; drList(); };
+  $('#dclear').onclick = () => { DR.q = ''; box.value = ''; $('#dclear').hidden = true; drList(); box.focus(); };
+  $('#dclsel').onchange = e => { DR.cls = e.target.value; drList(); };
+  $('#dbar').onclick = e => {
+    const b = e.target.closest('[data-by],[data-ex]'); if (!b) return;
+    if (b.dataset.by) DR.by = b.dataset.by; else DR.exam = +b.dataset.ex;
+    const y = window.scrollY; vDrugs(); window.scrollTo(0, y);
+  };
+  drList();
+}
 function vRef() { $('#view').innerHTML = `<div class="tablewrap">${examPage(REFERENCE_HTML, 'ref')}</div>`; fillImgs($('#view')); stackTables($('#view')); }
 function vTell() {
   const ex = active();
