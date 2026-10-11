@@ -78,7 +78,7 @@ const GUIDE_HTML = `
 <table class="readstrip"><tr><th>Shift</th><th>Baseline</th><th>Emax</th><th>Symmetry</th><th>Answer</th></tr><tr><td>none: each drug alone</td><td>50 → 100</td><td>100</td><td>—</td><td><b>A</b>: full agonist</td></tr><tr><td>none: each drug alone</td><td>50 → about 75</td><td>75–80</td><td>—</td><td><b>B</b>: partial agonist</td></tr><tr><td>none: each drug alone</td><td>stays flat at 50</td><td>no plateau of its own</td><td>—</td><td><b>C</b>: competitive antagonist (or a partial agonist with 50% efficacy)</td></tr><tr><td>none: each drug alone</td><td>50 → 25</td><td>25</td><td>—</td><td><b>D</b>: partial agonist</td></tr><tr><td>none: each drug alone</td><td>50 → 0</td><td>falls to 0</td><td>—</td><td><b>E</b>: inverse agonist</td></tr></table>
 <p>Five drugs, each given alone, from a 50% baseline (R = R*: half the receptors active). On this figure alone C is a competitive antagonist. In a second cell line with most receptors inactive (baseline 0), C rises to 50%, so C is a partial agonist too and the partial agonists are B, C and D (select all). <small>Review p.4; (T) 9/30; Jeopardy IMG_3010</small></p>
 
-<h4>Distinctions</h4>
+<details class="gread"><summary>Distinctions (the Tell apart page has the full set)</summary>
 <table class="reftab"><thead><tr><th>Looks the same</th><th>The one thing to look at</th><th>Answer</th></tr></thead><tbody>
 <tr><td>One right shift from 0: competitive vs inverse vs irreversible</td><td>How many shifts, and is the Emax down yet</td><td>One best answer: competitive; select-all: all three plus allosteric antagonist on affinity</td></tr>
 <tr><td>Several right shifts, same Emax</td><td>Spacing of the steps</td><td>Equal: competitive antagonist. Unequal, stopping: allosteric antagonist on affinity</td></tr>
@@ -88,6 +88,7 @@ const GUIDE_HTML = `
 <tr><td>Full agonist vs inverse agonist</td><td>Which receptor state it binds tightest</td><td>R* (active): full agonist. R (inactive): inverse agonist</td></tr>
 <tr><td>Prozac (fluoxetine, a serotonin reuptake blocker) on 5-HT (serotonin) vs allosteric agonist on 5-HT</td><td>The plateau</td><td>Same plateau, shifted left: Prozac, because the receptor still sees serotonin. Plateau can rise: allosteric agonist on efficacy</td></tr>
 </tbody></table>
+</details>
 <p class="sub">Review p.4, p.6, p.9–10; (T) 9/30; Jeopardy IMG_9314, IMG_9317, IMG_9321.</p>
 
 <h4>How he asks it</h4>
@@ -99,6 +100,7 @@ const GUIDE_HTML = `
 <!--IMG:jeop-abcde-effect-->
 <div class="poll"><b>"If the DRC "B" is the DRC of NE alone and DRC "D" is the agonist in the presence of phenoxybenzamine, drug "X" is most likely:"</b> Competitive antagonist / Irreversible antagonist / Full agonist / Allosteric agonist / Partial agonist<br>Key: <b>Irreversible antagonist</b>. D is right of B (NE, norepinephrine, alone) with a lower plateau; knowing phenoxybenzamine is irreversible gives the answer without the figure. <small>Jeopardy IMG_9320; (T) 9/30</small></div>
 <div class="poll"><b>"The solid line is my drug alone. The dotted line is the presence of this mysterious drug, drug Y, most likely what?"</b> (the dotted curve is to the left and rises from partial to full) an indirect antagonist that increases the second messenger levels / an allosteric agonist that affects affinity and efficacy / diazepam / the same drug in a cell that has high expression of receptors / All of the above<br>Key: <b>All of the above</b>. A PDE inhibitor (more cAMP behind the same signal), an allosteric agonist on affinity and efficacy (diazepam is one) and more receptors each move a partial left and up to full; one shift cannot be tested for symmetry. <small>(T) 9/30</small></div>
+<details class="gread"><summary>Jeopardy 9/30: every stem with his key</summary>
 <table class="reftab"><thead><tr><th>Jeopardy stem (verbatim)</th><th>Key</th><th>Why</th></tr></thead><tbody>
 <tr><td>Which of these DRC would best represent the DRC of an antagonist? [Figure 1, 50% baseline] A / B / C / D / E</td><td>C</td><td>The baseline stays at 50%, because an antagonist has no efficacy; E falls to 0 and is the inverse agonist. <small>IMG_3010</small></td></tr>
 <tr><td>Which drug has the lowest efficacy [five curves A–E; D plateaus lowest] A / B / C / D / E / Two correct answers</td><td>D</td><td>Lowest plateau. On the recap figure C and E tie, hence the "Two correct answers" option. <small>IMG_3011</small></td></tr>
@@ -115,6 +117,7 @@ const GUIDE_HTML = `
 <tr><td>Which of the following drugs would have the highest affinity for receptors present in the inactive state? Full agonist / Partial agonist / Inverse agonist / Competitive antagonist / Indirect antagonist</td><td>Inverse agonist</td><td>The full agonist binds R* to keep it active; the inverse binds R to keep it inactive. <small>IMG_9321</small></td></tr>
 <tr><td>(PollEV, before the review) Which of the following is an irreversible antagonist? Phenylephrine / Prazosin / Diazepam / Phenoxybenzamine / None of the above</td><td>Phenoxybenzamine</td><td>The only irreversible drug on the list. <small>PollEV p.6; (T) 9/30</small></td></tr>
 </tbody></table>
+</details>
 <p class="sub">Jeopardy 9/30 screenshots IMG_3010–3018, IMG_9313–9321 (keys from the transcript); PollEV p.6; (T) 9/30. One 9/29 poll question returns on the exam verbatim, options possibly reordered; Jeopardy was played for a bonus.</p>
 
 <h4>Traps</h4>
@@ -162,7 +165,7 @@ const GUIDE_HTML = `
 <li>A partial agonist (plateau below 100%) can be the most potent drug on a figure while the full agonist (plateau at 100%) is the most efficacious; which is wanted depends on the job. <small>(T) 9/24</small></li>
 </ul>
 
-<h4>Distinctions</h4>
+<details class="gread"><summary>Distinctions (the Tell apart page has the full set)</summary>
 <table class="reftab"><thead><tr><th>Looks the same</th><th>The one thing to look at</th><th>Answer</th></tr></thead><tbody>
 <tr><td>Affinity vs efficacy</td><td>Binding, or a change in receptor state</td><td>Bind and stay bound: affinity. Change the state: efficacy</td></tr>
 <tr><td>Kd vs EC50/ED50</td><td>Binding curve or response curve</td><td>50% bound: Kd. 50% of the response: EC50/ED50</td></tr>
@@ -173,6 +176,7 @@ const GUIDE_HTML = `
 <tr><td>Intrinsic activity vs efficacy</td><td>Is the tissue counted</td><td>No (full agonist 100% (1), partial 1&ndash;99% (0.01&ndash;0.99), antagonist 0): intrinsic activity. Yes, and only relative between drugs: efficacy</td></tr>
 <tr><td>Same ED50, different Emax</td><td>The stem says affinity is equal</td><td>The higher plateau is more potent by efficacy</td></tr>
 </tbody></table>
+</details>
 <p class="sub">Day 1 ~21–~28; Day 2 ~31, ~45–~58; Day 3 ~3–~8, ~21–~29; (T) 9/22, 9/23, 9/24.</p>
 
 <h4>How he asks it</h4>
@@ -231,7 +235,7 @@ const GUIDE_HTML = `
 <table class="readstrip"><tr><th>Shift</th><th>Baseline</th><th>Emax</th><th>Symmetry</th><th>Answer</th></tr><tr><td>none: drug alone</td><td>0 or 50 → 100; at 100 a flat line</td><td>100</td><td>—</td><td><b>full agonist alone</b></td></tr><tr><td>none: drug alone</td><td>0, 50 or 100 → its Emax</td><td>its own (a 75% partial ends at 75 from any start)</td><td>—</td><td><b>partial agonist alone</b></td></tr><tr><td>none: drug alone</td><td>0 stays 0; 50 or 100 → 0</td><td>falls to 0</td><td>—</td><td><b>inverse agonist alone</b></td></tr><tr><td>none: drug alone</td><td>flat at 0, 50 or 100</td><td>none of its own</td><td>—</td><td><b>neutral antagonist alone</b></td></tr></table>
 <p>At a 0 baseline the inverse agonist and the neutral antagonist draw the same flat line, because there is no activity to shut off; only a system with active receptors separates them (petri dish: inverse takes cAMP to zero, antagonist leaves it at 50%). <small>Day 3 ~37–~40, ~52, ~59–~63; Day 4 ~7–~12, ~43–~44; (T) 9/23, 9/28</small></p>
 
-<h4>Distinctions</h4>
+<details class="gread"><summary>Distinctions (the Tell apart page has the full set)</summary>
 <table class="reftab"><thead><tr><th>Looks the same</th><th>The one thing to look at</th><th>Answer</th></tr></thead><tbody>
 <tr><td>Full vs partial agonist</td><td>Does the plateau reach 100%</td><td>100%: full. 1–99%: partial (99% is still partial)</td></tr>
 <tr><td>Partial vs inverse agonist from a high baseline</td><td>Where the response stops</td><td>Its own Emax: partial. Zero: inverse</td></tr>
@@ -240,6 +244,7 @@ const GUIDE_HTML = `
 <tr><td>Occupancy vs intrinsic activity vs two-state model</td><td>Which model explains inverse agonists</td><td>Two-state (efficacy, active and inactive receptors); the names are FYI</td></tr>
 <tr><td>Reversible vs irreversible agonist</td><td>Does any irreversible agonist exist</td><td>No: all agonists are reversible</td></tr>
 </tbody></table>
+</details>
 <p class="sub">Day 1 ~28; Day 2 ~32–~38; Day 3 ~15, ~25, ~31–~41, ~50–~63; Day 4 ~4–~12, ~43–~44; (T) 9/22, 9/23, 9/24, 9/28.</p>
 
 <h4>How he asks it</h4>
@@ -285,7 +290,7 @@ const GUIDE_HTML = `
 <li>Indirect antagonist that blocks norepinephrine removal: the norepinephrine curve shifts left, same Emax, because more norepinephrine stays at the same receptors. <small>PollEV p.1; (T) 9/24</small></li>
 </ul>
 
-<h4>Distinctions</h4>
+<details class="gread"><summary>Distinctions (the Tell apart page has the full set)</summary>
 <table class="reftab"><thead><tr><th>Looks the same</th><th>The one thing to look at</th><th>Answer</th></tr></thead><tbody>
 <tr><td>Chemical vs physiological antagonism</td><td>Is a receptor involved</td><td>No, binds the agonist itself: chemical. Two receptors, opposite effects: physiological</td></tr>
 <tr><td>Competitive vs irreversible antagonist (names)</td><td>Which word set</td><td>Reversible, surmountable: competitive. Insurmountable, nonequilibrium-competitive, non-competitive: irreversible</td></tr>
@@ -294,6 +299,7 @@ const GUIDE_HTML = `
 <tr><td>Inverse agonist vs competitive antagonist</td><td>A raised baseline</td><td>Falls to 0: inverse. Unchanged: competitive</td></tr>
 <tr><td>Indirect antagonist vs receptor antagonist</td><td>Does it touch the receptor</td><td>No, transporter or cascade; may raise or lower the response: indirect</td></tr>
 </tbody></table>
+</details>
 <p class="sub">Day 2 ~15–~16, ~37–~41; Day 4 ~21–~22, ~35–~36, ~43–~55; (T) 9/23, 9/24, 9/28.</p>
 
 <h4>How he asks it</h4>
@@ -340,7 +346,7 @@ const GUIDE_HTML = `
 <table class="readstrip"><tr><th>Shift</th><th>Baseline</th><th>Emax</th><th>Symmetry</th><th>Answer</th></tr><tr><td>left, several doses</td><td>0, unchanged</td><td>same</td><td>unequal steps that stop</td><td><b>allosteric agonist</b> (mirrored right: allosteric antagonist)</td></tr></table>
 <p>Equal, unlimited steps would mean an orthosteric competitor; the steps shrink and stop because the second site fills, and its binding does not depend on the agonist. <small>Day 4 ~30–~34, ~48–~50; (T) 9/28</small></p>
 
-<h4>Distinctions</h4>
+<details class="gread"><summary>Distinctions (the Tell apart page has the full set)</summary>
 <table class="reftab"><thead><tr><th>Looks the same</th><th>The one thing to look at</th><th>Answer</th></tr></thead><tbody>
 <tr><td>Orthosteric vs allosteric</td><td>Can two drugs be bound at once</td><td>No, one or the other: orthosteric. Yes, one and the other: allosteric</td></tr>
 <tr><td>Allosteric agonist on affinity vs efficacy</td><td>Did the plateau rise</td><td>No, moved left: affinity. Yes, no shift: efficacy. Both: left and up</td></tr>
@@ -349,6 +355,7 @@ const GUIDE_HTML = `
 <tr><td>Allosteric vs irreversible antagonist</td><td>Can the Emax reach 0</td><td>No, saturates: allosteric. Yes, covalent: irreversible</td></tr>
 <tr><td>Allosteric agonist vs full agonist as the second drug</td><td>The baseline</td><td>Up: full agonist, because it activates receptors itself. Unchanged, unequal steps: allosteric agonist</td></tr>
 </tbody></table>
+</details>
 <p class="sub">Day 2 ~18–~24, ~39, ~42–~44; Day 4 ~25–~34, ~37–~41, ~48–~50; (T) 9/23, 9/28.</p>
 
 <h4>How he asks it</h4>
@@ -432,7 +439,7 @@ const GUIDE_HTML = `
 </table>
 <p class="sub">Day 3 ~42–~49, ~54–~65; Day 4 ~13–~22, ~25–~34, ~38–~42, ~45–~55; (T) 9/28.</p>
 
-<h4>Distinctions</h4>
+<details class="gread"><summary>Distinctions (the Tell apart page has the full set)</summary>
 <table class="reftab"><thead><tr><th>Looks the same</th><th>The one thing to look at</th><th>Answer</th></tr></thead><tbody>
 <tr><td>FA + FA vs FA + inverse agonist</td><td>Direction and baseline</td><td>Left, baseline up: full agonist. Right, baseline to 0: inverse</td></tr>
 <tr><td>FA + inverse agonist vs FA + competitive antagonist</td><td>A baseline above 0</td><td>Falls: inverse. Unchanged: competitive. At 0 they are the same figure, because nothing can fall</td></tr>
@@ -442,6 +449,7 @@ const GUIDE_HTML = `
 <tr><td>Classes that change Emax vs classes that do not</td><td>Reversible or not, and efficacy touched</td><td>At the receptor, only irreversible and allosteric antagonist on efficacy lower it</td></tr>
 <tr><td>Drug X = class vs drug X = drug-list name</td><td>Two questions on one figure</td><td>Classify first (competitive), then match (metoprolol)</td></tr>
 </tbody></table>
+</details>
 <p class="sub">Day 4 ~21–~22, ~50, ~53–~55; (T) 9/28.</p>
 
 <h4>How he asks it</h4>
@@ -522,7 +530,7 @@ const GUIDE_HTML = `
 <li>Format: matching or ordered combinations of the process; the full word and the acronym are both given. <small>(T) 9/23</small></li>
 </ul>
 
-<h4>Distinctions</h4>
+<details class="gread"><summary>Distinctions (the Tell apart page has the full set)</summary>
 <table class="reftab"><thead><tr><th>Looks the same</th><th>The one thing to look at</th><th>Answer</th></tr></thead><tbody>
 <tr><td>Gαs vs Gαi vs Gαq</td><td>The effector and the direction</td><td>AC up: Gαs. AC down: Gαi. PLC, IP3, Ca++: Gαq</td></tr>
 <tr><td>Transducer vs effector vs second messenger</td><td>Protein class</td><td>G protein: transducer. AC, PLC: effector. cAMP, PKA, PKC, IP3, Ca++: second messenger</td></tr>
@@ -531,6 +539,7 @@ const GUIDE_HTML = `
 <tr><td>Passive vs voltage-gated vs ligand-gated vs pump</td><td>What opens it</td><td>Nothing; membrane potential; a ligand; ATP moves ions uphill</td></tr>
 <tr><td>Ca++ ion vs Ca++ channel</td><td>Molecule or protein</td><td>The ion is a second messenger; the channel is not</td></tr>
 </tbody></table>
+</details>
 <p class="sub">Day 1 ~35–~55; Day 2 ~3–~30; (T) 9/22, 9/23.</p>
 
 <h4>How he asks it</h4>
@@ -563,7 +572,7 @@ const GUIDE_HTML = `
 <li>Natural dietary supplements (NDS): regulated as food, not FDA-tested, cannot claim to treat or cure, natural does not mean safe, patients do not report them. <small>Day 1 ~15–~20; (T) 9/22</small></li>
 </ul>
 
-<h4>Distinctions</h4>
+<details class="gread"><summary>Distinctions (the Tell apart page has the full set)</summary>
 <table class="reftab"><thead><tr><th>Looks the same</th><th>The one thing to look at</th><th>Answer</th></tr></thead><tbody>
 <tr><td>Must know vs should know</td><td>What it does, or where</td><td>Receptor and selectivity: MOA. Organ: SOA</td></tr>
 <tr><td>Safety vs efficacy</td><td>Does the safe drug work</td><td>No: choose efficacy. Equal efficacy: choose the safer</td></tr>
@@ -572,6 +581,7 @@ const GUIDE_HTML = `
 <tr><td>Pharmacological vs apparent potency</td><td>Route, first-pass, age, absorption, elimination in the list</td><td>Present: apparent, because these are pharmacokinetics (what the body does to the drug). Absent: pharmacological</td></tr>
 <tr><td>Selectivity vs dose</td><td>How far above the selective dose</td><td>Larger dose, less selective, because more receptor types are reached; start with the smallest effective dose</td></tr>
 </tbody></table>
+</details>
 <p class="sub">Day 1 ~7–~9, ~15–~33; (T) 9/22, 9/23.</p>
 
 <h4>How he asks it</h4>
@@ -722,7 +732,7 @@ const GUIDE_HTML = `
 <li>The farther the ED50 from the LD50, the larger the TI. The exam figure will not label either value. <small>(T) 9/29</small></li>
 </ul>
 
-<h4>Distinctions</h4>
+<details class="gread"><summary>Distinctions (the Tell apart page has the full set)</summary>
 <table class="reftab"><thead><tr><th>Looks the same</th><th>The one thing to look at</th><th>Answer</th></tr></thead><tbody>
 <tr><td>Many spare receptors vs few</td><td>Who gets stronger</td><td>Many: agonist, because it needs only a fraction. Few: antagonist, and Emax drops fast</td></tr>
 <tr><td>Indirect antagonist vs allosteric drug</td><td>Does it bind the receptor</td><td>No, transporter, enzyme or cascade: indirect. A second site on the receptor: allosteric</td></tr>
@@ -734,6 +744,7 @@ const GUIDE_HTML = `
 <tr><td>Addition vs synergism vs potentiation</td><td>The result against the sum, and whether both act alone</td><td>Equal: addition. More: synergism. One inactive alone: potentiation</td></tr>
 <tr><td>Effect vs side effect</td><td>What is being treated</td><td>Same MOA (mechanism of action), both predictable (sildenafil, minoxidil, codeine)</td></tr>
 </tbody></table>
+</details>
 <p class="sub">Part 2 p.1–4, 16–35, 39–44; (T) 9/29.</p>
 
 <h4>How he asks it</h4>
