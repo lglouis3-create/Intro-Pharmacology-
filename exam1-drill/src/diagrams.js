@@ -271,7 +271,9 @@ const FIG = (() => {
     // and a dot per step jumps to it. The motion itself is done in app.js (stepTo).
     const dots = steps.map((st, i) => `<button class="sdot${i === 0 ? ' on' : ''}" data-go="dot" data-i="${i}" aria-label="Go to step ${i + 1}"></button>`).join('');
     const controls = `<div class="row anim" data-anim="${key}" style="margin:6px 0 2px"><button class="btn ghost" data-go="-1">◀ Back</button><button class="btn ghost" data-go="1">Next ▶</button><button class="btn ghost" data-go="replay">↻ Replay step</button><button class="btn ghost" data-go="play">▶ Play all</button><span class="sdots">${dots}</span><span class="meta" style="margin:0">${footer || ''}</span></div>`;
-    return wrap(g, cap, h - band, w).replace('</svg></div><figcaption>', '</svg></div>' + caps + controls + '<figcaption>');
+    // the narration row (setting, speed, mute, transcript) is filled by app.js (narrFill) for the setting in force
+    const narr = `<div class="row narrow" data-narr="${key}"></div>`;
+    return wrap(g, cap, h - band, w).replace('</svg></div><figcaption>', '</svg></div>' + caps + controls + narr + '<figcaption>');
   };
 
   /* Drug–drug at one receptor. Top: five receptors in the membrane at one
