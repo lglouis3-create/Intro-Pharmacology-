@@ -2,6 +2,14 @@
 
 Newest first. The build embeds this file; the Topics page shows what is new since your last visit, and the Progress page shows all of it. Keep each bullet to one short line.
 
+## 2026-10-11 (Weak spots rebuilt)
+- Weak spots now tracks concepts, not questions: unfamiliar, struggling, improving, mastered, returning.
+- Each card says why it was flagged, the option you keep choosing and why it is wrong, and the idea.
+- Practice concept asks a different wording first, then one tier up; ends with a short summary.
+- Mastery needs 3 solid answers on 2 questions across 2 sessions; mastered concepts get spaced checks.
+- Select-all answers show partial credit (right ticks and wrong ticks).
+- Progress history survives question renames (id and concept aliases).
+
 ## 2026-10-10 (re-audit fixes)
 - Weak spots: "The idea" no longer repeats the answer shown above it.
 - Session line above the quiz counts the exam you study and says guesses are not counted.
