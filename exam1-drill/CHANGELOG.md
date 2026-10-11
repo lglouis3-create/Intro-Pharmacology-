@@ -2,6 +2,15 @@
 
 Newest first. The build embeds this file; the Topics page shows what is new since your last visit, and the Progress page shows all of it. Keep each bullet to one short line.
 
+## 2026-10-11 (narration scripts, Exam 2)
+
+- Narration scripts written for all 14 Exam 2 step-through figures (73 steps), from the figures' verified captions.
+- Each script explains the step and names the exam point he gave; the voice reads it when narration is on.
+- Order of writing followed what he said he tests most: NMJ and curare reversal, succinylcholine phases,
+  muscarinic sites, organophosphates, indirect adrenergic drugs, the cheese effect, epinephrine reversal,
+  nitric oxide and the sildenafil interaction, the RAAS cascade and drugs, the baroreflex, his ACh lab, the gut brake.
+- "DUMBBELSS" is now spoken as the word he uses; COMT and JG are spelled out.
+
 ## 2026-10-11 (guides: sequences as steps beside their figures)
 
 - Every sequence that ran inside a guide paragraph is now a numbered step list set beside its step-through figure.
