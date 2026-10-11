@@ -4,6 +4,7 @@ Newest first. The build embeds this file; the Topics page shows what is new sinc
 
 ## 2026-10-11 (recorded narration, Exam 2)
 
+- All 73 clips re-recorded after the narrator voice JK was adjusted; same scripts, same file names.
 - All 73 Exam 2 narration steps are now recorded clips in the narrator voice JK (the user's own ElevenLabs voice).
 - With narration on, an Exam 2 figure plays its clip; Play all moves on when the clip ends; speed applies to clips.
 - If a clip cannot load (offline, missing), the device's voice reads the same script instead.
