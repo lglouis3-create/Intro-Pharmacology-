@@ -1561,6 +1561,25 @@ function drList() {
   const el = $('#dlist'); if (el) { el.innerHTML = h; stackTables(el); }
   const c = $('#dcount'); if (c) c.textContent = rows.length === all ? `${all} rows` : `${rows.length} of ${all} rows`;
 }
+/* The narrated walkthrough of the Exam 2 list: one step-through per class of his reference tables, one
+   step per drug row (the same verified rows as the master table), read by the narrator when narration is on.
+   The figure has no SVG: its steps are drug cards, moved by stepPlain; the controls, captions, dots and
+   narration row are the ones every step-through figure has, so Play all, speed and clips work unchanged. */
+const DL_WALK = [['ref2-nmj', 'dl-nmj'], ['ref2-chol', 'dl-chol'], ['ref2-ind', 'dl-ind'], ['ref2-alpha', 'dl-alpha'], ['ref2-beta', 'dl-beta'], ['ref2-no', 'dl-no'], ['ref2-raas', 'dl-raas']];
+function dlWalkHTML() {
+  if (typeof DRUGS_ALL === 'undefined') return '';
+  return DL_WALK.map(([anchor, key]) => {
+    const rows = DRUGS_ALL.filter(r => r.exam === 2 && r.anchor === anchor); if (!rows.length) return '';
+    const n = rows.length, sec = rows[0].sec;
+    const cards = rows.map((r, i) => `<div class="st${i ? '' : ' on'}" data-step="${i + 1}"><div class="dcard"><div class="dname">${r.name}</div><div class="sub dcl"><span class="dcls ${r.cls}">${esc(r.clsLabel)}</span>${r.sub.length ? ' · ' + esc(r.sub.join(', ')) : ''}</div>
+      <dl><dt>MOA</dt><dd>${r.moa}</dd><dt>Receptor</dt><dd>${r.rec}</dd><dt>Site of action</dt><dd>${r.soa}</dd><dt>Key ADRs / DDIs</dt><dd>${r.adr}</dd></dl>${r.also.length ? `<div class="sub dalso">Also on the list: ${esc(r.also.join(', '))}</div>` : ''}</div></div>`).join('');
+    const caps = `<div class="stcap" aria-live="polite" style="display:grid;margin:6px 2px 2px;font-size:14px;line-height:1.4;color:var(--ink)">${rows.map((r, i) =>
+      `<p data-i="${i}" aria-hidden="${i ? 'true' : 'false'}" style="grid-area:1/1;margin:0${i ? ';visibility:hidden' : ''}"><b>Drug ${i + 1} of ${n}</b> · <i>${drName(r)}</i><br>${r.why}</p>`).join('')}</div>`;
+    const dots = rows.map((r, i) => `<button class="sdot${i ? '' : ' on'}" data-go="dot" data-i="${i}" aria-label="Go to drug ${i + 1}"></button>`).join('');
+    const controls = `<div class="row anim" data-anim="${key}" style="margin:6px 0 2px"><button class="btn ghost" data-go="-1">◀ Back</button><button class="btn ghost" data-go="1">Next ▶</button><button class="btn ghost" data-go="replay">↻ Replay step</button><button class="btn ghost" data-go="play">▶ Play all</button><span class="sdots">${dots}</span><span class="meta" style="margin:0">${n} drugs.</span></div>`;
+    return `<figure class="fig dwalk" id="dw-${key}"><div class="dwtitle">${esc(sec)}</div><div class="dwsteps">${cards}</div>${caps}${controls}<div class="row narrow" data-narr="${key}"></div><figcaption>Each card is the row of his reference table; Why? on the master table opens the full card. With narration on, the narrator reads each drug.</figcaption></figure>`;
+  }).join('');
+}
 function vDrugs() {
   const chips = (list, cur, attr) => list.map(([k, l]) => `<button type="button" class="chip ${cur === k ? 'on' : ''}" aria-pressed="${cur === k}" data-${attr}="${k}">${l}</button>`).join('');
   $('#view').innerHTML = `<h2 id="drugs-top">All drugs</h2>
@@ -1569,6 +1588,7 @@ function vDrugs() {
       <button class="btn ghost" id="dclear" type="button" ${DR.q ? '' : 'hidden'}>Clear</button></div>
       <div class="row" style="margin-top:6px"><span class="meta" style="margin:0">Group by:</span>${chips([['list', 'His tables'], ['fam', 'Receptor family'], ['cls', 'Class'], ['exam', 'Exam'], ['az', 'A to Z']], DR.by, 'by')}</div>
       <div class="row" style="margin-top:6px"><span class="meta" style="margin:0">Show:</span>${chips([[0, 'Both lists'], [1, 'Exam 1 list'], [2, 'Exam 2 list']], DR.exam, 'ex')}<label class="meta" style="margin:0 0 0 6px">Class: <select id="dclsel" aria-label="Keep one class">${[['', 'All']].concat(DR_CLS).map(([k, l]) => `<option value="${k}" ${DR.cls === k ? 'selected' : ''}>${l}</option>`).join('')}</select></label><span class="meta" id="dcount" aria-live="polite" style="margin:0 0 0 auto"></span></div></div>
+    <details class="fold dlwalk" id="dl-walk"><summary>Narrated walkthrough of the Exam 2 list: 7 parts, one card per drug</summary><p class="sub">Back, Next and the dots move through the drugs of one class; Play all runs the class through. Set Narration under any part to “Narrate when tapped” and the narrator reads each card.</p><div class="dwgrid">${dlWalkHTML()}</div></details>
     <div class="tablewrap" id="dlist"></div>`;
   const box = $('#dsearch');
   box.oninput = () => { DR.q = box.value; $('#dclear').hidden = !DR.q; drList(); };
@@ -1652,8 +1672,19 @@ const anim = (el, frames, o, scale) => {
   if (scale) a.onfinish = a.oncancel = () => { el.style.transformBox = ''; el.style.transformOrigin = ''; };
   return a;
 };
+/* A step-through whose steps are HTML cards, not SVG (the drug-list walkthrough): the card, its caption
+   and its dot switch; the new card fades in. */
+function stepPlain(fig, from, to) {
+  const steps = [...fig.querySelectorAll('.st')], caps = [...fig.querySelectorAll('.stcap > p')];
+  steps.forEach((s, j) => s.classList.toggle('on', j === to));
+  caps.forEach((p, j) => { p.style.visibility = j === to ? '' : 'hidden'; p.setAttribute('aria-hidden', j === to ? 'false' : 'true'); });
+  fig.querySelectorAll('.sdot').forEach((d, j) => { d.classList.toggle('on', j === to); d.setAttribute('aria-current', j === to ? 'step' : 'false'); });
+  const now = steps[to];
+  if (now && !RM() && now.animate && from !== to) now.animate([{opacity: 0, transform: 'translateY(6px)'}, {opacity: 1, transform: 'translateY(0)'}], {duration: 320, easing: 'ease-out'});
+}
 function stepTo(fig, from, to) {
   const steps = [...fig.querySelectorAll('.st')], svg = fig.querySelector('svg');
+  if (!svg) return stepPlain(fig, from, to);
   const motion = !RM() && typeof svg.animate === 'function';
   const old = from != null && from !== to ? steps[from] : null;
   // First: where every shape of the old step is now (mid-move if a move is still running)
@@ -1885,6 +1916,7 @@ new MutationObserver(ms => { for (const m of ms) m.addedNodes.forEach(nd => { if
 // the setting card at the top of the Diagrams page
 const narrCard = () => `<div class="card narrcard"><b>Guided narration</b><div class="row" style="margin-top:6px">${NAR_MODES.map(([k, l]) => `<button type="button" class="chip ${NAR.mode === k ? 'on' : ''}" aria-pressed="${NAR.mode === k}" data-nmode="${k}">${l}</button>`).join('')}</div>
   <div class="row" style="margin-top:6px">${narrCan() ? `<label class="meta" style="margin:0">Device voice <select class="nvoice msel" aria-label="Device voice for figures without recordings"></select></label>` : ''}${rateSel()}</div>
+  <div class="row" style="margin-top:6px"><button type="button" class="chip" data-jump="drugs:dl-walk">Narrated walkthrough of the Exam 2 drug list</button></div>
   <p class="sub" style="margin:6px 0 0">Narrate when tapped: Back, Next, the step dots and Play all read the step aloud, and Play all moves on when the reading ends. The Exam 2 figures are read by a recorded narrator; figures without recordings use this device’s voice (which differs by device). Captions only: no sound, and a transcript of every step opens under each figure. Nothing plays until you tap a figure’s controls.</p></div>`;
 document.addEventListener('change', e => {
   const t = e.target;
