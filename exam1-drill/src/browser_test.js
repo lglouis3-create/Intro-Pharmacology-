@@ -594,6 +594,8 @@ const out = path.join(__dirname, '..', course.match(/output:\s*'([^']+)'/)[1]);
     const spoken = [], utts = [];
     Object.defineProperty(window, 'speechSynthesis', {value: {speak: u => { spoken.push(u.text); utts.push(u); }, cancel: () => {}, pause: () => {}, resume: () => {}, getVoices: () => [], addEventListener: () => {}}, configurable: true});
     Object.defineProperty(window, 'SpeechSynthesisUtterance', {value: function (t) { this.text = t; }, configurable: true});
+    // every mode has a clip now: block clip playback so the device-voice fallback is what runs
+    const realPlay = HTMLMediaElement.prototype.play; HTMLMediaElement.prototype.play = function () { return Promise.reject(new Error('clip blocked')); };
     go('scenes'); setNarr('tap'); NAR.muted = false;
     const sec = document.getElementById('sc-gp'), st = SC_ST.get('gp'); sec.scrollIntoView(); await new Promise(r => setTimeout(r, 100));
     sec.querySelector('.sc-drug[data-mode="gs"]').click();
@@ -606,7 +608,7 @@ const out = path.join(__dirname, '..', course.match(/output:\s*'([^']+)'/)[1]);
     await new Promise(r2 => setTimeout(r2, 50));
     r.done = [...sec.querySelectorAll('.sc-steps li')].every(li => li.classList.contains('done')); r.narCleared = !st.nar; r.btn = sec.querySelector('.sc-play').textContent;
     r.tAfter = st.t; await new Promise(r2 => setTimeout(r2, 200)); r.tStill = st.t;
-    setNarr('off'); r.offRemoves = !document.querySelector('.nsaid');
+    setNarr('off'); r.offRemoves = !document.querySelector('.nsaid'); HTMLMediaElement.prototype.play = realPlay;
     return r; });
   const scriptGs = await page.evaluate(() => speakable(SC.SCENES.find(s => s.key === 'gp').modes.gs.script).replace(/\s+/g, ' '));
   if (!sc6.fell || sc6.said.replace(/\s+/g, ' ') !== scriptGs || sc6.nsaid !== (await page.evaluate(() => SC.SCENES.find(s => s.key === 'gp').modes.gs.script)) || !sc6.once || !sc6.speaking || !sc6.active || !sc6.held || !sc6.stillNar || !sc6.done || !sc6.narCleared || sc6.btn !== 'Play' || sc6.tAfter !== sc6.tStill || !sc6.offRemoves) fail('scenes narration fallback: ' + JSON.stringify(Object.assign({}, sc6, {said: sc6.said.slice(0, 80), nsaid: sc6.nsaid.slice(0, 40)})));
