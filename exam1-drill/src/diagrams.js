@@ -1453,6 +1453,79 @@ const FIG = (() => {
         'Six steps.');
     };
 
+    /* ---------- The pressure formula: MAP = CO × TPR and where each drug acts (Adrenergic slides 4–7, 17–18, 29–30, 52; RAAS lecture; (T) 10/6, 10/7) ---------- */
+    F4['e2-map-anim'] = () => {
+      // three boxes: HR × SV × TPR; the inputs above them; arrows inside them per drug
+      const BX = {hr: [12, 76], sv: [112, 76], tpr: [212, 84]};
+      const scene = st => {
+        const a = st.ar || {};
+        let g = T('f1', 150, 32, 'MAP = CO × TPR', 'l') + T('f2', 150, 46, 'CO = heart rate × stroke volume', 'm');
+        g += T('in-hr', 50, 64, 'β1: ↑ rate', 'a11') + T('in-hr2', 50, 76, 'M2: ↓ rate', 'b11');
+        g += T('in-sv', 150, 64, 'β1: ↑ contractility', 'a11') + T('in-sv2', 150, 76, 'α1 veins: preload', 'c11');
+        g += T('in-tpr', 254, 64, 'α1 arteries: ↑', 'c11') + T('in-tpr2', 254, 76, 'β2, NO: ↓', 'a11');
+        [['hr', 'HR'], ['sv', 'SV'], ['tpr', 'TPR']].forEach(([k, l]) => {
+          const [x, w] = BX[k], on = a[k], c = on === 'up' ? 'B' : on === 'down' ? 'A' : null;
+          g += `<rect data-k="b-${k}" x="${x}" y="88" width="${w}" height="40" rx="6" ${c ? tint(c, 0.2) : 'class="box"'} stroke-width="1.2"/>` + T(`bt-${k}`, x + w / 2 - (on ? 10 : 0), 114, l, 'l');
+          if (on) g += T(`ar-${k}`, x + w / 2 + 16, 115, on === 'up' ? '↑' : '↓', on === 'up' ? 'b' : 'a');
+        });
+        g += T('x1', 100, 114, '×', 'l') + T('x2', 200, 114, '×', 'l');
+        g += T('pre', 150, 146, 'preload: blood in the ventricle at end diastole', 's') + T('aft', 150, 158, 'afterload: pressure to open the valve (systolic)', 's');
+        if (st.map) g += T('map', 150, 182, st.map, st.mapK || 'l');
+        (st.note || []).forEach((t, i) => { g += T('n' + i, 150, 198 + i * 13, t, 'm'); });
+        return g;
+      };
+      const steps = [
+        ['The formula he works from. Mean arterial pressure (MAP) = cardiac output (CO) × total peripheral resistance (TPR), and CO = heart rate × stroke volume. His goal: for each adrenergic drug, "predict what component of the formula is being affected".', scene({map: 'three terms a drug can change: HR, SV, TPR', mapK: 'm'}), 'Pharmacological Targets'],
+        ['What sets each term. Sympathetic β1 raises the rate and the contractility (stroke volume); parasympathetic M2 slows the rate. α1 on the veins sets the preload through venous return; α1 on the resistance arteries sets the TPR, which is the afterload, his "systolic pressure".', scene({map: 'β1: HR and SV · α1 veins: preload · α1 arteries: TPR', mapK: 'm'}), 'Cardiac Performance'],
+        ['Phenylephrine, an α1 agonist. The arteries constrict: TPR and afterload rise. The veins constrict: more venous return, more preload, more stroke volume. MAP goes up. That is why it is used with caution in hypertension.', scene({ar: {tpr: 'up', sv: 'up'}, map: 'MAP ↑', mapK: 'b', note: ['α1 agonist: ↑ TPR (afterload), ↑ preload']}), 'Phenylephrine'],
+        ['Prazosin, an α1 antagonist. The arteries dilate: TPR and afterload fall, MAP falls, and the baroreceptor reflex speeds the heart (reflex tachycardia, palpitations). The veins dilate: on standing, blood pools and preload falls: orthostatic hypotension, the first-dose effect.', scene({ar: {tpr: 'down', sv: 'down', hr: 'up'}, map: 'MAP ↓ · HR ↑ by reflex', mapK: 'a', note: ['α1 block: ↓ TPR, ↓ preload; reflex tachycardia']}), 'Prazosin'],
+        ['Clonidine, an α2 agonist (Gi). It turns sympathetic outflow down at the nerve endings and in the brain: less NE, so the vessels dilate (TPR down) and the heart slows (CO down). MAP falls; stopping it abruptly gives rebound hypertension.', scene({ar: {tpr: 'down', hr: 'down'}, map: 'MAP ↓', mapK: 'a', note: ['less sympathetic tone: ↓ TPR, ↓ HR']}), 'Clonidine'],
+        ['Metoprolol, a β1 antagonist. The heart slows and contracts less: CO falls, and the kidney releases less renin. The vessels are not its target. Carvedilol and labetalol add α1 block, so TPR falls as well: his slide 7 example.', scene({ar: {hr: 'down', sv: 'down'}, map: 'MAP ↓ through CO', mapK: 'a', note: ['β1 block: ↓ HR, ↓ contractility, ↓ renin', 'carvedilol: also α1 block → ↓ TPR']}), 'β blockers'],
+        ['Epinephrine. β1 raises the rate and the force. In the vessels, a low dose reaches β2 first: TPR falls; a high dose adds α1, which overrides β2: TPR rises. The tracing figure shows the reversal with prazosin given first.', scene({ar: {hr: 'up', sv: 'up', tpr: 'up'}, map: 'low dose: TPR ↓ · high dose: TPR ↑', mapK: 'm', note: ['β1: ↑ HR, ↑ SV · β2 (low): ↓ TPR · α1 (high): ↑ TPR']}), 'Epinephrine'],
+        ['The RAAS drugs. Angiotensin II constricts the arteries through AT1 (TPR up) and keeps Na+ and water through aldosterone (volume and preload up). An ACE inhibitor or an ARB removes both: TPR falls, preload falls, MAP falls.', scene({ar: {tpr: 'down', sv: 'down'}, map: 'MAP ↓', mapK: 'a', note: ['less Ang II: ↓ TPR · less aldosterone: ↓ volume, ↓ preload']}), 'ACE inhibitors and ARBs']
+      ];
+      return step2('e2-map', 'The pressure formula: where each drug acts', steps, 230,
+        ['<b>The formula</b> (Adrenergic slide 7): MAP = CO (HR × SV) × TPR; CO targets: "inhibition of myocardial contractility &amp; heart rate, decreasing ventricular filling pressure"; TPR targets: "vasodilation of resistance vessels, decrease sympathetic tone". Slide 4: cardiac factors preload, afterload, heart rate, contractility.',
+         '<b>Preload and afterload</b> (slide 6; (T) 10/6): preload is the diastolic pressure, "how much blood is in the ventricle at the top of diastole", set by venous return; afterload is the force that opposes shortening, "the same thing as systolic pressure". α1 sits on both the veins (preload) and the arteries (afterload) (slides 17–18).',
+         '<b>The drugs</b>: phenylephrine (slide 18), prazosin and its ADRs (slides 29–30), clonidine (α2, Gi; 10/6), β blockers and carvedilol (slide 7 spoken example; slides 54–59), epinephrine\'s dose-dependent receptors (slides 47–51), the RAAS drugs (RAAS lecture, figure "RAAS drugs and what goes up or down").',
+         'His words (10/6): "the goal over here is for us to be able to predict what component of the ... pressure formula is being affected by our drugs. And if you know the site of action, then it\'s just connecting the dots."'],
+        'Eight steps.');
+    };
+
+    /* ---------- How to read a tracing: a worked example (Poll 28, NE then drug B; Jeopardy 10/8 compounds; (T) 10/6, 10/7, 10/8) ---------- */
+    F4['e2-trace-anim'] = () => {
+      // the trace: a vessel constriction recording with oscillation; NE at A raises it, drug B drops it below the start
+      const base = 128, path = (() => {
+        let d = 'M22 128'; for (let x = 22; x <= 108; x += 6) d += ` L${x + 3} ${base - 7} L${x + 6} ${base + 7}`;
+        for (let i = 0; i <= 14; i++) { const x = 110 + i * 6, y = base - 36 * Math.min(1, i / 9); d += ` L${x + 3} ${y - 7} L${x + 6} ${y + 7}`; }
+        d += ' L203 94 L208 100 L212 116 L218 150 L240 158 L292 158'; return d;
+      })();
+      const scene = st => {
+        let g = `<rect data-k="fr" x="14" y="30" width="282" height="140" fill="none" stroke="var(--line)"/>` + T('ylab', 8, 100, 'constriction ↑', 's', 'start');
+        g += `<line data-k="tb" x1="24" y1="40" x2="60" y2="40" stroke="var(--muted)"/>` + T('tbl', 42, 52, '1 min', 's');
+        g += `<path data-k="tr" d="${path}" fill="none" stroke="var(--ink)" stroke-width="1.4" stroke-linejoin="round"/>`;
+        g += A('aa', 110, 68, 110, 84) + T('al', 110, 64, 'A', 'l') + A('ab', 206, 56, 206, 72) + T('bl', 206, 52, 'B', 'l');
+        if (st.hl === 'rise') g += `<rect data-k="hl" x="108" y="78" width="98" height="64" rx="4" ${tint('C', 0.12)} stroke-dasharray="4 3"/>`;
+        if (st.hl === 'fall') g += `<rect data-k="hl" x="204" y="86" width="88" height="80" rx="4" ${tint('B', 0.12)} stroke-dasharray="4 3"/>`;
+        if (st.hl === 'axes') g += `<rect data-k="hl" x="4" y="26" width="292" height="148" rx="4" ${tint('E', 0.08)} stroke-dasharray="4 3"/>`;
+        (st.note || []).forEach(([t, k], i) => { g += T('n' + i, 8, 186 + i * 13, t, k || 'm', 'start'); });
+        return g;
+      };
+      const steps = [
+        ['Read the axes and the arrows first. The y-axis is the response (constriction, which he read as blood pressure); the x-axis is time, with a 1-minute bar. A and B mark the moments a drug was given. This is not a dose–response curve: "If I\'m going up, it\'s constricting. If I\'m going down, it\'s dilating."', scene({hl: 'axes', note: [['y: the response · x: time · arrows: when each drug was given', 's']]}), 'Step 1: the axes'],
+        ['Name the known drug and its receptor. A is norepinephrine. In a blood vessel NE binds α1 (Gq, ↑Ca++), so the trace rises: constriction. Everything after this is judged against that response.', scene({hl: 'rise', note: [['A = NE → α1 (Gq) → constriction: the trace rises', 'c']]}), 'Step 2: the known drug'],
+        ['List the receptors in that tissue. Blood vessels carry α1 (constricts), β2 (dilates) and M3 on the endothelium, which is not innervated: "those M3s are quiet" unless a muscarinic drug is given. β1 is in the heart, not here.', scene({hl: 'rise', note: [['in a vessel: α1 constricts · β2 dilates · M3 endothelium: quiet', 'm'], ['β1 is in the heart: a different organ', 's']]}), 'Step 3: the receptors here'],
+        ['Read what drug B did to the known response. The trace falls below the starting level and stays there: the α1 response is not just smaller, it is removed. So B took away NE\'s receptor.', scene({hl: 'fall', note: [['after B: the α1 response is gone, below the start', 'b']]}), 'Step 4: what B did'],
+        ['Ask of each option: is it helping or not? Phenylephrine (α1 agonist) would help. Cocaine (more NE at the synapse) would help. Metoprolol blocks β1 in the heart, "not even near close the blood vessels". Atropine blocks M3, which is quiet here: nothing to block. Prazosin blocks α1: it hurts. Answer: prazosin.', scene({hl: 'fall', note: [['phenylephrine: helps ✗ · cocaine: helps ✗', 's'], ['metoprolol: heart, wrong organ ✗ · atropine: M3 quiet ✗', 's'], ['prazosin: takes α1 away ✓', 'b']]}), 'Step 5: helping or not?'],
+        ['The same method on his epinephrine tracing. Epinephrine alone raises BP (high dose: α1 minus β2). After compound 1 the rise is much larger: the opponent β2 was removed, so compound 1 is propranolol. After compound 2 the pressure falls: α1 was removed, epinephrine reversal, prazosin. After compound 3 nothing happens: both are gone.', scene({note: [['larger rise → β2 removed → propranolol', 'a'], ['fall → α1 removed → prazosin (reversal)', 'b'], ['no response → both removed', 's']]}), 'Step 6: the epinephrine tracing']
+      ];
+      return step2('e2-trace', 'How to read a tracing: NE, then drug B', steps, 232,
+        ['<b>The tracing</b> (Poll 28; Adrenergic slides 84–85; (T) 10/7): drug A (NE) raises constriction; after drug B it falls below the start. His key: prazosin, "B as in boy". The drawing\'s y-axis reads "Constriction"; he read it as blood pressure.',
+         '<b>His method</b> ((T) 10/6, 10/7): "You\'ve got to know the mechanism of action. You\'ve got to know the receptors, and then through the process of elimination you ask the question, Is it helping or not?" Vessel receptors: α1, β2, and the uninnervated M3: "Those M3s in the blood vessels, they\'re not innervated ... those M3s are quiet."',
+         '<b>The epinephrine tracing</b> (Jeopardy 10/8; Adrenergic slides 47–51): compound 1 = propranolol ("I\'m blocking the beta 2s ... all I have is what? alpha one effect"); a fall after prazosin is epinephrine reversal; he did not name compound 3. Guides section 8 lists every tracing he has shown.'],
+        'Six steps.');
+    };
+
     /* ---------- Baroreceptor reflex on standing (ANS slides 49–52; 10/1); prazosin first dose (Adrenergic slide 30; 10/6) ---------- */
     F4['e2-baroreflex-anim'] = () => {
       const POS = {lie: [[46, 200], [62, 210], [78, 200], [112, 197], [132, 211], [152, 197]],

@@ -261,6 +261,7 @@ const GUIDE2_HTML = `
 <section class="guide" id="guide2-6">
 <h3>6. α1 and α2 drugs</h3>
 <p><b>The pressure formula.</b> Mean arterial pressure (MAP) = cardiac output (CO, which is heart rate × stroke volume) × total peripheral resistance (TPR). Preload is the blood in the ventricle at the end of filling (diastole), set by venous return; afterload is the pressure the ventricle must overcome to open its valve (he equates it with systolic pressure), set by the resistance arteries. His goal for each adrenergic drug: "predict what component of the [MAP] formula is being affected by our drugs". <small>Adr s.4–7; (T) 10/6</small></p>
+<!--FIG:e2-map-anim-->
 <p><b>α1</b> is Gq: PLC → IP3 → ↑Ca++ → smooth-muscle contraction. Its sites, in the slide's phrase "I see &amp; smell bloody urine": the eye (radial muscle of the pupil: dilation), the nose (its blood vessels), the blood vessels (arteries set afterload, veins set preload; the SNS is their predominant tone) and the urethra; the slide's text also lists the blood vessels of the sinus and prostate. <b>Phenylephrine</b>, a selective α1 agonist, constricts: nasal decongestion, pupil dilation, higher preload and afterload. ADRs: burning, blurred vision, rebound congestion (not used for more than 3 days), caution in hypertension. <b>Oxymetazoline</b> is a non-selective α1 and α2 agonist decongestant. <small>Adr s.17–19; (T) 10/6</small></p>
 
 <h4>How he asks it</h4>
@@ -352,6 +353,7 @@ const GUIDE2_HTML = `
 <h4>The GI smooth muscle tracing</h4>
 <!--IMG:pe2-gi-tracing-->
 <table class="readstrip"><tr><th>Known drug and receptor</th><th>After drug X</th><th>Helping or not?</th><th>Answer</th></tr><tr><td>Pilocarpine on gut M3 (Gq): tone up</td><td>Tone dips slightly; second pilocarpine: no rise</td><td>Hurting: the M3 response is gone</td><td><b>Atropine</b> (a muscarinic antagonist)</td></tr></table>
+<!--FIG:e2-trace-anim-->
 <p>The small dip at X reads as the resting PNS tone being removed (the drill's reading; his walk-through did not explain the dip). Carbachol and neostigmine would help pilocarpine; rocuronium (Nm) and varenicline (brain Nn) have no receptor in gut smooth muscle. <small>Poll 18; (T) 10/6; Chol s.12–19</small></p>
 <div class="poll"><b>"The figure below shows tracing of GI smooth muscle in response to pilocarpine before and after drug X. Drug X is most likely to be:"</b> Carbachol / Neostigmine / Rocuronium / Atropine / Varenicline<br>Key: <b>Atropine</b>: "atropine is blocking the ability of pilocarpine to bind and activate those receptors and produce that constriction." He first read the class answer as "C as in cat"; on the sheet atropine is D. 10/6 pool. <small>Poll 18; (T) 10/6</small></div>
 
