@@ -2,6 +2,12 @@
 
 Newest first. The build embeds this file; the Topics page shows what is new since your last visit, and the Progress page shows all of it. Keep each bullet to one short line.
 
+## 2026-10-12 (narration: the pressure formula, the tracing, every "Hear the why", every scene)
+
+- Guides 6 and 8 figures are narrated: eight pressure-formula steps and six tracing steps, one clip per step.
+- "Hear the why" on all 53 exam-2 polls now explains how to think through the question, not only the key.
+- Scenes: all 82 drug modes have a recorded clip, so the stage runs in time with the narration on every mode.
+
 ## 2026-10-12 (Scenes page)
 
 - Scenes: fifteen animated explainers with drug chips; the stage animates while the steps beside it light up in time.

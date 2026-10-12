@@ -403,7 +403,7 @@ const RAAS = {
       lede: 'Spironolactone blocks the mineralocorticoid receptor (MR) at the end of the cascade, in the late distal tubule and collecting duct.',
       steps: [[0, 'Block at the MR receptor in the collecting duct.'], [1, 'Na+ is not retained and K+ is spared: hyperkalemia.'], [2, 'His 10/8 answers give rise-and-fall directions for lisinopril, losartan, aliskiren and metoprolol; for spironolactone they give only the receptor block, Na+ loss and K+ sparing.'], [3, 'Gynecomastia and impotence with spironolactone, not with eplerenone.']],
       tip: 'Slide 29 is a blank table to fill for all five CLAMS drugs; he said to expect 1 to 2 questions on what rises and what falls.',
-      script: 'Spironolactone blocks the mineralocorticoid receptor at the end of the cascade, in the late distal tubule and collecting duct. Sodium is not retained and potassium is spared, so hyperkalemia is the side effect. His answers on the eighth give directions for the other four drugs; for spironolactone only the receptor block, sodium loss and potassium sparing. Gynecomastia and impotence occur with spironolactone, not with eplerenone.'},
+      script: 'Spironolactone blocks the mineralocorticoid receptor at the end of the cascade, in the late distal tubule and collecting duct. Sodium is not retained and potassium is spared, so hyperkalemia is the side effect. His spoken answers on October eighth give directions for the other four drugs; for spironolactone only the receptor block, sodium loss and potassium sparing. Gynecomastia and impotence occur with spironolactone, not with eplerenone.'},
   },
 };
 const lvNow = {agt: F, a1: F, a2: F, at1: F, at2: F, bk: F, aldo: F};
