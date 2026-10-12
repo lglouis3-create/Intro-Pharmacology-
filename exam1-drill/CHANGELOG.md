@@ -2,6 +2,11 @@
 
 Newest first. The build embeds this file; the Topics page shows what is new since your last visit, and the Progress page shows all of it. Keep each bullet to one short line.
 
+## 2026-10-12 (Scenes page)
+
+- Scenes: fifteen animated explainers with drug chips; the stage animates while the steps beside it light up in time.
+- Each scene states only what his slides and transcripts say, with a cite line; narration runs it once per clip.
+
 ## 2026-10-12 (pressure formula, a worked tracing, nine terms, Pair up)
 
 - Guides 6: "The pressure formula: where each drug acts", MAP = CO × TPR with HR, SV and TPR boxes, eight drug steps.
