@@ -170,7 +170,7 @@ function schedule(id, outcome) {
 /* ---------- views ---------- */
 const VIEWS = [
   ['topics', 'Topics'], ['quiz', 'Quiz'], ['terms', 'Terms'], ['weak', 'Weak spots'], ['exam', 'Exam sim'],
-  ['graphs', 'Graphs'], ['diagrams', 'Diagrams'], ['map', 'Question map'], ['drugs', 'All drugs'], ['ref', 'Reference'], ['tell', 'Tell apart'], ['guide', 'Guides'], ['data', 'Progress']
+  ['graphs', 'Graphs'], ['diagrams', 'Diagrams'], ['map', 'Question map'], ['drugs', 'All drugs'], ['ref', 'Reference'], ['tell', 'Tell apart'], ['pair', 'Pair up'], ['guide', 'Guides'], ['data', 'Progress']
 ];
 let CUR = 'topics';
 function nav() {
@@ -307,12 +307,12 @@ function backBtn() {
   if (!b) { b = document.createElement('button'); b.id = 'backbtn'; b.type = 'button'; b.className = 'btn'; document.body.appendChild(b); b.onclick = goBack; }
   b.textContent = backLabel();
 }
-const backLabel = () => '← Back to ' + ({quiz: 'the question', exam: 'the exam', graphs: 'the figures', map: 'the map', terms: 'the terms', weak: 'Weak spots', tell: 'Tell apart', ref: 'the reference', guide: 'the guide', diagrams: 'the diagrams', drugs: 'the drug table'}[(RET[RET.length - 1] || {}).view] || 'where you were');
+const backLabel = () => '← Back to ' + ({quiz: 'the question', exam: 'the exam', graphs: 'the figures', map: 'the map', terms: 'the terms', weak: 'Weak spots', tell: 'Tell apart', ref: 'the reference', guide: 'the guide', diagrams: 'the diagrams', drugs: 'the drug table', pair: 'Pair up'}[(RET[RET.length - 1] || {}).view] || 'where you were');
 function goBack() { const r = RET.pop(); if (!r) return; backBtn(); go(r.view, true); window.scrollTo(0, r.y); }
 document.addEventListener('click', e => { const j = e.target.closest('[data-jump]'); if (j) { const [v, a] = j.dataset.jump.split(':'); jump(v, a); } });
 /* "view:anchor:group:key": jump to the page, then open that explanation card (the reference's "Why?" cards). */
 document.addEventListener('click', e => { const j = e.target.closest('[data-jumpx]'); if (!j) return; const [v, a, g, k] = j.dataset.jumpx.split(':'); jump(v, a); const out = showExplain(g, k); if (out) scrollToEl(out.closest('.xpick')); });
-const VIEWFN = {topics: vTopics, quiz: vQuiz, terms: vTerms, weak: vWeak, exam: vExam, map: vMap, graphs: vGraphs, diagrams: vDiagrams, drugs: vDrugs, ref: vRef, tell: vTell, guide: vGuide, data: vData};
+const VIEWFN = {topics: vTopics, quiz: vQuiz, terms: vTerms, weak: vWeak, exam: vExam, map: vMap, graphs: vGraphs, diagrams: vDiagrams, drugs: vDrugs, ref: vRef, tell: vTell, pair: vPair, guide: vGuide, data: vData};
 const rerender = () => { const y = window.scrollY; if (CUR === 'quiz' && Q) renderQ(); else if (CUR === 'exam' && EX && !EX.done) renderExam(); else if (CUR === 'exam' && EX && EX.done) examResult(); else VIEWFN[CUR](); window.scrollTo(0, y); };
 document.addEventListener('click', e => {
   const f = e.target.closest('[data-flag]');
@@ -1502,6 +1502,94 @@ function vTerms() {
   };
 }
 
+
+/* ---------- Pair up: drag a chip onto its match, or tap the chip and then the match ----------
+   Sets are 1:1 (one chip per target; a big set serves 7 pairs a round) or bins (several chips go
+   into one target). Check marks each chip; wrong chips return to the tray. Facts come from the
+   receptor map and the Exam 2 list, with the figure captions' sources. */
+const PAIR_SETS = [
+  {id: 'rec', name: 'Receptor → what an agonist does there', cite: 'ANS slides 13, 24, 27, 31, 34–35; (T) 10/1', pairs: [['β1 in the heart', 'rate and force up'], ['M2 in the heart', 'bradycardia'], ['α1 on vessel smooth muscle', 'constriction'], ['β2 on vessel or airway smooth muscle', 'dilation'], ['M3 on the endothelium', 'nitric oxide: dilation'], ['M3 in the gut', 'more motility: diarrhea'], ['α2 on the sympathetic nerve ending', 'less NE released'], ['β1 on the JG cells', 'renin release'], ['β3 in the bladder', 'relaxes: urine retained'], ['M3 in the bladder', 'urination'], ['α1 in the eye', 'mydriasis'], ['M3 in the eye', 'miosis'], ['Nn in a ganglion', 'Na+ in: the next neuron fires'], ['Nm on skeletal muscle', 'contraction']]},
+  {id: 'dumb', name: 'DUMBBELSS: each letter, with its receptor', cite: 'ANS slides 24, 27; Cholinergic slides 13–14', pairs: [['D', 'Diarrhea (gut M3)'], ['U', 'Urination (bladder M3)'], ['M', 'Miosis (eye M3)'], ['B (first)', 'Bradycardia (heart M2)'], ['B (second)', 'Bronchial constriction (airway M3)'], ['E', 'Emesis (CNS M1)'], ['L', 'Lacrimation (glands M3)'], ['S (first)', 'Salivation (glands M3)'], ['S (second)', 'Stimulation of the CNS (M1)']]},
+  {id: 'anti', name: 'Anti-DUMBBELSS: what the antagonist gives instead', cite: 'Cholinergic slides 19, 30, 32', pairs: [['Diarrhea', 'Constipation'], ['Urination', 'Urinary retention'], ['Miosis', 'Mydriasis'], ['Bradycardia', 'Tachycardia'], ['Bronchial constriction', 'Bronchial dilation'], ['Emesis, CNS stimulation', 'CNS effects: hallucinations, restlessness, coma'], ['Lacrimation', 'Dry eyes'], ['Salivation', 'Dry mouth']]},
+  {id: 'gprot', name: 'Receptor → G protein, or ion channel', bins: true, cite: 'ANS slides 4, 13, 24, 34–35; RAAS lecture', pairs: [['M1', 'Gq'], ['M2', 'Gi'], ['M3', 'Gq'], ['α1', 'Gq'], ['α2', 'Gi'], ['β1', 'Gs'], ['β2', 'Gs'], ['β3', 'Gs'], ['AT1', 'Gq'], ['AT2', 'Gi'], ['Nn', 'ion channel: no G protein'], ['Nm', 'ion channel: no G protein']]},
+  {id: 'drug', name: 'Drug → its receptor (Exam 2 list)', bins: true, cite: 'Pharmacology_Exam_2_Drug_List.pdf; the All drugs table', pairs: null}
+];
+// the drug set from the table: drugs whose receptor text names one receptor (or none)
+function pairDrugs() {
+  const rows = (typeof DRUGS_ALL === 'undefined' ? [] : DRUGS_ALL).filter(r => r.exam === 2), out = [];
+  rows.forEach(r => {
+    const t = r.rec.replace(/<[^>]+>/g, '').trim(), name = drName(r);
+    const bin = /^None/.test(t) ? 'no receptor: enzyme, transporter or release' : /^(β1|β2|β3|α1|α2|Nm|AT1|MR)\b(?![ ,]*(?:β|α|N[nm]|M[123]))/.test(t) ? t.match(/^(β1|β2|β3|α1|α2|Nm|AT1|MR)/)[1] : /^M[123]\b/.test(t) && !/α|β|N[nm]/.test(t) ? 'muscarinic (M1, M2, M3)' : null;
+    if (bin) out.push([name, bin]);
+  });
+  return out;
+}
+const PR = {set: 'rec', sel: null, round: [], placed: {}, result: null};
+function pairRound() {
+  const S0 = PAIR_SETS.find(x => x.id === PR.set); const all = S0.pairs || pairDrugs();
+  // a small set is served whole (DUMBBELSS needs all nine letters); a big one serves 7 (bins: 12) a round
+  PR.round = S0.bins ? (all.length > 12 ? shuffle(all).slice(0, 12) : shuffle(all)) : shuffle(all).slice(0, all.length <= 9 ? all.length : 7);
+  PR.placed = {}; PR.sel = null; PR.result = null;
+}
+function vPair() {
+  if (!PR.round.length) pairRound();
+  const S0 = PAIR_SETS.find(x => x.id === PR.set), targets = [...new Set(PR.round.map(p => p[1]))], tray = PR.round.filter(p => !PR.placed[p[0]]);
+  const chip = p => `<button type="button" class="pchip ${PR.sel === p[0] ? 'sel' : ''} ${PR.result ? (PR.result[p[0]] ? 'ok' : 'bad') : ''}" data-pc="${esc(p[0])}" aria-pressed="${PR.sel === p[0]}">${esc(p[0])}</button>`;
+  const best = (store.get(COURSE.ns + ':pair') || {})[PR.set];
+  let h = `<h2>Pair up</h2><p class="sub">Drag each chip onto its match, or tap a chip and then tap where it goes. Check marks what is right and sends the wrong ones back. A tapped chip in a box returns to the tray.</p>
+    <div class="card"><div class="row">${PAIR_SETS.map(x => `<button type="button" class="chip ${PR.set === x.id ? 'on' : ''}" aria-pressed="${PR.set === x.id}" data-pset="${x.id}">${esc(x.name)}</button>`).join('')}</div></div>
+    <div class="card"><div class="row" style="justify-content:space-between"><b>${esc(S0.name)}</b><span class="meta" style="margin:0">${S0.bins ? 'several chips can share a box' : 'one chip per box'}${best ? ` · best ${best}` : ''}</span></div>
+    <div class="ptray" id="ptray" aria-label="Chips to place">${tray.map(chip).join('') || '<span class="meta" style="margin:0">All placed. Check.</span>'}</div>
+    <div class="pgrid">${targets.map(t => `<div class="ptarget" data-pt="${esc(t)}" role="button" tabindex="0"><div class="pl">${esc(t)}</div><div class="pin">${PR.round.filter(p => PR.placed[p[0]] === t).map(chip).join('')}</div></div>`).join('')}</div>
+    <div class="row" style="margin-top:10px"><button type="button" class="btn" id="pcheck">Check</button><button type="button" class="btn ghost" id="pnew">New round</button><span class="meta" id="pscore" aria-live="polite" style="margin:0">${PR.result ? `${Object.values(PR.result).filter(Boolean).length} of ${PR.round.length} right` : `${Object.keys(PR.placed).length} of ${PR.round.length} placed`}</span></div>
+    <p class="sub" style="margin-top:8px">Sources: ${esc(S0.cite)}.</p></div>`;
+  $('#view').innerHTML = h;
+  document.querySelectorAll('[data-pset]').forEach(b => b.onclick = () => { PR.set = b.dataset.pset; PR.round = []; vPair(); });
+  $('#pnew').onclick = () => { PR.round = []; vPair(); };
+  $('#pcheck').onclick = pairCheck;
+  pairWire();
+}
+function pairPlace(name, target) {   // target: a right-side label, or null for the tray
+  if (target) { const S0 = PAIR_SETS.find(x => x.id === PR.set); if (!S0.bins) { for (const k of Object.keys(PR.placed)) if (PR.placed[k] === target) delete PR.placed[k]; } PR.placed[name] = target; }
+  else delete PR.placed[name];
+  PR.sel = null; PR.result = null; vPair();
+}
+function pairCheck() {
+  const res = {}; PR.round.forEach(p => { res[p[0]] = PR.placed[p[0]] === p[1]; });
+  const right = Object.values(res).filter(Boolean).length;
+  PR.round.forEach(p => { if (!res[p[0]]) delete PR.placed[p[0]]; });
+  PR.result = res;
+  const all = store.get(COURSE.ns + ':pair') || {}; const score = `${right}/${PR.round.length}`; if (!all[PR.set] || +all[PR.set].split('/')[0] < right) { all[PR.set] = score; store.set(COURSE.ns + ':pair', all); }
+  vPair();
+}
+function pairWire() {
+  const view = $('#view'); let drag = null;
+  view.querySelectorAll('.pchip').forEach(c => {
+    c.addEventListener('pointerdown', e => { drag = {name: c.dataset.pc, x: e.clientX, y: e.clientY, moved: false, ghost: null, el: c}; c.setPointerCapture(e.pointerId); });
+    c.addEventListener('pointermove', e => {
+      if (!drag || drag.el !== c) return;
+      if (!drag.moved && Math.hypot(e.clientX - drag.x, e.clientY - drag.y) < 6) return;
+      if (!drag.ghost) { drag.moved = true; const g = c.cloneNode(true); g.className = 'pchip pghost'; document.body.appendChild(g); drag.ghost = g; c.classList.add('lift'); }
+      drag.ghost.style.left = (e.clientX - 20) + 'px'; drag.ghost.style.top = (e.clientY - 18) + 'px';
+      view.querySelectorAll('.ptarget.over').forEach(t => t.classList.remove('over'));
+      const under = document.elementFromPoint(e.clientX, e.clientY), t = under && under.closest('.ptarget'); if (t) t.classList.add('over');
+    });
+    const end = e => {
+      if (!drag || drag.el !== c) return; const d = drag; drag = null;
+      if (d.ghost) d.ghost.remove(); c.classList.remove('lift');
+      if (d.moved) { const under = document.elementFromPoint(e.clientX, e.clientY), t = under && under.closest('.ptarget'), tray = under && under.closest('#ptray'); if (t) pairPlace(d.name, t.dataset.pt); else if (tray) pairPlace(d.name, null); else vPair(); return; }
+      // a tap: in a box the chip returns to the tray; in the tray it is selected (or unselected)
+      if (PR.placed[d.name]) pairPlace(d.name, null); else { PR.sel = PR.sel === d.name ? null : d.name; vPair(); }
+    };
+    c.addEventListener('pointerup', end); c.addEventListener('pointercancel', end);
+  });
+  view.querySelectorAll('.ptarget').forEach(t => {
+    const go = () => { if (PR.sel) pairPlace(PR.sel, t.dataset.pt); };
+    t.addEventListener('click', e => { if (!e.target.closest('.pchip')) go(); });
+    t.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); } });
+  });
+}
+
 /* ---------- static pages ---------- */
 /* Guides, Reference and Tell apart: the page title stays on top and each exam's
    content sits in its own collapsible group (Exam 2 content from guide2.js,
@@ -2196,7 +2284,7 @@ const DIAGRAMS = [
   ['Autonomic layout, receptors and the baroreceptor reflex', ['e2-nerve-anim', 'e2-ans-layout', 'e2-innervation-map', 'e2-gi-dual-anim', 'e2-gprotein-anim', 'e2-body-map', 'e2-receptor-map', 'e2-musc-map', 'e2-baroreflex-anim', 'e2-ach-bolus-anim'], 2],
   ['Cholinergic synapses: where each drug acts', ['e2-nmj-anim', 'e2-sch-phases-anim', 'e2-chol-synapse-anim', 'e2-op-anim'], 2],
   ['Adrenergic synapse: where each drug acts', ['e2-adr-cycle-anim', 'e2-adr-synapse-anim', 'e2-maoi-tyramine-anim', 'e2-beta-blockers'], 2],
-  ['Epinephrine and nitric oxide', ['e2-epi-reversal-anim', 'e2-no-pathway-anim'], 2],
+  ['Blood pressure and the tracings', ['e2-map-anim', 'e2-epi-reversal-anim', 'e2-trace-anim', 'e2-no-pathway-anim'], 2],
   ['Renin–angiotensin–aldosterone system', ['e2-raas-cascade-anim', 'e2-raas-anim'], 2]
 ];
 const DG_NAMES = {'rtk-steps': 'RTK activation: the five steps'};

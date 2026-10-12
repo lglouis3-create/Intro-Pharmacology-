@@ -2,6 +2,13 @@
 
 Newest first. The build embeds this file; the Topics page shows what is new since your last visit, and the Progress page shows all of it. Keep each bullet to one short line.
 
+## 2026-10-12 (pressure formula, a worked tracing, nine terms, Pair up)
+
+- Guides 6: "The pressure formula: where each drug acts", MAP = CO × TPR with HR, SV and TPR boxes, eight drug steps.
+- Guides 8: "How to read a tracing", his NE-then-drug-B poll worked in his order, then the epinephrine compounds.
+- Terms: MAP, cardiac output, stroke volume, TPR, preload, afterload, venous return, orthostatic hypotension, tracing.
+- Pair up page: drag or tap chips to their match (receptor → effect, DUMBBELSS, G protein, drug → receptor).
+
 ## 2026-10-12 (abbreviations under figures; drug cards link to the body map; listen mode; his polls read aloud)
 
 - Every figure has an "Abbreviations in this figure" fold that expands the labels it uses (AChE, Nm, NET, Gq and so on).
