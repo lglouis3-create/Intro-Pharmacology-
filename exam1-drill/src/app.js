@@ -260,7 +260,19 @@ const TERM_SUB2 = {g6: G2(1, 'the autonomic layout'), g7: G2(1, 'the autonomic l
 const DL2_SUB = {nmj: G2(2, 'nicotinic receptors, NMJ'), chol: G2(4, 'muscarinic drugs'), adr: G2(6, 'α1 and α2 drugs'), no: G2(9, 'nitric oxide'), raas: G2(10, 'RAAS')};
 const DRUGS_LINK = ['drugs', 'drugs-top', 'All drugs: both lists in one table'];
 function linksFor(q) { const l = linksFor0(q); return q.lecture === 'DL1' || q.lecture === 'DL2' ? l.concat([DRUGS_LINK]) : l; }
+/* Exam 3 (Dr. Smith): each section of the L13 bank maps to the guide section written from her objective. */
+const G3 = (n, t) => ['guide', 'guide3-' + n, 'Guide: ' + t];
+const SUB3 = {defs: [G3(1, 'definitions'), ['ref', 'ref3-1', 'Reference: the words'], ['tell', 'tell3-words', 'Tell apart: the words']], princ: [G3(2, 'the five principles'), ['ref', 'ref3-2', 'Reference: the five principles']], source: [G3(3, 'source')],
+  route: [G3(4, 'exposure'), ['ref', 'ref3-3', 'Reference: routes'], ['tell', 'tell3-words', 'Tell apart: common vs effective route']], duration: [G3(4, 'exposure'), ['ref', 'ref3-4', 'Reference: durations'], ['tell', 'tell3-words', 'Tell apart: durations']], freq: [G3(4, 'exposure'), ['ref', 'ref3-5', 'Reference: frequency and half-life']],
+  admet: [G3(5, 'ADMET and acetaminophen'), ['ref', 'ref3-6', 'Reference: acetaminophen'], ['tell', 'tell3-words', 'Tell apart: bioactivation vs detoxification']], dose: [G3(6, 'dose and LD50'), ['ref', 'ref3-7', 'Reference: the LD50 table']],
+  curves: [G3(7, 'dose–response curves'), ['ref', 'ref3-8', 'Reference: curve types'], ['tell', 'tell3-curves', 'Tell apart: individual vs population']], shape: [G3(7, 'dose–response curves'), ['ref', 'ref3-8', 'Reference: curve types'], ['tell', 'tell3-curves', 'Tell apart: U-shapes and thresholds']],
+  indices: [G3(8, 'not yet taught'), ['ref', 'ref3-9', 'Reference: TI, MOS, MOE'], ['tell', 'tell3-curves', 'Tell apart: TI vs MOS vs MOE']], reading: [G3(8, 'the reading')]};
+const TERM_SUB3 = G3(1, 'definitions');
 function linksFor0(q) {
+  if (examOf(q) === 3 && typeof GUIDE3_HTML !== 'undefined') {
+    if (q.topic === 'TERMS') return [TERM_SUB3, ['ref', 'ref3-1', 'Reference: the words']];
+    return SUB3[q.sub] || [G3('scope', 'what Exam 3 tests')];
+  }
   if (examOf(q) === 2 && typeof GUIDE2_HTML !== 'undefined') {
     const key = [q.concept, q.sub, (q.tags || []).join(' '), q.img || ''].join(' ').toLowerCase();
     for (const [re, links] of LINKS2) if (re.test(key)) return links;
@@ -412,7 +424,7 @@ function vTopics() {
   // one collapsible group per exam: its topics, each with its sections
   const topicCard = (t, tq) => {
     const ta = acc(tq), tseen = seenCount(tq);
-    let c = `<div class="card"><div class="topicrow"><span><b>${esc(t.name)}</b><small>${esc(fmtCite(t.cite))}</small>
+    let c = `<div class="card"><div class="topicrow"><span><b>${esc(t.name)}</b>${t.prof && t.prof !== COURSE.professors[0] ? `<span class="exlabel">${esc(t.prof)}’s lecture</span>` : ''}<small>${esc(fmtCite(t.cite))}</small>
       <span class="bar-meter seen"><span style="width:${Math.round(100 * tseen / tq.length)}%"></span></span></span>
       <span class="row"><small>${tseen}/${tq.length} seen · ${ta.pct == null ? '—' : ta.pct + '%'}</small>
       <button class="btn ghost" data-topic="${t.id}" data-ex="${examOf(tq[0])}">Drill</button></span></div>`;
@@ -1449,7 +1461,7 @@ function vTerms() {
   const mine = all.filter(t => termExam(t) === activeId());
   const chipGroups = TM.mode === 'glossary' && TM.scope === 'both' ? groups : [...new Set(mine.map(t => t.group))];
   if (TM.group !== 'all' && !chipGroups.includes(TM.group)) TM.group = 'all';
-  let h = `<h2>Terms</h2><div class="row" style="margin:-4px 0 8px">${examSwitch()}</div><p class="sub">${mine.length} terms for ${esc(active().name)}, each with its source (${all.length} across both exams; the glossary can show both). Each term has a one-line meaning, a situation that shows it in action, and, where one applies, a figure.</p>
+  let h = `<h2>Terms</h2><div class="row" style="margin:-4px 0 8px">${examSwitch()}</div><p class="sub">${mine.length} terms for ${esc(active().name)}, each with its source (${all.length} across all exams; the glossary can show them all). Each term has a one-line meaning, a situation that shows it in action, and, where one applies, a figure.</p>
   <div class="card"><div class="row">${[['glossary', 'Glossary'], ['flash', 'Flashcards'], ['quiz', 'Quiz me']].map(([k, l]) => `<button type="button" class="chip ${TM.mode === k ? 'on' : ''}" aria-pressed="${TM.mode === k}" data-mode="${k}">${l}</button>`).join('')}
    <span class="meta" style="margin:0 0 0 12px">Group:</span>${['all'].concat(chipGroups).map(g => `<button type="button" class="chip ${TM.group === g ? 'on' : ''}" aria-pressed="${TM.group === g}" data-group="${esc(g)}">${g === 'all' ? 'All' : esc(g)}</button>`).join('')}</div></div>`;
   const list = termList();
@@ -1649,6 +1661,8 @@ function pairWire() {
    content sits in its own collapsible group (Exam 2 content from guide2.js,
    reference2.js and tell2.js when they exist). */
 const PAGE2 = {guide: () => typeof GUIDE2_HTML === 'undefined' ? '' : GUIDE2_HTML, ref: () => typeof REFERENCE2_HTML === 'undefined' ? '' : REFERENCE2_HTML, tell: () => typeof TELL2_HTML === 'undefined' ? '' : TELL2_HTML};
+const PAGE3 = {guide: () => typeof GUIDE3_HTML === 'undefined' ? '' : GUIDE3_HTML, ref: () => typeof REFERENCE3_HTML === 'undefined' ? '' : REFERENCE3_HTML, tell: () => typeof TELL3_HTML === 'undefined' ? '' : TELL3_HTML};
+const PAGE_BY_EXAM = {2: PAGE2, 3: PAGE3};
 /* The pages are fixed for a build, so each body is expanded once (figures drawn, markers replaced);
    the exam groups around them are drawn each time, since the open one follows the exam studied. */
 const PAGE_CACHE = {};
@@ -1664,10 +1678,11 @@ function foldLegend(html) {
 }
 function examPage(html1, key) {
   const P = PAGE_CACHE[key] || (PAGE_CACHE[key] = (() => {
-    const m = html1.match(/^\s*<h2>([^<]*)<\/h2>/), body2 = PAGE2[key]();
-    return {title: m ? m[1] : '', b1: expandFigs(foldLegend(m ? html1.slice(m[0].length) : html1)), b2: body2 ? expandFigs(foldLegend(body2)) : ''};
+    const m = html1.match(/^\s*<h2>([^<]*)<\/h2>/), bodies = {1: expandFigs(foldLegend(m ? html1.slice(m[0].length) : html1))};
+    Object.entries(PAGE_BY_EXAM).forEach(([id, pg]) => { const b = pg[key](); bodies[id] = b ? expandFigs(foldLegend(b)) : ''; });
+    return {title: m ? m[1] : '', bodies};
   })());
-  return `<h2>${P.title}</h2>` + COURSE.exams.map(e => exGroup(e, e.id === 1 ? P.b1 : P.b2 || '<div class="empty">This exam\'s sections are added as its lectures are written.</div>')).join('');
+  return `<h2>${P.title}</h2>` + COURSE.exams.map(e => exGroup(e, P.bodies[e.id] || '<div class="empty">This exam\'s sections are added as its lectures are written.</div>')).join('');
 }
 /* His figures are data URLs of up to a few hundred KB each. Pages carry only the key
    (<img data-img>) and the picture is attached after the page is built, so the browser does
