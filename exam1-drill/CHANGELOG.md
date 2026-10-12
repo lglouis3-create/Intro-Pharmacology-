@@ -4,7 +4,8 @@ Newest first. The build embeds this file; the Topics page shows what is new sinc
 
 ## 2026-10-12 (Drug ↔ receptor drill)
 
-- New page: every drug on the Exam 2 table, one at a time; tap its receptor(s) and how it acts, then Check.
+- New page: every drug on the Exam 2 table, one at a time; tap the answer written the way the table writes it.
+- Five answers each time: the table's line, the same receptor with the action flipped, three from other drugs.
 - The check shows the table's own receptor line, class, mechanism and why, with Why?, body-map and G-protein links.
 - "Name the drug" turns it around: a receptor, action and site, and four drugs to pick from.
 - A miss comes back at the end of the round and leads the next one; the best round is kept per mode.
