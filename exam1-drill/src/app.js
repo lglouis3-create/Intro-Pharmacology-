@@ -1509,19 +1509,63 @@ function vTerms() {
    into one target). Check marks each chip; wrong chips return to the tray. Facts come from the
    receptor map and the Exam 2 list, with the figure captions' sources. */
 const PAIR_SETS = [
-  {id: 'rec', name: 'Receptor → what an agonist does there', cite: 'ANS slides 13, 24, 27, 31, 34–35; (T) 10/1', pairs: [['β1 in the heart', 'rate and force up'], ['M2 in the heart', 'bradycardia'], ['α1 on vessel smooth muscle', 'constriction'], ['β2 on vessel or airway smooth muscle', 'dilation'], ['M3 on the endothelium', 'nitric oxide: dilation'], ['M3 in the gut', 'more motility: diarrhea'], ['α2 on the sympathetic nerve ending', 'less NE released'], ['β1 on the JG cells', 'renin release'], ['β3 in the bladder', 'relaxes: urine retained'], ['M3 in the bladder', 'urination'], ['α1 in the eye', 'mydriasis'], ['M3 in the eye', 'miosis'], ['Nn in a ganglion', 'Na+ in: the next neuron fires'], ['Nm on skeletal muscle', 'contraction']]},
-  {id: 'dumb', name: 'DUMBBELSS: each letter, with its receptor', cite: 'ANS slides 24, 27; Cholinergic slides 13–14', pairs: [['D', 'Diarrhea (gut M3)'], ['U', 'Urination (bladder M3)'], ['M', 'Miosis (eye M3)'], ['B (first)', 'Bradycardia (heart M2)'], ['B (second)', 'Bronchial constriction (airway M3)'], ['E', 'Emesis (CNS M1)'], ['L', 'Lacrimation (glands M3)'], ['S (first)', 'Salivation (glands M3)'], ['S (second)', 'Stimulation of the CNS (M1)']]},
-  {id: 'anti', name: 'Anti-DUMBBELSS: what the antagonist gives instead', cite: 'Cholinergic slides 19, 30, 32', pairs: [['Diarrhea', 'Constipation'], ['Urination', 'Urinary retention'], ['Miosis', 'Mydriasis'], ['Bradycardia', 'Tachycardia'], ['Bronchial constriction', 'Bronchial dilation'], ['Emesis, CNS stimulation', 'CNS effects: hallucinations, restlessness, coma'], ['Lacrimation', 'Dry eyes'], ['Salivation', 'Dry mouth']]},
-  {id: 'gprot', name: 'Receptor → G protein, or ion channel', bins: true, cite: 'ANS slides 4, 13, 24, 34–35; RAAS lecture', pairs: [['M1', 'Gq'], ['M2', 'Gi'], ['M3', 'Gq'], ['α1', 'Gq'], ['α2', 'Gi'], ['β1', 'Gs'], ['β2', 'Gs'], ['β3', 'Gs'], ['AT1', 'Gq'], ['AT2', 'Gi'], ['Nn', 'ion channel: no G protein'], ['Nm', 'ion channel: no G protein']]},
+  // pairs: [chip, where it belongs, why, where to see it (data-jump or data-jumpx target)]
+  {id: 'rec', name: 'Receptor → what an agonist does there', cite: 'ANS slides 13, 24, 27, 31, 34–35; Adrenergic slide 18; (T) 10/1', pairs: [
+    ['β1 in the heart', 'rate and force up', 'β1 is Gs: cAMP goes up, and in the heart the rate and the contractility rise (sympathetic).', 'diagrams:dg-e2-body-map@3'],
+    ['M2 in the heart', 'bradycardia', 'M2 is Gi: cAMP goes down and K+ channels open, so the heart slows (parasympathetic).', 'diagrams:dg-e2-body-map@3'],
+    ['α1 on vessel smooth muscle', 'constriction', 'α1 is Gq: Ca++ rises in the smooth muscle and it contracts; TPR and afterload go up.', 'diagrams:dg-e2-body-map@4'],
+    ['β2 on vessel or airway smooth muscle', 'dilation', 'β2 is Gs: cAMP relaxes smooth muscle. In the airway it is reached by adrenal epinephrine, not by a nerve.', 'diagrams:dg-e2-body-map@2'],
+    ['M3 on the endothelium', 'nitric oxide: dilation', 'M3 is Gq on the lining cell: its Ca++ makes nitric oxide, which relaxes the muscle next door. Same Gq as α1, opposite result, because the cell is different.', 'diagrams:dg-e2-gprotein-anim@2'],
+    ['M3 in the gut', 'more motility: diarrhea', 'M3 is Gq on gut smooth muscle: Ca++ rises, motility and tone go up, the D of DUMBBELSS.', 'diagrams:dg-e2-body-map@6'],
+    ['α2 on the sympathetic nerve ending', 'less NE released', 'α2 is Gi on the nerve ending itself, the presynaptic brake: less NE comes out. Clonidine uses it; mirtazapine blocks it.', 'diagrams:dg-e2-adr-synapse-anim@3'],
+    ['β1 on the JG cells', 'renin release', 'β1 is Gs on the juxtaglomerular cells: renin is released, the first step of the RAAS. A β blocker lowers it.', 'diagrams:dg-e2-raas-anim@0'],
+    ['β3 in the bladder', 'relaxes: urine retained', 'β3 is Gs on bladder smooth muscle: cAMP relaxes it, so the bladder holds more urine (mirabegron).', 'diagrams:dg-e2-body-map@6'],
+    ['M3 in the bladder', 'urination', 'M3 is Gq on the bladder muscle: Ca++ rises and it contracts, the U of DUMBBELSS.', 'diagrams:dg-e2-body-map@6'],
+    ['α1 in the eye', 'mydriasis', 'α1 is Gq on the radial muscle of the iris: it contracts and pulls the pupil open (phenylephrine).', 'diagrams:dg-e2-body-map@1'],
+    ['M3 in the eye', 'miosis', 'M3 is Gq on the circular muscle of the iris: it contracts and the pupil narrows, the M of DUMBBELSS.', 'diagrams:dg-e2-body-map@1'],
+    ['Nn in a ganglion', 'Na+ in: the next neuron fires', 'Nn is an ion channel, not a GPCR: ACh opens it, Na+ enters and the postganglionic neuron fires. Both divisions use it.', 'diagrams:dg-e2-nerve-anim@1'],
+    ['Nm on skeletal muscle', 'contraction', 'Nm is the ion channel at the neuromuscular junction: ACh opens it, Na+ enters, the muscle contracts. N for neuron, M for muscle.', 'diagrams:dg-e2-nmj-anim@2']]},
+  {id: 'dumb', name: 'DUMBBELSS: each letter, with its receptor', cite: 'ANS slides 24, 27; Cholinergic slides 13–14', pairs: [
+    ['D', 'Diarrhea (gut M3)', 'Gut smooth muscle M3 (Gq): more motility and tone.', 'diagrams:dg-e2-musc-map'],
+    ['U', 'Urination (bladder M3)', 'Bladder muscle M3 (Gq): contraction.', 'diagrams:dg-e2-musc-map'],
+    ['M', 'Miosis (eye M3)', 'Circular muscle of the iris, M3 (Gq): the pupil narrows.', 'diagrams:dg-e2-musc-map'],
+    ['B (first)', 'Bradycardia (heart M2)', 'Heart M2 (Gi): cAMP down, the rate falls. The one letter that is not M3 or M1.', 'diagrams:dg-e2-musc-map'],
+    ['B (second)', 'Bronchial constriction (airway M3)', 'Airway smooth muscle M3 (Gq): contraction; the lungs are parasympathetic only.', 'diagrams:dg-e2-musc-map'],
+    ['E', 'Emesis (CNS M1)', 'Brain M1 (Gq): excitation, vomiting.', 'diagrams:dg-e2-musc-map'],
+    ['L', 'Lacrimation (glands M3)', 'Lacrimal glands M3 (Gq): secretion.', 'diagrams:dg-e2-musc-map'],
+    ['S (first)', 'Salivation (glands M3)', 'Salivary glands M3 (Gq): secretion. Both divisions cause it, because the sympathetic fiber here releases ACh.', 'diagrams:dg-e2-musc-map'],
+    ['S (second)', 'Stimulation of the CNS (M1)', 'Brain M1 (Gq): excitation. His spelling DUMBBELSS has two S: salivation, then stimulation.', 'diagrams:dg-e2-musc-map']]},
+  {id: 'anti', name: 'Anti-DUMBBELSS: what the antagonist gives instead', cite: 'Cholinergic slides 19, 30, 32', pairs: [
+    ['Diarrhea', 'Constipation', 'Atropine blocks gut M3: the motility ACh drove is gone.', 'diagrams:dg-e2-chol-synapse-anim@3'],
+    ['Urination', 'Urinary retention', 'Bladder M3 blocked: the muscle does not contract (oxybutynin, trospium use this).', 'diagrams:dg-e2-chol-synapse-anim@3'],
+    ['Miosis', 'Mydriasis', 'Iris circular muscle M3 blocked: the pupil widens (tropicamide).', 'diagrams:dg-e2-chol-synapse-anim@3'],
+    ['Bradycardia', 'Tachycardia', 'Heart M2 blocked: the parasympathetic tone that holds the rate down is removed, so the sympathetic side runs unopposed.', 'diagrams:dg-e2-chol-synapse-anim@3'],
+    ['Bronchial constriction', 'Bronchial dilation', 'Airway M3 blocked: the airway opens (ipratropium, tiotropium).', 'diagrams:dg-e2-chol-synapse-anim@3'],
+    ['Emesis, CNS stimulation', 'CNS effects: hallucinations, restlessness, coma', 'Brain M1 blocked: his slide 32 lists hallucinations, restlessness and coma at high doses.', 'diagrams:dg-e2-chol-synapse-anim@3'],
+    ['Lacrimation', 'Dry eyes', 'Lacrimal gland M3 blocked: no secretion.', 'diagrams:dg-e2-chol-synapse-anim@3'],
+    ['Salivation', 'Dry mouth', 'Salivary gland M3 blocked: xerostomia, the ADR every muscarinic antagonist shares.', 'diagrams:dg-e2-chol-synapse-anim@3']]},
+  {id: 'gprot', name: 'Receptor → G protein, or ion channel', bins: true, cite: 'ANS slides 4, 13, 24, 34–35; RAAS lecture', pairs: [
+    ['M1', 'Gq', 'M1 (brain): PLC, IP3, Ca++ up: excitation.', 'diagrams:dg-e2-gprotein-anim@1'],
+    ['M2', 'Gi', 'M2 (heart): adenylate cyclase inhibited, cAMP down: bradycardia.', 'diagrams:dg-e2-gprotein-anim@4'],
+    ['M3', 'Gq', 'M3 (everywhere else): PLC, IP3, Ca++ up: smooth muscle and glands.', 'diagrams:dg-e2-gprotein-anim@1'],
+    ['α1', 'Gq', 'α1: PLC, IP3, Ca++ up: vasoconstriction, mydriasis.', 'diagrams:dg-e2-gprotein-anim@1'],
+    ['α2', 'Gi', 'α2: cAMP down on the nerve ending: less NE released.', 'diagrams:dg-e2-gprotein-anim@4'],
+    ['β1', 'Gs', 'β1: adenylate cyclase on, cAMP up: heart rate and force, renin.', 'diagrams:dg-e2-gprotein-anim@3'],
+    ['β2', 'Gs', 'β2: cAMP up relaxes smooth muscle: bronchodilation, vasodilation.', 'diagrams:dg-e2-gprotein-anim@3'],
+    ['β3', 'Gs', 'β3: cAMP up relaxes the bladder.', 'diagrams:dg-e2-gprotein-anim@3'],
+    ['AT1', 'Gq', 'AT1: Ca++ up: vasoconstriction, aldosterone release.', 'diagrams:dg-e2-gprotein-anim@1'],
+    ['AT2', 'Gi', 'AT2: the physiological antagonist of AT1.', 'diagrams:dg-e2-gprotein-anim@4'],
+    ['Nn', 'ion channel: no G protein', 'Nn (ganglia, brain, adrenal medulla): Na+ in, no G protein.', 'diagrams:dg-e2-gprotein-anim@0'],
+    ['Nm', 'ion channel: no G protein', 'Nm (skeletal muscle): Na+ in, no G protein.', 'diagrams:dg-e2-gprotein-anim@0']]},
   {id: 'drug', name: 'Drug → its receptor (Exam 2 list)', bins: true, cite: 'Pharmacology_Exam_2_Drug_List.pdf; the All drugs table', pairs: null}
 ];
-// the drug set from the table: drugs whose receptor text names one receptor (or none)
+// the drug set from the table: drugs whose receptor text names one receptor (or none); the why is the table's MOA
 function pairDrugs() {
   const rows = (typeof DRUGS_ALL === 'undefined' ? [] : DRUGS_ALL).filter(r => r.exam === 2), out = [];
   rows.forEach(r => {
     const t = r.rec.replace(/<[^>]+>/g, '').trim(), name = drName(r);
     const bin = /^None/.test(t) ? 'no receptor: enzyme, transporter or release' : /^(β1|β2|β3|α1|α2|Nm|AT1|MR)\b(?![ ,]*(?:β|α|N[nm]|M[123]))/.test(t) ? t.match(/^(β1|β2|β3|α1|α2|Nm|AT1|MR)/)[1] : /^M[123]\b/.test(t) && !/α|β|N[nm]/.test(t) ? 'muscarinic (M1, M2, M3)' : null;
-    if (bin) out.push([name, bin]);
+    if (bin) out.push([name, bin, r.moa.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim(), r.why ? `x:ref:${r.anchor}:${r.id}` : `ref:${r.anchor}`]);
   });
   return out;
 }
@@ -1532,22 +1576,30 @@ function pairRound() {
   PR.round = S0.bins ? (all.length > 12 ? shuffle(all).slice(0, 12) : shuffle(all)) : shuffle(all).slice(0, all.length <= 9 ? all.length : 7);
   PR.placed = {}; PR.sel = null; PR.result = null;
 }
+const pairSee = p => p[3] ? (p[3].startsWith('x:') ? `<button type="button" class="chip" data-jumpx="${esc(p[3].slice(2))}">See why</button>` : `<button type="button" class="chip" data-jump="${esc(p[3])}">See the figure</button>`) : '';
 function vPair() {
   if (!PR.round.length) pairRound();
   const S0 = PAIR_SETS.find(x => x.id === PR.set), targets = [...new Set(PR.round.map(p => p[1]))], tray = PR.round.filter(p => !PR.placed[p[0]]);
   const chip = p => `<button type="button" class="pchip ${PR.sel === p[0] ? 'sel' : ''} ${PR.result ? (PR.result[p[0]] ? 'ok' : 'bad') : ''}" data-pc="${esc(p[0])}" aria-pressed="${PR.sel === p[0]}">${esc(p[0])}</button>`;
   const best = (store.get(COURSE.ns + ':pair') || {})[PR.set];
-  let h = `<h2>Pair up</h2><p class="sub">Drag each chip onto its match, or tap a chip and then tap where it goes. Check marks what is right and sends the wrong ones back. A tapped chip in a box returns to the tray.</p>
+  let h = `<h2>Pair up</h2><p class="sub">Drag each chip onto its match, or tap a chip and then tap where it goes. Check marks every chip and explains where it belongs and why, with a link to the figure that shows it. A tapped chip in a box returns to the tray.</p>
     <div class="card"><div class="row">${PAIR_SETS.map(x => `<button type="button" class="chip ${PR.set === x.id ? 'on' : ''}" aria-pressed="${PR.set === x.id}" data-pset="${x.id}">${esc(x.name)}</button>`).join('')}</div></div>
     <div class="card"><div class="row" style="justify-content:space-between"><b>${esc(S0.name)}</b><span class="meta" style="margin:0">${S0.bins ? 'several chips can share a box' : 'one chip per box'}${best ? ` · best ${best}` : ''}</span></div>
     <div class="ptray" id="ptray" aria-label="Chips to place">${tray.map(chip).join('') || '<span class="meta" style="margin:0">All placed. Check.</span>'}</div>
     <div class="pgrid">${targets.map(t => `<div class="ptarget" data-pt="${esc(t)}" role="button" tabindex="0"><div class="pl">${esc(t)}</div><div class="pin">${PR.round.filter(p => PR.placed[p[0]] === t).map(chip).join('')}</div></div>`).join('')}</div>
-    <div class="row" style="margin-top:10px"><button type="button" class="btn" id="pcheck">Check</button><button type="button" class="btn ghost" id="pnew">New round</button><span class="meta" id="pscore" aria-live="polite" style="margin:0">${PR.result ? `${Object.values(PR.result).filter(Boolean).length} of ${PR.round.length} right` : `${Object.keys(PR.placed).length} of ${PR.round.length} placed`}</span></div>
-    <p class="sub" style="margin-top:8px">Sources: ${esc(S0.cite)}.</p></div>`;
+    <div class="row" style="margin-top:10px">${PR.result ? `<button type="button" class="btn" id="pretry">Retry the wrong ones</button>` : `<button type="button" class="btn" id="pcheck">Check</button>`}<button type="button" class="btn ghost" id="pnew">New round</button><span class="meta" id="pscore" aria-live="polite" style="margin:0">${PR.result ? `${Object.values(PR.result).filter(Boolean).length} of ${PR.round.length} right` : `${Object.keys(PR.placed).length} of ${PR.round.length} placed`}</span></div>`;
+  if (PR.result) {
+    // every chip: where it went, where it belongs, and the mechanism; wrong and unplaced ones first
+    const rows = PR.round.slice().sort((a, b) => (PR.result[a[0]] ? 1 : 0) - (PR.result[b[0]] ? 1 : 0));
+    h += `<div class="pfb">${rows.map(p => { const ok = PR.result[p[0]], at = PR.placed[p[0]];
+      return `<div class="pfbr ${ok ? 'ok' : 'bad'}"><div><b>${ok ? '✓' : '✗'} ${esc(p[0])}</b> ${ok ? `→ ${esc(p[1])}` : at ? `was put under “${esc(at)}”; it belongs under <b>${esc(p[1])}</b>` : `was not placed; it belongs under <b>${esc(p[1])}</b>`}</div><div class="sub" style="margin:2px 0 0">${esc(p[2])}</div>${pairSee(p) ? `<div class="row" style="margin-top:4px">${pairSee(p)}</div>` : ''}</div>`; }).join('')}</div>`;
+  }
+  h += `<p class="sub" style="margin-top:8px">Sources: ${esc(S0.cite)}.</p></div>`;
   $('#view').innerHTML = h;
   document.querySelectorAll('[data-pset]').forEach(b => b.onclick = () => { PR.set = b.dataset.pset; PR.round = []; vPair(); });
   $('#pnew').onclick = () => { PR.round = []; vPair(); };
-  $('#pcheck').onclick = pairCheck;
+  const pc = $('#pcheck'); if (pc) pc.onclick = pairCheck;
+  const prt = $('#pretry'); if (prt) prt.onclick = () => { PR.round.forEach(p => { if (!PR.result[p[0]]) delete PR.placed[p[0]]; }); PR.result = null; vPair(); };
   pairWire();
 }
 function pairPlace(name, target) {   // target: a right-side label, or null for the tray
@@ -1558,8 +1610,7 @@ function pairPlace(name, target) {   // target: a right-side label, or null for 
 function pairCheck() {
   const res = {}; PR.round.forEach(p => { res[p[0]] = PR.placed[p[0]] === p[1]; });
   const right = Object.values(res).filter(Boolean).length;
-  PR.round.forEach(p => { if (!res[p[0]]) delete PR.placed[p[0]]; });
-  PR.result = res;
+  PR.result = res;   // placements stay as they are, so the explanation sits next to the mistake
   const all = store.get(COURSE.ns + ':pair') || {}; const score = `${right}/${PR.round.length}`; if (!all[PR.set] || +all[PR.set].split('/')[0] < right) { all[PR.set] = score; store.set(COURSE.ns + ':pair', all); }
   vPair();
 }

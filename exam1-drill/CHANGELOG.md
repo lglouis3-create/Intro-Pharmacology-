@@ -13,6 +13,7 @@ Newest first. The build embeds this file; the Topics page shows what is new sinc
 - Guides 8: "How to read a tracing", his NE-then-drug-B poll worked in his order, then the epinephrine compounds.
 - Terms: MAP, cardiac output, stroke volume, TPR, preload, afterload, venous return, orthostatic hypotension, tracing.
 - Pair up page: drag or tap chips to their match (receptor → effect, DUMBBELSS, G protein, drug → receptor).
+- Pair up: Check explains every chip, where it belongs and why, with a link to the figure step that shows it.
 
 ## 2026-10-12 (abbreviations under figures; drug cards link to the body map; listen mode; his polls read aloud)
 
