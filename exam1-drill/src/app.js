@@ -1683,8 +1683,9 @@ const DR_CLS = [['agonist', 'Agonist'], ['antagonist', 'Antagonist'], ['indirect
 const DR_FAM = ['Nicotinic', 'Muscarinic', 'α adrenergic', 'β adrenergic', 'Histamine', 'Serotonin', 'GABA', 'Angiotensin AT1', 'Mineralocorticoid', 'No receptor: enzyme, transporter or release', 'Other'];
 const drText = r => [r.name, r.also.join(' '), r.sec, r.fam.join(' '), r.clsLabel, r.sub.join(' '), r.moa, r.rec, r.soa, r.adr, r.why].join(' ').replace(/<[^>]+>/g, '').toLowerCase();
 /* ===== Drug ↔ receptor drill: every drug on the Exam 2 table, one at a time =====
-   "Name the receptor": the drug is shown; the learner picks every receptor it acts on (or "no receptor") and
-   whether it is an agonist, an antagonist, or indirect, then Check marks it against the table's own line.
+   "Name the receptor": the drug is shown with five answers written the way the table writes them (receptor line,
+   then agonist, antagonist, indirect or donor); one is the table's own line, one is the same receptor with the
+   action flipped, three belong to other drugs of the same section first. One tap answers.
    "Name the drug": a receptor-plus-action is shown and the drug is picked from four. Misses come back at the
    end of the round and lead the next one. */
 const RX_RECS = ['α1', 'α2', 'β1', 'β2', 'β3', 'M1', 'M2', 'M3', 'Nn', 'Nm', 'AT1', 'MR'];
@@ -1716,6 +1717,18 @@ function rxOptions(r) {   // "name the drug": the right drug and three with a di
   const near = shuffle(pool.filter(x => x.sec === r.sec)), far = shuffle(pool.filter(x => x.sec !== r.sec));
   return shuffle([r].concat(near.concat(far).slice(0, 3)));
 }
+// a row's answer as the table writes it: receptor line without its asides, then the class and its qualifier
+const rxRecText = r => r.rec.replace(/<[^>]+>/g, '').replace(/\s*\([^)]*\)/g, '').replace(/^None directly/, 'No receptor directly').replace(/^None/, 'No receptor').trim();
+const rxSig = r => `${rxRecText(r)} · ${r.cls}${r.sub.length ? ` (${r.sub.join(', ')})` : ''}`;
+// the same receptor line with the action flipped: the distractor that catches a learner who knows the site but not the direction
+const rxFlip = r => { const f = {agonist: 'antagonist', antagonist: 'agonist'}[r.cls]; return f && !/^No receptor/.test(rxRecText(r)) ? `${rxRecText(r)} · ${f}` : null; };
+function rxAnswers(r) {   // "name the receptor": the right line, its flipped twin, then other drugs' lines (same section first)
+  const mine = rxSig(r), seen = new Set([mine]), out = [mine];
+  const flip = rxFlip(r); if (flip && !seen.has(flip)) { seen.add(flip); out.push(flip); }
+  const pool = rxRows().filter(x => x.id !== r.id);
+  shuffle(pool.filter(x => x.sec === r.sec)).concat(shuffle(pool.filter(x => x.sec !== r.sec))).forEach(x => { const t = rxSig(x); if (out.length < 5 && !seen.has(t)) { seen.add(t); out.push(t); } });
+  return shuffle(out);
+}
 // the question for "name the drug": the table's receptor line without its asides, the action, the site
 const rxAsk = r => `${r.rec.replace(/<[^>]+>/g, '').replace(/\s*\([^)]*\)/g, '').replace(/;.*$/, '').trim()} · ${RX_ACTS.find(a => a[0] === rxKey(r)[2])[1].replace(/:.*$/, '').toLowerCase()} · site: ${r.soa.replace(/<[^>]+>/g, '').replace(/;.*$/, '').trim()}`;
 function vRxq() {
@@ -1724,16 +1737,17 @@ function vRxq() {
   const best = storeObj(COURSE.ns + ':rx')[RX.mode];
   const name = r.name.replace(/<[^>]+>/g, '');
   const [req, extra, act] = rxKey(r);
-  let h = `<h2>Drug ↔ receptor</h2><p class="sub">Every drug on the Exam 2 table, one at a time. Name the receptor: tap every receptor the drug acts on (or "no receptor"), then how it acts, then Check. Name the drug: pick the drug that fits the receptor and action. A miss comes back at the end of the round and leads the next one.</p>
+  let h = `<h2>Drug ↔ receptor</h2><p class="sub">Every drug on the Exam 2 table, one at a time. Name the receptor: the drug is shown with five answers written the way the drug table writes them; tap the one that is the table's own line. Name the drug: a receptor, action and site are shown; tap the drug. A miss comes back at the end of the round and leads the next one.</p>
     <div class="card"><div class="row"><button type="button" class="chip ${RX.mode === 'rec' ? 'on' : ''}" aria-pressed="${RX.mode === 'rec'}" data-rxmode="rec">Name the receptor</button><button type="button" class="chip ${RX.mode === 'drug' ? 'on' : ''}" aria-pressed="${RX.mode === 'drug'}" data-rxmode="drug">Name the drug</button>
       <span class="meta" style="margin:0 0 0 auto">${RX.round > 1 ? `redo round ${RX.round} · ` : ''}drug ${Math.min(RX.i + 1, total)} of ${total} · ${RX.right} right${RX.redo.length ? ` · ${RX.redo.length} to redo` : ''}${best ? ` · best ${best}` : ''}</span></div></div>`;
   const chip = (k, lab, on, attr, cls) => `<button type="button" class="chip ${cls || ''} ${on ? 'on' : ''}" aria-pressed="${on}" ${attr}>${esc(lab)}</button>`;
   if (RX.mode === 'rec') {
-    const picked = k => RX.sel.includes(k);
+    if (!RX.opts) RX.opts = rxAnswers(r);
+    const mine = rxSig(r);
     h += `<div class="card rxcard"><div class="rxdrug">${esc(name)}</div><div class="sub">${esc(r.sec)}</div>
-      <div class="rxq">Which receptor(s)?</div><div class="rxrow" role="group" aria-label="Receptors">${RX_RECS.map(k => chip(k, k, picked(k), `data-rxrec="${k}"${RX.result ? ' disabled' : ''}`)).join('')}${chip(RX_NONE, 'No receptor: enzyme, transporter or release', picked(RX_NONE), `data-rxrec="${RX_NONE}"${RX.result ? ' disabled' : ''}`)}</div>
-      <div class="rxq">How does it act there?</div><div class="rxrow" role="group" aria-label="Action">${RX_ACTS.map(([k, lab]) => chip(k, lab, RX.act === k, `data-rxact="${k}"${RX.result ? ' disabled' : ''}`)).join('')}</div>
-      <div class="row" style="margin-top:10px">${RX.result ? `<button type="button" class="btn" id="rxnext">${RX.i + 1 < total ? 'Next drug' : RX.redo.length ? `Redo the ${RX.redo.length} missed` : 'New round'}</button>` : `<button type="button" class="btn" id="rxcheck" ${RX.sel.length && RX.act ? '' : 'disabled'}>Check</button>`}<button type="button" class="btn ghost" id="rxskip">${RX.result ? 'Start over' : 'Skip'}</button></div>`;
+      <div class="rxq">Which receptor does it act on, and how? Pick one.</div>
+      <div class="rxopts">${RX.opts.map(t => `<button type="button" class="rxopt ${RX.result ? (t === mine ? 'ok' : RX.pick === t ? 'bad' : '') : ''}" data-rxans="${esc(t)}" ${RX.result ? 'disabled' : ''}>${esc(t)}</button>`).join('')}</div>
+      <div class="row" style="margin-top:10px">${RX.result ? `<button type="button" class="btn" id="rxnext">${RX.i + 1 < total ? 'Next drug' : RX.redo.length ? `Redo the ${RX.redo.length} missed` : 'New round'}</button>` : ''}<button type="button" class="btn ghost" id="rxskip">${RX.result ? 'Start over' : 'Skip'}</button></div>`;
   } else {
     if (!RX.opts) RX.opts = rxOptions(r);
     h += `<div class="card rxcard"><div class="rxq">Which drug is: <b>${esc(rxAsk(r))}</b>?</div><div class="sub">${esc(r.sec)}</div>
@@ -1742,15 +1756,14 @@ function vRxq() {
   }
   if (RX.result) {
     const ok = RX.result.ok, why = r.why ? `<button type="button" class="chip" data-jumpx="ref:${r.anchor}:${esc(r.id)}">Why?</button>` : `<button type="button" class="chip" data-jump="ref:${r.anchor}">On the list</button>`;
-    h += `<div class="pfb"><div class="pfbr ${ok ? 'ok' : 'bad'}"><b>${ok ? '✓' : '✗'} ${esc(name)}</b>: <b>${esc(rxLabel(req, act))}</b>${extra.length ? ` (the table also names ${esc(extra.join(', '))})` : ''}${RX.result.said ? `<br>You said: ${esc(RX.result.said)}` : ''}
+    h += `<div class="pfb"><div class="pfbr ${ok ? 'ok' : 'bad'}"><b>${ok ? '✓' : '✗'} ${esc(name)}</b>: <b>${esc(rxSig(r))}</b>${RX.result.said ? `<br>You said: ${esc(RX.result.said)}` : ''}
       <div class="sub" style="margin-top:4px"><span class="dcls ${r.cls}">${esc(r.clsLabel)}</span>${r.sub.length ? ' · ' + esc(r.sub.join(', ')) : ''} · receptor: ${r.rec} · site: ${r.soa}</div>
       <div class="sub">${r.moa}${r.why ? ` <i>${r.why}</i>` : ''}</div><div class="row" style="gap:6px;margin-top:6px">${why}${drMapChips(r).replace(/^<div[^>]*>|<\/div>$/g, '')}</div></div></div>`;
   }
   h += `<p class="sub" style="margin-top:8px">Sources: the Exam 2 drug table (All drugs page), built from his slides and the official list.</p></div>`;
   $('#view').innerHTML = h;
   document.querySelectorAll('[data-rxmode]').forEach(b => b.onclick = () => { if (RX.mode === b.dataset.rxmode) return; RX.mode = b.dataset.rxmode; RX.opts = null; rxStart(); vRxq(); });
-  document.querySelectorAll('[data-rxrec]').forEach(b => b.onclick = () => { const k = b.dataset.rxrec; if (k === RX_NONE) RX.sel = RX.sel.includes(k) ? [] : [k]; else { RX.sel = RX.sel.filter(x => x !== RX_NONE); RX.sel = RX.sel.includes(k) ? RX.sel.filter(x => x !== k) : RX.sel.concat(k); } vRxq(); });
-  document.querySelectorAll('[data-rxact]').forEach(b => b.onclick = () => { RX.act = b.dataset.rxact; vRxq(); });
+  document.querySelectorAll('[data-rxans]').forEach(b => b.onclick = () => { RX.pick = b.dataset.rxans; rxCheck(); });
   document.querySelectorAll('[data-rxpick]').forEach(b => b.onclick = () => { RX.pick = b.dataset.rxpick; rxCheck(); });
   const ck = $('#rxcheck'); if (ck) ck.onclick = rxCheck;
   const nx = $('#rxnext'); if (nx) { nx.onclick = rxNext; nx.focus(); }
@@ -1758,11 +1771,8 @@ function vRxq() {
 }
 function rxCheck() {
   const r = RX.queue[RX.i], [req, extra, act] = rxKey(r); let ok, said;
-  if (RX.mode === 'rec') {
-    const sel = RX.sel, allowed = req.concat(extra);
-    ok = req.every(k => sel.includes(k)) && sel.every(k => allowed.includes(k)) && RX.act === act;
-    said = (sel[0] === RX_NONE ? 'no receptor of its own' : sel.join(' + ')) + ' · ' + (RX.act ? RX_ACTS.find(a => a[0] === RX.act)[1].replace(/:.*$/, '').toLowerCase() : '');
-  } else { ok = RX.pick === r.id; const p = RX.opts.find(o => o.id === RX.pick); said = p ? p.name.replace(/<[^>]+>/g, '') : ''; }
+  if (RX.mode === 'rec') { ok = RX.pick === rxSig(r); said = RX.pick; }
+  else { ok = RX.pick === r.id; const p = RX.opts.find(o => o.id === RX.pick); said = p ? p.name.replace(/<[^>]+>/g, '') : ''; }
   RX.result = {ok, said: ok ? '' : said}; if (ok) RX.right++; else RX.redo.push(r);
   vRxq();
 }
