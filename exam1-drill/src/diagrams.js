@@ -1289,6 +1289,87 @@ const FIG = (() => {
         '<b>Why it matters</b> (slide 59): blocking β2 closes the airways (asthma: pick metoprolol, the twins poll); blocking α1 adds vasodilation (↓TPR). Stopping any of them suddenly: rebound hypertension (up-regulation).'], 314);
     };
 
+    /* ---------- β agonists: which β, which organ (Adrenergic slides 39–45, 47, 53; (T) 10/7; Polls 25–26) ---------- */
+    F4['e2-bagon-anim'] = () => {
+      // three organs in a row, one β receptor each; the drug's ligands sit on the receptors it binds
+      const ORG = [['heart', 48, 'Heart', 'β1', 'A'], ['air', 150, 'Airway', 'β2', 'B'], ['blad', 252, 'Bladder', 'β3', 'E']];
+      const scene = st => {
+        const on = st.on || {}, fx = st.fx || {};
+        let g = T('gs', 150, 32, 'all β: Gs → adenylate cyclase ↑ → cAMP ↑', 'm');
+        ORG.forEach(([k, x, name, r, c]) => {
+          const act = !!on[k];
+          g += box('o-' + k, x - 48, 44, 96, 104, act ? c : null, act ? 0.14 : 0) + T('on-' + k, x, 58, name, 'l');
+          g += rcp('r-' + k, x, 66, c, act ? 1 : 0) + T('rl-' + k, x, 111, r, act ? c.toLowerCase() : 's');
+          if (act) g += dot('d-' + k, x, 63, c, 4.5);
+          if (fx[k]) fx[k].forEach((t, i) => { g += T(`fx-${k}-${i}`, x, 128 + i * 12, t, act ? 'm' : 's'); });
+        });
+        if (st.drug) g += T('drug', 150, 178, st.drug, st.dk || 'l');
+        (st.note || []).forEach((t, i) => { g += T('n' + i, 150, 194 + i * 13, t, 'm'); });
+        return g;
+      };
+      const FX = {heart: ['↑ rate, ↑ force', 'kidney: renin'], air: ['bronchi relax', 'reached by epi'], blad: ['detrusor relaxes', 'holds more']};
+      const steps = [
+        ['The three β receptors, all Gs: adenylate cyclase ↑, cAMP ↑. β1 is in the heart (rate, force, rate of relaxation, AV conduction) and the kidney (renin release). β2 relaxes smooth muscle (bronchi, the vessels of skeletal muscle); it has no sympathetic nerve and is reached by circulating epinephrine. β3 relaxes the bladder detrusor.',
+          scene({fx: FX, note: ['Adrenergic slides 39–44; ANS slide 13']})],
+        ['Dobutamine: a selective β1 agonist, given intravenously, short term, for a failing heart. More force and more rate. Tolerance develops because the receptors down-regulate; its ADRs are tachycardia and arrhythmias.',
+          scene({on: {heart: 1}, fx: FX, drug: 'dobutamine: β1 only', dk: 'a', note: ['IV, short-term cardiac decompensation', 'tolerance (down-regulation); tachycardia, arrhythmias']})],
+        ['The "-terols" (albuterol, levalbuterol, salmeterol, formoterol): β2 agonists. The bronchi dilate. If the drug reaches the circulation: faster heart rate, higher blood pressure, agitation. His cue: "If you know that a terol is a beta2 agonist, that\'s good for me." Short- versus long-acting is not the point.',
+          scene({on: {air: 1}, fx: FX, drug: 'the -terols: β2', dk: 'b', note: ['bronchodilation; systemic: ↑HR, ↑BP, agitation', '"a terol is a beta2 agonist"']})],
+        ['Mirabegron: a β3 agonist. The bladder relaxes and holds more, so urgency and leakage fall, with no anti-DUMBBELSS effects, at a higher price. Trospium (an M3 antagonist) relaxes the bladder too, by the other route: both would be correct (Poll 25).',
+          scene({on: {blad: 1}, fx: FX, drug: 'mirabegron: β3', dk: 'e', note: ['overactive bladder; no anti-DUMBBELSS', 'trospium relaxes it too (M3 antagonist)']})],
+        ['Isoproterenol binds β1 and β2 equally ("iso" = equal): more rate and force, bronchodilation, lower peripheral resistance. ADRs: palpitations, tachycardia, cardiac ischemia. It was dropped for asthma: "a beautiful bronchodilation, but also the palpitation and tachycardia".',
+          scene({on: {heart: 1, air: 1}, fx: FX, drug: 'isoproterenol: β1 = β2', dk: 'c', note: ['↑HR, ↑force, bronchodilation, ↓resistance', 'palpitations, tachycardia, ischemia']})],
+        ['Epinephrine and norepinephrine, by affinity. Epinephrine: β1 and β2 at low doses, then α1, then α2 at high doses, so a low dose dilates (β2) and a high dose constricts (α1 overrides). Norepinephrine: highest affinity for α1 and β1, so TPR, rate and force rise; no low-dose dilation.',
+          scene({on: {heart: 1, air: 1}, fx: FX, drug: 'epinephrine: β1, β2 first, then α1, α2', dk: 'c', note: ['norepinephrine: α1 and β1 (↑TPR, ↑HR, ↑force)', 'epinephrine reversal: see the next figure']})]
+      ];
+      return step2('e2-bagon', 'β agonists: which β, which organ', steps, 222,
+        ['<b>The receptors</b> (Adrenergic slides 39–44; ANS slide 13): β1 Gs, heart and kidney (dobutamine, metoprolol); β2 Gs, bronchial and vascular smooth muscle, CNS (albuterol); β3 Gs, bladder detrusor (mirabegron).',
+         '<b>The agonists</b> (slides 41, 43, 44, 45): dobutamine (IV, short-term cardiac decompensation; tolerance; tachycardia, arrhythmias); SABA and LABA "-terols"; mirabegron (overactive bladder); isoproterenol (equal affinity β1 and β2; palpitations, tachycardia, ischemia).',
+         '<b>Epinephrine and norepinephrine</b> (slides 47–53, 84): epinephrine β1, β2 at low doses, then α1, then α2; norepinephrine highest affinity for α1 and β1. His words (10/7): "If you know that a terol is a beta2 agonist, that\'s good for me."'],
+        'Six steps.');
+    };
+
+    /* ---------- β blockers: which receptors each blocks (Adrenergic slides 52, 54–59; (T) 10/6, 10/7; Polls 24, 26; Review 10/9) ---------- */
+    F4['e2-bb-anim'] = () => {
+      // three sites: heart β1 (and kidney renin), airway β2, vessel α1; a blocked receptor carries the ■ glyph
+      const SITE = [['heart', 48, 'Heart, kidney', 'β1', 'A'], ['air', 150, 'Airway', 'β2', 'B'], ['ves', 252, 'Vessel', 'α1', 'C']];
+      const scene = st => {
+        const bl = st.bl || {}, fx = st.fx || {};
+        let g = '';
+        SITE.forEach(([k, x, name, r, c]) => {
+          const b = !!bl[k];
+          g += box('o-' + k, x - 48, 30, 96, 110, b ? c : null, b ? 0.14 : 0) + T('on-' + k, x, 44, name, 'l');
+          g += rcp('r-' + k, x, 52, c, b ? 0 : 1) + T('rl-' + k, x, 97, r, b ? c.toLowerCase() : 's');
+          if (b) g += blk('b-' + k, x, 66);
+          if (fx[k]) fx[k].forEach((t, i) => { g += T(`fx-${k}-${i}`, x, 113 + i * 13, t, b ? 'm' : 's'); });
+        });
+        if (st.drug) g += T('drug', 150, 158, st.drug, st.dk || 'l');
+        (st.note || []).forEach((t, i) => { g += T('n' + i, 150, 176 + i * 13, t, 'm'); });
+        return g;
+      };
+      const FX = {heart: ['↓rate ↓force ↓CO', '↓ renin'], air: ['bronchi narrow', 'asthma: avoid'], ves: ['vessels dilate', '↓TPR ↓afterload']};
+      const IDLE = {heart: ['β1: rate, force', 'renin'], air: ['β2: bronchi open'], ves: ['α1: constricts']};
+      const steps = [
+        ['Every β blocker blocks β1, so every one lowers rate, force, relaxation, cardiac output and renin release: "because all beta blockers blocks beta ones, who\'s gonna take over? Parasympathetic." The must-know is what else each blocks; generations and brand names are not asked.',
+          scene({bl: {heart: 1}, fx: {heart: FX.heart, air: IDLE.air, ves: IDLE.ves}, drug: 'all β blockers: β1', dk: 'a', note: ['↓HR, ↓force, ↓CO, ↓renin (juxtaglomerular β1)', 'the difference: what else is blocked']})],
+        ['MAN: metoprolol, atenolol, nebivolol. β1-selective. The heart slows and the kidney releases less renin; the airway β2 is left alone, so the bronchi stay open. "How about if we spell man. Man, right?"',
+          scene({bl: {heart: 1}, fx: {heart: FX.heart, air: ['β2 spared', 'bronchi open'], ves: IDLE.ves}, drug: 'MAN: β1-selective', dk: 'a', note: ['metoprolol, atenolol, nebivolol', 'lungs spared']})],
+        ['Propranolol, the prototype, and pindolol, a partial agonist (a lesser drop in resting rate and output): β1 and β2. The β2 block narrows the airway. Propranolol is lipophilic, enters the brain and blocks central β2, which is why it is used for anxiety.',
+          scene({bl: {heart: 1, air: 1}, fx: {heart: FX.heart, air: FX.air, ves: IDLE.ves}, drug: 'propranolol, pindolol: β1 + β2', dk: 'b', note: ['non-selective; propranolol: central β2 (anxiety)', 'pindolol: partial agonist']})],
+        ['Carvedilol and labetalol: β1, β2 and α1. The heart slows (CO down) and the vessels dilate (TPR and afterload down): "carvedilol can do it all". On the review poll, carvedilol is the drug that decreases both heart rate and afterload.',
+          scene({bl: {heart: 1, air: 1, ves: 1}, fx: FX, drug: 'carvedilol, labetalol: β1 + β2 + α1', dk: 'c', note: ['↓CO and ↓TPR', 'review 10/9: ↓heart rate and ↓afterload']})],
+        ['Choosing one. Asthma: a non-selective blocker closes the airways, so pick β1-selective: "at least the metoprolol guy can breathe" (the twins poll). Insulin-dependent diabetes: every β blocker masks the racing heart of hypoglycemia; a non-selective one also masks the tremor and nervousness, leaving only sweating, so again β1-selective.',
+          scene({bl: {heart: 1, air: 1}, fx: {heart: ['masks tachycardia'], air: ['asthma worse', 'masks tremor'], ves: IDLE.ves}, drug: 'asthma or diabetes: pick MAN', dk: 'a', note: ['twins poll: metoprolol finishes first', 'hypoglycemia: only sweating is left']})],
+        ['Stopping and emergencies. Stop any β blocker suddenly and the receptors that up-regulated behind the block are open to norepinephrine at once: rebound hypertension, so wean off. In an epinephrine overdose, prazosin goes first and the β blocker second: "you\'re still clamped up, so you can\'t overcome that afterload".',
+          scene({bl: {heart: 1}, fx: {heart: ['β1 up-regulated', 'stop → rebound'], air: IDLE.air, ves: ['epi overdose', 'prazosin first']}, drug: 'wean off; prazosin before the β blocker', dk: 'a', note: ['sudden discontinuation → rebound hypertension', 'Poll 24: prazosin, then metoprolol']})]
+      ];
+      return step2('e2-bb', 'β blockers: which receptors each blocks', steps, 206,
+        ['<b>"All beta blockers ⇒ β1"</b> (Adrenergic slide 54; slides 56–57): ↓contractility, rate, CO; β1 block at the juxtaglomerular complex (↓renin). MAN (10/7): metoprolol, atenolol, nebivolol β1-selective; propranolol (prototype) and pindolol (partial agonist, slide 55) β1 + β2; carvedilol and labetalol β1 + β2 + α1.',
+         '<b>ADRs</b> (slide 59): careful in asthma (non-selective), nodal dysfunction (bradycardia), insulin-dependent diabetes (masks hypoglycemia); sudden discontinuation → rebound hypertension (up-regulation). Katzung says β1-selective blockers should also generally be avoided in asthma; his answer is metoprolol.',
+         '<b>His words</b> (10/7): "it will be silly for you to miss a question exam but not knowing which of the beta blockers is the selective or not." Epinephrine overdose (slide 52, Poll 24): "if you give the beta block first. You\'re slowing down the heart ... but you\'re still clamped up".'],
+        'Six steps.');
+    };
+
     /* ---------- G proteins for Exam 2: the three lanes (ANS slides 4, 13, 24, 34–35; RAAS slides: AT1 Gq, AT2 Gi; (T) 9/30 poll; Jeopardy 10/8) ---------- */
     F4['e2-gprotein-anim'] = () => {
       // one lane at a time: receptors → α subunit → effector → second messenger → response

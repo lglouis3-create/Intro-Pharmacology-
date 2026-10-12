@@ -2,6 +2,12 @@
 
 Newest first. The build embeds this file; the Topics page shows what is new since your last visit, and the Progress page shows all of it. Keep each bullet to one short line.
 
+## 2026-10-12 (Guides 7: β agonists and β blockers move)
+
+- Guides 7: two narrated steppers, "β agonists: which β, which organ" and "β blockers: which receptors each blocks".
+- Guides 7: the epinephrine reversal stepper and the β-blocker text sit in the open section, not in a fold.
+- Guides 7: links to the three Scenes for this section (β-blocker selectivity, epinephrine reversal, regulation).
+
 ## 2026-10-12 (narration: the pressure formula, the tracing, every "Hear the why", every scene)
 
 - Guides 6 and 8 figures are narrated: eight pressure-formula steps and six tracing steps, one clip per step.

@@ -2335,7 +2335,7 @@ const DIAGRAMS = [
   ['Receptor regulation', ['reg-chain', 'desens-rapid-anim', 'desens-long-anim', 'upreg-anim', 'downreg-anim']],
   ['Autonomic layout, receptors and the baroreceptor reflex', ['e2-nerve-anim', 'e2-ans-layout', 'e2-innervation-map', 'e2-gi-dual-anim', 'e2-gprotein-anim', 'e2-body-map', 'e2-receptor-map', 'e2-musc-map', 'e2-baroreflex-anim', 'e2-ach-bolus-anim'], 2],
   ['Cholinergic synapses: where each drug acts', ['e2-nmj-anim', 'e2-sch-phases-anim', 'e2-chol-synapse-anim', 'e2-op-anim'], 2],
-  ['Adrenergic synapse: where each drug acts', ['e2-adr-cycle-anim', 'e2-adr-synapse-anim', 'e2-maoi-tyramine-anim', 'e2-beta-blockers'], 2],
+  ['Adrenergic synapse: where each drug acts', ['e2-adr-cycle-anim', 'e2-adr-synapse-anim', 'e2-maoi-tyramine-anim', 'e2-bagon-anim', 'e2-bb-anim', 'e2-beta-blockers'], 2],
   ['Blood pressure and the tracings', ['e2-map-anim', 'e2-epi-reversal-anim', 'e2-trace-anim', 'e2-no-pathway-anim'], 2],
   ['Renin–angiotensin–aldosterone system', ['e2-raas-cascade-anim', 'e2-raas-anim'], 2]
 ];
