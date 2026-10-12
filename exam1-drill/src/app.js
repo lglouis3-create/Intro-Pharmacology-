@@ -198,7 +198,7 @@ function leaveView() {
   if (typeof xBack === 'function') xBack(null);
   const tb = document.getElementById('tback'); if (tb) tb.remove();
   if (TIO) { TIO.disconnect(); TIO = null; }
-  if (typeof narrStop === 'function') narrStop();
+  if (typeof playStop === 'function') playStop();
 }
 /* Open a view. Returns false when the learner stays in a running exam. `back` is set by the
    "Back to …" button: the exam then reopens on its result page, not on a new paper. */
@@ -293,9 +293,10 @@ const hdrOff = () => { const hd = document.querySelector('header'); return (hd ?
 /* Once a scroll has landed, sections rendered on the way (content-visibility: auto, sized by estimate until
    they are near the screen) can have moved the target by a screen or more: nudge the window onto it,
    a few times at most, starting `wait` ms after the scroll (longer after a smooth one). */
+let SETTLE = 0;   // a later scroll cancels the settles of an earlier one (a Why? jump scrolls twice)
 function settleOn(el, off, wait) {
-  let n = 0; const top = () => el.getBoundingClientRect().top + window.scrollY - off;
-  const settle = () => { if (!document.body.contains(el)) return; if (Math.abs(top() - window.scrollY) > 2 && n++ < 4) { window.scrollTo({top: top(), behavior: 'auto'}); setTimeout(settle, 80); } };
+  let n = 0; const my = ++SETTLE, top = () => el.getBoundingClientRect().top + window.scrollY - off;
+  const settle = () => { if (my !== SETTLE || !document.body.contains(el)) return; if (Math.abs(top() - window.scrollY) > 2 && n++ < 4) { window.scrollTo({top: top(), behavior: 'auto'}); setTimeout(settle, 80); } };
   setTimeout(settle, wait);
 }
 function backBtn() {
@@ -469,6 +470,9 @@ function startQuiz(list, label, mode, opts = {}) {
   CUR = 'quiz'; nav(); leaveView(); nextQ();
 }
 const allDone = () => Q.list.every(q => Q.doneIds.has(q.id));
+/* Order for answered questions: the weakest box first, then the earliest due day, and a random
+   order inside each of those, so a topic drilled again does not repeat last time's sequence. */
+const srSort = list => shuffle(list).sort((a, b) => (S.q[a.id].box - S.q[b.id].box) || (Math.floor(S.q[a.id].due / DAY) - Math.floor(S.q[b.id].due / DAY)));
 /* Pick the next question. Pass mode walks the list once. SR mode takes a
    missed concept's sibling first (a different wording of the same idea), then
    what is due, then what is unseen, then the soonest due. */
@@ -488,7 +492,7 @@ function pickSR() {
   const unseen = list.filter(q => !(S.q[q.id] && S.q[q.id].n) && !Q.doneIds.has(q.id));
   if (unseen.length) return shuffle(unseen)[0];
   Q.ahead = true;
-  const rest = shuffle(list.filter(q => q.id !== recent && fresh(q.id))).sort((a, b) => S.q[a.id].due - S.q[b.id].due);
+  const rest = srSort(list.filter(q => q.id !== recent && fresh(q.id)));
   // everything was answered minutes ago: anything but the very last one
   const lastId = list.reduce((m, q) => (S.q[q.id] && (!m || S.q[q.id].last > S.q[m].last)) ? q.id : m, null);
   return rest[0] || shuffle(list.filter(q => q.id !== recent && q.id !== lastId && !Q.doneIds.has(q.id)))[0] || list.find(q => !Q.doneIds.has(q.id)) || list[0];
@@ -614,7 +618,7 @@ function allList() {
   if (Q.mode === 'sr') {
     const now = Date.now(), due = [], unseen = [], rest = [];
     list.forEach(q => { const st = S.q[q.id]; if (!(st && st.n)) unseen.push(q); else if (st.due <= now) due.push(q); else rest.push(q); });
-    list = due.sort((a, b) => S.q[a.id].box - S.q[b.id].box).concat(shuffle(unseen), rest.sort((a, b) => S.q[a.id].due - S.q[b.id].due));
+    list = srSort(due).concat(shuffle(unseen), srSort(rest));
   }
   Q.allList = list; Q.allN = 40; Q.st = Q.st || {};
   return list;
@@ -1781,13 +1785,14 @@ function stepTo(fig, from, to) {
 // Play all: from the step shown (from step 1 again if at the last), stops at the last; Pause keeps the step.
 // Each step stays long enough to read its words: 1.4 s for the motion plus 150 ms a word, at least 3.2 s, at most 8 s.
 const PLAY_MS = 3200;
+// end a Play all run (and any reading): the button resets and no timer is left
+function playStop() { narrStop(); if (ANIM) { clearTimeout(ANIM.t); ANIM.b.textContent = '▶ Play all'; ANIM.b.setAttribute('aria-pressed', 'false'); ANIM = null; } }
 const playMs = (fig, i) => { const p = fig.querySelectorAll('.stcap > p')[i]; const w = p ? p.textContent.trim().split(/\s+/).length : 0; return Math.min(8000, Math.max(PLAY_MS, 1400 + 150 * w)); };
 document.addEventListener('click', e => {
   const b = e.target.closest('[data-anim] button'); if (!b) return;
   const fig = b.closest('figure'); const steps = [...fig.querySelectorAll('.st')]; if (!steps.length) return;
   const cur = steps.findIndex(s => s.classList.contains('on')), n = steps.length;
-  const playBtn = fig.querySelector('[data-go="play"]');
-  const stop = () => { narrStop(); if (ANIM) { clearTimeout(ANIM.t); ANIM.b.textContent = '▶ Play all'; ANIM.b.setAttribute('aria-pressed', 'false'); ANIM = null; } };
+  const playBtn = fig.querySelector('[data-go="play"]'), stop = playStop;
   const go = b.dataset.go;
   if (go === 'play') {
     const same = ANIM && ANIM.b === b; stop(); if (same) return;
@@ -1810,7 +1815,8 @@ document.addEventListener('click', e => {
     hold(restart ? 0 : cur, restart ? playMs(fig, 0) : playMs(fig, cur) / 2);
     return;
   }
-  if (ANIM && ANIM.b === playBtn) stop();
+  // a tap on this figure ends its run; with narration on, a tap on another figure ends the run too (one voice at a time)
+  if (ANIM && (ANIM.b === playBtn || narrOn())) stop();
   let to = cur;
   if (go === 'replay') stepTo(fig, cur > 0 ? cur - 1 : null, cur);
   else if (go === 'dot') { to = +b.dataset.i; stepTo(fig, cur, to); }
@@ -1903,16 +1909,19 @@ function narrSpeak(fig, i, done) {
   if (src) {
     // the recorded clip; if it cannot be loaded (offline, a missing file), the device's voice reads the script instead
     const a = NARR_AUDIO || (NARR_AUDIO = new Audio()); a.preload = 'auto'; a.src = src; a.playbackRate = NAR.rate;
-    a.onended = finish; a.onerror = () => { if (NAR.cur === cur) synth(); };
+    const fallback = () => { if (NAR.cur !== cur || cur.fell) return; cur.fell = true; synth(); };
+    a.onended = finish; a.onerror = fallback;
     a.onloadedmetadata = () => { if (NAR.cur === cur && isFinite(a.duration)) guard(a.duration * 1000 / NAR.rate + 4000); };
     guard((4000 + text.split(/\s+/).length * 450) / NAR.rate);
-    a.play().catch(() => { if (NAR.cur === cur) synth(); });
+    a.play().catch(fallback);
     // the next step's clip is fetched now, so Play all does not wait on the network between steps
-    const next = narrClip(fig, i + 1); if (next) { NARR_NEXT = NARR_NEXT || new Audio(); if (NARR_NEXT.src !== next) { NARR_NEXT.preload = 'auto'; NARR_NEXT.src = next; NARR_NEXT.load(); } }
+    const next = narrClip(fig, i + 1); if (next) { NARR_NEXT = NARR_NEXT || new Audio(); if (NARR_NEXT.src !== new URL(next, location.href).href) { NARR_NEXT.preload = 'auto'; NARR_NEXT.src = next; NARR_NEXT.load(); } }
   } else synth();
   return true;
 }
-function setNarr(mode) { NAR.mode = mode; store.set(COURSE.ns + ':narr', mode); narrStop(); if (mode === 'off') document.querySelectorAll('.nsaid').forEach(d => d.remove()); narrFill(document); document.querySelectorAll('[data-nmode]').forEach(b => { b.classList.toggle('on', b.dataset.nmode === mode); b.setAttribute('aria-pressed', b.dataset.nmode === mode); }); }
+function setNarr(mode) {
+  NAR.mode = mode; store.set(COURSE.ns + ':narr', mode);
+  if (NAR.cur && ANIM && ANIM.fig === NAR.cur.fig) { const i = NAR.cur.i; narrStop(); ANIM.t = setTimeout(ANIM.tick, playMs(ANIM.fig, i)); } else narrStop(); if (mode === 'off') document.querySelectorAll('.nsaid').forEach(d => d.remove()); narrFill(document); document.querySelectorAll('[data-nmode]').forEach(b => { b.classList.toggle('on', b.dataset.nmode === mode); b.setAttribute('aria-pressed', b.dataset.nmode === mode); }); }
 function setRate(r) { NAR.rate = r; store.set(COURSE.ns + ':narr-rate', String(r)); document.querySelectorAll('.nrate').forEach(s => s.value = String(r)); if (NARR_AUDIO) NARR_AUDIO.playbackRate = r; }
 const rateSel = () => `<label class="meta" style="margin:0">Speed <select class="nrate msel" aria-label="Narration speed">${NAR_RATES.map(r => `<option value="${r}" ${r === NAR.rate ? 'selected' : ''}>${r}×</option>`).join('')}</select></label>`;
 function fillVoices(sel) { sel.innerHTML = `<option value="">Automatic</option>` + VOICES.map(v => `<option value="${esc(v.name)}" ${v.name === NAR.voice ? 'selected' : ''}>${esc(v.name)}</option>`).join(''); }
@@ -1922,7 +1931,7 @@ function narrRowHTML(fig) {
   const sel = `<label class="meta" style="margin:0">Narration <select class="nsel msel" aria-label="Guided narration">${NAR_MODES.map(([k, l]) => `<option value="${k}" ${k === NAR.mode ? 'selected' : ''}>${l}</option>`).join('')}</select></label>`;
   if (NAR.mode === 'off') return sel;
   const n = fig.querySelectorAll('.stcap > p').length;
-  const tr = `<details class="ntr"><summary>Transcript</summary><ol>${Array.from({length: n}, (_, i) => `<li data-ni="${i}">${esc(narrText(fig, i))}</li>`).join('')}</ol></details>`;
+  const tr = `<details class="ntr"><summary>Transcript</summary><ol>${Array.from({length: n}, (_, i) => `<li data-ni="${i}"><button type="button" class="ntrl" data-ni="${i}">${esc(narrText(fig, i))}</button></li>`).join('')}</ol></details>`;
   if (NAR.mode === 'cap') return sel + tr;
   const rec = narrHasClips(fig);
   const who = `<span class="meta" style="margin:0">${rec ? 'Recorded narrator' : 'Device voice'}</span>`;
@@ -1930,7 +1939,7 @@ function narrRowHTML(fig) {
 }
 const narrFill = root => root.querySelectorAll('.narrow').forEach(d => { const fig = d.closest('figure'); if (fig) d.innerHTML = narrRowHTML(fig); });
 // figures arrive with each page (and with a question's explanation): their rows are filled as they appear
-new MutationObserver(ms => { for (const m of ms) m.addedNodes.forEach(nd => { if (nd.nodeType !== 1) return; if (nd.matches && nd.matches('.narrow') && !nd.firstChild) narrFill({querySelectorAll: () => [nd]}); else if (nd.querySelectorAll) nd.querySelectorAll('.narrow:empty').forEach(d => { const fig = d.closest('figure'); if (fig) d.innerHTML = narrRowHTML(fig); }); }); })
+new MutationObserver(ms => { if (NAR.cur && !document.body.contains(NAR.cur.fig)) narrStop(); if (ANIM && !document.body.contains(ANIM.fig)) playStop(); for (const m of ms) m.addedNodes.forEach(nd => { if (nd.nodeType !== 1) return; if (nd.matches && nd.matches('.narrow') && !nd.firstChild) narrFill({querySelectorAll: () => [nd]}); else if (nd.querySelectorAll) nd.querySelectorAll('.narrow:empty').forEach(d => { const fig = d.closest('figure'); if (fig) d.innerHTML = narrRowHTML(fig); }); }); })
   .observe(document.body, {childList: true, subtree: true});
 // the setting card at the top of the Diagrams page
 const narrCard = () => `<div class="card narrcard"><b>Guided narration</b><div class="row" style="margin-top:6px">${NAR_MODES.map(([k, l]) => `<button type="button" class="chip ${NAR.mode === k ? 'on' : ''}" aria-pressed="${NAR.mode === k}" data-nmode="${k}">${l}</button>`).join('')}</div>
@@ -1939,7 +1948,7 @@ const narrCard = () => `<div class="card narrcard"><b>Guided narration</b><div c
   <p class="sub" style="margin:6px 0 0">Narrate when tapped: Back, Next, the step dots and Play all read the step aloud, and Play all moves on when the reading ends. The Exam 2 figures are read by a recorded narrator; figures without recordings use this device’s voice (which differs by device). Captions only: no sound, and a transcript of every step opens under each figure. Nothing plays until you tap a figure’s controls.</p></div>`;
 document.addEventListener('change', e => {
   const t = e.target;
-  if (t.classList.contains('nsel')) setNarr(t.value);
+  if (t.classList.contains('nsel')) { const f = t.closest('figure'); setNarr(t.value); const s = f && f.querySelector('.nsel'); if (s) s.focus(); }
   else if (t.classList.contains('nrate')) setRate(+t.value);
   else if (t.classList.contains('nvoice')) { NAR.voice = t.value; store.set(COURSE.ns + ':narr-voice', t.value); }
 });
@@ -1952,7 +1961,7 @@ document.addEventListener('click', e => {
     if (NAR.cur && ANIM && ANIM.fig === NAR.cur.fig) { const i = NAR.cur.i; narrStop(); ANIM.t = setTimeout(ANIM.tick, playMs(ANIM.fig, i)); } else narrStop();
     return;
   }
-  const li = e.target.closest('.ntr li[data-ni]');
+  const li = e.target.closest('.ntr .ntrl[data-ni]');
   if (li) { const fig = li.closest('figure'), dot = fig && fig.querySelector(`.sdot[data-i="${li.dataset.ni}"]`); if (dot) dot.click(); }
 });
 /* "Explain one": a select (or a Why? button in a table row) shows the matching
