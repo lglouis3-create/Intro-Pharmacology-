@@ -614,6 +614,37 @@ const out = path.join(__dirname, '..', course.match(/output:\s*'([^']+)'/)[1]);
   if (!sc6.fell || sc6.said.replace(/\s+/g, ' ') !== scriptGs || sc6.nsaid !== (await page.evaluate(() => SC.SCENES.find(s => s.key === 'gp').modes.gs.script)) || !sc6.once || !sc6.speaking || !sc6.active || !sc6.held || !sc6.stillNar || !sc6.done || !sc6.narCleared || sc6.btn !== 'Play' || sc6.tAfter !== sc6.tStill || !sc6.offRemoves) fail('scenes narration fallback: ' + JSON.stringify(Object.assign({}, sc6, {said: sc6.said.slice(0, 80), nsaid: sc6.nsaid.slice(0, 40)})));
   await page.evaluate(() => { go('topics'); });
   if (await page.evaluate(() => SC_RAF !== 0 || SC_ST.size !== 0)) fail('leaving the scenes page did not stop its loop');
+
+  // 12: the drug ↔ receptor drill: every table row parses, a right and a wrong answer, the redo round, name-the-drug options
+  const rx1 = await page.evaluate(async () => {
+    localStorage.removeItem(COURSE.ns + ':rx'); localStorage.removeItem(COURSE.ns + ':rx:miss'); go('rxq'); await new Promise(r => setTimeout(r, 200));
+    const rows = rxRows(), out = {rows: rows.length, empty: rows.filter(x => !rxKey(x)[0].length).length, nav: !!document.querySelector('#nav [data-v="rxq"]')};
+    const cur = () => RX.queue[RX.i];
+    let r = cur(), [req, extra, act] = rxKey(r);
+    req.forEach(k => document.querySelector(`[data-rxrec="${k}"]`).click()); document.querySelector(`[data-rxact="${act}"]`).click(); document.querySelector('#rxcheck').click();
+    out.right = RX.result.ok && document.querySelector('.pfbr').classList.contains('ok') && !!document.querySelector('.pfbr [data-jumpx], .pfbr [data-jump^="ref:"]');
+    document.querySelector('#rxnext').click(); r = cur(); [req, extra, act] = rxKey(r);
+    const wrong = RX_RECS.find(k => !req.includes(k) && !extra.includes(k)) || 'none';
+    document.querySelector(`[data-rxrec="${wrong}"]`).click(); document.querySelector(`[data-rxact="${act}"]`).click(); document.querySelector('#rxcheck').click();
+    out.wrong = !RX.result.ok && RX.redo.length === 1 && /You said/.test(document.querySelector('.pfbr').textContent) && /1 to redo/.test(document.querySelector('.meta').textContent);
+    // "none" is exclusive of the receptors
+    document.querySelector('#rxnext').click(); document.querySelector('[data-rxrec="α1"]').click(); document.querySelector('[data-rxrec="none"]').click(); out.noneOnly = RX.sel.join() === 'none';
+    document.querySelector('[data-rxrec="β1"]').click(); out.noneCleared = RX.sel.join() === 'β1';
+    // the rest of the round right: the redo round holds the one miss and the best score is kept as JSON
+    for (;;) { const x = cur(), [rq, , ac] = rxKey(x); RX.sel = []; RX.act = null; rq.forEach(k => document.querySelector(`[data-rxrec="${k}"]`).click()); document.querySelector(`[data-rxact="${ac}"]`).click(); document.querySelector('#rxcheck').click(); if (RX.i + 1 >= RX.queue.length) break; document.querySelector('#rxnext').click(); }
+    out.endLabel = document.querySelector('#rxnext').textContent; document.querySelector('#rxnext').click();
+    out.redo = RX.round === 2 && RX.queue.length === 1 && storeObj(COURSE.ns + ':rx').rec === `${rows.length - 1}/${rows.length}` && localStorage.getItem(COURSE.ns + ':rx:miss') === RX.queue[0].id;
+    // name the drug: four options, the right one among them, none of the others with the same receptor-plus-action
+    document.querySelector('[data-rxmode="drug"]').click(); await new Promise(r => setTimeout(r, 100));
+    const x = cur(), opts = [...document.querySelectorAll('.rxopt')], sig = y => rxLabel(rxKey(y)[0], rxKey(y)[2]);
+    out.drug = opts.length === 4 && opts.some(o => o.dataset.rxpick === x.id) && RX.opts.filter(o => o.id !== x.id).every(o => sig(o) !== sig(x)) && /Which drug is:/.test(document.querySelector('.rxq').textContent);
+    opts.find(o => o.dataset.rxpick !== x.id).click(); out.drugWrong = !RX.result.ok && document.querySelectorAll('.rxopt.ok').length === 1 && document.querySelectorAll('.rxopt.bad').length === 1;
+    document.querySelector('#rxnext').click(); const y = cur(); [...document.querySelectorAll('.rxopt')].find(o => o.dataset.rxpick === y.id).click(); out.drugRight = RX.result.ok;
+    localStorage.removeItem(COURSE.ns + ':rx'); localStorage.removeItem(COURSE.ns + ':rx:miss'); return out; });
+  if (rx1.empty || rx1.rows < 30 || !rx1.nav || !rx1.right || !rx1.wrong || !rx1.noneOnly || !rx1.noneCleared || !/Redo the 1 missed/.test(rx1.endLabel) || !rx1.redo || !rx1.drug || !rx1.drugWrong || !rx1.drugRight) fail('drug-receptor drill: ' + JSON.stringify(rx1));
+  // Pair up's best score survives a reload (it is kept as JSON)
+  const pr1 = await page.evaluate(() => { store.set(COURSE.ns + ':pair', JSON.stringify({rec: '3/7'})); return storeObj(COURSE.ns + ':pair').rec; });
+  if (pr1 !== '3/7') fail('pair best score as JSON: ' + pr1);
   await page.evaluate(ex => { S = normalize({q: {}, log: []}); save(); store.set(EXAM_KEY, ex || '2'); endExam(); }, wk.keepEx);
   if (errors.length) fail('page errors: ' + errors.join(' | '));
   console.log(`answered ${answered} quiz items (${multiSeen} select-all), exam of ${total}`);
