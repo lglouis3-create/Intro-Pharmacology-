@@ -7,6 +7,6 @@ module.exports = function load() {
   const pages = JSON.parse(build.match(/PAGES = (\[[^\]]*\])/)[1].replace(/'/g, '"'));
   let src = fs.readFileSync(path.join(dir, 'course.js'), 'utf8') + '\nconst TOPICS=[];const QUESTIONS=[];\n';
   for (const f of files.concat(pages).filter(f => fs.existsSync(path.join(dir, f)))) src += fs.readFileSync(path.join(dir, f), 'utf8') + '\n';
-  src += '\n;({COURSE, TOPICS, QUESTIONS, REFERENCE_HTML: typeof REFERENCE_HTML==="undefined"?"":REFERENCE_HTML, TELL_HTML: typeof TELL_HTML==="undefined"?"":TELL_HTML, GUIDE_HTML: typeof GUIDE_HTML==="undefined"?"":GUIDE_HTML})';
+  src += '\n;({COURSE, TOPICS, QUESTIONS, REFERENCE_HTML: typeof REFERENCE_HTML==="undefined"?"":REFERENCE_HTML, TELL_HTML: typeof TELL_HTML==="undefined"?"":TELL_HTML, GUIDE_HTML: typeof GUIDE_HTML==="undefined"?"":GUIDE_HTML, SC: typeof SC==="undefined"?null:SC})';
   return vm.runInNewContext(src, {});
 };
