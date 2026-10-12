@@ -1783,9 +1783,9 @@ const FIG = (() => {
         return g;
       };
       const steps = [
-        ['The parasympathetic fiber releases ACh onto M3 (Gq, ↑Ca++) on the GI smooth muscle: motility and tone up, secretions up ("I\'m going to put my GI to work").', scene({ach: 'out', m3on: 1, eff: 'motility & secretion ↑', effK: 'c'}), 'Dual Innervation Caveats: PNS → ACh → M3'],
-        ['The sympathetic fiber is different here: it ends on the parasympathetic nerve, not on the gut. NE binds α2 (Gi, ↓cAMP) on the parasympathetic ending.', scene({ach: 'out', m3on: 1, sns: 1, ne: 'out', a2on: 1, note: 1, eff: 'motility & secretion ↑', effK: 'c'}), 'SNS → NE → α2 = Inhibition of ACh Release'],
-        ['α2 is inhibitory: less ACh is released, fewer M3 are activated, and motility and tone fall (constipation). "The alpha-2 is not on the gut, the alpha-2 actually is on the nerve of the parasympathetic system."', scene({ach: 'few', sns: 1, ne: 'out', a2on: 1, note: 1, eff: 'motility & tone ↓: constipation', effK: 'b'}), 'Dual Innervation Caveats: GI']
+        ['The parasympathetic fiber releases ACh onto M3 (Gq, ↑Ca++) on the GI smooth muscle: motility and tone up, secretions up ("I\'m going to put my GI to work").', scene({ach: 'out', m3on: 1, eff: 'motility &amp; secretion ↑', effK: 'c'}), 'Dual Innervation Caveats: PNS → ACh → M3'],
+        ['The sympathetic fiber is different here: it ends on the parasympathetic nerve, not on the gut. NE binds α2 (Gi, ↓cAMP) on the parasympathetic ending.', scene({ach: 'out', m3on: 1, sns: 1, ne: 'out', a2on: 1, note: 1, eff: 'motility &amp; secretion ↑', effK: 'c'}), 'SNS → NE → α2 = Inhibition of ACh Release'],
+        ['α2 is inhibitory: less ACh is released, fewer M3 are activated, and motility and tone fall (constipation). "The alpha-2 is not on the gut, the alpha-2 actually is on the nerve of the parasympathetic system."', scene({ach: 'few', sns: 1, ne: 'out', a2on: 1, note: 1, eff: 'motility &amp; tone ↓: constipation', effK: 'b'}), 'Dual Innervation Caveats: GI']
       ];
       return step2('e2-gi', 'GI tract: the sympathetic α2 brake', steps, 248,
         ['<b>Slides 45–47</b> (Autonomic Nervous System.pdf): PNS → ACh → M3 (Gαq, ↑Ca++) = increase GI motility and secretion; SNS → NE → α2 (Gαi, ↓cAMP) = inhibition of ACh release.',

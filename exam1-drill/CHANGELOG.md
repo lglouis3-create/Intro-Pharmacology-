@@ -2,6 +2,15 @@
 
 Newest first. The build embeds this file; the Topics page shows what is new since your last visit, and the Progress page shows all of it. Keep each bullet to one short line.
 
+## 2026-10-12 (drill order; narration fixes)
+
+- Drills: answered questions come weakest box first, then earliest due day, in a random order inside each.
+- The all-on-one-page layout uses the same order, so a repeated topic no longer lists the same sequence.
+- Narration: a clip that cannot load is read once by the device voice; the next clip is fetched once.
+- Play all ends when you tap another figure, and continues by timer if the setting changes mid-run.
+- A page redraw stops the reading of a figure it removed; leaving a page clears the run.
+- Why? jumps scroll once, without snapping back; the Narration select keeps focus; transcript lines are buttons.
+
 ## 2026-10-11 (Terms follow the exam; the words read are shown)
 
 - Terms: the glossary lists the exam you are studying for (groups, A–Z and search); "Both exams" shows the other too.

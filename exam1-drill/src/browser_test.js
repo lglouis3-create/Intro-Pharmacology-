@@ -555,6 +555,19 @@ const out = path.join(__dirname, '..', course.match(/output:\s*'([^']+)'/)[1]);
     const b = [...document.querySelectorAll('[data-anim]')].find(x => !NARRATION[x.dataset.anim]); if (b) { openTo(b); b.querySelector('[data-go="1"]').click(); r.plain = !b.closest('figure').querySelector('.nsaid'); }
     setNarr('off'); r.off = !document.querySelector('.nsaid'); return r; });
   if (ns.nofig || !ns.said || ns.li !== String(ns.i) || !ns.order || ns.cur || ns.plain === false || !ns.off) fail('narration line under the caption: ' + JSON.stringify(ns));
+  // 10: answered questions come weakest box first and in a different order each run; the one-page layout too
+  const ro = await page.evaluate(() => {
+    const pool = examPool().filter(q => !q.lowYield && !q.type).slice(0, 60), now = Date.now();
+    const run = () => { startQuiz(pool, 't', 'sr'); const ids = [], boxes = []; for (let i = 0; i < 20 && Q.cur; i++) { ids.push(Q.cur.id); boxes.push(S.q[Q.cur.id].box); Q.doneIds.add(Q.cur.id); nextQ(); } return {ids, boxes}; };
+    S = normalize({q: {}, log: []}); pool.forEach((q, i) => { S.q[q.id] = {n: 2, ok: 2, box: i < 10 ? 1 : 3, due: now + (i + 1) * 60000, last: now - 3600e3}; });
+    const a = run(), b = run();
+    const weakFirst = l => l.boxes.slice(0, 10).every(x => x === 1);
+    const r = {ahead: a.ids.join() !== b.ids.join(), weakFirst: weakFirst(a) && weakFirst(b)};
+    pool.forEach((q, i) => { S.q[q.id].due = now - (i + 1) * 1000; });
+    startQuiz(pool, 't', 'sr'); const l1 = allList(); startQuiz(pool, 't', 'sr'); const l2 = allList();
+    r.page = l1.map(q => q.id).join() !== l2.map(q => q.id).join() && l1.slice(0, 10).every(q => S.q[q.id].box === 1) && l2.slice(0, 10).every(q => S.q[q.id].box === 1);
+    S = normalize({q: {}, log: []}); return r; });
+  if (!ro.ahead || !ro.weakFirst || !ro.page) fail('drill order: ' + JSON.stringify(ro));
   await page.evaluate(ex => { S = normalize({q: {}, log: []}); save(); store.set(EXAM_KEY, ex || '2'); endExam(); }, wk.keepEx);
   if (errors.length) fail('page errors: ' + errors.join(' | '));
   console.log(`answered ${answered} quiz items (${multiSeen} select-all), exam of ${total}`);
