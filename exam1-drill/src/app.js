@@ -82,6 +82,8 @@ const store = {
   set(k, v) { MEM[k] = v; try { localStorage.setItem(k, v); FAILED.delete(k); return true; } catch (e) { FAILED.add(k); return false; } },
   del(k) { delete MEM[k]; FAILED.delete(k); try { localStorage.removeItem(k); } catch (e) { /* nothing to remove */ } }
 };
+// an object kept in the store as JSON (an object handed to store.set would be saved as "[object Object]")
+const storeObj = k => { const v = store.get(k); if (v && typeof v === 'object') return v; try { return JSON.parse(v || '{}') || {}; } catch (e) { return {}; } };
 /* Progress that cannot be saved (storage full, blocked, or a private window) would be lost on
    reload without a word: say so once, and point to the export. */
 let SAVE_WARNED = false;
@@ -170,7 +172,7 @@ function schedule(id, outcome) {
 /* ---------- views ---------- */
 const VIEWS = [
   ['topics', 'Topics'], ['quiz', 'Quiz'], ['terms', 'Terms'], ['weak', 'Weak spots'], ['exam', 'Exam sim'],
-  ['graphs', 'Graphs'], ['diagrams', 'Diagrams'], ['scenes', 'Scenes'], ['map', 'Question map'], ['drugs', 'All drugs'], ['ref', 'Reference'], ['tell', 'Tell apart'], ['pair', 'Pair up'], ['guide', 'Guides'], ['data', 'Progress']
+  ['graphs', 'Graphs'], ['diagrams', 'Diagrams'], ['scenes', 'Scenes'], ['map', 'Question map'], ['drugs', 'All drugs'], ['ref', 'Reference'], ['tell', 'Tell apart'], ['pair', 'Pair up'], ['rxq', 'Drug ↔ receptor'], ['guide', 'Guides'], ['data', 'Progress']
 ];
 let CUR = 'topics';
 function nav() {
@@ -308,12 +310,12 @@ function backBtn() {
   if (!b) { b = document.createElement('button'); b.id = 'backbtn'; b.type = 'button'; b.className = 'btn'; document.body.appendChild(b); b.onclick = goBack; }
   b.textContent = backLabel();
 }
-const backLabel = () => '← Back to ' + ({quiz: 'the question', exam: 'the exam', graphs: 'the figures', map: 'the map', terms: 'the terms', weak: 'Weak spots', tell: 'Tell apart', ref: 'the reference', guide: 'the guide', diagrams: 'the diagrams', drugs: 'the drug table', pair: 'Pair up', scenes: 'the scenes'}[(RET[RET.length - 1] || {}).view] || 'where you were');
+const backLabel = () => '← Back to ' + ({quiz: 'the question', exam: 'the exam', graphs: 'the figures', map: 'the map', terms: 'the terms', weak: 'Weak spots', tell: 'Tell apart', ref: 'the reference', guide: 'the guide', diagrams: 'the diagrams', drugs: 'the drug table', pair: 'Pair up', rxq: 'the receptor drill', scenes: 'the scenes'}[(RET[RET.length - 1] || {}).view] || 'where you were');
 function goBack() { const r = RET.pop(); if (!r) return; backBtn(); go(r.view, true); window.scrollTo(0, r.y); }
 document.addEventListener('click', e => { const j = e.target.closest('[data-jump]'); if (j) { const [v, a] = j.dataset.jump.split(':'); jump(v, a); } });
 /* "view:anchor:group:key": jump to the page, then open that explanation card (the reference's "Why?" cards). */
 document.addEventListener('click', e => { const j = e.target.closest('[data-jumpx]'); if (!j) return; const [v, a, g, k] = j.dataset.jumpx.split(':'); jump(v, a); const out = showExplain(g, k); if (out) scrollToEl(out.closest('.xpick')); });
-const VIEWFN = {topics: vTopics, quiz: vQuiz, terms: vTerms, weak: vWeak, exam: vExam, map: vMap, graphs: vGraphs, diagrams: vDiagrams, scenes: vScenes, drugs: vDrugs, ref: vRef, tell: vTell, pair: vPair, guide: vGuide, data: vData};
+const VIEWFN = {topics: vTopics, quiz: vQuiz, terms: vTerms, weak: vWeak, exam: vExam, map: vMap, graphs: vGraphs, diagrams: vDiagrams, scenes: vScenes, drugs: vDrugs, ref: vRef, tell: vTell, pair: vPair, rxq: vRxq, guide: vGuide, data: vData};
 const rerender = () => { const y = window.scrollY; if (CUR === 'quiz' && Q) renderQ(); else if (CUR === 'exam' && EX && !EX.done) renderExam(); else if (CUR === 'exam' && EX && EX.done) examResult(); else VIEWFN[CUR](); window.scrollTo(0, y); };
 document.addEventListener('click', e => {
   const f = e.target.closest('[data-flag]');
@@ -1581,7 +1583,7 @@ function vPair() {
   if (!PR.round.length) pairRound();
   const S0 = PAIR_SETS.find(x => x.id === PR.set), targets = [...new Set(PR.round.map(p => p[1]))], tray = PR.round.filter(p => !PR.placed[p[0]]);
   const chip = p => `<button type="button" class="pchip ${PR.sel === p[0] ? 'sel' : ''} ${PR.result ? (PR.result[p[0]] ? 'ok' : 'bad') : ''}" data-pc="${esc(p[0])}" aria-pressed="${PR.sel === p[0]}">${esc(p[0])}</button>`;
-  const best = (store.get(COURSE.ns + ':pair') || {})[PR.set];
+  const best = storeObj(COURSE.ns + ':pair')[PR.set];
   let h = `<h2>Pair up</h2><p class="sub">Drag each chip onto its match, or tap a chip and then tap where it goes. Check marks every chip and explains where it belongs and why, with a link to the figure that shows it. A tapped chip in a box returns to the tray.</p>
     <div class="card"><div class="row">${PAIR_SETS.map(x => `<button type="button" class="chip ${PR.set === x.id ? 'on' : ''}" aria-pressed="${PR.set === x.id}" data-pset="${x.id}">${esc(x.name)}</button>`).join('')}</div></div>
     <div class="card"><div class="row" style="justify-content:space-between"><b>${esc(S0.name)}</b><span class="meta" style="margin:0">${S0.bins ? 'several chips can share a box' : 'one chip per box'}${best ? ` · best ${best}` : ''}</span></div>
@@ -1611,7 +1613,7 @@ function pairCheck() {
   const res = {}; PR.round.forEach(p => { res[p[0]] = PR.placed[p[0]] === p[1]; });
   const right = Object.values(res).filter(Boolean).length;
   PR.result = res;   // placements stay as they are, so the explanation sits next to the mistake
-  const all = store.get(COURSE.ns + ':pair') || {}; const score = `${right}/${PR.round.length}`; if (!all[PR.set] || +all[PR.set].split('/')[0] < right) { all[PR.set] = score; store.set(COURSE.ns + ':pair', all); }
+  const all = storeObj(COURSE.ns + ':pair'); const score = `${right}/${PR.round.length}`; if (!all[PR.set] || +all[PR.set].split('/')[0] < right) { all[PR.set] = score; store.set(COURSE.ns + ':pair', JSON.stringify(all)); }
   vPair();
 }
 function pairWire() {
@@ -1680,6 +1682,103 @@ const DR = {q: '', exam: 0, by: 'list', cls: ''};
 const DR_CLS = [['agonist', 'Agonist'], ['antagonist', 'Antagonist'], ['indirect', 'Indirect'], ['donor', 'Donor'], ['inverse', 'Inverse agonist'], ['allosteric', 'Allosteric'], ['slide', 'Slide only']];
 const DR_FAM = ['Nicotinic', 'Muscarinic', 'α adrenergic', 'β adrenergic', 'Histamine', 'Serotonin', 'GABA', 'Angiotensin AT1', 'Mineralocorticoid', 'No receptor: enzyme, transporter or release', 'Other'];
 const drText = r => [r.name, r.also.join(' '), r.sec, r.fam.join(' '), r.clsLabel, r.sub.join(' '), r.moa, r.rec, r.soa, r.adr, r.why].join(' ').replace(/<[^>]+>/g, '').toLowerCase();
+/* ===== Drug ↔ receptor drill: every drug on the Exam 2 table, one at a time =====
+   "Name the receptor": the drug is shown; the learner picks every receptor it acts on (or "no receptor") and
+   whether it is an agonist, an antagonist, or indirect, then Check marks it against the table's own line.
+   "Name the drug": a receptor-plus-action is shown and the drug is picked from four. Misses come back at the
+   end of the round and lead the next one. */
+const RX_RECS = ['α1', 'α2', 'β1', 'β2', 'β3', 'M1', 'M2', 'M3', 'Nn', 'Nm', 'AT1', 'MR'];
+const RX_NONE = 'none';
+const RX_ACTS = [['agonist', 'Agonist'], ['antagonist', 'Antagonist'], ['indirect', 'Indirect or donor: no receptor of its own']];
+// rows whose table line names more than the exam asks for: [required, accepted extras]
+const RX_OVER = {'e2alpha:mirt': [['α2'], ['α1', 'M1', 'M2', 'M3']], 'e2beta:epi': [['β1', 'β2'], ['α1', 'α2']], 'e2chol:scop': [['M1', 'M2', 'M3'], []],
+  'e2nmj:sch': [['Nm'], ['Nn']], 'e2chol:oab': [['M3'], ['M1']], 'e2nmj:varen': [['Nn'], []]};
+const rxRows = () => (typeof DRUGS_ALL === 'undefined' ? [] : DRUGS_ALL).filter(r => r.exam === 2 && r.cls !== 'slide' && r.id !== 'e2raas:meto');
+function rxKey(r) {   // [required receptors, accepted extras, action]
+  const act = r.cls === 'agonist' || r.cls === 'antagonist' ? r.cls : 'indirect';
+  if (RX_OVER[r.id]) return [RX_OVER[r.id][0], RX_OVER[r.id][1], act];
+  const t = r.rec.replace(/<[^>]+>/g, '').replace(/\([^)]*\)/g, '');
+  if (/^None/.test(t)) return [[RX_NONE], [], act];
+  const toks = t.split(/[,;=\s]+/), req = RX_RECS.filter(k => toks.includes(k));
+  if (/muscarinic/i.test(t)) ['M1', 'M2', 'M3'].forEach(k => { if (!req.includes(k)) req.push(k); });
+  return [req, [], act];
+}
+const rxLabel = (req, act) => (req[0] === RX_NONE ? 'no receptor of its own' : req.join(' + ')) + ' · ' + RX_ACTS.find(a => a[0] === act)[1].replace(/:.*$/, '').toLowerCase();
+const RX = {mode: 'rec', queue: [], i: 0, sel: [], act: null, pick: null, result: null, right: 0, redo: [], round: 1};
+function rxStart(ids) {
+  const rows = rxRows(), miss = new Set(ids || (store.get(COURSE.ns + ':rx:miss') || '').split(',').filter(Boolean));
+  const first = shuffle(rows.filter(r => miss.has(r.id))), rest = ids ? [] : shuffle(rows.filter(r => !miss.has(r.id)));
+  RX.queue = first.concat(rest); RX.i = 0; RX.sel = []; RX.act = null; RX.pick = null; RX.result = null; RX.right = 0; RX.redo = []; RX.round = ids ? RX.round + 1 : 1;
+}
+function rxOptions(r) {   // "name the drug": the right drug and three with a different receptor-plus-action, from its own section first
+  const sig = x => rxLabel(rxKey(x)[0], rxKey(x)[2]), mine = sig(r);
+  const pool = rxRows().filter(x => x.id !== r.id && sig(x) !== mine);
+  const near = shuffle(pool.filter(x => x.sec === r.sec)), far = shuffle(pool.filter(x => x.sec !== r.sec));
+  return shuffle([r].concat(near.concat(far).slice(0, 3)));
+}
+// the question for "name the drug": the table's receptor line without its asides, the action, the site
+const rxAsk = r => `${r.rec.replace(/<[^>]+>/g, '').replace(/\s*\([^)]*\)/g, '').replace(/;.*$/, '').trim()} · ${RX_ACTS.find(a => a[0] === rxKey(r)[2])[1].replace(/:.*$/, '').toLowerCase()} · site: ${r.soa.replace(/<[^>]+>/g, '').replace(/;.*$/, '').trim()}`;
+function vRxq() {
+  if (!RX.queue.length) rxStart();
+  const r = RX.queue[RX.i], total = RX.queue.length, done = RX.i + (RX.result ? 1 : 0);
+  const best = storeObj(COURSE.ns + ':rx')[RX.mode];
+  const name = r.name.replace(/<[^>]+>/g, '');
+  const [req, extra, act] = rxKey(r);
+  let h = `<h2>Drug ↔ receptor</h2><p class="sub">Every drug on the Exam 2 table, one at a time. Name the receptor: tap every receptor the drug acts on (or "no receptor"), then how it acts, then Check. Name the drug: pick the drug that fits the receptor and action. A miss comes back at the end of the round and leads the next one.</p>
+    <div class="card"><div class="row"><button type="button" class="chip ${RX.mode === 'rec' ? 'on' : ''}" aria-pressed="${RX.mode === 'rec'}" data-rxmode="rec">Name the receptor</button><button type="button" class="chip ${RX.mode === 'drug' ? 'on' : ''}" aria-pressed="${RX.mode === 'drug'}" data-rxmode="drug">Name the drug</button>
+      <span class="meta" style="margin:0 0 0 auto">${RX.round > 1 ? `redo round ${RX.round} · ` : ''}drug ${Math.min(RX.i + 1, total)} of ${total} · ${RX.right} right${RX.redo.length ? ` · ${RX.redo.length} to redo` : ''}${best ? ` · best ${best}` : ''}</span></div></div>`;
+  const chip = (k, lab, on, attr, cls) => `<button type="button" class="chip ${cls || ''} ${on ? 'on' : ''}" aria-pressed="${on}" ${attr}>${esc(lab)}</button>`;
+  if (RX.mode === 'rec') {
+    const picked = k => RX.sel.includes(k);
+    h += `<div class="card rxcard"><div class="rxdrug">${esc(name)}</div><div class="sub">${esc(r.sec)}</div>
+      <div class="rxq">Which receptor(s)?</div><div class="rxrow" role="group" aria-label="Receptors">${RX_RECS.map(k => chip(k, k, picked(k), `data-rxrec="${k}"${RX.result ? ' disabled' : ''}`)).join('')}${chip(RX_NONE, 'No receptor: enzyme, transporter or release', picked(RX_NONE), `data-rxrec="${RX_NONE}"${RX.result ? ' disabled' : ''}`)}</div>
+      <div class="rxq">How does it act there?</div><div class="rxrow" role="group" aria-label="Action">${RX_ACTS.map(([k, lab]) => chip(k, lab, RX.act === k, `data-rxact="${k}"${RX.result ? ' disabled' : ''}`)).join('')}</div>
+      <div class="row" style="margin-top:10px">${RX.result ? `<button type="button" class="btn" id="rxnext">${RX.i + 1 < total ? 'Next drug' : RX.redo.length ? `Redo the ${RX.redo.length} missed` : 'New round'}</button>` : `<button type="button" class="btn" id="rxcheck" ${RX.sel.length && RX.act ? '' : 'disabled'}>Check</button>`}<button type="button" class="btn ghost" id="rxskip">${RX.result ? 'Start over' : 'Skip'}</button></div>`;
+  } else {
+    if (!RX.opts) RX.opts = rxOptions(r);
+    h += `<div class="card rxcard"><div class="rxq">Which drug is: <b>${esc(rxAsk(r))}</b>?</div><div class="sub">${esc(r.sec)}</div>
+      <div class="rxopts">${RX.opts.map(o => `<button type="button" class="rxopt ${RX.result ? (o.id === r.id ? 'ok' : RX.pick === o.id ? 'bad' : '') : ''}" data-rxpick="${esc(o.id)}" ${RX.result ? 'disabled' : ''}>${esc(o.name.replace(/<[^>]+>/g, ''))}</button>`).join('')}</div>
+      <div class="row" style="margin-top:10px">${RX.result ? `<button type="button" class="btn" id="rxnext">${RX.i + 1 < total ? 'Next' : RX.redo.length ? `Redo the ${RX.redo.length} missed` : 'New round'}</button>` : ''}<button type="button" class="btn ghost" id="rxskip">${RX.result ? 'Start over' : 'Skip'}</button></div>`;
+  }
+  if (RX.result) {
+    const ok = RX.result.ok, why = r.why ? `<button type="button" class="chip" data-jumpx="ref:${r.anchor}:${esc(r.id)}">Why?</button>` : `<button type="button" class="chip" data-jump="ref:${r.anchor}">On the list</button>`;
+    h += `<div class="pfb"><div class="pfbr ${ok ? 'ok' : 'bad'}"><b>${ok ? '✓' : '✗'} ${esc(name)}</b>: <b>${esc(rxLabel(req, act))}</b>${extra.length ? ` (the table also names ${esc(extra.join(', '))})` : ''}${RX.result.said ? `<br>You said: ${esc(RX.result.said)}` : ''}
+      <div class="sub" style="margin-top:4px"><span class="dcls ${r.cls}">${esc(r.clsLabel)}</span>${r.sub.length ? ' · ' + esc(r.sub.join(', ')) : ''} · receptor: ${r.rec} · site: ${r.soa}</div>
+      <div class="sub">${r.moa}${r.why ? ` <i>${r.why}</i>` : ''}</div><div class="row" style="gap:6px;margin-top:6px">${why}${drMapChips(r).replace(/^<div[^>]*>|<\/div>$/g, '')}</div></div></div>`;
+  }
+  h += `<p class="sub" style="margin-top:8px">Sources: the Exam 2 drug table (All drugs page), built from his slides and the official list.</p></div>`;
+  $('#view').innerHTML = h;
+  document.querySelectorAll('[data-rxmode]').forEach(b => b.onclick = () => { if (RX.mode === b.dataset.rxmode) return; RX.mode = b.dataset.rxmode; RX.opts = null; rxStart(); vRxq(); });
+  document.querySelectorAll('[data-rxrec]').forEach(b => b.onclick = () => { const k = b.dataset.rxrec; if (k === RX_NONE) RX.sel = RX.sel.includes(k) ? [] : [k]; else { RX.sel = RX.sel.filter(x => x !== RX_NONE); RX.sel = RX.sel.includes(k) ? RX.sel.filter(x => x !== k) : RX.sel.concat(k); } vRxq(); });
+  document.querySelectorAll('[data-rxact]').forEach(b => b.onclick = () => { RX.act = b.dataset.rxact; vRxq(); });
+  document.querySelectorAll('[data-rxpick]').forEach(b => b.onclick = () => { RX.pick = b.dataset.rxpick; rxCheck(); });
+  const ck = $('#rxcheck'); if (ck) ck.onclick = rxCheck;
+  const nx = $('#rxnext'); if (nx) { nx.onclick = rxNext; nx.focus(); }
+  $('#rxskip').onclick = () => { if (RX.result) { RX.queue = []; RX.opts = null; vRxq(); } else { RX.redo.push(r); rxAdvance(); } };
+}
+function rxCheck() {
+  const r = RX.queue[RX.i], [req, extra, act] = rxKey(r); let ok, said;
+  if (RX.mode === 'rec') {
+    const sel = RX.sel, allowed = req.concat(extra);
+    ok = req.every(k => sel.includes(k)) && sel.every(k => allowed.includes(k)) && RX.act === act;
+    said = (sel[0] === RX_NONE ? 'no receptor of its own' : sel.join(' + ')) + ' · ' + (RX.act ? RX_ACTS.find(a => a[0] === RX.act)[1].replace(/:.*$/, '').toLowerCase() : '');
+  } else { ok = RX.pick === r.id; const p = RX.opts.find(o => o.id === RX.pick); said = p ? p.name.replace(/<[^>]+>/g, '') : ''; }
+  RX.result = {ok, said: ok ? '' : said}; if (ok) RX.right++; else RX.redo.push(r);
+  vRxq();
+}
+function rxAdvance() {
+  RX.sel = []; RX.act = null; RX.pick = null; RX.result = null; RX.opts = null;
+  if (RX.i + 1 < RX.queue.length) { RX.i++; vRxq(); return; }
+  // round over: keep the score, remember the misses for next time, then redo them or start fresh
+  const all = storeObj(COURSE.ns + ':rx'), score = `${RX.right}/${RX.queue.length}`;
+  if (RX.round === 1 && (!all[RX.mode] || +all[RX.mode].split('/')[0] / +all[RX.mode].split('/')[1] < RX.right / RX.queue.length)) { all[RX.mode] = score; store.set(COURSE.ns + ':rx', JSON.stringify(all)); }
+  store.set(COURSE.ns + ':rx:miss', RX.redo.map(x => x.id).join(','));
+  if (RX.redo.length) rxStart(RX.redo.map(x => x.id)); else rxStart();
+  vRxq();
+}
+function rxNext() { rxAdvance(); }
+document.addEventListener('keydown', e => { if (CUR === 'rxq' && e.key === 'Enter' && !e.target.closest('button, input, select, textarea')) { const b = $('#rxnext') || $('#rxcheck'); if (b && !b.disabled) b.click(); } });
+
 const drName = r => r.name.replace(/<[^>]+>/g, '').replace(/\s*\(.*$/, '');
 function drRows() {
   const all = typeof DRUGS_ALL === 'undefined' ? [] : DRUGS_ALL, q = DR.q.trim().toLowerCase().split(/\s+/).filter(Boolean);

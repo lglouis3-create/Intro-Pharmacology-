@@ -2,6 +2,14 @@
 
 Newest first. The build embeds this file; the Topics page shows what is new since your last visit, and the Progress page shows all of it. Keep each bullet to one short line.
 
+## 2026-10-12 (Drug ↔ receptor drill)
+
+- New page: every drug on the Exam 2 table, one at a time; tap its receptor(s) and how it acts, then Check.
+- The check shows the table's own receptor line, class, mechanism and why, with Why?, body-map and G-protein links.
+- "Name the drug" turns it around: a receptor, action and site, and four drugs to pick from.
+- A miss comes back at the end of the round and leads the next one; the best round is kept per mode.
+- Pair up: the best score is now kept across reloads.
+
 ## 2026-10-12 (Guides 7: β agonists and β blockers move)
 
 - Guides 7: two narrated steppers, "β agonists: which β, which organ" and "β blockers: which receptors each blocks".
