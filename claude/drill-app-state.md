@@ -68,3 +68,9 @@ Updated 2026-09-28.
 
 ## Conflicts logged
 See `## Conflicts / uncertain` in notes/L01.md, L02.md and L03.md. The ones that reach questions carry a `note`: ADME and apparent vs pharmacological potency (L01-015, L01-018), potency determinants on the slide vs spoken (L02-033), and agonist reversibility (L03-015).
+
+## 2026-10-12: Exam 3 started (Dr. Smith), one lecture of five
+- L13 Day 13 (10/9) Principles of toxicology ingested from the Echo transcript first, then the deck (cited by slide title), then the reading; 36 questions, guide3/reference3/tell3, 15 glossary terms; activeExam 3. PR #73; artifact v47; Pages c1f0a37.
+- Exam 3 is incomplete: tox days 2–4 and pharmacogenomics day 1 (Oct 13 – Oct 20) are not in the bank. Roster, dates to confirm, and what each ingest needs: exam1-drill/notes/EXAM3.md.
+- Next ingest: the 10/13 lecture (deck, Echo transcript or audio, any posted study guide, her polls). On 10/13 she also finishes the 10/9 deck (indices, target) and discusses the reading: L13-032 to L13-036 are low yield until then.
+

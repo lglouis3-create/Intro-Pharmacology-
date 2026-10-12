@@ -12,6 +12,7 @@ Newest first. The build embeds this file; the Topics page shows what is new sinc
 - Tell apart: toxin vs toxicant, bioactivation vs detoxification, individual vs population, U-shapes, thresholds.
 - Glossary: 15 toxicology terms; the Terms quiz draws Exam 3 look-alikes from the same exam.
 - Slides she did not reach (TI, MOS, MOE, target) and the reading are marked low yield until taught.
+- Exam 3 is one lecture of five so far; the Exam page says so until the 10/13 and later lectures are added.
 
 ## 2026-10-12 (Drug ↔ receptor drill)
 

@@ -71,7 +71,7 @@ const COURSE = {
     {id:3, name:'Exam 3', scope:'Toxicology and pharmacogenomics, Dr. Smith (10/9–10/20)', date:'Fri Oct 23, 9–11 am', when:'2026-10-23T09:00:00-05:00',  // syllabus: Exam III, Fri Oct 23; the schedule row prints "9:30 am-12" and "9-11 am"; the exam table gives the date
      questions:50,               // her words 10/9: "I tried to give you about 50 questions, but they may not all be multiple choice"
      minutes:120,                // syllabus: two hours allotted for each major examination
-     blurb:'Covers the Oct 9 – Oct 20 lectures (syllabus): toxicology days 1–4 and pharmacogenomics day 1, taught by Dr. Smith. 21% of the course grade (the syllabus grading table; its schedule row says 22%). About 50 questions, not all multiple choice: some short-answer and fill-in-the-blank items. She tests what she says in lecture first, then the slides and the readings.',
+     blurb:'Covers the Oct 9 – Oct 20 lectures (syllabus): toxicology days 1–4 and pharmacogenomics day 1, taught by Dr. Smith. 21% of the course grade (the syllabus grading table; its schedule row says 22%). About 50 questions, not all multiple choice: some short-answer and fill-in-the-blank items. She tests what she says in lecture first, then the slides and the readings. In the bank so far: the 10/9 lecture only; the 10/13 and later lectures are added as their decks and transcripts arrive.',
      pools:[{key:'exam3', name:'Exam 3 material', marks:null, filter:{exam:3}}]}
   ],
   activeExam: 3,                // the exam the site opens on; the learner can switch (Topics, Exam sim, Weak spots)
