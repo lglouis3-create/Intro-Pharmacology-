@@ -285,8 +285,10 @@ document.addEventListener('click', e => { const b = e.target.closest('[data-clim
 function jump(view, anchor) {
   RET.push({view: CUR, y: window.scrollY});
   if (!go(view)) { RET.pop(); return; }
-  const t = document.getElementById(anchor);
+  const [id, step] = String(anchor).split('@'), t = document.getElementById(id);
   if (t) { openTo(t); t.scrollIntoView({block: 'start'}); const off = hdrOff(); window.scrollBy(0, -off); settleOn(t, off, 60); }
+  // "anchor@n": the step-through figure at the anchor opens on step n
+  if (t && step != null) { const fig = t.querySelector('figure') || t.closest('figure'); const steps = fig ? [...fig.querySelectorAll('.st')] : []; const to = +step; if (steps[to]) { const cur = steps.findIndex(x => x.classList.contains('on')); if (cur !== to) stepTo(fig, cur, to); } }
   backBtn();
 }
 const hdrOff = () => { const hd = document.querySelector('header'); return (hd ? hd.getBoundingClientRect().height : 0) + 8; };
@@ -570,6 +572,7 @@ function qCard(q, st, opts = {}) {
     if (q.teach) h += `<div class="teach">${teachHTML(q.teach)}</div>`;
     h += graphFeedback(q, st);
     if (q.note) h += `<div class="note">${esc(q.note)}</div>`;
+    if (typeof NARR_Q !== 'undefined' && NARR_Q[q.id]) h += `<div class="row qsay"><button type="button" class="chip" data-qsay="${q.id}">🔊 Hear the why</button><span class="meta" style="margin:0">read by the narrator</span></div>`;
     h += moreHTML(q, hidden) + explainHTML(q);
     if (opts.conf) h += opts.conf(st);
   }
@@ -1542,12 +1545,20 @@ function drRows() {
   const all = typeof DRUGS_ALL === 'undefined' ? [] : DRUGS_ALL, q = DR.q.trim().toLowerCase().split(/\s+/).filter(Boolean);
   return all.filter(r => (!DR.exam || r.exam === DR.exam) && (!DR.cls || r.cls === DR.cls) && (!q.length || q.every(w => drText(r).includes(w))));
 }
+/* Which lane of "Gq, Gs, Gi: the three lanes" a drug's receptor belongs to (the figure's step index), from its receptor text */
+const drLane = r => {
+  const t = (r.rec + ' ' + r.fam.join(' ')).replace(/<[^>]+>/g, '');
+  const gq = /\bM[13]\b|α1|AT1|muscarinic/i.test(t), gs = /β/.test(t), gi = /\bM2\b|α2|AT2/.test(t), nic = /\bN[nm]\b|(?<!not )nicotinic/i.test(t);
+  if (gq && gs) { const m = /α1|β|M[13]|AT1/.exec(t); return m && m[0] === 'β' ? 3 : 1; }   // a mixed drug: the lane named first in its receptor text
+  if (gq) return 1; if (gs) return 3; if (gi) return 4; if (nic) return 0; return null;
+};
+const drMapChips = r => { const lane = drLane(r); return `<div class="sub dmap"><button type="button" class="chip" data-jump="diagrams:dg-e2-body-map">On the body</button>${lane != null ? `<button type="button" class="chip" data-jump="diagrams:dg-e2-gprotein-anim@${lane}">${['Ion channel', 'Gq lane', 'Gq lane', 'Gs lane', 'Gi lane'][lane]}</button>` : ''}</div>`; };
 function drRow(r) {
   const ex = `<span class="dex" title="Exam ${r.exam} list">E${r.exam}</span>`;
   const why = r.why ? `<button type="button" class="chip xwhy" data-jumpx="ref:${r.anchor}:${esc(r.id)}">Why?</button>` : `<button type="button" class="chip xwhy" data-jump="ref:${r.anchor}">List</button>`;
   const also = r.also.length ? `<div class="sub dalso">Also on the list: ${esc(r.also.join(', '))}</div>` : '';
   const cls = `<div class="sub dcl"><span class="dcls ${r.cls}">${esc(r.clsLabel)}</span>${r.sub.length ? ' · ' + esc(r.sub.join(', ')) : ''}</div>`;
-  return `<tr><td>${ex} ${r.name} ${why}${cls}${also}</td><td>${r.moa}${r.why ? `<div class="sub">${r.why}</div>` : ''}</td><td>${r.rec}</td><td>${r.soa}</td><td>${r.adr}</td></tr>`;
+  return `<tr><td>${ex} ${r.name} ${why}${cls}${also}</td><td>${r.moa}${r.why ? `<div class="sub">${r.why}</div>` : ''}</td><td>${r.rec}${r.exam === 2 ? drMapChips(r) : ''}</td><td>${r.soa}</td><td>${r.adr}</td></tr>`;
 }
 const drTable = rows => `<table class="reftab drugtab"><thead><tr><th>Drug and class</th><th>MOA, and why</th><th>Receptor</th><th>Site of action</th><th>Key ADRs / DDIs</th></tr></thead><tbody>${rows.map(drRow).join('')}</tbody></table>`;
 function drGroups(rows) {
@@ -1600,12 +1611,13 @@ function vDrugs() {
       <button class="btn ghost" id="dclear" type="button" ${DR.q ? '' : 'hidden'}>Clear</button></div>
       <div class="row" style="margin-top:6px"><span class="meta" style="margin:0">Group by:</span>${chips([['list', 'His tables'], ['fam', 'Receptor family'], ['cls', 'Class'], ['exam', 'Exam'], ['az', 'A to Z']], DR.by, 'by')}</div>
       <div class="row" style="margin-top:6px"><span class="meta" style="margin:0">Show:</span>${chips([[0, 'Both lists'], [1, 'Exam 1 list'], [2, 'Exam 2 list']], DR.exam, 'ex')}<label class="meta" style="margin:0 0 0 6px">Class: <select id="dclsel" aria-label="Keep one class">${[['', 'All']].concat(DR_CLS).map(([k, l]) => `<option value="${k}" ${DR.cls === k ? 'selected' : ''}>${l}</option>`).join('')}</select></label><span class="meta" id="dcount" aria-live="polite" style="margin:0 0 0 auto"></span></div></div>
-    <details class="fold dlwalk" id="dl-walk"><summary>Narrated walkthrough of the Exam 2 list: 7 parts, one card per drug</summary><p class="sub">Back, Next and the dots move through the drugs of one class; Play all runs the class through. Set Narration under any part to “Narrate when tapped” and the narrator reads each card.</p><div class="dwgrid">${dlWalkHTML()}</div></details>
+    <details class="fold dlwalk" id="dl-walk"><summary>Narrated walkthrough of the Exam 2 list: 7 parts, one card per drug</summary><p class="sub">Back, Next and the dots move through the drugs of one class; Play all runs the class through. Set Narration under any part to “Narrate when tapped” and the narrator reads each card.</p><div class="row" style="margin:0 0 8px"><button type="button" class="btn" id="dl-listen">${DL_CHAIN ? '■ Stop listening' : '▶ Listen to the whole list'}</button><span class="meta" style="margin:0">All 7 parts in order, read by the narrator; about 16 minutes at 1×.</span></div><div class="dwgrid">${dlWalkHTML()}</div></details>
     <div class="tablewrap" id="dlist"></div>`;
   const box = $('#dsearch');
   box.oninput = () => { DR.q = box.value; $('#dclear').hidden = !DR.q; drList(); };
   $('#dclear').onclick = () => { DR.q = ''; box.value = ''; $('#dclear').hidden = true; drList(); box.focus(); };
   $('#dclsel').onchange = e => { DR.cls = e.target.value; drList(); };
+  const dlb = $('#dl-listen'); if (dlb) dlb.onclick = () => dlListen(!DL_CHAIN);
   $('#dbar').onclick = e => {
     const b = e.target.closest('[data-by],[data-ex]'); if (!b) return;
     if (b.dataset.by) DR.by = b.dataset.by; else DR.exam = +b.dataset.ex;
@@ -1787,6 +1799,22 @@ function stepTo(fig, from, to) {
 const PLAY_MS = 3200;
 // end a Play all run (and any reading): the button resets and no timer is left
 function playStop() { narrStop(); if (ANIM) { clearTimeout(ANIM.t); ANIM.b.textContent = '▶ Play all'; ANIM.b.setAttribute('aria-pressed', 'false'); ANIM = null; } }
+/* Listen mode on the All drugs page: the walkthrough's parts play one after another (narration is
+   switched on if it was off), each part's Play all starting when the one before ends on its own. */
+let DL_CHAIN = false;
+function dlListen(on) {
+  DL_CHAIN = on; const b = document.getElementById('dl-listen'); if (b) b.textContent = on ? '■ Stop listening' : '▶ Listen to the whole list';
+  if (!on) { playStop(); return; }
+  if (NAR.mode !== 'tap') setNarr('tap');
+  const first = document.querySelector('#dl-walk figure.dwalk [data-go="play"]'); if (first) first.click(); else DL_CHAIN = false;
+}
+function playEnd(fig) {
+  playStop();
+  if (!DL_CHAIN || !fig.classList.contains('dwalk')) return;
+  const figs = [...document.querySelectorAll('#dl-walk figure.dwalk')], next = figs[figs.indexOf(fig) + 1];
+  if (next) setTimeout(() => { if (DL_CHAIN) { const steps = next.querySelectorAll('.st'); stepTo(next, [...steps].findIndex(s => s.classList.contains('on')), 0); next.querySelector('[data-go="play"]').click(); } }, NAR_GAP);
+  else dlListen(false);
+}
 const playMs = (fig, i) => { const p = fig.querySelectorAll('.stcap > p')[i]; const w = p ? p.textContent.trim().split(/\s+/).length : 0; return Math.min(8000, Math.max(PLAY_MS, 1400 + 150 * w)); };
 document.addEventListener('click', e => {
   const b = e.target.closest('[data-anim] button'); if (!b) return;
@@ -1806,9 +1834,9 @@ document.addEventListener('click', e => {
     const tick = () => {
       if (!document.body.contains(fig)) return stop();
       const i = steps.findIndex(s => s.classList.contains('on'));
-      if (i >= n - 1) return stop();
+      if (i >= n - 1) return playEnd(fig);
       stepTo(fig, i, i + 1);
-      if (i + 1 === n - 1) { if (!narrSpeak(fig, n - 1, stop)) stop(); return; }
+      if (i + 1 === n - 1) { if (!narrSpeak(fig, n - 1, () => playEnd(fig))) playEnd(fig); return; }
       hold(i + 1, playMs(fig, i + 1));
     };
     ANIM = {b, t: null, tick, fig};
@@ -1870,6 +1898,7 @@ function narrVoice() {
   return VOICES.find(v => /\b(Daniel|Aaron|Alex|David|Guy|Arthur|Fred|Rishi|Male)\b/i.test(v.name)) || VOICES.find(v => v.default) || VOICES[0] || null;
 }
 function narrStop() {
+  if (typeof QSAY !== 'undefined' && QSAY) qSayStop();
   const cur = NAR.cur; NAR.cur = null;
   if (cur) { clearTimeout(cur.t); cur.fig.classList.remove('speaking'); }
   if (NARR_AUDIO) { NARR_AUDIO.onended = NARR_AUDIO.onerror = null; NARR_AUDIO.pause(); }
@@ -1919,6 +1948,30 @@ function narrSpeak(fig, i, done) {
   } else synth();
   return true;
 }
+/* "Hear the why" on a question card: the recorded explanation of one of his own questions (NARR_Q, narration.js).
+   Works whatever the narration setting is, since the learner asked for it by tapping. */
+let QSAY = null;
+function qSay(id, btn) {
+  const text = NARR_Q[id]; if (!text) return;
+  if (QSAY && QSAY.id === id) { qSayStop(); return; }
+  qSayStop(); narrStop();
+  const card = btn.closest('.qcard') || btn.parentElement, row = btn.closest('.qsay');
+  let d = row.querySelector('.nsaid'); if (!d) { d = document.createElement('div'); d.className = 'nsaid'; d.style.flex = '1 1 100%'; row.appendChild(d); } d.textContent = text;
+  const cur = QSAY = {id, btn, t: null}; btn.textContent = '■ Stop'; btn.setAttribute('aria-pressed', 'true');
+  const finish = () => { if (QSAY !== cur) return; qSayStop(); };
+  const synth = () => { if (!narrCan()) return finish(); const v = narrVoice(); let last = null; (speakable(text).match(/[^.;:!?]+[.;:!?]*/g) || [text]).forEach(part => { if (!part.trim()) return; const u = new SpeechSynthesisUtterance(part.trim()); u.rate = NAR.rate; u.lang = 'en-US'; if (v) u.voice = v; last = u; speechSynthesis.speak(u); }); if (!last) return finish(); last.onend = last.onerror = finish; cur.t = setTimeout(finish, (2000 + text.split(/\s+/).length * 450) / NAR.rate); };
+  const a = NARR_AUDIO || (NARR_AUDIO = new Audio()); a.preload = 'auto'; a.src = NAR_BASE() + 'q-' + id + '.mp3'; a.playbackRate = NAR.rate;
+  const fallback = () => { if (QSAY !== cur || cur.fell) return; cur.fell = true; synth(); };
+  a.onended = finish; a.onerror = fallback; a.play().catch(fallback);
+  cur.t = setTimeout(finish, (6000 + text.split(/\s+/).length * 500) / NAR.rate);
+}
+function qSayStop() {
+  const c = QSAY; QSAY = null; if (!c) return; clearTimeout(c.t);
+  if (document.body.contains(c.btn)) { c.btn.textContent = '🔊 Hear the why'; c.btn.setAttribute('aria-pressed', 'false'); }
+  if (NARR_AUDIO) { NARR_AUDIO.onended = NARR_AUDIO.onerror = null; NARR_AUDIO.pause(); }
+  if (narrCan()) speechSynthesis.cancel();
+}
+document.addEventListener('click', e => { const b = e.target.closest('[data-qsay]'); if (b) qSay(b.dataset.qsay, b); });
 function setNarr(mode) {
   NAR.mode = mode; store.set(COURSE.ns + ':narr', mode);
   if (NAR.cur && ANIM && ANIM.fig === NAR.cur.fig) { const i = NAR.cur.i; narrStop(); ANIM.t = setTimeout(ANIM.tick, playMs(ANIM.fig, i)); } else narrStop(); if (mode === 'off') document.querySelectorAll('.nsaid').forEach(d => d.remove()); narrFill(document); document.querySelectorAll('[data-nmode]').forEach(b => { b.classList.toggle('on', b.dataset.nmode === mode); b.setAttribute('aria-pressed', b.dataset.nmode === mode); }); }

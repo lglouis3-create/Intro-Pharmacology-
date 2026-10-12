@@ -2,6 +2,13 @@
 
 Newest first. The build embeds this file; the Topics page shows what is new since your last visit, and the Progress page shows all of it. Keep each bullet to one short line.
 
+## 2026-10-12 (abbreviations under figures; drug cards link to the body map; listen mode; his polls read aloud)
+
+- Every figure has an "Abbreviations in this figure" fold that expands the labels it uses (AChE, Nm, NET, Gq and so on).
+- All drugs: each Exam 2 row has "On the body" and a G-protein lane chip that opens the figure on that lane.
+- All drugs: "Listen to the whole list" plays the seven walkthrough parts in order (about 16 minutes at 1×).
+- His 53 verbatim Exam 2 polls: after answering, "Hear the why" plays the key explanation read by the narrator.
+
 ## 2026-10-12 (three narrated figures for Exam 2: G-protein lanes, body map, nerve)
 
 - "Gq, Gs, Gi: the three lanes for Exam 2": one lane per step with its receptors, effector, messenger and response.
