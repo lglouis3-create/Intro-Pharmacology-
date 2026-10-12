@@ -294,3 +294,35 @@ Conflicts kept as `note` fields: J1 (he first called E "irreversible" on the sli
 - One right shift: "If this was one best answer ... no way it would be irreversible, right? If you had to pick. It has to be either competitive or inverse. But if it's a select all, now I open up the possibilities. I just need more shifts to be able to prove that it is or it is not."
 - Two-figure version of the 50% baseline figure: "If I ask you in your exam and I give you that figure and say which of these drugs are partial agonists, select all B, C, and D, right? You can't say on the one on the left, if I don't give you more information."
 - "the exam is gonna be really, really easy ... You know more than you think you do."
+
+## Day 13 (10/9) — Dr. Smith: exam format and cues
+Transcript wording verbatim (transcription errors kept). Source: `Intro Pharm Lecture 10.09 EchoTranscript.txt`; deck `Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf` (no printed slide numbers; cite by slide title); reading `RodriguezMozaz-EHP-2010.pdf`. Her order of authority for Exam 3: what she said in lecture, then the slides, then the reading.
+
+### Exam format
+- "I tried to give you about 50 questions, but they may not all be multiple choice. Sometimes I do very short answer essays, OK? Um, sometimes fill in the blank."
+- "Like if it's gonna be more than 50, I'll make sure that you have at least 1 minute and a half per question, OK? But no backwards nap, sorry." (no returning to an earlier question)
+- "I will provide for you guys an outline and objectives for my lectures. So the bold font is our outline, and the objectives are the lighter font within the outline."
+- "Remember, go back and study to these objectives, at least. If you can answer these objective questions, you should pass my exam."
+- Readings: "if I talked about it and we really were exploring it, that would be the kind of thing I would ask about a reading that we did." (not dates or hard numbers from the article)
+- "quizzes again, they are covering the material from the lecture of the day." "Do the quiz on your own time, midnight, 3:00 in the morning." "Your quiz on the reading for today is to be done after class and do before class on Tuesday."
+- "This is just to help generate discussion, OK? I do not take grades on my poll everywhere, all right, it's for discussion, but I'd like to see how you guys are doing."
+- "I invite students to AE if you make a 70 or below, and oftentimes I'll keep you in AE even if you do great." Office hours "Monday, Tuesday, Wednesdays from 1:20 to 2:00."
+
+### Polls (Poll Everywhere, discussion only)
+1. Word cloud, "What is toxic?": "Food, yeah, food, hormones, pollution, drugs, drugs, drugs, medications, rat poison, venom, alcohol, yes, alcohol." Her point: "the dose makes the poison, and so, um, medications can be toxic or poisonous."
+
+### Spoken questions she put to the room (the formats she tests in)
+- "If somebody were to take a handful of an immediate release beta blocker, compared to taking a handful of extended release beta blockers, which do you think is worse? It depends, you're gonna hate this answer I give a lot, it depends, OK."
+- "Which compound has the longest half-life in this image?" (Figure 2-4: A)
+- "Which two phase 2 enzymes will do that metabolism?" (glucuronosyl transferases, sulfotransferases); "What pathway does it go down?" (CYP2E1)
+- "Can you think of a scenario of a person that they take 4 g and they end up with liver problems?" (CYP2E1 induction by alcohol; low-activity phase 2 enzymes)
+- "Dose makes the poison. Who said that?" (Paracelsus)
+- "Why did the threshold go down? There you go, use the keyword cumulative."
+- "Is cancer the disease of the aged? Yes, cancer is a disease of the aged, usually."
+
+### What she said is not on the exam
+- The 2-AAF hamster figure as a graph: "I will not give you a graph like that I never have."
+- Probit units: "Nobody ever uses this."
+
+### Not reached on 10/9 (moved to Tuesday 10/13)
+- Potency comparison, ED/TD/LD, TI, margin of safety, margin of exposure (slide ‘Values Developed from Dose-Response’); target and mechanism (slide ‘Target & Mechanism of Action’); the discussion of the reading.

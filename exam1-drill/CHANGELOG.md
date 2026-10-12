@@ -2,6 +2,17 @@
 
 Newest first. The build embeds this file; the Topics page shows what is new since your last visit, and the Progress page shows all of it. Keep each bullet to one short line.
 
+## 2026-10-12 (Exam 3: Dr. Smith's 10/9 lecture)
+
+- Exam 3 group added and opened by default; the Exam 1 and Exam 2 groups fold.
+- Day 13 (10/9), Principles of toxicology: 36 questions, keyed from her spoken words first, then the slides.
+- Topics cards carry a "Smith's lecture" tag; every question is tagged smith.
+- Guide: what Exam 3 tests in her words, then one section per objective with her quotes.
+- Reference: the words, the five principles, routes, durations, Fig 2-4, acetaminophen, the LD50 table, curves.
+- Tell apart: toxin vs toxicant, bioactivation vs detoxification, individual vs population, U-shapes, thresholds.
+- Glossary: 15 toxicology terms; the Terms quiz draws Exam 3 look-alikes from the same exam.
+- Slides she did not reach (TI, MOS, MOE, target) and the reading are marked low yield until taught.
+
 ## 2026-10-12 (Drug ↔ receptor drill)
 
 - New page: every drug on the Exam 2 table, one at a time; tap the answer written the way the table writes it.

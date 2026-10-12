@@ -30,7 +30,9 @@ const COURSE = {
     {id:'L11', deck:'PCOL-Adrenergic_PCOL-26s_PTII_pptx.pdf', label:'Day 11 (10/7, 10/8): β receptors, epinephrine and norepinephrine, tracings, nitric oxide', prof:'Gottlieb', exam:2, module:2},
     {id:'L12', deck:'PCOL-RAAS_26s.pdf', label:'Day 12 (10/8): Renin–angiotensin–aldosterone system', prof:'Gottlieb', exam:2, module:2},
     {id:'PE2', deck:'PollEV’s Exam 2.pdf', decks:['PollEV’s Exam 2.pdf', 'Jeopardy 10/8', 'Review 10/9'], label:'His Exam 2 polls (verbatim, with his keys)', prof:'Gottlieb', exam:2, module:2},
-    {id:'DL2', deck:'Pharmacology_Exam_2_Drug_List.pdf', label:'Exam 2 drug list', prof:'Gottlieb', exam:2, module:2}
+    {id:'DL2', deck:'Pharmacology_Exam_2_Drug_List.pdf', label:'Exam 2 drug list', prof:'Gottlieb', exam:2, module:2},
+    // Exam 3 (syllabus: Exam III covers the Oct 9 – Oct 20 lectures; lecturer Dr. Smith: toxicology, pharmacogenomics)
+    {id:'L13', deck:'Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf', label:'Day 13 (10/9): Principles of toxicology (Dr. Smith)', prof:'Smith', exam:3, module:3}
   ],
   exams: [
     {id:1, name:'Exam 1', scope:'Pharmacodynamics (9/22–9/30)', date:'Fri Oct 2, 9–11 am', when:'2026-10-02T09:00:00-05:00',  // syllabus: Exam I, Fri Oct 2, 9–11 am
@@ -65,9 +67,14 @@ const COURSE = {
      minutes:120,
      sata:2,                     // two select-all questions (same report)
      blurb:'Covers the Oct 1 – Oct 8 lectures (syllabus): autonomic nervous system, neuromuscular junction, cholinergic, adrenergic, nitric oxide, RAAS. 24% of the course grade.',
-     pools:[{key:'exam2', name:'Exam 2 material', marks:null, filter:{exam:2}}]}
+     pools:[{key:'exam2', name:'Exam 2 material', marks:null, filter:{exam:2}}]},
+    {id:3, name:'Exam 3', scope:'Toxicology and pharmacogenomics, Dr. Smith (10/9–10/20)', date:'Fri Oct 23, 9–11 am', when:'2026-10-23T09:00:00-05:00',  // syllabus: Exam III, Fri Oct 23; the schedule row prints "9:30 am-12" and "9-11 am"; the exam table gives the date
+     questions:50,               // her words 10/9: "I tried to give you about 50 questions, but they may not all be multiple choice"
+     minutes:120,                // syllabus: two hours allotted for each major examination
+     blurb:'Covers the Oct 9 – Oct 20 lectures (syllabus): toxicology days 1–4 and pharmacogenomics day 1, taught by Dr. Smith. 21% of the course grade (the syllabus grading table; its schedule row says 22%). About 50 questions, not all multiple choice: some short-answer and fill-in-the-blank items. She tests what she says in lecture first, then the slides and the readings.',
+     pools:[{key:'exam3', name:'Exam 3 material', marks:null, filter:{exam:3}}]}
   ],
-  activeExam: 2,                // the exam the site opens on; the learner can switch (Topics, Exam sim, Weak spots)
+  activeExam: 3,                // the exam the site opens on; the learner can switch (Topics, Exam sim, Weak spots)
   skills: [
     {id:'recall', label:'Recall a fact or definition', short:'Recall'},
     {id:'tell',   label:'Tell two look-alikes apart',  short:'Tell apart'},
