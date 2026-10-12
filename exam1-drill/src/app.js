@@ -2140,7 +2140,7 @@ const DIAGRAMS = [
   ['Two drugs at one receptor: how the curve moves', ['shift-competitive-anim', 'shift-irreversible-anim', 'shift-inverse-anim', 'shift-fafa-anim', 'shift-fapa-anim', 'shift-fapa-down-anim', 'shift-allo-agonist-anim', 'shift-allo-antagonist-anim']],
   ['Indirect antagonists and drug combinations', ['ind-ssri-anim', 'ind-snri-anim', 'ind-ache-anim', 'ind-carbidopa-anim', 'ind-pde-anim', 'ind-ras-anim', 'enhance-anim']],
   ['Receptor regulation', ['reg-chain', 'desens-rapid-anim', 'desens-long-anim', 'upreg-anim', 'downreg-anim']],
-  ['Autonomic layout, receptors and the baroreceptor reflex', ['e2-ans-layout', 'e2-innervation-map', 'e2-gi-dual-anim', 'e2-receptor-map', 'e2-musc-map', 'e2-baroreflex-anim', 'e2-ach-bolus-anim'], 2],
+  ['Autonomic layout, receptors and the baroreceptor reflex', ['e2-nerve-anim', 'e2-ans-layout', 'e2-innervation-map', 'e2-gi-dual-anim', 'e2-gprotein-anim', 'e2-body-map', 'e2-receptor-map', 'e2-musc-map', 'e2-baroreflex-anim', 'e2-ach-bolus-anim'], 2],
   ['Cholinergic synapses: where each drug acts', ['e2-nmj-anim', 'e2-sch-phases-anim', 'e2-chol-synapse-anim', 'e2-op-anim'], 2],
   ['Adrenergic synapse: where each drug acts', ['e2-adr-cycle-anim', 'e2-adr-synapse-anim', 'e2-maoi-tyramine-anim', 'e2-beta-blockers'], 2],
   ['Epinephrine and nitric oxide', ['e2-epi-reversal-anim', 'e2-no-pathway-anim'], 2],
