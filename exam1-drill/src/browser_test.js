@@ -7,11 +7,12 @@ try { ({chromium} = require('playwright')); } catch (e) { console.log('browser_t
 const course = fs.readFileSync(path.join(__dirname, 'course.js'), 'utf8');
 const out = path.join(__dirname, '..', course.match(/output:\s*'([^']+)'/)[1]);
 (async () => {
-  const browser = await chromium.launch();
+  const browser = await chromium.launch({args: ['--autoplay-policy=no-user-gesture-required']});   // the scenes narration check plays audio
   const page = await browser.newPage();
   const errors = [];
   page.on('pageerror', e => errors.push(e.message));
-  page.on('console', m => { if (m.type() === 'error') errors.push(m.text()); });
+  // a scene's narration clip does not exist yet: that one failed load is expected (the device voice takes over)
+  page.on('console', m => { if (m.type() === 'error' && !/\/audio\/sc-[a-z]+-[a-z_]+\.mp3$/.test(((m.location && m.location()) || {}).url || '')) errors.push(m.text()); });
   page.on('dialog', d => d.accept());
   await page.goto('file://' + out);
   // the flows below drive Exam 1 items, so study Exam 1 (its groups open); the group check covers both
@@ -568,6 +569,49 @@ const out = path.join(__dirname, '..', course.match(/output:\s*'([^']+)'/)[1]);
     r.page = l1.map(q => q.id).join() !== l2.map(q => q.id).join() && l1.slice(0, 10).every(q => S.q[q.id].box === 1) && l2.slice(0, 10).every(q => S.q[q.id].box === 1);
     S = normalize({q: {}, log: []}); return r; });
   if (!ro.ahead || !ro.weakFirst || !ro.page) fail('drill order: ' + JSON.stringify(ro));
+  // 11: Scenes: 15 scenes under the Exam 2 group with a cite each, the TOC chips and jump() land on a scene, a mode pick
+  //     updates the title and steps, Play toggles, 390 px has no horizontal scroll, and with no clip the device voice reads
+  //     the script while the clock runs once and holds at the end
+  await page.click('nav button[data-v="scenes"]');
+  const sc1 = await page.evaluate(() => { const secs = [...document.querySelectorAll('.sc-scene')]; const d = document.querySelector('details[data-ex="2"]'); return {n: secs.length, ids: secs.map(s => s.id), toc: document.querySelectorAll('[data-scgo]').length, inEx2: !!(d && d.querySelector('.sc-scene')), open: !!(d && d.open), canvases: document.querySelectorAll('.sc-cv').length, drawn: [...document.querySelectorAll('.sc-cv')].every(c => c.width > 0 && c.getBoundingClientRect().width > 100), cites: [...document.querySelectorAll('.sc-cite')].every(c => c.textContent.length > 20), chips: document.querySelectorAll('.sc-scene [data-nmode]').length, tiles: document.querySelectorAll('#sc-dumb .sc-org').length}; });
+  if (sc1.n !== 15 || sc1.toc !== 15 || !sc1.inEx2 || !sc1.open || sc1.canvases !== 14 || !sc1.drawn || !sc1.cites || !sc1.ids.includes('sc-raas') || sc1.chips !== 45 || sc1.tiles !== 12) fail('scenes page: ' + JSON.stringify(sc1));
+  await page.click('[data-scgo="raas"]'); await page.waitForTimeout(900);
+  const sc2 = await page.evaluate(() => { const r = document.getElementById('sc-raas').getBoundingClientRect(); return {top: Math.round(r.top), active: SC_ACTIVE && SC_ACTIVE.s.key}; });
+  if (sc2.top < -40 || sc2.top > 200 || sc2.active !== 'raas') fail('scenes TOC jump: ' + JSON.stringify(sc2));
+  const sc3 = await page.evaluate(() => { const sec = document.getElementById('sc-raas'); const before = sec.querySelector('.sc-title').textContent; sec.querySelector('.sc-drug[data-mode="los"]').click(); const st = SC_ST.get('raas'); const r = {before, after: sec.querySelector('.sc-title').textContent, mk: st.mk, pressed: sec.querySelector('.sc-drug[aria-pressed="true"]').dataset.mode, steps: sec.querySelectorAll('.sc-steps li').length, lede: sec.querySelector('.sc-lede').textContent, tip: sec.querySelector('.sc-tip span').textContent, playing: st.playing, btn: sec.querySelector('.sc-play').textContent}; sec.querySelector('.sc-play').click(); r.paused = !st.playing; r.btn2 = sec.querySelector('.sc-play').textContent; sec.querySelector('.sc-play').click(); r.resumed = st.playing; return r; });
+  if (sc3.before === sc3.after || sc3.mk !== 'los' || sc3.pressed !== 'los' || sc3.steps !== 4 || !/AT1/.test(sc3.lede) || !/valsartan/.test(sc3.tip) || !sc3.playing || sc3.btn !== 'Pause' || !sc3.paused || sc3.btn2 !== 'Play' || !sc3.resumed) fail('scenes mode pick / play: ' + JSON.stringify(sc3));
+  const sc3b = await page.evaluate(async () => { const st = SC_ST.get('raas'); const a = st.t; await new Promise(r => setTimeout(r, 300)); return {moved: st.t !== a, loopOn: SC_RAF > 0}; });
+  if (!sc3b.moved || !sc3b.loopOn) fail('scenes clock not running: ' + JSON.stringify(sc3b));
+  await page.evaluate(() => { go('topics'); jump('scenes', 'sc-raas'); }); await page.waitForTimeout(400);
+  const sc4 = await page.evaluate(() => ({cur: CUR, top: Math.round(document.getElementById('sc-raas').getBoundingClientRect().top), back: (document.getElementById('backbtn') || {}).textContent || ''}));
+  if (sc4.cur !== 'scenes' || sc4.top > 200 || sc4.top < -40 || !/Back to/.test(sc4.back)) fail('jump to a scene: ' + JSON.stringify(sc4));
+  await page.setViewportSize({width: 390, height: 844});
+  await page.evaluate(() => { RET.length = 0; backBtn(); go('scenes'); }); await page.waitForTimeout(300);
+  const sc5 = await page.evaluate(() => { const g = document.querySelector('.sc-grid'); const cols = getComputedStyle(g).gridTemplateColumns.split(' ').length; const wide = [...document.querySelectorAll('.sc-scene *')].filter(el => el.getBoundingClientRect().right > 391).length; return {over: document.documentElement.scrollWidth - window.innerWidth, cols, cvw: Math.round(document.querySelector('.sc-cv').getBoundingClientRect().width), wide}; });
+  if (sc5.over > 1 || sc5.cols !== 1 || sc5.cvw > 390 || sc5.wide) fail('scenes at 390px: ' + JSON.stringify(sc5));
+  await page.setViewportSize({width: 1100, height: 800});
+  const sc6 = await page.evaluate(async () => {
+    const spoken = [], utts = [];
+    Object.defineProperty(window, 'speechSynthesis', {value: {speak: u => { spoken.push(u.text); utts.push(u); }, cancel: () => {}, pause: () => {}, resume: () => {}, getVoices: () => [], addEventListener: () => {}}, configurable: true});
+    Object.defineProperty(window, 'SpeechSynthesisUtterance', {value: function (t) { this.text = t; }, configurable: true});
+    go('scenes'); setNarr('tap'); NAR.muted = false;
+    const sec = document.getElementById('sc-gp'), st = SC_ST.get('gp'); sec.scrollIntoView(); await new Promise(r => setTimeout(r, 100));
+    sec.querySelector('.sc-drug[data-mode="gs"]').click();
+    const t0 = Date.now(); while (!(st.nar && st.nar.synth) && Date.now() - t0 < 5000) await new Promise(r => setTimeout(r, 50));
+    const r = {fell: !!(st.nar && st.nar.synth), said: spoken.join(' '), nsaid: (sec.querySelector('.nsaid') || {}).textContent || '', once: st.once, playing: st.playing, speaking: sec.classList.contains('speaking'), active: SC_ACTIVE === st};
+    const L = st.s.modes.gs.L; st.t = L - .05;
+    await new Promise(r2 => setTimeout(r2, 250));
+    r.held = Math.abs(st.t - L) < 1e-6 && !st.playing; r.stillNar = !!st.nar;
+    utts.forEach(u => u.onend && u.onend());
+    await new Promise(r2 => setTimeout(r2, 50));
+    r.done = [...sec.querySelectorAll('.sc-steps li')].every(li => li.classList.contains('done')); r.narCleared = !st.nar; r.btn = sec.querySelector('.sc-play').textContent;
+    r.tAfter = st.t; await new Promise(r2 => setTimeout(r2, 200)); r.tStill = st.t;
+    setNarr('off'); r.offRemoves = !document.querySelector('.nsaid');
+    return r; });
+  const scriptGs = await page.evaluate(() => speakable(SC.SCENES.find(s => s.key === 'gp').modes.gs.script).replace(/\s+/g, ' '));
+  if (!sc6.fell || sc6.said.replace(/\s+/g, ' ') !== scriptGs || sc6.nsaid !== (await page.evaluate(() => SC.SCENES.find(s => s.key === 'gp').modes.gs.script)) || !sc6.once || !sc6.speaking || !sc6.active || !sc6.held || !sc6.stillNar || !sc6.done || !sc6.narCleared || sc6.btn !== 'Play' || sc6.tAfter !== sc6.tStill || !sc6.offRemoves) fail('scenes narration fallback: ' + JSON.stringify(Object.assign({}, sc6, {said: sc6.said.slice(0, 80), nsaid: sc6.nsaid.slice(0, 40)})));
+  await page.evaluate(() => { go('topics'); });
+  if (await page.evaluate(() => SC_RAF !== 0 || SC_ST.size !== 0)) fail('leaving the scenes page did not stop its loop');
   await page.evaluate(ex => { S = normalize({q: {}, log: []}); save(); store.set(EXAM_KEY, ex || '2'); endExam(); }, wk.keepEx);
   if (errors.length) fail('page errors: ' + errors.join(' | '));
   console.log(`answered ${answered} quiz items (${multiSeen} select-all), exam of ${total}`);

@@ -89,6 +89,30 @@ for (const q of QUESTIONS) {
     else if (!MISS_TAGS.has(o.miss)) bad(q.id, 'option ' + i + ' unknown miss tag ' + o.miss);
   });
 }
+// scenes: fifteen, every mode with its lede, steps, tip, cite and a spoken script of 250–450 characters written in spoken form
+{
+  const SC = require('./load')().SC;
+  if (!SC || !Array.isArray(SC.SCENES)) bad('scenes', 'scenes.js did not load');
+  else {
+    if (SC.SCENES.length !== 15) bad('scenes', SC.SCENES.length + ' scenes, expected 15');
+    const keys = new Set();
+    for (const s of SC.SCENES) {
+      if (keys.has(s.key)) bad('scenes ' + s.key, 'duplicate scene key'); keys.add(s.key);
+      if (!s.cite || !/slide|transcript/.test(s.cite)) bad('scenes ' + s.key, 'cite names no slide or transcript');
+      for (const [k, m] of Object.entries(s.modes)) {
+        const id = 'scenes ' + s.key + '-' + k;
+        if (!m.lede || !Array.isArray(m.steps) || m.steps.length < 3 || !m.tip) bad(id, 'needs lede, 3+ steps, tip');
+        if (!(m.L > 0) || typeof m.draw !== 'function' && !s.dom) bad(id, 'needs L and draw');
+        if (!m.script) bad(id, 'no script');
+        else {
+          if (m.script.length < 250 || m.script.length > 450) bad(id, 'script of ' + m.script.length + ' characters (250–450)');
+          if (/[αβ→↑↓]|\b(cAMP|cGMP|AT[12]|N[nm]|G[sqi]|ACh|AChE|NE|BP|HR)\b/.test(m.script)) bad(id, 'script has a written form the voice must not read: write it as spoken');
+        }
+        [m.lede, m.tip, ...m.steps.map(x => x[1]), m.script].forEach(t => { if (/this (scene|figure|animation)|note that/i.test(t)) bad(id, 'sentence about the writing itself: ' + t.slice(0, 50)); });
+      }
+    }
+  }
+}
 // every tell-apart row names a question id that exists
 const tellIds = [...TELL_HTML.matchAll(/data-q="([^"]+)"/g)].map(m => m[1]);
 tellIds.forEach(id => { if (!ids.has(id)) bad('tell', 'row cites missing question ' + id); });

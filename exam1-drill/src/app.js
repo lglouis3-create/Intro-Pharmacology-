@@ -170,7 +170,7 @@ function schedule(id, outcome) {
 /* ---------- views ---------- */
 const VIEWS = [
   ['topics', 'Topics'], ['quiz', 'Quiz'], ['terms', 'Terms'], ['weak', 'Weak spots'], ['exam', 'Exam sim'],
-  ['graphs', 'Graphs'], ['diagrams', 'Diagrams'], ['map', 'Question map'], ['drugs', 'All drugs'], ['ref', 'Reference'], ['tell', 'Tell apart'], ['guide', 'Guides'], ['data', 'Progress']
+  ['graphs', 'Graphs'], ['diagrams', 'Diagrams'], ['scenes', 'Scenes'], ['map', 'Question map'], ['drugs', 'All drugs'], ['ref', 'Reference'], ['tell', 'Tell apart'], ['guide', 'Guides'], ['data', 'Progress']
 ];
 let CUR = 'topics';
 function nav() {
@@ -199,6 +199,7 @@ function leaveView() {
   const tb = document.getElementById('tback'); if (tb) tb.remove();
   if (TIO) { TIO.disconnect(); TIO = null; }
   if (typeof playStop === 'function') playStop();
+  if (typeof scenesStop === 'function') scenesStop();
 }
 /* Open a view. Returns false when the learner stays in a running exam. `back` is set by the
    "Back to …" button: the exam then reopens on its result page, not on a new paper. */
@@ -305,12 +306,12 @@ function backBtn() {
   if (!b) { b = document.createElement('button'); b.id = 'backbtn'; b.type = 'button'; b.className = 'btn'; document.body.appendChild(b); b.onclick = goBack; }
   b.textContent = backLabel();
 }
-const backLabel = () => '← Back to ' + ({quiz: 'the question', exam: 'the exam', graphs: 'the figures', map: 'the map', terms: 'the terms', weak: 'Weak spots', tell: 'Tell apart', ref: 'the reference', guide: 'the guide', diagrams: 'the diagrams', drugs: 'the drug table'}[(RET[RET.length - 1] || {}).view] || 'where you were');
+const backLabel = () => '← Back to ' + ({quiz: 'the question', exam: 'the exam', graphs: 'the figures', map: 'the map', terms: 'the terms', weak: 'Weak spots', tell: 'Tell apart', ref: 'the reference', guide: 'the guide', diagrams: 'the diagrams', scenes: 'the scenes', drugs: 'the drug table'}[(RET[RET.length - 1] || {}).view] || 'where you were');
 function goBack() { const r = RET.pop(); if (!r) return; backBtn(); go(r.view, true); window.scrollTo(0, r.y); }
 document.addEventListener('click', e => { const j = e.target.closest('[data-jump]'); if (j) { const [v, a] = j.dataset.jump.split(':'); jump(v, a); } });
 /* "view:anchor:group:key": jump to the page, then open that explanation card (the reference's "Why?" cards). */
 document.addEventListener('click', e => { const j = e.target.closest('[data-jumpx]'); if (!j) return; const [v, a, g, k] = j.dataset.jumpx.split(':'); jump(v, a); const out = showExplain(g, k); if (out) scrollToEl(out.closest('.xpick')); });
-const VIEWFN = {topics: vTopics, quiz: vQuiz, terms: vTerms, weak: vWeak, exam: vExam, map: vMap, graphs: vGraphs, diagrams: vDiagrams, drugs: vDrugs, ref: vRef, tell: vTell, guide: vGuide, data: vData};
+const VIEWFN = {topics: vTopics, quiz: vQuiz, terms: vTerms, weak: vWeak, exam: vExam, map: vMap, graphs: vGraphs, diagrams: vDiagrams, scenes: vScenes, drugs: vDrugs, ref: vRef, tell: vTell, guide: vGuide, data: vData};
 const rerender = () => { const y = window.scrollY; if (CUR === 'quiz' && Q) renderQ(); else if (CUR === 'exam' && EX && !EX.done) renderExam(); else if (CUR === 'exam' && EX && EX.done) examResult(); else VIEWFN[CUR](); window.scrollTo(0, y); };
 document.addEventListener('click', e => {
   const f = e.target.closest('[data-flag]');

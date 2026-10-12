@@ -271,6 +271,37 @@ select[data-l]{max-width:100%;min-width:0;flex:1 1 220px;font:inherit;font-size:
 body:has(#qback) #backbtn{display:none}
 .exgroup>summary>span{flex:1 1 0;min-width:0}
 .exlabel{font-size:11px;font-weight:600;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:0 6px;margin-left:6px;vertical-align:2px}
+/* Scenes: a canvas stage with its drug chips and controls beside the step list; stacked on a phone */
+.sc-toc{margin-bottom:12px} .sc-toc .chip{text-decoration:none}
+.sc-scene{border-top:1px solid var(--line);padding-top:10px;margin:14px 0 22px;min-width:0} .sc-scene>h3{margin:0 0 8px}
+.sc-grid{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:14px;align-items:start}
+@media (max-width:860px){.sc-grid{grid-template-columns:1fr}}
+.sc-stage{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:10px;display:grid;gap:8px;min-width:0}
+.sc-cv{width:100%;height:auto;display:block;border-radius:8px;background:var(--panel)}
+.sc-drugs{display:flex;flex-wrap:wrap;gap:5px}
+.sc-drug{font:inherit;font-size:13px;line-height:inherit;border:1px solid var(--line);background:var(--chip);color:var(--ink);border-radius:999px;padding:3px 10px;cursor:pointer}
+.sc-drug[aria-pressed="true"]{border-color:var(--c,var(--accent));background:var(--c,var(--accent));color:#fff}
+.sc-drug:focus-visible,.sc-play:focus-visible,.sc-replay:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.sc-ctl{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.sc-bar{flex:1 1 90px;min-width:60px;height:6px;background:var(--chip);border-radius:3px;overflow:hidden} .sc-bar i{display:block;height:100%;width:0;background:var(--accent);opacity:.7}
+.sc-cite{font-size:12px;color:var(--muted);overflow-wrap:anywhere}
+.sc-nrow{gap:6px;font-size:13px} .sc-nrow .chip{font-size:12px}
+.sc-stage .nsaid{margin:0}
+.sc-side{display:grid;gap:8px;min-width:0;align-content:start}
+.sc-title{margin:0;font-size:17px;line-height:1.25} .sc-lede{margin:0;color:var(--muted)}
+.sc-steps{list-style:none;margin:0;padding:0;display:grid;gap:4px}
+.sc-steps li{border-left:3px solid var(--line);padding:4px 10px;color:var(--muted);border-radius:0 6px 6px 0;transition:color .2s,border-color .2s,background .2s}
+.sc-steps li.done{color:var(--ink)} .sc-steps li.on{border-color:var(--c,var(--accent));color:var(--ink);background:var(--panel)}
+.sc-tip{background:var(--panel);border:1px dashed var(--line);border-radius:10px;padding:8px 12px;font-size:14px}
+.sc-tip b{display:block;font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:2px}
+.sc-organs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+@media (max-width:520px){.sc-organs{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.sc-org{border:1px solid var(--line);border-radius:10px;padding:8px 10px;background:var(--bg);display:grid;gap:2px;position:relative;overflow:hidden;min-height:6rem;min-width:0}
+.sc-org .sc-L{font-weight:700;font-size:24px;line-height:1} .sc-org .sc-rc{font-size:11px;color:var(--muted);position:absolute;right:8px;top:7px}
+.sc-org .sc-ef{font-weight:600;font-size:14px;overflow-wrap:anywhere} .sc-org .sc-ar{font-size:12px;color:var(--muted)}
+.sc-meter{height:6px;border-radius:3px;background:var(--chip);overflow:hidden;margin-top:4px} .sc-meter i{display:block;height:100%;width:50%;background:var(--muted);transition:width .9s cubic-bezier(.2,.7,.2,1),background .4s}
+.sc-org.up .sc-meter i{width:92%;background:var(--figC)} .sc-org.down .sc-meter i{width:12%;background:var(--figB)} .sc-org.sc-extra{border-style:dashed}
+@media (prefers-reduced-motion:reduce){.sc-meter i,.sc-steps li{transition:none}}
 </style>
 </head>
 <body>
