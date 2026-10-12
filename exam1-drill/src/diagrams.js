@@ -1271,6 +1271,170 @@ const FIG = (() => {
         '<b>Why it matters</b> (slide 59): blocking β2 closes the airways (asthma: pick metoprolol, the twins poll); blocking α1 adds vasodilation (↓TPR). Stopping any of them suddenly: rebound hypertension (up-regulation).'], 314);
     };
 
+    /* ---------- G proteins for Exam 2: the three lanes (ANS slides 4, 13, 24, 34–35; RAAS slides: AT1 Gq, AT2 Gi; (T) 9/30 poll; Jeopardy 10/8) ---------- */
+    F4['e2-gprotein-anim'] = () => {
+      // one lane at a time: receptors → α subunit → effector → second messenger → response
+      const lane = st => {
+        const c = st.c || 'E', on = st.on ? 1 : 0;
+        let g = band('mem', 36) + T('in', 294, 64, 'inside the cell', 's', 'end');
+        g += rcp('rec', 40, 29, c, st.c ? on : 'off');
+        if (st.lig) g += dot('lig', 40, 26, c, 4.5);
+        g += T('list', 62, 31, st.list || 'a G-protein-coupled receptor (GPCR)', st.c ? c.toLowerCase() : 's', 'start');
+        g += `<circle data-k="bg1" cx="24" cy="78" r="6" class="box"/><circle data-k="bg2" cx="30" cy="92" r="5" class="box"/>` + T('bg-t', 24, 82, 'β', 'm') + T('bg-t2', 30, 96, 'γ', 'm');
+        g += `<circle data-k="al" cx="48" cy="84" r="11" ${tint(c, on ? 0.32 : 0.12)} stroke-width="1.3"/>` + T('al-t', 48, 88, st.alpha || 'α', 'l');
+        if (st.eff) {
+          g += A('a1', 60, 84, 88, 84) + box('eff', 90, 72, 58, 24, c, on ? 0.22 : 0.08) + T('eff-t', 119, 88, st.eff, 'l');
+          g += A('a2', 150, 84, 176, 84) + box('msg', 178, 72, 72, 24, c, on ? 0.22 : 0.08) + T('msg-t', 214, 88, st.msg, 'l');
+          g += A('a3', 214, 98, 214, 112) + T('res', 214, 126, st.res, c.toLowerCase());
+        }
+        if (st.note) st.note.forEach((t, i) => { g += T('n' + i, 6, 126 + i * 15, t, i ? 'm' : 's', 'start'); });
+        if (st.foot) st.foot.forEach((t, i) => { g += T('f' + i, 150, 160 + i * 15, t, i === 0 ? 'l' : 'm'); });
+        return g;
+      };
+      const steps = [
+        ['A G-protein-coupled receptor (GPCR) sits in the membrane; under it waits the G protein, three subunits (α, β, γ). The α subunit decides what happens next: αq, αs or αi. Nicotinic receptors are not this kind: they are ion channels with no G protein.',
+         lane({alpha: 'α?', note: ['the α subunit decides the lane:', 'αq · αs · αi'], foot: ['Not GPCRs: Nn and Nm', 'ion channels: Na+ in, no G protein']}), 'ANS: NT and Receptors'],
+        ['Gq lane: M1, M3, α1 and AT1. αq turns on phospholipase C (PLC); PLC makes IP3; IP3 releases Ca++ from the ER. More Ca++ means contraction, secretion or excitation: stimulation, through calcium.',
+         lane({c: 'C', on: 1, lig: 1, list: 'Gq: M1 · M3 · α1 · AT1', alpha: 'αq', eff: 'PLC', msg: 'IP3 → ↑Ca++', res: 'contract · secrete · excite', foot: ['α1 vessel: vasoconstriction · AT1: constriction', 'M3 gut, glands, eye, airway: DUMBBELSS']}), 'Gq'],
+        ['Same lane, two cells, opposite results in a blood vessel: α1 on the smooth muscle raises Ca++ and the vessel constricts; M3 on the endothelium raises Ca++, which makes nitric oxide, and the vessel dilates. The receptor and the cell both matter.',
+         lane({c: 'C', on: 1, lig: 1, list: 'Gq in a blood vessel', alpha: 'αq', eff: 'PLC', msg: 'IP3 → ↑Ca++', res: 'the cell decides', foot: ['smooth muscle α1: ↑Ca++ → constriction', 'endothelium M3: ↑Ca++ → NO → dilation']}), 'Gq: α1 vs M3 in a vessel'],
+        ['Gs lane: β1, β2 and β3. αs stimulates adenylate cyclase (AC): ATP becomes cAMP. In the heart (β1) the rate and force go up and the kidney releases renin; in smooth muscle (β2 lungs and vessels, β3 bladder) cAMP relaxes the muscle.',
+         lane({c: 'A', on: 1, lig: 1, list: 'Gs: β1 · β2 · β3', alpha: 'αs', eff: 'AC', msg: '↑ cAMP', res: 'S for stimulation', foot: ['β1 heart: ↑ rate, ↑ force · β1 kidney: renin', 'β2 lungs, vessels · β3 bladder: muscle relaxes']}), 'Gs'],
+        ['Gi lane: M2, α2 and AT2. αi inhibits the same adenylate cyclase: cAMP falls. At the heart\'s M2 the rate slows (K+ channels open too, so the cell hyperpolarizes); at the presynaptic α2 less NE is released; AT2 opposes AT1.',
+         lane({c: 'B', on: 1, lig: 1, list: 'Gi: M2 · α2 · AT2', alpha: 'αi', eff: 'AC ⊗', msg: '↓ cAMP', res: 'I for inhibition', foot: ['M2 heart: bradycardia (↓cAMP, K+ out)', 'α2 ending: ↓ NE release · AT2 opposes AT1']}), 'Gi'],
+        ['One heart cell, both lanes: β1 (Gs) raises cAMP and M2 (Gi) lowers it, on the same adenylate cyclase. The heart rate is the net of the two: sympathetic NE pushes it up, parasympathetic ACh pulls it down.',
+         band('mem', 36) + T('in', 294, 64, 'inside the cell', 's', 'end') + rcp('rec', 40, 29, 'A', 1) + dot('lig', 40, 26, 'a', 4.5) + T('list', 62, 31, 'β1 · Gs (NE)', 'a', 'start') + rcp('rec2', 250, 29, 'B', 1) + dot('lig2', 250, 26, 'b', 4.5) + T('list2', 236, 31, 'M2 · Gi (ACh)', 'b', 'end') +
+         `<circle data-k="al" cx="48" cy="84" r="11" ${tint('A', 0.32)} stroke-width="1.3"/>` + T('al-t', 48, 88, 'αs', 'l') + `<circle data-k="al2" cx="250" cy="84" r="11" ${tint('B', 0.32)} stroke-width="1.3"/>` + T('al2-t', 250, 88, 'αi', 'l') +
+         A('a1', 60, 84, 118, 84) + A('a2', 238, 84, 182, 84) + box('eff', 120, 72, 60, 24, 'E', 0.12) + T('eff-t', 150, 88, 'AC', 'l') + T('p1', 90, 106, '+ cAMP', 'a') + T('p2', 210, 106, '− cAMP', 'b') +
+         A('a3', 150, 98, 150, 112) + T('res', 150, 126, 'cAMP = the net of the two', 'l') + T('f0', 150, 146, 'heart rate: up with NE, down with ACh', 'm') + T('f1', 150, 161, 'β blocker and atropine: same cAMP, opposite sides', 's'),
+         'Cross-talk in the heart'],
+        ['How he asks it. "Activation of α1 receptors in the arteries": Gq → PLC → vasoconstriction. "Which drugs inhibit the Gq pathway": losartan (AT1), prazosin and phenoxybenzamine (α1), atropine (M1, M3): all of the above. Know the lane and the receptor, and the answer follows.',
+         band('mem', 36) + T('in', 294, 64, 'inside the cell', 's', 'end') + rcp('rec', 40, 29, 'C', 1) + dot('lig', 40, 26, 'c', 4.5) + T('list', 62, 31, 'α1 in an artery: Gq', 'c', 'start') +
+         `<circle data-k="al" cx="48" cy="84" r="11" ${tint('C', 0.32)} stroke-width="1.3"/>` + T('al-t', 48, 88, 'αq', 'l') + A('a1', 60, 84, 88, 84) + box('eff', 90, 72, 58, 24, 'C', 0.22) + T('eff-t', 119, 88, 'PLC', 'l') + A('a2', 150, 84, 176, 84) + box('msg', 178, 72, 72, 24, 'C', 0.22) + T('msg-t', 214, 88, 'IP3 → ↑Ca++', 'l') + A('a3', 214, 98, 214, 112) + T('res', 214, 126, 'vasoconstriction', 'c') +
+         T('f0', 150, 150, 'Gq blockers on his list', 'l') + T('f1', 150, 165, 'atropine (M1, M3) · prazosin, phenoxybenzamine (α1)', 'm') + T('f2', 150, 180, 'losartan (AT1) · Gs blockers: the β blockers', 'm'),
+         'Which drugs inhibit the Gq pathway?']
+      ];
+      return step2('e2-gprot', 'Gq, Gs, Gi: the three lanes for Exam 2', steps, 190,
+        ['<b>His quick table</b> (ANS slide 4; slides 24, 34–35): M1 and M3 = Gq (↑Ca++), M2 = Gi (↓cAMP), α1 = Gq, α2 = Gi, β1 and β2 (and β3) = Gs (cAMP). AT1 = Gq and AT2 = Gi (RAAS lecture, figure "The RAAS cascade").',
+         '<b>The lanes:</b> Gq: PLC → IP3 → Ca++ (stimulation through calcium). Gs: adenylate cyclase on → cAMP up. Gi: the same adenylate cyclase off → cAMP down; at M2 the K+ channels open and the cell hyperpolarizes (Guides, section 1).',
+         '<b>His questions</b> (9/30 poll; Jeopardy 10/8): "Activation of alpha 1 receptors in the arteries by an agonist will produce": Gq ⇒ PLC ⇒ vasoconstriction. "Which of the following drugs inhibits the Gq pathway? Losartan / Prazosin / Phenoxybenzamine / Atropine": all the above. "If you know your quick table, you already got a bunch of free points in your exam."',
+         '<b>Not GPCRs:</b> Nn and Nm are ligand-gated ion channels (ANS slides 12–13): "nicotinic neuronal", "nicotinic muscle", Na+ in, no G protein. The Exam 1 figures draw the GDP/GTP steps inside the G protein.'],
+        'Seven steps.');
+    };
+
+    /* ---------- Where the receptors are: one body, every receptor (ANS slides 13, 24, 27, 31, 34–35; Cholinergic slide 9; NO lecture; (T) 10/1) ---------- */
+    F4['e2-body-map'] = () => {
+      // rows: organ, chips [receptor, G protein colour, effect], notes; chips are coloured by G protein (Gq C, Gs A, Gi B, ion channel D)
+      const ROWS = [
+        ['brain', 'Brain (CNS)', [['M1', 'C', 'stimulation, emesis'], ['α2', 'B', 'sedation']], 'head'],
+        ['eye', 'Eye', [['α1', 'C', 'mydriasis'], ['M3', 'C', 'miosis']], 'head'],
+        ['gland', 'Salivary, lacrimal glands', [['M3', 'C', 'salivation, tears']], 'gland', 'both divisions: the SNS fiber here releases ACh'],
+        ['lung', 'Lungs (airway)', [['M3', 'C', 'constriction'], ['β2', 'A', 'dilation']], 'gland', 'PNS only; β2 not innervated: epinephrine'],
+        ['heart', 'Heart', [['β1', 'A', '↑ rate, force'], ['M2', 'B', 'bradycardia']], 'heart'],
+        ['vessel', 'Blood vessels', [['α1', 'C', 'constriction'], ['β2', 'A', 'dilation'], ['M3', 'C', 'endothelium: NO, dilation']], 'vessel', 'SNS only'],
+        ['kidney', 'Kidney', [['β1', 'A', 'renin release']], 'kidney', 'SNS only'],
+        ['adrenal', 'Adrenal medulla', [['Nn', 'D', 'epi ~80%, NE ~20% to blood']], 'kidney'],
+        ['gut', 'Gut', [['M3', 'C', 'motility: diarrhea'], ['α2', 'B', '↓ ACh: constipation']], 'pelvis'],
+        ['bladder', 'Bladder', [['M3', 'C', 'urination'], ['β3', 'A', 'relaxes: retention']], 'pelvis'],
+        ['ganglia', 'Ganglia (both divisions)', [['Nn', 'D', 'ion channel: Na+ in']], 'nic'],
+        ['nmj', 'Skeletal muscle (NMJ)', [['Nm', 'D', 'contraction']], 'nic'],
+        ['term', 'SNS nerve ending', [['α2', 'B', '↓ NE release']], 'nic']
+      ];
+      // a row is one line when its chips fit beside the name, else the chips take a second line
+      // chips sit beside the name when they fit; otherwise they take their own line(s) under it, wrapping at the right edge
+      const chipW = eff => 30 + 6.2 * eff.length, nameW = n => 10 + 6.8 * n.length;
+      const layout = ([, name, chips]) => {
+        const tot = chips.reduce((a, c) => a + chipW(c[2]) + 4, 0);
+        if (nameW(name) + tot <= 292) return {lines: [chips], h: 24, beside: true};
+        const lines = [[]]; let w = 0;
+        chips.forEach(c => { const cw = chipW(c[2]) + 4; if (w + cw > 288 && lines[lines.length - 1].length) { lines.push([]); w = 0; } lines[lines.length - 1].push(c); w += cw; });
+        return {lines, h: 24 + 20 * lines.length, beside: false};
+      };
+      const Y0 = 44, H = ROWS.reduce((a, r) => a + layout(r).h, 0);
+      const draw = (focus, legend) => {
+        let g = '', y = Y0;
+        ROWS.forEach(row => {
+          const [k, name, , grp] = row, L = layout(row), dim = focus && focus !== grp;
+          g += `<g data-k="row-${k}" style="opacity:${dim ? 0.3 : 1}">`;
+          g += `<rect x="4" y="${y - 10}" width="292" height="${L.h - 2}" rx="4" fill="var(--chip)" fill-opacity="${dim ? 0.35 : 0.8}" stroke="var(--line)" stroke-width="0.6"/>`;
+          g += `<text x="8" y="${y + 5}" text-anchor="start" style="${FS.l}">${name}</text>`;
+          L.lines.forEach((line, li) => {
+            const cy = L.beside ? y : y + 20 + li * 20, tot = line.reduce((a, c) => a + chipW(c[2]) + 4, 0);
+            let x = L.beside ? 296 - tot + 4 : 8;
+            line.forEach(([r, c, eff]) => {
+              const w = chipW(eff);
+              g += `<rect x="${x}" y="${cy - 8}" width="${w}" height="18" rx="4" ${tint(c, 0.16)} stroke-width="0.9"/>`;
+              g += `<rect x="${x + 2}" y="${cy - 6}" width="22" height="14" rx="3" ${tint(c, 0.4)} stroke-width="0"/>`;
+              g += `<text class="cl ${c.toLowerCase()}" x="${x + 13}" y="${cy + 4.5}" text-anchor="middle" style="font-size:11px;font-weight:700">${r}</text>`;
+              g += `<text x="${x + 28}" y="${cy + 4.5}" text-anchor="start" style="${FS.m}">${eff}</text>`;
+              x += w + 4;
+            });
+          });
+          g += `</g>`; y += L.h;
+        });
+        if (legend) g += T('leg', 150, Y0 + H + 2, legend, 's');
+        return g;
+      };
+      const LEG = 'Gq green · Gs blue · Gi orange · ion channel gold';
+      const steps = [
+        ['Every receptor on his list, on one body, top to bottom. The colour is the G protein: Gq (↑Ca++), Gs (↑cAMP), Gi (↓cAMP); gold is a nicotinic ion channel. Read a chip as: receptor, then what an agonist does there.', draw(null, LEG), 'ANS: NT and Receptors'],
+        ['Head. Brain: M1 (Gq) is excitation and emesis, the E and the second S of DUMBBELSS; α2 (Gi) in the brain is sedation (clonidine). Eye: α1 (Gq) dilates the pupil (mydriasis), M3 (Gq) constricts it (miosis).', draw('head'), 'Brain and eye'],
+        ['Glands and airway. Salivary and lacrimal glands: M3 (Gq), and both divisions cause salivation because the sympathetic fiber to the salivary gland releases ACh. Lungs: parasympathetic only; M3 constricts the airway, and the β2 that dilates it has no nerve: circulating epinephrine reaches it.', draw('gland'), 'Glands and lungs'],
+        ['Heart: β1 (Gs) raises the rate and the force; M2 (Gi) slows it. Both act on the same adenylate cyclase from opposite sides, so the rate is the net of the two (cross-talk).', draw('heart'), 'Heart'],
+        ['Blood vessels, sympathetic only. α1 (Gq) on the smooth muscle constricts; β2 (Gs) on the smooth muscle dilates; M3 (Gq) on the endothelium makes nitric oxide and dilates, even though it is not innervated. Same Gq, different cell, opposite result.', draw('vessel'), 'Blood vessels'],
+        ['Kidney and adrenal medulla, sympathetic only. β1 (Gs) on the juxtaglomerular cells releases renin, the start of the RAAS. The adrenal medulla is reached by a preganglionic fiber: ACh on Nn, and the medulla releases epinephrine (about 80%) and NE (about 20%) into the blood.', draw('kidney'), 'Kidney and adrenal medulla'],
+        ['Gut and bladder. M3 (Gq) drives motility and urination, the D and the U of DUMBBELSS. The sympathetic brake on the gut is α2 (Gi) on the parasympathetic nerve ending: less ACh, constipation. β3 (Gs) relaxes the bladder: urine retained.', draw('pelvis'), 'Gut and bladder'],
+        ['The nicotinic sites and the presynaptic brake. Nn (ion channel) sits in every ganglion of both divisions, in the brain and on the adrenal medulla; Nm sits only at the neuromuscular junction. α2 (Gi) on the sympathetic nerve ending turns NE release down.', draw('nic'), 'Nn, Nm and α2']
+      ];
+      return step2('e2-body', 'Where the receptors are', steps, Y0 + H + 10,
+        ['<b>Sites, in his words</b> (ANS slides 13, 24, 27, 31, 34–35; (T) 10/1): M1 brain, M2 heart, M3 "everywhere else"; α1 eye, brain, blood vessels; α2 presynaptic nerve and brain; β1 heart and kidney; β2 smooth muscle (lungs, vessels), typically not innervated; β3 bladder; Nn ganglia, brain, adrenal medulla; Nm skeletal muscle.',
+         '<b>The exceptions he asks:</b> lungs are PNS only (airway β2 is reached by adrenal epinephrine); blood vessels and kidneys are SNS only; both divisions cause salivation; the endothelial M3 dilates through nitric oxide (NO lecture).',
+         '<b>Reading a chip:</b> the effect shown is the agonist\'s; an antagonist does the opposite (atropine: anti-DUMBBELSS; a β blocker: slower heart, less renin).'],
+        'Eight steps.');
+    };
+
+    /* ---------- A nerve from the cord to the organ (ANS slides 11–14, 22–23, 34–35; (T) 10/1) ---------- */
+    F4['e2-nerve-anim'] = () => {
+      const Y = 70;
+      const trunk = st => {
+        let g = `<rect data-k="cns" x="4" y="30" width="12" height="80" rx="3" fill="var(--chip)" stroke="var(--line)"/>` + T('cns-t', 10, 122, 'CNS', 's');
+        g += `<circle data-k="soma" cx="30" cy="${Y}" r="8" class="box"/>`;
+        g += `<line data-k="pre" x1="38" y1="${Y}" x2="130" y2="${Y}" stroke="var(--ink)" stroke-width="3"/>`;
+        for (let x = 46; x < 124; x += 18) g += `<rect data-k="my${x}" x="${x}" y="${Y - 5}" width="12" height="10" rx="3" fill="var(--chip)" stroke="var(--muted)" stroke-width="0.8"/>`;
+        g += `<circle data-k="gang" cx="142" cy="${Y}" r="12" ${tint('D', st.gangOn ? 0.4 : 0.14)} stroke-width="1.2"/>` + T('gang-t', 142, 74, 'Nn', 'l');
+        g += `<line data-k="post" x1="154" y1="${Y}" x2="218" y2="${Y}" stroke="var(--ink)" stroke-width="1.2"/>`;
+        g += `<rect data-k="term" class="box" x="218" y="${Y - 14}" width="32" height="28" rx="8"/>` + `<circle data-k="v1" cx="229" cy="${Y - 4}" r="4" class="ves" stroke-width="0.8"/><circle data-k="v2" cx="239" cy="${Y + 4}" r="4" class="ves" stroke-width="0.8"/>`;
+        g += `<rect data-k="organ" x="272" y="${Y - 20}" width="24" height="40" rx="4" ${tint(st.orgC || 'E', st.orgOn ? 0.3 : 0.1)} stroke-width="1"/>` + T('organ-t', 284, 104, 'organ', 's');
+        g += rcp('rec', 268, Y - 14, st.orgC || 'E', st.orgOn ? 1 : 0);
+        if (st.ap != null) g += dot('ap', st.ap, Y, 'd', 5);
+        if (st.rel) [[253, Y - 7], [256, Y + 1], [253, Y + 8]].forEach(([x, y], i) => { g += dot('nt' + i, x, y, st.ntC || 'a', 2.6); });
+        g += T('l-pre', 84, 92, 'preganglionic: myelinated', 's') + T('l-gang', 142, 50, 'ganglion', 's') + T('l-post', 202, 92, 'postganglionic:', 's') + T('l-post2', 202, 105, 'unmyelinated', 's') + T('l-term', 234, 50, 'terminal', 's');
+        return g;
+      };
+      const soma = `<line data-k="s-pre" x1="38" y1="150" x2="214" y2="150" stroke="var(--ink)" stroke-width="3"/>` + [46, 70, 94, 118, 142, 166, 190].map(x => `<rect data-k="smy${x}" x="${x}" y="145" width="12" height="10" rx="3" fill="var(--chip)" stroke="var(--muted)" stroke-width="0.8"/>`).join('') +
+        `<circle data-k="s-soma" cx="30" cy="150" r="8" class="box"/>` + `<rect data-k="s-organ" x="214" y="132" width="82" height="36" rx="4" ${tint('D', 0.2)} stroke-width="1"/>` + T('s-o1', 255, 146, 'skeletal muscle', 'm') + T('s-o2', 255, 160, 'Nm', 'd');
+      const lines = (arr, y0, kind = 'm') => arr.map((t, i) => T('x' + i, 6, y0 + i * 14, t, kind, 'start')).join('');
+      const steps = [
+        ['The parts of an autonomic nerve. A cell body in the CNS sends a myelinated preganglionic axon to a ganglion outside the cerebrospinal axis; from the ganglion an unmyelinated postganglionic axon runs to the organ and ends in a terminal full of vesicles, across a synapse from the receptor.',
+         trunk({}) + lines(['two neurons in series: pre (myelinated) → ganglion → post', 'the ganglion sits outside the cerebrospinal axis', 'PNS: long pre, short post, 1:1 · SNS: short pre, 1:20'], 140, 's'), 'Autonomic vs. Somatic'],
+        ['The signal travels. An action potential runs along the preganglionic axon to the ganglion, where the terminal releases ACh onto Nn, a nicotinic ion channel: Na+ enters and the postganglionic neuron fires. This step is the same in both divisions.',
+         trunk({ap: 142, gangOn: 1}) + lines(['at the ganglion, both divisions: ACh → Nn (ion channel, Na+ in)', 'Nn = nicotinic neuronal: ganglia, brain, adrenal medulla'], 140, 's'), 'Ganglion: ACh on Nn'],
+        ['At the terminal, his five key steps of neurotransmission: the transmitter is made in the neuron, stored in vesicles, released into the cleft when Ca++ enters, binds post- or pre-synaptic receptors, and is removed by a transporter or an enzyme.',
+         trunk({ap: 249, rel: 1}) + lines(['5 key steps: 1 made in the neuron · 2 stored in vesicles', '3 released (Ca++ dependent) · 4 binds post- or presynaptic', '5 removed: transporter (NET) or enzyme (AChE, MAO)'], 140, 's'), '5 Key Steps in Neurotransmission'],
+        ['At the organ the transmitter names the division: a parasympathetic ending releases ACh onto a muscarinic receptor (M1, M2, M3); a sympathetic ending releases NE onto α or β. Those receptors are GPCRs, so the G-protein lane decides the effect.',
+         trunk({rel: 1, orgOn: 1, orgC: 'C'}) + lines(['PNS ending: ACh → M2 heart (Gi), M3 everywhere else (Gq)', 'SNS ending: NE → α1 (Gq), α2 (Gi), β1 and β2 (Gs)', 'the receptor is a GPCR: the lane decides the effect'], 140, 's'), 'ANS: NT and Receptors'],
+        ['Compare the somatic nerve: one myelinated neuron from the CNS straight to skeletal muscle, no ganglion, ACh onto Nm. N for neuron (Nn, in the ganglion), M for muscle (Nm, at the neuromuscular junction).',
+         trunk({}) + soma + T('s-l', 150, 180, 'somatic: one myelinated neuron, no ganglion, ACh → Nm', 's'), 'Somatic: one neuron'],
+        ['Where the drugs on his list act along this nerve: at the ganglion, nicotine on Nn; at the terminal, cocaine blocks NET reuptake, amphetamine pushes NE out, MAO inhibitors stop the breakdown, botulinum toxin stops release (NMJ); at the receptor, every agonist and antagonist; at the enzyme, the AChE inhibitors.',
+         trunk({rel: 1, orgOn: 1, orgC: 'E'}) + lines(['ganglion Nn: nicotine (agonist), varenicline (partial)', 'terminal: cocaine (NET), amphetamine, MAO inhibitors', 'NMJ terminal: botulinum toxin (no release)', 'receptor: agonists, antagonists · AChE: the inhibitors'], 136, 's'), 'Drug targets along the nerve']
+      ];
+      return step2('e2-nerve', 'A nerve from the cord to the organ', steps, 188,
+        ['<b>Layout</b> (ANS slides 11–12, 22–23, 34–35): "Autonomic have distal ganglia that are entirely outside of the cerebrospinal axis"; "Autonomic post-ganglionic nerves generally are Non-myelinated, while Somatic are myelinated"; somatic = "Single, Myelinated Efferent Fibers". Preganglionic fibers are myelinated in both divisions.',
+         '<b>Five key steps</b> (ANS slide 14): synthesized in the neuron and present in the presynaptic terminal; storage (vesicles); released into the synaptic cleft (Ca++ dependent); bind to post-synaptic and/or pre-synaptic receptors; specific mechanisms for removing it (transporters, enzymes).',
+         '<b>Nn and Nm</b> (slides 12–13; (T) 9/30): "nicotinic neuronal" in ganglia, brain and the adrenal medulla; "nicotinic muscle" at skeletal muscle; ion channels, no G protein. Drug sites: the drug-list figures and the All drugs page.'],
+        'Six steps.');
+    };
+
     /* ---------- Baroreceptor reflex on standing (ANS slides 49–52; 10/1); prazosin first dose (Adrenergic slide 30; 10/6) ---------- */
     F4['e2-baroreflex-anim'] = () => {
       const POS = {lie: [[46, 200], [62, 210], [78, 200], [112, 197], [132, 211], [152, 197]],

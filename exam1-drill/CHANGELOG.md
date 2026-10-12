@@ -2,6 +2,13 @@
 
 Newest first. The build embeds this file; the Topics page shows what is new since your last visit, and the Progress page shows all of it. Keep each bullet to one short line.
 
+## 2026-10-12 (three narrated figures for Exam 2: G-protein lanes, body map, nerve)
+
+- "Gq, Gs, Gi: the three lanes for Exam 2": one lane per step with its receptors, effector, messenger and response.
+- "Where the receptors are": every receptor on one body, coloured by G protein, with an eight-step narrated tour.
+- "A nerve from the cord to the organ": the parts, the signal, his five key steps, the somatic comparison, drug sites.
+- All three are recorded in the narrator voice JK (21 clips, about 8 minutes) and sit in Guides section 1 and Diagrams.
+
 ## 2026-10-12 (drill order; narration fixes)
 
 - Drills: answered questions come weakest box first, then earliest due day, in a random order inside each.
