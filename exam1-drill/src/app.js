@@ -197,6 +197,7 @@ const clearView = () => { const v = $('#view'); v.onclick = null; v.onchange = n
 /* Leaving a page: back to the top, and the floating buttons and scroll watcher of the old page go. */
 function leaveView() {
   window.scrollTo(0, 0); clearView();
+  if (typeof rdStop === 'function') rdStop();
   if (typeof xBack === 'function') xBack(null);
   const tb = document.getElementById('tback'); if (tb) tb.remove();
   if (TIO) { TIO.disconnect(); TIO = null; }
@@ -2386,6 +2387,7 @@ function rdCard(r) {
     <p>${esc(rdLead(r.about || '')[0])}</p>${r.numbering_note ? `<p class="sub">${esc(r.numbering_note)}</p>` : ''}
     <div class="row rdact">${qs.length ? `<button class="btn" data-rdq="${esc(r.id)}">Drill ${qs.length} question${qs.length === 1 ? '' : 's'}</button>` : `<span class="meta" style="margin:0">${r.status === 'his' ? 'His exams come from the slides and the drug list; no reading drill.' : 'No questions yet: she has not discussed it in class.'}</span>`}
       ${quiz.length ? `<button class="btn ghost" data-rdquiz="${esc(r.id)}">Her quiz items (${quiz.length})</button>` : ''}
+      ${r.listen ? `<button class="btn ghost" data-rdlisten="${esc(r.id)}">🔊 Listen</button>` : ''}
       ${(r.links || []).map(([v, a, l]) => `<button type="button" class="chip" data-jump="${esc(v)}:${esc(a)}">${esc(l)}</button>`).join('')}</div>
     ${fold('About, in full', rdLead(r.about || '')[1] ? `<p>${esc(r.about)}</p>` : '')}
     ${fold('Read for', li(r.read_for))}
@@ -2398,14 +2400,65 @@ function rdCard(r) {
 function vReadings() {
   const RS = typeof READINGS === 'undefined' ? [] : READINGS;
   const groups = COURSE.exams.map(e => { const rs = RS.filter(r => r.exam === e.id); return exGroup(e, rs.length ? rs.map(rdCard).join('') : '<div class="empty">No readings recorded for this exam yet.</div>'); }).join('');
+  const deck = RS.filter(r => r.listen && r.exam === activeId());
+  const deckHtml = deck.length ? `<div class="card rddeck" id="rddeck"><div class="row" style="justify-content:space-between"><b>Listen deck: ${esc(active().name)} readings</b><span class="meta" style="margin:0">${deck.length} talks of two to three minutes</span></div>
+    <p class="sub" style="margin:4px 0 8px">The main takeaway of each reading, in order or shuffled, one after another. Tap a title to start there.</p>
+    <div class="row"><button class="btn" id="rdplay">▶ Play all</button><button class="btn ghost" id="rdshuffle">⇄ Shuffle</button><button class="btn ghost" id="rdnext" hidden>Next ▸</button><button class="btn ghost" id="rdstop" hidden>■ Stop</button><label class="meta" style="margin:0 0 0 6px">Speed <select id="rdrate">${[0.8, 1, 1.15, 1.3, 1.5].map(v => `<option value="${v}" ${v === NAR.rate ? 'selected' : ''}>${v}×</option>`).join('')}</select></label></div>
+    <ol class="rdlist">${deck.map(r => `<li><button type="button" class="rdtrack" data-rdplay="${esc(r.id)}">${esc(r.title.split(' (')[0])}</button></li>`).join('')}</ol>
+    <div class="nsaid rdsaid" id="rdsaid" hidden></div></div>` : '';
   $('#view').innerHTML = `<h2>Readings</h2>
-    <p class="sub">Each assigned reading: what it covers, what she drew from it in class, and the questions on it. Her rule (10/9): a reading is tested on what was read and discussed in class, not on dates or numbers from the text. Folded sections open on tap.</p>${groups}`;
+    <p class="sub">Each assigned reading: what it covers, what she drew from it in class, and the questions on it. Her rule (10/9): a reading is tested on what was read and discussed in class, not on dates or numbers from the text. Folded sections open on tap.</p>${deckHtml}${groups}`;
   $('#view').onclick = e => {
-    const b = e.target.closest('[data-rdq],[data-rdquiz]'); if (!b) return;
-    const r = RS.find(x => x.id === (b.dataset.rdq || b.dataset.rdquiz)); if (!r) return;
+    const b = e.target.closest('[data-rdq],[data-rdquiz],[data-rdplay],[data-rdlisten]'); if (!b) return;
+    const r = RS.find(x => x.id === (b.dataset.rdq || b.dataset.rdquiz || b.dataset.rdplay || b.dataset.rdlisten)); if (!r) return;
     if (b.dataset.rdq) startQuiz(rdQs(r), 'Reading: ' + r.title.split(' (')[0], 'pass', {back: true});
-    else startQuiz(rdQuiz(r), 'Her quiz on the reading', 'pass', {back: true});
+    else if (b.dataset.rdquiz) startQuiz(rdQuiz(r), 'Her quiz on the reading', 'pass', {back: true});
+    else if (b.dataset.rdplay) rdPlayFrom(deck, deck.indexOf(r), false);
+    else rdPlayFrom([r], 0, false);
   };
+  if (deck.length) {
+    $('#rdplay').onclick = () => rdPlayFrom(deck, 0, false);
+    $('#rdshuffle').onclick = () => rdPlayFrom(shuffle(deck.slice()), 0, true);
+    $('#rdnext').onclick = () => rdNext();
+    $('#rdstop').onclick = () => rdStop();
+    $('#rdrate').onchange = e => { NAR.rate = +e.target.value; store.set(COURSE.ns + ':narr-rate', NAR.rate); if (NARR_AUDIO) NARR_AUDIO.playbackRate = NAR.rate; };
+  }
+}
+/* The listen deck: recorded talks (audio/rd-<id>.mp3) played one after another; if a clip cannot be loaded the device's voice reads the script. */
+let RDK = null;
+function rdPlayFrom(list, i, shuffled) {
+  rdStop(); narrStop(); if (typeof qSayStop === 'function') qSayStop();
+  RDK = {list, i, shuffled, t: null, fell: false};
+  rdPlayCur();
+}
+function rdPlayCur() {
+  const k = RDK; if (!k || k.i >= k.list.length) return rdStop();
+  const r = k.list[k.i], text = r.listen; const cur = k;
+  document.querySelectorAll('.rdtrack').forEach(b => b.classList.toggle('on', b.dataset.rdplay === r.id));
+  const said = document.getElementById('rdsaid'); if (said) { said.hidden = false; said.innerHTML = `<b>${esc(r.title.split(' (')[0])}</b> <span class="meta">${k.i + 1} of ${k.list.length}${k.shuffled ? ', shuffled' : ''}</span><div>${esc(text)}</div>`; }
+  const nx = document.getElementById('rdnext'), st = document.getElementById('rdstop'), pl = document.getElementById('rdplay'); if (nx) nx.hidden = false; if (st) st.hidden = false; if (pl) pl.textContent = '▶ Playing…';
+  const finish = () => { if (RDK !== cur) return; clearTimeout(cur.t); cur.i++; cur.fell = false; cur.i < cur.list.length ? rdPlayCur() : rdStop(); };
+  const synth = () => {
+    if (!narrCan()) return finish();
+    const v = narrVoice(); let last = null;
+    (speakable(text).match(/[^.;:!?]+[.;:!?]*/g) || [text]).forEach(part => { if (!part.trim()) return; const u = new SpeechSynthesisUtterance(part.trim()); u.rate = NAR.rate; u.lang = 'en-US'; if (v) u.voice = v; last = u; speechSynthesis.speak(u); });
+    if (!last) return finish(); last.onend = last.onerror = finish;
+    cur.t = setTimeout(finish, (4000 + text.split(/\s+/).length * 500) / NAR.rate);
+  };
+  const a = NARR_AUDIO || (NARR_AUDIO = new Audio()); a.preload = 'auto'; a.src = NAR_BASE() + 'rd-' + r.id + '.mp3'; a.playbackRate = NAR.rate;
+  const fallback = () => { if (RDK !== cur || cur.fell) return; cur.fell = true; synth(); };
+  a.onended = finish; a.onerror = fallback;
+  a.onloadedmetadata = () => { if (RDK === cur && isFinite(a.duration)) { clearTimeout(cur.t); cur.t = setTimeout(finish, a.duration * 1000 / NAR.rate + 4000); } };
+  cur.t = setTimeout(finish, (6000 + text.split(/\s+/).length * 500) / NAR.rate);
+  a.play().catch(fallback);
+}
+function rdNext() { const k = RDK; if (!k) return; clearTimeout(k.t); if (NARR_AUDIO) { NARR_AUDIO.onended = NARR_AUDIO.onerror = null; NARR_AUDIO.pause(); } if (narrCan()) speechSynthesis.cancel(); k.i++; k.fell = false; k.i < k.list.length ? rdPlayCur() : rdStop(); }
+function rdStop() {
+  const k = RDK; RDK = null; if (!k) return; clearTimeout(k.t);
+  if (NARR_AUDIO) { NARR_AUDIO.onended = NARR_AUDIO.onerror = null; NARR_AUDIO.pause(); }
+  if (narrCan()) speechSynthesis.cancel();
+  document.querySelectorAll('.rdtrack').forEach(b => b.classList.remove('on'));
+  const nx = document.getElementById('rdnext'), st = document.getElementById('rdstop'), pl = document.getElementById('rdplay'); if (nx) nx.hidden = true; if (st) st.hidden = true; if (pl) pl.textContent = '▶ Play all';
 }
 
 /* ---------- Progress: profile, pace, export ---------- */

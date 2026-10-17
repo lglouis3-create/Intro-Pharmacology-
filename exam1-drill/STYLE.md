@@ -320,6 +320,38 @@ Transcript wording verbatim (transcription errors kept). Source: `Intro Pharm Le
 - "Why did the threshold go down? There you go, use the keyword cumulative."
 - "Is cancer the disease of the aged? Yes, cancer is a disease of the aged, usually."
 
+### Every question she put to the room on 10/9, with the answer she gave or accepted
+1. Word cloud "What is toxic?": "Food, yeah, food, hormones, pollution, drugs, drugs, drugs, medications, rat poison, venom, alcohol, yes, alcohol. Cosmetics can be, yes. Blood, yes. Pathogens in it, right? Chemicals, fentanyl."
+2. Smokestack picture, "do you think this is toxic, poisonous, harmful?": "Could be. It could just be steam. You'd have to have somebody go in there and sample that vapor and find out what it is."
+3. "you didn't know what kind of snake this is. Coral snake, how do you know that?": "Red and yellow kills a fellow ... Red and black, friend of Jack." Coral snake, "very venomous, they have a neurotoxin".
+4. "Anybody know what plant this is?": Oleander, "the leaves, the flowers, the roots, they're poisonous."
+5. "Is this poisonous? What is it? ... Anybody know what kind of bird?": the pitohui, "a poisonous bird. It emits a poison from its skin, kind of like the poison dart frogs."
+6. Slow loris, "He's so cute, right?": "He is poisonous."
+7. "Anybody know what ADM stands for? ... and what's the T?": absorption, distribution, metabolism, excretion; "Yeah, there you go, toxicity."
+8. "Do you guys know what I mean by environmental exposures?": a bus's diesel fume; living on ground "built on a landfill and dust blows".
+9. "do you have a risk of occupational exposures as a healthcare provider?": "Yeah." Chemotherapy "mixing it up in an incorrect hood with the wrong airflow"; radiation; an ER patient "splattered with an organic phosphate". Not pathogens.
+10. Immediate vs extended release beta blocker, "which do you think is worse?": "It depends, you're gonna hate this answer I give a lot, it depends, OK."
+11. "You give that drug by IV. Does it go through first pass effect?": "Not by the IV route, right?" "Which is the least scary route of administration?": "The oral is right".
+12. "Could we be exposed to something acutely? ... Could we be exposed to something chronically?": "Yeah" / "Yes".
+13. Benzene, "anybody know what the dangerous health effect ... chronic low dose benzene exposure?": "Yeah, it's a carcinogen, causes leukemias".
+14. Figure 2-4, "Which compound has the longest half-life in this image?": "A, so its half-life is longest". "C has the shortest half-life."
+15. "When does compound B start causing a problem? How many doses?": "Maybe 4 ... 5 for sure, you're in the toxic zone". A "By the 3rd dose".
+16. "How about C? ... Does it ever get into the toxic zone after repeated exposures?": "No, it doesn't."
+17. "Could you still have a bad response to it [C]? ... Why would that be happening?": accepted "you could be allergic to it, yes"; "might be going to a different target site ... yes"; "Could synergize with other drugs. That's great. Nobody's ever brought that up in class before." She added injection-site damage.
+18. "Which two phase 2 enzymes will do that metabolism?": the glucuronosyl transferases and the sulfotransferases ("GSTs and STs").
+19. "What is the total daily dose of acetaminophen that we should all be sticking to?": "4 g, right? That's on the FDA labeling".
+20. "if those phase 2 enzymes cannot take care of the acetaminophen dose? What pathway does it go down?": "through our P450s ... Specifically P4452E1" → NAPQI.
+21. "have you guys talked in medchem about the fact that some people might have the NAQI being formed even at a dose that's below the 4 g?": no; she introduced it.
+22. "Can you think of a scenario of a person that they take 4 g and they end up with liver problems? ... Why is that happening?": a student said alcohol and induction of 2E1 ("you just stole my thunder"); her answer: genetic variation lowering the phase 2 enzymes, or "Alcohol can induce 20 expression" [2E1].
+23. "Dose makes the poison. Who said that?": "Supposed to be attributed to a guy named Paracelsus".
+24. The squirting can, "Does anybody know why? ... what kind of bacteria?": botulinum; "it's not the bacteria that, that kills you, it's the botulinum toxin"; cooking does not break it down.
+25. Essential substance for the U-shaped curve, "What do you want to choose?": vitamin A, iron, vitamin D offered; she took iron.
+26. "Did you go from bad to good to bad as you increase the dose from nothing to poisonous amount?": yes (essential-nutrient U-shape; hormesis has no homeostasis region).
+27. 2-AAF, "where's the threshold dose ... for bladder tumors ... sacrificed at 24 months. What dose?": "Yeah, maybe 75, right? For sure, they're getting them at 100".
+28. "Is it a lower dose that caused the threshold for bladder tumors when they were sacrificed at 33 months?": "Yeah." "Why did the threshold go down?": "There you go, use the keyword cumulative."
+29. "is anything else weird in this figure? ... What's weird?": the zero-dose animals at 33 months had liver tumors. "Why do they have liver tumors? Is cancer the disease of the aged?": "Yes, cancer is a disease of the aged, usually."
+Students asked her: exam like the earlier ones? ("about 50 questions, but they may not all be multiple choice"); does she pull questions from an article? (only "if I talked about it and we really were exploring it"); what is DES? ("a form of estrogen that is pretty strong").
+
 ### What she said is not on the exam
 - The 2-AAF hamster figure as a graph: "I will not give you a graph like that I never have."
 - Probit units: "Nobody ever uses this."
