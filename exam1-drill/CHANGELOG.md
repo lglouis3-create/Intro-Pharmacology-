@@ -2,6 +2,12 @@
 
 Newest first. The build embeds this file; the Topics page shows what is new since your last visit, and the Progress page shows all of it. Keep each bullet to one short line.
 
+## 2026-10-17 (Her practice quiz 1; syllabus of 10/8)
+
+- Smith practice quiz 1 in the bank word for word with her keys (ten items, four true/false, two short answer).
+- Guide scope and STYLE.md: the quiz level sits between her polls and the exam; short-answer items appear.
+- Syllabus of 10/8/2026: Exam 3 is 21%; day titles for 10/13, 10/14 and 10/19 reordered; noted in notes/EXAM3.md.
+
 ## 2026-10-17 (Exam 3: her 10/13 and 10/14 lectures)
 
 - Day 14 (10/13): 70 questions; indices, target and mechanism, the reading as she discussed it, toxic responses I.

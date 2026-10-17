@@ -434,3 +434,22 @@ Her framing: "I have a few polar reward questions at the end of this lecture jus
 
 ### Deferred to Monday 10/19
 "We won't get through that today for sure, but we will continue this after y'all's fall break." "We can get through it on Monday, and that means I don't get to give you my bonus topics, but I'll, you already have those slides". Not reached on 10/14: inhibit bioactivation (methanol, ethylene glycol), enhance metabolism (cyanide, acetaminophen), enhance renal elimination and extracorporeal methods, inactivation (chelators, antivenoms), the four pharmacological categories, toxidromes, the specific poisonings table, and the beta-blocker and calcium channel blocker guideline discussion: "we'll do this early on in our lecture on Monday."
+
+## Smith Practice Quiz 1 — Principles of Toxicology (verbatim, with her keys)
+Source: `Smith_Practice_Quiz_1_-_Principles_of_Toxicology.pdf` (user upload 10/17; answers reproduced from her released key). Ten questions: 4 true/false, 4 multiple choice with four options, 2 short answer. In the bank as L13-037 to L13-046 (sub "verbatim").
+
+1. "A compound with a half-life that allows it to be cleared from the body before the next exposure may still result in chronic adverse effects" — True / False. **True.**
+2. "Chronic exposure is considered to be repeated exposure for what length of time?" Less than 24 hours / 1-3 months / More than three months / Less than a month. **More than three months.**
+3. "What value derived from a dose-response curve has the following formula: X = Toxic Dose/Therapeutic Dose" Threshold Dose / Margin of Safety / Margin of Exposure / Therapeutic Index. **Therapeutic Index.**
+4. "What does ADME stand for?" (short answer) **Absorption, Distribution, Metabolism, Excretion.**
+5. "The mechanisms of a drug’s toxicity is always the same as the mechanism of its efficacy." True / False. **False.**
+6. "The concentration of a medication in the body is always highest at its target site." True / False. **False.**
+7. "The article by Rodriguez-Mozaz discusses the fact that pharmaceuticals have been detected in ground water, surface water, and drinking water. What is most likely the greatest source of pharmaceuticals in those waters?" Unused medications thrown in the trash leaching out of landfills. / Pharmaceutical company manufacturing processes. / Patients flushing unused medications down the toilet. / Consumption of medications by humans and the resulting waste streams. **Consumption of medications by humans and the resulting waste streams.**
+8. "The dose of pharmaceuticals that people are exposed to in drinking water exceeds the daily dose of that medication when used therapeutically." True / False. **False.**
+9. "Which is the best statement that describes the conclusion the authors made in this article?" Pharmaceuticals in water are not adversely affecting aquatic wildlife. / Pharmaceuticals in waters are adversely affecting human health. / No answers are correct / More data is needed to determine if pharmaceuticals in water are adversely affecting human health. **More data is needed to determine if pharmaceuticals in water are adversely affecting human health.**
+10. "List the five principles of toxicology:" (short answer) **1. Source 2. Exposure 3. ADMET 4. Dose 5. Target and Mechanism of Action.**
+
+### What the quiz shows about her levels
+- Her ladder (10/14): polls "way easy" < quizzes "a little more detailed" < exam "could likely be harder", "much more detailed".
+- Quiz level: one fact per item; true/false on a principle stated as an absolute ("always"); definitions by formula or duration; the article tested on its source, the human dose and the authors' conclusion, all points she discussed in class.
+- Two items are short answer (expand ADME; list the five principles). Her 10/9 words: "Sometimes I do very short answer essays, OK? Um, sometimes fill in the blank." Expect the exam to ask for lists and expansions written out, and for the "always" statements to come back with the detail attached (which target, which mechanism, which dose).

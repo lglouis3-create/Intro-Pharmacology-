@@ -36,3 +36,13 @@ Quizzes: her Canvas quizzes (quiz 1 on principles; quiz 2 on toxic responses) ar
 ## Engine notes for the next ingest
 - Add the lecture to `COURSE.lectures` with `prof:'Smith', exam:3, module:3`; a `q_L14.js` in `DATA_FILES`; guide sections `guide3-N` appended in `guide3.js`; `SUB3` in `app.js` extended for the new subs; the Exam 3 blurb's "in the bank so far" line updated.
 - The Exam simulator offers at most the eligible count (34 with one lecture) until the bank passes 50.
+
+## Syllabus update of 10/8/2026 (user upload 10/17: SyllabusF26_PHAR_4344_PT_II_Intro_to_Pharmacology_Updated10082026.docx)
+Differences from the Drive copy read on 10/17:
+- Exam III weight: the schedule row now says 21%, matching the grading table (the earlier copy said 22% in the row). Conflict closed: 21%.
+- 10/13 is now "Toxicology Day 2: Toxic Responses and Treating Poisonings" (readings: Casarett & Doull Ch. 2; Katzung Ch. 57 and 58; DiPiro Ch. 9).
+- 10/14 is now "Toxicology Day 3: Treating Poisonings Continued" (Katzung Ch. 57 and 58; DiPiro Ch. 9).
+- 10/19 is now "Toxicology Day 4: Pharmaceuticals in the Environment and Toxicology Careers" (other readings on Canvas). What she actually did: the reading discussion ran on 10/13, and on 10/14 she said treating poisonings "we'll wrap up that lecture on Monday" (10/19). Expect 10/19 to finish treating poisonings and the guideline discussion; careers may follow.
+- 10/26 is now "Pharmacogenomics Day 4: Pharmacogenomics Cases and Resources" (outside Exam III).
+- Unchanged: Exam III Fri 10/23, "Oct 9th – Oct 20th", 9–11 am; 10/20 Pharmacogenomics Day 1 (Katzung Ch. 5, DiPiro Ch. 6); fall break 10/15–16.
+

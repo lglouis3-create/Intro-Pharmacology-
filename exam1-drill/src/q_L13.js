@@ -16,7 +16,8 @@ TOPICS.push({id:"L13", name:"Day 13: Principles of toxicology", prof:"Smith", le
     {id:"curves", name:"Individual and population dose–response", cite:"slides ‘First’ and ‘Second Dose-Response Relationship’; (T) 10/9"},
     {id:"shape", name:"U-shaped curves: essential nutrients and hormesis; threshold", cite:"slides ‘Shape of Dose-Response’, ‘Threshold Dose’, ‘More on Threshold Dose’; (T) 10/9"},
     {id:"indices", name:"TI, margin of safety, margin of exposure; target and mechanism (slides not yet taught)", cite:"slides ‘Values Developed from Dose-Response’, ‘Target & Mechanism of Action’"},
-    {id:"reading", name:"The reading: pharmaceuticals in water", cite:"RodriguezMozaz-EHP-2010.pdf; slide ‘Discussion of Reading Assignment’"}
+    {id:"reading", name:"The reading: pharmaceuticals in water", cite:"RodriguezMozaz-EHP-2010.pdf; slide ‘Discussion of Reading Assignment’"},
+    {id:"verbatim", name:"Her practice quiz 1, word for word (with her keys)", cite:"Smith_Practice_Quiz_1_-_Principles_of_Toxicology.pdf"}
   ]});
 QUESTIONS.push(
 /* ---------------- Definitions ---------------- */
@@ -483,7 +484,7 @@ QUESTIONS.push(
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Target & Mechanism of Action’; transcript 10/13"},
 
 /* ---------------- The reading ---------------- */
-{id:"L13-035", lecture:"L13", prof:"Smith", tier:"new", topic:"L13", sub:"reading", skill:"apply", lowYield:true,
+{id:"L13-035", dupOf:"L13-043", lecture:"L13", prof:"Smith", tier:"new", topic:"L13", sub:"reading", skill:"apply", lowYield:true,
  concept:"reading-source-wwtp", tags:["smith","reading"], source:"slide",
  stem:"Applying the source principle to pharmaceuticals in water: which point is most often identified as the main discharge of pharmaceuticals into surface waters?",
  options:[
@@ -507,5 +508,118 @@ QUESTIONS.push(
   {t:"Farm crops irrigated with reclaimed water from treatment plant effluent", correct:false, why:"Crops are not among the affected organisms described."}],
  teach:"Target and dose in the reading: vultures feeding on carcasses of diclofenac-treated cattle died of renal failure because they could not excrete the drug, and fathead minnows in a lake deliberately dosed with low levels of ethinyl estradiol showed cellular and tissue responses, then a population collapse by the second year. Humans, exposed at part-per-trillion levels in drinking water, receive far less than a therapeutic dose over a lifetime, so ecosystems appear more at risk than people.",
  note:"Not discussed in class: on 10/13 she did not mention the vultures, diclofenac, fathead minnows or ethinyl estradiol. Her wildlife example was frogs, fish and alligators turning more female where estrogen levels are higher (L14-030). Kept low yield; the article text keys it.",
- cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Discussion of Reading Assignment’; RodriguezMozaz-EHP-2010.pdf pp. 1017–1018"}
+ cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Discussion of Reading Assignment’; RodriguezMozaz-EHP-2010.pdf pp. 1017–1018"},
+
+/* ---------------- Her practice quiz 1 (verbatim, with her keys) ---------------- */
+{id:"L13-037", lecture:"L13", prof:"Smith", tier:"new", topic:"L13", sub:"verbatim", skill:"apply",
+ concept:"adverse-despite-low-concentration", tags:["smith","quiz","verbatim"], source:"slide",
+ stem:"A compound with a half-life that allows it to be cleared from the body before the next exposure may still result in chronic adverse effects",
+ options:[
+  {t:"True", correct:true, why:"Her key. Compound C on the frequency figure never reaches the toxic blood concentration, yet she listed allergy, another target, synergy with other drugs and injection-site damage as ways it can still harm."},
+  {t:"False", correct:false, why:"Her key is True: clearance between doses rules out accumulation, not every adverse response."}],
+ teach:"Practice quiz 1, question 1. The point is her twist on compound C: an exposure that never accumulates can still cause an adverse response by a route that has nothing to do with kinetics.",
+ note:"Verbatim from her practice quiz; the key is the one she released. Same point as L13-016.",
+ cite:"Smith_Practice_Quiz_1_-_Principles_of_Toxicology.pdf question 1"},
+
+{id:"L13-038", lecture:"L13", prof:"Smith", tier:"new", topic:"L13", sub:"verbatim", skill:"recall",
+ concept:"exposure-durations", tags:["smith","quiz","verbatim"], source:"slide",
+ stem:"Chronic exposure is considered to be repeated exposure for what length of time?",
+ options:[
+  {t:"Less than 24 hours", correct:false, why:"Acute."},
+  {t:"1-3 months", correct:false, why:"Subchronic."},
+  {t:"More than three months", correct:true, why:"Her key: chronic is more than 3 months, up to years."},
+  {t:"Less than a month", correct:false, why:"Subacute."}],
+ teach:"Practice quiz 1, question 2: the animal-study durations. Acute less than 24 hours; subacute less than 1 month; subchronic 1 to 3 months; chronic more than 3 months.",
+ note:"Verbatim from her practice quiz with her key. Same table as L13-010.",
+ cite:"Smith_Practice_Quiz_1_-_Principles_of_Toxicology.pdf question 2"},
+
+{id:"L13-039", lecture:"L13", prof:"Smith", tier:"new", topic:"L13", sub:"verbatim", skill:"recall",
+ concept:"ti-mos-moe", tags:["smith","quiz","verbatim"], source:"slide",
+ stem:"What value derived from a dose-response curve has the following formula: X = Toxic Dose/Therapeutic Dose",
+ options:[
+  {t:"Threshold Dose", correct:false, why:"The threshold is read from the curve, not calculated as a ratio."},
+  {t:"Margin of Safety", correct:false, why:"MOS = TD1 / ED99: two different percentages."},
+  {t:"Margin of Exposure", correct:false, why:"MOE = NOAEL / exposure."},
+  {t:"Therapeutic Index", correct:true, why:"Her key: TI = toxic dose / therapeutic dose, with the same percentage in numerator and denominator."}],
+ teach:"Practice quiz 1, question 3. The therapeutic index is the toxic dose over the therapeutic dose at the same percentage of the population; it carries no slope information, which is what separates it from the margin of safety.",
+ note:"Verbatim from her practice quiz with her key. Same point as L13-032.",
+ cite:"Smith_Practice_Quiz_1_-_Principles_of_Toxicology.pdf question 3"},
+
+{id:"L13-040", lecture:"L13", prof:"Smith", tier:"new", topic:"L13", sub:"verbatim", skill:"recall",
+ concept:"admet-t", tags:["smith","quiz","verbatim"], source:"slide",
+ stem:"What does ADME stand for?",
+ options:[
+  {t:"Absorption, Distribution, Metabolism, Excretion", correct:true, why:"Her key, written out on the quiz as a short answer."},
+  {t:"Administration, Distribution, Metabolism, Elimination", correct:false, why:"The A is absorption, not administration."},
+  {t:"Absorption, Dose, Mechanism, Exposure", correct:false, why:"Dose, mechanism and exposure are other principles, not the letters of ADME."},
+  {t:"Absorption, Distribution, Mechanism, Excretion", correct:false, why:"The M is metabolism."}],
+ teach:"Practice quiz 1, question 4, a short-answer item on the quiz: absorption, distribution, metabolism, excretion; toxicology adds the T for toxicity (ADMET).",
+ note:"On the quiz this was a free-response question, not multiple choice; the exam may ask for the expansion written out. Options added here for the drill.",
+ cite:"Smith_Practice_Quiz_1_-_Principles_of_Toxicology.pdf question 4"},
+
+{id:"L13-041", lecture:"L13", prof:"Smith", tier:"new", topic:"L13", sub:"verbatim", skill:"apply",
+ concept:"toxic-target-differs", tags:["smith","quiz","verbatim"], source:"slide",
+ stem:"The mechanisms of a drug’s toxicity is always the same as the mechanism of its efficacy.",
+ options:[
+  {t:"True", correct:false, why:"Her key is False: the toxic target can differ from the therapeutic target."},
+  {t:"False", correct:true, why:"Her key. The target of something toxic is not always the same as its therapeutic target."}],
+ teach:"Practice quiz 1, question 5: the target-and-mechanism principle. A medication's toxicity may act at a different target, by a different mechanism, from its therapeutic effect.",
+ note:"Verbatim from her practice quiz with her key. Same point as L13-005.",
+ cite:"Smith_Practice_Quiz_1_-_Principles_of_Toxicology.pdf question 5"},
+
+{id:"L13-042", lecture:"L13", prof:"Smith", tier:"new", topic:"L13", sub:"verbatim", skill:"apply",
+ concept:"target-not-highest-concentration", tags:["smith","quiz","verbatim"], source:"slide",
+ stem:"The concentration of a medication in the body is always highest at its target site.",
+ options:[
+  {t:"True", correct:false, why:"Her key is False."},
+  {t:"False", correct:true, why:"Her key. The target organ may not be the site of highest concentration; the dose at the target determines toxicity."}],
+ teach:"Practice quiz 1, question 6: the target-and-mechanism slide she covered on 10/13. Where a compound has its adverse effect may not be where its concentration is highest; the kidney can be more sensitive than muscle at a lower concentration.",
+ note:"Verbatim from her practice quiz with her key. Same point as L13-034.",
+ cite:"Smith_Practice_Quiz_1_-_Principles_of_Toxicology.pdf question 6"},
+
+{id:"L13-043", lecture:"L13", prof:"Smith", tier:"new", topic:"L13", sub:"verbatim", skill:"apply",
+ concept:"reading-source-human-use", tags:["smith","quiz","verbatim"], source:"slide",
+ stem:"The article by Rodriguez-Mozaz discusses the fact that pharmaceuticals have been detected in ground water, surface water, and drinking water. What is most likely the greatest source of pharmaceuticals in those waters?",
+ options:[
+  {t:"Unused medications thrown in the trash leaching out of landfills.", correct:false, why:"A source, but not the greatest."},
+  {t:"Pharmaceutical company manufacturing processes.", correct:false, why:"A source, but not the greatest."},
+  {t:"Patients flushing unused medications down the toilet.", correct:false, why:"A source she discussed, but not the greatest."},
+  {t:"Consumption of medications by humans and the resulting waste streams", correct:true, why:"Her key: the drug and its metabolites that people excrete after normal use reach the waste stream and the treatment plants."}],
+ teach:"Practice quiz 1, question 7: the source principle applied to the article. The greatest source is ordinary human use, excreted into the waste stream; flushing, trash and manufacturing are smaller contributors.",
+ note:"Verbatim from her practice quiz with her key. L13-035 and L14-024 test the same source principle; this wording is hers.",
+ cite:"Smith_Practice_Quiz_1_-_Principles_of_Toxicology.pdf question 7"},
+
+{id:"L13-044", lecture:"L13", prof:"Smith", tier:"new", topic:"L13", sub:"verbatim", skill:"apply",
+ concept:"reading-human-dose-below-therapeutic", tags:["smith","quiz","verbatim"], source:"slide",
+ stem:"The dose of pharmaceuticals that people are exposed to in drinking water exceeds the daily dose of that medication when used therapeutically.",
+ options:[
+  {t:"True", correct:false, why:"Her key is False."},
+  {t:"False", correct:true, why:"Her key. Drinking-water levels are far below a therapeutic daily dose."}],
+ teach:"Practice quiz 1, question 8: the dose principle applied to the article. Human exposure through drinking water is far below a therapeutic dose; the wildlife, living in the water, is the population at risk.",
+ note:"Verbatim from her practice quiz with her key.",
+ cite:"Smith_Practice_Quiz_1_-_Principles_of_Toxicology.pdf question 8"},
+
+{id:"L13-045", lecture:"L13", prof:"Smith", tier:"new", topic:"L13", sub:"verbatim", skill:"apply",
+ concept:"reading-conclusion", tags:["smith","quiz","verbatim"], source:"slide",
+ stem:"Which is the best statement that describes the conclusion the authors made in this article?",
+ options:[
+  {t:"Pharmaceuticals in water are not adversely affecting aquatic wildlife.", correct:false, why:"The article's wildlife examples show adverse effects."},
+  {t:"Pharmaceuticals in waters are adversely affecting human health.", correct:false, why:"The authors did not conclude that; human exposure is far below therapeutic doses."},
+  {t:"No answers are correct", correct:false, why:"One answer is correct."},
+  {t:"More data is needed to determine if pharmaceuticals in water are adversely affecting human health.", correct:true, why:"Her key: the authors call for more data on human health effects."}],
+ teach:"Practice quiz 1, question 9: the authors' conclusion. Wildlife effects are documented; whether trace levels harm human health is not settled, and more data are needed.",
+ note:"Verbatim from her practice quiz with her key.",
+ cite:"Smith_Practice_Quiz_1_-_Principles_of_Toxicology.pdf question 9"},
+
+{id:"L13-046", lecture:"L13", prof:"Smith", tier:"new", topic:"L13", sub:"verbatim", skill:"recall",
+ concept:"five-principles", tags:["smith","quiz","verbatim"], source:"slide",
+ stem:"List the five principles of toxicology:",
+ options:[
+  {t:"Source; Exposure; ADMET; Dose; Target and Mechanism of Action", correct:true, why:"Her key, written out on the quiz as a short answer."},
+  {t:"Source; Route; Metabolism; Dose; Receptor", correct:false, why:"Route is part of exposure and metabolism part of ADMET; receptor is not the principle's name."},
+  {t:"Toxin; Toxicant; Xenobiotic; Poison; Dose", correct:false, why:"Those are the definitions, not the principles."},
+  {t:"Source; Exposure; Half-life; LD50; Threshold", correct:false, why:"Half-life, LD50 and threshold are values inside the exposure and dose principles."}],
+ teach:"Practice quiz 1, question 10, a short-answer item on the quiz: source, exposure, ADMET, dose, and target and mechanism of action.",
+ note:"On the quiz this was a free-response list; the exam may ask for it written out. Options added here for the drill.",
+ cite:"Smith_Practice_Quiz_1_-_Principles_of_Toxicology.pdf question 10"}
 );
