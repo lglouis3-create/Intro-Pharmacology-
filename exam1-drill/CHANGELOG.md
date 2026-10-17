@@ -2,6 +2,12 @@
 
 Newest first. The build embeds this file; the Topics page shows what is new since your last visit, and the Progress page shows all of it. Keep each bullet to one short line.
 
+## 2026-10-17 (Listen deck for the readings)
+
+- Readings: a Listen deck plays a two-to-three-minute talk per Exam 3 reading, in order or shuffled, with Next and Stop.
+- Each card has a Listen button; the talk's text shows while it plays; the device voice reads it until the clip exists.
+- STYLE.md: every question she put to the room on 10/9 with the answer she accepted (29 items).
+
 ## 2026-10-17 (Readings page)
 
 - New Readings tab: one card per assigned reading, grouped by exam, the exam being studied open.
