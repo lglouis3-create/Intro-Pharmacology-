@@ -2387,7 +2387,7 @@ function rdCard(r) {
     <p>${esc(rdLead(r.about || '')[0])}</p>${r.numbering_note ? `<p class="sub">${esc(r.numbering_note)}</p>` : ''}
     <div class="row rdact">${qs.length ? `<button class="btn" data-rdq="${esc(r.id)}">Drill ${qs.length} question${qs.length === 1 ? '' : 's'}</button>` : `<span class="meta" style="margin:0">${r.status === 'his' ? 'His exams come from the slides and the drug list; no reading drill.' : 'No questions yet: she has not discussed it in class.'}</span>`}
       ${quiz.length ? `<button class="btn ghost" data-rdquiz="${esc(r.id)}">Her quiz items (${quiz.length})</button>` : ''}
-      ${r.listen ? `<button class="btn ghost" data-rdlisten="${esc(r.id)}">🔊 Listen</button>` : ''}
+      ${r.listen ? `<button class="btn ghost" data-rdlisten="${esc(r.id)}">🔊 Listen${r.listen_secs ? ' · ' + rdClock(r.listen_secs) : ''}</button>` : ''}
       ${(r.links || []).map(([v, a, l]) => `<button type="button" class="chip" data-jump="${esc(v)}:${esc(a)}">${esc(l)}</button>`).join('')}</div>
     ${fold('About, in full', rdLead(r.about || '')[1] ? `<p>${esc(r.about)}</p>` : '')}
     ${fold('Read for', li(r.read_for))}
@@ -2401,10 +2401,11 @@ function vReadings() {
   const RS = typeof READINGS === 'undefined' ? [] : READINGS;
   const groups = COURSE.exams.map(e => { const rs = RS.filter(r => r.exam === e.id); return exGroup(e, rs.length ? rs.map(rdCard).join('') : '<div class="empty">No readings recorded for this exam yet.</div>'); }).join('');
   const deck = RS.filter(r => r.listen && r.exam === activeId());
-  const deckHtml = deck.length ? `<div class="card rddeck" id="rddeck"><div class="row" style="justify-content:space-between"><b>Listen deck: ${esc(active().name)} readings</b><span class="meta" style="margin:0">${deck.length} talks of two to three minutes</span></div>
+  const totalSecs = deck.reduce((a, r) => a + (r.listen_secs || 0), 0);
+  const deckHtml = deck.length ? `<div class="card rddeck" id="rddeck"><div class="row" style="justify-content:space-between"><b>Listen deck: ${esc(active().name)} readings</b><span class="meta" style="margin:0">${deck.length} talks${totalSecs ? ', ' + rdClock(totalSecs) + ' in all' : ''}</span></div>
     <p class="sub" style="margin:4px 0 8px">The main takeaway of each reading, in order or shuffled, one after another. Tap a title to start there.</p>
-    <div class="row"><button class="btn" id="rdplay">▶ Play all</button><button class="btn ghost" id="rdshuffle">⇄ Shuffle</button><button class="btn ghost" id="rdnext" hidden>Next ▸</button><button class="btn ghost" id="rdstop" hidden>■ Stop</button><label class="meta" style="margin:0 0 0 6px">Speed <select id="rdrate">${[0.8, 1, 1.15, 1.3, 1.5].map(v => `<option value="${v}" ${v === NAR.rate ? 'selected' : ''}>${v}×</option>`).join('')}</select></label></div>
-    <ol class="rdlist">${deck.map(r => `<li><button type="button" class="rdtrack" data-rdplay="${esc(r.id)}">${esc(r.title.split(' (')[0])}</button></li>`).join('')}</ol>
+    <div class="row"><button class="btn" id="rdplay">▶ Play all</button><button class="btn ghost" id="rdshuffle">⇄ Shuffle</button><button class="btn ghost" id="rdpause" hidden>❚❚ Pause</button><button class="btn ghost" id="rdnext" hidden>Next ▸</button><button class="btn ghost" id="rdstop" hidden>■ Stop</button><span class="meta rdtime" id="rdtime" style="margin:0" hidden></span><label class="meta" style="margin:0 0 0 6px">Speed <select id="rdrate">${[0.8, 1, 1.15, 1.3, 1.5].map(v => `<option value="${v}" ${v === NAR.rate ? 'selected' : ''}>${v}×</option>`).join('')}</select></label></div>
+    <ol class="rdlist">${deck.map(r => `<li><button type="button" class="rdtrack" data-rdplay="${esc(r.id)}">${esc(r.title.split(' (')[0])}</button>${r.listen_secs ? ` <span class="meta" style="margin:0">${rdClock(r.listen_secs)}</span>` : ''}</li>`).join('')}</ol>
     <div class="nsaid rdsaid" id="rdsaid" hidden></div></div>` : '';
   $('#view').innerHTML = `<h2>Readings</h2>
     <p class="sub">Each assigned reading: what it covers, what she drew from it in class, and the questions on it. Her rule (10/9): a reading is tested on what was read and discussed in class, not on dates or numbers from the text. Folded sections open on tap.</p>${deckHtml}${groups}`;
@@ -2420,12 +2421,28 @@ function vReadings() {
     $('#rdplay').onclick = () => rdPlayFrom(deck, 0, false);
     $('#rdshuffle').onclick = () => rdPlayFrom(shuffle(deck.slice()), 0, true);
     $('#rdnext').onclick = () => rdNext();
+    $('#rdpause').onclick = () => rdPause();
     $('#rdstop').onclick = () => rdStop();
     $('#rdrate').onchange = e => { NAR.rate = +e.target.value; store.set(COURSE.ns + ':narr-rate', NAR.rate); if (NARR_AUDIO) NARR_AUDIO.playbackRate = NAR.rate; };
   }
 }
 /* The listen deck: recorded talks (audio/rd-<id>.mp3) played one after another; if a clip cannot be loaded the device's voice reads the script. */
 let RDK = null;
+const rdClock = s => { s = Math.max(0, Math.round(s)); return Math.floor(s / 60) + ':' + String(s % 60).padStart(2, '0'); };
+function rdTime(cur, total) { const el = document.getElementById('rdtime'); if (!el) return; el.hidden = false; el.textContent = total ? `${rdClock(cur)} / ${rdClock(total)}` : rdClock(cur); }
+function rdPause() {
+  const k = RDK; if (!k) return; const b = document.getElementById('rdpause');
+  if (!k.paused) {
+    k.paused = true; clearTimeout(k.t);
+    if (k.fell) { if (narrCan()) speechSynthesis.pause(); } else if (NARR_AUDIO) NARR_AUDIO.pause();
+    if (b) b.textContent = '▶ Resume';
+  } else {
+    k.paused = false;
+    if (k.fell) { if (narrCan()) speechSynthesis.resume(); k.t = setTimeout(() => rdNext(), 10 * 60 * 1000); }
+    else if (NARR_AUDIO) { NARR_AUDIO.play().catch(() => {}); const left = isFinite(NARR_AUDIO.duration) ? (NARR_AUDIO.duration - NARR_AUDIO.currentTime) * 1000 / NAR.rate + 4000 : 10 * 60 * 1000; k.t = setTimeout(() => rdNext(), left); }
+    if (b) b.textContent = '❚❚ Pause';
+  }
+}
 function rdPlayFrom(list, i, shuffled) {
   rdStop(); narrStop(); if (typeof qSayStop === 'function') qSayStop();
   RDK = {list, i, shuffled, t: null, fell: false};
@@ -2436,7 +2453,8 @@ function rdPlayCur() {
   const r = k.list[k.i], text = r.listen; const cur = k;
   document.querySelectorAll('.rdtrack').forEach(b => b.classList.toggle('on', b.dataset.rdplay === r.id));
   const said = document.getElementById('rdsaid'); if (said) { said.hidden = false; said.innerHTML = `<b>${esc(r.title.split(' (')[0])}</b> <span class="meta">${k.i + 1} of ${k.list.length}${k.shuffled ? ', shuffled' : ''}</span><div>${esc(text)}</div>`; }
-  const nx = document.getElementById('rdnext'), st = document.getElementById('rdstop'), pl = document.getElementById('rdplay'); if (nx) nx.hidden = false; if (st) st.hidden = false; if (pl) pl.textContent = '▶ Playing…';
+  const nx = document.getElementById('rdnext'), st = document.getElementById('rdstop'), pl = document.getElementById('rdplay'), pa = document.getElementById('rdpause'); if (nx) nx.hidden = false; if (st) st.hidden = false; if (pa) { pa.hidden = false; pa.textContent = '❚❚ Pause'; } if (pl) pl.textContent = '▶ Playing…';
+  k.paused = false; rdTime(0, r.listen_secs || 0);
   const finish = () => { if (RDK !== cur) return; clearTimeout(cur.t); cur.i++; cur.fell = false; cur.i < cur.list.length ? rdPlayCur() : rdStop(); };
   const synth = () => {
     if (!narrCan()) return finish();
@@ -2448,8 +2466,10 @@ function rdPlayCur() {
   const a = NARR_AUDIO || (NARR_AUDIO = new Audio()); a.preload = 'auto'; a.src = NAR_BASE() + 'rd-' + r.id + '.mp3'; a.playbackRate = NAR.rate;
   const fallback = () => { if (RDK !== cur || cur.fell) return; cur.fell = true; synth(); };
   a.onended = finish; a.onerror = fallback;
-  a.onloadedmetadata = () => { if (RDK === cur && isFinite(a.duration)) { clearTimeout(cur.t); cur.t = setTimeout(finish, a.duration * 1000 / NAR.rate + 4000); } };
-  cur.t = setTimeout(finish, (6000 + text.split(/\s+/).length * 500) / NAR.rate);
+  a.onloadedmetadata = () => { if (RDK === cur && isFinite(a.duration)) { clearTimeout(cur.t); cur.t = setTimeout(finish, a.duration * 1000 / NAR.rate + 4000); rdTime(0, a.duration); } };
+  a.ontimeupdate = () => { if (RDK === cur && !cur.fell) rdTime(a.currentTime, isFinite(a.duration) ? a.duration : r.listen_secs || 0); };
+  // the guard timer runs while paused too, so a pause of any length is counted back in on resume
+  const guard0 = (6000 + text.split(/\s+/).length * 500) / NAR.rate; cur.t = setTimeout(finish, guard0);
   a.play().catch(fallback);
 }
 function rdNext() { const k = RDK; if (!k) return; clearTimeout(k.t); if (NARR_AUDIO) { NARR_AUDIO.onended = NARR_AUDIO.onerror = null; NARR_AUDIO.pause(); } if (narrCan()) speechSynthesis.cancel(); k.i++; k.fell = false; k.i < k.list.length ? rdPlayCur() : rdStop(); }
@@ -2458,7 +2478,7 @@ function rdStop() {
   if (NARR_AUDIO) { NARR_AUDIO.onended = NARR_AUDIO.onerror = null; NARR_AUDIO.pause(); }
   if (narrCan()) speechSynthesis.cancel();
   document.querySelectorAll('.rdtrack').forEach(b => b.classList.remove('on'));
-  const nx = document.getElementById('rdnext'), st = document.getElementById('rdstop'), pl = document.getElementById('rdplay'); if (nx) nx.hidden = true; if (st) st.hidden = true; if (pl) pl.textContent = '▶ Play all';
+  const nx = document.getElementById('rdnext'), st = document.getElementById('rdstop'), pl = document.getElementById('rdplay'), pa = document.getElementById('rdpause'), tm = document.getElementById('rdtime'); if (nx) nx.hidden = true; if (st) st.hidden = true; if (pa) pa.hidden = true; if (tm) tm.hidden = true; if (pl) pl.textContent = '▶ Play all';
 }
 
 /* ---------- Progress: profile, pace, export ---------- */

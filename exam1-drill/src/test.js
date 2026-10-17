@@ -125,6 +125,14 @@ if (typeof READINGS !== 'undefined') {
   }
   QUESTIONS.forEach(q => { if (q.readingId && !rids.has(q.readingId)) bad(q.id, 'readingId not in READINGS: ' + q.readingId); });
 }
+// "Hear the why" texts: every key is a question, the text is spoken-length and carries no written form the voice would misread
+if (typeof NARR_Q !== 'undefined') {
+  for (const [id, t] of Object.entries(NARR_Q)) {
+    if (!ids.has(id)) bad('narration ' + id, 'Hear-the-why text for a question that does not exist');
+    if (typeof t !== 'string' || t.length < 200 || t.length > 1100) bad('narration ' + id, 'text of ' + (t || '').length + ' characters (200–1100)');
+    else if (/[→↑↓αβ`]|\$\{|\be\.g\.|\(/.test(t) && /^L1[3-9]-/.test(id)) bad('narration ' + id, 'written form the voice must not read: write it as spoken');
+  }
+}
 // every tell-apart row names a question id that exists
 const tellIds = [...TELL_HTML.matchAll(/data-q="([^"]+)"/g)].map(m => m[1]);
 tellIds.forEach(id => { if (!ids.has(id)) bad('tell', 'row cites missing question ' + id); });
