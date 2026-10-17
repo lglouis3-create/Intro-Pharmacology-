@@ -326,3 +326,111 @@ Transcript wording verbatim (transcription errors kept). Source: `Intro Pharm Le
 
 ### Not reached on 10/9 (moved to Tuesday 10/13)
 - Potency comparison, ED/TD/LD, TI, margin of safety, margin of exposure (slide ‘Values Developed from Dose-Response’); target and mechanism (slide ‘Target & Mechanism of Action’); the discussion of the reading.
+
+## Day 14 (10/13) — Dr. Smith: polls, spoken questions and exam cues
+Transcript wording verbatim (transcription errors kept). Source: `Smith’s Intro Pharm Lecture 10.13 Transcript.txt`; decks `Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf` (finished) and `Toxic Responses Students Fall 2026 WCAG21A.pdf` (started); `Discussion-Guide-Rodriguez-Mozaz-and-Weinberg-Student-2026 copy.pdf`. Neither deck prints slide numbers; cite by slide title.
+
+### Polls
+- No Poll Everywhere question was run on 10/13. The Toxic Responses deck carries its poll slides after the organ-specific slides (non-organ-specific response; liver zones; why the liver is susceptible; five true/false statements on delayed, reversible, local, systemic and chronic-immediate effects); they belong to the 10/14 lecture.
+
+### Spoken questions she put to the room (the formats she tests in)
+- "which compound is most potent. A, right, because you start getting that effect, the response that we're measuring at a lower dose compared to B."
+- "what about compounds C and D on the right? Which one is most potent? Is it always most potent? No, right" ... "you would say that D is more potent than C, correct?" ... "making this a trick question when I ask you which compound is more potent, C or D".
+- "why would Cs dose curve and level out? What could be going on" — accepted: "all the receptor binds too are fully saturated"; same receptor hit differently; "maybe their metabolism is different ... Maybe those metabolism mechanisms get saturated"; "transporting mechanisms have gotten saturated" (P-glycoprotein, oral absorption); "can he be a partial agonist? Yes, it could be"; "changes pH ... in the stomach, right?"
+- "How come these lines aren't parallel?" (ED, TD, LD) — "Yes, could be because of Ad me, right ... but even more important ... is the target and mechanism of action."
+- "anybody know what the Noel is? Not Christmas, not yet, OK. So, it stands for the no observable adverse effect level."
+- "a wide therapeutic index compared to a medication with a narrow therapeutic index. What does that mean?" — "less chance of toxicity for the drug with a wide therapeutic index."
+- "Tell me one that was already familiar to you." — "The multiple targets". "Which one really stood out for you" — "The very last one, yeah, different mechanisms at different places"; "the highest concentration may not be where it's having an adverse effect".
+- Reading: "who met?" — "an environmental health summit"; "What kind of groups were there?" — "government organizations of various kinds, EPA ... academicians. Uh, pharmacy industry, right? Other scientists".
+- "Where are these drugs in our waters coming from?" — human waste, "Excretion ... unmetabolized drugs and metabolized drugs"; "improper disposal of medications"; "Livestock ... Feedlots ... chicken houses"; "Wastewater treatment plants". "So is that a source for humans or animals? Both, there you go."
+- "How are we humans mostly exposed to drugs in our waters? Drinking, right." "what was the concentration of drugs in our ... drinking waters ... Parts per parts per trillion, right."
+- Animals: "How do they get exposed? Constantly, yeah. Drinking ... Breathing like fish, yeah. Sorry, skin. Yeah. Frogs."
+- "Do we know ... their mechanism of action for humans? How do we know?" — "we did all those studies". "How about for animals? Do we know? ... Rarely".
+- "is that gonna get you up to a normal therapeutic daily dose? No, no. Are there any people we should be worried about ... Who? Maybe people that are immunocompromised, maybe with some disease states. Young in utero, right?"
+- "how about the critters out there? Are they having problems?" — John: yes; Ashley: we don't know; "you're both right."
+- Student question (warming water vs estrogen): "we've done isolated studies ... exposed them to certain doses of like hormones, estrogenic type of. Compounds and we do see a shift ... It could be both. Good question, very good question".
+- "What does idiosyncratic mean? We don't know why it's happening. It's unexplainable, OK?"
+- "What kind of tissue is being described on the left? ... The intended tissue, right?"
+- "You guys don't call them antihistamines anymore, right? ... you're calling them what? Partial agonist ... I'm gonna just keep calling them antihistamines."
+- "Do you guys know if we use, uh, thalidomide anymore therapeutically? ... we use thalidomide now in oncology."
+- "Any idea why we classify fibrosis as being a nonorgan specific effect?" — "if you look at the chemistry of that fibrotic tissue, it's the same."
+- "what's the layman's term for teratogenesis? Birth defects, right?"
+
+### Exam, quizzes and assignments
+- On the reading: "this is testable material." "I will later post a key". The discussion guide: "a completion grade. If you turned it in and had it kind of mostly filled out, it doesn't matter if it was right or wrong".
+- "the part of the paper I had you read was really where you're going to find those principles of toxicology." The best-management-practices section was not assigned: "that was the end of the paper that you didn't read".
+- Quiz 1 (principles of toxicology): due "tomorrow morning before class" (10/14); she will reopen it for those who already submitted, "because I haven't finished the lecture". "we'll go over the quiz anyway in class after it's turned in".
+- Due dates slide with the lecture: "if I don't change a due date. Uh, somebody send me, you know, send me an email".
+- Toxic Responses deck: "the bold font is the outline and the lighter font are the objectives that you should be definitely studying too, OK."
+- "I have that 4th day of toxicology lectures kind of in reserve for either sliding our really important lectures into the last day, but maybe we can have some fun with the other topics".
+- Exam review: "go to the exam review, uh, um, go talk to Doctor Gottlieb in his office and review your exam".
+
+### Skipped or deferred
+- Multistage model of carcinogenesis: "I am going to skip this slide today because we're running a little bit short on time" (one-sentence summary only: "it takes more than one mutation"); the ‘Development of Cancer’ figure also skipped.
+- Teratogenesis dose slide: "we're going to skip this discussion of dose. Basically ... the mother has to get enough of the compound for it to pass through into the baby".
+- Organ-specific endpoints: "we'll continue on tomorrow talking about our organs specific toxic endpoints, and then we'll start talking about treating poisoned patients".
+- Mitigation (treatment plants): "I have a slide deck talking about some of the things we can do about this issue ... we'll save that for the end of our toxicology lectures."
+- Diuretics "that we'll talk about together in January"; thalidomide in oncology "we'll talk about that later"; cancer mechanisms "next year in the spring when you come to oncology"; genetics "a conversation at the end of my time with you dealing with pharmacogenomics".
+
+## Day 15 (10/14) — Dr. Smith: polls, spoken questions and exam cues
+Transcript wording verbatim (transcription errors kept). Source: `Smith’s Intro to Pharm Lectures 10.14 Transcript.txt`; decks `Toxic Responses Students Fall 2026 WCAG21A.pdf` (finished: organ-specific responses onward) and `Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf` (started; stopped at the guideline list). Neither prints slide numbers; cite by slide title. Class ran 9:30 to 1:20 with breaks.
+
+### Poll Everywhere (end of the Toxic Responses deck; "not for a grade, they're not attendance")
+Her framing: "I have a few polar reward questions at the end of this lecture just to give you an idea of what kinds of questions I ask. These are not for a grade, they're not attendance, OK? They're just to trigger your thinking and give you an idea of what kind of things I ask, OK, so."
+
+1. "Which statements are true regarding toxic effects" (set up as choose-all; the poll allowed one: "Is it allowing you to choose more than one? Gosh, dang it, every time I do this, I can't get it to work right. OK, well, choose one.") Statements on the slide:
+   - A. "A delayed response to a toxin may be observed weeks to years after exposure." — "could a delayed response to a toxin be observed weeks to years after exposure? Yeah, yeah, OK." TRUE.
+   - B. "Tissue injury from a toxic exposure is always reversible." — "No, right now? OK." FALSE.
+   - C. "Toxins will not cause local effects." — "That's not true, we've got lots of things you can be exposed to that'll cause an effect right where you first get like basically touched by it, right?" FALSE.
+   - D. "Systemic effects do not require absorption from the site of contact." — "It's an effect that's systemic. So to become systemic, that means it's going through the bloodstream, right? It's got to be absorbed, OK? So, D is not correct. Systemic effects do require absorption from the site of contact, OK." FALSE.
+   - E. "It is possible to have immediate effects with each dose in a chronic exposure scenario." — "Yeah, so every time you walk into that workplace and there's some sort of leak going on, even though that's been happening day after day, you may not develop any tolerance to it, and you may have an immediate effect, maybe drowsiness or a headache every time you walk into work, OK." TRUE.
+   - "So this was a a question going back to our part of the lecture on just the general concepts of, of things we think about with, with exposures, right?"
+2. "Which is an non-organ specific toxic response?" Options: Neurotoxicity / Pulmonary toxicity / Teratogenicity / Nephrotoxicity. — "neurotoxicity is the nerves. Pulmonary, pulmonary toxins in the lungs, nephrotoxins the kidneys. So teratogenicity is the one on this list that is non-organ specific, OK?" Answer: Teratogenicity.
+3. "The liver is very susceptible to drug toxicity because… (Choose all that apply)" (again run as choose-one: "I probably don't have this set up right, so you can choose all that apply. So choose the one you like the most"). Options and her verdicts:
+   - "It expresses many enzymes that may metabolize drugs to toxic compounds" — "That's right." TRUE.
+   - "It receives a large volume of blood via the portal circulation" — "Yes, that is true." TRUE.
+   - "It is a large organ" — "yeah, that really doesn't have anything to do with it, right? OK." FALSE.
+   - "It is able to uptake and concentrate xenobiotics" (read aloud as "antibiotics or other, or compounds") — "That's true, OK?" TRUE.
+   - "It has its own immune cells to mount a quick inflammatory response" — "that also contributes to its sensitivity to hepatotoxins. OK, so, all of these were correct except for the fact that it's a large organ that has nothing to do with it, OK?" TRUE.
+4. "Which statement is one reason for regional susceptibility to toxicity across the liver?" Options: "Relatively high oxygen content in Zone 1" / "Homogenous expression of P450s across the zones" / "Zone 2 has few Kupfer cells". — "Do you have high oxygen content in zone one? Is it zone 1 or zone 3? Zone 1, right? OK. Yes, and if the enzymes that do metabolism there, uh, need oxygen to do their work, having a lot of oxygen right there is helpful to those enzymes to do their metabolism, and unfortunately that metabolism may result in the metabolite that's, that's hepatotoxic. OK? How about B, homogeneous expression of P-450s across the zones. No, we use SIP2E1 as an example. We have found that most of our metabolizing enzymes are not homogeneously expressed across the entire liver. They're expressed in certain areas, OK? And how about zone 2? It doesn't have very many Cooper cells, so you won't see injury. Is that true? That's not true. Those Cooper cells are crawling all over the liver, they go everywhere, so they're not just in one area, they're, they can go all over it, OK." Answer: Relatively high oxygen content in Zone 1.
+
+### Poll vs quiz vs exam difficulty (in full, after poll 4)
+"So, those are examples of very easy, very easy pull everywhere questions, OK. The questions on the quizzes that you're having are a little more detailed, right? OK, and questions on your exam, because you've had a chance to study more, will be. Some of them will be much more detailed, OK? So don't fool yourself and say, hey, I'm good to go. I answered correctly her poll everywhere questions in class, and I'm making good grades on my quizzes, that's great, but. The polar wire questions, those are way easy. Those are just to generate discussion, OK? Quiz questions are trying to get you a little more in depth in your knowledge, and your exam questions could likely be harder, OK? So just to give you an idea of what you're facing, OK? All right, why don't you guys take a break for a couple of minutes."
+
+### Spoken questions she put to the room (with the answer she accepted)
+- Fluorine gas (student question): "That's gonna be a really irritating type of exposure. It would be definitely an acute response. It'll be very caustic to the lungs because of the water in our lungs. Yeah, fluorine gas, not a good thing to be exposed to. Yeah, like chlorine gas, any of those, um, halogen in the periodic table, right?"
+- "what is happening in the image of neuron B? ... What did that neurotoxin do to this nerve cell? Killed the whole thing, right?" / neuron C: "What kind of damage are we calling that? Yeah, axonopathy." / "how about Cell D? What kind of neurotoxicity is this? Myelinopathy, yeah" / neuron E: "Yeah, the neurotransmission is being disturbed."
+- "Can you think of any sort of compound you've learned about that perturbs neurotransmission? It's a neurotoxin. You've talked about it with Doctor Gottlieb. How about organophosphates, right?"
+- "do you guys know what Giardia can be treated with? Flagyl or, or metronidazole, OK?"
+- "Does anybody know what the name of the white blood cells are that hang out in the liver are called? ... The Cooperer cells, Cooper, K U P F E R, Coopfer cells."
+- "why does having liver specific white blood cells, um, make the liver more susceptible to injury from hepatotoxic exposures?" — they release inflammatory cytokines and reactive oxygen species while cleaning up.
+- "What color does the blood become as it is approaching the central vein and drains out of the liver? ... Red. Blood. It's red because it's carrying oxygen. ... what color does the blood become? Blue. ... Why is it blue? It's hypoxic, OK?"
+- "What part of the liver is damaged? ... What area of the liver has hepatocyte death occurring? Zone 3 why Cuz that's where a lot of 20 is expressed."
+- "any drugs that's that uh jumped out to you when you saw them in this list that you're like, oh, I take that drug. Maybe I need to be careful. One of the things I worry about the most are our NSAIDs."
+- "Why would drugs with very large volumes of distribution be very challenging to remove by hemodialysis? What does that large volume of distribution mean when we think about where the drug went in the body. Yeah, it's not staying in the vasculature, right?"
+- "Which one can you increase the dose and not have an unwanted adverse effect? B."
+- "We could do gastric lavage. Does anybody know what that is? How is that Pump in your stomach, yeah, yeah".
+- "How about whole bowel irrigation? Anybody know what that is? Has anybody undergone a colonoscopy? That's whole bowel irrigation, OK?"
+- "So when you get the charcoal in the stomach, and the compound does stick to it, where does it go? Fecal illumination. OK?"
+- "What is that? Enterohepatic recirculation. Yeah, is that the term you guys have been learning? Sometimes it's called gastric recycling."
+- "What's the risk of emesis? Aspiration is the biggest risk."
+- "where do you think we get the data for these evidence-based guidance documents on overdoses? You think we set up clinical trials ... Do you think it was a clinical trial? No, not very ethical. Do we do this to animals? Very rarely. ... The data for these evidence-based guidance documents comes from people overdosing, clinicians, pharmacists, doctors write up the case, get it published, and it's in the literature."
+
+### Exam, quiz and assignment cues
+- "Every example I give you is testable because it explains the concept that we're going to deal with, OK?"
+- "I'm not going to go into detail about what kinds of gasses, what kinds of particles are the worst. That's just more detail than we have time to get into" ... "I just need you guys to get from this discussion that the lungs are susceptible. Why are certain areas of the lungs susceptible, and then for our pulmonary toxicity, we're thinking about acute versus chronic responses."
+- "there are so many neurotoxins out there, we're not gonna go through lists of them and make you memorize what kind of compound causes which kind of neurotoxicity. This is just a concept that you need to, you need to know, OK? And I did give you two examples, right?"
+- "Why is the lever susceptible? Um, if you were to write lever on an exam question for me, I think I would have to count it right."
+- The liver table: "you have to memorize this table. It is all inclusive, all inclusive of every hepatotoxin out there, OK? Do you think that's worth your time? I'm kidding. ... No, you do not have to memorize this table, OK? But I want you to understand that these different compounds, like this table shows, each compound is usually very discrete in the kind of hepatotoxicity it'll cause, and you need to be aware that these are the different kinds of hepatotoxicity you might see". "you need to be able to just basically explain what these different kinds of hepatotoxic responses are." "You'll need that in your GI module, OK?"
+- The kidney table: "Again, do you need to memorize this table? No, what you need to know are these different kinds of renal damage just in general". "you don't need to remember the list of drugs, but just for your own sake, add the PPIs to the list of drugs that cause interstitial nephritis".
+- "when we get to our lecture on adverse drug reactions, um, we will read two papers or parts of two papers. One will talk about drug induced liver injury, and the other paper will be talking about drug induced kidney injury".
+- "that bullet point on this slide is gonna link us to our pharmacogenomics lectures that we'll get in another week or so".
+- Quizzes: "you guys had a quiz that was due this morning based on, uh, the principles of toxicology, and I gave you guys chances to do it twice ... I have to hand grade a couple of questions". "at the end of today's lecture, depending on where we get, I'll adjust the quiz about today's stuff, OK, and post an announcement". "I'll be adjusting your date for quiz 2 on toxic responses because we just finished that today." "look in both places, check emails, and then also check the announcement section in our course on Canvas".
+- Reading for treating poisonings: DiPiro's Pharmacotherapy, 13th edition (Access Pharmacy), chapter e9 Clinical Toxicology, section "general, general general approach to treatment": "You can skip This Enhanced elimination and kidney replacement therapy and diuresis. I'll talk about it, but, um, and get on down to just multiple dose activated charcoal." "read that so that you know where we stand on whether or not we will try these methods to prevent absorption."
+- Abstracts and table: "you may have come to class talking about or having read these abstracts about beta blocker and calcium channel blocker overdoses ... we're going to discuss these abstracts and these guidance documents, and we're going to fill out a table which you will turn in again for completion points, and I'll adjust the turning in date".
+- Poisoning treatment table (to be posted): "fill in the basic symptoms of an overdose and how you might determine that a person has been overdosed on this drug. If there is an antidote that can be used, right in the antidote ... how is that antidote or that treatment working ... Special Considerations ... wherever you found the information that you use to fill in your table, go ahead and reference". "I'm not going to grade you on where you find your information. I'm not even going to grade you on the content of what's in your table. This is your study tool". "Really, your only references will be the chapters that I'm asking you to read or a paper that I might ask you to read, OK? You don't need to go searching the web".
+- The slide dates: "I did update these slides, so these are not just last year's slides, they've been updated ... It really is 2026."
+- Clinical toxicology elective: "if you ever want to come back and talk about real overdoses, you could come take my clinical to selective".
+
+### Deferred to Monday 10/19
+"We won't get through that today for sure, but we will continue this after y'all's fall break." "We can get through it on Monday, and that means I don't get to give you my bonus topics, but I'll, you already have those slides". Not reached on 10/14: inhibit bioactivation (methanol, ethylene glycol), enhance metabolism (cyanide, acetaminophen), enhance renal elimination and extracorporeal methods, inactivation (chelators, antivenoms), the four pharmacological categories, toxidromes, the specific poisonings table, and the beta-blocker and calcium channel blocker guideline discussion: "we'll do this early on in our lecture on Monday."
