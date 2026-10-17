@@ -32,7 +32,7 @@ const COURSE = {
     {id:'PE2', deck:'PollEV’s Exam 2.pdf', decks:['PollEV’s Exam 2.pdf', 'Jeopardy 10/8', 'Review 10/9'], label:'His Exam 2 polls (verbatim, with his keys)', prof:'Gottlieb', exam:2, module:2},
     {id:'DL2', deck:'Pharmacology_Exam_2_Drug_List.pdf', label:'Exam 2 drug list', prof:'Gottlieb', exam:2, module:2},
     // Exam 3 (syllabus: Exam III covers the Oct 9 – Oct 20 lectures; lecturer Dr. Smith: toxicology, pharmacogenomics)
-    {id:'L13', deck:'Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf', label:'Day 13 (10/9): Principles of toxicology (Dr. Smith)', prof:'Smith', exam:3, module:3},
+    {id:'L13', deck:'Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf', decks:['Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf', 'Smith_Practice_Quiz_1_-_Principles_of_Toxicology.pdf'], label:'Day 13 (10/9): Principles of toxicology (Dr. Smith)', prof:'Smith', exam:3, module:3},
     // 10/13: she finished the Principles deck (indices, target), discussed the reading with its discussion guide, then began Toxic Responses
     {id:'L14', deck:'Toxic Responses Students Fall 2026 WCAG21A.pdf', decks:['Toxic Responses Students Fall 2026 WCAG21A.pdf', 'Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf', 'Discussion-Guide-Rodriguez-Mozaz-and-Weinberg-Student-2026 copy.pdf'], label:'Day 14 (10/13): Indices, the reading, toxic responses I (Dr. Smith)', prof:'Smith', exam:3, module:3},
     // 10/14: organ-specific toxic responses, then Treating Poisonings up to the overdose guideline list
@@ -75,7 +75,7 @@ const COURSE = {
     {id:3, name:'Exam 3', scope:'Toxicology and pharmacogenomics, Dr. Smith (10/9–10/20)', date:'Fri Oct 23, 9–11 am', when:'2026-10-23T09:00:00-05:00',  // syllabus: Exam III, Fri Oct 23; the schedule row prints "9:30 am-12" and "9-11 am"; the exam table gives the date
      questions:50,               // her words 10/9: "I tried to give you about 50 questions, but they may not all be multiple choice"
      minutes:120,                // syllabus: two hours allotted for each major examination
-     blurb:'Covers the Oct 9 – Oct 20 lectures (syllabus): toxicology days 1–4 and pharmacogenomics day 1, taught by Dr. Smith. 21% of the course grade (the syllabus grading table; its schedule row says 22%). About 50 questions, not all multiple choice: some short-answer and fill-in-the-blank items. She tests what she says in lecture first, then the slides and the readings. In the bank so far: the 10/9 lecture only; the 10/13 and later lectures are added as their decks and transcripts arrive.',
+     blurb:'Covers the Oct 9 – Oct 20 lectures (syllabus): toxicology days 1–4 and pharmacogenomics day 1, taught by Dr. Smith. 21% of the course grade (syllabus updated 10/8/2026). About 50 questions, not all multiple choice: some short-answer and fill-in-the-blank items. She tests what she says in lecture first, then the slides and the readings. In the bank so far: the 10/9 lecture only; the 10/13 and later lectures are added as their decks and transcripts arrive.',
      pools:[{key:'exam3', name:'Exam 3 material', marks:null, filter:{exam:3}}]}
   ],
   activeExam: 3,                // the exam the site opens on; the learner can switch (Topics, Exam sim, Weak spots)
