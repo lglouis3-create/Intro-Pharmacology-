@@ -2376,7 +2376,7 @@ function rdCard(r) {
   const qs = rdQs(r), quiz = rdQuiz(r);
   const fold = (title, inner) => inner ? `<details class="fold rdfold"><summary>${title}</summary>${inner}</details>` : '';
   const li = arr => arr && arr.length ? `<ul>${arr.map(x => `<li>${esc(x)}</li>`).join('')}</ul>` : '';
-  const use = (r.lecture_use || []).length ? `<ul>${r.lecture_use.map(u => `<li><b>${esc(u.point)}</b>${u.chapter_location ? ` <small>(${esc(u.chapter_location)})</small>` : ''}${u.lecture_evidence ? `<div class="sub rdq">“${esc(u.lecture_evidence)}” <small>(T) ${esc(u.date || '')}</small></div>` : ''}</li>`).join('')}</ul>` : '';
+  const use = (r.lecture_use || []).length ? `<ul>${r.lecture_use.map(u => `<li><b>${esc(u.point)}</b>${u.chapter_location ? ` <small>(${esc(u.chapter_location)})</small>` : ''}${u.lecture_evidence ? `<div class="sub rdq">“${esc(u.evidence_clean || u.lecture_evidence)}” <small>(T) ${esc(u.date || '')}</small></div>` : ''}</li>`).join('')}</ul>` : '';
   const words = (r.her_words || []).length ? `<ul>${r.her_words.map(w => `<li>“${esc(w.t || w)}”${w.date ? ` <small>(T) ${esc(w.date)}</small>` : ''}</li>`).join('')}</ul>` : '';
   const terms = (r.terms || []).length ? `<ul>${r.terms.map(t => `<li><b>${esc(t.term)}</b>: ${esc(t.chapter_definition)}</li>`).join('')}</ul>` : '';
   const when = r.date ? ` · ${esc(r.date)}` : '';
@@ -2392,7 +2392,7 @@ function rdCard(r) {
     ${fold('About, in full', rdLead(r.about || '')[1] ? `<p>${esc(r.about)}</p>` : '')}
     ${fold('Read for', li(r.read_for))}
     ${fold('Where her lecture used it', use)}
-    ${fold('Her words about it', words)}
+    ${fold('Her words about it', words ? words + (r.quotes_note ? `<p class="sub">${esc(r.quotes_note)}</p>` : '') : '')}
     ${fold('Terms it defines', terms)}
     ${fold('Beyond the lecture', li(r.beyond_lecture))}
   </div>`;

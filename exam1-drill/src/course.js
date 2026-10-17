@@ -72,10 +72,10 @@ const COURSE = {
      sata:2,                     // two select-all questions (same report)
      blurb:'Covers the Oct 1 – Oct 8 lectures (syllabus): autonomic nervous system, neuromuscular junction, cholinergic, adrenergic, nitric oxide, RAAS. 24% of the course grade.',
      pools:[{key:'exam2', name:'Exam 2 material', marks:null, filter:{exam:2}}]},
-    {id:3, name:'Exam 3', scope:'Toxicology and pharmacogenomics, Dr. Smith (10/9–10/20)', date:'Fri Oct 23, 9–11 am', when:'2026-10-23T09:00:00-05:00',  // syllabus: Exam III, Fri Oct 23; the schedule row prints "9:30 am-12" and "9-11 am"; the exam table gives the date
-     questions:50,               // her words 10/9: "I tried to give you about 50 questions, but they may not all be multiple choice"
-     minutes:120,                // syllabus: two hours allotted for each major examination
-     blurb:'Covers the Oct 9 – Oct 20 lectures (syllabus): toxicology days 1–4 and pharmacogenomics day 1, taught by Dr. Smith. 21% of the course grade (syllabus updated 10/8/2026). About 50 questions, not all multiple choice: some short-answer and fill-in-the-blank items. She tests what she says in lecture first, then the slides and the readings. In the bank so far: the 10/9, 10/13 and 10/14 lectures and her practice quiz 1; 10/19 (treating poisonings, continued) and 10/20 (pharmacogenomics) are added when their transcripts arrive.',
+    {id:3, name:'Exam 3', scope:'Toxicology and pharmacogenomics, Dr. Smith (10/9–10/20)', date:'Fri Oct 23, 9 am (90 minutes)', when:'2026-10-23T09:00:00-05:00',  // her exam notice (10/17): 9 am start, 90 minutes; the syllabus's two hours is superseded
+     questions:55,               // her exam notice: 50 to 55 questions; the simulator's full paper uses the upper figure
+     minutes:90,                 // her exam notice: an hour and a half
+     blurb:'Covers all the toxicology material reached by Oct 19 and the first pharmacogenomics lecture on Oct 20 (Oct 9 through Oct 20), taught by Dr. Smith. 50 to 55 questions in 90 minutes, mostly multiple choice with a few fill-in-the-blank or short-answer items. Two extra decks for Oct 19 (pharmacist impact on pharmaceuticals in the environment; toxicology careers) count only if she covers them in class. 21% of the course grade. In the bank so far: the 10/9, 10/13 and 10/14 lectures and her practice quiz 1; 10/19 and 10/20 are added when their transcripts arrive. She tests what she says in lecture first, then the slides and the readings.',
      pools:[{key:'exam3', name:'Exam 3 material', marks:null, filter:{exam:3}}]}
   ],
   activeExam: 3,                // the exam the site opens on; the learner can switch (Topics, Exam sim, Weak spots)

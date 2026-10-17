@@ -485,3 +485,6 @@ Source: `Smith_Practice_Quiz_1_-_Principles_of_Toxicology.pdf` (user upload 10/1
 - Her ladder (10/14): polls "way easy" < quizzes "a little more detailed" < exam "could likely be harder", "much more detailed".
 - Quiz level: one fact per item; true/false on a principle stated as an absolute ("always"); definitions by formula or duration; the article tested on its source, the human dose and the authors' conclusion, all points she discussed in class.
 - Two items are short answer (expand ADME; list the five principles). Her 10/9 words: "Sometimes I do very short answer essays, OK? Um, sometimes fill in the blank." Expect the exam to ask for lists and expansions written out, and for the "always" statements to come back with the detail attached (which target, which mechanism, which dose).
+
+## Exam 3 format (her notice to the class, 10/17; reference only, not quoted on the site)
+50 to 55 questions in 90 minutes; mostly multiple choice with a few fill-in-the-blank or short-answer items; covers Oct 9 through Oct 20; two extra 10/19 decks (pharmacist impact on pharmaceuticals in the environment; toxicology careers) are testable only if covered in class, lightly; study the objectives slides, the reading and table keys, and the quiz keys; 9 am start, late arrivals not seated once anyone has left.
