@@ -57,3 +57,9 @@ Differences from the Drive copy read on 10/17:
 Not in Drive: Katzung Ch. 7 (Cholinoceptor-Activating & Cholinesterase-Inhibiting Drugs), assigned for his 10/5–10/6 lectures.
 Daily reminder: a routine ("Smith reading reminder", weekdays 7:23 am Central) fires into this session to check the Exam 3 readings folder (Drive id 1vMt7Q8VJw_Dzl5hf00Fbnse95gSWWCYi), the Smith's Lecture folder and the decks folder for new files and remind the user what to add.
 
+## Exam 3 format from her notice to the class (10/17; reference only, not quoted on the site)
+- Scope: all toxicology material reached by 10/19 plus the first pharmacogenomics lecture 10/20 (Oct 9 through Oct 20).
+- Format: 50 to 55 questions, an hour and a half (course.js: questions 55, minutes 90; the syllabus's two hours is superseded), mostly multiple choice with a few fill-in-the-blank or short-answer items; starts 9 am; late arrivals not seated once anyone has left.
+- Two extra decks posted for 10/19: "Pharmacist impact on Pharmaceuticals in the Environment" and "Toxicology Careers": testable only if covered in class, and lightly. Neither deck is in Drive yet; ingest them only if the 10/19 transcript shows she covered them, as lowYield items.
+- Study sources she names: the Outline/Objectives slides of each deck, the keys for the readings and the tables (posted in the modules), the quiz keys after each quiz. Ask the user for the reading key, the poisoning treatment table key and the quiz 2 key when posted.
+

@@ -48,7 +48,8 @@
     "date": "10/14",
     "quote": "This section, general, general general approach to treatment, because I want to just go over some of the ideas that are listed in just this section. It's a pretty quick read."
    },
-   "date": ""
+   "date": "",
+   "evidence_clean": "This section, General Approach to Treatment, because I want to just go over some of the ideas that are listed in just this section. It's a pretty quick read."
   },
   {
    "point": "She told the class which subsections to skip for now (enhanced elimination, kidney replacement therapy, diuresis) and to read down to multiple-dose activated charcoal.",
@@ -57,7 +58,8 @@
     "date": "10/14",
     "quote": "You can skip This Enhanced elimination and kidney replacement therapy and diuresis. I'll talk about it, but, um, and get on down to just multiple dose activated charcoal."
    },
-   "date": ""
+   "date": "",
+   "evidence_clean": "You can skip Enhanced Elimination and Kidney Replacement Therapy and Diuresis; I'll talk about it. Get on down to just Multiple-Dose Activated Charcoal."
   },
   {
    "point": "Pharmacokinetics in overdose differ from therapeutic doses: bioavailability rises because first-pass metabolism is saturated (Table e9-7 also lists decreased serum protein binding and slowed elimination from saturated biotransformation).",
@@ -66,7 +68,8 @@
     "date": "10/14",
     "quote": "So, most often we see that the parameter of volume of distribution and the parameter of clearance will change significantly when there's an overdose situation."
    },
-   "date": ""
+   "date": "",
+   "evidence_clean": "So, most often we see that the parameter of volume of distribution and the parameter of clearance will change significantly when there's an overdose situation."
   },
   {
    "point": "Only drugs with a small volume of distribution (<1 L/kg), low protein binding and low molecular weight are dialyzable - the reason large-Vd drugs resist hemodialysis.",
@@ -75,7 +78,8 @@
     "date": "10/14",
     "quote": "Why would drugs with very large volumes of distribution be very challenging to remove by hemodialysis? What does that large volume of distribution mean when we think about where the drug went in the body."
    },
-   "date": ""
+   "date": "",
+   "evidence_clean": "Why would drugs with very large volumes of distribution be very challenging to remove by hemodialysis? What does that large volume of distribution mean when we think about where the drug went in the body?"
   },
   {
    "point": "Ipecac syrup, once kept in households to induce vomiting, is no longer recommended and is no longer manufactured in the United States.",
@@ -84,7 +88,8 @@
     "date": "10/14",
     "quote": "So you'll find in this chapter they state, we no longer use Emesis. You used to have Emmis Ipecac bottles in people's homes, right?"
    },
-   "date": ""
+   "date": "",
+   "evidence_clean": "So you'll find in this chapter they state we no longer use emesis. You used to have ipecac bottles in people's homes."
   },
   {
    "point": "The chapter's gastric decontamination review is where the class should learn that emesis, lavage, whole-bowel irrigation and cathartics are no longer routine; aspiration is the risk she emphasized.",
@@ -93,7 +98,8 @@
     "date": "10/14",
     "quote": "They don't even use it anymore in hospitals, OK, because it's too risky. What's the risk of emesis? Aspiration is the biggest risk."
    },
-   "date": ""
+   "date": "",
+   "evidence_clean": "They don't even use it anymore in hospitals, because it's too risky. What's the risk of emesis? Aspiration is the biggest risk."
   },
   {
    "point": "Gastric lavage is done only by experienced clinicians, with relative contraindications and complications including esophageal and gastric perforation.",
@@ -102,7 +108,8 @@
     "date": "10/14",
     "quote": "So gastric lavage, you don't wanna do it for anybody that has any sort of esophageal rupture, issues with their stomach, all that dangerous, dangerous."
    },
-   "date": ""
+   "date": "",
+   "evidence_clean": "So gastric lavage, you don't want to do it for anybody that has any sort of esophageal rupture, issues with their stomach; all that is dangerous."
   },
   {
    "point": "Experienced toxicologists may still consider lavage or whole-bowel irrigation for potentially life-threatening ingestions.",
@@ -111,7 +118,8 @@
     "date": "10/14",
     "quote": "They, they might try gastric lavage. They will probably try to do whole bowel irrigation, OK?"
    },
-   "date": ""
+   "date": "",
+   "evidence_clean": "They might try gastric lavage. They will probably try to do whole bowel irrigation."
   },
   {
    "point": "Whole-bowel irrigation uses polyethylene glycol electrolyte solutions (GoLYTELY, Colyte) and is contraindicated with ileus or intestinal obstruction.",
@@ -120,7 +128,8 @@
     "date": "10/14",
     "quote": "Again, you've got to make sure people don't have any issues with no ileus, no blockages in the gut."
    },
-   "date": ""
+   "date": "",
+   "evidence_clean": "Again, you've got to make sure people don't have any issues: no ileus, no blockages in the gut."
   },
   {
    "point": "Activated charcoal is a slurry that patients find unpleasant; vomiting and pulmonary aspiration are the main risks.",
@@ -129,7 +138,8 @@
     "date": "10/14",
     "quote": "They, they put it in a slurry in water and try to get somebody to gag it down, OK? OK, it's not pleasant, very, very messy."
    },
-   "date": ""
+   "date": "",
+   "evidence_clean": "They put it in a slurry in water and try to get somebody to gag it down. It's not pleasant, very messy."
   },
   {
    "point": "Activated charcoal does not adsorb every toxin (the chapter: ineffective for iron, lead, lithium, alcohols, aliphatic hydrocarbons and corrosives).",
@@ -138,7 +148,8 @@
     "date": "10/14",
     "quote": "So not every compound a person ingests is going to be grabbed and absorbed by charcoal."
    },
-   "date": ""
+   "date": "",
+   "evidence_clean": "So not every compound a person ingests is going to be grabbed and absorbed by charcoal."
   },
   {
    "point": "Single-dose activated charcoal is most effective when given within the first hour (up to 2 hours) after ingestion.",
@@ -147,7 +158,8 @@
     "date": "10/14",
     "quote": "So, single dose activated charcoal, we say it probably needs to be done within 1 to 2 hours of somebody ingesting whatever they overdosed on."
    },
-   "date": ""
+   "date": "",
+   "evidence_clean": "So, single-dose activated charcoal, we say it probably needs to be done within 1 to 2 hours of somebody ingesting whatever they overdosed on."
   },
   {
    "point": "Multiple-dose activated charcoal can interrupt the enterohepatic recirculation of certain drugs and enhance their clearance (charcoal intestinal dialysis).",
@@ -156,7 +168,8 @@
     "date": "10/14",
     "quote": "We can use it if the substance they overdosed on undergoes enterohepatic recirculation."
    },
-   "date": ""
+   "date": "",
+   "evidence_clean": "We can use it if the substance they overdosed on undergoes enterohepatic recirculation."
   },
   {
    "point": "The American and European clinical toxicology associations have published position statements concluding that no gastric decontamination method should be used routinely.",
@@ -165,7 +178,8 @@
     "date": "10/14",
     "quote": "The American Poison Control Centers and also the European poison control centers have all in the last decade or so put forth statements about whether or not these things, whether or not they think these methods should be used, and they all basically say they're dangerous, they're risky, only use them if you really think you have to."
    },
-   "date": ""
+   "date": "",
+   "evidence_clean": "The American Poison Control Centers and also the European poison control centers have all in the last decade or so put forth statements about whether or not they think these methods should be used, and they all basically say they're dangerous, they're risky, only use them if you really think you have to."
   },
   {
    "point": "Evidence for treating overdoses comes from case reports and case series rather than controlled trials of poisoned patients.",
@@ -174,7 +188,8 @@
     "date": "10/14",
     "quote": "The data for these evidence-based guidance documents comes from people overdosing, clinicians, pharmacists, doctors write up the case, get it published, and it's in the literature."
    },
-   "date": ""
+   "date": "",
+   "evidence_clean": "The data for these evidence-based guidance documents comes from people overdosing; clinicians, pharmacists, doctors write up the case, get it published, and it's in the literature."
   }
  ],
  "read_for": [
@@ -251,34 +266,32 @@
  "discussed_in_class": true,
  "her_words": [
   {
-   "t": "If you've come back already and, and are relaxing in your seat, and if you have not taken a glance at Dipiro chapter 9, I would like you to do that while I just run down the hall for a second.",
-   "date": "10/14"
+   "t": "This is actually your pharmacotherapy textbook, so a lot of your clinical faculty will have you reading out of this, but I pull chapters out of this too, because it helps with some of the topics I cover for you guys. So get into DiPiro's, the 13th edition, and find chapter 9, Clinical Toxicology.",
+   "date": "10/14",
+   "verbatim": "This is actually your pharmacotherapy textbook, so a lot of your clinical faculty will have you be reading out of this, but I pull chapters out of this too, cause it helps with some of the topics I cover for you guys. So, if you would, while I'm running down the hall, get into Dipiro's, the 13th edition. And find a chapter 9. Clinical toxicology."
   },
   {
-   "t": "This is actually your pharmacotherapy textbook, so a lot of your clinical faculty will have you be reading out of this, but I pull chapters out of this too, cause it helps with some of the topics I cover for you guys. So, if you would, while I'm running down the hall, get into Dipiro's, the 13th edition. And find a chapter 9. Clinical toxicology.",
-   "date": "10/14"
+   "t": "This section, General Approach to Treatment, because I want to just go over some of the ideas that are listed in just this section. It's a pretty quick read. You can skip Enhanced Elimination and Kidney Replacement Therapy and Diuresis; I'll talk about it. Get on down to just Multiple-Dose Activated Charcoal. You don't need to read the whole thing. I hope you read it before you came to class, but we'll use this to generate some discussion, and we'll get into this chapter.",
+   "date": "10/14",
+   "verbatim": "This section, general, general general approach to treatment, because I want to just go over some of the ideas that are listed in just this section. It's a pretty quick read. You don't even need to go past um. You can skip This Enhanced elimination and kidney replacement therapy and diuresis. I'll talk about it, but, um, and get on down to just multiple dose activated charcoal. You don't need to read the whole thing. I mean, I hope you read it before you came to class, but we'll use this to generate some discussion, and I'll keep this up and we'll, we'll get into this chapter."
   },
   {
-   "t": "This section, general, general general approach to treatment, because I want to just go over some of the ideas that are listed in just this section. It's a pretty quick read. You don't even need to go past um. You can skip This Enhanced elimination and kidney replacement therapy and diuresis. I'll talk about it, but, um, and get on down to just multiple dose activated charcoal. You don't need to read the whole thing. I mean, I hope you read it before you came to class, but we'll use this to generate some discussion, and I'll keep this up and we'll, we'll get into this chapter.",
-   "date": "10/14"
+   "t": "Really, your only references will be the chapters that I'm asking you to read or a paper that I might ask you to read.",
+   "date": "10/14",
+   "verbatim": "Really, your only references will be the chapters that I'm asking you to read or a paper that I might ask you to read, OK?"
   },
   {
-   "t": "Really, your only references will be the chapters that I'm asking you to read or a paper that I might ask you to read, OK?",
-   "date": "10/14"
+   "t": "If you read that section of the DiPiro chapter that I had you guys pull up, that section of the chapter talks about each of those methods for trying to prevent absorption, and I want you to read that because you will see over time that our use of these methods has changed. So you'll find in this chapter they state we no longer use emesis.",
+   "date": "10/14",
+   "verbatim": "If you read that section of the Dipiro chapter that I had you guys pull up as I went off on my own little tiny break, that section of the chapter talks about each of those methods for trying to prevent absorption, and I want you to read that because you will see over time that our, our, um, uh, uh, sorry, I really am losing it. What's the word I'm looking for? Um, our use of these, of these methods has changed. So you'll find in this chapter they state, we no longer use Emesis."
   },
   {
-   "t": "If you read that section of the Dipiro chapter that I had you guys pull up as I went off on my own little tiny break, that section of the chapter talks about each of those methods for trying to prevent absorption, and I want you to read that because you will see over time that our, our, um, uh, uh, sorry, I really am losing it. What's the word I'm looking for? Um, our use of these, of these methods has changed. So you'll find in this chapter they state, we no longer use Emesis.",
-   "date": "10/14"
-  },
-  {
-   "t": "OK, so read that section of, of chapter E9 in your Depiro textbook. It's not very long. It's really, and it's not, it's not rocket science, but read that so that you know where we stand on whether or not we will try these methods to prevent absorption.",
-   "date": "10/14"
-  },
-  {
-   "t": "So I want you to read that chapter.",
-   "date": "10/14"
+   "t": "So read that section of chapter e9 in your DiPiro textbook. It's not very long, and it's not rocket science, but read that so that you know where we stand on whether or not we will try these methods to prevent absorption.",
+   "date": "10/14",
+   "verbatim": "OK, so read that section of, of chapter E9 in your Depiro textbook. It's not very long. It's really, and it's not, it's not rocket science, but read that so that you know where we stand on whether or not we will try these methods to prevent absorption."
   }
  ],
+ "quotes_note": "Quotes lightly edited for reading: filler words removed and transcription errors corrected; the verbatim transcript text is kept beside each quote.",
  "truncated": false,
- "listen": "This reading is Chapter e nine, Clinical Toxicology, from DiPiro's Pharmacotherapy: A Pathophysiologic Approach, thirteenth edition. It belongs to the Treating Poisonings lecture of October fourteenth, which continues on October nineteenth. The updated syllabus lists it as DiPiro Chapter 9. On October fourteenth she had the class open it during the break and assigned one section. She said, \"This section, general, general general approach to treatment, because I want to just go over some of the ideas that are listed in just this section. It's a pretty quick read.\" And, \"You can skip This Enhanced elimination and kidney replacement therapy and diuresis. I'll talk about it, but, um, and get on down to just multiple dose activated charcoal.\" Antidotes and the specific poisonings are deferred to October nineteenth.\n\nHer lecture drew these points from it. First, pharmacokinetics change in overdose. She said, \"most often we see that the parameter of volume of distribution and the parameter of clearance will change significantly when there's an overdose situation.\" Bioavailability rises because first pass metabolism is saturated. Only drugs with a small volume of distribution, low protein binding and low molecular weight are dialyzable. Second, emesis is out. She said, \"You used to have Emmis Ipecac bottles in people's homes, right?\" Ipecac syrup is no longer recommended and no longer manufactured in the United States. \"What's the risk of emesis? Aspiration is the biggest risk.\" Third, gastric lavage is for experienced clinicians only, and can perforate the esophagus or stomach. Whole bowel irrigation uses GoLYTELY or Colyte and is contraindicated with ileus or obstruction. Fourth, single dose activated charcoal is a slurry in water, is given within one to two hours of ingestion, and does not adsorb every toxin, such as iron, lead, lithium, alcohols and corrosives. Fifth, multiple dose charcoal interrupts enterohepatic recirculation. Sixth, the American and European clinical toxicology associations state that no gastric decontamination method should be used routinely. She said, \"they all basically say they're dangerous, they're risky, only use them if you really think you have to.\" The evidence comes from case reports and case series, not controlled trials.\n\nOn what is testable: she said, \"read that so that you know where we stand on whether or not we will try these methods to prevent absorption,\" and, \"Really, your only references will be the chapters that I'm asking you to read or a paper that I might ask you to read, OK?\"\n\nRe-read first General Approach to Treatment, from Perspectives on Gastric Decontamination through Multiple-Dose Activated Charcoal."
+ "listen": "This reading is Chapter e nine, Clinical Toxicology, from DiPiro's Pharmacotherapy: A Pathophysiologic Approach, thirteenth edition. It belongs to the Treating Poisonings lecture of October fourteenth, which continues on October nineteenth. The updated syllabus lists it as DiPiro Chapter 9. On October fourteenth she had the class open it during the break and assigned one section. She said, \"This section, general general approach to treatment, because I want to just go over some of the ideas that are listed in just this section. It's a pretty quick read.\" And, \"You can skip This Enhanced elimination and kidney replacement therapy and diuresis. I'll talk about it, but, and get on down to just multiple dose activated charcoal.\" Antidotes and the specific poisonings are deferred to October nineteenth.\n\nHer lecture drew these points from it. First, pharmacokinetics change in overdose. She said, \"most often we see that the parameter of volume of distribution and the parameter of clearance will change significantly when there's an overdose situation.\" Bioavailability rises because first pass metabolism is saturated. Only drugs with a small volume of distribution, low protein binding and low molecular weight are dialyzable. Second, emesis is out. She said, \"You used to have ipecac bottles in people's homes.\" Ipecac syrup is no longer recommended and no longer manufactured in the United States. \"What's the risk of emesis? Aspiration is the biggest risk.\" Third, gastric lavage is for experienced clinicians only, and can perforate the esophagus or stomach. Whole bowel irrigation uses GoLYTELY or Colyte and is contraindicated with ileus or obstruction. Fourth, single dose activated charcoal is a slurry in water, is given within one to two hours of ingestion, and does not adsorb every toxin, such as iron, lead, lithium, alcohols and corrosives. Fifth, multiple dose charcoal interrupts enterohepatic recirculation. Sixth, the American and European clinical toxicology associations state that no gastric decontamination method should be used routinely. She said, \"they all basically say they're dangerous, they're risky, only use them if you really think you have to.\" The evidence comes from case reports and case series, not controlled trials.\n\nOn what is testable: she said, \"read that so that where we stand on whether or not we will try these methods to prevent absorption,\" and, \"Really, your only references will be the chapters that I'm asking you to read or a paper that I might ask you to read.\"\n\nRe-read first General Approach to Treatment, from Perspectives on Gastric Decontamination through Multiple-Dose Activated Charcoal."
 }

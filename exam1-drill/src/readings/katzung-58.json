@@ -49,7 +49,8 @@
     "date": "10/14",
     "quote": "I have a statement in there that overdose drugs with large volumes of distribution, they're hard to remove from the, they're hard to remove from the blood, OK? Like, for example, you might try to remove them from the blood using hemodialysis."
    },
-   "date": ""
+   "date": "",
+   "evidence_clean": "I have a statement in there that overdose drugs with large volumes of distribution are hard to remove from the blood. For example, you might try to remove them from the blood using hemodialysis."
   },
   {
    "point": "Hemodialysis must be prolonged because drug sequestered in tissues only slowly re-enters the blood where the extracorporeal method can reach it.",
@@ -58,7 +59,8 @@
     "date": "10/14",
     "quote": "So these people that have overdosed on drugs with very large volumes of distribution, you probably are going to have to do hemodialysis for a long time to start getting the drug moving out of its sequestration site back into the blood, and then pulled off by your extracorporeal removal method, right?"
    },
-   "date": ""
+   "date": "",
+   "evidence_clean": "So these people that have overdosed on drugs with very large volumes of distribution, you probably are going to have to do hemodialysis for a long time to start getting the drug moving out of its sequestration site back into the blood, and then pulled off by your extracorporeal removal method."
   },
   {
    "point": "Overdose saturates hepatic metabolism, reducing the first-pass effect so more drug reaches the circulation.",
@@ -67,7 +69,8 @@
     "date": "10/14",
     "quote": "OK, the third bullet point says clearance can can be messed up and overdosed because if you saturate liver metabolism, you get a reduced first pass effect and then more drug is in circulation."
    },
-   "date": ""
+   "date": "",
+   "evidence_clean": "The third bullet point says clearance can be messed up in overdose, because if you saturate liver metabolism, you get a reduced first-pass effect and then more drug is in circulation."
   },
   {
    "point": "Poisons may injure the gastrointestinal epithelial barrier and thereby increase absorption (her example: caustic iron destroying the saturable active-transport protection).",
@@ -76,7 +79,8 @@
     "date": "10/14",
     "quote": "I want to point out the second bullet here where we say drugs may injure the gastrointestinal tract, increasing absorption, OK?"
    },
-   "date": ""
+   "date": "",
+   "evidence_clean": "I want to point out the second bullet here where we say drugs may injure the gastrointestinal tract, increasing absorption."
   },
   {
    "point": "At very high blood concentrations plasma protein-binding capacity is exceeded, raising the free fraction and the toxic effect.",
@@ -85,7 +89,8 @@
     "date": "10/14",
     "quote": "The next to bottom bullet, uh, when you've got overdose situation, you may exceed protein binding capacity."
    },
-   "date": ""
+   "date": "",
+   "evidence_clean": "The next-to-bottom bullet: when you've got an overdose situation, you may exceed protein binding capacity."
   },
   {
    "point": "Toxicodynamics: both the therapeutic index and the overlap of therapeutic and toxic response curves must be considered; the deck's Drug A / Drug B sedation-hypnosis-anesthesia-coma figure (credited to Katzung) is the graded dose-response figure the chapter cites.",
@@ -94,7 +99,8 @@
     "date": "10/14",
     "quote": "When we are thinking about drugs and overdose and wondering if their pharmacodynamics are changing in that massive dose, you need to think about the therapeutic index and the overlap between what's a therapeutic dose, what's the therapy look like, and then what's the toxic response to a dose. So this is illustrated by this graph on the right hand side. We've got drug A and drug B."
    },
-   "date": ""
+   "date": "",
+   "evidence_clean": "When we are thinking about drugs and overdose and wondering if their pharmacodynamics are changing in that massive dose, you need to think about the therapeutic index and the overlap between what's a therapeutic dose, what the therapy looks like, and then what's the toxic response to a dose. This is illustrated by this graph on the right-hand side. We've got drug A and drug B."
   },
   {
    "point": "Drug A with a linear dose-response curve reaches coma while drug B with a plateauing curve does not, so two drugs that look alike at the therapeutic dose differ in overdose.",
@@ -103,7 +109,8 @@
     "date": "10/14",
     "quote": "But drug A, you keep increasing the dose, and you just happen to get a linear response with this, and you get a coma for drug A, even though with the dose, the same dose drug B, you only get almost anesthesia, OK?"
    },
-   "date": ""
+   "date": "",
+   "evidence_clean": "But drug A, you keep increasing the dose, and you just happen to get a linear response with this, and you get a coma for drug A, even though with the same dose of drug B, you only get almost anesthesia."
   },
   {
    "point": "Tricyclic antidepressant intoxication reduces sweating while increasing muscular activity or seizures, so heat cannot be dissipated (lethal hyperpyrexia).",
@@ -112,7 +119,8 @@
     "date": "10/14",
     "quote": "So, the TCAs, they reduce sweating. In an overdose situation, that's one of their pharmacodynamic effects. At the same time that they are increasing muscular activity and potential for seizures, OK?"
    },
-   "date": ""
+   "date": "",
+   "evidence_clean": "So, the TCAs, they reduce sweating. In an overdose situation, that's one of their pharmacodynamic effects, at the same time that they are increasing muscular activity and potential for seizures."
   },
   {
    "point": "Beta blocker and calcium channel blocker overdoses alter not only cardiac function but blood flow to the kidney and liver, slowing elimination of the toxin.",
@@ -121,7 +129,8 @@
     "date": "10/14",
     "quote": "Reducing blood flow to the kidneys and the liver, you're reducing the body's ability to eliminate the drug."
    },
-   "date": ""
+   "date": "",
+   "evidence_clean": "Reducing blood flow to the kidneys and the liver, you're reducing the body's ability to eliminate the drug."
   },
   {
    "point": "Gastric lavage: a large orogastric/nasogastric tube is placed, fluid is instilled and withdrawn; the chapter restricts it to awake patients or a protected airway.",
@@ -130,7 +139,8 @@
     "date": "10/14",
     "quote": "We could do gastric lavage. Does anybody know what that is? How is that Pump in your stomach, yeah, yeah, put a tube down, hope you don't get that tube in the person's lungs."
    },
-   "date": ""
+   "date": "",
+   "evidence_clean": "We could do gastric lavage. Does anybody know what that is? Pump your stomach, yeah: put a tube down, and hope you don't get that tube in the person's lungs."
   },
   {
    "point": "Whole bowel irrigation uses a balanced polyethylene glycol-electrolyte solution (GoLYTELY, CoLyte) given until the rectal effluent is clear.",
@@ -139,7 +149,8 @@
     "date": "10/14",
     "quote": "You drink something like Golightly, polyethylene glycol or what do we know mag citrate or something, right, is out there for, for a whole bowel irrigation."
    },
-   "date": ""
+   "date": "",
+   "evidence_clean": "You drink something like GoLYTELY, polyethylene glycol, or mag citrate or something, which is out there for whole bowel irrigation."
   },
   {
    "point": "Activated charcoal adsorbs many but not all poisons (the chapter: it does not bind iron, lithium or potassium and binds alcohols and cyanide only poorly).",
@@ -148,7 +159,8 @@
     "date": "10/14",
     "quote": "Also, activated charcoal, because of its chemistry, it's only going to grab a certain kinds of compounds that somebody might have ingested, right?"
    },
-   "date": ""
+   "date": "",
+   "evidence_clean": "Also, activated charcoal, because of its chemistry, is only going to grab certain kinds of compounds that somebody might have ingested."
   },
   {
    "point": "Repeated (multiple-dose) oral activated charcoal can enhance systemic elimination of some drugs ('gut dialysis'); she tied it to enterohepatic recirculation.",
@@ -157,7 +169,8 @@
     "date": "10/14",
     "quote": "Multiple dose activated charcoal is kind of a unique situation, um. We can use it if the substance they overdosed on undergoes enterohepatic recirculation."
    },
-   "date": ""
+   "date": "",
+   "evidence_clean": "Multiple-dose activated charcoal is kind of a unique situation. We can use it if the substance they overdosed on undergoes enterohepatic recirculation."
   },
   {
    "point": "Inducing emesis is ineffective, potentially harmful and no longer recommended; the main risk is aspiration.",
@@ -166,7 +179,8 @@
     "date": "10/14",
     "quote": "They don't even use it anymore in hospitals, OK, because it's too risky. What's the risk of emesis? Aspiration is the biggest risk."
    },
-   "date": ""
+   "date": "",
+   "evidence_clean": "They don't even use it anymore in hospitals, because it's too risky. What's the risk of emesis? Aspiration is the biggest risk."
   },
   {
    "point": "Two drugs may have the same therapeutic index but unequal safe dosing ranges if the slopes of their dose-response curves differ (her 10/13 contrast of therapeutic index with margin of safety).",
@@ -175,7 +189,8 @@
     "date": "10/13",
     "quote": "And because we use a different percentage, it gives you an idea of the slope of your dose response curve, whereas the therapeutic index does not."
    },
-   "date": ""
+   "date": "",
+   "evidence_clean": "And because we use a different percentage, it gives you an idea of the slope of your dose-response curve, whereas the therapeutic index does not."
   }
  ],
  "read_for": [
@@ -259,10 +274,12 @@
  "discussed_in_class": false,
  "her_words": [
   {
-   "t": "It's this discussion of on and off target adverse effects. OK. This is coming out of your pharmacology textbook, or Katsuk's textbook textbook, and why don't you take a minute and look at this figure, and then I'll walk us through it, OK.",
-   "date": "10/13"
+   "t": "It's this discussion of on- and off-target adverse effects. This is coming out of your pharmacology textbook, Katzung's textbook; why don't you take a minute and look at this figure, and then I'll walk us through it.",
+   "date": "10/13",
+   "verbatim": "It's this discussion of on and off target adverse effects. OK. This is coming out of your pharmacology textbook, or Katsuk's textbook textbook, and why don't you take a minute and look at this figure, and then I'll walk us through it, OK."
   }
  ],
+ "quotes_note": "Quotes lightly edited for reading: filler words removed and transcription errors corrected; the verbatim transcript text is kept beside each quote.",
  "truncated": false,
- "listen": "This reading is Chapter 58, Management of the Poisoned Patient, from Katzung's Basic and Clinical Pharmacology, sixteenth edition. It belongs to the Toxic Responses lecture of October thirteenth and the Treating Poisonings lecture of October fourteenth, which continues on October nineteenth. The card marks the chapter as not discussed in class as a reading, and readings are tested as discussed. But her October fourteenth lecture drew these points from it.\n\nFirst, toxicokinetics. Drugs with a large volume of distribution leave the blood for tissue reservoirs, so they are hard to remove by hemodialysis. The chapter's list of large volume drugs is antidepressants, antipsychotics, antimalarials, opioids, propranolol and verapamil. She said, \"overdose drugs with large volumes of distribution, they're hard to remove from the, they're hard to remove from the blood, OK?\" Hemodialysis must run a long time to pull drug back out of tissue. Second, clearance in overdose. She said, \"if you saturate liver metabolism, you get a reduced first pass effect and then more drug is in circulation.\" Poisons may injure the gastrointestinal tract and increase absorption, and protein binding may be exceeded. Third, toxicodynamics. She said, \"you need to think about the therapeutic index and the overlap between what's a therapeutic dose, what's the therapy look like, and then what's the toxic response to a dose.\" Drug A with a linear curve reaches coma while drug B with a plateau does not. She asked, \"Which one can you increase the dose and not have an unwanted adverse effect? B.\" Tricyclic antidepressants reduce sweating while increasing muscular activity and seizures. Beta blocker and calcium channel blocker overdoses reduce blood flow to the kidney and liver, slowing elimination. Fourth, decontamination. Emesis is no longer recommended. She said, \"What's the risk of emesis? Aspiration is the biggest risk.\" Gastric lavage is pumping the stomach with a tube. Whole bowel irrigation uses a polyethylene glycol electrolyte solution such as GoLYTELY. Activated charcoal grabs only certain compounds, and the chapter says it does not bind iron, lithium or potassium. Multiple dose charcoal is used when the substance undergoes enterohepatic recirculation.\n\nOn what is testable: on October fourteenth she said, \"Every example I give you is testable because it explains the concept that we're going to deal with, OK?\" The specific antidotes in Table 58 dash 3 and the common toxic syndromes were not reached and are deferred to October nineteenth.\n\nRe-read first Special Aspects of Toxicokinetics and Toxicodynamics, then the Gastrointestinal Tract decontamination section."
+ "listen": "This reading is Chapter 58, Management of the Poisoned Patient, from Katzung's Basic and Clinical Pharmacology, sixteenth edition. It belongs to the Toxic Responses lecture of October thirteenth and the Treating Poisonings lecture of October fourteenth, which continues on October nineteenth. The card marks the chapter as not discussed in class as a reading, and readings are tested as discussed. But her October fourteenth lecture drew these points from it.\n\nFirst, toxicokinetics. Drugs with a large volume of distribution leave the blood for tissue reservoirs, so they are hard to remove by hemodialysis. The chapter's list of large volume drugs is antidepressants, antipsychotics, antimalarials, opioids, propranolol and verapamil. She said, \"overdose drugs with large volumes of distribution, they're hard to remove from the blood.\" Hemodialysis must run a long time to pull drug back out of tissue. Second, clearance in overdose. She said, \"if you saturate liver metabolism, you get a reduced first pass effect and then more drug is in circulation.\" Poisons may injure the gastrointestinal tract and increase absorption, and protein binding may be exceeded. Third, toxicodynamics. She said, \"you need to think about the therapeutic index and the overlap between what's a therapeutic dose, what's the therapy look like, and then what's the toxic response to a dose.\" Drug A with a linear curve reaches coma while drug B with a plateau does not. She asked, \"Which one can you increase the dose and not have an unwanted adverse effect? B.\" Tricyclic antidepressants reduce sweating while increasing muscular activity and seizures. Beta blocker and calcium channel blocker overdoses reduce blood flow to the kidney and liver, slowing elimination. Fourth, decontamination. Emesis is no longer recommended. She said, \"What's the risk of emesis? Aspiration is the biggest risk.\" Gastric lavage is pumping the stomach with a tube. Whole bowel irrigation uses a polyethylene glycol electrolyte solution such as GoLYTELY. Activated charcoal grabs only certain compounds, and the chapter says it does not bind iron, lithium or potassium. Multiple dose charcoal is used when the substance undergoes enterohepatic recirculation.\n\nOn what is testable: on October fourteenth she said, \"Every example I give you is testable because it explains the concept that we're going to deal with.\" The specific antidotes in Table 58 dash 3 and the common toxic syndromes were not reached and are deferred to October nineteenth.\n\nRe-read first Special Aspects of Toxicokinetics and Toxicodynamics, then the Gastrointestinal Tract decontamination section."
 }

@@ -18,25 +18,29 @@
    "point": "Source: treatment plants let drugs through to streams, rivers and lakes; the water is a source for humans and animals",
    "chapter_location": "p. 1017, wastewater treatment plants",
    "lecture_evidence": "Wastewater treatment plants, yeah, the water from Flushing gets treated a bit, but right now the current mechanisms don't get all the drugs out of it before it goes back into your streams and rivers and lakes, OK. So is that a source for humans or animals? Both, there you go.",
-   "date": "10/13"
+   "date": "10/13",
+   "evidence_clean": "Wastewater treatment plants, yeah, the water from flushing gets treated a bit, but right now the current mechanisms don't get all the drugs out of it before it goes back into your streams and rivers and lakes. So is that a source for humans or animals? Both, there you go."
   },
   {
    "point": "Dose and target in wildlife: feminization where estrogen levels are higher",
    "chapter_location": "Effects on wildlife",
    "lecture_evidence": "you'll start seeing populations of frogs and some fish and alligators changing from being like half male, half female to more female in those places where estrogen levels are higher, we see that. That's like a red flag",
-   "date": "10/13"
+   "date": "10/13",
+   "evidence_clean": "You'll start seeing populations of frogs and some fish and alligators changing from being half male, half female to more female in those places where estrogen levels are higher; we see that. That's a red flag."
   },
   {
    "point": "Where the five principles sit in the paper",
    "chapter_location": "The assigned portion",
    "lecture_evidence": "the part of the paper I had you read was really where you're going to find those principles of toxicology.",
-   "date": "10/13"
+   "date": "10/13",
+   "evidence_clean": "The part of the paper I had you read was really where you're going to find those principles of toxicology."
   },
   {
    "point": "The unassigned end of the paper",
    "chapter_location": "Best management practices",
    "lecture_evidence": "that was the end of the paper that you didn't read",
-   "date": "10/13"
+   "date": "10/13",
+   "evidence_clean": "That was the end of the paper that you didn't read."
   }
  ],
  "read_for": [
@@ -66,21 +70,26 @@
  "her_words": [
   {
    "t": "Buried in the article, which is kind of interesting, I think, were these principles we're about to discuss.",
-   "date": "10/9"
+   "date": "10/9",
+   "verbatim": "Buried in the article, which is kind of interesting, I think, were these principles we're about to discuss."
   },
   {
-   "t": "then we're going to go into that article and see if you guys were able to identify things like the source of the pollution that was discussed in that article or who, what's the dose that's harming wildlife, OK.",
-   "date": "10/9"
+   "t": "Then we're going to go into that article and see if you guys were able to identify things like the source of the pollution that was discussed in that article, or what's the dose that's harming wildlife.",
+   "date": "10/9",
+   "verbatim": "then we're going to go into that article and see if you guys were able to identify things like the source of the pollution that was discussed in that article or who, what's the dose that's harming wildlife, OK."
   },
   {
-   "t": "this is testable material.",
-   "date": "10/13"
+   "t": "This is testable material.",
+   "date": "10/13",
+   "verbatim": "this is testable material."
   },
   {
-   "t": "I will later post a key",
-   "date": "10/13"
+   "t": "I will later post a key.",
+   "date": "10/13",
+   "verbatim": "I will later post a key"
   }
  ],
+ "quotes_note": "Quotes lightly edited for reading: filler words removed and transcription errors corrected; the verbatim transcript text is kept beside each quote.",
  "truncated": false,
  "listen": "This reading is the article Pharmaceuticals in Water: Sources, Fate and Effects, by Rodriguez-Mozaz and Weinberg, published in Environmental Health Perspectives in 2010. It was assigned for October ninth and discussed on October thirteenth with the discussion guide. The assigned portion runs from the beginning up to the section on best management practices. On October thirteenth she said, \"that was the end of the paper that you didn't read.\"\n\nHer lecture drew these points from it. First, the sources. The body metabolizes only part of a prescribed drug, so unchanged drug and metabolites leave in human waste and travel through wastewater into streams, lakes, and the water that drinking water plants use. Wastewater treatment plants are the main entry point, because their treatment steps were not designed to remove pharmaceuticals. Some drugs collect in biosolids sold as fertilizer, and farm animals get drugs in feed. She said, \"the water from Flushing gets treated a bit, but right now the current mechanisms don't get all the drugs out of it before it goes back into your streams and rivers and lakes.\" She asked, \"So is that a source for humans or animals? Both, there you go.\" Second, the routes of exposure. Humans take the drugs in mainly by mouth through drinking water. Aquatic animals live in the receiving water, so they are exposed constantly. Third, the dose contrast. Human exposure is far below a therapeutic dose, while wildlife is exposed continuously. Fourth, the wildlife effects. She said, \"you'll start seeing populations of frogs and some fish and alligators changing from being like half male, half female to more female in those places where estrogen levels are higher, we see that.\" Fifth, the five principles of toxicology sit in the assigned part. She said, \"the part of the paper I had you read was really where you're going to find those principles of toxicology.\"\n\nOn what is testable: on October thirteenth she said, \"this is testable material,\" and \"I will later post a key.\" Readings are tested as discussed, not on dates or hard numbers. Her practice quiz asked for the greatest source of pharmaceuticals in those waters, with the answer consumption of medications by humans and the resulting waste streams. It asked whether the dose in drinking water exceeds the therapeutic daily dose, and the answer was false. It asked for the authors' conclusion, that more data are needed on human health effects. And it asked for the five principles: source, exposure, A D M E T, dose, and target and mechanism of action.\n\nRe-read first the Sources of pharmaceuticals in water section, then Exposure of humans and wildlife and Effects on wildlife."
 }

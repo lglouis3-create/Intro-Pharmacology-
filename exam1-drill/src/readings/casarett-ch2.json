@@ -24,223 +24,260 @@
    "point": "The dose makes the poison (Paracelsus) and the range of acute lethality in Table 2-1 (ethyl alcohol 10,000 mg/kg to botulinum toxin 0.00001 mg/kg)",
    "chapter_location": "Introduction to Toxicology; Table 2-1, Approximate Acute LD50 Values of Some Representative Chemicals",
    "lecture_evidence": "(10/9) Um, this is a table that I pulled from our Cari and Duel's toxicology book that just lists the LD50s in rats, so this is the lethal dose that will kill off 50% of the animals given this compound, and I have poisons listed from ethyl alcohol all the way to botulinum toxin, OK.",
-   "date": ""
+   "date": "",
+   "evidence_clean": "This is a table that I pulled from our Casarett and Doull's toxicology book that just lists the LD50s in rats, so this is the lethal dose that will kill off 50% of the animals given this compound, and I have poisons listed from ethyl alcohol all the way to botulinum toxin."
   },
   {
    "point": "Reading LD50 values off Table 2-1 and tying them to 'the dose makes the poison'",
    "chapter_location": "Introduction to Toxicology (Paracelsus quotation); Table 2-1",
    "lecture_evidence": "(10/9) So, 10,000 mgs per kilogram for ethyl alcohol would be the LD50 in rats, and 0.00001 would be the LD50 for botulinum toxin in rats, OK? So the dose makes the poison, but you have to know what compound you're talking about too.",
-   "date": ""
+   "date": "",
+   "evidence_clean": "So, 10,000 mg per kilogram for ethyl alcohol would be the LD50 in rats, and 0.00001 would be the LD50 for botulinum toxin in rats. So the dose makes the poison, but you have to know what compound you're talking about too."
   },
   {
    "point": "Route of exposure as a factor that influences toxicity",
    "chapter_location": "Characteristics of Exposure: Route and Site of Exposure",
    "lecture_evidence": "(10/9) OK, so, route is important, um, for most.",
-   "date": ""
+   "date": "",
+   "evidence_clean": "So, route is important for most."
   },
   {
    "point": "Time periods of exposure in animal studies: acute (<24 h), subacute (≤1 month), subchronic (1-3 months), chronic (>3 months)",
    "chapter_location": "Characteristics of Exposure: Duration and Frequency of Exposure; Figure 2-3, Time periods of chemical exposure",
    "lecture_evidence": "(10/9) It's the Cassaret and Duuls toxicology textbook, um, and this is a figure that's showing you, uh, periods of exposure for animal studies.",
-   "date": ""
+   "date": "",
+   "evidence_clean": "It's the Casarett and Doull's toxicology textbook, and this is a figure that's showing you periods of exposure for animal studies."
   },
   {
    "point": "Definitions of acute, subacute, subchronic and chronic exposure",
    "chapter_location": "Duration and Frequency of Exposure (text defining the four categories); Figure 2-3",
    "lecture_evidence": "(10/9) subacute Sub-chronic and chronic links of exposure, and these have specific definitions, so acute is for exposure for less than 24 hours.",
-   "date": ""
+   "date": "",
+   "evidence_clean": "Subacute, subchronic and chronic lengths of exposure; these have specific definitions, so acute is exposure for less than 24 hours."
   },
   {
    "point": "Exposure frequency versus elimination half-life for compounds A, B and C (single dose panel versus repeated-dose panel)",
    "chapter_location": "Duration and Frequency of Exposure; Figure 2-4, Diagrammatic view of the relationship between dose and concentration at the target site under different conditions of dose frequency and elimination rate",
    "lecture_evidence": "(10/9) Going back to kinetics again and Half-Life, OK, so let's look at this figure and just uh illustrate with these three different compounds the importance of half-life and exposure frequency and whether or not the result of the exposure is going to be a problem.",
-   "date": ""
+   "date": "",
+   "evidence_clean": "Going back to kinetics again and half-life, let's look at this figure and just illustrate with these three different compounds the importance of half-life and exposure frequency and whether or not the result of the exposure is going to be a problem."
   },
   {
    "point": "Compound C (elimination faster than dosing interval) never reaches the toxic concentration no matter how many doses are given",
    "chapter_location": "Figure 2-4, line C",
    "lecture_evidence": "(10/9) Does it ever get into the toxic zone after repeated exposures? No, it doesn't, right?",
-   "date": ""
+   "date": "",
+   "evidence_clean": "Does it ever get into the toxic zone after repeated exposures? No, it doesn't."
   },
   {
    "point": "Individual (graded) dose-response relationship",
    "chapter_location": "Dose-Response Relationships: Individual, or Graded, Dose-Response Relationships; Figure 2-5 (chlorpyrifos esterase inhibition, arithmetic versus semi-log scale)",
    "lecture_evidence": "(10/9) So you'll often see this kind of data graph in this way, where you are showing on the y axis that percent of inhibition, and the x axis is the dose, and sometimes people will turn it into a logarithmic scale here with the dose, so you get linear lines here, OK.",
-   "date": ""
+   "date": "",
+   "evidence_clean": "So you'll often see this kind of data graphed in this way, where you are showing on the y axis the percent of inhibition, and the x axis is the dose, and sometimes people will turn it into a logarithmic scale with the dose, so you get linear lines."
   },
   {
    "point": "Population (quantal) dose-response: frequency histogram, cumulative sigmoid curve and probit plot",
    "chapter_location": "Quantal Dose-Response Relationships; Figure 2-6, Diagram of quantal dose-response relationship (top: response frequency; middle: percent response; bottom: probit units)",
    "lecture_evidence": "(10/9) According to dose, the middle figure is showing you the cumulative mortality here.",
-   "date": ""
+   "date": "",
+   "evidence_clean": "According to dose, the middle figure is showing you the cumulative mortality."
   },
   {
    "point": "Probit units on the bottom panel of the quantal figure",
    "chapter_location": "Quantal Dose-Response Relationships (NEDs and probit units); Figure 2-6 bottom panel",
    "lecture_evidence": "(10/9) It's in, it's in the figure from this textbook, but it's changing the units on the graph on the y and the x axis to what we call probate units.",
-   "date": ""
+   "date": "",
+   "evidence_clean": "It's in the figure from this textbook, but it's changing the units on the graph on the y and the x axis to what we call probit units."
   },
   {
    "point": "Using population data to find the LD50 and the threshold dose",
    "chapter_location": "Quantal Dose-Response Relationships (ED50/LD50 and threshold dose); Figure 2-6",
    "lecture_evidence": "(10/9) We can do things like find the LD50 or we can find the threshold dose by using toxicology data as a population type of response graph.",
-   "date": ""
+   "date": "",
+   "evidence_clean": "We can do things like find the LD50 or we can find the threshold dose by using toxicology data as a population type of response graph."
   },
   {
    "point": "Threshold model (sigmoid) versus linear, nonthreshold extrapolation used for carcinogens",
    "chapter_location": "Shapes of Dose-Response Curves: Threshold and Linear, Nonthreshold Models; Figure 2-9, Extrapolation of dose responses at low doses",
    "lecture_evidence": "(10/9) But I am showing you also this linear line where you go from zero dose, and the first molecule of what you're exposed to in this linear line could cause you problems, OK? That's a theory for exposure to carcinogens.",
-   "date": ""
+   "date": "",
+   "evidence_clean": "But I am showing you also this linear line where you go from zero dose, and the first molecule of what you're exposed to in this linear line could cause you problems. That's a theory for exposure to carcinogens."
   },
   {
    "point": "Two illustrations of threshold dose: sigmoidal and linear",
    "chapter_location": "Threshold and Linear, Nonthreshold Models; Figure 2-9",
    "lecture_evidence": "(10/9) All right, so two different Illustrations of threshold dose, either a sigmoidal curve here or linear, OK.",
-   "date": ""
+   "date": "",
+   "evidence_clean": "So, two different illustrations of threshold dose, either a sigmoidal curve or linear."
   },
   {
    "point": "The 2-AAF (ED01) carcinogen study: liver versus bladder tumors, and the bladder-tumor threshold falling from 75 ppm at 24 months to 45 ppm at 33 months (she calls the animals hamsters; the chapter says mice)",
    "chapter_location": "Threshold and Linear, Nonthreshold Models (ED01 study); Figure 2-10, Dose-response relationship for carcinogens—rodents and 2-acetylaminofluorene (2-AAF)",
    "lecture_evidence": "(10/9) All right, um, another thing I wanted to show you was with this figure from, again, that classic toxicology textbook, talking more about threshold, and this is just illustrating the challenge in doing dose response studies and understanding what your whole experiment is, OK? In the next few minutes, I'm gonna walk you through this figure.",
-   "date": ""
+   "date": "",
+   "evidence_clean": "Another thing I wanted to show you was this figure from, again, that classic toxicology textbook, talking more about threshold; this is just illustrating the challenge in doing dose-response studies and understanding what your whole experiment is. In the next few minutes, I'm going to walk you through this figure."
   },
   {
    "point": "Reading the NOAEL/threshold for bladder tumors off Figure 2-10 at 24 versus 33 months",
    "chapter_location": "Figure 2-10 and the text giving 75 ppm at 24 months and 45 ppm at 33 months",
    "lecture_evidence": "(10/9) 75 mg, I'm sorry, 75 ppm right here, right? But if they were allowed to live for 33 months, then the threshold for getting bladder tumors was about 45 PPM.",
-   "date": ""
+   "date": "",
+   "evidence_clean": "75 ppm right here. But if they were allowed to live for 33 months, then the threshold for getting bladder tumors was about 45 ppm."
   },
   {
    "point": "Recap of the 2-AAF figure on 10/13 (cumulative dose, liver tumors in control animals, choice of species)",
    "chapter_location": "Figure 2-10; Variation in Toxic Responses: Species Differences",
    "lecture_evidence": "(10/13) And um a couple things that we discussed, remember we were dealing with threshold dose, and we were looking at animal studies where hamsters had been exposed to a compound that can cause bladder and liver tumors, and they were evaluating the risk of these animals getting those tumors, depending on how long they had been exposed to it and what their cumulative total dose was.",
-   "date": ""
+   "date": "",
+   "evidence_clean": "A couple of things that we discussed: remember we were dealing with threshold dose, and we were looking at animal studies where hamsters had been exposed to a compound that can cause bladder and liver tumors, and they were evaluating the risk of these animals getting those tumors, depending on how long they had been exposed to it and what their cumulative total dose was."
   },
   {
    "point": "U-shaped curve for an essential nutrient (iron): deficiency, region of homeostasis, toxicity",
    "chapter_location": "Nonmonotonic Dose-Response Curves: Essential Nutrients; Figure 2-11, Individual dose-response relationship for an essential substance such as a vitamin or trace element",
    "lecture_evidence": "(10/9) So, you're in what we call the region of homeostasis, OK? Then, as you increase iron further, you could likely end up with some toxic effects.",
-   "date": ""
+   "date": "",
+   "evidence_clean": "So, you're in what we call the region of homeostasis. Then, as you increase iron further, you could likely end up with some toxic effects."
   },
   {
    "point": "Second U-shaped curve: hormesis (beneficial effect at low dose of a non-nutrient, harm at high dose; no region of homeostasis)",
    "chapter_location": "Nonmonotonic Dose-Response Curves: Hormesis; Figure 2-8 (U-shape C and J-shape E)",
    "lecture_evidence": "(10/9) So, another U-shaped curve, it's it's illustrating the example of Homesis.",
-   "date": ""
+   "date": "",
+   "evidence_clean": "So, another U-shaped curve; it's illustrating the example of hormesis."
   },
   {
    "point": "She put the textbook figure captions on the U-shaped-curve slide",
    "chapter_location": "Figure 2-11 caption and the Hormesis text",
    "lecture_evidence": "(10/9) So, if this doesn't make sense, then I've given you guys the captions down here so that you can read the captions from the textbook to illustrate what these two different U-shaped curves mean.",
-   "date": ""
+   "date": "",
+   "evidence_clean": "If this doesn't make sense, I've given you the captions so that you can read the captions from the textbook to illustrate what these two different U-shaped curves mean."
   },
   {
    "point": "Potency versus efficacy and the shapes of dose-response curves (compounds A-D; C levelling off so that D becomes more potent)",
    "chapter_location": "Evaluating the Dose-Response Relationship: Potency versus Efficacy; Figure 2-13, dose-response curves for four chemicals (A to D)",
    "lecture_evidence": "(10/13) So all these things could be causing compound C's potency to change with an increasing dose, therefore, making this a trick question when I ask you which compound is more potent, C or D, right? OK.",
-   "date": ""
+   "date": "",
+   "evidence_clean": "So all these things could be causing compound C's potency to change with an increasing dose, therefore making this a trick question when I ask you which compound is more potent, C or D."
   },
   {
    "point": "Compounds A and B compared on the potency figure",
    "chapter_location": "Figure 2-13 (chemical A more potent than B, equal maximal efficacy)",
    "lecture_evidence": "(10/13) There's on the left here we've got compound A and B being compared for some sort of response.",
-   "date": ""
+   "date": "",
+   "evidence_clean": "On the left here we've got compound A and B being compared for some sort of response."
   },
   {
    "point": "Therapeutic index: ratio of toxic to effective dose using median (50%) values, one point on the curves",
    "chapter_location": "Evaluating the Dose-Response Relationship: Therapeutic Index; Figure 2-12, Comparison of effective dose (ED), toxic dose (TD), and lethal dose (LD)",
    "lecture_evidence": "(10/13) But we have these 3 different numbers because again, therapeutic index is looking at efficacy compared to, compared to toxicity, usually using 50% of animals, just looking at one point in the graph.",
-   "date": ""
+   "date": "",
+   "evidence_clean": "But we have these 3 different numbers because, again, therapeutic index is looking at efficacy compared to toxicity, usually using 50% of animals, just looking at one point in the graph."
   },
   {
    "point": "Margin of safety = TD1 / ED99, which reflects the slopes of the curves",
    "chapter_location": "Margins of Safety and Exposure (MOS definition)",
    "lecture_evidence": "(10/13) So most of the time, a margin of safety number is developed because we say what's the toxic dose for 1% of the animals over the effective dose of 99% of the animals.",
-   "date": ""
+   "date": "",
+   "evidence_clean": "So most of the time, a margin of safety number is developed because we say what's the toxic dose for 1% of the animals over the effective dose of 99% of the animals."
   },
   {
    "point": "Why MOS differs from TI: it captures the slope of the dose-response curve",
    "chapter_location": "Therapeutic Index (median doses do not reflect slopes) and Margins of Safety and Exposure",
    "lecture_evidence": "(10/13) And because we use a different percentage, it gives you an idea of the slope of your dose response curve, whereas the therapeutic index does not.",
-   "date": ""
+   "date": "",
+   "evidence_clean": "And because we use a different percentage, it gives you an idea of the slope of your dose-response curve, whereas the therapeutic index does not."
   },
   {
    "point": "Margin of exposure for non-therapeutic, repeated exposures: NOAEL over estimated exposure",
    "chapter_location": "Margins of Safety and Exposure (MOE, NOAEL)",
    "lecture_evidence": "(10/13) And so the margin of exposure is defined as the Noel over the chronic exposure.",
-   "date": ""
+   "date": "",
+   "evidence_clean": "And so the margin of exposure is defined as the NOEL over the chronic exposure."
   },
   {
    "point": "Definition of the NOAEL ('Noel') used in the MOE",
    "chapter_location": "Margins of Safety and Exposure (no observable adverse effect level)",
    "lecture_evidence": "(10/13) OK, so what's the lowest dose we gave the animals that we were testing with this compound and they didn't have a bad response to? That's what the Noel is, OK?",
-   "date": ""
+   "date": "",
+   "evidence_clean": "So what's the lowest dose we gave the animals that we were testing with this compound and they didn't have a bad response to? That's what the NOEL is."
   },
   {
    "point": "Immediate versus delayed toxicity",
    "chapter_location": "Spectrum of Undesired Effects: Immediate versus Delayed Toxicity",
    "lecture_evidence": "(10/13) Delayed effects can actually take quite a lot of time, OK.",
-   "date": ""
+   "date": "",
+   "evidence_clean": "Delayed effects can actually take quite a lot of time."
   },
   {
    "point": "Reversible versus irreversible effects",
    "chapter_location": "Spectrum of Undesired Effects: Reversible versus Irreversible Toxic Effects",
    "lecture_evidence": "(10/13) Um, The next thing that we think about with exposures in general are, are the effects reversible or irreversible? So sometimes you get both.",
-   "date": ""
+   "date": "",
+   "evidence_clean": "The next thing that we think about with exposures in general is, are the effects reversible or irreversible? So sometimes you get both."
   },
   {
    "point": "Local versus systemic effects (chlorine gas as a local effect)",
    "chapter_location": "Spectrum of Undesired Effects: Local versus Systemic Toxicity",
    "lecture_evidence": "(10/13) A local effect will occur at the site of a noxious agent's first contact with the body, so some acid splashes on your skin or you breathe in chlorine gas that's going to affect your lungs and your eyes and your nose, your nasal mucosa, OK? That's a local effect, OK.",
-   "date": ""
+   "date": "",
+   "evidence_clean": "A local effect will occur at the site of a noxious agent's first contact with the body, so some acid splashes on your skin or you breathe in chlorine gas that's going to affect your lungs and your eyes and your nose, your nasal mucosa. That's a local effect."
   },
   {
    "point": "Tetraethyl lead as the chapter's example of a chemical with both local and systemic effects",
    "chapter_location": "Local versus Systemic Toxicity (tetraethyl lead example)",
    "lecture_evidence": "(10/13) Tetraethyl lead in her lab, and she unfortunately became kind of a a a classic example of the fact that this compound can cause a local and then it causes systemic effects.",
-   "date": ""
+   "date": "",
+   "evidence_clean": "Tetraethyl lead in her lab, and she unfortunately became kind of a classic example of the fact that this compound can cause a local effect and then systemic effects."
   },
   {
    "point": "Chemical interactions: additive, synergism, potentiation, antagonism",
    "chapter_location": "Spectrum of Undesired Effects: Interactions of Chemicals; Figure 2-1, Illustration of responses following various chemical interactions",
    "lecture_evidence": "(10/13) The reason why it's hard to quantify is it's really hard to quantify these interactions, additive, synergism, potentiation, and antagonism.",
-   "date": ""
+   "date": "",
+   "evidence_clean": "The reason why it's hard to quantify is it's really hard to quantify these interactions: additive, synergism, potentiation, and antagonism."
   },
   {
    "point": "Two mechanisms of tolerance: dispositional and reduced responsiveness (chemical or cellular)",
    "chapter_location": "Spectrum of Undesired Effects: Tolerance (dispositional tolerance; chemical or cellular tolerance)",
    "lecture_evidence": "(10/13) So there's what we call dispositional tolerance, and then there's what we call reduced responsiveness type of tolerance.",
-   "date": ""
+   "date": "",
+   "evidence_clean": "So there's what we call dispositional tolerance, and then there's what we call reduced responsiveness type of tolerance."
   },
   {
    "point": "Idiosyncratic reactions as a category of undesired effect",
    "chapter_location": "Spectrum of Undesired Effects: Idiosyncratic Reactions",
    "lecture_evidence": "(10/13) What does idiosyncratic mean? We don't know why it's happening.",
-   "date": ""
+   "date": "",
+   "evidence_clean": "What does idiosyncratic mean? We don't know why it's happening."
   },
   {
    "point": "Selective toxicity",
    "chapter_location": "Variation in Toxic Responses: Selective Toxicity",
    "lecture_evidence": "(10/13) One of the terms is what we call selective toxicity.",
-   "date": ""
+   "date": "",
+   "evidence_clean": "One of the terms is what we call selective toxicity."
   },
   {
    "point": "Species differences: qualitative and quantitative differences in response between species",
    "chapter_location": "Variation in Toxic Responses: Species Differences",
    "lecture_evidence": "(10/13) Another term that we use in the world of toxicology is species differences, and when somebody's talking about, oh, this compound results in differences across species, we're saying that there's either a qualitative and or a quantitative difference in the way two different species respond.",
-   "date": ""
+   "date": "",
+   "evidence_clean": "Another term that we use in the world of toxicology is species differences, and when somebody's talking about, oh, this compound results in differences across species, we're saying that there's either a qualitative and/or a quantitative difference in the way two different species respond."
   },
   {
    "point": "Arsenic in drinking water as a case where no animal model reproduces the human response",
    "chapter_location": "Variation in Toxic Responses: Species Differences (animals as surrogates for humans)",
    "lecture_evidence": "(10/13) We can't find an animal model that um mimics what happens to humans when we're exposed to arsenic in water, OK?",
-   "date": ""
+   "date": "",
+   "evidence_clean": "We can't find an animal model that mimics what happens to humans when we're exposed to arsenic in water."
   },
   {
    "point": "Genetic variation as a modifying factor (intraspecies, individual differences)",
    "chapter_location": "Variation in Toxic Responses: Modifying Factors, Genetics",
    "lecture_evidence": "(10/13) Maybe I've got a genetic variant that makes me at risk for a side effect that you don't have that problem with that same drug, OK, so, Intraspecies differences, individual differences within a species to a drug or to an environmental exposure, is going to be found.",
-   "date": ""
+   "date": "",
+   "evidence_clean": "Maybe I've got a genetic variant that makes me at risk for a side effect that you don't have that problem with that same drug, so intraspecies differences, individual differences within a species to a drug or to an environmental exposure, are going to be found."
   }
  ],
  "read_for": [
@@ -317,54 +354,37 @@
  "discussed_in_class": true,
  "her_words": [
   {
-   "t": "(10/9) OK, this is a figure from a textbook that toxicologists use all the time.",
-   "date": ""
+   "t": "This is a figure from a textbook that toxicologists use all the time.",
+   "date": "10/9",
+   "verbatim": "(10/9) OK, this is a figure from a textbook that toxicologists use all the time."
   },
   {
-   "t": "(10/9) It's the Cassaret and Duuls toxicology textbook, um, and this is a figure that's showing you, uh, periods of exposure for animal studies.",
-   "date": ""
+   "t": "It's the Casarett and Doull's toxicology textbook, and this is a figure that's showing you periods of exposure for animal studies.",
+   "date": "10/9",
+   "verbatim": "(10/9) It's the Cassaret and Duuls toxicology textbook, um, and this is a figure that's showing you, uh, periods of exposure for animal studies."
   },
   {
-   "t": "(10/9) OK, so in this figure, again, this is from that very classic toxicology textbook that, that you have access to on Access Pharmacy, OK?",
-   "date": ""
+   "t": "This figure, again, is from that very classic toxicology textbook that you have access to on Access Pharmacy.",
+   "date": "10/9",
+   "verbatim": "(10/9) OK, so in this figure, again, this is from that very classic toxicology textbook that, that you have access to on Access Pharmacy, OK?"
   },
   {
-   "t": "(10/9) Um, this is a table that I pulled from our Cari and Duel's toxicology book that just lists the LD50s in rats, so this is the lethal dose that will kill off 50% of the animals given this compound, and I have poisons listed from ethyl alcohol all the way to botulinum toxin, OK.",
-   "date": ""
+   "t": "This is a table that I pulled from our Casarett and Doull's toxicology book that just lists the LD50s in rats, so this is the lethal dose that will kill off 50% of the animals given this compound, and I have poisons listed from ethyl alcohol all the way to botulinum toxin.",
+   "date": "10/9",
+   "verbatim": "(10/9) Um, this is a table that I pulled from our Cari and Duel's toxicology book that just lists the LD50s in rats, so this is the lethal dose that will kill off 50% of the animals given this compound, and I have poisons listed from ethyl alcohol all the way to botulinum toxin, OK."
   },
   {
-   "t": "(10/9) They're pretty old fashioned when they wrote that in this textbook.",
-   "date": ""
+   "t": "If this doesn't make sense, I've given you the captions so that you can read the captions from the textbook to illustrate what these two different U-shaped curves mean.",
+   "date": "10/9",
+   "verbatim": "(10/9) So, if this doesn't make sense, then I've given you guys the captions down here so that you can read the captions from the textbook to illustrate what these two different U-shaped curves mean."
   },
   {
-   "t": "(10/9) So, if this doesn't make sense, then I've given you guys the captions down here so that you can read the captions from the textbook to illustrate what these two different U-shaped curves mean.",
-   "date": ""
-  },
-  {
-   "t": "(10/9) All right, um, another thing I wanted to show you was with this figure from, again, that classic toxicology textbook, talking more about threshold, and this is just illustrating the challenge in doing dose response studies and understanding what your whole experiment is, OK?",
-   "date": ""
-  },
-  {
-   "t": "(10/9) I was going to give you guys a quiz on your reading, but I turned it into an assignment to turn in.",
-   "date": ""
-  },
-  {
-   "t": "(10/9) Your quiz on the reading for today is to be done after class and do before class on Tuesday.",
-   "date": ""
-  },
-  {
-   "t": "(10/9) Um, out of the kindness of my heart, I'm gonna open up that assignment of the reading.",
-   "date": ""
-  },
-  {
-   "t": "(10/13) Um, hopefully you saw that I adjusted the time to turn in your reading guide, uh, to this morning before class, um, so that you had a chance to continue working on it since we didn't get to it on Friday.",
-   "date": ""
-  },
-  {
-   "t": "(10/14) Um, you guys had a quiz that was due this morning based on, uh, the principles of toxicology, and I gave you guys chances to do it twice because we hadn't covered that material yet, so, um.",
-   "date": ""
+   "t": "Another thing I wanted to show you was this figure from, again, that classic toxicology textbook, talking more about threshold; this is just illustrating the challenge in doing dose-response studies and understanding what your whole experiment is.",
+   "date": "10/9",
+   "verbatim": "(10/9) All right, um, another thing I wanted to show you was with this figure from, again, that classic toxicology textbook, talking more about threshold, and this is just illustrating the challenge in doing dose response studies and understanding what your whole experiment is, OK?"
   }
  ],
+ "quotes_note": "Quotes lightly edited for reading: filler words removed and transcription errors corrected; the verbatim transcript text is kept beside each quote.",
  "truncated": false,
- "listen": "This reading is Chapter 2, Principles of Toxicology, from Casarett and Doull's Toxicology, ninth edition. It belongs to Doctor Smith's Principles of Toxicology lecture, which she began on October ninth and finished on October thirteenth. The syllabus assigns the chapter through the Variation in Toxic Responses section.\n\nHer lecture drew these points from it. First, the dose makes the poison, and Table 2 dash 1 lists acute L D fifty values in rats from ethyl alcohol at 10,000 milligrams per kilogram down to botulinum toxin at 0.00001 milligrams per kilogram. On October ninth she said, \"So the dose makes the poison, but you have to know what compound you're talking about too.\" Second, duration of exposure. Acute is less than 24 hours, subacute is one month or less, subchronic is one to three months, and chronic is more than three months. Third, exposure frequency against elimination half life in Figure 2 dash 4. Compound C is eliminated faster than it is dosed, so it never reaches the toxic concentration. She asked, \"Does it ever get into the toxic zone after repeated exposures? No, it doesn't, right?\" Fourth, graded versus quantal dose response, and the threshold model against the linear, nonthreshold model used for carcinogens. Fifth, on October thirteenth, potency and efficacy on Figure 2 dash 13. She said, \"So all these things could be causing compound C's potency to change with an increasing dose, therefore, making this a trick question when I ask you which compound is more potent, C or D, right?\" Sixth, the therapeutic index uses median doses at one point on the curves. The margin of safety is the toxic dose for one percent over the effective dose for ninety nine percent. She said, \"And because we use a different percentage, it gives you an idea of the slope of your dose response curve, whereas the therapeutic index does not.\" The margin of exposure is the no observable adverse effect level, which she calls the Noel, over the chronic exposure. She also covered immediate versus delayed, reversible versus irreversible, and local versus systemic effects, chemical interactions, tolerance, and species differences.\n\nOn what is testable: she said she will not give a graph like the two A A F figure, and that nobody uses probit units. Her practice quiz asked the length of chronic exposure, which value has the formula toxic dose over therapeutic dose, and whether a compound cleared before the next exposure can still cause chronic adverse effects. The answer was true.\n\nRe-read first the Dose Response Relationships section with Figures 2 dash 4, 2 dash 12 and 2 dash 13, then Duration and Frequency of Exposure."
+ "listen": "This reading is Chapter 2, Principles of Toxicology, from Casarett and Doull's Toxicology, ninth edition. It belongs to Doctor Smith's Principles of Toxicology lecture, which she began on October ninth and finished on October thirteenth. The syllabus assigns the chapter through the Variation in Toxic Responses section.\n\nHer lecture drew these points from it. First, the dose makes the poison, and Table 2 dash 1 lists acute L D fifty values in rats from ethyl alcohol at 10,000 milligrams per kilogram down to botulinum toxin at 0.00001 milligrams per kilogram. On October ninth she said, \"So the dose makes the poison, but you have to know what compound you're talking about too.\" Second, duration of exposure. Acute is less than 24 hours, subacute is one month or less, subchronic is one to three months, and chronic is more than three months. Third, exposure frequency against elimination half life in Figure 2 dash 4. Compound C is eliminated faster than it is dosed, so it never reaches the toxic concentration. She asked, \"Does it ever get into the toxic zone after repeated exposures? No, it doesn't.\" Fourth, graded versus quantal dose response, and the threshold model against the linear, nonthreshold model used for carcinogens. Fifth, on October thirteenth, potency and efficacy on Figure 2 dash 13. She said, \"So all these things could be causing compound C's potency to change with an increasing dose, therefore, making this a trick question when I ask you which compound is more potent, C or D.\" Sixth, the therapeutic index uses median doses at one point on the curves. The margin of safety is the toxic dose for one percent over the effective dose for ninety nine percent. She said, \"And because we use a different percentage, it gives you an idea of the slope of your dose response curve, whereas the therapeutic index does not.\" The margin of exposure is the no observable adverse effect level, which she calls the Noel, over the chronic exposure. She also covered immediate versus delayed, reversible versus irreversible, and local versus systemic effects, chemical interactions, tolerance, and species differences.\n\nOn what is testable: she said she will not give a graph like the two A A F figure, and that nobody uses probit units. Her practice quiz asked the length of chronic exposure, which value has the formula toxic dose over therapeutic dose, and whether a compound cleared before the next exposure can still cause chronic adverse effects. The answer was true.\n\nRe-read first the Dose Response Relationships section with Figures 2 dash 4, 2 dash 12 and 2 dash 13, then Duration and Frequency of Exposure."
 }

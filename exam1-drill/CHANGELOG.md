@@ -2,6 +2,12 @@
 
 Newest first. The build embeds this file; the Topics page shows what is new since your last visit, and the Progress page shows all of it. Keep each bullet to one short line.
 
+## 2026-10-17 (Readings: recorded talks; quotes tidied; Exam 3 format)
+
+- Nine recorded talks for the Exam 3 readings, two and a half to three minutes each, in the Listen deck.
+- Readings cards: her quotes trimmed to the useful ones and lightly edited for reading; verbatim kept beside.
+- Exam 3 settings: 50 to 55 questions in 90 minutes; the two extra 10/19 decks count only if covered.
+
 ## 2026-10-17 (Listen deck for the readings)
 
 - Readings: a Listen deck plays a two-to-three-minute talk per Exam 3 reading, in order or shuffled, with Next and Stop.
