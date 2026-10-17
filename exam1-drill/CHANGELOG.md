@@ -2,6 +2,10 @@
 
 Newest first. The build embeds this file; the Topics page shows what is new since your last visit, and the Progress page shows all of it. Keep each bullet to one short line.
 
+## 2026-10-17 (Exam 3: Hear the why)
+
+- Every Exam 3 question (10/9, 10/13, 10/14) has a spoken explanation under "Hear the why"; device voice for now.
+
 ## 2026-10-17 (Listen deck: pause and timing)
 
 - Listen deck: Pause and Resume button; time played over total; each talk and Listen button shows its length.
