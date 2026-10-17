@@ -79,3 +79,4 @@ See `## Conflicts / uncertain` in notes/L01.md, L02.md and L03.md. The ones that
 - Next: 10/19 and 10/20 transcripts (decks for 10/19 already in Drive); her Canvas quizzes if shareable.
 - 10/17 later: Readings tab (17 cards, src/readings/*.json + gen_readings.py); her practice quiz 1 in the bank; syllabus of 10/8 noted; UX review report in notes/UX_REVIEW_2026-10-17.md (R1 applied; R2–R9 await the user); daily Drive reminder routine created.
 
+- 10/17 night: nine recorded listen talks (audio/rd-*.mp3, ElevenLabs voice id jNB0TWZK9LKlBbU54wMW, the workspace clone named "JK", one take each, 24:02 in all); deck gained Pause/Resume, a played/total clock and per-talk lengths (listen_secs on each card) (PRs #81, #82). Exam 3 "Hear the why" texts (narration3.js, one per L13–L15 question, 181 questions) in progress; clips not yet recorded, cost to be reported first.
