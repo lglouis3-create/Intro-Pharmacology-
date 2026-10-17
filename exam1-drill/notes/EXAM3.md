@@ -46,3 +46,14 @@ Differences from the Drive copy read on 10/17:
 - 10/26 is now "Pharmacogenomics Day 4: Pharmacogenomics Cases and Resources" (outside Exam III).
 - Unchanged: Exam III Fri 10/23, "Oct 9th – Oct 20th", 9–11 am; 10/20 Pharmacogenomics Day 1 (Katzung Ch. 5, DiPiro Ch. 6); fall break 10/15–16.
 
+## Readings (confirmed by the user 10/17; cards in src/readings/*.json, page built by src/gen_readings.py)
+| Reading | Lecture | Status on the page |
+|---|---|---|
+| Casarett & Doull Ch. 2 | 10/9 (and 10/13 finish) | Behind her slides: 37 places where her lecture used its figures and tables |
+| Rodriguez-Mozaz & Weinberg 2010 + discussion guide | 10/9, discussed 10/13 | Discussed; 15 questions and her 3 quiz items |
+| Katzung Ch. 57, Ch. 58; DiPiro Ch. e9 | 10/13, 10/14 | Assigned, chelators and antidotes deferred to 10/19 |
+| AAPCC 2005 beta-blocker and CCB guidelines | 10/19 | Upcoming; her 10/14 words about the abstracts on the cards |
+| Katzung Ch. 5; DiPiro "Chapter 6" (file is 13e e6, Medication Adherence) | 10/20 | Upcoming; the DiPiro chapter mismatch is shown on the card, user to confirm which chapter she posted |
+Not in Drive: Katzung Ch. 7 (Cholinoceptor-Activating & Cholinesterase-Inhibiting Drugs), assigned for his 10/5–10/6 lectures.
+Daily reminder: a routine ("Smith reading reminder", weekdays 7:23 am Central) fires into this session to check the Exam 3 readings folder (Drive id 1vMt7Q8VJw_Dzl5hf00Fbnse95gSWWCYi), the Smith's Lecture folder and the decks folder for new files and remind the user what to add.
+

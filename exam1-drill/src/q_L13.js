@@ -484,7 +484,7 @@ QUESTIONS.push(
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Target & Mechanism of Action’; transcript 10/13"},
 
 /* ---------------- The reading ---------------- */
-{id:"L13-035", dupOf:"L13-043", lecture:"L13", prof:"Smith", tier:"new", topic:"L13", sub:"reading", skill:"apply", lowYield:true,
+{id:"L13-035", dupOf:"L13-043", lecture:"L13", prof:"Smith", tier:"new", topic:"L13", sub:"reading", skill:"apply", readingId:"rodriguez-mozaz", lowYield:true,
  concept:"reading-source-wwtp", tags:["smith","reading"], source:"slide",
  stem:"Applying the source principle to pharmaceuticals in water: which point is most often identified as the main discharge of pharmaceuticals into surface waters?",
  options:[
@@ -497,7 +497,7 @@ QUESTIONS.push(
  note:"On 10/13 she named treatment plants as one of four sources (\"the current mechanisms don't get all the drugs out of it before it goes back into your streams and rivers and lakes\") and said the water is a source for both humans and animals. The 'main discharge' ranking is the article's, not hers, so the item stays low yield; L14-024 tests her point.",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Discussion of Reading Assignment’; RodriguezMozaz-EHP-2010.pdf p. 1017"},
 
-{id:"L13-036", lecture:"L13", prof:"Smith", tier:"new", topic:"L13", sub:"reading", skill:"apply", lowYield:true,
+{id:"L13-036", lecture:"L13", prof:"Smith", tier:"new", topic:"L13", sub:"reading", skill:"apply", readingId:"rodriguez-mozaz", lowYield:true,
  concept:"reading-wildlife-effects", tags:["smith","reading"], source:"slide",
  stem:"Which organisms were adversely affected by pharmaceuticals in the environment in the two examples the reading calls extraordinary?",
  options:[
@@ -577,7 +577,7 @@ QUESTIONS.push(
  note:"Verbatim from her practice quiz with her key. Same point as L13-034.",
  cite:"Smith_Practice_Quiz_1_-_Principles_of_Toxicology.pdf question 6"},
 
-{id:"L13-043", lecture:"L13", prof:"Smith", tier:"new", topic:"L13", sub:"verbatim", skill:"apply",
+{id:"L13-043", readingId:"rodriguez-mozaz", lecture:"L13", prof:"Smith", tier:"new", topic:"L13", sub:"verbatim", skill:"apply",
  concept:"reading-source-human-use", tags:["smith","quiz","verbatim"], source:"slide",
  stem:"The article by Rodriguez-Mozaz discusses the fact that pharmaceuticals have been detected in ground water, surface water, and drinking water. What is most likely the greatest source of pharmaceuticals in those waters?",
  options:[
@@ -589,7 +589,7 @@ QUESTIONS.push(
  note:"Verbatim from her practice quiz with her key. L13-035 and L14-024 test the same source principle; this wording is hers.",
  cite:"Smith_Practice_Quiz_1_-_Principles_of_Toxicology.pdf question 7"},
 
-{id:"L13-044", lecture:"L13", prof:"Smith", tier:"new", topic:"L13", sub:"verbatim", skill:"apply",
+{id:"L13-044", readingId:"rodriguez-mozaz", lecture:"L13", prof:"Smith", tier:"new", topic:"L13", sub:"verbatim", skill:"apply",
  concept:"reading-human-dose-below-therapeutic", tags:["smith","quiz","verbatim"], source:"slide",
  stem:"The dose of pharmaceuticals that people are exposed to in drinking water exceeds the daily dose of that medication when used therapeutically.",
  options:[
@@ -599,7 +599,7 @@ QUESTIONS.push(
  note:"Verbatim from her practice quiz with her key.",
  cite:"Smith_Practice_Quiz_1_-_Principles_of_Toxicology.pdf question 8"},
 
-{id:"L13-045", lecture:"L13", prof:"Smith", tier:"new", topic:"L13", sub:"verbatim", skill:"apply",
+{id:"L13-045", readingId:"rodriguez-mozaz", lecture:"L13", prof:"Smith", tier:"new", topic:"L13", sub:"verbatim", skill:"apply",
  concept:"reading-conclusion", tags:["smith","quiz","verbatim"], source:"slide",
  stem:"Which is the best statement that describes the conclusion the authors made in this article?",
  options:[

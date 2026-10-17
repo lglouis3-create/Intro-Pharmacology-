@@ -1,0 +1,369 @@
+{
+ "id": "casarett-ch2",
+ "title": "Chapter 2: Principles of Toxicology",
+ "source": "Casarett & Doull's Toxicology: The Basic Science of Poisons, 9th edition, Chapter 2 (Lauren M. Aleksunes; David L. Eaton)",
+ "file": "Casarett and Doull’s Toxicology Chapter 2: Principles of Toxicology",
+ "lecture": "10/9 (Principles of Toxicology; finished 10/13). Syllabus: read through the Variation in Toxic Responses section.",
+ "kind": "chapter",
+ "about": "Toxicology is the study of the adverse effects of chemical, biological, or physical agents on living organisms and the environment, and the chapter opens by distinguishing toxins, xenobiotics and toxicants and by stating that the dose makes the poison, with Table 2-1 giving approximate acute LD50 values. It describes the subdisciplines of toxicology, the spectrum of undesired effects (allergic and idiosyncratic reactions, immediate versus delayed, reversible versus irreversible, local versus systemic toxicity, chemical interactions and tolerance), and the characteristics of exposure (route and site; acute, subacute, subchronic and chronic duration; frequency relative to elimination half-life). The relationship between dose and response is the foundation of modern toxicology, and the chapter covers individual (graded) and quantal (population) dose-response relationships, the LD50 and threshold dose, probit transformation, dose extrapolation across species, monotonic and nonmonotonic curve shapes (threshold versus linear nonthreshold models, essential nutrients, hormesis, endocrine active chemicals), and the therapeutic index, margin of safety, margin of exposure, potency and efficacy. It then discusses causation in toxicology, mechanisms and modes of action, adverse outcome pathways, and variation in toxic responses due to selective toxicity, species differences and modifying factors (genetics, age, sex, circadian rhythm, microbiome). The remainder of the chapter describes toxicity testing (acute through chronic, developmental, mutagenicity, carcinogenicity, neurotoxicity, immunotoxicity, sensitization, irritation) and systems toxicology (omics, exposome, high-content screening, computational toxicology, innovative testing models).",
+ "sections": [
+  "Introduction to Toxicology",
+  "Subdisciplines of Toxicology",
+  "Spectrum of Undesired Effects",
+  "Characteristics of Exposure",
+  "Dose-Response Relationships",
+  "Assessing Toxicological Responses",
+  "Variation in Toxic Responses",
+  "Toxicity Testing",
+  "Systems Toxicology",
+  "Acknowledgments",
+  "References"
+ ],
+ "lecture_use": [
+  {
+   "point": "The dose makes the poison (Paracelsus) and the range of acute lethality in Table 2-1 (ethyl alcohol 10,000 mg/kg to botulinum toxin 0.00001 mg/kg)",
+   "chapter_location": "Introduction to Toxicology; Table 2-1, Approximate Acute LD50 Values of Some Representative Chemicals",
+   "lecture_evidence": "(10/9) Um, this is a table that I pulled from our Cari and Duel's toxicology book that just lists the LD50s in rats, so this is the lethal dose that will kill off 50% of the animals given this compound, and I have poisons listed from ethyl alcohol all the way to botulinum toxin, OK.",
+   "date": ""
+  },
+  {
+   "point": "Reading LD50 values off Table 2-1 and tying them to 'the dose makes the poison'",
+   "chapter_location": "Introduction to Toxicology (Paracelsus quotation); Table 2-1",
+   "lecture_evidence": "(10/9) So, 10,000 mgs per kilogram for ethyl alcohol would be the LD50 in rats, and 0.00001 would be the LD50 for botulinum toxin in rats, OK? So the dose makes the poison, but you have to know what compound you're talking about too.",
+   "date": ""
+  },
+  {
+   "point": "Route of exposure as a factor that influences toxicity",
+   "chapter_location": "Characteristics of Exposure: Route and Site of Exposure",
+   "lecture_evidence": "(10/9) OK, so, route is important, um, for most.",
+   "date": ""
+  },
+  {
+   "point": "Time periods of exposure in animal studies: acute (<24 h), subacute (≤1 month), subchronic (1-3 months), chronic (>3 months)",
+   "chapter_location": "Characteristics of Exposure: Duration and Frequency of Exposure; Figure 2-3, Time periods of chemical exposure",
+   "lecture_evidence": "(10/9) It's the Cassaret and Duuls toxicology textbook, um, and this is a figure that's showing you, uh, periods of exposure for animal studies.",
+   "date": ""
+  },
+  {
+   "point": "Definitions of acute, subacute, subchronic and chronic exposure",
+   "chapter_location": "Duration and Frequency of Exposure (text defining the four categories); Figure 2-3",
+   "lecture_evidence": "(10/9) subacute Sub-chronic and chronic links of exposure, and these have specific definitions, so acute is for exposure for less than 24 hours.",
+   "date": ""
+  },
+  {
+   "point": "Exposure frequency versus elimination half-life for compounds A, B and C (single dose panel versus repeated-dose panel)",
+   "chapter_location": "Duration and Frequency of Exposure; Figure 2-4, Diagrammatic view of the relationship between dose and concentration at the target site under different conditions of dose frequency and elimination rate",
+   "lecture_evidence": "(10/9) Going back to kinetics again and Half-Life, OK, so let's look at this figure and just uh illustrate with these three different compounds the importance of half-life and exposure frequency and whether or not the result of the exposure is going to be a problem.",
+   "date": ""
+  },
+  {
+   "point": "Compound C (elimination faster than dosing interval) never reaches the toxic concentration no matter how many doses are given",
+   "chapter_location": "Figure 2-4, line C",
+   "lecture_evidence": "(10/9) Does it ever get into the toxic zone after repeated exposures? No, it doesn't, right?",
+   "date": ""
+  },
+  {
+   "point": "Individual (graded) dose-response relationship",
+   "chapter_location": "Dose-Response Relationships: Individual, or Graded, Dose-Response Relationships; Figure 2-5 (chlorpyrifos esterase inhibition, arithmetic versus semi-log scale)",
+   "lecture_evidence": "(10/9) So you'll often see this kind of data graph in this way, where you are showing on the y axis that percent of inhibition, and the x axis is the dose, and sometimes people will turn it into a logarithmic scale here with the dose, so you get linear lines here, OK.",
+   "date": ""
+  },
+  {
+   "point": "Population (quantal) dose-response: frequency histogram, cumulative sigmoid curve and probit plot",
+   "chapter_location": "Quantal Dose-Response Relationships; Figure 2-6, Diagram of quantal dose-response relationship (top: response frequency; middle: percent response; bottom: probit units)",
+   "lecture_evidence": "(10/9) According to dose, the middle figure is showing you the cumulative mortality here.",
+   "date": ""
+  },
+  {
+   "point": "Probit units on the bottom panel of the quantal figure",
+   "chapter_location": "Quantal Dose-Response Relationships (NEDs and probit units); Figure 2-6 bottom panel",
+   "lecture_evidence": "(10/9) It's in, it's in the figure from this textbook, but it's changing the units on the graph on the y and the x axis to what we call probate units.",
+   "date": ""
+  },
+  {
+   "point": "Using population data to find the LD50 and the threshold dose",
+   "chapter_location": "Quantal Dose-Response Relationships (ED50/LD50 and threshold dose); Figure 2-6",
+   "lecture_evidence": "(10/9) We can do things like find the LD50 or we can find the threshold dose by using toxicology data as a population type of response graph.",
+   "date": ""
+  },
+  {
+   "point": "Threshold model (sigmoid) versus linear, nonthreshold extrapolation used for carcinogens",
+   "chapter_location": "Shapes of Dose-Response Curves: Threshold and Linear, Nonthreshold Models; Figure 2-9, Extrapolation of dose responses at low doses",
+   "lecture_evidence": "(10/9) But I am showing you also this linear line where you go from zero dose, and the first molecule of what you're exposed to in this linear line could cause you problems, OK? That's a theory for exposure to carcinogens.",
+   "date": ""
+  },
+  {
+   "point": "Two illustrations of threshold dose: sigmoidal and linear",
+   "chapter_location": "Threshold and Linear, Nonthreshold Models; Figure 2-9",
+   "lecture_evidence": "(10/9) All right, so two different Illustrations of threshold dose, either a sigmoidal curve here or linear, OK.",
+   "date": ""
+  },
+  {
+   "point": "The 2-AAF (ED01) carcinogen study: liver versus bladder tumors, and the bladder-tumor threshold falling from 75 ppm at 24 months to 45 ppm at 33 months (she calls the animals hamsters; the chapter says mice)",
+   "chapter_location": "Threshold and Linear, Nonthreshold Models (ED01 study); Figure 2-10, Dose-response relationship for carcinogens—rodents and 2-acetylaminofluorene (2-AAF)",
+   "lecture_evidence": "(10/9) All right, um, another thing I wanted to show you was with this figure from, again, that classic toxicology textbook, talking more about threshold, and this is just illustrating the challenge in doing dose response studies and understanding what your whole experiment is, OK? In the next few minutes, I'm gonna walk you through this figure.",
+   "date": ""
+  },
+  {
+   "point": "Reading the NOAEL/threshold for bladder tumors off Figure 2-10 at 24 versus 33 months",
+   "chapter_location": "Figure 2-10 and the text giving 75 ppm at 24 months and 45 ppm at 33 months",
+   "lecture_evidence": "(10/9) 75 mg, I'm sorry, 75 ppm right here, right? But if they were allowed to live for 33 months, then the threshold for getting bladder tumors was about 45 PPM.",
+   "date": ""
+  },
+  {
+   "point": "Recap of the 2-AAF figure on 10/13 (cumulative dose, liver tumors in control animals, choice of species)",
+   "chapter_location": "Figure 2-10; Variation in Toxic Responses: Species Differences",
+   "lecture_evidence": "(10/13) And um a couple things that we discussed, remember we were dealing with threshold dose, and we were looking at animal studies where hamsters had been exposed to a compound that can cause bladder and liver tumors, and they were evaluating the risk of these animals getting those tumors, depending on how long they had been exposed to it and what their cumulative total dose was.",
+   "date": ""
+  },
+  {
+   "point": "U-shaped curve for an essential nutrient (iron): deficiency, region of homeostasis, toxicity",
+   "chapter_location": "Nonmonotonic Dose-Response Curves: Essential Nutrients; Figure 2-11, Individual dose-response relationship for an essential substance such as a vitamin or trace element",
+   "lecture_evidence": "(10/9) So, you're in what we call the region of homeostasis, OK? Then, as you increase iron further, you could likely end up with some toxic effects.",
+   "date": ""
+  },
+  {
+   "point": "Second U-shaped curve: hormesis (beneficial effect at low dose of a non-nutrient, harm at high dose; no region of homeostasis)",
+   "chapter_location": "Nonmonotonic Dose-Response Curves: Hormesis; Figure 2-8 (U-shape C and J-shape E)",
+   "lecture_evidence": "(10/9) So, another U-shaped curve, it's it's illustrating the example of Homesis.",
+   "date": ""
+  },
+  {
+   "point": "She put the textbook figure captions on the U-shaped-curve slide",
+   "chapter_location": "Figure 2-11 caption and the Hormesis text",
+   "lecture_evidence": "(10/9) So, if this doesn't make sense, then I've given you guys the captions down here so that you can read the captions from the textbook to illustrate what these two different U-shaped curves mean.",
+   "date": ""
+  },
+  {
+   "point": "Potency versus efficacy and the shapes of dose-response curves (compounds A-D; C levelling off so that D becomes more potent)",
+   "chapter_location": "Evaluating the Dose-Response Relationship: Potency versus Efficacy; Figure 2-13, dose-response curves for four chemicals (A to D)",
+   "lecture_evidence": "(10/13) So all these things could be causing compound C's potency to change with an increasing dose, therefore, making this a trick question when I ask you which compound is more potent, C or D, right? OK.",
+   "date": ""
+  },
+  {
+   "point": "Compounds A and B compared on the potency figure",
+   "chapter_location": "Figure 2-13 (chemical A more potent than B, equal maximal efficacy)",
+   "lecture_evidence": "(10/13) There's on the left here we've got compound A and B being compared for some sort of response.",
+   "date": ""
+  },
+  {
+   "point": "Therapeutic index: ratio of toxic to effective dose using median (50%) values, one point on the curves",
+   "chapter_location": "Evaluating the Dose-Response Relationship: Therapeutic Index; Figure 2-12, Comparison of effective dose (ED), toxic dose (TD), and lethal dose (LD)",
+   "lecture_evidence": "(10/13) But we have these 3 different numbers because again, therapeutic index is looking at efficacy compared to, compared to toxicity, usually using 50% of animals, just looking at one point in the graph.",
+   "date": ""
+  },
+  {
+   "point": "Margin of safety = TD1 / ED99, which reflects the slopes of the curves",
+   "chapter_location": "Margins of Safety and Exposure (MOS definition)",
+   "lecture_evidence": "(10/13) So most of the time, a margin of safety number is developed because we say what's the toxic dose for 1% of the animals over the effective dose of 99% of the animals.",
+   "date": ""
+  },
+  {
+   "point": "Why MOS differs from TI: it captures the slope of the dose-response curve",
+   "chapter_location": "Therapeutic Index (median doses do not reflect slopes) and Margins of Safety and Exposure",
+   "lecture_evidence": "(10/13) And because we use a different percentage, it gives you an idea of the slope of your dose response curve, whereas the therapeutic index does not.",
+   "date": ""
+  },
+  {
+   "point": "Margin of exposure for non-therapeutic, repeated exposures: NOAEL over estimated exposure",
+   "chapter_location": "Margins of Safety and Exposure (MOE, NOAEL)",
+   "lecture_evidence": "(10/13) And so the margin of exposure is defined as the Noel over the chronic exposure.",
+   "date": ""
+  },
+  {
+   "point": "Definition of the NOAEL ('Noel') used in the MOE",
+   "chapter_location": "Margins of Safety and Exposure (no observable adverse effect level)",
+   "lecture_evidence": "(10/13) OK, so what's the lowest dose we gave the animals that we were testing with this compound and they didn't have a bad response to? That's what the Noel is, OK?",
+   "date": ""
+  },
+  {
+   "point": "Immediate versus delayed toxicity",
+   "chapter_location": "Spectrum of Undesired Effects: Immediate versus Delayed Toxicity",
+   "lecture_evidence": "(10/13) Delayed effects can actually take quite a lot of time, OK.",
+   "date": ""
+  },
+  {
+   "point": "Reversible versus irreversible effects",
+   "chapter_location": "Spectrum of Undesired Effects: Reversible versus Irreversible Toxic Effects",
+   "lecture_evidence": "(10/13) Um, The next thing that we think about with exposures in general are, are the effects reversible or irreversible? So sometimes you get both.",
+   "date": ""
+  },
+  {
+   "point": "Local versus systemic effects (chlorine gas as a local effect)",
+   "chapter_location": "Spectrum of Undesired Effects: Local versus Systemic Toxicity",
+   "lecture_evidence": "(10/13) A local effect will occur at the site of a noxious agent's first contact with the body, so some acid splashes on your skin or you breathe in chlorine gas that's going to affect your lungs and your eyes and your nose, your nasal mucosa, OK? That's a local effect, OK.",
+   "date": ""
+  },
+  {
+   "point": "Tetraethyl lead as the chapter's example of a chemical with both local and systemic effects",
+   "chapter_location": "Local versus Systemic Toxicity (tetraethyl lead example)",
+   "lecture_evidence": "(10/13) Tetraethyl lead in her lab, and she unfortunately became kind of a a a classic example of the fact that this compound can cause a local and then it causes systemic effects.",
+   "date": ""
+  },
+  {
+   "point": "Chemical interactions: additive, synergism, potentiation, antagonism",
+   "chapter_location": "Spectrum of Undesired Effects: Interactions of Chemicals; Figure 2-1, Illustration of responses following various chemical interactions",
+   "lecture_evidence": "(10/13) The reason why it's hard to quantify is it's really hard to quantify these interactions, additive, synergism, potentiation, and antagonism.",
+   "date": ""
+  },
+  {
+   "point": "Two mechanisms of tolerance: dispositional and reduced responsiveness (chemical or cellular)",
+   "chapter_location": "Spectrum of Undesired Effects: Tolerance (dispositional tolerance; chemical or cellular tolerance)",
+   "lecture_evidence": "(10/13) So there's what we call dispositional tolerance, and then there's what we call reduced responsiveness type of tolerance.",
+   "date": ""
+  },
+  {
+   "point": "Idiosyncratic reactions as a category of undesired effect",
+   "chapter_location": "Spectrum of Undesired Effects: Idiosyncratic Reactions",
+   "lecture_evidence": "(10/13) What does idiosyncratic mean? We don't know why it's happening.",
+   "date": ""
+  },
+  {
+   "point": "Selective toxicity",
+   "chapter_location": "Variation in Toxic Responses: Selective Toxicity",
+   "lecture_evidence": "(10/13) One of the terms is what we call selective toxicity.",
+   "date": ""
+  },
+  {
+   "point": "Species differences: qualitative and quantitative differences in response between species",
+   "chapter_location": "Variation in Toxic Responses: Species Differences",
+   "lecture_evidence": "(10/13) Another term that we use in the world of toxicology is species differences, and when somebody's talking about, oh, this compound results in differences across species, we're saying that there's either a qualitative and or a quantitative difference in the way two different species respond.",
+   "date": ""
+  },
+  {
+   "point": "Arsenic in drinking water as a case where no animal model reproduces the human response",
+   "chapter_location": "Variation in Toxic Responses: Species Differences (animals as surrogates for humans)",
+   "lecture_evidence": "(10/13) We can't find an animal model that um mimics what happens to humans when we're exposed to arsenic in water, OK?",
+   "date": ""
+  },
+  {
+   "point": "Genetic variation as a modifying factor (intraspecies, individual differences)",
+   "chapter_location": "Variation in Toxic Responses: Modifying Factors, Genetics",
+   "lecture_evidence": "(10/13) Maybe I've got a genetic variant that makes me at risk for a side effect that you don't have that problem with that same drug, OK, so, Intraspecies differences, individual differences within a species to a drug or to an environmental exposure, is going to be found.",
+   "date": ""
+  }
+ ],
+ "read_for": [
+  "Introduction to Toxicology: the Paracelsus quotation ('the dose makes the poison') and Table 2-1, Approximate Acute LD50 Values of Some Representative Chemicals (ethyl alcohol 10,000 mg/kg down to botulinum toxin 0.00001 mg/kg)",
+  "Spectrum of Undesired Effects: allergic reactions (hapten), idiosyncratic reactions, immediate versus delayed, reversible versus irreversible, local versus systemic (tetraethyl lead), and target organs",
+  "Interactions of Chemicals and Figure 2-1: additive, synergistic, potentiation, antagonism; Figure 2-2: receptor, chemical, dispositional and functional antagonism",
+  "Tolerance: dispositional tolerance (phenobarbital enzyme induction) and chemical or cellular tolerance (morphine, beta-arrestin-2)",
+  "Characteristics of Exposure: Route and Site of Exposure; Duration and Frequency of Exposure with Figure 2-3 (acute, subacute, subchronic, chronic) and Figure 2-4 (lines A, B, C; half-life versus dosing frequency)",
+  "Dose-Response Relationships: Individual, or Graded (Figure 2-5) versus Quantal (Figure 2-6: frequency histogram, cumulative sigmoid, probit units; hypersusceptible and resistant; ED50/LD50; threshold dose); Figure 2-7 (slope of compounds A and B)",
+  "Shapes of Dose-Response Curves: Figure 2-8 (monotonic and nonmonotonic shapes), Threshold and Linear, Nonthreshold Models with Figure 2-9, and the 2-AAF ED01 study with Figure 2-10 (liver versus bladder tumors, NOAEL 75 ppm at 24 months versus 45 ppm at 33 months)",
+  "Nonmonotonic Dose-Response Curves: Essential Nutrients with Figure 2-11 (deficiency, region of homeostasis, toxicity; manganese, vitamin A, selenium, iron) and Hormesis (alcohol, TCDD, DDT J-shaped curves)",
+  "Evaluating the Dose-Response Relationship: Therapeutic Index with Figure 2-12 (TD50/ED50), Margins of Safety and Exposure (MOS = TD1/ED99; MOE = NOAEL or TD10 over estimated exposure; chronicity index), and Potency versus Efficacy with Figure 2-13 (chemicals A to D)",
+  "Variation in Toxic Responses: Selective Toxicity, Species Differences (TCDD LD50 guinea pig versus hamster; aflatoxin in mice versus rats), and Modifying Factors (genetics, age, sex, circadian rhythm, microbiome)"
+ ],
+ "beyond_lecture": [
+  "Subdisciplines of Toxicology (mechanistic, hazard assessment, regulatory; Table of regulatory agencies and legislation; Toxicology Code of Ethics)",
+  "Endocrine Active Chemicals (nonmonotonic responses to bisphenol A, phthalates) and Assumptions in Deriving the Dose-Response Relationship",
+  "Dose Extrapolation Across Species (body-surface-area conversion table) and the probit mathematics (NEDs, Hill, logit, Weibull models)",
+  "Assessing Toxicological Responses: Causation in Toxicology, Mechanisms and Modes of Action (Figure 2-14), Adverse Outcome Pathways (Figure 2-15)",
+  "Species Differences detail on dioxin Toxic Equivalency Factors (Table 2-5) and the Age, Sex, Circadian Rhythm and Microbiome modifying-factor subsections",
+  "Toxicity Testing (beyond the syllabus stopping point): acute, subacute, subchronic and chronic testing, developmental and reproductive toxicity, mutagenicity, carcinogenicity (Figures 2-16 to 2-18), neurotoxicity, immunotoxicity, sensitization, eye and skin irritation",
+  "Systems Toxicology: transcriptome, epigenome, proteome, metabonomics, exposome, high-content screening, computational toxicology, innovative testing models"
+ ],
+ "terms": [
+  {
+   "term": "Toxicology",
+   "chapter_definition": "The study of the adverse effects of chemical, biological, or physical agents on living organisms and the environment."
+  },
+  {
+   "term": "LD50",
+   "chapter_definition": "The dose (mg/kg body weight) causing death in 50% of exposed animals; where death is the measured endpoint, the ED50 is referred to as the lethal dose LD50."
+  },
+  {
+   "term": "Acute / subacute / subchronic / chronic exposure",
+   "chapter_definition": "Acute exposure refers to exposure to a chemical for less than 24 hours; subacute exposure refers to repeated exposure for 1 month or less, subchronic for 1 to 3 months, and chronic for more than 3 months."
+  },
+  {
+   "term": "Half-life for elimination",
+   "chapter_definition": "Time necessary for 50% of the chemical to be removed from the bloodstream."
+  },
+  {
+   "term": "Individual (graded) dose-response relationship",
+   "chapter_definition": "Describes the response of an individual organism to increasing doses of a chemical, often referred to as a 'graded' response because the measured effect is continuous over a range of doses."
+  },
+  {
+   "term": "Quantal dose-response relationship",
+   "chapter_definition": "Characterizes the distribution of individual responses to different doses in a population of organisms; quantal, or 'all or none', in nature: at any given dose an individual is classified as either a 'responder' or a 'nonresponder'."
+  },
+  {
+   "term": "Threshold dose",
+   "chapter_definition": "The minimal ED of any chemical that evokes a stated all-or-none response; a threshold is a dose at which toxicity is first observed, and at doses below this level the probability of an individual responding is zero."
+  },
+  {
+   "term": "Linear, nonthreshold model",
+   "chapter_definition": "Assumes there is a direct and proportional relationship between dose and response, even at very low doses; this extrapolation is typically performed for genotoxic carcinogens."
+  },
+  {
+   "term": "Hormesis",
+   "chapter_definition": "Some non-nutritional toxic substances may impart beneficial or stimulatory effects at low doses but, at higher doses, produce adverse effects."
+  },
+  {
+   "term": "Therapeutic index (TI)",
+   "chapter_definition": "The ratio of the dose required to cause a toxic effect to the dose needed to produce the desired therapeutic response; most commonly the median doses TD50 and ED50."
+  },
+  {
+   "term": "Margin of safety (MOS)",
+   "chapter_definition": "Calculated from the ED99 for the desired effect and the TD1 for the undesired effect; for nondrug chemicals, an indicator of the magnitude of the difference between an estimated exposed dose and the NOAEL."
+  },
+  {
+   "term": "Margin of exposure (MOE)",
+   "chapter_definition": "Compares the estimated daily exposure, in milligrams per kilogram per day, with some estimated value from the quantal dose-response relationship (e.g., NOAEL or TD10), expressed as a ratio."
+  }
+ ],
+ "discussed_in_class": true,
+ "her_words": [
+  {
+   "t": "(10/9) OK, this is a figure from a textbook that toxicologists use all the time.",
+   "date": ""
+  },
+  {
+   "t": "(10/9) It's the Cassaret and Duuls toxicology textbook, um, and this is a figure that's showing you, uh, periods of exposure for animal studies.",
+   "date": ""
+  },
+  {
+   "t": "(10/9) OK, so in this figure, again, this is from that very classic toxicology textbook that, that you have access to on Access Pharmacy, OK?",
+   "date": ""
+  },
+  {
+   "t": "(10/9) Um, this is a table that I pulled from our Cari and Duel's toxicology book that just lists the LD50s in rats, so this is the lethal dose that will kill off 50% of the animals given this compound, and I have poisons listed from ethyl alcohol all the way to botulinum toxin, OK.",
+   "date": ""
+  },
+  {
+   "t": "(10/9) They're pretty old fashioned when they wrote that in this textbook.",
+   "date": ""
+  },
+  {
+   "t": "(10/9) So, if this doesn't make sense, then I've given you guys the captions down here so that you can read the captions from the textbook to illustrate what these two different U-shaped curves mean.",
+   "date": ""
+  },
+  {
+   "t": "(10/9) All right, um, another thing I wanted to show you was with this figure from, again, that classic toxicology textbook, talking more about threshold, and this is just illustrating the challenge in doing dose response studies and understanding what your whole experiment is, OK?",
+   "date": ""
+  },
+  {
+   "t": "(10/9) I was going to give you guys a quiz on your reading, but I turned it into an assignment to turn in.",
+   "date": ""
+  },
+  {
+   "t": "(10/9) Your quiz on the reading for today is to be done after class and do before class on Tuesday.",
+   "date": ""
+  },
+  {
+   "t": "(10/9) Um, out of the kindness of my heart, I'm gonna open up that assignment of the reading.",
+   "date": ""
+  },
+  {
+   "t": "(10/13) Um, hopefully you saw that I adjusted the time to turn in your reading guide, uh, to this morning before class, um, so that you had a chance to continue working on it since we didn't get to it on Friday.",
+   "date": ""
+  },
+  {
+   "t": "(10/14) Um, you guys had a quiz that was due this morning based on, uh, the principles of toxicology, and I gave you guys chances to do it twice because we hadn't covered that material yet, so, um.",
+   "date": ""
+  }
+ ],
+ "truncated": false
+}

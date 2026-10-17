@@ -1,0 +1,69 @@
+{
+ "id": "katzung-10",
+ "kind": "chapter",
+ "exam": 2,
+ "title": "Chapter 10: Adrenoceptor Antagonist Drugs",
+ "source": "Katzungʼs Basic & Clinical Pharmacology, 16th Edition",
+ "authors": "Italo Biaggioni",
+ "file": "Chapter 10_ Adrenoceptor Antagonist Drugs.pdf",
+ "lecture": "10/6; 10/7",
+ "about": "Catecholamines play a role in many physiologic and pathophysiologic responses, as described in Chapter 9. Drugs that block their receptors, therefore, have important effects, some of which are of great clinical value. These effects vary dramatically according to the drug's selectivity for alpha and beta receptors. Nonselective alpha antagonists are used in the treatment of pheochromocytoma (tumors that secrete catecholamines), and alpha1-selective antagonists are used in primary hypertension and benign prostatic hyperplasia.",
+ "sections": [
+  "Basic Pharmacology of the Alpha-Receptor Antagonist Drugs (mechanism, pharmacologic effects, specific agents)",
+  "Clinical Pharmacology of the Alpha-Receptor-Blocking Drugs (pheochromocytoma, hypertensive emergencies, chronic hypertension, peripheral vascular disease, urinary obstruction, applications of alpha2 antagonists)",
+  "Basic Pharmacology of the Beta-Receptor Antagonist Drugs (pharmacokinetics, pharmacodynamics, specific agents)",
+  "Clinical Pharmacology of the Beta-Receptor-Blocking Drugs (hypertension, ischemic heart disease, arrhythmias, heart failure, other disorders, glaucoma, hyperthyroidism, neurologic diseases, choice of drug, clinical toxicity)"
+ ],
+ "read_for": [
+  "'Mechanism of Action' (alpha) and Figure 10-2: reversible (phentolamine, prazosin) vs irreversible (phenoxybenzamine) blockade and the dose-response curves - the Exam 1 antagonist concepts applied to real drugs (10/6).",
+  "Table 10-1 'Relative selectivity of antagonists for adrenoceptors': alpha1-selective (prazosin, terazosin, doxazosin, tamsulosin), alpha2 (yohimbine), nonselective alpha, beta1-selective, nonselective beta, mixed (labetalol, carvedilol).",
+  "Figure 10-3 'epinephrine reversal': why alpha blockade converts a pressor response to a depressor response.",
+  "'Basic Pharmacology of the Beta-Receptor Antagonist Drugs': pure antagonists vs partial agonists (pindolol) vs inverse agonists; beta1 selectivity is dose-related (10/7).",
+  "Table 10-2 'Properties of several beta-receptor-blocking drugs': selectivity, partial agonist activity, local anesthetic action, lipid solubility, half-life, bioavailability.",
+  "'Pharmacodynamics of the Beta-Receptor Antagonist Drugs' A: negative inotropy/chronotropy, suppression of renin release, unopposed alpha vasoconstriction - the bridge to the 10/8 RAAS lecture.",
+  "Esmolol (ultra-short, esterase metabolism) and labetalol/carvedilol as mixed antagonists on the drug list."
+ ],
+ "beyond_lecture": [
+  "Clinical pharmacology of alpha blockers in pheochromocytoma, BPH (tamsulosin), and alpha2 antagonists (yohimbine).",
+  "Clinical uses of beta blockers in angina, arrhythmias, heart failure, hyperthyroidism, migraine, tremor, infantile hemangioma.",
+  "Table 10-3 topical drugs for open-angle glaucoma (timolol, betaxolol and the non-beta classes).",
+  "'Clinical Toxicity of the Beta-Receptor Antagonist Drugs': bronchospasm, masked hypoglycemia, acute withdrawal/rebound, fatigue and depression evidence."
+ ],
+ "terms": [
+  {
+   "term": "Reversible alpha antagonists",
+   "chapter_definition": "dissociate from receptors, and the block can be overcome with sufficiently high concentrations of agonists; phentolamine and prazosin are examples."
+  },
+  {
+   "term": "Irreversible alpha antagonist",
+   "chapter_definition": "phenoxybenzamine forms a reactive ethyleneimonium intermediate that covalently binds to alpha receptors, resulting in irreversible blockade; restoration of responsiveness depends on synthesis of new receptors, which may take several days."
+  },
+  {
+   "term": "Epinephrine reversal",
+   "chapter_definition": "in the case of agonists with both alpha and beta2 effects (eg, epinephrine), selective alpha-receptor antagonism may convert a pressor to a depressor response; blockade of alpha adrenoceptors unmasks the effects of epinephrine on beta receptors."
+  },
+  {
+   "term": "Pure beta antagonist",
+   "chapter_definition": "the occupancy of a beta receptor by such a drug causes no activation of the receptor."
+  },
+  {
+   "term": "Partial agonist beta blocker",
+   "chapter_definition": "causes partial activation of the receptor, albeit less than that caused by the full agonists epinephrine and isoproterenol; inhibits activation in the presence of high catecholamine concentrations but moderately activates receptors in their absence."
+  },
+  {
+   "term": "Inverse agonist beta blocker",
+   "chapter_definition": "drugs (eg, betaxolol, metoprolol) that stabilize the inactive conformation of beta receptors, reducing the proportion of active receptors; the clinical significance is not known."
+  },
+  {
+   "term": "Beta1 selectivity",
+   "chapter_definition": "since none of the clinically available beta-receptor antagonists are absolutely specific for beta1 receptors, the selectivity is dose-related; it tends to diminish at higher drug concentrations."
+  },
+  {
+   "term": "Esmolol",
+   "chapter_definition": "an ultra-short-acting beta1-selective adrenoceptor antagonist containing an ester linkage; esterases in red blood cells rapidly metabolize it to a metabolite with low affinity for beta receptors."
+  }
+ ],
+ "discussed_in_class": null,
+ "her_words": [],
+ "truncated": false
+}

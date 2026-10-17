@@ -172,7 +172,7 @@ function schedule(id, outcome) {
 /* ---------- views ---------- */
 const VIEWS = [
   ['topics', 'Topics'], ['quiz', 'Quiz'], ['terms', 'Terms'], ['weak', 'Weak spots'], ['exam', 'Exam sim'],
-  ['graphs', 'Graphs'], ['diagrams', 'Diagrams'], ['scenes', 'Scenes'], ['map', 'Question map'], ['drugs', 'All drugs'], ['ref', 'Reference'], ['tell', 'Tell apart'], ['pair', 'Pair up'], ['rxq', 'Drug ↔ receptor'], ['guide', 'Guides'], ['data', 'Progress']
+  ['graphs', 'Graphs'], ['diagrams', 'Diagrams'], ['scenes', 'Scenes'], ['map', 'Question map'], ['drugs', 'All drugs'], ['ref', 'Reference'], ['tell', 'Tell apart'], ['pair', 'Pair up'], ['rxq', 'Drug ↔ receptor'], ['guide', 'Guides'], ['readings', 'Readings'], ['data', 'Progress']
 ];
 let CUR = 'topics';
 function nav() {
@@ -326,12 +326,12 @@ function backBtn() {
   if (!b) { b = document.createElement('button'); b.id = 'backbtn'; b.type = 'button'; b.className = 'btn'; document.body.appendChild(b); b.onclick = goBack; }
   b.textContent = backLabel();
 }
-const backLabel = () => '← Back to ' + ({quiz: 'the question', exam: 'the exam', graphs: 'the figures', map: 'the map', terms: 'the terms', weak: 'Weak spots', tell: 'Tell apart', ref: 'the reference', guide: 'the guide', diagrams: 'the diagrams', drugs: 'the drug table', pair: 'Pair up', rxq: 'the receptor drill', scenes: 'the scenes'}[(RET[RET.length - 1] || {}).view] || 'where you were');
+const backLabel = () => '← Back to ' + ({quiz: 'the question', exam: 'the exam', graphs: 'the figures', map: 'the map', terms: 'the terms', weak: 'Weak spots', tell: 'Tell apart', ref: 'the reference', guide: 'the guide', diagrams: 'the diagrams', drugs: 'the drug table', pair: 'Pair up', rxq: 'the receptor drill', scenes: 'the scenes', readings: 'the readings'}[(RET[RET.length - 1] || {}).view] || 'where you were');
 function goBack() { const r = RET.pop(); if (!r) return; backBtn(); go(r.view, true); window.scrollTo(0, r.y); }
 document.addEventListener('click', e => { const j = e.target.closest('[data-jump]'); if (j) { const [v, a] = j.dataset.jump.split(':'); jump(v, a); } });
 /* "view:anchor:group:key": jump to the page, then open that explanation card (the reference's "Why?" cards). */
 document.addEventListener('click', e => { const j = e.target.closest('[data-jumpx]'); if (!j) return; const [v, a, g, k] = j.dataset.jumpx.split(':'); jump(v, a); const out = showExplain(g, k); if (out) scrollToEl(out.closest('.xpick')); });
-const VIEWFN = {topics: vTopics, quiz: vQuiz, terms: vTerms, weak: vWeak, exam: vExam, map: vMap, graphs: vGraphs, diagrams: vDiagrams, scenes: vScenes, drugs: vDrugs, ref: vRef, tell: vTell, pair: vPair, rxq: vRxq, guide: vGuide, data: vData};
+const VIEWFN = {topics: vTopics, quiz: vQuiz, terms: vTerms, weak: vWeak, exam: vExam, map: vMap, graphs: vGraphs, diagrams: vDiagrams, scenes: vScenes, drugs: vDrugs, ref: vRef, tell: vTell, pair: vPair, rxq: vRxq, guide: vGuide, readings: vReadings, data: vData};
 const rerender = () => { const y = window.scrollY; if (CUR === 'quiz' && Q) renderQ(); else if (CUR === 'exam' && EX && !EX.done) renderExam(); else if (CUR === 'exam' && EX && EX.done) examResult(); else VIEWFN[CUR](); window.scrollTo(0, y); };
 document.addEventListener('click', e => {
   const f = e.target.closest('[data-flag]');
@@ -2362,6 +2362,50 @@ function vGuide() {
   $('#view').innerHTML = `<div class="tablewrap">${examPage(typeof GUIDE_HTML === 'undefined' ? '' : GUIDE_HTML, 'guide')}</div>`;
   fillImgs($('#view')); stackTables($('#view'));
   document.querySelectorAll('.guidenav a').forEach(a => a.onclick = e => { const t = document.querySelector(a.getAttribute('href')); if (t) { e.preventDefault(); scrollToEl(t); } });
+}
+
+/* ---------- Readings: what each assigned reading covers, what she used from it in class, and the drill on it ---------- */
+const RD_STATUS = {discussed: 'Discussed in class', background: 'Behind her slides', assigned: 'Assigned, not yet discussed', upcoming: 'Assigned for a coming lecture', his: 'His chapter'};
+const rdQs = r => QUESTIONS.filter(q => q.readingId === r.id && !(q.tags || []).includes('quiz'));
+const rdQuiz = r => QUESTIONS.filter(q => q.readingId === r.id && (q.tags || []).includes('quiz'));
+const rdLecLabel = r => (r.lectures || []).map(id => (COURSE.lectures.find(l => l.id === id) || {}).label || id).map(l => l.replace(/ \(Dr\. [^)]*\)$/, '')).join('; ');
+/* The first two sentences of the summary sit on the card; the rest opens under "About, in full". */
+const rdLead = t => { const m = t.match(/^((?:[^.!?]*[.!?]\)?\s*){1,2})([\s\S]*)$/); return m && m[2].trim() ? [m[1].trim(), m[2].trim()] : [t, '']; };
+function rdCard(r) {
+  const qs = rdQs(r), quiz = rdQuiz(r);
+  const fold = (title, inner) => inner ? `<details class="fold rdfold"><summary>${title}</summary>${inner}</details>` : '';
+  const li = arr => arr && arr.length ? `<ul>${arr.map(x => `<li>${esc(x)}</li>`).join('')}</ul>` : '';
+  const use = (r.lecture_use || []).length ? `<ul>${r.lecture_use.map(u => `<li><b>${esc(u.point)}</b>${u.chapter_location ? ` <small>(${esc(u.chapter_location)})</small>` : ''}${u.lecture_evidence ? `<div class="sub rdq">“${esc(u.lecture_evidence)}” <small>(T) ${esc(u.date || '')}</small></div>` : ''}</li>`).join('')}</ul>` : '';
+  const words = (r.her_words || []).length ? `<ul>${r.her_words.map(w => `<li>“${esc(w.t || w)}”${w.date ? ` <small>(T) ${esc(w.date)}</small>` : ''}</li>`).join('')}</ul>` : '';
+  const terms = (r.terms || []).length ? `<ul>${r.terms.map(t => `<li><b>${esc(t.term)}</b>: ${esc(t.chapter_definition)}</li>`).join('')}</ul>` : '';
+  const when = r.date ? ` · ${esc(r.date)}` : '';
+  const lec = r.lecture || rdLecLabel(r);
+  return `<div class="card rd" id="rd-${esc(r.id)}">
+    <div class="rdhead"><b>${esc(r.title)}</b> <span class="exlabel">${esc(RD_STATUS[r.status] || r.status)}</span>
+      <small>${esc(r.source || '')}${lec ? ` · ${esc(lec)}` : ''}${when}${r.drive ? ` · <a href="${esc(r.drive)}" target="_blank" rel="noopener">Open in Drive</a>` : ''}${r.truncated ? ' · summary from a partial text' : ''}</small></div>
+    <p>${esc(rdLead(r.about || '')[0])}</p>${r.numbering_note ? `<p class="sub">${esc(r.numbering_note)}</p>` : ''}
+    <div class="row rdact">${qs.length ? `<button class="btn" data-rdq="${esc(r.id)}">Drill ${qs.length} question${qs.length === 1 ? '' : 's'}</button>` : `<span class="meta" style="margin:0">${r.status === 'his' ? 'His exams come from the slides and the drug list; no reading drill.' : 'No questions yet: she has not discussed it in class.'}</span>`}
+      ${quiz.length ? `<button class="btn ghost" data-rdquiz="${esc(r.id)}">Her quiz items (${quiz.length})</button>` : ''}
+      ${(r.links || []).map(([v, a, l]) => `<button type="button" class="chip" data-jump="${esc(v)}:${esc(a)}">${esc(l)}</button>`).join('')}</div>
+    ${fold('About, in full', rdLead(r.about || '')[1] ? `<p>${esc(r.about)}</p>` : '')}
+    ${fold('Read for', li(r.read_for))}
+    ${fold('Where her lecture used it', use)}
+    ${fold('Her words about it', words)}
+    ${fold('Terms it defines', terms)}
+    ${fold('Beyond the lecture', li(r.beyond_lecture))}
+  </div>`;
+}
+function vReadings() {
+  const RS = typeof READINGS === 'undefined' ? [] : READINGS;
+  const groups = COURSE.exams.map(e => { const rs = RS.filter(r => r.exam === e.id); return exGroup(e, rs.length ? rs.map(rdCard).join('') : '<div class="empty">No readings recorded for this exam yet.</div>'); }).join('');
+  $('#view').innerHTML = `<h2>Readings</h2>
+    <p class="sub">Each assigned reading: what it covers, what she drew from it in class, and the questions on it. Her rule (10/9): a reading is tested on what was read and discussed in class, not on dates or numbers from the text. Folded sections open on tap.</p>${groups}`;
+  $('#view').onclick = e => {
+    const b = e.target.closest('[data-rdq],[data-rdquiz]'); if (!b) return;
+    const r = RS.find(x => x.id === (b.dataset.rdq || b.dataset.rdquiz)); if (!r) return;
+    if (b.dataset.rdq) startQuiz(rdQs(r), 'Reading: ' + r.title.split(' (')[0], 'pass', {back: true});
+    else startQuiz(rdQuiz(r), 'Her quiz on the reading', 'pass', {back: true});
+  };
 }
 
 /* ---------- Progress: profile, pace, export ---------- */

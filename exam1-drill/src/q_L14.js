@@ -274,7 +274,7 @@ QUESTIONS.push(
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Target & Mechanism of Action’; transcript 10/13"},
 
 /* ---------------- The reading, as discussed ---------------- */
-{id:"L14-020", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"reading", skill:"recall",
+{id:"L14-020", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"reading", skill:"recall", readingId:"rodriguez-mozaz",
  concept:"reading-who-met", tags:["smith","reading"], source:"transcript",
  stem:"The Rodriguez-Mozaz and Weinberg article reports on a 2008 environmental health summit. What was the subject of the meeting, and who attended?",
  options:[
@@ -288,7 +288,7 @@ QUESTIONS.push(
  note:"She first said 2018, then corrected herself to 2008.",
  cite:"Discussion-Guide-Rodriguez-Mozaz-and-Weinberg-Student-2026 copy.pdf; transcript 10/13"},
 
-{id:"L14-021", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"reading", skill:"recall",
+{id:"L14-021", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"reading", skill:"recall", readingId:"rodriguez-mozaz",
  concept:"reading-why-assigned", tags:["smith","reading"], source:"transcript",
  stem:"Why does a pharmacy student need to know about pharmaceuticals in the water supply?",
  options:[
@@ -301,7 +301,7 @@ QUESTIONS.push(
  quote:"they will find out that we know that there's drugs in our water supply, and they might likely come to you freaking out ... We're going to get you to the point where you can talk to your patient that came to you freaking out, and you can help them calm down or be concerned.",
  cite:"Discussion-Guide-Rodriguez-Mozaz-and-Weinberg-Student-2026 copy.pdf; transcript 10/13"},
 
-{id:"L14-022", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"reading", skill:"recall",
+{id:"L14-022", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"reading", skill:"recall", readingId:"rodriguez-mozaz",
  concept:"reading-water-types", tags:["smith","reading"], source:"transcript",
  stem:"Which kinds of water does the discussion of pharmaceuticals in water cover?",
  options:[
@@ -314,7 +314,7 @@ QUESTIONS.push(
  quote:"we're talking about surface water, we're talking about groundwater, and we're talking about drinking water sources.",
  cite:"Discussion-Guide-Rodriguez-Mozaz-and-Weinberg-Student-2026 copy.pdf; transcript 10/13"},
 
-{id:"L14-023", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"reading", skill:"apply", multi:true,
+{id:"L14-023", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"reading", skill:"apply", readingId:"rodriguez-mozaz", multi:true,
  concept:"reading-sources", tags:["smith","reading"], source:"both",
  stem:"Applying the source principle to pharmaceuticals in water: which of the following are sources she named? Select all that apply.",
  options:[
@@ -327,7 +327,7 @@ QUESTIONS.push(
  quote:"We take the drugs, we flush, we improperly dispose of our meds. We've got animals on feedlots. Our wastewater treatment plants don't take care of all the drugs before it gets released into the environment, right? So that's the source for our exposure.",
  cite:"Discussion-Guide-Rodriguez-Mozaz-and-Weinberg-Student-2026 copy.pdf (Source hint); transcript 10/13"},
 
-{id:"L14-024", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"reading", skill:"tell", dupOf:"L13-035",
+{id:"L14-024", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"reading", skill:"tell", readingId:"rodriguez-mozaz", dupOf:"L13-035",
  concept:"reading-source-wwtp", tags:["smith","reading"], source:"transcript",
  stem:"Wastewater treatment plants release water that still contains drugs. For whom is this a source of exposure?",
  options:[
@@ -340,7 +340,7 @@ QUESTIONS.push(
  quote:"Wastewater treatment plants, yeah, the water from Flushing gets treated a bit, but right now the current mechanisms don't get all the drugs out of it before it goes back into your streams and rivers and lakes, OK. So is that a source for humans or animals? Both, there you go.",
  cite:"Discussion-Guide-Rodriguez-Mozaz-and-Weinberg-Student-2026 copy.pdf (Source hint); transcript 10/13"},
 
-{id:"L14-025", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"reading", skill:"tell",
+{id:"L14-025", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"reading", skill:"tell", readingId:"rodriguez-mozaz",
  concept:"reading-exposure-humans-vs-wildlife", tags:["smith","reading"], source:"both",
  stem:"How does the route of exposure to drugs in water differ between humans and aquatic wildlife?",
  options:[
@@ -353,7 +353,7 @@ QUESTIONS.push(
  quote:"so they get exposed drinking, eating, swimming in the water ... the route of exposure, drinking, eating, swimming, living in it, OK? So that's our second principle.",
  cite:"Discussion-Guide-Rodriguez-Mozaz-and-Weinberg-Student-2026 copy.pdf (Exposure hint); transcript 10/13"},
 
-{id:"L14-026", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"reading", skill:"recall",
+{id:"L14-026", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"reading", skill:"recall", readingId:"rodriguez-mozaz",
  concept:"reading-ppt-concentration", tags:["smith","reading"], source:"transcript",
  stem:"When drinking water was tested, the concentration of most medications was in the range of:",
  options:[
@@ -366,7 +366,7 @@ QUESTIONS.push(
  quote:"remember the concentrations of these drugs is found to be about parts per trillion. Rarely is it higher than that.",
  cite:"Discussion-Guide-Rodriguez-Mozaz-and-Weinberg-Student-2026 copy.pdf (Dose); transcript 10/13"},
 
-{id:"L14-027", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"reading", skill:"tell",
+{id:"L14-027", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"reading", skill:"tell", readingId:"rodriguez-mozaz",
  concept:"reading-adme-known-humans-not-wildlife", tags:["smith","reading"], source:"both",
  stem:"For the drugs found in water, how does our knowledge of ADME, dose and target compare between humans and wild animals?",
  options:[
@@ -379,7 +379,7 @@ QUESTIONS.push(
  quote:"we don't tend to use sea otters and orca whales and fish and mollusks. We don't use those in our drug development studies, so we don't know how these drugs made for humans and tested for humans are going to act. In these critters",
  cite:"Discussion-Guide-Rodriguez-Mozaz-and-Weinberg-Student-2026 copy.pdf (ADME hints); transcript 10/13"},
 
-{id:"L14-028", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"reading", skill:"apply",
+{id:"L14-028", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"reading", skill:"apply", readingId:"rodriguez-mozaz",
  concept:"reading-patient-answer", tags:["smith","reading"], source:"transcript",
  stem:"A well-hydrated patient heard a podcast about drugs in the water supply and asks whether drinking tap water is giving them a dose of someone else's antidepressant. What is the answer she gave?",
  options:[
@@ -392,7 +392,7 @@ QUESTIONS.push(
  quote:"is that gonna get you up to a normal therapeutic daily dose? No, no ... So I think for humans we can be OK. Doesn't mean we should ignore our sensitive populations, which are in utero, elderly kids, people with diseases.",
  cite:"Discussion-Guide-Rodriguez-Mozaz-and-Weinberg-Student-2026 copy.pdf (Dose); transcript 10/13"},
 
-{id:"L14-029", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"reading", skill:"recall", multi:true,
+{id:"L14-029", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"reading", skill:"recall", readingId:"rodriguez-mozaz", multi:true,
  concept:"reading-sensitive-populations", tags:["smith","reading"], source:"transcript",
  stem:"Which groups did she name as the sensitive populations to keep watching for exposure to drugs in drinking water? Select all that apply.",
  options:[
@@ -405,7 +405,7 @@ QUESTIONS.push(
  quote:"Maybe people that are immunocompromised, maybe with some disease states. Young in utero, right? ... Doesn't mean we should ignore our sensitive populations, which are in utero, elderly kids, people with diseases.",
  cite:"Discussion-Guide-Rodriguez-Mozaz-and-Weinberg-Student-2026 copy.pdf (Dose); transcript 10/13"},
 
-{id:"L14-030", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"reading", skill:"apply", dupOf:"L13-036",
+{id:"L14-030", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"reading", skill:"apply", readingId:"rodriguez-mozaz", dupOf:"L13-036",
  concept:"reading-wildlife-effects", tags:["smith","reading"], source:"transcript",
  stem:"Which observation in wildlife did she give as evidence that drugs in water are harming animal populations?",
  options:[
@@ -419,7 +419,7 @@ QUESTIONS.push(
  note:"The vulture (diclofenac) and fathead minnow (ethinyl estradiol) examples in L13-036 and the student discussion guide were not raised in class on 10/13.",
  cite:"Discussion-Guide-Rodriguez-Mozaz-and-Weinberg-Student-2026 copy.pdf (Target/MOA); transcript 10/13"},
 
-{id:"L14-031", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"reading", skill:"apply",
+{id:"L14-031", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"reading", skill:"apply", readingId:"rodriguez-mozaz",
  concept:"reading-warming-vs-estrogen", tags:["smith","reading"], source:"transcript",
  stem:"A student asked how we know the shift toward female frogs and alligators is caused by drugs rather than by warmer water. What evidence did she cite?",
  options:[
@@ -432,7 +432,7 @@ QUESTIONS.push(
  quote:"we've done isolated studies of some of these critters, some of these species exposed them to certain doses of like hormones, estrogenic type of. Compounds and we do see a shift ... We need to do other studies as well and see if the warming waters is causing that shift. It could be both.",
  cite:"Discussion-Guide-Rodriguez-Mozaz-and-Weinberg-Student-2026 copy.pdf (Target/MOA); transcript 10/13"},
 
-{id:"L14-032", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"reading", skill:"recall",
+{id:"L14-032", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"reading", skill:"recall", readingId:"rodriguez-mozaz",
  concept:"reading-antibiotic-resistance", tags:["smith","reading"], source:"both",
  stem:"Besides effects on wildlife, which concern about drugs in the environment did she call a real problem?",
  options:[

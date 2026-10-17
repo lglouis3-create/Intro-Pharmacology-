@@ -77,4 +77,5 @@ See `## Conflicts / uncertain` in notes/L01.md, L02.md and L03.md. The ones that
 ## 2026-10-17: Exam 3, lectures 2 and 3 of 5
 - L14 (10/13) and L15 (10/14) ingested from the Echo transcripts first, then the decks (cited by slide title); 70 + 65 questions; guide sections 9–24; reference 10–23; tell3-l14, tell3-l15; 31 glossary terms. Syllabus roster verified (notes/EXAM3.md). L13-032..034 keyed to her 10/13 words; L13-035/036 remain low yield.
 - Next: 10/19 and 10/20 transcripts (decks for 10/19 already in Drive); her Canvas quizzes if shareable.
+- 10/17 later: Readings tab (17 cards, src/readings/*.json + gen_readings.py); her practice quiz 1 in the bank; syllabus of 10/8 noted; UX review report in notes/UX_REVIEW_2026-10-17.md (R1 applied; R2–R9 await the user); daily Drive reminder routine created.
 

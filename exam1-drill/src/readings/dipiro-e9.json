@@ -1,0 +1,283 @@
+{
+ "id": "dipiro-e9",
+ "title": "Chapter e9: Clinical Toxicology",
+ "source": "DiPiro's Pharmacotherapy: A Pathophysiologic Approach, 13th Edition, Chapter e9 (Bryan D. Hayes; Natalija M. Farrell)",
+ "file": "Dipro Chaptere9_ClinicalToxicology.pdf",
+ "lecture": "10/13 and 10/14 (the updated syllabus lists 'Dipiro Chapter 9'); assigned in class on 10/14 for Treating Poisonings, which continues 10/19",
+ "kind": "chapter",
+ "about": "The chapter provides an overview of foundational concepts of clinical toxicology: examples of the spectrum of toxicity, means to recognize poisoning risk, and principles of treatment. It covers the epidemiology of poisoning in the United States, poison prevention strategies such as child-resistant packaging, recognition and assessment of the poisoned patient including urine drug screening, and toxicokinetic considerations in overdose (Table e9-7). The General Approach to Treatment section covers prehospital first aid, hospital supportive care, gastric decontamination (ipecac syrup, single-dose activated charcoal, gastric lavage, whole-bowel irrigation), enhanced elimination and kidney replacement therapy, diuresis, multiple-dose activated charcoal, antidotes (Table e9-9) and how the effectiveness of therapies is assessed. The Clinical Spectrum of Poisoning section then presents acetaminophen, anticholinesterase insecticides, calcium channel antagonists, anticholinergics, opioids and weapons of mass chemical poisoning, each with clinical presentation, mechanism of toxicity, causative agents, incidence, risk assessment, management of toxicity, and monitoring and prevention. The chapter ends with key resources, guidelines, a bibliography and self-assessment questions with answers.",
+ "sections": [
+  "Key Concepts",
+  "Patient Care Process for Prehospital Care of Acute Poisonings",
+  "Introduction (Table e9-1 Serious Toxicity in a Child Associated with Ingestion of One Mouthful or One Dosage Unit)",
+  "Epidemiology (Tables e9-2, e9-3)",
+  "Poison Prevention Strategies (Tables e9-4, e9-5)",
+  "Recognition and Assessment (Table e9-6 Urine Drug Screening; Pharmacogenetic Considerations)",
+  "Toxicokinetic Considerations (Table e9-7)",
+  "General Approach to Treatment",
+  "Prehospital Care: First Aid (Table e9-8); Historical Prehospital Home Care",
+  "Hospital Treatment",
+  "Perspectives on Gastric Decontamination",
+  "Single-Dose Activated Charcoal",
+  "Gastric Lavage",
+  "Whole-Bowel Irrigation",
+  "Enhanced Elimination and Kidney Replacement Therapy",
+  "Diuresis",
+  "Multiple-Dose Activated Charcoal",
+  "Antidotes (Table e9-9 Systemic Antidotes Available in the United States)",
+  "Assessing Effectiveness of Therapies",
+  "Clinical Spectrum of Poisoning",
+  "Acetaminophen (Figure e9-1; acetylcysteine regimens table)",
+  "Anticholinesterase Insecticides (Figures e9-2, e9-3; atropine and pralidoxime table)",
+  "Calcium Channel Antagonists (Figure e9-4)",
+  "Anticholinergics",
+  "Opioids (responses to naloxone table)",
+  "Weapons of Mass Chemical Poisoning (categories of chemicals of mass poisoning table)",
+  "Key Resources",
+  "Guidelines",
+  "Abbreviations",
+  "Bibliography",
+  "Self-Assessment Questions",
+  "Answers"
+ ],
+ "lecture_use": [
+  {
+   "point": "She had the class open the chapter during the break and read the General Approach to Treatment section as the basis for the preventing-absorption discussion (the deck's 'More on preventing absorption' slide cites 'Dipiro's Pharmacotherapy A Pathophysiological Approach, Chapt e9').",
+   "chapter_location": "General Approach to Treatment",
+   "lecture_evidence": {
+    "date": "10/14",
+    "quote": "This section, general, general general approach to treatment, because I want to just go over some of the ideas that are listed in just this section. It's a pretty quick read."
+   },
+   "date": ""
+  },
+  {
+   "point": "She told the class which subsections to skip for now (enhanced elimination, kidney replacement therapy, diuresis) and to read down to multiple-dose activated charcoal.",
+   "chapter_location": "Enhanced Elimination and Kidney Replacement Therapy; Diuresis; Multiple-Dose Activated Charcoal",
+   "lecture_evidence": {
+    "date": "10/14",
+    "quote": "You can skip This Enhanced elimination and kidney replacement therapy and diuresis. I'll talk about it, but, um, and get on down to just multiple dose activated charcoal."
+   },
+   "date": ""
+  },
+  {
+   "point": "Pharmacokinetics in overdose differ from therapeutic doses: bioavailability rises because first-pass metabolism is saturated (Table e9-7 also lists decreased serum protein binding and slowed elimination from saturated biotransformation).",
+   "chapter_location": "Toxicokinetic Considerations; Table e9-7 Examples of the Influence of Drug Overdosage on Pharmacokinetic and Pharmacodynamic Characteristics",
+   "lecture_evidence": {
+    "date": "10/14",
+    "quote": "So, most often we see that the parameter of volume of distribution and the parameter of clearance will change significantly when there's an overdose situation."
+   },
+   "date": ""
+  },
+  {
+   "point": "Only drugs with a small volume of distribution (<1 L/kg), low protein binding and low molecular weight are dialyzable - the reason large-Vd drugs resist hemodialysis.",
+   "chapter_location": "Enhanced Elimination and Kidney Replacement Therapy",
+   "lecture_evidence": {
+    "date": "10/14",
+    "quote": "Why would drugs with very large volumes of distribution be very challenging to remove by hemodialysis? What does that large volume of distribution mean when we think about where the drug went in the body."
+   },
+   "date": ""
+  },
+  {
+   "point": "Ipecac syrup, once kept in households to induce vomiting, is no longer recommended and is no longer manufactured in the United States.",
+   "chapter_location": "Prehospital Care - Table e9-8 First Aid for Poison Exposures; Historical Prehospital Home Care; Key Concepts",
+   "lecture_evidence": {
+    "date": "10/14",
+    "quote": "So you'll find in this chapter they state, we no longer use Emesis. You used to have Emmis Ipecac bottles in people's homes, right?"
+   },
+   "date": ""
+  },
+  {
+   "point": "The chapter's gastric decontamination review is where the class should learn that emesis, lavage, whole-bowel irrigation and cathartics are no longer routine; aspiration is the risk she emphasized.",
+   "chapter_location": "Key Concepts; Perspectives on Gastric Decontamination",
+   "lecture_evidence": {
+    "date": "10/14",
+    "quote": "They don't even use it anymore in hospitals, OK, because it's too risky. What's the risk of emesis? Aspiration is the biggest risk."
+   },
+   "date": ""
+  },
+  {
+   "point": "Gastric lavage is done only by experienced clinicians, with relative contraindications and complications including esophageal and gastric perforation.",
+   "chapter_location": "Gastric Lavage",
+   "lecture_evidence": {
+    "date": "10/14",
+    "quote": "So gastric lavage, you don't wanna do it for anybody that has any sort of esophageal rupture, issues with their stomach, all that dangerous, dangerous."
+   },
+   "date": ""
+  },
+  {
+   "point": "Experienced toxicologists may still consider lavage or whole-bowel irrigation for potentially life-threatening ingestions.",
+   "chapter_location": "Gastric Lavage; Whole-Bowel Irrigation",
+   "lecture_evidence": {
+    "date": "10/14",
+    "quote": "They, they might try gastric lavage. They will probably try to do whole bowel irrigation, OK?"
+   },
+   "date": ""
+  },
+  {
+   "point": "Whole-bowel irrigation uses polyethylene glycol electrolyte solutions (GoLYTELY, Colyte) and is contraindicated with ileus or intestinal obstruction.",
+   "chapter_location": "Whole-Bowel Irrigation",
+   "lecture_evidence": {
+    "date": "10/14",
+    "quote": "Again, you've got to make sure people don't have any issues with no ileus, no blockages in the gut."
+   },
+   "date": ""
+  },
+  {
+   "point": "Activated charcoal is a slurry that patients find unpleasant; vomiting and pulmonary aspiration are the main risks.",
+   "chapter_location": "Single-Dose Activated Charcoal",
+   "lecture_evidence": {
+    "date": "10/14",
+    "quote": "They, they put it in a slurry in water and try to get somebody to gag it down, OK? OK, it's not pleasant, very, very messy."
+   },
+   "date": ""
+  },
+  {
+   "point": "Activated charcoal does not adsorb every toxin (the chapter: ineffective for iron, lead, lithium, alcohols, aliphatic hydrocarbons and corrosives).",
+   "chapter_location": "Single-Dose Activated Charcoal",
+   "lecture_evidence": {
+    "date": "10/14",
+    "quote": "So not every compound a person ingests is going to be grabbed and absorbed by charcoal."
+   },
+   "date": ""
+  },
+  {
+   "point": "Single-dose activated charcoal is most effective when given within the first hour (up to 2 hours) after ingestion.",
+   "chapter_location": "Single-Dose Activated Charcoal",
+   "lecture_evidence": {
+    "date": "10/14",
+    "quote": "So, single dose activated charcoal, we say it probably needs to be done within 1 to 2 hours of somebody ingesting whatever they overdosed on."
+   },
+   "date": ""
+  },
+  {
+   "point": "Multiple-dose activated charcoal can interrupt the enterohepatic recirculation of certain drugs and enhance their clearance (charcoal intestinal dialysis).",
+   "chapter_location": "Multiple-Dose Activated Charcoal",
+   "lecture_evidence": {
+    "date": "10/14",
+    "quote": "We can use it if the substance they overdosed on undergoes enterohepatic recirculation."
+   },
+   "date": ""
+  },
+  {
+   "point": "The American and European clinical toxicology associations have published position statements concluding that no gastric decontamination method should be used routinely.",
+   "chapter_location": "Perspectives on Gastric Decontamination (American Academy of Clinical Toxicology and European Association of Poison Centers and Clinical Toxicologists position statements)",
+   "lecture_evidence": {
+    "date": "10/14",
+    "quote": "The American Poison Control Centers and also the European poison control centers have all in the last decade or so put forth statements about whether or not these things, whether or not they think these methods should be used, and they all basically say they're dangerous, they're risky, only use them if you really think you have to."
+   },
+   "date": ""
+  },
+  {
+   "point": "Evidence for treating overdoses comes from case reports and case series rather than controlled trials of poisoned patients.",
+   "chapter_location": "Assessing Effectiveness of Therapies",
+   "lecture_evidence": {
+    "date": "10/14",
+    "quote": "The data for these evidence-based guidance documents comes from people overdosing, clinicians, pharmacists, doctors write up the case, get it published, and it's in the literature."
+   },
+   "date": ""
+  }
+ ],
+ "read_for": [
+  "General Approach to Treatment - the section she told the class to read during the break and said she would use to generate discussion.",
+  "Perspectives on Gastric Decontamination: the AACT/EAPCCT position statements (clintox.org) that no gastric decontamination should be used routinely.",
+  "Single-Dose Activated Charcoal: the adult dose (25-100 g; 1 g/kg in children), effectiveness within 1 hour, the toxins it does not adsorb (iron, lead, lithium, alcohols, aliphatic hydrocarbons, corrosives), and the aspiration risk and contraindications.",
+  "Gastric Lavage: experienced clinicians only, life-threatening ingestions within 1 hour or substances not adsorbed by charcoal, intubation if no gag reflex, complications, and that fewer than 0.1% of cases received it in the 2022 APC-NPDS report.",
+  "Whole-Bowel Irrigation: GoLYTELY/Colyte for sustained-release or enteric-coated drugs, iron, lithium, potassium and swallowed drug packets; contraindications (ileus, obstruction, perforation, hemorrhage, unprotected airway).",
+  "Multiple-Dose Activated Charcoal: charcoal intestinal dialysis, interruption of enterohepatic recirculation, the five drugs for which it is recommended (carbamazepine, dapsone, phenobarbital, quinine, theophylline), the 12.5-25 g every 2-6 h schedule and avoidance of sorbitol formulations.",
+  "Table e9-8 First Aid for Poison Exposures and Historical Prehospital Home Care: why ipecac syrup is no longer recommended or sold.",
+  "Toxicokinetic Considerations and Table e9-7: saturation of first-pass metabolism, concretions and slowed GI motility, decreased protein binding and saturated biotransformation in overdose.",
+  "Enhanced Elimination and Kidney Replacement Therapy: the physicochemical criteria for a dialyzable drug (Vd <1 L/kg, protein binding <80%, molecular weight <1,000 daltons) and the EXTRIP guidelines - she said she would talk about it.",
+  "Assessing Effectiveness of Therapies: why the evidence base is case reports, volunteer studies and in vitro adsorption tests rather than controlled trials."
+ ],
+ "beyond_lecture": [
+  "Epidemiology (Tables e9-2, e9-3) and Poison Prevention Strategies (Poison Prevention Packaging Act, Tables e9-4, e9-5) - not covered.",
+  "Recognition and Assessment, including Table e9-6 on urine drug-screen immunoassays and the pharmacogenetic (CYP2D6/codeine) considerations - not covered.",
+  "Diuresis: urinary alkalinization with sodium bicarbonate for salicylates and phenobarbital, and why acid and general diuresis are not used - she said to skip it; the deck's 'Enhance Renal Elimination' slide is for 10/19.",
+  "Antidotes and Table e9-9 Systemic Antidotes Available in the United States, including the chelators listed there (dimercaprol, edetate calcium disodium, succimer, deferoxamine, penicillamine) - the antidotes and chelators are deferred to 10/19.",
+  "Clinical Spectrum of Poisoning: Acetaminophen (Rumack-Matthew nomogram, IV versus oral acetylcysteine), Anticholinesterase Insecticides (atropine and pralidoxime), Calcium Channel Antagonists (calcium, high-dose insulin, lipid emulsion, ECMO), Anticholinergics (physostigmine) and Opioids (naloxone dosing) - the toxidromes and specific poisonings are deferred to 10/19.",
+  "Weapons of Mass Chemical Poisoning (categories of chemical agents, nerve agents, autoinjectors) - not covered.",
+  "Key Resources, Guidelines (including the St-Onge calcium channel blocker consensus and the 2023 AHA poisoning update), Self-Assessment Questions and Answers - not covered."
+ ],
+ "terms": [
+  {
+   "term": "poisoning",
+   "chapter_definition": "Poisoning can result from exposure to excessive doses of any chemical, with medicines being responsible for most childhood and adult poisonings; virtually any chemical can become a poison when taken in enough quantity."
+  },
+  {
+   "term": "toxidrome",
+   "chapter_definition": "Compounds that produce characteristic clinical pictures (toxidromes), such as opioid poisoning with pinpoint pupils, central nervous system (CNS) depression, and respiratory depression, are most readily recognizable."
+  },
+  {
+   "term": "toxicokinetics (overdose pharmacokinetics)",
+   "chapter_definition": "The pharmacokinetic characteristics of drugs taken in overdose may differ from those observed following therapeutic doses; the differences are the result of dose-dependent changes in absorption, distribution, metabolism, or elimination, pharmacologic effects of the drug, or pathophysiologic consequences of the overdose."
+  },
+  {
+   "term": "ipecac syrup",
+   "chapter_definition": "Induced vomiting with ipecac syrup was once routinely used to treat ingested poisons at home; in 2003 the American Academy of Pediatrics issued a policy statement that it should no longer be used routinely, and it is no longer manufactured in the United States."
+  },
+  {
+   "term": "activated charcoal",
+   "chapter_definition": "a nontoxic, relatively inexpensive, purified form of carbon with a highly adsorbent surface that binds (adsorbs) a toxin in the GI tract; a slurry of activated charcoal in water is administered orally or via nasogastric tube."
+  },
+  {
+   "term": "gastric lavage",
+   "chapter_definition": "washing out of gastric contents through an orogastric tube; if performed at all, should only be done by clinicians experienced in the procedure, and may be considered for potentially life-threatening ingestions when the ingestion occurred within 1 hour or when the substance is not adsorbed by activated charcoal."
+  },
+  {
+   "term": "whole-bowel irrigation",
+   "chapter_definition": "Polyethylene glycol electrolyte solutions, such as GoLYTELY and Colyte, used routinely for whole-bowel irrigation prior to colonoscopy, administered orally or by nasogastric tube to decontaminate the GI tract of certain ingested substances."
+  },
+  {
+   "term": "charcoal intestinal dialysis (charcoal-enhanced intestinal exsorption)",
+   "chapter_definition": "the attraction of drug molecules across the capillary bed of the intestine by activated charcoal in the intestinal lumen and subsequent adsorption of the drug to the charcoal; multiple doses of activated charcoal can augment the body's clearance of certain drugs."
+  },
+  {
+   "term": "enterohepatic recirculation (and multiple-dose charcoal)",
+   "chapter_definition": "multiple-dose activated charcoal may interrupt the enterohepatic recirculation of certain drugs; once the drug is adsorbed to the charcoal, it is eliminated with the charcoal in the stool."
+  },
+  {
+   "term": "dialyzable drug",
+   "chapter_definition": "drugs with a small volume of distribution (<1 L/kg), low protein binding (<80%) and low molecular weight (<1,000 daltons) are generally considered dialyzable; hemodialysis is used in select situations such as methanol, ethylene glycol, lithium, salicylate and theophylline poisoning."
+  },
+  {
+   "term": "ionized diuresis",
+   "chapter_definition": "altering urinary pH may increase excretion of certain chemicals that are weak acids or bases by trapping ionized drug in the renal tubule and minimizing reabsorption."
+  },
+  {
+   "term": "antidote",
+   "chapter_definition": "Antidotes can prevent or reduce the toxicity of certain poisons, but symptomatic and supportive care is essential for all patients; specific systemic antidotes are available for some common poisonings (Table e9-9)."
+  }
+ ],
+ "discussed_in_class": true,
+ "her_words": [
+  {
+   "t": "If you've come back already and, and are relaxing in your seat, and if you have not taken a glance at Dipiro chapter 9, I would like you to do that while I just run down the hall for a second.",
+   "date": "10/14"
+  },
+  {
+   "t": "This is actually your pharmacotherapy textbook, so a lot of your clinical faculty will have you be reading out of this, but I pull chapters out of this too, cause it helps with some of the topics I cover for you guys. So, if you would, while I'm running down the hall, get into Dipiro's, the 13th edition. And find a chapter 9. Clinical toxicology.",
+   "date": "10/14"
+  },
+  {
+   "t": "This section, general, general general approach to treatment, because I want to just go over some of the ideas that are listed in just this section. It's a pretty quick read. You don't even need to go past um. You can skip This Enhanced elimination and kidney replacement therapy and diuresis. I'll talk about it, but, um, and get on down to just multiple dose activated charcoal. You don't need to read the whole thing. I mean, I hope you read it before you came to class, but we'll use this to generate some discussion, and I'll keep this up and we'll, we'll get into this chapter.",
+   "date": "10/14"
+  },
+  {
+   "t": "Really, your only references will be the chapters that I'm asking you to read or a paper that I might ask you to read, OK?",
+   "date": "10/14"
+  },
+  {
+   "t": "If you read that section of the Dipiro chapter that I had you guys pull up as I went off on my own little tiny break, that section of the chapter talks about each of those methods for trying to prevent absorption, and I want you to read that because you will see over time that our, our, um, uh, uh, sorry, I really am losing it. What's the word I'm looking for? Um, our use of these, of these methods has changed. So you'll find in this chapter they state, we no longer use Emesis.",
+   "date": "10/14"
+  },
+  {
+   "t": "OK, so read that section of, of chapter E9 in your Depiro textbook. It's not very long. It's really, and it's not, it's not rocket science, but read that so that you know where we stand on whether or not we will try these methods to prevent absorption.",
+   "date": "10/14"
+  },
+  {
+   "t": "So I want you to read that chapter.",
+   "date": "10/14"
+  }
+ ],
+ "truncated": false
+}

@@ -1,0 +1,98 @@
+{
+ "id": "katzung-57",
+ "title": "Chapter 57: Heavy Metal Intoxication & Chelators",
+ "source": "Katzung's Basic & Clinical Pharmacology, 16th Edition, Chapter 57 (Michael J. Kosnett)",
+ "file": "Katzung Chapter 57: Heavy Metal Intoxication & Chelators",
+ "lecture": "10/13 and 10/14 (Toxic Responses and Treating Poisonings); the Treating Poisonings chelator slides were not reached on 10/14 and were deferred to Monday 10/19",
+ "kind": "chapter",
+ "about": "Some metals such as iron are essential for life, whereas others such as lead are present in all organisms but serve no useful biologic purpose, and toxic heavy metals interfere with the function of essential cations, cause enzyme inhibition, generate oxidative stress, alter gene expression, and perturb cell signaling, so multisystem signs and symptoms are a hallmark of heavy metal intoxication. The first part of the chapter covers the toxicology of lead, arsenic and mercury: sources of exposure, pharmacokinetics (Table 57-1), pharmacodynamics by organ system, the major forms of intoxication (acute and chronic inorganic lead, organolead, acute and chronic inorganic arsenic, arsine gas, elemental, inorganic and organic mercury), and treatment. The second part covers the pharmacology of chelators, drugs used to prevent or reverse the toxic effects of a heavy metal on an enzyme or other cellular target, or to accelerate the elimination of the metal from the body, with Figure 57-1 showing the hexadentate lead-edetate chelate and Figure 57-2 the chemical structures of several chelators. The individual agents described are dimercaprol (BAL), succimer (DMSA), edetate calcium disodium (EDTA), unithiol (DMPS), penicillamine, deferoxamine, deferasirox and deferiprone, and Prussian blue, each with pharmacokinetics, indications and toxicity. A case study of an outbreak of vomiting, hypotension and anion gap metabolic acidosis after a church social is answered at the end as deliberate inorganic arsenic contamination of coffee, treated empirically with unithiol, succimer or dimercaprol.",
+ "sections": [
+  "Case Study",
+  "Toxicology of Heavy Metals",
+  "Lead (Pharmacokinetics; Pharmacodynamics; Major Forms of Lead Intoxication; Treatment)",
+  "Arsenic (Pharmacokinetics; Pharmacodynamics; Major Forms of Arsenic Intoxication)",
+  "Mercury (Pharmacokinetics; Major Forms of Mercury Intoxication; Treatment)",
+  "Pharmacology of Chelators",
+  "Dimercaprol (2,3-Dimercaptopropanol, BAL)",
+  "Succimer (Dimercaptosuccinic Acid, DMSA)",
+  "Edetate Calcium Disodium (Ethylenediaminetetraacetic Acid, EDTA)",
+  "Unithiol (Dimercaptopropanesulfonic Acid, DMPS)",
+  "Penicillamine (D-Dimethylcysteine)",
+  "Deferoxamine",
+  "Deferasirox & Deferiprone",
+  "Prussian Blue (Ferric Hexacyanoferrate)",
+  "Preparations Available",
+  "Case Study Answer",
+  "References"
+ ],
+ "lecture_use": [],
+ "read_for": [
+  "Pharmacology of Chelators (opening section): what a chelating agent is, the coordinating atoms (oxygen, sulfur, nitrogen) that donate electrons to the metal, and mono-, bi- or polydentate complexes; this is the content of her 'Inactivation of Poisons: Heavy Metal Chelators' slide, deferred to 10/19",
+  "Figure 57-1: salt and chelate formation with edetate (EDTA) and the lead-edetate chelate with lead in five heterocyclic rings; her 'Structure of chelators' slide",
+  "Figure 57-2: chemical structures of several chelators (dimercaprol, succimer, penicillamine, unithiol, deferoxamine/ferroxamine)",
+  "Pharmacology of Chelators: metal redistribution by chelators (dimercaprol moves mercury and arsenic to the brain; cadmium to the kidney), loss of essential cations (zinc, copper), bone versus soft-tissue retention, and timing after acute exposure",
+  "Dimercaprol (BAL): British anti-lewisite, 10% solution in peanut oil given intramuscularly, FDA approved for acute arsenic and inorganic mercury poisoning and severe lead poisoning with EDTA; listed on her 'Example Chelating Agents' slide",
+  "Succimer (DMSA): water-soluble oral analog of dimercaprol for lead (children with blood lead >45 mcg/dL), also used for arsenic and mercury; 'Taking place of Dimercaprol' on her slide",
+  "Edetate Calcium Disodium (EDTA): intravenous chelator of extracellular lead; why only the calcium disodium salt is used; nephrotoxicity and the 2014 price increase and shortage",
+  "Deferoxamine and Deferasirox & Deferiprone: parenteral and oral iron chelators; deferoxamine turns the urine orange-red; her slide lists deferasirox as 'Orally bioavailable, recently FDA approved'",
+  "Penicillamine: copper chelator for Wilson disease, caution in penicillin allergy; Prussian blue for radioactive cesium and thallium",
+  "Lead, Arsenic and Mercury Treatment subsections (which chelator for which metal: EDTA/dimercaprol/succimer for lead, unithiol/dimercaprol/succimer for arsenic and inorganic mercury) and Table 57-1"
+ ],
+ "beyond_lecture": [
+  "Lead: sources of exposure, Pharmacokinetics (absorption 10-15% adults vs up to 50% children, bone storage), and the organ-system Pharmacodynamics (nervous system, blood, kidneys, reproductive organs, GI tract, cardiovascular system)",
+  "Major Forms of Lead Intoxication (acute and chronic inorganic lead, organolead) and the Prevention of Lead Poisoning table of sources and preventive measures",
+  "Arsenic: history (Fowler's solution, lewisite, arsenic trioxide), Pharmacokinetics (methylation), Pharmacodynamics, and the acute, chronic and arsine gas poisoning subsections",
+  "Mercury: Minamata, industrial uses and the Minamata Convention, Pharmacokinetics by chemical form, acute and chronic intoxication (including methylmercury and acrodynia), and Treatment",
+  "Unithiol (DMPS) regulatory status and dosing, and the edetate disodium cardiovascular trial discussion",
+  "Preparations Available table, the Case Study and Case Study Answer (arsenic-adulterated coffee), and References"
+ ],
+ "terms": [
+  {
+   "term": "Chelating agents",
+   "chapter_definition": "Drugs used to prevent or reverse the toxic effects of a heavy metal on an enzyme or other cellular target, or to accelerate the elimination of the metal from the body; by forming a complex with the heavy metal, the chelating agent renders the metal unavailable for toxic interactions."
+  },
+  {
+   "term": "Chelator (from chela)",
+   "chapter_definition": "Chelator molecules (from chela 'claw'), or their in vivo biotransformation products, may be used to bind the metal and facilitate its excretion from the body."
+  },
+  {
+   "term": "Coordinating atoms / mono-, bi-, polydentate",
+   "chapter_definition": "Chelating agents contain one or more coordinating atoms, usually oxygen, sulfur, or nitrogen, which donate a pair of electrons to a cationic metal ion to form one or more coordinate-covalent bonds; depending on the number of metal-ligand bonds, the complex may be referred to as mono-, bi-, or polydentate."
+  },
+  {
+   "term": "Dimercaprol (BAL)",
+   "chapter_definition": "An oily, colorless liquid with a strong mercaptan-like odor, developed in Great Britain during World War II as a therapeutic antidote against poisoning by the arsenic-containing warfare agent lewisite; thus known as British anti-lewisite."
+  },
+  {
+   "term": "Succimer (DMSA)",
+   "chapter_definition": "A water-soluble analog of dimercaprol; in humans, treatment with succimer is associated with an increase in urinary lead excretion and a decrease in blood lead concentration; formulated exclusively for oral use in the USA."
+  },
+  {
+   "term": "Edetate calcium disodium (EDTA)",
+   "chapter_definition": "An efficient chelator of many divalent and trivalent metals in vitro; to prevent potentially life-threatening depletion of calcium, treatment of metal intoxication should only be performed with the calcium disodium salt form of EDTA; indicated chiefly for the chelation of lead."
+  },
+  {
+   "term": "Unithiol (DMPS)",
+   "chapter_definition": "A dimercapto chelating agent that is a water-soluble analog of dimercaprol; can be administered orally and intravenously; increases the excretion of mercury, arsenic, and lead in humans."
+  },
+  {
+   "term": "Penicillamine",
+   "chapter_definition": "A white, crystalline, water-soluble derivative of penicillin, used chiefly for treatment of poisoning with copper or to prevent copper accumulation, as in Wilson disease."
+  },
+  {
+   "term": "Deferoxamine",
+   "chapter_definition": "Isolated from Streptomyces pilosus; it binds iron avidly but binds essential trace metals poorly; the parenteral chelator of choice for iron poisoning."
+  },
+  {
+   "term": "Deferasirox",
+   "chapter_definition": "A tridentate chelator with a high affinity for iron and low affinity for other metals; orally active and well absorbed; approved by the FDA in 2005 for the oral treatment of iron overload caused by blood transfusions."
+  },
+  {
+   "term": "Prussian blue (ferric hexacyanoferrate)",
+   "chapter_definition": "A hydrated crystalline compound in which Fe2+ and Fe3+ atoms are coordinated with cyanide groups in a cubic lattice structure; high affinity for cesium and thallium; approved in 2003 for radioactive cesium contamination and thallium intoxication."
+  }
+ ],
+ "discussed_in_class": false,
+ "her_words": [],
+ "truncated": false
+}
