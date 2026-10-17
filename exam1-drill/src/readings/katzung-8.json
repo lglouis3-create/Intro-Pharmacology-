@@ -1,0 +1,64 @@
+{
+ "id": "katzung-8",
+ "kind": "chapter",
+ "exam": 2,
+ "title": "Chapter 8: Cholinoceptor-Blocking Drugs",
+ "source": "Katzungʼs Basic & Clinical Pharmacology, 16th Edition",
+ "authors": "Todd W. Vanderah",
+ "file": "Chapter 8_ Cholinoceptor-Blocking Drugs.pdf",
+ "lecture": "10/5; 10/6",
+ "numbering_note": "The syllabus pairs Chapter 8 with the 10/5 neuromuscular junction / nicotinic receptor lecture. In Katzung 16e, Chapter 8 covers muscarinic blockers and ganglion (neuronal nicotinic) blockers only; the chapter itself says neuromuscular blockers 'are heavily used and are discussed in Chapter 27'. Nicotinic receptor basics and cholinesterase inhibitors are in Chapter 7, which was not found in Drive.",
+ "about": "Cholinoceptor antagonists, like the agonists, are divided into muscarinic and nicotinic subgroups on the basis of their specific receptor affinities. Ganglion blockers and neuromuscular junction blockers make up the antinicotinic drugs. This chapter emphasizes drugs that block muscarinic acetylcholine receptors.",
+ "sections": [
+  "Basic Pharmacology of the Muscarinic Receptor-Blocking Drugs (chemistry & pharmacokinetics, pharmacodynamics, organ system effects)",
+  "Clinical Pharmacology of the Muscarinic Receptor-Blocking Drugs (CNS, eye, respiratory, cardiovascular, GI, urinary, cholinergic poisoning, mushroom poisoning, adverse effects, contraindications)",
+  "Basic & Clinical Pharmacology of the Ganglion-Blocking Drugs"
+ ],
+ "read_for": [
+  "Opening pages and Figure 8-1: M1-M5 subtype locations (M1 neuronal, M2 heart, M3 glands/smooth muscle), orthosteric site vs allosteric 'vestibule' (10/6).",
+  "Table 8-1 'Muscarinic receptor subgroups and their antagonists/inverse agonists': subtype, G protein (Gq vs Gi), and selective blockers (pirenzepine, darifenacin).",
+  "'Chemistry & Pharmacokinetics': atropine/scopolamine as tertiary amines vs quaternary amines (CNS penetration, oral absorption 10-30%).",
+  "'Pharmacodynamics' mechanism of action: competitive, surmountable blockade of acetylcholine; Figure 8-4/8-5 organ system effects of atropine.",
+  "'Cholinergic Poisoning' and 'Treatment of Anticholinesterase Poisoning': atropine plus pralidoxime (cholinesterase regenerator) - links to the Ch 7 material missing from Drive.",
+  "'Ganglion-Blocking Drugs': competitive block of neuronal nicotinic receptors (hexamethonium, mecamylamine) and why loss of all autonomic outflow limits use (10/5 nicotinic topic)."
+ ],
+ "beyond_lecture": [
+  "Table 8-2 ophthalmic antimuscarinics and Table 8-3 GI/GU agents (durations, dosing).",
+  "Clinical uses in motion sickness, Parkinson disease, COPD/asthma (ipratropium, tiotropium), overactive bladder (oxybutynin, darifenacin, solifenacin).",
+  "Mushroom poisoning and antimuscarinic toxicity ('dry as a bone, blind as a bat...') and contraindications (glaucoma, prostatic hyperplasia).",
+  "Summary table 'Drugs with Anticholinergic Actions' and preparations available."
+ ],
+ "terms": [
+  {
+   "term": "Antimuscarinic (parasympatholytic)",
+   "chapter_definition": "muscarinic antagonists are sometimes called parasympatholytic because they block the effects of parasympathetic autonomic discharge; the term 'antimuscarinic' is preferable."
+  },
+  {
+   "term": "Atropine",
+   "chapter_definition": "the prototype of the antimuscarinic drugs; a tertiary amine alkaloid ester of tropic acid found in Atropa belladonna and Datura stramonium."
+  },
+  {
+   "term": "Quaternary amine antimuscarinics",
+   "chapter_definition": "developed to produce more peripheral effects and reduced CNS effects; only 10-30% of an oral dose is absorbed, reflecting the decreased lipid solubility of the charged molecule."
+  },
+  {
+   "term": "M1 / M2 / M3 receptors",
+   "chapter_definition": "M1 is located on CNS neurons, autonomic postganglionic cell bodies, and many presynaptic sites; M2 in the myocardium, smooth muscle organs, and some neuronal sites; M3 most common on effector cell membranes, especially glandular and smooth muscle cells."
+  },
+  {
+   "term": "Vestibule",
+   "chapter_definition": "an upper cavity separated by a 'lid' from the orthosteric binding site; the binding site for allosteric ligands, comprised of different amino acids among subtypes."
+  },
+  {
+   "term": "Ganglion-blocking agents",
+   "chapter_definition": "competitively block the action of acetylcholine and similar agonists at neuronal nicotinic receptors of both parasympathetic and sympathetic autonomic ganglia."
+  },
+  {
+   "term": "Hexamethonium ('C6')",
+   "chapter_definition": "introduced clinically as the first drug effective for management of hypertension; decamethonium, the 'C10' analog, is a depolarizing neuromuscular blocking agent."
+  }
+ ],
+ "discussed_in_class": null,
+ "her_words": [],
+ "truncated": false
+}

@@ -113,6 +113,18 @@ for (const q of QUESTIONS) {
     }
   }
 }
+// readings: unique ids, every linked anchor exists on a page, every question's reading exists
+if (typeof READINGS !== 'undefined') {
+  const rids = new Set();
+  const pagesHtml = [typeof GUIDE_HTML === 'undefined' ? '' : GUIDE_HTML, typeof GUIDE2_HTML === 'undefined' ? '' : GUIDE2_HTML, typeof GUIDE3_HTML === 'undefined' ? '' : GUIDE3_HTML, REFERENCE_HTML, typeof REFERENCE2_HTML === 'undefined' ? '' : REFERENCE2_HTML, typeof REFERENCE3_HTML === 'undefined' ? '' : REFERENCE3_HTML, TELL_HTML, typeof TELL2_HTML === 'undefined' ? '' : TELL2_HTML, typeof TELL3_HTML === 'undefined' ? '' : TELL3_HTML].join('');
+  for (const r of READINGS) {
+    if (rids.has(r.id)) bad('readings', 'duplicate id ' + r.id); rids.add(r.id);
+    for (const k of ['title', 'about', 'exam', 'status']) if (r[k] == null || r[k] === '') bad('readings ' + r.id, 'missing ' + k);
+    for (const [v, a] of r.links || []) if (!pagesHtml.includes('id="' + a + '"')) bad('readings ' + r.id, 'link anchor missing: ' + a);
+    for (const u of r.lecture_use || []) if (!u.point) bad('readings ' + r.id, 'lecture_use without a point');
+  }
+  QUESTIONS.forEach(q => { if (q.readingId && !rids.has(q.readingId)) bad(q.id, 'readingId not in READINGS: ' + q.readingId); });
+}
 // every tell-apart row names a question id that exists
 const tellIds = [...TELL_HTML.matchAll(/data-q="([^"]+)"/g)].map(m => m[1]);
 tellIds.forEach(id => { if (!ids.has(id)) bad('tell', 'row cites missing question ' + id); });

@@ -2,6 +2,14 @@
 
 Newest first. The build embeds this file; the Topics page shows what is new since your last visit, and the Progress page shows all of it. Keep each bullet to one short line.
 
+## 2026-10-17 (Readings page)
+
+- New Readings tab: one card per assigned reading, grouped by exam, the exam being studied open.
+- Each card: what it covers, status (discussed, assigned, upcoming, his chapter), a Drill button, her quiz items.
+- Folds open on tap: Read for; Where her lecture used it (her quotes); Her words about it; Terms; Beyond the lecture.
+- Exam 3: Casarett Ch. 2, the water article, Katzung 57, 58 and 5, DiPiro e9 and e6, two AAPCC guidelines.
+- Exams 1 and 2: his Katzung chapters, with the chapter-number mismatches in the syllabus noted on the cards.
+
 ## 2026-10-17 (Her practice quiz 1; syllabus of 10/8)
 
 - Smith practice quiz 1 in the bank word for word with her keys (ten items, four true/false, two short answer).

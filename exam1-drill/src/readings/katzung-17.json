@@ -1,0 +1,72 @@
+{
+ "id": "katzung-17",
+ "kind": "chapter",
+ "exam": 2,
+ "title": "Chapter 17: Vasoactive Peptides",
+ "source": "Katzungʼs Basic & Clinical Pharmacology, 16th Edition",
+ "authors": "Ian A. Reid",
+ "file": "Chapter 17_ Vasoactive Peptides.pdf",
+ "lecture": "10/8",
+ "about": "A wide variety of peptides play important roles in the regulation of the cardiovascular system by acting at several levels in the body. Peptides that participate in cardiovascular control include the vasoconstrictors angiotensin II, vasopressin, endothelins, neuropeptide Y, and urotensin; and the vasodilators bradykinin and related kinins, natriuretic peptides, vasoactive intestinal peptide, substance P, neurotensin, calcitonin gene-related peptide, adrenomedullin, relaxin, and the urocortins. This chapter focuses on the vasoactive peptides, with emphasis on their actions on the cardiovascular system. The vasoconstrictors are considered first, followed by the vasodilators.",
+ "sections": [
+  "Vasoconstrictors: Angiotensin (biosynthesis, renin and control of renin release, angiotensinogen, ACE, angiotensinase; actions of angiotensin II; angiotensin receptors & mechanism of action; inhibition of the renin-angiotensin system: drugs that block renin release, renin inhibitors, ACE inhibitors, ARBs), Vasopressin, Endothelins, Neuropeptide Y, Urotensin",
+  "Vasodilators: Kinins, Natriuretic Peptides, Vasoactive Intestinal Peptide, Substance P, Neurotensin, CGRP, Adrenomedullin, Relaxin, Urocortins",
+  "Vasoactive Peptides: Summary and Perspective; Summary table; Preparations available"
+ ],
+ "read_for": [
+  "'Biosynthesis of Angiotensin' and Figure 17-1: angiotensinogen -> (renin) -> ANG I -> (ACE) -> ANG II -> angiotensinases; renin as the rate-limiting step (10/8).",
+  "'Control of Renin Release' A-D and Figure 17-2: macula densa NaCl sensing, renal baroreceptor, sympathetic beta1 stimulation, ANG II short-loop negative feedback.",
+  "'Converting Enzyme (ACE, kininase II)': converts ANG I to ANG II and inactivates bradykinin - the basis of ACE-inhibitor cough and angioedema.",
+  "'Actions of Angiotensin II': blood pressure, adrenal cortex (aldosterone) & kidney, CNS, cell growth.",
+  "'Angiotensin Receptors': AT1 (Gq-PLC-IP3/DAG, vascular smooth muscle contraction) vs AT2 (NO-dependent vasodilation).",
+  "'Inhibition of the Renin-Angiotensin System' (Figure 17-3): beta blockers block renin release, aliskiren, ACE inhibitors (captopril, enalapril), ARBs (losartan, valsartan), and pregnancy contraindication.",
+  "'Summary: Renin-Angiotensin System' - the one-paragraph recap for the exam."
+ ],
+ "beyond_lecture": [
+  "Vasopressin, endothelins (ET-1, ETA/ETB, bosentan and relatives for pulmonary hypertension), neuropeptide Y, urotensin.",
+  "Kinins (bradykinin B1/B2, icatibant, hereditary angioedema drugs) and natriuretic peptides (ANP/BNP/CNP, neprilysin, sacubitril/valsartan).",
+  "VIP, substance P (aprepitant), CGRP antagonists for migraine, adrenomedullin, relaxin, urocortins.",
+  "ANG 1-7/Mas receptor and the (pro)renin receptor; Marfan syndrome and losartan."
+ ],
+ "terms": [
+  {
+   "term": "Renin",
+   "chapter_definition": "an aspartyl protease enzyme that specifically catalyzes the hydrolytic release of the decapeptide ANG I from angiotensinogen; synthesized, stored and released by juxtaglomerular cells."
+  },
+  {
+   "term": "Angiotensinogen",
+   "chapter_definition": "the circulating protein substrate from which renin cleaves ANG I; synthesized in the liver; production increased by corticosteroids, estrogens, thyroid hormones, and ANG II."
+  },
+  {
+   "term": "Converting enzyme (ACE, peptidyl dipeptidase, kininase II)",
+   "chapter_definition": "a dipeptidyl carboxypeptidase whose most important substrates are ANG I, which it converts to ANG II, and bradykinin, which it inactivates."
+  },
+  {
+   "term": "Macula densa",
+   "chapter_definition": "a specialized segment of the nephron closely associated with the afferent arteriole; signals changes in renin release such that there is an inverse relationship between NaCl delivery or concentration and renin release."
+  },
+  {
+   "term": "AT1 receptor",
+   "chapter_definition": "a Gq protein-coupled receptor that mediates most of the known actions of ANG II; binding in vascular smooth muscle activates phospholipase C, generating IP3 and DAG, resulting in smooth muscle contraction within seconds."
+  },
+  {
+   "term": "AT2 receptor",
+   "chapter_definition": "structure and affinity for ANG II similar to AT1, but stimulation causes vasodilation that may counteract AT1 vasoconstriction; appears nitric oxide-dependent."
+  },
+  {
+   "term": "ACE inhibitors",
+   "chapter_definition": "orally active drugs directed against the active site of ACE (captopril, enalapril); they decrease blood pressure without increasing heart rate, promote natriuresis, and also inhibit degradation of bradykinin, which is responsible for cough and angioedema; contraindicated in pregnancy."
+  },
+  {
+   "term": "Angiotensin receptor blockers (ARBs)",
+   "chapter_definition": "losartan, valsartan, and others: orally active, potent, and specific competitive antagonists at angiotensin AT1 receptors, with efficacy in hypertension similar to ACE inhibitors but a lower incidence of cough."
+  },
+  {
+   "term": "Aliskiren",
+   "chapter_definition": "the first nonpeptide renin inhibitor approved for hypertension; produces dose-dependent reductions in plasma renin activity, ANG I, ANG II, and aldosterone; does not increase bradykinin levels and does not cause cough or angioedema."
+  }
+ ],
+ "discussed_in_class": null,
+ "her_words": [],
+ "truncated": false
+}

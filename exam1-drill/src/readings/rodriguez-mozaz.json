@@ -1,0 +1,85 @@
+{
+ "id": "rodriguez-mozaz",
+ "title": "Pharmaceuticals in Water: Sources, Fate and Effects (Rodriguez-Mozaz & Weinberg, Environmental Health Perspectives 2010)",
+ "source": "Environmental Health Perspectives, 2010; assigned from the beginning up to the section “Best management practices”",
+ "file": "RodriguezMozaz-EHP-2010.pdf",
+ "kind": "article",
+ "lecture": "Assigned for 10/9; discussed in class 10/13 with the discussion guide",
+ "about": "A review of how medications reach ground water, surface water and drinking water and what is known about their effects. The body metabolizes only part of a prescribed drug, so unchanged drug and metabolites leave in human waste and travel through wastewater into streams, lakes and the water that drinking-water plants use (p. 1016). Wastewater treatment plants are the main point where these drugs enter surface water, because their treatment steps were not designed to remove pharmaceuticals; some drugs collect in biosolids sold as fertilizer; farm animals receive drugs directly in feed (p. 1017). People take the drugs in mainly by mouth through drinking water (p. 1018). The assigned portion stops before the best-management-practices section.",
+ "sections": [
+  "Sources of pharmaceuticals in water",
+  "Exposure of humans and wildlife",
+  "Effects on wildlife",
+  "Human health",
+  "Best management practices (not assigned)"
+ ],
+ "lecture_use": [
+  {
+   "point": "Source: treatment plants let drugs through to streams, rivers and lakes; the water is a source for humans and animals",
+   "chapter_location": "p. 1017, wastewater treatment plants",
+   "lecture_evidence": "Wastewater treatment plants, yeah, the water from Flushing gets treated a bit, but right now the current mechanisms don't get all the drugs out of it before it goes back into your streams and rivers and lakes, OK. So is that a source for humans or animals? Both, there you go.",
+   "date": "10/13"
+  },
+  {
+   "point": "Dose and target in wildlife: feminization where estrogen levels are higher",
+   "chapter_location": "Effects on wildlife",
+   "lecture_evidence": "you'll start seeing populations of frogs and some fish and alligators changing from being like half male, half female to more female in those places where estrogen levels are higher, we see that. That's like a red flag",
+   "date": "10/13"
+  },
+  {
+   "point": "Where the five principles sit in the paper",
+   "chapter_location": "The assigned portion",
+   "lecture_evidence": "the part of the paper I had you read was really where you're going to find those principles of toxicology.",
+   "date": "10/13"
+  },
+  {
+   "point": "The unassigned end of the paper",
+   "chapter_location": "Best management practices",
+   "lecture_evidence": "that was the end of the paper that you didn't read",
+   "date": "10/13"
+  }
+ ],
+ "read_for": [
+  "The sources: human use and excretion, treatment-plant effluent, biosolids, animal feed and livestock waste (pp. 1016–1017)",
+  "The routes of exposure for humans (drinking water, p. 1018) and for aquatic animals (they live in the receiving water, p. 1017)",
+  "The dose contrast: human exposure far below a therapeutic dose; wildlife exposed continuously",
+  "The wildlife effects she discussed: feminized frogs, fish and alligators where estrogen levels are higher",
+  "The vultures and diclofenac example (p. 1017), in the guide but not discussed by her in class",
+  "The authors' conclusion her quiz tested: more data are needed on human health effects"
+ ],
+ "beyond_lecture": [
+  "Best management practices (not assigned)",
+  "Analytical methods for detecting trace levels",
+  "Numbers and dates in the text: her rule is that readings are tested as discussed, not on hard numbers"
+ ],
+ "terms": [
+  {
+   "term": "Wastewater treatment plant effluent",
+   "chapter_definition": "The treated water a plant releases to surface water; the treatment steps were not designed to remove pharmaceuticals (p. 1017)"
+  },
+  {
+   "term": "Biosolids",
+   "chapter_definition": "The solids left after wastewater treatment, sold as fertilizer; some drugs collect in them (p. 1017)"
+  }
+ ],
+ "discussed_in_class": true,
+ "her_words": [
+  {
+   "t": "Buried in the article, which is kind of interesting, I think, were these principles we're about to discuss.",
+   "date": "10/9"
+  },
+  {
+   "t": "then we're going to go into that article and see if you guys were able to identify things like the source of the pollution that was discussed in that article or who, what's the dose that's harming wildlife, OK.",
+   "date": "10/9"
+  },
+  {
+   "t": "this is testable material.",
+   "date": "10/13"
+  },
+  {
+   "t": "I will later post a key",
+   "date": "10/13"
+  }
+ ],
+ "truncated": false
+}

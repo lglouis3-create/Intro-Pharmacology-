@@ -1,0 +1,76 @@
+{
+ "id": "katzung-6",
+ "kind": "chapter",
+ "exam": 1,
+ "title": "Chapter 6: Introduction to Autonomic Pharmacology",
+ "source": "Katzungʼs Basic & Clinical Pharmacology, 16th Edition",
+ "authors": "Todd W. Vanderah; Bertram G. Katzung",
+ "file": "Chapter 6_ Introduction to Autonomic Pharmacology.pdf",
+ "lecture": "9/30 (as assigned); 10/1 (by content: autonomic nervous system overview)",
+ "numbering_note": "The syllabus assigns 'Chapter 6' for 9/30 (receptor regulation, quantal responses, therapeutic index), but in Katzung 16e those topics are in Chapter 2 ('Receptor Regulation' and 'Relation Between Drug Dose & Clinical Response'). The Drive file titled Chapter 6 is Katzung 16e Chapter 6, Introduction to Autonomic Pharmacology, which is the autonomic overview the syllabus calls 'Chapter 19' for 10/1. Recorded as found; exam set to 1 per the syllabus line, but the content backs the Exam 2 autonomic lectures.",
+ "about": "Functionally, the nervous system can be divided into two major subdivisions: autonomic and somatic. The autonomic nervous system (ANS) is largely independent (autonomous) in that its activities are not under direct conscious control. It is concerned primarily with control and integration of visceral functions necessary for life such as cardiac output, blood flow distribution, and digestion. By using drugs that mimic or block the actions of chemical transmitters, we can selectively modify many autonomic functions.",
+ "sections": [
+  "Anatomy of the Autonomic Nervous System (sympathetic sacral outflow box)",
+  "Neurotransmitter Chemistry of the Autonomic Nervous System (cholinergic transmission, adrenergic transmission, neurotransmitter uptake carriers, cotransmitters)",
+  "Autonomic Receptors",
+  "Nonadrenergic, Noncholinergic (NANC) Neurons",
+  "Functional Organization of Autonomic Activity (central integration, integration of cardiovascular function, presynaptic regulation, postsynaptic regulation)",
+  "Pharmacologic Modification of Autonomic Function (Pharmacology of the Eye box)"
+ ],
+ "read_for": [
+  "'Anatomy of the Autonomic Nervous System' and Figure 6-1: sympathetic (thoracolumbar) vs parasympathetic (craniosacral) divisions, pre-/postganglionic fibers, adrenal medulla as modified ganglion (10/1).",
+  "'Neurotransmitter Chemistry': cholinergic vs noradrenergic fibers; the five drug-target steps - synthesis, storage, release, termination of action, receptor effects (10/1).",
+  "'Cholinergic Transmission' (Figure 6-3): choline transporter, ChAT, VAT, VAMPs/SNAPs, acetylcholinesterase - backs 10/5-10/6 cholinergic lectures.",
+  "'Adrenergic Transmission' (Figures 6-4, 6-5): tyrosine hydroxylase (metyrosine), VMAT (reserpine), NET (cocaine, antidepressants), MAO/COMT - backs 10/6-10/7 adrenergic lectures.",
+  "Table 6-2 'Major autonomic receptor types': M1-M5, Nn/Nm, alpha1/alpha2, beta1-3, D1/D2 with locations and results of ligand binding.",
+  "Table 6-3: direct effects of sympathetic vs parasympathetic activity on organ systems (eye, heart, vessels, bronchioles, GI, GU, metabolic).",
+  "Table 6-5 'Steps in autonomic transmission: Effects of some drugs' - the one-table map of where each drug class acts."
+ ],
+ "beyond_lecture": [
+  "Sympathetic Sacral Outflow box (reclassification of pelvic cholinergic outflow).",
+  "NANC neurons, enteric nervous system (Figure 6-2) and cotransmitters (Table 6-1).",
+  "Presynaptic autoreceptors/heteroreceptors (Table 6-4) and baroreceptor reflex integration.",
+  "Pharmacology of the Eye box and the botulinum toxin case study."
+ ],
+ "terms": [
+  {
+   "term": "Autonomic nervous system (ANS)",
+   "chapter_definition": "largely independent (autonomous) in that its activities are not under direct conscious control; concerned primarily with control and integration of visceral functions necessary for life such as cardiac output, blood flow distribution, and digestion."
+  },
+  {
+   "term": "Cholinergic fibers",
+   "chapter_definition": "peripheral ANS fibers that synthesize and release acetylcholine; these include all preganglionic efferent autonomic fibers and the somatic motor fibers to skeletal muscle, plus most parasympathetic postganglionic and some sympathetic postganglionic fibers."
+  },
+  {
+   "term": "Noradrenergic (adrenergic) fibers",
+   "chapter_definition": "most postganglionic sympathetic fibers, which work by releasing norepinephrine (noradrenaline)."
+  },
+  {
+   "term": "Fusion proteins",
+   "chapter_definition": "VAMPs (vesicle-associated membrane proteins) and SNAPs (synaptosomal nerve-associated proteins), which align vesicles with release sites and participate in triggering the release of transmitter."
+  },
+  {
+   "term": "Tyrosine hydroxylase",
+   "chapter_definition": "converts tyrosine to dopa; the rate-limiting step in catecholamine transmitter synthesis; inhibited by the tyrosine analog metyrosine."
+  },
+  {
+   "term": "VMAT (vesicular monoamine transporter)",
+   "chapter_definition": "a high-affinity antiporter for catecholamines located in the wall of the storage vesicle; inhibited by the reserpine alkaloids."
+  },
+  {
+   "term": "NET (norepinephrine transporter)",
+   "chapter_definition": "carries norepinephrine and similar molecules back into the cell cytoplasm from the synaptic cleft; also called uptake 1; inhibited by cocaine, solriamfetol, and certain antidepressant drugs."
+  },
+  {
+   "term": "NANC neurons",
+   "chapter_definition": "nerve fibers in autonomic effector tissues that do not show the histochemical characteristics of either cholinergic or adrenergic fibers; peptides are the most common transmitters, with nitric oxide synthase and purines also present."
+  },
+  {
+   "term": "Trophotropic vs ergotropic",
+   "chapter_definition": "early investigators called the parasympathetic system trophotropic (leading to growth), used to 'rest and digest', and the sympathetic system ergotropic (leading to energy expenditure), activated for 'fight or flight'."
+  }
+ ],
+ "discussed_in_class": null,
+ "her_words": [],
+ "truncated": false
+}

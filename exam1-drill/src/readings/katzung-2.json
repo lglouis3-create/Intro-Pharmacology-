@@ -1,0 +1,79 @@
+{
+ "id": "katzung-2",
+ "kind": "chapter",
+ "exam": 1,
+ "title": "Chapter 2: Drug Receptors & Pharmacodynamics",
+ "source": "Katzungʼs Basic & Clinical Pharmacology, 16th Edition",
+ "authors": "Mark von Zastrow",
+ "file": "Chapter 2_ Drug Receptors -amp;amp; Pharmacodynamics.pdf",
+ "lecture": "9/22; 9/23; 9/24; 9/28; 9/29; 9/30 (receptor regulation, quantal curves, therapeutic index are in this chapter, not Katzung Ch 6)",
+ "about": "Therapeutic and toxic effects of drugs result from their interactions with molecules in the patient. This idea, more than a century old, is embodied in the term receptor: the component of a cell or organism that interacts with a drug and initiates the chain of events leading to the drug's observed effects. This chapter deals with three aspects of drug receptor function, presented in increasing order of complexity: (1) receptors as determinants of the quantitative relation between the concentration of a drug and the pharmacologic response, (2) receptors as regulatory proteins and components of chemical signaling mechanisms that provide targets for important drugs, and (3) receptors as key determinants of the therapeutic and toxic effects of drugs in patients.",
+ "sections": [
+  "Macromolecular Nature of Drug Receptors",
+  "Relation Between Drug Concentration & Response (concentration-effect curves, receptor-effector coupling & spare receptors, competitive & irreversible antagonists, partial agonists, other mechanisms of antagonism)",
+  "Signaling Mechanisms & Drug Action (intracellular receptors, enzyme-linked receptors, cytokine receptors, ion channels, G proteins & second messengers, receptor regulation, phosphorylation)",
+  "Receptor Classes & Drug Development",
+  "Relation Between Drug Dose & Clinical Response (graded and quantal curves, variation in responsiveness, clinical selectivity)"
+ ],
+ "read_for": [
+  "'Concentration-Effect Curves & Receptor Binding of Agonists' (Figure 2-1): E = Emax*C/(C+EC50), Bmax, Kd, and the log-dose sigmoid transform (9/23).",
+  "'Receptor-Effector Coupling & Spare Receptors' (Figure 2-2): coupling, receptor reserve, the 100-receptors/100-effectors thought experiment, EC50 vs Kd (9/24).",
+  "'Competitive & Irreversible Antagonists' (Figure 2-3): rightward shift with preserved Emax vs reduced Emax, Schild equation and dose ratio, propranolol and phenoxybenzamine examples (9/28).",
+  "'Partial Agonists' (Figure 2-4) and the buprenorphine/morphine/fentanyl comparison (9/28-9/29).",
+  "Allosteric modulators: negative (noncompetitive, reversible) vs positive (benzodiazepines at GABA-A), orthosteric vs allosteric site (9/29).",
+  "'Other Mechanisms of Drug Antagonism': chemical antagonism (protamine-heparin) and physiologic antagonism (glucocorticoid-insulin; isoproterenol vs atropine for bradycardia).",
+  "'Receptor Regulation' (Figure 2-12): desensitization, GRK/beta-arrestin, internalization, resensitization, downregulation (9/30).",
+  "'Dose & Response in Patients' (Figures 2-15, 2-16): potency vs maximal efficacy, graded vs quantal curves, ED50/TD50/LD50, therapeutic index and therapeutic window (9/30)."
+ ],
+ "beyond_lecture": [
+  "'Signaling Mechanisms & Drug Action' in detail: the five transmembrane signaling mechanisms (Figure 2-5), receptor tyrosine kinases, JAK-STAT cytokine receptors, ligand- and voltage-gated channels, Table 2-1 G proteins, cAMP/IP3-DAG/cGMP second messengers (the 10/1 signal-transduction lecture draws on this).",
+  "'Receptor Classes & Drug Development' and 'Interplay Among Signaling Mechanisms'.",
+  "'Variation in Drug Responsiveness': idiosyncratic, hypo-/hyperreactive, tolerance, tachyphylaxis and the four mechanisms of variation.",
+  "'Clinical Selectivity: Beneficial Versus Toxic Effects' A-C and the case study (propranolol in asthma)."
+ ],
+ "terms": [
+  {
+   "term": "Receptor",
+   "chapter_definition": "the component of a cell or organism that interacts with a drug and initiates the chain of events leading to the drug's observed effects."
+  },
+  {
+   "term": "EC50",
+   "chapter_definition": "the concentration of drug that produces 50% of maximal effect."
+  },
+  {
+   "term": "Kd (equilibrium dissociation constant)",
+   "chapter_definition": "the concentration of free drug at which half-maximal binding is observed; if the Kd is low, binding affinity is high, and vice versa."
+  },
+  {
+   "term": "Coupling",
+   "chapter_definition": "the overall transduction process that links drug occupancy of receptors and pharmacologic response."
+  },
+  {
+   "term": "Spare receptors (receptor reserve)",
+   "chapter_definition": "receptors are said to be 'spare' for a given pharmacologic response if it is possible to elicit a maximal biologic response at a concentration of agonist that does not result in occupancy of all the available receptors."
+  },
+  {
+   "term": "Competitive antagonist",
+   "chapter_definition": "increasing concentrations progressively inhibit the agonist response, but sufficiently high concentrations of agonist can surmount the effect; the Emax for the agonist remains the same and the concentration-effect curve is shifted to the right."
+  },
+  {
+   "term": "Noncompetitive (irreversible) antagonist",
+   "chapter_definition": "once a receptor is bound by such a drug, agonists cannot surmount the inhibitory effect irrespective of their concentration; the maximal effect the agonist can achieve is reduced, although its EC50 may not change."
+  },
+  {
+   "term": "Partial agonist",
+   "chapter_definition": "agonists that produce a lower response, at full receptor occupancy, than do full agonists; the failure is not due to decreased affinity for binding to receptors."
+  },
+  {
+   "term": "Potency",
+   "chapter_definition": "the concentration (EC50) or dose (ED50) of a drug required to produce 50% of that drug's maximal effect."
+  },
+  {
+   "term": "Therapeutic index",
+   "chapter_definition": "in animal studies, usually defined as the ratio of the TD50 to the ED50 for some therapeutically relevant effect; the range between the minimum toxic dose and the minimum therapeutic dose is called the therapeutic window."
+  }
+ ],
+ "discussed_in_class": null,
+ "her_words": [],
+ "truncated": false
+}

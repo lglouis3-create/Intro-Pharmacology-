@@ -1,0 +1,74 @@
+{
+ "id": "katzung-9",
+ "kind": "chapter",
+ "exam": 2,
+ "title": "Chapter 9: Adrenoceptor Agonists & Sympathomimetic Drugs",
+ "source": "Katzungʼs Basic & Clinical Pharmacology, 16th Edition",
+ "authors": "Italo Biaggioni; Vsevolod V. Gurevich",
+ "file": "Chapter 9_ Adrenoceptor Agonists &amp;amp; Sympathomimetic Drugs.pdf",
+ "lecture": "10/6; 10/7",
+ "about": "Drugs that mimic the actions of epinephrine or norepinephrine have traditionally been termed sympathomimetic drugs. The sympathomimetics can be grouped by mode of action and by the spectrum of receptors that they activate. Adrenoceptors are typical G protein-coupled receptors (GPCRs; see Chapter 2).",
+ "sections": [
+  "Molecular Pharmacology Underlying the Actions of Sympathomimetic Drugs (receptor types, receptor selectivity, receptor regulation, adrenoceptor polymorphisms)",
+  "Medicinal Chemistry of Sympathomimetic Drugs",
+  "Organ System Effects of Sympathomimetic Drugs",
+  "Specific Sympathomimetic Drugs (endogenous catecholamines, direct-acting, mixed-acting, indirect-acting)",
+  "Clinical Pharmacology of Sympathomimetic Drugs (cardiovascular, pulmonary, anaphylaxis, ophthalmic, GU, CNS applications, toxicity)"
+ ],
+ "read_for": [
+  "'Receptor Types' A and B with Figures 9-1 and 9-2: alpha1-Gq-PLC-IP3/DAG-Ca2+, alpha2-Gi-reduced cAMP, beta1-3-Gs-cAMP (10/6 alpha, 10/7 beta).",
+  "Table 9-1 'Adrenoceptor types and subtypes': receptor, agonist, antagonist, G protein, effects, gene.",
+  "Table 9-2 'Relative receptor affinities': epinephrine >= norepinephrine >> isoproterenol at alpha; isoproterenol > epinephrine >= norepinephrine at beta; selective agonists (phenylephrine, clonidine, dobutamine, albuterol).",
+  "Table 9-3 'Distribution of adrenoceptor subtypes' - where alpha1/alpha2/beta1/beta2/beta3/D1 sit in tissues.",
+  "Table 9-4 and Figure 9-6: cardiovascular responses to NE, Epi, isoproterenol (vascular resistance, heart rate, mean BP) - the classic BP tracing question.",
+  "'Receptor Regulation': homologous vs heterologous desensitization, GRK/arrestin - ties the 9/30 receptor-regulation lecture to adrenoceptors.",
+  "Direct vs indirect vs mixed-acting sympathomimetics (Figure 9-3; tyramine, amphetamine, cocaine, ephedrine) for the drug-list mechanisms."
+ ],
+ "beyond_lecture": [
+  "Medicinal chemistry (Figures 9-4, 9-5): catechol substitution, beta-hydroxyl, alpha-methyl and their effects on MAO/COMT susceptibility and CNS entry.",
+  "Adrenoceptor polymorphisms (Table 9-1 genes) and pharmacogenetics.",
+  "Clinical applications in detail: shock, anaphylaxis, ophthalmic uses, pulmonary (beta2 agonists), GU (ritodrine), CNS stimulants; Table 9-5 tyramine-containing foods.",
+  "Organ system effects on eye, GI, GU, metabolic and endocrine systems."
+ ],
+ "terms": [
+  {
+   "term": "Sympathomimetic drugs",
+   "chapter_definition": "drugs that mimic the actions of epinephrine or norepinephrine."
+  },
+  {
+   "term": "Direct agonists",
+   "chapter_definition": "drugs (e.g., norepinephrine and epinephrine) that directly interact with and activate adrenoceptors."
+  },
+  {
+   "term": "Indirect agonists",
+   "chapter_definition": "drugs whose actions depend on enhancing endogenous catecholamines by (1) inducing release by displacement (tyramine), (2) decreasing clearance by inhibiting neuronal reuptake (cocaine, certain antidepressants), or (3) preventing enzymatic metabolism (MAO and COMT inhibitors)."
+  },
+  {
+   "term": "Alpha1 receptors",
+   "chapter_definition": "coupled via G proteins of the Gq family to phospholipase C, leading to formation of IP3 and DAG; IP3 promotes release of sequestered Ca2+."
+  },
+  {
+   "term": "Alpha2 receptors",
+   "chapter_definition": "coupled to the inhibitory regulatory protein Gi that reduces adenylyl cyclase activity and lowers intracellular levels of cAMP."
+  },
+  {
+   "term": "Beta receptors (beta1, beta2, beta3)",
+   "chapter_definition": "all three subtypes are coupled to the stimulatory regulatory protein Gs, which activates adenylyl cyclase to increase intracellular levels of cAMP."
+  },
+  {
+   "term": "Epinephrine vs norepinephrine",
+   "chapter_definition": "epinephrine acts as a hormone (released by the adrenal medulla into blood), whereas norepinephrine acts as a neurotransmitter."
+  },
+  {
+   "term": "Homologous desensitization",
+   "chapter_definition": "loss of responsiveness exclusively of the receptors that have been exposed to repeated or sustained activation by an agonist."
+  },
+  {
+   "term": "Heterologous desensitization",
+   "chapter_definition": "desensitization of one receptor by its agonists also results in desensitization of another receptor that has not been directly activated by the agonist in question."
+  }
+ ],
+ "discussed_in_class": null,
+ "her_words": [],
+ "truncated": false
+}

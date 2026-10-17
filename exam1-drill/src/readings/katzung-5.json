@@ -1,0 +1,102 @@
+{
+ "id": "katzung-5",
+ "title": "Chapter 5: Pharmacogenomics",
+ "source": "Katzung's Basic & Clinical Pharmacology, 16th Edition, Chapter 5 (Jennifer E. Hibma; Kathleen M. Giacomini; McGraw Hill)",
+ "file": "Katzung Chapter 5: Pharmacogenomics",
+ "lecture": "Tue 10/20 through Thu 10/22 (Pharmacogenomics Day 1 onward)",
+ "kind": "chapter",
+ "about": "The chapter defines pharmacogenomics as the study of genetic factors that underlie variation in drug response and opens with a case of atazanavir-induced hyperbilirubinemia in a patient later found homozygous for UGT1A1*28. A glossary defines allele, allele frequency, SNPs, haplotype, Hardy-Weinberg equilibrium, linkage disequilibrium and the PM/IM/EM/UM metabolizer phenotypes, and the text explains star-allele diplotypes and activity scores. It then describes genetic variants in phase I enzymes (CYP2D6, CYP2C19, CYP2C9, CYP2B6, DPD), phase II enzymes (UGT1A1, TPMT), G6PD, transporters (OATP1B1, BCRP, OCT1), immune-system genes (HLA-B and IFNL3) and the polygenic CYP2C9/VKORC1 effect on warfarin, each paired with a drug example and CPIC dosing recommendations in Table 5-2. Table 5-1 gives major allele frequencies in African, Asian and European populations. Short sections on epigenomics and future directions and the case study answer close the chapter.",
+ "sections": [
+  "Case Study",
+  "Introduction (pharmacogenomics, precision medicine, CPIC and DPWG guidelines)",
+  "Glossary",
+  "Genetic Variations in Enzymes: Phase I Enzymes (CYP2D6; CYP2C19; CYP2C9; CYP2B6; Dihydropyrimidine Dehydrogenase (DPD))",
+  "Table 5-1: Major alleles and frequencies in African, Asian, and European populations",
+  "Table 5-2: Gene-based dosing recommendations for selected drugs",
+  "Phase II Enzymes (Uridine 5'-Diphosphoglucuronosyl Transferase 1 (UGT1A1); Thiopurine S-Methyltransferase (TPMT))",
+  "Other Enzymes (G6PD; Table 5-3: Classification of G6PD deficiency)",
+  "Genetic Variations in Transporters (Organic Anion Transporter (OATP1B1); Breast Cancer Resistance Protein (BCRP, ABCG2); Organic Cation Transporter 1 (OCT1, SLC22A1))",
+  "Genetic Variations in Immune System Function (Drug-Induced Hypersensitivity Reactions; Table 5-4: Polymorphisms in HLA genes; IFNL3 (IL-28B))",
+  "Polygenic Effects (CYP2C9 & VKORC1; warfarin)",
+  "Epigenomics",
+  "Future Directions",
+  "Case Study Answer",
+  "References; Reviews"
+ ],
+ "lecture_use": [],
+ "read_for": [
+  "Introduction: pharmacogenomics is the study of genetic factors that underlie variation in drug response, a modern term for pharmacogenetics; precision medicine uses genetic information to guide drug and dosing selection; CPIC guidelines are the source of the dosing recommendations.",
+  "Glossary: allele, allele frequency, SNPs, cSNPs, nonsynonymous and synonymous SNPs, haplotype, Hardy-Weinberg equilibrium, linkage disequilibrium, copy number variations, and PM/IM/EM/UM.",
+  "Phase I Enzymes opening paragraph: star (*) allele nomenclature, diplotypes, activity scores (0 nonfunctional, 0.5 reduced, 1.0 fully functional) and the phenotype cut-offs (0 = PM, >0 to <1.25 = IM, 1.25 to 2.25 = EM, >2.25 = UM).",
+  "CYP2D6: nine alleles account for >95% of phenotypes (*3, *4, *5, *6 nonfunctional; *10, *17, *41 reduced; *1, *2 fully functional); the codeine example (PMs/IMs get insufficient pain relief, UMs risk respiratory depression; CPIC recommends an alternative agent in PMs and UMs).",
+  "CYP2C19: *2 and *3 nonfunctional, *17 increased function; the clopidogrel example in acute coronary syndrome with PCI (alternative antiplatelet agent such as prasugrel or ticagrelor in PMs and IMs).",
+  "Polygenic Effects, CYP2C9 & VKORC1: CYP2C9*2 and *3 reduce S-warfarin metabolism (30–40% and 80–90%); VKORC1 -1639G>A reduces VKORC1 expression and increases warfarin sensitivity; gene-based dosing algorithms outperform empiric dosing.",
+  "UGT1A1: the *28 allele (extra TA repeat in the promoter), Gilbert syndrome, irinotecan/SN-38 toxicity, and the atazanavir case study answer.",
+  "TPMT: *2, *3A, *3B, *3C nonfunctional alleles; thiopurines (azathioprine, 6-MP, 6-TG) and 6-thioguanine nucleotide bone marrow toxicity; NUDT15.",
+  "Drug-Induced Hypersensitivity Reactions: HLA-B*57:01 and abacavir, HLA-B*58:01 and allopurinol, HLA-B*15:02 and carbamazepine (Table 5-4).",
+  "Table 5-2: the gene–drug–diplotype–phenotype–dosing recommendation rows."
+ ],
+ "beyond_lecture": [
+  "Table 5-1 allele frequencies across African, Asian and European populations in detail.",
+  "CYP2B6 and the efavirenz example (autoinduction, *6/*6 genotype, CNS adverse effects).",
+  "Dihydropyrimidine Dehydrogenase (DPD): DPYD *2A, *13, rs67376798 and HapB3 and genotype-guided fluoropyrimidine dose reduction.",
+  "G6PD: WHO classes I–V (Table 5-3), X-linked inheritance and mosaicism in heterozygous females, malaria-endemic allele distribution, and the rasburicase example.",
+  "Genetic Variations in Transporters: OATP1B1 (SLCO1B1 rs4149056) and simvastatin myopathy, BCRP (ABCG2 rs2231142) and rosuvastatin in East Asians, OCT1 (SLC22A1).",
+  "IFNL3 (IL-28B) rs12979860 and response of hepatitis C to pegylated interferon with ribavirin.",
+  "Epigenomics (DNA methylation and histone modifications) and Future Directions.",
+  "Figures 5-1 and 5-2 (adoption of HLA-B*5701 testing; flucloxacillin GWA Manhattan plot)."
+ ],
+ "terms": [
+  {
+   "term": "Pharmacogenomics",
+   "chapter_definition": "The study of genetic factors that underlie variation in drug response, a modern term for pharmacogenetics; it implies a recognition that more than one genetic variant may contribute to variation in drug response."
+  },
+  {
+   "term": "Precision medicine (stratified or personalized medicine)",
+   "chapter_definition": "Genetic information is used to guide drug and dosing selection for subgroups of patients or individual patients in medical practice."
+  },
+  {
+   "term": "Allele",
+   "chapter_definition": "One of two or more alternative forms of a gene that arise by mutation and are found at the same genetic locus."
+  },
+  {
+   "term": "Allele frequency",
+   "chapter_definition": "The fraction or percentage that a specific allele is observed in proportion to the total of all possible alleles in a population."
+  },
+  {
+   "term": "SNPs",
+   "chapter_definition": "Single nucleotide polymorphisms: base-pair substitutions that occur in the genome."
+  },
+  {
+   "term": "Nonsynonymous SNPs (nsSNPs)",
+   "chapter_definition": "A single base-pair substitution in the coding region that results in an amino acid change."
+  },
+  {
+   "term": "Synonymous SNPs",
+   "chapter_definition": "Base-pair substitutions in the coding region that do not result in an amino acid change."
+  },
+  {
+   "term": "Haplotype",
+   "chapter_definition": "A series of alleles found in a linked locus on a chromosome."
+  },
+  {
+   "term": "Hardy-Weinberg equilibrium",
+   "chapter_definition": "The principle that allele frequencies will remain constant from generation to generation in the absence of evolutionary influences."
+  },
+  {
+   "term": "Linkage disequilibrium",
+   "chapter_definition": "The nonrandom association of alleles at two or more loci that descend from a single ancestral chromosome."
+  },
+  {
+   "term": "PM, IM, EM, UM",
+   "chapter_definition": "Poor, intermediate, extensive, or ultrarapid metabolizer phenotype; defined by the sum of allelic activity scores as 0 = PM, 0 to 1.25 = IM, 1.25 to 2.25 = EM, and >2.25 = UM."
+  },
+  {
+   "term": "Diplotype / star (*) allele",
+   "chapter_definition": "Diplotypes consist of one maternal and one paternal allele using star (*) allele nomenclature; each star allele is defined by specific sequence variation(s) within the gene locus and may be assigned a functional activity score."
+  }
+ ],
+ "discussed_in_class": false,
+ "her_words": [],
+ "truncated": false
+}
