@@ -32,7 +32,11 @@ const COURSE = {
     {id:'PE2', deck:'PollEV’s Exam 2.pdf', decks:['PollEV’s Exam 2.pdf', 'Jeopardy 10/8', 'Review 10/9'], label:'His Exam 2 polls (verbatim, with his keys)', prof:'Gottlieb', exam:2, module:2},
     {id:'DL2', deck:'Pharmacology_Exam_2_Drug_List.pdf', label:'Exam 2 drug list', prof:'Gottlieb', exam:2, module:2},
     // Exam 3 (syllabus: Exam III covers the Oct 9 – Oct 20 lectures; lecturer Dr. Smith: toxicology, pharmacogenomics)
-    {id:'L13', deck:'Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf', label:'Day 13 (10/9): Principles of toxicology (Dr. Smith)', prof:'Smith', exam:3, module:3}
+    {id:'L13', deck:'Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf', label:'Day 13 (10/9): Principles of toxicology (Dr. Smith)', prof:'Smith', exam:3, module:3},
+    // 10/13: she finished the Principles deck (indices, target), discussed the reading with its discussion guide, then began Toxic Responses
+    {id:'L14', deck:'Toxic Responses Students Fall 2026 WCAG21A.pdf', decks:['Toxic Responses Students Fall 2026 WCAG21A.pdf', 'Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf', 'Discussion-Guide-Rodriguez-Mozaz-and-Weinberg-Student-2026 copy.pdf'], label:'Day 14 (10/13): Indices, the reading, toxic responses I (Dr. Smith)', prof:'Smith', exam:3, module:3},
+    // 10/14: organ-specific toxic responses, then Treating Poisonings up to the overdose guideline list
+    {id:'L15', deck:'Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf', decks:['Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf', 'Toxic Responses Students Fall 2026 WCAG21A.pdf'], label:'Day 15 (10/14): Organ toxicity, treating poisonings I (Dr. Smith)', prof:'Smith', exam:3, module:3}
   ],
   exams: [
     {id:1, name:'Exam 1', scope:'Pharmacodynamics (9/22–9/30)', date:'Fri Oct 2, 9–11 am', when:'2026-10-02T09:00:00-05:00',  // syllabus: Exam I, Fri Oct 2, 9–11 am

@@ -2,6 +2,17 @@
 
 Newest first. The build embeds this file; the Topics page shows what is new since your last visit, and the Progress page shows all of it. Keep each bullet to one short line.
 
+## 2026-10-17 (Exam 3: her 10/13 and 10/14 lectures)
+
+- Day 14 (10/13): 70 questions; indices, target and mechanism, the reading as she discussed it, toxic responses I.
+- Day 15 (10/14): 65 questions; lung, nerve, liver, kidney, immune responses; overdose kinetics; preventing absorption.
+- Her four 10/14 polls are in the bank in her wording, with the answer she gave for each option.
+- Guide scope: her words on difficulty, polls "way easy", quizzes "more detailed", exam "could likely be harder".
+- Guide sections 9–24, reference tables 10–23 and two tell-apart tables for the two days.
+- Glossary: 31 terms in Toxic responses and Treating poisonings; Terms quiz draws from them.
+- 10/9 items on TI, margin of safety, margin of exposure and target are keyed to her 10/13 words; no longer low yield.
+- Exam 3 roster from the syllabus: 10/9, 10/13, 10/14 in the bank; 10/19 and 10/20 to come.
+
 ## 2026-10-12 (Exam 3: Dr. Smith's 10/9 lecture)
 
 - Exam 3 group added and opened by default; the Exam 1 and Exam 2 groups fold.

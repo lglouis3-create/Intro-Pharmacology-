@@ -74,3 +74,7 @@ See `## Conflicts / uncertain` in notes/L01.md, L02.md and L03.md. The ones that
 - Exam 3 is incomplete: tox days 2–4 and pharmacogenomics day 1 (Oct 13 – Oct 20) are not in the bank. Roster, dates to confirm, and what each ingest needs: exam1-drill/notes/EXAM3.md.
 - Next ingest: the 10/13 lecture (deck, Echo transcript or audio, any posted study guide, her polls). On 10/13 she also finishes the 10/9 deck (indices, target) and discusses the reading: L13-032 to L13-036 are low yield until then.
 
+## 2026-10-17: Exam 3, lectures 2 and 3 of 5
+- L14 (10/13) and L15 (10/14) ingested from the Echo transcripts first, then the decks (cited by slide title); 70 + 65 questions; guide sections 9–24; reference 10–23; tell3-l14, tell3-l15; 31 glossary terms. Syllabus roster verified (notes/EXAM3.md). L13-032..034 keyed to her 10/13 words; L13-035/036 remain low yield.
+- Next: 10/19 and 10/20 transcripts (decks for 10/19 already in Drive); her Canvas quizzes if shareable.
+

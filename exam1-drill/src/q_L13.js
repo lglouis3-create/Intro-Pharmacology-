@@ -440,8 +440,8 @@ QUESTIONS.push(
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘More on Threshold Dose’; transcript 10/9"},
 
 /* ---------------- Indices and target (slides she did not reach on 10/9) ---------------- */
-{id:"L13-032", lecture:"L13", prof:"Smith", tier:"new", topic:"L13", sub:"indices", skill:"recall", lowYield:true,
- concept:"ti-mos-moe", tags:["smith"], source:"slide",
+{id:"L13-032", lecture:"L13", prof:"Smith", tier:"new", topic:"L13", sub:"indices", skill:"recall",
+ concept:"ti-mos-moe", tags:["smith"], source:"both",
  stem:"Which index of toxicity gives information about the slope of the dose–response curves, and how is it calculated?",
  options:[
   {t:"Margin of safety, MOS = TD1 / ED99", correct:true, why:"Comparing the dose toxic to 1% with the dose effective in 99% depends on how steep the two curves are."},
@@ -450,11 +450,12 @@ QUESTIONS.push(
   {t:"LD50 / ED50", correct:false, why:"That ratio is a therapeutic index, which says nothing about slope."},
   {t:"ED99 / TD1", correct:false, why:"The margin of safety divides the toxic dose by the effective dose, not the reverse."}],
  teach:"Three values come from dose–response curves. The therapeutic index compares a toxic dose with a therapeutic dose (TI = toxic dose / therapeutic dose) and gives no information about slope. The margin of safety, MOS = TD1 / ED99, does carry slope information. Both are for single doses. The margin of exposure, MOE = NOAEL / exposure, is for repeated exposures to non-therapeutic compounds.",
- note:"Not reached on 10/9: she stopped at the 2-AAF figure and said she would cover the rest on Tuesday 10/13. Keyed from the slide; marked low yield until she teaches it.",
- cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Values Developed from Dose-Response’"},
+ quote:"most of the time, a margin of safety number is developed because we say what's the toxic dose for 1% of the animals over the effective dose of 99% of the animals. That's the margin of safety. And because we use a different percentage, it gives you an idea of the slope of your dose response curve, whereas the therapeutic index does not.",
+ note:"Taught 10/13. Her rule for the therapeutic index: the percentage need not be 50, but the numerator and the denominator must use the same percentage; the margin of safety uses two different percentages, which is why it carries slope information.",
+ cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Values Developed from Dose-Response’; transcript 10/13"},
 
-{id:"L13-033", lecture:"L13", prof:"Smith", tier:"new", topic:"L13", sub:"indices", skill:"recall", lowYield:true,
- concept:"moe-repeated", tags:["smith"], source:"slide",
+{id:"L13-033", lecture:"L13", prof:"Smith", tier:"new", topic:"L13", sub:"indices", skill:"recall",
+ concept:"moe-repeated", tags:["smith"], source:"both",
  stem:"The margin of exposure (MOE) is used for:",
  options:[
   {t:"Repeated exposures to non-therapeutic compounds", correct:true, why:"The slide marks MOE for repeated exposures and TI and MOS for single doses."},
@@ -463,11 +464,12 @@ QUESTIONS.push(
   {t:"Finding the LD50", correct:false, why:"LD50 comes from the population curve."},
   {t:"Defining the threshold dose", correct:false, why:"The threshold is read from the curve; the NOAEL is the related no-effect level used in MOE."}],
  teach:"The margin of exposure divides the NOAEL (no observed adverse effect level) by the actual exposure; it is the index for repeated exposures to compounds that are not medicines, such as pollutants.",
- note:"Not reached on 10/9 (deferred to 10/13); keyed from the slide; low yield until taught.",
- cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Values Developed from Dose-Response’"},
+ quote:"the margin of exposure, this is something that we use truly in toxicology with exposures to something that's not therapeutic, like to, you know, a pollutant, an occupational exposure, OK, and it's also for repeated exposures",
+ note:"Taught 10/13. She says NOAEL as 'no observable adverse effect level' (the slide prints 'no observed') and described it as the dose given to the animals at which they had no bad response; she called it the lowest such dose.",
+ cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Values Developed from Dose-Response’; transcript 10/13"},
 
-{id:"L13-034", lecture:"L13", prof:"Smith", tier:"new", topic:"L13", sub:"indices", skill:"recall", lowYield:true,
- concept:"target-not-highest-concentration", tags:["smith"], source:"slide",
+{id:"L13-034", lecture:"L13", prof:"Smith", tier:"new", topic:"L13", sub:"indices", skill:"recall",
+ concept:"target-not-highest-concentration", tags:["smith"], source:"both",
  stem:"Which statement about the target of a toxic substance is correct?",
  options:[
   {t:"The target organ may not be where the concentration is highest", correct:true, why:"Both lines are on the target-and-mechanism slide."},
@@ -476,8 +478,9 @@ QUESTIONS.push(
   {t:"The mechanism is the same at every target", correct:false, why:"The mechanism of action at multiple targets may differ."},
   {t:"The dose given, not the dose at the target, determines toxicity", correct:false, why:"The dose at the target determines toxicity."}],
  teach:"Target and mechanism of action: the target can be an organ or a physiological endpoint; there may be multiple targets with different toxicity and different mechanisms at each; the target organ may not be the site of highest concentration; and the dose at the target is what determines toxicity.",
- note:"Not reached on 10/9 (deferred to 10/13); keyed from the slide; low yield until taught.",
- cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Target & Mechanism of Action’"},
+ quote:"where it's having an adverse effect may not be where the highest concentration is, which is probably a little counterintuitive, right?",
+ note:"Taught 10/13; her words match the slide. Her example: the kidney may be more sensitive than muscle at a lower concentration, and there is still a dose–response curve at the kidney itself.",
+ cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Target & Mechanism of Action’; transcript 10/13"},
 
 /* ---------------- The reading ---------------- */
 {id:"L13-035", lecture:"L13", prof:"Smith", tier:"new", topic:"L13", sub:"reading", skill:"apply", lowYield:true,
@@ -490,7 +493,7 @@ QUESTIONS.push(
   {t:"Drinking-water treatment plant intakes", correct:false, why:"Those plants are where the trace levels are found, not where they enter."},
   {t:"Hospitals only", correct:false, why:"Human and veterinary use throughout a community feeds the sewage that reaches the plants."}],
  teach:"The assigned review on pharmaceuticals in water carries the five principles. Source: unmetabolized drug and metabolites from human and veterinary use enter waste streams, and wastewater treatment plants, which do not specifically remove pharmaceuticals, are the main discharge points into surface water; unused medicine that is flushed adds to it.",
- note:"The class discussion of the paper is scheduled for 10/13; keyed from the article text, low yield until she discusses it. Her rule on readings: questions come from what was discussed in class, not from dates or hard numbers.",
+ note:"On 10/13 she named treatment plants as one of four sources (\"the current mechanisms don't get all the drugs out of it before it goes back into your streams and rivers and lakes\") and said the water is a source for both humans and animals. The 'main discharge' ranking is the article's, not hers, so the item stays low yield; L14-024 tests her point.",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Discussion of Reading Assignment’; RodriguezMozaz-EHP-2010.pdf p. 1017"},
 
 {id:"L13-036", lecture:"L13", prof:"Smith", tier:"new", topic:"L13", sub:"reading", skill:"apply", lowYield:true,
@@ -503,6 +506,6 @@ QUESTIONS.push(
   {t:"Bacteria in sediments", correct:false, why:"Antibiotic resistance in sediments is raised as a possible effect, not one of the two examples."},
   {t:"Farm crops irrigated with reclaimed water from treatment plant effluent", correct:false, why:"Crops are not among the affected organisms described."}],
  teach:"Target and dose in the reading: vultures feeding on carcasses of diclofenac-treated cattle died of renal failure because they could not excrete the drug, and fathead minnows in a lake deliberately dosed with low levels of ethinyl estradiol showed cellular and tissue responses, then a population collapse by the second year. Humans, exposed at part-per-trillion levels in drinking water, receive far less than a therapeutic dose over a lifetime, so ecosystems appear more at risk than people.",
- note:"The class discussion of the paper is scheduled for 10/13; keyed from the article text, low yield until she discusses it.",
+ note:"Not discussed in class: on 10/13 she did not mention the vultures, diclofenac, fathead minnows or ethinyl estradiol. Her wildlife example was frogs, fish and alligators turning more female where estrogen levels are higher (L14-030). Kept low yield; the article text keys it.",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Discussion of Reading Assignment’; RodriguezMozaz-EHP-2010.pdf pp. 1017–1018"}
 );
