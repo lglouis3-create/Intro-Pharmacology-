@@ -2,6 +2,10 @@
 
 Newest first. The build embeds this file; the Topics page shows what is new since your last visit, and the Progress page shows all of it. Keep each bullet to one short line.
 
+## 2026-10-18 (Exam 3: recorded Hear the why, part 1)
+
+- Recorded clips for 62 Exam 3 questions: all 46 from 10/9 and 16 from 10/13; the rest use the device voice until recorded.
+
 ## 2026-10-17 (Exam 3: Hear the why)
 
 - Every Exam 3 question (10/9, 10/13, 10/14) has a spoken explanation under "Hear the why"; device voice for now.
