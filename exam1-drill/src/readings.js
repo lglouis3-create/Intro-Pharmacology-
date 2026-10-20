@@ -1379,7 +1379,7 @@ const READINGS = [
     "chapter_definition": "The Toxic Exposure Surveillance System of the American Association of Poison Control Centers, the source of the 2003 exposure and fatality counts."
    }
   ],
-  "discussed_in_class": false,
+  "discussed_in_class": true,
   "her_words": [
    {
     "t": "Just to introduce this to you, we have a few medications for which these evidence-based guidance documents have been written, and they basically talk about what do you do if you've got a patient that overdosed on a big handful of immediate-release beta blocker, or what do you do if a patient overdosed on a handful of extended-release beta blockers?",
@@ -1420,6 +1420,31 @@ const READINGS = [
     "t": "Only a few drugs are out there that have these documents written, but these are pretty nasty drugs.",
     "date": "2026-10-14",
     "verbatim": "Only a few drugs are out there that have these documents written, but these are pretty nasty drugs, OK?"
+   },
+   {
+    "t": "What they published in 2005 is still what they follow",
+    "date": "2026-10-19",
+    "verbatim": "What they published in 2005 is still what they follow"
+   },
+   {
+    "t": "I want you to know those time frames, OK, which drug formulation is OK at this time frame",
+    "date": "2026-10-19",
+    "verbatim": "I want you to know those time frames, OK, which drug formulation is OK at this time frame"
+   },
+   {
+    "t": "Also, you need to know you don't make them barf at home, it's too dangerous",
+    "date": "2026-10-19",
+    "verbatim": "Also, you need to know you don't make them barf at home, it's too dangerous"
+   },
+   {
+    "t": "18 hours for your uh calcium channel blockers, but 8 hours for your beta blockers, you are still within the window that that clump of tablets could break apart",
+    "date": "2026-10-19",
+    "verbatim": "18 hours for your uh calcium channel blockers, but 8 hours for your beta blockers, you are still within the window that that clump of tablets could break apart"
+   },
+   {
+    "t": "It's the clumping of the tablets is the biggest issue, OK.",
+    "date": "2026-10-19",
+    "verbatim": "It's the clumping of the tablets is the biggest issue, OK."
    }
   ],
   "quotes_note": "Quotes lightly edited for reading: filler words removed and transcription errors corrected; the verbatim transcript text is kept beside each quote.",
@@ -1427,8 +1452,10 @@ const READINGS = [
   "listen": "This reading is the beta blocker ingestion guideline, an evidence based consensus guideline for out of hospital management, published in Clinical Toxicology in 2005 by the American Association of Poison Control Centers. It belongs to the Treating Poisonings lecture continued on Monday, October nineteenth. Doctor Smith has not discussed it in class yet. On October fourteenth she said the class would \"talk about them a little bit on Monday.\" Her rule is that readings are tested as discussed.\n\nWhat she said on October fourteenth. First, what the documents are. She said, \"they basically talk about what do you do if you've got a patient that overdosed on a big handful of immediate release beta blocker, or what do you do if a patient overdosed on a handful of extended release beta blockers?\" Second, where the data come from. She said, \"The data for these evidence-based guidance documents comes from people overdosing, clinicians, pharmacists, doctors write up the case, get it published, and it's in the literature.\" Third, grading. She said, \"The data that they used to write these guidance documents has been like graded, and the value of what they tell us to do in these situations is also graded.\" Fourth, formulation. She said, \"It also has differences between immediate release and extended release tablets.\" On October ninth she had asked the room which is worse, a handful of immediate release or a handful of extended release beta blocker, and answered, \"It depends.\" Fifth, the table. She said, \"read the abstract, fill out the table as best you can, and we'll talk about it in class.\"\n\nThe card points to these sections. The abstract with its seven numbered recommendations and their grades. Recommendation one: self harm or malicious administration is referred immediately regardless of dose. Recommendation two and Table 5: refer when the amount exceeds the usual maximum single therapeutic dose or equals the lowest reported toxic dose, whichever is lower, and refer any excess dose taken with a calcium channel blocker or by a patient with serious cardiovascular disease. Recommendation three: do not induce emesis, and consider oral activated charcoal but do not delay transport. Recommendations four and seven: referral and observation of at least six hours for an immediate release product other than sotalol, eight hours for sustained release, and twelve hours for sotalol. Appendix 2, where case series and case reports are level four, Grade C, and expert opinion is level five, Grade D. The background, where propranolol's high lipid solubility raises the likelihood of seizures.\n\nRe-read first the abstract, then Table 5 and Appendix 2.",
   "listen_secs": 158,
   "exam": 3,
-  "lectures": [],
-  "status": "upcoming",
+  "lectures": [
+   "L16"
+  ],
+  "status": "discussed",
   "links": [
    [
     "guide",
@@ -1436,8 +1463,7 @@ const READINGS = [
     "Guide: evidence-based guidelines"
    ]
   ],
-  "drive": "https://drive.google.com/file/d/1_94-Tuaz2NnBTG20hDC7hH_Yx7cSy4gT/view",
-  "date": "Mon 10/19"
+  "drive": "https://drive.google.com/file/d/1_94-Tuaz2NnBTG20hDC7hH_Yx7cSy4gT/view"
  },
  {
   "id": "aapcc-ccb",
@@ -1554,7 +1580,7 @@ const READINGS = [
     "chapter_definition": "Grades A through D mapped to levels of evidence 1a through 6 in Appendix 2; case series and single case reports are level 4 (Grade C) and expert opinion without explicit critical appraisal is level 5 (Grade D)."
    }
   ],
-  "discussed_in_class": false,
+  "discussed_in_class": true,
   "her_words": [
    {
     "t": "Just to introduce this to you, we have a few medications for which these evidence-based guidance documents have been written, and they basically talk about what do you do if you've got a patient that overdosed on a big handful of immediate-release beta blocker, or what do you do if a patient overdosed on a handful of extended-release beta blockers?",
@@ -1595,6 +1621,31 @@ const READINGS = [
     "t": "Only a few drugs are out there that have these documents written, but these are pretty nasty drugs.",
     "date": "2026-10-14",
     "verbatim": "Only a few drugs are out there that have these documents written, but these are pretty nasty drugs, OK?"
+   },
+   {
+    "t": "What they published in 2005 is still what they follow",
+    "date": "2026-10-19",
+    "verbatim": "What they published in 2005 is still what they follow"
+   },
+   {
+    "t": "I want you to know those time frames, OK, which drug formulation is OK at this time frame",
+    "date": "2026-10-19",
+    "verbatim": "I want you to know those time frames, OK, which drug formulation is OK at this time frame"
+   },
+   {
+    "t": "Also, you need to know you don't make them barf at home, it's too dangerous",
+    "date": "2026-10-19",
+    "verbatim": "Also, you need to know you don't make them barf at home, it's too dangerous"
+   },
+   {
+    "t": "18 hours for your uh calcium channel blockers, but 8 hours for your beta blockers, you are still within the window that that clump of tablets could break apart",
+    "date": "2026-10-19",
+    "verbatim": "18 hours for your uh calcium channel blockers, but 8 hours for your beta blockers, you are still within the window that that clump of tablets could break apart"
+   },
+   {
+    "t": "It's the clumping of the tablets is the biggest issue, OK.",
+    "date": "2026-10-19",
+    "verbatim": "It's the clumping of the tablets is the biggest issue, OK."
    }
   ],
   "quotes_note": "Quotes lightly edited for reading: filler words removed and transcription errors corrected; the verbatim transcript text is kept beside each quote.",
@@ -1602,8 +1653,10 @@ const READINGS = [
   "listen": "This reading is the calcium channel blocker ingestion guideline, an evidence based consensus guideline for out of hospital management, published in Clinical Toxicology in 2005 by the American Association of Poison Control Centers. It belongs to the Treating Poisonings lecture continued on Monday, October nineteenth. Doctor Smith has not discussed it in class yet. On October fourteenth she said, \"I've got 2 guidance documents, one's about beta blockers and one's about calcium channel blockers,\" and that the class would \"talk about them a little bit on Monday.\" Her rule is that readings are tested as discussed.\n\nWhat she said on October fourteenth. First, the pair of documents. She said, \"You've got a table to fill out because there are slight differences in what we do for a beta blocker overdose compared to a calcium channel overdose, even though they're all cardiac meds.\" Second, where the data come from. She said, \"They pulled all those documents, evaluated every single one of those case reports or case series, and wrote these evidence-based documents.\" Third, she said their recommendations are graded. Fourth, formulation. She said, \"It also has differences between immediate release and extended release tablets.\" Fifth, she said, \"Only a few drugs are out there that have these documents written, but these are pretty nasty drugs.\"\n\nThe card points to these sections. The abstract with its seven numbered recommendations, all Grade D. Recommendation one: self harm or malicious administration is referred immediately regardless of amount. Recommendation two: asymptomatic patients are unlikely to develop symptoms if the interval between ingestion and the call is greater than six hours for an immediate release product, eighteen hours for a modified release product other than verapamil, or twenty four hours for modified release verapamil, and they do not need referral. Recommendation three and Table 11: refer when the amount exceeds the usual maximum single therapeutic dose or equals the lowest reported toxic dose, whichever is lower. Recommendations four and five: do not induce emesis, and consider oral activated charcoal without delaying transport. Recommendation six: ambulance transport, and intravenous calcium, glucagon and epinephrine for severe hypotension during transport, if available. The background, where calcium channel blockers block the entry of calcium through voltage sensitive calcium channels, dihydropyridines lose their vasodilator selectivity in overdose, and combination with beta blockers can produce additive toxicity. \n\nRe-read first the abstract, then Table 11 and the Background and Definitions section.",
   "listen_secs": 154,
   "exam": 3,
-  "lectures": [],
-  "status": "upcoming",
+  "lectures": [
+   "L16"
+  ],
+  "status": "discussed",
   "links": [
    [
     "guide",
@@ -1611,8 +1664,316 @@ const READINGS = [
     "Guide: evidence-based guidelines"
    ]
   ],
-  "drive": "https://drive.google.com/file/d/1jXdXnZXsgsCJqceJUyxWwzyPRmo8Td3o/view",
-  "date": "Mon 10/19"
+  "drive": "https://drive.google.com/file/d/1jXdXnZXsgsCJqceJUyxWwzyPRmo8Td3o/view"
+ },
+ {
+  "id": "marraffa",
+  "title": "Antidotes for toxicological emergencies: A practical review",
+  "source": "Am J Health-Syst Pharm. 2012; 69:199-212 (Primer; Jeanna M. Marraffa, Victor Cohen, and Mary Ann Howland; DOI 10.2146/ajhp110014)",
+  "file": "Marraffa+AJHSP+2012+Antidotes.pdf",
+  "lecture": [
+   "L16"
+  ],
+  "kind": "review article",
+  "about": "A primer in which appropriate therapies for commonly encountered poisonings, medication overdoses, and other toxicological emergencies are reviewed, with discussion of pharmacists' role in ensuring their ready availability and proper use. It states that poisoning is the second leading cause of injury-related morbidity and mortality in the United States, with more than 2.4 million toxic exposures reported each year, and that recently published national consensus guidelines recommend that hospitals providing emergency care routinely stock 24 antidotes. The antidotes discussed, in alphabetical order, are those whose use likely entails the greatest involvement of ED pharmacists: ethanol and fomepizole for toxic-alcohol poisoning; calcium, glucagon and hyperinsulinemia-euglycemia therapy for calcium-channel-blocker and β-blocker toxicities; amyl nitrite, sodium nitrite, sodium thiosulfate and hydroxocobalamin for cyanide; digoxin-specific antibody fragments; flumazenil; intravenous fat emulsion; N-acetylcysteine; naloxone; and octreotide. Each antidote section gives the mechanism, indications, dosing and adverse effects and ends with a paragraph headed Implications for the pharmacist. A recommended antidote stocking list and sample inventory log are in eFigure 1 and eTable 1 at www.ajhp.org.",
+  "sections": [
+   "Abstract (Purpose; Summary; Conclusion; Index terms)",
+   "Introduction (poisoning statistics; national consensus guidelines on antidote stocking; eFigure 1 and eTable 1; regional poison control center 1-800-222-1222) - p. 199-200",
+   "Antidotes for toxic-alcohol poisoning (Ethanol; Fomepizole; Additional and supportive therapy; Implications for the pharmacist) - p. 200-201",
+   "Antidotes for calcium-channel-blocker and β-blocker toxicities (Calcium; Glucagon; HIET; each with Implications for the pharmacist) - p. 201-202",
+   "Antidotes for cyanide poisoning (Amyl nitrite and sodium nitrite; Sodium thiosulfate; Hydroxocobalamin; Implications for the pharmacist) - p. 202-204",
+   "Digoxin-specific antibody fragments (Implications for the pharmacist) - p. 204-205",
+   "Flumazenil (Implications for the pharmacist) - p. 205-206",
+   "Intravenous fat emulsion (Implications for the pharmacist) - p. 206",
+   "N-acetylcysteine (Implications for the pharmacist) - p. 206-207",
+   "Naloxone - p. 208",
+   "Octreotide (Implications for the pharmacist) - p. 208-209",
+   "Conclusion - p. 209",
+   "References (1-145 as extracted) - p. 209-212",
+   "Supplementary material at www.ajhp.org: eFigure 1 (recommended antidote stocking list) and eTable 1 (sample inventory log)"
+  ],
+  "lecture_use": [
+   {
+    "point": "Ethanol or, preferably, fomepizole is given to inhibit alcohol dehydrogenase (ADH) in methanol, ethylene glycol and diethylene glycol poisoning; the parent compounds are relatively nontoxic and ADH metabolizes them to the toxic metabolites. In the transcript she says 'omeprazole' where she means fomepizole.",
+    "chapter_location": "Antidotes for toxic-alcohol poisoning, p. 200 (first two paragraphs)",
+    "lecture_evidence": "So, I've got listed on the bottom of the slide here that there's an antidote for methanol and ethylene glycol, and you can use ethanol or now a drug called omeprazole.",
+    "date": "10/19"
+   },
+   {
+    "point": "Methanol is metabolized via ADH to formic acid, which results in anion-gap metabolic acidosis and ocular toxicity; retinal toxicity secondary to methanol poisoning is usually irreversible.",
+    "chapter_location": "Antidotes for toxic-alcohol poisoning, p. 200",
+    "lecture_evidence": "Formic acid will cause damage, especially to the eyes, to the retina of the eyes.",
+    "date": "10/19"
+   },
+   {
+    "point": "Ethylene glycol is metabolized via ADH to glycolic acid (anion-gap metabolic acidosis) and oxalic acid, which results primarily in renal toxicity due to the formation of calcium oxalate crystals.",
+    "chapter_location": "Antidotes for toxic-alcohol poisoning, p. 200",
+    "lecture_evidence": "Well, oxalic acid is a, is a small molecule, and, um, uh, it will sometimes precipitate in the blood to form small microcrystals and The impact of that is you can damage your organs like your liver, your kidneys.",
+    "date": "10/19"
+   },
+   {
+    "point": "Ethanol can be given intravenously or orally, but a commercial i.v. preparation is no longer available; a loading dose is needed to reach a serum ethanol concentration of 100-150 mg/dL, then a maintenance dose guided by repeated serum ethanol measurements.",
+    "chapter_location": "Ethanol, p. 200",
+    "lecture_evidence": "So they would use Everclear, have a shot glass there and give somebody that's had methanol or ethylene glycol exposure a shot, maybe two of Everclear, and watch to see how they're doing, OK?",
+    "date": "10/19"
+   },
+   {
+    "point": "Fomepizole's ease of administration and relative lack of serious adverse effects have elevated it to preferred status over ethanol; its advantages are a much higher potency of ADH inhibition (Ki = 0.1 µmol/L, a 1000-fold higher affinity than that of ethanol), better maintenance of therapeutic blood concentrations, fewer adverse effects and less labor-intensive administration.",
+    "chapter_location": "Fomepizole, p. 200",
+    "lecture_evidence": "We now have, uh, the medication omeprazole that we'll give to patients. Um, a little bit better control of the dosing.",
+    "date": "10/19"
+   },
+   {
+    "point": "Methanol or ethylene glycol toxicity should be suspected in a patient with anion-gap metabolic acidosis in whom laboratory testing reveals a low (or no) ethanol concentration, no ketones, and a normal lactic acid concentration; the availability of testing for toxic alcohols is limited.",
+    "chapter_location": "Antidotes for toxic-alcohol poisoning, Implications for the pharmacist, p. 201",
+    "lecture_evidence": "The, the, the, the key indicator would be you get them into the ER and they do a blood draw, and they look for these alcohols in their blood.",
+    "date": "10/19"
+   },
+   {
+    "point": "Urinary alkalinization (a urine pH of >8) with i.v. sodium bicarbonate enhances formate elimination and may reduce the distribution of formic acid to the eye.",
+    "chapter_location": "Additional and supportive therapy, p. 200",
+    "lecture_evidence": "We'll hang a bag of sodium bicarb on a patient, that'll make their urine a bit more basic, which means the pH is elevating, right?",
+    "date": "10/19"
+   },
+   {
+    "point": "Hemodialysis should be considered in all toxic-alcohol exposures in which toxic metabolites have already formed, and empirically if the serum methanol concentration is >25 mg/dL or the serum ethylene glycol concentration is >50 mg/dL with renal insufficiency.",
+    "chapter_location": "Additional and supportive therapy, p. 200",
+    "lecture_evidence": "What this means is you're going to try to artificially clear the blood of toxins, so maybe using hemodialysis, hemofiltration, or hemo perfusion.",
+    "date": "10/19"
+   },
+   {
+    "point": "Cyanide binds to the ferric ion on cytochrome oxidase and abruptly halts the electron transport chain and aerobic respiration.",
+    "chapter_location": "Antidotes for cyanide poisoning, p. 203",
+    "lecture_evidence": "Cytochrome C oxidase is its target. Anybody know what cytochrome cytochrome C oxidase does? Think back to biochemistry. Helps with our electron transport chain, right?",
+    "date": "10/19"
+   },
+   {
+    "point": "The mechanism of amyl nitrite and sodium nitrite is to produce methemoglobinemia; cyanide bound to cytochrome oxidase is then preferentially bound to methemoglobin, forming cyanomethemoglobin. Amyl nitrite is inhaled pending i.v. access; sodium nitrite is given intravenously and produces a methemoglobin concentration of about 15% in healthy adults.",
+    "chapter_location": "Amyl nitrite and sodium nitrite, p. 203",
+    "lecture_evidence": "And methemoglobin is able to pull cyanide off of cytochrome C oxidase. So here's the cyanide. It's going to get pulled off of the cytochrome C oxidase, and it gets stuck onto your methemoglobin, creating cyanoetthemoglobin, OK?",
+    "date": "10/19"
+   },
+   {
+    "point": "Neither carboxyhemoglobin nor methemoglobin is capable of carrying oxygen, so patients can develop functional hypoxia; the nitrite component should be avoided in smoke inhalation unless the carboxyhemoglobin level is shown to be negligible, and a methemoglobin concentration above 20% should halt further nitrite administration.",
+    "chapter_location": "Antidotes for cyanide poisoning, p. 203",
+    "lecture_evidence": "Is methemoglobin helpful to our bodies? Will it carry oxygen? No, OK, we're still gonna create it in our patients though, because we're trying to save them from their cyanide poisoning, OK?",
+    "date": "10/19"
+   },
+   {
+    "point": "Rhodanese, an endogenous enzyme, facilitates the formation of thiocyanate, a much less toxic metabolite that is renally excreted; this pathway is capacity limited, and sodium thiosulfate (12.5 g i.v. for adults) enhances rhodanese activity by donating a sulfur group. The article names sodium thiosulfate as the administered antidote and rhodanese as the patient's own enzyme.",
+    "chapter_location": "Antidotes for cyanide poisoning, p. 203; Sodium thiosulfate, p. 204",
+    "lecture_evidence": "So by giving rodonase as a cofactor, we pull the cyanide off of methemoglobin onto the thiosulfate, and this will be renally eliminated.",
+    "date": "10/19"
+   },
+   {
+    "point": "While acetaminophen is still present in the plasma, NAC acts as an antidote primarily by replenishing glutathione stores; secondarily it acts as a glutathione substitute and replenishes sulfate, limiting formation of the toxic metabolite or detoxifying it.",
+    "chapter_location": "N-acetylcysteine, p. 206",
+    "lecture_evidence": "But one of the things we can do in this situation is give NA andactylcysteine, cause NA provides some of the ingredients needed to create more glutathione.",
+    "date": "10/19"
+   },
+   {
+    "point": "Both the i.v. and oral routes are believed to be equally efficacious when NAC is given within eight hours of an acetaminophen overdose; oral NAC frequently causes nausea and vomiting and the dose must be repeated if emesis occurs within one hour; i.v. NAC can cause anaphylactoid reactions, particularly with the loading dose.",
+    "chapter_location": "N-acetylcysteine, p. 206-207",
+    "lecture_evidence": "So, in the United States, we tend to give it by IV because it's pretty hard to get somebody to swallow something that smells like rotten eggs, and it's kind of oily and, it's a clear liquid, it's kind of disgusting.",
+    "date": "10/19"
+   },
+   {
+    "point": "The Rumack-Matthew nomogram predicts hepatotoxicity from an initial plasma acetaminophen concentration obtained four or more hours after a single acute ingestion; NAC is started when the level is on or above the nomogram, when no level is available within eight hours of a potentially toxic ingestion, or when hepatotoxicity is present.",
+    "chapter_location": "N-acetylcysteine, p. 206",
+    "lecture_evidence": "Can you think of any other compounds that it's likely emergency rooms would test a person's blood for to see if they've been exposed to them? Acetaminophen, OK, acetaminophen.",
+    "date": "10/19"
+   },
+   {
+    "point": "One of the pharmacist's four roles listed in the abstract is managing the procurement and stocking of antidotes to ensure their timely availability; some antidotes must be stocked in the ED for immediate administration and others must be available within 60 minutes.",
+    "chapter_location": "Abstract (Summary) and Introduction, p. 199",
+    "lecture_evidence": "Has anybody, um, just for fun, anybody ever, uh, been in a hospital where they have, maybe you work in a hospital pharmacy and you've had to stock, uh, NAStylcysteine?",
+    "date": "10/19"
+   },
+   {
+    "point": "Digoxin-specific antibody fragments (Fab) are lifesaving agents in toxicity from digoxin and other cardioactive steroids, including digitoxin and those derived from oleander, fox glove, lily of the valley, and toad venom. The article does not use the word monoclonal.",
+    "chapter_location": "Digoxin-specific antibody fragments, p. 204-205",
+    "lecture_evidence": "And then the antibody that we have is the example I have here is digoxin immune fab. This is an antibody, a monoclonal antibody that's made to treat a digoxin overdose, OK?",
+    "date": "10/19"
+   },
+   {
+    "point": "Each 38- or 40-mg vial of digoxin-specific Fab binds 0.5 mg of digoxin; empiric dosing is 10-20 vials for acute toxicity and 3-5 vials (adults) or 1-2 vials (children) for chronic toxicity. After Fab is given, serum digoxin concentrations are no longer useful because the total digoxin concentration rises, so repeat levels should not be obtained for 24 hours.",
+    "chapter_location": "Digoxin-specific antibody fragments, p. 205",
+    "lecture_evidence": "One form of antibody made to grab digoxin that somebody's overdosed on, it grabs it and nicely clears it out of the blood.",
+    "date": "10/19"
+   },
+   {
+    "point": "Naloxone, the most commonly used antidote in the ED setting, is a competitive antagonist at all opioid receptors, including the µ-opioid receptor; an initial dose of 0.04-0.05 mg i.v. titrated upward is recommended, and its clinical effect lasts 30-90 minutes.",
+    "chapter_location": "Naloxone, p. 208",
+    "lecture_evidence": "Naloxone is basically an antagonist of an opioid receptor",
+    "date": "10/19"
+   },
+   {
+    "point": "Flumazenil is a competitive antagonist at the benzodiazepine-receptor binding site on γ-aminobutyric acid-A. The article discourages its use in overdose patients unless it is certain that only a benzodiazepine was ingested and the patient is not benzodiazepine dependent and has no seizure history, because it can precipitate withdrawal seizures and unmask arrhythmias in mixed ingestions.",
+    "chapter_location": "Flumazenil, p. 205-206",
+    "lecture_evidence": "Flonazanil is used commonly for, uh, overdoses of things like your benzodiazepines. The, uh, benzos are gonna be agonizing your GABA receptors, right, causing a lot of, a lot of action on that, that receptor, and flomazanil will antagonize the GABA receptor, OK?",
+    "date": "10/19"
+   },
+   {
+    "point": "Benzodiazepine overdose produces a toxidrome, or toxic syndrome, of CNS depression with relatively normal vital signs; deaths attributed solely to oral benzodiazepine ingestion are rare.",
+    "chapter_location": "Flumazenil, p. 205",
+    "lecture_evidence": "Usually you'll see a group of systems of symptoms that we call a toxic toxodrome that we'll get to at the end of this lecture, kind of a group of symptoms that are like, oh hey, look, this person has this, this and this.",
+    "date": "10/19"
+   },
+   {
+    "point": "Because of the pathophysiologic similarities of CCB toxicity and β-blocker toxicity, their management is similar (fluids and atropine first, then calcium, glucagon, HIET, vasopressors, cardiac pacing, i.v. 20% fatty acid emulsion, extracorporeal circulatory support, intra-aortic balloon pump). Presenting symptoms differ: CCB overdose patients tend to remain awake and alert, β-blocker patients are more likely to have altered mental status and respiratory depression, and severe CCB overdose causes hyperglycemia.",
+    "chapter_location": "Antidotes for calcium-channel-blocker and β-blocker toxicities, p. 201",
+    "lecture_evidence": "These are both cardiac meds, slightly different time frames that speaks to the mechanism of action of calcium channel blockers versus beta blockers",
+    "date": "10/19"
+   },
+   {
+    "point": "Clinicians should always consult a regional poison control center (1-800-222-1222) to ascertain the most current recommendations on antidote use and to report exposures and poisonings.",
+    "chapter_location": "Introduction, p. 200",
+    "lecture_evidence": "this is where the poison center will guide you on whether you need to get them to the emergency room, or you need to call the ambulance, OK?",
+    "date": "10/19"
+   },
+   {
+    "point": "The article's evidence for several antidotes is case reports and animal studies: for intravenous fat emulsion, research remains in the discovery phase despite promising case reports, and for octreotide there are no published data from randomized clinical trials.",
+    "chapter_location": "Intravenous fat emulsion, p. 206; Octreotide, p. 208",
+    "lecture_evidence": "we really can't run clinical trials and sign up people to volunteer to get poisoned and try to see what treatment works best for them",
+    "date": "10/19"
+   }
+  ],
+  "read_for": [
+   "Antidotes for toxic-alcohol poisoning (p. 200): methanol to formic acid (anion-gap metabolic acidosis, ocular toxicity, usually irreversible retinal toxicity); ethylene glycol to glycolic acid and oxalic acid (renal toxicity from calcium oxalate crystals); diethylene glycol to hydroxyethoxyacetic acid and diglycolic acid; about 5000 exposures and 20-30 deaths a year.",
+   "Ethanol (p. 200): competitive ADH inhibition, target serum ethanol 100-150 mg/dL, loading dose then maintenance dose with repeated serum ethanol checks, no commercial i.v. preparation; risks of CNS depression, hypoglycemia, nausea, vomiting, phlebitis.",
+   "Fomepizole (p. 200): FDA regimen of 15 mg/kg i.v. over 30 minutes, then 10 mg/kg every 12 hours, every 4 hours during hemodialysis, and 15 mg/kg every 12 hours after 48 hours; Ki 0.1 µmol/L (1000-fold higher affinity than ethanol); half-lives of ethylene glycol and methanol of 14.5 and 40 hours in its presence.",
+   "Additional and supportive therapy (p. 200) and Implications for the pharmacist (p. 201): hemodialysis criteria (methanol >25 mg/dL; ethylene glycol >50 mg/dL with renal insufficiency); folic acid 50 mg i.v. every six hours; urinary alkalinization to pH >8 with sodium bicarbonate; thiamine 100 mg and pyridoxine 50 mg; the lab pattern that should raise suspicion (anion-gap acidosis, low or no ethanol, no ketones, normal lactate).",
+   "Antidotes for cyanide poisoning (p. 203): cyanide binds the ferric ion on cytochrome oxidase and halts the electron transport chain; sources (house fires, industrial accidents, suicide attempts, chemical warfare); lactate >8 mmol/L and high venous oxygen saturation as suggestive findings; nitrites produce methemoglobinemia and cyanomethemoglobin; sodium nitrite 300 mg (10 mL of 3%) i.v. for adults, 6 mg/kg for children; stop nitrites above 20% methemoglobin.",
+   "Sodium thiosulfate (p. 204): rhodanese forms thiocyanate, thiosulfate donates a sulfur group, adult dose 12.5 g i.v. (50 mL of 25% solution), pediatric 0.5 g/kg, given after sodium nitrite via the same line; recommended for all patients with suspected cyanide toxicity including smoke inhalation.",
+   "N-acetylcysteine (p. 206-207): replenishes glutathione stores, acts as a glutathione substitute and replenishes sulfate; Rumack-Matthew nomogram with a level drawn four or more hours after ingestion; i.v. 150 mg/kg over 1 hour, 50 mg/kg over 4 hours, 100 mg/kg over 16 hours (21-hour regimen, continue 6.25 mg/kg/hr if needed); oral 140 mg/kg then 70 mg/kg every four hours for 17 doses; nearly 100% hepatoprotective within the first eight hours; i.v. NAC decreased mortality by 50% in acetaminophen-induced fulminant hepatic failure.",
+   "Digoxin-specific antibody fragments (p. 204-205): indications (symptomatic bradycardia or heart block unresponsive to atropine, ventricular arrhythmias, serum potassium >5.0 meq/L, ingestion of >4 mg by a child or >10 mg by an adult, chronic level >2.5 ng/mL with symptoms); each 38- or 40-mg vial binds 0.5 mg digoxin; empiric 10-20 vials acute, 3-5 vials chronic; vial calculation = concentration (ng/mL) x weight (kg) / 100; serum digoxin levels unusable for 24 hours afterward; avoid calcium in digoxin toxicity (p. 202).",
+   "Flumazenil (p. 205-206) and Naloxone (p. 208): flumazenil as competitive antagonist at the benzodiazepine site on GABA-A, its withdrawal-seizure and mixed-ingestion risks, 0.2 mg/min dosing and 3 mg/hour ceiling; naloxone as competitive antagonist at all opioid receptors, 0.04-0.05 mg starting dose titrated to 10 mg, 30-90 minute duration, infusion at two-thirds of the effective hourly dose, higher doses for synthetic opioids and bell-shaped response with buprenorphine.",
+   "Antidotes for calcium-channel-blocker and β-blocker toxicities, introduction (p. 201): hypotension, bradycardia, conduction block and myocardial depression; CCB patients awake and alert versus β-blocker altered mental status and respiratory depression; hyperglycemia with severe CCB overdose; propranolol's lipophilicity and sodium-channel blockade causing seizures and widened QRS; combined CCB and β-blocker ingestion is particularly serious."
+  ],
+  "beyond_lecture": [
+   "Calcium (p. 202): 30 mL of 10% calcium gluconate equals 10 mL of 10% calcium chloride; calcium chloride through a central line because of extravasation injury; starting dose and repeat doses at 15-20 minutes; ionized calcium monitoring after three doses - not covered in lecture.",
+   "Glucagon (p. 202): raises cardiac cAMP independently of the β-adrenergic receptor; 50 µg/kg, or 3-5 mg up to a cumulative 10 mg, then infusion; nausea, vomiting, hyperglycemia, hypokalemia; duration rarely longer than 15 minutes - not covered in lecture.",
+   "HIET, hyperinsulinemia-euglycemia therapy (p. 202): 1 unit/kg regular insulin load then 0.5-1 unit/kg/hr, increased every 20-30 minutes, doses of 2.5-3 units/kg/hr used; dextrose 0.5 g/kg load and 0.5 g/kg/hr with a glucose goal of 100-250 mg/dL; start when calcium and glucagon fail or a vasopressor is being started - not covered in lecture.",
+   "Hydroxocobalamin (p. 204): vitamin B12a that forms cyanocobalamin, renally excreted; 5 g i.v. over 15 minutes for adults, 70 mg/kg for children; preferred for smoke inhalation because it does not compromise oxygen-carrying capacity or cause hypotension; chromaturia and interference with colorimetric laboratory tests and carboxyhemoglobin determinations - the lecture's cyanide scheme used amyl nitrite, rhodanese/thiosulfate and methylene blue and did not mention hydroxocobalamin.",
+   "Intravenous fat emulsion (p. 206): lipid sink theory; first-line for bupivacaine cardiotoxicity and considered for lipophilic cardiotoxic drugs (tricyclic antidepressants, verapamil, diltiazem, bupropion, propranolol); 20% IFE 100 mL (1.5 mL/kg) i.v. push, optional infusion 0.25-0.5 mL/kg/min; not FDA approved for this use - not covered in lecture.",
+   "Octreotide (p. 208-209): somatostatin analog that inhibits pancreatic insulin release for sulfonylurea- and miglitinide-induced hypoglycemia; 50 µg subcutaneously every six hours as needed after dextrose 0.5-1 g/kg - not covered in lecture.",
+   "Introduction and supplementary material (p. 199-200): the national consensus list of 24 antidotes, ED versus 60-minute availability, eFigure 1 stocking list and eTable 1 inventory log - not covered in lecture.",
+   "The poisoning treatment table built from this article (signs and symptoms of overdose, antidote, antidote mechanism) is due the morning of 10/20; she said 'we'll go over the table tomorrow morning in the beginning of class' and 'Once everybody has turned in their table to me tomorrow morning, I will post my key'."
+  ],
+  "terms": [
+   {
+    "term": "Fomepizole",
+    "chapter_definition": "Fomepizole competitively inhibits ADH and is an effective and safe antidote for both ethylene glycol and methanol toxicity; in its presence the half-lives of ethylene glycol (in patients with normal renal function) and methanol are 14.5 and 40 hours, respectively."
+   },
+   {
+    "term": "Ethanol (as antidote)",
+    "chapter_definition": "For many years, ethanol has been used to inhibit ADH and limit the metabolism of methanol and ethylene glycol to their respective metabolites; most authorities recommend a dose sufficient to achieve and maintain a serum ethanol concentration of 100-150 mg/dL."
+   },
+   {
+    "term": "HIET (hyperinsulinemia-euglycemia therapy)",
+    "chapter_definition": "High-dose insulin therapy for patients severely poisoned with CCBs or β-blockers; the available data suggest it enhances carbohydrate use and energy production by myocardial cells, resulting in improved contractility, with benefits delayed 15-60 minutes."
+   },
+   {
+    "term": "Rhodanese",
+    "chapter_definition": "An endogenous enzyme that facilitates the formation of thiocyanate, a much less toxic metabolite of cyanide, which is renally excreted; this metabolic pathway is capacity limited."
+   },
+   {
+    "term": "Sodium thiosulfate",
+    "chapter_definition": "Thiosulfate enhances the activity of rhodanese by donating a sulfur group, thereby increasing the amount of thiocyanate that rhodanese can produce; adult dose 12.5 g i.v. (50 mL of 25% solution)."
+   },
+   {
+    "term": "Hydroxocobalamin",
+    "chapter_definition": "Vitamin B12a; it detoxifies cyanide and forms cyanocobalamin, which is renally excreted; it does not compromise the blood's oxygen-carrying capacity and does not produce hypotension."
+   },
+   {
+    "term": "Digoxin-specific antibody fragments (Fab)",
+    "chapter_definition": "Lifesaving agents in the management of toxicity associated with the use of digoxin and other cardioactive steroids, including digitoxin and those derived from oleander, fox glove, lily of the valley, and toad venom; each 38- or 40-mg vial binds 0.5 mg of digoxin."
+   },
+   {
+    "term": "Flumazenil",
+    "chapter_definition": "A competitive antagonist at the benzodiazepine-receptor binding site on γ-aminobutyric acid-A; its use in overdose patients is discouraged unless only a benzodiazepine was ingested and the patient is not benzodiazepine dependent and has no history of seizure."
+   },
+   {
+    "term": "Toxidrome",
+    "chapter_definition": "A toxidrome, or toxic syndrome; for benzodiazepines ingested in overdose, CNS depression with relatively normal vital signs."
+   },
+   {
+    "term": "N-acetylcysteine (NAC)",
+    "chapter_definition": "While acetaminophen is still present in the plasma, NAC acts as an antidote, primarily by replenishing glutathione stores; secondarily, it acts as a glutathione substitute and replenishes sulfate."
+   },
+   {
+    "term": "Rumack-Matthew nomogram",
+    "chapter_definition": "Used to predict whether patients will develop hepatotoxicity, defined as a serum AST concentration of >1000 units/L, based on an initial plasma acetaminophen concentration obtained four or more hours after a single acute ingestion of acetaminophen."
+   },
+   {
+    "term": "Naloxone",
+    "chapter_definition": "The most commonly used antidote in the ED setting; a competitive antagonist at all opioid receptors, including the µ-opioid receptor, and a well-established antidote for respiratory depression secondary to opioid toxicity."
+   }
+  ],
+  "discussed_in_class": true,
+  "her_words": [
+   {
+    "t": "And then also this article by Marafa.",
+    "date": "10/19"
+   },
+   {
+    "t": "It's a really good article and it breaks down step by step, a lot of the, the symptoms that you'll see in these overdoses and then the treatments that we use, and importantly, their mechanism of action.",
+    "date": "10/19"
+   },
+   {
+    "t": "So, um, What I wanted to propose to you today, usually what I do with this, this lecture is I give students time to work together in class to fill out this table, and it's not due yet until tomorrow morning, right?",
+    "date": "10/19"
+   },
+   {
+    "t": "All the information is right here in these articles.",
+    "date": "10/19"
+   },
+   {
+    "t": "I will be here, but I think just for the chance to shake it up a bit on how we run our class time, maybe it's more beneficial for you guys to do readings in the chapter or that Marrafa article and fill in that table rather than me just lecturing.",
+    "date": "10/19"
+   },
+   {
+    "t": "I suggest the Depiro chapter or the Marafa article or both.",
+    "date": "10/19"
+   },
+   {
+    "t": "I think the Marafa article has the information in it, um, fast.",
+    "date": "10/19"
+   },
+   {
+    "t": "It's the quickest to read through compared to the Dipiro article, OK.",
+    "date": "10/19"
+   },
+   {
+    "t": "I do not want you to recreate the, the chapter or the article in your squares.",
+    "date": "10/19"
+   },
+   {
+    "t": "Once everybody has turned in their table to me tomorrow morning, I will post my key, and that will give you an idea of the detail that I think you need to know for the exam, and we'll go over the table tomorrow morning in the beginning of class.",
+    "date": "10/19"
+   },
+   {
+    "t": "Make your brain do the work of reading the article, pulling the information and putting it into the table, OK?",
+    "date": "10/19"
+   },
+   {
+    "t": "The heaviest part of that will be this poisoning table.",
+    "date": "10/19"
+   },
+   {
+    "t": "All right, so you need to know this table that we're about to go through.",
+    "date": "10/19"
+   }
+  ],
+  "truncated": false,
+  "numbering_note": "The article is paginated 199-212 in Am J Health-Syst Pharm volume 69 (Feb 1, 2012); page numbers in chapter_location are those printed page numbers. The transcript renders fomepizole as 'omeprazole' (four times) and 'fomeprazole' (once); quotes are kept verbatim. The Drive file is 'Marraffa+AJHSP+2012+Antidotes.pdf' in the 'Readings for Lecture 10.19' folder.",
+  "exam": 3,
+  "lectures": [
+   "L16"
+  ],
+  "status": "discussed",
+  "links": [],
+  "drive": "https://drive.google.com/file/d/1Xa8ZTWXxMZDdn1v6732oGJzFGIQWJzS1/view"
  },
  {
   "id": "katzung-5",
