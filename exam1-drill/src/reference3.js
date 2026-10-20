@@ -248,6 +248,60 @@ const REFERENCE3_HTML = `
 <table class="reftab"><thead><tr><th>Item</th><th>Detail</th><th>Source</th></tr></thead><tbody>
 <tr><td>Compounds with guidelines</td><td>Acetaminophen; atypical antipsychotics; beta-blockers; calcium channel blockers; dextromethorphan; diphenhydramine and dimenhydrinate; iron; methylphenidate; salicylate; SSRIs; TCAs; valproic acid; elemental mercury; ethylene glycol; long-acting anticoagulant rodenticides</td><td>Treating Poisonings ‘Guidelines for Overdoses’</td></tr>
 <tr><td>Source of evidence</td><td>Published case reports and case series, evaluated and graded by experts; not clinical trials; animals very rarely</td><td>T 10/14</td></tr>
-<tr><td>Documents to discuss 10/19</td><td>Beta blockers; calcium channel blockers; differences between the two classes and between immediate- and extended-release ingestions; table for completion points</td><td>Treating Poisonings ‘Discussion of OD Guidelines’; T 10/14</td></tr>
+<tr><td>Documents discussed 10/19 (see table 27)</td><td>Beta blockers; calcium channel blockers; differences between the two classes and between immediate- and extended-release ingestions; table for completion points</td><td>Treating Poisonings ‘Discussion of OD Guidelines’; T 10/14</td></tr>
 </tbody></table>
+
+<h3 id="ref3-l16-1">24. Toxicokinetic treatments II: inhibit bioactivation, enhance metabolism, enhance elimination</h3>
+<table class="reftab"><thead><tr><th>Method</th><th>Example</th><th>What is given and what it does</th><th>Source</th></tr></thead><tbody>
+<tr><td>Inhibit bioactivation (rarely possible)</td><td>Methanol: alcohol dehydrogenase, formaldehyde, formaldehyde dehydrogenase, formic acid (retina; loss of sight)</td><td>Ethanol (outcompetes) or fomepizole (binds and inhibits) alcohol dehydrogenase</td><td>‘methanol and ethylene glycol examples’; T 10/19</td></tr>
+<tr><td>Inhibit bioactivation</td><td>Ethylene glycol (antifreeze; sweet): alcohol dehydrogenase, glycoaldehyde, aldehyde dehydrogenase, glycolic acid, oxalic acid (microcrystals block small vessels in kidneys, liver)</td><td>Same: ethanol or fomepizole</td><td>‘methanol and ethylene glycol examples’; T 10/19</td></tr>
+<tr><td>Enhance metabolism (cofactors; induction takes days)</td><td>Cyanide (target: cytochrome c oxidase; ATP production stops)</td><td>Amyl nitrite oxidizes hemoglobin to methemoglobin; methemoglobin pulls cyanide off the enzyme; rhodanese helps thiosulfate take the cyanide for renal elimination (the cofactor step); methylene blue reduces methemoglobin back to hemoglobin</td><td>‘Cyanide example’ (Golan figure); T 10/19</td></tr>
+<tr><td>Enhance metabolism</td><td>Acetaminophen (NAPQI, a free radical, damages the liver)</td><td>N-acetylcysteine supplies ingredients for glutathione, which conjugates NAPQI with the GST enzymes; stinks of sulfur; usually IV in the US, oral possible</td><td>‘Acetaminophen Example’; T 10/19</td></tr>
+<tr><td>Enhance renal elimination (ion trapping)</td><td>Salicylates, phenobarbital (mildly acidic; filtered, then reabsorbed)</td><td>IV sodium bicarbonate makes the urine more basic; the acid becomes negatively charged and cannot be reabsorbed by the transporters; not done for weak bases (acidifying blood is dangerous; cranberry juice too weak and slow)</td><td>‘Enhance Renal Elimination’; T 10/19</td></tr>
+<tr><td>Extracorporeal elimination</td><td>Very severe poisonings when other things are not working</td><td>Hemodialysis, hemofiltration, hemoperfusion; plasma exchange or exchange transfusion; works only if the chemistry allows (slide: small volume of distribution)</td><td>‘Extracorporeal enhancement of elimination’; T 10/19</td></tr>
+</tbody></table>
+<p class="sub">Recognition: symptoms first (a toxidrome), then a blood draw; emergency rooms screen for acetaminophen, salicylates, iron, beta blockers, calcium channel blockers, opiates. T 10/19.</p>
+
+<h3 id="ref3-l16-2">25. Inactivation of poisons: chelators, antivenoms and antibodies</h3>
+<table class="reftab"><thead><tr><th>Chelating agent</th><th>Metal chelated</th><th>Comment</th></tr></thead><tbody>
+<tr><td>Edetate disodium</td><td>Lead</td><td></td></tr>
+<tr><td>Dimercaprol (British anti-Lewisite, BAL)</td><td>Gold, arsenic, lead, mercury</td><td></td></tr>
+<tr><td>Succimer</td><td>Lead, cadmium, mercury, arsenic</td><td>Taking the place of dimercaprol</td></tr>
+<tr><td>Deferoxamine</td><td>Iron</td><td></td></tr>
+<tr><td>Deferasirox</td><td>Iron</td><td>Orally bioavailable, recently FDA approved</td></tr>
+<tr><td>Penicillamine and trientine</td><td>Copper</td><td>Usually for patients with Wilson's disease</td></tr>
+</tbody></table>
+<table class="reftab"><thead><tr><th>Item</th><th>Detail</th><th>Source</th></tr></thead><tbody>
+<tr><td>When inactivation applies</td><td>Only once the poison is in the systemic circulation; the official sense of antidote</td><td>‘Inactivation of Poisons’; T 10/19</td></tr>
+<tr><td>Requirements of an inactivator</td><td>Binds the toxin so it cannot reach its target; the complex is cleared; the complex has no toxicity (slide: low); high affinity for the toxin</td><td>‘Inactivation of Poisons’; T 10/19</td></tr>
+<tr><td>Chelator properties</td><td>Small molecules with a nucleophilic electron donor forming a metal-ligand complex; multidentate (several binding points on one metal atom); higher affinity for the metal than tissue macromolecules; low affinity for calcium and other endogenous ions; water soluble, non-toxic, readily cleared; structures not required</td><td>‘Heavy Metal Chelators’, ‘Structure of chelators’; T 10/19</td></tr>
+<tr><td>Polyclonal antivenom</td><td>Animal inoculated with small amounts of venom; antibodies filtered from its blood; a collection of antibodies, not one clone; danger: type III hypersensitivity (serum sickness: fever, nausea, malaise)</td><td>‘Antivenoms and Antibodies’; T 10/19</td></tr>
+<tr><td>Digoxin immune Fab</td><td>A monoclonal antibody that grabs overdosed digoxin and clears it from the blood; the one antibody antidote for a drug</td><td>‘Antivenoms and Antibodies’; T 10/19</td></tr>
+</tbody></table>
+<p class="sub">Memorize the chelator table: agent and metal. Side effects not covered. ‘Example Chelating Agents’; T 10/19.</p>
+
+<h3 id="ref3-l16-3">26. Pharmacological treatment: four categories and their examples</h3>
+<table class="reftab"><thead><tr><th>Category</th><th>Example</th><th>How it works</th><th>Source</th></tr></thead><tbody>
+<tr><td>Treatment is a receptor antagonist</td><td>Naloxone (opioid overdose)</td><td>Antagonist of the opioid receptor</td><td>‘Treatment is a receptor antagonist’; T 10/19</td></tr>
+<tr><td>Treatment is a receptor antagonist</td><td>Flumazenil (benzodiazepine overdose)</td><td>Antagonist at the GABA-A (benzodiazepine) receptor the benzodiazepine is agonizing</td><td>‘Treatment is a receptor antagonist’; T 10/19</td></tr>
+<tr><td>Treatment is a receptor antagonist</td><td>Atropine (organophosphate pesticides)</td><td>Organophosphates inhibit acetylcholinesterase; acetylcholine rises; atropine antagonizes it</td><td>‘Treatment is a receptor antagonist’; T 10/19</td></tr>
+<tr><td>Treatment is a receptor agonist</td><td>Physostigmine (belladonna alkaloids, jimsonweed; anticholinergic; dilated pupils)</td><td>Blocks acetylcholinesterase to increase acetylcholine, so acts like an agonist</td><td>‘Treatment is a receptor agonist’; T 10/19</td></tr>
+<tr><td>Treatment removes the toxin from the active site</td><td>Cyanide</td><td>Methemoglobin (made with amyl nitrite) pulls cyanide off cytochrome c oxidase</td><td>‘Treatment Removes Toxin from Active Site’; T 10/19</td></tr>
+<tr><td>Treatment removes the toxin from the active site</td><td>Carbon monoxide</td><td>High concentrations of oxygen displace CO from the heme of hemoglobin (slide only)</td><td>‘Treatment Removes Toxin from Active Site’</td></tr>
+<tr><td>Treatment removes the toxin from the active site</td><td>Organophosphates</td><td>Pralidoxime pulls the organophosphate off acetylcholinesterase onto itself for elimination; fails once the organophosphate has aged (part of it falls off; depends on its structure)</td><td>‘Pralidoxime example’; T 10/19</td></tr>
+<tr><td>Treatment bypasses an inhibited pathway</td><td>Warfarin overdose</td><td>Warfarin inhibits epoxide reductase, so active vitamin K is not regenerated and fewer coagulation factors are carboxylated; vitamin K is given to bypass the block; signs of over-anticoagulation: bruising, GI bleeds, hemorrhagic stroke</td><td>‘Treatment by-passes an inhibited pathway’; T 10/19</td></tr>
+</tbody></table>
+
+<h3 id="ref3-l16-4">27. The beta-blocker and calcium channel blocker guidelines: her key</h3>
+<table class="reftab"><thead><tr><th>Question on her key</th><th>Calcium channel blockers</th><th>Beta blockers</th></tr></thead><tbody>
+<tr><td>Reduce absorption</td><td colspan="2">Charcoal, at the hospital; no vomiting at home (aspiration)</td></tr>
+<tr><td>Asymptomatic, immediate-release</td><td colspan="2">Within 6 hours: hospital. After 6 hours: probably manage at home, watched</td></tr>
+<tr><td>Asymptomatic, extended-release</td><td>Modified-release other than verapamil: within 18 hours, hospital. Modified-release verapamil: within 24 hours, hospital; after 24 hours, probably OK</td><td>Sustained-release: within 8 hours, hospital</td></tr>
+<tr><td>Why the extended-release window</td><td colspan="2">The tablets clump in the stomach or small intestine and can break apart later with a huge absorption</td></tr>
+<tr><td>Why the classes differ</td><td colspan="2">The case data; it speaks to the mechanisms of action (cardio module)</td></tr>
+<tr><td>Transport</td><td colspan="2">Ambulance, not the family car: IVs, pressors, paddles</td></tr>
+<tr><td>Follow-up</td><td>At the judgment of the poison center</td><td>Usually about 12 to 24 hours, at the judgment of the poison center</td></tr>
+<tr><td>Self-harm</td><td colspan="2">Counseling and evaluation; treat the whole patient</td></tr>
+</tbody></table>
+<p class="sub">Both published in Clinical Toxicology in 2005 and still followed; data and recommendations ranked; poison center staff have them memorized. Slides ‘Guidelines for Overdoses’, ‘Discussion of OD Guidelines’; T 10/19. Poisoning table sources: DiPiro 13e ch. e9 (treating specific poisonings) and the Marraffa 2012 antidotes article.</p>
 `;

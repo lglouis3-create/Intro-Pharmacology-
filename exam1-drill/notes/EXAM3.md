@@ -19,12 +19,13 @@ Pharmacogenomics Days 2 and 3 (10/21, 10/22) fall after the Exam III scope and i
 | L13 Principles of toxicology (tox day 1) | 10/9 | Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf | Intro Pharm Lecture 10.09 EchoTranscript.txt | RodriguezMozaz-EHP-2010.pdf | 36 questions; L13-035/036 stay low yield (the article's examples were not discussed in class) |
 | L14 Indices, the reading, toxic responses I (tox day 2) | 10/13 | Toxic Responses Students Fall 2026 WCAG21A.pdf; the rest of the Principles deck; Discussion-Guide-Rodriguez-Mozaz-and-Weinberg-Student-2026 copy.pdf | Smith’s Intro Pharm Lecture 10.13 Transcript.txt | the article, as discussed | 70 questions; notes/L14.md |
 | L15 Organ toxicity, treating poisonings I (tox day 3) | 10/14 | Toxic Responses (finished); Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf (to the guideline list) | Smith’s Intro to Pharm Lectures 10.14 Transcript.txt | DiPiro Ch. 9 and the AAPCC guideline abstracts as she described them | 65 questions; notes/L15.md |
+| L16 Treating poisonings II, the guideline discussion (tox day 4) | 10/19 | Treating Poisonings (finished, re-saved copy of 10/19) | Smith’s Intro to Pharm 10.19 Lecture transcript.txt | Marraffa 2012 antidotes; AAPCC beta-blocker and CCB guidelines with her key; DiPiro Ch. e9 | 68 questions; notes/L16.md |
 
 ## Missing
 | Lecture | Date | Needed before ingest |
 |---|---|---|
-| Tox day 4: Treating Poisonings continued (inhibit bioactivation, enhance metabolism and renal elimination, chelators, antivenoms, pharmacological treatment, toxidromes, the beta-blocker and CCB guideline discussion) | Mon 10/19 | Echo transcript (or audio); the deck is already in Drive; the readings for 10/19 (AAPCC guidelines, DiPiro Ch. 6) are in Drive |
-| Pharmacogenomics day 1 | Tue 10/20 | Deck PDF; Echo transcript; Katzung Ch. 5 and DiPiro Ch. 6 are in Drive; any posted objectives or study guide |
+| Pharmacogenomics day 1 | Tue 10/20 | Deck PDF; Echo transcript; Katzung Ch. 5 and DiPiro Ch. 6 are in Drive; her poisoning-table key (posted after the tables are in); the result of the class vote on whether 10/20 counts on Friday |
+| Not reached on 10/19 | — | The toxidromes table (L16-013 lowYield until she walks it), the carbon monoxide bullet, the two bonus decks (careers; pharmaceuticals in the environment), which she did not open |
 
 Quizzes: her Canvas quizzes (quiz 1 on principles; quiz 2 on toxic responses) are graded and are the closest thing to her exam wording; none is in Drive. If the user can share them, they go into STYLE.md verbatim.
 

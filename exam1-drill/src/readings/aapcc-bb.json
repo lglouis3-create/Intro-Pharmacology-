@@ -1,158 +1,183 @@
 {
- "id": "aapcc-bb",
- "title": "β-Blocker Ingestion: An Evidence-Based Consensus Guideline for Out-of-Hospital Management",
- "source": "Clinical Toxicology, 43:131–146, 2005 (American Association of Poison Control Centers; Wax PM et al.)",
- "file": "beta-blocker guideline AAPCC 2005",
- "lecture": "Mon 10/19 (Treating Poisonings, continued)",
- "kind": "guideline",
- "about": "An evidence-based expert consensus guideline written to assist US poison center personnel in the out-of-hospital triage and initial management of patients with suspected ingestions of β-blockers alone. It reports that in 2003 US poison centers were contacted regarding ingestion of β-blockers by 15,350 patients, 7415 of whom were evaluated in healthcare facilities and 33 of whom died. It reviews current poison center referral practice, therapeutic dose ranges, and the medical literature on toxic doses, time of onset of toxicity, and out-of-hospital treatments, assigning each article a level of evidence. It ends with seven graded recommendations covering referral for self-harm, dose-based referral thresholds (Table 5), activated charcoal, time-since-ingestion windows, ambulance transport, follow-up calls, and observation times for immediate-release, sustained-release and sotalol ingestions. Appendix 4 presents the recommendations as a triage algorithm.",
- "sections": [
-  "Abstract",
-  "Introduction (Scope of the Problem and Importance of this Guideline; Background and Definitions; Intended Users of the Guideline; Objective of this Guideline)",
-  "Methodology (Literature Search; Criteria Used to Identify Applicable Studies; Data Extraction Process; Criteria Used to Evaluate Studies and Assign Levels of Evidence; Guideline Writing and Review)",
-  "Review of Current Practice (Recommended Therapeutic Doses of β-Blockers; Current Poison Control Center Practice)",
-  "Review of the Medical Literature (Dose of the β-Blocker Causing Toxicity after Overdose; Time of Onset of Toxicity after Overdose; Sustained-Release Products)",
-  "Potential Out-of-Hospital Treatments (Gastrointestinal Decontamination; Other Treatments)",
-  "Limitations of the Published Data",
-  "Conclusions (Key Decision Points for Triage; Patient Intent; Presence of Symptoms; Underlying Medical Condition and Other Medications Used; Dose and Formulation of the Specific β-Blocker; Time of Onset of Toxicity After Overdose; Duration of Observation; Potential Out-of-Hospital Management)",
-  "Recommendations",
-  "Implications for Research",
-  "References",
-  "Appendix 1: Expert Consensus Panel Members",
-  "Appendix 2: Grades of Recommendation and Levels of Evidence",
-  "Appendix 3: Secondary Review Panel Organizations",
-  "Appendix 4: Algorithm for triage of β-blocker ingestions"
- ],
- "lecture_use": [
-  {
-   "point": "The guidance is built from graded case reports and case series, and each recommendation carries its own grade.",
-   "chapter_location": "Methodology (Data Extraction Process; Criteria Used to Evaluate Studies and Assign Levels of Evidence) and Appendix 2, Grades of Recommendation and Levels of Evidence",
-   "lecture_evidence": {
-    "date": "2026-10-14",
-    "quote": "The data that they used to write these guidance documents has been like graded, and the value of what they tell us to do in these situations is also graded just like any other guidance documents that you may not have seen yet in your therapeutics classes, but you will be seeing those, I promise."
-   },
-   "date": "",
-   "evidence_clean": "The data that they used to write these guidance documents has been graded, and the value of what they tell us to do in these situations is also graded, just like any other guidance documents that you may not have seen yet in your therapeutics classes, but you will be seeing those, I promise."
-  },
-  {
-   "point": "Immediate-release and extended-release products are handled differently (referral window and observation time).",
-   "chapter_location": "Recommendations 4 and 7 (6 hours for an immediate-release product other than sotalol, 8 hours for a sustained-release product, 12 hours for sotalol) and Table 5 (separate IR and SR thresholds for metoprolol and propranolol)",
-   "lecture_evidence": {
-    "date": "2026-10-14",
-    "quote": "It also. Has differences between immediate release and extended release tablets."
-   },
-   "date": "",
-   "evidence_clean": "It also has differences between immediate-release and extended-release tablets."
-  }
- ],
- "read_for": [
-  "Abstract: the seven numbered recommendations with their grades (D, C, A, C, D, D, D).",
-  "Recommendation 2 / Table 5: refer when the amount exceeds the usual maximum single therapeutic dose or equals the lowest reported toxic dose, whichever is lower (e.g., metoprolol >450 mg IR or >400 mg SR in adults; propranolol >240 mg; sotalol >160 mg; timolol: no safe dose in children).",
-  "Recommendation 2: any excess dose taken with a calcium channel blocker, or by a patient with serious underlying cardiovascular disease, warrants referral (Grade C).",
-  "Recommendation 3: do not induce emesis; consider oral activated charcoal but do not delay transportation to give it (Grade A).",
-  "Recommendation 4: asymptomatic patients over the referral dose go to an emergency department if the ingestion was within 6 hours (immediate-release other than sotalol), 8 hours (sustained-release) or 12 hours (sotalol) of the call (Grade C).",
-  "Recommendation 7: observe asymptomatic referred patients at least 6 hours (IR), 8 hours (SR) or 12 hours (sotalol); routine 24-hour admission after an unintentional sustained-release ingestion is not warranted (Grade D).",
-  "Recommendation 1: stated or suspected self-harm or malicious administration is referred immediately regardless of dose (Grade D).",
-  "Appendix 2: Grades of Recommendation A–D and Z mapped to levels of evidence 1a–6 (case series and single case reports are level 4, Grade C; expert opinion is level 5, Grade D).",
-  "Background and Definitions: β-blockers decrease cyclic AMP production and blunt catecholamine effects; propranolol's high lipid solubility raises the likelihood of seizures; sotalol also antagonizes the potassium channel; acute exposure is defined as no more than 8 hours.",
-  "Conclusions, Specific Pharmacological Therapy: in-hospital literature supports intravenous glucagon, but no studies address its out-of-hospital use."
- ],
- "beyond_lecture": [
-  "Methodology: the MEDLINE/EMBASE search strategy, abstractor process and modified Delphi review.",
-  "Table 1: cardioselectivity, lipophilicity, protein binding, intrinsic sympathomimetic activity, membrane-stabilizing effect and half-life of nine β-blockers.",
-  "Table 2: the hospital referral thresholds used by 17 US poison control centers.",
-  "Table 3: usual lowest and maximum single therapeutic doses, maximum daily doses and oral dosage forms in adults and children.",
-  "Table 4: lowest reported toxic oral dose and longest reported delay in onset for each β-blocker, with the individual case reports behind them (Chen et al., Ducret et al., Belson et al.).",
-  "Limitations of the Published Data: dose-history uncertainty, lack of analytical confirmation and unverified ingestion times.",
-  "Implications for Research and Appendices 1 and 3 (panel members and secondary review organizations)."
- ],
- "terms": [
-  {
-   "term": "β-blockers (β-adrenergic antagonists)",
-   "chapter_definition": "Drugs that antagonize the β-adrenergic receptor; they competitively block β-adrenergic receptors resulting in decreased cyclic AMP production and a blunting of catecholamine effects."
-  },
-  {
-   "term": "Acute exposure",
-   "chapter_definition": "An exposure occurring over a period of no more than 8 hours."
-  },
-  {
-   "term": "Chronic exposure",
-   "chapter_definition": "An exposure that occurs over a period of 8 or more hours."
-  },
-  {
-   "term": "Age groups",
-   "chapter_definition": "For the purpose of this guideline, 1) children under 6 years of age and 2) older children and adults."
-  },
-  {
-   "term": "Referral threshold dose",
-   "chapter_definition": "Ingestion of an amount that exceeds the usual maximum single therapeutic dose or an amount equal to or greater than the lowest reported toxic dose (whichever is lower) warrants consideration of referral to an emergency department."
-  },
-  {
-   "term": "Clinical effects (onset of toxicity)",
-   "chapter_definition": "Any sign, symptom, or laboratory/electrocardiographic finding consistent with β-blocker toxicity."
-  },
-  {
-   "term": "Maximum potential dose",
-   "chapter_definition": "If the actual dose ingested cannot be ascertained, the amount of the drug product that is missing from the container is multiplied by the concentration of the formulation."
-  },
-  {
-   "term": "Level of evidence / Grade of recommendation",
-   "chapter_definition": "Articles were assigned level-of-evidence scores from 1 to 6 based on the Grades of Recommendation table developed by the Centre for Evidence-Based Medicine at Oxford University; single case reports were classified along with case series as level 4 (Grade C), expert opinion is level 5 (Grade D)."
-  },
-  {
-   "term": "Sotalol",
-   "chapter_definition": "A nonselective β-adrenergic antagonist that is particularly toxic because it also antagonizes the potassium channel; it carries a 12-hour referral window and observation period."
-  },
-  {
-   "term": "TESS",
-   "chapter_definition": "The Toxic Exposure Surveillance System of the American Association of Poison Control Centers, the source of the 2003 exposure and fatality counts."
-  }
- ],
- "discussed_in_class": false,
- "her_words": [
-  {
-   "t": "Just to introduce this to you, we have a few medications for which these evidence-based guidance documents have been written, and they basically talk about what do you do if you've got a patient that overdosed on a big handful of immediate-release beta blocker, or what do you do if a patient overdosed on a handful of extended-release beta blockers?",
-   "date": "2026-10-14",
-   "verbatim": "Um, just to introduce this to you, we have a few medications for which these evidence-based guidance documents have been written, and they basically talk about what do you do if you've got a patient that overdosed on a big handful of immediate release beta blocker, or what do you do if a patient overdosed on a handful of extended release beta blockers?"
-  },
-  {
-   "t": "It's summarized in the abstracts for each of these documents.",
-   "date": "2026-10-14",
-   "verbatim": "It's summarized in the abstracts for each of these documents, OK?"
-  },
-  {
-   "t": "You've got a table to fill out because there are slight differences in what we do for a beta blocker overdose compared to a calcium channel blocker overdose, even though they're all cardiac meds.",
-   "date": "2026-10-14",
-   "verbatim": "You've got a table to fill out because there are slight differences in what we do for a beta blocker overdose compared to a calcium channel overdose, even though they're all cardiac meds, OK?"
-  },
-  {
-   "t": "It also has differences between immediate-release and extended-release tablets.",
-   "date": "2026-10-14",
-   "verbatim": "It also. Has differences between immediate release and extended release tablets."
-  },
-  {
-   "t": "The data for these evidence-based guidance documents comes from people overdosing; clinicians, pharmacists, doctors write up the case, get it published, and it's in the literature.",
-   "date": "2026-10-14",
-   "verbatim": "The data for these evidence-based guidance documents comes from people overdosing, clinicians, pharmacists, doctors write up the case, get it published, and it's in the literature."
-  },
-  {
-   "t": "They pulled all those documents, evaluated every single one of those case reports or case series, and wrote these evidence-based documents.",
-   "date": "2026-10-14",
-   "verbatim": "They pulled all those documents, evaluated every single one of those case reports or case series, and wrote these evidence-based documents."
-  },
-  {
-   "t": "The data that they used to write these guidance documents has been graded, and the value of what they tell us to do in these situations is also graded, just like any other guidance documents that you may not have seen yet in your therapeutics classes, but you will be seeing those, I promise.",
-   "date": "2026-10-14",
-   "verbatim": "The data that they used to write these guidance documents has been like graded, and the value of what they tell us to do in these situations is also graded just like any other guidance documents that you may not have seen yet in your therapeutics classes, but you will be seeing those, I promise."
-  },
-  {
-   "t": "Only a few drugs are out there that have these documents written, but these are pretty nasty drugs.",
-   "date": "2026-10-14",
-   "verbatim": "Only a few drugs are out there that have these documents written, but these are pretty nasty drugs, OK?"
-  }
- ],
- "quotes_note": "Quotes lightly edited for reading: filler words removed and transcription errors corrected; the verbatim transcript text is kept beside each quote.",
- "truncated": false,
- "listen": "This reading is the beta blocker ingestion guideline, an evidence based consensus guideline for out of hospital management, published in Clinical Toxicology in 2005 by the American Association of Poison Control Centers. It belongs to the Treating Poisonings lecture continued on Monday, October nineteenth. Doctor Smith has not discussed it in class yet. On October fourteenth she said the class would \"talk about them a little bit on Monday.\" Her rule is that readings are tested as discussed.\n\nWhat she said on October fourteenth. First, what the documents are. She said, \"they basically talk about what do you do if you've got a patient that overdosed on a big handful of immediate release beta blocker, or what do you do if a patient overdosed on a handful of extended release beta blockers?\" Second, where the data come from. She said, \"The data for these evidence-based guidance documents comes from people overdosing, clinicians, pharmacists, doctors write up the case, get it published, and it's in the literature.\" Third, grading. She said, \"The data that they used to write these guidance documents has been like graded, and the value of what they tell us to do in these situations is also graded.\" Fourth, formulation. She said, \"It also has differences between immediate release and extended release tablets.\" On October ninth she had asked the room which is worse, a handful of immediate release or a handful of extended release beta blocker, and answered, \"It depends.\" Fifth, the table. She said, \"read the abstract, fill out the table as best you can, and we'll talk about it in class.\"\n\nThe card points to these sections. The abstract with its seven numbered recommendations and their grades. Recommendation one: self harm or malicious administration is referred immediately regardless of dose. Recommendation two and Table 5: refer when the amount exceeds the usual maximum single therapeutic dose or equals the lowest reported toxic dose, whichever is lower, and refer any excess dose taken with a calcium channel blocker or by a patient with serious cardiovascular disease. Recommendation three: do not induce emesis, and consider oral activated charcoal but do not delay transport. Recommendations four and seven: referral and observation of at least six hours for an immediate release product other than sotalol, eight hours for sustained release, and twelve hours for sotalol. Appendix 2, where case series and case reports are level four, Grade C, and expert opinion is level five, Grade D. The background, where propranolol's high lipid solubility raises the likelihood of seizures.\n\nRe-read first the abstract, then Table 5 and Appendix 2.",
- "listen_secs": 158
+  "id": "aapcc-bb",
+  "title": "β-Blocker Ingestion: An Evidence-Based Consensus Guideline for Out-of-Hospital Management",
+  "source": "Clinical Toxicology, 43:131–146, 2005 (American Association of Poison Control Centers; Wax PM et al.)",
+  "file": "beta-blocker guideline AAPCC 2005",
+  "lecture": "Mon 10/19 (Treating Poisonings, continued)",
+  "kind": "guideline",
+  "about": "An evidence-based expert consensus guideline written to assist US poison center personnel in the out-of-hospital triage and initial management of patients with suspected ingestions of β-blockers alone. It reports that in 2003 US poison centers were contacted regarding ingestion of β-blockers by 15,350 patients, 7415 of whom were evaluated in healthcare facilities and 33 of whom died. It reviews current poison center referral practice, therapeutic dose ranges, and the medical literature on toxic doses, time of onset of toxicity, and out-of-hospital treatments, assigning each article a level of evidence. It ends with seven graded recommendations covering referral for self-harm, dose-based referral thresholds (Table 5), activated charcoal, time-since-ingestion windows, ambulance transport, follow-up calls, and observation times for immediate-release, sustained-release and sotalol ingestions. Appendix 4 presents the recommendations as a triage algorithm.",
+  "sections": [
+    "Abstract",
+    "Introduction (Scope of the Problem and Importance of this Guideline; Background and Definitions; Intended Users of the Guideline; Objective of this Guideline)",
+    "Methodology (Literature Search; Criteria Used to Identify Applicable Studies; Data Extraction Process; Criteria Used to Evaluate Studies and Assign Levels of Evidence; Guideline Writing and Review)",
+    "Review of Current Practice (Recommended Therapeutic Doses of β-Blockers; Current Poison Control Center Practice)",
+    "Review of the Medical Literature (Dose of the β-Blocker Causing Toxicity after Overdose; Time of Onset of Toxicity after Overdose; Sustained-Release Products)",
+    "Potential Out-of-Hospital Treatments (Gastrointestinal Decontamination; Other Treatments)",
+    "Limitations of the Published Data",
+    "Conclusions (Key Decision Points for Triage; Patient Intent; Presence of Symptoms; Underlying Medical Condition and Other Medications Used; Dose and Formulation of the Specific β-Blocker; Time of Onset of Toxicity After Overdose; Duration of Observation; Potential Out-of-Hospital Management)",
+    "Recommendations",
+    "Implications for Research",
+    "References",
+    "Appendix 1: Expert Consensus Panel Members",
+    "Appendix 2: Grades of Recommendation and Levels of Evidence",
+    "Appendix 3: Secondary Review Panel Organizations",
+    "Appendix 4: Algorithm for triage of β-blocker ingestions"
+  ],
+  "lecture_use": [
+    {
+      "point": "The guidance is built from graded case reports and case series, and each recommendation carries its own grade.",
+      "chapter_location": "Methodology (Data Extraction Process; Criteria Used to Evaluate Studies and Assign Levels of Evidence) and Appendix 2, Grades of Recommendation and Levels of Evidence",
+      "lecture_evidence": {
+        "date": "2026-10-14",
+        "quote": "The data that they used to write these guidance documents has been like graded, and the value of what they tell us to do in these situations is also graded just like any other guidance documents that you may not have seen yet in your therapeutics classes, but you will be seeing those, I promise."
+      },
+      "date": "",
+      "evidence_clean": "The data that they used to write these guidance documents has been graded, and the value of what they tell us to do in these situations is also graded, just like any other guidance documents that you may not have seen yet in your therapeutics classes, but you will be seeing those, I promise."
+    },
+    {
+      "point": "Immediate-release and extended-release products are handled differently (referral window and observation time).",
+      "chapter_location": "Recommendations 4 and 7 (6 hours for an immediate-release product other than sotalol, 8 hours for a sustained-release product, 12 hours for sotalol) and Table 5 (separate IR and SR thresholds for metoprolol and propranolol)",
+      "lecture_evidence": {
+        "date": "2026-10-14",
+        "quote": "It also. Has differences between immediate release and extended release tablets."
+      },
+      "date": "",
+      "evidence_clean": "It also has differences between immediate-release and extended-release tablets."
+    }
+  ],
+  "read_for": [
+    "Abstract: the seven numbered recommendations with their grades (D, C, A, C, D, D, D).",
+    "Recommendation 2 / Table 5: refer when the amount exceeds the usual maximum single therapeutic dose or equals the lowest reported toxic dose, whichever is lower (e.g., metoprolol >450 mg IR or >400 mg SR in adults; propranolol >240 mg; sotalol >160 mg; timolol: no safe dose in children).",
+    "Recommendation 2: any excess dose taken with a calcium channel blocker, or by a patient with serious underlying cardiovascular disease, warrants referral (Grade C).",
+    "Recommendation 3: do not induce emesis; consider oral activated charcoal but do not delay transportation to give it (Grade A).",
+    "Recommendation 4: asymptomatic patients over the referral dose go to an emergency department if the ingestion was within 6 hours (immediate-release other than sotalol), 8 hours (sustained-release) or 12 hours (sotalol) of the call (Grade C).",
+    "Recommendation 7: observe asymptomatic referred patients at least 6 hours (IR), 8 hours (SR) or 12 hours (sotalol); routine 24-hour admission after an unintentional sustained-release ingestion is not warranted (Grade D).",
+    "Recommendation 1: stated or suspected self-harm or malicious administration is referred immediately regardless of dose (Grade D).",
+    "Appendix 2: Grades of Recommendation A–D and Z mapped to levels of evidence 1a–6 (case series and single case reports are level 4, Grade C; expert opinion is level 5, Grade D).",
+    "Background and Definitions: β-blockers decrease cyclic AMP production and blunt catecholamine effects; propranolol's high lipid solubility raises the likelihood of seizures; sotalol also antagonizes the potassium channel; acute exposure is defined as no more than 8 hours.",
+    "Conclusions, Specific Pharmacological Therapy: in-hospital literature supports intravenous glucagon, but no studies address its out-of-hospital use."
+  ],
+  "beyond_lecture": [
+    "Methodology: the MEDLINE/EMBASE search strategy, abstractor process and modified Delphi review.",
+    "Table 1: cardioselectivity, lipophilicity, protein binding, intrinsic sympathomimetic activity, membrane-stabilizing effect and half-life of nine β-blockers.",
+    "Table 2: the hospital referral thresholds used by 17 US poison control centers.",
+    "Table 3: usual lowest and maximum single therapeutic doses, maximum daily doses and oral dosage forms in adults and children.",
+    "Table 4: lowest reported toxic oral dose and longest reported delay in onset for each β-blocker, with the individual case reports behind them (Chen et al., Ducret et al., Belson et al.).",
+    "Limitations of the Published Data: dose-history uncertainty, lack of analytical confirmation and unverified ingestion times.",
+    "Implications for Research and Appendices 1 and 3 (panel members and secondary review organizations)."
+  ],
+  "terms": [
+    {
+      "term": "β-blockers (β-adrenergic antagonists)",
+      "chapter_definition": "Drugs that antagonize the β-adrenergic receptor; they competitively block β-adrenergic receptors resulting in decreased cyclic AMP production and a blunting of catecholamine effects."
+    },
+    {
+      "term": "Acute exposure",
+      "chapter_definition": "An exposure occurring over a period of no more than 8 hours."
+    },
+    {
+      "term": "Chronic exposure",
+      "chapter_definition": "An exposure that occurs over a period of 8 or more hours."
+    },
+    {
+      "term": "Age groups",
+      "chapter_definition": "For the purpose of this guideline, 1) children under 6 years of age and 2) older children and adults."
+    },
+    {
+      "term": "Referral threshold dose",
+      "chapter_definition": "Ingestion of an amount that exceeds the usual maximum single therapeutic dose or an amount equal to or greater than the lowest reported toxic dose (whichever is lower) warrants consideration of referral to an emergency department."
+    },
+    {
+      "term": "Clinical effects (onset of toxicity)",
+      "chapter_definition": "Any sign, symptom, or laboratory/electrocardiographic finding consistent with β-blocker toxicity."
+    },
+    {
+      "term": "Maximum potential dose",
+      "chapter_definition": "If the actual dose ingested cannot be ascertained, the amount of the drug product that is missing from the container is multiplied by the concentration of the formulation."
+    },
+    {
+      "term": "Level of evidence / Grade of recommendation",
+      "chapter_definition": "Articles were assigned level-of-evidence scores from 1 to 6 based on the Grades of Recommendation table developed by the Centre for Evidence-Based Medicine at Oxford University; single case reports were classified along with case series as level 4 (Grade C), expert opinion is level 5 (Grade D)."
+    },
+    {
+      "term": "Sotalol",
+      "chapter_definition": "A nonselective β-adrenergic antagonist that is particularly toxic because it also antagonizes the potassium channel; it carries a 12-hour referral window and observation period."
+    },
+    {
+      "term": "TESS",
+      "chapter_definition": "The Toxic Exposure Surveillance System of the American Association of Poison Control Centers, the source of the 2003 exposure and fatality counts."
+    }
+  ],
+  "discussed_in_class": true,
+  "her_words": [
+    {
+      "t": "Just to introduce this to you, we have a few medications for which these evidence-based guidance documents have been written, and they basically talk about what do you do if you've got a patient that overdosed on a big handful of immediate-release beta blocker, or what do you do if a patient overdosed on a handful of extended-release beta blockers?",
+      "date": "2026-10-14",
+      "verbatim": "Um, just to introduce this to you, we have a few medications for which these evidence-based guidance documents have been written, and they basically talk about what do you do if you've got a patient that overdosed on a big handful of immediate release beta blocker, or what do you do if a patient overdosed on a handful of extended release beta blockers?"
+    },
+    {
+      "t": "It's summarized in the abstracts for each of these documents.",
+      "date": "2026-10-14",
+      "verbatim": "It's summarized in the abstracts for each of these documents, OK?"
+    },
+    {
+      "t": "You've got a table to fill out because there are slight differences in what we do for a beta blocker overdose compared to a calcium channel blocker overdose, even though they're all cardiac meds.",
+      "date": "2026-10-14",
+      "verbatim": "You've got a table to fill out because there are slight differences in what we do for a beta blocker overdose compared to a calcium channel overdose, even though they're all cardiac meds, OK?"
+    },
+    {
+      "t": "It also has differences between immediate-release and extended-release tablets.",
+      "date": "2026-10-14",
+      "verbatim": "It also. Has differences between immediate release and extended release tablets."
+    },
+    {
+      "t": "The data for these evidence-based guidance documents comes from people overdosing; clinicians, pharmacists, doctors write up the case, get it published, and it's in the literature.",
+      "date": "2026-10-14",
+      "verbatim": "The data for these evidence-based guidance documents comes from people overdosing, clinicians, pharmacists, doctors write up the case, get it published, and it's in the literature."
+    },
+    {
+      "t": "They pulled all those documents, evaluated every single one of those case reports or case series, and wrote these evidence-based documents.",
+      "date": "2026-10-14",
+      "verbatim": "They pulled all those documents, evaluated every single one of those case reports or case series, and wrote these evidence-based documents."
+    },
+    {
+      "t": "The data that they used to write these guidance documents has been graded, and the value of what they tell us to do in these situations is also graded, just like any other guidance documents that you may not have seen yet in your therapeutics classes, but you will be seeing those, I promise.",
+      "date": "2026-10-14",
+      "verbatim": "The data that they used to write these guidance documents has been like graded, and the value of what they tell us to do in these situations is also graded just like any other guidance documents that you may not have seen yet in your therapeutics classes, but you will be seeing those, I promise."
+    },
+    {
+      "t": "Only a few drugs are out there that have these documents written, but these are pretty nasty drugs.",
+      "date": "2026-10-14",
+      "verbatim": "Only a few drugs are out there that have these documents written, but these are pretty nasty drugs, OK?"
+    },
+    {
+      "t": "What they published in 2005 is still what they follow",
+      "date": "2026-10-19",
+      "verbatim": "What they published in 2005 is still what they follow"
+    },
+    {
+      "t": "I want you to know those time frames, OK, which drug formulation is OK at this time frame",
+      "date": "2026-10-19",
+      "verbatim": "I want you to know those time frames, OK, which drug formulation is OK at this time frame"
+    },
+    {
+      "t": "Also, you need to know you don't make them barf at home, it's too dangerous",
+      "date": "2026-10-19",
+      "verbatim": "Also, you need to know you don't make them barf at home, it's too dangerous"
+    },
+    {
+      "t": "18 hours for your uh calcium channel blockers, but 8 hours for your beta blockers, you are still within the window that that clump of tablets could break apart",
+      "date": "2026-10-19",
+      "verbatim": "18 hours for your uh calcium channel blockers, but 8 hours for your beta blockers, you are still within the window that that clump of tablets could break apart"
+    },
+    {
+      "t": "It's the clumping of the tablets is the biggest issue, OK.",
+      "date": "2026-10-19",
+      "verbatim": "It's the clumping of the tablets is the biggest issue, OK."
+    }
+  ],
+  "quotes_note": "Quotes lightly edited for reading: filler words removed and transcription errors corrected; the verbatim transcript text is kept beside each quote.",
+  "truncated": false,
+  "listen": "This reading is the beta blocker ingestion guideline, an evidence based consensus guideline for out of hospital management, published in Clinical Toxicology in 2005 by the American Association of Poison Control Centers. It belongs to the Treating Poisonings lecture continued on Monday, October nineteenth. Doctor Smith has not discussed it in class yet. On October fourteenth she said the class would \"talk about them a little bit on Monday.\" Her rule is that readings are tested as discussed.\n\nWhat she said on October fourteenth. First, what the documents are. She said, \"they basically talk about what do you do if you've got a patient that overdosed on a big handful of immediate release beta blocker, or what do you do if a patient overdosed on a handful of extended release beta blockers?\" Second, where the data come from. She said, \"The data for these evidence-based guidance documents comes from people overdosing, clinicians, pharmacists, doctors write up the case, get it published, and it's in the literature.\" Third, grading. She said, \"The data that they used to write these guidance documents has been like graded, and the value of what they tell us to do in these situations is also graded.\" Fourth, formulation. She said, \"It also has differences between immediate release and extended release tablets.\" On October ninth she had asked the room which is worse, a handful of immediate release or a handful of extended release beta blocker, and answered, \"It depends.\" Fifth, the table. She said, \"read the abstract, fill out the table as best you can, and we'll talk about it in class.\"\n\nThe card points to these sections. The abstract with its seven numbered recommendations and their grades. Recommendation one: self harm or malicious administration is referred immediately regardless of dose. Recommendation two and Table 5: refer when the amount exceeds the usual maximum single therapeutic dose or equals the lowest reported toxic dose, whichever is lower, and refer any excess dose taken with a calcium channel blocker or by a patient with serious cardiovascular disease. Recommendation three: do not induce emesis, and consider oral activated charcoal but do not delay transport. Recommendations four and seven: referral and observation of at least six hours for an immediate release product other than sotalol, eight hours for sustained release, and twelve hours for sotalol. Appendix 2, where case series and case reports are level four, Grade C, and expert opinion is level five, Grade D. The background, where propranolol's high lipid solubility raises the likelihood of seizures.\n\nRe-read first the abstract, then Table 5 and Appendix 2.",
+  "listen_secs": 158
 }

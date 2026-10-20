@@ -1,163 +1,188 @@
 {
- "id": "aapcc-ccb",
- "title": "Calcium Channel Blocker Ingestion: An Evidence-Based Consensus Guideline for Out-of-Hospital Management",
- "source": "Clinical Toxicology, 43:797–822, 2005 (American Association of Poison Control Centers; Olson KR et al.)",
- "file": "Ca channel blocker guideline AAPCC 2005",
- "lecture": "Mon 10/19 (Treating Poisonings, continued)",
- "kind": "guideline",
- "about": "An evidence-based expert consensus guideline whose objective is to assist poison center personnel in the appropriate out-of-hospital triage and initial management of patients with suspected ingestions of calcium channel blockers alone. It reports that in 2003 US poison control centers were consulted after 9650 ingestions of CCBs, including 57 deaths, more than one-third of the cardiovascular-drug deaths in the TESS database. It reviews therapeutic doses of the ten CCBs marketed in the US, the protocols of 14 poison control centers, TESS and California Poison Control System fatality data, and level 4 case reports on toxic doses, time to onset of effects, activated charcoal, emesis induction and other treatments. Seven Grade D recommendations cover referral for self-harm, time-since-ingestion windows (6 hours immediate-release, 18 hours modified-release, 24 hours modified-release verapamil), dose-based referral using Table 11, no emesis, activated charcoal without delaying transport, ambulance transport with intravenous calcium, glucagon and epinephrine for severe hypotension if available, and follow-up calls. Appendix 4 gives the triage algorithm.",
- "sections": [
-  "Abstract",
-  "Introduction (Background and Definitions; Intended Users of the Guideline; Objective of This Guideline)",
-  "Methodology (Literature Search; Article Selection; Data Extraction; California Poison Control System Data; Guideline Writing and Review)",
-  "Review of Current Practice (Recommended Therapeutic Doses of Calcium Channel Blockers; Current Poison Control Center Practices; Review of Medical Toxicology Textbooks; Review of TESS and California Poison Control System Data)",
-  "Review of the Medical Literature (Dose of CCBs Resulting in Toxicity: acute and chronic supratherapeutic ingestion in patients 6 years and older and less than 6 years; Time to Onset of Effects After Overdose)",
-  "Potential Out-of-Hospital Treatments (Gastrointestinal Decontamination: Activated Charcoal, Emesis Induction; Other Treatments)",
-  "Limitations of the Published Data",
-  "Conclusions (Key Decision Points for Triage; Patient Intent; Time Since Ingestion; Patient's Symptoms or Underlying Medical Condition; Dose and Formulation of the Specific Drug Taken; Duration of Observation for Asymptomatic Patients; Potential Out-of-Hospital Management: Gastrointestinal Decontamination, Specific Pharmacological Therapy)",
-  "Recommendations",
-  "Implications for Research",
-  "Disclosures",
-  "Appendix 1: Expert Consensus Panel Members",
-  "Appendix 2: Grades of Recommendation and Levels of Evidence",
-  "Appendix 3: Secondary Review Panel Organizations",
-  "Appendix 4: Algorithm for Triage of Calcium Channel Blocker Ingestions",
-  "References"
- ],
- "lecture_use": [
-  {
-   "point": "The guidance is built from graded case reports and case series, and each recommendation carries its own grade.",
-   "chapter_location": "Methodology (Data Extraction Process; Criteria Used to Evaluate Studies and Assign Levels of Evidence) and Appendix 2, Grades of Recommendation and Levels of Evidence",
-   "lecture_evidence": {
-    "date": "2026-10-14",
-    "quote": "The data that they used to write these guidance documents has been like graded, and the value of what they tell us to do in these situations is also graded just like any other guidance documents that you may not have seen yet in your therapeutics classes, but you will be seeing those, I promise."
-   },
-   "date": "",
-   "evidence_clean": "The data that they used to write these guidance documents has been graded, and the value of what they tell us to do in these situations is also graded, just like any other guidance documents that you may not have seen yet in your therapeutics classes, but you will be seeing those, I promise."
-  },
-  {
-   "point": "Immediate-release and extended-release products are handled differently (referral window and observation time).",
-   "chapter_location": "Recommendation 2 and Conclusions, Duration of Observation for Asymptomatic Patients (6 hours for immediate-release products, 18 hours for modified-release products other than verapamil, 24 hours for modified-release verapamil) and Table 11 (separate IR and SR thresholds for diltiazem, nifedipine and verapamil)",
-   "lecture_evidence": {
-    "date": "2026-10-14",
-    "quote": "It also. Has differences between immediate release and extended release tablets."
-   },
-   "date": "",
-   "evidence_clean": "It also has differences between immediate-release and extended-release tablets."
-  }
- ],
- "read_for": [
-  "Abstract: the seven numbered recommendations, all Grade D.",
-  "Recommendation 3 / Table 11: refer when the amount exceeds the usual maximum single therapeutic dose or equals the lowest reported toxic dose, whichever is lower (e.g., amlodipine adult 10 mg; nifedipine 30 mg IR / 120 mg SR; verapamil 120 mg IR / 480 mg SR; diltiazem 120 mg IR / 360 mg SR).",
-  "Recommendation 2: asymptomatic patients are unlikely to develop symptoms if the interval between ingestion and the call is greater than 6 hours (immediate-release), 18 hours (modified-release other than verapamil) or 24 hours (modified-release verapamil); these patients do not need referral or prolonged observation.",
-  "Recommendations 4 and 5: do not induce emesis; consider oral activated charcoal but do not delay transportation to give it.",
-  "Recommendation 6: ambulance transport, intravenous fluids for hypotension, and intravenous calcium, glucagon and epinephrine for severe hypotension during transport, if available.",
-  "Recommendation 1: self-harm or malicious administration is referred immediately regardless of amount.",
-  "Appendix 2: Grades of Recommendation A–D against levels of evidence 1a–6 (level 4 case series and case reports, level 5 expert opinion).",
-  "Background and Definitions: CCBs block the entry of calcium through voltage-sensitive calcium channels; dihydropyridines are relatively selective vasodilators at clinical doses but in overdose this distinction can be lost; combination with β-blockers can produce additive toxicity.",
-  "Conclusions, Other Treatments: no intervention was reliably effective alone, although insulin/dextrose shows promise and glucagon animal data are encouraging; combinations of agents were usually necessary.",
-  "Table 3 (TESS fatalities): the lowest reported fatal doses, including an 11-month-old who died after 40 mg immediate-release nifedipine and a 7-day-old after 25 mg verapamil."
- ],
- "beyond_lecture": [
-  "Methodology: database search strategy, article selection, the single abstractor and the modified Delphi review.",
-  "Table 1: lowest and maximum single therapeutic doses and maximum daily doses of each CCB in adults and children.",
-  "Table 2: the pediatric referral thresholds used by 14 US poison control centers.",
-  "Table 4: 2000–2003 California Poison Control System cases coded as major effect or death.",
-  "Tables 5–9: the full case-by-case listings of acute and chronic supratherapeutic ingestions and time-to-onset data in each age group.",
-  "Table 10: the per-intervention efficacy ratings (effective, partially effective, not effective, detrimental) for atropine, dobutamine, dopamine, epinephrine, calcium, glucagon, insulin and pacing.",
-  "Limitations of the Published Data; Implications for Research; Appendices 1 and 3."
- ],
- "terms": [
-  {
-   "term": "Calcium channel blockers (calcium antagonists, calcium entry blockers)",
-   "chapter_definition": "Drugs that block the entry of calcium through cellular membrane voltage-sensitive calcium channels; in vascular tissue this results in arterial smooth muscle relaxation, and in the heart they inhibit depolarization of cells in the sinoatrial and atrioventricular nodes and depress contractility."
-  },
-  {
-   "term": "Dihydropyridines",
-   "chapter_definition": "Nifedipine, amlodipine, felodipine, isradipine, nicardipine and nimodipine; at doses used clinically they are relatively selective vasodilators and do not usually affect nodal conduction or contractility, however, in overdose this distinction can be lost."
-  },
-  {
-   "term": "Overdose (as used in this guideline)",
-   "chapter_definition": "The ingestion of more than a single therapeutic dose."
-  },
-  {
-   "term": "Acute exposure",
-   "chapter_definition": "An exposure occurring over a period of no more than 8 hours."
-  },
-  {
-   "term": "Chronic exposure",
-   "chapter_definition": "An exposure that occurs over a period of 8 or more hours."
-  },
-  {
-   "term": "Out-of-hospital",
-   "chapter_definition": "The period before a patient reaches a healthcare facility."
-  },
-  {
-   "term": "Referral threshold (Table 11)",
-   "chapter_definition": "Ingestion of either an amount that exceeds the usual maximum single therapeutic dose or an amount equal to or greater than the lowest reported toxic dose, whichever is lower, would warrant consideration of referral to an emergency department."
-  },
-  {
-   "term": "Clinical effects",
-   "chapter_definition": "Any sign, symptom, or laboratory/electrocardiographic finding consistent with CCB toxicity."
-  },
-  {
-   "term": "Effective / partially effective / not effective / detrimental intervention",
-   "chapter_definition": "Effective interventions fully reversed all of the major cardiovascular manifestations of CCB toxicity; partially effective ones only partly reversed them or only in combination with other agents; not effective ones had no appreciable clinical effect; detrimental ones caused a clinical deterioration not attributable to the usual course of CCB toxicity alone."
-  },
-  {
-   "term": "Maximum potential dose",
-   "chapter_definition": "If the actual dose ingested cannot be ascertained, the amount of the drug product that is missing from the container is multiplied by the dosage unit or concentration of the formulation."
-  },
-  {
-   "term": "Grade of recommendation",
-   "chapter_definition": "Grades A through D mapped to levels of evidence 1a through 6 in Appendix 2; case series and single case reports are level 4 (Grade C) and expert opinion without explicit critical appraisal is level 5 (Grade D)."
-  }
- ],
- "discussed_in_class": false,
- "her_words": [
-  {
-   "t": "Just to introduce this to you, we have a few medications for which these evidence-based guidance documents have been written, and they basically talk about what do you do if you've got a patient that overdosed on a big handful of immediate-release beta blocker, or what do you do if a patient overdosed on a handful of extended-release beta blockers?",
-   "date": "2026-10-14",
-   "verbatim": "Um, just to introduce this to you, we have a few medications for which these evidence-based guidance documents have been written, and they basically talk about what do you do if you've got a patient that overdosed on a big handful of immediate release beta blocker, or what do you do if a patient overdosed on a handful of extended release beta blockers?"
-  },
-  {
-   "t": "It's summarized in the abstracts for each of these documents.",
-   "date": "2026-10-14",
-   "verbatim": "It's summarized in the abstracts for each of these documents, OK?"
-  },
-  {
-   "t": "You've got a table to fill out because there are slight differences in what we do for a beta blocker overdose compared to a calcium channel blocker overdose, even though they're all cardiac meds.",
-   "date": "2026-10-14",
-   "verbatim": "You've got a table to fill out because there are slight differences in what we do for a beta blocker overdose compared to a calcium channel overdose, even though they're all cardiac meds, OK?"
-  },
-  {
-   "t": "It also has differences between immediate-release and extended-release tablets.",
-   "date": "2026-10-14",
-   "verbatim": "It also. Has differences between immediate release and extended release tablets."
-  },
-  {
-   "t": "The data for these evidence-based guidance documents comes from people overdosing; clinicians, pharmacists, doctors write up the case, get it published, and it's in the literature.",
-   "date": "2026-10-14",
-   "verbatim": "The data for these evidence-based guidance documents comes from people overdosing, clinicians, pharmacists, doctors write up the case, get it published, and it's in the literature."
-  },
-  {
-   "t": "They pulled all those documents, evaluated every single one of those case reports or case series, and wrote these evidence-based documents.",
-   "date": "2026-10-14",
-   "verbatim": "They pulled all those documents, evaluated every single one of those case reports or case series, and wrote these evidence-based documents."
-  },
-  {
-   "t": "The data that they used to write these guidance documents has been graded, and the value of what they tell us to do in these situations is also graded, just like any other guidance documents that you may not have seen yet in your therapeutics classes, but you will be seeing those, I promise.",
-   "date": "2026-10-14",
-   "verbatim": "The data that they used to write these guidance documents has been like graded, and the value of what they tell us to do in these situations is also graded just like any other guidance documents that you may not have seen yet in your therapeutics classes, but you will be seeing those, I promise."
-  },
-  {
-   "t": "Only a few drugs are out there that have these documents written, but these are pretty nasty drugs.",
-   "date": "2026-10-14",
-   "verbatim": "Only a few drugs are out there that have these documents written, but these are pretty nasty drugs, OK?"
-  }
- ],
- "quotes_note": "Quotes lightly edited for reading: filler words removed and transcription errors corrected; the verbatim transcript text is kept beside each quote.",
- "truncated": false,
- "listen": "This reading is the calcium channel blocker ingestion guideline, an evidence based consensus guideline for out of hospital management, published in Clinical Toxicology in 2005 by the American Association of Poison Control Centers. It belongs to the Treating Poisonings lecture continued on Monday, October nineteenth. Doctor Smith has not discussed it in class yet. On October fourteenth she said, \"I've got 2 guidance documents, one's about beta blockers and one's about calcium channel blockers,\" and that the class would \"talk about them a little bit on Monday.\" Her rule is that readings are tested as discussed.\n\nWhat she said on October fourteenth. First, the pair of documents. She said, \"You've got a table to fill out because there are slight differences in what we do for a beta blocker overdose compared to a calcium channel overdose, even though they're all cardiac meds.\" Second, where the data come from. She said, \"They pulled all those documents, evaluated every single one of those case reports or case series, and wrote these evidence-based documents.\" Third, she said their recommendations are graded. Fourth, formulation. She said, \"It also has differences between immediate release and extended release tablets.\" Fifth, she said, \"Only a few drugs are out there that have these documents written, but these are pretty nasty drugs.\"\n\nThe card points to these sections. The abstract with its seven numbered recommendations, all Grade D. Recommendation one: self harm or malicious administration is referred immediately regardless of amount. Recommendation two: asymptomatic patients are unlikely to develop symptoms if the interval between ingestion and the call is greater than six hours for an immediate release product, eighteen hours for a modified release product other than verapamil, or twenty four hours for modified release verapamil, and they do not need referral. Recommendation three and Table 11: refer when the amount exceeds the usual maximum single therapeutic dose or equals the lowest reported toxic dose, whichever is lower. Recommendations four and five: do not induce emesis, and consider oral activated charcoal without delaying transport. Recommendation six: ambulance transport, and intravenous calcium, glucagon and epinephrine for severe hypotension during transport, if available. The background, where calcium channel blockers block the entry of calcium through voltage sensitive calcium channels, dihydropyridines lose their vasodilator selectivity in overdose, and combination with beta blockers can produce additive toxicity. \n\nRe-read first the abstract, then Table 11 and the Background and Definitions section.",
- "listen_secs": 154
+  "id": "aapcc-ccb",
+  "title": "Calcium Channel Blocker Ingestion: An Evidence-Based Consensus Guideline for Out-of-Hospital Management",
+  "source": "Clinical Toxicology, 43:797–822, 2005 (American Association of Poison Control Centers; Olson KR et al.)",
+  "file": "Ca channel blocker guideline AAPCC 2005",
+  "lecture": "Mon 10/19 (Treating Poisonings, continued)",
+  "kind": "guideline",
+  "about": "An evidence-based expert consensus guideline whose objective is to assist poison center personnel in the appropriate out-of-hospital triage and initial management of patients with suspected ingestions of calcium channel blockers alone. It reports that in 2003 US poison control centers were consulted after 9650 ingestions of CCBs, including 57 deaths, more than one-third of the cardiovascular-drug deaths in the TESS database. It reviews therapeutic doses of the ten CCBs marketed in the US, the protocols of 14 poison control centers, TESS and California Poison Control System fatality data, and level 4 case reports on toxic doses, time to onset of effects, activated charcoal, emesis induction and other treatments. Seven Grade D recommendations cover referral for self-harm, time-since-ingestion windows (6 hours immediate-release, 18 hours modified-release, 24 hours modified-release verapamil), dose-based referral using Table 11, no emesis, activated charcoal without delaying transport, ambulance transport with intravenous calcium, glucagon and epinephrine for severe hypotension if available, and follow-up calls. Appendix 4 gives the triage algorithm.",
+  "sections": [
+    "Abstract",
+    "Introduction (Background and Definitions; Intended Users of the Guideline; Objective of This Guideline)",
+    "Methodology (Literature Search; Article Selection; Data Extraction; California Poison Control System Data; Guideline Writing and Review)",
+    "Review of Current Practice (Recommended Therapeutic Doses of Calcium Channel Blockers; Current Poison Control Center Practices; Review of Medical Toxicology Textbooks; Review of TESS and California Poison Control System Data)",
+    "Review of the Medical Literature (Dose of CCBs Resulting in Toxicity: acute and chronic supratherapeutic ingestion in patients 6 years and older and less than 6 years; Time to Onset of Effects After Overdose)",
+    "Potential Out-of-Hospital Treatments (Gastrointestinal Decontamination: Activated Charcoal, Emesis Induction; Other Treatments)",
+    "Limitations of the Published Data",
+    "Conclusions (Key Decision Points for Triage; Patient Intent; Time Since Ingestion; Patient's Symptoms or Underlying Medical Condition; Dose and Formulation of the Specific Drug Taken; Duration of Observation for Asymptomatic Patients; Potential Out-of-Hospital Management: Gastrointestinal Decontamination, Specific Pharmacological Therapy)",
+    "Recommendations",
+    "Implications for Research",
+    "Disclosures",
+    "Appendix 1: Expert Consensus Panel Members",
+    "Appendix 2: Grades of Recommendation and Levels of Evidence",
+    "Appendix 3: Secondary Review Panel Organizations",
+    "Appendix 4: Algorithm for Triage of Calcium Channel Blocker Ingestions",
+    "References"
+  ],
+  "lecture_use": [
+    {
+      "point": "The guidance is built from graded case reports and case series, and each recommendation carries its own grade.",
+      "chapter_location": "Methodology (Data Extraction Process; Criteria Used to Evaluate Studies and Assign Levels of Evidence) and Appendix 2, Grades of Recommendation and Levels of Evidence",
+      "lecture_evidence": {
+        "date": "2026-10-14",
+        "quote": "The data that they used to write these guidance documents has been like graded, and the value of what they tell us to do in these situations is also graded just like any other guidance documents that you may not have seen yet in your therapeutics classes, but you will be seeing those, I promise."
+      },
+      "date": "",
+      "evidence_clean": "The data that they used to write these guidance documents has been graded, and the value of what they tell us to do in these situations is also graded, just like any other guidance documents that you may not have seen yet in your therapeutics classes, but you will be seeing those, I promise."
+    },
+    {
+      "point": "Immediate-release and extended-release products are handled differently (referral window and observation time).",
+      "chapter_location": "Recommendation 2 and Conclusions, Duration of Observation for Asymptomatic Patients (6 hours for immediate-release products, 18 hours for modified-release products other than verapamil, 24 hours for modified-release verapamil) and Table 11 (separate IR and SR thresholds for diltiazem, nifedipine and verapamil)",
+      "lecture_evidence": {
+        "date": "2026-10-14",
+        "quote": "It also. Has differences between immediate release and extended release tablets."
+      },
+      "date": "",
+      "evidence_clean": "It also has differences between immediate-release and extended-release tablets."
+    }
+  ],
+  "read_for": [
+    "Abstract: the seven numbered recommendations, all Grade D.",
+    "Recommendation 3 / Table 11: refer when the amount exceeds the usual maximum single therapeutic dose or equals the lowest reported toxic dose, whichever is lower (e.g., amlodipine adult 10 mg; nifedipine 30 mg IR / 120 mg SR; verapamil 120 mg IR / 480 mg SR; diltiazem 120 mg IR / 360 mg SR).",
+    "Recommendation 2: asymptomatic patients are unlikely to develop symptoms if the interval between ingestion and the call is greater than 6 hours (immediate-release), 18 hours (modified-release other than verapamil) or 24 hours (modified-release verapamil); these patients do not need referral or prolonged observation.",
+    "Recommendations 4 and 5: do not induce emesis; consider oral activated charcoal but do not delay transportation to give it.",
+    "Recommendation 6: ambulance transport, intravenous fluids for hypotension, and intravenous calcium, glucagon and epinephrine for severe hypotension during transport, if available.",
+    "Recommendation 1: self-harm or malicious administration is referred immediately regardless of amount.",
+    "Appendix 2: Grades of Recommendation A–D against levels of evidence 1a–6 (level 4 case series and case reports, level 5 expert opinion).",
+    "Background and Definitions: CCBs block the entry of calcium through voltage-sensitive calcium channels; dihydropyridines are relatively selective vasodilators at clinical doses but in overdose this distinction can be lost; combination with β-blockers can produce additive toxicity.",
+    "Conclusions, Other Treatments: no intervention was reliably effective alone, although insulin/dextrose shows promise and glucagon animal data are encouraging; combinations of agents were usually necessary.",
+    "Table 3 (TESS fatalities): the lowest reported fatal doses, including an 11-month-old who died after 40 mg immediate-release nifedipine and a 7-day-old after 25 mg verapamil."
+  ],
+  "beyond_lecture": [
+    "Methodology: database search strategy, article selection, the single abstractor and the modified Delphi review.",
+    "Table 1: lowest and maximum single therapeutic doses and maximum daily doses of each CCB in adults and children.",
+    "Table 2: the pediatric referral thresholds used by 14 US poison control centers.",
+    "Table 4: 2000–2003 California Poison Control System cases coded as major effect or death.",
+    "Tables 5–9: the full case-by-case listings of acute and chronic supratherapeutic ingestions and time-to-onset data in each age group.",
+    "Table 10: the per-intervention efficacy ratings (effective, partially effective, not effective, detrimental) for atropine, dobutamine, dopamine, epinephrine, calcium, glucagon, insulin and pacing.",
+    "Limitations of the Published Data; Implications for Research; Appendices 1 and 3."
+  ],
+  "terms": [
+    {
+      "term": "Calcium channel blockers (calcium antagonists, calcium entry blockers)",
+      "chapter_definition": "Drugs that block the entry of calcium through cellular membrane voltage-sensitive calcium channels; in vascular tissue this results in arterial smooth muscle relaxation, and in the heart they inhibit depolarization of cells in the sinoatrial and atrioventricular nodes and depress contractility."
+    },
+    {
+      "term": "Dihydropyridines",
+      "chapter_definition": "Nifedipine, amlodipine, felodipine, isradipine, nicardipine and nimodipine; at doses used clinically they are relatively selective vasodilators and do not usually affect nodal conduction or contractility, however, in overdose this distinction can be lost."
+    },
+    {
+      "term": "Overdose (as used in this guideline)",
+      "chapter_definition": "The ingestion of more than a single therapeutic dose."
+    },
+    {
+      "term": "Acute exposure",
+      "chapter_definition": "An exposure occurring over a period of no more than 8 hours."
+    },
+    {
+      "term": "Chronic exposure",
+      "chapter_definition": "An exposure that occurs over a period of 8 or more hours."
+    },
+    {
+      "term": "Out-of-hospital",
+      "chapter_definition": "The period before a patient reaches a healthcare facility."
+    },
+    {
+      "term": "Referral threshold (Table 11)",
+      "chapter_definition": "Ingestion of either an amount that exceeds the usual maximum single therapeutic dose or an amount equal to or greater than the lowest reported toxic dose, whichever is lower, would warrant consideration of referral to an emergency department."
+    },
+    {
+      "term": "Clinical effects",
+      "chapter_definition": "Any sign, symptom, or laboratory/electrocardiographic finding consistent with CCB toxicity."
+    },
+    {
+      "term": "Effective / partially effective / not effective / detrimental intervention",
+      "chapter_definition": "Effective interventions fully reversed all of the major cardiovascular manifestations of CCB toxicity; partially effective ones only partly reversed them or only in combination with other agents; not effective ones had no appreciable clinical effect; detrimental ones caused a clinical deterioration not attributable to the usual course of CCB toxicity alone."
+    },
+    {
+      "term": "Maximum potential dose",
+      "chapter_definition": "If the actual dose ingested cannot be ascertained, the amount of the drug product that is missing from the container is multiplied by the dosage unit or concentration of the formulation."
+    },
+    {
+      "term": "Grade of recommendation",
+      "chapter_definition": "Grades A through D mapped to levels of evidence 1a through 6 in Appendix 2; case series and single case reports are level 4 (Grade C) and expert opinion without explicit critical appraisal is level 5 (Grade D)."
+    }
+  ],
+  "discussed_in_class": true,
+  "her_words": [
+    {
+      "t": "Just to introduce this to you, we have a few medications for which these evidence-based guidance documents have been written, and they basically talk about what do you do if you've got a patient that overdosed on a big handful of immediate-release beta blocker, or what do you do if a patient overdosed on a handful of extended-release beta blockers?",
+      "date": "2026-10-14",
+      "verbatim": "Um, just to introduce this to you, we have a few medications for which these evidence-based guidance documents have been written, and they basically talk about what do you do if you've got a patient that overdosed on a big handful of immediate release beta blocker, or what do you do if a patient overdosed on a handful of extended release beta blockers?"
+    },
+    {
+      "t": "It's summarized in the abstracts for each of these documents.",
+      "date": "2026-10-14",
+      "verbatim": "It's summarized in the abstracts for each of these documents, OK?"
+    },
+    {
+      "t": "You've got a table to fill out because there are slight differences in what we do for a beta blocker overdose compared to a calcium channel blocker overdose, even though they're all cardiac meds.",
+      "date": "2026-10-14",
+      "verbatim": "You've got a table to fill out because there are slight differences in what we do for a beta blocker overdose compared to a calcium channel overdose, even though they're all cardiac meds, OK?"
+    },
+    {
+      "t": "It also has differences between immediate-release and extended-release tablets.",
+      "date": "2026-10-14",
+      "verbatim": "It also. Has differences between immediate release and extended release tablets."
+    },
+    {
+      "t": "The data for these evidence-based guidance documents comes from people overdosing; clinicians, pharmacists, doctors write up the case, get it published, and it's in the literature.",
+      "date": "2026-10-14",
+      "verbatim": "The data for these evidence-based guidance documents comes from people overdosing, clinicians, pharmacists, doctors write up the case, get it published, and it's in the literature."
+    },
+    {
+      "t": "They pulled all those documents, evaluated every single one of those case reports or case series, and wrote these evidence-based documents.",
+      "date": "2026-10-14",
+      "verbatim": "They pulled all those documents, evaluated every single one of those case reports or case series, and wrote these evidence-based documents."
+    },
+    {
+      "t": "The data that they used to write these guidance documents has been graded, and the value of what they tell us to do in these situations is also graded, just like any other guidance documents that you may not have seen yet in your therapeutics classes, but you will be seeing those, I promise.",
+      "date": "2026-10-14",
+      "verbatim": "The data that they used to write these guidance documents has been like graded, and the value of what they tell us to do in these situations is also graded just like any other guidance documents that you may not have seen yet in your therapeutics classes, but you will be seeing those, I promise."
+    },
+    {
+      "t": "Only a few drugs are out there that have these documents written, but these are pretty nasty drugs.",
+      "date": "2026-10-14",
+      "verbatim": "Only a few drugs are out there that have these documents written, but these are pretty nasty drugs, OK?"
+    },
+    {
+      "t": "What they published in 2005 is still what they follow",
+      "date": "2026-10-19",
+      "verbatim": "What they published in 2005 is still what they follow"
+    },
+    {
+      "t": "I want you to know those time frames, OK, which drug formulation is OK at this time frame",
+      "date": "2026-10-19",
+      "verbatim": "I want you to know those time frames, OK, which drug formulation is OK at this time frame"
+    },
+    {
+      "t": "Also, you need to know you don't make them barf at home, it's too dangerous",
+      "date": "2026-10-19",
+      "verbatim": "Also, you need to know you don't make them barf at home, it's too dangerous"
+    },
+    {
+      "t": "18 hours for your uh calcium channel blockers, but 8 hours for your beta blockers, you are still within the window that that clump of tablets could break apart",
+      "date": "2026-10-19",
+      "verbatim": "18 hours for your uh calcium channel blockers, but 8 hours for your beta blockers, you are still within the window that that clump of tablets could break apart"
+    },
+    {
+      "t": "It's the clumping of the tablets is the biggest issue, OK.",
+      "date": "2026-10-19",
+      "verbatim": "It's the clumping of the tablets is the biggest issue, OK."
+    }
+  ],
+  "quotes_note": "Quotes lightly edited for reading: filler words removed and transcription errors corrected; the verbatim transcript text is kept beside each quote.",
+  "truncated": false,
+  "listen": "This reading is the calcium channel blocker ingestion guideline, an evidence based consensus guideline for out of hospital management, published in Clinical Toxicology in 2005 by the American Association of Poison Control Centers. It belongs to the Treating Poisonings lecture continued on Monday, October nineteenth. Doctor Smith has not discussed it in class yet. On October fourteenth she said, \"I've got 2 guidance documents, one's about beta blockers and one's about calcium channel blockers,\" and that the class would \"talk about them a little bit on Monday.\" Her rule is that readings are tested as discussed.\n\nWhat she said on October fourteenth. First, the pair of documents. She said, \"You've got a table to fill out because there are slight differences in what we do for a beta blocker overdose compared to a calcium channel overdose, even though they're all cardiac meds.\" Second, where the data come from. She said, \"They pulled all those documents, evaluated every single one of those case reports or case series, and wrote these evidence-based documents.\" Third, she said their recommendations are graded. Fourth, formulation. She said, \"It also has differences between immediate release and extended release tablets.\" Fifth, she said, \"Only a few drugs are out there that have these documents written, but these are pretty nasty drugs.\"\n\nThe card points to these sections. The abstract with its seven numbered recommendations, all Grade D. Recommendation one: self harm or malicious administration is referred immediately regardless of amount. Recommendation two: asymptomatic patients are unlikely to develop symptoms if the interval between ingestion and the call is greater than six hours for an immediate release product, eighteen hours for a modified release product other than verapamil, or twenty four hours for modified release verapamil, and they do not need referral. Recommendation three and Table 11: refer when the amount exceeds the usual maximum single therapeutic dose or equals the lowest reported toxic dose, whichever is lower. Recommendations four and five: do not induce emesis, and consider oral activated charcoal without delaying transport. Recommendation six: ambulance transport, and intravenous calcium, glucagon and epinephrine for severe hypotension during transport, if available. The background, where calcium channel blockers block the entry of calcium through voltage sensitive calcium channels, dihydropyridines lose their vasodilator selectivity in overdose, and combination with beta blockers can produce additive toxicity. \n\nRe-read first the abstract, then Table 11 and the Background and Definitions section.",
+  "listen_secs": 154
 }

@@ -2,9 +2,15 @@
 
 Newest first. The build embeds this file; the Topics page shows what is new since your last visit, and the Progress page shows all of it. Keep each bullet to one short line.
 
+## 2026-10-20 (Exam 3: the 10/19 lecture)
+
+- Day 16 (10/19): 68 questions on treating poisonings II and the guideline discussion; guide 25–32, reference 24–27.
+- Readings: the Marraffa 2012 antidotes article has a card; the two AAPCC guidelines are marked discussed in class.
+- Her 10/19 exam cues: exam Friday; 10/20 counts pending a class vote; the poisoning table is the heaviest part.
+
 ## 2026-10-18 (Exam 3: recorded Hear the why, part 1)
 
-- Recorded clips for 62 Exam 3 questions: all 46 from 10/9 and 16 from 10/13; the rest use the device voice until recorded.
+- Recorded clips for 62 Exam 3 questions (all of 10/9, 16 from 10/13); the rest use the device voice for now.
 
 ## 2026-10-17 (Exam 3: Hear the why)
 

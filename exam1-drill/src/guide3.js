@@ -26,7 +26,15 @@ const GUIDE3_HTML = `
 <a href="#guide3-l15-7">21 Overdose changes kinetics</a>
 <a href="#guide3-l15-8">22 Overdose changes pharmacodynamics</a>
 <a href="#guide3-l15-9">23 Three angles, four toxicokinetic methods, preventing absorption</a>
-<a href="#guide3-l15-10">24 Evidence-based guidelines; what moved to 10/19</a>
+<a href="#guide3-l15-10">24 Evidence-based guidelines; what moved to 10/19 (done, sections 25–32)</a>
+<a href="#guide3-l16-1">25 Preventing absorption revisited; inhibit bioactivation</a>
+<a href="#guide3-l16-2">26 Recognizing the poisoning: blood draws, toxidromes</a>
+<a href="#guide3-l16-3">27 Enhance metabolism: cyanide and acetaminophen</a>
+<a href="#guide3-l16-4">28 Enhance elimination: ion trapping, extracorporeal methods</a>
+<a href="#guide3-l16-5">29 Inactivation: chelators, antivenoms, digoxin immune Fab</a>
+<a href="#guide3-l16-6">30 Pharmacological treatment: the four categories</a>
+<a href="#guide3-l16-7">31 The beta-blocker and calcium channel blocker guideline discussion</a>
+<a href="#guide3-l16-8">32 The poisoning table and what moved to 10/20</a>
 </nav>
 
 <!-- ===================================================================== -->
@@ -44,6 +52,9 @@ const GUIDE3_HTML = `
 <li>"I invite students to AE if you make a 70 or below, and oftentimes I'll keep you in AE even if you do great." Office hours: "Monday, Tuesday, Wednesdays from 1:20 to 2:00." <small>(T) 10/9</small></li>
 <li>Difficulty, after her three Poll Everywhere review questions: "those are examples of very easy, very easy pull everywhere [poll everywhere] questions, OK. The questions on the quizzes that you're having are a little more detailed, right? OK, and questions on your exam, because you've had a chance to study more, will be. Some of them will be much more detailed, OK? So don't fool yourself and say, hey, I'm good to go. I answered correctly her poll everywhere questions in class, and I'm making good grades on my quizzes, that's great, but. The polar wire [poll everywhere] questions, those are way easy. Those are just to generate discussion, OK? Quiz questions are trying to get you a little more in depth in your knowledge, and your exam questions could likely be harder, OK? So just to give you an idea of what you're facing, OK?" <small>(T) 10/14</small></li>
 <li>"I have a few polar reward [poll everywhere] questions at the end of this lecture just to give you an idea of what kinds of questions I ask. These are not for a grade, they're not attendance, OK? They're just to trigger your thinking and give you an idea of what kind of things I ask" <small>(T) 10/14</small></li>
+<li>10/19, her opening rule: "Everything that we've talked about in class, every, everything on slides, everything that's come out of my mouth, the things you've read, and we've talked about all that is testable." <small>(T) 10/19</small></li>
+<li>10/19, scope: "your exam is Friday, right? ... The material for the exam is today and tomorrow." Whether the 10/20 pharmacogenomics lecture counts on Friday was put to a class vote, moved to after Tuesday's lecture; she would reweight the two exams if it is left out. <small>(T) 10/19</small></li>
+<li>10/19, the table: "The heaviest part of that will be this poisoning table." "please memorize this table, uh, know the chelating agent and know what metal it grabs." <small>(T) 10/19</small></li>
 </ul>
 <table class="reftab"><thead><tr><th>Level</th><th>Her words</th><th>What it means for study</th></tr></thead><tbody>
 <tr><td>Poll Everywhere</td><td>"very easy"; "way easy"; "just to generate discussion"</td><td>Getting the polls right is not evidence of readiness</td></tr>
@@ -445,15 +456,125 @@ const GUIDE3_HTML = `
 
 <!-- ===================================================================== -->
 <section class="guide" id="guide3-l15-10">
-<h3>24. Evidence-based guidelines for overdoses, and what moved to Monday 10/19</h3>
+<h3>24. Evidence-based guidelines for overdoses, and what moved to Monday 10/19 (covered; see sections 25 to 32)</h3>
 <ul>
 <li>"we have a few medications for which these evidence-based guidance documents have been written, and they basically talk about what do you do if you've got a patient that overdosed on a big handful of immediate release beta blocker, or ... a handful of extended release beta blockers". The slide's list: acetaminophen, atypical antipsychotics, beta-blockers, calcium channel blockers, dextromethorphan, diphenhydramine and dimenhydrinate, iron, methylphenidate, salicylate, SSRIs, TCAs, valproic acid, elemental mercury, ethylene glycol, long-acting anticoagulant rodenticides. <small>(T) 10/14; Treating Poisonings slide ‘Guidelines for Overdoses’</small></li>
 <li>The two documents to discuss: beta blockers and calcium channel blockers; "there are slight differences in what we do for a beta blocker overdose compared to a calcium channel overdose, even though they're all cardiac meds, OK? It also. Has differences between immediate release and extended release tablets." Read the abstracts, fill out the table (completion points), discuss Monday. <small>(T) 10/14</small></li>
 <li>Where the data comes from: not clinical trials ("not very ethical"), rarely animals; "The data for these evidence-based guidance documents comes from people overdosing, clinicians, pharmacists, doctors write up the case, get it published, and it's in the literature. ... They pulled all those documents, evaluated every single one of those case reports or case series, and wrote these evidence-based documents." The evidence and the recommendations are graded; "it is evidence-based and weighted appropriately, so it's really good information." <small>(T) 10/14</small></li>
 <li><b>The poisoning treatment table</b> (study tool, posted after class, not graded on content): for each listed drug, symptoms of overdose, antidote or supportive therapy, how the treatment works, special considerations, and the reference used. "Really, your only references will be the chapters that I'm asking you to read or a paper that I might ask you to read". Filled in on Monday. <small>(T) 10/14</small></li>
-<li><b>Deferred to 10/19</b> (slides not reached, no questions yet): inhibit bioactivation (methanol and ethylene glycol; ethanol or fomepizole), enhance metabolism (cyanide, acetaminophen), enhance renal elimination (ion trapping, sodium bicarbonate) and extracorporeal methods, inactivation (chelators, antivenoms and antibodies), the four pharmacological categories (antagonist, agonist, removal from the active site, bypassing an inhibited pathway), toxidromes, and the specific poisonings table. "We will come back on Monday, uh, and finish up this lecture." <small>(T) 10/14</small></li>
+<li><b>Deferred to 10/19, and covered that day</b> (questions now in Day 16, sections 25 to 32): inhibit bioactivation (methanol and ethylene glycol; ethanol or fomepizole), enhance metabolism (cyanide, acetaminophen), enhance renal elimination (ion trapping, sodium bicarbonate) and extracorporeal methods, inactivation (chelators, antivenoms and antibodies), the four pharmacological categories (antagonist, agonist, removal from the active site, bypassing an inhibited pathway), toxidromes, and the specific poisonings table. "We will come back on Monday, uh, and finish up this lecture." <small>(T) 10/14</small></li>
 </ul>
 <p>How she asks it: which compounds have guidelines; where the evidence comes from; the two contrasts the beta-blocker and calcium channel blocker documents draw.</p>
 <p class="sub">Sources: Treating Poisonings slides ‘Guidelines for Overdoses’, ‘Discussion of OD Guidelines’, ‘Treating specific poisonings Table’; (T) 10/14. Questions L15-063 to L15-065.</p>
+</section>
+
+<!-- ===================================================================== -->
+<!-- ===== Day 16 (10/19) ===== -->
+<!-- ===================================================================== -->
+<!-- ===================================================================== -->
+<section class="guide" id="guide3-l16-1">
+<h3>25. Preventing absorption revisited; inhibit bioactivation (methanol, ethylene glycol)</h3>
+<ul>
+<li><b>Her opening rule.</b> "Everything that we've talked about in class, every, everything on slides, everything that's come out of my mouth, the things you've read, and we've talked about all that is testable." <small>(T) 10/19</small></li>
+<li><b>What the outcome data say about charcoal.</b> "Yeah, so charcoal, based on patient outcomes is probably your best option. But not everything people ingest can be grabbed by charcoal in their stomach, right?" The window: "up to 2 hours. They used to say just an hour". Why there is a window: "Stuff moves on through, right? So you need to get that charcoal in their stomach and small intestine while the poison is still in that area of the body". Multiple-dose charcoal, in a student's words she accepted: for poisons that undergo enterohepatic recirculation and are grabbed by charcoal. <small>(T) 10/19</small></li>
+<li><b>Inhibit bioactivation.</b> "There are not many cases where we can do this, where we can actually prevent the metabolism to a more toxic metabolite, but these are some classic examples." Methanol: alcohol dehydrogenase, formaldehyde, formaldehyde dehydrogenase, formic acid. "This is the compound in the bioactivation of methanol that is toxic. Formic acid will cause damage, especially to the eyes, to the retina of the eyes." Ethylene glycol: alcohol dehydrogenase, glycoaldehyde, aldehyde dehydrogenase, glycolic acid, several steps, oxalic acid, which "will sometimes precipitate in the blood to form small microcrystals" that block blood flow in the liver and kidneys. <small>(T) 10/19</small></li>
+<li><b>Who gets exposed.</b> Antifreeze: "it smells and tastes sweet. OK, so it's a problem for animals" and for small children; the pink or blue is a dye. Methanol: "most of the time, those are people that have an alcohol substance use disorder." <small>(T) 10/19</small></li>
+<li><b>The antidote.</b> "you can use ethanol or now a drug called omeprazole. So, you can give ethanol. And outcompete the alcohol alcohol dehydrogenase metabolism of methanol or ethylene glycol. Same thing with fomeprazole. It'll, it'll bind to and inhibit the alcohol dehydrogenase". (The transcript's "omeprazole" is fomepizole, the drug on the slide.) The Everclear bottle in the old ER; fomepizole gives "a little bit better control of the dosing." <small>(T) 10/19</small></li>
+</ul>
+<p>How she asks it: which metabolite of methanol is toxic and what it damages; what ethylene glycol ends up as and why that hurts; the antidote for both and its mechanism; why bioactivation can rarely be inhibited.</p>
+<p class="sub">Sources: Treating Poisonings slides ‘Toxicokinetic-Based Treatment Prevent Absorption’, ‘Inhibit Bioactivation’, ‘methanol and ethylene glycol examples’; DiPiro ch. e9; (T) 10/19. Questions L16-001 to L16-009.</p>
+</section>
+
+<!-- ===================================================================== -->
+<section class="guide" id="guide3-l16-2">
+<h3>26. Recognizing the poisoning: blood draws and toxidromes</h3>
+<ul>
+<li><b>A student's question: how would you know?</b> "people will come into the ER or maybe you found them and they've got kind of classic symptoms, right? They may be unconscious ... The, the, the, the key indicator would be you get them into the ER and they do a blood draw, and they look for these alcohols in their blood." <small>(T) 10/19</small></li>
+<li><b>What emergency rooms test for.</b> "Acetaminophen, OK, acetaminophen. Salicylates Iron Beta blockers, calcium channel blockers, and there's a few others ... oh, opiates as well". First a guess from the symptoms, then verification by the laboratory if it can test for the compound; "Other than that, sometimes it's just a guess." <small>(T) 10/19</small></li>
+<li><b>Toxidrome.</b> "a group of systems of symptoms that we call a toxic toxodrome ... kind of a group of symptoms that are like, oh hey, look, this person has this, this and this. I wonder if they've been exposed to this compound." The Goodman and Gilman table (sympathomimetic, anticholinergic, cholinergic with SLUDGE, opioid, sedative-hypnotic, salicylate, calcium channel blocker) was on the slide she said she would reach at the end of the lecture; the session ended before it. Low yield until she covers it. <small>(T) 10/19; slide ‘Toxidromes’</small></li>
+</ul>
+<p>How she asks it: how a methanol or ethylene glycol poisoning is confirmed; which overdoses the ER screens blood for; what a toxidrome is.</p>
+<p class="sub">Sources: Treating Poisonings slide ‘Toxidromes’ (Goodman & Gilman Table 4-7); (T) 10/19. Questions L16-010 to L16-013.</p>
+</section>
+
+<!-- ===================================================================== -->
+<section class="guide" id="guide3-l16-3">
+<h3>27. Enhance metabolism: cofactors; cyanide; acetaminophen and N-acetylcysteine</h3>
+<ul>
+<li><b>Why cofactors, not induction.</b> "It'd be great if we could induce the expression of enzymes involved in this metabolism, but that is really not possible in a poisoning situation ... It takes a few days ... What we can do is try to enhance the metabolism by giving cofactors for those metabolizing reactions". Two examples: cyanide and acetaminophen. <small>(T) 10/19</small></li>
+<li><b>Cyanide, step by step (Golan figure).</b> Target: "Cytochrome C oxidase ... Helps with our electron transport chain"; "you basically suffocate because you're not doing any more of your ATP production". Amyl nitrite oxidizes hemoglobin to methemoglobin ("Will it carry oxygen? No, OK, we're still gonna create it in our patients though"). "methemoglobin is able to pull cyanide off of cytochrome C oxidase", forming cyanmethemoglobin and regenerating the enzyme. Rhodanese ("rodonase") helps thiosulfate, already in the body, take the cyanide; that product is renally eliminated. Methylene blue, "a reducing agent", converts methemoglobin back to hemoglobin. Her question: which of the three is the enhance-metabolism step? "Yeah, the roadnas." <small>(T) 10/19</small></li>
+<li><b>Acetaminophen.</b> NAPQI ("NAQI") is "that free radical, that's nasty, damages liver." "Glutathione, with the help of the GST enzymes, yes, you end up conjugating NAQI with glutathione." NAC: "No, it's not neutralizing free radicals ... it's giving ingredients to the system to create more glutathione." Two-minute partner explanation. <small>(T) 10/19</small></li>
+<li><b>NAC in practice.</b> "It stinks, smells like rotten eggs ... in the United States, we tend to give it by IV ... If, if they have an oral formulation, make sure you are giving the IV formulation if you're giving it IV". Methylene blue stains you blue (her cocaine-solution story). <small>(T) 10/19</small></li>
+</ul>
+<p>How she asks it: cyanide's target and what happens; what each of the three agents does and which one is the cofactor; what NAC does and what conjugates NAPQI; why induction is not used.</p>
+<p class="sub">Sources: Treating Poisonings slides ‘Toxicokinetic-Based Treatment Enhance Metabolism’, ‘Cyanide example’, ‘Acetaminophen Example’; (T) 10/19. Questions L16-014 to L16-022.</p>
+</section>
+
+<!-- ===================================================================== -->
+<section class="guide" id="guide3-l16-4">
+<h3>28. Enhance elimination: ion trapping with bicarbonate; extracorporeal methods</h3>
+<ul>
+<li><b>The problem.</b> "they get filtered at the glomerulus, get into the urine that's being formed, but then will get reabsorbed. So you continue the poisoning by the reabsorption of that compound from the forming urine into the systemic circulation." <small>(T) 10/19</small></li>
+<li><b>Ion trapping.</b> For "salicylates on some of our barbiturates, they are mildly acidic ... at normal urine pH, they are not charged ... giving the patient sodium bicarb by IV, the sodium bicarb goes into the urine and will charge that acid, and it can't be reabsorbed when it's charged." Her question: what charge? "Negative charge, right? ... those things have to be, um, for the most part uncharged". No Henderson-Hasselbalch exercises: "just take my word for it." <small>(T) 10/19</small></li>
+<li><b>Not for weak bases.</b> "acidifying a person's blood to try to get their urine more acidic is kind of dangerous"; cranberry juice gives "not low enough pH and not fast enough". <small>(T) 10/19</small></li>
+<li><b>Extracorporeal.</b> "hemodialysis, hemofiltration, or hemo perfusion. Um, you might try to do plasma exchange or whole, whole exchange transfusions for people that are really bad". "the chemistry of whatever a person's been poisoned with is going to determine whether or not these ... methods are going to work ... Dialysis doesn't grab everything." For "very, very severe poisonings where other things are not working." Dialysis itself comes in the renal module (Dr. Beck, January). <small>(T) 10/19</small></li>
+</ul>
+<p>How she asks it: what bicarbonate does to the urine and to a weak acid; why it is not done for weak bases; which methods are extracorporeal and when they are used.</p>
+<p class="sub">Sources: Treating Poisonings slides ‘Toxicokinetic-Based Treatment Enhance Renal Elimination’, ‘Extracorporeal enhancement of elimination’; (T) 10/19. Questions L16-023 to L16-028.</p>
+</section>
+
+<!-- ===================================================================== -->
+<section class="guide" id="guide3-l16-5">
+<h3>29. Inactivation of poisons: chelators, antivenoms and antibodies</h3>
+<ul>
+<li><b>When and what.</b> "this will work only once the compound unfortunately has been absorbed into the systemic circulation" ... "what we officially call an antidote". The inactivator binds the toxin so it cannot reach its target, the complex is cleared, the complex has "let's change that from low to no toxicity", and the inactivator "needs to have high affinity for the toxin". Her drawing: grab the whole poison, not one end of it. <small>(T) 10/19</small></li>
+<li><b>Chelators.</b> Bind "lead, mercury, cadmium, iron, and copper"; "small molecules, and they have a nucleophilic electron"; multidentate, "kind of looks like a spider, right? The legs are binding one atom of that copper"; higher affinity for the toxic metal than tissue macromolecules; must not bind magnesium or calcium ("calcium, for example, would be a most common concern"); water soluble, non-toxic, readily cleared. Structures not required. <small>(T) 10/19</small></li>
+<li><b>The table to memorize.</b> "please memorize this table, uh, know the chelating agent and know what metal it grabs." Edetate disodium: lead. Dimercaprol (BAL): gold, arsenic, lead, mercury. Succimer: lead, cadmium, mercury, arsenic. Deferoxamine and deferasirox: iron ("the differracerox, when it came on the market, was nice cause it was, um, it's oral"). Penicillamine and trientine: copper, Wilson's disease. Side effects not covered. <small>(T) 10/19; slide ‘Example Chelating Agents’</small></li>
+<li><b>Antivenoms and antibodies.</b> "an anti-venom or an antibody has to have high affinity and high specificity". Polyclonal: "we will inoculate an animal. With small amounts of a snake venom ... draw their blood, and you can actually basically filter out those antibodies"; "a collection of antibodies ... not just one single. Genetically identical antibody". The danger: "type 3 hypersensitivity ... also called serum sickness ... fever, nausea, malaise". Monoclonal: "digoxin immune fab. This is an antibody, a monoclonal antibody that's made to treat a digoxin overdose"; opioid and other snake-bite monoclonals not on the market. Antivenom shortages and the hospital network. <small>(T) 10/19</small></li>
+</ul>
+<p>How she asks it: the properties of an inactivator and of a chelator; which chelator binds which metal; how a polyclonal antivenom is made and why it causes serum sickness; what digoxin immune Fab is.</p>
+<p class="sub">Sources: Treating Poisonings slides ‘Inactivation of Poisons’, ‘Heavy Metal Chelators’, ‘Structure of chelators’, ‘Example Chelating Agents’, ‘Antivenoms and Antibodies’; (T) 10/19. Questions L16-029 to L16-038.</p>
+</section>
+
+<!-- ===================================================================== -->
+<section class="guide" id="guide3-l16-6">
+<h3>30. Pharmacological treatment: antagonist, agonist, removal from the active site, bypass</h3>
+<ul>
+<li><b>Four subtopics.</b> "antagonists is first. Then sometimes we have treatments that are agonists. Sometimes we have treatments that actually remove the poison from the active site ... And then we have kind of a grab bag of pharmacologically based treatments that are when we will bypass an inhibited metabolic pathway." <small>(T) 10/19</small></li>
+<li><b>Antagonists.</b> Naloxone, "an antagonist of an opioid receptor". Flumazenil: after a slip, "The benzos are the overdose, Flomazinil is your antidote, and your treatment is the antagonist. I had it right the first time." Atropine: organophosphates inhibit acetylcholinesterase, acetylcholine rises, "atropine is going to antagonize acetylcholine." <small>(T) 10/19</small></li>
+<li><b>Agonist.</b> Physostigmine for "the belladonna alkaloids, like jimsonweed ... they cause anticholinergic effects. And so physostigma is gonna agonize those receptors" (slide: it blocks acetylcholinesterase to increase acetylcholine, so acts like an agonist). The sign: "will make your eyes dilate." <small>(T) 10/19</small></li>
+<li><b>Removal from the active site.</b> Cyanide: "that methemoglobin is pulling cyanide off of the cytochrome C oxidase onto itself. So this is removing the poison from the active site." Pralidoxime: "it's gonna pull off the organophosphate and put it onto itself. And when it does that, it can be eliminated." Aging: "a part of the phosphate falls off. Once that happens. Pralodoxine is not able to pull off that organophosphate"; it depends on "the chemical structure of the organophosphate". Soldiers' kits carry both therapies mixed in one. Carbon monoxide and oxygen: on the slide; she said she would come back to it and did not. <small>(T) 10/19</small></li>
+<li><b>Bypass.</b> Warfarin "inhibits the activity of the epoxide reductase. Therefore, you reduce the amount of vitamin K being reformed. Therefore, if you don't have as much active vitamin K, you don't make as much coagulation factors." Not the carboxylase: "It would be nice if warfarin was acting on that vitamin K dependent carboxylase ... but it's not." Antidote: "Vitamin K, right? ... Kind of bypassing this blocked metabolic scheme." Signs of over-anticoagulation: "bruising ... GI bleeds ... hemorrhagic stroke". Her liver-clinic story. <small>(T) 10/19</small></li>
+<li><b>Her framing.</b> "the point of that lecture was to talk about the bigger concept ... The examples are just examples." <small>(T) 10/19</small></li>
+</ul>
+<p>How she asks it: the four categories; which category each example belongs to and why; which drug is agonist and which antagonist in the flumazenil case; what pralidoxime does and why it can fail; warfarin's enzyme and the vitamin K bypass.</p>
+<p class="sub">Sources: Treating Poisonings slides ‘Pharmacological Treatment’, ‘Treatment is a receptor antagonist’ (two slides), ‘Treatment is a receptor agonist’, ‘Treatment Removes Toxin from Active Site’, ‘Pralidoxime example’, ‘Treatment by-passes an inhibited pathway’; (T) 10/19. Questions L16-039 to L16-053.</p>
+</section>
+
+<!-- ===================================================================== -->
+<section class="guide" id="guide3-l16-7">
+<h3>31. The beta-blocker and calcium channel blocker guideline discussion, from her key</h3>
+<ul>
+<li><b>The documents.</b> "published in the Journal of Clinical Toxicology, and they have not done any new ones recently ... What they published in 2005 is still what they follow". Evidence-based means "They rank the data that they have to create these documents, and they rank the strength of the recommendations". Poison center staff "would basically have these documents memorized". <small>(T) 10/19</small></li>
+<li><b>Question 1, reducing absorption.</b> "charcoal, right? Do you do that at home? No, that is something that they'll do when they get to the hospital". "At home, do you encourage somebody to get the person to vomit? We don't recommend that anymore ... They might, they might aspirate." <small>(T) 10/19</small></li>
+<li><b>Question 2, the windows (asymptomatic patient).</b> Immediate-release, both classes: within 6 hours, hospital; after 6 hours, "they're OK. You're gonna stay by them and watch them". Modified-release calcium channel blocker except verapamil: within 18 hours, "You need to get him in." Sustained-release beta blocker: "within 8 hours". Modified-release verapamil: within 24 hours, hospital; "If you find them after 24 hours and they are non-systematic symptomatic, they're probably OK." Why extended release is different: the tablets "clump in the stomach or in the small intestine ... Think Harry Potter" and the clump "could break apart, and all of a sudden you're gonna get a huge absorption". Why the classes differ: the data, which "speaks to the mechanism of action of calcium channel blockers versus beta blockers" (cardio module). <small>(T) 10/19</small></li>
+<li><b>Question 3, transport.</b> "You need to call an ambulance. Why? Cuz they've got the stuff on the animals to help them if they start. Crashing ... you don't have any IVs to hang, you don't have any pressers to hang, OK, you don't have any paddles." <small>(T) 10/19</small></li>
+<li><b>Follow-up and intent.</b> Calcium channel blockers: "based on the judgment of the poison center"; beta blockers: "usually the interval is about 2012 to 24 hours based on the judgment of the poison center" (12 to 24). Self-harm: "They're gonna need some counseling, some evaluation". <small>(T) 10/19</small></li>
+<li><b>What to know.</b> "I want you to know those time frames, OK, which drug formulation is OK at this time frame ... Also, you need to know you don't make them barf at home, it's too dangerous". <small>(T) 10/19</small></li>
+</ul>
+<p>How she asks it: the window for each formulation and class; what to do at home and how to get to the hospital; the follow-up difference; the self-harm point; why extended-release needs a longer window.</p>
+<p class="sub">Sources: Treating Poisonings slides ‘Guidelines for Overdoses’, ‘Discussion of OD Guidelines’; AAPCC 2005 beta-blocker and calcium channel blocker guidelines (abstracts) and her posted key; (T) 10/19. Questions L16-054 to L16-066.</p>
+</section>
+
+<!-- ===================================================================== -->
+<section class="guide" id="guide3-l16-8">
+<h3>32. The poisoning table, and what moved to Tuesday 10/20</h3>
+<ul>
+<li><b>Sources for the table.</b> "your Depiro's, uh, the 13th edition, chapter E9 ... the next section of the chapter where ... they're actually talking about treating specific poisoning ... And then also this article by Marafa. It's a really good article and it breaks down step by step, a lot of the, the symptoms that you'll see in these overdoses and then the treatments that we use, and importantly, their mechanism of action." "the Marafa article has the information in it, um, fast. It's the quickest to read". Bulleted entries; "Don't use AI please." Due the next morning; "I will post my key, and that will give you an idea of the detail that I think you need to know for the exam, and we'll go over the table tomorrow morning". <small>(T) 10/19</small></li>
+<li><b>The exam.</b> "your exam is Friday ... The material for the exam is today and tomorrow." The vote on whether Tuesday's pharmacogenomics lecture counts on Friday was moved to after Tuesday's lecture. "toxicology. Is tested on the board exam ... as well as pharmacogenomics." "The heaviest part of that will be this poisoning table." <small>(T) 10/19</small></li>
+<li><b>Not reached on 10/19.</b> The toxidromes table (defined in passing only); the carbon monoxide bullet; the bonus decks on toxicology careers and pharmaceuticals in the environment (not opened). <small>(T) 10/19</small></li>
+</ul>
+<p>How she asks it: the table's columns (symptoms, antidote, how it works, special considerations) for the overdoses discussed; she grades the table for completion and tests from her key.</p>
+<p class="sub">Sources: Treating Poisonings slide ‘Treating specific poisonings Table’; DiPiro ch. e9; Marraffa 2012; (T) 10/19. Questions L16-067, L16-068.</p>
 </section>
 `;
