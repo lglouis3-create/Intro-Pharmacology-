@@ -27,10 +27,10 @@ QUESTIONS.push(
  options:[
   {t:"Activated charcoal", correct:true, why:"Based on patient outcomes, charcoal is probably the best option; the caveat is that not everything a person ingests can be grabbed by charcoal, and charcoal has its own risk."},
   {t:"Emesis", correct:false, why:"Emesis is no longer recommended; aspiration is its biggest risk."},
-  {t:"Gastric lavage", correct:false, why:"Lavage is risky and reserved for massive ingestions at the judgment of the emergency team."},
+  {t:"Gastric lavage", correct:false, why:"Lavage is risky; an emergency team might still try it when someone has really overdosed and might not otherwise be saved."},
   {t:"Whole bowel irrigation", correct:false, why:"Irrigation is one of the options an experienced team might try, but it is not the one the outcome data favor."},
   {t:"All four are equally supported by outcome data", correct:false, why:"The data single out charcoal."}],
- teach:"The outcome data on treating poisoned patients come from cases that were treated and then written up, not from clinical trials. Those data show that charcoal, single-dose and for some compounds multiple-dose, improves patient outcomes best among the absorption-prevention methods. Two caveats: not every compound sticks to charcoal, and charcoal carries the risk of vomiting and aspiration.",
+ teach:"The outcome data on treating poisoned patients come from cases that were treated and then written up, not from clinical trials. Those data show that charcoal, single-dose and for some compounds multiple-dose, improves patient outcomes best among the absorption-prevention methods. Two caveats: not every compound sticks to charcoal, and charcoal has its own risk.",
  quote:"Yeah, so charcoal, based on patient outcomes is probably your best option. But not everything people ingest can be grabbed by charcoal in their stomach, right?",
  note:"A 10/19 addition to the 10/14 discussion of the DiPiro section (L15-059 to L15-062): the ranking by outcome data was new.",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Toxicokinetic-Based Treatment More on preventing absorption’ (DiPiro ch. e9); transcript 10/19"},
@@ -250,14 +250,14 @@ QUESTIONS.push(
   {t:"Rhodanese, which helps thiosulfate bind the cyanide", correct:true, why:"Her answer: the rhodanese. It moves cyanide from methemoglobin onto thiosulfate, and that complex is renally eliminated."},
   {t:"Amyl nitrite, which makes methemoglobin", correct:false, why:"Amyl nitrite sets up the removal of cyanide from the enzyme; it is not the clearance step."},
   {t:"Methylene blue, which regenerates hemoglobin", correct:false, why:"Methylene blue repairs the methemoglobin the treatment created."},
-  {t:"Thiosulfate, which must be infused by IV", correct:false, why:"Thiosulfate is already circulating in the body; what is given is the rhodanese that helps it bind cyanide."},
+  {t:"Thiosulfate, which pulls cyanide off cytochrome c oxidase directly", correct:false, why:"Methemoglobin pulls cyanide off the enzyme; thiosulfate takes it from methemoglobin with the help of rhodanese."},
   {t:"A hemoglobin transfusion to replace the methemoglobin", correct:false, why:"Transfusion was not part of the scheme."}],
  teach:"Cyanide bound to methemoglobin is less damaging than cyanide on cytochrome c oxidase, but it is still in the body. Thiosulfate, which is freely present, can take the cyanide; giving rhodanese helps thiosulfate pull cyanide off methemoglobin onto itself, and the thiosulfate-cyanide product is renally eliminated. That is the part of the scheme that counts as enhancing metabolism and elimination.",
  quote:"The one that is considered um. The enhancing the metabolism is which of the three? Is it the amyl nitrate to reduce hemoglobin to methemoglobin? Is it giving the rhodonase to help thiosulfate bind the cyanide, or is it the methylene blue to regenerate hemoglobin from methemoglobin? Which is the one that I said was the co-factor helping us to clear. Yeah, the roadnas. This is the part of the scheme that is really considered to be enhancing the metabolism and elimination.",
- note:"The transcript renders rhodanese as \"rodonase\", \"rhodonase\", \"roadnas\" and \"Rodinase\"; she calls it both a cofactor and an enzyme. She said the product that is renally eliminated is \"the thiosulfate with a cyanide bound to it\". The cyanide figure did not survive the deck text export; the figure is from Golan's pharmacology textbook.",
+ note:"The transcript renders rhodanese as \"rodonase\", \"rhodonase\", \"roadnas\" and \"Rodinase\"; she calls it both a cofactor and an enzyme and said thiosulfate is already circulating while rhodanese is what is given. The Marraffa article names sodium thiosulfate as the administered antidote and rhodanese as the patient's own enzyme; keyed on her words. She said the product that is renally eliminated is \"the thiosulfate with a cyanide bound to it\". The cyanide figure did not survive the deck text export; the figure is from Golan's pharmacology textbook.",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Toxicokinetic-Based Treatment Cyanide example’ (Golan figure); transcript 10/19"},
 
-{id:"L16-018", lecture:"L16", prof:"Smith", tier:"new", topic:"L16", sub:"metab", skill:"figure", type:"match",
+{id:"L16-018", dupOf:"L16-017", lecture:"L16", prof:"Smith", tier:"new", topic:"L16", sub:"metab", skill:"figure", type:"match",
  concept:"cyanide-scheme-steps", tags:["smith"], source:"both",
  stem:"Match each agent in the cyanide treatment scheme with what it does.",
  left:["Amyl nitrite", "Methemoglobin", "Rhodanese", "Methylene blue"],
@@ -343,7 +343,7 @@ QUESTIONS.push(
  stem:"A patient has overdosed on salicylates or phenobarbital, both mildly acidic. What is given to enhance renal elimination, and what does it do to the urine?",
  options:[
   {t:"IV sodium bicarbonate, to make the urine more basic", correct:true, why:"The bicarbonate raises the urine pH, the weak acid becomes charged, and a charged molecule cannot be reabsorbed: ion trapping."},
-  {t:"IV ammonium chloride, to make the urine more acidic", correct:false, why:"Acidifying is dangerous and is not done for weak acids."},
+  {t:"An IV acidifying agent, to make the urine more acidic", correct:false, why:"Acidifying is dangerous and is not done for weak acids."},
   {t:"Cranberry juice, to acidify the urine", correct:false, why:"Cranberry juice acidifies a little, not enough and not fast enough, and acid is the wrong direction for an acidic poison."},
   {t:"Activated charcoal, to bind the drug in the tubule", correct:false, why:"Charcoal works in the gut, not the nephron."},
   {t:"Hemodialysis, to remove it from the plasma", correct:false, why:"Dialysis is extracorporeal, reserved for severe poisonings."}],
@@ -465,13 +465,13 @@ QUESTIONS.push(
 
 {id:"L16-033", lecture:"L16", prof:"Smith", tier:"new", topic:"L16", sub:"inact", skill:"drug", type:"match",
  concept:"chelator-metal-table", tags:["smith"], source:"both",
- stem:"Match each chelating agent with the metal or metals it chelates. (She said to memorize this table.)",
+ stem:"Match each chelating agent with the metal or metals it chelates.",
  left:["Edetate disodium", "Dimercaprol (British anti-Lewisite, BAL)", "Succimer", "Deferoxamine", "Deferasirox", "Penicillamine and trientine"],
  right:["Lead", "Gold, arsenic, lead, mercury", "Lead, cadmium, mercury, arsenic", "Iron", "Iron; orally bioavailable, recently FDA approved", "Copper, usually in Wilson's disease"],
  pairs:[
   {l:"Edetate disodium", r:"Lead", why:"Table row: edetate disodium, lead."},
   {l:"Dimercaprol (British anti-Lewisite, BAL)", r:"Gold, arsenic, lead, mercury", why:"Table row: dimercaprol, gold, arsenic, lead, mercury."},
-  {l:"Succimer", r:"Lead, cadmium, mercury, arsenic", why:"Table row: succimer; the comment column reads \"Taking place of Dimercaprol\"."},
+  {l:"Succimer", r:"Lead, cadmium, mercury, arsenic", why:"Table row: succimer, lead, cadmium, mercury, arsenic."},
   {l:"Deferoxamine", r:"Iron", why:"One of the two iron chelators."},
   {l:"Deferasirox", r:"Iron; orally bioavailable, recently FDA approved", why:"The oral iron chelator."},
   {l:"Penicillamine and trientine", r:"Copper, usually in Wilson's disease", why:"Table row: penicillamine and trientine, copper, usually for patients with Wilson's disease."}],
@@ -544,6 +544,7 @@ QUESTIONS.push(
   {t:"A vitamin that bypasses the pathway digoxin inhibits", correct:false, why:"That is the warfarin and vitamin K category."}],
  teach:"Among the inactivators, antivenoms are antibodies against venoms, and there is one antibody that treats a drug overdose: digoxin immune Fab, a monoclonal antibody made to grab digoxin and clear it out of the blood. Monoclonal antibodies for opioid overdoses and for other snake bites have been discussed in the literature but are not on the market.",
  quote:"the antibody that we have is the example I have here is digoxin immune fab. This is an antibody, a monoclonal antibody that's made to treat a digoxin overdose, OK? ... One form of antibody made to grab digoxin that somebody's overdosed on, it grabs it and nicely clears it out of the blood.",
+ note:"She called digoxin immune Fab a monoclonal antibody; the slide lists it only as the example under antivenoms and antibodies, and the Marraffa article calls it digoxin-specific antibody fragments without the word monoclonal. Keyed on her wording.",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Inactivation of Poisons: Antivenoms and Antibodies’; transcript 10/19"},
 
 /* ---------------- Pharmacological treatment I ---------------- */
@@ -682,7 +683,7 @@ QUESTIONS.push(
  quote:"Certain conditions that sway aging to happen or not, it's, it's not like, it's, it's the structure of the organophosphate. Yeah, it's the chemical structure of the organophosphate, whether or not that little bit breaks off, and then pralodoxium can't grab it. ... they'll have a kit with them, right? That has, has both compounds, both, both therapies, right? Yeah, they mix it in one, yeah, yeah.",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Pharmacological Treatment Pralidoxime example’; transcript 10/19"},
 
-{id:"L16-049", lecture:"L16", prof:"Smith", tier:"new", topic:"L16", sub:"pharmsite", skill:"drug",
+{id:"L16-049", lecture:"L16", prof:"Smith", tier:"new", topic:"L16", sub:"pharmsite", skill:"drug", lowYield:true,
  concept:"co-oxygen-displacement", tags:["smith"], source:"slide",
  stem:"How is carbon monoxide (CO) poisoning treated, and in which pharmacological category does that treatment fall?",
  options:[
@@ -693,7 +694,7 @@ QUESTIONS.push(
   {t:"Sodium bicarbonate; ion trapping", correct:false, why:"CO is not a weak acid in the urine."}],
  teach:"The slide on removing a toxin from its active site lists three examples: cyanide (methemoglobin pulling it off cytochrome c oxidase), carbon monoxide (treated with high concentrations of oxygen to displace CO from the heme of hemoglobin), and organophosphates (pralidoxime restoring the active site of acetylcholinesterase).",
  quote:"And I'm gonna go back to our copper monoxide exposures in just a minute here, but let's walk our way through organophosphate exposures, OK?",
- note:"Keyed from the slide: she said she would come back to carbon monoxide (\"copper monoxide\" in the transcript) but did not; the slide was displayed and the cyanide and organophosphate bullets on it were taught.",
+ note:"Low yield: the carbon monoxide bullet was not reached on 10/19. Keyed from the slide: she said she would come back to carbon monoxide (\"copper monoxide\" in the transcript) but did not; the slide was displayed and the cyanide and organophosphate bullets on it were taught. Lift the flag if she covers CO on 10/20.",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Pharmacological Treatment: Treatment Removes Toxin from Active Site’; transcript 10/19"},
 
 {id:"L16-050", lecture:"L16", prof:"Smith", tier:"new", topic:"L16", sub:"pharmsite", skill:"figure",
@@ -735,20 +736,19 @@ QUESTIONS.push(
  quote:"What's the risk of being over anticoagulated? What signs and symptoms might you see? Most obviously we be bruising. Sometimes people can have GI bleeds, right? Really bad thing, maybe they'll have a hemorrhagic stroke, right?",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Pharmacological Treatment: Treatment by-passes an inhibited pathway’; transcript 10/19"},
 
-{id:"L16-053", lecture:"L16", prof:"Smith", tier:"new", topic:"L16", sub:"pharmsite", skill:"drug", type:"match",
+{id:"L16-053", dupOf:"L16-039", lecture:"L16", prof:"Smith", tier:"new", topic:"L16", sub:"pharmsite", skill:"drug", type:"match",
  concept:"pharmacological-examples-table", tags:["smith"], source:"both",
  stem:"Match each pharmacological treatment with how it counteracts the poison.",
- left:["Naloxone (opioid overdose)", "Flumazenil (benzodiazepine overdose)", "Atropine (organophosphate)", "Physostigmine (belladonna alkaloids)", "Pralidoxime (organophosphate)", "Oxygen (carbon monoxide)", "Vitamin K (warfarin)"],
- right:["Antagonist at the opioid receptor", "Antagonist at the GABA (benzodiazepine) receptor", "Antagonist of the excess acetylcholine", "Agonist category: blocks acetylcholinesterase to raise acetylcholine", "Removes the organophosphate from acetylcholinesterase", "Displaces the poison from the heme of hemoglobin", "Bypasses the inhibited vitamin K recycling pathway"],
+ left:["Naloxone (opioid overdose)", "Flumazenil (benzodiazepine overdose)", "Atropine (organophosphate)", "Physostigmine (belladonna alkaloids)", "Pralidoxime (organophosphate)", "Vitamin K (warfarin)"],
+ right:["Antagonist at the opioid receptor", "Antagonist at the GABA (benzodiazepine) receptor", "Antagonist of the excess acetylcholine", "Agonist category: blocks acetylcholinesterase to raise acetylcholine", "Removes the organophosphate from acetylcholinesterase", "Bypasses the inhibited vitamin K recycling pathway"],
  pairs:[
   {l:"Naloxone (opioid overdose)", r:"Antagonist at the opioid receptor", why:"Treatment is a receptor antagonist."},
   {l:"Flumazenil (benzodiazepine overdose)", r:"Antagonist at the GABA (benzodiazepine) receptor", why:"Treatment is a receptor antagonist; the benzodiazepine is the agonist."},
   {l:"Atropine (organophosphate)", r:"Antagonist of the excess acetylcholine", why:"Treatment is a receptor antagonist; the organophosphate raised acetylcholine."},
   {l:"Physostigmine (belladonna alkaloids)", r:"Agonist category: blocks acetylcholinesterase to raise acetylcholine", why:"Treatment is a receptor agonist, against an anticholinergic toxin."},
   {l:"Pralidoxime (organophosphate)", r:"Removes the organophosphate from acetylcholinesterase", why:"Treatment removes the toxin from the active site; fails after aging."},
-  {l:"Oxygen (carbon monoxide)", r:"Displaces the poison from the heme of hemoglobin", why:"Treatment removes the toxin from the active site (slide)."},
   {l:"Vitamin K (warfarin)", r:"Bypasses the inhibited vitamin K recycling pathway", why:"Treatment bypasses an inhibited pathway."}],
- teach:"Her point was the bigger concept, with the examples as illustrations: about four or five examples of pharmacologically based treatments, all drugs the class had heard of. Antagonists: naloxone, flumazenil, atropine. Agonist: physostigmine. Removal from the active site: methemoglobin for cyanide, pralidoxime for organophosphates, oxygen for carbon monoxide. Bypass: vitamin K for warfarin.",
+ teach:"Her point was the bigger concept, with the examples as illustrations: about four or five examples of pharmacologically based treatments, all drugs the class had heard of. Antagonists: naloxone, flumazenil, atropine. Agonist: physostigmine. Removal from the active site: methemoglobin for cyanide, pralidoxime for organophosphates. Bypass: vitamin K for warfarin.",
  quote:"we only had 4 or 5 examples of kinetically-based treatments and about 4 or 5 examples of these pharmacologically-based treatments, right? So, not too many to learn yet, OK. But so the point of that lecture was to talk about the bigger concept",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slides ‘Pharmacological Treatment: Treatment is a receptor antagonist’, ‘Treatment is a receptor agonist’, ‘Treatment Removes Toxin from Active Site’, ‘Treatment by-passes an inhibited pathway’; transcript 10/19"},
 
@@ -790,6 +790,7 @@ QUESTIONS.push(
   {t:"Do nothing for 6 hours and then decide", correct:false, why:"The call to the poison center and 911 is made at once; the windows decide where the patient goes, not whether to call."}],
  teach:"The first question on her key: what to do to reduce absorption. The answer is charcoal, but only at the hospital, if the patient gets there early enough. At home, with the poison center and 911 on the phone, no one tries to make the person vomit; it is too dangerous. The out-of-hospital guidelines are about what a family member and the poison center do before the hospital.",
  quote:"What should you do to try to prevent reabsorption of these either calcium channel blockers or beta blockers? What should you, what should you do? Yeah, charcoal, right? Do you do that at home? No, that is something that they'll do when they get to the hospital, OK? ... At home, do you encourage somebody to get the person to vomit? We don't recommend that anymore, right? It's too dangerous, right? They might, they might aspirate.",
+ note:"Her key: charcoal at the hospital, never at home. The guideline abstracts say to consider oral activated charcoal without delaying transport; keyed on her words.",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Discussion of OD Guidelines’; AAPCC 2005 guidelines; transcript 10/19"},
 
 {id:"L16-057", lecture:"L16", prof:"Smith", tier:"new", topic:"L16", sub:"guideline", skill:"apply", readingId:"aapcc-bb",
@@ -826,7 +827,7 @@ QUESTIONS.push(
   {t:"6 hours", correct:false, why:"Immediate-release window."},
   {t:"18 hours", correct:false, why:"Modified-release calcium channel blocker, not verapamil."},
   {t:"24 hours", correct:false, why:"Modified-release verapamil."},
-  {t:"12 hours", correct:false, why:"Not a window she gave in the discussion."}],
+  {t:"12 hours", correct:false, why:"The guideline's window for sotalol, which she did not discuss; not the sustained-release window."}],
  teach:"The sustained-release beta blocker window is 8 hours, shorter than the 18 hours for modified-release calcium channel blockers. The reason for any extended window is that these tablets clump and can break apart later; the reason for the class difference is in the case data, which speak to the different mechanisms of the two drug classes.",
  quote:"Same thing with the beta blockers, a sustained release product, but, but the time frame for this is within 8 hours, right? You got to get him to the hospital.",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Discussion of OD Guidelines’; AAPCC 2005 beta-blocker guideline; transcript 10/19"},
@@ -842,6 +843,7 @@ QUESTIONS.push(
   {t:"There is no window; verapamil always goes to the hospital", correct:false, why:"After 24 hours without symptoms they are probably OK."}],
  teach:"Among the calcium channel blockers, modified-release verapamil carries the longest window: 24 hours. Found within 24 hours, even asymptomatic, the patient goes to the hospital; found after 24 hours and asymptomatic, they are probably OK, but the poison center is still called.",
  quote:"If you found a person that's ingested modified release verapamil, and you found them within 24 hours of ingestion. You still get them to the hospital, right? Verapamil is really different, OK? If you find them after 24 hours and they are non-systematic symptomatic, they're probably OK.",
+ note:"Reading her key she first said modified-release verapamil found \"after 18 hours\" is probably OK, then gave the verapamil window as 24 hours (within 24 hours hospital; after 24 hours probably OK); the calcium channel blocker guideline gives 24 hours for modified-release verapamil. Keyed on 24 hours. The transcript renders asymptomatic as \"non-systematic symptomatic\".",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Discussion of OD Guidelines’; AAPCC 2005 calcium channel blocker guideline; transcript 10/19"},
 
 {id:"L16-061", lecture:"L16", prof:"Smith", tier:"new", topic:"L16", sub:"guideline", skill:"apply", readingId:"aapcc-ccb",
@@ -912,7 +914,7 @@ QUESTIONS.push(
  quote:"If you think they were trying to harm themselves, what do you need to do as well? It's not just treating the poisoning, right? They're gonna need some help. They're gonna need some counseling, some evaluation, make sure that whatever's going on in their lives, that they could get some help with that, OK?",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Discussion of OD Guidelines’; AAPCC 2005 guidelines; transcript 10/19"},
 
-{id:"L16-066", lecture:"L16", prof:"Smith", tier:"new", topic:"L16", sub:"guideline", skill:"apply", type:"match", readingId:"aapcc-ccb",
+{id:"L16-066", dupOf:"L16-058", lecture:"L16", prof:"Smith", tier:"new", topic:"L16", sub:"guideline", skill:"apply", type:"match", readingId:"aapcc-ccb",
  concept:"formulation-window-table", tags:["smith","reading"], source:"transcript",
  stem:"Match each formulation with the window after ingestion within which an asymptomatic patient must still go to the hospital.",
  left:["Immediate-release beta blocker or calcium channel blocker", "Sustained-release beta blocker", "Modified-release calcium channel blocker other than verapamil", "Modified-release verapamil"],
@@ -932,9 +934,9 @@ QUESTIONS.push(
  stem:"Which two sources were recommended for filling in the poisoning treatment table?",
  options:[
   {t:"DiPiro 13th edition chapter e9, the section on treating specific poisonings, and the Marraffa article", correct:true, why:"The next section of the chapter after the one read last week, and the Marraffa antidotes article; the key is posted after the table is turned in."},
-  {t:"Katzung chapters 57 and 58 together with Casarett and Doull chapter 2 and the Rodriguez-Mozaz article", correct:false, why:"Those were earlier readings; not the table sources she named."},
+  {t:"The Golan pharmacology textbook, whose figures she used, together with its chapter text on each poisoning", correct:false, why:"Golan supplied the figures; she said its text is too detailed for what the class needs and it is not a required book."},
   {t:"The full texts of the beta-blocker and calcium channel blocker guidelines and their appendices", correct:false, why:"Only the abstracts were assigned, for the guideline discussion."},
-  {t:"A web search of poison center sites and the FDA labels of each antidote", correct:false, why:"She said not to go searching the web; the chapters and article suffice."},
+  {t:"A web search of poison center sites and the FDA labels of each antidote", correct:false, why:"Not the sources she named; all the information is in the chapter and the article."},
   {t:"An AI tool, provided the output is checked against the DiPiro chapter afterwards", correct:false, why:"\"Don't use AI please. Make your brain do the work.\""}],
  teach:"The poisoning treatment table, due the next morning and discussed at the start of class, is a study tool for the exam. The sources are DiPiro's Pharmacotherapy, 13th edition, chapter e9, the section on treating specific poisonings (the part after the general approach read on 10/14), and the Marraffa antidotes article, which she called the quickest read. Bulleted entries, no AI, work with friends; her key is posted after everyone has turned the table in and shows the detail she expects.",
  quote:"I really think the best places for you to go to would be your Depiro's, uh, the 13th edition, chapter E9. We already looked at part of that chapter last week, but you would go to the next section of the chapter where we're actually, they're actually talking about treating specific poisoning. So, that will be very helpful for filling in your poisoning treatment table. And then also this article by Marafa.",
