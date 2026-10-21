@@ -20,11 +20,12 @@ Pharmacogenomics Days 2 and 3 (10/21, 10/22) fall after the Exam III scope and i
 | L14 Indices, the reading, toxic responses I (tox day 2) | 10/13 | Toxic Responses Students Fall 2026 WCAG21A.pdf; the rest of the Principles deck; Discussion-Guide-Rodriguez-Mozaz-and-Weinberg-Student-2026 copy.pdf | Smith’s Intro Pharm Lecture 10.13 Transcript.txt | the article, as discussed | 70 questions; notes/L14.md |
 | L15 Organ toxicity, treating poisonings I (tox day 3) | 10/14 | Toxic Responses (finished); Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf (to the guideline list) | Smith’s Intro to Pharm Lectures 10.14 Transcript.txt | DiPiro Ch. 9 and the AAPCC guideline abstracts as she described them | 65 questions; notes/L15.md |
 | L16 Treating poisonings II, the guideline discussion (tox day 4) | 10/19 | Treating Poisonings (finished, re-saved copy of 10/19) | Smith’s Intro to Pharm 10.19 Lecture transcript.txt | Marraffa 2012 antidotes; AAPCC beta-blocker and CCB guidelines with her key; DiPiro Ch. e9 | 68 questions; notes/L16.md |
+| L17 Introduction to pharmacogenomics (PGx day 1) | 10/20 | Intro_to_PGx_Lecture_Students_Fall_2026.pdf (taught to p. 21 of 42) | Smith’s Intro Pharma 10.20 Lecture transcript.txt | none discussed | 60 questions; notes/L17.md |
+| TBL3, GRG3, RMK3 her posted keys | 10/20 | PoisoningTreatmentTable2026KEY.pdf; Readingguideforoutofhospitalguidelines2026KEY.docx; KeyDiscussionGuideRodriguez-MozazandWeinberg2026.docx | her 10/19 and 10/20 words about them | — | 68, 33, 28 questions; Poisoning table page |
 
 ## Missing
 | Lecture | Date | Needed before ingest |
 |---|---|---|
-| Pharmacogenomics day 1 | Tue 10/20 | Deck PDF; Echo transcript; Katzung Ch. 5 and DiPiro Ch. 6 are in Drive; her poisoning-table key (posted after the tables are in); the result of the class vote on whether 10/20 counts on Friday |
 | Not reached on 10/19 | — | The toxidromes table (L16-013 lowYield until she walks it), the carbon monoxide bullet, the two bonus decks (careers; pharmaceuticals in the environment), which she did not open |
 
 Quizzes: her Canvas quizzes (quiz 1 on principles; quiz 2 on toxic responses) are graded and are the closest thing to her exam wording; none is in Drive. If the user can share them, they go into STYLE.md verbatim.
@@ -64,3 +65,8 @@ Daily reminder: a routine ("Smith reading reminder", weekdays 7:23 am Central) f
 - Two extra decks posted for 10/19: "Pharmacist impact on Pharmaceuticals in the Environment" and "Toxicology Careers": testable only if covered in class, and lightly. Neither deck is in Drive yet; ingest them only if the 10/19 transcript shows she covered them, as lowYield items.
 - Study sources she names: the Outline/Objectives slides of each deck, the keys for the readings and the tables (posted in the modules), the quiz keys after each quiz. Ask the user for the reading key, the poisoning treatment table key and the quiz 2 key when posted.
 
+## Exam 3 scope settled (10/20)
+- The class vote kept the 10/20 lecture on Friday's exam: "That's how we have it on the syllabus." Taught on 10/20: PDF pp. 1–21 (history, definitions, targets, PK/PD, variants, alleles, genotype and phenotype, haplotypes, frequencies). Nomenclature and types of polymorphism (pp. 22–41) start 10/21 and are not on Friday's exam; those slides carry lowYield questions only.
+- She will not test the two bonus decks: "I will not test you on those slide decks, the ones about careers in toxicology or about our impact" (10/20).
+- Still low yield: toxidromes table (L16-013) and the carbon monoxide bullet (L16-049); not covered 10/19 or 10/20.
+- Her keys are the depth she expects: "But you do know, need to know the details that I have in my table, my key." (10/20)

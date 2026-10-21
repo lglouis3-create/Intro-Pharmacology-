@@ -125,6 +125,19 @@ if (typeof READINGS !== 'undefined') {
   }
   QUESTIONS.forEach(q => { if (q.readingId && !rids.has(q.readingId)) bad(q.id, 'readingId not in READINGS: ' + q.readingId); });
 }
+{ // poisoning table drill data (poison_table.js): her key, 12 rows, every row with symptoms, an antidote and a mechanism
+  const fs = require('fs'), vm = require('vm');
+  if (fs.existsSync(__dirname + '/poison_table.js')) {
+    const c = {}; vm.createContext(c); vm.runInContext(fs.readFileSync(__dirname + '/poison_table.js', 'utf8') + ';this.P = POISON_TABLE;', c);
+    const P = c.P, ids = new Set();
+    if (P.length !== 12) bad('poison_table', 'expected 12 rows, found ' + P.length);
+    P.forEach(r => { if (ids.has(r.id)) bad('poison_table', 'duplicate id ' + r.id); ids.add(r.id);
+      if (!r.poison || !r.sym || !r.ref || !r.anti || !r.anti.length) bad('poison_table', 'row missing a field: ' + r.id);
+      (r.anti || []).forEach(a => { if (!a[0] || !a[1]) bad('poison_table', 'antidote without mechanism: ' + r.id); });
+      (r.special || []).forEach(sp => { if (!sp[0] || !sp[1]) bad('poison_table', 'special consideration without question and answer: ' + r.id); });
+      if (r.same && !P.find(x => x.id === r.same)) bad('poison_table', 'same-as row not found: ' + r.id); });
+  }
+}
 // "Hear the why" texts: every key is a question, the text is spoken-length and carries no written form the voice would misread
 if (typeof NARR_Q !== 'undefined') {
   for (const [id, t] of Object.entries(NARR_Q)) {

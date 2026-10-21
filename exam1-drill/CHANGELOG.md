@@ -2,6 +2,15 @@
 
 Newest first. The build embeds this file; the Topics page shows what is new since your last visit, and the Progress page shows all of it. Keep each bullet to one short line.
 
+## 2026-10-21 (Exam 3: 10/20, her keys, Smith focus)
+
+- Day 17 (10/20): 60 pharmacogenomics questions; guide 33–39, reference 28–30. The class vote kept 10/20 on Friday.
+- Poisoning table page: drill her key by antidote, mechanism, poison, special questions; cover-and-reveal cards.
+- Her keys as question sets: poisoning table, guideline reading guide, Rodriguez-Mozaz discussion guide.
+- Earlier 10/13 and 10/19 questions checked against her keys; three keyed answers now use her key's wording.
+- Smith focus: one switch keeps only her exam's pages and opens a card of her words on what to study.
+- Topics: lecture cards fold (Expand all, Collapse all); the exam facts show as label and value rows.
+
 ## 2026-10-20 (Exam 3: the 10/19 lecture)
 
 - Day 16 (10/19): 68 questions on treating poisonings II and the guideline discussion; guide 25–32, reference 24–27.

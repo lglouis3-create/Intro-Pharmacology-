@@ -37,7 +37,11 @@ const COURSE = {
     {id:'L14', deck:'Toxic Responses Students Fall 2026 WCAG21A.pdf', decks:['Toxic Responses Students Fall 2026 WCAG21A.pdf', 'Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf', 'Discussion-Guide-Rodriguez-Mozaz-and-Weinberg-Student-2026 copy.pdf'], label:'Day 14 (10/13): Indices, the reading, toxic responses I (Dr. Smith)', prof:'Smith', exam:3, module:3},
     // 10/14: organ-specific toxic responses, then Treating Poisonings up to the overdose guideline list
     {id:'L15', deck:'Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf', decks:['Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf', 'Toxic Responses Students Fall 2026 WCAG21A.pdf'], label:'Day 15 (10/14): Organ toxicity, treating poisonings I (Dr. Smith)', prof:'Smith', exam:3, module:3},
-    {id:'L16', deck:'Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf', decks:['Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf', 'Marraffa+AJHSP+2012+Antidotes.pdf', 'beta-blocker+guideline+AAPCC+2005.pdf', 'Ca+channel+blocker+guideline+AAPCC+2005.pdf'], label:'Day 16 (10/19): Treating poisonings II, the guideline discussion (Dr. Smith)', prof:'Smith', exam:3, module:3}
+    {id:'L16', deck:'Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf', decks:['Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf', 'Marraffa+AJHSP+2012+Antidotes.pdf', 'beta-blocker+guideline+AAPCC+2005.pdf', 'Ca+channel+blocker+guideline+AAPCC+2005.pdf'], label:'Day 16 (10/19): Treating poisonings II, the guideline discussion (Dr. Smith)', prof:'Smith', exam:3, module:3},
+    {id:'L17', deck:'Intro_to_PGx_Lecture_Students_Fall_2026.pdf', label:'Day 17 (10/20): Introduction to pharmacogenomics (Dr. Smith)', prof:'Smith', exam:3, module:3},
+    {id:'TBL3', deck:'PoisoningTreatmentTable2026KEY.pdf', label:'Her poisoning treatment table key (Dr. Smith)', prof:'Smith', exam:3, module:3},
+    {id:'GRG3', deck:'Readingguideforoutofhospitalguidelines2026KEY.docx', label:'Her out-of-hospital guideline reading guide key (Dr. Smith)', prof:'Smith', exam:3, module:3},
+    {id:'RMK3', deck:'KeyDiscussionGuideRodriguez-MozazandWeinberg2026.docx', label:'Her Rodriguez-Mozaz and Weinberg discussion guide key (Dr. Smith)', prof:'Smith', exam:3, module:3}
   ],
   exams: [
     {id:1, name:'Exam 1', scope:'Pharmacodynamics (9/22–9/30)', date:'Fri Oct 2, 9–11 am', when:'2026-10-02T09:00:00-05:00',  // syllabus: Exam I, Fri Oct 2, 9–11 am
@@ -76,7 +80,13 @@ const COURSE = {
     {id:3, name:'Exam 3', scope:'Toxicology and pharmacogenomics, Dr. Smith (10/9–10/20)', date:'Fri Oct 23, 9 am (90 minutes)', when:'2026-10-23T09:00:00-05:00',  // her exam notice (10/17): 9 am start, 90 minutes; the syllabus's two hours is superseded
      questions:55,               // her exam notice: 50 to 55 questions; the simulator's full paper uses the upper figure
      minutes:90,                 // her exam notice: an hour and a half
-     blurb:'Covers all the toxicology material reached by Oct 19 and the first pharmacogenomics lecture on Oct 20 (Oct 9 through Oct 20), taught by Dr. Smith. 50 to 55 questions in 90 minutes, mostly multiple choice with a few fill-in-the-blank or short-answer items. Two extra decks for Oct 19 (pharmacist impact on pharmaceuticals in the environment; toxicology careers) count only if she covers them in class. 21% of the course grade. In the bank so far: the 10/9, 10/13, 10/14 and 10/19 lectures and her practice quiz 1; 10/20 is added when its transcript arrives. On 10/19 she offered a class vote on whether the 10/20 lecture counts on Friday; until the vote is known, study it. She tests what she says in lecture first, then the slides and the readings.',
+     blurb:'Covers Oct 9 through Oct 20, taught by Dr. Smith; on 10/20 the class voted to keep that day\'s pharmacogenomics lecture on this exam. 50 to 55 questions in 90 minutes, mostly multiple choice with a few fill-in-the-blank or short-answer items. 21% of the course grade. In the bank: all five lectures (10/9, 10/13, 10/14, 10/19, 10/20), her practice quiz 1 and her three posted keys. She tests what she says in lecture first, then the slides and the readings.',
+     // the Topics card shows these as label / value rows (her exam notice 10/17, the syllabus, her words 10/19 and 10/20)
+     facts:[['Covers', 'Oct 9 – Oct 20: principles of toxicology, toxic responses, treating poisonings, introduction to pharmacogenomics'],
+            ['Format', '50 to 55 questions in 90 minutes; mostly multiple choice, a few fill-in-the-blank or short answer'],
+            ['Weight', '21% of the course grade'],
+            ['Scope vote', 'On 10/20 the class voted to keep that day’s pharmacogenomics lecture on this exam'],
+            ['How she tests', 'What she says in lecture first, then the slides, then the readings; her posted keys set the depth']],
      pools:[{key:'exam3', name:'Exam 3 material', marks:null, filter:{exam:3}}]}
   ],
   activeExam: 3,                // the exam the site opens on; the learner can switch (Topics, Exam sim, Weak spots)

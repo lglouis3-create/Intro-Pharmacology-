@@ -172,13 +172,27 @@ function schedule(id, outcome) {
 /* ---------- views ---------- */
 const VIEWS = [
   ['topics', 'Topics'], ['quiz', 'Quiz'], ['terms', 'Terms'], ['weak', 'Weak spots'], ['exam', 'Exam sim'],
-  ['graphs', 'Graphs'], ['diagrams', 'Diagrams'], ['scenes', 'Scenes'], ['map', 'Question map'], ['drugs', 'All drugs'], ['ref', 'Reference'], ['tell', 'Tell apart'], ['pair', 'Pair up'], ['rxq', 'Drug ↔ receptor'], ['guide', 'Guides'], ['readings', 'Readings'], ['data', 'Progress']
+  ['graphs', 'Graphs'], ['diagrams', 'Diagrams'], ['scenes', 'Scenes'], ['map', 'Question map'], ['drugs', 'All drugs'], ['ref', 'Reference'], ['tell', 'Tell apart'], ['pair', 'Pair up'], ['rxq', 'Drug ↔ receptor'], ['ptab', 'Poisoning table'], ['guide', 'Guides'], ['readings', 'Readings'], ['data', 'Progress']
 ];
 let CUR = 'topics';
+/* Smith focus: one switch that keeps only the pages her exam uses, locks the exam to Exam 3, hides the other
+   exams' groups and puts her own words about what to study at the top of Topics. Remembered per browser. */
+const FOCUS_KEY = COURSE.ns + ':focus', FOCUS_EXAM = 3;
+const FOCUS_VIEWS = ['topics', 'quiz', 'terms', 'weak', 'exam', 'ptab', 'guide', 'readings', 'ref', 'tell', 'data'];
+const focusOn = () => store.get(FOCUS_KEY) === '1' && COURSE.exams.some(e => e.id === FOCUS_EXAM);
+function setFocus(on) {
+  store.set(FOCUS_KEY, on ? '1' : '0');
+  if (on) { store.set(EXAM_KEY, String(FOCUS_EXAM)); if (typeof Q !== 'undefined' && Q && Q.list.some(q => examOf(q) !== FOCUS_EXAM)) Q = null; }
+  if (on && !FOCUS_VIEWS.includes(CUR)) { go('topics'); return; }
+  nav(); VIEWFN[CUR] && VIEWFN[CUR]();
+}
+const focusBtn = () => COURSE.exams.some(e => e.id === FOCUS_EXAM) ? `<button type="button" id="focusbtn" class="focusbtn ${focusOn() ? 'on' : ''}" aria-pressed="${focusOn()}" title="Show only what Dr. Smith's Exam 3 uses">${focusOn() ? '★ Smith focus: on' : '☆ Smith focus'}</button>` : '';
 function nav() {
-  $('#nav').innerHTML = VIEWS.filter(([k]) => k !== 'guide' || (typeof GUIDE_HTML !== 'undefined' && GUIDE_HTML.trim()))
+  const fo = focusOn();
+  $('#nav').innerHTML = focusBtn() + VIEWS.filter(([k]) => (k !== 'guide' || (typeof GUIDE_HTML !== 'undefined' && GUIDE_HTML.trim())) && (!fo || FOCUS_VIEWS.includes(k)))
     .map(([k, l]) => `<button type="button" data-v="${k}" class="${k === CUR ? 'on' : ''}"${k === CUR ? ' aria-current="page"' : ''}>${l}</button>`).join('') + themeSelect();
-  $('#nav').querySelectorAll('button').forEach(b => b.onclick = e => {
+  const fb = $('#focusbtn'); if (fb) fb.onclick = () => setFocus(!focusOn());
+  $('#nav').querySelectorAll('button[data-v]').forEach(b => b.onclick = e => {
     const v = b.dataset.v;
     if (!go(v)) return;           // the learner chose to stay in the exam: keep the way back too
     RET.length = 0; backBtn();
@@ -270,8 +284,8 @@ const SUB3 = {defs: [G3(1, 'definitions'), ['ref', 'ref3-1', 'Reference: the wor
   indices: [G3(8, 'not yet taught'), ['ref', 'ref3-9', 'Reference: TI, MOS, MOE'], ['tell', 'tell3-curves', 'Tell apart: TI vs MOS vs MOE']], reading: [G3(8, 'the reading')]};
 const TERM_SUB3 = G3(1, 'definitions');
 /* Later Exam 3 lectures: keys are "<lecture>:<sub>" (filled in below, next to each lecture's sections). */
-const LINKS3 = {"L14:potency": [["guide", "guide3-l14-1", "Guide: potency, ED/TD/LD and the indices"], ["ref", "ref3-l14-2", "Reference: potency and the three curves"], ["tell", "tell3-l14", "Tell apart: Day 14"]], "L14:edtdld": [["guide", "guide3-l14-1", "Guide: potency, ED/TD/LD and the indices"], ["ref", "ref3-l14-2", "Reference: potency and the three curves"], ["tell", "tell3-l14", "Tell apart: Day 14"]], "L14:indices": [["guide", "guide3-l14-1", "Guide: potency, ED/TD/LD and the indices"], ["ref", "ref3-l14-1", "Reference: TI, MOS, MOE"], ["tell", "tell3-l14", "Tell apart: Day 14"]], "L14:target": [["guide", "guide3-l14-2", "Guide: target and mechanism of action"], ["ref", "ref3-l14-2", "Reference: potency and the three curves"], ["tell", "tell3-l14", "Tell apart: Day 14"]], "L14:reading": [["guide", "guide3-l14-3", "Guide: the reading discussed"], ["ref", "ref3-l14-3", "Reference: the reading by principle"], ["tell", "tell3-l14", "Tell apart: Day 14"]], "L14:general": [["guide", "guide3-l14-4", "Guide: undesired effects, general concepts"], ["ref", "ref3-l14-4", "Reference: the general-concept pairs"], ["tell", "tell3-l14", "Tell apart: Day 14"]], "L14:interact": [["guide", "guide3-l14-4", "Guide: undesired effects, general concepts"], ["ref", "ref3-l14-4", "Reference: the general-concept pairs"], ["tell", "tell3-l14", "Tell apart: Day 14"]], "L14:tolerance": [["guide", "guide3-l14-4", "Guide: undesired effects, general concepts"], ["ref", "ref3-l14-4", "Reference: the general-concept pairs"], ["tell", "tell3-l14", "Tell apart: Day 14"]], "L14:variation": [["guide", "guide3-l14-4", "Guide: undesired effects, general concepts"], ["ref", "ref3-l14-4", "Reference: the general-concept pairs"], ["tell", "tell3-l14", "Tell apart: Day 14"]], "L14:ontarget": [["guide", "guide3-l14-5", "Guide: on-target and off-target"], ["ref", "ref3-l14-5", "Reference: on- and off-target examples"], ["tell", "tell3-l14", "Tell apart: Day 14"]], "L14:nonorgan": [["guide", "guide3-l14-6", "Guide: non-organ-specific endpoints"], ["ref", "ref3-l14-6", "Reference: non-organ-specific endpoints"], ["tell", "tell3-l14", "Tell apart: Day 14"]], "L15:pulm": [["guide", "guide3-l15-1", "Guide: pulmonary toxicity"], ["ref", "ref3-l15-1", "Reference: pulmonary toxicity"], ["tell", "tell3-l15", "Tell apart: organ toxicity and treating poisonings"]], "L15:neuro": [["guide", "guide3-l15-2", "Guide: neurotoxicity"], ["ref", "ref3-l15-2", "Reference: neurotoxicity"], ["tell", "tell3-l15", "Tell apart: organ toxicity and treating poisonings"]], "L15:hepat": [["guide", "guide3-l15-3", "Guide: why the liver is susceptible; kinds of liver injury"], ["ref", "ref3-l15-3", "Reference: hepatotoxicity"], ["tell", "tell3-l15", "Tell apart: organ toxicity and treating poisonings"]], "L15:zones": [["guide", "guide3-l15-4", "Guide: liver zones, oxygen and CYP2E1"], ["ref", "ref3-l15-3", "Reference: hepatotoxicity"], ["tell", "tell3-l15", "Tell apart: organ toxicity and treating poisonings"]], "L15:nephro": [["guide", "guide3-l15-5", "Guide: nephrotoxicity"], ["ref", "ref3-l15-4", "Reference: nephrotoxicity"], ["tell", "tell3-l15", "Tell apart: organ toxicity and treating poisonings"]], "L15:immune": [["guide", "guide3-l15-6", "Guide: idiosyncratic and immunologic responses; her four polls"], ["ref", "ref3-l15-5", "Reference: idiosyncratic and immunologic responses"], ["tell", "tell3-l15", "Tell apart: organ toxicity and treating poisonings"]], "L15:polls": [["guide", "guide3-l15-6", "Guide: idiosyncratic and immunologic responses; her four polls"], ["ref", "ref3-l15-3", "Reference: hepatotoxicity"], ["tell", "tell3-l15", "Tell apart: organ toxicity and treating poisonings"]], "L15:odkin": [["guide", "guide3-l15-7", "Guide: overdose changes kinetics"], ["ref", "ref3-l15-6", "Reference: overdose kinetics and pharmacodynamics"], ["tell", "tell3-l15", "Tell apart: organ toxicity and treating poisonings"]], "L15:odpd": [["guide", "guide3-l15-8", "Guide: overdose changes pharmacodynamics"], ["ref", "ref3-l15-6", "Reference: overdose kinetics and pharmacodynamics"], ["tell", "tell3-l15", "Tell apart: organ toxicity and treating poisonings"]], "L15:approach": [["guide", "guide3-l15-9", "Guide: three angles, four toxicokinetic methods, preventing absorption"], ["ref", "ref3-l15-7", "Reference: treatment approaches and preventing absorption"], ["tell", "tell3-l15", "Tell apart: organ toxicity and treating poisonings"]], "L15:absorb": [["guide", "guide3-l15-9", "Guide: three angles, four toxicokinetic methods, preventing absorption"], ["ref", "ref3-l15-7", "Reference: treatment approaches and preventing absorption"], ["tell", "tell3-l15", "Tell apart: organ toxicity and treating poisonings"]], "L15:guide": [["guide", "guide3-l15-10", "Guide: evidence-based guidelines; what moved to 10/19"], ["ref", "ref3-l15-8", "Reference: evidence-based guidelines"], ["tell", "tell3-l15", "Tell apart: organ toxicity and treating poisonings"]], "L16:absorbrev": [["guide", "guide3-l16-1", "Guide: Preventing absorption revisited; inhibit bioactivation"], ["ref", "ref3-l16-1", "Reference: Toxicokinetic treatments II"], ["tell", "tell3-l16", "Tell apart: Day 16"]], "L16:bioact": [["guide", "guide3-l16-1", "Guide: Preventing absorption revisited; inhibit bioactivation"], ["ref", "ref3-l16-1", "Reference: Toxicokinetic treatments II"], ["tell", "tell3-l16", "Tell apart: Day 16"]], "L16:detect": [["guide", "guide3-l16-2", "Guide: Recognizing the poisoning: blood draws, toxidromes"], ["ref", "ref3-l16-1", "Reference: Toxicokinetic treatments II"], ["tell", "tell3-l16", "Tell apart: Day 16"]], "L16:metab": [["guide", "guide3-l16-3", "Guide: Enhance metabolism: cyanide and acetaminophen"], ["ref", "ref3-l16-1", "Reference: Toxicokinetic treatments II"], ["tell", "tell3-l16", "Tell apart: Day 16"]], "L16:renal": [["guide", "guide3-l16-4", "Guide: Enhance elimination: ion trapping, extracorporeal methods"], ["ref", "ref3-l16-1", "Reference: Toxicokinetic treatments II"], ["tell", "tell3-l16", "Tell apart: Day 16"]], "L16:extra": [["guide", "guide3-l16-4", "Guide: Enhance elimination: ion trapping, extracorporeal methods"], ["ref", "ref3-l16-1", "Reference: Toxicokinetic treatments II"], ["tell", "tell3-l16", "Tell apart: Day 16"]], "L16:inact": [["guide", "guide3-l16-5", "Guide: Inactivation: chelators, antivenoms, digoxin immune Fab"], ["ref", "ref3-l16-2", "Reference: Inactivation of poisons"], ["tell", "tell3-l16", "Tell apart: Day 16"]], "L16:antibody": [["guide", "guide3-l16-5", "Guide: Inactivation: chelators, antivenoms, digoxin immune Fab"], ["ref", "ref3-l16-2", "Reference: Inactivation of poisons"], ["tell", "tell3-l16", "Tell apart: Day 16"]], "L16:pharmrec": [["guide", "guide3-l16-6", "Guide: Pharmacological treatment: the four categories"], ["ref", "ref3-l16-3", "Reference: Pharmacological treatment"], ["tell", "tell3-l16", "Tell apart: Day 16"]], "L16:pharmsite": [["guide", "guide3-l16-6", "Guide: Pharmacological treatment: the four categories"], ["ref", "ref3-l16-3", "Reference: Pharmacological treatment"], ["tell", "tell3-l16", "Tell apart: Day 16"]], "L16:guideline": [["guide", "guide3-l16-7", "Guide: The beta-blocker and calcium channel blocker guideline discussion"], ["ref", "ref3-l16-4", "Reference: The guidelines, her key"], ["tell", "tell3-l16", "Tell apart: Day 16"]], "L16:table": [["guide", "guide3-l16-8", "Guide: The poisoning table and what moved to 10/20"], ["ref", "ref3-l16-4", "Reference: The guidelines, her key"], ["tell", "tell3-l16", "Tell apart: Day 16"]]};
-const BY_LECTURE3 = {L14: [G3('l14-1', 'Day 14: indices, the reading, toxic responses')], L15: [G3('l15-1', 'Day 15: organ toxicity, treating poisonings')], L16: [G3('l16-1', 'Day 16: treating poisonings II, the guideline discussion')]};
+const LINKS3 = {"L14:potency": [["guide", "guide3-l14-1", "Guide: potency, ED/TD/LD and the indices"], ["ref", "ref3-l14-2", "Reference: potency and the three curves"], ["tell", "tell3-l14", "Tell apart: Day 14"]], "L14:edtdld": [["guide", "guide3-l14-1", "Guide: potency, ED/TD/LD and the indices"], ["ref", "ref3-l14-2", "Reference: potency and the three curves"], ["tell", "tell3-l14", "Tell apart: Day 14"]], "L14:indices": [["guide", "guide3-l14-1", "Guide: potency, ED/TD/LD and the indices"], ["ref", "ref3-l14-1", "Reference: TI, MOS, MOE"], ["tell", "tell3-l14", "Tell apart: Day 14"]], "L14:target": [["guide", "guide3-l14-2", "Guide: target and mechanism of action"], ["ref", "ref3-l14-2", "Reference: potency and the three curves"], ["tell", "tell3-l14", "Tell apart: Day 14"]], "L14:reading": [["guide", "guide3-l14-3", "Guide: the reading discussed"], ["ref", "ref3-l14-3", "Reference: the reading by principle"], ["tell", "tell3-l14", "Tell apart: Day 14"]], "L14:general": [["guide", "guide3-l14-4", "Guide: undesired effects, general concepts"], ["ref", "ref3-l14-4", "Reference: the general-concept pairs"], ["tell", "tell3-l14", "Tell apart: Day 14"]], "L14:interact": [["guide", "guide3-l14-4", "Guide: undesired effects, general concepts"], ["ref", "ref3-l14-4", "Reference: the general-concept pairs"], ["tell", "tell3-l14", "Tell apart: Day 14"]], "L14:tolerance": [["guide", "guide3-l14-4", "Guide: undesired effects, general concepts"], ["ref", "ref3-l14-4", "Reference: the general-concept pairs"], ["tell", "tell3-l14", "Tell apart: Day 14"]], "L14:variation": [["guide", "guide3-l14-4", "Guide: undesired effects, general concepts"], ["ref", "ref3-l14-4", "Reference: the general-concept pairs"], ["tell", "tell3-l14", "Tell apart: Day 14"]], "L14:ontarget": [["guide", "guide3-l14-5", "Guide: on-target and off-target"], ["ref", "ref3-l14-5", "Reference: on- and off-target examples"], ["tell", "tell3-l14", "Tell apart: Day 14"]], "L14:nonorgan": [["guide", "guide3-l14-6", "Guide: non-organ-specific endpoints"], ["ref", "ref3-l14-6", "Reference: non-organ-specific endpoints"], ["tell", "tell3-l14", "Tell apart: Day 14"]], "L15:pulm": [["guide", "guide3-l15-1", "Guide: pulmonary toxicity"], ["ref", "ref3-l15-1", "Reference: pulmonary toxicity"], ["tell", "tell3-l15", "Tell apart: organ toxicity and treating poisonings"]], "L15:neuro": [["guide", "guide3-l15-2", "Guide: neurotoxicity"], ["ref", "ref3-l15-2", "Reference: neurotoxicity"], ["tell", "tell3-l15", "Tell apart: organ toxicity and treating poisonings"]], "L15:hepat": [["guide", "guide3-l15-3", "Guide: why the liver is susceptible; kinds of liver injury"], ["ref", "ref3-l15-3", "Reference: hepatotoxicity"], ["tell", "tell3-l15", "Tell apart: organ toxicity and treating poisonings"]], "L15:zones": [["guide", "guide3-l15-4", "Guide: liver zones, oxygen and CYP2E1"], ["ref", "ref3-l15-3", "Reference: hepatotoxicity"], ["tell", "tell3-l15", "Tell apart: organ toxicity and treating poisonings"]], "L15:nephro": [["guide", "guide3-l15-5", "Guide: nephrotoxicity"], ["ref", "ref3-l15-4", "Reference: nephrotoxicity"], ["tell", "tell3-l15", "Tell apart: organ toxicity and treating poisonings"]], "L15:immune": [["guide", "guide3-l15-6", "Guide: idiosyncratic and immunologic responses; her four polls"], ["ref", "ref3-l15-5", "Reference: idiosyncratic and immunologic responses"], ["tell", "tell3-l15", "Tell apart: organ toxicity and treating poisonings"]], "L15:polls": [["guide", "guide3-l15-6", "Guide: idiosyncratic and immunologic responses; her four polls"], ["ref", "ref3-l15-3", "Reference: hepatotoxicity"], ["tell", "tell3-l15", "Tell apart: organ toxicity and treating poisonings"]], "L15:odkin": [["guide", "guide3-l15-7", "Guide: overdose changes kinetics"], ["ref", "ref3-l15-6", "Reference: overdose kinetics and pharmacodynamics"], ["tell", "tell3-l15", "Tell apart: organ toxicity and treating poisonings"]], "L15:odpd": [["guide", "guide3-l15-8", "Guide: overdose changes pharmacodynamics"], ["ref", "ref3-l15-6", "Reference: overdose kinetics and pharmacodynamics"], ["tell", "tell3-l15", "Tell apart: organ toxicity and treating poisonings"]], "L15:approach": [["guide", "guide3-l15-9", "Guide: three angles, four toxicokinetic methods, preventing absorption"], ["ref", "ref3-l15-7", "Reference: treatment approaches and preventing absorption"], ["tell", "tell3-l15", "Tell apart: organ toxicity and treating poisonings"]], "L15:absorb": [["guide", "guide3-l15-9", "Guide: three angles, four toxicokinetic methods, preventing absorption"], ["ref", "ref3-l15-7", "Reference: treatment approaches and preventing absorption"], ["tell", "tell3-l15", "Tell apart: organ toxicity and treating poisonings"]], "L15:guide": [["guide", "guide3-l15-10", "Guide: evidence-based guidelines; what moved to 10/19"], ["ref", "ref3-l15-8", "Reference: evidence-based guidelines"], ["tell", "tell3-l15", "Tell apart: organ toxicity and treating poisonings"]], "L16:absorbrev": [["guide", "guide3-l16-1", "Guide: Preventing absorption revisited; inhibit bioactivation"], ["ref", "ref3-l16-1", "Reference: Toxicokinetic treatments II"], ["tell", "tell3-l16", "Tell apart: Day 16"]], "L16:bioact": [["guide", "guide3-l16-1", "Guide: Preventing absorption revisited; inhibit bioactivation"], ["ref", "ref3-l16-1", "Reference: Toxicokinetic treatments II"], ["tell", "tell3-l16", "Tell apart: Day 16"]], "L16:detect": [["guide", "guide3-l16-2", "Guide: Recognizing the poisoning: blood draws, toxidromes"], ["ref", "ref3-l16-1", "Reference: Toxicokinetic treatments II"], ["tell", "tell3-l16", "Tell apart: Day 16"]], "L16:metab": [["guide", "guide3-l16-3", "Guide: Enhance metabolism: cyanide and acetaminophen"], ["ref", "ref3-l16-1", "Reference: Toxicokinetic treatments II"], ["tell", "tell3-l16", "Tell apart: Day 16"]], "L16:renal": [["guide", "guide3-l16-4", "Guide: Enhance elimination: ion trapping, extracorporeal methods"], ["ref", "ref3-l16-1", "Reference: Toxicokinetic treatments II"], ["tell", "tell3-l16", "Tell apart: Day 16"]], "L16:extra": [["guide", "guide3-l16-4", "Guide: Enhance elimination: ion trapping, extracorporeal methods"], ["ref", "ref3-l16-1", "Reference: Toxicokinetic treatments II"], ["tell", "tell3-l16", "Tell apart: Day 16"]], "L16:inact": [["guide", "guide3-l16-5", "Guide: Inactivation: chelators, antivenoms, digoxin immune Fab"], ["ref", "ref3-l16-2", "Reference: Inactivation of poisons"], ["tell", "tell3-l16", "Tell apart: Day 16"]], "L16:antibody": [["guide", "guide3-l16-5", "Guide: Inactivation: chelators, antivenoms, digoxin immune Fab"], ["ref", "ref3-l16-2", "Reference: Inactivation of poisons"], ["tell", "tell3-l16", "Tell apart: Day 16"]], "L16:pharmrec": [["guide", "guide3-l16-6", "Guide: Pharmacological treatment: the four categories"], ["ref", "ref3-l16-3", "Reference: Pharmacological treatment"], ["tell", "tell3-l16", "Tell apart: Day 16"]], "L16:pharmsite": [["guide", "guide3-l16-6", "Guide: Pharmacological treatment: the four categories"], ["ref", "ref3-l16-3", "Reference: Pharmacological treatment"], ["tell", "tell3-l16", "Tell apart: Day 16"]], "L16:guideline": [["guide", "guide3-l16-7", "Guide: The beta-blocker and calcium channel blocker guideline discussion"], ["ref", "ref3-l16-4", "Reference: The guidelines, her key"], ["tell", "tell3-l16", "Tell apart: Day 16"]], "L16:table": [["guide", "guide3-l16-8", "Guide: The poisoning table and what moved to 10/20"], ["ref", "ref3-l16-4", "Reference: The guidelines, her key"], ["tell", "tell3-l16", "Tell apart: Day 16"]], "TBL3:cardio": [["ref", "ref3-tbl-1", "Reference: poisoning treatment table (her key)"], ["ptab", "ptab-top", "Drill: poisoning table"]], "TBL3:cns": [["ref", "ref3-tbl-1", "Reference: poisoning treatment table (her key)"], ["ptab", "ptab-top", "Drill: poisoning table"]], "TBL3:metabolic": [["ref", "ref3-tbl-1", "Reference: poisoning treatment table (her key)"], ["ptab", "ptab-top", "Drill: poisoning table"]], "TBL3:ironop": [["ref", "ref3-tbl-1", "Reference: poisoning treatment table (her key)"], ["ptab", "ptab-top", "Drill: poisoning table"]], "TBL3:match": [["ref", "ref3-tbl-1", "Reference: poisoning treatment table (her key)"], ["ptab", "ptab-top", "Drill: poisoning table"]], "TBL3:about": [["ref", "ref3-tbl-1", "Reference: poisoning treatment table (her key)"], ["ptab", "ptab-top", "Drill: poisoning table"]], "L17:history": [["guide", "guide3-l17-1", "Guide: Why pharmacogenomics: primaquine, the timeline, twin studies"], ["ref", "ref3-l17-1", "Reference: Pharmacogenomics history and the four target areas"], ["tell", "tell3-l17", "Tell apart: Day 17 pharmacogenomics terms"]], "L17:defs": [["guide", "guide3-l17-2", "Guide: Pharmacogenetics vs pharmacogenomics; impact, uses and limitations"], ["ref", "ref3-l17-2", "Reference: Pharmacogenomics terminology"], ["tell", "tell3-l17", "Tell apart: Day 17 pharmacogenomics terms"]], "L17:impact": [["guide", "guide3-l17-2", "Guide: Pharmacogenetics vs pharmacogenomics; impact, uses and limitations"], ["ref", "ref3-l17-1", "Reference: Pharmacogenomics history and the four target areas"], ["tell", "tell3-l17", "Tell apart: Day 17 pharmacogenomics terms"]], "L17:targets": [["guide", "guide3-l17-3", "Guide: The four target areas; PK, PD and the two outcome buckets"], ["ref", "ref3-l17-1", "Reference: Pharmacogenomics history and the four target areas"], ["tell", "tell3-l17", "Tell apart: Day 17 pharmacogenomics terms"]], "L17:pkpd": [["guide", "guide3-l17-3", "Guide: The four target areas; PK, PD and the two outcome buckets"], ["ref", "ref3-l17-1", "Reference: Pharmacogenomics history and the four target areas"], ["tell", "tell3-l17", "Tell apart: Day 17 pharmacogenomics terms"]], "L17:variant": [["guide", "guide3-l17-4", "Guide: Wild type, variant, polymorphism, rare variant, SNP"], ["ref", "ref3-l17-2", "Reference: Pharmacogenomics terminology"], ["tell", "tell3-l17", "Tell apart: Day 17 pharmacogenomics terms"]], "L17:allele": [["guide", "guide3-l17-5", "Guide: Allele, genotype, phenotype, functional significance"], ["ref", "ref3-l17-2", "Reference: Pharmacogenomics terminology"], ["tell", "tell3-l17", "Tell apart: Day 17 pharmacogenomics terms"]], "L17:genophen": [["guide", "guide3-l17-5", "Guide: Allele, genotype, phenotype, functional significance"], ["ref", "ref3-l17-2", "Reference: Pharmacogenomics terminology"], ["tell", "tell3-l17", "Tell apart: Day 17 pharmacogenomics terms"]], "L17:haplo": [["guide", "guide3-l17-6", "Guide: Haplotype, allele and genotype frequency, Hardy-Weinberg"], ["ref", "ref3-l17-2", "Reference: Pharmacogenomics terminology"], ["tell", "tell3-l17", "Tell apart: Day 17 pharmacogenomics terms"]], "L17:freq": [["guide", "guide3-l17-6", "Guide: Haplotype, allele and genotype frequency, Hardy-Weinberg"], ["ref", "ref3-l17-2", "Reference: Pharmacogenomics terminology"], ["tell", "tell3-l17", "Tell apart: Day 17 pharmacogenomics terms"]], "L17:scope": [["guide", "guide3-l17-7", "Guide: The exam vote, and what was not reached on 10/20"]], "L17:nomen": [["guide", "guide3-l17-7", "Guide: The exam vote, and what was not reached on 10/20"], ["ref", "ref3-l17-3", "Reference: Nomenclature and variant types not yet taught"], ["tell", "tell3-l17", "Tell apart: Day 17 pharmacogenomics terms"]], "L17:types": [["guide", "guide3-l17-7", "Guide: The exam vote, and what was not reached on 10/20"], ["ref", "ref3-l17-3", "Reference: Nomenclature and variant types not yet taught"], ["tell", "tell3-l17", "Tell apart: Day 17 pharmacogenomics terms"]], "GRG3:ccb": [["guide", "guide3-l16-7", "Guide: the guideline discussion"], ["ref", "ref3-l16-4", "Reference: the guideline windows, her key"], ["tell", "tell3-l16", "Tell apart: Day 16"]], "GRG3:bb": [["guide", "guide3-l16-7", "Guide: the guideline discussion"], ["ref", "ref3-l16-4", "Reference: the guideline windows, her key"], ["tell", "tell3-l16", "Tell apart: Day 16"]], "GRG3:both": [["guide", "guide3-l16-7", "Guide: the guideline discussion"], ["ref", "ref3-l16-4", "Reference: the guideline windows, her key"], ["tell", "tell3-l16", "Tell apart: Day 16"]], "RMK3:source": [["guide", "guide3-l14-3", "Guide: the reading discussed"], ["ref", "ref3-l14-3", "Reference: the reading by principle"], ["tell", "tell3-l14", "Tell apart: Day 14"]], "RMK3:exposure": [["guide", "guide3-l14-3", "Guide: the reading discussed"], ["ref", "ref3-l14-3", "Reference: the reading by principle"], ["tell", "tell3-l14", "Tell apart: Day 14"]], "RMK3:adme": [["guide", "guide3-l14-3", "Guide: the reading discussed"], ["ref", "ref3-l14-3", "Reference: the reading by principle"], ["tell", "tell3-l14", "Tell apart: Day 14"]], "RMK3:dose": [["guide", "guide3-l14-3", "Guide: the reading discussed"], ["ref", "ref3-l14-3", "Reference: the reading by principle"], ["tell", "tell3-l14", "Tell apart: Day 14"]], "RMK3:target": [["guide", "guide3-l14-3", "Guide: the reading discussed"], ["ref", "ref3-l14-3", "Reference: the reading by principle"], ["tell", "tell3-l14", "Tell apart: Day 14"]]};
+const BY_LECTURE3 = {L14: [G3('l14-1', 'Day 14: indices, the reading, toxic responses')], L15: [G3('l15-1', 'Day 15: organ toxicity, treating poisonings')], L16: [G3('l16-1', 'Day 16: treating poisonings II, the guideline discussion')], L17: [G3('l17-1', 'Day 17: introduction to pharmacogenomics')]};
 function linksFor0(q) {
   if (examOf(q) === 3 && typeof GUIDE3_HTML !== 'undefined') {
     if (q.topic === 'TERMS') return [TERM_SUB3, ['ref', 'ref3-1', 'Reference: the words']];
@@ -327,12 +341,12 @@ function backBtn() {
   if (!b) { b = document.createElement('button'); b.id = 'backbtn'; b.type = 'button'; b.className = 'btn'; document.body.appendChild(b); b.onclick = goBack; }
   b.textContent = backLabel();
 }
-const backLabel = () => '← Back to ' + ({quiz: 'the question', exam: 'the exam', graphs: 'the figures', map: 'the map', terms: 'the terms', weak: 'Weak spots', tell: 'Tell apart', ref: 'the reference', guide: 'the guide', diagrams: 'the diagrams', drugs: 'the drug table', pair: 'Pair up', rxq: 'the receptor drill', scenes: 'the scenes', readings: 'the readings'}[(RET[RET.length - 1] || {}).view] || 'where you were');
+const backLabel = () => '← Back to ' + ({quiz: 'the question', exam: 'the exam', graphs: 'the figures', map: 'the map', terms: 'the terms', weak: 'Weak spots', tell: 'Tell apart', ref: 'the reference', guide: 'the guide', diagrams: 'the diagrams', drugs: 'the drug table', pair: 'Pair up', rxq: 'the receptor drill', ptab: 'the poisoning table drill', scenes: 'the scenes', readings: 'the readings'}[(RET[RET.length - 1] || {}).view] || 'where you were');
 function goBack() { const r = RET.pop(); if (!r) return; backBtn(); go(r.view, true); window.scrollTo(0, r.y); }
 document.addEventListener('click', e => { const j = e.target.closest('[data-jump]'); if (j) { const [v, a] = j.dataset.jump.split(':'); jump(v, a); } });
 /* "view:anchor:group:key": jump to the page, then open that explanation card (the reference's "Why?" cards). */
 document.addEventListener('click', e => { const j = e.target.closest('[data-jumpx]'); if (!j) return; const [v, a, g, k] = j.dataset.jumpx.split(':'); jump(v, a); const out = showExplain(g, k); if (out) scrollToEl(out.closest('.xpick')); });
-const VIEWFN = {topics: vTopics, quiz: vQuiz, terms: vTerms, weak: vWeak, exam: vExam, map: vMap, graphs: vGraphs, diagrams: vDiagrams, scenes: vScenes, drugs: vDrugs, ref: vRef, tell: vTell, pair: vPair, rxq: vRxq, guide: vGuide, readings: vReadings, data: vData};
+const VIEWFN = {topics: vTopics, quiz: vQuiz, terms: vTerms, weak: vWeak, exam: vExam, map: vMap, graphs: vGraphs, diagrams: vDiagrams, scenes: vScenes, drugs: vDrugs, ref: vRef, tell: vTell, pair: vPair, rxq: vRxq, ptab: vPtab, guide: vGuide, readings: vReadings, data: vData};
 const rerender = () => { const y = window.scrollY; if (CUR === 'quiz' && Q) renderQ(); else if (CUR === 'exam' && EX && !EX.done) renderExam(); else if (CUR === 'exam' && EX && EX.done) examResult(); else VIEWFN[CUR](); window.scrollTo(0, y); };
 document.addEventListener('click', e => {
   const f = e.target.closest('[data-flag]');
@@ -361,9 +375,9 @@ function endExam(keep) { clearInterval(TICK); TICK = null; EX = null; if (!keep)
 /* Questions eligible for practice and for the active exam. */
 /* The exam being studied: the learner's choice (stored per browser), else the course default. */
 const EXAM_KEY = COURSE.ns + ':exam';
-const activeId = () => { const v = +store.get(EXAM_KEY); return COURSE.exams.some(e => e.id === v) ? v : COURSE.activeExam; };
+const activeId = () => { if (focusOn()) return FOCUS_EXAM; const v = +store.get(EXAM_KEY); return COURSE.exams.some(e => e.id === v) ? v : COURSE.activeExam; };
 const active = () => COURSE.exams.find(e => e.id === activeId()) || COURSE.exams[0];
-const examSwitch = () => COURSE.exams.length < 2 ? '' : `<span class="row exsw" style="gap:4px"><span class="meta" style="margin:0">Studying for:</span>${COURSE.exams.map(e => `<button type="button" class="chip ${e.id === activeId() ? 'on' : ''}" data-exsw="${e.id}" aria-pressed="${e.id === activeId()}">${esc(e.name)}</button>`).join('')}</span>`;
+const examSwitch = () => COURSE.exams.length < 2 || focusOn() ? '' : `<span class="row exsw" style="gap:4px"><span class="meta" style="margin:0">Studying for:</span>${COURSE.exams.map(e => `<button type="button" class="chip ${e.id === activeId() ? 'on' : ''}" data-exsw="${e.id}" aria-pressed="${e.id === activeId()}">${esc(e.name)}</button>`).join('')}</span>`;
 document.addEventListener('click', e => {
   const b = e.target.closest('[data-exsw]'); if (!b) return;
   if (+b.dataset.exsw === activeId()) return;   // already studying it: nothing changes, the drill goes on
@@ -376,7 +390,7 @@ document.addEventListener('click', e => {
 // one inline run (the summary is a flex row): a long scope wraps inside its words, never as a line starting with "·"
 const exTitle = e => `<span>${esc(e.name)}${e.scope ? `&nbsp;<span class="meta" style="margin:0">·&nbsp;${esc(e.scope)}</span>` : ''}</span>`;
 // `open` overrides the default (open = the exam being studied), e.g. when only the other exam has matches
-const exGroup = (e, body, open) => `<details class="exgroup" data-ex="${e.id}" ${(open == null ? e.id === activeId() : open) ? 'open' : ''}><summary>${exTitle(e)}</summary><div class="exbody">${body}</div></details>`;
+const exGroup = (e, body, open) => focusOn() && e.id !== FOCUS_EXAM ? '' : `<details class="exgroup" data-ex="${e.id}" ${(open == null ? e.id === activeId() : open) ? 'open' : ''}><summary>${exTitle(e)}</summary><div class="exbody">${body}</div></details>`;
 const lecExam = id => (COURSE.lectures.find(l => l.id === id) || {}).exam;
 const inFilter = (q, f) => Object.keys(f).every(k => {
   const want = [].concat(f[k]);
@@ -406,6 +420,31 @@ function newsCard() {
     <ul>${show.map(t => `<li>${esc(t)}</li>`).join('')}</ul>${items.length > show.length ? `<div class="meta" style="margin:0 0 6px">+ ${items.length - show.length} more</div>` : ''}
     <div class="row"><button class="btn" id="newsok">Got it</button><button class="btn ghost" id="newsall">All changes</button></div></details>`;
 }
+/* The exam being studied as label / value rows: the paper, when, then the exam's own facts (or its blurb), then the bank. */
+function examCard(ex, pool) {
+  const rows = [['Paper', `${ex.name}${ex.questions ? ': ' + ex.questions + ' questions' : ''}${ex.minutes ? ' in ' + ex.minutes + ' minutes' : ''}`],
+    ['When', `${esc(ex.date)} <b>${esc(examCountdown())}</b>`, true]];
+  if (ex.facts && ex.facts.length) ex.facts.forEach(f => rows.push(f)); else if (ex.blurb) rows.push(['About', ex.blurb]);
+  const concepts = new Set(pool.map(q => q.concept || q.id)).size;
+  rows.push(['Bank', `${pool.length} questions across ${concepts} concepts`]);
+  return `<div class="card facts"><table class="factstab"><tbody>${rows.map(([k, v, raw]) => `<tr><th scope="row">${esc(k)}</th><td>${raw ? v : esc(v)}</td></tr>`).join('')}</tbody></table></div>`;
+}
+/* Each lecture's card under an exam folds; the open ones are remembered per browser. */
+const TF_KEY = COURSE.ns + ':tfold';
+const TF_OPEN = () => { try { return new Set(JSON.parse(store.get(TF_KEY) || '[]')); } catch (e) { return new Set(); } };
+/* The Smith focus card: her own words about what her exam tests, each with the page that drills it. Quotes verbatim. */
+function focusCard() {
+  const tq = id => QUESTIONS.filter(q => q.topic === id).length;
+  const item = (quote, date, btns) => `<li><span>"${esc(quote)}" <small>(T) ${date}</small></span><div class="row" style="gap:6px;margin-top:4px">${btns}</div></li>`;
+  const drill = (id, lab) => tq(id) ? `<button type="button" class="btn ghost" data-topic="${id}" data-ex="${FOCUS_EXAM}">${esc(lab)} · ${tq(id)}</button>` : '';
+  return `<div class="card focuscard"><b>Where to focus for Dr. Smith's exam</b><ul class="focuslist">
+    ${item("The heaviest part of that will be this poisoning table.", '10/19', `<button type="button" class="btn" data-jump="ptab:ptab-top">Poisoning table drill</button>${drill('TBL3', 'Table questions')}`)}
+    ${item("But you do know, need to know the details that I have in my table, my key.", '10/20', `${drill('GRG3', 'Guideline reading guide key')}${drill('RMK3', 'Discussion guide key')}`)}
+    ${item("Everything that we've talked about in class, every, everything on slides, everything that's come out of my mouth, the things you've read, and we've talked about all that is testable.", '10/19', `<button type="button" class="btn ghost" data-jump="guide:guide3-scope">What Exam 3 tests</button><button type="button" class="btn ghost" data-jump="readings:rd-top">Readings</button>`)}
+    ${item("Remember, go back and study to these objectives, at least. If you can answer these objective questions, you should pass my exam.", '10/9', `<button type="button" class="btn ghost" data-jump="guide:guide3-scope">Guides</button>`)}
+    ${item("That's how we have it on the syllabus.", '10/20 (the class vote put the 10/20 pharmacogenomics lecture on Friday\'s exam)', '')}
+  </ul><p class="sub" style="margin:6px 0 0">Smith focus is on: only her exam's pages and questions show. Turn it off from the ★ button in the tab bar.</p></div>`;
+}
 /* ---------- Topics ---------- */
 let FILT = {skill: 'all'};
 function vTopics() {
@@ -417,7 +456,7 @@ function vTopics() {
   const seen = seenCount(pool), a = acc(pool);
   // the header already names the course and says when it was updated: neither is repeated here
   let h = `<div class="row" style="margin:2px 0 8px">${examSwitch()}</div>
-  <p class="sub">${esc(ex.name)} · ${esc(ex.date)} · ${ex.minutes ? ex.minutes + ' minutes allotted' : ''}${ex.questions ? ' · ' + ex.questions + ' questions' : ''}. ${esc(ex.blurb)} <b>${esc(examCountdown())}</b></p>${newsCard()}
+  ${examCard(ex, pool0)}${focusOn() ? focusCard() : ''}${newsCard()}
   <div class="card"><div class="row" style="justify-content:space-between">
    <div><b>${pool.length}</b> ${FILT.skill === 'all' ? '' : esc((SKILL[FILT.skill] || {}).short || '') + ' '}questions in the bank · <b>${seen}</b> seen · accuracy <b>${a.pct == null ? '—' : a.pct + '%'}</b></div>
    <div class="row"><button class="btn" id="due">Study what is due</button><button class="btn ghost" id="all">One pass, all questions</button></div></div>
@@ -429,18 +468,19 @@ function vTopics() {
   // one collapsible group per exam: its topics, each with its sections
   const topicCard = (t, tq) => {
     const ta = acc(tq), tseen = seenCount(tq);
-    let c = `<div class="card"><div class="topicrow"><span><b>${esc(t.name)}</b>${t.prof && t.prof !== COURSE.professors[0] ? `<span class="exlabel">${esc(t.prof)}’s lecture</span>` : ''}<small>${esc(fmtCite(t.cite))}</small>
+    const subs0 = (t.subs || []).filter(sb => tq.some(q => q.sub === sb.id)), fold = subs0.length > 1;
+    let c = `${fold ? `<details class="card tfold" data-tf="${esc(t.id)}" ${TF_OPEN().has(t.id) ? 'open' : ''}><summary class="topicrow">` : '<div class="card"><div class="topicrow">'}<span><b>${esc(t.name)}</b>${t.prof && t.prof !== COURSE.professors[0] ? `<span class="exlabel">${esc(t.prof)}’s lecture</span>` : ''}<small>${esc(fmtCite(t.cite))}</small>
       <span class="bar-meter seen"><span style="width:${Math.round(100 * tseen / tq.length)}%"></span></span></span>
       <span class="row"><small>${tseen}/${tq.length} seen · ${ta.pct == null ? '—' : ta.pct + '%'}</small>
-      <button class="btn ghost" data-topic="${t.id}" data-ex="${examOf(tq[0])}">Drill</button></span></div>`;
-    const subs = (t.subs || []).filter(sb => tq.some(q => q.sub === sb.id));
+      <button class="btn ghost" data-topic="${t.id}" data-ex="${examOf(tq[0])}">Drill</button></span>${fold ? `</summary><div class="meta tfhint">${subs0.length} sections</div>` : '</div>'}`;
+    const subs = subs0;
     if (subs.length > 1) subs.forEach(sb => {
       const sq = tq.filter(q => q.sub === sb.id), sa = acc(sq), sseen = seenCount(sq);
       c += `<div class="topicrow subrow"><span>${esc(sb.name)}<small>${sq.length} questions${sb.cite && sb.cite !== t.cite ? ' · ' + esc(fmtCite(sb.cite)) : ''}</small>
         <span class="bar-meter seen"><span style="width:${Math.round(100 * sseen / sq.length)}%"></span></span></span>
         <span class="row"><small>${sseen}/${sq.length} seen · ${sa.pct == null ? '—' : sa.pct + '%'}</small><button class="btn ghost" data-topic="${t.id}" data-sub="${sb.id}" data-ex="${examOf(sq[0])}">Drill</button></span></div>`;
     });
-    return c + '</div>';
+    return c + (fold ? '</details>' : '</div>');
   };
   const tieredAll = pool0.filter(q => q.level && !q.lowYield), tiered = pool.filter(q => q.level && !q.lowYield);
   const skName = FILT.skill === 'all' ? '' : (SKILL[FILT.skill] || {}).short || FILT.skill;
@@ -455,10 +495,14 @@ function vTopics() {
     const eq = QUESTIONS.filter(q => examOf(q) === e.id && (FILT.skill === 'all' || q.skill === FILT.skill));
     let body = '';
     TOPICS.forEach(t => { const tq = eq.filter(q => q.topic === t.id); if (tq.length) body += topicCard(t, tq); });
+    if (body.includes('class="card tfold"')) body = `<div class="row tfall"><button type="button" class="btn ghost" data-tfall="open" data-tfex="${e.id}">Expand all</button><button type="button" class="btn ghost" data-tfall="close" data-tfex="${e.id}">Collapse all</button></div>` + body;
     if (!body) body = `<div class="empty">${e.id === activeId() ? 'Questions for this exam are added as its lectures are written.' : 'No questions match this filter.'}</div>`;
     h += exGroup(e, body);
   });
   $('#view').innerHTML = h;
+  document.querySelectorAll('details.tfold').forEach(d => d.addEventListener('toggle', () => { const o = TF_OPEN(); d.open ? o.add(d.dataset.tf) : o.delete(d.dataset.tf); store.set(TF_KEY, JSON.stringify([...o])); }));
+  document.querySelectorAll('[data-tfall]').forEach(b => b.onclick = () => { const g = b.closest('.exgroup'), op = b.dataset.tfall === 'open'; g.querySelectorAll('details.tfold').forEach(d => { d.open = op; }); });
+  document.querySelectorAll('details.tfold > summary button').forEach(b => b.addEventListener('click', e => e.preventDefault(), true));
   $('#due').onclick = () => startQuiz(pool, 'Due and unseen', 'sr');
   const wn = $('#whatsnew'); if (wn) wn.onclick = e => { e.preventDefault(); go('data'); };
   const nok = $('#newsok'); if (nok) nok.onclick = () => { store.set(NEWS_KEY, newsId(BUILD.changelog[0])); const c = $('#news'); if (c) c.remove(); };
@@ -1808,6 +1852,96 @@ function rxAdvance() {
 }
 function rxNext() { rxAdvance(); }
 document.addEventListener('keydown', e => { if (CUR === 'rxq' && e.key === 'Enter' && !e.target.closest('button, input, select, textarea')) { const b = $('#rxnext') || $('#rxcheck'); if (b && !b.disabled) b.click(); } });
+
+/* ===== Poisoning table drill: Dr. Smith's Poisoning Treatment Table 2026 KEY (poison_table.js) =====
+   Her words on 10/20: "you do need to know the details that I have in my table, my key." Five ways in:
+   name the antidote from the poison, the mechanism from the antidote, the poison from its symptoms, her
+   special-consideration answers, and a cover-and-reveal copy of the whole table. Misses come back at the end
+   of the round and lead the next one; the best first-round score per mode is kept. */
+const PT_MODES = [['anti', 'Name the antidote'], ['moa', 'Name the mechanism'], ['poison', 'Name the poison'], ['special', 'Her special questions'], ['table', 'Cover and reveal']];
+const ptRows = () => (typeof POISON_TABLE === 'undefined' ? [] : POISON_TABLE);
+const ptRow = id => ptRows().find(r => r.id === id);
+const ptAnti = r => (r.same ? ptRow(r.same) : r).anti;
+const ptAntiLabel = r => ptAnti(r).map(a => a[0]).join('; ');
+const PT_LONG = {'IV FE': 'IV FE (i.v. 20% fatty acid emulsion)'};
+const ptMoaText = (r, a) => { const t = a[1].replace(/^(Atropine|Calcium|Glucagon|HIET|vasopressors|i\.v\. 20% fatty acid emulsion):\s*/i, ''); return t.charAt(0).toUpperCase() + t.slice(1); };
+function ptItems(mode) {   // [{id, ask, sub, ans, row}]
+  const rows = ptRows(), out = [];
+  if (mode === 'anti') rows.forEach(r => out.push({id: 'a:' + r.id, ask: r.poison, sub: 'Antidote(s) in her table?', ans: ptAntiLabel(r), row: r}));
+  if (mode === 'poison') rows.forEach(r => out.push({id: 'p:' + r.id, ask: r.sym, sub: 'Which overdose has these symptoms or diagnostic methods in her table?', ans: r.poison, row: r}));
+  if (mode === 'moa') rows.filter(r => !r.same).forEach(r => r.anti.forEach((a, i) => out.push({id: 'm:' + r.id + ':' + i, ask: `${PT_LONG[a[0]] || a[0]} · ${r.poison} overdose`, sub: 'Mechanism of this antidote in her table?', ans: ptMoaText(r, a), row: r})));
+  if (mode === 'special') rows.filter(r => r.special.length).forEach(r => out.push({id: 's:' + r.id, ask: `${r.poison}: ${r.special.map(s => s[0]).join(' ')}`, sub: 'Her answer in the key?', ans: r.special.map(s => s[1]).join(' '), row: r}));
+  return out;
+}
+const PT = {mode: 'anti', queue: [], i: 0, opts: null, pick: null, result: null, right: 0, redo: [], round: 1, shown: {}};
+function ptStart(ids) {
+  const all = ptItems(PT.mode), miss = new Set(ids || (store.get(COURSE.ns + ':pt:miss:' + PT.mode) || '').split(',').filter(Boolean));
+  const first = shuffle(all.filter(x => miss.has(x.id))), rest = ids ? [] : shuffle(all.filter(x => !miss.has(x.id)));
+  PT.queue = first.concat(rest); PT.i = 0; PT.opts = null; PT.pick = null; PT.result = null; PT.right = 0; PT.redo = []; PT.round = ids ? PT.round + 1 : 1;
+}
+function ptOptions(it) {   // the right answer and up to four different answers from the same mode
+  const seen = new Set([it.ans]), out = [it.ans];
+  shuffle(ptItems(PT.mode)).forEach(x => { if (out.length < 5 && !seen.has(x.ans)) { seen.add(x.ans); out.push(x.ans); } });
+  return shuffle(out);
+}
+const ptRowHTML = r => `<b>${esc(r.poison)}</b><div class="sub">Symptoms or diagnosis: ${esc(r.sym)}</div><div class="sub">Antidote(s): ${ptAnti(r).map(a => `<b>${esc(PT_LONG[a[0]] || a[0])}</b>: ${esc(ptMoaText(r, a))}`).join(' · ')}</div>${r.special.map(s => `<div class="sub">${esc(s[0])} <b>${esc(s[1])}</b></div>`).join('')}<div class="sub">Her reference column: ${esc(r.ref)}</div>`;
+function ptTable() {
+  const cell = (k, txt) => PT.shown[k] ? esc(txt) : `<button type="button" class="chip" data-ptshow="${k}">Show</button>`;
+  const fld = (lab, html) => `<div style="margin-top:6px"><div class="meta" style="margin:0">${lab}</div><div>${html}</div></div>`;
+  return `<div class="card"><div class="row"><button type="button" class="btn ghost" id="pthide">Hide all</button><button type="button" class="btn ghost" id="ptshowall">Show all</button></div><p class="sub" style="margin:6px 0 0">Say the cell aloud, then tap Show.</p></div>
+    ${ptRows().map(r => `<div class="card"><b>${esc(r.poison)}</b>
+      ${fld('Symptoms of acute poisoning / diagnostic methods', cell(r.id + ':sym', r.sym))}
+      ${fld('Antidote(s)', cell(r.id + ':anti', ptAntiLabel(r)))}
+      ${fld('MOA of antidote(s)', cell(r.id + ':moa', ptCellText(r.id + ':moa')))}
+      ${r.special.map((s, i) => fld('Special considerations: ' + esc(s[0]), cell(r.id + ':sp' + i, s[1]))).join('')}
+      <div class="sub" style="margin-top:6px">Her reference column: ${esc(r.ref)}</div></div>`).join('')}`;
+}
+function vPtab() {
+  let h = `<h2 id="ptab-top">Poisoning table</h2><p class="sub">Dr. Smith's Poisoning Treatment Table 2026 key, row by row, in her wording. On 10/20 she said: "you do need to know the details that I have in my table, my key." Pick a mode; a miss comes back at the end of the round and leads the next one.</p>
+    <div class="card"><div class="row">${PT_MODES.map(([k, l]) => `<button type="button" class="chip ${PT.mode === k ? 'on' : ''}" aria-pressed="${PT.mode === k}" data-ptmode="${k}">${esc(l)}</button>`).join('')}</div></div>`;
+  if (PT.mode === 'table') { h += ptTable(); }
+  else {
+    if (!PT.queue.length) ptStart();
+    const it = PT.queue[PT.i], total = PT.queue.length, best = storeObj(COURSE.ns + ':pt')[PT.mode];
+    if (!PT.opts) PT.opts = ptOptions(it);
+    h += `<div class="card rxcard"><div class="meta">${PT.round > 1 ? `redo round ${PT.round} · ` : ''}${Math.min(PT.i + 1, total)} of ${total} · ${PT.right} right${PT.redo.length ? ` · ${PT.redo.length} to redo` : ''}${best ? ` · best ${best}` : ''}</div>
+      <div class="rxdrug">${esc(it.ask)}</div><div class="rxq">${esc(it.sub)}</div>
+      <div class="rxopts">${PT.opts.map((t, n) => `<button type="button" class="rxopt ${PT.result ? (t === it.ans ? 'ok' : PT.pick === n ? 'bad' : '') : ''}" data-ptans="${n}" ${PT.result ? 'disabled' : ''}>${esc(t)}</button>`).join('')}</div>
+      <div class="row" style="margin-top:10px">${PT.result ? `<button type="button" class="btn" id="ptnext">${PT.i + 1 < total ? 'Next' : PT.redo.length ? `Redo the ${PT.redo.length} missed` : 'New round'}</button>` : ''}<button type="button" class="btn ghost" id="ptskip">${PT.result ? 'Start over' : 'Skip'}</button></div>`;
+    if (PT.result) h += `<div class="pfb"><div class="pfbr ${PT.result.ok ? 'ok' : 'bad'}">${PT.result.ok ? '✓' : '✗'} ${ptRowHTML(it.row)}<div class="row" style="margin-top:6px"><button type="button" class="chip" data-jump="ref:ref3-tbl-1">The whole table</button></div></div></div>`;
+    h += `</div>`;
+  }
+  h += `<p class="sub" style="margin-top:8px">Source: PoisoningTreatmentTable2026KEY.pdf, her posted key (pages 1–3); the question bank for the table is the Exam 3 topic “Poisoning treatment table (her key)”.</p>`;
+  $('#view').innerHTML = h;
+  document.querySelectorAll('[data-ptmode]').forEach(b => b.onclick = () => { if (PT.mode === b.dataset.ptmode) return; PT.mode = b.dataset.ptmode; PT.queue = []; PT.opts = null; vPtab(); });
+  document.querySelectorAll('[data-ptans]').forEach(b => b.onclick = () => ptCheck(+b.dataset.ptans));
+  document.querySelectorAll('[data-ptshow]').forEach(b => b.onclick = () => { PT.shown[b.dataset.ptshow] = true; b.outerHTML = esc(ptCellText(b.dataset.ptshow)); });
+  const hd = $('#pthide'); if (hd) hd.onclick = () => { PT.shown = {}; vPtab(); };
+  const sa = $('#ptshowall'); if (sa) sa.onclick = () => { document.querySelectorAll('[data-ptshow]').forEach(b => PT.shown[b.dataset.ptshow] = true); vPtab(); };
+  const nx = $('#ptnext'); if (nx) { nx.onclick = ptAdvance; nx.focus(); }
+  const sk = $('#ptskip'); if (sk) sk.onclick = () => { if (PT.result) { PT.queue = []; PT.opts = null; vPtab(); } else { PT.redo.push(PT.queue[PT.i]); ptAdvance(); } };
+}
+function ptCellText(k) {
+  const [id, f] = k.split(':'), r = ptRow(id);
+  if (f === 'sym') return r.sym; if (f === 'anti') return ptAntiLabel(r);
+  if (f === 'moa') return r.same ? 'Same as above for BB OD.' : r.anti.map(a => (r.anti.length > 1 ? a[0] + ': ' : '') + ptMoaText(r, a)).join(' · ');
+  return r.special[+f.slice(2)][1];
+}
+function ptCheck(n) {
+  const it = PT.queue[PT.i]; PT.pick = n; const ok = PT.opts[n] === it.ans;
+  PT.result = {ok}; if (ok) PT.right++; else PT.redo.push(it);
+  vPtab();
+}
+function ptAdvance() {
+  PT.opts = null; PT.pick = null; PT.result = null;
+  if (PT.i + 1 < PT.queue.length) { PT.i++; vPtab(); return; }
+  const all = storeObj(COURSE.ns + ':pt'), score = `${PT.right}/${PT.queue.length}`;
+  if (PT.round === 1 && (!all[PT.mode] || +all[PT.mode].split('/')[0] / +all[PT.mode].split('/')[1] < PT.right / PT.queue.length)) { all[PT.mode] = score; store.set(COURSE.ns + ':pt', JSON.stringify(all)); }
+  store.set(COURSE.ns + ':pt:miss:' + PT.mode, PT.redo.map(x => x.id).join(','));
+  if (PT.redo.length) ptStart(PT.redo.map(x => x.id)); else ptStart();
+  vPtab();
+}
+document.addEventListener('keydown', e => { if (CUR === 'ptab' && e.key === 'Enter' && !e.target.closest('button, input, select, textarea')) { const b = $('#ptnext'); if (b) b.click(); } });
 
 const drName = r => r.name.replace(/<[^>]+>/g, '').replace(/\s*\(.*$/, '');
 function drRows() {

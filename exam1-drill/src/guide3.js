@@ -35,6 +35,13 @@ const GUIDE3_HTML = `
 <a href="#guide3-l16-6">30 Pharmacological treatment: the four categories</a>
 <a href="#guide3-l16-7">31 The beta-blocker and calcium channel blocker guideline discussion</a>
 <a href="#guide3-l16-8">32 The poisoning table and what moved to 10/20</a>
+<a href="#guide3-l17-1">33 Why pharmacogenomics: primaquine, the timeline, twin studies</a>
+<a href="#guide3-l17-2">34 Pharmacogenetics vs pharmacogenomics; impact, uses and limitations</a>
+<a href="#guide3-l17-3">35 The four target areas; PK, PD and the two outcome buckets</a>
+<a href="#guide3-l17-4">36 Wild type, variant, polymorphism, rare variant, SNP</a>
+<a href="#guide3-l17-5">37 Allele, genotype, phenotype, functional significance</a>
+<a href="#guide3-l17-6">38 Haplotype, allele and genotype frequency, Hardy-Weinberg</a>
+<a href="#guide3-l17-7">39 The exam vote, and what was not reached on 10/20</a>
 </nav>
 
 <!-- ===================================================================== -->
@@ -576,5 +583,86 @@ const GUIDE3_HTML = `
 </ul>
 <p>How she asks it: the table's columns (symptoms, antidote, how it works, special considerations) for the overdoses discussed; she grades the table for completion and tests from her key.</p>
 <p class="sub">Sources: Treating Poisonings slide ‘Treating specific poisonings Table’; DiPiro ch. e9; Marraffa 2012; (T) 10/19. Questions L16-067, L16-068.</p>
+</section>
+
+<!-- ===================================================================== -->
+<!-- ===== Day 17 (10/20) ===== -->
+<!-- ===================================================================== -->
+<section class="guide" id="guide3-l17-1">
+<h3>33. Why pharmacogenomics: inter-individual variation, primaquine, the timeline, twin studies</h3>
+<ul>
+<li><b>Why the field exists.</b> Large inter-individual variation in drug response, sometimes lethal in one person and nothing in another. It was first linked to age, ethnicity, gender and underlying disease; "with our progression and our knowledge about genetics, we are now able to explain some of these variations in response, uh, based on genetics." <small>(T) 10/20</small></li>
+<li><b>Primaquine, the first real data point.</b> An antimalarial prophylactic used "a lot in the 50s during the Korean War". Soldiers of Middle Eastern or African descent developed hemolytic anemia (slide: methemoglobinemia leading to hemolytic anemia); they had low glucose-6-phosphate dehydrogenase activity in their red blood cells. "we couldn't genotype at that time, but we could measure that enzyme activity, and we realized that that phenotype of the enzyme activity was reflecting these people's genotype". The MASH episode on the slide (The Red/White Blues, episode 214) acts it out. <small>(T) 10/20; slide ‘History of Primaquine’</small></li>
+<li><b>The timeline.</b> 1953 Watson and Crick, structure of DNA; 1956 genetic link to primaquine hemolysis; 1957 Motulsky: inheritance might explain individual differences in drug efficacy and adverse drug reactions; 1959 Vogel coins "pharmacogenetics"; 1990 Human Genome Project starts; 2003 completed, "early and under budget". A worldwide consortium of academics, industry and government agencies that shared every sequence in a database; its new methods led later to whole genome sequencing "in a matter of hours". <small>(T) 10/20; slide ‘Genomics History’</small></li>
+<li><b>Twin studies.</b> Antipyrine "is cleared all the way by metabolism. It's just like one enzyme does it." Identical twin pairs had almost identical half-lives; fraternal pairs varied (only pair d was close). "We did not genotype these people at this time. We were looking at their phenotype, which was the half-life of the clearance of the drug". <small>(T) 10/20; slide ‘Twin Studies Data’ (G&amp;G Fig. 4-2)</small></li>
+</ul>
+<p>How she asks it: the first indication of genetic variation in drug response and the enzyme involved; what was measured before genotyping existed; years on the timeline; who coined pharmacogenetics; what the twin figure shows.</p>
+<p class="sub">Sources: Intro to PGx slides ‘Inter-Individual Variations’ (p. 4), ‘History of Primaquine’ (p. 5), ‘Genomics History’ (p. 6), ‘Twin Studies Data’ (p. 7); (T) 10/20. Questions L17-001 to L17-009.</p>
+</section>
+<section class="guide" id="guide3-l17-2">
+<h3>34. Pharmacogenetics vs pharmacogenomics; impact, uses and limitations</h3>
+<ul>
+<li><b>The two terms.</b> "pharmacogenetics is the term that we use when we're thinking about an individual, one patient, and their response to a drug, OK. Pharmacogenomics is a more global term. That's where we're thinking about populations as a whole". Pharmacogenomics also covers technologies such as gene therapy. Used interchangeably; the preferred term is pharmacogenomics. Definitions: AAPS (American Association of Pharmaceutical Scientists) Pharmacogenomics Focus Group; she first said WHO, then corrected herself. <small>(T) 10/20; slide ‘Definition of Genomics vs Genetics’</small></li>
+<li><b>Why organizations define terms.</b> "It helps get us all on the same page" ... "we have better scientific communication going on." Without common definitions, one country's agency cannot compare its data with another's. <small>(T) 10/20</small></li>
+<li><b>Impact.</b> MacKinnon et al. 2023: more than half the patients evaluated were prescribed medications where pharmacogenomics is important (the study did not check whether it was used). Wondrasek et al. 2024: pharmacists feel it is important but do not feel confident in their knowledge or ability to use it. Pharmacy students are the best educated; prescribers "are not as well versed yet in pharmacogenomics, cause they don't spend as much time with drugs as you guys do." <small>(T) 10/20; slide ‘Impact of Pharmacogenomics’</small></li>
+<li><b>Uses and limitations.</b> Often a side effect or lack of efficacy prompts genotyping afterward, which is acceptable when the side effect is not lethal. For a drug that can quickly cause a lethal side effect, "It's better to genotype the patient ... before you give them that drug"; for some medications "it's standard protocol. You could be liable." Some drugs could be genotyped but rarely are in practice; "if insurance will pay for it and it saves the cost ... do it." Oncology uses it all the time; CNS, cardiology and infectious disease increasingly. <small>(T) 10/20</small></li>
+</ul>
+<p>How she asks it: individual vs population; which term is preferred and who defined them; the two impact papers; who else should know pharmacogenomics; when to genotype before prescribing.</p>
+<p class="sub">Sources: Intro to PGx slides ‘Definition of Genomics vs Genetics’ (p. 8), ‘Impact of Pharmacogenomics’ (p. 9); (T) 10/20. Questions L17-010 to L17-017.</p>
+</section>
+<section class="guide" id="guide3-l17-3">
+<h3>35. The four target areas; PK, PD and the two outcome buckets</h3>
+<ul>
+<li><b>Four, not three.</b> "change this from 3 to 4 target areas" ... "You do need to know these. So what are they? Metabolizing enzymes, transporters, drug targets, and then immunological targets". The printed title still says three. <small>(T) 10/20; slide ‘Three Target Areas’</small></li>
+<li><b>Metabolizing enzymes</b> (P450s, now phase 1 and phase 2 enzymes): known best, "the low hanging fruit"; patients who could not clear certain drugs had blood concentrations too high and some died. Slide: serious implications for narrow therapeutic-index drugs. <small>(T) 10/20</small></li>
+<li><b>Transporters.</b> P-glycoprotein (P-gp) in the gut, encoded by ABCB1, an efflux transporter. A P-gp substrate taken orally: think bioavailability. Digoxin (narrow therapeutic index) with a low-activity P-gp variant: "Does the bioavailability go up or does it go down? Who said that up, it goes up." <small>(T) 10/20</small></li>
+<li><b>Drug targets</b> (a receptor, or an enzyme a drug inhibits): slower progress; a pharmacogenomics guidance document on beta-adrenergic receptor variants came out 2 years ago (to be covered in a few days); "The area where drug targets has the biggest role right now is in oncology." <b>Immune system:</b> HLA antigen variants and severe adverse reactions; the list grows each year. <small>(T) 10/20</small></li>
+<li><b>The PharmGKB figure.</b> Top arc: PK genes, absorption, distribution, metabolism, excretion. Bottom arc: PD genes, target, mechanism of action, drug response. Outcome: "the bucket of efficacy or ... the bucket of toxicity." Less active metabolizing enzyme: toxicity. Poorly responding receptor, or a cancer without the drug's target protein ("don't give them this drug. It's expensive, and it can cause side effects"): efficacy. "We always try to either prevent toxicity or ensure efficacy by using pharmacogenomics." <small>(T) 10/20; slide ‘Impact of Pharmacogenomics on PK and PD’</small></li>
+</ul>
+<p>How she asks it: name the four target areas; why enzymes came first; P-gp, its gene and its effect on digoxin bioavailability; which bucket a scenario belongs to.</p>
+<p class="sub">Sources: Intro to PGx slides ‘Three Target Areas’ (p. 10), ‘Impact of Pharmacogenomics on PK and PD’ (p. 11); (T) 10/20. Questions L17-018 to L17-027.</p>
+</section>
+<section class="guide" id="guide3-l17-4">
+<h3>36. Wild type, variant, polymorphism, rare variant, SNP</h3>
+<ul>
+<li><b>Wild type vs variant.</b> "Wild type is a term used to talk about a version of a gene that is the most common, usually." A variant is a less common version. Sometimes the literature's wild type is just the version understood first, but "if you tell me the wild type is the most common, I'll say, yeah, that's fine". Say variant, not mutant. <small>(T) 10/20; slide ‘Wildtype vs Variant’</small></li>
+<li><b>Polymorphism vs rare variant.</b> "by definition, a polymorphism occurs at least 1% of the time in a population" ... "A rare variant is a genetic variation that is occurring in less than 1% of the population." The term rare variant is newer: patients reacting badly without the known polymorphism turned out to carry an uncommon variation. <small>(T) 10/20; slide ‘Polymorphism’</small></li>
+<li><b>SNP and other polymorphisms.</b> A single nucleotide polymorphism (SNP, "snip"): one nucleotide differs from the wild type; the most common type. Other kinds can also be polymorphisms: more than one nucleotide change, a whole gene insertion or deletion, extra copies of a gene, a sister chromatid exchange. "polymorphism definition speaks to the frequency of that change happening". Use the words genetic variant, not aberration. <small>(T) 10/20</small></li>
+</ul>
+<p>How she asks it: define wild type, variant, polymorphism and rare variant; the 1% cutoff; whether a whole-gene deletion can be a polymorphism; what a SNP is.</p>
+<p class="sub">Sources: Intro to PGx slides ‘Wildtype vs Variant’ (p. 13), ‘Polymorphism’ (p. 14); (T) 10/20. Questions L17-028 to L17-033.</p>
+</section>
+<section class="guide" id="guide3-l17-5">
+<h3>37. Allele, homozygosity, genotype, phenotype, functional significance</h3>
+<ul>
+<li><b>Allele.</b> "most of us have two copies of every gene. And so one copy is an allele and the other copy's in allele." Diploid; one from the biological mother, one from the father. <small>(T) 10/20; slide ‘Allele’</small></li>
+<li><b>Homozygous and heterozygous.</b> In the figure, PP and aa are homozygous; Bb: "They're heterozygous, right?" Say "heterozygous for B at this 3rd loci". Dominant and recessive are not used in pharmacogenomics; gene dose comes later. <small>(T) 10/20; slide ‘Homozygosity and Heterozygosity’</small></li>
+<li><b>Genotype and phenotype.</b> The two alleles a person has are the genotype; a phenotype is any observable characteristic and results from expression of genes; "Phenotypes are driven by the genotype". Written genotype: CYP2C19*2/*2 for a person homozygous for *2. The *2 variant "has No activity", so that person has no 2C19 activity; the genotype-phenotype relationship for *2 is "really tight". <small>(T) 10/20; slide ‘Genotype vs phenotype’</small></li>
+<li><b>Functional significance</b>, her key phrase: "How does that mutation affect the function of the protein, or the enzyme or the transporter that that gene creates in our body". <small>(T) 10/20</small></li>
+<li><b>What complicates the relationship.</b> Many polymorphisms in one gene ("It's hard to figure out which genetic variation is causing the phenotype"); most traits multigenic, not monogenic (one-variant diseases: sickle cell, Huntington's chorea, Tay-Sachs, certain early-onset Alzheimer's and Parkinson's; multigenic: cardiovascular disease, diabetes, hyperlipidemia); drug response can be multigenic, with each gene's effect weighted; environment (diet, habits, exercise, sleep, stress) and epigenetic factors (DNA methylation, histones). <small>(T) 10/20; slide ‘Complications of Genotype vs phenotype’</small></li>
+</ul>
+<p>How she asks it: define allele, genotype, phenotype; read zygosity from the figure; write a genotype; define functional significance; list the three complications.</p>
+<p class="sub">Sources: Intro to PGx slides ‘Allele’ (p. 15), ‘Homozygosity and Heterozygosity’ (p. 16), ‘Genotype vs phenotype’ (p. 17), ‘Complications of Genotype vs phenotype’ (p. 18); (T) 10/20. Questions L17-034 to L17-044.</p>
+</section>
+<section class="guide" id="guide3-l17-6">
+<h3>38. Haplotype, allele and genotype frequency, Hardy-Weinberg equilibrium</h3>
+<ul>
+<li><b>Haplotype.</b> "it's a set of alleles at multiple loci that coexist in the same chromosome." It has statistical significance: "a haplotype is going to be occurring at a frequency that is greater than random chance." The slide calls that excess linkage disequilibrium. In the illustration, SNPs A/G, G/T and A/T give three haplotypes, AGT, GTA and AGA. Warfarin will be the haplotype example later. <small>(T) 10/20; slides ‘Haplotype’, ‘Illustration of Haplotype’</small></li>
+<li><b>Allele frequency and genotype frequency.</b> How often an allele occurs in a population; how often a genotype occurs; both as a proportion or percentage. <small>(T) 10/20; slide ‘Frequencies in Pharmacogenomics’</small></li>
+<li><b>Hardy-Weinberg equilibrium.</b> Slide: allele and genotype frequencies stay constant from generation to generation unless specific influences are introduced. Her words: whether a genetic variation in a population is "Occurring because of evolutionary pressure or not". Her example: if stress had changed this class's drug response, "we can't use this data because we are not in Hardy-Weinberg equilibrium"; papers state their population was in equilibrium to show the results are generalizable. <small>(T) 10/20</small></li>
+</ul>
+<p>How she asks it: define haplotype and linkage disequilibrium; read the haplotypes off the figure; allele vs genotype frequency; what being out of Hardy-Weinberg equilibrium means for a study.</p>
+<p class="sub">Sources: Intro to PGx slides ‘Haplotype’ (p. 19), ‘Illustration of Haplotype’ (p. 20), ‘Frequencies in Pharmacogenomics’ (p. 21); (T) 10/20. Questions L17-045 to L17-051.</p>
+</section>
+<section class="guide" id="guide3-l17-7">
+<h3>39. The exam vote, and what was not reached on 10/20</h3>
+<ul>
+<li><b>Objectives.</b> "Every slide with a term on it, you need to know those terms, OK? There's no sense in me writing out define allele, define haplotype". <small>(T) 10/20; slide ‘Outline and Objectives’</small></li>
+<li><b>The vote.</b> "You have the choice of your exam covers only toxicology, or your exam covers everything through what we got done today." The poisoning table is on the exam either way. The class voted to include the day: "All right, that's what I do. That's what we'll do. That's how we have it on the syllabus." Friday's exam therefore covers the 10/20 material through ‘Frequencies in Pharmacogenomics’ (p. 21). <small>(T) 10/20</small></li>
+<li><b>Not reached.</b> Polymorphism nomenclature (pp. 22–29: SNP, star, rs, genotype and haplotype nomenclature) and types of genetic variants (pp. 30–41). "When we start tomorrow on polymorphism nomenclature, that's when it gets a little crazy." These start 10/21 and are outside Friday's exam; the questions on them are low yield. <small>(T) 10/20</small></li>
+<li><b>Deferred.</b> Digoxin and P-gp ("we will talk more about this example"), the beta-adrenergic receptor guidance document, oncology drug targets, HLA examples, warfarin as a haplotype example, gene dose. <small>(T) 10/20</small></li>
+</ul>
+<p>How she asks it: the scope is set by her vote; for 10/20 she tests the terms on every slide she taught.</p>
+<p class="sub">Sources: Intro to PGx slide ‘Outline and Objectives’ (p. 2), slides pp. 22–41 (not reached); (T) 10/20. Questions L17-052 to L17-060.</p>
 </section>
 `;

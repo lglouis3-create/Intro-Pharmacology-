@@ -527,6 +527,223 @@ None on 10/19. The only vote proposed was on exam scope (below), and it was move
 - The vote on whether Tuesday's pharmacogenomics lecture is on Friday's exam: Tuesday after the lecture.
 - Monoclonal antibody production; the bonus decks (careers in toxicology; pharmaceuticals in the environment).
 
+## Her posted keys (verbatim; posted 10/20)
+
+She said on 10/20: "you do need to know the details that I have in my table, my key." and "So what I have in my table in the key is sufficient." The poisoning table key is transcribed row by row in src/poison_table.js (source PoisoningTreatmentTable2026KEY.pdf, pages 1–3) and drilled on the Poisoning table page.
+
+### Out of Hospital Management Reading Guide 2026 KEY (Readingguideforoutofhospitalguidelines2026KEY.docx)
+
+Out of Hospital Management Reading Guide 2026
+Please read the abstracts of the two posted articles on Calcium Channel Blocker and Beta Blocker overdose. Answer the questions in this Reading Guide as you read. Turn in your Reading Guide for a completion grade before class on October 14th. We will discuss this in class. A key will be posted after the due date.
+Calcium Challen Blockers
+
+What should we do to try to reduce absorption?
+Do not induce emesis. Consider activated charcoal if there are no contraindications. Do not delay transport to the hospital to administer charcoal.
+
+What do we do for patients that are asymptomatic when found? More specifically…
+
+What do we do for a patient that is asymptomatic, they ingested an immediate-release product and you found them within 6 hours of ingestion?
+Get them to a hospital
+
+What do we do for a patient that is asymptomatic, they ingested an immediate-release product and you found them 6 hours after ingestion?
+Call the Poison Center. They can probably be managed at home. The Poison Center will inform you of follow-up procedures.
+
+What do we do for a patient that is asymptomatic, they ingested a modified-release product (except Verapamil), and you found them within 18 hours of ingestion?
+Get them to a hospital
+
+What do we do for a patient that is asymptomatic, they ingested a modified-release product (except Verapamil), and you found them 18 hours after ingestion?
+Call the Poison Center. They can probably be managed at home. The Poison Center will inform you of follow-up procedures.
+
+What do we do for a patient that is asymptomatic, they ingested modified-release Verapamil, and you found them within 24 hours of ingestion?
+Get them to a hospital
+
+What do we do for a patient that is asymptomatic, they ingested modified-release Verapamil, and you found them 24 hours after ingestion?
+Call the Poison Center. They can probably be managed at home. The Poison Center will inform you of follow-up procedures.
+
+Why is there a difference in time after ingestion for immediate release compared to extended release?
+Because of the formation. Immediate release formations will be absorbed more rapidly because they won’t tend to form bezoars. Extended release products tend to form bezoars which may break apart at unpredictable times. You cannot be sure when the patient will absorb the medication.
+
+What do we do for a patient that is symptomatic when found?
+Get them to a hospital
+
+If you decide a patient needs to be transported to the hospital, how should they be brought in?
+Ambulance
+
+How long do you need to follow up a patient that was asymptomatic when they were found?
+Follow-up will be determined based on the judgment of the Poison Center.
+
+What do you do if you suspect the patient has self-harmed?
+Refer the patient to the ED, then referral to mental health care.
+Beta Blockers
+
+What should we do to try to reduce absorption?
+Do not induce emesis. Consider activated charcoal if there are no contraindications. Do not delay transport to the hospital to administer charcoal.
+
+What do we do for patients that are asymptomatic when found? More specifically…
+
+What do we do for a patient that is asymptomatic, they ingested an immediate-release product (except Sotolol), and you found them within 6 hours of ingestion?
+Get them to a hospital
+
+What do we do for a patient that is asymptomatic, they ingested an immediate-release product (except Sotolol), and you found them 6 hours after ingestion?
+Call the Poison Center. They can probably be managed at home. The Poison Center will inform you of follow-up procedures.
+
+What do we do for a patient that is asymptomatic, they ingested a sustained-release product, and you found them within 8 hours of ingestion?
+Get them to a hospital
+
+What do we do for a patient that is asymptomatic, they ingested a sustained-release product, and you found them 8 hours after ingestion?
+Call the Poison Center. They can probably be managed at home. The Poison Center will inform you of follow-up procedures.
+
+Why is there a difference in time after ingestion for immediate release compared to extended release?
+Because of the formation. Immediate release formations will be absorbed more rapidly because they won’t tend to form bezoars. Extended release products tend to form bezoars which may break apart at unpredictable times. You cannot be sure when the patient will absorb the medication.
+
+What do we do for a patient that is symptomatic when found?
+Get them to a hospital
+
+If you decide a patient needs to be transported to the hospital, how should they be brought in?
+Ambulance
+
+How long do you need to follow up a patient that was asymptomatic when they were found?
+Follow-up calls should be made to determine outcome at appropriate intervals for up to 12–24 hours based on the judgment of the poison center.
+
+What do you do if you suspect the patient has self-harmed?
+Refer the patient to the ED, then referral to mental health care.
+
+### Discussion Guide KEY: Rodriguez-Mozaz and Weinberg (KeyDiscussionGuideRodriguez-MozazandWeinberg2026.docx)
+
+Table columns: Principle | For Humans | For Wildlife (text order as extracted from the Word table).
+
+Discussion Guide: Rodriguez-Mozaz & Weinberg article
+
+The article by Rodriguez-Mozaz & Weinberg on pharmaceuticals in water supplies illustrates the principles of toxicology in the context of a real-world situation of medications contaminating our environment. Read the article from the beginning up to the section “Best management practices” (at the end of the middle column on the third page). As you read, look for the principles of toxicology and compare how they might differ between humans and aquatic wildlife. You will find the principles of toxicology in the slide deck for this lecture. Fill out the table as best you can as you read. You must turn in the table in draft form for a completion grade before class on Friday Oct 9th. We will discuss the article and table in class. A key will be posted after the assignment has been turned in.
+
+Principle
+For Humans
+For Wildlife
+Source
+Flushing
+Could reduce this by other disposal methods of drugs
+Animal waste
+Could reduce by controls on feedlots/farms
+Human waste
+Can’t reduce……people take meds
+Same as for humans
+
+Exposure
+Route
+Ingestion of drinking water
+Ingestion of fish
+Recreational dermal exposure
+Duration
+Depends on how people are exposed; where they live
+Single vs repeated
+Depends on how people are exposed; where they live
+Frequency
+Depends on how people are exposed; where they live
+
+Which is more significant?....aquatic wildlife exposure
+Route
+Ingestion of drinking water
+Ingestion of food
+Dermal
+Duration
+Exposure for their entire life
+Single vs repeated
+Repeated exposure
+Frequency
+Constant exposure for aquatic wildlife, if their home range is continually contaminated (contamination levels may vary even in one location)
+
+ADME
+Are any of these detected pharmaceuticals metabolized to anything harmful in humans?
+We have some data from drug development studies, perhaps data from other studies.
+Are any of these detected pharmaceuticals metabolized to anything harmful in aquatic wildlife?
+We have very little if any data on this. Studies have not been done.
+Dose
+Don’t know dose they are really exposed to, because many times these values have not been measures, are undetected, or are modeled
+Dose is probably below therapeutic dose of a pharmaceutical
+Don’t know dose they are really exposed to, because many times these values have not been measures, are undetected, or are modeled
+Don’t know the doses needed to cause adverse effects. Due to nature of their exposure, it is likely their dose it high enough to cause effects
+Target/MOA
+1. We don’t know effects of low dose chronic exposures
+We don’t have good data on sensitive populations (fetus, children, elderly, people with underlying disease states)
+We don’t know how multiple exposures affect target/MOA
+We don’t always know what is the system or organ affected in wildlife
+Data we have may not have been measured in correct species
+If studies were done, they may not have measure correct endpoint
+We don’t know how multiple exposures affect target/MOA
+
+## Day 17 (10/20) — Dr. Smith: polls, spoken questions and exam cues
+Transcript wording verbatim (transcription errors kept). Source: the 10/20 Echo transcript (15,606 words; SPEAKER 0 is Dr. Smith); deck `Intro_to_PGx_Lecture_Students_Fall_2026.pdf` (42 PDF pages, no printed slide numbers; cited by title and PDF page), taught from the title page through ‘Frequencies in Pharmacogenomics’ (p. 21). The session opened with her review of the guideline reading guide and the poisoning treatment table (about the first 16 percent of the transcript); a break at about 1:00, back at 1:10.
+
+### Poll Everywhere
+None on 10/20. The only vote was the exam-scope vote at the end (below), by show of hands with eyes covered.
+
+### Spoken questions she put to the room (with the answer she accepted)
+Opening review (toxicology; questions written by the table writer, not in L17):
+- "Like, remember, how do we put together that data in those guidance documents? Who's using those guidance documents?" (no answer recorded; rhetorical).
+- "Did you have any idea that those existed? You've probably never heard about those before".
+- "did you have questions on anything in specific in the table? Did you find information? And did you do the work of putting in that reference column where you found that information so that you can go back to it if you need to? OK, good."
+- "which source of information did you like the best? Did you like the Dipiro chapter? Did you like the Maratha article? Did you go into your Katsung's pharmacology textbook and find anything there? The Morath article is good. I, I, I really like that one."
+- "what did you guys think about the column in the table where I, I asked you to answer some questions, I called it special considerations. Anybody have any questions about the question I asked in that column or what your answer should be? No, if I didn't have a question, there's nothing really weird about that poisoning."
+- "Did you help each other with this? You could, you could, you can, OK. I believe in the power of the collective mind, so working on something like this, I think is fair game."
+
+Pharmacogenomics (all in L17):
+- "Why would the, why would a big organization like the AAPS or the WHO, why would they define terms like this? What do you think the world would define terms, scientific terms. It helps get us all on the same page, OK" (L17-012).
+- "Can you think of other healthcare professions that M should know about pharmacogenomics. How about anybody that's prescribing? OK." (L17-015).
+- "So, can you think of any drug transporters? I'm thinking of one that's expressed in the gut, PGP P glacoprotein, right? OK. It's encoded by the ABCB1 gene, OK?" (L17-020).
+- "What aspect of kinetics could be affected by the fact that that drug that you're taking orally is a substrate for what aspect of kinetics does that affect? I'm thinking absorption into the systemic circulation. What's the, and are you saying it? Uh, it's tied with excretion. It's related to drug blood concentrations. About the term bioavailability." (a student offered excretion; she steered to bioavailability; L17-021).
+- "What's going to happen to their bioavailability of digoxin? Does the bioavailability go up or does it go down? Who said that up, it goes up." Then, for a perplexed student: "Do you want me to review PGP again? OK, I'll review it again." (L17-022).
+- A student: is there a way to decide before a genetic test? Her answer: "It's better to genotype the patient, figure out what version of a gene they have before you give them that drug" for a drug with a possible lethal side effect; "for some medications, it's standard protocol. You could be liable." "Yeah, you're now jumping ahead, which is awesome." (L17-016).
+- A student, on whether a variation of any kind in more than 1% counts: "It's not A rare variant. Yeah, so any kind of genetic. Craziness that you can think of, if it happens in more than 1 in 1% or more of the population, by definition it's polymorphic." (L17-030).
+- "Have you guys heard that term before? A snip. OK" (L17-032).
+- "have you guys heard the words homozygosity and heterozygosity? Everybody that's been through 8th grade biology." — Bb: "so they are what, homozygous or heterozygous. They're heterozygous, right?" (L17-035).
+- "OK, why would that complicate it? Why would it complicate our understanding of what's the phenotype you get with those genotypes? Why does that complicate it? It's hard to figure out which genetic variation is causing the phenotype." (L17-041).
+- "Any diseases come to mind that are caused by one gene mutation. Not usually, sorry, good, good guess. Some sickle cell, yes, some sickle cell, yes." Then Huntington's chorea ("You guys know what that is"), early-onset Alzheimer's and Parkinson's of certain kinds, "Tay-Sachs disease, one genetic variation"; a student: Tay-Sachs is metabolic, "yes, Tay-Sachs, it's a metabolic disorder, yeah." (L17-042).
+- "Should I say that again?" (multigenic drug response, repeated; L17-043).
+- "What's the functional significance of a genetic variation? How would you explain that to your grandmother? ... Turn to your neighbor and tell them what you would say about what is functional significance of a genetic variation." Her answer: "How does that mutation affect the function of the protein, or the enzyme or the transporter that that gene creates in our body, OK?" (L17-039).
+- "Has anybody heard of haplotype before?" (no answer recorded; L17-045).
+- Hardy-Weinberg: "Would that mean that my sampling of you guys is bad? Our data can't be applied to the general FSOP graduating population." "does that make sense? So we would not be in Hardy-Weinberg equilibrium." (L17-050).
+
+### Exam, quiz and assignment cues
+Opening (toxicology wrap-up):
+- Guidance reading guide: "remember those those assignments are a completion grade." "If people are asymptomatic before that time frame that they say is important, uh, you need to be calling poison center and probably be bringing them into the hospital, right? If you don't know how much they took, if you can't confirm that they only took maybe 1 or maybe 2 tablets of whatever medication it is, you probably need to get them into the hospital".
+- "Remember I asked you guys to, to, uh, be sure you know, at least for the calcium channel blockers and the beta blockers that we looked over yesterday, know those time frames that are important, know the difference between immediate release, sustained release, and then we had a couple drugs like verapamil that has an even different time frame than the other calcium channel blockers". The reason for verapamil: "It's not quite as clean of a calcium channel blocker as the other ones" ... "it's 24 hours for verapamil extended release, right?"
+- Self-harm: "if you have somebody that you found or a patient that has been exposed because of, you think self harm, we need to be sure they get to. Uh, mental health care as well, OK?"
+- The guidance documents: "they are a little bit old now that's OK. The data is really good they update them when they feel they need to".
+- Keys: "I'm posting keys if you still want to have more in depth discussion with me about what I have in my keys compared to what you found, please email me and come by my office, OK?" "So be sure you're checking your comments." "After all quizzes have been turned in and I've graded them, I will open them, so the quiz you guys turned in this morning, I will open that later". The pharmaceuticals-in-water key is "already posted in the module"; "because now I've graded the out of hospital guidance document, um, I'll post that one today and then the poisoning one later today."
+- One missed quiz or assignment is forgiven once: "I'm giving each of you guys one chance." "These things are, should not be things that hurt your grade. They like these assignments you can tell these are learning tools that you're creating for yourself, right?"
+- Examples and the table: "The ones I've given you guys are examples illustrating one of these kinetic methods or pharmacodynamic methods of treatment, right? And so you do need to know those examples, because that's all I've given you guys so far. All right? And then the poisoning table. You guys need to know the information that you pulled from your readings and put into the poisoning tables."
+- Table sources: "these papers are starting to get old, but they haven't been updated. I check every year. Nothing better has come out." "The Depiro article is pretty good too."
+- Board exam: "I'll give you a little heads up hint, as you guys are studying for your board exam, like in a few years." "one other place that I check to be sure I'm making you guys know information that is, um, probably something you should know when you sit for that board exam is I look at your, the RX prep book, OK? And so I go into the chapters or the sections on, uh, poisonings, on antidotes, on pharmacogenomics as well". "this table has grown a little bit over the years, and I've added more things to it as things have become topics to study in the RX prep book." "One thing I don't cover as much in this lecture as the RX prep book does is going into all the details on the antidotes and anti, well, really, it's the anti-venoms for the snakes, because those things change a lot".
+- The table key: "I will post the key to this once all of them have been turned in. Um Uh, and then you could see from my key the depth of detail that I expect you to know." "So what I have in my table in the key is sufficient." "But you do know, need to know the details that I have in my table, my key." "Today I'm waiting on 2 people to turn theirs in, and then I will post the key".
+- Bonus decks: "I will not test you on those. I'll say that again. I will not test you on those slide decks, the ones about careers in toxicology or about our impact, our profession's impact on the fact that drugs are in the water, OK?"
+
+Pharmacogenomics:
+- Pace: "If we don't go through, get through all this today. Then we'll finish it up tomorrow, OK?" "We might not get through the different types of polymorphisms today, but that's OK."
+- Objectives: "Every slide with a term on it, you need to know those terms, OK? There's no sense in me writing out define allele, define haplotype, OK? You need to learn all those terms, OK?"
+- Future practice: "I'm gonna set you up with the basics. Basic examples, um, basic understanding" ... "So, let's be sure that you guys learn how to think like this, OK?"
+- Target areas: "So these are the four areas that we'll cover as we go through examples of pharmacogenomics, OK? You do need to know these."
+- Wild type: "When I test you on it, I will say, if you tell me the wild type is the most common, I'll say, yeah, that's fine, OK?"
+- Dominance: "we won't talk about that anymore after this figure, OK? So don't get hung up on that. I do want you to get hung up on the terms homozygosity and heterozygosity, OK."
+- Professional wording: "this person is heterozygous for B at this 3rd loci. See how professional I got right there? OK. When we're done with this course, you guys will be able to speak just like this, OK?"
+- Key phrase: "the functional significance of that genetic variation? That's a big key word in the world of pharmacogenomics."
+
+### The exam-scope vote (10/20 pharmacogenomics put on Friday's exam)
+- Her case: "OK, all right, we need to talk about the exam on Friday. I, my personal opinion is, is that we haven't gone through too much totally new stuff in today's lecture. You guys have probably heard lots of these terms, so I would advocate for going ahead and having me put questions on your exam on Friday from this lecture today. When we start tomorrow on polymorphism nomenclature, that's when it gets a little crazy."
+- The choice: "You have the choice of your exam covers only toxicology, or your exam covers everything through what we got done today."
+- Either way: "If we, if we don't, if we don't use this information from today's lecture, I'm still including your poisoning table, OK, on the exam. But if we don't do the information from this lecture, your, your second exam for me will wait a little bit more because it's another day of lecture or another hour at least of lecture, OK? They're almost the same weight, but I try to make it fair that you've had to sit in 3.5 or 4 lectures, 4.5 lectures for this exam, and it'll be 5 to 5.5 lectures for the last exam."
+- The vote: "Do you want to have the exam stop with your poisoning table? Raise your hand. You guys are looking at each other. Quit looking at each other. Cover your eyes and vote, OK? All right. Who wants to have your exam cover this stuff that we covered in pharmacogenomics today? All right, that's what I do. That's what we'll do. That's how we have it on the syllabus. So thank you for being amenable to the discussion."
+- Result: Friday's Exam 3 covers toxicology (with the poisoning table) and the 10/20 introduction to pharmacogenomics, through ‘Frequencies in Pharmacogenomics’ (PDF p. 21). Nomenclature and types of variants start 10/21 and belong to the next exam.
+
+### Office hours
+"Today I'm in my office until 1, sorry. Tomorrow I'm in my office until from 1 to 3 tomorrow, OK? And then on Thursday, I'm in my office from Uh, one, noon to one, OK?" Email or Teams otherwise: "if you need to get on Teams, we can do that, OK?"
+
+### Deferred or not reached on 10/20
+- Polymorphism nomenclature (PDF pp. 22–29) and types of genetic variants (pp. 30–41), including the think/pair/share exercise: "When we start tomorrow on polymorphism nomenclature, that's when it gets a little crazy."
+- Digoxin and P-glycoprotein: "OK, we will talk more about this example". The beta-adrenergic receptor guidance document: "we will go over those guidance documents in another couple of days". Oncology drug targets: "Promise we'll get into that more." HLA: "And we'll talk more about that too."
+- Which drugs to genotype in practice: "we'll talk more about that because that's an issue in pharmacogenomics, how we use it clinically, but, we will get to that".
+- Gene dose: "we'll talk about some other things like gene dose". Multigenic drug examples: "We have several drugs we're gonna look at more than one gene." Haplotypes: "especially the warfarin. OK, we'll talk about that later". Allele and genotype frequency: "I'll come back to this definition and point it out to you."
+- The readings (Katzung ch. 5; DiPiro ‘Chapter 6’, which in Drive is 13e ch. e6, Medication Adherence) were not mentioned in the pharmacogenomics part of the session.
+
 ## Smith Practice Quiz 1 — Principles of Toxicology (verbatim, with her keys)
 Source: `Smith_Practice_Quiz_1_-_Principles_of_Toxicology.pdf` (user upload 10/17; answers reproduced from her released key). Ten questions: 4 true/false, 4 multiple choice with four options, 2 short answer. In the bank as L13-037 to L13-046 (sub "verbatim").
 
