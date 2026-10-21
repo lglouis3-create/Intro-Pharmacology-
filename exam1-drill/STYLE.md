@@ -527,6 +527,150 @@ None on 10/19. The only vote proposed was on exam scope (below), and it was move
 - The vote on whether Tuesday's pharmacogenomics lecture is on Friday's exam: Tuesday after the lecture.
 - Monoclonal antibody production; the bonus decks (careers in toxicology; pharmaceuticals in the environment).
 
+## Her posted keys (verbatim; posted 10/20)
+
+She said on 10/20: "you do need to know the details that I have in my table, my key." and "So what I have in my table in the key is sufficient." The poisoning table key is transcribed row by row in src/poison_table.js (source PoisoningTreatmentTable2026KEY.pdf, pages 1–3) and drilled on the Poisoning table page.
+
+### Out of Hospital Management Reading Guide 2026 KEY (Readingguideforoutofhospitalguidelines2026KEY.docx)
+
+Out of Hospital Management Reading Guide 2026
+Please read the abstracts of the two posted articles on Calcium Channel Blocker and Beta Blocker overdose. Answer the questions in this Reading Guide as you read. Turn in your Reading Guide for a completion grade before class on October 14th. We will discuss this in class. A key will be posted after the due date.
+Calcium Challen Blockers
+
+What should we do to try to reduce absorption?
+Do not induce emesis. Consider activated charcoal if there are no contraindications. Do not delay transport to the hospital to administer charcoal.
+
+What do we do for patients that are asymptomatic when found? More specifically…
+
+What do we do for a patient that is asymptomatic, they ingested an immediate-release product and you found them within 6 hours of ingestion?
+Get them to a hospital
+
+What do we do for a patient that is asymptomatic, they ingested an immediate-release product and you found them 6 hours after ingestion?
+Call the Poison Center. They can probably be managed at home. The Poison Center will inform you of follow-up procedures.
+
+What do we do for a patient that is asymptomatic, they ingested a modified-release product (except Verapamil), and you found them within 18 hours of ingestion?
+Get them to a hospital
+
+What do we do for a patient that is asymptomatic, they ingested a modified-release product (except Verapamil), and you found them 18 hours after ingestion?
+Call the Poison Center. They can probably be managed at home. The Poison Center will inform you of follow-up procedures.
+
+What do we do for a patient that is asymptomatic, they ingested modified-release Verapamil, and you found them within 24 hours of ingestion?
+Get them to a hospital
+
+What do we do for a patient that is asymptomatic, they ingested modified-release Verapamil, and you found them 24 hours after ingestion?
+Call the Poison Center. They can probably be managed at home. The Poison Center will inform you of follow-up procedures.
+
+Why is there a difference in time after ingestion for immediate release compared to extended release?
+Because of the formation. Immediate release formations will be absorbed more rapidly because they won’t tend to form bezoars. Extended release products tend to form bezoars which may break apart at unpredictable times. You cannot be sure when the patient will absorb the medication.
+
+What do we do for a patient that is symptomatic when found?
+Get them to a hospital
+
+If you decide a patient needs to be transported to the hospital, how should they be brought in?
+Ambulance
+
+How long do you need to follow up a patient that was asymptomatic when they were found?
+Follow-up will be determined based on the judgment of the Poison Center.
+
+What do you do if you suspect the patient has self-harmed?
+Refer the patient to the ED, then referral to mental health care.
+Beta Blockers
+
+What should we do to try to reduce absorption?
+Do not induce emesis. Consider activated charcoal if there are no contraindications. Do not delay transport to the hospital to administer charcoal.
+
+What do we do for patients that are asymptomatic when found? More specifically…
+
+What do we do for a patient that is asymptomatic, they ingested an immediate-release product (except Sotolol), and you found them within 6 hours of ingestion?
+Get them to a hospital
+
+What do we do for a patient that is asymptomatic, they ingested an immediate-release product (except Sotolol), and you found them 6 hours after ingestion?
+Call the Poison Center. They can probably be managed at home. The Poison Center will inform you of follow-up procedures.
+
+What do we do for a patient that is asymptomatic, they ingested a sustained-release product, and you found them within 8 hours of ingestion?
+Get them to a hospital
+
+What do we do for a patient that is asymptomatic, they ingested a sustained-release product, and you found them 8 hours after ingestion?
+Call the Poison Center. They can probably be managed at home. The Poison Center will inform you of follow-up procedures.
+
+Why is there a difference in time after ingestion for immediate release compared to extended release?
+Because of the formation. Immediate release formations will be absorbed more rapidly because they won’t tend to form bezoars. Extended release products tend to form bezoars which may break apart at unpredictable times. You cannot be sure when the patient will absorb the medication.
+
+What do we do for a patient that is symptomatic when found?
+Get them to a hospital
+
+If you decide a patient needs to be transported to the hospital, how should they be brought in?
+Ambulance
+
+How long do you need to follow up a patient that was asymptomatic when they were found?
+Follow-up calls should be made to determine outcome at appropriate intervals for up to 12–24 hours based on the judgment of the poison center.
+
+What do you do if you suspect the patient has self-harmed?
+Refer the patient to the ED, then referral to mental health care.
+
+### Discussion Guide KEY: Rodriguez-Mozaz and Weinberg (KeyDiscussionGuideRodriguez-MozazandWeinberg2026.docx)
+
+Table columns: Principle | For Humans | For Wildlife (text order as extracted from the Word table).
+
+Discussion Guide: Rodriguez-Mozaz & Weinberg article
+
+The article by Rodriguez-Mozaz & Weinberg on pharmaceuticals in water supplies illustrates the principles of toxicology in the context of a real-world situation of medications contaminating our environment. Read the article from the beginning up to the section “Best management practices” (at the end of the middle column on the third page). As you read, look for the principles of toxicology and compare how they might differ between humans and aquatic wildlife. You will find the principles of toxicology in the slide deck for this lecture. Fill out the table as best you can as you read. You must turn in the table in draft form for a completion grade before class on Friday Oct 9th. We will discuss the article and table in class. A key will be posted after the assignment has been turned in.
+
+Principle
+For Humans
+For Wildlife
+Source
+Flushing
+Could reduce this by other disposal methods of drugs
+Animal waste
+Could reduce by controls on feedlots/farms
+Human waste
+Can’t reduce……people take meds
+Same as for humans
+
+Exposure
+Route
+Ingestion of drinking water
+Ingestion of fish
+Recreational dermal exposure
+Duration
+Depends on how people are exposed; where they live
+Single vs repeated
+Depends on how people are exposed; where they live
+Frequency
+Depends on how people are exposed; where they live
+
+Which is more significant?....aquatic wildlife exposure
+Route
+Ingestion of drinking water
+Ingestion of food
+Dermal
+Duration
+Exposure for their entire life
+Single vs repeated
+Repeated exposure
+Frequency
+Constant exposure for aquatic wildlife, if their home range is continually contaminated (contamination levels may vary even in one location)
+
+ADME
+Are any of these detected pharmaceuticals metabolized to anything harmful in humans?
+We have some data from drug development studies, perhaps data from other studies.
+Are any of these detected pharmaceuticals metabolized to anything harmful in aquatic wildlife?
+We have very little if any data on this. Studies have not been done.
+Dose
+Don’t know dose they are really exposed to, because many times these values have not been measures, are undetected, or are modeled
+Dose is probably below therapeutic dose of a pharmaceutical
+Don’t know dose they are really exposed to, because many times these values have not been measures, are undetected, or are modeled
+Don’t know the doses needed to cause adverse effects. Due to nature of their exposure, it is likely their dose it high enough to cause effects
+Target/MOA
+1. We don’t know effects of low dose chronic exposures
+We don’t have good data on sensitive populations (fetus, children, elderly, people with underlying disease states)
+We don’t know how multiple exposures affect target/MOA
+We don’t always know what is the system or organ affected in wildlife
+Data we have may not have been measured in correct species
+If studies were done, they may not have measure correct endpoint
+We don’t know how multiple exposures affect target/MOA
+
 ## Smith Practice Quiz 1 — Principles of Toxicology (verbatim, with her keys)
 Source: `Smith_Practice_Quiz_1_-_Principles_of_Toxicology.pdf` (user upload 10/17; answers reproduced from her released key). Ten questions: 4 true/false, 4 multiple choice with four options, 2 short answer. In the bank as L13-037 to L13-046 (sub "verbatim").
 

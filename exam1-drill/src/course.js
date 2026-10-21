@@ -37,7 +37,11 @@ const COURSE = {
     {id:'L14', deck:'Toxic Responses Students Fall 2026 WCAG21A.pdf', decks:['Toxic Responses Students Fall 2026 WCAG21A.pdf', 'Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf', 'Discussion-Guide-Rodriguez-Mozaz-and-Weinberg-Student-2026 copy.pdf'], label:'Day 14 (10/13): Indices, the reading, toxic responses I (Dr. Smith)', prof:'Smith', exam:3, module:3},
     // 10/14: organ-specific toxic responses, then Treating Poisonings up to the overdose guideline list
     {id:'L15', deck:'Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf', decks:['Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf', 'Toxic Responses Students Fall 2026 WCAG21A.pdf'], label:'Day 15 (10/14): Organ toxicity, treating poisonings I (Dr. Smith)', prof:'Smith', exam:3, module:3},
-    {id:'L16', deck:'Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf', decks:['Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf', 'Marraffa+AJHSP+2012+Antidotes.pdf', 'beta-blocker+guideline+AAPCC+2005.pdf', 'Ca+channel+blocker+guideline+AAPCC+2005.pdf'], label:'Day 16 (10/19): Treating poisonings II, the guideline discussion (Dr. Smith)', prof:'Smith', exam:3, module:3}
+    {id:'L16', deck:'Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf', decks:['Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf', 'Marraffa+AJHSP+2012+Antidotes.pdf', 'beta-blocker+guideline+AAPCC+2005.pdf', 'Ca+channel+blocker+guideline+AAPCC+2005.pdf'], label:'Day 16 (10/19): Treating poisonings II, the guideline discussion (Dr. Smith)', prof:'Smith', exam:3, module:3},
+    {id:'L17', deck:'Intro_to_PGx_Lecture_Students_Fall_2026.pdf', label:'Day 17 (10/20): Introduction to pharmacogenomics (Dr. Smith)', prof:'Smith', exam:3, module:3},
+    {id:'TBL3', deck:'PoisoningTreatmentTable2026KEY.pdf', label:'Her poisoning treatment table key (Dr. Smith)', prof:'Smith', exam:3, module:3},
+    {id:'GRG3', deck:'Readingguideforoutofhospitalguidelines2026KEY.docx', label:'Her out-of-hospital guideline reading guide key (Dr. Smith)', prof:'Smith', exam:3, module:3},
+    {id:'RMK3', deck:'KeyDiscussionGuideRodriguez-MozazandWeinberg2026.docx', label:'Her Rodriguez-Mozaz and Weinberg discussion guide key (Dr. Smith)', prof:'Smith', exam:3, module:3}
   ],
   exams: [
     {id:1, name:'Exam 1', scope:'Pharmacodynamics (9/22–9/30)', date:'Fri Oct 2, 9–11 am', when:'2026-10-02T09:00:00-05:00',  // syllabus: Exam I, Fri Oct 2, 9–11 am

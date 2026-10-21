@@ -172,7 +172,7 @@ function schedule(id, outcome) {
 /* ---------- views ---------- */
 const VIEWS = [
   ['topics', 'Topics'], ['quiz', 'Quiz'], ['terms', 'Terms'], ['weak', 'Weak spots'], ['exam', 'Exam sim'],
-  ['graphs', 'Graphs'], ['diagrams', 'Diagrams'], ['scenes', 'Scenes'], ['map', 'Question map'], ['drugs', 'All drugs'], ['ref', 'Reference'], ['tell', 'Tell apart'], ['pair', 'Pair up'], ['rxq', 'Drug ↔ receptor'], ['guide', 'Guides'], ['readings', 'Readings'], ['data', 'Progress']
+  ['graphs', 'Graphs'], ['diagrams', 'Diagrams'], ['scenes', 'Scenes'], ['map', 'Question map'], ['drugs', 'All drugs'], ['ref', 'Reference'], ['tell', 'Tell apart'], ['pair', 'Pair up'], ['rxq', 'Drug ↔ receptor'], ['ptab', 'Poisoning table'], ['guide', 'Guides'], ['readings', 'Readings'], ['data', 'Progress']
 ];
 let CUR = 'topics';
 function nav() {
@@ -327,12 +327,12 @@ function backBtn() {
   if (!b) { b = document.createElement('button'); b.id = 'backbtn'; b.type = 'button'; b.className = 'btn'; document.body.appendChild(b); b.onclick = goBack; }
   b.textContent = backLabel();
 }
-const backLabel = () => '← Back to ' + ({quiz: 'the question', exam: 'the exam', graphs: 'the figures', map: 'the map', terms: 'the terms', weak: 'Weak spots', tell: 'Tell apart', ref: 'the reference', guide: 'the guide', diagrams: 'the diagrams', drugs: 'the drug table', pair: 'Pair up', rxq: 'the receptor drill', scenes: 'the scenes', readings: 'the readings'}[(RET[RET.length - 1] || {}).view] || 'where you were');
+const backLabel = () => '← Back to ' + ({quiz: 'the question', exam: 'the exam', graphs: 'the figures', map: 'the map', terms: 'the terms', weak: 'Weak spots', tell: 'Tell apart', ref: 'the reference', guide: 'the guide', diagrams: 'the diagrams', drugs: 'the drug table', pair: 'Pair up', rxq: 'the receptor drill', ptab: 'the poisoning table drill', scenes: 'the scenes', readings: 'the readings'}[(RET[RET.length - 1] || {}).view] || 'where you were');
 function goBack() { const r = RET.pop(); if (!r) return; backBtn(); go(r.view, true); window.scrollTo(0, r.y); }
 document.addEventListener('click', e => { const j = e.target.closest('[data-jump]'); if (j) { const [v, a] = j.dataset.jump.split(':'); jump(v, a); } });
 /* "view:anchor:group:key": jump to the page, then open that explanation card (the reference's "Why?" cards). */
 document.addEventListener('click', e => { const j = e.target.closest('[data-jumpx]'); if (!j) return; const [v, a, g, k] = j.dataset.jumpx.split(':'); jump(v, a); const out = showExplain(g, k); if (out) scrollToEl(out.closest('.xpick')); });
-const VIEWFN = {topics: vTopics, quiz: vQuiz, terms: vTerms, weak: vWeak, exam: vExam, map: vMap, graphs: vGraphs, diagrams: vDiagrams, scenes: vScenes, drugs: vDrugs, ref: vRef, tell: vTell, pair: vPair, rxq: vRxq, guide: vGuide, readings: vReadings, data: vData};
+const VIEWFN = {topics: vTopics, quiz: vQuiz, terms: vTerms, weak: vWeak, exam: vExam, map: vMap, graphs: vGraphs, diagrams: vDiagrams, scenes: vScenes, drugs: vDrugs, ref: vRef, tell: vTell, pair: vPair, rxq: vRxq, ptab: vPtab, guide: vGuide, readings: vReadings, data: vData};
 const rerender = () => { const y = window.scrollY; if (CUR === 'quiz' && Q) renderQ(); else if (CUR === 'exam' && EX && !EX.done) renderExam(); else if (CUR === 'exam' && EX && EX.done) examResult(); else VIEWFN[CUR](); window.scrollTo(0, y); };
 document.addEventListener('click', e => {
   const f = e.target.closest('[data-flag]');
@@ -1808,6 +1808,96 @@ function rxAdvance() {
 }
 function rxNext() { rxAdvance(); }
 document.addEventListener('keydown', e => { if (CUR === 'rxq' && e.key === 'Enter' && !e.target.closest('button, input, select, textarea')) { const b = $('#rxnext') || $('#rxcheck'); if (b && !b.disabled) b.click(); } });
+
+/* ===== Poisoning table drill: Dr. Smith's Poisoning Treatment Table 2026 KEY (poison_table.js) =====
+   Her words on 10/20: "you do need to know the details that I have in my table, my key." Five ways in:
+   name the antidote from the poison, the mechanism from the antidote, the poison from its symptoms, her
+   special-consideration answers, and a cover-and-reveal copy of the whole table. Misses come back at the end
+   of the round and lead the next one; the best first-round score per mode is kept. */
+const PT_MODES = [['anti', 'Name the antidote'], ['moa', 'Name the mechanism'], ['poison', 'Name the poison'], ['special', 'Her special questions'], ['table', 'Cover and reveal']];
+const ptRows = () => (typeof POISON_TABLE === 'undefined' ? [] : POISON_TABLE);
+const ptRow = id => ptRows().find(r => r.id === id);
+const ptAnti = r => (r.same ? ptRow(r.same) : r).anti;
+const ptAntiLabel = r => ptAnti(r).map(a => a[0]).join('; ');
+const PT_LONG = {'IV FE': 'IV FE (i.v. 20% fatty acid emulsion)'};
+const ptMoaText = (r, a) => { const t = a[1].replace(/^(Atropine|Calcium|Glucagon|HIET|vasopressors|i\.v\. 20% fatty acid emulsion):\s*/i, ''); return t.charAt(0).toUpperCase() + t.slice(1); };
+function ptItems(mode) {   // [{id, ask, sub, ans, row}]
+  const rows = ptRows(), out = [];
+  if (mode === 'anti') rows.forEach(r => out.push({id: 'a:' + r.id, ask: r.poison, sub: 'Antidote(s) in her table?', ans: ptAntiLabel(r), row: r}));
+  if (mode === 'poison') rows.forEach(r => out.push({id: 'p:' + r.id, ask: r.sym, sub: 'Which overdose has these symptoms or diagnostic methods in her table?', ans: r.poison, row: r}));
+  if (mode === 'moa') rows.filter(r => !r.same).forEach(r => r.anti.forEach((a, i) => out.push({id: 'm:' + r.id + ':' + i, ask: `${PT_LONG[a[0]] || a[0]} · ${r.poison} overdose`, sub: 'Mechanism of this antidote in her table?', ans: ptMoaText(r, a), row: r})));
+  if (mode === 'special') rows.filter(r => r.special.length).forEach(r => out.push({id: 's:' + r.id, ask: `${r.poison}: ${r.special.map(s => s[0]).join(' ')}`, sub: 'Her answer in the key?', ans: r.special.map(s => s[1]).join(' '), row: r}));
+  return out;
+}
+const PT = {mode: 'anti', queue: [], i: 0, opts: null, pick: null, result: null, right: 0, redo: [], round: 1, shown: {}};
+function ptStart(ids) {
+  const all = ptItems(PT.mode), miss = new Set(ids || (store.get(COURSE.ns + ':pt:miss:' + PT.mode) || '').split(',').filter(Boolean));
+  const first = shuffle(all.filter(x => miss.has(x.id))), rest = ids ? [] : shuffle(all.filter(x => !miss.has(x.id)));
+  PT.queue = first.concat(rest); PT.i = 0; PT.opts = null; PT.pick = null; PT.result = null; PT.right = 0; PT.redo = []; PT.round = ids ? PT.round + 1 : 1;
+}
+function ptOptions(it) {   // the right answer and up to four different answers from the same mode
+  const seen = new Set([it.ans]), out = [it.ans];
+  shuffle(ptItems(PT.mode)).forEach(x => { if (out.length < 5 && !seen.has(x.ans)) { seen.add(x.ans); out.push(x.ans); } });
+  return shuffle(out);
+}
+const ptRowHTML = r => `<b>${esc(r.poison)}</b><div class="sub">Symptoms or diagnosis: ${esc(r.sym)}</div><div class="sub">Antidote(s): ${ptAnti(r).map(a => `<b>${esc(PT_LONG[a[0]] || a[0])}</b>: ${esc(ptMoaText(r, a))}`).join(' · ')}</div>${r.special.map(s => `<div class="sub">${esc(s[0])} <b>${esc(s[1])}</b></div>`).join('')}<div class="sub">Her reference column: ${esc(r.ref)}</div>`;
+function ptTable() {
+  const cell = (k, txt) => PT.shown[k] ? esc(txt) : `<button type="button" class="chip" data-ptshow="${k}">Show</button>`;
+  const fld = (lab, html) => `<div style="margin-top:6px"><div class="meta" style="margin:0">${lab}</div><div>${html}</div></div>`;
+  return `<div class="card"><div class="row"><button type="button" class="btn ghost" id="pthide">Hide all</button><button type="button" class="btn ghost" id="ptshowall">Show all</button></div><p class="sub" style="margin:6px 0 0">Say the cell aloud, then tap Show.</p></div>
+    ${ptRows().map(r => `<div class="card"><b>${esc(r.poison)}</b>
+      ${fld('Symptoms of acute poisoning / diagnostic methods', cell(r.id + ':sym', r.sym))}
+      ${fld('Antidote(s)', cell(r.id + ':anti', ptAntiLabel(r)))}
+      ${fld('MOA of antidote(s)', cell(r.id + ':moa', ptCellText(r.id + ':moa')))}
+      ${r.special.map((s, i) => fld('Special considerations: ' + esc(s[0]), cell(r.id + ':sp' + i, s[1]))).join('')}
+      <div class="sub" style="margin-top:6px">Her reference column: ${esc(r.ref)}</div></div>`).join('')}`;
+}
+function vPtab() {
+  let h = `<h2 id="ptab-top">Poisoning table</h2><p class="sub">Dr. Smith's Poisoning Treatment Table 2026 key, row by row, in her wording. On 10/20 she said: "you do need to know the details that I have in my table, my key." Pick a mode; a miss comes back at the end of the round and leads the next one.</p>
+    <div class="card"><div class="row">${PT_MODES.map(([k, l]) => `<button type="button" class="chip ${PT.mode === k ? 'on' : ''}" aria-pressed="${PT.mode === k}" data-ptmode="${k}">${esc(l)}</button>`).join('')}</div></div>`;
+  if (PT.mode === 'table') { h += ptTable(); }
+  else {
+    if (!PT.queue.length) ptStart();
+    const it = PT.queue[PT.i], total = PT.queue.length, best = storeObj(COURSE.ns + ':pt')[PT.mode];
+    if (!PT.opts) PT.opts = ptOptions(it);
+    h += `<div class="card rxcard"><div class="meta">${PT.round > 1 ? `redo round ${PT.round} · ` : ''}${Math.min(PT.i + 1, total)} of ${total} · ${PT.right} right${PT.redo.length ? ` · ${PT.redo.length} to redo` : ''}${best ? ` · best ${best}` : ''}</div>
+      <div class="rxdrug">${esc(it.ask)}</div><div class="rxq">${esc(it.sub)}</div>
+      <div class="rxopts">${PT.opts.map((t, n) => `<button type="button" class="rxopt ${PT.result ? (t === it.ans ? 'ok' : PT.pick === n ? 'bad' : '') : ''}" data-ptans="${n}" ${PT.result ? 'disabled' : ''}>${esc(t)}</button>`).join('')}</div>
+      <div class="row" style="margin-top:10px">${PT.result ? `<button type="button" class="btn" id="ptnext">${PT.i + 1 < total ? 'Next' : PT.redo.length ? `Redo the ${PT.redo.length} missed` : 'New round'}</button>` : ''}<button type="button" class="btn ghost" id="ptskip">${PT.result ? 'Start over' : 'Skip'}</button></div>`;
+    if (PT.result) h += `<div class="pfb"><div class="pfbr ${PT.result.ok ? 'ok' : 'bad'}">${PT.result.ok ? '✓' : '✗'} ${ptRowHTML(it.row)}<div class="row" style="margin-top:6px"><button type="button" class="chip" data-jump="ref:ref3-tbl-1">The whole table</button></div></div></div>`;
+    h += `</div>`;
+  }
+  h += `<p class="sub" style="margin-top:8px">Source: PoisoningTreatmentTable2026KEY.pdf, her posted key (pages 1–3); the question bank for the table is the Exam 3 topic “Poisoning treatment table (her key)”.</p>`;
+  $('#view').innerHTML = h;
+  document.querySelectorAll('[data-ptmode]').forEach(b => b.onclick = () => { if (PT.mode === b.dataset.ptmode) return; PT.mode = b.dataset.ptmode; PT.queue = []; PT.opts = null; vPtab(); });
+  document.querySelectorAll('[data-ptans]').forEach(b => b.onclick = () => ptCheck(+b.dataset.ptans));
+  document.querySelectorAll('[data-ptshow]').forEach(b => b.onclick = () => { PT.shown[b.dataset.ptshow] = true; b.outerHTML = esc(ptCellText(b.dataset.ptshow)); });
+  const hd = $('#pthide'); if (hd) hd.onclick = () => { PT.shown = {}; vPtab(); };
+  const sa = $('#ptshowall'); if (sa) sa.onclick = () => { document.querySelectorAll('[data-ptshow]').forEach(b => PT.shown[b.dataset.ptshow] = true); vPtab(); };
+  const nx = $('#ptnext'); if (nx) { nx.onclick = ptAdvance; nx.focus(); }
+  const sk = $('#ptskip'); if (sk) sk.onclick = () => { if (PT.result) { PT.queue = []; PT.opts = null; vPtab(); } else { PT.redo.push(PT.queue[PT.i]); ptAdvance(); } };
+}
+function ptCellText(k) {
+  const [id, f] = k.split(':'), r = ptRow(id);
+  if (f === 'sym') return r.sym; if (f === 'anti') return ptAntiLabel(r);
+  if (f === 'moa') return r.same ? 'Same as above for BB OD.' : r.anti.map(a => (r.anti.length > 1 ? a[0] + ': ' : '') + ptMoaText(r, a)).join(' · ');
+  return r.special[+f.slice(2)][1];
+}
+function ptCheck(n) {
+  const it = PT.queue[PT.i]; PT.pick = n; const ok = PT.opts[n] === it.ans;
+  PT.result = {ok}; if (ok) PT.right++; else PT.redo.push(it);
+  vPtab();
+}
+function ptAdvance() {
+  PT.opts = null; PT.pick = null; PT.result = null;
+  if (PT.i + 1 < PT.queue.length) { PT.i++; vPtab(); return; }
+  const all = storeObj(COURSE.ns + ':pt'), score = `${PT.right}/${PT.queue.length}`;
+  if (PT.round === 1 && (!all[PT.mode] || +all[PT.mode].split('/')[0] / +all[PT.mode].split('/')[1] < PT.right / PT.queue.length)) { all[PT.mode] = score; store.set(COURSE.ns + ':pt', JSON.stringify(all)); }
+  store.set(COURSE.ns + ':pt:miss:' + PT.mode, PT.redo.map(x => x.id).join(','));
+  if (PT.redo.length) ptStart(PT.redo.map(x => x.id)); else ptStart();
+  vPtab();
+}
+document.addEventListener('keydown', e => { if (CUR === 'ptab' && e.key === 'Enter' && !e.target.closest('button, input, select, textarea')) { const b = $('#ptnext'); if (b) b.click(); } });
 
 const drName = r => r.name.replace(/<[^>]+>/g, '').replace(/\s*\(.*$/, '');
 function drRows() {
