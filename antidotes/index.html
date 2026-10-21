@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Treating Poisonings: Antidote Diagrams</title>
+<script>
+(function(){
+var p=new URLSearchParams(location.search),t=p.get('theme');
+if(!t){try{t=localStorage.getItem('phar4344drill:theme');}catch(e){}}
+if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);
+if(p.get('embed')==='1')document.documentElement.classList.add('embed');
+})();
+</script>
+<style>
+/* Tokens follow the exam drill's palette (exam1-drill/src/shell.html) so the diagrams match the site.
+   Dark theme: system setting, unless the drill's theme choice (data-theme on <html>) says otherwise. */
+:root{
+  --text-primary:#1d1f22;--text-secondary:#5d636b;--text-tertiary:#80868e;
+  --bg-page:#f7f7f4;--bg-panel:#ffffff;--bg-secondary:#eef1f4;--border:#dcdfe3;
+  --bg-accent:#2f5d8a;--text-accent:#ffffff;--link:#2f5d8a;
+  --gray-fill:#eef1f4;--gray-stroke:#5d636b;--gray-text:#1d1f22;
+  --teal-fill:#E1F5EE;--teal-stroke:#0F6E56;--teal-text:#04342C;
+  --purple-fill:#EEEDFE;--purple-stroke:#534AB7;--purple-text:#26215C;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --text-primary:#e7e9ec;--text-secondary:#9aa1a9;--text-tertiary:#80868e;
+    --bg-page:#15171a;--bg-panel:#1e2125;--bg-secondary:#2a2e33;--border:#33383e;
+    --bg-accent:#7fb0e0;--text-accent:#0d1620;--link:#7fb0e0;
+    --gray-fill:#2a2e33;--gray-stroke:#9aa1a9;--gray-text:#e7e9ec;
+    --teal-fill:#085041;--teal-stroke:#5DCAA5;--teal-text:#E1F5EE;
+    --purple-fill:#3C3489;--purple-stroke:#AFA9EC;--purple-text:#EEEDFE;
+  }
+}
+:root[data-theme="dark"]{
+  --text-primary:#e7e9ec;--text-secondary:#9aa1a9;--text-tertiary:#80868e;
+  --bg-page:#15171a;--bg-panel:#1e2125;--bg-secondary:#2a2e33;--border:#33383e;
+  --bg-accent:#7fb0e0;--text-accent:#0d1620;--link:#7fb0e0;
+  --gray-fill:#2a2e33;--gray-stroke:#9aa1a9;--gray-text:#e7e9ec;
+  --teal-fill:#085041;--teal-stroke:#5DCAA5;--teal-text:#E1F5EE;
+  --purple-fill:#3C3489;--purple-stroke:#AFA9EC;--purple-text:#EEEDFE;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg-page);color:var(--text-primary);
+  font:16px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;}
+main{max-width:700px;margin:0 auto;padding:16px;}
+.card{background:var(--bg-panel);border:1px solid var(--border);border-radius:10px;padding:14px 16px}
+h1{font-size:20px;font-weight:600;margin:0 0 4px}
+.sub{font-size:14px;color:var(--text-secondary);margin:0 0 14px}
+a{color:var(--link)}
+.back{display:inline-block;font-size:14px;margin-bottom:10px}
+button{font:inherit;font-size:14px;padding:8px 12px;border-radius:8px;border:1px solid var(--border);
+  background:var(--bg-secondary);color:var(--text-primary);cursor:pointer}
+button:focus-visible,a:focus-visible{outline:2px solid var(--link);outline-offset:2px}
+svg text.th{font-size:14px;font-weight:500;fill:var(--text-primary)}
+svg text.ts{font-size:12px;fill:var(--text-secondary)}
+svg .box,svg rect.box{fill:var(--bg-secondary);stroke:var(--border)}
+svg .arr{stroke:var(--text-secondary);stroke-width:1.5;fill:none}
+.c-gray rect,.c-gray ellipse,.c-gray circle,rect.c-gray{fill:var(--gray-fill);stroke:var(--gray-stroke)}
+.c-teal rect,.c-teal ellipse,.c-teal circle,rect.c-teal{fill:var(--teal-fill);stroke:var(--teal-stroke)}
+.c-purple rect,.c-purple ellipse,.c-purple circle,rect.c-purple{fill:var(--purple-fill);stroke:var(--purple-stroke)}
+.c-gray text.th,.c-gray text.ts{fill:var(--gray-text)}
+.c-teal text.th,.c-teal text.ts{fill:var(--teal-text)}
+.c-purple text.th,.c-purple text.ts{fill:var(--purple-text)}
+
+ul{list-style:none;padding:0;margin:0} li{padding:12px 0;border-bottom:1px solid var(--border)} li:last-child{border-bottom:0} li a{font-weight:500}
+</style></head><body><main>
+<a class="back" href="../index.html">← Exam drill</a>
+<h1>Treating Poisonings: Antidote Diagrams</h1>
+<p class="sub">Intro Pharmacology (PHAR 4344), Treating Poisonings lecture</p>
+<div class="card"><ul>
+<li><a href="01-cyanide-pathway-overview.html">Cyanide antidote pathway: overview</a><br><span class="sub">Toxicokinetic-Based Treatment: Cyanide example (static flowchart)</span></li>
+<li><a href="02-cyanide-small-molecules.html">Cyanide antidote small molecules</a><br><span class="sub">Structures of cyanide, thiocyanate, thiosulfate, amyl nitrite and methylene blue</span></li>
+<li><a href="03-cyanide-antidote-stepper.html">Cyanide antidote mechanism</a><br><span class="sub">Toxicokinetic-Based Treatment: Cyanide example (animated, 7 steps)</span></li>
+<li><a href="04-receptor-antagonist-naloxone-flumazenil.html">Antidote is a receptor antagonist</a><br><span class="sub">Naloxone (opioid receptor) and flumazenil (GABAA benzodiazepine receptor)</span></li>
+<li><a href="05-cholinergic-atropine-physostigmine.html">Atropine and physostigmine at the cholinergic synapse</a><br><span class="sub">Receptor antagonist (atropine) and receptor agonist via AChE inhibition (physostigmine)</span></li>
+<li><a href="06-pralidoxime-and-co.html">Antidote removes toxin from active site</a><br><span class="sub">Pralidoxime restoring AChE, and high-concentration O₂ displacing CO</span></li>
+<li><a href="07-warfarin-vitamin-k.html">Antidote by-passes an inhibited pathway</a><br><span class="sub">Warfarin overdose treated with vitamin K (7 steps, 3 phases)</span></li>
+</ul></div></main></body></html>

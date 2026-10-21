@@ -83,3 +83,10 @@ See `## Conflicts / uncertain` in notes/L01.md, L02.md and L03.md. The ones that
 - 10/18: Exam 3 Hear-the-why clips recorded for 62 of 181 questions (L13-001..046, L14-001..009, L14-011..017; JK voice, one take each, 2,792 s, 805 cents). The ElevenLabs workspace quota (131,000 credits) ran out mid-run; 119 clips remain (L14-010, L14-018..070, L15-001..065). Texts are final in narration3.js; regenerate from them when credits return (about 0.0182 cents per character).
 - 10/20: L16 (10/19) ingested: 68 questions (bank-verifier 18 findings applied), guide 25–32, reference 24–27, tell3-l16, 15 terms, Marraffa 2012 card, AAPCC cards marked discussed with her 10/19 words, her 10/19 exam cues in the scope section. Not reached 10/19: toxidromes table (L16-013 lowYield), CO bullet (L16-049 lowYield), bonus decks. Next: 10/20 pharmacogenomics (deck + transcript), her poisoning-table key, the vote on whether 10/20 counts Friday. Hear-the-why texts for L16 not yet written.
 - 10/21: L17 (10/20 PGx, 60 q, taught to p. 21; vote kept 10/20 on Friday's exam), TBL3/GRG3/RMK3 banks from her three posted keys (68/33/28 q), Poisoning table drill page (poison_table.js), her keys verbatim in STYLE.md, earlier L14/L16 items fixed against the keys, Smith focus switch, folding topic cards, exam facts card. Worksheets-vs-keys note in notes/. Next: 10/21+ lectures belong to Exam 4; Hear-the-why texts for L16/L17/keys not written; 119 L14/L15 clips await ElevenLabs credits.
+
+## 2026-10-21: antidote diagrams and her quizzes 2 and 3
+- antidotes/ at the site root: 7 diagram pages from the 10/19 chat handoff (zip in Smith's Lecture folder). Sources in antidotes/src
+  (fragments unchanged, hashes in fragments.sha256, checked by test.js; shim.css retheme; build.py run by the drill build).
+- Drill: panel viewer (data-anti chips) on the poisoning table, guide 27 and 30, and Explain more on 35 Exam 3 questions.
+- Open items checked against the 10/19 transcript: antidotes/src/OPEN_ITEMS.md. Rhodanese framing differs (she says rhodanese is given).
+- QZ3: 19 items (her quizzes 2 and 3 verbatim), dupOf to lecture items; explain links follow the dupOf target.

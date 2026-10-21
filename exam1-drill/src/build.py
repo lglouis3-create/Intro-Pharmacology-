@@ -13,6 +13,8 @@ DATA_FILES = ['q_L01.js', 'q_L02.js', 'q_L03.js', 'q_L04.js', 'q_L05.js', 'q_L06
 # Exam 2 banks are written lecture by lecture; one not written yet is skipped
 DATA_FILES = [f for f in DATA_FILES if os.path.exists(f) or f in ('q_DL2.js',) and os.path.exists('gen_druglist2.py')]
 PAGES = ['graphs.js', 'diagrams.js', 'glossary.js', 'reference.js', 'tell.js', 'guide.js', 'guide2.js', 'reference2.js', 'tell2.js', 'guide3.js', 'reference3.js', 'tell3.js', 'readings.js', 'drugs.js', 'poison_table.js', 'narration.js', 'narration3.js', 'scenes.js']
+# antidote diagram pages (antidotes/ at the site root) are rebuilt from their fragments with every drill build
+subprocess.run([sys.executable, os.path.join(HERE, '..', '..', 'antidotes', 'src', 'build.py')], check=True)
 # generated banks: regenerate from their sources before checking
 for gen in [g for g in ['gen_druglist.py', 'gen_druglist2.py', 'gen_terms.py', 'gen_drugs.py', 'gen_readings.py'] if os.path.exists(g)]:
     r = subprocess.run([sys.executable, gen], capture_output=True, text=True)

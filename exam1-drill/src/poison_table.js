@@ -47,3 +47,23 @@ const POISON_TABLE = [
   anti:[['Atropine', 'muscarinic acetylcholine receptor antagonist'], ['Pralidoxime', 'Removes OP from acetylcholinesterase']],
   special:[], ref:'Pharmacotherapy: A Pathophysiologic Approach, 13th Ed. Chapt e6', page:3}
 ];
+
+/* Antidote diagrams from the 10/19 lecture chat (antidotes/ at the site root, built by antidotes/src/build.py).
+   Each page runs on its own; the drill shows it in a frame. rows: poisoning-table rows the diagram explains;
+   match: words in a question's stem or concept that bring up the diagram's chip under "Explain more".
+   note: what she said on 10/19 where it adds to or differs from the diagram (transcript wording kept). */
+const ANTIDOTE_DIAGRAMS = [
+ {slug:'01-cyanide-pathway-overview', title:'Cyanide antidote pathway: overview', short:'Cyanide: overview', rows:[], match:/cyanide|methemoglobin|rhodanese|amyl nitrite|methylene blue/i, note:'cn'},
+ {slug:'02-cyanide-small-molecules', title:'Cyanide antidote small molecules', short:'Cyanide: molecules', rows:[], match:null, note:'cn'},
+ {slug:'03-cyanide-antidote-stepper', title:'Cyanide antidote mechanism', short:'Cyanide: step by step', rows:[], match:/cyanide|methemoglobin|rhodanese|amyl nitrite|methylene blue/i, note:'cn'},
+ {slug:'04-receptor-antagonist-naloxone-flumazenil', title:'Antidote is a receptor antagonist', short:'Naloxone, flumazenil', rows:['opi', 'bzd'], match:/naloxone|flumazenil/i, note:'fz'},
+ {slug:'05-cholinergic-atropine-physostigmine', title:'Atropine and physostigmine at the cholinergic synapse', short:'Atropine, physostigmine', rows:['op'], match:/atropine|physostigmine|jimson|belladonna/i, note:''},
+ {slug:'06-pralidoxime-and-co', title:'Antidote removes toxin from active site', short:'Pralidoxime, CO', rows:['op'], match:/pralidoxime|aging|carbon monoxide|\bCO\b/, note:'pam'},
+ {slug:'07-warfarin-vitamin-k', title:'Antidote by-passes an inhibited pathway', short:'Warfarin, vitamin K', rows:[], match:/warfarin|vitamin K|epoxide/i, note:'vk'},
+];
+const ANTIDOTE_NOTES = {
+ cn:'On 10/19 she said thiosulfate "is freely in the body" and that rhodanese is what is given: "by giving the enzyme rodonase. This is the cofactor." She named the eliminated product as "the thiosulfate with a cyanide bound to it is being renally eliminated". The diagram draws the chemistry (rhodanese moves a sulfur from thiosulfate onto cyanide, giving thiocyanate) and does not say which agent is given; her exam keys her version, with rhodanese as the cofactor that enhances metabolism. Why methylene blue: "Your blood can\'t carry oxygen if the hemoglobin in red blood cells is in the form of methemoglobin."',
+ fz:'Her final wording on 10/19, after she corrected a slip: "The benzos are the overdose, Flomazinil is your antidote, and your treatment is the antagonist. I had it right the first time."',
+ pam:'Aging, in her words on 10/19: "the acetylcholinesterase is permanently bound by that organophosphate, and we can\'t pull it off the acetylcholinesterase using pralodoxine." For CO, the source is the slide only: "CO poisonings are treated with high concentrations of O2 to displace CO from heme of hemoglobin".',
+ vk:'Her 10/19 answer for a warfarin overdose: "we can give them vitamin K, OK? Kind of bypassing this blocked metabolic scheme." The risk of over-anticoagulation: "Most obviously we be bruising. Sometimes people can have GI bleeds, right? Really bad thing, maybe they\'ll have a hemorrhagic stroke".',
+};

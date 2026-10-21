@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Antidote is a receptor antagonist</title>
+<script>
+(function(){
+var p=new URLSearchParams(location.search),t=p.get('theme');
+if(!t){try{t=localStorage.getItem('phar4344drill:theme');}catch(e){}}
+if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);
+if(p.get('embed')==='1')document.documentElement.classList.add('embed');
+})();
+</script>
+<style>
+/* Tokens follow the exam drill's palette (exam1-drill/src/shell.html) so the diagrams match the site.
+   Dark theme: system setting, unless the drill's theme choice (data-theme on <html>) says otherwise. */
+:root{
+  --text-primary:#1d1f22;--text-secondary:#5d636b;--text-tertiary:#80868e;
+  --bg-page:#f7f7f4;--bg-panel:#ffffff;--bg-secondary:#eef1f4;--border:#dcdfe3;
+  --bg-accent:#2f5d8a;--text-accent:#ffffff;--link:#2f5d8a;
+  --gray-fill:#eef1f4;--gray-stroke:#5d636b;--gray-text:#1d1f22;
+  --teal-fill:#E1F5EE;--teal-stroke:#0F6E56;--teal-text:#04342C;
+  --purple-fill:#EEEDFE;--purple-stroke:#534AB7;--purple-text:#26215C;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --text-primary:#e7e9ec;--text-secondary:#9aa1a9;--text-tertiary:#80868e;
+    --bg-page:#15171a;--bg-panel:#1e2125;--bg-secondary:#2a2e33;--border:#33383e;
+    --bg-accent:#7fb0e0;--text-accent:#0d1620;--link:#7fb0e0;
+    --gray-fill:#2a2e33;--gray-stroke:#9aa1a9;--gray-text:#e7e9ec;
+    --teal-fill:#085041;--teal-stroke:#5DCAA5;--teal-text:#E1F5EE;
+    --purple-fill:#3C3489;--purple-stroke:#AFA9EC;--purple-text:#EEEDFE;
+  }
+}
+:root[data-theme="dark"]{
+  --text-primary:#e7e9ec;--text-secondary:#9aa1a9;--text-tertiary:#80868e;
+  --bg-page:#15171a;--bg-panel:#1e2125;--bg-secondary:#2a2e33;--border:#33383e;
+  --bg-accent:#7fb0e0;--text-accent:#0d1620;--link:#7fb0e0;
+  --gray-fill:#2a2e33;--gray-stroke:#9aa1a9;--gray-text:#e7e9ec;
+  --teal-fill:#085041;--teal-stroke:#5DCAA5;--teal-text:#E1F5EE;
+  --purple-fill:#3C3489;--purple-stroke:#AFA9EC;--purple-text:#EEEDFE;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg-page);color:var(--text-primary);
+  font:16px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;}
+main{max-width:700px;margin:0 auto;padding:16px;}
+.card{background:var(--bg-panel);border:1px solid var(--border);border-radius:10px;padding:14px 16px}
+h1{font-size:20px;font-weight:600;margin:0 0 4px}
+.sub{font-size:14px;color:var(--text-secondary);margin:0 0 14px}
+a{color:var(--link)}
+.back{display:inline-block;font-size:14px;margin-bottom:10px}
+button{font:inherit;font-size:14px;padding:8px 12px;border-radius:8px;border:1px solid var(--border);
+  background:var(--bg-secondary);color:var(--text-primary);cursor:pointer}
+button:focus-visible,a:focus-visible{outline:2px solid var(--link);outline-offset:2px}
+svg text.th{font-size:14px;font-weight:500;fill:var(--text-primary)}
+svg text.ts{font-size:12px;fill:var(--text-secondary)}
+svg .box,svg rect.box{fill:var(--bg-secondary);stroke:var(--border)}
+svg .arr{stroke:var(--text-secondary);stroke-width:1.5;fill:none}
+.c-gray rect,.c-gray ellipse,.c-gray circle,rect.c-gray{fill:var(--gray-fill);stroke:var(--gray-stroke)}
+.c-teal rect,.c-teal ellipse,.c-teal circle,rect.c-teal{fill:var(--teal-fill);stroke:var(--teal-stroke)}
+.c-purple rect,.c-purple ellipse,.c-purple circle,rect.c-purple{fill:var(--purple-fill);stroke:var(--purple-stroke)}
+.c-gray text.th,.c-gray text.ts{fill:var(--gray-text)}
+.c-teal text.th,.c-teal text.ts{fill:var(--teal-text)}
+.c-purple text.th,.c-purple text.ts{fill:var(--purple-text)}
+html.embed body{background:var(--bg-panel)}
+html.embed main{padding:4px 2px 8px}
+html.embed .chrome{display:none}
+.pager{display:flex;justify-content:space-between;gap:12px;margin-top:18px;font-size:14px}
+.keys{font-size:13px;color:var(--text-secondary);margin:10px 0 0}
+</style></head>
+<body><main>
+<a class="back chrome" href="index.html">← All antidote diagrams</a>
+<h1>Antidote is a receptor antagonist</h1>
+<p class="sub">Naloxone (opioid receptor) and flumazenil (GABAA benzodiazepine receptor)</p>
+<div style="display:flex;gap:8px;margin:0 0 8px;"><button id="exA" style="flex:1;">Opioid / naloxone</button><button id="exB" style="flex:1;">Benzo / flumazenil</button></div>
+<div style="display:flex;gap:6px;margin:0 0 8px;" id="pills"></div>
+<svg width="100%" viewBox="0 0 380 310" role="img" style="display:block;"><title>Receptor antagonist as antidote</title><desc>A membrane receptor with a binding pocket; the toxin agonist binds and activates it, then the antagonist binds the pocket without activating it.</desc>
+<line x1="20" y1="170" x2="360" y2="170" stroke="var(--text-secondary)" stroke-width="1"/>
+<line x1="20" y1="190" x2="360" y2="190" stroke="var(--text-secondary)" stroke-width="1"/>
+<text class="ts" x="24" y="155" dominant-baseline="central">Outside cell</text>
+<text class="ts" x="24" y="205" dominant-baseline="central">Inside cell</text>
+<rect id="r1" class="c-gray" x="150" y="135" width="80" height="105" rx="4" stroke-width="0.5"/>
+<rect id="r2" class="c-gray" x="150" y="110" width="25" height="28" rx="4" stroke-width="0.5"/>
+<rect id="r3" class="c-gray" x="205" y="110" width="25" height="28" rx="4" stroke-width="0.5"/>
+<text class="ts" id="rname" x="190" y="256" text-anchor="middle" dominant-baseline="central">Opioid receptor</text>
+<text class="th" id="eff" x="190" y="285" text-anchor="middle" dominant-baseline="central">Receptor off</text>
+<g id="ag" style="transform:translate(70px,70px)"><circle cx="0" cy="0" r="14" fill="none" stroke="#D85A30" stroke-width="1.5"/><text class="ts" id="agname" x="0" y="-36" text-anchor="middle" dominant-baseline="central" style="fill:#D85A30">Opioid</text><text class="ts" x="0" y="-22" text-anchor="middle" dominant-baseline="central" style="fill:#D85A30">agonist</text></g>
+<g id="an" style="transform:translate(310px,70px)"><rect x="-13" y="-13" width="26" height="26" rx="2" fill="none" stroke="#534AB7" stroke-width="1.5"/><text class="ts" id="anname" x="0" y="-36" text-anchor="middle" dominant-baseline="central" style="fill:#534AB7">Naloxone</text><text class="ts" x="0" y="-22" text-anchor="middle" dominant-baseline="central" style="fill:#534AB7">antagonist</text></g>
+</svg>
+<p id="cap" style="font-size:15px;line-height:1.6;color:var(--text-primary);margin:10px 0 12px;min-height:96px;"></p>
+<div style="display:flex;gap:8px;"><button id="back" style="flex:1;">Back</button><button id="next" style="flex:1;">Next</button></div>
+<script>
+(function(){
+function q(id){return document.getElementById(id);}
+var EX={A:{tox:'Opioid',anti:'Naloxone',rec:'Opioid receptor',recShort:'opioid receptor'},B:{tox:'Benzodiazepine',anti:'Flumazenil',rec:'GABAA receptor (benzodiazepine site)',recShort:'GABAA (benzodiazepine) receptor'}};
+var ex='A',cur=0;
+var AGF=[70,70],AGB=[190,121],ANF=[310,70],ANB=[190,122];
+var rm=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+function place(el,p){el.style.transition=rm?'none':'transform .9s ease';el.style.transform='translate('+p[0]+'px,'+p[1]+'px)';}
+function recOn(on){['r1','r2','r3'].forEach(function(id){q(id).setAttribute('class',on?'c-teal':'c-gray');});}
+var names=['No drug','Overdose','Antidote'];
+var pills=q('pills');
+names.forEach(function(n,i){var b=document.createElement('button');b.textContent=n;b.style.flex='1';b.style.fontSize='13px';b.onclick=function(){go(i);};pills.appendChild(b);});
+function caps(i){var e=EX[ex];
+if(i===0)return 'No drug bound. The '+e.recShort+' is not signaling.';
+if(i===1)return 'Overdose. The '+e.tox.toLowerCase()+' binds the '+e.recShort+' and turns it on. Too much receptor activity produces the toxidrome: somnolence and coma.';
+return e.anti+' binds the same receptor and pushes the '+e.tox.toLowerCase()+' off. It does not turn the receptor on, so the toxin effect is blocked. This is the slide point: the treatment blocks the effect of a toxin that acts as an agonist.';}
+function go(i){cur=i;var e=EX[ex];
+q('agname').textContent=e.tox;q('anname').textContent=e.anti;q('rname').textContent=e.rec;
+if(i===0){place(q('ag'),AGF);place(q('an'),ANF);recOn(false);q('eff').textContent='Receptor off';}
+if(i===1){place(q('ag'),AGB);place(q('an'),ANF);recOn(true);q('eff').textContent='Receptor on: somnolence, coma';}
+if(i===2){place(q('ag'),AGF);place(q('an'),ANB);recOn(false);q('eff').textContent='Receptor off: effect blocked';}
+q('cap').textContent=caps(i);
+Array.prototype.forEach.call(pills.children,function(b,k){b.style.background=k===i?'var(--bg-accent)':'';b.style.color=k===i?'var(--text-accent)':'';});
+q('exA').style.background=ex==='A'?'var(--bg-accent)':'';q('exA').style.color=ex==='A'?'var(--text-accent)':'';
+q('exB').style.background=ex==='B'?'var(--bg-accent)':'';q('exB').style.color=ex==='B'?'var(--text-accent)':'';
+q('next').textContent=i===2?'Replay':'Next';}
+q('exA').onclick=function(){ex='A';go(0);};
+q('exB').onclick=function(){ex='B';go(0);};
+q('next').onclick=function(){go(cur===2?0:cur+1);};
+q('back').onclick=function(){go(Math.max(0,cur-1));};
+go(0);
+})();
+</script>
+
+<p class="keys">Keyboard: ← and → step through the diagram.</p>
+<nav class="pager chrome" aria-label="Other diagrams"><a href="03-cyanide-antidote-stepper.html">← Cyanide antidote mechanism</a><a href="05-cholinergic-atropine-physostigmine.html">Atropine and physostigmine at the cholinergic synapse →</a></nav>
+</main>
+<script>
+(function(){
+var cap=document.getElementById('cap');
+if(cap)cap.setAttribute('aria-live','polite');
+document.addEventListener('keydown',function(e){
+  if(e.altKey||e.ctrlKey||e.metaKey||(e.target.closest&&e.target.closest('input,select,textarea')))return;
+  var id=e.key==='ArrowRight'?'next':e.key==='ArrowLeft'?'back':'';
+  var b=id&&document.getElementById(id);
+  if(b&&b.tagName==='BUTTON'){e.preventDefault();b.click();}
+});
+if(document.documentElement.classList.contains('embed')&&window.parent!==window){
+  var last=0;
+  function send(){var h=Math.ceil(document.body.getBoundingClientRect().height);if(h!==last){last=h;window.parent.postMessage({antidoteH:h,slug:"04-receptor-antagonist-naloxone-flumazenil"},'*');}}
+  if(window.ResizeObserver)new ResizeObserver(send).observe(document.body);
+  window.addEventListener('load',send);send();
+}
+})();
+</script>
+</body></html>

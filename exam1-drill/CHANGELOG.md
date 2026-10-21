@@ -2,6 +2,14 @@
 
 Newest first. The build embeds this file; the Topics page shows what is new since your last visit, and the Progress page shows all of it. Keep each bullet to one short line.
 
+## 2026-10-21 (Exam 3: antidote diagrams, her quizzes 2 and 3)
+
+- Antidote diagrams: seven pages from the 10/19 chat (cyanide, naloxone, atropine, pralidoxime, warfarin).
+- Open them from the poisoning table, guides 27 and 30, or a question's Explain more; each opens in a panel.
+- Each diagram shows her 10/19 words where they add to it or differ (rhodanese is what she says is given).
+- Diagrams match the site colors and theme choice; ← and → step through them; pages link to one another.
+- Her quizzes 2 and 3: 19 questions word for word; where her recorded answer and her words differ, a note says so.
+
 ## 2026-10-21 (Exam 3: 10/20, her keys, Smith focus)
 
 - Day 17 (10/20): 60 pharmacogenomics questions; guide 33–39, reference 28–30. The class vote kept 10/20 on Friday.
