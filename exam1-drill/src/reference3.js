@@ -300,7 +300,7 @@ const REFERENCE3_HTML = `
 <tr><td>Why the extended-release window</td><td colspan="2">The tablets clump in the stomach or small intestine and can break apart later with a huge absorption</td></tr>
 <tr><td>Why the classes differ</td><td colspan="2">The case data; it speaks to the mechanisms of action (cardio module)</td></tr>
 <tr><td>Transport</td><td colspan="2">Ambulance, not the family car: IVs, pressors, paddles</td></tr>
-<tr><td>Follow-up</td><td>At the judgment of the poison center</td><td>Usually about 12 to 24 hours, at the judgment of the poison center</td></tr>
+<tr><td>Follow-up</td><td>At the judgment of the poison center</td><td>Usually up to 12–24 hours, at the judgment of the poison center</td></tr>
 <tr><td>Self-harm</td><td colspan="2">Counseling and evaluation; treat the whole patient</td></tr>
 </tbody></table>
 <p class="sub">Both published in Clinical Toxicology in 2005 and still followed; data and recommendations ranked; poison center staff have them memorized. Slides ‘Guidelines for Overdoses’, ‘Discussion of OD Guidelines’; T 10/19. Poisoning table sources: DiPiro 13e ch. e9 (treating specific poisonings) and the Marraffa 2012 antidotes article.</p>
@@ -323,4 +323,51 @@ const REFERENCE3_HTML = `
 <tr><td>Organophosphate Insecticides</td><td>Acetylcholine excess: SLUDGE or DUMBELLS</td><td>Atropine<br>Pralidoxime</td><td>Atropine: muscarinic acetylcholine receptor antagonist<br>Pralidoxime: Removes OP from acetylcholinesterase</td><td>(no question)</td><td>Pharmacotherapy: A Pathophysiologic Approach, 13th Ed. Chapt e6</td></tr>
 </tbody></table>
 <p class="sub">Rows without a question in the special column: on 10/20 she said “if I didn't have a question, there's nothing really weird about that poisoning.” Two drugs appear in two rows with different mechanisms: atropine (beta blockers: increase heart rate; organophosphates: muscarinic acetylcholine receptor antagonist) and sodium bicarbonate (tricyclic antidepressants: counteracts the inhibition on sodium cardiac channels; salicylates: renal ion trapping). Questions TBL3-001 to TBL3-067.</p>
+
+<h3 id="ref3-l17-1">28. Pharmacogenomics history and the four target areas</h3>
+<table class="reftab"><thead><tr><th>Item</th><th>What it is</th><th>Detail to know</th><th>Source</th></tr></thead><tbody>
+<tr><td>Primaquine (1950s, Korean War)</td><td>First real data point linking a bad drug response to an inherited trait</td><td>Antimalarial prophylactic; hemolytic anemia in people of Middle Eastern or African descent; low G6PD (glucose-6-phosphate dehydrogenase) activity, measured as a phenotype before genotyping existed</td><td>‘History of Primaquine’ (p. 5); T 10/20</td></tr>
+<tr><td>1953</td><td>Watson and Crick</td><td>Structure of DNA (the double helix)</td><td>‘Genomics History’ (p. 6); T 10/20</td></tr>
+<tr><td>1956</td><td>Primaquine</td><td>Genetic link to hemolytic reactions</td><td>‘Genomics History’ (p. 6); T 10/20</td></tr>
+<tr><td>1957</td><td>Motulsky</td><td>Inheritance might explain individual differences in drug efficacy and adverse drug reactions</td><td>‘Genomics History’ (p. 6); T 10/20</td></tr>
+<tr><td>1959</td><td>Vogel</td><td>Introduces the term pharmacogenetics</td><td>‘Genomics History’ (p. 6); T 10/20</td></tr>
+<tr><td>1990 to 2003</td><td>Human Genome Project</td><td>Worldwide consortium (academics, industry, government agencies); sequences shared in a database; completed early and under budget; its methods led later to whole genome sequencing in hours</td><td>‘Genomics History’ (p. 6); T 10/20</td></tr>
+<tr><td>Twin studies</td><td>Heritability of drug metabolism</td><td>Antipyrine half-life (cleared by one enzyme): identical pairs nearly identical, fraternal pairs variable; phenotype measured, no genotyping</td><td>‘Twin Studies Data’ (p. 7, G&amp;G Fig. 4-2); T 10/20</td></tr>
+<tr><td>MacKinnon et al. 2023</td><td>Impact study</td><td>More than half the patients were prescribed drugs where pharmacogenomics is important</td><td>‘Impact of Pharmacogenomics’ (p. 9); T 10/20</td></tr>
+<tr><td>Wondrasek et al. 2024</td><td>Pharmacist survey</td><td>Pharmacists feel it is important but are not confident in their knowledge or ability to use it</td><td>‘Impact of Pharmacogenomics’ (p. 9); T 10/20</td></tr>
+<tr><td>Target area 1: metabolizing enzymes</td><td>P450s and other phase 1 and phase 2 enzymes</td><td>Known best ("low hanging fruit"); variants change drug plasma concentrations; narrow therapeutic index drugs</td><td>‘Three Target Areas’ (p. 10); T 10/20</td></tr>
+<tr><td>Target area 2: transporters</td><td>P-glycoprotein (ABCB1), an efflux transporter in the gut</td><td>Affects bioavailability; low-activity P-gp raises digoxin bioavailability</td><td>‘Three Target Areas’ (p. 10); T 10/20</td></tr>
+<tr><td>Target area 3: drug targets</td><td>Receptors or enzymes a drug acts on</td><td>Biggest role now in oncology; a guidance document on beta-adrenergic receptor variants (2 years ago)</td><td>‘Three Target Areas’ (p. 10); T 10/20</td></tr>
+<tr><td>Target area 4: immune system</td><td>HLA antigen variants</td><td>Severe adverse drug reactions; added aloud (the slide title says three)</td><td>T 10/20</td></tr>
+<tr><td>Outcome buckets</td><td>Toxicity or efficacy</td><td>PK variants (enzymes, transporters) mostly toxicity; PD variants (targets) and missing cancer targets efficacy</td><td>‘Impact of Pharmacogenomics on PK and PD’ (p. 11); T 10/20</td></tr>
+</tbody></table>
+<h3 id="ref3-l17-2">29. Pharmacogenomics terminology</h3>
+<table class="reftab"><thead><tr><th>Term</th><th>Definition</th><th>Her point</th><th>Source</th></tr></thead><tbody>
+<tr><td>Pharmacogenetics</td><td>Study of genetic causes of individual variations in drug response</td><td>One patient</td><td>‘Definition of Genomics vs Genetics’ (p. 8); T 10/20</td></tr>
+<tr><td>Pharmacogenomics</td><td>Genome-wide analysis of the genetic determinants of drug efficacy and toxicity; includes genomics technologies (gene therapy)</td><td>Populations; the preferred term; the two are used interchangeably (AAPS definitions)</td><td>‘Definition of Genomics vs Genetics’ (p. 8); T 10/20</td></tr>
+<tr><td>Wild type</td><td>The version of a gene thought to be the most common</td><td>Sometimes the version understood first; "most common" is accepted on her test</td><td>‘Wildtype vs Variant’ (p. 13); T 10/20</td></tr>
+<tr><td>Variant</td><td>A version that is not the most common</td><td>Do not say mutant</td><td>‘Wildtype vs Variant’ (p. 13); T 10/20</td></tr>
+<tr><td>Polymorphism</td><td>A genetic variant in at least 1% of a population</td><td>Defined by frequency; any kind of change (SNP, deletion, extra copies) can qualify</td><td>‘Polymorphism’ (p. 14); T 10/20</td></tr>
+<tr><td>Rare variant</td><td>A genetic variant in less than 1% of a population</td><td>Newer term; explains bad responses in people without the known polymorphism</td><td>‘Polymorphism’ (p. 14); T 10/20</td></tr>
+<tr><td>SNP (snip)</td><td>Single nucleotide polymorphism: one nucleotide differs</td><td>The most common type of polymorphism</td><td>‘Polymorphism’ (p. 14); T 10/20</td></tr>
+<tr><td>Allele</td><td>One of the two copies of a gene (variant and wild type forms at a location on a chromosome)</td><td>Diploid; one from each biological parent</td><td>‘Allele’ (p. 15); T 10/20</td></tr>
+<tr><td>Homozygous / heterozygous</td><td>Same allele on both copies at a locus / different alleles</td><td>PP, aa homozygous; Bb heterozygous; no dominant/recessive in pharmacogenomics</td><td>‘Homozygosity and Heterozygosity’ (p. 16); T 10/20</td></tr>
+<tr><td>Genotype</td><td>The two alleles a person has</td><td>Written CYP2C19*2/*2</td><td>‘Genotype vs phenotype’ (p. 17); T 10/20</td></tr>
+<tr><td>Phenotype</td><td>Any observable characteristic; results from expression of genes</td><td>CYP2C19*2/*2: no 2C19 activity</td><td>‘Genotype vs phenotype’ (p. 17); T 10/20</td></tr>
+<tr><td>Functional significance</td><td>How a genetic variation affects the function of the gene's product</td><td>Her key phrase</td><td>‘Complications of Genotype vs phenotype’ (p. 18); T 10/20</td></tr>
+<tr><td>Haplotype</td><td>A set of alleles at multiple loci of a gene that coexist on the same chromosome</td><td>Occurs more often than random chance; figure: AGT, GTA, AGA</td><td>‘Haplotype’ (p. 19), ‘Illustration of Haplotype’ (p. 20); T 10/20</td></tr>
+<tr><td>Linkage disequilibrium</td><td>A set of alleles co-existing at a higher frequency than random chance predicts</td><td>On the slide; not said aloud</td><td>‘Haplotype’ (p. 19)</td></tr>
+<tr><td>Allele frequency / genotype frequency</td><td>Relative frequency of an allele / of a genotype in a population (proportion or percentage)</td><td>Allele frequencies together give the genotype frequency</td><td>‘Frequencies in Pharmacogenomics’ (p. 21); T 10/20</td></tr>
+<tr><td>Hardy-Weinberg equilibrium</td><td>Allele and genotype frequencies stay constant across generations unless specific influences are introduced</td><td>Out of equilibrium: the sample is not generalizable</td><td>‘Frequencies in Pharmacogenomics’ (p. 21); T 10/20</td></tr>
+</tbody></table>
+<h3 id="ref3-l17-3">30. Nomenclature and variant types on the slides not yet taught (low yield; start 10/21)</h3>
+<table class="reftab"><thead><tr><th>Slide</th><th>Example</th><th>What it shows</th><th>Source</th></tr></thead><tbody>
+<tr><td>SNP nomenclature</td><td>VKORC1 1173 C&gt;T; ABCB1 3435 C&gt;T</td><td>Gene, nucleotide position, original (wild type) base, changed base</td><td>‘SNP Nomenclature’ (p. 24)</td></tr>
+<tr><td>Star nomenclature</td><td>CYP2C19*1; *2 (681 G&gt;A); *3 (636 G&gt;A)</td><td>Star and number designate the allele</td><td>‘Allele “Star” Nomenclature’ (p. 25)</td></tr>
+<tr><td>Same label, different effect</td><td>CYP2C19*2, *3 no activity; CYP2C9*2, *3 decreased</td><td>Nomenclature can look the same with different functional effects</td><td>‘More Allele “Star” Nomenclature’ (p. 26)</td></tr>
+<tr><td>rs nomenclature</td><td>CYP2C19*3 = 636 G&gt;A = rs4986893</td><td>dbSNP naming; recommended standard for SNPs</td><td>‘Reference SNP (rs) Nomenclature’ (p. 27)</td></tr>
+<tr><td>Genotype nomenclature</td><td>CYP2C19*1/*1; *1/*2 or *1/*3; *2/*2, *2/*3, *3/*3</td><td>Normal; reduced; no enzyme activity</td><td>‘Genotype Nomenclature’ (p. 28)</td></tr>
+<tr><td>Premature stop codon</td><td>CYP2C19*3 (G&gt;A, tryptophan to stop)</td><td>No enzyme activity; proton pump inhibitors</td><td>‘Premature Stop Codon SNP: CYP2C19’ (p. 36)</td></tr>
+<tr><td>Gene deletion / copy number</td><td>CYP2D6*5 / CYP2D6*2XN</td><td>Poor metabolizer / ultrarapid metabolizer; SSRIs, tamoxifen, codeine, beta blockers</td><td>‘Gene Deletion CYP2D6’ (p. 39), ‘Copy Number Variant CYP2D6’ (p. 40)</td></tr>
+</tbody></table>
 `;

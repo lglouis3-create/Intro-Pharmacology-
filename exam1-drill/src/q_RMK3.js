@@ -351,7 +351,7 @@ QUESTIONS.push(
  teach:"Humans: low-dose chronic effects, sensitive populations, multiple exposures. Wildlife: system or organ affected, correct species, correct endpoint, multiple exposures. The multiple-exposures gap is the one they share.",
  cite:"KeyDiscussionGuideRodriguez-MozazandWeinberg2026.docx, row Target/MOA, both columns"},
 
-{id:"RMK3-028", lecture:"RMK3", prof:"Smith", tier:"new", topic:"RMK3", sub:"target", skill:"tell", readingId:"rodriguez-mozaz",
+{id:"RMK3-028", lecture:"RMK3", prof:"Smith", tier:"new", topic:"RMK3", sub:"target", skill:"apply", readingId:"rodriguez-mozaz",
  concept:"rm-target-wildlife-only", tags:["smith","key"], source:"slide",
  stem:"A study reports an effect of a drug in a laboratory species and calls the result relevant to fish. Which wildlife gap on her key does this raise?",
  options:[
