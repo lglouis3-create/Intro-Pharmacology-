@@ -200,6 +200,8 @@ details.tfold>summary{list-style:none;cursor:pointer} details.tfold>summary::-we
 details.tfold>summary>span:first-child::before{content:'▸';color:var(--accent);display:inline-block;width:1.1em;transition:transform .15s}
 details.tfold[open]>summary>span:first-child::before{transform:rotate(90deg)}
 details.tfold:not([open]) .tfhint{display:block} details.tfold[open] .tfhint{display:none} .tfhint{margin:2px 0 0 1.1em} .tfall{margin:6px 0 2px}
+.factstab{width:100%;border-collapse:collapse} .factstab th,.factstab td{border:0;background:none} .factstab th{text-align:left;font-weight:600;color:var(--muted);padding:9px 14px 9px 0;vertical-align:top;white-space:nowrap;width:1%} .factstab td{padding:9px 0;vertical-align:top} .factstab tr+tr th,.factstab tr+tr td{border-top:1px solid var(--line)} .card.facts{padding:6px 18px}
+@media (max-width:560px){.factstab th{white-space:normal;width:32%;padding-right:10px}}
 .exgroup{border:1px solid var(--line);border-radius:8px;margin:12px 0;background:var(--panel)} .exgroup>summary{cursor:pointer;padding:10px 14px;font-size:17px;font-weight:700;list-style:none;display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
 .exgroup>summary::-webkit-details-marker{display:none} .exgroup>summary::before{content:'▸';color:var(--accent);display:inline-block;width:1em;transition:transform .15s} .exgroup[open]>summary::before{transform:rotate(90deg)}
 .exgroup[open]>summary{border-bottom:1px solid var(--line)} .exbody{padding:4px 14px 12px;min-width:0} .exsw{margin:2px 0 8px}

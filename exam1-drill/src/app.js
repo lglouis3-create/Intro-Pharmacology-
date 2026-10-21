@@ -420,6 +420,15 @@ function newsCard() {
     <ul>${show.map(t => `<li>${esc(t)}</li>`).join('')}</ul>${items.length > show.length ? `<div class="meta" style="margin:0 0 6px">+ ${items.length - show.length} more</div>` : ''}
     <div class="row"><button class="btn" id="newsok">Got it</button><button class="btn ghost" id="newsall">All changes</button></div></details>`;
 }
+/* The exam being studied as label / value rows: the paper, when, then the exam's own facts (or its blurb), then the bank. */
+function examCard(ex, pool) {
+  const rows = [['Paper', `${ex.name}${ex.questions ? ': ' + ex.questions + ' questions' : ''}${ex.minutes ? ' in ' + ex.minutes + ' minutes' : ''}`],
+    ['When', `${esc(ex.date)} <b>${esc(examCountdown())}</b>`, true]];
+  if (ex.facts && ex.facts.length) ex.facts.forEach(f => rows.push(f)); else if (ex.blurb) rows.push(['About', ex.blurb]);
+  const concepts = new Set(pool.map(q => q.concept || q.id)).size;
+  rows.push(['Bank', `${pool.length} questions across ${concepts} concepts`]);
+  return `<div class="card facts"><table class="factstab"><tbody>${rows.map(([k, v, raw]) => `<tr><th scope="row">${esc(k)}</th><td>${raw ? v : esc(v)}</td></tr>`).join('')}</tbody></table></div>`;
+}
 /* Each lecture's card under an exam folds; the open ones are remembered per browser. */
 const TF_KEY = COURSE.ns + ':tfold';
 const TF_OPEN = () => { try { return new Set(JSON.parse(store.get(TF_KEY) || '[]')); } catch (e) { return new Set(); } };
@@ -447,7 +456,7 @@ function vTopics() {
   const seen = seenCount(pool), a = acc(pool);
   // the header already names the course and says when it was updated: neither is repeated here
   let h = `<div class="row" style="margin:2px 0 8px">${examSwitch()}</div>
-  <p class="sub">${esc(ex.name)} · ${esc(ex.date)} · ${ex.minutes ? ex.minutes + ' minutes allotted' : ''}${ex.questions ? ' · ' + ex.questions + ' questions' : ''}. ${esc(ex.blurb)} <b>${esc(examCountdown())}</b></p>${focusOn() ? focusCard() : ''}${newsCard()}
+  ${examCard(ex, pool0)}${focusOn() ? focusCard() : ''}${newsCard()}
   <div class="card"><div class="row" style="justify-content:space-between">
    <div><b>${pool.length}</b> ${FILT.skill === 'all' ? '' : esc((SKILL[FILT.skill] || {}).short || '') + ' '}questions in the bank · <b>${seen}</b> seen · accuracy <b>${a.pct == null ? '—' : a.pct + '%'}</b></div>
    <div class="row"><button class="btn" id="due">Study what is due</button><button class="btn ghost" id="all">One pass, all questions</button></div></div>

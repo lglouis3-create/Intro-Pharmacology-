@@ -81,6 +81,13 @@ const COURSE = {
      questions:55,               // her exam notice: 50 to 55 questions; the simulator's full paper uses the upper figure
      minutes:90,                 // her exam notice: an hour and a half
      blurb:'Covers Oct 9 through Oct 20, taught by Dr. Smith; on 10/20 the class voted to keep that day\'s pharmacogenomics lecture on this exam. 50 to 55 questions in 90 minutes, mostly multiple choice with a few fill-in-the-blank or short-answer items. 21% of the course grade. In the bank: all five lectures (10/9, 10/13, 10/14, 10/19, 10/20), her practice quiz 1 and her three posted keys. She said she will not test the two bonus decks (toxicology careers; pharmacists and drugs in the water). She tests what she says in lecture first, then the slides and the readings.',
+     // the Topics card shows these as label / value rows (her exam notice 10/17, the syllabus, her words 10/19 and 10/20)
+     facts:[['Covers', 'Oct 9 – Oct 20: principles of toxicology, toxic responses, treating poisonings, introduction to pharmacogenomics'],
+            ['Format', '50 to 55 questions in 90 minutes; mostly multiple choice, a few fill-in-the-blank or short answer'],
+            ['Weight', '21% of the course grade'],
+            ['Scope vote', 'On 10/20 the class voted to keep that day’s pharmacogenomics lecture on this exam'],
+            ['Not tested', 'The two bonus decks: toxicology careers; pharmacists and drugs in the water'],
+            ['How she tests', 'What she says in lecture first, then the slides, then the readings; her posted keys set the depth']],
      pools:[{key:'exam3', name:'Exam 3 material', marks:null, filter:{exam:3}}]}
   ],
   activeExam: 3,                // the exam the site opens on; the learner can switch (Topics, Exam sim, Weak spots)
