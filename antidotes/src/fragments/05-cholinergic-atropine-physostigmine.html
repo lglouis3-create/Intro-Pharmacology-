@@ -1,0 +1,69 @@
+<div style="display:flex;gap:8px;margin:0 0 8px;"><button id="exA" style="flex:1;">OP / atropine</button><button id="exB" style="flex:1;">Jimson weed / physostigmine</button></div>
+<div style="display:flex;gap:6px;margin:0 0 8px;" id="pills"></div>
+<svg width="100%" viewBox="0 0 380 392" role="img" style="display:block;"><title>Cholinergic synapse antidotes</title><desc>Presynaptic neuron, synaptic cleft with acetylcholinesterase, and postsynaptic muscarinic receptors; ACh and drugs move by step.</desc>
+<g class="c-gray"><rect x="60" y="20" width="260" height="56" rx="12" stroke-width="0.5"/><text class="th" x="190" y="48" text-anchor="middle" dominant-baseline="central">Presynaptic neuron</text></g>
+<text class="ts" x="345" y="100" text-anchor="end" dominant-baseline="central">Synaptic cleft</text>
+<g class="c-purple"><ellipse cx="70" cy="170" rx="28" ry="16" stroke-width="0.5"/><text class="ts" x="70" y="170" text-anchor="middle" dominant-baseline="central">AChE</text></g>
+<g class="c-purple"><ellipse cx="310" cy="170" rx="28" ry="16" stroke-width="0.5"/><text class="ts" x="310" y="170" text-anchor="middle" dominant-baseline="central">AChE</text></g>
+<rect id="eb1" x="64" y="141" width="12" height="12" rx="2" fill="none" stroke-width="1.5" style="opacity:0;transition:opacity .5s"/>
+<rect id="eb2" x="304" y="141" width="12" height="12" rx="2" fill="none" stroke-width="1.5" style="opacity:0;transition:opacity .5s"/>
+<g class="c-gray"><rect x="40" y="268" width="300" height="32" rx="4" stroke-width="0.5"/><text class="ts" x="190" y="284" text-anchor="middle" dominant-baseline="central">Postsynaptic cell: muscarinic receptors</text></g>
+<g id="rc0"><rect x="90" y="248" width="40" height="20" rx="3" stroke-width="0.5"/><rect x="90" y="232" width="12" height="18" rx="2" stroke-width="0.5"/><rect x="118" y="232" width="12" height="18" rx="2" stroke-width="0.5"/></g>
+<g id="rc1"><rect x="170" y="248" width="40" height="20" rx="3" stroke-width="0.5"/><rect x="170" y="232" width="12" height="18" rx="2" stroke-width="0.5"/><rect x="198" y="232" width="12" height="18" rx="2" stroke-width="0.5"/></g>
+<g id="rc2"><rect x="250" y="248" width="40" height="20" rx="3" stroke-width="0.5"/><rect x="250" y="232" width="12" height="18" rx="2" stroke-width="0.5"/><rect x="278" y="232" width="12" height="18" rx="2" stroke-width="0.5"/></g>
+<rect id="rb0" x="103" y="232" width="14" height="14" rx="2" fill="none" stroke-width="1.5" style="opacity:0;transition:opacity .5s, transform .8s"/>
+<rect id="rb1" x="183" y="232" width="14" height="14" rx="2" fill="none" stroke-width="1.5" style="opacity:0;transition:opacity .5s, transform .8s"/>
+<rect id="rb2" x="263" y="232" width="14" height="14" rx="2" fill="none" stroke-width="1.5" style="opacity:0;transition:opacity .5s, transform .8s"/>
+<g id="dots"></g>
+<text class="th" id="eff" x="190" y="322" text-anchor="middle" dominant-baseline="central"></text>
+<circle cx="46" cy="350" r="7" fill="none" stroke="#BA7517" stroke-width="1.5"/><text class="ts" x="60" y="350" dominant-baseline="central">ACh</text>
+<rect x="120" y="343" width="14" height="14" rx="2" fill="none" stroke="#D85A30" stroke-width="1.5"/><text class="ts" id="lgT" x="142" y="350" dominant-baseline="central">Toxin</text>
+<rect x="39" y="367" width="14" height="14" rx="2" fill="none" stroke="#534AB7" stroke-width="1.5"/><text class="ts" id="lgA" x="60" y="374" dominant-baseline="central">Antidote</text>
+</svg>
+<p id="cap" style="font-size:15px;line-height:1.6;color:var(--text-primary);margin:10px 0 12px;min-height:120px;"></p>
+<div style="display:flex;gap:8px;"><button id="back" style="flex:1;">Back</button><button id="next" style="flex:1;">Next</button></div>
+<script>
+(function(){
+function q(id){return document.getElementById(id);}
+var NS='http://www.w3.org/2000/svg',TOX='#D85A30',ANT='#534AB7';
+var rm=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+var H=[190,62],P=[[110,239],[190,239],[270,239]],DEG=[104,170];
+var G=[[120,125],[160,150],[200,122],[240,150],[268,125],[135,195],[190,182],[245,200],[170,215]];
+var dots=[];
+for(var k=0;k<9;k++){var c=document.createElementNS(NS,'circle');c.setAttribute('cx','0');c.setAttribute('cy','0');c.setAttribute('r','7');c.setAttribute('fill','none');c.setAttribute('stroke','#BA7517');c.setAttribute('stroke-width','1.5');c.style.transform='translate('+H[0]+'px,'+H[1]+'px)';c.style.opacity=0;q('dots').appendChild(c);dots.push(c);}
+var N0={d:[P[0],P[2],DEG],act:[1,0,1],eb:'',rb:['','',''],eff:'Normal signaling'};
+var SC={
+A:{tox:'Toxin: organophosphate (blocks AChE)',ant:'Antidote: atropine (blocks receptor)',names:['Normal','OP poisoning','Atropine'],
+st:[N0,
+{d:[P[0],P[2],P[1],G[0],G[1],G[2],G[3],G[4],G[5]],act:[1,1,1],eb:TOX,rb:['','',''],eff:'Cholinergic excess (SLUDGE)'},
+{d:[G[6],G[7],G[8],G[0],G[1],G[2],G[3],G[4],G[5]],act:[0,0,0],eb:TOX,rb:[ANT,ANT,ANT],eff:'Receptors blocked: excess ACh has no effect'}],
+cap:['Normal. ACh released from the presynaptic neuron binds muscarinic receptors and turns them on. AChE in the cleft breaks ACh down, so the signal stays short.',
+'Organophosphate poisoning. The OP inhibits AChE, so ACh is not broken down and builds up in the cleft. More ACh keeps every receptor on: cholinergic excess.',
+'Atropine. Atropine occupies the muscarinic receptors without turning them on. ACh is still high because AChE is still inhibited, but ACh cannot reach the receptors, so the muscarinic effects stop.']},
+B:{tox:'Toxin: belladonna alkaloid (blocks receptor)',ant:'Antidote: physostigmine (blocks AChE)',names:['Normal','Jimson weed','Physostigmine'],
+st:[N0,
+{d:[G[0],G[2],DEG],act:[0,0,0],eb:'',rb:[TOX,TOX,TOX],eff:'Anticholinergic: delirium, flushing, ileus'},
+{d:[P[0],P[2],G[0],G[1],G[2],G[3],G[4],G[5],G[6]],act:[1,0,1],eb:ANT,rb:['',TOX,''],eff:'More ACh outcompetes the toxin'}],
+cap:['Normal. ACh released from the presynaptic neuron binds muscarinic receptors and turns them on. AChE in the cleft breaks ACh down, so the signal stays short.',
+'Belladonna alkaloid (jimson weed) exposure. The alkaloid occupies the muscarinic receptors without turning them on. Normal amounts of ACh cannot bind, so the effects are anticholinergic.',
+'Physostigmine. Physostigmine inhibits AChE, so ACh builds up in the cleft. The larger amount of ACh competes the alkaloid off the receptors and turns them back on. Physostigmine never binds the receptor itself; it acts like a receptor agonist by raising ACh.']}};
+var ex='A',cur=0;
+function setRec(i,on){var g=q('rc'+i);Array.prototype.forEach.call(g.children,function(r){r.setAttribute('class',on?'c-teal':'c-gray');});}
+function setBlk(el,col){if(col){el.setAttribute('stroke',col);el.style.opacity=1;el.style.transform='translate(0px,0px)';}else{if(el.style.opacity==='1'&&!rm){el.style.transform='translate(0px,-40px)';}el.style.opacity=0;}}
+var pills=q('pills');
+function buildPills(){pills.innerHTML='';SC[ex].names.forEach(function(n,i){var b=document.createElement('button');b.textContent=n;b.style.flex='1';b.style.fontSize='13px';b.onclick=function(){go(i);};pills.appendChild(b);});}
+function go(i){cur=i;var sc=SC[ex],s=sc.st[i];
+dots.forEach(function(c,k){var p=s.d[k];c.style.transition=rm?'none':'transform .9s ease, opacity .5s';if(p){c.style.transform='translate('+p[0]+'px,'+p[1]+'px)';c.style.opacity=1;}else{c.style.transform='translate('+H[0]+'px,'+H[1]+'px)';c.style.opacity=0;}});
+for(var r=0;r<3;r++){setRec(r,s.act[r]);setBlk(q('rb'+r),s.rb[r]);}
+setBlk(q('eb1'),s.eb);setBlk(q('eb2'),s.eb);
+q('eff').textContent=s.eff;q('cap').textContent=sc.cap[i];q('lgT').textContent=sc.tox;q('lgA').textContent=sc.ant;
+Array.prototype.forEach.call(pills.children,function(b,k){b.style.background=k===i?'var(--bg-accent)':'';b.style.color=k===i?'var(--text-accent)':'';});
+['A','B'].forEach(function(x){var b=q('ex'+x);b.style.background=ex===x?'var(--bg-accent)':'';b.style.color=ex===x?'var(--text-accent)':'';});
+q('next').textContent=i===2?'Replay':'Next';}
+q('exA').onclick=function(){ex='A';buildPills();go(0);};
+q('exB').onclick=function(){ex='B';buildPills();go(0);};
+q('next').onclick=function(){go(cur===2?0:cur+1);};
+q('back').onclick=function(){go(Math.max(0,cur-1));};
+buildPills();go(0);
+})();
+</script>

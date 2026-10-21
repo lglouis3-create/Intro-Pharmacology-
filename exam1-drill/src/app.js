@@ -289,6 +289,7 @@ const BY_LECTURE3 = {L14: [G3('l14-1', 'Day 14: indices, the reading, toxic resp
 function linksFor0(q) {
   if (examOf(q) === 3 && typeof GUIDE3_HTML !== 'undefined') {
     if (q.topic === 'TERMS') return [TERM_SUB3, ['ref', 'ref3-1', 'Reference: the words']];
+    if (q.lecture === 'QZ3' && q.dupOf) { const t = QUESTIONS.find(x => x.id === q.dupOf); if (t) return linksFor0(t); }   // her quiz items explain through the lecture question they repeat
     if (q.lecture !== 'L13') return LINKS3[q.lecture + ':' + q.sub] || BY_LECTURE3[q.lecture] || [G3('scope', 'what Exam 3 tests')];
     return SUB3[q.sub] || [G3('scope', 'what Exam 3 tests')];
   }
@@ -313,7 +314,7 @@ const ladderQs = key => QUESTIONS.filter(q => q.ladder === key).sort((a, b) => (
 // "Build up" on a Tier 2 question climbs Tier 1 → 2 only (upto); "Climb" goes all the way
 const climbLadder = (key, upto) => { const l = ladderQs(key).filter(q => !upto || (q.level || 0) <= upto); if (l.length) startQuiz(l, 'Ladder: ' + (l[0].ladderName || key), 'pass'); };
 const ladderChip = q => q.ladder && ladderQs(q.ladder).length > 1 ? `<button type="button" class="chip" data-climb="${esc(q.ladder)}"${q.level > 1 ? ` data-upto="${q.level}"` : ''}>${q.level > 1 ? 'Build up: Tier 1 → ' + q.level + ' on this' : 'Climb this ladder to Tier 3'}</button>` : '';
-const explainHTML = q => { const l = linksFor(q), c = ladderChip(q); return l.length || c ? `<div class="row explain"><span class="meta" style="margin:0">Explain more:</span>${l.map(([v, a, t]) => `<button type="button" class="chip" data-jump="${v}:${a}">${esc(t)}</button>`).join('')}${c}</div>` : ''; };
+const explainHTML = q => { const l = linksFor(q), c = ladderChip(q), ad = antiFor(q); return l.length || c || ad.length ? `<div class="row explain"><span class="meta" style="margin:0">Explain more:</span>${l.map(([v, a, t]) => `<button type="button" class="chip" data-jump="${v}:${a}">${esc(t)}</button>`).join('')}${ad.map(d => antiChip(d, 'Diagram: ' + d.short)).join('')}${c}</div>` : ''; };
 // ignored only on the exam's own pages; with an exam kept in the background, a quiz may still climb
 document.addEventListener('click', e => { const b = e.target.closest('[data-climb]'); if (!b) return; if (CUR === 'exam' && EX && !EX.done) return; climbLadder(b.dataset.climb, +b.dataset.upto || 0); });
 function jump(view, anchor) {
@@ -1885,6 +1886,7 @@ function ptOptions(it) {   // the right answer and up to four different answers 
   return shuffle(out);
 }
 const ptRowHTML = r => `<b>${esc(r.poison)}</b><div class="sub">Symptoms or diagnosis: ${esc(r.sym)}</div><div class="sub">Antidote(s): ${ptAnti(r).map(a => `<b>${esc(PT_LONG[a[0]] || a[0])}</b>: ${esc(ptMoaText(r, a))}`).join(' · ')}</div>${r.special.map(s => `<div class="sub">${esc(s[0])} <b>${esc(s[1])}</b></div>`).join('')}<div class="sub">Her reference column: ${esc(r.ref)}</div>`;
+const ptDiag = id => { const ds = antiOK() ? ANTIDOTE_DIAGRAMS.filter(d => d.rows.includes(id)) : []; return ds.length ? `<div class="row" style="gap:6px;margin-top:6px"><span class="meta" style="margin:0">Diagram:</span>${ds.map(d => antiChip(d)).join('')}</div>` : ''; };
 function ptTable() {
   const cell = (k, txt) => PT.shown[k] ? esc(txt) : `<button type="button" class="chip" data-ptshow="${k}">Show</button>`;
   const fld = (lab, html) => `<div style="margin-top:6px"><div class="meta" style="margin:0">${lab}</div><div>${html}</div></div>`;
@@ -1894,12 +1896,12 @@ function ptTable() {
       ${fld('Antidote(s)', cell(r.id + ':anti', ptAntiLabel(r)))}
       ${fld('MOA of antidote(s)', cell(r.id + ':moa', ptCellText(r.id + ':moa')))}
       ${r.special.map((s, i) => fld('Special considerations: ' + esc(s[0]), cell(r.id + ':sp' + i, s[1]))).join('')}
-      <div class="sub" style="margin-top:6px">Her reference column: ${esc(r.ref)}</div></div>`).join('')}`;
+      <div class="sub" style="margin-top:6px">Her reference column: ${esc(r.ref)}</div>${ptDiag(r.id)}</div>`).join('')}`;
 }
 function vPtab() {
   let h = `<h2 id="ptab-top">Poisoning table</h2><p class="sub">Dr. Smith's Poisoning Treatment Table 2026 key, row by row, in her wording. On 10/20 she said: "you do need to know the details that I have in my table, my key." Pick a mode; a miss comes back at the end of the round and leads the next one.</p>
     <div class="card"><div class="row">${PT_MODES.map(([k, l]) => `<button type="button" class="chip ${PT.mode === k ? 'on' : ''}" aria-pressed="${PT.mode === k}" data-ptmode="${k}">${esc(l)}</button>`).join('')}</div></div>`;
-  if (PT.mode === 'table') { h += ptTable(); }
+  if (PT.mode === 'table') { h += antiCard() + ptTable(); }
   else {
     if (!PT.queue.length) ptStart();
     const it = PT.queue[PT.i], total = PT.queue.length, best = storeObj(COURSE.ns + ':pt')[PT.mode];
@@ -1908,7 +1910,7 @@ function vPtab() {
       <div class="rxdrug">${esc(it.ask)}</div><div class="rxq">${esc(it.sub)}</div>
       <div class="rxopts">${PT.opts.map((t, n) => `<button type="button" class="rxopt ${PT.result ? (t === it.ans ? 'ok' : PT.pick === n ? 'bad' : '') : ''}" data-ptans="${n}" ${PT.result ? 'disabled' : ''}>${esc(t)}</button>`).join('')}</div>
       <div class="row" style="margin-top:10px">${PT.result ? `<button type="button" class="btn" id="ptnext">${PT.i + 1 < total ? 'Next' : PT.redo.length ? `Redo the ${PT.redo.length} missed` : 'New round'}</button>` : ''}<button type="button" class="btn ghost" id="ptskip">${PT.result ? 'Start over' : 'Skip'}</button></div>`;
-    if (PT.result) h += `<div class="pfb"><div class="pfbr ${PT.result.ok ? 'ok' : 'bad'}">${PT.result.ok ? '✓' : '✗'} ${ptRowHTML(it.row)}<div class="row" style="margin-top:6px"><button type="button" class="chip" data-jump="ref:ref3-tbl-1">The whole table</button></div></div></div>`;
+    if (PT.result) h += `<div class="pfb"><div class="pfbr ${PT.result.ok ? 'ok' : 'bad'}">${PT.result.ok ? '✓' : '✗'} ${ptRowHTML(it.row)}<div class="row" style="margin-top:6px"><button type="button" class="chip" data-jump="ref:ref3-tbl-1">The whole table</button>${antiOK() ? ANTIDOTE_DIAGRAMS.filter(d => d.rows.includes(it.row.id)).map(d => antiChip(d)).join('') : ''}</div></div></div>`;
     h += `</div>`;
   }
   h += `<p class="sub" style="margin-top:8px">Source: PoisoningTreatmentTable2026KEY.pdf, her posted key (pages 1–3); the question bank for the table is the Exam 3 topic “Poisoning treatment table (her key)”.</p>`;
@@ -1942,6 +1944,48 @@ function ptAdvance() {
   vPtab();
 }
 document.addEventListener('keydown', e => { if (CUR === 'ptab' && e.key === 'Enter' && !e.target.closest('button, input, select, textarea')) { const b = $('#ptnext'); if (b) b.click(); } });
+
+/* Antidote diagrams: standalone pages under antidotes/ (IDs repeat across them, so each runs in its own frame).
+   The page reports its height with postMessage; Esc or the close button returns focus to the opener. */
+const ANTI_BASE = location.protocol === 'file:' ? 'https://lglouis3-create.github.io/Intro-Pharmacology-/antidotes/'
+  : location.pathname.includes('/exam1-drill/') ? '../antidotes/' : 'antidotes/';
+const antiOK = () => typeof ANTIDOTE_DIAGRAMS !== 'undefined';
+const antiChip = (d, lab) => `<button type="button" class="chip antichip" data-anti="${d.slug}">◧ ${esc(lab || d.short)}</button>`;
+const antiFor = q => antiOK() && examOf(q) === 3 ? ANTIDOTE_DIAGRAMS.filter(d => d.match && d.match.test(q.stem + ' ' + (q.concept || ''))) : [];
+let ANTI = null;
+function antiOpen(slug, opener) {
+  const i = ANTIDOTE_DIAGRAMS.findIndex(d => d.slug === slug); if (i < 0) return;
+  const d = ANTIDOTE_DIAGRAMS[i], t = store.get(COURSE.ns + ':theme'), n = ANTIDOTE_DIAGRAMS.length;
+  const src = ANTI_BASE + d.slug + '.html?embed=1' + (t === 'light' || t === 'dark' ? '&theme=' + t : '');
+  if (!ANTI) {
+    ANTI = {opener: opener || document.activeElement, el: document.createElement('div')};
+    ANTI.el.className = 'antiview'; ANTI.el.setAttribute('role', 'dialog'); ANTI.el.setAttribute('aria-modal', 'true'); ANTI.el.setAttribute('aria-labelledby', 'antititle');
+    document.body.appendChild(ANTI.el); document.body.classList.add('antiopen');
+  }
+  ANTI.slug = d.slug;
+  ANTI.el.innerHTML = `<div class="antibox"><div class="antihead"><b id="antititle">${esc(d.title)}</b><span class="meta" style="margin:0">${i + 1} of ${n}</span>
+    <div class="row" style="gap:6px;margin-left:auto"><button type="button" class="chip" data-antistep="-1" ${i ? '' : 'disabled'} aria-label="Previous diagram">‹ Prev</button><button type="button" class="chip" data-antistep="1" ${i + 1 < n ? '' : 'disabled'} aria-label="Next diagram">Next ›</button><a class="chip" href="${ANTI_BASE + d.slug}.html" target="_blank" rel="noopener">Open page ↗</a><button type="button" class="chip" id="anticlose" aria-label="Close diagram">✕</button></div></div>
+    ${d.note && ANTIDOTE_NOTES[d.note] ? `<div class="note">${esc(ANTIDOTE_NOTES[d.note])}</div>` : ''}
+    <iframe id="antiframe" title="${esc(d.title)}" src="${src}" loading="eager"></iframe>
+    <p class="sub" style="margin:6px 0 0">Drawn from the figures on the Treating Poisonings slides (10/19). <a href="${ANTI_BASE}index.html" target="_blank" rel="noopener">All diagrams</a></p></div>`;
+  $('#anticlose').focus();
+}
+function antiClose() {
+  if (!ANTI) return; ANTI.el.remove(); document.body.classList.remove('antiopen');
+  const o = ANTI.opener; ANTI = null; if (o && o.focus && document.contains(o)) o.focus();
+}
+document.addEventListener('click', e => {
+  const a = e.target.closest('[data-anti]'); if (a) { e.preventDefault(); antiOpen(a.dataset.anti, a); return; }
+  if (!ANTI) return;
+  const s = e.target.closest('[data-antistep]'); if (s) { const i = ANTIDOTE_DIAGRAMS.findIndex(d => d.slug === ANTI.slug) + +s.dataset.antistep; if (ANTIDOTE_DIAGRAMS[i]) antiOpen(ANTIDOTE_DIAGRAMS[i].slug); return; }
+  if (e.target.closest('#anticlose') || e.target === ANTI.el) antiClose();
+});
+document.addEventListener('keydown', e => { if (ANTI && e.key === 'Escape') antiClose(); });
+window.addEventListener('message', e => {
+  const f = $('#antiframe'); if (!f || e.source !== f.contentWindow || !e.data || typeof e.data.antidoteH !== 'number') return;
+  f.style.height = Math.min(Math.max(e.data.antidoteH, 200), 4000) + 'px';
+});
+const antiCard = () => antiOK() ? `<div class="card"><b>Antidote diagrams</b><p class="sub" style="margin:2px 0 8px">Drawings of the antidote mechanisms on the Treating Poisonings slides (10/19); five of the seven step through.</p><div class="row" style="gap:6px">${ANTIDOTE_DIAGRAMS.map(d => antiChip(d)).join('')}</div></div>` : '';
 
 const drName = r => r.name.replace(/<[^>]+>/g, '').replace(/\s*\(.*$/, '');
 function drRows() {

@@ -1,0 +1,50 @@
+/* Tokens follow the exam drill's palette (exam1-drill/src/shell.html) so the diagrams match the site.
+   Dark theme: system setting, unless the drill's theme choice (data-theme on <html>) says otherwise. */
+:root{
+  --text-primary:#1d1f22;--text-secondary:#5d636b;--text-tertiary:#80868e;
+  --bg-page:#f7f7f4;--bg-panel:#ffffff;--bg-secondary:#eef1f4;--border:#dcdfe3;
+  --bg-accent:#2f5d8a;--text-accent:#ffffff;--link:#2f5d8a;
+  --gray-fill:#eef1f4;--gray-stroke:#5d636b;--gray-text:#1d1f22;
+  --teal-fill:#E1F5EE;--teal-stroke:#0F6E56;--teal-text:#04342C;
+  --purple-fill:#EEEDFE;--purple-stroke:#534AB7;--purple-text:#26215C;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --text-primary:#e7e9ec;--text-secondary:#9aa1a9;--text-tertiary:#80868e;
+    --bg-page:#15171a;--bg-panel:#1e2125;--bg-secondary:#2a2e33;--border:#33383e;
+    --bg-accent:#7fb0e0;--text-accent:#0d1620;--link:#7fb0e0;
+    --gray-fill:#2a2e33;--gray-stroke:#9aa1a9;--gray-text:#e7e9ec;
+    --teal-fill:#085041;--teal-stroke:#5DCAA5;--teal-text:#E1F5EE;
+    --purple-fill:#3C3489;--purple-stroke:#AFA9EC;--purple-text:#EEEDFE;
+  }
+}
+:root[data-theme="dark"]{
+  --text-primary:#e7e9ec;--text-secondary:#9aa1a9;--text-tertiary:#80868e;
+  --bg-page:#15171a;--bg-panel:#1e2125;--bg-secondary:#2a2e33;--border:#33383e;
+  --bg-accent:#7fb0e0;--text-accent:#0d1620;--link:#7fb0e0;
+  --gray-fill:#2a2e33;--gray-stroke:#9aa1a9;--gray-text:#e7e9ec;
+  --teal-fill:#085041;--teal-stroke:#5DCAA5;--teal-text:#E1F5EE;
+  --purple-fill:#3C3489;--purple-stroke:#AFA9EC;--purple-text:#EEEDFE;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg-page);color:var(--text-primary);
+  font:16px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;}
+main{max-width:700px;margin:0 auto;padding:16px;}
+.card{background:var(--bg-panel);border:1px solid var(--border);border-radius:10px;padding:14px 16px}
+h1{font-size:20px;font-weight:600;margin:0 0 4px}
+.sub{font-size:14px;color:var(--text-secondary);margin:0 0 14px}
+a{color:var(--link)}
+.back{display:inline-block;font-size:14px;margin-bottom:10px}
+button{font:inherit;font-size:14px;padding:8px 12px;border-radius:8px;border:1px solid var(--border);
+  background:var(--bg-secondary);color:var(--text-primary);cursor:pointer}
+button:focus-visible,a:focus-visible{outline:2px solid var(--link);outline-offset:2px}
+svg text.th{font-size:14px;font-weight:500;fill:var(--text-primary)}
+svg text.ts{font-size:12px;fill:var(--text-secondary)}
+svg .box,svg rect.box{fill:var(--bg-secondary);stroke:var(--border)}
+svg .arr{stroke:var(--text-secondary);stroke-width:1.5;fill:none}
+.c-gray rect,.c-gray ellipse,.c-gray circle,rect.c-gray{fill:var(--gray-fill);stroke:var(--gray-stroke)}
+.c-teal rect,.c-teal ellipse,.c-teal circle,rect.c-teal{fill:var(--teal-fill);stroke:var(--teal-stroke)}
+.c-purple rect,.c-purple ellipse,.c-purple circle,rect.c-purple{fill:var(--purple-fill);stroke:var(--purple-stroke)}
+.c-gray text.th,.c-gray text.ts{fill:var(--gray-text)}
+.c-teal text.th,.c-teal text.ts{fill:var(--teal-text)}
+.c-purple text.th,.c-purple text.ts{fill:var(--purple-text)}

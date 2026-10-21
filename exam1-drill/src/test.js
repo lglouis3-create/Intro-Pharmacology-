@@ -138,6 +138,27 @@ if (typeof READINGS !== 'undefined') {
       if (r.same && !P.find(x => x.id === r.same)) bad('poison_table', 'same-as row not found: ' + r.id); });
   }
 }
+{ // antidote diagrams: each listed page and its fragment exist, the built page carries the fragment verbatim,
+  // the fragments match the hashes recorded at handoff (content stays unchanged), every row id and note key resolves,
+  // and every data-anti link in the guides names a listed page
+  const fs = require('fs'), vm = require('vm'), path = require('path'), crypto = require('crypto');
+  const A = path.join(__dirname, '..', '..', 'antidotes');
+  const c = {}; vm.createContext(c); vm.runInContext(fs.readFileSync(__dirname + '/poison_table.js', 'utf8') + ';this.D = ANTIDOTE_DIAGRAMS; this.N = ANTIDOTE_NOTES; this.P = POISON_TABLE;', c);
+  const hashes = Object.fromEntries(fs.readFileSync(path.join(A, 'src', 'fragments.sha256'), 'utf8').trim().split('\n').map(l => l.split(/\s+/).reverse()));
+  if (c.D.length !== 7) bad('antidotes', 'expected 7 diagrams, found ' + c.D.length);
+  c.D.forEach(d => {
+    const fr = path.join(A, 'src', 'fragments', d.slug + '.html'), pg = path.join(A, d.slug + '.html');
+    if (!fs.existsSync(fr) || !fs.existsSync(pg)) { bad('antidotes', 'missing fragment or built page: ' + d.slug); return; }
+    const f = fs.readFileSync(fr, 'utf8');
+    if (!fs.readFileSync(pg, 'utf8').includes(f)) bad('antidotes', 'built page out of date: ' + d.slug);
+    if (crypto.createHash('sha256').update(f).digest('hex') !== hashes[d.slug + '.html']) bad('antidotes', 'fragment changed since handoff (update fragments.sha256 only with a stated source): ' + d.slug);
+    d.rows.forEach(r => { if (!c.P.find(x => x.id === r)) bad('antidotes', d.slug + ' names unknown table row ' + r); });
+    if (d.note && !c.N[d.note]) bad('antidotes', d.slug + ' names unknown note ' + d.note);
+  });
+  if (!fs.existsSync(path.join(A, 'index.html'))) bad('antidotes', 'index.html missing');
+  const slugs = new Set(c.D.map(d => d.slug));
+  for (const m of fs.readFileSync(__dirname + '/guide3.js', 'utf8').matchAll(/data-anti="([^"]+)"/g)) if (!slugs.has(m[1])) bad('antidotes', 'guide link to unknown diagram ' + m[1]);
+}
 // "Hear the why" texts: every key is a question, the text is spoken-length and carries no written form the voice would misread
 if (typeof NARR_Q !== 'undefined') {
   for (const [id, t] of Object.entries(NARR_Q)) {
