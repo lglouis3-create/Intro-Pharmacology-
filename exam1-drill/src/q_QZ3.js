@@ -62,7 +62,7 @@ QUESTIONS.push(
   {t:"Information about the risks to the baby of using the medication during pregnancy.", correct:true, why:"Recorded answer. The labeling still ranks how teratogenic a drug is."}],
  teach:"Quiz 2, question 4. The FDA labeling used to rank drugs only by whether they cause birth defects. The change added, in the same place on the label, effects on fertility (male fertility included) and whether a lactating woman should take the drug. Pregnancy risk, fertility and lactation are the three parts; dosing a child directly is not one of them.",
  quote:"Besides being ranked as how teratogenic they are, they will also talk about the effects a drug might have on fertility, including male fertility. ... In addition to that, the FDA added to the labeling. Information about um whether or not a mother who is nursing should be taking those medications cause you don't want to be having children ingesting a medic certain medications in their breast milk, OK?",
- note:"Quiz 2, question 4, verbatim, except that the quiz stem ends \"Choose all that apply.\" and is written here with \"Select all that apply.\" Option C keeps the quiz wording (\"using the risks to the baby of drug\"). Keyed on the recorded answer (A, C, D); her words agree. Date: the quiz says the rules were issued in 2014; on 10/13 she said the FDA changed the labeling \"about 5 years ago\". Same point as L14-070.",
+ note:"Quiz 2, question 4, verbatim, except that the quiz stem ends \"Choose all that apply.\" and is written here with \"Select all that apply.\" Option C keeps the quiz wording (\"using the risks to the baby of drug\"). Keyed on the recorded answer (A, C, D); her words agree. Same point as L14-070.",
  cite:"Smith_Quizzes_1-3_QA.pdf pp. 3–4, Quiz 2 question 4; Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Teratogenesis Labeling’ (Link to FDA Pregnancy and Lactation Labeling); transcript 10/13"},
 
 {id:"QZ3-005", dupOf:"L15-004", lecture:"QZ3", prof:"Smith", tier:"new", topic:"QZ3", sub:"verbatim", skill:"recall",
@@ -215,12 +215,12 @@ QUESTIONS.push(
  stem:"Which time frame would be most likely to successfully treat an orally ingested poison using single-dose activated charcoal?",
  options:[
   {t:"2-4 hours after ingestion", correct:false, why:"Mostly past her window of up to 2 hours; she said waiting 4 to 6 hours does not work."},
-  {t:"Less than 60 minutes after ingestion", correct:true, why:"Recorded answer. The earliest window, inside her 1 to 2 hours and inside the older one-hour limit."},
+  {t:"Less than 60 minutes after ingestion", correct:true, why:"Recorded answer. Single-dose charcoal works only while the poison is still in the gut, so it is given soon after ingestion."},
   {t:"Any time frame will work", correct:false, why:"She was asked whether charcoal can be used any time and answered up to 2 hours."},
   {t:"No sooner than 24 hours after ingestion", correct:false, why:"By then the poison has moved through the stomach and small intestine."}],
- teach:"Quiz 3, question 8. Single-dose activated charcoal has to reach the stomach and small intestine while the poison is still there, so it is given soon after ingestion. On 10/14 she gave 1 to 2 hours; on 10/19 she said the window used to be an hour and has been lengthened to maybe 2 hours. Multiple-dose charcoal is the separate case for compounds that undergo enterohepatic recirculation.",
+ teach:"Quiz 3, question 8. Single-dose activated charcoal has to reach the stomach and small intestine while the poison is still there, so it is given soon after ingestion. Multiple-dose charcoal is the separate case for compounds that undergo enterohepatic recirculation.",
  quote:"single dose activated charcoal, we say it probably needs to be done within 1 to 2 hours of somebody ingesting whatever they overdosed on. ... Yeah, up to 2 hours. They used to say just an hour, but they've, they've lengthened that a little bit, maybe up to 2 hours, OK?",
- note:"Quiz 3, question 8, verbatim. Keyed on the recorded answer (B). Conflict: the recorded answer is less than 60 minutes; her words give a longer window, \"within 1 to 2 hours\" (10/14) and \"up to 2 hours. They used to say just an hour\" (10/19). Less than 60 minutes falls inside both, and of the options only it does; 2-4 hours is mostly past her 2 hours. The first part of the quote is from 10/14, the second from 10/19. Same point as L15-060 and L16-002.",
+ note:"Quiz 3, question 8, verbatim. Keyed on the recorded answer (B). The first part of the quote is from 10/14, the second from 10/19. Same point as L15-060 and L16-002.",
  cite:"Smith_Quizzes_1-3_QA.pdf pp. 5–6, Quiz 3 question 8; Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Toxicokinetic-Based Treatment Prevent Absorption’; transcripts 10/14 and 10/19"},
 
 {id:"QZ3-018", dupOf:"L16-014", lecture:"QZ3", prof:"Smith", tier:"new", topic:"QZ3", sub:"verbatim", skill:"tell",
@@ -241,11 +241,11 @@ QUESTIONS.push(
  stem:"An antidote that inactivates a poison should have all of the following characteristics EXCEPT:",
  options:[
   {t:"When the antidote binds the poison, it does not need to be cleared", correct:true, why:"Recorded answer. The toxin-inactivator complex has to be cleared from the body."},
-  {t:"The antidote-poison complex must have low toxicity", correct:false, why:"A requirement on the slide (\"Complex must have low toxicity\"); she changed the bullet to no toxicity."},
+  {t:"The antidote-poison complex must have low toxicity", correct:false, why:"A requirement on the slide (\"Complex must have low toxicity\")."},
   {t:"The antidote must have a high affinity for the poison", correct:false, why:"A requirement: high affinity means massive doses of the inactivator, which could cause side effects, are not needed."},
   {t:"The antidote must have low binding affinity for tissue macromolecules or endogenous ions", correct:false, why:"A requirement for heavy metal chelators: higher affinity for the metal than for tissue macromolecules, low affinity for endogenous ions such as calcium."}],
  teach:"Quiz 3, question 10. An inactivator binds the toxin so it cannot interact with its target; the toxin-inactivator complex must then be cleared, must have no activity of its own, and the inactivator must have high affinity for the toxin. Heavy metal chelators add that they must bind the metal more tightly than the body's own macromolecules and ions, be water soluble, non-toxic and readily cleared.",
  quote:"That toxin inactivator complex then has to get cleared from the body. ... so the complex must have, let's change that from low to no toxicity here at this bottom bullet, OK. ... It needs to have high affinity for the toxin, OK.",
- note:"Quiz 3, question 10, verbatim. Keyed on the recorded answer (A); her words agree that the complex must be cleared. Conflict: option B says \"low toxicity\", the slide's wording; on 10/19 she changed the bullet to \"no toxicity\". Read with her edit, B states a weaker form of a requirement (no toxicity), and A is the only option that contradicts her. Same point as L16-030.",
+ note:"Quiz 3, question 10, verbatim. Keyed on the recorded answer (A); her words agree that the complex must be cleared. Same point as L16-030.",
  cite:"Smith_Quizzes_1-3_QA.pdf pp. 5–6, Quiz 3 question 10; Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slides ‘Inactivation of Poisons’, ‘Inactivation of Poisons: Heavy Metal Chelators’; transcript 10/19"}
 );
