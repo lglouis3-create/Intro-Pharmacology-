@@ -26,7 +26,7 @@ QUESTIONS.push(
 /* ---------------- Why pharmacogenomics: history ---------------- */
 {id:"L17-001", lecture:"L17", prof:"Smith", tier:"new", topic:"L17", sub:"history", skill:"recall", multi:true,
  concept:"interindividual-variation-factors", tags:["smith"], source:"both",
- stem:"Large inter-individual variations in drug response were already being linked to several factors before genetics could explain them. Which factors are listed? Select all that apply.",
+ stem:"Large inter-individual variations in drug therapy response are influenced by many factors. Which are listed? Select all that apply.",
  options:[
   {t:"Age", correct:true, why:"Listed on the slide and named first in her sentence."},
   {t:"Ethnicity", correct:true, why:"Listed and spoken."},
@@ -91,7 +91,7 @@ QUESTIONS.push(
   {l:"1959", r:"Vogel introduces the term pharmacogenetics", why:"The first word linking drugs to genetics."},
   {l:"1990", r:"The Human Genome Project starts", why:"A worldwide consortium of academics, industry and government agencies."},
   {l:"2003", r:"The Human Genome Project is completed", why:"Early and under budget."}],
- teach:"The timeline runs from the structure of DNA (1953) to the genetic link to primaquine reactions (1956), Motulsky's statement that inheritance might explain differences in drug efficacy and adverse reactions (1957) and Vogel's term pharmacogenetics (1959). The Human Genome Project started in 1990 and was completed in 2003, early and under budget; the slide marks renewed interest in pharmacogenetics after that.",
+ teach:"The timeline runs from the structure of DNA (1953) to the genetic link to primaquine reactions (1956), Motulsky's statement that inheritance might explain differences in drug efficacy and adverse reactions (1957) and Vogel's term pharmacogenetics (1959). The Human Genome Project started in 1990 and was completed in 2003, early and under budget; the slide's arrow marks renewed interest in pharmacogenetics from about 1990 on.",
  quote:"starting with 1953 when Watson and Crick and other scientists, they described the structure of DNA. ... So it wasn't until 1956 that they found that genetic link to the hemolytic anemia in patients responding badly to Primaquine. ... All right, then in 1990, the Human Genome Project started. ... OK, so in 2003, the Human Genome Project was completed and it was completed early and under budget, which is amazing.",
  note:"The transcript renders Motulsky as \"Motosky\" and \"Muussky\"; the slide spells \"Motulsky\". The timeline figure is from DiPiro's Pharmacotherapy, 7th edition.",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘Introduction: Genomics History’ (p. 6, DiPiro 7th ed. figure); transcript 10/20"},
@@ -112,7 +112,7 @@ QUESTIONS.push(
 
 {id:"L17-007", lecture:"L17", prof:"Smith", tier:"new", topic:"L17", sub:"history", skill:"recall",
  concept:"hgp-data-sharing", tags:["smith"], source:"transcript",
- stem:"What made the Human Genome Project, in her words, one of the most amazing scientific projects?",
+ stem:"Which feature of the Human Genome Project is described as one of its most amazing parts?",
  options:[
   {t:"Labs worldwide shared each sequence in an open database", correct:true, why:"Once a lab sequenced its stretch of DNA, it went into a database everybody could access; she called that one of the most amazing parts."},
   {t:"A single government lab sequenced the whole genome in secret", correct:false, why:"It was a worldwide consortium of academics, industry and government agencies."},
@@ -132,7 +132,7 @@ QUESTIONS.push(
   {t:"Both kinds of pair vary to the same degree", correct:false, why:"Then genes would not explain the variation."},
   {t:"Identical twins clear the drug faster", correct:false, why:"The comparison is within pairs, not the speed of one group against the other."},
   {t:"Every pair has the same half-life", correct:false, why:"The half-lives differ widely between pairs and within fraternal pairs."}],
- teach:"Twin studies compared identical twins with fraternal twins given the same drug. Antipyrine half-lives were nearly identical within identical twin pairs but varied within fraternal pairs, which behave almost like unrelated people. The figure (Goodman and Gilman Fig. 4-2) shows the heritability of drug metabolism variability.",
+ teach:"Twin studies compared identical twins with fraternal twins given the same drug. Antipyrine half-lives were nearly identical within identical twin pairs but varied within fraternal pairs, which behave almost like unrelated people. The figure (G&G Fig. 4-2) shows the heritability of drug metabolism variability.",
  quote:"and you can see almost all of our identical twin pairs, their clearance is exactly the same. There's just a few that are a little bit different. ... That's different if you look at the fraternal twin pairs, you see, they are often, all of them are very variable. Only this, this pair here, pair D, is a little bit similar",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘Introduction: Twin Studies Data’ (p. 7, G&G Fig. 4-2); transcript 10/20"},
 
@@ -166,7 +166,7 @@ QUESTIONS.push(
 
 {id:"L17-011", lecture:"L17", prof:"Smith", tier:"new", topic:"L17", sub:"defs", skill:"recall",
  concept:"pgx-preferred-term-aaps", tags:["smith"], source:"both",
- stem:"Which statement about the two terms is correct?",
+ stem:"Which statement about the terms pharmacogenetics and pharmacogenomics is correct?",
  options:[
   {t:"Used interchangeably; pharmacogenomics is preferred", correct:true, why:"The slide's last bullet; the definitions are from the AAPS (American Association of Pharmaceutical Scientists) Pharmacogenomics Focus Group."},
   {t:"Never interchangeable; pharmacogenetics is preferred", correct:false, why:"They are used interchangeably, even by people renowned in the field."},
@@ -235,7 +235,7 @@ QUESTIONS.push(
 
 {id:"L17-016", lecture:"L17", prof:"Smith", tier:"new", topic:"L17", sub:"impact", skill:"apply",
  concept:"genotype-before-lethal-drug", tags:["smith"], source:"transcript",
- stem:"A student asked whether a variant can be found before a reaction occurs. When is it better to genotype the patient before giving the drug?",
+ stem:"A genetic variant can be looked for before a drug reaction occurs. When is it better to genotype the patient before giving the drug?",
  options:[
   {t:"When the drug can quickly cause a lethal side effect", correct:true, why:"Then you genotype first; for some medications that is standard protocol, and you could be liable if you did not."},
   {t:"Never; genotyping is done only after a reaction occurs", correct:false, why:"Reacting after the fact is acceptable only when the side effect is not lethal."},
@@ -254,6 +254,8 @@ QUESTIONS.push(
   {t:"Central nervous system (CNS)", correct:true, why:"\"CNS pharmacogenomics is big\"."},
   {t:"Cardiology", correct:true, why:"\"Some cardio ... pharmacogenomics is big\"."},
   {t:"Infectious disease", correct:true, why:"\"doing more and more of pharmacogenomics\"."},
+  {t:"Toxicology", correct:false, why:"Toxicology was the topic wrapped up before pharmacogenomics began; it was not one of the areas she named."},
+  {t:"Diabetes care", correct:false, why:"Diabetes came up only as an example of a multigenic disease, not as an area where pharmacogenomics is big."},
   {t:"None yet; it is limited to research", correct:false, why:"She expects it in every area of pharmacy to some degree."}],
  teach:"She expects pharmacogenomics to be part of practice in every area of pharmacy to some degree. Oncology uses it all the time; it is big in CNS and cardiology, and infectious disease uses more and more of it. The field moves fast, so the course gives the basics and a way of thinking to keep learning after graduation.",
  quote:"Some people, especially if you like choose oncology, you'll be using pharmacogenomics all the time. CNS pharmacogenomics is big. Some cardio pharma pharma, I mean pharmacogenomics is big. Infectious disease, doing more and more of pharmacogenomics, OK?",
@@ -262,7 +264,7 @@ QUESTIONS.push(
 /* ---------------- The four target areas ---------------- */
 {id:"L17-018", lecture:"L17", prof:"Smith", tier:"new", topic:"L17", sub:"targets", skill:"recall", multi:true,
  concept:"four-target-areas", tags:["smith"], source:"both",
- stem:"Which are the target areas of pharmacogenomics that she said you need to know? Select all that apply.",
+ stem:"Which are the target areas of pharmacogenomics? Select all that apply.",
  options:[
   {t:"Metabolizing enzymes", correct:true, why:"The first area, where the most is known: P450s and other phase 1 and phase 2 enzymes."},
   {t:"Drug transporters", correct:true, why:"The second area; P-glycoprotein is the example."},
@@ -309,7 +311,7 @@ QUESTIONS.push(
   {t:"Volume of distribution", correct:false, why:"Not the aspect she named for gut P-gp."},
   {t:"Plasma protein binding", correct:false, why:"Not the aspect she named."},
   {t:"Hepatic metabolism", correct:false, why:"P-gp is a transporter, not a metabolizing enzyme."},
-  {t:"Renal filtration", correct:false, why:"A student offered excretion; she steered to bioavailability."}],
+  {t:"Renal filtration", correct:false, why:"Not the aspect she named; she settled on bioavailability."}],
  teach:"For an oral drug that is a P-gp substrate, gut P-gp limits how much drug is absorbed into the systemic circulation, which is the drug's bioavailability. That is why she thinks about bioavailability whenever an oral drug is a P-gp substrate.",
  quote:"What aspect of kinetics could be affected by the fact that that drug that you're taking orally is a substrate for what aspect of kinetics does that affect? I'm thinking absorption into the systemic circulation. ... About the term bioavailability. OK. So I think about bioavailability a lot when I think about oral medications that are substrates for PGP.",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘Introduction: Three Target Areas’ (p. 10); transcript 10/20"},
@@ -333,7 +335,7 @@ QUESTIONS.push(
  options:[
   {t:"Oncology", correct:true, why:"Her words: the biggest role right now is in oncology, along with some immunotherapy drugs."},
   {t:"Anesthesia", correct:false, why:"Not the area she named."},
-  {t:"Antimalarial prophylaxis", correct:false, why:"That is the primaquine history, a metabolizing-enzyme phenotype."},
+  {t:"Antimalarial prophylaxis", correct:false, why:"That is the primaquine history, a G6PD enzyme-activity phenotype."},
   {t:"Poison treatment", correct:false, why:"Not the area she named."},
   {t:"Vaccines", correct:false, why:"Not the area she named."}],
  teach:"A drug target is where a drug acts: a receptor or an enzyme it inhibits. Variants in drug targets explain another part of why people respond differently; the area has moved more slowly than metabolizing enzymes or transporters. An evidence-based pharmacogenomics guidance document on beta-adrenergic receptor variants was published two years ago, and oncology, where drugs are designed to hit a protein the cancer cell expresses, is where drug targets matter most now.",
@@ -344,14 +346,14 @@ QUESTIONS.push(
  concept:"immune-hla-target-area", tags:["smith"], source:"transcript",
  stem:"What is the newest target area of pharmacogenomics, and what kind of genetic variation does it involve?",
  options:[
-  {t:"Immune system; HLA (human leukocyte antigen) variants", correct:true, why:"People with certain HLA antigen variants respond badly, with severe adverse reactions, to certain drugs; the list grows every year."},
+  {t:"Immune system; HLA antigen variants", correct:true, why:"People with certain HLA antigen variants respond badly, with severe adverse reactions, to certain drugs; the list grows every year."},
   {t:"Drug transporters; variants in the ABCB1 gene for P-glycoprotein", correct:false, why:"Transporters were the second area, not the newest."},
   {t:"Metabolizing enzymes; variants in the P450s", correct:false, why:"The first and best-known area."},
   {t:"Drug targets; variants in beta-adrenergic receptors", correct:false, why:"Drug targets were the third area."},
   {t:"The immune system; variants in G6PD", correct:false, why:"G6PD is an enzyme from the primaquine history."}],
  teach:"The latest area that pharmacogenomics is being used to explain is the immune system. People with certain variants of their HLA antigens respond badly to certain drugs, with severe adverse drug reactions. Every year the list of drugs and related HLA variants in the literature gets a little longer; details come in later lectures.",
  quote:"For example, We have some medications that people uh with certain genetic variations in their HLA antigens, they are going to respond badly to these drugs if they have certain variants of their HLA antigens, OK?",
- note:"Not on the printed slide, which lists three areas; she added immune system targets aloud that morning. HLA is expanded here as human leukocyte antigen; she said only \"HLA antigens\".",
+ note:"Not on the printed slide, which lists three areas; she added immune system targets aloud that morning. She said only \"HLA antigens\"; the abbreviation is not expanded.",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘Introduction: Three Target Areas’ (p. 10); transcript 10/20"},
 
 /* ---------------- Impact on PK and PD ---------------- */
@@ -373,11 +375,11 @@ QUESTIONS.push(
  concept:"efficacy-toxicity-buckets", tags:["smith"], source:"transcript",
  stem:"Sort each genetic finding into the outcome bucket it was used to illustrate.",
  left:["A variant makes a drug-metabolizing enzyme less active", "A variant makes a drug's receptor respond poorly", "A patient's cancer does not express the protein the drug binds"],
- right:["Toxicity", "Efficacy", "Efficacy (individualized medicine)"],
+ right:["Toxicity", "Efficacy: a variant in the drug target", "Efficacy: individualized medicine"],
  pairs:[
   {l:"A variant makes a drug-metabolizing enzyme less active", r:"Toxicity", why:"The drug is not cleared, blood concentrations rise, and the patient has an adverse response; transporters can add to this bucket too."},
-  {l:"A variant makes a drug's receptor respond poorly", r:"Efficacy", why:"The drug cannot get its response from a receptor that does not work well."},
-  {l:"A patient's cancer does not express the protein the drug binds", r:"Efficacy (individualized medicine)", why:"Nothing for the drug to bind: it will not work."}],
+  {l:"A variant makes a drug's receptor respond poorly", r:"Efficacy: a variant in the drug target", why:"The drug cannot get its response from a receptor that does not work well."},
+  {l:"A patient's cancer does not express the protein the drug binds", r:"Efficacy: individualized medicine", why:"Nothing for the drug to bind: it will not work."}],
  teach:"She sorts clinical outcomes into two buckets. Toxicity: a less active metabolizing enzyme (or a transporter variant) raises drug concentrations, a PK effect. Efficacy: a drug-target variant, such as a poorly responding receptor, or a cancer that lacks the protein a targeted drug binds. Pharmacogenomics is used either to prevent toxicity or to ensure efficacy.",
  quote:"So I like to think of the outcomes as being put into the bucket of efficacy or put into the bucket of toxicity. ... So We always try to either prevent toxicity or ensure efficacy by using pharmacogenomics.",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘Impact of Pharmacogenomics on PK and PD’ (p. 11); transcript 10/20"},
@@ -473,6 +475,8 @@ QUESTIONS.push(
   {t:"An entire gene insertion or deletion", correct:true, why:"On the slide; a whole gene deletion can be polymorphic."},
   {t:"Extra copies of a gene", correct:true, why:"On the slide."},
   {t:"A sister chromatid exchange", correct:true, why:"Named aloud: if it happens in more than 1% of the population, it is a polymorphism."},
+  {t:"DNA methylation with no change in sequence", correct:false, why:"A polymorphism is a variation in DNA sequence; methylation is an epigenetic factor."},
+  {t:"A change in gene expression from diet or stress", correct:false, why:"Diet and stress are environmental factors that affect how genes are expressed; they do not vary the DNA sequence."},
   {t:"Only single nucleotide changes qualify", correct:false, why:"\"polymorphisms, I think most people feel are just snips. That's not true.\""}],
  teach:"SNPs are the easiest polymorphisms to talk about and the most common, but other kinds of variation are also polymorphisms: more than one nucleotide change, an entire gene insertion or deletion, extra copies of a gene, a sister chromatid exchange, and more. The label depends only on how often the variation occurs.",
  quote:"But there are other kinds of genetic variations that are also called polymorphisms, and they can include um more than one nucleotide change or an entire gene insertion, or an entire gene deletion or extra copies of a gene, and more. So, polymorphisms, I think most people feel are just snips. That's not true.",
@@ -526,7 +530,7 @@ QUESTIONS.push(
  options:[
   {t:"CYP2C19*2/*2", correct:true, why:"The gene, then the allele on each copy: both copies are *2."},
   {t:"CYP2C19*2", correct:false, why:"That names the allele, not the person's two copies."},
-  {t:"CYP2C19*1/*2", correct:false, why:"That is a person with one wild type and one *2 copy."},
+  {t:"CYP2C19*1/*2", correct:false, why:"That pairs one *1 copy with one *2 copy; this person has two *2 copies."},
   {t:"CYP2C19*4", correct:false, why:"The two star numbers are not added."},
   {t:"2C19-*2 homozygous", correct:false, why:"Not the written form."}],
  teach:"The written genotype gives the gene, then the allele on each of the two copies separated by a slash. A person homozygous for the *2 allele of CYP2C19 is written CYP2C19*2/*2. CYP2C19 is a P450 that does a lot of drug metabolism and has many genetic variations; it will come up again and again.",
@@ -549,7 +553,7 @@ QUESTIONS.push(
 
 {id:"L17-039", lecture:"L17", prof:"Smith", tier:"new", topic:"L17", sub:"genophen", skill:"term",
  concept:"functional-significance", tags:["smith"], source:"transcript",
- stem:"What is the functional significance of a genetic variation? (She asked the room to explain it as they would to a grandmother.)",
+ stem:"What is the functional significance of a genetic variation?",
  options:[
   {t:"How the change affects the function of the gene's protein", correct:true, why:"Her answer: how the mutation affects the protein, enzyme or transporter that the gene creates."},
   {t:"How often the change occurs in a population", correct:false, why:"That is the frequency, which separates polymorphisms from rare variants."},
@@ -616,7 +620,7 @@ QUESTIONS.push(
 
 {id:"L17-044", lecture:"L17", prof:"Smith", tier:"new", topic:"L17", sub:"genophen", skill:"recall",
  concept:"epigenetic-environment-factors", tags:["smith"], source:"transcript",
- stem:"Which of these are the internal factors she called epigenetic factors that affect how genes are expressed?",
+ stem:"Which internal factors that affect how genes are expressed are called epigenetic factors?",
  options:[
   {t:"DNA methylation and histones", correct:true, why:"Her two named epigenetic factors."},
   {t:"Diet and exercise", correct:false, why:"Environmental factors she named, but not the ones she called epigenetic."},
@@ -643,7 +647,7 @@ QUESTIONS.push(
 
 {id:"L17-046", lecture:"L17", prof:"Smith", tier:"new", topic:"L17", sub:"haplo", skill:"recall",
  concept:"haplotype-greater-than-chance-ld", tags:["smith"], source:"both",
- stem:"When a set of alleles co-exists at a higher frequency than random chance would predict, what is that called?",
+ stem:"A haplotype's alleles co-exist on one chromosome more often than random chance would predict. What is that excess co-occurrence called?",
  options:[
   {t:"Linkage disequilibrium", correct:true, why:"The slide's term; she put it as the haplotype's statistical significance, occurring more often than random chance."},
   {t:"Hardy-Weinberg equilibrium", correct:false, why:"That is about allele and genotype frequencies staying constant across generations."},
@@ -697,7 +701,7 @@ QUESTIONS.push(
 
 {id:"L17-050", lecture:"L17", prof:"Smith", tier:"new", topic:"L17", sub:"freq", skill:"apply",
  concept:"hwe-stress-scenario", tags:["smith"], source:"transcript",
- stem:"In her example, a study of this class finds a different drug response frequency than a study of all the school's past graduates, and something (she suggested stress) has pressured the class. What does that mean for the class data?",
+ stem:"A study of one pharmacy class finds a different drug response frequency than a study of all the school's past graduates; something, such as stress, has pressured the class. What does that mean for the class data?",
  options:[
   {t:"Not in Hardy-Weinberg equilibrium; not generalizable", correct:true, why:"Something pressured the class to respond differently, so its results cannot be applied to the general population."},
   {t:"In Hardy-Weinberg equilibrium; generalizable to everyone", correct:false, why:"A pressured population is out of equilibrium."},
@@ -736,9 +740,9 @@ QUESTIONS.push(
  quote:"So, for example, under pharmacogenomics terminology, I say define the terminology that I talk about. Every slide with a term on it, you need to know those terms, OK? There's no sense in me writing out define allele, define haplotype, OK?",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘Outline and Objectives’ (p. 2); transcript 10/20"},
 
-{id:"L17-053", lecture:"L17", prof:"Smith", tier:"new", topic:"L17", sub:"scope", skill:"recall",
+{id:"L17-053", lecture:"L17", prof:"Smith", tier:"new", topic:"L17", sub:"scope", skill:"recall", lowYield:true,
  concept:"exam3-vote-includes-pgx-day1", tags:["smith"], source:"transcript",
- stem:"At the end of the 10/20 session the class voted on the scope of Friday's exam. What was decided?",
+ stem:"What does Friday's Exam 3 cover?",
  options:[
   {t:"Toxicology plus the 10/20 pharmacogenomics material", correct:true, why:"The class voted for the exam to cover everything through what was done that day; she said that matches the syllabus."},
   {t:"Toxicology only, with pharmacogenomics moved to the next exam", correct:false, why:"That was the other choice; it lost."},
@@ -747,7 +751,7 @@ QUESTIONS.push(
   {t:"Toxicology without the poisoning table", correct:false, why:"She said the poisoning table is included either way."}],
  teach:"She offered two choices: the exam covers only toxicology, or it covers everything through what was done on 10/20. The poisoning table is on the exam either way. The class voted for the second, which is how the syllabus has it; polymorphism nomenclature starts 10/21 and is outside Friday's exam.",
  quote:"You have the choice of your exam covers only toxicology, or your exam covers everything through what we got done today. ... Who wants to have your exam cover this stuff that we covered in pharmacogenomics today? All right, that's what I do. That's what we'll do. That's how we have it on the syllabus.",
- note:"She had argued for including the material: \"we haven't gone through too much totally new stuff in today's lecture ... When we start tomorrow on polymorphism nomenclature, that's when it gets a little crazy.\" The material taught on 10/20 runs through the ‘Frequencies in Pharmacogenomics’ slide (PDF p. 21).",
+ note:"Low yield: an exam-logistics fact (the class vote), not course content. She had argued for including the material: \"we haven't gone through too much totally new stuff in today's lecture ... When we start tomorrow on polymorphism nomenclature, that's when it gets a little crazy.\" The material taught on 10/20 runs through the ‘Frequencies in Pharmacogenomics’ slide (PDF p. 21).",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘Outline and Objectives’ (p. 2); transcript 10/20"},
 
 /* ---------------- Polymorphism nomenclature (not reached on 10/20) ---------------- */
@@ -826,7 +830,7 @@ QUESTIONS.push(
 
 {id:"L17-059", lecture:"L17", prof:"Smith", tier:"new", topic:"L17", sub:"types", skill:"apply", lowYield:true,
  concept:"cyp2c19-star3-stop-codon", tags:["smith"], source:"slide",
- stem:"CYP2C19*3 changes G to A so that the codon for tryptophan becomes a stop codon. What is the functional effect?",
+ stem:"What is the functional effect of CYP2C19*3 (CYP2C19 636 G>A)?",
  options:[
   {t:"No enzyme activity", correct:true, why:"Protein synthesis terminates; the slide lists proton pump inhibitors (omeprazole, lansoprazole) as affected drugs."},
   {t:"Normal enzyme activity", correct:false, why:"A premature stop truncates the protein."},
