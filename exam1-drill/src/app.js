@@ -274,7 +274,7 @@ const BY_LECTURE2 = {L07: G2(1, 'the autonomic layout'), L07ref: ['ref', 'ref2-2
 const TERM_SUB2 = {g6: G2(1, 'the autonomic layout'), g7: G2(1, 'the autonomic layout'), g8: G2(4, 'muscarinic drugs'), g9: G2(6, 'α1 and α2 drugs'), g10: G2(9, 'nitric oxide'), g11: G2(10, 'RAAS')};
 const DL2_SUB = {nmj: G2(2, 'nicotinic receptors, NMJ'), chol: G2(4, 'muscarinic drugs'), adr: G2(6, 'α1 and α2 drugs'), no: G2(9, 'nitric oxide'), raas: G2(10, 'RAAS')};
 const DRUGS_LINK = ['drugs', 'drugs-top', 'All drugs: both lists in one table'];
-function linksFor(q) { const l = linksFor0(q); return q.lecture === 'DL1' || q.lecture === 'DL2' ? l.concat([DRUGS_LINK]) : l; }
+function linksFor(q) { let l = linksFor0(q); if (examOf(q) === 3) l = routeBySlide3(q, l); else if (examOf(q) === 1 || examOf(q) === 2) l = routeByWords12(q, l); return q.lecture === 'DL1' || q.lecture === 'DL2' ? l.concat([DRUGS_LINK]) : l; }
 /* Exam 3 (Dr. Smith): each section of the L13 bank maps to the guide section written from her objective. */
 const G3 = (n, t) => ['guide', 'guide3-' + n, 'Guide: ' + t];
 const SUB3 = {defs: [G3(1, 'definitions'), ['ref', 'ref3-1', 'Reference: the words'], ['tell', 'tell3-words', 'Tell apart: the words']], princ: [G3(2, 'the five principles'), ['ref', 'ref3-2', 'Reference: the five principles']], source: [G3(3, 'source')],
@@ -307,6 +307,76 @@ function termLinks3(q) {
     if (tally.size) return JSON.parse([...tally].map(([k, v]) => [k, v + 2 * inGuide(k)]).sort((a, b) => b[1] - a[1])[0][0]);
   }
   return BY_LECTURE3[L] || [G3('scope', 'what Exam 3 tests')];
+}
+/* Exam 3 routing. A guide section ends with the questions it explains ("Questions L16-010 to L16-013"), so a
+   lecture question goes to the section that lists it. Otherwise (terms, keys, quizzes) the question's cited slide
+   decides: the guide section or reference table naming that slide (one title containing the other, since the two
+   shorten titles differently), and for a term, the section naming the term. With no match the mapped link stays,
+   and no link is added that the map did not give. */
+let SEC3 = null;
+function sec3() {
+  if (SEC3) return SEC3;
+  const parse = (h, sel) => { const d = new DOMParser().parseFromString('<div>' + h + '</div>', 'text/html');
+    return [...d.querySelectorAll(sel)].map(a => { const text = mkRegion(a).map(r => r.textContent).join(' ');
+      const qids = new Set();
+      for (const m of text.matchAll(/Questions? ([A-Z0-9]+-\d+(?:(?:,| to|, and| and) [A-Z0-9]+-\d+)*)/g)) {
+        const parts = m[1].split(/,\s*(?:and\s+)?|\s+and\s+/);
+        parts.forEach(pt => { const r = pt.trim().match(/^([A-Z0-9]+)-(\d+)(?: to [A-Z0-9]+-(\d+))?$/); if (!r) return;
+          const a0 = +r[2], b0 = r[3] ? +r[3] : a0, w = r[2].length; for (let n = a0; n <= b0; n++) qids.add(r[1] + '-' + String(n).padStart(w, '0')); }); }
+      return {id: a.id, h: ((a.querySelector('h3') || a).textContent || '').trim().replace(/^\d+\.\s*/, ''), text, titles: [...text.matchAll(/‘([^’]{6,})’/g)].map(x => x[1]), qids}; }); };
+  SEC3 = {guide: typeof GUIDE3_HTML === 'undefined' ? [] : parse(GUIDE3_HTML, 'section[id^="guide3-"]'),
+          ref: typeof REFERENCE3_HTML === 'undefined' ? [] : parse(REFERENCE3_HTML, 'h3[id^="ref3-"]')};
+  return SEC3;
+}
+function routeBySlide3(q0, links) {
+  const q = q0.lecture === 'QZ3' && q0.dupOf ? (QUESTIONS.find(x => x.id === q0.dupOf) || q0) : q0;   // her quiz item routes as the lecture question it repeats
+  const cites = [...String(q.cite || '').matchAll(/‘([^’]+)’/g)].map(x => x[1].trim()).filter(t => t.length > 5);
+  const nm = termName(q).toLowerCase(), out = links.slice(), low = x => x.toLowerCase();
+  // the same title scores 3; a section title that ends the cited one (its specific part) 2; any other overlap 1
+  const slideHit = s => cites.reduce((n, c) => n + Math.max(0, ...s.titles.map(t => { const a = low(c), b = low(t); return a === b ? 3 : a.endsWith(b) || b.endsWith(a) ? 2 : a.includes(b) || b.includes(a) ? 1 : 0; })), 0);
+  for (const [v, word] of [['guide', 'Guide'], ['ref', 'Reference']]) {
+    const secs = sec3()[v], i = out.findIndex(l => l[0] === v); if (!secs.length || i < 0) continue;
+    const listed = secs.find(s => s.qids.has(q.id));
+    let best = listed;
+    if (!best) {
+      const score = s => slideHit(s) * 2 + (nm && low(s.text).includes(nm) ? 1 : 0);   // 3 or more: one specific title match
+      const cur = secs.find(s => s.id === out[i][1].split('@')[0]), top = secs.map(s => [s, score(s)]).sort((a, b) => b[1] - a[1])[0];
+      if (top && top[1] >= 3 && !(cur && score(cur) >= top[1])) best = top[0];
+    }
+    if (best && best.id !== out[i][1].split('@')[0]) out[i] = [v, best.id, word + ': ' + best.h];
+  }
+  return out;
+}
+/* Exams 1 and 2 have no slide list per section, so a link moves only when another section of the same exam's guide
+   or reference shares far more of the question's words (the term, the correct answer, the concept, the stem):
+   at least 2.5 times the mapped section's score and a clear match in its own right. The two catch-all reference
+   tables never take a link this way. */
+const SEC12 = {}, ROUTE12 = new Map(), CATCHALL = new Set(['ref2-1', 'ref2-3']);
+function sec12(ex, v) {
+  const k = ex + v; if (SEC12[k]) return SEC12[k];
+  // top-level consts are not window properties, so each page is named directly
+  const h = ex === 1 ? (v === 'guide' ? (typeof GUIDE_HTML === 'string' ? GUIDE_HTML : '') : (typeof REFERENCE_HTML === 'string' ? REFERENCE_HTML : ''))
+    : (v === 'guide' ? (typeof GUIDE2_HTML === 'string' ? GUIDE2_HTML : '') : (typeof REFERENCE2_HTML === 'string' ? REFERENCE2_HTML : ''));
+  const d = new DOMParser().parseFromString('<div>' + h + '</div>', 'text/html');
+  const re = new RegExp('^' + v + (ex === 1 ? '' : ex) + '-');
+  return (SEC12[k] = [...d.querySelectorAll('[id]')].filter(e => re.test(e.id) && (e.tagName === 'SECTION' || /^H[1-6]$/.test(e.tagName))).map(a => ({id: a.id,
+    h: ((a.querySelector('h3') || a).textContent || '').trim().replace(/^\d+\.\s*/, ''),
+    blocks: mkRegion(a).flatMap(r => r.matches('li, tr, dd, p, blockquote') ? [r] : [...r.querySelectorAll('li, tr, dd, p, blockquote')])
+      .filter(e => !e.querySelector('li, tr, p') && e.textContent.trim().length > 20 && !e.closest('figure, thead, .sub, small, .cite')).map(e => e.textContent.toLowerCase())})));
+}
+function routeByWords12(q, links) {
+  if (ROUTE12.has(q.id)) return ROUTE12.get(q.id);
+  const ex = examOf(q), m = new Map(), nm = termName(q).toLowerCase(), out = links.slice();
+  mkWords(q.stem, 1, m); mkWords(String(q.concept || '').replace(/-/g, ' '), 2, m);
+  (q.options || []).filter(o => o.correct).forEach(o => mkWords(o.t, 3, m)); (q.pairs || []).forEach(x => { mkWords(x.l, 2, m); mkWords(x.r, 2, m); });
+  const sc = sec => Math.max(0, ...sec.blocks.map(tx => { let s = 0; m.forEach((w, k) => { if (tx.includes(k)) s += w; }); if (nm && tx.includes(nm)) s += 6; return s / Math.sqrt(1 + tx.length / 300); }));
+  for (const [v, word] of [['guide', 'Guide'], ['ref', 'Reference']]) {
+    const i = out.findIndex(l => l[0] === v); if (i < 0) continue;
+    const secs = sec12(ex, v), cur = secs.find(s => s.id === out[i][1].split('@')[0]); if (!cur) continue;
+    const own = sc(cur), top = secs.filter(s => !CATCHALL.has(s.id)).map(s => [s, sc(s)]).sort((a, b) => b[1] - a[1])[0];
+    if (top && top[0].id !== cur.id && top[1] >= 6 && top[1] >= 2.5 * own) out[i] = [v, top[0].id, word + ': ' + top[0].h];
+  }
+  ROUTE12.set(q.id, out); return out;
 }
 function linksFor0(q) {
   if (examOf(q) === 3 && typeof GUIDE3_HTML !== 'undefined') {
