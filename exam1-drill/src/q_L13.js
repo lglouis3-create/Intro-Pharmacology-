@@ -231,7 +231,7 @@ QUESTIONS.push(
  options:[
   {t:"An allergic reaction", correct:true, why:"An allergy needs very little drug and has nothing to do with the blood concentration."},
   {t:"Toxicity at a different target than the one the curve describes", correct:true, why:"The curve shows one target; the compound may act elsewhere."},
-  {t:"Synergy with another drug, giving additive adverse effects", correct:true, why:"Another drug can add its adverse effects to C's, so the combination can cause harm even though C alone stays below its toxic blood concentration."},
+  {t:"An interaction with another drug that adds to its adverse effects", correct:true, why:"She said C 'could synergize with other drugs' and give 'additive adverse effects'. In the 10/13 terms these are two kinds of interaction (additive: the sum of the effects; synergistic: much more than the sum); either can cause harm while C alone stays below its toxic blood concentration."},
   {t:"Irritation or damage at a subcutaneous or intradermal injection site", correct:true, why:"Local damage at the injection site is an adverse response unrelated to kinetics."},
   {t:"Accumulation of C in the blood over the course of the dosing", correct:false, why:"C does not accumulate; that is the point of its short half-life."}],
  teach:"A compound that is kept below its toxic blood concentration can still cause harm by routes that have nothing to do with kinetics: an allergy, action at a different target, synergy with another drug, or irritation at the injection site. The healthcare provider still has to watch for these.",
@@ -263,7 +263,7 @@ QUESTIONS.push(
   {t:"Acetylcholinesterase", correct:false, why:"Acetylcholinesterase breaks down acetylcholine, not acetaminophen."}],
  teach:"Most of a normal daily dose of acetaminophen is handled by two families of phase 2 enzymes, the glucuronosyl transferases and the sulfotransferases, giving a glucuronide or a sulfate. When those enzymes cannot keep up, the dose spills into the phase 1 P450 route, CYP2E1, which makes NAPQI, the metabolite that is toxic to the liver. That spill-over is bioactivation.",
  quote:"it goes down through our P450s to do, you know, one of our phase one enzymes, right? Specifically P4452E1. We'll do this work to create that nasty NAQI, OK? And you guys already know that the NAQI metabolite is toxic to the liver",
- note:"On the slide and in speech she abbreviates the glucuronosyl transferases as \"GSTs\" (\"GST's ST's\"); in Katzung that abbreviation usually means glutathione S-transferase. Her meaning, from her words, is the glucuronyl (glucuronosyl) transferases.",
+ note:"In speech she calls the glucuronosyl transferases \"GSTs\" (\"GSTs and STs\"); the slide spells them out as glucuronosyl-transferases and sulfo-transferases. On the same slide the glutathione S-transferases, with glutathione, are the separate step that detoxifies NAPQI; that is the family the abbreviation GST normally names.",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slides ‘ADME: Metabolism’, ‘Example of Bioactivation’; transcript 10/9"},
 
 {id:"L13-019", lecture:"L13", prof:"Smith", tier:"new", topic:"L13", sub:"admet", skill:"recall",
@@ -466,7 +466,7 @@ QUESTIONS.push(
   {t:"Defining the threshold dose", correct:false, why:"The threshold is read from the curve; the NOAEL is the related no-effect level used in MOE."}],
  teach:"A pollutant or occupational exposure has no therapeutic dose, so the indices that compare toxic with effective doses (TI, MOS) do not fit. The margin of exposure instead divides the NOAEL, the dose at which test animals showed no adverse response, by the exposure actually received; the larger the ratio, the further the exposure is below that no-effect level. The slide marks MOE for repeated exposures and TI and MOS for single doses.",
  quote:"the margin of exposure, this is something that we use truly in toxicology with exposures to something that's not therapeutic, like to, you know, a pollutant, an occupational exposure, OK, and it's also for repeated exposures",
- note:"Taught 10/13. She says NOAEL as 'no observable adverse effect level' (the slide prints 'no observed') and described it as the dose given to the animals at which they had no bad response; she called it the lowest such dose.",
+ note:"Taught 10/13. She says NOAEL as 'no observable adverse effect level' (the slide prints 'no observed') and described it as the dose given to the animals at which they had no bad response; she called it the lowest such dose; the assigned reading defines it as the highest dose tested with no significant toxicity (Casarett and Doull ch. 2).",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Values Developed from Dose-Response’; transcript 10/13"},
 
 {id:"L13-034", lecture:"L13", prof:"Smith", tier:"new", topic:"L13", sub:"indices", skill:"recall",
@@ -517,7 +517,7 @@ QUESTIONS.push(
  options:[
   {t:"True", correct:true, why:"Her key. Compound C on the frequency figure never reaches the toxic blood concentration, yet she listed allergy, another target, synergy with other drugs and injection-site damage as ways it can still harm."},
   {t:"False", correct:false, why:"Her key is True: clearance between doses rules out accumulation, not every adverse response."}],
- teach:"Clearing between exposures only stops a compound from building up to a toxic blood concentration. Harm that does not depend on blood concentration can still occur with repeated use: an allergy needs very little drug, the compound may act at a different target from the one the curve describes, it can synergize with other drugs for additive adverse effects, and an injection can damage the injection site. So compound C is \"not necessarily all good to go.\"",
+ teach:"Clearing between exposures only stops a compound from building up to a toxic blood concentration. Harm that does not depend on blood concentration can still occur with repeated use: an allergy needs very little drug, the compound may act at a different target from the one the curve describes, it can interact with other drugs (she said \"synergize\") and add to their adverse effects, and an injection can damage the injection site. So compound C is \"not necessarily all good to go.\"",
  note:"Verbatim from her practice quiz; the key is the one she released. Same point as L13-016.",
  cite:"Smith_Practice_Quiz_1_-_Principles_of_Toxicology.pdf question 1"},
 

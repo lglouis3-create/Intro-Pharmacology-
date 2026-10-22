@@ -109,7 +109,7 @@ QUESTIONS.push(
  options:[
   {t:"An oxygen gradient across the zones and uneven expression of metabolizing enzymes", correct:true, why:"Her two reasons: oxygen is high in zone 1 and low in zone 3, and enzymes such as CYP2E1 (zone 3) and many phase 2 enzymes (zone 1) are not spread evenly."},
   {t:"The P450s are expressed evenly in every zone, and zone 3 receives the most oxygen", correct:false, why:"Both halves are what she ruled out: the P450s are not homogeneously expressed, and blood reaching zone 3 is relatively hypoxic."},
-  {t:"Zone 2 has few Kupffer cells, and the liver is a large organ that holds more drug", correct:false, why:"Both ruled out: Kupffer cells go all over the liver, and being a large organ has nothing to do with its susceptibility."},
+  {t:"Zone 2 has few Kupffer cells, and the liver is a large organ that holds more drug", correct:false, why:"Both ruled out: Kupffer cells are found throughout the liver, not just in one zone, and being a large organ has nothing to do with its susceptibility."},
   {t:"Zone 1 drains into the central vein, and phase 2 enzymes are found only in zone 3", correct:false, why:"Zone 3 is closest to the central vein, where blood leaves; many phase 2 enzymes are in zone 1."}],
  teach:"Quiz 2, question 8, a short-answer item. Blood enters zone 1 relatively oxygenated and leaves zone 3 by the central vein relatively hypoxic, and if an enzyme in zone 1 needs oxygen, the high oxygen there helps it make a hepatotoxic metabolite. Metabolizing enzymes are not homogeneously expressed: many phase 2 enzymes are in zone 1 and CYP2E1 is higher in zone 3, which is why an acetaminophen overdose kills hepatocytes in zone 3.",
  quote:"So there's a gradient in the amount of oxygen as it flows from those vessels coming into the liver and leaving the liver, OK? ... So oxygen gradients and non-homogeneous expression of our metabolizing enzymes contributes to where you see liver damage for different hepatotoxins.",
@@ -148,7 +148,7 @@ QUESTIONS.push(
   {t:"HIET", correct:true, why:"Recorded answer. HIET (hyperinsulinemia–euglycemia therapy, as Marraffa expands it) is in her key's beta-blocker antidote list, and the calcium channel blocker row reads \"Same as above for BB OD\"."},
   {t:"ethanol", correct:false, why:"Ethanol is the toxic alcohol antidote: it inhibits alcohol dehydrogenase."},
   {t:"glutathione", correct:false, why:"Glutathione belongs to acetaminophen: N-acetylcysteine replenishes it."},
-  {t:"sodium thiosulfate", correct:false, why:"Thiosulfate belongs to cyanide: it binds the cyanide, which is then renally eliminated."}],
+  {t:"sodium thiosulfate", correct:false, why:"Thiosulfate belongs to cyanide: given as sodium thiosulfate, it supplies the sulfur the body's rhodanese uses to clear cyanide in the urine."}],
  teach:"Quiz 3, question 2. Her key lists six antidotes for beta-blocker overdose (atropine, calcium, glucagon, HIET, vasopressors and IV 20% fatty acid emulsion) and gives calcium channel blockers the same list. The extended-release formulation changes how long an asymptomatic patient must be watched (18 hours, 24 for verapamil), not the antidote. For HIET her key says only that the mechanisms of its inotropic effects are not understood.",
  note:"Quiz 3, question 2, verbatim. Keyed on the recorded answer (A), which agrees with her table key: HIET is listed for beta blockers, and the calcium channel blocker antidote and mechanism cells read \"Same as above for BB OD\". She did not say HIET or insulin in the 10/13, 10/14 or 10/19 transcripts, and her key does not separate extended-release from immediate-release overdose. Her key does not expand HIET; Marraffa 2012, the article the table assignment names, writes \"hyperinsulinemia–euglycemia therapy (HIET)\" and says the mechanism of its effectiveness \"has not been clearly delineated\". Same point as TBL3-026 and TBL3-027.",
  cite:"Smith_Quizzes_1-3_QA.pdf pp. 5–6, Quiz 3 question 2; PoisoningTreatmentTable2026KEY.pdf rows ‘Beta blockers’, ‘Calcium channel blockers’, ‘Toxic alcohols’, ‘Acetaminophen’; Marraffa+AJHSP+2012+Antidotes.pdf; transcripts 10/19 (thiosulfate, observation windows) and 10/20 (verapamil)"},
@@ -157,7 +157,7 @@ QUESTIONS.push(
  concept:"tbl-bb-glucagon", tags:["smith","quiz"], source:"slide",
  stem:"What is the mechanism of action of glucagon when using it to treat a calcium channel blocker overdose?",
  options:[
-  {t:"it is a cofactor for rhodenase activity", correct:false, why:"That points to the cyanide treatment, where rhodanese helps thiosulfate pull cyanide off methemoglobin; it has nothing to do with glucagon."},
+  {t:"it is a cofactor for rhodenase activity", correct:false, why:"That points to the cyanide treatment, where sodium thiosulfate supplies sulfur for the body's own rhodanese; it has nothing to do with glucagon."},
   {t:"it increases intracellular cAMP levels", correct:true, why:"Recorded answer. Her key: glucagon increases cardiac cellular cAMP to increase heart rate."},
   {t:"it conjugates the calcium channel blocker", correct:false, why:"Glucagon does not bind the drug; binding the poison is inactivation, as digoxin immune Fab binds digoxin."},
   {t:"it inhibits alcohol dehydrogenase", correct:false, why:"That is ethanol or fomepizole for methanol and ethylene glycol."}],

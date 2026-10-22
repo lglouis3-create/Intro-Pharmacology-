@@ -1666,7 +1666,7 @@ const TERMS = [
  cite:'Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Values Developed from Dose-Response’',
  src:'slide'},
 {id:'noael', term:'NOAEL (no observable adverse effect level)', lecture:'L14', group:'Toxic responses',
- def:'The dose from animal exposure studies of a compound at which the exposed animals had no adverse response. It is the numerator of the margin of exposure, over the calculated chronic exposure of the human or wild animal.',
+ def:'The highest dose tested in animal exposure studies of a compound at which the exposed animals had no adverse response (Casarett and Doull ch. 2; in class she once said "the lowest dose"). It is the numerator of the margin of exposure, over the calculated chronic exposure of the human or wild animal.',
  gist:'The animal-study dose with no bad effect; the top of the margin of exposure.',
  scene:'A risk assessor takes the animal dose that caused no adverse effect and divides it by the total exposure estimated for people living near a polluted site.',
  sceneQ:"To judge a polluted site, a risk assessor divides a value from animal studies by the chronic exposure estimated for the people living nearby. What is that animal-study value, the dose at which the exposed animals had no bad response?",
@@ -1827,7 +1827,7 @@ const TERMS = [
  src:'both'},
 
 {id:'myelinopathy', term:'Myelinopathy', lecture:'L15', group:'Toxic responses',
- def:'The pattern of neurotoxic injury in which myelin or the myelinating cells (Schwann cells) are damaged, slowing conduction. The classic symptom is tingling of the hands and feet; remyelination is possible but slow.',
+ def:'The pattern of neurotoxic injury in which myelin or the myelinating cells (Schwann cells in the PNS, oligodendrocytes in the CNS) are damaged, slowing conduction. The classic symptom is tingling of the hands and feet; remyelination is possible but slow.',
  gist:'Myelin damaged; conduction slows; tingling.',
  scene:'A second, higher-dose course of metronidazole produces tingling in just the hands and feet; stopping the drug resolves it.',
  confuse:['axonopathy','neuronopathy'],
@@ -1854,7 +1854,7 @@ const TERMS = [
  src:'both'},
 
 {id:'kupffer-cells', term:'Kupffer cells', lecture:'L15', group:'Toxic responses',
- def:'The white blood cells resident in the liver. They clean up dead tissue and fight pathogens, and in doing so release inflammatory cytokines and reactive oxygen species, which add to the liver\'s susceptibility to injury. They move throughout the liver.',
+ def:'The white blood cells resident in the liver. They clean up dead tissue and fight pathogens, and in doing so release inflammatory cytokines and reactive oxygen species, which add to the liver\'s susceptibility to injury. They are found throughout the liver, not just in one zone.',
  gist:'The liver\'s own immune cells; their cleanup adds inflammation.',
  scene:'Hepatocytes die after an exposure; Kupffer cells chew up the debris and release cytokines and reactive oxygen that extend the damage.',
  sceneQ:"Hepatocytes die after an exposure. What is the liver's resident type of white blood cell called, the one whose cleanup of the debris releases inflammatory cytokines and reactive oxygen species that add to the injury?",
@@ -1894,7 +1894,7 @@ const TERMS = [
  src:'both'},
 
 {id:'interstitial-nephritis', term:'Interstitial nephritis', lecture:'L15', group:'Toxic responses',
- def:'One of the six mechanisms of chemically induced acute renal failure, an inflammatory injury that can be an allergic response. Antibiotics, NSAIDs and diuretics are on the table; she adds the proton pump inhibitors, especially in patients with an aspirin allergy.',
+ def:'One of the seven mechanisms of chemically induced acute renal failure, an inflammatory injury that can be an allergic response. Antibiotics, NSAIDs and diuretics are on the table; she adds the proton pump inhibitors, especially in patients with an aspirin allergy.',
  gist:'Inflammatory, often allergic kidney injury; NSAIDs and PPIs.',
  scene:'An aspirin-allergic older man takes OTC omeprazole for months; his serum creatinine climbs and the PPI is stopped for good.',
  sceneQ:"A geriatric patient with an aspirin allergy takes OTC omeprazole for several months, and his kidneys are injured by an allergic, inflammatory response to the PPI. Which kind of renal damage is this?",
@@ -1923,7 +1923,7 @@ const TERMS = [
  src:'both'},
 
 {id:'enterohepatic-recirculation', term:'Enterohepatic recirculation', lecture:'L15', group:'Treating poisonings',
- def:'A drug goes to the liver, is moved into the bile, re-enters the small intestine and returns to the liver (also called gastric recycling). An overdose of such a drug, if it also sticks to charcoal, can be treated with multiple-dose activated charcoal, which catches the drug as it comes back into the gut.',
+ def:'A drug goes to the liver, is moved into the bile, re-enters the small intestine and returns to the liver (also called enterohepatic recycling). An overdose of such a drug, if it also sticks to charcoal, can be treated with multiple-dose activated charcoal, which catches the drug as it comes back into the gut.',
  gist:'Liver, bile, intestine, liver again; the basis for multiple-dose charcoal.',
  scene:'A second dose of charcoal hours after ingestion captures drug being re-secreted into the small intestine through the bile.',
  confuse:['activated-charcoal'],
@@ -1941,7 +1941,7 @@ const TERMS = [
  src:'both'},
 
 {id:'whole-bowel-irrigation', term:'Whole bowel irrigation', lecture:'L15', group:'Treating poisonings',
- def:'Flushing the entire gut by drinking a solution such as polyethylene glycol or magnesium citrate until it passes through, the same procedure as a colonoscopy prep. It requires an open gut with no ileus or blockage, is messy, and is one of the absorption-prevention methods experienced emergency teams will still try for a massive ingestion.',
+ def:'Flushing the entire gut by drinking a polyethylene glycol electrolyte solution (GoLYTELY) until it passes through, the same procedure as a colonoscopy prep. It requires an open gut with no ileus or blockage, is messy, and is one of the absorption-prevention methods experienced emergency teams will still try for a massive ingestion.',
  gist:'Colonoscopy prep used to flush a poison through.',
  scene:'After a large ingestion of extended-release tablets, the patient drinks the prep solution until the gut runs clear.',
  confuse:['enterohepatic-recirculation', 'activated-charcoal', 'bioactivation'],
@@ -2230,7 +2230,7 @@ const TERMS = [
  src:'both'},
 
 {id:'allele-genotype-frequency', term:'Allele frequency and genotype frequency', lecture:'L17', group:'Pharmacogenomics',
- def:'Allele frequency: the relative frequency of an allele in a population. Genotype frequency: the relative frequency of a genotype in a population. Both are usually expressed as a proportion or percentage; the allele frequencies of the wild type and variant together give the genotype frequencies.',
+ def:'Allele frequency: the relative frequency of an allele in a population. Genotype frequency: the relative frequency of a genotype in a population. Both are usually expressed as a proportion or percentage. Because alleles make up a genotype, the two are related: she will return to how allele frequencies relate to genotype frequencies with worked examples.',
  gist:'How common an allele is; how common an allele pair is.',
  scene:'A study reports what percentage of a population carries a variant allele and what percentage is homozygous for it.',
  sceneQ:"A study reports how often the *2 version of CYP2C19 occurs in a population and how often people in it are *2/*2. Which terms describe these two numbers?",

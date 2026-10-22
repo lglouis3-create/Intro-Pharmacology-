@@ -7,12 +7,12 @@ QUESTIONS.push(
  concept:"why-mdac-enterohepatic", tags:["smith","why"], source:"both",
  stem:"Why is multiple-dose activated charcoal tried for a poison that undergoes enterohepatic recirculation?",
  options:[
-  {t:"The poison returns to the small intestine, where a later dose can catch it", correct:true, why:"Her answer, after Anna's: the next dose, and maybe a third, is given while the poison is being re-injected into the small intestine with the bile, so the charcoal grabs a little more and it is fecally eliminated."},
+  {t:"The poison returns to the small intestine, where a later dose can catch it", correct:true, why:"Her answer, after Anna's: the next dose, and maybe a third, is given while the poison is coming back into the small intestine with the bile, so the charcoal grabs a little more and it is fecally eliminated."},
   {t:"The first dose saturates, so each later dose binds the same poison more tightly", correct:false, why:"Treats the problem as charcoal capacity; the doses are about timing, meeting poison that comes back into the small intestine with the bile after the first dose has moved on."},
   {t:"Repeated doses bind the poison in the blood and carry it to the kidney", correct:false, why:"Charcoal works in the gut, and the poison it grabs is fecally eliminated, not renally."},
   {t:"Repeated doses make the urine basic so the poison is trapped there", correct:false, why:"That is ion trapping with intravenous sodium bicarbonate, a different kinetic treatment."},
   {t:"Repeated doses speed gastric emptying so the poison passes out sooner", correct:false, why:"Pushing contents through the gut is whole bowel irrigation, not charcoal."}],
- teach:"Some compounds are absorbed from the gut, go to the liver, are put into the bile and are re-injected into the small intestine (enterohepatic recirculation). If such a compound is grabbed by charcoal, giving a second and third dose while it is back in the small intestine lets the charcoal capture more of it. The charcoal-bound poison then leaves in the feces. The slide adds that multiple-dose charcoal can be used, when appropriate, once a toxin has been absorbed.",
+ teach:"Some compounds are absorbed from the gut, go to the liver, are secreted into the bile and so return to the small intestine (enterohepatic recirculation). If such a compound is grabbed by charcoal, giving a second and third dose while it is back in the small intestine lets the charcoal capture more of it. The charcoal-bound poison then leaves in the feces. The slide adds that multiple-dose charcoal can be used, when appropriate, once a toxin has been absorbed.",
  quote:"If they're a compound that will do that recirculation and is grabbed by charcoal, you can go ahead and try the multiple dose activated charcoal because you try to give the next dose, and maybe a third dose while the medication is, or the poison is being re-injected back into the small intestine. Hopefully, you can grab a little more, right?",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Toxicokinetic-Based Treatment Prevent Absorption’ (multiple-dose activated charcoal); transcript 10/19"},
 
@@ -130,7 +130,7 @@ QUESTIONS.push(
   {t:"High methemoglobin, which cannot carry oxygen", correct:true, why:"Her answer: they still have high levels of methemoglobin; blood cannot carry oxygen when the hemoglobin is in that form, so methylene blue is given to convert it back."},
   {t:"Thiosulfate-cyanide building up in the blood", correct:false, why:"The thiosulfate-cyanide product is renally eliminated."},
   {t:"Cytochrome c oxidase still blocked by cyanide", correct:false, why:"Methemoglobin already pulled the cyanide off the enzyme."},
-  {t:"Too much rhodanese oxidizing the hemoglobin", correct:false, why:"Amyl nitrite made the methemoglobin; rhodanese helps thiosulfate bind cyanide."},
+  {t:"Too much rhodanese oxidizing the hemoglobin", correct:false, why:"Amyl nitrite made the methemoglobin; rhodanese is the body's enzyme that moves cyanide onto sulfur from thiosulfate."},
   {t:"Free cyanide released from the thiosulfate", correct:false, why:"Assumes the thiosulfate-cyanide product falls apart; it leaves the body in the urine."}],
  teach:"The treatment deliberately made methemoglobin, which does not carry oxygen. Once the cyanide is cleared, the patient still has high methemoglobin. Methylene blue, a reducing agent, converts methemoglobin back to hemoglobin so the blood can carry oxygen again.",
  quote:"What problem can you still see in this patient? Uh, right here. Bless you, bless you. They still have high levels of methemoglobin, right? And that's not good either. Your blood can't carry oxygen if the hemoglobin in red blood cells is in the form of methemoglobin.",
@@ -266,7 +266,7 @@ QUESTIONS.push(
   {t:"It dissolves crystals that have already formed", correct:false, why:"Blocking the enzyme prevents new metabolites; dissolving crystals was not described."},
   {t:"It traps ethylene glycol in the urine by raising the urine pH", correct:false, why:"Ion trapping with sodium bicarbonate is the salicylate treatment."},
   {t:"It antagonizes ethylene glycol at its receptor", correct:false, why:"The toxicity comes from metabolites, and the antidotes act on the enzyme that makes them."}],
- teach:"Alcohol dehydrogenase converts ethylene glycol to glycoaldehyde, and further steps lead to oxalic acid. Oxalic acid can form small crystals in the microvasculature of organs such as the kidneys and liver, blocking blood flow. Ethanol or fomepizole inhibits alcohol dehydrogenase, so those active metabolites are not made.",
+ teach:"Alcohol dehydrogenase converts ethylene glycol to glycoaldehyde, and further steps lead to oxalic acid. Oxalic acid can form small crystals in the microvasculature, blocking blood flow; renal toxicity is common. Ethanol or fomepizole inhibits alcohol dehydrogenase, so those active metabolites are not made.",
  quote:"When you have small microvascular, um, vascularization of these organs, sometimes the oxalic acid can form into little crystals and blocks blood flow and damages those organs.",
  cite:"PoisoningTreatmentTable2026KEY.pdf row ‘Toxic alcohols’; transcript 10/19"},
 

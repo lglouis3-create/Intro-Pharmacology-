@@ -122,7 +122,7 @@ const REFERENCE3_HTML = `
 
 <h3 id="ref3-l14-5">14. On-target and off-target examples</h3>
 <table class="reftab"><thead><tr><th>Label</th><th>Drug</th><th>Desired effect</th><th>Undesired effect</th><th>Source</th></tr></thead><tbody>
-<tr><td>On-target, right tissue</td><td>Any drug</td><td>—</td><td>Dose at the receptor too high: dosing error, deliberate overdose, slowed clearance (liver disease), receptor down-regulation with the dose unchanged</td><td>TR ‘On-Target Examples’; T 10/13</td></tr>
+<tr><td>On-target, right tissue</td><td>Any drug</td><td>—</td><td>Dose at the receptor too high: dosing error, deliberate overdose, slowed clearance (liver disease), a change in receptor number</td><td>TR ‘On-Target Examples’; T 10/13</td></tr>
 <tr><td>On-target, wrong tissue</td><td>Diphenhydramine (Benadryl)</td><td>Peripheral histamine receptors: allergy relief</td><td>Brain histamine receptors: drowsiness (newer antihistamines do not cross the blood-brain barrier)</td><td>TR ‘On-Target Examples’; T 10/13</td></tr>
 <tr><td>Off-target, unintended receptor</td><td>Terfenadine (Seldane, withdrawn)</td><td>Peripheral H1 antagonism</td><td>Cardiac potassium channel inhibition, arrhythmias; worse with grapefruit</td><td>TR ‘Off-Target Examples’; T 10/13</td></tr>
 <tr><td>Off-target, enantiomer</td><td>Racemic thalidomide</td><td>R-enantiomer: anti-nausea</td><td>S-enantiomer: potent teratogen (used today in oncology)</td><td>TR ‘Off-Target Examples’; T 10/13</td></tr>
@@ -133,7 +133,7 @@ const REFERENCE3_HTML = `
 <table class="reftab"><thead><tr><th>Endpoint</th><th>Why non-organ specific</th><th>Her examples</th><th>Source</th></tr></thead><tbody>
 <tr><td>Fibrosis</td><td>The same collagen and extracellular matrix pathology in any organ</td><td>Pulmonary: amiodarone, bleomycin, paraquat. Liver: amiodarone, ethanol (cirrhosis)</td><td>TR ‘Non-Organ Specific: Fibrosis’; T 10/13</td></tr>
 <tr><td>Genotoxicity</td><td>DNA damage in somatic or germ cells; mutagenicity = transmissible (germ cells)</td><td>Results: cancer, teratogenesis, genetically based disorders</td><td>TR ‘Non-Organ Specific: Genotoxicity’; T 10/13</td></tr>
-<tr><td>Cancer</td><td>The same cellular mechanism (mutation) can cause cancers in different organs</td><td>Incidence: lung and bronchial highest in both sexes, then prostate (men), breast (women). Multistage model: more than one mutation (skipped)</td><td>TR ‘Non-Specific: Cancer’; T 10/13</td></tr>
+<tr><td>Cancer</td><td>The same cellular mechanism (mutation) can cause cancers in different organs</td><td>Her table (American Cancer Society, 2009): lung and bronchus first in both sexes, then prostate (men), breast (women). Multistage model: more than one mutation (skipped)</td><td>TR ‘Non-Specific: Cancer’; T 10/13</td></tr>
 <tr><td>Teratogenesis</td><td>Time of exposure in gestation sets the type of defect</td><td>Retinoids in hamsters: microphthalmia, exencephaly, spina bifida, cleft palate, forelimb shortening, tail. Cleft palate from methanol (day 7), TCDD (day 11), 2,4,5-trichloroacetic acid (day 12), dexamethasone (day 13). Dose: the mother must get enough to pass to the baby. FDA labeling now adds fertility (male included) and lactation</td><td>TR ‘Teratogenesis’ slides; T 10/13</td></tr>
 </tbody></table>
 
@@ -190,7 +190,7 @@ const REFERENCE3_HTML = `
 <tr><td>Zone 2</td><td>Intermediate</td><td>—</td><td>—</td><td>—</td></tr>
 <tr><td>Zone 3</td><td>Closest to the central vein (outflow)</td><td>Relatively hypoxic</td><td>CYP2E1 higher than in zone 1</td><td>Hepatocyte death after acetaminophen overdose</td></tr>
 </tbody></table>
-<p class="sub">Two reasons for site-specific liver injury: the oxygen gradient and non-homogeneous enzyme expression. Kupffer cells are everywhere. Toxic Responses ‘Reasons for Site-Specific Hepatotoxicity’; T 10/14.</p>
+<p class="sub">Two reasons for site-specific liver injury: the oxygen gradient and non-homogeneous enzyme expression. Kupffer cells are found throughout the liver, not just in one zone. Toxic Responses ‘Reasons for Site-Specific Hepatotoxicity’; T 10/14.</p>
 
 <h3 id="ref3-l15-4">19. Nephrotoxicity</h3>
 <table class="reftab"><thead><tr><th>Why the kidneys are susceptible</th><th>Source</th></tr></thead><tbody>
@@ -238,7 +238,7 @@ const REFERENCE3_HTML = `
 <table class="reftab"><thead><tr><th>Method</th><th>What it is</th><th>Risk or limit</th><th>Status</th></tr></thead><tbody>
 <tr><td>Emesis (ipecac)</td><td>Induced vomiting</td><td>Aspiration is the biggest risk</td><td>No longer sold in the US or used in hospitals</td></tr>
 <tr><td>Gastric lavage</td><td>Tube to the stomach; fluid pumped in and sucked out</td><td>Tube or fluid into the lungs; big tablets will not come back; esophageal rupture or stomach problems</td><td>Experienced ERs might try it for a massive ingestion</td></tr>
-<tr><td>Whole bowel irrigation</td><td>Colonoscopy prep (polyethylene glycol, magnesium citrate) until it passes through</td><td>Needs an open gut (no ileus or blockage); messy</td><td>Experienced ERs will probably try it</td></tr>
+<tr><td>Whole bowel irrigation</td><td>Colonoscopy prep (polyethylene glycol electrolyte solution, GoLYTELY) until it passes through</td><td>Needs an open gut (no ileus or blockage); messy</td><td>Experienced ERs will probably try it</td></tr>
 <tr><td>Single-dose activated charcoal</td><td>Purified fine-particle charcoal slurry; bound drug leaves in feces</td><td>Vomiting and aspiration; only certain compounds stick; within 1 to 2 hours</td><td>Used when the compound sticks</td></tr>
 <tr><td>Multiple-dose activated charcoal</td><td>Repeated doses</td><td>Only for compounds that stick to charcoal and undergo enterohepatic recirculation; can be used after absorption</td><td>Limited use</td></tr>
 </tbody></table>
@@ -254,7 +254,7 @@ const REFERENCE3_HTML = `
 <h3 id="ref3-l16-1">24. Toxicokinetic treatments II: inhibit bioactivation, enhance metabolism, enhance elimination</h3>
 <table class="reftab"><thead><tr><th>Method</th><th>Example</th><th>What is given and what it does</th><th>Source</th></tr></thead><tbody>
 <tr><td>Inhibit bioactivation (rarely possible)</td><td>Methanol: alcohol dehydrogenase, formaldehyde, formaldehyde dehydrogenase, formic acid (retina; loss of sight)</td><td>Ethanol (outcompetes) or fomepizole (binds and inhibits) alcohol dehydrogenase</td><td>‘methanol and ethylene glycol examples’; T 10/19</td></tr>
-<tr><td>Inhibit bioactivation</td><td>Ethylene glycol (antifreeze; sweet): alcohol dehydrogenase, glycoaldehyde, aldehyde dehydrogenase, glycolic acid, oxalic acid (microcrystals block small vessels in kidneys, liver)</td><td>Same: ethanol or fomepizole</td><td>‘methanol and ethylene glycol examples’; T 10/19</td></tr>
+<tr><td>Inhibit bioactivation</td><td>Ethylene glycol (antifreeze; sweet): alcohol dehydrogenase, glycoaldehyde, aldehyde dehydrogenase, glycolic acid, oxalic acid (microcrystals in small vessels; renal toxicity common)</td><td>Same: ethanol or fomepizole</td><td>‘methanol and ethylene glycol examples’; T 10/19</td></tr>
 <tr><td>Enhance metabolism (cofactors; induction takes days)</td><td>Cyanide (target: cytochrome c oxidase; ATP production stops)</td><td>Amyl nitrite oxidizes hemoglobin to methemoglobin; methemoglobin pulls cyanide off the enzyme; the body's rhodanese moves the cyanide onto sulfur from given sodium thiosulfate, forming thiocyanate for renal elimination (the cofactor step); methylene blue reduces methemoglobin back to hemoglobin</td><td>‘Cyanide example’ (Golan figure); T 10/19</td></tr>
 <tr><td>Enhance metabolism</td><td>Acetaminophen (NAPQI, a free radical, damages the liver)</td><td>N-acetylcysteine supplies ingredients for glutathione, which conjugates NAPQI with the GST enzymes; stinks of sulfur; usually IV in the US, oral possible</td><td>‘Acetaminophen Example’; T 10/19</td></tr>
 <tr><td>Enhance renal elimination (ion trapping)</td><td>Salicylates, phenobarbital (mildly acidic; filtered, then reabsorbed)</td><td>IV sodium bicarbonate makes the urine more basic; the acid becomes negatively charged and cannot be reabsorbed by the transporters; not done for weak bases (acidifying blood is dangerous; cranberry juice too weak and slow)</td><td>‘Enhance Renal Elimination’; T 10/19</td></tr>
@@ -357,7 +357,7 @@ const REFERENCE3_HTML = `
 <tr><td>Functional significance</td><td>How a genetic variation affects the function of the gene's product</td><td>Her key phrase</td><td>‘Complications of Genotype vs phenotype’ (p. 18); T 10/20</td></tr>
 <tr><td>Haplotype</td><td>A set of alleles at multiple loci of a gene that coexist on the same chromosome</td><td>Occurs more often than random chance; figure: AGT, GTA, AGA</td><td>‘Haplotype’ (p. 19), ‘Illustration of Haplotype’ (p. 20); T 10/20</td></tr>
 <tr><td>Linkage disequilibrium</td><td>A set of alleles co-existing at a higher frequency than random chance predicts</td><td>On the slide; not said aloud</td><td>‘Haplotype’ (p. 19)</td></tr>
-<tr><td>Allele frequency / genotype frequency</td><td>Relative frequency of an allele / of a genotype in a population (proportion or percentage)</td><td>Allele frequencies together give the genotype frequency</td><td>‘Frequencies in Pharmacogenomics’ (p. 21); T 10/20</td></tr>
+<tr><td>Allele frequency / genotype frequency</td><td>Relative frequency of an allele / of a genotype in a population (proportion or percentage)</td><td>Alleles make up genotypes; worked examples later</td><td>‘Frequencies in Pharmacogenomics’ (p. 21); T 10/20</td></tr>
 <tr><td>Hardy-Weinberg equilibrium</td><td>Allele and genotype frequencies stay constant across generations unless specific influences are introduced</td><td>Out of equilibrium: the sample is not generalizable</td><td>‘Frequencies in Pharmacogenomics’ (p. 21); T 10/20</td></tr>
 </tbody></table>
 <h3 id="ref3-l17-3">30. Nomenclature and variant types on the slides not yet taught (low yield; start 10/21)</h3>
