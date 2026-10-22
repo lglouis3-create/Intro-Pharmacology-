@@ -107,7 +107,7 @@ for t in TERMS:
         parts = [gist_of(t)]
         if t.get('hook'):
             parts.append(t['hook'])
-        if t.get('scene') and not scene_in_stem:
+        if t.get('scene') and not scene_in_stem and not t.get('sceneQ') and not t.get('dropScene'):
             parts.append('Scene: ' + t['scene'])
         if len(parts) == 1:
             kf = key_feature(t)
@@ -120,14 +120,17 @@ for t in TERMS:
         return q
     first = None
     # 1. a situation -> the term (the term named nowhere in the stem)
-    if t.get('scene'):
+    # `sceneQ` replaces the generic stem with one written the way the professor asks; `dropScene` skips form 1
+    if t.get('scene') and not t.get('dropScene'):
+        if t.get('sceneQ') and names_itself(t['sceneQ'], t):
+            sys.exit(f"gen_terms.py: sceneQ for {t['id']} names the term")
         d = pick_distractors(t, 'term', need_longer=True)
         if d:
             opts = [{'t': plain(t['term']), 'correct': True, 'why': f"This situation is {t['term']}: {gist_of(t)} {key_feature(t)}".strip()}]
             for x in d:
                 opts.append({'t': plain(x['term']), 'correct': False, 'why': wrong_why(x, 'The situation described is')})
             first = 'T-' + t['id'] + '-1'
-            qs.append(fig(dict(base, id=first, stem='Which term fits this situation? ' + t['scene'], options=opts, teach=teach_with(True))))
+            qs.append(fig(dict(base, id=first, stem=t.get('sceneQ') or 'Which term fits this situation? ' + t['scene'], options=opts, teach=teach_with(True))))
     # 2. the term -> its one-line meaning (short options; a longer wrong gist must exist)
     if t.get('gist'):
         d2 = pick_distractors(t, 'gist', need_longer=True)
