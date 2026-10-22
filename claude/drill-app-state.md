@@ -90,3 +90,11 @@ See `## Conflicts / uncertain` in notes/L01.md, L02.md and L03.md. The ones that
 - Drill: panel viewer (data-anti chips) on the poisoning table, guide 27 and 30, and Explain more on 35 Exam 3 questions.
 - Open items checked against the 10/19 transcript: antidotes/src/OPEN_ITEMS.md. Rhodanese framing differs (she says rhodanese is given).
 - QZ3: 19 items (her quizzes 2 and 3 verbatim), dupOf to lecture items; explain links follow the dupOf target.
+
+## 2026-10-22: why questions and explanation rewrites (v69, PR #96)
+
+- q_WHY_L13..L17.js: 121 "why" questions (ids -101 up; TBL3-101..113 in q_WHY_L16.js), tag "why"; Topics button "Why questions" (188 with older why stems).
+- Two verifiers: no wrong keys; near-duplicates carry dupOf; L13-122 dropped (circular).
+- 503 teach/why rewrites across L13–L17, QZ3, RMK3, TBL3, GRG3 so explanations give the reason, not the key. L14-054 keeps Gottlieb's inverse-agonist quote (user's call).
+- Smith quotes display without fillers (tidySpeech in app.js); source files stay verbatim.
+- Her wording vs textbook, kept as hers: NOAEL "lowest" dose; hydrophilic gases go deep; rhodanese given; Fab "monoclonal"; botulinum "aerobic".
