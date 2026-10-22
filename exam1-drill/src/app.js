@@ -1559,6 +1559,8 @@ const termKey = t => 'term:' + t.id;
 const LETTERS_AZ = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').concat('#');
 const termLetter = t => { const c = (t.term.match(/[A-Za-z]/) || [''])[0].toUpperCase(); return /^[A-Za-z]/.test(t.term.trim()) ? c : '#'; };
 // withExam: search and A–Z mix both exams, so each card says which exam it belongs to
+// a term's situation card: the exam-style question when one is written, none when the scene form is dropped
+const tScene = t => t.dropScene ? '' : (t.sceneQ || t.scene || '');
 const termHTML = (t, withExam) => `<div class="term" id="term-${esc(t.id)}"><b>${esc(t.term)}</b>${withExam ? ` <span class="exlabel">Exam ${lecExam(t.lecture) || 1}</span>` : ''}${t.gist ? `<div class="gist">${esc(t.gist)}</div>` : ''}<div>${esc(t.def)}</div>${t.scene ? `<div class="hook"><b>In action:</b> ${esc(t.scene)}</div>` : ''}${t.hook ? `<div class="hook">${esc(t.hook)}</div>` : ''}${t.fig ? figHTML(t.fig) : ''}<div class="cite">${esc(fmtCite(t.cite))}</div></div>`;
 function glossWire(all, groups) {
   const box = $('#tsearch'), list = $('#glist');
@@ -1663,11 +1665,11 @@ function vTerms() {
     const seen = list.filter(x => S.q[termKey(x)]).length;
     h += `<div class="meta">${seen}/${list.length} cards seen · ${due.length} due · ${unseen.length} new · this card: ${st ? 'seen ' + st.n + '×' : 'new'}</div><div class="card"><div class="flash"><div class="meta">${esc(t.group)}</div>`;
     // front of the card: the situation, with the term hidden; the term and its meaning come on the back
-    if (t.scene && !TM.shown) h += `<div class="meta" style="margin-bottom:6px">Which term is this?</div><div style="font-size:18px">${esc(t.scene)}</div>`;
+    if (tScene(t) && !TM.shown) h += `${t.sceneQ ? '' : '<div class="meta" style="margin-bottom:6px">Which term is this?</div>'}<div style="font-size:18px">${esc(tScene(t))}</div>`;
     else h += `<div class="t">${esc(t.term)}</div>${t.gist ? `<div class="gist" style="margin-top:4px">${esc(t.gist)}</div>` : ''}`;
-    if (TM.shown) h += `<div style="text-align:left;margin-top:14px">${t.scene ? `<div class="hook" style="margin-bottom:6px"><b>In action:</b> ${esc(t.scene)}</div>` : ''}<div>${esc(t.def)}</div>${t.hook ? `<div class="hook" style="color:var(--muted);margin-top:4px">${esc(t.hook)}</div>` : ''}${t.fig ? figHTML(t.fig) : ''}<div class="cite">${esc(fmtCite(t.cite))}</div></div>
+    if (TM.shown) h += `<div style="text-align:left;margin-top:14px">${tScene(t) ? `<div class="hook" style="margin-bottom:6px"><b>In action:</b> ${esc(tScene(t))}</div>` : ''}<div>${esc(t.def)}</div>${t.hook ? `<div class="hook" style="color:var(--muted);margin-top:4px">${esc(t.hook)}</div>` : ''}${t.fig ? figHTML(t.fig) : ''}<div class="cite">${esc(fmtCite(t.cite))}</div></div>
       <div class="row" style="justify-content:center;margin-top:14px"><button class="btn" data-fc="sure">Knew it</button><button class="btn ghost" data-fc="unsure">Not sure</button><button class="btn ghost" data-fc="wrong">Did not know</button></div>`;
-    else h += `<div class="row" style="justify-content:center;margin-top:14px"><button class="btn" id="fcshow">${t.scene ? 'Show the term' : 'Show definition'}</button></div>`;
+    else h += `<div class="row" style="justify-content:center;margin-top:14px"><button class="btn" id="fcshow">${tScene(t) ? 'Show the term' : 'Show definition'}</button></div>`;
     h += `</div></div>`;
   } else {
     const pool = tq.filter(q => TM.group === 'all' || (TOPIC.TERMS.subs.find(s => s.id === q.sub) || {}).name === TM.group);
