@@ -4,7 +4,7 @@ Newest first. The build embeds this file; the Topics page shows what is new sinc
 
 ## 2026-10-22 (Exam 3: all her quizzes on one card)
 
-- Her quiz 1 (10 questions, her key) moved from the 10/9 card to "Her quizzes 1, 2 and 3"; your progress carries over.
+- All her quizzes on one card, "Quizzes (verbatim)", one section per quiz; quiz 1 moved from 10/9; progress kept.
 
 ## 2026-10-22 (Exam 3: checked against a classmate's slide notes)
 
