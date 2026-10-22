@@ -1488,6 +1488,7 @@ function vExam() {
       <details class="fold bpl"><summary>His topic counts</summary><ul class="bpcols">${ex.blueprint.parts.map(p => `<li>${esc(p.name)}: <b>${p.rest ? 'the rest' : p.min ? 'at least ' + p.min : Array.isArray(p.n) ? p.n.join('–') : p.n}</b></li>`).join('')}<li>Select-all items: <b>${ex.blueprint.sata}</b></li></ul></details></div>` : ''}
     <div class="row" style="margin-top:10px"><label><input type="checkbox" id="scale" checked> Scale the clock to the length (${ex.minutes} min for the full paper)</label></div>
     <div class="row" style="margin-top:10px"><span class="meta" style="margin:0">Answer:</span>${layoutToggle()}</div>
+    ${ex.noBack ? `<label class="row" style="margin-top:10px;gap:6px"><input type="checkbox" id="noback" checked> No going back, as on her exam ("no backwards nav", 10/21)</label>` : ''}
     <div class="row" style="margin-top:12px"><button class="btn" id="startx">Start</button></div></div>`;
   // a finished paper of the other exam is kept: say where it is
   if (EX && EX.done && EX.exam && EX.exam !== ex.id) { const o = COURSE.exams.find(e => e.id === EX.exam); h += `<p class="sub" id="keptres">Your last ${esc(o ? o.name : 'other exam')} paper (${EX.score}/${EX.qs.length}) is kept: ${focusOn() ? 'turn off Smith focus and choose ' + esc(o ? o.name : 'it') : 'choose ' + esc(o ? o.name : 'it') + ' above'} to see its result.</p>`; }
@@ -1503,7 +1504,7 @@ function vExam() {
     const paper = ex.blueprint && n === ex.questions && $('#bp') && $('#bp').checked ? drawBlueprint(ex.blueprint) : drawExam(n);
     const full = ex.questions || max;
     const mins = $('#scale').checked ? Math.max(5, Math.round(ex.minutes * paper.length / full)) : ex.minutes;
-    EX = {exam: ex.id, name: ex.name, qs: paper.map(q => q.id), i: 0, ans: {}, flag: {}, orders: paper.map(q => optOrder(q)), ends: Date.now() + mins * MIN, done: false};
+    EX = {exam: ex.id, name: ex.name, qs: paper.map(q => q.id), i: 0, ans: {}, flag: {}, orders: paper.map(q => optOrder(q)), ends: Date.now() + mins * MIN, done: false, noBack: !!($('#noback') && $('#noback').checked)};
     renderExam();
   };
 }
@@ -1562,27 +1563,27 @@ function renderExam() {
   clearInterval(TICK);
   if (EX.done) return examResult();
   saveExam();   // every pick, move and layout change comes through here
-  if (S.layout === 'all') return renderExamAll();
+  if (S.layout === 'all' && !EX.noBack) return renderExamAll();
   clearView();
   // moving to another question starts at its stem; picking an option keeps the page where it is
   if (EX.shown !== EX.i) { EX.shown = EX.i; window.scrollTo(0, 0); }
   const q = byId[EX.qs[EX.i]], ord = EX.orders[EX.i], a = EX.ans[q.id];
-  let h = `<div class="row" style="justify-content:space-between"><b>${EX.name ? esc(EX.name) + ' · ' : ''}Question ${EX.i + 1} of ${EX.qs.length}</b><span class="row"><span class="timer" id="clock" role="timer"></span>${layoutToggle()}</span></div>
-    <div class="grid">${EX.qs.map((id, k) => `<button data-j="${k}" class="${examAnswered(id) ? 'ans' : ''} ${k === EX.i ? 'cur' : ''} ${isFlagged(id) ? 'flag' : ''}" aria-label="Question ${k + 1}${examAnswered(id) ? ', answered' : ''}${isFlagged(id) ? ', flagged' : ''}"${k === EX.i ? ' aria-current="true"' : ''}>${k + 1}</button>`).join('')}</div>
+  let h = `<div class="row" style="justify-content:space-between"><b>${EX.name ? esc(EX.name) + ' · ' : ''}Question ${EX.i + 1} of ${EX.qs.length}</b><span class="row"><span class="timer" id="clock" role="timer"></span>${EX.noBack ? '' : layoutToggle()}</span></div>
+    ${EX.noBack ? '<p class="sub" style="margin:4px 0">No going back: answer this question before you move on.</p>' : ''}<div class="grid">${EX.qs.map((id, k) => `<button data-j="${k}"${EX.noBack ? ' disabled' : ''} class="${examAnswered(id) ? 'ans' : ''} ${k === EX.i ? 'cur' : ''} ${isFlagged(id) ? 'flag' : ''}" aria-label="Question ${k + 1}${examAnswered(id) ? ', answered' : ''}${isFlagged(id) ? ', flagged' : ''}"${k === EX.i ? ' aria-current="true"' : ''}>${k + 1}</button>`).join('')}</div>
     <div class="card"><div class="stem">${esc(q.stem)}</div>${stemMedia(q)}`;
   ord.forEach((oi, n) => {
     const sel = q.multi ? (a || []).includes(oi) : a === oi;
     h += `<button class="opt ${sel ? 'sel' : ''}" data-o="${oi}" aria-pressed="${sel}"><span class="k">${q.multi ? (sel ? '☑' : '☐') : LETTERS[n]}</span><span>${esc(q.options[oi].t)}</span></button>`;
   });
-  h += `</div><div class="row"><button class="btn ghost" id="prev" ${EX.i ? '' : 'disabled'}>Previous</button>
+  h += `</div><div class="row">${EX.noBack ? '' : `<button class="btn ghost" id="prev" ${EX.i ? '' : 'disabled'}>Previous</button>`}
     ${flagBtn(q.id)}
     <button class="btn ghost" id="next" ${EX.i < EX.qs.length - 1 ? '' : 'disabled'}>Next</button>
     <button class="btn" id="submit">Submit exam</button></div>`;
   $('#view').innerHTML = h;
   const shown = Date.now();
   document.querySelectorAll('[data-o]').forEach(b => b.onclick = e => { if (e.detail && Date.now() - shown < 350) return; examPick(q, +b.dataset.o); renderExam(); });
-  document.querySelectorAll('[data-j]').forEach(b => b.onclick = () => { EX.i = +b.dataset.j; renderExam(); });
-  $('#prev').onclick = () => { EX.i--; renderExam(); };
+  if (!EX.noBack) document.querySelectorAll('[data-j]').forEach(b => b.onclick = () => { EX.i = +b.dataset.j; renderExam(); });
+  if ($('#prev')) $('#prev').onclick = () => { EX.i--; renderExam(); };
   $('#next').onclick = () => { EX.i++; renderExam(); };
   $('#submit').onclick = askSubmit;
   examTick();
@@ -3158,7 +3159,7 @@ document.addEventListener('keydown', e => {
     if (/^[1-9]$/.test(k)) n = +k - 1; else if (/^[a-jA-J]$/.test(k)) n = LETTERS.indexOf(k.toUpperCase());
     if (n >= 0 && ord[n] != null) { const b = document.querySelector(`[data-o="${ord[n]}"]`); if (b) b.click(); e.preventDefault(); return; }
     if (k === 'ArrowRight' || k === 'Enter') { if (EX.i < EX.qs.length - 1) { EX.i++; renderExam(); } e.preventDefault(); }
-    if (k === 'ArrowLeft') { if (EX.i > 0) { EX.i--; renderExam(); } e.preventDefault(); }
+    if (k === 'ArrowLeft') { if (EX.i > 0 && !EX.noBack) { EX.i--; renderExam(); } e.preventDefault(); }
   }
 });
 document.title = COURSE.title;
