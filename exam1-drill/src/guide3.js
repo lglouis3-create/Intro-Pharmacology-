@@ -149,7 +149,7 @@ const GUIDE3_HTML = `
 <li>Repeated quarter doses: A and B climb into the toxic zone; C, cleared between doses, never does. "this is where half-life is so important ... we'd have to figure out how do you stretch out these dosing frequencies". <small>(T) 10/9</small></li>
 <li>C can still harm: "you could be allergic to it", "Could synergize with other drugs", "could be going to a different target site", or irritate the injection site. <small>(T) 10/9</small></li>
 </ul>
-<p class="sub">Sources: Tox slides ‘Exposure: Route’, ‘Exposure: Duration’, ‘Single vs. Repeated’, ‘Exposure: Frequency’; (T) 10/9. Questions L13-007 to L13-016.</p>
+<p class="sub">Sources: Tox slides ‘Exposure: Route’, ‘Exposure: Duration’, ‘Single vs. Repeated’, ‘Exposure: Frequency’; (T) 10/9. Questions L13-007 to L13-016, L13-049.</p>
 </section>
 
 <!-- ===================================================================== -->

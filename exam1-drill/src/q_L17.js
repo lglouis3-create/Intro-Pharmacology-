@@ -124,8 +124,8 @@ QUESTIONS.push(
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘Introduction: Genomics History’ (p. 6); transcript 10/20"},
 
 {id:"L17-008", lecture:"L17", prof:"Smith", tier:"new", topic:"L17", sub:"history", skill:"figure",
- concept:"twin-study-heritability", tags:["smith"], source:"both",
- stem:"In the twin study figure of antipyrine half-life, what pattern shows that drug metabolism is heritable?",
+ concept:"twin-study-heritability", tags:["smith"], source:"both", simg:"smith-twins", simgAlt:"Antipyrine half-life (hours) in identical twin pairs (left) and fraternal twin pairs (right).",
+ stem:"In this twin study of antipyrine half-life, what pattern shows that drug metabolism is heritable?",
  options:[
   {t:"Identical pairs match; fraternal pairs vary", correct:true, why:"Almost every identical twin pair had the same half-life; the fraternal pairs were variable, with only pair d close."},
   {t:"Fraternal pairs match; identical pairs vary", correct:false, why:"That pattern would mean half-life does not follow genetic sameness. In the figure the identical pairs had nearly the same half-life and the fraternal pairs were variable, with only pair d close."},
@@ -497,8 +497,8 @@ QUESTIONS.push(
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘Allele’ (p. 15); transcript 10/20"},
 
 {id:"L17-035", lecture:"L17", prof:"Smith", tier:"new", topic:"L17", sub:"allele", skill:"figure",
- concept:"homozygous-heterozygous-figure", tags:["smith"], source:"both",
- stem:"In the homozygosity figure, the orange chromosome has big B at the third locus and the blue chromosome has little b. Is this person homozygous or heterozygous at that locus?",
+ concept:"homozygous-heterozygous-figure", tags:["smith"], source:"both", simg:"smith-zygosity", simgAlt:"Two homologous chromosomes with three gene loci (P, a, B on one; P, a, b on the other); the genotype labels are not shown.",
+ stem:"In this figure, is the person homozygous or heterozygous at the third locus?",
  options:[
   {t:"Heterozygous for B", correct:true, why:"Her answer: the two alleles differ at that locus."},
   {t:"Homozygous for B", correct:false, why:"Homozygous means both copies are the same, as at the P locus (PP)."},
@@ -660,8 +660,8 @@ QUESTIONS.push(
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘Haplotype’ (p. 19); transcript 10/20"},
 
 {id:"L17-047", lecture:"L17", prof:"Smith", tier:"new", topic:"L17", sub:"haplo", skill:"figure",
- concept:"haplotype-figure-agt", tags:["smith"], source:"both",
- stem:"The haplotype illustration shows six people's sequences with SNPs at three loci (A/G, G/T, A/T). Which haplotypes does it identify?",
+ concept:"haplotype-figure-agt", tags:["smith"], source:"both", simg:"smith-haplotype", simgAlt:"Six people's DNA sequences with single-nucleotide polymorphisms at three positions; the haplotype list is hidden.",
+ stem:"This illustration shows six people's sequences with SNPs at three loci. Which haplotypes does it identify?",
  options:[
   {t:"AGT, GTA and AGA", correct:true, why:"The orange person has AGT, the dark blue GTA, the light blue AGA."},
   {t:"AAA, GGG and TTT", correct:false, why:"No sequence shows the same base at all three loci."},
