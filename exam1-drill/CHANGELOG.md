@@ -2,6 +2,12 @@
 
 Newest first. The build embeds this file; the Topics page shows what is new since your last visit, and the Progress page shows all of it. Keep each bullet to one short line.
 
+## 2026-10-22 (Fixes from a full click-through)
+
+- Her exam format stays on after a reload; moving on from a blank question asks first.
+- Tap a slide figure to see it full size. The Top button also shows deep in long pages.
+- Poisoning table: no double-tap answers; Start over asks first. Old "not yet taught" labels updated.
+
 ## 2026-10-22 (Tell apart explanations; reading authors)
 
 - Exam 3 Tell apart: every row has a Why? button and each table an Explain-one menu (94 explanations).

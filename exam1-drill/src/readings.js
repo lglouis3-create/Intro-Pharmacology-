@@ -1259,7 +1259,7 @@ const READINGS = [
   "lectures": [
    "L15"
   ],
-  "status": "assigned",
+  "status": "discussed",
   "links": [
    [
     "guide",
@@ -2081,7 +2081,7 @@ const READINGS = [
   "listen_secs": 169,
   "exam": 3,
   "lectures": [],
-  "status": "upcoming",
+  "status": "background",
   "links": [],
   "drive": "https://drive.google.com/file/d/1nRnG1kVR0Nq1VgATSktxfIASE9KR8o79/view",
   "date": "Tue 10/20"
@@ -2183,7 +2183,7 @@ const READINGS = [
   "listen_secs": 160,
   "exam": 3,
   "lectures": [],
-  "status": "upcoming",
+  "status": "assigned",
   "links": [],
   "drive": "https://drive.google.com/file/d/1dXEvIYObmQk0u4mT3yBxWqs1Isi49XBR/view",
   "date": "Tue 10/20 (syllabus: “Dipiro Chapter 6”; the posted file is the 13th-edition chapter e6, Medication Adherence)"

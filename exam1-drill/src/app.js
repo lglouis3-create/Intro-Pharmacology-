@@ -299,7 +299,7 @@ const SUB3 = {defs: [G3(1, 'definitions'), ['ref', 'ref3-1', 'Reference: the wor
   route: [G3(4, 'exposure'), ['ref', 'ref3-3', 'Reference: routes'], ['tell', 'tell3-words', 'Tell apart: common vs effective route']], duration: [G3(4, 'exposure'), ['ref', 'ref3-4', 'Reference: durations'], ['tell', 'tell3-words', 'Tell apart: durations']], freq: [G3(4, 'exposure'), ['ref', 'ref3-5', 'Reference: frequency and half-life']],
   admet: [G3(5, 'ADMET and acetaminophen'), ['ref', 'ref3-6', 'Reference: acetaminophen'], ['tell', 'tell3-words', 'Tell apart: bioactivation vs detoxification']], dose: [G3(6, 'dose and LD50'), ['ref', 'ref3-7', 'Reference: the LD50 table']],
   curves: [G3(7, 'dose–response curves'), ['ref', 'ref3-8', 'Reference: curve types'], ['tell', 'tell3-curves', 'Tell apart: individual vs population']], shape: [G3(7, 'dose–response curves'), ['ref', 'ref3-8', 'Reference: curve types'], ['tell', 'tell3-curves', 'Tell apart: U-shapes and thresholds']],
-  indices: [G3(8, 'not yet taught'), ['ref', 'ref3-9', 'Reference: TI, MOS, MOE'], ['tell', 'tell3-curves', 'Tell apart: TI vs MOS vs MOE']], reading: [G3(8, 'the reading')]};
+  indices: [G3(8, 'indices, target, the reading'), ['ref', 'ref3-9', 'Reference: TI, MOS, MOE'], ['tell', 'tell3-curves', 'Tell apart: TI vs MOS vs MOE']], reading: [G3(8, 'the reading')]};
 const TERM_SUB3 = G3(1, 'definitions');
 /* Later Exam 3 lectures: keys are "<lecture>:<sub>" (filled in below, next to each lecture's sections). */
 const LINKS3 = {"L14:potency": [["guide", "guide3-l14-1", "Guide: potency, ED/TD/LD and the indices"], ["ref", "ref3-l14-2", "Reference: potency and the three curves"], ["tell", "tell3-l14", "Tell apart: Day 14"]], "L14:edtdld": [["guide", "guide3-l14-1", "Guide: potency, ED/TD/LD and the indices"], ["ref", "ref3-l14-2", "Reference: potency and the three curves"], ["tell", "tell3-l14", "Tell apart: Day 14"]], "L14:indices": [["guide", "guide3-l14-1", "Guide: potency, ED/TD/LD and the indices"], ["ref", "ref3-l14-1", "Reference: TI, MOS, MOE"], ["tell", "tell3-l14", "Tell apart: Day 14"]], "L14:target": [["guide", "guide3-l14-2", "Guide: target and mechanism of action"], ["ref", "ref3-l14-2", "Reference: potency and the three curves"], ["tell", "tell3-l14", "Tell apart: Day 14"]], "L14:reading": [["guide", "guide3-l14-3", "Guide: the reading discussed"], ["ref", "ref3-l14-3", "Reference: the reading by principle"], ["tell", "tell3-l14", "Tell apart: Day 14"]], "L14:general": [["guide", "guide3-l14-4", "Guide: undesired effects, general concepts"], ["ref", "ref3-l14-4", "Reference: the general-concept pairs"], ["tell", "tell3-l14", "Tell apart: Day 14"]], "L14:interact": [["guide", "guide3-l14-4", "Guide: undesired effects, general concepts"], ["ref", "ref3-l14-4", "Reference: the general-concept pairs"], ["tell", "tell3-l14", "Tell apart: Day 14"]], "L14:tolerance": [["guide", "guide3-l14-4", "Guide: undesired effects, general concepts"], ["ref", "ref3-l14-4", "Reference: the general-concept pairs"], ["tell", "tell3-l14", "Tell apart: Day 14"]], "L14:variation": [["guide", "guide3-l14-4", "Guide: undesired effects, general concepts"], ["ref", "ref3-l14-4", "Reference: the general-concept pairs"], ["tell", "tell3-l14", "Tell apart: Day 14"]], "L14:ontarget": [["guide", "guide3-l14-5", "Guide: on-target and off-target"], ["ref", "ref3-l14-5", "Reference: on- and off-target examples"], ["tell", "tell3-l14", "Tell apart: Day 14"]], "L14:nonorgan": [["guide", "guide3-l14-6", "Guide: non-organ-specific endpoints"], ["ref", "ref3-l14-6", "Reference: non-organ-specific endpoints"], ["tell", "tell3-l14", "Tell apart: Day 14"]], "L15:pulm": [["guide", "guide3-l15-1", "Guide: pulmonary toxicity"], ["ref", "ref3-l15-1", "Reference: pulmonary toxicity"], ["tell", "tell3-l15", "Tell apart: organ toxicity and treating poisonings"]], "L15:neuro": [["guide", "guide3-l15-2", "Guide: neurotoxicity"], ["ref", "ref3-l15-2", "Reference: neurotoxicity"], ["tell", "tell3-l15", "Tell apart: organ toxicity and treating poisonings"]], "L15:hepat": [["guide", "guide3-l15-3", "Guide: why the liver is susceptible; kinds of liver injury"], ["ref", "ref3-l15-3", "Reference: hepatotoxicity"], ["tell", "tell3-l15", "Tell apart: organ toxicity and treating poisonings"]], "L15:zones": [["guide", "guide3-l15-4", "Guide: liver zones, oxygen and CYP2E1"], ["ref", "ref3-l15-3", "Reference: hepatotoxicity"], ["tell", "tell3-l15", "Tell apart: organ toxicity and treating poisonings"]], "L15:nephro": [["guide", "guide3-l15-5", "Guide: nephrotoxicity"], ["ref", "ref3-l15-4", "Reference: nephrotoxicity"], ["tell", "tell3-l15", "Tell apart: organ toxicity and treating poisonings"]], "L15:immune": [["guide", "guide3-l15-6", "Guide: idiosyncratic and immunologic responses; her four polls"], ["ref", "ref3-l15-5", "Reference: idiosyncratic and immunologic responses"], ["tell", "tell3-l15", "Tell apart: organ toxicity and treating poisonings"]], "L15:polls": [["guide", "guide3-l15-6", "Guide: idiosyncratic and immunologic responses; her four polls"], ["ref", "ref3-l15-3", "Reference: hepatotoxicity"], ["tell", "tell3-l15", "Tell apart: organ toxicity and treating poisonings"]], "L15:odkin": [["guide", "guide3-l15-7", "Guide: overdose changes kinetics"], ["ref", "ref3-l15-6", "Reference: overdose kinetics and pharmacodynamics"], ["tell", "tell3-l15", "Tell apart: organ toxicity and treating poisonings"]], "L15:odpd": [["guide", "guide3-l15-8", "Guide: overdose changes pharmacodynamics"], ["ref", "ref3-l15-6", "Reference: overdose kinetics and pharmacodynamics"], ["tell", "tell3-l15", "Tell apart: organ toxicity and treating poisonings"]], "L15:approach": [["guide", "guide3-l15-9", "Guide: three angles, four toxicokinetic methods, preventing absorption"], ["ref", "ref3-l15-7", "Reference: treatment approaches and preventing absorption"], ["tell", "tell3-l15", "Tell apart: organ toxicity and treating poisonings"]], "L15:absorb": [["guide", "guide3-l15-9", "Guide: three angles, four toxicokinetic methods, preventing absorption"], ["ref", "ref3-l15-7", "Reference: treatment approaches and preventing absorption"], ["tell", "tell3-l15", "Tell apart: organ toxicity and treating poisonings"]], "L15:guide": [["guide", "guide3-l15-10", "Guide: evidence-based guidelines; what moved to 10/19"], ["ref", "ref3-l15-8", "Reference: evidence-based guidelines"], ["tell", "tell3-l15", "Tell apart: organ toxicity and treating poisonings"]], "L16:absorbrev": [["guide", "guide3-l16-1", "Guide: Preventing absorption revisited; inhibit bioactivation"], ["ref", "ref3-l16-1", "Reference: Toxicokinetic treatments II"], ["tell", "tell3-l16", "Tell apart: Day 16"]], "L16:bioact": [["guide", "guide3-l16-1", "Guide: Preventing absorption revisited; inhibit bioactivation"], ["ref", "ref3-l16-1", "Reference: Toxicokinetic treatments II"], ["tell", "tell3-l16", "Tell apart: Day 16"]], "L16:detect": [["guide", "guide3-l16-2", "Guide: Recognizing the poisoning: blood draws, toxidromes"], ["ref", "ref3-l16-1", "Reference: Toxicokinetic treatments II"], ["tell", "tell3-l16", "Tell apart: Day 16"]], "L16:metab": [["guide", "guide3-l16-3", "Guide: Enhance metabolism: cyanide and acetaminophen"], ["ref", "ref3-l16-1", "Reference: Toxicokinetic treatments II"], ["tell", "tell3-l16", "Tell apart: Day 16"]], "L16:renal": [["guide", "guide3-l16-4", "Guide: Enhance elimination: ion trapping, extracorporeal methods"], ["ref", "ref3-l16-1", "Reference: Toxicokinetic treatments II"], ["tell", "tell3-l16", "Tell apart: Day 16"]], "L16:extra": [["guide", "guide3-l16-4", "Guide: Enhance elimination: ion trapping, extracorporeal methods"], ["ref", "ref3-l16-1", "Reference: Toxicokinetic treatments II"], ["tell", "tell3-l16", "Tell apart: Day 16"]], "L16:inact": [["guide", "guide3-l16-5", "Guide: Inactivation: chelators, antivenoms, digoxin immune Fab"], ["ref", "ref3-l16-2", "Reference: Inactivation of poisons"], ["tell", "tell3-l16", "Tell apart: Day 16"]], "L16:antibody": [["guide", "guide3-l16-5", "Guide: Inactivation: chelators, antivenoms, digoxin immune Fab"], ["ref", "ref3-l16-2", "Reference: Inactivation of poisons"], ["tell", "tell3-l16", "Tell apart: Day 16"]], "L16:pharmrec": [["guide", "guide3-l16-6", "Guide: Pharmacological treatment: the four categories"], ["ref", "ref3-l16-3", "Reference: Pharmacological treatment"], ["tell", "tell3-l16", "Tell apart: Day 16"]], "L16:pharmsite": [["guide", "guide3-l16-6", "Guide: Pharmacological treatment: the four categories"], ["ref", "ref3-l16-3", "Reference: Pharmacological treatment"], ["tell", "tell3-l16", "Tell apart: Day 16"]], "L16:guideline": [["guide", "guide3-l16-7", "Guide: The beta-blocker and calcium channel blocker guideline discussion"], ["ref", "ref3-l16-4", "Reference: The guidelines, her key"], ["tell", "tell3-l16", "Tell apart: Day 16"]], "L16:table": [["guide", "guide3-l16-8", "Guide: The poisoning table and what moved to 10/20"], ["ref", "ref3-l16-4", "Reference: The guidelines, her key"], ["tell", "tell3-l16", "Tell apart: Day 16"]], "TBL3:cardio": [["ref", "ref3-tbl-1", "Reference: poisoning treatment table (her key)"], ["ptab", "ptab-top", "Drill: poisoning table"]], "TBL3:cns": [["ref", "ref3-tbl-1", "Reference: poisoning treatment table (her key)"], ["ptab", "ptab-top", "Drill: poisoning table"]], "TBL3:metabolic": [["ref", "ref3-tbl-1", "Reference: poisoning treatment table (her key)"], ["ptab", "ptab-top", "Drill: poisoning table"]], "TBL3:ironop": [["ref", "ref3-tbl-1", "Reference: poisoning treatment table (her key)"], ["ptab", "ptab-top", "Drill: poisoning table"]], "TBL3:match": [["ref", "ref3-tbl-1", "Reference: poisoning treatment table (her key)"], ["ptab", "ptab-top", "Drill: poisoning table"]], "TBL3:about": [["ref", "ref3-tbl-1", "Reference: poisoning treatment table (her key)"], ["ptab", "ptab-top", "Drill: poisoning table"]], "L17:history": [["guide", "guide3-l17-1", "Guide: Why pharmacogenomics: primaquine, the timeline, twin studies"], ["ref", "ref3-l17-1", "Reference: Pharmacogenomics history and the four target areas"], ["tell", "tell3-l17", "Tell apart: Day 17 pharmacogenomics terms"]], "L17:defs": [["guide", "guide3-l17-2", "Guide: Pharmacogenetics vs pharmacogenomics; impact, uses and limitations"], ["ref", "ref3-l17-2", "Reference: Pharmacogenomics terminology"], ["tell", "tell3-l17", "Tell apart: Day 17 pharmacogenomics terms"]], "L17:impact": [["guide", "guide3-l17-2", "Guide: Pharmacogenetics vs pharmacogenomics; impact, uses and limitations"], ["ref", "ref3-l17-1", "Reference: Pharmacogenomics history and the four target areas"], ["tell", "tell3-l17", "Tell apart: Day 17 pharmacogenomics terms"]], "L17:targets": [["guide", "guide3-l17-3", "Guide: The four target areas; PK, PD and the two outcome buckets"], ["ref", "ref3-l17-1", "Reference: Pharmacogenomics history and the four target areas"], ["tell", "tell3-l17", "Tell apart: Day 17 pharmacogenomics terms"]], "L17:pkpd": [["guide", "guide3-l17-3", "Guide: The four target areas; PK, PD and the two outcome buckets"], ["ref", "ref3-l17-1", "Reference: Pharmacogenomics history and the four target areas"], ["tell", "tell3-l17", "Tell apart: Day 17 pharmacogenomics terms"]], "L17:variant": [["guide", "guide3-l17-4", "Guide: Wild type, variant, polymorphism, rare variant, SNP"], ["ref", "ref3-l17-2", "Reference: Pharmacogenomics terminology"], ["tell", "tell3-l17", "Tell apart: Day 17 pharmacogenomics terms"]], "L17:allele": [["guide", "guide3-l17-5", "Guide: Allele, genotype, phenotype, functional significance"], ["ref", "ref3-l17-2", "Reference: Pharmacogenomics terminology"], ["tell", "tell3-l17", "Tell apart: Day 17 pharmacogenomics terms"]], "L17:genophen": [["guide", "guide3-l17-5", "Guide: Allele, genotype, phenotype, functional significance"], ["ref", "ref3-l17-2", "Reference: Pharmacogenomics terminology"], ["tell", "tell3-l17", "Tell apart: Day 17 pharmacogenomics terms"]], "L17:haplo": [["guide", "guide3-l17-6", "Guide: Haplotype, allele and genotype frequency, Hardy-Weinberg"], ["ref", "ref3-l17-2", "Reference: Pharmacogenomics terminology"], ["tell", "tell3-l17", "Tell apart: Day 17 pharmacogenomics terms"]], "L17:freq": [["guide", "guide3-l17-6", "Guide: Haplotype, allele and genotype frequency, Hardy-Weinberg"], ["ref", "ref3-l17-2", "Reference: Pharmacogenomics terminology"], ["tell", "tell3-l17", "Tell apart: Day 17 pharmacogenomics terms"]], "L17:scope": [["guide", "guide3-l17-7", "Guide: The exam vote, and what was not reached on 10/20"]], "L17:nomen": [["guide", "guide3-l17-7", "Guide: The exam vote, and what was not reached on 10/20"], ["ref", "ref3-l17-3", "Reference: Nomenclature and variant types not yet taught"], ["tell", "tell3-l17", "Tell apart: Day 17 pharmacogenomics terms"]], "L17:types": [["guide", "guide3-l17-7", "Guide: The exam vote, and what was not reached on 10/20"], ["ref", "ref3-l17-3", "Reference: Nomenclature and variant types not yet taught"], ["tell", "tell3-l17", "Tell apart: Day 17 pharmacogenomics terms"]], "GRG3:ccb": [["guide", "guide3-l16-7", "Guide: the guideline discussion"], ["ref", "ref3-l16-4", "Reference: the guideline windows, her key"], ["tell", "tell3-l16", "Tell apart: Day 16"]], "GRG3:bb": [["guide", "guide3-l16-7", "Guide: the guideline discussion"], ["ref", "ref3-l16-4", "Reference: the guideline windows, her key"], ["tell", "tell3-l16", "Tell apart: Day 16"]], "GRG3:both": [["guide", "guide3-l16-7", "Guide: the guideline discussion"], ["ref", "ref3-l16-4", "Reference: the guideline windows, her key"], ["tell", "tell3-l16", "Tell apart: Day 16"]], "RMK3:source": [["guide", "guide3-l14-3", "Guide: the reading discussed"], ["ref", "ref3-l14-3", "Reference: the reading by principle"], ["tell", "tell3-l14", "Tell apart: Day 14"]], "RMK3:exposure": [["guide", "guide3-l14-3", "Guide: the reading discussed"], ["ref", "ref3-l14-3", "Reference: the reading by principle"], ["tell", "tell3-l14", "Tell apart: Day 14"]], "RMK3:adme": [["guide", "guide3-l14-3", "Guide: the reading discussed"], ["ref", "ref3-l14-3", "Reference: the reading by principle"], ["tell", "tell3-l14", "Tell apart: Day 14"]], "RMK3:dose": [["guide", "guide3-l14-3", "Guide: the reading discussed"], ["ref", "ref3-l14-3", "Reference: the reading by principle"], ["tell", "tell3-l14", "Tell apart: Day 14"]], "RMK3:target": [["guide", "guide3-l14-3", "Guide: the reading discussed"], ["ref", "ref3-l14-3", "Reference: the reading by principle"], ["tell", "tell3-l14", "Tell apart: Day 14"]]};
@@ -968,7 +968,7 @@ function check() {
     if (q.left.some((l, i) => !Q.mpick[i])) return;   // Check waits until every item has a match
     Q.ok = q.left.every((l, i) => Q.mpick[i] === pairOf(q, l));
   } else if (q.multi) {
-    if (!Q.picked.size) return;
+    if (!Q.picked.size) { const c = document.querySelector(`[data-check][data-qid="${q.id}"]`); if (c && !c.dataset.warned) { c.dataset.warned = 1; c.insertAdjacentHTML('afterend', '<span class="meta" style="margin:0 0 0 8px">Tick at least one option first.</span>'); } return; }
     Q.ok = gradeMulti(q, Q.picked);
   } else Q.ok = q.options[Q.picked].correct;
   Q.answered = true;
@@ -1379,8 +1379,8 @@ let EX = null;
 const EXKEY = () => COURSE.ns + ':exam:' + PROFILE;
 function saveExam() {
   if (!EX) return;
-  const {exam, name, qs, i, ans, flag, orders, ends, done, score} = EX;
-  store.set(EXKEY(), JSON.stringify({exam, name, qs, i, ans, flag, orders, ends, done, score}));
+  const {exam, name, qs, i, ans, flag, orders, ends, done, score, noBack} = EX;
+  store.set(EXKEY(), JSON.stringify({exam, name, qs, i, ans, flag, orders, ends, done, score, noBack: !!noBack}));
 }
 function loadExam() {
   try {
@@ -1390,7 +1390,7 @@ function loadExam() {
     // an answer is kept only when it fits its question now (a content update can turn single-answer into select-all)
     const fits = (q, a) => { const ok = n => Number.isInteger(n) && n >= 0 && n < q.options.length; return q.multi ? Array.isArray(a) && a.every(ok) : ok(a); };
     const ans = {}; if (isObj(x.ans)) Object.keys(x.ans).forEach(id => { const a = x.ans[id]; if (byId[id] && x.qs.includes(id) && fits(byId[id], a)) ans[id] = a; });
-    return {exam: +x.exam || null, name: typeof x.name === 'string' ? x.name : '', qs: x.qs, i: Math.max(0, Math.min(x.qs.length - 1, Math.floor(+x.i) || 0)), ans, flag: isObj(x.flag) ? x.flag : {}, orders: x.orders, ends: +x.ends, done: !!x.done, score: Number.isFinite(+x.score) ? +x.score : 0};
+    return {exam: +x.exam || null, name: typeof x.name === 'string' ? x.name : '', qs: x.qs, i: Math.max(0, Math.min(x.qs.length - 1, Math.floor(+x.i) || 0)), ans, flag: isObj(x.flag) ? x.flag : {}, orders: x.orders, ends: +x.ends, done: !!x.done, score: Number.isFinite(+x.score) ? +x.score : 0, noBack: !!x.noBack};
   } catch (e) { return null; }
 }
 EX = loadExam();
@@ -1573,14 +1573,14 @@ function renderExam() {
   if (EX.shown !== EX.i) { EX.shown = EX.i; window.scrollTo(0, 0); }
   const q = byId[EX.qs[EX.i]], ord = EX.orders[EX.i], a = EX.ans[q.id];
   let h = `<div class="row" style="justify-content:space-between"><b>${EX.name ? esc(EX.name) + ' · ' : ''}Question ${EX.i + 1} of ${EX.qs.length}</b><span class="row"><span class="timer" id="clock" role="timer"></span>${EX.noBack ? '' : layoutToggle()}</span></div>
-    ${EX.noBack ? '<p class="sub" style="margin:4px 0">No going back: answer this question before you move on.</p>' : ''}<div class="grid">${EX.qs.map((id, k) => `<button data-j="${k}"${EX.noBack ? ' disabled' : ''} class="${examAnswered(id) ? 'ans' : ''} ${k === EX.i ? 'cur' : ''} ${isFlagged(id) ? 'flag' : ''}" aria-label="Question ${k + 1}${examAnswered(id) ? ', answered' : ''}${isFlagged(id) ? ', flagged' : ''}"${k === EX.i ? ' aria-current="true"' : ''}>${k + 1}</button>`).join('')}</div>
+    ${EX.noBack ? '<p class="sub" style="margin:4px 0">No going back: once you move on you cannot return to this question.</p>' : ''}<div class="grid">${EX.qs.map((id, k) => `<button data-j="${k}"${EX.noBack ? ' disabled' : ''} class="${examAnswered(id) ? 'ans' : ''} ${k === EX.i ? 'cur' : ''} ${isFlagged(id) ? 'flag' : ''}" aria-label="Question ${k + 1}${examAnswered(id) ? ', answered' : ''}${isFlagged(id) ? ', flagged' : ''}"${k === EX.i ? ' aria-current="true"' : ''}>${k + 1}</button>`).join('')}</div>
     <div class="card"><div class="stem">${esc(q.stem)}</div>${stemMedia(q)}`;
   ord.forEach((oi, n) => {
     const sel = q.multi ? (a || []).includes(oi) : a === oi;
     h += `<button class="opt ${sel ? 'sel' : ''}" data-o="${oi}" aria-pressed="${sel}"><span class="k">${q.multi ? (sel ? '☑' : '☐') : LETTERS[n]}</span><span>${esc(q.options[oi].t)}</span></button>`;
   });
   h += `</div><div class="row">${EX.noBack ? '' : `<button class="btn ghost" id="prev" ${EX.i ? '' : 'disabled'}>Previous</button>`}
-    ${flagBtn(q.id)}
+    ${EX.noBack ? '' : flagBtn(q.id)}
     <button class="btn ghost" id="next" ${EX.i < EX.qs.length - 1 ? '' : 'disabled'}>Next</button>
     <button class="btn" id="submit">Submit exam</button></div>`;
   $('#view').innerHTML = h;
@@ -1588,10 +1588,12 @@ function renderExam() {
   document.querySelectorAll('[data-o]').forEach(b => b.onclick = e => { if (e.detail && Date.now() - shown < 350) return; examPick(q, +b.dataset.o); renderExam(); });
   if (!EX.noBack) document.querySelectorAll('[data-j]').forEach(b => b.onclick = () => { EX.i = +b.dataset.j; renderExam(); });
   if ($('#prev')) $('#prev').onclick = () => { EX.i--; renderExam(); };
-  $('#next').onclick = () => { EX.i++; renderExam(); };
+  $('#next').onclick = () => { if (exLeaveOk()) { EX.i++; renderExam(); } };
   $('#submit').onclick = askSubmit;
   examTick();
 }
+/* Her format has no going back, so moving on from a blank question asks first. */
+const exLeaveOk = () => !EX.noBack || examAnswered(EX.qs[EX.i]) || confirm('Move on without answering? You cannot come back to this question.');
 const exRight = (q, a) => q.multi ? (Array.isArray(a) && gradeMulti(q, new Set(a))) : (Number.isInteger(a) && !!q.options[a] && !!q.options[a].correct);
 function submitExam() {
   clearInterval(TICK);
@@ -2141,8 +2143,9 @@ function vPtab() {
   document.querySelectorAll('[data-ptshow]').forEach(b => b.onclick = () => { PT.shown[b.dataset.ptshow] = true; b.outerHTML = esc(ptCellText(b.dataset.ptshow)); });
   const hd = $('#pthide'); if (hd) hd.onclick = () => { PT.shown = {}; vPtab(); };
   const sa = $('#ptshowall'); if (sa) sa.onclick = () => { document.querySelectorAll('[data-ptshow]').forEach(b => PT.shown[b.dataset.ptshow] = true); vPtab(); };
-  const nx = $('#ptnext'); if (nx) { nx.onclick = ptAdvance; nx.focus(); }
-  const sk = $('#ptskip'); if (sk) sk.onclick = () => { if (PT.result) { PT.queue = []; PT.opts = null; vPtab(); } else { PT.redo.push(PT.queue[PT.i]); ptAdvance(); } };
+  PT.t0 = Date.now();
+  const nx = $('#ptnext'); if (nx) { nx.onclick = e => { if (e.detail > 1) return; ptAdvance(); }; nx.focus(); }
+  const sk = $('#ptskip'); if (sk) sk.onclick = () => { if (Date.now() - PT.t0 < 350) return; if (PT.result) { if (confirm('Start over? This round and its missed list are cleared.')) { PT.queue = []; PT.opts = null; vPtab(); } } else { PT.redo.push(PT.queue[PT.i]); ptAdvance(); } };
 }
 function ptCellText(k) {
   const [id, f] = k.split(':'), r = ptRow(id);
@@ -2151,6 +2154,7 @@ function ptCellText(k) {
   return r.special[+f.slice(2)][1];
 }
 function ptCheck(n) {
+  if (PT.result || Date.now() - (PT.t0 || 0) < 350) return;
   const it = PT.queue[PT.i]; PT.pick = n; const ok = PT.opts[n] === it.ans;
   PT.result = {ok}; if (ok) PT.right++; else PT.redo.push(it);
   vPtab();
@@ -2199,8 +2203,8 @@ function vSa() {
   $('#view').innerHTML = h;
   const ta = $('#satext');
   ta.oninput = () => saSave(p.id, {text: ta.value});
-  $('#sacheck').onclick = () => { SA.shown = !SA.shown; if (SA.shown) saSave(p.id, {checked: true, text: ta.value}); vSa(); };
-  $('#saclear').onclick = () => { saSave(p.id, {text: '', ticks: []}); SA.shown = false; vSa(); };
+  $('#sacheck').onclick = () => { SA.shown = !SA.shown; if (SA.shown) saSave(p.id, {checked: !!ta.value.trim(), text: ta.value}); vSa(); };
+  $('#saclear').onclick = () => { saSave(p.id, {text: '', ticks: [], checked: false}); SA.shown = false; vSa(); };
   document.querySelectorAll('[data-sapt]').forEach(c => c.onchange = () => {
     const t = [...document.querySelectorAll('[data-sapt]')].filter(x => x.checked).map(x => +x.dataset.sapt);
     saSave(p.id, {ticks: t}); $('#sascore').textContent = `${t.length} of ${p.points.length} key points`;
@@ -2812,7 +2816,7 @@ const figHTML = key => (typeof FIG === 'function' && key) ? FIG(key) + (key === 
 function expandFigs(html) {
   return html
     .replace(/<!--FIG:([\w-]+)-->/g, (m, k) => FIG(k))
-    .replace(/<!--IMG:([\w-]+)-->/g, (m, k) => IMG[k] ? `<figure class="fig">${imgTag(k, k)}</figure>` : '')
+    .replace(/<!--IMG:([\w-]+)-->/g, (m, k) => IMG[k] ? `<figure class="fig">${imgTag(k, 'Figure from her slide; tap to enlarge')}</figure>` : '')
     .replace(/<!--GRAPH:([\s\S]*?)-->/g, (m, j) => { try { return FIG.graph(JSON.parse(j)); } catch (e) { return ''; } });
 }
 function vGuide() {
@@ -2822,7 +2826,7 @@ function vGuide() {
 }
 
 /* ---------- Readings: what each assigned reading covers, what she used from it in class, and the drill on it ---------- */
-const RD_STATUS = {discussed: 'Discussed in class', background: 'Behind her slides', assigned: 'Assigned, not yet discussed', upcoming: 'Assigned for a coming lecture', his: 'His chapter'};
+const RD_STATUS = {discussed: 'Discussed in class', background: 'Behind her slides', assigned: 'Assigned; not discussed in class', upcoming: 'Assigned for a coming lecture', his: 'His chapter'};
 const rdQs = r => QUESTIONS.filter(q => q.readingId === r.id && !(q.tags || []).includes('quiz'));
 const rdQuiz = r => QUESTIONS.filter(q => q.readingId === r.id && (q.tags || []).includes('quiz'));
 const rdLecLabel = r => (r.lectures || []).map(id => (COURSE.lectures.find(l => l.id === id) || {}).label || id).map(l => l.replace(/ \(Dr\. [^)]*\)$/, '')).join('; ');
@@ -2875,6 +2879,7 @@ function vReadings() {
     if (b.dataset.rdq) startQuiz(rdQs(r), 'Reading: ' + r.title.split(' (')[0], 'pass', {back: true});
     else if (b.dataset.rdquiz) startQuiz(rdQuiz(r), 'Her quiz on the reading', 'pass', {back: true});
     else if (b.dataset.rdplay) rdPlayFrom(deck, deck.indexOf(r), false);
+    else if (RDK && RDK.list[RDK.i] && RDK.list[RDK.i].id === r.id) rdPause();
     else rdPlayFrom([r], 0, false);
   };
   if (deck.length) {
@@ -2967,12 +2972,21 @@ function rdStop() {
   const nx = document.getElementById('rdnext'), st = document.getElementById('rdstop'), pl = document.getElementById('rdplay'), pa = document.getElementById('rdpause'), tm = document.getElementById('rdtime'); if (nx) nx.hidden = true; if (st) st.hidden = true; if (pa) pa.hidden = true; if (tm) tm.hidden = true; if (pl) pl.textContent = '▶ Play all';
 }
 
-/* Back to top: shows once the reader is near the end of a page longer than two screens. */
+/* Tap a slide figure to see it full size; tap again or press Escape to close. */
+document.addEventListener('click', e => {
+  const z = document.getElementById('zoomfig'); if (z) { z.remove(); return; }
+  const im = e.target.closest('figure.stemfig img, .tablewrap figure.fig img'); if (!im || !im.src || im.naturalWidth < 700) return;
+  const d = document.createElement('div'); d.id = 'zoomfig'; d.setAttribute('role', 'dialog'); d.setAttribute('aria-label', 'Figure, full size');
+  d.innerHTML = `<p class="meta">Scroll to move around; tap to close.</p><img src="${im.src}" alt="${esc(im.alt || 'figure')}">`; document.body.appendChild(d);
+});
+document.addEventListener('keydown', e => { const z = document.getElementById('zoomfig'); if (z && e.key === 'Escape') z.remove(); });
+
+/* Back to top: shows on a page longer than two screens once the reader is three screens down or near the end. */
 const TOTOP = Object.assign(document.createElement('button'), {id: 'totop', type: 'button', className: 'btn', textContent: '↑ Top', hidden: true});
 TOTOP.setAttribute('aria-label', 'Back to the top of the page');
 TOTOP.onclick = () => window.scrollTo({top: 0, behavior: 'smooth'});
 document.body.appendChild(TOTOP);
-const topCheck = () => { const h = document.documentElement.scrollHeight, v = window.innerHeight; TOTOP.hidden = !(h > 2 * v && window.scrollY + v > h - 600); };
+const topCheck = () => { const h = document.documentElement.scrollHeight, v = window.innerHeight; TOTOP.hidden = !(h > 2 * v && (window.scrollY + v > h - 600 || window.scrollY > 3 * v)); };
 window.addEventListener('scroll', topCheck, {passive: true}); window.addEventListener('resize', topCheck);
 
 /* ---------- Progress: profile, pace, export ---------- */
@@ -3239,16 +3253,17 @@ document.addEventListener('keydown', e => {
       if (!Q.answered) { if (Q.cur.multi || match) check(); }
       else finish(Q.ok ? 'sure' : 'wrong');
     }
-  } else if (CUR === 'exam' && EX && !EX.done && S.layout !== 'all') {
+  } else if (CUR === 'exam' && EX && !EX.done && (S.layout !== 'all' || EX.noBack)) {
     const q = byId[EX.qs[EX.i]], ord = EX.orders[EX.i];
     let n = -1;
     if (/^[1-9]$/.test(k)) n = +k - 1; else if (/^[a-jA-J]$/.test(k)) n = LETTERS.indexOf(k.toUpperCase());
     if (n >= 0 && ord[n] != null) { const b = document.querySelector(`[data-o="${ord[n]}"]`); if (b) b.click(); e.preventDefault(); return; }
-    if (k === 'ArrowRight' || k === 'Enter') { if (EX.i < EX.qs.length - 1) { EX.i++; renderExam(); } e.preventDefault(); }
+    if (k === 'ArrowRight' || k === 'Enter') { if (EX.i < EX.qs.length - 1 && exLeaveOk()) { EX.i++; renderExam(); } e.preventDefault(); }
     if (k === 'ArrowLeft') { if (EX.i > 0 && !EX.noBack) { EX.i--; renderExam(); } e.preventDefault(); }
   }
 });
 document.title = COURSE.title;
+try { history.scrollRestoration = 'manual'; } catch (e) {}
 $('#apptitle').innerHTML = `${esc(COURSE.short)} <span class="stamp">updated ${esc(fmtDate(BUILD.built))}</span>`;
 // a paper saved mid-exam reopens on the exam page, clock running, so it is not forgotten in the background
 nav(); go(EX && !EX.done ? 'exam' : 'topics');

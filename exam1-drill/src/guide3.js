@@ -10,7 +10,7 @@ const GUIDE3_HTML = `
 <a href="#guide3-5">5 ADMET and acetaminophen</a>
 <a href="#guide3-6">6 Dose and LD50</a>
 <a href="#guide3-7">7 Dose–response curves</a>
-<a href="#guide3-8">8 Not yet taught, and the reading</a>
+<a href="#guide3-8">8 Indices, target, and the reading (taught 10/13)</a>
 <a href="#guide3-l14-1">9 Potency, ED/TD/LD and the three indices</a>
 <a href="#guide3-l14-2">10 Target and mechanism of action</a>
 <a href="#guide3-l14-3">11 The reading discussed: drugs in water</a>
@@ -200,7 +200,7 @@ const GUIDE3_HTML = `
 
 <!-- ===================================================================== -->
 <section class="guide" id="guide3-8">
-<h3>8. Not yet taught on 10/9: indices, target, and the reading</h3>
+<h3>8. Indices, target, and the reading (not reached on 10/9; taught 10/13)</h3>
 <p>She stopped at the 2-AAF figure: "We're gonna blast through the next few slides on dose, and wrap this up with target and mechanism of action, and then we'll see where we are, whether we get to talk about the paper or not" <small>(T) 10/9</small>; the remaining slides and the paper discussion moved to Tuesday 10/13. The points below are keyed from the slides and marked low yield in the bank until she teaches them.</p>
 <ul>
 <li>Potency comparison, ED, TD and LD values. <small>Tox slide ‘Values Developed from Dose-Response’</small></li>
