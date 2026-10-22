@@ -538,13 +538,13 @@ QUESTIONS.push(
  stem:"What is digoxin immune Fab?",
  options:[
   {t:"An antibody that binds overdosed digoxin and clears it from the blood", correct:true, why:"Her example of an antibody that treats a drug overdose: one form of antibody, made to grab digoxin and clear it. Her table key: digoxin specific antibody fragments bind digoxin, which will be renally eliminated."},
-  {t:"A polyclonal antivenom raised in animals against the foxglove plant", correct:false, why:"It is a monoclonal antibody against the drug, not a plant antivenom."},
+  {t:"A polyclonal antivenom raised in animals against the foxglove plant", correct:false, why:"It is made in sheep, but against digoxin itself, and it is antibody fragments (Fab) that bind the drug, not an antivenom against a plant."},
   {t:"A receptor antagonist that blocks digoxin at its binding site on the heart", correct:false, why:"It inactivates the drug in the blood rather than acting at the receptor."},
   {t:"A chelator for the metal in the digoxin molecule", correct:false, why:"Digoxin is not a metal; chelators do not apply."},
   {t:"A vitamin that bypasses the pathway digoxin inhibits", correct:false, why:"That is the warfarin and vitamin K category."}],
- teach:"Among the inactivators, antivenoms are antibodies against venoms, and one antibody treats a drug overdose: digoxin immune Fab, a monoclonal antibody made to grab digoxin and clear it out of the blood. Like any inactivator, it binds the toxin so it cannot reach its target, and the complex is cleared. After Fab is given, total digoxin (free and bound to Fab) is increased, so serum levels cannot be used to calculate more Fab doses.",
+ teach:"Among the inactivators, antivenoms are antibodies against venoms, and one antibody treats a drug overdose: digoxin immune Fab, sheep-derived antibody fragments (ovine Fab) made to grab digoxin and clear it out of the blood. Like any inactivator, it binds the toxin so it cannot reach its target, and the complex is cleared. After Fab is given, total digoxin (free and bound to Fab) is increased, so serum levels cannot be used to calculate more Fab doses.",
  quote:"the antibody that we have is the example I have here is digoxin immune fab. This is an antibody, a monoclonal antibody that's made to treat a digoxin overdose, OK? ... One form of antibody made to grab digoxin that somebody's overdosed on, it grabs it and nicely clears it out of the blood.",
- note:"She called digoxin immune Fab a monoclonal antibody; the slide lists it only as the example under antivenoms and antibodies, and the Marraffa article calls it digoxin-specific antibody fragments without the word monoclonal. Keyed on her wording.",
+ note:"She called digoxin immune Fab a monoclonal antibody; the FDA label (DigiFab, Digoxin Immune Fab (Ovine)) describes ovine Fab immunoglobulin fragments isolated from the serum of sheep immunized with a digoxin derivative, and the Marraffa article calls it digoxin-specific antibody fragments. The slide lists it only as the example under antivenoms and antibodies.",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Inactivation of Poisons: Antivenoms and Antibodies’; PoisoningTreatmentTable2026KEY.pdf row ‘Digoxin’; transcript 10/19"},
 
 /* ---------------- Pharmacological treatment I ---------------- */

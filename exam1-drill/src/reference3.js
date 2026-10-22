@@ -276,7 +276,7 @@ const REFERENCE3_HTML = `
 <tr><td>Requirements of an inactivator</td><td>Binds the toxin so it cannot reach its target; the complex is cleared; the complex has no toxicity (slide: low); high affinity for the toxin</td><td>‘Inactivation of Poisons’; T 10/19</td></tr>
 <tr><td>Chelator properties</td><td>Small molecules with a nucleophilic electron donor forming a metal-ligand complex; multidentate (several binding points on one metal atom); higher affinity for the metal than tissue macromolecules; low affinity for calcium and other endogenous ions; water soluble, non-toxic, readily cleared; structures not required</td><td>‘Heavy Metal Chelators’, ‘Structure of chelators’; T 10/19</td></tr>
 <tr><td>Polyclonal antivenom</td><td>Animal inoculated with small amounts of venom; antibodies filtered from its blood; a collection of antibodies, not one clone; danger: type III hypersensitivity (serum sickness: fever, nausea, malaise)</td><td>‘Antivenoms and Antibodies’; T 10/19</td></tr>
-<tr><td>Digoxin immune Fab</td><td>A monoclonal antibody that grabs overdosed digoxin and clears it from the blood; the one antibody antidote for a drug</td><td>‘Antivenoms and Antibodies’; T 10/19</td></tr>
+<tr><td>Digoxin immune Fab</td><td>Sheep-derived antibody fragments (ovine Fab, from sheep immunized with a digoxin derivative) that grab overdosed digoxin and clear it from the blood; the one antibody antidote for a drug. She said “monoclonal”; the label does not.</td><td>‘Antivenoms and Antibodies’; T 10/19; DigiFab label</td></tr>
 </tbody></table>
 <p class="sub">Memorize the chelator table: agent and metal. Side effects not covered. ‘Example Chelating Agents’; T 10/19.</p>
 
