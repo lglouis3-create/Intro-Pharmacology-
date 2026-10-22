@@ -2715,26 +2715,41 @@ function narrSpeak(fig, i, done) {
 }
 /* "Hear the why" on a question card: the recorded explanation of one of his own questions (NARR_Q, narration.js).
    Works whatever the narration setting is, since the learner asked for it by tapping. */
+/* A spoken script shown as sentences; the one being read is highlighted. Recorded audio is followed by
+   its share of the clip's time (each sentence takes time in proportion to its length); the device voice marks each sentence as it starts. */
+const saySents = t => (String(t).match(/[^.;:!?]+[.;:!?]*["”’)]*\s*/g) || [String(t)]).filter(x => x.trim());
+const sayHTML = t => saySents(t).map((x, i) => `<span class="ssent" data-si="${i}">${esc(x)}</span>`).join('');
+function sayMark(box, i) {
+  if (!box) return; const ss = box.querySelectorAll('.ssent'); if (!ss.length) return;
+  ss.forEach((x, k) => x.classList.toggle('on', k === i));
+  const on = ss[i]; if (on && box.scrollHeight > box.clientHeight) box.scrollTop = Math.max(0, on.offsetTop - box.offsetTop - 24);
+}
+function sayFrac(box, frac) {
+  if (!box) return; const ss = [...box.querySelectorAll('.ssent')]; if (!ss.length) return;
+  const lens = ss.map(x => x.textContent.length), tot = lens.reduce((a, b) => a + b, 0); let acc = 0, i = 0;
+  for (; i < lens.length; i++) { acc += lens[i]; if (acc / tot >= frac) break; }
+  sayMark(box, Math.min(i, ss.length - 1));
+}
 let QSAY = null;
 function qSay(id, btn) {
   const text = NARR_Q[id]; if (!text) return;
   if (QSAY && QSAY.id === id) { qSayStop(); return; }
   qSayStop(); narrStop();
   const card = btn.closest('.qcard') || btn.parentElement, row = btn.closest('.qsay');
-  let d = row.querySelector('.nsaid'); if (!d) { d = document.createElement('div'); d.className = 'nsaid'; d.style.flex = '1 1 100%'; row.appendChild(d); } d.textContent = text;
+  let d = row.querySelector('.nsaid'); if (!d) { d = document.createElement('div'); d.className = 'nsaid saybox'; d.style.flex = '1 1 100%'; row.appendChild(d); } d.innerHTML = sayHTML(text); sayMark(d, 0);
   const cur = QSAY = {id, btn, t: null}; btn.textContent = '■ Stop'; btn.setAttribute('aria-pressed', 'true');
   const finish = () => { if (QSAY !== cur) return; qSayStop(); };
-  const synth = () => { if (!narrCan()) return finish(); const v = narrVoice(); let last = null; (speakable(text).match(/[^.;:!?]+[.;:!?]*/g) || [text]).forEach(part => { if (!part.trim()) return; const u = new SpeechSynthesisUtterance(part.trim()); u.rate = NAR.rate; u.lang = 'en-US'; if (v) u.voice = v; last = u; speechSynthesis.speak(u); }); if (!last) return finish(); last.onend = last.onerror = finish; cur.t = setTimeout(finish, (2000 + text.split(/\s+/).length * 450) / NAR.rate); };
+  const synth = () => { if (!narrCan()) return finish(); const v = narrVoice(); let last = null; saySents(text).forEach((part0, si) => { const part = speakable(part0); if (!part.trim()) return; const u = new SpeechSynthesisUtterance(part.trim()); u.onstart = () => { if (QSAY === cur) sayMark(d, si); }; u.rate = NAR.rate; u.lang = 'en-US'; if (v) u.voice = v; last = u; speechSynthesis.speak(u); }); if (!last) return finish(); last.onend = last.onerror = finish; cur.t = setTimeout(finish, (2000 + text.split(/\s+/).length * 450) / NAR.rate); };
   if (typeof Q_CLIPS !== 'undefined' && !Q_CLIPS.includes(id)) { cur.fell = true; synth(); cur.t = setTimeout(finish, (6000 + text.split(/\s+/).length * 500) / NAR.rate); return; }   // no recorded clip: the device voice, without a failed request
   const a = NARR_AUDIO || (NARR_AUDIO = new Audio()); a.preload = 'auto'; a.src = NAR_BASE() + 'q-' + id + '.mp3'; a.playbackRate = NAR.rate;
   const fallback = () => { if (QSAY !== cur || cur.fell) return; cur.fell = true; synth(); };
-  a.onended = finish; a.onerror = fallback; a.play().catch(fallback);
+  a.onended = finish; a.onerror = fallback; a.ontimeupdate = () => { if (QSAY === cur && !cur.fell && isFinite(a.duration)) sayFrac(d, a.currentTime / a.duration); }; a.play().catch(fallback);
   cur.t = setTimeout(finish, (6000 + text.split(/\s+/).length * 500) / NAR.rate);
 }
 function qSayStop() {
   const c = QSAY; QSAY = null; if (!c) return; clearTimeout(c.t);
   if (document.body.contains(c.btn)) { c.btn.textContent = '🔊 Hear the why'; c.btn.setAttribute('aria-pressed', 'false'); }
-  if (NARR_AUDIO) { NARR_AUDIO.onended = NARR_AUDIO.onerror = null; NARR_AUDIO.pause(); }
+  if (NARR_AUDIO) { NARR_AUDIO.onended = NARR_AUDIO.onerror = NARR_AUDIO.ontimeupdate = null; NARR_AUDIO.pause(); }
   if (narrCan()) speechSynthesis.cancel();
 }
 document.addEventListener('click', e => { const b = e.target.closest('[data-qsay]'); if (b) qSay(b.dataset.qsay, b); });
@@ -2892,7 +2907,7 @@ function rdCard(r) {
       ${quiz.length ? `<button class="btn ghost" data-rdquiz="${esc(r.id)}">Her quiz items (${quiz.length})</button>` : ''}
       ${r.listen ? `<button class="btn ghost" data-rdlisten="${esc(r.id)}">🔊 Listen${r.listen_secs ? ' · ' + rdClock(r.listen_secs) : ''}</button>` : ''}
       ${(r.links || []).map(([v, a, l]) => `<button type="button" class="chip" data-jump="${esc(v)}:${esc(a)}">${esc(l)}</button>`).join('')}</div>
-    ${r.listen ? `<div class="rdplayer" data-rdp="${esc(r.id)}" hidden><div class="row"><button type="button" class="btn ghost" data-rdpp>❚❚ Pause</button><button type="button" class="btn ghost" data-rdpn hidden>Next ▸</button><button type="button" class="btn ghost" data-rdps>■ Stop</button><span class="meta rdpt" aria-live="off">0:00</span></div><input type="range" class="rdseek" min="0" max="1000" step="1" value="0" aria-label="Position in the talk"></div>` : ''}
+    ${r.listen ? `<div class="rdplayer" data-rdp="${esc(r.id)}" hidden><div class="row"><button type="button" class="btn ghost" data-rdpp>❚❚ Pause</button><button type="button" class="btn ghost" data-rdpn hidden>Next ▸</button><button type="button" class="btn ghost" data-rdps>■ Stop</button><button type="button" class="btn ghost" data-rdtx aria-pressed="false">Show transcript</button><span class="meta rdpt" aria-live="off">0:00</span></div><input type="range" class="rdseek" min="0" max="1000" step="1" value="0" aria-label="Position in the talk"><div class="nsaid saybox rdtx" hidden>${sayHTML(r.listen)}</div></div>` : ''}
     ${fold('About, in full', rdLead(r.about || '')[1] ? `<p>${esc(r.about)}</p>` : '')}
     ${fold('Read for', li(r.read_for))}
     ${fold('Where her lecture used it', use)}
@@ -2916,6 +2931,7 @@ function vReadings() {
   $('#view').onclick = e => {
     if (e.target.closest('[data-rdpp]')) return rdPause();
     if (e.target.closest('[data-rdps]')) return rdStop();
+    const tx = e.target.closest('[data-rdtx]'); if (tx) { const box = tx.closest('.rdplayer').querySelector('.rdtx'); box.hidden = !box.hidden; RD_TX = !box.hidden; tx.textContent = box.hidden ? 'Show transcript' : 'Hide transcript'; tx.setAttribute('aria-pressed', String(!box.hidden)); return; }
     if (e.target.closest('[data-rdpn]')) return rdNext();
     const b = e.target.closest('[data-rdq],[data-rdquiz],[data-rdplay],[data-rdlisten]'); if (!b) return;
     const r = RS.find(x => x.id === (b.dataset.rdq || b.dataset.rdquiz || b.dataset.rdplay || b.dataset.rdlisten)); if (!r) return;
@@ -2946,14 +2962,17 @@ function rdTime(cur, total) {
   if (RDK && RDK.fell) { t.textContent = 'Read by the device voice (no time bar)'; sk.hidden = true; return; }
   sk.hidden = false; t.textContent = total ? `${rdClock(cur)} / ${rdClock(total)} · ${rdClock(total - cur)} left` : rdClock(cur);
   if (!RDK || !RDK.seeking) sk.value = total ? Math.round(1000 * cur / total) : 0;
+  if (total) sayFrac(p.querySelector('.rdtx'), cur / total);
 }
 /* The player on the card of the talk now playing: pause, stop, next, a seek bar and the time left. */
+let RD_TX = false;   // the transcript stays open from one talk to the next once shown
 const rdPlayer = () => RDK && RDK.list[RDK.i] ? document.querySelector(`.rdplayer[data-rdp="${RDK.list[RDK.i].id}"]`) : null;
 function rdShowPlayer() {
   document.querySelectorAll('.rdplayer').forEach(p => p.hidden = true);
   const p = rdPlayer(); if (!p) return; p.hidden = false;
   const k = RDK; p.querySelector('[data-rdpp]').textContent = k.paused ? '▶ Resume' : '❚❚ Pause';
   p.querySelector('[data-rdpn]').hidden = k.i >= k.list.length - 1;
+  const box = p.querySelector('.rdtx'), tb = p.querySelector('[data-rdtx]'); if (box && tb) { box.hidden = !RD_TX; tb.textContent = RD_TX ? 'Hide transcript' : 'Show transcript'; tb.setAttribute('aria-pressed', String(RD_TX)); }
 }
 function rdSeek(f, dragging) {
   const k = RDK, a = NARR_AUDIO; if (!k || k.fell || !a || !isFinite(a.duration)) return;
@@ -2992,7 +3011,7 @@ function rdPlayCur() {
   const synth = () => {
     if (!narrCan()) return finish();
     const v = narrVoice(); let last = null;
-    (speakable(text).match(/[^.;:!?]+[.;:!?]*/g) || [text]).forEach(part => { if (!part.trim()) return; const u = new SpeechSynthesisUtterance(part.trim()); u.rate = NAR.rate; u.lang = 'en-US'; if (v) u.voice = v; last = u; speechSynthesis.speak(u); });
+    saySents(text).forEach((part0, si) => { const part = speakable(part0); if (!part.trim()) return; const u = new SpeechSynthesisUtterance(part.trim()); u.onstart = () => { if (RDK === cur) { const pl = rdPlayer(); if (pl) sayMark(pl.querySelector('.rdtx'), si); } }; u.rate = NAR.rate; u.lang = 'en-US'; if (v) u.voice = v; last = u; speechSynthesis.speak(u); });
     if (!last) return finish(); last.onend = last.onerror = finish;
     cur.t = setTimeout(finish, (4000 + text.split(/\s+/).length * 500) / NAR.rate);
   };

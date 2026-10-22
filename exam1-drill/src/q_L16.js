@@ -36,7 +36,7 @@ QUESTIONS.push(
 
 {id:"L16-002", lecture:"L16", prof:"Smith", tier:"new", topic:"L16", sub:"absorbrev", skill:"apply", core:true, coreWhy:"her Quiz 3 Q8 (time frame for single-dose activated charcoal)",
  concept:"charcoal-time-window-reason", tags:["smith"], source:"transcript",
- stem:"Single-dose activated charcoal is given within about 2 hours of an ingestion. Why does it work poorly if it is given 4 to 6 hours later?",
+ stem:"Single-dose activated charcoal works only when it is given soon after an ingestion. Why does it work poorly if it is given 4 to 6 hours later?",
  options:[
   {t:"The poison has moved on out of the stomach and small intestine", correct:true, why:"Charcoal must be in the stomach and small intestine while the poison is still there; an orally ingested poison moves on through."},
   {t:"The charcoal has been absorbed into the blood with the poison", correct:false, why:"Charcoal is not absorbed; it stays in the gut and leaves in the feces with whatever it bound."},
