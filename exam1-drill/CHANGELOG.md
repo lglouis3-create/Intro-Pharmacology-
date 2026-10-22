@@ -2,6 +2,11 @@
 
 Newest first. The build embeds this file; the Topics page shows what is new since your last visit, and the Progress page shows all of it. Keep each bullet to one short line.
 
+## 2026-10-22 (Audio controls on the card; back to top)
+
+- Readings: the card you are listening to shows Pause, Stop, a seek bar and the time left.
+- A ↑ Top button appears when you reach the bottom of a long page.
+
 ## 2026-10-22 (Treating Poisonings figures)
 
 - Nine Treating Poisonings questions now show her slide figure: methanol, cyanide, acetaminophen, warfarin and more.
