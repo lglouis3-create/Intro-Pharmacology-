@@ -2,6 +2,10 @@
 
 Newest first. The build embeds this file; the Topics page shows what is new since your last visit, and the Progress page shows all of it. Keep each bullet to one short line.
 
+## 2026-10-22 (Back to Topics)
+
+- Starting a deck from Topics (Drill, Due, All) shows "← Back to Topics", which returns to the same spot.
+
 ## 2026-10-22 (Explain more: boxed answers)
 
 - Explain more now boxes the part of the guide or reference that answers the question, and scrolls to it.
