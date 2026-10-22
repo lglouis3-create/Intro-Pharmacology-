@@ -2,6 +2,16 @@
 
 Newest first. The build embeds this file; the Topics page shows what is new since your last visit, and the Progress page shows all of it. Keep each bullet to one short line.
 
+## 2026-10-23 (Questions rewritten to her exam format)
+
+- Every Exam 3 question now has 4 options built like hers: no giveaway "always/only/never", no length clue.
+- ★ Most likely on her exam: a button on every topic and section (her quizzes, her keys, her words, her objectives).
+- 94 new questions in her formats: NOT/EXCEPT, true/false, which pairing is wrong, patient cases, fill in the blank.
+- Fill in the blank: type it, or open the word bank; then show the answer and mark if you had it.
+- 32 new questions on gaps: guideline drug list, toxidrome table, interaction types, TI/MOS/MOE calculations.
+- Poisoning table: cover only the antidote and mechanism, or only the symptoms.
+- Audio: Show transcript highlights each sentence as it is read (reading talks and Hear the why).
+
 ## 2026-10-22 (Fixes from a full click-through)
 
 - Her exam format stays on after a reload; moving on from a blank question asks first.
