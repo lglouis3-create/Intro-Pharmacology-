@@ -22,7 +22,7 @@ QUESTIONS.push(
  stem:"Why does a medication count as a xenobiotic in the patient who takes it, even at a safe dose?",
  options:[
   {t:"It is not made by or expected in the body", correct:true, why:"A xenobiotic is any compound in an organism that the organism does not normally produce or expect; harm is not part of the definition, and a medication qualifies."},
-  {t:"It is a toxic substance made by a biological system", correct:false, why:"That is the definition of a toxin, such as snake venom."},
+  {t:"It is a toxic substance made by a biological system", correct:false, why:"This mixes up xenobiotic with toxin: a toxin is defined by biological origin (snake venom), while a xenobiotic is defined by being foreign to the organism, whatever its origin."},
   {t:"It is a toxic by-product of human activity", correct:false, why:"That is the definition of a toxicant, such as a smokestack emission; origin is not what makes a compound a xenobiotic."},
   {t:"It can cause a deleterious response at any dose", correct:false, why:"That leans on the definition of a poison; a xenobiotic is defined by being foreign to the organism, not by harm."},
   {t:"It has already been changed by liver metabolism", correct:false, why:"Metabolism is not part of the definition; the parent drug is a xenobiotic as soon as it enters the body."}],
@@ -121,7 +121,7 @@ QUESTIONS.push(
   {t:"Workers develop tolerance and stop noticing it", correct:false, why:"She stressed that no tolerance develops: the worker gets the headache and sleepiness every time."},
   {t:"Benzene causes leukemia only after one single exposure", correct:false, why:"Leukemia is the effect of chronic low-dose exposure, not of one exposure."},
   {t:"Benzene enters the body only through the skin", correct:false, why:"Benzene is a gas in her example; it is breathed in."},
-  {t:"A single exposure to benzene produces no symptoms", correct:false, why:"One exposure gives a headache or sleepiness."}],
+  {t:"A single exposure to benzene produces no symptoms", correct:false, why:"This misses the symptoms that do occur: one exposure gives a headache or sleepiness, but workers do not connect those mild symptoms to an invisible, odorless gas."}],
  teach:"Benzene leaking in a workplace is a gas that cannot be seen or smelled, so a small leak can go unnoticed and unrepaired. One walk-in gives a headache or sleepiness; the same symptoms return with each day's exposure, and chronic low-dose exposure causes leukemia.",
  quote:"But oftentimes if people would go into the workplace and there's a little bit of benzene leaking, you can't smell it, it's a gas, can't see it. Um, they'd get a little headache or or sleepy",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Exposure: Single vs. Repeated’; transcript 10/9"},
@@ -233,7 +233,7 @@ QUESTIONS.push(
   {t:"One curve is individual and one is a population curve", correct:false, why:"Both are individual dose–response data: enzyme inhibition at each dose."},
   {t:"The second curve shows the cumulative dose received", correct:false, why:"Cumulative dose was the lesson of the 2-AAF study, not of this plot."},
   {t:"Each group of animals received two routes of exposure", correct:false, why:"Route is not what the plot shows; each curve is one enzyme."}],
- teach:"An individual dose–response describes the response of individuals to varying doses. If the right things are measured, it shows that many chemicals have more than one effect because they have multiple targets: the organophosphate inhibits both carboxylesterase and cholinesterase. That would not be visible without graphing the data as an individual dose–response curve.",
+ teach:"An individual dose–response describes the response of individuals to varying doses, and each measured response gets its own curve. The organophosphate inhibits two different enzymes, carboxylesterase and cholinesterase, so measuring both gives two curves against the same doses. That is how the plot shows that many chemicals have more than one effect because they have multiple targets; it is visible only if the right things are measured on an individual dose–response plot.",
  quote:"we can see oftentimes by using data this way, if we measure the right things, that many chemicals have more than one effect because they have multiple targets. For example, these organophosphate exposures are inhibiting these two different kinds of enzymes.",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘First Dose-Response Relationship’ (C&D Fig 2-5); transcript 10/9"},
 
@@ -241,12 +241,12 @@ QUESTIONS.push(
  concept:"log-dose-axis", tags:["smith","why"], source:"transcript",
  stem:"Why is the dose axis of an individual dose–response plot sometimes put on a logarithmic scale?",
  options:[
-  {t:"So the dose–response plots as straight lines", correct:true, why:"Her reason: people turn the dose into a logarithmic scale so you get linear lines."},
+  {t:"So the data fall on straight lines", correct:true, why:"Her reason: people turn the dose into a logarithmic scale so you get linear lines."},
   {t:"So the plot shows the cumulative mortality", correct:false, why:"Cumulative mortality is a population dose–response plot, with deaths on the y axis."},
   {t:"So the response is shown in probit units", correct:false, why:"Probit units belong to the population figure, and she set them aside: \"Nobody ever uses this.\""},
   {t:"So the LD50 can be read off the plot", correct:false, why:"The LD50 comes from a population (mortality) curve, not from enzyme inhibition in individuals."},
   {t:"So the threshold dose is moved down to zero", correct:false, why:"A change of scale does not move a threshold; it only changes how the line looks."}],
- teach:"An individual dose–response plot puts the response (here percent enzyme inhibition) on the y axis and dose on the x axis. Plotting the dose on a logarithmic scale turns the curve into a straight line, which is easier to read.",
+ teach:"An individual dose–response plot puts the measured response (here percent enzyme inhibition) on the y axis and the dose given to each group on the x axis. When the x axis is changed from dose to a logarithmic scale of dose, the same data fall on linear lines. The scale changes only how the relationship is drawn; the doses, the responses and the two enzyme targets stay the same.",
  quote:"where you are showing on the y axis that percent of inhibition, and the x axis is the dose, and sometimes people will turn it into a logarithmic scale here with the dose, so you get linear lines here",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘First Dose-Response Relationship’; transcript 10/9"},
 
@@ -286,7 +286,7 @@ QUESTIONS.push(
   {t:"Carcinogens have very high LD50 values in rats", correct:false, why:"LD50 is a lethality measure from population curves; it is not the reason for the linear model."},
   {t:"Carcinogens produce only immediate effects after a dose", correct:false, why:"Cancer is a delayed effect, as with DES and chronic benzene; the linear model rests on the single-molecule idea."},
   {t:"Carcinogens are always cleared before they can accumulate", correct:false, why:"Clearance does not explain the line; a single molecule's damage to DNA does."}],
- teach:"An S-shaped curve implies a threshold, a dose below which there is no effect; that is probably the case for medications and most poisons. Carcinogens were long modeled with a linear line from zero, on the theory that a single molecule could damage DNA and start a cancer. So not every substance can be assumed to have a harmless dose, though she qualified this with possibly.",
+ teach:"The chain behind the linear model: a single molecule of a carcinogen may damage DNA; that damage may start a cancer; so even the first molecule carries a possible effect, and the line rises from zero dose with no flat no-effect region. This contrasts with the S-shaped curve of medications and most poisons, which stays flat until a threshold. For long this is what carcinogens were thought to do, and she qualified it with possibly.",
  quote:"the first molecule of what you're exposed to in this linear line could cause you problems, OK? That's a theory for exposure to carcinogens. Maybe it just takes one molecule of a carcinogen to cause you problems. Maybe the one molecule of carcinogen is damaging your DNA and kicking you off into having cancer, OK. Possibly.",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Threshold Dose’; transcript 10/9"},
 
@@ -294,7 +294,7 @@ QUESTIONS.push(
  concept:"threshold-vs-linear", tags:["smith","why"], source:"both",
  stem:"Why does an S-shaped (sigmoidal) dose–response curve, the shape seen for most medications, imply a dose with no effect?",
  options:[
-  {t:"No effect appears until the dose reaches a threshold", correct:true, why:"Rising from no dose, the curve shows a response only once the threshold is reached; below it there is no effect, therapeutic or poisonous."},
+  {t:"Response begins only at a threshold dose", correct:true, why:"The low end of the S stays flat at no response: small doses produce neither a therapeutic nor a poisonous effect, and the curve only starts to rise at the threshold. Every dose on that flat part is a dose with no effect."},
   {t:"The curve rises from the very first molecule", correct:false, why:"That is the linear, no-threshold line used for carcinogens."},
   {t:"The curve falls and then rises again with dose", correct:false, why:"That is a U-shaped curve, for essential nutrients or hormesis."},
   {t:"Every dose along the curve gives the same response", correct:false, why:"The response rises with dose above the threshold."},

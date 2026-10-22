@@ -34,7 +34,7 @@ QUESTIONS.push(
  concept:"side-effect-therapy-too-far-vs-other-target", tags:["smith","why"], source:"both",
  stem:"A drug's side-effect list includes an effect completely unrelated to its therapeutic mechanism of action. What most likely explains this side effect?",
  options:[
-  {t:"The drug reaches an off-target receptor somewhere in the body", correct:true, why:"Her answer to \"why does this drug cause that side effect?\": the drug is going to an off-target receptor somewhere in the body."},
+  {t:"The drug reaches an off-target receptor somewhere in the body", correct:true, why:"The therapeutic mechanism cannot produce an effect unrelated to it, so a second receptor the drug was never designed for must be producing it; her answer to \"why does this drug cause that side effect?\" was an off-target receptor somewhere in the body."},
   {t:"The therapeutic action has gone too far, as with over-diuresis", correct:false, why:"Therapy gone too far explains side effects related to the drug's action, such as the diuretic example, not unrelated ones."},
   {t:"The dose at the intended receptor in the intended tissue is too high", correct:false, why:"Too much dose at the intended receptor is an on-target adverse effect; it would look like the therapeutic action, not an unrelated effect."},
   {t:"The patient has developed reduced-responsiveness tolerance", correct:false, why:"Tolerance lowers the response to the drug; it does not create a new, unrelated effect."},
@@ -47,7 +47,7 @@ QUESTIONS.push(
  concept:"off-target-fix-molecule", tags:["smith","why"], source:"transcript",
  stem:"A drug was made to find one particular receptor, yet it also finds other receptors, in the intended tissue and in other tissues. What explains why the drug is not \"clean\"?",
  options:[
-  {t:"Part of the molecule interacts with receptors not foreseen at design", correct:true, why:"Her answer to her own question: when the drug was designed, nobody knew that some molecular aspect of it would interact with other, off-target receptors."},
+  {t:"Part of the molecule interacts with receptors not foreseen at design", correct:true, why:"A drug is built around the receptor it is meant to find, and nobody can know at design time every other receptor a given part of the molecule will also fit. That unforeseen fit is why chemists later go back, find the part hitting the other receptor, and change it."},
   {t:"Its dose at the intended receptor is too high", correct:false, why:"Too much dose at the intended receptor gives an on-target adverse effect, not binding to other receptors."},
   {t:"It reaches the intended receptor, but in the wrong tissue", correct:false, why:"The intended receptor in the wrong tissue is still called on-target."},
   {t:"Its intended receptors were down-regulated by repeated dosing", correct:false, why:"Down-regulation changes receptor number; it does not make the drug bind other receptors."},
@@ -73,7 +73,7 @@ QUESTIONS.push(
  concept:"diphenhydramine-on-target-wrong-tissue", tags:["smith","why"], source:"both",
  stem:"Why do newer antihistamines such as cetirizine and fexofenadine not cause the drowsiness seen with diphenhydramine (Benadryl)?",
  options:[
-  {t:"Their molecules were changed so they do not cross the blood-brain barrier", correct:true, why:"Her answer: the molecules were tweaked so they cannot reach the histamine receptors in the brain."},
+  {t:"Their molecules were changed so they do not cross the blood-brain barrier", correct:true, why:"Drowsiness comes from blocking histamine receptors in the brain. A molecule that cannot cross the blood-brain barrier never reaches those receptors, while it still reaches the peripheral receptors that prevent allergic symptoms."},
   {t:"They act on a different receptor from the one diphenhydramine acts on", correct:false, why:"They are still antihistamines acting at histamine receptors; what changed is where they can go."},
   {t:"They no longer reach the histamine receptors in the periphery either", correct:false, why:"The periphery is where they prevent allergic symptoms, so they must still reach it."},
   {t:"They are given at doses too low to reach the toxic-dose curve for drowsiness", correct:false, why:"Diphenhydramine's drowsiness is an on-target effect in the wrong tissue, not a dose that is too high."},
@@ -100,9 +100,9 @@ QUESTIONS.push(
  concept:"on-target-right-tissue-dose", tags:["smith","why"], source:"both",
  stem:"A drug finds the receptor it was designed for, in the intended tissue, yet the patient has an adverse effect. Which could explain this? Select all that apply.",
  options:[
-  {t:"The dose at the receptor is too high", correct:true, why:"Her first answer, and the most common one: an on-target adverse effect in the right tissue usually means the dose is too high."},
-  {t:"Chronic activation or inhibition of other effects", correct:true, why:"Her second answer, read from Figure 6-1."},
-  {t:"A deliberate or accidental dosing error", correct:true, why:"One of the ways the dose at the receptor becomes too high, on the On-Target Examples slide."},
+  {t:"The dose at the receptor is too high", correct:true, why:"The receptor and the tissue are the right ones, so the harm has to come from how much drug is acting there: too much drug at the right receptor overdoes the action. She called this the usual cause."},
+  {t:"Chronic activation or inhibition of other effects", correct:true, why:"Even at the right receptor, keeping it switched on or off for a long time can block something else the body needs: \"you could be inhibiting something that you want to have happening when your drug is on target.\""},
+  {t:"A deliberate or accidental dosing error", correct:true, why:"A dosing error, by a provider or a deliberate overdose, delivers more drug than intended, which is one route to too much dose at the receptor."},
   {t:"The drug hits an unintended receptor subtype", correct:false, why:"A different receptor subtype, as with propranolol and beta-2 receptors, is off-target."},
   {t:"An S-enantiomer in the mixture hits another receptor", correct:false, why:"An enantiomer hitting an unintended receptor is off-target (thalidomide)."}],
  teach:"An on-target adverse effect means the drug is hitting the receptor it was meant to hit. In the intended tissue, the explanation is either too much dose at the receptor (deliberate or accidental dosing errors, slowed clearance, fewer receptors) or chronic activation or inhibition of other effects. Hitting another receptor or subtype is off-target instead.",
@@ -127,7 +127,7 @@ QUESTIONS.push(
  concept:"reading-exposure-humans-vs-wildlife", tags:["smith","reading","why"], source:"transcript",
  stem:"Why are frogs treated as a sentinel, or red-flag, species for drugs in water?",
  options:[
-  {t:"They absorb a lot through their skin and are very sensitive", correct:true, why:"Her words: frogs absorb a lot, they are one of our sentinel species, and a student's point that frogs can be very sensitive is true."},
+  {t:"They absorb a lot through their skin and are very sensitive", correct:true, why:"Skin is a route of exposure for animals that live in water, and frogs take up a lot across it; combined with high sensitivity, their populations change (such as the shift toward female) where drug levels are raised, which makes them a warning that things are going wrong."},
   {t:"They are the species used in drug development studies", correct:false, why:"Drug development uses rodents, guinea pigs, dogs and pigs, not frogs, which is why wildlife data are lacking."},
   {t:"They are exposed only by eating other animals that live in the water", correct:false, why:"Animals in or near water are exposed by drinking, breathing, skin and eating; skin absorption is her point for frogs."},
   {t:"Their exposure is lower than humans', so any effect stands out", correct:false, why:"Animals living in the water are exposed constantly, more than humans who mostly drink it."},
@@ -140,7 +140,7 @@ QUESTIONS.push(
  concept:"reading-wildlife-effects", tags:["smith","reading","why"], source:"transcript",
  stem:"Asked whether wildlife are having problems from drugs in water, one student said yes and another said we don't know. Why were both answers right?",
  options:[
-  {t:"Some species show effects; others are too hard to catch and study", correct:true, why:"Her verdict: there is evidence for frogs, fish and alligators, and for other wildlife, such as orca whales, we just don't know."},
+  {t:"Some species show effects; others are too hard to catch and study", correct:true, why:"The answer differs by species: frog, fish and alligator populations shift toward female where estrogen is higher (yes), while animals such as orca whales are too hard to catch and study to know (we don't know)."},
   {t:"Data exist only for the species used in drug development", correct:false, why:"The species used in drug development are not the wildlife in question; the evidence comes from frogs, fish and alligators in the field and in isolated exposure studies."},
   {t:"Every species studied shows effects, but no doses have been measured", correct:false, why:"Not every species has been studied; orca whales, for one, are hard to catch."},
   {t:"Effects occur only where wastewater is untreated", correct:false, why:"She did not divide the answer by treated and untreated water."},
@@ -166,7 +166,7 @@ QUESTIONS.push(
  concept:"reading-sources", tags:["smith","reading","why"], source:"transcript",
  stem:"Dumping unused antibiotics down the toilet is improper disposal, a source of drugs in water. Why did she call leftover opioids down the toilet a bad example of improper disposal?",
  options:[
-  {t:"Flushing opioids is allowed, as they are a dangerous drug", correct:true, why:"Her correction of her own example: flushing leftover opioids is allowed because it is a dangerous drug, so she switched to unused antibiotics."},
+  {t:"Flushing opioids is allowed, as they are a dangerous drug", correct:true, why:"Her example was meant to show improper disposal, but flushing is the allowed route for leftover opioids as a dangerous drug, so it illustrated nothing improper; unused antibiotics flushed down the toilet did."},
   {t:"Wastewater treatment plants remove all opioids before release", correct:false, why:"Current treatment does not get all the drugs out of the water."},
   {t:"Opioids break down in the toilet water before reaching streams", correct:false, why:"She gave no such reason."},
   {t:"Opioids are never excreted, so flushing adds nothing new", correct:false, why:"She gave no such reason; excretion of parent drug and metabolites is a source for drugs in general."},
@@ -193,7 +193,7 @@ QUESTIONS.push(
  concept:"reversibility-regeneration", tags:["smith","why"], source:"both",
  stem:"The liver can regenerate after injury. A student asked about a patient with years of heavy drinking. Why might that liver not recover?",
  options:[
-  {t:"Regeneration often repairs mild injury but not severe chronic injury", correct:true, why:"Her answer to the student: a mild injury can often regenerate, but a more severe chronic injury may not."},
+  {t:"Regeneration often repairs mild injury but not severe chronic injury", correct:true, why:"Regeneration is what makes liver injury reversible, but it has limits: years of heavy drinking give a severe chronic injury rather than a mild one, and she said that kind of injury may not regenerate."},
   {t:"Liver cells, like nerve cells, cannot divide once differentiated", correct:false, why:"That is the reason nerve injury is irreversible; the liver is the tissue that can regenerate."},
   {t:"Injury from drinking is a local effect, which cannot be reversed", correct:false, why:"Local versus systemic is a different general concept and does not set reversibility."},
   {t:"Repeated drinking produces tolerance, which blocks regeneration", correct:false, why:"Tolerance is a reduced response to a toxicant, not a block on tissue repair."},
@@ -212,7 +212,7 @@ QUESTIONS.push(
   {t:"The mother's liver cannot regenerate while she is pregnant", correct:false, why:"Liver regeneration explains reversible liver injury; it is not her reason for birth defects."},
   {t:"Birth defects appear only years after the exposure", correct:false, why:"Delay is a separate concept; DES is the delayed example, and timing does not decide reversibility."},
   {t:"The fetus cannot absorb toxicants, so every effect stays local", correct:false, why:"The fetus is exposed through the mother's exposure, and teratogens do reach it."}],
- teach:"Some toxic effects are reversible and others are not. Cancer and birth defects are considered irreversible. For birth defects the reason is development: if a fetus is exposed to something that disrupts how the limbs or other parts of the body form, that injury cannot be fixed afterward.",
+ teach:"Reversibility depends on whether the tissue can repair or regenerate. A birth defect is an error in how a limb or other body part forms while the fetus develops, and each structure forms during its own window of gestation (the hamster retinoid study gave different defects at different gestation days). Once the structure has formed wrongly, there is no regeneration that rebuilds it, so the injury cannot be fixed; cancer is likewise irreversible, as cancerous cells are killed or removed, never returned to normal.",
  quote:"Birth defects are irreversible because as a fetus is developing, if you are exposed to something that's messing up the way those limbs form, other parts of the body form, uh, that cannot be fixed, OK?",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Reversible vs. Irreversible’; transcript 10/13"},
 
@@ -262,7 +262,7 @@ QUESTIONS.push(
  concept:"fda-pregnancy-lactation-labeling", tags:["smith","why"], source:"both",
  stem:"Why does the newer FDA (Food and Drug Administration) pregnancy labeling include a drug's effects on male fertility?",
  options:[
-  {t:"Effects on sperm count or viability could contribute to teratogenicity", correct:true, why:"Her reason: a medication taken by a man may affect sperm count or viability, and that could contribute to teratogenicity."},
+  {t:"Effects on sperm count or viability could contribute to teratogenicity", correct:true, why:"A drug that lowers sperm count or viability acts through the father, before conception, and she said that could contribute to teratogenicity; a label that described only the mother's use of the drug would miss that risk."},
   {t:"Men taking the drug can pass it to infants through breast milk", correct:false, why:"Breast milk is the lactation part of the labeling, about nursing mothers."},
   {t:"The old labeling scale ranked drugs only for use by men", correct:false, why:"The old scale ranked drugs from known to cause birth defects to not; it did not concern men."},
   {t:"Sperm carry the drug across the placenta into the fetus", correct:false, why:"She described an effect on sperm count and viability, not sperm carrying the drug."},
