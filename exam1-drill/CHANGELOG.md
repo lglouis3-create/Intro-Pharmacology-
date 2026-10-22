@@ -2,6 +2,10 @@
 
 Newest first. The build embeds this file; the Topics page shows what is new since your last visit, and the Progress page shows all of it. Keep each bullet to one short line.
 
+## 2026-10-22 (Digoxin immune Fab)
+
+- Digoxin immune Fab is now described as on its label: sheep-derived antibody fragments (ovine Fab), not monoclonal.
+
 ## 2026-10-22 (Why questions, clearer explanations)
 
 - 121 new Exam 3 questions ask why: the reason behind each concept, from her words and keys. Topics: "Why questions".

@@ -2074,8 +2074,8 @@ const TERMS = [
  src:'both'},
 
 {id:'digoxin-immune-fab', term:'Digoxin immune Fab', lecture:'L16', group:'Treating poisonings',
- def:'A monoclonal antibody made to treat a digoxin overdose: one form of antibody that grabs digoxin and clears it out of the blood. It is the one antibody antidote for a drug; monoclonals for opioid overdose and for snake venoms are being worked on but are not on the market.',
- gist:"A monoclonal antibody that grabs the overdosed drug and clears it from the blood.",
+ def:'Sheep-derived antibody fragments made to treat a digoxin overdose: the FDA label describes ovine Fab fragments isolated from the serum of sheep immunized with a digoxin derivative. The Fab grabs digoxin and clears it out of the blood. She called it a monoclonal antibody in lecture; the label does not. It is the one antibody antidote for a drug; monoclonals for opioid overdose and for snake venoms are being worked on but are not on the market.',
+ gist:"Sheep-derived antibody fragments that grab the overdosed drug and clear it from the blood.",
  scene:'A digoxin-overdose patient receives the Fab and the drug leaves the circulation bound to it.',
  sceneQ:"Monoclonal antibodies for opioid overdose and for snake venoms are still being worked on. Which antibody antidote for a drug overdose is already in use?",
  confuse:['antivenom-polyclonal'],
