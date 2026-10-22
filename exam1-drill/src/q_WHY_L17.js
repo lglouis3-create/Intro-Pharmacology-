@@ -243,7 +243,7 @@ QUESTIONS.push(
 
 {id:"L17-120", lecture:"L17", prof:"Smith", tier:"new", topic:"L17", sub:"genophen", skill:"apply",
  concept:"functional-significance", tags:["smith","why"], source:"both",
- stem:"Why can information about CYP2C19*2 (the *2 allele of cytochrome P450 2C19) be used to decide whether a patient gets a drug or a reduced dose?",
+ stem:"Why can information about CYP2C19*2 be used to decide whether a patient gets a drug or a reduced dose?",
  options:[
   {t:"Its functional significance is known", correct:true, why:"The genotype-phenotype relationship for *2 is tight: the enzyme is known to be inactive, and why."},
   {t:"It occurs in less than 1% of the population", correct:false, why:"Under 1% is a rare variant; frequency is not what makes a variant usable for dosing decisions."},

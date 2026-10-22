@@ -871,7 +871,7 @@ QUESTIONS.push(
 
 {id:"L14-067", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"nonorgan", skill:"apply",
  concept:"teratogen-time-of-exposure", tags:["smith"], source:"both",
- stem:"Hamsters dosed with a retinoid on different gestation days have offspring with different birth defects (eye, neural tube, palate, limb, tail). What does this show?",
+ stem:"Hamsters dosed with a retinoid on different gestation days have offspring with different birth defects. What does this show?",
  core:true, coreWhy:"her Quiz 2 item 9: teratogens do not cause only one kind of birth defect",
  options:[
   {t:"The time of exposure during gestation sets the type of defect", correct:true, why:"The limb defects were expected; the other defects appeared when the mothers were dosed at other times in gestation."},

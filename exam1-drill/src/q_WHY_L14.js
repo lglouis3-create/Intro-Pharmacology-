@@ -245,7 +245,7 @@ QUESTIONS.push(
 
 {id:"L14-120", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"nonorgan", skill:"apply",
  concept:"fda-pregnancy-lactation-labeling", tags:["smith","why"], source:"both",
- stem:"Why does the newer FDA (Food and Drug Administration) pregnancy labeling include a drug's effects on male fertility?",
+ stem:"Why does the newer FDA pregnancy labeling include a drug's effects on male fertility?",
  core:true, coreWhy:"her Quiz 2 item 4 (Pregnancy and Lactation Labeling Rule)",
  options:[
   {t:"Effects on sperm could contribute to teratogenicity", correct:true, why:"A drug that lowers sperm count or viability acts through the father, before conception, and that could contribute to teratogenicity; a label describing only the mother's use would miss that risk."},

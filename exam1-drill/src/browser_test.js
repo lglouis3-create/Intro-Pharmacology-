@@ -247,6 +247,13 @@ const out = path.join(__dirname, '..', course.match(/output:\s*'([^']+)'/)[1]);
   await page.click('nav button[data-v="topics"]');
   if (await page.$('span.chip[data-sk], span.chip[data-show], span.chip[data-mode], span.chip[data-n]')) fail('a filter chip is not a button');
   for (const v of ['guide', 'graphs']) { await page.click(`nav button[data-v="${v}"]`); if (await page.evaluate(() => document.querySelectorAll('#view img[data-img]:not([src])').length)) fail(v + ': a figure has no picture'); }
+  // step-throughs in the guide: six drawings, Next moves one step, the dots jump
+  await page.click('nav button[data-v="guide"]');
+  { const n = await page.evaluate(() => document.querySelectorAll('#view figure.step3').length); if (n < 6) fail('guide: ' + n + ' step-throughs (want 6)');
+    const r = await page.evaluate(() => { const f = document.querySelector('#view figure.step3[data-s3="haplotype"]'); f.closest('details') && (f.closest('details').open = true); f.querySelector('[data-s3go="1"]').click();
+      const g = document.querySelector('#view figure.step3[data-s3="haplotype"]'); const a = g.dataset.i; g.querySelector('[data-s3to="5"]').click();
+      const h = document.querySelector('#view figure.step3[data-s3="haplotype"]'); return [a, h.dataset.i, !!h.querySelector('[data-s3go="1"]').disabled, h.querySelectorAll('.s3svg svg').length]; });
+    if (r.join() !== '1,5,true,1') fail('step-through navigation: ' + r.join()); }
   // Exam 2: blueprint paper, "All" length, tiers, tell-apart drill and flashcards follow the exam studied
   await page.evaluate(() => { localStorage.setItem(COURSE.ns + ':exam', '2'); }); await page.reload();
   const e2 = await page.evaluate(() => {

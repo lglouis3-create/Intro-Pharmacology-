@@ -375,7 +375,7 @@ QUESTIONS.push(
 
 {id:"L13-029", lecture:"L13", prof:"Smith", tier:"new", topic:"L13", sub:"shape", skill:"tell",
  concept:"threshold-vs-linear", tags:["smith"], source:"both", core:true, coreWhy:"objective: significance of threshold",
- stem:"For which kind of agent is a linear, no-threshold dose–response (a response possible from the first molecule) used as the model?",
+ stem:"For which kind of agent is a linear, no-threshold dose–response used as the model?",
  options:[
   {t:"Medications", correct:false, why:"Medications follow the S-shaped curve with a threshold below which there is no effect."},
   {t:"Essential nutrients", correct:false, why:"Essential nutrients give the U-shaped curve with a region of homeostasis."},

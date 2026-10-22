@@ -511,7 +511,7 @@ QUESTIONS.push(
 
 {id:"L15-038", lecture:"L15", prof:"Smith", tier:"new", topic:"L15", sub:"immune", skill:"recall",
  concept:"immunologic-two-categories", tags:["smith"], source:"both",
- stem:"Immunologic (allergic) responses to drugs fall into which two broad categories?",
+ stem:"Immunologic responses to drugs fall into which two broad categories?",
  options:[
   {t:"Hypersensitivity and autoimmune reactions", correct:true, why:"Hypersensitivity is the allergic response (types 1 through 4); an autoimmune reaction is the immune system turning on the patient's own body."},
   {t:"Idiosyncratic and organ-specific reactions", correct:false, why:"Those are other categories of toxic endpoint."},
@@ -523,7 +523,7 @@ QUESTIONS.push(
 
 {id:"L15-039", lecture:"L15", prof:"Smith", tier:"new", topic:"L15", sub:"immune", skill:"apply",
  concept:"hapten", tags:["smith"], source:"both",
- stem:"How does a small-molecule drug (under 600 daltons) trigger an immune response?",
+ stem:"How does a small-molecule drug trigger an immune response?",
  options:[
   {t:"It acts as a hapten bound to a protein", correct:true, why:"The drug-protein complex is what the immune system responds to."},
   {t:"It activates the immune system directly", correct:false, why:"Direct activation is how large drugs, peptides and proteins, do it."},
@@ -766,7 +766,7 @@ QUESTIONS.push(
 
 {id:"L15-057", lecture:"L15", prof:"Smith", tier:"new", topic:"L15", sub:"absorb", skill:"apply",
  concept:"gastric-lavage-risks", tags:["smith"], source:"both",
- stem:"Which statement about gastric lavage (pumping the stomach) is correct?",
+ stem:"Which statement about gastric lavage is correct?",
  options:[
   {t:"Large tablets may not come back up the tube", correct:true, why:"A tube is passed to the stomach, fluid is pumped in and sucked out; the esophagus is not that big, so big tablets are hard to retrieve."},
   {t:"It is safe in a patient with esophageal rupture", correct:false, why:"Esophageal rupture or stomach problems make it dangerous; it is not done."},
