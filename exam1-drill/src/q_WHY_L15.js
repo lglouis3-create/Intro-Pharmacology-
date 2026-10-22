@@ -133,7 +133,7 @@ QUESTIONS.push(
 
 {id:"L15-111", lecture:"L15", prof:"Smith", tier:"new", topic:"L15", sub:"hepat", skill:"apply",
  concept:"idiosyncratic-liver-pharmacogenomics", dupOf:"L15-021", tags:["smith","why"], source:"both",
- stem:"A patient with a rare genetic variant metabolizes a drug differently from most people and has a severe reaction. Why is the liver, rather than the kidney or the lungs, the organ likely to be affected?",
+ stem:"A patient with a rare genetic variant metabolizes a drug abnormally and has a severe reaction. Why is the liver the organ most likely to be affected?",
  options:[
   {t:"The liver does most of the drug metabolism", correct:true, why:"Her reason: a variant that changes metabolism shows up where the metabolism happens, and the liver is the workhorse of metabolism."},
   {t:"The liver is the largest internal organ", correct:false, why:"Size does not change how a drug is metabolized; she rejected size in the liver poll."},
@@ -196,7 +196,7 @@ QUESTIONS.push(
 
 {id:"L15-116", lecture:"L15", prof:"Smith", tier:"new", topic:"L15", sub:"nephro", skill:"apply",
  concept:"ppi-interstitial-nephritis", tags:["smith","why"], source:"transcript",
- stem:"An older patient with an aspirin allergy takes an over-the-counter proton pump inhibitor (PPI) for months. The problem is found only when routine blood work shows a high serum creatinine. Why could the reaction go unnoticed?",
+ stem:"An older patient with an aspirin allergy takes an over-the-counter PPI for months; only routine blood work shows a high serum creatinine. Why could the reaction go unnoticed?",
  options:[
   {t:"The allergy appears as kidney injury, not hives", correct:true, why:"The allergic response to the PPI showed up as interstitial nephritis, so there were no outward allergy signs; only the blood work caught it."},
   {t:"PPIs form crystals that block the tubule without pain", correct:false, why:"PPIs belong under interstitial nephritis, not crystalluria."},

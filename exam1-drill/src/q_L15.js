@@ -752,7 +752,7 @@ QUESTIONS.push(
 
 {id:"L15-056", lecture:"L15", prof:"Smith", tier:"new", topic:"L15", sub:"absorb", skill:"apply",
  concept:"emesis-ipecac-aspiration", tags:["smith"], source:"both",
- stem:"Syrup of ipecac was once kept in home medicine cabinets to make a child vomit after swallowing something. What is its status now, and what is the main risk of induced emesis?",
+ stem:"Syrup of ipecac was once kept at home to make a child vomit after a poisoning. What is its status now, and what is the main risk of induced emesis?",
  options:[
   {t:"No longer sold or used; the biggest risk is aspiration", correct:true, why:"Vomiting can send stomach contents into the lungs."},
   {t:"Still used in emergency rooms; the biggest risk is aspiration", correct:false, why:"The risk is right, but ipecac is no longer sold in the US or used in hospitals."},
