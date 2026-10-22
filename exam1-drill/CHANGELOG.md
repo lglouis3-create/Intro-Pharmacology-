@@ -2,6 +2,11 @@
 
 Newest first. The build embeds this file; the Topics page shows what is new since your last visit, and the Progress page shows all of it. Keep each bullet to one short line.
 
+## 2026-10-22 (Explain more: boxed answers)
+
+- Explain more now boxes the part of the guide or reference that answers the question, and scrolls to it.
+- Exam 3 term questions link to the section where the term is taught (pharmacogenetics now opens PGx terms).
+
 ## 2026-10-22 (Exam 3: all her quizzes on one card)
 
 - All her quizzes on one card, "Quizzes (verbatim)", one section per quiz; quiz 1 moved from 10/9; progress kept.
