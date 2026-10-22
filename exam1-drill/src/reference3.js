@@ -18,7 +18,7 @@ const REFERENCE3_HTML = `
 <tr><td>Exposure</td><td>Route, vehicle and formulation, duration, single vs repeated, frequency</td><td>Tox ‘Exposure’ slides; T 10/9</td></tr>
 <tr><td>ADMET</td><td>Absorption, distribution, metabolism, excretion and toxicity; bioactivation vs detoxification</td><td>Tox ‘ADME’; T 10/9</td></tr>
 <tr><td>Dose</td><td>Is the exposure high enough to cause a problem; the dose makes the poison (Paracelsus)</td><td>Tox ‘Dose’; T 10/9</td></tr>
-<tr><td>Target and mechanism</td><td>The toxic target may differ from the therapeutic target (slide not yet taught)</td><td>Tox ‘Target &amp; Mechanism of Action’; T 10/9</td></tr>
+<tr><td>Target and mechanism</td><td>The toxic target may differ from the therapeutic target (slide taught 10/13)</td><td>Tox ‘Target &amp; Mechanism of Action’; T 10/9</td></tr>
 </tbody></table>
 
 <h3 id="ref3-3">3. Routes of exposure</h3>
@@ -78,7 +78,7 @@ const REFERENCE3_HTML = `
 <tr><td>Cumulative dose (2-AAF, hamsters)</td><td>Tumor incidence by dose at 24 and at 33 months</td><td>Bladder threshold about 75 ppm at 24 months, lower at 33 months; liver tumors even at zero dose at 33 months</td><td>Tox ‘More on Threshold Dose’; T 10/9</td></tr>
 </tbody></table>
 
-<h3 id="ref3-9">9. Indices from dose–response curves (slide not yet taught)</h3>
+<h3 id="ref3-9">9. Indices from dose–response curves (taught 10/13)</h3>
 <table class="reftab"><thead><tr><th>Index</th><th>Formula</th><th>Used for</th><th>Slope information</th></tr></thead><tbody>
 <tr><td>Therapeutic index (TI)</td><td>Toxic dose / therapeutic dose</td><td>Single doses</td><td>None</td></tr>
 <tr><td>Margin of safety (MOS)</td><td>TD1 / ED99</td><td>Single doses</td><td>Yes</td></tr>
@@ -360,7 +360,7 @@ const REFERENCE3_HTML = `
 <tr><td>Allele frequency / genotype frequency</td><td>Relative frequency of an allele / of a genotype in a population (proportion or percentage)</td><td>Alleles make up genotypes; worked examples later</td><td>‘Frequencies in Pharmacogenomics’ (p. 21); T 10/20</td></tr>
 <tr><td>Hardy-Weinberg equilibrium</td><td>Allele and genotype frequencies stay constant across generations unless specific influences are introduced</td><td>Out of equilibrium: the sample is not generalizable</td><td>‘Frequencies in Pharmacogenomics’ (p. 21); T 10/20</td></tr>
 </tbody></table>
-<h3 id="ref3-l17-3">30. Nomenclature and variant types on the slides not yet taught (low yield; start 10/21)</h3>
+<h3 id="ref3-l17-3">30. Nomenclature and variant types (taught 10/21; outside Exam 3)</h3>
 <table class="reftab"><thead><tr><th>Slide</th><th>Example</th><th>What it shows</th><th>Source</th></tr></thead><tbody>
 <tr><td>SNP nomenclature</td><td>VKORC1 1173 C&gt;T; ABCB1 3435 C&gt;T</td><td>Gene, nucleotide position, original (wild type) base, changed base</td><td>‘SNP Nomenclature’ (p. 24)</td></tr>
 <tr><td>Star nomenclature</td><td>CYP2C19*1; *2 (681 G&gt;A); *3 (636 G&gt;A)</td><td>Star and number designate the allele</td><td>‘Allele “Star” Nomenclature’ (p. 25)</td></tr>

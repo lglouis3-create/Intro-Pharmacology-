@@ -833,6 +833,7 @@ QUESTIONS.push(
   {t:"Any time, as charcoal pulls drug back out of the blood", correct:false, why:"A single dose works on what is still in the stomach."}],
  teach:"A single dose of activated charcoal has to reach the stomach while the poison is still there, so it is given very soon after ingestion, within about 1 to 2 hours. Wait longer and the drug has gone past the stomach and into the bloodstream.",
  quote:"single dose activated charcoal, we say it probably needs to be done within 1 to 2 hours of somebody ingesting whatever they overdosed on. OK.",
+  note:"Her Quiz 3 asked this with fixed options and keyed \"Less than 60 minutes\" (wrong options: 2-4 hours, any time frame, no sooner than 24 hours). In class she gave 1 to 2 hours (10/14) and \"up to 2 hours. They used to say just an hour\" (10/19). If the exam reuses her quiz options, her key is less than 60 minutes.",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Toxicokinetic-Based Treatment Prevent Absorption’; transcript 10/14"},
 
 {id:"L15-061", lecture:"L15", prof:"Smith", tier:"new", topic:"L15", sub:"absorb", skill:"tell",
@@ -876,7 +877,7 @@ QUESTIONS.push(
  quote:"The data for these evidence-based guidance documents comes from people overdosing, clinicians, pharmacists, doctors write up the case, get it published, and it's in the literature. These people that wrote these guidance documents are experts in the field. They pulled all those documents, evaluated every single one of those case reports or case series, and wrote these evidence-based documents.",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Guidelines for Overdoses’; transcript 10/14"},
 
-{id:"L15-064", lecture:"L15", prof:"Smith", tier:"new", topic:"L15", sub:"guide", skill:"recall", multi:true, lowYield:true,
+{id:"L15-064", lecture:"L15", prof:"Smith", tier:"new", topic:"L15", sub:"guide", skill:"recall", multi:true,
  concept:"guideline-drug-list", tags:["smith"], source:"slide",
  stem:"For which of the following have evidence-based consensus guidelines for out-of-hospital management been written? Select all that apply.",
  options:[
@@ -889,7 +890,7 @@ QUESTIONS.push(
   {t:"Omeprazole", correct:false, why:"Not on the list; it was her interstitial nephritis example."}],
  teach:"The slide lists the compounds with evidence-based consensus guidelines for out-of-hospital management: acetaminophen, atypical antipsychotics, beta-blockers, calcium channel blockers, dextromethorphan, diphenhydramine and dimenhydrinate, iron, methylphenidate, salicylate, selective serotonin reuptake inhibitors, TCAs, valproic acid, elemental mercury, ethylene glycol and long-acting anticoagulant rodenticides. Only a few drugs have them, but they are nasty ones. The objective is to know which compounds have guidelines and what information the guidelines hold.",
  quote:"Only a few drugs are out there that have these documents written, but these are pretty nasty drugs, OK? And we're going to just look at two of these documents, beta blockers and calcium channel blockers, and talk about them a little bit on Monday, OK?",
- note:"Only beta-blockers and calcium channel blockers were named aloud on 10/14; the rest of the list is from the slide.",
+ note:"Only beta-blockers and calcium channel blockers were named aloud on 10/14; the rest of the list is from the slide. Her objectives slide asks you to know which compounds have these guidelines, so the whole list is on the paper.",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Guidelines for Overdoses’; transcript 10/14"},
 
 {id:"L15-065", lecture:"L15", prof:"Smith", tier:"new", topic:"L15", sub:"guide", skill:"recall",

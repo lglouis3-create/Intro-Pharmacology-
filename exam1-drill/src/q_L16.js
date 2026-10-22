@@ -46,7 +46,7 @@ QUESTIONS.push(
   {t:"The patient is too sedated to swallow it by then", correct:false, why:"The window is set by where the poison is, not by the patient's state: an orally ingested poison keeps moving through the gut, so after a few hours little is left in the stomach and small intestine for the charcoal to bind."}],
  teach:"The window for single-dose charcoal used to be an hour and has been lengthened to about 2 hours. The reason there is a window at all is location: the ingested poison keeps moving down the gut, so the charcoal has to reach the stomach and small intestine while the poison is still there. Multiple-dose charcoal is the separate case for compounds that stick to charcoal and are secreted back into the small intestine through the bile.",
  quote:"Yeah, up to 2 hours. They used to say just an hour, but they've, they've lengthened that a little bit, maybe up to 2 hours, OK? ... Why does it not work so well if you wait 4 to 6 hours to give them charcoal? They've ingested it orally. Stuff moves on through, right? So you need to get that charcoal in their stomach and small intestine while the poison is still in that area of the body, OK?",
- note:"The 1-to-2-hour window is L15-060; the reason for the window was added on 10/19.",
+ note:"The 1-to-2-hour window is L15-060; the reason for the window was added on 10/19. Her Quiz 3 keyed \"Less than 60 minutes\" for the same question, with 2-4 hours as a wrong option.",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Toxicokinetic-Based Treatment Prevent Absorption’; transcript 10/19"},
 
 /* ---------------- Inhibit bioactivation ---------------- */
