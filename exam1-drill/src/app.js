@@ -211,7 +211,7 @@ function nav() {
 /* The header's height, for things that stick under it (the exam clock on the all-on-one-page paper). */
 const hdrVar = () => { const hd = document.querySelector('header'); if (hd) document.documentElement.style.setProperty('--hdr', hd.getBoundingClientRect().height + 'px'); };
 window.addEventListener('resize', hdrVar);
-const clearView = () => { const v = $('#view'); v.onclick = null; v.onchange = null; };
+const clearView = () => { const v = $('#view'); v.onclick = null; v.onchange = null; v.oninput = null; const t = document.getElementById('totop'); if (t) t.hidden = true; };
 /* Leaving a page: back to the top, and the floating buttons and scroll watcher of the old page go. */
 function leaveView() {
   window.scrollTo(0, 0); clearView();
@@ -2845,6 +2845,7 @@ function rdCard(r) {
       ${quiz.length ? `<button class="btn ghost" data-rdquiz="${esc(r.id)}">Her quiz items (${quiz.length})</button>` : ''}
       ${r.listen ? `<button class="btn ghost" data-rdlisten="${esc(r.id)}">🔊 Listen${r.listen_secs ? ' · ' + rdClock(r.listen_secs) : ''}</button>` : ''}
       ${(r.links || []).map(([v, a, l]) => `<button type="button" class="chip" data-jump="${esc(v)}:${esc(a)}">${esc(l)}</button>`).join('')}</div>
+    ${r.listen ? `<div class="rdplayer" data-rdp="${esc(r.id)}" hidden><div class="row"><button type="button" class="btn ghost" data-rdpp>❚❚ Pause</button><button type="button" class="btn ghost" data-rdpn hidden>Next ▸</button><button type="button" class="btn ghost" data-rdps>■ Stop</button><span class="meta rdpt" aria-live="off">0:00</span></div><input type="range" class="rdseek" min="0" max="1000" step="1" value="0" aria-label="Position in the talk"></div>` : ''}
     ${fold('About, in full', rdLead(r.about || '')[1] ? `<p>${esc(r.about)}</p>` : '')}
     ${fold('Read for', li(r.read_for))}
     ${fold('Where her lecture used it', use)}
@@ -2866,6 +2867,9 @@ function vReadings() {
   $('#view').innerHTML = `<h2>Readings</h2>
     <p class="sub">Each assigned reading: what it covers, what she drew from it in class, and the questions on it. Her rule (10/9): a reading is tested on what was read and discussed in class, not on dates or numbers from the text. Folded sections open on tap.</p>${deckHtml}${groups}`;
   $('#view').onclick = e => {
+    if (e.target.closest('[data-rdpp]')) return rdPause();
+    if (e.target.closest('[data-rdps]')) return rdStop();
+    if (e.target.closest('[data-rdpn]')) return rdNext();
     const b = e.target.closest('[data-rdq],[data-rdquiz],[data-rdplay],[data-rdlisten]'); if (!b) return;
     const r = RS.find(x => x.id === (b.dataset.rdq || b.dataset.rdquiz || b.dataset.rdplay || b.dataset.rdlisten)); if (!r) return;
     if (b.dataset.rdq) startQuiz(rdQs(r), 'Reading: ' + r.title.split(' (')[0], 'pass', {back: true});
@@ -2881,22 +2885,46 @@ function vReadings() {
     $('#rdstop').onclick = () => rdStop();
     $('#rdrate').onchange = e => { NAR.rate = +e.target.value; store.set(COURSE.ns + ':narr-rate', NAR.rate); if (NARR_AUDIO) NARR_AUDIO.playbackRate = NAR.rate; };
   }
+  $('#view').oninput = e => { const sk = e.target.closest('.rdseek'); if (sk) rdSeek(+sk.value / 1000, true); };
+  $('#view').onchange = e => { const sk = e.target.closest('.rdseek'); if (sk) rdSeek(+sk.value / 1000, false); };
 }
 /* The listen deck: recorded talks (audio/rd-<id>.mp3) played one after another; if a clip cannot be loaded the device's voice reads the script. */
 let RDK = null;
 const rdClock = s => { s = Math.max(0, Math.round(s)); return Math.floor(s / 60) + ':' + String(s % 60).padStart(2, '0'); };
-function rdTime(cur, total) { const el = document.getElementById('rdtime'); if (!el) return; el.hidden = false; el.textContent = total ? `${rdClock(cur)} / ${rdClock(total)}` : rdClock(cur); }
+function rdTime(cur, total) {
+  const el = document.getElementById('rdtime'); if (el) { el.hidden = false; el.textContent = total ? `${rdClock(cur)} / ${rdClock(total)}` : rdClock(cur); }
+  const p = rdPlayer(); if (!p) return;
+  const t = p.querySelector('.rdpt'), sk = p.querySelector('.rdseek');
+  if (RDK && RDK.fell) { t.textContent = 'Read by the device voice (no time bar)'; sk.hidden = true; return; }
+  sk.hidden = false; t.textContent = total ? `${rdClock(cur)} / ${rdClock(total)} · ${rdClock(total - cur)} left` : rdClock(cur);
+  if (!RDK || !RDK.seeking) sk.value = total ? Math.round(1000 * cur / total) : 0;
+}
+/* The player on the card of the talk now playing: pause, stop, next, a seek bar and the time left. */
+const rdPlayer = () => RDK && RDK.list[RDK.i] ? document.querySelector(`.rdplayer[data-rdp="${RDK.list[RDK.i].id}"]`) : null;
+function rdShowPlayer() {
+  document.querySelectorAll('.rdplayer').forEach(p => p.hidden = true);
+  const p = rdPlayer(); if (!p) return; p.hidden = false;
+  const k = RDK; p.querySelector('[data-rdpp]').textContent = k.paused ? '▶ Resume' : '❚❚ Pause';
+  p.querySelector('[data-rdpn]').hidden = k.i >= k.list.length - 1;
+}
+function rdSeek(f, dragging) {
+  const k = RDK, a = NARR_AUDIO; if (!k || k.fell || !a || !isFinite(a.duration)) return;
+  k.seeking = dragging; if (dragging) { rdTime(f * a.duration, a.duration); return; }
+  a.currentTime = f * a.duration; clearTimeout(k.t);
+  if (!k.paused) k.t = setTimeout(k.finish, (a.duration - a.currentTime) * 1000 / NAR.rate + 4000);
+  rdTime(a.currentTime, a.duration);
+}
 function rdPause() {
   const k = RDK; if (!k) return; const b = document.getElementById('rdpause');
   if (!k.paused) {
     k.paused = true; clearTimeout(k.t);
     if (k.fell) { if (narrCan()) speechSynthesis.pause(); } else if (NARR_AUDIO) NARR_AUDIO.pause();
-    if (b) b.textContent = '▶ Resume';
+    if (b) b.textContent = '▶ Resume'; rdShowPlayer();
   } else {
     k.paused = false;
     if (k.fell) { if (narrCan()) speechSynthesis.resume(); k.t = setTimeout(() => rdNext(), 10 * 60 * 1000); }
     else if (NARR_AUDIO) { NARR_AUDIO.play().catch(() => {}); const left = isFinite(NARR_AUDIO.duration) ? (NARR_AUDIO.duration - NARR_AUDIO.currentTime) * 1000 / NAR.rate + 4000 : 10 * 60 * 1000; k.t = setTimeout(() => rdNext(), left); }
-    if (b) b.textContent = '❚❚ Pause';
+    if (b) b.textContent = '❚❚ Pause'; rdShowPlayer();
   }
 }
 function rdPlayFrom(list, i, shuffled) {
@@ -2910,8 +2938,9 @@ function rdPlayCur() {
   document.querySelectorAll('.rdtrack').forEach(b => b.classList.toggle('on', b.dataset.rdplay === r.id));
   const said = document.getElementById('rdsaid'); if (said) { said.hidden = false; said.innerHTML = `<b>${esc(r.title.split(' (')[0])}</b> <span class="meta">${k.i + 1} of ${k.list.length}${k.shuffled ? ', shuffled' : ''}</span><div>${esc(text)}</div>`; }
   const nx = document.getElementById('rdnext'), st = document.getElementById('rdstop'), pl = document.getElementById('rdplay'), pa = document.getElementById('rdpause'); if (nx) nx.hidden = false; if (st) st.hidden = false; if (pa) { pa.hidden = false; pa.textContent = '❚❚ Pause'; } if (pl) pl.textContent = '▶ Playing…';
-  k.paused = false; rdTime(0, r.listen_secs || 0);
+  k.paused = false; rdShowPlayer(); rdTime(0, r.listen_secs || 0);
   const finish = () => { if (RDK !== cur) return; clearTimeout(cur.t); cur.i++; cur.fell = false; cur.i < cur.list.length ? rdPlayCur() : rdStop(); };
+  cur.finish = finish;
   const synth = () => {
     if (!narrCan()) return finish();
     const v = narrVoice(); let last = null;
@@ -2934,8 +2963,17 @@ function rdStop() {
   if (NARR_AUDIO) { NARR_AUDIO.onended = NARR_AUDIO.onerror = null; NARR_AUDIO.pause(); }
   if (narrCan()) speechSynthesis.cancel();
   document.querySelectorAll('.rdtrack').forEach(b => b.classList.remove('on'));
+  document.querySelectorAll('.rdplayer').forEach(p => p.hidden = true);
   const nx = document.getElementById('rdnext'), st = document.getElementById('rdstop'), pl = document.getElementById('rdplay'), pa = document.getElementById('rdpause'), tm = document.getElementById('rdtime'); if (nx) nx.hidden = true; if (st) st.hidden = true; if (pa) pa.hidden = true; if (tm) tm.hidden = true; if (pl) pl.textContent = '▶ Play all';
 }
+
+/* Back to top: shows once the reader is near the end of a page longer than two screens. */
+const TOTOP = Object.assign(document.createElement('button'), {id: 'totop', type: 'button', className: 'btn', textContent: '↑ Top', hidden: true});
+TOTOP.setAttribute('aria-label', 'Back to the top of the page');
+TOTOP.onclick = () => window.scrollTo({top: 0, behavior: 'smooth'});
+document.body.appendChild(TOTOP);
+const topCheck = () => { const h = document.documentElement.scrollHeight, v = window.innerHeight; TOTOP.hidden = !(h > 2 * v && window.scrollY + v > h - 600); };
+window.addEventListener('scroll', topCheck, {passive: true}); window.addEventListener('resize', topCheck);
 
 /* ---------- Progress: profile, pace, export ---------- */
 function download(name, text, type) {
