@@ -2,6 +2,15 @@
 
 Newest first. The build embeds this file; the Topics page shows what is new since your last visit, and the Progress page shows all of it. Keep each bullet to one short line.
 
+## 2026-10-22 (Exam 3: checked against a classmate's slide notes)
+
+- Antihistamines: the drill keeps Dr. Gottlieb's point that loratadine is the inverse agonist.
+- New tell-apart row: therapeutic index, Dr. Gottlieb's LD50/ED50 vs Dr. Smith's TD50/ED50.
+- Slide titles confirmed for the potency and ED/TD/LD questions; one figure cite corrected.
+- Added from her words: one exposure can cause both reversible and irreversible injury.
+- Added: oligodendrocytes make CNS myelin; thiocyanate is the cyanide product on her figure.
+- Added: her eye-color example for why dominant and recessive are not used in pharmacogenomics.
+
 ## 2026-10-21 (Exam 3: antidote diagrams, her quizzes 2 and 3)
 
 - Antidote diagrams: seven pages from the 10/19 chat (cyanide, naloxone, atropine, pralidoxime, warfarin).

@@ -210,7 +210,7 @@ QUESTIONS.push(
   {t:"It cannot be read from a single-dose curve", correct:false, why:"The rate of decline after one dose is exactly what shows the half-life."}],
  teach:"Casarett and Doull Figure 2-4 gives three compounds one single dose and plots blood concentration against time. A, with a half-life of about a year on the figure caption, stays high; B has a half-life about equal to the dosing interval (about a day); C, with a half-life of about five hours, clears quickly. A toxic response occurs above the shaded concentration.",
  quote:"Which compound has the longest half-life in this image? ... A, so it's half-life is longest, right? It takes longer for half the compound to be cleared out of the blood, OK? C has the shortest half-life.",
- cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Exposure: Single vs. Repeated’ (Figure 2-4 caption) and ‘Exposure: Frequency’; transcript 10/9"},
+ cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Exposure: Frequency’ (Figure 2-4 and its caption); transcript 10/9"},
 
 {id:"L13-015", lecture:"L13", prof:"Smith", tier:"new", topic:"L13", sub:"freq", skill:"figure",
  concept:"fig2-4-repeated", tags:["smith"], source:"transcript",
@@ -223,6 +223,7 @@ QUESTIONS.push(
   {t:"None of them: the doses are quartered", correct:false, why:"A and B accumulate because they are not cleared between doses."}],
  teach:"With repeated quarter doses, a compound accumulates when its half-life is long compared with the dosing interval. A reaches the toxic zone by about the third dose and B by about the fourth or fifth, but C, cleared between doses, never does. For a medication, the dosing frequency is chosen so that the concentration stays below toxicity and, ideally, within the therapeutic range, like C.",
  quote:"How about C? It's got a, it's got a really short half-life. It's clearing really quickly. Does it ever get into the toxic zone after repeated exposures? No, it doesn't, right?",
+ note:"In one sentence she said the body clears a compound between spaced exposures \"because the half-life is long\"; her reading of the figure, and the keyed answer, is the reverse: \"C has the shortest half-life. It gets metabolized and cleared really quickly\".",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Exposure: Frequency’; transcript 10/9"},
 
 {id:"L13-016", lecture:"L13", prof:"Smith", tier:"new", topic:"L13", sub:"freq", skill:"apply", multi:true,
