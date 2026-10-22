@@ -42,7 +42,7 @@ const COURSE = {
     {id:'TBL3', deck:'PoisoningTreatmentTable2026KEY.pdf', label:'Her poisoning treatment table key (Dr. Smith)', prof:'Smith', exam:3, module:3},
     {id:'GRG3', deck:'Readingguideforoutofhospitalguidelines2026KEY.docx', label:'Her out-of-hospital guideline reading guide key (Dr. Smith)', prof:'Smith', exam:3, module:3},
     {id:'RMK3', deck:'KeyDiscussionGuideRodriguez-MozazandWeinberg2026.docx', label:'Her Rodriguez-Mozaz and Weinberg discussion guide key (Dr. Smith)', prof:'Smith', exam:3, module:3},
-    {id:'QZ3', deck:'Smith_Quizzes_1-3_QA.pdf', label:'Her quizzes 2 and 3 (Dr. Smith)', prof:'Smith', exam:3, module:3}
+    {id:'QZ3', deck:'Smith_Quizzes_1-3_QA.pdf', decks:['Smith_Practice_Quiz_1_-_Principles_of_Toxicology.pdf', 'Smith_Quizzes_1-3_QA.pdf'], label:'Her quizzes 1, 2 and 3 (Dr. Smith)', prof:'Smith', exam:3, module:3}
   ],
   exams: [
     {id:1, name:'Exam 1', scope:'Pharmacodynamics (9/22–9/30)', date:'Fri Oct 2, 9–11 am', when:'2026-10-02T09:00:00-05:00',  // syllabus: Exam I, Fri Oct 2, 9–11 am

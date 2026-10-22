@@ -16,8 +16,7 @@ TOPICS.push({id:"L13", name:"Day 13: Principles of toxicology", prof:"Smith", le
     {id:"curves", name:"Individual and population dose–response", cite:"slides ‘First’ and ‘Second Dose-Response Relationship’; (T) 10/9"},
     {id:"shape", name:"U-shaped curves: essential nutrients and hormesis; threshold", cite:"slides ‘Shape of Dose-Response’, ‘Threshold Dose’, ‘More on Threshold Dose’; (T) 10/9"},
     {id:"indices", name:"TI, margin of safety, margin of exposure; target and mechanism (slides not yet taught)", cite:"slides ‘Values Developed from Dose-Response’, ‘Target & Mechanism of Action’"},
-    {id:"reading", name:"The reading: pharmaceuticals in water", cite:"RodriguezMozaz-EHP-2010.pdf; slide ‘Discussion of Reading Assignment’"},
-    {id:"verbatim", name:"Her practice quiz 1, word for word (with her keys)", cite:"Smith_Practice_Quiz_1_-_Principles_of_Toxicology.pdf"}
+    {id:"reading", name:"The reading: pharmaceuticals in water", cite:"RodriguezMozaz-EHP-2010.pdf; slide ‘Discussion of Reading Assignment’"}
   ]});
 QUESTIONS.push(
 /* ---------------- Definitions ---------------- */
@@ -511,8 +510,8 @@ QUESTIONS.push(
  note:"Not discussed in class: on 10/13 she did not mention the vultures, diclofenac, fathead minnows or ethinyl estradiol. Her wildlife example was frogs, fish and alligators turning more female where estrogen levels are higher (L14-030). Kept low yield; the article text keys it.",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Discussion of Reading Assignment’; RodriguezMozaz-EHP-2010.pdf pp. 1017–1018"},
 
-/* ---------------- Her practice quiz 1 (verbatim, with her keys) ---------------- */
-{id:"L13-037", lecture:"L13", prof:"Smith", tier:"new", topic:"L13", sub:"verbatim", skill:"apply",
+/* ---------------- Her practice quiz 1 (verbatim, with her keys); shown on the "Her quizzes" card (QZ3) ---------------- */
+{id:"L13-037", lecture:"QZ3", prof:"Smith", tier:"new", topic:"QZ3", sub:"verbatim", skill:"apply",
  concept:"adverse-despite-low-concentration", tags:["smith","quiz","verbatim"], source:"slide",
  stem:"A compound with a half-life that allows it to be cleared from the body before the next exposure may still result in chronic adverse effects",
  options:[
@@ -522,7 +521,7 @@ QUESTIONS.push(
  note:"Verbatim from her practice quiz; the key is the one she released. Same point as L13-016.",
  cite:"Smith_Practice_Quiz_1_-_Principles_of_Toxicology.pdf question 1"},
 
-{id:"L13-038", lecture:"L13", prof:"Smith", tier:"new", topic:"L13", sub:"verbatim", skill:"recall",
+{id:"L13-038", lecture:"QZ3", prof:"Smith", tier:"new", topic:"QZ3", sub:"verbatim", skill:"recall",
  concept:"exposure-durations", tags:["smith","quiz","verbatim"], source:"slide",
  stem:"Chronic exposure is considered to be repeated exposure for what length of time?",
  options:[
@@ -534,7 +533,7 @@ QUESTIONS.push(
  note:"Verbatim from her practice quiz with her key. Same table as L13-010.",
  cite:"Smith_Practice_Quiz_1_-_Principles_of_Toxicology.pdf question 2"},
 
-{id:"L13-039", lecture:"L13", prof:"Smith", tier:"new", topic:"L13", sub:"verbatim", skill:"recall",
+{id:"L13-039", lecture:"QZ3", prof:"Smith", tier:"new", topic:"QZ3", sub:"verbatim", skill:"recall",
  concept:"ti-mos-moe", tags:["smith","quiz","verbatim"], source:"slide",
  stem:"What value derived from a dose-response curve has the following formula: X = Toxic Dose/Therapeutic Dose",
  options:[
@@ -546,7 +545,7 @@ QUESTIONS.push(
  note:"Verbatim from her practice quiz with her key. Same point as L13-032.",
  cite:"Smith_Practice_Quiz_1_-_Principles_of_Toxicology.pdf question 3"},
 
-{id:"L13-040", lecture:"L13", prof:"Smith", tier:"new", topic:"L13", sub:"verbatim", skill:"recall",
+{id:"L13-040", lecture:"QZ3", prof:"Smith", tier:"new", topic:"QZ3", sub:"verbatim", skill:"recall",
  concept:"admet-t", tags:["smith","quiz","verbatim"], source:"slide",
  stem:"What does ADME stand for?",
  options:[
@@ -558,7 +557,7 @@ QUESTIONS.push(
  note:"On the quiz this was a free-response question, not multiple choice; the exam may ask for the expansion written out. Options added here for the drill.",
  cite:"Smith_Practice_Quiz_1_-_Principles_of_Toxicology.pdf question 4"},
 
-{id:"L13-041", lecture:"L13", prof:"Smith", tier:"new", topic:"L13", sub:"verbatim", skill:"apply",
+{id:"L13-041", lecture:"QZ3", prof:"Smith", tier:"new", topic:"QZ3", sub:"verbatim", skill:"apply",
  concept:"toxic-target-differs", tags:["smith","quiz","verbatim"], source:"slide",
  stem:"The mechanisms of a drug’s toxicity is always the same as the mechanism of its efficacy.",
  options:[
@@ -568,7 +567,7 @@ QUESTIONS.push(
  note:"Verbatim from her practice quiz with her key. Same point as L13-005.",
  cite:"Smith_Practice_Quiz_1_-_Principles_of_Toxicology.pdf question 5"},
 
-{id:"L13-042", lecture:"L13", prof:"Smith", tier:"new", topic:"L13", sub:"verbatim", skill:"apply",
+{id:"L13-042", lecture:"QZ3", prof:"Smith", tier:"new", topic:"QZ3", sub:"verbatim", skill:"apply",
  concept:"target-not-highest-concentration", tags:["smith","quiz","verbatim"], source:"slide",
  stem:"The concentration of a medication in the body is always highest at its target site.",
  options:[
@@ -578,7 +577,7 @@ QUESTIONS.push(
  note:"Verbatim from her practice quiz with her key. Same point as L13-034.",
  cite:"Smith_Practice_Quiz_1_-_Principles_of_Toxicology.pdf question 6"},
 
-{id:"L13-043", readingId:"rodriguez-mozaz", lecture:"L13", prof:"Smith", tier:"new", topic:"L13", sub:"verbatim", skill:"apply",
+{id:"L13-043", readingId:"rodriguez-mozaz", lecture:"QZ3", prof:"Smith", tier:"new", topic:"QZ3", sub:"verbatim", skill:"apply",
  concept:"reading-source-human-use", tags:["smith","quiz","verbatim"], source:"slide",
  stem:"The article by Rodriguez-Mozaz discusses the fact that pharmaceuticals have been detected in ground water, surface water, and drinking water. What is most likely the greatest source of pharmaceuticals in those waters?",
  options:[
@@ -590,7 +589,7 @@ QUESTIONS.push(
  note:"Verbatim from her practice quiz with her key. L13-035 and L14-024 test the same source principle; this wording is hers.",
  cite:"Smith_Practice_Quiz_1_-_Principles_of_Toxicology.pdf question 7"},
 
-{id:"L13-044", readingId:"rodriguez-mozaz", lecture:"L13", prof:"Smith", tier:"new", topic:"L13", sub:"verbatim", skill:"apply",
+{id:"L13-044", readingId:"rodriguez-mozaz", lecture:"QZ3", prof:"Smith", tier:"new", topic:"QZ3", sub:"verbatim", skill:"apply",
  concept:"reading-human-dose-below-therapeutic", tags:["smith","quiz","verbatim"], source:"slide",
  stem:"The dose of pharmaceuticals that people are exposed to in drinking water exceeds the daily dose of that medication when used therapeutically.",
  options:[
@@ -600,7 +599,7 @@ QUESTIONS.push(
  note:"Verbatim from her practice quiz with her key.",
  cite:"Smith_Practice_Quiz_1_-_Principles_of_Toxicology.pdf question 8"},
 
-{id:"L13-045", readingId:"rodriguez-mozaz", lecture:"L13", prof:"Smith", tier:"new", topic:"L13", sub:"verbatim", skill:"apply",
+{id:"L13-045", readingId:"rodriguez-mozaz", lecture:"QZ3", prof:"Smith", tier:"new", topic:"QZ3", sub:"verbatim", skill:"apply",
  concept:"reading-conclusion", tags:["smith","quiz","verbatim"], source:"slide",
  stem:"Which is the best statement that describes the conclusion the authors made in this article?",
  options:[
@@ -612,7 +611,7 @@ QUESTIONS.push(
  note:"Verbatim from her practice quiz with her key.",
  cite:"Smith_Practice_Quiz_1_-_Principles_of_Toxicology.pdf question 9"},
 
-{id:"L13-046", lecture:"L13", prof:"Smith", tier:"new", topic:"L13", sub:"verbatim", skill:"recall",
+{id:"L13-046", lecture:"QZ3", prof:"Smith", tier:"new", topic:"QZ3", sub:"verbatim", skill:"recall",
  concept:"five-principles", tags:["smith","quiz","verbatim"], source:"slide",
  stem:"List the five principles of toxicology:",
  options:[

@@ -289,7 +289,7 @@ const BY_LECTURE3 = {L14: [G3('l14-1', 'Day 14: indices, the reading, toxic resp
 function linksFor0(q) {
   if (examOf(q) === 3 && typeof GUIDE3_HTML !== 'undefined') {
     if (q.topic === 'TERMS') return [TERM_SUB3, ['ref', 'ref3-1', 'Reference: the words']];
-    if (q.lecture === 'QZ3' && q.dupOf) { const t = QUESTIONS.find(x => x.id === q.dupOf); if (t) return linksFor0(t); }   // her quiz items explain through the lecture question they repeat
+    if (q.lecture === 'QZ3') { const t = QUESTIONS.find(x => x.id === q.dupOf) || QUESTIONS.find(x => x.lecture !== 'QZ3' && examOf(x) === 3 && x.concept === q.concept); if (t) return linksFor0(t); if (q.readingId === 'rodriguez-mozaz') return SUB3.reading; }   // her quiz items explain through the lecture question they repeat
     if (q.lecture !== 'L13') return LINKS3[q.lecture + ':' + q.sub] || BY_LECTURE3[q.lecture] || [G3('scope', 'what Exam 3 tests')];
     return SUB3[q.sub] || [G3('scope', 'what Exam 3 tests')];
   }

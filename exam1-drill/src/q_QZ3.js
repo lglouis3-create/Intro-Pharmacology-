@@ -5,9 +5,9 @@
 // 10/13, 10/14, 10/19; the decks Toxic Responses Students Fall 2026 WCAG21A.pdf and Treating Poisonings Students Fall 2026
 // WCAG2,1A_pptx.pdf; and her poisoning table key PoisoningTreatmentTable2026KEY.pdf. Where the recorded answer and her
 // words differ, both are in the note. One sub, "verbatim", so the quiz items keep their original option wording.
-TOPICS.push({id:'QZ3', name:'Her quizzes 2 and 3 (verbatim)', prof:'Smith', lecture:'QZ3', cite:'Smith_Quizzes_1-3_QA.pdf',
+TOPICS.push({id:'QZ3', name:'Her quizzes 1, 2 and 3 (verbatim)', prof:'Smith', lecture:'QZ3', cite:'Smith_Practice_Quiz_1_-_Principles_of_Toxicology.pdf; Smith_Quizzes_1-3_QA.pdf',
   subs:[
-    {id:'verbatim', name:'Her quizzes 2 and 3', cite:'Smith_Quizzes_1-3_QA.pdf pp. 3–6 (Quiz 2 pp. 3–4; Quiz 3 pp. 5–6)'}
+    {id:'verbatim', name:'Her quizzes 1, 2 and 3', cite:'Quiz 1: Smith_Practice_Quiz_1_-_Principles_of_Toxicology.pdf (her released key; L13-037 to L13-046, defined in q_L13.js). Quizzes 2 and 3: Smith_Quizzes_1-3_QA.pdf pp. 3–6'}
   ]});
 
 QUESTIONS.push(
