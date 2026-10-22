@@ -4,16 +4,18 @@
 // answers, not a key she posted. Each item is keyed on the recorded answer and checked against her own words: transcripts
 // 10/13, 10/14, 10/19; the decks Toxic Responses Students Fall 2026 WCAG21A.pdf and Treating Poisonings Students Fall 2026
 // WCAG2,1A_pptx.pdf; and her poisoning table key PoisoningTreatmentTable2026KEY.pdf. Where the recorded answer and her
-// words differ, both are in the note. One sub, "verbatim", so the quiz items keep their original option wording.
-TOPICS.push({id:'QZ3', name:'Her quizzes 1, 2 and 3 (verbatim)', prof:'Smith', lecture:'QZ3', cite:'Smith_Practice_Quiz_1_-_Principles_of_Toxicology.pdf; Smith_Quizzes_1-3_QA.pdf',
+// words differ, both are in the note. One sub per quiz (quiz1, quiz2, quiz3); test.js and style_check.js treat a quiz-tagged item in these subs as verbatim, so the original option wording stays.
+TOPICS.push({id:'QZ3', name:'Quizzes (verbatim)', prof:'Smith', lecture:'QZ3', cite:'Smith_Practice_Quiz_1_-_Principles_of_Toxicology.pdf; Smith_Quizzes_1-3_QA.pdf',
   subs:[
-    {id:'verbatim', name:'Her quizzes 1, 2 and 3', cite:'Quiz 1: Smith_Practice_Quiz_1_-_Principles_of_Toxicology.pdf (her released key; L13-037 to L13-046, defined in q_L13.js). Quizzes 2 and 3: Smith_Quizzes_1-3_QA.pdf pp. 3–6'}
+    {id:'quiz1', name:'Quiz 1: Principles of Toxicology', cite:'Smith_Practice_Quiz_1_-_Principles_of_Toxicology.pdf (her released key)'},
+    {id:'quiz2', name:'Quiz 2: Toxic Responses', cite:'Smith_Quizzes_1-3_QA.pdf pp. 3–4'},
+    {id:'quiz3', name:'Quiz 3: Treating Poisonings', cite:'Smith_Quizzes_1-3_QA.pdf pp. 5–6'}
   ]});
 
 QUESTIONS.push(
 
 /* ---------------- Quiz 2: Toxic Responses ---------------- */
-{id:"QZ3-001", dupOf:"L14-051", lecture:"QZ3", prof:"Smith", tier:"new", topic:"QZ3", sub:"verbatim", skill:"tell",
+{id:"QZ3-001", dupOf:"L14-051", lecture:"QZ3", prof:"Smith", tier:"new", topic:"QZ3", sub:"quiz2", skill:"tell",
  concept:"on-target-wrong-tissue-naming", tags:["smith","quiz"], source:"both",
  stem:"An off-target adverse effect is defined as an undesired response that occurs:",
  options:[
@@ -26,7 +28,7 @@ QUESTIONS.push(
  note:"Quiz 2, question 1, verbatim. Keyed on the recorded answer (A); her words agree. Same point as L14-051.",
  cite:"Smith_Quizzes_1-3_QA.pdf pp. 3–4, Quiz 2 question 1; Toxic Responses Students Fall 2026 WCAG21A.pdf slides ‘On-Target Examples’, ‘Off-Target Examples’; transcript 10/13"},
 
-{id:"QZ3-002", dupOf:"L14-061", lecture:"QZ3", prof:"Smith", tier:"new", topic:"QZ3", sub:"verbatim", skill:"tell",
+{id:"QZ3-002", dupOf:"L14-061", lecture:"QZ3", prof:"Smith", tier:"new", topic:"QZ3", sub:"quiz2", skill:"tell",
  concept:"fibrosis-non-organ-specific-why", tags:["smith","quiz"], source:"both",
  stem:"Which toxic endpoint is non-organ specific?",
  options:[
@@ -39,7 +41,7 @@ QUESTIONS.push(
  note:"Quiz 2, question 2, verbatim. Keyed on the recorded answer (B); her words agree. The first part of the quote is from 10/13, the last sentence from 10/14. Same point as L14-061; her poll L15-042 asks the same question with teratogenicity as the answer.",
  cite:"Smith_Quizzes_1-3_QA.pdf pp. 3–4, Quiz 2 question 2; Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Non-Organ Specific: Fibrosis’; transcripts 10/13 and 10/14"},
 
-{id:"QZ3-003", dupOf:"L14-065", lecture:"QZ3", prof:"Smith", tier:"new", topic:"QZ3", sub:"verbatim", skill:"apply",
+{id:"QZ3-003", dupOf:"L14-065", lecture:"QZ3", prof:"Smith", tier:"new", topic:"QZ3", sub:"quiz2", skill:"apply",
  concept:"cancer-non-organ-specific-why", tags:["smith","quiz"], source:"both",
  stem:"Cancer is considered to be a non-organ specific response. That seems like a weird categorization, considering cancer seems to start in a specific place in the body. Why would we think of it as non-organ specific?",
  options:[
@@ -52,7 +54,7 @@ QUESTIONS.push(
  note:"Quiz 2, question 3, verbatim. Keyed on the recorded answer (A); her words agree. Same point as L14-065.",
  cite:"Smith_Quizzes_1-3_QA.pdf pp. 3–4, Quiz 2 question 3; Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Non-Specific: Cancer’; transcript 10/13"},
 
-{id:"QZ3-004", dupOf:"L14-070", lecture:"QZ3", prof:"Smith", tier:"new", topic:"QZ3", sub:"verbatim", skill:"recall", multi:true,
+{id:"QZ3-004", dupOf:"L14-070", lecture:"QZ3", prof:"Smith", tier:"new", topic:"QZ3", sub:"quiz2", skill:"recall", multi:true,
  concept:"fda-pregnancy-lactation-labeling", tags:["smith","quiz"], source:"both",
  stem:"What information is provided in the FDA's Pregnancy and Lactation Labeling Rules issued in 2014? Select all that apply.",
  options:[
@@ -65,7 +67,7 @@ QUESTIONS.push(
  note:"Quiz 2, question 4, verbatim, except that the quiz stem ends \"Choose all that apply.\" and is written here with \"Select all that apply.\" Option C keeps the quiz wording (\"using the risks to the baby of drug\"). Keyed on the recorded answer (A, C, D); her words agree. Same point as L14-070.",
  cite:"Smith_Quizzes_1-3_QA.pdf pp. 3–4, Quiz 2 question 4; Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Teratogenesis Labeling’ (Link to FDA Pregnancy and Lactation Labeling); transcript 10/13"},
 
-{id:"QZ3-005", dupOf:"L15-004", lecture:"QZ3", prof:"Smith", tier:"new", topic:"QZ3", sub:"verbatim", skill:"recall",
+{id:"QZ3-005", dupOf:"L15-004", lecture:"QZ3", prof:"Smith", tier:"new", topic:"QZ3", sub:"quiz2", skill:"recall",
  concept:"particle-size-medium", tags:["smith","quiz"], source:"both",
  stem:"We breath in particles that can cause pulmonary toxicity. What size particles will be the ones that reach the alveolar regions of the lungs?",
  options:[
@@ -77,7 +79,7 @@ QUESTIONS.push(
  note:"Quiz 2, question 5, verbatim. Keyed on the recorded answer (A). Her 10/14 words and the slide agree on medium particles, but neither uses the word alveolar: she says \"the lower parts of our lung\", and the slide note reads \"medium size particle are the main concern ... able to go deep [and] settle\". She places very small particles in the upper airway, breathed back out. Same point as L15-004.",
  cite:"Smith_Quizzes_1-3_QA.pdf pp. 3–4, Quiz 2 question 5; Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Pulmonary Toxicity – Why are lungs susceptible?’; transcript 10/14"},
 
-{id:"QZ3-006", dupOf:"L15-016", lecture:"QZ3", prof:"Smith", tier:"new", topic:"QZ3", sub:"verbatim", skill:"tell",
+{id:"QZ3-006", dupOf:"L15-016", lecture:"QZ3", prof:"Smith", tier:"new", topic:"QZ3", sub:"quiz2", skill:"tell",
  concept:"neurotoxicity-patterns", tags:["smith","quiz"], source:"both",
  stem:"When neuronopathy occurs due to exposure to a neurotoxin, what has happened to the neurons?",
  options:[
@@ -90,7 +92,7 @@ QUESTIONS.push(
  note:"Quiz 2, question 6, verbatim (\"synptic\" as on the quiz). Keyed on the recorded answer (C); her words and the figure legend (\"A neuronopathy resulting from the death of the entire neuron\") agree. Same point as L15-016.",
  cite:"Smith_Quizzes_1-3_QA.pdf pp. 3–4, Quiz 2 question 6; Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Types of Neurotoxicity’ (Figure 16-2); transcript 10/14"},
 
-{id:"QZ3-007", dupOf:"L15-032", lecture:"QZ3", prof:"Smith", tier:"new", topic:"QZ3", sub:"verbatim", skill:"apply",
+{id:"QZ3-007", dupOf:"L15-032", lecture:"QZ3", prof:"Smith", tier:"new", topic:"QZ3", sub:"quiz2", skill:"apply",
  concept:"renal-injury-types", tags:["smith","quiz"], source:"both",
  stem:"All nephrotoxins will damage the entire kidney.",
  options:[
@@ -101,7 +103,7 @@ QUESTIONS.push(
  note:"Quiz 2, question 7, verbatim. Keyed on the recorded answer (False); her words agree. Same table as L15-032; L15-036 has her most important site-specific reason.",
  cite:"Smith_Quizzes_1-3_QA.pdf pp. 3–4, Quiz 2 question 7; Toxic Responses Students Fall 2026 WCAG21A.pdf slides ‘Site-Specific Nephrotoxicity’ (Klaassen Table 14-2), ‘Reasons for Site-Specific Nephrotoxicity’; transcript 10/14"},
 
-{id:"QZ3-008", dupOf:"L15-029", lecture:"QZ3", prof:"Smith", tier:"new", topic:"QZ3", sub:"verbatim", skill:"recall",
+{id:"QZ3-008", dupOf:"L15-029", lecture:"QZ3", prof:"Smith", tier:"new", topic:"QZ3", sub:"quiz2", skill:"recall",
  concept:"zonal-enzyme-expression", tags:["smith","quiz"], source:"both",
  stem:"The liver will often be injured in specific areas when exposed to a hepatotoxin. Give two reasons for this site-specific damage. Please answer this question in no more than two well-written sentences.",
  options:[
@@ -114,7 +116,7 @@ QUESTIONS.push(
  note:"Quiz 2, question 8. On the quiz this was free response (no more than two sentences); options added here. The recorded answer named the same two reasons: oxygen highest in zone 1 and lowest in zone 3, and uneven expression of metabolizing enzymes such as the CYP450s. The distractors are built from statements she rejected on 10/14: the two wrong options of her liver poll (L15-044), the large-organ option of L15-043, and reversals of where zone 1 and zone 3 sit and where phase 2 enzymes are. Same point as L15-029.",
  cite:"Smith_Quizzes_1-3_QA.pdf pp. 3–4, Quiz 2 question 8; Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Reasons for Site-Specific Hepatotoxicity’; transcript 10/14"},
 
-{id:"QZ3-009", dupOf:"L14-067", lecture:"QZ3", prof:"Smith", tier:"new", topic:"QZ3", sub:"verbatim", skill:"apply",
+{id:"QZ3-009", dupOf:"L14-067", lecture:"QZ3", prof:"Smith", tier:"new", topic:"QZ3", sub:"quiz2", skill:"apply",
  concept:"teratogen-time-of-exposure", tags:["smith","quiz"], source:"both",
  stem:"All teratogens will only cause one kind of birth defect each.",
  options:[
@@ -126,7 +128,7 @@ QUESTIONS.push(
  cite:"Smith_Quizzes_1-3_QA.pdf pp. 3–4, Quiz 2 question 9; Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Teratogenesis Time of exposure’; transcript 10/13"},
 
 /* ---------------- Quiz 3: Treating Poisonings ---------------- */
-{id:"QZ3-010", dupOf:"L16-008", lecture:"QZ3", prof:"Smith", tier:"new", topic:"QZ3", sub:"verbatim", skill:"tell",
+{id:"QZ3-010", dupOf:"L16-008", lecture:"QZ3", prof:"Smith", tier:"new", topic:"QZ3", sub:"quiz3", skill:"tell",
  concept:"methanol-eg-antidote-adh", tags:["smith","quiz"], source:"both",
  stem:"Fomepizole may be used to treat methanol poisoning. It is an example of which approach to pharmacokinetic-based treatment of poisonings?",
  options:[
@@ -139,7 +141,7 @@ QUESTIONS.push(
  note:"Quiz 3, question 1, verbatim. Keyed on the recorded answer (A); her words and the slide agree. The transcript renders fomepizole as \"fomeprazole\" and \"omeprazole\"; the slide reads \"Antidote for both is ethanol or fomepizole.\" Same point as L16-008.",
  cite:"Smith_Quizzes_1-3_QA.pdf pp. 5–6, Quiz 3 question 1; Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slides ‘Toxicokinetic-Based Treatment Inhibit Bioactivation’, ‘Toxicokinetic-Based Treatment: methanol and ethylene glycol examples’; transcript 10/19"},
 
-{id:"QZ3-011", dupOf:"TBL3-026", lecture:"QZ3", prof:"Smith", tier:"new", topic:"QZ3", sub:"verbatim", skill:"drug",
+{id:"QZ3-011", dupOf:"TBL3-026", lecture:"QZ3", prof:"Smith", tier:"new", topic:"QZ3", sub:"quiz3", skill:"drug",
  concept:"tbl-ccb-antidotes", tags:["smith","quiz"], source:"slide",
  stem:"What could you use to treat a patient that has overdosed on an extended release calcium channel blocker?",
  options:[
@@ -151,7 +153,7 @@ QUESTIONS.push(
  note:"Quiz 3, question 2, verbatim. Keyed on the recorded answer (A), which agrees with her table key: HIET is listed for beta blockers, and the calcium channel blocker antidote and mechanism cells read \"Same as above for BB OD\". She did not say HIET or insulin in the 10/13, 10/14 or 10/19 transcripts, and her key does not separate extended-release from immediate-release overdose. Her key does not expand HIET; Marraffa 2012, the article the table assignment names, writes \"hyperinsulinemia–euglycemia therapy (HIET)\" and says the mechanism of its effectiveness \"has not been clearly delineated\". Same point as TBL3-026 and TBL3-027.",
  cite:"Smith_Quizzes_1-3_QA.pdf pp. 5–6, Quiz 3 question 2; PoisoningTreatmentTable2026KEY.pdf rows ‘Beta blockers’, ‘Calcium channel blockers’, ‘Toxic alcohols’, ‘Acetaminophen’; Marraffa+AJHSP+2012+Antidotes.pdf; transcripts 10/19 (thiosulfate, observation windows) and 10/20 (verapamil)"},
 
-{id:"QZ3-012", dupOf:"TBL3-019", lecture:"QZ3", prof:"Smith", tier:"new", topic:"QZ3", sub:"verbatim", skill:"drug",
+{id:"QZ3-012", dupOf:"TBL3-019", lecture:"QZ3", prof:"Smith", tier:"new", topic:"QZ3", sub:"quiz3", skill:"drug",
  concept:"tbl-bb-glucagon", tags:["smith","quiz"], source:"slide",
  stem:"What is the mechanism of action of glucagon when using it to treat a calcium channel blocker overdose?",
  options:[
@@ -163,7 +165,7 @@ QUESTIONS.push(
  note:"Quiz 3, question 3, verbatim (\"rhodenase\" as on the quiz). Keyed on the recorded answer (B), which agrees with her table key. She did not discuss glucagon in the transcripts. On 10/19 she called rhodanese both \"this cofactor called rodonase\" and \"the enzyme rodonase\" in the cyanide scheme. Same point as TBL3-019.",
  cite:"Smith_Quizzes_1-3_QA.pdf pp. 5–6, Quiz 3 question 3; PoisoningTreatmentTable2026KEY.pdf rows ‘Beta blockers’, ‘Calcium channel blockers’, ‘Digoxin’; transcript 10/19 (cyanide scheme)"},
 
-{id:"QZ3-013", dupOf:"L16-046", lecture:"QZ3", prof:"Smith", tier:"new", topic:"QZ3", sub:"verbatim", skill:"drug",
+{id:"QZ3-013", dupOf:"L16-046", lecture:"QZ3", prof:"Smith", tier:"new", topic:"QZ3", sub:"quiz3", skill:"drug",
  concept:"pralidoxime-removes-op", tags:["smith","quiz"], source:"both",
  stem:"Which antidote for treating organophosphate poisoning removes the organophosphate from its binding site on acetylcholinesterase?",
  options:[
@@ -176,7 +178,7 @@ QUESTIONS.push(
  note:"Quiz 3, question 4, verbatim. Keyed on the recorded answer (B); her words, the slide and her key (\"Removes OP from acetylcholinesterase\") agree. The transcript renders pralidoxime as \"pralodoxine\". Same point as L16-046 and TBL3-056.",
  cite:"Smith_Quizzes_1-3_QA.pdf pp. 5–6, Quiz 3 question 4; Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slides ‘Pharmacological Treatment: Treatment Removes Toxin from Active Site’, ‘Pharmacological Treatment Pralidoxime example’; transcript 10/19"},
 
-{id:"QZ3-014", dupOf:"TBL3-036", lecture:"QZ3", prof:"Smith", tier:"new", topic:"QZ3", sub:"verbatim", skill:"drug",
+{id:"QZ3-014", dupOf:"TBL3-036", lecture:"QZ3", prof:"Smith", tier:"new", topic:"QZ3", sub:"quiz3", skill:"drug",
  concept:"tbl-opioid-symptoms", tags:["smith","quiz"], source:"slide",
  stem:"Choose the symptom that is NOT part of the toxidrome for opioid overdose:",
  options:[
@@ -188,7 +190,7 @@ QUESTIONS.push(
  note:"Quiz 3, question 5, verbatim. Keyed on the recorded answer (C), which agrees with her table key (\"Somnolence, coma, decreased heart and breath rates, decrease pupils\"). The Goodman and Gilman toxidromes slide was not walked through on 10/19 (L16-013), and its vital-sign arrows did not survive the text export. Same point as TBL3-036.",
  cite:"Smith_Quizzes_1-3_QA.pdf pp. 5–6, Quiz 3 question 5; PoisoningTreatmentTable2026KEY.pdf rows ‘Opioids’, ‘Benzodiazepines’; Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Toxidromes’ (Goodman & Gilman Table 4-7); transcript 10/19 (jimsonweed pupils)"},
 
-{id:"QZ3-015", lecture:"QZ3", prof:"Smith", tier:"new", topic:"QZ3", sub:"verbatim", skill:"apply",
+{id:"QZ3-015", lecture:"QZ3", prof:"Smith", tier:"new", topic:"QZ3", sub:"quiz3", skill:"apply",
  concept:"overdose-kinetics-change", tags:["smith","quiz"], source:"both",
  stem:"True or False: Medications in overdose will never affect the kinetics of the drug.",
  options:[
@@ -199,7 +201,7 @@ QUESTIONS.push(
  note:"Quiz 3, question 6, verbatim. Keyed on the recorded answer (False); her words and the slide agree. The specific changes are tested in L15-045 to L15-049; no single bank question states the general rule, so no dupOf.",
  cite:"Smith_Quizzes_1-3_QA.pdf pp. 5–6, Quiz 3 question 6; Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘How Pharmacokinetics change in Overdose’; transcript 10/14"},
 
-{id:"QZ3-016", dupOf:"L15-056", lecture:"QZ3", prof:"Smith", tier:"new", topic:"QZ3", sub:"verbatim", skill:"recall",
+{id:"QZ3-016", dupOf:"L15-056", lecture:"QZ3", prof:"Smith", tier:"new", topic:"QZ3", sub:"quiz3", skill:"recall",
  concept:"emesis-ipecac-aspiration", tags:["smith","quiz"], source:"both",
  stem:"True or False: Emesis is considered the first line in treating an orally ingested poison.",
  options:[
@@ -210,7 +212,7 @@ QUESTIONS.push(
  note:"Quiz 3, question 7, verbatim. Keyed on the recorded answer (False); her words agree. The first two parts of the quote are from 10/14, the last from 10/19. Same point as L15-056.",
  cite:"Smith_Quizzes_1-3_QA.pdf pp. 5–6, Quiz 3 question 7; Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Toxicokinetic-Based Treatment Prevent Absorption’; transcripts 10/14 and 10/19"},
 
-{id:"QZ3-017", dupOf:"L15-060", lecture:"QZ3", prof:"Smith", tier:"new", topic:"QZ3", sub:"verbatim", skill:"apply",
+{id:"QZ3-017", dupOf:"L15-060", lecture:"QZ3", prof:"Smith", tier:"new", topic:"QZ3", sub:"quiz3", skill:"apply",
  concept:"single-dose-charcoal-timing", tags:["smith","quiz"], source:"both",
  stem:"Which time frame would be most likely to successfully treat an orally ingested poison using single-dose activated charcoal?",
  options:[
@@ -223,7 +225,7 @@ QUESTIONS.push(
  note:"Quiz 3, question 8, verbatim. Keyed on the recorded answer (B). The first part of the quote is from 10/14, the second from 10/19. Same point as L15-060 and L16-002.",
  cite:"Smith_Quizzes_1-3_QA.pdf pp. 5–6, Quiz 3 question 8; Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Toxicokinetic-Based Treatment Prevent Absorption’; transcripts 10/14 and 10/19"},
 
-{id:"QZ3-018", dupOf:"L16-014", lecture:"QZ3", prof:"Smith", tier:"new", topic:"QZ3", sub:"verbatim", skill:"tell",
+{id:"QZ3-018", dupOf:"L16-014", lecture:"QZ3", prof:"Smith", tier:"new", topic:"QZ3", sub:"quiz3", skill:"tell",
  concept:"cofactors-not-induction", tags:["smith","quiz"], source:"both",
  stem:"When considering toxicokinetic-based treatments of poisonings, which statement is NOT correct?",
  options:[
@@ -236,7 +238,7 @@ QUESTIONS.push(
  note:"Quiz 3, question 9, verbatim (\"matabolism\" as on the quiz). Keyed on the recorded answer (A); her words and the slide (\"Cannot induce enzymes as takes too much time\") agree. Option C's wording is not on a slide or in the transcripts; the slide says toxicokinetic treatment is \"Done to decrease the amount of poison in the body, hoping to reduce potential for end-organ damage\". Same point as L16-014.",
  cite:"Smith_Quizzes_1-3_QA.pdf pp. 5–6, Quiz 3 question 9; Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slides ‘Toxicokinetic-Based Treatment’, ‘Toxicokinetic-Based Treatment Enhance Metabolism’, ‘Toxicokinetic-Based Treatment Enhance Renal Elimination’; transcript 10/19"},
 
-{id:"QZ3-019", dupOf:"L16-030", lecture:"QZ3", prof:"Smith", tier:"new", topic:"QZ3", sub:"verbatim", skill:"recall",
+{id:"QZ3-019", dupOf:"L16-030", lecture:"QZ3", prof:"Smith", tier:"new", topic:"QZ3", sub:"quiz3", skill:"recall",
  concept:"inactivator-requirements", tags:["smith","quiz"], source:"both",
  stem:"An antidote that inactivates a poison should have all of the following characteristics EXCEPT:",
  options:[

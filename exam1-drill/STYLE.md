@@ -745,7 +745,7 @@ Pharmacogenomics:
 - The readings (Katzung ch. 5; DiPiro ‘Chapter 6’, which in Drive is 13e ch. e6, Medication Adherence) were not mentioned in the pharmacogenomics part of the session.
 
 ## Smith Practice Quiz 1 — Principles of Toxicology (verbatim, with her keys)
-Source: `Smith_Practice_Quiz_1_-_Principles_of_Toxicology.pdf` (user upload 10/17; answers reproduced from her released key). Ten questions: 4 true/false, 4 multiple choice with four options, 2 short answer. In the bank as L13-037 to L13-046; since 10/22 they sit on the "Her quizzes 1, 2 and 3" card (topic QZ3, sub "verbatim") with quizzes 2 and 3.
+Source: `Smith_Practice_Quiz_1_-_Principles_of_Toxicology.pdf` (user upload 10/17; answers reproduced from her released key). Ten questions: 4 true/false, 4 multiple choice with four options, 2 short answer. In the bank as L13-037 to L13-046; since 10/22 they sit on the "Quizzes (verbatim)" card (topic QZ3, sub "quiz1"), with quizzes 2 and 3 as their own sections.
 
 1. "A compound with a half-life that allows it to be cleared from the body before the next exposure may still result in chronic adverse effects" — True / False. **True.**
 2. "Chronic exposure is considered to be repeated exposure for what length of time?" Less than 24 hours / 1-3 months / More than three months / Less than a month. **More than three months.**
