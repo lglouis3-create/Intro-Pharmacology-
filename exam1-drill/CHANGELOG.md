@@ -2,6 +2,12 @@
 
 Newest first. The build embeds this file; the Topics page shows what is new since your last visit, and the Progress page shows all of it. Keep each bullet to one short line.
 
+## 2026-10-22 (Tell apart explanations; reading authors)
+
+- Exam 3 Tell apart: every row has a Why? button and each table an Explain-one menu (94 explanations).
+- Five questions on who wrote the discussion and guideline readings; the Rodriguez-Mozaz card shows its real title.
+- Guideline drug list back on practice exams; charcoal items show her Quiz 3 key (less than 60 minutes).
+
 ## 2026-10-22 (Audio controls on the card; back to top)
 
 - Readings: the card you are listening to shows Pause, Stop, a seek bar and the time left.
