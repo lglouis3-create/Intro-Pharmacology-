@@ -47,7 +47,7 @@ QUESTIONS.push(
  concept:"off-target-fix-molecule", tags:["smith","why"], source:"transcript",
  stem:"A drug was made to find one particular receptor, yet it also finds other receptors, in the intended tissue and in other tissues. What explains why the drug is not \"clean\"?",
  options:[
-  {t:"Part of the molecule interacts with receptors not foreseen at design", correct:true, why:"A drug is built around the receptor it is meant to find, and nobody can know at design time every other receptor a given part of the molecule will also fit. That unforeseen fit is why chemists later go back, find the part hitting the other receptor, and change it."},
+  {t:"Part of its molecule fits receptors not foreseen at design", correct:true, why:"A drug is built around the receptor it is meant to find, and nobody can know at design time every other receptor a given part of the molecule will also fit. That unforeseen fit is why chemists later go back, find the part hitting the other receptor, and change it."},
   {t:"Its dose at the intended receptor is too high", correct:false, why:"Too much dose at the intended receptor gives an on-target adverse effect, not binding to other receptors."},
   {t:"It reaches the intended receptor, but in the wrong tissue", correct:false, why:"The intended receptor in the wrong tissue is still called on-target."},
   {t:"Its intended receptors were down-regulated by repeated dosing", correct:false, why:"Down-regulation changes receptor number; it does not make the drug bind other receptors."},
@@ -58,7 +58,7 @@ QUESTIONS.push(
 
 {id:"L14-105", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"interact", skill:"apply",
  concept:"grapefruit-terfenadine-interaction", tags:["smith","why"], source:"both",
- stem:"A high-school student taking terfenadine (Seldane) for allergies felt her heart racing in class, mostly on the mornings she had eaten grapefruit. Which explains the grapefruit mornings?",
+ stem:"A high-school student taking terfenadine (Seldane) for allergies felt her heart racing during school, mostly on the mornings she had eaten grapefruit. Which explains the grapefruit mornings?",
  options:[
   {t:"Grapefruit kept her from clearing terfenadine, raising its blood level", correct:true, why:"Her own case: the grapefruit interaction stopped her metabolizing and clearing Seldane, the blood level rose, and more cardiac potassium channels were blocked."},
   {t:"Grapefruit induced the enzymes that clear terfenadine, lowering its level", correct:false, why:"Induction would lower the drug level and the cardiac effect; she described the opposite, increased levels in her blood."},
@@ -179,7 +179,7 @@ QUESTIONS.push(
  concept:"reading-antibiotic-resistance", tags:["smith","reading","why"], source:"transcript",
  stem:"Why are bacteria living in the sediments of lakes and streams becoming resistant to antibiotics?",
  options:[
-  {t:"They live with antibiotics that reach the water from improper disposal", correct:true, why:"Her explanation: as antibiotics are improperly disposed of and get out into the environment, the microbes living there survive them and become resistant."},
+  {t:"They live amid antibiotics from improper disposal", correct:true, why:"Her explanation: as antibiotics are improperly disposed of and get out into the environment, the microbes living there survive them and become resistant."},
   {t:"Wastewater treatment plants add antibiotics to the water to kill them", correct:false, why:"Treatment plants fail to remove drugs; they do not add antibiotics."},
   {t:"Estrogen in the water makes the bacteria resistant", correct:false, why:"Estrogen was her example of an effect on frogs, fish and alligators, not on bacteria."},
   {t:"Warmer water lets bacteria in sediments mutate faster", correct:false, why:"Warming water came up only for the shift toward female animals."},
@@ -207,7 +207,7 @@ QUESTIONS.push(
  concept:"cancer-birth-defects-irreversible", tags:["smith","why"], source:"both",
  stem:"Why is a birth defect classed as an irreversible toxic effect?",
  options:[
-  {t:"A body part formed wrongly during fetal development cannot be fixed", correct:true, why:"Her reason: an exposure that disrupts how the limbs or other parts of the body form during development produces an injury that cannot be fixed."},
+  {t:"A body part formed wrongly in the fetus cannot be fixed", correct:true, why:"Her reason: an exposure that disrupts how the limbs or other parts of the body form during development produces an injury that cannot be fixed."},
   {t:"Birth defects always come from a mutation passed on in germ cells", correct:false, why:"A teratogen can act on the developing fetus through the mother's exposure; germ-cell transmission defines a mutagen."},
   {t:"The mother's liver cannot regenerate while she is pregnant", correct:false, why:"Liver regeneration explains reversible liver injury; it is not her reason for birth defects."},
   {t:"Birth defects appear only years after the exposure", correct:false, why:"Delay is a separate concept; DES is the delayed example, and timing does not decide reversibility."},
@@ -234,7 +234,7 @@ QUESTIONS.push(
  concept:"dispositional-vs-reduced-responsiveness", tags:["smith","why"], source:"both",
  stem:"Carbon tetrachloride inhibits its own metabolism, while cadmium induces the protein that carries it out through the kidneys. Why are both classed as dispositional tolerance?",
  options:[
-  {t:"Both lower the amount of toxicant reaching the site of toxic effect", correct:true, why:"Dispositional tolerance is ADME-based: less of the nastier carbon tetrachloride metabolite is formed, and more cadmium is cleared."},
+  {t:"Both lower how much toxicant reaches the site of effect", correct:true, why:"Dispositional tolerance is ADME-based: less of the nastier carbon tetrachloride metabolite is formed, and more cadmium is cleared."},
   {t:"Both make the target tissue respond less to the same concentration", correct:false, why:"A target that responds less is reduced-responsiveness tolerance, which is pharmacodynamic."},
   {t:"Both down-regulate the receptors the toxicant acts on", correct:false, why:"Receptor down-regulation is the example of reduced responsiveness."},
   {t:"Both induce the enzymes that metabolize them", correct:false, why:"Carbon tetrachloride inhibits its own metabolism; induction is what students expect and is wrong for it."},
@@ -262,7 +262,7 @@ QUESTIONS.push(
  concept:"fda-pregnancy-lactation-labeling", tags:["smith","why"], source:"both",
  stem:"Why does the newer FDA (Food and Drug Administration) pregnancy labeling include a drug's effects on male fertility?",
  options:[
-  {t:"Effects on sperm count or viability could contribute to teratogenicity", correct:true, why:"A drug that lowers sperm count or viability acts through the father, before conception, and she said that could contribute to teratogenicity; a label that described only the mother's use of the drug would miss that risk."},
+  {t:"Effects on sperm could contribute to teratogenicity", correct:true, why:"A drug that lowers sperm count or viability acts through the father, before conception, and she said that could contribute to teratogenicity; a label that described only the mother's use of the drug would miss that risk."},
   {t:"Men taking the drug can pass it to infants through breast milk", correct:false, why:"Breast milk is the lactation part of the labeling, about nursing mothers."},
   {t:"The old labeling scale ranked drugs only for use by men", correct:false, why:"The old scale ranked drugs from known to cause birth defects to not; it did not concern men."},
   {t:"Sperm carry the drug across the placenta into the fetus", correct:false, why:"She described an effect on sperm count and viability, not sperm carrying the drug."},

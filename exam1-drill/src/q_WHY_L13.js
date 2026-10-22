@@ -52,7 +52,7 @@ QUESTIONS.push(
   {t:"The patient may pass on an infection by needle stick", correct:false, why:"She set pathogens and needle sticks aside: in this course occupational exposure means chemicals, not pathogens."},
   {t:"Organophosphates harm people only by the parenteral route", correct:false, why:"The patient was splattered, not injected; the risk to staff is contact with the contaminant."},
   {t:"The exposure counts as environmental for the staff", correct:false, why:"An exposure at work is occupational; environmental exposure is pollution in the surroundings, such as bus fumes or landfill dust."},
-  {t:"Only the patient's own medications can harm the staff", correct:false, why:"The contaminant on the patient is the hazard in this example."}],
+  {t:"Only the patient's own medications can harm the staff", correct:false, why:"This treats medications as the only healthcare source; a chemical the patient carries in on skin or clothing is an occupational source for the staff who handle the patient."}],
  teach:"Occupational exposure is exposure in the workplace, and healthcare workers have it too. A patient covered with a compound such as an organophosphate carries that contaminant into the ER, so the staff can be exposed while treating them. Chemotherapy mixed in a hood with the wrong airflow and radiation are her other healthcare examples.",
  quote:"Somebody comes into the ER, they're covered with some sort of compound. Like maybe they've been splattered with an organic phosphate. People in the ER have to be very careful about not getting exposed to that contaminant that that person got hit with, OK? So yeah, you guys too as pharmacists even will have a risk possibly of, of occupational exposures.",
  note:"\"organic phosphate\" in the transcript is organophosphate.",
@@ -158,7 +158,7 @@ QUESTIONS.push(
  concept:"dosing-frequency-design", tags:["smith","why"], source:"both",
  stem:"A medication builds up into the toxic zone with repeated dosing, as compound A does. What would happen to its concentrations if the dosing frequency were stretched out?",
  options:[
-  {t:"More is cleared between doses, so the peaks stay lower", correct:true, why:"Her answer for a medication: stretch out the dosing frequency so the profile looks like C, high enough for a therapeutic effect but not toxic."},
+  {t:"More is cleared between doses, so the peaks stay lower", correct:true, why:"A longer gap gives the body more time to clear each dose, so less remains for the next dose to add onto and the concentration stops climbing into the toxic zone. Her goal for a medication: stretch out the dosing frequency until the profile looks like C, high enough for a therapeutic effect but not toxic."},
   {t:"The peaks would rise higher with each dose", correct:false, why:"A longer interval gives more time for clearance, which lowers the build-up."},
   {t:"Nothing would change, as half-life alone sets the peaks", correct:false, why:"Half-life and dosing frequency together decide whether a compound accumulates; that is the point of Figure 2-4."},
   {t:"The half-life of the drug itself would become shorter", correct:false, why:"Changing the interval does not change the half-life; it changes how much is left when the next dose arrives."},
@@ -173,7 +173,7 @@ QUESTIONS.push(
  stem:"Of absorption, distribution, metabolism and excretion (ADME), why do toxicologists pay particular attention to metabolism?",
  options:[
   {t:"It can turn a compound into something more harmful", correct:true, why:"Her reason: a compound may be metabolized to something even nastier than what the person was exposed to; she calls that bioactivation."},
-  {t:"It is where a compound first enters the body", correct:false, why:"Entry into the body is absorption, or injection."},
+  {t:"It is where a compound first enters the body", correct:false, why:"This confuses metabolism with absorption: absorption (or injection) is how a compound gets in; metabolism is what the body then does to it, which is where a nastier product can form."},
   {t:"It always turns a compound into something less toxic", correct:false, why:"That is detoxification, one of two possible outcomes; the concern is the other one."},
   {t:"It decides which route of exposure took place", correct:false, why:"Route is part of the exposure principle, decided before any metabolism."},
   {t:"It is the only step that every compound undergoes", correct:false, why:"She said an absorbed compound is distributed and then likely metabolized; the reason she gave is the risk of a nastier product."}],
@@ -219,7 +219,7 @@ QUESTIONS.push(
   {t:"Dose matters only for medications, not for poisons", correct:false, why:"The table lists medications, nutrients and true poisons, all with LD50 values."},
   {t:"Route of exposure, not dose, decides the harm", correct:false, why:"Route is one factor, but dose remains a principle of toxicology; the compound sets the scale of the dose."},
   {t:"LD50 values exist only for botulinum toxin", correct:false, why:"The table gives LD50 values for every compound from ethyl alcohol to botulinum toxin."}],
- teach:"Any substance can be poisonous at a high enough dose, but the dose that harms depends on the compound. On the rat LD50 table, the dose that kills half the animals is 10,000 mg/kg for ethyl alcohol and 0.00001 mg/kg for botulinum toxin. So a dose has to be judged against the compound it belongs to.",
+ teach:"The LD50 is the dose that kills half of the animals given a compound; the lower it is, the less of the compound it takes to kill. On the rat LD50 table it is 10,000 mg/kg for ethyl alcohol and 0.00001 mg/kg for botulinum toxin, so a dose in mg/kg that a rat survives for one compound is far beyond lethal for another. That is why a dose can only be judged harmful once the compound is known: ethyl alcohol gives more grace, while a tiny amount of botulinum toxin is very harmful.",
  quote:"Um, but the range of LD50s is massive. So, 10,000 mgs per kilogram for ethyl alcohol would be the LD50 in rats, and 0.00001 would be the LD50 for botulinum toxin in rats, OK? So the dose makes the poison, but you have to know what compound you're talking about too.",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Dose’; transcript 10/9"},
 
@@ -241,7 +241,7 @@ QUESTIONS.push(
  concept:"log-dose-axis", tags:["smith","why"], source:"transcript",
  stem:"Why is the dose axis of an individual dose–response plot sometimes put on a logarithmic scale?",
  options:[
-  {t:"So the data fall on straight lines", correct:true, why:"Her reason: people turn the dose into a logarithmic scale so you get linear lines."},
+  {t:"So the data fall on straight lines", correct:true, why:"Only the x axis changes: the same doses are spaced on a logarithmic scale, and the same inhibition data then fall on linear lines. Her stated reason for the log scale was getting linear lines."},
   {t:"So the plot shows the cumulative mortality", correct:false, why:"Cumulative mortality is a population dose–response plot, with deaths on the y axis."},
   {t:"So the response is shown in probit units", correct:false, why:"Probit units belong to the population figure, and she set them aside: \"Nobody ever uses this.\""},
   {t:"So the LD50 can be read off the plot", correct:false, why:"The LD50 comes from a population (mortality) curve, not from enzyme inhibition in individuals."},
@@ -257,7 +257,7 @@ QUESTIONS.push(
   {t:"It is a dose at which half of a group dies", correct:true, why:"The LD50 is the dose at which 50% of the animals die; a population curve groups the responses (deaths) across the animals and shows what dose they got."},
   {t:"It is measured as percent enzyme inhibition", correct:false, why:"Percent inhibition is the y axis of the individual dose–response plot."},
   {t:"It needs both of the axes changed into probit units", correct:false, why:"She told the class to stick with mortality frequency and cumulative mortality; probit units are not needed."},
-  {t:"It describes one animal's graded response to dose", correct:false, why:"That describes an individual dose–response."},
+  {t:"It describes one animal's graded response to dose", correct:false, why:"This confuses the two plots: one animal's graded response is the individual dose–response; an LD50 needs the share of a group that died at each dose."},
   {t:"It is the dose where the first deaths appear", correct:false, why:"The dose where an effect first appears is the threshold dose, the other value read from a population curve."}],
  teach:"A population dose–response describes how a population responds to varying doses: responses such as deaths are grouped, and the dose each group got is noted. The LD50, the dose that kills 50% of the animals, is read from the cumulative mortality curve, and the threshold dose is where an effect is first seen. An individual curve, which tracks graded responses such as enzyme inhibition, does not count deaths across a group.",
  quote:"So in this, you're not looking at individuals getting different doses. You're looking to see what is the response happening? How do we group the responses, and then looking to see what dose did they get, right? So this is describing the response of a population to various doses",
