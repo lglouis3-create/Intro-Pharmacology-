@@ -2,6 +2,16 @@
 
 Newest first. The build embeds this file; the Topics page shows what is new since your last visit, and the Progress page shows all of it. Keep each bullet to one short line.
 
+## 2026-10-23 (Step-throughs, listening side panel, more Hear the why)
+
+- Guide: six step-through drawings (toxic alcohols, acetaminophen, ion trapping, liver zones, allele, haplotype).
+- While audio plays: a side panel shows the moving diagram, her slide and her table key row for what is being read.
+- Antidote diagrams: Listen and Show transcript on each of the seven.
+- Hear the why on every Exam 3 core question (device voice until the clips are recorded).
+- Reading talks rewritten: the concept and her explanation only, no class logistics.
+- Stems no longer give away the answer in parentheses, as her quiz stems never do.
+- New: the Marraffa antidotes authors, and the poison control number (1-800-222-1222) from that article.
+
 ## 2026-10-23 (Questions rewritten to her exam format)
 
 - Every Exam 3 question now has 4 options built like hers: no giveaway "always/only/never", no length clue.
