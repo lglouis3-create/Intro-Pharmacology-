@@ -10,7 +10,8 @@ TOPICS.push({id:"RMK3", name:"Rodriguez-Mozaz and Weinberg discussion guide (her
     {id:"exposure", name:"Exposure: route, duration, single vs repeated, frequency; which is more significant", cite:"KeyDiscussionGuideRodriguez-MozazandWeinberg2026.docx, row Exposure"},
     {id:"adme", name:"ADME: metabolized to anything harmful? Data for humans, none for wildlife", cite:"KeyDiscussionGuideRodriguez-MozazandWeinberg2026.docx, row ADME"},
     {id:"dose", name:"Dose: unknown real exposure; below therapeutic for humans; likely high enough for wildlife", cite:"KeyDiscussionGuideRodriguez-MozazandWeinberg2026.docx, row Dose"},
-    {id:"target", name:"Target/MOA: what we don't know for humans and for wildlife", cite:"KeyDiscussionGuideRodriguez-MozazandWeinberg2026.docx, row Target/MOA"}
+    {id:"target", name:"Target/MOA: what we don't know for humans and for wildlife", cite:"KeyDiscussionGuideRodriguez-MozazandWeinberg2026.docx, row Target/MOA"},
+    {id:"authors", name:"Who wrote it: the article and the other assigned readings", cite:"RodriguezMozaz-EHP-2010.pdf, title page"}
   ]});
 QUESTIONS.push(
 /* ---------------- Source ---------------- */
@@ -360,5 +361,43 @@ QUESTIONS.push(
   {t:"We don't know effects of low-dose chronic exposures", correct:false, why:"That gap is in the human column."},
   {t:"The dose is probably below the therapeutic dose of a pharmaceutical", correct:false, why:"That is the human Dose entry, not a Target/MOA gap."}],
  teach:"Drug development studies use rodents, guinea pigs, dogs and pigs, not fish, so how a drug made and tested for humans acts in fish is not known. A result from a laboratory species therefore may not apply to fish: her key's gap that data may not have been measured in the correct species. The related gap is that studies may not have measured the correct endpoint.",
- cite:"KeyDiscussionGuideRodriguez-MozazandWeinberg2026.docx, row Target/MOA, For Wildlife"}
+ cite:"KeyDiscussionGuideRodriguez-MozazandWeinberg2026.docx, row Target/MOA, For Wildlife"},
+/* ---------------- Who wrote it ---------------- */
+{id:"RMK3-029", lecture:"RMK3", prof:"Smith", tier:"new", topic:"RMK3", sub:"authors", skill:"recall", readingId:"rodriguez-mozaz",
+ concept:"rm-authors", tags:["smith","reading"], source:"both",
+ stem:"Who wrote the article on pharmaceuticals in water that the class discussed with the discussion guide?",
+ options:[
+  {t:"Marraffa, Cohen and Howland", correct:false, why:"They wrote the antidotes review assigned for 10/19 (Am J Health-Syst Pharm 2012)."},
+  {t:"Rodriguez-Mozaz and Weinberg", correct:true, why:"The title page lists Sara Rodriguez-Mozaz and Howard S. Weinberg; in class she called it \"Rodriguez and Moza's paper\"."},
+  {t:"Wax, Erdman, Chyka and colleagues", correct:false, why:"Paul M. Wax is the first author of the AAPCC beta-blocker ingestion guideline."},
+  {t:"Olson, Erdman, Woolf and colleagues", correct:false, why:"Kent R. Olson is the first author of the AAPCC calcium channel blocker ingestion guideline."}],
+ teach:"Sara Rodriguez-Mozaz and Howard S. Weinberg (University of North Carolina at Chapel Hill) wrote \"Meeting Report: Pharmaceuticals in Water, An Interdisciplinary Approach to a Public Health Challenge\" in Environmental Health Perspectives. It is the article on the discussion guide whose principles table (source, exposure, ADME, dose, target) the class worked through on 10/13.",
+ quote:"I want us to take a dive into the paper that Rodriguez and Moza's paper that I had you guys read.",
+ cite:"RodriguezMozaz-EHP-2010.pdf, title page; transcript 10/13"},
+
+{id:"RMK3-030", lecture:"RMK3", prof:"Smith", tier:"new", topic:"RMK3", sub:"authors", skill:"recall", readingId:"rodriguez-mozaz",
+ concept:"rm-article-type", tags:["smith","reading"], source:"both",
+ stem:"What kind of article did Rodriguez-Mozaz and Weinberg write?",
+ options:[
+  {t:"A report of a summit's discussions", correct:true, why:"The title begins \"Meeting Report\", and the authors write: \"In this article, we present an overview of the summit discussions.\""},
+  {t:"A randomized clinical trial in people", correct:false, why:"No one was dosed; the article reports what summit participants discussed."},
+  {t:"A consensus guideline for poison centers", correct:false, why:"That describes the AAPCC beta-blocker and calcium channel blocker guidelines."},
+  {t:"A review of antidotes for poisonings", correct:false, why:"That describes the Marraffa, Cohen and Howland primer."}],
+ teach:"The article is a meeting report: it summarizes the Environmental Health Summit in North Carolina, where government agencies, academics, industry, water utilities and public interest groups discussed drugs found in water. That is why its conclusions are framed as research needs and recommendations rather than as trial results.",
+ quote:"I want us to take a dive into the paper that Rodriguez and Moza's paper that I had you guys read.",
+ cite:"RodriguezMozaz-EHP-2010.pdf, title page; transcript 10/13"},
+
+{id:"RMK3-031", lecture:"RMK3", prof:"Smith", tier:"new", topic:"RMK3", sub:"authors", skill:"recall", type:"match",
+ concept:"reading-authors-match", tags:["smith","reading"], source:"both",
+ stem:"Match each assigned reading with its authors.",
+ left:["Pharmaceuticals in water (the discussion-guide article)", "Beta-blocker ingestion guideline", "Calcium channel blocker ingestion guideline", "Antidotes for toxicological emergencies"],
+ right:["Rodriguez-Mozaz and Weinberg", "Wax and colleagues (AAPCC)", "Olson and colleagues (AAPCC)", "Marraffa, Cohen and Howland"],
+ pairs:[
+  {l:"Pharmaceuticals in water (the discussion-guide article)", r:"Rodriguez-Mozaz and Weinberg", why:"The meeting report discussed with the discussion guide on 10/13."},
+  {l:"Beta-blocker ingestion guideline", r:"Wax and colleagues (AAPCC)", why:"Paul M. Wax is first author; the panel is from the American Association of Poison Control Centers."},
+  {l:"Calcium channel blocker ingestion guideline", r:"Olson and colleagues (AAPCC)", why:"Kent R. Olson is first author; the same AAPCC panel wrote both guidelines."},
+  {l:"Antidotes for toxicological emergencies", r:"Marraffa, Cohen and Howland", why:"The primer assigned for 10/19 (Am J Health-Syst Pharm)."}],
+ teach:"Two readings went with a class activity: the Rodriguez-Mozaz and Weinberg article (discussion guide, 10/13) and the two American Association of Poison Control Centers guidelines (reading guide, 10/19). The two guidelines share one twelve-member panel and differ only in who is listed first: Wax for beta blockers, Olson for calcium channel blockers.",
+ quote:"So all the patients that have overdosed on these different formulations, these authors wrote this paper, they've pulled together all the data, done the statistical analysis, and they have these guidance now.",
+ cite:"RodriguezMozaz-EHP-2010.pdf; beta-blocker+guideline+AAPCC+2005.pdf; Ca+channel+blocker+guideline+AAPCC+2005.pdf; Marraffa+AJHSP+2012+Antidotes.pdf (title pages); transcripts 10/13, 10/19"}
 );

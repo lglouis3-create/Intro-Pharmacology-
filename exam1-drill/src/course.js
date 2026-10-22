@@ -40,8 +40,8 @@ const COURSE = {
     {id:'L16', deck:'Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf', decks:['Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf', 'Marraffa+AJHSP+2012+Antidotes.pdf', 'beta-blocker+guideline+AAPCC+2005.pdf', 'Ca+channel+blocker+guideline+AAPCC+2005.pdf'], label:'Day 16 (10/19): Treating poisonings II, the guideline discussion (Dr. Smith)', prof:'Smith', exam:3, module:3},
     {id:'L17', deck:'Intro_to_PGx_Lecture_Students_Fall_2026.pdf', label:'Day 17 (10/20): Introduction to pharmacogenomics (Dr. Smith)', prof:'Smith', exam:3, module:3},
     {id:'TBL3', deck:'PoisoningTreatmentTable2026KEY.pdf', label:'Her poisoning treatment table key (Dr. Smith)', prof:'Smith', exam:3, module:3},
-    {id:'GRG3', deck:'Readingguideforoutofhospitalguidelines2026KEY.docx', label:'Her out-of-hospital guideline reading guide key (Dr. Smith)', prof:'Smith', exam:3, module:3},
-    {id:'RMK3', deck:'KeyDiscussionGuideRodriguez-MozazandWeinberg2026.docx', label:'Her Rodriguez-Mozaz and Weinberg discussion guide key (Dr. Smith)', prof:'Smith', exam:3, module:3},
+    {id:'GRG3', deck:'Readingguideforoutofhospitalguidelines2026KEY.docx', decks:['Readingguideforoutofhospitalguidelines2026KEY.docx', 'beta-blocker+guideline+AAPCC+2005.pdf', 'Ca+channel+blocker+guideline+AAPCC+2005.pdf'], label:'Her out-of-hospital guideline reading guide key (Dr. Smith)', prof:'Smith', exam:3, module:3},
+    {id:'RMK3', deck:'KeyDiscussionGuideRodriguez-MozazandWeinberg2026.docx', decks:['KeyDiscussionGuideRodriguez-MozazandWeinberg2026.docx', 'RodriguezMozaz-EHP-2010.pdf', 'beta-blocker+guideline+AAPCC+2005.pdf', 'Ca+channel+blocker+guideline+AAPCC+2005.pdf', 'Marraffa+AJHSP+2012+Antidotes.pdf'], label:'Her Rodriguez-Mozaz and Weinberg discussion guide key (Dr. Smith)', prof:'Smith', exam:3, module:3},
     {id:'QZ3', deck:'Smith_Quizzes_1-3_QA.pdf', decks:['Smith_Practice_Quiz_1_-_Principles_of_Toxicology.pdf', 'Smith_Quizzes_1-3_QA.pdf', 'Smith_Quiz_4_-_Intro_to_Pharmacogenomics.pdf'], label:'Quizzes (verbatim), Dr. Smith', prof:'Smith', exam:3, module:3}
   ],
   exams: [

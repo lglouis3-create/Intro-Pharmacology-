@@ -8,7 +8,8 @@ TOPICS.push({id:"GRG3", name:"Out-of-hospital guideline reading guide (her key)"
   subs:[
     {id:"ccb", name:"Calcium channel blockers: her key, questions 1 to 5", cite:"Readingguideforoutofhospitalguidelines2026KEY.docx, Calcium Channel Blockers column"},
     {id:"bb", name:"Beta blockers: her key, questions 1 to 5", cite:"Readingguideforoutofhospitalguidelines2026KEY.docx, Beta Blockers column"},
-    {id:"both", name:"The two classes compared: windows, follow-up, what is the same", cite:"Readingguideforoutofhospitalguidelines2026KEY.docx, both columns; (T) 10/19, 10/20"}
+    {id:"both", name:"The two classes compared: windows, follow-up, what is the same", cite:"Readingguideforoutofhospitalguidelines2026KEY.docx, both columns; (T) 10/19, 10/20"},
+    {id:"authors", name:"Who wrote the guidelines", cite:"beta-blocker+guideline+AAPCC+2005.pdf and Ca+channel+blocker+guideline+AAPCC+2005.pdf, title pages"}
   ]});
 QUESTIONS.push(
 /* ---------------- Calcium channel blockers ---------------- */
@@ -447,5 +448,29 @@ QUESTIONS.push(
   {t:"Whether a family car is available", correct:false, why:"Transport is by ambulance."}],
  teach:"Her key's question 2 sorts the patient by three things she named on 10/19: the time frame of when they were found, whether they are symptomatic, and the formulation. Those three, read against the windows on her key, decide between getting them to a hospital and calling the Poison Center.",
  quote:"there are some things we need to think about regarding the time frame of when you found them, and if they're symptomatic or not, and the kind of formulation that they were exposed to, correct?",
- cite:"Readingguideforoutofhospitalguidelines2026KEY.docx, question 2 in both columns; transcript 10/19"}
+ cite:"Readingguideforoutofhospitalguidelines2026KEY.docx, question 2 in both columns; transcript 10/19"},
+/* ---------------- Who wrote the guidelines ---------------- */
+{id:"GRG3-034", lecture:"GRG3", prof:"Smith", tier:"new", topic:"GRG3", sub:"authors", skill:"recall", readingId:"aapcc-bb",
+ concept:"grg-aapcc", tags:["smith","reading"], source:"both",
+ stem:"Which organization's panel wrote the two out-of-hospital management guidelines the class discussed, for beta-blocker and for calcium channel blocker ingestion?",
+ options:[
+  {t:"US Food and Drug Administration", correct:false, why:"The FDA labels drugs; it did not write these guidelines."},
+  {t:"American Association of Poison Control Centers", correct:true, why:"Both title pages list the panel under \"American Association of Poison Control Centers, Washington, District of Columbia, USA\"."},
+  {t:"Centers for Disease Control and Prevention", correct:false, why:"Not named on either guideline."},
+  {t:"American Heart Association and American College of Cardiology", correct:false, why:"Not named on either guideline."}],
+ teach:"Both guidelines are \"Evidence-Based Consensus Guideline for Out-of-Hospital Management\" documents from the American Association of Poison Control Centers (AAPCC). Their stated objective is to help poison center staff triage and manage people who swallowed these drugs outside a hospital. On 10/19 she explained that the evidence comes from published overdose cases that the authors pooled.",
+ quote:"So all the patients that have overdosed on these different formulations, these authors wrote this paper, they've pulled together all the data, done the statistical analysis, and they have these guidance now.",
+ cite:"beta-blocker+guideline+AAPCC+2005.pdf and Ca+channel+blocker+guideline+AAPCC+2005.pdf, title pages; transcript 10/19"},
+
+{id:"GRG3-035", lecture:"GRG3", prof:"Smith", tier:"new", topic:"GRG3", sub:"authors", skill:"tell", readingId:"aapcc-ccb",
+ concept:"grg-first-authors", tags:["smith","reading"], source:"both",
+ stem:"The beta-blocker and calcium channel blocker guidelines come from the same panel. Which pairing names each guideline's first author correctly?",
+ options:[
+  {t:"Beta blocker: Wax; calcium channel blocker: Olson", correct:true, why:"Paul M. Wax heads the beta-blocker guideline; Kent R. Olson heads the calcium channel blocker guideline."},
+  {t:"Beta blocker: Olson; calcium channel blocker: Wax", correct:false, why:"Reversed: both men are on both author lists, but the first authors are the other way round."},
+  {t:"Both: Rodriguez-Mozaz and Weinberg", correct:false, why:"They wrote the pharmaceuticals-in-water meeting report."},
+  {t:"Both: Marraffa, Cohen and Howland", correct:false, why:"They wrote the antidotes primer."}],
+ teach:"The same twelve AAPCC panel members (Wax, Erdman, Chyka, Keyes, Caravati, Booze, Christianson, Woolf, Olson, Manoguerra, Scharman, Troutman) appear on both guidelines. The order changes: Wax is listed first on the beta-blocker guideline and Olson first on the calcium channel blocker guideline.",
+ quote:"So all the patients that have overdosed on these different formulations, these authors wrote this paper, they've pulled together all the data, done the statistical analysis, and they have these guidance now.",
+ cite:"beta-blocker+guideline+AAPCC+2005.pdf and Ca+channel+blocker+guideline+AAPCC+2005.pdf, title pages; transcript 10/19"}
 );
