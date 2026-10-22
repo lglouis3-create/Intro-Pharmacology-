@@ -182,7 +182,9 @@ const FOCUS_VIEWS = ['topics', 'quiz', 'terms', 'weak', 'exam', 'ptab', 'guide',
 const focusOn = () => store.get(FOCUS_KEY) === '1' && COURSE.exams.some(e => e.id === FOCUS_EXAM);
 function setFocus(on) {
   store.set(FOCUS_KEY, on ? '1' : '0');
-  if (on) { store.set(EXAM_KEY, String(FOCUS_EXAM)); if (typeof Q !== 'undefined' && Q && Q.list.some(q => examOf(q) !== FOCUS_EXAM)) Q = null; }
+  if (on) { const was = store.get(EXAM_KEY); if (was && was !== String(FOCUS_EXAM)) store.set(COURSE.ns + ':focusprev', was); store.set(EXAM_KEY, String(FOCUS_EXAM));
+    if (typeof Q !== 'undefined' && Q && Q.list.some(q => examOf(q) !== FOCUS_EXAM)) { Q = null; RET.length = 0; backBtn(); } }   // the way back led into the dropped quiz
+  else { const prev = store.get(COURSE.ns + ':focusprev'); if (prev) { store.set(EXAM_KEY, prev); store.del(COURSE.ns + ':focusprev'); } }
   if (on && !FOCUS_VIEWS.includes(CUR)) { go('topics'); return; }
   nav(); VIEWFN[CUR] && VIEWFN[CUR]();
 }
@@ -201,7 +203,7 @@ function nav() {
   });
   $('#theme').onchange = e => applyTheme(e.target.value);
   // on a phone the tabs scroll sideways in one row: keep the open one in sight
-  const on = $('#nav .on'), nv = $('#nav'); if (on && nv.scrollWidth > nv.clientWidth) nv.scrollLeft = on.offsetLeft - nv.offsetLeft - 40;
+  const on = $('#nav .on'), nv = $('#nav'); if (on && nv.scrollWidth > nv.clientWidth) { const x = on.offsetLeft - nv.offsetLeft; if (x < nv.scrollLeft || x + on.offsetWidth > nv.scrollLeft + nv.clientWidth) nv.scrollLeft = Math.max(0, x - 40); }
   hdrVar();
 }
 /* The header's height, for things that stick under it (the exam clock on the all-on-one-page paper). */
@@ -224,8 +226,22 @@ function go(v, back) {
   if (CUR === 'exam' && EX && !EX.done && v !== 'exam' && !confirm('Leave the exam in progress? It will be kept until you return.')) return false;
   CUR = v; nav(); leaveView();
   (back && v === 'exam' && EX && EX.done ? examResult : VIEWFN[v])();
+  pushNav({v});
   return true;
 }
+/* The browser's back gesture moves within the drill: every page change (and the diagram panel) is a history
+   entry; back closes the panel, else follows the drill's own way back, else returns to Topics. */
+let NAV_READY = false, POPPING = false, SKIPPOP = 0;
+function pushNav(st) { if (!NAV_READY || POPPING) return; try { history.pushState(Object.assign({drill: 1}, st), ''); } catch (e) {} }
+window.addEventListener('popstate', () => {
+  if (SKIPPOP) { SKIPPOP--; return; }
+  POPPING = true;
+  try {
+    if (ANTI) antiClose(true);
+    else if (RET.length) goBack();
+    else if (CUR !== 'topics' && !go('topics')) { POPPING = false; pushNav({v: CUR}); }   // stayed in the exam: keep an entry to come back to
+  } finally { POPPING = false; }
+});
 /* "Explain more": a question links to the pages that teach its concept. The link
    keeps the quiz or exam exactly where it was and a floating button brings the
    student back to it, scroll position included. */
@@ -466,7 +482,9 @@ function backBtn() {
   b.textContent = backLabel();
 }
 const backLabel = () => '← Back to ' + ({topics: 'Topics', quiz: 'the question', exam: 'the exam', graphs: 'the figures', map: 'the map', terms: 'the terms', weak: 'Weak spots', tell: 'Tell apart', ref: 'the reference', guide: 'the guide', diagrams: 'the diagrams', drugs: 'the drug table', pair: 'Pair up', rxq: 'the receptor drill', ptab: 'the poisoning table drill', scenes: 'the scenes', readings: 'the readings'}[(RET[RET.length - 1] || {}).view] || 'where you were');
-function goBack() { const r = RET.pop(); if (!r) return; backBtn(); go(r.view, true); window.scrollTo(0, r.y); }
+function goBack() { const r = RET.pop(); if (!r) return; backBtn(); go(r.view, true); window.scrollTo(0, r.y);
+  // cards sized by estimate (content-visibility) settle after layout: put the window back where it was, twice
+  requestAnimationFrame(() => requestAnimationFrame(() => window.scrollTo(0, r.y))); setTimeout(() => window.scrollTo(0, r.y), 150); }
 document.addEventListener('click', e => { const j = e.target.closest('[data-jump]'); if (j) { const [v, a] = j.dataset.jump.split(':'); jump(v, a); if (j.dataset.jq) markFor(j.dataset.jq, a); } });
 /* "view:anchor:group:key": jump to the page, then open that explanation card (the reference's "Why?" cards). */
 document.addEventListener('click', e => { const j = e.target.closest('[data-jumpx]'); if (!j) return; const [v, a, g, k] = j.dataset.jumpx.split(':'); jump(v, a); const out = showExplain(g, k); if (out) scrollToEl(out.closest('.xpick')); });
@@ -658,7 +676,7 @@ function startQuiz(list, label, mode, opts = {}) {
   const from = (opts.back || CUR === 'topics') && CUR !== 'quiz' ? {view: CUR, y: window.scrollY} : null;
   RET.length = 0; if (from) RET.push(from); backBtn();
   // opened from deep in a long page (Tell apart, the map): start at the top, without the old page's floating buttons
-  CUR = 'quiz'; nav(); leaveView(); nextQ();
+  CUR = 'quiz'; nav(); leaveView(); nextQ(); pushNav({v: 'quiz'});
 }
 const allDone = () => Q.list.every(q => Q.doneIds.has(q.id));
 /* Order for answered questions: the weakest box first, then the earliest due day, and a random
@@ -689,6 +707,7 @@ function pickSR() {
   return rest[0] || shuffle(list.filter(q => q.id !== recent && q.id !== lastId && !Q.doneIds.has(q.id)))[0] || list.find(q => !Q.doneIds.has(q.id)) || list[0];
 }
 function nextQ() {
+  qSayStop();
   let q;
   if (Q.mode === 'pass') { while (Q.i < Q.list.length && Q.doneIds.has(Q.list[Q.i].id)) Q.i++; if (Q.i >= Q.list.length) return quizDone(); q = Q.list[Q.i++]; }
   else if (Q.mode === 'concept') { q = pickConcept(); if (!q) return quizDone(); }
@@ -701,6 +720,7 @@ function nextQ() {
   renderQ();
 }
 function quizDone() {
+  qSayStop();
   Q.finished = true; Q.answered = false; clearView();
   if (Q.graph) return graphDone();
   if (Q.mode === 'concept') return conceptDone();
@@ -761,7 +781,7 @@ function qCard(q, st, opts = {}) {
     if (q.teach) h += `<div class="teach">${teachHTML(q.teach)}</div>`;
     h += graphFeedback(q, st);
     if (q.note) h += `<div class="note">${esc(q.note)}</div>`;
-    if (typeof NARR_Q !== 'undefined' && NARR_Q[q.id]) h += `<div class="row qsay"><button type="button" class="chip" data-qsay="${q.id}">🔊 Hear the why</button><span class="meta" style="margin:0">read by the narrator</span></div>`;
+    if (typeof NARR_Q !== 'undefined' && NARR_Q[q.id]) h += `<div class="row qsay"><button type="button" class="chip" data-qsay="${q.id}">🔊 Hear the why</button><span class="meta" style="margin:0">${typeof Q_CLIPS !== 'undefined' && !Q_CLIPS.includes(q.id) ? 'device voice' : 'read by the narrator'}</span></div>`;
     h += moreHTML(q, hidden) + explainHTML(q);
     if (opts.conf) h += opts.conf(st);
   }
@@ -785,7 +805,7 @@ function renderQ() {
   if (S.layout === 'all') return renderAll();
   // the current question may have been answered on the all-on-one-page view
   // (answered or not here: an answer recorded there must not be recorded again by this card's Next)
-  if (Q.cur && Q.doneIds.has(Q.cur.id)) return nextQ();
+  if (Q.cur && Q.doneIds.has(Q.cur.id) && Q.rec !== Q.cur.id) return nextQ();
   const q = Q.cur; clearView();
   let h = `<div class="row" style="justify-content:space-between"><span class="meta">${esc(Q.label || '')} · ${Q.done} answered${Q.done ? ' · ' + Q.right + ' right' : ''}</span>${layoutToggle()}</div><div class="row" style="margin:4px 0 10px">${sessStrip()}${aheadNote()}</div>`;
   // a right answer: Next records "Knew it" (as Enter does); the two smaller buttons beside it downgrade it
@@ -795,7 +815,8 @@ function renderQ() {
       : `<div class="row" style="margin-top:12px"><button class="btn" data-c="wrong">Next</button></div>`,
     foot: `<div class="meta kbd">Keys: A–J or 1–9 pick an option · Enter checks or continues · after a right answer 1 = Knew it, 2 = Not sure, 3 = I guessed</div>`});
   $('#view').innerHTML = h;
-  document.querySelectorAll('[data-o]').forEach(b => b.onclick = () => pick(+b.dataset.o));
+  // a tap within 350 ms of the question appearing is the second tap of a double tap on Drill or Next (keys are not held back)
+  document.querySelectorAll('[data-o]').forEach(b => b.onclick = e => { if (e.detail && Date.now() - Q.t0 < 350) return; pick(+b.dataset.o); });
   document.querySelectorAll('select[data-l]').forEach(s => s.onchange = () => { Q.mpick = Q.mpick || {}; Q.mpick[+s.dataset.l] = s.value; });
   const ck = document.querySelector('[data-check]'); if (ck) ck.onclick = check;
   document.querySelectorAll('[data-c]').forEach(b => b.onclick = () => finish(b.dataset.c));
@@ -862,7 +883,7 @@ function pickAll(id, oi) {
 }
 function checkAll(id) {
   const q = byId[id], st = Q.st[id];
-  if (q.type === 'match') { st.mpick = st.mpick || {}; if (!Object.values(st.mpick).some(Boolean)) return; st.ok = q.left.every((l, i) => st.mpick[i] === pairOf(q, l)); }
+  if (q.type === 'match') { st.mpick = st.mpick || {}; if (q.left.some((l, i) => !st.mpick[i])) return; st.ok = q.left.every((l, i) => st.mpick[i] === pairOf(q, l)); }
   else if (q.multi) { if (!st.picked.size) return; st.ok = gradeMulti(q, st.picked); }
   else st.ok = q.options[st.picked].correct;
   st.answered = true; st.conf = st.ok ? 'sure' : 'wrong';
@@ -895,26 +916,40 @@ function check() {
   const q = Q.cur;
   if (q.type === 'match') {
     Q.mpick = Q.mpick || {};
-    if (!Object.values(Q.mpick).some(Boolean)) return;   // nothing chosen yet: Check does nothing, as with select-all
+    if (q.left.some((l, i) => !Q.mpick[i])) return;   // Check waits until every item has a match
     Q.ok = q.left.every((l, i) => Q.mpick[i] === pairOf(q, l));
   } else if (q.multi) {
     if (!Q.picked.size) return;
     Q.ok = gradeMulti(q, Q.picked);
   } else Q.ok = q.options[Q.picked].correct;
   Q.answered = true;
-  renderQ();
-}
-function finish(conf) {
-  const q = Q.cur, st = qs(q.id);
-  st.n++; if (Q.ok && conf !== 'guess') st.ok++;
+  // the answer is recorded the moment it is graded (a reload, a tab switch or the back gesture keeps it),
+  // as "Knew it" or a miss; Next or the confidence buttons only adjust it, as on the all-on-one-page view
+  const sq = qs(q.id), conf = Q.ok ? 'sure' : 'wrong'; Q.box0 = sq.box; sq.n++; if (Q.ok) sq.ok++;
   const picked = q.type === 'match' ? Q.mpick : q.multi ? [...Q.picked] : Q.picked;
   noteAnswer(q, {id: q.id, t: Date.now(), ok: Q.ok, conf, picked, ms: Date.now() - Q.t0});
   setTimeout(refreshSess, 0);
   if (S.log.length > 5000) S.log = S.log.slice(-5000);
-  schedule(q.id, Q.ok ? conf : 'wrong');
-  if (!Q.ok || conf === 'guess') Q.retest.push({concept: q.concept, not: q.id});
-  Q.done++; if (Q.ok && conf !== 'guess') Q.right++; Q.doneIds.add(q.id);   // a guess is not counted right anywhere
-  save(); nextQ();
+  schedule(q.id, conf);
+  if (!Q.ok) Q.retest.push({concept: q.concept, not: q.id});
+  Q.done++; if (Q.ok) Q.right++; Q.doneIds.add(q.id); Q.rec = q.id;
+  // the all-on-one-page view shows it answered, not as a fresh card
+  Q.st[q.id] = {order: Q.order, rightOrder: q.type === 'match' ? Q.rightOrder : null, picked: Q.picked, mpick: Q.mpick, answered: true, ok: Q.ok, conf, box0: Q.box0, t0: Q.t0};
+  save();
+  renderQ();
+}
+function finish(conf) {
+  const q = Q.cur;
+  // already recorded at Check as "Knew it" or a miss; "Not sure" and "I guessed" adjust that record
+  if (Q.ok && (conf === 'unsure' || conf === 'guess') && Q.rec === q.id) {
+    const sq = qs(q.id);
+    if (conf === 'guess') { sq.ok = Math.max(0, sq.ok - 1); Q.right = Math.max(0, Q.right - 1); Q.retest.push({concept: q.concept, not: q.id}); }
+    for (let i = S.log.length - 1; i >= 0; i--) if (S.log[i].id === q.id) { S.log[i].conf = conf; break; }
+    sq.box = Q.box0 || 0; schedule(q.id, conf);
+    if (Q.st[q.id]) Q.st[q.id].conf = conf;
+    save(); setTimeout(refreshSess, 0);
+  }
+  nextQ();
 }
 
 /* ---------- Weak spots ---------- */
@@ -1409,7 +1444,7 @@ function vExam() {
     <div class="row" style="margin-top:10px"><span class="meta" style="margin:0">Answer:</span>${layoutToggle()}</div>
     <div class="row" style="margin-top:12px"><button class="btn" id="startx">Start</button></div></div>`;
   // a finished paper of the other exam is kept: say where it is
-  if (EX && EX.done && EX.exam && EX.exam !== ex.id) { const o = COURSE.exams.find(e => e.id === EX.exam); h += `<p class="sub" id="keptres">Your last ${esc(o ? o.name : 'other exam')} paper (${EX.score}/${EX.qs.length}) is kept: choose ${esc(o ? o.name : 'it')} above to see its result.</p>`; }
+  if (EX && EX.done && EX.exam && EX.exam !== ex.id) { const o = COURSE.exams.find(e => e.id === EX.exam); h += `<p class="sub" id="keptres">Your last ${esc(o ? o.name : 'other exam')} paper (${EX.score}/${EX.qs.length}) is kept: ${focusOn() ? 'turn off Smith focus and choose ' + esc(o ? o.name : 'it') : 'choose ' + esc(o ? o.name : 'it') + ' above'} to see its result.</p>`; }
   h += pastAttempts(ex);
   $('#view').innerHTML = h;
   let n = ex.questions || lens[0];
@@ -1498,7 +1533,8 @@ function renderExam() {
     <button class="btn ghost" id="next" ${EX.i < EX.qs.length - 1 ? '' : 'disabled'}>Next</button>
     <button class="btn" id="submit">Submit exam</button></div>`;
   $('#view').innerHTML = h;
-  document.querySelectorAll('[data-o]').forEach(b => b.onclick = () => { examPick(q, +b.dataset.o); renderExam(); });
+  const shown = Date.now();
+  document.querySelectorAll('[data-o]').forEach(b => b.onclick = e => { if (e.detail && Date.now() - shown < 350) return; examPick(q, +b.dataset.o); renderExam(); });
   document.querySelectorAll('[data-j]').forEach(b => b.onclick = () => { EX.i = +b.dataset.j; renderExam(); });
   $('#prev').onclick = () => { EX.i--; renderExam(); };
   $('#next').onclick = () => { EX.i++; renderExam(); };
@@ -1985,7 +2021,7 @@ function rxAdvance() {
   vRxq();
 }
 function rxNext() { rxAdvance(); }
-document.addEventListener('keydown', e => { if (CUR === 'rxq' && e.key === 'Enter' && !e.target.closest('button, input, select, textarea')) { const b = $('#rxnext') || $('#rxcheck'); if (b && !b.disabled) b.click(); } });
+document.addEventListener('keydown', e => { if (ANTI) return; if (CUR === 'rxq' && e.key === 'Enter' && !e.target.closest('button, input, select, textarea')) { const b = $('#rxnext') || $('#rxcheck'); if (b && !b.disabled) b.click(); } });
 
 /* ===== Poisoning table drill: Dr. Smith's Poisoning Treatment Table 2026 KEY (poison_table.js) =====
    Her words on 10/20: "you do need to know the details that I have in my table, my key." Five ways in:
@@ -2076,7 +2112,7 @@ function ptAdvance() {
   if (PT.redo.length) ptStart(PT.redo.map(x => x.id)); else ptStart();
   vPtab();
 }
-document.addEventListener('keydown', e => { if (CUR === 'ptab' && e.key === 'Enter' && !e.target.closest('button, input, select, textarea')) { const b = $('#ptnext'); if (b) b.click(); } });
+document.addEventListener('keydown', e => { if (ANTI) return; if (CUR === 'ptab' && e.key === 'Enter' && !e.target.closest('button, input, select, textarea')) { const b = $('#ptnext'); if (b) b.click(); } });
 
 /* Antidote diagrams: standalone pages under antidotes/ (IDs repeat across them, so each runs in its own frame).
    The page reports its height with postMessage; Esc or the close button returns focus to the opener. */
@@ -2093,7 +2129,7 @@ function antiOpen(slug, opener) {
   if (!ANTI) {
     ANTI = {opener: opener || document.activeElement, el: document.createElement('div')};
     ANTI.el.className = 'antiview'; ANTI.el.setAttribute('role', 'dialog'); ANTI.el.setAttribute('aria-modal', 'true'); ANTI.el.setAttribute('aria-labelledby', 'antititle');
-    document.body.appendChild(ANTI.el); document.body.classList.add('antiopen');
+    document.body.appendChild(ANTI.el); document.body.classList.add('antiopen'); pushNav({v: CUR, anti: 1});
     // the page behind is inert while the panel is open: Tab stays in the panel, the theme cannot change underneath
     ANTI.inert = [...document.body.children].filter(c => c !== ANTI.el && !c.inert); ANTI.inert.forEach(c => { c.inert = true; });
   }
@@ -2105,8 +2141,10 @@ function antiOpen(slug, opener) {
     <p class="sub" style="margin:6px 0 0">Drawn from the figures on the Treating Poisonings slides (10/19). <a href="${ANTI_BASE}index.html" target="_blank" rel="noopener">All diagrams</a></p></div>`;
   $('#anticlose').focus();
 }
-function antiClose() {
-  if (!ANTI) return; ANTI.el.remove(); document.body.classList.remove('antiopen'); (ANTI.inert || []).forEach(c => { c.inert = false; });
+function antiClose(fromPop) {
+  if (!ANTI) return;
+  if (!fromPop && history.state && history.state.anti) { SKIPPOP++; try { history.back(); } catch (e) { SKIPPOP--; } }   // drop the panel's own history entry
+  ANTI.el.remove(); document.body.classList.remove('antiopen'); (ANTI.inert || []).forEach(c => { c.inert = false; });
   const o = ANTI.opener; ANTI = null; if (o && o.focus && document.contains(o)) o.focus();
 }
 document.addEventListener('click', e => {
@@ -2117,7 +2155,9 @@ document.addEventListener('click', e => {
 });
 document.addEventListener('keydown', e => { if (ANTI && e.key === 'Escape') antiClose(); });
 window.addEventListener('message', e => {
-  const f = $('#antiframe'); if (!f || e.source !== f.contentWindow || !e.data || typeof e.data.antidoteH !== 'number') return;
+  const f = $('#antiframe'); if (!f || e.source !== f.contentWindow || !e.data) return;
+  if (e.data.antidoteEsc) { antiClose(); return; }
+  if (typeof e.data.antidoteH !== 'number') return;
   f.style.height = Math.min(Math.max(e.data.antidoteH, 200), 4000) + 'px';
 });
 const antiCard = () => antiOK() ? `<div class="card"><b>Antidote diagrams</b><p class="sub" style="margin:2px 0 8px">Drawings of the antidote mechanisms on the Treating Poisonings slides (10/19); five of the seven step through.</p><div class="row" style="gap:6px">${ANTIDOTE_DIAGRAMS.map(d => antiChip(d)).join('')}</div></div>` : '';
@@ -2542,6 +2582,7 @@ function qSay(id, btn) {
   const cur = QSAY = {id, btn, t: null}; btn.textContent = '■ Stop'; btn.setAttribute('aria-pressed', 'true');
   const finish = () => { if (QSAY !== cur) return; qSayStop(); };
   const synth = () => { if (!narrCan()) return finish(); const v = narrVoice(); let last = null; (speakable(text).match(/[^.;:!?]+[.;:!?]*/g) || [text]).forEach(part => { if (!part.trim()) return; const u = new SpeechSynthesisUtterance(part.trim()); u.rate = NAR.rate; u.lang = 'en-US'; if (v) u.voice = v; last = u; speechSynthesis.speak(u); }); if (!last) return finish(); last.onend = last.onerror = finish; cur.t = setTimeout(finish, (2000 + text.split(/\s+/).length * 450) / NAR.rate); };
+  if (typeof Q_CLIPS !== 'undefined' && !Q_CLIPS.includes(id)) { cur.fell = true; synth(); cur.t = setTimeout(finish, (6000 + text.split(/\s+/).length * 500) / NAR.rate); return; }   // no recorded clip: the device voice, without a failed request
   const a = NARR_AUDIO || (NARR_AUDIO = new Audio()); a.preload = 'auto'; a.src = NAR_BASE() + 'q-' + id + '.mp3'; a.playbackRate = NAR.rate;
   const fallback = () => { if (QSAY !== cur || cur.fell) return; cur.fell = true; synth(); };
   a.onended = finish; a.onerror = fallback; a.play().catch(fallback);
@@ -3045,6 +3086,7 @@ function vData() {
 }
 
 document.addEventListener('keydown', e => {
+  if (ANTI) return;   // the diagram panel is open: no shortcut may act on the page underneath
   // typing in a field is never a shortcut; on a focused button or link, Enter and Space keep their own meaning
   const tg = e.target && e.target.tagName || '';
   if (/^(INPUT|SELECT|TEXTAREA)$/.test(tg) || (e.target && e.target.isContentEditable)) return;
@@ -3076,3 +3118,5 @@ document.title = COURSE.title;
 $('#apptitle').innerHTML = `${esc(COURSE.short)} <span class="stamp">updated ${esc(fmtDate(BUILD.built))}</span>`;
 // a paper saved mid-exam reopens on the exam page, clock running, so it is not forgotten in the background
 nav(); go(EX && !EX.done ? 'exam' : 'topics');
+try { history.replaceState({drill: 1, v: CUR}, ''); } catch (e) {}
+NAV_READY = true;

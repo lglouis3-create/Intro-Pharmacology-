@@ -178,6 +178,7 @@ document.addEventListener('keydown',function(e){
   if(b&&b.tagName==='BUTTON'){e.preventDefault();b.click();}
 });
 if(document.documentElement.classList.contains('embed')&&window.parent!==window){
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')window.parent.postMessage({antidoteEsc:1},'*');});
   var last=0;
   function send(){var h=Math.ceil(document.body.getBoundingClientRect().height);if(h!==last){last=h;window.parent.postMessage({antidoteH:h,slug:"03-cyanide-antidote-stepper"},'*');}}
   if(window.ResizeObserver)new ResizeObserver(send).observe(document.body);

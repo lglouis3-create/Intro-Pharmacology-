@@ -2,6 +2,17 @@
 
 Newest first. The build embeds this file; the Topics page shows what is new since your last visit, and the Progress page shows all of it. Keep each bullet to one short line.
 
+## 2026-10-22 (Fixes from testing, Explain more targets, term questions)
+
+- An answer is saved the moment it is graded; a reload, a tab switch or the back gesture no longer loses it.
+- The phone's back gesture now moves back within the drill (closes a diagram, returns to Topics or the question).
+- Exam sim: unanswered questions on an early submit no longer count as misses; a stuck saved paper now submits.
+- Quiz: switching layout no longer counts an answer twice; guesses are not counted right; "Not sure" returns soon.
+- Explain more opens the section that teaches each question (Exam 3 by the questions each section lists).
+- Exam 3 terms: 52 of 76 rewritten the way she asks; no question names its own answer or has two right answers.
+- Diagram panel: no shortcuts act underneath; Esc works inside a diagram; its close row stays on screen.
+- Smaller: arrowheads no longer vanish; Guides open faster on phones; dark-mode links readable; audio stops on Next.
+
 ## 2026-10-22 (Back to Topics)
 
 - Starting a deck from Topics (Drill, Due, All) shows "← Back to Topics", which returns to the same spot.
