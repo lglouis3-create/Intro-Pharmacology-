@@ -5,7 +5,7 @@ QUESTIONS.push(
 /* ---------------- Indices ---------------- */
 {id:"L14-101", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"indices", skill:"apply",
  concept:"moe-repeated", tags:["smith","why"], source:"both",
- stem:"Why can a therapeutic index not be calculated for a pollutant at a contaminated site?",
+ stem:"Why is the therapeutic index not the value used for a pollutant at a contaminated site?",
  options:[
   {t:"A pollutant has no therapeutic dose for the denominator", correct:true, why:"The therapeutic index is the toxic dose over the therapeutic dose. Something that is not therapeutic, such as a pollutant, has no therapeutic dose, so the margin of exposure (NOAEL over exposure) is used instead."},
   {t:"A pollutant has no toxic dose that could go in the numerator", correct:false, why:"A pollutant can be toxic; what it lacks is a therapeutic dose."},
@@ -17,7 +17,7 @@ QUESTIONS.push(
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Values Developed from Dose-Response’; transcript 10/13"},
 
 {id:"L14-102", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"indices", skill:"apply",
- concept:"wide-vs-narrow-ti", tags:["smith","why"], source:"both",
+ concept:"wide-vs-narrow-ti", dupOf:"L14-014", tags:["smith","why"], source:"both",
  stem:"The same dosing error is made with a drug that has a wide therapeutic index (TI) and with a drug that has a narrow TI. Which best explains why the narrow-TI drug is more likely to cause toxicity?",
  options:[
   {t:"Its toxic dose is not much higher than its therapeutic dose", correct:true, why:"Her definition of a narrow therapeutic index. An error that raises the dose reaches the toxic dose sooner, so less dosing error is tolerated."},
@@ -34,7 +34,7 @@ QUESTIONS.push(
  concept:"side-effect-therapy-too-far-vs-other-target", tags:["smith","why"], source:"both",
  stem:"A drug's side-effect list includes an effect completely unrelated to its therapeutic mechanism of action. What most likely explains this side effect?",
  options:[
-  {t:"The drug reaches an off-target receptor somewhere in the body", correct:true, why:"The therapeutic mechanism cannot produce an effect unrelated to it, so a second receptor the drug was never designed for must be producing it; her answer to \"why does this drug cause that side effect?\" was an off-target receptor somewhere in the body."},
+  {t:"The drug reaches an off-target receptor somewhere in the body", correct:true, why:"Her answer to \"why does this drug cause that side effect?\": the drug is going to an off-target receptor somewhere in the body. An effect unrelated to the therapeutic action cannot be the therapy going too far."},
   {t:"The therapeutic action has gone too far, as with over-diuresis", correct:false, why:"Therapy gone too far explains side effects related to the drug's action, such as the diuretic example, not unrelated ones."},
   {t:"The dose at the intended receptor in the intended tissue is too high", correct:false, why:"Too much dose at the intended receptor is an on-target adverse effect; it would look like the therapeutic action, not an unrelated effect."},
   {t:"The patient has developed reduced-responsiveness tolerance", correct:false, why:"Tolerance lowers the response to the drug; it does not create a new, unrelated effect."},
@@ -47,7 +47,7 @@ QUESTIONS.push(
  concept:"off-target-fix-molecule", tags:["smith","why"], source:"transcript",
  stem:"A drug was made to find one particular receptor, yet it also finds other receptors, in the intended tissue and in other tissues. What explains why the drug is not \"clean\"?",
  options:[
-  {t:"Part of its molecule fits receptors not foreseen at design", correct:true, why:"A drug is built around the receptor it is meant to find, and nobody can know at design time every other receptor a given part of the molecule will also fit. That unforeseen fit is why chemists later go back, find the part hitting the other receptor, and change it."},
+  {t:"Part of its molecule fits receptors not foreseen at design", correct:true, why:"Her reason: when the drug was designed, it was not known that some molecular aspect of it would interact with other receptors. That is why chemists later go back, find the part of the molecule hitting the other receptor, and change it."},
   {t:"Its dose at the intended receptor is too high", correct:false, why:"Too much dose at the intended receptor gives an on-target adverse effect, not binding to other receptors."},
   {t:"It reaches the intended receptor, but in the wrong tissue", correct:false, why:"The intended receptor in the wrong tissue is still called on-target."},
   {t:"Its intended receptors were down-regulated by repeated dosing", correct:false, why:"Down-regulation changes receptor number; it does not make the drug bind other receptors."},
@@ -84,7 +84,7 @@ QUESTIONS.push(
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘On-Target Examples’; transcript 10/13"},
 
 {id:"L14-107", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"ontarget", skill:"apply",
- concept:"thalidomide-enantiomers", tags:["smith","why"], source:"both",
+ concept:"thalidomide-enantiomers", dupOf:"L14-056", tags:["smith","why"], source:"both",
  stem:"The R-enantiomer of thalidomide is the anti-nausea agent. Why did thalidomide taken for nausea in pregnancy still cause birth defects?",
  options:[
   {t:"It was taken as a racemic mixture that included the S-enantiomer", correct:true, why:"People took both the R- and the S-enantiomer; the S-enantiomer is a very potent teratogen."},
@@ -97,7 +97,7 @@ QUESTIONS.push(
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Off-Target Examples’; transcript 10/13"},
 
 {id:"L14-108", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"ontarget", skill:"apply", multi:true,
- concept:"on-target-right-tissue-dose", tags:["smith","why"], source:"both",
+ concept:"on-target-right-tissue-dose", dupOf:"L14-052", tags:["smith","why"], source:"both",
  stem:"A drug finds the receptor it was designed for, in the intended tissue, yet the patient has an adverse effect. Which could explain this? Select all that apply.",
  options:[
   {t:"The dose at the receptor is too high", correct:true, why:"The receptor and the tissue are the right ones, so the harm has to come from how much drug is acting there: too much drug at the right receptor overdoes the action. She called this the usual cause."},
@@ -168,8 +168,8 @@ QUESTIONS.push(
  options:[
   {t:"Flushing opioids is allowed, as they are a dangerous drug", correct:true, why:"Her example was meant to show improper disposal, but flushing is the allowed route for leftover opioids as a dangerous drug, so it illustrated nothing improper; unused antibiotics flushed down the toilet did."},
   {t:"Wastewater treatment plants remove all opioids before release", correct:false, why:"Current treatment does not get all the drugs out of the water."},
-  {t:"Opioids break down in the toilet water before reaching streams", correct:false, why:"She gave no such reason."},
-  {t:"Opioids are never excreted, so flushing adds nothing new", correct:false, why:"She gave no such reason; excretion of parent drug and metabolites is a source for drugs in general."},
+  {t:"Opioids break down in the toilet water before reaching streams", correct:false, why:"Breakdown in the toilet was not her point; current wastewater treatment does not get all drugs out, so a flushed drug can reach streams. Her reason was that flushing opioids is allowed."},
+  {t:"Opioids are never excreted, so flushing adds nothing new", correct:false, why:"Excretion of parent drug and metabolites is a source of drugs in water in general; her correction was about whether flushing opioids is allowed, not about excretion."},
   {t:"Only antibiotics in the water are of any concern to wildlife", correct:false, why:"Estrogen and other drugs affect wildlife too; antibiotics add the resistance concern."}],
  teach:"Source: people take drugs and excrete parent drug and metabolites, and some improperly dispose of medications by flushing them. Her first example, leftover opioids down the toilet, she withdrew: that is allowed, as opioids are a dangerous drug. Unused antibiotics flushed down the toilet are the improper-disposal example, and they feed the antibiotic-resistance concern.",
  quote:"like you got leftover opioids and you dump them down your toilet. Well, OK. That is allowed because it's a dangerous drug. That's a bad example. How about unused antibiotics? And you dump them down your toilet.",
@@ -217,7 +217,7 @@ QUESTIONS.push(
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Reversible vs. Irreversible’; transcript 10/13"},
 
 {id:"L14-117", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"general", skill:"apply",
- concept:"local-vs-systemic", tags:["smith","why"], source:"both",
+ concept:"local-vs-systemic", dupOf:"L14-037", tags:["smith","why"], source:"both",
  stem:"Why do most toxins cause systemic rather than local effects?",
  options:[
   {t:"Most are not highly reactive, so they are absorbed before acting", correct:true, why:"Her reason: most things we are exposed to are not super reactive; they get on us, get in us, and have to be absorbed, which leads to systemic effects."},
@@ -231,7 +231,7 @@ QUESTIONS.push(
 
 /* ---------------- Tolerance ---------------- */
 {id:"L14-118", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"tolerance", skill:"apply",
- concept:"dispositional-vs-reduced-responsiveness", tags:["smith","why"], source:"both",
+ concept:"dispositional-vs-reduced-responsiveness", dupOf:"L14-042", tags:["smith","why"], source:"both",
  stem:"Carbon tetrachloride inhibits its own metabolism, while cadmium induces the protein that carries it out through the kidneys. Why are both classed as dispositional tolerance?",
  options:[
   {t:"Both lower how much toxicant reaches the site of effect", correct:true, why:"Dispositional tolerance is ADME-based: less of the nastier carbon tetrachloride metabolite is formed, and more cadmium is cleared."},
@@ -241,12 +241,12 @@ QUESTIONS.push(
   {t:"Both are metals carried by a metal-carrying protein", correct:false, why:"Only cadmium is a metal; carbon tetrachloride is not."}],
  teach:"Dispositional tolerance is a decrease in the amount of toxicant reaching the site where the toxic effect is produced, so it is ADME-based. Carbon tetrachloride, metabolized to something nastier, inhibits its own metabolism, so less of the toxic metabolite forms. Cadmium induces the metal carrier that helps the kidneys eliminate it, so more is cleared. Reduced responsiveness is the other mechanism: the target, such as a receptor population, responds less.",
  quote:"Some of that carbon tet does not get metabolized to the even nastier metabolite because it's inhibiting its own metabolism. ... so you can see how those are kind of admi based, those tolerances, right? The dispositional tolerances.",
- note:"She called the cadmium carrier a \"metal carrying enzyme\"; the question says protein, as in L14-044.",
+ note:"She called the cadmium carrier a \"metal carrying enzyme\"; the question says protein, as in L14-044. She called the cadmium carrier a \"metal carrying enzyme\"; the question says protein, as in L14-044.",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Tolerance’; transcript 10/13"},
 
 /* ---------------- Non-organ-specific endpoints ---------------- */
 {id:"L14-119", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"nonorgan", skill:"apply",
- concept:"genotoxicity-vs-mutagenicity", tags:["smith","why"], source:"both",
+ concept:"genotoxicity-vs-mutagenicity", dupOf:"L14-062", tags:["smith","why"], source:"both",
  stem:"DNA damage can occur in somatic cells or in germ cells. Why is an agent that causes mutations in germ cells called a mutagen?",
  options:[
   {t:"Germ-cell changes can be passed down to offspring", correct:true, why:"Mutagenicity means the genetic alteration is transmissible: it can be passed down to offspring, which happens through germ cells."},
@@ -266,7 +266,7 @@ QUESTIONS.push(
   {t:"Men taking the drug can pass it to infants through breast milk", correct:false, why:"Breast milk is the lactation part of the labeling, about nursing mothers."},
   {t:"The old labeling scale ranked drugs only for use by men", correct:false, why:"The old scale ranked drugs from known to cause birth defects to not; it did not concern men."},
   {t:"Sperm carry the drug across the placenta into the fetus", correct:false, why:"She described an effect on sperm count and viability, not sperm carrying the drug."},
-  {t:"Male fertility drugs are the most common teratogens on the market", correct:false, why:"She made no such claim."}],
+  {t:"Male fertility drugs are the most common teratogens on the market", correct:false, why:"Nothing ties the label change to fertility drugs; the male-fertility information is there because a medication a man takes may affect sperm count or viability."}],
  teach:"The FDA used to rank drugs on a scale from known to cause birth defects to not. About five years ago the labeling changed to include, besides teratogenicity, effects on fertility, especially male fertility, and whether a lactating mother should take the drug. Male fertility is included because a medication may affect sperm count or viability, which could contribute to teratogenicity.",
  quote:"OK, so if a guy is taking a certain medication, it may affect your sperm count, it may affect your sperm viability, and that could contribute to teratogenicity, right?",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Teratogenesis Labeling’; transcript 10/13"}

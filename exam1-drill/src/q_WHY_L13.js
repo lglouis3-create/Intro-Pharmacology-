@@ -5,20 +5,20 @@ QUESTIONS.push(
 /* ---------------- Definitions ---------------- */
 {id:"L13-101", lecture:"L13", prof:"Smith", tier:"new", topic:"L13", sub:"defs", skill:"apply",
  concept:"coral-snake-venom", tags:["smith","why"], source:"transcript",
- stem:"A coral snake bites and chews, between the fingers or between the toes, instead of striking the way a rattlesnake does. What explains this?",
+ stem:"A coral snake bites and chews, between the fingers or between the toes, to inject its venom, unlike a rattlesnake or a water moccasin. What explains this?",
  options:[
   {t:"Its small head and hinged mouth lack a viper's fangs", correct:true, why:"Her reason: the coral snake has a little head and a \"piano hinge mouth\"; it is not a viper, so it chews to inject the venom, while the rattlesnake and water moccasin have fangs."},
   {t:"Its fangs are too long to strike with safely", correct:false, why:"The fangs belong to the other Texas snakes she contrasted it with; the coral snake's difference is its small head and hinged mouth."},
   {t:"Its venom works only when chewed into the skin", correct:false, why:"She gave the shape of the head and mouth as the reason, not a property of the venom."},
   {t:"Its neurotoxin is too weak to work from a single strike", correct:false, why:"She called the coral snake very venomous; the chewing comes from its mouth, not from weak venom."},
   {t:"It is a viper that lives under rocks and logs", correct:false, why:"It does live under rocks, logs and leaves, but she said plainly that it is not a viper."}],
- teach:"The coral snake is very venomous and carries a neurotoxin. It has a small head and a hinged mouth and is not a viper, so it cannot strike with fangs; it bites and chews, often between fingers or toes, and injects the venom that way. Snakes with fangs, such as the rattlesnake and the water moccasin, inject by striking.",
+ teach:"The coral snake is very venomous and carries a neurotoxin. It has a small head and a hinged mouth and is not a viper, so it lacks the fangs that the rattlesnake and the water moccasin have; instead it bites and chews, often between fingers or toes, and injects the venom that way.",
  quote:"He doesn't have a big head, he's not a viper. He has a little piano hinge mouth, and so he'll, he'll bite you. ... He'll bite and chew, like on your uh fingers, between your fingers, between your toes, he'll he'll bite and chew. And inject the venom into you that way ... See, those snakes have fangs",
  note:"In the list of fanged snakes the transcript reads \"a rattlesnake or a coral snake or a water moccasin\"; the coral snake in that list is a slip of the tongue or a transcription error, as the whole passage contrasts the coral snake with fanged snakes. The rattlesnake and water moccasin are keyed as the fanged ones.",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘What is Toxic?’; transcript 10/9"},
 
 {id:"L13-102", lecture:"L13", prof:"Smith", tier:"new", topic:"L13", sub:"defs", skill:"apply",
- concept:"xenobiotic", tags:["smith","why"], source:"both",
+ concept:"xenobiotic", dupOf:"L13-002", tags:["smith","why"], source:"both",
  stem:"Why does a medication count as a xenobiotic in the patient who takes it, even at a safe dose?",
  options:[
   {t:"It is not made by or expected in the body", correct:true, why:"A xenobiotic is any compound in an organism that the organism does not normally produce or expect; harm is not part of the definition, and a medication qualifies."},
@@ -101,7 +101,7 @@ QUESTIONS.push(
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Exposure: Duration’; transcript 10/9"},
 
 {id:"L13-108", lecture:"L13", prof:"Smith", tier:"new", topic:"L13", sub:"duration", skill:"apply",
- concept:"delayed-effect-des", tags:["smith","why"], source:"both",
+ concept:"delayed-effect-des", dupOf:"L13-012", tags:["smith","why"], source:"both",
  stem:"Diethylstilbestrol (DES) was given to pregnant women in the 1950s to help them keep a pregnancy. Why did it take a lot of medical epidemiology to link DES to a vaginal cancer?",
  options:[
   {t:"The cancer appeared in their daughters about 20 years later", correct:true, why:"The daughters were exposed in utero and developed the cancer in their twenties: a very delayed effect, in a different person from the one who took the drug."},
@@ -115,14 +115,14 @@ QUESTIONS.push(
 
 {id:"L13-109", lecture:"L13", prof:"Smith", tier:"new", topic:"L13", sub:"duration", skill:"apply",
  concept:"single-vs-repeated-benzene", tags:["smith","why"], source:"transcript",
- stem:"Why can a small benzene leak in a workplace keep exposing the workers day after day?",
+ stem:"Workers walking into a building with a small benzene leak notice only a little headache or sleepiness. Why do they not realize they are being exposed?",
  options:[
   {t:"It is a gas that cannot be seen or smelled", correct:true, why:"Her words: \"you can't smell it, it's a gas, can't see it.\" The workers notice only a headache or sleepiness."},
   {t:"Workers develop tolerance and stop noticing it", correct:false, why:"She stressed that no tolerance develops: the worker gets the headache and sleepiness every time."},
   {t:"Benzene causes leukemia only after one single exposure", correct:false, why:"Leukemia is the effect of chronic low-dose exposure, not of one exposure."},
   {t:"Benzene enters the body only through the skin", correct:false, why:"Benzene is a gas in her example; it is breathed in."},
-  {t:"A single exposure to benzene produces no symptoms", correct:false, why:"This misses the symptoms that do occur: one exposure gives a headache or sleepiness, but workers do not connect those mild symptoms to an invisible, odorless gas."}],
- teach:"Benzene leaking in a workplace is a gas that cannot be seen or smelled, so a small leak can go unnoticed and unrepaired. One walk-in gives a headache or sleepiness; the same symptoms return with each day's exposure, and chronic low-dose exposure causes leukemia.",
+  {t:"A single exposure to benzene produces no symptoms", correct:false, why:"This misses the symptoms that do occur: one exposure gives a headache or sleepiness. What keeps workers unaware is that the gas cannot be seen or smelled."}],
+ teach:"Benzene leaking in a workplace is a gas that cannot be seen or smelled, so nothing warns the workers; all they notice is a little headache or sleepiness. If the leak is never fixed, the same symptoms return every day (no tolerance develops), and chronic low-dose exposure causes leukemia.",
  quote:"But oftentimes if people would go into the workplace and there's a little bit of benzene leaking, you can't smell it, it's a gas, can't see it. Um, they'd get a little headache or or sleepy",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Exposure: Single vs. Repeated’; transcript 10/9"},
 
@@ -202,7 +202,7 @@ QUESTIONS.push(
   {t:"Their phase 2 enzymes may be fewer in number", correct:true, why:"Her reason: their glucuronosyl transferases and sulfotransferases may be depleted, so the phase 2 enzymes may not handle the whole dose and some goes on to NAPQI."},
   {t:"Their CYP2E1 enzymes are always completely absent", correct:false, why:"CYP2E1 is the enzyme that makes NAPQI; the concern is that more of the dose reaches it."},
   {t:"Their phase 2 enzymes turn acetaminophen into NAPQI", correct:false, why:"The phase 2 enzymes make the glucuronide and sulfate; NAPQI comes from CYP2E1."},
-  {t:"A 4 g dose is above the labeled daily maximum", correct:false, why:"4 g is the labeled maximum itself, not above it; her worry was capacity at that dose."},
+  {t:"Their phase 2 enzymes work faster with age", correct:false, why:"Faster phase 2 enzymes would clear more of the dose safely; her worry was the reverse, that their phase 2 enzymes may be depleted."},
   {t:"Older adults absorb no acetaminophen by mouth", correct:false, why:"Absorption was not her reason; the capacity of the phase 2 enzymes was."}],
  teach:"A normal acetaminophen dose is detoxified by two families of phase 2 enzymes, the glucuronosyl transferases and the sulfotransferases. If those enzymes are fewer, the full 4 g may be more than they can handle, and the excess is pushed through CYP2E1 to NAPQI, which is toxic to the liver. So for older adults she advises staying under 4 g in 24 hours.",
  quote:"Um, I often will suggest, especially to my older parents, that I don't want you guys taking 4 g of acetaminophen in a 24 hour period, that's too much, OK? Um, The reason is maybe they're GSTs and STs are depleting in numbers in their body, and so maybe that dose of acetaminophen can't all be taken care of by those phase 2 enzymes.",
@@ -268,7 +268,7 @@ QUESTIONS.push(
  concept:"u-shape-essential-vs-hormesis", tags:["smith","why"], source:"both",
  stem:"On the U-shaped dose–response curve for iron, an essential element, why is the response bad at the lowest doses?",
  options:[
-  {t:"Without enough iron the blood cannot carry oxygen", correct:true, why:"Her example: with no iron the blood cannot carry oxygen, and the adverse response can be death. That is the deficiency arm of the U."},
+  {t:"Without enough iron, blood cannot carry oxygen", correct:true, why:"Her example: with no iron the blood cannot carry oxygen, and the adverse response can be death. That is the deficiency arm of the U."},
   {t:"Low doses of iron have a hormetic effect", correct:false, why:"Hormesis is a protective effect at a low dose of something non-essential; the iron curve is the essential-nutrient curve."},
   {t:"Iron is a carcinogen with no threshold dose", correct:false, why:"The no-threshold line is the theory for carcinogens; it is not the reason for iron's left arm."},
   {t:"Low doses of iron are bioactivated in the liver", correct:false, why:"Bioactivation is not part of this curve; the left arm is deficiency."},
@@ -290,16 +290,5 @@ QUESTIONS.push(
  quote:"the first molecule of what you're exposed to in this linear line could cause you problems, OK? That's a theory for exposure to carcinogens. Maybe it just takes one molecule of a carcinogen to cause you problems. Maybe the one molecule of carcinogen is damaging your DNA and kicking you off into having cancer, OK. Possibly.",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Threshold Dose’; transcript 10/9"},
 
-{id:"L13-122", lecture:"L13", prof:"Smith", tier:"new", topic:"L13", sub:"shape", skill:"apply",
- concept:"threshold-vs-linear", tags:["smith","why"], source:"both",
- stem:"Why does an S-shaped (sigmoidal) dose–response curve, the shape seen for most medications, imply a dose with no effect?",
- options:[
-  {t:"Response begins only at a threshold dose", correct:true, why:"The low end of the S stays flat at no response: small doses produce neither a therapeutic nor a poisonous effect, and the curve only starts to rise at the threshold. Every dose on that flat part is a dose with no effect."},
-  {t:"The curve rises from the very first molecule", correct:false, why:"That is the linear, no-threshold line used for carcinogens."},
-  {t:"The curve falls and then rises again with dose", correct:false, why:"That is a U-shaped curve, for essential nutrients or hormesis."},
-  {t:"Every dose along the curve gives the same response", correct:false, why:"The response rises with dose above the threshold."},
-  {t:"The substance has a region of homeostasis", correct:false, why:"A region of homeostasis belongs to the U-shaped curve of an essential substance."}],
- teach:"On an S-shaped dose–response curve, increasing the dose from nothing produces no response at first; the response begins at the threshold. That implies a dose at which there is no effect, either therapeutic or poisonous, which is probably the case for medications and most poisons. The linear curve for carcinogens is the exception she contrasted with it.",
- quote:"As you increase dose from nothing to something that you get an effect at, you can start seeing the threshold of response, right? This would imply that compounds have a dose at which you might not have any effect, correct? If you look at this S shaped dose response curve. That's probably the case for medications, OK?",
- cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Threshold Dose’; transcript 10/9"}
+
 );

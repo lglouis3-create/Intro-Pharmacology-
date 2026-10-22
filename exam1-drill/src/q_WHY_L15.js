@@ -32,7 +32,7 @@ QUESTIONS.push(
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Pulmonary Toxicity – Why are lungs susceptible?’; transcript 10/14"},
 
 {id:"L15-103", lecture:"L15", prof:"Smith", tier:"new", topic:"L15", sub:"pulm", skill:"apply",
- concept:"immune-cells-add-ros", tags:["smith","why"], source:"both",
+ concept:"immune-cells-add-ros", dupOf:"L15-020", tags:["smith","why"], source:"both",
  stem:"White blood cells in the lungs and the Kupffer cells in the liver are there to protect. What explains how they can add to injury after a toxic exposure?",
  options:[
   {t:"Their activity releases reactive oxygen species", correct:true, why:"In the lung, white blood cells fighting a pathogen or cleaning up damage release reactive oxygen species; in the liver, Kupffer cells chewing up dead tissue release inflammatory compounds and reactive oxygen species."},
@@ -46,7 +46,7 @@ QUESTIONS.push(
 
 /* ---------------- Neurotoxicity ---------------- */
 {id:"L15-104", lecture:"L15", prof:"Smith", tier:"new", topic:"L15", sub:"neuro", skill:"apply",
- concept:"bbb-vs-systemic-capillary", tags:["smith","why"], source:"both",
+ concept:"bbb-vs-systemic-capillary", dupOf:"L15-011", tags:["smith","why"], source:"both",
  stem:"A large compound with low lipophilicity leaves systemic capillaries easily but does not reach the adult brain. Which explains the difference?",
  options:[
   {t:"Brain capillaries have tight junctions and tightly joined glial cells", correct:true, why:"Solutes cannot pass between the vessel cells or between the glial cells, and a large, non-lipophilic compound lacks the chemistry to go through the cells."},
@@ -59,7 +59,7 @@ QUESTIONS.push(
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Neurotoxicity’; transcript 10/14"},
 
 {id:"L15-105", lecture:"L15", prof:"Smith", tier:"new", topic:"L15", sub:"neuro", skill:"apply",
- concept:"ns-why-susceptible", tags:["smith","why"], source:"both",
+ concept:"ns-why-susceptible", dupOf:"L15-014", tags:["smith","why"], source:"both",
  stem:"Why does an exposure that lowers the oxygen and energy available to cells cause trouble in the nervous system in particular?",
  options:[
   {t:"Neurons have very high energy needs and depend on aerobic metabolism", correct:true, why:"Neurons need a great deal of energy and make it by aerobic metabolism, so a fall in oxygen cuts the energy their work depends on."},
@@ -67,12 +67,12 @@ QUESTIONS.push(
   {t:"Myelin blocks oxygen from reaching the axon", correct:false, why:"Myelin speeds conduction; it was not described as limiting oxygen."},
   {t:"Hypoxic blood collects in the brain the way it does in zone 3 of the liver", correct:false, why:"The oxygen gradient belongs to the liver acinus; the nervous system's problem is its energy demand."},
   {t:"The blood–brain barrier keeps oxygen out of the brain", correct:false, why:"The barrier keeps out large and non-lipophilic compounds, not oxygen."}],
- teach:"The nervous system has very high energy requirements: its cells are often very long and do a great deal of work. Neurons depend on aerobic metabolism to meet that demand. An exposure that reduces oxygen or energy supply therefore impairs the nervous system before organs with lower demands.",
+ teach:"The nervous system has very high energy requirements: its cells are often very long and do a great deal of work. Neurons depend on aerobic metabolism to meet that demand. So an exposure that lowers the oxygen or energy available to those cells causes a problem in the nervous system.",
  quote:"OK, so our nervous system has very, very high energy requirements. ... They are dependent on aerobic metabolism. So if any exposure happens where the oxygen levels and energy available to those cells gets affected, you're going to have a problem with your central nervous system, OK?",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Susceptibility to Neurotoxicity – Energy and Axons’; transcript 10/14"},
 
 {id:"L15-106", lecture:"L15", prof:"Smith", tier:"new", topic:"L15", sub:"neuro", skill:"apply",
- concept:"ns-why-susceptible", tags:["smith","why"], source:"both",
+ concept:"ns-why-susceptible", dupOf:"L15-014", tags:["smith","why"], source:"both",
  stem:"Why do the long nerves running from the spinal cord down the limbs need so much energy?",
  options:[
   {t:"They must transport nutrients and waste up and down their axons", correct:true, why:"Axonal transport along a very long cell, together with producing a large cell volume, is why these cells need a lot of energy."},
@@ -126,7 +126,7 @@ QUESTIONS.push(
 
 /* ---------------- Hepatotoxicity ---------------- */
 {id:"L15-110", lecture:"L15", prof:"Smith", tier:"new", topic:"L15", sub:"hepat", skill:"apply",
- concept:"poll-liver-susceptible", tags:["smith","why"], source:"both",
+ concept:"poll-liver-susceptible", dupOf:"L15-043", tags:["smith","why"], source:"both",
  stem:"Why does a large oral dose expose the liver more than other organs?",
  options:[
   {t:"The portal circulation carries it from the gut straight to the liver", correct:true, why:"Whatever is ingested orally goes by the portal circulation to the liver, whose job is to take up and concentrate compounds from the blood."},
@@ -136,11 +136,11 @@ QUESTIONS.push(
   {t:"The liver has a barrier like the blood–brain barrier that traps compounds", correct:false, why:"The blood–brain barrier is unique to the nervous system."}],
  teach:"The liver's job is to filter and clear the blood, so it takes up and concentrates compounds from it. An oral dose is carried from the gut by the portal circulation directly to the liver before it reaches the rest of the body. The liver is therefore exposed to a lot, and its metabolism can then make hepatotoxic metabolites on site.",
  quote:"Its job is to take up and concentrate stuff out of the blood, right? OK. It's helping to filter our blood, helping to clean our blood, helping to clear our blood. So, it's exposed to a lot of stuff. If you ingest things orally, right, you've got all that portal circulation heading right to the lever, OK? ... It's a large organ, yeah, that really doesn't have anything to do with it, right?",
- note:"\"lever\" is the slide's typo for liver, which she read aloud.",
+ note:"\"lever\" is the slide's typo for liver, which she read aloud. \"lever\" is the slide's typo for liver, which she read aloud.",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Hepatotoxicity – Why is liver susceptible?’ and PollEV slide ‘The liver is very susceptible to drug toxicity because…’; transcript 10/14"},
 
 {id:"L15-111", lecture:"L15", prof:"Smith", tier:"new", topic:"L15", sub:"hepat", skill:"apply",
- concept:"idiosyncratic-liver-pharmacogenomics", tags:["smith","why"], source:"both",
+ concept:"idiosyncratic-liver-pharmacogenomics", dupOf:"L15-021", tags:["smith","why"], source:"both",
  stem:"A patient with a rare genetic variant metabolizes a drug differently from most people and has a severe reaction. Why is the liver, rather than the kidney or the lungs, the organ likely to be affected?",
  options:[
   {t:"The liver does most of the metabolism of drugs", correct:true, why:"Her reason: a variant that changes metabolism shows up where the metabolism happens, and the liver is the workhorse of metabolism."},
@@ -167,7 +167,7 @@ QUESTIONS.push(
 
 /* ---------------- Nephrotoxicity ---------------- */
 {id:"L15-113", lecture:"L15", prof:"Smith", tier:"new", topic:"L15", sub:"nephro", skill:"apply",
- concept:"kidney-why-susceptible", tags:["smith","why"], source:"both",
+ concept:"kidney-why-susceptible", dupOf:"L15-030", tags:["smith","why"], source:"both",
  stem:"A drug is converted in the liver to a toxic metabolite, and the kidney is then injured. Which explains why the kidney is exposed?",
  options:[
   {t:"Much of its large blood flow has just passed through the liver", correct:true, why:"The kidney gets a lot of blood, especially blood that has gone through the liver carrying the metabolites made there."},
@@ -180,7 +180,7 @@ QUESTIONS.push(
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Nephrotoxicity - Why are kidneys susceptible?’; transcript 10/14"},
 
 {id:"L15-114", lecture:"L15", prof:"Smith", tier:"new", topic:"L15", sub:"nephro", skill:"apply",
- concept:"kidney-why-susceptible", tags:["smith","why"], source:"both",
+ concept:"kidney-why-susceptible", dupOf:"L15-030", tags:["smith","why"], source:"both",
  stem:"Why does the kidney's work of concentrating urine raise its risk of toxic injury?",
  options:[
   {t:"It also concentrates poisons in the tubule and the tubular cells", correct:true, why:"The same processes that concentrate urine concentrate a poison in the tubular fluid, and the higher concentration drives more of it into the tubular cells."},
@@ -222,7 +222,7 @@ QUESTIONS.push(
 
 /* ---------------- Poll statements: general concepts ---------------- */
 {id:"L15-117", lecture:"L15", prof:"Smith", tier:"new", topic:"L15", sub:"polls", skill:"apply",
- concept:"poll-general-concepts-tf", tags:["smith","why"], source:"both",
+ concept:"poll-general-concepts-tf", dupOf:"L15-041", tags:["smith","why"], source:"both",
  stem:"Why do systemic effects require absorption from the site of contact?",
  options:[
   {t:"To be systemic, the substance must travel in the bloodstream", correct:true, why:"Her reasoning for marking poll statement D false: to become systemic an effect goes through the bloodstream, so the substance has to be absorbed."},
@@ -235,7 +235,7 @@ QUESTIONS.push(
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf PollEV slide ‘Which statements are true regarding toxic effects’; transcript 10/14"},
 
 {id:"L15-118", lecture:"L15", prof:"Smith", tier:"new", topic:"L15", sub:"polls", skill:"apply",
- concept:"poll-general-concepts-tf", tags:["smith","why"], source:"both",
+ concept:"poll-general-concepts-tf", dupOf:"L13-013", tags:["smith","why"], source:"both",
  stem:"A worker gets a headache every time she walks into a workplace with an ongoing chemical leak, day after day. Which explains why the effect still appears with each exposure?",
  options:[
   {t:"She has not developed tolerance to the chemical", correct:true, why:"Tolerance is decreased responsiveness after prior exposure; without it, each day's dose meets the same response, so the immediate effect returns each time."},
@@ -249,7 +249,7 @@ QUESTIONS.push(
 
 /* ---------------- Overdose pharmacodynamics ---------------- */
 {id:"L15-119", lecture:"L15", prof:"Smith", tier:"new", topic:"L15", sub:"odpd", skill:"apply",
- concept:"drug-a-vs-b-overdose", tags:["smith","why"], source:"both",
+ concept:"drug-a-vs-b-overdose", dupOf:"L15-050", tags:["smith","why"], source:"both",
  stem:"Drugs A and B share a mechanism and sedate at the same dose, yet A is more dangerous in overdose. What explains this?",
  options:[
   {t:"Their therapeutic indices differ, so higher doses of A reach coma", correct:true, why:"Her explanation: same mechanism, different therapeutic index, so one drug is more dangerous in overdose; on the figure A rises to coma while B levels off near anesthesia."},
@@ -259,7 +259,7 @@ QUESTIONS.push(
   {t:"B is more potent at the sedating dose", correct:false, why:"Both produce sedation at the same dose."}],
  teach:"Two drugs can look the same at the therapeutic dose and endpoint, here sedation. What differs is how the response continues as the dose rises: the overlap of the therapeutic and toxic response curves. Drug A keeps rising in a straight line to coma, while drug B levels off before coma, so A is the more dangerous drug in overdose.",
  quote:"The outcomes between these two drugs are different, even though they've got the same mechanism, they've got a different therapeutic index, which results in one drug being more dangerous than the other, based on the pharmacodynamics of it in overdose.",
- note:"The slide says two medications may have the same therapeutic index but unequal safe dosing; in speech she said both that A and B have \"the same therapeutic index\" and that they have \"a different therapeutic index\". Keyed on her closing explanation, which matches the figure.",
+ note:"The slide says two medications may have the same therapeutic index but unequal safe dosing; in speech she said both that A and B have \"the same therapeutic index\" and that they have \"a different therapeutic index\". Keyed on her closing explanation, which matches the figure. The slide says two medications may have the same therapeutic index but unequal safe dosing; in speech she said both that A and B have \"the same therapeutic index\" and that they have \"a different therapeutic index\". Keyed on her closing explanation, which matches the figure.",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘How Pharmacodynamics change in Overdose’ (Katzung figure); transcript 10/14"},
 
 /* ---------------- Treatment approach ---------------- */
