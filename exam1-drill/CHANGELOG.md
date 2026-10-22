@@ -2,6 +2,10 @@
 
 Newest first. The build embeds this file; the Topics page shows what is new since your last visit, and the Progress page shows all of it. Keep each bullet to one short line.
 
+## 2026-10-22 (Exam 3: all her quizzes on one card)
+
+- Her quiz 1 (10 questions, her key) moved from the 10/9 card to "Her quizzes 1, 2 and 3"; your progress carries over.
+
 ## 2026-10-22 (Exam 3: checked against a classmate's slide notes)
 
 - Antihistamines: the drill keeps Dr. Gottlieb's point that loratadine is the inverse agonist.
