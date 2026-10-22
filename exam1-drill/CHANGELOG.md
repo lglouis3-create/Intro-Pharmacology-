@@ -2,6 +2,12 @@
 
 Newest first. The build embeds this file; the Topics page shows what is new since your last visit, and the Progress page shows all of it. Keep each bullet to one short line.
 
+## 2026-10-22 (Treating Poisonings figures)
+
+- Nine Treating Poisonings questions now show her slide figure: methanol, cyanide, acetaminophen, warfarin and more.
+- Figure labels that would give the answer are hidden (cyanide steps, alcohol products, the warfarin enzyme).
+- Guide section 26: her toxidrome table; her Quiz 3 asked about the opioid row, so it is no longer marked low yield.
+
 ## 2026-10-22 (Short answer, Quiz 4, her exam format)
 
 - New Short answer page: 26 prompts; write your answer, then compare with a model answer and tick the key points.
