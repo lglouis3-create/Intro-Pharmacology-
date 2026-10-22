@@ -2745,14 +2745,35 @@ const SAYFIG = [
   [/twin/i, 'smith-twins', 'Twin studies: antipyrine half-life'],
   [/haplotype|linkage/i, 'smith-haplotype', 'Her slide: haplotypes'],
   [/homozygous|heterozygous|genotype|allele/i, 'smith-zygosity', 'Her slide: alleles and genotype']];
+const SAYMOV = [
+  [/cyanide|rhodanese|thiosulfate|methemoglobin|amyl nitrite|methylene blue/i, 'ad:03-cyanide-antidote-stepper', 'Cyanide antidotes, step by step'],
+  [/acetaminophen|NAPQI|acetylcysteine|glutathione/i, 's3:apap-nac', ''],
+  [/methanol|ethylene glycol|fomepizole|formic acid|oxalic/i, 's3:methanol-eg', ''],
+  [/warfarin|vitamin K/i, 'ad:07-warfarin-vitamin-k', 'Warfarin and vitamin K'],
+  [/pralidoxime|\baging\b|\baged\b/i, 'ad:06-pralidoxime-and-co', 'Pralidoxime removes the organophosphate'],
+  [/atropine|physostigmine|organophosphate|sludge/i, 'ad:05-cholinergic-atropine-physostigmine', 'Atropine and physostigmine at the synapse'],
+  [/naloxone|flumazenil/i, 'ad:04-receptor-antagonist-naloxone-flumazenil', 'Naloxone and flumazenil'],
+  [/ion trapping|bicarbonate|weak acid|urine (more )?basic/i, 's3:ion-trapping', ''],
+  [/zone (1|3|one|three)|Kupffer|acinus|central vein|CYP2E1/i, 's3:liver-zones', ''],
+  [/haplotype|linkage/i, 's3:haplotype', ''],
+  [/homozygous|heterozygous|genotype|allele|phenotype/i, 's3:allele-genotype', '']];
 const SAYROW = [[/acetaminophen/i, 'apap'], [/methanol|ethylene glycol|toxic alcohol/i, 'alc'], [/benzodiazepine|flumazenil/i, 'bzd'], [/beta.?blocker/i, 'bb'], [/calcium channel blocker/i, 'ccb'], [/digoxin/i, 'dig'], [/tricyclic/i, 'tca'], [/opioid|naloxone|opiate/i, 'opi'], [/salicylate|aspirin/i, 'sal'], [/sulfonylurea|octreotide/i, 'su'], [/\biron\b|deferoxamine/i, 'fe'], [/organophosphate|pralidoxime|sludge/i, 'op']];
+function movHTML(ref, label) {
+  if (ref.startsWith('s3:')) return stepHTML(ref.slice(3));
+  const slug = ref.slice(3), t = store.get(COURSE.ns + ':theme');
+  return antiOK() ? `<iframe class="saymov" title="${esc(label)}" src="${ANTI_BASE + slug}.html?embed=1${t === 'light' || t === 'dark' ? '&theme=' + t : ''}" loading="lazy"></iframe><div class="row" style="margin:4px 0 0"><button type="button" class="chip" data-anti="${esc(slug)}">◧ Open full size</button></div>` : '';
+}
+/* The panel above a transcript: the moving diagram, her full slide and her key row for what the current sentence is about.
+   Each part is a fold the reader opens or closes; its content changes only when the topic changes. */
 function saySide(box, text) {
   const side = box && box.previousElementSibling; if (!side || !side.classList.contains('sayside')) return;
-  const f = SAYFIG.find(([re, k]) => re.test(text) && IMG[k]), rw = SAYROW.find(([re]) => re.test(text)), r = rw && ptRows().find(x => x.id === rw[1]);
-  if (f && side.dataset.f !== f[1]) { side.dataset.f = f[1]; side.querySelector('.sayfigbox').innerHTML = `<figure class="fig sayfig"><img src="${IMG[f[1]]}" alt="${esc(f[2])}; tap to enlarge"><figcaption>${esc(f[2])}</figcaption></figure>`; }
-  if (r && side.dataset.r !== r.id) { side.dataset.r = r.id; side.querySelector('.saykeybox').innerHTML = `<div class="saykey"><div class="meta" style="margin:0 0 4px">Her poisoning table key</div>${ptRowHTML(r)}</div>`; }
+  const f = SAYFIG.find(([re, k]) => re.test(text) && IMG[k]), mv = SAYMOV.find(([re, k]) => re.test(text) && (k.startsWith('ad:') || STEPS()[k.slice(3)])), rw = SAYROW.find(([re]) => re.test(text)), r = rw && ptRows().find(x => x.id === rw[1]);
+  const part = (cls, html, label) => { const d = side.querySelector('.' + cls); d.hidden = false; d.querySelector('summary').textContent = label; d.querySelector('.sbody').innerHTML = html; };
+  if (mv && side.dataset.m !== mv[1]) { const html = movHTML(mv[1], mv[2]); if (html) { side.dataset.m = mv[1]; part('saymovd', html, 'Moving diagram: ' + (mv[2] || (STEPS()[mv[1].slice(3)] || {}).title || '')); } }
+  if (f && side.dataset.f !== f[1]) { side.dataset.f = f[1]; part('sayfigd', `<figure class="fig sayfig"><img src="${IMG[f[1]]}" alt="${esc(f[2])}; tap to enlarge"></figure>`, f[2]); }
+  if (r && side.dataset.r !== r.id) { side.dataset.r = r.id; part('saykeyd', `<div class="saykey">${ptRowHTML(r)}</div>`, 'Her poisoning table key: ' + r.poison); }
 }
-const sideHTML = () => `<div class="sayside"><div class="sayfigbox"></div><div class="saykeybox"></div></div>`;
+const sideHTML = () => `<div class="sayside">${['saymovd', 'sayfigd', 'saykeyd'].map(c => `<details class="fold ${c}" open hidden><summary></summary><div class="sbody"></div></details>`).join('')}</div>`;
 function sayMark(box, i) {
   if (!box) return; const ss = box.querySelectorAll('.ssent'); if (!ss.length) return;
   ss.forEach((x, k) => x.classList.toggle('on', k === i));
