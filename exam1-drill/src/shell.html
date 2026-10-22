@@ -323,6 +323,8 @@ body:has(#qback) #backbtn{display:none}
 .sc-meter{height:6px;border-radius:3px;background:var(--chip);overflow:hidden;margin-top:4px} .sc-meter i{display:block;height:100%;width:50%;background:var(--muted);transition:width .9s cubic-bezier(.2,.7,.2,1),background .4s}
 .sc-org.up .sc-meter i{width:92%;background:var(--figC)} .sc-org.down .sc-meter i{width:12%;background:var(--figB)} .sc-org.sc-extra{border-style:dashed}
 @media (prefers-reduced-motion:reduce){.sc-meter i,.sc-steps li{transition:none}}
+.jqhl{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px;background:color-mix(in srgb, var(--accent) 12%, transparent)}
+tr.jqhl td{background:color-mix(in srgb, var(--accent) 12%, transparent)}
 .antirow{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:14px}
 body.antiopen{overflow:hidden}
 .antiview{position:fixed;inset:0;z-index:50;background:rgba(0,0,0,.45);overflow:auto;padding:16px 8px}
