@@ -768,3 +768,6 @@ Source: `Smith_Practice_Quiz_1_-_Principles_of_Toxicology.pdf` (user upload 10/1
 
 ### Her words in class 10/22 (relayed by the user; supersede the 10/17 notice)
 9 am, lasts 2 hours; 54 questions; 2 short-answer questions graded with partial credit; 2 true/false; the rest multiple choice and select-all, with no partial credit on select-all.
+
+## Slide figures shown in questions (rule from the user, 10/22)
+Show only clean slide figures: the image embedded in her original deck, never a page render of an annotated copy (the user's GoodNotes PDFs or a classmate's notes). Check every figure at full size for handwriting before it goes in (Figure 2-6 had a pencilled "LD50" inside the scan; removed). Mask or crop labels and captions that print the answer.
