@@ -2267,6 +2267,7 @@ const antiChip = (d, lab) => `<button type="button" class="chip antichip" data-a
 const antiFor = q => antiOK() && examOf(q) === 3 ? ANTIDOTE_DIAGRAMS.filter(d => d.match && d.match.test(q.stem + ' ' + (q.concept || ''))) : [];
 let ANTI = null;
 function antiOpen(slug, opener) {
+  sayStop();
   const i = ANTIDOTE_DIAGRAMS.findIndex(d => d.slug === slug); if (i < 0) return;
   const d = ANTIDOTE_DIAGRAMS[i], t = store.get(COURSE.ns + ':theme'), n = ANTIDOTE_DIAGRAMS.length;
   const src = ANTI_BASE + d.slug + '.html?embed=1' + (t === 'light' || t === 'dark' ? '&theme=' + t : '');
@@ -2281,11 +2282,13 @@ function antiOpen(slug, opener) {
   ANTI.el.innerHTML = `<div class="antibox"><div class="antihead"><b id="antititle">${esc(d.title)}</b><span class="meta" style="margin:0">${i + 1} of ${n}</span>
     <div class="row" style="gap:6px;margin-left:auto"><button type="button" class="chip" data-antistep="-1" ${i ? '' : 'disabled'} aria-label="Previous diagram">‹ Prev</button><button type="button" class="chip" data-antistep="1" ${i + 1 < n ? '' : 'disabled'} aria-label="Next diagram">Next ›</button><a class="chip" href="${ANTI_BASE + d.slug}.html" target="_blank" rel="noopener">Open page ↗</a><button type="button" class="chip" id="anticlose" aria-label="Close diagram">✕</button></div></div>
     ${d.note && ANTIDOTE_NOTES[d.note] ? `<div class="note">${esc(tidyQuoted(ANTIDOTE_NOTES[d.note]))}</div>` : ''}
+    ${typeof ANTI_NARR !== 'undefined' && ANTI_NARR[d.slug] ? `<div class="row antisay" style="gap:6px;margin:6px 0"><button type="button" class="btn ghost" data-antisay="${esc(d.slug)}">🔊 Listen</button><button type="button" class="btn ghost" data-antitx aria-pressed="false">Show transcript</button><span class="meta" style="margin:0">${typeof AD_CLIPS !== 'undefined' && AD_CLIPS.includes(d.slug) ? 'read by the narrator' : 'device voice'}</span></div><div class="antitxw" hidden>${sideHTML()}<div class="nsaid saybox antitx">${sayHTML(ANTI_NARR[d.slug])}</div></div>` : ''}
     <iframe id="antiframe" title="${esc(d.title)}" src="${src}" loading="eager"></iframe>
     <p class="sub" style="margin:6px 0 0">Drawn from the figures on the Treating Poisonings slides (10/19). <a href="${ANTI_BASE}index.html" target="_blank" rel="noopener">All diagrams</a></p></div>`;
   $('#anticlose').focus();
 }
 function antiClose(fromPop) {
+  sayStop();
   if (!ANTI) return;
   if (!fromPop && history.state && history.state.anti) { SKIPPOP++; try { history.back(); } catch (e) { SKIPPOP--; } }   // drop the panel's own history entry
   ANTI.el.remove(); document.body.classList.remove('antiopen'); (ANTI.inert || []).forEach(c => { c.inert = false; });
@@ -2762,6 +2765,37 @@ function sayFrac(box, frac) {
   for (; i < lens.length; i++) { acc += lens[i]; if (acc / tot >= frac) break; }
   sayMark(box, Math.min(i, ss.length - 1));
 }
+/* A script read aloud into its transcript box: the recorded clip if there is one, else the device voice; the sentence being read is highlighted. */
+let SAY = null;
+function sayStop() {
+  const c = SAY; SAY = null; if (!c) return; clearTimeout(c.t);
+  if (c.btn && document.body.contains(c.btn)) c.btn.textContent = c.label;
+  if (c.audio) { c.audio.onended = c.audio.onerror = c.audio.ontimeupdate = null; c.audio.pause(); }
+  if (narrCan()) speechSynthesis.cancel();
+  if (c.done) c.done(false);
+}
+function sayPlay(text, box, btn, clip, done) {
+  sayStop(); narrStop(); if (typeof qSayStop === 'function') qSayStop(); if (typeof rdStop === 'function') rdStop();
+  const cur = SAY = {btn, label: btn ? btn.textContent : '', t: null, done};
+  if (btn) btn.textContent = '■ Stop';
+  const finish = () => { if (SAY !== cur) return; SAY = null; clearTimeout(cur.t); if (btn && document.body.contains(btn)) btn.textContent = cur.label; if (done) done(true); };
+  const synth = () => {
+    if (!narrCan()) return finish(); const v = narrVoice(); let last = null;
+    saySents(text).forEach((p0, si) => { const p = speakable(p0); if (!p.trim()) return; const u = new SpeechSynthesisUtterance(p.trim()); u.rate = NAR.rate; u.lang = 'en-US'; if (v) u.voice = v; u.onstart = () => { if (SAY === cur) sayMark(box, si); }; last = u; speechSynthesis.speak(u); });
+    if (!last) return finish(); last.onend = last.onerror = finish;
+  };
+  if (!clip) return synth();
+  const a = cur.audio = NARR_AUDIO || (NARR_AUDIO = new Audio()); a.src = NAR_BASE() + clip; a.playbackRate = NAR.rate;
+  a.onended = finish; a.onerror = () => { if (SAY === cur) { cur.audio = null; synth(); } };
+  a.ontimeupdate = () => { if (SAY === cur && isFinite(a.duration)) sayFrac(box, a.currentTime / a.duration); };
+  a.play().catch(a.onerror);
+}
+document.addEventListener('click', e => {
+  const b = e.target.closest('[data-antisay]');
+  if (b) { if (SAY && SAY.btn === b) return sayStop(); const w = b.closest('.antibox').querySelector('.antitxw'), tb = b.closest('.antibox').querySelector('[data-antitx]'); w.hidden = false; if (tb) { tb.textContent = 'Hide transcript'; tb.setAttribute('aria-pressed', 'true'); } const box = w.querySelector('.antitx'); sayMark(box, 0); sayPlay(ANTI_NARR[b.dataset.antisay], box, b, typeof AD_CLIPS !== 'undefined' && AD_CLIPS.includes(b.dataset.antisay) ? 'ad-' + b.dataset.antisay + '.mp3' : null); return; }
+  const t = e.target.closest('[data-antitx]');
+  if (t) { const w = t.closest('.antibox').querySelector('.antitxw'); w.hidden = !w.hidden; t.textContent = w.hidden ? 'Show transcript' : 'Hide transcript'; t.setAttribute('aria-pressed', String(!w.hidden)); }
+});
 let QSAY = null;
 function qSay(id, btn) {
   const text = NARR_Q[id]; if (!text) return;
@@ -2910,12 +2944,25 @@ function stepHTML(k, i = 0) {
   const st = d.steps[i];
   return `<figure class="fig step3" data-s3="${esc(k)}" data-i="${i}"><figcaption><b>${esc(d.title)}</b> <span class="meta" style="margin:0">step ${i + 1} of ${d.steps.length}</span></figcaption>
     <div class="s3svg">${st.svg}</div><p class="s3cap" aria-live="polite">${st.t}</p>
-    <div class="row s3nav"><button type="button" class="btn ghost" data-s3go="-1" ${i ? '' : 'disabled'}>◂ Back</button>${d.steps.map((x, j) => `<button type="button" class="sdot${j === i ? ' on' : ''}" data-s3to="${j}" aria-label="Step ${j + 1}"></button>`).join('')}<button type="button" class="btn ghost" data-s3go="1" ${i < d.steps.length - 1 ? '' : 'disabled'}>Next ▸</button></div>
+    <div class="row s3nav"><button type="button" class="btn ghost" data-s3go="-1" ${i ? '' : 'disabled'}>◂ Back</button>${d.steps.map((x, j) => `<button type="button" class="sdot${j === i ? ' on' : ''}" data-s3to="${j}" aria-label="Step ${j + 1}"></button>`).join('')}<button type="button" class="btn ghost" data-s3go="1" ${i < d.steps.length - 1 ? '' : 'disabled'}>Next ▸</button><button type="button" class="btn ghost" data-s3play>${S3PLAY && S3PLAY.k === k ? '■ Stop' : '🔊 Play'}</button></div>
     ${d.src ? `<div class="cite">${esc(d.src)}</div>` : ''}</figure>`;
 }
+let S3PLAY = null;
+function s3Say(fig) {
+  const k = fig.dataset.s3, i = +fig.dataset.i, d = STEPS()[k], cap = fig.querySelector('.s3cap'), btn = fig.querySelector('[data-s3play]');
+  cap.innerHTML = sayHTML(cap.textContent); S3PLAY = {k};
+  sayPlay(cap.textContent, cap, btn, null, ok => {
+    if (!ok || !S3PLAY || S3PLAY.k !== k) { S3PLAY = null; return; }
+    if (i >= d.steps.length - 1) { S3PLAY = null; const b2 = fig.isConnected ? fig.querySelector('[data-s3play]') : null; if (b2) b2.textContent = '🔊 Play'; return; }
+    const t = document.createElement('div'); t.innerHTML = stepHTML(k, i + 1); const nf = t.firstElementChild; fig.replaceWith(nf); setTimeout(() => { if (S3PLAY && S3PLAY.k === k) s3Say(nf); }, 600);
+  });
+}
 document.addEventListener('click', e => {
+  const pb = e.target.closest('[data-s3play]');
+  if (pb) { const fig = pb.closest('figure.step3'); if (S3PLAY && S3PLAY.k === fig.dataset.s3) { S3PLAY = null; sayStop(); pb.textContent = '🔊 Play'; } else s3Say(fig); return; }
   const b = e.target.closest('[data-s3go],[data-s3to]'); if (!b) return;
   const fig = b.closest('figure.step3'); if (!fig) return;
+  if (S3PLAY && S3PLAY.k === fig.dataset.s3) { S3PLAY = null; sayStop(); }
   const d = STEPS()[fig.dataset.s3], i = b.dataset.s3to != null ? +b.dataset.s3to : Math.max(0, Math.min(d.steps.length - 1, +fig.dataset.i + +b.dataset.s3go));
   const t = document.createElement('div'); t.innerHTML = stepHTML(fig.dataset.s3, i); fig.replaceWith(t.firstElementChild);
 });
