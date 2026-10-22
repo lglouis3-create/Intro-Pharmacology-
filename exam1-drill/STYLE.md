@@ -765,3 +765,6 @@ Source: `Smith_Practice_Quiz_1_-_Principles_of_Toxicology.pdf` (user upload 10/1
 
 ## Exam 3 format (her notice to the class, 10/17; reference only, not quoted on the site)
 50 to 55 questions in 90 minutes; mostly multiple choice with a few fill-in-the-blank or short-answer items; covers Oct 9 through Oct 20; two extra 10/19 decks (pharmacist impact on pharmaceuticals in the environment; toxicology careers) are testable only if covered in class, lightly; study the objectives slides, the reading and table keys, and the quiz keys; 9 am start, late arrivals not seated once anyone has left.
+
+### Her words in class 10/22 (relayed by the user; supersede the 10/17 notice)
+9 am, lasts 2 hours; 54 questions; 2 short-answer questions graded with partial credit; 2 true/false; the rest multiple choice and select-all, with no partial credit on select-all.
