@@ -684,7 +684,7 @@ QUESTIONS.push(
 
 /* ---------------- Overdose changes pharmacodynamics ---------------- */
 {id:"L15-050", lecture:"L15", prof:"Smith", tier:"new", topic:"L15", sub:"odpd", skill:"figure",
- concept:"drug-a-vs-b-overdose", tags:["smith"], source:"both",
+ concept:"drug-a-vs-b-overdose", tags:["smith"], source:"both", simg:"smith-tp-drugab", simgAlt:"Katzung figure on her slide ‘How Pharmacodynamics change in Overdose’: CNS effects (sedation, hypnosis, anesthesia, coma) against increasing dose for drug A and drug B.",
  stem:"In the Katzung figure, drugs A and B share a mechanism and produce sedation at the same dose. What does the figure show about them in overdose?",
  options:[
   {t:"Alike at the therapeutic endpoint, but in overdose their therapeutic indices differ and B can be pushed higher without an unwanted effect", correct:true, why:"Her answer: B. Increasing the dose of A leads to coma; B plateaus before coma."},

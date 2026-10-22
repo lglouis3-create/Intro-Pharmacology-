@@ -77,7 +77,7 @@ QUESTIONS.push(
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Toxicokinetic-Based Treatment: methanol and ethylene glycol examples’; transcript 10/19"},
 
 {id:"L16-005", lecture:"L16", prof:"Smith", tier:"new", topic:"L16", sub:"bioact", skill:"figure", type:"match",
- concept:"methanol-eg-pathways", tags:["smith"], source:"both",
+ concept:"methanol-eg-pathways", tags:["smith"], source:"both", simg:"smith-tp-alcohols-masked", simgAlt:"Treating Poisonings slide ‘Toxicokinetic-Based Treatment: methanol and ethylene glycol examples’: methanol through alcohol dehydrogenase and formaldehyde dehydrogenase, and ethylene glycol through ADH, AldDH and further steps. The product names are hidden.",
  stem:"Match each step of the methanol and ethylene glycol bioactivation pathways in the figure with the compound formed.",
  left:["Methanol, by alcohol dehydrogenase", "Formaldehyde, by formaldehyde dehydrogenase", "Ethylene glycol, by alcohol dehydrogenase", "Glycolic acid, after several more steps"],
  right:["Formaldehyde", "Formic acid (toxic to the retina)", "Glycoaldehyde", "Oxalic acid (forms microcrystals)"],
@@ -187,7 +187,7 @@ QUESTIONS.push(
  note:"The transcript renders toxidrome as \"toxic toxodrome\". She said she would get to the table at the end of the lecture but the session ended with the guideline discussion; the table itself was not walked through on 10/19.",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Toxidromes’ (Goodman & Gilman Table 4-7); transcript 10/19"},
 
-{id:"L16-013", lecture:"L16", prof:"Smith", tier:"new", topic:"L16", sub:"detect", skill:"recall", type:"match", lowYield:true,
+{id:"L16-013", lecture:"L16", prof:"Smith", tier:"new", topic:"L16", sub:"detect", skill:"recall", type:"match",
  concept:"toxidrome-table", tags:["smith"], source:"slide",
  stem:"Match each toxidrome in the Goodman and Gilman table with its example drugs and distinguishing signs.",
  left:["Sympathomimetic", "Anticholinergic", "Cholinergic", "Opioid", "Salicylate"],
@@ -200,7 +200,7 @@ QUESTIONS.push(
   {l:"Salicylate", r:"Aspirin: confusion, diaphoresis, vomiting", why:"Table row: salicylate, aspirin, confusion, diaphoresis and vomiting."}],
  teach:"The toxidromes slide reproduces Goodman and Gilman's Table 4-7, Common Toxidromes, with columns for drug class, examples, mental status, heart rate, blood pressure, respiratory rate, temperature, pupil size and other signs. The rows are sympathomimetic (cocaine, amphetamine), anticholinergic (diphenhydramine, atropine), cholinergic (organophosphates, with SLUDGE and fasciculation), opioid (heroin, oxycodone), sedative-hypnotic (benzodiazepines, barbiturates), salicylate (aspirin) and calcium channel blocker (verapamil).",
  quote:"symptoms that we call a toxic toxodrome that we'll get to at the end of this lecture",
- note:"Low yield: the table slide was not reached on 10/19; she defined a toxidrome in passing and said the table would come at the end of the lecture, but the session moved to the guideline discussion and ended early. The vital-sign arrows of the table did not survive the text export and are not tested. The objectives slide lists \"Describe the toxidromes discussed in class\".",
+ note:"The table slide was not reached on 10/19; she defined a toxidrome in passing and said the table would come at the end of the lecture, but the session moved to the guideline discussion and ended early. Her Quiz 3 (question 5) still asked which symptom is not part of the opioid toxidrome, and the objectives slide lists \"Describe the toxidromes discussed in class\", so the table is on the paper. The full table, with its vital-sign arrows, is in Guide section 26.",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Toxidromes’ (Goodman & Gilman Table 4-7); transcript 10/19"},
 
 /* ---------------- Enhance metabolism ---------------- */
@@ -231,7 +231,7 @@ QUESTIONS.push(
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Toxicokinetic-Based Treatment Cyanide example’ (Golan figure); transcript 10/19"},
 
 {id:"L16-016", lecture:"L16", prof:"Smith", tier:"new", topic:"L16", sub:"metab", skill:"figure",
- concept:"amyl-nitrite-methemoglobin", tags:["smith"], source:"both",
+ concept:"amyl-nitrite-methemoglobin", tags:["smith"], source:"both", simg:"smith-tp-cyanide-masked", simgAlt:"Treating Poisonings slide ‘Toxicokinetic-Based Treatment: Cyanide example’: cyanide binds cytochrome c oxidase; amyl nitrite acts on hemoglobin (step 1); methemoglobin takes cyanide from cytochrome c oxidase (step 2); rhodanese and thiosulfate form thiocyanate (step 3); methylene blue acts on methemoglobin (step 4). The names of steps 1, 2 and 4 are hidden.",
  stem:"In the cyanide treatment figure, what does amyl nitrite do, and why is that acceptable?",
  options:[
   {t:"Oxidizes hemoglobin to methemoglobin, which can take cyanide off the enzyme", correct:true, why:"Changing the charge of the iron makes methemoglobin; it carries no oxygen, but it pulls cyanide off cytochrome c oxidase, which is the point."},
@@ -258,7 +258,7 @@ QUESTIONS.push(
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Toxicokinetic-Based Treatment Cyanide example’ (Golan figure); transcript 10/19"},
 
 {id:"L16-018", dupOf:"L16-017", lecture:"L16", prof:"Smith", tier:"new", topic:"L16", sub:"metab", skill:"figure", type:"match",
- concept:"cyanide-scheme-steps", tags:["smith"], source:"both",
+ concept:"cyanide-scheme-steps", tags:["smith"], source:"both", simg:"smith-tp-cyanide-masked", simgAlt:"Treating Poisonings slide ‘Toxicokinetic-Based Treatment: Cyanide example’: cyanide binds cytochrome c oxidase; amyl nitrite acts on hemoglobin (step 1); methemoglobin takes cyanide from cytochrome c oxidase (step 2); rhodanese and thiosulfate form thiocyanate (step 3); methylene blue acts on methemoglobin (step 4). The names of steps 1, 2 and 4 are hidden.",
  stem:"Match each agent in the cyanide treatment scheme with what it does.",
  left:["Amyl nitrite", "Methemoglobin", "Rhodanese", "Methylene blue"],
  right:["Oxidizes hemoglobin to methemoglobin", "Pulls cyanide off cytochrome c oxidase onto itself", "Helps thiosulfate take the cyanide for renal elimination", "Reduces methemoglobin back to hemoglobin"],
@@ -272,7 +272,7 @@ QUESTIONS.push(
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Toxicokinetic-Based Treatment Cyanide example’ (Golan figure); transcript 10/19"},
 
 {id:"L16-019", lecture:"L16", prof:"Smith", tier:"new", topic:"L16", sub:"metab", skill:"figure",
- concept:"nac-glutathione-ingredients", tags:["smith"], source:"both",
+ concept:"nac-glutathione-ingredients", tags:["smith"], source:"both", simg:"smith-tp-apap", simgAlt:"Treating Poisonings slide ‘Toxicokinetic-Based Treatment: Acetaminophen Example’: acetaminophen goes to its glucuronide and sulfate (phase II) or, by P450 or PHS, to NAPQI (hepatotoxicity); glutathione conjugates NAPQI for excretion, and an unlabeled structure at the bottom feeds glutathione.",
  stem:"In the acetaminophen scheme, what is N-acetylcysteine (NAC) doing?",
  options:[
   {t:"Supplying ingredients to make more glutathione", correct:true, why:"The body makes and stores glutathione all the time; NAC provides some of the ingredients needed to make more, so more NAPQI gets conjugated and eliminated."},
@@ -451,7 +451,7 @@ QUESTIONS.push(
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Inactivation of Poisons: Heavy Metal Chelators’; transcript 10/19"},
 
 {id:"L16-032", lecture:"L16", prof:"Smith", tier:"new", topic:"L16", sub:"inact", skill:"figure",
- concept:"multidentate-meaning", tags:["smith"], source:"both",
+ concept:"multidentate-meaning", tags:["smith"], source:"both", simg:"smith-tp-chelators", simgAlt:"Treating Poisonings slide ‘Inactivation of Poisons: Structure of chelators’: a metal with ligands (A), a copper atom held by one molecule at several nitrogens (B), dimercaprol, calcium disodium edetate (EDTA) and penicillamine with their mercury, lead and copper complexes (C), and a long-chain chelator.",
  stem:"In the figure of chelator structures, one molecule looks like a spider with its legs on a single copper atom. What does multidentate mean?",
  options:[
   {t:"One chelator molecule binds a single metal atom at several points", correct:true, why:"The legs of the spider are the several ways one molecule grips one atom of the metal."},
@@ -631,7 +631,7 @@ QUESTIONS.push(
 
 /* ---------------- Pharmacological treatment II ---------------- */
 {id:"L16-045", lecture:"L16", prof:"Smith", tier:"new", topic:"L16", sub:"pharmsite", skill:"apply",
- concept:"cyanide-removal-from-active-site", tags:["smith"], source:"both",
+ concept:"cyanide-removal-from-active-site", tags:["smith"], source:"both", simg:"smith-tp-cyanide-masked", simgAlt:"Treating Poisonings slide ‘Toxicokinetic-Based Treatment: Cyanide example’: cyanide binds cytochrome c oxidase; amyl nitrite acts on hemoglobin (step 1); methemoglobin takes cyanide from cytochrome c oxidase (step 2); rhodanese and thiosulfate form thiocyanate (step 3); methylene blue acts on methemoglobin (step 4). The names of steps 1, 2 and 4 are hidden.",
  stem:"In the cyanide scheme, which step is the example of a treatment that removes the toxin from its active site?",
  options:[
   {t:"Methemoglobin pulling cyanide off cytochrome c oxidase", correct:true, why:"Creating methemoglobin was the means; the removal of cyanide from the enzyme's active site is this step."},
@@ -644,7 +644,7 @@ QUESTIONS.push(
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slides ‘Pharmacological Treatment: Treatment Removes Toxin from Active Site’, ‘Toxicokinetic-Based Treatment Cyanide example’; transcript 10/19"},
 
 {id:"L16-046", lecture:"L16", prof:"Smith", tier:"new", topic:"L16", sub:"pharmsite", skill:"figure",
- concept:"pralidoxime-removes-op", tags:["smith"], source:"both",
+ concept:"pralidoxime-removes-op", tags:["smith"], source:"both", simg:"smith-tp-2pam", simgAlt:"Treating Poisonings slide ‘Pharmacological Treatment: Pralidoxime example’, panel D: an organophosphate binds the acetylcholinesterase serine (1), pralidoxime takes it off (2) and releases it (3), or the bound enzyme ages (4).",
  stem:"In the pralidoxime figure, what does pralidoxime do to an organophosphate bound to acetylcholinesterase?",
  options:[
   {t:"Pulls the organophosphate off the enzyme onto itself for elimination", correct:true, why:"The organophosphate on the enzyme is inactivating it; pralidoxime takes the organophosphate onto itself, restoring the active site, and the complex can be eliminated."},
@@ -698,7 +698,7 @@ QUESTIONS.push(
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Pharmacological Treatment: Treatment Removes Toxin from Active Site’; transcript 10/19"},
 
 {id:"L16-050", lecture:"L16", prof:"Smith", tier:"new", topic:"L16", sub:"pharmsite", skill:"figure",
- concept:"warfarin-epoxide-reductase", tags:["smith"], source:"both",
+ concept:"warfarin-epoxide-reductase", tags:["smith"], source:"both", simg:"smith-tp-warfarin-masked", simgAlt:"Treating Poisonings slide ‘Pharmacological Treatment: Treatment by-passes an inhibited pathway’: the vitamin K cycle, in which vitamin K-dependent carboxylase uses reduced vitamin K and makes the epoxide, and oral anticoagulants (dicumarol, warfarin) block the step back to reduced vitamin K. The enzyme name at that step is hidden.",
  stem:"In the warfarin figure, which enzyme does warfarin inhibit, and what is the consequence?",
  options:[
   {t:"Epoxide reductase, so active vitamin K is not regenerated", correct:true, why:"Her answer to the room: the epoxide reductase. Less vitamin K is reformed, so fewer coagulation factors are made."},
