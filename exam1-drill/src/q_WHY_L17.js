@@ -10,7 +10,7 @@ QUESTIONS.push(
   {t:"Responses to one drug varied widely between people", correct:true, why:"The same drug gave a lethal side effect in one person and no effect in another; explaining that range is what led to genetics once knowledge of genes grew."},
   {t:"Every patient responded the same way to each drug", correct:false, why:"The reverse: the observation that started it was how differently people respond."},
   {t:"Age and gender explained all differences in response", correct:false, why:"Age, ethnicity, gender and underlying disease explained part of the variation; genetics explains more of it."},
-  {t:"Genotyping became cheaper than measuring drug levels", correct:false, why:"Cost was not the reason she gave."},
+  {t:"Genotyping became cheaper than measuring drug levels", correct:false, why:"Puts a later practical change at the origin; the field began when clinicians noticed how differently people responded to the same drug, before anyone could genotype."},
   {t:"Drug companies stopped testing drugs in patients", correct:false, why:"Confuses drug development with practice; the starting point was variation clinicians saw in patients given the same drug."}],
  teach:"Clinicians observed large inter-individual variation in drug therapy response: one person could have a lethal side effect from a drug while another was not affected at all. Age, ethnicity, gender and underlying disease explained part of that variation. As knowledge of genes and of how genes interact with medications grew, genetic variation could explain more of it, and that is why pharmacogenomics is now part of medicine.",
  quote:"the reason why we have it is because we started observing that there's sometimes a large interindividual variation in drug therapy response. ... Sometimes, one person could have a lethal response due to the side effects of a drug, and somebody else is not affected at all by it, OK?",
@@ -106,7 +106,7 @@ QUESTIONS.push(
   {t:"They rarely prescribe drugs affected by genes", correct:false, why:"MacKinnon et al. (2023) found more than half of patients were prescribed medications where pharmacogenomics is important."},
   {t:"Genetic test results are sent only to pharmacists", correct:false, why:"Access to results is not the gap she described; the gap is time spent with drugs."},
   {t:"Prescribers have no need to know pharmacogenomics", correct:false, why:"She named anybody prescribing first among those who should know it."}],
- teach:"Pharmacogenomics is pharmacy with genetics: using it means knowing how a genetic variant changes what happens to a drug. Pharmacists spend the most time with drugs, so pharmacy students are the best educated in it; prescribers spend less time with drugs, so they are not yet as well versed, even though anybody prescribing should know it. Nurses and other providers should know it too.",
+ teach:"Pharmacy students are the best taught in pharmacogenomics because it is pharmacy with genetics. Prescribers do not spend as much time with drugs as pharmacists do, so they are not yet as well versed in it, even though anybody prescribing should know it. Nurses and other providers should know it too.",
  quote:"You guys are the best taught about it because it's pharmacy with genetics, right? ... But people that are prescribing so far, uh, our prescribers are not as well versed yet in pharmacogenomics, cause they don't spend as much time with drugs as you guys do.",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘Introduction: Impact of Pharmacogenomics’ (p. 9); transcript 10/20"},
 
@@ -119,7 +119,7 @@ QUESTIONS.push(
   {t:"P-gp metabolizes the drug before it leaves the gut wall", correct:false, why:"P-gp is a transporter, not a metabolizing enzyme."},
   {t:"P-gp carries the drug from the lumen into the blood", correct:false, why:"The reverse direction: P-gp effluxes drug back into the lumen."},
   {t:"P-gp binds the drug in plasma and holds it there", correct:false, why:"That describes plasma protein binding, which acts after absorption; P-gp acts at the cells lining the gut lumen."},
-  {t:"P-gp speeds the drug's excretion by the kidney", correct:false, why:"A student offered excretion; she steered to absorption into the systemic circulation, bioavailability."}],
+  {t:"P-gp speeds the drug's excretion by the kidney", correct:false, why:"Excretion came up in class, but she steered to absorption into the systemic circulation, bioavailability; P-gp in the gut pumps drug back into the lumen."}],
  teach:"P-glycoprotein, encoded by the ABCB1 gene, is an efflux transporter expressed in the gut. As an oral drug tries to cross the cells lining the gut lumen, P-gp grabs it and pumps it back into the lumen to be passed in the stool. That limits absorption into the systemic circulation, which is the drug's bioavailability.",
  quote:"Remember, PGP is an e-flux transporter. Right? In other words, the drug in your gut lumen is trying to go across those lumen cells, and PGP is grabbing it and pumping it back into the lumen so that you're gonna poop it out, right?",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘Introduction: Three Target Areas’ (p. 10); transcript 10/20"},
@@ -182,7 +182,7 @@ QUESTIONS.push(
  concept:"efficacy-toxicity-buckets", tags:["smith","why"], source:"both",
  stem:"A patient's receptor for a drug carries a genetic variant that makes it respond poorly. Why does this fall into the efficacy bucket rather than the toxicity bucket?",
  options:[
-  {t:"The drug cannot get its response from that receptor", correct:true, why:"A receptor that does not work well limits the response the drug is trying to produce."},
+  {t:"The drug's target, not its blood level, is affected", correct:true, why:"A receptor that does not work well limits the response the drug is trying to produce."},
   {t:"The drug builds up in the blood to toxic levels", correct:false, why:"Build-up from poor clearance is the toxicity bucket, a pharmacokinetic effect."},
   {t:"The drug is pumped back into the gut lumen", correct:false, why:"That is a transporter (P-glycoprotein) effect on absorption."},
   {t:"The variant changes the drug's absorption and excretion", correct:false, why:"Absorption and excretion are pharmacokinetics, the top arc of the figure."},
@@ -220,7 +220,7 @@ QUESTIONS.push(
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘Polymorphism’ (p. 14); transcript 10/20"},
 
 {id:"L17-117", lecture:"L17", prof:"Smith", tier:"new", topic:"L17", sub:"variant", skill:"apply",
- concept:"why-rare-variant-term", tags:["smith","why"], source:"transcript",
+ concept:"why-rare-variant-term", dupOf:"L17-031", tags:["smith","why"], source:"transcript",
  stem:"Why do rare variants get attention, even though each one occurs in less than 1% of a population?",
  options:[
   {t:"The patient who has one still has the bad response", correct:true, why:"Her answer to her own question: rare variants still happen, and that patient still feels bad or has a dangerous response."},
@@ -292,7 +292,7 @@ QUESTIONS.push(
  stem:"Two patients carry the same genetic variant but respond differently to the same drug. Which explains this?",
  options:[
   {t:"Environment and epigenetics change gene expression", correct:true, why:"Diet, habits, sleep, stress, DNA methylation and histones affect how genes are expressed and the significance of a variation."},
-  {t:"Diet and stress change the patient's DNA sequence", correct:false, why:"She said these affect how genes are expressed, not the sequence."},
+  {t:"Diet and stress change the patient's DNA sequence", correct:false, why:"The two patients carry the same variant, so the difference is not in the sequence; she described diet, habits, sleep and stress as affecting how genes are expressed."},
   {t:"One patient's variant is dominant, the other recessive", correct:false, why:"Pharmacogenomics does not discuss variants as dominant or recessive."},
   {t:"The variant's frequency differs between the two people", correct:false, why:"Frequency is a population measure, not a property of one person."},
   {t:"Genes are expressed the same way whatever the environment", correct:false, why:"If expression never varied, the same variant would always give the same response; diet, stress and epigenetic factors do change expression."}],
@@ -329,7 +329,7 @@ QUESTIONS.push(
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘Frequencies in Pharmacogenomics’ (p. 21); transcript 10/20"},
 
 {id:"L17-125", lecture:"L17", prof:"Smith", tier:"new", topic:"L17", sub:"freq", skill:"apply",
- concept:"hwe-in-papers", tags:["smith","why"], source:"both",
+ concept:"hwe-in-papers", dupOf:"L17-051", tags:["smith","why"], source:"both",
  stem:"Why must a pharmacogenomic study population be in Hardy-Weinberg equilibrium before its results are applied to the general population?",
  options:[
   {t:"No pressure has changed it from the general population", correct:true, why:"Equilibrium shows the sample has not been changed by a pressure, so it represents the general population."},

@@ -23,7 +23,7 @@ QUESTIONS.push(
   {t:"The overdose is so severe the patient may not otherwise be saved", correct:true, why:"Her answer to her own question (\"Will they try that? Yeah, why not?\"): when someone has really overdosed and probably cannot be saved, the other absorption-prevention options are tried despite their risks."},
   {t:"These methods carry no risk when done in a hospital", correct:false, why:"All of the methods carry some risk; emesis has aspiration as its biggest risk."},
   {t:"Their outcome data are better than the data for charcoal", correct:false, why:"The outcome data favor charcoal."},
-  {t:"They must be done first to empty the stomach for charcoal", correct:false, why:"Treats the methods as a sequence; each is a separate way to prevent absorption, and charcoal is given on its own within its 2-hour window."},
+  {t:"They must be done first to empty the stomach for charcoal", correct:false, why:"Treats the methods as a sequence; she presented each as a separate way to prevent absorption, with charcoal best supported by outcome data and useful up to about 2 hours after ingestion."},
   {t:"Charcoal can no longer be used once the patient reaches the hospital", correct:false, why:"Charcoal is the hospital step; the guidelines say it is done at the hospital, not at home."}],
  teach:"Every absorption-prevention method carries risk (aspiration is the biggest risk of emesis), and case outcome data favor charcoal. But charcoal does not grab everything a person can ingest, and it only works while the poison is still in the stomach and small intestine. In a severe overdose where the patient probably cannot otherwise be saved, the chance that a riskier method removes more poison is worth its risk, so the team tries it; the decision rests on severity, not on better evidence.",
  quote:"Will they try that? Yeah, why not? If, if somebody has really overdosed on something, and you probably can't save them, then, you know, the risks might outweigh the benefit for using some of these other options to prevent absorption.",
@@ -138,7 +138,7 @@ QUESTIONS.push(
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Toxicokinetic-Based Treatment Cyanide example’ (Golan figure); transcript 10/19"},
 
 {id:"L16-111", lecture:"L16", prof:"Smith", tier:"new", topic:"L16", sub:"metab", skill:"apply",
- concept:"nac-glutathione-ingredients", tags:["smith","why"], source:"both",
+ concept:"nac-glutathione-ingredients", dupOf:"L16-019", tags:["smith","why"], source:"both",
  stem:"The body makes glutathione all the time. Why does giving N-acetylcysteine (NAC) still speed the clearance of NAPQI, the toxic metabolite of acetaminophen?",
  options:[
   {t:"It supplies ingredients to make more glutathione", correct:true, why:"Her answer: NAC provides some of the ingredients needed to create more glutathione, which conjugates NAPQI with the GST enzymes; NAC acts as a cofactor."},
@@ -219,7 +219,7 @@ QUESTIONS.push(
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Inactivation of Poisons: Antivenoms and Antibodies’; transcript 10/19"},
 
 {id:"L16-117", lecture:"L16", prof:"Smith", tier:"new", topic:"L16", sub:"pharmsite", skill:"apply",
- concept:"warfarin-epoxide-reductase", tags:["smith","why"], source:"both",
+ concept:"warfarin-epoxide-reductase", dupOf:"L16-050", tags:["smith","why"], source:"both",
  stem:"Warfarin does not act on vitamin K-dependent carboxylase, yet it lowers production of active coagulation factors. What explains this?",
  options:[
   {t:"Less active vitamin K is regenerated for it", correct:true, why:"Her chain: warfarin inhibits epoxide reductase, so less vitamin K is reformed, and with less active vitamin K fewer coagulation factors are made."},
@@ -246,21 +246,21 @@ QUESTIONS.push(
 
 {id:"L16-119", lecture:"L16", prof:"Smith", tier:"new", topic:"L16", sub:"guideline", skill:"apply",
  concept:"ir-six-hour-window", tags:["smith","why"], source:"both",
- stem:"Why can an asymptomatic patient found more than 6 hours after taking an immediate-release beta blocker or calcium channel blocker probably be managed at home?",
+ stem:"Why can an asymptomatic patient found more than 6 hours after taking an immediate-release calcium channel blocker, or an immediate-release beta blocker other than sotalol, probably be managed at home?",
  options:[
   {t:"All the drug is absorbed by then, so symptoms would show", correct:true, why:"Her reason: all that drug should have been absorbed into their system and they should be displaying symptoms; if it has been 6 hours with no symptoms, they are OK."},
   {t:"The drug has been completely eliminated by 6 hours", correct:false, why:"The point is absorption, not elimination: by 6 hours it has all been absorbed."},
   {t:"Immediate-release tablets clump in the gut and are released late", correct:false, why:"Clumping into a bezoar is the problem with extended-release products."},
   {t:"Charcoal given at home has bound the rest", correct:false, why:"Charcoal is not given at home."},
   {t:"These drugs are not toxic in overdose", correct:false, why:"Within the window the patient could still respond very badly."}],
- teach:"An immediate-release product is absorbed within about 6 hours. Found within 6 hours and asymptomatic, the patient goes to the hospital, since the drug could still take effect. Found after 6 hours with no symptoms, the absorbed drug would already have caused symptoms, so the patient can probably be watched at home with the poison center. On 10/20 she added that if no one can confirm how much was taken, the patient probably needs to go to the hospital.",
+ teach:"An immediate-release product is absorbed within about 6 hours. Found within 6 hours and asymptomatic, the patient goes to the hospital, since the drug could still take effect. Found after 6 hours with no symptoms, the absorbed drug would already have caused symptoms, so the patient can probably be watched at home with the poison center. On 10/20 she added that a patient still asymptomatic before that time point should be brought into the hospital, especially if no one can confirm how much was taken.",
  quote:"If they're past 6 hours for both the calcium channel blockers and the beta blockers, and it's an immediate release product, this guidance document is saying if they're not symptomatic after 6 hours of post ingestion, they're going to be OK. In other words, All that drug should have been absorbed into their system, they should be displaying symptoms",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Discussion of OD Guidelines’; Readingguideforoutofhospitalguidelines2026KEY.docx; transcript 10/19; transcript 10/20 (amount unknown)"},
 
 /* ================= Part (b): poisoning table reasoning (her key) ================= */
 {id:"TBL3-101", lecture:"TBL3", prof:"Smith", tier:"new", topic:"TBL3", sub:"metabolic", skill:"apply",
  concept:"tbl-alc-moa", tags:["smith","why"], source:"both",
- stem:"Ethylene glycol itself is not what damages the kidneys. Why does inhibiting alcohol dehydrogenase with ethanol or fomepizole protect them?",
+ stem:"In ethylene glycol poisoning, why does inhibiting alcohol dehydrogenase with ethanol or fomepizole protect the kidneys?",
  options:[
   {t:"It stops formation of the metabolites that crystallize", correct:true, why:"Her key: ethylene glycol active metabolites can crystallize in the microvasculature, and renal toxicity is common; the antidotes inhibit alcohol dehydrogenase, the first step that makes them."},
   {t:"It chelates the oxalic acid crystals in the kidney", correct:false, why:"Chelators bind metals; ethanol and fomepizole act on the enzyme."},
@@ -272,7 +272,7 @@ QUESTIONS.push(
  cite:"PoisoningTreatmentTable2026KEY.pdf row ‘Toxic alcohols’; transcript 10/19"},
 
 {id:"TBL3-102", lecture:"TBL3", prof:"Smith", tier:"new", topic:"TBL3", sub:"cns", skill:"apply",
- concept:"tbl-benzo-moa", tags:["smith","why"], source:"both",
+ concept:"tbl-benzo-moa", dupOf:"TBL3-013", tags:["smith","why"], source:"both",
  stem:"Why does flumazenil reverse the central nervous system (CNS) depression of a benzodiazepine overdose?",
  options:[
   {t:"It competes with the benzodiazepine at its receptor", correct:true, why:"Her key: competitive antagonist of the benzodiazepine receptor. On 10/19: the benzodiazepine agonizes the GABA receptor, and flumazenil antagonizes it."},
@@ -300,11 +300,11 @@ QUESTIONS.push(
  cite:"PoisoningTreatmentTable2026KEY.pdf row ‘Opioids’; transcript 10/19"},
 
 {id:"TBL3-104", lecture:"TBL3", prof:"Smith", tier:"new", topic:"TBL3", sub:"cardio", skill:"apply",
- concept:"tbl-bb-glucagon", tags:["smith","why"], source:"slide",
+ concept:"tbl-bb-glucagon", dupOf:"TBL3-019", tags:["smith","why"], source:"slide",
  stem:"A patient with a beta-blocker overdose is bradycardic. Why is glucagon on the antidote list?",
  options:[
-  {t:"It raises cardiac cyclic AMP (cAMP) to raise heart rate", correct:true, why:"Her key: glucagon increases cardiac cellular cAMP to increase heart rate, which counters the bradycardia."},
-  {t:"It raises blood glucose to restore the altered mental status", correct:false, why:"The key's mechanism for glucagon in this row is the cardiac cAMP effect."},
+  {t:"It raises cardiac cAMP to raise heart rate", correct:true, why:"Her key: glucagon increases cardiac cellular cAMP to increase heart rate, which counters the bradycardia."},
+  {t:"It inhibits insulin release from the pancreas", correct:false, why:"That is octreotide's listed mechanism in the sulfonylurea row; glucagon's listed mechanism in the beta-blocker row is to increase cardiac cellular cAMP to increase heart rate."},
   {t:"It drives calcium into the cardiac cells", correct:false, why:"That is calcium."},
   {t:"It acts as a sink for a lipophilic drug", correct:false, why:"That is IV 20% fatty acid emulsion."},
   {t:"It blocks muscarinic receptors on the heart", correct:false, why:"Muscarinic antagonism is atropine's listed mechanism in the organophosphate row."}],
@@ -324,7 +324,7 @@ QUESTIONS.push(
  cite:"PoisoningTreatmentTable2026KEY.pdf row ‘Beta blockers’"},
 
 {id:"TBL3-106", lecture:"TBL3", prof:"Smith", tier:"new", topic:"TBL3", sub:"cardio", skill:"apply",
- concept:"tbl-bb-fe", tags:["smith","why"], source:"slide",
+ concept:"tbl-bb-fe", dupOf:"TBL3-022", tags:["smith","why"], source:"slide",
  stem:"Intravenous (IV) 20% fatty acid emulsion is on the beta-blocker antidote list. Why might it help with one beta blocker and not another?",
  options:[
   {t:"It is a sink only for a drug lipophilic enough", correct:true, why:"Her key: acts as a sink for the drug if the drug is lipophilic enough."},
@@ -336,7 +336,7 @@ QUESTIONS.push(
  cite:"PoisoningTreatmentTable2026KEY.pdf row ‘Beta blockers’"},
 
 {id:"TBL3-107", lecture:"TBL3", prof:"Smith", tier:"new", topic:"TBL3", sub:"cardio", skill:"apply",
- concept:"tbl-dig-moa", tags:["smith","why"], source:"both",
+ concept:"tbl-dig-moa", dupOf:"TBL3-030", tags:["smith","why"], source:"both",
  stem:"Which explains how digoxin-specific antibody fragments (Fab) end a digoxin overdose?",
  options:[
   {t:"They bind digoxin; the complex is renally eliminated", correct:true, why:"Her key: binds digoxin, will be renally eliminated. The inactivation slide: the inactivator binds the toxin, prevents its interaction with target tissues, and the complex is cleared."},
@@ -349,7 +349,7 @@ QUESTIONS.push(
  cite:"PoisoningTreatmentTable2026KEY.pdf row ‘Digoxin’; Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Inactivation of Poisons’; transcript 10/19"},
 
 {id:"TBL3-108", lecture:"TBL3", prof:"Smith", tier:"new", topic:"TBL3", sub:"cns", skill:"apply",
- concept:"tbl-tca-moa", tags:["smith","why"], source:"slide",
+ concept:"tbl-tca-moa", dupOf:"TBL3-034", tags:["smith","why"], source:"slide",
  stem:"A tricyclic antidepressant (TCA) overdose patient has an elongated QRS interval. Why is sodium bicarbonate given?",
  options:[
   {t:"It counteracts inhibition of cardiac sodium channels", correct:true, why:"Her key: sodium bicarbonate counteracts the inhibition on sodium cardiac channels; it is listed for the elongated QRS interval."},
@@ -361,7 +361,7 @@ QUESTIONS.push(
  cite:"PoisoningTreatmentTable2026KEY.pdf row ‘Tricyclic Antidepressants’"},
 
 {id:"TBL3-109", lecture:"TBL3", prof:"Smith", tier:"new", topic:"TBL3", sub:"cns", skill:"apply",
- concept:"tbl-tca-moa", tags:["smith","why"], source:"slide",
+ concept:"tbl-tca-moa", dupOf:"TBL3-034", tags:["smith","why"], source:"slide",
  stem:"Why are IV fluids and dopamine or norepinephrine listed for tricyclic antidepressant overdose?",
  options:[
   {t:"Supportive care, to maintain blood pressure", correct:true, why:"Her key: these options are mostly supportive care, trying to maintain blood pressure."},
@@ -370,6 +370,7 @@ QUESTIONS.push(
   {t:"They counteract sodium channel inhibition", correct:false, why:"That is sodium bicarbonate's listed mechanism."},
   {t:"They reverse the dilated pupils and dry mouth", correct:false, why:"Those are listed signs, but fluids and pressors are aimed at the vasodilation and weak contractility that lower blood pressure."}],
  teach:"TCA overdose can bring vasodilation and reduced cardiac contractility, among other signs. IV fluids and dopamine or norepinephrine are supportive care that tries to maintain blood pressure; they do not act on the TCA itself. Sodium bicarbonate is the one listed treatment aimed at the drug's effect on cardiac sodium channels.",
+ note:"Her key lists vasodilation and reduced cardiac contractility among the signs and says the fluids and pressors are supportive care trying to maintain blood pressure; linking those signs to the low blood pressure is an inference from the two cells.",
  cite:"PoisoningTreatmentTable2026KEY.pdf row ‘Tricyclic Antidepressants’"},
 
 {id:"TBL3-110", lecture:"TBL3", prof:"Smith", tier:"new", topic:"TBL3", sub:"metabolic", skill:"apply",
@@ -386,7 +387,7 @@ QUESTIONS.push(
  cite:"PoisoningTreatmentTable2026KEY.pdf row ‘Salicylates’; Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Toxicokinetic-Based Treatment Enhance Renal Elimination’; transcript 10/19"},
 
 {id:"TBL3-111", lecture:"TBL3", prof:"Smith", tier:"new", topic:"TBL3", sub:"metabolic", skill:"apply",
- concept:"tbl-su-moa", tags:["smith","why"], source:"slide",
+ concept:"tbl-su-moa", dupOf:"TBL3-047", tags:["smith","why"], source:"slide",
  stem:"Sulfonylurea or meglitinide overdose causes hypoglycemia. Why does octreotide treat it?",
  options:[
   {t:"It inhibits insulin release from the pancreas", correct:true, why:"Her key: octreotide inhibits insulin release from the pancreas, against the hypoglycemia listed for this overdose."},
@@ -406,7 +407,7 @@ QUESTIONS.push(
   {t:"Kinetic: it prevents iron absorption from the gut", correct:false, why:"Deferoxamine acts on circulating iron, after absorption."},
   {t:"Pharmacological: it removes iron from an enzyme's active site", correct:false, why:"Removal from an active site is the pralidoxime and methemoglobin examples."},
   {t:"Kinetic: it traps iron in the urine by raising pH", correct:false, why:"Ion trapping is for weakly acidic poisons such as salicylates."}],
- teach:"Inactivation is used once a toxin has entered the circulation. A heavy metal chelator binds the metal with high affinity, the complex has low toxicity, and it is readily cleared. Deferoxamine chelates circulating ferric iron; deferasirox is the other iron chelator, and it can be given orally.",
+ teach:"Inactivation is used once a toxin has entered the circulation. A heavy metal chelator binds the metal with high affinity, the complex has no toxicity (she changed the slide's \"low\" to \"no\"), and it is readily cleared. Deferoxamine chelates circulating ferric iron; deferasirox is the other iron chelator, and it can be given orally.",
  cite:"PoisoningTreatmentTable2026KEY.pdf row ‘Iron’; Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slides ‘Inactivation of Poisons’, ‘Inactivation of Poisons: Heavy Metal Chelators’"},
 
 {id:"TBL3-113", lecture:"TBL3", prof:"Smith", tier:"new", topic:"TBL3", sub:"ironop", skill:"apply",
