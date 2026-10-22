@@ -98,3 +98,19 @@ See `## Conflicts / uncertain` in notes/L01.md, L02.md and L03.md. The ones that
 - 503 teach/why rewrites across L13–L17, QZ3, RMK3, TBL3, GRG3 so explanations give the reason, not the key. L14-054 keeps Gottlieb's inverse-agonist quote (user's call).
 - Smith quotes display without fillers (tidySpeech in app.js); source files stay verbatim.
 - Her wording vs textbook, kept as hers: NOAEL "lowest" dose; hydrophilic gases go deep; rhodanese given; Fab "monoclonal"; botulinum "aerobic".
+
+## 2026-10-22 (later): textbook over her slips, figures, short answer, exam format (v70–v74, PRs through #101)
+
+- Superseded from the entry above, by the user's decision: rhodanese is the body's own enzyme and sodium thiosulfate is given
+  (Marraffa pp. 203–204); digoxin immune Fab is ovine (sheep) Fab per the FDA DigiFab label; NOAEL is the highest no-effect dose.
+- Class A slips corrected across banks, glossary, guide3, reference3, tell3 (list in CHANGELOG "Exam format; her slips corrected").
+  11 class B/C cases still wait on the user (potency C vs D, drugs A/B TI, hydrophilic gases, Hardy-Weinberg, metronidazole,
+  benzo "agonist", NAPQI free radical, ion trapping, multiple-dose charcoal, benzene "gas", thalidomide market).
+- Slide figures: simg/simgAlt fields (stemMedia), clean embedded rasters only, answer labels masked; rule in STYLE.md.
+  Tox/Toxic Responses/PGx: 14 smith-* images on 23 questions; Treating Poisonings (user upload 10/22): 8 smith-tp-* images,
+  simg on L15-050, L16-005/016/018/019/032/045/046/050, toxidrome table in guide 26 (L16-013 no longer lowYield: Quiz 3 Q5).
+- Exam 3 format (her words 10/22): 54 questions, 2 hours, select-all no partial credit, 2 true/false, 2 short answer.
+  Exam sim strict mode ("no backwards nav", 10/21) is opt-in, off by default (store key ns+':noback').
+- Short answer page (sa3.js, 26 prompts, store key ns+':sa'). Quiz 4 (PGx) Q4, Q8, Q9, Q10 verbatim in QZ3 (sub quiz4).
+- 10/21 lecture is Exam 4 material ("Where I start today is for my, my last exam"); the Types of Genetic Variant
+  worksheet and Furuta 1998 belong to it and are not ingested.
