@@ -163,7 +163,7 @@ const PACES = {
 function schedule(id, outcome) {
   const st = qs(id), steps = (PACES[S.pace] || PACES[COURSE.paceDefault] || PACES.cram).steps, now = Date.now();
   if (outcome === 'wrong' || outcome === 'guess') st.box = 0;
-  else if (outcome === 'unsure') st.box = Math.max(1, st.box);
+  else if (outcome === 'unsure') st.box = st.n > 1 ? Math.max(1, st.box) : 0;   // "not sure" on a first answer comes back soon, like a miss
   else st.box = Math.min(steps.length - 1, st.box + 1);
   st.due = now + steps[st.box];
   st.last = now;
@@ -733,7 +733,7 @@ function metaLine(q) {
    in the one-at-a-time view that is Q itself, on the all-on-one-page view one object per question. */
 function qCard(q, st, opts = {}) {
   const sq = S.q[q.id], tag = opts.idx != null ? `${opts.idx + 1}. ` : '';
-  let h = `<div class="card qcard" data-qid="${q.id}"><div class="row" style="justify-content:space-between"><span class="meta">${tag}${metaLine(q)}${opts.seen ? ' · ' + (sq && sq.n ? 'seen ' + sq.n + '×' : 'new') : ''}</span>${flagBtn(q.id)}</div><div class="stem">${esc(q.stem)}</div>${stemMedia(q)}`;
+  let h = `<div class="card qcard" data-qid="${q.id}"><div class="row" style="justify-content:space-between"><span class="meta">${tag}${metaLine(q)}${opts.seen ? ' · ' + (sq && sq.n ? 'seen ' + sq.n + '×' : 'new') : ''}</span>${flagBtn(q.id)}</div><div class="stem" tabindex="-1">${esc(q.stem)}</div>${stemMedia(q)}`;
   if (q.type === 'match') {
     h += q.left.map((l, i) => `<div class="row" style="margin-bottom:8px"><span style="flex:1 1 200px">${esc(l)}</span>
       <select data-qid="${q.id}" data-l="${i}" ${st.answered ? 'disabled' : ''}><option value="">—</option>${st.rightOrder.map(r => `<option value="${esc(r)}" ${st.mpick && st.mpick[i] === r ? 'selected' : ''}>${esc(r)}</option>`).join('')}</select>
@@ -754,7 +754,7 @@ function qCard(q, st, opts = {}) {
   if (!st.answered && (q.multi || q.type === 'match')) h += `<button class="btn" ${opts.single ? 'id="check"' : ''} data-qid="${q.id}" data-check="1">Check</button>`;
   if (st.answered) {
     const pairsRight = q.type === 'match' ? q.left.filter((l, i) => st.mpick[i] === pairOf(q, l)).length : 0;
-    h += `<div class="verdict ${st.ok ? 'ok' : 'bad'}">${st.ok ? '✓ Correct' : '✗ Not correct'}${q.type === 'match' ? ` · ${pairsRight} of ${q.left.length} pairs right` : ''}</div>`;
+    h += `<div class="verdict ${st.ok ? 'ok' : 'bad'}" role="status" tabindex="-1">${st.ok ? '✓ Correct' : '✗ Not correct'}${q.type === 'match' ? ` · ${pairsRight} of ${q.left.length} pairs right` : ''}</div>`;
     const hidden = [];
     if (q.type === 'match' && q.pairs) q.pairs.filter(p => p.why).forEach(p => { const i = q.left.indexOf(p.l); if (st.mpick[i] === p.r) hidden.push({t: p.l, why: p.why}); else h += `<div class="why"><b>${esc(p.l)}</b>: ${esc(p.why)}</div>`; });
     else q.options.forEach((o, i) => { if (o.why && !o.correct && !(q.multi ? st.picked.has(i) : st.picked === i)) hidden.push(o); });
@@ -784,7 +784,8 @@ function renderQ() {
   if (Q.finished) return quizDone();
   if (S.layout === 'all') return renderAll();
   // the current question may have been answered on the all-on-one-page view
-  if (Q.cur && !Q.answered && Q.doneIds.has(Q.cur.id)) return nextQ();
+  // (answered or not here: an answer recorded there must not be recorded again by this card's Next)
+  if (Q.cur && Q.doneIds.has(Q.cur.id)) return nextQ();
   const q = Q.cur; clearView();
   let h = `<div class="row" style="justify-content:space-between"><span class="meta">${esc(Q.label || '')} · ${Q.done} answered${Q.done ? ' · ' + Q.right + ' right' : ''}</span>${layoutToggle()}</div><div class="row" style="margin:4px 0 10px">${sessStrip()}${aheadNote()}</div>`;
   // a right answer: Next records "Knew it" (as Enter does); the two smaller buttons beside it downgrade it
@@ -798,6 +799,8 @@ function renderQ() {
   document.querySelectorAll('select[data-l]').forEach(s => s.onchange = () => { Q.mpick = Q.mpick || {}; Q.mpick[+s.dataset.l] = s.value; });
   const ck = document.querySelector('[data-check]'); if (ck) ck.onclick = check;
   document.querySelectorAll('[data-c]').forEach(b => b.onclick = () => finish(b.dataset.c));
+  // the card was redrawn: keep keyboard and screen-reader users on it (the verdict after an answer, the question after Next)
+  const fv = Q.answered ? $('#view .verdict') : $('#view .qcard .stem'); if (fv) fv.focus({preventScroll: true});
 }
 /* All on one page: every question of the drill in order, each graded as it is answered.
    A wrong answer is recorded at once; a right one is recorded as "Knew it" and can be
@@ -876,10 +879,10 @@ function checkAll(id) {
 function downgrade(id, conf) {
   const st = Q.st[id]; if (!st.answered || !st.ok || st.conf !== 'sure') return;
   st.conf = conf; const sq = qs(id);
-  if (conf === 'guess') { sq.ok = Math.max(0, sq.ok - 1); Q.retest.push({concept: byId[id].concept, not: id}); }
+  if (conf === 'guess') { sq.ok = Math.max(0, sq.ok - 1); Q.right = Math.max(0, Q.right - 1); Q.retest.push({concept: byId[id].concept, not: id}); }
   for (let i = S.log.length - 1; i >= 0; i--) if (S.log[i].id === id) { S.log[i].conf = conf; break; }
   sq.box = st.box0 || 0;   // reschedule from the box the answer started in, as the one-at-a-time flow does
-  schedule(id, conf); save(); refreshCard(id);
+  schedule(id, conf); save(); refreshCard(id); setTimeout(refreshSess, 0);
 }
 const pairOf = (q, l) => (q.pairs.find(p => p.l === l) || {}).r;
 function pick(oi) {
@@ -910,7 +913,7 @@ function finish(conf) {
   if (S.log.length > 5000) S.log = S.log.slice(-5000);
   schedule(q.id, Q.ok ? conf : 'wrong');
   if (!Q.ok || conf === 'guess') Q.retest.push({concept: q.concept, not: q.id});
-  Q.done++; if (Q.ok) Q.right++; Q.doneIds.add(q.id);
+  Q.done++; if (Q.ok && conf !== 'guess') Q.right++; Q.doneIds.add(q.id);   // a guess is not counted right anywhere
   save(); nextQ();
 }
 
@@ -1300,7 +1303,9 @@ function loadExam() {
     const x = JSON.parse(store.get(EXKEY()) || 'null');
     if (!isObj(x) || !Array.isArray(x.qs) || !x.qs.length || !x.qs.every(id => byId[id] && !byId[id].type) || !Number.isFinite(+x.ends)) return null;
     if (!Array.isArray(x.orders) || x.orders.length !== x.qs.length || !x.orders.every((o, k) => Array.isArray(o) && o.length === byId[x.qs[k]].options.length && o.every(n => Number.isInteger(n) && n >= 0 && n < o.length))) return null;
-    const ans = {}; if (isObj(x.ans)) Object.keys(x.ans).forEach(id => { const a = x.ans[id]; if (byId[id] && (Number.isInteger(a) || (Array.isArray(a) && a.every(Number.isInteger)))) ans[id] = a; });
+    // an answer is kept only when it fits its question now (a content update can turn single-answer into select-all)
+    const fits = (q, a) => { const ok = n => Number.isInteger(n) && n >= 0 && n < q.options.length; return q.multi ? Array.isArray(a) && a.every(ok) : ok(a); };
+    const ans = {}; if (isObj(x.ans)) Object.keys(x.ans).forEach(id => { const a = x.ans[id]; if (byId[id] && x.qs.includes(id) && fits(byId[id], a)) ans[id] = a; });
     return {exam: +x.exam || null, name: typeof x.name === 'string' ? x.name : '', qs: x.qs, i: Math.max(0, Math.min(x.qs.length - 1, Math.floor(+x.i) || 0)), ans, flag: isObj(x.flag) ? x.flag : {}, orders: x.orders, ends: +x.ends, done: !!x.done, score: Number.isFinite(+x.score) ? +x.score : 0};
   } catch (e) { return null; }
 }
@@ -1327,7 +1332,7 @@ function drawExam(n) {
     const list = shuffle(eligible(p)).sort((a, b) => (concepts.has(a.concept) ? 1 : 0) - (concepts.has(b.concept) ? 1 : 0));
     for (const q of list) {
       if (want[i] <= 0) break;
-      if (used.has(q.id) || (q.dupOf && used.has(q.dupOf)) || [...used].some(u => byId[u].dupOf === q.id)) continue;
+      if (used.has(q.id) || (q.dupOf && used.has(q.dupOf)) || [...used].some(u => byId[u].dupOf === q.id || (q.dupOf && byId[u].dupOf === q.dupOf))) continue;   // siblings of one original too
       if (concepts.has(q.concept) && list.some(o => !used.has(o.id) && !concepts.has(o.concept))) continue;
       out.push(q); used.add(q.id); concepts.add(q.concept); want[i]--;
     }
@@ -1358,7 +1363,7 @@ function drawBlueprint(bp) {
   const catOf = bp.parts.some(p => p.test) ? q => (bp.parts.find(p => p.test && p.test(q)) || bp.parts.find(p => p.rest)).key : bpCat;
   const by = {}; elig.forEach(q => (by[catOf(q)] = by[catOf(q)] || []).push(q));
   const total = active().questions, out = [], used = new Set();
-  const ok = q => !used.has(q.id) && !(q.dupOf && used.has(q.dupOf)) && ![...used].some(u => byId[u].dupOf === q.id);
+  const ok = q => !used.has(q.id) && !(q.dupOf && used.has(q.dupOf)) && ![...used].some(u => byId[u].dupOf === q.id || (q.dupOf && byId[u].dupOf === q.dupOf));
   const cat = new Map();
   const take = (key, n) => {
     const list = shuffle((by[key] || []).slice()), seen = new Set();
@@ -1396,7 +1401,7 @@ function vExam() {
   if (EX && EX.done && (!EX.exam || EX.exam === ex.id)) return examResult();
   const lens = [...new Set([ex.questions, 25, 50, max].filter(x => x && x <= max))].sort((a, b) => a - b);
   let h = `<h2>Exam simulator</h2><div class="row" style="margin:-4px 0 8px">${examSwitch()}</div><p class="sub">${esc(ex.name)}: ${ex.questions ? ex.questions + ' questions' : 'question count not yet announced'}, ${ex.minutes} minutes allotted.
-    Answers are not shown until you submit. Select-all items are scored all-or-nothing. ${ex.blueprint ? 'With his topic counts on, the paper follows them; otherwise' : ''} definition questions make up at most 15% of the paper.</p>
+    Answers are not shown until you submit. Select-all items are scored all-or-nothing. ${ex.blueprint ? 'With his topic counts on, the paper follows them; otherwise definition' : 'Definition'} questions make up at most 15% of the paper.</p>
     <div class="card"><div class="row"><span>Length:</span>${lens.map(n => `<button type="button" class="chip ${n === (ex.questions || lens[0]) ? 'on' : ''}" aria-pressed="${n === (ex.questions || lens[0])}" data-n="${n}">${n === max ? 'All ' + n : n}</button>`).join('')}</div>
     ${ex.blueprint ? `<div style="margin-top:10px"><label id="bplab"><input type="checkbox" id="bp" checked> Match his topic counts (the full ${ex.questions}-question paper only)</label>
       <details class="fold bpl"><summary>His topic counts</summary><ul class="bpcols">${ex.blueprint.parts.map(p => `<li>${esc(p.name)}: <b>${p.rest ? 'the rest' : p.min ? 'at least ' + p.min : Array.isArray(p.n) ? p.n.join('–') : p.n}</b></li>`).join('')}<li>Select-all items: <b>${ex.blueprint.sata}</b></li></ul></details></div>` : ''}
@@ -1482,11 +1487,11 @@ function renderExam() {
   if (EX.shown !== EX.i) { EX.shown = EX.i; window.scrollTo(0, 0); }
   const q = byId[EX.qs[EX.i]], ord = EX.orders[EX.i], a = EX.ans[q.id];
   let h = `<div class="row" style="justify-content:space-between"><b>${EX.name ? esc(EX.name) + ' · ' : ''}Question ${EX.i + 1} of ${EX.qs.length}</b><span class="row"><span class="timer" id="clock" role="timer"></span>${layoutToggle()}</span></div>
-    <div class="grid">${EX.qs.map((id, k) => `<button data-j="${k}" class="${examAnswered(id) ? 'ans' : ''} ${k === EX.i ? 'cur' : ''} ${isFlagged(id) ? 'flag' : ''}">${k + 1}</button>`).join('')}</div>
+    <div class="grid">${EX.qs.map((id, k) => `<button data-j="${k}" class="${examAnswered(id) ? 'ans' : ''} ${k === EX.i ? 'cur' : ''} ${isFlagged(id) ? 'flag' : ''}" aria-label="Question ${k + 1}${examAnswered(id) ? ', answered' : ''}${isFlagged(id) ? ', flagged' : ''}"${k === EX.i ? ' aria-current="true"' : ''}>${k + 1}</button>`).join('')}</div>
     <div class="card"><div class="stem">${esc(q.stem)}</div>${stemMedia(q)}`;
   ord.forEach((oi, n) => {
     const sel = q.multi ? (a || []).includes(oi) : a === oi;
-    h += `<button class="opt ${sel ? 'sel' : ''}" data-o="${oi}"><span class="k">${q.multi ? (sel ? '☑' : '☐') : LETTERS[n]}</span><span>${esc(q.options[oi].t)}</span></button>`;
+    h += `<button class="opt ${sel ? 'sel' : ''}" data-o="${oi}" aria-pressed="${sel}"><span class="k">${q.multi ? (sel ? '☑' : '☐') : LETTERS[n]}</span><span>${esc(q.options[oi].t)}</span></button>`;
   });
   h += `</div><div class="row"><button class="btn ghost" id="prev" ${EX.i ? '' : 'disabled'}>Previous</button>
     ${flagBtn(q.id)}
@@ -1500,7 +1505,7 @@ function renderExam() {
   $('#submit').onclick = askSubmit;
   examTick();
 }
-const exRight = (q, a) => q.multi ? (Array.isArray(a) && gradeMulti(q, new Set(a))) : (a != null && q.options[a].correct);
+const exRight = (q, a) => q.multi ? (Array.isArray(a) && gradeMulti(q, new Set(a))) : (Number.isInteger(a) && !!q.options[a] && !!q.options[a].correct);
 function submitExam() {
   clearInterval(TICK);
   EX.done = true;
@@ -1508,6 +1513,8 @@ function submitExam() {
   EX.qs.forEach(id => {
     const q = byId[id], a = EX.ans[id], ok = exRight(q, a);
     if (ok) score++;
+    // an unanswered question counts against the paper's score but is not a miss in the learner's record
+    if (!examAnswered(id)) return;
     const st = qs(id); st.n++; if (ok) st.ok++;
     noteAnswer(q, {id, t: Date.now(), ok, conf: 'exam', picked: a, ms: 0});
     schedule(id, ok ? 'unsure' : 'wrong');
@@ -2087,6 +2094,8 @@ function antiOpen(slug, opener) {
     ANTI = {opener: opener || document.activeElement, el: document.createElement('div')};
     ANTI.el.className = 'antiview'; ANTI.el.setAttribute('role', 'dialog'); ANTI.el.setAttribute('aria-modal', 'true'); ANTI.el.setAttribute('aria-labelledby', 'antititle');
     document.body.appendChild(ANTI.el); document.body.classList.add('antiopen');
+    // the page behind is inert while the panel is open: Tab stays in the panel, the theme cannot change underneath
+    ANTI.inert = [...document.body.children].filter(c => c !== ANTI.el && !c.inert); ANTI.inert.forEach(c => { c.inert = true; });
   }
   ANTI.slug = d.slug;
   ANTI.el.innerHTML = `<div class="antibox"><div class="antihead"><b id="antititle">${esc(d.title)}</b><span class="meta" style="margin:0">${i + 1} of ${n}</span>
@@ -2097,7 +2106,7 @@ function antiOpen(slug, opener) {
   $('#anticlose').focus();
 }
 function antiClose() {
-  if (!ANTI) return; ANTI.el.remove(); document.body.classList.remove('antiopen');
+  if (!ANTI) return; ANTI.el.remove(); document.body.classList.remove('antiopen'); (ANTI.inert || []).forEach(c => { c.inert = false; });
   const o = ANTI.opener; ANTI = null; if (o && o.focus && document.contains(o)) o.focus();
 }
 document.addEventListener('click', e => {
@@ -2633,17 +2642,23 @@ const FIG_MIN_PX = 10;
 const swipeHint = box => { const h = box.nextElementSibling; if (h && h.classList.contains('swipe') && box.clientWidth) h.hidden = box.scrollWidth <= box.clientWidth + 1; };
 function fitFigs(root) {
   if (!PHONE || !PHONE.matches || !root) return;
+  // all reads first, then all writes, then the hint checks: one layout for the page instead of one per figure
+  const todo = [];
   root.querySelectorAll('.fig .svgx > svg:not([data-fit])').forEach(svg => {
+    const vb = svg.viewBox && svg.viewBox.baseVal ? svg.viewBox.baseVal.width : 0; let min = Infinity;
+    if (vb) svg.querySelectorAll('text').forEach(t => { if (t.textContent.trim()) { const f = parseFloat(getComputedStyle(t).fontSize); if (f > 0 && f < min) min = f; } });
+    todo.push([svg, vb, min]);
+  });
+  const boxes = [];
+  todo.forEach(([svg, vb, min]) => {
     svg.setAttribute('data-fit', '1');
-    const vb = svg.viewBox && svg.viewBox.baseVal ? svg.viewBox.baseVal.width : 0; if (!vb) return;
-    let min = Infinity;
-    svg.querySelectorAll('text').forEach(t => { if (t.textContent.trim()) { const f = parseFloat(getComputedStyle(t).fontSize); if (f > 0 && f < min) min = f; } });
-    if (!(min < Infinity) || vb * FIG_MIN_PX / min <= 300) return;   // fits a phone as drawn
+    if (!vb || !(min < Infinity) || vb * FIG_MIN_PX / min <= 300) return;   // fits a phone as drawn
     svg.style.setProperty('--minw', Math.ceil(vb * FIG_MIN_PX / min) + 'px');
     const box = svg.parentElement; box.classList.add('fit');
     if (!(box.nextElementSibling && box.nextElementSibling.classList.contains('swipe'))) box.insertAdjacentHTML('afterend', '<div class="swipe" hidden>↔ Scroll the picture sideways to see all of it, or pinch to zoom.</div>');
-    swipeHint(box);
+    boxes.push(box);
   });
+  boxes.forEach(swipeHint);
 }
 const allHints = () => document.querySelectorAll('.svgx.fit').forEach(swipeHint);
 if (window.MutationObserver) {
@@ -3026,7 +3041,7 @@ function vData() {
       (q.options || []).filter(o => o.correct).map(o => o.t).join(' | '), q.cite]));
     download(`${COURSE.ns}-missed.csv`, rows.map(r => r.map(c => '"' + String(c == null ? '' : c).replace(/"/g, '""') + '"').join(',')).join('\n'), 'text/csv');
   };
-  $('#reset').onclick = () => { if (confirm('Erase all progress for this profile?')) { S = {q: {}, log: [], pace: COURSE.paceDefault, exams: [], flags: {}, layout: S.layout || 'one'}; save(); vData(); } };
+  $('#reset').onclick = () => { if (confirm('Erase all progress for this profile?')) { endExam(); S = {q: {}, log: [], pace: COURSE.paceDefault, exams: [], flags: {}, layout: S.layout || 'one'}; save(); vData(); } };   // an open exam paper is erased too
 }
 
 document.addEventListener('keydown', e => {
