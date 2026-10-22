@@ -113,7 +113,7 @@ const REFERENCE3_HTML = `
 <h3 id="ref3-l14-4">13. Undesired effects: the general-concept pairs</h3>
 <table class="reftab"><thead><tr><th>Pair</th><th>Her example</th><th>Source</th></tr></thead><tbody>
 <tr><td>Immediate vs delayed</td><td>DES → vaginal cancer in the daughters (years); some organophosphate pesticides → neuropathy days later (slide: TOCP)</td><td>TR ‘Immediate vs. Delayed’; T 10/13</td></tr>
-<tr><td>Reversible vs irreversible</td><td>Reversibility = ability to regenerate. Liver: often reversible (mild injury). Nerve and CNS cells: irreversible. Cancer and birth defects: irreversible</td><td>TR ‘Reversible vs. Irreversible’; T 10/13</td></tr>
+<tr><td>Reversible vs irreversible</td><td>Reversibility = ability to regenerate. Liver: often reversible (mild injury). Nerve and CNS cells: irreversible. Cancer and birth defects: irreversible. One exposure can cause both</td><td>TR ‘Reversible vs. Irreversible’; T 10/13</td></tr>
 <tr><td>Local vs systemic</td><td>Local at first contact: acid on skin, chlorine gas (highly reactive agents often never go systemic). Systemic needs absorption; most toxins are systemic. Both: tetraethyl lead (burn, then neurotoxic death). Indirect systemic: acid burn → fluid loss → kidney problems</td><td>TR ‘Local vs. Systemic’; T 10/13</td></tr>
 <tr><td>Chemical interactions</td><td>Additive, synergistic, potentiation, antagonism; multiple exposures make site risk hard to quantify</td><td>TR ‘Chemical Interactions’; T 10/13</td></tr>
 <tr><td>Tolerance: dispositional (ADME) vs reduced responsiveness (pharmacodynamic)</td><td>Carbon tetrachloride inhibits its own metabolism; cadmium induces its metal-carrying protein. Receptor down-regulation</td><td>TR ‘Tolerance’; T 10/13</td></tr>
@@ -154,7 +154,7 @@ const REFERENCE3_HTML = `
 <tr><td>Blood–brain barrier</td><td>Tight junctions instead of fenestrations; tightly connected glial cells; keeps out larger and non-lipophilic compounds; not continuous; still developing at birth (months to years)</td><td>Toxic Responses ‘Neurotoxicity’; T 10/14</td></tr>
 <tr><td>Energy</td><td>Very high requirements; dependent on aerobic metabolism</td><td>Toxic Responses ‘Energy and Axons’; T 10/14</td></tr>
 <tr><td>Axonal transport</td><td>Very long cells must move nutrients and waste up and down the axon</td><td>Toxic Responses ‘Energy and Axons’; T 10/14</td></tr>
-<tr><td>Myelin</td><td>Schwann cells wrapped layer on layer; speeds conduction; damage → slower conduction, tingling hands and feet</td><td>Toxic Responses ‘Myelin’; T 10/14</td></tr>
+<tr><td>Myelin</td><td>Schwann cells (PNS) or oligodendrocytes (CNS) wrapped layer on layer; speeds conduction; damage → slower conduction, tingling hands and feet</td><td>Toxic Responses ‘Myelin’; T 10/14</td></tr>
 <tr><td>Neurotransmission</td><td>Release, binding, reuptake can each be disturbed; organophosphates</td><td>Toxic Responses ‘Neurotransmission’; T 10/14</td></tr>
 </tbody></table>
 <table class="reftab"><thead><tr><th>Pattern (Fig 16-2)</th><th>What happens</th><th>Her example</th></tr></thead><tbody>

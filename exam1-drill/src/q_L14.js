@@ -32,7 +32,7 @@ QUESTIONS.push(
   {t:"It cannot be read without the LD50", correct:false, why:"LD50 is a separate value from a population mortality curve."}],
  teach:"On the left panel of the slide, A and B are compared for one response with increasing dose. A is the more potent compound: the response she is measuring starts at a lower dose than it does for B. This is the comparison she expected the class to make already from Dr. Gottlieb's lectures.",
  quote:"I think you guys are able to tell me already which compound is most potent. A, right, because you start getting that effect, the response that we're measuring at a lower dose compared to B.",
- cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf (the dose–response shape slides before ‘Values Developed from Dose-Response’); transcript 10/13"},
+ cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Potency comparison in Dose-Response’; transcript 10/13"},
 
 {id:"L14-002", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"potency", skill:"figure",
  concept:"potency-c-vs-d-trick", tags:["smith"], source:"transcript",
@@ -45,7 +45,7 @@ QUESTIONS.push(
   {t:"D, as the straight line always shows the more potent compound", correct:false, why:"The shape of the line does not decide potency; the dose needed for a given response does."}],
  teach:"The right panel is her trick question. C starts responding at a lower dose than D, so at low doses C is more potent, but C's curve bends over while D's continues linearly across the doses tested, so after the lines cross D is more potent. Potency can change places with dose, which is why a study has to cover a wide enough range of doses to catch it.",
  quote:"So, you can't say that C is always more potent than D. You can in the lower doses, right? OK. But once you get to a certain point where it's leveled off and the line is crossing D's dose response line, you would say that D is more potent than C, correct?",
- cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf (the dose–response shape slides before ‘Values Developed from Dose-Response’); transcript 10/13"},
+ cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Potency comparison in Dose-Response’; transcript 10/13"},
 
 {id:"L14-003", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"potency", skill:"apply", multi:true,
  concept:"why-curve-levels-off", tags:["smith"], source:"transcript",
@@ -58,7 +58,7 @@ QUESTIONS.push(
   {t:"D has a longer half-life than C", correct:false, why:"Half-life was not among the explanations; the question is why C's own response stops rising."}],
  teach:"She asked the room why C's curve bends over and accepted several different answers: the receptor targets are saturated; C may hit the shared receptor in a different way than D; the metabolism that keeps C active may saturate; the transporter that absorbs an oral compound across the gut (P-glycoprotein) may saturate; a partial agonist could in principle behave this way; and a rising dose might change stomach pH. Target, tissue, binding, metabolism, distribution and absorption can all change a compound's apparent potency with dose.",
  quote:"So we've talked about target, we've talked about tissue, we talked about, you know, where does the, where does the compound bind to its target. We talked about metabolism, we've talked about distribution, absorption issues. So all these things could be causing compound C's potency to change with an increasing dose, therefore, making this a trick question",
- cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf (the dose–response shape slides before ‘Values Developed from Dose-Response’); transcript 10/13"},
+ cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Potency comparison in Dose-Response’; transcript 10/13"},
 
 {id:"L14-004", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"potency", skill:"apply",
  concept:"wide-dose-range", tags:["smith"], source:"transcript",
@@ -71,7 +71,7 @@ QUESTIONS.push(
   {t:"Nothing, as the low doses are the only ones that matter", correct:false, why:"The high doses are where C and D cross."}],
  teach:"When designing a dose–response study, include a fairly large range of doses. If dosing stops too early, the curve of C has not yet bent over, and the fact that C and D switch places in potency is missed.",
  quote:"if we did not extend the doses far enough, we, like, let's say we cut off dosing, oh, about right here. And we weren't quite sure where the curve of C was going, we might miss the fact that their potency basically changes places, right?",
- cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf (the dose–response shape slides before ‘Values Developed from Dose-Response’); transcript 10/13"},
+ cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Potency comparison in Dose-Response’; transcript 10/13"},
 
 /* ---------------- ED, TD, LD curves ---------------- */
 {id:"L14-005", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"edtdld", skill:"recall",
@@ -85,7 +85,7 @@ QUESTIONS.push(
   {t:"Threshold dose, effective dose, LD50", correct:false, why:"Threshold and LD50 are points, not the three curves on this slide."}],
  teach:"A dose–response study may look for more than one response to a compound. The slide labels the therapeutic response ED (effective dose), then TD (toxic dose), and finally LD (lethal dose): three lines of increasing response with increasing dose for one compound.",
  quote:"so effective or therapeutic dose is first, then a toxic response, and then a lethal dose. So again, this is increasing dose with increasing response, and we've got 3 lines, effective, toxic, or lethal.",
- cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf (the dose–response shape slides before ‘Values Developed from Dose-Response’); transcript 10/13"},
+ cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘ED, TD and LD Comparison from Dose-Response’; transcript 10/13"},
 
 {id:"L14-006", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"edtdld", skill:"figure",
  concept:"nonparallel-different-mechanisms", tags:["smith"], source:"transcript",
@@ -99,7 +99,7 @@ QUESTIONS.push(
  teach:"Most people expect that increasing dose carries a compound linearly from effective to toxic to lethal, with parallel lines. When the three lines are not parallel, differences in ADME contribute, but the larger point is the last principle of toxicology: the targets and mechanisms that produce effectiveness, toxicity and death can be different, so the compound causes toxicity in a different way than it causes its effect.",
  quote:"if your dose response curves are not linear. Then it would lead you to believe that the mechanism for how this drug is being effective versus toxic versus lethal, that those mechanisms leading to those three particular outcomes are different, so it's causing toxicity in a different way. Than it's causing effectiveness",
  note:"She first accepted a student's answer, differences in ADME, then said the more important explanation is different targets and mechanisms.",
- cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf (the dose–response shape slides before ‘Values Developed from Dose-Response’); transcript 10/13"},
+ cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘ED, TD and LD Comparison from Dose-Response’; transcript 10/13"},
 
 /* ---------------- Indices: TI, MOS, MOE ---------------- */
 {id:"L14-007", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"indices", skill:"recall",
@@ -483,7 +483,7 @@ QUESTIONS.push(
   {t:"Its concentration of the toxicant", correct:false, why:"Concentration determines whether injury occurs, not whether the tissue can recover."},
   {t:"Whether the effect was immediate or delayed", correct:false, why:"Timing is a separate general concept."},
   {t:"Whether the exposure was oral", correct:false, why:"Route does not set reversibility."}],
- teach:"Some toxic effects are reversible and others are not, and the tissue's ability to regenerate decides which. The liver is unique in healing and regenerating itself, so liver injuries can often be reversible (mild injury more than severe chronic injury). Most nerve and CNS cells cannot divide or be regenerated, so nerve damage should be considered irreversible. Cancer and birth defects are also irreversible.",
+ teach:"Some toxic effects are reversible and others are not, and the tissue's ability to regenerate decides which. The liver is unique in healing and regenerating itself, so liver injuries can often be reversible (mild injury more than severe chronic injury). Most nerve and CNS cells cannot divide or be regenerated, so nerve damage should be considered irreversible. Cancer and birth defects are also irreversible. One exposure can produce both kinds of injury: \"So sometimes you get both.\"",
  quote:"the liver is really unique. It is able to heal itself, to regenerate oftentimes when it becomes damaged ... most of our, uh, nerves or CNS cells, they cannot be, uh, their injury is permanent. They can't divide. They can't be regenerated.",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Reversible vs. Irreversible’; transcript 10/13"},
 
@@ -735,7 +735,7 @@ QUESTIONS.push(
   {t:"Enantiomer effect", correct:false, why:"That is thalidomide."},
   {t:"Receptor-subtype effect", correct:false, why:"That is the beta-blocker and asthma example."},
   {t:"Idiosyncratic reaction", correct:false, why:"The mechanism is known."}],
- teach:"Diphenhydramine, a first-generation antihistamine, prevents allergic symptoms by hitting histamine receptors in the periphery and causes drowsiness (and dry mouth) by hitting histamine receptors in the brain: an on-target adverse effect in the wrong tissue. Newer antihistamines (cetirizine, fexofenadine) were tweaked so they do not cross the blood-brain barrier and so lack the drowsiness. She will keep calling them antihistamines although medicinal chemistry classes them as partial agonists.",
+ teach:"Diphenhydramine, a first-generation antihistamine, prevents allergic symptoms by hitting histamine receptors in the periphery and causes drowsiness (and dry mouth) by hitting histamine receptors in the brain: an on-target adverse effect in the wrong tissue. Newer antihistamines (cetirizine, fexofenadine) were tweaked so they do not cross the blood-brain barrier and so lack the drowsiness. For the receptor class, keep Dr. Gottlieb's Exam 1 point: \"there's only one inverse agonist you need to know. It's gonna be an antihistamine. If you know what loratadine is, you know that's the inverse agonist\".",
  quote:"it causes drowsiness because it's hitting the histamine receptors in the brain, so that's an on target adverse effect in the wrong tissue. When we developed newer antihistamines, we tweaked those molecules, and we made, made them so that they don't cross the blood-brain barrier.",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘On-Target Examples’; transcript 10/13"},
 
@@ -880,7 +880,7 @@ QUESTIONS.push(
   {t:"Cancer never stays in one organ", correct:false, why:"Spread was not her argument."},
   {t:"Cancer has no known mechanism", correct:false, why:"The shared mechanisms are the point."},
   {t:"Cancer is caused only by fibrosis", correct:false, why:"Fibrosis is a separate endpoint."}],
- teach:"Cancer can happen in any organ, more likely in some than others. It is non-organ specific because, at the cellular level, the pathology causing a cancer in one organ can be the same as in another: some lung cancers carry the same genetic mutation as colon cancers; some lung cancers share mechanisms with breast cancers. Not always, but often enough; oncology next spring will go deeper.",
+ teach:"Cancer can happen in any organ, more likely in some than others. It is non-organ specific because, at the cellular level, the pathology causing a cancer in one organ can be the same as in another: some lung cancers carry the same genetic mutation as colon cancers; some lung cancers share mechanisms with breast cancers. Not always: \"That is not always the case, but we do see this happening.\"",
  quote:"classic example would be some lung cancers are caused by the same genetic mutation as you will see in colon cancers, OK. Some Some lung cancers are what we'll also see in some breast cancers, so at the cellular level, the pathology is the same",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Non-Specific: Cancer’; transcript 10/13"},
 
