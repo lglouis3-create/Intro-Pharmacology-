@@ -210,7 +210,7 @@ QUESTIONS.push(
  options:[
   {t:"It is too expensive for small hospitals to stock", correct:true, why:"Her reason: antivenoms are not stocked in every small rural hospital because they are too expensive, so the patient waits for a large hospital, such as those in San Antonio, to send it."},
   {t:"Each dose must be raised in an animal after the bite", correct:false, why:"Animals are inoculated to make the antibodies beforehand; the wait is about where the stock is."},
-  {t:"It must be monoclonal, and few are made", correct:false, why:"Most antivenoms are still polyclonal and are used; monoclonal ones are still being developed."},
+  {t:"It must be monoclonal, and few are made", correct:false, why:"Many antivenoms are still polyclonal and in use; few monoclonal antivenoms exist yet."},
   {t:"It must be made from the patient's own blood", correct:false, why:"Polyclonal antivenom is collected from an inoculated animal."},
   {t:"It must first be checked for type III hypersensitivity", correct:false, why:"Serum sickness is a reaction that can follow polyclonal antivenom; it is not a test that delays giving it."}],
  teach:"Antivenoms are expensive, so small rural hospitals do not stock them. A patient far from a large hospital has to wait for the antivenom to be brought in. Hospitals know which other hospitals hold antivenom and how much, and there have been shortages, such as coral snake antivenom in recent years.",
