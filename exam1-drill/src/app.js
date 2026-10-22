@@ -173,14 +173,14 @@ function schedule(id, outcome) {
 
 /* ---------- views ---------- */
 const VIEWS = [
-  ['topics', 'Topics'], ['quiz', 'Quiz'], ['terms', 'Terms'], ['weak', 'Weak spots'], ['exam', 'Exam sim'],
+  ['topics', 'Topics'], ['quiz', 'Quiz'], ['terms', 'Terms'], ['weak', 'Weak spots'], ['exam', 'Exam sim'], ['sa', 'Short answer'],
   ['graphs', 'Graphs'], ['diagrams', 'Diagrams'], ['scenes', 'Scenes'], ['map', 'Question map'], ['drugs', 'All drugs'], ['ref', 'Reference'], ['tell', 'Tell apart'], ['pair', 'Pair up'], ['rxq', 'Drug ↔ receptor'], ['ptab', 'Poisoning table'], ['guide', 'Guides'], ['readings', 'Readings'], ['data', 'Progress']
 ];
 let CUR = 'topics';
 /* Smith focus: one switch that keeps only the pages her exam uses, locks the exam to Exam 3, hides the other
    exams' groups and puts her own words about what to study at the top of Topics. Remembered per browser. */
 const FOCUS_KEY = COURSE.ns + ':focus', FOCUS_EXAM = 3;
-const FOCUS_VIEWS = ['topics', 'quiz', 'terms', 'weak', 'exam', 'ptab', 'guide', 'readings', 'ref', 'tell', 'data'];
+const FOCUS_VIEWS = ['topics', 'quiz', 'terms', 'weak', 'exam', 'sa', 'ptab', 'guide', 'readings', 'ref', 'tell', 'data'];
 const focusOn = () => store.get(FOCUS_KEY) === '1' && COURSE.exams.some(e => e.id === FOCUS_EXAM);
 function setFocus(on) {
   store.set(FOCUS_KEY, on ? '1' : '0');
@@ -526,14 +526,14 @@ function backBtn() {
   if (!b) { b = document.createElement('button'); b.id = 'backbtn'; b.type = 'button'; b.className = 'btn'; document.body.appendChild(b); b.onclick = goBack; }
   b.textContent = backLabel();
 }
-const backLabel = () => '← Back to ' + ({topics: 'Topics', quiz: 'the question', exam: 'the exam', graphs: 'the figures', map: 'the map', terms: 'the terms', weak: 'Weak spots', tell: 'Tell apart', ref: 'the reference', guide: 'the guide', diagrams: 'the diagrams', drugs: 'the drug table', pair: 'Pair up', rxq: 'the receptor drill', ptab: 'the poisoning table drill', scenes: 'the scenes', readings: 'the readings'}[(RET[RET.length - 1] || {}).view] || 'where you were');
+const backLabel = () => '← Back to ' + ({topics: 'Topics', quiz: 'the question', exam: 'the exam', graphs: 'the figures', map: 'the map', terms: 'the terms', weak: 'Weak spots', tell: 'Tell apart', ref: 'the reference', guide: 'the guide', diagrams: 'the diagrams', drugs: 'the drug table', pair: 'Pair up', rxq: 'the receptor drill', ptab: 'the poisoning table drill', sa: 'short answer', scenes: 'the scenes', readings: 'the readings'}[(RET[RET.length - 1] || {}).view] || 'where you were');
 function goBack() { const r = RET.pop(); if (!r) return; backBtn(); go(r.view, true); window.scrollTo(0, r.y);
   // cards sized by estimate (content-visibility) settle after layout: put the window back where it was, twice
   requestAnimationFrame(() => requestAnimationFrame(() => window.scrollTo(0, r.y))); setTimeout(() => window.scrollTo(0, r.y), 150); }
 document.addEventListener('click', e => { const j = e.target.closest('[data-jump]'); if (j) { const [v, a] = j.dataset.jump.split(':'); jump(v, a); if (j.dataset.jq) markFor(j.dataset.jq, a); } });
 /* "view:anchor:group:key": jump to the page, then open that explanation card (the reference's "Why?" cards). */
 document.addEventListener('click', e => { const j = e.target.closest('[data-jumpx]'); if (!j) return; const [v, a, g, k] = j.dataset.jumpx.split(':'); jump(v, a); const out = showExplain(g, k); if (out) scrollToEl(out.closest('.xpick')); });
-const VIEWFN = {topics: vTopics, quiz: vQuiz, terms: vTerms, weak: vWeak, exam: vExam, map: vMap, graphs: vGraphs, diagrams: vDiagrams, scenes: vScenes, drugs: vDrugs, ref: vRef, tell: vTell, pair: vPair, rxq: vRxq, ptab: vPtab, guide: vGuide, readings: vReadings, data: vData};
+const VIEWFN = {topics: vTopics, quiz: vQuiz, terms: vTerms, weak: vWeak, exam: vExam, map: vMap, graphs: vGraphs, diagrams: vDiagrams, scenes: vScenes, drugs: vDrugs, ref: vRef, tell: vTell, pair: vPair, rxq: vRxq, ptab: vPtab, sa: vSa, guide: vGuide, readings: vReadings, data: vData};
 const rerender = () => { const y = window.scrollY; if (CUR === 'quiz' && Q) renderQ(); else if (CUR === 'exam' && EX && !EX.done) renderExam(); else if (CUR === 'exam' && EX && EX.done) examResult(); else VIEWFN[CUR](); window.scrollTo(0, y); };
 document.addEventListener('click', e => {
   const f = e.target.closest('[data-flag]');
@@ -629,6 +629,9 @@ function focusCard() {
     ${item("But you do know, need to know the details that I have in my table, my key.", '10/20', `${drill('GRG3', 'Guideline reading guide key')}${drill('RMK3', 'Discussion guide key')}`)}
     ${item("Everything that we've talked about in class, every, everything on slides, everything that's come out of my mouth, the things you've read, and we've talked about all that is testable.", '10/19', `<button type="button" class="btn ghost" data-jump="guide:guide3-scope">What Exam 3 tests</button><button type="button" class="btn ghost" data-jump="readings:rd-top">Readings</button>`)}
     ${item("Remember, go back and study to these objectives, at least. If you can answer these objective questions, you should pass my exam.", '10/9', `<button type="button" class="btn ghost" data-jump="guide:guide3-scope">Guides</button>`)}
+    ${item("If I give you guys a short answer, which I likely will", '10/21', `<button type="button" class="btn ghost" data-jump="sa:sa-top">Short answer practice</button>`)}
+    ${item("No, there will not, yeah, no backwards nav, OK, yes.", '10/21 (asked whether you can go back to a question)', `<button type="button" class="btn ghost" data-jump="exam:">Exam sim (no going back)</button>`)}
+    ${item("So what we covered yesterday is all on. This exam on Friday.", '10/21 (yesterday = the 10/20 pharmacogenomics lecture; 10/21 starts her next exam)', '')}
     ${item("That's how we have it on the syllabus.", '10/20 (the class vote put the 10/20 pharmacogenomics lecture on Friday\'s exam)', '')}
   </ul><p class="sub" style="margin:6px 0 0">Smith focus is on: only her exam's pages and questions show. Turn it off from the ★ button in the tab bar.</p></div>`;
 }
@@ -2161,6 +2164,50 @@ function ptAdvance() {
   vPtab();
 }
 document.addEventListener('keydown', e => { if (ANTI) return; if (CUR === 'ptab' && e.key === 'Enter' && !e.target.closest('button, input, select, textarea')) { const b = $('#ptnext'); if (b) b.click(); } });
+
+/* ---------- Short answer (Exam 3) ----------
+   Her exam has short-answer items graded with partial credit. Each prompt: write an answer, then compare it with the
+   model answer and tick the key points it covers. Drafts and ticks are kept per browser. */
+const SA_LIST = typeof SHORT3 === 'undefined' ? [] : SHORT3;
+const SA_KEY = COURSE.ns + ':sa';
+let SA = {i: 0, order: null, shown: false};
+const saLec = id => { const l = COURSE.lectures.find(x => x.id === id); return l ? l.label : id; };
+const saState = () => storeObj(SA_KEY);
+function saSave(id, patch) { const all = saState(); all[id] = Object.assign({}, all[id] || {}, patch); store.set(SA_KEY, JSON.stringify(all)); }
+function vSa() {
+  if (!SA_LIST.length) { $('#view').innerHTML = '<h2 id="sa-top">Short answer</h2><p class="sub">No prompts loaded.</p>'; return; }
+  if (!SA.order) SA.order = SA_LIST.map((x, k) => k);
+  const p = SA_LIST[SA.order[SA.i]], st = saState()[p.id] || {}, ticks = st.ticks || [];
+  const done = SA_LIST.filter(x => (saState()[x.id] || {}).checked).length;
+  let h = `<h2 id="sa-top">Short answer</h2><p class="sub">Her exam has two short-answer questions graded with partial credit. Write your answer first, in the length the prompt asks for, then check it against the model answer and tick each key point you covered.</p>
+    <div class="row" style="justify-content:space-between"><b>Prompt ${SA.i + 1} of ${SA_LIST.length}</b><span class="meta" style="margin:0">${done} checked</span></div>
+    <div class="card"><div class="meta">${esc(saLec(p.lecture))}${p.form === 'her' ? ' · her wording' : p.form === 'key' ? ' · her key' : ''}</div>
+    <div class="stem" tabindex="-1">${esc(p.q)}</div>
+    <label class="sub" for="satext" style="display:block;margin:8px 0 4px">Your answer</label>
+    <textarea id="satext" class="satext" rows="5">${esc(st.text || '')}</textarea>
+    <div class="row"><button type="button" class="btn" id="sacheck">${SA.shown ? 'Hide the model answer' : 'Check my answer'}</button><button type="button" class="btn ghost" id="saclear">Clear</button></div>`;
+  if (SA.shown) {
+    h += `<div class="teach"><b>Model answer.</b> ${esc(p.model)}</div>
+      <fieldset class="sapts"><legend>Key points (tick the ones your answer has)</legend>${p.points.map((t, k) => `<label class="row" style="gap:8px;align-items:flex-start"><input type="checkbox" data-sapt="${k}" ${ticks.includes(k) ? 'checked' : ''}><span>${esc(t)}</span></label>`).join('')}</fieldset>
+      <div class="meta" id="sascore">${ticks.length} of ${p.points.length} key points</div>`;
+    if (p.note) h += `<div class="sub">${esc(p.note)}</div>`;
+    if (p.quote) h += `<div class="quote">“${esc(tidySpeech(p.quote))}”</div>`;
+    if (p.cite) h += `<div class="cite">${esc(p.cite)}</div>`;
+  }
+  h += `</div><div class="row"><button type="button" class="btn ghost" id="saprev" ${SA.i ? '' : 'disabled'}>Previous</button><button type="button" class="btn ghost" id="sanext" ${SA.i < SA_LIST.length - 1 ? '' : 'disabled'}>Next</button><button type="button" class="btn ghost" id="sashuf">Shuffle</button></div>`;
+  $('#view').innerHTML = h;
+  const ta = $('#satext');
+  ta.oninput = () => saSave(p.id, {text: ta.value});
+  $('#sacheck').onclick = () => { SA.shown = !SA.shown; if (SA.shown) saSave(p.id, {checked: true, text: ta.value}); vSa(); };
+  $('#saclear').onclick = () => { saSave(p.id, {text: '', ticks: []}); SA.shown = false; vSa(); };
+  document.querySelectorAll('[data-sapt]').forEach(c => c.onchange = () => {
+    const t = [...document.querySelectorAll('[data-sapt]')].filter(x => x.checked).map(x => +x.dataset.sapt);
+    saSave(p.id, {ticks: t}); $('#sascore').textContent = `${t.length} of ${p.points.length} key points`;
+  });
+  const move = d => { SA.i += d; SA.shown = false; vSa(); window.scrollTo(0, 0); };
+  $('#saprev').onclick = () => move(-1); $('#sanext').onclick = () => move(1);
+  $('#sashuf').onclick = () => { SA.order = shuffle(SA.order.slice()); SA.i = 0; SA.shown = false; vSa(); };
+}
 
 /* Antidote diagrams: standalone pages under antidotes/ (IDs repeat across them, so each runs in its own frame).
    The page reports its height with postMessage; Esc or the close button returns focus to the opener. */
