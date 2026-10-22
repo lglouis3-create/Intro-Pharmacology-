@@ -130,7 +130,7 @@ QUESTIONS.push(
   {t:"High methemoglobin, which cannot carry oxygen", correct:true, why:"Her answer: they still have high levels of methemoglobin; blood cannot carry oxygen when the hemoglobin is in that form, so methylene blue is given to convert it back."},
   {t:"Thiosulfate-cyanide building up in the blood", correct:false, why:"The thiosulfate-cyanide product is renally eliminated."},
   {t:"Cytochrome c oxidase still blocked by cyanide", correct:false, why:"Methemoglobin already pulled the cyanide off the enzyme."},
-  {t:"Too much rhodanese oxidizing the hemoglobin", correct:false, why:"Amyl nitrite made the methemoglobin; rhodanese helps thiosulfate bind cyanide."},
+  {t:"Too much rhodanese oxidizing the hemoglobin", correct:false, why:"Amyl nitrite made the methemoglobin; rhodanese is the body's enzyme that moves cyanide onto sulfur from thiosulfate."},
   {t:"Free cyanide released from the thiosulfate", correct:false, why:"Assumes the thiosulfate-cyanide product falls apart; it leaves the body in the urine."}],
  teach:"The treatment deliberately made methemoglobin, which does not carry oxygen. Once the cyanide is cleared, the patient still has high methemoglobin. Methylene blue, a reducing agent, converts methemoglobin back to hemoglobin so the blood can carry oxygen again.",
  quote:"What problem can you still see in this patient? Uh, right here. Bless you, bless you. They still have high levels of methemoglobin, right? And that's not good either. Your blood can't carry oxygen if the hemoglobin in red blood cells is in the form of methemoglobin.",
