@@ -105,7 +105,7 @@ QUESTIONS.push(
   {t:"A deliberate or accidental dosing error", correct:true, why:"A dosing error, by a provider or a deliberate overdose, delivers more drug than intended, which is one route to too much dose at the receptor."},
   {t:"The drug hits an unintended receptor subtype", correct:false, why:"A different receptor subtype, as with propranolol and beta-2 receptors, is off-target."},
   {t:"An S-enantiomer in the mixture hits another receptor", correct:false, why:"An enantiomer hitting an unintended receptor is off-target (thalidomide)."}],
- teach:"An on-target adverse effect means the drug is hitting the receptor it was meant to hit. In the intended tissue, the explanation is either too much dose at the receptor (deliberate or accidental dosing errors, slowed clearance, fewer receptors) or chronic activation or inhibition of other effects. Hitting another receptor or subtype is off-target instead.",
+ teach:"An on-target adverse effect means the drug is hitting the receptor it was meant to hit. In the intended tissue, the explanation is either too much dose at the receptor (deliberate or accidental dosing errors, slowed clearance, a change in receptor number) or chronic activation or inhibition of other effects. Hitting another receptor or subtype is off-target instead.",
  quote:"So why are we having adverse effects? Well, some of the ideas are listed below. Maybe the dose is too high. Or maybe you've got chronic activation or inhibition of other effects going on.",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slides ‘On-target and off-target adverse drug effects’ (Figure 6-1), ‘On-Target Examples’; transcript 10/13"},
 
@@ -267,7 +267,7 @@ QUESTIONS.push(
   {t:"The old labeling scale ranked drugs only for use by men", correct:false, why:"The old scale ranked drugs from known to cause birth defects to not; it did not concern men."},
   {t:"Sperm carry the drug across the placenta into the fetus", correct:false, why:"She described an effect on sperm count and viability, not sperm carrying the drug."},
   {t:"Male fertility drugs are the most common teratogens on the market", correct:false, why:"Nothing ties the label change to fertility drugs; the male-fertility information is there because a medication a man takes may affect sperm count or viability."}],
- teach:"The FDA used to rank drugs on a scale from known to cause birth defects to not. About five years ago the labeling changed to include, besides teratogenicity, effects on fertility, especially male fertility, and whether a lactating mother should take the drug. Male fertility is included because a medication may affect sperm count or viability, which could contribute to teratogenicity.",
+ teach:"The FDA used to rank drugs on a scale from known to cause birth defects to not. The 2014 Pregnancy and Lactation Labeling Rule (her quiz) changed the labeling to include, besides teratogenicity, effects on fertility, especially male fertility, and whether a lactating mother should take the drug. Male fertility is included because a medication may affect sperm count or viability, which could contribute to teratogenicity.",
  quote:"OK, so if a guy is taking a certain medication, it may affect your sperm count, it may affect your sperm viability, and that could contribute to teratogenicity, right?",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Teratogenesis Labeling’; transcript 10/13"}
 );

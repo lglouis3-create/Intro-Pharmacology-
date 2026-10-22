@@ -98,7 +98,7 @@ QUESTIONS.push(
   {t:"It is an essential nutrient", correct:false, why:"This slide is about three outcomes of one compound; whether the compound is a nutrient has nothing to do with why the lines are not parallel."}],
  teach:"Most people expect that increasing dose carries a compound linearly from effective to toxic to lethal, with parallel lines. When the three lines are not parallel, differences in ADME contribute, but the larger point is the last principle of toxicology: the targets and mechanisms that produce effectiveness, toxicity and death can be different, so the compound causes toxicity in a different way than it causes its effect.",
  quote:"if your dose response curves are not linear. Then it would lead you to believe that the mechanism for how this drug is being effective versus toxic versus lethal, that those mechanisms leading to those three particular outcomes are different, so it's causing toxicity in a different way. Than it's causing effectiveness",
- note:"She first accepted a student's answer, differences in ADME, then said the more important explanation is different targets and mechanisms.",
+ note:"She first accepted a student's answer, differences in ADME, then said the more important explanation is different targets and mechanisms. Her 'not linear' here means not parallel; two sentences earlier she asked, 'How come these lines aren't parallel?'",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘ED, TD and LD Comparison from Dose-Response’; transcript 10/13"},
 
 /* ---------------- Indices: TI, MOS, MOE ---------------- */
@@ -709,7 +709,7 @@ QUESTIONS.push(
   {t:"The drug crossed the blood-brain barrier", correct:false, why:"That is on-target in the wrong tissue (diphenhydramine)."},
   {t:"The drug blocked a receptor subtype", correct:false, why:"Hitting an unintended receptor subtype, as propranolol does at beta-2 receptors in the airway, is an off-target effect, not an on-target effect in the intended tissue."},
   {t:"The reaction is idiosyncratic", correct:false, why:"The mechanism here is simply overdose."}],
- teach:"On-target adverse effects in the intended tissue come from too high a dose at the receptor, or from chronic activation or inhibition of other effects. Too much dose at the receptor can come from a deliberate overdose, an accidental dosing error, a change in pharmacokinetics (a diseased liver that cannot clear the normal dose, giving blood concentrations that are too high), or a change in receptor number (down-regulated receptors over-hit by the same dose).",
+ teach:"On-target adverse effects in the intended tissue come from too high a dose at the receptor, or from chronic activation or inhibition of other effects. Too much dose at the receptor can come from a deliberate overdose, an accidental dosing error, a change in pharmacokinetics (a diseased liver that cannot clear the normal dose, giving blood concentrations that are too high), or a change in receptor number (the slide's wording).",
  quote:"Most of the time, if you're having an on target adverse effect in the right tissue, your dose is too high. OK.",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slides ‘On-target and off-target adverse drug effects’, ‘On-Target Examples’; transcript 10/13"},
 
@@ -718,11 +718,11 @@ QUESTIONS.push(
  stem:"A patient on an unchanged dose of a drug develops an on-target adverse effect. Which of the following could have raised the dose at the receptor? Select all that apply.",
  options:[
   {t:"Liver disease that slows clearance of the drug", correct:true, why:"A change in pharmacokinetics: the normal dose is not cleared and blood concentrations rise."},
-  {t:"Down-regulation of the receptors with the dose kept the same", correct:true, why:"A change in receptor number: fewer receptors are over-hit by the same dose."},
+  {t:"A change in receptor number at the target", correct:true, why:"The slide's on-target example is a change in receptor number. Her spoken example was down-regulation with the dose kept the same; on her tolerance slide down-regulation lowers the response, so the slide's wording is the safer answer."},
   {t:"An accidental dosing error by a healthcare provider", correct:true, why:"A provider's error puts more drug than intended at the intended receptor, and too much dose at the receptor is the usual cause of an on-target adverse effect."},
   {t:"A deliberate overdose by the patient", correct:true, why:"Taking too much on purpose raises the dose at the intended receptor, giving an on-target adverse effect from the drug's own action."},
   {t:"The drug finding a different receptor subtype", correct:false, why:"That is off-target, not a rise in dose at the intended receptor."}],
- teach:"On-target examples: the dose at the receptor is too high through deliberate or accidental dosing errors; through a change in pharmacokinetics, such as a liver that no longer metabolizes and clears the drug so the normal dose yields too-high blood concentrations; or through a change in receptor number, such as down-regulation with the dose unchanged.",
+ teach:"On-target examples: the dose at the receptor is too high through deliberate or accidental dosing errors; through a change in pharmacokinetics, such as a liver that no longer metabolizes and clears the drug so the normal dose yields too-high blood concentrations; or through a change in receptor number.",
  quote:"Maybe their liver is not working as well anymore, and they can't metabolize and clear the drug ... So you've got, again, too much dose at the target, OK? Also, you could have a change in receptor number. So if you down regulate receptor numbers, keep the dose the same, you may be overhitting those receptors",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘On-Target Examples’; transcript 10/13"},
 
@@ -860,14 +860,14 @@ QUESTIONS.push(
 
 {id:"L14-064", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"nonorgan", skill:"figure",
  concept:"cancer-incidence-table", tags:["smith"], source:"both",
- stem:"In the cancer incidence table she showed, which cancer has the highest incidence in both men and women, and which are second for each sex?",
+ stem:"In the cancer table she showed (American Cancer Society, 2009), which cancer ranks first in both men and women, and which ranks second for each sex?",
  options:[
   {t:"Lung and bronchial cancer; then prostate in men and breast in women", correct:true, why:"On the table lung and bronchial cancer tops both columns, and the second-ranked cancers are prostate in men and breast in women."},
   {t:"Breast cancer in both; then lung", correct:false, why:"Breast is the second-ranked cancer in women."},
   {t:"Colon cancer in both sexes; then prostate in men and breast in women", correct:false, why:"Colon cancer came up only in her example of shared mutations."},
   {t:"Prostate in men and breast in women; then skin", correct:false, why:"Lung and bronchial cancer rank first for both."},
   {t:"Liver cancer in both", correct:false, why:"Liver tumors were the hamster example from 10/9."}],
- teach:"She showed the incidence table (from Harvard reports) to set up a puzzle. Lung and bronchial cancer is highest in both men and women, then prostate in men and breast in women, so cancer clearly occurs more in some organs than others. Yet she calls cancer non-organ specific, because cancers in different organs can share the same cellular pathology, such as the same mutation in some lung and colon cancers.",
+ teach:"She showed a cancer table by organ (the slide cites the American Cancer Society, 2009; she called it \"some Harvard reports\" and \"incidence\") to set up a puzzle. Lung and bronchial cancer is highest in both men and women, then prostate in men and breast in women, so cancer clearly occurs more in some organs than others. Yet she calls cancer non-organ specific, because cancers in different organs can share the same cellular pathology, such as the same mutation in some lung and colon cancers.",
  quote:"the lung and bronchial cancer is highest for both men and women, and then for men it's prostate and breast it's women. And then most of the time these same cancers are happening with the same frequency in men versus women.",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Non-Specific: Cancer’; transcript 10/13"},
 
@@ -940,14 +940,14 @@ QUESTIONS.push(
 
 {id:"L14-070", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"nonorgan", skill:"recall", multi:true,
  concept:"fda-pregnancy-lactation-labeling", tags:["smith"], source:"both",
- stem:"The FDA changed its pregnancy labeling about five years ago. Which kinds of information does the labeling now carry? Select all that apply.",
+ stem:"The FDA changed its pregnancy labeling (the Pregnancy and Lactation Labeling Rule, issued in 2014; she said \"about 5 years ago\"). Which kinds of information does the labeling now carry? Select all that apply.",
  options:[
   {t:"How teratogenic the drug is", correct:true, why:"The information the old labeling scale carried, kept in the new labeling."},
   {t:"Effects on fertility, including male fertility", correct:true, why:"New: a drug may affect sperm count or viability and contribute to teratogenicity."},
   {t:"Whether a lactating mother should take the drug", correct:true, why:"New: children should not ingest certain medications in breast milk."},
   {t:"The drug's therapeutic index", correct:false, why:"The labeling change added fertility and lactation to the teratogenicity information; the therapeutic index is a dose-response ratio, not a pregnancy or lactation item."},
   {t:"The drug's margin of exposure", correct:false, why:"A pollutant value, not a drug label item."}],
- teach:"The FDA used to rank drugs on a scale from known to cause birth defects to not; about five years ago it changed the labeling. Besides a drug's teratogenicity, the labeling now includes its effects on fertility, including male fertility (sperm count and viability, which can contribute to teratogenicity), and whether a nursing mother should take it, since children should not ingest certain medications in breast milk.",
+ teach:"The FDA used to rank drugs on a scale from known to cause birth defects to not; in 2014 (her quiz; in class she said \"about 5 years ago\") it changed the labeling. Besides a drug's teratogenicity, the labeling now includes its effects on fertility, including male fertility (sperm count and viability, which can contribute to teratogenicity), and whether a nursing mother should take it, since children should not ingest certain medications in breast milk.",
  quote:"FDA changed the labeling to include not just information on a drug's stratogenicity, but they now include information on fertility, especially male fertility, and then also put in the same labeling place information on whether or not lactating women should take that medication.",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Teratogenesis Labeling’ (Link to FDA Pregnancy and Lactation Labeling); transcript 10/13"}
 );

@@ -88,8 +88,8 @@ QUESTIONS.push(
  concept:"myelin-function", tags:["smith","why"], source:"both",
  stem:"What would happen to nerve impulses if a toxin damaged the Schwann cells that form the myelin sheath?",
  options:[
-  {t:"Neurotransmission would slow, felt as tingling in the hands and feet", correct:true, why:"Myelin makes impulses move down the nerve quickly; with the sheath damaged, neurotransmission is slower, and tingling of the hands and feet is the classic symptom."},
-  {t:"Neurotransmission would speed up, felt as seizures", correct:false, why:"Losing myelin slows conduction; it does not speed it."},
+  {t:"Conduction along the nerve would slow, felt as tingling in the hands and feet", correct:true, why:"Myelin makes impulses move down the nerve quickly; with the sheath damaged, conduction is slower (she said 'neurotransmission being slower'), and tingling of the hands and feet is the classic symptom."},
+  {t:"Conduction would speed up, felt as seizures", correct:false, why:"Losing myelin slows conduction; it does not speed it."},
   {t:"The whole neuron would die at once", correct:false, why:"Death of the entire neuron is neuronopathy, a different pattern."},
   {t:"Nothing would change, as myelin only shields the axon from toxins in the blood", correct:false, why:"Myelin's job here is fast conduction; damaging it changes how impulses travel."},
   {t:"The cell would look normal under the microscope", correct:false, why:"That describes interruption of neurotransmission; damaged myelin is visible."}],
@@ -158,7 +158,7 @@ QUESTIONS.push(
  options:[
   {t:"Enzymes there that need oxygen make more toxic metabolite", correct:true, why:"Her poll answer: if the enzymes in zone 1 need oxygen to work, the high oxygen helps them, and their metabolism may produce a hepatotoxic metabolite."},
   {t:"CYP2E1 is most highly expressed in zone 1", correct:false, why:"CYP2E1 is higher in zone 3; that is why acetaminophen injures zone 3."},
-  {t:"Zone 1 has no Kupffer cells", correct:false, why:"Kupffer cells move all over the liver."},
+  {t:"Zone 1 has no Kupffer cells", correct:false, why:"Kupffer cells are found throughout the liver, not just in one zone."},
   {t:"Blood leaves the liver through zone 1, carrying the metabolites back past the cells", correct:false, why:"Zone 1 is next to the inflow vessels; blood leaves through the central vein next to zone 3."},
   {t:"Oxygen itself is the hepatotoxin", correct:false, why:"The oxygen helps the enzymes; the metabolite they make is the toxin."}],
  teach:"Oxygen falls along the acinus, highest in zone 1 next to the inflow vessels and lowest in zone 3. Where a metabolizing enzyme needs oxygen to do its work, zone 1 supports more of that metabolism. If the product is a hepatotoxic metabolite, zone 1 is where the damage appears; the other source of zonal injury is where enzymes such as CYP2E1 are expressed.",

@@ -2,6 +2,12 @@
 
 Newest first. The build embeds this file; the Topics page shows what is new since your last visit, and the Progress page shows all of it. Keep each bullet to one short line.
 
+## 2026-10-22 (Exam format; her slips corrected)
+
+- Exam 3 card: 54 questions in 2 hours; select-all, 2 true/false, 2 short answer (her words in class 10/22).
+- Spoken slips no longer taught as fact: NOAEL is the highest no-effect dose; myelin loss slows conduction; and more.
+- Her quotes stay word for word; a note beside each says what the slide or reading has instead.
+
 ## 2026-10-22 (Her figures in the questions; cyanide)
 
 - 23 Exam 3 questions now show her slide figure; the stem asks you to read it instead of describing it.

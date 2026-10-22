@@ -34,12 +34,12 @@ QUESTIONS.push(
  concept:"twin-study-heritability", tags:["smith","why"], source:"both",
  stem:"Why did the classic twin studies compare identical twin pairs with fraternal twin pairs?",
  options:[
-  {t:"To show that drug metabolism is heritable", correct:true, why:"Fraternal pairs are related but have dissimilar genotypes, almost like random people; if identical pairs match and fraternal pairs vary, genes explain the difference."},
+  {t:"To show that drug metabolism is heritable", correct:true, why:"Identical pairs share a genotype; fraternal pairs are related but differ genetically much more. If identical pairs match and fraternal pairs vary, genes explain the difference."},
   {t:"Fraternal twins were easier to genotype than identical twins", correct:false, why:"No one was genotyped in these studies; half-life was measured."},
   {t:"To test whether fraternal twins absorb drugs faster", correct:false, why:"The measurement was the half-life of clearance by metabolism, not absorption."},
   {t:"To compare two different drugs in each twin pair", correct:false, why:"Each pair was given the same drug, antipyrine."},
   {t:"To show that environment alone sets drug clearance", correct:false, why:"The design was built to show heritability."}],
- teach:"Fraternal twins are related, but their genotypes are not similar to each other, almost like people picked at random from the population. Giving identical and fraternal pairs the same drug and comparing half-lives within each pair shows heritability: almost all identical pairs had the same half-life, while the fraternal pairs varied. The slide calls it a twin study illustrating heritability of drug metabolism variability.",
+ teach:"Fraternal twins are related but do not share the same genotype; she likened them to 'just grabbing random people out of the population'. Giving identical and fraternal pairs the same drug and comparing half-lives within each pair shows heritability: almost all identical pairs had the same half-life, while the fraternal pairs varied. The slide calls it a twin study illustrating heritability of drug metabolism variability.",
  quote:"By using fraternal twins, we are replicating what might be happening in. It, you know, they're related, and so they're, but definitely their genotypes are not obviously similar to each other, almost like just, just grabbing random people out of the population, OK, but they really wanted to show heritability here, so they used identical twins and then fraternal twins.",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘Introduction: Twin Studies Data’ (p. 7, G&G Fig. 4-2); transcript 10/20"},
 
@@ -291,12 +291,12 @@ QUESTIONS.push(
  concept:"epigenetic-environment-factors", tags:["smith","why"], source:"both",
  stem:"Two patients carry the same genetic variant but respond differently to the same drug. Which explains this?",
  options:[
-  {t:"Environment and epigenetics change gene expression", correct:true, why:"Diet, habits, sleep, stress, DNA methylation and histones affect how genes are expressed and the significance of a variation."},
+  {t:"Environment and epigenetics change gene expression", correct:true, why:"Diet, habits, sleep, stress, DNA methylation and histone modification (her word: histones) affect how genes are expressed and the significance of a variation."},
   {t:"Diet and stress change the patient's DNA sequence", correct:false, why:"The two patients carry the same variant, so the difference is not in the sequence; she described diet, habits, sleep and stress as affecting how genes are expressed."},
   {t:"One patient's variant is dominant, the other recessive", correct:false, why:"Pharmacogenomics does not discuss variants as dominant or recessive."},
   {t:"The variant's frequency differs between the two people", correct:false, why:"Frequency is a population measure, not a property of one person."},
   {t:"Genes are expressed the same way whatever the environment", correct:false, why:"If expression never varied, the same variant would always give the same response; diet, stress and epigenetic factors do change expression."}],
- teach:"Environmental factors such as diet, habits, lack of exercise, sleep and stress can affect how genes are expressed, and so can more internal factors, DNA methylation and histones, called epigenetic factors. These affect the significance of a genetic variation. So the same genotype does not always give the same drug response phenotype, which is one of the complications of the genotype-phenotype relationship.",
+ teach:"Environmental factors such as diet, habits, lack of exercise, sleep and stress can affect how genes are expressed, and so can more internal factors, DNA methylation and histone modification (her word: histones), called epigenetic factors. These affect the significance of a genetic variation. So the same genotype does not always give the same drug response phenotype, which is one of the complications of the genotype-phenotype relationship.",
  quote:"So there's other things that affect how our genes get expressed and will affect the significance of a genetic variation. So. That will influence our genotype phenotype relationship as we're looking at drug response, OK?",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘Complications of Genotype vs phenotype’ (p. 18); transcript 10/20"},
 
@@ -305,12 +305,12 @@ QUESTIONS.push(
  concept:"haplotype-greater-than-chance-ld", tags:["smith","why"], source:"both",
  stem:"In the haplotype illustration, the single nucleotide polymorphisms (SNPs) at three loci appear as AGT, GTA and AGA more often than random chance. What explains this?",
  options:[
-  {t:"The chemistry of that stretch of DNA", correct:true, why:"Her explanation: something about the gene structure, and DNA chemistry affects how likely variations are to occur."},
+  {t:"Linkage: inherited together on one chromosome", correct:true, why:"The slide names the greater-than-chance co-occurrence linkage disequilibrium; the assigned Katzung chapter defines it as the nonrandom association of alleles at two or more loci that descend from a single ancestral chromosome."},
   {t:"All three SNPs are rare variants below 1%", correct:false, why:"Frequency of each SNP does not explain why they occur together."},
   {t:"The population is out of Hardy-Weinberg equilibrium", correct:false, why:"Hardy-Weinberg is about frequencies staying constant across generations."},
   {t:"Random chance alone puts the SNPs together", correct:false, why:"The patterns occur more often than random chance."},
   {t:"The three loci sit on different chromosomes", correct:false, why:"A haplotype's alleles co-exist on the same chromosome."}],
- teach:"A haplotype is a set of alleles at multiple loci that co-exist on the same chromosome, occurring at a frequency greater than random chance; the slide calls that higher co-occurrence linkage disequilibrium. Her explanation is that there is something about the gene structure: the chemistry of DNA affects how likely genetic variations are, so in that stretch the three loci tend to change together in particular patterns. Haplotypes that affect drug response come up later, especially with warfarin.",
+ teach:"A haplotype is a set of alleles at multiple loci that co-exist on the same chromosome, occurring at a frequency greater than random chance; the slide calls that higher co-occurrence linkage disequilibrium. She added an aside, \"the chemistry will affect how likely. Genetic variations occur\"; that is about where variants arise. Why the three patterns travel together is linkage: the loci sit together on one chromosome and are inherited together (linkage disequilibrium). Haplotypes that affect drug response come up later, especially with warfarin.",
  quote:"There's something about the gene structure. That makes those snips happen and in those kinds of groupings, these 3 different groupings, OK? You guys don't know this probably, but there's a lot of chemistry with DNA. Excuse me, the chemistry will affect how likely. Genetic variations occur.",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slides ‘Haplotype’ (p. 19), ‘Illustration of Haplotype’ (p. 20); transcript 10/20"},
 
@@ -324,7 +324,7 @@ QUESTIONS.push(
   {t:"Allele frequency applies only to rare variants", correct:false, why:"Any allele, common or rare, has a frequency."},
   {t:"Genotype frequency is measured in one person, not a population", correct:false, why:"Both are relative frequencies in a population."},
   {t:"Allele frequencies are expressed as raw counts only", correct:false, why:"Both are usually expressed as a proportion or percentage."}],
- teach:"Allele frequency is how often a version of an allele occurs in a population; genotype frequency is how often a genotype occurs. Alleles make up the genotype, so the frequencies of the wild type allele and the variant allele together lead to the genotype frequencies. Both are usually expressed as a proportion or percentage.",
+ teach:"Allele frequency is how often a version of an allele occurs in a population; genotype frequency is how often a genotype occurs. Because alleles make up a genotype, the two are related: she will return to how allele frequencies relate to genotype frequencies with worked examples. Both are usually expressed as a proportion or percentage.",
  quote:"But don't forget your alleles make up your genotype, so we would then describe people as having a genotype frequency as well, OK? ... You've got your allele frequency of the wild type, you've got your allele frequency of the variant allele in the population. Together, what's the genotype frequency?",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘Frequencies in Pharmacogenomics’ (p. 21); transcript 10/20"},
 

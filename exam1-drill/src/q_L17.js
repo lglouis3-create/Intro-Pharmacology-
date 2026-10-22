@@ -132,7 +132,7 @@ QUESTIONS.push(
   {t:"Both kinds of pair vary to the same degree", correct:false, why:"Then genes would not explain the variation."},
   {t:"Identical twins clear the drug faster", correct:false, why:"The comparison is within pairs, not the speed of one group against the other."},
   {t:"Every pair has the same half-life", correct:false, why:"The half-lives differ widely between pairs and within fraternal pairs."}],
- teach:"Antipyrine is cleared by one enzyme, so its half-life is a clean readout of that enzyme's activity. Identical twins were compared with fraternal twins, whose genotypes are not similar to each other, almost like random people. If genes set how fast the enzyme works, half-lives should match within identical pairs and scatter within fraternal pairs. That is what the figure shows (G&G Fig. 4-2), so variability in drug metabolism is heritable.",
+ teach:"Antipyrine is cleared by one enzyme, so its half-life is a clean readout of that enzyme's activity. Identical twins (same genotype) were compared with fraternal twins, who are related but do not share the same genotype; she likened them to 'just grabbing random people out of the population'. If genes set how fast the enzyme works, half-lives should match within identical pairs and scatter within fraternal pairs. That is what the figure shows (G&G Fig. 4-2), so variability in drug metabolism is heritable.",
  quote:"and you can see almost all of our identical twin pairs, their clearance is exactly the same. There's just a few that are a little bit different. ... That's different if you look at the fraternal twin pairs, you see, they are often, all of them are very variable. Only this, this pair here, pair D, is a little bit similar",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘Introduction: Twin Studies Data’ (p. 7, G&G Fig. 4-2); transcript 10/20"},
 
@@ -622,12 +622,12 @@ QUESTIONS.push(
  concept:"epigenetic-environment-factors", tags:["smith"], source:"transcript",
  stem:"Which internal factors that affect how genes are expressed are called epigenetic factors?",
  options:[
-  {t:"DNA methylation and histones", correct:true, why:"Her two named epigenetic factors."},
+  {t:"DNA methylation and histone modification", correct:true, why:"Her two named epigenetic factors; she said 'histones', meaning changes to the histones DNA is wrapped on (Katzung ch. 5: 'DNA methylation and histone modifications')."},
   {t:"Diet and exercise", correct:false, why:"Environmental factors she named, but not the ones she called epigenetic."},
   {t:"Sleep and stress", correct:false, why:"Environmental factors she named, but not the ones she called epigenetic."},
   {t:"SNPs and gene deletions", correct:false, why:"Those are changes in the DNA sequence itself."},
-  {t:"Allele and genotype frequency", correct:false, why:"Population measures, not expression factors."}],
- teach:"Environmental factors such as diet, habits, lack of exercise, sleep and stress can affect how genes are expressed. Some influences are more internal: the methylation of DNA and histones, which are called epigenetic factors. Both change the significance of a genetic variation and so complicate the genotype-phenotype relationship; more is known about them every year.",
+  {t:"Allele frequencies and genotype frequencies", correct:false, why:"Population measures, not expression factors."}],
+ teach:"Environmental factors such as diet, habits, lack of exercise, sleep and stress can affect how genes are expressed. Some influences are more internal: DNA methylation and modification of histones, which are called epigenetic factors. Both change the significance of a genetic variation and so complicate the genotype-phenotype relationship; more is known about them every year.",
  quote:"So, your diet, your habits, your lack of exercise, your sleep, your stress, all that could be affecting how your genes get expressed. Some of those are a little more internal things like our histones and our methylation of our DNA. Those are called epigenetic factors.",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘Complications of Genotype vs phenotype’ (p. 18); transcript 10/20"},
 
@@ -641,7 +641,7 @@ QUESTIONS.push(
   {t:"A single nucleotide change at one locus", correct:false, why:"That is a SNP."},
   {t:"A variant present in fewer than 1% of people", correct:false, why:"That is a rare variant."},
   {t:"One of the two copies of a gene", correct:false, why:"That is an allele."}],
- teach:"A haplotype is a set of alleles at multiple loci of a gene that coexist on the same chromosome. It is also statistical: the set occurs together more often than random chance would predict. In her illustration, three SNP sites change together in only three patterns, because the chemistry of that stretch of DNA makes them change in those groupings. A genotype, by contrast, is the two alleles a person has of one gene.",
+ teach:"A haplotype is a set of alleles at multiple loci of a gene that coexist on the same chromosome. It is also statistical: the set occurs together more often than random chance would predict. In her illustration, three SNP sites change together in only three patterns, because those alleles are inherited together on one chromosome (the slide's linkage disequilibrium). A genotype, by contrast, is the two alleles a person has of one gene.",
  quote:"All right, haplotype, it just means it's a set of alleles at multiple loci that coexist in the same chromosome.",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘Haplotype’ (p. 19); transcript 10/20"},
 
@@ -654,7 +654,7 @@ QUESTIONS.push(
   {t:"Genotype frequency", correct:false, why:"That is how often a genotype occurs in a population."},
   {t:"Heterozygosity", correct:false, why:"That is two different alleles at one locus."},
   {t:"Rare variant", correct:false, why:"That is a variant in less than 1% of a population."}],
- teach:"A haplotype has statistical significance: its alleles occur together more often than random chance would predict. The slide names that excess linkage disequilibrium. She explained that the chemistry of a stretch of DNA can make certain loci change together in particular patterns.",
+ teach:"A haplotype has statistical significance: its alleles occur together more often than random chance would predict. The slide names that excess linkage disequilibrium. She added that DNA chemistry affects how likely variations are to occur; the reading ties the excess to alleles that descend together on one ancestral chromosome.",
  quote:"Also, I want to say on this slide, a haplotype has a statistical significance in the world of pharmacogenemics. So, a haplotype is going to be occurring at a frequency that is greater than random chance.",
  note:"She did not say the words \"linkage disequilibrium\"; the term is on the slide she taught (p. 19), and she said every slide with a term on it is testable. She attributes the greater-than-chance frequency to the haplotype itself; the slide attaches it to linkage disequilibrium. Both kept.",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘Haplotype’ (p. 19); transcript 10/20"},
@@ -682,7 +682,7 @@ QUESTIONS.push(
   {t:"A percentage vs a raw count", correct:false, why:"Both are usually expressed as a proportion or percentage."},
   {t:"Wild type only vs variants only", correct:false, why:"Both wild type and variant alleles have frequencies."},
   {t:"Before vs after evolutionary pressure", correct:false, why:"That is the Hardy-Weinberg question."}],
- teach:"Allele frequency is the relative frequency of an allele in a population; genotype frequency is the relative frequency of a genotype. Both are usually expressed as a proportion or percentage. Because alleles make up a genotype, the allele frequencies of the wild type and the variant together give the genotype frequencies.",
+ teach:"Allele frequency is the relative frequency of an allele in a population; genotype frequency is the relative frequency of a genotype. Both are usually expressed as a proportion or percentage. Because alleles make up a genotype, the two are related: she will return to how allele frequencies relate to genotype frequencies with worked examples.",
  quote:"But if we're talking about an allele, how often does this version of an allele happen in the population that would be the allele frequency. ... You've got your allele frequency of the wild type, you've got your allele frequency of the variant allele in the population. Together, what's the genotype frequency?",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘Frequencies in Pharmacogenomics’ (p. 21); transcript 10/20"},
 
