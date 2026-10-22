@@ -466,7 +466,7 @@ QUESTIONS.push(
   {t:"Defining the threshold dose", correct:false, why:"The threshold is read from the curve; the NOAEL is the related no-effect level used in MOE."}],
  teach:"A pollutant or occupational exposure has no therapeutic dose, so the indices that compare toxic with effective doses (TI, MOS) do not fit. The margin of exposure instead divides the NOAEL, the dose at which test animals showed no adverse response, by the exposure actually received; the larger the ratio, the further the exposure is below that no-effect level. The slide marks MOE for repeated exposures and TI and MOS for single doses.",
  quote:"the margin of exposure, this is something that we use truly in toxicology with exposures to something that's not therapeutic, like to, you know, a pollutant, an occupational exposure, OK, and it's also for repeated exposures",
- note:"Taught 10/13. She says NOAEL as 'no observable adverse effect level' (the slide prints 'no observed') and described it as the dose given to the animals at which they had no bad response; she called it the lowest such dose.",
+ note:"Taught 10/13. She says NOAEL as 'no observable adverse effect level' (the slide prints 'no observed') and described it as the dose given to the animals at which they had no bad response; she called it the lowest such dose; the assigned reading defines it as the highest dose tested with no significant toxicity (Casarett and Doull ch. 2).",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Values Developed from Dose-Response’; transcript 10/13"},
 
 {id:"L13-034", lecture:"L13", prof:"Smith", tier:"new", topic:"L13", sub:"indices", skill:"recall",

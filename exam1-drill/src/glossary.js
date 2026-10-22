@@ -1666,7 +1666,7 @@ const TERMS = [
  cite:'Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Values Developed from Dose-Response’',
  src:'slide'},
 {id:'noael', term:'NOAEL (no observable adverse effect level)', lecture:'L14', group:'Toxic responses',
- def:'The dose from animal exposure studies of a compound at which the exposed animals had no adverse response. It is the numerator of the margin of exposure, over the calculated chronic exposure of the human or wild animal.',
+ def:'The highest dose tested in animal exposure studies of a compound at which the exposed animals had no adverse response (Casarett and Doull ch. 2; in class she once said "the lowest dose"). It is the numerator of the margin of exposure, over the calculated chronic exposure of the human or wild animal.',
  gist:'The animal-study dose with no bad effect; the top of the margin of exposure.',
  scene:'A risk assessor takes the animal dose that caused no adverse effect and divides it by the total exposure estimated for people living near a polluted site.',
  sceneQ:"To judge a polluted site, a risk assessor divides a value from animal studies by the chronic exposure estimated for the people living nearby. What is that animal-study value, the dose at which the exposed animals had no bad response?",

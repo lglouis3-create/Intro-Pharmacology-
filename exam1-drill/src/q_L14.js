@@ -165,7 +165,7 @@ QUESTIONS.push(
   {t:"Water sampling: the measured concentration", correct:false, why:"Measured exposure is the denominator of the margin of exposure."}],
  teach:"NOAEL stands for no observable adverse effect level (she pronounces it \"Noel\"). It is a dose used in animal exposure studies of the compound at which the exposed animals did not have an adverse response. It goes over the exposure that humans, or a wild animal of concern, are thought to be getting: the exposure is calculated as the total exposure the person has received.",
  quote:"it stands for the no observable adverse effect level. OK, so no no observable adverse effect level. That is a dose that we used in animal exposure studies for this compound. That the animals that we exposed did not have an adverse response.",
- note:"She then phrased it as \"what's the lowest dose we gave the animals that we were testing with this compound and they didn't have a bad response to?\" The existing glossary entry (margin-of-exposure) describes it as the highest dose that caused no adverse effect; the question avoids lowest/highest and keys what both agree on.",
+ note:"She then phrased it as \"what's the lowest dose we gave the animals that we were testing with this compound and they didn't have a bad response to?\" The assigned reading defines it the other way: \"The NOAEL is the highest dose of chemical tested in an animal species that does not result in significant toxicities\" (Casarett and Doull ch. 2). Her \"lowest\" is a slip of wording.",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Values Developed from Dose-Response’; transcript 10/13"},
 
 {id:"L14-012", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"indices", skill:"apply",
