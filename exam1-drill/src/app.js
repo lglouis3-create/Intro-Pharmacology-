@@ -630,7 +630,7 @@ function focusCard() {
     ${item("Everything that we've talked about in class, every, everything on slides, everything that's come out of my mouth, the things you've read, and we've talked about all that is testable.", '10/19', `<button type="button" class="btn ghost" data-jump="guide:guide3-scope">What Exam 3 tests</button><button type="button" class="btn ghost" data-jump="readings:rd-top">Readings</button>`)}
     ${item("Remember, go back and study to these objectives, at least. If you can answer these objective questions, you should pass my exam.", '10/9', `<button type="button" class="btn ghost" data-jump="guide:guide3-scope">Guides</button>`)}
     ${item("If I give you guys a short answer, which I likely will", '10/21', `<button type="button" class="btn ghost" data-jump="sa:sa-top">Short answer practice</button>`)}
-    ${item("No, there will not, yeah, no backwards nav, OK, yes.", '10/21 (asked whether you can go back to a question)', `<button type="button" class="btn ghost" data-jump="exam:">Exam sim (no going back)</button>`)}
+    ${item("No, there will not, yeah, no backwards nav, OK, yes.", '10/21 (asked whether you can go back to a question)', `<button type="button" class="btn ghost" data-jump="exam:">Exam sim (her format is an option)</button>`)}
     ${item("So what we covered yesterday is all on. This exam on Friday.", '10/21 (yesterday = the 10/20 pharmacogenomics lecture; 10/21 starts her next exam)', '')}
     ${item("That's how we have it on the syllabus.", '10/20 (the class vote put the 10/20 pharmacogenomics lecture on Friday\'s exam)', '')}
   </ul><p class="sub" style="margin:6px 0 0">Smith focus is on: only her exam's pages and questions show. Turn it off from the ★ button in the tab bar.</p></div>`;
@@ -1491,7 +1491,7 @@ function vExam() {
       <details class="fold bpl"><summary>His topic counts</summary><ul class="bpcols">${ex.blueprint.parts.map(p => `<li>${esc(p.name)}: <b>${p.rest ? 'the rest' : p.min ? 'at least ' + p.min : Array.isArray(p.n) ? p.n.join('–') : p.n}</b></li>`).join('')}<li>Select-all items: <b>${ex.blueprint.sata}</b></li></ul></details></div>` : ''}
     <div class="row" style="margin-top:10px"><label><input type="checkbox" id="scale" checked> Scale the clock to the length (${ex.minutes} min for the full paper)</label></div>
     <div class="row" style="margin-top:10px"><span class="meta" style="margin:0">Answer:</span>${layoutToggle()}</div>
-    ${ex.noBack ? `<label class="row" style="margin-top:10px;gap:6px"><input type="checkbox" id="noback" checked> No going back, as on her exam ("no backwards nav", 10/21)</label>` : ''}
+    ${ex.noBack ? `<label class="row" style="margin-top:10px;gap:6px;align-items:flex-start"><input type="checkbox" id="noback" ${store.get(COURSE.ns + ':noback') === '1' ? 'checked' : ''}><span>Her exam format: one question at a time with no going back, as she said for ExamSoft ("no backwards nav", 10/21). Leave it off to practice with Previous and either layout.</span></label>` : ''}
     <div class="row" style="margin-top:12px"><button class="btn" id="startx">Start</button></div></div>`;
   // a finished paper of the other exam is kept: say where it is
   if (EX && EX.done && EX.exam && EX.exam !== ex.id) { const o = COURSE.exams.find(e => e.id === EX.exam); h += `<p class="sub" id="keptres">Your last ${esc(o ? o.name : 'other exam')} paper (${EX.score}/${EX.qs.length}) is kept: ${focusOn() ? 'turn off Smith focus and choose ' + esc(o ? o.name : 'it') : 'choose ' + esc(o ? o.name : 'it') + ' above'} to see its result.</p>`; }
@@ -1507,7 +1507,8 @@ function vExam() {
     const paper = ex.blueprint && n === ex.questions && $('#bp') && $('#bp').checked ? drawBlueprint(ex.blueprint) : drawExam(n);
     const full = ex.questions || max;
     const mins = $('#scale').checked ? Math.max(5, Math.round(ex.minutes * paper.length / full)) : ex.minutes;
-    EX = {exam: ex.id, name: ex.name, qs: paper.map(q => q.id), i: 0, ans: {}, flag: {}, orders: paper.map(q => optOrder(q)), ends: Date.now() + mins * MIN, done: false, noBack: !!($('#noback') && $('#noback').checked)};
+    const nb = !!($('#noback') && $('#noback').checked); if ($('#noback')) store.set(COURSE.ns + ':noback', nb ? '1' : '0');
+    EX = {exam: ex.id, name: ex.name, qs: paper.map(q => q.id), i: 0, ans: {}, flag: {}, orders: paper.map(q => optOrder(q)), ends: Date.now() + mins * MIN, done: false, noBack: nb};
     renderExam();
   };
 }
