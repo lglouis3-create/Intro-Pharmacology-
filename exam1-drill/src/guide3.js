@@ -86,9 +86,10 @@ const GUIDE3_HTML = `
 <li><b>Toxicant</b>: "A toxicant is made by man through our activities." A smokestack emission: "Whatever's nasty in that would be a toxicant." <small>(T) 10/9</small></li>
 <li><b>Xenobiotic</b>: "just another term that you'll see is a xenobiotic, kind of a fancier term, compound that's not expected to be in a critter, OK, or a person." <small>(T) 10/9</small></li>
 <li>Her poll, "What is toxic?", filled a word cloud: "Food, yeah, food, hormones, pollution, drugs, drugs, drugs, medications, rat poison, venom, alcohol, yes, alcohol." The point: "the dose makes the poison, and so, um, medications can be toxic or poisonous." <small>(T) 10/9</small></li>
+<li><b>The coral snake ("What is Toxic?" slide).</b> "Coral snake, how do you know that? ... Red and yellow kills a fellow, so if the red touches yellow, it's poisonous, OK? Red and black, friend of Jack." The king snake looks alike but its red touches the black, and "it's not poisonous. People have them as pets." The coral snake is "very venomous, they have a neurotoxin." <small>(T) 10/9</small></li>
 </ul>
 <p>How she asks it: a pair of substances (a venom and an emission) and the two words that fit them, or the single word for a foreign compound.</p>
-<p class="sub">Sources: Tox slide ‘Definitions’; (T) 10/9. Questions L13-001, L13-002.</p>
+<p class="sub">Sources: Tox slides ‘Definitions’, ‘What is Toxic?’; (T) 10/9. Questions L13-001, L13-002, L13-047, L13-048.</p>
 </section>
 
 <!-- ===================================================================== -->

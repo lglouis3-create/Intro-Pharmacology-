@@ -621,5 +621,29 @@ QUESTIONS.push(
   {t:"Source; Exposure; Half-life; LD50; Threshold", correct:false, why:"Half-life, LD50 and threshold are values inside the exposure and dose principles."}],
  teach:"Practice quiz 1, question 10, a short-answer item on the quiz: source, exposure, ADMET, dose, and target and mechanism of action.",
  note:"On the quiz this was a free-response list; the exam may ask for it written out. Options added here for the drill.",
- cite:"Smith_Practice_Quiz_1_-_Principles_of_Toxicology.pdf question 10"}
+ cite:"Smith_Practice_Quiz_1_-_Principles_of_Toxicology.pdf question 10"},
+/* ---------------- The coral snake on 'What is Toxic?' (her spoken question, 10/9) ---------------- */
+{id:"L13-047", lecture:"L13", prof:"Smith", tier:"new", topic:"L13", sub:"defs", skill:"apply",
+ concept:"coral-snake-rhyme", tags:["smith"], source:"transcript",
+ stem:"A snake has red, yellow and black bands, and its red bands touch its yellow bands. Using the rhyme from class, what is it most likely to be?",
+ options:[
+  {t:"A venomous coral snake", correct:true, why:"\"Red and yellow kills a fellow\": red touching yellow marks the coral snake."},
+  {t:"A harmless king snake", correct:false, why:"On the king snake the red touches the black: \"Red and black, friend of Jack.\""},
+  {t:"Either snake; the bands cannot tell them apart", correct:false, why:"The order of the bands is exactly what tells them apart; the two snakes carry the same three colours."},
+  {t:"A venomous snake only if it also has black bands", correct:false, why:"Both snakes have black bands; what matters is which colour the red touches."}],
+ teach:"The coral snake and the king snake both carry red, yellow and black bands, in a different order. On the coral snake the red touches the yellow (\"Red and yellow kills a fellow\"); on the king snake the red touches the black (\"Red and black, friend of Jack\"), and it is not poisonous: people keep king snakes as pets. The coral snake is very venomous; its venom carries a neurotoxin. It lives in Texas, especially East Texas.",
+ quote:"Coral snake, how do you know that? Red and y'all, everybody know that poem. Red and yellow kills a fellow, so if the red touches yellow, it's poisonous, OK? Red and black, friend of Jack.",
+ note:"She showed the snakes as a fun opener (\"I just like to know about poisonous animals and plants. I think it's fun.\") before turning to medications; on 10/19 she said everything said in class is testable.",
+ cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘What is Toxic?’; transcript 10/9"},
+{id:"L13-048", lecture:"L13", prof:"Smith", tier:"new", topic:"L13", sub:"defs", skill:"recall",
+ concept:"coral-snake-venom", tags:["smith"], source:"transcript", dupOf:"L13-047",
+ stem:"What kind of toxin does the coral snake's venom carry?",
+ options:[
+  {t:"A neurotoxin", correct:true, why:"Her words: \"So this is a coral snake, very venomous, they have a neurotoxin.\""},
+  {t:"A hepatotoxin", correct:false, why:"She named a neurotoxin for the coral snake, not a liver toxin."},
+  {t:"A carcinogen", correct:false, why:"A snakebite is a single, immediate exposure; she named a neurotoxin."},
+  {t:"A toxicant", correct:false, why:"Venom is made by the snake, so it is a toxin; a toxicant comes from human activity."}],
+ teach:"The coral snake is very venomous; its venom carries a neurotoxin. Being made by the snake, the venom is a toxin, not a toxicant. The look-alike king snake, with red touching black, is not poisonous.",
+ quote:"So this is a coral snake, very venomous, they have a neurotoxin. They are here in Texas, um, they're in East Texas, especially",
+ cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘What is Toxic?’; transcript 10/9"}
 );

@@ -2,6 +2,10 @@
 
 Newest first. The build embeds this file; the Topics page shows what is new since your last visit, and the Progress page shows all of it. Keep each bullet to one short line.
 
+## 2026-10-22 (The coral snake)
+
+- Two 10/9 questions: telling a coral snake from a king snake by the rhyme, and its neurotoxin; guide section 1.
+
 ## 2026-10-22 (Fixes from testing, Explain more targets, term questions)
 
 - An answer is saved the moment it is graded; a reload, a tab switch or the back gesture no longer loses it.
