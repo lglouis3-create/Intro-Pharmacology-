@@ -46,7 +46,7 @@ const FIG = (() => {
     found.sort((a, b) => a[0] - b[0]);
     return `<details class="fold abbr"><summary>Abbreviations in this figure</summary><dl>${found.map(([, k, v]) => `<dt>${k}</dt><dd>${v}</dd>`).join('')}</dl></details>`;
   };
-  const wrap = (inner, cap, h = H, w = W) => `<figure class="fig"><div class="svgx"><svg viewBox="0 0 ${w} ${h}"${w < W ? ' style="max-width:400px;margin:0 auto"' : ''} role="img" aria-label="${capText(cap).replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim().replace(/"/g, '&quot;')}"><defs><marker id="arw" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="var(--muted)"/></marker></defs>${inner}</svg></div><figcaption>${capHTML(cap)}</figcaption>${abbrFold(inner)}</figure>`;
+  const wrap = (inner, cap, h = H, w = W) => `<figure class="fig"><div class="svgx"><svg viewBox="0 0 ${w} ${h}"${w < W ? ' style="max-width:400px;margin:0 auto"' : ''} role="img" aria-label="${capText(cap).replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim().replace(/"/g, '&quot;')}">${inner}</svg></div><figcaption>${capHTML(cap)}</figcaption>${abbrFold(inner)}</figure>`;
   const F = {};
 
   F['drc-basic'] = () => wrap(axes('log dose', '% of maximal response') +

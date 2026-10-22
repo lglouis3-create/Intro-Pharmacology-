@@ -30,6 +30,7 @@ const out = path.join(__dirname, '..', course.match(/output:\s*'([^']+)'/)[1]);
   await page.click('#due');
   let multiSeen = 0, answered = 0;
   for (let i = 0; i < 40; i++) {
+    await page.waitForTimeout(380);   // a tap within 350 ms of a new question is taken as the tail of a double tap
     const isMulti = await page.$('#check');
     if (isMulti) { multiSeen++; const opts = await page.$$('[data-o]'); if (opts.length) await opts[0].click(); else for (const sel of await page.$$('select[data-l]')) await sel.selectOption({index: 1}); await page.click('#check'); }
     else { const opts = await page.$$('[data-o]'); if (!opts.length) { fail('no options on quiz item'); break; } await opts[i % opts.length].click(); }
@@ -56,6 +57,7 @@ const out = path.join(__dirname, '..', course.match(/output:\s*'([^']+)'/)[1]);
   if (!(await page.$$('[data-fc]')).length) fail('flashcard did not flip'); await page.click('[data-fc="sure"]');
   if (!(await page.textContent('#view')).includes('1/')) fail('flashcard grade not recorded');
   await page.click('[data-mode="quiz"]'); await page.click('#tq');
+  await page.waitForTimeout(380);   // a tap within 350 ms of a new question is taken as the tail of a double tap
   const topts = await page.$$('[data-o]'); if (!topts.length) fail('term quiz did not start'); await topts[0].click();
   if (!(await page.$$('[data-c]')).length) fail('term question did not grade');
   // reopening a topic after a miss does not start on the same question
@@ -64,6 +66,7 @@ const out = path.join(__dirname, '..', course.match(/output:\s*'([^']+)'/)[1]);
     await page.click('nav button[data-v="topics"]'); await page.click('[data-topic="L02"]');
     const first = await page.evaluate(() => Q.cur.id);
     const wrong = await page.evaluate(() => Q.cur.options.findIndex(o => !o.correct));
+    await page.waitForTimeout(380);   // a tap within 350 ms of a new question is taken as the tail of a double tap
     await page.click(`[data-o="${wrong}"]`); const ck3 = await page.$('#check'); if (ck3) await ck3.click();
     await (await page.$('[data-c]')).click();
     await page.click('nav button[data-v="topics"]'); await page.click('[data-topic="L02"]');
@@ -86,6 +89,7 @@ const out = path.join(__dirname, '..', course.match(/output:\s*'([^']+)'/)[1]);
   const nTerm = await page.evaluate(() => EX.qs.filter(id => byId[id].skill === 'term').length);
   if (nTerm > Math.round(total * 0.15) + 1) fail(`exam draws too many definition questions (${nTerm} of ${total})`);
   for (let i = 0; i < total; i++) {
+    await page.waitForTimeout(380);   // a tap within 350 ms of a new question is taken as the tail of a double tap
     const opts = await page.$$('[data-o]'); await opts[0].click();
     const nx = await page.$('#next:not([disabled])'); if (nx) await nx.click();
   }
@@ -113,7 +117,7 @@ const out = path.join(__dirname, '..', course.match(/output:\s*'([^']+)'/)[1]);
   if (gc.reg) {
     await page.click('.gcard [data-g]');
     if (!(await page.$('.stemfig img'))) fail('graph drill did not open a question with its figure');
-    await page.click('.opt'); const gck = await page.$('#check'); if (gck) await gck.click();
+    await page.waitForTimeout(380); await page.click('.opt'); const gck = await page.$('#check'); if (gck) await gck.click();
     if (!(await page.$('.gread'))) fail('graph drill answer shows no figure reading');
   }
   // flags and the all-on-one-page layout
@@ -134,6 +138,7 @@ const out = path.join(__dirname, '..', course.match(/output:\s*'([^']+)'/)[1]);
   await page.click('nav button[data-v="topics"]'); await page.click('[data-layout="one"]');
   // regressions: Enter on a finished pass records nothing; a flag on the exam result keeps the result; profile switch with an exam open throws nothing
   await page.click('nav button[data-v="map"]'); await page.click('.qt[data-q]');
+  await page.waitForTimeout(380);   // a tap within 350 ms of a new question is taken as the tail of a double tap
   const o1 = await page.$('[data-o]'); if (o1) { await o1.click(); const ck4 = await page.$('#check'); if (ck4) await ck4.click(); }
   const c1 = await page.$('[data-c]'); if (c1) await c1.click();
   const logN = await page.evaluate(() => S.log.length);
@@ -142,6 +147,7 @@ const out = path.join(__dirname, '..', course.match(/output:\s*'([^']+)'/)[1]);
   // (the submitted paper above is kept across the reload, on its result page: start afresh)
   await page.click('nav button[data-v="exam"]'); { const nx0 = await page.$('#newx'); if (nx0) await nx0.click(); }
   await page.click('[data-layout="all"]'); await page.click('#startx');
+  await page.waitForTimeout(380);   // a tap within 350 ms of a new question is taken as the tail of a double tap
   await page.click('.qcard [data-o]'); await page.click('#submit');
   if (!/Exam result/.test(await page.textContent('#view'))) fail('exam all-on-one-page did not submit');
   await page.click('[data-flag]');
@@ -156,6 +162,7 @@ const out = path.join(__dirname, '..', course.match(/output:\s*'([^']+)'/)[1]);
   await page.fill('#prof', 'default'); await page.click('#setprof');
   // explain-more link: jumps to a page section and the back button restores the question
   await page.click('nav button[data-v="quiz"]');
+  await page.waitForTimeout(380);   // a tap within 350 ms of a new question is taken as the tail of a double tap
   { const o5 = await page.$('[data-o]'); if (o5) await o5.click(); const ck5 = await page.$('#check'); if (ck5) await ck5.click(); }
   const jl = await page.$('[data-jump]');
   if (!jl) fail('answered question shows no explain-more link');
@@ -287,6 +294,7 @@ const out = path.join(__dirname, '..', course.match(/output:\s*'([^']+)'/)[1]);
   // C1: a map tile opens its question with a way back, and the finished one-question drill offers it too
   await page.click('nav button[data-v="map"]'); await page.click('details[open] .qt[data-q]');
   if (!/map/.test(await page.textContent('#backbtn').catch(() => ''))) fail('map tile question has no back button');
+  await page.waitForTimeout(380);   // a tap within 350 ms of a new question is taken as the tail of a double tap
   { const o = await page.$('[data-o]'); if (o) await o.click(); const ck = await page.$('#check'); if (ck) await ck.click(); const c = await page.$('[data-c]'); if (c) await c.click(); }
   if (!(await page.$('#qback'))) fail('finished one-question drill offers no way back');
   // re-audit 5: the finish card's own back button is the only one shown (the floating one is hidden)

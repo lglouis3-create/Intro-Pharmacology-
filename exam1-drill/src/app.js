@@ -163,7 +163,7 @@ const PACES = {
 function schedule(id, outcome) {
   const st = qs(id), steps = (PACES[S.pace] || PACES[COURSE.paceDefault] || PACES.cram).steps, now = Date.now();
   if (outcome === 'wrong' || outcome === 'guess') st.box = 0;
-  else if (outcome === 'unsure') st.box = Math.max(1, st.box);
+  else if (outcome === 'unsure') st.box = st.n > 1 ? Math.max(1, st.box) : 0;   // "not sure" on a first answer comes back soon, like a miss
   else st.box = Math.min(steps.length - 1, st.box + 1);
   st.due = now + steps[st.box];
   st.last = now;
@@ -182,7 +182,9 @@ const FOCUS_VIEWS = ['topics', 'quiz', 'terms', 'weak', 'exam', 'ptab', 'guide',
 const focusOn = () => store.get(FOCUS_KEY) === '1' && COURSE.exams.some(e => e.id === FOCUS_EXAM);
 function setFocus(on) {
   store.set(FOCUS_KEY, on ? '1' : '0');
-  if (on) { store.set(EXAM_KEY, String(FOCUS_EXAM)); if (typeof Q !== 'undefined' && Q && Q.list.some(q => examOf(q) !== FOCUS_EXAM)) Q = null; }
+  if (on) { const was = store.get(EXAM_KEY); if (was && was !== String(FOCUS_EXAM)) store.set(COURSE.ns + ':focusprev', was); store.set(EXAM_KEY, String(FOCUS_EXAM));
+    if (typeof Q !== 'undefined' && Q && Q.list.some(q => examOf(q) !== FOCUS_EXAM)) { Q = null; RET.length = 0; backBtn(); } }   // the way back led into the dropped quiz
+  else { const prev = store.get(COURSE.ns + ':focusprev'); if (prev) { store.set(EXAM_KEY, prev); store.del(COURSE.ns + ':focusprev'); } }
   if (on && !FOCUS_VIEWS.includes(CUR)) { go('topics'); return; }
   nav(); VIEWFN[CUR] && VIEWFN[CUR]();
 }
@@ -201,7 +203,7 @@ function nav() {
   });
   $('#theme').onchange = e => applyTheme(e.target.value);
   // on a phone the tabs scroll sideways in one row: keep the open one in sight
-  const on = $('#nav .on'), nv = $('#nav'); if (on && nv.scrollWidth > nv.clientWidth) nv.scrollLeft = on.offsetLeft - nv.offsetLeft - 40;
+  const on = $('#nav .on'), nv = $('#nav'); if (on && nv.scrollWidth > nv.clientWidth) { const x = on.offsetLeft - nv.offsetLeft; if (x < nv.scrollLeft || x + on.offsetWidth > nv.scrollLeft + nv.clientWidth) nv.scrollLeft = Math.max(0, x - 40); }
   hdrVar();
 }
 /* The header's height, for things that stick under it (the exam clock on the all-on-one-page paper). */
@@ -224,8 +226,22 @@ function go(v, back) {
   if (CUR === 'exam' && EX && !EX.done && v !== 'exam' && !confirm('Leave the exam in progress? It will be kept until you return.')) return false;
   CUR = v; nav(); leaveView();
   (back && v === 'exam' && EX && EX.done ? examResult : VIEWFN[v])();
+  pushNav({v});
   return true;
 }
+/* The browser's back gesture moves within the drill: every page change (and the diagram panel) is a history
+   entry; back closes the panel, else follows the drill's own way back, else returns to Topics. */
+let NAV_READY = false, POPPING = false, SKIPPOP = 0;
+function pushNav(st) { if (!NAV_READY || POPPING) return; try { history.pushState(Object.assign({drill: 1}, st), ''); } catch (e) {} }
+window.addEventListener('popstate', () => {
+  if (SKIPPOP) { SKIPPOP--; return; }
+  POPPING = true;
+  try {
+    if (ANTI) antiClose(true);
+    else if (RET.length) goBack();
+    else if (CUR !== 'topics' && !go('topics')) { POPPING = false; pushNav({v: CUR}); }   // stayed in the exam: keep an entry to come back to
+  } finally { POPPING = false; }
+});
 /* "Explain more": a question links to the pages that teach its concept. The link
    keeps the quiz or exam exactly where it was and a floating button brings the
    student back to it, scroll position included. */
@@ -274,7 +290,7 @@ const BY_LECTURE2 = {L07: G2(1, 'the autonomic layout'), L07ref: ['ref', 'ref2-2
 const TERM_SUB2 = {g6: G2(1, 'the autonomic layout'), g7: G2(1, 'the autonomic layout'), g8: G2(4, 'muscarinic drugs'), g9: G2(6, 'α1 and α2 drugs'), g10: G2(9, 'nitric oxide'), g11: G2(10, 'RAAS')};
 const DL2_SUB = {nmj: G2(2, 'nicotinic receptors, NMJ'), chol: G2(4, 'muscarinic drugs'), adr: G2(6, 'α1 and α2 drugs'), no: G2(9, 'nitric oxide'), raas: G2(10, 'RAAS')};
 const DRUGS_LINK = ['drugs', 'drugs-top', 'All drugs: both lists in one table'];
-function linksFor(q) { const l = linksFor0(q); return q.lecture === 'DL1' || q.lecture === 'DL2' ? l.concat([DRUGS_LINK]) : l; }
+function linksFor(q) { let l = linksFor0(q); if (examOf(q) === 3) l = routeBySlide3(q, l); else if (examOf(q) === 1 || examOf(q) === 2) l = routeByWords12(q, l); return q.lecture === 'DL1' || q.lecture === 'DL2' ? l.concat([DRUGS_LINK]) : l; }
 /* Exam 3 (Dr. Smith): each section of the L13 bank maps to the guide section written from her objective. */
 const G3 = (n, t) => ['guide', 'guide3-' + n, 'Guide: ' + t];
 const SUB3 = {defs: [G3(1, 'definitions'), ['ref', 'ref3-1', 'Reference: the words'], ['tell', 'tell3-words', 'Tell apart: the words']], princ: [G3(2, 'the five principles'), ['ref', 'ref3-2', 'Reference: the five principles']], source: [G3(3, 'source')],
@@ -307,6 +323,76 @@ function termLinks3(q) {
     if (tally.size) return JSON.parse([...tally].map(([k, v]) => [k, v + 2 * inGuide(k)]).sort((a, b) => b[1] - a[1])[0][0]);
   }
   return BY_LECTURE3[L] || [G3('scope', 'what Exam 3 tests')];
+}
+/* Exam 3 routing. A guide section ends with the questions it explains ("Questions L16-010 to L16-013"), so a
+   lecture question goes to the section that lists it. Otherwise (terms, keys, quizzes) the question's cited slide
+   decides: the guide section or reference table naming that slide (one title containing the other, since the two
+   shorten titles differently), and for a term, the section naming the term. With no match the mapped link stays,
+   and no link is added that the map did not give. */
+let SEC3 = null;
+function sec3() {
+  if (SEC3) return SEC3;
+  const parse = (h, sel) => { const d = new DOMParser().parseFromString('<div>' + h + '</div>', 'text/html');
+    return [...d.querySelectorAll(sel)].map(a => { const text = mkRegion(a).map(r => r.textContent).join(' ');
+      const qids = new Set();
+      for (const m of text.matchAll(/Questions? ([A-Z0-9]+-\d+(?:(?:,| to|, and| and) [A-Z0-9]+-\d+)*)/g)) {
+        const parts = m[1].split(/,\s*(?:and\s+)?|\s+and\s+/);
+        parts.forEach(pt => { const r = pt.trim().match(/^([A-Z0-9]+)-(\d+)(?: to [A-Z0-9]+-(\d+))?$/); if (!r) return;
+          const a0 = +r[2], b0 = r[3] ? +r[3] : a0, w = r[2].length; for (let n = a0; n <= b0; n++) qids.add(r[1] + '-' + String(n).padStart(w, '0')); }); }
+      return {id: a.id, h: ((a.querySelector('h3') || a).textContent || '').trim().replace(/^\d+\.\s*/, ''), text, titles: [...text.matchAll(/‘([^’]{6,})’/g)].map(x => x[1]), qids}; }); };
+  SEC3 = {guide: typeof GUIDE3_HTML === 'undefined' ? [] : parse(GUIDE3_HTML, 'section[id^="guide3-"]'),
+          ref: typeof REFERENCE3_HTML === 'undefined' ? [] : parse(REFERENCE3_HTML, 'h3[id^="ref3-"]')};
+  return SEC3;
+}
+function routeBySlide3(q0, links) {
+  const q = q0.lecture === 'QZ3' && q0.dupOf ? (QUESTIONS.find(x => x.id === q0.dupOf) || q0) : q0;   // her quiz item routes as the lecture question it repeats
+  const cites = [...String(q.cite || '').matchAll(/‘([^’]+)’/g)].map(x => x[1].trim()).filter(t => t.length > 5);
+  const nm = termName(q).toLowerCase(), out = links.slice(), low = x => x.toLowerCase();
+  // the same title scores 3; a section title that ends the cited one (its specific part) 2; any other overlap 1
+  const slideHit = s => cites.reduce((n, c) => n + Math.max(0, ...s.titles.map(t => { const a = low(c), b = low(t); return a === b ? 3 : a.endsWith(b) || b.endsWith(a) ? 2 : a.includes(b) || b.includes(a) ? 1 : 0; })), 0);
+  for (const [v, word] of [['guide', 'Guide'], ['ref', 'Reference']]) {
+    const secs = sec3()[v], i = out.findIndex(l => l[0] === v); if (!secs.length || i < 0) continue;
+    const listed = secs.find(s => s.qids.has(q.id));
+    let best = listed;
+    if (!best) {
+      const score = s => slideHit(s) * 2 + (nm && low(s.text).includes(nm) ? 1 : 0);   // 3 or more: one specific title match
+      const cur = secs.find(s => s.id === out[i][1].split('@')[0]), top = secs.map(s => [s, score(s)]).sort((a, b) => b[1] - a[1])[0];
+      if (top && top[1] >= 3 && !(cur && score(cur) >= top[1])) best = top[0];
+    }
+    if (best && best.id !== out[i][1].split('@')[0]) out[i] = [v, best.id, word + ': ' + best.h];
+  }
+  return out;
+}
+/* Exams 1 and 2 have no slide list per section, so a link moves only when another section of the same exam's guide
+   or reference shares far more of the question's words (the term, the correct answer, the concept, the stem):
+   at least 2.5 times the mapped section's score and a clear match in its own right. The two catch-all reference
+   tables never take a link this way. */
+const SEC12 = {}, ROUTE12 = new Map(), CATCHALL = new Set(['ref2-1', 'ref2-3']);
+function sec12(ex, v) {
+  const k = ex + v; if (SEC12[k]) return SEC12[k];
+  // top-level consts are not window properties, so each page is named directly
+  const h = ex === 1 ? (v === 'guide' ? (typeof GUIDE_HTML === 'string' ? GUIDE_HTML : '') : (typeof REFERENCE_HTML === 'string' ? REFERENCE_HTML : ''))
+    : (v === 'guide' ? (typeof GUIDE2_HTML === 'string' ? GUIDE2_HTML : '') : (typeof REFERENCE2_HTML === 'string' ? REFERENCE2_HTML : ''));
+  const d = new DOMParser().parseFromString('<div>' + h + '</div>', 'text/html');
+  const re = new RegExp('^' + v + (ex === 1 ? '' : ex) + '-');
+  return (SEC12[k] = [...d.querySelectorAll('[id]')].filter(e => re.test(e.id) && (e.tagName === 'SECTION' || /^H[1-6]$/.test(e.tagName))).map(a => ({id: a.id,
+    h: ((a.querySelector('h3') || a).textContent || '').trim().replace(/^\d+\.\s*/, ''),
+    blocks: mkRegion(a).flatMap(r => r.matches('li, tr, dd, p, blockquote') ? [r] : [...r.querySelectorAll('li, tr, dd, p, blockquote')])
+      .filter(e => !e.querySelector('li, tr, p') && e.textContent.trim().length > 20 && !e.closest('figure, thead, .sub, small, .cite')).map(e => e.textContent.toLowerCase())})));
+}
+function routeByWords12(q, links) {
+  if (ROUTE12.has(q.id)) return ROUTE12.get(q.id);
+  const ex = examOf(q), m = new Map(), nm = termName(q).toLowerCase(), out = links.slice();
+  mkWords(q.stem, 1, m); mkWords(String(q.concept || '').replace(/-/g, ' '), 2, m);
+  (q.options || []).filter(o => o.correct).forEach(o => mkWords(o.t, 3, m)); (q.pairs || []).forEach(x => { mkWords(x.l, 2, m); mkWords(x.r, 2, m); });
+  const sc = sec => Math.max(0, ...sec.blocks.map(tx => { let s = 0; m.forEach((w, k) => { if (tx.includes(k)) s += w; }); if (nm && tx.includes(nm)) s += 6; return s / Math.sqrt(1 + tx.length / 300); }));
+  for (const [v, word] of [['guide', 'Guide'], ['ref', 'Reference']]) {
+    const i = out.findIndex(l => l[0] === v); if (i < 0) continue;
+    const secs = sec12(ex, v), cur = secs.find(s => s.id === out[i][1].split('@')[0]); if (!cur) continue;
+    const own = sc(cur), top = secs.filter(s => !CATCHALL.has(s.id)).map(s => [s, sc(s)]).sort((a, b) => b[1] - a[1])[0];
+    if (top && top[0].id !== cur.id && top[1] >= 6 && top[1] >= 2.5 * own) out[i] = [v, top[0].id, word + ': ' + top[0].h];
+  }
+  ROUTE12.set(q.id, out); return out;
 }
 function linksFor0(q) {
   if (examOf(q) === 3 && typeof GUIDE3_HTML !== 'undefined') {
@@ -396,7 +482,9 @@ function backBtn() {
   b.textContent = backLabel();
 }
 const backLabel = () => '← Back to ' + ({topics: 'Topics', quiz: 'the question', exam: 'the exam', graphs: 'the figures', map: 'the map', terms: 'the terms', weak: 'Weak spots', tell: 'Tell apart', ref: 'the reference', guide: 'the guide', diagrams: 'the diagrams', drugs: 'the drug table', pair: 'Pair up', rxq: 'the receptor drill', ptab: 'the poisoning table drill', scenes: 'the scenes', readings: 'the readings'}[(RET[RET.length - 1] || {}).view] || 'where you were');
-function goBack() { const r = RET.pop(); if (!r) return; backBtn(); go(r.view, true); window.scrollTo(0, r.y); }
+function goBack() { const r = RET.pop(); if (!r) return; backBtn(); go(r.view, true); window.scrollTo(0, r.y);
+  // cards sized by estimate (content-visibility) settle after layout: put the window back where it was, twice
+  requestAnimationFrame(() => requestAnimationFrame(() => window.scrollTo(0, r.y))); setTimeout(() => window.scrollTo(0, r.y), 150); }
 document.addEventListener('click', e => { const j = e.target.closest('[data-jump]'); if (j) { const [v, a] = j.dataset.jump.split(':'); jump(v, a); if (j.dataset.jq) markFor(j.dataset.jq, a); } });
 /* "view:anchor:group:key": jump to the page, then open that explanation card (the reference's "Why?" cards). */
 document.addEventListener('click', e => { const j = e.target.closest('[data-jumpx]'); if (!j) return; const [v, a, g, k] = j.dataset.jumpx.split(':'); jump(v, a); const out = showExplain(g, k); if (out) scrollToEl(out.closest('.xpick')); });
@@ -588,7 +676,7 @@ function startQuiz(list, label, mode, opts = {}) {
   const from = (opts.back || CUR === 'topics') && CUR !== 'quiz' ? {view: CUR, y: window.scrollY} : null;
   RET.length = 0; if (from) RET.push(from); backBtn();
   // opened from deep in a long page (Tell apart, the map): start at the top, without the old page's floating buttons
-  CUR = 'quiz'; nav(); leaveView(); nextQ();
+  CUR = 'quiz'; nav(); leaveView(); nextQ(); pushNav({v: 'quiz'});
 }
 const allDone = () => Q.list.every(q => Q.doneIds.has(q.id));
 /* Order for answered questions: the weakest box first, then the earliest due day, and a random
@@ -619,6 +707,7 @@ function pickSR() {
   return rest[0] || shuffle(list.filter(q => q.id !== recent && q.id !== lastId && !Q.doneIds.has(q.id)))[0] || list.find(q => !Q.doneIds.has(q.id)) || list[0];
 }
 function nextQ() {
+  qSayStop();
   let q;
   if (Q.mode === 'pass') { while (Q.i < Q.list.length && Q.doneIds.has(Q.list[Q.i].id)) Q.i++; if (Q.i >= Q.list.length) return quizDone(); q = Q.list[Q.i++]; }
   else if (Q.mode === 'concept') { q = pickConcept(); if (!q) return quizDone(); }
@@ -631,6 +720,7 @@ function nextQ() {
   renderQ();
 }
 function quizDone() {
+  qSayStop();
   Q.finished = true; Q.answered = false; clearView();
   if (Q.graph) return graphDone();
   if (Q.mode === 'concept') return conceptDone();
@@ -663,7 +753,7 @@ function metaLine(q) {
    in the one-at-a-time view that is Q itself, on the all-on-one-page view one object per question. */
 function qCard(q, st, opts = {}) {
   const sq = S.q[q.id], tag = opts.idx != null ? `${opts.idx + 1}. ` : '';
-  let h = `<div class="card qcard" data-qid="${q.id}"><div class="row" style="justify-content:space-between"><span class="meta">${tag}${metaLine(q)}${opts.seen ? ' · ' + (sq && sq.n ? 'seen ' + sq.n + '×' : 'new') : ''}</span>${flagBtn(q.id)}</div><div class="stem">${esc(q.stem)}</div>${stemMedia(q)}`;
+  let h = `<div class="card qcard" data-qid="${q.id}"><div class="row" style="justify-content:space-between"><span class="meta">${tag}${metaLine(q)}${opts.seen ? ' · ' + (sq && sq.n ? 'seen ' + sq.n + '×' : 'new') : ''}</span>${flagBtn(q.id)}</div><div class="stem" tabindex="-1">${esc(q.stem)}</div>${stemMedia(q)}`;
   if (q.type === 'match') {
     h += q.left.map((l, i) => `<div class="row" style="margin-bottom:8px"><span style="flex:1 1 200px">${esc(l)}</span>
       <select data-qid="${q.id}" data-l="${i}" ${st.answered ? 'disabled' : ''}><option value="">—</option>${st.rightOrder.map(r => `<option value="${esc(r)}" ${st.mpick && st.mpick[i] === r ? 'selected' : ''}>${esc(r)}</option>`).join('')}</select>
@@ -684,14 +774,14 @@ function qCard(q, st, opts = {}) {
   if (!st.answered && (q.multi || q.type === 'match')) h += `<button class="btn" ${opts.single ? 'id="check"' : ''} data-qid="${q.id}" data-check="1">Check</button>`;
   if (st.answered) {
     const pairsRight = q.type === 'match' ? q.left.filter((l, i) => st.mpick[i] === pairOf(q, l)).length : 0;
-    h += `<div class="verdict ${st.ok ? 'ok' : 'bad'}">${st.ok ? '✓ Correct' : '✗ Not correct'}${q.type === 'match' ? ` · ${pairsRight} of ${q.left.length} pairs right` : ''}</div>`;
+    h += `<div class="verdict ${st.ok ? 'ok' : 'bad'}" role="status" tabindex="-1">${st.ok ? '✓ Correct' : '✗ Not correct'}${q.type === 'match' ? ` · ${pairsRight} of ${q.left.length} pairs right` : ''}</div>`;
     const hidden = [];
     if (q.type === 'match' && q.pairs) q.pairs.filter(p => p.why).forEach(p => { const i = q.left.indexOf(p.l); if (st.mpick[i] === p.r) hidden.push({t: p.l, why: p.why}); else h += `<div class="why"><b>${esc(p.l)}</b>: ${esc(p.why)}</div>`; });
     else q.options.forEach((o, i) => { if (o.why && !o.correct && !(q.multi ? st.picked.has(i) : st.picked === i)) hidden.push(o); });
     if (q.teach) h += `<div class="teach">${teachHTML(q.teach)}</div>`;
     h += graphFeedback(q, st);
     if (q.note) h += `<div class="note">${esc(q.note)}</div>`;
-    if (typeof NARR_Q !== 'undefined' && NARR_Q[q.id]) h += `<div class="row qsay"><button type="button" class="chip" data-qsay="${q.id}">🔊 Hear the why</button><span class="meta" style="margin:0">read by the narrator</span></div>`;
+    if (typeof NARR_Q !== 'undefined' && NARR_Q[q.id]) h += `<div class="row qsay"><button type="button" class="chip" data-qsay="${q.id}">🔊 Hear the why</button><span class="meta" style="margin:0">${typeof Q_CLIPS !== 'undefined' && !Q_CLIPS.includes(q.id) ? 'device voice' : 'read by the narrator'}</span></div>`;
     h += moreHTML(q, hidden) + explainHTML(q);
     if (opts.conf) h += opts.conf(st);
   }
@@ -714,7 +804,8 @@ function renderQ() {
   if (Q.finished) return quizDone();
   if (S.layout === 'all') return renderAll();
   // the current question may have been answered on the all-on-one-page view
-  if (Q.cur && !Q.answered && Q.doneIds.has(Q.cur.id)) return nextQ();
+  // (answered or not here: an answer recorded there must not be recorded again by this card's Next)
+  if (Q.cur && Q.doneIds.has(Q.cur.id) && Q.rec !== Q.cur.id) return nextQ();
   const q = Q.cur; clearView();
   let h = `<div class="row" style="justify-content:space-between"><span class="meta">${esc(Q.label || '')} · ${Q.done} answered${Q.done ? ' · ' + Q.right + ' right' : ''}</span>${layoutToggle()}</div><div class="row" style="margin:4px 0 10px">${sessStrip()}${aheadNote()}</div>`;
   // a right answer: Next records "Knew it" (as Enter does); the two smaller buttons beside it downgrade it
@@ -724,10 +815,13 @@ function renderQ() {
       : `<div class="row" style="margin-top:12px"><button class="btn" data-c="wrong">Next</button></div>`,
     foot: `<div class="meta kbd">Keys: A–J or 1–9 pick an option · Enter checks or continues · after a right answer 1 = Knew it, 2 = Not sure, 3 = I guessed</div>`});
   $('#view').innerHTML = h;
-  document.querySelectorAll('[data-o]').forEach(b => b.onclick = () => pick(+b.dataset.o));
+  // a tap within 350 ms of the question appearing is the second tap of a double tap on Drill or Next (keys are not held back)
+  document.querySelectorAll('[data-o]').forEach(b => b.onclick = e => { if (e.detail && Date.now() - Q.t0 < 350) return; pick(+b.dataset.o); });
   document.querySelectorAll('select[data-l]').forEach(s => s.onchange = () => { Q.mpick = Q.mpick || {}; Q.mpick[+s.dataset.l] = s.value; });
   const ck = document.querySelector('[data-check]'); if (ck) ck.onclick = check;
   document.querySelectorAll('[data-c]').forEach(b => b.onclick = () => finish(b.dataset.c));
+  // the card was redrawn: keep keyboard and screen-reader users on it (the verdict after an answer, the question after Next)
+  const fv = Q.answered ? $('#view .verdict') : $('#view .qcard .stem'); if (fv) fv.focus({preventScroll: true});
 }
 /* All on one page: every question of the drill in order, each graded as it is answered.
    A wrong answer is recorded at once; a right one is recorded as "Knew it" and can be
@@ -789,7 +883,7 @@ function pickAll(id, oi) {
 }
 function checkAll(id) {
   const q = byId[id], st = Q.st[id];
-  if (q.type === 'match') { st.mpick = st.mpick || {}; if (!Object.values(st.mpick).some(Boolean)) return; st.ok = q.left.every((l, i) => st.mpick[i] === pairOf(q, l)); }
+  if (q.type === 'match') { st.mpick = st.mpick || {}; if (q.left.some((l, i) => !st.mpick[i])) return; st.ok = q.left.every((l, i) => st.mpick[i] === pairOf(q, l)); }
   else if (q.multi) { if (!st.picked.size) return; st.ok = gradeMulti(q, st.picked); }
   else st.ok = q.options[st.picked].correct;
   st.answered = true; st.conf = st.ok ? 'sure' : 'wrong';
@@ -806,10 +900,10 @@ function checkAll(id) {
 function downgrade(id, conf) {
   const st = Q.st[id]; if (!st.answered || !st.ok || st.conf !== 'sure') return;
   st.conf = conf; const sq = qs(id);
-  if (conf === 'guess') { sq.ok = Math.max(0, sq.ok - 1); Q.retest.push({concept: byId[id].concept, not: id}); }
+  if (conf === 'guess') { sq.ok = Math.max(0, sq.ok - 1); Q.right = Math.max(0, Q.right - 1); Q.retest.push({concept: byId[id].concept, not: id}); }
   for (let i = S.log.length - 1; i >= 0; i--) if (S.log[i].id === id) { S.log[i].conf = conf; break; }
   sq.box = st.box0 || 0;   // reschedule from the box the answer started in, as the one-at-a-time flow does
-  schedule(id, conf); save(); refreshCard(id);
+  schedule(id, conf); save(); refreshCard(id); setTimeout(refreshSess, 0);
 }
 const pairOf = (q, l) => (q.pairs.find(p => p.l === l) || {}).r;
 function pick(oi) {
@@ -822,26 +916,40 @@ function check() {
   const q = Q.cur;
   if (q.type === 'match') {
     Q.mpick = Q.mpick || {};
-    if (!Object.values(Q.mpick).some(Boolean)) return;   // nothing chosen yet: Check does nothing, as with select-all
+    if (q.left.some((l, i) => !Q.mpick[i])) return;   // Check waits until every item has a match
     Q.ok = q.left.every((l, i) => Q.mpick[i] === pairOf(q, l));
   } else if (q.multi) {
     if (!Q.picked.size) return;
     Q.ok = gradeMulti(q, Q.picked);
   } else Q.ok = q.options[Q.picked].correct;
   Q.answered = true;
-  renderQ();
-}
-function finish(conf) {
-  const q = Q.cur, st = qs(q.id);
-  st.n++; if (Q.ok && conf !== 'guess') st.ok++;
+  // the answer is recorded the moment it is graded (a reload, a tab switch or the back gesture keeps it),
+  // as "Knew it" or a miss; Next or the confidence buttons only adjust it, as on the all-on-one-page view
+  const sq = qs(q.id), conf = Q.ok ? 'sure' : 'wrong'; Q.box0 = sq.box; sq.n++; if (Q.ok) sq.ok++;
   const picked = q.type === 'match' ? Q.mpick : q.multi ? [...Q.picked] : Q.picked;
   noteAnswer(q, {id: q.id, t: Date.now(), ok: Q.ok, conf, picked, ms: Date.now() - Q.t0});
   setTimeout(refreshSess, 0);
   if (S.log.length > 5000) S.log = S.log.slice(-5000);
-  schedule(q.id, Q.ok ? conf : 'wrong');
-  if (!Q.ok || conf === 'guess') Q.retest.push({concept: q.concept, not: q.id});
-  Q.done++; if (Q.ok) Q.right++; Q.doneIds.add(q.id);
-  save(); nextQ();
+  schedule(q.id, conf);
+  if (!Q.ok) Q.retest.push({concept: q.concept, not: q.id});
+  Q.done++; if (Q.ok) Q.right++; Q.doneIds.add(q.id); Q.rec = q.id;
+  // the all-on-one-page view shows it answered, not as a fresh card
+  Q.st[q.id] = {order: Q.order, rightOrder: q.type === 'match' ? Q.rightOrder : null, picked: Q.picked, mpick: Q.mpick, answered: true, ok: Q.ok, conf, box0: Q.box0, t0: Q.t0};
+  save();
+  renderQ();
+}
+function finish(conf) {
+  const q = Q.cur;
+  // already recorded at Check as "Knew it" or a miss; "Not sure" and "I guessed" adjust that record
+  if (Q.ok && (conf === 'unsure' || conf === 'guess') && Q.rec === q.id) {
+    const sq = qs(q.id);
+    if (conf === 'guess') { sq.ok = Math.max(0, sq.ok - 1); Q.right = Math.max(0, Q.right - 1); Q.retest.push({concept: q.concept, not: q.id}); }
+    for (let i = S.log.length - 1; i >= 0; i--) if (S.log[i].id === q.id) { S.log[i].conf = conf; break; }
+    sq.box = Q.box0 || 0; schedule(q.id, conf);
+    if (Q.st[q.id]) Q.st[q.id].conf = conf;
+    save(); setTimeout(refreshSess, 0);
+  }
+  nextQ();
 }
 
 /* ---------- Weak spots ---------- */
@@ -1230,7 +1338,9 @@ function loadExam() {
     const x = JSON.parse(store.get(EXKEY()) || 'null');
     if (!isObj(x) || !Array.isArray(x.qs) || !x.qs.length || !x.qs.every(id => byId[id] && !byId[id].type) || !Number.isFinite(+x.ends)) return null;
     if (!Array.isArray(x.orders) || x.orders.length !== x.qs.length || !x.orders.every((o, k) => Array.isArray(o) && o.length === byId[x.qs[k]].options.length && o.every(n => Number.isInteger(n) && n >= 0 && n < o.length))) return null;
-    const ans = {}; if (isObj(x.ans)) Object.keys(x.ans).forEach(id => { const a = x.ans[id]; if (byId[id] && (Number.isInteger(a) || (Array.isArray(a) && a.every(Number.isInteger)))) ans[id] = a; });
+    // an answer is kept only when it fits its question now (a content update can turn single-answer into select-all)
+    const fits = (q, a) => { const ok = n => Number.isInteger(n) && n >= 0 && n < q.options.length; return q.multi ? Array.isArray(a) && a.every(ok) : ok(a); };
+    const ans = {}; if (isObj(x.ans)) Object.keys(x.ans).forEach(id => { const a = x.ans[id]; if (byId[id] && x.qs.includes(id) && fits(byId[id], a)) ans[id] = a; });
     return {exam: +x.exam || null, name: typeof x.name === 'string' ? x.name : '', qs: x.qs, i: Math.max(0, Math.min(x.qs.length - 1, Math.floor(+x.i) || 0)), ans, flag: isObj(x.flag) ? x.flag : {}, orders: x.orders, ends: +x.ends, done: !!x.done, score: Number.isFinite(+x.score) ? +x.score : 0};
   } catch (e) { return null; }
 }
@@ -1257,7 +1367,7 @@ function drawExam(n) {
     const list = shuffle(eligible(p)).sort((a, b) => (concepts.has(a.concept) ? 1 : 0) - (concepts.has(b.concept) ? 1 : 0));
     for (const q of list) {
       if (want[i] <= 0) break;
-      if (used.has(q.id) || (q.dupOf && used.has(q.dupOf)) || [...used].some(u => byId[u].dupOf === q.id)) continue;
+      if (used.has(q.id) || (q.dupOf && used.has(q.dupOf)) || [...used].some(u => byId[u].dupOf === q.id || (q.dupOf && byId[u].dupOf === q.dupOf))) continue;   // siblings of one original too
       if (concepts.has(q.concept) && list.some(o => !used.has(o.id) && !concepts.has(o.concept))) continue;
       out.push(q); used.add(q.id); concepts.add(q.concept); want[i]--;
     }
@@ -1288,7 +1398,7 @@ function drawBlueprint(bp) {
   const catOf = bp.parts.some(p => p.test) ? q => (bp.parts.find(p => p.test && p.test(q)) || bp.parts.find(p => p.rest)).key : bpCat;
   const by = {}; elig.forEach(q => (by[catOf(q)] = by[catOf(q)] || []).push(q));
   const total = active().questions, out = [], used = new Set();
-  const ok = q => !used.has(q.id) && !(q.dupOf && used.has(q.dupOf)) && ![...used].some(u => byId[u].dupOf === q.id);
+  const ok = q => !used.has(q.id) && !(q.dupOf && used.has(q.dupOf)) && ![...used].some(u => byId[u].dupOf === q.id || (q.dupOf && byId[u].dupOf === q.dupOf));
   const cat = new Map();
   const take = (key, n) => {
     const list = shuffle((by[key] || []).slice()), seen = new Set();
@@ -1326,7 +1436,7 @@ function vExam() {
   if (EX && EX.done && (!EX.exam || EX.exam === ex.id)) return examResult();
   const lens = [...new Set([ex.questions, 25, 50, max].filter(x => x && x <= max))].sort((a, b) => a - b);
   let h = `<h2>Exam simulator</h2><div class="row" style="margin:-4px 0 8px">${examSwitch()}</div><p class="sub">${esc(ex.name)}: ${ex.questions ? ex.questions + ' questions' : 'question count not yet announced'}, ${ex.minutes} minutes allotted.
-    Answers are not shown until you submit. Select-all items are scored all-or-nothing. ${ex.blueprint ? 'With his topic counts on, the paper follows them; otherwise' : ''} definition questions make up at most 15% of the paper.</p>
+    Answers are not shown until you submit. Select-all items are scored all-or-nothing. ${ex.blueprint ? 'With his topic counts on, the paper follows them; otherwise definition' : 'Definition'} questions make up at most 15% of the paper.</p>
     <div class="card"><div class="row"><span>Length:</span>${lens.map(n => `<button type="button" class="chip ${n === (ex.questions || lens[0]) ? 'on' : ''}" aria-pressed="${n === (ex.questions || lens[0])}" data-n="${n}">${n === max ? 'All ' + n : n}</button>`).join('')}</div>
     ${ex.blueprint ? `<div style="margin-top:10px"><label id="bplab"><input type="checkbox" id="bp" checked> Match his topic counts (the full ${ex.questions}-question paper only)</label>
       <details class="fold bpl"><summary>His topic counts</summary><ul class="bpcols">${ex.blueprint.parts.map(p => `<li>${esc(p.name)}: <b>${p.rest ? 'the rest' : p.min ? 'at least ' + p.min : Array.isArray(p.n) ? p.n.join('–') : p.n}</b></li>`).join('')}<li>Select-all items: <b>${ex.blueprint.sata}</b></li></ul></details></div>` : ''}
@@ -1334,7 +1444,7 @@ function vExam() {
     <div class="row" style="margin-top:10px"><span class="meta" style="margin:0">Answer:</span>${layoutToggle()}</div>
     <div class="row" style="margin-top:12px"><button class="btn" id="startx">Start</button></div></div>`;
   // a finished paper of the other exam is kept: say where it is
-  if (EX && EX.done && EX.exam && EX.exam !== ex.id) { const o = COURSE.exams.find(e => e.id === EX.exam); h += `<p class="sub" id="keptres">Your last ${esc(o ? o.name : 'other exam')} paper (${EX.score}/${EX.qs.length}) is kept: choose ${esc(o ? o.name : 'it')} above to see its result.</p>`; }
+  if (EX && EX.done && EX.exam && EX.exam !== ex.id) { const o = COURSE.exams.find(e => e.id === EX.exam); h += `<p class="sub" id="keptres">Your last ${esc(o ? o.name : 'other exam')} paper (${EX.score}/${EX.qs.length}) is kept: ${focusOn() ? 'turn off Smith focus and choose ' + esc(o ? o.name : 'it') : 'choose ' + esc(o ? o.name : 'it') + ' above'} to see its result.</p>`; }
   h += pastAttempts(ex);
   $('#view').innerHTML = h;
   let n = ex.questions || lens[0];
@@ -1412,25 +1522,26 @@ function renderExam() {
   if (EX.shown !== EX.i) { EX.shown = EX.i; window.scrollTo(0, 0); }
   const q = byId[EX.qs[EX.i]], ord = EX.orders[EX.i], a = EX.ans[q.id];
   let h = `<div class="row" style="justify-content:space-between"><b>${EX.name ? esc(EX.name) + ' · ' : ''}Question ${EX.i + 1} of ${EX.qs.length}</b><span class="row"><span class="timer" id="clock" role="timer"></span>${layoutToggle()}</span></div>
-    <div class="grid">${EX.qs.map((id, k) => `<button data-j="${k}" class="${examAnswered(id) ? 'ans' : ''} ${k === EX.i ? 'cur' : ''} ${isFlagged(id) ? 'flag' : ''}">${k + 1}</button>`).join('')}</div>
+    <div class="grid">${EX.qs.map((id, k) => `<button data-j="${k}" class="${examAnswered(id) ? 'ans' : ''} ${k === EX.i ? 'cur' : ''} ${isFlagged(id) ? 'flag' : ''}" aria-label="Question ${k + 1}${examAnswered(id) ? ', answered' : ''}${isFlagged(id) ? ', flagged' : ''}"${k === EX.i ? ' aria-current="true"' : ''}>${k + 1}</button>`).join('')}</div>
     <div class="card"><div class="stem">${esc(q.stem)}</div>${stemMedia(q)}`;
   ord.forEach((oi, n) => {
     const sel = q.multi ? (a || []).includes(oi) : a === oi;
-    h += `<button class="opt ${sel ? 'sel' : ''}" data-o="${oi}"><span class="k">${q.multi ? (sel ? '☑' : '☐') : LETTERS[n]}</span><span>${esc(q.options[oi].t)}</span></button>`;
+    h += `<button class="opt ${sel ? 'sel' : ''}" data-o="${oi}" aria-pressed="${sel}"><span class="k">${q.multi ? (sel ? '☑' : '☐') : LETTERS[n]}</span><span>${esc(q.options[oi].t)}</span></button>`;
   });
   h += `</div><div class="row"><button class="btn ghost" id="prev" ${EX.i ? '' : 'disabled'}>Previous</button>
     ${flagBtn(q.id)}
     <button class="btn ghost" id="next" ${EX.i < EX.qs.length - 1 ? '' : 'disabled'}>Next</button>
     <button class="btn" id="submit">Submit exam</button></div>`;
   $('#view').innerHTML = h;
-  document.querySelectorAll('[data-o]').forEach(b => b.onclick = () => { examPick(q, +b.dataset.o); renderExam(); });
+  const shown = Date.now();
+  document.querySelectorAll('[data-o]').forEach(b => b.onclick = e => { if (e.detail && Date.now() - shown < 350) return; examPick(q, +b.dataset.o); renderExam(); });
   document.querySelectorAll('[data-j]').forEach(b => b.onclick = () => { EX.i = +b.dataset.j; renderExam(); });
   $('#prev').onclick = () => { EX.i--; renderExam(); };
   $('#next').onclick = () => { EX.i++; renderExam(); };
   $('#submit').onclick = askSubmit;
   examTick();
 }
-const exRight = (q, a) => q.multi ? (Array.isArray(a) && gradeMulti(q, new Set(a))) : (a != null && q.options[a].correct);
+const exRight = (q, a) => q.multi ? (Array.isArray(a) && gradeMulti(q, new Set(a))) : (Number.isInteger(a) && !!q.options[a] && !!q.options[a].correct);
 function submitExam() {
   clearInterval(TICK);
   EX.done = true;
@@ -1438,6 +1549,8 @@ function submitExam() {
   EX.qs.forEach(id => {
     const q = byId[id], a = EX.ans[id], ok = exRight(q, a);
     if (ok) score++;
+    // an unanswered question counts against the paper's score but is not a miss in the learner's record
+    if (!examAnswered(id)) return;
     const st = qs(id); st.n++; if (ok) st.ok++;
     noteAnswer(q, {id, t: Date.now(), ok, conf: 'exam', picked: a, ms: 0});
     schedule(id, ok ? 'unsure' : 'wrong');
@@ -1489,6 +1602,8 @@ const termKey = t => 'term:' + t.id;
 const LETTERS_AZ = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').concat('#');
 const termLetter = t => { const c = (t.term.match(/[A-Za-z]/) || [''])[0].toUpperCase(); return /^[A-Za-z]/.test(t.term.trim()) ? c : '#'; };
 // withExam: search and A–Z mix both exams, so each card says which exam it belongs to
+// a term's situation card: the exam-style question when one is written, none when the scene form is dropped
+const tScene = t => t.dropScene ? '' : (t.sceneQ || t.scene || '');
 const termHTML = (t, withExam) => `<div class="term" id="term-${esc(t.id)}"><b>${esc(t.term)}</b>${withExam ? ` <span class="exlabel">Exam ${lecExam(t.lecture) || 1}</span>` : ''}${t.gist ? `<div class="gist">${esc(t.gist)}</div>` : ''}<div>${esc(t.def)}</div>${t.scene ? `<div class="hook"><b>In action:</b> ${esc(t.scene)}</div>` : ''}${t.hook ? `<div class="hook">${esc(t.hook)}</div>` : ''}${t.fig ? figHTML(t.fig) : ''}<div class="cite">${esc(fmtCite(t.cite))}</div></div>`;
 function glossWire(all, groups) {
   const box = $('#tsearch'), list = $('#glist');
@@ -1593,11 +1708,11 @@ function vTerms() {
     const seen = list.filter(x => S.q[termKey(x)]).length;
     h += `<div class="meta">${seen}/${list.length} cards seen · ${due.length} due · ${unseen.length} new · this card: ${st ? 'seen ' + st.n + '×' : 'new'}</div><div class="card"><div class="flash"><div class="meta">${esc(t.group)}</div>`;
     // front of the card: the situation, with the term hidden; the term and its meaning come on the back
-    if (t.scene && !TM.shown) h += `<div class="meta" style="margin-bottom:6px">Which term is this?</div><div style="font-size:18px">${esc(t.scene)}</div>`;
+    if (tScene(t) && !TM.shown) h += `${t.sceneQ ? '' : '<div class="meta" style="margin-bottom:6px">Which term is this?</div>'}<div style="font-size:18px">${esc(tScene(t))}</div>`;
     else h += `<div class="t">${esc(t.term)}</div>${t.gist ? `<div class="gist" style="margin-top:4px">${esc(t.gist)}</div>` : ''}`;
-    if (TM.shown) h += `<div style="text-align:left;margin-top:14px">${t.scene ? `<div class="hook" style="margin-bottom:6px"><b>In action:</b> ${esc(t.scene)}</div>` : ''}<div>${esc(t.def)}</div>${t.hook ? `<div class="hook" style="color:var(--muted);margin-top:4px">${esc(t.hook)}</div>` : ''}${t.fig ? figHTML(t.fig) : ''}<div class="cite">${esc(fmtCite(t.cite))}</div></div>
+    if (TM.shown) h += `<div style="text-align:left;margin-top:14px">${tScene(t) ? `<div class="hook" style="margin-bottom:6px"><b>In action:</b> ${esc(tScene(t))}</div>` : ''}<div>${esc(t.def)}</div>${t.hook ? `<div class="hook" style="color:var(--muted);margin-top:4px">${esc(t.hook)}</div>` : ''}${t.fig ? figHTML(t.fig) : ''}<div class="cite">${esc(fmtCite(t.cite))}</div></div>
       <div class="row" style="justify-content:center;margin-top:14px"><button class="btn" data-fc="sure">Knew it</button><button class="btn ghost" data-fc="unsure">Not sure</button><button class="btn ghost" data-fc="wrong">Did not know</button></div>`;
-    else h += `<div class="row" style="justify-content:center;margin-top:14px"><button class="btn" id="fcshow">${t.scene ? 'Show the term' : 'Show definition'}</button></div>`;
+    else h += `<div class="row" style="justify-content:center;margin-top:14px"><button class="btn" id="fcshow">${tScene(t) ? 'Show the term' : 'Show definition'}</button></div>`;
     h += `</div></div>`;
   } else {
     const pool = tq.filter(q => TM.group === 'all' || (TOPIC.TERMS.subs.find(s => s.id === q.sub) || {}).name === TM.group);
@@ -1906,7 +2021,7 @@ function rxAdvance() {
   vRxq();
 }
 function rxNext() { rxAdvance(); }
-document.addEventListener('keydown', e => { if (CUR === 'rxq' && e.key === 'Enter' && !e.target.closest('button, input, select, textarea')) { const b = $('#rxnext') || $('#rxcheck'); if (b && !b.disabled) b.click(); } });
+document.addEventListener('keydown', e => { if (ANTI) return; if (CUR === 'rxq' && e.key === 'Enter' && !e.target.closest('button, input, select, textarea')) { const b = $('#rxnext') || $('#rxcheck'); if (b && !b.disabled) b.click(); } });
 
 /* ===== Poisoning table drill: Dr. Smith's Poisoning Treatment Table 2026 KEY (poison_table.js) =====
    Her words on 10/20: "you do need to know the details that I have in my table, my key." Five ways in:
@@ -1997,7 +2112,7 @@ function ptAdvance() {
   if (PT.redo.length) ptStart(PT.redo.map(x => x.id)); else ptStart();
   vPtab();
 }
-document.addEventListener('keydown', e => { if (CUR === 'ptab' && e.key === 'Enter' && !e.target.closest('button, input, select, textarea')) { const b = $('#ptnext'); if (b) b.click(); } });
+document.addEventListener('keydown', e => { if (ANTI) return; if (CUR === 'ptab' && e.key === 'Enter' && !e.target.closest('button, input, select, textarea')) { const b = $('#ptnext'); if (b) b.click(); } });
 
 /* Antidote diagrams: standalone pages under antidotes/ (IDs repeat across them, so each runs in its own frame).
    The page reports its height with postMessage; Esc or the close button returns focus to the opener. */
@@ -2014,7 +2129,9 @@ function antiOpen(slug, opener) {
   if (!ANTI) {
     ANTI = {opener: opener || document.activeElement, el: document.createElement('div')};
     ANTI.el.className = 'antiview'; ANTI.el.setAttribute('role', 'dialog'); ANTI.el.setAttribute('aria-modal', 'true'); ANTI.el.setAttribute('aria-labelledby', 'antititle');
-    document.body.appendChild(ANTI.el); document.body.classList.add('antiopen');
+    document.body.appendChild(ANTI.el); document.body.classList.add('antiopen'); pushNav({v: CUR, anti: 1});
+    // the page behind is inert while the panel is open: Tab stays in the panel, the theme cannot change underneath
+    ANTI.inert = [...document.body.children].filter(c => c !== ANTI.el && !c.inert); ANTI.inert.forEach(c => { c.inert = true; });
   }
   ANTI.slug = d.slug;
   ANTI.el.innerHTML = `<div class="antibox"><div class="antihead"><b id="antititle">${esc(d.title)}</b><span class="meta" style="margin:0">${i + 1} of ${n}</span>
@@ -2024,8 +2141,10 @@ function antiOpen(slug, opener) {
     <p class="sub" style="margin:6px 0 0">Drawn from the figures on the Treating Poisonings slides (10/19). <a href="${ANTI_BASE}index.html" target="_blank" rel="noopener">All diagrams</a></p></div>`;
   $('#anticlose').focus();
 }
-function antiClose() {
-  if (!ANTI) return; ANTI.el.remove(); document.body.classList.remove('antiopen');
+function antiClose(fromPop) {
+  if (!ANTI) return;
+  if (!fromPop && history.state && history.state.anti) { SKIPPOP++; try { history.back(); } catch (e) { SKIPPOP--; } }   // drop the panel's own history entry
+  ANTI.el.remove(); document.body.classList.remove('antiopen'); (ANTI.inert || []).forEach(c => { c.inert = false; });
   const o = ANTI.opener; ANTI = null; if (o && o.focus && document.contains(o)) o.focus();
 }
 document.addEventListener('click', e => {
@@ -2036,7 +2155,9 @@ document.addEventListener('click', e => {
 });
 document.addEventListener('keydown', e => { if (ANTI && e.key === 'Escape') antiClose(); });
 window.addEventListener('message', e => {
-  const f = $('#antiframe'); if (!f || e.source !== f.contentWindow || !e.data || typeof e.data.antidoteH !== 'number') return;
+  const f = $('#antiframe'); if (!f || e.source !== f.contentWindow || !e.data) return;
+  if (e.data.antidoteEsc) { antiClose(); return; }
+  if (typeof e.data.antidoteH !== 'number') return;
   f.style.height = Math.min(Math.max(e.data.antidoteH, 200), 4000) + 'px';
 });
 const antiCard = () => antiOK() ? `<div class="card"><b>Antidote diagrams</b><p class="sub" style="margin:2px 0 8px">Drawings of the antidote mechanisms on the Treating Poisonings slides (10/19); five of the seven step through.</p><div class="row" style="gap:6px">${ANTIDOTE_DIAGRAMS.map(d => antiChip(d)).join('')}</div></div>` : '';
@@ -2461,6 +2582,7 @@ function qSay(id, btn) {
   const cur = QSAY = {id, btn, t: null}; btn.textContent = '■ Stop'; btn.setAttribute('aria-pressed', 'true');
   const finish = () => { if (QSAY !== cur) return; qSayStop(); };
   const synth = () => { if (!narrCan()) return finish(); const v = narrVoice(); let last = null; (speakable(text).match(/[^.;:!?]+[.;:!?]*/g) || [text]).forEach(part => { if (!part.trim()) return; const u = new SpeechSynthesisUtterance(part.trim()); u.rate = NAR.rate; u.lang = 'en-US'; if (v) u.voice = v; last = u; speechSynthesis.speak(u); }); if (!last) return finish(); last.onend = last.onerror = finish; cur.t = setTimeout(finish, (2000 + text.split(/\s+/).length * 450) / NAR.rate); };
+  if (typeof Q_CLIPS !== 'undefined' && !Q_CLIPS.includes(id)) { cur.fell = true; synth(); cur.t = setTimeout(finish, (6000 + text.split(/\s+/).length * 500) / NAR.rate); return; }   // no recorded clip: the device voice, without a failed request
   const a = NARR_AUDIO || (NARR_AUDIO = new Audio()); a.preload = 'auto'; a.src = NAR_BASE() + 'q-' + id + '.mp3'; a.playbackRate = NAR.rate;
   const fallback = () => { if (QSAY !== cur || cur.fell) return; cur.fell = true; synth(); };
   a.onended = finish; a.onerror = fallback; a.play().catch(fallback);
@@ -2561,17 +2683,23 @@ const FIG_MIN_PX = 10;
 const swipeHint = box => { const h = box.nextElementSibling; if (h && h.classList.contains('swipe') && box.clientWidth) h.hidden = box.scrollWidth <= box.clientWidth + 1; };
 function fitFigs(root) {
   if (!PHONE || !PHONE.matches || !root) return;
+  // all reads first, then all writes, then the hint checks: one layout for the page instead of one per figure
+  const todo = [];
   root.querySelectorAll('.fig .svgx > svg:not([data-fit])').forEach(svg => {
+    const vb = svg.viewBox && svg.viewBox.baseVal ? svg.viewBox.baseVal.width : 0; let min = Infinity;
+    if (vb) svg.querySelectorAll('text').forEach(t => { if (t.textContent.trim()) { const f = parseFloat(getComputedStyle(t).fontSize); if (f > 0 && f < min) min = f; } });
+    todo.push([svg, vb, min]);
+  });
+  const boxes = [];
+  todo.forEach(([svg, vb, min]) => {
     svg.setAttribute('data-fit', '1');
-    const vb = svg.viewBox && svg.viewBox.baseVal ? svg.viewBox.baseVal.width : 0; if (!vb) return;
-    let min = Infinity;
-    svg.querySelectorAll('text').forEach(t => { if (t.textContent.trim()) { const f = parseFloat(getComputedStyle(t).fontSize); if (f > 0 && f < min) min = f; } });
-    if (!(min < Infinity) || vb * FIG_MIN_PX / min <= 300) return;   // fits a phone as drawn
+    if (!vb || !(min < Infinity) || vb * FIG_MIN_PX / min <= 300) return;   // fits a phone as drawn
     svg.style.setProperty('--minw', Math.ceil(vb * FIG_MIN_PX / min) + 'px');
     const box = svg.parentElement; box.classList.add('fit');
     if (!(box.nextElementSibling && box.nextElementSibling.classList.contains('swipe'))) box.insertAdjacentHTML('afterend', '<div class="swipe" hidden>↔ Scroll the picture sideways to see all of it, or pinch to zoom.</div>');
-    swipeHint(box);
+    boxes.push(box);
   });
+  boxes.forEach(swipeHint);
 }
 const allHints = () => document.querySelectorAll('.svgx.fit').forEach(swipeHint);
 if (window.MutationObserver) {
@@ -2954,10 +3082,11 @@ function vData() {
       (q.options || []).filter(o => o.correct).map(o => o.t).join(' | '), q.cite]));
     download(`${COURSE.ns}-missed.csv`, rows.map(r => r.map(c => '"' + String(c == null ? '' : c).replace(/"/g, '""') + '"').join(',')).join('\n'), 'text/csv');
   };
-  $('#reset').onclick = () => { if (confirm('Erase all progress for this profile?')) { S = {q: {}, log: [], pace: COURSE.paceDefault, exams: [], flags: {}, layout: S.layout || 'one'}; save(); vData(); } };
+  $('#reset').onclick = () => { if (confirm('Erase all progress for this profile?')) { endExam(); S = {q: {}, log: [], pace: COURSE.paceDefault, exams: [], flags: {}, layout: S.layout || 'one'}; save(); vData(); } };   // an open exam paper is erased too
 }
 
 document.addEventListener('keydown', e => {
+  if (ANTI) return;   // the diagram panel is open: no shortcut may act on the page underneath
   // typing in a field is never a shortcut; on a focused button or link, Enter and Space keep their own meaning
   const tg = e.target && e.target.tagName || '';
   if (/^(INPUT|SELECT|TEXTAREA)$/.test(tg) || (e.target && e.target.isContentEditable)) return;
@@ -2989,3 +3118,5 @@ document.title = COURSE.title;
 $('#apptitle').innerHTML = `${esc(COURSE.short)} <span class="stamp">updated ${esc(fmtDate(BUILD.built))}</span>`;
 // a paper saved mid-exam reopens on the exam page, clock running, so it is not forgotten in the background
 nav(); go(EX && !EX.done ? 'exam' : 'topics');
+try { history.replaceState({drill: 1, v: CUR}, ''); } catch (e) {}
+NAV_READY = true;
