@@ -2,6 +2,12 @@
 
 Newest first. The build embeds this file; the Topics page shows what is new since your last visit, and the Progress page shows all of it. Keep each bullet to one short line.
 
+## 2026-10-22 (Short answer, Quiz 4, her exam format)
+
+- New Short answer page: 26 prompts; write your answer, then compare with a model answer and tick the key points.
+- Quiz 4's four questions on 10/20 material, word for word, in Quizzes (verbatim).
+- Exam sim: optional "her exam format" (one at a time, no going back, as she said 10/21); off by default.
+
 ## 2026-10-22 (Exam format; her slips corrected)
 
 - Exam 3 card: 54 questions in 2 hours; select-all, 2 true/false, 2 short answer (her words in class 10/22).

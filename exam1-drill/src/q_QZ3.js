@@ -9,7 +9,8 @@ TOPICS.push({id:'QZ3', name:'Quizzes (verbatim)', prof:'Smith', lecture:'QZ3', c
   subs:[
     {id:'quiz1', name:'Quiz 1: Principles of Toxicology', cite:'Smith_Practice_Quiz_1_-_Principles_of_Toxicology.pdf (her released key)'},
     {id:'quiz2', name:'Quiz 2: Toxic Responses', cite:'Smith_Quizzes_1-3_QA.pdf pp. 3–4'},
-    {id:'quiz3', name:'Quiz 3: Treating Poisonings', cite:'Smith_Quizzes_1-3_QA.pdf pp. 5–6'}
+    {id:'quiz3', name:'Quiz 3: Treating Poisonings', cite:'Smith_Quizzes_1-3_QA.pdf pp. 5–6'},
+    {id:'quiz4', name:'Quiz 4: Intro to Pharmacogenomics (the questions on 10/20 material)', cite:'Smith_Quiz_4_-_Intro_to_Pharmacogenomics.pdf'}
   ]});
 
 QUESTIONS.push(
@@ -249,5 +250,55 @@ QUESTIONS.push(
  teach:"Quiz 3, question 10. An inactivator binds the toxin so it cannot interact with its target; the toxin-inactivator complex must then be cleared, must have no activity of its own, and the inactivator must have high affinity for the toxin. Heavy metal chelators add that they must bind the metal more tightly than the body's own macromolecules and ions, be water soluble, non-toxic and readily cleared.",
  quote:"That toxin inactivator complex then has to get cleared from the body. ... so the complex must have, let's change that from low to no toxicity here at this bottom bullet, OK. ... It needs to have high affinity for the toxin, OK.",
  note:"Quiz 3, question 10, verbatim. Keyed on the recorded answer (A); her words agree that the complex must be cleared. Same point as L16-030.",
- cite:"Smith_Quizzes_1-3_QA.pdf pp. 5–6, Quiz 3 question 10; Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slides ‘Inactivation of Poisons’, ‘Inactivation of Poisons: Heavy Metal Chelators’; transcript 10/19"}
+ cite:"Smith_Quizzes_1-3_QA.pdf pp. 5–6, Quiz 3 question 10; Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slides ‘Inactivation of Poisons’, ‘Inactivation of Poisons: Heavy Metal Chelators’; transcript 10/19"},
+/* ---------------- Quiz 4: Intro to Pharmacogenomics (questions 4, 8, 9 and 10 cover 10/20; the rest cover 10/21, the next exam) ---------------- */
+{id:"QZ3-020", lecture:"QZ3", prof:"Smith", tier:"new", topic:"QZ3", sub:"quiz4", skill:"recall",
+ concept:"pgx-hla-hypersensitivity", tags:["smith","quiz"], source:"both",
+ stem:"What type of adverse drug response is often seen when patients have variants in HLA genes?",
+ options:[
+  {t:"Decreased receptor response", correct:false, why:"A variant in a drug target such as a receptor changes the response through the target, the efficacy bucket; HLA variants act through the immune system."},
+  {t:"Enhanced drug transport", correct:false, why:"Transport changes come from transporter variants such as P-glycoprotein, a separate target area."},
+  {t:"Hypersensitivity", correct:true, why:"HLA variants belong to the immunological target area, and her Toxic Responses slide gives hypersensitivity as one of the two ways drugs activate immune responses."},
+  {t:"Decreased metabolism", correct:false, why:"Slower metabolism comes from variants in metabolizing enzymes, the first target area, not from HLA genes."}],
+ teach:"Of her four target areas, the newest is immunological: people with certain variants of their HLA antigens respond badly to some drugs, and the list grows every year. An immune response to a drug is, on her Toxic Responses slide, either a hypersensitivity reaction or an autoimmune reaction, so the response tied to HLA variants is hypersensitivity.",
+ quote:"We have some medications that people uh with certain genetic variations in their HLA antigens, they are going to respond badly to these drugs if they have certain variants of their HLA antigens",
+ note:"Quiz 4, question 4, verbatim. The source file is the student's write-up of the quiz; her key had not been released when this was added, so the answer is keyed on her slides and her 10/20 words. HLA was named on 10/20; the word hypersensitivity comes from her Toxic Responses slide and the 10/21 examples deck.",
+ cite:"Smith_Quiz_4_-_Intro_to_Pharmacogenomics.pdf, Quiz 4 question 4; Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘Introduction: Three Target Areas’; transcript 10/20; Toxic Responses Students Fall 2026 WCAG21A.pdf slide on immunologic responses"},
+
+{id:"QZ3-021", lecture:"QZ3", prof:"Smith", tier:"new", topic:"QZ3", sub:"quiz4", skill:"recall",
+ concept:"pgx-clinical-relevance", tags:["smith","quiz"], source:"both",
+ stem:"Clinically significant relationships between patient genotype and drug response exist and should help determine patient care.",
+ options:[
+  {t:"True", correct:true, why:"MacKinnon (2023) found that more than half of the patients evaluated were prescribed medications where pharmacogenomics is important; using genotype aims to prevent toxicity or ensure efficacy."},
+  {t:"False", correct:false, why:"Her impact slide says the opposite: pharmacogenomics matters for more than half of the patients evaluated."}],
+ teach:"Pharmacogenomics is used to prevent toxicity or ensure efficacy. Her impact slide cites MacKinnon (2023): more than half of the patients evaluated were prescribed medications where pharmacogenomics is important in their use, which is why the genotype-drug response relationship should inform care.",
+ quote:"they found that more than half of the patients evaluated were prescribed medications where pharmacogenomics is important in their use",
+ note:"Quiz 4, question 8, verbatim. The source file is the student's write-up of the quiz; her key had not been released when this was added, so the answer is keyed on her slides and her 10/20 words.",
+ cite:"Smith_Quiz_4_-_Intro_to_Pharmacogenomics.pdf, Quiz 4 question 8; Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘Introduction: Impact of Pharmacogenomics’; transcript 10/20"},
+
+{id:"QZ3-022", lecture:"QZ3", prof:"Smith", tier:"new", topic:"QZ3", sub:"quiz4", skill:"recall",
+ concept:"haplotype-definition", tags:["smith","quiz"], source:"both",
+ stem:"Which statement defines a haplotype?",
+ options:[
+  {t:"A genetic variant that occurs very frequently.", correct:false, why:"One frequent variant is a polymorphism (at least 1% of a population); a haplotype is a set of variants at several loci."},
+  {t:"More than one genetic variant that group together and co-exist with a higher frequency than would occur by chance.", correct:true, why:"Her slide: a set of alleles at multiple loci on the same chromosome; in class: a haplotype occurs at a frequency greater than random chance."},
+  {t:"A genetic variant that occurs in less than 1% of the population.", correct:false, why:"That is a rare variant."},
+  {t:"One genetic variant loci on a gene with a higher frequency than would occur by chance.", correct:false, why:"A haplotype needs more than one locus; one variant alone cannot form a set."}],
+ teach:"A haplotype is a set of alleles at multiple loci that co-exist on the same chromosome. Her figure showed SNPs at three positions travelling together as AGT, GTA and AGA, more often than random chance; the slide calls that higher co-occurrence linkage disequilibrium.",
+ quote:"a haplotype is going to be occurring at a frequency that is greater than random chance",
+ note:"Quiz 4, question 9, verbatim. The source file is the student's write-up of the quiz; her key had not been released when this was added, so the answer is keyed on her slides and her 10/20 words.",
+ cite:"Smith_Quiz_4_-_Intro_to_Pharmacogenomics.pdf, Quiz 4 question 9; Intro_to_PGx_Lecture_Students_Fall_2026.pdf slides ‘Complications of Genotype vs phenotype’, ‘Illustration of Haplotype’; transcript 10/20"},
+
+{id:"QZ3-023", lecture:"QZ3", prof:"Smith", tier:"new", topic:"QZ3", sub:"quiz4", skill:"recall",
+ concept:"pgx-metabolizing-enzymes-best-known", tags:["smith","quiz"], source:"both",
+ stem:"Which is the best characterized group of genetic variants that affect drug response?",
+ options:[
+  {t:"Variants in drug targets such as receptors or enzymes", correct:false, why:"Drug targets are a more recent area; she said that area has not moved forward as fast as metabolizing enzymes or transporters."},
+  {t:"Variants in drug metabolizing enzymes", correct:true, why:"Her reason: they were the low-hanging fruit. Patients who could not metabolize and clear a drug reached high blood levels and serious toxicity, so those variants were studied first."},
+  {t:"Variants in drug transporters", correct:false, why:"Transporters came second, after metabolizing enzymes."}],
+ teach:"Her four target areas came in order of how much is known: metabolizing enzymes, transporters, drug targets, then immunological targets. Metabolizing enzymes were studied first because poor clearance gave the most apparent and dangerous adverse effects, so they are the best characterized.",
+ quote:"the reason why we know the most about variants in metabolizing enzymes is because they were really the low hanging fruit",
+ note:"Quiz 4, question 10, verbatim. The source file is the student's write-up of the quiz; her key had not been released when this was added, so the answer is keyed on her slides and her 10/20 words.",
+ cite:"Smith_Quiz_4_-_Intro_to_Pharmacogenomics.pdf, Quiz 4 question 10; Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘Introduction: Three Target Areas’; transcript 10/20"}
+
 );
