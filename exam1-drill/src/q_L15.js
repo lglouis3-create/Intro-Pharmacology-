@@ -157,8 +157,8 @@ QUESTIONS.push(
 
 /* ---------------- Neurotoxicity ---------------- */
 {id:"L15-011", lecture:"L15", prof:"Smith", tier:"new", topic:"L15", sub:"neuro", skill:"figure",
- concept:"bbb-vs-systemic-capillary", tags:["smith"], source:"both",
- stem:"In the figure comparing a systemic capillary with a brain capillary, what makes the brain capillary a barrier?",
+ concept:"bbb-vs-systemic-capillary", tags:["smith"], source:"both", simg:"smith-bbb", simgAlt:"Casarett and Doull Figure 16-1: a systemic capillary and a brain capillary in cross-section.",
+ stem:"In this figure, what makes the brain capillary a barrier?",
  options:[
   {t:"Tight junctions in place of fenestrations, and tightly connected glial cells around it", correct:true, why:"Solutes cannot slip between the vessel cells, and the glial cells outside the vessel are tightly joined, unlike the loosely joined pericytes of a systemic capillary."},
   {t:"Larger fenestrations that let only water through", correct:false, why:"Brain capillaries have tight junctions instead of the fenestrations seen in systemic capillaries."},
@@ -224,7 +224,7 @@ QUESTIONS.push(
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slides ‘Susceptibility to Neurotoxicity - Myelin’, ‘Types of Neurotoxicity’; transcript 10/14"},
 
 {id:"L15-016", lecture:"L15", prof:"Smith", tier:"new", topic:"L15", sub:"neuro", skill:"figure", type:"match",
- concept:"neurotoxicity-patterns", tags:["smith"], source:"both",
+ concept:"neurotoxicity-patterns", tags:["smith"], source:"both", simg:"smith-neuro-types", simgAlt:"Casarett and Doull figure of neurotoxic injury: a normal neuron (A) and four injured neurons (B to E).",
  stem:"Match each pattern of neurotoxic injury in the figure (neurons B through E) with what the toxin did to the cell.",
  left:["Neuronopathy", "Axonopathy", "Myelinopathy", "Neurotransmission toxicity"],
  right:["The entire neuron dies", "The axon degenerates; the cell body survives", "Myelin or the myelinating cells are damaged", "Excitation is blocked or excessive; the cell looks normal"],
@@ -305,8 +305,8 @@ QUESTIONS.push(
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Hepatotoxicity – Why is liver susceptible?’; transcript 10/14"},
 
 {id:"L15-022", lecture:"L15", prof:"Smith", tier:"new", topic:"L15", sub:"hepat", skill:"figure",
- concept:"lobule-blood-flow", tags:["smith"], source:"both",
- stem:"In the figure of a liver lobule, blood enters at the edge and leaves at the center. Which vessels carry it in, and which carries it out?",
+ concept:"lobule-blood-flow", tags:["smith"], source:"both", simg:"smith-liver", simgAlt:"Liver anatomy: blood flow through the organs (A), the liver and its vessels (B), and a liver lobule (C).",
+ stem:"In the liver lobule (panel C), which vessels carry blood in, and which carries it out?",
  options:[
   {t:"In by the hepatic artery and portal vein; out by the central vein", correct:true, why:"Blood trickles from the inflow vessels at the edge down the cords of hepatocytes and drains into the central vein."},
   {t:"In by the central vein at the middle of the lobule; out by the bile duct at the edge", correct:false, why:"The bile ducts begin at the edges of the lobe and carry bile, not blood; the central vein is the outflow."},

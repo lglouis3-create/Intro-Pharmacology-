@@ -22,8 +22,8 @@ TOPICS.push({id:"L14", name:"Day 14: Toxicology day 2: indices, the reading, tox
 QUESTIONS.push(
 /* ---------------- Potency from curve shape ---------------- */
 {id:"L14-001", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"potency", skill:"figure",
- concept:"potency-a-vs-b", tags:["smith"], source:"transcript",
- stem:"Compounds A and B are plotted for the same response against increasing dose. The response to A begins at a lower dose than the response to B. Which compound is more potent?",
+ concept:"potency-a-vs-b", tags:["smith"], source:"transcript", simg:"smith-fig2-8", simgAlt:"Casarett and Doull Figure 2-8: dose-response lines in probit units against log dosage for compounds A and B (left) and C and D (right).",
+ stem:"In the left panel, which compound is more potent?",
  options:[
   {t:"A", correct:true, why:"The compound that produces the measured response at the lower dose is the more potent one."},
   {t:"B", correct:false, why:"B needs a higher dose before the response appears, so it is less potent."},
@@ -35,8 +35,8 @@ QUESTIONS.push(
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Potency comparison in Dose-Response’; transcript 10/13"},
 
 {id:"L14-002", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"potency", skill:"figure",
- concept:"potency-c-vs-d-trick", tags:["smith"], source:"transcript",
- stem:"Compound C produces a response at lower doses than compound D, but as dose rises the response to C levels off while the response to D keeps rising linearly and crosses it. Which compound is more potent?",
+ concept:"potency-c-vs-d-trick", tags:["smith"], source:"transcript", simg:"smith-fig2-8", simgAlt:"Casarett and Doull Figure 2-8: dose-response lines in probit units against log dosage for compounds A and B (left) and C and D (right).",
+ stem:"In the right panel, which compound is more potent?",
  options:[
   {t:"C at low doses, D once the curves cross", correct:true, why:"Her answer: you cannot say C is always more potent; at low doses it is, and once C levels off and D's line crosses it, D is the more potent compound."},
   {t:"C, at every dose", correct:false, why:"C's response levels out with increasing dose, so above the crossing point D gives more response."},
@@ -48,8 +48,8 @@ QUESTIONS.push(
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Potency comparison in Dose-Response’; transcript 10/13"},
 
 {id:"L14-003", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"potency", skill:"apply", multi:true,
- concept:"why-curve-levels-off", tags:["smith"], source:"transcript",
- stem:"The response to compound C levels off with increasing dose while compound D's keeps rising. Which of the following could explain why C's curve bends over? Select all that apply.",
+ concept:"why-curve-levels-off", tags:["smith"], source:"transcript", simg:"smith-fig2-8", simgAlt:"Casarett and Doull Figure 2-8: dose-response lines in probit units against log dosage for compounds A and B (left) and C and D (right).",
+ stem:"In the right panel, compound C's response levels off while D's keeps rising. Which of the following could explain why C's curve bends over? Select all that apply.",
  options:[
   {t:"Its receptors are fully saturated", correct:true, why:"The first class answer she accepted: all the binding sites are occupied and more dose gives no more response."},
   {t:"The enzymes that bioactivate it to an active metabolite are saturated", correct:true, why:"A kinetic explanation she offered: if C is bioactivated to something active, that metabolism can saturate."},
@@ -61,8 +61,8 @@ QUESTIONS.push(
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Potency comparison in Dose-Response’; transcript 10/13"},
 
 {id:"L14-004", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"potency", skill:"apply",
- concept:"wide-dose-range", tags:["smith"], source:"transcript",
- stem:"A dose–response study of compounds C and D stops at a dose below the point where C's curve would level off. What does the study risk missing?",
+ concept:"wide-dose-range", tags:["smith"], source:"transcript", simg:"smith-fig2-8", simgAlt:"Casarett and Doull Figure 2-8: dose-response lines in probit units against log dosage for compounds A and B (left) and C and D (right).",
+ stem:"Suppose a study of compounds C and D in the right panel stopped at a dose below the point where C's curve levels off. What would the study risk missing?",
  options:[
   {t:"That the potencies change places at higher doses", correct:true, why:"Her point: if the doses are cut off too early, nobody sees where C's curve is going and the reversal in potency is missed."},
   {t:"The threshold dose of D, which only the highest doses reveal", correct:false, why:"The threshold is at the low end of the curve, which the study did cover."},
@@ -75,8 +75,8 @@ QUESTIONS.push(
 
 /* ---------------- ED, TD, LD curves ---------------- */
 {id:"L14-005", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"edtdld", skill:"recall",
- concept:"ed-td-ld-order", tags:["smith"], source:"transcript",
- stem:"On a graph of one compound with three dose–response lines, the lines from the lowest doses to the highest are the:",
+ concept:"ed-td-ld-order", tags:["smith"], source:"transcript", simg:"smith-fig2-7-masked", simgAlt:"Three dose-response lines for one compound in probit units against log dose; the line labels are hidden.",
+ stem:"These are three dose–response lines for one compound. From the lowest doses to the highest, the lines are the:",
  options:[
   {t:"Effective dose, toxic dose, lethal dose", correct:true, why:"Effective or therapeutic dose comes first, then a toxic response, then a lethal dose."},
   {t:"Toxic dose, effective dose, lethal dose", correct:false, why:"The therapeutic response appears before the toxic one."},
@@ -88,8 +88,8 @@ QUESTIONS.push(
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘ED, TD and LD Comparison from Dose-Response’; transcript 10/13"},
 
 {id:"L14-006", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"edtdld", skill:"figure",
- concept:"nonparallel-different-mechanisms", tags:["smith"], source:"transcript",
- stem:"The effective, toxic and lethal dose–response lines for one compound are not parallel. What does this suggest about the compound?",
+ concept:"nonparallel-different-mechanisms", tags:["smith"], source:"transcript", simg:"smith-fig2-7", simgAlt:"Casarett and Doull Figure 2-7: effective dose (ED), toxic dose (TD) and lethal dose (LD) lines in probit units against log dose.",
+ stem:"In this figure, the effective, toxic and lethal dose lines for one compound are not parallel. What does this suggest about the compound?",
  options:[
   {t:"Different targets and mechanisms produce its three outcomes", correct:true, why:"Her reading of the slide: non-parallel lines mean the mechanism producing effectiveness differs from the one producing toxicity and from the one producing death."},
   {t:"Its three outcomes are produced by one mechanism at one target", correct:false, why:"One mechanism at one target would be expected to give parallel lines."},
@@ -675,8 +675,8 @@ QUESTIONS.push(
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Toxic Endpoints may be…’; transcript 10/13"},
 
 {id:"L14-050", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"ontarget", skill:"figure",
- concept:"figure-intended-vs-unintended-tissue", tags:["smith"], source:"both",
- stem:"In the Figure 6-1 diagram of adverse drug effects, the left half and the right half show, respectively:",
+ concept:"figure-intended-vs-unintended-tissue", tags:["smith"], source:"both", simg:"smith-fig6-1", simgAlt:"Diagram of adverse drug effects: a drug and its metabolite reaching intended and unintended receptors in two tissues; the tissue labels are hidden.",
+ stem:"In this diagram of adverse drug effects, the left half and the right half show, respectively:",
  options:[
   {t:"The intended tissue and an unintended tissue", correct:true, why:"The left is where we want the drug to act; the right is a tissue where the drug goes but is not wanted."},
   {t:"The parent drug and its metabolite", correct:false, why:"Drug or metabolite activity appears on both sides."},

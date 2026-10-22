@@ -32,6 +32,8 @@ function stemMedia(q) {
   let h = '';
   if (q.img && IMG[q.img]) h += `<figure class="fig stemfig"><img src="${IMG[q.img]}" alt="${esc(q.imgAlt || 'figure')}">${q.imgCap ? `<figcaption>${esc(q.imgCap)}</figcaption>` : ''}</figure>`;
   if (q.graph) h += [].concat(q.graph).map(g => `<div class="stemfig">${FIG.graph(g)}</div>`).join('');
+  /* simg: a slide figure from the deck (Exam 3), read by the student; labels that print the answer are masked. */
+  if (q.simg && IMG[q.simg]) h += `<figure class="fig stemfig"><img src="${IMG[q.simg]}" alt="${esc(q.simgAlt || 'figure from the slide')}"></figure>`;
   return h;
 }
 /* Slide ranges are stored as "~7–~12" (every number marked approximate);

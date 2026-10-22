@@ -128,8 +128,8 @@ QUESTIONS.push(
 
 /* ---------------- Exposure: frequency (Fig 2-4) ---------------- */
 {id:"L13-110", lecture:"L13", prof:"Smith", tier:"new", topic:"L13", sub:"freq", skill:"apply",
- concept:"fig2-4-repeated", tags:["smith","why"], source:"both",
- stem:"In Figure 2-4, compound A reaches the toxic zone by about the third repeated dose, although each repeated dose is only one quarter of the single dose. What explains this?",
+ concept:"fig2-4-repeated", tags:["smith","why"], source:"both", simg:"smith-fig2-4", simgAlt:"Casarett and Doull Figure 2-4: concentration at the target site over time for compounds A, B and C, after one large dose (left) and after repeated smaller doses (right), with the toxic range shaded.",
+ stem:"In the repeated-dose panel, each dose of compound A is much smaller than the single dose, yet A ends up in the toxic range. What explains this?",
  options:[
   {t:"Its long half-life lets each dose build on the last", correct:true, why:"A has the longest half-life, so little is cleared between doses and the quarter doses build up in the system until the concentration crosses the toxic line."},
   {t:"Each quarter dose of A is above the toxic level", correct:false, why:"It takes a while for A to build up; a single quarter dose does not reach the toxic zone."},
@@ -141,8 +141,8 @@ QUESTIONS.push(
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Exposure: Frequency’ (C&D Fig 2-4); transcript 10/9"},
 
 {id:"L13-111", lecture:"L13", prof:"Smith", tier:"new", topic:"L13", sub:"freq", skill:"apply",
- concept:"fig2-4-repeated", tags:["smith","why"], source:"both",
- stem:"In the repeated-dose panel of Figure 2-4, compound B enters the toxic zone at about the fourth or fifth dose, later than compound A. Which best explains why?",
+ concept:"fig2-4-repeated", tags:["smith","why"], source:"both", simg:"smith-fig2-4", simgAlt:"Casarett and Doull Figure 2-4: concentration at the target site over time for compounds A, B and C, after one large dose (left) and after repeated smaller doses (right), with the toxic range shaded.",
+ stem:"In the repeated-dose panel, compare when compounds A and B first reach the toxic range. Which best explains the difference?",
  options:[
   {t:"B is cleared faster than A between doses", correct:true, why:"B's half-life is shorter than A's (about the dosing interval, against about a year for A), so it builds up more slowly and needs more doses to cross the toxic line."},
   {t:"B is cleared more slowly than A between doses", correct:false, why:"This is reversed: A has the longest half-life of the three."},
@@ -225,8 +225,8 @@ QUESTIONS.push(
 
 /* ---------------- Individual and population dose-response ---------------- */
 {id:"L13-117", lecture:"L13", prof:"Smith", tier:"new", topic:"L13", sub:"curves", skill:"apply",
- concept:"individual-vs-population-curve", tags:["smith","why"], source:"both",
- stem:"On an individual dose–response plot for an organophosphate in rodents, inhibition of carboxylesterase and inhibition of cholinesterase each rise with dose. What explains the two separate curves?",
+ concept:"individual-vs-population-curve", tags:["smith","why"], source:"both", simg:"smith-fig-ind-drc", simgAlt:"Individual dose-response: percent inhibition of cholinesterase and of carboxylesterase against dose, on a linear dose axis (A) and a log dose axis (B).",
+ stem:"This individual dose–response figure for an organophosphate in rodents has two curves. What explains the two separate curves?",
  options:[
   {t:"The chemical acts on more than one target", correct:true, why:"The slide: many chemicals have more than one effect because of multiple targets; here the organophosphate inhibits two different enzymes."},
   {t:"Two different organophosphates were given", correct:false, why:"One organophosphate was given at graded doses; it inhibits two enzymes."},
@@ -238,8 +238,8 @@ QUESTIONS.push(
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘First Dose-Response Relationship’ (C&D Fig 2-5); transcript 10/9"},
 
 {id:"L13-118", lecture:"L13", prof:"Smith", tier:"new", topic:"L13", sub:"curves", skill:"apply",
- concept:"log-dose-axis", tags:["smith","why"], source:"transcript",
- stem:"Why is the dose axis of an individual dose–response plot sometimes put on a logarithmic scale?",
+ concept:"log-dose-axis", tags:["smith","why"], source:"transcript", simg:"smith-fig-ind-drc", simgAlt:"Individual dose-response: percent inhibition of cholinesterase and of carboxylesterase against dose, on a linear dose axis (A) and a log dose axis (B).",
+ stem:"Panel B plots the data of panel A with the dose axis on a logarithmic scale. Why is that done?",
  options:[
   {t:"So the data fall on straight lines", correct:true, why:"Only the x axis changes: the same doses are spaced on a logarithmic scale, and the same inhibition data then fall on linear lines. Her stated reason for the log scale was getting linear lines."},
   {t:"So the plot shows the cumulative mortality", correct:false, why:"Cumulative mortality is a population dose–response plot, with deaths on the y axis."},
@@ -251,7 +251,7 @@ QUESTIONS.push(
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘First Dose-Response Relationship’; transcript 10/9"},
 
 {id:"L13-119", lecture:"L13", prof:"Smith", tier:"new", topic:"L13", sub:"curves", skill:"apply",
- concept:"population-curve-ld50-threshold", tags:["smith","why"], source:"both",
+ concept:"population-curve-ld50-threshold", tags:["smith","why"], source:"both", simg:"smith-fig2-6-pop", simgAlt:"Population dose-response: mortality frequency histogram, cumulative mortality curve, and mortality in probit units against dose (mg/kg).",
  stem:"Why is the median lethal dose (LD50) read from a population dose–response curve rather than from an individual one?",
  options:[
   {t:"It is a dose at which half of a group dies", correct:true, why:"The LD50 is the dose at which 50% of the animals die; a population curve groups the responses (deaths) across the animals and shows what dose they got."},
@@ -265,8 +265,8 @@ QUESTIONS.push(
 
 /* ---------------- Shape of the curve and threshold ---------------- */
 {id:"L13-120", lecture:"L13", prof:"Smith", tier:"new", topic:"L13", sub:"shape", skill:"apply",
- concept:"u-shape-essential-vs-hormesis", tags:["smith","why"], source:"both",
- stem:"On the U-shaped dose–response curve for iron, an essential element, why is the response bad at the lowest doses?",
+ concept:"u-shape-essential-vs-hormesis", tags:["smith","why"], source:"both", simg:"smith-fig2-5-u", simgAlt:"Casarett and Doull Figure 2-5: U-shaped individual dose-response curve for an essential substance, with deficiency at low doses, a region of homeostasis and toxicity at high doses.",
+ stem:"This is the U-shaped dose–response curve for an essential element such as iron. Why is the response bad at the lowest doses?",
  options:[
   {t:"Without enough iron, blood cannot carry oxygen", correct:true, why:"Her example: with no iron the blood cannot carry oxygen, and the adverse response can be death. That is the deficiency arm of the U."},
   {t:"Low doses of iron have a hormetic effect", correct:false, why:"Hormesis is a protective effect at a low dose of something non-essential; the iron curve is the essential-nutrient curve."},

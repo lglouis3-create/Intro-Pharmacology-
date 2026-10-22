@@ -199,8 +199,8 @@ QUESTIONS.push(
 
 /* ---------------- Exposure: frequency and half-life ---------------- */
 {id:"L13-014", lecture:"L13", prof:"Smith", tier:"new", topic:"L13", sub:"freq", skill:"figure",
- concept:"fig2-4-halflife", tags:["smith"], source:"both",
- stem:"In the figure of compounds A, B and C given as one large single dose, the concentration of A declines most slowly, B faster and C fastest. Which compound has the longest half-life?",
+ concept:"fig2-4-halflife", tags:["smith"], source:"both", simg:"smith-fig2-4", simgAlt:"Casarett and Doull Figure 2-4: concentration at the target site over time for compounds A, B and C, after one large dose (left) and after repeated smaller doses (right), with the toxic range shaded.",
+ stem:"In this figure, which compound has the longest half-life?",
  options:[
   {t:"A", correct:true, why:"The slowest fall in blood concentration means the longest time for half of the compound to be cleared."},
   {t:"B", correct:false, why:"B clears faster than A; its half-life is about equal to the dosing frequency in the repeated-dose panel."},
@@ -212,8 +212,8 @@ QUESTIONS.push(
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Exposure: Frequency’ (Figure 2-4 and its caption); transcript 10/9"},
 
 {id:"L13-015", lecture:"L13", prof:"Smith", tier:"new", topic:"L13", sub:"freq", skill:"figure",
- concept:"fig2-4-repeated", tags:["smith"], source:"transcript",
- stem:"The same three compounds are then given repeatedly, each dose one quarter of the single dose, at the same interval. Which compound never reaches the toxic concentration?",
+ concept:"fig2-4-repeated", tags:["smith"], source:"transcript", simg:"smith-fig2-4", simgAlt:"Casarett and Doull Figure 2-4: concentration at the target site over time for compounds A, B and C, after one large dose (left) and after repeated smaller doses (right), with the toxic range shaded.",
+ stem:"In the repeated-dose panel, which compound never reaches the toxic concentration?",
  options:[
   {t:"C: its short half-life clears each dose before the next", correct:true, why:"C never accumulates into the toxic zone at that dose and frequency."},
   {t:"A: its doses are the smallest of the three", correct:false, why:"A has the longest half-life and reaches the toxic zone by about the third dose."},
@@ -361,8 +361,8 @@ QUESTIONS.push(
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘First Dose-Response Relationship’ (C&D Fig 2-5); transcript 10/9"},
 
 {id:"L13-026", lecture:"L13", prof:"Smith", tier:"new", topic:"L13", sub:"curves", skill:"figure",
- concept:"population-curve-ld50-threshold", tags:["smith"], source:"both",
- stem:"On a cumulative mortality curve from a population dose–response study, the LD50 and the threshold dose are read at:",
+ concept:"population-curve-ld50-threshold", tags:["smith"], source:"both", simg:"smith-fig2-6-pop", simgAlt:"Population dose-response: mortality frequency histogram, cumulative mortality curve, and mortality in probit units against dose (mg/kg).",
+ stem:"In this population dose–response figure, how are the LD50 and the threshold dose read on the cumulative mortality curve?",
  options:[
   {t:"LD50 at 50% mortality; threshold at the lowest dose with any effect", correct:true, why:"In the figure she read, 50% cumulative mortality fell at about 100 mg/kg and the first effect at about 10 mg/kg."},
   {t:"LD50 at the highest dose given; threshold at 50% cumulative mortality", correct:false, why:"This swaps the two readings."},
@@ -645,5 +645,19 @@ QUESTIONS.push(
   {t:"A toxicant", correct:false, why:"Venom is made by the snake, so it is a toxin; a toxicant comes from human activity."}],
  teach:"The coral snake is very venomous, and its venom carries a neurotoxin. Because the snake makes it, the venom is a toxin rather than a toxicant. It has a small head and is not a viper, so instead of striking with fangs like a rattlesnake it bites and chews, often between fingers or toes, to inject the venom. Its look-alike, the king snake (red touching black), is not poisonous.",
  quote:"So this is a coral snake, very venomous, they have a neurotoxin. They are here in Texas, um, they're in East Texas, especially",
- cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘What is Toxic?’; transcript 10/9"}
+ cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘What is Toxic?’; transcript 10/9"},
+{id:"L13-049", lecture:"L13", prof:"Smith", tier:"new", topic:"L13", sub:"freq", skill:"figure",
+ concept:"fig2-4-read-b-dose", tags:["smith"], source:"both", simg:"smith-fig2-4", simgAlt:"Casarett and Doull Figure 2-4: concentration at the target site over time for compounds A, B and C, after one large dose (left) and after repeated smaller doses (right), with the toxic range shaded.",
+ stem:"In the repeated-dose panel, at about which dose does compound B first reach the toxic range?",
+ options:[
+  {t:"The 2nd dose", correct:false, why:"After the 2nd dose B's peak is still below the shaded toxic range; each dose only adds a little to what is left of the last."},
+  {t:"The 3rd dose", correct:false, why:"That is compound A, which barely declines between doses and enters the toxic range at about the 3rd dose."},
+  {t:"About the 4th or 5th dose", correct:true, why:"B's peaks climb slowly because about half is cleared between doses; extending its line, it enters the toxic range at about the 4th dose and is in it by the 5th."},
+  {t:"Never, as B is cleared before each next dose", correct:false, why:"That is compound C, whose short half-life clears each dose before the next, so its peaks never rise."},
+  {t:"The 1st dose", correct:false, why:"The first repeated dose is only one quarter of the single dose and sits well below the toxic range for every compound."}],
+ teach:"Read each compound's peaks across the repeated doses. A barely declines between doses, so it stacks and is toxic by about the 3rd dose. B, with a half-life about equal to the dosing interval, loses roughly half between doses, so its peaks rise more slowly and reach the toxic range at about the 4th or 5th dose. C is cleared before the next dose and never builds up.",
+ quote:"When does compound B start causing a problem? How many doses? Maybe 4, they didn't draw this very well, right, but if you extrapolate, probably 4 is looking like this, right? Maybe 4, you're in the toxic zone. 5 for sure, you're in the toxic zone, right, for B.",
+ note:"The figure stops before B's line clearly enters the toxic range; she extrapolated: \"Maybe 4 ... 5 for sure\". The caption gives B a half-life approximately equal to the dosing frequency.",
+ cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Exposure: Frequency’ (C&D Fig 2-4 and caption); transcript 10/9"}
+
 );

@@ -2,6 +2,12 @@
 
 Newest first. The build embeds this file; the Topics page shows what is new since your last visit, and the Progress page shows all of it. Keep each bullet to one short line.
 
+## 2026-10-22 (Her figures in the questions; cyanide)
+
+- 23 Exam 3 questions now show her slide figure; the stem asks you to read it instead of describing it.
+- New: on Figure 2-4, at about which dose does compound B first reach the toxic range (her question in class).
+- Cyanide: rhodanese is the body's own enzyme and sodium thiosulfate is given; still the enhance-metabolism step.
+
 ## 2026-10-22 (Digoxin immune Fab)
 
 - Digoxin immune Fab is now described as on its label: sheep-derived antibody fragments (ovine Fab), not monoclonal.

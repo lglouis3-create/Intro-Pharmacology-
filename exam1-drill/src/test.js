@@ -40,6 +40,8 @@ for (const q of QUESTIONS) {
   q.options.forEach((o, i) => { if (!o.why) bad(q.id, 'option ' + i + ' has no why'); });
   if (!q.teach) w(q.id, 'no teach');
   if (q.img && !(IMAGES_KEYS.has(q.img))) bad(q.id, 'img key not in images.json: ' + q.img);
+  if (q.simg && !(IMAGES_KEYS.has(q.simg))) bad(q.id, 'simg key not in images.json: ' + q.simg);
+  if (q.simg && !q.simgAlt) bad(q.id, 'simg without simgAlt');
   if (q.graph) [].concat(q.graph).forEach(gr => {
     if (!Array.isArray(gr.curves) || !gr.curves.length) bad(q.id, 'graph without curves');
     else gr.curves.forEach((c, i) => { if (!c.label || typeof c.ec !== 'number' || typeof c.emax !== 'number') bad(q.id, 'graph curve ' + i + ' needs label, ec, emax'); });

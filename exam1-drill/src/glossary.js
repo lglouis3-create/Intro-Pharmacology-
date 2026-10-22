@@ -1988,7 +1988,7 @@ const TERMS = [
  src:'both'},
 
 {id:'cofactor-enhance-metabolism', term:'Enhancing metabolism with a cofactor', lecture:'L16', group:'Treating poisonings',
- def:'A toxicokinetic treatment that speeds the detoxification of a poison by supplying a cofactor for the metabolic reaction, since inducing the enzymes would take days. The examples are rhodanese, which helps thiosulfate take cyanide off methemoglobin for renal elimination, and N-acetylcysteine, which supplies the ingredients for glutathione to conjugate NAPQI.',
+ def:'A toxicokinetic treatment that speeds the detoxification of a poison by supplying a cofactor for the metabolic reaction, since inducing the enzymes would take days. The examples are sodium thiosulfate, which supplies sulfur so the body\'s rhodanese can convert cyanide to thiocyanate for renal elimination, and N-acetylcysteine, which supplies the ingredients for glutathione to conjugate NAPQI.',
  gist:"Speed the detox reaction, since induction is too slow; cyanide and acetaminophen.",
  scene:'An overdose patient receives N-acetylcysteine so the liver can make glutathione faster than NAPQI is formed.',
  confuse:['inhibit-bioactivation','nac-glutathione'],
@@ -2007,10 +2007,10 @@ const TERMS = [
  src:'both'},
 
 {id:'rhodanese', term:'Rhodanese (the cyanide cofactor step)', lecture:'L16', group:'Treating poisonings',
- def:'The agent given in the cyanide scheme that helps thiosulfate, already present in the body, take cyanide off methemoglobin onto itself; the thiosulfate-cyanide product is renally eliminated. Of the three cyanide treatments (amyl nitrite, rhodanese, methylene blue), this is the one that counts as enhancing metabolism and elimination.',
- gist:'Helps thiosulfate bind cyanide for the urine; the enhance-metabolism step.',
- scene:'With rhodanese on board, the cyanide leaves the methemoglobin and leaves the body in the urine.',
- sceneQ:"In the CN scheme, which agent helps thiosulfate take the CN off methemoglobin so that it can be renally eliminated?",
+ def:'The body\'s own enzyme that clears cyanide in the enhance-metabolism step: it moves cyanide onto sulfur from thiosulfate, forming thiocyanate, which is renally eliminated. The pathway is capacity limited, so sodium thiosulfate is given to supply the sulfur. Of the three cyanide treatment steps (amyl nitrite, the rhodanese-thiosulfate step, methylene blue), this is the one that counts as enhancing metabolism and elimination.',
+ gist:'The body\'s enzyme that turns cyanide into thiocyanate for the urine, using sulfur from given thiosulfate.',
+ scene:'With sodium thiosulfate on board, the body\'s enzyme moves the cyanide off methemoglobin and it leaves in the urine.',
+ sceneQ:"In the CN scheme, which enzyme, already in the body, moves the CN onto sulfur from thiosulfate so that it can be renally eliminated?",
  confuse:['nac-glutathione', 'fomepizole', 'digoxin-immune-fab', 'vitamin-k-bypass'],
  quote:'Which is the one that I said was the co-factor helping us to clear. Yeah, the roadnas. This is the part of the scheme that is really considered to be enhancing the metabolism and elimination.',
  cite:'Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Toxicokinetic-Based Treatment Cyanide example’ (Golan figure); transcript 10/19 (rendered "rodonase", "roadnas")',
