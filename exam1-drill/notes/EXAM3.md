@@ -68,5 +68,5 @@ Daily reminder: a routine ("Smith reading reminder", weekdays 7:23 am Central) f
 ## Exam 3 scope settled (10/20)
 - The class vote kept the 10/20 lecture on Friday's exam: "That's how we have it on the syllabus." Taught on 10/20: PDF pp. 1–21 (history, definitions, targets, PK/PD, variants, alleles, genotype and phenotype, haplotypes, frequencies). Nomenclature and types of polymorphism (pp. 22–41) start 10/21 and are not on Friday's exam; those slides carry lowYield questions only.
 - She will not test the two bonus decks: "I will not test you on those slide decks, the ones about careers in toxicology or about our impact" (10/20).
-- Still low yield: toxidromes table (L16-013) and the carbon monoxide bullet (L16-049); not covered 10/19 or 10/20.
+- Toxidromes table: core (her Quiz 3 Q5 tested the opioid toxidrome); L16-013 and GAP3-005..012 are keyed from the slide image. Carbon monoxide bullet (L16-049) still low yield.
 - Her keys are the depth she expects: "But you do know, need to know the details that I have in my table, my key." (10/20)

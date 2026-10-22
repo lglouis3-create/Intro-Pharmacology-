@@ -169,7 +169,7 @@ QUESTIONS.push(
 
 {id:"L17-012", lecture:"L17", prof:"Smith", tier:"new", topic:"L17", sub:"defs", skill:"apply",
  concept:"why-organizations-define-terms", tags:["smith"], source:"transcript",
- stem:"Why would a big organization such as the AAPS or the WHO (World Health Organization) publish official definitions of scientific terms?",
+ stem:"Why would a big organization such as the AAPS or the World Health Organization publish official definitions of scientific terms?",
  options:[
   {t:"To get everyone on the same page", correct:true, why:"Shared definitions give better scientific communication, so data from one country's agency can be compared with another's."},
   {t:"To decide which drugs need genotyping first", correct:false, why:"Whether to genotype before a drug is a clinical decision driven by how severe its toxicity can be."},
@@ -425,7 +425,7 @@ QUESTIONS.push(
 
 {id:"L17-032", lecture:"L17", prof:"Smith", tier:"new", topic:"L17", sub:"variant", skill:"term", core:true, coreWhy:"her words: every slide with a term on it, you need to know those terms",
  concept:"snp-definition", tags:["smith"], source:"both",
- stem:"What is a single nucleotide polymorphism (SNP, pronounced snip)?",
+ stem:"What is a single nucleotide polymorphism (SNP)?",
  options:[
   {t:"One nucleotide differs from the wild type sequence", correct:true, why:"Just one nucleotide is different in the gene sequence; it is the most common type of polymorphism."},
   {t:"One nucleotide differs, in under 1% of a population", correct:false, why:"A one-nucleotide change in fewer than 1% would be a rare variant, not a polymorphism."},
@@ -489,7 +489,7 @@ QUESTIONS.push(
 
 {id:"L17-037", lecture:"L17", prof:"Smith", tier:"new", topic:"L17", sub:"genophen", skill:"apply",
  concept:"writing-genotype-cyp2c19", tags:["smith"], source:"both",
- stem:"How is the genotype written for a person homozygous for the *2 (star 2) allele of CYP2C19 (cytochrome P450 2C19)?",
+ stem:"How is the genotype written for a person homozygous for the *2 allele of CYP2C19?",
  options:[
   {t:"CYP2C19*2/*2", correct:true, why:"The gene, then the allele on each copy: both copies are *2."},
   {t:"CYP2C19*2", correct:false, why:"That names the allele, not the person's two copies."},
@@ -775,7 +775,7 @@ QUESTIONS.push(
 
 {id:"L17-059", lecture:"L17", prof:"Smith", tier:"new", topic:"L17", sub:"types", skill:"apply", lowYield:true,
  concept:"cyp2c19-star3-stop-codon", tags:["smith"], source:"slide",
- stem:"What is the functional effect of CYP2C19*3 (CYP2C19 636 G>A)?",
+ stem:"What is the functional effect of CYP2C19*3?",
  options:[
   {t:"No enzyme activity", correct:true, why:"Protein synthesis terminates; the slide lists proton pump inhibitors (omeprazole, lansoprazole) as affected drugs."},
   {t:"Normal enzyme activity", correct:false, why:"A premature stop truncates the protein; normal activity is *1."},

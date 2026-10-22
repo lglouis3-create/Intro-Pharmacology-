@@ -839,6 +839,7 @@ function qCard(q, st, opts = {}) {
     if (q.type === 'match' && q.pairs) q.pairs.filter(p => p.why).forEach(p => { const i = q.left.indexOf(p.l); if (st.mpick[i] === p.r) hidden.push({t: p.l, why: p.why}); else h += `<div class="why"><b>${esc(p.l)}</b>: ${esc(p.why)}</div>`; });
     else (q.options || []).forEach((o, i) => { if (o.why && !o.correct && !(q.multi ? st.picked.has(i) : st.picked === i)) hidden.push(o); });
     if (q.teach) h += `<div class="teach">${teachHTML(q.teach)}</div>`;
+    if (q.step3) h += stepHTML(q.step3);
     h += graphFeedback(q, st);
     if (q.note) h += `<div class="note">${esc(q.note)}</div>`;
     if (typeof NARR_Q !== 'undefined' && NARR_Q[q.id]) h += `<div class="row qsay"><button type="button" class="chip" data-qsay="${q.id}">🔊 Hear the why</button><span class="meta" style="margin:0">${typeof Q_CLIPS !== 'undefined' && !Q_CLIPS.includes(q.id) ? 'device voice' : 'read by the narrator'}</span></div>`;
@@ -2266,6 +2267,7 @@ const antiChip = (d, lab) => `<button type="button" class="chip antichip" data-a
 const antiFor = q => antiOK() && examOf(q) === 3 ? ANTIDOTE_DIAGRAMS.filter(d => d.match && d.match.test(q.stem + ' ' + (q.concept || ''))) : [];
 let ANTI = null;
 function antiOpen(slug, opener) {
+  sayStop();
   const i = ANTIDOTE_DIAGRAMS.findIndex(d => d.slug === slug); if (i < 0) return;
   const d = ANTIDOTE_DIAGRAMS[i], t = store.get(COURSE.ns + ':theme'), n = ANTIDOTE_DIAGRAMS.length;
   const src = ANTI_BASE + d.slug + '.html?embed=1' + (t === 'light' || t === 'dark' ? '&theme=' + t : '');
@@ -2280,11 +2282,13 @@ function antiOpen(slug, opener) {
   ANTI.el.innerHTML = `<div class="antibox"><div class="antihead"><b id="antititle">${esc(d.title)}</b><span class="meta" style="margin:0">${i + 1} of ${n}</span>
     <div class="row" style="gap:6px;margin-left:auto"><button type="button" class="chip" data-antistep="-1" ${i ? '' : 'disabled'} aria-label="Previous diagram">‹ Prev</button><button type="button" class="chip" data-antistep="1" ${i + 1 < n ? '' : 'disabled'} aria-label="Next diagram">Next ›</button><a class="chip" href="${ANTI_BASE + d.slug}.html" target="_blank" rel="noopener">Open page ↗</a><button type="button" class="chip" id="anticlose" aria-label="Close diagram">✕</button></div></div>
     ${d.note && ANTIDOTE_NOTES[d.note] ? `<div class="note">${esc(tidyQuoted(ANTIDOTE_NOTES[d.note]))}</div>` : ''}
+    ${typeof ANTI_NARR !== 'undefined' && ANTI_NARR[d.slug] ? `<div class="row antisay" style="gap:6px;margin:6px 0"><button type="button" class="btn ghost" data-antisay="${esc(d.slug)}">🔊 Listen</button><button type="button" class="btn ghost" data-antitx aria-pressed="false">Show transcript</button><span class="meta" style="margin:0">${typeof AD_CLIPS !== 'undefined' && AD_CLIPS.includes(d.slug) ? 'read by the narrator' : 'device voice'}</span></div><div class="antitxw" hidden>${sideHTML()}<div class="nsaid saybox antitx">${sayHTML(ANTI_NARR[d.slug])}</div></div>` : ''}
     <iframe id="antiframe" title="${esc(d.title)}" src="${src}" loading="eager"></iframe>
     <p class="sub" style="margin:6px 0 0">Drawn from the figures on the Treating Poisonings slides (10/19). <a href="${ANTI_BASE}index.html" target="_blank" rel="noopener">All diagrams</a></p></div>`;
   $('#anticlose').focus();
 }
 function antiClose(fromPop) {
+  sayStop();
   if (!ANTI) return;
   if (!fromPop && history.state && history.state.anti) { SKIPPOP++; try { history.back(); } catch (e) { SKIPPOP--; } }   // drop the panel's own history entry
   ANTI.el.remove(); document.body.classList.remove('antiopen'); (ANTI.inert || []).forEach(c => { c.inert = false; });
@@ -2719,9 +2723,61 @@ function narrSpeak(fig, i, done) {
    its share of the clip's time (each sentence takes time in proportion to its length); the device voice marks each sentence as it starts. */
 const saySents = t => (String(t).match(/[^.;:!?]+[.;:!?]*["”’)]*\s*/g) || [String(t)]).filter(x => x.trim());
 const sayHTML = t => saySents(t).map((x, i) => `<span class="ssent" data-si="${i}">${esc(x)}</span>`).join('');
+/* Beside the transcript: her slide figure for what the sentence names, and her poisoning-table key row for a poison it names. */
+const SAYFIG = [
+  [/cyanide|rhodanese|thiosulfate|methemoglobin|amyl nitrite|methylene blue/i, 'smith-tp-cyanide', 'Her slide: cyanide antidote scheme'],
+  [/acetaminophen|NAPQI|acetylcysteine|glutathione/i, 'smith-tp-apap', 'Her slide: acetaminophen metabolism'],
+  [/warfarin|vitamin K/i, 'smith-tp-warfarin', 'Her slide: the vitamin K cycle and warfarin'],
+  [/methanol|ethylene glycol|fomepizole|formic acid|oxalic/i, 'smith-tp-alcohols', 'Her slide: methanol and ethylene glycol metabolism'],
+  [/pralidoxime|organophosphate|\baging\b|\baged\b/i, 'smith-tp-2pam', 'Her slide: pralidoxime and organophosphate-bound acetylcholinesterase'],
+  [/chelat|dimercaprol|edetate|penicillamine|deferoxamine|succimer|trientine|deferasirox/i, 'smith-tp-chelators', 'Her slide: structure of chelators'],
+  [/toxidrome/i, 'smith-tp-toxidromes', 'Her slide: Goodman and Gilman toxidrome table'],
+  [/drugs? A and B|drug A\b|drug B\b/i, 'smith-tp-drugab', 'Her slide: drugs A and B in overdose'],
+  [/figure 2-4|accumulat/i, 'smith-fig2-4', 'Casarett Figure 2-4: accumulation with repeated doses'],
+  [/figure 2-8|\bC (and|versus|vs\.?) D\b|curves cross/i, 'smith-fig2-8', 'Casarett Figure 2-8: potency, A vs B and C vs D'],
+  [/ED50|TD50|LD50|effective dose|toxic dose|lethal dose|therapeutic index|margin of safety/i, 'smith-fig2-7', 'Casarett Figure 2-7: ED, TD and LD lines'],
+  [/U-shaped|hormesis|essential (nutrient|substance)|homeostasis/i, 'smith-fig2-5-u', 'Casarett Figure 2-5: U-shaped curve'],
+  [/individual dose|carboxylesterase/i, 'smith-fig-ind-drc', 'Individual dose-response curve'],
+  [/population dose|quantal|threshold/i, 'smith-fig2-6-pop', 'Population dose-response'],
+  [/blood.brain barrier/i, 'smith-bbb', 'Brain capillary vs systemic capillary'],
+  [/neuronopathy|axonopathy|myelinopathy|neurotransmission/i, 'smith-neuro-types', 'Types of neurotoxic injury'],
+  [/zone (1|3|one|three)|Kupffer|acinus|central vein|portal/i, 'smith-liver', 'Liver blood flow and the lobule'],
+  [/twin/i, 'smith-twins', 'Twin studies: antipyrine half-life'],
+  [/haplotype|linkage/i, 'smith-haplotype', 'Her slide: haplotypes'],
+  [/homozygous|heterozygous|genotype|allele/i, 'smith-zygosity', 'Her slide: alleles and genotype']];
+const SAYMOV = [
+  [/cyanide|rhodanese|thiosulfate|methemoglobin|amyl nitrite|methylene blue/i, 'ad:03-cyanide-antidote-stepper', 'Cyanide antidotes, step by step'],
+  [/acetaminophen|NAPQI|acetylcysteine|glutathione/i, 's3:apap-nac', ''],
+  [/methanol|ethylene glycol|fomepizole|formic acid|oxalic/i, 's3:methanol-eg', ''],
+  [/warfarin|vitamin K/i, 'ad:07-warfarin-vitamin-k', 'Warfarin and vitamin K'],
+  [/pralidoxime|\baging\b|\baged\b/i, 'ad:06-pralidoxime-and-co', 'Pralidoxime removes the organophosphate'],
+  [/atropine|physostigmine|organophosphate|sludge/i, 'ad:05-cholinergic-atropine-physostigmine', 'Atropine and physostigmine at the synapse'],
+  [/naloxone|flumazenil/i, 'ad:04-receptor-antagonist-naloxone-flumazenil', 'Naloxone and flumazenil'],
+  [/ion trapping|bicarbonate|weak acid|urine (more )?basic/i, 's3:ion-trapping', ''],
+  [/zone (1|3|one|three)|Kupffer|acinus|central vein|CYP2E1/i, 's3:liver-zones', ''],
+  [/haplotype|linkage/i, 's3:haplotype', ''],
+  [/homozygous|heterozygous|genotype|allele|phenotype/i, 's3:allele-genotype', '']];
+const SAYROW = [[/acetaminophen/i, 'apap'], [/methanol|ethylene glycol|toxic alcohol/i, 'alc'], [/benzodiazepine|flumazenil/i, 'bzd'], [/beta.?blocker/i, 'bb'], [/calcium channel blocker/i, 'ccb'], [/digoxin/i, 'dig'], [/tricyclic/i, 'tca'], [/opioid|naloxone|opiate/i, 'opi'], [/salicylate|aspirin/i, 'sal'], [/sulfonylurea|octreotide/i, 'su'], [/\biron\b|deferoxamine/i, 'fe'], [/organophosphate|pralidoxime|sludge/i, 'op']];
+function movHTML(ref, label) {
+  if (ref.startsWith('s3:')) return stepHTML(ref.slice(3));
+  const slug = ref.slice(3), t = store.get(COURSE.ns + ':theme');
+  return antiOK() ? `<iframe class="saymov" title="${esc(label)}" src="${ANTI_BASE + slug}.html?embed=1${t === 'light' || t === 'dark' ? '&theme=' + t : ''}" loading="lazy"></iframe><div class="row" style="margin:4px 0 0"><button type="button" class="chip" data-anti="${esc(slug)}">◧ Open full size</button></div>` : '';
+}
+/* The panel above a transcript: the moving diagram, her full slide and her key row for what the current sentence is about.
+   Each part is a fold the reader opens or closes; its content changes only when the topic changes. */
+function saySide(box, text) {
+  const side = box && box.previousElementSibling; if (!side || !side.classList.contains('sayside')) return;
+  const f = SAYFIG.find(([re, k]) => re.test(text) && IMG[k]), mv = SAYMOV.find(([re, k]) => re.test(text) && (k.startsWith('ad:') || STEPS()[k.slice(3)])), rw = SAYROW.find(([re]) => re.test(text)), r = rw && ptRows().find(x => x.id === rw[1]);
+  const part = (cls, html, label) => { const d = side.querySelector('.' + cls); d.hidden = false; d.querySelector('summary').textContent = label; d.querySelector('.sbody').innerHTML = html; };
+  if (mv && side.dataset.m !== mv[1]) { const html = movHTML(mv[1], mv[2]); if (html) { side.dataset.m = mv[1]; part('saymovd', html, 'Moving diagram: ' + (mv[2] || (STEPS()[mv[1].slice(3)] || {}).title || '')); } }
+  if (f && side.dataset.f !== f[1]) { side.dataset.f = f[1]; part('sayfigd', `<figure class="fig sayfig"><img src="${IMG[f[1]]}" alt="${esc(f[2])}; tap to enlarge"></figure>`, f[2]); }
+  if (r && side.dataset.r !== r.id) { side.dataset.r = r.id; part('saykeyd', `<div class="saykey">${ptRowHTML(r)}</div>`, 'Her poisoning table key: ' + r.poison); }
+}
+const sideHTML = () => `<div class="sayside">${['saymovd', 'sayfigd', 'saykeyd'].map(c => `<details class="fold ${c}" open hidden><summary></summary><div class="sbody"></div></details>`).join('')}</div>`;
 function sayMark(box, i) {
   if (!box) return; const ss = box.querySelectorAll('.ssent'); if (!ss.length) return;
   ss.forEach((x, k) => x.classList.toggle('on', k === i));
+  if (ss[i]) saySide(box, ss[i].textContent);
   const on = ss[i]; if (on && box.scrollHeight > box.clientHeight) box.scrollTop = Math.max(0, on.offsetTop - box.offsetTop - 24);
 }
 function sayFrac(box, frac) {
@@ -2730,13 +2786,44 @@ function sayFrac(box, frac) {
   for (; i < lens.length; i++) { acc += lens[i]; if (acc / tot >= frac) break; }
   sayMark(box, Math.min(i, ss.length - 1));
 }
+/* A script read aloud into its transcript box: the recorded clip if there is one, else the device voice; the sentence being read is highlighted. */
+let SAY = null;
+function sayStop() {
+  const c = SAY; SAY = null; if (!c) return; clearTimeout(c.t);
+  if (c.btn && document.body.contains(c.btn)) c.btn.textContent = c.label;
+  if (c.audio) { c.audio.onended = c.audio.onerror = c.audio.ontimeupdate = null; c.audio.pause(); }
+  if (narrCan()) speechSynthesis.cancel();
+  if (c.done) c.done(false);
+}
+function sayPlay(text, box, btn, clip, done) {
+  sayStop(); narrStop(); if (typeof qSayStop === 'function') qSayStop(); if (typeof rdStop === 'function') rdStop();
+  const cur = SAY = {btn, label: btn ? btn.textContent : '', t: null, done};
+  if (btn) btn.textContent = '■ Stop';
+  const finish = () => { if (SAY !== cur) return; SAY = null; clearTimeout(cur.t); if (btn && document.body.contains(btn)) btn.textContent = cur.label; if (done) done(true); };
+  const synth = () => {
+    if (!narrCan()) return finish(); const v = narrVoice(); let last = null;
+    saySents(text).forEach((p0, si) => { const p = speakable(p0); if (!p.trim()) return; const u = new SpeechSynthesisUtterance(p.trim()); u.rate = NAR.rate; u.lang = 'en-US'; if (v) u.voice = v; u.onstart = () => { if (SAY === cur) sayMark(box, si); }; last = u; speechSynthesis.speak(u); });
+    if (!last) return finish(); last.onend = last.onerror = finish;
+  };
+  if (!clip) return synth();
+  const a = cur.audio = NARR_AUDIO || (NARR_AUDIO = new Audio()); a.src = NAR_BASE() + clip; a.playbackRate = NAR.rate;
+  a.onended = finish; a.onerror = () => { if (SAY === cur) { cur.audio = null; synth(); } };
+  a.ontimeupdate = () => { if (SAY === cur && isFinite(a.duration)) sayFrac(box, a.currentTime / a.duration); };
+  a.play().catch(a.onerror);
+}
+document.addEventListener('click', e => {
+  const b = e.target.closest('[data-antisay]');
+  if (b) { if (SAY && SAY.btn === b) return sayStop(); const w = b.closest('.antibox').querySelector('.antitxw'), tb = b.closest('.antibox').querySelector('[data-antitx]'); w.hidden = false; if (tb) { tb.textContent = 'Hide transcript'; tb.setAttribute('aria-pressed', 'true'); } const box = w.querySelector('.antitx'); sayMark(box, 0); sayPlay(ANTI_NARR[b.dataset.antisay], box, b, typeof AD_CLIPS !== 'undefined' && AD_CLIPS.includes(b.dataset.antisay) ? 'ad-' + b.dataset.antisay + '.mp3' : null); return; }
+  const t = e.target.closest('[data-antitx]');
+  if (t) { const w = t.closest('.antibox').querySelector('.antitxw'); w.hidden = !w.hidden; t.textContent = w.hidden ? 'Show transcript' : 'Hide transcript'; t.setAttribute('aria-pressed', String(!w.hidden)); }
+});
 let QSAY = null;
 function qSay(id, btn) {
   const text = NARR_Q[id]; if (!text) return;
   if (QSAY && QSAY.id === id) { qSayStop(); return; }
   qSayStop(); narrStop();
   const card = btn.closest('.qcard') || btn.parentElement, row = btn.closest('.qsay');
-  let d = row.querySelector('.nsaid'); if (!d) { d = document.createElement('div'); d.className = 'nsaid saybox'; d.style.flex = '1 1 100%'; row.appendChild(d); } d.innerHTML = sayHTML(text); sayMark(d, 0);
+  let d = row.querySelector('.nsaid'); if (!d) { row.insertAdjacentHTML('beforeend', sideHTML().replace('class="sayside"', 'class="sayside" style="flex:1 1 100%"')); d = document.createElement('div'); d.className = 'nsaid saybox'; d.style.flex = '1 1 100%'; row.appendChild(d); } d.innerHTML = sayHTML(text); sayMark(d, 0);
   const cur = QSAY = {id, btn, t: null}; btn.textContent = '■ Stop'; btn.setAttribute('aria-pressed', 'true');
   const finish = () => { if (QSAY !== cur) return; qSayStop(); };
   const synth = () => { if (!narrCan()) return finish(); const v = narrVoice(); let last = null; saySents(text).forEach((part0, si) => { const part = speakable(part0); if (!part.trim()) return; const u = new SpeechSynthesisUtterance(part.trim()); u.onstart = () => { if (QSAY === cur) sayMark(d, si); }; u.rate = NAR.rate; u.lang = 'en-US'; if (v) u.voice = v; last = u; speechSynthesis.speak(u); }); if (!last) return finish(); last.onend = last.onerror = finish; cur.t = setTimeout(finish, (2000 + text.split(/\s+/).length * 450) / NAR.rate); };
@@ -2871,8 +2958,38 @@ document.addEventListener('toggle', e => { if (e.target.open && e.target.querySe
 document.addEventListener('contentvisibilityautostatechange', e => { if (!e.skipped && e.target.querySelectorAll) e.target.querySelectorAll('.svgx.fit').forEach(swipeHint); }, true);
 /* A question's or term's figure; the static GPCR figure brings the step-through with it. */
 const figHTML = key => (typeof FIG === 'function' && key) ? FIG(key) + (key === 'gpcr-steps' ? FIG('gpcr-anim') : '') : '';
+/* Step-throughs (STEPS3, steps3*.js): one drawing per step with its caption; Back, Next and the dots move through them. */
+const STEPS = () => typeof STEPS3 === 'undefined' ? {} : STEPS3;
+function stepHTML(k, i = 0) {
+  const d = STEPS()[k]; if (!d) return '';
+  const st = d.steps[i];
+  return `<figure class="fig step3" data-s3="${esc(k)}" data-i="${i}"><figcaption><b>${esc(d.title)}</b> <span class="meta" style="margin:0">step ${i + 1} of ${d.steps.length}</span></figcaption>
+    <div class="s3svg">${st.svg}</div><p class="s3cap" aria-live="polite">${st.t}</p>
+    <div class="row s3nav"><button type="button" class="btn ghost" data-s3go="-1" ${i ? '' : 'disabled'}>◂ Back</button>${d.steps.map((x, j) => `<button type="button" class="sdot${j === i ? ' on' : ''}" data-s3to="${j}" aria-label="Step ${j + 1}"></button>`).join('')}<button type="button" class="btn ghost" data-s3go="1" ${i < d.steps.length - 1 ? '' : 'disabled'}>Next ▸</button><button type="button" class="btn ghost" data-s3play>${S3PLAY && S3PLAY.k === k ? '■ Stop' : '🔊 Play'}</button></div>
+    ${d.src ? `<div class="cite">${esc(d.src)}</div>` : ''}</figure>`;
+}
+let S3PLAY = null;
+function s3Say(fig) {
+  const k = fig.dataset.s3, i = +fig.dataset.i, d = STEPS()[k], cap = fig.querySelector('.s3cap'), btn = fig.querySelector('[data-s3play]');
+  cap.innerHTML = sayHTML(cap.textContent); S3PLAY = {k};
+  sayPlay(cap.textContent, cap, btn, null, ok => {
+    if (!ok || !S3PLAY || S3PLAY.k !== k) { S3PLAY = null; return; }
+    if (i >= d.steps.length - 1) { S3PLAY = null; const b2 = fig.isConnected ? fig.querySelector('[data-s3play]') : null; if (b2) b2.textContent = '🔊 Play'; return; }
+    const t = document.createElement('div'); t.innerHTML = stepHTML(k, i + 1); const nf = t.firstElementChild; fig.replaceWith(nf); setTimeout(() => { if (S3PLAY && S3PLAY.k === k) s3Say(nf); }, 600);
+  });
+}
+document.addEventListener('click', e => {
+  const pb = e.target.closest('[data-s3play]');
+  if (pb) { const fig = pb.closest('figure.step3'); if (S3PLAY && S3PLAY.k === fig.dataset.s3) { S3PLAY = null; sayStop(); pb.textContent = '🔊 Play'; } else s3Say(fig); return; }
+  const b = e.target.closest('[data-s3go],[data-s3to]'); if (!b) return;
+  const fig = b.closest('figure.step3'); if (!fig) return;
+  if (S3PLAY && S3PLAY.k === fig.dataset.s3) { S3PLAY = null; sayStop(); }
+  const d = STEPS()[fig.dataset.s3], i = b.dataset.s3to != null ? +b.dataset.s3to : Math.max(0, Math.min(d.steps.length - 1, +fig.dataset.i + +b.dataset.s3go));
+  const t = document.createElement('div'); t.innerHTML = stepHTML(fig.dataset.s3, i); fig.replaceWith(t.firstElementChild);
+});
 function expandFigs(html) {
   return html
+    .replace(/<!--STEP:([\w-]+)-->/g, (m, k) => stepHTML(k))
     .replace(/<!--FIG:([\w-]+)-->/g, (m, k) => FIG(k))
     .replace(/<!--IMG:([\w-]+)-->/g, (m, k) => IMG[k] ? `<figure class="fig">${imgTag(k, 'Figure from her slide; tap to enlarge')}</figure>` : '')
     .replace(/<!--GRAPH:([\s\S]*?)-->/g, (m, j) => { try { return FIG.graph(JSON.parse(j)); } catch (e) { return ''; } });
@@ -2907,7 +3024,7 @@ function rdCard(r) {
       ${quiz.length ? `<button class="btn ghost" data-rdquiz="${esc(r.id)}">Her quiz items (${quiz.length})</button>` : ''}
       ${r.listen ? `<button class="btn ghost" data-rdlisten="${esc(r.id)}">🔊 Listen${r.listen_secs ? ' · ' + rdClock(r.listen_secs) : ''}</button>` : ''}
       ${(r.links || []).map(([v, a, l]) => `<button type="button" class="chip" data-jump="${esc(v)}:${esc(a)}">${esc(l)}</button>`).join('')}</div>
-    ${r.listen ? `<div class="rdplayer" data-rdp="${esc(r.id)}" hidden><div class="row"><button type="button" class="btn ghost" data-rdpp>❚❚ Pause</button><button type="button" class="btn ghost" data-rdpn hidden>Next ▸</button><button type="button" class="btn ghost" data-rdps>■ Stop</button><button type="button" class="btn ghost" data-rdtx aria-pressed="false">Show transcript</button><span class="meta rdpt" aria-live="off">0:00</span></div><input type="range" class="rdseek" min="0" max="1000" step="1" value="0" aria-label="Position in the talk"><div class="nsaid saybox rdtx" hidden>${sayHTML(r.listen)}</div></div>` : ''}
+    ${r.listen ? `<div class="rdplayer" data-rdp="${esc(r.id)}" hidden><div class="row"><button type="button" class="btn ghost" data-rdpp>❚❚ Pause</button><button type="button" class="btn ghost" data-rdpn hidden>Next ▸</button><button type="button" class="btn ghost" data-rdps>■ Stop</button><button type="button" class="btn ghost" data-rdtx aria-pressed="false">Show transcript</button><span class="meta rdpt" aria-live="off">0:00</span></div><input type="range" class="rdseek" min="0" max="1000" step="1" value="0" aria-label="Position in the talk"><div class="rdside" hidden>${sideHTML()}<div class="nsaid saybox rdtx">${sayHTML(r.listen)}</div></div></div>` : ''}
     ${fold('About, in full', rdLead(r.about || '')[1] ? `<p>${esc(r.about)}</p>` : '')}
     ${fold('Read for', li(r.read_for))}
     ${fold('Where her lecture used it', use)}
@@ -2931,7 +3048,7 @@ function vReadings() {
   $('#view').onclick = e => {
     if (e.target.closest('[data-rdpp]')) return rdPause();
     if (e.target.closest('[data-rdps]')) return rdStop();
-    const tx = e.target.closest('[data-rdtx]'); if (tx) { const box = tx.closest('.rdplayer').querySelector('.rdtx'); box.hidden = !box.hidden; RD_TX = !box.hidden; tx.textContent = box.hidden ? 'Show transcript' : 'Hide transcript'; tx.setAttribute('aria-pressed', String(!box.hidden)); return; }
+    const tx = e.target.closest('[data-rdtx]'); if (tx) { const box = tx.closest('.rdplayer').querySelector('.rdside'); box.hidden = !box.hidden; RD_TX = !box.hidden; tx.textContent = box.hidden ? 'Show transcript' : 'Hide transcript'; tx.setAttribute('aria-pressed', String(!box.hidden)); return; }
     if (e.target.closest('[data-rdpn]')) return rdNext();
     const b = e.target.closest('[data-rdq],[data-rdquiz],[data-rdplay],[data-rdlisten]'); if (!b) return;
     const r = RS.find(x => x.id === (b.dataset.rdq || b.dataset.rdquiz || b.dataset.rdplay || b.dataset.rdlisten)); if (!r) return;
@@ -2972,7 +3089,7 @@ function rdShowPlayer() {
   const p = rdPlayer(); if (!p) return; p.hidden = false;
   const k = RDK; p.querySelector('[data-rdpp]').textContent = k.paused ? '▶ Resume' : '❚❚ Pause';
   p.querySelector('[data-rdpn]').hidden = k.i >= k.list.length - 1;
-  const box = p.querySelector('.rdtx'), tb = p.querySelector('[data-rdtx]'); if (box && tb) { box.hidden = !RD_TX; tb.textContent = RD_TX ? 'Hide transcript' : 'Show transcript'; tb.setAttribute('aria-pressed', String(RD_TX)); }
+  const box = p.querySelector('.rdside'), tb = p.querySelector('[data-rdtx]'); if (box && tb) { box.hidden = !RD_TX; tb.textContent = RD_TX ? 'Hide transcript' : 'Show transcript'; tb.setAttribute('aria-pressed', String(RD_TX)); }
 }
 function rdSeek(f, dragging) {
   const k = RDK, a = NARR_AUDIO; if (!k || k.fell || !a || !isFinite(a.duration)) return;
@@ -3037,7 +3154,7 @@ function rdStop() {
 /* Tap a slide figure to see it full size; tap again or press Escape to close. */
 document.addEventListener('click', e => {
   const z = document.getElementById('zoomfig'); if (z) { z.remove(); return; }
-  const im = e.target.closest('figure.stemfig img, .tablewrap figure.fig img'); if (!im || !im.src || im.naturalWidth < 700) return;
+  const im = e.target.closest('figure.stemfig img, .tablewrap figure.fig img, figure.sayfig img'); if (!im || !im.src || im.naturalWidth < 700) return;
   const d = document.createElement('div'); d.id = 'zoomfig'; d.setAttribute('role', 'dialog'); d.setAttribute('aria-label', 'Figure, full size');
   d.innerHTML = `<p class="meta">Scroll to move around; tap to close.</p><img src="${im.src}" alt="${esc(im.alt || 'figure')}">`; document.body.appendChild(d);
 });

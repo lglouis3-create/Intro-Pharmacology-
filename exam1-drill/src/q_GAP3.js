@@ -105,7 +105,7 @@ QUESTIONS.push(
 
 {id:"GAP3-009", lecture:"L16", prof:"Smith", tier:"new", topic:"L16", sub:"detect", skill:"recall", multi:true,
  concept:"toxidrome-sedative-hypnotic", tags:["smith","toxidrome"], source:"slide",
- stem:"Which findings are decreased in the sedative-hypnotic toxidrome (benzodiazepines, barbiturates)? Select all that apply.",
+ stem:"Which findings are decreased in the sedative-hypnotic toxidrome? Select all that apply.",
  options:[
   {t:"Blood pressure", correct:true, why:"The sedative-hypnotic row has blood pressure decreased."},
   {t:"Heart rate", correct:false, why:"No heart rate arrow in the sedative-hypnotic row; decreased heart rate is in the opioid and calcium channel blocker rows."},
@@ -118,7 +118,7 @@ QUESTIONS.push(
 {id:"GAP3-010", lecture:"L16", prof:"Smith", tier:"new", topic:"L16", sub:"detect", skill:"tell",
  concept:"toxidrome-ccb", tags:["smith","toxidrome"], source:"slide",
  core:true, coreWhy:"Objective bullet 'Describe the toxidromes discussed in class'",
- stem:"Which pair of findings makes up the calcium channel blocker (verapamil) toxidrome?",
+ stem:"Which pair of findings makes up the calcium channel blocker toxidrome?",
  options:[
   {t:"Decreased heart rate and decreased respiratory rate", correct:false, why:"That pair belongs to the opioid row, which also has decreased pupils."},
   {t:"Decreased blood pressure and decreased respiratory rate", correct:false, why:"That pair is the sedative-hypnotic row."},
@@ -234,7 +234,7 @@ QUESTIONS.push(
 {id:"GAP3-019", lecture:"L15", prof:"Smith", tier:"new", topic:"L15", sub:"odkin", skill:"recall", multi:true,
  concept:"large-vd-drug-list", tags:["smith"], source:"both",
  core:true, coreWhy:"Her Quiz 3 Q6 tested how kinetics change in overdose; slide list under Volume of Distribution",
- stem:"Which drugs have a large volume of distribution (greater than 5 L/kg), so that an overdose is hard to remove by hemodialysis? Select all that apply.",
+ stem:"Which drugs have a large volume of distribution, so that an overdose is hard to remove by hemodialysis? Select all that apply.",
  options:[
   {t:"Antidepressants", correct:true, why:"On the slide's large-Vd list."},
   {t:"Salicylates", correct:false, why:"Not on the large-Vd list; salicylates are the slide example for ion trapping with sodium bicarbonate."},
@@ -275,7 +275,7 @@ QUESTIONS.push(
 {id:"GAP3-022", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"interact", skill:"apply", readingId:"casarett-ch2",
  concept:"interaction-additive", tags:["smith","reading"], source:"slide",
  core:true, coreWhy:"Objective bullet: define the different types of chemical interactions discussed in class",
- stem:"Two organophosphate insecticides given together inhibit acetylcholinesterase by the sum of what each does alone (2 + 3 = 5). Which interaction is this?",
+ stem:"Two organophosphate insecticides given together inhibit acetylcholinesterase as 2 + 3 = 5. Which interaction is this?",
  options:[
   {t:"Additive", correct:true, why:"The combined response equals the sum of the responses to each chemical alone."},
   {t:"Synergistic", correct:false, why:"Synergism gives much more than the sum (2 + 2 = 20)."},
@@ -314,7 +314,7 @@ QUESTIONS.push(
 {id:"GAP3-025", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"interact", skill:"apply", readingId:"casarett-ch2",
  concept:"interaction-antagonism", tags:["smith","reading"], source:"slide",
  core:true, coreWhy:"Objective bullet: define the different types of chemical interactions discussed in class",
- stem:"Two chemicals given together interfere with each other's actions, so the combined response is smaller than expected (4 + 6 = 8). Which interaction is this?",
+ stem:"Two chemicals given together give a combined response of 4 + 6 = 8. Which interaction is this?",
  options:[
   {t:"Additive", correct:false, why:"Additive would be 4 + 6 = 10."},
   {t:"Synergistic", correct:false, why:"Synergism gives much more than the sum."},
@@ -410,5 +410,25 @@ QUESTIONS.push(
  teach:"MOE = NOAEL / exposure. X: 10 ÷ 0.1 = 100. Y: 200 ÷ 10 = 20. The smaller margin means the exposure is closer to the dose that caused no adverse effect in animals, so Y is the greater concern, even though X has the lower NOAEL. Comparing the margins is how a risk assessor decides which compound to clean up first.",
  quote:"You'd calculate that margin of exposure and figure out which compound is more dangerous to humans being exposed to it.",
  note:"Her Principles objectives slide: \"calculate common indices of toxicity from a dose-response curve\". The doses in the stem are practice numbers.",
- cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Values Developed from Dose-Response’; transcript 10/13"}
+ cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Values Developed from Dose-Response’; transcript 10/13"},
+
+{id:"GAP3-033", lecture:"L16", prof:"Smith", tier:"new", topic:"L16", sub:"table", skill:"recall", readingId:"marraffa",
+ concept:"marraffa-authors", tags:["smith","reading","authors"], source:"both",
+ stem:"Who wrote the primer on antidotes for toxicological emergencies assigned with Treating Poisonings?",
+ options:[
+  {t:"Hayes and Farrell", correct:false, why:"Bryan D. Hayes and Natalija M. Farrell wrote DiPiro chapter e9, the textbook chapter on the clinical toxicology of poisonings."},
+  {t:"Marraffa, Cohen and Howland", correct:true, why:"Jeanna M. Marraffa, Victor Cohen and Mary Ann Howland, Am J Health-Syst Pharm 2012; 69:199-212."},
+  {t:"Olson and colleagues", correct:false, why:"Kent R. Olson is first author of the AAPCC calcium channel blocker ingestion guideline."},
+  {t:"Rodriguez-Mozaz and Weinberg", correct:false, why:"They wrote the meeting report on pharmaceuticals in water discussed with the discussion guide."}],
+ teach:"The antidotes primer (Marraffa, Cohen and Howland, Am J Health-Syst Pharm 2012) is the article she recommended alongside DiPiro chapter e9 for Treating Poisonings. The other author pairs belong to the other readings: Hayes and Farrell (DiPiro e9), Wax and Olson (the two AAPCC out-of-hospital guidelines), Rodriguez-Mozaz and Weinberg (pharmaceuticals in water).",
+ cite:"Marraffa+AJHSP+2012+Antidotes.pdf, title page; DiPiro 13th ed. chapter e9 title page; transcript 10/19"},
+
+{id:"GAP3-034", lecture:"L16", prof:"Smith", tier:"new", topic:"L16", sub:"table", skill:"recall", type:"fill", readingId:"marraffa",
+ concept:"poison-center-number", tags:["smith","reading","fill"], source:"slide",
+ stem:"A regional poison control center is reached at ____.",
+ answer:"1-800-222-1222", accept:["1-800-222-1222","18002221222","800-222-1222","8002221222"],
+ bank:["1-800-222-1222","1-800-222-2122","1-800-122-1222","1-888-222-1222"],
+ teach:"The Marraffa antidotes primer tells clinicians to consult a regional poison control center at 1-800-222-1222 for current antidote recommendations and to report exposures and poisonings. Her guideline key sends the asymptomatic patients who need no hospital referral to the same place: \"Call the Poison Center.\"",
+ note:"She did not say the number in the lectures; it is printed in the Marraffa article's introduction. The wrong choices in the word bank are digit rearrangements, not other services.",
+ cite:"Marraffa+AJHSP+2012+Antidotes.pdf, Introduction, pp. 199-200; her guideline reading guide key"}
 );

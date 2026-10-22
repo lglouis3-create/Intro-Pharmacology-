@@ -9,7 +9,7 @@ QUESTIONS.push(
  stem:"Large inhaled particles get stuck in the upper airways and do not reach the lower lung. Which best explains why?",
  options:[
   {t:"They impact at the bifurcations of the upper airway", correct:true, why:"Her reason: large particles move fast and cannot follow the curve of the bronchioles into the lobes, so they hit the branch points of the upper airway and stay there."},
-  {t:"They are light enough to be breathed back out", correct:false, why:"That is what happens to very small particles, which do not get past the nose and upper throat."},
+  {t:"They are light enough to be breathed back out", correct:false, why:"That is what happens to very small particles."},
   {t:"They settle out of the air while the breath stills", correct:false, why:"Settling during the still moment of a breath is how medium particles deposit in the lower lung."},
   {t:"They dissolve in the water lining the upper airway", correct:false, why:"Solubility in water sets where a gas goes, not where a particle deposits."}],
  core:true, coreWhy:"her Quiz 2 item 5: particle size and deposition",
@@ -246,7 +246,7 @@ QUESTIONS.push(
  core:true, coreWhy:"her question on the figure: B can be dosed higher without an unwanted effect",
  teach:"Two drugs can look the same at the therapeutic dose and endpoint, here sedation. What differs is how the response continues as the dose rises: the overlap of the therapeutic and toxic response curves. Drug A keeps rising in a straight line to coma, while drug B levels off before coma, so A is the more dangerous drug in overdose.",
  quote:"The outcomes between these two drugs are different, even though they've got the same mechanism, they've got a different therapeutic index, which results in one drug being more dangerous than the other, based on the pharmacodynamics of it in overdose.",
- note:"The slide says two medications may have the same therapeutic index but unequal safe dosing; in speech she said both that A and B have \"the same therapeutic index\" and that they have \"a different therapeutic index\". Keyed on her closing explanation, which matches the figure. The slide says two medications may have the same therapeutic index but unequal safe dosing; in speech she said both that A and B have \"the same therapeutic index\" and that they have \"a different therapeutic index\". Keyed on her closing explanation, which matches the figure.",
+ note:"The slide says two medications may have the same therapeutic index but unequal safe dosing, which is a general possibility; for drugs A and B she said both \"the same therapeutic index\" and \"a different therapeutic index\". Keyed on her closing explanation, which matches the figure.",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘How Pharmacodynamics change in Overdose’ (Katzung figure); transcript 10/14"},
 
 /* ---------------- Treatment approach ---------------- */

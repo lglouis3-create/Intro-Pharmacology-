@@ -230,7 +230,7 @@ QUESTIONS.push(
 
 {id:"L16-017", lecture:"L16", prof:"Smith", tier:"new", topic:"L16", sub:"metab", skill:"apply", core:true, coreWhy:"her Quiz 3 Q3 option \"cofactor for rhodanese activity\"; the rhodanese step",
  concept:"rhodanese-enhance-metabolism-step", tags:["smith"], source:"both",
- stem:"Which agent given for cyanide poisoning works by enhancing metabolism (detoxification) of the cyanide?",
+ stem:"Which agent given for cyanide poisoning works by enhancing metabolism of the cyanide?",
  options:[
   {t:"Sodium thiosulfate, which donates sulfur to rhodanese", correct:true, why:"Rhodanese, an enzyme the body already has, moves cyanide onto sulfur from thiosulfate, and the product is renally eliminated; giving sodium thiosulfate supplies the sulfur so the enzyme clears more cyanide."},
   {t:"Amyl nitrite, which oxidizes hemoglobin to methemoglobin", correct:false, why:"Amyl nitrite sets up the removal of cyanide from the enzyme's active site; it is not the clearance step."},
@@ -294,7 +294,7 @@ QUESTIONS.push(
 
 {id:"L16-022", lecture:"L16", prof:"Smith", tier:"new", topic:"L16", sub:"metab", skill:"tell", core:true, coreWhy:"objective: recognize examples illustrating toxicokinetic-based treatments",
  concept:"examples-by-toxicokinetic-method", tags:["smith"], source:"both",
- stem:"Which two poisonings are the examples of enhancing metabolism (detoxification) by giving a cofactor?",
+ stem:"Which two poisonings are the examples of enhancing metabolism by giving a cofactor?",
  options:[
   {t:"Cyanide and acetaminophen", correct:true, why:"Sodium thiosulfate for cyanide (sulfur for the body's rhodanese) and NAC for acetaminophen (ingredients for glutathione) are the two examples."},
   {t:"Methanol and ethylene glycol", correct:false, why:"Those are the inhibit-bioactivation examples (ethanol or fomepizole)."},
@@ -357,7 +357,7 @@ QUESTIONS.push(
 /* ---------------- Extracorporeal ---------------- */
 {id:"L16-027", lecture:"L16", prof:"Smith", tier:"new", topic:"L16", sub:"extra", skill:"recall", lowYield:true, multi:true,
  concept:"extracorporeal-methods", tags:["smith"], source:"both",
- stem:"Which of the following are extracorporeal (out of the body) methods of enhancing elimination? Select all that apply.",
+ stem:"Which of the following are extracorporeal methods of enhancing elimination? Select all that apply.",
  options:[
   {t:"Hemodialysis", correct:true, why:"An out-of-the-body method: the blood is artificially cleared of the toxin outside the patient. Whether it works depends on the poison's chemistry."},
   {t:"Hemofiltration", correct:true, why:"An out-of-the-body method: the blood is artificially filtered clear of the toxin outside the patient."},
@@ -742,7 +742,7 @@ QUESTIONS.push(
 
 {id:"L16-057", lecture:"L16", prof:"Smith", tier:"new", topic:"L16", sub:"guideline", skill:"apply", core:true, coreWhy:"her words: \"I want you to know those time frames\"; her guideline key", readingId:"aapcc-bb",
  concept:"ir-six-hour-window", tags:["smith","reading"], source:"transcript",
- stem:"An asymptomatic patient took an immediate-release calcium channel blocker or beta blocker (not sotalol). What does the guideline advise if found within 6 hours, and if found later?",
+ stem:"An asymptomatic patient took an immediate-release calcium channel blocker or beta blocker other than sotalol. What does the guideline advise if found within 6 hours, and if found later?",
  options:[
   {t:"Hospital now; probably home if found after 6 hours", correct:true, why:"Within 6 hours they are still inside the time when they could respond badly; after 6 hours an immediate-release drug should have been absorbed and shown symptoms. Her key: after 6 hours, call the poison center; they can probably be managed at home."},
   {t:"Watch at home now; hospital if found after 6 hours", correct:false, why:"Backwards: within 6 hours the drug may still be absorbing, so the patient goes to the hospital; past 6 hours with no symptoms they can probably stay home."},

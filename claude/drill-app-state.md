@@ -114,3 +114,23 @@ See `## Conflicts / uncertain` in notes/L01.md, L02.md and L03.md. The ones that
 - Short answer page (sa3.js, 26 prompts, store key ns+':sa'). Quiz 4 (PGx) Q4, Q8, Q9, Q10 verbatim in QZ3 (sub quiz4).
 - 10/21 lecture is Exam 4 material ("Where I start today is for my, my last exam"); the Types of Genetic Variant
   worksheet and Furuta 1998 belong to it and are not ingested.
+
+## 2026-10-22/23: her exam format, listening panel, step-throughs (v75–v79, PRs #102 onward)
+
+- Exam 3 banks rewritten to her quiz format (scratchpad rewrite brief): 4 options, no absolute words, no length cue,
+  no "she/her key" in stems; core:true + coreWhy (★ Most likely button per topic/section); 352 core items.
+- New banks: q_NEW3.js (94: NOT/EXCEPT, T/F, pairing, cases, fill-in with word bank), q_GAP3.js (34: guideline list,
+  toxidromes, interactions, TI/MOS/MOE calculations core per her objective "calculate common indices of toxicity",
+  GAP3-033 Marraffa authors, GAP3-034 poison control number from Marraffa p. 199).
+- Stems: no parenthetical glosses (her quiz stems have none); 24 stems fixed 10/23.
+- Hear the why: scripts for every core item (narration3.js + _l16, _l17, _keys, _new; 600 of 718 Exam 3 items);
+  recorded L13–L15 clips whose scripts changed were retired. Reading talks rewritten (no logistics); rd-*.mp3 removed.
+- Listening side panel (SAYFIG/SAYMOV/SAYROW in app.js): moving diagram, slide, poison-table key row; follow-along text.
+- Antidote diagrams: ANTI_NARR (antinarr.js) Listen + transcript; AD_CLIPS for future ad-<slug>.mp3.
+- Step-throughs STEPS3 (steps3a.js, steps3b.js): methanol-eg, apap-nac, ion-trapping, liver-zones, allele-genotype,
+  haplotype; <!--STEP:key--> in guide3 sections 18, 25, 27, 28, 37, 38.
+- Audio not recorded (quota ran out 10/18). Per-batch characters, ~1 credit each, at 805¢ per 44,297 chars:
+  reading talks 23,611; why L13–15 unrecorded 111,403; L16 58,078; L17 51,593; keys 65,217; new/gap 92,011;
+  antidote diagrams 12,172; step captions 6,385; total 420,470 (about $76.41). Waiting on the user's choice of batches.
+- Open with the user: her table key cites "Pharmacotherapy e6" for iron and organophosphate rows, but the posted e6 is
+  Medication Adherence; 11 class B/C slips; Quiz 4 Q1 has no correct option (Exam 4 material).

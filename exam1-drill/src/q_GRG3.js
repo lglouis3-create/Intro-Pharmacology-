@@ -57,7 +57,7 @@ QUESTIONS.push(
 {id:"GRG3-004", lecture:"GRG3", prof:"Smith", tier:"new", topic:"GRG3", sub:"ccb", skill:"recall", readingId:"aapcc-ccb",
  concept:"grg-ccb-mr-within-18", tags:["smith","key"], source:"both",
  core:true, coreWhy:"her guideline reading-guide key, calcium channel blockers question 2c",
- stem:"An asymptomatic patient took a modified-release calcium channel blocker (not verapamil) and is found within 18 hours. What should be done?",
+ stem:"An asymptomatic patient took a modified-release calcium channel blocker other than verapamil and is found within 18 hours. What should be done?",
  options:[
   {t:"Get them to a hospital", correct:true, why:"Modified-release tablets tend to clump into bezoars that can break apart at unpredictable times, so an asymptomatic patient inside the 18-hour window may still absorb a large dose; they go to a hospital."},
   {t:"Call the Poison Center; probably manage at home", correct:false, why:"That is her key's answer for the patient found 18 hours after ingestion."},
@@ -70,7 +70,7 @@ QUESTIONS.push(
 {id:"GRG3-005", lecture:"GRG3", prof:"Smith", tier:"new", topic:"GRG3", sub:"ccb", skill:"recall", readingId:"aapcc-ccb",
  concept:"grg-ccb-mr-after-18", tags:["smith","key"], source:"slide",
  core:true, coreWhy:"her guideline reading-guide key, calcium channel blockers question 2d",
- stem:"An asymptomatic patient took a modified-release calcium channel blocker (not verapamil) and is found 18 hours after ingestion. What should be done?",
+ stem:"An asymptomatic patient took a modified-release calcium channel blocker other than verapamil and is found 18 hours after ingestion. What should be done?",
  options:[
   {t:"Call the Poison Center; they can probably be managed at home", correct:true, why:"The 18-hour window covers the time in which a clump of tablets could still break apart; past it with no symptoms, the patient can probably stay home after a call to the Poison Center, which sets the follow-up."},
   {t:"Get them to a hospital: modified-release products need 24 hours", correct:false, why:"24 hours is the window for modified-release verapamil only; the other modified-release calcium channel blockers have 18 hours."},
@@ -191,7 +191,7 @@ QUESTIONS.push(
 {id:"GRG3-014", lecture:"GRG3", prof:"Smith", tier:"new", topic:"GRG3", sub:"bb", skill:"recall", readingId:"aapcc-bb",
  concept:"grg-bb-ir-within-6", tags:["smith","key"], source:"both",
  core:true, coreWhy:"her guideline reading-guide key, beta blockers question 2a",
- stem:"An asymptomatic patient took an immediate-release beta blocker (not sotalol) and is found within 6 hours. What should be done?",
+ stem:"An asymptomatic patient took an immediate-release beta blocker other than sotalol and is found within 6 hours. What should be done?",
  options:[
   {t:"Get them to a hospital", correct:true, why:"Her key: \"Get them to a hospital.\" The immediate-release window is 6 hours for both classes."},
   {t:"Call the Poison Center; probably manage at home", correct:false, why:"That is her key's answer for the patient found 6 hours after ingestion."},
@@ -205,7 +205,7 @@ QUESTIONS.push(
 {id:"GRG3-015", lecture:"GRG3", prof:"Smith", tier:"new", topic:"GRG3", sub:"bb", skill:"recall", readingId:"aapcc-bb",
  concept:"grg-bb-ir-after-6", tags:["smith","key"], source:"both",
  core:true, coreWhy:"her guideline reading-guide key, beta blockers question 2b",
- stem:"An asymptomatic patient took an immediate-release beta blocker (not sotalol) and is found 6 hours after ingestion. What should be done?",
+ stem:"An asymptomatic patient took an immediate-release beta blocker other than sotalol and is found 6 hours after ingestion. What should be done?",
  options:[
   {t:"Call the Poison Center; probably manage at home", correct:true, why:"An immediate-release beta blocker should be absorbed within 6 hours; a patient with no symptoms by then is expected to be OK, so the Poison Center is called and they can probably stay home."},
   {t:"Get them to a hospital by ambulance", correct:false, why:"That is the answer within 6 hours."},

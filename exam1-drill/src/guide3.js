@@ -385,6 +385,7 @@ const GUIDE3_HTML = `
 </ul>
 <p>How she asks it: which zone dies after acetaminophen overdose and why; which zone is next to the central vein; which statement explains regional susceptibility.</p>
 <p class="sub">Sources: Toxic Responses slide ‘Reasons for Site-Specific Hepatotoxicity’; (T) 10/14. Questions L15-026 to L15-029, L15-044.</p>
+<!--STEP:liver-zones-->
 </section>
 
 <!-- ===================================================================== -->
@@ -491,6 +492,7 @@ const GUIDE3_HTML = `
 </ul>
 <p>How she asks it: which metabolite of methanol is toxic and what it damages; what ethylene glycol ends up as and why that hurts; the antidote for both and its mechanism; why bioactivation can rarely be inhibited.</p>
 <p class="sub">Sources: Treating Poisonings slides ‘Toxicokinetic-Based Treatment Prevent Absorption’, ‘Inhibit Bioactivation’, ‘methanol and ethylene glycol examples’; DiPiro ch. e9; (T) 10/19. Questions L16-001 to L16-009.</p>
+<!--STEP:methanol-eg-->
 </section>
 
 <!-- ===================================================================== -->
@@ -518,6 +520,7 @@ const GUIDE3_HTML = `
 <p class="antirow">Diagrams: <button type="button" class="chip antichip" data-anti="01-cyanide-pathway-overview">◧ Cyanide: overview</button><button type="button" class="chip antichip" data-anti="03-cyanide-antidote-stepper">◧ Cyanide: step by step</button><button type="button" class="chip antichip" data-anti="02-cyanide-small-molecules">◧ Cyanide: molecules</button></p>
 <p>How she asks it: cyanide's target and what happens; what each of the three agents does and which one is the cofactor; what NAC does and what conjugates NAPQI; why induction is not used.</p>
 <p class="sub">Sources: Treating Poisonings slides ‘Toxicokinetic-Based Treatment Enhance Metabolism’, ‘Cyanide example’, ‘Acetaminophen Example’; (T) 10/19. Questions L16-014 to L16-022.</p>
+<!--STEP:apap-nac-->
 </section>
 
 <!-- ===================================================================== -->
@@ -531,6 +534,7 @@ const GUIDE3_HTML = `
 </ul>
 <p>How she asks it: what bicarbonate does to the urine and to a weak acid; why it is not done for weak bases; which methods are extracorporeal and when they are used.</p>
 <p class="sub">Sources: Treating Poisonings slides ‘Toxicokinetic-Based Treatment Enhance Renal Elimination’, ‘Extracorporeal enhancement of elimination’; (T) 10/19. Questions L16-023 to L16-028.</p>
+<!--STEP:ion-trapping-->
 </section>
 
 <!-- ===================================================================== -->
@@ -647,6 +651,7 @@ const GUIDE3_HTML = `
 </ul>
 <p>How she asks it: define allele, genotype, phenotype; read zygosity from the figure; write a genotype; define functional significance; list the three complications.</p>
 <p class="sub">Sources: Intro to PGx slides ‘Allele’ (p. 15), ‘Homozygosity and Heterozygosity’ (p. 16), ‘Genotype vs phenotype’ (p. 17), ‘Complications of Genotype vs phenotype’ (p. 18); (T) 10/20. Questions L17-034 to L17-044.</p>
+<!--STEP:allele-genotype-->
 </section>
 <section class="guide" id="guide3-l17-6">
 <h3>38. Haplotype, allele and genotype frequency, Hardy-Weinberg equilibrium</h3>
@@ -657,6 +662,7 @@ const GUIDE3_HTML = `
 </ul>
 <p>How she asks it: define haplotype and linkage disequilibrium; read the haplotypes off the figure; allele vs genotype frequency; what being out of Hardy-Weinberg equilibrium means for a study.</p>
 <p class="sub">Sources: Intro to PGx slides ‘Haplotype’ (p. 19), ‘Illustration of Haplotype’ (p. 20), ‘Frequencies in Pharmacogenomics’ (p. 21); (T) 10/20. Questions L17-045 to L17-051.</p>
+<!--STEP:haplotype-->
 </section>
 <section class="guide" id="guide3-l17-7">
 <h3>39. The exam vote, and what was not reached on 10/20</h3>
