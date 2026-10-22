@@ -6,7 +6,7 @@ Newest first. The build embeds this file; the Topics page shows what is new sinc
 
 - 23 Exam 3 questions now show her slide figure; the stem asks you to read it instead of describing it.
 - New: on Figure 2-4, at about which dose does compound B first reach the toxic range (her question in class).
-- Cyanide: rhodanese is the body's own enzyme; sodium thiosulfate is given (Marraffa). Still the enhance-metabolism step.
+- Cyanide: rhodanese is the body's own enzyme and sodium thiosulfate is given; still the enhance-metabolism step.
 
 ## 2026-10-22 (Digoxin immune Fab)
 
