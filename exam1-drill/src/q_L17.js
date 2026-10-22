@@ -238,7 +238,7 @@ QUESTIONS.push(
   {t:"Central nervous system (CNS)", correct:true, why:"\"CNS pharmacogenomics is big\"."},
   {t:"Cardiology", correct:true, why:"\"Some cardio ... pharmacogenomics is big\"."},
   {t:"Infectious disease", correct:true, why:"\"doing more and more of pharmacogenomics\"."},
-  {t:"Toxicology", correct:false, why:"Toxicology was the unit wrapped up before pharmacogenomics began; it was not one of the practice areas named."}],
+  {t:"Dermatology", correct:false, why:"Not one of the four areas named on 10/20 (oncology, CNS, cardiology, infectious disease)."}],
  teach:"She expects pharmacogenomics to be part of practice in every area of pharmacy to some degree. Oncology uses it all the time; it is big in CNS and cardiology, and infectious disease uses more and more of it. The field moves fast, so the course gives the basics and a way of thinking to keep learning after graduation.",
  quote:"Some people, especially if you like choose oncology, you'll be using pharmacogenomics all the time. CNS pharmacogenomics is big. Some cardio pharma pharma, I mean pharmacogenomics is big. Infectious disease, doing more and more of pharmacogenomics, OK?",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘Introduction: Genomics History’ (p. 6); transcript 10/20"},

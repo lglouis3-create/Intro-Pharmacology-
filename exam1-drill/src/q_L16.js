@@ -26,7 +26,7 @@ QUESTIONS.push(
  stem:"Of the methods used to prevent absorption of an ingested poison, which one do the patient-outcome data support best?",
  options:[
   {t:"Activated charcoal", correct:true, why:"Based on patient outcomes, charcoal is probably the best option; the caveat is that not everything a person ingests can be grabbed by charcoal, and charcoal has its own risk."},
-  {t:"Emesis", correct:false, why:"Emesis is no longer recommended; aspiration is its biggest risk. Her Quiz 3 keyed \"Emesis is the first line\" as False."},
+  {t:"Induced emesis", correct:false, why:"Emesis is no longer recommended; aspiration is its biggest risk. Her Quiz 3 keyed \"Emesis is the first line\" as False."},
   {t:"Gastric lavage", correct:false, why:"Lavage is a risky method an emergency team might still try when someone has really overdosed and might not otherwise be saved; the outcome data do not favor it."},
   {t:"Whole bowel irrigation", correct:false, why:"Irrigation pushes the gut contents through; an experienced team might try it in a severe case, but it is not the method the outcome data favor."}],
  teach:"The outcome data on treating poisoned patients come from cases that were treated and then written up, not from clinical trials. Those data show that charcoal, single-dose and for some compounds multiple-dose, improves patient outcomes best among the absorption-prevention methods. Two caveats: not every compound sticks to charcoal, and charcoal has its own risk.",
@@ -142,7 +142,7 @@ QUESTIONS.push(
  stem:"A sedated, barely responsive patient arrives and methanol or ethylene glycol poisoning is suspected. How is the poisoning confirmed?",
  options:[
   {t:"Classic symptoms, then a blood test for the alcohols", correct:true, why:"Symptoms suggest the exposure; the key indicator is a blood draw in the emergency room that looks for these alcohols in the blood."},
-  {t:"Classic symptoms, then a urine pH to look for the acids", correct:false, why:"Urine pH belongs to ion trapping (enhancing renal elimination), not to diagnosis."},
+  {t:"Classic symptoms, then a urine pH test for acids", correct:false, why:"Urine pH belongs to ion trapping (enhancing renal elimination), not to diagnosis."},
   {t:"Classic symptoms, then a liver biopsy to look for injury", correct:false, why:"A biopsy shows a pattern of injury; it does not identify an alcohol. The blood draw does."},
   {t:"Classic symptoms, then the response to a dose of fomepizole", correct:false, why:"Fomepizole is the antidote, not a test; the poisoning is confirmed by a blood draw for the alcohols."}],
  teach:"A student asked how anyone would know. People come in with classic symptoms: unconscious, or awake but sedated. The key indicator is a blood draw in the emergency room that looks for the alcohols. More generally, the first guess comes from the symptoms, a toxidrome, and the hospital laboratory then verifies the suspected compound if it can test for it; when a patient intended self-harm and will not say what was taken, or is unconscious, it is sometimes a guess.",
@@ -197,7 +197,7 @@ QUESTIONS.push(
  stem:"Enzyme inducers exist, yet a poisoning is not treated by inducing the detoxifying enzymes. Why, and what is done instead?",
  options:[
   {t:"Induction takes days; cofactors for the reaction are given instead", correct:true, why:"The expression of metabolizing enzymes cannot be induced fast enough to help a poisoned patient; giving more of the cofactors the reaction needs can speed it up now."},
-  {t:"Induction takes days; the bioactivating enzyme is inhibited instead", correct:false, why:"Time is the right reason, but inhibiting bioactivation is a separate treatment used for a few poisons (methanol, ethylene glycol); the enhance-metabolism alternative is giving cofactors."},
+  {t:"Induction takes days; bioactivation is inhibited instead", correct:false, why:"Time is the right reason, but inhibiting bioactivation is a separate treatment used for a few poisons (methanol, ethylene glycol); the enhance-metabolism alternative is giving cofactors."},
   {t:"Inducers are hepatotoxic; cofactors for the reaction are given instead", correct:false, why:"Cofactors are what is given, but the reason induction is not used is time (it takes days), not toxicity of inducers."},
   {t:"Inducers are hepatotoxic; the bioactivating enzyme is inhibited instead", correct:false, why:"Both halves are wrong: induction is too slow, and the enhance-metabolism alternative is giving cofactors."}],
  teach:"Enhancing metabolism means getting the body to detoxify and clear the compound faster, as long as that metabolism does not make another toxic metabolite. Inducing the enzymes would be ideal but takes a few days, far too slow for a poisoning. What can be done is to supply cofactors for the metabolic reactions so they run faster. Her two examples are cyanide and acetaminophen.",
@@ -287,7 +287,7 @@ QUESTIONS.push(
   {t:"It smells like rotten eggs; do not put the oral product in a vein", correct:true, why:"The sulfur smell and oily clear liquid are hard to swallow; where a hospital stocks both protocols, the IV formulation, not the oral one, goes in the vein."},
   {t:"It is destroyed by stomach acid; use an enteric-coated oral product", correct:false, why:"Oral NAC works and can be given; the IV route is preferred because NAC smells of sulfur and is oily, so it is hard to get a patient to swallow."},
   {t:"It is too oily to be absorbed by mouth; reserve oral use for children", correct:false, why:"Oral NAC is absorbed and can be given; the problem is getting anyone to swallow it."},
-  {t:"It loses effect about 8 hours after overdose; do not give it later", correct:false, why:"Her table key: NAC loses effectiveness about 8 hours after the overdose, but it should still be given past that point; that is not why the IV route is chosen."}],
+  {t:"It loses effect 8 hours after overdose; stop giving it then", correct:false, why:"Her table key: NAC loses effectiveness about 8 hours after the overdose, but it should still be given past that point; that is not why the IV route is chosen."}],
  teach:"NAC comes in glass bottles and smells of sulfur, like rotten eggs; everyone in a hospital pharmacy knows when a bottle has shattered. Because it is hard to get a patient to swallow an oily, stinking liquid, it is usually given by IV in the United States. The caution: you cannot give an oral product intravenously, so where both protocols exist, make sure the IV formulation is the one given IV.",
  quote:"It stinks, smells like rotten eggs. So, it's got a sulfur smell. ... So, in the United States, we tend to give it by IV because it's pretty hard to get somebody to swallow something that smells like rotten eggs, and it's kind of oily and, it's a clear liquid, it's kind of disgusting. ... If, if they have an oral formulation, make sure you are giving the IV formulation if you're giving it IV, OK?",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Toxicokinetic-Based Treatment Acetaminophen Example’; transcript 10/19"},
@@ -349,7 +349,7 @@ QUESTIONS.push(
   {t:"Acidifying the blood to acidify the urine is dangerous", correct:true, why:"Trapping a base would require acidifying the urine, which means acidifying the person; cranberry juice does not lower the pH enough or fast enough, and anything stronger is risky."},
   {t:"Weak bases are bound to plasma proteins and are not filtered", correct:false, why:"Weak bases are filtered; the problem is how to trap them in the urine safely."},
   {t:"Sodium bicarbonate would already charge a weak base in the urine", correct:false, why:"Bicarbonate makes the urine basic, which leaves a weak base uncharged; it charges weak acids."},
-  {t:"Weak bases have no transporter that reabsorbs them from urine", correct:false, why:"Uncharged weak bases are reabsorbed like other uncharged solutes; that is why trapping them would help if it could be done safely."}],
+  {t:"Weak bases are not reabsorbed from the urine", correct:false, why:"Uncharged weak bases are reabsorbed like other uncharged solutes; that is why trapping them would help if it could be done safely."}],
  teach:"Ion trapping is safe and quite successful for slightly acidic poisons: make the urine more basic. The reverse, trapping a weakly basic poison by acidifying the urine, would mean acidifying the patient's blood, which is dangerous. Cranberry juice, used for mild urinary tract infections, acidifies a little but not to a low enough pH and not fast enough to treat a poisoning.",
  quote:"we don't tend to do this for poisons that are weakly basic, because acidifying a person's blood to try to get their urine more acidic is kind of dangerous, OK? You could try maybe getting them to drink cranberry juice, right? ... but you really don't get a lot of acidification of the urine by drinking cranberry juice, not high enough or not, not low enough pH and not fast enough for treating somebody that has ingested a basic type of poison, OK",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Toxicokinetic-Based Treatment Enhance Renal Elimination’; transcript 10/19"},
@@ -386,7 +386,7 @@ QUESTIONS.push(
  stem:"At what point in a poisoning does inactivation of the poison, an antidote in the official sense, apply?",
  options:[
   {t:"Once the poison is in the systemic circulation", correct:true, why:"Preventing absorption comes first; if that fails and the compound is in the circulation, an inactivator can bind it there."},
-  {t:"While the poison is still in the stomach and gut", correct:false, why:"That is the window for charcoal and the other absorption-prevention methods."},
+  {t:"While the poison is still in the gut", correct:false, why:"That is the window for charcoal and the other absorption-prevention methods."},
   {t:"Once the poison has been bioactivated by the liver", correct:false, why:"Inactivators bind the toxin itself; blocking bioactivation is a separate toxicokinetic treatment."},
   {t:"Once extracorporeal methods such as dialysis fail", correct:false, why:"Extracorporeal methods are for severe cases; inactivation does not wait for them."}],
  teach:"The biggest thing in the toxicokinetic approach is to prevent absorption. When that fails, the poison is in the circulation; the other kinetic methods apply, and for some compounds there is what is officially called an antidote, an inactivator that binds the poison in the blood so it cannot reach its target and the complex is cleared. Inactivators come in two groups: heavy metal chelators, and antivenoms and antibodies.",
@@ -397,11 +397,11 @@ QUESTIONS.push(
  concept:"inactivator-requirements", tags:["smith"], source:"both",
  stem:"Which of the following are requirements of a good inactivator of a poison? Select all that apply.",
  options:[
-  {t:"It binds the toxin so the toxin cannot interact with its target", correct:true, why:"The mechanism of inactivation: bind the whole poison, so its active part cannot find the target."},
+  {t:"It binds the toxin so the toxin does not reach its target", correct:true, why:"The mechanism of inactivation: bind the whole poison, so its active part cannot find the target."},
   {t:"The toxin-inactivator complex is cleared from the body", correct:true, why:"Binding stops the toxin from reaching its target; the complex then has to be cleared. Her Quiz 3 keyed \"does not need to be cleared\" as the exception."},
   {t:"The complex has no toxicity of its own", correct:true, why:"The slide says low toxicity; she changed it to no toxicity: the bound poison must not be poisonous anymore."},
   {t:"It has high affinity for the toxin", correct:true, why:"So that massive doses of inactivator, with their own side effects, are not needed."},
-  {t:"It binds the toxin's target tissue so the toxin cannot reach it", correct:false, why:"Blocking the target is what a receptor antagonist does (a pharmacological treatment); an inactivator binds the toxin itself."}],
+  {t:"It binds the toxin's target tissue so the toxin stays off it", correct:false, why:"Blocking the target is what a receptor antagonist does (a pharmacological treatment); an inactivator binds the toxin itself."}],
  teach:"An inactivator binds the toxin and prevents it from interacting with its target; the toxin-inactivator complex must then be cleared, must have no activity of its own, and the inactivator must have high affinity for the toxin so that huge doses, which could cause side effects, are unnecessary. She drew a poison grabbed whole by a good inactivator versus one grabbed at one end, with the rest still able to touch the target.",
  quote:"they will bind to the toxin and prevent it from interacting with its target, OK? Um, That toxin inactivator complex then has to get cleared from the body. And that complex of toxin and inactivator has to not have its own activity, right? ... so the complex must have, let's change that from low to no toxicity here at this bottom bullet, OK. And then Uh, a good inactivator needs to have really good affinity for the toxin.",
  note:"Slide: \"Complex must have low toxicity\". Transcript: she changed it to \"no toxicity\". Keyed on her wording.",
@@ -492,7 +492,7 @@ QUESTIONS.push(
  options:[
   {t:"Type III hypersensitivity, serum sickness, to the antivenom", correct:true, why:"The body is fighting the venom and now a flood of antibodies made by another animal; the reaction to the polyclonal antivenom is type III hypersensitivity, serum sickness."},
   {t:"Type I hypersensitivity, anaphylaxis, to the animal antibodies", correct:false, why:"The reaction named for polyclonal antivenom is type III, serum sickness, not type I anaphylaxis."},
-  {t:"Continued action of venom that the antivenom has not yet bound", correct:false, why:"The venom is a separate problem; fever, nausea and malaise after polyclonal antivenom are the reaction to the antivenom."},
+  {t:"Venom still acting that the antivenom has not bound", correct:false, why:"The venom is a separate problem; fever, nausea and malaise after polyclonal antivenom are the reaction to the antivenom."},
   {t:"Aging of the venom on its target enzyme, as with organophosphates", correct:false, why:"Aging is the organophosphate story with acetylcholinesterase, not a venom reaction."}],
  teach:"Polyclonal antivenoms are hard to use. A patient already fighting a snake bite is flooded with antibodies made by some other animal, and the immune system reacts to them: a type III hypersensitivity reaction, also called serum sickness, with fever, nausea and malaise. That danger is why people are working on monoclonal antivenoms. Antivenom supply is also a problem: small rural hospitals do not stock it, and hospitals locate it through a network, probably through the poison centers.",
  quote:"oftentimes you end up with people having a certain kind of hypersensitivity reaction called type 3 hypersensitivity. Did you guys talk about that in your immune immunology class? Remember, that's also called serum sickness. ... you have a fever, nausea, malaise, OK? Because your body's also fighting those polyclonal antibodies that you just gave them",
@@ -555,7 +555,7 @@ QUESTIONS.push(
  stem:"Why is atropine, a receptor antagonist, a treatment for organophosphate pesticide poisoning?",
  options:[
   {t:"Acetylcholine builds up; atropine blocks its receptor", correct:true, why:"Organophosphates inhibit acetylcholinesterase, so acetylcholine builds up in the synaptic cleft; atropine blocks its muscarinic receptor."},
-  {t:"Acetylcholine builds up; atropine frees the inhibited enzyme", correct:false, why:"Freeing the enzyme is pralidoxime's job; atropine works at the receptor."},
+  {t:"Acetylcholine builds up; atropine frees the enzyme", correct:false, why:"Freeing the enzyme is pralidoxime's job; atropine works at the receptor."},
   {t:"Acetylcholine is depleted; atropine activates its receptor", correct:false, why:"Acetylcholine is in excess, not lost, and atropine is an antagonist."},
   {t:"Acetylcholine is depleted; atropine blocks acetylcholinesterase", correct:false, why:"Blocking acetylcholinesterase is physostigmine, used against anticholinergic belladonna alkaloids."}],
  teach:"Organophosphates inhibit acetylcholinesterase, the enzyme that breaks down acetylcholine, so acetylcholine accumulates in the synaptic cleft and causes cholinergic excess. Atropine antagonizes acetylcholine at its receptor. This is one of two ways to treat an organophosphate exposure; the other is pralidoxime, which removes the organophosphate from the enzyme.",
@@ -708,9 +708,9 @@ QUESTIONS.push(
  stem:"The beta-blocker and calcium channel blocker out-of-hospital guidelines were published in 2005. Where, and are they still current?",
  options:[
   {t:"Clinical Toxicology; still followed, with no newer versions", correct:true, why:"No new ways of treating these overdoses have come up; poison center staff have these documents memorized."},
-  {t:"Clinical Toxicology; replaced by newer versions since 2005", correct:false, why:"The journal is right, but the 2005 versions have not been replaced and are still followed."},
+  {t:"Clinical Toxicology; replaced by newer versions after 2005", correct:false, why:"The journal is right, but the 2005 versions have not been replaced and are still followed."},
   {t:"DiPiro chapter e9; still followed, with no newer versions", correct:false, why:"DiPiro is the textbook; the guidelines are journal papers in Clinical Toxicology."},
-  {t:"DiPiro chapter e9; replaced by newer versions since 2005", correct:false, why:"Both halves are wrong: the guidelines are in Clinical Toxicology, and the 2005 versions are still followed."}],
+  {t:"DiPiro chapter e9; replaced by newer versions after 2005", correct:false, why:"Both halves are wrong: the guidelines are in Clinical Toxicology, and the 2005 versions are still followed."}],
  teach:"The evidence-based consensus guidelines for out-of-hospital management are published in Clinical Toxicology; the beta-blocker and calcium channel blocker ones date from 2005. They are still followed because nothing has changed in how these overdoses are treated; they would be rewritten only if something such as a new antidote came along. Poison control center staff, who answer the calls, have these documents memorized.",
  quote:"They are published in the Journal of Clinical Toxicology, and they have not done any new ones recently, so you can see that both the ones, uh, the beta blocker and the calcium channel blockers were published in 2005, and that's OK. They haven't come up with new ways of treating these overdoses. What they published in 2005 is still what they follow, OK. ... people that work in these poison control centers, to become qualified to work there and answer phone calls, they would basically have these documents memorized",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Discussion of OD Guidelines’; AAPCC 2005 guidelines; transcript 10/19"},
@@ -729,7 +729,7 @@ QUESTIONS.push(
 
 {id:"L16-056", lecture:"L16", prof:"Smith", tier:"new", topic:"L16", sub:"guideline", skill:"apply", core:true, coreWhy:"her words: \"you need to know you don't make them barf at home\"; her guideline key", readingId:"aapcc-ccb",
  concept:"home-no-emesis-charcoal-hospital", tags:["smith","reading"], source:"transcript",
- stem:"A family member finds someone at home who has swallowed a handful of calcium channel blocker or beta blocker tablets. Should they make the person vomit, and what about activated charcoal?",
+ stem:"A family member finds someone who has swallowed beta blocker or calcium channel blocker tablets. Should they induce vomiting, and what about activated charcoal?",
  options:[
   {t:"No vomiting; consider charcoal, but do not delay transport", correct:true, why:"Her key: do not induce emesis; consider activated charcoal if there are no contraindications; do not delay transport to the hospital to administer charcoal. On 10/19 she added that charcoal is something done at the hospital."},
   {t:"Induce vomiting; then consider charcoal at the hospital", correct:false, why:"Emesis is not induced at home; it is too dangerous."},
@@ -742,7 +742,7 @@ QUESTIONS.push(
 
 {id:"L16-057", lecture:"L16", prof:"Smith", tier:"new", topic:"L16", sub:"guideline", skill:"apply", core:true, coreWhy:"her words: \"I want you to know those time frames\"; her guideline key", readingId:"aapcc-bb",
  concept:"ir-six-hour-window", tags:["smith","reading"], source:"transcript",
- stem:"An asymptomatic patient took an immediate-release calcium channel blocker, or an immediate-release beta blocker other than sotalol, and was found within 6 hours of ingestion. What does the guideline say to do, and what if it had been more than 6 hours?",
+ stem:"An asymptomatic patient took an immediate-release calcium channel blocker or beta blocker (not sotalol). What does the guideline advise if found within 6 hours, and if found later?",
  options:[
   {t:"Hospital now; probably home if found after 6 hours", correct:true, why:"Within 6 hours they are still inside the time when they could respond badly; after 6 hours an immediate-release drug should have been absorbed and shown symptoms. Her key: after 6 hours, call the poison center; they can probably be managed at home."},
   {t:"Watch at home now; hospital if found after 6 hours", correct:false, why:"Backwards: within 6 hours the drug may still be absorbing, so the patient goes to the hospital; past 6 hours with no symptoms they can probably stay home."},

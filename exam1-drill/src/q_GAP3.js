@@ -1,5 +1,5 @@
 // GAP3 — Exam 3 points the bank did not test (found by comparing her objectives, slides and two shared
-// study artifacts against the bank), and practice-only calculations (noExam: she never said the exam has them).
+// study artifacts against the bank), and calculations of the indices (her Principles objectives slide: "calculate common indices of toxicity").
 QUESTIONS.push(
 /* ---------------- 1. Compounds with out-of-hospital guidelines (L15 'Guidelines for Overdoses') ---------------- */
 {id:"GAP3-001", lecture:"L15", prof:"Smith", tier:"new", topic:"L15", sub:"guide", skill:"recall", multi:true,
@@ -339,9 +339,8 @@ QUESTIONS.push(
  note:"The numeric forms are from the assigned reading, Casarett and Doull ch. 2, 'Interactions of Chemicals'; she named the four types on 10/13 without the numbers.",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Chemical Interactions’; Casarett and Doull ch. 2 ‘Interactions of Chemicals’ (Fig. 2-1); transcript 10/13"},
 
-/* ---------------- 9. Practice calculations (noExam) ---------------- */
-{id:"GAP3-027", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"indices", skill:"calc", noExam:true,
- concept:"calc-ti", tags:["smith","calc"], source:"both",
+/* ---------------- 9. Calculating the indices (an objective on her Principles slide) ---------------- */
+{id:"GAP3-027", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"indices", skill:"calc", core:true, coreWhy:"her Principles objectives slide: calculate common indices of toxicity from a dose-response curve", concept:"calc-ti", tags:["smith","calc"], source:"both",
  stem:"Practice calculation: a drug has ED50 = 10 mg/kg and TD50 = 200 mg/kg. What is its therapeutic index?",
  options:[
   {t:"20", correct:true, why:"TI = TD50 / ED50 = 200 ÷ 10 = 20."},
@@ -350,11 +349,10 @@ QUESTIONS.push(
   {t:"210", correct:false, why:"That is TD50 + ED50 = 200 + 10."}],
  teach:"Therapeutic index = toxic dose / therapeutic dose, by convention TD50 / ED50, with the same percentage in numerator and denominator. Check: 200 ÷ 10 = 20.",
  quote:"You already know that that's the toxic dose over the therapeutic dose, and most of the time we're using the toxic dose in 50% of the animals over the toxic dose, I'm sorry, over the therapeutic dose of 50% of the animals.",
- note:"Practice only: she gave the formulas and said the values can be calculated, but did not say the exam will have calculations. Her Practice Quiz 1 asked which value has the formula Toxic Dose / Therapeutic Dose (therapeutic index). The Principles objectives slide includes 'calculate common indices of toxicity from a dose-response curve'.",
+ note:"On the exam paper: her Principles objectives slide says to \"calculate common indices of toxicity from a dose-response curve\", and she said answering her objectives should pass her exam. Her Practice Quiz 1 asked which value has the formula Toxic Dose / Therapeutic Dose (therapeutic index). The Principles objectives slide includes 'calculate common indices of toxicity from a dose-response curve'.",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Values Developed from Dose-Response’; Smith_Practice_Quiz_1_-_Principles_of_Toxicology.pdf question 3; transcript 10/13"},
 
-{id:"GAP3-028", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"indices", skill:"calc", noExam:true,
- concept:"calc-mos", tags:["smith","calc"], source:"both",
+{id:"GAP3-028", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"indices", skill:"calc", core:true, coreWhy:"her Principles objectives slide: calculate common indices of toxicity from a dose-response curve", concept:"calc-mos", tags:["smith","calc"], source:"both",
  stem:"Practice calculation: a drug has ED50 = 10, ED99 = 25, TD1 = 100 and TD50 = 200 mg/kg. What is its margin of safety?",
  options:[
   {t:"20", correct:false, why:"That is TD50 / ED50 = 200 ÷ 10, the therapeutic index."},
@@ -363,11 +361,10 @@ QUESTIONS.push(
   {t:"0.25", correct:false, why:"That is ED99 / TD1 = 25 ÷ 100, the ratio upside down."}],
  teach:"Margin of safety = TD1 / ED99: the dose toxic to 1% over the dose effective in 99%. Because the two percentages differ, the value reflects the slopes of the curves. Check: 100 ÷ 25 = 4. The therapeutic index of the same drug is 200 ÷ 10 = 20.",
  quote:"So most of the time, a margin of safety number is developed because we say what's the toxic dose for 1% of the animals over the effective dose of 99% of the animals.",
- note:"Practice only: no statement that the exam has calculations.",
+ note:"Her Principles objectives slide: \"calculate common indices of toxicity from a dose-response curve\". The doses in the stem are practice numbers.",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Values Developed from Dose-Response’; transcript 10/13"},
 
-{id:"GAP3-029", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"indices", skill:"calc", noExam:true,
- concept:"calc-moe", tags:["smith","calc"], source:"both",
+{id:"GAP3-029", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"indices", skill:"calc", core:true, coreWhy:"her Principles objectives slide: calculate common indices of toxicity from a dose-response curve", concept:"calc-moe", tags:["smith","calc"], source:"both",
  stem:"Practice calculation: a pollutant has a NOAEL of 50 mg/kg/day, and the estimated human exposure is 0.5 mg/kg/day. What is the margin of exposure?",
  options:[
   {t:"0.01", correct:false, why:"That is exposure / NOAEL = 0.5 ÷ 50, the ratio upside down."},
@@ -376,11 +373,10 @@ QUESTIONS.push(
   {t:"100", correct:true, why:"MOE = NOAEL / exposure = 50 ÷ 0.5 = 100."}],
  teach:"Margin of exposure = NOAEL / exposure, for repeated exposures to non-therapeutic compounds. The NOAEL comes from animal studies (the highest dose with no observed adverse effect); the exposure is the estimated human or wildlife exposure. Check: 50 ÷ 0.5 = 100.",
  quote:"And so the margin of exposure is defined as the Noel over the chronic exposure.",
- note:"Practice only: no statement that the exam has calculations.",
+ note:"Her Principles objectives slide: \"calculate common indices of toxicity from a dose-response curve\". The doses in the stem are practice numbers.",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Values Developed from Dose-Response’; transcript 10/13"},
 
-{id:"GAP3-030", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"indices", skill:"calc", noExam:true,
- concept:"calc-compare-ti", tags:["smith","calc"], source:"both",
+{id:"GAP3-030", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"indices", skill:"calc", core:true, coreWhy:"her Principles objectives slide: calculate common indices of toxicity from a dose-response curve", concept:"calc-compare-ti", tags:["smith","calc"], source:"both",
  stem:"Practice calculation: Drug A has ED50 = 5 and TD50 = 50 mg/kg; Drug B has ED50 = 20 and TD50 = 400 mg/kg. Which has the wider therapeutic index?",
  options:[
   {t:"Drug A, with TI = 10", correct:false, why:"Drug A's TI is 50 ÷ 5 = 10, half of Drug B's. Drug A is more potent (lower ED50) but has the narrower index."},
@@ -389,11 +385,10 @@ QUESTIONS.push(
   {t:"Drug B, with TI = 0.05", correct:false, why:"0.05 is 20 ÷ 400, the ratio upside down."}],
  teach:"The value of these numbers is comparing compounds. Drug A: 50 ÷ 5 = 10. Drug B: 400 ÷ 20 = 20. Drug B has the wider therapeutic index, so less chance of toxicity, even though Drug A is more potent (works at a lower dose).",
  quote:"All right, all three of these values you can calculate a therapeutic index or a margin of safety or a margin of exposure for whatever compound, but the real value of these numbers is that you can compare that value to other compounds' values and get a, get an estimate for how bad is one compound compared to another, OK.",
- note:"Practice only: no statement that the exam has calculations.",
+ note:"Her Principles objectives slide: \"calculate common indices of toxicity from a dose-response curve\". The doses in the stem are practice numbers.",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Values Developed from Dose-Response’; transcript 10/13"},
 
-{id:"GAP3-031", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"indices", skill:"calc", noExam:true,
- concept:"calc-compare-mos", tags:["smith","calc"], source:"both",
+{id:"GAP3-031", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"indices", skill:"calc", core:true, coreWhy:"her Principles objectives slide: calculate common indices of toxicity from a dose-response curve", concept:"calc-compare-mos", tags:["smith","calc"], source:"both",
  stem:"Practice calculation: Drugs C and D share ED50 = 10 and TD50 = 100 mg/kg. C: ED99 = 20, TD1 = 60. D: ED99 = 40, TD1 = 20. Which has the wider margin of safety?",
  options:[
   {t:"Drug C, with MOS = 3", correct:true, why:"Drug C: 60 ÷ 20 = 3; Drug D: 20 ÷ 40 = 0.5. 3 is the wider margin."},
@@ -402,11 +397,10 @@ QUESTIONS.push(
   {t:"Neither; both have TI = 10", correct:false, why:"Both TIs are 100 ÷ 10 = 10, but the TI ignores slope; the margins of safety differ."}],
  teach:"Both drugs have TI = 100 ÷ 10 = 10, yet their margins of safety differ: C = 60 ÷ 20 = 3, D = 20 ÷ 40 = 0.5. The margin of safety reflects the slopes of the curves, which the therapeutic index does not. The pharmacodynamics-in-overdose slide makes the same point: two medications may have the same therapeutic index but unequal safe dosing.",
  quote:"So most of the time, a margin of safety number is developed because we say what's the toxic dose for 1% of the animals over the effective dose of 99% of the animals.",
- note:"Practice only: no statement that the exam has calculations.",
+ note:"Her Principles objectives slide: \"calculate common indices of toxicity from a dose-response curve\". The doses in the stem are practice numbers.",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Values Developed from Dose-Response’; Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘How Pharmacodynamics change in Overdose’; transcript 10/13"},
 
-{id:"GAP3-032", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"indices", skill:"calc", noExam:true,
- concept:"calc-compare-moe", tags:["smith","calc"], source:"both",
+{id:"GAP3-032", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"indices", skill:"calc", core:true, coreWhy:"her Principles objectives slide: calculate common indices of toxicity from a dose-response curve", concept:"calc-compare-moe", tags:["smith","calc"], source:"both",
  stem:"Practice calculation: pollutant X has NOAEL = 10 and exposure = 0.1 mg/kg/day; pollutant Y has NOAEL = 200 and exposure = 10 mg/kg/day. Which is the greater concern?",
  options:[
   {t:"Pollutant X, with MOE = 100", correct:false, why:"X: 10 ÷ 0.1 = 100. X is more toxic per dose (lower NOAEL), but its exposure is far below that dose."},
@@ -415,6 +409,6 @@ QUESTIONS.push(
   {t:"Pollutant X, with MOE = 0.01", correct:false, why:"0.01 is 0.1 ÷ 10, X's ratio upside down."}],
  teach:"MOE = NOAEL / exposure. X: 10 ÷ 0.1 = 100. Y: 200 ÷ 10 = 20. The smaller margin means the exposure is closer to the dose that caused no adverse effect in animals, so Y is the greater concern, even though X has the lower NOAEL. Comparing the margins is how a risk assessor decides which compound to clean up first.",
  quote:"You'd calculate that margin of exposure and figure out which compound is more dangerous to humans being exposed to it.",
- note:"Practice only: no statement that the exam has calculations.",
+ note:"Her Principles objectives slide: \"calculate common indices of toxicity from a dose-response curve\". The doses in the stem are practice numbers.",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Values Developed from Dose-Response’; transcript 10/13"}
 );

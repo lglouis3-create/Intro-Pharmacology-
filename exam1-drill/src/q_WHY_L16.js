@@ -8,7 +8,7 @@ QUESTIONS.push(
  stem:"Why is multiple-dose activated charcoal tried for a poison that undergoes enterohepatic recirculation?",
  options:[
   {t:"The poison returns to the gut in bile, where a later dose binds it", correct:true, why:"Her answer, after Anna's: the next dose, and maybe a third, is given while the poison is coming back into the small intestine with the bile, so the charcoal grabs a little more and it is fecally eliminated."},
-  {t:"The first dose saturates, so later doses are needed to bind the rest", correct:false, why:"Treats the problem as charcoal capacity; the doses are about timing, meeting poison that comes back into the small intestine with the bile after the first dose has moved on."},
+  {t:"The first dose saturates, so later doses bind the rest", correct:false, why:"Treats the problem as charcoal capacity; the doses are about timing, meeting poison that comes back into the small intestine with the bile after the first dose has moved on."},
   {t:"Repeated doses bind the poison in the blood and carry it to the kidney", correct:false, why:"Charcoal works in the gut, and the poison it grabs is fecally eliminated, not renally."},
   {t:"Repeated doses speed the poison through the gut, like bowel irrigation", correct:false, why:"Pushing contents through the gut is whole bowel irrigation, not charcoal."}],
  teach:"Some compounds are absorbed from the gut, go to the liver, are secreted into the bile and so return to the small intestine (enterohepatic recirculation). If such a compound is grabbed by charcoal, giving a second and third dose while it is back in the small intestine lets the charcoal capture more of it. The charcoal-bound poison then leaves in the feces. The slide adds that multiple-dose charcoal can be used, when appropriate, once a toxin has been absorbed.",
@@ -45,7 +45,7 @@ QUESTIONS.push(
  stem:"Most methanol exposures are in people with an alcohol use disorder. Which explains why they drink it, and why it ends badly?",
  options:[
   {t:"It acts like ethanol but is metabolized to a blinding compound", correct:true, why:"Her account: when ethanol is not available they sometimes use methanol and get the same kind of effect, except that it is metabolized to a nasty compound (formic acid) that can cause blindness."},
-  {t:"It tastes sweet, but its metabolites crystallize in the kidneys", correct:false, why:"Sweet taste and crystals in small vessels belong to ethylene glycol (antifreeze)."},
+  {t:"It tastes sweet but forms crystals in the kidneys", correct:false, why:"Sweet taste and crystals in small vessels belong to ethylene glycol (antifreeze)."},
   {t:"It eases alcohol withdrawal, but then it blocks alcohol dehydrogenase", correct:false, why:"Blocking alcohol dehydrogenase is what ethanol and fomepizole do as antidotes; methanol is a substrate of the enzyme."},
   {t:"It acts like ethanol but its metabolites crystallize in the kidneys", correct:false, why:"The first half is right, but crystals in the kidney are ethylene glycol's; methanol's metabolite damages the retina."}],
  teach:"Ethylene glycol exposures are mostly accidental; methanol exposures are mostly in people with an alcohol use disorder who cannot get ethanol. Methanol gives them an alcohol effect, but alcohol dehydrogenase and formaldehyde dehydrogenase turn it into formic acid. Formic acid damages the retina, and sight is lost.",
@@ -106,7 +106,7 @@ QUESTIONS.push(
  concept:"rhodanese-enhance-metabolism-step", tags:["smith","why"], source:"both",
  stem:"In the cyanide scheme, why does giving sodium thiosulfate speed the clearance of cyanide?",
  options:[
-  {t:"It donates sulfur to rhodanese", correct:true, why:"Rhodanese, an enzyme the body already has, converts cyanide to thiocyanate, which is renally eliminated; the pathway is capacity limited, and thiosulfate donates the sulfur group so more thiocyanate is made."},
+  {t:"It donates sulfur to rhodanese, the enzyme", correct:true, why:"Rhodanese, an enzyme the body already has, converts cyanide to thiocyanate, which is renally eliminated; the pathway is capacity limited, and thiosulfate donates the sulfur group so more thiocyanate is made."},
   {t:"It pulls cyanide off cytochrome c oxidase", correct:false, why:"Methemoglobin, made by amyl nitrite, does that; thiosulfate acts later, when the cyanide is cleared."},
   {t:"It is the enzyme that makes thiocyanate", correct:false, why:"Rhodanese is the enzyme; thiosulfate is the sulfur donor it uses."},
   {t:"It converts methemoglobin back to hemoglobin", correct:false, why:"Methylene blue, a reducing agent, does that."}],
@@ -157,7 +157,7 @@ QUESTIONS.push(
  options:[
   {t:"Low affinity would need massive doses with side effects", correct:true, why:"Her reason: you do not want to give massive amounts of an inactivator, which on its own could cause side effects."},
   {t:"High affinity lets the complex be cleared by ion trapping", correct:false, why:"Clearance of the complex is a separate requirement, and ion trapping is not involved."},
-  {t:"High affinity lets the inactivator reach the target first", correct:false, why:"The inactivator binds the toxin, not its target."},
+  {t:"High affinity lets it reach the target first", correct:false, why:"The inactivator binds the toxin, not its target."},
   {t:"High affinity keeps the toxin from being absorbed from the gut", correct:false, why:"Inactivation applies after the poison has been absorbed into the circulation."}],
  teach:"An inactivator binds the toxin and prevents it from interacting with its target, and the complex is then cleared. If it bound the toxin weakly, large amounts would be needed, and large amounts of the inactivator could cause side effects of their own. So the slide lists high affinity for the toxin as a requirement.",
  quote:"a good inactivator needs to have really good affinity for the toxin. You don't want to have to give massive amounts of an inactivator, which maybe on its own could cause side effects.",
@@ -208,7 +208,7 @@ QUESTIONS.push(
   {t:"Less active vitamin K is regenerated for it", correct:true, why:"Her chain: warfarin inhibits epoxide reductase, so less vitamin K is reformed, and with less active vitamin K fewer coagulation factors are made."},
   {t:"Warfarin competes with vitamin K at the carboxylase", correct:false, why:"She said it would be easier if warfarin acted on the carboxylase, but it does not."},
   {t:"Warfarin breaks down coagulation factors in the blood", correct:false, why:"Warfarin acts on the vitamin K cycle in the liver, not on circulating factors."},
-  {t:"Warfarin converts active vitamin K into its epoxide", correct:false, why:"The carboxylase reaction turns vitamin K into the epoxide; warfarin blocks the step back."}],
+  {t:"Warfarin turns vitamin K into its epoxide", correct:false, why:"The carboxylase reaction turns vitamin K into the epoxide; warfarin blocks the step back."}],
  teach:"Vitamin K is the cofactor that lets vitamin K-dependent carboxylase carboxylate, and so activate, some coagulation factors. Using vitamin K turns it into an inactive epoxide, and epoxide reductase reduces it back to the active form. Warfarin inhibits epoxide reductase, so less active vitamin K is available, and fewer active coagulation factors are made.",
  quote:"it inhibits the activity of the epoxide reductase. Therefore, you reduce the amount of vitamin K being reformed. Therefore, if you don't have as much active vitamin K, you don't make as much coagulation factors.",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Pharmacological Treatment: Treatment by-passes an inhibited pathway’ (warfarin figure); transcript 10/19"},
@@ -270,7 +270,7 @@ QUESTIONS.push(
   {t:"It competitively blocks the opioid receptors", correct:true, why:"Her key: competitive antagonist of opioid receptors; special consideration: it can trigger withdrawal in chronic opioid users. The same receptor blockade underlies the reversal and the withdrawal."},
   {t:"It binds the opioid in the blood and clears it through the kidney", correct:false, why:"Binding and renal clearance is the digoxin antibody fragments row; naloxone acts at the receptor."},
   {t:"It speeds opioid metabolism to an inactive product", correct:false, why:"Naloxone is a receptor antagonist, not a metabolic cofactor."},
-  {t:"It acts as an agonist at a second opioid receptor", correct:false, why:"Naloxone is an antagonist."}],
+  {t:"It is an agonist at another opioid receptor", correct:false, why:"Naloxone is an antagonist."}],
  teach:"Opioid overdose causes somnolence, coma, slowed heart and breathing rates and small pupils. Naloxone is a competitive antagonist of opioid receptors, so it blocks the opioid's effect there. In a chronic opioid user that blockade can trigger withdrawal, the same concern her key lists for flumazenil in benzodiazepine dependence.",
  quote:"using naloxone to treat an opioid overdose, right? Naloxone is basically an antagonist of an opioid receptor",
  note:"Her key gives the mechanism (competitive opioid receptor antagonist) and \"can trigger withdrawal\" in separate cells; linking the withdrawal to that same receptor block is reasoning from those two entries, not her spoken words.",
@@ -313,7 +313,7 @@ QUESTIONS.push(
  concept:"tbl-dig-moa", dupOf:"TBL3-030", tags:["smith","why"], source:"both",
  stem:"Which explains how digoxin-specific antibody fragments (Fab) end a digoxin overdose?",
  options:[
-  {t:"They bind digoxin for renal elimination", correct:true, why:"Her key: binds digoxin, will be renally eliminated. The inactivation slide: the inactivator binds the toxin, prevents its interaction with target tissues, and the complex is cleared."},
+  {t:"They bind digoxin so it is renally eliminated", correct:true, why:"Her key: binds digoxin, will be renally eliminated. The inactivation slide: the inactivator binds the toxin, prevents its interaction with target tissues, and the complex is cleared."},
   {t:"They block digoxin at its binding site on the heart", correct:false, why:"The fragments bind the drug itself, not its target."},
   {t:"They chelate the excess potassium that digoxin raises", correct:false, why:"Chelators bind metals; elevated potassium is a symptom, not the target of Fab."},
   {t:"They speed the liver's metabolism of digoxin", correct:false, why:"Fab is an inactivator, not a metabolic cofactor."}],
@@ -348,7 +348,7 @@ QUESTIONS.push(
  concept:"tbl-sal-moa", tags:["smith","why"], source:"both",
  stem:"What would happen to the renal elimination of salicylate if the urine were left at its normal pH?",
  options:[
-  {t:"It would stay uncharged and be reabsorbed", correct:true, why:"Her words: at normal urine pH these mildly acidic poisons are not charged, so they are reabsorbed; IV sodium bicarbonate makes the urine basic and charges them."},
+  {t:"It would stay uncharged and be reabsorbed again", correct:true, why:"Her words: at normal urine pH these mildly acidic poisons are not charged, so they are reabsorbed; IV sodium bicarbonate makes the urine basic and charges them."},
   {t:"It would be negatively charged and trapped anyway", correct:false, why:"The negative charge comes from raising the urine pH with bicarbonate."},
   {t:"It would crystallize in the kidney's small vessels", correct:false, why:"Crystals in small vessels belong to ethylene glycol's metabolites."},
   {t:"It would be filtered less at the glomerulus", correct:false, why:"It is filtered either way; the issue is reabsorption from the forming urine."}],
