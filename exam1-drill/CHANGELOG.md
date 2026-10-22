@@ -2,6 +2,12 @@
 
 Newest first. The build embeds this file; the Topics page shows what is new since your last visit, and the Progress page shows all of it. Keep each bullet to one short line.
 
+## 2026-10-22 (Why questions, clearer explanations)
+
+- 121 new Exam 3 questions ask why: the reason behind each concept, from her words and keys. Topics: "Why questions".
+- 503 explanations rewritten to give the reason an answer is right or wrong instead of restating her key.
+- Her quotes read without filler: um, uh, a tag "OK?" and stutters are dropped on screen; the wording is otherwise hers.
+
 ## 2026-10-22 (The coral snake)
 
 - Two 10/9 questions: telling a coral snake from a king snake by the rhyme, and its neurotoxin; guide section 1.
