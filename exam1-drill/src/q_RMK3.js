@@ -23,7 +23,7 @@ QUESTIONS.push(
   {t:"Animal waste", correct:false, why:"Her key pairs animal waste with a different fix: controls on feedlots and farms."},
   {t:"Recreational swimming", correct:false, why:"Recreational dermal exposure is an exposure route on her key, not a source."},
   {t:"Ingestion of fish", correct:false, why:"Ingestion of fish is a human exposure route on her key, not a source."}],
- teach:"Her key lists three sources in the human column, each with whether it can be reduced. Flushing: could be reduced by other disposal methods of drugs. Animal waste: could be reduced by controls on feedlots and farms. Human waste: can't be reduced, since people take meds.",
+ teach:"Her key sorts the three sources by whether a choice can be changed. Flushing unused medications is improper disposal, so other disposal methods could reduce it. Animal waste comes from livestock given hormones and antibiotics on feedlots and farms, so controls there could reduce it. Human waste cannot be reduced, because people will keep taking medications and the parent drug and metabolites leave the body.",
  quote:"How about unused antibiotics? And you dump them down your toilet. Um, OK, so improper disposal of medications is another source, so our waste.",
  note:"On 10/13 she first gave leftover opioids as the example of improper disposal, then corrected herself (flushing opioids is allowed as a dangerous drug) and used unused antibiotics instead.",
  cite:"KeyDiscussionGuideRodriguez-MozazandWeinberg2026.docx, row Source, For Humans; transcript 10/13"},
@@ -73,10 +73,10 @@ QUESTIONS.push(
  left:["Flushing", "Animal waste", "Human waste"],
  right:["Could reduce by other disposal methods of drugs", "Could reduce by controls on feedlots/farms", "Can't reduce: people take meds"],
  pairs:[
-  {l:"Flushing", r:"Could reduce by other disposal methods of drugs", why:"Her key, Source, For Humans, first entry."},
-  {l:"Animal waste", r:"Could reduce by controls on feedlots/farms", why:"Her key, second entry."},
-  {l:"Human waste", r:"Can't reduce: people take meds", why:"Her key, third entry."}],
- teach:"The Source row of her key, human column: flushing, reduced by other disposal methods of drugs; animal waste, reduced by controls on feedlots and farms; human waste, can't be reduced, since people take meds. The wildlife column: same as for humans.",
+  {l:"Flushing", r:"Could reduce by other disposal methods of drugs", why:"Flushing unused medications is improper disposal, a choice that other disposal methods can replace."},
+  {l:"Animal waste", r:"Could reduce by controls on feedlots/farms", why:"The drugs come from livestock given hormones and antibiotics on feedlots and farms, so controls where the animals are kept can cut them."},
+  {l:"Human waste", r:"Can't reduce: people take meds", why:"People will keep taking medications to treat and prevent disease, and parent drug and metabolites leave the body, so this source stays."}],
+ teach:"Whether a source can be reduced depends on whether the step that releases the drug can change. Flushing is a disposal choice, so other disposal methods could reduce it; animal waste comes from medicated livestock, so controls on feedlots and farms could reduce it; human waste follows from people taking medications, which will not stop, so it can't be reduced. The wildlife column is the same, since these sources reach the same water.",
  cite:"KeyDiscussionGuideRodriguez-MozazandWeinberg2026.docx, row Source"},
 
 {id:"RMK3-006", lecture:"RMK3", prof:"Smith", tier:"new", topic:"RMK3", sub:"source", skill:"tell", readingId:"rodriguez-mozaz",
@@ -97,7 +97,7 @@ QUESTIONS.push(
  stem:"Which routes of exposure to pharmaceuticals in water does her key list for humans? Select all that apply.",
  options:[
   {t:"Ingestion of drinking water", correct:true, why:"On her key; on 10/13 she said most human exposure is through drinking water."},
-  {t:"Ingestion of fish", correct:true, why:"On her key."},
+  {t:"Ingestion of fish", correct:true, why:"Fish live in the contaminated water, so eating them is a second ingestion route on her key's human list, after drinking water."},
   {t:"Recreational dermal exposure", correct:true, why:"On her key; on 10/13: bathing, swimming in a lake."},
   {t:"Contact with antibiotic-resistant bacteria", correct:false, why:"Not a route on her key. Antibiotic resistance in sediment bacteria came up on 10/13 as a separate concern."},
   {t:"Prescribed doses of the same drugs", correct:false, why:"A prescribed dose is intended use, not exposure to drugs in water."}],
@@ -109,7 +109,7 @@ QUESTIONS.push(
  concept:"rm-wildlife-routes", tags:["smith","key"], source:"both",
  stem:"Which routes of exposure does her key list for aquatic wildlife? Select all that apply.",
  options:[
-  {t:"Ingestion of drinking water", correct:true, why:"On her key."},
+  {t:"Ingestion of drinking water", correct:true, why:"Aquatic animals live in the contaminated water, so drinking it is a constant route; the class named drinking first."},
   {t:"Ingestion of food", correct:true, why:"On her key; on 10/13: eating other animals that have been living in that water."},
   {t:"Dermal", correct:true, why:"On her key; on 10/13: skin, with frogs as the example."},
   {t:"Prescribed or veterinary doses", correct:false, why:"Wild animals are not given these drugs; on 10/13 she said wildlife are the ones being exposed, not the source."},
@@ -128,7 +128,7 @@ QUESTIONS.push(
   {t:"Exposure for their entire life", correct:false, why:"That is her key's wildlife duration."},
   {t:"A single exposure", correct:false, why:"Her key says it depends; it does not say single."},
   {t:"Constant exposure", correct:false, why:"Constant is her key's wildlife frequency."}],
- teach:"Her key does not give humans a fixed duration, single-vs-repeated answer or frequency: each one depends on how people are exposed and where they live. Wildlife get fixed answers: exposure for their entire life, repeated, and constant if their home range is continually contaminated.",
+ teach:"Human exposure varies from person to person: whether someone drinks from a contaminated source, eats fish from it or swims in it, and where they live. So her key gives one answer for duration, single vs repeated and frequency: it depends on how people are exposed and where they live. Aquatic wildlife live in the water, so their answers are fixed: entire life, repeated, and constant if their home range is continually contaminated.",
  cite:"KeyDiscussionGuideRodriguez-MozazandWeinberg2026.docx, row Exposure, For Humans (Duration; Single vs repeated; Frequency)"},
 
 {id:"RMK3-010", lecture:"RMK3", prof:"Smith", tier:"new", topic:"RMK3", sub:"exposure", skill:"recall", readingId:"rodriguez-mozaz",
@@ -137,7 +137,7 @@ QUESTIONS.push(
  options:[
   {t:"Exposure for their entire life", correct:true, why:"Her key, Exposure, For Wildlife, Duration: \"Exposure for their entire life.\""},
   {t:"Depends on how they are exposed and where they live", correct:false, why:"That is the human entry."},
-  {t:"Only during breeding season", correct:false, why:"Not on her key."},
+  {t:"Only during breeding season", correct:false, why:"Aquatic wildlife live in the water all the time, not seasonally, so her key gives exposure for their entire life."},
   {t:"A single exposure", correct:false, why:"Her key says repeated exposure for their entire life."}],
  teach:"Aquatic wildlife live in the contaminated water, so her key gives them exposure for their entire life, repeated, and constant if their home range is continually contaminated.",
  cite:"KeyDiscussionGuideRodriguez-MozazandWeinberg2026.docx, row Exposure, For Wildlife (Duration)"},
@@ -146,11 +146,11 @@ QUESTIONS.push(
  concept:"rm-wildlife-repeated", tags:["smith","key"], source:"slide",
  stem:"Single vs repeated exposure: what does her key say for aquatic wildlife?",
  options:[
-  {t:"Repeated exposure", correct:true, why:"Her key: \"Repeated exposure.\""},
-  {t:"Single exposure", correct:false, why:"Her key says repeated."},
+  {t:"Repeated exposure", correct:true, why:"Animals living in contaminated water meet the drugs again each time they drink, eat and swim, for their entire life, so the exposure is repeated."},
+  {t:"Single exposure", correct:false, why:"A single exposure fits a one-time event; aquatic wildlife stay in the contaminated water for their entire life."},
   {t:"Depends on how they are exposed", correct:false, why:"That is the human entry."},
   {t:"Unknown; not yet studied", correct:false, why:"Her key gives an answer for this cell: repeated."}],
- teach:"For wildlife the exposure is repeated, it lasts their entire life, and it is constant if their home range is continually contaminated. For humans each of these depends on how people are exposed and where they live.",
+ teach:"Aquatic wildlife do not visit the water; they live in it. Every time they drink, eat other animals living there or swim, they are exposed again, so her key calls the exposure repeated, lasting their entire life, and constant if their home range is continually contaminated. For humans each of these depends on how people are exposed and where they live.",
  cite:"KeyDiscussionGuideRodriguez-MozazandWeinberg2026.docx, row Exposure, For Wildlife (Single vs repeated)"},
 
 {id:"RMK3-012", lecture:"RMK3", prof:"Smith", tier:"new", topic:"RMK3", sub:"exposure", skill:"recall", readingId:"rodriguez-mozaz",
@@ -172,7 +172,7 @@ QUESTIONS.push(
   {t:"It may vary even in one location", correct:true, why:"Her key's parenthesis: \"contamination levels may vary even in one location.\""},
   {t:"It is the same throughout the home range", correct:false, why:"Her key says levels may vary even in one location."},
   {t:"It is always above the therapeutic dose", correct:false, why:"Not on her key; her key says the real dose is not known."},
-  {t:"It falls to zero during treatment-plant shutdowns", correct:false, why:"Not on her key."}],
+  {t:"It falls to zero during treatment-plant shutdowns", correct:false, why:"Her key says levels vary even in one location but gives no case of them dropping to zero; she said current treatment does not get all the drugs out."}],
  teach:"The wildlife frequency entry reads: constant exposure if their home range is continually contaminated, with contamination levels that may vary even in one location. Constant exposure does not mean a constant level.",
  cite:"KeyDiscussionGuideRodriguez-MozazandWeinberg2026.docx, row Exposure, For Wildlife (Frequency)"},
 
@@ -194,11 +194,11 @@ QUESTIONS.push(
  left:["Route", "Duration", "Single vs repeated", "Frequency"],
  right:["Ingestion of drinking water, ingestion of food, dermal", "Exposure for their entire life", "Repeated exposure", "Constant, if their home range is continually contaminated"],
  pairs:[
-  {l:"Route", r:"Ingestion of drinking water, ingestion of food, dermal", why:"Her key, wildlife Route."},
-  {l:"Duration", r:"Exposure for their entire life", why:"Her key, wildlife Duration."},
-  {l:"Single vs repeated", r:"Repeated exposure", why:"Her key, wildlife Single vs repeated."},
+  {l:"Route", r:"Ingestion of drinking water, ingestion of food, dermal", why:"Living in the water, aquatic animals take it in by drinking, by eating other animals that live there, and through skin (frogs absorb a lot)."},
+  {l:"Duration", r:"Exposure for their entire life", why:"They live in the contaminated water, so exposure lasts their entire life."},
+  {l:"Single vs repeated", r:"Repeated exposure", why:"Each day in the water brings another exposure, so it is repeated rather than single."},
   {l:"Frequency", r:"Constant, if their home range is continually contaminated", why:"Her key, wildlife Frequency; contamination levels may vary even in one location."}],
- teach:"Her key splits Exposure into route, duration, single vs repeated, and frequency. Wildlife: drinking water, food and dermal; entire life; repeated; constant if the home range is continually contaminated. Humans: drinking water, fish and recreational dermal; the other three depend on how people are exposed and where they live.",
+ teach:"All four wildlife entries follow from one fact: aquatic animals live in the contaminated water. So the route is everything they do there (drinking, eating other animals that live there, skin), the duration is their entire life, the exposure is repeated, and it is constant if their home range is continually contaminated, though levels may vary even in one location. Humans' routes are drinking water, fish and recreational dermal, and the rest depends on how and where they live.",
  cite:"KeyDiscussionGuideRodriguez-MozazandWeinberg2026.docx, row Exposure, For Wildlife"},
 
 /* ---------------- ADME ---------------- */
@@ -206,7 +206,7 @@ QUESTIONS.push(
  concept:"rm-adme-humans", tags:["smith","key"], source:"both",
  stem:"Are any of these detected pharmaceuticals metabolized to anything harmful in humans?",
  options:[
-  {t:"We have some data from drug development studies", correct:true, why:"Her key: \"We have some data from drug development studies, perhaps data from other studies.\""},
+  {t:"We have some data from drug development studies", correct:true, why:"Human data come from the studies done to develop the drugs, which established their ADME, dose and mechanism; the gap is the metabolites that were never identified."},
   {t:"Very little if any data; studies have not been done", correct:false, why:"That is her key's wildlife answer."},
   {t:"Complete data, including every metabolite", correct:false, why:"On 10/13 she said that for many drugs we don't even know what the metabolites are."},
   {t:"No; none of these drugs is metabolized in humans", correct:false, why:"On 10/13: a lot of a drug is metabolized and comes out of the body; parent drug and metabolites both reach the water."}],
@@ -218,11 +218,11 @@ QUESTIONS.push(
  concept:"rm-adme-wildlife", tags:["smith","key"], source:"both",
  stem:"Are any of these detected pharmaceuticals metabolized to anything harmful in aquatic wildlife?",
  options:[
-  {t:"Very little if any data; studies have not been done", correct:true, why:"Her key: \"We have very little if any data on this. Studies have not been done.\""},
+  {t:"Very little if any data; studies have not been done", correct:true, why:"Drug development tests rodents, guinea pigs, dogs and pigs, not fish or mollusks, so whether these drugs form harmful metabolites in aquatic wildlife has not been studied."},
   {t:"Some data from drug development studies", correct:false, why:"That is her key's human answer."},
   {t:"Yes; every detected drug forms a harmful metabolite in fish", correct:false, why:"Her key says there is very little if any data; no such conclusion can be drawn."},
   {t:"No; wildlife do not metabolize these drugs", correct:false, why:"Her key says studies have not been done, so this is not known."}],
- teach:"For aquatic wildlife her key says we have very little if any data on metabolism to anything harmful, since the studies have not been done. On 10/13 she summed up ADME, dose and target: we know it all for humans except the metabolites; we don't know it for the animals out there.",
+ teach:"The species used to develop drugs are rodents, guinea pigs, dogs and sometimes pigs, not sea otters, orca whales, fish or mollusks. So for aquatic wildlife nobody has studied how these drugs are absorbed, distributed, metabolized or excreted, and her key says there is very little if any data on whether they are metabolized to anything harmful. For humans, by contrast, drug development supplies some data.",
  quote:"We just wrapped that all up by saying we know it all for humans, except for the metabolites. We don't know it for these critters out there, OK?",
  cite:"KeyDiscussionGuideRodriguez-MozazandWeinberg2026.docx, row ADME, For Wildlife; transcript 10/13"},
 
@@ -255,11 +255,11 @@ QUESTIONS.push(
  concept:"rm-dose-why-unknown", tags:["smith","key"], source:"slide",
  stem:"Why don't we know the dose that humans and wildlife are really exposed to? Select all that apply.",
  options:[
-  {t:"Many values have not been measured", correct:true, why:"On her key."},
-  {t:"Many values are undetected", correct:true, why:"On her key."},
-  {t:"Many values are modeled", correct:true, why:"On her key."},
+  {t:"Many values have not been measured", correct:true, why:"Where a concentration has not been measured, there is no number for the actual exposure, so the real dose is unknown."},
+  {t:"Many values are undetected", correct:true, why:"An undetected value gives no concentration to calculate a dose from, so the real dose cannot be stated."},
+  {t:"Many values are modeled", correct:true, why:"A modeled value is an estimate rather than a measurement, so a dose built on it is uncertain."},
   {t:"The concentrations are too high to measure", correct:false, why:"On 10/13 the concentrations in drinking water were parts per trillion, low, not too high."}],
- teach:"Her key gives three reasons the real exposure dose is unknown: many values have not been measured, are undetected, or are modeled. The same sentence appears for humans and for wildlife.",
+ teach:"A dose estimate needs a measured concentration in the water. Her key gives three ways that number is missing or uncertain: many values have not been measured, are undetected, or are modeled (estimated rather than measured). Any of the three leaves the real exposure dose unknown, which is why both the human and the wildlife columns of the Dose row open with that sentence.",
  cite:"KeyDiscussionGuideRodriguez-MozazandWeinberg2026.docx, row Dose, both columns"},
 
 {id:"RMK3-021", lecture:"RMK3", prof:"Smith", tier:"new", topic:"RMK3", sub:"dose", skill:"recall", readingId:"rodriguez-mozaz",
@@ -292,8 +292,8 @@ QUESTIONS.push(
  concept:"rm-dose-humans-vs-wildlife", tags:["smith","key"], source:"slide",
  stem:"How do the human and wildlife conclusions in the Dose row of her key differ?",
  options:[
-  {t:"Humans: probably below therapeutic; wildlife: likely high enough to cause effects", correct:true, why:"Her key's second entries in each column."},
-  {t:"Humans: likely high enough to cause effects; wildlife: probably below therapeutic", correct:false, why:"Reversed."},
+  {t:"Humans: probably below therapeutic; wildlife: likely high enough to cause effects", correct:true, why:"Humans meet these drugs mostly in drinking water at parts per trillion, which does not reach a therapeutic dose; wildlife are exposed for their entire life, repeatedly and constantly, so their dose is likely high enough."},
+  {t:"Humans: likely high enough to cause effects; wildlife: probably below therapeutic", correct:false, why:"The exposure pattern points the other way: humans mostly drink water at parts per trillion, below a therapeutic dose, while wildlife live in the water constantly."},
   {t:"Both: probably below the therapeutic dose", correct:false, why:"Only the human column says below therapeutic."},
   {t:"Both: the dose is known and measured", correct:false, why:"Both columns open by saying the real dose is not known."}],
  teach:"The Dose row shares its first sentence (the real exposure dose is not known) and splits on the conclusion: humans, probably below a therapeutic dose; wildlife, doses that cause adverse effects are unknown, but given the nature of their exposure their dose is likely high enough to cause effects.",
@@ -304,9 +304,9 @@ QUESTIONS.push(
  concept:"rm-target-humans-unknowns", tags:["smith","key"], source:"slide",
  stem:"Target/MOA for humans: which gaps in knowledge does her key list? Select all that apply.",
  options:[
-  {t:"Effects of low-dose chronic exposures", correct:true, why:"Her key: \"We don't know effects of low dose chronic exposures.\""},
-  {t:"Data on sensitive populations", correct:true, why:"Her key: \"We don't have good data on sensitive populations (fetus, children, elderly, people with underlying disease states).\""},
-  {t:"How multiple exposures affect target/MOA", correct:true, why:"Her key: \"We don't know how multiple exposures affect target/MOA.\""},
+  {t:"Effects of low-dose chronic exposures", correct:true, why:"Human exposure from water is low (parts per trillion, below a therapeutic dose) but goes on over time; what that pattern does is not known."},
+  {t:"Data on sensitive populations", correct:true, why:"She said the fetus, children, the elderly and people with diseases should not be ignored, but risk assessment on them is very hard, so good data are lacking."},
+  {t:"How multiple exposures affect target/MOA", correct:true, why:"Water carries many drugs at once, and interactions among compounds (additive, synergistic, potentiation, antagonistic) are very hard to predict or quantify."},
   {t:"The target of each parent drug in humans", correct:false, why:"On 10/13: drug development studies established how these drugs work in humans."},
   {t:"Whether the data were measured in the correct species", correct:false, why:"That gap is in her key's wildlife column."}],
  teach:"Her key lists three unknowns for humans: the effects of low-dose chronic exposures; good data on sensitive populations (fetus, children, elderly, people with underlying disease states); and how multiple exposures affect target/MOA. The targets of the parent drugs themselves are known from drug development.",
@@ -316,10 +316,10 @@ QUESTIONS.push(
  concept:"rm-sensitive-populations", tags:["smith","key"], source:"both",
  stem:"Which sensitive populations does her key name, for which we don't have good data? Select all that apply.",
  options:[
-  {t:"Fetus", correct:true, why:"On her key; on 10/13: in utero."},
-  {t:"Children", correct:true, why:"On her key."},
-  {t:"Elderly", correct:true, why:"On her key."},
-  {t:"People with underlying disease states", correct:true, why:"On her key."},
+  {t:"Fetus", correct:true, why:"The fetus is exposed through the mother, and she said risk assessment on in utero exposure is very hard to do, so good data are lacking."},
+  {t:"Children", correct:true, why:"Children are in the sensitive group she said not to ignore, even though the general population is probably OK at parts per trillion; good data on them are lacking."},
+  {t:"Elderly", correct:true, why:"The elderly are in the sensitive group she said not to ignore, even though the general population is probably OK at parts per trillion; good data on them are lacking."},
+  {t:"People with underlying disease states", correct:true, why:"A student named disease states and she accepted it; people with diseases are in the sensitive group for whom good data are lacking."},
   {t:"Healthy adults who drink a lot of water", correct:false, why:"On 10/13 she used the well-hydrated person as the example of someone who still does not reach a therapeutic dose."}],
  teach:"The sensitive populations on her key: fetus, children, elderly, and people with underlying disease states. On 10/13 she said these should not be ignored, and that risk assessors would re-evaluate if the concentrations in drinking water started rising.",
  quote:"Doesn't mean we should ignore our sensitive populations, which are in utero, elderly kids, people with diseases. Don't ignore them.",
@@ -329,10 +329,10 @@ QUESTIONS.push(
  concept:"rm-target-wildlife-unknowns", tags:["smith","key"], source:"both",
  stem:"Target/MOA for wildlife: which gaps in knowledge does her key list? Select all that apply.",
  options:[
-  {t:"Which system or organ is affected", correct:true, why:"Her key: \"We don't always know what is the system or organ affected in wildlife.\""},
-  {t:"Whether the data were measured in the correct species", correct:true, why:"Her key: \"Data we have may not have been measured in correct species.\""},
-  {t:"Whether studies measured the correct endpoint", correct:true, why:"Her key: \"If studies were done, they may not have measure correct endpoint.\""},
-  {t:"How multiple exposures affect target/MOA", correct:true, why:"Her key: \"We don't know how multiple exposures affect target/MOA.\""},
+  {t:"Which system or organ is affected", correct:true, why:"Drugs are made and tested for humans, so where they act in fish, frogs or mollusks is often unknown."},
+  {t:"Whether the data were measured in the correct species", correct:true, why:"Drug development uses rodents, guinea pigs, dogs and pigs, so results may come from a species unlike the exposed wildlife."},
+  {t:"Whether studies measured the correct endpoint", correct:true, why:"If the affected system or organ is not known, a study can look at an effect that is not the one harming the animal."},
+  {t:"How multiple exposures affect target/MOA", correct:true, why:"Animals in contaminated water meet many drugs at once, and interactions among compounds are very hard to predict."},
   {t:"Data on fetus, children and elderly", correct:false, why:"The sensitive-populations gap is in her key's human column."}],
  teach:"Her key lists four unknowns for wildlife: we don't always know the system or organ affected; the data we have may not have been measured in the correct species; studies that were done may not have measured the correct endpoint; and we don't know how multiple exposures affect target/MOA. On 10/13 she said it is hard to study these animals at all.",
  quote:"Uh, other wildlife, we just don't know, you know, it's really hard to capture or orca whales. It's hard to, it's hard to study all these animals.",
@@ -348,7 +348,7 @@ QUESTIONS.push(
   {t:"Data measured in the correct species", correct:false, why:"Wildlife column only."},
   {t:"Studies measuring the correct endpoint", correct:false, why:"Wildlife column only."},
   {t:"Effects of low-dose chronic exposures", correct:false, why:"Human column only."}],
- teach:"Humans: low-dose chronic effects, sensitive populations, multiple exposures. Wildlife: system or organ affected, correct species, correct endpoint, multiple exposures. The multiple-exposures gap is the one they share.",
+ teach:"Contaminated water carries many drugs at once, so humans and wildlife alike are exposed to several compounds together. Those compounds can interact (additively, synergistically, by potentiation or antagonistically), which is very hard to predict or quantify, so the multiple-exposures gap appears in both columns. The other gaps are column-specific: low-dose chronic effects and sensitive populations for humans; organ affected, correct species and correct endpoint for wildlife.",
  cite:"KeyDiscussionGuideRodriguez-MozazandWeinberg2026.docx, row Target/MOA, both columns"},
 
 {id:"RMK3-028", lecture:"RMK3", prof:"Smith", tier:"new", topic:"RMK3", sub:"target", skill:"apply", readingId:"rodriguez-mozaz",
@@ -359,6 +359,6 @@ QUESTIONS.push(
   {t:"We don't have good data on sensitive populations", correct:false, why:"That gap is in the human column."},
   {t:"We don't know effects of low-dose chronic exposures", correct:false, why:"That gap is in the human column."},
   {t:"The dose is probably below the therapeutic dose of a pharmaceutical", correct:false, why:"That is the human Dose entry, not a Target/MOA gap."}],
- teach:"Two wildlife gaps on her key concern the quality of the data that exist: they may not have been measured in the correct species, and studies that were done may not have measured the correct endpoint. The human column's gaps are about low-dose chronic effects, sensitive populations and multiple exposures.",
+ teach:"Drug development studies use rodents, guinea pigs, dogs and pigs, not fish, so how a drug made and tested for humans acts in fish is not known. A result from a laboratory species therefore may not apply to fish: her key's gap that data may not have been measured in the correct species. The related gap is that studies may not have measured the correct endpoint.",
  cite:"KeyDiscussionGuideRodriguez-MozazandWeinberg2026.docx, row Target/MOA, For Wildlife"}
 );

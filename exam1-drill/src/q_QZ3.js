@@ -32,10 +32,10 @@ QUESTIONS.push(
  concept:"fibrosis-non-organ-specific-why", tags:["smith","quiz"], source:"both",
  stem:"Which toxic endpoint is non-organ specific?",
  options:[
-  {t:"Nephrotoxicity", correct:false, why:"Organ-specific: the kidney."},
+  {t:"Nephrotoxicity", correct:false, why:"Nephrotoxicity is defined by the one organ it damages, the kidney, one of her four organ-specific examples. Fibrosis differs because the same collagen and extracellular matrix proteins are laid down in whatever tissue it hits."},
   {t:"Fibrosis", correct:true, why:"Recorded answer. Fibrosis looks the same in the lung and the liver: the same collagen and extracellular matrix proteins are laid down."},
-  {t:"Neurotoxicity", correct:false, why:"Organ-specific: the nervous system."},
-  {t:"Hepatotoxicity", correct:false, why:"Organ-specific: the liver."}],
+  {t:"Neurotoxicity", correct:false, why:"Neurotoxicity is defined by the system it damages, the nervous system, one of her four organ-specific examples; fibrosis is non-organ-specific because its pathology is the same in any tissue."},
+  {t:"Hepatotoxicity", correct:false, why:"Liver damage is organ-specific. The trap is that ethanol causes liver fibrosis: that fibrosis is still non-organ-specific, because it looks the same as fibrosis in the lung."}],
  teach:"Quiz 2, question 2. Her four non-organ-specific endpoints are fibrosis, genotoxicity, cancer and teratogenesis; her four organ-specific examples are the lungs, nervous system, liver and kidney. Fibrosis is non-organ-specific even though amiodarone, bleomycin and paraquat cause it in the lung and ethanol in the liver, because the same pathology produces it in every tissue.",
  quote:"Yes, I think what you're getting at is the fact that when we see fibrosis, whether it's in the lungs or the liver, if you look at the cells, if you look at the chemistry of that fibrotic tissue, it's the same. So the same pathology goes on to create that fibrosis. ... Remember we talked about non-organ specific endpoints, like what? Cancer, tratogenicity, genotoxicity, fibrosis, right?",
  note:"Quiz 2, question 2, verbatim. Keyed on the recorded answer (B); her words agree. The first part of the quote is from 10/13, the last sentence from 10/14. Same point as L14-061; her poll L15-042 asks the same question with teratogenicity as the answer.",

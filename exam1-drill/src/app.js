@@ -394,6 +394,49 @@ function routeByWords12(q, links) {
   }
   ROUTE12.set(q.id, out); return out;
 }
+/* Dr. Smith's spoken words read without fillers (um, uh, tag "OK?" and "right?", stutters such as "I, I"):
+   the files keep the transcript word for word (every quote is checked against it); only the display is tidied. */
+const TIDY_REPEAT = 'i|a|an|the|it|it\'s|we|we\'re|you|you\'re|they|they\'re|he|she|that|this|those|these|to|and|so|is|are|was|of|in|on|at|be|can|do|if|or|but|for|with|what|my|our|your|their|them|there|then|just|like|not|have|has|will|would';
+function tidySpeech(s) {
+  let t = ' ' + String(s).replace(/\.\.\./g, '…') + ' ', lead = /^\s*[a-z]/.test(s);   // keep "..." (words left out) apart from full stops
+  t = t.replace(/([a-z,])\s+(?:um+|uh+|uhm|erm|hmm)\.\s+([A-Z][a-z])/g, (m, x, y) => x + ' ' + y.toLowerCase());   // "considered um. The": one sentence
+  t = t.replace(/\b(?:um+|uh+|uhm|erm|hmm)\b[,.]?/gi, ' ');                                   // um, uh
+  t = t.replace(/,?\s*\b(?:OK|okay)\b\s*[?!]+/gi, '.');                                        // tag "..., OK?"
+  t = t.replace(/,?\s*\b(?:OK|okay)\b\s*\.(?=\s)/gi, '.');                                     // "..., OK."
+  t = t.replace(/,\s*right\s*\?/gi, '.');                                                       // tag "..., right?"
+  t = t.replace(/(^\s*|[.?!…]\s+)(?:OK|okay|all right|alright)\s*[,.]?\s+/gi, '$1');      // "OK, so" / "All right." opening a sentence
+  t = t.replace(/,\s*(?:OK|okay)\s*,/gi, ',');                                                  // "..., OK, ..."
+  t = t.replace(/\b(?:you know|I mean)\s*,\s*/gi, ' ').replace(/\blike\s*,\s*/gi, ' ');
+  t = t.replace(new RegExp('\\b(' + TIDY_REPEAT + ')(?:,?\\s+\\1\\b)+', 'gi'), '$1');           // stutters: "I, I", "the the", "those, those"
+  t = t.replace(/\s+([,.?!;:])/g, '$1').replace(/([,;:])(?:\s*[,;:])+/g, '$1').replace(/,\s*([.?!])/g, '$1')
+       .replace(/([.?!])(?:\s*[.,])+/g, '$1').replace(/^\s*[,.;:]\s*/, '').replace(/\s{2,}/g, ' ').trim();
+  t = t.replace(/([.?!]\s+)([a-z])/g, (m, a, b) => a + b.toUpperCase());                     // a sentence that now opens lower-case
+  if (!lead && /^[a-z]/.test(t)) t = t[0].toUpperCase() + t.slice(1);
+  return t.replace(/…/g, '...');
+}
+const tidyQuoted = s => typeof s === 'string' ? s.replace(/"([^"]{3,})"/g, (m, x) => '"' + tidySpeech(x) + '"').replace(/“([^”]{3,})”/g, (m, x) => '“' + tidySpeech(x) + '”') : s;
+QUESTIONS.forEach(q => { if (q.prof !== 'Smith') return;
+  if (q.quote) q.quote = tidySpeech(q.quote);
+  ['teach', 'note'].forEach(k => { if (q[k]) q[k] = tidyQuoted(q[k]); });
+  (q.options || []).forEach(o => { if (o.why) o.why = tidyQuoted(o.why); }); });
+// the same for the quoted words in an HTML page (text only, never attributes); a quote may run across tags
+function tidyHtml(html) {
+  const d = new DOMParser().parseFromString('<div id="r">' + html + '</div>', 'text/html'), w = d.createTreeWalker(d.getElementById('r'), NodeFilter.SHOW_TEXT);
+  let inQ = false;
+  for (let n = w.nextNode(); n; n = w.nextNode()) {
+    const parts = n.data.split(/(["“”])/); let changed = false;
+    for (let i = 0; i < parts.length; i++) {
+      const p = parts[i];
+      if (p === '"') { inQ = !inQ; continue; } if (p === '“') { inQ = true; continue; } if (p === '”') { inQ = false; continue; }
+      if (inQ && /\b(?:um+|uh+|OK|okay|right\s*\?|you know|I mean)\b|\b(\w+),? \1\b/i.test(p)) { const lead = p.match(/^\s*/)[0], tail = p.match(/\s*$/)[0], x = tidySpeech(p); parts[i] = lead + x + (x ? tail : ''); changed = true; }
+    }
+    if (changed) n.data = parts.join('');
+  }
+  return d.getElementById('r').innerHTML;
+}
+/* "Why" questions: written to ask the reason behind a concept (tag "why"), plus any other stem that asks why or what explains */
+const WHY_RE = /\bwhy\b|what explains|best explains|what would happen|reason/i;
+const whyPool = pool => pool.filter(q => !q.lowYield && ((q.tags || []).includes('why') || WHY_RE.test(q.stem)));
 function linksFor0(q) {
   if (examOf(q) === 3 && typeof GUIDE3_HTML !== 'undefined') {
     if (q.topic === 'TERMS') return termLinks3(q);
@@ -577,7 +620,7 @@ const TF_OPEN = () => { try { return new Set(JSON.parse(store.get(TF_KEY) || '[]
 /* The Smith focus card: her own words about what her exam tests, each with the page that drills it. Quotes verbatim. */
 function focusCard() {
   const tq = id => QUESTIONS.filter(q => q.topic === id).length;
-  const item = (quote, date, btns) => `<li><span>"${esc(quote)}" <small>(T) ${date}</small></span><div class="row" style="gap:6px;margin-top:4px">${btns}</div></li>`;
+  const item = (quote, date, btns) => `<li><span>"${esc(tidySpeech(quote))}" <small>(T) ${date}</small></span><div class="row" style="gap:6px;margin-top:4px">${btns}</div></li>`;
   const drill = (id, lab) => tq(id) ? `<button type="button" class="btn ghost" data-topic="${id}" data-ex="${FOCUS_EXAM}">${esc(lab)} · ${tq(id)}</button>` : '';
   return `<div class="card focuscard"><b>Where to focus for Dr. Smith's exam</b><ul class="focuslist">
     ${item("The heaviest part of that will be this poisoning table.", '10/19', `<button type="button" class="btn" data-jump="ptab:ptab-top">Poisoning table drill</button>${drill('TBL3', 'Table questions')}`)}
@@ -601,7 +644,7 @@ function vTopics() {
   ${examCard(ex, pool0)}${focusOn() ? focusCard() : ''}${newsCard()}
   <div class="card"><div class="row" style="justify-content:space-between">
    <div><b>${pool.length}</b> ${FILT.skill === 'all' ? '' : esc((SKILL[FILT.skill] || {}).short || '') + ' '}questions in the bank · <b>${seen}</b> seen · accuracy <b>${a.pct == null ? '—' : a.pct + '%'}</b></div>
-   <div class="row"><button class="btn" id="due">Study what is due</button><button class="btn ghost" id="all">One pass, all questions</button></div></div>
+   <div class="row"><button class="btn" id="due">Study what is due</button><button class="btn ghost" id="all">One pass, all questions</button>${whyPool(pool).length ? `<button class="btn ghost" id="whyq" title="Questions that ask for the reason behind a concept">Why questions · ${whyPool(pool).length}</button>` : ''}</div></div>
    <div class="row" style="margin-top:10px;justify-content:space-between"><span class="row"><span class="meta" style="margin:0">Answer:</span>${layoutToggle()}</span>
    <span class="row"><span class="meta" style="margin:0">⚑ Flagged: <b>${flaggedPool().length}</b></span>${flaggedPool().length ? `<button class="btn ghost" id="drillflag">Drill flagged</button><button class="btn ghost" id="clearflag">Clear flags</button>` : ''}</span></div>
    <div class="row" style="margin-top:10px"><span class="meta" style="margin:0">Skill:</span>
@@ -650,6 +693,7 @@ function vTopics() {
   const nok = $('#newsok'); if (nok) nok.onclick = () => { store.set(NEWS_KEY, newsId(BUILD.changelog[0])); const c = $('#news'); if (c) c.remove(); };
   const nall = $('#newsall'); if (nall) nall.onclick = () => go('data');
   $('#all').onclick = () => startQuiz(shuffle(pool), 'All questions, one pass', 'pass');
+  const wq = $('#whyq'); if (wq) wq.onclick = () => startQuiz(shuffle(whyPool(pool)), 'Why questions: the reason behind each concept', 'pass');
   document.querySelectorAll('[data-tier]').forEach(b => b.onclick = () => startQuiz(pool.filter(q => q.level === +b.dataset.tier && !q.lowYield), 'Tier ' + b.dataset.tier + (skName ? ' · ' + skName : ''), 'sr'));
   const ld = $('#ladders'); if (ld) ld.onclick = () => {
     // every ladder in turn, each from Tier 1 up
@@ -1880,7 +1924,8 @@ function pairWire() {
    content sits in its own collapsible group (Exam 2 content from guide2.js,
    reference2.js and tell2.js when they exist). */
 const PAGE2 = {guide: () => typeof GUIDE2_HTML === 'undefined' ? '' : GUIDE2_HTML, ref: () => typeof REFERENCE2_HTML === 'undefined' ? '' : REFERENCE2_HTML, tell: () => typeof TELL2_HTML === 'undefined' ? '' : TELL2_HTML};
-const PAGE3 = {guide: () => typeof GUIDE3_HTML === 'undefined' ? '' : GUIDE3_HTML, ref: () => typeof REFERENCE3_HTML === 'undefined' ? '' : REFERENCE3_HTML, tell: () => typeof TELL3_HTML === 'undefined' ? '' : TELL3_HTML};
+const PAGE3_T = {}, page3 = (k, h) => PAGE3_T[k] || (PAGE3_T[k] = tidyHtml(h));   // her quoted words without fillers, tidied once
+const PAGE3 = {guide: () => typeof GUIDE3_HTML === 'undefined' ? '' : page3('guide', GUIDE3_HTML), ref: () => typeof REFERENCE3_HTML === 'undefined' ? '' : page3('ref', REFERENCE3_HTML), tell: () => typeof TELL3_HTML === 'undefined' ? '' : page3('tell', TELL3_HTML)};
 const PAGE_BY_EXAM = {2: PAGE2, 3: PAGE3};
 /* The pages are fixed for a build, so each body is expanded once (figures drawn, markers replaced);
    the exam groups around them are drawn each time, since the open one follows the exam studied. */
@@ -2136,7 +2181,7 @@ function antiOpen(slug, opener) {
   ANTI.slug = d.slug;
   ANTI.el.innerHTML = `<div class="antibox"><div class="antihead"><b id="antititle">${esc(d.title)}</b><span class="meta" style="margin:0">${i + 1} of ${n}</span>
     <div class="row" style="gap:6px;margin-left:auto"><button type="button" class="chip" data-antistep="-1" ${i ? '' : 'disabled'} aria-label="Previous diagram">‹ Prev</button><button type="button" class="chip" data-antistep="1" ${i + 1 < n ? '' : 'disabled'} aria-label="Next diagram">Next ›</button><a class="chip" href="${ANTI_BASE + d.slug}.html" target="_blank" rel="noopener">Open page ↗</a><button type="button" class="chip" id="anticlose" aria-label="Close diagram">✕</button></div></div>
-    ${d.note && ANTIDOTE_NOTES[d.note] ? `<div class="note">${esc(ANTIDOTE_NOTES[d.note])}</div>` : ''}
+    ${d.note && ANTIDOTE_NOTES[d.note] ? `<div class="note">${esc(tidyQuoted(ANTIDOTE_NOTES[d.note]))}</div>` : ''}
     <iframe id="antiframe" title="${esc(d.title)}" src="${src}" loading="eager"></iframe>
     <p class="sub" style="margin:6px 0 0">Drawn from the figures on the Treating Poisonings slides (10/19). <a href="${ANTI_BASE}index.html" target="_blank" rel="noopener">All diagrams</a></p></div>`;
   $('#anticlose').focus();
@@ -2736,7 +2781,7 @@ function rdCard(r) {
   const qs = rdQs(r), quiz = rdQuiz(r);
   const fold = (title, inner) => inner ? `<details class="fold rdfold"><summary>${title}</summary>${inner}</details>` : '';
   const li = arr => arr && arr.length ? `<ul>${arr.map(x => `<li>${esc(x)}</li>`).join('')}</ul>` : '';
-  const use = (r.lecture_use || []).length ? `<ul>${r.lecture_use.map(u => `<li><b>${esc(u.point)}</b>${u.chapter_location ? ` <small>(${esc(u.chapter_location)})</small>` : ''}${u.lecture_evidence ? `<div class="sub rdq">“${esc(u.evidence_clean || u.lecture_evidence)}” <small>(T) ${esc(u.date || '')}</small></div>` : ''}</li>`).join('')}</ul>` : '';
+  const use = (r.lecture_use || []).length ? `<ul>${r.lecture_use.map(u => `<li><b>${esc(r.exam === 3 ? tidyQuoted(u.point) : u.point)}</b>${u.chapter_location ? ` <small>(${esc(u.chapter_location)})</small>` : ''}${u.lecture_evidence ? `<div class="sub rdq">“${esc(u.evidence_clean || u.lecture_evidence)}” <small>(T) ${esc(u.date || '')}</small></div>` : ''}</li>`).join('')}</ul>` : '';
   const words = (r.her_words || []).length ? `<ul>${r.her_words.map(w => `<li>“${esc(w.t || w)}”${w.date ? ` <small>(T) ${esc(w.date)}</small>` : ''}</li>`).join('')}</ul>` : '';
   const terms = (r.terms || []).length ? `<ul>${r.terms.map(t => `<li><b>${esc(t.term)}</b>: ${esc(t.chapter_definition)}</li>`).join('')}</ul>` : '';
   const when = r.date ? ` · ${esc(r.date)}` : '';

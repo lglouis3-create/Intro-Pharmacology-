@@ -27,7 +27,7 @@ QUESTIONS.push(
   {t:"Toxin and a toxicant", correct:true, why:"A toxin is a toxic substance produced by a biological system (snake venom); a toxicant is produced by, or is a by-product of, human activity (smokestack emissions)."},
   {t:"Toxicant and a toxin", correct:false, why:"This swaps the two: biological origin makes the venom a toxin; the man-made emission is the toxicant."},
   {t:"Xenobiotic and a poison", correct:false, why:"Both words apply loosely to both substances; the pair that separates biological from anthropogenic origin is toxin versus toxicant."},
-  {t:"Toxin and a toxin", correct:false, why:"Smokestack emissions are not made by a biological system."},
+  {t:"Toxin and a toxin", correct:false, why:"The venom is a toxin, but whatever comes out of a factory smokestack is made through human activity, which makes it a toxicant; toxin is kept for substances from biological systems."},
   {t:"Poison and a xenobiotic", correct:false, why:"Poison is the general term for anything that causes a harmful response; it does not say where the substance came from."}],
  teach:"Poison is the general lay term for any agent that can cause a deleterious response in a biological system. Toxin and toxicant both name noxious substances, but a toxin comes from a biological system (venom) and a toxicant from human activity (industrial emissions). A xenobiotic is any compound in an organism that the organism does not normally make or expect: it may be a toxin, a toxicant, a food additive or a medication.",
  quote:"toxins are substances coming from biological systems, so. Snake venom is a toxin, OK? ... A toxicant is made by man through our activities.",
@@ -43,7 +43,7 @@ QUESTIONS.push(
   {t:"It is only a man-made chemical", correct:false, why:"That describes a toxicant; a xenobiotic can also be a natural toxin."},
   {t:"A substance produced only by a biological system, such as a venom", correct:false, why:"That describes a toxin; a xenobiotic can be man-made."},
   {t:"It is a drug that has already been metabolized", correct:false, why:"Metabolism is not part of the definition; the parent compound is a xenobiotic from the moment it enters the organism."}],
- teach:"Xenobiotic is the broad word for any compound that gets into an organism and is not normally produced by or expected in it. Food additives, medications, toxins and toxicants all qualify.",
+ teach:"A xenobiotic is defined only by being foreign to the organism: a compound that gets in but is not normally produced by it or expected to be present. The word says nothing about origin or harm. That is why it covers a snake's toxin, a man-made toxicant, a food additive or a medication, while toxin and toxicant are defined by where the substance comes from and poison by its ability to cause a bad response.",
  quote:"It just means any sort of compound that gets into an organism that's not normally produced by that organism or expected to be present in that organism",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Definitions’; transcript 10/9"},
 
@@ -59,7 +59,7 @@ QUESTIONS.push(
   {t:"Target and mechanism of action", correct:true, why:"Where in the body the substance acts and how it causes harm."},
   {t:"Therapeutic index", correct:false, why:"The therapeutic index is a value calculated within the dose principle, not one of the five principles."},
   {t:"Route of administration", correct:false, why:"Route is one factor within the exposure principle."}],
- teach:"Toxicologists organize any poisoning around five principles: the source, the exposure (route, duration, single versus repeated, frequency), ADMET (absorption, distribution, metabolism, excretion, toxicity), the dose, and the target with its mechanism of action.",
+ teach:"Each principle asks one question about a poison. Source: where does it come from? Exposure: how are people or critters exposed (route, duration, single versus repeated, frequency)? ADMET: what are its kinetics, with a T added for toxicity? Dose: is the exposure high enough to cause a problem? Target and mechanism of action: where does it go in the body, and how does it cause harm? Route, half-life and the therapeutic index are pieces inside a principle, not principles of their own.",
  quote:"We think about the source of a toxin or toxicant. We think about how are people or critters exposed. We have to think about ADM ... we're gonna add the T ... Another principle is dose ... And then the last principle is we think about target and mechanism of action",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘5 Principles of Toxicology’; transcript 10/9"},
 
@@ -70,9 +70,9 @@ QUESTIONS.push(
   {t:"Toxicity", correct:true, why:"Absorption, distribution, metabolism, excretion, and toxicity."},
   {t:"Target", correct:false, why:"Target and mechanism of action is a separate principle."},
   {t:"Threshold", correct:false, why:"Threshold belongs to the dose–response discussion."},
-  {t:"Transport", correct:false, why:"Transport is part of distribution, not a separate letter."},
+  {t:"Transport", correct:false, why:"The four letters before the T are absorption, distribution, metabolism and excretion; the added letter names the outcome toxicologists care about, toxicity, not another kinetic step."},
   {t:"Time", correct:false, why:"Duration and frequency belong to the exposure principle."}],
- teach:"The kinetics of a poison follow absorption, distribution, metabolism and excretion; toxicologists add a T for toxicity, because the whole point is what the compound does at its target once it is there.",
+ teach:"ADME is the kinetics of anything that gets into the body: it is absorbed, distributed, likely metabolized, then excreted. In the toxicology module the same steps are followed with a T for toxicity added, because the question is whether those kinetics end in harm. The step toxicologists watch most is metabolism, where a compound can be made into something even nastier (bioactivation). Target, threshold and time belong to other principles.",
  quote:"We're in the toxicology module here, so we're gonna add the T to add me, OK? So absorption, distribution, metabolism, elimination, and toxicity",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘5 Principles of Toxicology’; transcript 10/9"},
 
@@ -80,12 +80,12 @@ QUESTIONS.push(
  concept:"toxic-target-differs", tags:["smith"], source:"transcript",
  stem:"A medication's toxic effect and its therapeutic effect:",
  options:[
-  {t:"May act at different targets", correct:true, why:"The target of a toxic effect is not always the therapeutic target; acetaminophen is used for pain and fever, but its toxicity is in the liver."},
+  {t:"May act at different targets", correct:true, why:"The target of a toxic effect is not always the therapeutic target: acetaminophen is taken for soreness, but its toxicity comes from NAPQI acting on the liver."},
   {t:"Always act at the same receptor", correct:false, why:"Toxicity can come from a different organ or molecule than the one the drug was designed to act on."},
-  {t:"Always occur in the same organ", correct:false, why:"The organ of toxicity can differ from the organ of benefit."},
-  {t:"Are distinguished only by dose", correct:false, why:"Dose matters, but the target can differ as well."},
+  {t:"Always occur in the same organ", correct:false, why:"This assumes one site does everything. Acetaminophen relieves soreness but injures the liver, and the slide notes that a compound can have multiple targets with different toxicity at each."},
+  {t:"Are distinguished only by dose", correct:false, why:"Dose matters, but it is the dose at each target that decides toxicity there. When the toxic target differs from the therapeutic one, the two effects differ in site and mechanism, not only in amount."},
   {t:"Are never related to metabolism", correct:false, why:"Metabolism (bioactivation) can create the toxic species."}],
- teach:"Within the target-and-mechanism principle, the place where a substance causes harm may be a different organ or molecule from its therapeutic site. Dose at the target, not the dose given, is what determines toxicity.",
+ teach:"The target-and-mechanism principle asks where a substance goes in the body and how it causes harm. For a medication that need not be where it works: acetaminophen is taken for soreness, yet its harm comes from NAPQI, made by CYP2E1, which is toxic to the liver. A substance can have several targets, with different toxicity and a different mechanism at each, and the dose reaching each target decides whether toxicity happens there.",
  quote:"sometimes the target of something toxic is not the same target as its therapeutic target, OK? We'll talk about that a little bit more later.",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Target & Mechanism of Action’; transcript 10/9"},
 
@@ -99,7 +99,7 @@ QUESTIONS.push(
   {t:"Medication, as a patient", correct:false, why:"The pharmacist is not taking the drug; the exposure comes from the job."},
   {t:"Critter bite or sting", correct:false, why:"No animal is involved."},
   {t:"Pathogen exposure", correct:false, why:"Toxicology deals with chemicals; needle sticks and pathogens are not what this principle covers."}],
- teach:"The four source categories are environmental exposures (pollution, contaminated dust), occupational exposures (the workplace, including chemotherapy, radiation and contaminated patients for healthcare workers), critter bites and stings, and medications.",
+ teach:"Source asks where the exposure comes from, and the category follows the setting of the exposure, not the substance. Chemotherapy is a medication, but a pharmacist breathing it from a hood with the wrong airflow is exposed through the job, so it is occupational, like radiation or a patient splattered with an organophosphate in the ER. Environmental exposures come from the surroundings (diesel fumes, landfill dust). Pathogens such as needle sticks are outside this course.",
  quote:"do you have a risk of occupational exposures as a healthcare provider? ... you could be exposed to um chemotherapy, you know, uh, mixing it up in a in in an in an incorrect hood with the wrong airflow ... Remember, in this course we're not usually thinking about exposure to pathogens like needle sticks",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Source’; transcript 10/9"},
 
@@ -108,12 +108,12 @@ QUESTIONS.push(
  concept:"route-effectiveness-order", tags:["smith"], source:"both",
  stem:"Ranked from most to least effective for delivering a toxic agent, the routes of exposure are:",
  options:[
-  {t:"Intravenous, inhalation, oral, dermal", correct:true, why:"The descending order of effectiveness on the slide; intravenous delivery puts the whole dose into the blood at once."},
+  {t:"Intravenous, inhalation, oral, dermal", correct:true, why:"The slide's descending order of effectiveness. IV comes first (\"if it's a liquid and you can inject it, IV is the most effective route\") and it skips first-pass metabolism; dermal is last."},
   {t:"Oral, intravenous, inhalation, dermal", correct:false, why:"Oral is the most common route of exposure, not the most effective."},
   {t:"Inhalation, intravenous, dermal, oral", correct:false, why:"Intravenous ranks first and dermal last."},
-  {t:"Dermal, oral, inhalation, intravenous", correct:false, why:"This is the reverse order."},
+  {t:"Dermal, oral, inhalation, intravenous", correct:false, why:"This reads the slide's list from least to most effective. Dermal is the weakest route for delivering a toxic agent and IV the strongest, so a most-to-least ranking starts with IV and ends with dermal."},
   {t:"Intravenous, oral, dermal, inhalation", correct:false, why:"Inhalation ranks second, above oral."}],
- teach:"The major routes of exposure are oral (the most common), inhalation, topical and parenteral; healthcare sees more parenteral exposure than other settings. In descending order of effectiveness they run intravenous, inhalation, oral, dermal.",
+ teach:"Two rankings are easy to mix up. Oral is the most common route of exposure, but effectiveness asks how well a route delivers the agent: IV is most effective, then inhalation, oral and dermal. Her route example shows one reason oral sits below IV: an oral dose goes to the liver first (first-pass effect), while an IV dose does not. Healthcare sees more parenteral exposure than other settings, through injected medications and drug abuse.",
  quote:"IV is gonna be your most effective route. If you can give it by IV, if it's a liquid and you can inject it, IV is the most effective route, and then you can see inhalation, oral, and dermal, uh, they decrease in, in the effectiveness",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Exposure: Route’; transcript 10/9"},
 
@@ -125,7 +125,7 @@ QUESTIONS.push(
   {t:"Intravenous: the liver clears it faster", correct:false, why:"An intravenous dose skips first-pass metabolism, so the whole dose reaches the body in its toxic form."},
   {t:"The routes are equivalent at equal doses", correct:false, why:"Route changes toxicity whenever first-pass metabolism changes the compound."},
   {t:"Intravenous: it bypasses the stomach and gut wall", correct:false, why:"Bypassing the stomach is not protective here; bypassing the liver is what makes the intravenous route worse."},
-  {t:"Dermal: nothing crosses the skin", correct:false, why:"The comparison in the question is between oral and intravenous exposure to the same dose."}],
+  {t:"Dermal: nothing crosses the skin", correct:false, why:"Topical is one of the major routes of exposure, so things do cross the skin. The protective step in this question is first-pass metabolism in the liver to a less toxic product, which only the oral route provides."}],
  teach:"Route affects toxicity when the same compound can enter by more than one route. An oral dose undergoes first-pass metabolism in the liver; if the liver converts the compound into something less toxic, the oral route is the least scary one, while an intravenous dose avoids that protection.",
  quote:"If you had equivalent doses, oral versus IV, and this compound goes through first pass effect. Which is the least scary route of administration. The oral is right, it'll help protect you",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Exposure: Route’; transcript 10/9"},
@@ -165,9 +165,9 @@ QUESTIONS.push(
   {t:"A single exposure and repeated exposure can differ in effect", correct:true, why:"Benzene is her example: one exposure gives headache and drowsiness; chronic low-dose exposure is carcinogenic."},
   {t:"Tolerance to benzene develops with repeated workplace exposure", correct:false, why:"The daily worker still gets the headache every day; no tolerance develops."},
   {t:"The route of exposure changed", correct:false, why:"Both workers inhaled the same gas."},
-  {t:"Benzene has a long half-life", correct:false, why:"Half-life was not the point of this example; the point is that the kind of effect changes with repetition."},
+  {t:"Benzene has a long half-life", correct:false, why:"Nothing in the example concerns how fast benzene is cleared. The two workers differ in how often and how long they were exposed, and that changed the type of effect from a headache to leukemia."},
   {t:"Leukemia is an immediate effect of benzene", correct:false, why:"Leukemia is the delayed effect of chronic exposure."}],
- teach:"The first of three points about single versus repeated exposure: the effect of one exposure can be very different from the effect of repeated exposure. A single benzene exposure causes headache and sleepiness; chronic low-dose exposure causes leukemia.",
+ teach:"Repeating an exposure can change the kind of effect, not just its size. Benzene is a gas workers cannot smell or see, so a small leak exposes them without their knowing. One walk-in gives a headache or sleepiness; going in every day delivers chronic low-dose exposure, and benzene is a carcinogen that causes leukemias. So the effect of a single exposure does not predict the effect of repeated exposure.",
  quote:"anybody know what the dangerous. Health effect. Uh, that can occur with benzene exposure, chronic low dose benzene exposure ... it's a carcinogen, huh, causes leukemias, uh, so wow, getting sleepy and a headache is really different than, you know, like getting leukemia",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Exposure: Single vs. Repeated’; transcript 10/9"},
 
@@ -177,10 +177,10 @@ QUESTIONS.push(
  options:[
   {t:"A delayed effect of an exposure", correct:true, why:"The exposure was in utero; the effect appeared about twenty years later, which took epidemiology to uncover."},
   {t:"An immediate effect of a fast-absorbing compound", correct:false, why:"Fast-absorbing compounds give immediate effects; DES is her example of the opposite, a delayed effect."},
-  {t:"Tolerance to a hormone", correct:false, why:"No tolerance is involved."},
+  {t:"Tolerance to a hormone", correct:false, why:"Tolerance concerns whether a repeated exposure keeps producing its effect (her benzene worker developed none). DES was given during pregnancy, and its harm, a vaginal cancer in daughters exposed in utero, appeared about twenty years later: a delayed effect."},
   {t:"A hormetic response", correct:false, why:"Hormesis is a beneficial low-dose effect; this is a harmful delayed one."},
-  {t:"A route-dependent toxicity", correct:false, why:"Route is not what the example teaches."}],
- teach:"The second point about exposure: fast-absorbing compounds usually produce immediate effects, but some exposures produce a delayed effect. DES, an estrogen used in the 1950s to help women keep a pregnancy, caused a specific vaginal cancer in the daughters exposed in utero, about twenty years after the exposure.",
+  {t:"A route-dependent toxicity", correct:false, why:"Nothing about how DES was given changed; what sets this example apart is timing, with the cancer appearing about twenty years after the exposure in utero."}],
+ teach:"The immediate effect of an exposure does not show everything it can do. Mothers given DES, an estrogen used in the 1950s to help keep a pregnancy, had little more than nausea. Their daughters were exposed in utero, were born and grew up, and in their twenties developed a very unusual vaginal cancer. Because the harm appeared about twenty years later and in a different person, it took a lot of medical epidemiology work to link it to DES.",
  quote:"We started seeing a very weird and scary phenomenon about 20 years after these women were given DES ... the female children of these women ... would develop a very certain kind of vaginal cancer",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Exposure: Single vs. Repeated’; transcript 10/9"},
 
@@ -192,8 +192,8 @@ QUESTIONS.push(
   {t:"A chronic exposure produces only delayed effects, never immediate ones", correct:false, why:"The immediate effect keeps happening with every exposure."},
   {t:"Tolerance removes the immediate effect", correct:false, why:"In this example no tolerance developed."},
   {t:"The exposure must have been a single one", correct:false, why:"It is daily, so chronic."},
-  {t:"Half-life determines the headache", correct:false, why:"Half-life is the frequency discussion, not this one."}],
- teach:"The third point about single versus repeated exposure: a chronic exposure can still produce an immediate effect after each exposure. The benzene worker gets the headache and sleepiness every day while the leak goes on, with no tolerance.",
+  {t:"Half-life determines the headache", correct:false, why:"Half-life decides whether repeated doses build up in the blood (the frequency figure). Here the headache returns because each day is a new exposure that produces its own immediate effect."}],
+ teach:"Repeated exposure does not switch off the immediate effect. Because the leak is never fixed, each day's walk-in is a new exposure, and each one brings the same short-term headache and sleepiness; the worker develops no tolerance. So a chronic exposure can carry both kinds of effect: the immediate one after every exposure and, for benzene, the delayed risk of leukemia from low-dose exposure over time.",
  quote:"chronic exposure may produce immediate effects after each exposure ... Every time I walk into my workplace, I just get sleepy and a little bit of a headache ... they're not developing any tolerance",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Exposure: Single vs. Repeated’; transcript 10/9"},
 
@@ -205,9 +205,9 @@ QUESTIONS.push(
   {t:"A", correct:true, why:"The slowest fall in blood concentration means the longest time for half of the compound to be cleared."},
   {t:"B", correct:false, why:"B clears faster than A; its half-life is about equal to the dosing frequency in the repeated-dose panel."},
   {t:"C", correct:false, why:"C clears fastest, so it has the shortest half-life."},
-  {t:"All three have the same half-life", correct:false, why:"The slopes differ."},
+  {t:"All three have the same half-life", correct:false, why:"Their declines have different slopes, and the slope of the decline after a single dose is what shows how fast half of each compound is cleared."},
   {t:"It cannot be read from a single-dose curve", correct:false, why:"The rate of decline after one dose is exactly what shows the half-life."}],
- teach:"Casarett and Doull Figure 2-4 gives three compounds one single dose and plots blood concentration against time. A, with a half-life of about a year on the figure caption, stays high; B has a half-life about equal to the dosing interval (about a day); C, with a half-life of about five hours, clears quickly. A toxic response occurs above the shaded concentration.",
+ teach:"Half-life is the time for half the compound to be cleared from the blood, so after one dose a flatter decline means a longer half-life. In Figure 2-4, A barely slopes down (caption: half-life about 1 year), B falls faster (about 1 day) and C drops steeply (about 5 hours) because it is metabolized and cleared quickly. So A has the longest half-life and C the shortest.",
  quote:"Which compound has the longest half-life in this image? ... A, so it's half-life is longest, right? It takes longer for half the compound to be cleared out of the blood, OK? C has the shortest half-life.",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Exposure: Frequency’ (Figure 2-4 and its caption); transcript 10/9"},
 
@@ -231,7 +231,7 @@ QUESTIONS.push(
  options:[
   {t:"An allergic reaction", correct:true, why:"An allergy needs very little drug and has nothing to do with the blood concentration."},
   {t:"Toxicity at a different target than the one the curve describes", correct:true, why:"The curve shows one target; the compound may act elsewhere."},
-  {t:"Synergy with another drug, giving additive adverse effects", correct:true, why:"A class suggestion she called great: additive adverse effects with another drug."},
+  {t:"Synergy with another drug, giving additive adverse effects", correct:true, why:"Another drug can add its adverse effects to C's, so the combination can cause harm even though C alone stays below its toxic blood concentration."},
   {t:"Irritation or damage at a subcutaneous or intradermal injection site", correct:true, why:"Local damage at the injection site is an adverse response unrelated to kinetics."},
   {t:"Accumulation of C in the blood over the course of the dosing", correct:false, why:"C does not accumulate; that is the point of its short half-life."}],
  teach:"A compound that is kept below its toxic blood concentration can still cause harm by routes that have nothing to do with kinetics: an allergy, action at a different target, synergy with another drug, or irritation at the injection site. The healthcare provider still has to watch for these.",
@@ -272,8 +272,8 @@ QUESTIONS.push(
  options:[
   {t:"4 g", correct:true, why:"Four grams in 24 hours is the labeled maximum; she advises her older relatives to stay below it."},
   {t:"2 g", correct:false, why:"Lower than the labeled maximum, though she suggests less than 4 g for older adults."},
-  {t:"6 g", correct:false, why:"Above the labeled maximum."},
-  {t:"8 g", correct:false, why:"Well above the labeled maximum."},
+  {t:"6 g", correct:false, why:"Above the 4 g labeled maximum. Past that dose the phase 2 enzymes are less able to handle all the acetaminophen, so more of it goes through CYP2E1 to the liver-toxic NAPQI."},
+  {t:"8 g", correct:false, why:"Twice the 4 g labeled maximum; at that dose even people with normal phase 2 enzymes are expected to send part of it through CYP2E1 to NAPQI."},
   {t:"500 mg", correct:false, why:"That is one typical tablet, not a daily total."}],
  teach:"The FDA labeling sets 4 g as the acetaminophen total in a 24-hour period. Her advice to older adults is to stay under that, because the phase 2 enzymes that detoxify the drug may be fewer with age, so more of the dose spills into CYP2E1 and NAPQI.",
  quote:"Total daily dose of acetaminophen that we should all be sticking to, not taking more of. 4 g, right? That's on the FDA labeling, right?",
@@ -285,9 +285,9 @@ QUESTIONS.push(
  options:[
   {t:"A genetic variation that lowers the activity of the glucuronosyl transferases or sulfotransferases", correct:true, why:"With less phase 2 activity, part of a normal dose is pushed through CYP2E1 to NAPQI; this is pharmacogenomics."},
   {t:"Induction of CYP2E1 by alcohol", correct:true, why:"Alcohol induces CYP2E1, so more of the normal dose becomes NAPQI; her baseball-weekend example."},
-  {t:"Inhibition of CYP2E1 by alcohol", correct:false, why:"Alcohol induces, not inhibits, CYP2E1 in her account."},
+  {t:"Inhibition of CYP2E1 by alcohol", correct:false, why:"Inhibiting CYP2E1 would mean less NAPQI, not more. Alcohol does the opposite: it induces CYP2E1, so the body makes more of the enzyme and more of a normal dose is bioactivated."},
   {t:"Increased glucuronidation", correct:false, why:"More phase 2 activity would detoxify more of the dose, not less."},
-  {t:"Taking the dose at bedtime", correct:false, why:"Timing of the dose was not a factor she named."}],
+  {t:"Taking the dose at bedtime", correct:false, why:"The two causes she gave both shift the enzyme balance: weaker glucuronosyl transferases or sulfotransferases (a genetic variant), or more CYP2E1 (induction by alcohol). Bedtime dosing changes neither."}],
  teach:"Two things can set up liver toxicity at or below the allowed dose: a genetic variant that weakens the phase 2 enzymes, so some of the dose goes through CYP2E1, and induction of CYP2E1 by alcohol, so more NAPQI is made. Both push a normal dose toward bioactivation.",
  quote:"They may have a genetic variation. Of those enzymes that reduces those phase two enzymes activity ... sometimes you can get an increased amount of 20 being made by the body. We call that induction ... Alcohol can induce 20 expression.",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Example of Bioactivation’; transcript 10/9"},
@@ -299,10 +299,10 @@ QUESTIONS.push(
  options:[
   {t:"Paracelsus", correct:true, why:"The saying is attributed to Paracelsus, who studied the toxic effects of compounds long ago."},
   {t:"Casarett and Doull", correct:false, why:"They wrote the toxicology textbook the figures come from."},
-  {t:"Hippocrates", correct:false, why:"Not the name she gave."},
+  {t:"Hippocrates", correct:false, why:"The saying is credited to Paracelsus, who studied the toxic effects of compounds long ago, not to Hippocrates."},
   {t:"Katzung", correct:false, why:"Katzung is the pharmacology textbook."},
-  {t:"Galen", correct:false, why:"Not the name she gave."}],
- teach:"Dose is a principle of toxicology because the same compound can be harmless or lethal depending on how much reaches the target. The saying that the dose makes the poison is attributed to Paracelsus.",
+  {t:"Galen", correct:false, why:"The saying is credited to Paracelsus, who studied the toxic effects of compounds long ago, not to Galen."}],
+ teach:"Dose is its own principle because whether something poisons depends on how much is received, not only on what it is. Ethyl alcohol, which people drink, has a rat LD50 of 10,000 mg/kg yet can still cause alcohol poisoning at the right dose, while botulinum toxin kills at 0.00001 mg/kg. The idea that the dose makes the poison is attributed to Paracelsus, who studied the toxic effects of compounds long ago.",
  quote:"Dose makes the poison. Who said that? Anybody know who said that? Supposed to be attributed to a guy named Paracelsus",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Dose’; transcript 10/9"},
 
@@ -315,7 +315,7 @@ QUESTIONS.push(
   {t:"Produces a toxic but non-lethal effect in 50% of animals", correct:false, why:"That is the TD50, the toxic dose."},
   {t:"Is the lowest dose that causes any effect", correct:false, why:"That is the threshold dose."},
   {t:"Is half of the lethal dose", correct:false, why:"LD50 is a dose that is lethal to half the population, not half of some other dose."}],
- teach:"LD50 is the lethal dose for 50% of the exposed animals. It is read from a population dose–response curve at 50% cumulative mortality. The range across compounds is enormous.",
+ teach:"LD50 comes from a population dose–response study: animals receive different doses, deaths are grouped by dose, and the dose at which cumulative mortality reaches 50% is the LD50 (about 100 mg/kg in the figure she read). Because it counts deaths, it differs from the ED50 (desired effect) and TD50 (toxic effect) taken at the same 50% point, and from the threshold, the lowest dose with any effect.",
  quote:"this is the lethal dose that will kill off 50% of the animals given this compound",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Dose’; transcript 10/9"},
 
@@ -328,7 +328,7 @@ QUESTIONS.push(
   {t:"Nicotine, LD50 1 mg/kg", correct:false, why:"Potent, but botulinum toxin is 100,000 times more so."},
   {t:"Dioxin (TCDD), LD50 0.001 mg/kg", correct:false, why:"Second from the bottom; botulinum toxin is 100 times more potent."},
   {t:"Phenobarbital sodium, LD50 150 mg/kg", correct:false, why:"Near the top of the table: a large dose is needed."}],
- teach:"The table adapted from Casarett and Doull lists rat LD50 values from ethyl alcohol at 10,000 mg/kg down through sodium chloride 4,000, morphine sulfate 900, phenobarbital sodium 150, strychnine sulfate 2, nicotine 1, tetrodotoxin 0.1, dioxin 0.001 and botulinum toxin 0.00001 mg/kg. The dose makes the poison, but the compound sets the scale: the range spans nine orders of magnitude.",
+ teach:"LD50 is the dose that kills half the animals, so the smaller the LD50, the less of the compound it takes to kill and the more potent the poison. The rat table runs from ethyl alcohol at 10,000 mg/kg down to botulinum toxin at 0.00001 mg/kg, nine orders of magnitude. So the dose makes the poison, but the compound sets how small a harmful dose can be: \"sometimes it only takes a tiny bit of something to be very, very harmful.\"",
  quote:"10,000 mgs per kilogram for ethyl alcohol would be the LD50 in rats, and 0.00001 would be the LD50 for botulinum toxin in rats, OK? So the dose makes the poison, but you have to know what compound you're talking about too.",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Dose’ (Casarett & Doull Table 2-1); transcript 10/9"},
 
@@ -366,7 +366,7 @@ QUESTIONS.push(
  options:[
   {t:"LD50 at 50% mortality; threshold at the lowest dose with any effect", correct:true, why:"In the figure she read, 50% cumulative mortality fell at about 100 mg/kg and the first effect at about 10 mg/kg."},
   {t:"LD50 at the highest dose given; threshold at 50% cumulative mortality", correct:false, why:"This swaps the two readings."},
-  {t:"Both at the peak of the mortality-frequency histogram", correct:false, why:"The peak of the frequency plot is the most common lethal dose, not the threshold."},
+  {t:"Both at the peak of the mortality-frequency histogram", correct:false, why:"The threshold sits at the low-dose end, where effects first appear, not at a peak; and she read the LD50 off the cumulative mortality curve, where 50% of the animals have died."},
   {t:"LD50 at 100% mortality; threshold at 0%", correct:false, why:"LD50 is defined at 50%, and threshold is the first dose with an effect, not zero effect."},
   {t:"They cannot be read from a population curve", correct:false, why:"Finding LD50 and threshold is exactly what population curves are for."}],
  teach:"A population dose–response is plotted as mortality frequency against dose and, more usefully, as cumulative mortality. The LD50 is the dose at 50% cumulative mortality; the threshold is the lowest dose at which an effect first appears. The probit-unit version in the textbook figure is old-fashioned and, in her words, nobody uses it.",
@@ -379,7 +379,7 @@ QUESTIONS.push(
  stem:"Iron and red wine both give U-shaped dose–response curves. What separates the two curves?",
  options:[
   {t:"Only the nutrient curve has a region of homeostasis", correct:true, why:"Iron: deficiency (death) → homeostasis → overdose. Red wine: a possible protective effect at a low dose, then an adverse effect, with no region of need."},
-  {t:"Only the hormetic curve has a region of homeostasis between its arms", correct:false, why:"This is reversed."},
+  {t:"Only the hormetic curve has a region of homeostasis between its arms", correct:false, why:"Homeostasis is the region of need, which exists only for something essential. Red wine is not essential, so the hormetic curve has no such region; iron's curve does."},
   {t:"Only the nutrient curve is U-shaped", correct:false, why:"Both are U-shaped; the figure shows two different reasons for the shape."},
   {t:"The hormetic curve rises with dose from the start", correct:false, why:"A hormetic curve first falls (benefit) and then rises (harm)."},
   {t:"The nutrient curve has no toxic region", correct:false, why:"Iron can be overdosed; the right arm of the U is toxicity."}],
@@ -394,8 +394,8 @@ QUESTIONS.push(
   {t:"Helps at a low dose and harms at a higher dose, without being essential", correct:true, why:"Her example is a glass or a glass and a half of red wine as possibly heart protective, then too much."},
   {t:"Is essential at a low dose and lethal when absent from the diet entirely", correct:false, why:"That is the essential-nutrient U-curve (deficiency and homeostasis), not hormesis."},
   {t:"Has no threshold", correct:false, why:"A no-threshold linear response describes carcinogens."},
-  {t:"Accumulates with repeated dosing", correct:false, why:"Accumulation is the frequency and half-life discussion."},
-  {t:"Is more toxic by the oral route", correct:false, why:"Route is a separate principle."}],
+  {t:"Accumulates with repeated dosing", correct:false, why:"Building up with repeated doses depends on half-life and dosing frequency (compounds A and B on the frequency figure); hormesis is about the shape of the response as the dose rises, benefit first and harm later."},
+  {t:"Is more toxic by the oral route", correct:false, why:"Hormesis describes how the response changes with the amount, not which way the substance enters; route belongs to the exposure principle."}],
  teach:"Hormesis is the U-shaped response of a non-essential substance: a low dose produces a beneficial or protective effect and a higher dose an adverse one. Because the substance is not needed, there is no region of homeostasis. It is a concept toxicologists use; few others do.",
  quote:"my glass or glass and half of red wine is possibly protective, and then I go too far and I should not be driving. OK? So, again, this is a U-shaped curve.",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Shape of Dose-Response’; transcript 10/9"},
@@ -446,11 +446,11 @@ QUESTIONS.push(
  stem:"Which index of toxicity gives information about the slope of the dose–response curves, and how is it calculated?",
  options:[
   {t:"Margin of safety, MOS = TD1 / ED99", correct:true, why:"Comparing the dose toxic to 1% with the dose effective in 99% depends on how steep the two curves are."},
-  {t:"Therapeutic index, TI = toxic dose / therapeutic dose", correct:false, why:"The therapeutic index provides no information about the slope."},
+  {t:"Therapeutic index, TI = toxic dose / therapeutic dose", correct:false, why:"The therapeutic index compares the toxic and therapeutic doses at the same percentage of animals, so it reflects one point on each curve, not how steep the curves are."},
   {t:"Margin of exposure, MOE = NOAEL / exposure", correct:false, why:"The margin of exposure is for repeated exposures to non-therapeutic compounds, not for slope."},
   {t:"LD50 / ED50", correct:false, why:"That ratio is a therapeutic index, which says nothing about slope."},
   {t:"ED99 / TD1", correct:false, why:"The margin of safety divides the toxic dose by the effective dose, not the reverse."}],
- teach:"Three values come from dose–response curves. The therapeutic index compares a toxic dose with a therapeutic dose (TI = toxic dose / therapeutic dose) and gives no information about slope. The margin of safety, MOS = TD1 / ED99, does carry slope information. Both are for single doses. The margin of exposure, MOE = NOAEL / exposure, is for repeated exposures to non-therapeutic compounds.",
+ teach:"The margin of safety divides the dose toxic to 1% of animals by the dose effective in 99%. Because it reads the two curves at different percentages, its value depends on how steeply each curve rises, so it carries slope information. The therapeutic index uses the same percentage for the toxic and the therapeutic dose, so it does not. Both are for single doses; the margin of exposure (NOAEL / exposure) is for repeated exposures to non-therapeutic compounds.",
  quote:"most of the time, a margin of safety number is developed because we say what's the toxic dose for 1% of the animals over the effective dose of 99% of the animals. That's the margin of safety. And because we use a different percentage, it gives you an idea of the slope of your dose response curve, whereas the therapeutic index does not.",
  note:"Taught 10/13. Her rule for the therapeutic index: the percentage need not be 50, but the numerator and the denominator must use the same percentage; the margin of safety uses two different percentages, which is why it carries slope information.",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Values Developed from Dose-Response’; transcript 10/13"},
@@ -464,7 +464,7 @@ QUESTIONS.push(
   {t:"Comparing two drugs' potencies", correct:false, why:"Potency comparison reads ED50 values, not MOE."},
   {t:"Finding the LD50", correct:false, why:"LD50 comes from the population curve."},
   {t:"Defining the threshold dose", correct:false, why:"The threshold is read from the curve; the NOAEL is the related no-effect level used in MOE."}],
- teach:"The margin of exposure divides the NOAEL (no observed adverse effect level) by the actual exposure; it is the index for repeated exposures to compounds that are not medicines, such as pollutants.",
+ teach:"A pollutant or occupational exposure has no therapeutic dose, so the indices that compare toxic with effective doses (TI, MOS) do not fit. The margin of exposure instead divides the NOAEL, the dose at which test animals showed no adverse response, by the exposure actually received; the larger the ratio, the further the exposure is below that no-effect level. The slide marks MOE for repeated exposures and TI and MOS for single doses.",
  quote:"the margin of exposure, this is something that we use truly in toxicology with exposures to something that's not therapeutic, like to, you know, a pollutant, an occupational exposure, OK, and it's also for repeated exposures",
  note:"Taught 10/13. She says NOAEL as 'no observable adverse effect level' (the slide prints 'no observed') and described it as the dose given to the animals at which they had no bad response; she called it the lowest such dose.",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Values Developed from Dose-Response’; transcript 10/13"},
@@ -473,12 +473,12 @@ QUESTIONS.push(
  concept:"target-not-highest-concentration", tags:["smith"], source:"both",
  stem:"Which statement about the target of a toxic substance is correct?",
  options:[
-  {t:"The target organ may not be where the concentration is highest", correct:true, why:"Both lines are on the target-and-mechanism slide."},
-  {t:"The target organ is always where the concentration is highest", correct:false, why:"The slide says the opposite."},
+  {t:"The target organ may not be where the concentration is highest", correct:true, why:"Harm depends on the target's sensitivity as well as on concentration: the kidney can respond at a lower concentration than muscle, and it is the dose at the target that determines toxicity."},
+  {t:"The target organ is always where the concentration is highest", correct:false, why:"Concentration alone does not decide where harm occurs; a more sensitive organ such as the kidney can be harmed at a lower concentration than a less sensitive one such as muscle."},
   {t:"A substance has only one target", correct:false, why:"The slide lists multiple targets with variation in toxicity among them."},
   {t:"The mechanism is the same at every target", correct:false, why:"The mechanism of action at multiple targets may differ."},
   {t:"The dose given, not the dose at the target, determines toxicity", correct:false, why:"The dose at the target determines toxicity."}],
- teach:"Target and mechanism of action: the target can be an organ or a physiological endpoint; there may be multiple targets with different toxicity and different mechanisms at each; the target organ may not be the site of highest concentration; and the dose at the target is what determines toxicity.",
+ teach:"Whether an organ is harmed depends on how sensitive it is as well as how much compound reaches it. Her example: the kidney can be more sensitive than muscle, so a lower concentration in the kidney can still produce an effect even where muscle holds more. That is why the target organ may not be the site of highest concentration, and why the dose at the target, on that target's own dose–response curve, determines toxicity.",
  quote:"where it's having an adverse effect may not be where the highest concentration is, which is probably a little counterintuitive, right?",
  note:"Taught 10/13; her words match the slide. Her example: the kidney may be more sensitive than muscle at a lower concentration, and there is still a dose–response curve at the kidney itself.",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Target & Mechanism of Action’; transcript 10/13"},
@@ -517,7 +517,7 @@ QUESTIONS.push(
  options:[
   {t:"True", correct:true, why:"Her key. Compound C on the frequency figure never reaches the toxic blood concentration, yet she listed allergy, another target, synergy with other drugs and injection-site damage as ways it can still harm."},
   {t:"False", correct:false, why:"Her key is True: clearance between doses rules out accumulation, not every adverse response."}],
- teach:"Practice quiz 1, question 1. The point is her twist on compound C: an exposure that never accumulates can still cause an adverse response by a route that has nothing to do with kinetics.",
+ teach:"Clearing between exposures only stops a compound from building up to a toxic blood concentration. Harm that does not depend on blood concentration can still occur with repeated use: an allergy needs very little drug, the compound may act at a different target from the one the curve describes, it can synergize with other drugs for additive adverse effects, and an injection can damage the injection site. So compound C is \"not necessarily all good to go.\"",
  note:"Verbatim from her practice quiz; the key is the one she released. Same point as L13-016.",
  cite:"Smith_Practice_Quiz_1_-_Principles_of_Toxicology.pdf question 1"},
 
@@ -529,7 +529,7 @@ QUESTIONS.push(
   {t:"1-3 months", correct:false, why:"Subchronic."},
   {t:"More than three months", correct:true, why:"Her key: chronic is more than 3 months, up to years."},
   {t:"Less than a month", correct:false, why:"Subacute."}],
- teach:"Practice quiz 1, question 2: the animal-study durations. Acute less than 24 hours; subacute less than 1 month; subchronic 1 to 3 months; chronic more than 3 months.",
+ teach:"Animal studies define exposure by how long the animals are dosed: acute under 24 hours, subacute under 1 month, subchronic 1 to 3 months, and chronic more than 3 months up to years. Because the durations are fixed in advance, the study knows how long the animals were exposed and can tie the effects to that length. Human exposures are sorted on the same scale, though a person often cannot say how long a workplace or environmental exposure has gone on.",
  note:"Verbatim from her practice quiz with her key. Same table as L13-010.",
  cite:"Smith_Practice_Quiz_1_-_Principles_of_Toxicology.pdf question 2"},
 
@@ -553,7 +553,7 @@ QUESTIONS.push(
   {t:"Administration, Distribution, Metabolism, Elimination", correct:false, why:"The A is absorption, not administration."},
   {t:"Absorption, Dose, Mechanism, Exposure", correct:false, why:"Dose, mechanism and exposure are other principles, not the letters of ADME."},
   {t:"Absorption, Distribution, Mechanism, Excretion", correct:false, why:"The M is metabolism."}],
- teach:"Practice quiz 1, question 4, a short-answer item on the quiz: absorption, distribution, metabolism, excretion; toxicology adds the T for toxicity (ADMET).",
+ teach:"ADME follows the path of anything that enters the body: it is absorbed (or injected by IV), distributed through the body, likely metabolized, then excreted. Toxicology adds a T for toxicity. The step it watches most is metabolism, because metabolism can turn a compound into something nastier (bioactivation, as acetaminophen to NAPQI) or into something less harmful and easier to eliminate (detoxification).",
  note:"On the quiz this was a free-response question, not multiple choice; the exam may ask for the expansion written out. Options added here for the drill.",
  cite:"Smith_Practice_Quiz_1_-_Principles_of_Toxicology.pdf question 4"},
 
@@ -563,7 +563,7 @@ QUESTIONS.push(
  options:[
   {t:"True", correct:false, why:"Her key is False: the toxic target can differ from the therapeutic target."},
   {t:"False", correct:true, why:"Her key. The target of something toxic is not always the same as its therapeutic target."}],
- teach:"Practice quiz 1, question 5: the target-and-mechanism principle. A medication's toxicity may act at a different target, by a different mechanism, from its therapeutic effect.",
+ teach:"A drug's benefit and its harm can come from different places in the body by different routes. Acetaminophen relieves soreness, but its liver toxicity comes from NAPQI, a metabolite made by CYP2E1 when the phase 2 enzymes cannot handle the dose. The slide adds that a compound can have multiple targets with a different mechanism at each, so \"always the same\" is false.",
  note:"Verbatim from her practice quiz with her key. Same point as L13-005.",
  cite:"Smith_Practice_Quiz_1_-_Principles_of_Toxicology.pdf question 5"},
 
@@ -571,7 +571,7 @@ QUESTIONS.push(
  concept:"target-not-highest-concentration", tags:["smith","quiz","verbatim"], source:"slide",
  stem:"The concentration of a medication in the body is always highest at its target site.",
  options:[
-  {t:"True", correct:false, why:"Her key is False."},
+  {t:"True", correct:false, why:"Her key is False. The site with the most drug need not be the target: the kidney can respond at a lower concentration than muscle, so harm may occur where the concentration is lower."},
   {t:"False", correct:true, why:"Her key. The target organ may not be the site of highest concentration; the dose at the target determines toxicity."}],
  teach:"Practice quiz 1, question 6: the target-and-mechanism slide she covered on 10/13. Where a compound has its adverse effect may not be where its concentration is highest; the kidney can be more sensitive than muscle at a lower concentration.",
  note:"Verbatim from her practice quiz with her key. Same point as L13-034.",
@@ -581,11 +581,11 @@ QUESTIONS.push(
  concept:"reading-source-human-use", tags:["smith","quiz","verbatim"], source:"slide",
  stem:"The article by Rodriguez-Mozaz discusses the fact that pharmaceuticals have been detected in ground water, surface water, and drinking water. What is most likely the greatest source of pharmaceuticals in those waters?",
  options:[
-  {t:"Unused medications thrown in the trash leaching out of landfills.", correct:false, why:"A source, but not the greatest."},
-  {t:"Pharmaceutical company manufacturing processes.", correct:false, why:"A source, but not the greatest."},
-  {t:"Patients flushing unused medications down the toilet.", correct:false, why:"A source she discussed, but not the greatest."},
+  {t:"Unused medications thrown in the trash leaching out of landfills.", correct:false, why:"Only leftover medicine goes in the trash; the far larger amount is what patients take, which is excreted, metabolized and unmetabolized, into sewage every day."},
+  {t:"Pharmaceutical company manufacturing processes.", correct:false, why:"Manufacturing contributes, but the drug consumed by people everywhere is excreted into waste streams that treatment plants do not fully clean, and that outweighs it."},
+  {t:"Patients flushing unused medications down the toilet.", correct:false, why:"Flushing is improper disposal and a real source, but it involves only unused medicine; normal use sends excreted drug and metabolites into sewage from every patient taking it."},
   {t:"Consumption of medications by humans and the resulting waste streams", correct:true, why:"Her key: the drug and its metabolites that people excrete after normal use reach the waste stream and the treatment plants."}],
- teach:"Practice quiz 1, question 7: the source principle applied to the article. The greatest source is ordinary human use, excreted into the waste stream; flushing, trash and manufacturing are smaller contributors.",
+ teach:"Every person who takes a medication excretes the drug and its metabolites in urine and feces, so ordinary use feeds the waste stream from a whole community. That sewage reaches wastewater treatment plants, which do not remove all the drugs before the water returns to streams, rivers and lakes. Flushing, landfills and manufacturing add to it, but they involve only part of the drug supply, so human consumption is the greatest source.",
  note:"Verbatim from her practice quiz with her key. L13-035 and L14-024 test the same source principle; this wording is hers.",
  cite:"Smith_Practice_Quiz_1_-_Principles_of_Toxicology.pdf question 7"},
 
@@ -593,9 +593,9 @@ QUESTIONS.push(
  concept:"reading-human-dose-below-therapeutic", tags:["smith","quiz","verbatim"], source:"slide",
  stem:"The dose of pharmaceuticals that people are exposed to in drinking water exceeds the daily dose of that medication when used therapeutically.",
  options:[
-  {t:"True", correct:false, why:"Her key is False."},
+  {t:"True", correct:false, why:"Her key is False. Drinking-water levels are in parts per trillion, which does not reach a daily effective dose; the worry is continuous exposure of wildlife and more sensitive people, not a dose above therapeutic."},
   {t:"False", correct:true, why:"Her key. Drinking-water levels are far below a therapeutic daily dose."}],
- teach:"Practice quiz 1, question 8: the dose principle applied to the article. Human exposure through drinking water is far below a therapeutic dose; the wildlife, living in the water, is the population at risk.",
+ teach:"Pharmaceuticals in drinking water are measured in parts per trillion, an amount that does not bring a person up to a daily effective dose. Concern therefore shifts to those exposed continuously or more sensitive: wildlife living in the water, which may not process drugs as humans do, and people who are immunocompromised, very young or exposed in utero.",
  note:"Verbatim from her practice quiz with her key.",
  cite:"Smith_Practice_Quiz_1_-_Principles_of_Toxicology.pdf question 8"},
 
@@ -605,9 +605,9 @@ QUESTIONS.push(
  options:[
   {t:"Pharmaceuticals in water are not adversely affecting aquatic wildlife.", correct:false, why:"The article's wildlife examples show adverse effects."},
   {t:"Pharmaceuticals in waters are adversely affecting human health.", correct:false, why:"The authors did not conclude that; human exposure is far below therapeutic doses."},
-  {t:"No answers are correct", correct:false, why:"One answer is correct."},
+  {t:"No answers are correct", correct:false, why:"The authors did reach a conclusion: the data on human health effects are not yet enough to decide, which is the \"more data\" option."},
   {t:"More data is needed to determine if pharmaceuticals in water are adversely affecting human health.", correct:true, why:"Her key: the authors call for more data on human health effects."}],
- teach:"Practice quiz 1, question 9: the authors' conclusion. Wildlife effects are documented; whether trace levels harm human health is not settled, and more data are needed.",
+ teach:"The authors separate what is known from what is not. For wildlife, which live in the water and are exposed continuously, adverse effects are documented. For people, drinking-water levels are in parts per trillion, below a daily effective dose, and studies do not exist for all the metabolites, so harm to human health can be neither shown nor ruled out. Hence the call for more data.",
  note:"Verbatim from her practice quiz with her key.",
  cite:"Smith_Practice_Quiz_1_-_Principles_of_Toxicology.pdf question 9"},
 
@@ -619,7 +619,7 @@ QUESTIONS.push(
   {t:"Source; Route; Metabolism; Dose; Receptor", correct:false, why:"Route is part of exposure and metabolism part of ADMET; receptor is not the principle's name."},
   {t:"Toxin; Toxicant; Xenobiotic; Poison; Dose", correct:false, why:"Those are the definitions, not the principles."},
   {t:"Source; Exposure; Half-life; LD50; Threshold", correct:false, why:"Half-life, LD50 and threshold are values inside the exposure and dose principles."}],
- teach:"Practice quiz 1, question 10, a short-answer item on the quiz: source, exposure, ADMET, dose, and target and mechanism of action.",
+ teach:"The five principles are source, exposure, ADMET, dose, and target and mechanism of action. Each asks one question about a poison: where it comes from, how people or critters are exposed, what its kinetics are (with the T for toxicity), whether the exposure is high enough to cause a problem, and where it goes in the body and how it causes harm. Route, metabolism, half-life, LD50 and threshold sit inside these principles rather than beside them.",
  note:"On the quiz this was a free-response list; the exam may ask for it written out. Options added here for the drill.",
  cite:"Smith_Practice_Quiz_1_-_Principles_of_Toxicology.pdf question 10"},
 /* ---------------- The coral snake on 'What is Toxic?' (her spoken question, 10/9) ---------------- */
@@ -640,10 +640,10 @@ QUESTIONS.push(
  stem:"What kind of toxin does the coral snake's venom carry?",
  options:[
   {t:"A neurotoxin", correct:true, why:"Her words: \"So this is a coral snake, very venomous, they have a neurotoxin.\""},
-  {t:"A hepatotoxin", correct:false, why:"She named a neurotoxin for the coral snake, not a liver toxin."},
+  {t:"A hepatotoxin", correct:false, why:"A liver toxin was her acetaminophen example (NAPQI); for the coral snake she named a neurotoxin."},
   {t:"A carcinogen", correct:false, why:"A snakebite is a single, immediate exposure; she named a neurotoxin."},
   {t:"A toxicant", correct:false, why:"Venom is made by the snake, so it is a toxin; a toxicant comes from human activity."}],
- teach:"The coral snake is very venomous; its venom carries a neurotoxin. Being made by the snake, the venom is a toxin, not a toxicant. The look-alike king snake, with red touching black, is not poisonous.",
+ teach:"The coral snake is very venomous, and its venom carries a neurotoxin. Because the snake makes it, the venom is a toxin rather than a toxicant. It has a small head and is not a viper, so instead of striking with fangs like a rattlesnake it bites and chews, often between fingers or toes, to inject the venom. Its look-alike, the king snake (red touching black), is not poisonous.",
  quote:"So this is a coral snake, very venomous, they have a neurotoxin. They are here in Texas, um, they're in East Texas, especially",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘What is Toxic?’; transcript 10/9"}
 );
