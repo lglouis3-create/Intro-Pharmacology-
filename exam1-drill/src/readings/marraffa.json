@@ -28,7 +28,7 @@
   {
    "point": "Ethanol or, preferably, fomepizole is given to inhibit alcohol dehydrogenase (ADH) in methanol, ethylene glycol and diethylene glycol poisoning; the parent compounds are relatively nontoxic and ADH metabolizes them to the toxic metabolites. In the transcript she says 'omeprazole' where she means fomepizole.",
    "chapter_location": "Antidotes for toxic-alcohol poisoning, p. 200 (first two paragraphs)",
-   "lecture_evidence": "So, I've got listed on the bottom of the slide here that there's an antidote for methanol and ethylene glycol, and you can use ethanol or now a drug called omeprazole.",
+   "lecture_evidence": "there's an antidote for methanol and ethylene glycol, and you can use ethanol or now a drug called omeprazole.",
    "date": "10/19"
   },
   {
@@ -40,25 +40,25 @@
   {
    "point": "Ethylene glycol is metabolized via ADH to glycolic acid (anion-gap metabolic acidosis) and oxalic acid, which results primarily in renal toxicity due to the formation of calcium oxalate crystals.",
    "chapter_location": "Antidotes for toxic-alcohol poisoning, p. 200",
-   "lecture_evidence": "Well, oxalic acid is a, is a small molecule, and, um, uh, it will sometimes precipitate in the blood to form small microcrystals and The impact of that is you can damage your organs like your liver, your kidneys.",
+   "lecture_evidence": "oxalic acid is a ... small molecule ... it will sometimes precipitate in the blood to form small microcrystals and The impact of that is you can damage your organs like your liver, your kidneys.",
    "date": "10/19"
   },
   {
    "point": "Ethanol can be given intravenously or orally, but a commercial i.v. preparation is no longer available; a loading dose is needed to reach a serum ethanol concentration of 100-150 mg/dL, then a maintenance dose guided by repeated serum ethanol measurements.",
    "chapter_location": "Ethanol, p. 200",
-   "lecture_evidence": "So they would use Everclear, have a shot glass there and give somebody that's had methanol or ethylene glycol exposure a shot, maybe two of Everclear, and watch to see how they're doing, OK?",
+   "lecture_evidence": "So they would use Everclear, have a shot glass there and give somebody that's had methanol or ethylene glycol exposure a shot, maybe two of Everclear, and watch to see how they're doing",
    "date": "10/19"
   },
   {
    "point": "Fomepizole's ease of administration and relative lack of serious adverse effects have elevated it to preferred status over ethanol; its advantages are a much higher potency of ADH inhibition (Ki = 0.1 µmol/L, a 1000-fold higher affinity than that of ethanol), better maintenance of therapeutic blood concentrations, fewer adverse effects and less labor-intensive administration.",
    "chapter_location": "Fomepizole, p. 200",
-   "lecture_evidence": "We now have, uh, the medication omeprazole that we'll give to patients. Um, a little bit better control of the dosing.",
+   "lecture_evidence": "We now have ... the medication omeprazole that we'll give to patients ... a little bit better control of the dosing.",
    "date": "10/19"
   },
   {
    "point": "Methanol or ethylene glycol toxicity should be suspected in a patient with anion-gap metabolic acidosis in whom laboratory testing reveals a low (or no) ethanol concentration, no ketones, and a normal lactic acid concentration; the availability of testing for toxic alcohols is limited.",
    "chapter_location": "Antidotes for toxic-alcohol poisoning, Implications for the pharmacist, p. 201",
-   "lecture_evidence": "The, the, the, the key indicator would be you get them into the ER and they do a blood draw, and they look for these alcohols in their blood.",
+   "lecture_evidence": "key indicator would be you get them into the ER and they do a blood draw, and they look for these alcohols in their blood.",
    "date": "10/19"
   },
   {
@@ -76,19 +76,19 @@
   {
    "point": "Cyanide binds to the ferric ion on cytochrome oxidase and abruptly halts the electron transport chain and aerobic respiration.",
    "chapter_location": "Antidotes for cyanide poisoning, p. 203",
-   "lecture_evidence": "Cytochrome C oxidase is its target. Anybody know what cytochrome cytochrome C oxidase does? Think back to biochemistry. Helps with our electron transport chain, right?",
+   "lecture_evidence": "Cytochrome C oxidase is its target ... Helps with our electron transport chain",
    "date": "10/19"
   },
   {
    "point": "The mechanism of amyl nitrite and sodium nitrite is to produce methemoglobinemia; cyanide bound to cytochrome oxidase is then preferentially bound to methemoglobin, forming cyanomethemoglobin. Amyl nitrite is inhaled pending i.v. access; sodium nitrite is given intravenously and produces a methemoglobin concentration of about 15% in healthy adults.",
    "chapter_location": "Amyl nitrite and sodium nitrite, p. 203",
-   "lecture_evidence": "And methemoglobin is able to pull cyanide off of cytochrome C oxidase. So here's the cyanide. It's going to get pulled off of the cytochrome C oxidase, and it gets stuck onto your methemoglobin, creating cyanoetthemoglobin, OK?",
+   "lecture_evidence": "And methemoglobin is able to pull cyanide off of cytochrome C oxidase. So here's the cyanide. It's going to get pulled off of the cytochrome C oxidase, and it gets stuck onto your methemoglobin, creating cyanoetthemoglobin",
    "date": "10/19"
   },
   {
    "point": "Neither carboxyhemoglobin nor methemoglobin is capable of carrying oxygen, so patients can develop functional hypoxia; the nitrite component should be avoided in smoke inhalation unless the carboxyhemoglobin level is shown to be negligible, and a methemoglobin concentration above 20% should halt further nitrite administration.",
    "chapter_location": "Antidotes for cyanide poisoning, p. 203",
-   "lecture_evidence": "Is methemoglobin helpful to our bodies? Will it carry oxygen? No, OK, we're still gonna create it in our patients though, because we're trying to save them from their cyanide poisoning, OK?",
+   "lecture_evidence": "Is methemoglobin helpful to our bodies? Will it carry oxygen? No ... we're still gonna create it in our patients though, because we're trying to save them from their cyanide poisoning",
    "date": "10/19"
   },
   {
@@ -112,19 +112,18 @@
   {
    "point": "The Rumack-Matthew nomogram predicts hepatotoxicity from an initial plasma acetaminophen concentration obtained four or more hours after a single acute ingestion; NAC is started when the level is on or above the nomogram, when no level is available within eight hours of a potentially toxic ingestion, or when hepatotoxicity is present.",
    "chapter_location": "N-acetylcysteine, p. 206",
-   "lecture_evidence": "Can you think of any other compounds that it's likely emergency rooms would test a person's blood for to see if they've been exposed to them? Acetaminophen, OK, acetaminophen.",
+   "lecture_evidence": "Can you think of any other compounds that it's likely emergency rooms would test a person's blood for to see if they've been exposed to them? Acetaminophen",
    "date": "10/19"
   },
   {
    "point": "One of the pharmacist's four roles listed in the abstract is managing the procurement and stocking of antidotes to ensure their timely availability; some antidotes must be stocked in the ED for immediate administration and others must be available within 60 minutes.",
    "chapter_location": "Abstract (Summary) and Introduction, p. 199",
-   "lecture_evidence": "Has anybody, um, just for fun, anybody ever, uh, been in a hospital where they have, maybe you work in a hospital pharmacy and you've had to stock, uh, NAStylcysteine?",
    "date": "10/19"
   },
   {
    "point": "Digoxin-specific antibody fragments (Fab) are lifesaving agents in toxicity from digoxin and other cardioactive steroids, including digitoxin and those derived from oleander, fox glove, lily of the valley, and toad venom. The article does not use the word monoclonal.",
    "chapter_location": "Digoxin-specific antibody fragments, p. 204-205",
-   "lecture_evidence": "And then the antibody that we have is the example I have here is digoxin immune fab. This is an antibody, a monoclonal antibody that's made to treat a digoxin overdose, OK?",
+   "lecture_evidence": "digoxin immune fab. This is an antibody, a monoclonal antibody that's made to treat a digoxin overdose",
    "date": "10/19"
   },
   {
@@ -142,13 +141,13 @@
   {
    "point": "Flumazenil is a competitive antagonist at the benzodiazepine-receptor binding site on γ-aminobutyric acid-A. The article discourages its use in overdose patients unless it is certain that only a benzodiazepine was ingested and the patient is not benzodiazepine dependent and has no seizure history, because it can precipitate withdrawal seizures and unmask arrhythmias in mixed ingestions.",
    "chapter_location": "Flumazenil, p. 205-206",
-   "lecture_evidence": "Flonazanil is used commonly for, uh, overdoses of things like your benzodiazepines. The, uh, benzos are gonna be agonizing your GABA receptors, right, causing a lot of, a lot of action on that, that receptor, and flomazanil will antagonize the GABA receptor, OK?",
+   "lecture_evidence": "Flonazanil is used commonly for ... overdoses of things like your benzodiazepines ... benzos are gonna be agonizing your GABA receptors ... and flomazanil will antagonize the GABA receptor",
    "date": "10/19"
   },
   {
    "point": "Benzodiazepine overdose produces a toxidrome, or toxic syndrome, of CNS depression with relatively normal vital signs; deaths attributed solely to oral benzodiazepine ingestion are rare.",
    "chapter_location": "Flumazenil, p. 205",
-   "lecture_evidence": "Usually you'll see a group of systems of symptoms that we call a toxic toxodrome that we'll get to at the end of this lecture, kind of a group of symptoms that are like, oh hey, look, this person has this, this and this.",
+   "lecture_evidence": "Usually you'll see a group of systems of symptoms that we call a toxic toxodrome ... kind of a group of symptoms that are like, oh hey, look, this person has this, this and this.",
    "date": "10/19"
   },
   {
@@ -190,7 +189,7 @@
   "Intravenous fat emulsion (p. 206): lipid sink theory; first-line for bupivacaine cardiotoxicity and considered for lipophilic cardiotoxic drugs (tricyclic antidepressants, verapamil, diltiazem, bupropion, propranolol); 20% IFE 100 mL (1.5 mL/kg) i.v. push, optional infusion 0.25-0.5 mL/kg/min; not FDA approved for this use - not covered in lecture.",
   "Octreotide (p. 208-209): somatostatin analog that inhibits pancreatic insulin release for sulfonylurea- and miglitinide-induced hypoglycemia; 50 µg subcutaneously every six hours as needed after dextrose 0.5-1 g/kg - not covered in lecture.",
   "Introduction and supplementary material (p. 199-200): the national consensus list of 24 antidotes, ED versus 60-minute availability, eFigure 1 stocking list and eTable 1 inventory log - not covered in lecture.",
-  "The poisoning treatment table built from this article (signs and symptoms of overdose, antidote, antidote mechanism) is due the morning of 10/20; she said 'we'll go over the table tomorrow morning in the beginning of class' and 'Once everybody has turned in their table to me tomorrow morning, I will post my key'."
+  "The poisoning treatment table built from this article: signs and symptoms of overdose, antidote, antidote mechanism."
  ],
  "terms": [
   {
@@ -245,47 +244,7 @@
  "discussed_in_class": true,
  "her_words": [
   {
-   "t": "And then also this article by Marafa.",
-   "date": "10/19"
-  },
-  {
-   "t": "It's a really good article and it breaks down step by step, a lot of the, the symptoms that you'll see in these overdoses and then the treatments that we use, and importantly, their mechanism of action.",
-   "date": "10/19"
-  },
-  {
-   "t": "So, um, What I wanted to propose to you today, usually what I do with this, this lecture is I give students time to work together in class to fill out this table, and it's not due yet until tomorrow morning, right?",
-   "date": "10/19"
-  },
-  {
-   "t": "All the information is right here in these articles.",
-   "date": "10/19"
-  },
-  {
-   "t": "I will be here, but I think just for the chance to shake it up a bit on how we run our class time, maybe it's more beneficial for you guys to do readings in the chapter or that Marrafa article and fill in that table rather than me just lecturing.",
-   "date": "10/19"
-  },
-  {
-   "t": "I suggest the Depiro chapter or the Marafa article or both.",
-   "date": "10/19"
-  },
-  {
-   "t": "I think the Marafa article has the information in it, um, fast.",
-   "date": "10/19"
-  },
-  {
-   "t": "It's the quickest to read through compared to the Dipiro article, OK.",
-   "date": "10/19"
-  },
-  {
-   "t": "I do not want you to recreate the, the chapter or the article in your squares.",
-   "date": "10/19"
-  },
-  {
-   "t": "Once everybody has turned in their table to me tomorrow morning, I will post my key, and that will give you an idea of the detail that I think you need to know for the exam, and we'll go over the table tomorrow morning in the beginning of class.",
-   "date": "10/19"
-  },
-  {
-   "t": "Make your brain do the work of reading the article, pulling the information and putting it into the table, OK?",
+   "t": "it breaks down step by step, a lot of the ... symptoms that you'll see in these overdoses and then the treatments that we use, and importantly, their mechanism of action.",
    "date": "10/19"
   },
   {
@@ -293,7 +252,7 @@
    "date": "10/19"
   },
   {
-   "t": "All right, so you need to know this table that we're about to go through.",
+   "t": "you need to know this table",
    "date": "10/19"
   }
  ],

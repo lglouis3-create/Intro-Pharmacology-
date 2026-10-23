@@ -47,10 +47,10 @@
    "chapter_location": "Special Aspects of Toxicokinetics - Volume of Distribution (page 1)",
    "lecture_evidence": {
     "date": "10/14",
-    "quote": "I have a statement in there that overdose drugs with large volumes of distribution, they're hard to remove from the, they're hard to remove from the blood, OK? Like, for example, you might try to remove them from the blood using hemodialysis."
+    "quote": "overdose drugs with large volumes of distribution ... they're hard to remove from the blood ... for example, you might try to remove them from the blood using hemodialysis."
    },
    "date": "",
-   "evidence_clean": "I have a statement in there that overdose drugs with large volumes of distribution are hard to remove from the blood. For example, you might try to remove them from the blood using hemodialysis."
+   "evidence_clean": "Overdose drugs with large volumes of distribution are hard to remove from the blood. For example, you might try to remove them from the blood using hemodialysis."
   },
   {
    "point": "Hemodialysis must be prolonged because drug sequestered in tissues only slowly re-enters the blood where the extracorporeal method can reach it.",
@@ -67,47 +67,47 @@
    "chapter_location": "Special Aspects of Toxicokinetics - Clearance (page 2)",
    "lecture_evidence": {
     "date": "10/14",
-    "quote": "OK, the third bullet point says clearance can can be messed up and overdosed because if you saturate liver metabolism, you get a reduced first pass effect and then more drug is in circulation."
+    "quote": "clearance can ... be messed up and overdosed because if you saturate liver metabolism, you get a reduced first pass effect and then more drug is in circulation."
    },
    "date": "",
-   "evidence_clean": "The third bullet point says clearance can be messed up in overdose, because if you saturate liver metabolism, you get a reduced first-pass effect and then more drug is in circulation."
+   "evidence_clean": "Clearance can be messed up in overdose, because if you saturate liver metabolism, you get a reduced first-pass effect and then more drug is in circulation."
   },
   {
    "point": "Poisons may injure the gastrointestinal epithelial barrier and thereby increase absorption (her example: caustic iron destroying the saturable active-transport protection).",
    "chapter_location": "Special Aspects of Toxicokinetics - Clearance (page 2)",
    "lecture_evidence": {
     "date": "10/14",
-    "quote": "I want to point out the second bullet here where we say drugs may injure the gastrointestinal tract, increasing absorption, OK?"
+    "quote": "drugs may injure the gastrointestinal tract, increasing absorption"
    },
    "date": "",
-   "evidence_clean": "I want to point out the second bullet here where we say drugs may injure the gastrointestinal tract, increasing absorption."
+   "evidence_clean": "Drugs may injure the gastrointestinal tract, increasing absorption."
   },
   {
    "point": "At very high blood concentrations plasma protein-binding capacity is exceeded, raising the free fraction and the toxic effect.",
    "chapter_location": "Special Aspects of Toxicokinetics - Clearance (page 2)",
    "lecture_evidence": {
     "date": "10/14",
-    "quote": "The next to bottom bullet, uh, when you've got overdose situation, you may exceed protein binding capacity."
+    "quote": "when you've got overdose situation, you may exceed protein binding capacity."
    },
    "date": "",
-   "evidence_clean": "The next-to-bottom bullet: when you've got an overdose situation, you may exceed protein binding capacity."
+   "evidence_clean": "When you've got an overdose situation, you may exceed protein binding capacity."
   },
   {
    "point": "Toxicodynamics: both the therapeutic index and the overlap of therapeutic and toxic response curves must be considered; the deck's Drug A / Drug B sedation-hypnosis-anesthesia-coma figure (credited to Katzung) is the graded dose-response figure the chapter cites.",
    "chapter_location": "Special Aspects of Toxicodynamics (page 2; refers to Figure 22-1)",
    "lecture_evidence": {
     "date": "10/14",
-    "quote": "When we are thinking about drugs and overdose and wondering if their pharmacodynamics are changing in that massive dose, you need to think about the therapeutic index and the overlap between what's a therapeutic dose, what's the therapy look like, and then what's the toxic response to a dose. So this is illustrated by this graph on the right hand side. We've got drug A and drug B."
+    "quote": "When we are thinking about drugs and overdose and wondering if their pharmacodynamics are changing in that massive dose, you need to think about the therapeutic index and the overlap between what's a therapeutic dose, what's the therapy look like, and then what's the toxic response to a dose."
    },
    "date": "",
-   "evidence_clean": "When we are thinking about drugs and overdose and wondering if their pharmacodynamics are changing in that massive dose, you need to think about the therapeutic index and the overlap between what's a therapeutic dose, what the therapy looks like, and then what's the toxic response to a dose. This is illustrated by this graph on the right-hand side. We've got drug A and drug B."
+   "evidence_clean": "When we are thinking about drugs and overdose and wondering if their pharmacodynamics are changing in that massive dose, you need to think about the therapeutic index and the overlap between what's a therapeutic dose, what the therapy looks like, and then what's the toxic response to a dose."
   },
   {
    "point": "Drug A with a linear dose-response curve reaches coma while drug B with a plateauing curve does not, so two drugs that look alike at the therapeutic dose differ in overdose.",
    "chapter_location": "Special Aspects of Toxicodynamics (page 2)",
    "lecture_evidence": {
     "date": "10/14",
-    "quote": "But drug A, you keep increasing the dose, and you just happen to get a linear response with this, and you get a coma for drug A, even though with the dose, the same dose drug B, you only get almost anesthesia, OK?"
+    "quote": "But drug A, you keep increasing the dose, and you just happen to get a linear response with this, and you get a coma for drug A, even though with the dose, the same dose drug B, you only get almost anesthesia"
    },
    "date": "",
    "evidence_clean": "But drug A, you keep increasing the dose, and you just happen to get a linear response with this, and you get a coma for drug A, even though with the same dose of drug B, you only get almost anesthesia."
@@ -117,7 +117,7 @@
    "chapter_location": "Special Aspects of Toxicodynamics (page 2)",
    "lecture_evidence": {
     "date": "10/14",
-    "quote": "So, the TCAs, they reduce sweating. In an overdose situation, that's one of their pharmacodynamic effects. At the same time that they are increasing muscular activity and potential for seizures, OK?"
+    "quote": "So, the TCAs, they reduce sweating. In an overdose situation, that's one of their pharmacodynamic effects. At the same time that they are increasing muscular activity and potential for seizures"
    },
    "date": "",
    "evidence_clean": "So, the TCAs, they reduce sweating. In an overdose situation, that's one of their pharmacodynamic effects, at the same time that they are increasing muscular activity and potential for seizures."
@@ -137,10 +137,10 @@
    "chapter_location": "Decontamination - B. Gastrointestinal Tract - 1. Gastric lavage (page 8)",
    "lecture_evidence": {
     "date": "10/14",
-    "quote": "We could do gastric lavage. Does anybody know what that is? How is that Pump in your stomach, yeah, yeah, put a tube down, hope you don't get that tube in the person's lungs."
+    "quote": "We could do gastric lavage ... Pump in your stomach ... put a tube down, hope you don't get that tube in the person's lungs."
    },
    "date": "",
-   "evidence_clean": "We could do gastric lavage. Does anybody know what that is? Pump your stomach, yeah: put a tube down, and hope you don't get that tube in the person's lungs."
+   "evidence_clean": "We could do gastric lavage ... Pump your stomach ... put a tube down, and hope you don't get that tube in the person's lungs."
   },
   {
    "point": "Whole bowel irrigation uses a balanced polyethylene glycol-electrolyte solution (GoLYTELY, CoLyte) given until the rectal effluent is clear.",
@@ -157,7 +157,7 @@
    "chapter_location": "Decontamination - B. Gastrointestinal Tract - 2. Activated charcoal (page 8)",
    "lecture_evidence": {
     "date": "10/14",
-    "quote": "Also, activated charcoal, because of its chemistry, it's only going to grab a certain kinds of compounds that somebody might have ingested, right?"
+    "quote": "Also, activated charcoal, because of its chemistry, it's only going to grab a certain kinds of compounds that somebody might have ingested"
    },
    "date": "",
    "evidence_clean": "Also, activated charcoal, because of its chemistry, is only going to grab certain kinds of compounds that somebody might have ingested."
@@ -177,10 +177,10 @@
    "chapter_location": "Decontamination - B. Gastrointestinal Tract (page 8)",
    "lecture_evidence": {
     "date": "10/14",
-    "quote": "They don't even use it anymore in hospitals, OK, because it's too risky. What's the risk of emesis? Aspiration is the biggest risk."
+    "quote": "They don't even use it anymore in hospitals ... because it's too risky. What's the risk of emesis? Aspiration is the biggest risk."
    },
    "date": "",
-   "evidence_clean": "They don't even use it anymore in hospitals, because it's too risky. What's the risk of emesis? Aspiration is the biggest risk."
+   "evidence_clean": "They don't even use it anymore in hospitals ... because it's too risky. What's the risk of emesis? Aspiration is the biggest risk."
   },
   {
    "point": "Two drugs may have the same therapeutic index but unequal safe dosing ranges if the slopes of their dose-response curves differ (her 10/13 contrast of therapeutic index with margin of safety).",
@@ -274,9 +274,9 @@
  "discussed_in_class": false,
  "her_words": [
   {
-   "t": "It's this discussion of on- and off-target adverse effects. This is coming out of your pharmacology textbook, Katzung's textbook; why don't you take a minute and look at this figure, and then I'll walk us through it.",
+   "t": "It's this discussion of on- and off-target adverse effects.",
    "date": "10/13",
-   "verbatim": "It's this discussion of on and off target adverse effects. OK. This is coming out of your pharmacology textbook, or Katsuk's textbook textbook, and why don't you take a minute and look at this figure, and then I'll walk us through it, OK."
+   "verbatim": "It's this discussion of on and off target adverse effects."
   }
  ],
  "quotes_note": "Quotes lightly edited for reading: filler words removed and transcription errors corrected; the verbatim transcript text is kept beside each quote.",

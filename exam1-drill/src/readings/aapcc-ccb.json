@@ -30,10 +30,10 @@
    "chapter_location": "Methodology (Data Extraction Process; Criteria Used to Evaluate Studies and Assign Levels of Evidence) and Appendix 2, Grades of Recommendation and Levels of Evidence",
    "lecture_evidence": {
     "date": "2026-10-14",
-    "quote": "The data that they used to write these guidance documents has been like graded, and the value of what they tell us to do in these situations is also graded just like any other guidance documents that you may not have seen yet in your therapeutics classes, but you will be seeing those, I promise."
+    "quote": "The data that they used to write these guidance documents has been like graded, and the value of what they tell us to do in these situations is also graded"
    },
    "date": "",
-   "evidence_clean": "The data that they used to write these guidance documents has been graded, and the value of what they tell us to do in these situations is also graded, just like any other guidance documents that you may not have seen yet in your therapeutics classes, but you will be seeing those, I promise."
+   "evidence_clean": "The data that they used to write these guidance documents has been graded, and the value of what they tell us to do in these situations is also graded."
   },
   {
    "point": "Immediate-release and extended-release products are handled differently (referral window and observation time).",
@@ -116,19 +116,14 @@
  "discussed_in_class": true,
  "her_words": [
   {
-   "t": "Just to introduce this to you, we have a few medications for which these evidence-based guidance documents have been written, and they basically talk about what do you do if you've got a patient that overdosed on a big handful of immediate-release beta blocker, or what do you do if a patient overdosed on a handful of extended-release beta blockers?",
+   "t": "We have a few medications for which these evidence-based guidance documents have been written, and they basically talk about what do you do if you've got a patient that overdosed on a big handful of immediate-release beta blocker, or what do you do if a patient overdosed on a handful of extended-release beta blockers?",
    "date": "2026-10-14",
-   "verbatim": "Um, just to introduce this to you, we have a few medications for which these evidence-based guidance documents have been written, and they basically talk about what do you do if you've got a patient that overdosed on a big handful of immediate release beta blocker, or what do you do if a patient overdosed on a handful of extended release beta blockers?"
+   "verbatim": "we have a few medications for which these evidence-based guidance documents have been written, and they basically talk about what do you do if you've got a patient that overdosed on a big handful of immediate release beta blocker, or what do you do if a patient overdosed on a handful of extended release beta blockers?"
   },
   {
-   "t": "It's summarized in the abstracts for each of these documents.",
+   "t": "There are slight differences in what we do for a beta blocker overdose compared to a calcium channel blocker overdose, even though they're all cardiac meds.",
    "date": "2026-10-14",
-   "verbatim": "It's summarized in the abstracts for each of these documents, OK?"
-  },
-  {
-   "t": "You've got a table to fill out because there are slight differences in what we do for a beta blocker overdose compared to a calcium channel blocker overdose, even though they're all cardiac meds.",
-   "date": "2026-10-14",
-   "verbatim": "You've got a table to fill out because there are slight differences in what we do for a beta blocker overdose compared to a calcium channel overdose, even though they're all cardiac meds, OK?"
+   "verbatim": "there are slight differences in what we do for a beta blocker overdose compared to a calcium channel overdose, even though they're all cardiac meds"
   },
   {
    "t": "It also has differences between immediate-release and extended-release tablets.",
@@ -146,9 +141,9 @@
    "verbatim": "They pulled all those documents, evaluated every single one of those case reports or case series, and wrote these evidence-based documents."
   },
   {
-   "t": "The data that they used to write these guidance documents has been graded, and the value of what they tell us to do in these situations is also graded, just like any other guidance documents that you may not have seen yet in your therapeutics classes, but you will be seeing those, I promise.",
+   "t": "The data that they used to write these guidance documents has been graded, and the value of what they tell us to do in these situations is also graded.",
    "date": "2026-10-14",
-   "verbatim": "The data that they used to write these guidance documents has been like graded, and the value of what they tell us to do in these situations is also graded just like any other guidance documents that you may not have seen yet in your therapeutics classes, but you will be seeing those, I promise."
+   "verbatim": "The data that they used to write these guidance documents has been like graded, and the value of what they tell us to do in these situations is also graded"
   },
   {
    "t": "Only a few drugs are out there that have these documents written, but these are pretty nasty drugs.",
@@ -161,24 +156,24 @@
    "verbatim": "What they published in 2005 is still what they follow"
   },
   {
-   "t": "I want you to know those time frames, OK, which drug formulation is OK at this time frame",
+   "t": "I want you to know those time frames ... which drug formulation is OK at this time frame",
    "date": "2026-10-19",
-   "verbatim": "I want you to know those time frames, OK, which drug formulation is OK at this time frame"
+   "verbatim": "I want you to know those time frames ... which drug formulation is OK at this time frame"
   },
   {
-   "t": "Also, you need to know you don't make them barf at home, it's too dangerous",
+   "t": "You need to know you don't make them barf at home, it's too dangerous",
    "date": "2026-10-19",
-   "verbatim": "Also, you need to know you don't make them barf at home, it's too dangerous"
+   "verbatim": "you need to know you don't make them barf at home, it's too dangerous"
   },
   {
-   "t": "18 hours for your uh calcium channel blockers, but 8 hours for your beta blockers, you are still within the window that that clump of tablets could break apart",
+   "t": "18 hours for your ... calcium channel blockers, but 8 hours for your beta blockers, you are still within the window that that clump of tablets could break apart",
    "date": "2026-10-19",
-   "verbatim": "18 hours for your uh calcium channel blockers, but 8 hours for your beta blockers, you are still within the window that that clump of tablets could break apart"
+   "verbatim": "18 hours for your ... calcium channel blockers, but 8 hours for your beta blockers, you are still within the window that that clump of tablets could break apart"
   },
   {
-   "t": "It's the clumping of the tablets is the biggest issue, OK.",
+   "t": "It's the clumping of the tablets is the biggest issue.",
    "date": "2026-10-19",
-   "verbatim": "It's the clumping of the tablets is the biggest issue, OK."
+   "verbatim": "It's the clumping of the tablets is the biggest issue"
   }
  ],
  "quotes_note": "Quotes lightly edited for reading: filler words removed and transcription errors corrected; the verbatim transcript text is kept beside each quote.",
