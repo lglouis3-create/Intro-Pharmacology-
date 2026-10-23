@@ -168,3 +168,8 @@ See `## Conflicts / uncertain` in notes/L01.md, L02.md and L03.md. The ones that
   guide_walk.js; slides rendered from the user's Drive deck copies (her ink is flattened in) to exam1-drill/slides/
   (152 JPEG, 14.6 MB); classmate copies excluded. Player in app.js (gwBars/gwOpen/gwPlay; GW_CLIPS from audio/gw-*.mp3).
   Not recorded yet: device voice until the user approves about 98,000 credits (about $17.82 at the 10/23 rate).
+- 10/23 (walkthrough teaching review): learning reviewer (scratchpad gw/learning.md) applied by gw/apply_learning.py,
+  25 parts changed or added, rechecked (gw/verify2.json, 8 fixes applied). Now 192 parts, 101,811 characters. Player:
+  "table" field (guide table index, validated in gen_walk.py), reading preview (gwReading, rd-<id>.mp3 summary),
+  resume (<ns>:gw-pos), K/Space/arrows, aria-live part, phone order and 44 px targets. Recording queue rec2/queue.json
+  (ids gw-<section>-<part>), recorders write rec2/done_[abc].json.
