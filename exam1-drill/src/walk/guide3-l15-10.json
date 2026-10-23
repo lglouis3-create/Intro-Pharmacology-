@@ -1,0 +1,31 @@
+{
+ "id": "guide3-l15-10",
+ "title": "Evidence-based guidelines for overdoses",
+ "segs": [
+  {
+   "text": "Section twenty-four. Evidence-based guidelines for overdoses. For a short list of compounds, expert panels have written Evidence-Based Consensus Guidelines for Out-of-Hospital Management. They cover what to do when someone is found after an overdose, before any hospital is involved, and who must be sent in. Medications on the list include acetaminophen, beta blockers, calcium channel blockers, iron, salicylate and tricyclic antidepressants. Three are not medications. Elemental mercury, ethylene glycol, and long-acting anticoagulant rodenticides. Ethylene glycol is on the list even though it is not a drug.",
+   "slide": "treat:30",
+   "reading": null
+  },
+  {
+   "text": "Overdoses cannot be studied in clinical trials, because a trial of deliberate overdose would not be ethical. Animals are used very rarely, only to find out whether a treatment really works. Instead, clinicians, pharmacists and physicians write up the overdoses they treat and publish them as case reports or case series. The experts who wrote the guidelines pulled all of these and evaluated every one.",
+   "slide": "treat:31",
+   "reading": null
+  },
+  {
+   "text": "She said, they rank the data that they have to create these documents, and they rank the strength of the recommendations they make in these documents. That grading is what makes them evidence based, without any trial. Case reports and case series count as level four evidence, and expert opinion as level five. In the calcium channel blocker guideline, all seven recommendations are grade D. Both documents were published in two thousand five in Clinical Toxicology and are still followed.",
+   "slide": "treat:31",
+   "reading": "aapcc-ccb"
+  },
+  {
+   "text": "The guidelines were written for poison center staff taking calls about patients still at home. So they are about triage, who must go to the emergency department and who can stay home. Each document answers the same questions. There is no vomiting at home, and activated charcoal is for the hospital, with transport not delayed to give it. For a patient who is asymptomatic when found, there is a time window, by formulation, inside which the patient goes to the hospital. After it, home care with poison center follow-up is reasonable. They also cover symptomatic patients, ambulance transport, follow-up, suspected self-harm, and dose thresholds for referral.",
+   "slide": "treat:31",
+   "reading": "aapcc-bb"
+  },
+  {
+   "text": "She named two contrasts between the beta blocker and calcium channel blocker documents. One is the drug class itself, even though both are cardiac drugs. The other is immediate-release versus extended-release tablets. Extended-release tablets get different windows because they can form bezoars that break apart at unpredictable times, so the time of absorption cannot be known.",
+   "slide": "treat:31",
+   "reading": "aapcc-bb"
+  }
+ ]
+}

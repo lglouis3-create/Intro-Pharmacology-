@@ -1,0 +1,36 @@
+{
+ "id": "guide3-l16-6",
+ "title": "Pharmacological treatment in four categories",
+ "segs": [
+  {
+   "text": "Section thirty. Pharmacological treatment. The pharmacodynamic way to treat a poisoning is to counteract what the poison does. You give a drug with the opposite pharmacological action, or something that goes around a metabolic pathway the poison has blocked. The four categories are a receptor antagonist, a receptor agonist, removal of the poison from the active site, and a bypass of an inhibited pathway. Each category is defined by what the poison does at its target and what the treatment does about it.",
+   "slide": "treat:22",
+   "reading": null
+  },
+  {
+   "text": "When the poison acts as an agonist, the treatment is a receptor antagonist. Naloxone is an antagonist at the opioid receptor and treats opioid overdose. Flumazenil is an antagonist at the GABA A benzodiazepine receptor and treats benzodiazepine overdose. She slipped while lecturing, then settled it. She said, the benzos are the overdose, flumazenil is your antidote, and your treatment is the antagonist. Her key adds that flumazenil can cause withdrawal in a benzodiazepine dependent patient, and naloxone can trigger withdrawal in chronic opioid users.",
+   "slide": "treat:23",
+   "reading": null
+  },
+  {
+   "text": "Atropine is the third antagonist example. Organophosphate pesticides inhibit acetylcholinesterase, so acetylcholine builds up in the synaptic cleft and causes cholinergic excess. Atropine antagonizes acetylcholine at muscarinic receptors, blocking the receptors the excess acetylcholine is over stimulating. Organophosphates also have a second treatment in a different category, pralidoxime, and soldiers' field kits carry both mixed in one.",
+   "slide": "treat:24",
+   "reading": null
+  },
+  {
+   "text": "When the poison acts as an antagonist, the treatment acts as an agonist. Belladonna alkaloids, as in jimsonweed, cause anticholinergic effects such as dilated pupils. Physostigmine blocks acetylcholinesterase, so acetylcholine increases, and its net effect is that of a receptor agonist, even though it is an enzyme inhibitor. Atropine is the antagonist, for cholinergic excess. Physostigmine is the agonist category treatment, for anticholinergic poisoning.",
+   "slide": "treat:25",
+   "reading": null
+  },
+  {
+   "text": "The third category removes the poison from the active site of an enzyme or protein. For cyanide, methemoglobin made by amyl nitrite pulls cyanide off cytochrome c oxidase onto itself. For organophosphates, pralidoxime pulls the organophosphate off acetylcholinesterase onto itself, restoring the enzyme, and the complex is eliminated. Pralidoxime sometimes fails because of aging. Some organophosphates, after binding acetylcholinesterase, lose part of their phosphate group. The aged organophosphate is bound permanently, and pralidoxime can no longer pull it off. Whether a given organophosphate ages depends on its chemical structure.",
+   "slide": "treat:26",
+   "reading": null
+  },
+  {
+   "text": "The fourth category bypasses an inhibited pathway. Vitamin K dependent carboxylase activates some coagulation factors by carboxylating them, using active vitamin K as a cofactor. Used vitamin K becomes an inactive epoxide, and epoxide reductase regenerates the active form. Warfarin inhibits epoxide reductase, not the carboxylase, so there is less active vitamin K and fewer active coagulation factors. Giving vitamin K supplies the active form directly and goes around the blocked enzyme, so it is not an antagonist of warfarin. Over anticoagulation shows as bruising, gastrointestinal bleeds or hemorrhagic stroke.",
+   "slide": "treat:28",
+   "reading": null
+  }
+ ]
+}

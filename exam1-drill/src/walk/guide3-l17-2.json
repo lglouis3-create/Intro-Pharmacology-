@@ -1,0 +1,26 @@
+{
+ "id": "guide3-l17-2",
+ "title": "Pharmacogenetics versus pharmacogenomics, and why it matters now",
+ "segs": [
+  {
+   "text": "Section thirty four. Pharmacogenetics versus pharmacogenomics. The two terms differ in scope. Pharmacogenetics is the study of genetic causes of individual variations in drug response: one patient and their response to a drug. Pharmacogenomics more broadly involves genome-wide analysis of the genetic determinants of drug efficacy and toxicity. It covers populations as a whole, or comparisons between populations, and it includes genomics technologies such as gene therapy. She said, pharmacogenomics is a more global term. The two are used interchangeably, and the preferred term is pharmacogenomics.",
+   "slide": "pgx:8",
+   "reading": null
+  },
+  {
+   "text": "The slide definitions come from the American Association of Pharmaceutical Scientists Pharmacogenomics Focus Group. Why do organizations define terms at all? To get everyone on the same page. If agencies define genotypes or sample populations differently, the data get messy, and one country's agency cannot compare its data with another's. Shared definitions give better scientific communication.",
+   "slide": "pgx:8",
+   "reading": null
+  },
+  {
+   "text": "Two papers show the impact. MacKinnon and colleagues, two thousand twenty three, found that more than half the patients evaluated were prescribed medications where pharmacogenomics is important in their use. The trap is to say pharmacogenomics was used in half the patients. It was not evaluated. The study reviewed drugs, adverse effects and efficacy in medical records. Wondrasek and colleagues, two thousand twenty four, found that pharmacists feel pharmacogenomics is important but do not feel confident in their knowledge of it or their ability to use it. Pharmacy students are the best educated in it. Prescribers should know it too, but are not yet as well versed, because they do not spend as much time with drugs.",
+   "slide": "pgx:9",
+   "reading": null
+  },
+  {
+   "text": "When do you genotype? Often a side effect or a lack of efficacy prompts genotyping afterward, and that is acceptable when the side effect is not lethal. But if a drug can quickly cause a lethal side effect, you genotype before giving it. For some medications this is standard protocol, and not doing it could make you liable, because of how severe the toxicity can be. She said, it's better to genotype the patient, figure out what version of a gene they have before you give them that drug. Oncology uses pharmacogenomics all the time, and the central nervous system, cardiology and infectious disease use it increasingly.",
+   "slide": null,
+   "reading": null
+  }
+ ]
+}

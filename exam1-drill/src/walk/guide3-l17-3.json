@@ -1,0 +1,26 @@
+{
+ "id": "guide3-l17-3",
+ "title": "The four target areas and the two outcomes",
+ "segs": [
+  {
+   "text": "Section thirty five. The four target areas. Genetic variation affects drug response through four kinds of proteins. She said, metabolizing enzymes, transporters, drug targets, and then immunological targets. She added immune system targets the morning of the lecture, and the slide title was not updated from three. The answer is four. Metabolizing enzymes came first and are the best characterized. A patient with a low activity enzyme cannot clear the drug, so the blood concentration rises too high, and some patients died. Those reactions were the most apparent and the most dangerous, so they were explained first. The slide adds that these variants may have serious implications for narrow therapeutic index drugs.",
+   "slide": "pgx:10",
+   "reading": null
+  },
+  {
+   "text": "Transporters move drugs across cells in the gut, liver, brain and elsewhere. Her example is P glycoprotein, encoded by the gene A B C B one, an efflux transporter in the gut. It pumps a substrate drug back into the gut lumen, so less of an oral dose reaches the blood. Digoxin is a P glycoprotein substrate with a very narrow therapeutic index, and its dose assumes normal transporter activity. In a patient with a low activity variant, less digoxin is pumped back, more is absorbed, and bioavailability goes up. The trap says digoxin levels fall. They rise.",
+   "slide": "pgx:10",
+   "reading": null
+  },
+  {
+   "text": "Drug targets are where a drug acts: a receptor, or an enzyme the drug inhibits. If a receptor variant responds poorly, a drug acting on it works poorly. Her receptor example is a guidance document on beta adrenergic receptor variants. In oncology, if a patient's cancer does not express the protein a cancer drug binds, the drug has nothing to bind and will not work. This area is moving more slowly and has its biggest role now in oncology. The fourth area is immune system targets, the H L A antigens. Certain H L A variants make patients respond badly to certain drugs, and that list grows every year.",
+   "slide": "pgx:10",
+   "reading": null
+  },
+  {
+   "text": "The Pharm G K B figure sorts all of this into two arcs. The top arc is pharmacokinetics: enzymes and transporters change absorption, distribution, metabolism and excretion. Its usual outcome is toxicity, for example a less active enzyme leaving drug levels too high. The bottom arc is pharmacodynamics: the drug target changes the response. Its usual outcome is efficacy, for example a cancer without the drug's target protein. That scenario belongs in the efficacy bucket, not toxicity. She said, we always try to either prevent toxicity or ensure efficacy by using pharmacogenomics.",
+   "slide": "pgx:11",
+   "reading": null
+  }
+ ]
+}

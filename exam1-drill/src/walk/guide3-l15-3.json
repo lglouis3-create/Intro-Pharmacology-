@@ -1,0 +1,31 @@
+{
+ "id": "guide3-l15-3",
+ "title": "Hepatotoxicity and the kinds of liver injury",
+ "segs": [
+  {
+   "text": "Section seventeen. Hepatotoxicity, why the liver is susceptible, and the kinds of liver injury. Blood enters each lobe of the liver at its edges through the hepatic artery and the portal vein. It trickles along the cords of hepatocytes and drains out through the central vein. Bile ducts begin at the edges of the lobe. Anything swallowed travels in the portal circulation to the liver first, and that is the basis of the first-pass effect.",
+   "slide": "resp:32",
+   "reading": null
+  },
+  {
+   "text": "Her poll asked why the liver is so susceptible to drug toxicity. Four reasons are correct. It takes up and concentrates compounds from the blood. She said, its job is to take up and concentrate stuff out of the blood. It receives a large volume of blood through the portal circulation, so everything swallowed reaches it first. It does a lot of metabolism, so it can bioactivate compounds to hepatotoxic metabolites right where they do harm. And it has its own inflammatory cells, the Kupffer cells. The one wrong option was that it is a large organ. Size has nothing to do with it.",
+   "slide": "resp:33",
+   "reading": null
+  },
+  {
+   "text": "Kupffer cells are there to help. They clean up pathogens and dead or damaged cells. But when the liver tissue itself is damaged, their cleanup releases inflammatory cytokines, which call in more immune cells, and reactive oxygen species. So the inflammation keeps going and adds to the injury. The liver also tends to have idiosyncratic reactions, because it does most of the metabolism. A person with a rare genetic variant may form a hepatotoxic metabolite that most people do not. Once the genotype is known, the reaction is explained. Kidneys, lungs and the central nervous system do not show this pattern much.",
+   "slide": "resp:33",
+   "reading": null
+  },
+  {
+   "text": "The kinds of liver injury come from a Klaassen table. She requires the kinds of injury and the ability to explain them, not the drug lists. Hepatocyte death is death of the cells that do much of the metabolism, as with acetaminophen. Fatty liver, or steatosis, is fat building up in the liver. Canalicular cholestasis is blocked bile flow. The bile duct narrows because the cells lining it are damaged and inflamed. That is not the same as hepatocyte death. The table also lists bile duct damage, sinusoidal endothelial damage, inflammation, regeneration, fibrosis and cirrhosis, and liver cancers.",
+   "slide": "resp:34",
+   "reading": null
+  },
+  {
+   "text": "Most hepatotoxins cause one discrete kind of injury. Aflatoxin, made by molds on grains, causes only liver cancer. Ethanol is the exception. It appears under cell death, steatosis, inflammation, regeneration and fibrosis. She said, each compound is usually very discrete in the kind of hepatotoxicity it'll cause. Because of that, imaging and a liver biopsy that show the pattern of injury give a hint of what the patient was exposed to.",
+   "slide": "resp:34",
+   "reading": null
+  }
+ ]
+}

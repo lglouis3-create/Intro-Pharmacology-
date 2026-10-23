@@ -221,6 +221,7 @@ function leaveView() {
   if (TIO) { TIO.disconnect(); TIO = null; }
   if (typeof playStop === 'function') playStop();
   if (typeof scenesStop === 'function') scenesStop();
+  if (typeof gwStop === 'function') gwStop();
 }
 /* Open a view. Returns false when the learner stays in a running exam. `back` is set by the
    "Back to …" button: the exam then reopens on its result page, not on a new paper. */
@@ -2677,6 +2678,7 @@ function narrVoice() {
   return VOICES.find(v => /\b(Daniel|Aaron|Alex|David|Guy|Arthur|Fred|Rishi|Male)\b/i.test(v.name)) || VOICES.find(v => v.default) || VOICES[0] || null;
 }
 function narrStop() {
+  if (typeof GW !== 'undefined' && GW && !GW_SELF) gwStop();
   if (typeof QSAY !== 'undefined' && QSAY) qSayStop();
   const cur = NAR.cur; NAR.cur = null;
   if (cur) { clearTimeout(cur.t); cur.fig.classList.remove('speaking'); }
@@ -3009,7 +3011,7 @@ function expandFigs(html) {
 }
 function vGuide() {
   $('#view').innerHTML = `<div class="tablewrap">${examPage(typeof GUIDE_HTML === 'undefined' ? '' : GUIDE_HTML, 'guide')}</div>`;
-  fillImgs($('#view')); stackTables($('#view'));
+  fillImgs($('#view')); stackTables($('#view')); gwBars($('#view'));
   // previous / next at the foot of each section, within its exam group
   document.querySelectorAll('#view .exgroup, #view').forEach(g => {
     const secs = [...g.querySelectorAll(':scope section.guide[id]')].filter(s => s.parentElement === g || s.closest('.exgroup') === g);
@@ -3023,6 +3025,161 @@ function vGuide() {
   });
   document.querySelectorAll('.guidenav a, .gnav a').forEach(a => a.onclick = e => { const t = document.querySelector(a.getAttribute('href')); if (t) { e.preventDefault(); scrollToEl(t); } });
 }
+
+/* ---------- Guide walkthroughs: a spoken walk through each Exam 3 guide section, segment by segment, with the
+   transcript marked as it plays and the deck slide (or reading) the segment discusses beside it. A recorded clip
+   per segment (audio/gw-<section>-<i>.mp3) when there is one, else the device voice. ---------- */
+const SLIDE_BASE = () => /\/exam1-drill\//.test(location.pathname) ? 'slides/' : 'exam1-drill/slides/';
+const slideSrc = (d, n) => SLIDE_BASE() + d + '-' + String(n).padStart(2, '0') + '.jpg';
+const GW_CONT_KEY = COURSE.ns + ':gw-cont';
+const gwCont = () => (store.get(GW_CONT_KEY) || '1') === '1';
+const gwHas = id => typeof GUIDE_WALK !== 'undefined' && !!GUIDE_WALK[id];
+const gwRec = (id, i) => typeof GW_CLIPS !== 'undefined' && GW_CLIPS.includes(id + '-' + i);
+let GW = null;   // {id, i, playing, fell, t, sel: 'deck:n' shown}
+function gwBars(root) {
+  if (typeof GUIDE_WALK === 'undefined') return;
+  root.querySelectorAll('section.guide[id]').forEach(s => {
+    const w = GUIDE_WALK[s.id]; if (!w || s.querySelector(':scope > .gwbar')) return;
+    const rec = w.segs.every((x, i) => gwRec(s.id, i));
+    const bar = document.createElement('div'); bar.className = 'gwbar';
+    bar.innerHTML = `<button type="button" class="btn" data-gwopen="${esc(s.id)}" aria-expanded="false">🎧 Listen: walkthrough</button><span class="meta" style="margin:0">about ${w.mins} min · ${w.segs.length} parts · ${rec ? 'read by the narrator' : 'device voice'}</span>`;
+    const h = s.querySelector('h3'); if (h) h.insertAdjacentElement('afterend', bar); else s.prepend(bar);
+  });
+}
+function gwPanelHTML(id) {
+  const w = GUIDE_WALK[id];
+  const rates = [0.8, 1, 1.25, 1.5, 1.75, 2];
+  return `<div class="gwpanel" data-gwp="${esc(id)}">
+    <div class="row gwctl"><button type="button" class="chip" data-gwstep="-1" aria-label="Previous part">◂</button><button type="button" class="btn" data-gwplay>▶ Play</button><button type="button" class="chip" data-gwstep="1" aria-label="Next part">▸</button>
+      <span class="meta gwpos" style="margin:0">Part 1 of ${w.segs.length}</span>
+      <label class="meta" style="margin:0">Speed <select data-gwrate>${rates.map(r => `<option value="${r}"${r === NAR.rate ? ' selected' : ''}>${r}×</option>`).join('')}</select></label>
+      <label class="meta" style="margin:0"><input type="checkbox" data-gwcont${gwCont() ? ' checked' : ''}> Continue to the next section</label></div>
+    <div class="gwbarfill"><div></div></div>
+    <div class="gwbody"><figure class="gwslide"></figure><ol class="gwtx">${w.segs.map((x, i) => `<li data-gwi="${i}" tabindex="0">${esc(x.t)}</li>`).join('')}</ol></div></div>`;
+}
+// the slide (or reading) beside the transcript: the segment's own, else the last one an earlier segment named
+function gwShow(id, i, sel) {
+  const p = document.querySelector(`.gwpanel[data-gwp="${id}"]`); if (!p) return;
+  const w = GUIDE_WALK[id], segs = w.segs;
+  p.querySelectorAll('.gwtx li').forEach(li => li.classList.toggle('on', +li.dataset.gwi === i));
+  const li = p.querySelector(`.gwtx li[data-gwi="${i}"]`), ol = p.querySelector('.gwtx');
+  if (li && ol.scrollHeight > ol.clientHeight) ol.scrollTop = li.offsetTop - ol.offsetTop - 8;
+  p.querySelector('.gwpos').textContent = `Part ${i + 1} of ${segs.length}`;
+  let s = sel; if (!s) for (let k = i; k >= 0 && !s; k--) s = segs[k].s;
+  if (!s) s = (segs.find(x => x.s) || {}).s;
+  const rd = segs[i].r;
+  const f = p.querySelector('.gwslide');
+  let h = '';
+  if (s) {
+    const [d, n] = s.split(':'), dk = GW_DECKS[d], src = slideSrc(d, +n);
+    h += `<a href="${src}" target="_blank" rel="noopener" title="Open the slide full size"><img src="${src}" alt="${esc(dk.name)}, slide ${n}" loading="lazy" onerror="this.closest('figure').classList.add('noimg')"></a>
+      <figcaption class="row"><span class="meta" style="margin:0">${esc(dk.name)} · slide ${n} of ${dk.n}</span><span class="row" style="gap:4px;margin-left:auto"><button type="button" class="chip" data-gwslide="-1" ${+n > 1 ? '' : 'disabled'} aria-label="Previous slide">‹ Slide</button><button type="button" class="chip" data-gwslide="1" ${+n < dk.n ? '' : 'disabled'} aria-label="Next slide">Slide ›</button></span></figcaption>
+      <p class="meta gwnoimg">The slide images load on the class site.</p>`;
+  }
+  if (rd) { const r = (typeof READINGS !== 'undefined' ? READINGS : []).find(x => x.id === rd); h += `<p class="gwrd"><button type="button" class="chip" data-gwrd="${esc(rd)}">📄 Reading: ${esc(r ? (r.short || r.title) : rd)}</button></p>`; }
+  f.innerHTML = h; f.hidden = !h; f.dataset.sel = s || '';
+}
+function gwOpen(id, play) {
+  const s = document.getElementById(id), bar = s && s.querySelector(':scope > .gwbar'); if (!bar) return;
+  let p = s.querySelector('.gwpanel');
+  if (!p) { bar.insertAdjacentHTML('afterend', gwPanelHTML(id)); p = s.querySelector('.gwpanel'); bar.querySelector('[data-gwopen]').setAttribute('aria-expanded', 'true'); }
+  gwShow(id, GW && GW.id === id ? GW.i : 0);
+  if (play) gwPlay(id, GW && GW.id === id ? GW.i : 0);
+}
+function gwClose(id) {
+  if (GW && GW.id === id) gwStop();
+  const s = document.getElementById(id); if (!s) return;
+  const p = s.querySelector('.gwpanel'); if (p) p.remove();
+  const b = s.querySelector('[data-gwopen]'); if (b) b.setAttribute('aria-expanded', 'false');
+}
+function gwUI() {
+  document.querySelectorAll('.gwpanel').forEach(p => {
+    const on = GW && GW.id === p.dataset.gwp && GW.playing;
+    p.querySelector('[data-gwplay]').textContent = on ? '❚❚ Pause' : '▶ Play';
+    p.classList.toggle('playing', !!on);
+  });
+}
+function gwStop() {
+  const g = GW; if (!g) return; GW = null; clearTimeout(g.t);
+  if (NARR_AUDIO && g.audio) { NARR_AUDIO.onended = NARR_AUDIO.onerror = NARR_AUDIO.ontimeupdate = NARR_AUDIO.onloadedmetadata = null; NARR_AUDIO.pause(); }
+  if (narrCan() && g.speaking) speechSynthesis.cancel();
+  gwUI();
+}
+function gwPause() {
+  if (!GW || !GW.playing) return; GW.playing = false; clearTimeout(GW.t);
+  if (GW.audio && NARR_AUDIO) NARR_AUDIO.pause();
+  if (GW.speaking && narrCan()) { speechSynthesis.cancel(); GW.speaking = false; }   // the device voice starts the part again on Play
+  gwUI();
+}
+function gwPlay(id, i) {
+  const w = GUIDE_WALK[id]; if (!w) return;
+  // resume a recorded part where it was paused
+  if (GW && GW.id === id && GW.i === i && !GW.playing && GW.audio && NARR_AUDIO && NARR_AUDIO.src && !NARR_AUDIO.ended && NARR_AUDIO.currentTime > 0) {
+    GW.playing = true; NARR_AUDIO.playbackRate = NAR.rate; NARR_AUDIO.play().catch(() => {}); gwUI(); return;
+  }
+  sayStop(); GW_SELF = true; narrStop(); GW_SELF = false; if (typeof rdStop === 'function') rdStop(); if (typeof playStop === 'function') playStop();
+  if (GW) { clearTimeout(GW.t); if (narrCan()) speechSynthesis.cancel(); }
+  const cur = GW = {id, i, playing: true, t: null};
+  gwShow(id, i); gwUI(); gwMedia(id, i);
+  const seg = w.segs[i], fill = () => document.querySelector(`.gwpanel[data-gwp="${id}"] .gwbarfill div`);
+  const setFill = f => { const el = fill(); if (el) el.style.width = Math.round(100 * Math.min(1, (i + f) / w.segs.length)) + '%'; };
+  setFill(0);
+  const finish = () => { if (GW !== cur) return; clearTimeout(cur.t); cur.audio = cur.speaking = false; if (i + 1 < w.segs.length) gwPlay(id, i + 1); else gwEnd(id); };
+  const synth = () => {
+    if (!narrCan()) { cur.t = setTimeout(finish, (2000 + seg.t.split(/\s+/).length * 400) / NAR.rate); return; }
+    cur.speaking = true; const v = narrVoice(); let last = null;
+    saySents(seg.t).forEach(p0 => { const p = speakable(p0); if (!p.trim()) return; const u = new SpeechSynthesisUtterance(p.trim()); u.rate = NAR.rate; u.lang = 'en-US'; if (v) u.voice = v; last = u; speechSynthesis.speak(u); });
+    if (!last) return finish(); last.onend = () => { if (GW === cur && cur.playing) finish(); };
+    cur.t = setTimeout(() => { if (GW === cur && cur.playing) finish(); }, (4000 + seg.t.split(/\s+/).length * 520) / NAR.rate);
+  };
+  if (!gwRec(id, i)) return synth();
+  const a = NARR_AUDIO || (NARR_AUDIO = new Audio()); cur.audio = true;
+  a.onended = a.onerror = a.ontimeupdate = a.onloadedmetadata = null;
+  a.preload = 'auto'; a.src = NAR_BASE() + 'gw-' + id + '-' + i + '.mp3'; a.playbackRate = NAR.rate;
+  const fallback = () => { if (GW !== cur || cur.fell) return; cur.fell = true; cur.audio = false; synth(); };
+  a.onended = finish; a.onerror = fallback;
+  a.ontimeupdate = () => { if (GW === cur && isFinite(a.duration) && a.duration) setFill(a.currentTime / a.duration); };
+  a.play().catch(fallback);
+}
+// the last part ended: the next section with a walkthrough opens and plays, when "Continue" is ticked
+function gwEnd(id) {
+  gwStop(); const el = document.querySelector(`.gwpanel[data-gwp="${id}"] .gwbarfill div`); if (el) el.style.width = '100%';
+  if (!gwCont()) return;
+  const all = [...document.querySelectorAll('#view section.guide[id]')].filter(s => gwHas(s.id)), k = all.findIndex(s => s.id === id);
+  const nx = all[k + 1]; if (!nx) return;
+  gwClose(id); openTo(nx); gwOpen(nx.id, false); scrollToEl(nx); gwPlay(nx.id, 0);
+}
+// lock-screen and headset controls on phones
+function gwMedia(id, i) {
+  if (!('mediaSession' in navigator)) return;
+  try {
+    const w = GUIDE_WALK[id];
+    navigator.mediaSession.metadata = new MediaMetadata({title: w.title, artist: COURSE.short + ' guide walkthrough', album: 'Part ' + (i + 1) + ' of ' + w.segs.length});
+    navigator.mediaSession.setActionHandler('play', () => { if (GW) gwPlay(GW.id, GW.i); });
+    navigator.mediaSession.setActionHandler('pause', () => gwPause());
+    navigator.mediaSession.setActionHandler('nexttrack', () => { if (GW && GW.i + 1 < GUIDE_WALK[GW.id].segs.length) gwPlay(GW.id, GW.i + 1); });
+    navigator.mediaSession.setActionHandler('previoustrack', () => { if (GW) gwPlay(GW.id, Math.max(0, GW.i - 1)); });
+  } catch (e) {}
+}
+let GW_SELF = false;
+document.addEventListener('click', e => {
+  const o = e.target.closest('[data-gwopen]');
+  if (o) { const id = o.dataset.gwopen; if (document.querySelector(`.gwpanel[data-gwp="${id}"]`)) gwClose(id); else gwOpen(id, true); return; }
+  const p = e.target.closest('.gwpanel'); if (!p) return;
+  const id = p.dataset.gwp, at = GW && GW.id === id ? GW.i : +(p.querySelector('.gwtx li.on') || {dataset: {gwi: 0}}).dataset.gwi;
+  if (e.target.closest('[data-gwplay]')) { if (GW && GW.id === id && GW.playing) gwPause(); else gwPlay(id, at); return; }
+  const st = e.target.closest('[data-gwstep]');
+  if (st) { const n = GUIDE_WALK[id].segs.length, to = Math.max(0, Math.min(n - 1, at + +st.dataset.gwstep)); if (GW && GW.id === id && GW.playing) gwPlay(id, to); else { gwStop(); gwShow(id, to); GW = {id, i: to, playing: false}; } return; }
+  const li = e.target.closest('.gwtx li'); if (li) { gwPlay(id, +li.dataset.gwi); return; }
+  const sl = e.target.closest('[data-gwslide]');
+  if (sl) { const f = p.querySelector('.gwslide'), [d, n] = (f.dataset.sel || '').split(':'); if (d) { const to = +n + +sl.dataset.gwslide; if (to >= 1 && to <= GW_DECKS[d].n) gwShow(id, at, d + ':' + to); } return; }
+  const rd = e.target.closest('[data-gwrd]'); if (rd) { gwPause(); jump('readings', 'rd-' + rd.dataset.gwrd); }
+});
+document.addEventListener('keydown', e => { const li = e.target.closest && e.target.closest('.gwtx li'); if (li && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); li.click(); } });
+document.addEventListener('change', e => {
+  if (e.target.matches('[data-gwrate]')) { NAR.rate = +e.target.value; store.set(COURSE.ns + ':narr-rate', String(NAR.rate)); if (GW && GW.audio && NARR_AUDIO) NARR_AUDIO.playbackRate = NAR.rate; document.querySelectorAll('[data-gwrate]').forEach(s => { s.value = String(NAR.rate); }); }
+  if (e.target.matches('[data-gwcont]')) { store.set(GW_CONT_KEY, e.target.checked ? '1' : '0'); document.querySelectorAll('[data-gwcont]').forEach(c => { c.checked = e.target.checked; }); }
+});
 
 /* ---------- Readings: what each assigned reading covers, what she used from it in class, and the drill on it ---------- */
 const RD_STATUS = {discussed: 'Discussed in class', background: 'Behind her slides', assigned: 'Assigned; not discussed in class', upcoming: 'Assigned for a coming lecture', his: 'His chapter'};

@@ -1,0 +1,41 @@
+{
+ "id": "guide3-l14-4",
+ "title": "General concepts of undesired effects",
+ "segs": [
+  {
+   "text": "Section twelve. General concepts of undesired effects, ways to describe any toxic effect before an organ is named. The first pair is immediate versus delayed. Immediate effects occur rapidly after a single administration. Delayed effects occur after some time has passed. Diethylstilbestrol, called D E S, is delayed by years, with vaginal cancer in the daughters as young adults. Some organophosphates, such as triorthocresylphosphate, are delayed by days, causing neuropathy by affecting other enzymes in the nerves. Immediate effects can also occur with each dose in a chronic exposure, as with the benzene worker.",
+   "slide": "resp:4",
+   "reading": null
+  },
+  {
+   "text": "Whether an injury is reversible depends on the ability of the tissue to regenerate. Liver cells can divide and replace damaged tissue, so a mild liver injury can heal, though severe chronic injury may not. The differentiated cells of the central nervous system cannot divide, so most nerve injuries are irreversible. Cancer is irreversible even when treated, because surgery, radiation or chemotherapy kill the cancerous cells, but the cells never turn back into normal ones. A birth defect is irreversible because the limb or organ formed wrongly during development.",
+   "slide": "resp:5",
+   "reading": null
+  },
+  {
+   "text": "Local effects occur at the site of first contact. Systemic effects require absorption at the site of entry and distribution to the site of action. She said, most toxins, they cause systemic effects unless they are highly reactive. Highly reactive compounds such as chlorine gas or acid react where they first touch, in the lungs, eyes and nasal mucosa, or on the skin. Tetraethyl lead does both. A couple of drops on a toxicologist's glove burned her hand, were absorbed through the burned skin, reached her central nervous system and killed her days later.",
+   "slide": "resp:6",
+   "reading": null
+  },
+  {
+   "text": "An acid burn can cause an indirect systemic effect. A large acid burn behaves like a thermal burn. The skin cannot hold fluid in, blood volume is disturbed, and serious kidney problems can follow as the body fights to keep fluid in. The acid itself never had to be absorbed. So a burned patient is assessed systemically, not only at the skin.",
+   "slide": "resp:6",
+   "reading": null
+  },
+  {
+   "text": "People are exposed to many compounds at once, through the workplace, drugs, diet and hobbies. One compound can change the absorption, protein binding, biotransformation or excretion of another. The combined response can be additive, synergistic, potentiation or antagonism. Each compound may have a known target and effect, but these interactions are hard to measure, so a risk assessor at a site with many contaminants cannot easily put one number on the risk.",
+   "slide": "resp:7",
+   "reading": null
+  },
+  {
+   "text": "Tolerance is decreased responsiveness to a toxic effect resulting from prior exposure to the chemical or a structurally related compound. There are two mechanisms. Dispositional tolerance means less compound reaches the site. Carbon tetrachloride is metabolized to something more harmful, but repeated exposure inhibits those enzymes, so less of the harmful metabolite forms. Cadmium induces the metal-carrying protein that binds it, which helps the kidneys eliminate it. So carbon tetrachloride inhibits, and cadmium induces. The second mechanism is reduced responsiveness, a pharmacodynamic change. The receptors are down-regulated, so the same dose gives less effect.",
+   "slide": "resp:8",
+   "reading": null
+  },
+  {
+   "text": "Variations in effect come in three kinds. Selective toxicity means lethal to one species but not another. Species differences means both species respond, but differently in kind or amount, which limits extrapolation between species. Arsenic in drinking water causes skin cancer on the palms of the hands and feet in humans, but no animal tested reproduces it. Had only animals been tested, arsenic in water would have been judged safe for humans. Individual differences within one species come from genetics, which pharmacogenomics studies.",
+   "slide": "resp:9",
+   "reading": null
+  }
+ ]
+}

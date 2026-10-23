@@ -1,0 +1,31 @@
+{
+ "id": "guide3-l16-8",
+ "title": "The poisoning treatment table",
+ "segs": [
+  {
+   "text": "Section thirty two. The poisoning treatment table. The lecture taught the general ways to treat a poisoning, and the table applies them to specific overdoses. For each one it lists the signs of acute poisoning and how it is diagnosed, the antidote, how the antidote works, and a special consideration.",
+   "slide": "treat:34",
+   "reading": null
+  },
+  {
+   "text": "Each antidote fits a lecture category. Fomepizole and ethanol inhibit bioactivation of the toxic alcohols, and fomepizole is the stronger alcohol dehydrogenase inhibitor with fewer adverse effects. N acetylcysteine enhances metabolism by replenishing glutathione. It loses effectiveness about eight hours after an acetaminophen overdose, and you still give it. Sodium bicarbonate for salicylates enhances elimination. Deferoxamine for iron and the digoxin antibody fragments inactivate the poison. Flumazenil, naloxone and atropine are antagonists, and pralidoxime removes the organophosphate from acetylcholinesterase.",
+   "slide": "treat:34",
+   "reading": null
+  },
+  {
+   "text": "Beta blockers and calcium channel blockers share one antidote list. Both cause hypotension and bradycardia, so the treatments aim at heart rate, calcium entry, contractility and blood pressure. Beta blockers decrease cyclic A M P production, and glucagon increases cardiac cyclic A M P to raise the heart rate. Calcium drives calcium into cardiac cells, and vasopressors raise blood pressure. High dose insulin, called H I E T, has an inotropic effect whose mechanism is not understood, and it was Quiz three's answer for an extended release calcium channel blocker overdose. A beta blocker overdose may cause altered mental status, while a calcium channel blocker patient is often alert.",
+   "slide": "treat:34",
+   "reading": "aapcc-bb"
+  },
+  {
+   "text": "Sodium bicarbonate has two different jobs in the table. For salicylates it is renal ion trapping. For tricyclic antidepressants it treats the prolonged Q R S interval by counteracting inhibition of cardiac sodium channels. Salicylates cause hyperventilation and respiratory alkalosis, then metabolic acidosis, with hyperthermia, confusion and seizures. Sulfonylurea and meglitinide overdoses cause hypoglycemia, and octreotide inhibits insulin release from the pancreas.",
+   "slide": "treat:34",
+   "reading": null
+  },
+  {
+   "text": "Digoxin overdose brings bradycardia, arrhythmias, elevated serum potassium, nausea and vomiting. After the antibody fragments are given, serum digoxin is unhelpful, because total digoxin, free plus bound, rises. Iron has a timeline. In the first one to six hours come vomiting, abdominal pain and diarrhea. From six to twenty four hours come lethargy, coma, seizures, bloody vomiting and diarrhea, and shock. At two to five days, liver dysfunction and failure are possible. Deferoxamine chelates the circulating ferric iron.",
+   "slide": "treat:34",
+   "reading": null
+  }
+ ]
+}

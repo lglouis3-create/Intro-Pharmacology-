@@ -1,0 +1,26 @@
+{
+ "id": "guide3-2",
+ "title": "Five principles of toxicology",
+ "segs": [
+  {
+   "text": "Section two. The five principles of toxicology. Toxicologists look at any harmful exposure through five principles, and each one is a question. First, source: where does the noxious substance come from? Second, exposure: how is the person or animal exposed? Third, A D M E T: what does the body do with it? Fourth, dose: is the amount high enough to cause a problem? Fifth, target and mechanism of action: where in the body does it act, and how does it cause harm? Her lecture deck and her key for the reading are both organized by these five, and her practice quiz asked for the list as a short answer.",
+   "slide": "tox:9",
+   "reading": null
+  },
+  {
+   "text": "The order follows the substance. It has to come from a source, then reach the body by some exposure. A D M E T then decides how much reaches each tissue and whether metabolism makes it more or less harmful. The dose decides whether that amount is enough to cause harm, and target and mechanism say where and how the harm happens. The principles also depend on each other. The route of exposure decides whether a drug passes through the liver first, which is metabolism, and the dose that reaches a target decides whether the target is harmed.",
+   "slide": "tox:9",
+   "reading": null
+  },
+  {
+   "text": "A D M E stands for absorption, distribution, metabolism and excretion. She once said elimination aloud while expanding it, but the word in her key is excretion. The T is added in a toxicology course and stands for toxicity, because the same four processes now matter for how they produce or prevent harm. Route, duration, single versus repeated exposure, and frequency are parts of the exposure principle, not separate principles.",
+   "slide": "tox:9",
+   "reading": null
+  },
+  {
+   "text": "The fifth principle is the same idea as a drug's mechanism of action, but for harm. She said, sometimes the target of something toxic is not the same target as its therapeutic target. That is why her practice quiz marks false the statement that the mechanism of a drug's toxicity is always the same as the mechanism of its efficacy. The fifth principle has two parts, target and mechanism of action. Target alone, or mechanism alone, is only half of it.",
+   "slide": "tox:28",
+   "reading": null
+  }
+ ]
+}

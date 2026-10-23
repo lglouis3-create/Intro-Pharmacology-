@@ -1,0 +1,31 @@
+{
+ "id": "guide3-l16-4",
+ "title": "Enhancing elimination: ion trapping and extracorporeal methods",
+ "segs": [
+  {
+   "text": "Section twenty eight. Enhancing elimination. Many poisons are filtered at the glomerulus into the forming urine and then reabsorbed back into the blood. She said, so you continue the poisoning by the reabsorption of that compound from the forming urine into the systemic circulation. Enhancing renal elimination means stopping that reabsorption, so the poison leaves in the urine. The common way to do that is ion trapping.",
+   "slide": "treat:15",
+   "reading": null
+  },
+  {
+   "text": "In ion trapping, sodium bicarbonate is given intravenously. Bicarbonate makes the urine more basic, raising its p H. A weakly acidic poison, uncharged at normal urine p H, becomes negatively charged in basic urine. Most of the transporters that reabsorb solutes from the urine back into the blood move uncharged molecules, so the charged acid cannot be reabsorbed and is excreted. It is used for weak acids, salicylates and barbiturates such as phenobarbital, and is very effective for salicylates and phenobarbital.",
+   "slide": "treat:15",
+   "reading": null
+  },
+  {
+   "text": "Ion trapping is not done for weak bases. Trapping a weak base would need acidic urine, and making the urine acidic would mean acidifying the patient's blood, which is dangerous. Cranberry juice acidifies urine, but not to a low enough p H and not fast enough. Bicarbonate also appears in a different role. Her table key gives it in a tricyclic antidepressant overdose for the widened Q R S interval, to counteract inhibition of cardiac sodium channels. For salicylates it is given for ion trapping.",
+   "slide": "treat:15",
+   "reading": null
+  },
+  {
+   "text": "When the kidneys cannot clear the poison well enough, the blood can be cleaned outside the body. Hemodialysis, hemofiltration and hemoperfusion artificially clear the toxin from the plasma. They are for very severe poisonings where other treatments are not working. Plasma exchange and exchange transfusion were only named, for patients who are really bad. Dialysis does not remove every poison, and whether it works depends on the chemistry of the poison.",
+   "slide": "treat:16",
+   "reading": null
+  },
+  {
+   "text": "These methods work only for toxins with a small volume of distribution. A large volume of distribution means the drug is not staying in the blood vessels. It is distributed and sequestered in places such as fat, muscle and bone. The machine can only clean the blood, so most of the drug stays out of reach and keeps returning to the blood, and removal would take a very long time.",
+   "slide": "treat:16",
+   "reading": null
+  }
+ ]
+}

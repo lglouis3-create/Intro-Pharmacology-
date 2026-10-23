@@ -1,0 +1,41 @@
+{
+ "id": "guide3-4",
+ "title": "Route, duration, repetition and frequency of exposure",
+ "segs": [
+  {
+   "text": "Section four. Exposure. The second principle asks how a person or animal is exposed. Four factors change the toxic response to the same substance: the route, how long the exposure lasts, whether it happens once or repeatedly, and, for repeated exposures, how often.",
+   "slide": "tox:11",
+   "reading": null
+  },
+  {
+   "text": "There are two route rankings, and they answer different questions. By how often people are exposed, the order is oral, then inhalation, then topical, then parenteral. By how effectively the route delivers a toxic agent, the order is intravenous, then inhalation, then oral, then dermal. So oral is the most common route, but intravenous is the most effective. In healthcare, parenteral exposure is much more common than in an occupational setting, through medications given by injection and through drug abuse.",
+   "slide": "tox:12",
+   "reading": null
+  },
+  {
+   "text": "The route can reduce or enhance toxicity because it changes metabolism. An oral dose goes to the liver before it reaches the rest of the body, and an intravenous dose does not. So if the liver turns a compound into something less toxic, equal doses make the oral route the less dangerous one. Formulation matters too. A handful of immediate-release beta blockers or calcium channel blockers is absorbed quickly. Extended-release tablets can clump together in the stomach and then release the drug all at once. Asked which handful is worse, she said, it depends.",
+   "slide": "tox:12",
+   "reading": null
+  },
+  {
+   "text": "Duration has four terms from animal studies. Acute is less than twenty four hours. Subacute is less than one month. Subchronic is one to three months. Chronic is more than three months, up to years. A common wrong answer gives one to three months for subacute; that range is subchronic. In animal studies the duration is set by the design. People often do not know they are being exposed, or for how long, such as a funny smell at work that started days or months ago. Toxicologists still sort human exposures by the same four categories, to relate the response to the duration.",
+   "slide": "tox:13",
+   "reading": null
+  },
+  {
+   "text": "The single versus repeated slide makes three points. First, one exposure may act differently from repeated exposure. One walk into a workplace leaking benzene gives a headache and sleepiness, but chronic low-dose exposure causes leukemia, because benzene is a carcinogen. Second, a fast-absorbing compound likely gives an immediate effect, but may also give a delayed one. Diethylstilbestrol, D E S, a strong estrogen given in the nineteen fifties to women at risk of miscarriage, gave the mothers some nausea. Their daughters, exposed in utero, developed a particular vaginal cancer in their twenties. Third, chronic exposure may produce an immediate effect after each exposure: if the benzene leak is never fixed, the worker gets the headache every time.",
+   "slide": "tox:14",
+   "reading": null
+  },
+  {
+   "text": "Frequency is taught with Figure two dash four from Casarett and Doull. Three compounds are given either as one large dose or as repeated doses, each one quarter of the single dose, so four doses add up to the single dose. When the next dose arrives before the last one is cleared, the concentration climbs. Compound A has the longest half-life and reaches the toxic zone, a blood concentration above two, by the third dose. B is in between and gets there at about the fourth dose, certainly by the fifth. C has the shortest half-life, is cleared between doses, and never reaches the toxic zone. For a medication, the dosing interval is stretched until the drug behaves like C.",
+   "slide": "tox:15",
+   "reading": "casarett-ch2"
+  },
+  {
+   "text": "C can still cause harm. Staying below the toxic blood concentration protects only against the effect on that graph. A patient can be allergic to C, and a small amount is enough. C can reach a different target site, it can act together with other drugs to give additive adverse effects, and an injection under or into the skin can damage the injection site. None of these depends on half-life. So her practice quiz marks true the statement that a compound cleared before the next exposure may still result in chronic adverse effects.",
+   "slide": "tox:15",
+   "reading": null
+  }
+ ]
+}

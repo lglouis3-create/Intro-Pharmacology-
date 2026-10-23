@@ -1,0 +1,31 @@
+{
+ "id": "guide3-l16-2",
+ "title": "Blood tests and toxidromes",
+ "segs": [
+  {
+   "text": "Section twenty six. Recognizing the poisoning. A poisoned patient often cannot or will not say what was taken. An unconscious patient cannot, and people who intended to hurt themselves often do not. So recognition runs in two steps. First, the group of signs and symptoms, called a toxidrome, suggests a drug class. Then, if the hospital laboratory can measure the suspected compound, a blood test confirms it. She said, other than that, sometimes it's just a guess. The toxidrome comes first because symptoms can be seen as soon as the patient arrives.",
+   "slide": null,
+   "reading": null
+  },
+  {
+   "text": "Emergency rooms test the blood for the common overdoses that can be detected there. These include acetaminophen, salicylates, iron, beta blockers, calcium channel blockers, opiates, and a few others. For methanol or ethylene glycol, the key indicator is a blood draw that looks for these alcohols. The patient may arrive unconscious or sedated.",
+   "slide": null,
+   "reading": null
+  },
+  {
+   "text": "The toxidrome table is Goodman and Gilman Table four dash seven. She showed it without walking through its rows, and Quiz three tested the opioid row. Each row follows from what the drug class does. Organophosphates inhibit acetylcholinesterase, so acetylcholine builds up. Her key lists acetylcholine excess, the SLUDGE signs, which are salivation, lacrimation, urination, defecation, gastric cramping and emesis, and the row shows small pupils. The row also lists somnolence or coma and fasciculation. Anticholinergic drugs such as diphenhydramine and atropine do the opposite to the pupils, which are large, with delirium, ileus and flushing.",
+   "slide": "treat:33",
+   "reading": null
+  },
+  {
+   "text": "Two pairs of rows look alike. Sympathomimetic drugs such as cocaine and amphetamine, and anticholinergic drugs, both raise heart rate, blood pressure, temperature and pupil size. Agitation with tremor and sweating points to sympathomimetic. Delirium with ileus and flushing points to anticholinergic. Opioids such as heroin and oxycodone, and sedative hypnotics such as benzodiazepines and barbiturates, both cause somnolence or coma and slow breathing. Small pupils and a slow heart point to opioid. Low blood pressure without a pupil change points to sedative hypnotic.",
+   "slide": "treat:33",
+   "reading": null
+  },
+  {
+   "text": "On Quiz three she asked which symptom is not part of the opioid toxidrome. The answer was increased pupil size. Decreased heart rate, decreased breathing rate and somnolence are part of it, and the pupils are small. This is the picture naloxone reverses. Salicylates such as aspirin bring confusion with raised heart rate, breathing rate and temperature, which her key calls hyperventilation and hyperthermia. A calcium channel blocker overdose such as verapamil lowers heart rate and blood pressure, but her key says the patient is often alert. A beta blocker overdose may alter mental status, which helps tell the two apart.",
+   "slide": "treat:33",
+   "reading": null
+  }
+ ]
+}

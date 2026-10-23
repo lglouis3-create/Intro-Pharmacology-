@@ -1,0 +1,31 @@
+{
+ "id": "guide3-l17-5",
+ "title": "Allele, genotype, phenotype and functional significance",
+ "segs": [
+  {
+   "text": "Section thirty seven. Allele, genotype, phenotype and functional significance. Humans are diploid: two copies of every chromosome, so two copies of each gene, one from the biological mother and one from the father. Each copy is an allele, the variant or wild type form of a gene at a particular location on a chromosome.",
+   "slide": "pgx:15",
+   "reading": null
+  },
+  {
+   "text": "When the two alleles at a locus are the same, the person is homozygous. In the figure, capital P capital P and lowercase a lowercase a are homozygous. When they differ, the person is heterozygous, as with capital B and lowercase b at the third locus. Dominant and recessive appear in the figure, but they are not used in pharmacogenomics. Gene dose replaces them later in the course.",
+   "slide": "pgx:16",
+   "reading": null
+  },
+  {
+   "text": "The two alleles a person has for a gene are the genotype. You write the gene, then both alleles: C Y P two C nineteen star two, star two, which is homozygous for the star two allele. The phenotype is any observable characteristic, and it results from the expression of genes. C Y P two C nineteen star two has no activity, so a person with two star two alleles has no C Y P two C nineteen activity and cannot metabolize drugs through that enzyme. The trap swaps them: the allele pair is the genotype, and no enzyme activity is the phenotype.",
+   "slide": "pgx:17",
+   "reading": null
+  },
+  {
+   "text": "Functional significance is what a variant does to how the gene's product works, whether a protein, an enzyme or a transporter. It is not how often the variant occurs; that is frequency. She said, phenotypes are driven by the genotype. But genotype drives phenotype only through the protein. If we know what a variant does to the protein's function, we can predict the drug response phenotype and decide whether a patient should get a drug, or whether the dose should be reduced. If we do not know it, we cannot explain the phenotype. For C Y P two C nineteen star two, the relationship is really tight.",
+   "slide": "pgx:17",
+   "reading": null
+  },
+  {
+   "text": "Three things blur the link between genotype and phenotype. First, many polymorphisms in a single gene: with variants at several places, it is hard to tell which one causes the phenotype. Second, most traits are multigenic, not monogenic. A few diseases, such as sickle cell and Huntington's chorea, come from one variant, but most, such as cardiovascular disease and diabetes, come from several. Drug response can also be multigenic, with each gene's variant carrying its own weight. Third, environment: diet, sleep, stress and epigenetic factors such as D N A methylation change how genes are expressed, and expression changes the effect of a variant.",
+   "slide": "pgx:18",
+   "reading": null
+  }
+ ]
+}

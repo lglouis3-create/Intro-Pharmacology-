@@ -1,0 +1,31 @@
+{
+ "id": "guide3-l16-1",
+ "title": "Preventing absorption and inhibiting bioactivation",
+ "segs": [
+  {
+   "text": "Section twenty five. Preventing absorption, and inhibiting bioactivation. By patient outcome data, activated charcoal is probably the best of the methods that prevent absorption, though it does not bind everything and carries its own risk. A single dose works up to two hours after ingestion, and her Quiz three key says less than sixty minutes. She said, you need to get that charcoal in their stomach and small intestine while the poison is still in that area of the body. Multiple doses are for a poison that charcoal binds and that undergoes enterohepatic recirculation. Each new dose catches drug that the bile puts back into the small intestine.",
+   "slide": "treat:8",
+   "reading": null
+  },
+  {
+   "text": "Bioactivation is metabolism that turns what was ingested into something more toxic. If the harm comes from the metabolites, and the first enzyme of the pathway can be blocked, blocking that enzyme keeps the poison in its less harmful parent form. Methanol and ethylene glycol are the classic examples, and there are not many others. Both are first metabolized by alcohol dehydrogenase, so one antidote, ethanol or fomepizole, treats both. On Quiz three, fomepizole is classed as inhibition of bioactivation, a toxicokinetic treatment. It blocks the step that makes the toxic metabolite. It does not enhance detoxification or elimination.",
+   "slide": "treat:10",
+   "reading": null
+  },
+  {
+   "text": "Methanol goes through alcohol dehydrogenase to formaldehyde, and formaldehyde dehydrogenase turns that into formic acid. Formic acid is the toxic product, not formaldehyde. She said, formic acid will cause damage, especially to the eyes, to the retina of the eyes. Sight is lost. Her key lists anion gap metabolic acidosis and ocular toxicity. Because the damage comes from formic acid and not from methanol itself, preventing the metabolism prevents the blindness. Most people poisoned this way have an alcohol use disorder and cannot get ethanol. Methanol gives the same effect as ethanol, so it is drunk when ethanol is not available.",
+   "slide": "treat:11",
+   "reading": null
+  },
+  {
+   "text": "Ethylene glycol goes through alcohol dehydrogenase to glycoaldehyde, then aldehyde dehydrogenase to glycolic acid, and after several more steps it ends as oxalic acid. Oxalic acid precipitates as microcrystals in the small vessels, blocks blood flow, and damages organs. She named the liver and kidneys, and her key says renal toxicity is common. Eye damage belongs to methanol, not to ethylene glycol. Ethylene glycol is antifreeze. It smells and tastes sweet and does not burn going down, so pets and small children drink it. The pink or blue color is a dye.",
+   "slide": "treat:11",
+   "reading": null
+  },
+  {
+   "text": "Ethanol and fomepizole both block alcohol dehydrogenase, in different ways. Ethanol outcompetes methanol or ethylene glycol for the enzyme, and emergency rooms once kept a bottle of Everclear and gave a shot or two. Fomepizole binds to the enzyme and inhibits it, with better control of the dosing. Her key says fomepizole is the better choice, because it is a stronger alcohol dehydrogenase inhibitor with fewer adverse effects than ethanol.",
+   "slide": "treat:11",
+   "reading": null
+  }
+ ]
+}

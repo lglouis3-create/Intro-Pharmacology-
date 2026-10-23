@@ -1,0 +1,26 @@
+{
+ "id": "guide3-l15-8",
+ "title": "How pharmacodynamics change in overdose",
+ "segs": [
+  {
+   "text": "Section twenty-two. How pharmacodynamics change in overdose. At overdose doses a drug can do things it does not do at therapeutic doses. The slide makes three points. Consider the therapeutic index and the overlap of the therapeutic and toxic response curves. At least part of the toxic effect may be different from the therapeutic action. And beta blockers or calcium channel blockers alter blood flow to the kidney and liver as well as cardiac function.",
+   "slide": "treat:5",
+   "reading": null
+  },
+  {
+   "text": "The Katzung figure shows drugs A and B. At the therapeutic dose both cause sedation, at the same dose. At higher doses, drug A rises in a straight line through hypnosis and anesthesia to coma. Drug B rises only to anesthesia and levels off there. So the dose of B can be increased without the unwanted effect, and A is the more dangerous drug in overdose. Nothing at the therapeutic dose tells them apart. Having the same therapeutic dose does not mean equal safety. She said, in overdose, their outcomes are different.",
+   "slide": "treat:5",
+   "reading": null
+  },
+  {
+   "text": "Tricyclic antidepressants, the T C As, show a toxic effect that differs from the therapeutic action. Seizures and increased muscle activity generate heat, and sweating would release it. At toxic doses, T C As reduce sweating at the same time as they raise muscle activity and seizure risk. She said, it's a double whammy in an overdose situation. She noted that saving a patient in a T C A overdose is rare.",
+   "slide": "treat:5",
+   "reading": null
+  },
+  {
+   "text": "In a beta blocker or calcium channel blocker overdose, the excess cardiac effect lowers blood flow to the liver and kidneys. Those are the organs that eliminate the drug, so clearance falls and the level stays high. She said, reducing blood flow to the kidneys and the liver, you're reducing the body's ability to eliminate the drug. Here a pharmacodynamic change causes a kinetic one, so this overdose is not purely a cardiac problem.",
+   "slide": "treat:5",
+   "reading": null
+  }
+ ]
+}
