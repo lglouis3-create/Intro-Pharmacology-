@@ -1615,91 +1615,106 @@ const READINGS = [
     "point": "Ethanol or, preferably, fomepizole is given to inhibit alcohol dehydrogenase (ADH) in methanol, ethylene glycol and diethylene glycol poisoning; the parent compounds are relatively nontoxic and ADH metabolizes them to the toxic metabolites. In the transcript she says 'omeprazole' where she means fomepizole.",
     "chapter_location": "Antidotes for toxic-alcohol poisoning, p. 200 (first two paragraphs)",
     "lecture_evidence": "there's an antidote for methanol and ethylene glycol, and you can use ethanol or now a drug called omeprazole.",
-    "date": "10/19"
+    "date": "10/19",
+    "evidence_clean": "there's an antidote for methanol and ethylene glycol, and you can use ethanol or now a drug called fomepizole."
    },
    {
     "point": "Methanol is metabolized via ADH to formic acid, which results in anion-gap metabolic acidosis and ocular toxicity; retinal toxicity secondary to methanol poisoning is usually irreversible.",
     "chapter_location": "Antidotes for toxic-alcohol poisoning, p. 200",
     "lecture_evidence": "Formic acid will cause damage, especially to the eyes, to the retina of the eyes.",
-    "date": "10/19"
+    "date": "10/19",
+    "evidence_clean": "Formic acid will cause damage, especially to the eyes, to the retina of the eyes."
    },
    {
     "point": "Ethylene glycol is metabolized via ADH to glycolic acid (anion-gap metabolic acidosis) and oxalic acid, which results primarily in renal toxicity due to the formation of calcium oxalate crystals.",
     "chapter_location": "Antidotes for toxic-alcohol poisoning, p. 200",
     "lecture_evidence": "oxalic acid is a ... small molecule ... it will sometimes precipitate in the blood to form small microcrystals and The impact of that is you can damage your organs like your liver, your kidneys.",
-    "date": "10/19"
+    "date": "10/19",
+    "evidence_clean": "oxalic acid is a ... small molecule ... it will sometimes precipitate in the blood to form small microcrystals and The impact of that is you can damage your organs like your liver, your kidneys."
    },
    {
     "point": "Ethanol can be given intravenously or orally, but a commercial i.v. preparation is no longer available; a loading dose is needed to reach a serum ethanol concentration of 100-150 mg/dL, then a maintenance dose guided by repeated serum ethanol measurements.",
     "chapter_location": "Ethanol, p. 200",
     "lecture_evidence": "So they would use Everclear, have a shot glass there and give somebody that's had methanol or ethylene glycol exposure a shot, maybe two of Everclear, and watch to see how they're doing",
-    "date": "10/19"
+    "date": "10/19",
+    "evidence_clean": "So they would use Everclear, have a shot glass there and give somebody that's had methanol or ethylene glycol exposure a shot, maybe two of Everclear, and watch to see how they're doing"
    },
    {
     "point": "Fomepizole's ease of administration and relative lack of serious adverse effects have elevated it to preferred status over ethanol; its advantages are a much higher potency of ADH inhibition (Ki = 0.1 µmol/L, a 1000-fold higher affinity than that of ethanol), better maintenance of therapeutic blood concentrations, fewer adverse effects and less labor-intensive administration.",
     "chapter_location": "Fomepizole, p. 200",
     "lecture_evidence": "We now have ... the medication omeprazole that we'll give to patients ... a little bit better control of the dosing.",
-    "date": "10/19"
+    "date": "10/19",
+    "evidence_clean": "We now have ... the medication fomepizole that we'll give to patients ... a little bit better control of the dosing."
    },
    {
     "point": "Methanol or ethylene glycol toxicity should be suspected in a patient with anion-gap metabolic acidosis in whom laboratory testing reveals a low (or no) ethanol concentration, no ketones, and a normal lactic acid concentration; the availability of testing for toxic alcohols is limited.",
     "chapter_location": "Antidotes for toxic-alcohol poisoning, Implications for the pharmacist, p. 201",
     "lecture_evidence": "key indicator would be you get them into the ER and they do a blood draw, and they look for these alcohols in their blood.",
-    "date": "10/19"
+    "date": "10/19",
+    "evidence_clean": "key indicator would be you get them into the ER and they do a blood draw, and they look for these alcohols in their blood."
    },
    {
     "point": "Urinary alkalinization (a urine pH of >8) with i.v. sodium bicarbonate enhances formate elimination and may reduce the distribution of formic acid to the eye.",
     "chapter_location": "Additional and supportive therapy, p. 200",
     "lecture_evidence": "In class she used sodium bicarbonate for ion trapping of salicylates and phenobarbital, not for formate: \"We'll hang a bag of sodium bicarb on a patient, that'll make their urine a bit more basic.\"",
-    "date": "10/19"
+    "date": "10/19",
+    "evidence_clean": "In class she used sodium bicarbonate for ion trapping of salicylates and phenobarbital, not for formate: \"We'll hang a bag of sodium bicarb on a patient, that'll make their urine a bit more basic.\""
    },
    {
     "point": "Hemodialysis should be considered in all toxic-alcohol exposures in which toxic metabolites have already formed, and empirically if the serum methanol concentration is >25 mg/dL or the serum ethylene glycol concentration is >50 mg/dL with renal insufficiency.",
     "chapter_location": "Additional and supportive therapy, p. 200",
     "lecture_evidence": "What this means is you're going to try to artificially clear the blood of toxins, so maybe using hemodialysis, hemofiltration, or hemo perfusion.",
-    "date": "10/19"
+    "date": "10/19",
+    "evidence_clean": "What this means is you're going to try to artificially clear the blood of toxins, so maybe using hemodialysis, hemofiltration, or hemo perfusion."
    },
    {
     "point": "Cyanide binds to the ferric ion on cytochrome oxidase and abruptly halts the electron transport chain and aerobic respiration.",
     "chapter_location": "Antidotes for cyanide poisoning, p. 203",
     "lecture_evidence": "Cytochrome C oxidase is its target ... Helps with our electron transport chain",
-    "date": "10/19"
+    "date": "10/19",
+    "evidence_clean": "Cytochrome C oxidase is its target ... Helps with our electron transport chain"
    },
    {
     "point": "The mechanism of amyl nitrite and sodium nitrite is to produce methemoglobinemia; cyanide bound to cytochrome oxidase is then preferentially bound to methemoglobin, forming cyanomethemoglobin. Amyl nitrite is inhaled pending i.v. access; sodium nitrite is given intravenously and produces a methemoglobin concentration of about 15% in healthy adults.",
     "chapter_location": "Amyl nitrite and sodium nitrite, p. 203",
     "lecture_evidence": "And methemoglobin is able to pull cyanide off of cytochrome C oxidase. So here's the cyanide. It's going to get pulled off of the cytochrome C oxidase, and it gets stuck onto your methemoglobin, creating cyanoetthemoglobin",
-    "date": "10/19"
+    "date": "10/19",
+    "evidence_clean": "And methemoglobin is able to pull cyanide off of cytochrome C oxidase. So here's the cyanide. It's going to get pulled off of the cytochrome C oxidase, and it gets stuck onto your methemoglobin, creating cyanmethemoglobin"
    },
    {
     "point": "Neither carboxyhemoglobin nor methemoglobin is capable of carrying oxygen, so patients can develop functional hypoxia; the nitrite component should be avoided in smoke inhalation unless the carboxyhemoglobin level is shown to be negligible, and a methemoglobin concentration above 20% should halt further nitrite administration.",
     "chapter_location": "Antidotes for cyanide poisoning, p. 203",
     "lecture_evidence": "Is methemoglobin helpful to our bodies? Will it carry oxygen? No ... we're still gonna create it in our patients though, because we're trying to save them from their cyanide poisoning",
-    "date": "10/19"
+    "date": "10/19",
+    "evidence_clean": "Is methemoglobin helpful to our bodies? Will it carry oxygen? No ... we're still gonna create it in our patients though, because we're trying to save them from their cyanide poisoning"
    },
    {
     "point": "Rhodanese, an endogenous enzyme, facilitates the formation of thiocyanate, a much less toxic metabolite that is renally excreted; this pathway is capacity limited, and sodium thiosulfate (12.5 g i.v. for adults) enhances rhodanese activity by donating a sulfur group. The article names sodium thiosulfate as the administered antidote and rhodanese as the patient's own enzyme.",
     "chapter_location": "Antidotes for cyanide poisoning, p. 203; Sodium thiosulfate, p. 204",
     "lecture_evidence": "So by giving rodonase as a cofactor, we pull the cyanide off of methemoglobin onto the thiosulfate, and this will be renally eliminated.",
-    "date": "10/19"
+    "date": "10/19",
+    "evidence_clean": "So by giving rhodanese as a cofactor, we pull the cyanide off of methemoglobin onto the thiosulfate, and this will be renally eliminated."
    },
    {
     "point": "While acetaminophen is still present in the plasma, NAC acts as an antidote primarily by replenishing glutathione stores; secondarily it acts as a glutathione substitute and replenishes sulfate, limiting formation of the toxic metabolite or detoxifying it.",
     "chapter_location": "N-acetylcysteine, p. 206",
     "lecture_evidence": "But one of the things we can do in this situation is give NA andactylcysteine, cause NA provides some of the ingredients needed to create more glutathione.",
-    "date": "10/19"
+    "date": "10/19",
+    "evidence_clean": "But one of the things we can do in this situation is give N-acetylcysteine, cause NAC provides some of the ingredients needed to create more glutathione."
    },
    {
     "point": "Both the i.v. and oral routes are believed to be equally efficacious when NAC is given within eight hours of an acetaminophen overdose; oral NAC frequently causes nausea and vomiting and the dose must be repeated if emesis occurs within one hour; i.v. NAC can cause anaphylactoid reactions, particularly with the loading dose.",
     "chapter_location": "N-acetylcysteine, p. 206-207",
     "lecture_evidence": "So, in the United States, we tend to give it by IV because it's pretty hard to get somebody to swallow something that smells like rotten eggs, and it's kind of oily and, it's a clear liquid, it's kind of disgusting.",
-    "date": "10/19"
+    "date": "10/19",
+    "evidence_clean": "So, in the United States, we tend to give it by IV because it's pretty hard to get somebody to swallow something that smells like rotten eggs, and it's kind of oily and, it's a clear liquid, it's kind of disgusting."
    },
    {
     "point": "The Rumack-Matthew nomogram predicts hepatotoxicity from an initial plasma acetaminophen concentration obtained four or more hours after a single acute ingestion; NAC is started when the level is on or above the nomogram, when no level is available within eight hours of a potentially toxic ingestion, or when hepatotoxicity is present.",
     "chapter_location": "N-acetylcysteine, p. 206",
     "lecture_evidence": "Can you think of any other compounds that it's likely emergency rooms would test a person's blood for to see if they've been exposed to them? Acetaminophen",
-    "date": "10/19"
+    "date": "10/19",
+    "evidence_clean": "Can you think of any other compounds that it's likely emergency rooms would test a person's blood for to see if they've been exposed to them? Acetaminophen"
    },
    {
     "point": "One of the pharmacist's four roles listed in the abstract is managing the procurement and stocking of antidotes to ensure their timely availability; some antidotes must be stocked in the ED for immediate administration and others must be available within 60 minutes.",
@@ -1710,49 +1725,57 @@ const READINGS = [
     "point": "Digoxin-specific antibody fragments (Fab) are lifesaving agents in toxicity from digoxin and other cardioactive steroids, including digitoxin and those derived from oleander, fox glove, lily of the valley, and toad venom. The article does not use the word monoclonal.",
     "chapter_location": "Digoxin-specific antibody fragments, p. 204-205",
     "lecture_evidence": "digoxin immune fab. This is an antibody, a monoclonal antibody that's made to treat a digoxin overdose",
-    "date": "10/19"
+    "date": "10/19",
+    "evidence_clean": "digoxin immune fab. This is an antibody, a monoclonal antibody that's made to treat a digoxin overdose"
    },
    {
     "point": "Each 38- or 40-mg vial of digoxin-specific Fab binds 0.5 mg of digoxin; empiric dosing is 10-20 vials for acute toxicity and 3-5 vials (adults) or 1-2 vials (children) for chronic toxicity. After Fab is given, serum digoxin concentrations are no longer useful because the total digoxin concentration rises, so repeat levels should not be obtained for 24 hours.",
     "chapter_location": "Digoxin-specific antibody fragments, p. 205",
     "lecture_evidence": "One form of antibody made to grab digoxin that somebody's overdosed on, it grabs it and nicely clears it out of the blood.",
-    "date": "10/19"
+    "date": "10/19",
+    "evidence_clean": "One form of antibody made to grab digoxin that somebody's overdosed on, it grabs it and nicely clears it out of the blood."
    },
    {
     "point": "Naloxone, the most commonly used antidote in the ED setting, is a competitive antagonist at all opioid receptors, including the µ-opioid receptor; an initial dose of 0.04-0.05 mg i.v. titrated upward is recommended, and its clinical effect lasts 30-90 minutes.",
     "chapter_location": "Naloxone, p. 208",
     "lecture_evidence": "Naloxone is basically an antagonist of an opioid receptor",
-    "date": "10/19"
+    "date": "10/19",
+    "evidence_clean": "Naloxone is basically an antagonist of an opioid receptor"
    },
    {
     "point": "Flumazenil is a competitive antagonist at the benzodiazepine-receptor binding site on γ-aminobutyric acid-A. The article discourages its use in overdose patients unless it is certain that only a benzodiazepine was ingested and the patient is not benzodiazepine dependent and has no seizure history, because it can precipitate withdrawal seizures and unmask arrhythmias in mixed ingestions.",
     "chapter_location": "Flumazenil, p. 205-206",
     "lecture_evidence": "Flonazanil is used commonly for ... overdoses of things like your benzodiazepines ... benzos are gonna be agonizing your GABA receptors ... and flomazanil will antagonize the GABA receptor",
-    "date": "10/19"
+    "date": "10/19",
+    "evidence_clean": "Flumazenil is used commonly for ... overdoses of things like your benzodiazepines ... benzos are gonna be agonizing your GABA receptors ... and flumazenil will antagonize the GABA receptor"
    },
    {
     "point": "Benzodiazepine overdose produces a toxidrome, or toxic syndrome, of CNS depression with relatively normal vital signs; deaths attributed solely to oral benzodiazepine ingestion are rare.",
     "chapter_location": "Flumazenil, p. 205",
     "lecture_evidence": "Usually you'll see a group of systems of symptoms that we call a toxic toxodrome ... kind of a group of symptoms that are like, oh hey, look, this person has this, this and this.",
-    "date": "10/19"
+    "date": "10/19",
+    "evidence_clean": "Usually you'll see a group of systems of symptoms that we call a toxidrome ... kind of a group of symptoms that are like, oh hey, look, this person has this, this and this."
    },
    {
     "point": "Because of the pathophysiologic similarities of CCB toxicity and β-blocker toxicity, their management is similar (fluids and atropine first, then calcium, glucagon, HIET, vasopressors, cardiac pacing, i.v. 20% fatty acid emulsion, extracorporeal circulatory support, intra-aortic balloon pump). Presenting symptoms differ: CCB overdose patients tend to remain awake and alert, β-blocker patients are more likely to have altered mental status and respiratory depression, and severe CCB overdose causes hyperglycemia.",
     "chapter_location": "Antidotes for calcium-channel-blocker and β-blocker toxicities, p. 201",
     "lecture_evidence": "These are both cardiac meds, slightly different time frames that speaks to the mechanism of action of calcium channel blockers versus beta blockers",
-    "date": "10/19"
+    "date": "10/19",
+    "evidence_clean": "These are both cardiac meds, slightly different time frames that speaks to the mechanism of action of calcium channel blockers versus beta blockers"
    },
    {
     "point": "Clinicians should always consult a regional poison control center (1-800-222-1222) to ascertain the most current recommendations on antidote use and to report exposures and poisonings.",
     "chapter_location": "Introduction, p. 200",
     "lecture_evidence": "this is where the poison center will guide you on whether you need to get them to the emergency room, or you need to call the ambulance, OK?",
-    "date": "10/19"
+    "date": "10/19",
+    "evidence_clean": "this is where the poison center will guide you on whether you need to get them to the emergency room, or you need to call the ambulance."
    },
    {
     "point": "The article's evidence for several antidotes is case reports and animal studies: for intravenous fat emulsion, research remains in the discovery phase despite promising case reports, and for octreotide there are no published data from randomized clinical trials.",
     "chapter_location": "Intravenous fat emulsion, p. 206; Octreotide, p. 208",
     "lecture_evidence": "we really can't run clinical trials and sign up people to volunteer to get poisoned and try to see what treatment works best for them",
-    "date": "10/19"
+    "date": "10/19",
+    "evidence_clean": "we really can't run clinical trials and sign up people to volunteer to get poisoned and try to see what treatment works best for them"
    }
   ],
   "read_for": [
@@ -1842,6 +1865,7 @@ const READINGS = [
     "date": "10/19"
    }
   ],
+  "quotes_note": "Quotes lightly edited for reading: filler words removed and transcription errors corrected; the verbatim transcript text is kept beside each quote.",
   "truncated": false,
   "numbering_note": "The article is paginated 199-212 in Am J Health-Syst Pharm volume 69 (Feb 1, 2012); page numbers in chapter_location are those printed page numbers. The transcript renders fomepizole as 'omeprazole' (four times) and 'fomeprazole' (once); quotes are kept verbatim. The Drive file is 'Marraffa+AJHSP+2012+Antidotes.pdf' in the 'Readings for Lecture 10.19' folder.",
   "listen": "This reading is Antidotes for toxicological emergencies, A practical review, by Jeanna Marraffa, Victor Cohen and Mary Ann Howland, in the American Journal of Health System Pharmacy, two thousand twelve. It is a review article, a primer for pharmacists. For each antidote it gives the mechanism, indications, dosing, adverse effects, and implications for the pharmacist, such as stocking antidotes so they are ready in time. She called it a really good article that breaks down, step by step, the symptoms of these overdoses, the treatments, and importantly their mechanisms of action, and the quickest to read. Her poisoning table key cites it for these rows, in her key's wording. Acetaminophen: nausea and vomiting, clinical signs of liver failure, and blood levels can be measured. N acetylcysteine replenishes glutathione. It loses effectiveness about eight hours after the overdose, and it should still be given past that point. In the United States it is usually given intravenously, because the oral form smells like rotten eggs. Toxic alcohols: methanol's active metabolites cause anion gap metabolic acidosis and ocular toxicity. Ethylene glycol's metabolites can crystallize in the microvasculature, and renal toxicity is common. Ethanol or fomepizole inhibits alcohol dehydrogenase. Ethanol was once given in emergency rooms as shots of Everclear. Fomepizole is the stronger inhibitor, has fewer adverse effects, and gives better control of the dosing. Benzodiazepines: central nervous system depression with relatively normal vital signs, and blood levels can be measured. Flumazenil is a competitive antagonist of the benzodiazepine receptor, and it can cause withdrawal in a benzodiazepine dependent patient. Beta blockers: hypotension, bradycardia, altered mental status and respiratory depression. Atropine increases heart rate. Calcium tries to drive calcium into cardiac cells. Glucagon increases cardiac cyclic A M P to increase heart rate. For high dose insulin euglycemia therapy, the mechanism of the inotropic effect is not understood. Vasopressors raise blood pressure. Intravenous twenty percent fat emulsion acts as a sink for the drug if it is lipophilic enough. Calcium channel blockers: hypotension and bradycardia, but often alert, with the same antidotes. Altered mental status points to a beta blocker. Digoxin: bradycardia, arrhythmias, elevated serum potassium, nausea and vomiting, and blood levels can be measured. Digoxin specific antibody fragments bind digoxin, which is then renally eliminated. After the antidote, the total digoxin level, free and bound to the fragments, goes up, so it can't be used to calculate more doses. Opioids: somnolence, coma, decreased heart and breathing rates, and decreased pupils. Naloxone is a competitive antagonist of opioid receptors and can trigger withdrawal in chronic opioid users. Sulfonylureas and meglitinides: hypoglycemia, treated with octreotide, which inhibits insulin release from the pancreas. The article also covers cyanide. Cyanide binds cytochrome oxidase and halts the electron transport chain. Nitrites create methemoglobin, which pulls cyanide off the enzyme. Rhodanese, with sulfur donated by sodium thiosulfate, forms thiocyanate, which the kidneys excrete. The traps. N acetylcysteine supplies the ingredients for glutathione. She told the class it is not neutralizing free radicals. Glucagon raises cyclic A M P. It is not a cofactor. Rhodanese is the body's own enzyme, and sodium thiosulfate is the drug given. She called digoxin immune Fab a monoclonal antibody, but the product is ovine, made in sheep. Opioid overdose shrinks the pupils, so larger pupils are not part of its toxidrome.",

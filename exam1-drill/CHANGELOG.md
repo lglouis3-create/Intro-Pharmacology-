@@ -2,6 +2,16 @@
 
 Newest first. The build embeds this file; the Topics page shows what is new since your last visit, and the Progress page shows all of it. Keep each bullet to one short line.
 
+## 2026-10-23 (Final review before the exam)
+
+- A refresh on an answered question now brings back that question answered, with its explanations.
+- Her own quiz questions are ★ Most likely; her Exam 3 paper carries exactly 2 true/false, as she said.
+- Exam review cards have Hear the why; the no-going-back paper no longer shows the disabled question grid.
+- Smith focus is on until you turn it off; guide sections end with previous and next links.
+- Guide: exam format and scope vote updated to her 10/22 words; corrections from a line-by-line check.
+- Transcript slips in her quotes are glossed in brackets; the Marraffa reading card now shows corrected quotes.
+- Audio: a clip that fails to load is read once by the device voice; long clips are no longer cut short.
+
 ## 2026-10-23 (Recorded narration; guide rewritten to teach the reasoning)
 
 - When the site is updated, a bar offers a refresh; a refresh now reopens the page and question you were on.

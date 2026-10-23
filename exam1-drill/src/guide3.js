@@ -50,25 +50,24 @@ const GUIDE3_HTML = `
 <p>Dr. Smith writes her exam from the objectives on each day's opening slide and from what she said in class. She grades the exam, the quizzes and the reading assignments; the Poll Everywhere questions are for discussion only.</p>
 <ul>
 <li>"Remember, go back and study to these objectives, at least. If you can answer these objective questions, you should pass my exam." <small>(T) 10/9</small></li>
-<li>"I tried to give you about 50 questions, but they may not all be multiple choice. Sometimes I do very short answer essays ... sometimes fill in the blank." <small>(T) 10/9</small></li>
-<li>"if it's gonna be more than 50, I'll make sure that you have at least 1 minute and a half per question ... But no backwards nap" (no going back to an earlier question) <small>(T) 10/9</small></li>
+<li>Format, in her words of 10/22: 54 questions in 2 hours; multiple choice and select-all (no partial credit on select-all), 2 true/false, 2 short answer (graded with partial credit). No going back to an earlier question once it is answered. <small>her words 10/22; (T) 10/9</small></li>
 <li>On the readings: questions come from what was read and discussed in class, "if I talked about it and we really were exploring it, that would be the kind of thing I would ask about a reading that we did." <small>(T) 10/9</small></li>
 <li>Difficulty: "The questions on the quizzes that you're having are a little more detailed ... questions on your exam, because you've had a chance to study more, will be. Some of them will be much more detailed ... Quiz questions are trying to get you a little more in depth in your knowledge, and your exam questions could likely be harder" <small>(T) 10/14</small></li>
 <li>10/19, her opening rule: "Everything that we've talked about in class ... everything on slides, everything that's come out of my mouth, the things you've read, and we've talked about all that is testable." <small>(T) 10/19</small></li>
-<li>10/19, scope: "The material for the exam is today and tomorrow." Whether the 10/20 pharmacogenomics lecture counts on Friday was put to a class vote, moved to after Tuesday's lecture; she would reweight the two exams if it is left out. <small>(T) 10/19</small></li>
+<li>10/19, scope: "The material for the exam is today and tomorrow." On 10/20 the class voted to keep that day's pharmacogenomics lecture on this exam. <small>(T) 10/19, 10/20</small></li>
 <li>10/19, the table: "The heaviest part of that will be this poisoning table." "please memorize this table ... know the chelating agent and know what metal it grabs." <small>(T) 10/19</small></li>
 </ul>
-<table class="reftab"><thead><tr><th>Level</th><th>Her words</th><th>What it means for study</th></tr></thead><tbody>
-<tr><td>Poll Everywhere</td><td>"very easy"; "way easy"; "just to generate discussion"</td><td>Getting the polls right is not evidence of readiness</td></tr>
-<tr><td>Quizzes (graded, after each lecture)</td><td>"a little more detailed"; "trying to get you a little more in depth"</td><td>The quiz level is the floor for the exam</td></tr>
-<tr><td>Exam</td><td>"Some of them will be much more detailed"; "could likely be harder"</td><td>Expect the detail under each objective, in her words, and short-answer or fill-in items</td></tr>
+<table class="reftab"><thead><tr><th>Level</th><th>Her words</th><th>Graded?</th></tr></thead><tbody>
+<tr><td>Poll Everywhere</td><td>"very easy"; "way easy"; "just to generate discussion"</td><td>No: for discussion only</td></tr>
+<tr><td>Quizzes (after each lecture)</td><td>"a little more detailed"; "trying to get you a little more in depth"</td><td>Yes</td></tr>
+<tr><td>Exam</td><td>"Some of them will be much more detailed"; "could likely be harder"</td><td>Yes: 54 questions, 21% of the course grade</td></tr>
 </tbody></table>
 <table class="reftab"><thead><tr><th>On the exam</th><th>Not on the exam</th></tr></thead><tbody>
 <tr><td>The objective questions on the opening slide (definitions; the five principles; source, exposure, ADMET, dose, dose–response)</td><td>Dates and hard numbers from the reading: she asks what was discussed, not figures from the article</td></tr>
-<tr><td>The reading's five principles as discussed in class (the discussion is scheduled for 10/13)</td><td>The 2-AAF hamster figure as a graph to read: "I will not give you a graph like that I never have." <small>(T) 10/9</small></td></tr>
-<tr><td>The acetaminophen bioactivation scheme ("I love this example")</td><td>The probit panel of the population figure: "it's changing the units on the graph on the y and the x axis to what we call probit units. Nobody ever uses this." <small>(T) 10/9</small></td></tr>
+<tr><td>The reading's five principles as discussed in class (discussed 10/13; section 11)</td><td>The 2-AAF hamster figure as a graph to read: "I will not give you a graph like that I never have." <small>(T) 10/9</small></td></tr>
+<tr><td>The acetaminophen bioactivation scheme ("I love this example")</td><td>The probit panel of the population figure: "it's changing the units on the graph on the y and the x axis to what we call probate [probit] units. Nobody ever uses this." <small>(T) 10/9</small></td></tr>
 </tbody></table>
-<p class="sub">Sources: (T) 10/9, (T) 10/14; syllabus (Exam III, Fri Oct 23).</p>
+<p class="sub">Sources: (T) 10/9, (T) 10/14, (T) 10/19, (T) 10/20; her exam format as she stated it on 10/22; syllabus (Exam III, Fri Oct 23).</p>
 </section>
 
 <!-- ===================================================================== -->
@@ -88,7 +87,7 @@ const GUIDE3_HTML = `
 <li>Xenobiotic is defined by being foreign to the organism, not by being harmful, so it overlaps every other term and includes medications.</li>
 <li>Medications belong on the list of toxic things because "the dose makes the poison" (section 6).</li>
 <li>For a venomous animal, identifying the animal decides whether there is a toxin at all. The coral snake ("Red and yellow kills a fellow"; red bands touch yellow) is very venomous, with a neurotoxin. The king snake has the same colors but its red touches black ("Red and black, friend of Jack"), and it is not poisonous: "People have them as pets."</li>
-<li>The other organisms she showed also make their own poisons, so by her definition they are sources of toxins: oleander (the leaves, flowers and roots are poisonous), the pitohui (a bird that secretes a poison from its skin), the slow loris (a gland under its arms), and the male platypus (a spike on the back legs in the breeding season).</li>
+<li>The other organisms she named also make their own poisons, so by her definition they are sources of toxins: oleander (the leaves, flowers and roots are poisonous), the pitohui (a bird that secretes a poison from its skin), the slow loris (a gland under its arms), and the male platypus (a spike on the back legs in the breeding season).</li>
 </ul>
 <h4>Her words</h4>
 <ul>
@@ -138,7 +137,7 @@ const GUIDE3_HTML = `
 <li>Her key lists the five as: 1. Source 2. Exposure 3. ADMET 4. Dose 5. Target and Mechanism of Action. "Target" alone, or "mechanism" alone, is half of the fifth principle.</li>
 </ul>
 <p>How she asks it: list the five principles (short answer); expand ADME; true or false on a principle stated as "always".</p>
-<p class="sub">All quotations (T) 10/9. Sources: Tox slide ‘5 Principles of Toxicology’; Practice Quiz 1 Q4, Q5, Q10 and her key. Questions L13-003, L13-004, L13-005.</p>
+<p class="sub">Sources: Tox slide ‘5 Principles of Toxicology’; Practice Quiz 1 Q4, Q5, Q10 and her key. Questions L13-003, L13-004, L13-005, L13-040, L13-041, L13-046.</p>
 </section>
 
 <!-- ===================================================================== -->
@@ -234,7 +233,7 @@ const GUIDE3_HTML = `
 <li>"A fast-absorbing compound gives only immediate effects": wrong. It may also produce a delayed effect (DES).</li>
 </ul>
 <p>How she asks it: rank the routes (by frequency or by effectiveness); the duration that defines chronic; which compound in Figure 2-4 has the longest half-life or never becomes toxic; why a quickly cleared compound can still harm; true or false on single vs repeated exposure.</p>
-<p class="sub">Sources: Tox slides ‘Exposure: Route’, ‘Exposure: Duration’, ‘Single vs. Repeated’, ‘Exposure: Frequency’ (Casarett and Doull Figures 2-3, 2-4); (T) 10/9; her 10/14 poll; Practice Quiz 1 Q1, Q2. Questions L13-007 to L13-016, L13-049.</p>
+<p class="sub">Sources: Tox slides ‘Exposure: Route’, ‘Exposure: Duration’, ‘Single vs. Repeated’, ‘Exposure: Frequency’ (Casarett and Doull Figures 2-3, 2-4); (T) 10/9; her 10/14 poll; Practice Quiz 1 Q1, Q2. Questions L13-007 to L13-016, L13-049, L13-037, L13-038.</p>
 </section>
 
 <!-- ===================================================================== -->
@@ -305,7 +304,7 @@ const GUIDE3_HTML = `
 <li>"A higher LD50 means a more toxic compound": wrong. A higher LD50 means more compound is needed to kill half the animals, so it is less acutely lethal.</li>
 <li>"LD50 is half the lethal dose": wrong. It is the dose that kills 50% of the animals.</li>
 <li>"Cooking makes a squirting can safe": wrong in her lecture; the toxin is not broken down by cooking.</li>
-<li>"Botulinum needs oxygen to grow": wrong. "it doesn't need oxygen", which is why it grows in a sealed can.</li>
+<li>"Botulinum needs oxygen to grow": wrong. She said "It's an aerobic bacteria" and in the same sentence "it doesn't need oxygen"; the second is the fact, and it is why the bacteria grow inside a sealed can.</li>
 </ul>
 <p>How she asks it: who said "the dose makes the poison"; what the LD50 means; which of two LD50 values is more toxic; why a squirting can is discarded.</p>
 <p class="sub">Sources: Tox slide ‘Dose’ (Casarett &amp; Doull Table 2-1); (T) 10/9. Questions L13-021 to L13-024.</p>
@@ -380,7 +379,7 @@ const GUIDE3_HTML = `
 <li>NOAEL: the no observed adverse effect level, the highest dose in the animal studies at which no adverse effect was observed.</li>
 <li>Trap: her Practice Quiz 1 asked which value has the formula "X = Toxic Dose/Therapeutic Dose"; the answer is the therapeutic index, not the margin of safety.</li>
 </ul>
-<p class="sub">Sources: Tox slide ‘Values Developed from Dose-Response’; Practice Quiz 1 Q3; (T) 10/13. Questions L13-032 to L13-036.</p>
+<p class="sub">Sources: Tox slide ‘Values Developed from Dose-Response’; Practice Quiz 1 Q3; (T) 10/13. Questions L13-032 to L13-036, L13-039.</p>
 </section>
 
 <!-- ===== Day 14 (10/13) ===== -->
@@ -424,7 +423,7 @@ const GUIDE3_HTML = `
 <li>"The ED, TD and LD lines are not parallel only because of ADME": incomplete. She stressed different mechanisms for each outcome.</li>
 <li>The therapeutic index shows nothing about slope; the margin of safety does.</li>
 <li>The therapeutic index can use a percentage other than 50, but the numerator and denominator must use the same percentage. The margin of safety deliberately uses different ones (1 and 99).</li>
-<li>Her TI is toxic dose over therapeutic dose (TD50/ED50). Dr. Gottlieb's Exam 1 version used the lethal dose (LD50/ED50); her slide's formula is toxic dose over therapeutic dose.</li>
+<li>Her TI is toxic dose over therapeutic dose (TD50/ED50). Dr. Gottlieb's Exam 1 version used the lethal dose (LD50/ED50).</li>
 <li>The margin of exposure is not for medications or single doses: it is for repeated exposure to non-therapeutic compounds.</li>
 <li>NOAEL: the highest dose without an observed adverse effect. She once phrased it as "the lowest dose we gave the animals ... and they didn't have a bad response to"; the definition is the highest such dose.</li>
 <li>Wide TI means less chance of toxicity, not more.</li>
@@ -467,7 +466,7 @@ const GUIDE3_HTML = `
 <li>A diuretic's over-diuresis is the therapy going too far at its own target; aminoglycoside ototoxicity comes from a different target. They are different kinds of side effect.</li>
 </ul>
 <p>How she asks it: a compound concentrated in one organ that damages another; one compound damaging two organs; the diuretic versus the aminoglycoside; true or false on "always" statements about target and mechanism.</p>
-<p class="sub">Sources: Tox slide ‘Target &amp; Mechanism of Action’; Practice Quiz 1 Q5, Q6; (T) 10/13. Questions L14-016 to L14-019; L13-034.</p>
+<p class="sub">Sources: Tox slide ‘Target &amp; Mechanism of Action’; Practice Quiz 1 Q5, Q6; (T) 10/13. Questions L14-016 to L14-019; L13-034, L13-041, L13-042.</p>
 </section>
 
 <!-- ===================================================================== -->
@@ -600,8 +599,7 @@ const GUIDE3_HTML = `
 <li>Her Quiz 2 Q1: an off-target adverse effect occurs "When a drug interacts with a receptor that is not its therapeutic target." The distractors describe on-target effects: "When the dose at the intended receptor is too high" (right tissue) and "When a drug interacts with the intended receptor but in the wrong location" (wrong tissue).</li>
 <li>Diphenhydramine drowsiness is on-target (wrong tissue), not off-target, even though the brain is not where the drug should act.</li>
 <li>Thalidomide and propranolol are off-target: an enantiomer and a receptor subtype count as unintended receptors.</li>
-<li>Receptor number: the slide says "change in receptor number". Her spoken example was down-regulation, while her tolerance slide ties down-regulation to a smaller response; the slide itself says only "change in receptor number".</li>
-<li>Receptor class of antihistamines: she keeps calling them antihistamines; Dr. Gottlieb's Exam 1 point stands (the antihistamine loratadine is the inverse agonist to know).</li>
+<li>Receptor number: the slide lists "change in receptor number" as an on-target cause, and her spoken example was down-regulation. The confusion is reading down-regulation as a larger response: fewer receptors give a smaller response, which is how her tolerance slide uses the same word.</li>
 <li>Idiosyncratic means the cause is unknown; immunologic (allergic) endpoints are a separate category on the slide.</li>
 </ul>
 <p>How she asks it: a drug, its receptor and its tissue, and the label (on-target right tissue, on-target wrong tissue, off-target by another receptor, an enantiomer or a subtype); the definition of off-target.</p>
@@ -629,7 +627,7 @@ const GUIDE3_HTML = `
 <li><b>Time of exposure.</b> Retinoids in hamsters were known to deform the limbs. Given to the mothers on different gestation days, they also caused small eyes (microphthalmia), spina bifida, cleft palate (at two different times), forelimb shortening and effects on the tail. The slide: for a given teratogen, time of exposure during gestation influences the type of effect. <small>(T) 10/13</small></li>
 <li><b>Different compounds, same defect.</b> Each compound has its own peak gestation day for palate deformity: methanol day 7, TCDD day 11, 2,4,5-trichloroacetic acid day 12, dexamethasone day 13. <small>slide ‘Teratogenesis with different compounds’; (T) 10/13</small></li>
 <li><b>Dose.</b> Her one sentence: the mother has to get enough of the compound for it to pass into the baby. The slide adds that some agents have a dose continuum, that malformation or death may occur without an effect on intrauterine growth, and that growth retardation or death may occur without malformations. <small>(T) 10/13; slide ‘Teratogenesis Dose’</small></li>
-<li><b>Labeling.</b> The FDA used to rank drugs by how likely they were to cause birth defects. The newer labeling also covers effects on fertility, including male fertility (sperm count and viability), and whether a lactating mother should take the drug. Her Quiz 2 calls it the Pregnancy and Lactation Labeling Rule (2014) and keys three contents: effects on female and male reproductive potential, risks to the baby during breastfeeding, and risks to the baby during pregnancy. <small>(T) 10/13; Quiz 2 Q4</small></li>
+<li><b>Labeling.</b> The FDA used to rank drugs by how likely they were to cause birth defects. The newer labeling also covers effects on fertility, including male fertility (sperm count and viability), and whether a lactating mother should take the drug. Her Quiz 2 calls it the Pregnancy and Lactation Labeling Rules (2014) and keys three contents: effects on female and male reproductive potential, risks to the baby during breastfeeding, and risks to the baby during pregnancy. <small>(T) 10/13; Quiz 2 Q4</small></li>
 </ul>
 
 <h4>Why</h4>
@@ -720,7 +718,7 @@ const GUIDE3_HTML = `
 <li><b>Particle rules applied to gases.</b> For a gas the property is water solubility, not size.</li>
 </ul>
 
-<p>How she asks it: which particle size is the concern and why; sort a list of responses into acute and chronic; a drug given by IV that damages the lungs. Scope: she will not ask which gases or particles are worst.</p>
+<p>How she asks it: which particle size is the concern and why; sort a list of responses into acute and chronic; a drug given by IV that damages the lungs. Scope: she did not go into which gases or particles are worst.</p>
 <p class="sub">Sources: Toxic Responses slides ‘Pulmonary Toxicity – Why are lungs susceptible?’, ‘Types of Pulmonary Toxicity’; (T) 10/14; Quiz 2 Q5. Questions L15-001 to L15-010.</p>
 </section>
 
@@ -952,7 +950,7 @@ const GUIDE3_HTML = `
 <h3>20. Idiosyncratic and immunologic responses, and her four Poll Everywhere questions</h3>
 
 <h4>The idea</h4>
-<p>Two more toxic endpoints fit neither the organ-specific nor the non-organ-specific group. An idiosyncratic reaction is an unusual, strong reaction in a few people, now often traced to their genotype. An immunologic reaction happens when the body treats the drug as foreign and mounts an immune response against it. The slide is titled "Allergic Responses"; she asked the class to change it to immunologic responses, because allergy (hypersensitivity) is only one of the two kinds.</p>
+<p>Two more toxic endpoints fit neither the organ-specific nor the non-organ-specific group. An idiosyncratic reaction is an unusual, strong reaction in a few people, which pharmacogenomics is starting to explain. An immunologic reaction happens when the body treats the drug as foreign and mounts an immune response against it. The slide is titled "Allergic Responses"; she asked the class to change it to immunologic responses, because allergy (hypersensitivity) is only one of the two kinds.</p>
 
 <h4>The two endpoints</h4>
 <table class="reftab"><thead><tr><th></th><th>Idiosyncratic</th><th>Immunologic</th></tr></thead><tbody>
@@ -965,7 +963,7 @@ const GUIDE3_HTML = `
 <h4>Why</h4>
 <ul>
 <li>Idiosyncratic reactions center on the liver because it does most drug metabolism. A person with an unusual metabolizing genotype may form a toxic metabolite others do not. Before pharmacogenomics this looked unexplainable; with the genotype known, it is an unusual but explained reaction.</li>
-<li>A small drug molecule triggers an immune response only after it is bound by a body protein; the bound complex (the hapten) is what the immune system responds to. A peptide or protein drug is large enough to activate the immune system directly.</li>
+<li>A small drug molecule triggers an immune response only after it is bound by a body protein; the bound complex (the slide calls the small molecule itself the hapten) is what the immune system responds to. A peptide or protein drug is large enough to activate the immune system directly.</li>
 <li>Once a drug has switched the immune system on, the response may go beyond allergy and turn against the patient's own tissues (autoimmunity), which is why biologicals are a growing concern.</li>
 <li>An immunologic reaction can appear in one organ: her father's PPI reaction showed up as interstitial nephritis (section 19).</li>
 </ul>
@@ -1197,7 +1195,7 @@ const GUIDE3_HTML = `
 </ul>
 
 <p>How she asks it: which compounds have guidelines; where the evidence comes from and what makes it evidence based; the kinds of information in the documents; the two contrasts the beta-blocker and calcium channel blocker documents draw.</p>
-<p class="sub">Sources: Treating Poisonings slides ‘Guidelines for Overdoses’, ‘Discussion of OD Guidelines’, ‘Treating specific poisonings Table’; reading cards aapcc-bb and aapcc-ccb; her reading-guide key; (T) 10/14, 10/19. Questions L15-063 to L15-065.</p>
+<p class="sub">Sources: Treating Poisonings slides ‘Guidelines for Overdoses’, ‘Discussion of OD Guidelines’, ‘Treating specific poisonings Table’; the two guideline reading cards; her reading-guide key; (T) 10/14, 10/19. Questions L15-063 to L15-065.</p>
 </section>
 
 <!-- ===================================================================== -->
@@ -1259,7 +1257,7 @@ const GUIDE3_HTML = `
 </ul>
 
 <p>How she asks it: which metabolite of methanol is toxic and what it damages; what ethylene glycol ends up as and why that hurts; the antidote for both, its mechanism and which is better; which of the four kinetic methods fomepizole represents.</p>
-<p class="sub">Sources: Treating Poisonings slides ‘Toxicokinetic-Based Treatment Prevent Absorption’, ‘Inhibit Bioactivation’, ‘methanol and ethylene glycol examples’; DiPiro ch. e9; her poisoning-table key (toxic alcohols row); (T) 10/19; Quiz 3 Q1, Q8. Questions L16-001 to L16-009.</p>
+<p class="sub">Sources: Treating Poisonings slides ‘Toxicokinetic-Based Treatment Prevent Absorption’, ‘Inhibit Bioactivation’, ‘methanol and ethylene glycol examples’; DiPiro ch. e9; her poisoning-table key (toxic alcohols row); (T) 10/19; Quiz 3 Q1, Q8. Questions L16-001 to L16-009, GAP3-001 to GAP3-004.</p>
 <!--STEP:methanol-eg-->
 </section>
 
@@ -1269,6 +1267,7 @@ const GUIDE3_HTML = `
 
 <h4>The idea</h4>
 <p>A poisoned patient often cannot or will not say what was taken: an unconscious patient cannot, and people who intended to hurt themselves often do not. Recognition therefore runs in two steps. First, the group of signs and symptoms (a toxidrome) suggests a drug class. Then, if the hospital laboratory can measure the suspected compound, a blood test confirms it. Otherwise the diagnosis stays a guess.</p>
+<p>In class she defined the toxidrome and showed the table without walking through its rows; her Quiz 3 question 5 then tested the opioid row, so the rows are tested material.</p>
 
 <h4>What emergency rooms test the blood for</h4>
 <ul>
@@ -1313,7 +1312,7 @@ const GUIDE3_HTML = `
 </ul>
 
 <p>How she asks it: how a methanol or ethylene glycol poisoning is confirmed; which overdoses the emergency room screens blood for; what a toxidrome is; which symptom is not part of a given toxidrome (Quiz 3). The objectives slide: "Describe the toxidromes discussed in class."</p>
-<p class="sub">Sources: Treating Poisonings slide ‘Toxidromes’ (Goodman & Gilman Table 4-7); her poisoning-table key (opioids, organophosphates, salicylates, beta blockers, calcium channel blockers); (T) 10/19; Quiz 3 Q5. Questions L16-010 to L16-013, QZ3-014.</p>
+<p class="sub">Sources: Treating Poisonings slide ‘Toxidromes’ (Goodman & Gilman Table 4-7); her poisoning-table key (opioids, organophosphates, salicylates, beta blockers, calcium channel blockers); (T) 10/19; Quiz 3 Q5. Questions L16-010 to L16-013, GAP3-005 to GAP3-012, QZ3-014.</p>
 </section>
 
 <!-- ===================================================================== -->
@@ -1603,7 +1602,7 @@ const GUIDE3_HTML = `
 </ul>
 
 <p>How she asks it: the window for a given class and formulation, and what to do just inside or just outside it; why extended release needs a longer window (bezoars); why verapamil's is longest; what not to do at home and when charcoal fits; how to get to the hospital and why; the follow-up difference; the self-harm rule; where the evidence comes from.</p>
-<p class="sub">Sources: Treating Poisonings slides ‘Guidelines for Overdoses’, ‘Discussion of OD Guidelines’; Wax et al. 2005 (β-blocker) and Olson et al. 2005 (calcium channel blocker) AAPCC guidelines, reading cards aapcc-bb and aapcc-ccb; her posted guideline key; Quiz 3 key; (T) 10/14, 10/19, 10/20. Questions L16-054 to L16-066.</p>
+<p class="sub">Sources: Treating Poisonings slides ‘Guidelines for Overdoses’, ‘Discussion of OD Guidelines’; Wax et al. 2005 (β-blocker) and Olson et al. 2005 (calcium channel blocker) AAPCC guidelines, the two guideline reading cards; her posted guideline key; Quiz 3 key; (T) 10/14, 10/19, 10/20. Questions L16-054 to L16-066, GRG3-001 to GRG3-035, NEW3-087 to NEW3-090.</p>
 </section>
 
 <!-- ===================================================================== -->
@@ -1618,7 +1617,7 @@ const GUIDE3_HTML = `
 <tr><td>Acetaminophen</td><td>Nausea and vomiting; clinical signs of liver failure; blood levels can be measured</td><td>N-acetylcysteine: replenishes glutathione</td><td>When does it lose effectiveness? About 8 hours after the overdose. Still give it after that? Yes.</td></tr>
 <tr><td>Toxic alcohols</td><td>Methanol: active metabolites cause anion-gap metabolic acidosis and ocular toxicity. Ethylene glycol: active metabolites crystallize in the microvasculature; renal toxicity is common</td><td>Ethanol or fomepizole: inhibit alcohol dehydrogenase</td><td>Advantage of one? Fomepizole is a stronger alcohol dehydrogenase inhibitor and has fewer adverse effects than ethanol.</td></tr>
 <tr><td>Benzodiazepines</td><td>CNS depression with relatively normal vital signs; blood levels can be measured</td><td>Flumazenil: competitive antagonist of the benzodiazepine receptor</td><td>Concern? It can cause withdrawal in a benzodiazepine-dependent patient.</td></tr>
-<tr><td>Beta blockers</td><td>Hypotension, bradycardia, altered mental status, respiratory depression</td><td>Atropine: increases heart rate. Calcium: drives calcium into cardiac cells. Glucagon: increases cardiac cellular cAMP to increase heart rate. HIET (high-dose insulin; Marraffa): the mechanism of its inotropic effect is not understood. Vasopressors: increase blood pressure. IV 20% fat emulsion: acts as a sink for the drug if the drug is lipophilic enough</td><td>What distinguishes a beta-blocker from a calcium channel blocker overdose? A beta-blocker overdose may cause altered mental status.</td></tr>
+<tr><td>Beta blockers</td><td>Hypotension, bradycardia, altered mental status, respiratory depression</td><td>Atropine: increases heart rate. Calcium: drives calcium into cardiac cells. Glucagon: increases cardiac cellular cAMP to increase heart rate. HIET (hyperinsulinemia-euglycemia therapy, high-dose insulin; the expansion is Marraffa's, her key leaves it unexpanded): the mechanism of its inotropic effect is not understood. Vasopressors: increase blood pressure. IV 20% fat emulsion: acts as a sink for the drug if the drug is lipophilic enough</td><td>What distinguishes a beta-blocker from a calcium channel blocker overdose? A beta-blocker overdose may cause altered mental status.</td></tr>
 <tr><td>Calcium channel blockers</td><td>Hypotension, bradycardia, but often alert</td><td>Same as for beta blockers</td><td></td></tr>
 <tr><td>Digoxin</td><td>Bradycardia, arrhythmias, elevated serum potassium, nausea and vomiting; blood levels can be measured</td><td>Digoxin-specific antibody fragments: bind digoxin, then renally eliminated</td><td>Why is serum digoxin unhelpful after the antidote? Total digoxin (free plus bound to Fab) rises, so it cannot be used to calculate more Fab doses.</td></tr>
 <tr><td>Tricyclic antidepressants</td><td>Tachycardia, dilated pupils, dry mouth, agitation, seizures, sometimes vasodilation, prolonged QRS interval, reduced cardiac contractility</td><td>IV fluids, dopamine or norepinephrine: mostly supportive, to maintain blood pressure. Sodium bicarbonate for the prolonged QRS: counteracts the inhibition of cardiac sodium channels</td><td></td></tr>
@@ -1641,7 +1640,7 @@ const GUIDE3_HTML = `
 <h4>Her words</h4>
 <ul>
 <li>"The heaviest part of that will be this poisoning table." <small>(T) 10/19</small></li>
-<li>"you do need to know the details that I have in my table, my key." <small>(T) 10/20</small></li>
+<li>"you do know, need to know the details that I have in my table, my key." <small>(T) 10/20</small></li>
 </ul>
 
 <h4>Traps</h4>
@@ -1655,7 +1654,7 @@ const GUIDE3_HTML = `
 </ul>
 
 <p>How she asks it: the symptoms, antidote, antidote mechanism and special consideration for any row of her key; what distinguishes a beta-blocker from a calcium channel blocker overdose; which treatment category an antidote belongs to.</p>
-<p class="sub">Sources: Treating Poisonings slide ‘Treating specific poisonings Table’; her Poisoning Treatment Table 2026 key; DiPiro ch. e9; Marraffa 2012; Quiz 3 key; reading card aapcc-bb; (T) 10/19, 10/20. Questions L16-067, L16-068.</p>
+<p class="sub">Sources: Treating Poisonings slide ‘Treating specific poisonings Table’; her Poisoning Treatment Table 2026 key; DiPiro ch. e9; Marraffa 2012; Quiz 3 key; the beta-blocker guideline reading card; (T) 10/19, 10/20. Questions TBL3-001 to TBL3-065, TBL3-101 to TBL3-113, NEW3-052 to NEW3-063, L16-067, L16-068.</p>
 </section>
 
 <!-- ===================================================================== -->
@@ -1810,7 +1809,7 @@ const GUIDE3_HTML = `
 </ul>
 
 <p>How she asks it: name the four target areas; why enzymes came first; P-gp, its gene and its effect on digoxin bioavailability; which arc and which bucket a scenario belongs to.</p>
-<p class="sub">Sources: Intro to PGx slides ‘Three Target Areas’ (p. 10), ‘Impact of Pharmacogenomics on PK and PD’ (p. 11); Quiz 4 key; (T) 10/20. Questions L17-018 to L17-027.</p>
+<p class="sub">Sources: Intro to PGx slides ‘Three Target Areas’ (p. 10), ‘Impact of Pharmacogenomics on PK and PD’ (p. 11); Quiz 4 (her questions; the answers used here were confirmed by her grading); (T) 10/20. Questions L17-018 to L17-027.</p>
 </section>
 <section class="guide" id="guide3-l17-4">
 <h3>36. Wild type, variant, polymorphism, rare variant, SNP</h3>
@@ -1822,7 +1821,7 @@ const GUIDE3_HTML = `
 <table class="reftab"><thead><tr><th>Term</th><th>Definition</th><th>Note</th></tr></thead><tbody>
 <tr><td>Wild type</td><td>The version of a gene that is thought to be the most common</td><td>Sometimes the literature's wild type is only the version scientists understood first. On her exam, "the most common" is accepted.</td></tr>
 <tr><td>Variant (genetic variant)</td><td>A version of the gene that is not thought to be common</td><td>Say variant, not mutant.</td></tr>
-<tr><td>Polymorphism</td><td>A genetic variant present in at least 1% of the population (slide: more than 1%)</td><td>Defined by frequency, not by the type of change</td></tr>
+<tr><td>Polymorphism</td><td>A genetic variant present in at least 1% of the population (slide: ≥ 1%)</td><td>Defined by frequency, not by the type of change</td></tr>
 <tr><td>Rare variant</td><td>A genetic variant present in less than 1% of the population</td><td>A newer term</td></tr>
 <tr><td>Single nucleotide polymorphism (SNP, "snip")</td><td>One nucleotide differs from the wild-type sequence</td><td>The most common type of polymorphism</td></tr>
 </tbody></table>
@@ -1850,7 +1849,7 @@ const GUIDE3_HTML = `
 </ul>
 
 <p>How she asks it: define wild type, variant, polymorphism and rare variant; the 1% cutoff; whether a whole-gene deletion can be a polymorphism; what a SNP is.</p>
-<p class="sub">Sources: Intro to PGx slides ‘Wildtype vs Variant’ (p. 13), ‘Polymorphism’ (p. 14); Quiz 4 key; (T) 10/20. Questions L17-028 to L17-033.</p>
+<p class="sub">Sources: Intro to PGx slides ‘Wildtype vs Variant’ (p. 13), ‘Polymorphism’ (p. 14); Quiz 4 (her questions; the answers used here were confirmed by her grading); (T) 10/20. Questions L17-028 to L17-033.</p>
 </section>
 <section class="guide" id="guide3-l17-5">
 <h3>37. Allele, homozygosity, genotype, phenotype, functional significance</h3>
@@ -1861,7 +1860,7 @@ const GUIDE3_HTML = `
 <h4>The terms</h4>
 <table class="reftab"><thead><tr><th>Term</th><th>Meaning</th><th>Example</th></tr></thead><tbody>
 <tr><td>Allele</td><td>The variant (and wild-type) forms of a gene at a particular location on a chromosome. Humans are diploid: two copies of every chromosome, so two copies of each gene, one from the biological mother and one from the father; each copy is an allele. The slide adds that each nucleotide base in the gene can be considered an allele.</td><td></td></tr>
-<tr><td>Homozygous</td><td>The two alleles are the same at a locus</td><td>In the figure, PP and aa: "homozygous for P at this locus"</td></tr>
+<tr><td>Homozygous</td><td>The two alleles are the same at a locus</td><td>In the figure, PP and aa: homozygous for P, or for a, at that locus</td></tr>
 <tr><td>Heterozygous</td><td>The two alleles differ at a locus</td><td>In the figure, Bb: "heterozygous for B at this 3rd loci"</td></tr>
 <tr><td>Genotype</td><td>The two alleles a person has for a gene</td><td>CYP2C19*2/*2: homozygous for the *2 allele</td></tr>
 <tr><td>Phenotype</td><td>Any observable characteristic (morphology, development, biochemical, physical or behavioral); results from the expression of genes</td><td>CYP2C19*2 has no activity, so a *2/*2 person has no CYP2C19 activity and cannot metabolize drugs through that enzyme</td></tr>
@@ -1913,7 +1912,7 @@ const GUIDE3_HTML = `
 <li><b>Why variants travel together.</b> Something about the structure and chemistry of that stretch of DNA makes those changes occur in those groupings, so they appear together more often than chance.</li>
 <li>Warfarin will be the haplotype example later in the course.</li>
 </ul>
-<p><small>(T) 10/20; slides ‘Haplotype’, ‘Illustration of Haplotype’; Quiz 4 key</small></p>
+<p><small>(T) 10/20; slides ‘Haplotype’, ‘Illustration of Haplotype’; Quiz 4 (her questions; the answers used here were confirmed by her grading)</small></p>
 
 <h4>Frequencies and Hardy-Weinberg equilibrium</h4>
 <table class="reftab"><thead><tr><th>Term</th><th>Definition (slide)</th><th>Her explanation</th></tr></thead><tbody>
@@ -1939,7 +1938,7 @@ const GUIDE3_HTML = `
 </ul>
 
 <p>How she asks it: define haplotype and linkage disequilibrium; read the haplotypes off the figure; allele vs genotype frequency; what being out of Hardy-Weinberg equilibrium means for a study.</p>
-<p class="sub">Sources: Intro to PGx slides ‘Haplotype’ (p. 19), ‘Illustration of Haplotype’ (p. 20), ‘Frequencies in Pharmacogenomics’ (p. 21); Quiz 4 key; (T) 10/20. Questions L17-045 to L17-051.</p>
+<p class="sub">Sources: Intro to PGx slides ‘Haplotype’ (p. 19), ‘Illustration of Haplotype’ (p. 20), ‘Frequencies in Pharmacogenomics’ (p. 21); Quiz 4 (her questions; the answers used here were confirmed by her grading); (T) 10/20. Questions L17-045 to L17-051.</p>
 <!--STEP:haplotype-->
 </section>
 <section class="guide" id="guide3-l17-7">

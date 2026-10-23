@@ -63,7 +63,7 @@ QUESTIONS.push(
   {t:"Grapefruit carries terfenadine across the blood-brain barrier", correct:false, why:"Crossing into the brain explains drowsiness with diphenhydramine, not a racing heart with terfenadine."},
   {t:"Grapefruit makes terfenadine block more peripheral H1 receptors", correct:false, why:"Peripheral H1 antagonism is the desired antihistamine effect; the racing heart comes from cardiac potassium channels."}],
  teach:"Terfenadine treats allergies at peripheral H1 receptors but, off-target, inhibits cardiac potassium channels. Eaten with it, grapefruit produced a drug interaction: terfenadine was not metabolized and cleared, its blood level rose, and more potassium channels were blocked, so the racing heart came on grapefruit mornings. The Chemical Interactions slide lists changes in biotransformation and excretion of one of the interacting compounds as a mechanism of interaction.",
- quote:"I was having a drug interaction as well between the grapefruit and my Selane. I wasn't metabolizing and clearing selane because of the grapefruit. I was having increased levels of selane in my blood, so blocking even more of my potassium channels.",
+ quote:"I was having a drug interaction as well between the grapefruit and my Selane [Seldane]. I wasn't metabolizing and clearing selane because of the grapefruit. I was having increased levels of selane in my blood, so blocking even more of my potassium channels.",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slides ‘Off-Target Examples’, ‘Chemical Interactions’; transcript 10/13"},
 
 {id:"L14-106", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"ontarget", skill:"apply",
@@ -88,7 +88,7 @@ QUESTIONS.push(
   {t:"The dose of the R-enantiomer at its own receptor was too high", correct:false, why:"Too much dose at the intended receptor is on-target; the birth defects were an off-target effect of the other enantiomer."},
   {t:"The R-enantiomer reached its intended receptor in the wrong tissue, the fetus", correct:false, why:"That would be on-target in the wrong tissue; the slide files thalidomide under an enantiomer hitting an unintended receptor."}],
  teach:"Thalidomide is racemic: the R-enantiomer helped with nausea and the S-enantiomer is a potent teratogen. It was used as the racemic mixture, so people took both, and the S-enantiomer hit an unintended receptor and caused birth defects. This is the off-target example of an enantiomer hitting an unintended receptor.",
- quote:"It wasn't just the Rnanammer that people were taking, it was the R and the S and anamer ... it's the Rnanammer that was good at helping with nausea, but the Senanammer was a very potent teratogen",
+ quote:"It wasn't just the Rnanammer [R-enantiomer] that people were taking, it was the R and the S and anamer [enantiomer] ... it's the Rnanammer that was good at helping with nausea, but the Senanammer [S-enantiomer] was a very potent teratogen",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Off-Target Examples’; transcript 10/13"},
 
 {id:"L14-108", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"ontarget", skill:"apply", multi:true,

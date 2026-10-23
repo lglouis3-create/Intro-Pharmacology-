@@ -279,7 +279,7 @@ QUESTIONS.push(
   {t:"P-glycoprotein; CYP2C19 gene; efflux", correct:false, why:"CYP2C19 is the gene for a metabolizing enzyme (cytochrome P450 2C19); P-gp is encoded by ABCB1."},
   {t:"G6PD; ABCB1 gene; efflux", correct:false, why:"G6PD (glucose-6-phosphate dehydrogenase) is the red blood cell enzyme from the primaquine history, not a transporter."}],
  teach:"P-glycoprotein (P-gp) is expressed in the gut and is encoded by the ABCB1 gene, in which many genetic variants have been defined. It is an efflux transporter: as an oral drug tries to cross the gut lumen cells, P-gp grabs it and pumps it back into the lumen to be excreted. Other transporters are expressed in the liver, brain and elsewhere, and their variants are an active research area.",
- quote:"one that's expressed in the gut, PGP P glacoprotein ... It's encoded by the ABCB1 gene ... PGP is an e-flux transporter.",
+ quote:"one that's expressed in the gut, PGP P glacoprotein [P-glycoprotein] ... It's encoded by the ABCB1 gene ... PGP is an e-flux [efflux] transporter.",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘Introduction: Three Target Areas’ (p. 10); transcript 10/20"},
 
 {id:"L17-021", lecture:"L17", prof:"Smith", tier:"new", topic:"L17", sub:"targets", skill:"apply",
@@ -508,7 +508,7 @@ QUESTIONS.push(
   {t:"Half the normal CYP2C19 activity", correct:false, why:"Both copies are *2 and *2 has no activity, so there is no working copy left to give partial activity."},
   {t:"Extra CYP2C19 enzyme activity", correct:false, why:"*2 has no activity; extra activity would come from extra working copies."}],
  teach:"The CYP2C19 *2 variant has no enzyme activity, so a person who is CYP2C19*2/*2 has no 2C19 activity and cannot metabolize drugs through that enzyme; that is the phenotype. There are good data for this: the genotype-phenotype relationship for *2 is tight, and even the reason the enzyme is not active is known.",
- quote:"the STC 192 variant has No activity. ... So that's the phenotype. ... the knowledge of the phenotype genotype relationship for 2C192 is really tight.",
+ quote:"the STC 192 [CYP2C19*2] variant has No activity. ... So that's the phenotype. ... the knowledge of the phenotype genotype relationship for 2C192 is really tight.",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘Genotype vs phenotype’ (p. 17); transcript 10/20"},
 
 {id:"L17-039", lecture:"L17", prof:"Smith", tier:"new", topic:"L17", sub:"genophen", skill:"term", core:true, coreWhy:"her words: functional significance is 'a big key word in the world of pharmacogenomics'",

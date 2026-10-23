@@ -261,7 +261,8 @@ QUESTIONS.push(
   {t:"Both are therapy gone too far at the intended target", correct:false, why:"Killing bacteria has nothing to do with damage to hearing, so ototoxicity is not the therapy overshooting."},
   {t:"Both come from targets unrelated to the therapeutic one", correct:false, why:"Dehydration from a diuretic is its therapeutic mechanism overshooting."}],
  teach:"Many side effects in a drug list have nothing to do with the drug's therapeutic action, and the target-and-mechanism principle is the reason. Some side effects are the therapy gone too far: a diuretic that removes so much fluid the patient needs rehydration. Others, such as aminoglycosides causing ototoxicity, come from a target of the adverse effect that is very different from the therapeutic target and mechanism. Sometimes the mechanism of an adverse effect is known or can be found; sometimes it is not known.",
- quote:"Classic example would be diuretics ... that would be kind of a classic example of a side effect of diuretics where the therapy has gone too far ... why doivomar drugs like our amino glycosides cause ootoxicity ... the classic example of how the target of an adverse effect could be very different than the therapeutic targeting mechanism.",
+ quote:"Classic example would be diuretics ... that would be kind of a classic example of a side effect of diuretics where the therapy has gone too far ... why doivomar drugs like our amino glycosides cause ootoxicity [ototoxicity] ... the classic example of how the target of an adverse effect could be very different than the therapeutic targeting mechanism.",
+ note:"The transcript renders one phrase as \"doivomar\"; the word is unclear.",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Target & Mechanism of Action’; transcript 10/13"},
 
 /* ---------------- The reading, as discussed ---------------- */
@@ -560,7 +561,7 @@ QUESTIONS.push(
   {t:"Dispositional is seen with drugs; reduced responsiveness with pollutants", correct:false, why:"Both occur with medications and with environmental exposures."},
   {t:"Dispositional follows one exposure; reduced responsiveness follows repeats", correct:false, why:"Both kinds develop with repeated exposure."}],
  teach:"Tolerance is decreased responsiveness to a toxic effect after prior exposure; it happens with medications (opioids) and with some environmental or occupational exposures. Two mechanisms: dispositional tolerance, which is ADME-based (less toxicant reaches the site of the toxic effect), and reduced responsiveness, which is pharmacodynamic (the target, such as a receptor population, responds less).",
- quote:"you can see how the dispositional is admi-based and the reduced responsiveness is pharmacodynamically based ... Dealing with receptors.",
+ quote:"you can see how the dispositional is admi-based [ADME-based] and the reduced responsiveness is pharmacodynamically based ... Dealing with receptors.",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Tolerance’; transcript 10/13"},
 
 {id:"L14-043", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"tolerance", skill:"apply",
@@ -725,7 +726,7 @@ QUESTIONS.push(
   {t:"Peripheral H1 receptor antagonism and drowsiness from brain H1 receptors", correct:false, why:"Drowsiness from brain H1 receptors is the diphenhydramine on-target example."},
   {t:"Peripheral H1 receptor antagonism and asthma from beta-2 receptor block", correct:false, why:"Asthma from beta-2 blockade is the propranolol example."}],
  teach:"Off-target, example one: a drug hits an unintended receptor. Terfenadine (Seldane) treated allergies at peripheral H1 receptors but inhibited cardiac potassium channels, causing cardiac problems; it is no longer on the market. Her own racing heart in high school came from Seldane, worse on grapefruit mornings: grapefruit blocked its metabolism and clearance, raising blood levels and blocking more potassium channels.",
- quote:"we were having cardiac problems with that drug because it was inhibiting cardiac potassium channels ... I wasn't metabolizing and clearing selane because of the grapefruit. I was having increased levels of selane in my blood, so blocking even more of my potassium channels.",
+ quote:"we were having cardiac problems with that drug because it was inhibiting cardiac potassium channels ... I wasn't metabolizing and clearing selane [Seldane] because of the grapefruit. I was having increased levels of selane in my blood, so blocking even more of my potassium channels.",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Off-Target Examples’; transcript 10/13"},
 
 {id:"L14-056", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"ontarget", skill:"drug",
@@ -737,7 +738,7 @@ QUESTIONS.push(
   {t:"Both enantiomers treat nausea; both are potent teratogens", correct:false, why:"The S-enantiomer is the potent teratogen; the R-enantiomer is the anti-nausea agent."},
   {t:"The R-enantiomer treats nausea; it was given as the pure R form", correct:false, why:"It was given as a racemic mixture of R and S, which is how the S form reached pregnant women."}],
  teach:"Off-target, example two: an enantiomer hits an unintended receptor. Thalidomide is racemic; the R-enantiomer helped with nausea and the S-enantiomer is a potent teratogen, and people took both. It was never officially on the market in the 1950s and is used today in oncology.",
- quote:"it's the Rnanammer that was good at helping with nausea, but the Senanammer was a very potent teratogen ... we use thalidomide now in oncology.",
+ quote:"it's the Rnanammer [R-enantiomer] that was good at helping with nausea, but the Senanammer [S-enantiomer] was a very potent teratogen ... we use thalidomide now in oncology.",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Off-Target Examples’; transcript 10/13"},
 
 {id:"L14-057", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"ontarget", skill:"drug",
@@ -917,6 +918,6 @@ QUESTIONS.push(
   {t:"Risks to a nursing baby of use while breastfeeding", correct:true, why:"New: children should not ingest certain medications in breast milk."},
   {t:"Effects of the drug when given directly to a child", correct:false, why:"A wrong option on her Quiz 2 labeling item: the rule covers pregnancy, fertility and lactation, not pediatric use."}],
  teach:"The FDA used to rank drugs on a scale from known to cause birth defects to not; in 2014 (her quiz; in class she said \"about 5 years ago\") it changed the labeling. Besides a drug's teratogenicity, the labeling now includes its effects on fertility, including male fertility (sperm count and viability, which can contribute to teratogenicity), and whether a nursing mother should take it, since children should not ingest certain medications in breast milk.",
- quote:"FDA changed the labeling to include not just information on a drug's stratogenicity, but they now include information on fertility, especially male fertility, and then also put in the same labeling place information on whether or not lactating women should take that medication.",
+ quote:"FDA changed the labeling to include not just information on a drug's stratogenicity [teratogenicity], but they now include information on fertility, especially male fertility, and then also put in the same labeling place information on whether or not lactating women should take that medication.",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Teratogenesis Labeling’ (Link to FDA Pregnancy and Lactation Labeling); transcript 10/13"}
 );

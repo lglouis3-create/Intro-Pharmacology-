@@ -24,8 +24,8 @@ QUESTIONS.push(
   {t:"Their outcome data are better than the data for charcoal", correct:false, why:"The outcome data favor charcoal."},
   {t:"They are needed first to empty the stomach for charcoal", correct:false, why:"Each is a separate way to prevent absorption, not a step before charcoal."}],
  teach:"Every absorption-prevention method carries risk (aspiration is the biggest risk of emesis), and case outcome data favor charcoal. But charcoal does not grab everything a person can ingest, and it only works while the poison is still in the stomach and small intestine. In a severe overdose where the patient probably cannot otherwise be saved, the chance that a riskier method removes more poison is worth its risk, so the team tries it; the decision rests on severity, not on better evidence.",
- quote:"Will they try that? Yeah, why not? ... If somebody has really overdosed on something, and you probably can't save them, then ... the risks might outweigh the benefit for using some of these other options to prevent absorption.",
- note:"Her words say \"the risks might outweigh the benefit\"; her answer to the question (\"Yeah, why not?\") is that the team will try them in a severe case. Keyed on the answer she gave: in a severe case the riskier methods are worth trying.",
+ quote:"Will they try that? Yeah, why not? ... If somebody has really overdosed on something, and you probably can't save them",
+ note:"The sentence continues \"then ... the risks might outweigh the benefit for using some of these other options to prevent absorption\"; her answer to the question (\"Yeah, why not?\") is that the team will try them in a severe case. Keyed on the answer she gave: in a severe case the riskier methods are worth trying.",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Toxicokinetic-Based Treatment Prevent Absorption’ (review); transcript 10/19"},
 
 {id:"L16-103", lecture:"L16", prof:"Smith", tier:"new", topic:"L16", sub:"guideline", skill:"apply",

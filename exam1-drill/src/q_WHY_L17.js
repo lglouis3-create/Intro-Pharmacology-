@@ -111,7 +111,7 @@ QUESTIONS.push(
   {t:"P-gp carries the drug from the lumen into the blood", correct:false, why:"The reverse direction: P-gp effluxes drug back into the lumen."},
   {t:"P-gp speeds the drug's excretion by the kidney", correct:false, why:"The answer is absorption into the systemic circulation, bioavailability; gut P-gp pumps drug back into the lumen."}],
  teach:"P-glycoprotein, encoded by the ABCB1 gene, is an efflux transporter expressed in the gut. As an oral drug tries to cross the cells lining the gut lumen, P-gp grabs it and pumps it back into the lumen to be passed in the stool. That limits absorption into the systemic circulation, which is the drug's bioavailability.",
- quote:"PGP is an e-flux transporter. ... In other words, the drug in your gut lumen is trying to go across those lumen cells, and PGP is grabbing it and pumping it back into the lumen so that you're gonna poop it out",
+ quote:"PGP is an e-flux [efflux] transporter. ... In other words, the drug in your gut lumen is trying to go across those lumen cells, and PGP is grabbing it and pumping it back into the lumen so that you're gonna poop it out",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘Introduction: Three Target Areas’ (p. 10); transcript 10/20"},
 
 {id:"L17-110", lecture:"L17", prof:"Smith", tier:"new", topic:"L17", sub:"targets", skill:"apply",
@@ -123,7 +123,7 @@ QUESTIONS.push(
   {t:"Digoxin is metabolized more slowly in the liver", correct:false, why:"P-gp is a transporter in the gut; metabolism is the metabolizing-enzyme target area."},
   {t:"The kidney excretes less digoxin into the urine", correct:false, why:"Bioavailability here is absorption into the systemic circulation from the gut."}],
  teach:"Digoxin is a substrate for P-gp in the gut. A low-activity P-gp variant does not grab as much digoxin to stop it from being absorbed; it does little effluxing and lets the drug go through. More digoxin reaches the systemic circulation, so its bioavailability goes up.",
- quote:"So a person with a low activity version of PGP, it's not grabbing so much drug and preventing it from being absorbed. It's letting it go through, because it's not very active, it's not doing much e-fluxing.",
+ quote:"So a person with a low activity version of PGP, it's not grabbing so much drug and preventing it from being absorbed. It's letting it go through, because it's not very active, it's not doing much e-fluxing [effluxing].",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘Introduction: Three Target Areas’ (p. 10); transcript 10/20"},
 
 {id:"L17-111", lecture:"L17", prof:"Smith", tier:"new", topic:"L17", sub:"targets", skill:"apply",

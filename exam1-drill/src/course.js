@@ -81,6 +81,7 @@ const COURSE = {
     {id:3, name:'Exam 3', scope:'Toxicology and pharmacogenomics, Dr. Smith (10/9–10/20)', date:'Fri Oct 23, 9 am (2 hours)', when:'2026-10-23T09:00:00-05:00',  // her words in class 10/22 (relayed by the user): 9 am, 2 hours; supersedes the 10/17 notice's 90 minutes
      questions:54,               // her words 10/22: 54 questions
      minutes:120,                // her words 10/22: the exam lasts 2 hours
+     tf:2,                       // her words 10/22: 2 true/false items
      noBack:true,                // her words 10/21: "no backwards nav" (each question answered before the next)
      blurb:'Covers Oct 9 through Oct 20, taught by Dr. Smith; on 10/20 the class voted to keep that day\'s pharmacogenomics lecture on this exam. 54 questions in 2 hours: multiple choice, select-all (no partial credit), 2 true/false and 2 short answer (partial credit). 21% of the course grade. In the bank: all five lectures (10/9, 10/13, 10/14, 10/19, 10/20), her practice quiz 1 and her three posted keys. She tests what she says in lecture first, then the slides and the readings.',
      // the Topics card shows these as label / value rows (her exam notice 10/17, the syllabus, her words 10/19 and 10/20)
