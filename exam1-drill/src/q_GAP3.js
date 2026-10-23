@@ -412,7 +412,7 @@ QUESTIONS.push(
  note:"Her Principles objectives slide: \"calculate common indices of toxicity from a dose-response curve\". The doses in the stem are practice numbers.",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Values Developed from Dose-Response’; transcript 10/13"},
 
-{id:"GAP3-033", lecture:"L16", prof:"Smith", tier:"new", topic:"L16", sub:"table", skill:"recall", readingId:"marraffa",
+{id:"GAP3-033", lecture:"L16", prof:"Smith", tier:"new", topic:"L16", sub:"table", skill:"recall", core:true, coreWhy:"author of a discussion or activity reading; upperclassmen report she asks which authors wrote which reading", readingId:"marraffa",
  concept:"marraffa-authors", tags:["smith","reading","authors"], source:"both",
  stem:"Who wrote the primer on antidotes for toxicological emergencies assigned with Treating Poisonings?",
  options:[

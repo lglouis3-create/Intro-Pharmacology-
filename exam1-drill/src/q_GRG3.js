@@ -448,7 +448,7 @@ QUESTIONS.push(
  quote:"there are some things we need to think about regarding the time frame of when you found them, and if they're symptomatic or not, and the kind of formulation that they were exposed to, correct?",
  cite:"Readingguideforoutofhospitalguidelines2026KEY.docx, question 2 in both columns; transcript 10/19"},
 /* ---------------- Who wrote the guidelines ---------------- */
-{id:"GRG3-034", lecture:"GRG3", prof:"Smith", tier:"new", topic:"GRG3", sub:"authors", skill:"recall", readingId:"aapcc-bb",
+{id:"GRG3-034", lecture:"GRG3", prof:"Smith", tier:"new", topic:"GRG3", sub:"authors", skill:"recall", core:true, coreWhy:"author of a discussion or activity reading; upperclassmen report she asks which authors wrote which reading", readingId:"aapcc-bb",
  concept:"grg-aapcc", tags:["smith","reading"], source:"both",
  stem:"Which organization's panel wrote the two out-of-hospital management guidelines the class discussed, for beta-blocker and for calcium channel blocker ingestion?",
  options:[
@@ -460,7 +460,7 @@ QUESTIONS.push(
  quote:"So all the patients that have overdosed on these different formulations, these authors wrote this paper, they've pulled together all the data, done the statistical analysis, and they have these guidance now.",
  cite:"beta-blocker+guideline+AAPCC+2005.pdf and Ca+channel+blocker+guideline+AAPCC+2005.pdf, title pages; transcript 10/19"},
 
-{id:"GRG3-035", lecture:"GRG3", prof:"Smith", tier:"new", topic:"GRG3", sub:"authors", skill:"tell", readingId:"aapcc-ccb",
+{id:"GRG3-035", lecture:"GRG3", prof:"Smith", tier:"new", topic:"GRG3", sub:"authors", skill:"tell", core:true, coreWhy:"author of a discussion or activity reading; upperclassmen report she asks which authors wrote which reading", readingId:"aapcc-ccb",
  concept:"grg-first-authors", tags:["smith","reading"], source:"both",
  stem:"The beta-blocker and calcium channel blocker guidelines come from the same panel. Which pairing names each guideline's first author correctly?",
  options:[

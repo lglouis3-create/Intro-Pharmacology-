@@ -827,8 +827,8 @@ function qCard(q, st, opts = {}) {
       if (st.answered) { if (o.correct) cls += ' right'; else if (sel) cls += ' wrong'; }
       else if (sel) cls += ' sel';
       h += `<button class="${cls}" data-qid="${q.id}" data-o="${oi}" ${st.answered ? 'disabled' : ''}><span class="k">${q.multi ? (sel ? '☑' : '☐') : LETTERS[n]}</span><span>${esc(o.t)}</span></button>`;
-      // after an answer, the why of the option chosen and of the right one; the others sit behind "More"
-      if (st.answered && o.why && (o.correct || sel)) h += `<div class="why">${esc(o.why)}</div>`;
+      // after an answer, every option's why shows under it: why the right one is right and why each other one is wrong
+      if (st.answered && o.why) h += `<div class="why">${esc(o.why)}</div>`;
     });
   }
   if (!st.answered && (q.multi || q.type === 'match')) h += `<button class="btn" ${opts.single ? 'id="check"' : ''} data-qid="${q.id}" data-check="1">Check</button>`;
@@ -836,8 +836,7 @@ function qCard(q, st, opts = {}) {
     const pairsRight = q.type === 'match' ? q.left.filter((l, i) => st.mpick[i] === pairOf(q, l)).length : 0;
     h += `<div class="verdict ${st.ok ? 'ok' : 'bad'}" role="status" tabindex="-1">${st.ok ? '✓ Correct' : '✗ Not correct'}${q.type === 'match' ? ` · ${pairsRight} of ${q.left.length} pairs right` : ''}</div>`;
     const hidden = [];
-    if (q.type === 'match' && q.pairs) q.pairs.filter(p => p.why).forEach(p => { const i = q.left.indexOf(p.l); if (st.mpick[i] === p.r) hidden.push({t: p.l, why: p.why}); else h += `<div class="why"><b>${esc(p.l)}</b>: ${esc(p.why)}</div>`; });
-    else (q.options || []).forEach((o, i) => { if (o.why && !o.correct && !(q.multi ? st.picked.has(i) : st.picked === i)) hidden.push(o); });
+    if (q.type === 'match' && q.pairs) q.pairs.filter(p => p.why).forEach(p => { h += `<div class="why"><b>${esc(p.l)}</b>: ${esc(p.why)}</div>`; });
     if (q.teach) h += `<div class="teach">${teachHTML(q.teach)}</div>`;
     if (q.step3) h += stepHTML(q.step3);
     h += graphFeedback(q, st);
@@ -866,9 +865,8 @@ function fillHTML(q, st) {
     : `<button type="button" class="btn ghost" data-qid="${q.id}" data-fbank="1">Show the word bank</button>`;
   return h + `<div class="row" style="margin-top:8px"><button type="button" class="btn" data-qid="${q.id}" data-check="1">Show the answer</button><span class="meta" style="margin:0">You decide if you had it.</span></div>`;
 }
-/* After an answer the card shows what is needed first: the verdict, the why of the option chosen and of
-   the right one, and the teach. The rest (the other options' whys, the figure, the textbook notes, the
-   quote, the cite) is folded behind "More", so a wrong answer fits about one phone screen before Next. */
+/* After an answer the card shows the verdict, every option's why under that option, and the teach.
+   The figure, the textbook notes, the quote and the cite are folded behind "More". */
 function moreHTML(q, hidden) {
   let b = '';
   if (hidden.length) b += `<div class="meta" style="margin:6px 0 4px">The other options</div>` + hidden.map(o => `<div class="why"><b>${esc(o.t)}</b> — ${esc(o.why)}</div>`).join('');
@@ -1670,9 +1668,9 @@ function examResult() {
     const a = EX.ans[q.id], ok = exRight(q, a), pickedSet = new Set([].concat(a == null ? [] : a));
     h += `<div class="card"><div class="row" style="justify-content:space-between"><span class="meta">${k + 1}. ${metaLine(q)}</span>${flagBtn(q.id)}</div><div class="stem">${esc(q.stem)}</div>${stemMedia(q)}
       <div class="verdict ${ok ? 'ok' : 'bad'}">${ok ? '✓ Correct' : !examAnswered(q.id) ? '✗ Not answered' : '✗ Not correct'}</div>`;
-    const hidden = [];   // the other options' whys, the figure, the notes and the cite fold behind "More", as on a quiz card
+    const hidden = [];   // the figure, the notes and the cite fold behind "More", as on a quiz card
+    (q.options || []).forEach((o, oi) => { h += `<div class="opt${o.correct ? ' right' : pickedSet.has(oi) ? ' wrong' : ''}" style="cursor:default"><span>${esc(o.t)}</span></div>${o.why ? `<div class="why">${esc(o.why)}</div>` : ''}`; });
     if (!ok) {
-      q.options.forEach((o, oi) => { if (o.correct || pickedSet.has(oi)) h += `<div class="opt ${o.correct ? 'right' : 'wrong'}" style="cursor:default"><span>${esc(o.t)}</span></div><div class="why">${esc(o.why || '')}</div>`; else if (o.why) hidden.push(o); });
       if (q.teach) h += `<div class="teach">${teachHTML(q.teach)}</div>`;
       if (q.note) h += `<div class="note">${esc(q.note)}</div>`;
     }
