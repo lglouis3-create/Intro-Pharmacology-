@@ -542,16 +542,16 @@ const out = path.join(__dirname, '..', course.match(/output:\s*'([^']+)'/)[1]);
   // 5: an import with box 99 is clamped to the top box and still schedules
   const b99 = await page.evaluate(() => { const q = QUESTIONS[0]; const t = normalize({q: {[q.id]: {n: 1, ok: 1, box: 99, due: 0, last: 0}}, log: []}); const keep = S; S = t; let err = ''; try { schedule(q.id, 'sure'); } catch (e) { err = e.message; } const r = {box: S.q[q.id].box, due: S.q[q.id].due > Date.now(), err}; S = keep; return r; });
   if (b99.err || b99.box !== 5 || !b99.due) fail('box 99 import: ' + JSON.stringify(b99));
-  // 6: the folded answer card: the chosen and right whys show, the other options' whys sit behind "More" (closed), the cite too
+  // 6: the answer card: every option's why shows; the cite sits behind "More" (closed)
   const fold = await page.evaluate(() => {
     const q = examPool().find(x => x.options && !x.type && !x.multi && x.options.length >= 4 && x.options.every(o => o.why)); S.layout = 'one'; startQuiz([q], 'fold', 'pass');
     const wrong = q.options.findIndex(o => !o.correct); pick(wrong);
     const card = document.querySelector('.qcard'), more = card.querySelector('details.qmore');
     const visibleWhys = [...card.querySelectorAll(':scope > .why')].length, hiddenWhys = more ? more.querySelectorAll('.why').length : -1;
     const r = {visibleWhys, hiddenWhys, open: more && more.open, citeInMore: !!(more && more.querySelector('.cite')), citeOutside: !!card.querySelector(':scope > .cite'), explain: !!card.querySelector('[data-jump]'), teach: !!card.querySelector(':scope > .teach') || !q.teach};
-    more.open = true; r.opens = more.querySelector('.why').getBoundingClientRect().height > 0; return r;
+    r.nopts = q.options.length; more.open = true; r.opens = more.querySelector('.cite').getBoundingClientRect().height > 0; return r;
   });
-  if (fold.visibleWhys !== 2 || fold.hiddenWhys < 1 || fold.open || !fold.citeInMore || fold.citeOutside || !fold.explain || !fold.teach || !fold.opens) fail('folded answer card: ' + JSON.stringify(fold));
+  if (fold.visibleWhys !== fold.nopts || fold.hiddenWhys !== 0 || fold.open || !fold.citeInMore || fold.citeOutside || !fold.explain || !fold.teach || !fold.opens) fail('folded answer card: ' + JSON.stringify(fold));
   // 7: flashcards: "Did not know" does not serve the same card straight back; the meta line counts due and new
   const fc = await page.evaluate(() => { TM.mode = 'flash'; TM.group = 'all'; TM.card = null; TM.last = null; go('terms'); let rep = 0; for (let i = 0; i < 6; i++) { const id = TM.card.id; document.getElementById('fcshow').click(); document.querySelector('[data-fc="wrong"]').click(); if (TM.card.id === id) rep++; } const meta = ([...document.querySelectorAll('#view .meta')].find(m => /cards seen/.test(m.textContent)) || {}).textContent || ''; TM.mode = 'glossary'; return {rep, meta}; });
   if (fc.rep || !/\d+ due · \d+ new/.test(fc.meta)) fail('flashcards: ' + JSON.stringify(fc));

@@ -2,6 +2,15 @@
 
 Newest first. The build embeds this file; the Topics page shows what is new since your last visit, and the Progress page shows all of it. Keep each bullet to one short line.
 
+## 2026-10-23 (Audio scripts checked line by line)
+
+- After you answer, every option shows why it is right or wrong, even when you got it right (exam review too).
+- Hear the why: all 696 Exam 3 scripts checked against her words and keys; 234 corrected, 96 added.
+- Her own quiz questions and the matching questions now have Hear the why too.
+- Reading talks, antidote diagram narration and step-through captions checked again; missing details added.
+- Poisoning table scripts name the poisoning instead of pointing at a table row.
+- Questions on who wrote the discussion and activity readings are now ★ Most likely.
+
 ## 2026-10-23 (Step-throughs, listening side panel, more Hear the why)
 
 - Guide: six step-through drawings (toxic alcohols, acetaminophen, ion trapping, liver zones, allele, haplotype).

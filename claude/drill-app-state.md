@@ -134,3 +134,9 @@ See `## Conflicts / uncertain` in notes/L01.md, L02.md and L03.md. The ones that
   antidote diagrams 12,172; step captions 6,385; total 420,470 (about $76.41). Waiting on the user's choice of batches.
 - Open with the user: her table key cites "Pharmacotherapy e6" for iron and organophosphate rows, but the posted e6 is
   Medication Adherence; 11 class B/C slips; Quiz 4 Q1 has no correct option (Exam 4 material).
+- 10/23 (later): final audio review. Nine reviewers checked every Exam 3 script against the current item and the sources
+  (scratchpad audit/BRIEF.md, outputs audit/out_*.json, applied by audit/apply.py): 234 Why scripts replaced, 96 added
+  (narration3_audit.js: Why items, QZ3-001..023, matching items, GAP3-033/034); all 33 recorded L13–L15 clips retired
+  (scripts changed). Reading talks, ANTI_NARR and 31 step captions corrected. Author items starred (user decision).
+  Unrecorded audio now 574,100 characters (about $104.33 at 805¢ per 44,297). Key doubts for the user: L17-123 (her
+  spoken "gene structure" vs keyed linkage), L15-003 hydrophilic gases, TBL3-068 / her key's "Pharmacotherapy e6".
