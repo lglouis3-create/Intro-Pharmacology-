@@ -1,0 +1,31 @@
+{
+ "id": "guide3-7",
+ "title": "Dose-response curves, U-shapes, threshold and cumulative dose",
+ "segs": [
+  {
+   "text": "Section seven. Dose and response. The way dose-response data are graphed decides what can be read from them. An individual dose-response curve shows how each animal's response changes with its dose. In her example, rodents in dose groups were given an organophosphate, and percent inhibition of two enzymes, carboxylesterase and cholinesterase, was plotted against dose. Because each response is plotted separately, the graph shows that many chemicals have more than one effect, because they have multiple targets. She said, we could not see this if we weren't graphing it as an individual dose response curve.",
+   "slide": "tox:20",
+   "reading": null
+  },
+  {
+   "text": "A population dose-response curve groups the responses and shows how many animals respond at each dose, as mortality frequency and cumulative mortality. Two values are read from it. The L D fifty is where the cumulative curve crosses fifty percent, about one hundred milligrams per kilogram on her figure. The threshold dose is the lowest dose with a response, about ten milligrams per kilogram. She does not use the probit panel of this figure.",
+   "slide": "tox:21",
+   "reading": null
+  },
+  {
+   "text": "Two U-shaped curves look alike for different reasons. Iron is an essential substance. With too little, the blood cannot carry oxygen, and the adverse response can be death. Too much is an iron overdose, which can also kill. In the middle is a region of homeostasis. Red wine shows hormesis. No wine gives no benefit, a glass or a glass and a half may be protective, and more gives an adverse effect. Because wine is not essential, the low end is not a deficiency, and there is no region of homeostasis.",
+   "slide": "tox:22",
+   "reading": null
+  },
+  {
+   "text": "Two curve shapes describe what happens at low doses. A sigmoid curve has a threshold: below some dose there is no effect, therapeutic or poisonous. That is probably true for medications and most poisons. A linear curve has no threshold: from zero dose, the first molecule could cause a problem. That was long the theory for carcinogens, because one molecule could possibly damage D N A and start a cancer. So a substance is not assumed to have a harmless dose range.",
+   "slide": "tox:23",
+   "reading": null
+  },
+  {
+   "text": "The last idea is cumulative dose. Animals in dose groups were fed two acetylaminofluorene, two A A F, every day, and it causes liver and bladder tumors. One set was sacrificed at twenty four months and another at thirty three months. The bladder tumor threshold fell from about seventy five parts per million to about forty five. She said, use the keyword cumulative. The older animals had received a higher total dose, so a lower daily dose was enough. At thirty three months even the zero-dose animals had liver tumors, because cancer is usually a disease of the aged, so this species is a poor choice for that endpoint. She calls the animals hamsters; the textbook chapter says mice.",
+   "slide": "tox:24",
+   "reading": "casarett-ch2"
+  }
+ ]
+}

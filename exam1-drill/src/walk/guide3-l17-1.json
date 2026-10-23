@@ -1,0 +1,31 @@
+{
+ "id": "guide3-l17-1",
+ "title": "Why pharmacogenomics exists",
+ "segs": [
+  {
+   "text": "Section thirty three. Why pharmacogenomics. People given the same drug can respond very differently. The same drug can be lethal in one person and do nothing in another. These differences were first linked to age, ethnicity, gender and underlying disease. As knowledge of genetics grew, some of the variation could be explained by genetic variation. Pharmacogenomics exists to explain and predict that part. The early evidence came before anyone could genotype. Scientists measured a phenotype, such as an enzyme's activity or a drug's half-life, and showed that it was inherited.",
+   "slide": "pgx:4",
+   "reading": null
+  },
+  {
+   "text": "The first real data point was primaquine, an antimalarial given widely to soldiers as prophylaxis during the Korean War in the nineteen fifties. Some soldiers developed hemolytic anemia, and those of Middle Eastern or African descent seemed most at risk. The soldiers who reacted badly had low activity of the enzyme glucose six phosphate dehydrogenase in their red blood cells. Genotyping was not possible then, but enzyme activity could be measured. She said, we couldn't genotype at that time, but we could measure that enzyme activity. That low activity phenotype reflected a genetic variation, so this was the first link between a bad drug response and genetics.",
+   "slide": "pgx:5",
+   "reading": null
+  },
+  {
+   "text": "Now the timeline. In nineteen fifty three, Watson and Crick and others described the structure of D N A. In nineteen fifty six, a genetic link was found for the hemolytic anemia caused by primaquine. In nineteen fifty seven, Motulsky said that inheritance might explain many individual differences in drug efficacy and adverse drug reactions. In nineteen fifty nine, Vogel coined the term pharmacogenetics. Motulsky made the statement; Vogel coined the word. The Human Genome Project ran from nineteen ninety to two thousand three and finished early and under budget. Whole genome sequencing came after the project, made possible by the faster methods the project developed.",
+   "slide": "pgx:6",
+   "reading": null
+  },
+  {
+   "text": "Twin studies showed the same thing with a drug. The half-life of antipyrine was compared in identical twin pairs and in fraternal twin pairs. Antipyrine was chosen because it is cleared entirely by metabolism, by one known enzyme, so its half-life is a clean measure of that enzyme's activity. Identical twins had almost identical half-lives. Fraternal pairs varied, with only one pair close. Identical twins share their genotype, and fraternal twins do not. So if the same genotype gives the same clearance and different genotypes give different clearances, the variation in clearance is inherited.",
+   "slide": "pgx:7",
+   "reading": null
+  },
+  {
+   "text": "The trap in both stories is the same. Neither the soldiers nor the twins were genotyped. Both studies measured a phenotype. She said, we were looking at their phenotype, which was the half-life of the clearance of the drug. And for the twins, the fraternal pairs are not a match. Only the identical twins matched.",
+   "slide": "pgx:7",
+   "reading": null
+  }
+ ]
+}

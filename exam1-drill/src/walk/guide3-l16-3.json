@@ -1,0 +1,31 @@
+{
+ "id": "guide3-l16-3",
+ "title": "Enhancing metabolism with cofactors",
+ "segs": [
+  {
+   "text": "Section twenty seven. Enhancing metabolism with cofactors. One toxicokinetic treatment speeds up the body's own detoxification of the poison. Inducing more metabolizing enzyme would do that, but it is too slow. She said, it takes a few days, so we can't treat our patient fast enough with that. What works quickly is supplying a cofactor or ingredient that an existing detoxifying reaction uses up, so the enzyme already present keeps running faster. On Quiz three, enhancing metabolism by inducing metabolizing enzymes was the statement that is not correct. Her two examples are cyanide and acetaminophen.",
+   "slide": "treat:12",
+   "reading": null
+  },
+  {
+   "text": "Cyanide's target is cytochrome c oxidase, an enzyme of the electron transport chain. Cyanide displaces the oxygen bound in the enzyme and stops it from working, so cells stop making A T P, and the patient basically suffocates. Three agents are given in order. First, amyl nitrite oxidizes the iron of hemoglobin, making methemoglobin. Methemoglobin pulls cyanide off cytochrome c oxidase onto itself, so the enzyme is regenerated and cellular respiration resumes. That step is removal of the poison from its active site, not enhanced metabolism. The cyanide is still in the body, now bound to methemoglobin.",
+   "slide": "treat:13",
+   "reading": null
+  },
+  {
+   "text": "The second step is the one that enhances metabolism. The body's own enzyme, rhodanese, moves the cyanide off methemoglobin onto sulfur. The agent given is sodium thiosulfate, which donates that sulfur. The rhodanese pathway is capacity limited, so supplying thiosulfate increases how much cyanide rhodanese can convert. The product, labeled thiocyanate, is eliminated by the kidneys. So rhodanese is the enzyme, and sodium thiosulfate is the agent given.",
+   "slide": "treat:13",
+   "reading": "marraffa"
+  },
+  {
+   "text": "The third step fixes a problem the first step made. The patient now has a large amount of methemoglobin, which cannot carry oxygen. Methylene blue is a reducing agent. It converts methemoglobin back to hemoglobin, so the blood can carry oxygen again. Amyl nitrite oxidizes hemoglobin to methemoglobin, and methylene blue reduces methemoglobin back to hemoglobin.",
+   "slide": "treat:13",
+   "reading": null
+  },
+  {
+   "text": "Acetaminophen is metabolized to N A P Q I, a free radical that damages the liver. Glutathione, with the help of the glutathione S transferase enzymes, conjugates N A P Q I so it can be eliminated. N acetylcysteine, called N A C, supplies some of the ingredients the body needs to make more glutathione, so more N A P Q I is conjugated and eliminated. N A C does not neutralize the free radical itself. Her key says it loses effectiveness about eight hours after the overdose, and you still give it. In the United States it is usually given intravenously, because a patient will hardly swallow it.",
+   "slide": "treat:14",
+   "reading": null
+  }
+ ]
+}

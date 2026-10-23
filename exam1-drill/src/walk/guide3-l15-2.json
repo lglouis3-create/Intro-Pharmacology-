@@ -1,0 +1,31 @@
+{
+ "id": "guide3-l15-2",
+ "title": "Neurotoxicity",
+ "segs": [
+  {
+   "text": "Section sixteen. Neurotoxicity. The nervous system has one strong protection, the blood-brain barrier, and four features that make it vulnerable. In a systemic capillary, the wall has openings and the surrounding pericytes are not tightly joined, so solutes move into the tissue between cells. In a brain capillary, the cells of the vessel touch tightly at tight junctions and are surrounded by tightly connected glial cells. A compound must pass through the endothelial cell membranes, so lipophilicity decides entry, and non-lipophilic and larger compounds are kept out. Transporters move some compounds back into the blood.",
+   "slide": "resp:27",
+   "reading": null
+  },
+  {
+   "text": "The barrier has two weak points. It is not continuous, and in some parts of the brain it is looser. And it is immature at birth. She said, that blood-brain barrier is still developing at birth for several months to years. Some drugs that stay out of adult brains crossed into very young children's brains and harmed them, before this was known.",
+   "slide": "resp:27",
+   "reading": null
+  },
+  {
+   "text": "Neurons depend on aerobic metabolism and have very high energy needs, so any exposure that lowers oxygen or energy supply affects the nervous system. Its cells are often very long, such as peripheral nerves running from the spinal cord down the limbs. Neurons must make a large cell volume and move nutrients and waste up and down the axon, which adds to the energy demand.",
+   "slide": "resp:28",
+   "reading": null
+  },
+  {
+   "text": "No other organ has myelin. Schwann cells in the periphery and oligodendrocytes in the central nervous system wrap the axon in many lipid layers and speed conduction. When myelin is damaged, transmission slows, with symptoms such as tingling of the hands and feet. The nervous system is also the only part of the body that depends on neurotransmission, meaning release, crossing the cleft, binding the postsynaptic cell and reuptake, and disturbing any step gives symptoms.",
+   "slide": "resp:29",
+   "reading": null
+  },
+  {
+   "text": "A neurotoxin usually causes one discrete pattern of injury, and the patterns look different under a microscope. In neuronopathy the entire neuron dies. In axonopathy only the axon degenerates, as if cut chemically, while the cell body and myelin are spared. In myelinopathy the myelinating cells are damaged, and remyelination happens slowly, much less effectively in the central nervous system. Her example was metronidazole, which made her hands and feet tingle on a second, higher-dose course. In neurotransmission toxicity, as with organophosphate pesticides, the cell looks normal and the injury is recognized from the loss of function. So in her tingling story, the pattern is myelinopathy, not axonopathy.",
+   "slide": "resp:31",
+   "reading": null
+  }
+ ]
+}

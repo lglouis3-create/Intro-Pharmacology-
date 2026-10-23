@@ -162,3 +162,9 @@ See `## Conflicts / uncertain` in notes/L01.md, L02.md and L03.md. The ones that
   loaded only on Watch. app.js motivSuggest/motivPlay/motivTick: card after submitExam and after 1800 s of active study
   (tab visible, input within 120 s; not during an unfinished paper, the diagram panel or the player); state in
   <ns>:motiv {act, off}; Progress has the on/off box and Watch now. Not playable in the test Chromium (no H.264).
+- 10/23 (guide walkthroughs, v86): 39 spoken scripts in src/walk/guide3-*.json (186 segments, 16,087 words, 98,025
+  characters, about 107 min at 150 wpm), written from the guide3 section text only (scratchpad gw/BRIEF.md), checked by
+  four reviewers (gw/VERIFY.md, gw/verify/*.json: fact, distortion, slide, form fixes applied). gen_walk.py ->
+  guide_walk.js; slides rendered from the user's Drive deck copies (her ink is flattened in) to exam1-drill/slides/
+  (152 JPEG, 14.6 MB); classmate copies excluded. Player in app.js (gwBars/gwOpen/gwPlay; GW_CLIPS from audio/gw-*.mp3).
+  Not recorded yet: device voice until the user approves about 98,000 credits (about $17.82 at the 10/23 rate).

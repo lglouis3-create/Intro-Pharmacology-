@@ -1,0 +1,26 @@
+{
+ "id": "guide3-3",
+ "title": "Sources of exposure",
+ "segs": [
+  {
+   "text": "Section three. Source. The first principle asks where a noxious substance comes from. Toxicologists sort sources into four categories: environmental exposures, occupational exposures, critter bites and stings, and medications. Environmental means contaminants and pollution where people live and move, such as diesel fumes from a bus downtown, or living on ground built on a landfill where dust blows. Occupational means workplace exposures, such as a factory's stacks or a benzene leak. Critter bites and stings are venoms, from snakes, spiders or the platypus spur. Medications, through overdoses and adverse drug effects, are the source pharmacists deal with most.",
+   "slide": "tox:10",
+   "reading": null
+  },
+  {
+   "text": "The category is set by the setting in which a person meets the substance, so the same chemical can belong to different categories for different people. A chemotherapy drug is a medication for the patient. For the pharmacist who mixes it in a hood with the wrong airflow, it is an occupational exposure, because the exposure happens at work. Emergency room staff caring for a patient splattered with an organophosphate face an occupational exposure for the same reason, and radiation is another healthcare example. So healthcare workers are not free of occupational exposure.",
+   "slide": "tox:10",
+   "reading": null
+  },
+  {
+   "text": "Two more points separate right answers from wrong ones. A needle stick is a pathogen exposure, and this course does not treat pathogens as a toxicology source. She said, Remember, in this course we're not usually thinking about exposure to pathogens like needle sticks. Venoms are hard to attribute because they are complex mixtures, so it is not always known which chemicals in a venom cause the pain, the swelling and the death.",
+   "slide": "tox:10",
+   "reading": null
+  },
+  {
+   "text": "The same principle organizes the assigned reading on drugs in water. In that reading, the sources are human waste, medications that are flushed or improperly discarded, livestock, and treatment plants that do not remove all the drugs.",
+   "slide": null,
+   "reading": "rodriguez-mozaz"
+  }
+ ]
+}

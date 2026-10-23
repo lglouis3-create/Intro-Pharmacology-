@@ -1,0 +1,26 @@
+{
+ "id": "guide3-l14-2",
+ "title": "Target and mechanism of action",
+ "segs": [
+  {
+   "text": "Section ten. Target and mechanism of action. The fifth principle asks where in the body a compound acts and how it causes harm. The target can be a specific organ or a more general physiological endpoint. A compound can cause problems at more than one place, and not every place it hits may be known yet. If a compound damages the kidney and the liver, it likely damages them in different ways, because each target has its own mechanism.",
+   "slide": "tox:28",
+   "reading": null
+  },
+  {
+   "text": "The target organ may not be the site of highest concentration, because tissues differ in sensitivity. A compound can be most concentrated in muscle and cause no harm there, yet damage a more sensitive kidney at a lower concentration. She said, where it's having an adverse effect may not be where the highest concentration is, which is probably a little counterintuitive. Sensitivity still needs dose. The kidney has its own dose-response curve, so even a very sensitive organ is harmed only if the concentration reaching it is high enough.",
+   "slide": "tox:28",
+   "reading": null
+  },
+  {
+   "text": "The mechanism at each target may be different. That is why the effective, toxic and lethal curves of one drug are not parallel, and why many adverse effects on a drug's list have nothing to do with its therapeutic action. There are two kinds of side effect. Some are the therapy going too far at the intended target, such as a diuretic that removes too much fluid and leaves the patient needing hydration. Others come from a different target altogether. Aminoglycoside ototoxicity is her classic example of an adverse effect whose target is very different from the therapeutic one.",
+   "slide": "tox:28",
+   "reading": null
+  },
+  {
+   "text": "Her true or false items turn on the word always. The statement that a medication's concentration is always highest at its target site is false. The statement that a drug's mechanism of toxicity is always the same as its mechanism of efficacy is false. And a highly sensitive organ is not always damaged, because the dose at the target still decides.",
+   "slide": "tox:28",
+   "reading": null
+  }
+ ]
+}

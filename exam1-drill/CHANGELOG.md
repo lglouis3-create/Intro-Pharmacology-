@@ -4,6 +4,7 @@ Newest first. The build embeds this file; the Topics page shows what is new sinc
 
 ## 2026-10-23 (Final review before the exam)
 
+- Guides 1–39 have a Listen walkthrough: transcript, the slide being discussed, reading links, speed, continue.
 - Break video: a suggestion after a finished practice exam and every 30 minutes of study; Progress turns it off.
 - Update bar sits inside the header; a refresh on the exam result page brings it back; review cards show options first.
 - A refresh on an answered question now brings back that question answered, with its explanations.

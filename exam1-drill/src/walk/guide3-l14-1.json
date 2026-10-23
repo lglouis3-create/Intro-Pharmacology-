@@ -1,0 +1,31 @@
+{
+ "id": "guide3-l14-1",
+ "title": "Potency, the three dose curves, and the three indices",
+ "segs": [
+  {
+   "text": "Section nine. Potency and the values built from dose-response curves. These curves are used to compare compounds, and to compare the different effects of one compound. If compound A gives the measured response at a lower dose than compound B, A is more potent. Compounds C and D are the trap. C responds at lower doses and then levels off, while D keeps rising and crosses C. So C is more potent at low doses, and past the crossing, D is more potent. She said, you can't say that C is always more potent than D. You can in the lower doses.",
+   "slide": "tox:25",
+   "reading": null
+  },
+  {
+   "text": "Why would C level off? She accepted several answers, all of which could be true. The receptors C binds could be saturated. The metabolism that turns C into its active form could saturate, or an uptake transporter in the gut, such as P glycoprotein. C could be a partial agonist. Target, tissue, metabolism, distribution and absorption can each change potency with dose. This is also why a study needs a wide range of doses. Had it stopped before the curves crossed, nobody would see the potency change places.",
+   "slide": "tox:25",
+   "reading": null
+  },
+  {
+   "text": "For one compound, as the dose rises, the effective dose comes first, then the toxic dose, then the lethal dose, and the three curves are not parallel. Differences in absorption, distribution, metabolism and excretion are one reason. The more important one is the fifth principle. The mechanism by which the drug is effective, toxic and lethal is different for each outcome, and different mechanisms give different slopes.",
+   "slide": "tox:26",
+   "reading": null
+  },
+  {
+   "text": "Her therapeutic index is the toxic dose over the therapeutic dose, usually the T D fifty over the E D fifty. Another percentage works, as long as top and bottom use the same one. It tells how much dosing error can be tolerated. A wide index means the toxic dose is far above the therapeutic dose, so less chance of toxicity. A narrow index means the toxic dose is not much higher. The margin of safety, the T D one over the E D ninety nine, deliberately uses different percentages. She said, because we use a different percentage, it gives you an idea of the slope of your dose response curve, whereas the therapeutic index does not.",
+   "slide": "tox:27",
+   "reading": null
+  },
+  {
+   "text": "The margin of exposure is for repeated exposure to compounds that are not medications, such as a pollutant. A pollutant has no therapeutic dose, so there is nothing to put in a therapeutic index. Instead, the highest dose without an observed adverse effect in animal studies is divided by the estimated human exposure. At a site with several contaminants, the compound with the smallest margin of exposure is the most dangerous, so it is the one to clean up first. The value of all three numbers is the comparison between compounds.",
+   "slide": "tox:27",
+   "reading": null
+  }
+ ]
+}

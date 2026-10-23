@@ -1,0 +1,26 @@
+{
+ "id": "guide3-5",
+ "title": "Bioactivation, detoxification and acetaminophen",
+ "segs": [
+  {
+   "text": "Section five. Metabolism, bioactivation and acetaminophen. Everything absorbed into the body is distributed, usually metabolized, and excreted. In toxicology, metabolism gets the most attention, because it can turn a compound into something more harmful than what the person was exposed to. Bioactivation, also called toxication or metabolic activation, is metabolism that makes something more noxious than the original compound. Detoxification is metabolism to something less harmful and easier to eliminate. She said, I use the word bioactivation to talk about when metabolism occurs to create something that's more noxious than what you were originally exposed to.",
+   "slide": "tox:17",
+   "reading": null
+  },
+  {
+   "text": "Acetaminophen is her example. At the usual daily dose, two phase two enzyme families, the glucuronosyltransferases and the sulfotransferases, turn it into a glucuronide or a sulfate. That is detoxification. When the dose is more than they can handle, the rest goes to a phase one enzyme, cytochrome P four fifty two E one, which makes N A P Q I, a liver toxin. That is bioactivation. Glutathione S-transferases can then conjugate N A P Q I with glutathione, which is detoxification again. So an overdose damages the liver through a metabolite, not through the parent drug. The daily ceiling on the F D A labeling is four grams in twenty four hours.",
+   "slide": "tox:18",
+   "reading": null
+  },
+  {
+   "text": "A person can be injured at or below four grams for two separate reasons. The first is weak phase two enzymes. A genetic variation that lowers glucuronosyltransferase or sulfotransferase activity means part of a normal dose is pushed through two E one to make N A P Q I. She advises older parents not to take four grams in twenty four hours, because their phase two enzymes may be fewer. The second is induction, meaning the body makes more of an enzyme. Alcohol induces two E one, so a normal dose makes more N A P Q I. Her husband's example was three days of baseball with beers each evening, then five hundred milligram Tylenol tablets on Sunday, taken and forgotten until he neared four grams.",
+   "slide": "tox:18",
+   "reading": null
+  },
+  {
+   "text": "The two reasons can add together. Induced two E one plus low-activity phase two enzymes could really set up a person for liver toxicity by just taking the allowed dose of acetaminophen. They are still separate reasons: alcohol works by induction, not by lowering the phase two enzymes, and the low phase two activity is the genetic reason. Two E one is a phase one enzyme. When she says G S Ts she means the glucuronosyltransferases, and S Ts are the sulfotransferases. The glutathione S-transferases, which conjugate N A P Q I with glutathione, are a different family.",
+   "slide": null,
+   "reading": null
+  }
+ ]
+}

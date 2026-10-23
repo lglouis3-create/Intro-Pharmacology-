@@ -1,0 +1,31 @@
+{
+ "id": "guide3-l15-9",
+ "title": "Three angles of treatment and preventing absorption",
+ "segs": [
+  {
+   "text": "Section twenty-three. Three angles, four toxicokinetic methods, and preventing absorption. A poisoned patient is treated from one of three angles. The kinetics of the poison, inactivating the poison, or the pharmacology of what it is doing. Toxicokinetic treatment aims to decrease the amount of poison in the body, hoping to reduce end-organ damage. It has four methods. Prevent absorption. Inhibit toxication, meaning bioactivation to a more toxic compound. Enhance metabolism, which is detoxification. And enhance elimination. One quiz trap says to enhance metabolism by inducing metabolizing enzymes. That is not correct, because induction takes days.",
+   "slide": "treat:7",
+   "reading": null
+  },
+  {
+   "text": "Preventing absorption only works while the poison is still in the gut, and every method carries risk. Emesis with ipecac induces vomiting. She said, aspiration is the biggest risk. Emesis is no longer used, and ipecac is no longer sold in the United States. A quiz statement calling emesis first line for an oral poison is false. Gastric lavage passes a tube to the stomach and pumps fluid in and back out. The tube may go into the lungs, and large tablets will not come up it. An experienced emergency room may try it for a massive, very dangerous ingestion.",
+   "slide": "treat:8",
+   "reading": null
+  },
+  {
+   "text": "Whole bowel irrigation means drinking polyethylene glycol solution or magnesium citrate until it passes through, as before a colonoscopy. The gut must be open, with no ileus and no blockage. It is likely to be tried for a massive ingestion. DiPiro lists it for sustained-release or enteric-coated drugs, iron, lithium, potassium and swallowed drug packets.",
+   "slide": "treat:8",
+   "reading": "dipiro-e9"
+  },
+  {
+   "text": "Single-dose activated charcoal is a slurry of fine charcoal in water. The poison sticks to it and leaves in the feces. By patient-outcome data it is the best option. It can bind only what is still in the stomach and small intestine, so there is a time window. Her quiz key says less than sixty minutes after ingestion. In lecture she allowed up to two hours. Charcoal does not bind every compound. DiPiro names iron, lead, lithium, alcohols and corrosives among those it does not bind.",
+   "slide": "treat:9",
+   "reading": "dipiro-e9"
+  },
+  {
+   "text": "Multiple-dose activated charcoal can work even after absorption, for a drug with enterohepatic recirculation. Such a drug goes from the liver into the bile and back into the small intestine, where another dose of charcoal catches it. She said, the use of multiple dose activated charcoal is limited to things that get stuck on charcoal and undergo that recirculation. The American and European poison control organizations state that all these methods are dangerous and should be used only when judged necessary.",
+   "slide": "treat:8",
+   "reading": null
+  }
+ ]
+}

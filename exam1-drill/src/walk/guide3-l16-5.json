@@ -1,0 +1,36 @@
+{
+ "id": "guide3-l16-5",
+ "title": "Inactivating poisons: chelators, antivenoms and antibodies",
+ "segs": [
+  {
+   "text": "Section twenty nine. Inactivating poisons. The first goal in a poisoning is to prevent absorption. Once the poison has been absorbed into the systemic circulation and is not readily eliminated, some poisons can be inactivated. A second molecule binds the poison so it can no longer reach its target, and the poison and inactivator complex is then cleared from the body. This is what she officially calls an antidote. The two groups of inactivators are heavy metal chelators, and antivenoms and antibodies.",
+   "slide": "treat:17",
+   "reading": null
+  },
+  {
+   "text": "A good inactivator binds the toxin so that no part of it can still touch the target. It has high affinity for the toxin, because otherwise massive amounts would be needed, and the inactivator could cause side effects of its own. The complex has low toxicity, which she changed to no toxicity, because binding is useless if the bound complex is still poisonous. And the complex must be cleared from the body. On Quiz three, the statement that the complex does not need to be cleared was the false one.",
+   "slide": "treat:17",
+   "reading": null
+  },
+  {
+   "text": "Heavy metal chelators bind lead, mercury, cadmium, iron and copper. They are small molecules with a nucleophilic electron donor that binds the metal tightly, forming a metal ligand complex. They are usually multidentate, holding one metal atom at several points. A chelator needs higher affinity for the toxic metal than for the body's own macromolecules. It needs low affinity for endogenous ions, such as magnesium in enzymes and especially calcium, because the body needs those. So a chelator that also binds calcium is a bad chelator. It must also be water soluble, non toxic and readily cleared.",
+   "slide": "treat:18",
+   "reading": null
+  },
+  {
+   "text": "Edetate disodium binds lead. Dimercaprol, also called British anti Lewisite, binds gold, arsenic, lead and mercury. Succimer binds lead, cadmium, mercury and arsenic. Deferoxamine and deferasirox bind iron, and deferasirox is the oral one, recently approved by the Food and Drug Administration. Her table key says deferoxamine chelates the circulating ferric iron in an iron overdose. Penicillamine and trientine bind copper, usually for Wilson's disease, a genetic disease with very high copper levels that damage organs.",
+   "slide": "treat:20",
+   "reading": null
+  },
+  {
+   "text": "Antivenoms and antibodies need high affinity and high specificity for what they bind. A polyclonal antivenom is made by inoculating an animal with small amounts of snake venom, not enough to kill it. Its immune system makes antibodies, its blood is drawn, and those antibodies are filtered out. The product is a collection of antibodies, not one single antibody. The patient's body then reacts against the many foreign animal antibodies while also fighting the venom. The result is a type three hypersensitivity reaction, called serum sickness, with fever, nausea and malaise.",
+   "slide": "treat:21",
+   "reading": null
+  },
+  {
+   "text": "Digoxin immune Fab is the one antibody that treats a drug overdose. Her table key says these digoxin specific antibody fragments bind digoxin and are eliminated by the kidneys. After Fab is given, measuring serum digoxin does not help. The total digoxin concentration, free plus bound to Fab, rises, so it cannot be used to calculate further Fab doses.",
+   "slide": "treat:21",
+   "reading": null
+  }
+ ]
+}

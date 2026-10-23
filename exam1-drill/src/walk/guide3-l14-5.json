@@ -1,0 +1,31 @@
+{
+ "id": "guide3-l14-5",
+ "title": "On-target and off-target endpoints",
+ "segs": [
+  {
+   "text": "Section thirteen. On-target and off-target toxic endpoints. Toxic endpoints are the results of an exposure. Besides on-target and off-target, they may be non-organ specific, organ specific, idiosyncratic, meaning the cause is unknown, or immunologic, mainly allergic reactions. The on-target and off-target labels answer one question. Did the drug or its metabolite bind the receptor it was designed for? The tissue where that happens does not change the label.",
+   "slide": "resp:11",
+   "reading": null
+  },
+  {
+   "text": "On-target in the intended tissue usually means too much drug at the receptor. She said, most of the time, if you're having an on target adverse effect in the right tissue, your dose is too high. That can come from a deliberate or accidental dosing error, from a change in the drug's pharmacokinetics, such as a diseased liver that cannot clear a normal dose, or from a change in receptor number.",
+   "slide": "resp:13",
+   "reading": null
+  },
+  {
+   "text": "On-target in the wrong tissue means the drug reaches its intended receptor where it should not act. Diphenhydramine, Benadryl, blocks allergic symptoms through histamine receptors in the periphery and causes drowsiness through the same histamine receptors in the brain. That drowsiness is on-target, not off-target. Newer antihistamines, cetirizine and fexofenadine, were modified so they do not cross the blood-brain barrier, so they do not cause drowsiness.",
+   "slide": "resp:13",
+   "reading": null
+  },
+  {
+   "text": "Off-target means the drug binds a receptor it was not designed for, in either tissue. Terfenadine, Seldane, gave the desired peripheral H one antagonism but also inhibited cardiac potassium channels, causing arrhythmias, and it was taken off the market. Racemic thalidomide contained the R enantiomer, an effective anti-nausea agent, and the S enantiomer, a potent teratogen. Propranolol lowers heart rate through beta one receptors in the heart but worsens asthma through beta two receptors in airway smooth muscle. An enantiomer and a receptor subtype both count as unintended receptors.",
+   "slide": "resp:14",
+   "reading": null
+  },
+  {
+   "text": "Her quiz defines an off-target adverse effect as one that occurs when a drug interacts with a receptor that is not its therapeutic target. The wrong choices describe on-target effects, either a dose too high at the intended receptor, or the intended receptor in the wrong location. Off-target binding explains side effects on a drug's list that have nothing to do with its mechanism of action. One more trap is receptor number. Down-regulation means fewer receptors and a smaller response, not a larger one.",
+   "slide": null,
+   "reading": null
+  }
+ ]
+}

@@ -1,0 +1,41 @@
+{
+ "id": "guide3-l14-6",
+ "title": "Non-organ-specific endpoints",
+ "segs": [
+  {
+   "text": "Section fourteen. Non-organ-specific endpoints. An endpoint is non-organ specific when the damage arises by the same mechanism and looks the same whichever organ it shows up in. A compound may favor one organ, but the endpoint is classified by its pathology, not its location. Her four are fibrosis, genotoxicity, cancer and teratogenesis. They contrast with the organ-specific endpoints of the lungs, nervous system, liver and kidney.",
+   "slide": "resp:10",
+   "reading": null
+  },
+  {
+   "text": "In fibrosis, excess collagen and other extracellular matrix proteins are laid down, the tissue becomes stiff, and the organ loses function. Lungs with paraquat fibrosis can no longer inhale and exhale. Pulmonary fibrosis forms in the alveolar interstitium, from amiodarone, a cardiac drug, bleomycin, a chemotherapy drug, and paraquat, an herbicide. Liver fibrosis is cirrhosis, from ethanol, and amiodarone causes it too. She said, if you look at the chemistry of that fibrotic tissue, it's the same. So fibrosis is non-organ specific even though amiodarone and bleomycin hit the lung.",
+   "slide": "resp:15",
+   "reading": null
+  },
+  {
+   "text": "Genotoxicity is damage to D N A in general, in somatic or germ cells. Mutagenicity is a transmissible change. A mutation in germ cells can pass to offspring, which makes the agent a mutagen, while damage in a somatic cell stays with the exposed person. So the two words are not synonyms. The results of genotoxicity can be cancer, birth defects, and genetically based disorders.",
+   "slide": "resp:16",
+   "reading": null
+  },
+  {
+   "text": "Cancer may have a long latency between exposure to a carcinogen and the disease. The multistage model of initiation, promotion and progression she summarized in one line. It takes more than one mutation to end up with cancer. Cancer rates do differ by organ, but rates are not the basis of the classification. The same cellular mechanism can cause cancers in different organs, and some lung cancers carry the same mutation as some colon cancers. So the wrong answers are that cancer is not understood well enough, or that cancers in different organs share nothing in their pathology.",
+   "slide": "resp:17",
+   "reading": null
+  },
+  {
+   "text": "Teratogenesis is the induction of birth defects. The fetus is exposed through the mother, so its exposure depends on her absorption, distribution, metabolism and excretion, and on whether the compound crosses the placenta. Time of exposure decides the type of defect. Retinoids given to pregnant hamsters on different gestation days caused small eyes, spina bifida, cleft palate, forelimb shortening and effects on the tail. So the statement that each teratogen causes only one kind of birth defect is false.",
+   "slide": "resp:21",
+   "reading": null
+  },
+  {
+   "text": "The reverse also holds. Several compounds cause the same palate deformity, each with its own peak gestation day. Methanol peaks on day seven, T C D D on day eleven, two, four, five trichloroacetic acid on day twelve, and dexamethasone on day thirteen. So a defect alone does not identify the compound. Dose matters as well. Her one sentence was that the mother has to get enough of the compound for it to pass into the baby.",
+   "slide": "resp:22",
+   "reading": null
+  },
+  {
+   "text": "The Food and Drug Administration used to rank drugs by how likely they were to cause birth defects. Her quiz keys three contents of the newer Pregnancy and Lactation Labeling Rules, from two thousand fourteen. They are effects on female and male reproductive potential, risks to the baby during breastfeeding, and risks to the baby during pregnancy. Information about how a medication will affect a child if given to the child is not one of them.",
+   "slide": "resp:24",
+   "reading": null
+  }
+ ]
+}

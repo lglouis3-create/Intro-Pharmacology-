@@ -1,0 +1,21 @@
+{
+ "id": "guide3-l17-6",
+ "title": "Haplotype, frequencies and Hardy Weinberg equilibrium",
+ "segs": [
+  {
+   "text": "Section thirty eight. Haplotype, frequencies and Hardy Weinberg equilibrium. She said, it's a set of alleles at multiple loci that coexist in the same chromosome. A haplotype is more than one genetic variant grouped together, co-existing more often than chance would predict. That more often than chance part has a name: linkage disequilibrium. Co-existing on one chromosome is not enough on its own. And one variant at one locus that occurs more often than chance is not a haplotype, because a haplotype needs multiple loci. A single variant in at least one percent of people is a polymorphism; a group inherited together is a haplotype.",
+   "slide": "pgx:19",
+   "reading": null
+  },
+  {
+   "text": "In the illustration, three loci each carry a single nucleotide change: A or G at the first, G or T at the second, A or T at the third. Among people with variants at these loci, the changes appear together in three patterns: A G T, G T A and A G A. Each pattern is a haplotype. Something about the structure and chemistry of that stretch of D N A makes those changes occur in those groupings, so they appear together more often than chance. Warfarin will be the haplotype example later in the course.",
+   "slide": "pgx:20",
+   "reading": null
+  },
+  {
+   "text": "Allele frequency is how often one version of the gene, wild type or variant, occurs in a population, as a proportion or percentage. Genotype frequency is how often a combination of two alleles occurs. Hardy Weinberg equilibrium says allele and genotype frequencies stay constant from generation to generation unless specific influences are introduced. Her example: if this class's drug response differed from every past graduate's, and the cause, say stress, had changed the class's genotype, the class would be out of equilibrium, and its data could not be applied to the general population. So pharmacogenomic papers state that their population was in Hardy Weinberg equilibrium, to show their results are generalizable.",
+   "slide": "pgx:21",
+   "reading": null
+  }
+ ]
+}

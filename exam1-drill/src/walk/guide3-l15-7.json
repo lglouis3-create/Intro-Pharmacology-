@@ -1,0 +1,26 @@
+{
+ "id": "guide3-l15-7",
+ "title": "How pharmacokinetics change in overdose",
+ "segs": [
+  {
+   "text": "Section twenty-one. How pharmacokinetics change in overdose. The parameters measured at therapeutic doses may not hold in an overdose. She said, so you got therapeutic kinetics, and then you got overdose kinetics for a lot of drugs. The parameters that change most are volume of distribution and clearance. A quiz statement that overdose will never affect the kinetics of a drug is false.",
+   "slide": "treat:4",
+   "reading": null
+  },
+  {
+   "text": "Some drugs have a large volume of distribution, over five liters per kilogram. Examples include antidepressants, antipsychotics, opioids and verapamil. A large volume means most of the drug has left the blood and is sequestered in lipid, muscle or bone. Dialysis can only clear what is in the blood. After one run, drug moves back into the blood, and dialysis must wait for it. So a large volume makes a drug hard to dialyze, not easy. The DiPiro chapter gives the profile of a dialyzable drug. Volume of distribution under one liter per kilogram, protein binding under eighty percent, and molecular weight under one thousand daltons.",
+   "slide": "treat:4",
+   "reading": "dipiro-e9"
+  },
+  {
+   "text": "Absorption can change in two directions. Slowed tablet dissolution or gastric emptying delays absorption, so peak toxic effects come later than expected. Iron goes the other way. Oral iron is absorbed by active transport, which saturates, so normally only a limited amount gets in. In overdose, iron destroys the gut lining, so more is absorbed. She said, iron is very caustic, it actually blows apart your gut. Gut injury here increases absorption rather than reducing it.",
+   "slide": "treat:4",
+   "reading": null
+  },
+  {
+   "text": "Saturated liver metabolism means less first-pass effect. The excess passes through unmetabolized, so blood levels are higher than expected, not lower. Plasma protein binding capacity can also be exceeded. Past that capacity the extra drug stays free, and free drug carries the toxicity. This means proteins in the blood, not binding in tissue. Finally, high plasma concentrations may change elimination from first order to zero order, which lengthens the half-life.",
+   "slide": "treat:4",
+   "reading": null
+  }
+ ]
+}

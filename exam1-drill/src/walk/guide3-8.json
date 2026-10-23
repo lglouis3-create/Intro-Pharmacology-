@@ -1,0 +1,21 @@
+{
+ "id": "guide3-8",
+ "title": "Therapeutic index, margin of safety and margin of exposure",
+ "segs": [
+  {
+   "text": "Section eight. Three indices on one slide. Three numbers are calculated from dose-response curves. Each is a ratio of a dose that harms, or the highest dose with no observed harm, to a dose that helps, or the dose people actually receive. So a larger number means more room before harm.",
+   "slide": "tox:27",
+   "reading": null
+  },
+  {
+   "text": "The therapeutic index is the toxic dose over the therapeutic dose, usually T D fifty over E D fifty. It is for single doses and gives no information about slope. The margin of safety is T D one over E D ninety nine. It is also for single doses, and it does give slope information. Her practice quiz asked which value is toxic dose over therapeutic dose; the answer is the therapeutic index, not the margin of safety.",
+   "slide": "tox:27",
+   "reading": null
+  },
+  {
+   "text": "The margin of exposure is the N O A E L over the exposure. It is for repeated exposures to non-therapeutic compounds. The N O A E L is the no observed adverse effect level, the highest dose in the animal studies at which no adverse effect was observed.",
+   "slide": "tox:27",
+   "reading": null
+  }
+ ]
+}
