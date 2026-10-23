@@ -2,6 +2,13 @@
 
 Newest first. The build embeds this file; the Topics page shows what is new since your last visit, and the Progress page shows all of it. Keep each bullet to one short line.
 
+## 2026-10-23 (Recorded narration; guide rewritten to teach the reasoning)
+
+- Every Exam 3 audio is now recorded in the narrator's voice: 696 Hear the why, 10 reading talks, 7 diagrams, 38 steps.
+- Guide: all 39 Exam 3 sections rewritten: the idea, the facts in tables, the why, her words, the traps.
+- Her quotes trimmed to what teaches: no poll trouble, chatter or class logistics.
+- Readings show each talk's real length.
+
 ## 2026-10-23 (Audio scripts checked line by line)
 
 - After you answer, every option shows why it is right or wrong, even when you got it right (exam review too).

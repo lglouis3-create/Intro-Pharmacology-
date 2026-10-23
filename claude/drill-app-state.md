@@ -140,3 +140,8 @@ See `## Conflicts / uncertain` in notes/L01.md, L02.md and L03.md. The ones that
   (scripts changed). Reading talks, ANTI_NARR and 31 step captions corrected. Author items starred (user decision).
   Unrecorded audio now 574,100 characters (about $104.33 at 805¢ per 44,297). Key doubts for the user: L17-123 (her
   spoken "gene structure" vs keyed linkage), L15-003 hydrophilic gases, TBL3-068 / her key's "Pharmacotherapy e6".
+- 10/23 (night): all Exam 3 audio recorded (ElevenLabs eleven_v4, voice jNB0TWZK9LKlBbU54wMW, flow rBTHpyjMMFGUzXbnjGQc):
+  751 clips (rd-*, q-*, ad-*, s3-*), 574,654 credits on completed clips (about $104.48); queue and download script in
+  scratchpad rec/ (queue.js, dl.py). S3_CLIPS added to audio_index.js (step-through Play uses s3-<key>-<i>.mp3).
+  Quotes trimmed in all banks, guides, tell3, sa3, reading cards (scratchpad audit/QUOTE_BRIEF.md). Guide3 sections
+  1–39 rewritten (scratchpad guide/BRIEF.md, splice.py). Reading listen_secs set from the recordings.
