@@ -158,3 +158,7 @@ See `## Conflicts / uncertain` in notes/L01.md, L02.md and L03.md. The ones that
 - 10/23 (post-publish fixes, v84): #updbar moved inside <header> (hdrVar re-measured on insert/dismiss); resumePlace
   restores the exam result page (r.v === 'exam' with EX.done); exam review cards show options and whys before teach and
   the Hear the why row (chk7.js verified the order). Chain: build, test.js, style_check.js, browser_test.js passed.
+- 10/23 (break video, v85): the user's video (H.264/AAC, 1280x720, 3:13, 27.6 MB) at exam1-drill/media/break.mp4,
+  loaded only on Watch. app.js motivSuggest/motivPlay/motivTick: card after submitExam and after 1800 s of active study
+  (tab visible, input within 120 s; not during an unfinished paper, the diagram panel or the player); state in
+  <ns>:motiv {act, off}; Progress has the on/off box and Watch now. Not playable in the test Chromium (no H.264).
