@@ -181,7 +181,7 @@ let CUR = 'topics';
    exams' groups and puts her own words about what to study at the top of Topics. Remembered per browser. */
 const FOCUS_KEY = COURSE.ns + ':focus', FOCUS_EXAM = 3;
 const FOCUS_VIEWS = ['topics', 'quiz', 'terms', 'weak', 'exam', 'sa', 'ptab', 'guide', 'readings', 'ref', 'tell', 'data'];
-const focusOn = () => store.get(FOCUS_KEY) === '1' && COURSE.exams.some(e => e.id === FOCUS_EXAM);
+const focusOn = () => (store.get(FOCUS_KEY) || '1') === '1' && COURSE.exams.some(e => e.id === FOCUS_EXAM);
 function setFocus(on) {
   store.set(FOCUS_KEY, on ? '1' : '0');
   if (on) { const was = store.get(EXAM_KEY); if (was && was !== String(FOCUS_EXAM)) store.set(COURSE.ns + ':focusprev', was); store.set(EXAM_KEY, String(FOCUS_EXAM));
@@ -1461,7 +1461,17 @@ function drawExam(n) {
     }
     for (const q of list) { if (want[i] <= 0) break; if (!used.has(q.id)) { out.push(q); used.add(q.id); want[i]--; } }
   });
-  return shuffle(out.concat(termPick));
+  let paper = out.concat(termPick);
+  // the number of true/false items she announced (exam.tf): swap items in or out of the draw
+  if (Number.isInteger(ex.tf)) {
+    const isTF = q => Array.isArray(q.options) && q.options.length === 2 && q.options.every(o => /^(true|false)$/i.test(String(o.t).trim()));
+    const tf = paper.filter(isTF), rest = paper.filter(q => !isTF(q)), all = pools.flatMap(p => eligible(p)).filter(q => !used.has(q.id) && !termPick.includes(q));
+    const moreTF = shuffle(all.filter(q => isTF(q) && !q.dupOf)), moreMC = shuffle(all.filter(q => !isTF(q) && !q.dupOf));
+    while (tf.length > ex.tf && moreMC.length) { tf.pop(); rest.push(moreMC.pop()); }
+    while (tf.length < ex.tf && moreTF.length && rest.length) { rest.pop(); tf.push(moreTF.pop()); }
+    paper = rest.concat(tf);
+  }
+  return shuffle(paper);
 }
 /* Blueprint paper: the topic counts in COURSE.exams[].blueprint. Each question
    falls in one topic by keyword (first match wins: rtk, reg, ti, galpha), else
@@ -1612,7 +1622,7 @@ function renderExam() {
   if (EX.shown !== EX.i) { EX.shown = EX.i; window.scrollTo(0, 0); }
   const q = byId[EX.qs[EX.i]], ord = EX.orders[EX.i], a = EX.ans[q.id];
   let h = `<div class="row" style="justify-content:space-between"><b>${EX.name ? esc(EX.name) + ' · ' : ''}Question ${EX.i + 1} of ${EX.qs.length}</b><span class="row"><span class="timer" id="clock" role="timer"></span>${EX.noBack ? '' : layoutToggle()}</span></div>
-    ${EX.noBack ? '<p class="sub" style="margin:4px 0">No going back: once you move on you cannot return to this question.</p>' : ''}<div class="grid">${EX.qs.map((id, k) => `<button data-j="${k}"${EX.noBack ? ' disabled' : ''} class="${examAnswered(id) ? 'ans' : ''} ${k === EX.i ? 'cur' : ''} ${isFlagged(id) ? 'flag' : ''}" aria-label="Question ${k + 1}${examAnswered(id) ? ', answered' : ''}${isFlagged(id) ? ', flagged' : ''}"${k === EX.i ? ' aria-current="true"' : ''}>${k + 1}</button>`).join('')}</div>
+    ${EX.noBack ? '<p class="sub" style="margin:4px 0">No going back: once you move on you cannot return to this question.</p>' : ''}<div class="grid"${EX.noBack ? ' hidden' : ''}>${EX.qs.map((id, k) => `<button data-j="${k}"${EX.noBack ? ' disabled' : ''} class="${examAnswered(id) ? 'ans' : ''} ${k === EX.i ? 'cur' : ''} ${isFlagged(id) ? 'flag' : ''}" aria-label="Question ${k + 1}${examAnswered(id) ? ', answered' : ''}${isFlagged(id) ? ', flagged' : ''}"${k === EX.i ? ' aria-current="true"' : ''}>${k + 1}</button>`).join('')}</div>
     <div class="card"><div class="stem">${esc(q.stem)}</div>${stemMedia(q)}`;
   ord.forEach((oi, n) => {
     const sel = q.multi ? (a || []).includes(oi) : a === oi;
@@ -1669,6 +1679,7 @@ function examResult() {
     h += `<div class="card"><div class="row" style="justify-content:space-between"><span class="meta">${k + 1}. ${metaLine(q)}</span>${flagBtn(q.id)}</div><div class="stem">${esc(q.stem)}</div>${stemMedia(q)}
       <div class="verdict ${ok ? 'ok' : 'bad'}">${ok ? '✓ Correct' : !examAnswered(q.id) ? '✗ Not answered' : '✗ Not correct'}</div>`;
     const hidden = [];   // the figure, the notes and the cite fold behind "More", as on a quiz card
+    if (typeof NARR_Q !== 'undefined' && NARR_Q[q.id]) h += `<div class="row qsay"><button type="button" class="chip" data-qsay="${q.id}">🔊 Hear the why</button><span class="meta" style="margin:0">${typeof Q_CLIPS !== 'undefined' && !Q_CLIPS.includes(q.id) ? 'device voice' : 'read by the narrator'}</span></div>`;
     (q.options || []).forEach((o, oi) => { h += `<div class="opt${o.correct ? ' right' : pickedSet.has(oi) ? ' wrong' : ''}" style="cursor:default"><span>${esc(o.t)}</span></div>${o.why ? `<div class="why">${esc(o.why)}</div>` : ''}`; });
     if (!ok) {
       if (q.teach) h += `<div class="teach">${teachHTML(q.teach)}</div>`;
@@ -2771,7 +2782,7 @@ function saySide(box, text) {
   if (f && side.dataset.f !== f[1]) { side.dataset.f = f[1]; part('sayfigd', `<figure class="fig sayfig"><img src="${IMG[f[1]]}" alt="${esc(f[2])}; tap to enlarge"></figure>`, f[2]); }
   if (r && side.dataset.r !== r.id) { side.dataset.r = r.id; part('saykeyd', `<div class="saykey">${ptRowHTML(r)}</div>`, 'Her poisoning table key: ' + r.poison); }
 }
-const sideHTML = () => `<div class="sayside">${['saymovd', 'sayfigd', 'saykeyd'].map(c => `<details class="fold ${c}" open hidden><summary></summary><div class="sbody"></div></details>`).join('')}</div>`;
+const sideHTML = () => `<div class="sayside">${['saymovd', 'sayfigd', 'saykeyd'].map(c => `<details class="fold ${c}"${window.innerWidth >= 700 ? ' open' : ''} hidden><summary></summary><div class="sbody"></div></details>`).join('')}</div>`;
 function sayMark(box, i) {
   if (!box) return; const ss = box.querySelectorAll('.ssent'); if (!ss.length) return;
   ss.forEach((x, k) => x.classList.toggle('on', k === i));
@@ -2805,9 +2816,10 @@ function sayPlay(text, box, btn, clip, done) {
   };
   if (!clip) return synth();
   const a = cur.audio = NARR_AUDIO || (NARR_AUDIO = new Audio()); a.src = NAR_BASE() + clip; a.playbackRate = NAR.rate;
-  a.onended = finish; a.onerror = () => { if (SAY === cur) { cur.audio = null; synth(); } };
-  a.ontimeupdate = () => { if (SAY === cur && isFinite(a.duration)) sayFrac(box, a.currentTime / a.duration); };
-  a.play().catch(a.onerror);
+  const fallback = () => { if (SAY !== cur || cur.fell) return; cur.fell = true; cur.audio = null; synth(); };
+  a.onended = finish; a.onerror = fallback;
+  a.ontimeupdate = () => { if (SAY === cur && !cur.fell && isFinite(a.duration)) sayFrac(box, a.currentTime / a.duration); };
+  a.play().catch(fallback);
 }
 document.addEventListener('click', e => {
   const b = e.target.closest('[data-antisay]');
@@ -2829,12 +2841,13 @@ function qSay(id, btn) {
   const a = NARR_AUDIO || (NARR_AUDIO = new Audio()); a.preload = 'auto'; a.src = NAR_BASE() + 'q-' + id + '.mp3'; a.playbackRate = NAR.rate;
   const fallback = () => { if (QSAY !== cur || cur.fell) return; cur.fell = true; synth(); };
   a.onended = finish; a.onerror = fallback; a.ontimeupdate = () => { if (QSAY === cur && !cur.fell && isFinite(a.duration)) sayFrac(d, a.currentTime / a.duration); }; a.play().catch(fallback);
+  a.onloadedmetadata = () => { if (QSAY === cur && !cur.fell && isFinite(a.duration)) { clearTimeout(cur.t); cur.t = setTimeout(finish, a.duration * 1000 / NAR.rate + 4000); } };
   cur.t = setTimeout(finish, (6000 + text.split(/\s+/).length * 500) / NAR.rate);
 }
 function qSayStop() {
   const c = QSAY; QSAY = null; if (!c) return; clearTimeout(c.t);
   if (document.body.contains(c.btn)) { c.btn.textContent = '🔊 Hear the why'; c.btn.setAttribute('aria-pressed', 'false'); }
-  if (NARR_AUDIO) { NARR_AUDIO.onended = NARR_AUDIO.onerror = NARR_AUDIO.ontimeupdate = null; NARR_AUDIO.pause(); }
+  if (NARR_AUDIO) { NARR_AUDIO.onended = NARR_AUDIO.onerror = NARR_AUDIO.ontimeupdate = NARR_AUDIO.onloadedmetadata = null; NARR_AUDIO.pause(); }
   if (narrCan()) speechSynthesis.cancel();
 }
 document.addEventListener('click', e => { const b = e.target.closest('[data-qsay]'); if (b) qSay(b.dataset.qsay, b); });
@@ -2996,7 +3009,18 @@ function expandFigs(html) {
 function vGuide() {
   $('#view').innerHTML = `<div class="tablewrap">${examPage(typeof GUIDE_HTML === 'undefined' ? '' : GUIDE_HTML, 'guide')}</div>`;
   fillImgs($('#view')); stackTables($('#view'));
-  document.querySelectorAll('.guidenav a').forEach(a => a.onclick = e => { const t = document.querySelector(a.getAttribute('href')); if (t) { e.preventDefault(); scrollToEl(t); } });
+  // previous / next at the foot of each section, within its exam group
+  document.querySelectorAll('#view .exgroup, #view').forEach(g => {
+    const secs = [...g.querySelectorAll(':scope section.guide[id]')].filter(s => s.parentElement === g || s.closest('.exgroup') === g);
+    secs.forEach((s, i) => {
+      if (s.querySelector(':scope > .gnav')) return;
+      const t = x => { const w = (x.querySelector('h3') || {textContent: ''}).textContent.replace(/^\d+\.\s*/, ''); return w.length > 44 ? w.slice(0, 44).replace(/\s+\S*$/, '') + '…' : w; };
+      const p = document.createElement('p'); p.className = 'gnav meta';
+      p.innerHTML = (i ? `<a href="#${secs[i - 1].id}">◂ ${esc(t(secs[i - 1]))}</a>` : '<span></span>') + (i < secs.length - 1 ? `<a href="#${secs[i + 1].id}">${esc(t(secs[i + 1]))} ▸</a>` : '<span></span>');
+      s.appendChild(p);
+    });
+  });
+  document.querySelectorAll('.guidenav a, .gnav a').forEach(a => a.onclick = e => { const t = document.querySelector(a.getAttribute('href')); if (t) { e.preventDefault(); scrollToEl(t); } });
 }
 
 /* ---------- Readings: what each assigned reading covers, what she used from it in class, and the drill on it ---------- */
@@ -3447,7 +3471,8 @@ function saveResume() {
   try {
     const r = {v: CUR, y: Math.round(window.scrollY), t: Date.now()};
     if (CUR === 'quiz' && Q && Q.cur && !Q.finished && (Q.mode === 'pass' || Q.mode === 'sr'))
-      r.q = {ids: Q.list.map(q => q.id), label: Q.label, mode: Q.mode, i: Q.i, done: Q.done, right: Q.right, doneIds: [...Q.doneIds], cur: Q.cur.id};
+      r.q = {ids: Q.list.map(q => q.id), label: Q.label, mode: Q.mode, i: Q.i, done: Q.done, right: Q.right, doneIds: [...Q.doneIds], cur: Q.cur.id,
+        ans: Q.answered ? {ok: !!Q.ok, picked: Q.picked instanceof Set ? [...Q.picked] : Q.picked, mpick: Q.mpick, fill: Q.fill, order: Q.order, rightOrder: Q.rightOrder, box0: Q.box0} : null};
     sessionStorage.setItem(RESUME_KEY(), JSON.stringify(r));
   } catch (e) {}
 }
@@ -3464,6 +3489,15 @@ function resumePlace() {
     Q.cur = q; Q.order = q.type === 'match' || q.type === 'fill' ? null : optOrder(q); Q.fill = {text: '', bank: false, rev: false};
     Q.picked = q.multi ? new Set() : null; Q.mpick = null; Q.answered = false; Q.t0 = Date.now();
     if (q.type === 'match') Q.rightOrder = shuffle(q.right.slice());
+    const a = x.ans;   // an answered card comes back answered: its verdict, the whys and the teach stay on screen
+    if (isObj(a) && Q.doneIds.has(q.id)) {
+      if (Array.isArray(a.order) && a.order.length === (q.options || []).length) Q.order = a.order;
+      if (q.type === 'match' && Array.isArray(a.rightOrder) && a.rightOrder.length === q.right.length) Q.rightOrder = a.rightOrder;
+      Q.picked = q.multi ? new Set(Array.isArray(a.picked) ? a.picked : []) : (q.type === 'match' || q.type === 'fill' ? null : a.picked);
+      Q.mpick = isObj(a.mpick) ? a.mpick : null; if (isObj(a.fill)) Q.fill = a.fill;
+      Q.answered = true; Q.ok = !!a.ok; Q.box0 = a.box0; Q.rec = q.id;
+      Q.st[q.id] = {order: Q.order, rightOrder: Q.rightOrder || null, picked: Q.picked, mpick: Q.mpick, fill: Q.fill, answered: true, ok: Q.ok, conf: Q.ok ? 'sure' : 'wrong', box0: Q.box0, t0: Q.t0};
+    }
     renderQ();
     return true;
   }

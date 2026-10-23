@@ -31,7 +31,7 @@ const POISON_TABLE = [
   anti:[['Intravenous fluids, dopamine or norepinephrine, sodium bicarbonate for elongated QRS interval', 'These options are mostly supportive care, trying to maintain blood pressure. Sodium bicarbonate counteracts the inhibition on sodium cardiac channels']],
   special:[], ref:'Basic and Clinical Pharmacology, Chapt 58', page:2},
  {id:'opi', poison:'Opioids', sym:'Somnolence, coma, decreased heart and breath rates, decrease pupils',
-  anti:[['naloxone', 'Competitive antagonist of opioid receptors']],
+  anti:[['Naloxone', 'Competitive antagonist of opioid receptors']],
   special:[['What is a concern when using this antidote in chronic opioid users?', 'It can trigger withdrawal']],
   ref:'Marraffa article', page:3},
  {id:'sal', poison:'Salicylates', sym:'hyperventilation and respiratory alkalosis then metabolic acidosis, hyperthermia, confusion and seizures',

@@ -145,3 +145,13 @@ See `## Conflicts / uncertain` in notes/L01.md, L02.md and L03.md. The ones that
   scratchpad rec/ (queue.js, dl.py). S3_CLIPS added to audio_index.js (step-through Play uses s3-<key>-<i>.mp3).
   Quotes trimmed in all banks, guides, tell3, sa3, reading cards (scratchpad audit/QUOTE_BRIEF.md). Guide3 sections
   1–39 rewritten (scratchpad guide/BRIEF.md, splice.py). Reading listen_secs set from the recordings.
+- 10/23 (final review, v83): six reviewers (scratchpad review2/*.md: func, guideA, guideB, banks, audio, learning).
+  Fixed: resumePlace restores an answered card (ans state in saveResume); sideHTML folds closed under 700 px; her-format
+  paper hides the question grid; exam review shows Hear the why; guide prev/next (.gnav); exam.tf=2 enforced in drawExam;
+  Smith focus default on; QZ3 and lecture-file quiz items core; naloxone capitalized in poison_table/reference3;
+  sayPlay single fallback and qSay guard re-armed on loadedmetadata. Guide: scope section on her 10/22 format and the
+  10/20 vote, "Quiz 4 key" relabeled (her key was never released; the student's answers were graded 100), HIET expanded
+  per Marraffa, sec 26 toxidrome coverage sentence, Questions ranges widened, guideA wording fixes. Banks: transcript
+  slips glossed in brackets, fragment quotes replaced (TBL3-001/041, NEW3-023/042, SA3-05/10/13, L16-102), marraffa.json
+  evidence_clean added, 10/21 restatement dropped from tell3. Left for the user: L15-119 TI framing; 10/21-labeled rows
+  and L17-054..060 kept as labeled; RMK3-025 omits "the elderly"; dipiro-e6 status.

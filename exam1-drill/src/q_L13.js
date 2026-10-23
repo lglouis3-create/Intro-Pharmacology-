@@ -245,7 +245,7 @@ QUESTIONS.push(
   {t:"Glutathione S-transferase", correct:false, why:"With glutathione, the glutathione S-transferases detoxify NAPQI after it forms; they do not make it."},
   {t:"CYP2E1", correct:true, why:"The overflow goes down the phase 1 P450 pathway, specifically CYP2E1, which forms NAPQI."}],
  teach:"Most of a normal daily dose of acetaminophen is handled by two families of phase 2 enzymes, the glucuronosyl transferases and the sulfotransferases, giving a glucuronide or a sulfate. When those enzymes cannot keep up, the dose spills into the phase 1 P450 route, CYP2E1, which makes NAPQI, the metabolite that is toxic to the liver. That spill-over is bioactivation.",
- quote:"it goes down through our P450s ... one of our phase one enzymes ... Specifically P4452E1. We'll do this work to create that nasty NAQI ... the NAQI metabolite is toxic to the liver",
+ quote:"it goes down through our P450s ... one of our phase one enzymes ... Specifically P4452E1 [CYP2E1]. We'll do this work to create that nasty NAQI [NAPQI] ... the NAQI metabolite is toxic to the liver",
  note:"In speech she calls the glucuronosyl transferases \"GSTs\" (\"GSTs and STs\"); the slide spells them out as glucuronosyl-transferases and sulfo-transferases. On the same slide the glutathione S-transferases, with glutathione, are the separate step that detoxifies NAPQI; that is the family the abbreviation GST normally names.",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slides ‘ADME: Metabolism’, ‘Example of Bioactivation’; transcript 10/9"},
 
@@ -270,7 +270,7 @@ QUESTIONS.push(
   {t:"Induction of CYP2E1 by alcohol", correct:true, why:"Alcohol induces CYP2E1, so more of the normal dose becomes NAPQI; her baseball-weekend example."},
   {t:"Increased glucuronosyl transferase activity", correct:false, why:"More phase 2 activity would detoxify more of the dose, not less; her causes were weaker phase 2 enzymes or more CYP2E1."}],
  teach:"Two things can set up liver toxicity at or below the allowed dose: a genetic variant that weakens the phase 2 enzymes, so some of the dose goes through CYP2E1, and induction of CYP2E1 by alcohol, so more NAPQI is made. Both push a normal dose toward bioactivation.",
- quote:"They may have a genetic variation. Of those enzymes that reduces those phase two enzymes activity ... sometimes you can get an increased amount of 20 being made by the body. We call that induction ... Alcohol can induce 20 expression.",
+ quote:"They may have a genetic variation. Of those enzymes that reduces those phase two enzymes activity ... sometimes you can get an increased amount of 20 [CYP2E1] being made by the body. We call that induction ... Alcohol can induce 20 [CYP2E1] expression.",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Example of Bioactivation’; transcript 10/9"},
 
 /* ---------------- Dose ---------------- */
@@ -358,7 +358,7 @@ QUESTIONS.push(
   {t:"A toxic region at high doses", correct:false, why:"Both have one: iron can be overdosed, and too much red wine gives an adverse effect."},
   {t:"A protective effect at low doses", correct:false, why:"That is the red wine (hormetic) curve; at the lowest doses of iron the response is bad (deficiency)."}],
  teach:"Two U-shaped curves that look alike. For an essential substance such as iron, vitamin A or vitamin D, too little is harmful (deficiency), the middle is the region of homeostasis, and too much is toxic. For a non-essential substance such as red wine, hormesis means a low dose may be protective and a higher dose adverse, with no region of homeostasis. Which one applies depends on what the exposure is.",
- quote:"because this is not an essential nutrient, an essential element that we need, there's really no area of homeostasis ... it's illustrating the example of Homesis",
+ quote:"because this is not an essential nutrient, an essential element that we need, there's really no area of homeostasis ... it's illustrating the example of Homesis [hormesis]",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Shape of Dose-Response’ (C&D Fig 2-7); transcript 10/9"},
 
 {id:"L13-028", lecture:"L13", prof:"Smith", tier:"new", topic:"L13", sub:"shape", skill:"recall",
@@ -476,7 +476,7 @@ QUESTIONS.push(
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Discussion of Reading Assignment’; RodriguezMozaz-EHP-2010.pdf pp. 1017–1018"},
 
 /* ---------------- Her practice quiz 1 (verbatim, with her keys); shown on the "Quizzes (verbatim)" card (QZ3, sub quiz1) ---------------- */
-{id:"L13-037", lecture:"QZ3", prof:"Smith", tier:"new", topic:"QZ3", sub:"quiz1", skill:"apply",
+{id:"L13-037", lecture:"QZ3", prof:"Smith", tier:"new", topic:"QZ3", sub:"quiz1", skill:"apply", core:true, coreWhy:"her own quiz question, verbatim",
  concept:"adverse-despite-low-concentration", tags:["smith","quiz","verbatim"], source:"slide",
  stem:"A compound with a half-life that allows it to be cleared from the body before the next exposure may still result in chronic adverse effects",
  options:[
@@ -486,7 +486,7 @@ QUESTIONS.push(
  note:"Verbatim from her practice quiz; the key is the one she released. Same point as L13-016.",
  cite:"Smith_Practice_Quiz_1_-_Principles_of_Toxicology.pdf question 1"},
 
-{id:"L13-038", lecture:"QZ3", prof:"Smith", tier:"new", topic:"QZ3", sub:"quiz1", skill:"recall",
+{id:"L13-038", lecture:"QZ3", prof:"Smith", tier:"new", topic:"QZ3", sub:"quiz1", skill:"recall", core:true, coreWhy:"her own quiz question, verbatim",
  concept:"exposure-durations", tags:["smith","quiz","verbatim"], source:"slide",
  stem:"Chronic exposure is considered to be repeated exposure for what length of time?",
  options:[
@@ -498,7 +498,7 @@ QUESTIONS.push(
  note:"Verbatim from her practice quiz with her key. Same table as L13-010.",
  cite:"Smith_Practice_Quiz_1_-_Principles_of_Toxicology.pdf question 2"},
 
-{id:"L13-039", lecture:"QZ3", prof:"Smith", tier:"new", topic:"QZ3", sub:"quiz1", skill:"recall",
+{id:"L13-039", lecture:"QZ3", prof:"Smith", tier:"new", topic:"QZ3", sub:"quiz1", skill:"recall", core:true, coreWhy:"her own quiz question, verbatim",
  concept:"ti-mos-moe", tags:["smith","quiz","verbatim"], source:"slide",
  stem:"What value derived from a dose-response curve has the following formula: X = Toxic Dose/Therapeutic Dose",
  options:[
@@ -510,7 +510,7 @@ QUESTIONS.push(
  note:"Verbatim from her practice quiz with her key. Same point as L13-032.",
  cite:"Smith_Practice_Quiz_1_-_Principles_of_Toxicology.pdf question 3"},
 
-{id:"L13-040", lecture:"QZ3", prof:"Smith", tier:"new", topic:"QZ3", sub:"quiz1", skill:"recall",
+{id:"L13-040", lecture:"QZ3", prof:"Smith", tier:"new", topic:"QZ3", sub:"quiz1", skill:"recall", core:true, coreWhy:"her own quiz question, verbatim",
  concept:"admet-t", tags:["smith","quiz","verbatim"], source:"slide",
  stem:"What does ADME stand for?",
  options:[
@@ -522,7 +522,7 @@ QUESTIONS.push(
  note:"On the quiz this was a free-response question, not multiple choice; the exam may ask for the expansion written out. Options added here for the drill.",
  cite:"Smith_Practice_Quiz_1_-_Principles_of_Toxicology.pdf question 4"},
 
-{id:"L13-041", lecture:"QZ3", prof:"Smith", tier:"new", topic:"QZ3", sub:"quiz1", skill:"apply",
+{id:"L13-041", lecture:"QZ3", prof:"Smith", tier:"new", topic:"QZ3", sub:"quiz1", skill:"apply", core:true, coreWhy:"her own quiz question, verbatim",
  concept:"toxic-target-differs", tags:["smith","quiz","verbatim"], source:"slide",
  stem:"The mechanisms of a drug’s toxicity is always the same as the mechanism of its efficacy.",
  options:[
@@ -532,7 +532,7 @@ QUESTIONS.push(
  note:"Verbatim from her practice quiz with her key. Same point as L13-005.",
  cite:"Smith_Practice_Quiz_1_-_Principles_of_Toxicology.pdf question 5"},
 
-{id:"L13-042", lecture:"QZ3", prof:"Smith", tier:"new", topic:"QZ3", sub:"quiz1", skill:"apply",
+{id:"L13-042", lecture:"QZ3", prof:"Smith", tier:"new", topic:"QZ3", sub:"quiz1", skill:"apply", core:true, coreWhy:"her own quiz question, verbatim",
  concept:"target-not-highest-concentration", tags:["smith","quiz","verbatim"], source:"slide",
  stem:"The concentration of a medication in the body is always highest at its target site.",
  options:[
@@ -542,7 +542,7 @@ QUESTIONS.push(
  note:"Verbatim from her practice quiz with her key. Same point as L13-034.",
  cite:"Smith_Practice_Quiz_1_-_Principles_of_Toxicology.pdf question 6"},
 
-{id:"L13-043", readingId:"rodriguez-mozaz", lecture:"QZ3", prof:"Smith", tier:"new", topic:"QZ3", sub:"quiz1", skill:"apply",
+{id:"L13-043", readingId:"rodriguez-mozaz", lecture:"QZ3", prof:"Smith", tier:"new", topic:"QZ3", sub:"quiz1", skill:"apply", core:true, coreWhy:"her own quiz question, verbatim",
  concept:"reading-source-human-use", tags:["smith","quiz","verbatim"], source:"slide",
  stem:"The article by Rodriguez-Mozaz discusses the fact that pharmaceuticals have been detected in ground water, surface water, and drinking water. What is most likely the greatest source of pharmaceuticals in those waters?",
  options:[
@@ -554,7 +554,7 @@ QUESTIONS.push(
  note:"Verbatim from her practice quiz with her key. L13-035 and L14-024 test the same source principle; this wording is hers.",
  cite:"Smith_Practice_Quiz_1_-_Principles_of_Toxicology.pdf question 7"},
 
-{id:"L13-044", readingId:"rodriguez-mozaz", lecture:"QZ3", prof:"Smith", tier:"new", topic:"QZ3", sub:"quiz1", skill:"apply",
+{id:"L13-044", readingId:"rodriguez-mozaz", lecture:"QZ3", prof:"Smith", tier:"new", topic:"QZ3", sub:"quiz1", skill:"apply", core:true, coreWhy:"her own quiz question, verbatim",
  concept:"reading-human-dose-below-therapeutic", tags:["smith","quiz","verbatim"], source:"slide",
  stem:"The dose of pharmaceuticals that people are exposed to in drinking water exceeds the daily dose of that medication when used therapeutically.",
  options:[
@@ -564,7 +564,7 @@ QUESTIONS.push(
  note:"Verbatim from her practice quiz with her key.",
  cite:"Smith_Practice_Quiz_1_-_Principles_of_Toxicology.pdf question 8"},
 
-{id:"L13-045", readingId:"rodriguez-mozaz", lecture:"QZ3", prof:"Smith", tier:"new", topic:"QZ3", sub:"quiz1", skill:"apply",
+{id:"L13-045", readingId:"rodriguez-mozaz", lecture:"QZ3", prof:"Smith", tier:"new", topic:"QZ3", sub:"quiz1", skill:"apply", core:true, coreWhy:"her own quiz question, verbatim",
  concept:"reading-conclusion", tags:["smith","quiz","verbatim"], source:"slide",
  stem:"Which is the best statement that describes the conclusion the authors made in this article?",
  options:[
@@ -576,7 +576,7 @@ QUESTIONS.push(
  note:"Verbatim from her practice quiz with her key.",
  cite:"Smith_Practice_Quiz_1_-_Principles_of_Toxicology.pdf question 9"},
 
-{id:"L13-046", lecture:"QZ3", prof:"Smith", tier:"new", topic:"QZ3", sub:"quiz1", skill:"recall",
+{id:"L13-046", lecture:"QZ3", prof:"Smith", tier:"new", topic:"QZ3", sub:"quiz1", skill:"recall", core:true, coreWhy:"her own quiz question, verbatim",
  concept:"five-principles", tags:["smith","quiz","verbatim"], source:"slide",
  stem:"List the five principles of toxicology:",
  options:[

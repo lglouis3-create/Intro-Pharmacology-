@@ -1973,7 +1973,7 @@ const TERMS = [
  scene:'Instead of a shot of Everclear, the poisoned patient gets a measured dose of fomepizole.',
  dropScene:true,
  confuse:['rhodanese', 'nac-glutathione', 'vitamin-k-bypass'],
- quote:'you can use ethanol or now a drug called omeprazole. So, you can give ethanol. And outcompete the alcohol alcohol dehydrogenase metabolism of methanol or ethylene glycol. Same thing with fomeprazole. It\'ll, it\'ll bind to and inhibit the alcohol dehydrogenase',
+ quote:'you can use ethanol or now a drug called omeprazole [fomepizole]. So, you can give ethanol. And outcompete the alcohol alcohol dehydrogenase metabolism of methanol or ethylene glycol. Same thing with fomeprazole [fomepizole]. It\'ll, it\'ll bind to and inhibit the alcohol dehydrogenase',
  cite:'Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Toxicokinetic-Based Treatment: methanol and ethylene glycol examples’; transcript 10/19 (the transcript renders fomepizole as "omeprazole")',
  src:'both'},
 

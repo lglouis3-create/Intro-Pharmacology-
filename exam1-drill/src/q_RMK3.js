@@ -388,7 +388,7 @@ QUESTIONS.push(
   {t:"Wax, Erdman, Chyka and colleagues", correct:false, why:"Paul M. Wax is the first author of the AAPCC beta-blocker ingestion guideline."},
   {t:"Olson, Erdman, Woolf and colleagues", correct:false, why:"Kent R. Olson is the first author of the AAPCC calcium channel blocker ingestion guideline."}],
  teach:"Sara Rodriguez-Mozaz and Howard S. Weinberg (University of North Carolina at Chapel Hill) wrote \"Meeting Report: Pharmaceuticals in Water, An Interdisciplinary Approach to a Public Health Challenge\" in Environmental Health Perspectives. It is the article on the discussion guide whose principles table (source, exposure, ADME, dose, target) the class worked through on 10/13.",
- quote:"Rodriguez and Moza's paper",
+ quote:"Rodriguez and Moza's [Rodriguez-Mozaz's] paper",
  cite:"RodriguezMozaz-EHP-2010.pdf, title page; transcript 10/13"},
 
 {id:"RMK3-030", lecture:"RMK3", prof:"Smith", tier:"new", topic:"RMK3", sub:"authors", skill:"recall", core:true, coreWhy:"author of a discussion or activity reading; upperclassmen report she asks which authors wrote which reading", readingId:"rodriguez-mozaz",
