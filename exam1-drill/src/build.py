@@ -61,7 +61,7 @@ if os.path.exists(cl_path):
     for block in _re.split(r'^## ', open(cl_path, encoding='utf-8').read(), flags=_re.M)[1:]:
         lines = block.strip().split('\n')
         changelog.append({'date': lines[0].strip(), 'items': [l[2:].strip() for l in lines[1:] if l.startswith('- ')]})
-build_info = {'built': now.isoformat(timespec='minutes'), 'commit': _git('rev-parse', '--short', 'HEAD'),
+build_info = {'id': now.isoformat(timespec='seconds'), 'built': now.isoformat(timespec='minutes'), 'commit': _git('rev-parse', '--short', 'HEAD'),
               'changelog': changelog}
 images = json.load(open('images.json', encoding='utf-8')) if os.path.exists('images.json') else {}
 parts = ['const BUILD_INFO = ' + json.dumps(build_info, ensure_ascii=False) + ';', 'const IMAGES = ' + json.dumps(images) + ';', course, 'const TOPICS = [];\nconst QUESTIONS = [];\n']
@@ -92,4 +92,6 @@ os.replace(out + '.tmp', out)
 # GitHub Pages serves the repo root: keep index.html in step with the build
 import shutil
 shutil.copyfile(out, os.path.join(HERE, '..', '..', 'index.html'))
+# the open page polls this file and offers a refresh when the site has a newer build
+open(os.path.join(os.path.dirname(out), 'version.json'), 'w').write(json.dumps({'id': build_info['id']}) + '\n')
 print(f'wrote {os.path.normpath(out)}  ({len(html)/1024:.0f} KB)')
