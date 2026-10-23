@@ -173,3 +173,6 @@ See `## Conflicts / uncertain` in notes/L01.md, L02.md and L03.md. The ones that
   "table" field (guide table index, validated in gen_walk.py), reading preview (gwReading, rd-<id>.mp3 summary),
   resume (<ns>:gw-pos), K/Space/arrows, aria-live part, phone order and 44 px targets. Recording queue rec2/queue.json
   (ids gw-<section>-<part>), recorders write rec2/done_[abc].json.
+- 10/23 (walkthroughs recorded, v87): 192 clips audio/gw-<section>-<part>.mp3 (eleven_v4, voice jNB0TWZK9LKlBbU54wMW, flow
+  rBTHpyjMMFGUzXbnjGQc), 101,801 credits, 1,850.92 cents, 108.2 minutes; rec2/done_*.json. GW_CLIPS lists all 192; every
+  section bar reads "read by the narrator". Playback, auto-advance, pause and resume checked in Chromium.
