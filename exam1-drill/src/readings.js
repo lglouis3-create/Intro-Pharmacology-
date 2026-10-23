@@ -38,9 +38,9 @@ const READINGS = [
    {
     "point": "Route of exposure as a factor that influences toxicity",
     "chapter_location": "Characteristics of Exposure: Route and Site of Exposure",
-    "lecture_evidence": "(10/9) OK, so, route is important, um, for most.",
+    "lecture_evidence": "(10/9) route is important ... for most.",
     "date": "",
-    "evidence_clean": "So, route is important for most."
+    "evidence_clean": "Route is important for most."
    },
    {
     "point": "Time periods of exposure in animal studies: acute (<24 h), subacute (≤1 month), subchronic (1-3 months), chronic (>3 months)",
@@ -66,7 +66,7 @@ const READINGS = [
    {
     "point": "Compound C (elimination faster than dosing interval) never reaches the toxic concentration no matter how many doses are given",
     "chapter_location": "Figure 2-4, line C",
-    "lecture_evidence": "(10/9) Does it ever get into the toxic zone after repeated exposures? No, it doesn't, right?",
+    "lecture_evidence": "(10/9) Does it ever get into the toxic zone after repeated exposures? No, it doesn't",
     "date": "",
     "evidence_clean": "Does it ever get into the toxic zone after repeated exposures? No, it doesn't."
    },
@@ -115,9 +115,9 @@ const READINGS = [
    {
     "point": "The 2-AAF (ED01) carcinogen study: liver versus bladder tumors, and the bladder-tumor threshold falling from 75 ppm at 24 months to 45 ppm at 33 months (she calls the animals hamsters; the chapter says mice)",
     "chapter_location": "Threshold and Linear, Nonthreshold Models (ED01 study); Figure 2-10, Dose-response relationship for carcinogens—rodents and 2-acetylaminofluorene (2-AAF)",
-    "lecture_evidence": "(10/9) All right, um, another thing I wanted to show you was with this figure from, again, that classic toxicology textbook, talking more about threshold, and this is just illustrating the challenge in doing dose response studies and understanding what your whole experiment is, OK? In the next few minutes, I'm gonna walk you through this figure.",
+    "lecture_evidence": "(10/9) talking more about threshold, and this is just illustrating the challenge in doing dose response studies and understanding what your whole experiment is",
     "date": "",
-    "evidence_clean": "Another thing I wanted to show you was this figure from, again, that classic toxicology textbook, talking more about threshold; this is just illustrating the challenge in doing dose-response studies and understanding what your whole experiment is. In the next few minutes, I'm going to walk you through this figure."
+    "evidence_clean": "Talking more about threshold; this is just illustrating the challenge in doing dose-response studies and understanding what your whole experiment is."
    },
    {
     "point": "Reading the NOAEL/threshold for bladder tumors off Figure 2-10 at 24 versus 33 months",
@@ -129,9 +129,9 @@ const READINGS = [
    {
     "point": "Recap of the 2-AAF figure on 10/13 (cumulative dose, liver tumors in control animals, choice of species)",
     "chapter_location": "Figure 2-10; Variation in Toxic Responses: Species Differences",
-    "lecture_evidence": "(10/13) And um a couple things that we discussed, remember we were dealing with threshold dose, and we were looking at animal studies where hamsters had been exposed to a compound that can cause bladder and liver tumors, and they were evaluating the risk of these animals getting those tumors, depending on how long they had been exposed to it and what their cumulative total dose was.",
+    "lecture_evidence": "(10/13) remember we were dealing with threshold dose, and we were looking at animal studies where hamsters had been exposed to a compound that can cause bladder and liver tumors, and they were evaluating the risk of these animals getting those tumors, depending on how long they had been exposed to it and what their cumulative total dose was.",
     "date": "",
-    "evidence_clean": "A couple of things that we discussed: remember we were dealing with threshold dose, and we were looking at animal studies where hamsters had been exposed to a compound that can cause bladder and liver tumors, and they were evaluating the risk of these animals getting those tumors, depending on how long they had been exposed to it and what their cumulative total dose was."
+    "evidence_clean": "Remember we were dealing with threshold dose, and we were looking at animal studies where hamsters had been exposed to a compound that can cause bladder and liver tumors, and they were evaluating the risk of these animals getting those tumors, depending on how long they had been exposed to it and what their cumulative total dose was."
    },
    {
     "point": "U-shaped curve for an essential nutrient (iron): deficiency, region of homeostasis, toxicity",
@@ -148,16 +148,9 @@ const READINGS = [
     "evidence_clean": "So, another U-shaped curve; it's illustrating the example of hormesis."
    },
    {
-    "point": "She put the textbook figure captions on the U-shaped-curve slide",
-    "chapter_location": "Figure 2-11 caption and the Hormesis text",
-    "lecture_evidence": "(10/9) So, if this doesn't make sense, then I've given you guys the captions down here so that you can read the captions from the textbook to illustrate what these two different U-shaped curves mean.",
-    "date": "",
-    "evidence_clean": "If this doesn't make sense, I've given you the captions so that you can read the captions from the textbook to illustrate what these two different U-shaped curves mean."
-   },
-   {
     "point": "Potency versus efficacy and the shapes of dose-response curves (compounds A-D; C levelling off so that D becomes more potent)",
     "chapter_location": "Evaluating the Dose-Response Relationship: Potency versus Efficacy; Figure 2-13, dose-response curves for four chemicals (A to D)",
-    "lecture_evidence": "(10/13) So all these things could be causing compound C's potency to change with an increasing dose, therefore, making this a trick question when I ask you which compound is more potent, C or D, right? OK.",
+    "lecture_evidence": "(10/13) So all these things could be causing compound C's potency to change with an increasing dose, therefore, making this a trick question when I ask you which compound is more potent, C or D",
     "date": "",
     "evidence_clean": "So all these things could be causing compound C's potency to change with an increasing dose, therefore making this a trick question when I ask you which compound is more potent, C or D."
    },
@@ -269,7 +262,7 @@ const READINGS = [
    {
     "point": "Arsenic in drinking water as a case where no animal model reproduces the human response",
     "chapter_location": "Variation in Toxic Responses: Species Differences (animals as surrogates for humans)",
-    "lecture_evidence": "(10/13) We can't find an animal model that um mimics what happens to humans when we're exposed to arsenic in water, OK?",
+    "lecture_evidence": "(10/13) We can't find an animal model that ... mimics what happens to humans when we're exposed to arsenic in water",
     "date": "",
     "evidence_clean": "We can't find an animal model that mimics what happens to humans when we're exposed to arsenic in water."
    },
@@ -355,19 +348,9 @@ const READINGS = [
   "discussed_in_class": true,
   "her_words": [
    {
-    "t": "This is a figure from a textbook that toxicologists use all the time.",
-    "date": "10/9",
-    "verbatim": "(10/9) OK, this is a figure from a textbook that toxicologists use all the time."
-   },
-   {
     "t": "It's the Casarett and Doull's toxicology textbook, and this is a figure that's showing you periods of exposure for animal studies.",
     "date": "10/9",
     "verbatim": "(10/9) It's the Cassaret and Duuls toxicology textbook, um, and this is a figure that's showing you, uh, periods of exposure for animal studies."
-   },
-   {
-    "t": "This figure, again, is from that very classic toxicology textbook that you have access to on Access Pharmacy.",
-    "date": "10/9",
-    "verbatim": "(10/9) OK, so in this figure, again, this is from that very classic toxicology textbook that, that you have access to on Access Pharmacy, OK?"
    },
    {
     "t": "This is a table that I pulled from our Casarett and Doull's toxicology book that just lists the LD50s in rats, so this is the lethal dose that will kill off 50% of the animals given this compound, and I have poisons listed from ethyl alcohol all the way to botulinum toxin.",
@@ -375,19 +358,15 @@ const READINGS = [
     "verbatim": "(10/9) Um, this is a table that I pulled from our Cari and Duel's toxicology book that just lists the LD50s in rats, so this is the lethal dose that will kill off 50% of the animals given this compound, and I have poisons listed from ethyl alcohol all the way to botulinum toxin, OK."
    },
    {
-    "t": "If this doesn't make sense, I've given you the captions so that you can read the captions from the textbook to illustrate what these two different U-shaped curves mean.",
+    "t": "Talking more about threshold; this is just illustrating the challenge in doing dose-response studies and understanding what your whole experiment is.",
     "date": "10/9",
-    "verbatim": "(10/9) So, if this doesn't make sense, then I've given you guys the captions down here so that you can read the captions from the textbook to illustrate what these two different U-shaped curves mean."
-   },
-   {
-    "t": "Another thing I wanted to show you was this figure from, again, that classic toxicology textbook, talking more about threshold; this is just illustrating the challenge in doing dose-response studies and understanding what your whole experiment is.",
-    "date": "10/9",
-    "verbatim": "(10/9) All right, um, another thing I wanted to show you was with this figure from, again, that classic toxicology textbook, talking more about threshold, and this is just illustrating the challenge in doing dose response studies and understanding what your whole experiment is, OK?"
+    "verbatim": "(10/9) talking more about threshold, and this is just illustrating the challenge in doing dose response studies and understanding what your whole experiment is"
    }
   ],
   "quotes_note": "Quotes lightly edited for reading: filler words removed and transcription errors corrected; the verbatim transcript text is kept beside each quote.",
   "truncated": false,
   "listen": "This reading is Chapter two, Principles of Toxicology, by Lauren Aleksunes and David Eaton, in Casarett and Doull's Toxicology, The Basic Science of Poisons, ninth edition. She called it a textbook that toxicologists use all the time, and her Principles of Toxicology lecture took its tables and figures from it. Table two dash one lists acute L D fifty values in rats, the dose that kills half the animals. Ethyl alcohol is ten thousand milligrams per kilogram. Botulinum toxin is zero point zero zero zero zero one milligrams per kilogram. She said the dose makes the poison, but you have to know what compound you're talking about too. Figure two dash three sets the exposure periods for animal studies. Acute is less than twenty four hours. Subacute is one month or less. Subchronic is one to three months. Chronic is more than three months. Figure two dash four gives compounds A, B and C in repeated doses. A, with the longest half life, is toxic by the third dose, and B by about the fourth or fifth. C clears quickly and never reaches the toxic zone. Even so, a compound cleared before the next exposure may still cause chronic adverse effects, which her key marks true. Her reasons were an allergic response, a different target site, synergy with other drugs, and damage at an injection site. A graded response is one individual's continuous response to increasing doses. A quantal response is all or none, across a population, and Figure two dash six uses it to find the L D fifty and the threshold dose. Its bottom panel uses probit units, and she said nobody ever uses this. The threshold model has a dose below which nobody responds. The linear, nonthreshold model, a theory for carcinogens, assumes the first molecule could cause harm. Figure two dash ten is the two A A F tumor study. The bladder tumor threshold was seventy five parts per million at twenty four months and about forty five at thirty three months. Asked why it fell, she said to use the keyword cumulative. The animals given none of the compound still had liver tumors at thirty three months, because cancer is a disease of the aged. Figure two dash eleven is the U shaped curve of an essential nutrient such as iron: deficiency, a region of homeostasis, then toxicity. Hormesis is the other U shape. A non nutrient helps at a low dose and harms at a high dose, with no region of homeostasis. On Figure two dash thirteen, A is more potent than B. C levels off, so D becomes more potent at high doses, which she called a trick question. She accepted saturated receptors, saturated metabolism, saturated transporters, or a partial agonist as the reason. The therapeutic index is the toxic dose over the effective dose at the same percentage, usually fifty. A wide index means less chance of toxicity. The margin of safety is the toxic dose for one percent over the effective dose for ninety nine percent. Because it uses different percentages, it shows the slope of the curve, and the therapeutic index does not. The margin of exposure, for repeated exposures to something not therapeutic such as a pollutant, is the no observable adverse effect level, which she called the Noel, over the chronic exposure. That level is the highest dose with no adverse effect. In class she said lowest, which was a slip. She also drew from the chapter immediate versus delayed, reversible versus irreversible, and local versus systemic effects, with chlorine gas local and tetraethyl lead both. She covered additive, synergistic, potentiating and antagonistic interactions, dispositional and reduced responsiveness tolerance, idiosyncratic reactions, selective toxicity, and species differences, qualitative or quantitative, with arsenic in drinking water as a case no animal model reproduces.",
+  "listen_secs": 237,
   "exam": 3,
   "lectures": [
    "L13"
@@ -436,9 +415,9 @@ const READINGS = [
    {
     "point": "Source: treatment plants let drugs through to streams, rivers and lakes; the water is a source for humans and animals",
     "chapter_location": "p. 1017, wastewater treatment plants",
-    "lecture_evidence": "Wastewater treatment plants, yeah, the water from Flushing gets treated a bit, but right now the current mechanisms don't get all the drugs out of it before it goes back into your streams and rivers and lakes, OK. So is that a source for humans or animals? Both, there you go.",
+    "lecture_evidence": "Wastewater treatment plants ... the water from Flushing gets treated a bit, but right now the current mechanisms don't get all the drugs out of it before it goes back into your streams and rivers and lakes, OK. So is that a source for humans or animals? Both",
     "date": "10/13",
-    "evidence_clean": "Wastewater treatment plants, yeah, the water from flushing gets treated a bit, but right now the current mechanisms don't get all the drugs out of it before it goes back into your streams and rivers and lakes. So is that a source for humans or animals? Both, there you go."
+    "evidence_clean": "Wastewater treatment plants ... the water from flushing gets treated a bit, but right now the current mechanisms don't get all the drugs out of it before it goes back into your streams and rivers and lakes. So is that a source for humans or animals? Both."
    },
    {
     "point": "Dose and target in wildlife: feminization where estrogen levels are higher",
@@ -488,29 +467,20 @@ const READINGS = [
   "discussed_in_class": true,
   "her_words": [
    {
-    "t": "Buried in the article, which is kind of interesting, I think, were these principles we're about to discuss.",
+    "t": "Buried in the article ... were these principles we're about to discuss.",
     "date": "10/9",
-    "verbatim": "Buried in the article, which is kind of interesting, I think, were these principles we're about to discuss."
+    "verbatim": "Buried in the article ... were these principles we're about to discuss."
    },
    {
-    "t": "Then we're going to go into that article and see if you guys were able to identify things like the source of the pollution that was discussed in that article, or what's the dose that's harming wildlife.",
+    "t": "Identify things like the source of the pollution that was discussed in that article, or what's the dose that's harming wildlife.",
     "date": "10/9",
-    "verbatim": "then we're going to go into that article and see if you guys were able to identify things like the source of the pollution that was discussed in that article or who, what's the dose that's harming wildlife, OK."
-   },
-   {
-    "t": "This is testable material.",
-    "date": "10/13",
-    "verbatim": "this is testable material."
-   },
-   {
-    "t": "I will later post a key.",
-    "date": "10/13",
-    "verbatim": "I will later post a key"
+    "verbatim": "identify things like the source of the pollution that was discussed in that article or who, what's the dose that's harming wildlife"
    }
   ],
   "quotes_note": "Quotes lightly edited for reading: filler words removed and transcription errors corrected; the verbatim transcript text is kept beside each quote.",
   "truncated": false,
   "listen": "This reading is the article Meeting Report: Pharmaceuticals in Water, An Interdisciplinary Approach to a Public Health Challenge, by Sara Rodriguez Mozaz and Howard Weinberg, in Environmental Health Perspectives, two thousand ten. It is a meeting report on an environmental health summit of government agencies, academics, the pharmaceutical industry and other scientists. She said the principles of toxicology were buried in the article. The assigned part, up to Best Management Practices, illustrates the five principles for humans and for aquatic wildlife. Her key lists the five as source, exposure, A D M E T, dose, and target and mechanism of action. A D M E T is absorption, distribution, metabolism, excretion and toxicity. Source. The body metabolizes only part of a drug, so drug and metabolites leave in human waste. Her key lists flushing, which could be reduced by other disposal methods. Animal waste could be reduced by controls on feedlots and farms. Human waste can't be reduced, because people take medications. Wildlife has the same sources. Her practice quiz key names consumption of medications by humans and the resulting waste streams as the greatest source. The article itself says wastewater treatment plants are frequently identified as the main points of discharge of drugs into surface waters, and they were not designed to remove drugs. She said the current mechanisms don't get all the drugs out before the water goes back into streams, rivers and lakes, a source for both humans and animals. Exposure. For humans the routes are drinking water, eating fish, and skin contact during recreation. Duration, single versus repeated exposure, and frequency depend on how people are exposed and where they live. Drug concentrations in drinking water are about parts per trillion. For wildlife the routes are drinking water, food, and skin. Exposure is repeated and lasts their entire life, and it is constant if their home range stays contaminated. Her key says aquatic wildlife exposure is the more significant. She called frogs a sentinel species. A D M E. For humans there are some data from drug development studies. For wildlife there is very little if any data, because the studies have not been done. Dose. For both, the real dose is unknown, because values often were not measured, were undetected, or were modeled. The human dose is probably below the therapeutic dose. She asked whether parts per trillion could reach a normal therapeutic daily dose, and answered no. So it is false that the drinking water dose exceeds the therapeutic daily dose. For wildlife, the doses that cause harm are unknown, but given their exposure, their dose is likely high enough to cause effects. Target and mechanism of action. For humans we don't know the effects of low dose chronic exposure. We lack good data on sensitive populations: the fetus, children, the elderly, and people with underlying disease. We don't know how multiple exposures act. For wildlife we don't always know the system or organ affected, the data may come from the wrong species or the wrong endpoint, and multiple exposures are unknown. She described frogs, fish and alligators changing from half male, half female to more female where estrogen levels are higher, such as shorelines of big cities with many young women. The authors' conclusion is that more data is needed to determine whether pharmaceuticals in water harm human health. On whether wildlife is being harmed, she accepted both yes and we don't know. The traps. The greatest source in her key is human use and waste, not flushing, landfills, or manufacturing. Flushing can be reduced, but human waste cannot. Wildlife is exposed constantly and for life.",
+  "listen_secs": 236,
   "exam": 3,
   "lectures": [
    "L13",
@@ -630,6 +600,7 @@ const READINGS = [
   "quotes_note": "Quotes lightly edited for reading: filler words removed and transcription errors corrected; the verbatim transcript text is kept beside each quote.",
   "truncated": false,
   "listen": "This reading is Chapter fifty seven, Heavy Metal Intoxication and Chelators, by Michael Kosnett, in Katzung's Basic and Clinical Pharmacology, sixteenth edition. It was not discussed in class as a reading. The chapter covers the toxicology of lead, arsenic and mercury, then the chelators. Its chelator section matches her lecture on inactivating poisons with heavy metal chelators. A chelator binds a metal, so the metal is unavailable for toxic interactions and can be excreted. Its coordinating atoms, usually oxygen, sulfur or nitrogen, donate electron pairs to the metal. She described this as a nucleophilic electron binding the more positive metal to form a metal ligand complex. Most chelators are multidentate: one chelator molecule binds one metal atom at several points. The chelator must have a higher affinity for the toxic metal than for the body's own macromolecules. It must be water soluble, non toxic and readily cleared. The ideal chelator binds poorly to endogenous ions such as calcium, so it grabs the poisoning metal and not what the body needs. Her table pairs each chelator with its metal. Edetate binds lead. Dimercaprol, called British anti Lewisite, binds gold, arsenic, lead and mercury. Succimer binds lead, cadmium, mercury and arsenic, and is taking the place of dimercaprol. Deferoxamine binds iron, and her key says it chelates the circulating ferric iron. Deferasirox binds iron and is orally bioavailable. Penicillamine and trientine bind copper, usually in patients with Wilson's disease. The traps. Her table lists edetate disodium, while the chapter says only the calcium disodium salt is used, to prevent calcium depletion. Dimercaprol is injected into muscle in peanut oil, and succimer is its oral analog. Deferoxamine is the injected iron chelator, and deferasirox is the oral one.",
+  "listen_secs": 119,
   "exam": 3,
   "lectures": [
    "L14",
@@ -694,10 +665,10 @@ const READINGS = [
     "chapter_location": "Special Aspects of Toxicokinetics - Volume of Distribution (page 1)",
     "lecture_evidence": {
      "date": "10/14",
-     "quote": "I have a statement in there that overdose drugs with large volumes of distribution, they're hard to remove from the, they're hard to remove from the blood, OK? Like, for example, you might try to remove them from the blood using hemodialysis."
+     "quote": "overdose drugs with large volumes of distribution ... they're hard to remove from the blood ... for example, you might try to remove them from the blood using hemodialysis."
     },
     "date": "",
-    "evidence_clean": "I have a statement in there that overdose drugs with large volumes of distribution are hard to remove from the blood. For example, you might try to remove them from the blood using hemodialysis."
+    "evidence_clean": "Overdose drugs with large volumes of distribution are hard to remove from the blood. For example, you might try to remove them from the blood using hemodialysis."
    },
    {
     "point": "Hemodialysis must be prolonged because drug sequestered in tissues only slowly re-enters the blood where the extracorporeal method can reach it.",
@@ -714,47 +685,47 @@ const READINGS = [
     "chapter_location": "Special Aspects of Toxicokinetics - Clearance (page 2)",
     "lecture_evidence": {
      "date": "10/14",
-     "quote": "OK, the third bullet point says clearance can can be messed up and overdosed because if you saturate liver metabolism, you get a reduced first pass effect and then more drug is in circulation."
+     "quote": "clearance can ... be messed up and overdosed because if you saturate liver metabolism, you get a reduced first pass effect and then more drug is in circulation."
     },
     "date": "",
-    "evidence_clean": "The third bullet point says clearance can be messed up in overdose, because if you saturate liver metabolism, you get a reduced first-pass effect and then more drug is in circulation."
+    "evidence_clean": "Clearance can be messed up in overdose, because if you saturate liver metabolism, you get a reduced first-pass effect and then more drug is in circulation."
    },
    {
     "point": "Poisons may injure the gastrointestinal epithelial barrier and thereby increase absorption (her example: caustic iron destroying the saturable active-transport protection).",
     "chapter_location": "Special Aspects of Toxicokinetics - Clearance (page 2)",
     "lecture_evidence": {
      "date": "10/14",
-     "quote": "I want to point out the second bullet here where we say drugs may injure the gastrointestinal tract, increasing absorption, OK?"
+     "quote": "drugs may injure the gastrointestinal tract, increasing absorption"
     },
     "date": "",
-    "evidence_clean": "I want to point out the second bullet here where we say drugs may injure the gastrointestinal tract, increasing absorption."
+    "evidence_clean": "Drugs may injure the gastrointestinal tract, increasing absorption."
    },
    {
     "point": "At very high blood concentrations plasma protein-binding capacity is exceeded, raising the free fraction and the toxic effect.",
     "chapter_location": "Special Aspects of Toxicokinetics - Clearance (page 2)",
     "lecture_evidence": {
      "date": "10/14",
-     "quote": "The next to bottom bullet, uh, when you've got overdose situation, you may exceed protein binding capacity."
+     "quote": "when you've got overdose situation, you may exceed protein binding capacity."
     },
     "date": "",
-    "evidence_clean": "The next-to-bottom bullet: when you've got an overdose situation, you may exceed protein binding capacity."
+    "evidence_clean": "When you've got an overdose situation, you may exceed protein binding capacity."
    },
    {
     "point": "Toxicodynamics: both the therapeutic index and the overlap of therapeutic and toxic response curves must be considered; the deck's Drug A / Drug B sedation-hypnosis-anesthesia-coma figure (credited to Katzung) is the graded dose-response figure the chapter cites.",
     "chapter_location": "Special Aspects of Toxicodynamics (page 2; refers to Figure 22-1)",
     "lecture_evidence": {
      "date": "10/14",
-     "quote": "When we are thinking about drugs and overdose and wondering if their pharmacodynamics are changing in that massive dose, you need to think about the therapeutic index and the overlap between what's a therapeutic dose, what's the therapy look like, and then what's the toxic response to a dose. So this is illustrated by this graph on the right hand side. We've got drug A and drug B."
+     "quote": "When we are thinking about drugs and overdose and wondering if their pharmacodynamics are changing in that massive dose, you need to think about the therapeutic index and the overlap between what's a therapeutic dose, what's the therapy look like, and then what's the toxic response to a dose."
     },
     "date": "",
-    "evidence_clean": "When we are thinking about drugs and overdose and wondering if their pharmacodynamics are changing in that massive dose, you need to think about the therapeutic index and the overlap between what's a therapeutic dose, what the therapy looks like, and then what's the toxic response to a dose. This is illustrated by this graph on the right-hand side. We've got drug A and drug B."
+    "evidence_clean": "When we are thinking about drugs and overdose and wondering if their pharmacodynamics are changing in that massive dose, you need to think about the therapeutic index and the overlap between what's a therapeutic dose, what the therapy looks like, and then what's the toxic response to a dose."
    },
    {
     "point": "Drug A with a linear dose-response curve reaches coma while drug B with a plateauing curve does not, so two drugs that look alike at the therapeutic dose differ in overdose.",
     "chapter_location": "Special Aspects of Toxicodynamics (page 2)",
     "lecture_evidence": {
      "date": "10/14",
-     "quote": "But drug A, you keep increasing the dose, and you just happen to get a linear response with this, and you get a coma for drug A, even though with the dose, the same dose drug B, you only get almost anesthesia, OK?"
+     "quote": "But drug A, you keep increasing the dose, and you just happen to get a linear response with this, and you get a coma for drug A, even though with the dose, the same dose drug B, you only get almost anesthesia"
     },
     "date": "",
     "evidence_clean": "But drug A, you keep increasing the dose, and you just happen to get a linear response with this, and you get a coma for drug A, even though with the same dose of drug B, you only get almost anesthesia."
@@ -764,7 +735,7 @@ const READINGS = [
     "chapter_location": "Special Aspects of Toxicodynamics (page 2)",
     "lecture_evidence": {
      "date": "10/14",
-     "quote": "So, the TCAs, they reduce sweating. In an overdose situation, that's one of their pharmacodynamic effects. At the same time that they are increasing muscular activity and potential for seizures, OK?"
+     "quote": "So, the TCAs, they reduce sweating. In an overdose situation, that's one of their pharmacodynamic effects. At the same time that they are increasing muscular activity and potential for seizures"
     },
     "date": "",
     "evidence_clean": "So, the TCAs, they reduce sweating. In an overdose situation, that's one of their pharmacodynamic effects, at the same time that they are increasing muscular activity and potential for seizures."
@@ -784,10 +755,10 @@ const READINGS = [
     "chapter_location": "Decontamination - B. Gastrointestinal Tract - 1. Gastric lavage (page 8)",
     "lecture_evidence": {
      "date": "10/14",
-     "quote": "We could do gastric lavage. Does anybody know what that is? How is that Pump in your stomach, yeah, yeah, put a tube down, hope you don't get that tube in the person's lungs."
+     "quote": "We could do gastric lavage ... Pump in your stomach ... put a tube down, hope you don't get that tube in the person's lungs."
     },
     "date": "",
-    "evidence_clean": "We could do gastric lavage. Does anybody know what that is? Pump your stomach, yeah: put a tube down, and hope you don't get that tube in the person's lungs."
+    "evidence_clean": "We could do gastric lavage ... Pump your stomach ... put a tube down, and hope you don't get that tube in the person's lungs."
    },
    {
     "point": "Whole bowel irrigation uses a balanced polyethylene glycol-electrolyte solution (GoLYTELY, CoLyte) given until the rectal effluent is clear.",
@@ -804,7 +775,7 @@ const READINGS = [
     "chapter_location": "Decontamination - B. Gastrointestinal Tract - 2. Activated charcoal (page 8)",
     "lecture_evidence": {
      "date": "10/14",
-     "quote": "Also, activated charcoal, because of its chemistry, it's only going to grab a certain kinds of compounds that somebody might have ingested, right?"
+     "quote": "Also, activated charcoal, because of its chemistry, it's only going to grab a certain kinds of compounds that somebody might have ingested"
     },
     "date": "",
     "evidence_clean": "Also, activated charcoal, because of its chemistry, is only going to grab certain kinds of compounds that somebody might have ingested."
@@ -824,10 +795,10 @@ const READINGS = [
     "chapter_location": "Decontamination - B. Gastrointestinal Tract (page 8)",
     "lecture_evidence": {
      "date": "10/14",
-     "quote": "They don't even use it anymore in hospitals, OK, because it's too risky. What's the risk of emesis? Aspiration is the biggest risk."
+     "quote": "They don't even use it anymore in hospitals ... because it's too risky. What's the risk of emesis? Aspiration is the biggest risk."
     },
     "date": "",
-    "evidence_clean": "They don't even use it anymore in hospitals, because it's too risky. What's the risk of emesis? Aspiration is the biggest risk."
+    "evidence_clean": "They don't even use it anymore in hospitals ... because it's too risky. What's the risk of emesis? Aspiration is the biggest risk."
    },
    {
     "point": "Two drugs may have the same therapeutic index but unequal safe dosing ranges if the slopes of their dose-response curves differ (her 10/13 contrast of therapeutic index with margin of safety).",
@@ -921,14 +892,15 @@ const READINGS = [
   "discussed_in_class": false,
   "her_words": [
    {
-    "t": "It's this discussion of on- and off-target adverse effects. This is coming out of your pharmacology textbook, Katzung's textbook; why don't you take a minute and look at this figure, and then I'll walk us through it.",
+    "t": "It's this discussion of on- and off-target adverse effects.",
     "date": "10/13",
-    "verbatim": "It's this discussion of on and off target adverse effects. OK. This is coming out of your pharmacology textbook, or Katsuk's textbook textbook, and why don't you take a minute and look at this figure, and then I'll walk us through it, OK."
+    "verbatim": "It's this discussion of on and off target adverse effects."
    }
   ],
   "quotes_note": "Quotes lightly edited for reading: filler words removed and transcription errors corrected; the verbatim transcript text is kept beside each quote.",
   "truncated": false,
   "listen": "This reading is Chapter fifty eight, Management of the Poisoned Patient, by Craig Smollin and Stephen Petrou, in Katzung's Basic and Clinical Pharmacology, sixteenth edition. It was not discussed in class as a reading. It covers toxicokinetics and toxicodynamics in overdose, the approach to the poisoned patient, decontamination, antidotes, enhanced elimination and common toxic syndromes. Its toxicokinetics section matches her lecture on how overdose changes kinetics. A drug with a large volume of distribution has left the blood for the tissues, so hemodialysis removes it poorly and must run a long time while the drug moves back into the blood. Saturated liver metabolism reduces the first pass effect, so more drug circulates. A poison can injure the gut lining and increase absorption. Plasma protein binding capacity can be exceeded, so more drug is free and toxic. The chapter adds that elimination can become zero order, which prolongs the half life. For toxicodynamics, both the therapeutic index and the overlap of the therapeutic and toxic curves matter. In her drug A and drug B figure, both sedate at the therapeutic dose, but drug A keeps rising to coma while drug B levels off near anesthesia, so drug A has the smaller therapeutic index. Tricyclic antidepressants reduce sweating while they increase muscle activity and seizures, so heat cannot be lost. Beta blocker and calcium channel blocker overdoses reduce blood flow to the kidneys and liver, which slows elimination. On decontamination, inducing emesis is no longer used, because aspiration is the biggest risk. Gastric lavage pumps the stomach through a tube. Activated charcoal binds only certain compounds. Multiple dose charcoal helps when the drug undergoes enterohepatic recirculation. Whole bowel irrigation uses a polyethylene glycol solution such as GoLYTELY. Her poisoning table key cites this chapter for two rows. Tricyclic antidepressants: tachycardia, dilated pupils, dry mouth, agitation, seizures, sometimes vasodilation, an elongated Q R S interval, and reduced cardiac contractility. Treatment is intravenous fluids, dopamine or norepinephrine, and sodium bicarbonate for the elongated Q R S interval. These are mostly supportive care to maintain blood pressure, and bicarbonate counteracts the inhibition of cardiac sodium channels. Salicylates: hyperventilation and respiratory alkalosis, then metabolic acidosis, hyperthermia, confusion and seizures. Treatment is supportive care and intravenous sodium bicarbonate, for renal ion trapping to enhance elimination. The trap. Bicarbonate does two different jobs. In tricyclic overdose it counteracts sodium channel block. In salicylate overdose it traps the drug in the urine.",
+  "listen_secs": 173,
   "exam": 3,
   "lectures": [
    "L14",
@@ -998,26 +970,6 @@ const READINGS = [
   ],
   "lecture_use": [
    {
-    "point": "She had the class open the chapter during the break and read the General Approach to Treatment section as the basis for the preventing-absorption discussion (the deck's 'More on preventing absorption' slide cites 'Dipiro's Pharmacotherapy A Pathophysiological Approach, Chapt e9').",
-    "chapter_location": "General Approach to Treatment",
-    "lecture_evidence": {
-     "date": "10/14",
-     "quote": "This section, general, general general approach to treatment, because I want to just go over some of the ideas that are listed in just this section. It's a pretty quick read."
-    },
-    "date": "",
-    "evidence_clean": "This section, General Approach to Treatment, because I want to just go over some of the ideas that are listed in just this section. It's a pretty quick read."
-   },
-   {
-    "point": "She told the class which subsections to skip for now (enhanced elimination, kidney replacement therapy, diuresis) and to read down to multiple-dose activated charcoal.",
-    "chapter_location": "Enhanced Elimination and Kidney Replacement Therapy; Diuresis; Multiple-Dose Activated Charcoal",
-    "lecture_evidence": {
-     "date": "10/14",
-     "quote": "You can skip This Enhanced elimination and kidney replacement therapy and diuresis. I'll talk about it, but, um, and get on down to just multiple dose activated charcoal."
-    },
-    "date": "",
-    "evidence_clean": "You can skip Enhanced Elimination and Kidney Replacement Therapy and Diuresis; I'll talk about it. Get on down to just Multiple-Dose Activated Charcoal."
-   },
-   {
     "point": "Pharmacokinetics in overdose differ from therapeutic doses: bioavailability rises because first-pass metabolism is saturated (Table e9-7 also lists decreased serum protein binding and slowed elimination from saturated biotransformation).",
     "chapter_location": "Toxicokinetic Considerations; Table e9-7 Examples of the Influence of Drug Overdosage on Pharmacokinetic and Pharmacodynamic Characteristics",
     "lecture_evidence": {
@@ -1052,10 +1004,10 @@ const READINGS = [
     "chapter_location": "Key Concepts; Perspectives on Gastric Decontamination",
     "lecture_evidence": {
      "date": "10/14",
-     "quote": "They don't even use it anymore in hospitals, OK, because it's too risky. What's the risk of emesis? Aspiration is the biggest risk."
+     "quote": "They don't even use it anymore in hospitals ... because it's too risky. What's the risk of emesis? Aspiration is the biggest risk."
     },
     "date": "",
-    "evidence_clean": "They don't even use it anymore in hospitals, because it's too risky. What's the risk of emesis? Aspiration is the biggest risk."
+    "evidence_clean": "They don't even use it anymore in hospitals ... because it's too risky. What's the risk of emesis? Aspiration is the biggest risk."
    },
    {
     "point": "Gastric lavage is done only by experienced clinicians, with relative contraindications and complications including esophageal and gastric perforation.",
@@ -1072,7 +1024,7 @@ const READINGS = [
     "chapter_location": "Gastric Lavage; Whole-Bowel Irrigation",
     "lecture_evidence": {
      "date": "10/14",
-     "quote": "They, they might try gastric lavage. They will probably try to do whole bowel irrigation, OK?"
+     "quote": "they might try gastric lavage. They will probably try to do whole bowel irrigation"
     },
     "date": "",
     "evidence_clean": "They might try gastric lavage. They will probably try to do whole bowel irrigation."
@@ -1092,10 +1044,10 @@ const READINGS = [
     "chapter_location": "Single-Dose Activated Charcoal",
     "lecture_evidence": {
      "date": "10/14",
-     "quote": "They, they put it in a slurry in water and try to get somebody to gag it down, OK? OK, it's not pleasant, very, very messy."
+     "quote": "they put it in a slurry in water and try to get somebody to gag it down ... it's not pleasant, very, very messy."
     },
     "date": "",
-    "evidence_clean": "They put it in a slurry in water and try to get somebody to gag it down. It's not pleasant, very messy."
+    "evidence_clean": "They put it in a slurry in water and try to get somebody to gag it down ... It's not pleasant, very messy."
    },
    {
     "point": "Activated charcoal does not adsorb every toxin (the chapter: ineffective for iron, lead, lithium, alcohols, aliphatic hydrocarbons and corrosives).",
@@ -1222,34 +1174,15 @@ const READINGS = [
   "discussed_in_class": true,
   "her_words": [
    {
-    "t": "This is actually your pharmacotherapy textbook, so a lot of your clinical faculty will have you reading out of this, but I pull chapters out of this too, because it helps with some of the topics I cover for you guys. So get into DiPiro's, the 13th edition, and find chapter 9, Clinical Toxicology.",
+    "t": "That section of the chapter talks about each of those methods for trying to prevent absorption ... our use of these methods has changed. So you'll find in this chapter they state we no longer use emesis.",
     "date": "10/14",
-    "verbatim": "This is actually your pharmacotherapy textbook, so a lot of your clinical faculty will have you be reading out of this, but I pull chapters out of this too, cause it helps with some of the topics I cover for you guys. So, if you would, while I'm running down the hall, get into Dipiro's, the 13th edition. And find a chapter 9. Clinical toxicology."
-   },
-   {
-    "t": "This section, General Approach to Treatment, because I want to just go over some of the ideas that are listed in just this section. It's a pretty quick read. You can skip Enhanced Elimination and Kidney Replacement Therapy and Diuresis; I'll talk about it. Get on down to just Multiple-Dose Activated Charcoal. You don't need to read the whole thing. I hope you read it before you came to class, but we'll use this to generate some discussion, and we'll get into this chapter.",
-    "date": "10/14",
-    "verbatim": "This section, general, general general approach to treatment, because I want to just go over some of the ideas that are listed in just this section. It's a pretty quick read. You don't even need to go past um. You can skip This Enhanced elimination and kidney replacement therapy and diuresis. I'll talk about it, but, um, and get on down to just multiple dose activated charcoal. You don't need to read the whole thing. I mean, I hope you read it before you came to class, but we'll use this to generate some discussion, and I'll keep this up and we'll, we'll get into this chapter."
-   },
-   {
-    "t": "Really, your only references will be the chapters that I'm asking you to read or a paper that I might ask you to read.",
-    "date": "10/14",
-    "verbatim": "Really, your only references will be the chapters that I'm asking you to read or a paper that I might ask you to read, OK?"
-   },
-   {
-    "t": "If you read that section of the DiPiro chapter that I had you guys pull up, that section of the chapter talks about each of those methods for trying to prevent absorption, and I want you to read that because you will see over time that our use of these methods has changed. So you'll find in this chapter they state we no longer use emesis.",
-    "date": "10/14",
-    "verbatim": "If you read that section of the Dipiro chapter that I had you guys pull up as I went off on my own little tiny break, that section of the chapter talks about each of those methods for trying to prevent absorption, and I want you to read that because you will see over time that our, our, um, uh, uh, sorry, I really am losing it. What's the word I'm looking for? Um, our use of these, of these methods has changed. So you'll find in this chapter they state, we no longer use Emesis."
-   },
-   {
-    "t": "So read that section of chapter e9 in your DiPiro textbook. It's not very long, and it's not rocket science, but read that so that you know where we stand on whether or not we will try these methods to prevent absorption.",
-    "date": "10/14",
-    "verbatim": "OK, so read that section of, of chapter E9 in your Depiro textbook. It's not very long. It's really, and it's not, it's not rocket science, but read that so that you know where we stand on whether or not we will try these methods to prevent absorption."
+    "verbatim": "that section of the chapter talks about each of those methods for trying to prevent absorption ... our use of these, of these methods has changed. So you'll find in this chapter they state, we no longer use Emesis."
    }
   ],
   "quotes_note": "Quotes lightly edited for reading: filler words removed and transcription errors corrected; the verbatim transcript text is kept beside each quote.",
   "truncated": false,
   "listen": "This reading is Chapter e nine, Clinical Toxicology, by Bryan Hayes and Natalija Farrell, in DiPiro's Pharmacotherapy, A Pathophysiologic Approach, thirteenth edition. She called it the pharmacotherapy textbook and said she pulls chapters from it for her topics. She had the class read its General Approach to Treatment section, down to multiple dose activated charcoal, to see how the use of methods to prevent absorption has changed. Its later section on specific poisonings helps with her poisoning table. Overdose does change a drug's kinetics, most often its volume of distribution and its clearance. First pass metabolism saturates, so bioavailability rises. Only drugs with a small volume of distribution, low protein binding and low molecular weight are dialyzable, so a drug with a large volume of distribution is hard to remove by hemodialysis. The chapter states that emesis is no longer used, so it is not first line for an ingested poison. Ipecac syrup, once kept in homes, is no longer sold in the United States. The biggest risk of emesis is aspiration. Gastric lavage pumps fluid into the stomach through a tube and back out, only by experienced clinicians, and not with an esophageal rupture or stomach injury. Whole bowel irrigation uses a polyethylene glycol electrolyte solution such as GoLYTELY, and not with an ileus or a blockage in the gut. The American and European clinical toxicology groups state that no gastric decontamination method should be used routinely. She said they all call these methods dangerous and risky, to use only if you really think you have to, though experienced toxicologists may try them for a massive ingestion. Based on patient outcomes, she called charcoal probably your best option. It is a slurry in water, unpleasant and messy, and it can be aspirated. It does not bind everything. The chapter names iron, lead, lithium, alcohols, aliphatic hydrocarbons and corrosives. Her key says single dose charcoal is most likely to work less than sixty minutes after ingestion. In class she said up to two hours, and that they used to say just an hour. The limit exists because the poison moves on through, so charcoal must reach the stomach and small intestine while the poison is still there. Multiple dose activated charcoal is for a drug that undergoes enterohepatic recirculation. Each later dose catches drug the bile returns to the small intestine, and it leaves with the charcoal in the stool. Her table key cites DiPiro's Pharmacotherapy for two rows. Organophosphate insecticides cause acetylcholine excess, summed up as sludge or dumbbells. Atropine is a muscarinic acetylcholine receptor antagonist. Pralidoxime removes the organophosphate from acetylcholinesterase. Iron causes vomiting, abdominal pain and diarrhea within one to six hours. Lethargy, coma, seizures, bloody vomiting, bloody diarrhea and shock, with hypotension and tachycardia, come within six to twenty four hours. Liver dysfunction and failure are possible in two to five days. Deferoxamine chelates the circulating ferric iron. The traps. Single dose charcoal binds poison still in the gut, and multiple dose charcoal catches a drug that recirculates through the bile. Charcoal does not bind iron, and the iron antidote is deferoxamine. Atropine blocks the muscarinic receptor, while pralidoxime frees acetylcholinesterase. The chapter's opioid toxidrome has pinpoint pupils, so larger pupils are not part of it.",
+  "listen_secs": 208,
   "exam": 3,
   "lectures": [
    "L15"
@@ -1295,10 +1228,10 @@ const READINGS = [
     "chapter_location": "Methodology (Data Extraction Process; Criteria Used to Evaluate Studies and Assign Levels of Evidence) and Appendix 2, Grades of Recommendation and Levels of Evidence",
     "lecture_evidence": {
      "date": "2026-10-14",
-     "quote": "The data that they used to write these guidance documents has been like graded, and the value of what they tell us to do in these situations is also graded just like any other guidance documents that you may not have seen yet in your therapeutics classes, but you will be seeing those, I promise."
+     "quote": "The data that they used to write these guidance documents has been like graded, and the value of what they tell us to do in these situations is also graded"
     },
     "date": "",
-    "evidence_clean": "The data that they used to write these guidance documents has been graded, and the value of what they tell us to do in these situations is also graded, just like any other guidance documents that you may not have seen yet in your therapeutics classes, but you will be seeing those, I promise."
+    "evidence_clean": "The data that they used to write these guidance documents has been graded, and the value of what they tell us to do in these situations is also graded."
    },
    {
     "point": "Immediate-release and extended-release products are handled differently (referral window and observation time).",
@@ -1377,19 +1310,14 @@ const READINGS = [
   "discussed_in_class": true,
   "her_words": [
    {
-    "t": "Just to introduce this to you, we have a few medications for which these evidence-based guidance documents have been written, and they basically talk about what do you do if you've got a patient that overdosed on a big handful of immediate-release beta blocker, or what do you do if a patient overdosed on a handful of extended-release beta blockers?",
+    "t": "We have a few medications for which these evidence-based guidance documents have been written, and they basically talk about what do you do if you've got a patient that overdosed on a big handful of immediate-release beta blocker, or what do you do if a patient overdosed on a handful of extended-release beta blockers?",
     "date": "2026-10-14",
-    "verbatim": "Um, just to introduce this to you, we have a few medications for which these evidence-based guidance documents have been written, and they basically talk about what do you do if you've got a patient that overdosed on a big handful of immediate release beta blocker, or what do you do if a patient overdosed on a handful of extended release beta blockers?"
+    "verbatim": "we have a few medications for which these evidence-based guidance documents have been written, and they basically talk about what do you do if you've got a patient that overdosed on a big handful of immediate release beta blocker, or what do you do if a patient overdosed on a handful of extended release beta blockers?"
    },
    {
-    "t": "It's summarized in the abstracts for each of these documents.",
+    "t": "There are slight differences in what we do for a beta blocker overdose compared to a calcium channel blocker overdose, even though they're all cardiac meds.",
     "date": "2026-10-14",
-    "verbatim": "It's summarized in the abstracts for each of these documents, OK?"
-   },
-   {
-    "t": "You've got a table to fill out because there are slight differences in what we do for a beta blocker overdose compared to a calcium channel blocker overdose, even though they're all cardiac meds.",
-    "date": "2026-10-14",
-    "verbatim": "You've got a table to fill out because there are slight differences in what we do for a beta blocker overdose compared to a calcium channel overdose, even though they're all cardiac meds, OK?"
+    "verbatim": "there are slight differences in what we do for a beta blocker overdose compared to a calcium channel overdose, even though they're all cardiac meds"
    },
    {
     "t": "It also has differences between immediate-release and extended-release tablets.",
@@ -1407,9 +1335,9 @@ const READINGS = [
     "verbatim": "They pulled all those documents, evaluated every single one of those case reports or case series, and wrote these evidence-based documents."
    },
    {
-    "t": "The data that they used to write these guidance documents has been graded, and the value of what they tell us to do in these situations is also graded, just like any other guidance documents that you may not have seen yet in your therapeutics classes, but you will be seeing those, I promise.",
+    "t": "The data that they used to write these guidance documents has been graded, and the value of what they tell us to do in these situations is also graded.",
     "date": "2026-10-14",
-    "verbatim": "The data that they used to write these guidance documents has been like graded, and the value of what they tell us to do in these situations is also graded just like any other guidance documents that you may not have seen yet in your therapeutics classes, but you will be seeing those, I promise."
+    "verbatim": "The data that they used to write these guidance documents has been like graded, and the value of what they tell us to do in these situations is also graded"
    },
    {
     "t": "Only a few drugs are out there that have these documents written, but these are pretty nasty drugs.",
@@ -1422,29 +1350,30 @@ const READINGS = [
     "verbatim": "What they published in 2005 is still what they follow"
    },
    {
-    "t": "I want you to know those time frames, OK, which drug formulation is OK at this time frame",
+    "t": "I want you to know those time frames ... which drug formulation is OK at this time frame",
     "date": "2026-10-19",
-    "verbatim": "I want you to know those time frames, OK, which drug formulation is OK at this time frame"
+    "verbatim": "I want you to know those time frames ... which drug formulation is OK at this time frame"
    },
    {
-    "t": "Also, you need to know you don't make them barf at home, it's too dangerous",
+    "t": "You need to know you don't make them barf at home, it's too dangerous",
     "date": "2026-10-19",
-    "verbatim": "Also, you need to know you don't make them barf at home, it's too dangerous"
+    "verbatim": "you need to know you don't make them barf at home, it's too dangerous"
    },
    {
-    "t": "18 hours for your uh calcium channel blockers, but 8 hours for your beta blockers, you are still within the window that that clump of tablets could break apart",
+    "t": "18 hours for your ... calcium channel blockers, but 8 hours for your beta blockers, you are still within the window that that clump of tablets could break apart",
     "date": "2026-10-19",
-    "verbatim": "18 hours for your uh calcium channel blockers, but 8 hours for your beta blockers, you are still within the window that that clump of tablets could break apart"
+    "verbatim": "18 hours for your ... calcium channel blockers, but 8 hours for your beta blockers, you are still within the window that that clump of tablets could break apart"
    },
    {
-    "t": "It's the clumping of the tablets is the biggest issue, OK.",
+    "t": "It's the clumping of the tablets is the biggest issue.",
     "date": "2026-10-19",
-    "verbatim": "It's the clumping of the tablets is the biggest issue, OK."
+    "verbatim": "It's the clumping of the tablets is the biggest issue"
    }
   ],
   "quotes_note": "Quotes lightly edited for reading: filler words removed and transcription errors corrected; the verbatim transcript text is kept beside each quote.",
   "truncated": false,
   "listen": "This reading is Beta Blocker Ingestion, An Evidence Based Consensus Guideline for Out of Hospital Management, by Wax and colleagues, in the journal Clinical Toxicology, two thousand five. It is an evidence based consensus guideline from the American Association of Poison Control Centers, written to help poison center staff triage and manage beta blocker ingestions out of the hospital. Its companion is the calcium channel blocker guideline by Olson and colleagues. She said what they published in two thousand five is still what they follow. Poisoning cannot be studied in clinical trials, so the authors pulled the published case reports and case series and graded them, and each recommendation carries its own grade. That is what evidence based means here. Only a few drugs have these guidelines, and she called them pretty nasty drugs. Her key, for beta blockers. To reduce absorption, do not induce emesis. She said you don't make them barf at home, it's too dangerous, because they might aspirate. Consider activated charcoal if there are no contraindications, but do not delay transport to the hospital to give it. Charcoal is given at the hospital, not at home. The time windows, for a patient who is asymptomatic when found. Immediate release, except sotalol, found within six hours: get them to a hospital. Found six hours after ingestion: call the poison center. They can probably be managed at home, and the poison center will tell you the follow up. Sustained release, found within eight hours: get them to a hospital. Found eight hours after: call the poison center, and they can probably be managed at home. A symptomatic patient goes to a hospital. Transport is by ambulance, not a family car, because the ambulance carries intravenous lines, pressors and paddles if the patient starts to crash. Follow up of an asymptomatic patient is calls at appropriate intervals for up to twelve to twenty four hours, based on the judgment of the poison center. Suspected self harm goes to the emergency department, then to mental health care. Why the windows differ by formulation. Her key says immediate release products are absorbed more rapidly because they won't tend to form bezoars. Extended release products tend to form bezoars, which may break apart at unpredictable times, so you cannot be sure when the patient will absorb the drug. She said the clumping of the tablets is the biggest issue. If you can't confirm the person took only one or two tablets, she said they probably need to go to the hospital, because they may not have absorbed everything yet. The guideline gives sotalol its own twelve hour window, because sotalol also blocks the potassium channel. Beta blockers competitively block beta adrenergic receptors, which decreases cyclic A M P and blunts catecholamine effects. The traps. Immediate release is six hours for both beta blockers and calcium channel blockers. Sustained release beta blocker is eight hours. Modified release calcium channel blocker is eighteen, and modified release verapamil is twenty four. Beta blocker follow up runs up to twelve to twenty four hours, while calcium channel blocker follow up is left to the poison center's judgment. Charcoal is considered, is never given at home, and never delays transport. Beta blocker overdose may bring altered mental status, while a calcium channel blocker patient is often alert. She tied the different windows of the two classes to their mechanisms of action.",
+  "listen_secs": 203,
   "exam": 3,
   "lectures": [
    "L16"
@@ -1491,10 +1420,10 @@ const READINGS = [
     "chapter_location": "Methodology (Data Extraction Process; Criteria Used to Evaluate Studies and Assign Levels of Evidence) and Appendix 2, Grades of Recommendation and Levels of Evidence",
     "lecture_evidence": {
      "date": "2026-10-14",
-     "quote": "The data that they used to write these guidance documents has been like graded, and the value of what they tell us to do in these situations is also graded just like any other guidance documents that you may not have seen yet in your therapeutics classes, but you will be seeing those, I promise."
+     "quote": "The data that they used to write these guidance documents has been like graded, and the value of what they tell us to do in these situations is also graded"
     },
     "date": "",
-    "evidence_clean": "The data that they used to write these guidance documents has been graded, and the value of what they tell us to do in these situations is also graded, just like any other guidance documents that you may not have seen yet in your therapeutics classes, but you will be seeing those, I promise."
+    "evidence_clean": "The data that they used to write these guidance documents has been graded, and the value of what they tell us to do in these situations is also graded."
    },
    {
     "point": "Immediate-release and extended-release products are handled differently (referral window and observation time).",
@@ -1577,19 +1506,14 @@ const READINGS = [
   "discussed_in_class": true,
   "her_words": [
    {
-    "t": "Just to introduce this to you, we have a few medications for which these evidence-based guidance documents have been written, and they basically talk about what do you do if you've got a patient that overdosed on a big handful of immediate-release beta blocker, or what do you do if a patient overdosed on a handful of extended-release beta blockers?",
+    "t": "We have a few medications for which these evidence-based guidance documents have been written, and they basically talk about what do you do if you've got a patient that overdosed on a big handful of immediate-release beta blocker, or what do you do if a patient overdosed on a handful of extended-release beta blockers?",
     "date": "2026-10-14",
-    "verbatim": "Um, just to introduce this to you, we have a few medications for which these evidence-based guidance documents have been written, and they basically talk about what do you do if you've got a patient that overdosed on a big handful of immediate release beta blocker, or what do you do if a patient overdosed on a handful of extended release beta blockers?"
+    "verbatim": "we have a few medications for which these evidence-based guidance documents have been written, and they basically talk about what do you do if you've got a patient that overdosed on a big handful of immediate release beta blocker, or what do you do if a patient overdosed on a handful of extended release beta blockers?"
    },
    {
-    "t": "It's summarized in the abstracts for each of these documents.",
+    "t": "There are slight differences in what we do for a beta blocker overdose compared to a calcium channel blocker overdose, even though they're all cardiac meds.",
     "date": "2026-10-14",
-    "verbatim": "It's summarized in the abstracts for each of these documents, OK?"
-   },
-   {
-    "t": "You've got a table to fill out because there are slight differences in what we do for a beta blocker overdose compared to a calcium channel blocker overdose, even though they're all cardiac meds.",
-    "date": "2026-10-14",
-    "verbatim": "You've got a table to fill out because there are slight differences in what we do for a beta blocker overdose compared to a calcium channel overdose, even though they're all cardiac meds, OK?"
+    "verbatim": "there are slight differences in what we do for a beta blocker overdose compared to a calcium channel overdose, even though they're all cardiac meds"
    },
    {
     "t": "It also has differences between immediate-release and extended-release tablets.",
@@ -1607,9 +1531,9 @@ const READINGS = [
     "verbatim": "They pulled all those documents, evaluated every single one of those case reports or case series, and wrote these evidence-based documents."
    },
    {
-    "t": "The data that they used to write these guidance documents has been graded, and the value of what they tell us to do in these situations is also graded, just like any other guidance documents that you may not have seen yet in your therapeutics classes, but you will be seeing those, I promise.",
+    "t": "The data that they used to write these guidance documents has been graded, and the value of what they tell us to do in these situations is also graded.",
     "date": "2026-10-14",
-    "verbatim": "The data that they used to write these guidance documents has been like graded, and the value of what they tell us to do in these situations is also graded just like any other guidance documents that you may not have seen yet in your therapeutics classes, but you will be seeing those, I promise."
+    "verbatim": "The data that they used to write these guidance documents has been like graded, and the value of what they tell us to do in these situations is also graded"
    },
    {
     "t": "Only a few drugs are out there that have these documents written, but these are pretty nasty drugs.",
@@ -1622,29 +1546,30 @@ const READINGS = [
     "verbatim": "What they published in 2005 is still what they follow"
    },
    {
-    "t": "I want you to know those time frames, OK, which drug formulation is OK at this time frame",
+    "t": "I want you to know those time frames ... which drug formulation is OK at this time frame",
     "date": "2026-10-19",
-    "verbatim": "I want you to know those time frames, OK, which drug formulation is OK at this time frame"
+    "verbatim": "I want you to know those time frames ... which drug formulation is OK at this time frame"
    },
    {
-    "t": "Also, you need to know you don't make them barf at home, it's too dangerous",
+    "t": "You need to know you don't make them barf at home, it's too dangerous",
     "date": "2026-10-19",
-    "verbatim": "Also, you need to know you don't make them barf at home, it's too dangerous"
+    "verbatim": "you need to know you don't make them barf at home, it's too dangerous"
    },
    {
-    "t": "18 hours for your uh calcium channel blockers, but 8 hours for your beta blockers, you are still within the window that that clump of tablets could break apart",
+    "t": "18 hours for your ... calcium channel blockers, but 8 hours for your beta blockers, you are still within the window that that clump of tablets could break apart",
     "date": "2026-10-19",
-    "verbatim": "18 hours for your uh calcium channel blockers, but 8 hours for your beta blockers, you are still within the window that that clump of tablets could break apart"
+    "verbatim": "18 hours for your ... calcium channel blockers, but 8 hours for your beta blockers, you are still within the window that that clump of tablets could break apart"
    },
    {
-    "t": "It's the clumping of the tablets is the biggest issue, OK.",
+    "t": "It's the clumping of the tablets is the biggest issue.",
     "date": "2026-10-19",
-    "verbatim": "It's the clumping of the tablets is the biggest issue, OK."
+    "verbatim": "It's the clumping of the tablets is the biggest issue"
    }
   ],
   "quotes_note": "Quotes lightly edited for reading: filler words removed and transcription errors corrected; the verbatim transcript text is kept beside each quote.",
   "truncated": false,
   "listen": "This reading is Calcium Channel Blocker Ingestion, An Evidence Based Consensus Guideline for Out of Hospital Management, by Olson and colleagues, in the journal Clinical Toxicology, two thousand five. It is an evidence based consensus guideline from the American Association of Poison Control Centers, written to help poison center staff triage and manage calcium channel blocker ingestions out of the hospital. Its companion is the beta blocker guideline by Wax and colleagues. She said what they published in two thousand five is still what they follow. The data come from published case reports and case series, because poisoning cannot be studied in clinical trials, and all seven recommendations are grade D. Her key, for calcium channel blockers. To reduce absorption, do not induce emesis. She said you don't make them barf at home, it's too dangerous. Consider activated charcoal if there are no contraindications, but do not delay transport to the hospital to give it. The time windows, for a patient who is asymptomatic when found. Immediate release, found within six hours: get them to a hospital. Found six hours after ingestion: call the poison center. They can probably be managed at home, and the poison center will tell you the follow up. Modified release, except verapamil, found within eighteen hours: get them to a hospital. Found eighteen hours after: call the poison center, probably managed at home. Modified release verapamil, found within twenty four hours: get them to a hospital. Found twenty four hours after: call the poison center, probably managed at home. A symptomatic patient goes to a hospital, by ambulance, because the ambulance carries intravenous lines, pressors and paddles. During transport the guideline adds intravenous fluids for hypotension, and intravenous calcium, glucagon and epinephrine for severe hypotension, if available. Follow up of an asymptomatic patient is determined by the judgment of the poison center. Suspected self harm goes to the emergency department, then to mental health care. Why the windows differ. Her key says immediate release products are absorbed more rapidly because they won't tend to form bezoars. Extended release products tend to form bezoars, which may break apart at unpredictable times. She said that at eighteen hours for calcium channel blockers, but eight hours for beta blockers, you are still within the window that the clump of tablets could break apart. Verapamil has the longest window because it has multiple mechanisms. She said it is not quite as clean a calcium channel blocker as the other ones, so an asymptomatic patient ten hours out is not out of the woods. Calcium channel blockers block calcium entry through voltage sensitive calcium channels. The dihydropyridines are relatively selective vasodilators at clinical doses, but that distinction can be lost in overdose. Taken with a beta blocker, the toxicity can be additive. The traps. Eighteen hours is the calcium channel blocker modified release window. Eight hours is the beta blocker sustained release window. Twenty four hours is only for modified release verapamil. Calcium channel blocker follow up is left to the poison center's judgment, while beta blocker follow up runs up to twelve to twenty four hours. A calcium channel blocker overdose brings hypotension and bradycardia, but the patient is often alert.",
+  "listen_secs": 200,
   "exam": 3,
   "lectures": [
    "L16"
@@ -1689,7 +1614,7 @@ const READINGS = [
    {
     "point": "Ethanol or, preferably, fomepizole is given to inhibit alcohol dehydrogenase (ADH) in methanol, ethylene glycol and diethylene glycol poisoning; the parent compounds are relatively nontoxic and ADH metabolizes them to the toxic metabolites. In the transcript she says 'omeprazole' where she means fomepizole.",
     "chapter_location": "Antidotes for toxic-alcohol poisoning, p. 200 (first two paragraphs)",
-    "lecture_evidence": "So, I've got listed on the bottom of the slide here that there's an antidote for methanol and ethylene glycol, and you can use ethanol or now a drug called omeprazole.",
+    "lecture_evidence": "there's an antidote for methanol and ethylene glycol, and you can use ethanol or now a drug called omeprazole.",
     "date": "10/19"
    },
    {
@@ -1701,25 +1626,25 @@ const READINGS = [
    {
     "point": "Ethylene glycol is metabolized via ADH to glycolic acid (anion-gap metabolic acidosis) and oxalic acid, which results primarily in renal toxicity due to the formation of calcium oxalate crystals.",
     "chapter_location": "Antidotes for toxic-alcohol poisoning, p. 200",
-    "lecture_evidence": "Well, oxalic acid is a, is a small molecule, and, um, uh, it will sometimes precipitate in the blood to form small microcrystals and The impact of that is you can damage your organs like your liver, your kidneys.",
+    "lecture_evidence": "oxalic acid is a ... small molecule ... it will sometimes precipitate in the blood to form small microcrystals and The impact of that is you can damage your organs like your liver, your kidneys.",
     "date": "10/19"
    },
    {
     "point": "Ethanol can be given intravenously or orally, but a commercial i.v. preparation is no longer available; a loading dose is needed to reach a serum ethanol concentration of 100-150 mg/dL, then a maintenance dose guided by repeated serum ethanol measurements.",
     "chapter_location": "Ethanol, p. 200",
-    "lecture_evidence": "So they would use Everclear, have a shot glass there and give somebody that's had methanol or ethylene glycol exposure a shot, maybe two of Everclear, and watch to see how they're doing, OK?",
+    "lecture_evidence": "So they would use Everclear, have a shot glass there and give somebody that's had methanol or ethylene glycol exposure a shot, maybe two of Everclear, and watch to see how they're doing",
     "date": "10/19"
    },
    {
     "point": "Fomepizole's ease of administration and relative lack of serious adverse effects have elevated it to preferred status over ethanol; its advantages are a much higher potency of ADH inhibition (Ki = 0.1 µmol/L, a 1000-fold higher affinity than that of ethanol), better maintenance of therapeutic blood concentrations, fewer adverse effects and less labor-intensive administration.",
     "chapter_location": "Fomepizole, p. 200",
-    "lecture_evidence": "We now have, uh, the medication omeprazole that we'll give to patients. Um, a little bit better control of the dosing.",
+    "lecture_evidence": "We now have ... the medication omeprazole that we'll give to patients ... a little bit better control of the dosing.",
     "date": "10/19"
    },
    {
     "point": "Methanol or ethylene glycol toxicity should be suspected in a patient with anion-gap metabolic acidosis in whom laboratory testing reveals a low (or no) ethanol concentration, no ketones, and a normal lactic acid concentration; the availability of testing for toxic alcohols is limited.",
     "chapter_location": "Antidotes for toxic-alcohol poisoning, Implications for the pharmacist, p. 201",
-    "lecture_evidence": "The, the, the, the key indicator would be you get them into the ER and they do a blood draw, and they look for these alcohols in their blood.",
+    "lecture_evidence": "key indicator would be you get them into the ER and they do a blood draw, and they look for these alcohols in their blood.",
     "date": "10/19"
    },
    {
@@ -1737,19 +1662,19 @@ const READINGS = [
    {
     "point": "Cyanide binds to the ferric ion on cytochrome oxidase and abruptly halts the electron transport chain and aerobic respiration.",
     "chapter_location": "Antidotes for cyanide poisoning, p. 203",
-    "lecture_evidence": "Cytochrome C oxidase is its target. Anybody know what cytochrome cytochrome C oxidase does? Think back to biochemistry. Helps with our electron transport chain, right?",
+    "lecture_evidence": "Cytochrome C oxidase is its target ... Helps with our electron transport chain",
     "date": "10/19"
    },
    {
     "point": "The mechanism of amyl nitrite and sodium nitrite is to produce methemoglobinemia; cyanide bound to cytochrome oxidase is then preferentially bound to methemoglobin, forming cyanomethemoglobin. Amyl nitrite is inhaled pending i.v. access; sodium nitrite is given intravenously and produces a methemoglobin concentration of about 15% in healthy adults.",
     "chapter_location": "Amyl nitrite and sodium nitrite, p. 203",
-    "lecture_evidence": "And methemoglobin is able to pull cyanide off of cytochrome C oxidase. So here's the cyanide. It's going to get pulled off of the cytochrome C oxidase, and it gets stuck onto your methemoglobin, creating cyanoetthemoglobin, OK?",
+    "lecture_evidence": "And methemoglobin is able to pull cyanide off of cytochrome C oxidase. So here's the cyanide. It's going to get pulled off of the cytochrome C oxidase, and it gets stuck onto your methemoglobin, creating cyanoetthemoglobin",
     "date": "10/19"
    },
    {
     "point": "Neither carboxyhemoglobin nor methemoglobin is capable of carrying oxygen, so patients can develop functional hypoxia; the nitrite component should be avoided in smoke inhalation unless the carboxyhemoglobin level is shown to be negligible, and a methemoglobin concentration above 20% should halt further nitrite administration.",
     "chapter_location": "Antidotes for cyanide poisoning, p. 203",
-    "lecture_evidence": "Is methemoglobin helpful to our bodies? Will it carry oxygen? No, OK, we're still gonna create it in our patients though, because we're trying to save them from their cyanide poisoning, OK?",
+    "lecture_evidence": "Is methemoglobin helpful to our bodies? Will it carry oxygen? No ... we're still gonna create it in our patients though, because we're trying to save them from their cyanide poisoning",
     "date": "10/19"
    },
    {
@@ -1773,19 +1698,18 @@ const READINGS = [
    {
     "point": "The Rumack-Matthew nomogram predicts hepatotoxicity from an initial plasma acetaminophen concentration obtained four or more hours after a single acute ingestion; NAC is started when the level is on or above the nomogram, when no level is available within eight hours of a potentially toxic ingestion, or when hepatotoxicity is present.",
     "chapter_location": "N-acetylcysteine, p. 206",
-    "lecture_evidence": "Can you think of any other compounds that it's likely emergency rooms would test a person's blood for to see if they've been exposed to them? Acetaminophen, OK, acetaminophen.",
+    "lecture_evidence": "Can you think of any other compounds that it's likely emergency rooms would test a person's blood for to see if they've been exposed to them? Acetaminophen",
     "date": "10/19"
    },
    {
     "point": "One of the pharmacist's four roles listed in the abstract is managing the procurement and stocking of antidotes to ensure their timely availability; some antidotes must be stocked in the ED for immediate administration and others must be available within 60 minutes.",
     "chapter_location": "Abstract (Summary) and Introduction, p. 199",
-    "lecture_evidence": "Has anybody, um, just for fun, anybody ever, uh, been in a hospital where they have, maybe you work in a hospital pharmacy and you've had to stock, uh, NAStylcysteine?",
     "date": "10/19"
    },
    {
     "point": "Digoxin-specific antibody fragments (Fab) are lifesaving agents in toxicity from digoxin and other cardioactive steroids, including digitoxin and those derived from oleander, fox glove, lily of the valley, and toad venom. The article does not use the word monoclonal.",
     "chapter_location": "Digoxin-specific antibody fragments, p. 204-205",
-    "lecture_evidence": "And then the antibody that we have is the example I have here is digoxin immune fab. This is an antibody, a monoclonal antibody that's made to treat a digoxin overdose, OK?",
+    "lecture_evidence": "digoxin immune fab. This is an antibody, a monoclonal antibody that's made to treat a digoxin overdose",
     "date": "10/19"
    },
    {
@@ -1803,13 +1727,13 @@ const READINGS = [
    {
     "point": "Flumazenil is a competitive antagonist at the benzodiazepine-receptor binding site on γ-aminobutyric acid-A. The article discourages its use in overdose patients unless it is certain that only a benzodiazepine was ingested and the patient is not benzodiazepine dependent and has no seizure history, because it can precipitate withdrawal seizures and unmask arrhythmias in mixed ingestions.",
     "chapter_location": "Flumazenil, p. 205-206",
-    "lecture_evidence": "Flonazanil is used commonly for, uh, overdoses of things like your benzodiazepines. The, uh, benzos are gonna be agonizing your GABA receptors, right, causing a lot of, a lot of action on that, that receptor, and flomazanil will antagonize the GABA receptor, OK?",
+    "lecture_evidence": "Flonazanil is used commonly for ... overdoses of things like your benzodiazepines ... benzos are gonna be agonizing your GABA receptors ... and flomazanil will antagonize the GABA receptor",
     "date": "10/19"
    },
    {
     "point": "Benzodiazepine overdose produces a toxidrome, or toxic syndrome, of CNS depression with relatively normal vital signs; deaths attributed solely to oral benzodiazepine ingestion are rare.",
     "chapter_location": "Flumazenil, p. 205",
-    "lecture_evidence": "Usually you'll see a group of systems of symptoms that we call a toxic toxodrome that we'll get to at the end of this lecture, kind of a group of symptoms that are like, oh hey, look, this person has this, this and this.",
+    "lecture_evidence": "Usually you'll see a group of systems of symptoms that we call a toxic toxodrome ... kind of a group of symptoms that are like, oh hey, look, this person has this, this and this.",
     "date": "10/19"
    },
    {
@@ -1851,7 +1775,7 @@ const READINGS = [
    "Intravenous fat emulsion (p. 206): lipid sink theory; first-line for bupivacaine cardiotoxicity and considered for lipophilic cardiotoxic drugs (tricyclic antidepressants, verapamil, diltiazem, bupropion, propranolol); 20% IFE 100 mL (1.5 mL/kg) i.v. push, optional infusion 0.25-0.5 mL/kg/min; not FDA approved for this use - not covered in lecture.",
    "Octreotide (p. 208-209): somatostatin analog that inhibits pancreatic insulin release for sulfonylurea- and miglitinide-induced hypoglycemia; 50 µg subcutaneously every six hours as needed after dextrose 0.5-1 g/kg - not covered in lecture.",
    "Introduction and supplementary material (p. 199-200): the national consensus list of 24 antidotes, ED versus 60-minute availability, eFigure 1 stocking list and eTable 1 inventory log - not covered in lecture.",
-   "The poisoning treatment table built from this article (signs and symptoms of overdose, antidote, antidote mechanism) is due the morning of 10/20; she said 'we'll go over the table tomorrow morning in the beginning of class' and 'Once everybody has turned in their table to me tomorrow morning, I will post my key'."
+   "The poisoning treatment table built from this article: signs and symptoms of overdose, antidote, antidote mechanism."
   ],
   "terms": [
    {
@@ -1906,47 +1830,7 @@ const READINGS = [
   "discussed_in_class": true,
   "her_words": [
    {
-    "t": "And then also this article by Marafa.",
-    "date": "10/19"
-   },
-   {
-    "t": "It's a really good article and it breaks down step by step, a lot of the, the symptoms that you'll see in these overdoses and then the treatments that we use, and importantly, their mechanism of action.",
-    "date": "10/19"
-   },
-   {
-    "t": "So, um, What I wanted to propose to you today, usually what I do with this, this lecture is I give students time to work together in class to fill out this table, and it's not due yet until tomorrow morning, right?",
-    "date": "10/19"
-   },
-   {
-    "t": "All the information is right here in these articles.",
-    "date": "10/19"
-   },
-   {
-    "t": "I will be here, but I think just for the chance to shake it up a bit on how we run our class time, maybe it's more beneficial for you guys to do readings in the chapter or that Marrafa article and fill in that table rather than me just lecturing.",
-    "date": "10/19"
-   },
-   {
-    "t": "I suggest the Depiro chapter or the Marafa article or both.",
-    "date": "10/19"
-   },
-   {
-    "t": "I think the Marafa article has the information in it, um, fast.",
-    "date": "10/19"
-   },
-   {
-    "t": "It's the quickest to read through compared to the Dipiro article, OK.",
-    "date": "10/19"
-   },
-   {
-    "t": "I do not want you to recreate the, the chapter or the article in your squares.",
-    "date": "10/19"
-   },
-   {
-    "t": "Once everybody has turned in their table to me tomorrow morning, I will post my key, and that will give you an idea of the detail that I think you need to know for the exam, and we'll go over the table tomorrow morning in the beginning of class.",
-    "date": "10/19"
-   },
-   {
-    "t": "Make your brain do the work of reading the article, pulling the information and putting it into the table, OK?",
+    "t": "it breaks down step by step, a lot of the ... symptoms that you'll see in these overdoses and then the treatments that we use, and importantly, their mechanism of action.",
     "date": "10/19"
    },
    {
@@ -1954,13 +1838,14 @@ const READINGS = [
     "date": "10/19"
    },
    {
-    "t": "All right, so you need to know this table that we're about to go through.",
+    "t": "you need to know this table",
     "date": "10/19"
    }
   ],
   "truncated": false,
   "numbering_note": "The article is paginated 199-212 in Am J Health-Syst Pharm volume 69 (Feb 1, 2012); page numbers in chapter_location are those printed page numbers. The transcript renders fomepizole as 'omeprazole' (four times) and 'fomeprazole' (once); quotes are kept verbatim. The Drive file is 'Marraffa+AJHSP+2012+Antidotes.pdf' in the 'Readings for Lecture 10.19' folder.",
   "listen": "This reading is Antidotes for toxicological emergencies, A practical review, by Jeanna Marraffa, Victor Cohen and Mary Ann Howland, in the American Journal of Health System Pharmacy, two thousand twelve. It is a review article, a primer for pharmacists. For each antidote it gives the mechanism, indications, dosing, adverse effects, and implications for the pharmacist, such as stocking antidotes so they are ready in time. She called it a really good article that breaks down, step by step, the symptoms of these overdoses, the treatments, and importantly their mechanisms of action, and the quickest to read. Her poisoning table key cites it for these rows, in her key's wording. Acetaminophen: nausea and vomiting, clinical signs of liver failure, and blood levels can be measured. N acetylcysteine replenishes glutathione. It loses effectiveness about eight hours after the overdose, and it should still be given past that point. In the United States it is usually given intravenously, because the oral form smells like rotten eggs. Toxic alcohols: methanol's active metabolites cause anion gap metabolic acidosis and ocular toxicity. Ethylene glycol's metabolites can crystallize in the microvasculature, and renal toxicity is common. Ethanol or fomepizole inhibits alcohol dehydrogenase. Ethanol was once given in emergency rooms as shots of Everclear. Fomepizole is the stronger inhibitor, has fewer adverse effects, and gives better control of the dosing. Benzodiazepines: central nervous system depression with relatively normal vital signs, and blood levels can be measured. Flumazenil is a competitive antagonist of the benzodiazepine receptor, and it can cause withdrawal in a benzodiazepine dependent patient. Beta blockers: hypotension, bradycardia, altered mental status and respiratory depression. Atropine increases heart rate. Calcium tries to drive calcium into cardiac cells. Glucagon increases cardiac cyclic A M P to increase heart rate. For high dose insulin euglycemia therapy, the mechanism of the inotropic effect is not understood. Vasopressors raise blood pressure. Intravenous twenty percent fat emulsion acts as a sink for the drug if it is lipophilic enough. Calcium channel blockers: hypotension and bradycardia, but often alert, with the same antidotes. Altered mental status points to a beta blocker. Digoxin: bradycardia, arrhythmias, elevated serum potassium, nausea and vomiting, and blood levels can be measured. Digoxin specific antibody fragments bind digoxin, which is then renally eliminated. After the antidote, the total digoxin level, free and bound to the fragments, goes up, so it can't be used to calculate more doses. Opioids: somnolence, coma, decreased heart and breathing rates, and decreased pupils. Naloxone is a competitive antagonist of opioid receptors and can trigger withdrawal in chronic opioid users. Sulfonylureas and meglitinides: hypoglycemia, treated with octreotide, which inhibits insulin release from the pancreas. The article also covers cyanide. Cyanide binds cytochrome oxidase and halts the electron transport chain. Nitrites create methemoglobin, which pulls cyanide off the enzyme. Rhodanese, with sulfur donated by sodium thiosulfate, forms thiocyanate, which the kidneys excrete. The traps. N acetylcysteine supplies the ingredients for glutathione. She told the class it is not neutralizing free radicals. Glucagon raises cyclic A M P. It is not a cofactor. Rhodanese is the body's own enzyme, and sodium thiosulfate is the drug given. She called digoxin immune Fab a monoclonal antibody, but the product is ovine, made in sheep. Opioid overdose shrinks the pupils, so larger pupils are not part of its toxidrome.",
+  "listen_secs": 239,
   "exam": 3,
   "lectures": [
    "L16"
@@ -2072,6 +1957,7 @@ const READINGS = [
   "quotes_note": "Quotes lightly edited for reading: filler words removed and transcription errors corrected; the verbatim transcript text is kept beside each quote.",
   "truncated": false,
   "listen": "This reading is Chapter five, Pharmacogenomics, by Jennifer Hibma and Kathleen Giacomini, in Katzung's Basic and Clinical Pharmacology, sixteenth edition. It was not discussed in class. Its introduction and glossary define the terms of her first pharmacogenomics lecture. The rest of the chapter covers genetic variants in drug metabolizing enzymes, transporters and immune system genes, and the two genes behind warfarin dosing. The chapter defines pharmacogenomics as the study of genetic factors that underlie variation in drug response, a modern term for pharmacogenetics. Her lecture says the two terms are used interchangeably, and pharmacogenomics is the preferred term. An allele is one of two or more alternative forms of a gene at the same locus. Allele frequency is the share of one allele among all alleles in a population. A single nucleotide polymorphism is a base pair substitution. The chapter defines a haplotype as a series of alleles found in a linked locus on a chromosome. Her key defines a haplotype as more than one genetic variant that group together and co exist with a higher frequency than would occur by chance. Linkage disequilibrium is the nonrandom association of alleles at two or more loci. In Hardy Weinberg equilibrium, allele frequencies stay constant from generation to generation without evolutionary influences, and her lecture applies the same to genotype frequencies. The traps. A haplotype involves several loci on one chromosome, not one variant. Allele frequency counts alleles, and genotype frequency counts genotypes. A variant in at least one percent of the population is a polymorphism. Below one percent it is a rare variant.",
+  "listen_secs": 105,
   "exam": 3,
   "lectures": [],
   "status": "background",
@@ -2173,6 +2059,7 @@ const READINGS = [
   "quotes_note": "Quotes lightly edited for reading: filler words removed and transcription errors corrected; the verbatim transcript text is kept beside each quote.",
   "truncated": false,
   "listen": "This reading is Chapter e six, Medication Adherence, by Lin Fang Ju, Huang Yen Ming and Ho Yunn Fang, in DiPiro's Pharmacotherapy, A Pathophysiologic Approach, thirteenth edition. It was not discussed in class, and it covers neither pharmacogenomics nor poisoning. Medication adherence, following the World Health Organization, is the extent to which a person's medication taking matches the recommendations of healthcare providers, in dose, route, frequency and duration. Adherence for chronic illness in developed countries is around fifty percent. Nonadherence can be intentional or unintentional. Direct methods measure the drug or a metabolite in blood or urine, or observe the dose being taken. Indirect methods are self report surveys, which are the most widely used, pharmacy refill rates, pill counts, clinical response, and electronic monitoring. The World Health Organization groups the barriers into five dimensions: social and economic, healthcare team and system, condition, therapy, and patient related factors. Strategies to improve adherence include simplifying the regimen, patient education, motivational interviewing and reminders. The trap. A drug level in blood is a direct method. A refill record or a pill count is indirect.",
+  "listen_secs": 82,
   "exam": 3,
   "lectures": [],
   "status": "assigned",
