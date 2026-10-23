@@ -155,3 +155,6 @@ See `## Conflicts / uncertain` in notes/L01.md, L02.md and L03.md. The ones that
   slips glossed in brackets, fragment quotes replaced (TBL3-001/041, NEW3-023/042, SA3-05/10/13, L16-102), marraffa.json
   evidence_clean added, 10/21 restatement dropped from tell3. Left for the user: L15-119 TI framing; 10/21-labeled rows
   and L17-054..060 kept as labeled; RMK3-025 omits "the elderly"; dipiro-e6 status.
+- 10/23 (post-publish fixes, v84): #updbar moved inside <header> (hdrVar re-measured on insert/dismiss); resumePlace
+  restores the exam result page (r.v === 'exam' with EX.done); exam review cards show options and whys before teach and
+  the Hear the why row (chk7.js verified the order). Chain: build, test.js, style_check.js, browser_test.js passed.
