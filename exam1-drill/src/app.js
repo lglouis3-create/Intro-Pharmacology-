@@ -3036,13 +3036,18 @@ const gwCont = () => (store.get(GW_CONT_KEY) || '1') === '1';
 const gwHas = id => typeof GUIDE_WALK !== 'undefined' && !!GUIDE_WALK[id];
 const gwRec = (id, i) => typeof GW_CLIPS !== 'undefined' && GW_CLIPS.includes(id + '-' + i);
 let GW = null;   // {id, i, playing, fell, t, sel: 'deck:n' shown}
+// the part each section was left on, so a walkthrough reopens where it stopped (cleared when a section is heard to the end)
+const GW_POS_KEY = COURSE.ns + ':gw-pos';
+const gwPos = id => { const v = storeObj(GW_POS_KEY)[id]; return Number.isInteger(v) && GUIDE_WALK[id] && v < GUIDE_WALK[id].segs.length ? v : 0; };
+const gwPosSet = (id, i) => { const o = storeObj(GW_POS_KEY); if (i) o[id] = i; else delete o[id]; store.set(GW_POS_KEY, JSON.stringify(o)); };
 function gwBars(root) {
   if (typeof GUIDE_WALK === 'undefined') return;
   root.querySelectorAll('section.guide[id]').forEach(s => {
     const w = GUIDE_WALK[s.id]; if (!w || s.querySelector(':scope > .gwbar')) return;
     const rec = w.segs.every((x, i) => gwRec(s.id, i));
     const bar = document.createElement('div'); bar.className = 'gwbar';
-    bar.innerHTML = `<button type="button" class="btn" data-gwopen="${esc(s.id)}" aria-expanded="false">🎧 Listen: walkthrough</button><span class="meta" style="margin:0">about ${w.mins} min · ${w.segs.length} parts · ${rec ? 'read by the narrator' : 'device voice'}</span>`;
+    const at = gwPos(s.id);
+    bar.innerHTML = `<button type="button" class="btn" data-gwopen="${esc(s.id)}" aria-expanded="false">🎧 ${at ? 'Resume walkthrough at part ' + (at + 1) : 'Listen: walkthrough'}</button><span class="meta" style="margin:0">about ${w.mins} min · ${w.segs.length} parts · ${rec ? 'read by the narrator' : 'device voice'}</span>`;
     const h = s.querySelector('h3'); if (h) h.insertAdjacentElement('afterend', bar); else s.prepend(bar);
   });
 }
@@ -3051,40 +3056,63 @@ function gwPanelHTML(id) {
   const rates = [0.8, 1, 1.25, 1.5, 1.75, 2];
   return `<div class="gwpanel" data-gwp="${esc(id)}">
     <div class="row gwctl"><button type="button" class="chip" data-gwstep="-1" aria-label="Previous part">◂</button><button type="button" class="btn" data-gwplay>▶ Play</button><button type="button" class="chip" data-gwstep="1" aria-label="Next part">▸</button>
-      <span class="meta gwpos" style="margin:0">Part 1 of ${w.segs.length}</span>
+      <span class="meta gwpos" style="margin:0" aria-live="polite">Part 1 of ${w.segs.length}</span>
       <label class="meta" style="margin:0">Speed <select data-gwrate>${rates.map(r => `<option value="${r}"${r === NAR.rate ? ' selected' : ''}>${r}×</option>`).join('')}</select></label>
       <label class="meta" style="margin:0"><input type="checkbox" data-gwcont${gwCont() ? ' checked' : ''}> Continue to the next section</label></div>
     <div class="gwbarfill"><div></div></div>
     <div class="gwbody"><figure class="gwslide"></figure><ol class="gwtx">${w.segs.map((x, i) => `<li data-gwi="${i}" tabindex="0">${esc(x.t)}</li>`).join('')}</ol></div></div>`;
 }
-// the slide (or reading) beside the transcript: the segment's own, else the last one an earlier segment named
+// the visual beside the transcript: the part's own slide or guide table, else the last one an earlier part named;
+// "sel" is a slide the listener browsed to with the slide buttons
+const GW_RD_SHORT = {'rodriguez-mozaz': 'Rodriguez-Mozaz and Weinberg, 2010', 'marraffa': 'Marraffa, Cohen and Howland, 2012', 'aapcc-bb': 'Beta-blocker guideline, 2005', 'aapcc-ccb': 'Calcium channel blocker guideline, 2005', 'dipiro-e9': 'DiPiro chapter e9', 'casarett-ch2': 'Casarett and Doull chapter 2', 'katzung-5': 'Katzung chapter 5'};
 function gwShow(id, i, sel) {
   const p = document.querySelector(`.gwpanel[data-gwp="${id}"]`); if (!p) return;
   const w = GUIDE_WALK[id], segs = w.segs;
-  p.querySelectorAll('.gwtx li').forEach(li => li.classList.toggle('on', +li.dataset.gwi === i));
+  const changed = +p.dataset.at !== i; p.dataset.at = i;
+  p.querySelectorAll('.gwtx li').forEach(li => { const on = +li.dataset.gwi === i; li.classList.toggle('on', on); if (on) li.setAttribute('aria-current', 'true'); else li.removeAttribute('aria-current'); });
   const li = p.querySelector(`.gwtx li[data-gwi="${i}"]`), ol = p.querySelector('.gwtx');
   if (li && ol.scrollHeight > ol.clientHeight) ol.scrollTop = li.offsetTop - ol.offsetTop - 8;
+  // keep the line being read on screen while the panel is in view (never pulls the page from elsewhere)
+  if (li && changed && GW && GW.id === id && GW.playing) { const r = p.getBoundingClientRect(), lr = li.getBoundingClientRect(); if (r.bottom > 0 && r.top < innerHeight && (lr.top < hdrOff() || lr.bottom > innerHeight)) li.scrollIntoView({block: 'nearest'}); }
   p.querySelector('.gwpos').textContent = `Part ${i + 1} of ${segs.length}`;
-  let s = sel; if (!s) for (let k = i; k >= 0 && !s; k--) s = segs[k].s;
-  if (!s) s = (segs.find(x => x.s) || {}).s;
-  const rd = segs[i].r;
+  let vis = sel ? {s: sel} : null;
+  for (let k = i; k >= 0 && !vis; k--) if (segs[k].s || segs[k].tb != null) vis = segs[k].s ? {s: segs[k].s} : {tb: segs[k].tb};
+  if (!vis) { const f0 = segs.find(x => x.s || x.tb != null); if (f0) vis = f0.s ? {s: f0.s} : {tb: f0.tb}; }
   const f = p.querySelector('.gwslide');
   let h = '';
-  if (s) {
-    const [d, n] = s.split(':'), dk = GW_DECKS[d], src = slideSrc(d, +n);
+  if (vis && vis.s) {
+    const [d, n] = vis.s.split(':'), dk = GW_DECKS[d], src = slideSrc(d, +n);
     h += `<a href="${src}" target="_blank" rel="noopener" title="Open the slide full size"><img src="${src}" alt="${esc(dk.name)}, slide ${n}" loading="lazy" onerror="this.closest('figure').classList.add('noimg')"></a>
       <figcaption class="row"><span class="meta" style="margin:0">${esc(dk.name)} · slide ${n} of ${dk.n}</span><span class="row" style="gap:4px;margin-left:auto"><button type="button" class="chip" data-gwslide="-1" ${+n > 1 ? '' : 'disabled'} aria-label="Previous slide">‹ Slide</button><button type="button" class="chip" data-gwslide="1" ${+n < dk.n ? '' : 'disabled'} aria-label="Next slide">Slide ›</button></span></figcaption>
       <p class="meta gwnoimg">The slide images load on the class site.</p>`;
+  } else if (vis && vis.tb != null) {
+    const t = document.getElementById(id).querySelectorAll('table')[vis.tb];
+    if (t) h += `<div class="tablewrap gwtable">${t.outerHTML}</div><p class="meta" style="margin:4px 0 0">From the guide section below</p>`;
   }
-  if (rd) { const r = (typeof READINGS !== 'undefined' ? READINGS : []).find(x => x.id === rd); h += `<p class="gwrd"><button type="button" class="chip" data-gwrd="${esc(rd)}">📄 Reading: ${esc(r ? (r.short || r.title) : rd)}</button></p>`; }
-  f.innerHTML = h; f.hidden = !h; f.dataset.sel = s || '';
+  const rd = segs[i].r;
+  if (rd) { const r = (typeof READINGS !== 'undefined' ? READINGS : []).find(x => x.id === rd); if (r) h += `<div class="gwrd"><button type="button" class="chip" data-gwrd="${esc(rd)}" aria-expanded="false">📄 Reading: ${esc(GW_RD_SHORT[rd] || r.title)}</button><div class="gwrdbox" hidden></div></div>`; }
+  f.innerHTML = h; f.hidden = !h; f.dataset.sel = vis && vis.s || '';
+}
+// the reading's status, topic and recorded summary, inside the panel; the card itself one tap further
+function gwReading(btn) {
+  const box = btn.nextElementSibling, id = btn.dataset.gwrd, r = (READINGS || []).find(x => x.id === id); if (!box || !r) return;
+  if (!box.hidden) { box.hidden = true; btn.setAttribute('aria-expanded', 'false'); const a = box.querySelector('audio'); if (a) a.pause(); return; }
+  const first = (String(r.about || '').match(/^[^.]*\.(\s|$)/) || [r.about || ''])[0];
+  box.innerHTML = `<p style="margin:6px 0 4px"><b>${esc(r.title)}</b><br><span class="meta" style="margin:0">${esc(r.source || '')}</span></p>
+    <p class="meta" style="margin:0 0 4px">${esc(RD_STATUS[r.status] || r.status || '')}${r.lecture ? ' · ' + esc(String(r.lecture)) : ''}</p>
+    <p style="margin:0 0 6px">${esc(first)}</p>
+    <audio controls preload="none" src="${NAR_BASE()}rd-${esc(id)}.mp3" style="width:100%"></audio>
+    <p style="margin:6px 0 0"><button type="button" class="chip" data-gwrdgo="${esc(id)}">Open the reading card ›</button></p>`;
+  const a = box.querySelector('audio'); a.onplay = () => gwPause(); a.onerror = () => a.remove();
+  box.hidden = false; btn.setAttribute('aria-expanded', 'true');
 }
 function gwOpen(id, play) {
   const s = document.getElementById(id), bar = s && s.querySelector(':scope > .gwbar'); if (!bar) return;
   let p = s.querySelector('.gwpanel');
   if (!p) { bar.insertAdjacentHTML('afterend', gwPanelHTML(id)); p = s.querySelector('.gwpanel'); bar.querySelector('[data-gwopen]').setAttribute('aria-expanded', 'true'); }
-  gwShow(id, GW && GW.id === id ? GW.i : 0);
-  if (play) gwPlay(id, GW && GW.id === id ? GW.i : 0);
+  const at = GW && GW.id === id ? GW.i : gwPos(id);
+  gwShow(id, at);
+  if (play) gwPlay(id, at);
 }
 function gwClose(id) {
   if (GW && GW.id === id) gwStop();
@@ -3120,6 +3148,7 @@ function gwPlay(id, i) {
   sayStop(); GW_SELF = true; narrStop(); GW_SELF = false; if (typeof rdStop === 'function') rdStop(); if (typeof playStop === 'function') playStop();
   if (GW) { clearTimeout(GW.t); if (narrCan()) speechSynthesis.cancel(); }
   const cur = GW = {id, i, playing: true, t: null};
+  gwPosSet(id, i);
   gwShow(id, i); gwUI(); gwMedia(id, i);
   const seg = w.segs[i], fill = () => document.querySelector(`.gwpanel[data-gwp="${id}"] .gwbarfill div`);
   const setFill = f => { const el = fill(); if (el) el.style.width = Math.round(100 * Math.min(1, (i + f) / w.segs.length)) + '%'; };
@@ -3143,7 +3172,7 @@ function gwPlay(id, i) {
 }
 // the last part ended: the next section with a walkthrough opens and plays, when "Continue" is ticked
 function gwEnd(id) {
-  gwStop(); const el = document.querySelector(`.gwpanel[data-gwp="${id}"] .gwbarfill div`); if (el) el.style.width = '100%';
+  gwStop(); gwPosSet(id, 0); const el = document.querySelector(`.gwpanel[data-gwp="${id}"] .gwbarfill div`); if (el) el.style.width = '100%';
   if (!gwCont()) return;
   const all = [...document.querySelectorAll('#view section.guide[id]')].filter(s => gwHas(s.id)), k = all.findIndex(s => s.id === id);
   const nx = all[k + 1]; if (!nx) return;
@@ -3173,9 +3202,16 @@ document.addEventListener('click', e => {
   const li = e.target.closest('.gwtx li'); if (li) { gwPlay(id, +li.dataset.gwi); return; }
   const sl = e.target.closest('[data-gwslide]');
   if (sl) { const f = p.querySelector('.gwslide'), [d, n] = (f.dataset.sel || '').split(':'); if (d) { const to = +n + +sl.dataset.gwslide; if (to >= 1 && to <= GW_DECKS[d].n) gwShow(id, at, d + ':' + to); } return; }
-  const rd = e.target.closest('[data-gwrd]'); if (rd) { gwPause(); jump('readings', 'rd-' + rd.dataset.gwrd); }
+  const rd = e.target.closest('[data-gwrd]'); if (rd) { gwReading(rd); return; }
+  const rg = e.target.closest('[data-gwrdgo]'); if (rg) { gwPause(); jump('readings', 'rd-' + rg.dataset.gwrdgo); }
 });
-document.addEventListener('keydown', e => { const li = e.target.closest && e.target.closest('.gwtx li'); if (li && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); li.click(); } });
+document.addEventListener('keydown', e => {
+  const li = e.target.closest && e.target.closest('.gwtx li'); if (li && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); li.click(); return; }
+  // inside a walkthrough panel: K or Space plays and pauses, the left and right arrows move a part (not while a field or the summary player has focus)
+  const p = e.target.closest && e.target.closest('.gwpanel'); if (!p || e.metaKey || e.ctrlKey || e.altKey || /^(INPUT|SELECT|TEXTAREA|AUDIO)$/.test(e.target.tagName)) return;
+  if (e.key === 'k' || (e.key === ' ' && !/^(BUTTON|A)$/.test(e.target.tagName))) { e.preventDefault(); e.stopPropagation(); p.querySelector('[data-gwplay]').click(); }
+  else if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') { e.preventDefault(); e.stopPropagation(); p.querySelector(`[data-gwstep="${e.key === 'ArrowLeft' ? -1 : 1}"]`).click(); }
+}, true);
 document.addEventListener('change', e => {
   if (e.target.matches('[data-gwrate]')) { NAR.rate = +e.target.value; store.set(COURSE.ns + ':narr-rate', String(NAR.rate)); if (GW && GW.audio && NARR_AUDIO) NARR_AUDIO.playbackRate = NAR.rate; document.querySelectorAll('[data-gwrate]').forEach(s => { s.value = String(NAR.rate); }); }
   if (e.target.matches('[data-gwcont]')) { store.set(GW_CONT_KEY, e.target.checked ? '1' : '0'); document.querySelectorAll('[data-gwcont]').forEach(c => { c.checked = e.target.checked; }); }

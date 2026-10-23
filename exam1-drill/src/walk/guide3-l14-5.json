@@ -24,7 +24,7 @@
   },
   {
    "text": "Her quiz defines an off-target adverse effect as one that occurs when a drug interacts with a receptor that is not its therapeutic target. The wrong choices describe on-target effects, either a dose too high at the intended receptor, or the intended receptor in the wrong location. Off-target binding explains side effects on a drug's list that have nothing to do with its mechanism of action. One more trap is receptor number. Down-regulation means fewer receptors and a smaller response, not a larger one.",
-   "slide": null,
+   "slide": "resp:12",
    "reading": null
   }
  ]

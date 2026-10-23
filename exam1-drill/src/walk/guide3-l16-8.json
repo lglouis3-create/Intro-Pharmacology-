@@ -3,29 +3,40 @@
  "title": "The poisoning treatment table",
  "segs": [
   {
-   "text": "Section thirty two. The poisoning treatment table. The lecture taught the general ways to treat a poisoning, and the table applies them to specific overdoses. For each one it lists the signs of acute poisoning and how it is diagnosed, the antidote, how the antidote works, and a special consideration.",
-   "slide": "treat:34",
-   "reading": null
+   "text": "Section thirty two. The poisoning treatment table. The lecture taught the general ways to treat a poisoning, and the table applies them to specific overdoses. For each one it lists the signs of acute poisoning and how it is diagnosed, the antidote, how the antidote works, and a special consideration. Her reference column cites the Marraffa article, Antidotes for toxicological emergencies, for most rows, Katzung for tricyclics and salicylates, and DiPiro for iron and organophosphates. She said the Marraffa article is the quickest to read, and that these papers have not been replaced by anything better.",
+   "slide": null,
+   "reading": "marraffa",
+   "table": 0
   },
   {
    "text": "Each antidote fits a lecture category. Fomepizole and ethanol inhibit bioactivation of the toxic alcohols, and fomepizole is the stronger alcohol dehydrogenase inhibitor with fewer adverse effects. N acetylcysteine enhances metabolism by replenishing glutathione. It loses effectiveness about eight hours after an acetaminophen overdose, and you still give it. Sodium bicarbonate for salicylates enhances elimination. Deferoxamine for iron and the digoxin antibody fragments inactivate the poison. Flumazenil, naloxone and atropine are antagonists, and pralidoxime removes the organophosphate from acetylcholinesterase.",
-   "slide": "treat:34",
-   "reading": null
+   "slide": null,
+   "reading": null,
+   "table": 0
   },
   {
-   "text": "Beta blockers and calcium channel blockers share one antidote list. Both cause hypotension and bradycardia, so the treatments aim at heart rate, calcium entry, contractility and blood pressure. Beta blockers decrease cyclic A M P production, and glucagon increases cardiac cyclic A M P to raise the heart rate. Calcium drives calcium into cardiac cells, and vasopressors raise blood pressure. High dose insulin, called H I E T, has an inotropic effect whose mechanism is not understood, and it was Quiz three's answer for an extended release calcium channel blocker overdose. A beta blocker overdose may cause altered mental status, while a calcium channel blocker patient is often alert.",
-   "slide": "treat:34",
-   "reading": "aapcc-bb"
+   "text": "Beta blockers and calcium channel blockers share one antidote list. Both cause hypotension and bradycardia, so the treatments aim at heart rate, calcium entry, contractility and blood pressure. Atropine increases heart rate. Beta blockers decrease cyclic A M P production, and glucagon increases cardiac cyclic A M P to raise the heart rate. Calcium given as a treatment drives calcium into cardiac cells, and vasopressors raise blood pressure. High dose insulin, hyperinsulinemia euglycemia therapy or H I E T, has an inotropic effect whose mechanism is not understood, and it was Quiz three's answer for an extended release calcium channel blocker overdose. Intravenous twenty percent fat emulsion acts as a sink for the drug if the drug is lipophilic enough. A beta blocker overdose may cause altered mental status, while a calcium channel blocker patient is often alert.",
+   "slide": null,
+   "reading": "aapcc-bb",
+   "table": 0
   },
   {
-   "text": "Sodium bicarbonate has two different jobs in the table. For salicylates it is renal ion trapping. For tricyclic antidepressants it treats the prolonged Q R S interval by counteracting inhibition of cardiac sodium channels. Salicylates cause hyperventilation and respiratory alkalosis, then metabolic acidosis, with hyperthermia, confusion and seizures. Sulfonylurea and meglitinide overdoses cause hypoglycemia, and octreotide inhibits insulin release from the pancreas.",
-   "slide": "treat:34",
-   "reading": null
+   "text": "Sodium bicarbonate has two different jobs in the table. For salicylates it is renal ion trapping. For tricyclic antidepressants it treats the prolonged Q R S interval by counteracting inhibition of cardiac sodium channels. Salicylates cause hyperventilation and respiratory alkalosis, then metabolic acidosis, with hyperthermia, confusion and seizures.",
+   "slide": null,
+   "reading": null,
+   "table": 0
   },
   {
    "text": "Digoxin overdose brings bradycardia, arrhythmias, elevated serum potassium, nausea and vomiting. After the antibody fragments are given, serum digoxin is unhelpful, because total digoxin, free plus bound, rises. Iron has a timeline. In the first one to six hours come vomiting, abdominal pain and diarrhea. From six to twenty four hours come lethargy, coma, seizures, bloody vomiting and diarrhea, and shock. At two to five days, liver dysfunction and failure are possible. Deferoxamine chelates the circulating ferric iron.",
-   "slide": "treat:34",
-   "reading": null
+   "slide": null,
+   "reading": null,
+   "table": 0
+  },
+  {
+   "text": "Four more rows. Acetaminophen brings nausea and vomiting and clinical signs of liver failure, and blood levels can be measured. Benzodiazepines bring central nervous system depression with relatively normal vital signs, and blood levels can be measured. Tricyclic antidepressants act on the heart, with tachycardia, a prolonged Q R S interval and reduced contractility, and also bring dilated pupils, dry mouth, agitation, seizures and sometimes vasodilation; treatment is mostly supportive, with intravenous fluids and dopamine or norepinephrine to maintain blood pressure. Sulfonylurea and meglitinide overdoses cause hypoglycemia, and octreotide inhibits insulin release from the pancreas.",
+   "slide": null,
+   "reading": null,
+   "table": 0
   }
  ]
 }
