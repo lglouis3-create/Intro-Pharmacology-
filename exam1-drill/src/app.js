@@ -1659,6 +1659,7 @@ function submitExam() {
   });
   S.exams = S.exams || []; S.exams.push({t: Date.now(), n: EX.qs.length, score, exam: EX.exam});
   EX.score = score; save(); saveExam(); examResult();
+  setTimeout(() => motivSuggest('exam'), 1500);
 }
 function examResult() {
   clearView();
@@ -3412,6 +3413,7 @@ function vData() {
   <p class="sub" style="margin-top:8px">Progress is kept in this browser under the profile name. Two people on one device keep separate histories.</p></div>
   <div class="card"><div class="row"><span>Pace:</span><select id="pace">${Object.entries(PACES).map(([k, p]) => `<option value="${k}" ${k === (S.pace || COURSE.paceDefault) ? 'selected' : ''}>${esc(p.label)}</option>`).join('')}</select></div>
   <p class="sub" style="margin-top:8px">The pace and the confidence buttons set how soon a question returns: a wrong answer or "I guessed" brings it back at once, "Not sure" holds it at its current interval, "Knew it" lengthens the interval.</p></div>
+  <div class="card"><div class="row"><span>Break video:</span><label class="row" style="gap:6px"><input type="checkbox" id="motivon" ${motivOn() ? 'checked' : ''}>Suggest after a finished practice exam and every 30 minutes of study</label><button class="btn ghost" id="motivnow">Watch now</button></div></div>
   <div class="card">${COURSE.exams.map(e => { const ep = QUESTIONS.filter(q => examOf(q) === e.id), ea = acc(ep); return `<p style="margin:0 0 6px"><b>${esc(e.name)}:</b> ${seenCount(ep)} of ${ep.length} seen · ${ea.n} answers · accuracy ${ea.pct == null ? '—' : ea.pct + '%'}</p>`; }).join('')}
   <div class="row"><button class="btn ghost" id="exp">Export progress (JSON)</button>
   <label class="btn ghost">Import progress<input type="file" id="imp" accept=".json" style="display:none"></label>
@@ -3424,6 +3426,8 @@ function vData() {
   $('#view').innerHTML = h;
   $('#setprof').onclick = () => { const v = $('#prof').value.trim(); if (!v) return; endExam(true); PROFILE = v; store.set(COURSE.ns + ':profile', v); S = loadState(); Q = null; EX = loadExam(); GQ = null; vData(); };
   $('#pace').onchange = e => { S.pace = e.target.value; save(); };
+  $('#motivon').onchange = e => { const m = motivGet(); m.off = e.target.checked ? 0 : 1; motivSet(m); };
+  $('#motivnow').onclick = () => motivPlay();
   $('#exp').onclick = () => download(`${COURSE.ns}-${PROFILE}.json`, JSON.stringify(S), 'application/json');
   $('#imp').onchange = e => { const f = e.target.files[0]; if (!f) return; f.text().then(t => { try { const o = JSON.parse(t); if (!o.q) throw 0; S = normalize(o); Q = null; endExam(); save(); vData(); } catch (err) { alert('That file is not a progress export.'); } }); };
   $('#expmiss').onclick = () => {
@@ -3436,7 +3440,7 @@ function vData() {
 }
 
 document.addEventListener('keydown', e => {
-  if (ANTI) return;   // the diagram panel is open: no shortcut may act on the page underneath
+  if (ANTI || MOTIV_VIEW) return;   // the diagram panel or the break video is open: no shortcut may act on the page underneath
   // typing in a field is never a shortcut; on a focused button or link, Enter and Space keep their own meaning
   const tg = e.target && e.target.tagName || '';
   if (/^(INPUT|SELECT|TEXTAREA)$/.test(tg) || (e.target && e.target.isContentEditable)) return;
@@ -3504,6 +3508,54 @@ function resumePlace() {
   }
   go(r.v); setTimeout(() => window.scrollTo(0, r.y || 0), 60);
   return true;
+}
+/* Break video: a suggestion card offers a short video after a finished practice exam and after every 30 minutes
+   of active study (the tab shown and a click, key or scroll in the last two minutes). The video file loads only
+   when Watch is pressed. Progress → Break video turns the suggestions off. */
+const MOTIV_KEY = COURSE.ns + ':motiv', MOTIV_SECS = 1800, MOTIV_TICK = 15;
+const MOTIV_SRC = () => (/\/exam1-drill\//.test(location.pathname) ? '' : 'exam1-drill/') + 'media/break.mp4';
+let MOTIV_ACT = Date.now(), MOTIV_VIEW = null;
+const motivGet = () => storeObj(MOTIV_KEY), motivSet = o => store.set(MOTIV_KEY, JSON.stringify(o));
+const motivOn = () => motivGet().off !== 1;
+['pointerdown', 'keydown', 'scroll', 'touchstart'].forEach(t => window.addEventListener(t, () => { MOTIV_ACT = Date.now(); }, {passive: true, capture: true}));
+function motivTick() {
+  if (document.visibilityState !== 'visible' || Date.now() - MOTIV_ACT > 120000) return;
+  const m = motivGet(); m.act = (+m.act || 0) + MOTIV_TICK;
+  // the suggestion waits while a paper is being written, the diagram panel is open, or the video is playing
+  if (m.act >= MOTIV_SECS && motivOn() && !(CUR === 'exam' && EX && !EX.done) && !ANTI && !MOTIV_VIEW && !document.getElementById('motivcard')) { m.act = 0; motivSet(m); motivSuggest('time'); return; }
+  motivSet(m);
+}
+setInterval(motivTick, MOTIV_TICK * 1000);
+function motivSuggest(why) {
+  if (!motivOn() || !/^https?:$/.test(location.protocol) || document.getElementById('motivcard')) return;
+  const c = document.createElement('div'); c.id = 'motivcard'; c.setAttribute('role', 'status');
+  c.innerHTML = `<b>${why === 'exam' ? 'Practice exam finished.' : '30 minutes of studying.'}</b><span>A break video is ready (3 min 13 s).</span>
+    <span class="row" style="gap:6px"><button type="button" class="btn" id="motivgo">Watch</button><button type="button" class="btn ghost" id="motivlater">Not now</button><button type="button" class="btn ghost" id="motivoff">Stop suggesting</button></span>`;
+  document.body.appendChild(c);
+  $('#motivgo').onclick = () => { c.remove(); motivPlay(); };
+  $('#motivlater').onclick = () => c.remove();
+  $('#motivoff').onclick = () => { const m = motivGet(); m.off = 1; motivSet(m); c.remove(); };
+}
+function motivPlay() {
+  if (MOTIV_VIEW) return;
+  [typeof sayStop === 'function' && sayStop, typeof qSayStop === 'function' && qSayStop, typeof rdStop === 'function' && rdStop,
+   typeof playStop === 'function' && playStop, typeof scenesStop === 'function' && scenesStop].forEach(f => { if (f) try { f(); } catch (e) {} });
+  const d = document.createElement('div'); d.className = 'antiview'; d.id = 'motivview';
+  d.setAttribute('role', 'dialog'); d.setAttribute('aria-modal', 'true'); d.setAttribute('aria-label', 'Break video');
+  d.innerHTML = `<div class="antibox"><div class="antihead"><b>Break video</b><button type="button" class="chip" id="motivclose" aria-label="Close video" style="margin-left:auto">✕ Close</button></div>
+    <video id="motivvid" controls autoplay playsinline preload="auto" src="${MOTIV_SRC()}" style="display:block;width:100%;max-height:75vh;background:#000;border-radius:6px"></video>
+    <p class="sub" id="motivmsg" style="margin:6px 0 0">The questions stay where you left them.</p></div>`;
+  document.body.appendChild(d); document.body.classList.add('antiopen');
+  const inert = [...document.body.children].filter(x => x !== d && !x.inert); inert.forEach(x => { x.inert = true; });
+  const opener = document.activeElement;
+  const close = () => { const v = $('#motivvid'); if (v) { v.pause(); v.removeAttribute('src'); v.load(); }
+    inert.forEach(x => { x.inert = false; }); d.remove(); document.body.classList.remove('antiopen'); document.removeEventListener('keydown', esc_, true);
+    MOTIV_VIEW = null; if (opener && opener.focus) try { opener.focus(); } catch (e) {} };
+  const esc_ = e => { if (e.key === 'Escape') { e.stopPropagation(); close(); } };
+  document.addEventListener('keydown', esc_, true);
+  $('#motivvid').onerror = () => { $('#motivmsg').textContent = 'The video did not load here. It plays on the class site: lglouis3-create.github.io/Intro-Pharmacology-'; };
+  $('#motivclose').onclick = close; d.onclick = e => { if (e.target === d) close(); };
+  MOTIV_VIEW = {close}; $('#motivclose').focus();
 }
 /* Update notice: the page compares its build with version.json on the site (soon after opening, every ten
    minutes and when the tab is shown again); when the site has a newer build, a bar offers a refresh, and the
