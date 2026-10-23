@@ -286,7 +286,7 @@ QUESTIONS.push(
   {t:"Patients who hear about it will ask whether the water is dangerous", correct:true, why:"Patients read or hear a podcast about drugs in the water and come to the pharmacist worried about drinking someone else's Prozac."},
   {t:"Pharmacists test their community's tap water for drugs", correct:false, why:"Water sampling was done by scientists after the summit, not by pharmacists."},
   {t:"Patients can get a therapeutic dose from drinking tap water", correct:false, why:"At parts per trillion, even a well-hydrated person does not reach a normal therapeutic daily dose."},
-  {t:"Flushing unused drugs is the main source of drugs in water", correct:false, why:"Flushing is one source; excretion after people and animals take medications is another. Neither she nor her key ranks the sources."}],
+  {t:"Flushing unused drugs is the main source of drugs in water", correct:false, why:"Flushing is one source. Her Practice Quiz 1 key names consumption of medications by humans and the resulting waste streams as the greatest source."}],
  teach:"She assigned the paper for two reasons: it is a good way to explore the principles of toxicology, and patients will come to the pharmacist worried after reading or hearing that drugs are in the water supply. The goal is to be able to tell that patient whether to calm down or be concerned.",
  quote:"they will find out that we know that there's drugs in our water supply, and they might likely come to you freaking out ... We're going to get you to the point where you can talk to your patient that came to you freaking out, and you can help them calm down or be concerned.",
  cite:"Discussion-Guide-Rodriguez-Mozaz-and-Weinberg-Student-2026 copy.pdf; transcript 10/13"},

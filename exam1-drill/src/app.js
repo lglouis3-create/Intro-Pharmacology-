@@ -2970,7 +2970,8 @@ let S3PLAY = null;
 function s3Say(fig) {
   const k = fig.dataset.s3, i = +fig.dataset.i, d = STEPS()[k], cap = fig.querySelector('.s3cap'), btn = fig.querySelector('[data-s3play]');
   cap.innerHTML = sayHTML(cap.textContent); S3PLAY = {k};
-  sayPlay(cap.textContent, cap, btn, null, ok => {
+  const clip = typeof S3_CLIPS !== 'undefined' && S3_CLIPS.includes(k + '-' + i) ? 's3-' + k + '-' + i + '.mp3' : null;
+  sayPlay(cap.textContent, cap, btn, clip, ok => {
     if (!ok || !S3PLAY || S3PLAY.k !== k) { S3PLAY = null; return; }
     if (i >= d.steps.length - 1) { S3PLAY = null; const b2 = fig.isConnected ? fig.querySelector('[data-s3play]') : null; if (b2) b2.textContent = '🔊 Play'; return; }
     const t = document.createElement('div'); t.innerHTML = stepHTML(k, i + 1); const nf = t.firstElementChild; fig.replaceWith(nf); setTimeout(() => { if (S3PLAY && S3PLAY.k === k) s3Say(nf); }, 600);
