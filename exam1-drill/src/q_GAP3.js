@@ -13,7 +13,7 @@ QUESTIONS.push(
   {t:"Digoxin", correct:false, why:"Not on the list. Digoxin appears in the deck as the drug treated with digoxin immune Fab, an antibody inactivator."},
   {t:"Benzodiazepines", correct:false, why:"Not on the list. Benzodiazepines appear in the deck as the overdose treated with flumazenil, a GABA-A receptor antagonist."}],
  teach:"The slide 'Guidelines for Overdoses' lists fifteen drugs and compounds with evidence-based consensus guidelines for out-of-hospital management: acetaminophen, atypical antipsychotics, beta-blockers, calcium channel blockers, dextromethorphan, diphenhydramine and dimenhydrinate, iron, methylphenidate, salicylate, selective serotonin reuptake inhibitors, TCAs and valproic acid, then three non-drug compounds: elemental mercury, ethylene glycol and long-acting anticoagulant rodenticides. Digoxin and benzodiazepines are treated elsewhere in the deck (digoxin immune Fab, flumazenil) but are not on this list.",
- quote:"Only a few drugs are out there that have these documents written, but these are pretty nasty drugs, OK?",
+ quote:"Only a few drugs are out there that have these documents written, but these are pretty nasty drugs",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slides ‘Outline and Objectives’, ‘Guidelines for Overdoses’; transcript 10/14"},
 
 {id:"GAP3-002", lecture:"L15", prof:"Smith", tier:"new", topic:"L15", sub:"guide", skill:"recall", multi:true,
@@ -163,7 +163,7 @@ QUESTIONS.push(
   {t:"It is very effective for salicylates and phenobarbital", correct:true, why:"Slide: 'Very effective for salicylates and phenobarbital', both weak acids."},
   {t:"It increases filtration of the toxin at the glomerulus", correct:false, why:"Filtration is not what changes; the charged toxin is kept from being reabsorbed from the forming urine."}],
  teach:"Enhancing renal elimination is a common way to treat acute poisonings. The toxin is filtered at the glomerulus but then reabsorbed from the forming urine; ion trapping prevents that reabsorption. Sodium bicarbonate makes the urine more basic, a weakly acidic toxin becomes charged and stays in the urine. The slide calls it very effective for salicylates and phenobarbital and says it is not done for weakly basic toxins.",
- quote:"Most of the time, we will try to do ion trapping to treat slightly acidic poisons, OK? It's safest to try to treat slightly acidic poisonings by ion trapping, rather than trying to treat slightly basic poisonings by ion trapping, OK?",
+ quote:"Most of the time, we will try to do ion trapping to treat slightly acidic poisons ... It's safest to try to treat slightly acidic poisonings by ion trapping, rather than trying to treat slightly basic poisonings by ion trapping",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Toxicokinetic-Based Treatment Enhance Renal Elimination’; transcript 10/19"},
 
 {id:"GAP3-014", lecture:"L16", prof:"Smith", tier:"new", topic:"L16", sub:"renal", skill:"tell",
@@ -217,7 +217,7 @@ QUESTIONS.push(
   {t:"One discrete kind of neurotoxicity", correct:true, why:"Her point for the slide: most neurotoxins cause one of the discrete kinds of neurotoxicity."},
   {t:"A neurotransmission defect that turns into neuronopathy", correct:false, why:"Neurotransmission defects such as organophosphate poisoning disturb signaling without killing the cell; they are their own pattern."}],
  teach:"The figure of patterns of neurotoxic injury shows four discrete kinds: neuronopathy (death of the whole neuron), axonopathy (the axon degenerates), myelinopathy (myelin or the myelinating cells injured) and interrupted neurotransmission (for example organophosphates). Most of the time a neurotoxin causes one of these. Exposure to a compound that destroys the myelin, disturbs neurotransmission and kills the axon all at once is very rare.",
- quote:"So, the point of this slide is that most of the time, a neurotoxin that you might be exposed to is gonna cause one of these discrete kinds of neurotoxicity. It's very rare that you're exposed to something that will completely, you know, blast apart the myelin, mess up your neurotransmission, and, and also kill the axon.",
+ quote:"most of the time, a neurotoxin that you might be exposed to is gonna cause one of these discrete kinds of neurotoxicity. It's very rare that you're exposed to something that will completely ... blast apart the myelin, mess up your neurotransmission, and ... also kill the axon.",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Toxic Endpoints Specific: Types of Neurotoxicity’; transcript 10/14"},
 
 {id:"GAP3-018", lecture:"L15", prof:"Smith", tier:"new", topic:"L15", sub:"neuro", skill:"recall",
@@ -227,7 +227,7 @@ QUESTIONS.push(
   {t:"True", correct:false, why:"She called a neurotoxin that does all three very rare."},
   {t:"False", correct:true, why:"Most of the time a neurotoxin causes one discrete kind of neurotoxicity."}],
  teach:"Neurotoxic injury comes in discrete patterns: neuronopathy, axonopathy, myelinopathy and interrupted neurotransmission. A neurotoxin usually produces one of them; one compound that blasts apart the myelin, disturbs neurotransmission and kills the axon together is very rare.",
- quote:"It's very rare that you're exposed to something that will completely, you know, blast apart the myelin, mess up your neurotransmission, and, and also kill the axon.",
+ quote:"It's very rare that you're exposed to something that will completely ... blast apart the myelin, mess up your neurotransmission, and ... also kill the axon.",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Toxic Endpoints Specific: Types of Neurotoxicity’; transcript 10/14"},
 
 /* ---------------- 6. Large volume of distribution in overdose (L15) ---------------- */
@@ -242,7 +242,7 @@ QUESTIONS.push(
   {t:"Antipsychotics", correct:true, why:"On the slide's large-Vd list."},
   {t:"Ethylene glycol", correct:false, why:"Not on the large-Vd list; ethylene glycol is the slide example for inhibiting bioactivation."}],
  teach:"Slide 'How Pharmacokinetics change in Overdose': overdosed drugs with a large Vd are hard to remove from blood (for example by hemodialysis). Drugs with a large Vd (greater than 5 L/kg): antidepressants, antipsychotics, antimalarials, opioids, propranolol and verapamil. A large Vd means the drug is not staying in the vasculature; it is sequestered in lipid, muscle or bone and has to move back into the blood before dialysis can remove it.",
- quote:"I have a statement in there that overdose drugs with large volumes of distribution, they're hard to remove from the, they're hard to remove from the blood, OK? Like, for example, you might try to remove them from the blood using hemodialysis.",
+ quote:"overdose drugs with large volumes of distribution ... they're hard to remove from the blood ... you might try to remove them from the blood using hemodialysis.",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘How Pharmacokinetics change in Overdose’; transcript 10/14"},
 
 {id:"GAP3-020", lecture:"L15", prof:"Smith", tier:"new", topic:"L15", sub:"odkin", skill:"tell",
@@ -254,7 +254,7 @@ QUESTIONS.push(
   {t:"First-pass metabolism is saturated", correct:false, why:"A clearance bullet on the same slide: a saturated liver lets more drug into the circulation."},
   {t:"Elimination changes to zero order", correct:false, why:"A clearance bullet on the same slide: high concentrations can change elimination to zero order and extend the half-life."}],
  teach:"The slide splits overdose kinetics into volume of distribution and clearance. Under volume of distribution: drugs with a large Vd (greater than 5 L/kg: antidepressants, antipsychotics, antimalarials, opioids, propranolol, verapamil) are hard to remove from blood by hemodialysis. Under clearance: delayed absorption, gut injury increasing absorption, saturated first-pass metabolism, exceeded protein binding and a change to zero-order elimination.",
- quote:"What does that large volume of distribution mean when we think about where the drug went in the body. Yeah, it's not staying in the vasculature, right? Right? It's distributed and probably sequestered somewhere like lipids, like muscle, like bone, right?",
+ quote:"What does that large volume of distribution mean when we think about where the drug went in the body ... it's not staying in the vasculature ... It's distributed and probably sequestered somewhere like lipids, like muscle, like bone",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘How Pharmacokinetics change in Overdose’; Smith_Quizzes_1-3_QA.pdf Quiz 3 question 6; transcript 10/14"},
 
 /* ---------------- 7. Definition of toxicology (L13 'Definitions') ---------------- */
@@ -268,7 +268,7 @@ QUESTIONS.push(
   {t:"Adverse effects of chemicals in living organisms", correct:true, why:"The Definitions slide: 'Toxicology: Study of adverse effects of chemicals in living organisms'."},
   {t:"Toxic by-products of human activities", correct:false, why:"That is the definition of a toxicant."}],
  teach:"The Definitions slide: toxicology is the study of adverse effects of chemicals in living organisms. A poison is an agent that can cause a deleterious response in a biological system; a toxin is a toxic substance produced by biological systems; a toxicant is a toxic substance produced by, or a by-product of, human (anthropogenic) activities; a xenobiotic is a compound in an organism that is not normally produced by or expected to be present in that organism.",
- quote:"So toxicology with that y at the end, it's the study of poisons, right?",
+ quote:"toxicology with that y at the end, it's the study of poisons",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slides ‘Outline and Objectives’, ‘Definitions’; transcript 10/9"},
 
 /* ---------------- 8. Types of chemical interactions (L14 'Chemical Interactions'; Casarett ch. 2) ---------------- */
@@ -335,7 +335,7 @@ QUESTIONS.push(
   {t:"Synergistic: 2 + 2 = 20", correct:true, why:"Both active alone, and together much more than the sum."},
   {t:"Antagonism: 2 + 3 = 5", correct:false, why:"2 + 3 = 5 is additive; antagonism is less than expected, as in 4 + 6 = 8."}],
  teach:"Casarett and Doull's numeric forms: additive 2 + 3 = 5; synergistic 2 + 2 = 20; potentiation 0 + 2 = 10; antagonism 4 + 6 = 8, 4 + (−4) = 0 or 4 + 0 = 1. The point of the slide is that a person exposed to several compounds at once (workplace, drugs, diet, hobbies) may have any of these interactions, which makes the combined risk hard to predict.",
- quote:"You could have additive or synergistic or potentiation or antagonistic type of interactions going on, which makes it really hard to predict how bad is it going to be for for people or critters, OK.",
+ quote:"You could have additive or synergistic or potentiation or antagonistic type of interactions going on, which makes it really hard to predict how bad is it going to be ... for people or critters",
  note:"The numeric forms are from the assigned reading, Casarett and Doull ch. 2, 'Interactions of Chemicals'; she named the four types on 10/13 without the numbers.",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Chemical Interactions’; Casarett and Doull ch. 2 ‘Interactions of Chemicals’ (Fig. 2-1); transcript 10/13"},
 
@@ -348,8 +348,8 @@ QUESTIONS.push(
   {t:"190", correct:false, why:"That is TD50 − ED50 = 200 − 10, a difference rather than a ratio."},
   {t:"210", correct:false, why:"That is TD50 + ED50 = 200 + 10."}],
  teach:"Therapeutic index = toxic dose / therapeutic dose, by convention TD50 / ED50, with the same percentage in numerator and denominator. Check: 200 ÷ 10 = 20.",
- quote:"You already know that that's the toxic dose over the therapeutic dose, and most of the time we're using the toxic dose in 50% of the animals over the toxic dose, I'm sorry, over the therapeutic dose of 50% of the animals.",
- note:"On the exam paper: her Principles objectives slide says to \"calculate common indices of toxicity from a dose-response curve\", and she said answering her objectives should pass her exam. Her Practice Quiz 1 asked which value has the formula Toxic Dose / Therapeutic Dose (therapeutic index). The Principles objectives slide includes 'calculate common indices of toxicity from a dose-response curve'.",
+ quote:"You already know that that's the toxic dose over the therapeutic dose, and most of the time we're using the toxic dose in 50% of the animals ... over the therapeutic dose of 50% of the animals.",
+ note:"On the exam paper: her Principles objectives slide says to \"calculate common indices of toxicity from a dose-response curve\", and she said answering her objectives should pass her exam. Her Practice Quiz 1 asked which value has the formula Toxic Dose / Therapeutic Dose (therapeutic index).",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Values Developed from Dose-Response’; Smith_Practice_Quiz_1_-_Principles_of_Toxicology.pdf question 3; transcript 10/13"},
 
 {id:"GAP3-028", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"indices", skill:"calc", core:true, coreWhy:"her Principles objectives slide: calculate common indices of toxicity from a dose-response curve", concept:"calc-mos", tags:["smith","calc"], source:"both",
@@ -384,7 +384,7 @@ QUESTIONS.push(
   {t:"Drug A, with TI = 45", correct:false, why:"45 is 50 − 5, a difference rather than a ratio."},
   {t:"Drug B, with TI = 0.05", correct:false, why:"0.05 is 20 ÷ 400, the ratio upside down."}],
  teach:"The value of these numbers is comparing compounds. Drug A: 50 ÷ 5 = 10. Drug B: 400 ÷ 20 = 20. Drug B has the wider therapeutic index, so less chance of toxicity, even though Drug A is more potent (works at a lower dose).",
- quote:"All right, all three of these values you can calculate a therapeutic index or a margin of safety or a margin of exposure for whatever compound, but the real value of these numbers is that you can compare that value to other compounds' values and get a, get an estimate for how bad is one compound compared to another, OK.",
+ quote:"all three of these values you can calculate a therapeutic index or a margin of safety or a margin of exposure for whatever compound, but the real value of these numbers is that you can compare that value to other compounds' values ... get an estimate for how bad is one compound compared to another",
  note:"Her Principles objectives slide: \"calculate common indices of toxicity from a dose-response curve\". The doses in the stem are practice numbers.",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Values Developed from Dose-Response’; transcript 10/13"},
 

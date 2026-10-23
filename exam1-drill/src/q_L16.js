@@ -30,8 +30,7 @@ QUESTIONS.push(
   {t:"Gastric lavage", correct:false, why:"Lavage is a risky method an emergency team might still try when someone has really overdosed and might not otherwise be saved; the outcome data do not favor it."},
   {t:"Whole bowel irrigation", correct:false, why:"Irrigation pushes the gut contents through; an experienced team might try it in a severe case, but it is not the method the outcome data favor."}],
  teach:"The outcome data on treating poisoned patients come from cases that were treated and then written up, not from clinical trials. Those data show that charcoal, single-dose and for some compounds multiple-dose, improves patient outcomes best among the absorption-prevention methods. Two caveats: not every compound sticks to charcoal, and charcoal has its own risk.",
- quote:"Yeah, so charcoal, based on patient outcomes is probably your best option. But not everything people ingest can be grabbed by charcoal in their stomach, right?",
- note:"A 10/19 addition to the 10/14 discussion of the DiPiro section (L15-059 to L15-062): the ranking by outcome data was new.",
+ quote:"charcoal, based on patient outcomes is probably your best option. But not everything people ingest can be grabbed by charcoal in their stomach",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Toxicokinetic-Based Treatment More on preventing absorption’ (DiPiro ch. e9); transcript 10/19"},
 
 {id:"L16-002", lecture:"L16", prof:"Smith", tier:"new", topic:"L16", sub:"absorbrev", skill:"apply", core:true, coreWhy:"her Quiz 3 Q8 (time frame for single-dose activated charcoal)",
@@ -43,8 +42,8 @@ QUESTIONS.push(
   {t:"Enterohepatic recirculation of the poison has ended by then", correct:false, why:"Enterohepatic recirculation is the reason for multiple-dose charcoal, not the reason for the single-dose window."},
   {t:"The patient is too sedated by then to swallow the charcoal", correct:false, why:"The window is set by where the poison is, not by the patient's state: after a few hours little of the poison is left in the stomach and small intestine for the charcoal to bind."}],
  teach:"The window for single-dose charcoal used to be an hour and has been lengthened to about 2 hours. The reason there is a window at all is location: the ingested poison keeps moving down the gut, so the charcoal has to reach the stomach and small intestine while the poison is still there. Multiple-dose charcoal is the separate case for compounds that stick to charcoal and are secreted back into the small intestine through the bile.",
- quote:"Yeah, up to 2 hours. They used to say just an hour, but they've, they've lengthened that a little bit, maybe up to 2 hours, OK? ... Why does it not work so well if you wait 4 to 6 hours to give them charcoal? They've ingested it orally. Stuff moves on through, right? So you need to get that charcoal in their stomach and small intestine while the poison is still in that area of the body, OK?",
- note:"The 1-to-2-hour window is L15-060; the reason for the window was added on 10/19. Her Quiz 3 keyed \"Less than 60 minutes\" for the same question, with 2-4 hours as a wrong option.",
+ quote:"up to 2 hours. They used to say just an hour, but they've ... lengthened that a little bit, maybe up to 2 hours ... Why does it not work so well if you wait 4 to 6 hours to give them charcoal? They've ingested it orally. Stuff moves on through ... So you need to get that charcoal in their stomach and small intestine while the poison is still in that area of the body",
+ note:"Her Quiz 3 keyed \"Less than 60 minutes\" for the same question, with 2-4 hours as a wrong option.",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Toxicokinetic-Based Treatment Prevent Absorption’; transcript 10/19"},
 
 /* ---------------- Inhibit bioactivation ---------------- */
@@ -69,7 +68,7 @@ QUESTIONS.push(
   {t:"Formic acid; crystals in the small vessels of the kidney", correct:false, why:"Formic acid is the right metabolite, but crystals in the small vessels and renal toxicity belong to ethylene glycol (oxalic acid)."},
   {t:"Oxalic acid; crystals in the small vessels of the kidney", correct:false, why:"That is the ethylene glycol story: oxalic acid precipitates as microcrystals in small vessels, and renal toxicity is common."}],
  teach:"Methanol is metabolized by alcohol dehydrogenase to formaldehyde, then by formaldehyde dehydrogenase to formic acid. Formic acid is the toxic product of the bioactivation: it damages the retina, so loss of sight is the symptom associated with methanol poisoning.",
- quote:"Then it goes through another dehydrogenase, the formaldehyde dehydrogenase, and it forms formic acid. This is the compound in the bioactivation of methanol that is toxic. Formic acid will cause damage, especially to the eyes, to the retina of the eyes. It'll, it'll kill those receptors in the back of the retina, and therefore you'll lose sight.",
+ quote:"Then it goes through another dehydrogenase, the formaldehyde dehydrogenase, and it forms formic acid. This is the compound in the bioactivation of methanol that is toxic. Formic acid will cause damage, especially to the eyes, to the retina of the eyes. It'll ... kill those receptors in the back of the retina, and therefore you'll lose sight.",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Toxicokinetic-Based Treatment: methanol and ethylene glycol examples’; transcript 10/19"},
 
 {id:"L16-005", lecture:"L16", prof:"Smith", tier:"new", topic:"L16", sub:"bioact", skill:"figure", type:"match",
@@ -83,7 +82,7 @@ QUESTIONS.push(
   {l:"Ethylene glycol, by alcohol dehydrogenase", r:"Glycoaldehyde", why:"The first step of the ethylene glycol path; aldehyde dehydrogenase then makes glycolic acid."},
   {l:"Glycolic acid, after several more steps", r:"Oxalic acid (forms microcrystals)", why:"Oxalic acid precipitates as crystals in small vessels; renal toxicity is common."}],
  teach:"Both alcohols share the first enzyme, alcohol dehydrogenase. Methanol: alcohol dehydrogenase makes formaldehyde, formaldehyde dehydrogenase makes formic acid. Ethylene glycol: alcohol dehydrogenase makes glycoaldehyde, aldehyde dehydrogenase makes glycolic acid, and several more steps give oxalic acid. The shared first enzyme is why one antidote serves both.",
- quote:"It's going from methanol. It gets metabolized by alcohol dehydrogenase to formaldehyde. ... it is metabolized again by, uh, alcohol dehydrogenase to glycoaldehyde, and then it goes through. Aldehyde dehydrogenase to glycolic acid, then it takes several more steps and it goes to oxalic acid, OK?",
+ quote:"It's going from methanol. It gets metabolized by alcohol dehydrogenase to formaldehyde. ... it is metabolized again by ... alcohol dehydrogenase to glycoaldehyde, and then it goes through. Aldehyde dehydrogenase to glycolic acid, then it takes several more steps and it goes to oxalic acid",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Toxicokinetic-Based Treatment: methanol and ethylene glycol examples’; transcript 10/19"},
 
 {id:"L16-006", lecture:"L16", prof:"Smith", tier:"new", topic:"L16", sub:"bioact", skill:"apply",
@@ -95,7 +94,7 @@ QUESTIONS.push(
   {t:"The parent compound inhibits alcohol dehydrogenase, so ethanol builds up", correct:false, why:"Ethylene glycol is a substrate of alcohol dehydrogenase, not an inhibitor; inhibiting that enzyme (ethanol, fomepizole) is the treatment."},
   {t:"Glycolic acid binds cytochrome c oxidase and stops ATP production", correct:false, why:"Binding cytochrome c oxidase and stopping ATP production is the cyanide mechanism; glycolic acid is an intermediate on the way to oxalic acid."}],
  teach:"Ethylene glycol ends up as oxalic acid, which can form small crystals in the microvasculature; her key says renal toxicity is common, and the Marraffa article says the toxicity is primarily renal. On 10/19 she named 'your liver, your kidneys' as examples of organs damaged. That is why an exposure that tastes sweet and does not burn is a significant poisoning.",
- quote:"Well, oxalic acid is a, is a small molecule, and, um, uh, it will sometimes precipitate in the blood to form small microcrystals and The impact of that is you can damage your organs like your liver, your kidneys.",
+ quote:"oxalic acid ... is a small molecule, and ... it will sometimes precipitate in the blood to form small microcrystals and The impact of that is you can damage your organs like your liver, your kidneys.",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Toxicokinetic-Based Treatment: methanol and ethylene glycol examples’; transcript 10/19"},
 
 {id:"L16-007", lecture:"L16", prof:"Smith", tier:"new", topic:"L16", sub:"bioact", skill:"apply",
@@ -107,7 +106,7 @@ QUESTIONS.push(
   {t:"Windshield washer fluid; it looks like water", correct:false, why:"The common ethylene glycol exposure is antifreeze in cars, and the draw is the sweet taste, not a resemblance to water."},
   {t:"Rubbing alcohol; it smells like ethanol", correct:false, why:"Ethylene glycol is the antifreeze in cars; pets and children swallow it because it smells and tastes sweet."}],
  teach:"Ethylene glycol is antifreeze. The pink or blue of a driveway spot is a dye, not the compound. It smells and tastes sweet and does not burn going down, so pets lick up leaks and small children, who put everything in their mouths, get exposed while playing outside. Methanol exposures are different: most are people with an alcohol use disorder who cannot get ethanol and drink methanol instead.",
- quote:"anybody can think of what we use in our cars that's made of ethylene glycol? Antifreeze, right? ... It smells sweet. You've never gone down to sniff it. I'm just letting you know, it smells and tastes sweet. OK, so it's a problem for animals. ... the methanol exposure, most of the time, those are people that have an alcohol substance use disorder.",
+ quote:"what we use in our cars that's made of ethylene glycol? Antifreeze ... it smells and tastes sweet ... it's a problem for animals. ... the methanol exposure, most of the time, those are people that have an alcohol substance use disorder.",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Toxicokinetic-Based Treatment: methanol and ethylene glycol examples’; transcript 10/19"},
 
 {id:"L16-008", lecture:"L16", prof:"Smith", tier:"new", topic:"L16", sub:"bioact", skill:"drug", core:true, coreWhy:"her Quiz 3 Q1 and her table key row (ethanol or fomepizole; inhibition of alcohol dehydrogenase)",
@@ -119,7 +118,7 @@ QUESTIONS.push(
   {t:"Sodium thiosulfate; it supplies sulfur for rhodanese", correct:false, why:"That is the cyanide cofactor: thiosulfate donates sulfur to the body's rhodanese."},
   {t:"Sodium bicarbonate; it ion-traps the acids in the urine", correct:false, why:"Bicarbonate is ion trapping for weakly acidic poisons such as salicylates and phenobarbital, not the methanol or ethylene glycol antidote."}],
  teach:"Both poisons are bioactivated by alcohol dehydrogenase, so one antidote serves both: ethanol, which competes for the enzyme, or fomepizole, which binds and inhibits it. With the enzyme blocked, methanol is not turned into formic acid and ethylene glycol is not turned into oxalic acid. This is the classic example of a toxicokinetic treatment that blocks bioactivation.",
- quote:"there's an antidote for methanol and ethylene glycol, and you can use ethanol or now a drug called omeprazole. So, you can give ethanol. And outcompete the alcohol alcohol dehydrogenase metabolism of methanol or ethylene glycol. Same thing with fomeprazole. It'll, it'll bind to and inhibit the alcohol dehydrogenase and prevent the metabolism of methanol or ethylene glycol.",
+ quote:"there's an antidote for methanol and ethylene glycol, and you can use ethanol or now a drug called omeprazole. So, you can give ethanol. And outcompete the alcohol ... dehydrogenase metabolism of methanol or ethylene glycol. Same thing with fomeprazole. It'll ... bind to and inhibit the alcohol dehydrogenase and prevent the metabolism of methanol or ethylene glycol.",
  note:"The transcript renders fomepizole as \"omeprazole\" and \"fomeprazole\"; the slide says \"Antidote for both is ethanol or fomepizole.\" Keyed on fomepizole, the drug on the slide and the one she describes (an alcohol dehydrogenase inhibitor); omeprazole is a proton pump inhibitor and is a transcription error.",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Toxicokinetic-Based Treatment: methanol and ethylene glycol examples’; transcript 10/19"},
 
@@ -132,7 +131,7 @@ QUESTIONS.push(
   {t:"Ethanol competes for the enzyme; fomepizole is a cofactor that speeds clearance", correct:false, why:"The first half is right, but fomepizole inhibits alcohol dehydrogenase; supplying a cofactor is the cyanide and acetaminophen approach."},
   {t:"Ethanol induces the enzyme; fomepizole is a cofactor that speeds clearance", correct:false, why:"Both halves are wrong: ethanol competes for the enzyme and fomepizole inhibits it; both block the bioactivation."}],
  teach:"In the old days an emergency room kept Everclear, ethanol with a high percent by volume, and gave a poisoned patient a shot or two to outcompete alcohol dehydrogenase; she called that unrefined. Fomepizole is the prescription alcohol dehydrogenase inhibitor used now, with better control of dosing. Her table key: fomepizole is a stronger alcohol dehydrogenase inhibitor and has fewer adverse effects than ethanol. Either way the mechanism is the same: block the enzyme so the toxic metabolites are never formed.",
- quote:"So in the old days, you would go to the emergency room and you would see in rooms in the ERs a bottle of Everclear. It's ethanol, right, with a pretty high percent by volume content of ethanol. ... We now have, uh, the medication omeprazole that we'll give to patients. Um, a little bit better control of the dosing.",
+ quote:"in the old days, you would go to the emergency room and you would see in rooms in the ERs a bottle of Everclear. It's ethanol ... with a pretty high percent by volume content of ethanol. ... We now have ... the medication omeprazole that we'll give to patients. ... a little bit better control of the dosing.",
  note:"\"omeprazole\" in the transcript is fomepizole (see L16-008).",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Toxicokinetic-Based Treatment: methanol and ethylene glycol examples’; PoisoningTreatmentTable2026KEY.pdf row ‘Toxic alcohols’; transcript 10/19"},
 
@@ -145,8 +144,8 @@ QUESTIONS.push(
   {t:"Classic symptoms, then a urine pH test for acids", correct:false, why:"Urine pH belongs to ion trapping (enhancing renal elimination), not to diagnosis."},
   {t:"Classic symptoms, then a liver biopsy to look for injury", correct:false, why:"A biopsy shows a pattern of injury; it does not identify an alcohol. The blood draw does."},
   {t:"Classic symptoms, then the response to a dose of fomepizole", correct:false, why:"Fomepizole is the antidote, not a test; the poisoning is confirmed by a blood draw for the alcohols."}],
- teach:"A student asked how anyone would know. People come in with classic symptoms: unconscious, or awake but sedated. The key indicator is a blood draw in the emergency room that looks for the alcohols. More generally, the first guess comes from the symptoms, a toxidrome, and the hospital laboratory then verifies the suspected compound if it can test for it; when a patient intended self-harm and will not say what was taken, or is unconscious, it is sometimes a guess.",
- quote:"How would you know that somebody's got this poisoning? All right, people will come into the ER or maybe you found them and they've got kind of classic symptoms, right? ... The, the, the, the key indicator would be you get them into the ER and they do a blood draw, and they look for these alcohols in their blood.",
+ teach:"People come in with classic symptoms: unconscious, or awake but sedated. The key indicator is a blood draw in the emergency room that looks for the alcohols. More generally, the first guess comes from the symptoms, a toxidrome, and the hospital laboratory then verifies the suspected compound if it can test for it; when a patient intended self-harm and will not say what was taken, or is unconscious, it is sometimes a guess.",
+ quote:"How would you know that somebody's got this poisoning? ... people will come into the ER or maybe you found them and they've got kind of classic symptoms ... the key indicator would be you get them into the ER and they do a blood draw, and they look for these alcohols in their blood.",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Toxicokinetic-Based Treatment: methanol and ethylene glycol examples’; transcript 10/19"},
 
 {id:"L16-011", lecture:"L16", prof:"Smith", tier:"new", topic:"L16", sub:"detect", skill:"recall", multi:true,
@@ -159,7 +158,7 @@ QUESTIONS.push(
   {t:"Opiates", correct:true, why:"Opiates are also common in overdose and checked in the blood; beta blockers and calcium channel blockers are on the same list."},
   {t:"Cyanide", correct:false, why:"Cyanide is a poison from this lecture, but it was not on the list of common overdoses that emergency rooms check for; the list was acetaminophen, salicylates, iron, beta blockers, calcium channel blockers and opiates."}],
  teach:"Some compounds are so common in overdose, and detectable in blood, that most emergency rooms check for them: acetaminophen, salicylates, iron, beta blockers, calcium channel blockers and opiates, plus a few others. The symptoms give the first guess; the blood test verifies it when the laboratory can run it.",
- quote:"Can you think of any other compounds that it's likely emergency rooms would test a person's blood for to see if they've been exposed to them? Acetaminophen, OK, acetaminophen. Salicylates Iron Beta blockers, calcium channel blockers, and there's a few others, but those are some of the big ones that any patient coming into the ER, oh, opiates as well",
+ quote:"any other compounds that it's likely emergency rooms would test a person's blood for to see if they've been exposed to them? ... acetaminophen. Salicylates Iron Beta blockers, calcium channel blockers, and there's a few others, but those are some of the big ones ... opiates as well",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Toxicokinetic-Based Treatment: methanol and ethylene glycol examples’; transcript 10/19"},
 
 {id:"L16-012", lecture:"L16", prof:"Smith", tier:"new", topic:"L16", sub:"detect", skill:"term", core:true, coreWhy:"her Quiz 3 Q5 (opioid toxidrome) and the objective \"Describe the toxidromes\"",
@@ -171,8 +170,8 @@ QUESTIONS.push(
   {t:"A list of the antidotes matched with the poisonings they treat", correct:false, why:"That describes the poisoning treatment table, not a toxidrome."},
   {t:"A class of poisons that share one mechanism and one antidote", correct:false, why:"A toxidrome describes the patient (a group of symptoms seen together), not a class of poisons."}],
  teach:"A toxidrome is a group of symptoms that go together and point toward a class of exposure; it is the basis of the first guess before the laboratory verifies the compound. The Goodman and Gilman table on the toxidromes slide lists sympathomimetic, anticholinergic, cholinergic, opioid, sedative-hypnotic, salicylate and calcium channel blocker patterns.",
- quote:"Usually you'll see a group of systems of symptoms that we call a toxic toxodrome that we'll get to at the end of this lecture, kind of a group of symptoms that are like, oh hey, look, this person has this, this and this. I wonder if they've been exposed to this compound.",
- note:"The transcript renders toxidrome as \"toxic toxodrome\". She said she would get to the table at the end of the lecture but the session ended with the guideline discussion; the table itself was not walked through on 10/19.",
+ quote:"Usually you'll see a group of systems of symptoms that we call a toxic toxodrome ... kind of a group of symptoms that are like, oh hey, look, this person has this, this and this. I wonder if they've been exposed to this compound.",
+ note:"The transcript renders toxidrome as \"toxic toxodrome\".",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Toxidromes’ (Goodman & Gilman Table 4-7); transcript 10/19"},
 
 {id:"L16-013", lecture:"L16", prof:"Smith", tier:"new", topic:"L16", sub:"detect", skill:"recall", core:true, coreWhy:"her Quiz 3 Q5 (symptom NOT in the opioid toxidrome); objective \"Describe the toxidromes\"", type:"match",
@@ -187,8 +186,7 @@ QUESTIONS.push(
   {l:"Opioid", r:"Heroin, oxycodone: somnolence or coma", why:"Table row: opioid, heroin and oxycodone, somnolence and coma."},
   {l:"Salicylate", r:"Aspirin: confusion, diaphoresis, vomiting", why:"Table row: salicylate, aspirin, confusion, diaphoresis and vomiting."}],
  teach:"The toxidromes slide reproduces Goodman and Gilman's Table 4-7, Common Toxidromes, with columns for drug class, examples, mental status, heart rate, blood pressure, respiratory rate, temperature, pupil size and other signs. The rows are sympathomimetic (cocaine, amphetamine), anticholinergic (diphenhydramine, atropine), cholinergic (organophosphates, with SLUDGE and fasciculation), opioid (heroin, oxycodone), sedative-hypnotic (benzodiazepines, barbiturates), salicylate (aspirin) and calcium channel blocker (verapamil).",
- quote:"symptoms that we call a toxic toxodrome that we'll get to at the end of this lecture",
- note:"The table slide was not reached on 10/19; she defined a toxidrome in passing and said the table would come at the end of the lecture, but the session moved to the guideline discussion and ended early. Her Quiz 3 (question 5) still asked which symptom is not part of the opioid toxidrome, and the objectives slide lists \"Describe the toxidromes discussed in class\", so the table is on the paper. The full table, with its vital-sign arrows, is in Guide section 26.",
+ note:"The table slide was not reached on 10/19, but her Quiz 3 (question 5) asked which symptom is not part of the opioid toxidrome, and the objectives slide lists \"Describe the toxidromes discussed in class\", so the table is on the paper. The full table, with its vital-sign arrows, is in Guide section 26.",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Toxidromes’ (Goodman & Gilman Table 4-7); transcript 10/19"},
 
 /* ---------------- Enhance metabolism ---------------- */
@@ -201,7 +199,7 @@ QUESTIONS.push(
   {t:"Inducers are hepatotoxic; cofactors for the reaction are given instead", correct:false, why:"Cofactors are what is given, but the reason induction is not used is time (it takes days), not toxicity of inducers."},
   {t:"Inducers are hepatotoxic; the bioactivating enzyme is inhibited instead", correct:false, why:"Both halves are wrong: induction is too slow, and the enhance-metabolism alternative is giving cofactors."}],
  teach:"Enhancing metabolism means getting the body to detoxify and clear the compound faster, as long as that metabolism does not make another toxic metabolite. Inducing the enzymes would be ideal but takes a few days, far too slow for a poisoning. What can be done is to supply cofactors for the metabolic reactions so they run faster. Her two examples are cyanide and acetaminophen.",
- quote:"It'd be great if we could induce the expression of enzymes involved in this metabolism, but that is really not possible in a poisoning situation. ... It takes a few days, so we can't treat our patient fast enough with that. Um, so, usually, in the world of a poisoning. What we can do is try to enhance the metabolism by giving cofactors for those metabolizing reactions, OK.",
+ quote:"It'd be great if we could induce the expression of enzymes involved in this metabolism, but that is really not possible in a poisoning situation. ... It takes a few days, so we can't treat our patient fast enough with that. ... in the world of a poisoning. What we can do is try to enhance the metabolism by giving cofactors for those metabolizing reactions",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Toxicokinetic-Based Treatment Enhance Metabolism’; transcript 10/19"},
 
 {id:"L16-015", lecture:"L16", prof:"Smith", tier:"new", topic:"L16", sub:"metab", skill:"apply",
@@ -213,7 +211,7 @@ QUESTIONS.push(
   {t:"Acetylcholinesterase; acetylcholine builds up", correct:false, why:"That is the organophosphate target."},
   {t:"Alcohol dehydrogenase; formic acid accumulates", correct:false, why:"Alcohol dehydrogenase bioactivates methanol to formaldehyde and on to formic acid; it is not cyanide's target."}],
  teach:"Cytochrome c oxidase is an enzyme of the electron transport chain. Cyanide binds to the flat part of its structure where oxygen would be and inhibits it, so ATP production stops and the patient suffocates even though they are breathing. Cyanide will kill, so the treatment has to get it off the enzyme and then out of the body.",
- quote:"Cytochrome C oxidase is its target. Anybody know what cytochrome cytochrome C oxidase does? Think back to biochemistry. Helps with our electron transport chain, right? ... Cyanide coming in and binding to this enzyme then inhibits its ability to do any work. So, basically, when somebody is exposed to cyanide, you basically suffocate because you're not doing any more of your ATP production, OK?",
+ quote:"Cytochrome C oxidase is its target. ... Helps with our electron transport chain ... Cyanide coming in and binding to this enzyme then inhibits its ability to do any work. So, basically, when somebody is exposed to cyanide, you basically suffocate because you're not doing any more of your ATP production",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Toxicokinetic-Based Treatment Cyanide example’ (Golan figure); transcript 10/19"},
 
 {id:"L16-016", lecture:"L16", prof:"Smith", tier:"new", topic:"L16", sub:"metab", skill:"figure",
@@ -225,7 +223,7 @@ QUESTIONS.push(
   {t:"Supplies sulfur to rhodanese, which converts cyanide to thiocyanate", correct:false, why:"That is sodium thiosulfate, the sulfur donor for the body's rhodanese."},
   {t:"Binds cyanide in the plasma, which keeps it off cytochrome c oxidase", correct:false, why:"Amyl nitrite acts on hemoglobin, not on cyanide; binding a toxin in the plasma is inactivation."}],
  teach:"The first step is to oxidize hemoglobin with amyl nitrite, changing the charge on its iron, to make methemoglobin. Methemoglobin does not carry oxygen, so it is not good for the patient, but it is created on purpose: its structure resembles the flat part of cytochrome c oxidase, and it pulls cyanide off the enzyme onto itself, forming cyanmethemoglobin and regenerating the enzyme so cellular respiration can continue.",
- quote:"We're gonna oxidize it using this amyl nitrite. To methemoglobin, OK? By changing the iron charge in hemoglobin by oxidizing it using amyl nitrite, you end up with methemoglobin. OK? Is methemoglobin helpful to our bodies? Will it carry oxygen? No, OK, we're still gonna create it in our patients though, because we're trying to save them from their cyanide poisoning, OK?",
+ quote:"We're gonna oxidize it using this amyl nitrite. To methemoglobin ... By changing the iron charge in hemoglobin by oxidizing it using amyl nitrite, you end up with methemoglobin. ... Will it carry oxygen? No ... we're still gonna create it in our patients though, because we're trying to save them from their cyanide poisoning",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Toxicokinetic-Based Treatment Cyanide example’ (Golan figure); transcript 10/19"},
 
 {id:"L16-017", lecture:"L16", prof:"Smith", tier:"new", topic:"L16", sub:"metab", skill:"apply", core:true, coreWhy:"her Quiz 3 Q3 option \"cofactor for rhodanese activity\"; the rhodanese step",
@@ -237,8 +235,8 @@ QUESTIONS.push(
   {t:"Methylene blue, which reduces methemoglobin to hemoglobin", correct:false, why:"Methylene blue repairs the methemoglobin the treatment created; it does not clear cyanide."},
   {t:"Hydroxocobalamin, which binds cyanide as cyanocobalamin", correct:false, why:"Hydroxocobalamin (Marraffa) binds cyanide to form cyanocobalamin, which is renally excreted; binding the toxin is inactivation, not enhanced metabolism."}],
  teach:"Cyanide bound to methemoglobin is less damaging than cyanide on cytochrome c oxidase, but it is still in the body. Rhodanese, an enzyme the body already has, moves the cyanide onto sulfur from thiosulfate, forming thiocyanate, which is renally eliminated. That pathway is capacity limited, so sodium thiosulfate is given to supply the sulfur and speed it up. Supplying what a detoxifying enzyme needs, instead of waiting days for induction, is what makes this the enhance-metabolism step.",
- quote:"The one that is considered um. The enhancing the metabolism is which of the three? Is it the amyl nitrate to reduce hemoglobin to methemoglobin? Is it giving the rhodonase to help thiosulfate bind the cyanide, or is it the methylene blue to regenerate hemoglobin from methemoglobin? Which is the one that I said was the co-factor helping us to clear. Yeah, the roadnas. This is the part of the scheme that is really considered to be enhancing the metabolism and elimination.",
- note:"She said \"giving them this cofactor called rodonase\" and \"thiosulfate is freely in the body\". Read in context, rhodanese is the enzyme this step needs and is already in the body, and sodium thiosulfate is the agent given, as in the assigned Marraffa article: \"Rhodanese, an endogenous enzyme, then facilitates the formation of thiocyanate\" (p. 203) and \"Thiosulfate enhances the activity of rhodanese by donating a sulfur group\" (p. 204). Her exam option \"giving the rhodonase to help thiosulfate bind the cyanide\" names this same step. The transcript renders rhodanese as \"rodonase\", \"rhodonase\", \"roadnas\" and \"Rodinase\". She said the product that is renally eliminated is \"the thiosulfate with a cyanide bound to it\". The cyanide figure did not survive the deck text export; the figure is from Golan's pharmacology textbook. In this question she said \"amyl nitrate to reduce hemoglobin\"; earlier she said \"We\'re gonna oxidize it using this amyl nitrite\". Amyl nitrite oxidizes hemoglobin to methemoglobin.",
+ quote:"The enhancing the metabolism is which of the three? Is it the amyl nitrate to reduce hemoglobin to methemoglobin? Is it giving the rhodonase to help thiosulfate bind the cyanide, or is it the methylene blue to regenerate hemoglobin from methemoglobin? ... the roadnas. This is the part of the scheme that is really considered to be enhancing the metabolism and elimination.",
+ note:"She said \"giving them this cofactor called rodonase\" and \"thiosulfate is freely in the body\". Read in context, rhodanese is the enzyme this step needs and is already in the body, and sodium thiosulfate is the agent given, as in the assigned Marraffa article: \"Rhodanese, an endogenous enzyme, then facilitates the formation of thiocyanate\" (p. 203) and \"Thiosulfate enhances the activity of rhodanese by donating a sulfur group\" (p. 204). Her exam option \"giving the rhodonase to help thiosulfate bind the cyanide\" names this same step. The transcript renders rhodanese as \"rodonase\", \"rhodonase\", \"roadnas\" and \"Rodinase\". She said the product that is renally eliminated is \"the thiosulfate with a cyanide bound to it\". In this question she said \"amyl nitrate to reduce hemoglobin\"; earlier she said \"We\'re gonna oxidize it using this amyl nitrite\". Amyl nitrite oxidizes hemoglobin to methemoglobin.",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Toxicokinetic-Based Treatment Cyanide example’ (Golan figure); transcript 10/19"},
 
 {id:"L16-018", dupOf:"L16-017", lecture:"L16", prof:"Smith", tier:"new", topic:"L16", sub:"metab", skill:"figure", type:"match",
@@ -252,7 +250,7 @@ QUESTIONS.push(
   {l:"Rhodanese", r:"Helps thiosulfate take the cyanide for renal elimination", why:"The body's own enzyme in the enhance-metabolism step; given sodium thiosulfate supplies its sulfur."},
   {l:"Methylene blue", r:"Reduces methemoglobin back to hemoglobin", why:"A reducing agent; the patient's blood could not carry oxygen otherwise."}],
  teach:"The scheme runs in order. Amyl nitrite oxidizes hemoglobin to methemoglobin. Methemoglobin pulls cyanide off cytochrome c oxidase, regenerating the enzyme. Rhodanese helps thiosulfate take the cyanide off methemoglobin, and that product (thiocyanate on her figure; she called it \"the thiosulfate bound to cyanide\") leaves in the urine. The patient is still left with methemoglobin that cannot carry oxygen, so methylene blue, a reducing agent, converts it back to hemoglobin. Only the rhodanese step is the enhance-metabolism example; the methemoglobin step is the remove-from-the-active-site example.",
- quote:"And methemoglobin is able to pull cyanide off of cytochrome C oxidase. ... amyl nitrate makes the methemoglobin, methylene reconverts methemoglobin back to hemoglobin, OK? And then the rodonase is what's really helping us to enhance the, the metabolism and then elimination of the cyanide.",
+ quote:"methemoglobin is able to pull cyanide off of cytochrome C oxidase. ... amyl nitrate makes the methemoglobin, methylene reconverts methemoglobin back to hemoglobin ... the rodonase is what's really helping us to enhance the ... metabolism and then elimination of the cyanide.",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Toxicokinetic-Based Treatment Cyanide example’ (Golan figure); transcript 10/19"},
 
 {id:"L16-019", lecture:"L16", prof:"Smith", tier:"new", topic:"L16", sub:"metab", skill:"figure", core:true, coreWhy:"her table key row: N-acetylcysteine replenishes glutathione",
@@ -260,11 +258,11 @@ QUESTIONS.push(
  stem:"In the acetaminophen scheme, what is N-acetylcysteine (NAC) doing?",
  options:[
   {t:"Supplying ingredients to make more glutathione", correct:true, why:"The body makes and stores glutathione all the time; NAC provides some of the ingredients needed to make more, so more NAPQI gets conjugated and eliminated."},
-  {t:"Neutralizing the NAPQI free radical directly", correct:false, why:"A student's answer, and a good thought, but no: NAPQI is the problem, and NAC works through glutathione."},
+  {t:"Neutralizing the NAPQI free radical directly", correct:false, why:"Free radicals are part of the problem, but NAC does not neutralize them: NAPQI is the problem, and NAC works through glutathione."},
   {t:"Inhibiting the enzyme that makes NAPQI", correct:false, why:"That would be inhibiting bioactivation; NAC enhances the clearance of NAPQI that has already formed."},
   {t:"Inducing the glutathione S-transferases", correct:false, why:"Induction is too slow for a poisoning; NAC supplies a cofactor."}],
  teach:"Acetaminophen is metabolized to NAPQI, a free radical that damages the liver. Glutathione, with the GST enzymes, conjugates NAPQI so it can be eliminated. The body makes glutathione continuously through a complicated metabolic scheme and keeps stores of it, but an overdose uses them up. NAC, given as a drug, provides ingredients for making more glutathione, so it is the cofactor that enhances the metabolism and elimination of NAPQI.",
- quote:"No, it's not neutralizing free radicals. Good, good point though, because we do have free radicals being the problem here, right? ... what's shown on this slide is anastylcysteine, we give it as a drug. And it's giving ingredients to the system to create more glutathione.",
+ quote:"it's not neutralizing free radicals. ... because we do have free radicals being the problem here ... anastylcysteine, we give it as a drug. And it's giving ingredients to the system to create more glutathione.",
  note:"The transcript renders NAPQI as \"NAQI\" and \"nap QI\", and N-acetylcysteine as \"acylcysteine\", \"anastylcysteine\", \"NAStylcysteine\". She once misspoke \"nap QI provides ingredients for making more glutathione\" (meaning NAC).",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Toxicokinetic-Based Treatment Acetaminophen Example’; transcript 10/19"},
 
@@ -277,7 +275,7 @@ QUESTIONS.push(
   {t:"N-acetylcysteine, with alcohol dehydrogenase", correct:false, why:"NAC is what is given, to supply ingredients for glutathione; alcohol dehydrogenase bioactivates methanol and ethylene glycol."},
   {t:"Methemoglobin, with cytochrome c oxidase", correct:false, why:"Methemoglobin is made on purpose in the cyanide scheme to pull cyanide off cytochrome c oxidase; it does not conjugate NAPQI."}],
  teach:"NAPQI is the free radical acetaminophen is metabolized to, and it damages the liver. Glutathione conjugates it with the help of the GST enzymes. Because the body's glutathione is made continuously and can run out in an overdose, the treatment supplies NAC to make more.",
- quote:"What is in our body that can help us clear NAQI? What, what compound grabs NAQI, conjugates it? Glutathione, with the help of the GST enzymes, yes, you end up conjugating NAQI with glutathione.",
+ quote:"What is in our body that can help us clear NAQI? ... Glutathione, with the help of the GST enzymes ... you end up conjugating NAQI with glutathione.",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Toxicokinetic-Based Treatment Acetaminophen Example’; transcript 10/19"},
 
 {id:"L16-021", lecture:"L16", prof:"Smith", tier:"new", topic:"L16", sub:"metab", skill:"apply",
@@ -289,7 +287,7 @@ QUESTIONS.push(
   {t:"It is too oily to be absorbed by mouth; reserve oral use for children", correct:false, why:"Oral NAC is absorbed and can be given; the problem is getting anyone to swallow it."},
   {t:"It loses effect 8 hours after overdose; stop giving it then", correct:false, why:"Her table key: NAC loses effectiveness about 8 hours after the overdose, but it should still be given past that point; that is not why the IV route is chosen."}],
  teach:"NAC comes in glass bottles and smells of sulfur, like rotten eggs; everyone in a hospital pharmacy knows when a bottle has shattered. Because it is hard to get a patient to swallow an oily, stinking liquid, it is usually given by IV in the United States. The caution: you cannot give an oral product intravenously, so where both protocols exist, make sure the IV formulation is the one given IV.",
- quote:"It stinks, smells like rotten eggs. So, it's got a sulfur smell. ... So, in the United States, we tend to give it by IV because it's pretty hard to get somebody to swallow something that smells like rotten eggs, and it's kind of oily and, it's a clear liquid, it's kind of disgusting. ... If, if they have an oral formulation, make sure you are giving the IV formulation if you're giving it IV, OK?",
+ quote:"It stinks, smells like rotten eggs. So, it's got a sulfur smell. ... in the United States, we tend to give it by IV because it's pretty hard to get somebody to swallow something that smells like rotten eggs ... If they have an oral formulation, make sure you are giving the IV formulation if you're giving it IV",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Toxicokinetic-Based Treatment Acetaminophen Example’; transcript 10/19"},
 
 {id:"L16-022", lecture:"L16", prof:"Smith", tier:"new", topic:"L16", sub:"metab", skill:"tell", core:true, coreWhy:"objective: recognize examples illustrating toxicokinetic-based treatments",
@@ -301,7 +299,7 @@ QUESTIONS.push(
   {t:"Salicylates and phenobarbital", correct:false, why:"Those are the ion-trapping examples for enhancing renal elimination."},
   {t:"Organophosphates and warfarin", correct:false, why:"Those are pharmacological examples: pralidoxime removes the organophosphate from the enzyme, and vitamin K bypasses the pathway warfarin blocks."}],
  teach:"Enhancing metabolism means speeding up a detoxifying reaction the body already runs. Enzyme induction takes days, too slow for a poisoning, so a cofactor is supplied instead. For cyanide, sodium thiosulfate supplies sulfur so the body's rhodanese can convert cyanide to thiocyanate for renal elimination. For acetaminophen, NAC provides ingredients for glutathione, which conjugates NAPQI. Methanol and ethylene glycol are the opposite case: there the enzyme is blocked so a toxic metabolite is never made.",
- quote:"And the two examples that I have that we're going to talk about are treating cyanide poisonings and treating acetaminophen poisonings.",
+ quote:"the two examples ... are treating cyanide poisonings and treating acetaminophen poisonings.",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Toxicokinetic-Based Treatment Enhance Metabolism’; transcript 10/19"},
 
 /* ---------------- Enhance renal elimination ---------------- */
@@ -326,7 +324,7 @@ QUESTIONS.push(
   {t:"Cranberry juice, to make the urine more acidic", correct:false, why:"Cranberry juice acidifies a little, not enough and not fast enough, and acid is the wrong direction for an acidic poison."},
   {t:"Hemodialysis, to clear it from the blood outside the body", correct:false, why:"Dialysis is an extracorporeal method kept for severe poisonings; it does not act on the urine."}],
  teach:"At normal urine pH a weakly acidic poison such as a salicylate or phenobarbital is uncharged and gets reabsorbed. Hanging a bag of IV sodium bicarbonate makes the urine more basic; the acid then carries a charge, cannot be reabsorbed, stays in the urine and is excreted. The slide calls it very effective for salicylates and phenobarbital. No Henderson-Hasselbalch exercises: she said to take her word that bicarbonate raises the pH enough.",
- quote:"So if we have a person that's overdosed on salicylates on some of our barbiturates, they are mildly acidic. And get filtered at the glomerulus. They're in the urine, and at normal urine pH, they are not charged, OK? But if we will try to make the urine more basic by giving the patient sodium bicarb by IV, the sodium bicarb goes into the urine and will charge that acid, and it can't be reabsorbed when it's charged. OK, so we call that ion trapping",
+ quote:"if we have a person that's overdosed on salicylates on some of our barbiturates, they are mildly acidic. And get filtered at the glomerulus. They're in the urine, and at normal urine pH, they are not charged ... But if we will try to make the urine more basic by giving the patient sodium bicarb by IV, the sodium bicarb goes into the urine and will charge that acid, and it can't be reabsorbed when it's charged. ... we call that ion trapping",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Toxicokinetic-Based Treatment Enhance Renal Elimination’; transcript 10/19"},
 
 {id:"L16-025", lecture:"L16", prof:"Smith", tier:"new", topic:"L16", sub:"renal", skill:"apply",
@@ -338,7 +336,7 @@ QUESTIONS.push(
   {t:"Negative; the charged form is filtered faster at the glomerulus", correct:false, why:"The charge is right, but filtration is unchanged; what changes is reabsorption from the forming urine."},
   {t:"No charge; the uncharged form is too large for the transporters", correct:false, why:"An acid in basic urine becomes charged; and the uncharged form is the one the transporters do reabsorb."}],
  teach:"Raising the pH turns the slightly acidic poison into its ionized state with a negative charge. The transporters that reabsorb solutes from urine into blood are active transport processes that mostly handle uncharged molecules, so the charged poison stays in the urine and is passed out. That is what ion trapping means.",
- quote:"What kind of charge will it have if you are iron trapping your your mildly acidic poison. Negative charge, right? So it's not going to be reabsorbed when it has that charge on it, because a lot of our transporters that do reabsorption of solutes from the urine back into the blood, uh, are doing it. It's they're active transport processes, and those things have to be, um, for the most part uncharged, OK.",
+ quote:"What kind of charge will it have if you are iron trapping your ... mildly acidic poison. Negative charge ... it's not going to be reabsorbed when it has that charge on it, because a lot of our transporters that do reabsorption of solutes from the urine back into the blood ... they're active transport processes, and those things have to be ... for the most part uncharged",
  note:"The transcript renders ion trapping as \"iron trapping\" in places.",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Toxicokinetic-Based Treatment Enhance Renal Elimination’; transcript 10/19"},
 
@@ -351,7 +349,7 @@ QUESTIONS.push(
   {t:"Sodium bicarbonate would already charge a weak base in the urine", correct:false, why:"Bicarbonate makes the urine basic, which leaves a weak base uncharged; it charges weak acids."},
   {t:"Weak bases are not reabsorbed from the urine", correct:false, why:"Uncharged weak bases are reabsorbed like other uncharged solutes; that is why trapping them would help if it could be done safely."}],
  teach:"Ion trapping is safe and quite successful for slightly acidic poisons: make the urine more basic. The reverse, trapping a weakly basic poison by acidifying the urine, would mean acidifying the patient's blood, which is dangerous. Cranberry juice, used for mild urinary tract infections, acidifies a little but not to a low enough pH and not fast enough to treat a poisoning.",
- quote:"we don't tend to do this for poisons that are weakly basic, because acidifying a person's blood to try to get their urine more acidic is kind of dangerous, OK? You could try maybe getting them to drink cranberry juice, right? ... but you really don't get a lot of acidification of the urine by drinking cranberry juice, not high enough or not, not low enough pH and not fast enough for treating somebody that has ingested a basic type of poison, OK",
+ quote:"we don't tend to do this for poisons that are weakly basic, because acidifying a person's blood to try to get their urine more acidic is kind of dangerous ... You could try maybe getting them to drink cranberry juice ... but you really don't get a lot of acidification of the urine by drinking cranberry juice ... not low enough pH and not fast enough for treating somebody that has ingested a basic type of poison",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Toxicokinetic-Based Treatment Enhance Renal Elimination’; transcript 10/19"},
 
 /* ---------------- Extracorporeal ---------------- */
@@ -365,7 +363,7 @@ QUESTIONS.push(
   {t:"Exchange transfusion", correct:true, why:"Plasma exchange or exchange transfusion is on the slide, for people who are really bad."},
   {t:"Multiple-dose activated charcoal", correct:false, why:"Multiple-dose charcoal works inside the gut, catching a poison that returns with the bile; nothing leaves the body for processing."}],
  teach:"Extracorporeal means out of the body: the blood is artificially cleared of toxin by hemodialysis, hemofiltration or hemoperfusion, or, for the worst cases, by plasma exchange or exchange transfusion. Unlike ion trapping, which uses the patient's own kidneys, or whole bowel irrigation, which acts in the gut, these methods act on toxin already in the blood. Whether they work depends on the poison's chemistry, and they are kept for very severe poisonings where other treatments are failing.",
- quote:"What this means is you're going to try to artificially clear the blood of toxins, so maybe using hemodialysis, hemofiltration, or hemo perfusion. Um, you might try to do plasma exchange or whole, whole exchange transfusions for people that are really bad, but this is like a really, really bad poisoning, OK?",
+ quote:"What this means is you're going to try to artificially clear the blood of toxins, so maybe using hemodialysis, hemofiltration, or hemo perfusion. ... you might try to do plasma exchange or ... whole exchange transfusions for people that are really bad, but this is like a really, really bad poisoning",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Toxicokinetic-Based Treatment: Extracorporeal enhancement of elimination’; transcript 10/19"},
 
 {id:"L16-028", lecture:"L16", prof:"Smith", tier:"new", topic:"L16", sub:"extra", skill:"apply", lowYield:true,
@@ -377,7 +375,7 @@ QUESTIONS.push(
   {t:"The urine pH of the patient; for very severe poisonings", correct:false, why:"Urine pH is the ion-trapping story; what decides whether an extracorporeal method works is the poison's chemistry."},
   {t:"The urine pH of the patient; for any ingestion past 2 hours", correct:false, why:"Both halves are wrong: the poison's chemistry decides, and the methods are kept for very severe poisonings."}],
  teach:"Whether an out-of-the-body method works depends on the chemistry of what the person took; dialysis does not grab everything. The slide adds that it only works for toxins with a small volume of distribution, so that clearing the blood does not leave a large inaccessible reservoir in the tissues (the large-Vd problem from 10/14). These methods are used for very severe poisonings when other treatments are failing: the patient is rolled down to dialysis.",
- quote:"the chemistry of whatever a person's been poisoned with is going to determine whether or not these extracorporeal or out of the body methods are going to work, right? Dialysis doesn't grab everything. ... Usually they are for very, very severe poisonings where other things are not working.",
+ quote:"the chemistry of whatever a person's been poisoned with is going to determine whether or not these extracorporeal or out of the body methods are going to work ... Dialysis doesn't grab everything. ... Usually they are for very, very severe poisonings where other things are not working.",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Toxicokinetic-Based Treatment: Extracorporeal enhancement of elimination’; transcript 10/19"},
 
 /* ---------------- Inactivation: principles and chelators ---------------- */
@@ -390,7 +388,7 @@ QUESTIONS.push(
   {t:"Once the poison has been bioactivated by the liver", correct:false, why:"Inactivators bind the toxin itself; blocking bioactivation is a separate toxicokinetic treatment."},
   {t:"Once extracorporeal methods such as dialysis fail", correct:false, why:"Extracorporeal methods are for severe cases; inactivation does not wait for them."}],
  teach:"The biggest thing in the toxicokinetic approach is to prevent absorption. When that fails, the poison is in the circulation; the other kinetic methods apply, and for some compounds there is what is officially called an antidote, an inactivator that binds the poison in the blood so it cannot reach its target and the complex is cleared. Inactivators come in two groups: heavy metal chelators, and antivenoms and antibodies.",
- quote:"this will work only once the compound unfortunately has been absorbed into the systemic circulation, right? ... And then for some compounds, you might have what we officially call an antidote, which is what we're talking about now, OK? Those would be things that actually inactivate a poison.",
+ quote:"this will work only once the compound unfortunately has been absorbed into the systemic circulation ... for some compounds, you might have what we officially call an antidote ... Those would be things that actually inactivate a poison.",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Inactivation of Poisons’; transcript 10/19"},
 
 {id:"L16-030", lecture:"L16", prof:"Smith", tier:"new", topic:"L16", sub:"inact", skill:"recall", core:true, coreWhy:"her Quiz 3 Q10 (characteristics of an antidote that inactivates a poison)", multi:true,
@@ -403,7 +401,7 @@ QUESTIONS.push(
   {t:"It has high affinity for the toxin", correct:true, why:"So that massive doses of inactivator, with their own side effects, are not needed."},
   {t:"It binds the toxin's target tissue so the toxin stays off it", correct:false, why:"Blocking the target is what a receptor antagonist does (a pharmacological treatment); an inactivator binds the toxin itself."}],
  teach:"An inactivator binds the toxin and prevents it from interacting with its target; the toxin-inactivator complex must then be cleared, must have no activity of its own, and the inactivator must have high affinity for the toxin so that huge doses, which could cause side effects, are unnecessary. She drew a poison grabbed whole by a good inactivator versus one grabbed at one end, with the rest still able to touch the target.",
- quote:"they will bind to the toxin and prevent it from interacting with its target, OK? Um, That toxin inactivator complex then has to get cleared from the body. And that complex of toxin and inactivator has to not have its own activity, right? ... so the complex must have, let's change that from low to no toxicity here at this bottom bullet, OK. And then Uh, a good inactivator needs to have really good affinity for the toxin.",
+ quote:"they will bind to the toxin and prevent it from interacting with its target ... That toxin inactivator complex then has to get cleared from the body. And that complex of toxin and inactivator has to not have its own activity ... the complex must have, let's change that from low to no toxicity ... a good inactivator needs to have really good affinity for the toxin.",
  note:"Slide: \"Complex must have low toxicity\". Transcript: she changed it to \"no toxicity\". Keyed on her wording.",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Inactivation of Poisons’; transcript 10/19"},
 
@@ -417,7 +415,7 @@ QUESTIONS.push(
   {t:"Low affinity for endogenous ions such as calcium", correct:true, why:"The ideal chelator leaves the ions the body needs alone; calcium is the most common concern."},
   {t:"Large proteins raised in an animal against the metal", correct:false, why:"Proteins raised in an inoculated animal describe a polyclonal antivenom; chelators are small molecules."}],
  teach:"Chelators bind lead, mercury, cadmium, iron and copper. They are small molecules with a nucleophilic electron donor that forms a metal-ligand complex, usually multidentate. They must bind the poisoning metal more tightly than the body's macromolecules do, must not grab the positive ions the body needs such as magnesium in enzymes or calcium, and must be water soluble, non-toxic and readily cleared.",
- quote:"the chelators are actually small molecules, and they have a nucleophilic electron. ... It has a multidentate structure, usually is what our chelators have ... Again, the chelating agent must have a higher affinity for binding the toxic metal than macromolecules naturally in your body. ... Needs to be water soluble and non-toxic and readily cleared, OK?",
+ quote:"the chelators are actually small molecules, and they have a nucleophilic electron. ... It has a multidentate structure, usually is what our chelators have ... the chelating agent must have a higher affinity for binding the toxic metal than macromolecules naturally in your body. ... Needs to be water soluble and non-toxic and readily cleared",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Inactivation of Poisons: Heavy Metal Chelators’; transcript 10/19"},
 
 {id:"L16-032", lecture:"L16", prof:"Smith", tier:"new", topic:"L16", sub:"inact", skill:"figure",
@@ -429,7 +427,7 @@ QUESTIONS.push(
   {t:"One chelator molecule binds several different metals at one time", correct:false, why:"Each chelator has its metals (the table), but multidentate describes how one molecule grips a single atom."},
   {t:"Several chelating drugs are given together against one metal", correct:false, why:"Combination dosing is not what the figure or the term describes."}],
  teach:"The Golan figure shows two arrangements: several ligand molecules binding one metal atom, and one multidentate molecule binding one metal atom at several points, the spider whose legs hold a copper atom. The structures of dimercaprol, EDTA and penicillamine are shown but do not need to be known; the figure is there to show what multidentate means.",
- quote:"So this one molecule here is the chelator. And this is what we mean by multidentate. It has several ways that it's going to bind one atom of that metal. ... Like that kind of looks like a spider, right? The legs are binding one atom of that copper, OK.",
+ quote:"this one molecule here is the chelator. And this is what we mean by multidentate. It has several ways that it's going to bind one atom of that metal. ... kind of looks like a spider ... The legs are binding one atom of that copper",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Inactivation of Poisons Structure of chelators’ (Golan figure); transcript 10/19"},
 
 {id:"L16-033", lecture:"L16", prof:"Smith", tier:"new", topic:"L16", sub:"inact", skill:"drug", core:true, coreWhy:"her words: \"please memorize this table, know the chelating agent and know what metal it grabs\"", type:"match",
@@ -445,7 +443,7 @@ QUESTIONS.push(
   {l:"Deferasirox", r:"Iron; orally bioavailable, recently FDA approved", why:"The oral iron chelator."},
   {l:"Penicillamine and trientine", r:"Copper, usually in Wilson's disease", why:"Table row: penicillamine and trientine, copper, usually for patients with Wilson's disease."}],
  teach:"The table of the most common chelating agents is to be memorized: agent and the metal it grabs. Edetate disodium for lead; dimercaprol (BAL) for gold, arsenic, lead and mercury; succimer for lead, cadmium, mercury and arsenic; deferoxamine and the oral deferasirox for iron; penicillamine and trientine for copper in Wilson's disease. Side effects are not covered.",
- quote:"This is a table of our most common chelating agents. We don't have a lot out there. And so, you need to know these chelating agents and which ones bind which metals, OK? ... All right, so, please memorize this table, uh, know the chelating agent and know what metal it grabs.",
+ quote:"This is a table of our most common chelating agents. We don't have a lot out there. And so, you need to know these chelating agents and which ones bind which metals ... please memorize this table ... know the chelating agent and know what metal it grabs.",
  note:"In the deck text export the comment \"Taking place of Dimercaprol\" sits between the succimer and deferoxamine rows; it is read as the succimer comment. The transcript renders deferoxamine and deferasirox as \"differoxyzine\" and \"differracerro\"/\"differracerox\".",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Inactivation of Poisons: Example Chelating Agents’; transcript 10/19"},
 
@@ -458,7 +456,7 @@ QUESTIONS.push(
   {t:"Dimercaprol", correct:false, why:"Dimercaprol (BAL) chelates gold, arsenic, lead and mercury, not iron."},
   {t:"Edetate disodium", correct:false, why:"Edetate disodium is a lead chelator, not an iron one."}],
  teach:"Iron is an interesting overdose: the body needs it and must absorb it, but it is dangerous in excess, and an overdose blows apart the gut's saturable transport (10/14). Two chelators bind iron, deferoxamine and deferasirox; deferasirox is the oral one.",
- quote:"We have had two iron chelating agents on the market now, differoxyzine and differracerro. Um, the differracerox, when it came on the market, was nice cause it was, um, it's oral. You can give them, give this chelating agent orally, OK, for iron.",
+ quote:"We have had two iron chelating agents on the market now, differoxyzine and differracerro. ... the differracerox, when it came on the market, was nice cause it was ... it's oral. ... give this chelating agent orally",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Inactivation of Poisons: Example Chelating Agents’; transcript 10/19"},
 
 {id:"L16-035", lecture:"L16", prof:"Smith", tier:"new", topic:"L16", sub:"inact", skill:"drug",
@@ -470,7 +468,7 @@ QUESTIONS.push(
   {t:"Lead; edetate disodium or succimer", correct:false, why:"Edetate disodium and succimer chelate lead; Wilson's disease is a copper problem."},
   {t:"Copper; dimercaprol or succimer", correct:false, why:"Copper is the right metal, but its chelators on the table are penicillamine and trientine; dimercaprol and succimer are for lead, mercury and arsenic."}],
  teach:"Copper is not something a person normally ingests in excess, but Wilson's disease, a genetically based condition, produces very high copper levels that damage organs. Penicillamine, or now trientine, is used to chelate the copper out of these patients.",
- quote:"Copper is listed as a metal that we will chelate out of patients that have a disease called Wilson's disease. ... we'll actually use, um, penicilamine or now trentian, Uh, I'm sorry, trientine to try to chelate the copper off of these patients with Wilson's disease.",
+ quote:"Copper is listed as a metal that we will chelate out of patients that have a disease called Wilson's disease. ... we'll actually use ... penicilamine or now ... trientine to try to chelate the copper off of these patients with Wilson's disease.",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Inactivation of Poisons: Example Chelating Agents’; transcript 10/19"},
 
 /* ---------------- Antivenoms and antibodies ---------------- */
@@ -483,7 +481,7 @@ QUESTIONS.push(
   {t:"Survivors of bites donate blood; a mixture of human antibodies", correct:false, why:"The source is an inoculated animal, not human survivors."},
   {t:"The patient is given a little venom; the patient's own antibodies", correct:false, why:"That would be a vaccine; a bitten patient has no time to make antibodies and is given the animal's."}],
  teach:"Antivenoms are antibodies against a venom, and most are still polyclonal. An animal is given small, non-lethal amounts of a snake venom so that its immune system makes antibodies; its blood is drawn and the antibodies filtered out. The product is a collection of different antibodies against the venom, not one genetically identical antibody, which is what polyclonal means. Monoclonals for venoms are being worked on; the antibody antidote in use for a drug is digoxin immune Fab, which is made from sheep antibody fragments.",
- quote:"a polyclonal antibody, we will inoculate an animal. With small amounts of a snake venom. ... The animal's immune system creates antibodies against the venom, and then you're gonna draw their blood, and you can actually basically filter out those antibodies that that animal made against that venom. OK? ... It's a collection of antibodies. They are made to fight that venom, but it's not just one single. Genetically identical antibody, OK?",
+ quote:"a polyclonal antibody, we will inoculate an animal. With small amounts of a snake venom. ... The animal's immune system creates antibodies against the venom, and then you're gonna draw their blood, and you can actually basically filter out those antibodies that that animal made against that venom. ... It's a collection of antibodies. They are made to fight that venom, but it's not just one single. Genetically identical antibody",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Inactivation of Poisons: Antivenoms and Antibodies’; transcript 10/19"},
 
 {id:"L16-037", lecture:"L16", prof:"Smith", tier:"new", topic:"L16", sub:"antibody", skill:"apply",
@@ -495,7 +493,7 @@ QUESTIONS.push(
   {t:"Venom still acting that the antivenom has not bound", correct:false, why:"The venom is a separate problem; fever, nausea and malaise after polyclonal antivenom are the reaction to the antivenom."},
   {t:"Aging of the venom on its target enzyme, as with organophosphates", correct:false, why:"Aging is the organophosphate story with acetylcholinesterase, not a venom reaction."}],
  teach:"Polyclonal antivenoms are hard to use. A patient already fighting a snake bite is flooded with antibodies made by some other animal, and the immune system reacts to them: a type III hypersensitivity reaction, also called serum sickness, with fever, nausea and malaise. That danger is why people are working on monoclonal antivenoms. Antivenom supply is also a problem: small rural hospitals do not stock it, and hospitals locate it through a network, probably through the poison centers.",
- quote:"oftentimes you end up with people having a certain kind of hypersensitivity reaction called type 3 hypersensitivity. Did you guys talk about that in your immune immunology class? Remember, that's also called serum sickness. ... you have a fever, nausea, malaise, OK? Because your body's also fighting those polyclonal antibodies that you just gave them",
+ quote:"oftentimes you end up with people having a certain kind of hypersensitivity reaction called type 3 hypersensitivity. ... that's also called serum sickness. ... you have a fever, nausea, malaise ... Because your body's also fighting those polyclonal antibodies that you just gave them",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Inactivation of Poisons: Antivenoms and Antibodies’; transcript 10/19"},
 
 {id:"L16-038", lecture:"L16", prof:"Smith", tier:"new", topic:"L16", sub:"antibody", skill:"drug", core:true, coreWhy:"her table key row: digoxin specific antibody fragments bind digoxin, renally eliminated",
@@ -507,7 +505,7 @@ QUESTIONS.push(
   {t:"A chelator that binds digoxin so it can be cleared in the urine", correct:false, why:"Chelators are small molecules that bind metals; digoxin is not a metal, and the Fab is an antibody."},
   {t:"A cofactor that speeds the liver's metabolism of digoxin", correct:false, why:"Supplying a cofactor is enhancing metabolism (thiosulfate, NAC); digoxin immune Fab is an inactivator."}],
  teach:"Among the inactivators, antivenoms are antibodies against venoms, and one antibody treats a drug overdose: digoxin immune Fab, sheep-derived antibody fragments (ovine Fab) made to grab digoxin and clear it out of the blood. Like any inactivator, it binds the toxin so it cannot reach its target, and the complex is cleared. After Fab is given, total digoxin (free and bound to Fab) is increased, so serum levels cannot be used to calculate more Fab doses.",
- quote:"the antibody that we have is the example I have here is digoxin immune fab. This is an antibody, a monoclonal antibody that's made to treat a digoxin overdose, OK? ... One form of antibody made to grab digoxin that somebody's overdosed on, it grabs it and nicely clears it out of the blood.",
+ quote:"digoxin immune fab. This is an antibody, a monoclonal antibody that's made to treat a digoxin overdose ... One form of antibody made to grab digoxin that somebody's overdosed on, it grabs it and nicely clears it out of the blood.",
  note:"She called digoxin immune Fab a monoclonal antibody; the FDA label (DigiFab, Digoxin Immune Fab (Ovine)) describes ovine Fab immunoglobulin fragments isolated from the serum of sheep immunized with a digoxin derivative, and the Marraffa article calls it digoxin-specific antibody fragments. The slide lists it only as the example under antivenoms and antibodies.",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Inactivation of Poisons: Antivenoms and Antibodies’; PoisoningTreatmentTable2026KEY.pdf row ‘Digoxin’; transcript 10/19"},
 
@@ -522,7 +520,7 @@ QUESTIONS.push(
   {t:"The treatment bypasses an inhibited pathway", correct:true, why:"Goes around a step the poison has blocked: warfarin blocks the regeneration of active vitamin K, so vitamin K itself is given."},
   {t:"The treatment enhances metabolism of the poison", correct:false, why:"Enhancing metabolism (thiosulfate, NAC) is one of the four toxicokinetic-based categories, not a pharmacological one."}],
  teach:"The third approach to treating poisonings counteracts the poison's pharmacology by giving a drug with the opposite action, or one that bypasses the pathway the poison inhibited. Four subtopics, like the four for toxicokinetics: antagonist, agonist, removal from the active site, and bypassing an inhibited metabolic pathway.",
- quote:"sometimes we have. Uh, treatments that are agonists, or I'm sorry, antagonists is first. Then sometimes we have treatments that are agonists. Sometimes we have treatments that actually remove the poison from the active site, not interacting with the receptor, but actually removing it from a poison site. And then we have kind of a grab bag of pharmacologically based treatments that are when we will bypass an inhibited metabolic pathway. OK?",
+ quote:"antagonists is first. Then sometimes we have treatments that are agonists. Sometimes we have treatments that actually remove the poison from the active site, not interacting with the receptor, but actually removing it from a poison site. And then we have kind of a grab bag of pharmacologically based treatments that are when we will bypass an inhibited metabolic pathway.",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Pharmacological Treatment’; transcript 10/19"},
 
 {id:"L16-040", lecture:"L16", prof:"Smith", tier:"new", topic:"L16", sub:"pharmrec", skill:"drug", core:true, coreWhy:"her table key row: naloxone, competitive antagonist of opioid receptors",
@@ -534,7 +532,7 @@ QUESTIONS.push(
   {t:"Removal of the opioid from its active site", correct:false, why:"That category is for pulling a poison off an enzyme or carrier, as with pralidoxime or methemoglobin."},
   {t:"Bypass of a pathway the opioid inhibited", correct:false, why:"That is the vitamin K and warfarin category."}],
  teach:"When the treatment is a receptor antagonist, it blocks the effect of a toxin that is acting as an agonist. Naloxone is the familiar example: an antagonist of the opioid receptor used to treat opioid overdoses.",
- quote:"a treatment where the receptor, I'm sorry, where the treatment is a receptor antagonist, using naloxone to treat an opioid overdose, right? Naloxone is basically an antagonist of an opioid receptor",
+ quote:"where the treatment is a receptor antagonist, using naloxone to treat an opioid overdose ... Naloxone is basically an antagonist of an opioid receptor",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Pharmacological Treatment: Treatment is a receptor antagonist’; transcript 10/19"},
 
 {id:"L16-041", lecture:"L16", prof:"Smith", tier:"new", topic:"L16", sub:"pharmrec", skill:"drug",
@@ -545,8 +543,8 @@ QUESTIONS.push(
   {t:"The benzodiazepine antagonizes the GABA receptor; flumazenil agonizes it", correct:false, why:"Her slip, which she corrected: the benzodiazepines agonize, flumazenil antagonizes."},
   {t:"Both agonize the GABA receptor; flumazenil is the weaker agonist", correct:false, why:"Flumazenil is a competitive antagonist at the benzodiazepine (GABA-A) receptor."},
   {t:"The benzodiazepine agonizes the opioid receptor; flumazenil antagonizes it", correct:false, why:"Antagonism at the opioid receptor is naloxone; the benzodiazepine site is on the GABA-A receptor."}],
- teach:"Flumazenil is used for overdoses of benzodiazepines. The benzodiazepines are agonizing the GABA receptor, causing a lot of action there; flumazenil antagonizes that receptor. The treatment is the antagonist. She tangled the words on the slide, corrected herself, and asked for a better wording of the slide by email.",
- quote:"The benzos are the overdose, Flomazinil is your antidote, and your treatment is the antagonist. I had it right the first time. ... So, in this last example, flimazanil is the antagonist. It's antagonizing the GABA receptor, which the benzos are agonizing. OK?",
+ teach:"Flumazenil is used for overdoses of benzodiazepines. The benzodiazepines are agonizing the GABA receptor, causing a lot of action there; flumazenil antagonizes that receptor. The treatment is the antagonist.",
+ quote:"The benzos are the overdose, Flomazinil is your antidote, and your treatment is the antagonist. ... in this last example, flimazanil is the antagonist. It's antagonizing the GABA receptor, which the benzos are agonizing.",
  note:"The transcript renders flumazenil as \"Flonazanil\", \"flomazanil\", \"Flomazinil\", \"flimazanil\". Her words \"Benzos are antagonists of GABA. The flomazinil is an agonist\" were a slip she withdrew in the next sentences; the slide says flumazenil is the antagonist at the GABA-A (benzodiazepine) receptor.",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Pharmacological Treatment: Treatment is a receptor antagonist’; transcript 10/19"},
 
@@ -559,7 +557,7 @@ QUESTIONS.push(
   {t:"Acetylcholine is depleted; atropine activates its receptor", correct:false, why:"Acetylcholine is in excess, not lost, and atropine is an antagonist."},
   {t:"Acetylcholine is depleted; atropine blocks acetylcholinesterase", correct:false, why:"Blocking acetylcholinesterase is physostigmine, used against anticholinergic belladonna alkaloids."}],
  teach:"Organophosphates inhibit acetylcholinesterase, the enzyme that breaks down acetylcholine, so acetylcholine accumulates in the synaptic cleft and causes cholinergic excess. Atropine antagonizes acetylcholine at its receptor. This is one of two ways to treat an organophosphate exposure; the other is pralidoxime, which removes the organophosphate from the enzyme.",
- quote:"let's say you've got a person that's been exposed to organophosphate pesticides, right? They're inhibiting acetylcholinesterase. Therefore, you get an increase in acetylcholine in that synaptic cleft. So atropine is going to antagonize acetylcholine. OK.",
+ quote:"let's say you've got a person that's been exposed to organophosphate pesticides ... They're inhibiting acetylcholinesterase. Therefore, you get an increase in acetylcholine in that synaptic cleft. So atropine is going to antagonize acetylcholine.",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Pharmacological Treatment: Treatment is a receptor antagonist’ (atropine); transcript 10/19"},
 
 {id:"L16-043", lecture:"L16", prof:"Smith", tier:"new", topic:"L16", sub:"pharmrec", skill:"drug",
@@ -571,7 +569,7 @@ QUESTIONS.push(
   {t:"Removal from active site: it pulls the alkaloid off the receptor", correct:false, why:"It works through the enzyme, not by displacing the alkaloid; removal from an active site is pralidoxime and methemoglobin."},
   {t:"Bypass: it supplies the acetylcholine that the alkaloid depleted", correct:false, why:"The alkaloid blocks the receptor; it does not deplete acetylcholine. Bypass is the vitamin K category."}],
  teach:"When the treatment is a receptor agonist, it blocks the effect of a toxin that is acting as an antagonist. The belladonna alkaloids, jimsonweed being the classic example, cause anticholinergic effects. Physostigmine blocks acetylcholinesterase, so acetylcholine increases and acts on the receptors the alkaloid is blocking; the slide's words are that it therefore acts like a receptor agonist.",
- quote:"Now our treatment is a receptor agonist. The treatment is physostigmine, and the classic example is to treat. Exposure to plants that are what we call the belladonna alkaloids, like jimsonweed is the classic example of it, they cause anticholinergic effects. And so physostigma is gonna agonize those receptors, OK?",
+ quote:"Now our treatment is a receptor agonist. The treatment is physostigmine, and the classic example is to treat. Exposure to plants that are what we call the belladonna alkaloids, like jimsonweed is the classic example of it, they cause anticholinergic effects. And so physostigma is gonna agonize those receptors",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Pharmacological Treatment: Treatment is a receptor agonist’; transcript 10/19"},
 
 {id:"L16-044", lecture:"L16", prof:"Smith", tier:"new", topic:"L16", sub:"pharmrec", skill:"apply",
@@ -582,8 +580,8 @@ QUESTIONS.push(
   {t:"Constricted pupils (miosis)", correct:false, why:"She said she mixes the two terms up; the sign is dilation. Constricted pupils are in the opioid toxidrome."},
   {t:"Tearing (lacrimation)", correct:false, why:"Tearing is a cholinergic sign, the opposite picture."},
   {t:"Loss of sight (retinal damage)", correct:false, why:"Retinal damage and blindness come from formic acid in methanol poisoning."}],
- teach:"The belladonna alkaloids are anticholinergic, and the classic sign, the reason for the name, is big dilated pupils: mydriasis. She admitted mixing up the terms for constricting and dilating but was clear that jimsonweed makes the eyes dilate. Physostigmine is the treatment.",
- quote:"Belladonna alkaloids, anybody know why they call them the Belladonna alkaloids, you get those big. Eyes, your, what do you call it, um, when the pupils dilate. Middresses, right? ... So those jimsonweed plants, which is a belladonna alkaloid, will make your eyes dilate.",
+ teach:"The belladonna alkaloids are anticholinergic, and the classic sign, the reason for the name, is big dilated pupils: mydriasis. Jimsonweed makes the eyes dilate. Physostigmine is the treatment.",
+ quote:"why they call them the Belladonna alkaloids, you get those big. Eyes ... when the pupils dilate. Middresses ... those jimsonweed plants, which is a belladonna alkaloid, will make your eyes dilate.",
  note:"The transcript renders mydriasis as \"Middresses\".",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Pharmacological Treatment: Treatment is a receptor agonist’; transcript 10/19"},
 
@@ -609,7 +607,7 @@ QUESTIONS.push(
   {t:"Inhibits acetylcholinesterase so that acetylcholine rises", correct:false, why:"That is physostigmine, given against anticholinergic belladonna alkaloids."},
   {t:"Binds the excess acetylcholine in the synaptic cleft", correct:false, why:"Pralidoxime acts on the enzyme, not the transmitter; once freed, acetylcholinesterase breaks the acetylcholine down."}],
  teach:"The bottom panel of the figure walks through the organophosphate bound to acetylcholinesterase, inactivating it, and pralidoxime pulling the organophosphate off the enzyme onto itself so that it can be eliminated and the enzyme's active site is restored. It is a second way to treat organophosphate exposures, alongside atropine for the acetylcholine excess.",
- quote:"One of the things that we can do is to pull off the organophosphate by using pralodoxine. What you'll see here is, here's pralodoxine here. And it's gonna pull off the organophosphate and put it onto itself. And when it does that, it can be eliminated. OK? So, pralodoxine is a second way we can treat organophosphate exposures.",
+ quote:"One of the things that we can do is to pull off the organophosphate by using pralodoxine. ... it's gonna pull off the organophosphate and put it onto itself. And when it does that, it can be eliminated. ... pralodoxine is a second way we can treat organophosphate exposures.",
  note:"The transcript renders pralidoxime as \"pralodoxine\", \"Praludoxine\", \"pralodoxium\".",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Pharmacological Treatment Pralidoxime example’; transcript 10/19"},
 
@@ -622,19 +620,19 @@ QUESTIONS.push(
   {t:"Pralidoxime was given before atropine", correct:false, why:"Order was not the issue; soldiers' kits carry both."},
   {t:"The dose of pralidoxime was too small", correct:false, why:"The enzyme stays inhibited because the organophosphate has aged, not because of the pralidoxime dose."}],
  teach:"Some organophosphates have a structure such that, after binding acetylcholinesterase, a part of the phosphate group falls off; in the figure the carbon-oxygen-hydrogen piece is lost and a phosphate with a double-bonded oxygen, a hydroxyl and a methyl remains. That is aging. Once it has happened the enzyme is permanently bound by the aged organophosphate and pralidoxime cannot remove it, so pralidoxime does not work for every organophosphate exposure.",
- quote:"Some organophosphates have a structure such that after they've bound to the to the acetylcholinesterase, a part of the phosphate falls off. Once that happens. Pralodoxine is not able to pull off that organophosphate onto itself, OK? Therefore, you end up with the acetylcholinesterase bound permanently by that aged organophosphate, OK? And there you go, you can't treat it using the Praludoxine.",
+ quote:"Some organophosphates have a structure such that after they've bound to the ... acetylcholinesterase, a part of the phosphate falls off. Once that happens. Pralodoxine is not able to pull off that organophosphate onto itself ... Therefore, you end up with the acetylcholinesterase bound permanently by that aged organophosphate ... you can't treat it using the Praludoxine.",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Pharmacological Treatment Pralidoxime example’; transcript 10/19"},
 
 {id:"L16-048", lecture:"L16", prof:"Smith", tier:"new", topic:"L16", sub:"pharmsite", skill:"apply",
  concept:"aging-depends-on-structure", tags:["smith"], source:"transcript",
  stem:"What decides whether an organophosphate ages on acetylcholinesterase?",
  options:[
-  {t:"The organophosphate's chemical structure", correct:true, why:"Asked exactly this, she answered: the chemical structure of the organophosphate, whether that little bit breaks off. Not every organophosphate has a structure that loses it."},
+  {t:"The organophosphate's chemical structure", correct:true, why:"It is the chemical structure of the organophosphate: whether that little bit breaks off. Not every organophosphate has a structure that loses it."},
   {t:"The amount of organophosphate absorbed", correct:false, why:"Dose does not decide aging; structure does."},
   {t:"The route by which the organophosphate entered", correct:false, why:"Route does not decide aging; structure does."},
   {t:"The patient's acetylcholinesterase genotype", correct:false, why:"Nothing about the patient decides aging; it is a property of the organophosphate."}],
  teach:"Aging is decided by the organophosphate's chemistry, not by conditions in the patient. Some organophosphates have a structure that loses a small piece after binding acetylcholinesterase; the aged form is then bound permanently, and pralidoxime can no longer pull it onto itself. Organophosphates without that structure do not age, so pralidoxime can still remove them. Atropine blocks the excess acetylcholine at the receptor, so it acts whether or not aging has occurred. Soldiers' field kits carry both.",
- quote:"Certain conditions that sway aging to happen or not, it's, it's not like, it's, it's the structure of the organophosphate. Yeah, it's the chemical structure of the organophosphate, whether or not that little bit breaks off, and then pralodoxium can't grab it. ... they'll have a kit with them, right? That has, has both compounds, both, both therapies, right? Yeah, they mix it in one, yeah, yeah.",
+ quote:"it's the chemical structure of the organophosphate, whether or not that little bit breaks off, and then pralodoxium can't grab it.",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Pharmacological Treatment Pralidoxime example’; transcript 10/19"},
 
 {id:"L16-049", lecture:"L16", prof:"Smith", tier:"new", topic:"L16", sub:"pharmsite", skill:"drug", lowYield:true,
@@ -646,20 +644,19 @@ QUESTIONS.push(
   {t:"Amyl nitrite and methemoglobin; removal from the active site", correct:false, why:"Amyl nitrite makes methemoglobin to pull cyanide off cytochrome c oxidase; that is the cyanide example of the same category."},
   {t:"Hemodialysis; extracorporeal enhancement of elimination", correct:false, why:"CO is on hemoglobin; the treatment displaces it with oxygen."}],
  teach:"The slide on removing a toxin from its active site lists three examples: cyanide (methemoglobin pulling it off cytochrome c oxidase), carbon monoxide (treated with high concentrations of oxygen to displace CO from the heme of hemoglobin), and organophosphates (pralidoxime restoring the active site of acetylcholinesterase).",
- quote:"And I'm gonna go back to our copper monoxide exposures in just a minute here, but let's walk our way through organophosphate exposures, OK?",
- note:"Low yield: the carbon monoxide bullet was not reached on 10/19. Keyed from the slide: she said she would come back to carbon monoxide (\"copper monoxide\" in the transcript) but did not; the slide was displayed and the cyanide and organophosphate bullets on it were taught. Lift the flag if she covers CO on 10/20.",
+ note:"Low yield: keyed from the slide. The carbon monoxide bullet was not taught on 10/19; she said she would come back to carbon monoxide but did not. The cyanide and organophosphate bullets on the same slide were taught.",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Pharmacological Treatment: Treatment Removes Toxin from Active Site’; transcript 10/19"},
 
 {id:"L16-050", lecture:"L16", prof:"Smith", tier:"new", topic:"L16", sub:"pharmsite", skill:"figure",
  concept:"warfarin-epoxide-reductase", tags:["smith"], source:"both", simg:"smith-tp-warfarin-masked", simgAlt:"Treating Poisonings slide ‘Pharmacological Treatment: Treatment by-passes an inhibited pathway’: the vitamin K cycle, in which vitamin K-dependent carboxylase uses reduced vitamin K and makes the epoxide, and oral anticoagulants (dicumarol, warfarin) block the step back to reduced vitamin K. The enzyme name at that step is hidden.",
  stem:"In the warfarin figure, which enzyme does warfarin inhibit, and what is the consequence?",
  options:[
-  {t:"Epoxide reductase, so active vitamin K is not regenerated", correct:true, why:"Her answer to the room: the epoxide reductase. Less vitamin K is reformed, so fewer coagulation factors are made."},
+  {t:"Epoxide reductase, so active vitamin K is not regenerated", correct:true, why:"The epoxide reductase. Less vitamin K is reformed, so fewer coagulation factors are made."},
   {t:"Vitamin K dependent carboxylase, so factors are not carboxylated", correct:false, why:"It would be easier to understand if it did, she said, but it does not; it works through the vitamin K supply."},
   {t:"Epoxide reductase, so coagulation factors are broken down", correct:false, why:"The enzyme is right, but warfarin does not break down factors; fewer are made because less active vitamin K is regenerated."},
   {t:"Vitamin K dependent carboxylase, so vitamin K is not regenerated", correct:false, why:"Regeneration of active vitamin K is the epoxide reductase step; the carboxylase uses active vitamin K and is not warfarin's target."}],
  teach:"Normal physiology: some coagulation factors become active only after carboxylation by the vitamin K dependent carboxylase, which needs active vitamin K as a cofactor. Using it turns vitamin K into an inactive epoxide, and epoxide reductase regenerates the active form, round and round. Warfarin inhibits the epoxide reductase, so less active vitamin K is reformed and fewer active coagulation factors are made: an indirect mechanism of anticoagulation.",
- quote:"What enzyme is it inhibiting? Yeah, the epoxide reductase. So the mechanism of action of warfarin in this scheme of creating coagulation factors is it inhibits the activity of the epoxide reductase. Therefore, you reduce the amount of vitamin K being reformed. Therefore, if you don't have as much active vitamin K, you don't make as much coagulation factors. ... It would be nice if warfarin was acting on that vitamin K dependent carboxylase, right? It would make the mechanism of action so much easier to understand, but it's not.",
+ quote:"What enzyme is it inhibiting? ... the epoxide reductase. So the mechanism of action of warfarin in this scheme of creating coagulation factors is it inhibits the activity of the epoxide reductase. Therefore, you reduce the amount of vitamin K being reformed. Therefore, if you don't have as much active vitamin K, you don't make as much coagulation factors. ... It would be nice if warfarin was acting on that vitamin K dependent carboxylase ... It would make the mechanism of action so much easier to understand, but it's not.",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Pharmacological Treatment: Treatment by-passes an inhibited pathway’; transcript 10/19"},
 
 {id:"L16-051", lecture:"L16", prof:"Smith", tier:"new", topic:"L16", sub:"pharmsite", skill:"drug", core:true, coreWhy:"objective: recognize examples of pharmacologically-based treatments (bypass of an inhibited pathway)",
@@ -671,7 +668,7 @@ QUESTIONS.push(
   {t:"Vitamin K; it binds warfarin in the plasma so it is cleared", correct:false, why:"Binding the toxin in the plasma is inactivation; vitamin K does not bind warfarin."},
   {t:"Vitamin K; it induces new epoxide reductase within hours", correct:false, why:"Induction is too slow for a poisoning, and the inhibited enzyme is not replaced; its product is."}],
  teach:"Too much warfarin blocks the regeneration of active vitamin K, so the patient does not make enough active coagulation factors. The antidote is vitamin K itself, given as a drug, which bypasses the blocked metabolic scheme. Her story: a liver-transplant-clinic patient on warfarin, bruised all over her arms, got a vitamin K injection after she alerted the nurses.",
- quote:"Anybody know what the the antidote for a warfarin overdose is? What might we do? Can you look at this scheme and see anything in this scheme that we could give to a patient? To help Get a little more coagulation factor made if we have over anticoagulated them. Vitamin K, right? We will do this. We will give vitamin K. ... Kind of bypassing this blocked metabolic scheme. OK.",
+ quote:"the antidote for a warfarin overdose is? ... To help Get a little more coagulation factor made if we have over anticoagulated them. Vitamin K ... We will give vitamin K. ... Kind of bypassing this blocked metabolic scheme.",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Pharmacological Treatment: Treatment by-passes an inhibited pathway’; transcript 10/19"},
 
 {id:"L16-052", lecture:"L16", prof:"Smith", tier:"new", topic:"L16", sub:"pharmsite", skill:"apply",
@@ -683,7 +680,7 @@ QUESTIONS.push(
   {t:"Salivation, tearing, gastric cramping", correct:false, why:"Those are signs of cholinergic excess, as in organophosphate poisoning."},
   {t:"Somnolence and slow breathing", correct:false, why:"Those are in the opioid toxidrome."}],
  teach:"Warfarin inhibits epoxide reductase, so less active vitamin K is regenerated and fewer active coagulation factors are made. Too much warfarin pushes this too far: the blood does not clot well, so the patient bleeds. Bruising is the most obvious sign; GI bleeds and a hemorrhagic stroke are the dangerous outcomes. The treatment is vitamin K, which bypasses the blocked step.",
- quote:"What's the risk of being over anticoagulated? What signs and symptoms might you see? Most obviously we be bruising. Sometimes people can have GI bleeds, right? Really bad thing, maybe they'll have a hemorrhagic stroke, right?",
+ quote:"What's the risk of being over anticoagulated? ... Most obviously we be bruising. Sometimes people can have GI bleeds ... Really bad thing, maybe they'll have a hemorrhagic stroke",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Pharmacological Treatment: Treatment by-passes an inhibited pathway’; transcript 10/19"},
 
 {id:"L16-053", dupOf:"L16-039", lecture:"L16", prof:"Smith", tier:"new", topic:"L16", sub:"pharmsite", skill:"drug", type:"match",
@@ -699,7 +696,7 @@ QUESTIONS.push(
   {l:"Pralidoxime (organophosphate)", r:"Removes the organophosphate from acetylcholinesterase", why:"Treatment removes the toxin from the active site; fails after aging."},
   {l:"Vitamin K (warfarin)", r:"Bypasses the inhibited vitamin K recycling pathway", why:"Treatment bypasses an inhibited pathway."}],
  teach:"Each category is defined by how the antidote counters the poison. Antagonists block a receptor that is being over-activated: naloxone at the opioid receptor, flumazenil at the GABA receptor, atropine against the acetylcholine that builds up when organophosphates inhibit acetylcholinesterase. Physostigmine counts as an agonist because it blocks acetylcholinesterase, raising acetylcholine against an anticholinergic toxin. Pralidoxime pulls the organophosphate off the enzyme's active site. Vitamin K bypasses the recycling step warfarin blocks.",
- quote:"we only had 4 or 5 examples of kinetically-based treatments and about 4 or 5 examples of these pharmacologically-based treatments, right? So, not too many to learn yet, OK. But so the point of that lecture was to talk about the bigger concept",
+ quote:"we only had 4 or 5 examples of kinetically-based treatments and about 4 or 5 examples of these pharmacologically-based treatments ... the point of that lecture was to talk about the bigger concept",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slides ‘Pharmacological Treatment: Treatment is a receptor antagonist’, ‘Treatment is a receptor agonist’, ‘Treatment Removes Toxin from Active Site’, ‘Treatment by-passes an inhibited pathway’; transcript 10/19"},
 
 /* ---------------- The guideline discussion ---------------- */
@@ -712,7 +709,7 @@ QUESTIONS.push(
   {t:"DiPiro chapter e9; still followed, with no newer versions", correct:false, why:"DiPiro is the textbook; the guidelines are journal papers in Clinical Toxicology."},
   {t:"DiPiro chapter e9; replaced by newer versions after 2005", correct:false, why:"Both halves are wrong: the guidelines are in Clinical Toxicology, and the 2005 versions are still followed."}],
  teach:"The evidence-based consensus guidelines for out-of-hospital management are published in Clinical Toxicology; the beta-blocker and calcium channel blocker ones date from 2005. They are still followed because nothing has changed in how these overdoses are treated; they would be rewritten only if something such as a new antidote came along. Poison control center staff, who answer the calls, have these documents memorized.",
- quote:"They are published in the Journal of Clinical Toxicology, and they have not done any new ones recently, so you can see that both the ones, uh, the beta blocker and the calcium channel blockers were published in 2005, and that's OK. They haven't come up with new ways of treating these overdoses. What they published in 2005 is still what they follow, OK. ... people that work in these poison control centers, to become qualified to work there and answer phone calls, they would basically have these documents memorized",
+ quote:"They are published in the Journal of Clinical Toxicology, and they have not done any new ones recently ... the beta blocker and the calcium channel blockers were published in 2005, and that's OK. They haven't come up with new ways of treating these overdoses. What they published in 2005 is still what they follow ... people that work in these poison control centers, to become qualified to work there and answer phone calls, they would basically have these documents memorized",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Discussion of OD Guidelines’; AAPCC 2005 guidelines; transcript 10/19"},
 
 {id:"L16-055", lecture:"L16", prof:"Smith", tier:"new", topic:"L16", sub:"guideline", skill:"term", readingId:"aapcc-ccb",
@@ -723,7 +720,7 @@ QUESTIONS.push(
   {t:"They are built from randomized trials of overdosed volunteers", correct:false, why:"No one can be signed up to be poisoned; the data are published cases and case series."},
   {t:"They are reviewed and approved by the FDA before publication", correct:false, why:"Evidence-based describes how the document was built, not who approved it."},
   {t:"They are rewritten each year from new poison center data", correct:false, why:"They have not been redone since 2005."}],
- teach:"No one can run trials that poison volunteers, so the authors went into the literature, pulled case reports and anything else published, and evaluated it under the medical guidelines for evidence-based documents. They ranked the data, and they ranked the strength of each recommendation; that ranking is what evidence-based means. The class had met this in the drug information course.",
+ teach:"No one can run trials that poison volunteers, so the authors went into the literature, pulled case reports and anything else published, and evaluated it under the medical guidelines for evidence-based documents. They ranked the data, and they ranked the strength of each recommendation; that ranking is what evidence-based means.",
  quote:"they know the data that they're using. They rank the data that they have to create these documents, and they rank the strength of the recommendations they make in these documents. That's what is meant by evidence-based.",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Guidelines for Overdoses’; AAPCC 2005 guidelines; transcript 10/19"},
 
@@ -736,7 +733,7 @@ QUESTIONS.push(
   {t:"No vomiting; give charcoal at home before calling for transport", correct:false, why:"No emesis is right, but transport is not delayed to give charcoal; charcoal is a hospital step."},
   {t:"Induce vomiting for extended-release products; then charcoal", correct:false, why:"Vomiting is not induced for either formulation; the formulation sets the observation window, not whether to induce emesis."}],
  teach:"The first question on her key: what to do to reduce absorption. Her key: do not induce emesis; consider activated charcoal if there are no contraindications; do not delay transport to the hospital to give it. On 10/19 she said charcoal is done at the hospital and that no one should try to make the person vomit at home. The out-of-hospital guidelines are about what a family member and the poison center do before the hospital.",
- quote:"What should you do to try to prevent reabsorption of these either calcium channel blockers or beta blockers? What should you, what should you do? Yeah, charcoal, right? Do you do that at home? No, that is something that they'll do when they get to the hospital, OK? ... At home, do you encourage somebody to get the person to vomit? We don't recommend that anymore, right? It's too dangerous, right? They might, they might aspirate.",
+ quote:"What should you do to try to prevent reabsorption of these either calcium channel blockers or beta blockers? ... charcoal ... Do you do that at home? No, that is something that they'll do when they get to the hospital ... At home, do you encourage somebody to get the person to vomit? We don't recommend that anymore ... It's too dangerous ... they might aspirate.",
  note:"Her key (Readingguideforoutofhospitalguidelines2026KEY.docx): do not induce emesis; consider activated charcoal if there are no contraindications; do not delay transport to the hospital to administer charcoal. Her 10/19 words place charcoal at the hospital; both are kept.",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Discussion of OD Guidelines’; AAPCC 2005 guidelines; Readingguideforoutofhospitalguidelines2026KEY.docx; transcript 10/19"},
 
@@ -749,7 +746,7 @@ QUESTIONS.push(
   {t:"Hospital now; hospital also if found after 6 hours", correct:false, why:"Past 6 hours and asymptomatic, the guideline says they can probably be managed at home with the poison center."},
   {t:"Home now; probably home also if found after 6 hours", correct:false, why:"Within 6 hours an asymptomatic patient can still respond badly, so they go to the hospital."}],
  teach:"For an immediate-release product the window is 6 hours, the same for both classes. Found within 6 hours and asymptomatic: get them to the hospital, since the drug could still take effect. Found after 6 hours and still asymptomatic: all the drug should have been absorbed and symptoms would have appeared, so they can be managed at home, watched, with the poison center on the line. Her key excepts sotalol from the beta-blocker immediate-release rule. On 10/20 she added that if the amount taken is unknown, the patient probably needs to go to the hospital.",
- quote:"If they're within 6 hours of digestion and they're not symptomatic yet, what do you do? You're gonna get them to the hospital, why? Because if, if, if they haven't passed the 6 hour mark for an immediate release. Exposure, then you're still within the time when they could really badly respond, OK? ... if it's been 6 hours and they don't have any symptoms, they're OK. You're gonna stay by them and watch them, but they're gonna be OK. You don't need to take them into the hospital. OK.",
+ quote:"If they're within 6 hours of digestion and they're not symptomatic yet, what do you do? You're gonna get them to the hospital, why? Because ... if they haven't passed the 6 hour mark for an immediate release. Exposure, then you're still within the time when they could really badly respond ... if it's been 6 hours and they don't have any symptoms, they're OK. You're gonna stay by them and watch them, but they're gonna be OK. You don't need to take them into the hospital.",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Discussion of OD Guidelines’; AAPCC 2005 guidelines; Readingguideforoutofhospitalguidelines2026KEY.docx; transcript 10/19; transcript 10/20 (amount unknown)"},
 
 {id:"L16-058", lecture:"L16", prof:"Smith", tier:"new", topic:"L16", sub:"guideline", skill:"apply", core:true, coreWhy:"her words: \"I want you to know those time frames\"; her guideline key", readingId:"aapcc-ccb",
@@ -761,7 +758,7 @@ QUESTIONS.push(
   {t:"8 hours", correct:false, why:"That is the sustained-release beta blocker window."},
   {t:"24 hours", correct:false, why:"That is modified-release verapamil."}],
  teach:"Modified-release products clump in the gut and can break apart later, releasing a large dose, so an asymptomatic patient is not safe until that window has passed. For calcium channel blockers other than verapamil the window is 18 hours: found within 18 hours, get them to the hospital; found after 18 hours and still asymptomatic, call the poison center, and they can probably be managed at home. Sustained-release beta blockers use 8 hours; modified-release verapamil, 24.",
- quote:"If it's a modified release, except for verapamil, and you found them within 18 hours of ingestion and they are not symptomatic, they are asymptomatic. What do you need to do? Yeah, they're asymptomatic, and they ingested the modified release product, and you found them within 18 hours of ingestion. You need to get him in.",
+ quote:"If it's a modified release, except for verapamil, and you found them within 18 hours of ingestion and they are not symptomatic ... What do you need to do? ... You need to get him in.",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Discussion of OD Guidelines’; AAPCC 2005 calcium channel blocker guideline; transcript 10/19"},
 
 {id:"L16-059", lecture:"L16", prof:"Smith", tier:"new", topic:"L16", sub:"guideline", skill:"apply", core:true, coreWhy:"her words: \"What's the time frame for a beta blocker extended release\"; her guideline key", readingId:"aapcc-bb",
@@ -773,7 +770,7 @@ QUESTIONS.push(
   {t:"18 hours", correct:false, why:"That is the modified-release calcium channel blocker window, verapamil excepted."},
   {t:"24 hours", correct:false, why:"That is modified-release verapamil."}],
  teach:"The sustained-release beta blocker window is 8 hours, shorter than the 18 hours for modified-release calcium channel blockers. The reason for any extended window is that these tablets clump and can break apart later; the reason for the class difference is in the case data, which speak to the different mechanisms of the two drug classes.",
- quote:"Same thing with the beta blockers, a sustained release product, but, but the time frame for this is within 8 hours, right? You got to get him to the hospital.",
+ quote:"Same thing with the beta blockers, a sustained release product ... but the time frame for this is within 8 hours ... You got to get him to the hospital.",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Discussion of OD Guidelines’; AAPCC 2005 beta-blocker guideline; Readingguideforoutofhospitalguidelines2026KEY.docx; transcript 10/19"},
 
 {id:"L16-060", lecture:"L16", prof:"Smith", tier:"new", topic:"L16", sub:"guideline", skill:"apply", core:true, coreWhy:"her words: \"I want you to know those time frames\"; her guideline key", readingId:"aapcc-ccb",
@@ -785,7 +782,7 @@ QUESTIONS.push(
   {t:"8 hours", correct:false, why:"That is the sustained-release beta blocker window."},
   {t:"18 hours", correct:false, why:"That is the window for the other modified-release calcium channel blockers."}],
  teach:"Among the calcium channel blockers, modified-release verapamil carries the longest window: 24 hours. Found within 24 hours, even asymptomatic, the patient goes to the hospital; found after 24 hours and asymptomatic, they are probably OK, but the poison center is still called. On 10/20 she gave the reason: verapamil has multiple mechanisms and is not as clean a calcium channel blocker as the others, so the concern lasts longer.",
- quote:"If you found a person that's ingested modified release verapamil, and you found them within 24 hours of ingestion. You still get them to the hospital, right? Verapamil is really different, OK? If you find them after 24 hours and they are non-systematic symptomatic, they're probably OK.",
+ quote:"If you found a person that's ingested modified release verapamil, and you found them within 24 hours of ingestion. You still get them to the hospital ... Verapamil is really different ... If you find them after 24 hours and they are non-systematic symptomatic, they're probably OK.",
  note:"Reading her key she first said modified-release verapamil found \"after 18 hours\" is probably OK, then gave the verapamil window as 24 hours (within 24 hours hospital; after 24 hours probably OK); the calcium channel blocker guideline gives 24 hours for modified-release verapamil. Keyed on 24 hours. The transcript renders asymptomatic as \"non-systematic symptomatic\".",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Discussion of OD Guidelines’; AAPCC 2005 calcium channel blocker guideline; transcript 10/19; transcript 10/20"},
 
@@ -797,9 +794,8 @@ QUESTIONS.push(
   {t:"Extended-release tablets are more potent per milligram", correct:false, why:"Potency is not the issue; timing of absorption is."},
   {t:"They are absorbed faster, so symptoms take longer to clear", correct:false, why:"They are absorbed more slowly, and the clumping adds a delayed surge."},
   {t:"They undergo enterohepatic recirculation back to the gut", correct:false, why:"Recirculation is the multiple-dose charcoal story, not the window story."}],
- teach:"An extended-release dose takes longer to absorb, which is true in overdose as well. The bigger problem is that these formulations clump in the stomach or small intestine (a bezoar, the word she tied to Harry Potter). A patient found asymptomatic may still be inside the window during which the clump could break apart and release the whole dose at once, which could be very dangerous; they should be in the hospital before that happens.",
- quote:"an issue with overdosing on these modified release or extended release or sustained release products is that the chemistry of those formulations is such that they often clump in the stomach or in the small intestine. You guys know what the word bazo is? Think Harry Potter, right? ... you are still within the window that that clump of tablets could break apart, and all of a sudden you're gonna get a huge absorption of that medication. Which could be really, really dangerous.",
- note:"The transcript renders bezoar as \"bazo\".",
+ teach:"An extended-release dose takes longer to absorb, which is true in overdose as well. The bigger problem is that these formulations clump in the stomach or small intestine (a bezoar). A patient found asymptomatic may still be inside the window during which the clump could break apart and release the whole dose at once, which could be very dangerous; they should be in the hospital before that happens.",
+ quote:"an issue with overdosing on these modified release or extended release or sustained release products is that the chemistry of those formulations is such that they often clump in the stomach or in the small intestine. ... you are still within the window that that clump of tablets could break apart, and all of a sudden you're gonna get a huge absorption of that medication. Which could be really, really dangerous.",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Discussion of OD Guidelines’; AAPCC 2005 guidelines; transcript 10/19"},
 
 {id:"L16-062", lecture:"L16", prof:"Smith", tier:"new", topic:"L16", sub:"guideline", skill:"tell", readingId:"aapcc-bb",
@@ -810,8 +806,8 @@ QUESTIONS.push(
   {t:"The two guidelines were written years apart from different data", correct:false, why:"Both were published in 2005."},
   {t:"Calcium channel blockers are not adsorbed by activated charcoal", correct:false, why:"Charcoal is considered for both classes."},
   {t:"Extended-release beta blockers do not clump into bezoars", correct:false, why:"Clumping is the reason extended-release windows are longer for both classes; it does not explain the difference between them."}],
- teach:"Asked why the time frames differ, the room offered kinetics and the clumping of tablets; she accepted that the data show it, and added that the difference between the two classes speaks to their mechanisms of action, which the class will understand after the cardio module. The immediate- versus extended-release difference is the clumping; the beta-blocker versus calcium channel blocker difference is mechanism.",
- quote:"What's the difference? Why is there a different time frame? Yeah, the kinetics of it, the nature of the tablets clumping together, it's what the data has been showing us, OK? ... slightly different time frames that speaks to the mechanism of action of calcium channel blockers versus beta blockers, OK",
+ teach:"The time frames differ with the kinetics and the clumping of tablets, which is what the data show; the difference between the two classes speaks to their mechanisms of action, which the class will understand after the cardio module. The immediate- versus extended-release difference is the clumping; the beta-blocker versus calcium channel blocker difference is mechanism.",
+ quote:"Why is there a different time frame? ... the kinetics of it, the nature of the tablets clumping together, it's what the data has been showing us ... slightly different time frames that speaks to the mechanism of action of calcium channel blockers versus beta blockers",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Discussion of OD Guidelines’; AAPCC 2005 guidelines; transcript 10/19"},
 
 {id:"L16-063", lecture:"L16", prof:"Smith", tier:"new", topic:"L16", sub:"guideline", skill:"apply", core:true, coreWhy:"her words: \"question number 3 is important as well\" (ambulance)", readingId:"aapcc-bb",
@@ -823,7 +819,7 @@ QUESTIONS.push(
   {t:"Car for immediate-release; ambulance for extended-release", correct:false, why:"Formulation changes the window, not the transport: any patient who needs the hospital can crash on the way."},
   {t:"Ambulance for verapamil; car for the other drugs", correct:false, why:"Every patient who needs the hospital, after either drug class, goes by ambulance."}],
  teach:"Question 3 on her key, the same for both classes: call an ambulance. Beta blocker and calcium channel blocker overdoses can crash, and the ambulance carries the IV fluids, the pressors and the paddles to deal with it. A family car stuck in traffic has none of that.",
- quote:"if you need to get them to the hospital, should you put them in your car and drive them? You need to call an ambulance. Why? Cuz they've got the stuff on the animals to help them if they start. Crashing. OK, you don't have that in your car. You get stuck in traffic trying to get them to the hospital and they start to crash. You are out of luck, you don't have any IVs to hang, you don't have any pressers to hang, OK, you don't have any paddles.",
+ quote:"if you need to get them to the hospital, should you put them in your car and drive them? You need to call an ambulance. Why? Cuz they've got the stuff on the animals to help them if they start. Crashing. ... you don't have that in your car. You get stuck in traffic trying to get them to the hospital and they start to crash. You are out of luck, you don't have any IVs to hang, you don't have any pressers to hang ... you don't have any paddles.",
  note:"\"the stuff on the animals\" in the transcript is the stuff on the ambulance; \"pressers\" is pressors.",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Discussion of OD Guidelines’; AAPCC 2005 guidelines; transcript 10/19"},
 
@@ -836,7 +832,7 @@ QUESTIONS.push(
   {t:"Calcium channel blockers: a call at 6 hours; beta blockers: a call at 8 hours", correct:false, why:"6 and 8 hours are hospital windows (immediate release; sustained-release beta blockers), not follow-up schedules."},
   {t:"Calcium channel blockers: a call at 18 hours; beta blockers: a call at 24 hours", correct:false, why:"18 and 24 hours are the modified-release calcium channel blocker windows, not follow-up schedules."}],
  teach:"For calcium channel blockers the guideline leaves the follow-up interval to the judgment of the poison center; for beta blockers follow-up calls are made at appropriate intervals for up to 12 to 24 hours, also at the poison center's judgment. The small difference comes from the data behind each document.",
- quote:"for the calcium channel blockers, they say follow-up will be determined based on the judgment of the poison center, and for the guidance document for the beta blockers, um, uh, usually the interval is about 2012 to 24 hours based on the judgment of the poison center.",
+ quote:"for the calcium channel blockers, they say follow-up will be determined based on the judgment of the poison center, and for the guidance document for the beta blockers ... usually the interval is about 2012 to 24 hours based on the judgment of the poison center.",
  note:"The transcript's \"2012 to 24 hours\" is read as 12 to 24 hours. Her key (Readingguideforoutofhospitalguidelines2026KEY.docx) words the beta-blocker follow-up as calls at appropriate intervals for up to 12–24 hours based on the judgment of the poison center.",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Discussion of OD Guidelines’; AAPCC 2005 guidelines; Readingguideforoutofhospitalguidelines2026KEY.docx; transcript 10/19"},
 
@@ -849,7 +845,7 @@ QUESTIONS.push(
   {t:"Home observation with poison center follow-up", correct:false, why:"That is the plan for an asymptomatic patient found after the window, not for suspected self-harm."},
   {t:"Referral to the ED, then poison center follow-up", correct:false, why:"The ED referral is right, but the next step is referral to mental health care."}],
  teach:"Her key: refer the patient to the emergency department (ED), then to mental health care. For either drug class, if the patient was trying to harm themselves, treating the poisoning is not enough: they need help, counseling and evaluation, so that whatever is going on in their lives gets addressed. She flagged this as a very important point in the guidance documents: treat the whole patient.",
- quote:"If you think they were trying to harm themselves, what do you need to do as well? It's not just treating the poisoning, right? They're gonna need some help. They're gonna need some counseling, some evaluation, make sure that whatever's going on in their lives, that they could get some help with that, OK?",
+ quote:"If you think they were trying to harm themselves, what do you need to do as well? It's not just treating the poisoning ... They're gonna need some help. They're gonna need some counseling, some evaluation, make sure that whatever's going on in their lives, that they could get some help with that",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Discussion of OD Guidelines’; AAPCC 2005 guidelines; Readingguideforoutofhospitalguidelines2026KEY.docx; transcript 10/19; transcript 10/20"},
 
 {id:"L16-066", dupOf:"L16-058", lecture:"L16", prof:"Smith", tier:"new", topic:"L16", sub:"guideline", skill:"apply", core:true, coreWhy:"her words: \"I want you to know those time frames\"; her guideline key", type:"match", readingId:"aapcc-ccb",
@@ -863,7 +859,7 @@ QUESTIONS.push(
   {l:"Modified-release calcium channel blocker other than verapamil", r:"18 hours", why:"The calcium channel blocker guideline's extended-release window."},
   {l:"Modified-release verapamil", r:"24 hours", why:"Verapamil is really different."}],
  teach:"Immediate-release tablets are absorbed quickly, so by 6 hours a patient who is going to be ill should show symptoms; that 6-hour window is shared by both classes. Extended-release products clump and can break apart unpredictably, so their windows are longer and differ by class, following the case data: 8 hours for sustained-release beta blockers, 18 for modified-release calcium channel blockers, and 24 for modified-release verapamil, which has multiple mechanisms.",
- quote:"I want you to know those time frames, OK, which drug formulation is OK at this time frame. If it's extended release calcium channel blocker, not verapamil, what's the time frame, OK? What's the time frame for a beta blocker extended release, OK? So, that's what you need to know. Also, you need to know you don't make them barf at home, it's too dangerous, OK?",
+ quote:"I want you to know those time frames ... which drug formulation is OK at this time frame. If it's extended release calcium channel blocker, not verapamil, what's the time frame ... What's the time frame for a beta blocker extended release ... you need to know you don't make them barf at home, it's too dangerous",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Discussion of OD Guidelines’; AAPCC 2005 guidelines; Readingguideforoutofhospitalguidelines2026KEY.docx; transcript 10/19"},
 
 /* ---------------- The poisoning treatment table ---------------- */
@@ -871,12 +867,12 @@ QUESTIONS.push(
  concept:"table-sources", tags:["smith","reading"], source:"transcript",
  stem:"Which two sources were recommended for filling in the poisoning treatment table?",
  options:[
-  {t:"DiPiro chapter e9 and the Marraffa antidotes article", correct:true, why:"The next section of the chapter after the one read last week, and the Marraffa antidotes article; the key is posted after the table is turned in."},
+  {t:"DiPiro chapter e9 and the Marraffa antidotes article", correct:true, why:"The next section of the chapter after the one read last week, and the Marraffa antidotes article."},
   {t:"The Golan textbook and the Marraffa antidotes article", correct:false, why:"Golan supplied the figures; she said its text is too detailed for what the class needs and it is not a required book."},
   {t:"DiPiro chapter e9 and the full beta-blocker guideline", correct:false, why:"Only the guideline abstracts were assigned, for the guideline discussion."},
   {t:"The Golan textbook and the FDA label of each antidote", correct:false, why:"Not the sources named; the information is in the chapter and the article."}],
- teach:"The poisoning treatment table, due the next morning and discussed at the start of class, is a study tool for the exam. The sources are DiPiro's Pharmacotherapy, 13th edition, chapter e9, the section on treating specific poisonings (the part after the general approach read on 10/14), and the Marraffa antidotes article, which she called the quickest read. Bulleted entries, no AI, work with friends; her key is posted after everyone has turned the table in and shows the detail she expects.",
- quote:"I really think the best places for you to go to would be your Depiro's, uh, the 13th edition, chapter E9. We already looked at part of that chapter last week, but you would go to the next section of the chapter where we're actually, they're actually talking about treating specific poisoning. So, that will be very helpful for filling in your poisoning treatment table. And then also this article by Marafa.",
+ teach:"The poisoning treatment table is a study tool for the exam. The sources are DiPiro's Pharmacotherapy, 13th edition, chapter e9, the section on treating specific poisonings (the part after the general approach read on 10/14), and the Marraffa antidotes article, which she called the quickest read. Her key shows the detail she expects.",
+ quote:"the best places for you to go to would be your Depiro's ... the 13th edition, chapter E9. ... you would go to the next section of the chapter where ... they're actually talking about treating specific poisoning. ... And then also this article by Marafa.",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Treating specific poisonings Table’; DiPiro ch. e9; Marraffa 2012; transcript 10/19"},
 
 {id:"L16-068", lecture:"L16", prof:"Smith", tier:"new", topic:"L16", sub:"table", skill:"recall", lowYield:true, readingId:"marraffa",
@@ -888,7 +884,7 @@ QUESTIONS.push(
   {t:"Chelator structures to memorize; it has the clearest figures", correct:false, why:"Structures are not to be memorized; the agent-to-metal table is."},
   {t:"Graded evidence for each antidote; it replaces the DiPiro chapter", correct:false, why:"Grading of evidence is the guideline documents' feature, and the article is used with the DiPiro chapter."}],
  teach:"The Marraffa article is a practical review of antidotes. She recommended it for the poisoning table because it breaks down, step by step, the symptoms of each overdose, the treatments and their mechanisms of action, which are the columns of the table, and because it is the fastest of the two sources to read. The article is tested only through what she discussed.",
- quote:"It's a really good article and it breaks down step by step, a lot of the, the symptoms that you'll see in these overdoses and then the treatments that we use, and importantly, their mechanism of action. OK? ... I think the Marafa article has the information in it, um, fast. It's the quickest to read through compared to the Dipiro article, OK.",
+ quote:"It's a really good article and it breaks down step by step, a lot of the ... symptoms that you'll see in these overdoses and then the treatments that we use, and importantly, their mechanism of action. ... the Marafa article has the information in it ... fast. It's the quickest to read through compared to the Dipiro article",
  note:"The transcript renders Marraffa as \"Marafa\" and \"Marrafa\".",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Treating specific poisonings Table’; Marraffa 2012 (Am J Health-Syst Pharm 69:199); transcript 10/19"}
 );

@@ -34,7 +34,7 @@ QUESTIONS.push(
   {t:"Gender", correct:true, why:"Gender is one of the four non-genetic factors (with age, ethnicity and underlying disease) that had already been associated with inter-individual variation in drug response."},
   {t:"Allele frequency in the population", correct:false, why:"Allele frequency describes how common an allele is in a population; it is a term from the frequencies slide, not a factor on the inter-individual variation list. A rare variant still causes the bad response in the person who has it."}],
  teach:"Pharmacogenomics exists because people respond very differently to the same drug, sometimes a lethal side effect in one person and no effect in another. Those inter-individual variations were first associated with age, ethnicity, gender and underlying disease. As knowledge of genes grew, some of the variation could be explained by genetic variation, the fifth factor on the list.",
- quote:"we could see that they were associated with age and ethnicity and gender and underlying disease. So we were seeing that already, sometimes explaining. Inter-individual variability and drug response based on those factors, but like I've just said, with our progression and our knowledge about genetics, we are now able to explain some of these variations in response, uh, based on genetics.",
+ quote:"we could see that they were associated with age and ethnicity and gender and underlying disease. So we were seeing that already, sometimes explaining. Inter-individual variability and drug response based on those factors ... with our progression and our knowledge about genetics, we are now able to explain some of these variations in response ... based on genetics.",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘Introduction: Inter-Individual Variations’ (p. 4); transcript 10/20"},
 
 {id:"L17-002", lecture:"L17", prof:"Smith", tier:"new", topic:"L17", sub:"history", skill:"recall", core:true, coreWhy:"objective: discuss the historical development of pharmacogenomics",
@@ -46,7 +46,7 @@ QUESTIONS.push(
   {t:"High digoxin levels with low-activity P-glycoprotein", correct:false, why:"That is the P-glycoprotein example from the drug transporter target area, studied after metabolizing enzymes."},
   {t:"Motulsky's 1957 statement on inheritance and drug response", correct:false, why:"Motulsky's statement came in 1957, a year after the 1956 genetic link to primaquine reactions; it was a proposal, not the first observation."}],
  teach:"Primaquine is an antimalarial used as a prophylactic, and it was given widely to military personnel in the field during the Korean War in the 1950s. Clinicians saw that some soldiers developed hemolytic anemia on it and that the bad responses fell along the lines of ethnicity. That was the first real data point linking a bad drug response to an inherited trait.",
- quote:"So one of the first indications that we had that people were responding to medications differently compared to each other based on genetics was when we're using Primaquin. Um, Primaquin is an anti-malarial medication. Um, we use it as an anti-malarial prophylactic medication and so, uh, we were using this a lot in the 50s during the Korean War.",
+ quote:"one of the first indications that we had that people were responding to medications differently compared to each other based on genetics was when we're using Primaquin. ... Primaquin is an anti-malarial medication. ... we use it as an anti-malarial prophylactic medication and so ... we were using this a lot in the 50s during the Korean War.",
  note:"The transcript renders primaquine as \"Primaquin\", \"Prima Quinn\" and \"Primaquine\".",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘Introduction: History of Primaquine’ (p. 5); transcript 10/20"},
 
@@ -71,7 +71,7 @@ QUESTIONS.push(
   {t:"Drug half-life, compared within identical twin pairs", correct:false, why:"That is the twin study design (antipyrine half-life), a later way of showing heritability."},
   {t:"Methemoglobin level, a measure of the reaction", correct:false, why:"Methemoglobinemia was part of the reaction itself; the link to genetics came from measuring G6PD enzyme activity."}],
  teach:"At the time no one could genotype a patient, but the activity of an enzyme could be measured. Low glucose-6-phosphate dehydrogenase activity in red blood cells was a phenotype, and enough genetics was known to say that the phenotype reflected a genetic variation. Primaquine is therefore the first data point linking a bad drug response to a phenotype that stands for a genotype.",
- quote:"Like I said before, we couldn't genotype at that time, but we could measure that enzyme activity, and we realized that that phenotype of the enzyme activity was reflecting these people's genotype, OK?",
+ quote:"we couldn't genotype at that time, but we could measure that enzyme activity, and we realized that that phenotype of the enzyme activity was reflecting these people's genotype",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘Introduction: History of Primaquine’ (p. 5); transcript 10/20"},
 
 {id:"L17-005", lecture:"L17", prof:"Smith", tier:"new", topic:"L17", sub:"history", skill:"figure", type:"match",
@@ -87,8 +87,8 @@ QUESTIONS.push(
   {l:"1990", r:"The Human Genome Project starts", why:"A worldwide consortium of academics, industry and government agencies."},
   {l:"2003", r:"The Human Genome Project is completed", why:"Early and under budget."}],
  teach:"The dates build on each other. In 1953 the structure of DNA was described; in 1956 the hemolytic reactions to primaquine were linked to genetics through low G6PD activity, a phenotype. Motulsky then proposed in 1957 that inheritance might explain differences in drug efficacy and adverse reactions, and in 1959 Vogel named the field pharmacogenetics. The Human Genome Project (1990 to 2003, early and under budget) shared every sequence and drove the faster sequencing methods that let drug response be studied by genotype.",
- quote:"starting with 1953 when Watson and Crick and other scientists, they described the structure of DNA. ... So it wasn't until 1956 that they found that genetic link to the hemolytic anemia in patients responding badly to Primaquine. ... All right, then in 1990, the Human Genome Project started. ... OK, so in 2003, the Human Genome Project was completed and it was completed early and under budget, which is amazing.",
- note:"The transcript renders Motulsky as \"Motosky\" and \"Muussky\"; the slide spells \"Motulsky\". The timeline figure is from DiPiro's Pharmacotherapy, 7th edition.",
+ quote:"starting with 1953 when Watson and Crick and other scientists, they described the structure of DNA. ... it wasn't until 1956 that they found that genetic link to the hemolytic anemia in patients responding badly to Primaquine. ... in 1990, the Human Genome Project started. ... in 2003, the Human Genome Project was completed and it was completed early and under budget",
+ note:"The transcript renders Motulsky as \"Motosky\" and \"Muussky\"; the slide spells \"Motulsky\".",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘Introduction: Genomics History’ (p. 6, DiPiro 7th ed. figure); transcript 10/20"},
 
 {id:"L17-006", lecture:"L17", prof:"Smith", tier:"new", topic:"L17", sub:"history", skill:"recall",
@@ -100,7 +100,7 @@ QUESTIONS.push(
   {t:"Watson and Crick, 1953", correct:false, why:"They described the structure of DNA."},
   {t:"Human Genome Project, 1990", correct:false, why:"1990 is the start of the Human Genome Project, a worldwide consortium; it did not coin the term."}],
  teach:"In 1959 Friedrich Vogel introduced the term pharmacogenetics, the first word linking drugs to genetics: how a person's genotype affects their response to medications. Two years earlier Motulsky had proposed that inheritance might explain many individual differences in drug efficacy and adverse drug reactions, which was eye opening to medicine then.",
- quote:"All right, then in 1959, Frederick Vogel, he introduced the term pharmacogenetics. So that was the first word that he coined to link. Pharmacology or drugs to genetics, OK?",
+ quote:"in 1959, Frederick Vogel, he introduced the term pharmacogenetics. So that was the first word that he coined to link. Pharmacology or drugs to genetics",
  note:"Spellings differ: slide \"Fredrich Vogel\"; transcript \"Frederick Vogel\" and \"Friedrich Vogel\". The slide spells \"Motulsky\".",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘Introduction: Genomics History’ (p. 6); transcript 10/20"},
 
@@ -113,7 +113,7 @@ QUESTIONS.push(
   {t:"One government agency sequenced the genome alone", correct:false, why:"It was a worldwide consortium of academics, industry and government agencies."},
   {t:"Labs sequenced whole genomes in a matter of hours", correct:false, why:"Whole genome sequencing in hours came much more recently, after the project; the project began with very slow but proven methods."}],
  teach:"The Human Genome Project (1990 to 2003) was a worldwide consortium of academics, industry and government agencies, each lab sequencing a stretch of DNA. Unlike usual research, every sequence went into a shared database. It finished early and under budget, and the faster methods developed during it set the stage for whole genome sequencing, now possible in a matter of hours, which came later.",
- quote:"It was a worldwide consortium. It involved academics. It involved industry, it involved government agencies. ... So once one lab discovered the DNA sequence for one chunk of chunk of the human genome, it was put up in a database and everybody had access to it. So that I think is one of the most amazing parts of this project.",
+ quote:"It was a worldwide consortium. It involved academics. It involved industry, it involved government agencies. ... So once one lab discovered the DNA sequence for one chunk ... of the human genome, it was put up in a database and everybody had access to it.",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘Introduction: Genomics History’ (p. 6); transcript 10/20"},
 
 {id:"L17-008", lecture:"L17", prof:"Smith", tier:"new", topic:"L17", sub:"history", skill:"figure", core:true, coreWhy:"objective: historical development (twin studies figure)",
@@ -125,7 +125,7 @@ QUESTIONS.push(
   {t:"Identical pairs match; fraternal pairs match", correct:false, why:"If fraternal pairs matched as well, sharing a genotype would make no difference; in the figure the fraternal pairs were variable."},
   {t:"Identical pairs vary; fraternal pairs vary", correct:false, why:"If both kinds of pair varied to the same degree, genes would not explain the variation."}],
  teach:"Antipyrine is cleared by one enzyme, so its half-life is a clean readout of that enzyme's activity. Identical twins (same genotype) were compared with fraternal twins, who are related but do not share the same genotype; she likened them to 'just grabbing random people out of the population'. If genes set how fast the enzyme works, half-lives should match within identical pairs and scatter within fraternal pairs. That is what the figure shows (G&G Fig. 4-2), so variability in drug metabolism is heritable.",
- quote:"and you can see almost all of our identical twin pairs, their clearance is exactly the same. There's just a few that are a little bit different. ... That's different if you look at the fraternal twin pairs, you see, they are often, all of them are very variable. Only this, this pair here, pair D, is a little bit similar",
+ quote:"almost all of our identical twin pairs, their clearance is exactly the same. There's just a few that are a little bit different. ... That's different if you look at the fraternal twin pairs ... all of them are very variable.",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘Introduction: Twin Studies Data’ (p. 7, G&G Fig. 4-2); transcript 10/20"},
 
 {id:"L17-009", lecture:"L17", prof:"Smith", tier:"new", topic:"L17", sub:"history", skill:"apply",
@@ -137,7 +137,7 @@ QUESTIONS.push(
   {t:"Cleared by many enzymes; each twin's response", correct:false, why:"One enzyme made the data clean; with many enzymes the phenotype would be fuzzy."},
   {t:"Cleared by the kidney; creatinine, a phenotype", correct:false, why:"Antipyrine is cleared all the way by metabolism, not by the kidney."}],
  teach:"Antipyrine is cleared entirely by metabolism, essentially by one enzyme, so a twin's half-life gave a clean phenotype for whether that enzyme was working in the normal range. The twins were not genotyped; the studies looked only at the phenotype, the half-life of clearance. Genotyping came later and made such studies more sophisticated.",
- quote:"That I like to point out what they were doing is they were looking at antipyrene Half-Life. This is a medication that um is cleared all the way by metabolism. It's just like one enzyme does it. ... We did not genotype these people at this time. We were looking at their phenotype, which was the half-life of the clearance of the drug, OK?",
+ quote:"they were looking at antipyrene Half-Life. This is a medication that ... is cleared all the way by metabolism. It's just like one enzyme does it. ... We did not genotype these people at this time. We were looking at their phenotype, which was the half-life of the clearance of the drug",
  note:"The transcript renders antipyrine as \"antipyrene\".",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘Introduction: Twin Studies Data’ (p. 7); transcript 10/20"},
 
@@ -151,7 +151,7 @@ QUESTIONS.push(
   {t:"Metabolizing enzyme genes vs drug target genes", correct:false, why:"Metabolizing enzymes and drug targets are two of the four target areas; both terms cover all of them. The difference is scope."},
   {t:"Phenotype studies vs genotype studies", correct:false, why:"Phenotype versus genotype is the twin study versus later studies; neither definition turns on it."}],
  teach:"Pharmacogenetics is the study of genetic causes of individual variations in drug response: one patient and their response to a drug. Pharmacogenomics more broadly involves genome-wide analysis of the genetic determinants of drug efficacy and toxicity, in populations, and also covers genomics technologies such as bioengineered proteins and gene therapy. The two are used interchangeably; the preferred term is pharmacogenomics.",
- quote:"OK, so, pharmacogenetics is the term that we use when we're thinking about an individual, one patient, and their response to a drug, OK. Pharmacogenomics is a more global term. That's where we're thinking about populations as a whole or studying these concepts within populations or comparing populations.",
+ quote:"pharmacogenetics is the term that we use when we're thinking about an individual, one patient, and their response to a drug ... Pharmacogenomics is a more global term. That's where we're thinking about populations as a whole or studying these concepts within populations or comparing populations.",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘Introduction: Definition of Genomics vs Genetics’ (p. 8); transcript 10/20"},
 
 {id:"L17-011", lecture:"L17", prof:"Smith", tier:"new", topic:"L17", sub:"defs", skill:"recall", core:true, coreWhy:"her words: every slide with a term on it, you need to know those terms",
@@ -163,7 +163,7 @@ QUESTIONS.push(
   {t:"Not interchangeable; pharmacogenomics is preferred", correct:false, why:"The terms technically differ, but they are used interchangeably, even by people renowned in the field."},
   {t:"Not interchangeable; pharmacogenetics is preferred", correct:false, why:"Both halves are reversed: they are used interchangeably, and pharmacogenomics is preferred."}],
  teach:"The two terms technically differ, but they are often used interchangeably, and she said she does not always switch between them properly; most of the time she says pharmacogenomics. The slide's definitions come from the American Association of Pharmaceutical Scientists (AAPS) Pharmacogenomics Focus Group; the World Health Organization also publishes definitions. Gene therapy is an example of a pharmacogenomic technology.",
- quote:"So they're often used interchangeably by people that are, you know, renowned in the field, but that's OK. Oh, I'm sorry, this one is the American Association of Pharmaceutical Scientists, uh, uh, pharmacogenomics focus group that defined these terms",
+ quote:"they're often used interchangeably by people that are ... renowned in the field ... this one is the American Association of Pharmaceutical Scientists ... pharmacogenomics focus group that defined these terms",
  note:"She first said \"if I recall, these are World Health Organization definitions\" and then corrected herself to the AAPS focus group, which is the slide's reference. Keyed on AAPS.",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘Introduction: Definition of Genomics vs Genetics’ (p. 8); transcript 10/20"},
 
@@ -176,7 +176,7 @@ QUESTIONS.push(
   {t:"To replace older words such as mutant", correct:false, why:"Dropping the word mutant for variant is a change in usage she mentioned; it is not why organizations publish definitions."},
   {t:"To keep each country's agency data separate", correct:false, why:"The reverse: common definitions let one country's agency compare its data with another's."}],
  teach:"Agencies across the world publish definitions so that everyone means the same thing. If drug companies, regulators and researchers define genotypes or sample pharmacogenomic populations differently, the data get messy and one country's agency cannot compare its data with another's. Common definitions give better scientific communication.",
- quote:"Why would the, why would a big organization like the AAPS or the WHO, why would they define terms like this? What do you think the world would define terms, scientific terms. It helps get us all on the same page, OK ... so that's the reason why the world gets together and does some of these definitions is that we have better scientific communication going on.",
+ quote:"why would a big organization like the AAPS or the WHO, why would they define terms like this? ... It helps get us all on the same page ... the reason why the world gets together and does some of these definitions is that we have better scientific communication going on.",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘Introduction: Definition of Genomics vs Genetics’ (p. 8); transcript 10/20"},
 
 /* ---------------- Impact, uses and limitations ---------------- */
@@ -189,7 +189,7 @@ QUESTIONS.push(
   {t:"Pharmacogenomics guided most of those prescriptions", correct:false, why:"The study did not evaluate whether pharmacogenomics was used when those patients were prescribed and treated."},
   {t:"Prescribers were less versed in it than pharmacists", correct:false, why:"That prescribers are less versed than pharmacists was her point about education, not the MacKinnon finding."}],
  teach:"MacKinnon et al. (2023) pulled the medical records of thousands of patients and found that more than half were prescribed medications where pharmacogenomics is important in their use. The study did not evaluate whether pharmacogenomics was actually used when those patients were prescribed and treated.",
- quote:"Uh, McKinnon found, wrote, did a study, and they found that more than half of the patients evaluated were prescribed medications where pharmacogenomics is important in their use. ... They did not evaluate whether pharmacogenomics was used as these patients were prescribed and treated",
+ quote:"McKinnon found, wrote, did a study, and they found that more than half of the patients evaluated were prescribed medications where pharmacogenomics is important in their use. ... They did not evaluate whether pharmacogenomics was used as these patients were prescribed and treated",
  note:"The transcript renders MacKinnon as \"McKinnon\".",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘Introduction: Impact of Pharmacogenomics’ (p. 9); transcript 10/20"},
 
@@ -202,7 +202,7 @@ QUESTIONS.push(
   {t:"It is important, and they feel confident using it", correct:false, why:"They do not feel confident in their knowledge or their ability to use it."},
   {t:"It applies to over half of their patients' drugs", correct:false, why:"That is the MacKinnon et al. (2023) finding from patient records, not what pharmacists reported."}],
  teach:"Wondrasek et al. (2024), a year after MacKinnon, asked pharmacists about their knowledge of and comfort with pharmacogenomics. The finding has two halves: they feel it is important, but they do not feel confident in their knowledge or their ability to use it. The gap persists even though pharmacy students are the best educated in pharmacogenomics and have been taught it intensely for a couple of decades.",
- quote:"All right, then this one by Wandrasek a year later, they were talking with pharmacists about their knowledge, their comfort with pharmacogenomics. And although pharmacists feel pharmacogenomics is important, they don't feel confident in their knowledge or their ability to use it, OK?",
+ quote:"this one by Wandrasek a year later, they were talking with pharmacists about their knowledge, their comfort with pharmacogenomics. And although pharmacists feel pharmacogenomics is important, they don't feel confident in their knowledge or their ability to use it",
  note:"The transcript renders Wondrasek as \"Wandrasek\".",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘Introduction: Impact of Pharmacogenomics’ (p. 9); transcript 10/20"},
 
@@ -215,7 +215,7 @@ QUESTIONS.push(
   {t:"Nurses; they are better versed in it", correct:false, why:"Nurses were named among those who should know it, but pharmacists are the best educated."},
   {t:"Prescribers; they are equally versed in it", correct:false, why:"Prescribers are not yet as well versed, since they do not spend as much time with drugs."}],
  teach:"Anybody who prescribes should know pharmacogenomics, and so should nurses and other providers. Prescribers are not yet as well versed in it as pharmacists, because they spend less time with drugs. Pharmacy students are the best educated in pharmacogenomics, and pharmacists have a big role in caring for patients from this angle.",
- quote:"Can you think of other healthcare professions that M should know about pharmacogenomics. How about anybody that's prescribing? OK. ... But people that are prescribing so far, uh, our prescribers are not as well versed yet in pharmacogenomics, cause they don't spend as much time with drugs as you guys do.",
+ quote:"How about anybody that's prescribing? ... our prescribers are not as well versed yet in pharmacogenomics, cause they don't spend as much time with drugs as you guys do.",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘Introduction: Impact of Pharmacogenomics’ (p. 9); transcript 10/20"},
 
 {id:"L17-016", lecture:"L17", prof:"Smith", tier:"new", topic:"L17", sub:"impact", skill:"apply",
@@ -227,7 +227,7 @@ QUESTIONS.push(
   {t:"When the patient has had a side effect on the drug", correct:false, why:"A side effect that has already happened prompts genotyping afterward, which is acceptable when it is not lethal."},
   {t:"When the possible side effect is mild, not lethal", correct:false, why:"For a side effect that is not lethal, looking at the genotype after the response is acceptable."}],
  teach:"Often a patient's response, a side effect or a lack of efficacy, prompts a look at their genotype afterward, which is acceptable when the side effect is not lethal. When a drug can quickly cause a lethal side effect, the patient should be genotyped first; for some medications that is standard protocol and a clinician could be liable for not doing it. Which drugs should be genotyped, and which could be but rarely are, is a clinical-use issue she will cover later; her view is that if insurance will pay and it saves cost, do it.",
- quote:"But what if you're giving a drug that somebody could quickly develop a lethal side effect? It's better to genotype the patient, figure out what version of a gene they have before you give them that drug ... It, it is, yes, it is for some medications, it's standard protocol. You could be liable. If you didn't genotype patients before we give them some drugs.",
+ quote:"But what if you're giving a drug that somebody could quickly develop a lethal side effect? It's better to genotype the patient, figure out what version of a gene they have before you give them that drug ... it is for some medications, it's standard protocol. You could be liable. If you didn't genotype patients before we give them some drugs.",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘Polymorphism’ (p. 14, student question); transcript 10/20"},
 
 {id:"L17-017", lecture:"L17", prof:"Smith", tier:"new", topic:"L17", sub:"impact", skill:"recall", multi:true,
@@ -240,7 +240,7 @@ QUESTIONS.push(
   {t:"Infectious disease", correct:true, why:"\"doing more and more of pharmacogenomics\"."},
   {t:"Dermatology", correct:false, why:"Not one of the four areas named on 10/20 (oncology, CNS, cardiology, infectious disease)."}],
  teach:"She expects pharmacogenomics to be part of practice in every area of pharmacy to some degree. Oncology uses it all the time; it is big in CNS and cardiology, and infectious disease uses more and more of it. The field moves fast, so the course gives the basics and a way of thinking to keep learning after graduation.",
- quote:"Some people, especially if you like choose oncology, you'll be using pharmacogenomics all the time. CNS pharmacogenomics is big. Some cardio pharma pharma, I mean pharmacogenomics is big. Infectious disease, doing more and more of pharmacogenomics, OK?",
+ quote:"especially if you like choose oncology, you'll be using pharmacogenomics all the time. CNS pharmacogenomics is big. Some cardio ... pharmacogenomics is big. Infectious disease, doing more and more of pharmacogenomics",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘Introduction: Genomics History’ (p. 6); transcript 10/20"},
 
 /* ---------------- The four target areas ---------------- */
@@ -254,7 +254,7 @@ QUESTIONS.push(
   {t:"Immune system targets", correct:true, why:"The fourth, newest area: HLA antigen variants."},
   {t:"Plasma protein binding", correct:false, why:"Protein binding is part of distribution in the PK arc of the PharmGKB figure; it is not one of the four target areas (metabolizing enzymes, transporters, drug targets, immune system targets)."}],
  teach:"The four areas are metabolizing enzymes, drug transporters, drug targets and immune system targets, in the order the field took them up. Metabolizing enzymes came first because variants that blocked clearance drove blood levels too high and sometimes killed patients, the most apparent and dangerous effects. Transporters followed (P-gp and digoxin), then drug targets such as receptors, biggest now in oncology, and most recently HLA antigen variants tied to severe reactions. The slide title still says three; she added the fourth that morning.",
- quote:"So these are the four areas that we'll cover as we go through examples of pharmacogenomics, OK? You do need to know these. So what are they? Metabolizing enzymes, transporters, drug targets, and then immunological targets, OK?",
+ quote:"these are the four areas that we'll cover as we go through examples of pharmacogenomics ... You do need to know these. So what are they? Metabolizing enzymes, transporters, drug targets, and then immunological targets",
  note:"Conflict: the slide title reads \"Three Target Areas\" and lists three bullets; she said \"change this from 3 to 4 target areas\" and added immune system targets. Keyed on four.",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘Introduction: Three Target Areas’ (p. 10); transcript 10/20"},
 
@@ -267,7 +267,7 @@ QUESTIONS.push(
   {t:"Their variants were found first in identical twin studies", correct:false, why:"The twin studies measured a phenotype (antipyrine half-life); no one was genotyped in them."},
   {t:"Their variants occur in under 1% of a population", correct:false, why:"Under 1% defines a rare variant; frequency was not the reason given."}],
  teach:"Variants in metabolizing enzymes, P450s first and now other phase 1 and phase 2 enzymes, cause differences in drug plasma concentrations between people. Some patients could not clear certain drugs, their blood concentrations went too high and some died; once genotyping was possible, those were the most apparent and most dangerous reactions to explain. The slide adds that this may have serious implications for narrow therapeutic index drugs.",
- quote:"Uh, the reason why we know the most about variants in metabolizing enzymes is because they were really the low hanging fruit. ... we had some medications that if people couldn't metabolize and clear those drugs, they were ending up with their blood drug, drug blood concentrations being too high, and you sometimes were killing patients because they weren't clearing the drugs, OK.",
+ quote:"the reason why we know the most about variants in metabolizing enzymes is because they were really the low hanging fruit. ... we had some medications that if people couldn't metabolize and clear those drugs, they were ending up with their ... drug blood concentrations being too high, and you sometimes were killing patients because they weren't clearing the drugs",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘Introduction: Three Target Areas’ (p. 10); transcript 10/20"},
 
 {id:"L17-020", lecture:"L17", prof:"Smith", tier:"new", topic:"L17", sub:"targets", skill:"recall",
@@ -279,7 +279,7 @@ QUESTIONS.push(
   {t:"P-glycoprotein; CYP2C19 gene; efflux", correct:false, why:"CYP2C19 is the gene for a metabolizing enzyme (cytochrome P450 2C19); P-gp is encoded by ABCB1."},
   {t:"G6PD; ABCB1 gene; efflux", correct:false, why:"G6PD (glucose-6-phosphate dehydrogenase) is the red blood cell enzyme from the primaquine history, not a transporter."}],
  teach:"P-glycoprotein (P-gp) is expressed in the gut and is encoded by the ABCB1 gene, in which many genetic variants have been defined. It is an efflux transporter: as an oral drug tries to cross the gut lumen cells, P-gp grabs it and pumps it back into the lumen to be excreted. Other transporters are expressed in the liver, brain and elsewhere, and their variants are an active research area.",
- quote:"So, can you think of any drug transporters? I'm thinking of one that's expressed in the gut, PGP P glacoprotein, right? OK. It's encoded by the ABCB1 gene, OK? ... Remember, PGP is an e-flux transporter. Right?",
+ quote:"one that's expressed in the gut, PGP P glacoprotein ... It's encoded by the ABCB1 gene ... PGP is an e-flux transporter.",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘Introduction: Three Target Areas’ (p. 10); transcript 10/20"},
 
 {id:"L17-021", lecture:"L17", prof:"Smith", tier:"new", topic:"L17", sub:"targets", skill:"apply",
@@ -291,7 +291,7 @@ QUESTIONS.push(
   {t:"Hepatic metabolism", correct:false, why:"Metabolism is the job of metabolizing enzymes such as the P450s; P-gp is a transporter."},
   {t:"Renal excretion", correct:false, why:"Excretion was offered in the room, but the answer was absorption into the systemic circulation: bioavailability. Gut P-gp sends drug out in the stool, not the urine."}],
  teach:"P-gp in the gut is an efflux transporter: as an oral drug tries to cross the gut lumen cells, P-gp grabs it and pumps it back into the lumen, to leave in the stool. The more P-gp pumps, the less of the dose reaches the systemic circulation, so P-gp activity sets how much is absorbed: bioavailability. A low-activity variant pumps less, so bioavailability goes up, as with digoxin.",
- quote:"What aspect of kinetics could be affected by the fact that that drug that you're taking orally is a substrate for what aspect of kinetics does that affect? I'm thinking absorption into the systemic circulation. ... About the term bioavailability. OK. So I think about bioavailability a lot when I think about oral medications that are substrates for PGP.",
+ quote:"What aspect of kinetics could be affected by the fact that that drug that you're taking orally is a substrate ... I'm thinking absorption into the systemic circulation. ... I think about bioavailability a lot when I think about oral medications that are substrates for PGP.",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘Introduction: Three Target Areas’ (p. 10); transcript 10/20"},
 
 {id:"L17-022", lecture:"L17", prof:"Smith", tier:"new", topic:"L17", sub:"targets", skill:"apply",
@@ -303,7 +303,7 @@ QUESTIONS.push(
   {t:"It does not change", correct:false, why:"Digoxin's dose assumes normal P-gp activity in the gut, so a low-activity P-gp changes how much is absorbed."},
   {t:"It is unpredictable", correct:false, why:"It was predicted directly from P-gp's efflux role: less efflux, more absorbed."}],
  teach:"Digoxin is a P-gp substrate in the gut, and its dose is set knowing that P-gp blocks part of its absorption. A patient with a low-activity P-gp variant pumps less digoxin back into the lumen, so bioavailability goes up and blood levels can be high on a normal dose, affecting heart rate too much. Finding such variants explained why some patients had lots of digoxin in the bloodstream; she will return to this example.",
- quote:"OK, so people that have a low activity version of PGP. What's going to happen to their bioavailability of digoxin? Does the bioavailability go up or does it go down? Who said that up, it goes up.",
+ quote:"people that have a low activity version of PGP. What's going to happen to their bioavailability of digoxin? ... it goes up.",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘Introduction: Three Target Areas’ (p. 10); transcript 10/20"},
 
 {id:"L17-023", lecture:"L17", prof:"Smith", tier:"new", topic:"L17", sub:"targets", skill:"recall",
@@ -327,7 +327,7 @@ QUESTIONS.push(
   {t:"Drug targets; beta-adrenergic receptor variants", correct:false, why:"Drug targets were the third area; the beta-adrenergic receptor guidance document is its example."},
   {t:"Metabolizing enzymes; P450 variants", correct:false, why:"Metabolizing enzymes are the first and best-known area."}],
  teach:"The latest area that pharmacogenomics is being used to explain is the immune system. People with certain variants of their HLA antigens respond badly to certain drugs, with severe adverse drug reactions. Every year the list of drugs and related HLA variants in the literature gets a little longer; details come in later lectures.",
- quote:"For example, We have some medications that people uh with certain genetic variations in their HLA antigens, they are going to respond badly to these drugs if they have certain variants of their HLA antigens, OK?",
+ quote:"We have some medications that people ... with certain genetic variations in their HLA antigens, they are going to respond badly to these drugs if they have certain variants of their HLA antigens",
  note:"Not on the printed slide, which lists three areas; she added immune system targets aloud that morning. She said only \"HLA antigens\"; the abbreviation is not expanded.",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘Introduction: Three Target Areas’ (p. 10); transcript 10/20"},
 
@@ -342,8 +342,7 @@ QUESTIONS.push(
   {l:"Bottom arc: variants in PD genes", r:"Target, mechanism of action, drug response", why:"A variant drug target, such as a receptor, can change the pharmacodynamics (PD) and the response."},
   {l:"Clinical outcome", r:"Efficacy or toxicity", why:"Her two buckets."}],
  teach:"The figure from the PharmGKB (Pharmacogenetics and Pharmacogenomics Knowledge Base) website splits pharmacogenomics into kinetics and dynamics. The top arc runs from variants in PK genes to absorption, distribution, metabolism and excretion; the bottom arc from variants in PD genes to target, mechanism of action and drug response. Either way the end is a clinical outcome, which she sorts into efficacy or toxicity.",
- quote:"So, the top arc here. Is thinking about kinetics. And we might be looking at variants in, let's say, metabolizing enzymes or variants in transporters. ... So then the other bottom arc of this figure is again looking at variants in our genotypes.",
- note:"The transcript renders PharmGKB as \"Farm GKB\"; she said the site now routes to a new version.",
+ quote:"the top arc here. Is thinking about kinetics. And we might be looking at variants in, let's say, metabolizing enzymes or variants in transporters. ... the other bottom arc of this figure is again looking at variants in our genotypes.",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘Impact of Pharmacogenomics on PK and PD’ (p. 11, PharmGKB figure); transcript 10/20"},
 
 {id:"L17-026", lecture:"L17", prof:"Smith", tier:"new", topic:"L17", sub:"pkpd", skill:"apply", type:"match",
@@ -381,7 +380,7 @@ QUESTIONS.push(
   {t:"A version in under 1% of people; one in at least 1%", correct:false, why:"The 1% cutoff separates a rare variant (under 1%) from a polymorphism (at least 1%)."},
   {t:"The copy from the mother; the copy from the father", correct:false, why:"Those are a person's two alleles."}],
  teach:"Wild type is the version of a gene thought to be the most common; a variant is a version that is not the most common. Sometimes the gene called wild type in the literature is simply the one scientists understood first, so the definitions are a little fluid, but on her test \"wild type is the most common\" is accepted. The word mutant is no longer used for a variant.",
- quote:"OK. Wild type is a term used to talk about a version of a gene that is the most common, usually. ... When I test you on it, I will say, if you tell me the wild type is the most common, I'll say, yeah, that's fine, OK?",
+ quote:"Wild type is a term used to talk about a version of a gene that is the most common, usually. ... When I test you on it, I will say, if you tell me the wild type is the most common, I'll say, yeah, that's fine",
  note:"She added that \"Some people like to use the word mutant as a word synonymous with variant, but we tend not to use the word mutant any longer\". The slide wording is \"the version of a gene variation that is thought to be the most common\".",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘Wildtype vs Variant’ (p. 13); transcript 10/20"},
 
@@ -394,7 +393,7 @@ QUESTIONS.push(
   {t:"Size: one nucleotide vs a whole gene", correct:false, why:"Any kind of variation, a SNP or a whole gene deletion, can be a polymorphism; the definition is about frequency."},
   {t:"Effect: harmless vs harmful to the patient", correct:false, why:"A rare variant can be just as dangerous for that patient; the definition is about frequency."}],
  teach:"Both terms describe genetic variants; the only thing that separates them is how often the variant occurs in a population: at least 1% is a polymorphism, under 1% a rare variant. The kind of change (one nucleotide or a whole gene) and how harmful it is do not enter the definition. Polymorphisms were studied first and explain much of the variation in drug response; the rare variant term arose for patients who reacted badly without the known polymorphism.",
- quote:"So, a polymorphism is a genetic variant. And by definition, a polymorphism occurs at least 1% of the time in a population, OK? ... A rare variant is a genetic variation that is occurring in less than 1% of the population.",
+ quote:"So, a polymorphism is a genetic variant. And by definition, a polymorphism occurs at least 1% of the time in a population ... A rare variant is a genetic variation that is occurring in less than 1% of the population.",
  note:"Wording varies: slide \"If present ≥ 1% of the population, known as a genetic polymorphism\" (the ≥ is underlined and exports as >); she says \"at least 1%\", \"greater than 1%\" and \"1% or more\". Keyed on at least 1%.",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘Polymorphism’ (p. 14); transcript 10/20"},
 
@@ -407,7 +406,7 @@ QUESTIONS.push(
   {t:"A single nucleotide polymorphism", correct:false, why:"A whole-gene deletion is not a one-nucleotide change."},
   {t:"A haplotype", correct:false, why:"A haplotype is a set of alleles at several loci on one chromosome."}],
  teach:"Most people think polymorphisms are just SNPs, but that is not true. A polymorphism is defined by how often a variation occurs, so a whole gene deletion, extra copies of a gene or a sister chromatid exchange that occurs in more than 1% of the population is a polymorphism. Any of the same changes in less than 1% of the population is a rare variant.",
- quote:"A whole gene deletion could be polymorphic if it's happening in more than 1% of the population. ... It's happening, polymorphism definition speaks to the frequency of that change happening, right?",
+ quote:"A whole gene deletion could be polymorphic if it's happening in more than 1% of the population. ... polymorphism definition speaks to the frequency of that change happening",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘Polymorphism’ (p. 14); transcript 10/20"},
 
 {id:"L17-031", lecture:"L17", prof:"Smith", tier:"new", topic:"L17", sub:"variant", skill:"apply",
@@ -419,7 +418,7 @@ QUESTIONS.push(
   {t:"Rare variants became easier to genotype than SNPs", correct:false, why:"The term came from patients, not from testing ease: people who reacted badly without the known polymorphism turned out to carry an uncommon variation."},
   {t:"It replaced the older word mutant for a variant", correct:false, why:"Mutant is an older word for variant that is no longer used; rare variant is a frequency term (under 1%)."}],
  teach:"Polymorphisms (at least 1% of a population) have been characterized for a long time and explain much of the variation in drug response. As that work matured, some patients were found to respond badly without carrying the known polymorphism; a closer look showed a variation present in less than 1% of people. Those patients still feel bad or are endangered by the drug, so rare variants of any kind now get attention.",
- quote:"That's a person with a rare variant making them respond badly, so. The rare variant term has popped into our dictionary more recently, as we've made progress on understanding.",
+ quote:"That's a person with a rare variant making them respond badly ... The rare variant term has popped into our dictionary more recently, as we've made progress on understanding.",
  note:"She also asked the class to say \"genetic variant\" rather than \"aberration\".",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘Polymorphism’ (p. 14); transcript 10/20"},
 
@@ -432,7 +431,7 @@ QUESTIONS.push(
   {t:"An entire gene is deleted from the chromosome", correct:false, why:"A gene deletion is another kind of polymorphism, not a SNP."},
   {t:"Alleles at several loci co-exist on one chromosome", correct:false, why:"That is a haplotype."}],
  teach:"A single nucleotide polymorphism (SNP, pronounced snip) means one nucleotide in a gene is different in a patient with the polymorphism compared with a patient who has the wild type version. It is the most common type of polymorphism. Like any polymorphism it occurs in at least 1% of a population.",
- quote:"But probably a type of polymorphism that you guys have already heard about is a single nucleotide polymorphism or called a snip. ... OK, that means just one nucleotide is different in this gene sequence for your patient with a polymorphism compared to your patient without that polymorphism with the wild type version.",
+ quote:"a type of polymorphism that you guys have already heard about is a single nucleotide polymorphism or called a snip. ... that means just one nucleotide is different in this gene sequence for your patient with a polymorphism compared to your patient without that polymorphism with the wild type version.",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘Polymorphism’ (p. 14); transcript 10/20"},
 
 {id:"L17-033", lecture:"L17", prof:"Smith", tier:"new", topic:"L17", sub:"variant", skill:"recall", multi:true,
@@ -445,7 +444,7 @@ QUESTIONS.push(
   {t:"DNA methylation with no change in sequence", correct:false, why:"A polymorphism is a variation in DNA sequence; DNA methylation is an epigenetic factor that affects how genes are expressed."},
   {t:"A change in gene expression from diet or stress", correct:false, why:"Diet and stress are environmental factors that affect how genes are expressed; they do not vary the DNA sequence."}],
  teach:"SNPs are the easiest polymorphisms to talk about and the most common, but other kinds of variation are also polymorphisms: more than one nucleotide change, an entire gene insertion or deletion, extra copies of a gene, a sister chromatid exchange, and more. The label depends only on how often the variation occurs.",
- quote:"But there are other kinds of genetic variations that are also called polymorphisms, and they can include um more than one nucleotide change or an entire gene insertion, or an entire gene deletion or extra copies of a gene, and more. So, polymorphisms, I think most people feel are just snips. That's not true.",
+ quote:"But there are other kinds of genetic variations that are also called polymorphisms, and they can include ... more than one nucleotide change or an entire gene insertion, or an entire gene deletion or extra copies of a gene, and more. So, polymorphisms, I think most people feel are just snips. That's not true.",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘Polymorphism’ (p. 14); transcript 10/20"},
 
 /* ---------------- Allele; homozygosity and heterozygosity ---------------- */
@@ -458,7 +457,7 @@ QUESTIONS.push(
   {t:"The two alleles a person has for one gene", correct:false, why:"That is the genotype: both copies together."},
   {t:"Any observable characteristic a gene produces", correct:false, why:"That is a phenotype."}],
  teach:"Humans are diploid: we generally have two copies of every chromosome and so two copies of the same gene, one from the biological mother and one from the biological father. Each copy is an allele. The slide gives the National Human Genome Research Institute definition: the variant and wild type forms of a gene at a particular location on a chromosome.",
- quote:"We have, most of us have two copies of every gene. And so one copy is an allele and the other copy's in allele. ... All right, so, get a little from your mother, get a little from your father. Got 2 copies.",
+ quote:"most of us have two copies of every gene. And so one copy is an allele and the other copy's in allele. ... get a little from your mother, get a little from your father. Got 2 copies.",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘Allele’ (p. 15); transcript 10/20"},
 
 {id:"L17-035", lecture:"L17", prof:"Smith", tier:"new", topic:"L17", sub:"allele", skill:"figure", core:true, coreWhy:"her words: 'I do want you to get hung up on the terms homozygosity and heterozygosity'",
@@ -470,8 +469,8 @@ QUESTIONS.push(
   {t:"Homozygous for b", correct:false, why:"Only one copy is little b."},
   {t:"Homozygous for a", correct:false, why:"That describes the second locus (a on both chromosomes), not the third."}],
  teach:"At each locus, compare the two alleles. PP (both big P) is homozygous; aa (both little a) is homozygous; Bb (big B on one chromosome, little b on the other) is heterozygous. The figure also labels dominant and recessive alleles, but pharmacogenomics does not discuss variants as dominant or recessive; the terms to know are homozygous and heterozygous, said as \"heterozygous for B at this third locus\". Her example of why: \"we used to always think that eye color, blue is recessive, brown is dominant. It's not quite that clean, OK?\"",
- quote:"On their orange allele, they got Big B. And on the blue a little they got little B, so they are what, homozygous or heterozygous. They're heterozygous, right?",
- note:"The transcript renders loci as \"low side\", \"low sci\", \"low psi\". She said of dominance: \"in the world of pharmacogenomics, we don't have. Genetic variations that we discuss as being dominant versus recessive\".",
+ quote:"On their orange allele, they got Big B. And on the blue a little they got little B, so they are what, homozygous or heterozygous. They're heterozygous",
+ note:"She said of dominance: \"in the world of pharmacogenomics, we don't have. Genetic variations that we discuss as being dominant versus recessive\".",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘Homozygosity and Heterozygosity’ (p. 16, Addison Wesley Longman figure); transcript 10/20"},
 
 /* ---------------- Genotype and phenotype ---------------- */
@@ -484,7 +483,7 @@ QUESTIONS.push(
   {t:"One allele a person has; any observable characteristic", correct:false, why:"A genotype is both alleles of the gene, not one."},
   {t:"The two alleles a person has; the protein one allele makes", correct:false, why:"The protein is the gene product; a phenotype is any observable characteristic, such as how active a person's CYP2C19 is."}],
  teach:"Each person carries two alleles of each gene, and those two alleles are the genotype. A phenotype is any observable characteristic of an organism, morphological, developmental, biochemical, physical or behavioral, and it results from the expression of genes: the genotype drives the phenotype. In pharmacogenomics a phenotype is often an enzyme's activity, such as how active a person's CYP2C19 is.",
- quote:"The two alleles that anybody has represents their genotype, right? ... Phenotypes are driven by the genotype, OK?",
+ quote:"The two alleles that anybody has represents their genotype ... Phenotypes are driven by the genotype",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘Genotype vs phenotype’ (p. 17); transcript 10/20"},
 
 {id:"L17-037", lecture:"L17", prof:"Smith", tier:"new", topic:"L17", sub:"genophen", skill:"apply",
@@ -496,7 +495,7 @@ QUESTIONS.push(
   {t:"CYP2C19*1/*2", correct:false, why:"That pairs one *1 copy with one *2 copy; this person is heterozygous, not homozygous for *2."},
   {t:"CYP2C19*1/*1", correct:false, why:"That is a person homozygous for the *1 (wild type) allele."}],
  teach:"The written genotype gives the gene, then the allele on each of the two copies separated by a slash. A person homozygous for the *2 allele of CYP2C19 is written CYP2C19*2/*2. CYP2C19 is a P450 that does a lot of drug metabolism and has many genetic variations; it will come up again and again.",
- quote:"So if somebody were homozygous for SIP 2C192, we could write it like this, a little code going on here. So CIP2C192, 2. I've given you the gene. I've told you what allele they have. Both their allele copies are the same, they're homozygous for 2.",
+ quote:"if somebody were homozygous for SIP 2C192, we could write it like this ... CIP2C192, 2. I've given you the gene. I've told you what allele they have. Both their allele copies are the same, they're homozygous for 2.",
  note:"The transcript renders CYP2C19*2 as \"SIP 2C192\", \"CIP2C192\", \"STC 192\" and star as \"SAR\" and \"SA\". The slide prints \"Genotype = CYP2C19*2/*2\". Star-allele nomenclature itself (pp. 25–28) was not reached; see L17-055 to L17-057.",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘Genotype vs phenotype’ (p. 17); transcript 10/20"},
 
@@ -509,7 +508,7 @@ QUESTIONS.push(
   {t:"Half the normal CYP2C19 activity", correct:false, why:"Both copies are *2 and *2 has no activity, so there is no working copy left to give partial activity."},
   {t:"Extra CYP2C19 enzyme activity", correct:false, why:"*2 has no activity; extra activity would come from extra working copies."}],
  teach:"The CYP2C19 *2 variant has no enzyme activity, so a person who is CYP2C19*2/*2 has no 2C19 activity and cannot metabolize drugs through that enzyme; that is the phenotype. There are good data for this: the genotype-phenotype relationship for *2 is tight, and even the reason the enzyme is not active is known.",
- quote:"Well, I will tell you that the STC 192 variant has No activity. OK. So that's the phenotype. ... So I would say that the knowledge of the phenotype genotype relationship for 2C192 is really tight.",
+ quote:"the STC 192 variant has No activity. ... So that's the phenotype. ... the knowledge of the phenotype genotype relationship for 2C192 is really tight.",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘Genotype vs phenotype’ (p. 17); transcript 10/20"},
 
 {id:"L17-039", lecture:"L17", prof:"Smith", tier:"new", topic:"L17", sub:"genophen", skill:"term", core:true, coreWhy:"her words: functional significance is 'a big key word in the world of pharmacogenomics'",
@@ -521,7 +520,7 @@ QUESTIONS.push(
   {t:"Where the change sits on the chromosome", correct:false, why:"That is the locus."},
   {t:"Whether several changes co-exist on one chromosome", correct:false, why:"Alleles at several loci co-existing on one chromosome describe a haplotype."}],
  teach:"Functional significance is the key phrase of the topic: what a change in a gene does to how that gene's product, a protein, enzyme or transporter, works. Without it, a drug response phenotype cannot be explained. Examples with known functional significance are the ones that can be used to decide whether a patient gets a drug or a reduced dose.",
- quote:"So, what's the keyword I mentioned earlier when we got on this slide? I said, functional significance. What's the functional significance of a genetic variation? How would you explain that to your grandmother? ... How does that mutation affect the function of the protein, or the enzyme or the transporter that that gene creates in our body, OK? Why do we need to know the functional significance? Well, if we don't know how that genetic variation is changing how the gene product works, how are we gonna explain our drug response phenotype?",
+ quote:"functional significance. What's the functional significance of a genetic variation? ... How does that mutation affect the function of the protein, or the enzyme or the transporter that that gene creates in our body ... Why do we need to know the functional significance? Well, if we don't know how that genetic variation is changing how the gene product works, how are we gonna explain our drug response phenotype?",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘Complications of Genotype vs phenotype’ (p. 18); transcript 10/20"},
 
 {id:"L17-040", lecture:"L17", prof:"Smith", tier:"new", topic:"L17", sub:"genophen", skill:"recall", multi:true, core:true, coreWhy:"her key slide list: complications of genotype vs phenotype",
@@ -534,7 +533,7 @@ QUESTIONS.push(
   {t:"Most traits are monogenic, not multigenic", correct:false, why:"Reversed: most traits are multigenic, and that is the complication."},
   {t:"Phenotype results from the expression of genes", correct:false, why:"That is the definition of phenotype from the genotype vs phenotype slide; it is not one of the complications."}],
  teach:"Three things complicate the picture. One gene can carry many polymorphisms, so it is hard to tell which variation causes the phenotype. Most traits, and many drug responses, are multigenic rather than monogenic. And environmental factors, including epigenetic factors, influence how genes are expressed.",
- quote:"One of them is that many polymorphisms could be present in one gene. ... All right, how about the next bullet? Most traits are multigenic, not monogenic. ... And also another thing that complicates our phenotype genotype relationship is the fact that you've got environmental factors that influence.",
+ quote:"many polymorphisms could be present in one gene. ... Most traits are multigenic, not monogenic. ... another thing that complicates our phenotype genotype relationship is the fact that you've got environmental factors that influence.",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘Complications of Genotype vs phenotype’ (p. 18); transcript 10/20"},
 
 {id:"L17-041", lecture:"L17", prof:"Smith", tier:"new", topic:"L17", sub:"genophen", skill:"apply",
@@ -546,7 +545,7 @@ QUESTIONS.push(
   {t:"Environmental factors then change the gene's DNA sequence", correct:false, why:"Environmental factors affect how genes are expressed, not the DNA sequence; they are a separate complication."},
   {t:"The gene then has no most common, wild type version", correct:false, why:"The gene still has a most common version, the wild type; the difficulty is which variable site causes the patient's response."}],
  teach:"A single gene can have several places that vary: a SNP here, a tandem repeat there. The variations can be identified, but it takes a lot of work to figure out which one is responsible for the way a patient responds, and sometimes it depends on the structure of the gene.",
- quote:"Why would it complicate our understanding of what's the phenotype you get with those genotypes? Why does that complicate it? It's hard to figure out which genetic variation is causing the phenotype.",
+ quote:"Why would it complicate our understanding of what's the phenotype you get with those genotypes? ... It's hard to figure out which genetic variation is causing the phenotype.",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘Complications of Genotype vs phenotype’ (p. 18); transcript 10/20"},
 
 {id:"L17-042", lecture:"L17", prof:"Smith", tier:"new", topic:"L17", sub:"genophen", skill:"recall", multi:true,
@@ -559,7 +558,7 @@ QUESTIONS.push(
   {t:"Diabetes", correct:false, why:"Diabetes is multigenic, caused by multiple genetic changes."},
   {t:"Hyperlipidemia", correct:false, why:"Hyperlipidemia is multigenic, caused by multiple genetic changes."}],
  teach:"A few diseases are caused by one genetic variation: sickle cell, Huntington's chorea, certain kinds of early-onset Alzheimer's and Parkinson's, and Tay-Sachs disease. These are fairly rare. Most diseases, such as cardiovascular disease, diabetes and hyperlipidemia, are multigenic, and the same holds for drug response: some responses follow one variant, but many involve more than one.",
- quote:"Any diseases come to mind that are caused by one gene mutation. Not usually, sorry, good, good guess. Some sickle cell, yes, some sickle cell, yes. ... Tay-Sachs disease, one genetic variation, OK? That's a metabolic problem. ... Most diseases that we get are caused by multiple changes in our genetics, right? Cardiovascular disease, diabetes, hyperlipidemia, oh, go on and on, OK?",
+ quote:"Any diseases come to mind that are caused by one gene mutation. ... some sickle cell, yes. ... Tay-Sachs disease, one genetic variation ... That's a metabolic problem. ... Most diseases that we get are caused by multiple changes in our genetics ... Cardiovascular disease, diabetes, hyperlipidemia",
  note:"The transcript renders Huntington's chorea as \"Huntington's chore\" and \"Huntington's career\"; she described it as a very specific, early-onset dementia that is very inheritable.",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘Complications of Genotype vs phenotype’ (p. 18); transcript 10/20"},
 
@@ -597,7 +596,7 @@ QUESTIONS.push(
   {t:"A single nucleotide change at one locus of a gene", correct:false, why:"That is a SNP."},
   {t:"A variant present in less than 1% of a population", correct:false, why:"That is a rare variant."}],
  teach:"A haplotype is a set of alleles at multiple loci of a gene that coexist on the same chromosome. It is also statistical: the set occurs together more often than random chance would predict. In her illustration, three SNP sites change together in only three patterns, because those alleles are inherited together on one chromosome (the slide's linkage disequilibrium). A genotype, by contrast, is the two alleles a person has of one gene.",
- quote:"All right, haplotype, it just means it's a set of alleles at multiple loci that coexist in the same chromosome.",
+ quote:"haplotype, it just means it's a set of alleles at multiple loci that coexist in the same chromosome.",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘Haplotype’ (p. 19); transcript 10/20"},
 
 {id:"L17-046", lecture:"L17", prof:"Smith", tier:"new", topic:"L17", sub:"haplo", skill:"recall", core:true, coreWhy:"her Quiz 4 item: haplotype as a set co-existing more often than chance",
@@ -609,7 +608,7 @@ QUESTIONS.push(
   {t:"Genotype frequency", correct:false, why:"That is how often a genotype occurs in a population."},
   {t:"Heterozygosity", correct:false, why:"That is two different alleles at one locus."}],
  teach:"A haplotype has statistical significance: its alleles occur together more often than random chance would predict. The slide names that excess linkage disequilibrium. She added that DNA chemistry affects how likely variations are to occur; the reading ties the excess to alleles that descend together on one ancestral chromosome.",
- quote:"Also, I want to say on this slide, a haplotype has a statistical significance in the world of pharmacogenemics. So, a haplotype is going to be occurring at a frequency that is greater than random chance.",
+ quote:"a haplotype has a statistical significance in the world of pharmacogenemics. So, a haplotype is going to be occurring at a frequency that is greater than random chance.",
  note:"She did not say the words \"linkage disequilibrium\"; the term is on the slide she taught (p. 19), and she said every slide with a term on it is testable. She attributes the greater-than-chance frequency to the haplotype itself; the slide attaches it to linkage disequilibrium. Both kept.",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘Haplotype’ (p. 19); transcript 10/20"},
 
@@ -622,7 +621,7 @@ QUESTIONS.push(
   {t:"AG, GT and AT", correct:false, why:"Those are the SNP alternatives at each locus, not the haplotypes."},
   {t:"GAT, TGA and GAA", correct:false, why:"These are the real letters rearranged. Read each person's loci in order (first A or G, second G or T, third A or T): GAT and GAA put an A at the second locus, which has G or T, and TGA puts a T at the first."}],
  teach:"In the figure, three loci each carry a SNP: A or G at the first, G or T at the second, A or T at the third. Read across each person, the variants come in three combinations: AGT, GTA and AGA. Those patterns appear together more often than random chance, and each one is a haplotype.",
- quote:"The first person who's orange has AGT, OK? The third person on the bottom who's dark blue has a GTA. Then the light blue person in the middle has an AGA. ... And those three patterns of those loci changing happen more often than random chance. That would be a haplotype.",
+ quote:"The first person who's orange has AGT ... The third person on the bottom who's dark blue has a GTA. Then the light blue person in the middle has an AGA. ... And those three patterns of those loci changing happen more often than random chance. That would be a haplotype.",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘Illustration of Haplotype’ (p. 20); transcript 10/20"},
 
 /* ---------------- Frequencies; Hardy-Weinberg ---------------- */
@@ -647,7 +646,7 @@ QUESTIONS.push(
   {t:"A variant occurs in at least 1% of a population", correct:false, why:"That is the polymorphism definition."},
   {t:"Wild type and variant alleles occur equally often", correct:false, why:"The equilibrium does not require any particular frequency; it holds when the frequencies stay constant across generations."}],
  teach:"Hardy-Weinberg equilibrium means allele and genotype frequencies in a population stay constant from generation to generation unless specific influences are introduced. Testing it asks whether a variation seen in a sample reflects some pressure (she calls it evolutionary pressure) rather than the population at large. A study population in equilibrium is a good, generalizable sample; one out of equilibrium has been pushed by some influence, so its results cannot be applied to everyone.",
- quote:"It's a very special kind of statistical analysis that we do in genetics, OK? And basically what it's saying is, when you see a population of people and you identify a genetic variation, is that genetic variation. Occurring because of evolutionary pressure or not, OK.",
+ quote:"It's a very special kind of statistical analysis that we do in genetics ... basically what it's saying is, when you see a population of people and you identify a genetic variation, is that genetic variation. Occurring because of evolutionary pressure or not",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘Frequencies in Pharmacogenomics’ (p. 21); transcript 10/20"},
 
 {id:"L17-050", lecture:"L17", prof:"Smith", tier:"new", topic:"L17", sub:"freq", skill:"apply",
@@ -672,7 +671,7 @@ QUESTIONS.push(
   {t:"It shows the drug was effective in the sample", correct:false, why:"Efficacy is a separate outcome."},
   {t:"It shows the alleles are in linkage disequilibrium", correct:false, why:"Linkage disequilibrium is about alleles at several loci occurring together more than chance; Hardy-Weinberg is about whether the sample's frequencies reflect the general population."}],
  teach:"Every pharmacogenomic study does the Hardy-Weinberg calculation. Papers report that the study population was in equilibrium to show that the sample was good and the results are generalizable. If the population is not in equilibrium, the results probably cannot be spread to the world, and the paper would probably not be published.",
- quote:"So when you see papers, you will be reading some papers about pharmacogenomic studies, you will always see the authors say, my study population was in Hardy-Winberg equilibrium. I pulled a great sample, it's generalizable. ... but if you don't have equilibrium, then you probably can't spread your results out to the world.",
+ quote:"when you see papers ... you will always see the authors say, my study population was in Hardy-Winberg equilibrium. I pulled a great sample, it's generalizable. ... but if you don't have equilibrium, then you probably can't spread your results out to the world.",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘Frequencies in Pharmacogenomics’ (p. 21); transcript 10/20"},
 
 /* ---------------- Objectives and exam scope ---------------- */
@@ -685,7 +684,7 @@ QUESTIONS.push(
   {t:"Allele and haplotype", correct:false, why:"Those were examples of terms not written out, not the limit."},
   {t:"Terms from the assigned readings", correct:false, why:"The slides and her words set the terms."}],
  teach:"The objectives slide lists few objectives, but each can hold a lot of detail. Under pharmacogenomics terminology the objective is to define the terminology she talks about: every slide with a term on it is fair game, without each term being written out as its own objective.",
- quote:"So, for example, under pharmacogenomics terminology, I say define the terminology that I talk about. Every slide with a term on it, you need to know those terms, OK? There's no sense in me writing out define allele, define haplotype, OK?",
+ quote:"under pharmacogenomics terminology, I say define the terminology that I talk about. Every slide with a term on it, you need to know those terms ... There's no sense in me writing out define allele, define haplotype",
  note:"Low yield: the item asks about the course's objectives slide, not pharmacogenomics content; the terms themselves are tested in the definition items.",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘Outline and Objectives’ (p. 2); transcript 10/20"},
 
@@ -698,8 +697,7 @@ QUESTIONS.push(
   {t:"Pharmacogenomics through the 10/21 nomenclature", correct:false, why:"Nomenclature starts 10/21 and was not part of the choice."},
   {t:"Toxicology without the poisoning treatment table", correct:false, why:"The poisoning table is included either way."}],
  teach:"She offered two choices: the exam covers only toxicology, or it covers everything through what was done on 10/20. The poisoning table is on the exam either way. The class voted for the second, which is how the syllabus has it; polymorphism nomenclature starts 10/21 and is outside Friday's exam.",
- quote:"You have the choice of your exam covers only toxicology, or your exam covers everything through what we got done today. ... Who wants to have your exam cover this stuff that we covered in pharmacogenomics today? All right, that's what I do. That's what we'll do. That's how we have it on the syllabus.",
- note:"Low yield: an exam-logistics fact (the class vote), not course content. She had argued for including the material: \"we haven't gone through too much totally new stuff in today's lecture ... When we start tomorrow on polymorphism nomenclature, that's when it gets a little crazy.\" The material taught on 10/20 runs through the ‘Frequencies in Pharmacogenomics’ slide (PDF p. 21).",
+ note:"Low yield: an exam-logistics fact (the class vote), not course content. The material taught on 10/20 runs through the ‘Frequencies in Pharmacogenomics’ slide (PDF p. 21).",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘Outline and Objectives’ (p. 2); transcript 10/20"},
 
 /* ---------------- Polymorphism nomenclature (not reached on 10/20) ---------------- */
@@ -712,8 +710,7 @@ QUESTIONS.push(
   {t:"Amino acid number; original amino acid; new amino acid", correct:false, why:"C and T are nucleotides, not amino acids."},
   {t:"Star allele number; mother's base; father's base", correct:false, why:"Star alleles are written with an asterisk (CYP2C19*2); the letters are original and changed nucleotides."}],
  teach:"In SNP nomenclature the first letters and numbers identify the gene (VKORC1, ABCB1), the number after the gene gives the location of the nucleotide (1173, 3435), the first letter is the original or wild type nucleotide, and the letter after the > is the nucleotide that changed to make the SNP.",
- quote:"When we start tomorrow on polymorphism nomenclature, that's when it gets a little crazy.",
- note:"Low yield: the nomenclature slides (PDF pp. 22–29) were not reached on 10/20; she said polymorphism nomenclature starts 10/21, and by the class vote Friday's exam covers only what was done on 10/20. Slide content only; replace with her words once taught.",
+ note:"Low yield: the nomenclature slides (PDF pp. 22–29) were not reached on 10/20; she said polymorphism nomenclature starts 10/21, and by the class vote Friday's exam covers only what was done on 10/20. Slide content only.",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘SNP Nomenclature’ (p. 24); not reached on 10/20 (transcript 10/20)"},
 
 {id:"L17-055", lecture:"L17", prof:"Smith", tier:"new", topic:"L17", sub:"nomen", skill:"recall", lowYield:true,
@@ -738,7 +735,7 @@ QUESTIONS.push(
   {t:"CYP2C19*2: absent; CYP2C9*2: absent", correct:false, why:"CYP2C9*2 is decreased, not absent."},
   {t:"CYP2C19*2: decreased; CYP2C9*2: decreased", correct:false, why:"CYP2C19*2 has no activity."}],
  teach:"For CYP2C19, *1 is normal (wild type) activity and *2 and *3 have no activity. For CYP2C9, *1 is normal and *2 and *3 have decreased activity. Key point: allele nomenclature can look exactly the same but have different functional effects depending on the specific protein.",
- quote:"Well, I will tell you that the STC 192 variant has No activity.",
+ quote:"the STC 192 variant has No activity.",
  note:"Low yield: slide p. 26 was not reached on 10/20; only the CYP2C19*2 half (no activity) was spoken, on the genotype slide. Outside Friday's exam by the class vote.",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘More Allele “Star” Nomenclature’ (p. 26); not reached on 10/20 (transcript 10/20)"},
 
@@ -752,7 +749,6 @@ QUESTIONS.push(
   {l:"CYP2C19*1/*2", r:"Reduced activity", why:"One working and one non-working allele; *1/*3 is the same."},
   {l:"CYP2C19*2/*3", r:"No activity", why:"Two non-working alleles; so are *2/*2 and *3/*3."}],
  teach:"Genotype nomenclature writes both alleles. For CYP2C19: *1/*1 is normal (wild type) activity; *1/*2 or *1/*3 is reduced activity; *2/*2, *2/*3 and *3/*3 have no enzyme activity.",
- quote:"When we start tomorrow on polymorphism nomenclature, that's when it gets a little crazy.",
  note:"Low yield: the ‘Genotype Nomenclature’ slide (p. 28) was not reached on 10/20. The *2/*2 row (no activity) was taught on the genotype slide (L17-038). Outside Friday's exam by the class vote.",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘Genotype Nomenclature’ (p. 28); not reached on 10/20 (transcript 10/20)"},
 
@@ -769,8 +765,7 @@ QUESTIONS.push(
   {l:"Premature stop codon polymorphism", r:"A stop codon ends the polypeptide chain early", why:"Item 7."},
   {l:"Copy number variant", r:"Whole genes or segments over 1 kb are duplicated, deleted or rearranged", why:"Item 8."}],
  teach:"The slide lists eight types: single nucleotide polymorphism; insertion-deletion polymorphism; tandem repeats; frameshift mutation (an insertion or deletion whose length is not a multiple of 3); defective splicing; aberrant splice site; premature stop codon; and copy number variants (genes or segments over 1 kb duplicated, deleted or rearranged).",
- quote:"We might not get through the different types of polymorphisms today, but that's OK.",
- note:"Low yield: the types-of-variants slides (PDF pp. 30–41) were not reached on 10/20, as she predicted at the start. Outside Friday's exam by the class vote.",
+ note:"Low yield: the types-of-variants slides (PDF pp. 30–41) were not reached on 10/20. Outside Friday's exam by the class vote.",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘List of genetic variant types’ (p. 31); not reached on 10/20 (transcript 10/20)"},
 
 {id:"L17-059", lecture:"L17", prof:"Smith", tier:"new", topic:"L17", sub:"types", skill:"apply", lowYield:true,
@@ -782,7 +777,6 @@ QUESTIONS.push(
   {t:"Increased enzyme activity", correct:false, why:"Increased activity comes from extra gene copies, such as CYP2D6*2XN."},
   {t:"Decreased enzyme activity", correct:false, why:"Decreased activity is CYP2C9*2 and *3; CYP2C19*3 has none."}],
  teach:"A premature stop codon SNP changes a codon so that it no longer codes for an amino acid but ends the chain. In CYP2C19*3 a G>A change turns the tryptophan codon into a stop; protein synthesis terminates and the enzyme has no activity. Affected drugs on the slide are proton pump inhibitors such as omeprazole and lansoprazole.",
- quote:"We might not get through the different types of polymorphisms today, but that's OK.",
  note:"Low yield: slide p. 36 was not reached on 10/20. Outside Friday's exam by the class vote.",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘Premature Stop Codon SNP: CYP2C19’ (p. 36); not reached on 10/20 (transcript 10/20)"},
 
@@ -795,7 +789,7 @@ QUESTIONS.push(
   {t:"*5: poor metabolizer; *2XN: poor metabolizer", correct:false, why:"Extra copies increase activity."},
   {t:"*5: ultrarapid metabolizer; *2XN: ultrarapid metabolizer", correct:false, why:"A deleted gene has no activity."}],
  teach:"CYP2D6*5 is a gene deletion: thousands of base pairs making up the CYP2D6 gene are deleted, giving loss of function and a poor metabolizer (PM) phenotype. CYP2D6*2XN has extra copies of the gene (N = 2, 3, 4, 5 or 13), giving an ultrarapid metabolizer (UM) phenotype. The slides list SSRIs, tamoxifen, codeine and beta blockers as affected drugs for both.",
- quote:"We could have an entire gene deleted out of a person, OK? We do have that happen",
+ quote:"We could have an entire gene deleted out of a person ... We do have that happen",
  note:"Low yield: slides pp. 39–40 were not reached on 10/20; she mentioned whole-gene deletion and extra copies only as kinds of polymorphism (L17-033). Outside Friday's exam by the class vote.",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slides ‘Gene Deletion CYP2D6’ (p. 39), ‘Copy Number Variant CYP2D6’ (p. 40); not reached on 10/20 (transcript 10/20)"}
 );

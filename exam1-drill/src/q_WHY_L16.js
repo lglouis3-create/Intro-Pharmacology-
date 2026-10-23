@@ -7,12 +7,12 @@ QUESTIONS.push(
  concept:"why-mdac-enterohepatic", tags:["smith","why"], source:"both",
  stem:"Why is multiple-dose activated charcoal tried for a poison that undergoes enterohepatic recirculation?",
  options:[
-  {t:"The poison returns to the gut in bile, where a later dose binds it", correct:true, why:"Her answer, after Anna's: the next dose, and maybe a third, is given while the poison is coming back into the small intestine with the bile, so the charcoal grabs a little more and it is fecally eliminated."},
+  {t:"The poison returns to the gut in bile, where a later dose binds it", correct:true, why:"The next dose, and maybe a third, is given while the poison is coming back into the small intestine with the bile, so the charcoal grabs a little more and it is fecally eliminated."},
   {t:"The first dose saturates, so later doses bind the rest", correct:false, why:"Treats the problem as charcoal capacity; the doses are about timing, meeting poison that comes back into the small intestine with the bile after the first dose has moved on."},
   {t:"Repeated doses bind the poison in the blood and carry it to the kidney", correct:false, why:"Charcoal works in the gut, and the poison it grabs is fecally eliminated, not renally."},
   {t:"Repeated doses speed the poison through the gut, like bowel irrigation", correct:false, why:"Pushing contents through the gut is whole bowel irrigation, not charcoal."}],
  teach:"Some compounds are absorbed from the gut, go to the liver, are secreted into the bile and so return to the small intestine (enterohepatic recirculation). If such a compound is grabbed by charcoal, giving a second and third dose while it is back in the small intestine lets the charcoal capture more of it. The charcoal-bound poison then leaves in the feces. The slide adds that multiple-dose charcoal can be used, when appropriate, once a toxin has been absorbed.",
- quote:"If they're a compound that will do that recirculation and is grabbed by charcoal, you can go ahead and try the multiple dose activated charcoal because you try to give the next dose, and maybe a third dose while the medication is, or the poison is being re-injected back into the small intestine. Hopefully, you can grab a little more, right?",
+ quote:"If they're a compound that will do that recirculation and is grabbed by charcoal, you can go ahead and try the multiple dose activated charcoal because you try to give the next dose, and maybe a third dose while the medication is, or the poison is being re-injected back into the small intestine. Hopefully, you can grab a little more",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Toxicokinetic-Based Treatment Prevent Absorption’ (multiple-dose activated charcoal); transcript 10/19"},
 
 {id:"L16-102", lecture:"L16", prof:"Smith", tier:"new", topic:"L16", sub:"absorbrev", skill:"apply",
@@ -24,7 +24,7 @@ QUESTIONS.push(
   {t:"Their outcome data are better than the data for charcoal", correct:false, why:"The outcome data favor charcoal."},
   {t:"They are needed first to empty the stomach for charcoal", correct:false, why:"Each is a separate way to prevent absorption, not a step before charcoal."}],
  teach:"Every absorption-prevention method carries risk (aspiration is the biggest risk of emesis), and case outcome data favor charcoal. But charcoal does not grab everything a person can ingest, and it only works while the poison is still in the stomach and small intestine. In a severe overdose where the patient probably cannot otherwise be saved, the chance that a riskier method removes more poison is worth its risk, so the team tries it; the decision rests on severity, not on better evidence.",
- quote:"Will they try that? Yeah, why not? If, if somebody has really overdosed on something, and you probably can't save them, then, you know, the risks might outweigh the benefit for using some of these other options to prevent absorption.",
+ quote:"Will they try that? Yeah, why not? ... If somebody has really overdosed on something, and you probably can't save them, then ... the risks might outweigh the benefit for using some of these other options to prevent absorption.",
  note:"Her words say \"the risks might outweigh the benefit\"; her answer to the question (\"Yeah, why not?\") is that the team will try them in a severe case. Keyed on the answer she gave: in a severe case the riskier methods are worth trying.",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Toxicokinetic-Based Treatment Prevent Absorption’ (review); transcript 10/19"},
 
@@ -49,7 +49,7 @@ QUESTIONS.push(
   {t:"It eases alcohol withdrawal, but then it blocks alcohol dehydrogenase", correct:false, why:"Blocking alcohol dehydrogenase is what ethanol and fomepizole do as antidotes; methanol is a substrate of the enzyme."},
   {t:"It acts like ethanol but its metabolites crystallize in the kidneys", correct:false, why:"The first half is right, but crystals in the kidney are ethylene glycol's; methanol's metabolite damages the retina."}],
  teach:"Ethylene glycol exposures are mostly accidental; methanol exposures are mostly in people with an alcohol use disorder who cannot get ethanol. Methanol gives them an alcohol effect, but alcohol dehydrogenase and formaldehyde dehydrogenase turn it into formic acid. Formic acid damages the retina, and sight is lost.",
- quote:"the methanol exposure, most of the time, those are people that have an alcohol substance use disorder. They're alcoholics, and maybe they can't get ethanol, and they'll sometimes use methanol, OK? And so they're, they'll be exposed to an alcohol, they get the same kind of, uh, Uh, effect that ethanol would give them, except for they're metabolizing it to a nasty compound that can cause blindness.",
+ quote:"the methanol exposure, most of the time, those are people that have an alcohol substance use disorder. They're alcoholics, and maybe they can't get ethanol, and they'll sometimes use methanol ... they'll be exposed to an alcohol, they get the same kind of ... effect that ethanol would give them, except for they're metabolizing it to a nasty compound that can cause blindness.",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Toxicokinetic-Based Treatment: methanol and ethylene glycol examples’; transcript 10/19"},
 
 {id:"L16-105", lecture:"L16", prof:"Smith", tier:"new", topic:"L16", sub:"bioact", skill:"apply",
@@ -61,7 +61,7 @@ QUESTIONS.push(
   {t:"Formic acid still forms, but fomepizole binds it in the blood", correct:false, why:"Binding a toxin in the blood is inactivation; fomepizole acts on the enzyme."},
   {t:"Formic acid still forms, but it is ion-trapped in the urine", correct:false, why:"Ion trapping with sodium bicarbonate is a different kinetic treatment."}],
  teach:"Methanol goes to formaldehyde by alcohol dehydrogenase and then to formic acid by formaldehyde dehydrogenase. Formic acid is the toxic product, and it damages the retina. Ethanol (by outcompeting) or fomepizole (by binding and inhibiting) blocks alcohol dehydrogenase, so the toxic metabolites are not made; this is the kinetic approach of inhibiting bioactivation.",
- quote:"Same thing with fomeprazole. It'll, it'll bind to and inhibit the alcohol dehydrogenase and prevent the metabolism of methanol or ethylene glycol. So that's the way we block. The metabolism and bioactivation of these two compounds to nasty metabolites.",
+ quote:"Same thing with fomeprazole. It'll ... bind to and inhibit the alcohol dehydrogenase and prevent the metabolism of methanol or ethylene glycol. So that's the way we block. The metabolism and bioactivation of these two compounds to nasty metabolites.",
  note:"The transcript renders fomepizole as \"omeprazole\" and \"fomeprazole\"; the slide has fomepizole.",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Toxicokinetic-Based Treatment: methanol and ethylene glycol examples’; transcript 10/19"},
 
@@ -74,7 +74,7 @@ QUESTIONS.push(
   {t:"Blood levels are unavailable for the common overdoses", correct:false, why:"Emergency rooms commonly check the blood for acetaminophen, salicylates, iron, beta blockers, calcium channel blockers and opiates."},
   {t:"A blood draw names the poison before symptoms appear", correct:false, why:"The first guess is made from the symptoms; a blood draw confirms a compound that was suspected and that the lab can test for."}],
  teach:"The first guess comes from the symptoms, often a toxidrome, the group of symptoms that suggests a particular compound. A blood draw then confirms it if the hospital laboratory can test for the compound suspected. When the patient will not say what they took, is unconscious, or the lab cannot test for it, the identity stays a guess, which is what makes poisonings hard to treat.",
- quote:"Which, which, which is what makes treating toxicology, uh, you know, poisoning so hard is people that intend to hurt themselves, they don't, they don't tell you often what they've ingested, right? Other times people are unconscious and they can't tell you, OK?",
+ quote:"what makes treating toxicology ... poisoning so hard is people that intend to hurt themselves ... they don't tell you often what they've ingested ... Other times people are unconscious and they can't tell you",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Toxidromes’; transcript 10/19"},
 
 {id:"L16-107", lecture:"L16", prof:"Smith", tier:"new", topic:"L16", sub:"metab", skill:"apply",
@@ -86,7 +86,7 @@ QUESTIONS.push(
   {t:"The poison is still in the stomach and small intestine", correct:false, why:"That is the condition for charcoal."},
   {t:"The enzyme can be induced within a few hours", correct:false, why:"Induction takes days, so it is not used; cofactors are given instead."}],
  teach:"Enhancing metabolism (detoxification) aims to get the body to clear a poison faster. It only helps if the metabolism does not make another toxic metabolite; methanol and ethylene glycol are the opposite case, where metabolism is blocked instead. Since enzymes cannot be induced fast enough, the speed-up comes from giving cofactors, as with cyanide and acetaminophen.",
- quote:"Maybe you can get it to be metabolized faster and cleared from the body. If that metabolism doesn't create another toxic metabolite, right?",
+ quote:"Maybe you can get it to be metabolized faster and cleared from the body. If that metabolism doesn't create another toxic metabolite",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Toxicokinetic-Based Treatment Enhance Metabolism’; transcript 10/19"},
 
 {id:"L16-108", lecture:"L16", prof:"Smith", tier:"new", topic:"L16", sub:"metab", skill:"apply",
@@ -99,7 +99,6 @@ QUESTIONS.push(
   {t:"Methemoglobin releases its cyanide into the urine", correct:false, why:"The cyanide leaves in the urine only after rhodanese moves it onto sulfur from thiosulfate."}],
  teach:"Amyl nitrite oxidizes hemoglobin to methemoglobin, and methemoglobin pulls cyanide off cytochrome c oxidase, so the cell can make ATP again. The cyanide is now on methemoglobin, which is less damaging but still in the body. Rhodanese, the body's own enzyme, then moves it onto sulfur from thiosulfate (given as sodium thiosulfate), and the product is renally eliminated.",
  quote:"Have we finished the process of saving them? Not really. We still have cyanide in their body. It is bound to methemoglobin, which isn't quite so damaging as being bound to cytochrome C oxidase, but you really want to get the cyanide out of their system entirely.",
- note:"The cyanide figure is from Golan's textbook and did not survive the deck text export.",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Toxicokinetic-Based Treatment Cyanide example’ (Golan figure); transcript 10/19"},
 
 {id:"L16-109", lecture:"L16", prof:"Smith", tier:"new", topic:"L16", sub:"metab", skill:"apply", core:true, coreWhy:"her Quiz 3 Q3 option \"cofactor for rhodanese activity\"; the rhodanese step",
@@ -123,7 +122,7 @@ QUESTIONS.push(
   {t:"Cytochrome c oxidase still blocked by cyanide", correct:false, why:"Methemoglobin already pulled the cyanide off the enzyme."},
   {t:"Free cyanide released from the thiosulfate", correct:false, why:"The thiosulfate-cyanide product does not fall apart; it leaves the body in the urine."}],
  teach:"The treatment deliberately made methemoglobin, which does not carry oxygen. Once the cyanide is cleared, the patient still has high methemoglobin. Methylene blue, a reducing agent, converts methemoglobin back to hemoglobin so the blood can carry oxygen again.",
- quote:"What problem can you still see in this patient? Uh, right here. Bless you, bless you. They still have high levels of methemoglobin, right? And that's not good either. Your blood can't carry oxygen if the hemoglobin in red blood cells is in the form of methemoglobin.",
+ quote:"What problem can you still see in this patient? ... They still have high levels of methemoglobin ... And that's not good either. Your blood can't carry oxygen if the hemoglobin in red blood cells is in the form of methemoglobin.",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Toxicokinetic-Based Treatment Cyanide example’ (Golan figure); transcript 10/19"},
 
 {id:"L16-111", lecture:"L16", prof:"Smith", tier:"new", topic:"L16", sub:"metab", skill:"apply",
@@ -131,11 +130,11 @@ QUESTIONS.push(
  stem:"The body makes glutathione all the time. Why does giving N-acetylcysteine (NAC) still speed the clearance of NAPQI, the toxic metabolite of acetaminophen?",
  options:[
   {t:"It supplies ingredients to make more glutathione", correct:true, why:"Her answer: NAC provides some of the ingredients needed to create more glutathione, which conjugates NAPQI with the GST enzymes; NAC acts as a cofactor."},
-  {t:"It neutralizes the NAPQI free radical directly", correct:false, why:"A student's answer she rejected: \"No, it's not neutralizing free radicals. Good, good point though\"."},
+  {t:"It neutralizes the NAPQI free radical directly", correct:false, why:"She rejected this: \"No, it's not neutralizing free radicals.\" NAC provides ingredients to make more glutathione."},
   {t:"It blocks the enzyme that turns acetaminophen into NAPQI", correct:false, why:"Blocking bioactivation is the methanol and ethylene glycol approach, not the acetaminophen one."},
   {t:"It induces the glutathione S-transferases quickly", correct:false, why:"Enzyme induction takes days, so it is not used in a poisoning."}],
  teach:"Acetaminophen is metabolized to NAPQI, the free radical that damages the liver. Glutathione, with the GST enzymes, conjugates NAPQI. The body makes glutathione constantly, but giving NAC provides ingredients to make more of it, so NAC works like a cofactor that enhances the metabolism and eventual elimination of NAPQI.",
- quote:"No, it's not neutralizing free radicals. Good, good point though ... But one of the things we can do in this situation is give NA andactylcysteine, cause NA provides some of the ingredients needed to create more glutathione.",
+ quote:"it's not neutralizing free radicals. ... one of the things we can do in this situation is give NA andactylcysteine, cause NA provides some of the ingredients needed to create more glutathione.",
  note:"The transcript renders NAPQI as \"NAQI\" and N-acetylcysteine as \"anastylcysteine\" and \"NA andactylcysteine\".",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Toxicokinetic-Based Treatment Acetaminophen Example’; transcript 10/19"},
 
@@ -172,7 +171,7 @@ QUESTIONS.push(
   {t:"The poison would be bioactivated to a toxic metabolite", correct:false, why:"Mixes in bioactivation (methanol, ethylene glycol); an inactivator acts by binding, and the problem here is the uncovered part of the poison."},
   {t:"The complex would bind calcium instead of the poison", correct:false, why:"Binding calcium is the chelator selectivity concern, a separate point."}],
  teach:"An inactivator works by binding the toxin so the toxin cannot interact with its target. If it covers only part of the molecule, the free part may still act on the target. That is why she changed the slide's last bullet from \"low\" to \"no\" toxicity for the toxin-inactivator complex.",
- quote:"Uh, an attempted inactivator, let's say that only binds a little bit, this part of the poison may be active still, and it's finding the target. So that inactivator has to grab it in such a way that poison can't be touching the target",
+ quote:"an attempted inactivator, let's say that only binds a little bit, this part of the poison may be active still, and it's finding the target. So that inactivator has to grab it in such a way that poison can't be touching the target",
  note:"The slide says the complex must have low toxicity; she said to change that to no toxicity. Keyed on her words.",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Inactivation of Poisons’; transcript 10/19"},
 
@@ -185,7 +184,7 @@ QUESTIONS.push(
   {t:"Calcium would compete the metal off the chelator", correct:false, why:"Turns the concern around: the worry is the chelator taking the body's calcium, not calcium displacing the toxic metal."},
   {t:"Calcium binding makes the chelator multidentate", correct:false, why:"Multidentate describes one chelator binding one metal atom at several points."}],
  teach:"A chelator must bind the toxic metal more strongly than the body's own macromolecules do. If it also bound positive ions the body needs, such as calcium, or the magnesium in some enzymes, it would strip them away. So the ideal chelator has low binding affinity for endogenous ions like calcium.",
- quote:"the ideal chelator, like I just said, has low binding affinities for other endogenous ions like calcium. You don't want it to bind up the things you need.",
+ quote:"the ideal chelator ... has low binding affinities for other endogenous ions like calcium. You don't want it to bind up the things you need.",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Inactivation of Poisons: Heavy Metal Chelators’; transcript 10/19"},
 
 {id:"L16-116", lecture:"L16", prof:"Smith", tier:"new", topic:"L16", sub:"antibody", skill:"apply",
@@ -197,7 +196,7 @@ QUESTIONS.push(
   {t:"It is made from antibodies in the patient's own blood", correct:false, why:"Polyclonal antivenom is collected from an inoculated animal."},
   {t:"The patient is first tested for serum sickness", correct:false, why:"Serum sickness is a reaction that can follow polyclonal antivenom; it is not a test that delays giving it."}],
  teach:"Antivenoms are expensive, so small rural hospitals do not stock them. A patient far from a large hospital has to wait for the antivenom to be brought in. Hospitals know which other hospitals hold antivenom and how much, and there have been shortages, such as coral snake antivenom in recent years.",
- quote:"Um, and these antivenoms are not stopped in every little small rural hospital. It's too expensive. So if somebody gets bit by a snake down in South Texas, and they're not close to a big hospital, you got to wait for, like, the hospitals here in San Antonio to get the venom to wherever the patient is.",
+ quote:"these antivenoms are not stopped in every little small rural hospital. It's too expensive. So if somebody gets bit by a snake down in South Texas, and they're not close to a big hospital, you got to wait for ... the hospitals here in San Antonio to get the venom to wherever the patient is.",
  note:"The transcript has \"not stopped\"; the sense is \"not stocked\".",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Inactivation of Poisons: Antivenoms and Antibodies’; transcript 10/19"},
 
@@ -222,7 +221,7 @@ QUESTIONS.push(
   {t:"A failing liver makes too much epoxide reductase; a higher warfarin dose", correct:false, why:"More warfarin would add to the over-anticoagulation."},
   {t:"A failing liver releases free iron into the blood; deferoxamine", correct:false, why:"Deferoxamine chelates iron; it does not treat bleeding."}],
  teach:"Coagulation factors are made by the liver, so patients with bad livers have disturbed coagulation profiles. Warfarin lowers active coagulation factors further by limiting active vitamin K. Bruising signals over-anticoagulation, and giving vitamin K bypasses the blocked step.",
- quote:"I used to do work in a, a liver transplantation clinic, and we'd have patients with really disturbed, uh, uh, coagulation profiles because their livers aren't good, and all this work of creating your coagulation factors is done by your liver.",
+ quote:"we'd have patients with really disturbed ... coagulation profiles because their livers aren't good, and all this work of creating your coagulation factors is done by your liver.",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Pharmacological Treatment: Treatment by-passes an inhibited pathway’; transcript 10/19"},
 
 {id:"L16-119", lecture:"L16", prof:"Smith", tier:"new", topic:"L16", sub:"guideline", skill:"apply", core:true, coreWhy:"her guideline key (immediate release: hospital within 6 hours; after 6 hours probably home)",
@@ -247,7 +246,7 @@ QUESTIONS.push(
   {t:"It traps ethylene glycol in the urine by raising pH", correct:false, why:"Ion trapping with sodium bicarbonate is the salicylate treatment."},
   {t:"It speeds metabolism of the crystals as a cofactor", correct:false, why:"Supplying a cofactor is enhancing metabolism (thiosulfate, NAC); ethanol and fomepizole inhibit the enzyme."}],
  teach:"Alcohol dehydrogenase converts ethylene glycol to glycoaldehyde, and further steps lead to oxalic acid. Oxalic acid can form small crystals in the microvasculature, blocking blood flow; renal toxicity is common. Ethanol or fomepizole inhibits alcohol dehydrogenase, so those active metabolites are not made.",
- quote:"When you have small microvascular, um, vascularization of these organs, sometimes the oxalic acid can form into little crystals and blocks blood flow and damages those organs.",
+ quote:"When you have small microvascular ... vascularization of these organs, sometimes the oxalic acid can form into little crystals and blocks blood flow and damages those organs.",
  cite:"PoisoningTreatmentTable2026KEY.pdf row ‘Toxic alcohols’; transcript 10/19"},
 
 {id:"TBL3-102", lecture:"TBL3", prof:"Smith", tier:"new", topic:"TBL3", sub:"cns", skill:"apply", core:true, coreWhy:"her table key row: flumazenil, competitive antagonist of the benzodiazepine receptor",
@@ -259,7 +258,7 @@ QUESTIONS.push(
   {t:"It binds the benzodiazepine in the blood", correct:false, why:"Binding the drug for renal elimination is the digoxin antibody fragments row."},
   {t:"It competes with the opioid at the opioid receptor", correct:false, why:"That is naloxone."}],
  teach:"In overdose the benzodiazepine agonizes the GABA-A (benzodiazepine) receptor, causing CNS depression with relatively normal vitals. Flumazenil is a competitive antagonist at that receptor, so it blocks the effect of the agonist. Her key's caution: it can cause withdrawal in a benzodiazepine-dependent patient.",
- quote:"So flonazanil is our treatment. It's antagonizing the G GABA receptors, because the benzos are an overdose and they agonize that receptor, OK?",
+ quote:"flonazanil is our treatment. It's antagonizing the ... GABA receptors, because the benzos are an overdose and they agonize that receptor",
  note:"On 10/19 she briefly said the roles backwards and then corrected herself; keyed on her correction and her key. The transcript renders flumazenil as \"flonazanil\".",
  cite:"PoisoningTreatmentTable2026KEY.pdf row ‘Benzodiazepines’; Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Pharmacological Treatment: Treatment is a receptor antagonist’; transcript 10/19"},
 
@@ -272,7 +271,7 @@ QUESTIONS.push(
   {t:"It speeds opioid metabolism to an inactive product", correct:false, why:"Naloxone is a receptor antagonist, not a metabolic cofactor."},
   {t:"It is an agonist at another opioid receptor", correct:false, why:"Naloxone is an antagonist."}],
  teach:"Opioid overdose causes somnolence, coma, slowed heart and breathing rates and small pupils. Naloxone is a competitive antagonist of opioid receptors, so it blocks the opioid's effect there. In a chronic opioid user that blockade can trigger withdrawal, the same concern her key lists for flumazenil in benzodiazepine dependence.",
- quote:"using naloxone to treat an opioid overdose, right? Naloxone is basically an antagonist of an opioid receptor",
+ quote:"using naloxone to treat an opioid overdose ... Naloxone is basically an antagonist of an opioid receptor",
  note:"Her key gives the mechanism (competitive opioid receptor antagonist) and \"can trigger withdrawal\" in separate cells; linking the withdrawal to that same receptor block is reasoning from those two entries, not her spoken words.",
  cite:"PoisoningTreatmentTable2026KEY.pdf row ‘Opioids’; transcript 10/19"},
 
@@ -353,7 +352,7 @@ QUESTIONS.push(
   {t:"It would crystallize in the kidney's small vessels", correct:false, why:"Crystals in small vessels belong to ethylene glycol's metabolites."},
   {t:"It would be filtered less at the glomerulus", correct:false, why:"It is filtered either way; the issue is reabsorption from the forming urine."}],
  teach:"Salicylates are mildly acidic; they are filtered into the urine but, uncharged at normal urine pH, they are reabsorbed and the poisoning continues. Her key lists IV sodium bicarbonate with the mechanism renal ion trapping to enhance elimination. Bicarbonate raises urine pH, the salicylate takes a negative charge, and the reabsorbing transporters do not take it back.",
- quote:"They're in the urine, and at normal urine pH, they are not charged, OK? But if we will try to make the urine more basic by giving the patient sodium bicarb by IV, the sodium bicarb goes into the urine and will charge that acid, and it can't be reabsorbed when it's charged.",
+ quote:"They're in the urine, and at normal urine pH, they are not charged ... But if we will try to make the urine more basic by giving the patient sodium bicarb by IV, the sodium bicarb goes into the urine and will charge that acid, and it can't be reabsorbed when it's charged.",
  cite:"PoisoningTreatmentTable2026KEY.pdf row ‘Salicylates’; Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Toxicokinetic-Based Treatment Enhance Renal Elimination’; transcript 10/19"},
 
 {id:"TBL3-111", lecture:"TBL3", prof:"Smith", tier:"new", topic:"TBL3", sub:"metabolic", skill:"apply", core:true, coreWhy:"her table key row: octreotide inhibits insulin release from the pancreas",

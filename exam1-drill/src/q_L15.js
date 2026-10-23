@@ -32,7 +32,7 @@ QUESTIONS.push(
   {t:"Arterioles that are highly sensitive to vasoconstrictors", correct:false, why:"That is the kidney's reason: constricting the afferent and efferent arterioles lowers renal blood flow and GFR."}],
  core:true, coreWhy:"her words: 'I just need you guys to get ... that the lungs are susceptible' and why",
  teach:"The lungs are exposed to everything breathed in, all the time. Three things make them susceptible: the oxidative burden (oxygen, oxygen-containing pollutant gases, and the reactive oxygen species released by white blood cells responding to irritants or pathogens), gas exposures (the chemistry of the gas sets how far down it travels), and particle exposures (size, shape and breathing pattern set where particles deposit, and clearance decides what stays).",
- quote:"then these ideas of oxidative burden, the fact that we're exposed to different kinds of gasses, their chemistry is important, and particles size, shape, and, um, uh, yeah, size, shape, and our breathing patterns really affect our particle, our particle deposition and where our lungs are exposed, OK.",
+ quote:"these ideas of oxidative burden, the fact that we're exposed to different kinds of gasses, their chemistry is important, and particles size, shape ... and our breathing patterns really affect ... our particle deposition and where our lungs are exposed",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Pulmonary Toxicity – Why are lungs susceptible?’; transcript 10/14"},
 
 {id:"L15-002", lecture:"L15", prof:"Smith", tier:"new", topic:"L15", sub:"pulm", skill:"apply",
@@ -44,7 +44,7 @@ QUESTIONS.push(
   {t:"Liver metabolites in the blood and the surfactant lining the alveoli", correct:false, why:"Blood carrying liver metabolites is the kidney's exposure; surfactant plays no part in the oxidative burden."},
   {t:"Low alveolar oxygen tension and the oxygen released from hemoglobin", correct:false, why:"The problem is reactive oxygen, not a shortage of it; hemoglobin picks oxygen up in the lung and is not the source of the burden."}],
  teach:"Oxidative burden means the lung is full of reactive oxygen. One source is what is inhaled: oxygen itself and pollutant gases with oxygen in the molecule (sulfur dioxide, nitrogen oxides), which become reactive as they are metabolized. The other is the lung's own defense: white blood cells drawn in by irritants or pathogens release reactive oxygen species as they work. Free electrons then damage the lipids and proteins of lung cells.",
- quote:"breathing in oxygen and other what we call reactive oxygen species exposes, thanks, exposes our lungs to just nasty reactive compounds. ... the activity of those white blood cells will also release reactive oxygen species. OK, so you have, therefore what we call a big oxidative burden.",
+ quote:"breathing in oxygen and other what we call reactive oxygen species ... exposes our lungs to just nasty reactive compounds ... the activity of those white blood cells will also release reactive oxygen species ... you have, therefore what we call a big oxidative burden.",
  note:"The transcript renders sulfur dioxide as \"s solar dioxide\" and says \"nitrous oxides\".",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Pulmonary Toxicity – Why are lungs susceptible?’; transcript 10/14"},
 
@@ -57,7 +57,7 @@ QUESTIONS.push(
   {t:"Its molecular weight", correct:false, why:"Molecular weight is not what sets a gas's path; its water solubility does."},
   {t:"Its temperature when inhaled", correct:false, why:"Temperature does not decide the depth a gas reaches; its water solubility does."}],
  teach:"A gas's chemistry, its water solubility, sets how far down the airway it travels: very hydrophilic gases go quite far down into the lungs, and hydrophobic gases do not. Because the depth reached is fixed by the chemistry, the site of damage in an injured lung points back to the kind of gas inhaled, which helps when no one knows the exposure.",
- quote:"the chemistry of the gas will determine where in the lungs that gas goes. OK? So, very hydrophilic gasses. Will actually go quite far down into the lungs and your hydrophobic gasses do not, OK, so the chemistry of the gas depends how far down it goes.",
+ quote:"the chemistry of the gas will determine where in the lungs that gas goes ... very hydrophilic gasses. Will actually go quite far down into the lungs and your hydrophobic gasses do not ... so the chemistry of the gas depends how far down it goes.",
  note:"Keyed on her words: hydrophilic gases travel farther down. The slide says only that water solubility of gases determines the site of deposition; see notes/L15.md for the direction question.",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Pulmonary Toxicity – Why are lungs susceptible?’; transcript 10/14"},
 
@@ -71,7 +71,7 @@ QUESTIONS.push(
   {t:"Large: they impact at the bifurcations and then reach the alveoli", correct:false, why:"Large particles stick where they impact, in the upper airways; they do not go on to the alveoli."}],
  core:true, coreWhy:"her Quiz 2 item 5: which particle size reaches the alveolar regions",
  teach:"Very small particles are breathed in and breathed back out without getting past the upper airway. Large particles come in fast and impact at the bifurcations of the upper airways. Medium particles are the concern: heavy enough not to be exhaled, small enough to go around the curves of the bronchioles, they reach the lower lung and fall out of the air during the still moment between inhaling and exhaling. Particles are also chemical exposures (dusts containing metals or organic compounds), so where they deposit is where the damage is.",
- quote:"The medium sized particles are the ones that are the most concerning. Um, they are heavy enough to get, to not be breathed out with every, every breath, um, and they are small enough that they can go around the curves in your bronchioles in your lung, and they get down into the lower parts of our lung",
+ quote:"The medium sized particles are the ones that are the most concerning ... they are heavy enough ... to not be breathed out with ... every breath ... and they are small enough that they can go around the curves in your bronchioles in your lung, and they get down into the lower parts of our lung",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Pulmonary Toxicity – Why are lungs susceptible?’; transcript 10/14"},
 
 {id:"L15-005", lecture:"L15", prof:"Smith", tier:"new", topic:"L15", sub:"pulm", skill:"apply",
@@ -83,7 +83,7 @@ QUESTIONS.push(
   {t:"Their medium particle size", correct:false, why:"Medium size explains deposition in the lower lung, not movement through the tissue to the outer lining; shape does that."},
   {t:"Their metal content", correct:false, why:"Chemical particles can carry metals, but shape, not metal content, explains how asbestos reaches the lining."}],
  teach:"Shape matters as well as size. Long, thin particles embed in the upper airways at the bifurcations, and some, like asbestos fibers, which are sharp, move through the lung tissue and cause mesothelioma on the outer lining of the lung.",
- quote:"Those long thin particles will be also the ones that will be embedded into those upper airways as the lungs bifurcate, and some of those particles can move through tissues. I'm sure you guys have heard of mesothelioma with asbestos exposure.",
+ quote:"Those long thin particles will be also the ones that will be embedded into those upper airways as the lungs bifurcate, and some of those particles can move through tissues ... mesothelioma with asbestos exposure.",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Pulmonary Toxicity – Why are lungs susceptible?’; transcript 10/14"},
 
 {id:"L15-006", lecture:"L15", prof:"Smith", tier:"new", topic:"L15", sub:"pulm", skill:"apply",
@@ -95,7 +95,7 @@ QUESTIONS.push(
   {t:"Faster airflow carries large particles past the bifurcations", correct:false, why:"Large particles impact at the bifurcations of the upper airways because they come in fast; speed does not carry them past."},
   {t:"Exercise raises the oxidative burden from the white blood cells", correct:false, why:"Oxidative burden is a reason every lung is susceptible; the reason she gave for the park was the heavier breathing pattern beside the exhaust."}],
  teach:"Breathing patterns change how much of an exposure reaches the lung. A walker breathes lightly; a jogger breathes heavily, so running beside traffic means inhaling a great deal of exhaust. Her advice is to run where the air is cleaner.",
- quote:"If you are, um, walking, you're not going to breathe as heavily as you will if you're jogging. So I always like to suggest to people, um, jog in a place where there's not a lot of air pollution, so go jog in a park rather than beside a road.",
+ quote:"If you are ... walking, you're not going to breathe as heavily as you will if you're jogging ... jog in a place where there's not a lot of air pollution, so go jog in a park rather than beside a road.",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Pulmonary Toxicity – Why are lungs susceptible?’; transcript 10/14"},
 
 {id:"L15-007", lecture:"L15", prof:"Smith", tier:"new", topic:"L15", sub:"pulm", skill:"tell", multi:true,
@@ -110,7 +110,6 @@ QUESTIONS.push(
  core:true, coreWhy:"her words: acute vs chronic pulmonary responses, stated twice on request",
  teach:"Pulmonary toxicity is sorted into acute and chronic responses. Acute: airway reactivity (bronchoconstriction, decreased airway diameter, wheezing, coughing, chest tightness, dyspnea) and pulmonary edema (an acute exudative phase that thickens the alveolar-capillary barrier; abnormalities may persist). Chronic: fibrosis (more collagen, less plasticity), emphysema (lungs larger and too plastic, hyperinflation, reduced gas exchange from tissue loss and air trapping) and asthma.",
  quote:"airway reactivity, pulmonary edema are acute, and then fibrosis, emphysema and asthma are considered chronic results of exposures.",
- note:"A student asked her to repeat the classification; this is her second statement of it.",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Types of Pulmonary Toxicity’; transcript 10/14"},
 
 {id:"L15-008", lecture:"L15", prof:"Smith", tier:"new", topic:"L15", sub:"pulm", skill:"apply",
@@ -122,7 +121,7 @@ QUESTIONS.push(
   {t:"Intravenous drugs reach the lung first and act as airborne toxins", correct:false, why:"They are systemic exposures; the point is that the lung can be the target of something that never entered by inhalation."},
   {t:"Fibrosis is an acute response that follows a single dose", correct:false, why:"Fibrosis is a chronic response; airway reactivity and pulmonary edema are the acute ones."}],
  teach:"It is correct to think of pulmonary toxicity mostly as a response to inhaled gases and particles (airborne pulmonary toxins: particulates, oxygen). But pharmacists must know the systemic pulmonary toxins too: bleomycin and cyclophosphamide, chemotherapy drugs given by IV, cause pulmonary fibrosis, and the herbicides monocrotaline and paraquat, which some people have used to harm themselves, do the same.",
- quote:"bleomycin. And cyclophosphamide, these are chemotherapy medications. We give them by IV, but they're known to cause pulmonary toxicity. ... Remember, they're given by IV. They're a systemic exposure. They cause pulmonary fibrosis, which is a form of pulmonary toxicity, OK?",
+ quote:"bleomycin. And cyclophosphamide, these are chemotherapy medications. We give them by IV, but they're known to cause pulmonary toxicity. ... Remember, they're given by IV. They're a systemic exposure. They cause pulmonary fibrosis, which is a form of pulmonary toxicity",
  note:"The transcript renders monocrotaline as \"monochrotylin\".",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Types of Pulmonary Toxicity’; transcript 10/14"},
 
@@ -136,7 +135,7 @@ QUESTIONS.push(
   {t:"Pulmonary edema from bleomycin spreads to other organs", correct:false, why:"The response to bleomycin is fibrosis; pulmonary edema is an acute pulmonary response."}],
  core:true, coreWhy:"her Quiz 2 item 2: fibrosis is the non-organ-specific endpoint",
  teach:"Toxic endpoints are sorted by how the damage happens, not only by where. Fibrosis is the same process wherever it occurs: excessive deposition of collagen and extracellular matrix protein, with loss of organ function as tissue is destroyed. That one pathology appears in the lung (bleomycin, amiodarone, paraquat) and in the liver as cirrhosis (alcohol), so fibrosis counts as non-organ-specific even though bleomycin's fibrosis is also a form of pulmonary toxicity.",
- quote:"because of the mechanism of how that damage occurs, it's considered a non-organ specific. So I'm making it a little confusing for you right here. Fibrosis, yeah, both of these compounds cause fibrosis.",
+ quote:"because of the mechanism of how that damage occurs, it's considered a non-organ specific ... Fibrosis ... both of these compounds cause fibrosis.",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Types of Pulmonary Toxicity’; transcript 10/14"},
 
 {id:"L15-010", lecture:"L15", prof:"Smith", tier:"new", topic:"L15", sub:"pulm", skill:"apply",
@@ -148,7 +147,7 @@ QUESTIONS.push(
   {t:"Chronic emphysema from hyperinflation and air trapping", correct:false, why:"Emphysema is a chronic response; the halogen gas response is immediate and irritating."},
   {t:"A systemic response after absorption into the blood", correct:false, why:"The damage is at the site of contact in the airway."}],
  teach:"Fluorine and chlorine, halogens, are very irritating gases, and the water in the lungs makes them very caustic there. The injury happens at the site of first contact as the gas is breathed in (chlorine gas is the slide example of a local effect), so the result is an acute response rather than a chronic condition such as fibrosis or emphysema. Chlorine gas releases from accidents such as train derailments are real examples.",
- quote:"It would be definitely an acute response. It'll be very caustic to the lungs because of the water in our lungs. Yeah, fluorine gas, not a good thing to be exposed to. Yeah, like chlorine gas, any of those, um, halogen in the periodic table",
+ quote:"It would be definitely an acute response. It'll be very caustic to the lungs because of the water in our lungs ... fluorine gas, not a good thing to be exposed to ... like chlorine gas, any of those ... halogen in the periodic table",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Types of Pulmonary Toxicity’; transcript 10/14"},
 
 /* ---------------- Neurotoxicity ---------------- */
@@ -187,7 +186,7 @@ QUESTIONS.push(
   {t:"It keeps lipophilic drugs out of the adult brain", correct:false, why:"Lipophilic drugs cross at any age; the barrier keeps out larger and non-lipophilic compounds."},
   {t:"Its transporters pump drugs into the newborn brain", correct:false, why:"Transporters move compounds from the brain back to the blood; the issue is the immature barrier."}],
  teach:"Before this was understood, some drugs given to very young children crossed the developing blood–brain barrier and caused harm, while the same drugs were no problem in adults whose barrier was tight and complete. Pediatric dosing has to allow for an immature barrier.",
- quote:"We would give some drugs to a child, a very young child. It would cross the blood-brain barrier and cause harm, whereas that same medication was not an issue for adults where their blood-brain barrier was more, more, um, um, uh, uh, tight and contained.",
+ quote:"We would give some drugs to a child, a very young child. It would cross the blood-brain barrier and cause harm, whereas that same medication was not an issue for adults where their blood-brain barrier was more ... tight and contained.",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Neurotoxicity’; transcript 10/14"},
 
 {id:"L15-014", lecture:"L15", prof:"Smith", tier:"new", topic:"L15", sub:"neuro", skill:"recall", multi:true,
@@ -200,7 +199,7 @@ QUESTIONS.push(
   {t:"Dependence on neurotransmission to do its work", correct:true, why:"Release, binding and reuptake of neurotransmitters can each be disturbed."},
   {t:"Resident immune cells that release reactive oxygen species", correct:false, why:"That is a liver reason (Kupffer cells) and part of the lung's oxidative burden, not a nervous-system one."}],
  teach:"Each feature is a point a toxin can hit. Neurons have very high energy needs and depend on aerobic metabolism, so any exposure that cuts oxygen or energy causes nervous-system problems. Their long axons must transport nutrients and waste up and down, which adds to that energy demand. Myelin, found in no other organ, speeds conduction, but if a toxin damages the myelinating cells, conduction slows (tingling hands and feet). And the nervous system alone works by neurotransmission, so disturbing release, crossing of the cleft or reuptake produces symptoms.",
- quote:"So high energy requirements, those long axons need to have the ability to transport nutrients and waste up and down them. You've got the presence of the myelin sheath. It's usually protective and very helpful for us, but sometimes those Schwann cells can get damaged, and then neurotransmission is the way our nervous system works. If it gets disturbed, our nervous system isn't going to function, OK.",
+ quote:"So high energy requirements, those long axons need to have the ability to transport nutrients and waste up and down them. You've got the presence of the myelin sheath. It's usually protective and very helpful for us, but sometimes those Schwann cells can get damaged, and then neurotransmission is the way our nervous system works. If it gets disturbed, our nervous system isn't going to function",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slides ‘Susceptibility to Neurotoxicity – Energy and Axons’, ‘Susceptibility to Neurotoxicity - Myelin’, ‘Susceptibility to Neurotoxicity - Neurotransmission’; transcript 10/14"},
 
 {id:"L15-015", lecture:"L15", prof:"Smith", tier:"new", topic:"L15", sub:"neuro", skill:"apply",
@@ -213,7 +212,7 @@ QUESTIONS.push(
   {t:"Interruption of neurotransmission", correct:false, why:"That is the organophosphate pattern, not the metronidazole one."}],
  core:true, coreWhy:"her own example (metronidazole); 'Every example I give you is testable'",
  teach:"Myelin damage slows conduction along the nerve (in her words, 'your neurotransmission being slower'), and the classic symptom is tingling of the hands and feet. Her example is personal: a second, higher-dose course of metronidazole for Giardia produced tingling in just her hands and feet; the drug causes myelinopathy, and she stopped it. Remyelination can occur but takes a long time, so myelinopathy may not be the worst kind of neurotoxicity.",
- quote:"it was actually the medication that I was being given, that medication will cause myelinopathy, and so, without talking to my doctor, I took myself off that drug. ... But yeah, myelinopathy, my hands and feet were tingling, it was strange.",
+ quote:"that medication will cause myelinopathy ... myelinopathy, my hands and feet were tingling",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slides ‘Susceptibility to Neurotoxicity - Myelin’, ‘Types of Neurotoxicity’; transcript 10/14"},
 
 {id:"L15-016", lecture:"L15", prof:"Smith", tier:"new", topic:"L15", sub:"neuro", skill:"figure", type:"match",
@@ -228,7 +227,7 @@ QUESTIONS.push(
   {l:"Myelinopathy", r:"Myelin or the myelinating cells are damaged", why:"Neuron D: the myelinating cells (Schwann cells in the PNS) are hit; conduction slows; remyelination is slow, and less effective in the CNS than the PNS."},
   {l:"Neurotransmission toxicity", r:"Excitation is blocked or excessive; the cell looks normal", why:"Neuron E: the process of neurotransmission is interrupted rather than the cell killed."}],
  teach:"Casarett and Doull's figure of patterns of neurotoxic injury shows a normal neuron (A) and four discrete kinds of damage: neuronopathy, death of the entire neuron (B); axonopathy, degeneration of the axon with the cell body surviving (C); myelinopathy, disruption of myelin or injury to the myelinating cells (D); and interruption of neurotransmission, by blocking excitation or by excessive stimulation, without cell death (E). A given neurotoxin usually causes one of these, and they look different under the microscope.",
- quote:"What did that neurotoxin do to this nerve cell? Killed the whole thing, right? ... What kind of damage are we calling that? Yeah, axonopathy. ... how about Cell D? What kind of neurotoxicity is this? Myelinopathy, yeah ... The neuron in E undergoing, what kind of neurotoxicity is happening there? Yeah, the neurotransmission is being disturbed.",
+ quote:"What did that neurotoxin do to this nerve cell? Killed the whole thing ... What kind of damage are we calling that? ... axonopathy ... Cell D? What kind of neurotoxicity is this? Myelinopathy ... The neuron in E undergoing, what kind of neurotoxicity is happening there? ... the neurotransmission is being disturbed.",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Types of Neurotoxicity’ (Figure 16-2); transcript 10/14"},
 
 {id:"L15-017", lecture:"L15", prof:"Smith", tier:"new", topic:"L15", sub:"neuro", skill:"apply",
@@ -241,7 +240,7 @@ QUESTIONS.push(
   {t:"Injury to the cells that make the myelin sheath", correct:false, why:"That is myelinopathy (neuron D); metronidazole was her example."}],
  core:true, coreWhy:"her own example (organophosphates); her Quiz 2 item 6 options",
  teach:"Organophosphates do not kill the neuron, cut the axon or strip the myelin; they disturb signaling at the synapse. The treatment slides give the mechanism: organophosphates inhibit acetylcholinesterase, so acetylcholine builds up in the synaptic cleft and causes cholinergic excess. That is the neuron-E pattern, interruption of neurotransmission by excessive stimulation, in which the cell itself looks unchanged. Her other discrete-pattern example is metronidazole, which causes myelinopathy.",
- quote:"Can you think of any sort of compound you've learned about that perturbs neurotransmission? It's a neurotoxin. ... How about organophosphates, right? A common class of pesticides that we use, they will cause neurotransmission damage.",
+ quote:"Can you think of any sort of compound you've learned about that perturbs neurotransmission? It's a neurotoxin. ... organophosphates ... A common class of pesticides that we use, they will cause neurotransmission damage.",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slides ‘Susceptibility to Neurotoxicity - Neurotransmission’, ‘Types of Neurotoxicity’; transcript 10/14"},
 
 {id:"L15-018", lecture:"L15", prof:"Smith", tier:"new", topic:"L15", sub:"neuro", skill:"tell",
@@ -253,7 +252,7 @@ QUESTIONS.push(
   {t:"Axonopathy", correct:false, why:"The degenerated axon and chromatolysis are visible."},
   {t:"Myelinopathy", correct:false, why:"The damaged sheath is visible."}],
  teach:"Most of the time a neurotoxin causes one discrete kind of injury; it is very rare for one compound to blast the myelin, disturb neurotransmission and kill the axon all at once. Neuronopathy, axonopathy and myelinopathy each look different under the microscope. Neurotransmission toxicity produces no change in the cell's appearance and is recognized by the lack of neurotransmission.",
- quote:"most of the time, a neurotoxin that you might be exposed to is gonna cause one of these discrete kinds of neurotoxicity. ... and then the neurotransmission. Really won't have any change to the look of the cell, but you'll definitely be able to figure that out because of the lack of, of neurotransmission going on.",
+ quote:"most of the time, a neurotoxin that you might be exposed to is gonna cause one of these discrete kinds of neurotoxicity. ... and then the neurotransmission. Really won't have any change to the look of the cell, but you'll definitely be able to figure that out because of the lack ... of neurotransmission going on.",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Types of Neurotoxicity’; transcript 10/14"},
 
 /* ---------------- Hepatotoxicity: why susceptible; kinds of injury ---------------- */
@@ -266,7 +265,7 @@ QUESTIONS.push(
   {t:"Pericytes", correct:false, why:"Pericytes surround systemic capillaries."},
   {t:"Hepatocytes", correct:false, why:"Hepatocytes are the metabolizing liver cells, not immune cells."}],
  teach:"One reason the liver is susceptible is that it has its own inflammatory cells, the Kupffer cells, a kind of resident white blood cell waiting to be called up to clean up dead tissue or fight pathogens.",
- quote:"Does anybody know what the name of the white blood cells are that hang out in the liver are called? ... The Cooperer cells, Cooper, K U P F E R, Coopfer cells. They're just kind, a kind of white blood cell that resides in the liver, waiting to be called up",
+ quote:"the white blood cells are that hang out in the liver ... K U P F E R, Coopfer cells ... a kind of white blood cell that resides in the liver, waiting to be called up",
  note:"The transcript renders Kupffer as \"Cooper\"/\"Coopfer\".",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Hepatotoxicity – Why is liver susceptible?’; transcript 10/14"},
 
@@ -280,7 +279,7 @@ QUESTIONS.push(
   {t:"They constrict the sinusoids and reduce the blood flow", correct:false, why:"Reduced blood flow from vasoconstriction is a kidney vulnerability; Kupffer cells add inflammation and reactive oxygen species."}],
  core:true, coreWhy:"her poll: the liver's own immune cells are a reason it is susceptible",
  teach:"Kupffer cells are there to help, especially against pathogens. But when liver tissue is being damaged by an exposure, their job of chewing up dead or dying cells releases inflammatory cytokines (calling in more immune cells) and reactive oxygen species, which add to the inflammation and the mess.",
- quote:"The Cooper cells are there to help, but kind of as a, a side effect of their job, they can create a little bit more of a mess by the inflammatory cytokines and reactive oxygen species they release doing their job of cleaning up pathogens or damaged cells, yeah.",
+ quote:"The Cooper cells are there to help, but kind of as ... a side effect of their job, they can create a little bit more of a mess by the inflammatory cytokines and reactive oxygen species they release doing their job of cleaning up pathogens or damaged cells",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Hepatotoxicity – Why is liver susceptible?’; transcript 10/14"},
 
 {id:"L15-021", lecture:"L15", prof:"Smith", tier:"new", topic:"L15", sub:"hepat", skill:"apply",
@@ -304,7 +303,7 @@ QUESTIONS.push(
   {t:"In by the hepatic artery and bile duct; out by the central vein", correct:false, why:"Bile ducts carry bile out of the liver, not blood in; the portal vein is the second inflow vessel."},
   {t:"In by the hepatic artery and central vein; out by the portal vein", correct:false, why:"The portal vein is an inflow vessel and the central vein is the outflow."}],
  teach:"Blood comes into each lobe of the liver through the hepatic artery and the hepatic portal vein, which sit at the edges along with the start of the bile ducts. It flows down along the cords of hepatocytes and drains out through the central vein. Oral exposures reach the liver through the portal circulation, which is why first pass happens there. This direction of flow is the basis of the zones in the next slide.",
- quote:"you've got blood coming into each lobe through the hepatic portal artery and also the hepatic portal vein. You also have your bile ducts initiating on the edges of each of these lobes, and the blood will trickle down across those basically cords of hepatocytes ... and it drains out of the liver via the hepatic, the central vein, OK?",
+ quote:"you've got blood coming into each lobe through the hepatic portal artery and also the hepatic portal vein. You also have your bile ducts initiating on the edges of each of these lobes, and the blood will trickle down across those basically cords of hepatocytes ... and it drains out of the liver via ... the central vein",
  note:"She said \"hepatic portal artery\" for the hepatic artery.",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Hepatotoxicity – review of liver anatomy’; transcript 10/14"},
 
@@ -318,8 +317,8 @@ QUESTIONS.push(
   {t:"Aflatoxin is low risk at ordinary dietary exposures", correct:false, why:"Aflatoxin is a very high risk for liver cancer."}],
  core:true, coreWhy:"her words: 'you need to be aware, these compounds cause discrete ... kinds of hepatotoxicity'",
  teach:"The table (Klaassen, Table 13-2) lists responses on the left and representative toxicants on the right. Ethanol can cause hepatocyte death, fatty liver (steatosis), inflammation, altered regeneration and fibrosis. Aflatoxin, a chemical made by molds growing on grains and the subject of her PhD work, causes liver cancer and little else. The point is that compounds, medications included, tend to cause very specific kinds of liver damage. The table is not to be memorized; the kinds of response are.",
- quote:"ethanol can cause fatty liver, also called steatosis. Ethanol can cause inflammation. Ethanol can cause affect liver regeneration, and ethanol can cause fibrosis, OK? Other compounds are not so. Uh, good at hitting many different parts of the liver, so things like aflatoxin ... So this aflatoxin really is only causing liver cancer.",
- note:"\"you have to memorize this table. It is all inclusive ... Do you think that's worth your time? I'm kidding. ... No, you do not have to memorize this table, OK?\"",
+ quote:"ethanol can cause fatty liver, also called steatosis. Ethanol can cause inflammation. Ethanol can cause affect liver regeneration, and ethanol can cause fibrosis ... Other compounds are not so ... good at hitting many different parts of the liver, so things like aflatoxin ... So this aflatoxin really is only causing liver cancer.",
+ note:"She said of the table: \"No, you do not have to memorize this table\".",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Site-Specific Hepatotoxicity’ (Klaassen Table 13-2); transcript 10/14"},
 
 {id:"L15-024", lecture:"L15", prof:"Smith", tier:"new", topic:"L15", sub:"hepat", skill:"recall", type:"match",
@@ -333,7 +332,7 @@ QUESTIONS.push(
   {l:"Canalicular cholestasis", r:"Bile flow blocked as the cells lining the canaliculi are damaged and inflamed", why:"The bile duct becomes cholestatic, blocked and narrowed."},
   {l:"Liver cancer", r:"The one response aflatoxin produces", why:"Aflatoxin is a strong risk for liver cancer and causes little else."}],
  teach:"The table sorts liver injury by what is damaged. Hepatocyte death is the actual death of the hepatocytes, the cells that do much of the metabolism (acetaminophen, ethanol). Fatty liver is also called steatosis. In canalicular cholestasis the cells lining the bile ducts are damaged and inflamed, so the duct narrows and bile is blocked. Because each compound tends to cause one discrete kind of damage, aflatoxin produces liver cancer and nothing else on the table.",
- quote:"hepatocyte death, that's the actual death of those, those hepatocytes, the ones that do a lot of the metabolism, OK? The canalicular cholestasis means that the bile duct gets blocked, OK? It becomes um cholestatic, it's blocked, it's, it, it gets narrowed because those cells lining the bile ducts get damaged and inflamed.",
+ quote:"hepatocyte death, that's the actual death of those ... hepatocytes, the ones that do a lot of the metabolism ... The canalicular cholestasis means that the bile duct gets blocked ... it gets narrowed because those cells lining the bile ducts get damaged and inflamed.",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Site-Specific Hepatotoxicity’ (Klaassen Table 13-2); transcript 10/14"},
 
 {id:"L15-025", lecture:"L15", prof:"Smith", tier:"new", topic:"L15", sub:"hepat", skill:"apply",
@@ -345,7 +344,7 @@ QUESTIONS.push(
   {t:"Liver function tests; the enzyme pattern names the toxin", correct:false, why:"Liver function tests show that the liver is affected; the pattern of injury takes imaging and biopsy, and it hints at the exposure rather than naming it."},
   {t:"Genotyping; the variant explains the reaction", correct:false, why:"Genotyping can explain an idiosyncratic reaction; it does not identify the pattern of injury."}],
  teach:"Because each hepatotoxin causes a discrete kind of damage, the pattern of injury is a clue to the exposure. When liver function is declining and the exposure is unknown, clinicians use imaging and a liver biopsy to look for that pattern. She used to collect punch biopsies herself, done externally with a needle: a small core of tissue is enough to start working out what happened.",
- quote:"Often they'll do imaging and uh um uh a liver biopsy to look for the pattern of injury, and that pattern of injury will give us a hint of what they might have been exposed to, OK.",
+ quote:"Often they'll do imaging and ... a liver biopsy to look for the pattern of injury, and that pattern of injury will give us a hint of what they might have been exposed to",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Site-Specific Hepatotoxicity’; transcript 10/14"},
 
 /* ---------------- Hepatotoxicity: zones ---------------- */
@@ -359,7 +358,7 @@ QUESTIONS.push(
   {t:"The region with the highest oxygen content", correct:false, why:"Zone 1 has the highest oxygen; zone 3 the lowest."}],
  core:true, coreWhy:"her Quiz 2 item 8 and poll: the acinar zones and the oxygen gradient",
  teach:"The acinus divides the liver by the path of the blood. Blood enters from the hepatic artery and portal vein, flows along the hepatocytes and drains into the central vein. Zone 1 is closest to the inflow vessels, zone 3 closest to the central vein, zone 2 between. Because zone 3 gets the blood last, after upstream hepatocytes have taken oxygen out, it is the low-oxygen zone; it is also where CYP2E1 is most highly expressed.",
- quote:"zone 1 is closest to the, the vessels where the blood comes into the liver, and zone 3 is closest to the vessel where the blood leaves the liver, OK?",
+ quote:"zone 1 is closest to ... the vessels where the blood comes into the liver, and zone 3 is closest to the vessel where the blood leaves the liver",
  note:"The transcript renders acinus as \"ainous\" and \"aceous\".",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Reasons for Site-Specific Hepatotoxicity’; transcript 10/14"},
 
@@ -374,7 +373,7 @@ QUESTIONS.push(
  core:true, coreWhy:"her Quiz 2 item 8: the oxygen gradient across the zones",
  teach:"Blood entering from the hepatic artery and portal vein is relatively oxygenated. As it flows past the cords of hepatocytes, they take oxygen out of it, so by the time it reaches the central vein it is relatively hypoxic. There is therefore an oxygen gradient across the acinus, high in zone 1 and low in zone 3, and that gradient is one reason different hepatotoxins injure different zones.",
  quote:"As the blood flows past those hepatocytes, and the hepatocytes grab the oxygen out of the blood, as that blood drains out of the liver via the central vein, the blood is hypoxic, compared to what it was as it came into the liver.",
- note:"She illustrated with the figure's red and blue coloring (\"Look at your arms, right? Your veins. Your blood is blue.\"); a student objected, and she answered \"That's not the point ... The point is, is that oxygen comes into the liver, relatively oxygenated. It leaves the liver through the central vein, relatively hypoxic\".",
+ note:"She illustrated with the figure's red and blue coloring, then stated the point: \"oxygen comes into the liver, relatively oxygenated. It leaves the liver through the central vein, relatively hypoxic\".",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Reasons for Site-Specific Hepatotoxicity’; transcript 10/14"},
 
 {id:"L15-028", lecture:"L15", prof:"Smith", tier:"new", topic:"L15", sub:"zones", skill:"apply",
@@ -387,7 +386,7 @@ QUESTIONS.push(
   {t:"Zone 2: it has the fewest Kupffer cells", correct:false, why:"Kupffer cells are found throughout the liver (her poll); acetaminophen injury follows CYP2E1, which is highest in zone 3."}],
  core:true, coreWhy:"her Quiz 2 item 8: enzymes expressed by zone; her acetaminophen case",
  teach:"In an acetaminophen overdose, CYP2E1 bioactivates the drug to NAPQI, the hepatotoxic metabolite. The metabolite is made where the enzyme is, and CYP2E1 is expressed more highly in zone 3 than in zone 1, so zone 3 hepatocytes make the most NAPQI and are the ones that die. The zone of injury follows the location of the bioactivating enzyme, not the order in which the blood reaches the cells.",
- quote:"So if you were to do a biopsy of their liver. What area of the liver has hepatocyte death occurring? Zone 3 why Cuz that's where a lot of 20 is expressed. OK.",
+ quote:"So if you were to do a biopsy of their liver. What area of the liver has hepatocyte death occurring? Zone 3 why Cuz that's where a lot of 20 is expressed.",
  note:"The transcript renders CYP2E1 as \"20\", \"SIP2E1\" and \"cytokrome P452E1\", and NAPQI as \"NAQI\".",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Reasons for Site-Specific Hepatotoxicity’; transcript 10/14"},
 
@@ -415,7 +414,7 @@ QUESTIONS.push(
   {t:"Sensitivity to vasoconstrictors acting on the afferent and efferent arterioles", correct:true, why:"Reduced blood flow reduces GFR and changes what the kidney receives."},
   {t:"Resident immune cells that release reactive oxygen species", correct:false, why:"That is the liver's reason (Kupffer cells), not the kidney's."}],
  teach:"The kidney is susceptible for reasons parallel to the liver: it receives a large delivery of potential toxins in the systemic circulation, including metabolites the liver has just made; its urine-concentrating processes concentrate poisons in the tubule and promote their uptake into tubular cells; and renal transport, accumulation and metabolism make in-situ toxicity likely. Its unique feature is sensitivity to endogenous vasoconstrictors acting on the afferent and efferent arterioles.",
- quote:"It gets lots of blood flowing to it, especially blood that has gone through the liver and maybe lots of metabolites have been created by the liver and they're heading to the kidney. Um, it, like the liver, the cells in the kidney often will do things like uptake compounds into themselves, so they're concentrating solutes, compounds into the cells themselves ... and then they can also be metabolized by the kidney cells.",
+ quote:"It gets lots of blood flowing to it, especially blood that has gone through the liver and maybe lots of metabolites have been created by the liver and they're heading to the kidney ... like the liver, the cells in the kidney often will do things like uptake compounds into themselves, so they're concentrating solutes, compounds into the cells themselves ... and then they can also be metabolized by the kidney cells.",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Nephrotoxicity - Why are kidneys susceptible?’; transcript 10/14"},
 
 {id:"L15-031", lecture:"L15", prof:"Smith", tier:"new", topic:"L15", sub:"nephro", skill:"apply",
@@ -427,7 +426,7 @@ QUESTIONS.push(
   {t:"Loss of the urine-concentrating mechanism", correct:false, why:"Concentrating urine is a separate reason for susceptibility."},
   {t:"Allergic inflammation of the renal interstitium", correct:false, why:"That is interstitial nephritis, an immunologic injury, not a flow effect."}],
  teach:"The kidney is sensitive to endogenous vasoconstrictors. Anything that constricts the afferent or efferent arterioles reduces blood flow to the glomerulus and reduces GFR, and vasoconstriction or vasodilation of those arterioles also changes the concentration of solutes the kidney receives. Prerenal injury and vasoconstriction are among the mechanisms of chemically induced acute renal failure in the table.",
- quote:"it is sensitive to. Uh, any vasoconstriction that will go on with the arterials, both the afferent and the efferent arterial, if you reduce that blood flow, you're going to reduce GFR",
+ quote:"it is sensitive to ... any vasoconstriction that will go on with the arterials, both the afferent and the efferent arterial, if you reduce that blood flow, you're going to reduce GFR",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Nephrotoxicity - Why are kidneys susceptible?’; transcript 10/14"},
 
 {id:"L15-032", lecture:"L15", prof:"Smith", tier:"new", topic:"L15", sub:"nephro", skill:"recall", multi:true,
@@ -441,7 +440,7 @@ QUESTIONS.push(
   {t:"Canalicular cholestasis", correct:false, why:"That is a liver response: bile flow blocked as the cells lining the canaliculi are damaged."}],
  core:true, coreWhy:"her words: 'what you need to know are these different kinds of renal damage'",
  teach:"The table sorts drug-induced acute renal failure by the mechanism of damage: prerenal, vasoconstriction, crystalluria, tubular toxicity, endothelial injury, glomerulopathy and interstitial nephritis. As in the liver, a nephrotoxin usually causes a discrete kind of injury, so each column has its own classic compounds (aminoglycosides and cisplatin under tubular toxicity, sulfonamides and acyclovir under crystalluria). Canalicular cholestasis and myelinopathy are not renal categories; they belong to the liver and the nervous system.",
- quote:"do you need to memorize this table? No, what you need to know are these different kinds of renal damage just in general, and we will talk about these again later in my time with you",
+ quote:"do you need to memorize this table? No, what you need to know are these different kinds of renal damage just in general",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Site-Specific Nephrotoxicity’ (Klaassen Table 14-2); transcript 10/14"},
 
 {id:"L15-033", lecture:"L15", prof:"Smith", tier:"new", topic:"L15", sub:"nephro", skill:"drug",
@@ -454,7 +453,7 @@ QUESTIONS.push(
   {t:"Aminoglycosides; take each dose with plenty of water", correct:false, why:"Aminoglycosides sit under tubular toxicity."}],
  core:true, coreWhy:"her words: NSAIDs are 'one of the things I worry about the most'",
  teach:"Non-steroidal anti-inflammatory drugs (NSAIDs) are the drugs on the table she worries about most, because they are so commonly used: she named interstitial nephritis, vasoconstriction and glomerulopathy. Her counsel is to limit their use and drink lots of water while taking them.",
- quote:"One of the things I worry about the most are our NSAIDs. They can cause interstitial nephritis. They can cause vasoconstriction. So, our NSAIDs, they can also cause glomerular neuropathy. ... they should try to limit their use and drink lots of water while they're taking them, OK?",
+ quote:"One of the things I worry about the most are our NSAIDs. They can cause interstitial nephritis. They can cause vasoconstriction. So, our NSAIDs, they can also cause glomerular neuropathy. ... they should try to limit their use and drink lots of water while they're taking them",
  note:"\"glomerular neuropathy\" in the transcript is the table's glomerulopathy.",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Site-Specific Nephrotoxicity’; transcript 10/14"},
 
@@ -480,7 +479,7 @@ QUESTIONS.push(
   {t:"Tolerance develops by two weeks, and PPIs can cause interstitial nephritis", correct:false, why:"The kidney reason is right; tolerance is not why the label limits use."},
   {t:"Tolerance develops by two weeks, and PPIs can cause crystalluria", correct:false, why:"Neither is a reason: the limit exists because persistent reflux should be checked and because PPIs can cause interstitial nephritis."}],
  teach:"The two-week limit is a prompt to stop and check. Reflux bad enough to need a PPI for longer should be evaluated, and longer use risks interstitial nephritis, which does not show itself the way an allergy with hives does. In her father's case it appeared only as a high serum creatinine on routine blood work after a few months of OTC omeprazole, by which time he needed erythropoietin for a while.",
- quote:"It says limit your use to two weeks. If you need to use it for longer, you should consult a doctor, OK? There's a couple of reasons for that. One reason is if you have reflux that's bad enough to need a PPI for more than 2 weeks, you probably should get it checked out ... And another reason is the fact that these drugs can cause interstitial nephritis, OK?",
+ quote:"It says limit your use to two weeks. If you need to use it for longer, you should consult a doctor ... There's a couple of reasons for that. One reason is if you have reflux that's bad enough to need a PPI for more than 2 weeks, you probably should get it checked out ... And another reason is the fact that these drugs can cause interstitial nephritis",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Site-Specific Nephrotoxicity’; transcript 10/14"},
 
 {id:"L15-036", lecture:"L15", prof:"Smith", tier:"new", topic:"L15", sub:"nephro", skill:"recall",
@@ -493,7 +492,7 @@ QUESTIONS.push(
   {t:"Differences in regenerative and repair mechanisms", correct:false, why:"Repair mechanisms are on the list, but she put enzyme expression first."}],
  core:true, coreWhy:"her Quiz 2 item 7: nephrotoxins injure specific parts of the kidney",
  teach:"Many factors vary along the nephron: blood flow, transport and accumulation, the epithelium, target reactivity, bioactivation versus detoxification, energetics and repair. She put metabolism first: renal cells metabolize the compounds they take up, and which enzymes are expressed in which part of the kidney decides where a toxic metabolite is made, so that is where injury appears, as CYP2E1 places acetaminophen injury in zone 3 of the liver. Tubular toxicity and crystalluria depend more on the drug's own chemistry.",
- quote:"probably the most important reason is that you'll have all that metabolism going on in the renal cells, and it will depend on what enzymes are expressed in what part of the cell or what part of the kidney to, to contribute to that site specificity ... And then the other types of injury like the, the, um, the tubular toxicity, the crystal urea, that has to deal more with the chemistry of those drugs, OK?",
+ quote:"probably the most important reason is that you'll have all that metabolism going on in the renal cells, and it will depend on what enzymes are expressed in what part of the cell or what part of the kidney ... to contribute to that site specificity ... the other types of injury like ... the tubular toxicity, the crystal urea, that has to deal more with the chemistry of those drugs",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Reasons for Site-Specific Nephrotoxicity’; transcript 10/14"},
 
 /* ---------------- Idiosyncratic and immunologic responses ---------------- */
@@ -506,7 +505,7 @@ QUESTIONS.push(
   {t:"An immune-mediated hypersensitivity reaction, type 1 through 4", correct:false, why:"That is an immunologic (allergic) response."},
   {t:"A dose-related reaction seen in most people at high doses", correct:false, why:"That is ordinary dose-related toxicity."}],
  teach:"Idiosyncratic toxicity is a genetically determined abnormal reactivity to a chemical: the response is qualitatively like other people's but extreme, strong and unexpected, and could not be explained. Using the word for every low-frequency reaction is improper. As pharmacogenomics advances, some idiosyncratic reactions become explained reactions, traced to a rare genetic variant.",
- quote:"idiosyncratic means we, it's a reaction that we don't know why it's happening always, and often idiosyncratic reactions are pretty strong. And sometimes unexpected.",
+ quote:"idiosyncratic means ... it's a reaction that we don't know why it's happening always, and often idiosyncratic reactions are pretty strong. And sometimes unexpected.",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Idiosyncratic Toxicity’; transcript 10/14"},
 
 {id:"L15-038", lecture:"L15", prof:"Smith", tier:"new", topic:"L15", sub:"immune", skill:"recall",
@@ -518,7 +517,7 @@ QUESTIONS.push(
   {t:"Hapten-mediated and direct activation reactions", correct:false, why:"Those are two ways a drug can be recognized by the immune system, not the two categories of response."},
   {t:"Immediate and delayed reactions", correct:false, why:"Timing is a general-concepts distinction."}],
  teach:"Drugs may be recognized as foreign and provoke an immune response. The two main categories are hypersensitivity (allergic reactions of types 1, 2, 3 and 4, covered previously with Dr. Medina) and autoimmune reactions, in which the immune system fights the patient's own body. She asked the class to change the slide title from allergic to immunologic responses, as the more accurate term.",
- quote:"why don't you change allergic to immunologic responses, OK? ... So hypersensitivity is the first category. So that would be like an allergic response, like a type 1 or a type 2, type 3, or type 4 type of allergic response ... And then we see autoimmune reactions occurring.",
+ quote:"why don't you change allergic to immunologic responses ... So hypersensitivity is the first category. So that would be like an allergic response, like a type 1 or a type 2, type 3, or type 4 type of allergic response ... And then we see autoimmune reactions occurring.",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Allergic Responses’; transcript 10/14"},
 
 {id:"L15-039", lecture:"L15", prof:"Smith", tier:"new", topic:"L15", sub:"immune", skill:"apply",
@@ -530,7 +529,7 @@ QUESTIONS.push(
   {t:"It is too small to be recognized by the immune system", correct:false, why:"Small molecules are recognized once they are bound to a protein as haptens."},
   {t:"It is bioactivated to a toxic metabolite in the liver", correct:false, why:"Bioactivation explains hepatotoxicity, such as acetaminophen in zone 3, not how a small drug triggers an immune response."}],
  teach:"Both small and large drugs can provoke an immune response. Small molecules (less than 600 daltons) may act as haptens: the drug binds to certain body proteins, and the drug-protein complex is what the immune system recognizes and mounts a response against. (She called the complex itself 'a haptin'; the slide calls the small molecule the hapten.) Large drugs, therapeutic peptides and proteins, may activate the immune system directly.",
- quote:"those small drugs, they may sometimes get bound up by certain proteins in the body, creating haptins, and that drug protein complex called a haptin can trigger the immune system to respond to it, OK?",
+ quote:"those small drugs, they may sometimes get bound up by certain proteins in the body, creating haptins, and that drug protein complex called a haptin can trigger the immune system to respond to it",
  note:"The transcript renders hapten as \"haptin\". The 600-dalton figure is on the slide.",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Allergic Responses’; transcript 10/14"},
 
@@ -543,7 +542,7 @@ QUESTIONS.push(
   {t:"Proton pump inhibitors taken by older patients", correct:false, why:"PPIs were her interstitial nephritis example, an allergic response in the kidney."},
   {t:"Chemotherapy drugs such as bleomycin and cyclophosphamide", correct:false, why:"Bleomycin was her example of a systemic drug causing pulmonary fibrosis."}],
  teach:"Autoimmune reactions to medications are happening more and more often as biologicals, protein and peptide therapies, come onto the market. These responses do not happen to everyone, are hard to predict and can be quite harmful; the therapeutics courses will pair specific biologicals with the autoimmune responses they can trigger.",
- quote:"That is happening with more and more frequency as we continue to put on the market our biologicals. So, our, our proteins, our peptide therapies are often the kinds of medications that will trigger the immune system to cause an autoimmune response, OK?",
+ quote:"That is happening with more and more frequency as we continue to put on the market our biologicals ... our proteins, our peptide therapies are often the kinds of medications that will trigger the immune system to cause an autoimmune response",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Allergic Responses’; transcript 10/14"},
 
 /* ---------------- Her Poll Everywhere review questions (verbatim) ---------------- */
@@ -558,8 +557,7 @@ QUESTIONS.push(
   {t:"It is possible to have immediate effects with each dose in a chronic exposure scenario.", correct:true, why:"Yes: the worker who gets drowsy or a headache every day from the same leak, with no tolerance."}],
  core:true, coreWhy:"her Poll Everywhere question, verbatim",
  teach:"A delayed effect appears after time has lapsed, sometimes years (DES and vaginal cancer). Injury is reversible only where tissue can regenerate: the liver usually recovers, but CNS damage, cancer and birth defects are irreversible. Local effects occur at the site of first contact (chlorine gas). A systemic effect means the substance travels in the bloodstream, so it must be absorbed first. Without tolerance, a chronic exposure such as a daily workplace leak can produce an immediate effect each time.",
- quote:"could a delayed response to a toxin be observed weeks to years after exposure? Yeah, yeah, OK. Uh, how about B? Tissue injury from a toxic exposure is always reversible. No ... Systemic effects do not require absorption from the site of contact. ... It's got to be absorbed, OK? So, D is not correct. ... Is it possible to have immediate effects with each dose in a chronic exposure scenario? Yeah",
- note:"\"Is it allowing you to choose more than one? Gosh, dang it, every time I do this, I can't get it to work right. OK, well, choose one.\" The five statements are from the PollEV slide.",
+ quote:"could a delayed response to a toxin be observed weeks to years after exposure? Yeah ... Tissue injury from a toxic exposure is always reversible. No ... Systemic effects do not require absorption from the site of contact. ... It's got to be absorbed ... Is it possible to have immediate effects with each dose in a chronic exposure scenario? Yeah",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf PollEV slide ‘Which statements are true regarding toxic effects’; transcript 10/14"},
 
 {id:"L15-042", lecture:"L15", prof:"Smith", tier:"new", topic:"L15", sub:"polls", skill:"tell",
@@ -572,7 +570,7 @@ QUESTIONS.push(
   {t:"Nephrotoxicity", correct:false, why:"The kidneys: organ-specific."}],
  core:true, coreWhy:"her Poll Everywhere question, verbatim",
  teach:"Each organ-specific response is named for the organ it injures: neurotoxicity the nerves, pulmonary toxicity the lungs, nephrotoxicity the kidneys. Teratogenesis is defined by its outcome, the induction of birth defects in the fetus, and for a given teratogen the time of exposure during gestation changes the type of effect, so it is grouped with fibrosis, genotoxicity and cancer as non-organ-specific.",
- quote:"neurotoxicity is the nerves. Pulmonary, pulmonary toxins in the lungs, nephrotoxins the kidneys. So teratogenicity is the one on this list that is non-organ specific, OK?",
+ quote:"neurotoxicity is the nerves ... pulmonary toxins in the lungs, nephrotoxins the kidneys. So teratogenicity is the one on this list that is non-organ specific",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf PollEV slide ‘Which is an non-organ specific toxic response?’; transcript 10/14"},
 
 {id:"L15-043", lecture:"L15", prof:"Smith", tier:"new", topic:"L15", sub:"polls", skill:"recall", multi:true,
@@ -586,7 +584,7 @@ QUESTIONS.push(
   {t:"It has its own immune cells to mount a quick inflammatory response", correct:true, why:"Kupffer cells cleaning up damaged cells release inflammatory cytokines and reactive oxygen species, which add to the injury from a hepatotoxin."}],
  core:true, coreWhy:"her Poll Everywhere question, verbatim",
  teach:"Each correct reason is a step in how a toxin reaches and harms the liver. Oral compounds go straight to the liver in the portal blood; the liver takes them up and concentrates them in its cells; its many enzymes may bioactivate them to toxic metabolites right there; and when cells are damaged, Kupffer cells cleaning up release inflammatory cytokines and reactive oxygen species that add to the injury. Size is not part of that chain.",
- quote:"it expresses many enzymes that may metabolize drug to toxic compounds. That's right. It receives it receives a large volume of blood via the portal circulation. Yes, that is true. It's a large organ, yeah, that really doesn't have anything to do with it, right? ... all of these were correct except for the fact that it's a large organ",
+ quote:"it expresses many enzymes that may metabolize drug to toxic compounds. That's right ... it receives a large volume of blood via the portal circulation. Yes, that is true. It's a large organ ... that really doesn't have anything to do with it ... all of these were correct except for the fact that it's a large organ",
  note:"Reading option D aloud she said \"uptake and concentrate antibiotics or other, or compounds\"; the slide says xenobiotics.",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf PollEV slide ‘The liver is very susceptible to drug toxicity because…’; transcript 10/14"},
 
@@ -599,7 +597,7 @@ QUESTIONS.push(
   {t:"Zone 2 has few Kupfer cells", correct:false, why:"Not true: Kupffer cells are found throughout the liver, not just in one zone."}],
  core:true, coreWhy:"her Poll Everywhere question, verbatim",
  teach:"Blood enters zone 1 well oxygenated and loses oxygen to the hepatocytes on its way to zone 3. If the enzymes that metabolize a toxin need oxygen, the high oxygen in zone 1 helps them work there, and if their product is hepatotoxic, zone 1 is injured. The other source of regional injury is uneven enzyme expression (CYP2E1 highest in zone 3). Kupffer cells are found throughout the liver ('they go everywhere'), so the poll's claim that zone 2 has few of them is false.",
- quote:"Do you have high oxygen content in zone one? Is it zone 1 or zone 3? Zone 1, right? OK. Yes, and if the enzymes that do metabolism there, uh, need oxygen to do their work, having a lot of oxygen right there is helpful to those enzymes to do their metabolism, and unfortunately that metabolism may result in the metabolite that's, that's hepatotoxic.",
+ quote:"Do you have high oxygen content in zone one? ... Zone 1 ... and if the enzymes that do metabolism there ... need oxygen to do their work, having a lot of oxygen right there is helpful to those enzymes to do their metabolism, and unfortunately that metabolism may result in the metabolite ... that's hepatotoxic.",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf PollEV slide ‘Which statement is one reason for regional susceptibility to toxicity across the liver?’; transcript 10/14"},
 
 /* ---------------- Overdose changes pharmacokinetics ---------------- */
@@ -638,7 +636,7 @@ QUESTIONS.push(
   {t:"Iron saturates first-pass metabolism in the liver", correct:false, why:"Saturated first pass is a different kinetic change in overdose; iron's problem is damage to the gut."}],
  core:true, coreWhy:"her Quiz 3 item 6; her iron example ('classic example is iron')",
  teach:"Much gut absorption is by active transport, not diffusion, and those transporters saturate: with iron, that saturation is protective, since free iron in the blood is very damaging. In overdose iron is so caustic that it damages the gut wall, and the saturable barrier is gone: dissolving iron passes straight into the bloodstream. This is the slide's point that drugs may injure the gastrointestinal tract, increasing absorption.",
- quote:"people that overdose on iron, iron is very caustic, it actually blows apart your gut. Therefore, you don't have the protection of a saturable active transport. What happens? You get iron going straight from the gut, it's dissolving in there, and then whoop, it's just getting right into the bloodstream",
+ quote:"people that overdose on iron, iron is very caustic, it actually blows apart your gut. Therefore, you don't have the protection of a saturable active transport. What happens? You get iron going straight from the gut, it's dissolving in there ... it's just getting right into the bloodstream",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘How Pharmacokinetics change in Overdose’; transcript 10/14"},
 
 {id:"L15-048", lecture:"L15", prof:"Smith", tier:"new", topic:"L15", sub:"odkin", skill:"apply",
@@ -650,7 +648,7 @@ QUESTIONS.push(
   {t:"It is unchanged, as binding is a fixed percentage", correct:false, why:"The percentage holds only while binding capacity is not exceeded."},
   {t:"It rises, as the liver releases stored drug into the plasma", correct:false, why:"The direction is right but the reason is wrong: free drug rises because the plasma proteins are saturated."}],
  teach:"Plasma protein binding has a capacity. A big dose of a protein-bound drug saturates the plasma proteins, leaving a larger fraction free in the blood, and free drug is the fraction that acts, so the risk of toxicity rises. She qualified the slide's wording: it means blood protein binding.",
- quote:"If a medication gets blood protein bound and you take a big dose. Um, there's going to be more drug free in the ... blood, not bound up to the plasma proteins. ... Therefore, you've got a risk for having toxicity because a lot of that drug is free. You've oversaturated those plasma proteins.",
+ quote:"If a medication gets blood protein bound and you take a big dose ... there's going to be more drug free in the ... blood, not bound up to the plasma proteins. ... Therefore, you've got a risk for having toxicity because a lot of that drug is free. You've oversaturated those plasma proteins.",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘How Pharmacokinetics change in Overdose’; transcript 10/14"},
 
 {id:"L15-049", lecture:"L15", prof:"Smith", tier:"new", topic:"L15", sub:"odkin", skill:"recall",
@@ -663,7 +661,7 @@ QUESTIONS.push(
   {t:"First order with a shorter half-life", correct:false, why:"The change is away from first order, and it lengthens the half-life."}],
  core:true, coreWhy:"her Quiz 3 item 6: overdose changes a drug's kinetics",
  teach:"Most drugs are eliminated by first-order kinetics. The slide's last clearance bullet says the very high plasma concentrations of an overdose may change elimination to zero order, which extends the half-life, so the drug stays in the body longer than its usual half-life would predict. Like saturated first-pass metabolism and exceeded protein binding, it is one way an overdose keeps more drug around for longer.",
- note:"She displayed this bullet and asked for questions on the clearance list but did not restate it aloud; keyed from the slide.",
+ note:"She displayed this bullet but did not restate it aloud; keyed from the slide.",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘How Pharmacokinetics change in Overdose’"},
 
 /* ---------------- Overdose changes pharmacodynamics ---------------- */
@@ -677,7 +675,7 @@ QUESTIONS.push(
   {t:"Neither can be dosed above sedation safely", correct:false, why:"B can be given in higher doses without an unwanted effect."}],
  core:true, coreWhy:"her question on the figure: 'Which one can you increase the dose and not have an unwanted adverse effect? B.'",
  teach:"Katzung's figure plots CNS effect (sedation, hypnosis, anesthesia, coma) against increasing dose for two drugs with the same mechanism. Both sedate at the same dose, so at the therapeutic endpoint they look alike. In overdose their outcomes differ: A rises in a straight line to coma, B levels off at anesthesia. One drug is therefore more dangerous in overdose than the other on the basis of its pharmacodynamics; the overlap of the therapeutic and toxic response curves, the idea behind the therapeutic index, is what matters.",
- quote:"Which one can you increase the dose and not have ... an unwanted adverse effect? B. ... So, drug A, if you increase the dose more, you're getting to an unwanted effect, OK?",
+ quote:"Which one can you increase the dose and not have ... an unwanted adverse effect? B. ... So, drug A, if you increase the dose more, you're getting to an unwanted effect",
  note:"The slide says two medications may have the same therapeutic index but unequal safe dosing; in speech she said both that A and B have \"the same therapeutic index\" and that B's \"therapeutic index is different than drug A\". The figure reading (B plateaus, A reaches coma) is what she keyed.",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘How Pharmacodynamics change in Overdose’ (Katzung figure); transcript 10/14"},
 
@@ -704,7 +702,7 @@ QUESTIONS.push(
   {t:"Induction of CYP2E1, producing a cardiotoxic metabolite", correct:false, why:"No enzyme induction or toxic metabolite is involved; the drug lowers blood flow to the organs that eliminate it."}],
  core:true, coreWhy:"slide example; her words: 'Every example I give you is testable'",
  teach:"Beta blockers and calcium channel blockers are used for blood pressure and heart rate. In overdose they alter cardiac function, and they also reduce blood flow to the kidneys and the liver, the organs of elimination. The body therefore cannot clear the drug well, the dose stays high, and the kinetic and pharmacodynamic changes feed on each other.",
- quote:"Reducing blood flow to the kidneys and the liver, you're reducing the body's ability to eliminate the drug. ... you're also reducing blood flow to your organs of elimination, OK? And therefore you can't eliminate the drugs very well, and the dose stays high.",
+ quote:"Reducing blood flow to the kidneys and the liver, you're reducing the body's ability to eliminate the drug. ... you're also reducing blood flow to your organs of elimination ... And therefore you can't eliminate the drugs very well, and the dose stays high.",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘How Pharmacodynamics change in Overdose’; transcript 10/14"},
 
 /* ---------------- Three angles; four toxicokinetic methods ---------------- */
@@ -718,7 +716,7 @@ QUESTIONS.push(
   {t:"Emesis, gastric lavage, and activated charcoal", correct:false, why:"Those are methods within prevention of absorption, one toxicokinetic method."}],
  core:true, coreWhy:"objective slide: 'List the three basic approaches for treating poisonings'",
  teach:"Treatment of a poisoning or overdose comes from one of three angles: toxicokinetic-based treatment (change what happens to the poison in the body), inactivation of the poison, or pharmacologically based treatment (counter what the poison does). The toxicokinetic approach has four methods and the pharmacological approach four categories; inactivation covers chelators and antivenoms, which are scheduled for 10/19.",
- quote:"We will either think about treating them based on kinetics, or we'll think about treating them based on trying to inactivate the poison. Or we will think about trying to treat them based on, basically the pharmacology, the pharmacodynamics of what's going on, OK?",
+ quote:"We will either think about treating them based on kinetics, or we'll think about treating them based on trying to inactivate the poison. Or we will think about trying to treat them based on, basically the pharmacology, the pharmacodynamics of what's going on",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘General principles for treating the poisoned patient’; transcript 10/14"},
 
 {id:"L15-054", lecture:"L15", prof:"Smith", tier:"new", topic:"L15", sub:"approach", skill:"recall", multi:true,
@@ -732,7 +730,7 @@ QUESTIONS.push(
   {t:"Inactivation of the poison", correct:false, why:"Inactivation (binding the poison, as with a chelator) is the second of the three approaches, not a toxicokinetic method."}],
  core:true, coreWhy:"objective slide: 'List the four categories of toxicokinetic-based treatments'",
  teach:"Toxicokinetic treatment works on what the body does with the poison, aiming to decrease the amount of poison in the body and so the potential for end-organ damage. Each method targets one step: stop the poison getting in (prevent absorption), stop it being bioactivated to a nastier compound (inhibit toxication), speed its detoxification (enhance metabolism), or get it out faster (enhance elimination). Antagonists act on the poison's effects instead, and chelators inactivate it.",
- quote:"sometimes we will try to prevent absorption of the poison or the overdose drug. Sometimes we're going to try to inhibit toxication or stop the bioactivation of it to a nasty compound, OK. Sometimes we can enhance metabolism or enhance detoxification. Sometimes, OK. Sometimes we can enhance elimination. Can you see how all four of those methods are kinetically based treatments?",
+ quote:"sometimes we will try to prevent absorption of the poison or the overdose drug. Sometimes we're going to try to inhibit toxication or stop the bioactivation of it to a nasty compound ... Sometimes we can enhance metabolism or enhance detoxification ... Sometimes we can enhance elimination. Can you see how all four of those methods are kinetically based treatments?",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Toxicokinetic-Based Treatment’; transcript 10/14"},
 
 /* ---------------- Preventing absorption ---------------- */
@@ -747,7 +745,7 @@ QUESTIONS.push(
   {t:"Ion trapping with sodium bicarbonate", correct:false, why:"Ion trapping enhances renal elimination of a weak acid; it is a different toxicokinetic method."}],
  core:true, coreWhy:"slide list of methods to prevent absorption; her Quiz 3 items 7 and 8",
  teach:"Preventing absorption keeps an ingested poison from getting from the gut into the blood. Emesis brings it up from the stomach, gastric lavage pumps the stomach, whole bowel irrigation flushes the whole gut, and activated charcoal binds it so it leaves in the feces; repeated charcoal doses catch drug that the liver returns to the intestine in bile. Hemodialysis and urinary ion trapping act after absorption, so they belong to enhancing elimination.",
- quote:"Try to cause emesis, which is vomiting or barfing, right? We could try to cause emesis to get a compound up out of the stomach. We could do gastric lavage. ... How about whole bowel irrigation? ... we also could try to prevent absorption of whatever the person ingested orally using activated charcoal, and I've got two types of activated charcoal listed, well, two methods of using activated charcoal single single dose or multiple dose activated charcoal.",
+ quote:"Try to cause emesis, which is vomiting ... We could try to cause emesis to get a compound up out of the stomach. We could do gastric lavage. ... How about whole bowel irrigation? ... we also could try to prevent absorption of whatever the person ingested orally using activated charcoal ... two methods of using activated charcoal ... single dose or multiple dose activated charcoal.",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Toxicokinetic-Based Treatment Prevent Absorption’; transcript 10/14"},
 
 {id:"L15-056", lecture:"L15", prof:"Smith", tier:"new", topic:"L15", sub:"absorb", skill:"apply",
@@ -760,7 +758,7 @@ QUESTIONS.push(
   {t:"Still sold over the counter; the biggest risk is dehydration", correct:false, why:"It is no longer sold, and aspiration, not dehydration, is the risk."}],
  core:true, coreWhy:"her Quiz 3 item 7: emesis is not first line; slide 'biggest risk is aspiration'",
  teach:"Emesis is the clearest example of a method that medicine has abandoned. Ipecac is no longer sold in the US or used in hospitals, because it is too risky: the biggest risk of emesis is aspiration. The DiPiro chapter section on general approach to treatment states that emesis is no longer used.",
- quote:"They no longer even sell it in the US. They don't even use it anymore in hospitals, OK, because it's too risky. What's the risk of emesis? Aspiration is the biggest risk.",
+ quote:"They no longer even sell it in the US. They don't even use it anymore in hospitals ... because it's too risky. What's the risk of emesis? Aspiration is the biggest risk.",
  note:"The transcript renders ipecac as \"Emmis Ipecac\".",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slides ‘Toxicokinetic-Based Treatment Prevent Absorption’, ‘More on preventing absorption’; transcript 10/14"},
 
@@ -773,7 +771,7 @@ QUESTIONS.push(
   {t:"It flushes the whole gut with polyethylene glycol", correct:false, why:"That is whole bowel irrigation; lavage washes the stomach only."},
   {t:"It works best several hours after the ingestion", correct:false, why:"Timing was given for charcoal (1 to 2 hours); lavage is risky at any time and works on what is still in the stomach."}],
  teach:"Gastric lavage means putting a tube down to the stomach, pumping liquid in and sucking it back out. Risks: the tube can end up in the lungs and fluid can be pumped into them; the esophagus is narrow, so big tablets may not come back out through the tube; and it is dangerous in anyone with esophageal rupture or stomach problems. Experienced toxicologists may still attempt it for a massive, dangerous ingestion.",
- quote:"Pump in your stomach, yeah, yeah, put a tube down, hope you don't get that tube in the person's lungs. ... sometimes big tablets are hard to get up out. It's hard to pump it back out. ... So gastric lavage, you don't wanna do it for anybody that has any sort of esophageal rupture, issues with their stomach, all that dangerous, dangerous.",
+ quote:"Pump in your stomach ... put a tube down, hope you don't get that tube in the person's lungs. ... sometimes big tablets are hard to get up out. It's hard to pump it back out. ... So gastric lavage, you don't wanna do it for anybody that has any sort of esophageal rupture, issues with their stomach",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Toxicokinetic-Based Treatment Prevent Absorption’; transcript 10/14"},
 
 {id:"L15-058", lecture:"L15", prof:"Smith", tier:"new", topic:"L15", sub:"absorb", skill:"apply",
@@ -785,7 +783,7 @@ QUESTIONS.push(
   {t:"A single dose of activated charcoal given as a slurry", correct:false, why:"Charcoal adsorbs the poison; irrigation flushes it."},
   {t:"Vomiting induced with syrup of ipecac", correct:false, why:"Emesis empties the stomach upward."}],
  teach:"Whole bowel irrigation is what a colonoscopy prep does: the patient drinks a polyethylene glycol electrolyte solution (GoLYTELY) and everything passes through. (She also mentioned 'mag citrate' as a colonoscopy prep; DiPiro names polyethylene glycol solutions for whole bowel irrigation.) It requires an open gut, with no ileus or blockage, and it is messy, which nursing staff dislike; but it is useful, and experienced emergency teams will probably try it for a massive ingestion.",
- quote:"Has anybody undergone a colonoscopy? That's whole bowel irrigation, OK? You drink something like Golightly, polyethylene glycol or what do we know mag citrate or something ... you've got to make sure people don't have any issues with no ileus, no blockages in the gut.",
+ quote:"a colonoscopy? That's whole bowel irrigation ... You drink something like Golightly, polyethylene glycol or ... mag citrate or something ... you've got to make sure people don't have any issues with no ileus, no blockages in the gut.",
  note:"The transcript renders GoLYTELY as \"Golightly\".",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Toxicokinetic-Based Treatment Prevent Absorption’; transcript 10/14"},
 
@@ -798,7 +796,7 @@ QUESTIONS.push(
   {t:"It is pleasant to take and rarely causes vomiting", correct:false, why:"It is black, nasty and messy, and people often vomit it, risking aspiration."},
   {t:"It is ordinary charcoal ground into a coarse powder", correct:false, why:"It is purified (activated) charcoal with very fine particles, given as a slurry in water."}],
  teach:"Activated charcoal is purified charcoal with very fine particles, given as a slurry in water. It is black, unpleasant and messy, and the main risk is that the patient vomits and aspirates charcoal and stomach contents. It adsorbs only certain compounds, so it is useless for poisons that do not stick to it; a compound that does stick leaves the body in the feces.",
- quote:"This is purified charcoal. It's got very fine particles. ... people often vomit, OK? Not a good thing to have vomiting going on because you could aspirate. ... not every compound a person ingests is going to be grabbed and absorbed by charcoal. ... where does it go? Fecal illumination. OK?",
+ quote:"This is purified charcoal. It's got very fine particles. ... people often vomit ... Not a good thing to have vomiting going on because you could aspirate. ... not every compound a person ingests is going to be grabbed and absorbed by charcoal. ... where does it go? Fecal illumination.",
  note:"\"Fecal illumination\" in the transcript is fecal elimination.",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Toxicokinetic-Based Treatment Prevent Absorption’; transcript 10/14"},
 
@@ -812,7 +810,7 @@ QUESTIONS.push(
   {t:"24 hours", correct:false, why:"By then the drug has long passed the stomach; a single dose binds only what is still in the gut."}],
  core:true, coreWhy:"her Quiz 3 item 8: the time frame for single-dose activated charcoal",
  teach:"A single dose of activated charcoal has to reach the stomach while the poison is still there, so it is given very soon after ingestion, within about 1 to 2 hours. Wait longer and the drug has gone past the stomach and into the bloodstream.",
- quote:"single dose activated charcoal, we say it probably needs to be done within 1 to 2 hours of somebody ingesting whatever they overdosed on. OK.",
+ quote:"single dose activated charcoal, we say it probably needs to be done within 1 to 2 hours of somebody ingesting whatever they overdosed on.",
   note:"Her Quiz 3 asked this with fixed options and keyed \"Less than 60 minutes\" (wrong options: 2-4 hours, any time frame, no sooner than 24 hours). In class she gave 1 to 2 hours (10/14) and \"up to 2 hours. They used to say just an hour\" (10/19). If the exam reuses her quiz options, her key is less than 60 minutes.",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Toxicokinetic-Based Treatment Prevent Absorption’; transcript 10/14"},
 
@@ -825,7 +823,7 @@ QUESTIONS.push(
   {t:"Is a weak acid that can be trapped in the urine", correct:false, why:"That is ion trapping with sodium bicarbonate, to enhance renal elimination."},
   {t:"Was swallowed more than 24 hours earlier", correct:false, why:"Timing does not create the indication; recirculation through the bile does."}],
  teach:"Some drugs go to the liver, are moved into the bile and re-enter the small intestine, then return to the liver: enterohepatic recirculation (also called enterohepatic recycling). If the overdosed drug recirculates and also sticks to charcoal, a second or later dose of charcoal can capture it as it comes back into the gut, which is why multiple-dose charcoal can be used even after the toxin has been absorbed. Its use is limited to compounds that meet both conditions.",
- quote:"if you give a dose, a second dose of charcoal, you might be able to catch some of that compound as it's being re-injected back into the small intestine from the liver, from the through the bile. ... the use of multiple dose activated charcoal is limited to things that get stuck on charcoal and undergo that recirculation, OK.",
+ quote:"if you give a dose, a second dose of charcoal, you might be able to catch some of that compound as it's being re-injected back into the small intestine from the liver ... through the bile. ... the use of multiple dose activated charcoal is limited to things that get stuck on charcoal and undergo that recirculation",
  note:"The 10/14 transcript has 'Sometimes it's called gastric recycling'; on 10/19 she said 'Enterohepatic recirculation or recycling'.",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Toxicokinetic-Based Treatment Prevent Absorption’; transcript 10/14"},
 
@@ -866,7 +864,7 @@ QUESTIONS.push(
   {t:"Organophosphates", correct:false, why:"Not on the list of guidelines; organophosphates appear under atropine and pralidoxime in the pharmacological treatment slides."}],
  core:true, coreWhy:"objective slide: 'Know what medications/compounds have evidence based guidelines'",
  teach:"The slide lists the compounds with evidence-based consensus guidelines for out-of-hospital management: acetaminophen, atypical antipsychotics, beta-blockers, calcium channel blockers, dextromethorphan, diphenhydramine and dimenhydrinate, iron, methylphenidate, salicylate, selective serotonin reuptake inhibitors, TCAs, valproic acid, elemental mercury, ethylene glycol and long-acting anticoagulant rodenticides. Only a few drugs have them, but they are nasty ones. The objective is to know which compounds have guidelines and what information the guidelines hold.",
- quote:"Only a few drugs are out there that have these documents written, but these are pretty nasty drugs, OK? And we're going to just look at two of these documents, beta blockers and calcium channel blockers, and talk about them a little bit on Monday, OK?",
+ quote:"Only a few drugs are out there that have these documents written, but these are pretty nasty drugs ... we're going to just look at two of these documents, beta blockers and calcium channel blockers",
  note:"Only beta-blockers and calcium channel blockers were named aloud on 10/14; the rest of the list is from the slide. Her objectives slide asks you to know which compounds have these guidelines, so the whole list is on the paper.",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Guidelines for Overdoses’; transcript 10/14"},
 
@@ -880,6 +878,6 @@ QUESTIONS.push(
   {t:"Emesis versus lavage, and single- versus multiple-dose charcoal", correct:false, why:"Both are absorption-prevention distinctions; the documents contrast the two drug classes and immediate- versus extended-release tablets."}],
  core:true, coreWhy:"her guideline assignment; her Quiz 3 item 2 asked about an extended-release calcium channel blocker",
  teach:"The two guidance documents say what to do when a patient has swallowed a handful of beta-blocker or a handful of calcium channel blocker, and the answers differ slightly between the two classes even though both are cardiac drugs, and between immediate-release and extended-release tablets. The abstracts summarize what to do; the table is filled in for completion points and discussed on Monday 10/19.",
- quote:"there are slight differences in what we do for a beta blocker overdose compared to a calcium channel overdose, even though they're all cardiac meds, OK? It also. Has differences between immediate release and extended release tablets. What we do, OK, so read the abstract, fill out the table as best you can, and we'll talk about it in class.",
+ quote:"there are slight differences in what we do for a beta blocker overdose compared to a calcium channel overdose, even though they're all cardiac meds ... Has differences between immediate release and extended release tablets.",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Discussion of OD Guidelines’; transcript 10/14"}
 );

@@ -4,7 +4,7 @@ const SHORT3 = [
  q:"List the five principles of toxicology. What does ADME stand for?",
  model:"The five principles are source, exposure, ADMET, dose, and target and mechanism of action. ADME stands for absorption, distribution, metabolism and excretion; in toxicology a T for toxicity is added to make ADMET.",
  points:["Source and exposure","ADMET: absorption, distribution, metabolism, excretion, toxicity","Dose","Target and mechanism of action"],
- quote:"Toxicologists think of these five principles. We think about the source of a toxin or toxicant. We think about how are people or critters exposed. ... the next one is ADM or Admet, OK? Absorption, distribution, metabolism, excretion, and then toxicology or toxicity.",
+ quote:"Toxicologists think of these five principles. We think about the source of a toxin or toxicant. We think about how are people or critters exposed. ... the next one is ADM or Admet ... Absorption, distribution, metabolism, excretion, and then toxicology or toxicity.",
  cite:"Smith_Practice_Quiz_1_-_Principles_of_Toxicology.pdf, questions 4 and 10 (her key); Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘5 Principles of Toxicology’; transcript 10/9",
  note:"Her two Practice Quiz 1 short-answer items, joined; each wording is hers. In one 10/9 sentence she said elimination for the E; her quiz key says Excretion."},
 
@@ -20,7 +20,7 @@ const SHORT3 = [
  q:"On a dose-response figure, compound C's curve levels off with increasing dose while compound D's keeps rising and crosses it. Is C always more potent than D? Explain, and give one reason C's curve could level off.",
  model:"No. C is more potent at the lower doses, but past the point where C levels off and D's line crosses it, D is more potent. C could level off if the receptors it binds are fully saturated, if the metabolism or the uptake transporter (such as P-glycoprotein) handling C is saturated, or if C is a partial agonist.",
  points:["Not always: C is more potent only at the lower doses","Past the crossing point, D is more potent","One reason: receptor saturation, saturated metabolism, saturated transport (P-glycoprotein), or partial agonism","If the doses tested are not extended far enough, the switch in potency is missed"],
- quote:"So, you can't say that C is always more potent than D. You can in the lower doses, right? OK. But once you get to a certain point where it's leveled off and the line is crossing D's dose response line, you would say that D is more potent than C, correct?",
+ quote:"So, you can't say that C is always more potent than D. You can in the lower doses ... But once you get to a certain point where it's leveled off and the line is crossing D's dose response line, you would say that D is more potent than C",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Potency comparison in Dose-Response’ (Casarett and Doull Figure 2-8); transcript 10/13",
  note:"She called this her trick question. For the A and B pair on the same slide, A is more potent because the response starts at a lower dose. The slide caption reads the figure as potency versus efficacy, and Casarett and Doull ch. 2 calls C the more potent chemical and D the one with the greater maximal effect; her trick-question answer is the one above."},
 
@@ -29,7 +29,7 @@ const SHORT3 = [
  q:"The liver will often be injured in specific areas when exposed to a hepatotoxin. Give two reasons for this site-specific damage. Please answer this question in no more than two well-written sentences.",
  model:"Blood enters zone 1 well oxygenated and leaves zone 3 by the central vein relatively hypoxic, and this oxygen gradient contributes to where some hepatotoxins cause damage. Metabolizing enzymes are not expressed evenly across the zones: many phase 2 enzymes are in zone 1 and cytochrome P450 2E1 (CYP2E1) is higher in zone 3, which is why an acetaminophen overdose kills hepatocytes in zone 3.",
  points:["Oxygen gradient: highest in zone 1, lowest in zone 3 near the central vein","Non-homogeneous expression of metabolizing enzymes across the zones","CYP2E1 is higher in zone 3, so acetaminophen overdose damages zone 3","Many phase 2 enzymes are in zone 1"],
- quote:"So there's a gradient in the amount of oxygen as it flows from those vessels coming into the liver and leaving the liver, OK? ... So oxygen gradients and non-homogeneous expression of our metabolizing enzymes contributes to where you see liver damage for different hepatotoxins.",
+ quote:"So there's a gradient in the amount of oxygen as it flows from those vessels coming into the liver and leaving the liver ... So oxygen gradients and non-homogeneous expression of our metabolizing enzymes contributes to where you see liver damage for different hepatotoxins.",
  cite:"Smith_Quizzes_1-3_QA.pdf pp. 3–4, Quiz 2 question 8; Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Reasons for Site-Specific Hepatotoxicity’; transcript 10/14",
  note:"Quiz 2, question 8, verbatim. Her recorded answer named the same two reasons."},
 
@@ -52,7 +52,7 @@ const SHORT3 = [
  q:"Particle size determines where inhaled particles deposit in the lungs. Which particle size is of most concern, and why?",
  model:"Medium-sized particles are of most concern. Very small particles do not get past the upper airway and are breathed back out, and large particles impact where the bronchioles branch; medium particles are heavy enough not to be exhaled with each breath and small enough to pass the curves of the bronchioles, so they settle in the lower lung.",
  points:["Medium-sized particles are of most concern","Small particles stay in the upper airway and are breathed back out","Large particles impact on the upper branches where the bronchioles bifurcate","Medium particles reach the lower lung and are deposited there"],
- quote:"The medium sized particles are the ones that are the most concerning. Um, they are heavy enough to get, to not be breathed out with every, every breath, um, and they are small enough that they can go around the curves in your bronchioles in your lung, and they get down into the lower parts of our lung, OK?",
+ quote:"The medium sized particles are the ones that are the most concerning ... they are heavy enough ... to not be breathed out ... and they are small enough that they can go around the curves in your bronchioles in your lung, and they get down into the lower parts of our lung",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Pulmonary Toxicity – Why are lungs susceptible?’; transcript 10/14"},
 
 {id:"SA3-08", lecture:"L15", form:"objective",
@@ -68,7 +68,7 @@ const SHORT3 = [
  q:"List the three basic approaches for treating poisonings, the four categories of toxicokinetic-based treatments, and the four categories of pharmacologically based treatments.",
  model:"The three approaches are toxicokinetic-based treatment, inactivation of the poison, and pharmacologically based treatment. The toxicokinetic categories are prevent absorption, inhibit toxication (bioactivation), enhance metabolism (detoxification) and enhance elimination; the pharmacological categories are a receptor antagonist, a receptor agonist, removal of the poison from the active site, and bypass of an inhibited pathway.",
  points:["Three approaches: toxicokinetic, inactivation, pharmacological","Toxicokinetic: prevent absorption, inhibit bioactivation, enhance metabolism, enhance elimination","Pharmacological: antagonist, agonist, removal from the active site, bypass of an inhibited pathway","Examples: activated charcoal, fomepizole, sodium bicarbonate; naloxone, physostigmine, pralidoxime, vitamin K"],
- quote:"We will either think about treating them based on kinetics, or we'll think about treating them based on trying to inactivate the poison. Or we will think about trying to treat them based on, basically the pharmacology, the pharmacodynamics of what's going on, OK?",
+ quote:"We will either think about treating them based on kinetics, or we'll think about treating them based on trying to inactivate the poison. Or we will think about trying to treat them based on, basically the pharmacology, the pharmacodynamics of what's going on.",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slides ‘Outline and Objectives’, ‘General principles for treating the poisoned patient’, ‘Toxicokinetic-Based Treatment’, ‘Pharmacological Treatment’; transcripts 10/14 and 10/19",
  note:"The prompt joins the first two objectives on her opening slide."},
 
@@ -76,7 +76,7 @@ const SHORT3 = [
  q:"Cyanide poisoning is treated with amyl nitrite, sodium thiosulfate (used by the body's enzyme rhodanese), and methylene blue. State what each step does, and name the step that enhances metabolism and the step that removes the poison from the active site.",
  model:"Cyanide binds cytochrome c oxidase and stops cellular respiration; amyl nitrite oxidizes hemoglobin to methemoglobin, which pulls cyanide off cytochrome c oxidase, the step that removes the poison from the active site. Rhodanese, using sulfur donated by the sodium thiosulfate given, converts the cyanide to thiocyanate, which is renally eliminated; this is the enhance-metabolism step. Methylene blue, a reducing agent, converts methemoglobin back to hemoglobin so the blood can carry oxygen.",
  points:["Target: cytochrome c oxidase (electron transport chain; adenosine triphosphate (ATP) production stops)","Amyl nitrite makes methemoglobin, which takes cyanide off cytochrome c oxidase: removal from the active site","Rhodanese with thiosulfate makes thiocyanate, renally eliminated: enhance metabolism","Methylene blue reduces methemoglobin back to hemoglobin"],
- quote:"And methemoglobin is able to pull cyanide off of cytochrome C oxidase. ... Which is the one that I said was the co-factor helping us to clear. Yeah, the roadnas.",
+ quote:"And methemoglobin is able to pull cyanide off of cytochrome C oxidase. ... Which is the one that I said was the co-factor helping us to clear ... the roadnas.",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slides ‘Toxicokinetic-Based Treatment Enhance Metabolism’, ‘Toxicokinetic-Based Treatment Cyanide example’, ‘Pharmacological Treatment: Treatment Removes Toxin from Active Site’; Marraffa+AJHSP+2012+Antidotes.pdf pp. 203-204 (sodium thiosulfate); transcript 10/19",
  note:"In class she said the patient is given the cofactor rhodanese (transcribed rodonase, roadnas) and that thiosulfate is already circulating. Marraffa: rhodanese is the body's enzyme, its pathway is capacity limited, and the sodium thiosulfate given donates the sulfur. Either way the rhodanese and thiosulfate step is the one she keyed as enhancing metabolism."},
 
@@ -91,7 +91,7 @@ const SHORT3 = [
  q:"Describe how an inactivator treats a poisoning, and list the requirements an inactivator must meet.",
  model:"Once the toxin is in the systemic circulation, the inactivator binds it so it cannot interact with its target tissues, and the toxin-inactivator complex is then cleared. The inactivator must have high affinity for the toxin, and the complex must have low toxicity (she changed the slide's low to no toxicity).",
  points:["Binds the toxin and prevents its interaction with target tissues","The toxin-inactivator complex is cleared","High affinity for the toxin","The complex has low (no) toxicity"],
- quote:"That toxin inactivator complex then has to get cleared from the body. ... so the complex must have, let's change that from low to no toxicity here at this bottom bullet, OK. ... It needs to have high affinity for the toxin, OK.",
+ quote:"That toxin inactivator complex then has to get cleared from the body. ... so the complex must have, let's change that from low to no toxicity ... It needs to have high affinity for the toxin.",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slides ‘Inactivation of Poisons’, ‘Inactivation of Poisons: Heavy Metal Chelators’; Smith_Quizzes_1-3_QA.pdf, Quiz 3 question 10; transcript 10/19",
  note:"Heavy metal chelators add: higher affinity for the metal than tissue macromolecules, water soluble, non-toxic, readily cleared, and low affinity for endogenous ions such as calcium."},
 
@@ -99,7 +99,7 @@ const SHORT3 = [
  q:"Name the pharmacological treatment category for pralidoxime in organophosphate poisoning and for vitamin K in warfarin overdose. Explain how each works, and why pralidoxime can fail.",
  model:"Pralidoxime removes the poison from the active site: it pulls the organophosphate off acetylcholinesterase onto itself so it can be eliminated, but once some organophosphates have aged (part of the phosphate falls off after binding), pralidoxime can no longer remove them. Vitamin K bypasses an inhibited pathway: warfarin inhibits epoxide reductase, so less active vitamin K is regenerated and fewer coagulation factors are made, and giving vitamin K goes around that blocked step.",
  points:["Pralidoxime: removes the organophosphate from the active site of acetylcholinesterase","Aging: part of the phosphate falls off, and pralidoxime can no longer pull the organophosphate off","Warfarin inhibits epoxide reductase, reducing active vitamin K and coagulation factor production","Vitamin K: bypasses the inhibited pathway"],
- quote:"a part of the phosphate falls off. Once that happens. Pralodoxine is not able to pull off that organophosphate onto itself, OK? ... Kind of bypassing this blocked metabolic scheme.",
+ quote:"a part of the phosphate falls off. Once that happens. Pralodoxine is not able to pull off that organophosphate onto itself ... Kind of bypassing this blocked metabolic scheme.",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slides ‘Pharmacological Treatment: Treatment Removes Toxin from Active Site’, ‘Pharmacological Treatment Pralidoxime example’, ‘Pharmacological Treatment: Treatment by-passes an inhibited pathway’; transcript 10/19",
  note:"Whether an organophosphate ages depends on its chemical structure. Warfarin does not act on the vitamin K dependent carboxylase."},
 
@@ -116,7 +116,7 @@ const SHORT3 = [
  q:"Toxic alcohols (methanol, ethylene glycol): There are two possible treatments. Is there an advantage of one therapy over the other? Why?",
  model:"The two treatments are ethanol and fomepizole; both inhibit alcohol dehydrogenase so that methanol and ethylene glycol are not bioactivated to their toxic metabolites. Fomepizole has the advantage: it is a stronger alcohol dehydrogenase inhibitor and has fewer adverse effects than ethanol.",
  points:["Ethanol or fomepizole","Both inhibit alcohol dehydrogenase (inhibit bioactivation)","Fomepizole is the stronger alcohol dehydrogenase inhibitor","Fomepizole has fewer adverse effects than ethanol"],
- quote:"Um, a little bit better control of the dosing.",
+ quote:"a little bit better control of the dosing.",
  cite:"PoisoningTreatmentTable2026KEY.pdf, row ‘Toxic alcohols’; Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slides ‘Toxicokinetic-Based Treatment Inhibit Bioactivation’, ‘Toxicokinetic-Based Treatment: methanol and ethylene glycol examples’; transcript 10/19",
  note:"The quoted sentence follows her mention of the drug that the transcript writes as omeprazole; the drug on her slide and key is fomepizole."},
 
@@ -164,7 +164,7 @@ const SHORT3 = [
  q:"Name the four target areas of pharmacogenomics, and explain why the most is known about metabolizing enzymes.",
  model:"The four target areas are metabolizing enzymes, transporters, drug targets, and immunological targets. Metabolizing enzymes were studied first because patients who could not clear certain drugs reached blood concentrations that were too high, which made those variants the most apparent.",
  points:["Metabolizing enzymes (such as the cytochrome P450s)","Transporters (such as P-glycoprotein)","Drug targets (receptors, enzymes a drug inhibits)","Immunological targets (variants linked to severe immune adverse drug reactions)"],
- quote:"You do need to know these. So what are they? Metabolizing enzymes, transporters, drug targets, and then immunological targets, OK?",
+ quote:"You do need to know these. So what are they? Metabolizing enzymes, transporters, drug targets, and then immunological targets",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘Introduction: Three Target Areas’ (p. 10); transcript 10/20",
  note:"She changed the slide title from three to four target areas in class. Her reason for enzymes coming first: they were the low hanging fruit."},
 
@@ -172,7 +172,7 @@ const SHORT3 = [
  q:"Several types of drug targets are known to have genetic variants that affect patient response to the drug. Name a general category of drug target that has been found to have genetic variability.",
  model:"Receptors. A drug target is the place where a drug acts, which can be a receptor or an enzyme the drug inhibits, and variants in beta-adrenergic receptors are one example.",
  points:["Receptors","A drug target is where a drug acts: a receptor or an enzyme the drug inhibits","A receptor variant that responds poorly changes efficacy"],
- quote:"So, places where a drug acts, it could be a receptor. It could be an enzyme, right?",
+ quote:"So, places where a drug acts, it could be a receptor. It could be an enzyme",
  cite:"Smith_Quiz_4_-_Intro_to_Pharmacogenomics.pdf, Quiz 4 question 6 (written response); Intro_to_PGx_Lecture_Students_Fall_2026.pdf slides ‘Introduction: Three Target Areas’ (p. 10), ‘Impact of Pharmacogenomics on PK and PD’ (p. 11); transcript 10/20",
  note:"Quiz 4, question 6, verbatim; the accepted answer is receptors."},
 
@@ -180,7 +180,7 @@ const SHORT3 = [
  q:"Distinguish pharmacogenetics from pharmacogenomics. Which term is preferred?",
  model:"Pharmacogenetics is the study of genetic causes of individual variations in drug response, the term used when thinking about one patient. Pharmacogenomics more broadly involves genome-wide analysis of the genetic determinants of drug efficacy and toxicity in populations, and includes genomics technologies such as gene therapy. The terms are used interchangeably, and pharmacogenomics is the preferred term.",
  points:["Pharmacogenetics: an individual patient's genetic variation in drug response","Pharmacogenomics: genome-wide, populations, broader scope","Pharmacogenomics includes technologies such as gene therapy","Used interchangeably; pharmacogenomics is preferred"],
- quote:"pharmacogenetics is the term that we use when we're thinking about an individual, one patient, and their response to a drug, OK. Pharmacogenomics is a more global term. That's where we're thinking about populations as a whole",
+ quote:"pharmacogenetics is the term that we use when we're thinking about an individual, one patient, and their response to a drug ... Pharmacogenomics is a more global term. That's where we're thinking about populations as a whole",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘Introduction: Definition of Genomics vs Genetics’ (p. 8); transcript 10/20",
  note:"The definitions on the slide come from the American Association of Pharmaceutical Scientists (AAPS) Pharmacogenomics Focus Group."},
 
@@ -188,7 +188,7 @@ const SHORT3 = [
  q:"Define a polymorphism and a rare variant. Can a whole-gene deletion be a polymorphism?",
  model:"A polymorphism is a genetic variant that occurs in at least 1% of a population; a rare variant occurs in less than 1%. Yes: the definition rests on frequency, not on the kind of change, so a gene deletion occurring in more than 1% of the population is a polymorphism.",
  points:["Polymorphism: a genetic variant in at least 1% of a population","Rare variant: in less than 1% of a population","The definition depends on frequency, not the type of change","A gene deletion in more than 1% of the population is a polymorphism"],
- quote:"polymorphism definition speaks to the frequency of that change happening, right?",
+ quote:"polymorphism definition speaks to the frequency of that change happening",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘Polymorphism’ (p. 14); transcript 10/20",
  note:"The slide writes greater than 1% for a polymorphism; in class she said at least 1%."},
 
@@ -196,9 +196,9 @@ const SHORT3 = [
  q:"What is the functional significance of a genetic variation, and why does it need to be known?",
  model:"It is how the change in a gene affects the function of the protein, enzyme or transporter that the gene makes. When it is known, the genotype can be used to decide whether a patient should get a drug or whether the dose should be reduced.",
  points:["How the variation changes the function of the gene product (protein, enzyme, transporter)","Knowing it links genotype to phenotype","Used to decide whether to give a drug or reduce its dose","Example: the *2 variant of cytochrome P450 2C19 (CYP2C19*2) gives an enzyme with no activity"],
- quote:"How does that mutation affect the function of the protein, or the enzyme or the transporter that that gene creates in our body, OK?",
+ quote:"How does that mutation affect the function of the protein, or the enzyme or the transporter that that gene creates in our body",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slides ‘Genotype vs phenotype’ (p. 17), ‘Complications of Genotype vs phenotype’ (p. 18); transcript 10/20",
- note:"She called functional significance the key word of the lecture and had the room explain it to a neighbor."},
+ note:"She called functional significance the key word of the lecture."},
 
 {id:"SA3-26", lecture:"L17", form:"objective",
  q:"Define a haplotype. What is Hardy-Weinberg equilibrium, and why do pharmacogenomic studies report that their population was in it?",

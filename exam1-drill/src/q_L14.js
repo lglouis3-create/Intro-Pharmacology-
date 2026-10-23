@@ -30,7 +30,7 @@ QUESTIONS.push(
   {t:"A and B are equally potent", correct:false, why:"The curves start at different doses; A gives the response at a lower dose than B."},
   {t:"A at low doses, B at high doses", correct:false, why:"A switch in potency is the C and D panel, where C levels off and the lines cross; the A and B lines do not cross."}],
  teach:"Potency is read along the dose axis: for the same measured response, the compound that needs less dose to produce it is the more potent one. A starts producing the response at a lower dose than B, so A is more potent. The comparison is made at the same response, which is why no toxic or lethal value is needed.",
- quote:"I think you guys are able to tell me already which compound is most potent. A, right, because you start getting that effect, the response that we're measuring at a lower dose compared to B.",
+ quote:"which compound is most potent. A ... because you start getting that effect, the response that we're measuring at a lower dose compared to B.",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Potency comparison in Dose-Response’; transcript 10/13"},
 
 {id:"L14-002", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"potency", skill:"figure",
@@ -43,7 +43,7 @@ QUESTIONS.push(
   {t:"D, at low and at high doses", correct:false, why:"At the lower doses C produces the response first, so C is more potent there."},
   {t:"D at low doses, C once the curves cross", correct:false, why:"Reversed: C responds at the lower doses first; D becomes the more potent compound after C levels off."}],
  teach:"The right panel is her trick question. C starts responding at a lower dose than D, so at low doses C is more potent, but C's curve bends over while D's continues linearly across the doses tested, so after the lines cross D is more potent. Potency can change places with dose, which is why a study has to cover a wide enough range of doses to catch it.",
- quote:"So, you can't say that C is always more potent than D. You can in the lower doses, right? OK. But once you get to a certain point where it's leveled off and the line is crossing D's dose response line, you would say that D is more potent than C, correct?",
+ quote:"you can't say that C is always more potent than D. You can in the lower doses ... But once you get to a certain point where it's leveled off and the line is crossing D's dose response line, you would say that D is more potent than C",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Potency comparison in Dose-Response’; transcript 10/13"},
 
 {id:"L14-003", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"potency", skill:"apply", multi:true,
@@ -56,7 +56,7 @@ QUESTIONS.push(
   {t:"It changes stomach pH as its dose rises", correct:true, why:"A student suggestion that was accepted: a rising dose of C could change pH in the stomach and alter its own absorption."},
   {t:"The dose range tested was too wide", correct:false, why:"A wide dose range is what reveals C leveling off; a range cut short would hide it. The range does not cause the curve to bend."}],
  teach:"Any step between dose and response that can be saturated will flatten C's curve. Once the receptors are fully saturated, once the metabolism that keeps C active can do no more turnover, or once a gut transporter such as P-glycoprotein is moving all it can, more dose adds no more response. She also accepted that C may hit the shared receptor differently than D and that rising C could change stomach pH. Target, binding, metabolism, distribution and absorption can each change potency with dose.",
- quote:"So we've talked about target, we've talked about tissue, we talked about, you know, where does the, where does the compound bind to its target. We talked about metabolism, we've talked about distribution, absorption issues. So all these things could be causing compound C's potency to change with an increasing dose, therefore, making this a trick question",
+ quote:"So we've talked about target, we've talked about tissue, we talked about ... where does the compound bind to its target. We talked about metabolism, we've talked about distribution, absorption issues. So all these things could be causing compound C's potency to change with an increasing dose, therefore, making this a trick question",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Potency comparison in Dose-Response’; transcript 10/13"},
 
 {id:"L14-004", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"potency", skill:"apply",
@@ -68,7 +68,7 @@ QUESTIONS.push(
   {t:"That C is more potent than D at low doses", correct:false, why:"The low doses are the part the study did cover, so C's lead there is still seen."},
   {t:"The lethal dose of C in 50% of the animals", correct:false, why:"The study measures one response for C and D; cutting the doses short loses the high-dose part of C's curve, where it levels off and D crosses it, not a lethal-dose value."}],
  teach:"When designing a dose–response study, include a fairly large range of doses. If dosing stops too early, the curve of C has not yet bent over, and the fact that C and D switch places in potency is missed.",
- quote:"if we did not extend the doses far enough, we, like, let's say we cut off dosing, oh, about right here. And we weren't quite sure where the curve of C was going, we might miss the fact that their potency basically changes places, right?",
+ quote:"if we did not extend the doses far enough ... we weren't quite sure where the curve of C was going, we might miss the fact that their potency basically changes places",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Potency comparison in Dose-Response’; transcript 10/13"},
 
 /* ---------------- ED, TD, LD curves ---------------- */
@@ -109,7 +109,7 @@ QUESTIONS.push(
   {t:"TD1 / ED99", correct:false, why:"That is the margin of safety."},
   {t:"NOAEL / exposure", correct:false, why:"That is the margin of exposure."}],
  teach:"The therapeutic index asks how far above the therapeutic dose the toxic dose lies, so the toxic dose goes on top: usually the toxic dose in 50% of the animals over the therapeutic dose in 50%. A wide index means the toxic dose is well above the therapeutic dose and there is less chance of toxicity; a narrow one means it is not much higher. Another percentage can be used if numerator and denominator match.",
- quote:"most of the time we're using the toxic dose in 50% of the animals over the toxic dose, I'm sorry, over the therapeutic dose of 50% of the animals. That's usually the convention of how we do therapeutic index.",
+ quote:"most of the time we're using the toxic dose in 50% of the animals ... over the therapeutic dose of 50% of the animals. That's usually the convention of how we do therapeutic index.",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Values Developed from Dose-Response’; transcript 10/13"},
 
 {id:"L14-008", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"indices", skill:"recall",
@@ -121,7 +121,7 @@ QUESTIONS.push(
   {t:"The toxic dose uses a higher percentage than the effective dose", correct:false, why:"Unequal percentages turn the ratio into a margin-of-safety type of value; for the therapeutic index both doses are read at the same percentage."},
   {t:"The ratio is then renamed the margin of exposure", correct:false, why:"The margin of exposure uses the NOAEL and an exposure, not percentages of animals."}],
  teach:"The therapeutic index compares the toxic and therapeutic curves at one matching point, conventionally the dose that affects 50% of the animals on each. Another percentage can be used, but the numerator and denominator must use the same one. Using different percentages, the toxic dose for 1% over the effective dose for 99%, is what defines the margin of safety and brings in the slope of the curve.",
- quote:"It doesn't always have to be 50%. It could be a different percentage, but the numerator and the denominator need to have the same percentage, OK.",
+ quote:"It doesn't always have to be 50%. It could be a different percentage, but the numerator and the denominator need to have the same percentage",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Values Developed from Dose-Response’; transcript 10/13"},
 
 {id:"L14-009", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"indices", skill:"tell", dupOf:"L13-032",
@@ -147,7 +147,7 @@ QUESTIONS.push(
   {t:"Estimating a drug's dose–response slope", correct:false, why:"Slope information comes from the margin of safety (TD1 / ED99)."},
   {t:"Comparing the potency of two medications", correct:false, why:"Potency compares the doses that give one response; the margin of exposure compares a no-effect dose with an exposure."}],
  teach:"Medications have a therapeutic dose to compare against, but a pollutant or occupational chemical does not, and people meet it over and over. So the margin of exposure puts the NOAEL, a dose that caused no adverse response in animal studies, over the chronic exposure people (or wildlife) are calculated to receive. Margins for different contaminants can then be compared to judge which is more dangerous.",
- quote:"the margin of exposure, this is something that we use truly in toxicology with exposures to something that's not therapeutic, like to, you know, a pollutant, an occupational exposure, OK, and it's also for repeated exposures, all right?",
+ quote:"the margin of exposure, this is something that we use truly in toxicology with exposures to something that's not therapeutic, like to ... a pollutant, an occupational exposure ... and it's also for repeated exposures",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Values Developed from Dose-Response’; transcript 10/13"},
 
 {id:"L14-011", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"indices", skill:"recall",
@@ -159,7 +159,7 @@ QUESTIONS.push(
   {t:"Animal studies: the dose that kills 50% of the animals", correct:false, why:"That is the LD50; the NOAEL is a dose with no adverse effect."},
   {t:"Water sampling: the concentration measured at the site", correct:false, why:"Measured exposure belongs in the denominator of the margin of exposure."}],
  teach:"NOAEL stands for no observable adverse effect level (she pronounces it \"Noel\"). It is a dose used in animal exposure studies of the compound at which the exposed animals did not have an adverse response. It goes over the exposure that humans, or a wild animal of concern, are thought to be getting: the exposure is calculated as the total exposure the person has received.",
- quote:"it stands for the no observable adverse effect level. OK, so no no observable adverse effect level. That is a dose that we used in animal exposure studies for this compound. That the animals that we exposed did not have an adverse response.",
+ quote:"it stands for the no observable adverse effect level ... That is a dose that we used in animal exposure studies for this compound. That the animals that we exposed did not have an adverse response.",
  note:"She then phrased it as \"what's the lowest dose we gave the animals that we were testing with this compound and they didn't have a bad response to?\" The assigned reading defines it the other way: \"The NOAEL is the highest dose of chemical tested in an animal species that does not result in significant toxicities\" (Casarett and Doull ch. 2). Her \"lowest\" is a slip of wording.",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Values Developed from Dose-Response’; transcript 10/13"},
 
@@ -172,7 +172,7 @@ QUESTIONS.push(
   {t:"The effective dose in 99% of the animals in the same study", correct:false, why:"ED99 is the denominator of the margin of safety, not the margin of exposure."},
   {t:"The therapeutic dose of the contaminant in humans", correct:false, why:"A pollutant has no therapeutic dose; that is why the margin of exposure is used."}],
  teach:"Margin of exposure = NOAEL over the chronic exposure. The NOAEL is generated in animal exposure studies; the denominator is the exposure, which the assessor calculates as the total exposure a human (or an animal in the wild) has received to the compound.",
- quote:"the Noel is what we generate in animal exposure studies, and the denominator of exposure is we calculate, we try to figure out how much total exposure has a human gotten to that compound. OK, so that's the margin of exposure.",
+ quote:"the Noel is what we generate in animal exposure studies, and the denominator of exposure is we calculate, we try to figure out how much total exposure has a human gotten to that compound.",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Values Developed from Dose-Response’; transcript 10/13"},
 
 {id:"L14-013", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"indices", skill:"apply",
@@ -197,7 +197,7 @@ QUESTIONS.push(
   {t:"Tolerates more dosing error than the wide-index drug", correct:false, why:"A wide index is the one that tolerates dosing error."},
   {t:"Has a steeper dose–response curve than the wide-index drug", correct:false, why:"The therapeutic index carries no slope information; the margin of safety does."}],
  teach:"A medication with a wide therapeutic index has less chance of toxicity; one with a narrow index has a toxic dose that is not much higher than its therapeutic dose. The therapeutic index tells how much error can be tolerated in dosing. The same comparison logic applies to margins of safety and margins of exposure.",
- quote:"less chance of toxicity for the drug with a wide therapeutic index. Drugs with a narrow therapeutic index means that the toxic dose is not too much higher than that therapeutic dose, right?",
+ quote:"less chance of toxicity for the drug with a wide therapeutic index. Drugs with a narrow therapeutic index means that the toxic dose is not too much higher than that therapeutic dose",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Values Developed from Dose-Response’; transcript 10/13"},
 
 {id:"L14-015", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"indices", skill:"recall", type:"match",
@@ -224,7 +224,7 @@ QUESTIONS.push(
   {t:"The muscle level was misread; the kidney holds the higher concentration", correct:false, why:"Nothing is wrong with the measurement; the organs differ in sensitivity."},
   {t:"The kidney damage is idiosyncratic; its cause is unknown", correct:false, why:"Idiosyncratic means unexplained; here the explanation is the kidney's greater sensitivity."}],
  teach:"Where a compound has its adverse effect may not be where it reaches its highest concentration. It may be concentrated in muscle with no effect there and damage the kidney at a lower concentration if the kidney is more sensitive. Even so, the dose at the target still determines the toxicity: a super-sensitive kidney is not harmed unless the concentration there gets high enough, and there is still a dose–response curve at the kidney.",
- quote:"So where it's having an adverse effect may not be where the highest concentration is, which is probably a little counterintuitive, right? ... not necessarily, maybe the kidneys like just super sensitive. Compared to the muscle.",
+ quote:"where it's having an adverse effect may not be where the highest concentration is ... maybe the kidneys like just super sensitive. Compared to the muscle.",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Target & Mechanism of Action’; transcript 10/13"},
 
 {id:"L14-017", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"target", skill:"recall",
@@ -249,7 +249,7 @@ QUESTIONS.push(
   {t:"The organ with the higher concentration is the true target", correct:false, why:"Both are targets; concentration does not decide which organ is harmed."},
   {t:"Its toxic mechanism matches its therapeutic mechanism", correct:false, why:"Toxic targets and mechanisms can differ from the therapeutic ones."}],
  teach:"When one compound hits several targets, each target is affected in its own way: damage to the kidney likely comes from one mechanism and damage to the liver from another. The non-parallel effective, toxic and lethal curves show the same idea, since different slopes point to different mechanisms. Finding two damaged organs also does not mean every target is known; some may not yet be identified.",
- quote:"let's say the compound affects the kidney and the liver. It's likely to be causing damage to those two different organs in different ways. One mechanism in the kidney, one mechanism in the liver, OK.",
+ quote:"let's say the compound affects the kidney and the liver. It's likely to be causing damage to those two different organs in different ways. One mechanism in the kidney, one mechanism in the liver",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Target & Mechanism of Action’; transcript 10/13"},
 
 {id:"L14-019", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"target", skill:"tell",
@@ -261,7 +261,7 @@ QUESTIONS.push(
   {t:"Both are therapy gone too far at the intended target", correct:false, why:"Killing bacteria has nothing to do with damage to hearing, so ototoxicity is not the therapy overshooting."},
   {t:"Both come from targets unrelated to the therapeutic one", correct:false, why:"Dehydration from a diuretic is its therapeutic mechanism overshooting."}],
  teach:"Many side effects in a drug list have nothing to do with the drug's therapeutic action, and the target-and-mechanism principle is the reason. Some side effects are the therapy gone too far: a diuretic that removes so much fluid the patient needs rehydration. Others, such as aminoglycosides causing ototoxicity, come from a target of the adverse effect that is very different from the therapeutic target and mechanism. Sometimes the mechanism of an adverse effect is known or can be found; sometimes it is not known.",
- quote:"Classic example would be diuretics ... that would be kind of a classic example of a side effect of diuretics where the therapy has gone too far ... why doivomar drugs like our amino glycosides cause ootoxicity. That's weird stuff ... the classic example of how the target of an adverse effect could be very different than the therapeutic targeting mechanism.",
+ quote:"Classic example would be diuretics ... that would be kind of a classic example of a side effect of diuretics where the therapy has gone too far ... why doivomar drugs like our amino glycosides cause ootoxicity ... the classic example of how the target of an adverse effect could be very different than the therapeutic targeting mechanism.",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Target & Mechanism of Action’; transcript 10/13"},
 
 /* ---------------- The reading, as discussed ---------------- */
@@ -274,7 +274,7 @@ QUESTIONS.push(
   {t:"Drinking-water treatment methods; water utilities and their engineers", correct:false, why:"Treatment methods were in the part of the paper that was not assigned; the summit was about drugs in the environment."},
   {t:"Antibiotic resistance in sediments; microbiologists and physicians", correct:false, why:"Resistance was one concern raised about drugs in water, not the subject of the summit."}],
  teach:"The article describes an environmental health summit in 2008, the first time these groups met about the finding that drugs are contaminating the environment, particularly water. Government organizations such as the EPA, academics, the pharmaceutical industry and other scientists interested in the planet's health attended. Their purpose was to decide what is known, how bad the problem is, and what to do; the part on what to do (research and educating scientists and the public) was not assigned.",
- quote:"it was an environmental health summit. Who was there? ... government organizations of various kinds, EPA, other agencies that, uh, might be worried about the environment, uh, academicians. Uh, pharmacy industry, right? Other scientists that have an interest in our health of our planet",
+ quote:"it was an environmental health summit ... government organizations of various kinds, EPA, other agencies that ... might be worried about the environment ... academicians ... pharmacy industry ... Other scientists that have an interest in our health of our planet",
  note:"She first said 2018, then corrected herself to 2008.",
  cite:"Discussion-Guide-Rodriguez-Mozaz-and-Weinberg-Student-2026 copy.pdf; transcript 10/13"},
 
@@ -286,7 +286,7 @@ QUESTIONS.push(
   {t:"Patients who hear about it will ask whether the water is dangerous", correct:true, why:"Patients read or hear a podcast about drugs in the water and come to the pharmacist worried about drinking someone else's Prozac."},
   {t:"Pharmacists test their community's tap water for drugs", correct:false, why:"Water sampling was done by scientists after the summit, not by pharmacists."},
   {t:"Patients can get a therapeutic dose from drinking tap water", correct:false, why:"At parts per trillion, even a well-hydrated person does not reach a normal therapeutic daily dose."},
-  {t:"Flushing unused drugs is the main source of drugs in water", correct:false, why:"Flushing is one source; excretion after people and animals take medications is another. Neither she nor her key ranks the sources."}],
+  {t:"Flushing unused drugs is the main source of drugs in water", correct:false, why:"Flushing is one source. Her Practice Quiz 1 key names consumption of medications by humans and the resulting waste streams as the greatest source."}],
  teach:"She assigned the paper for two reasons: it is a good way to explore the principles of toxicology, and patients will come to the pharmacist worried after reading or hearing that drugs are in the water supply. The goal is to be able to tell that patient whether to calm down or be concerned.",
  quote:"they will find out that we know that there's drugs in our water supply, and they might likely come to you freaking out ... We're going to get you to the point where you can talk to your patient that came to you freaking out, and you can help them calm down or be concerned.",
  cite:"Discussion-Guide-Rodriguez-Mozaz-and-Weinberg-Student-2026 copy.pdf; transcript 10/13"},
@@ -314,7 +314,7 @@ QUESTIONS.push(
   {t:"Treatment plant discharge that still holds drugs", correct:true, why:"Treated water goes back to streams, rivers and lakes with drugs still in it; a source for both humans and animals."},
   {t:"Discharge from pharmaceutical manufacturing plants", correct:false, why:"Manufacturing was a wrong option on her Quiz 1 source item; the sources named trace drugs after use: what people excrete or flush, what medicated livestock excrete, and what treatment plants fail to remove."}],
  teach:"Each source is a path from a drug's use to the water. People take medications and flush away parent drug and metabolites; unused medications are dumped down the toilet; medicated livestock on feedlots and in chicken houses add hormones and antibiotics in their waste. All of it reaches wastewater, and treatment plants do not remove all the drugs before the water returns to streams, rivers and lakes, so the same sources reach humans and wildlife.",
- quote:"We take the drugs, we flush, we improperly dispose of our meds. We've got animals on feedlots. Our wastewater treatment plants don't take care of all the drugs before it gets released into the environment, right? So that's the source for our exposure.",
+ quote:"We take the drugs, we flush, we improperly dispose of our meds. We've got animals on feedlots. Our wastewater treatment plants don't take care of all the drugs before it gets released into the environment ... So that's the source for our exposure.",
  cite:"Discussion-Guide-Rodriguez-Mozaz-and-Weinberg-Student-2026 copy.pdf (Source hint); transcript 10/13"},
 
 {id:"L14-024", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"reading", skill:"tell", readingId:"rodriguez-mozaz", dupOf:"L13-035",
@@ -326,7 +326,7 @@ QUESTIONS.push(
   {t:"Humans but not wildlife", correct:false, why:"Aquatic animals live in the receiving streams and lakes."},
   {t:"Neither group", correct:false, why:"Current treatment does not get all the drugs out, so the discharge reaches both humans and wildlife."}],
  teach:"The water from flushing is treated, but current treatment mechanisms do not get all the drugs out before the water returns to streams, rivers and lakes. That makes the treatment plant a source of exposure for humans and for animals in the wild alike.",
- quote:"Wastewater treatment plants, yeah, the water from Flushing gets treated a bit, but right now the current mechanisms don't get all the drugs out of it before it goes back into your streams and rivers and lakes, OK. So is that a source for humans or animals? Both, there you go.",
+ quote:"Wastewater treatment plants ... the water from Flushing gets treated a bit, but right now the current mechanisms don't get all the drugs out of it before it goes back into your streams and rivers and lakes ... So is that a source for humans or animals? Both",
  cite:"Discussion-Guide-Rodriguez-Mozaz-and-Weinberg-Student-2026 copy.pdf (Source hint); transcript 10/13"},
 
 {id:"L14-025", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"reading", skill:"tell", readingId:"rodriguez-mozaz",
@@ -339,7 +339,7 @@ QUESTIONS.push(
   {t:"Humans mostly by skin while bathing or swimming; wildlife mostly by drinking", correct:false, why:"Bathing and swimming are possible human routes, but drinking is the main one; wildlife are exposed by several routes."},
   {t:"Humans mostly by eating fish; wildlife mostly by breathing through gills", correct:false, why:"Human exposure is mostly through drinking water; gills are one of several wildlife routes."}],
  teach:"Exposure: humans are mostly exposed by drinking water (bathing or swimming in a lake are possible). Animals that live in or near water are exposed constantly: drinking, breathing through gills, absorption across skin (frogs absorb a lot and are a sentinel species), and eating other animals that live in the water. Her key adds that wildlife exposure lasts their entire life, is repeated, and is constant if their home range is continually contaminated.",
- quote:"so they get exposed drinking, eating, swimming in the water ... the route of exposure, drinking, eating, swimming, living in it, OK? So that's our second principle.",
+ quote:"so they get exposed drinking, eating, swimming in the water ... the route of exposure, drinking, eating, swimming, living in it ... So that's our second principle.",
  note:"Breathing (gills) is from her 10/13 speech; her key (KeyDiscussionGuideRodriguez-MozazandWeinberg2026.docx) lists drinking water, food and dermal for wildlife.",
  cite:"Discussion-Guide-Rodriguez-Mozaz-and-Weinberg-Student-2026 copy.pdf (Exposure hint); KeyDiscussionGuideRodriguez-MozazandWeinberg2026.docx (Exposure); transcript 10/13"},
 
@@ -379,7 +379,7 @@ QUESTIONS.push(
   {t:"Concerned: nothing is known about human risk at these levels", correct:false, why:"Some data exist from drug development studies, and the dose is probably below a therapeutic dose. The key does list open questions for humans: low-dose chronic exposure, sensitive populations and multiple exposures."},
   {t:"Probably OK: treatment plants remove the drugs before people drink", correct:false, why:"The reassurance rests on dose; current treatment does not get all the drugs out."}],
  teach:"Dose: at parts per trillion, even a well-hydrated person drinking contaminated water does not reach a normal therapeutic daily dose, so the patient is probably OK. Sensitive populations (in utero, children, the elderly, people with diseases, the immunocompromised) should not be ignored, and if concentrations start rising the risk assessors will re-evaluate; but her former work in risk assessment has not found that these levels are a problem for humans. Her key lists what is still unknown for humans: the effects of low-dose chronic exposures, good data on sensitive populations, and how multiple exposures act.",
- quote:"is that gonna get you up to a normal therapeutic daily dose? No, no ... So I think for humans we can be OK. Doesn't mean we should ignore our sensitive populations, which are in utero, elderly kids, people with diseases.",
+ quote:"is that gonna get you up to a normal therapeutic daily dose? No ... So I think for humans we can be OK. Doesn't mean we should ignore our sensitive populations, which are in utero, elderly kids, people with diseases.",
  cite:"Discussion-Guide-Rodriguez-Mozaz-and-Weinberg-Student-2026 copy.pdf (Dose); KeyDiscussionGuideRodriguez-MozazandWeinberg2026.docx (ADME, Dose, Target/MOA); transcript 10/13"},
 
 {id:"L14-029", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"reading", skill:"recall", readingId:"rodriguez-mozaz", multi:true,
@@ -393,7 +393,7 @@ QUESTIONS.push(
   {t:"People with diseases or immune compromise", correct:true, why:"The immunocompromised and disease states were offered and accepted; people with diseases are in the sensitive group, for whom good data are lacking."},
   {t:"Healthy adults who drink a lot of water", correct:false, why:"The well-hydrated adult was the example showing the dose stays far below therapeutic."}],
  teach:"Even though humans are probably OK, sensitive populations should not be ignored: in utero, children, the elderly, people with diseases and the immunocompromised. Risk assessment on in utero exposure is very hard to do, and no articles show a child affected in utero by drugs in the water supply.",
- quote:"Maybe people that are immunocompromised, maybe with some disease states. Young in utero, right? ... Doesn't mean we should ignore our sensitive populations, which are in utero, elderly kids, people with diseases.",
+ quote:"Maybe people that are immunocompromised, maybe with some disease states. Young in utero ... Doesn't mean we should ignore our sensitive populations, which are in utero, elderly kids, people with diseases.",
  cite:"Discussion-Guide-Rodriguez-Mozaz-and-Weinberg-Student-2026 copy.pdf (Dose); transcript 10/13"},
 
 {id:"L14-030", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"reading", skill:"apply", readingId:"rodriguez-mozaz", dupOf:"L13-036",
@@ -430,7 +430,7 @@ QUESTIONS.push(
   {t:"Estrogen in drinking water feminizing people in big cities", correct:false, why:"Estrogen is higher along some city shorelines, but feminization was described in frogs, fish and alligators; the human dose is parts per trillion."},
   {t:"Harm to the fetus from drugs at parts-per-trillion levels", correct:false, why:"In utero exposure is watched, but no articles show a child affected in utero by drugs in the water supply."}],
  teach:"A big concern she called real: as antibiotics are improperly disposed of and reach the environment, the many microbes living in lake and stream sediments and beach sand survive them and become resistant, so an infection from a cut may be untreatable.",
- quote:"a really big concern, which probably most people know about is the fact that the bacteria in waters and the sediments are becoming resistant to the antibiotics that are out there in the environment, and that's a problem. That is a problem.",
+ quote:"a really big concern, which probably most people know about is the fact that the bacteria in waters and the sediments are becoming resistant to the antibiotics that are out there in the environment, and that's a problem.",
  cite:"Discussion-Guide-Rodriguez-Mozaz-and-Weinberg-Student-2026 copy.pdf (Target/MOA); transcript 10/13"},
 
 /* ---------------- General concepts: immediate/delayed, reversible/irreversible, local/systemic ---------------- */
@@ -444,7 +444,7 @@ QUESTIONS.push(
   {t:"Local effect", correct:false, why:"Nerve damage appears away from the site of first contact, so it is not a local effect."},
   {t:"Reversible effect", correct:false, why:"Nerve cells cannot divide and be replaced, so nerve damage is considered irreversible."}],
  teach:"Immediate effects are seen right away; delayed effects appear after a lapse of time. Her two extreme examples: diethylstilbestrol (DES) given in the 1950s to maintain pregnancy, with a particular vaginal cancer in the daughters as young adults (a delay of years), and some organophosphate pesticides, which produce the expected immediate effects and then, depending on structure, nerve damage days later from effects on different enzymes in the nerves.",
- quote:"some organophosphate pesticides can have, uh, caused neuropathies because they're affecting um different enzymes in the nerves. OK, so that's a delayed effect by about days, not years.",
+ quote:"some organophosphate pesticides can have ... caused neuropathies because they're affecting ... different enzymes in the nerves ... so that's a delayed effect by about days, not years.",
  note:"The slide names the delayed neurotoxicant as triorthocresylphosphate (TOCP); in class she said \"some of our organophosphate pesticides\" without naming TOCP.",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Immediate vs. Delayed’; transcript 10/13"},
 
@@ -457,7 +457,7 @@ QUESTIONS.push(
   {t:"Years and years", correct:false, why:"The organophosphate neuropathy appears in days, not years."},
   {t:"Days and days", correct:false, why:"DES effects took years: the cancers appeared when the exposed daughters became young adults."}],
  teach:"Delayed effects can take quite a lot of time. DES, given in the 1950s to maintain pregnancy, caused a particular vaginal cancer in the female offspring as they became young adults, a delay of years. Some organophosphate pesticides cause nerve damage that appears days after the exposure.",
- quote:"The delayed, very delayed response we saw was a very particular kind of vaginal cancer in their female offspring as those girls became young adults, very delayed exposure, right? ... so that's a delayed effect by about days, not years.",
+ quote:"The delayed, very delayed response we saw was a very particular kind of vaginal cancer in their female offspring as those girls became young adults, very delayed exposure ... so that's a delayed effect by about days, not years.",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Immediate vs. Delayed’; transcript 10/13"},
 
 {id:"L14-035", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"general", skill:"recall",
@@ -470,7 +470,7 @@ QUESTIONS.push(
   {t:"The toxicant concentration it receives", correct:false, why:"Concentration determines whether injury occurs, not whether the tissue can recover."},
   {t:"Whether the effect is immediate or delayed", correct:false, why:"Timing is a separate general concept."}],
  teach:"Some toxic effects are reversible and others are not, and the tissue's ability to regenerate decides which. The liver is unique in healing and regenerating itself, so liver injuries can often be reversible (mild injury more than severe chronic injury). Most nerve and CNS cells cannot divide or be regenerated, so nerve damage should be considered irreversible. Cancer and birth defects are also irreversible. One exposure can produce both kinds of injury: \"So sometimes you get both.\"",
- quote:"the liver is really unique. It is able to heal itself, to regenerate oftentimes when it becomes damaged ... most of our, uh, nerves or CNS cells, they cannot be, uh, their injury is permanent. They can't divide. They can't be regenerated.",
+ quote:"the liver is really unique. It is able to heal itself, to regenerate oftentimes when it becomes damaged ... most of our ... nerves or CNS cells ... their injury is permanent. They can't divide. They can't be regenerated.",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Reversible vs. Irreversible’; transcript 10/13"},
 
 {id:"L14-036", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"general", skill:"apply",
@@ -482,7 +482,7 @@ QUESTIONS.push(
   {t:"Cancer is a delayed effect, and delayed effects are irreversible", correct:false, why:"Delay and reversibility are separate concepts; cancer is irreversible because the cancerous cells never return to normal."},
   {t:"The organ that had the cancer is unable to regenerate", correct:false, why:"Regeneration explains reversible injury such as in the liver; cancer is irreversible because the cells do not revert, whatever the organ."}],
  teach:"Cancer and birth defects are considered irreversible. A cancer may be cut out, killed with x-rays or chemotherapy, but the cells that became cancerous did not switch back to normal; they were killed. A birth defect in limb or body formation during fetal development cannot be fixed.",
- quote:"that doesn't mean that the tissues, those cells that became cancerous, they didn't, those cancerous cells didn't switch back to being normal, right? We killed them. We got rid of them, OK.",
+ quote:"that doesn't mean that the tissues ... those cancerous cells didn't switch back to being normal ... We killed them. We got rid of them",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Reversible vs. Irreversible’; transcript 10/13"},
 
 {id:"L14-037", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"general", skill:"tell",
@@ -495,7 +495,7 @@ QUESTIONS.push(
   {t:"Most toxins act locally, and chlorine gas is a typical example", correct:false, why:"Most toxins cause systemic effects; the highly reactive ones are the exception that stays local."},
   {t:"It needs distribution to the site of action before acting", correct:false, why:"Absorption and distribution are what a systemic effect requires; a local effect occurs at the site of first contact."}],
  teach:"A local effect occurs at the site of first contact: acid splashed on the skin, chlorine gas in the lungs, eyes and nasal mucosa. A systemic effect requires absorption at the site of entry and distribution into the circulation. Most toxins cause systemic effects unless they are highly reactive; highly reactive agents act locally and often never go systemic.",
- quote:"Most toxins, they cause systemic effects unless they are highly reactive. So are very reactive compounds like chlorine gas, like acids, they will cause that, that the local effect. They often will not have a chance to go systemic.",
+ quote:"Most toxins, they cause systemic effects unless they are highly reactive. So are very reactive compounds like chlorine gas, like acids, they will cause ... the local effect. They often will not have a chance to go systemic.",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Local vs. Systemic’; transcript 10/13"},
 
 {id:"L14-038", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"general", skill:"apply",
@@ -519,7 +519,7 @@ QUESTIONS.push(
   {t:"The burn is a local effect, so the kidney damage needs a second exposure", correct:false, why:"One acid burn can produce an indirect systemic effect; no second exposure is needed."},
   {t:"The acid is a highly reactive agent that is absorbed and distributed", correct:false, why:"Highly reactive agents act at the site of contact and often are not absorbed; the kidney harm comes from fluid loss."}],
  teach:"Some poisons cause indirect systemic effects. An acid burn over a significant body surface area behaves like a thermal burn: the skin can no longer hold fluids in, blood volume is disturbed, and people can end up with bad kidney problems as the body fights to keep fluid, apart from the risk of infection. A burned patient must be looked at systemically, not only for skin healing.",
- quote:"you run the risk of having your uh blood volume really messed up, cuz you're leaking fluids ... People can end up with some really bad kidney problems because your body's fighting to keep the fluids in you, OK? So that's a systemic effect that can happen with like an acid burn, just like with a thermal burn.",
+ quote:"you run the risk of having your ... blood volume really messed up, cuz you're leaking fluids ... People can end up with some really bad kidney problems because your body's fighting to keep the fluids in you ... So that's a systemic effect that can happen with like an acid burn, just like with a thermal burn.",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Local vs. Systemic’; transcript 10/13"},
 
 /* ---------------- Chemical interactions ---------------- */
@@ -534,7 +534,7 @@ QUESTIONS.push(
   {t:"Antagonistic", correct:true, why:"Antagonistic is one of the four interaction types on the slide: compounds taken in together can change each other's absorption, protein binding, biotransformation or excretion, so the combined response may be increased or decreased."},
   {t:"Dispositional", correct:false, why:"Dispositional describes a type of tolerance, not an interaction between compounds."}],
  teach:"People are rarely exposed to one thing at a time: contaminated or additive-laden foods, drugs, hobbies and the workplace all contribute. Each exposure probably has its own mechanism and target, and when they are combined the compounds can interact additively, synergistically, by potentiation or antagonistically, which makes the combined outcome hard to predict.",
- quote:"You could have additive or synergistic or potentiation or antagonistic type of interactions going on, which makes it really hard to predict how bad is it going to be for for people or critters, OK.",
+ quote:"You could have additive or synergistic or potentiation or antagonistic type of interactions going on, which makes it really hard to predict how bad is it going to be ... for people or critters",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Chemical Interactions’; transcript 10/13"},
 
 {id:"L14-041", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"interact", skill:"apply",
@@ -546,7 +546,7 @@ QUESTIONS.push(
   {t:"NOAELs are unavailable for the individual compounds", correct:false, why:"Animal studies supply NOAELs for individual compounds."},
   {t:"The compounds act by one shared mechanism of action", correct:false, why:"The different exposures probably have different mechanisms and targets; that is part of the difficulty."}],
  teach:"Risk assessment of a polluted site means sampling it, learning which compounds are there and at what concentrations, working out how people interact with the site (walking across, living or working there), and then calculating how risky the whole thing is. The number is hard to get because the interactions among multiple compounds with different mechanisms cannot really be quantified.",
- quote:"It's very hard to get a number that will quantify the risk for being in that place with all those multiple exposures, OK. The reason why it's hard to quantify is it's really hard to quantify these interactions, additive, synergism, potentiation, and antagonism.",
+ quote:"It's very hard to get a number that will quantify the risk for being in that place with all those multiple exposures ... The reason why it's hard to quantify is it's really hard to quantify these interactions, additive, synergism, potentiation, and antagonism.",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Chemical Interactions’; transcript 10/13"},
 
 /* ---------------- Tolerance ---------------- */
@@ -560,7 +560,7 @@ QUESTIONS.push(
   {t:"Dispositional is seen with drugs; reduced responsiveness with pollutants", correct:false, why:"Both occur with medications and with environmental exposures."},
   {t:"Dispositional follows one exposure; reduced responsiveness follows repeats", correct:false, why:"Both kinds develop with repeated exposure."}],
  teach:"Tolerance is decreased responsiveness to a toxic effect after prior exposure; it happens with medications (opioids) and with some environmental or occupational exposures. Two mechanisms: dispositional tolerance, which is ADME-based (less toxicant reaches the site of the toxic effect), and reduced responsiveness, which is pharmacodynamic (the target, such as a receptor population, responds less).",
- quote:"you can see how the dispositional is admi-based and the reduced responsiveness is pharmacodynamically based, right? Dealing with receptors.",
+ quote:"you can see how the dispositional is admi-based and the reduced responsiveness is pharmacodynamically based ... Dealing with receptors.",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Tolerance’; transcript 10/13"},
 
 {id:"L14-043", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"tolerance", skill:"apply",
@@ -572,7 +572,7 @@ QUESTIONS.push(
   {t:"Its receptors are down-regulated, so the tissue responds less", correct:false, why:"That would be reduced-responsiveness tolerance; this example is dispositional."},
   {t:"It induces a metal-carrying protein, so the kidneys clear it faster", correct:false, why:"Carrier induction is how cadmium is cleared; carbon tetrachloride blocks the enzymes that turn it into its nastier metabolite."}],
  teach:"Dispositional tolerance, example one: carbon tetrachloride is metabolized by the body to something even nastier, but repeated exposure to carbon tetrachloride inhibits the enzymes that do its own metabolism, so some of it is never converted to the worse metabolite. It is the reverse of the induction most people would expect.",
- quote:"You were probably thinking, oh, carbon tet will induce the enzymes that do its metabolism, but no, for carbontet, it inhibits its own metabolism. It kind of protects you from that repeated exposure, sort of, OK.",
+ quote:"You were probably thinking, oh, carbon tet will induce the enzymes that do its metabolism, but no, for carbontet, it inhibits its own metabolism. It kind of protects you from that repeated exposure",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Tolerance’; transcript 10/13"},
 
 {id:"L14-044", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"tolerance", skill:"apply",
@@ -584,7 +584,7 @@ QUESTIONS.push(
   {t:"It down-regulates the receptors it acts on in the kidney", correct:false, why:"Receptor down-regulation is reduced-responsiveness tolerance, not dispositional."},
   {t:"It is converted to a less toxic valence that the kidneys excrete", correct:false, why:"Valence matters because certain valences induce the carrier; no conversion of the metal was described."}],
  teach:"Dispositional tolerance, example two: cadmium, a common environmental contaminant, is a metal carried in the body by a metal-carrying protein that helps eliminate it through the kidneys. Certain valences of cadmium induce expression of that carrier, so more cadmium is cleared with repeated exposure.",
- quote:"it's often carried in the body by a particular metal carrying enzyme, and if that metal carrying enzyme can grab that cadmium, it'll help you eliminate it via the kidneys. Cadmium, especially um certain valences of cadmium, can induce the expression of that metal carrying enzyme and help you clear it as well.",
+ quote:"it's often carried in the body by a particular metal carrying enzyme, and if that metal carrying enzyme can grab that cadmium, it'll help you eliminate it via the kidneys. Cadmium, especially ... certain valences of cadmium, can induce the expression of that metal carrying enzyme and help you clear it as well.",
  note:"She called the carrier a \"metal carrying enzyme\"; the question says metal-carrying protein.",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Tolerance’; transcript 10/13"},
 
@@ -597,7 +597,7 @@ QUESTIONS.push(
   {t:"Dispositional tolerance, by inhibition of the drug's own metabolism", correct:false, why:"Inhibition of its own metabolism is carbon tetrachloride's way of reducing a toxic metabolite; a medication losing effect at the same dose fits the target down-regulating."},
   {t:"Reduced responsiveness, by induction of the enzymes that clear the drug", correct:false, why:"Enzyme induction would be an ADME change, which is dispositional; reduced responsiveness is a change at the target."}],
  teach:"Reduced-responsiveness tolerance: with repeated exposure the target of the compound down-regulates, for instance fewer receptors, so the tissue responds less. A medication that gradually stops working as well can reflect down-regulation of the receptors it targets.",
- quote:"If you give a person a medication over time and it starts to not be working as well, you could be having reduced responsiveness because of a down regulation of the receptors that that medication is targeting, OK.",
+ quote:"If you give a person a medication over time and it starts to not be working as well, you could be having reduced responsiveness because of a down regulation of the receptors that that medication is targeting",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Tolerance’; transcript 10/13"},
 
 /* ---------------- Variations in effect ---------------- */
@@ -611,7 +611,7 @@ QUESTIONS.push(
   {t:"Individual differences", correct:false, why:"Individual differences are within one species."},
   {t:"Idiosyncratic toxicity", correct:false, why:"Idiosyncratic means the reason is unknown."}],
  teach:"Toxicologists use specific terms for variation in effect. Selective toxicity: an exposure is lethal to one species but not to another. Species differences: two species are both sensitive, but differ qualitatively and/or quantitatively in how sensitive they are and how they respond. Individual differences: people within one species respond differently, for genetic reasons.",
- quote:"One of the terms is what we call selective toxicity. This means that an exposure could be lethal to one species, but not to another, OK. Another term that we use in the world of toxicology is species differences ... there's either a qualitative and or a quantitative difference in the way two different species respond.",
+ quote:"One of the terms is what we call selective toxicity. This means that an exposure could be lethal to one species, but not to another ... Another term that we use in the world of toxicology is species differences ... there's either a qualitative and or a quantitative difference in the way two different species respond.",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Variations in Effect’; transcript 10/13"},
 
 {id:"L14-047", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"variation", skill:"apply",
@@ -623,7 +623,7 @@ QUESTIONS.push(
   {t:"Rodents metabolize arsenic to a safer form before it reaches the skin", correct:false, why:"The mechanism is unknown; no explanation was given."},
   {t:"Individual genetic differences among the humans who drank the water", correct:false, why:"The difference is between species, not within one."}],
  teach:"Species differences raise the question of extrapolation. Arsenic in groundwater causes a bizarre skin cancer on the palms and soles of exposed humans, but no rodent or other animal tested reproduces it, so the mechanism cannot be worked out. Had the human cases not already been observed, animal studies would have declared the arsenic safe. Choosing the right animal to predict a drug's effects in humans is the same problem.",
- quote:"We have tried and tried to find an animal that we could expose to drinking water that has arsenic in it ... We can't find an animal model that um mimics what happens to humans when we're exposed to arsenic in water, OK?",
+ quote:"We have tried and tried to find an animal that we could expose to drinking water that has arsenic in it ... We can't find an animal model that ... mimics what happens to humans when we're exposed to arsenic in water",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Variations in Effect’; transcript 10/13"},
 
 {id:"L14-048", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"variation", skill:"recall",
@@ -649,7 +649,7 @@ QUESTIONS.push(
   {t:"Immunologically based, such as allergic reactions", correct:true, why:"Endpoints produced through the immune response are their own category; she said this category will focus mostly on allergic reactions."},
   {t:"Hormetic", correct:false, why:"Hormesis is a dose–response shape, not a category of toxic endpoint."}],
  teach:"Each category answers a different question about a toxic endpoint. On- or off-target: is the drug hitting the receptor it was designed for? Organ specific or not: is the damage tied to one organ, or is the same pathology seen in many? Idiosyncratic: we do not know why it happens. Immunologically based: mostly allergic reactions. One exposure can have several targets, and each response may come from a different mechanism.",
- quote:"toxic endpoints may be defined as on or off target ... The endpoints or the results you see may be non-organ specific, they could be organ specific, they could be idiosyncratic. What does idiosyncratic mean? We don't know why it's happening. It's unexplainable, OK?",
+ quote:"toxic endpoints may be defined as on or off target ... The endpoints or the results you see may be non-organ specific, they could be organ specific, they could be idiosyncratic. What does idiosyncratic mean? We don't know why it's happening. It's unexplainable",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Toxic Endpoints may be…’; transcript 10/13"},
 
 {id:"L14-050", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"ontarget", skill:"figure",
@@ -661,7 +661,7 @@ QUESTIONS.push(
   {t:"The parent drug and its active metabolite", correct:false, why:"Drug or metabolite activity appears on both sides."},
   {t:"On-target effects and off-target effects", correct:false, why:"On-target and off-target effects appear in both halves; the halves divide intended from unintended tissue."}],
  teach:"The on-/off-target figure (from the pharmacology textbook, Chapter 6, Figure 6-1) is divided in half: the left is the intended tissue, where the drug is meant to act, and the right is an unintended tissue the drug may also reach. On both sides the drug, or a metabolite of it, finds receptors. On-target means it finds the receptor it was designed for; off-target means it finds other receptors; either can occur in either tissue.",
- quote:"What kind of tissue is being described on the left? Right here The intended tissue, right? So this is where we want this, let's say this is a drug. This is where we want the drug to act in the body, the intended tissue. And on the right here. This is an image of what's going on in an unintended tissue.",
+ quote:"What kind of tissue is being described on the left? ... The intended tissue ... This is where we want the drug to act in the body, the intended tissue. And on the right here. This is an image of what's going on in an unintended tissue.",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘On-target and off-target adverse drug effects’ (Figure 6-1); transcript 10/13"},
 
 {id:"L14-051", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"ontarget", skill:"tell",
@@ -686,7 +686,7 @@ QUESTIONS.push(
   {t:"The receptor is reached in the wrong tissue", correct:false, why:"That is on-target in the wrong tissue (diphenhydramine); the stem places the effect in the intended tissue."},
   {t:"The drug blocks an unintended receptor subtype", correct:false, why:"Hitting an unintended receptor subtype, as propranolol does at beta-2 receptors in the airway, is an off-target effect."}],
  teach:"On-target adverse effects in the intended tissue come from too high a dose at the receptor, or from chronic activation or inhibition of other effects. Too much dose at the receptor can come from a deliberate overdose, an accidental dosing error, a change in pharmacokinetics (a diseased liver that cannot clear the normal dose, giving blood concentrations that are too high), or a change in receptor number (the slide's wording).",
- quote:"Most of the time, if you're having an on target adverse effect in the right tissue, your dose is too high. OK.",
+ quote:"Most of the time, if you're having an on target adverse effect in the right tissue, your dose is too high.",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slides ‘On-target and off-target adverse drug effects’, ‘On-Target Examples’; transcript 10/13"},
 
 {id:"L14-053", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"ontarget", skill:"apply", multi:true,
@@ -699,7 +699,7 @@ QUESTIONS.push(
   {t:"A deliberate overdose by the patient", correct:true, why:"Taking too much on purpose raises the dose at the intended receptor, giving an on-target adverse effect from the drug's own action."},
   {t:"The drug finding a different receptor subtype", correct:false, why:"That is off-target, not a rise in dose at the intended receptor."}],
  teach:"On-target examples: the dose at the receptor is too high through deliberate or accidental dosing errors; through a change in pharmacokinetics, such as a liver that no longer metabolizes and clears the drug so the normal dose yields too-high blood concentrations; or through a change in receptor number.",
- quote:"Maybe their liver is not working as well anymore, and they can't metabolize and clear the drug ... So you've got, again, too much dose at the target, OK? Also, you could have a change in receptor number. So if you down regulate receptor numbers, keep the dose the same, you may be overhitting those receptors",
+ quote:"Maybe their liver is not working as well anymore, and they can't metabolize and clear the drug ... So you've got, again, too much dose at the target ... Also, you could have a change in receptor number. So if you down regulate receptor numbers, keep the dose the same, you may be overhitting those receptors",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘On-Target Examples’; transcript 10/13"},
 
 {id:"L14-054", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"ontarget", skill:"drug",
@@ -712,7 +712,7 @@ QUESTIONS.push(
   {t:"Off-target effect at a receptor subtype", correct:false, why:"A subtype effect means hitting a different subtype, like beta-2 instead of beta-1 for propranolol; diphenhydramine hits the same histamine receptor it treats allergy with."},
   {t:"On-target effect from a dose too high", correct:false, why:"Drowsiness comes from where the drug acts, the brain, not from too much dose at the peripheral receptor."}],
  teach:"Diphenhydramine blocks allergic symptoms by hitting histamine receptors in the periphery. It also crosses into the brain and hits the same histamine receptors there, causing drowsiness. Because the receptor is the intended one and only the tissue is wrong, this is an on-target adverse effect in the wrong tissue. Newer antihistamines such as cetirizine and fexofenadine were tweaked so they do not cross the blood-brain barrier, so they reach the peripheral receptors without the drowsiness. For the receptor class, keep Dr. Gottlieb's Exam 1 point: \"there's only one inverse agonist you need to know. It's gonna be an antihistamine. If you know what loratadine is, you know that's the inverse agonist\".",
- quote:"it causes drowsiness because it's hitting the histamine receptors in the brain, so that's an on target adverse effect in the wrong tissue. When we developed newer antihistamines, we tweaked those molecules, and we made, made them so that they don't cross the blood-brain barrier.",
+ quote:"it causes drowsiness because it's hitting the histamine receptors in the brain, so that's an on target adverse effect in the wrong tissue. When we developed newer antihistamines, we tweaked those molecules ... made them so that they don't cross the blood-brain barrier.",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘On-Target Examples’; transcript 10/13"},
 
 {id:"L14-055", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"ontarget", skill:"drug",
@@ -737,7 +737,7 @@ QUESTIONS.push(
   {t:"Both enantiomers treat nausea; both are potent teratogens", correct:false, why:"The S-enantiomer is the potent teratogen; the R-enantiomer is the anti-nausea agent."},
   {t:"The R-enantiomer treats nausea; it was given as the pure R form", correct:false, why:"It was given as a racemic mixture of R and S, which is how the S form reached pregnant women."}],
  teach:"Off-target, example two: an enantiomer hits an unintended receptor. Thalidomide is racemic; the R-enantiomer helped with nausea and the S-enantiomer is a potent teratogen, and people took both. It was never officially on the market in the 1950s and is used today in oncology.",
- quote:"it's the Rnanammer that was good at helping with nausea, but the Senanammer was a very potent teratogen, OK. Do you guys know if we use, uh, thalidomide anymore therapeutically? ... yeah, we use thalidomide now in oncology.",
+ quote:"it's the Rnanammer that was good at helping with nausea, but the Senanammer was a very potent teratogen ... we use thalidomide now in oncology.",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Off-Target Examples’; transcript 10/13"},
 
 {id:"L14-057", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"ontarget", skill:"drug",
@@ -750,7 +750,7 @@ QUESTIONS.push(
   {t:"An enantiomer of propranolol hitting an unintended receptor", correct:false, why:"Enantiomer effects are the thalidomide example; propranolol's asthma comes from blocking a second receptor subtype, beta-2."},
   {t:"An unintended receptor: potassium channels in the heart", correct:false, why:"Potassium-channel block is terfenadine's off-target effect on the heart."}],
  teach:"Propranolol is meant to block beta-1 adrenergic receptors in the heart, lowering heart rate. It also blocks beta-2 adrenergic receptors, a different subtype, located in airway smooth muscle, and that is what exacerbates asthma. Because the airway effect comes from a receptor subtype the drug was not designed to hit, it is off-target, not on-target in the wrong tissue.",
- quote:"the asthma exacerbation example with the beta blockers is, it's talking about subtypes of a receptor. So, beta 1 adrenergic receptors versus the beta 2 adrenergic receptors, OK?",
+ quote:"the asthma exacerbation example with the beta blockers is, it's talking about subtypes of a receptor. So, beta 1 adrenergic receptors versus the beta 2 adrenergic receptors",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Off-Target Examples’; transcript 10/13"},
 
 {id:"L14-058", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"ontarget", skill:"apply",
@@ -815,7 +815,7 @@ QUESTIONS.push(
   {t:"Mutagenicity occurs in somatic cells; genotoxicity occurs in germ cells", correct:false, why:"Genotoxicity can occur in somatic and germ cells; a mutation in germ cells is what makes an agent a mutagen."},
   {t:"Mutagenicity causes cancer; genotoxicity causes birth defects", correct:false, why:"Cancer, teratogenesis and genetically based disorders are all possible results of genotoxicity."}],
  teach:"Genotoxicity is damage to DNA in general and can occur in somatic cells as well as germ cells. Mutagenicity means the genetic alteration is transmissible: it can be passed down to offspring. If the mutations happen in germ cells, the agent is a mutagen. The results of genotoxicity can be cancer, teratogenesis (birth defects) or genetically based disorders, including some metabolic diseases.",
- quote:"genotoxicity is just talking about damage to your DNA in general. And mutagenicity refers to the fact that it's transmissible. In other words, you can pass that down to your offspring, OK? ... If mutations happen in your only your germ cells, then it's a mutagen",
+ quote:"genotoxicity is just talking about damage to your DNA in general. And mutagenicity refers to the fact that it's transmissible. In other words, you can pass that down to your offspring ... If mutations happen in your only your germ cells, then it's a mutagen",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Non-Organ Specific: Genotoxicity’; transcript 10/13"},
 
 {id:"L14-063", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"nonorgan", skill:"recall", multi:true,
@@ -853,7 +853,7 @@ QUESTIONS.push(
   {t:"A cancer spreads from its first organ to other organs", correct:false, why:"Non-organ specific is about shared mechanism, not spread."},
   {t:"Each organ's cancers arise by a mechanism unique to that organ", correct:false, why:"Reversed: cancers in different organs can share the same cellular mechanism."}],
  teach:"Cancer can happen in any organ, more likely in some than others. It is non-organ specific because, at the cellular level, the pathology causing a cancer in one organ can be the same as in another: some lung cancers carry the same genetic mutation as colon cancers; some lung cancers share mechanisms with breast cancers. Not always: \"That is not always the case, but we do see this happening.\"",
- quote:"classic example would be some lung cancers are caused by the same genetic mutation as you will see in colon cancers, OK. Some Some lung cancers are what we'll also see in some breast cancers, so at the cellular level, the pathology is the same",
+ quote:"classic example would be some lung cancers are caused by the same genetic mutation as you will see in colon cancers ... Some lung cancers are what we'll also see in some breast cancers, so at the cellular level, the pathology is the same",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Non-Specific: Cancer’; transcript 10/13"},
 
 {id:"L14-066", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"nonorgan", skill:"recall", lowYield:true,
@@ -865,8 +865,8 @@ QUESTIONS.push(
   {t:"Exposure during gestation", correct:false, why:"Exposure during gestation is the teratogenesis topic."},
   {t:"A mutation in a germ cell", correct:false, why:"A germ-cell mutation that can be passed down defines mutagenicity, not the multistage model."}],
  teach:"The multistage model of carcinogenesis (initiation, promotion, progression on the slide) says it takes more than one mutation to end up with cancer; one mutation going all the way to cancer would be rare. She skipped the slide for time and pointed to the Casarett and Doull text on AccessPharmacy.",
- quote:"Basically it's saying that Sorry. We think it takes more than one mutation to end up with somebody having cancer. It would be rare to have just one mutation going all the way to cancer. The multi-stage model of carcinogenesis helps explain that. OK. We're gonna skip that today.",
- note:"Skipped in class on 10/13 (\"we're running a little bit short on time\"); only the one-sentence summary was spoken. The slide's initiation, promotion, progression and complete-carcinogen definitions were not taught. Low yield.",
+ quote:"We think it takes more than one mutation to end up with somebody having cancer. It would be rare to have just one mutation going all the way to cancer. The multi-stage model of carcinogenesis helps explain that.",
+ note:"Skipped in class on 10/13; only the one-sentence summary was spoken. The slide's initiation, promotion, progression and complete-carcinogen definitions were not taught. Low yield.",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Non-Organ Specific: Cancer’ (multistage model); transcript 10/13"},
 
 {id:"L14-067", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"nonorgan", skill:"apply",
@@ -891,7 +891,7 @@ QUESTIONS.push(
   {t:"One compound causes different defects depending on the day it is given", correct:false, why:"That is the retinoid time-of-exposure study; this table compares several compounds and one defect."},
   {t:"The palate is sensitive to both on the same gestation day", correct:false, why:"Each compound had its own peak day: methanol day 7, TCDD day 11."}],
  teach:"The table adapted from Casarett and Doull lists the gestation day of peak palate deformity in hamsters for methanol (day 7), TCDD (day 11), 2,4,5-trichloroacetic acid (day 12) and dexamethasone (day 13): different compounds cause the same teratogenic effect, and the fetus may be sensitive to each at a different time of gestation.",
- quote:"if you give methanol at 7 days of gestation to the mother. You end up with a a palate deformity or cleft palate. If you give TCDD at 11 days of gestation, you get the same deformity, the, the cleft palate. OK? So this is just to show you that different compounds can cause the same teratogenic effect",
+ quote:"if you give methanol at 7 days of gestation to the mother. You end up with ... a palate deformity or cleft palate. If you give TCDD at 11 days of gestation, you get the same deformity ... the cleft palate ... So this is just to show you that different compounds can cause the same teratogenic effect",
  note:"She called the third compound \"trichloric acid\"; the slide lists 2,4,5-trichloroacetic acid.",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Teratogenesis with different compounds’; transcript 10/13"},
 
@@ -904,7 +904,7 @@ QUESTIONS.push(
   {t:"The day of gestation on which the mother is exposed", correct:false, why:"Timing sets the type of defect; dose sets whether enough reaches the fetus."},
   {t:"The father's exposure to the drug before conception", correct:false, why:"Male fertility is a labeling point, not the route of fetal dose."}],
  teach:"Teratogenesis is the induction of birth defects in the fetus. The fetus is exposed through the mother's exposure, so fetal exposure depends on the mother's absorption, distribution, metabolism and excretion and on whether the compound crosses the placenta. Dose means the mother has to get enough of the compound for it to pass through to the baby. She skipped the rest of the dose slide.",
- quote:"dose in teratogenicity means the mother has to get enough of the compound for it to pass through into the baby, OK? And, uh, I, I would talk about a little bit more detail there, but we'll skip that.",
+ quote:"dose in teratogenicity means the mother has to get enough of the compound for it to pass through into the baby",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slides ‘Non-Organ Specific: Teratogenesis’, ‘Teratogenesis Dose’; transcript 10/13"},
 
 {id:"L14-070", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"nonorgan", skill:"recall", multi:true,

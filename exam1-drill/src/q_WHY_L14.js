@@ -25,7 +25,7 @@ QUESTIONS.push(
   {t:"Its index compares the toxic dose in 1% with the effective dose in 99%", correct:false, why:"TD1 over ED99 is the margin of safety; the therapeutic index uses the same percentage, usually 50%, top and bottom."},
   {t:"Its index carries information about the slope of the curve", correct:false, why:"The therapeutic index gives no slope information; the margin of safety does."}],
  teach:"The therapeutic index is the toxic dose over the therapeutic dose. A wide index means less chance of toxicity; a narrow index means the toxic dose is not much higher than the therapeutic dose. The index therefore tells how much error in dosing can be tolerated: with a narrow index, a small error can reach the toxic dose.",
- quote:"Drugs with a narrow therapeutic index means that the toxic dose is not too much higher than that therapeutic dose, right? ... if you were thinking about the therapeutic index, you know, how much error can you get in your dosing.",
+ quote:"Drugs with a narrow therapeutic index means that the toxic dose is not too much higher than that therapeutic dose ... if you were thinking about the therapeutic index ... how much error can you get in your dosing.",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Values Developed from Dose-Response’; transcript 10/13"},
 
 /* ---------------- On-target and off-target ---------------- */
@@ -39,7 +39,7 @@ QUESTIONS.push(
   {t:"The dose at the intended receptor in the intended tissue is too high", correct:false, why:"Too much dose at the intended receptor is an on-target adverse effect; it would look like the therapeutic action, not an unrelated effect."},
   {t:"The patient has developed reduced-responsiveness tolerance", correct:false, why:"Tolerance lowers the response to the drug; it does not create a new, unrelated effect."}],
  teach:"Many side effects on a drug list have nothing to do with the drug's therapeutic action. The target-and-mechanism principle explains them: the drug, or a metabolite, also finds receptors it was not designed to find (off-target), in the intended tissue or elsewhere. Side effects that are the therapy gone too far, such as over-diuresis, are the easy explanation; unrelated ones point to a different target.",
- quote:"These other off-target effects, those are those side effects that I told you, when you look at your BDK table, you're like, why does this drug cause that side effect? It, it has this therapeutic mechanism of action, but it's causing this weird, completely unrelated side effect, it's cause that drug is going to this off target receptor somewhere in the body.",
+ quote:"These other off-target effects, those are those side effects ... why does this drug cause that side effect? ... it has this therapeutic mechanism of action, but it's causing this weird, completely unrelated side effect, it's cause that drug is going to this off target receptor somewhere in the body.",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘On-target and off-target adverse drug effects’; transcript 10/13"},
 
 {id:"L14-104", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"ontarget", skill:"apply",
@@ -51,7 +51,7 @@ QUESTIONS.push(
   {t:"It reaches the intended receptor, but in the wrong tissue", correct:false, why:"The intended receptor in the wrong tissue is still called on-target."},
   {t:"Its intended receptors were down-regulated by repeated dosing", correct:false, why:"Down-regulation changes receptor number; it does not make the drug bind other receptors."}],
  teach:"Off-target means the drug finds receptors it was not intended to find. The reason is usually that some molecular feature of the drug interacts with other receptors, which was not known when it was designed. Once a drug class shows many side effects, chemists identify the part of the molecule hitting the other receptor and change it.",
- quote:"Why is it, why is it not clean? I call that unclean. Well, maybe when we design the drug. We didn't know that some molecular aspect of the medication would be interacting with other receptors, the off-target receptors",
+ quote:"why is it not clean? I call that unclean ... maybe when we design the drug. We didn't know that some molecular aspect of the medication would be interacting with other receptors, the off-target receptors",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘On-target and off-target adverse drug effects’; transcript 10/13"},
 
 {id:"L14-105", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"interact", skill:"apply",
@@ -75,7 +75,7 @@ QUESTIONS.push(
   {t:"They no longer reach the histamine receptors in the periphery either", correct:false, why:"The periphery is where they prevent allergic symptoms, so they still reach it."},
   {t:"They are given at doses too low to reach the toxic-dose curve", correct:false, why:"Diphenhydramine's drowsiness is an on-target effect in the wrong tissue, not a dose that is too high."}],
  teach:"Diphenhydramine prevents allergic symptoms by hitting histamine receptors in the periphery and causes drowsiness by hitting histamine receptors in the brain: an on-target adverse effect in the wrong tissue. The newer antihistamines were tweaked so they do not cross the blood-brain barrier, cannot reach the brain histamine receptors, and so do not cause the drowsiness.",
- quote:"When we developed newer antihistamines, we tweaked those molecules, and we made, made them so that they don't cross the blood-brain barrier. They can't get to the histamine receptors in the brain.",
+ quote:"When we developed newer antihistamines, we tweaked those molecules ... made them so that they don't cross the blood-brain barrier. They can't get to the histamine receptors in the brain.",
  note:"For the receptor class, keep Dr. Gottlieb's Exam 1 point: \"there's only one inverse agonist you need to know. It's gonna be an antihistamine. If you know what loratadine is, you know that's the inverse agonist\" (as in L14-054).",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘On-Target Examples’; transcript 10/13"},
 
@@ -88,7 +88,7 @@ QUESTIONS.push(
   {t:"The dose of the R-enantiomer at its own receptor was too high", correct:false, why:"Too much dose at the intended receptor is on-target; the birth defects were an off-target effect of the other enantiomer."},
   {t:"The R-enantiomer reached its intended receptor in the wrong tissue, the fetus", correct:false, why:"That would be on-target in the wrong tissue; the slide files thalidomide under an enantiomer hitting an unintended receptor."}],
  teach:"Thalidomide is racemic: the R-enantiomer helped with nausea and the S-enantiomer is a potent teratogen. It was used as the racemic mixture, so people took both, and the S-enantiomer hit an unintended receptor and caused birth defects. This is the off-target example of an enantiomer hitting an unintended receptor.",
- quote:"It wasn't just the Rnanammer that people were taking, it was the R and the S and anamer. So, um, it's the Rnanammer that was good at helping with nausea, but the Senanammer was a very potent teratogen, OK.",
+ quote:"It wasn't just the Rnanammer that people were taking, it was the R and the S and anamer ... it's the Rnanammer that was good at helping with nausea, but the Senanammer was a very potent teratogen",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Off-Target Examples’; transcript 10/13"},
 
 {id:"L14-108", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"ontarget", skill:"apply", multi:true,
@@ -101,7 +101,7 @@ QUESTIONS.push(
   {t:"The drug hits an unintended receptor subtype", correct:false, why:"A different receptor subtype, as with propranolol and beta-2 receptors, is off-target."},
   {t:"An S-enantiomer in the mixture hits another receptor", correct:false, why:"An enantiomer hitting an unintended receptor is off-target (thalidomide)."}],
  teach:"An on-target adverse effect means the drug is hitting the receptor it was meant to hit. In the intended tissue, the explanation is either too much dose at the receptor (deliberate or accidental dosing errors, slowed clearance, a change in receptor number) or chronic activation or inhibition of other effects. Hitting another receptor or subtype is off-target instead.",
- quote:"So why are we having adverse effects? Well, some of the ideas are listed below. Maybe the dose is too high. Or maybe you've got chronic activation or inhibition of other effects going on.",
+ quote:"why are we having adverse effects? ... Maybe the dose is too high. Or maybe you've got chronic activation or inhibition of other effects going on.",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slides ‘On-target and off-target adverse drug effects’ (Figure 6-1), ‘On-Target Examples’; transcript 10/13"},
 
 /* ---------------- The reading, as discussed ---------------- */
@@ -114,7 +114,7 @@ QUESTIONS.push(
   {t:"Wastewater treatment plants in big cities add estrogen to the water", correct:false, why:"Treatment plants fail to remove all drugs; they do not add them."},
   {t:"Frogs and alligators near the shore release estrogen into the water", correct:false, why:"These animals are affected by the estrogen; they are not its source."}],
  teach:"Concentrations of drugs in water are usually parts per trillion, rarely higher. Estrogen is an exception in some places: along the shorelines of big cities with many young women, a lot of estrogen comes out in the wastewater, perhaps because many women take oral contraceptives. Where estrogen is higher, frog, fish and alligator populations shift toward female.",
- quote:"On the shoreline of big cities where young women live. So cities like Miami, Houston, San Diego, San Francisco, a lot of young people there, there's a lot of estrogen coming out of the wastewater, OK? Cause maybe a lot of women are taking oral contraceptives.",
+ quote:"On the shoreline of big cities where young women live. So cities like Miami, Houston, San Diego, San Francisco, a lot of young people there, there's a lot of estrogen coming out of the wastewater ... Cause maybe a lot of women are taking oral contraceptives.",
  cite:"Discussion-Guide-Rodriguez-Mozaz-and-Weinberg-Student-2026 copy.pdf (Exposure); transcript 10/13"},
 
 {id:"L14-110", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"reading", skill:"apply", readingId:"rodriguez-mozaz",
@@ -126,7 +126,7 @@ QUESTIONS.push(
   {t:"Their exposure is lower than humans', so effects stand out", correct:false, why:"Animals living in the water are exposed constantly, more than humans who mostly drink it."},
   {t:"They are hard to catch and study, unlike orca whales", correct:false, why:"Reversed: orca whales are the example of wildlife too hard to catch and study."}],
  teach:"Animals that live in or near water are exposed constantly: drinking, breathing (fish), across the skin, and eating other animals from the water. Frogs absorb a lot across their skin and are very sensitive, so they show trouble early: they are a sentinel, or red-flag, species. Where estrogen is higher, frog populations shift toward female.",
- quote:"Sorry, skin. Yeah. Frogs. Yeah, frogs absorb a lot. They're one of our sentinel species, right? They're kind of our red flag species that things are going wrong ... Trevor just said that frogs can be very sensitive. That's true.",
+ quote:"skin ... frogs absorb a lot. They're one of our sentinel species ... They're kind of our red flag species that things are going wrong ... frogs can be very sensitive",
  cite:"Discussion-Guide-Rodriguez-Mozaz-and-Weinberg-Student-2026 copy.pdf (Exposure); transcript 10/13"},
 
 {id:"L14-111", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"reading", skill:"apply", readingId:"rodriguez-mozaz",
@@ -138,7 +138,7 @@ QUESTIONS.push(
   {t:"No wildlife species has shown effects so far", correct:false, why:"Frog, fish and alligator populations shift toward female where estrogen is higher."},
   {t:"Effects occur where wastewater is untreated, not where it is treated", correct:false, why:"The answer was not divided by treated and untreated water; treated water still carries drugs."}],
  teach:"Target and dose in wildlife: some species show effects, with frog, fish and alligator populations shifting toward female where estrogen is higher. For other wildlife, such as orca whales, we do not know; they are hard to capture and study, and there is not the time, money or ability to catch them. Both the yes and the we-don't-know answers are true.",
- quote:"John says, yes, it's a problem. Ashley says, we don't know, you're both right. ... So we do have some evidence showing that this is a problem. Uh, other wildlife, we just don't know, you know, it's really hard to capture or orca whales.",
+ quote:"yes, it's a problem ... we don't know, you're both right ... So we do have some evidence showing that this is a problem ... other wildlife, we just don't know ... it's really hard to capture or orca whales.",
  cite:"Discussion-Guide-Rodriguez-Mozaz-and-Weinberg-Student-2026 copy.pdf (Target/MOA); transcript 10/13"},
 
 {id:"L14-112", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"reading", skill:"apply", readingId:"rodriguez-mozaz",
@@ -150,7 +150,7 @@ QUESTIONS.push(
   {t:"The patient drinking more water each day than usual", correct:false, why:"Even a well-hydrated person does not reach a normal therapeutic daily dose at parts per trillion."},
   {t:"Frog and alligator populations shifting toward female", correct:false, why:"That evidence is already known and concerns wildlife; the answer for humans stays that they are probably OK."}],
  teach:"The human answer rests on dose: at parts per trillion, even a well-hydrated person does not reach a normal therapeutic daily dose, so humans are probably OK, while sensitive populations (in utero, children, the elderly, people with diseases) should not be ignored. If drug concentrations in drinking water start rising, the dose rises, and risk assessors would re-evaluate whether people are having a problem.",
- quote:"We should be concerned if we start seeing concentrations of these drugs rising higher in our drinking waters, OK? That's probably when risk assessors are going to say, oh, OK, we need to reevaluate and re-look at this.",
+ quote:"We should be concerned if we start seeing concentrations of these drugs rising higher in our drinking waters ... That's probably when risk assessors are going to say ... we need to reevaluate and re-look at this.",
  cite:"Discussion-Guide-Rodriguez-Mozaz-and-Weinberg-Student-2026 copy.pdf (Dose); transcript 10/13"},
 
 {id:"L14-113", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"reading", skill:"apply", readingId:"rodriguez-mozaz",
@@ -162,7 +162,7 @@ QUESTIONS.push(
   {t:"Opioids break down in toilet water before reaching streams", correct:false, why:"Current wastewater treatment does not get all drugs out, so a flushed drug can reach streams; the reason is that flushing opioids is allowed."},
   {t:"Opioids are excreted as metabolites, so flushing adds nothing new", correct:false, why:"Excretion of parent drug and metabolites is a source of drugs in water in general; the reason is that flushing opioids is allowed."}],
  teach:"Source: people take drugs and excrete parent drug and metabolites, and some improperly dispose of medications by flushing them. Her first example, leftover opioids down the toilet, she withdrew: that is allowed, as opioids are a dangerous drug. Unused antibiotics flushed down the toilet are the improper-disposal example, and they feed the antibiotic-resistance concern.",
- quote:"like you got leftover opioids and you dump them down your toilet. Well, OK. That is allowed because it's a dangerous drug. That's a bad example. How about unused antibiotics? And you dump them down your toilet.",
+ quote:"you got leftover opioids and you dump them down your toilet ... That is allowed because it's a dangerous drug ... How about unused antibiotics? And you dump them down your toilet.",
  cite:"Discussion-Guide-Rodriguez-Mozaz-and-Weinberg-Student-2026 copy.pdf (Source); transcript 10/13"},
 
 {id:"L14-114", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"reading", skill:"apply", readingId:"rodriguez-mozaz",
@@ -174,7 +174,7 @@ QUESTIONS.push(
   {t:"Estrogen in the water makes the bacteria resistant", correct:false, why:"Estrogen was the example of an effect on frogs, fish and alligators, not on bacteria."},
   {t:"Warmer water lets sediment bacteria mutate faster", correct:false, why:"Warming water came up only for the shift toward female animals."}],
  teach:"Many microbes survive in the sediments of lakes and streams and in beach sand. As antibiotics are improperly disposed of and get into that environment, the bacteria living there survive the antibiotics and become resistant, so an infection, for example from a cut, may not be treatable. She called this a real problem, separate from the effects on wildlife.",
- quote:"as we improperly dispose of our antibiotics, We're creating microbes that are resistant to those antibiotics cause they're living in that environment ... the resistance of, of pathogens, especially bacteria, to antibiotics because we have gotten antibiotics out in our environment as well.",
+ quote:"as we improperly dispose of our antibiotics, We're creating microbes that are resistant to those antibiotics cause they're living in that environment ... the resistance ... of pathogens, especially bacteria, to antibiotics because we have gotten antibiotics out in our environment as well.",
  cite:"Discussion-Guide-Rodriguez-Mozaz-and-Weinberg-Student-2026 copy.pdf (Target/MOA); transcript 10/13"},
 
 /* ---------------- General concepts ---------------- */
@@ -187,7 +187,7 @@ QUESTIONS.push(
   {t:"Injury from drinking is a local effect, which is irreversible", correct:false, why:"Local versus systemic is a different general concept and does not set reversibility."},
   {t:"Repeated drinking produces tolerance, which blocks regeneration", correct:false, why:"Tolerance is a reduced response to a toxicant, not a block on tissue repair."}],
  teach:"A tissue's ability to regenerate determines whether its injury is reversible. The liver is unique in healing and regenerating itself, so many liver injuries are reversible, but that holds mainly for mild injury; a severe chronic injury may not regenerate. Differentiated nerve cells cannot divide, so nerve injury is considered irreversible.",
- quote:"But yeah, sometimes the liver can regenerate. If it's a mild injury, it can often regenerate, but more severe chronic injury, yeah. So be, be gentle with your livers, OK?",
+ quote:"sometimes the liver can regenerate. If it's a mild injury, it can often regenerate, but more severe chronic injury",
  note:"The slide says the liver has a high ability to regenerate and most injuries are reversible; in answer to the student she limited this to mild injury. The question keys her words.",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Reversible vs. Irreversible’; transcript 10/13"},
 
@@ -200,7 +200,7 @@ QUESTIONS.push(
   {t:"The mother's liver is unable to regenerate during pregnancy", correct:false, why:"Liver regeneration explains reversible liver injury; it is not the reason birth defects are irreversible."},
   {t:"Birth defects appear years after the exposure", correct:false, why:"Delay is a separate concept; DES is the delayed example, and timing does not decide reversibility."}],
  teach:"Reversibility depends on whether the tissue can repair or regenerate. A birth defect is an error in how a limb or other body part forms while the fetus develops, and each structure forms during its own window of gestation (the hamster retinoid study gave different defects at different gestation days). Once the structure has formed wrongly, there is no regeneration that rebuilds it, so the injury cannot be fixed; cancer is likewise irreversible, as cancerous cells are killed or removed, never returned to normal.",
- quote:"Birth defects are irreversible because as a fetus is developing, if you are exposed to something that's messing up the way those limbs form, other parts of the body form, uh, that cannot be fixed, OK?",
+ quote:"Birth defects are irreversible because as a fetus is developing, if you are exposed to something that's messing up the way those limbs form, other parts of the body form ... that cannot be fixed",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Reversible vs. Irreversible’; transcript 10/13"},
 
 {id:"L14-117", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"general", skill:"apply",
@@ -226,7 +226,7 @@ QUESTIONS.push(
   {t:"Both down-regulate the receptors the toxicant acts on", correct:false, why:"Receptor down-regulation is the example of reduced responsiveness."},
   {t:"Both induce the enzymes that metabolize them", correct:false, why:"Carbon tetrachloride inhibits its own metabolism; induction is what students expect and is wrong for it."}],
  teach:"Dispositional tolerance is a decrease in the amount of toxicant reaching the site where the toxic effect is produced, so it is ADME-based. Carbon tetrachloride, metabolized to something nastier, inhibits its own metabolism, so less of the toxic metabolite forms. Cadmium induces the metal carrier that helps the kidneys eliminate it, so more is cleared. Reduced responsiveness is the other mechanism: the target, such as a receptor population, responds less.",
- quote:"Some of that carbon tet does not get metabolized to the even nastier metabolite because it's inhibiting its own metabolism. ... so you can see how those are kind of admi based, those tolerances, right? The dispositional tolerances.",
+ quote:"Some of that carbon tet does not get metabolized to the even nastier metabolite because it's inhibiting its own metabolism. ... so you can see how those are kind of admi based, those tolerances ... The dispositional tolerances.",
  note:"She called the cadmium carrier a \"metal carrying enzyme\"; the question says protein, as in L14-044.",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Tolerance’; transcript 10/13"},
 
@@ -240,7 +240,7 @@ QUESTIONS.push(
   {t:"Somatic-cell changes are passed down; germ-cell changes are not", correct:false, why:"Reversed: transmission to offspring is through germ cells."},
   {t:"A mutagen acts on one organ, the gonads", correct:false, why:"Genotoxicity is classed as non-organ specific."}],
  teach:"Genotoxicity is damage to DNA in general and can occur in somatic cells and in germ cells. Mutagenicity refers to a genetic alteration that is transmissible, that can be passed down to offspring. Mutations in germ cells are the ones that can be passed down, so an agent that causes them is a mutagen.",
- quote:"And mutagenicity refers to the fact that it's transmissible. In other words, you can pass that down to your offspring, OK? ... If mutations happen in your only your germ cells, then it's a mutagen, OK?",
+ quote:"And mutagenicity refers to the fact that it's transmissible. In other words, you can pass that down to your offspring ... If mutations happen in your only your germ cells, then it's a mutagen",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Non-Organ Specific: Genotoxicity’; transcript 10/13"},
 
 {id:"L14-120", lecture:"L14", prof:"Smith", tier:"new", topic:"L14", sub:"nonorgan", skill:"apply",
@@ -253,6 +253,6 @@ QUESTIONS.push(
   {t:"The old labeling scale ranked drugs for use by men", correct:false, why:"The old scale ranked drugs from known to cause birth defects to not; it did not concern men."},
   {t:"Genotoxic damage to a father's somatic cells passes to the fetus", correct:false, why:"Somatic-cell changes are not passed down; transmission to offspring is through germ cells."}],
  teach:"The FDA used to rank drugs on a scale from known to cause birth defects to not. The 2014 Pregnancy and Lactation Labeling Rule (her quiz) changed the labeling to include, besides teratogenicity, effects on fertility, especially male fertility, and whether a lactating mother should take the drug. Male fertility is included because a medication may affect sperm count or viability, which could contribute to teratogenicity.",
- quote:"OK, so if a guy is taking a certain medication, it may affect your sperm count, it may affect your sperm viability, and that could contribute to teratogenicity, right?",
+ quote:"if a guy is taking a certain medication, it may affect your sperm count, it may affect your sperm viability, and that could contribute to teratogenicity",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Teratogenesis Labeling’; transcript 10/13"}
 );
