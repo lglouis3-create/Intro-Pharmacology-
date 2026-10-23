@@ -23,7 +23,7 @@ QUESTIONS.push(
   {t:"No emesis; give activated charcoal at home, then call for transport", correct:false, why:"Her key: do not delay transport to the hospital to administer charcoal. On 10/19 she said charcoal is something done when the patient gets to the hospital."},
   {t:"No emesis; charcoal has no role; get them to a hospital", correct:false, why:"Her key: consider activated charcoal if there are no contraindications."}],
  teach:"Question 1 of her key has the same three-part answer for both classes: do not induce emesis; consider activated charcoal if there are no contraindications; do not delay transport to the hospital to administer charcoal. On 10/19 she added that charcoal is given once the patient reaches the hospital, and that no one at home tries to make the person vomit, since they might aspirate.",
- quote:"What should you do to try to prevent reabsorption of these either calcium channel blockers or beta blockers? What should you, what should you do? Yeah, charcoal, right? Do you do that at home? No, that is something that they'll do when they get to the hospital, OK? ... At home, do you encourage somebody to get the person to vomit? We don't recommend that anymore, right? It's too dangerous, right? They might, they might aspirate.",
+ quote:"What should you do to try to prevent reabsorption of these either calcium channel blockers or beta blockers? ... charcoal ... Do you do that at home? No, that is something that they'll do when they get to the hospital ... At home, do you encourage somebody to get the person to vomit? We don't recommend that anymore ... It's too dangerous ... they might aspirate.",
  note:"Her key says \"Consider activated charcoal if there are no contraindications\"; on 10/19 she said charcoal is not given at home but at the hospital. Both agree that transport is not delayed for charcoal and that emesis is not induced. Keyed on the key's wording.",
  cite:"Readingguideforoutofhospitalguidelines2026KEY.docx, Calcium Channel Blockers, question 1; transcript 10/19"},
 
@@ -37,7 +37,7 @@ QUESTIONS.push(
   {t:"Estimate the dose; observe at home if it is low", correct:false, why:"Her key does not make this answer depend on the dose: within 6 hours, get them to a hospital. On 10/20 she added that if you cannot confirm how much was taken, the patient goes in."},
   {t:"Wait at home for symptoms, then call 911", correct:false, why:"The patient is asymptomatic and inside the window; her key says get them to a hospital now."}],
  teach:"Question 2a of her key. For an immediate-release calcium channel blocker the window is 6 hours. Found within 6 hours and asymptomatic: get them to a hospital, since the drug may not all have been absorbed yet. Found 6 hours after ingestion and still asymptomatic: call the Poison Center; they can probably be managed at home.",
- quote:"If they're within 6 hours of digestion and they're not symptomatic yet, what do you do? You're gonna get them to the hospital, why? Because if, if, if they haven't passed the 6 hour mark for an immediate release. Exposure, then you're still within the time when they could really badly respond, OK?",
+ quote:"If they're within 6 hours of digestion and they're not symptomatic yet, what do you do? You're gonna get them to the hospital, why? Because ... if they haven't passed the 6 hour mark for an immediate release. Exposure, then you're still within the time when they could really badly respond",
  note:"The transcript renders ingestion as \"digestion\".",
  cite:"Readingguideforoutofhospitalguidelines2026KEY.docx, Calcium Channel Blockers, question 2a; transcript 10/19, 10/20"},
 
@@ -51,7 +51,7 @@ QUESTIONS.push(
   {t:"Drive them to the emergency department in the family car", correct:false, why:"The asymptomatic patient past the window can probably stay home; when a patient does go in, her key says ambulance."},
   {t:"Give charcoal at home and observe overnight", correct:false, why:"Charcoal is not given at home, and her key's first step is the call to the Poison Center."}],
  teach:"Question 2b of her key. Past the 6-hour mark for an immediate-release product, a patient who has had no symptoms is expected to be OK: the drug should have been absorbed, and symptoms would have appeared. The key's three sentences: call the Poison Center; they can probably be managed at home; the Poison Center will inform you of follow-up procedures.",
- quote:"If they're past 6 hours for both the calcium channel blockers and the beta blockers, and it's an immediate release product, this guidance document is saying if they're not symptomatic after 6 hours of post ingestion, they're going to be OK. ... How about question B, what do you do if a patient is asymptomatic and, um, Uh, they ingested an immediate release product, and he found them 6 hours after ingestion. Again, you'll probably be able to manage them at home, OK?",
+ quote:"If they're past 6 hours for both the calcium channel blockers and the beta blockers, and it's an immediate release product, this guidance document is saying if they're not symptomatic after 6 hours of post ingestion, they're going to be OK. ... what do you do if a patient is asymptomatic and ... they ingested an immediate release product, and he found them 6 hours after ingestion. Again, you'll probably be able to manage them at home",
  cite:"Readingguideforoutofhospitalguidelines2026KEY.docx, Calcium Channel Blockers, question 2b; transcript 10/19"},
 
 {id:"GRG3-004", lecture:"GRG3", prof:"Smith", tier:"new", topic:"GRG3", sub:"ccb", skill:"recall", readingId:"aapcc-ccb",
@@ -64,7 +64,7 @@ QUESTIONS.push(
   {t:"Manage at home after 8 hours", correct:false, why:"8 hours is the sustained-release beta blocker window, not the calcium channel blocker one."},
   {t:"Observe at home", correct:false, why:"An asymptomatic patient inside the window may still absorb the drug; the answer is get them to a hospital."}],
  teach:"Question 2c. A modified-release calcium channel blocker other than verapamil carries an 18-hour window. The long window comes from the formulation: extended-release products tend to form bezoars that can break apart at unpredictable times, so you cannot be sure when the drug will be absorbed. Found within 18 hours and asymptomatic, the patient goes to a hospital; found 18 hours after ingestion and still asymptomatic, call the Poison Center, and they can probably be managed at home.",
- quote:"If it's a modified release, except for verapamil, and you found them within 18 hours of ingestion and they are not symptomatic, they are asymptomatic. What do you need to do? Yeah, they're asymptomatic, and they ingested the modified release product, and you found them within 18 hours of ingestion. You need to get him in.",
+ quote:"If it's a modified release, except for verapamil, and you found them within 18 hours of ingestion and they are not symptomatic ... What do you need to do? ... You need to get him in.",
  cite:"Readingguideforoutofhospitalguidelines2026KEY.docx, Calcium Channel Blockers, question 2c; transcript 10/19"},
 
 {id:"GRG3-005", lecture:"GRG3", prof:"Smith", tier:"new", topic:"GRG3", sub:"ccb", skill:"recall", readingId:"aapcc-ccb",
@@ -89,7 +89,7 @@ QUESTIONS.push(
   {t:"Call the Poison Center; manage at home after 6 hours", correct:false, why:"6 hours is the immediate-release window."},
   {t:"Wait at home for symptoms, then call 911", correct:false, why:"Inside the window an asymptomatic patient still goes to a hospital."}],
  teach:"Question 2e. Modified-release verapamil gets the longest window, 24 hours, not the 18 of the other modified-release calcium channel blockers. On 10/20 she gave the reason: verapamil has multiple mechanisms and is not as clean a calcium channel blocker, so the concern lasts longer while the clump of tablets could still break apart. Found within 24 hours and asymptomatic, the patient goes to a hospital; found 24 hours after and still asymptomatic, call the Poison Center.",
- quote:"If you found a person that's ingested modified release verapamil, and you found them within 24 hours of ingestion. You still get them to the hospital, right? Verapamil is really different, OK?",
+ quote:"If you found a person that's ingested modified release verapamil, and you found them within 24 hours of ingestion. You still get them to the hospital ... Verapamil is really different",
  note:"Reading the key on 10/19 she first said that modified-release verapamil found \"after 18 hours of ingestion\" is probably OK, then gave the verapamil window as 24 hours. Her key and her 10/20 recap (\"it's 24 hours for verapamil extended release\") both say 24 hours. Keyed on 24 hours.",
  cite:"Readingguideforoutofhospitalguidelines2026KEY.docx, Calcium Channel Blockers, question 2e; transcript 10/19, 10/20"},
 
@@ -117,8 +117,8 @@ QUESTIONS.push(
   {t:"Immediate-release products form bezoars, so they are absorbed later", correct:false, why:"Reversed: her key says immediate-release formulations won't tend to form bezoars."},
   {t:"Immediate-release products are cleared by the kidney before symptoms start", correct:false, why:"Her key's answer is about absorption and bezoars, not elimination."}],
  teach:"Question 2g of her key: \"Because of the formation.\" Immediate-release formulations are absorbed more rapidly and won't tend to form bezoars. Extended-release products tend to form bezoars, which may break apart at unpredictable times, so you cannot be sure when the patient will absorb the medication. That is why an asymptomatic patient inside the longer window still goes to a hospital.",
- quote:"the chemistry of those formulations is such that they often clump in the stomach or in the small intestine. You guys know what the word bazo is? Think Harry Potter, right? ... you are still within the window that that clump of tablets could break apart, and all of a sudden you're gonna get a huge absorption of that medication. Which could be really, really dangerous. So you've got to get them in the hospital. You want them in the hospital before that drug ball breaks up, and they absorb all that, OK?",
- note:"The key writes \"formation\" for formulation; the transcript renders bezoar as \"bazo\". On 10/19 a student offered that an extended-release drug has not all been absorbed yet; she called that \"very true\" and named the clumping as the issue.",
+ quote:"the chemistry of those formulations is such that they often clump in the stomach or in the small intestine. ... you are still within the window that that clump of tablets could break apart, and all of a sudden you're gonna get a huge absorption of that medication. Which could be really, really dangerous. So you've got to get them in the hospital. You want them in the hospital before that drug ball breaks up, and they absorb all that",
+ note:"The key writes \"formation\" for formulation. She agreed that an extended-release drug has not all been absorbed yet (\"very true\") and named the clumping as the issue.",
  cite:"Readingguideforoutofhospitalguidelines2026KEY.docx, Calcium Channel Blockers, question 2g; transcript 10/19"},
 
 {id:"GRG3-009", lecture:"GRG3", prof:"Smith", tier:"new", topic:"GRG3", sub:"ccb", skill:"recall", readingId:"aapcc-ccb",
@@ -143,7 +143,7 @@ QUESTIONS.push(
   {t:"Ambulance if symptomatic, family car if not", correct:false, why:"Her key's answer is ambulance for any patient who needs to be transported; an asymptomatic patient can still crash on the way."},
   {t:"Any vehicle that arrives first", correct:false, why:"The vehicle matters because the patient may crash on the way: only an ambulance carries IVs, pressors and paddles."}],
  teach:"Question 3 of her key, the same for both classes: ambulance. On 10/19 she gave the reason: if the patient starts to crash on the way, the ambulance has IVs, pressors and paddles; a family car stuck in traffic has none of them.",
- quote:"Question 3 for both categories of drugs is, if you need to get them to the hospital, should you put them in your car and drive them? You need to call an ambulance. Why? Cuz they've got the stuff on the animals to help them if they start. Crashing. OK, you don't have that in your car.",
+ quote:"if you need to get them to the hospital, should you put them in your car and drive them? You need to call an ambulance. Why? Cuz they've got the stuff on the animals to help them if they start. Crashing. ... you don't have that in your car.",
  note:"\"the stuff on the animals\" in the transcript is the stuff on the ambulance.",
  cite:"Readingguideforoutofhospitalguidelines2026KEY.docx, Calcium Channel Blockers, question 3; transcript 10/19"},
 
@@ -170,7 +170,7 @@ QUESTIONS.push(
   {t:"Call the Poison Center; manage at home if asymptomatic", correct:false, why:"Suspected self-harm goes to the ED, then to mental health care, whatever the symptoms."},
   {t:"Refer to mental health care, without an ED visit", correct:false, why:"The overdose itself still needs treating, so the ED referral comes first; mental health care follows."}],
  teach:"Question 5 of her key, the same for both classes: refer the patient to the emergency department (ED), then refer them to mental health care. On 10/19 she said treating the poisoning is not enough: the patient needs counseling and evaluation, so whatever is going on in their life gets help.",
- quote:"If you think they were trying to harm themselves, what do you need to do as well? It's not just treating the poisoning, right? They're gonna need some help. They're gonna need some counseling, some evaluation, make sure that whatever's going on in their lives, that they could get some help with that, OK?",
+ quote:"If you think they were trying to harm themselves, what do you need to do as well? It's not just treating the poisoning ... They're gonna need some help. They're gonna need some counseling, some evaluation, make sure that whatever's going on in their lives, that they could get some help with that",
  cite:"Readingguideforoutofhospitalguidelines2026KEY.docx, Calcium Channel Blockers, question 5; transcript 10/19"},
 
 /* ---------------- Beta blockers ---------------- */
@@ -185,7 +185,7 @@ QUESTIONS.push(
   {t:"Induce emesis if the patient is still alert", correct:false, why:"Her key says do not induce emesis, with no exception."},
   {t:"Give charcoal at home through a nasogastric tube", correct:false, why:"On 10/19: charcoal is not put down a nasogastric tube at home; that is done at the hospital."}],
  teach:"Question 1 has the same answer in both columns, and each part has a reason. Do not induce emesis: it is too dangerous, since the person might aspirate. Consider activated charcoal if there are no contraindications: it is the method the outcome data favor. Do not delay transport to give it: charcoal is done at the hospital, not at home.",
- quote:"We don't ask people to drink a charcoal slurry or stick it down their nose through a nasogastric tube in the home, OK? We are not sophisticated enough to do that without hurting somebody, OK?",
+ quote:"We don't ask people to drink a charcoal slurry or stick it down their nose through a nasogastric tube in the home ... We are not sophisticated enough to do that without hurting somebody",
  cite:"Readingguideforoutofhospitalguidelines2026KEY.docx, Beta Blockers, question 1; transcript 10/19"},
 
 {id:"GRG3-014", lecture:"GRG3", prof:"Smith", tier:"new", topic:"GRG3", sub:"bb", skill:"recall", readingId:"aapcc-bb",
@@ -198,7 +198,7 @@ QUESTIONS.push(
   {t:"Manage at home with follow-up calls for 12–24 hours", correct:false, why:"The 12–24 hour interval is her key's follow-up for a patient past the window, not the answer within 6 hours."},
   {t:"Observe at home", correct:false, why:"An asymptomatic patient inside the window may still absorb the drug; the answer is get them to a hospital."}],
  teach:"Question 2a of the beta blocker column. The immediate-release window is 6 hours, the same as for calcium channel blockers: an immediate-release product is absorbed rapidly, but a patient still inside 6 hours may not have absorbed it all and could respond badly. Found within 6 hours and asymptomatic, they go to a hospital. The key excepts sotalol from this question.",
- quote:"What do you do for a patient that's asymptomatic and they've ingested an immediate release product, and you found them within 6 hours of ingestion. And this question is good for both your calcium channel blockers and your beta blockers, OK.",
+ quote:"What do you do for a patient that's asymptomatic and they've ingested an immediate release product, and you found them within 6 hours of ingestion. And this question is good for both your calcium channel blockers and your beta blockers",
  note:"The key spells the excepted drug \"Sotolol\" (sotalol). The key gives no separate window for sotalol, and she did not discuss it.",
  cite:"Readingguideforoutofhospitalguidelines2026KEY.docx, Beta Blockers, question 2a; transcript 10/19, 10/20"},
 
@@ -225,7 +225,7 @@ QUESTIONS.push(
   {t:"Manage at home after 6 hours", correct:false, why:"6 hours is the immediate-release window; the sustained-release window is 8 hours."},
   {t:"Wait at home for symptoms, then call 911", correct:false, why:"The asymptomatic patient inside the window still goes to a hospital."}],
  teach:"Question 2c of the beta blocker column. A sustained-release beta blocker carries an 8-hour window because extended-release products tend to form bezoars that may break apart at unpredictable times. Found within 8 hours and asymptomatic: get them to a hospital. The beta-blocker window is shorter than the 18 hours for modified-release calcium channel blockers, a difference she tied to the two classes' mechanisms of action.",
- quote:"Same thing with the beta blockers, a sustained release product, but, but the time frame for this is within 8 hours, right? You got to get him to the hospital.",
+ quote:"Same thing with the beta blockers, a sustained release product ... but the time frame for this is within 8 hours ... You got to get him to the hospital.",
  cite:"Readingguideforoutofhospitalguidelines2026KEY.docx, Beta Blockers, question 2c; transcript 10/19"},
 
 {id:"GRG3-017", lecture:"GRG3", prof:"Smith", tier:"new", topic:"GRG3", sub:"bb", skill:"recall", readingId:"aapcc-bb",
@@ -250,7 +250,7 @@ QUESTIONS.push(
   {t:"Sustained-release products are not bound by charcoal", correct:false, why:"Charcoal is considered for any beta-blocker ingestion. The longer window comes from bezoars that may break apart at unpredictable times."},
   {t:"Sustained-release products are more potent per milligram", correct:false, why:"Potency per milligram does not set the window; the formulation does: sustained-release tablets form bezoars, so you cannot be sure when the patient will absorb the drug."}],
  teach:"Question 2e of the beta blocker column repeats the calcium channel blocker answer: immediate-release formulations are absorbed more rapidly and won't tend to form bezoars; extended-release products tend to form bezoars which may break apart at unpredictable times, so you cannot be sure when the patient will absorb the medication.",
- quote:"These, these tablets, these, these, um, capsules that are, yeah, I guess they're usually tablets now, that are extended release, sustained release, because of their formulation, they tend to stick together",
+ quote:"I guess they're usually tablets now, that are extended release, sustained release, because of their formulation, they tend to stick together",
  cite:"Readingguideforoutofhospitalguidelines2026KEY.docx, Beta Blockers, question 2e; transcript 10/19"},
 
 {id:"GRG3-019", dupOf:"GRG3-009", lecture:"GRG3", prof:"Smith", tier:"new", topic:"GRG3", sub:"bb", skill:"apply", readingId:"aapcc-bb",
@@ -275,7 +275,7 @@ QUESTIONS.push(
   {t:"Family car, as long as it is within the window", correct:false, why:"The window decides whether the patient goes in, not how: anyone who goes in can crash on the way, and only the ambulance has IVs, pressors and paddles."},
   {t:"Either one; the Poison Center decides which", correct:false, why:"The key does not leave the vehicle open: it is an ambulance, because a crashing patient needs the IVs, pressors and paddles it carries."}],
  teach:"Question 3, the same in both columns: ambulance. Beta blocker and calcium channel blocker overdoses can crash; the ambulance carries IVs, pressors and paddles. In a car stuck in traffic, none of that is available.",
- quote:"You get stuck in traffic trying to get them to the hospital and they start to crash. You are out of luck, you don't have any IVs to hang, you don't have any pressers to hang, OK, you don't have any paddles.",
+ quote:"You get stuck in traffic trying to get them to the hospital and they start to crash. You are out of luck, you don't have any IVs to hang, you don't have any pressers to hang ... you don't have any paddles.",
  note:"\"pressers\" in the transcript is pressors.",
  cite:"Readingguideforoutofhospitalguidelines2026KEY.docx, Beta Blockers, question 3; transcript 10/19"},
 
@@ -289,7 +289,7 @@ QUESTIONS.push(
   {t:"One follow-up call at 6 hours", correct:false, why:"6 hours is the immediate-release window for going to a hospital, not a follow-up schedule; beta-blocker follow-up is calls at appropriate intervals for up to 12–24 hours."},
   {t:"A routine 24-hour hospital admission", correct:false, why:"Her key's answer is follow-up calls, not an admission."}],
  teach:"Question 4 of the beta blocker column: follow-up calls are made to determine outcome at appropriate intervals for up to 12–24 hours, based on the judgment of the poison center. The calcium channel blocker key leaves follow-up to the Poison Center's judgment with no interval named.",
- quote:"for the guidance document for the beta blockers, um, uh, usually the interval is about 2012 to 24 hours based on the judgment of the poison center.",
+ quote:"for the guidance document for the beta blockers ... usually the interval is about 2012 to 24 hours based on the judgment of the poison center.",
  note:"The transcript's \"2012 to 24 hours\" is the key's 12–24 hours.",
  cite:"Readingguideforoutofhospitalguidelines2026KEY.docx, Beta Blockers, question 4; transcript 10/19"},
 
@@ -303,7 +303,7 @@ QUESTIONS.push(
   {t:"Manage at home if asymptomatic past 6 hours", correct:false, why:"Suspected self-harm goes to the ED whatever the symptoms or the time."},
   {t:"Report to the Poison Center and take no further step", correct:false, why:"The ED referral and the mental health referral are both on her key."}],
  teach:"Question 5 is the same in both columns: refer the patient to the emergency department (ED), then refer them to mental health care. On 10/20 she said pharmacists cannot stop with the drug; the whole person needs to get the other care they may need.",
- quote:"if you have somebody that you found or a patient that has been exposed because of, you think self harm, we need to be sure they get to. Uh, mental health care as well, OK? We can't stop with just our drug stuff as pharmacists. We need to think about the whole person and be sure that they are accessing other care that they may need, OK?",
+ quote:"if you have somebody that you found or a patient that has been exposed because of, you think self harm, we need to be sure they get to. ... mental health care as well ... We can't stop with just our drug stuff as pharmacists. We need to think about the whole person and be sure that they are accessing other care that they may need",
  cite:"Readingguideforoutofhospitalguidelines2026KEY.docx, Beta Blockers, question 5; transcript 10/20"},
 
 {id:"GRG3-023", lecture:"GRG3", prof:"Smith", tier:"new", topic:"GRG3", sub:"bb", skill:"recall", readingId:"aapcc-bb",
@@ -332,7 +332,7 @@ QUESTIONS.push(
   {l:"Modified-release calcium channel blocker (except verapamil)", r:"18 hours", why:"Her key, calcium channel blockers 2c."},
   {l:"Modified-release verapamil", r:"24 hours", why:"Her key, calcium channel blockers 2e."}],
  teach:"Inside the window an asymptomatic patient goes to a hospital; after it, call the Poison Center, and they can probably be managed at home. Immediate-release products are absorbed rapidly, so 6 hours covers both classes (beta blockers except sotalol). Extended-release products form bezoars that may break apart unpredictably, so their windows are longer: 8 hours for a sustained-release beta blocker, 18 for a modified-release calcium channel blocker, and 24 for modified-release verapamil, which has multiple mechanisms.",
- quote:"I want you to know those time frames, OK, which drug formulation is OK at this time frame. If it's extended release calcium channel blocker, not verapamil, what's the time frame, OK? What's the time frame for a beta blocker extended release, OK? So, that's what you need to know.",
+ quote:"I want you to know those time frames ... which drug formulation is OK at this time frame. If it's extended release calcium channel blocker, not verapamil, what's the time frame ... What's the time frame for a beta blocker extended release ... that's what you need to know.",
  cite:"Readingguideforoutofhospitalguidelines2026KEY.docx, question 2 in both columns; transcript 10/19"},
 
 {id:"GRG3-025", lecture:"GRG3", prof:"Smith", tier:"new", topic:"GRG3", sub:"both", skill:"tell", readingId:"aapcc-ccb", multi:true,
@@ -358,7 +358,7 @@ QUESTIONS.push(
   {t:"Both: follow-up calls for up to 12–24 hours", correct:false, why:"Only the beta blocker column names the 12–24 hour interval."},
   {t:"Both: no follow-up is needed after the window", correct:false, why:"Both columns have follow-up, set by the poison center's judgment."}],
  teach:"Follow-up is one of the two places where the columns differ. Calcium channel blockers: determined by the judgment of the Poison Center. Beta blockers: follow-up calls to determine outcome at appropriate intervals for up to 12–24 hours, based on the judgment of the poison center. On 10/19 she said the difference comes from what the data show for the two kinds of cases.",
- quote:"So, slightly different details in that follow up. Uh, just because of what the data is showing for these different kinds of cases, OK?",
+ quote:"slightly different details in that follow up. ... just because of what the data is showing for these different kinds of cases",
  cite:"Readingguideforoutofhospitalguidelines2026KEY.docx, question 4 in both columns; transcript 10/19"},
 
 {id:"GRG3-027", lecture:"GRG3", prof:"Smith", tier:"new", topic:"GRG3", sub:"both", skill:"tell", readingId:"aapcc-bb",
@@ -370,7 +370,7 @@ QUESTIONS.push(
   {t:"The guidelines were written in different years", correct:false, why:"Both were published in 2005."},
   {t:"Charcoal binds one class and not the other", correct:false, why:"Charcoal is considered for both classes in her key."}],
  teach:"Two different reasons answer two different questions. Immediate-release against extended-release: the clumping of tablets (bezoars) is the biggest issue. Beta blocker against calcium channel blocker: the mechanism of action of each class. She left the detail to the cardio module.",
- quote:"We've already discussed the reasoning before the immediate release for the immediate release versus like your sustained release, delayed release, right? It's the clumping of the tablets is the biggest issue, OK. But the mechanism of action will speak to why there's a difference in time between the beta blockers and the calcium channel blockers.",
+ quote:"for the immediate release versus like your sustained release, delayed release ... It's the clumping of the tablets is the biggest issue ... But the mechanism of action will speak to why there's a difference in time between the beta blockers and the calcium channel blockers.",
  cite:"Readingguideforoutofhospitalguidelines2026KEY.docx, question 2 in both columns; transcript 10/19"},
 
 {id:"GRG3-028", lecture:"GRG3", prof:"Smith", tier:"new", topic:"GRG3", sub:"both", skill:"recall", readingId:"aapcc-ccb",
@@ -383,7 +383,7 @@ QUESTIONS.push(
   {t:"It forms larger bezoars than the other calcium channel blockers", correct:false, why:"Her key gives the bezoar reason for all extended-release products; verapamil's longer window comes from its multiple mechanisms."},
   {t:"It is not bound by activated charcoal", correct:false, why:"Charcoal is considered for all of these ingestions. Verapamil's longer window comes from its pharmacology: it has multiple mechanisms and is not as clean a calcium channel blocker."}],
  teach:"On 10/20 she returned to verapamil: its window differs from the other calcium channel blockers because of its mechanism; it has multiple mechanisms and is not as clean a calcium channel blocker. So the concern lasts longer: an asymptomatic patient 10 hours after an extended-release verapamil ingestion is not out of the woods; the window is 24 hours.",
- quote:"the reason for that is because of the. Mechanism of that drug and how it is, it actually has multiple mechanisms. It's not quite as clean of a calcium channel blocker as the other ones, OK?",
+ quote:"the reason for that is because of the. Mechanism of that drug and how it is, it actually has multiple mechanisms. It's not quite as clean of a calcium channel blocker as the other ones",
  cite:"Readingguideforoutofhospitalguidelines2026KEY.docx, Calcium Channel Blockers, questions 2e and 2f; transcript 10/20"},
 
 {id:"GRG3-029", lecture:"GRG3", prof:"Smith", tier:"new", topic:"GRG3", sub:"both", skill:"apply", readingId:"aapcc-ccb",
@@ -396,7 +396,7 @@ QUESTIONS.push(
   {t:"Manage at home: the 8-hour window has passed", correct:false, why:"8 hours is the sustained-release beta blocker window."},
   {t:"Wait until 18 hours, then decide", correct:false, why:"18 hours is the window for the other modified-release calcium channel blockers; verapamil is 24."}],
  teach:"Her 10/20 example. At 10 hours after an extended-release verapamil ingestion, an asymptomatic patient is still inside the 24-hour window, so the clump of tablets could still break apart and be absorbed. Her key's answer within 24 hours: get them to a hospital.",
- quote:"if they're asymptomatic and it's only been 10 hours, you're not out of the woods, it's 24 hours for verapamil extended release, right? That's a pretty long time frame just because it's possible that somebody could all of a sudden absorb that clump of medication.",
+ quote:"if they're asymptomatic and it's only been 10 hours, you're not out of the woods, it's 24 hours for verapamil extended release ... That's a pretty long time frame just because it's possible that somebody could all of a sudden absorb that clump of medication.",
  cite:"Readingguideforoutofhospitalguidelines2026KEY.docx, Calcium Channel Blockers, question 2e; transcript 10/20"},
 
 {id:"GRG3-030", lecture:"GRG3", prof:"Smith", tier:"new", topic:"GRG3", sub:"both", skill:"apply", readingId:"aapcc-bb",
@@ -408,8 +408,8 @@ QUESTIONS.push(
   {t:"Observe at home; no symptoms means a small dose", correct:false, why:"Inside the window an absent symptom does not mean a small dose; the drug may not all have been absorbed yet."},
   {t:"Estimate the dose and observe at home if it seems low", correct:false, why:"She said that when the amount cannot be confirmed, the patient probably needs to go in. Her key's answer inside the window is get them to a hospital."},
   {t:"Wait until the window has passed, then call", correct:false, why:"The call and the hospital come now, inside the window."}],
- teach:"On 10/20, after reading the class's guides, she stressed one point: a patient who is asymptomatic before the time frame is not yet safe. Call the Poison Center and probably bring them into the hospital, especially if you cannot confirm they took only 1 or 2 tablets, since they may not have absorbed everything yet.",
- quote:"If people are asymptomatic before that time frame that they say is important, uh, you need to be calling poison center and probably be bringing them into the hospital, right? If you don't know how much they took, if you can't confirm that they only took maybe 1 or maybe 2 tablets of whatever medication it is, you probably need to get them into the hospital because remember they haven't possibly absorbed. Everything that they ingested",
+ teach:"She stressed one point on 10/20: a patient who is asymptomatic before the time frame is not yet safe. Call the Poison Center and probably bring them into the hospital, especially if you cannot confirm they took only 1 or 2 tablets, since they may not have absorbed everything yet.",
+ quote:"If people are asymptomatic before that time frame that they say is important ... you need to be calling poison center and probably be bringing them into the hospital ... If you don't know how much they took, if you can't confirm that they only took maybe 1 or maybe 2 tablets of whatever medication it is, you probably need to get them into the hospital because remember they haven't possibly absorbed. Everything that they ingested",
  cite:"Readingguideforoutofhospitalguidelines2026KEY.docx, question 2 in both columns; transcript 10/20"},
 
 {id:"GRG3-031", lecture:"GRG3", prof:"Smith", tier:"new", topic:"GRG3", sub:"both", skill:"tell", readingId:"aapcc-bb",
@@ -421,7 +421,7 @@ QUESTIONS.push(
   {t:"Modified-release verapamil, 18 hours", correct:false, why:"Modified-release verapamil is 24 hours, the longest."},
   {t:"Sustained-release beta blocker, 18 hours", correct:false, why:"18 hours belongs to the calcium channel blockers."}],
  teach:"The immediate-release window is shared, 6 hours, because immediate-release products are absorbed rapidly. The extended-release windows differ: 8 hours for a sustained-release beta blocker, 18 for a modified-release calcium channel blocker other than verapamil, 24 for modified-release verapamil. Bezoar formation explains why extended-release windows are longer; the difference between the classes speaks to their mechanisms of action, and verapamil's extra length to its multiple mechanisms.",
- quote:"If they're not symptomatic at the time you found them, and it's only been um. 18 hours for your uh calcium channel blockers, but 8 hours for your beta blockers, you are still within the window that that clump of tablets could break apart",
+ quote:"If they're not symptomatic at the time you found them, and it's only been ... 18 hours for your ... calcium channel blockers, but 8 hours for your beta blockers, you are still within the window that that clump of tablets could break apart",
  cite:"Readingguideforoutofhospitalguidelines2026KEY.docx, question 2 in both columns; transcript 10/19"},
 
 {id:"GRG3-032", lecture:"GRG3", prof:"Smith", tier:"new", topic:"GRG3", sub:"both", skill:"apply", readingId:"aapcc-bb",
@@ -445,7 +445,7 @@ QUESTIONS.push(
   {t:"Whether charcoal is available at home", correct:false, why:"Charcoal is not given at home, and it does not decide where the patient goes."},
   {t:"Whether a family car is available", correct:false, why:"Transport is by ambulance."}],
  teach:"Her key's question 2 sorts the patient by three things she named on 10/19: the time frame of when they were found, whether they are symptomatic, and the formulation. Those three, read against the windows on her key, decide between getting them to a hospital and calling the Poison Center.",
- quote:"there are some things we need to think about regarding the time frame of when you found them, and if they're symptomatic or not, and the kind of formulation that they were exposed to, correct?",
+ quote:"there are some things we need to think about regarding the time frame of when you found them, and if they're symptomatic or not, and the kind of formulation that they were exposed to",
  cite:"Readingguideforoutofhospitalguidelines2026KEY.docx, question 2 in both columns; transcript 10/19"},
 /* ---------------- Who wrote the guidelines ---------------- */
 {id:"GRG3-034", lecture:"GRG3", prof:"Smith", tier:"new", topic:"GRG3", sub:"authors", skill:"recall", core:true, coreWhy:"author of a discussion or activity reading; upperclassmen report she asks which authors wrote which reading", readingId:"aapcc-bb",
@@ -457,7 +457,7 @@ QUESTIONS.push(
   {t:"Centers for Disease Control and Prevention", correct:false, why:"Not named on either guideline."},
   {t:"American Heart Association and American College of Cardiology", correct:false, why:"Not named on either guideline."}],
  teach:"Both guidelines are \"Evidence-Based Consensus Guideline for Out-of-Hospital Management\" documents from the American Association of Poison Control Centers (AAPCC). Their stated objective is to help poison center staff triage and manage people who swallowed these drugs outside a hospital. On 10/19 she explained that the evidence comes from published overdose cases that the authors pooled.",
- quote:"So all the patients that have overdosed on these different formulations, these authors wrote this paper, they've pulled together all the data, done the statistical analysis, and they have these guidance now.",
+ quote:"all the patients that have overdosed on these different formulations, these authors wrote this paper, they've pulled together all the data, done the statistical analysis, and they have these guidance now.",
  cite:"beta-blocker+guideline+AAPCC+2005.pdf and Ca+channel+blocker+guideline+AAPCC+2005.pdf, title pages; transcript 10/19"},
 
 {id:"GRG3-035", lecture:"GRG3", prof:"Smith", tier:"new", topic:"GRG3", sub:"authors", skill:"tell", core:true, coreWhy:"author of a discussion or activity reading; upperclassmen report she asks which authors wrote which reading", readingId:"aapcc-ccb",
@@ -469,6 +469,6 @@ QUESTIONS.push(
   {t:"Both: Rodriguez-Mozaz and Weinberg", correct:false, why:"They wrote the pharmaceuticals-in-water meeting report."},
   {t:"Both: Marraffa, Cohen and Howland", correct:false, why:"They wrote the antidotes primer."}],
  teach:"The same twelve AAPCC panel members (Wax, Erdman, Chyka, Keyes, Caravati, Booze, Christianson, Woolf, Olson, Manoguerra, Scharman, Troutman) appear on both guidelines. The order changes: Wax is listed first on the beta-blocker guideline and Olson first on the calcium channel blocker guideline.",
- quote:"So all the patients that have overdosed on these different formulations, these authors wrote this paper, they've pulled together all the data, done the statistical analysis, and they have these guidance now.",
+ quote:"all the patients that have overdosed on these different formulations, these authors wrote this paper, they've pulled together all the data, done the statistical analysis, and they have these guidance now.",
  cite:"beta-blocker+guideline+AAPCC+2005.pdf and Ca+channel+blocker+guideline+AAPCC+2005.pdf, title pages; transcript 10/19"}
 );

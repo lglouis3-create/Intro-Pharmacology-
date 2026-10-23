@@ -25,7 +25,7 @@ QUESTIONS.push(
   {t:"Animal waste", correct:false, why:"Her key pairs animal waste with a different fix: controls on feedlots and farms."},
   {t:"Ingestion of fish", correct:false, why:"Ingestion of fish is a human exposure route on her key, not a source."}],
  teach:"Her key sorts the three sources by whether a choice can be changed. Flushing unused medications is improper disposal, so other disposal methods could reduce it. Animal waste comes from livestock given hormones and antibiotics on feedlots and farms, so controls there could reduce it. Human waste cannot be reduced, because people will keep taking medications and the parent drug and metabolites leave the body.",
- quote:"How about unused antibiotics? And you dump them down your toilet. Um, OK, so improper disposal of medications is another source, so our waste.",
+ quote:"unused antibiotics? And you dump them down your toilet. ... improper disposal of medications is another source",
  note:"On 10/13 she first gave leftover opioids as the example of improper disposal, then corrected herself (flushing opioids is allowed as a dangerous drug) and used unused antibiotics instead.",
  cite:"KeyDiscussionGuideRodriguez-MozazandWeinberg2026.docx, row Source, For Humans; transcript 10/13"},
 
@@ -39,7 +39,7 @@ QUESTIONS.push(
   {t:"It can't be reduced", correct:false, why:"That is her key's entry for human waste: people take meds."},
   {t:"Removing wildlife from contaminated water", correct:false, why:"Wildlife are the ones exposed, not the source; on 10/13 she said the animals that contribute are livestock."}],
  teach:"Animal waste is a source because livestock (feedlots, chicken houses) are given medications such as hormones and antibiotics. Her key's fix: controls on feedlots and farms. Wild animals are not the source; they are the ones exposed.",
- quote:"Feedlots, other places where animals are, chicken houses, chicken, whatever you call them, chicken poops, yeah, those are sources as well. Mhm. Are those animals being given medications? Sometimes they are hormones, antibiotics, yeah. So those could be a source of medications getting into our water supplies.",
+ quote:"Feedlots, other places where animals are, chicken houses ... those are sources as well. ... Are those animals being given medications? Sometimes they are hormones, antibiotics ... So those could be a source of medications getting into our water supplies.",
  cite:"KeyDiscussionGuideRodriguez-MozazandWeinberg2026.docx, row Source, For Humans; transcript 10/13"},
 
 {id:"RMK3-003", lecture:"RMK3", prof:"Smith", tier:"new", topic:"RMK3", sub:"source", skill:"recall", readingId:"rodriguez-mozaz",
@@ -52,7 +52,7 @@ QUESTIONS.push(
   {t:"Animal waste: farm animals are given drugs", correct:false, why:"Her key says animal waste could be reduced by controls on feedlots and farms."},
   {t:"Ingestion of fish: people eat exposed fish", correct:false, why:"Ingestion of fish is a human exposure route, not a source. The source that can't be reduced is human waste: people take meds."}],
  teach:"Of the three sources on her key, only human waste can't be reduced: people take medications, and the parent drug and its metabolites leave the body. Flushing (improper disposal) and animal waste each have a fix on her key.",
- quote:"We take medications to treat and prevent disease, we're not ever going to stop that, of course, or we all wouldn't be here in pharmacy school, right? So, people take drugs, then they go to the bathroom and you flush, OK?",
+ quote:"We take medications to treat and prevent disease, we're not ever going to stop that ... people take drugs, then they go to the bathroom and you flush",
  cite:"KeyDiscussionGuideRodriguez-MozazandWeinberg2026.docx, row Source, For Humans; transcript 10/13"},
 
 {id:"RMK3-004", lecture:"RMK3", prof:"Smith", tier:"new", topic:"RMK3", sub:"source", skill:"tell", readingId:"rodriguez-mozaz",
@@ -65,7 +65,7 @@ QUESTIONS.push(
   {t:"Their own food chain, separate from human sources", correct:false, why:"Her key says the sources are the same as for humans."},
   {t:"Not yet studied", correct:false, why:"The unknowns on her key are in the ADME, Dose and Target/MOA rows, not Source."}],
  teach:"Source is the one principle her key fills for wildlife with \"Same as for humans\": flushing, animal waste and human waste reach the water that both humans and wildlife are exposed to. On 10/13 she added wastewater treatment plants, which do not remove all drugs, as a source for both.",
- quote:"So that's the source for our exposure. To drugs in our waters, and those are the same sources for animals out in the wild. OK, so the same source for humans and animals.",
+ quote:"that's the source for our exposure. To drugs in our waters, and those are the same sources for animals out in the wild. ... the same source for humans and animals.",
  cite:"KeyDiscussionGuideRodriguez-MozazandWeinberg2026.docx, row Source, For Wildlife; transcript 10/13"},
 
 {id:"RMK3-005", dupOf:"RMK3-001", lecture:"RMK3", prof:"Smith", tier:"new", topic:"RMK3", sub:"source", skill:"recall", type:"match", readingId:"rodriguez-mozaz",
@@ -104,7 +104,7 @@ QUESTIONS.push(
   {t:"Contact with antibiotic-resistant bacteria", correct:false, why:"Not a route on her key. Antibiotic resistance in sediment bacteria came up on 10/13 as a separate concern."},
   {t:"Prescribed doses of the same drugs", correct:false, why:"A prescribed dose is intended use, not exposure to drugs in water."}],
  teach:"Her key's human routes: ingestion of drinking water, ingestion of fish, and recreational dermal exposure. Drinking water is the main one; on 10/13 she said bathing or swimming in a lake can expose a person, but usually it is drinking water.",
- quote:"Let's stop with the thought that most of our exposure is through drinking water. You could get exposed by bathing, by swimming in a lake, right? But usually for us it's drinking water",
+ quote:"most of our exposure is through drinking water. You could get exposed by bathing, by swimming in a lake ... But usually for us it's drinking water",
  cite:"KeyDiscussionGuideRodriguez-MozazandWeinberg2026.docx, row Exposure, For Humans (Route); transcript 10/13"},
 
 {id:"RMK3-008", lecture:"RMK3", prof:"Smith", tier:"new", topic:"RMK3", sub:"exposure", skill:"recall", readingId:"rodriguez-mozaz", multi:true,
@@ -112,13 +112,13 @@ QUESTIONS.push(
  core:true, coreWhy:"her discussion-guide key, row 'Exposure' (\"this is testable material\", 10/13)",
  stem:"Which are routes of exposure to pharmaceuticals in water for aquatic wildlife? Select all that apply.",
  options:[
-  {t:"Ingestion of drinking water", correct:true, why:"Aquatic animals live in the contaminated water, so drinking it is a constant route; the class named drinking first."},
+  {t:"Ingestion of drinking water", correct:true, why:"Aquatic animals live in the contaminated water, so drinking it is a constant route."},
   {t:"Ingestion of food", correct:true, why:"On her key; on 10/13: eating other animals that have been living in that water."},
   {t:"Dermal", correct:true, why:"On her key; on 10/13: skin, with frogs as the example."},
   {t:"Prescribed or veterinary doses", correct:false, why:"Wild animals are not given these drugs; on 10/13 she said wildlife are the ones being exposed, not the source."}],
- teach:"Her key's wildlife routes: ingestion of drinking water, ingestion of food, and dermal. On 10/13 the class also offered breathing (fish), and she summed the routes up as drinking, eating, swimming, living in it.",
+ teach:"Her key's wildlife routes: ingestion of drinking water, ingestion of food, and dermal. On 10/13 she also accepted breathing (fish), and summed the routes up as drinking, eating, swimming, living in it.",
  quote:"eating other animals that have been living in that water, so they get exposed drinking, eating, swimming in the water.",
- note:"On 10/13 a student offered \"Breathing like fish\" and she accepted it; her key lists ingestion of drinking water, ingestion of food and dermal, without breathing. Keyed on the key; breathing is not used as a wrong option.",
+ note:"On 10/13 she accepted \"Breathing like fish\" as a route; her key lists ingestion of drinking water, ingestion of food and dermal, without breathing. Keyed on the key; breathing is not used as a wrong option.",
  cite:"KeyDiscussionGuideRodriguez-MozazandWeinberg2026.docx, row Exposure, For Wildlife (Route); transcript 10/13"},
 
 {id:"RMK3-009", lecture:"RMK3", prof:"Smith", tier:"new", topic:"RMK3", sub:"exposure", skill:"recall", readingId:"rodriguez-mozaz",
@@ -166,8 +166,8 @@ QUESTIONS.push(
   {t:"Constant everywhere, at the same level in every part of their range", correct:false, why:"Her key adds that contamination levels may vary even in one location."},
   {t:"Depends on how people are exposed and where they live", correct:false, why:"That is the human entry."},
   {t:"Occasional, when they enter treated water", correct:false, why:"Her key says constant if the home range is continually contaminated."}],
- teach:"Her key's wildlife frequency has a condition and a caveat: constant exposure if their home range is continually contaminated, and contamination levels may vary even in one location. On 10/13, asked how animals living in or near the water get exposed, the room answered \"Constantly\" and she agreed.",
- quote:"How about animals that live in water all the time or near water all the time? They're in and out of water mostly. How do they get exposed? Constantly, yeah.",
+ teach:"Her key's wildlife frequency has a condition and a caveat: constant exposure if their home range is continually contaminated, and contamination levels may vary even in one location. On 10/13 she said animals that live in or near the water all the time are exposed constantly.",
+ quote:"animals that live in water all the time or near water all the time? ... How do they get exposed? Constantly",
  cite:"KeyDiscussionGuideRodriguez-MozazandWeinberg2026.docx, row Exposure, For Wildlife (Frequency); transcript 10/13"},
 
 {id:"RMK3-013", lecture:"RMK3", prof:"Smith", tier:"new", topic:"RMK3", sub:"exposure", skill:"apply", readingId:"rodriguez-mozaz",
@@ -192,7 +192,7 @@ QUESTIONS.push(
   {t:"They are equally significant", correct:false, why:"Her key names aquatic wildlife exposure as more significant."},
   {t:"Neither; parts per trillion is too low to matter", correct:false, why:"Wildlife are exposed for their entire life, repeatedly and constantly; her key says their dose is likely high enough to cause effects."}],
  teach:"Her key asks the question at the end of the Exposure row and answers it: aquatic wildlife exposure is more significant. Wildlife are exposed for their entire life, repeatedly, and constantly if their home range is contaminated; for humans the exposure depends on how and where they live.",
- quote:"All right, so your patient, they're probably OK. We are worried about wildlife.",
+ quote:"your patient, they're probably OK. We are worried about wildlife.",
  cite:"KeyDiscussionGuideRodriguez-MozazandWeinberg2026.docx, row Exposure (Which is more significant?); transcript 10/13"},
 
 {id:"RMK3-015", lecture:"RMK3", prof:"Smith", tier:"new", topic:"RMK3", sub:"exposure", skill:"recall", type:"match", readingId:"rodriguez-mozaz",
@@ -219,7 +219,7 @@ QUESTIONS.push(
   {t:"Complete data, including every metabolite", correct:false, why:"On 10/13 she said that for many drugs we don't even know what the metabolites are."},
   {t:"No; these drugs leave the body unchanged", correct:false, why:"On 10/13: a lot of a drug is metabolized and comes out of the body; parent drug and metabolites both reach the water."}],
  teach:"For humans, her key says we have some data from drug development studies, perhaps data from other studies. On 10/13 she put the limit on it: we know ADME, dose and mechanism for humans except for the metabolites, many of which have never been identified.",
- quote:"Remember, I did mention that a lot of the medications that we ingest get metabolized to substances that we don't know anything about. We don't even know what the metabolites are, so we don't have data on that.",
+ quote:"a lot of the medications that we ingest get metabolized to substances that we don't know anything about. We don't even know what the metabolites are, so we don't have data on that.",
  cite:"KeyDiscussionGuideRodriguez-MozazandWeinberg2026.docx, row ADME, For Humans; transcript 10/13"},
 
 {id:"RMK3-017", lecture:"RMK3", prof:"Smith", tier:"new", topic:"RMK3", sub:"adme", skill:"recall", readingId:"rodriguez-mozaz",
@@ -232,7 +232,7 @@ QUESTIONS.push(
   {t:"Yes; the detected drugs form harmful metabolites in fish", correct:false, why:"Her key says there is very little if any data; no such conclusion can be drawn."},
   {t:"No; wildlife do not metabolize these drugs", correct:false, why:"Her key says studies have not been done, so this is not known."}],
  teach:"The species used to develop drugs are rodents, guinea pigs, dogs and sometimes pigs, not sea otters, orca whales, fish or mollusks. So for aquatic wildlife nobody has studied how these drugs are absorbed, distributed, metabolized or excreted, and her key says there is very little if any data on whether they are metabolized to anything harmful. For humans, by contrast, drug development supplies some data.",
- quote:"We just wrapped that all up by saying we know it all for humans, except for the metabolites. We don't know it for these critters out there, OK?",
+ quote:"we know it all for humans, except for the metabolites. We don't know it for these critters out there",
  cite:"KeyDiscussionGuideRodriguez-MozazandWeinberg2026.docx, row ADME, For Wildlife; transcript 10/13"},
 
 {id:"RMK3-018", lecture:"RMK3", prof:"Smith", tier:"new", topic:"RMK3", sub:"adme", skill:"tell", readingId:"rodriguez-mozaz",
@@ -244,7 +244,7 @@ QUESTIONS.push(
   {t:"The data exist but are kept by drug companies", correct:false, why:"Her key says the studies have not been done."},
   {t:"Wildlife ADME matches human ADME, so no separate studies are needed", correct:false, why:"She said we don't know how drugs made and tested for humans will act in these animals."}],
  teach:"Her key's wildlife ADME entry is that very little if any data exist and studies have not been done. The reason she gave on 10/13: the species used in drug development are rodents, guinea pigs, dogs and pigs, so how drugs made and tested for humans act in sea otters, orca whales, fish and mollusks is unknown.",
- quote:"the animals that we use in dose development in in drug development studies are like rodents, guinea pigs, dogs, cute little beagle dogs, um, well, it's pigs sometimes, right? So, you know, we don't tend to use sea otters and orca whales and fish and mollusks. We don't use those in our drug development studies, so we don't know how these drugs made for humans and tested for humans are going to act.",
+ quote:"the animals that we use in dose development ... in drug development studies are like rodents, guinea pigs, dogs ... it's pigs sometimes ... we don't tend to use sea otters and orca whales and fish and mollusks. We don't use those in our drug development studies, so we don't know how these drugs made for humans and tested for humans are going to act.",
  cite:"KeyDiscussionGuideRodriguez-MozazandWeinberg2026.docx, row ADME, For Wildlife; transcript 10/13"},
 
 /* ---------------- Dose ---------------- */
@@ -297,7 +297,7 @@ QUESTIONS.push(
   {t:"The no-effect dose is known for each species, and their exposure does not reach it", correct:false, why:"Her key says the doses needed to cause adverse effects are not known."},
   {t:"Too low to matter, given parts-per-trillion levels", correct:false, why:"Her key concludes the opposite for wildlife: given the nature of their exposure, their dose is likely high enough to cause effects."}],
  teach:"Two unknowns and one conclusion for wildlife: we don't know the dose they are really exposed to, and we don't know the doses needed to cause adverse effects; but given the nature of their exposure (entire life, repeated, constant), their dose is likely high enough to cause effects. On 10/13: they have it bad in places where concentrations are relatively high.",
- quote:"we don't know their acme, we don't know their dose that's gonna cause a problem, we don't know where they're gonna go in those critters' bodies and cause a problem, right?",
+ quote:"we don't know their acme, we don't know their dose that's gonna cause a problem, we don't know where they're gonna go in those critters' bodies and cause a problem",
  note:"The key reads \"their dose it high enough\" (is). \"acme\" in the transcript is ADME.",
  cite:"KeyDiscussionGuideRodriguez-MozazandWeinberg2026.docx, row Dose, For Wildlife; transcript 10/13"},
 
@@ -334,7 +334,7 @@ QUESTIONS.push(
  options:[
   {t:"Fetus", correct:true, why:"The fetus is exposed through the mother, and she said risk assessment on in utero exposure is very hard to do, so good data are lacking."},
   {t:"Children", correct:true, why:"Children are in the sensitive group she said not to ignore, even though the general population is probably OK at parts per trillion; good data on them are lacking."},
-  {t:"People with underlying disease states", correct:true, why:"A student named disease states and she accepted it; people with diseases are in the sensitive group for whom good data are lacking."},
+  {t:"People with underlying disease states", correct:true, why:"People with diseases are in the sensitive group for whom good data are lacking."},
   {t:"Healthy adults who drink a lot of water", correct:false, why:"On 10/13 she used the well-hydrated person as the example of someone who still does not reach a therapeutic dose."},
   {t:"Fish and mollusks", correct:false, why:"Fish and mollusks are aquatic wildlife, the other column; the sensitive populations in the human column are the fetus, children, the elderly and people with underlying disease states."}],
  teach:"The sensitive populations on her key: fetus, children, elderly, and people with underlying disease states. On 10/13 she said these should not be ignored, and that risk assessors would re-evaluate if the concentrations in drinking water started rising.",
@@ -352,7 +352,7 @@ QUESTIONS.push(
   {t:"Data on fetus, children and elderly", correct:false, why:"The sensitive-populations gap is in her key's human column."},
   {t:"Effects of low-dose chronic exposures", correct:false, why:"That gap is in the human column, where exposure is low (below a therapeutic dose) but goes on over time."}],
  teach:"Her key lists four unknowns for wildlife: we don't always know the system or organ affected; the data we have may not have been measured in the correct species; studies that were done may not have measured the correct endpoint; and we don't know how multiple exposures affect target/MOA. On 10/13 she said it is hard to study these animals at all.",
- quote:"Uh, other wildlife, we just don't know, you know, it's really hard to capture or orca whales. It's hard to, it's hard to study all these animals.",
+ quote:"other wildlife, we just don't know ... it's really hard to capture or orca whales. ... it's hard to study all these animals.",
  note:"The key reads \"may not have measure correct endpoint\" (measured).",
  cite:"KeyDiscussionGuideRodriguez-MozazandWeinberg2026.docx, row Target/MOA, For Wildlife; transcript 10/13"},
 
@@ -388,7 +388,7 @@ QUESTIONS.push(
   {t:"Wax, Erdman, Chyka and colleagues", correct:false, why:"Paul M. Wax is the first author of the AAPCC beta-blocker ingestion guideline."},
   {t:"Olson, Erdman, Woolf and colleagues", correct:false, why:"Kent R. Olson is the first author of the AAPCC calcium channel blocker ingestion guideline."}],
  teach:"Sara Rodriguez-Mozaz and Howard S. Weinberg (University of North Carolina at Chapel Hill) wrote \"Meeting Report: Pharmaceuticals in Water, An Interdisciplinary Approach to a Public Health Challenge\" in Environmental Health Perspectives. It is the article on the discussion guide whose principles table (source, exposure, ADME, dose, target) the class worked through on 10/13.",
- quote:"I want us to take a dive into the paper that Rodriguez and Moza's paper that I had you guys read.",
+ quote:"Rodriguez and Moza's paper",
  cite:"RodriguezMozaz-EHP-2010.pdf, title page; transcript 10/13"},
 
 {id:"RMK3-030", lecture:"RMK3", prof:"Smith", tier:"new", topic:"RMK3", sub:"authors", skill:"recall", core:true, coreWhy:"author of a discussion or activity reading; upperclassmen report she asks which authors wrote which reading", readingId:"rodriguez-mozaz",
@@ -400,7 +400,6 @@ QUESTIONS.push(
   {t:"A consensus guideline for poison centers", correct:false, why:"That describes the AAPCC beta-blocker and calcium channel blocker guidelines."},
   {t:"A review of antidotes for poisonings", correct:false, why:"That describes the Marraffa, Cohen and Howland primer."}],
  teach:"The article is a meeting report: it summarizes the Environmental Health Summit in North Carolina, where government agencies, academics, industry, water utilities and public interest groups discussed drugs found in water. That is why its conclusions are framed as research needs and recommendations rather than as trial results.",
- quote:"I want us to take a dive into the paper that Rodriguez and Moza's paper that I had you guys read.",
  cite:"RodriguezMozaz-EHP-2010.pdf, title page; transcript 10/13"},
 
 {id:"RMK3-031", lecture:"RMK3", prof:"Smith", tier:"new", topic:"RMK3", sub:"authors", skill:"recall", core:true, coreWhy:"author of a discussion or activity reading; upperclassmen report she asks which authors wrote which reading", type:"match",
@@ -414,6 +413,6 @@ QUESTIONS.push(
   {l:"Calcium channel blocker ingestion guideline", r:"Olson and colleagues (AAPCC)", why:"Kent R. Olson is first author; the same AAPCC panel wrote both guidelines."},
   {l:"Antidotes for toxicological emergencies", r:"Marraffa, Cohen and Howland", why:"The primer assigned for 10/19 (Am J Health-Syst Pharm)."}],
  teach:"Two readings went with a class activity: the Rodriguez-Mozaz and Weinberg article (discussion guide, 10/13) and the two American Association of Poison Control Centers guidelines (reading guide, 10/19). The two guidelines share one twelve-member panel and differ only in who is listed first: Wax for beta blockers, Olson for calcium channel blockers.",
- quote:"So all the patients that have overdosed on these different formulations, these authors wrote this paper, they've pulled together all the data, done the statistical analysis, and they have these guidance now.",
+ quote:"all the patients that have overdosed on these different formulations, these authors wrote this paper, they've pulled together all the data, done the statistical analysis, and they have these guidance now.",
  cite:"RodriguezMozaz-EHP-2010.pdf; beta-blocker+guideline+AAPCC+2005.pdf; Ca+channel+blocker+guideline+AAPCC+2005.pdf; Marraffa+AJHSP+2012+Antidotes.pdf (title pages); transcripts 10/13, 10/19"}
 );

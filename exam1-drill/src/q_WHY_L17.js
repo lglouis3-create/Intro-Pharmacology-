@@ -12,7 +12,7 @@ QUESTIONS.push(
   {t:"Patients given the same drug responded alike", correct:false, why:"The reverse: the observation that started it was how differently people respond."},
   {t:"Over half of patients took drugs affected by genes", correct:false, why:"That is the MacKinnon et al. (2023) finding, a recent measure of impact, not why the field began."}],
  teach:"Clinicians observed large inter-individual variation in drug therapy response: one person could have a lethal side effect from a drug while another was not affected at all. Age, ethnicity, gender and underlying disease explained part of that variation. As knowledge of genes and of how genes interact with medications grew, genetic variation could explain more of it, and that is why pharmacogenomics is now part of medicine.",
- quote:"the reason why we have it is because we started observing that there's sometimes a large interindividual variation in drug therapy response. ... Sometimes, one person could have a lethal response due to the side effects of a drug, and somebody else is not affected at all by it, OK?",
+ quote:"the reason why we have it is because we started observing that there's sometimes a large interindividual variation in drug therapy response. ... Sometimes, one person could have a lethal response due to the side effects of a drug, and somebody else is not affected at all by it",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘Introduction: Inter-Individual Variations’ (p. 4); transcript 10/20"},
 
 {id:"L17-102", lecture:"L17", prof:"Smith", tier:"new", topic:"L17", sub:"history", skill:"apply",
@@ -37,7 +37,7 @@ QUESTIONS.push(
   {t:"To test whether fraternal twins absorb drugs faster", correct:false, why:"The measurement was the half-life of clearance by metabolism, not absorption."},
   {t:"To show that diet and habits set drug clearance", correct:false, why:"Diet and habits are environmental factors; the twin design was built to show heritability."}],
  teach:"Fraternal twins are related but do not share the same genotype; she likened them to 'just grabbing random people out of the population'. Giving identical and fraternal pairs the same drug and comparing half-lives within each pair shows heritability: almost all identical pairs had the same half-life, while the fraternal pairs varied. The slide calls it a twin study illustrating heritability of drug metabolism variability.",
- quote:"By using fraternal twins, we are replicating what might be happening in. It, you know, they're related, and so they're, but definitely their genotypes are not obviously similar to each other, almost like just, just grabbing random people out of the population, OK, but they really wanted to show heritability here, so they used identical twins and then fraternal twins.",
+ quote:"By using fraternal twins, we are replicating what might be happening in. ... they're related ... but definitely their genotypes are not obviously similar to each other, almost like ... just grabbing random people out of the population ... they really wanted to show heritability here, so they used identical twins and then fraternal twins.",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘Introduction: Twin Studies Data’ (p. 7, G&G Fig. 4-2); transcript 10/20"},
 
 {id:"L17-104", lecture:"L17", prof:"Smith", tier:"new", topic:"L17", sub:"history", skill:"apply",
@@ -49,8 +49,7 @@ QUESTIONS.push(
   {t:"Antipyrine is cleared without any enzyme", correct:false, why:"Antipyrine is cleared all the way by metabolism, by one enzyme."},
   {t:"Identical twins are known to share a genotype", correct:false, why:"True of identical twins, but fraternal twins differ, and genotyping was not yet possible for anyone."}],
  teach:"In the twin studies nobody was genotyped; the measurement was a phenotype, the half-life of antipyrine clearance. Antipyrine is cleared entirely by metabolism by one enzyme, so the half-life showed cleanly whether that enzyme was working in the normal range. Once people could be genotyped, evaluation of drug response based on genetics became more sophisticated.",
- quote:"We did not genotype these people at this time. We were looking at their phenotype, which was the half-life of the clearance of the drug, OK? So we're not genotyping yet, OK. All right, so those types of studies, as we then got the ability to genotype people, we got to be more sophisticated with our evaluation of how people are responding to medications based on their genetics, OK?",
- note:"The transcript renders antipyrine as \"antipyrene\".",
+ quote:"We did not genotype these people at this time. We were looking at their phenotype, which was the half-life of the clearance of the drug ... as we then got the ability to genotype people, we got to be more sophisticated with our evaluation of how people are responding to medications based on their genetics",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘Introduction: Twin Studies Data’ (p. 7); transcript 10/20"},
 
 {id:"L17-105", lecture:"L17", prof:"Smith", tier:"new", topic:"L17", sub:"history", skill:"apply",
@@ -62,7 +61,7 @@ QUESTIONS.push(
   {t:"Labs now skip the DNA between coding regions", correct:false, why:"The regions between coding DNA have now been sequenced and defined as well."},
   {t:"Twin studies replaced the need for sequencing", correct:false, why:"Twin studies measured a phenotype; they did not replace sequencing."}],
  teach:"The Human Genome Project began in 1990 with very slow but proven methods. While it ran, people worked out how to sequence faster and prepared new protocols, procedures and machines. Whole genome sequencing came after the project, but those advances set the stage for sequencing a whole genome in a matter of hours.",
- quote:"As they got through this project, other people were really into figuring out how can we do this faster. So when the human genome project was done, a whole lot of technological advances occurred because. People um prepared new protocols, new procedures, new machines that allowed us to do DNA sequencing a lot faster so we can now do whole genome sequencing in a matter of hours.",
+ quote:"As they got through this project, other people were really into figuring out how can we do this faster. So when the human genome project was done, a whole lot of technological advances occurred because. People ... prepared new protocols, new procedures, new machines that allowed us to do DNA sequencing a lot faster so we can now do whole genome sequencing in a matter of hours.",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘Introduction: Genomics History’ (p. 6); transcript 10/20"},
 
 {id:"L17-106", lecture:"L17", prof:"Smith", tier:"new", topic:"L17", sub:"history", skill:"apply",
@@ -74,7 +73,7 @@ QUESTIONS.push(
   {t:"They wanted to publish before other labs", correct:false, why:"That is the usual habit it was contrasted with: scientists hide work so nobody scoops them."},
   {t:"It let one lab publish the whole genome", correct:false, why:"It was a worldwide consortium of academics, industry and government agencies."}],
  teach:"Scientists usually hide their work so that nobody publishes it first. The Human Genome Project was set up so that labs around the world each sequenced a stretch of DNA and put it in a shared database, because its planners realized the benefit to the world of sharing the data. The project was completed in 2003, early and under budget.",
- quote:"Most scientists, we're all a little jealous. Um, we do our work, you know, we hide it so nobody will scoop you. ... But this topic somehow the people that dreamed up this project set it up in such a way that everybody was very giving and altruistic and willing to share the data because they realized the benefit to to the world if we shared that data.",
+ quote:"Most scientists, we're all a little jealous. ... we do our work ... we hide it so nobody will scoop you. ... the people that dreamed up this project set it up in such a way that everybody was very giving and altruistic and willing to share the data because they realized the benefit ... to the world if we shared that data.",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘Introduction: Genomics History’ (p. 6); transcript 10/20"},
 
 /* ---------------- Impact, uses and limitations ---------------- */
@@ -87,7 +86,7 @@ QUESTIONS.push(
   {t:"Pharmacy school does not teach pharmacogenomics", correct:false, why:"Pharmacy students are the best educated in pharmacogenomics."},
   {t:"Prescribers are better versed in it than pharmacists", correct:false, why:"Reversed: prescribers are not yet as well versed as pharmacists."}],
  teach:"The gain and sharing of knowledge and the technology developed during the Human Genome Project moved the field forward rapidly, and more information is added all the time. So the course sets up basic examples and a basic understanding, with a way of thinking that lets pharmacists keep educating themselves. Pharmacogenomics is expected in every area of pharmacy to some degree: oncology uses it all the time, and it is big in central nervous system (CNS) and cardiology practice and growing in infectious disease.",
- quote:"So that rapidity of moving forward is the reason why I told you guys early on in this lec in this course ... So I'm hoping you guys will be learning how to think like this, OK, so you can keep educating yourselves as we, as you get into your profession",
+ quote:"that rapidity of moving forward is the reason why I told you guys early on in this ... course ... I'm hoping you guys will be learning how to think like this ... so you can keep educating yourselves as ... you get into your profession",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘Introduction: Genomics History’ (p. 6); transcript 10/20"},
 
 {id:"L17-108", lecture:"L17", prof:"Smith", tier:"new", topic:"L17", sub:"impact", skill:"apply",
@@ -99,7 +98,7 @@ QUESTIONS.push(
   {t:"Genetic test results go to pharmacists, not them", correct:false, why:"Access to results is not the gap described; the gap is time spent with drugs."},
   {t:"Pharmacogenomics applies to dispensing, not prescribing", correct:false, why:"Anybody prescribing should know pharmacogenomics."}],
  teach:"Pharmacy students are the best taught in pharmacogenomics because it is pharmacy with genetics. Prescribers do not spend as much time with drugs as pharmacists do, so they are not yet as well versed in it, even though anybody prescribing should know it. Nurses and other providers should know it too.",
- quote:"You guys are the best taught about it because it's pharmacy with genetics, right? ... But people that are prescribing so far, uh, our prescribers are not as well versed yet in pharmacogenomics, cause they don't spend as much time with drugs as you guys do.",
+ quote:"You guys are the best taught about it because it's pharmacy with genetics ... our prescribers are not as well versed yet in pharmacogenomics, cause they don't spend as much time with drugs as you guys do.",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘Introduction: Impact of Pharmacogenomics’ (p. 9); transcript 10/20"},
 
 /* ---------------- Target areas; digoxin and P-glycoprotein ---------------- */
@@ -110,9 +109,9 @@ QUESTIONS.push(
   {t:"P-gp pumps the drug back into the gut lumen", correct:true, why:"P-gp is an efflux transporter: it grabs drug crossing the lumen cells and pumps it back, so less reaches the systemic circulation."},
   {t:"P-gp metabolizes the drug in the gut wall", correct:false, why:"P-gp is a transporter, not a metabolizing enzyme."},
   {t:"P-gp carries the drug from the lumen into the blood", correct:false, why:"The reverse direction: P-gp effluxes drug back into the lumen."},
-  {t:"P-gp speeds the drug's excretion by the kidney", correct:false, why:"Excretion came up in the room, but the answer was absorption into the systemic circulation, bioavailability; gut P-gp pumps drug back into the lumen."}],
+  {t:"P-gp speeds the drug's excretion by the kidney", correct:false, why:"The answer is absorption into the systemic circulation, bioavailability; gut P-gp pumps drug back into the lumen."}],
  teach:"P-glycoprotein, encoded by the ABCB1 gene, is an efflux transporter expressed in the gut. As an oral drug tries to cross the cells lining the gut lumen, P-gp grabs it and pumps it back into the lumen to be passed in the stool. That limits absorption into the systemic circulation, which is the drug's bioavailability.",
- quote:"Remember, PGP is an e-flux transporter. Right? In other words, the drug in your gut lumen is trying to go across those lumen cells, and PGP is grabbing it and pumping it back into the lumen so that you're gonna poop it out, right?",
+ quote:"PGP is an e-flux transporter. ... In other words, the drug in your gut lumen is trying to go across those lumen cells, and PGP is grabbing it and pumping it back into the lumen so that you're gonna poop it out",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘Introduction: Three Target Areas’ (p. 10); transcript 10/20"},
 
 {id:"L17-110", lecture:"L17", prof:"Smith", tier:"new", topic:"L17", sub:"targets", skill:"apply",
@@ -136,7 +135,7 @@ QUESTIONS.push(
   {t:"Low-activity P-gp increases digoxin's metabolism", correct:false, why:"P-gp is a transporter; it does not metabolize digoxin."},
   {t:"Digoxin has a wide therapeutic index in most patients", correct:false, why:"Digoxin has a very narrow therapeutic index, so a rise in absorption matters."}],
  teach:"Digoxin is a heart-rate drug with a very narrow therapeutic index, and it is dosed knowing that P-gp in the gut stops a lot of it from being absorbed. In a patient with low-activity P-gp, more of the same dose gets into the systemic circulation. Blood levels can then be high on a normal dose, and heart rate is affected too much.",
- quote:"If a person has taken digoxin, cardiac med helps us control heart rate, it has a very narrow therapeutic index. ... But we dose it because we know that it's a substrate for PGP. So, PGP is gonna grab that drug and stop it from being absorbed into the systemic circulation a lot of the time, OK?",
+ quote:"If a person has taken digoxin, cardiac med helps us control heart rate, it has a very narrow therapeutic index. ... But we dose it because we know that it's a substrate for PGP. So, PGP is gonna grab that drug and stop it from being absorbed into the systemic circulation a lot of the time",
  note:"The slide's \"May have serious implications for narrow therapeutic-index drugs\" sits under the metabolizing-enzyme bullet; she applied narrow therapeutic index to digoxin aloud.",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘Introduction: Three Target Areas’ (p. 10); transcript 10/20"},
 
@@ -149,7 +148,7 @@ QUESTIONS.push(
   {t:"Metabolizing enzymes turned out to have few variants", correct:false, why:"Metabolizing enzymes are where the most is known about variants."},
   {t:"Drug targets had already been well explained", correct:false, why:"Drug targets came after transporters and have moved more slowly."}],
  teach:"Once the gene that expresses P-glycoprotein (ABCB1) was identified, genetic variants that affect P-gp activity were found. They explained why some patients had lots of digoxin in the bloodstream on a normal dose, with heart rate affected too much. That is why drug transporters were the next area studied a lot; many more transporters, in the liver, the brain and elsewhere, are now an active research area.",
- quote:"So we started realizing that this was an issue as we learned more about PGP when we identified the gene that expresses PGP and then we started identifying genetic variants that affect its activity, we realized, oh gosh, this is why some patients have. Lots of digoxin in their bloodstream, even though we gave them the normal dose. And we affected their heart rate too much. OK, so that's why drug transporters were the next thing that we studied a lot.",
+ quote:"we started realizing that this was an issue as we learned more about PGP when we identified the gene that expresses PGP and then we started identifying genetic variants that affect its activity, we realized ... this is why some patients have. Lots of digoxin in their bloodstream, even though we gave them the normal dose. And we affected their heart rate too much. ... that's why drug transporters were the next thing that we studied a lot.",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘Introduction: Three Target Areas’ (p. 10); transcript 10/20"},
 
 /* ---------------- Impact on PK and PD: the two buckets ---------------- */
@@ -162,7 +161,7 @@ QUESTIONS.push(
   {t:"Less of the drug is absorbed from the gut", correct:false, why:"Less absorption would lower blood levels, not raise them."},
   {t:"The cancer cell lacks the target protein the drug binds", correct:false, why:"A missing target belongs to the efficacy bucket (individualized medicine)."}],
  teach:"A variant in the gene for a drug-metabolizing enzyme can make the enzyme less active. The patient then does not metabolize and clear the drug very well, drug blood concentrations go too high, and the result is an adverse response, toxicity. This is a pharmacokinetic (PK) effect; transporter variants can add to the toxicity bucket too.",
- quote:"If you don't metabolize and clear that drug very well, if I've got that variation of the metabolizing enzyme, I may not clear that drug very well, and I could definitely get my drug blood concentrations too high and have adverse response or toxicity. OK. So that's the bucket of toxicity.",
+ quote:"If you don't metabolize and clear that drug very well, if I've got that variation of the metabolizing enzyme, I may not clear that drug very well, and I could definitely get my drug blood concentrations too high and have adverse response or toxicity. ... So that's the bucket of toxicity.",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘Impact of Pharmacogenomics on PK and PD’ (p. 11); transcript 10/20"},
 
 {id:"L17-114", lecture:"L17", prof:"Smith", tier:"new", topic:"L17", sub:"pkpd", skill:"apply",
@@ -174,7 +173,7 @@ QUESTIONS.push(
   {t:"The drug is pumped back into the gut lumen", correct:false, why:"That is a transporter (P-glycoprotein) effect on absorption."},
   {t:"The variant changes absorption and excretion", correct:false, why:"Absorption and excretion are pharmacokinetics, the top arc of the figure."}],
  teach:"In the PharmGKB figure, variants in pharmacodynamic (PD) genes, such as a drug target that is a receptor, change the mechanism of action and so the drug response. If a receptor's variant makes it not respond very well, a drug trying to find that receptor and get a response cannot do it, so efficacy is affected. Variants in metabolizing enzymes and transporters change pharmacokinetics (PK) and fall into the toxicity bucket.",
- quote:"If you've got a receptor that has a genetic variant that makes that receptor not respond very well, then giving it a drug that's trying to find that receptor and get a response, if that receptor's not working very well because of its mutation, it's going to affect efficacy, right? So that's the bucket of efficacy.",
+ quote:"If you've got a receptor that has a genetic variant that makes that receptor not respond very well, then giving it a drug that's trying to find that receptor and get a response, if that receptor's not working very well because of its mutation, it's going to affect efficacy ... So that's the bucket of efficacy.",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘Impact of Pharmacogenomics on PK and PD’ (p. 11, PharmGKB figure); transcript 10/20"},
 
 /* ---------------- Wild type, variant, polymorphism ---------------- */
@@ -199,8 +198,8 @@ QUESTIONS.push(
   {t:"Both cause a complete loss of enzyme activity", correct:false, why:"The definition says nothing about the effect on activity."},
   {t:"Both occur in less than 1% of a population", correct:false, why:"Under 1% makes a variation a rare variant."}],
  teach:"A polymorphism is a variation in DNA sequence present in at least 1% of a population; the same kind of change in less than 1% is a rare variant. The definition speaks only to frequency, not to the kind of change. So a one-nucleotide change, more than one nucleotide change, an entire gene insertion or deletion, extra copies of a gene or a sister chromatid exchange is a polymorphism whenever it occurs in at least 1% of the population.",
- quote:"Yeah, so any kind of genetic. Craziness that you can think of, if it happens in more than 1 in 1% or more of the population, by definition it's polymorphic. It's happening, polymorphism definition speaks to the frequency of that change happening, right?",
- note:"She answered a student's question here. Wording varies: slide \"If present > 1% of the population\" (the symbol is underlined, read as at least); she says \"at least 1%\", \"more than 1%\" and \"1% or more\". Keyed on at least 1%.",
+ quote:"any kind of genetic. Craziness that you can think of, if it happens in more than 1 in 1% or more of the population, by definition it's polymorphic. ... polymorphism definition speaks to the frequency of that change happening",
+ note:"Wording varies: slide \"If present > 1% of the population\" (the symbol is underlined, read as at least); she says \"at least 1%\", \"more than 1%\" and \"1% or more\". Keyed on at least 1%.",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘Polymorphism’ (p. 14); transcript 10/20"},
 
 {id:"L17-117", lecture:"L17", prof:"Smith", tier:"new", topic:"L17", sub:"variant", skill:"apply",
@@ -225,7 +224,7 @@ QUESTIONS.push(
   {t:"One allele is wild type and the other a variant", correct:false, why:"Both copies can be the same, as in a homozygous person."},
   {t:"Each gene makes two different proteins in each cell", correct:false, why:"Confuses alleles with gene products; the two alleles are two inherited copies of the gene."}],
  teach:"Humans are diploid organisms: they generally have two copies of every chromosome, and so two copies of the same gene. One copy, an allele, comes from the biological mother and the other from the biological father. The two alleles a person has for a gene are that person's genotype, and they can be the same (homozygous) or different (heterozygous).",
- quote:"OK, we're diploid, we've got 2 copies of every gene, most of us. All right, so, get a little from your mother, get a little from your father. Got 2 copies. ... The two alleles that anybody has represents their genotype, right?",
+ quote:"we're diploid, we've got 2 copies of every gene, most of us. ... get a little from your mother, get a little from your father. Got 2 copies. ... The two alleles that anybody has represents their genotype",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slides ‘Allele’ (p. 15), ‘Genotype vs phenotype’ (p. 17); transcript 10/20"},
 
 /* ---------------- Genotype, phenotype, functional significance ---------------- */
@@ -250,7 +249,7 @@ QUESTIONS.push(
   {t:"It is the most common, wild type version", correct:false, why:"*2 is a variant, with no enzyme activity."},
   {t:"It changes how the drug's receptor responds", correct:false, why:"CYP2C19 is a metabolizing enzyme, not a receptor."}],
  teach:"For CYP2C19*2 the genotype-phenotype relationship is tight: the *2 variant is known to have no enzyme activity, and even the reason it is not active is known. When the functional significance of a variant is known, that knowledge can be used to decide whether a patient should get a drug or whether the dose should be reduced. Many variants are not that clear, because of the complications of the genotype-phenotype relationship.",
- quote:"A lot of the examples we'll talk about, we know a lot about that genotype phenotype relationship. We know the functional significance of that genetic variant I'm going to tell you about, OK? That's why we can use this information to help us make decisions about whether a certain patient should get a drug or not, whether you need to reduce the dose of the drug or not.",
+ quote:"A lot of the examples we'll talk about, we know a lot about that genotype phenotype relationship. We know the functional significance of that genetic variant I'm going to tell you about ... That's why we can use this information to help us make decisions about whether a certain patient should get a drug or not, whether you need to reduce the dose of the drug or not.",
  note:"The transcript renders CYP2C19*2 as \"2C192\" and star as \"SAR\" or \"SA\". The genotype CYP2C19*2/*2 is on the slide (p. 17); that *2 has no activity was said aloud on 10/20.",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slides ‘Genotype vs phenotype’ (p. 17), ‘Complications of Genotype vs phenotype’ (p. 18); transcript 10/20"},
 
@@ -263,7 +262,7 @@ QUESTIONS.push(
   {t:"Genotypes are not measured in living patients", correct:false, why:"Patients are genotyped; for some drugs it is standard protocol."},
   {t:"Variants in drug response genes are rare variants", correct:false, why:"Frequency is not the complication; many are polymorphisms."}],
  teach:"Most traits are multigenic, not monogenic, and drug response can be multigenic too. A variant in one gene may have a large impact on the response while a variant in another gene has a smaller one, and the two genotypes added together can result in an adverse response. So one gene does not account for the whole response; the field is getting better at weighting each gene's contribution.",
- quote:"Um, some phenotype genotype relationships in our response to medications is driven by one genetic variant. ... but most of the time, or, or, or a lot of the time, our response to medications is affected by more than one genetic variation. ... But we look at them together and say, oh, this genotype and this genotype added together result in adverse response.",
+ quote:"some phenotype genotype relationships in our response to medications is driven by one genetic variant. ... a lot of the time, our response to medications is affected by more than one genetic variation. ... But we look at them together and say, oh, this genotype and this genotype added together result in adverse response.",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘Complications of Genotype vs phenotype’ (p. 18); transcript 10/20"},
 
 {id:"L17-122", lecture:"L17", prof:"Smith", tier:"new", topic:"L17", sub:"genophen", skill:"apply",
@@ -275,7 +274,7 @@ QUESTIONS.push(
   {t:"One patient's variant is dominant, the other's recessive", correct:false, why:"Pharmacogenomics does not discuss variants as dominant or recessive."},
   {t:"The variant's frequency differs between the two patients", correct:false, why:"Frequency is a population measure, not a property of one person."}],
  teach:"Environmental factors such as diet, habits, lack of exercise, sleep and stress can affect how genes are expressed, and so can more internal factors, DNA methylation and histone modification (her word: histones), called epigenetic factors. These affect the significance of a genetic variation. So the same genotype does not always give the same drug response phenotype, which is one of the complications of the genotype-phenotype relationship.",
- quote:"So there's other things that affect how our genes get expressed and will affect the significance of a genetic variation. So. That will influence our genotype phenotype relationship as we're looking at drug response, OK?",
+ quote:"there's other things that affect how our genes get expressed and will affect the significance of a genetic variation. ... That will influence our genotype phenotype relationship as we're looking at drug response",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘Complications of Genotype vs phenotype’ (p. 18); transcript 10/20"},
 
 /* ---------------- Haplotype ---------------- */
@@ -288,7 +287,7 @@ QUESTIONS.push(
   {t:"The population is out of Hardy-Weinberg equilibrium", correct:false, why:"Hardy-Weinberg is about frequencies staying constant across generations."},
   {t:"The three loci sit on different chromosomes", correct:false, why:"A haplotype's alleles co-exist on the same chromosome."}],
  teach:"A haplotype is a set of alleles at multiple loci that co-exist on the same chromosome, occurring at a frequency greater than random chance; the slide calls that higher co-occurrence linkage disequilibrium. She added an aside, \"the chemistry will affect how likely. Genetic variations occur\"; that is about where variants arise. Why the three patterns travel together is linkage: the loci sit together on one chromosome and are inherited together (linkage disequilibrium). Haplotypes that affect drug response come up later, especially with warfarin.",
- quote:"There's something about the gene structure. That makes those snips happen and in those kinds of groupings, these 3 different groupings, OK? You guys don't know this probably, but there's a lot of chemistry with DNA. Excuse me, the chemistry will affect how likely. Genetic variations occur.",
+ quote:"There's something about the gene structure. That makes those snips happen and in those kinds of groupings, these 3 different groupings ... there's a lot of chemistry with DNA. ... the chemistry will affect how likely. Genetic variations occur.",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slides ‘Haplotype’ (p. 19), ‘Illustration of Haplotype’ (p. 20); transcript 10/20"},
 
 /* ---------------- Frequencies; Hardy-Weinberg ---------------- */
@@ -301,7 +300,7 @@ QUESTIONS.push(
   {t:"Allele frequency is used for rare variants", correct:false, why:"Any allele, common or rare, has a frequency."},
   {t:"Genotype frequency is measured within one person", correct:false, why:"Both are relative frequencies in a population."}],
  teach:"Allele frequency is how often a version of an allele occurs in a population; genotype frequency is how often a genotype occurs. Because alleles make up a genotype, the two are related: she will return to how allele frequencies relate to genotype frequencies with worked examples. Both are usually expressed as a proportion or percentage.",
- quote:"But don't forget your alleles make up your genotype, so we would then describe people as having a genotype frequency as well, OK? ... You've got your allele frequency of the wild type, you've got your allele frequency of the variant allele in the population. Together, what's the genotype frequency?",
+ quote:"But don't forget your alleles make up your genotype, so we would then describe people as having a genotype frequency as well ... You've got your allele frequency of the wild type, you've got your allele frequency of the variant allele in the population. Together, what's the genotype frequency?",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘Frequencies in Pharmacogenomics’ (p. 21); transcript 10/20"},
 
 {id:"L17-125", lecture:"L17", prof:"Smith", tier:"new", topic:"L17", sub:"freq", skill:"apply",
@@ -313,7 +312,7 @@ QUESTIONS.push(
   {t:"Equilibrium shows the drug was effective in the sample", correct:false, why:"Efficacy is a separate outcome."},
   {t:"Equilibrium means each haplotype occurs by chance", correct:false, why:"Haplotypes occur more often than random chance; that is a different concept."}],
  teach:"Hardy-Weinberg equilibrium means the allele and genotype frequencies in a population stay constant from generation to generation unless specific influences are introduced. The calculation asks whether a genetic variation seen in a sample is there because of evolutionary pressure. If some pressure has changed the sample compared with the general population, the sample does not represent it and the results cannot be generalized; in equilibrium, they can.",
- quote:"So we would not be in Hardy-Weinberg equilibrium. We could not say our results from this study can be applied to everybody because we didn't pull a good sample. ... OK, so it's basically evolutionary pressure. You can't be finding that your population has changed compared to the general population, or you won't be in Hardy-Winberg equilibrium.",
+ quote:"So we would not be in Hardy-Weinberg equilibrium. We could not say our results from this study can be applied to everybody because we didn't pull a good sample. ... it's basically evolutionary pressure. You can't be finding that your population has changed compared to the general population, or you won't be in Hardy-Winberg equilibrium.",
  note:"The transcript renders Hardy-Weinberg as both \"Hardy-Weinberg\" and \"Hardy-Winberg\". Her example (a stressed class) was hypothetical.",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘Frequencies in Pharmacogenomics’ (p. 21); transcript 10/20"}
 );
