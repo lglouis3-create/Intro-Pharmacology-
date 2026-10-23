@@ -12,7 +12,7 @@ QUESTIONS.push(
   {t:"It is a viper, like the rattlesnake", correct:false, why:"She said plainly that it is not a viper; the vipers are the fanged snakes."},
   {t:"It lives under rocks, logs and leaves", correct:false, why:"It does live there, but where it lives does not explain how it bites; its small head and hinged mouth do."}],
  teach:"The coral snake is very venomous and carries a neurotoxin. It has a small head and a hinged mouth and is not a viper, so it lacks the fangs that the rattlesnake and the water moccasin have; instead it bites and chews, often between fingers or toes, and injects the venom that way.",
- quote:"He doesn't have a big head, he's not a viper. He has a little piano hinge mouth, and so he'll, he'll bite you. ... He'll bite and chew, like on your uh fingers, between your fingers, between your toes, he'll he'll bite and chew. And inject the venom into you that way ... See, those snakes have fangs",
+ quote:"He doesn't have a big head, he's not a viper. He has a little piano hinge mouth ... He'll bite and chew ... between your fingers, between your toes ... And inject the venom into you that way ... those snakes have fangs",
  note:"In the list of fanged snakes the transcript reads \"a rattlesnake or a coral snake or a water moccasin\"; the coral snake in that list is a slip of the tongue or a transcription error, as the whole passage contrasts the coral snake with fanged snakes. The rattlesnake and water moccasin are keyed as the fanged ones.",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘What is Toxic?’; transcript 10/9"},
 
@@ -25,7 +25,7 @@ QUESTIONS.push(
   {t:"It is a toxic by-product of human activity", correct:false, why:"That is the definition of a toxicant, such as a smokestack emission; origin is not what makes a compound a xenobiotic."},
   {t:"It can cause a deleterious response", correct:false, why:"That is the definition of a poison; a xenobiotic is defined by being foreign to the organism, not by harm."}],
  teach:"Xenobiotic is defined by where a compound comes from relative to the organism, not by whether it is harmful. Any compound that gets into an organism and is not normally produced by it or expected in it is a xenobiotic. A toxin, a toxicant, a food additive and a medication can all be xenobiotics.",
- quote:"It just means any sort of compound that gets into an organism that's not normally produced by that organism or expected to be present in that organism, so. It could be something poisonous. It could be a toxin or a toxicant. It could be, you know, a food additive, which could be a toxicant, OK? Um, it could be a medication, which could be poisonous.",
+ quote:"It just means any sort of compound that gets into an organism that's not normally produced by that organism or expected to be present in that organism ... It could be something poisonous. It could be a toxin or a toxicant. It could be ... a food additive, which could be a toxicant ... it could be a medication, which could be poisonous.",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Definitions’; transcript 10/9"},
 
 /* ---------------- Source ---------------- */
@@ -38,7 +38,7 @@ QUESTIONS.push(
   {t:"The vapor could be steam until it is sampled", correct:true, why:"Her answer to \"do you think this is toxic?\": \"Could be. It could just be steam.\" Someone has to sample the vapor to find out what it is."},
   {t:"Its toxicity depends on the route of exposure", correct:false, why:"Route is one factor; first one has to know what the substance is."}],
  teach:"A source of exposure cannot be judged by its appearance. Vapor from a smokestack could be harmless steam or could carry a toxicant, and the only way to know is to sample it and identify what is in it. People do this sampling all the time.",
- quote:"What about, do you think this is toxic, poisonous, harmful? Could be. It could just be steam. You'd have to have somebody go in there and sample that vapor and find out what it is. So people do that all the time.",
+ quote:"do you think this is toxic, poisonous, harmful? Could be. It could just be steam. You'd have to have somebody go in there and sample that vapor and find out what it is.",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf, Introduction picture slides; transcript 10/9"},
 
 {id:"L13-104", lecture:"L13", prof:"Smith", tier:"new", topic:"L13", sub:"source", skill:"apply",
@@ -50,7 +50,7 @@ QUESTIONS.push(
   {t:"The exposure counts as environmental for the staff", correct:false, why:"An exposure at work is occupational; environmental exposure is pollution in the surroundings, such as bus fumes or landfill dust."},
   {t:"The patient's own medications can harm the staff", correct:false, why:"Medications are a source for the patient taking them; the hazard here is the chemical the patient carries in on skin or clothing, an occupational source for the staff."}],
  teach:"Occupational exposure is exposure in the workplace, and healthcare workers have it too. A patient covered with a compound such as an organophosphate carries that contaminant into the ER, so the staff can be exposed while treating them. Chemotherapy mixed in a hood with the wrong airflow and radiation are her other healthcare examples.",
- quote:"Somebody comes into the ER, they're covered with some sort of compound. Like maybe they've been splattered with an organic phosphate. People in the ER have to be very careful about not getting exposed to that contaminant that that person got hit with, OK? So yeah, you guys too as pharmacists even will have a risk possibly of, of occupational exposures.",
+ quote:"Somebody comes into the ER, they're covered with some sort of compound. Like maybe they've been splattered with an organic phosphate. People in the ER have to be very careful about not getting exposed to that contaminant that that person got hit with ... you guys too as pharmacists even will have a risk possibly ... of occupational exposures.",
  note:"\"organic phosphate\" in the transcript is organophosphate.",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Source’; transcript 10/9"},
 
@@ -64,7 +64,7 @@ QUESTIONS.push(
   {t:"Intravenous dosing is the least effective route", correct:false, why:"She ranked intravenous dosing as the most effective route, not the least."},
   {t:"Parenteral doses go through first-pass metabolism", correct:false, why:"An intravenous dose skips first-pass metabolism; that was her route-and-toxicity example."}],
  teach:"The major routes of exposure are oral (most common), inhalation, topical and parenteral. Healthcare is where parenteral exposure concentrates, because medications are given by intravenous or other injection and drug abuse often involves injection. Intravenous dosing is also the most effective route, so this exposure matters.",
- quote:"In the world of healthcare, we see a lot more of parental exposure than you would see like in an occupational setting, right? We have, uh, you know, drug abuse exposing people to, to damaging substances or the administration of medications by IV or by some sort of injection. This is a major route of exposure in healthcare",
+ quote:"In the world of healthcare, we see a lot more of parental exposure than you would see like in an occupational setting ... drug abuse exposing people ... to damaging substances or the administration of medications by IV or by some sort of injection. This is a major route of exposure in healthcare",
  note:"\"parental\" in the transcript is parenteral.",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Exposure: Route’; transcript 10/9"},
 
@@ -78,7 +78,7 @@ QUESTIONS.push(
   {t:"Pollutants are cleared before a duration is set", correct:false, why:"Clearance was not her reason; not knowing about the exposure, or not remembering it, was."},
   {t:"The route of a workplace leak is unknown", correct:false, why:"Route is a separate factor of exposure; the duration problem is not knowing when, or whether, the exposure began."}],
  teach:"In an animal study the length of exposure is set by design, so it is known. Out in the environment or at work, a person often does not know an exposure is happening, or cannot remember whether it began days or months ago. That makes the duration of human exposures to pollutants or occupational leaks hard to know.",
- quote:"Problem is, if you're like me. You probably don't realize that you're being exposed to something, right? Or you can't remember when you went to your workplace and it had a funny smell. You can't remember how many days that's been going on, right?",
+ quote:"You probably don't realize that you're being exposed to something ... Or you can't remember when you went to your workplace and it had a funny smell. You can't remember how many days that's been going on",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Exposure: Duration’; transcript 10/9"},
 
 {id:"L13-107", lecture:"L13", prof:"Smith", tier:"new", topic:"L13", sub:"duration", skill:"apply",
@@ -90,7 +90,7 @@ QUESTIONS.push(
   {t:"To link the person's response to the duration", correct:true, why:"Her reason: categorizing the exposure lets them observe what kind of response the person has based on that duration."},
   {t:"To decide whether the agent is a toxin or a toxicant", correct:false, why:"That depends on the origin of the substance, not on how long the exposure lasted."}],
  teach:"Animal studies define acute as less than 24 hours, subacute as less than a month, subchronic as 1 to 3 months and chronic as more than 3 months. Toxicologists try to fit human exposures into the same categories even when the timing is uncertain. Doing so lets them compare responses and relate what the person is experiencing to how long the exposure lasted.",
- quote:"Yeah, but we do try to define those exposures, even for humans by these definitions, so that we can categorize the exposure and try to observe what's going on, what kind of response is that person having based on that duration of exposure",
+ quote:"we do try to define those exposures, even for humans by these definitions, so that we can categorize the exposure and try to observe what's going on, what kind of response is that person having based on that duration of exposure",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Exposure: Duration’; transcript 10/9"},
 
 {id:"L13-108", lecture:"L13", prof:"Smith", tier:"new", topic:"L13", sub:"duration", skill:"apply",
@@ -102,7 +102,7 @@ QUESTIONS.push(
   {t:"The daughters took DES themselves for many years", correct:false, why:"The daughters' exposure was in utero, not a chronic exposure of their own."},
   {t:"The cancer appeared within days of the first dose", correct:false, why:"An effect within days would be easy to link; the cancer appeared about 20 years later, in the daughters."}],
  teach:"The second point on single versus repeated exposure: a fast-absorbing compound is likely to produce an immediate effect, but it may also produce a delayed one. DES caused only mild effects such as nausea in the women who took it, but their daughters, exposed in utero, developed an unusual vaginal cancer about 20 years later. An effect that appears decades later, in a different person, takes epidemiology to connect to its cause.",
- quote:"We started seeing a very weird and scary phenomenon about 20 years after these women were given DES to help them maintain their pregnancy. ... They were born, they grew up, and when they're in about their twenties, they developed this very unusual kind of cancer. That's a very long term exposure, right? Weird, right? Took a lot of medical epidemiology work to figure that one out",
+ quote:"We started seeing a very weird and scary phenomenon about 20 years after these women were given DES to help them maintain their pregnancy. ... They were born, they grew up, and when they're in about their twenties, they developed this very unusual kind of cancer. That's a very long term exposure",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Exposure: Single vs. Repeated’; transcript 10/9"},
 
 {id:"L13-109", lecture:"L13", prof:"Smith", tier:"new", topic:"L13", sub:"duration", skill:"apply",
@@ -114,7 +114,7 @@ QUESTIONS.push(
   {t:"A single exposure produces no symptoms", correct:false, why:"This misses the symptoms that do occur: one exposure gives a headache or sleepiness. What keeps workers unaware is that the gas cannot be seen or smelled."},
   {t:"It enters through the skin, not the lungs", correct:false, why:"Benzene is a gas in her example; it is breathed in."}],
  teach:"Benzene leaking in a workplace is a gas that cannot be seen or smelled, so nothing warns the workers; all they notice is a little headache or sleepiness. If the leak is never fixed, the same symptoms return every day (no tolerance develops), and chronic low-dose exposure causes leukemia.",
- quote:"But oftentimes if people would go into the workplace and there's a little bit of benzene leaking, you can't smell it, it's a gas, can't see it. Um, they'd get a little headache or or sleepy",
+ quote:"if people would go into the workplace and there's a little bit of benzene leaking, you can't smell it, it's a gas, can't see it ... they'd get a little headache or ... sleepy",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Exposure: Single vs. Repeated’; transcript 10/9"},
 
 /* ---------------- Exposure: frequency (Fig 2-4) ---------------- */
@@ -127,7 +127,7 @@ QUESTIONS.push(
   {t:"A has a shorter half-life than compound C", correct:false, why:"This is reversed: A has the longest half-life and C the shortest."},
   {t:"A is bioactivated to a more toxic metabolite", correct:false, why:"The figure is about elimination rate and dosing frequency; no metabolite is shown."}],
  teach:"Half-life is the time for half of a compound to be cleared from the blood. When the half-life is long compared with the interval between doses, most of each dose is still present when the next one arrives, so the concentration climbs. Compound A, with very slow elimination (half-life of about a year on the caption), reaches the toxic zone by the third quarter-dose.",
- quote:"A, so it's half-life is longest, right? It takes longer for half the compound to be cleared out of the blood, OK? ... you give a 1/4 of the single dose, and you give it repeatedly, and it takes a while even for compound A to build up in the system high enough for you to have a toxic response, OK? By the 3rd dose, you start having a toxic response with compound A",
+ quote:"A, so it's half-life is longest ... It takes longer for half the compound to be cleared out of the blood ... you give a 1/4 of the single dose, and you give it repeatedly, and it takes a while even for compound A to build up in the system high enough for you to have a toxic response ... By the 3rd dose, you start having a toxic response with compound A",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Exposure: Frequency’ (C&D Fig 2-4); transcript 10/9"},
 
 {id:"L13-111", lecture:"L13", prof:"Smith", tier:"new", topic:"L13", sub:"freq", skill:"apply",
@@ -139,7 +139,7 @@ QUESTIONS.push(
   {t:"Each dose of B is smaller than each dose of A", correct:false, why:"All three compounds get the same quarter doses at the same interval."},
   {t:"B has a higher toxic concentration than A", correct:false, why:"The toxic concentration is the same line for all three compounds."}],
  teach:"With the same dose and dosing interval, how fast a compound accumulates depends on its elimination rate. A, eliminated very slowly, is toxic by about the third dose; B, with a half-life about equal to the dosing interval, by about the fourth or fifth; C, cleared faster than the dosing frequency, never. The longer the half-life relative to the interval, the sooner the toxic zone is reached.",
- quote:"When does compound B start causing a problem? How many doses? Maybe 4, they didn't draw this very well, right, but if you extrapolate, probably 4 is looking like this, right? Maybe 4, you're in the toxic zone. 5 for sure, you're in the toxic zone, right, for B.",
+ quote:"When does compound B start causing a problem? ... if you extrapolate, probably 4 ... Maybe 4, you're in the toxic zone. 5 for sure, you're in the toxic zone",
  note:"She did not state B's half-life aloud; the caption gives B a half-life approximately equal to the dosing frequency (e.g., 1 day) and A very slow elimination (e.g., half-life of 1 year).",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Exposure: Frequency’ (C&D Fig 2-4 caption); transcript 10/9"},
 
@@ -152,7 +152,7 @@ QUESTIONS.push(
   {t:"More is cleared between doses, so the peaks stay lower", correct:true, why:"A longer gap gives the body more time to clear each dose, so less remains for the next dose to add onto and the concentration stops climbing into the toxic zone. Her goal for a medication: stretch out the dosing frequency until the profile looks like C, high enough for a therapeutic effect but not toxic."},
   {t:"The drug would be bioactivated to a more toxic product", correct:false, why:"Bioactivation is a metabolism topic; the dosing interval does not create a toxic metabolite here."}],
  teach:"Whether repeated doses accumulate depends on the half-life compared with the time between doses. When the time between exposures is long enough, the body clears much of each dose before the next, and the concentration stays lower. For a medication the goal is a concentration below toxicity but high enough to work, so the dosing frequency is stretched out until the profile looks like compound C.",
- quote:"if this were a medication, we'd be needed to target a concentration below toxicity, right? And so we'd have to figure out how do you stretch out these dosing frequencies so that you end up with something like C here. Maybe these concentrations here of C are high enough to have a therapeutic effect, right? And they're not so high to be toxic",
+ quote:"if this were a medication, we'd be needed to target a concentration below toxicity ... we'd have to figure out how do you stretch out these dosing frequencies so that you end up with something like C here. Maybe these concentrations here of C are high enough to have a therapeutic effect ... And they're not so high to be toxic",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Exposure: Frequency’ (C&D Fig 2-4); transcript 10/9"},
 
 /* ---------------- ADMET: bioactivation ---------------- */
@@ -165,7 +165,7 @@ QUESTIONS.push(
   {t:"It decides which route of exposure took place", correct:false, why:"Route is part of the exposure principle, decided before any metabolism."},
   {t:"It is the step that removes the compound", correct:false, why:"Removing the compound is excretion, the E of ADME; metabolism is the step that can make a nastier product."}],
  teach:"Everything that gets into the body is absorbed (or injected), distributed, likely metabolized and excreted. Toxicologists single out metabolism because it can go two ways: detoxification to something less harmful and easier to eliminate, or bioactivation (toxication, metabolic activation) to something more noxious than the parent compound. Acetaminophen is her example.",
- quote:"But one of the things I want to point out that is of concern or something that toxicologists really pay attention to is the metabolism part where a compound might be metabolized to something even nastier, OK? I use the word bioactivation for that.",
+ quote:"something that toxicologists really pay attention to is the metabolism part where a compound might be metabolized to something even nastier ... I use the word bioactivation for that.",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slides ‘ADME’, ‘ADME: Metabolism’; transcript 10/9"},
 
 {id:"L13-114", lecture:"L13", prof:"Smith", tier:"new", topic:"L13", sub:"admet", skill:"apply",
@@ -177,7 +177,7 @@ QUESTIONS.push(
   {t:"NAPQI is more harmful than acetaminophen", correct:true, why:"NAPQI is toxic to the liver; metabolism to a more harmful form is bioactivation. The glucuronide and sulfate routes are detoxification."},
   {t:"NAPQI is easier for the body to eliminate", correct:false, why:"Being better able to be eliminated describes detoxification products, not NAPQI."}],
  teach:"Bioactivation is biotransformation of a potential poison to an active, harmful form; detoxification is biotransformation that eliminates the toxicant or prevents its formation. Most of a normal acetaminophen dose is conjugated by the glucuronosyl transferases and sulfotransferases, which is detoxification. The part that goes through CYP2E1 becomes NAPQI, which is toxic to the liver, so that path is bioactivation.",
- quote:"And you guys already know that the NAQI metabolite is toxic to the liver, OK? So, this would be an example of bioactivation. If you go from acetaminophen through the P450 and create that NAQI, that is the bioactivation. OK. And then if acetaminophen is taken care of entirely by the glucuronyl transferphrases or the sulfur transferphrases, then that is, you know, detoxification",
+ quote:"the NAQI metabolite is toxic to the liver ... this would be an example of bioactivation. If you go from acetaminophen through the P450 and create that NAQI, that is the bioactivation ... if acetaminophen is taken care of entirely by the glucuronyl transferphrases or the sulfur transferphrases, then that is ... detoxification",
  note:"\"NAQI\" in the transcript is NAPQI; \"glucuronyl transferphrases\" and \"sulfur transferphrases\" are the glucuronosyl transferases and sulfotransferases.",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slides ‘ADME: Metabolism’, ‘Example of Bioactivation’; transcript 10/9"},
 
@@ -190,7 +190,7 @@ QUESTIONS.push(
   {t:"Their phase 2 enzymes work faster with age", correct:false, why:"Faster phase 2 enzymes would clear more of the dose safely; her worry was the reverse, that their phase 2 enzymes may be depleted."},
   {t:"Their phase 2 enzymes may be fewer in number", correct:true, why:"Her reason: their glucuronosyl transferases and sulfotransferases may be depleted, so the phase 2 enzymes may not handle the whole dose and some goes on to NAPQI."}],
  teach:"A normal acetaminophen dose is detoxified by two families of phase 2 enzymes, the glucuronosyl transferases and the sulfotransferases. If those enzymes are fewer, the full 4 g may be more than they can handle, and the excess is pushed through CYP2E1 to NAPQI, which is toxic to the liver. So for older adults she advises staying under 4 g in 24 hours.",
- quote:"Um, I often will suggest, especially to my older parents, that I don't want you guys taking 4 g of acetaminophen in a 24 hour period, that's too much, OK? Um, The reason is maybe they're GSTs and STs are depleting in numbers in their body, and so maybe that dose of acetaminophen can't all be taken care of by those phase 2 enzymes.",
+ quote:"I often will suggest, especially to my older parents, that I don't want you guys taking 4 g of acetaminophen in a 24 hour period, that's too much ... The reason is maybe they're GSTs and STs are depleting in numbers in their body, and so maybe that dose of acetaminophen can't all be taken care of by those phase 2 enzymes.",
  note:"Her \"GSTs and STs\" are the glucuronosyl transferases and sulfotransferases (see the note on L13-018).",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Example of Bioactivation’; transcript 10/9"},
 
@@ -204,7 +204,7 @@ QUESTIONS.push(
   {t:"Route of exposure, not dose, decides the harm", correct:false, why:"Route is one factor, but dose remains a principle of toxicology; the compound sets the scale of the dose."},
   {t:"Dose matters for medications, not poisons", correct:false, why:"The table lists medications, nutrients and true poisons, all with LD50 values."}],
  teach:"The LD50 is the dose that kills half of the animals given a compound; the lower it is, the less of the compound it takes to kill. On the rat LD50 table it is 10,000 mg/kg for ethyl alcohol and 0.00001 mg/kg for botulinum toxin, so a dose in mg/kg that a rat survives for one compound is far beyond lethal for another. That is why a dose can only be judged harmful once the compound is known: ethyl alcohol gives more grace, while a tiny amount of botulinum toxin is very harmful.",
- quote:"Um, but the range of LD50s is massive. So, 10,000 mgs per kilogram for ethyl alcohol would be the LD50 in rats, and 0.00001 would be the LD50 for botulinum toxin in rats, OK? So the dose makes the poison, but you have to know what compound you're talking about too.",
+ quote:"the range of LD50s is massive ... 10,000 mgs per kilogram for ethyl alcohol would be the LD50 in rats, and 0.00001 would be the LD50 for botulinum toxin in rats ... So the dose makes the poison, but you have to know what compound you're talking about too.",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Dose’; transcript 10/9"},
 
 /* ---------------- Individual and population dose-response ---------------- */
@@ -241,7 +241,7 @@ QUESTIONS.push(
   {t:"It is a dose at which half of a group dies", correct:true, why:"The LD50 is the dose at which 50% of the animals die; a population curve groups the responses (deaths) across the animals and shows what dose they got."},
   {t:"It is the dose where the first deaths appear", correct:false, why:"The dose where an effect first appears is the threshold dose, the other value read from a population curve."}],
  teach:"A population dose–response describes how a population responds to varying doses: responses such as deaths are grouped, and the dose each group got is noted. The LD50, the dose that kills 50% of the animals, is read from the cumulative mortality curve, and the threshold dose is where an effect is first seen. An individual curve, which tracks graded responses such as enzyme inhibition, does not count deaths across a group.",
- quote:"So in this, you're not looking at individuals getting different doses. You're looking to see what is the response happening? How do we group the responses, and then looking to see what dose did they get, right? So this is describing the response of a population to various doses",
+ quote:"you're not looking at individuals getting different doses. You're looking to see what is the response happening? How do we group the responses, and then looking to see what dose did they get ... this is describing the response of a population to various doses",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Second Dose-Response Relationship’ (C&D Fig 2-6); transcript 10/9"},
 
 /* ---------------- Shape of the curve and threshold ---------------- */
@@ -254,7 +254,7 @@ QUESTIONS.push(
   {t:"Iron is a carcinogen with no threshold dose", correct:false, why:"The no-threshold line is the theory for carcinogens; it is not the reason for iron's left arm."},
   {t:"Low doses of iron are bioactivated in the liver", correct:false, why:"Bioactivation is not part of this curve; the left arm is deficiency."}],
  teach:"For an essential substance the U-shaped curve runs from bad to good to bad. Too little iron means the blood cannot carry oxygen (deficiency, possibly death); enough iron puts the person in the region of homeostasis; too much iron causes poisoning, which can also kill. A non-essential substance with a U-shape (hormesis) has no region of homeostasis.",
- quote:"so if you don't have enough iron, your blood can't carry oxygen, and you could suffer the adverse response of death. Right? As you increase the dose. And you're giving more iron to a person and you're getting them out of this deficiency area.",
+ quote:"if you don't have enough iron, your blood can't carry oxygen, and you could suffer the adverse response of death ... As you increase the dose. And you're giving more iron to a person and you're getting them out of this deficiency area.",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Shape of Dose-Response’ (C&D Fig 2-7); transcript 10/9"},
 
 {id:"L13-121", lecture:"L13", prof:"Smith", tier:"new", topic:"L13", sub:"shape", skill:"apply",
@@ -266,7 +266,7 @@ QUESTIONS.push(
   {t:"One molecule might damage DNA and start a cancer", correct:true, why:"Her stated theory: maybe one molecule of a carcinogen damages DNA and starts the cancer, so even the first molecule could cause problems. She added: possibly."},
   {t:"Carcinogens act right after a single dose", correct:false, why:"Cancer is a delayed effect, as with DES and chronic benzene; the linear model rests on the single-molecule idea."}],
  teach:"The chain behind the linear model: a single molecule of a carcinogen may damage DNA; that damage may start a cancer; so even the first molecule carries a possible effect, and the line rises from zero dose with no flat no-effect region. This contrasts with the S-shaped curve of medications and most poisons, which stays flat until a threshold. For long this is what carcinogens were thought to do, and she qualified it with possibly.",
- quote:"the first molecule of what you're exposed to in this linear line could cause you problems, OK? That's a theory for exposure to carcinogens. Maybe it just takes one molecule of a carcinogen to cause you problems. Maybe the one molecule of carcinogen is damaging your DNA and kicking you off into having cancer, OK. Possibly.",
+ quote:"the first molecule of what you're exposed to in this linear line could cause you problems ... That's a theory for exposure to carcinogens. Maybe it just takes one molecule of a carcinogen to cause you problems. Maybe the one molecule of carcinogen is damaging your DNA and kicking you off into having cancer",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Threshold Dose’; transcript 10/9"},
 
 

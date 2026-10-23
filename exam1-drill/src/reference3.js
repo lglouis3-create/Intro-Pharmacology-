@@ -171,7 +171,7 @@ const REFERENCE3_HTML = `
 <tr><td>Does a lot of metabolism</td><td>May bioactivate compounds to hepatotoxic metabolites (acetaminophen → NAPQI)</td><td>same; T 10/14</td></tr>
 <tr><td>Own inflammatory cells</td><td>Kupffer cells release inflammatory cytokines and reactive oxygen species while cleaning up</td><td>same; T 10/14</td></tr>
 <tr><td>Idiosyncratic reactions</td><td>The organ most likely to have them; pharmacogenomics now explains some (rare variant → different metabolism)</td><td>same; T 10/14</td></tr>
-<tr><td>Not a reason</td><td>"It's a large organ, yeah, that really doesn't have anything to do with it"</td><td>PollEV; T 10/14</td></tr>
+<tr><td>Not a reason</td><td>"It's a large organ ... that really doesn't have anything to do with it"</td><td>PollEV; T 10/14</td></tr>
 </tbody></table>
 <table class="reftab"><thead><tr><th>Kind of liver response (Klaassen Table 13-2)</th><th>Meaning</th><th>Representative toxicants on the slide</th></tr></thead><tbody>
 <tr><td>Hepatocyte death</td><td>Death of the metabolizing cells</td><td>Acetaminophen, allyl alcohol, Cu, dimethylformamide, ethanol</td></tr>
@@ -307,7 +307,7 @@ const REFERENCE3_HTML = `
 
 <h3 id="ref3-tbl-1">Poisoning treatment table (her key)</h3>
 <p class="row"><button type="button" class="chip" data-jump="ptab:ptab-top">Drill this table</button></p>
-<p class="sub">Her Poisoning Treatment Table 2026 KEY, in her wording (spellings kept). On 10/20: “So what I have in my table in the key is sufficient. ... But you do know, need to know the details that I have in my table, my key.” Abbreviations in the key: OD = overdose; BB = beta blocker; MOA = mechanism of action; HIET is written as an abbreviation and not expanded; IV FE = i.v. 20% fatty acid emulsion; Fab = the antibody fragments; OP = organophosphate. Source: PoisoningTreatmentTable2026KEY.pdf; T 10/19, 10/20.</p>
+<p class="sub">Her Poisoning Treatment Table 2026 KEY, in her wording (spellings kept). On 10/20: “So what I have in my table in the key is sufficient ... need to know the details that I have in my table, my key.” Abbreviations in the key: OD = overdose; BB = beta blocker; MOA = mechanism of action; HIET is written as an abbreviation and not expanded; IV FE = i.v. 20% fatty acid emulsion; Fab = the antibody fragments; OP = organophosphate. Source: PoisoningTreatmentTable2026KEY.pdf; T 10/19, 10/20.</p>
 <table class="reftab"><thead><tr><th>Overdosed medication</th><th>Symptoms of acute poisoning / diagnostic methods</th><th>Antidote(s)</th><th>MOA of antidote(s)</th><th>Special considerations (her question; her answer)</th><th>Reference</th></tr></thead><tbody>
 <tr><td>Acetaminophen</td><td>Nausea/vomiting. Clinical signs of liver failure. Acetaminophen levels can be measured in the blood.</td><td>N-acetylcysteine</td><td>Replenishes glutathione</td><td>At what time after OD does the antidote lose effectiveness? About 8 hours after overdose. Should you still give it past that time point? Yes</td><td>Marraffa article</td></tr>
 <tr><td>Toxic alcohols</td><td>Methanol active metabolites can cause anion-gap metabolic acidosis and ocular toxicity.<br>Ethylene glycol active metabolites can crystalize in the microvasculature; renal toxicity is common.</td><td>Ethanol or fomepizole</td><td>Inhibition of alcohol dehydrogenase</td><td>There are two possible treatments. Is there an advantage of one therapy over the other? Why? Fomepizole is stronger Alc Dehydrogenase inhibitor and has fewer adverse effects than ethanol.</td><td>Marraffa article</td></tr>

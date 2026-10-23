@@ -29,8 +29,8 @@ QUESTIONS.push(
   {t:"Toxin and a toxin", correct:false, why:"The venom is a toxin, but whatever comes out of a factory smokestack is made through human activity, which makes it a toxicant; toxin is kept for substances from biological systems."},
   {t:"Poison and a xenobiotic", correct:false, why:"Both words apply loosely to both substances: poison is the general term for anything that causes a harmful response, and a xenobiotic is any compound foreign to the organism. Neither says where the substance came from; toxin versus toxicant does."}],
  teach:"Poison is the general lay term for any agent that can cause a deleterious response in a biological system. Toxin and toxicant both name noxious substances, but a toxin comes from a biological system (venom) and a toxicant from human activity (industrial emissions). A xenobiotic is any compound in an organism that the organism does not normally make or expect: it may be a toxin, a toxicant, a food additive or a medication.",
- quote:"toxins are substances coming from biological systems, so. Snake venom is a toxin, OK? ... A toxicant is made by man through our activities.",
- note:"She added: \"I will often not use those words properly, OK? That's OK. I just wanted you guys to know that ... those two words are out there and they're different.\"",
+ quote:"toxins are substances coming from biological systems ... Snake venom is a toxin ... A toxicant is made by man through our activities.",
+ note:"She added: \"I will often not use those words properly ... I just wanted you guys to know that ... those two words are out there and they're different.\"",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Definitions’; transcript 10/9"},
 
 {id:"L13-002", lecture:"L13", prof:"Smith", tier:"new", topic:"L13", sub:"defs", skill:"recall",
@@ -68,7 +68,7 @@ QUESTIONS.push(
   {t:"Threshold", correct:false, why:"Threshold belongs to the dose–response discussion under the dose principle."},
   {t:"Transport", correct:false, why:"The four letters before the T are absorption, distribution, metabolism and excretion; the added letter names the outcome toxicologists care about, toxicity, not another kinetic step."}],
  teach:"ADME is the kinetics of anything that gets into the body: it is absorbed, distributed, likely metabolized, then excreted. In the toxicology module the same steps are followed with a T for toxicity added, because the question is whether those kinetics end in harm. The step toxicologists watch most is metabolism, where a compound can be made into something even nastier (bioactivation). Target, threshold and time belong to other principles.",
- quote:"We're in the toxicology module here, so we're gonna add the T to add me, OK? So absorption, distribution, metabolism, elimination, and toxicity",
+ quote:"We're in the toxicology module here, so we're gonna add the T to add me ... absorption, distribution, metabolism, elimination, and toxicity",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘5 Principles of Toxicology’; transcript 10/9"},
 
 {id:"L13-005", lecture:"L13", prof:"Smith", tier:"new", topic:"L13", sub:"princ", skill:"apply",
@@ -80,7 +80,7 @@ QUESTIONS.push(
   {t:"The toxic target may differ from the therapeutic target", correct:true, why:"The target of a toxic effect is not always the therapeutic target: acetaminophen is taken for soreness, but its toxicity comes from NAPQI acting on the liver."},
   {t:"Metabolism does not contribute to the toxic effect", correct:false, why:"Metabolism can create the toxic species: CYP2E1 bioactivates acetaminophen to NAPQI."}],
  teach:"The target-and-mechanism principle asks where a substance goes in the body and how it causes harm. For a medication that need not be where it works: acetaminophen is taken for soreness, yet its harm comes from NAPQI, made by CYP2E1, which is toxic to the liver. A substance can have several targets, with different toxicity and a different mechanism at each, and the dose reaching each target decides whether toxicity happens there.",
- quote:"sometimes the target of something toxic is not the same target as its therapeutic target, OK? We'll talk about that a little bit more later.",
+ quote:"sometimes the target of something toxic is not the same target as its therapeutic target",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Target & Mechanism of Action’; transcript 10/9"},
 
 /* ---------------- Source ---------------- */
@@ -93,7 +93,7 @@ QUESTIONS.push(
   {t:"Medications", correct:false, why:"As a source category, medications means a patient receiving the drug. The pharmacist is not taking it; the exposure comes from the job."},
   {t:"Critter bites and stings", correct:false, why:"This source covers venoms and toxins from animals, such as snakes; no animal is involved here."}],
  teach:"Source asks where the exposure comes from, and the category follows the setting of the exposure, not the substance. Chemotherapy is a medication, but a pharmacist breathing it from a hood with the wrong airflow is exposed through the job, so it is occupational, like radiation or a patient splattered with an organophosphate in the ER. Environmental exposures come from the surroundings (diesel fumes, landfill dust). Pathogens such as needle sticks are outside this course.",
- quote:"do you have a risk of occupational exposures as a healthcare provider? ... you could be exposed to um chemotherapy, you know, uh, mixing it up in a in in an in an incorrect hood with the wrong airflow ... Remember, in this course we're not usually thinking about exposure to pathogens like needle sticks",
+ quote:"do you have a risk of occupational exposures as a healthcare provider? ... you could be exposed to ... chemotherapy ... mixing it up in ... an incorrect hood with the wrong airflow ... in this course we're not usually thinking about exposure to pathogens like needle sticks",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Source’; transcript 10/9"},
 
 /* ---------------- Exposure: route ---------------- */
@@ -106,7 +106,7 @@ QUESTIONS.push(
   {t:"Inhalation, intravenous, dermal, oral", correct:false, why:"Intravenous ranks first and dermal last."},
   {t:"Dermal, oral, inhalation, intravenous", correct:false, why:"This reads the list from least to most effective. Dermal is the weakest route for delivering a toxic agent and IV the strongest, so a most-to-least ranking starts with IV and ends with dermal."}],
  teach:"Two rankings are easy to mix up. Oral is the most common route of exposure, but effectiveness asks how well a route delivers the agent: IV is most effective, then inhalation, oral and dermal. Her route example shows one reason oral sits below IV: an oral dose goes to the liver first (first-pass effect), while an IV dose does not. Healthcare sees more parenteral exposure than other settings, through injected medications and drug abuse.",
- quote:"IV is gonna be your most effective route. If you can give it by IV, if it's a liquid and you can inject it, IV is the most effective route, and then you can see inhalation, oral, and dermal, uh, they decrease in, in the effectiveness",
+ quote:"IV is gonna be your most effective route ... if it's a liquid and you can inject it, IV is the most effective route, and then you can see inhalation, oral, and dermal ... they decrease ... in the effectiveness",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Exposure: Route’; transcript 10/9"},
 
 {id:"L13-008", lecture:"L13", prof:"Smith", tier:"new", topic:"L13", sub:"route", skill:"apply",
@@ -130,7 +130,7 @@ QUESTIONS.push(
   {t:"The vehicle, not the formulation, decides the toxicity", correct:false, why:"Both the vehicle (oily versus aqueous) and the formulation (immediate versus extended release) change toxicity."},
   {t:"The formulation does not change the toxicity of an overdose", correct:false, why:"Formulation and vehicle are two of the factors that change the toxic response to a route of exposure."}],
  teach:"Vehicle and formulation change the toxicity of an exposure. An oily vehicle behaves differently from an aqueous one, and immediate-release and extended-release forms of the same drug differ in overdose: immediate release absorbs quickly, while extended-release tablets can clump in the stomach and release later all at once.",
- quote:"If somebody were to take a handful of an immediate release beta blocker, compared to taking a handful of extended release beta blockers, which do you think is worse? It depends ... the extended release. Oftentimes those compounds, they will, those tablets will clump together in a person's stomach. And then all of a sudden it gets released",
+ quote:"If somebody were to take a handful of an immediate release beta blocker, compared to taking a handful of extended release beta blockers, which do you think is worse? It depends ... the extended release ... those tablets will clump together in a person's stomach. And then all of a sudden it gets released",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Exposure: Route’; transcript 10/9"},
 
 /* ---------------- Exposure: duration, single vs repeated ---------------- */
@@ -145,7 +145,7 @@ QUESTIONS.push(
   {l:"Subchronic", r:"1 to 3 months", why:"One to three months of repeated exposure."},
   {l:"Chronic", r:"More than 3 months, up to years", why:"Three months or longer."}],
  teach:"Animal exposure studies define the duration of exposure: acute is less than 24 hours, subacute less than one month, subchronic one to three months, and chronic more than three months up to years. Humans are exposed on the same scales, but a person often cannot say how long a workplace or environmental exposure has been going on.",
- quote:"acute is for exposure for less than 24 hours. For for animal studies, for subacute, it's less than 1 month. Sub-chronic is 1 to 3 months, and then chronic is more than 3 months up to years",
+ quote:"acute is for exposure for less than 24 hours ... for animal studies, for subacute, it's less than 1 month. Sub-chronic is 1 to 3 months, and then chronic is more than 3 months up to years",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Exposure: Duration’; transcript 10/9"},
 
 {id:"L13-011", lecture:"L13", prof:"Smith", tier:"new", topic:"L13", sub:"duration", skill:"apply",
@@ -157,7 +157,7 @@ QUESTIONS.push(
   {t:"A single and a repeated exposure can differ in effect", correct:true, why:"Benzene is her example: one exposure gives headache and drowsiness; chronic low-dose exposure is carcinogenic and causes leukemias."},
   {t:"Leukemia is an immediate effect of benzene exposure", correct:false, why:"Leukemia is the delayed effect of chronic low-dose exposure; the immediate effect is headache or sleepiness."}],
  teach:"Repeating an exposure can change the kind of effect, not just its size. Benzene is a gas workers cannot smell or see, so a small leak exposes them without their knowing. One walk-in gives a headache or sleepiness; going in every day delivers chronic low-dose exposure, and benzene is a carcinogen that causes leukemias. So the effect of a single exposure does not predict the effect of repeated exposure.",
- quote:"anybody know what the dangerous. Health effect. Uh, that can occur with benzene exposure, chronic low dose benzene exposure ... it's a carcinogen, huh, causes leukemias, uh, so wow, getting sleepy and a headache is really different than, you know, like getting leukemia",
+ quote:"chronic low dose benzene exposure ... it's a carcinogen ... causes leukemias ... getting sleepy and a headache is really different than ... getting leukemia",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Exposure: Single vs. Repeated’; transcript 10/9"},
 
 {id:"L13-012", lecture:"L13", prof:"Smith", tier:"new", topic:"L13", sub:"duration", skill:"apply",
@@ -194,7 +194,7 @@ QUESTIONS.push(
   {t:"Compound C", correct:false, why:"C clears fastest, so it has the shortest half-life (caption: about 5 hours)."},
   {t:"Compounds A and B equally", correct:false, why:"A's decline is flatter than B's: the caption gives A a half-life of about a year and B about a day."}],
  teach:"Half-life is the time for half the compound to be cleared from the blood, so after one dose a flatter decline means a longer half-life. In Figure 2-4, A barely slopes down (caption: half-life about 1 year), B falls faster (about 1 day) and C drops steeply (about 5 hours) because it is metabolized and cleared quickly. So A has the longest half-life and C the shortest.",
- quote:"Which compound has the longest half-life in this image? ... A, so it's half-life is longest, right? It takes longer for half the compound to be cleared out of the blood, OK? C has the shortest half-life.",
+ quote:"A, so it's half-life is longest ... It takes longer for half the compound to be cleared out of the blood ... C has the shortest half-life.",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Exposure: Frequency’ (Figure 2-4 and its caption); transcript 10/9"},
 
 {id:"L13-015", lecture:"L13", prof:"Smith", tier:"new", topic:"L13", sub:"freq", skill:"figure",
@@ -206,7 +206,7 @@ QUESTIONS.push(
   {t:"Compounds B and C", correct:false, why:"B does reach the toxic zone, at about the fourth or fifth dose; only C stays below it."},
   {t:"Compound C", correct:true, why:"C's short half-life clears each dose before the next, so it never accumulates into the toxic zone at that dose and frequency."}],
  teach:"With repeated quarter doses, a compound accumulates when its half-life is long compared with the dosing interval. A reaches the toxic zone by about the third dose and B by about the fourth or fifth, but C, cleared between doses, never does. For a medication, the dosing frequency is chosen so that the concentration stays below toxicity and, ideally, within the therapeutic range, like C.",
- quote:"How about C? It's got a, it's got a really short half-life. It's clearing really quickly. Does it ever get into the toxic zone after repeated exposures? No, it doesn't, right?",
+ quote:"How about C? ... it's got a really short half-life. It's clearing really quickly. Does it ever get into the toxic zone after repeated exposures? No, it doesn't",
  note:"In one sentence she said the body clears a compound between spaced exposures \"because the half-life is long\"; her reading of the figure, and the keyed answer, is the reverse: \"C has the shortest half-life. It gets metabolized and cleared really quickly\".",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Exposure: Frequency’; transcript 10/9"},
 
@@ -220,7 +220,7 @@ QUESTIONS.push(
   {t:"Synergy with another drug", correct:true, why:"She said C 'could synergize with other drugs' and give 'additive adverse effects'. In the 10/13 terms these are two kinds of interaction (additive: the sum of the effects; synergistic: much more than the sum); either can cause harm while C alone stays below its toxic blood concentration."},
   {t:"Damage at the injection site", correct:true, why:"Irritation or damage at a subcutaneous or intradermal injection site is an adverse response unrelated to kinetics."}],
  teach:"A compound that is kept below its toxic blood concentration can still cause harm by routes that have nothing to do with kinetics: an allergy, action at a different target, synergy with another drug, or irritation at the injection site. The healthcare provider still has to watch for these.",
- quote:"Could you still have a bad response to it? Yeah ... you could be allergic to it ... Might be going to a different target site ... Could synergize with other drugs ... you inject the drug, you get a therapeutic response to it, but you're causing damage at the injection site",
+ quote:"Could you still have a bad response to it? ... you could be allergic to it ... Might be going to a different target site ... Could synergize with other drugs ... you inject the drug, you get a therapeutic response to it, but you're causing damage at the injection site",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Exposure: Frequency’; transcript 10/9"},
 
 /* ---------------- ADMET: bioactivation ---------------- */
@@ -245,7 +245,7 @@ QUESTIONS.push(
   {t:"Glutathione S-transferase", correct:false, why:"With glutathione, the glutathione S-transferases detoxify NAPQI after it forms; they do not make it."},
   {t:"CYP2E1", correct:true, why:"The overflow goes down the phase 1 P450 pathway, specifically CYP2E1, which forms NAPQI."}],
  teach:"Most of a normal daily dose of acetaminophen is handled by two families of phase 2 enzymes, the glucuronosyl transferases and the sulfotransferases, giving a glucuronide or a sulfate. When those enzymes cannot keep up, the dose spills into the phase 1 P450 route, CYP2E1, which makes NAPQI, the metabolite that is toxic to the liver. That spill-over is bioactivation.",
- quote:"it goes down through our P450s to do, you know, one of our phase one enzymes, right? Specifically P4452E1. We'll do this work to create that nasty NAQI, OK? And you guys already know that the NAQI metabolite is toxic to the liver",
+ quote:"it goes down through our P450s ... one of our phase one enzymes ... Specifically P4452E1. We'll do this work to create that nasty NAQI ... the NAQI metabolite is toxic to the liver",
  note:"In speech she calls the glucuronosyl transferases \"GSTs\" (\"GSTs and STs\"); the slide spells them out as glucuronosyl-transferases and sulfo-transferases. On the same slide the glutathione S-transferases, with glutathione, are the separate step that detoxifies NAPQI; that is the family the abbreviation GST normally names.",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slides ‘ADME: Metabolism’, ‘Example of Bioactivation’; transcript 10/9"},
 
@@ -258,7 +258,7 @@ QUESTIONS.push(
   {t:"6 g", correct:false, why:"Above the 4 g labeled maximum. Past that dose the phase 2 enzymes are less able to handle all the acetaminophen, so more of it goes through CYP2E1 to the liver-toxic NAPQI."},
   {t:"8 g", correct:false, why:"Twice the 4 g labeled maximum; at that dose even people with normal phase 2 enzymes are expected to send part of it through CYP2E1 to NAPQI."}],
  teach:"The FDA labeling sets 4 g as the acetaminophen total in a 24-hour period. Her advice to older adults is to stay under that, because the phase 2 enzymes that detoxify the drug may be fewer with age, so more of the dose spills into CYP2E1 and NAPQI.",
- quote:"Total daily dose of acetaminophen that we should all be sticking to, not taking more of. 4 g, right? That's on the FDA labeling, right?",
+ quote:"Total daily dose of acetaminophen that we should all be sticking to, not taking more of. 4 g ... That's on the FDA labeling",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Example of Bioactivation’; transcript 10/9"},
 
 {id:"L13-020", lecture:"L13", prof:"Smith", tier:"new", topic:"L13", sub:"admet", skill:"apply", multi:true,
@@ -283,7 +283,7 @@ QUESTIONS.push(
   {t:"Rodriguez-Mozaz", correct:false, why:"Rodriguez-Mozaz is the first author of the assigned article on pharmaceuticals in water."},
   {t:"Hippocrates", correct:false, why:"The saying is credited to Paracelsus, who studied the toxic effects of compounds long ago, not to Hippocrates."}],
  teach:"Dose is its own principle because whether something poisons depends on how much is received, not only on what it is. Ethyl alcohol, which people drink, has a rat LD50 of 10,000 mg/kg yet can still cause alcohol poisoning at the right dose, while botulinum toxin kills at 0.00001 mg/kg. The idea that the dose makes the poison is attributed to Paracelsus, who studied the toxic effects of compounds long ago.",
- quote:"Dose makes the poison. Who said that? Anybody know who said that? Supposed to be attributed to a guy named Paracelsus",
+ quote:"Dose makes the poison ... Supposed to be attributed to a guy named Paracelsus",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Dose’; transcript 10/9"},
 
 {id:"L13-022", lecture:"L13", prof:"Smith", tier:"new", topic:"L13", sub:"dose", skill:"recall",
@@ -307,7 +307,7 @@ QUESTIONS.push(
   {t:"Botulinum toxin", correct:true, why:"0.00001 mg/kg: the bottom of the table and the most potent poison listed."},
   {t:"Dioxin (TCDD)", correct:false, why:"0.001 mg/kg: second from the bottom; botulinum toxin is 100 times more potent."}],
  teach:"LD50 is the dose that kills half the animals, so the smaller the LD50, the less of the compound it takes to kill and the more potent the poison. The rat table runs from ethyl alcohol at 10,000 mg/kg down to botulinum toxin at 0.00001 mg/kg, nine orders of magnitude. So the dose makes the poison, but the compound sets how small a harmful dose can be: \"sometimes it only takes a tiny bit of something to be very, very harmful.\"",
- quote:"10,000 mgs per kilogram for ethyl alcohol would be the LD50 in rats, and 0.00001 would be the LD50 for botulinum toxin in rats, OK? So the dose makes the poison, but you have to know what compound you're talking about too.",
+ quote:"10,000 mgs per kilogram for ethyl alcohol would be the LD50 in rats, and 0.00001 would be the LD50 for botulinum toxin in rats ... So the dose makes the poison, but you have to know what compound you're talking about too.",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Dose’ (Casarett & Doull Table 2-1); transcript 10/9"},
 
 {id:"L13-024", lecture:"L13", prof:"Smith", tier:"new", topic:"L13", sub:"dose", skill:"apply",
@@ -319,8 +319,8 @@ QUESTIONS.push(
   {t:"Live botulinum bacteria in the corn are what cause the harm", correct:false, why:"Her words: \"it's not the bacteria that, that kills you, it's the botulinum toxin that those bacteria are making\"."},
   {t:"The squirting shows the corn is too acidic to be safe to eat", correct:false, why:"Acidity is not the hazard: acidic foods such as tomatoes are usually fine, and the risk is in low-acid vegetables such as beans, peas and corn."}],
  teach:"Her public-service note on the LD50 table: botulinum bacteria can grow inside a sealed can of low-acid vegetables (not usually tomatoes) because they do not need oxygen; as they multiply they release the toxin and gas, so the can squirts on opening. Cooking does not break down botulinum toxin, so the can is thrown away.",
- quote:"it's not the bacteria that, that kills you, it's the botulinum toxin that those bacteria are making as they're growing in your can of corn, OK? ... you can't heat it, cook it, and break down that botulinum toxin",
- note:"She called the organism \"an aerobic bacteria\" and then said \"it doesn't need oxygen\"; the second statement is the one that matches botulinum growth in a sealed can. A public-service aside, not an objective; she said on 10/19 that everything said in class is testable.",
+ quote:"it's not the bacteria that ... kills you, it's the botulinum toxin that those bacteria are making as they're growing in your can of corn ... you can't heat it, cook it, and break down that botulinum toxin",
+ note:"She called the organism \"an aerobic bacteria\" and then said \"it doesn't need oxygen\"; the second statement is the one that matches botulinum growth in a sealed can.",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Dose’; transcript 10/9"},
 
 /* ---------------- Individual vs population dose–response ---------------- */
@@ -345,7 +345,7 @@ QUESTIONS.push(
   {t:"LD50 at 50% mortality; threshold at the peak mortality frequency", correct:false, why:"The LD50 half is right, but the threshold sits at the low-dose end, where effects first appear, not at the peak of the mortality-frequency plot."},
   {t:"LD50 at 100% mortality; threshold at the dose with no effect", correct:false, why:"LD50 is defined at 50% mortality, and the threshold is the first dose with an effect, not a dose with none."}],
  teach:"A population dose–response is plotted as mortality frequency against dose and, more usefully, as cumulative mortality. The LD50 is the dose at 50% cumulative mortality; the threshold is the lowest dose at which an effect first appears. The probit-unit version in the textbook figure is old-fashioned and, in her words, nobody uses it.",
- quote:"this is where 50% of the animals die, and the dose here is about 100 mg per kg. OK. And then the threshold would be showing you. Where is the dose where you first start seeing an effect happening",
+ quote:"this is where 50% of the animals die, and the dose here is about 100 mg per kg ... the threshold would be showing you. Where is the dose where you first start seeing an effect happening",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Second Dose-Response Relationship’ (C&D Fig 2-6); transcript 10/9"},
 
 /* ---------------- Shapes and threshold ---------------- */
@@ -370,7 +370,7 @@ QUESTIONS.push(
   {t:"Builds up to a toxic level when doses are repeated often", correct:false, why:"Building up with repeated doses depends on half-life and dosing frequency (compounds A and B on the frequency figure); hormesis is about the shape of the response as the dose rises."},
   {t:"Is non-essential, protective at a low dose and harmful when higher", correct:true, why:"Her example is a glass or a glass and a half of red wine as possibly heart protective, then too much."}],
  teach:"Hormesis is the U-shaped response of a non-essential substance: a low dose produces a beneficial or protective effect and a higher dose an adverse one. Because the substance is not needed, there is no region of homeostasis. It is a concept toxicologists use; few others do.",
- quote:"my glass or glass and half of red wine is possibly protective, and then I go too far and I should not be driving. OK? So, again, this is a U-shaped curve.",
+ quote:"my glass or glass and half of red wine is possibly protective, and then I go too far and I should not be driving ... this is a U-shaped curve.",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Shape of Dose-Response’; transcript 10/9"},
 
 {id:"L13-029", lecture:"L13", prof:"Smith", tier:"new", topic:"L13", sub:"shape", skill:"tell",
@@ -394,7 +394,7 @@ QUESTIONS.push(
   {t:"They metabolized 2-AAF faster with age", correct:false, why:"Metabolism was not the explanation; the total dose received was."},
   {t:"Old hamsters get bladder tumors anyway", correct:false, why:"That was true of liver tumors, not bladder tumors, in this study."}],
  teach:"With daily dosing, a longer exposure means a higher cumulative dose, so the threshold for a response falls when animals are observed longer. In the 2-AAF study the bladder-tumor threshold was about 75 ppm at 24 months and about 45 ppm at 33 months. She said she would not put a graph like this on an exam (marked low yield); the point is what cumulative dose does to a threshold.",
- quote:"So the cumulative dose that these animals got was higher at 33 months, right, compared to 24 months ... That's why it didn't take as much of the dose to cause threshold.",
+ quote:"So the cumulative dose that these animals got was higher at 33 months ... compared to 24 months ... That's why it didn't take as much of the dose to cause threshold.",
  note:"\"I will not give you a graph like that I never have ... It's very unlikely I would give you this kind of graph on an exam.\"",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘More on Threshold Dose’ (C&D Fig 2-8); transcript 10/9"},
 
@@ -407,7 +407,7 @@ QUESTIONS.push(
   {t:"Hamsters are a poor model for liver tumors", correct:true, why:"The zero-dose, 33-month group had a significant number of liver tumors on their own: cancer is a disease of aging, and old hamsters get liver tumors anyway."},
   {t:"The bladder tumors spread to the liver", correct:false, why:"Nothing in the study pointed to spread; the untreated animals had no compound to cause either tumor."}],
  teach:"The second lesson from the 2-AAF figure: the untreated 33-month hamsters had liver tumors, because cancer is a disease of aging and old hamsters develop liver tumors anyway. A species that gets the tumor spontaneously is the wrong model for testing whether a compound causes that tumor.",
- quote:"Is cancer the disease of the aged? Yes, cancer is a disease of the aged, usually ... if we're gonna look and see if 2AAF causes liver cancer, hamsters are not the best animals to use for this, because they get them anyway",
+ quote:"cancer is a disease of the aged, usually ... if we're gonna look and see if 2AAF causes liver cancer, hamsters are not the best animals to use for this, because they get them anyway",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘More on Threshold Dose’; transcript 10/9"},
 
 /* ---------------- Indices and target (slides she did not reach on 10/9) ---------------- */
@@ -433,7 +433,7 @@ QUESTIONS.push(
   {t:"Comparing the slopes of dose–response curves", correct:false, why:"Slope information comes from the margin of safety (TD1 / ED99)."},
   {t:"Finding the dose that kills half the animals", correct:false, why:"That is the LD50, read from the population curve."}],
  teach:"A pollutant or occupational exposure has no therapeutic dose, so the indices that compare toxic with effective doses (TI, MOS) do not fit. The margin of exposure instead divides the NOAEL, the dose at which test animals showed no adverse response, by the exposure actually received; the larger the ratio, the further the exposure is below that no-effect level. The slide marks MOE for repeated exposures and TI and MOS for single doses.",
- quote:"the margin of exposure, this is something that we use truly in toxicology with exposures to something that's not therapeutic, like to, you know, a pollutant, an occupational exposure, OK, and it's also for repeated exposures",
+ quote:"the margin of exposure, this is something that we use truly in toxicology with exposures to something that's not therapeutic, like to ... a pollutant, an occupational exposure ... and it's also for repeated exposures",
  note:"Taught 10/13. She says NOAEL as 'no observable adverse effect level' (the slide prints 'no observed') and described it as the dose given to the animals at which they had no bad response; she called it the lowest such dose; the assigned reading defines it as the highest dose tested with no significant toxicity (Casarett and Doull ch. 2).",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Values Developed from Dose-Response’; transcript 10/13"},
 
@@ -446,7 +446,7 @@ QUESTIONS.push(
   {t:"The target organ may not be where the concentration is highest", correct:true, why:"Harm depends on the target's sensitivity as well as on concentration: the kidney can respond at a lower concentration than muscle, and it is the dose at the target that determines toxicity."},
   {t:"The dose given, not the dose at the target, sets toxicity", correct:false, why:"The dose at the target determines toxicity; even a sensitive organ has its own dose–response curve."}],
  teach:"Whether an organ is harmed depends on how sensitive it is as well as how much compound reaches it. Her example: the kidney can be more sensitive than muscle, so a lower concentration in the kidney can still produce an effect even where muscle holds more. That is why the target organ may not be the site of highest concentration, and why the dose at the target, on that target's own dose–response curve, determines toxicity.",
- quote:"where it's having an adverse effect may not be where the highest concentration is, which is probably a little counterintuitive, right?",
+ quote:"where it's having an adverse effect may not be where the highest concentration is, which is probably a little counterintuitive",
  note:"Taught 10/13; her words match the slide. Her example: the kidney may be more sensitive than muscle at a lower concentration, and there is still a dose–response curve at the kidney itself.",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Target & Mechanism of Action’; transcript 10/13"},
 
@@ -460,7 +460,7 @@ QUESTIONS.push(
   {t:"Drinking-water treatment plant intakes", correct:false, why:"Those plants are where the trace levels are found, not where they enter."},
   {t:"Landfills holding discarded medicines", correct:false, why:"Medicines thrown in the trash are one route, but the drug excreted by patients and passed through treatment plants is the main discharge."}],
  teach:"The assigned review on pharmaceuticals in water carries the five principles. Source: unmetabolized drug and metabolites from human and veterinary use enter waste streams, and wastewater treatment plants, which do not specifically remove pharmaceuticals, are the main discharge points into surface water; unused medicine that is flushed adds to it.",
- note:"On 10/13 she named treatment plants as one of four sources (\"the current mechanisms don't get all the drugs out of it before it goes back into your streams and rivers and lakes\") and said the water is a source for both humans and animals. The 'main discharge' ranking is the article's; she discussed treatment plants as a source and called the reading testable (\"I will later post a key, cause this is testable material\"). L14-024 tests her point.",
+ note:"On 10/13 she named treatment plants as one of four sources (\"the current mechanisms don't get all the drugs out of it before it goes back into your streams and rivers and lakes\") and said the water is a source for both humans and animals. The 'main discharge' ranking is the article's; she discussed treatment plants as a source and called the reading testable. L14-024 tests her point.",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Discussion of Reading Assignment’; RodriguezMozaz-EHP-2010.pdf p. 1017"},
 
 {id:"L13-036", lecture:"L13", prof:"Smith", tier:"new", topic:"L13", sub:"reading", skill:"apply", readingId:"rodriguez-mozaz", lowYield:true,
@@ -597,8 +597,7 @@ QUESTIONS.push(
   {t:"A rattlesnake", correct:false, why:"The rattlesnake is one of the fanged snakes she contrasted with the coral snake; the banding rhyme is about the coral snake and its look-alike, the king snake."},
   {t:"A water moccasin", correct:false, why:"The water moccasin is another fanged Texas snake; the banding rhyme is about the coral snake and its look-alike, the king snake."}],
  teach:"The coral snake and the king snake both carry red, yellow and black bands, in a different order. On the coral snake the red touches the yellow (\"Red and yellow kills a fellow\"); on the king snake the red touches the black (\"Red and black, friend of Jack\"), and it is not poisonous: people keep king snakes as pets. The coral snake is very venomous; its venom carries a neurotoxin. It lives in Texas, especially East Texas.",
- quote:"Coral snake, how do you know that? Red and y'all, everybody know that poem. Red and yellow kills a fellow, so if the red touches yellow, it's poisonous, OK? Red and black, friend of Jack.",
- note:"She showed the snakes as a fun opener (\"I just like to know about poisonous animals and plants. I think it's fun.\") before turning to medications; on 10/19 she said everything said in class is testable.",
+ quote:"Red and yellow kills a fellow, so if the red touches yellow, it's poisonous ... Red and black, friend of Jack.",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘What is Toxic?’; transcript 10/9"},
 {id:"L13-048", lecture:"L13", prof:"Smith", tier:"new", topic:"L13", sub:"defs", skill:"recall",
  concept:"coral-snake-venom", tags:["smith"], source:"transcript", dupOf:"L13-047",
@@ -609,7 +608,7 @@ QUESTIONS.push(
   {t:"A carcinogen", correct:false, why:"A snakebite is a single, immediate exposure; she named a neurotoxin."},
   {t:"A toxicant", correct:false, why:"Venom is made by the snake, so it is a toxin; a toxicant comes from human activity."}],
  teach:"The coral snake is very venomous, and its venom carries a neurotoxin. Because the snake makes it, the venom is a toxin rather than a toxicant. It has a small head and is not a viper, so instead of striking with fangs like a rattlesnake it bites and chews, often between fingers or toes, to inject the venom. Its look-alike, the king snake (red touching black), is not poisonous.",
- quote:"So this is a coral snake, very venomous, they have a neurotoxin. They are here in Texas, um, they're in East Texas, especially",
+ quote:"So this is a coral snake, very venomous, they have a neurotoxin. They are here in Texas ... they're in East Texas, especially",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘What is Toxic?’; transcript 10/9"},
 {id:"L13-049", lecture:"L13", prof:"Smith", tier:"new", topic:"L13", sub:"freq", skill:"figure",
  concept:"fig2-4-read-b-dose", tags:["smith"], source:"both", simg:"smith-fig2-4", simgAlt:"Casarett and Doull Figure 2-4: concentration at the target site over time for compounds A, B and C, after one large dose (left) and after repeated smaller doses (right), with the toxic range shaded.",
@@ -620,7 +619,7 @@ QUESTIONS.push(
   {t:"The 3rd dose", correct:false, why:"That is compound A, which barely declines between doses and enters the toxic range at about the 3rd dose."},
   {t:"The 4th or 5th dose", correct:true, why:"B's peaks climb slowly because about half is cleared between doses; extending its line, it enters the toxic range at about the 4th dose and is in it by the 5th."}],
  teach:"Read each compound's peaks across the repeated doses. A barely declines between doses, so it stacks and is toxic by about the 3rd dose. B, with a half-life about equal to the dosing interval, loses roughly half between doses, so its peaks rise more slowly and reach the toxic range at about the 4th or 5th dose. C is cleared before the next dose and never builds up.",
- quote:"When does compound B start causing a problem? How many doses? Maybe 4, they didn't draw this very well, right, but if you extrapolate, probably 4 is looking like this, right? Maybe 4, you're in the toxic zone. 5 for sure, you're in the toxic zone, right, for B.",
+ quote:"When does compound B start causing a problem? ... if you extrapolate, probably 4 ... Maybe 4, you're in the toxic zone. 5 for sure, you're in the toxic zone",
  note:"The figure stops before B's line clearly enters the toxic range; she extrapolated: \"Maybe 4 ... 5 for sure\". The caption gives B a half-life approximately equal to the dosing frequency.",
  cite:"Principles-of-Tox-Lecture-Students-Fall-2026_WCAG21A.pdf slide ‘Exposure: Frequency’ (C&D Fig 2-4 and caption); transcript 10/9"}
 

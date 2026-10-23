@@ -26,7 +26,7 @@ QUESTIONS.push(
   {t:"Deeper travel of the dust from its water solubility", correct:false, why:"Water solubility sets how far a gas travels; both workers breathed the same dust."},
   {t:"A larger oxidative burden from inhaled oxygen", correct:false, why:"Oxidative burden applies to every lung breathing the same air; it does not separate two workers with the same exposure."}],
  teach:"Where particles deposit depends on their size and shape and on breathing pattern, but what happens next depends on clearance. Coughing and the cilia of the upper respiratory tract move deposited material up and out of the lungs. A patient without a good clearance mechanism retains more of the particles and has a worse outcome than others with the same exposure.",
- quote:"and then our lungs' ability to clear those particles, you know, cough it up, have your ciliary. Your those hairy like follicles in the upper respiratory tract help you to move stuff up out of the lungs. Um, if that's working for you, that helps you, some patients don't have a good clearance mechanism going on, so they have a worse outcome than others.",
+ quote:"our lungs' ability to clear those particles ... cough it up, have your ciliary ... those hairy like follicles in the upper respiratory tract help you to move stuff up out of the lungs ... if that's working for you, that helps you, some patients don't have a good clearance mechanism going on, so they have a worse outcome than others.",
  note:"\"hairy like follicles\" in the transcript are the cilia. The slide bullet is \"Particle clearance is important\".",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Pulmonary Toxicity – Why are lungs susceptible?’; transcript 10/14"},
 
@@ -39,7 +39,7 @@ QUESTIONS.push(
   {t:"They lower the oxygen content of the blood", correct:false, why:"Falling oxygen along the liver acinus comes from hepatocytes using it; the immune cells add reactive oxygen, not hypoxia."},
   {t:"They concentrate the toxin and release it later", correct:false, why:"Uptake and concentration is a reason for liver and kidney susceptibility, not the immune-cell reason."}],
  teach:"Both organs have immune cells that respond to damage or pathogens. While doing that job they release reactive oxygen species, and in the liver also inflammatory cytokines that call in more immune cells. The result is more oxidative damage and inflammation on top of the injury from the exposure itself.",
- quote:"the activity of those white blood cells will also release reactive oxygen species. ... When they do that job, they are chewing up dead tissues. They're releasing um inflammatory types of compounds and reactive oxygen species. So that will add to the general risk of the liver.",
+ quote:"the activity of those white blood cells will also release reactive oxygen species. ... When they do that job, they are chewing up dead tissues. They're releasing ... inflammatory types of compounds and reactive oxygen species. So that will add to the general risk of the liver.",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slides ‘Pulmonary Toxicity – Why are lungs susceptible?’, ‘Hepatotoxicity – Why is liver susceptible?’; transcript 10/14"},
 
 /* ---------------- Neurotoxicity ---------------- */
@@ -64,7 +64,7 @@ QUESTIONS.push(
   {t:"Myelin limits the oxygen that reaches the axon", correct:false, why:"Myelin speeds conduction; it was not described as limiting oxygen."},
   {t:"Hypoxic blood pools in the brain as in liver zone 3", correct:false, why:"The oxygen gradient belongs to the liver acinus; the nervous system's problem is its energy demand."}],
  teach:"The nervous system has very high energy requirements: its cells are often very long and do a great deal of work. Neurons depend on aerobic metabolism to meet that demand. So an exposure that lowers the oxygen or energy available to those cells causes a problem in the nervous system.",
- quote:"OK, so our nervous system has very, very high energy requirements. ... They are dependent on aerobic metabolism. So if any exposure happens where the oxygen levels and energy available to those cells gets affected, you're going to have a problem with your central nervous system, OK?",
+ quote:"our nervous system has very, very high energy requirements. ... They are dependent on aerobic metabolism. So if any exposure happens where the oxygen levels and energy available to those cells gets affected, you're going to have a problem with your central nervous system",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Susceptibility to Neurotoxicity – Energy and Axons’; transcript 10/14"},
 
 {id:"L15-106", lecture:"L15", prof:"Smith", tier:"new", topic:"L15", sub:"neuro", skill:"apply",
@@ -76,7 +76,7 @@ QUESTIONS.push(
   {t:"They depend on anaerobic glycolysis", correct:false, why:"Neurons depend on aerobic metabolism."},
   {t:"They replace their cell bodies at a high rate", correct:false, why:"Differentiated nerve cells are not replaced; this was not her reason."}],
  teach:"Nerve cells in the periphery are very long, running from the spinal cord to the ends of the limbs. Each must produce a very large cellular volume and move nutrients and waste up and down the axon. That axonal transport adds to the high energy requirement that makes the nervous system susceptible.",
- quote:"those nerves are long, they're going from your spinal cord, you know, all the way down your limbs, and so, um, that, that again is why these cells need a lot of energy. Um, the cells must produce a lot of, a lot of volume to keep the cells, healthy, uh, and they have to have energy to be able to transport waste and nutrients up and down those axons.",
+ quote:"those nerves are long, they're going from your spinal cord ... all the way down your limbs ... that again is why these cells need a lot of energy ... the cells must produce ... a lot of volume to keep the cells, healthy ... and they have to have energy to be able to transport waste and nutrients up and down those axons.",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Susceptibility to Neurotoxicity – Energy and Axons’; transcript 10/14"},
 
 {id:"L15-107", lecture:"L15", prof:"Smith", tier:"new", topic:"L15", sub:"neuro", skill:"apply",
@@ -88,7 +88,7 @@ QUESTIONS.push(
   {t:"The entire neuron would die, with gliosis", correct:false, why:"Death of the entire neuron is neuronopathy, a different pattern."},
   {t:"The cell would look normal under the microscope", correct:false, why:"That describes interruption of neurotransmission; damaged myelin is visible."}],
  teach:"Schwann cells wrap layer after layer of lipid membrane around the axon to form the myelin sheath, which lets electrical impulses move down the nerve quickly. If a toxin damages those cells, conduction slows. The symptom she gave is tingling of the hands and feet, as in her own metronidazole myelinopathy.",
- quote:"Remember, we need those Schwann cells, they're like beads on a string, right? They help our, our electric impulses move down the nerve cells quickly, right? If your myelin sheath has been damaged, you end up with your neurotransmission being slower, right? And the symptoms of that could be things like tingling of your hands and feet",
+ quote:"we need those Schwann cells, they're like beads on a string ... They help ... our electric impulses move down the nerve cells quickly ... If your myelin sheath has been damaged, you end up with your neurotransmission being slower ... And the symptoms of that could be things like tingling of your hands and feet",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Susceptibility to Neurotoxicity - Myelin’; transcript 10/14"},
 
 {id:"L15-108", lecture:"L15", prof:"Smith", tier:"new", topic:"L15", sub:"neuro", skill:"apply",
@@ -100,7 +100,7 @@ QUESTIONS.push(
   {t:"The neuron dies quickly and the injury stays contained", correct:false, why:"Death of the neuron is neuronopathy; in myelinopathy the axon and cell body survive."},
   {t:"It disturbs neurotransmission at the synapse", correct:false, why:"That is the neurotransmission pattern; myelinopathy damages the sheath along the axon."}],
  teach:"In myelinopathy the toxin damages myelin or the myelinating cells, while the axon and cell body survive. Myelinating cells can divide and cover the bare axon again, so the damage can be repaired over time. The figure legend adds that remyelination is much less effective in the central nervous system than in the peripheral nervous system.",
- quote:"you can get the remyelinization of your axons, but it does take quite a while. So, uh, myelinopathy may not be the worst type of neurotoxicity that you could encounter, OK.",
+ quote:"you can get the remyelinization of your axons, but it does take quite a while ... myelinopathy may not be the worst type of neurotoxicity that you could encounter",
  note:"She did not mention the CNS versus PNS difference aloud; it is in the Figure 16-2 legend.",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Types of Neurotoxicity’ (Figure 16-2); transcript 10/14"},
 
@@ -113,7 +113,7 @@ QUESTIONS.push(
   {t:"The compound cuts the axon, as in axonopathy", correct:false, why:"The stem says no cell is damaged; axonopathy is structural damage to the axon."},
   {t:"The neurons are starved of oxygen and energy", correct:false, why:"Energy supply is a separate reason for susceptibility; this compound acts on the synapse."}],
  teach:"Neurons communicate by releasing a neurotransmitter, which crosses the synaptic cleft to the postsynaptic cell and is then taken back up. Anything that disrupts release, binding or reuptake changes that signalling. Symptoms follow even though the cell looks normal, which is how interruption of neurotransmission differs from the other patterns.",
- quote:"If anything disturbs the reuptake of those neuro neurotransmitters, you can end up with symptoms because you're messing around with the usual neurotransmission that's supposed to be going on, OK?",
+ quote:"If anything disturbs the reuptake of those ... neurotransmitters, you can end up with symptoms because you're messing around with the usual neurotransmission that's supposed to be going on",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Susceptibility to Neurotoxicity - Neurotransmission’; transcript 10/14"},
 
 /* ---------------- Hepatotoxicity ---------------- */
@@ -127,8 +127,8 @@ QUESTIONS.push(
   {t:"Bile carries the dose from the gut into the liver", correct:false, why:"Bile flows out of the liver into the intestine, not in."}],
  core:true, coreWhy:"her poll: the liver receives a large volume of blood via the portal circulation",
  teach:"The liver's job is to filter and clear the blood, so it takes up and concentrates compounds from it. An oral dose is carried from the gut by the portal circulation directly to the liver before it reaches the rest of the body. The liver is therefore exposed to a lot, and its metabolism can then make hepatotoxic metabolites on site.",
- quote:"Its job is to take up and concentrate stuff out of the blood, right? OK. It's helping to filter our blood, helping to clean our blood, helping to clear our blood. So, it's exposed to a lot of stuff. If you ingest things orally, right, you've got all that portal circulation heading right to the lever, OK? ... It's a large organ, yeah, that really doesn't have anything to do with it, right?",
- note:"\"lever\" is the slide's typo for liver, which she read aloud. \"lever\" is the slide's typo for liver, which she read aloud.",
+ quote:"Its job is to take up and concentrate stuff out of the blood ... It's helping to filter our blood, helping to clean our blood, helping to clear our blood. So, it's exposed to a lot of stuff. If you ingest things orally ... you've got all that portal circulation heading right to the lever ... It's a large organ ... that really doesn't have anything to do with it",
+ note:"\"lever\" is the slide's typo for liver, which she read aloud.",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Hepatotoxicity – Why is liver susceptible?’ and PollEV slide ‘The liver is very susceptible to drug toxicity because…’; transcript 10/14"},
 
 {id:"L15-111", lecture:"L15", prof:"Smith", tier:"new", topic:"L15", sub:"hepat", skill:"apply",
@@ -153,7 +153,7 @@ QUESTIONS.push(
   {t:"Blood drains out of the liver through the zone 1 region", correct:false, why:"Zone 1 is next to the inflow vessels; blood leaves through the central vein next to zone 3."}],
  core:true, coreWhy:"her poll and Quiz 2 item 8: high oxygen in zone 1",
  teach:"Oxygen falls along the acinus, highest in zone 1 next to the inflow vessels and lowest in zone 3. Where a metabolizing enzyme needs oxygen to do its work, zone 1 supports more of that metabolism. If the product is a hepatotoxic metabolite, zone 1 is where the damage appears; the other source of zonal injury is where enzymes such as CYP2E1 are expressed.",
- quote:"Do you have high oxygen content in zone one? Is it zone 1 or zone 3? Zone 1, right? OK. Yes, and if the enzymes that do metabolism there, uh, need oxygen to do their work, having a lot of oxygen right there is helpful to those enzymes to do their metabolism, and unfortunately that metabolism may result in the metabolite that's, that's hepatotoxic.",
+ quote:"Do you have high oxygen content in zone one? ... Zone 1 ... and if the enzymes that do metabolism there ... need oxygen to do their work, having a lot of oxygen right there is helpful to those enzymes to do their metabolism, and unfortunately that metabolism may result in the metabolite ... that's hepatotoxic.",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Reasons for Site-Specific Hepatotoxicity’ and PollEV slide ‘Which statement is one reason for regional susceptibility to toxicity across the liver?’; transcript 10/14"},
 
 /* ---------------- Nephrotoxicity ---------------- */
@@ -190,7 +190,7 @@ QUESTIONS.push(
   {t:"An allergic response to the drug", correct:false, why:"An allergic response appearing in the kidney was her PPI interstitial nephritis story."},
   {t:"Constriction of the afferent and efferent arterioles", correct:false, why:"That is the vasoconstriction category of renal injury."}],
  teach:"For most site-specific nephrotoxicity she singled out metabolism: which enzymes are expressed in which part of the kidney decides where toxic metabolites form. Tubular toxicity and crystalluria are different. They depend more on the chemistry of the drug itself.",
- quote:"probably the most important reason is that you'll have all that metabolism going on in the renal cells, and it will depend on what enzymes are expressed in what part of the cell or what part of the kidney to, to contribute to that site specificity when you're looking at the nephron, OK? And then the other types of injury like the, the, um, the tubular toxicity, the crystal urea, that has to deal more with the chemistry of those drugs, OK?",
+ quote:"probably the most important reason is that you'll have all that metabolism going on in the renal cells, and it will depend on what enzymes are expressed in what part of the cell or what part of the kidney ... to contribute to that site specificity when you're looking at the nephron ... the other types of injury like ... the tubular toxicity, the crystal urea, that has to deal more with the chemistry of those drugs",
  note:"\"crystal urea\" in the transcript is crystalluria.",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slides ‘Reasons for Site-Specific Nephrotoxicity’, ‘Site-Specific Nephrotoxicity’; transcript 10/14"},
 
@@ -203,7 +203,7 @@ QUESTIONS.push(
   {t:"Serum creatinine falls when the kidney is injured", correct:false, why:"Creatinine was high; it rises when kidney function falls."},
   {t:"The injury appears after the PPI is stopped", correct:false, why:"The injury happened while he was taking the drug."}],
  teach:"PPIs can cause interstitial nephritis, especially in patients with an aspirin allergy, as an allergic response to the drug. That response does not show itself as hives, trouble breathing or a rash; it shows up as kidney damage. In her father's case it was found only because a delayed physical led to blood work after a few months, by which time he needed erythropoietin for a while.",
- quote:"that allergic response is manifesting as interstitial nephritis in some patients, so it's not like an allergic response where you get like hives, or, you know, inability to breathe or a rat, anything like that. ... and the only way they caught it in my dad was his, his doctor's appointment was, was late, right?",
+ quote:"that allergic response is manifesting as interstitial nephritis in some patients, so it's not like an allergic response where you get like hives, or ... inability to breathe or a rat, anything like that.",
  note:"\"a rat\" in the transcript is probably \"a rash\".",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘Site-Specific Nephrotoxicity’; transcript 10/14"},
 
@@ -218,7 +218,7 @@ QUESTIONS.push(
   {t:"Systemic effects follow repeated, chronic exposure", correct:false, why:"This mixes up duration with route: a single exposure produces a systemic effect once the substance is absorbed and distributed."}],
  core:true, coreWhy:"her poll statement D, marked false",
  teach:"A local effect happens where the substance first touches the body. A systemic effect happens somewhere else, so the substance must get into the bloodstream at the site of entry and be distributed to the site of action. That is why the poll statement that systemic effects do not require absorption was false.",
- quote:"It's an effect that's systemic. So to become systemic, that means it's going through the bloodstream, right? It's got to be absorbed, OK? So, D is not correct. Systemic effects do require absorption from the site of contact, OK.",
+ quote:"It's an effect that's systemic. So to become systemic, that means it's going through the bloodstream ... It's got to be absorbed ... Systemic effects do require absorption from the site of contact",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf PollEV slide ‘Which statements are true regarding toxic effects’; transcript 10/14"},
 
 {id:"L15-118", lecture:"L15", prof:"Smith", tier:"new", topic:"L15", sub:"polls", skill:"apply",
@@ -231,7 +231,7 @@ QUESTIONS.push(
   {t:"The headache is a local effect at the contact site", correct:false, why:"A headache from an inhaled chemical is not at the site of first contact."}],
  core:true, coreWhy:"her poll statement E, marked true",
  teach:"An exposure that repeats day after day is chronic, but each day's dose can still cause an immediate effect. Tolerance would lessen the response to repeated exposure. Where no tolerance develops, the worker has the same drowsiness or headache every time she walks in.",
- quote:"every time you walk into that workplace and there's some sort of leak going on, even though that's been happening day after day, you may not develop any tolerance to it, and you may have an immediate effect, maybe drowsiness or a headache every time you walk into work, OK.",
+ quote:"every time you walk into that workplace and there's some sort of leak going on, even though that's been happening day after day, you may not develop any tolerance to it, and you may have an immediate effect, maybe drowsiness or a headache every time you walk into work",
  cite:"Toxic Responses Students Fall 2026 WCAG21A.pdf PollEV slide ‘Which statements are true regarding toxic effects’; transcript 10/14"},
 
 /* ---------------- Overdose pharmacodynamics ---------------- */
@@ -259,7 +259,7 @@ QUESTIONS.push(
   {t:"To bind the poison in the blood with a chelator", correct:false, why:"Binding the poison is inactivation, the second of the three approaches."},
   {t:"To give a drug with the opposite pharmacologic action", correct:false, why:"That is the definition of pharmacological treatment."}],
  teach:"The four toxicokinetic methods are preventing absorption, inhibiting bioactivation, enhancing metabolism and enhancing elimination. Each changes what happens to the poison in the body rather than what the poison does at its target. The shared aim is less poison, or less of its toxic form, in the body, and so less end-organ damage.",
- quote:"sometimes we will try to prevent absorption of the poison or the overdose drug. Sometimes we're going to try to inhibit toxication or stop the bioactivation of it to a nasty compound, OK. Sometimes we can enhance metabolism or enhance detoxification. Sometimes, OK. Sometimes we can enhance elimination. Can you see how all four of those methods are kinetically based treatments?",
+ quote:"sometimes we will try to prevent absorption of the poison or the overdose drug. Sometimes we're going to try to inhibit toxication or stop the bioactivation of it to a nasty compound ... Sometimes we can enhance metabolism or enhance detoxification ... Sometimes we can enhance elimination. Can you see how all four of those methods are kinetically based treatments?",
  note:"The purpose sentence is on the slide; aloud she listed the four methods and asked the room to see that all four are kinetically based.",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Toxicokinetic-Based Treatment’; transcript 10/14"},
 
@@ -273,7 +273,7 @@ QUESTIONS.push(
   {t:"The solution binds the poison in the stomach", correct:false, why:"Binding the poison is what activated charcoal does; irrigation flushes the gut."},
   {t:"Vomiting and aspiration are the main risk", correct:false, why:"Aspiration from vomiting is the risk of emesis and of charcoal."}],
  teach:"Whole bowel irrigation works like a colonoscopy preparation: the patient drinks a solution such as polyethylene glycol and it flushes the whole gut. That only works if the gut is open from end to end. With an ileus or a blockage the solution cannot come through, so the procedure is not done.",
- quote:"Again, you've got to make sure people don't have any issues with no ileus, no blockages in the gut. Um, you need to make sure their system is open so that all of it can come through.",
+ quote:"you've got to make sure people don't have any issues with no ileus, no blockages in the gut ... you need to make sure their system is open so that all of it can come through.",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Toxicokinetic-Based Treatment Prevent Absorption’; transcript 10/14"},
 
 {id:"L15-122", lecture:"L15", prof:"Smith", tier:"new", topic:"L15", sub:"absorb", skill:"apply",
@@ -286,7 +286,7 @@ QUESTIONS.push(
   {t:"Charcoal is absorbed into the blood after two hours", correct:false, why:"Charcoal is not absorbed; what it binds leaves in the feces."}],
  core:true, coreWhy:"her Quiz 3 item 8: the time frame for single-dose activated charcoal",
  teach:"A single dose of charcoal can only bind drug that is still in the stomach. Given soon after the ingestion, it adsorbs the drug there and carries it out in the feces. Given late, the drug has moved past the stomach and into the bloodstream, so the charcoal has nothing to bind.",
- quote:"you need to give it very soon after the person ingested the overdose, OK? Because if you wait too long, that compound, that drug that somebody overdosed on is going to go past the stomach and start getting absorbed into the bloodstream.",
+ quote:"you need to give it very soon after the person ingested the overdose ... Because if you wait too long, that compound, that drug that somebody overdosed on is going to go past the stomach and start getting absorbed into the bloodstream.",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Toxicokinetic-Based Treatment Prevent Absorption’; transcript 10/14"},
 
 {id:"L15-123", lecture:"L15", prof:"Smith", tier:"new", topic:"L15", sub:"absorb", skill:"apply",
@@ -298,6 +298,6 @@ QUESTIONS.push(
   {t:"Charcoal speeds liver metabolism of the drug", correct:false, why:"Enhancing metabolism is a different toxicokinetic method."},
   {t:"Repeated doses pull drug out of fat and muscle", correct:false, why:"Release from those sequestration sites is the large volume of distribution problem with hemodialysis."}],
  teach:"Some drugs go to the liver, are moved into the bile and enter the small intestine again, then return to the liver: enterohepatic recirculation. Each pass puts absorbed drug back in the gut, where a later dose of charcoal can bind it. This works only for compounds that both recirculate and stick to charcoal.",
- quote:"if you give a dose, a second dose of charcoal, you might be able to catch some of that compound as it's being re-injected back into the small intestine from the liver, from the through the bile.",
+ quote:"if you give a dose, a second dose of charcoal, you might be able to catch some of that compound as it's being re-injected back into the small intestine from the liver ... through the bile.",
  cite:"Treating Poisonings Students Fall 2026 WCAG2,1A_pptx.pdf slide ‘Toxicokinetic-Based Treatment Prevent Absorption’; transcript 10/14"}
 );
