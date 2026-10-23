@@ -3440,10 +3440,59 @@ document.addEventListener('keydown', e => {
     if (k === 'ArrowLeft') { if (EX.i > 0 && !EX.noBack) { EX.i--; renderExam(); } e.preventDefault(); }
   }
 });
+/* Keep the learner's place across a reload: the view, the scroll position and, in a quiz, the set and the
+   question on screen are saved for this tab when the page is left, and reopened at start-up. */
+const RESUME_KEY = () => COURSE.ns + ':resume';
+function saveResume() {
+  try {
+    const r = {v: CUR, y: Math.round(window.scrollY), t: Date.now()};
+    if (CUR === 'quiz' && Q && Q.cur && !Q.finished && (Q.mode === 'pass' || Q.mode === 'sr'))
+      r.q = {ids: Q.list.map(q => q.id), label: Q.label, mode: Q.mode, i: Q.i, done: Q.done, right: Q.right, doneIds: [...Q.doneIds], cur: Q.cur.id};
+    sessionStorage.setItem(RESUME_KEY(), JSON.stringify(r));
+  } catch (e) {}
+}
+window.addEventListener('pagehide', saveResume);
+function resumePlace() {
+  let r = null;
+  try { r = JSON.parse(sessionStorage.getItem(RESUME_KEY()) || 'null'); sessionStorage.removeItem(RESUME_KEY()); } catch (e) {}
+  if (!isObj(r) || !VIEWFN[r.v] || r.v === 'exam' || !(Date.now() - r.t < 6 * 3600e3)) return false;
+  if (r.v === 'quiz') {
+    const x = r.q, list = isObj(x) && Array.isArray(x.ids) ? x.ids.map(id => byId[id]).filter(Boolean) : [], q = isObj(x) && byId[x.cur];
+    if (!list.length || !q) return false;
+    Q = {list, label: String(x.label || ''), mode: x.mode, i: +x.i || 0, done: +x.done || 0, right: +x.right || 0, retest: [], doneIds: new Set((x.doneIds || []).filter(id => byId[id])), st: {}, graph: null};
+    CUR = 'quiz'; nav(); leaveView();
+    Q.cur = q; Q.order = q.type === 'match' || q.type === 'fill' ? null : optOrder(q); Q.fill = {text: '', bank: false, rev: false};
+    Q.picked = q.multi ? new Set() : null; Q.mpick = null; Q.answered = false; Q.t0 = Date.now();
+    if (q.type === 'match') Q.rightOrder = shuffle(q.right.slice());
+    renderQ();
+    return true;
+  }
+  go(r.v); setTimeout(() => window.scrollTo(0, r.y || 0), 60);
+  return true;
+}
+/* Update notice: the page compares its build with version.json on the site (soon after opening, every ten
+   minutes and when the tab is shown again); when the site has a newer build, a bar offers a refresh, and the
+   refresh reopens the same place. */
+const VER_URL = () => (/\/exam1-drill\//.test(location.pathname) ? '' : 'exam1-drill/') + 'version.json';
+let VER_T = 0, VER_HIDE = '';
+function verCheck() {
+  if (!/^https?:$/.test(location.protocol) || !BUILD.id || Date.now() - VER_T < 60000) return;
+  VER_T = Date.now();
+  fetch(VER_URL() + '?t=' + Date.now(), {cache: 'no-store'}).then(r => r.ok ? r.json() : null).then(v => {
+    if (!isObj(v) || typeof v.id !== 'string' || !(v.id > BUILD.id) || v.id === VER_HIDE || document.getElementById('updbar')) return;
+    const bar = document.createElement('div'); bar.id = 'updbar'; bar.setAttribute('role', 'status');
+    bar.innerHTML = '<span>Updated material is available. Refresh when you are able; you will come back to this page.</span><button type="button" class="btn" id="updgo">Refresh</button><button type="button" class="btn ghost" id="updx" aria-label="Dismiss">✕</button>';
+    document.body.insertBefore(bar, document.body.firstChild);
+    $('#updgo').onclick = () => { saveResume(); location.reload(); };
+    $('#updx').onclick = () => { VER_HIDE = v.id; bar.remove(); };
+  }).catch(() => {});
+}
+setTimeout(verCheck, 5000); setInterval(verCheck, 600000);
+document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible') verCheck(); });
 document.title = COURSE.title;
 try { history.scrollRestoration = 'manual'; } catch (e) {}
 $('#apptitle').innerHTML = `${esc(COURSE.short)} <span class="stamp">updated ${esc(fmtDate(BUILD.built))}</span>`;
 // a paper saved mid-exam reopens on the exam page, clock running, so it is not forgotten in the background
-nav(); go(EX && !EX.done ? 'exam' : 'topics');
+nav(); if (EX && !EX.done) go('exam'); else if (!resumePlace()) go('topics');
 try { history.replaceState({drill: 1, v: CUR}, ''); } catch (e) {}
 NAV_READY = true;

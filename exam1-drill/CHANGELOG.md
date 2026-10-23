@@ -4,6 +4,7 @@ Newest first. The build embeds this file; the Topics page shows what is new sinc
 
 ## 2026-10-23 (Recorded narration; guide rewritten to teach the reasoning)
 
+- When the site is updated, a bar offers a refresh; a refresh now reopens the page and question you were on.
 - Every Exam 3 audio is now recorded in the narrator's voice: 696 Hear the why, 10 reading talks, 7 diagrams, 38 steps.
 - Guide: all 39 Exam 3 sections rewritten: the idea, the facts in tables, the why, her words, the traps.
 - Her quotes trimmed to what teaches: no poll trouble, chatter or class logistics.
