@@ -1679,12 +1679,12 @@ function examResult() {
     h += `<div class="card"><div class="row" style="justify-content:space-between"><span class="meta">${k + 1}. ${metaLine(q)}</span>${flagBtn(q.id)}</div><div class="stem">${esc(q.stem)}</div>${stemMedia(q)}
       <div class="verdict ${ok ? 'ok' : 'bad'}">${ok ? '✓ Correct' : !examAnswered(q.id) ? '✗ Not answered' : '✗ Not correct'}</div>`;
     const hidden = [];   // the figure, the notes and the cite fold behind "More", as on a quiz card
-    if (typeof NARR_Q !== 'undefined' && NARR_Q[q.id]) h += `<div class="row qsay"><button type="button" class="chip" data-qsay="${q.id}">🔊 Hear the why</button><span class="meta" style="margin:0">${typeof Q_CLIPS !== 'undefined' && !Q_CLIPS.includes(q.id) ? 'device voice' : 'read by the narrator'}</span></div>`;
     (q.options || []).forEach((o, oi) => { h += `<div class="opt${o.correct ? ' right' : pickedSet.has(oi) ? ' wrong' : ''}" style="cursor:default"><span>${esc(o.t)}</span></div>${o.why ? `<div class="why">${esc(o.why)}</div>` : ''}`; });
     if (!ok) {
       if (q.teach) h += `<div class="teach">${teachHTML(q.teach)}</div>`;
       if (q.note) h += `<div class="note">${esc(q.note)}</div>`;
     }
+    if (typeof NARR_Q !== 'undefined' && NARR_Q[q.id]) h += `<div class="row qsay"><button type="button" class="chip" data-qsay="${q.id}">🔊 Hear the why</button><span class="meta" style="margin:0">${typeof Q_CLIPS !== 'undefined' && !Q_CLIPS.includes(q.id) ? 'device voice' : 'read by the narrator'}</span></div>`;
     h += moreHTML(q, hidden) + explainHTML(q) + '</div>';
   });
   $('#view').innerHTML = h;
@@ -3480,7 +3480,8 @@ window.addEventListener('pagehide', saveResume);
 function resumePlace() {
   let r = null;
   try { r = JSON.parse(sessionStorage.getItem(RESUME_KEY()) || 'null'); sessionStorage.removeItem(RESUME_KEY()); } catch (e) {}
-  if (!isObj(r) || !VIEWFN[r.v] || r.v === 'exam' || !(Date.now() - r.t < 6 * 3600e3)) return false;
+  if (!isObj(r) || !VIEWFN[r.v] || !(Date.now() - r.t < 6 * 3600e3)) return false;
+  if (r.v === 'exam') { if (!(EX && EX.done)) return false; go('exam', true); setTimeout(() => window.scrollTo(0, r.y || 0), 60); return true; }
   if (r.v === 'quiz') {
     const x = r.q, list = isObj(x) && Array.isArray(x.ids) ? x.ids.map(id => byId[id]).filter(Boolean) : [], q = isObj(x) && byId[x.cur];
     if (!list.length || !q) return false;
@@ -3516,9 +3517,9 @@ function verCheck() {
     if (!isObj(v) || typeof v.id !== 'string' || !(v.id > BUILD.id) || v.id === VER_HIDE || document.getElementById('updbar')) return;
     const bar = document.createElement('div'); bar.id = 'updbar'; bar.setAttribute('role', 'status');
     bar.innerHTML = '<span>Updated material is available. Refresh when you are able; you will come back to this page.</span><button type="button" class="btn" id="updgo">Refresh</button><button type="button" class="btn ghost" id="updx" aria-label="Dismiss">✕</button>';
-    document.body.insertBefore(bar, document.body.firstChild);
+    const hd = document.querySelector('header'); hd.insertBefore(bar, hd.firstChild); hdrVar();   // part of the sticky header, so the title and tabs stay visible
     $('#updgo').onclick = () => { saveResume(); location.reload(); };
-    $('#updx').onclick = () => { VER_HIDE = v.id; bar.remove(); };
+    $('#updx').onclick = () => { VER_HIDE = v.id; bar.remove(); hdrVar(); };
   }).catch(() => {});
 }
 setTimeout(verCheck, 5000); setInterval(verCheck, 600000);
