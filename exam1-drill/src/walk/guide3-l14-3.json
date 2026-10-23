@@ -4,33 +4,44 @@
  "segs": [
   {
    "text": "Section eleven. The reading by Rodriguez-Mozaz and Weinberg on drugs in our water. The article reports on an environmental health summit where government agencies, academics, the pharmaceutical industry and other scientists met for the first time about drugs found in surface water, groundwater and drinking water. The assigned part is a real case of the five principles, and her discussion guide compares each principle for humans and for aquatic wildlife. Her conclusion was that people are probably fine, wildlife is the bigger concern, and antibiotic resistance in the environment is a real problem.",
-   "slide": "tox:29",
+   "slide": "tox:9",
    "reading": "rodriguez-mozaz"
   },
   {
-   "text": "Source is the same for humans and wildlife. Drugs reach the water by flushing, by animal waste from feedlots and farms, and by human waste. People take medications every day and excrete the unchanged drug and its metabolites, and wastewater treatment plants do not remove them all before the water returns to streams, rivers and lakes. Flushing and animal waste can be reduced by changing practices. Human waste cannot, because people will keep taking medications. So in her key the greatest source is consumption of medications by humans and the resulting waste streams, not flushing unused medications, not landfills and not manufacturing.",
+   "text": "The principles are not labeled in the article; she said they were buried in it, and her discussion guide sorts them out. The assigned part has four headings: Sources of pharmaceuticals in water, Exposure of humans and wildlife, Effects on wildlife, and Human health. The feminization findings she used for wildlife dose and target are under Effects on wildlife. The last heading, Best management practices, is not assigned.",
    "slide": null,
-   "reading": "rodriguez-mozaz"
+   "reading": "rodriguez-mozaz",
+   "table": 0
+  },
+  {
+   "text": "Source is the same for humans and wildlife. Drugs reach the water by flushing, by animal waste from feedlots and farms, and by human waste. People take medications every day and excrete the unchanged drug and its metabolites, and wastewater treatment plants do not remove them all before the water returns to streams, rivers and lakes. The article itself names wastewater treatment plants as the main points where drugs are discharged into surface water, because their treatment steps were not designed to remove pharmaceuticals. Flushing and animal waste can be reduced by changing practices. Human waste cannot, because people will keep taking medications. So in her key the greatest source is consumption of medications by humans and the resulting waste streams, not flushing unused medications, not landfills and not manufacturing.",
+   "slide": null,
+   "reading": "rodriguez-mozaz",
+   "table": 0
   },
   {
    "text": "Exposure is where humans and wildlife differ. People are exposed by drinking water, eating fish, and skin contact while bathing or swimming, at about parts per trillion. At that level, even a well-hydrated person does not come close to a normal therapeutic daily dose. She said, so I think for humans we can be OK. Doesn't mean we should ignore our sensitive populations. Those are the fetus, children, the elderly and people with underlying disease. Aquatic animals drink the water, eat food from it, absorb it through their skin, and fish breathe it, constantly and for their entire lives. That is why her key calls wildlife exposure the more significant one, not because the concentrations are known to be higher.",
    "slide": null,
-   "reading": "rodriguez-mozaz"
+   "reading": "rodriguez-mozaz",
+   "table": 0
   },
   {
-   "text": "For humans, some data on absorption, distribution, metabolism and excretion exist from drug development, because drugs were tested in rodents, guinea pigs, dogs and sometimes pigs. Nobody tests drugs in sea otters, orca whales, fish or mollusks, so for wildlife there are very little if any data. The dose is not known exactly for either group. For humans it is probably below the therapeutic dose. For wildlife the doses that cause harm are unknown, but given the nature of their exposure, the dose is likely high enough to cause effects. For both, the target is unknown, including how multiple exposures act together.",
+   "text": "For humans, some data on absorption, distribution, metabolism and excretion exist from drug development, because drugs were tested in rodents, guinea pigs, dogs and sometimes pigs. Nobody tests drugs in sea otters, orca whales, fish or mollusks, so for wildlife there are very little if any data. The dose is not known exactly for either group, because the values often were not measured, were not detected, or were modeled. For humans it is probably below the therapeutic dose. For wildlife the doses that cause harm are unknown, but given the nature of their exposure, the dose is likely high enough to cause effects. For both, the target is unknown, including how multiple exposures act together.",
    "slide": null,
-   "reading": "rodriguez-mozaz"
+   "reading": "rodriguez-mozaz",
+   "table": 0
   },
   {
    "text": "Some effects are seen. Estrogen is higher off the shorelines of big cities with many young women, possibly because many take oral contraceptives. There, populations of frogs, some fish and alligators shift from about half male and half female to more female. Frogs absorb a lot through their skin and are a sentinel species, an early warning that something is wrong. Is wildlife being harmed? She accepted both yes and we don't know, because there is evidence for some species, while most others, such as orca whales, are too hard to study. Could warming water cause the shift instead of estrogen? Studies that exposed these species to estrogenic compounds do produce the shift, so the link to estrogen is plausible, while warming water needs its own studies. She said it could be both.",
    "slide": null,
-   "reading": "rodriguez-mozaz"
+   "reading": "rodriguez-mozaz",
+   "table": 0
   },
   {
    "text": "Bacteria in water and sediments that live with released antibiotics are becoming resistant, and a resistant infection, for example through a cut at the beach, may not be treatable. The authors' own conclusion was that more data are needed to determine whether pharmaceuticals in water are adversely affecting human health. They did not conclude that drugs in water are harming people, or that wildlife is unaffected. So a patient afraid of drugs in the water supply can be told the dose is far below a therapeutic dose, with open questions for sensitive populations and for any future rise in concentrations.",
    "slide": null,
-   "reading": "rodriguez-mozaz"
+   "reading": "rodriguez-mozaz",
+   "table": 0
   }
  ]
 }

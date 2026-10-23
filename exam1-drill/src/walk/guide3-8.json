@@ -8,7 +8,7 @@
    "reading": null
   },
   {
-   "text": "The therapeutic index is the toxic dose over the therapeutic dose, usually T D fifty over E D fifty. It is for single doses and gives no information about slope. The margin of safety is T D one over E D ninety nine. It is also for single doses, and it does give slope information. Her practice quiz asked which value is toxic dose over therapeutic dose; the answer is the therapeutic index, not the margin of safety.",
+   "text": "The therapeutic index is the toxic dose over the therapeutic dose, usually T D fifty over E D fifty. It is for single doses and gives no information about slope. The margin of safety is T D one over E D ninety nine. It is also for single doses, and because it compares the low end of the toxic curve with the high end of the effective curve, it does give slope information. Her practice quiz asked which value is toxic dose over therapeutic dose; the answer is the therapeutic index, not the margin of safety.",
    "slide": "tox:27",
    "reading": null
   },

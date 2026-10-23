@@ -13,29 +13,46 @@
    "reading": "aapcc-ccb"
   },
   {
+   "text": "The formulation matters because of absorption. Her key says immediate release products are absorbed more rapidly because they do not tend to form bezoars, so absorption is quick and complete. Extended release tablets stick together in an overdose and clump into a mass, called a bezoar, in the stomach or small intestine. The clump can break apart at an unpredictable time, hours after the ingestion, and release a large amount of drug at once. So a patient with no symptoms after an extended release overdose is not safe as early as one after an immediate release overdose. Slow release is true of these tablets, but she called the clumping the biggest issue.",
+   "slide": null,
+   "reading": "aapcc-bb",
+   "table": 0
+  },
+  {
    "text": "For a patient with no symptoms, the decision depends on the formulation and on the hours since ingestion. The window is the number of hours during which a patient without symptoms still goes to the hospital. Immediate release products have a six hour window for both classes. Sotalol is excluded from that rule, because it also blocks the potassium channel, and the beta blocker guideline gives it twelve hours. A sustained release beta blocker has an eight hour window.",
-   "slide": "treat:29",
-   "reading": "aapcc-bb"
+   "slide": null,
+   "reading": "aapcc-bb",
+   "table": 0
   },
   {
    "text": "A modified release calcium channel blocker has an eighteen hour window, except verapamil. Modified release verapamil has twenty four hours. She said, it actually has multiple mechanisms. Because it is not as clean a calcium channel blocker as the others, toxicity is a concern for longer, and a patient with no symptoms ten hours after modified release verapamil is not out of danger. Immediate release verapamil follows the six hour rule. Eight belongs to sustained release beta blockers, and eighteen to modified release calcium channel blockers.",
-   "slide": "treat:29",
-   "reading": "aapcc-ccb"
+   "slide": null,
+   "reading": "aapcc-ccb",
+   "table": 0
   },
   {
-   "text": "Immediate release and extended release windows differ because of absorption. The difference between the two classes, eight hours versus eighteen, comes from the published case data, and she said it speaks to the mechanism of action. Her key says immediate release products are absorbed more rapidly because they do not tend to form bezoars, so by six hours the whole dose is in the body. Extended release tablets stick together in an overdose and clump into a mass, called a bezoar, in the stomach or small intestine. She said, you are still within the window that that clump of tablets could break apart, and all of a sudden you're gonna get a huge absorption of that medication. Slow release is true of these tablets, but she called the clumping the biggest issue.",
-   "slide": "treat:31",
-   "reading": null
+   "text": "That difference between the two classes comes from the published case data, and she said it speaks to the mechanism of action. The guidelines describe the two mechanisms. Beta blockers competitively block beta adrenergic receptors, which decreases cyclic A M P and blunts the effects of catecholamines. Calcium channel blockers block calcium entry through voltage sensitive calcium channels, which relaxes arterial smooth muscle and depresses the sinoatrial and atrioventricular nodes and cardiac contractility.",
+   "slide": null,
+   "reading": "aapcc-ccb",
+   "table": 0
   },
   {
-   "text": "Inside the window, a patient with no symptoms goes to the hospital, because the drug may not all be absorbed yet, and an unknown amount is a reason to go in. After the window, call the poison center. The patient can probably be managed at home with someone watching them. A patient with symptoms goes to the hospital at any time. The beta blocker guideline gives follow up calls for up to twelve to twenty four hours, while the calcium channel blocker guideline leaves follow up to the poison center's judgment. Suspected self harm goes to the emergency department, then to mental health care, whatever the time or the dose.",
-   "slide": "treat:31",
-   "reading": null
+   "text": "Inside the window, a patient with no symptoms goes to the hospital, because the drug may not all be absorbed yet, and an unknown amount is a reason to go in. The guidelines also set a dose cutoff. Referral is considered when the amount is more than the usual maximum single therapeutic dose or equals the lowest reported toxic dose, whichever is lower. After the window, call the poison center. The patient can probably be managed at home with someone watching them. A patient with symptoms goes to the hospital at any time. The beta blocker guideline gives follow up calls for up to twelve to twenty four hours, while the calcium channel blocker guideline leaves follow up to the poison center's judgment. Suspected self harm goes to the emergency department, then to mental health care, whatever the time or the dose.",
+   "slide": null,
+   "reading": null,
+   "table": 1
   },
   {
    "text": "At home, do not induce vomiting. A vomiting patient can breathe the vomit into the lungs, which she called the biggest risk of emesis. Activated charcoal is considered if there are no contraindications, but it is given at the hospital and never delays transport. Single dose charcoal works only soon after ingestion, less than sixty minutes on her Quiz three key and up to two hours in her lecture, so time spent arranging it is time the patient is not on the way. Go by ambulance, not the family car. If the patient crashes in a private car, nobody has intravenous lines, pressors or defibrillator paddles, and the ambulance carries all of these.",
-   "slide": "treat:31",
-   "reading": null
+   "slide": null,
+   "reading": null,
+   "table": 1
+  },
+  {
+   "text": "The calcium channel blocker guideline adds what can be given during transport, if available: intravenous fluids for hypotension, and intravenous calcium, glucagon and epinephrine for severe hypotension.",
+   "slide": null,
+   "reading": "aapcc-ccb",
+   "table": 1
   }
  ]
 }

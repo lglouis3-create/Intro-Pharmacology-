@@ -13,7 +13,7 @@
    "reading": null
   },
   {
-   "text": "The route can reduce or enhance toxicity because it changes metabolism. An oral dose goes to the liver before it reaches the rest of the body, and an intravenous dose does not. So if the liver turns a compound into something less toxic, equal doses make the oral route the less dangerous one. Formulation matters too. A handful of immediate-release beta blockers or calcium channel blockers is absorbed quickly. Extended-release tablets can clump together in the stomach and then release the drug all at once. Asked which handful is worse, she said, it depends.",
+   "text": "The route can reduce or enhance toxicity because it changes metabolism. An oral dose goes to the liver before it reaches the rest of the body, and an intravenous dose does not. So if the liver turns a compound into something less toxic, equal doses make the oral route the less dangerous one. Formulation matters too. A handful of immediate-release beta blockers or calcium channel blockers is absorbed quickly. Extended-release tablets can clump together in the stomach and then release the drug all at once. Asked which handful is worse, she said, it depends. The vehicle matters as well: an oily vehicle and an aqueous vehicle for the same drug can change its toxicity when it is given inappropriately.",
    "slide": "tox:12",
    "reading": null
   },
@@ -28,7 +28,7 @@
    "reading": null
   },
   {
-   "text": "Frequency is taught with Figure two dash four from Casarett and Doull. Three compounds are given either as one large dose or as repeated doses, each one quarter of the single dose, so four doses add up to the single dose. When the next dose arrives before the last one is cleared, the concentration climbs. Compound A has the longest half-life and reaches the toxic zone, a blood concentration above two, by the third dose. B is in between and gets there at about the fourth dose, certainly by the fifth. C has the shortest half-life, is cleared between doses, and never reaches the toxic zone. For a medication, the dosing interval is stretched until the drug behaves like C.",
+   "text": "Frequency is shown with an example from the assigned textbook chapter, Casarett and Doull chapter two. Three compounds are given either as one large dose or as repeated doses, each one quarter of the single dose, so four doses add up to the single dose. When the next dose arrives before the last one is cleared, the concentration climbs. Compound A has the longest half-life and reaches the toxic zone, a blood concentration above two, by the third dose. B is in between and gets there at about the fourth dose, certainly by the fifth. C has the shortest half-life, is cleared between doses, and never reaches the toxic zone. For a medication, the dosing interval is stretched until the drug behaves like C.",
    "slide": "tox:15",
    "reading": "casarett-ch2"
   },
