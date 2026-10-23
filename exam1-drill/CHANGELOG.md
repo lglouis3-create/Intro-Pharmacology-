@@ -4,6 +4,7 @@ Newest first. The build embeds this file; the Topics page shows what is new sinc
 
 ## 2026-10-23 (Final review before the exam)
 
+- Update bar sits inside the header; a refresh on the exam result page brings it back; review cards show options first.
 - A refresh on an answered question now brings back that question answered, with its explanations.
 - Her own quiz questions are ★ Most likely; her Exam 3 paper carries exactly 2 true/false, as she said.
 - Exam review cards have Hear the why; the no-going-back paper no longer shows the disabled question grid.
