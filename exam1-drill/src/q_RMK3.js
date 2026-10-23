@@ -379,7 +379,7 @@ QUESTIONS.push(
  teach:"Drug development studies use rodents, guinea pigs, dogs and pigs, not fish, so how a drug made and tested for humans acts in fish is not known. A result from a laboratory species therefore may not apply to fish: her key's gap that data may not have been measured in the correct species. The related gap is that studies may not have measured the correct endpoint.",
  cite:"KeyDiscussionGuideRodriguez-MozazandWeinberg2026.docx, row Target/MOA, For Wildlife"},
 /* ---------------- Who wrote it ---------------- */
-{id:"RMK3-029", lecture:"RMK3", prof:"Smith", tier:"new", topic:"RMK3", sub:"authors", skill:"recall", readingId:"rodriguez-mozaz",
+{id:"RMK3-029", lecture:"RMK3", prof:"Smith", tier:"new", topic:"RMK3", sub:"authors", skill:"recall", core:true, coreWhy:"author of a discussion or activity reading; upperclassmen report she asks which authors wrote which reading", readingId:"rodriguez-mozaz",
  concept:"rm-authors", tags:["smith","reading"], source:"both",
  stem:"Who wrote the article on pharmaceuticals in water that the class discussed with the discussion guide?",
  options:[
@@ -391,7 +391,7 @@ QUESTIONS.push(
  quote:"I want us to take a dive into the paper that Rodriguez and Moza's paper that I had you guys read.",
  cite:"RodriguezMozaz-EHP-2010.pdf, title page; transcript 10/13"},
 
-{id:"RMK3-030", lecture:"RMK3", prof:"Smith", tier:"new", topic:"RMK3", sub:"authors", skill:"recall", readingId:"rodriguez-mozaz",
+{id:"RMK3-030", lecture:"RMK3", prof:"Smith", tier:"new", topic:"RMK3", sub:"authors", skill:"recall", core:true, coreWhy:"author of a discussion or activity reading; upperclassmen report she asks which authors wrote which reading", readingId:"rodriguez-mozaz",
  concept:"rm-article-type", tags:["smith","reading"], source:"both",
  stem:"What kind of article did Rodriguez-Mozaz and Weinberg write?",
  options:[
@@ -403,7 +403,7 @@ QUESTIONS.push(
  quote:"I want us to take a dive into the paper that Rodriguez and Moza's paper that I had you guys read.",
  cite:"RodriguezMozaz-EHP-2010.pdf, title page; transcript 10/13"},
 
-{id:"RMK3-031", lecture:"RMK3", prof:"Smith", tier:"new", topic:"RMK3", sub:"authors", skill:"recall", type:"match",
+{id:"RMK3-031", lecture:"RMK3", prof:"Smith", tier:"new", topic:"RMK3", sub:"authors", skill:"recall", core:true, coreWhy:"author of a discussion or activity reading; upperclassmen report she asks which authors wrote which reading", type:"match",
  concept:"reading-authors-match", tags:["smith","reading"], source:"both",
  stem:"Match each assigned reading with its authors.",
  left:["Pharmaceuticals in water (the discussion-guide article)", "Beta-blocker ingestion guideline", "Calcium channel blocker ingestion guideline", "Antidotes for toxicological emergencies"],
