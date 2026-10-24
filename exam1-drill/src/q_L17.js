@@ -701,7 +701,7 @@ QUESTIONS.push(
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘Outline and Objectives’ (p. 2); transcript 10/20"},
 
 /* ---------------- Polymorphism nomenclature (not reached on 10/20) ---------------- */
-{id:"L17-054", lecture:"L17", prof:"Smith", tier:"new", topic:"L17", sub:"nomen", skill:"recall", lowYield:true,
+{id:"L17-054", lecture:"L17", prof:"Smith", tier:"new", topic:"L17", sub:"nomen", skill:"recall", lowYield:true, dupOf:"L18-004",
  concept:"snp-nomenclature-letters", tags:["smith"], source:"slide",
  stem:"In the SNP nomenclature VKORC1 1173 C>T, what do 1173, C and T stand for?",
  options:[
@@ -713,7 +713,7 @@ QUESTIONS.push(
  note:"Low yield: the nomenclature slides (PDF pp. 22–29) were not reached on 10/20; she said polymorphism nomenclature starts 10/21, and by the class vote Friday's exam covers only what was done on 10/20. Slide content only.",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘SNP Nomenclature’ (p. 24); not reached on 10/20 (transcript 10/20)"},
 
-{id:"L17-055", lecture:"L17", prof:"Smith", tier:"new", topic:"L17", sub:"nomen", skill:"recall", lowYield:true,
+{id:"L17-055", lecture:"L17", prof:"Smith", tier:"new", topic:"L17", sub:"nomen", skill:"recall", lowYield:true, dupOf:"L18-009",
  concept:"star-allele-nomenclature", tags:["smith"], source:"slide",
  stem:"In CYP2C19*2, what does the *2 designate, and which nucleotide change does it stand for?",
  options:[
@@ -726,7 +726,7 @@ QUESTIONS.push(
  note:"Low yield: the star-nomenclature slides (PDF pp. 25–26) were not reached on 10/20; the *2 allele appeared only in the genotype example (L17-037, L17-038). Outside Friday's exam by the class vote.",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘Allele “Star” Nomenclature’ (p. 25); not reached on 10/20 (transcript 10/20)"},
 
-{id:"L17-056", lecture:"L17", prof:"Smith", tier:"new", topic:"L17", sub:"nomen", skill:"tell", lowYield:true,
+{id:"L17-056", lecture:"L17", prof:"Smith", tier:"new", topic:"L17", sub:"nomen", skill:"tell", lowYield:true, dupOf:"L18-012",
  concept:"same-star-different-function", tags:["smith"], source:"slide",
  stem:"CYP2C19*2 and CYP2C9*2 both carry the *2 label. How do their effects on enzyme activity compare?",
  options:[
@@ -739,7 +739,7 @@ QUESTIONS.push(
  note:"Low yield: slide p. 26 was not reached on 10/20; only the CYP2C19*2 half (no activity) was spoken, on the genotype slide. Outside Friday's exam by the class vote.",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘More Allele “Star” Nomenclature’ (p. 26); not reached on 10/20 (transcript 10/20)"},
 
-{id:"L17-057", lecture:"L17", prof:"Smith", tier:"new", topic:"L17", sub:"nomen", skill:"apply", type:"match", lowYield:true,
+{id:"L17-057", lecture:"L17", prof:"Smith", tier:"new", topic:"L17", sub:"nomen", skill:"apply", type:"match", lowYield:true, dupOf:"L18-021",
  concept:"cyp2c19-genotype-activity", tags:["smith"], source:"slide",
  stem:"Match each CYP2C19 genotype with its enzyme activity.",
  left:["CYP2C19*1/*1", "CYP2C19*1/*2", "CYP2C19*2/*3"],
@@ -753,7 +753,7 @@ QUESTIONS.push(
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘Genotype Nomenclature’ (p. 28); not reached on 10/20 (transcript 10/20)"},
 
 /* ---------------- Types of genetic variants (not reached on 10/20) ---------------- */
-{id:"L17-058", lecture:"L17", prof:"Smith", tier:"new", topic:"L17", sub:"types", skill:"recall", type:"match", lowYield:true,
+{id:"L17-058", lecture:"L17", prof:"Smith", tier:"new", topic:"L17", sub:"types", skill:"recall", type:"match", lowYield:true, dupOf:"L18-044",
  concept:"variant-types-list", tags:["smith"], source:"slide",
  stem:"Match each type of genetic variant with its description.",
  left:["Insertion-deletion polymorphism", "Tandem repeat", "Frameshift mutation", "Premature stop codon polymorphism", "Copy number variant"],
@@ -768,7 +768,7 @@ QUESTIONS.push(
  note:"Low yield: the types-of-variants slides (PDF pp. 30–41) were not reached on 10/20. Outside Friday's exam by the class vote.",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘List of genetic variant types’ (p. 31); not reached on 10/20 (transcript 10/20)"},
 
-{id:"L17-059", lecture:"L17", prof:"Smith", tier:"new", topic:"L17", sub:"types", skill:"apply", lowYield:true,
+{id:"L17-059", lecture:"L17", prof:"Smith", tier:"new", topic:"L17", sub:"types", skill:"apply", lowYield:true, dupOf:"L18-040",
  concept:"cyp2c19-star3-stop-codon", tags:["smith"], source:"slide",
  stem:"What is the functional effect of CYP2C19*3?",
  options:[
@@ -780,7 +780,7 @@ QUESTIONS.push(
  note:"Low yield: slide p. 36 was not reached on 10/20. Outside Friday's exam by the class vote.",
  cite:"Intro_to_PGx_Lecture_Students_Fall_2026.pdf slide ‘Premature Stop Codon SNP: CYP2C19’ (p. 36); not reached on 10/20 (transcript 10/20)"},
 
-{id:"L17-060", lecture:"L17", prof:"Smith", tier:"new", topic:"L17", sub:"types", skill:"tell", lowYield:true,
+{id:"L17-060", lecture:"L17", prof:"Smith", tier:"new", topic:"L17", sub:"types", skill:"tell", lowYield:true, dupOf:"L18-051",
  concept:"cyp2d6-deletion-vs-copies", tags:["smith"], source:"slide",
  stem:"CYP2D6*5 and CYP2D6*2XN are both CYP2D6 variants. Which phenotype does each produce?",
  options:[

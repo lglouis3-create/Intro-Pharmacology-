@@ -1,0 +1,26 @@
+{
+ "id": "guide4-l19-6",
+ "title": "D P D and five fluorouracil, U G T one A one and irinotecan",
+ "segs": [
+  {
+   "text": "Section thirteen. Two oncology examples, D P D with five fluorouracil, and U G T one A one with irinotecan. Each adds its own twist. D P D is the main breakdown route that keeps five fluorouracil in check. U G T one A one is needed to clear a toxic active metabolite of a drug that is already active. In both cases, a low activity variant can cause severe bone marrow suppression.",
+   "slide": null,
+   "reading": null
+  },
+  {
+   "text": "D P D, dihydropyrimidine dehydrogenase, is coded by the D P Y D gene. It handles the antimetabolites five fluorouracil, capecitabine, and tegafur. About eighty percent of a five fluorouracil dose is normally broken down by D P D to non toxic products. A low activity variant sends more drug down the route that makes the active cytotoxic metabolite. The worst result is myelosuppression that can be lethal. Mucositis, neurotoxicity, hand foot syndrome, and diarrhea can also occur. These low activity variants are not yet well characterized. She flagged this as a coming area.",
+   "slide": "pgxex:29",
+   "reading": null
+  },
+  {
+   "text": "Irinotecan is not a prodrug. It is already active, and it is further metabolized to an active metabolite, S N thirty eight. She said, what clears S N thirty eight from the body is U G T one A one. A carrier of U G T one A one star twenty eight has lower expression and less glucuronidation, so S N thirty eight builds up to toxic levels. Here the enzyme is needed to remove a toxic metabolite, not to make or inactivate the parent drug. The Katzung chapter differs and calls irinotecan a prodrug.",
+   "slide": "pgxex:30",
+   "reading": "katzung-5"
+  },
+  {
+   "text": "Compare U G T one A one star twenty eight with C Y P two C nineteen star seventeen. Both are promoter region variants. She said, this variant in the promoter region decreases the expression of this enzyme. Star seventeen does the opposite and increases expression. So a promoter variant can push expression either way, and each one's direction has to be known.",
+   "slide": "pgxex:30",
+   "reading": null
+  }
+ ]
+}

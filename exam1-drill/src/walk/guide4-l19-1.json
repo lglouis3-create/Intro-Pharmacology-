@@ -1,0 +1,21 @@
+{
+ "id": "guide4-l19-1",
+ "title": "When a metabolizing enzyme variant matters",
+ "segs": [
+  {
+   "text": "Section eight. When a metabolizing enzyme variant matters. She said, Variations in our metabolizing enzymes are the biggest reason why we would see variation in drug response. A variant becomes clinically important in three cases. The enzyme is the major route that eliminates the drug or ends its action. The drug is a prodrug that needs activation. Or an altered pathway, or the parent drug itself, causes toxicity.",
+   "slide": "pgxex:12",
+   "reading": null
+  },
+  {
+   "text": "The direction of harm depends on whether the drug is already active or is a prodrug. A poor metabolizer cannot run the enzyme step. So an active drug is not removed and climbs toward toxicity, while a prodrug is never turned on and fails. An ultrarapid metabolizer runs the step too fast. So an active drug is gone before it works, and a prodrug is over activated, which can overdose the patient.",
+   "slide": "pgxex:14",
+   "reading": null
+  },
+  {
+   "text": "Clopidogrel shows that the busiest enzyme is not always the one that decides the outcome. It is a prodrug. About eighty five percent of a dose is inactivated by esterases, and only about fifteen percent is activated in two C Y P steps. Variants in C Y P two C nineteen most change how much active drug forms.",
+   "slide": null,
+   "reading": null
+  }
+ ]
+}

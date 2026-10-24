@@ -4,8 +4,8 @@ import json, os, glob, re
 HERE = os.path.dirname(os.path.abspath(__file__))
 decks = json.load(open(os.path.join(HERE, 'walk', 'decks.json')))
 walk = {}
-G3 = open(os.path.join(HERE, 'guide3.js')).read()
-for f in sorted(glob.glob(os.path.join(HERE, 'walk', 'guide3-*.json'))):
+G3 = ''.join(open(os.path.join(HERE, f)).read() for f in ('guide3.js', 'guide4.js') if os.path.exists(os.path.join(HERE, f)))
+for f in sorted(glob.glob(os.path.join(HERE, 'walk', 'guide[34]-*.json'))):
     w = json.load(open(f)); sid = w['id']
     assert os.path.basename(f) == sid + '.json', f
     segs = []

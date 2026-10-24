@@ -1,0 +1,31 @@
+{
+ "id": "guide4-l18-6",
+ "title": "Genotype-guided dosing for patients A to D",
+ "segs": [
+  {
+   "text": "Section six. Genotype-guided dosing. When a drug is cleared by a metabolizing enzyme, the patient's genotype for that enzyme predicts how fast the drug is removed, and that rate is a phenotype. Give everyone the same dose and the exposures differ widely. Adjust each dose to the genotype and everyone gets the same exposure. She said, the goal of pharmacogenomics is to ensure efficacy and prevent toxicity.",
+   "slide": "pgxex:6",
+   "reading": null
+  },
+  {
+   "text": "The figure follows four patients. Gray bars are the same dose for everyone, one hundred percent of average. White bars are genotype-based doses. Patient A has both alleles non-functional; she described them as having no two D six. A standard dose cannot be cleared, so the concentration goes too high. A lower than average dose prevents toxicity. Patient D has extra copies of the gene. A standard dose is metabolized away, so the A U C, the area under the curve, is very low and never therapeutic. A much higher dose ensures efficacy.",
+   "slide": "pgxex:6",
+   "reading": null
+  },
+  {
+   "text": "Patient B has one non-functional allele and gets a dose slightly below average. Patient C has two functional alleles and gets a dose above average. All four end with the same therapeutic A U C, because each dose has been matched to that genotype's metabolizing capability. Extra copies do not mean toxicity; they clear the drug faster, so the risk is no effect. Patient A is toxicity prevented with a low dose, and patient D is efficacy ensured with a high dose.",
+   "slide": "pgxex:6",
+   "reading": null
+  },
+  {
+   "text": "An earlier figure shows the same principle with data for warfarin. S-warfarin unbound clearance falls step by step across C Y P two C nine genotypes, from star one, star one at the top, through the genotypes carrying star two or star three, down to star three, star three, the lowest.",
+   "slide": "pgxex:5",
+   "reading": null
+  },
+  {
+   "text": "In the Pharm G K B information flow, genes may act on pharmacokinetics, meaning absorption, distribution, metabolism and excretion, or on pharmacodynamics, meaning the target, the mechanism and the response. Whichever side a gene acts on, the clinical outcome is framed the same way, as efficacy or toxicity.",
+   "slide": "pgxex:7",
+   "reading": null
+  }
+ ]
+}

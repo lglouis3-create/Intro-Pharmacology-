@@ -1,0 +1,26 @@
+{
+ "id": "guide4-l18-7",
+ "title": "Gene structure and frequencies across populations",
+ "segs": [
+  {
+   "text": "Section seven. Gene structure and frequencies across populations. Two figures from Goodman and Gilman's close the day. The first reviews the parts of a gene where variants can occur. The promoter is where the machinery for expressing the gene starts. Exons are the D N A that ends up as amino acid sequence. Introns were once thought meaningless, but variations are now known to occur there. A stop codon sits at the end. Variants are sorted into those changing protein abundance, those changing the protein product, and markers for nearby or distant functional variation.",
+   "slide": "pgxex:8",
+   "reading": null
+  },
+  {
+   "text": "The second figure shows that how often each allele or phenotype occurs differs widely between populations. The point is that frequencies vary. For C Y P three A five, star one is the wild type, and star three, star six and star seven are non-functional. In sub-Saharan African populations, star one is common and all three variants are present. In European populations there are relatively few wild type alleles, and most are star three.",
+   "slide": "pgxex:9",
+   "reading": null
+  },
+  {
+   "text": "For V K O R C one minus sixteen thirty nine, G to A, the G allele means a higher dose is required and the A allele a lower dose, and the two are compared across African, European and North American, and East Asian populations. For T P M T, most people are normal metabolizers, with only a small bar of poor metabolizers. N U D T fifteen comes later; its sub-Saharan African data are currently unknown.",
+   "slide": "pgxex:9",
+   "reading": null
+  },
+  {
+   "text": "Frequency together with the severity of the toxicity decides how much to worry about a variant, including whether to genotype everyone from a population. Azathioprine and six mercaptopurine are metabolized by T P M T. Only a few people may be T P M T poor metabolizers, but a poor metabolizer given the normal dose could die. She said, Those people need less than ten percent of the normal dose. So a rare phenotype can still justify genotyping, because the toxicity is severe.",
+   "slide": "pgxex:9",
+   "reading": null
+  }
+ ]
+}

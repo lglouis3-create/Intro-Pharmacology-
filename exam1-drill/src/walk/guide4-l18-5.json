@@ -1,0 +1,26 @@
+{
+ "id": "guide4-l18-5",
+ "title": "InDels, tandem repeats, gene deletion and copy number",
+ "segs": [
+  {
+   "text": "Section five. Insertions, deletions, repeats and copy number. Not every variant is a single base change. In a small insertion or deletion, called an indel, one, two, three or a few more nucleotides are inserted or deleted in a coding region, as when A T G C becomes A T G G C. Codons are read three bases at a time, so adding or removing a number of bases that is not a multiple of three shifts every later codon. She said, you end up causing a frame shift. The amino acids from that point on are wrong, a premature stop codon may appear, and activity can change. Removing or adding exactly three nucleotides removes or adds one amino acid.",
+   "slide": "pgx:37",
+   "reading": null
+  },
+  {
+   "text": "Tandem repeats, or variable number tandem repeats, are a short sequence repeated again and again in a row, and the number of repeats differs between people. Microsatellites have a repeat unit under five base pairs and are also called short tandem repeats or simple sequence repeats. Minisatellites have units over five base pairs. Between genes, repeats often change no function, because there is no protein sequence to change. Inside a coding sequence, a repeat adds bases the way an indel does and can change the protein. Repeats are used in forensic and paternity testing.",
+   "slide": "pgx:38",
+   "reading": null
+  },
+  {
+   "text": "C Y P two D six star five is a gene deletion. The whole C Y P two D six gene, thousands of base pairs, is missing from one allele. Star one with star five still has some activity, because the other chromosome has a normal copy that makes enzyme. Star five with star five has no C Y P two D six activity, so drugs cleared by it build up. That is the poor metabolizer phenotype.",
+   "slide": "pgx:39",
+   "reading": null
+  },
+  {
+   "text": "C Y P two D six star two times N is the opposite. It is a copy number variant, extra copies of the whole gene, with N listed as two, three, four, five or thirteen. Two copies is written star two times two. The person makes much more enzyme, so drugs cleared by C Y P two D six are metabolized very quickly. She said, we just started calling those people ultra rapid metabolizers. Both variants affect the same drugs, selective serotonin reuptake inhibitors, tamoxifen, codeine and beta blockers. Star five is the deletion and the poor metabolizer. Star two times N is the extra copies and the ultrarapid metabolizer.",
+   "slide": "pgx:40",
+   "reading": null
+  }
+ ]
+}
