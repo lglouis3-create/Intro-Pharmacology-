@@ -53,7 +53,7 @@ QUESTIONS.push(
  concept:"numeric-alphabetic-drawback", tags:["smith"], source:"both",
  stem:"What is the main weakness of allele numeric/alphabetic names such as VKORC1 1173 C?",
  options:[
-  {t:"They name the gene with an unofficial gene symbol", correct:false, why:"VKORC1 is the gene symbol used in every system on these slides."},
+  {t:"They name the gene with an unofficial gene symbol", correct:false, why:"The symbol (VKORC1) is the standard one; her complaint is about which nucleotide is the wild type, not the gene name."},
   {t:"Which allele is wild type is not always clear", correct:true, why:"Writers are supposed to capitalize the wild type nucleotide and leave the variant lowercase, and she is not certain they do."},
   {t:"They give no location on the gene", correct:false, why:"The number (1173) is the location."},
   {t:"Each name can refer to more than one SNP", correct:false, why:"Uniqueness is not her complaint here; the rs system's strength is that no other SNP shares a number."}],
@@ -194,7 +194,7 @@ QUESTIONS.push(
  options:[
   {t:"The whole CYP2C19 gene is deleted from the allele", correct:false, why:"Whole gene deletion is CYP2D6*5."},
   {t:"It codes for a short, truncated protein", correct:true, why:"The *2 allele results in a really short protein that is too short to be functional; *3 also gives a truncated protein."},
-  {t:"It is a synonymous change", correct:false, why:"A synonymous change leaves the amino acid sequence the same."},
+  {t:"It is a tandem repeat in the gene", correct:false, why:"Tandem repeats are a different variant type; *2 is a single G to A change at 681."},
   {t:"It adds extra copies of the gene", correct:false, why:"Extra copies raise activity (CYP2D6*2xN)."}],
  teach:"CYP2C19*2 results in a really short, non-functional protein, so a person with that allele makes no active enzyme from it. By chance, CYP2C19*3 also gives a truncated protein that is too short to be functional. CYP2C9*2 and *3, by contrast, change the enzyme so its activity decreases but is not obliterated.",
  quote:"The star 2 Allele. Actually results in a really short nonfunctional protein.",
@@ -220,7 +220,7 @@ QUESTIONS.push(
   {t:"Unknown; these variants have not been tested", correct:false, why:"These are among the best characterized variants."},
   {t:"Strong only for CYP2C9", correct:false, why:"She described both genes as well characterized."}],
  teach:"The variant (*2) is the genotype and the enzyme's activity is the phenotype: a genotype-phenotype relationship. For the CYP2C19 and CYP2C9 variants on this slide, labs have made the variant genes, expressed the enzymes and measured their activity against the wild type, so the strength of the association is tight.",
- quote:"The star 2 is the genotype. The activity of the enzyme is the phenotype.",
+ quote:"the strength of the association between the genotype and phenotype is tight, we've got great data on these.",
  cite:"Intro to PGx Lecture Students Fall 2026.pdf slide ‘More Allele “Star” Nomenclature’ (p. 26); (T) 10/21 transcript"},
 
 {id:"L18-017", lecture:"L18", prof:"Smith", tier:"new", topic:"L18", sub:"star", skill:"term",
@@ -385,7 +385,7 @@ QUESTIONS.push(
   {t:"Azathioprine", correct:false, why:"Azathioprine is affected by TPMT variants."},
   {t:"Omeprazole", correct:false, why:"Omeprazole is affected by CYP2C19 variants."},
   {t:"Warfarin", correct:true, why:"VKORC1 is the gene she will discuss with warfarin dosing."}],
- teach:"She uses real genes as nomenclature examples because they come back as clinical examples. The VKORC1 variant (1173) and haplotypes A and B are important for warfarin dosing. The frequency figure on 10/21 also showed VKORC1 -1639G>A alleles labeled by warfarin dose need.",
+ teach:"She uses real genes as nomenclature examples because they come back as clinical examples. The VKORC1 variant (1173) and haplotypes A and B are important for warfarin dosing. The frequency figure on 10/21 also showed VKORC1 -1639G>A alleles labeled by dose need (G, higher dose required; A, lower dose required).",
  quote:"this VQORC1 genetic variant is important, and we'll talk about it in the context of warfarin dosing",
  note:"\"VQORC1\" is the caption's rendering of VKORC1.",
  cite:"Intro to PGx Lecture Students Fall 2026.pdf slides ‘Allele Numeric/Alphabetic Nomenclature’ (p. 23), ‘Haplotype Nomenclature’ (p. 29); (T) 10/21 transcript"},
@@ -417,7 +417,7 @@ QUESTIONS.push(
 
 {id:"L18-032", lecture:"L18", prof:"Smith", tier:"new", topic:"L18", sub:"snp", skill:"apply", core:true, coreWhy:"in-class question with her answer",
  concept:"abcb1-3435-synonymous", tags:["smith","inclass"], source:"both",
- stem:"In ABCB1 3435C>T the codon ATC becomes ATT, and both code for isoleucine. Has the amino acid sequence of P-glycoprotein changed?",
+ stem:"In ABCB1 3435C>T the wild type codon ATC becomes ATT. Has the amino acid sequence of P-glycoprotein changed?",
  options:[
   {t:"Yes; it is a non-synonymous SNP", correct:false, why:"Non-synonymous requires a different amino acid."},
   {t:"No; it is a synonymous SNP", correct:true, why:"ATC and ATT both bring in isoleucine, so the protein sequence is unchanged."},
@@ -499,7 +499,7 @@ QUESTIONS.push(
   {t:"No change; only a dose note is needed", correct:false, why:"The activity change is significant."},
   {t:"Greatly reduced activity; an untested patient could die", correct:true, why:"These oncology drugs are metabolized by TPMT; without the genotype, a normal dose can kill a patient with this variant."},
   {t:"Slightly reduced activity; only mild side effects follow at normal doses", correct:false, why:"She described a lethal risk, not a mild one."}],
- teach:"TPMT*3A significantly reduces thiopurine methyltransferase activity. Oncology drugs metabolized by TPMT, azathioprine and 6-mercaptopurine, build up in a patient with this variant. She warned that a patient who is not genotyped could be killed.",
+ teach:"TPMT*3A significantly reduces thiopurine methyltransferase activity. Azathioprine and 6-mercaptopurine, which she grouped with oncology medications, are metabolized by TPMT. She warned that a patient with this variant who is not genotyped could be killed.",
  quote:"this is one of those genetic variants that if you don't know the genotype of your patient, you could kill your patient if you didn't genotype them for this snip.",
  cite:"Intro to PGx Lecture Students Fall 2026.pdf slide ‘Non-Synonymous SNP: TPMT’ (p. 35); (T) 10/21 transcript"},
 
@@ -589,7 +589,7 @@ QUESTIONS.push(
  quote:"So these indels can definitely change the activity.",
  cite:"Intro to PGx Lecture Students Fall 2026.pdf slide ‘Small Insertion/Deletion (InDel)’ (p. 37); (T) 10/21 transcript"},
 
-{id:"L18-046", lecture:"L18", prof:"Smith", tier:"new", topic:"L18", sub:"indel", skill:"tell",
+{id:"L18-046", lecture:"L18", prof:"Smith", tier:"new", topic:"L18", sub:"indel", skill:"tell", lowYield:true,
  concept:"indel-three-vs-one", tags:["smith"], source:"slide",
  stem:"How does a three-nucleotide insertion/deletion (InDel) differ from a one-nucleotide InDel in a coding region?",
  options:[
@@ -598,7 +598,7 @@ QUESTIONS.push(
   {t:"Both shift the frame equally", correct:false, why:"Three nucleotides is a whole codon, so the frame is kept."},
   {t:"Neither changes the protein", correct:false, why:"Both change it: one by an amino acid, one by a frameshift."}],
  teach:"A frameshift happens when the number of nucleotides added or lost is not a multiple of 3, which disrupts the reading frame. Deleting or inserting exactly three nucleotides removes or adds one amino acid, which can still affect enzyme activity. Her spoken example inserted one G (ATGC to ATGGC).",
- note:"Slide wording (pp. 31 and 37); she described InDels as frameshifts without separating the three-nucleotide case.",
+ note:"Slide wording (pp. 31 and 37), not spoken. She described InDels of 'usually 2 or 3, maybe 5' nucleotides as causing a frame shift without separating the three-nucleotide case, so treat this as a slide detail.",
  cite:"Intro to PGx Lecture Students Fall 2026.pdf slides ‘List of genetic variant types’ (p. 31), ‘Small Insertion/Deletion (InDel)’ (p. 37); (T) 10/21 transcript"},
 
 {id:"L18-047", lecture:"L18", prof:"Smith", tier:"new", topic:"L18", sub:"indel", skill:"tell",
@@ -636,7 +636,7 @@ QUESTIONS.push(
   {t:"A synonymous SNP in CYP2D6", correct:false, why:"A SNP changes one base; *5 removes the gene."}],
  teach:"In CYP2D6*5 the entire gene for cytochrome P450 2D6 is missing from that allele: not a single nucleotide change but thousands of base pairs deleted. The functional effect is loss of function (null activity) from that allele. Her Quiz 4 asked for the name of this variant.",
  quote:"Total gene is gone",
- cite:"Intro to PGx Lecture Students Fall 2026.pdf slide ‘Gene Deletion CYP2D6’ (p. 39); (T) 10/21 transcript"},
+ cite:"Intro to PGx Lecture Students Fall 2026.pdf slide ‘Gene Deletion CYP2D6’ (p. 39); (T) 10/21 transcript; Smith_Quiz_4_-_Intro_to_Pharmacogenomics.pdf Q1"},
 
 {id:"L18-050", lecture:"L18", prof:"Smith", tier:"new", topic:"L18", sub:"cnv", skill:"apply",
  concept:"cyp2d6-5-zygosity", tags:["smith"], source:"transcript",
@@ -702,7 +702,7 @@ QUESTIONS.push(
  note:"This slide fell in the part of 10/21 missing from the lecture capture (she offered to record and post it); on 10/22 she referred back to it (\"we looked at that already in a graph and we looked at warfarin, uh, clearance\").",
  cite:"PGx-Examples-Students-Fall-2026.pdf slide ‘Genotype/Phenotype Relationship’ (p. 5); not captured in the 10/21 transcript"},
 
-{id:"L18-055", lecture:"L18", prof:"Smith", tier:"new", topic:"L18", sub:"dosing", skill:"figure", core:true, coreWhy:"her favorite figure; in-class question",
+{id:"L18-055", lecture:"L18", prof:"Smith", tier:"new", topic:"L18", sub:"dosing", skill:"figure", core:true, coreWhy:"a figure she said she really likes; patient A's dose",
  concept:"patient-a-low-dose", tags:["smith"], source:"both",
  stem:"Patient A has two non-functional alleles of the enzyme that clears a drug. Given the standard dose, what happens, and how is the dose adjusted?",
  options:[
@@ -731,7 +731,7 @@ QUESTIONS.push(
  concept:"same-auc-why", tags:["smith","inclass"], source:"both",
  stem:"With genotype-based dosing, all four patients reach the same therapeutic area under the curve (AUC). Why are their doses different?",
  options:[
-  {t:"Their genotypes differ in metabolizing capability", correct:true, why:"Each dose is matched to how fast that patient's enzymes clear the drug."},
+  {t:"They differ in how fast their enzymes clear the drug", correct:true, why:"Each dose is matched to how fast that patient's enzymes clear the drug."},
   {t:"They differ in body weight", correct:false, why:"The figure varies only the allele status of the metabolism gene."},
   {t:"Each patient has a different drug target for this drug", correct:false, why:"The gene in the figure is a metabolizing enzyme (PK), not a target."},
   {t:"Their kidneys differ", correct:false, why:"Renal function is not the variable shown."}],

@@ -8,7 +8,7 @@
 // monogenic/polygenic) belong to the 10/21 writer; only the CYP2D6-specific trimodal-curve point is taken here.
 // Transporters, drug targets, integrated variants and the immune system were deferred to Monday 10/26 (next lecture).
 TOPICS.push({id:"L19", name:"Day 19: Pharmacogenomics examples, drug metabolizing enzymes", prof:"Smith", lecture:"L19",
-  cite:"Day 19 (10/22) — PGx-Examples-Students-Fall-2026.pdf (taught slides 12-35, drug metabolizing enzymes); transcript 10/22",
+  cite:"Day 19 (10/22) — PGx-Examples-Students-Fall-2026.pdf (taught slides 12-33, drug metabolizing enzymes); transcript 10/22",
   subs:[
     {id:"dme-overview", name:"When enzyme variants matter; the biggest factor; the clopidogrel pathway", cite:"PGx-Examples-Students-Fall-2026.pdf slides 'Variations in Drug Metabolizing Enzymes' (pp. 12-17); (T) 10/22"},
     {id:"bche", name:"Butyrylcholinesterase and succinylcholine", cite:"PGx-Examples-Students-Fall-2026.pdf slide 'Butyrylcholinesterase (BChE)' (p. 18); (T) 10/22"},
@@ -18,7 +18,7 @@ TOPICS.push({id:"L19", name:"Day 19: Pharmacogenomics examples, drug metabolizin
     {id:"cyp2c19", name:"CYP2C19: clopidogrel, the *17 gain of function, and PPIs (Furuta)", cite:"PGx-Examples-Students-Fall-2026.pdf slides 'CYP2C19 Polymorphisms' (pp. 25-28); (T) 10/22"},
     {id:"dpd", name:"Dihydropyrimidine dehydrogenase (DPD) and 5-fluorouracil", cite:"PGx-Examples-Students-Fall-2026.pdf slide 'Dihydropyrimidine Dehydrogenase (DPD)' (p. 29); (T) 10/22"},
     {id:"ugt1a1", name:"UGT1A1*28 and irinotecan", cite:"PGx-Examples-Students-Fall-2026.pdf slide 'UDP-Glucuronosyl-transferase (UGT1A1)' (p. 30); (T) 10/22"},
-    {id:"tpmt", name:"Thiopurine methyltransferase (TPMT) and the thiopurines", cite:"PGx-Examples-Students-Fall-2026.pdf slides 'Thiopurine Methyltransferase (TPMT)' (pp. 31-35); (T) 10/22"}
+    {id:"tpmt", name:"Thiopurine methyltransferase (TPMT) and the thiopurines", cite:"PGx-Examples-Students-Fall-2026.pdf slides 'Thiopurine Methyltransferase (TPMT)' (pp. 31-33); (T) 10/22"}
   ]});
 QUESTIONS.push(
 /* ---------------- Drug metabolizing enzymes: overview ---------------- */
@@ -40,7 +40,7 @@ QUESTIONS.push(
   {t:"Inherited variation in drug-metabolizing enzymes", correct:true, why:"Variation in metabolizing enzymes is the largest contributor to why people respond differently to the same drug."},
   {t:"Variation in drug transporters that move drugs across membranes", correct:false, why:"Transporters affect distribution and absorption, but they are not the biggest factor she named."},
   {t:"Variation in drug target receptors", correct:false, why:"Target variants matter for some drugs, but metabolizing enzymes are the largest source of variability."},
-  {t:"Variation in immune system genes", correct:false, why:"Immune (HLA) variants drive hypersensitivity reactions; they are the newest and not the biggest factor."}],
+  {t:"Variation in immune system genes", correct:false, why:"Immune-system variants matter for some drugs, but metabolizing enzymes are the largest source of variability."}],
  teach:"Of all the areas pharmacogenomics touches, drug metabolizing enzymes have been studied the most and account for the most variation in drug response. Clinically significant variants have been found in nearly all major phase 1 and phase 2 enzymes.",
  quote:"Variations in our metabolizing enzymes are the biggest reason why we would see variation in drug response",
  cite:"PGx-Examples-Students-Fall-2026.pdf slide 'Variations in Drug Metabolizing Enzymes 2' (p. 13); transcript 10/22"},
@@ -50,7 +50,7 @@ QUESTIONS.push(
  stem:"Variants in which two enzymes were the first metabolizing-enzyme polymorphisms studied?",
  options:[
   {t:"Butyrylcholinesterase (BChE) and N-acetyltransferase 2 (NAT2)", correct:true, why:"These were the first two characterized; their gene structures were worked out early, so variants could be linked to variable drug response."},
-  {t:"CYP2D6 and thiopurine methyltransferase (TPMT), the second-generation examples", correct:false, why:"These are the iconic second-generation examples, studied after the first two."},
+  {t:"Cytochrome P450 2D6 (CYP2D6) and thiopurine methyltransferase (TPMT)", correct:false, why:"These are the iconic second-generation examples, studied after the first two."},
   {t:"CYP2C9 and CYP2C19", correct:false, why:"The 2C enzymes came later in the study of cytochrome P450 variants."},
   {t:"Dihydropyrimidine dehydrogenase (DPD) and UGT1A1", correct:false, why:"DPD and UGT1A1 are recent, oncology-focused examples, not the historical first."}],
  teach:"BChE and NAT2 do not metabolize a large number of drugs, but patients responded variably to a few drugs handled by them, and their gene structures were figured out early. They were therefore the first metabolizing enzymes in which polymorphisms were identified; CYP2D6 and TPMT were the next big effort.",
@@ -97,9 +97,9 @@ QUESTIONS.push(
  options:[
   {t:"CYP2C19", correct:true, why:"Variants in CYP2C19 matter most for creating the active metabolite, even though CYP1A2, 2B6, 3A and 2C9 also act on the molecule."},
   {t:"CYP1A2, which acts only in the first activation step", correct:false, why:"CYP1A2 acts in the first step, but its variants are less important than CYP2C19 for the active metabolite."},
-  {t:"CYP2B6", correct:false, why:"CYP2B6 acts in the first step; its variants are not the key ones for clopidogrel activation."},
+  {t:"CYP2B6", correct:false, why:"CYP2B6 acts in both steps, but its variants are not the key ones for clopidogrel activation."},
   {t:"CYP3A", correct:false, why:"CYP3A acts in the second step, but CYP2C19 variants most affect the amount of active metabolite."}],
- teach:"Clopidogrel is activated in two steps involving several CYPs (1A2, 2B6 in step one; 3A, 2C9, 2C19, 2B6 in step two). Studies show that the enzyme that does the most work is not always the one that drives the clinical outcome: for clopidogrel, variants in CYP2C19 are the most important for how much active metabolite forms.",
+ teach:"Clopidogrel is activated in two steps involving several CYPs (1A2, 2C19 and 2B6 in step one; 3A, 2C9, 2C19 and 2B6 in step two). CYP2C19 is the only one that works in both steps. Studies show that the enzyme that does the most work is not always the one that drives the clinical outcome: for clopidogrel, variants in CYP2C19 are the most important for how much active metabolite forms.",
  cite:"PGx-Examples-Students-Fall-2026.pdf slide 'Variations in Drug Metabolizing Enzymes 4' (p. 15); transcript 10/22"},
 
 /* ---------------- Butyrylcholinesterase ---------------- */
@@ -108,9 +108,9 @@ QUESTIONS.push(
  stem:"Butyrylcholinesterase (BChE) is required to break down which drug?",
  options:[
   {t:"Succinylcholine, a short-acting muscle relaxant", correct:true, why:"BChE hydrolyzes succinylcholine, the short-acting muscle relaxant used for anesthesia."},
-  {t:"Isoniazid, used for tuberculosis and acetylated by NAT2", correct:false, why:"Isoniazid is acetylated by NAT2, not hydrolyzed by BChE."},
+  {t:"Isoniazid, used for tuberculosis", correct:false, why:"Isoniazid is acetylated by NAT2, not hydrolyzed by BChE."},
   {t:"Warfarin, an anticoagulant", correct:false, why:"Warfarin is metabolized by CYP2C9, not BChE."},
-  {t:"Codeine, an opioid", correct:false, why:"Codeine is activated to morphine by CYP2D6, not BChE."}],
+  {t:"Codeine, an opioid that is activated to morphine", correct:false, why:"Codeine is activated to morphine by CYP2D6, not BChE."}],
  teach:"Butyrylcholinesterase is a classic historical pharmacogenomics example. Its enzymatic activity is required to hydrolyze succinylcholine, a very short-acting muscle relaxant used to paralyze patients for anesthesia. Variants in BChE change how fast succinylcholine is cleared.",
  quote:"this enzyme, it will hydrolyze, um, a drug called succinylcholine. That's a very short acting muscle relaxant used in, used in the, for anesthesia",
  cite:"PGx-Examples-Students-Fall-2026.pdf slide 'Butyrylcholinesterase (BChE)' (p. 18); transcript 10/22"},
@@ -149,7 +149,7 @@ QUESTIONS.push(
   {t:"Clopidogrel, an antiplatelet drug", correct:false, why:"Clopidogrel is activated by CYP enzymes, mainly CYP2C19, not NAT2."},
   {t:"Irinotecan, a cancer drug", correct:false, why:"Irinotecan's active metabolite is cleared by UGT1A1, not NAT2."}],
  teach:"NAT2 is a genetically polymorphic phase 2 enzyme that acetylates its substrates. Patients are classified as slow or fast acetylators. The drug most associated with adverse responses from NAT2 variants is isoniazid, which treats tuberculosis.",
- quote:"one of the drugs that's associated most with an adverse response in the presence of NAT-2 variants is isoniazide, and we use that drug to treat tuberculosis",
+ quote:"This is a phase 2 enzyme, and one of the drugs that's associated most with an adverse response in the presence of NAT-2 variants is ... we use that drug to treat tuberculosis",
  note:"Transcript renders isoniazid as \"isoniazide\" and acetylator as \"settllator\"/\"acetyllator\" (garbled captions); the slide prints isoniazid and acetylator.",
  cite:"PGx-Examples-Students-Fall-2026.pdf slide 'N-acetyltransferase 2 (NAT2)' (p. 19); transcript 10/22"},
 
@@ -170,7 +170,7 @@ QUESTIONS.push(
  stem:"In which population are about 80% of people slow acetylators?",
  options:[
   {t:"Middle Eastern", correct:true, why:"About 80% of people of Middle Eastern descent are slow acetylators, the highest of the groups she gave."},
-  {t:"Japanese, where only about 10% are slow acetylators", correct:false, why:"About 10% of the Japanese population are slow acetylators, so most are fast."},
+  {t:"Japanese population", correct:false, why:"About 10% of the Japanese population are slow acetylators, so most are fast."},
   {t:"Caucasian", correct:false, why:"About 30 to 45% of Caucasians are fast acetylators; the slow fraction is not 80%."},
   {t:"East African", correct:false, why:"She did not give an 80% slow figure for East Africans; the 80% slow figure is Middle Eastern."}],
  teach:"NAT2 phenotype frequency varies by population: about 30 to 45% of Caucasians are fast acetylators, about 10% of the Japanese population are slow, and about 80% of people of Middle Eastern descent are slow. Knowing this helps decide who to monitor on isoniazid.",
@@ -201,7 +201,7 @@ QUESTIONS.push(
  note:"Transcript renders debrisoquine as \"debriszaquin\"/\"debrazaquin\"/\"derizoquin\" (garbled captions); the slide axis reads 'Debrisoquine: 4-Hydroxydebrisoquine metabolic ratio'.",
  cite:"PGx-Examples-Students-Fall-2026.pdf slide 'CYP2D6 Polymorphisms 2' (p. 21, Golan Fig. 52-1A); transcript 10/22"},
 
-{id:"L19-016", lecture:"L19", prof:"Smith", tier:"new", topic:"L19", sub:"cyp2d6", skill:"apply", type:"match",
+{id:"L19-016", lecture:"L19", prof:"Smith", tier:"new", topic:"L19", sub:"cyp2d6", skill:"apply", type:"match", dupOf:"L18-051",
  concept:"cyp2d6-genotype-phenotype", tags:["smith"], source:"both",
  stem:"Match each CYP2D6 genotype with the phenotype it produces.",
  left:["Multiple copies of the gene (CYP2D6*2xN)", "CYP2D6*5/*5 (whole-gene deletion on both alleles)", "Two copies of the wild-type gene"],
@@ -210,7 +210,7 @@ QUESTIONS.push(
   {l:"Multiple copies of the gene (CYP2D6*2xN)", r:"Ultrarapid metabolizer", why:"Extra copies make a lot of enzyme, so the drug is cleared very quickly."},
   {l:"CYP2D6*5/*5 (whole-gene deletion on both alleles)", r:"Poor metabolizer with essentially no metabolism", why:"With the gene deleted on both alleles the body expresses no CYP2D6, so there is almost no metabolism."},
   {l:"Two copies of the wild-type gene", r:"Extensive (normal) metabolizer", why:"Two normal copies give the common, middle-of-the-distribution metabolic capacity."}],
- teach:"On the debrisoquine histogram, the ultrarapid metabolizers carry multiple copies of CYP2D6 (*2xN) and clear drug fastest. The poor metabolizers at the far end, with a parent-to-metabolite ratio near 100, are *5/*5 homozygotes who express no enzyme. Most people sit in the middle as homozygous wild-type extensive metabolizers.",
+ teach:"On the debrisoquine histogram, the ultrarapid metabolizers probably carry multiple copies of CYP2D6 (*2xN) and clear drug fastest. The poor metabolizers probably carry *5; the person at the far right, with essentially no metabolism, may be a *5/*5 homozygote who expresses no enzyme. Most people sit in the middle as homozygous wild-type extensive metabolizers.",
  cite:"PGx-Examples-Students-Fall-2026.pdf slides 'CYP2D6 Polymorphisms' (pp. 20-22); transcript 10/22"},
 
 {id:"L19-017", lecture:"L19", prof:"Smith", tier:"new", topic:"L19", sub:"cyp2d6", skill:"recall",
@@ -283,13 +283,14 @@ QUESTIONS.push(
   {t:"Both have increased activity", correct:false, why:"Both are reduced-function variants, not gain-of-function."}],
  teach:"The two common CYP2C9 variants are reduced-function. Star 2 keeps about 20% of wild-type activity and star 3 only about 5%. A patient carrying these variants clears CYP2C9 substrates slowly, which matters most for narrow-therapeutic-index drugs like warfarin.",
  quote:"3 has 5% of the activity of the wild type",
+  note:"Keyed to her slide and words: *2 keeps about 20% and *3 about 5% of wild-type activity. Katzung ch. 5 states it differently, as a 30-40% (*2) and 80-90% (*3) reduction in S-warfarin metabolism. For her exam, use 20% and 5%.",
  cite:"PGx-Examples-Students-Fall-2026.pdf slide 'CYP2C9 Polymorphisms' (p. 23); transcript 10/22"},
 
 {id:"L19-023", lecture:"L19", prof:"Smith", tier:"new", topic:"L19", sub:"cyp2c9", skill:"figure",
  concept:"cyp2c9-warfarin-clearance", tags:["smith"], source:"both",
  stem:"In the warfarin clearance study, how did CYP2C9*3/*3 homozygotes compare with *1/*1 homozygotes?",
  options:[
-  {t:"About a 90% reduction in S-warfarin clearance", correct:true, why:"Star 3 homozygotes cleared S-warfarin about 90% more slowly than wild-type homozygotes, a clear gene-dose effect."},
+  {t:"About a 90% reduction in S-warfarin clearance", correct:true, why:"Star 3 homozygotes had about a 90% lower S-warfarin clearance than wild-type homozygotes, a clear gene-dose effect."},
   {t:"About a 20% reduction in S-warfarin clearance", correct:false, why:"The reduction for *3/*3 was far larger, about 90%."},
   {t:"No measurable difference in clearance", correct:false, why:"There was a large, clear difference; *3/*3 cleared warfarin much slower."},
   {t:"Increased S-warfarin clearance", correct:false, why:"Clearance fell, not rose; the variant reduces enzyme activity."}],
@@ -342,6 +343,7 @@ QUESTIONS.push(
   {t:"All three are inactive", correct:false, why:"Star 17 is a gain-of-function allele, not inactive."},
   {t:"All three are fully functional", correct:false, why:"Star 2 and star 3 are inactive, so not all are functional."}],
  teach:"CYP2C19 has over 30 alleles, but four drive most phenotypes. Star 2 and star 3 carry premature stop codons, so the enzyme is inactive. Star 17 is different: it increases function. Together these give the poor, intermediate, extensive, and ultrarapid metabolizer phenotypes.",
+ note:"Keyed to her words (both *2 and *3 create a premature stop codon). The Goodman & Gilman figure on p. 26 marks *2 as a splice-site variant (which yields a truncated protein) and *3 as the W212X stop.",
  cite:"PGx-Examples-Students-Fall-2026.pdf slide 'CYP2C19 Polymorphisms' (p. 25); transcript 10/22"},
 
 {id:"L19-028", lecture:"L19", prof:"Smith", tier:"new", topic:"L19", sub:"cyp2c19", skill:"apply", core:true, coreWhy:"first gain-of-function example in the lecture",
@@ -376,9 +378,9 @@ QUESTIONS.push(
   {t:"They had more drug toxicity and worse outcomes", correct:false, why:"PPIs have a wide therapeutic index, so higher levels helped rather than harmed in this example."},
   {t:"They had no change from extensive metabolizers", correct:false, why:"There was a clear difference: poor metabolizers did better on PPIs."},
   {t:"They needed much higher PPI doses to respond", correct:false, why:"Poor metabolizers kept more drug on board, so they responded better, not worse, at standard dosing."}],
- teach:"PPIs are cleared by CYP2C19, and the drug has a wide therapeutic index. In the Furuta study of a Japanese population, poor metabolizers kept higher drug levels, raised gastric pH more, and had better cure rates. This is the unusual case where not clearing a drug is beneficial, because the high concentration is still safe for a wide-index drug.",
+ teach:"PPIs are cleared by CYP2C19, and the drug has a wide therapeutic index. In the Furuta work in Japanese patients, poor metabolizers had the best cure rates; the lansoprazole figure she showed also gives them the highest drug AUC and gastric pH. This is the unusual case where not clearing a drug is beneficial, because the high concentration is still safe for a wide-index drug.",
  quote:"they found that people had better treatment of their disease. When you had the low activity version of the enzyme increasing drug blood concentrations, you had better cure rates.",
- note:"Transcript renders Furuta as \"Furuda\"/\"Fioruda\" (garbled captions); the slide cites Furuta et al.",
+ note:"Transcript renders Furuta as \"Furuda\"/\"Fioruda\" (garbled captions); the slide cites Furuta et al. The AUC and gastric-pH results come from the 2004 lansoprazole figure on p. 27, which she presented as that paper's data. The assigned 1998 Furuta paper (omeprazole plus amoxicillin) reported cure rates of 28.6%, 60% and 100% by genotype but did not measure drug levels. The exam keys her words.",
  cite:"PGx-Examples-Students-Fall-2026.pdf slides 'CYP2C19 Polymorphisms' (p. 25), 'CYP2C19 Polymorphisms 3' (p. 27); transcript 10/22"},
 
 {id:"L19-031", lecture:"L19", prof:"Smith", tier:"new", topic:"L19", sub:"cyp2c19", skill:"figure",
@@ -396,16 +398,16 @@ QUESTIONS.push(
  concept:"cyp2c19-pm-ppi-vs-ssri", tags:["smith"], source:"both",
  stem:"Why does a CYP2C19 poor metabolizer benefit from a PPI but have trouble with an SSRI or diazepam?",
  options:[
-  {t:"PPIs have a wide therapeutic index; SSRIs and diazepam reach toxic levels", correct:true, why:"A wide index lets the extra PPI improve cure rates safely, while the narrower index of SSRIs and diazepam turns higher levels into adverse effects."},
-  {t:"PPIs are prodrugs and SSRIs are not", correct:false, why:"PPIs are not prodrugs; the difference is the therapeutic index, not activation."},
+  {t:"PPIs have a very wide index; SSRIs and diazepam bring adverse effects", correct:true, why:"A very wide index lets the extra PPI improve cure rates safely, while for SSRIs and diazepam the higher levels from slow clearance bring more adverse drug responses (and more sedation with diazepam)."},
+  {t:"PPIs are prodrugs and SSRIs are not", correct:false, why:"Whether a drug needs activation is not the point here; the difference she drew is the therapeutic index, which is very wide for PPIs."},
   {t:"Poor metabolizers clear PPIs faster than they clear SSRIs and diazepam", correct:false, why:"Poor metabolizers clear all CYP2C19 substrates slowly; the drugs differ in how safe high levels are."},
   {t:"SSRIs are not metabolized by CYP2C19", correct:false, why:"SSRIs like fluoxetine and sertraline are CYP2C19 substrates; the difference is the therapeutic index."}],
- teach:"For most drugs, a low-activity enzyme raises concentrations into a toxic range, which is why poor metabolizers get more adverse drug responses with SSRIs and more sedation with diazepam. PPIs are the exception: their therapeutic index is very wide, so the higher concentration is still safe and actually improves cure rates.",
+ teach:"For most drugs, a low-activity enzyme raises concentrations into a toxic range, which is why poor metabolizers get more adverse drug responses with SSRIs and with diazepam. PPIs are the exception: their therapeutic index is very wide, so the higher concentration is still safe and actually improves cure rates.",
  quote:"it's a good thing to have the 2 or 3 version of 2C19, because you keep the drug in the body, the therapeutic index of your PPIs is very wide",
  cite:"PGx-Examples-Students-Fall-2026.pdf slide 'CYP2C19 Polymorphisms' (p. 25); transcript 10/22"},
 
 {id:"L19-033", lecture:"L19", prof:"Smith", tier:"new", topic:"L19", sub:"cyp2c19", skill:"recall",
- concept:"cyp2c19-phenotypes", tags:["smith"], source:"slide",
+ concept:"cyp2c19-phenotypes", tags:["smith"], source:"both",
  stem:"Which set of phenotypes is used for CYP2C19?",
  options:[
   {t:"Poor, intermediate, extensive, and ultrarapid", correct:true, why:"CYP2C19 drug response shows four peaks, so four phenotype groups are named."},
@@ -476,6 +478,7 @@ QUESTIONS.push(
   {t:"The patient needs a higher dose to respond", correct:false, why:"These patients are at risk of toxicity, so dose reduction, not escalation, is the concern."}],
  teach:"Irinotecan is not a prodrug; it is already active and is further metabolized to the active metabolite SN-38. UGT1A1 clears SN-38. A patient with UGT1A1*28 does not make enough enzyme to clear it, so SN-38 accumulates and causes toxicity such as bone marrow suppression. The new twist is that the enzyme is needed to clear a toxic metabolite of an already-active drug.",
  quote:"what clears SN 38 from the body is UGT 1A1.",
+  note:"Keyed to her words: irinotecan is not a prodrug; it is active and is further metabolized to the active SN-38. Katzung ch. 5 calls irinotecan a prodrug hydrolyzed to SN-38. For her exam, answer that it is not a prodrug.",
  cite:"PGx-Examples-Students-Fall-2026.pdf slide 'UDP-Glucuronosyl-transferase (UGT1A1)' (p. 30); transcript 10/22"},
 
 {id:"L19-039", lecture:"L19", prof:"Smith", tier:"new", topic:"L19", sub:"ugt1a1", skill:"tell",
@@ -495,9 +498,9 @@ QUESTIONS.push(
  stem:"Thiopurine methyltransferase (TPMT) is important in the metabolism of which drugs?",
  options:[
   {t:"Azathioprine and mercaptopurine", correct:true, why:"TPMT metabolizes these thiopurines, used as an immunosuppressant and an anticancer drug."},
-  {t:"Warfarin and phenytoin", correct:false, why:"Warfarin and phenytoin are CYP2C9 substrates, not thiopurines."},
-  {t:"Omeprazole and diazepam, which are CYP2C19 substrates", correct:false, why:"These are CYP2C19 substrates, not TPMT substrates."},
-  {t:"Codeine and metoprolol", correct:false, why:"Those are CYP2D6 examples, not TPMT."}],
+  {t:"Warfarin, phenytoin and glipizide", correct:false, why:"Warfarin, phenytoin and glipizide are CYP2C9 substrates, not thiopurines."},
+  {t:"Omeprazole and diazepam", correct:false, why:"These are CYP2C19 substrates, not TPMT substrates."},
+  {t:"Codeine and debrisoquine", correct:false, why:"Those are CYP2D6 examples, not TPMT."}],
  teach:"TPMT is a polymorphic enzyme important for the thiopurines azathioprine and mercaptopurine. Azathioprine is used as an immunosuppressant and is a prodrug that is converted to 6-mercaptopurine; mercaptopurine is used for cancer. Both are affected by TPMT variants.",
  quote:"we've got azathioprine. And we have mercaptopurine.",
  cite:"PGx-Examples-Students-Fall-2026.pdf slides 'Thiopurine Methyltransferase (TPMT)' (pp. 31-32); transcript 10/22"},
@@ -523,7 +526,7 @@ QUESTIONS.push(
   {t:"Red blood cell production speeds up", correct:false, why:"The active metabolite suppresses blood cell division; it does not speed production."},
   {t:"The drug is cleared too fast to work", correct:false, why:"Low TPMT activity leaves more active metabolite on board, not less."}],
  teach:"TPMT normally diverts some 6-mercaptopurine to an inactive methylated product. When TPMT activity is low, more drug goes down the pathway that makes 6-thioguanine nucleotides, the active metabolite. That stops cancer cells from dividing but also suppresses blood cells, so the dose of azathioprine or mercaptopurine must be reduced.",
- cite:"PGx-Examples-Students-Fall-2026.pdf slides 'Thiopurine Methyltransferase (TPMT)' (pp. 32, 35); transcript 10/22"},
+ cite:"PGx-Examples-Students-Fall-2026.pdf slide 'Thiopurine Methyltransferase (TPMT) 2' (p. 32); transcript 10/22"},
 
 {id:"L19-043", lecture:"L19", prof:"Smith", tier:"new", topic:"L19", sub:"tpmt", skill:"recall",
  concept:"tpmt-two-snps", tags:["smith"], source:"both",
@@ -534,7 +537,7 @@ QUESTIONS.push(
   {t:"*3A is a gain-of-function allele", correct:false, why:"*3A is an inactivating allele, not gain-of-function."},
   {t:"TPMT variants affect only drug transport across membranes, not drug metabolism at all", correct:false, why:"TPMT is a metabolizing enzyme; its variants change thiopurine metabolism."}],
  teach:"TPMT is very polymorphic, but two SNPs account for over 90% of the inactivating alleles and the variable response to thiopurines. In Caucasians the most common is TPMT*3A, made of two nonsynonymous SNPs; in East Asians it is TPMT*3C, a single-SNP variant. Phenotype is extensive, intermediate, or poor, measured as enzyme activity in red blood cells.",
- note:"Transcript renders star as \"TPMTAR\"/\"SAR\" (garbled captions); the slide prints TPMT*3A and TPMT*3C. She began TPMT on 10/22 and said the TPMT discussion finishes Monday 10/26.",
+ note:"Transcript renders star as \"TPMTAR\"/\"SAR\" (garbled captions); the slide prints TPMT*3A and TPMT*3C. She began TPMT on 10/22 and said the TPMT discussion finishes Monday 10/26. Keyed to her slide and words (two variants, *3A and *3C, over 90%). Katzung ch. 5 credits four alleles (*2, *3A, *3B, *3C) with more than 90% of variability.",
  cite:"PGx-Examples-Students-Fall-2026.pdf slide 'Thiopurine Methyltransferase (TPMT) 3' (p. 33); transcript 10/22"},
 
 /* ---------------- recap: monogenic vs polygenic curve shape (CYP2D6-specific) ---------------- */

@@ -176,3 +176,13 @@ See `## Conflicts / uncertain` in notes/L01.md, L02.md and L03.md. The ones that
 - 10/23 (walkthroughs recorded, v87): 192 clips audio/gw-<section>-<part>.mp3 (eleven_v4, voice jNB0TWZK9LKlBbU54wMW, flow
   rBTHpyjMMFGUzXbnjGQc), 101,801 credits, 1,850.92 cents, 108.2 minutes; rec2/done_*.json. GW_CLIPS lists all 192; every
   section bar reads "read by the narrator". Playback, auto-advance, pause and resume checked in Chromium.
+- 10/24 (Exam 4 begins): course.js Exam 4 (syllabus: Mon Nov 2, 8:30–10:30, 22%, Oct 21–28; count not announced),
+  activeExam 4. L18 (10/21: Intro PGx pp. 22–41, Examples pp. 1–9; Examples pp. 1–5 were not recorded, she offered to
+  post a recording) 66 q; L19 (10/22: Examples pp. 10–33; Exam 3 logistics in notes only) 44 q. Two bank-verifiers
+  (scratchpad ex4/verify_L18.json, verify_L19.json): 0 wrong keys, 42 fixes applied; L17-054..060 dupOf the L18 items.
+  guide4.js (14 sections), tell4.js, reference4.js; PAGE4 in app.js; FOCUS_EXAM = her latest exam, FOCUS4 quotes;
+  Exam 4 question routing by the guide Sources lines (SEC4). Readings: furuta-1998 (new; her figure is a 2004
+  lansoprazole study, the paper is 1998 omeprazole), katzung-5 and dipiro-e6 moved to exam 4 (dipiro-e6 may be the
+  wrong posted chapter: her deck cites DiPiro 13e e8 Clinical Pharmacogenomics). Daily tasks: "Smith daily ingest and
+  guides" (21:47 Central), "Drill daily polish and question simulation" (03:41 Central); "Smith reading reminder"
+  updated for Exam 4. Briefs for them: notes/EXAM4_LECTURE_BRIEF.md, GUIDE_SECTION_BRIEF.md, WALKTHROUGH_*.md.

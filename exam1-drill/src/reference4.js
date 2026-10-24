@@ -2,7 +2,7 @@ const REFERENCE4_HTML = `
 <p class="sub">Deck files: Intro to PGx Lecture Students Fall 2026.pdf (Intro) and PGx-Examples-Students-Fall-2026.pdf (Examples), by page. T = transcript date.</p>
 <h3 id="ref4-l18-1">Day 18: the variant examples (gene, variant, type, effect, drugs)</h3>
 <table class="reftab"><thead><tr><th>Gene (product)</th><th>Variant and names</th><th>Type of variant</th><th>Molecular change</th><th>Functional effect / phenotype</th><th>Affected drugs (slide)</th></tr></thead><tbody>
-<tr><td>VKORC1</td><td>VKORC1 1173 C / T; 1173 C&gt;T; haplotypes A and B</td><td>SNP; haplotypes of at least 10 functional SNPs</td><td>C to T at nucleotide 1173</td><td>Functional significance (haplotypes A, B)</td><td>Warfarin (to come)</td></tr>
+<tr><td>VKORC1</td><td>VKORC1 1173 C / T; 1173 C&gt;T; haplotypes A and B</td><td>SNP; haplotypes of at least 10 functional SNPs</td><td>C to T at nucleotide 1173</td><td>Functional significance (haplotypes A, B)</td><td>Warfarin (her words, to come; not on the slide)</td></tr>
 <tr><td>ABCB1 (P-glycoprotein)</td><td>ABCB1 3435 C&gt;T</td><td>Synonymous SNP</td><td>ATC to ATT, isoleucine unchanged</td><td>She: probably changes expression. Slide: no clear consensus on function or expression</td><td>Efavirenz, cyclosporine</td></tr>
 <tr><td>CYP2C19</td><td>*2 = 681 G&gt;A</td><td>(Truncated protein)</td><td>G to A at 681</td><td>No activity</td><td>—</td></tr>
 <tr><td>CYP2C19</td><td>*3 = 636 G&gt;A = rs4986893</td><td>Premature stop codon (non-synonymous)</td><td>TGG (tryptophan) to TAG (stop)</td><td>No activity</td><td>Proton pump inhibitors (omeprazole, lansoprazole)</td></tr>
@@ -38,6 +38,6 @@ const REFERENCE4_HTML = `
 <tr><td>UGT1A1</td><td>Irinotecan (active) and its metabolite SN-38</td><td>UGT1A1*28 (promoter)</td><td>Reduced expression and glucuronidation</td><td>SN-38 accumulates: toxicity, bone marrow suppression</td></tr>
 <tr><td>Thiopurine methyltransferase (TPMT)</td><td>Azathioprine (prodrug), mercaptopurine</td><td>*3A (Caucasians, 2 SNPs); *3C (East Asians, 1 SNP)</td><td>Low activity shunts more drug to 6-thioguanine nucleotides</td><td>Myelosuppression; must reduce thiopurine dose</td></tr>
 </tbody></table>
-<p class="sub">Source: PGx-Examples-Students-Fall-2026.pdf slides 'Variations in Drug Metabolizing Enzymes' through 'Thiopurine Methyltransferase (TPMT)' (pp. 12-35); transcript 10/22. Figures: CYP2D6 debrisoquine histogram (p. 21, Golan Fig. 52-1A); CYP2C9 S-warfarin clearance (p. 24); CYP2C19 Furuta lansoprazole AUC/pH/cure-rate (p. 27).</p>
+<p class="sub">Source: PGx-Examples-Students-Fall-2026.pdf slides 'Variations in Drug Metabolizing Enzymes' through 'Thiopurine Methyltransferase (TPMT)' (pp. 12-33); transcript 10/22. Figures: CYP2D6 debrisoquine histogram (p. 21, Golan Fig. 52-1A); CYP2C9 S-warfarin clearance (p. 24); CYP2C19 Furuta lansoprazole AUC/pH/cure-rate (p. 27).</p>
 
 `;

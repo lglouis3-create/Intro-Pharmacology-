@@ -56,7 +56,7 @@ const GUIDE4_HTML = `
 </ul>
 
 <p>How she asks it: name the system from an example; identify the wild type in a SNP name; match rs4986893 to CYP2C19*3; explain why star numbers can be out of order or mean different things in different genes; her poll, "which allele nomenclature method does not easily let you know which allele is the wild type?"</p>
-<p class="sub">Sources: Intro to PGx slides ‘Polymorphism Nomenclature’ (p. 22), ‘Allele Numeric/Alphabetic Nomenclature’ (p. 23), ‘SNP Nomenclature’ (p. 24), ‘Allele “Star” Nomenclature’ (p. 25), ‘Reference SNP (rs) Nomenclature’ (p. 27); Poll Everywhere and (T) 10/21. Questions L18-001 to L18-011, L18-018 to L18-020.</p>
+<p class="sub">Sources: Intro to PGx slides ‘Polymorphism Nomenclature’ (p. 22), ‘Allele Numeric/Alphabetic Nomenclature’ (p. 23), ‘SNP Nomenclature’ (p. 24), ‘Allele “Star” Nomenclature’ (p. 25), ‘More Allele “Star” Nomenclature’ (p. 26), ‘Reference SNP (rs) Nomenclature’ (p. 27), ‘Synonymous SNP: P-Glycoprotein (P-gp)’ (p. 34), ‘Non-Synonymous SNP: TPMT’ (p. 35); Poll Everywhere and (T) 10/21. Questions L18-001 to L18-011, L18-018 to L18-020.</p>
 </section>
 <section class="guide" id="guide4-l18-2">
 <h3>2. Functional significance, genotype nomenclature and the gene dose effect</h3>
@@ -416,7 +416,7 @@ const GUIDE4_HTML = `
 <h4>The facts</h4>
 <ul>
 <li>Narrow-therapeutic-index substrates: warfarin, phenytoin, glipizide, tolbutamide.</li>
-<li>CYP2C9*2 keeps about 20% of wild-type activity; CYP2C9*3 keeps about 5%.</li>
+<li>CYP2C9*2 keeps about 20% of wild-type activity; CYP2C9*3 keeps about 5% (her numbers; Katzung ch. 5 gives 30-40% and 80-90% reductions in S-warfarin metabolism instead).</li>
 <li>CYP2C9*3/*3 homozygotes show about a 90% reduction in S-warfarin clearance versus *1/*1.</li>
 <li>Usual warfarin starting dose about 5 mg/day; lowest-dose patients need about 1.5 mg/day, and at least 80% of them carry low-activity CYP2C9 variants.</li>
 <li>Variant frequency: Caucasians about 30%; African Americans about 1 to 3%; East Asians about 0% in the population studied.</li>
@@ -462,7 +462,7 @@ const GUIDE4_HTML = `
 <ul>
 <li><b>Why *17 increases activity.</b> The SNP sits in the upstream region where the machinery for expressing the gene binds, so more CYP2C19 is made and total activity rises; the increase is from more enzyme, not a changed enzyme structure.</li>
 <li><b>Why clopidogrel cuts both ways.</b> Clopidogrel is a prodrug CYP2C19 helps activate, so a *2 or *3 carrier makes too little active drug and keeps sticky platelets (therapeutic failure), while a *17 carrier makes too much and is over-anticoagulated. That is why she argues patients should be genotyped before clopidogrel.</li>
-<li><b>Why a poor metabolizer does better on a PPI.</b> Low activity keeps PPI levels higher, which raises gastric pH more and improves cure rates; this is safe because the therapeutic index of PPIs is very wide. For narrower-index CYP2C19 substrates such as SSRIs and diazepam, the same high levels cause adverse effects and sedation.</li>
+<li><b>Why a poor metabolizer does better on a PPI.</b> Low activity keeps PPI levels higher, which raises gastric pH more and improves cure rates; this is safe because the therapeutic index of PPIs is very wide. For other CYP2C19 substrates such as SSRIs and diazepam, the same high levels bring more adverse drug responses (and more sedation with diazepam).</li>
 </ul>
 
 <h4>Her words</h4>
@@ -475,7 +475,7 @@ const GUIDE4_HTML = `
 <h4>Traps</h4>
 <ul>
 <li><b>Calling *17 a structural change.</b> *17 raises how much enzyme is made (expression); it does not change the enzyme's shape, and it is not extra gene copies.</li>
-<li><b>Assuming a poor metabolizer is always harmed.</b> On a wide-index PPI the poor metabolizer benefits; the harm appears with narrow-index SSRIs and diazepam.</li>
+<li><b>Assuming a poor metabolizer is always harmed.</b> On a wide-index PPI the poor metabolizer benefits; the harm appears with SSRIs and diazepam.</li>
 <li><b>Reversing the clopidogrel alleles.</b> *2 and *3 under-activate (sticky platelets); *17 over-activates (over-anticoagulation).</li>
 <li><b>Reading the Furuta figure backward.</b> Poor metabolizers had the highest AUC and the highest gastric pH, not the extensive metabolizers.</li>
 </ul>
@@ -511,7 +511,7 @@ const GUIDE4_HTML = `
 
 <h4>Traps</h4>
 <ul>
-<li><b>Calling irinotecan a prodrug.</b> Irinotecan is active; the problem is failure to clear its active metabolite SN-38, not failure to activate it.</li>
+<li><b>Calling irinotecan a prodrug.</b> Irinotecan is active; the problem is failure to clear its active metabolite SN-38, not failure to activate it. (Katzung ch. 5 calls irinotecan a prodrug; for her exam, use her answer.)</li>
 <li><b>Giving *28 an increasing effect.</b> UGT1A1*28 decreases expression and glucuronidation.</li>
 <li><b>Treating DPYD as well characterized.</b> She flagged it as a coming area; the low-activity variants are still being identified.</li>
 </ul>
@@ -554,7 +554,7 @@ const GUIDE4_HTML = `
 </ul>
 
 <p>How she asks it: which drugs TPMT handles and the azathioprine-to-mercaptopurine link; what low activity does to the pathway and to the blood count; the two SNPs and which variant goes with which population.</p>
-<p class="sub">Sources: PGx-Examples-Students-Fall-2026.pdf slides 'Thiopurine Methyltransferase (TPMT)' (pp. 31-35); (T) 10/22. Questions L19-040 to L19-043.</p>
+<p class="sub">Sources: PGx-Examples-Students-Fall-2026.pdf slides 'Thiopurine Methyltransferase (TPMT)' (pp. 31-33); (T) 10/22. Questions L19-040 to L19-043.</p>
 </section>
 
 `;
