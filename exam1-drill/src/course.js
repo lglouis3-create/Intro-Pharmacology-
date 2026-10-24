@@ -42,7 +42,10 @@ const COURSE = {
     {id:'TBL3', deck:'PoisoningTreatmentTable2026KEY.pdf', label:'Her poisoning treatment table key (Dr. Smith)', prof:'Smith', exam:3, module:3},
     {id:'GRG3', deck:'Readingguideforoutofhospitalguidelines2026KEY.docx', decks:['Readingguideforoutofhospitalguidelines2026KEY.docx', 'beta-blocker+guideline+AAPCC+2005.pdf', 'Ca+channel+blocker+guideline+AAPCC+2005.pdf'], label:'Her out-of-hospital guideline reading guide key (Dr. Smith)', prof:'Smith', exam:3, module:3},
     {id:'RMK3', deck:'KeyDiscussionGuideRodriguez-MozazandWeinberg2026.docx', decks:['KeyDiscussionGuideRodriguez-MozazandWeinberg2026.docx', 'RodriguezMozaz-EHP-2010.pdf', 'beta-blocker+guideline+AAPCC+2005.pdf', 'Ca+channel+blocker+guideline+AAPCC+2005.pdf', 'Marraffa+AJHSP+2012+Antidotes.pdf'], label:'Her Rodriguez-Mozaz and Weinberg discussion guide key (Dr. Smith)', prof:'Smith', exam:3, module:3},
-    {id:'QZ3', deck:'Smith_Quizzes_1-3_QA.pdf', decks:['Smith_Practice_Quiz_1_-_Principles_of_Toxicology.pdf', 'Smith_Quizzes_1-3_QA.pdf', 'Smith_Quiz_4_-_Intro_to_Pharmacogenomics.pdf'], label:'Quizzes (verbatim), Dr. Smith', prof:'Smith', exam:3, module:3}
+    {id:'QZ3', deck:'Smith_Quizzes_1-3_QA.pdf', decks:['Smith_Practice_Quiz_1_-_Principles_of_Toxicology.pdf', 'Smith_Quizzes_1-3_QA.pdf', 'Smith_Quiz_4_-_Intro_to_Pharmacogenomics.pdf'], label:'Quizzes (verbatim), Dr. Smith', prof:'Smith', exam:3, module:3},
+    // Exam 4 (syllabus: Exam IV, Mon Nov 2, covers Oct 21 – Oct 28; Dr. Smith: pharmacogenomics examples, cases, adverse drug reactions, drug interactions)
+    {id:'L18', deck:'Intro to PGx Lecture Students Fall 2026.pdf', decks:['Intro to PGx Lecture Students Fall 2026.pdf', 'PGx-Examples-Students-Fall-2026.pdf'], label:'Day 18 (10/21): Pharmacogenomics nomenclature and examples (Dr. Smith)', prof:'Smith', exam:4, module:4},
+    {id:'L19', deck:'PGx-Examples-Students-Fall-2026.pdf', label:'Day 19 (10/22): Pharmacogenomics examples continued (Dr. Smith)', prof:'Smith', exam:4, module:4},
   ],
   exams: [
     {id:1, name:'Exam 1', scope:'Pharmacodynamics (9/22–9/30)', date:'Fri Oct 2, 9–11 am', when:'2026-10-02T09:00:00-05:00',  // syllabus: Exam I, Fri Oct 2, 9–11 am
@@ -90,9 +93,19 @@ const COURSE = {
             ['Weight', '21% of the course grade'],
             ['Scope vote', 'On 10/20 the class voted to keep that day’s pharmacogenomics lecture on this exam'],
             ['How she tests', 'What she says in lecture first, then the slides, then the readings; her posted keys set the depth']],
-     pools:[{key:'exam3', name:'Exam 3 material', marks:null, filter:{exam:3}}]}
+     pools:[{key:'exam3', name:'Exam 3 material', marks:null, filter:{exam:3}}]},
+    {id:4, name:'Exam 4', scope:'Pharmacogenomics examples and cases, adverse drug reactions, drug interactions, Dr. Smith (10/21–10/28)', date:'Mon Nov 2, 8:30–10:30 am', when:'2026-11-02T08:30:00-06:00',  // syllabus: Exam IV, Mon Nov 2, 8:30–10:30 am (Oct 21st – 28th), 22% of the total grade
+     questions:null,             // not announced yet
+     minutes:120,                // syllabus: 8:30–10:30 am; two hours allotted for each major examination
+     blurb:'Covers Oct 21 through Oct 28, taught by Dr. Smith: pharmacogenomics examples (10/21, 10/22), cases and resources (10/26), adverse drug reactions (10/27) and drug interactions (10/28). 22% of the course grade. The question count and format are not announced yet.',
+     facts:[['Covers', 'Oct 21 – Oct 28: pharmacogenomics examples, cases and resources, adverse drug reactions, drug interactions'],
+            ['Date', 'Mon Nov 2, 8:30–10:30 am'],
+            ['Weight', '22% of the course grade'],
+            ['Format', 'Not announced yet'],
+            ['How she tests', 'What she says in lecture first, then the slides, then the readings; her posted keys set the depth']],
+     pools:[{key:'exam4', name:'Exam 4 material', marks:null, filter:{exam:4}}]}
   ],
-  activeExam: 3,                // the exam the site opens on; the learner can switch (Topics, Exam sim, Weak spots)
+  activeExam: 4,                // the exam the site opens on; the learner can switch (Topics, Exam sim, Weak spots)
   skills: [
     {id:'recall', label:'Recall a fact or definition', short:'Recall'},
     {id:'tell',   label:'Tell two look-alikes apart',  short:'Tell apart'},

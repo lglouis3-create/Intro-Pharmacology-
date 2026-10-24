@@ -1883,7 +1883,7 @@ const READINGS = [
   "title": "Chapter 5: Pharmacogenomics",
   "source": "Katzung's Basic & Clinical Pharmacology, 16th Edition, Chapter 5 (Jennifer E. Hibma; Kathleen M. Giacomini; McGraw Hill)",
   "file": "Katzung Chapter 5: Pharmacogenomics",
-  "lecture": "Tue 10/20 through Thu 10/22 (Pharmacogenomics Day 1 onward)",
+  "lecture": "Tue 10/20 through Thu 10/22 (Pharmacogenomics Day 1 onward). Not named in the 10/21 or 10/22 lectures; those lectures taught its nomenclature, variant types and phase I and phase II enzyme examples by content.",
   "kind": "chapter",
   "about": "The chapter defines pharmacogenomics as the study of genetic factors that underlie variation in drug response and opens with a case of atazanavir-induced hyperbilirubinemia in a patient later found homozygous for UGT1A1*28. A glossary defines allele, allele frequency, SNPs, haplotype, Hardy-Weinberg equilibrium, linkage disequilibrium and the PM/IM/EM/UM metabolizer phenotypes, and the text explains star-allele diplotypes and activity scores. It then describes genetic variants in phase I enzymes (CYP2D6, CYP2C19, CYP2C9, CYP2B6, DPD), phase II enzymes (UGT1A1, TPMT), G6PD, transporters (OATP1B1, BCRP, OCT1), immune-system genes (HLA-B and IFNL3) and the polygenic CYP2C9/VKORC1 effect on warfarin, each paired with a drug example and CPIC dosing recommendations in Table 5-2. Table 5-1 gives major allele frequencies in African, Asian and European populations. Short sections on epigenomics and future directions and the case study answer close the chapter.",
   "sections": [
@@ -1903,28 +1903,189 @@ const READINGS = [
    "Case Study Answer",
    "References; Reviews"
   ],
-  "lecture_use": [],
+  "lecture_use": [
+   {
+    "point": "Star nomenclature: *1 is the wild type",
+    "chapter_location": "Phase I Enzymes opening paragraph: star (*) allele nomenclature and diplotypes",
+    "lecture_evidence": "We always call star one for whatever gene we're talking about, that's the wild type version, OK?",
+    "date": "10/21",
+    "evidence_clean": "We always call *1, for whatever gene we're talking about, the wild-type version."
+   },
+   {
+    "point": "CYP2C19*2 and *3 are nonfunctional",
+    "chapter_location": "CYP2C19: alleles *2 and *3 are nonfunctional",
+    "lecture_evidence": "The star 2 Allele. Actually results in a really short nonfunctional protein.",
+    "date": "10/21",
+    "evidence_clean": "The *2 allele actually results in a really short, nonfunctional protein."
+   },
+   {
+    "point": "Heterozygotes have intermediate activity (gene dose effect)",
+    "chapter_location": "Phase I Enzymes opening paragraph: enzyme activity is generally a co-dominant or additive trait; one normal and one nonfunctional allele gives an intermediate metabolizer",
+    "lecture_evidence": "So in combination. If you were to add it up, they look halfway in the range of 2C19 activity.",
+    "date": "10/21",
+    "evidence_clean": "So in combination, if you were to add it up, they look halfway in the range of 2C19 activity."
+   },
+   {
+    "point": "Synonymous SNP",
+    "chapter_location": "Glossary: synonymous SNPs",
+    "lecture_evidence": "Synonymous means the same. The change resulted in still the same protein, no change to the protein, OK.",
+    "date": "10/21",
+    "evidence_clean": "Synonymous means the same. The change resulted in still the same protein, no change to the protein."
+   },
+   {
+    "point": "Nonsynonymous SNP",
+    "chapter_location": "Glossary: nonsynonymous SNPs (nsSNPs)",
+    "lecture_evidence": "So that means the SNP, the one-based pair change in the DNA is affecting the amino acid sequence of the protein, OK?",
+    "date": "10/21",
+    "evidence_clean": "So that means the SNP, the one-base-pair change in the DNA, is affecting the amino acid sequence of the protein."
+   },
+   {
+    "point": "Indel",
+    "chapter_location": "Glossary: insertion/deletion (indel)",
+    "lecture_evidence": "So really, it's a terminology that could go either as an insertion or as a deletion in a spot in a gene, OK?",
+    "date": "10/21",
+    "evidence_clean": "It's a terminology that could go either as an insertion or as a deletion in a spot in a gene."
+   },
+   {
+    "point": "Whole gene deletion, CYP2D6*5",
+    "chapter_location": "Phase I Enzymes opening paragraph: whole gene deletions, eg, CYP2D6*5",
+    "lecture_evidence": "If they have that kind of an allele, the name for that genetic variation is SIP 2D6 5.",
+    "date": "10/21",
+    "evidence_clean": "If they have that kind of an allele, the name for that genetic variation is CYP2D6*5."
+   },
+   {
+    "point": "Copy number variant, CYP2D6*2xN",
+    "chapter_location": "Glossary: copy number variations; Phase I Enzymes: whole gene duplications or multiplications, eg, *2 x N",
+    "lecture_evidence": "This is actually when people have extra copies of the whole 2D6 gene.",
+    "date": "10/21",
+    "evidence_clean": "This is actually when people have extra copies of the whole 2D6 gene."
+   },
+   {
+    "point": "TPMT poor metabolizers on azathioprine or 6-mercaptopurine",
+    "chapter_location": "Table 5-2, TPMT low activity: drastic reduction of thiopurine doses, eg, tenfold",
+    "lecture_evidence": "Those people need less than 10% of the normal dose.",
+    "date": "10/21",
+    "evidence_clean": "Those people need less than 10% of the normal dose."
+   },
+   {
+    "point": "Clopidogrel: about 85% to inactive metabolites by esterases, about 15% activated in two steps",
+    "chapter_location": "CYP2C19 Example: clopidogrel (~85% hydrolyzed by hepatic esterases; ~15% converted via two sequential CYP-mediated oxidations, predominantly CYP2C19)",
+    "lecture_evidence": "85% of the clopidogrel dose we give is metabolized by esterases to inactive metabolites, OK?",
+    "date": "10/22",
+    "evidence_clean": "85% of the clopidogrel dose we give is metabolized by esterases to inactive metabolites."
+   },
+   {
+    "point": "CYP2D6: over 100 alleles, nine account for more than 95% of phenotypes",
+    "chapter_location": "CYP2D6: more than 100 alleles; >95% of phenotypes accounted for with nine alleles",
+    "lecture_evidence": "More than 95% of the phenotypes are accounted for by just 9 alleles.",
+    "date": "10/22",
+    "evidence_clean": "More than 95% of the phenotypes are accounted for by just 9 alleles."
+   },
+   {
+    "point": "CYP2D6 *3, *4, *5, *6 nonfunctional; *10, *17, *41 reduced",
+    "chapter_location": "CYP2D6: alleles *3, *4, *5 and *6 nonfunctional; *10, *17 and *41 reduced function; *1 and *2 fully functional",
+    "lecture_evidence": "So 345, and 6 are nonfunctional.",
+    "date": "10/22",
+    "evidence_clean": "So *3, *4, *5 and *6 are nonfunctional."
+   },
+   {
+    "point": "Codeine in CYP2D6 ultrarapid metabolizers",
+    "chapter_location": "CYP2D6 Example: codeine converted to morphine by CYP2D6; UMs at increased risk of respiratory depression",
+    "lecture_evidence": "Codeine is metabolized by 2D6 to morphine, and if you're a super duper ultra rapid metabolizer, all of a sudden that normal dose of codeine is quickly gonna turn into morphine in your patient.",
+    "date": "10/22",
+    "evidence_clean": "Codeine is metabolized by 2D6 to morphine, and if you're an ultrarapid metabolizer, that normal dose of codeine is quickly going to turn into morphine in your patient."
+   },
+   {
+    "point": "CYP2C9*2 and *3 and warfarin (her slide gives 20% and 5% of wild-type activity; the chapter gives 30–40% and 80–90% reductions in S-warfarin metabolism)",
+    "chapter_location": "Polygenic Effects, CYP2C9 & VKORC1",
+    "lecture_evidence": "The SA 2 has 20% of the activity of the wild type, and 3 has 5% of the activity of the wild type",
+    "date": "10/22",
+    "evidence_clean": "*2 has 20% of the activity of the wild type, and *3 has 5% of the activity of the wild type."
+   },
+   {
+    "point": "CYP2C19 substrates are acidic drugs including PPIs",
+    "chapter_location": "CYP2C19: preferentially metabolizes acidic drugs including proton-pump inhibitors",
+    "lecture_evidence": "the substrates for that enzyme are often slightly acidic medications, and those include PPIs",
+    "date": "10/22",
+    "evidence_clean": "The substrates for that enzyme are often slightly acidic medications, and those include PPIs."
+   },
+   {
+    "point": "CYP2C19: many alleles, four drive responses",
+    "chapter_location": "CYP2C19: more than 35 alleles; four alleles account for the majority of phenotypic variability",
+    "lecture_evidence": "We've identified at least 30 genetic variants of this enzyme, but really only 4 alleles are driving the drug responses that we see in patients, OK?",
+    "date": "10/22",
+    "evidence_clean": "We've identified at least 30 genetic variants of this enzyme, but really only 4 alleles are driving the drug responses that we see in patients."
+   },
+   {
+    "point": "CYP2C19*17 increases expression",
+    "chapter_location": "CYP2C19: *17 increased function; UMs have increased hepatic expression of CYP2C19 due to *1/*17 or *17/*17",
+    "lecture_evidence": "the snip that happens in this upstream area of the gene increases the expression of the gene, so you get more 2C19 expressed",
+    "date": "10/22",
+    "evidence_clean": "The SNP in this upstream area of the gene increases the expression of the gene, so you get more 2C19 expressed."
+   },
+   {
+    "point": "DPD: about 80% of a 5-FU dose",
+    "chapter_location": "Dihydropyrimidine Dehydrogenase (DPD) Example: the majority of a dose (~80%) is catabolized via DPD",
+    "lecture_evidence": "about 80% of it, we now know is metabolized by the, the hydropyramine dehydrogenase",
+    "date": "10/22",
+    "evidence_clean": "About 80% of it, we now know, is metabolized by dihydropyrimidine dehydrogenase."
+   },
+   {
+    "point": "DPD deficiency toxicities",
+    "chapter_location": "DPD Example: myelosuppression, mucositis, neurotoxicity, hand-and-foot syndrome, and diarrhea",
+    "lecture_evidence": "So, besides severe myelosuppression, you could have patients suffering from mucositis, neurotoxicity, hand-foot syndrome, and diarrhea.",
+    "date": "10/22",
+    "evidence_clean": "Besides severe myelosuppression, you could have patients suffering from mucositis, neurotoxicity, hand-foot syndrome, and diarrhea."
+   },
+   {
+    "point": "UGT1A1*28 is a promoter variant that reduces expression",
+    "chapter_location": "UGT1A1: *28 has an extra TA repeat in the proximal promoter and reduced expression",
+    "lecture_evidence": "this variant in the promoter region decreases the expression of this enzyme, OK?",
+    "date": "10/22",
+    "evidence_clean": "This variant in the promoter region decreases the expression of this enzyme."
+   },
+   {
+    "point": "Irinotecan, SN-38 and UGT1A1 (the chapter calls irinotecan a prodrug; in class she said it is not a prodrug)",
+    "chapter_location": "UGT1A1 Example: irinotecan hydrolyzed to SN-38; inactivation of SN-38 via UGT1A1",
+    "lecture_evidence": "And what clears SN 38 from the body is UGT 1A1.",
+    "date": "10/22",
+    "evidence_clean": "And what clears SN-38 from the body is UGT1A1."
+   },
+   {
+    "point": "TPMT: a few variants account for over 90% of variability; *3A and *3C",
+    "chapter_location": "TPMT: more than 90% of phenotypic variability accounted for by TPMT*2, *3A, *3B and *3C",
+    "lecture_evidence": "two variants in particular account for over 90% of the activity that we see or the variable response to these drugs in patients",
+    "date": "10/22",
+    "evidence_clean": "Two variants in particular account for over 90% of the variable response to these drugs in patients."
+   },
+   {
+    "point": "Azathioprine is a prodrug of 6-mercaptopurine",
+    "chapter_location": "TPMT Example: azathioprine (a prodrug of 6-MP)",
+    "lecture_evidence": "Azathioprine, we use it as an immunosuppressant. It's a prodrug.",
+    "date": "10/22",
+    "evidence_clean": "Azathioprine, we use it as an immunosuppressant. It's a prodrug."
+   }
+  ],
   "read_for": [
-   "Introduction: pharmacogenomics is the study of genetic factors that underlie variation in drug response, a modern term for pharmacogenetics; precision medicine uses genetic information to guide drug and dosing selection; CPIC guidelines are the source of the dosing recommendations.",
-   "Glossary: allele, allele frequency, SNPs, cSNPs, nonsynonymous and synonymous SNPs, haplotype, Hardy-Weinberg equilibrium, linkage disequilibrium, copy number variations, and PM/IM/EM/UM.",
-   "Phase I Enzymes opening paragraph: star (*) allele nomenclature, diplotypes, activity scores (0 nonfunctional, 0.5 reduced, 1.0 fully functional) and the phenotype cut-offs (0 = PM, >0 to <1.25 = IM, 1.25 to 2.25 = EM, >2.25 = UM).",
+   "Phase I Enzymes opening paragraph: star (*) allele nomenclature, diplotypes, activity scores (0 nonfunctional, 0.5 reduced, 1.0 fully functional), whole gene deletions (CYP2D6*5) and duplications (*2 x N), and the additive (co-dominant) trait that makes one normal plus one nonfunctional allele an IM.",
+   "Glossary: allele, allele frequency, SNPs, cSNPs, nonsynonymous and synonymous SNPs, indel, copy number variations, haplotype, Hardy-Weinberg equilibrium, linkage disequilibrium, and PM/IM/EM/UM.",
    "CYP2D6: nine alleles account for >95% of phenotypes (*3, *4, *5, *6 nonfunctional; *10, *17, *41 reduced; *1, *2 fully functional); the codeine example (PMs/IMs get insufficient pain relief, UMs risk respiratory depression; CPIC recommends an alternative agent in PMs and UMs).",
-   "CYP2C19: *2 and *3 nonfunctional, *17 increased function; the clopidogrel example in acute coronary syndrome with PCI (alternative antiplatelet agent such as prasugrel or ticagrelor in PMs and IMs).",
-   "Polygenic Effects, CYP2C9 & VKORC1: CYP2C9*2 and *3 reduce S-warfarin metabolism (30–40% and 80–90%); VKORC1 -1639G>A reduces VKORC1 expression and increases warfarin sensitivity; gene-based dosing algorithms outperform empiric dosing.",
-   "UGT1A1: the *28 allele (extra TA repeat in the promoter), Gilbert syndrome, irinotecan/SN-38 toxicity, and the atazanavir case study answer.",
-   "TPMT: *2, *3A, *3B, *3C nonfunctional alleles; thiopurines (azathioprine, 6-MP, 6-TG) and 6-thioguanine nucleotide bone marrow toxicity; NUDT15.",
-   "Drug-Induced Hypersensitivity Reactions: HLA-B*57:01 and abacavir, HLA-B*58:01 and allopurinol, HLA-B*15:02 and carbamazepine (Table 5-4).",
-   "Table 5-2: the gene–drug–diplotype–phenotype–dosing recommendation rows."
+   "CYP2C19: acidic substrates including proton-pump inhibitors; *2 and *3 nonfunctional, *17 increased function through increased hepatic expression; PM phenotype ~16% in Asians versus ~2–5% in Europeans and Africans; the clopidogrel example (~85% to inactive metabolite by esterases, ~15% activated, alternative antiplatelet agent such as prasugrel or ticagrelor in PMs and IMs).",
+   "Polygenic Effects, CYP2C9 & VKORC1: CYP2C9*2 and *3 reduce S-warfarin metabolism (30–40% and 80–90%); VKORC1 -1639G>A reduces VKORC1 expression and increases warfarin sensitivity.",
+   "Dihydropyrimidine Dehydrogenase (DPD): 5-FU, capecitabine and tegafur; ~80% of a dose catabolized by DPD; DPD deficiency and myelosuppression, mucositis, neurotoxicity, hand-and-foot syndrome and diarrhea.",
+   "UGT1A1: the *28 allele (extra TA repeat in the promoter, reduced expression), Gilbert syndrome, irinotecan/SN-38 toxicity, and the atazanavir case study answer.",
+   "TPMT: *2, *3A, *3B, *3C nonfunctional alleles account for >90% of variability; azathioprine (prodrug of 6-MP), 6-MP and 6-TG; 6-thioguanine nucleotides and bone marrow toxicity; Table 5-2 dosing (tenfold reduction for low activity in malignant disease).",
+   "Table 5-2: the gene–drug–diplotype–phenotype–dosing recommendation rows for CYP2D6/codeine, CYP2C19/clopidogrel, DPYD/fluoropyrimidines, UGT1A1 and TPMT/thiopurines."
   ],
   "beyond_lecture": [
-   "Table 5-1 allele frequencies across African, Asian and European populations in detail.",
+   "Genetic Variations in Transporters (OATP1B1/SLCO1B1 and simvastatin, BCRP/ABCG2, OCT1): not yet taught; on 10/22 she said the next section, on Monday, covers genetic variants of transporters, drug targets and genes in the immune system.",
+   "Genetic Variations in Immune System Function (HLA-B*57:01 and abacavir, HLA-B*58:01 and allopurinol, HLA-B*15:02 and carbamazepine; Table 5-4; IFNL3): not yet taught; deferred to Monday with the immune-system section.",
+   "TPMT dosing detail and NUDT15: TPMT was started at the end of 10/22; she said 'why don't we start here on Monday and we'll finish up thiopurine methyltranrase genetic variants.'",
    "CYP2B6 and the efavirenz example (autoinduction, *6/*6 genotype, CNS adverse effects).",
-   "Dihydropyrimidine Dehydrogenase (DPD): DPYD *2A, *13, rs67376798 and HapB3 and genotype-guided fluoropyrimidine dose reduction.",
-   "G6PD: WHO classes I–V (Table 5-3), X-linked inheritance and mosaicism in heterozygous females, malaria-endemic allele distribution, and the rasburicase example.",
-   "Genetic Variations in Transporters: OATP1B1 (SLCO1B1 rs4149056) and simvastatin myopathy, BCRP (ABCG2 rs2231142) and rosuvastatin in East Asians, OCT1 (SLC22A1).",
-   "IFNL3 (IL-28B) rs12979860 and response of hepatitis C to pegylated interferon with ribavirin.",
-   "Epigenomics (DNA methylation and histone modifications) and Future Directions.",
-   "Figures 5-1 and 5-2 (adoption of HLA-B*5701 testing; flucloxacillin GWA Manhattan plot)."
+   "DPYD alleles *2A, *13, rs67376798 and HapB3 and the genotype-guided dose-reduction study (25% or 50% initial reductions).",
+   "G6PD: WHO classes (Table 5-3), X-linked inheritance, malaria-endemic allele distribution, and the rasburicase example.",
+   "Table 5-1 allele frequencies across African, Asian and European populations in detail.",
+   "Epigenomics (DNA methylation and histone modifications) and Future Directions; Figures 5-1 and 5-2."
   ],
   "terms": [
    {
@@ -1980,21 +2141,24 @@ const READINGS = [
   "her_words": [],
   "quotes_note": "Quotes lightly edited for reading: filler words removed and transcription errors corrected; the verbatim transcript text is kept beside each quote.",
   "truncated": false,
-  "listen": "This reading is Chapter five, Pharmacogenomics, by Jennifer Hibma and Kathleen Giacomini, in Katzung's Basic and Clinical Pharmacology, sixteenth edition. It was not discussed in class. Its introduction and glossary define the terms of her first pharmacogenomics lecture. The rest of the chapter covers genetic variants in drug metabolizing enzymes, transporters and immune system genes, and the two genes behind warfarin dosing. The chapter defines pharmacogenomics as the study of genetic factors that underlie variation in drug response, a modern term for pharmacogenetics. Her lecture says the two terms are used interchangeably, and pharmacogenomics is the preferred term. An allele is one of two or more alternative forms of a gene at the same locus. Allele frequency is the share of one allele among all alleles in a population. A single nucleotide polymorphism is a base pair substitution. The chapter defines a haplotype as a series of alleles found in a linked locus on a chromosome. Her key defines a haplotype as more than one genetic variant that group together and co exist with a higher frequency than would occur by chance. Linkage disequilibrium is the nonrandom association of alleles at two or more loci. In Hardy Weinberg equilibrium, allele frequencies stay constant from generation to generation without evolutionary influences, and her lecture applies the same to genotype frequencies. The traps. A haplotype involves several loci on one chromosome, not one variant. Allele frequency counts alleles, and genotype frequency counts genotypes. A variant in at least one percent of the population is a polymorphism. Below one percent it is a rare variant.",
-  "listen_secs": 105,
-  "exam": 3,
-  "lectures": [],
+  "listen": "This reading is Chapter five, Pharmacogenomics, by Jennifer Hibma and Kathleen Giacomini, in Katzung's Basic and Clinical Pharmacology, sixteenth edition. She did not name the chapter in the lectures of October twenty first and twenty second, but those lectures taught much of its content. The chapter defines pharmacogenomics as the study of genetic factors that underlie variation in drug response. Its glossary defines a synonymous S N P as a base pair substitution in the coding region that does not change an amino acid, and a nonsynonymous S N P as one that does. An indel is an insertion or deletion of base pairs. A copy number variation is a segment of DNA found in a variable number of copies. A haplotype is a series of alleles found in a linked locus on a chromosome. Each star allele is defined by specific sequence variation in the gene, and star one is the wild type. One normal and one nonfunctional allele give an intermediate metabolizer, because enzyme activity is generally an additive trait. She called this the gene dose effect. For C Y P two D six, more than one hundred alleles are defined, but nine account for more than ninety five percent of phenotypes. Star three, four, five and six are nonfunctional, and star five is a whole gene deletion. Ultrarapid metabolizers convert codeine to morphine and risk respiratory depression. C Y P two C nineteen metabolizes acidic drugs including proton pump inhibitors. Star two and star three are nonfunctional. Star seventeen increases function by increasing expression. About eighty five percent of a clopidogrel dose goes to an inactive metabolite, and about fifteen percent is activated, mainly by two C nineteen. For C Y P two C nine, the chapter gives a thirty to forty percent reduction in S warfarin metabolism for star two and eighty to ninety percent for star three. Her slide gave twenty percent and five percent of wild type activity. About eighty percent of a five fluorouracil dose is broken down by dihydropyrimidine dehydrogenase. Deficiency raises toxic metabolites and the risk of myelosuppression, mucositis, neurotoxicity, hand and foot syndrome, and diarrhea. U G T one A one star twenty eight has an extra T A repeat in the promoter and reduced expression, so S N thirty eight from irinotecan is cleared less. The chapter calls irinotecan a prodrug. She said in class that it is not a prodrug. For T P M T, four nonfunctional alleles explain more than ninety percent of variability in thiopurine response, and azathioprine is a prodrug of six mercaptopurine. She said transporters, drug targets and immune system genes come next, on Monday.",
+  "listen_secs": 176,
+  "exam": 4,
+  "lectures": [
+   "L18",
+   "L19"
+  ],
   "status": "background",
   "links": [],
   "drive": "https://drive.google.com/file/d/1nRnG1kVR0Nq1VgATSktxfIASE9KR8o79/view",
-  "date": "Tue 10/20"
+  "date": "Tue 10/20 – Thu 10/22"
  },
  {
   "id": "dipiro-e6",
   "title": "Chapter e6: Medication Adherence",
   "source": "DiPiro's Pharmacotherapy: A Pathophysiologic Approach, 13th Edition, Chapter e6 (Lin Fang-Ju; Huang Yen-Ming; Ho Yunn-Fang; McGraw Hill)",
   "file": "DiPiro Chapter e6: Medication Adherence",
-  "lecture": "Tue 10/20 through Thu 10/22 (listed on the syllabus as Dipiro Chapter 6 for the pharmacogenomics days)",
+  "lecture": "Tue 10/20 through Thu 10/22 (listed on the syllabus as Dipiro Chapter 6 for the pharmacogenomics days). Not cited, and adherence not discussed, in the 10/21 or 10/22 lectures; her references there to 'your Dipiro textbook on pharmacogenomics' point to a pharmacogenomics chapter, which this posted chapter (e6, Medication Adherence) is not.",
   "kind": "chapter",
   "about": "The chapter defines medication adherence, following the WHO, as the extent to which an individual's medication-taking behavior aligns with the recommendations from healthcare providers, and states that the estimated adherence rate for chronic illnesses in developed countries is around 50%. It describes direct methods of assessing adherence (bioassays, biomarkers, direct observation) and indirect methods (self-report surveys, pharmacy refill rates such as MPR and PDC, pill counts, clinical response, electronic monitoring with MEMS), with Table e6-1 comparing generic self-report instruments (ARMS, BMQ, HBCS, MAQ, MARS, MAR-Scale, MMAS-8). It organizes barriers to adherence into the WHO's five interacting dimensions (social and economic, healthcare team- and system-related, condition-related, therapy-related, patient-related) in Table e6-2. It then presents provider-related, patient-related and system-related strategies for improving adherence (Table e6-3), including the SIMPLE and RULE acronyms, motivational interviewing, reminders, regimen simplification, telehealth and policy reform, and ends with key resources, a bibliography and 15 self-assessment questions with answers. The chapter does not cover pharmacogenomics.",
   "sections": [
@@ -2082,14 +2246,213 @@ const READINGS = [
   "her_words": [],
   "quotes_note": "Quotes lightly edited for reading: filler words removed and transcription errors corrected; the verbatim transcript text is kept beside each quote.",
   "truncated": false,
-  "listen": "This reading is Chapter e six, Medication Adherence, by Lin Fang Ju, Huang Yen Ming and Ho Yunn Fang, in DiPiro's Pharmacotherapy, A Pathophysiologic Approach, thirteenth edition. It was not discussed in class, and it covers neither pharmacogenomics nor poisoning. Medication adherence, following the World Health Organization, is the extent to which a person's medication taking matches the recommendations of healthcare providers, in dose, route, frequency and duration. Adherence for chronic illness in developed countries is around fifty percent. Nonadherence can be intentional or unintentional. Direct methods measure the drug or a metabolite in blood or urine, or observe the dose being taken. Indirect methods are self report surveys, which are the most widely used, pharmacy refill rates, pill counts, clinical response, and electronic monitoring. The World Health Organization groups the barriers into five dimensions: social and economic, healthcare team and system, condition, therapy, and patient related factors. Strategies to improve adherence include simplifying the regimen, patient education, motivational interviewing and reminders. The trap. A drug level in blood is a direct method. A refill record or a pill count is indirect.",
-  "listen_secs": 82,
-  "exam": 3,
+  "listen": "This reading is Chapter e six, Medication Adherence, by Lin Fang Ju, Huang Yen Ming and Ho Yunn Fang, in DiPiro's Pharmacotherapy, A Pathophysiologic Approach, thirteenth edition. It was not discussed in class, and it does not cover pharmacogenomics. In the lectures of October twenty first and twenty second she did not cite it or discuss adherence. She did refer to your DiPiro textbook on pharmacogenomics, and this chapter is about adherence, not pharmacogenomics. Medication adherence, following the World Health Organization, is the extent to which a person's medication taking matches the recommendations of healthcare providers, in dose, route, frequency and duration. Adherence for chronic illness in developed countries is around fifty percent, even among patients with good access to medications. Nonadherence can be intentional or unintentional. Direct methods measure the drug or a metabolite in body fluids such as blood or urine, or observe the dose being taken. Indirect methods are self report surveys, which are the most widely used, pharmacy refill rates such as the medication possession ratio and the proportion of days covered, pill counts, clinical response, and electronic monitoring. The Medication Events Monitoring System is a container with a special cap that logs the time and date of each opening. Pill counts compare the units taken with the units received and do not work for medications used as needed. The World Health Organization groups the barriers into five dimensions: social and economic, healthcare team and system, condition, therapy, and patient related factors. The SIMPLE strategy stands for simplifying regimen characteristics, imparting knowledge, modifying patient beliefs, patient communication, leaving the bias, and evaluating adherence. Motivational interviewing uses four principles, RULE: resist the righting reflex, understand the patient's motivations, listen with empathy, and empower the patient. A drug level in blood is a direct method. A refill record or a pill count is indirect.",
+  "listen_secs": 122,
+  "exam": 4,
   "lectures": [],
   "status": "assigned",
   "links": [],
   "drive": "https://drive.google.com/file/d/1dXEvIYObmQk0u4mT3yBxWqs1Isi49XBR/view",
   "date": "Tue 10/20 (syllabus: “Dipiro Chapter 6”; the posted file is the 13th-edition chapter e6, Medication Adherence)"
+ },
+ {
+  "id": "furuta-1998",
+  "title": "Effect of Genetic Differences in Omeprazole Metabolism on Cure Rates for Helicobacter pylori Infection and Peptic Ulcer",
+  "source": "Takahisa Furuta, Kyoichi Ohashi, Takashi Kamata, Misako Takashima, Kazuhiro Kosuge, Tsunehisa Kawasaki, Hiroyuki Hanai, Takahiro Kubota, Takashi Ishizaki and Eizo Kaneko. Annals of Internal Medicine 1998;129(12):1027–1030 (15 December 1998), Brief Communications",
+  "file": "FurutaAnnIntMed1998.pdf",
+  "lecture": "Thu 10/22 (Pharmacogenomic Examples: CYP2C19 and proton pump inhibitors); she said the full discussion of the paper is on Monday 10/26",
+  "kind": "article",
+  "about": "A prospective cohort study of 62 Japanese patients with peptic ulcer (33 gastric, 29 duodenal) and H. pylori infection, treated with dual therapy: omeprazole 20 mg once daily for 8 weeks (gastric ulcer) or 6 weeks (duodenal ulcer) plus amoxicillin 500 mg four times daily for the first 2 weeks (p. 1027). Omeprazole is metabolized in the liver by CYP2C19 (S-mephenytoin 4'-hydroxylase); patients were genotyped for two mutated alleles, CYP2C19m1 in exon 5 and CYP2C19m2 in exon 4, and grouped as no mutation (group 1, n = 28), one mutation (group 2, n = 25) or two mutations (group 3, n = 9), corresponding to rapid-extensive, intermediate-extensive and poor-metabolizer phenotypes (p. 1028). Cure rates for H. pylori infection were 28.6%, 60% and 100% in the rapid-, intermediate- and poor-metabolizer groups, and ulcer healing rates were roughly parallel (abstract; Table 2). The Discussion gives four reasons for the higher cure rate in poor metabolizers (higher omeprazole exposure and longer high intragastric pH; amoxicillin unstable at low pH; omeprazole increases amoxicillin in gastric juice; omeprazole's own anti-H. pylori activity) and notes the poor-metabolizer genotype is 3% to 5% in white U.S. or European populations versus 18% to 23% in Japanese persons (p. 1029). The authors state the limitations that plasma omeprazole levels were not measured and the sample was small (p. 1029).",
+  "sections": [
+   "Abstract (Background; Objective; Design; Setting; Patients; Intervention; Measurements; Results; Conclusion)",
+   "Introduction (unheaded): H. pylori eradication, triple versus dual therapy, CYP2C19 and omeprazole",
+   "Methods (patients and dosing; endoscopy and H. pylori tests; CYP2C19 genotyping by PCR-RFLP; statistics)",
+   "Table 1: Demographic and Clinical Characteristics of 62 Patients with Peptic Ulcer in Three Genotype Groups",
+   "Results (adherence; five allelic patterns; three genotype groups; cure and ulcer healing rates)",
+   "Table 2: Cure Rates of Helicobacter pylori Infection in Three Genotype Groups",
+   "Discussion (four reasons; ethnic differences; high-dose omeprazole in white persons; limitations; cost of genotyping)",
+   "Acknowledgments; Grant Support; Author Addresses",
+   "References (1–20)"
+  ],
+  "lecture_use": [
+   {
+    "point": "The paper is about CYP2C19 in a Japanese population",
+    "chapter_location": "Abstract; Methods (62 Japanese patients; CYP2C19 genotyping)",
+    "lecture_evidence": "It's talking about 2C19. OK? It's a very interesting study done in a Japanese population.",
+    "date": "10/22",
+    "evidence_clean": "It's talking about 2C19. It's a very interesting study done in a Japanese population."
+   },
+   {
+    "point": "Whether a result from a Japanese population applies to everybody (to be discussed Monday)",
+    "chapter_location": "Discussion: poor-metabolizer genotype 3% to 5% in white U.S. or European populations versus 18% to 23% in Japanese persons; dual therapy has generally not achieved adequate cure rates in white persons",
+    "lecture_evidence": "because it's done in the Japanese population, can we apply it to everybody?",
+    "date": "10/22",
+    "evidence_clean": "Because it's done in the Japanese population, can we apply it to everybody?"
+   },
+   {
+    "point": "Which variants were genotyped, and whether any were left out (to be discussed Monday)",
+    "chapter_location": "Methods: genotyping for the wild-type gene and two mutated alleles, CYP2C19m1 (exon 5) and CYP2C19m2 (exon 4)",
+    "lecture_evidence": "What variants were they looking at? Do they leave out any, that kind of thing.",
+    "date": "10/22",
+    "evidence_clean": "What variants were they looking at? Do they leave out any?"
+   },
+   {
+    "point": "Proton pump inhibitors are metabolized and cleared by CYP2C19",
+    "chapter_location": "Introduction: omeprazole is metabolized in the liver by CYP2C19 (S-mephenytoin 4'-hydroxylase)",
+    "lecture_evidence": "Proton pump inhibitors like omeprazole, pantoprazole, they're metabolized and cleared by 2C19",
+    "date": "10/22",
+    "evidence_clean": "Proton pump inhibitors like omeprazole and pantoprazole are metabolized and cleared by 2C19."
+   },
+   {
+    "point": "Poor metabolizers had better cure rates",
+    "chapter_location": "Results and Table 2: cure rate highest in group 3 (100%), intermediate in group 2 (60%), lowest in group 1 (28.6%)",
+    "lecture_evidence": "When you had the low activity version of the enzyme increasing drug blood concentrations, you had better cure rates.",
+    "date": "10/22",
+    "evidence_clean": "When you had the low-activity version of the enzyme increasing drug blood concentrations, you had better cure rates."
+   },
+   {
+    "point": "Why lower CYP2C19 activity helped here: drug stays in the body; PPIs have a wide therapeutic index",
+    "chapter_location": "Discussion, first reason: omeprazole AUC markedly increased in poor metabolizers, so high intragastric pH lasts longer; Results: no clinically undesirable signs or symptoms attributable to the dual therapy",
+    "lecture_evidence": "it's a good thing to have the 2 or 3 version of 2C19, because you keep the drug in the body, the therapeutic index of your PPIs is very wide",
+    "date": "10/22",
+    "evidence_clean": "It's a good thing to have the *2 or *3 version of 2C19, because you keep the drug in the body; the therapeutic index of your PPIs is very wide."
+   },
+   {
+    "point": "Other reasons beyond the CYP2C19 variants (to be discussed Monday)",
+    "chapter_location": "Discussion, second to fourth reasons: amoxicillin stability at higher pH, omeprazole raising amoxicillin in gastric juice, omeprazole's own anti-H. pylori activity",
+    "lecture_evidence": "In that paper, it's not just the variants of 2C19 that were beneficial, and we're gonna talk about why, OK.",
+    "date": "10/22",
+    "evidence_clean": "In that paper, it's not just the variants of 2C19 that were beneficial, and we're going to talk about why."
+   },
+   {
+    "point": "The slide figure she presented as the paper's data used lansoprazole and plotted AUC, stomach pH and cure rate; the 1998 paper used omeprazole, has only two tables, and states that plasma omeprazole levels were not measured",
+    "chapter_location": "Methods (omeprazole 20 mg/d); Discussion, limitations: 'we did not measure plasma omeprazole levels'",
+    "lecture_evidence": "They were using lansoprazole, and they looked at the AUC here on this panel.",
+    "date": "10/22",
+    "evidence_clean": "They were using lansoprazole, and they looked at the AUC here on this panel."
+   }
+  ],
+  "read_for": [
+   "Abstract and Methods: 62 Japanese patients (33 gastric ulcer, 29 duodenal ulcer; 61 male), omeprazole 20 mg once daily plus amoxicillin 500 mg four times daily for the first 2 weeks (p. 1027).",
+   "Introduction: omeprazole is metabolized in the liver by CYP2C19; in poor metabolizers the omeprazole AUC is markedly increased and its clinical effect should be greater (p. 1027).",
+   "Methods: the alleles genotyped, CYP2C19m1 in exon 5 and CYP2C19m2 in exon 4, by PCR restriction fragment length polymorphism (p. 1028).",
+   "Results and Table 1: the five allelic patterns and the three genotype groups (no mutation, one mutation, two mutations) and their phenotypes (rapid-extensive, intermediate-extensive, poor metabolizer); relative mean omeprazole AUC 1:3.7:20 (p. 1028).",
+   "Table 2: cure rates of H. pylori infection by genotype group and ulcer type, total 28.6% [8/28], 60.0% [15/25] and 100.0% [9/9], P < 0.001 (p. 1029).",
+   "Discussion: the four reasons dual therapy works better in poor metabolizers (longer high intragastric pH; amoxicillin unstable at low pH; omeprazole raises amoxicillin in gastric juice; omeprazole's anti-H. pylori activity) (p. 1029).",
+   "Discussion: ethnic differences in the poor-metabolizer genotype, 3% to 5% in white U.S. or European populations versus 18% to 23% in Japanese persons (p. 1029).",
+   "Discussion: limitations (plasma omeprazole not measured; small sample; findings preliminary) (p. 1029)."
+  ],
+  "beyond_lecture": [
+   "Full discussion of the paper: not yet taught; she said 'on Monday when we come back, we're going to dive into that paper.'",
+   "Results: adherence to the regimen (100% in 43 patients, about 90% in 18, about 75% in 1) and eradication by adherence level (58%, 33%, 100%) (p. 1028).",
+   "Results: ulcer healing rates by ulcer type and genotype group (gastric 58.8%, 92.9%, 100.0%; duodenal 81.3%, 81.8%, 100.0%) (pp. 1028–1029).",
+   "Discussion: Bayerdorffer and associates' dual therapy with omeprazole 40 mg three times daily and amoxicillin 750 mg three times daily (91% cure in white persons) and the suggestion that at least 120 mg of omeprazole may be required in extensive metabolizers (p. 1029).",
+   "Discussion: costs of genotyping and larger omeprazole doses versus avoiding a second antibiotic; clinical usefulness and cost-effectiveness of genotyping remain to be determined (pp. 1029–1030).",
+   "Methods: how cure was determined (culture, histology, rapid urease test, 13C-urea breath test and PCR; failure defined as a positive result on any test) and the statistics (ANOVA, Fisher exact test) (p. 1028)."
+  ],
+  "terms": [
+   {
+    "term": "CYP2C19 (S-mephenytoin 4'-hydroxylase)",
+    "chapter_definition": "A genetically determined enzyme that metabolizes omeprazole in the liver (p. 1027)."
+   },
+   {
+    "term": "Poor-metabolizer genotype",
+    "chapter_definition": "In persons with a poor-metabolizer phenotype or genotype of CYP2C19, the area under the plasma concentration-time curve of omeprazole is markedly increased and the clinical effect of omeprazole should be greater (p. 1027)."
+   },
+   {
+    "term": "CYP2C19m1 / CYP2C19m2",
+    "chapter_definition": "The two mutated alleles genotyped: CYP2C19m1, a mutation in exon 5, and CYP2C19m2, a mutation in exon 4 (Table 1 footnote; Methods)."
+   },
+   {
+    "term": "Group 1 (nonmutation group)",
+    "chapter_definition": "Homozygous wild-type (wt/wt); corresponds to the rapid-extensive metabolizer phenotype (p. 1028)."
+   },
+   {
+    "term": "Group 2 (one-mutation group)",
+    "chapter_definition": "wt/m1 or wt/m2; corresponds to the intermediate-extensive metabolizer phenotype (p. 1028)."
+   },
+   {
+    "term": "Group 3 (two-mutation group)",
+    "chapter_definition": "m1/m2 or m1/m1; corresponds to the poor-metabolizer phenotype (p. 1028)."
+   },
+   {
+    "term": "Dual therapy",
+    "chapter_definition": "Omeprazole and amoxicillin; achieves somewhat lower cure rates than triple therapy but avoids many of the problems associated with clarithromycin and metronidazole (p. 1027)."
+   },
+   {
+    "term": "Triple therapy",
+    "chapter_definition": "A proton-pump inhibitor, amoxicillin, and clarithromycin or metronidazole; resistance of H. pylori to the latter two drugs has been reported (p. 1027)."
+   },
+   {
+    "term": "Failure to cure H. pylori infection",
+    "chapter_definition": "A positive result on any of culture, histologic examination, rapid urease testing, 13C-urea breath testing, or PCR (p. 1028)."
+   }
+  ],
+  "discussed_in_class": true,
+  "her_words": [
+   {
+    "t": "We have another thing that we're going to get to today, maybe not until Monday: a discussion of this Furuta paper.",
+    "date": "10/22",
+    "verbatim": "We have another thing that we're gonna get to, uh, today, maybe not get to it until, um, Monday is a discussion of this Fioruda paper."
+   },
+   {
+    "t": "Have you guys looked at it yet? Do you know what gene it's talking about and what variants?",
+    "date": "10/22",
+    "verbatim": "Have you guys looked at it yet? Do you know what gene it's talking about and what variants?"
+   },
+   {
+    "t": "We're going to go into a lot of the detail in that paper after we have our discussion about more about 2C19.",
+    "date": "10/22",
+    "verbatim": "We're gonna talk a lot about, go into a lot of the detail in that paper after we have our discussion about more about 2C19."
+   },
+   {
+    "t": "What happens to the clinical care of our patients in this scenario? How did they develop the study? Was it well run?",
+    "date": "10/22",
+    "verbatim": "What happens to the clinical care of our patients in this scenario? How did they develop the study? Was it well run?"
+   },
+   {
+    "t": "We're going to get into all that detail with this paper, just as an exercise.",
+    "date": "10/22",
+    "verbatim": "OK, we're gonna get into all that detail with this paper, just as an exercise"
+   },
+   {
+    "t": "The proton pump inhibitors, and this is the Furuta paper you read about, right?",
+    "date": "10/22",
+    "verbatim": "So The proton pump inhibitors, and this is the Furuda paper you read about, right?"
+   },
+   {
+    "t": "Talk about that paper just a little bit, then we're going to really dive into it on Monday.",
+    "date": "10/22",
+    "verbatim": "talk about that paper just a little bit, then we're going to really dive into it on Monday, OK?"
+   },
+   {
+    "t": "This is the data from that Furuta paper, and we want to look at the functional significance of those variants.",
+    "date": "10/22",
+    "verbatim": "This is the data from that Fioruda paper, and we want to look at the, the functional significance of those variants, right?"
+   },
+   {
+    "t": "Again, on Monday when we come back, we're going to dive into that paper.",
+    "date": "10/22",
+    "verbatim": "Again, on Monday when we come back, we're going to dive into that paper."
+   },
+   {
+    "t": "You guys will be reading a paper about a pharmacogenomics study.",
+    "date": "10/21",
+    "verbatim": "you guys will be reading a paper about a pharmacogenomics study."
+   }
+  ],
+  "quotes_note": "Quotes lightly edited for reading: filler words removed and transcription errors corrected; the verbatim transcript text is kept beside each quote.",
+  "truncated": false,
+  "listen": "This reading is the brief communication Effect of Genetic Differences in Omeprazole Metabolism on Cure Rates for Helicobacter pylori Infection and Peptic Ulcer, by Takahisa Furuta and colleagues, in the Annals of Internal Medicine, December nineteen ninety eight. It is a prospective cohort study of sixty two Japanese patients with gastric or duodenal ulcer and Helicobacter pylori infection. Every patient received dual therapy: omeprazole twenty milligrams once daily, for eight weeks for gastric ulcer or six weeks for duodenal ulcer, plus amoxicillin five hundred milligrams four times daily for the first two weeks. Omeprazole is metabolized in the liver by C Y P two C nineteen. The authors genotyped two mutated alleles, m one in exon five and m two in exon four, and grouped patients by the number of mutations. Group one had no mutation and corresponds to rapid extensive metabolizers. Group two had one mutation and corresponds to intermediate extensive metabolizers. Group three had two mutations and corresponds to poor metabolizers. The relative mean area under the curve for omeprazole in these three groups has been reported as one to three point seven to twenty. Cure rates for the infection were twenty eight point six percent, sixty percent, and one hundred percent in the rapid, intermediate and poor metabolizer groups. Ulcer healing rates were roughly parallel with the cure rates. The authors give four reasons. Poor metabolizers have more omeprazole in circulation, so high intragastric pH lasts longer. Amoxicillin is unstable and less active at low pH. Omeprazole has been reported to increase amoxicillin concentrations in gastric juice. And omeprazole itself has been reported to have activity against Helicobacter pylori. The poor metabolizer genotype is found in three to five percent of white United States or European populations and eighteen to twenty three percent of Japanese persons. The limitations they state: they did not measure plasma omeprazole levels, and the sample was small. In class on October twenty second, she introduced it as a very interesting study done in a Japanese population, about two C nineteen. She said that poor metabolizers on proton pump inhibitors had better cure rates, because the drug stays in the body and proton pump inhibitors have a very wide therapeutic index. She said the detailed discussion is on Monday: whether a study in a Japanese population applies to everybody, how the study was run, which variants were studied and whether any were left out, and why it was not just the two C nineteen variants that were beneficial. The figure she showed as that paper's data used lansoprazole and plotted area under the curve, stomach pH and cure rate. The nineteen ninety eight paper used omeprazole and did not measure plasma drug levels.",
+  "listen_secs": 180,
+  "exam": 4,
+  "lectures": [
+   "L19"
+  ],
+  "status": "upcoming",
+  "links": [],
+  "drive": "",
+  "date": "Introduced Thu 10/22; discussion set for Mon 10/26"
  },
  {
   "id": "katzung-1",

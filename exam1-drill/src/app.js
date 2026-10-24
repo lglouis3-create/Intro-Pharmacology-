@@ -179,8 +179,9 @@ const VIEWS = [
 let CUR = 'topics';
 /* Smith focus: one switch that keeps only the pages her exam uses, locks the exam to Exam 3, hides the other
    exams' groups and puts her own words about what to study at the top of Topics. Remembered per browser. */
-const FOCUS_KEY = COURSE.ns + ':focus', FOCUS_EXAM = 3;
-const FOCUS_VIEWS = ['topics', 'quiz', 'terms', 'weak', 'exam', 'sa', 'ptab', 'guide', 'readings', 'ref', 'tell', 'data'];
+// her current exam: the latest exam she teaches (Exam 3, then Exam 4); the poisoning table and short-answer pages are Exam 3 only
+const FOCUS_KEY = COURSE.ns + ':focus', FOCUS_EXAM = Math.max(...COURSE.exams.filter(e => COURSE.lectures.some(l => l.exam === e.id && l.prof === 'Smith')).map(e => e.id));
+const FOCUS_VIEWS = ['topics', 'quiz', 'terms', 'weak', 'exam', 'guide', 'readings', 'ref', 'tell', 'data'].concat(FOCUS_EXAM === 3 ? ['sa', 'ptab'] : []);
 const focusOn = () => (store.get(FOCUS_KEY) || '1') === '1' && COURSE.exams.some(e => e.id === FOCUS_EXAM);
 function setFocus(on) {
   store.set(FOCUS_KEY, on ? '1' : '0');
@@ -190,7 +191,7 @@ function setFocus(on) {
   if (on && !FOCUS_VIEWS.includes(CUR)) { go('topics'); return; }
   nav(); VIEWFN[CUR] && VIEWFN[CUR]();
 }
-const focusBtn = () => COURSE.exams.some(e => e.id === FOCUS_EXAM) ? `<button type="button" id="focusbtn" class="focusbtn ${focusOn() ? 'on' : ''}" aria-pressed="${focusOn()}" title="Show only what Dr. Smith's Exam 3 uses">${focusOn() ? '★ Smith focus: on' : '☆ Smith focus'}</button>` : '';
+const focusBtn = () => COURSE.exams.some(e => e.id === FOCUS_EXAM) ? `<button type="button" id="focusbtn" class="focusbtn ${focusOn() ? 'on' : ''}" aria-pressed="${focusOn()}" title="Show only what Dr. Smith's Exam ${FOCUS_EXAM} uses">${focusOn() ? '★ Smith focus: on' : '☆ Smith focus'}</button>` : '';
 function nav() {
   const fo = focusOn();
   $('#nav').innerHTML = focusBtn() + VIEWS.filter(([k]) => (k !== 'guide' || (typeof GUIDE_HTML !== 'undefined' && GUIDE_HTML.trim())) && (!fo || FOCUS_VIEWS.includes(k)))
@@ -332,7 +333,7 @@ function termLinks3(q) {
    decides: the guide section or reference table naming that slide (one title containing the other, since the two
    shorten titles differently), and for a term, the section naming the term. With no match the mapped link stays,
    and no link is added that the map did not give. */
-let SEC3 = null;
+let SEC3 = null, SEC4 = null;
 function sec3() {
   if (SEC3) return SEC3;
   const parse = (h, sel) => { const d = new DOMParser().parseFromString('<div>' + h + '</div>', 'text/html');
@@ -441,6 +442,15 @@ function tidyHtml(html) {
 const WHY_RE = /\bwhy\b|what explains|best explains|what would happen|reason/i;
 const whyPool = pool => pool.filter(q => !q.lowYield && ((q.tags || []).includes('why') || WHY_RE.test(q.stem)));
 function linksFor0(q) {
+  if (examOf(q) === 4 && typeof GUIDE4_HTML !== 'undefined') {
+    // the section whose Sources line lists the question ("Questions L18-010 to L18-014"), else the lecture's first section
+    if (!SEC4) { const d = new DOMParser().parseFromString('<div>' + GUIDE4_HTML + '</div>', 'text/html');
+      SEC4 = [...d.querySelectorAll('section[id^="guide4-"]')].map(sec => { const text = sec.textContent, qids = new Set();
+        for (const m of text.matchAll(/Questions? ([A-Z0-9]+-\d+(?:(?:,| to|, and| and) [A-Z0-9]+-\d+)*)/g)) m[1].split(/,\s*(?:and\s+)?|\s+and\s+/).forEach(pt => { const r = pt.trim().match(/^([A-Z0-9]+)-(\d+)(?: to [A-Z0-9]+-(\d+))?$/); if (!r) return; const w = r[2].length; for (let n = +r[2]; n <= (r[3] ? +r[3] : +r[2]); n++) qids.add(r[1] + '-' + String(n).padStart(w, '0')); });
+        return {id: sec.id, h: ((sec.querySelector('h3') || sec).textContent || '').trim().replace(/^\d+\.\s*/, ''), qids}; }); }
+    const hit = SEC4.find(x => x.qids.has(q.id)) || SEC4.find(x => x.id.startsWith('guide4-' + String(q.lecture || '').toLowerCase() + '-'));
+    return hit ? [['guide', hit.id, 'Guide: ' + hit.h]] : [];
+  }
   if (examOf(q) === 3 && typeof GUIDE3_HTML !== 'undefined') {
     if (q.topic === 'TERMS') return termLinks3(q);
     if (q.lecture === 'QZ3') { const t = QUESTIONS.find(x => x.id === q.dupOf) || QUESTIONS.find(x => x.lecture !== 'QZ3' && examOf(x) === 3 && x.concept === q.concept); if (t) return linksFor0(t); if (q.readingId === 'rodriguez-mozaz') return SUB3.reading; }   // her quiz items explain through the lecture question they repeat
@@ -622,6 +632,7 @@ const TF_KEY = COURSE.ns + ':tfold';
 const TF_OPEN = () => { try { return new Set(JSON.parse(store.get(TF_KEY) || '[]')); } catch (e) { return new Set(); } };
 /* The Smith focus card: her own words about what her exam tests, each with the page that drills it. Quotes verbatim. */
 function focusCard() {
+  if (FOCUS_EXAM !== 3) return focusCard4();
   const tq = id => QUESTIONS.filter(q => q.topic === id).length;
   const item = (quote, date, btns) => `<li><span>"${esc(tidySpeech(quote))}" <small>(T) ${date}</small></span><div class="row" style="gap:6px;margin-top:4px">${btns}</div></li>`;
   const drill = (id, lab) => tq(id) ? `<button type="button" class="btn ghost" data-topic="${id}" data-ex="${FOCUS_EXAM}">${esc(lab)} · ${tq(id)}</button>` : '';
@@ -635,6 +646,17 @@ function focusCard() {
     ${item("So what we covered yesterday is all on. This exam on Friday.", '10/21 (yesterday = the 10/20 pharmacogenomics lecture; 10/21 starts her next exam)', '')}
     ${item("That's how we have it on the syllabus.", '10/20 (the class vote put the 10/20 pharmacogenomics lecture on Friday\'s exam)', '')}
   </ul><p class="sub" style="margin:6px 0 0">Smith focus is on: only her exam's pages and questions show. Turn it off from the ★ button in the tab bar.</p></div>`;
+}
+/* Exam 4: her words about her last exam, each with where it is drilled (filled from the lecture notes; verbatim). */
+const FOCUS4 = [
+  ["Where I start today is for my, my last exam.", '10/21 (the 10/21 lecture opens her Exam 4 material)', `<button type="button" class="btn ghost" data-jump="guide:guide4-l18-1">Guides</button>`],
+  ["Your colleague asked, do we need to know these specific examples? Yes, you do. OK. So, everything, every little detail I'm covering now in pharmacogenomics, you need, you need to remember. Because these examples, all of them have clinical relevance.", '10/21', `<button type="button" class="btn ghost" data-topic="L18" data-ex="4">10/21 questions</button><button type="button" class="btn ghost" data-topic="L19" data-ex="4">10/22 questions</button>`],
+  ["OK, so you don't have to memorize this. This is to illustrate the point that a lot of work is done trying to look at how often do these genetic versions occur", '10/21 (the allele frequency graphs)', ''],
+  ["It is possible, but I will never ask you a question on this.", '10/21 (induction of CYP2C9)', '']
+];
+function focusCard4() {
+  if (!FOCUS4.length) return '';
+  return `<div class="card focuscard"><b>Where to focus for Dr. Smith's Exam 4</b><ul class="focuslist">${FOCUS4.map(([q, d, btns]) => `<li><span>"${esc(tidySpeech(q))}" <small>(T) ${d}</small></span>${btns ? `<div class="row" style="gap:6px;margin-top:4px">${btns}</div>` : ''}</li>`).join('')}</ul><p class="sub" style="margin:6px 0 0">Smith focus is on: only her exam's pages and questions show. Turn it off from the ★ button in the tab bar.</p></div>`;
 }
 /* ---------- Topics ---------- */
 let FILT = {skill: 'all'};
@@ -1987,7 +2009,9 @@ function pairWire() {
 const PAGE2 = {guide: () => typeof GUIDE2_HTML === 'undefined' ? '' : GUIDE2_HTML, ref: () => typeof REFERENCE2_HTML === 'undefined' ? '' : REFERENCE2_HTML, tell: () => typeof TELL2_HTML === 'undefined' ? '' : TELL2_HTML};
 const PAGE3_T = {}, page3 = (k, h) => PAGE3_T[k] || (PAGE3_T[k] = tidyHtml(h));   // her quoted words without fillers, tidied once
 const PAGE3 = {guide: () => typeof GUIDE3_HTML === 'undefined' ? '' : page3('guide', GUIDE3_HTML), ref: () => typeof REFERENCE3_HTML === 'undefined' ? '' : page3('ref', REFERENCE3_HTML), tell: () => typeof TELL3_HTML === 'undefined' ? '' : page3('tell', TELL3_HTML)};
-const PAGE_BY_EXAM = {2: PAGE2, 3: PAGE3};
+const PAGE4_T = {}, page4 = (k, h) => PAGE4_T[k] || (PAGE4_T[k] = tidyHtml(h));
+const PAGE4 = {guide: () => typeof GUIDE4_HTML === 'undefined' ? '' : page4('guide', GUIDE4_HTML), ref: () => typeof REFERENCE4_HTML === 'undefined' ? '' : page4('ref', REFERENCE4_HTML), tell: () => typeof TELL4_HTML === 'undefined' ? '' : page4('tell', TELL4_HTML)};
+const PAGE_BY_EXAM = {2: PAGE2, 3: PAGE3, 4: PAGE4};
 /* The pages are fixed for a build, so each body is expanded once (figures drawn, markers replaced);
    the exam groups around them are drawn each time, since the open one follows the exam studied. */
 const PAGE_CACHE = {};
