@@ -186,3 +186,7 @@ See `## Conflicts / uncertain` in notes/L01.md, L02.md and L03.md. The ones that
   wrong posted chapter: her deck cites DiPiro 13e e8 Clinical Pharmacogenomics). Daily tasks: "Smith daily ingest and
   guides" (21:47 Central), "Drill daily polish and question simulation" (03:41 Central); "Smith reading reminder"
   updated for Exam 4. Briefs for them: notes/EXAM4_LECTURE_BRIEF.md, GUIDE_SECTION_BRIEF.md, WALKTHROUGH_*.md.
+- 10/24 (Exam 4 walkthroughs): 14 scripts src/walk/guide4-*.json (60 parts, 27,119 characters, about 32 minutes),
+  checked by two reviewers (scratchpad gw4/verify, 19 fixes); gen_walk.py reads guide3.js and guide4.js. Not recorded:
+  about $4.93 at the 10/23 rate, waiting for the user's go-ahead. guide4-l19-5 now states the Furuta figure (2004,
+  lansoprazole) versus the assigned 1998 omeprazole paper.

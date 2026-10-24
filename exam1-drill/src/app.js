@@ -3088,10 +3088,10 @@ function gwPanelHTML(id) {
 }
 // the visual beside the transcript: the part's own slide or guide table, else the last one an earlier part named;
 // "sel" is a slide the listener browsed to with the slide buttons
-const GW_RD_SHORT = {'rodriguez-mozaz': 'Rodriguez-Mozaz and Weinberg, 2010', 'marraffa': 'Marraffa, Cohen and Howland, 2012', 'aapcc-bb': 'Beta-blocker guideline, 2005', 'aapcc-ccb': 'Calcium channel blocker guideline, 2005', 'dipiro-e9': 'DiPiro chapter e9', 'casarett-ch2': 'Casarett and Doull chapter 2', 'katzung-5': 'Katzung chapter 5'};
+const GW_RD_SHORT = {'rodriguez-mozaz': 'Rodriguez-Mozaz and Weinberg, 2010', 'marraffa': 'Marraffa, Cohen and Howland, 2012', 'aapcc-bb': 'Beta-blocker guideline, 2005', 'aapcc-ccb': 'Calcium channel blocker guideline, 2005', 'dipiro-e9': 'DiPiro chapter e9', 'casarett-ch2': 'Casarett and Doull chapter 2', 'katzung-5': 'Katzung chapter 5', 'furuta-1998': 'Furuta and colleagues, 1998', 'dipiro-e6': 'DiPiro chapter e6'};
 function gwShow(id, i, sel) {
   const p = document.querySelector(`.gwpanel[data-gwp="${id}"]`); if (!p) return;
-  const w = GUIDE_WALK[id], segs = w.segs;
+  const w = GUIDE_WALK[id], segs = w.segs; if (!segs[i]) return;
   const changed = +p.dataset.at !== i; p.dataset.at = i;
   p.querySelectorAll('.gwtx li').forEach(li => { const on = +li.dataset.gwi === i; li.classList.toggle('on', on); if (on) li.setAttribute('aria-current', 'true'); else li.removeAttribute('aria-current'); });
   const li = p.querySelector(`.gwtx li[data-gwi="${i}"]`), ol = p.querySelector('.gwtx');

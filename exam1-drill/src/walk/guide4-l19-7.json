@@ -1,0 +1,26 @@
+{
+ "id": "guide4-l19-7",
+ "title": "Thiopurine methyltransferase and the thiopurines",
+ "segs": [
+  {
+   "text": "Section fourteen. Thiopurine methyltransferase, T P M T, and the thiopurines. There are two thiopurines, azathioprine and mercaptopurine. She said, Azathioprine, we use it as an immunosuppressant. It's a prodrug. The body converts azathioprine to six mercaptopurine. Mercaptopurine itself is given directly for cancer, because its kinetics suit that use. Low T P M T activity changes how much of either drug becomes active.",
+   "slide": "pgxex:31",
+   "reading": null
+  },
+  {
+   "text": "Six mercaptopurine has competing routes. Xanthine oxidase and T P M T turn it into inactive products. Another pathway turns it into the active six thioguanine nucleotides. These stop cancer cells from dividing, but they also suppress the bone marrow. So T P M T normally shunts part of the drug away from the active metabolite.",
+   "slide": "pgxex:32",
+   "reading": null
+  },
+  {
+   "text": "When T P M T activity is low, more drug goes down the pathway to the six thioguanine nucleotides. The extra active metabolite suppresses blood cells. Low T P M T does not make the drug fail. It makes toxicity rise. The metabolite that treats the cancer is the same one that kills blood cells, so a poor metabolizer on a standard dose risks severe immunosuppression and must be given much less drug.",
+   "slide": "pgxex:32",
+   "reading": null
+  },
+  {
+   "text": "Two S N Ps, single nucleotide polymorphisms, account for over ninety percent of the inactivating alleles. In Caucasians the common variant is T P M T star three A, made of two nonsynonymous S N Ps. In East Asians it is T P M T star three C, made of one S N P. Both are inactivating, not gain of function. The phenotypes are extensive, intermediate, and poor, and they are measured as enzyme activity in red blood cells.",
+   "slide": "pgxex:33",
+   "reading": null
+  }
+ ]
+}

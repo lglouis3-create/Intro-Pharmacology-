@@ -1,0 +1,26 @@
+{
+ "id": "guide4-l18-4",
+ "title": "Synonymous, non-synonymous and premature stop S N Ps",
+ "segs": [
+  {
+   "text": "Section four. S N P types in coding regions. A single nucleotide polymorphism is one base pair changed in a gene. Several million are known, and many change nothing about the gene's product. Coding regions are the parts of a gene translated to R N A and then to protein. A coding S N P is classed by what the base change does to the codon. It can give the same amino acid, which is synonymous, a different amino acid, which is non-synonymous, or a stop codon early in the sequence, a premature stop.",
+   "slide": "pgx:32",
+   "reading": null
+  },
+  {
+   "text": "The synonymous example is A B C B one, thirty four thirty five, C to T, in the gene for P-glycoprotein. The codon changes from A T C to A T T, but several codons code for the same amino acid, and both give isoleucine. She said, Synonymous means the same. Synonymous does not mean harmless, though. This S N P keeps turning up in drug-response studies with different P-glycoprotein substrates, so it is studied. She thinks expression of the protein is probably affected, but there is no clear consensus on an effect on function or expression. The affected drugs are efavirenz and cyclosporine.",
+   "slide": "pgx:34",
+   "reading": null
+  },
+  {
+   "text": "The non-synonymous example is T P M T star three A. At six fifteen, G to A turns G C A, alanine, into A C A, threonine. At eight seventy four, A to G turns T A T, tyrosine, into T G T, cysteine. Each change puts a different amino acid into the enzyme, so its activity is significantly reduced. Azathioprine and six mercaptopurine depend on T P M T. She said, if you don't know the genotype of your patient, you could kill your patient if you didn't genotype them for this snip.",
+   "slide": "pgx:35",
+   "reading": null
+  },
+  {
+   "text": "The premature stop codon example is C Y P two C nineteen star three. A G to A change turns T G G, tryptophan, into T A G, a stop codon. T A G tells the cell's machinery to stop translating the R N A, and here it comes far earlier than the normal stop codon. The protein is truncated, so the activity is none, not low. She first called this S N P synonymous and corrected herself, because it changes the sequence by creating a stop codon. The affected drugs are the proton pump inhibitors omeprazole and lansoprazole.",
+   "slide": "pgx:36",
+   "reading": null
+  }
+ ]
+}

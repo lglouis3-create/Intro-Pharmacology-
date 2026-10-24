@@ -4,6 +4,7 @@ Newest first. The build embeds this file; the Topics page shows what is new sinc
 
 ## 2026-10-24 (Exam 4 begins)
 
+- Exam 4 guides have Listen walkthroughs (device voice until recorded), with slides and the Furuta reading preview.
 - Exam 4 (Mon Nov 2) is the open exam: 10/21 and 10/22 pharmacogenomics lectures, 110 questions.
 - Exam 4 guides: 14 sections in the Exam 3 teaching shape, with tell-apart rows and a gene–drug reference table.
 - Readings: the Furuta 1998 card is new; Katzung 5 and DiPiro e6 now sit under Exam 4.

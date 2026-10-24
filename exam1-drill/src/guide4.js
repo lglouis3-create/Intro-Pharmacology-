@@ -472,6 +472,7 @@ const GUIDE4_HTML = `
 <li>"they found that people had better treatment of their disease. When you had the low activity version of the enzyme increasing drug blood concentrations, you had better cure rates." <small>(T) 10/22</small></li>
 </ul>
 
+<p><b>The figure and the assigned paper.</b> The figure she showed (Examples p. 27, Furuta et al. 2004) used lansoprazole: "They were using lansoprazole, and they looked at the AUC here on this panel." <small>(T) 10/22</small> The assigned reading, Furuta et al., Annals of Internal Medicine 1998, treated 62 Japanese patients with omeprazole plus amoxicillin and reported H. pylori cure rates of 28.6%, 60% and 100% in the rapid, intermediate and poor metabolizers; its authors state that plasma omeprazole levels were not measured. Her discussion of the paper is set for Monday 10/26.</p>
 <h4>Traps</h4>
 <ul>
 <li><b>Calling *17 a structural change.</b> *17 raises how much enzyme is made (expression); it does not change the enzyme's shape, and it is not extra gene copies.</li>
