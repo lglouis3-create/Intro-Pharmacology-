@@ -190,3 +190,10 @@ See `## Conflicts / uncertain` in notes/L01.md, L02.md and L03.md. The ones that
   checked by two reviewers (scratchpad gw4/verify, 19 fixes); gen_walk.py reads guide3.js and guide4.js. Not recorded:
   about $4.93 at the 10/23 rate, waiting for the user's go-ahead. guide4-l19-5 now states the Furuta figure (2004,
   lansoprazole) versus the assigned 1998 omeprazole paper.
+- 10/25 (daily polish 1): click-through clean at 390/1200 (scratchpad daily/glitch.js). Simulated students (strong,
+  average) both 40/40 on a 40-item Exam 4 paper from guide4 alone; 7 flags, 4 confirmed and fixed (L18-013 reworded,
+  L18-041 distractor, guide4: clopidogrel use and 4-hydroxydebrisoquine). Quiz-flow review (daily/ux_quiz.md): Q.missed
+  and "Retry the N missed"; select-all verdict counts and .missed tags; srcNote() folds caption-only notes under More;
+  "low yield" in metaLine; Exam 4 NARR_Q from teach (device voice); 44 px [data-c] on touch; examCard "· 120 minutes";
+  "★ Likely: n"; Exam 4 Date fact removed. Nine figure stems rewritten in words. Open: select-all items all have 3-4
+  correct of 4-5 (vary when next edited); Exam 4 Hear the why not recorded.
