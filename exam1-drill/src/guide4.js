@@ -316,12 +316,13 @@ const GUIDE4_HTML = `
 <h4>Why</h4>
 <ul>
 <li><b>Why the two columns flip.</b> A poor metabolizer cannot run the enzyme step, so an active parent drug is not removed and climbs toward toxicity, while a prodrug is never turned on and fails. An ultrarapid metabolizer runs the step too fast, so an ordinary drug is gone before it works, and a prodrug is over-activated.</li>
-<li><b>Why metabolism is more complex than one enzyme, one drug.</b> Clopidogrel is a prodrug: about 85% of a dose is inactivated by esterases, and only about 15% is bioactivated in two CYP steps to the active thiol metabolite that blocks the platelet receptor. Several CYPs act on it, but variants in CYP2C19 most change how much active metabolite forms, so the enzyme that does the most work is not always the one that drives the outcome.</li>
+<li><b>Why metabolism is more complex than one enzyme, one drug.</b> Clopidogrel is a platelet receptor inhibitor; she said it prevents the platelets from sticking together. It is a prodrug: about 85% of a dose is inactivated by esterases, and only about 15% is bioactivated in two CYP steps to the active thiol metabolite that blocks the platelet receptor. Several CYPs act on it, but variants in CYP2C19 most change how much active metabolite forms, so the enzyme that does the most work is not always the one that drives the outcome.</li>
 </ul>
 
 <h4>Her words</h4>
 <ul>
 <li>"Variations in our metabolizing enzymes are the biggest reason why we would see variation in drug response" <small>(T) 10/22</small></li>
+<li>"It's a platelet receptor inhibitor. It helps us to basically do anticoagulation because it prevents the platelets from sticking together" <small>(T) 10/22</small></li>
 <li>"85% of the clopidogrel dose we give is metabolized by esterases to inactive metabolites" <small>(T) 10/22</small></li>
 </ul>
 
@@ -386,7 +387,7 @@ const GUIDE4_HTML = `
 
 <h4>Why</h4>
 <ul>
-<li><b>Why the debrisoquine curve has three peaks.</b> Debrisoquine is cleared almost entirely by CYP2D6, so when you group people by the parent-to-metabolite ratio the trait is monogenic and separates into distinct peaks: ultrarapid, extensive, and poor. A smooth bell curve would mean many genes blur the data together.</li>
+<li><b>Why the debrisoquine curve has three peaks.</b> Debrisoquine is cleared almost entirely by CYP2D6, so when you group people by the ratio of parent drug to its metabolite, 4-hydroxydebrisoquine, the trait is monogenic and separates into distinct peaks: ultrarapid, extensive, and poor. A smooth bell curve would mean many genes blur the data together.</li>
 <li><b>Why codeine is dangerous in an ultrarapid metabolizer.</b> Codeine is a prodrug activated by CYP2D6 to morphine, so an ultrarapid metabolizer converts a normal dose quickly into a large amount of morphine and can suppress breathing. Children died after codeine for cough, so codeine cough syrup is no longer given to kids.</li>
 <li><b>Why the poor metabolizer outcome depends on the drug.</b> For a drug CYP2D6 clears, a poor metabolizer accumulates it and has adverse effects at standard doses; for a prodrug CYP2D6 activates, a poor metabolizer makes too little active drug and has therapeutic failure.</li>
 </ul>

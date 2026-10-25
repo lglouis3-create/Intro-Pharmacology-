@@ -177,12 +177,12 @@ QUESTIONS.push(
 
 {id:"L18-013", lecture:"L18", prof:"Smith", tier:"new", topic:"L18", sub:"star", skill:"recall", multi:true, core:true, coreWhy:"her two take-home points, checked in class",
  concept:"dont-assume-two-points", tags:["smith","inclass"], source:"both",
- stem:"Which assumptions about star alleles in two different genes are wrong? Select all that apply.",
+ stem:"CYP2C19 and CYP2C9 both have *1, *2 and *3 alleles. Which of these must be looked up for each gene rather than assumed from the star number? Select all that apply.",
  options:[
-  {t:"That *2 is at the same location in both genes", correct:true, why:"CYP2C9*2 is not at nucleotide 681 the way CYP2C19*2 is; each lab numbers its own gene's variants as found."},
-  {t:"That *2 has the same functional effect in both genes", correct:true, why:"CYP2C19*2 has no activity; CYP2C9*2 has decreased activity."},
-  {t:"That *1 is the wild type in both genes", correct:false, why:"This assumption is correct: *1 is the wild type for every gene."},
-  {t:"That *3 means the same nucleotide in both genes", correct:true, why:"CYP2C9*3 is not at 636 the way CYP2C19*3 is."}],
+  {t:"Where *2 is located on the gene", correct:true, why:"CYP2C9*2 is not at nucleotide 681 the way CYP2C19*2 is; each lab numbers its own gene's variants as found."},
+  {t:"What functional effect *2 has", correct:true, why:"CYP2C19*2 has no activity; CYP2C9*2 has decreased activity."},
+  {t:"Whether *1 is the wild type allele", correct:false, why:"No lookup is needed: *1 is the wild type for every gene."},
+  {t:"Where *3 is located on the gene", correct:true, why:"CYP2C9*3 is not at 636 the way CYP2C19*3 is."}],
  teach:"Two things cannot be assumed across genes: that a star number marks the same spot on the gene, and that it has the same functional significance. CYP2C19*2 (681) and CYP2C9*2 are at different loci, and CYP2C19*2 has no activity while CYP2C9*2 has decreased activity. The one thing shared across genes is that *1 is the wild type.",
  quote:"just because 2 is at one place in one gene doesn't mean it's in the same place in another gene, right? And just because 2 in one gene means that gene's product is inactive, doesn't mean star 2 is going to be inactive in another gene's product",
  note:"She asked the class to turn to a buddy and explain \"the two points I just made\": \"They deal with location and functional significance of the gene.\"",
@@ -532,7 +532,7 @@ QUESTIONS.push(
  concept:"stop-is-nonsynonymous", tags:["smith"], source:"transcript",
  stem:"Is CYP2C19*3 (cytochrome P450 2C19) a synonymous or a non-synonymous single nucleotide polymorphism (SNP)?",
  options:[
-  {t:"Synonymous; the codon still reads as a codon", correct:false, why:"She first said synonymous and corrected herself to non-synonymous."},
+  {t:"Synonymous; only a single base pair is changed", correct:false, why:"One changed base pair makes it a SNP; whether it is synonymous depends on the amino acid. Here TGG (tryptophan) becomes TAG, a stop codon, so the sequence changes. She first said synonymous and corrected herself to non-synonymous."},
   {t:"Non-synonymous; it creates a stop codon", correct:true, why:"The amino acid sequence changes: it ends early at the new stop codon."},
   {t:"Neither; it is an InDel", correct:false, why:"It is a single base substitution."},
   {t:"Neither; it is non-coding", correct:false, why:"It is in the coding sequence."}],
@@ -692,24 +692,24 @@ QUESTIONS.push(
 /* ---------------- Genotype-guided dosing (Examples pp. 5–7) ---------------- */
 {id:"L18-054", lecture:"L18", prof:"Smith", tier:"new", topic:"L18", sub:"dosing", skill:"figure",
  concept:"warfarin-clearance-genotype", tags:["smith"], source:"slide",
- stem:"A figure plots S-warfarin unbound clearance by cytochrome P450 2C9 (CYP2C9) genotype. Which genotype has the lowest clearance?",
+ stem:"A bar graph (Scordo et al. 2002) plots S-warfarin unbound clearance (mL/min, axis 0 to 1000) on the y-axis against six cytochrome P450 2C9 (CYP2C9) genotypes on the x-axis: *1/*1, *1/*2, *1/*3, *2/*2, *2/*3 and *3/*3. Which genotype has the lowest clearance?",
  options:[
   {t:"CYP2C9*1/*1", correct:false, why:"Wild type has the highest clearance."},
   {t:"CYP2C9*1/*3", correct:false, why:"One wild type allele keeps clearance in the middle."},
   {t:"CYP2C9*2/*2", correct:false, why:"Low, but above *3/*3."},
-  {t:"CYP2C9*3/*3", correct:true, why:"The bar for *3/*3 is the lowest on the graph."}],
+  {t:"CYP2C9*3/*3", correct:true, why:"*3/*3 has the lowest unbound clearance of the six genotypes, under 100 mL/min."}],
  teach:"The slide shows that the rate of warfarin metabolism (a phenotype) depends on CYP2C9 genotype. Unbound S-warfarin clearance is highest in *1/*1, lower with one variant allele (*1/*2, *1/*3), lower still in *2/*2 and *2/*3, and lowest in *3/*3. Carrying at least one variant allele decreases clearance.",
  note:"This slide fell in the part of 10/21 missing from the lecture capture (she offered to record and post it); on 10/22 she referred back to it (\"we looked at that already in a graph and we looked at warfarin, uh, clearance\").",
  cite:"PGx-Examples-Students-Fall-2026.pdf slide ‘Genotype/Phenotype Relationship’ (p. 5); not captured in the 10/21 transcript"},
 
 {id:"L18-055", lecture:"L18", prof:"Smith", tier:"new", topic:"L18", sub:"dosing", skill:"figure", core:true, coreWhy:"a figure she said she really likes; patient A's dose",
  concept:"patient-a-low-dose", tags:["smith"], source:"both",
- stem:"Patient A has two non-functional alleles of the enzyme that clears a drug. Given the standard dose, what happens, and how is the dose adjusted?",
+ stem:"In a figure comparing four patients, A to D, the allele status of a metabolism gene is drawn under each: A has both copies crossed out, B one copy crossed out, C two intact copies and D three intact copies. A bar chart of percentage of average dose (axis 0 to 300) gives each patient a gray bar at 100% and a white bar for a dose based on genotype, and above each patient two concentration-versus-time curves show the resulting levels, one solid and one dashed with the area under it shaded gray. Patient A has two non-functional alleles of the enzyme that clears the drug. Given the standard dose, what happens, and how is the dose adjusted?",
  options:[
   {t:"Concentration too high; lower the dose", correct:true, why:"Patient A cannot clear the drug through that enzyme; a lower, genotype-based dose keeps the level at efficacy but out of toxicity."},
   {t:"Concentration too low; raise the dose", correct:false, why:"That is patient D, with extra gene copies."},
   {t:"Concentration normal; no change", correct:false, why:"That is the wild type patient."},
-  {t:"Concentration too high; stop the drug entirely", correct:false, why:"In the figure the dose is lowered, not stopped."}],
+  {t:"Concentration too high; stop the drug entirely", correct:false, why:"In the patients A to D comparison patient A's dose is lowered, not stopped."}],
  teach:"In the figure the gray bars are everyone at 100% of the average dose, and the curves show the resulting concentrations. Patient A, with no working copy of the metabolizing enzyme, cannot metabolize and clear the drug, so the standard dose gives too high a level. Dosing by genotype gives patient A a lower dose and brings the level to efficacy without toxicity.",
  quote:"We know they don't have any 2D6, so they can't metabolize it and clear it. So we're going to lower their dose, give them a dose based on their genotype, which is lower, because they can't metabolize it.",
  note:"The figure (Foye's) labels only a \"metabolism gene\"; she used CYP2D6 as the example. The first part of her explanation of this figure was missing from the lecture capture.",
@@ -717,7 +717,7 @@ QUESTIONS.push(
 
 {id:"L18-056", lecture:"L18", prof:"Smith", tier:"new", topic:"L18", sub:"dosing", skill:"figure",
  concept:"patient-d-high-dose", tags:["smith"], source:"both",
- stem:"Patient D has multiple copies of the metabolizing enzyme gene. What happens on the standard dose?",
+ stem:"In a figure comparing four patients, A to D, the allele status of a metabolism gene is drawn under each: A has both copies crossed out, B one copy crossed out, C two intact copies and D three intact copies. A bar chart of percentage of average dose (axis 0 to 300) gives each patient a gray bar at 100% and a white bar for a dose based on genotype, and above each patient two concentration-versus-time curves show the resulting levels, one solid and one dashed with the area under it shaded gray. Patient D has multiple copies of the metabolizing enzyme gene. What happens on the standard dose?",
  options:[
   {t:"Area under the curve (AUC) is too high and toxic", correct:false, why:"That is patient A."},
   {t:"AUC is too low and never therapeutic", correct:true, why:"The drug is metabolized so quickly that the level does not stay therapeutic; a higher dose fixes it."},
@@ -729,11 +729,11 @@ QUESTIONS.push(
 
 {id:"L18-057", lecture:"L18", prof:"Smith", tier:"new", topic:"L18", sub:"dosing", skill:"figure",
  concept:"same-auc-why", tags:["smith","inclass"], source:"both",
- stem:"With genotype-based dosing, all four patients reach the same therapeutic area under the curve (AUC). Why are their doses different?",
+ stem:"In a figure comparing four patients, A to D, the allele status of a metabolism gene is drawn under each: A has both copies crossed out, B one copy crossed out, C two intact copies and D three intact copies. A bar chart of percentage of average dose (axis 0 to 300) gives each patient a gray bar at 100% and a white bar for a dose based on genotype, and above each patient two concentration-versus-time curves show the resulting levels, one solid and one dashed with the area under it shaded gray. With genotype-based dosing, all four patients reach the same therapeutic area under the curve (AUC). Why are their doses different?",
  options:[
   {t:"They differ in how fast their enzymes clear the drug", correct:true, why:"Each dose is matched to how fast that patient's enzymes clear the drug."},
-  {t:"They differ in body weight", correct:false, why:"The figure varies only the allele status of the metabolism gene."},
-  {t:"Each patient has a different drug target for this drug", correct:false, why:"The gene in the figure is a metabolizing enzyme (PK), not a target."},
+  {t:"They differ in body weight", correct:false, why:"The patients A to D comparison varies only the allele status of the metabolism gene."},
+  {t:"Each patient has a different drug target for this drug", correct:false, why:"The gene in the patients A to D comparison is a metabolizing enzyme (PK), not a target."},
   {t:"Their kidneys differ", correct:false, why:"Renal function is not the variable shown."}],
  teach:"She asked why everyone ends up with the same gray AUC. Because of their genotypes, the four groups have different metabolizing capability, so each needs a different dose for the same exposure. Dosing by genotype gets everyone therapeutic and nobody toxic.",
  quote:"Yeah, because of their genotypes, these 4 groups of people have different metabolizing capabilities.",
@@ -754,7 +754,7 @@ QUESTIONS.push(
 
 {id:"L18-059", lecture:"L18", prof:"Smith", tier:"new", topic:"L18", sub:"dosing", skill:"figure",
  concept:"gray-bars-100", tags:["smith"], source:"both",
- stem:"In the patients A to D figure, what do the gray dose bars at 100% represent?",
+ stem:"In a figure comparing four patients, A to D, the allele status of a metabolism gene is drawn under each: A has both copies crossed out, B one copy crossed out, C two intact copies and D three intact copies. A bar chart of percentage of average dose (axis 0 to 300) gives each patient a gray bar at 100% and a white bar for a dose based on genotype, and above each patient two concentration-versus-time curves show the resulting levels, one solid and one dashed with the area under it shaded gray. What do the gray dose bars at 100% represent?",
  options:[
   {t:"Each patient's own genotype-based dose of the drug", correct:false, why:"Those are the white bars."},
   {t:"The same average dose given to everyone", correct:true, why:"Everyone getting a gray dose gets the same dose, 100% of average."},
@@ -767,7 +767,7 @@ QUESTIONS.push(
 /* ---------------- Gene structure and population frequencies (Examples pp. 8–9) ---------------- */
 {id:"L18-060", lecture:"L18", prof:"Smith", tier:"new", topic:"L18", sub:"popfreq", skill:"recall",
  concept:"gene-structure", tags:["smith"], source:"both",
- stem:"In the gene structure figure, which region is where the machinery for expressing the gene starts?",
+ stem:"A Goodman and Gilman's diagram of gene structure labels five parts along a gene: two exons, an intron, an intergenic region and a promoter. Boxes above and below mark variants changing protein abundance, variants changing the protein product, and variants serving as markers for nearby or distant functional variation. Which region is where the machinery for expressing the gene starts?",
  options:[
   {t:"Exon", correct:false, why:"Exons are the parts that end up as amino acid sequence."},
   {t:"Intron", correct:false, why:"Introns lie between exons; variations can occur there too."},
@@ -816,7 +816,7 @@ QUESTIONS.push(
 
 {id:"L18-064", lecture:"L18", prof:"Smith", tier:"new", topic:"L18", sub:"popfreq", skill:"figure", multi:true,
  concept:"freq-figure-genes", tags:["smith"], source:"both",
- stem:"Which genes are shown in the allele and phenotype frequency figure? Select all that apply.",
+ stem:"A four-panel Goodman and Gilman's figure gives allele and phenotype frequencies in sub-Saharan African, European and East Asian populations; she said it gives examples of 4 different genes. Panel A shows allele frequencies of *1 (wild type) and the no-function *3, *6 and *7. Panel B shows allele frequencies of the -1639G>A variant (G, higher dose required; A, lower dose required). Panel C shows metabolizer phenotypes (indeterminate, normal, intermediate, poor) for the enzyme that metabolizes azathioprine. Panel D shows the same phenotypes for a gene she said will be discussed later, with sub-Saharan African frequencies marked currently unknown. Which genes are shown in this figure? Select all that apply.",
  options:[
   {t:"CYP3A5", correct:true, why:"Panel A, allele frequencies."},
   {t:"VKORC1", correct:true, why:"Panel B, -1639G>A allele frequencies."},
@@ -842,7 +842,7 @@ QUESTIONS.push(
 
 {id:"L18-066", lecture:"L18", prof:"Smith", tier:"new", topic:"L18", sub:"dosing", skill:"figure", multi:true,
  concept:"genotype-dosing-results", tags:["smith"], source:"both",
- stem:"In the patients A to D figure, which statements describe dosing by genotype (the white bars)? Select all that apply.",
+ stem:"In a figure comparing four patients, A to D, the allele status of a metabolism gene is drawn under each: A has both copies crossed out, B one copy crossed out, C two intact copies and D three intact copies. A bar chart of percentage of average dose (axis 0 to 300) gives each patient a gray bar at 100% and a white bar for a dose based on genotype, and above each patient two concentration-versus-time curves show the resulting levels, one solid and one dashed with the area under it shaded gray. Which statements describe dosing by genotype (the white bars)? Select all that apply.",
  options:[
   {t:"Patient A gets less than the average dose", correct:true, why:"Patient A cannot clear the drug through the enzyme."},
   {t:"Patient D gets much more than the average dose", correct:true, why:"Patient D's extra copies clear the drug quickly."},

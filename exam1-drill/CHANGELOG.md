@@ -2,6 +2,13 @@
 
 Newest first. The build embeds this file; the Topics page shows what is new since your last visit, and the Progress page shows all of it. Keep each bullet to one short line.
 
+## 2026-10-25 (Daily polish)
+
+- A finished pass offers "Retry the N missed"; select-all feedback counts the ticks and marks missed options.
+- Exam 4: figure questions describe the figure in words; four questions reworded after a simulated-student check.
+- Caption-error notes moved under More; low-yield items labeled; Hear the why on Exam 4 cards (device voice).
+- Larger confidence buttons on phones; clearer Topics labels (exam length, "★ Likely").
+
 ## 2026-10-24 (Exam 4 begins)
 
 - Exam 4 guides have Listen walkthroughs (device voice until recorded), with slides and the Furuta reading preview.

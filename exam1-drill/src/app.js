@@ -620,7 +620,7 @@ function newsCard() {
 }
 /* The exam being studied as label / value rows: the paper, when, then the exam's own facts (or its blurb), then the bank. */
 function examCard(ex, pool) {
-  const rows = [['Paper', `${ex.name}${ex.questions ? ': ' + ex.questions + ' questions' : ''}${ex.minutes ? ' in ' + ex.minutes + ' minutes' : ''}`],
+  const rows = [['Paper', `${ex.name}${ex.questions ? ': ' + ex.questions + ' questions' : ''}${ex.minutes ? ' · ' + ex.minutes + ' minutes' : ''}`],
     ['When', `${esc(ex.date)} <b>${esc(examCountdown())}</b>`, true]];
   if (ex.facts && ex.facts.length) ex.facts.forEach(f => rows.push(f)); else if (ex.blurb) rows.push(['About', ex.blurb]);
   const concepts = new Set(pool.map(q => q.concept || q.id)).size;
@@ -658,10 +658,11 @@ function focusCard4() {
   if (!FOCUS4.length) return '';
   return `<div class="card focuscard"><b>Where to focus for Dr. Smith's Exam 4</b><ul class="focuslist">${FOCUS4.map(([q, d, btns]) => `<li><span>"${esc(tidySpeech(q))}" <small>(T) ${d}</small></span>${btns ? `<div class="row" style="gap:6px;margin-top:4px">${btns}</div>` : ''}</li>`).join('')}</ul><p class="sub" style="margin:6px 0 0">Smith focus is on: only her exam's pages and questions show. Turn it off from the ★ button in the tab bar.</p></div>`;
 }
+if (typeof NARR_Q !== 'undefined') QUESTIONS.forEach(q => { if (examOf(q) === 4 && !NARR_Q[q.id] && q.teach) { const t = Array.isArray(q.teach) ? q.teach.map(x => x.t).join(' ') : String(q.teach); NARR_Q[q.id] = t; } });
 /* ---------- Topics ---------- */
 let FILT = {skill: 'all'};
 /* ★ Most likely on her exam: items marked core (her quiz or poll concept, her words that it is testable, her posted keys, an objective tested directly). */
-const coreBtn = (qs, tid, sid, ex) => { const n = qs.filter(q => q.core && !q.lowYield).length; return n ? `<button class="btn ghost corebtn" data-core="${tid}" ${sid ? `data-sub="${sid}" ` : ''}data-ex="${ex}" title="Most likely on her exam: her quiz and poll concepts, what she said to know, her keys, her objectives">★ ${n}</button>` : ''; };
+const coreBtn = (qs, tid, sid, ex) => { const n = qs.filter(q => q.core && !q.lowYield).length; return n ? `<button class="btn ghost corebtn" data-core="${tid}" ${sid ? `data-sub="${sid}" ` : ''}data-ex="${ex}" title="Most likely on her exam: her quiz and poll concepts, what she said to know, her keys, her objectives">★ Likely: ${n}</button>` : ''; };
 function vTopics() {
   // the skill filter applies to the counts, both study buttons, the tier buttons and the topic list; flags and the ladders
   // (each one a chain across skills, climbed whole) use the whole bank
@@ -751,7 +752,7 @@ function vTopics() {
 let Q = null;
 function startQuiz(list, label, mode, opts = {}) {
   if (!list.length) { alert('No questions match that selection.'); return; }
-  Q = {list: list.slice(), label, mode, i: 0, done: 0, right: 0, retest: [], doneIds: new Set(), st: {}, graph: opts.graph || null};
+  Q = {list: list.slice(), label, mode, i: 0, done: 0, right: 0, retest: [], doneIds: new Set(), missed: [], st: {}, graph: opts.graph || null};
   // opts.back: opened from a page the learner will want to return to (a map tile, a Tell apart row)
   // a set started from Topics (a deck's Drill, Due, All, a tier) also keeps the way back to the same spot
   const from = (opts.back || CUR === 'topics') && CUR !== 'quiz' ? {view: CUR, y: window.scrollY} : null;
@@ -806,10 +807,11 @@ function quizDone() {
   if (Q.graph) return graphDone();
   if (Q.mode === 'concept') return conceptDone();
   $('#view').innerHTML = `<div class="card"><h2>Pass finished</h2><p>${Q.right} of ${Q.done} correct.</p>
-    <div class="row">${RET.length ? `<button class="btn" id="qback">${esc(backLabel())}</button>` : ''}<button class="btn${RET.length ? ' ghost' : ''}" id="again">Study what is due</button><button class="btn ghost" id="totopics">Topics</button></div></div>`;
+    <div class="row">${(Q.missed || []).length ? `<button class="btn" id="retrymiss">Retry the ${Q.missed.length} missed</button>` : ''}${RET.length ? `<button class="btn${(Q.missed || []).length ? ' ghost' : ''}" id="qback">${esc(backLabel())}</button>` : ''}<button class="btn${RET.length || (Q.missed || []).length ? ' ghost' : ''}" id="again">Study what is due</button>${RET.length && /Topics/.test(backLabel()) ? '' : '<button class="btn ghost" id="totopics">Topics</button>'}</div></div>`;
   const qb = $('#qback'); if (qb) qb.onclick = goBack;
+  const rm = $('#retrymiss'); if (rm) { const ids = Q.missed.slice(); rm.onclick = () => startQuiz(ids.map(id => byId[id]).filter(Boolean), 'Missed', 'pass'); }
   $('#again').onclick = () => startQuiz(examPool(), 'Due and unseen', 'sr');
-  $('#totopics').onclick = () => go('topics');
+  const tt = $('#totopics'); if (tt) tt.onclick = () => go('topics');
 }
 function vQuiz() { if (!Q) return startQuiz(examPool(), 'Due and unseen', 'sr'); if (Q.finished) return quizDone(); renderQ(); }
 // "Study what is due" with nothing due or unseen serves the soonest due: say so rather than pass it off as due
@@ -828,7 +830,7 @@ function readingHTML(r) {
 }
 function metaLine(q) {
   const t = TOPIC[q.topic], sk = SKILL[q.skill];
-  return `${esc(t ? t.name : q.topic)}${sk ? ' · ' + esc(sk.short) : ''}${q.level ? ' · Tier ' + q.level : ''}${q.multi ? ' · select all' : ''}`;
+  return `${esc(t ? t.name : q.topic)}${sk ? ' · ' + esc(sk.short) : ''}${q.level ? ' · Tier ' + q.level : ''}${q.multi ? ' · select all' : ''}${q.lowYield ? ' · low yield' : ''}`;
 }
 /* One question card. `st` holds the answer state (order, rightOrder, picked, mpick, answered, ok);
    in the one-at-a-time view that is Q itself, on the all-on-one-page view one object per question. */
@@ -847,7 +849,7 @@ function qCard(q, st, opts = {}) {
       const o = q.options[oi];
       let cls = 'opt';
       const sel = q.multi ? st.picked.has(oi) : st.picked === oi;
-      if (st.answered) { if (o.correct) cls += ' right'; else if (sel) cls += ' wrong'; }
+      if (st.answered) { if (o.correct) cls += ' right' + (q.multi && !sel ? ' missed' : ''); else if (sel) cls += ' wrong'; }
       else if (sel) cls += ' sel';
       h += `<button class="${cls}" data-qid="${q.id}" data-o="${oi}" ${st.answered ? 'disabled' : ''}><span class="k">${q.multi ? (sel ? '☑' : '☐') : LETTERS[n]}</span><span>${esc(o.t)}</span></button>`;
       // after an answer, every option's why shows under it: why the right one is right and why each other one is wrong
@@ -857,13 +859,13 @@ function qCard(q, st, opts = {}) {
   if (!st.answered && (q.multi || q.type === 'match')) h += `<button class="btn" ${opts.single ? 'id="check"' : ''} data-qid="${q.id}" data-check="1">Check</button>`;
   if (st.answered) {
     const pairsRight = q.type === 'match' ? q.left.filter((l, i) => st.mpick[i] === pairOf(q, l)).length : 0;
-    h += `<div class="verdict ${st.ok ? 'ok' : 'bad'}" role="status" tabindex="-1">${st.ok ? '✓ Correct' : '✗ Not correct'}${q.type === 'match' ? ` · ${pairsRight} of ${q.left.length} pairs right` : ''}</div>`;
+    h += `<div class="verdict ${st.ok ? 'ok' : 'bad'}" role="status" tabindex="-1">${st.ok ? '✓ Correct' : '✗ Not correct'}${q.type === 'match' ? ` · ${pairsRight} of ${q.left.length} pairs right` : ''}${q.multi && !st.ok && st.picked && st.picked.size != null ? (() => { const cor = q.options.map((o, i) => o.correct ? i : -1).filter(i => i >= 0), hit = cor.filter(i => st.picked.has(i)).length, bad = [...st.picked].filter(i => !q.options[i].correct).length; return ` · ${hit} of ${cor.length} correct options ticked${bad ? ` · ${bad} wrong tick${bad > 1 ? 's' : ''}` : ''}`; })() : ''}</div>`;
     const hidden = [];
     if (q.type === 'match' && q.pairs) q.pairs.filter(p => p.why).forEach(p => { h += `<div class="why"><b>${esc(p.l)}</b>: ${esc(p.why)}</div>`; });
     if (q.teach) h += `<div class="teach">${teachHTML(q.teach)}</div>`;
     if (q.step3) h += stepHTML(q.step3);
     h += graphFeedback(q, st);
-    if (q.note) h += `<div class="note">${esc(q.note)}</div>`;
+    if (q.note && !srcNote(q.note)) h += `<div class="note">${esc(q.note)}</div>`;
     if (typeof NARR_Q !== 'undefined' && NARR_Q[q.id]) h += `<div class="row qsay"><button type="button" class="chip" data-qsay="${q.id}">🔊 Hear the why</button><span class="meta" style="margin:0">${typeof Q_CLIPS !== 'undefined' && !Q_CLIPS.includes(q.id) ? 'device voice' : 'read by the narrator'}</span></div>`;
     h += moreHTML(q, hidden) + explainHTML(q);
     if (opts.conf) h += opts.conf(st);
@@ -890,8 +892,11 @@ function fillHTML(q, st) {
 }
 /* After an answer the card shows the verdict, every option's why under that option, and the teach.
    The figure, the textbook notes, the quote and the cite are folded behind "More". */
+// a note that only reports how the auto-captions garbled a word is source detail: it sits under More, not in the note box
+const srcNote = n => /\b(transcript|captions?|caption's|renders?|rendered|garbled)\b/i.test(n) && !/\b(Katzung|chapter|her exam|keys?|keyed|the exam|slide says)\b/i.test(n) && n.length < 200;
 function moreHTML(q, hidden) {
   let b = '';
+  if (q.note && srcNote(q.note)) b += `<div class="meta" style="margin:6px 0 4px">${esc(q.note)}</div>`;
   if (hidden.length) b += `<div class="meta" style="margin:6px 0 4px">The other options</div>` + hidden.map(o => `<div class="why"><b>${esc(o.t)}</b> — ${esc(o.why)}</div>`).join('');
   if (q.fg) b += figHTML(q.fg);
   b += readingHTML(q.reading);
@@ -1001,7 +1006,7 @@ function checkAll(id, fillOk) {
   setTimeout(refreshSess, 0);
   if (S.log.length > 5000) S.log = S.log.slice(-5000);
   schedule(q.id, st.conf);
-  Q.done++; if (st.ok) Q.right++; Q.doneIds.add(q.id);
+  Q.done++; if (st.ok) Q.right++; else if (Q.missed && !Q.missed.includes(q.id)) Q.missed.push(q.id); Q.doneIds.add(q.id);
   if (!st.ok) Q.retest.push({concept: q.concept, not: q.id});
   save(); refreshCard(id);
 }
@@ -1043,7 +1048,7 @@ function check(fillOk) {
   if (S.log.length > 5000) S.log = S.log.slice(-5000);
   schedule(q.id, conf);
   if (!Q.ok) Q.retest.push({concept: q.concept, not: q.id});
-  Q.done++; if (Q.ok) Q.right++; Q.doneIds.add(q.id); Q.rec = q.id;
+  Q.done++; if (Q.ok) Q.right++; else if (Q.missed && !Q.missed.includes(q.id)) Q.missed.push(q.id); Q.doneIds.add(q.id); Q.rec = q.id;
   // the all-on-one-page view shows it answered, not as a fresh card
   Q.st[q.id] = {order: Q.order, rightOrder: q.type === 'match' ? Q.rightOrder : null, picked: Q.picked, mpick: Q.mpick, fill: Q.fill, answered: true, ok: Q.ok, conf, box0: Q.box0, t0: Q.t0};
   save();

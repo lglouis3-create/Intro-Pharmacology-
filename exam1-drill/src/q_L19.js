@@ -199,6 +199,7 @@ QUESTIONS.push(
   {t:"Three separate genes acting together", correct:false, why:"Distinct peaks point to a single gene driving the response; a polygenic trait gives one smooth bell curve."}],
  teach:"Debrisoquine is metabolized almost entirely by CYP2D6. Grouping people by their parent-to-metabolite ratio gives a histogram with distinct peaks, which signals a monogenic response. The peaks are the ultrarapid, extensive, and poor metabolizer phenotypes. A smooth bell-shaped curve, by contrast, would mean several genes contribute (a polygenic response).",
  note:"Transcript renders debrisoquine as \"debriszaquin\"/\"debrazaquin\"/\"derizoquin\" (garbled captions); the slide axis reads 'Debrisoquine: 4-Hydroxydebrisoquine metabolic ratio'.",
+ quote:"the three humps indicate that we're looking at three different phenotypes",
  cite:"PGx-Examples-Students-Fall-2026.pdf slide 'CYP2D6 Polymorphisms 2' (p. 21, Golan Fig. 52-1A); transcript 10/22"},
 
 {id:"L19-016", lecture:"L19", prof:"Smith", tier:"new", topic:"L19", sub:"cyp2d6", skill:"apply", type:"match", dupOf:"L18-051",
@@ -385,12 +386,12 @@ QUESTIONS.push(
 
 {id:"L19-031", lecture:"L19", prof:"Smith", tier:"new", topic:"L19", sub:"cyp2c19", skill:"figure",
  concept:"cyp2c19-furuta-figure", tags:["smith"], source:"both",
- stem:"In the Furuta lansoprazole figure, which phenotype showed the highest drug AUC and the highest gastric pH?",
+ stem:"Furuta et al. (2004) gave lansoprazole 30 mg and plotted three bar panels: area under the curve (AUC) for the proton pump inhibitor (PPI) in ng-h/mL, intragastric pH (24 h mean), and cure rate (%). Each panel has one bar each for cytochrome P450 2C19 (CYP2C19) homozygous extensive metabolizers (homEM), heterozygotes (hetEM) and poor metabolizers (PM). Which phenotype showed the highest drug AUC and the highest gastric pH?",
  options:[
   {t:"Poor metabolizers (homozygous)", correct:true, why:"Poor metabolizers cleared the PPI slowest, so they had the highest AUC and raised gastric pH the most."},
   {t:"Homozygous extensive metabolizers", correct:false, why:"Extensive metabolizers cleared the drug fastest, giving the lowest AUC and the smallest pH rise."},
   {t:"Heterozygous extensive metabolizers", correct:false, why:"Heterozygotes fell in the middle, not the highest, for AUC and pH."},
-  {t:"Ultrarapid metabolizers", correct:false, why:"The figure compared poor, heterozygous, and homozygous extensive metabolizers; the poor group was highest."}],
+  {t:"Ultrarapid metabolizers", correct:false, why:"Furuta compared only poor, heterozygous, and homozygous extensive metabolizers; the poor group was highest."}],
  teach:"The figure plots AUC, gastric pH, and cure rate against CYP2C19 phenotype for lansoprazole. Poor metabolizers had the highest AUC because they cleared the drug slowest, the highest gastric pH because more drug suppressed acid, and the best cure rate. Extensive metabolizers cleared the drug fastest and had the lowest values.",
  cite:"PGx-Examples-Students-Fall-2026.pdf slide 'CYP2C19 Polymorphisms 3' (p. 27, Furuta et al. 2004); transcript 10/22"},
 
