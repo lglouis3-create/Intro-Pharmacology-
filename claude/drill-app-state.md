@@ -207,3 +207,13 @@ See `## Conflicts / uncertain` in notes/L01.md, L02.md and L03.md. The ones that
   -> pgxex:15, guide4-l19-5 part 5 -> pgxex:25; rdLead and gwReading skip single-letter abbreviations; links for
   katzung-5 and furuta-1998; status line uses discussed_in_class; dipiro-e6 lecture line shortened; 44 px Speed select.
   Furuta status stays 'upcoming' until the 10/26 transcript arrives.
+
+## Restore after a container restart
+
+The scratchpad is wiped on every restart. Durable copies: scripts and briefs in the repo (exam1-drill/src/daily/,
+exam1-drill/notes/); transcripts in Drive, Smith's Lecture transcripts folder 1pH9DY6g55K8rTzK6cUGKy_l-H15TfqG0.
+Transcripts are never committed (Pages serves the repo root). At the start of each scheduled run, download any missing:
+- L18 (10/21): Drive 11x7ATwHf1kLolqRtibbgdGTsAJry-XKa, 76,165 bytes -> <scratchpad>/l18/transcript.txt
+- L19 (10/22): Drive 1IYKmaNPVlhYThg-6CETJTL5J23JndQO2, 83,752 bytes -> <scratchpad>/l19/transcript.txt
+Each new lecture ingested adds its line here.
+
