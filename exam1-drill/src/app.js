@@ -3114,7 +3114,7 @@ function gwShow(id, i, sel) {
   let h = '';
   if (vis && vis.s) {
     const [d, n] = vis.s.split(':'), dk = GW_DECKS[d], src = slideSrc(d, +n);
-    h += `<a href="${src}" target="_blank" rel="noopener" title="Open the slide full size"><img src="${src}" alt="${esc(dk.name)}, slide ${n}" loading="lazy" onerror="this.closest('figure').classList.add('noimg')"></a>
+    h += `<a href="${src}" target="_blank" rel="noopener" title="Open the slide full size"><img src="${src}" alt="${esc(dk.name)}, slide ${n}" decoding="async" onerror="this.closest('figure').classList.add('noimg')"></a>
       <figcaption class="row"><span class="meta" style="margin:0">${esc(dk.name)} · slide ${n} of ${dk.n}</span><span class="row" style="gap:4px;margin-left:auto"><button type="button" class="chip" data-gwslide="-1" ${+n > 1 ? '' : 'disabled'} aria-label="Previous slide">‹ Slide</button><button type="button" class="chip" data-gwslide="1" ${+n < dk.n ? '' : 'disabled'} aria-label="Next slide">Slide ›</button></span></figcaption>
       <p class="meta gwnoimg">The slide images load on the class site.</p>`;
   } else if (vis && vis.tb != null) {
