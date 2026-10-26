@@ -191,7 +191,7 @@ function setFocus(on) {
   if (on && !FOCUS_VIEWS.includes(CUR)) { go('topics'); return; }
   nav(); VIEWFN[CUR] && VIEWFN[CUR]();
 }
-const focusBtn = () => COURSE.exams.some(e => e.id === FOCUS_EXAM) ? `<button type="button" id="focusbtn" class="focusbtn ${focusOn() ? 'on' : ''}" aria-pressed="${focusOn()}" title="Show only what Dr. Smith's Exam ${FOCUS_EXAM} uses">${focusOn() ? '★ Smith focus: on' : '☆ Smith focus'}</button>` : '';
+const focusBtn = () => COURSE.exams.some(e => e.id === FOCUS_EXAM) ? `<button type="button" id="focusbtn" class="focusbtn ${focusOn() ? 'on' : ''}" aria-pressed="${focusOn()}" title="Show only Dr. Smith's Exam ${FOCUS_EXAM}: the other exams' sections and the Exam 3-only tabs are hidden while this is on">${focusOn() ? '★ Smith focus: on' : '☆ Smith focus'}</button>` : '';
 function nav() {
   const fo = focusOn();
   $('#nav').innerHTML = focusBtn() + VIEWS.filter(([k]) => (k !== 'guide' || (typeof GUIDE_HTML !== 'undefined' && GUIDE_HTML.trim())) && (!fo || FOCUS_VIEWS.includes(k)))
@@ -631,6 +631,9 @@ function examCard(ex, pool) {
 const TF_KEY = COURSE.ns + ':tfold';
 const TF_OPEN = () => { try { return new Set(JSON.parse(store.get(TF_KEY) || '[]')); } catch (e) { return new Set(); } };
 /* The Smith focus card: her own words about what her exam tests, each with the page that drills it. Quotes verbatim. */
+// while Smith focus is on, the pages say what is hidden and give the way back
+const focusNote = () => focusOn() ? `<p class="sub focusnote">★ Smith focus is on: this page shows only Exam ${FOCUS_EXAM}. The other exams' sections are hidden, not deleted. <button type="button" class="chip" data-focusoff>Show all exams</button></p>` : '';
+document.addEventListener('click', e => { if (e.target.closest('[data-focusoff]')) setFocus(false); });
 function focusCard() {
   if (FOCUS_EXAM !== 3) return focusCard4();
   const tq = id => QUESTIONS.filter(q => q.topic === id).length;
@@ -645,7 +648,7 @@ function focusCard() {
     ${item("No, there will not, yeah, no backwards nav, OK, yes.", '10/21 (asked whether you can go back to a question)', `<button type="button" class="btn ghost" data-jump="exam:">Exam sim (her format is an option)</button>`)}
     ${item("So what we covered yesterday is all on. This exam on Friday.", '10/21 (yesterday = the 10/20 pharmacogenomics lecture; 10/21 starts her next exam)', '')}
     ${item("That's how we have it on the syllabus.", '10/20 (the class vote put the 10/20 pharmacogenomics lecture on Friday\'s exam)', '')}
-  </ul><p class="sub" style="margin:6px 0 0">Smith focus is on: only her exam's pages and questions show. Turn it off from the ★ button in the tab bar.</p></div>`;
+  </ul><p class="sub" style="margin:6px 0 0">Smith focus is on: only Exam ${FOCUS_EXAM} shows. The other exams' sections on Guides, Tell apart and Reference, and the Exam 3-only tabs, are hidden until you turn it off with the ★ button in the tab bar.</p></div>`;
 }
 /* Exam 4: her words about her last exam, each with where it is drilled (filled from the lecture notes; verbatim). */
 const FOCUS4 = [
@@ -656,7 +659,7 @@ const FOCUS4 = [
 ];
 function focusCard4() {
   if (!FOCUS4.length) return '';
-  return `<div class="card focuscard"><b>Where to focus for Dr. Smith's Exam 4</b><ul class="focuslist">${FOCUS4.map(([q, d, btns]) => `<li><span>"${esc(tidySpeech(q))}" <small>(T) ${d}</small></span>${btns ? `<div class="row" style="gap:6px;margin-top:4px">${btns}</div>` : ''}</li>`).join('')}</ul><p class="sub" style="margin:6px 0 0">Smith focus is on: only her exam's pages and questions show. Turn it off from the ★ button in the tab bar.</p></div>`;
+  return `<div class="card focuscard"><b>Where to focus for Dr. Smith's Exam 4</b><ul class="focuslist">${FOCUS4.map(([q, d, btns]) => `<li><span>"${esc(tidySpeech(q))}" <small>(T) ${d}</small></span>${btns ? `<div class="row" style="gap:6px;margin-top:4px">${btns}</div>` : ''}</li>`).join('')}</ul><p class="sub" style="margin:6px 0 0">Smith focus is on: only Exam ${FOCUS_EXAM} shows. The other exams' sections on Guides, Tell apart and Reference, and the Exam 3-only tabs, are hidden until you turn it off with the ★ button in the tab bar.</p></div>`;
 }
 if (typeof NARR_Q !== 'undefined') QUESTIONS.forEach(q => { if (examOf(q) === 4 && !NARR_Q[q.id] && q.teach) { const t = Array.isArray(q.teach) ? q.teach.map(x => x.t).join(' ') : String(q.teach); NARR_Q[q.id] = t; } });
 /* ---------- Topics ---------- */
@@ -2036,7 +2039,7 @@ function examPage(html1, key) {
     Object.entries(PAGE_BY_EXAM).forEach(([id, pg]) => { const b = pg[key](); bodies[id] = b ? expandFigs(foldLegend(b)) : ''; });
     return {title: m ? m[1] : '', bodies};
   })());
-  return `<h2>${P.title}</h2>` + COURSE.exams.map(e => exGroup(e, P.bodies[e.id] || '<div class="empty">This exam\'s sections are added as its lectures are written.</div>')).join('');
+  return `<h2>${P.title}</h2>` + focusNote() + COURSE.exams.map(e => exGroup(e, P.bodies[e.id] || '<div class="empty">This exam\'s sections are added as its lectures are written.</div>')).join('');
 }
 /* His figures are data URLs of up to a few hundred KB each. Pages carry only the key
    (<img data-img>) and the picture is attached after the page is built, so the browser does
