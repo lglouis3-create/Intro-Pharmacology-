@@ -197,3 +197,5 @@ See `## Conflicts / uncertain` in notes/L01.md, L02.md and L03.md. The ones that
   "low yield" in metaLine; Exam 4 NARR_Q from teach (device voice); 44 px [data-c] on touch; examCard "· 120 minutes";
   "★ Likely: n"; Exam 4 Date fact removed. Nine figure stems rewritten in words. Open: select-all items all have 3-4
   correct of 4-5 (vary when next edited); Exam 4 Hear the why not recorded.
+- 10/26: focusNote() on Guides, Tell apart and Reference while Smith focus is on (Show all exams button); focus card and
+  button title name what is hidden. notes/WALKTHROUGH_PORT_PROMPT.md: prompt to port the walkthrough player to another drill.

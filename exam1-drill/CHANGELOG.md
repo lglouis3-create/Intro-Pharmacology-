@@ -4,6 +4,7 @@ Newest first. The build embeds this file; the Topics page shows what is new sinc
 
 ## 2026-10-25 (Daily polish)
 
+- Smith focus now says on each page that other exams are hidden, with a "Show all exams" button.
 - A finished pass offers "Retry the N missed"; select-all feedback counts the ticks and marks missed options.
 - Exam 4: figure questions describe the figure in words; four questions reworded after a simulated-student check.
 - Caption-error notes moved under More; low-yield items labeled; Hear the why on Exam 4 cards (device voice).
