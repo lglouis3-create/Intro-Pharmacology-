@@ -3129,7 +3129,7 @@ function gwShow(id, i, sel) {
 function gwReading(btn) {
   const box = btn.nextElementSibling, id = btn.dataset.gwrd, r = (READINGS || []).find(x => x.id === id); if (!box || !r) return;
   if (!box.hidden) { box.hidden = true; btn.setAttribute('aria-expanded', 'false'); const a = box.querySelector('audio'); if (a) a.pause(); return; }
-  const first = (String(r.about || '').match(/^[^.]*\.(\s|$)/) || [r.about || ''])[0];
+  const first = (String(r.about || '').replace(/\b([A-Z])\. /g, '$1\u2024 ').match(/^[^.]*\.(\s|$)/) || [r.about || ''])[0].replace(/\u2024/g, '.');
   box.innerHTML = `<p style="margin:6px 0 4px"><b>${esc(r.title)}</b><br><span class="meta" style="margin:0">${esc(r.source || '')}</span></p>
     <p class="meta" style="margin:0 0 4px">${esc(RD_STATUS[r.status] || r.status || '')}${r.lecture ? ' · ' + esc(String(r.lecture)) : ''}</p>
     <p style="margin:0 0 6px">${esc(first)}</p>
@@ -3255,7 +3255,7 @@ const rdQs = r => QUESTIONS.filter(q => q.readingId === r.id && !(q.tags || []).
 const rdQuiz = r => QUESTIONS.filter(q => q.readingId === r.id && (q.tags || []).includes('quiz'));
 const rdLecLabel = r => (r.lectures || []).map(id => (COURSE.lectures.find(l => l.id === id) || {}).label || id).map(l => l.replace(/ \(Dr\. [^)]*\)$/, '')).join('; ');
 /* The first two sentences of the summary sit on the card; the rest opens under "About, in full". */
-const rdLead = t => { const m = t.match(/^((?:[^.!?]*[.!?]\)?\s*){1,2})([\s\S]*)$/); return m && m[2].trim() ? [m[1].trim(), m[2].trim()] : [t, '']; };
+const rdLead = t0 => { const t = t0.replace(/\b([A-Z])\. /g, '$1\u2024 '), m = t.match(/^((?:[^.!?]*[.!?]\)?\s*){1,2})([\s\S]*)$/); const un = x => x.replace(/\u2024/g, '.'); return m && m[2].trim() ? [un(m[1].trim()), un(m[2].trim())] : [t0, '']; };
 function rdCard(r) {
   const qs = rdQs(r), quiz = rdQuiz(r);
   const fold = (title, inner) => inner ? `<details class="fold rdfold"><summary>${title}</summary>${inner}</details>` : '';
@@ -3269,7 +3269,7 @@ function rdCard(r) {
     <div class="rdhead"><b>${esc(r.title)}</b> <span class="exlabel">${esc(RD_STATUS[r.status] || r.status)}</span>
       <small>${esc(r.source || '')}${lec ? ` · ${esc(lec)}` : ''}${when}${r.drive ? ` · <a href="${esc(r.drive)}" target="_blank" rel="noopener">Open in Drive</a>` : ''}${r.truncated ? ' · summary from a partial text' : ''}</small></div>
     <p>${esc(rdLead(r.about || '')[0])}</p>${r.numbering_note ? `<p class="sub">${esc(r.numbering_note)}</p>` : ''}
-    <div class="row rdact">${qs.length ? `<button class="btn" data-rdq="${esc(r.id)}">Drill ${qs.length} question${qs.length === 1 ? '' : 's'}</button>` : `<span class="meta" style="margin:0">${r.status === 'his' ? 'His exams come from the slides and the drug list; no reading drill.' : 'No questions yet: she has not discussed it in class.'}</span>`}
+    <div class="row rdact">${qs.length ? `<button class="btn" data-rdq="${esc(r.id)}">Drill ${qs.length} question${qs.length === 1 ? '' : 's'}</button>` : `<span class="meta" style="margin:0">${r.status === 'his' ? 'His exams come from the slides and the drug list; no reading drill.' : (r.discussed_in_class ? 'Introduced in class; no questions on it yet.' : 'No questions yet: she has not discussed it in class.')}</span>`}
       ${quiz.length ? `<button class="btn ghost" data-rdquiz="${esc(r.id)}">Her quiz items (${quiz.length})</button>` : ''}
       ${r.listen ? `<button class="btn ghost" data-rdlisten="${esc(r.id)}">🔊 Listen${r.listen_secs ? ' · ' + rdClock(r.listen_secs) : ''}</button>` : ''}
       ${(r.links || []).map(([v, a, l]) => `<button type="button" class="chip" data-jump="${esc(v)}:${esc(a)}">${esc(l)}</button>`).join('')}</div>

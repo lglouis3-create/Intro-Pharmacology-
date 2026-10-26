@@ -1,96 +1,96 @@
 {
- "id": "dipiro-e6",
- "title": "Chapter e6: Medication Adherence",
- "source": "DiPiro's Pharmacotherapy: A Pathophysiologic Approach, 13th Edition, Chapter e6 (Lin Fang-Ju; Huang Yen-Ming; Ho Yunn-Fang; McGraw Hill)",
- "file": "DiPiro Chapter e6: Medication Adherence",
- "lecture": "Tue 10/20 through Thu 10/22 (listed on the syllabus as Dipiro Chapter 6 for the pharmacogenomics days). Not cited, and adherence not discussed, in the 10/21 or 10/22 lectures; her references there to 'your Dipiro textbook on pharmacogenomics' point to a pharmacogenomics chapter, which this posted chapter (e6, Medication Adherence) is not.",
- "kind": "chapter",
- "about": "The chapter defines medication adherence, following the WHO, as the extent to which an individual's medication-taking behavior aligns with the recommendations from healthcare providers, and states that the estimated adherence rate for chronic illnesses in developed countries is around 50%. It describes direct methods of assessing adherence (bioassays, biomarkers, direct observation) and indirect methods (self-report surveys, pharmacy refill rates such as MPR and PDC, pill counts, clinical response, electronic monitoring with MEMS), with Table e6-1 comparing generic self-report instruments (ARMS, BMQ, HBCS, MAQ, MARS, MAR-Scale, MMAS-8). It organizes barriers to adherence into the WHO's five interacting dimensions (social and economic, healthcare team- and system-related, condition-related, therapy-related, patient-related) in Table e6-2. It then presents provider-related, patient-related and system-related strategies for improving adherence (Table e6-3), including the SIMPLE and RULE acronyms, motivational interviewing, reminders, regimen simplification, telehealth and policy reform, and ends with key resources, a bibliography and 15 self-assessment questions with answers. The chapter does not cover pharmacogenomics.",
- "sections": [
-  "Key Concepts",
-  "Beyond the Book",
-  "Introduction",
-  "Measures of Medication Adherence (Direct Methods; Indirect Methods; Table e6-1: Characteristics of Generic Medication Adherence Instruments)",
-  "Factors Associated with Medication Adherence (Table e6-2: Common Barriers to Medication Adherence from the Literature; Social and Economic Factors; Healthcare Team- and System-Related Factors; Condition-Related Factors; Therapy-Related Factors; Patient-Related Factors)",
-  "Strategies for Improving Medication Adherence (Table e6-3: Examples of Strategies for Improving Medication Adherence; Provider-Related Strategies; Patient-Related Strategies; System-Related Strategies)",
-  "Conclusion",
-  "Key Resources",
-  "Abbreviations",
-  "Bibliography",
-  "Self-Assessment Questions",
-  "Answers"
- ],
- "lecture_use": [],
- "read_for": [
-  "Key Concepts: the six bulleted statements that open the chapter (definition, direct vs indirect methods, the WHO's five dimensions, adherence linked to improved health outcomes, multidimensional approach).",
-  "Introduction: adherence is defined in terms of dose, route, frequency, and duration; nonadherence can be intentional or unintentional; adherent patients have fewer hospitalizations and emergency department visits and lower costs.",
-  "Measures of Medication Adherence, Direct Methods: bioassays and biomarkers in blood or urine and direct observation; accurate but intrusive, costly and unable to reveal usage patterns.",
-  "Measures of Medication Adherence, Indirect Methods: self-report surveys (the most widely adopted method), refill-based MPR and PDC, pill counts, the Medication Events Monitoring System, and the limitations of each.",
-  "Table e6-1: number of items, reliability and concepts measured for ARMS, BMQ, HBCS, MAQ, MARS, MAR-Scale and MMAS-8.",
-  "Factors Associated with Medication Adherence: the WHO's five interacting dimensions and the barriers listed under each in Table e6-2.",
-  "Therapy-Related Factors: frequency and route of administration, quantity of daily dosage, size of solid oral dosage forms and duration of infusions contribute to regimen complexity.",
-  "Strategies for Improving Medication Adherence: the SIMPLE strategy (simplifying the regimen, imparting knowledge, modifying beliefs, patient communication, leaving the bias, evaluating adherence) and Table e6-3 provider-, patient- and system-related strategies.",
-  "Provider-Related Strategies: the pharmacist's role in drug information, patient education, medication synchronization and team-based care; the RULE motivational-interviewing acronym.",
-  "Self-Assessment Questions and Answers (items 1–15)."
- ],
- "beyond_lecture": [
-  "Measures of Medication Adherence: the detailed drawbacks of MEMS (bulkiness, cost, actuation without taking the dose) and of pill counts for as-needed medications.",
-  "Social and Economic Factors: the disease-specific findings on education, employment, race and ethnicity, marital status and insurance coverage.",
-  "Healthcare Team- and System-Related Factors: mail-service pharmacies, copayments and reimbursement structures.",
-  "Patient-Related Strategies: positive-affect induction, peer coaching, text-message and telephone reminders, smartphone applications.",
-  "System-Related Strategies: policy-making, fixed-dose combinations, copayment reduction and orally disintegrating tablets.",
-  "Key Resources and the Bibliography."
- ],
- "terms": [
-  {
-   "term": "Medication adherence",
-   "chapter_definition": "The extent to which an individual's medication-taking behavior aligns with the recommendations from healthcare providers (WHO); taking medications as recommended in terms of dose, route, frequency, and duration."
-  },
-  {
-   "term": "Medication nonadherence",
-   "chapter_definition": "May be intentional or unintentional; patients may not fill their prescriptions, not take medication in their possession, use more or less than prescribed, use it at the wrong time or in the wrong way, or discontinue treatment prematurely."
-  },
-  {
-   "term": "Direct methods",
-   "chapter_definition": "Bioassays and biomarkers to measure the level of a drug or its metabolite in body fluids (eg, blood or urine); direct observation of medication administration is also a direct approach."
-  },
-  {
-   "term": "Indirect methods",
-   "chapter_definition": "Conducting self-report surveys, calculating pharmacy refill rates, counting pills, monitoring clinical response, and using electronic monitoring devices."
-  },
-  {
-   "term": "Medication possession ratio (MPR) / proportion of days covered (PDC)",
-   "chapter_definition": "Proxy measures of adherence derived from pharmacy refill records or administrative claims; PDC is a commonly used adherence measure for patients with cardiovascular disease."
-  },
-  {
-   "term": "Medication Events Monitoring System (MEMS)",
-   "chapter_definition": "An electronic monitoring device comprising a conventional medication container fitted with a special closure that logs the time and date of each opening and closing of the container."
-  },
-  {
-   "term": "Pill counts",
-   "chapter_definition": "Determine the adherence ratio by comparing the number of prescribed dosage units taken to the total number of units patients receive in a given time period; inapplicable to medications used as needed."
-  },
-  {
-   "term": "Self-report surveys",
-   "chapter_definition": "The most widely adopted method for assessing medication adherence in clinical practice and research; inexpensive, simple to administer and able to reveal patients' beliefs and barriers, but they can overestimate adherence."
-  },
-  {
-   "term": "WHO five dimensions of adherence",
-   "chapter_definition": "(1) social and economic factors, (2) healthcare team- and system-related factors, (3) condition-related factors, (4) therapy-related factors, and (5) patient-related factors."
-  },
-  {
-   "term": "Patient-related factors",
-   "chapter_definition": "Patients' demographics, knowledge, attitudes, beliefs, perceptions, and expectations."
-  },
-  {
-   "term": "Health literacy",
-   "chapter_definition": "An individual's ability to obtain, understand, interpret and apply health-related information to make appropriate health-related decisions; a patient-related factor that positively affects adherence."
-  }
- ],
- "discussed_in_class": false,
- "her_words": [],
- "quotes_note": "Quotes lightly edited for reading: filler words removed and transcription errors corrected; the verbatim transcript text is kept beside each quote.",
- "truncated": false,
- "listen": "This reading is Chapter e six, Medication Adherence, by Lin Fang Ju, Huang Yen Ming and Ho Yunn Fang, in DiPiro's Pharmacotherapy, A Pathophysiologic Approach, thirteenth edition. It was not discussed in class, and it does not cover pharmacogenomics. In the lectures of October twenty first and twenty second she did not cite it or discuss adherence. She did refer to your DiPiro textbook on pharmacogenomics, and this chapter is about adherence, not pharmacogenomics. Medication adherence, following the World Health Organization, is the extent to which a person's medication taking matches the recommendations of healthcare providers, in dose, route, frequency and duration. Adherence for chronic illness in developed countries is around fifty percent, even among patients with good access to medications. Nonadherence can be intentional or unintentional. Direct methods measure the drug or a metabolite in body fluids such as blood or urine, or observe the dose being taken. Indirect methods are self report surveys, which are the most widely used, pharmacy refill rates such as the medication possession ratio and the proportion of days covered, pill counts, clinical response, and electronic monitoring. The Medication Events Monitoring System is a container with a special cap that logs the time and date of each opening. Pill counts compare the units taken with the units received and do not work for medications used as needed. The World Health Organization groups the barriers into five dimensions: social and economic, healthcare team and system, condition, therapy, and patient related factors. The SIMPLE strategy stands for simplifying regimen characteristics, imparting knowledge, modifying patient beliefs, patient communication, leaving the bias, and evaluating adherence. Motivational interviewing uses four principles, RULE: resist the righting reflex, understand the patient's motivations, listen with empathy, and empower the patient. A drug level in blood is a direct method. A refill record or a pill count is indirect.",
- "listen_secs": 122
+  "id": "dipiro-e6",
+  "title": "Chapter e6: Medication Adherence",
+  "source": "DiPiro's Pharmacotherapy: A Pathophysiologic Approach, 13th Edition, Chapter e6 (Lin Fang-Ju; Huang Yen-Ming; Ho Yunn-Fang; McGraw Hill)",
+  "file": "DiPiro Chapter e6: Medication Adherence",
+  "lecture": "Syllabus: “Dipiro Chapter 6” for 10/20–10/22. The posted file is chapter e6, Medication Adherence, not the pharmacogenomics chapter she referred to in the 10/21 and 10/22 lectures.",
+  "kind": "chapter",
+  "about": "The chapter defines medication adherence, following the WHO, as the extent to which an individual's medication-taking behavior aligns with the recommendations from healthcare providers, and states that the estimated adherence rate for chronic illnesses in developed countries is around 50%. It describes direct methods of assessing adherence (bioassays, biomarkers, direct observation) and indirect methods (self-report surveys, pharmacy refill rates such as MPR and PDC, pill counts, clinical response, electronic monitoring with MEMS), with Table e6-1 comparing generic self-report instruments (ARMS, BMQ, HBCS, MAQ, MARS, MAR-Scale, MMAS-8). It organizes barriers to adherence into the WHO's five interacting dimensions (social and economic, healthcare team- and system-related, condition-related, therapy-related, patient-related) in Table e6-2. It then presents provider-related, patient-related and system-related strategies for improving adherence (Table e6-3), including the SIMPLE and RULE acronyms, motivational interviewing, reminders, regimen simplification, telehealth and policy reform, and ends with key resources, a bibliography and 15 self-assessment questions with answers. The chapter does not cover pharmacogenomics.",
+  "sections": [
+    "Key Concepts",
+    "Beyond the Book",
+    "Introduction",
+    "Measures of Medication Adherence (Direct Methods; Indirect Methods; Table e6-1: Characteristics of Generic Medication Adherence Instruments)",
+    "Factors Associated with Medication Adherence (Table e6-2: Common Barriers to Medication Adherence from the Literature; Social and Economic Factors; Healthcare Team- and System-Related Factors; Condition-Related Factors; Therapy-Related Factors; Patient-Related Factors)",
+    "Strategies for Improving Medication Adherence (Table e6-3: Examples of Strategies for Improving Medication Adherence; Provider-Related Strategies; Patient-Related Strategies; System-Related Strategies)",
+    "Conclusion",
+    "Key Resources",
+    "Abbreviations",
+    "Bibliography",
+    "Self-Assessment Questions",
+    "Answers"
+  ],
+  "lecture_use": [],
+  "read_for": [
+    "Key Concepts: the six bulleted statements that open the chapter (definition, direct vs indirect methods, the WHO's five dimensions, adherence linked to improved health outcomes, multidimensional approach).",
+    "Introduction: adherence is defined in terms of dose, route, frequency, and duration; nonadherence can be intentional or unintentional; adherent patients have fewer hospitalizations and emergency department visits and lower costs.",
+    "Measures of Medication Adherence, Direct Methods: bioassays and biomarkers in blood or urine and direct observation; accurate but intrusive, costly and unable to reveal usage patterns.",
+    "Measures of Medication Adherence, Indirect Methods: self-report surveys (the most widely adopted method), refill-based MPR and PDC, pill counts, the Medication Events Monitoring System, and the limitations of each.",
+    "Table e6-1: number of items, reliability and concepts measured for ARMS, BMQ, HBCS, MAQ, MARS, MAR-Scale and MMAS-8.",
+    "Factors Associated with Medication Adherence: the WHO's five interacting dimensions and the barriers listed under each in Table e6-2.",
+    "Therapy-Related Factors: frequency and route of administration, quantity of daily dosage, size of solid oral dosage forms and duration of infusions contribute to regimen complexity.",
+    "Strategies for Improving Medication Adherence: the SIMPLE strategy (simplifying the regimen, imparting knowledge, modifying beliefs, patient communication, leaving the bias, evaluating adherence) and Table e6-3 provider-, patient- and system-related strategies.",
+    "Provider-Related Strategies: the pharmacist's role in drug information, patient education, medication synchronization and team-based care; the RULE motivational-interviewing acronym.",
+    "Self-Assessment Questions and Answers (items 1–15)."
+  ],
+  "beyond_lecture": [
+    "Measures of Medication Adherence: the detailed drawbacks of MEMS (bulkiness, cost, actuation without taking the dose) and of pill counts for as-needed medications.",
+    "Social and Economic Factors: the disease-specific findings on education, employment, race and ethnicity, marital status and insurance coverage.",
+    "Healthcare Team- and System-Related Factors: mail-service pharmacies, copayments and reimbursement structures.",
+    "Patient-Related Strategies: positive-affect induction, peer coaching, text-message and telephone reminders, smartphone applications.",
+    "System-Related Strategies: policy-making, fixed-dose combinations, copayment reduction and orally disintegrating tablets.",
+    "Key Resources and the Bibliography."
+  ],
+  "terms": [
+    {
+      "term": "Medication adherence",
+      "chapter_definition": "The extent to which an individual's medication-taking behavior aligns with the recommendations from healthcare providers (WHO); taking medications as recommended in terms of dose, route, frequency, and duration."
+    },
+    {
+      "term": "Medication nonadherence",
+      "chapter_definition": "May be intentional or unintentional; patients may not fill their prescriptions, not take medication in their possession, use more or less than prescribed, use it at the wrong time or in the wrong way, or discontinue treatment prematurely."
+    },
+    {
+      "term": "Direct methods",
+      "chapter_definition": "Bioassays and biomarkers to measure the level of a drug or its metabolite in body fluids (eg, blood or urine); direct observation of medication administration is also a direct approach."
+    },
+    {
+      "term": "Indirect methods",
+      "chapter_definition": "Conducting self-report surveys, calculating pharmacy refill rates, counting pills, monitoring clinical response, and using electronic monitoring devices."
+    },
+    {
+      "term": "Medication possession ratio (MPR) / proportion of days covered (PDC)",
+      "chapter_definition": "Proxy measures of adherence derived from pharmacy refill records or administrative claims; PDC is a commonly used adherence measure for patients with cardiovascular disease."
+    },
+    {
+      "term": "Medication Events Monitoring System (MEMS)",
+      "chapter_definition": "An electronic monitoring device comprising a conventional medication container fitted with a special closure that logs the time and date of each opening and closing of the container."
+    },
+    {
+      "term": "Pill counts",
+      "chapter_definition": "Determine the adherence ratio by comparing the number of prescribed dosage units taken to the total number of units patients receive in a given time period; inapplicable to medications used as needed."
+    },
+    {
+      "term": "Self-report surveys",
+      "chapter_definition": "The most widely adopted method for assessing medication adherence in clinical practice and research; inexpensive, simple to administer and able to reveal patients' beliefs and barriers, but they can overestimate adherence."
+    },
+    {
+      "term": "WHO five dimensions of adherence",
+      "chapter_definition": "(1) social and economic factors, (2) healthcare team- and system-related factors, (3) condition-related factors, (4) therapy-related factors, and (5) patient-related factors."
+    },
+    {
+      "term": "Patient-related factors",
+      "chapter_definition": "Patients' demographics, knowledge, attitudes, beliefs, perceptions, and expectations."
+    },
+    {
+      "term": "Health literacy",
+      "chapter_definition": "An individual's ability to obtain, understand, interpret and apply health-related information to make appropriate health-related decisions; a patient-related factor that positively affects adherence."
+    }
+  ],
+  "discussed_in_class": false,
+  "her_words": [],
+  "quotes_note": "Quotes lightly edited for reading: filler words removed and transcription errors corrected; the verbatim transcript text is kept beside each quote.",
+  "truncated": false,
+  "listen": "This reading is Chapter e six, Medication Adherence, by Lin Fang Ju, Huang Yen Ming and Ho Yunn Fang, in DiPiro's Pharmacotherapy, A Pathophysiologic Approach, thirteenth edition. It was not discussed in class, and it does not cover pharmacogenomics. In the lectures of October twenty first and twenty second she did not cite it or discuss adherence. She did refer to your DiPiro textbook on pharmacogenomics, and this chapter is about adherence, not pharmacogenomics. Medication adherence, following the World Health Organization, is the extent to which a person's medication taking matches the recommendations of healthcare providers, in dose, route, frequency and duration. Adherence for chronic illness in developed countries is around fifty percent, even among patients with good access to medications. Nonadherence can be intentional or unintentional. Direct methods measure the drug or a metabolite in body fluids such as blood or urine, or observe the dose being taken. Indirect methods are self report surveys, which are the most widely used, pharmacy refill rates such as the medication possession ratio and the proportion of days covered, pill counts, clinical response, and electronic monitoring. The Medication Events Monitoring System is a container with a special cap that logs the time and date of each opening. Pill counts compare the units taken with the units received and do not work for medications used as needed. The World Health Organization groups the barriers into five dimensions: social and economic, healthcare team and system, condition, therapy, and patient related factors. The SIMPLE strategy stands for simplifying regimen characteristics, imparting knowledge, modifying patient beliefs, patient communication, leaving the bias, and evaluating adherence. Motivational interviewing uses four principles, RULE: resist the righting reflex, understand the patient's motivations, listen with empathy, and empower the patient. A drug level in blood is a direct method. A refill record or a pill count is indirect.",
+  "listen_secs": 122
 }

@@ -140,7 +140,7 @@ const GUIDE4_HTML = `
 <h3>4. SNP types in coding regions: synonymous, non-synonymous, premature stop codon</h3>
 
 <h4>The idea</h4>
-<p>A single nucleotide polymorphism (SNP) is one base pair changed in a gene. Several million are known, and many change nothing about the gene's product. Coding regions are the parts of a gene translated to RNA and then to protein; a coding SNP is classed by what the base change does to the codon: the same amino acid (synonymous), a different amino acid (non-synonymous), or a stop codon early in the sequence (premature stop). Each class has a drug-relevant example.</p>
+<p>A single nucleotide polymorphism (SNP) is one base pair changed in a gene. Several million are known, and many change nothing about the gene's product. Coding regions are the parts of a gene that become RNA and then protein; a coding SNP is classed by what the base change does to the codon: the same amino acid (synonymous), a different amino acid (non-synonymous), or a stop codon early in the sequence (premature stop). Each class has a drug-relevant example.</p>
 
 <h4>The three examples</h4>
 <table class="reftab"><thead><tr><th>Type</th><th>Example</th><th>Codon change</th><th>Effect on the protein</th><th>Affected drugs (slide)</th></tr></thead><tbody>

@@ -2,6 +2,14 @@
 
 Newest first. The build embeds this file; the Topics page shows what is new since your last visit, and the Progress page shows all of it. Keep each bullet to one short line.
 
+## 2026-10-26 (Daily polish)
+
+- Walkthroughs on phones: the slide sits above a shorter transcript, so both show while listening.
+- Two Exam 4 walkthrough parts now show the right slide (clopidogrel pathway; SSRIs and diazepam).
+- Reading summaries no longer stop at "H." in "H. pylori"; Exam 4 reading cards link to their guide sections.
+- Furuta card says it was introduced in class; the Dipiro e6 card says plainly it is the adherence chapter.
+- Four Exam 4 questions reworded so one question no longer gives away another on the same paper.
+
 ## 2026-10-25 (Daily polish)
 
 - Smith focus now says on each page that other exams are hidden, with a "Show all exams" button.

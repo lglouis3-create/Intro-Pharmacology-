@@ -199,3 +199,11 @@ See `## Conflicts / uncertain` in notes/L01.md, L02.md and L03.md. The ones that
   correct of 4-5 (vary when next edited); Exam 4 Hear the why not recorded.
 - 10/26: focusNote() on Guides, Tell apart and Reference while Smith focus is on (Show all exams button); focus card and
   button title name what is hidden. notes/WALKTHROUGH_PORT_PROMPT.md: prompt to port the walkthrough player to another drill.
+- 10/26 (daily polish 2): daily scripts moved into the repo (src/daily/glitch.js, paper.js, STUDENT.md); walkthrough slide
+  img loads eagerly. Students on seed 20261026: strong 40/40, average 39/40 (missed L18-066). 6 flags; 5 acted on: L18-066
+  stem adds "and its result", L18-035 option "becomes RNA and then protein" (guide4 matched), L18-011 and L18-033 stems
+  no longer state what L18-009 and L18-032 ask. L19-039 vs L19-037 left (a tell-apart item carries the fact by design).
+  UX review (walkthrough + readings, 7 items, all applied): phone order slide first with .gwtx 40vh; guide4-l19-1 part 3
+  -> pgxex:15, guide4-l19-5 part 5 -> pgxex:25; rdLead and gwReading skip single-letter abbreviations; links for
+  katzung-5 and furuta-1998; status line uses discussed_in_class; dipiro-e6 lecture line shortened; 44 px Speed select.
+  Furuta status stays 'upcoming' until the 10/26 transcript arrives.
