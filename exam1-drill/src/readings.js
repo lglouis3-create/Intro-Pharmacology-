@@ -2149,7 +2149,23 @@ const READINGS = [
    "L19"
   ],
   "status": "background",
-  "links": [],
+  "links": [
+   [
+    "guide",
+    "guide4-l18-1",
+    "Guide: naming variants"
+   ],
+   [
+    "guide",
+    "guide4-l19-4",
+    "Guide: CYP2C9 and warfarin"
+   ],
+   [
+    "guide",
+    "guide4-l19-6",
+    "Guide: irinotecan and UGT1A1"
+   ]
+  ],
   "drive": "https://drive.google.com/file/d/1nRnG1kVR0Nq1VgATSktxfIASE9KR8o79/view",
   "date": "Tue 10/20 – Thu 10/22"
  },
@@ -2158,7 +2174,7 @@ const READINGS = [
   "title": "Chapter e6: Medication Adherence",
   "source": "DiPiro's Pharmacotherapy: A Pathophysiologic Approach, 13th Edition, Chapter e6 (Lin Fang-Ju; Huang Yen-Ming; Ho Yunn-Fang; McGraw Hill)",
   "file": "DiPiro Chapter e6: Medication Adherence",
-  "lecture": "Tue 10/20 through Thu 10/22 (listed on the syllabus as Dipiro Chapter 6 for the pharmacogenomics days). Not cited, and adherence not discussed, in the 10/21 or 10/22 lectures; her references there to 'your Dipiro textbook on pharmacogenomics' point to a pharmacogenomics chapter, which this posted chapter (e6, Medication Adherence) is not.",
+  "lecture": "Syllabus: “Dipiro Chapter 6” for 10/20–10/22. The posted file is chapter e6, Medication Adherence, not the pharmacogenomics chapter she referred to in the 10/21 and 10/22 lectures.",
   "kind": "chapter",
   "about": "The chapter defines medication adherence, following the WHO, as the extent to which an individual's medication-taking behavior aligns with the recommendations from healthcare providers, and states that the estimated adherence rate for chronic illnesses in developed countries is around 50%. It describes direct methods of assessing adherence (bioassays, biomarkers, direct observation) and indirect methods (self-report surveys, pharmacy refill rates such as MPR and PDC, pill counts, clinical response, electronic monitoring with MEMS), with Table e6-1 comparing generic self-report instruments (ARMS, BMQ, HBCS, MAQ, MARS, MAR-Scale, MMAS-8). It organizes barriers to adherence into the WHO's five interacting dimensions (social and economic, healthcare team- and system-related, condition-related, therapy-related, patient-related) in Table e6-2. It then presents provider-related, patient-related and system-related strategies for improving adherence (Table e6-3), including the SIMPLE and RULE acronyms, motivational interviewing, reminders, regimen simplification, telehealth and policy reform, and ends with key resources, a bibliography and 15 self-assessment questions with answers. The chapter does not cover pharmacogenomics.",
   "sections": [
@@ -2253,7 +2269,7 @@ const READINGS = [
   "status": "assigned",
   "links": [],
   "drive": "https://drive.google.com/file/d/1dXEvIYObmQk0u4mT3yBxWqs1Isi49XBR/view",
-  "date": "Tue 10/20 (syllabus: “Dipiro Chapter 6”; the posted file is the 13th-edition chapter e6, Medication Adherence)"
+  "date": "Tue 10/20"
  },
  {
   "id": "furuta-1998",
@@ -2450,7 +2466,13 @@ const READINGS = [
    "L19"
   ],
   "status": "upcoming",
-  "links": [],
+  "links": [
+   [
+    "guide",
+    "guide4-l19-5",
+    "Guide: CYP2C19 and PPIs"
+   ]
+  ],
   "drive": "",
   "date": "Introduced Thu 10/22; discussion set for Mon 10/26"
  },

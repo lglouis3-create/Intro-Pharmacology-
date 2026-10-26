@@ -151,7 +151,7 @@ QUESTIONS.push(
 
 {id:"L18-011", lecture:"L18", prof:"Smith", tier:"new", topic:"L18", sub:"star", skill:"apply",
  concept:"star-number-discovery-order", tags:["smith","inclass"], source:"transcript",
- stem:"CYP2C19*2 (cytochrome P450 2C19) is at nucleotide 681 and CYP2C19*3 is at nucleotide 636. Why does *3 lie closer to the start codon than *2?",
+ stem:"CYP2C19*3 (cytochrome P450 2C19) lies closer to the start codon than CYP2C19*2. Why?",
  options:[
   {t:"Star numbers count backward from the stop codon", correct:false, why:"Star numbers are not positions at all."},
   {t:"*3 is a deletion that shifted the numbering", correct:false, why:"*3 is a single G to A change."},
@@ -430,7 +430,7 @@ QUESTIONS.push(
 
 {id:"L18-033", lecture:"L18", prof:"Smith", tier:"new", topic:"L18", sub:"snp", skill:"apply",
  concept:"why-study-synonymous", tags:["smith"], source:"both",
- stem:"ABCB1 3435C>T does not change the amino acid sequence. Why is it still studied?",
+ stem:"Why do studies of drug response keep examining ABCB1 3435C>T?",
  options:[
   {t:"It keeps appearing in studies of drug response", correct:true, why:"It turns up repeatedly with different P-gp substrates; she thinks it probably affects how much protein is expressed."},
   {t:"It truncates P-glycoprotein", correct:false, why:"Truncation is CYP2C19*2 and *3; this SNP leaves the protein intact."},
@@ -459,7 +459,7 @@ QUESTIONS.push(
  options:[
   {t:"The part where the expression machinery starts", correct:false, why:"That is the promoter."},
   {t:"The DNA between genes", correct:false, why:"That is the intergenic region."},
-  {t:"The part translated to RNA and then protein", correct:true, why:"Coding regions directly translate to RNA and then to protein."},
+  {t:"The part that becomes RNA and then protein", correct:true, why:"In her words, coding regions are locations that \"directly translate to RNA and then to protein.\""},
   {t:"The stop codon at the end of a gene", correct:false, why:"A stop codon ends translation; it is one codon, not the region."}],
  teach:"Coding regions are locations in a gene that directly translate to RNA and then to protein. Coding SNPs (synonymous, non-synonymous, premature stop) are the ones of interest. On the gene structure figure, exons are the coding parts and introns lie between them.",
  quote:"When I say coding, I'm talking about locations in the genes that directly translate to RNA and then to protein.",
@@ -842,7 +842,7 @@ QUESTIONS.push(
 
 {id:"L18-066", lecture:"L18", prof:"Smith", tier:"new", topic:"L18", sub:"dosing", skill:"figure", multi:true,
  concept:"genotype-dosing-results", tags:["smith"], source:"both",
- stem:"In a figure comparing four patients, A to D, the allele status of a metabolism gene is drawn under each: A has both copies crossed out, B one copy crossed out, C two intact copies and D three intact copies. A bar chart of percentage of average dose (axis 0 to 300) gives each patient a gray bar at 100% and a white bar for a dose based on genotype, and above each patient two concentration-versus-time curves show the resulting levels, one solid and one dashed with the area under it shaded gray. Which statements describe dosing by genotype (the white bars)? Select all that apply.",
+ stem:"In a figure comparing four patients, A to D, the allele status of a metabolism gene is drawn under each: A has both copies crossed out, B one copy crossed out, C two intact copies and D three intact copies. A bar chart of percentage of average dose (axis 0 to 300) gives each patient a gray bar at 100% and a white bar for a dose based on genotype, and above each patient two concentration-versus-time curves show the resulting levels, one solid and one dashed with the area under it shaded gray. Which statements describe dosing by genotype (the white bars) and its result? Select all that apply.",
  options:[
   {t:"Patient A gets less than the average dose", correct:true, why:"Patient A cannot clear the drug through the enzyme."},
   {t:"Patient D gets much more than the average dose", correct:true, why:"Patient D's extra copies clear the drug quickly."},
