@@ -218,6 +218,12 @@ See `## Conflicts / uncertain` in notes/L01.md, L02.md and L03.md. The ones that
   of heterozygotes need dose decrease"; simvastatin 221 "times" vs slide 221%; Furuta GERD vs peptic ulcer; ACE p. 49 vs
   p. 56. Deferred by her to 10/27: resources lecture and worksheet (carbamazepine, abacavir, trastuzumab labels), HLA
   exercise, warfarin dosing tables. Furuta take-home quiz announced (logistics, not in the drill).
+- 10/27 (daily polish 3): paper seed 20261027 (L18-L20): strong 40/40, average 40/40; 5 flags, all sourced and fixed:
+  L20-015 stem no longer names digoxin's source; L20-033 "she described" -> "at codons 49 and 389"; L19-038 stem no longer
+  states irinotecan is active; guide4-l20-4 adds "perhaps about as well characterized as transporters" (T 10/26);
+  guide4-l18-1 trap "in most papers, but not always" (T 10/21). UX review (Topics focus card, Tell apart, Reference; 7
+  items): applied 1-4, 6, VKORC1 cell; not applied: second link for the DPD/TPMT tell row (one data-q per row) and a
+  Furuta reference table (guide 22 and two tell rows cover it). glitch.js clean.
 
 ## Restore after a container restart
 

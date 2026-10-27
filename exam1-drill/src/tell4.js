@@ -1,6 +1,6 @@
 const TELL4_HTML = `
 <p class="sub">Pairs that share wording: the feature that separates them and the trap a question sets. Source shorthand: Intro and Examples decks by page; T = transcript date.</p>
-<h3 id="tell4-l18">Day 18: pharmacogenomics nomenclature, types of variants, genotype-guided dosing</h3>
+<h3 id="tell4-l18">Day 18: pharmacogenomics nomenclature, types of variants, genotype-guided dosing (10/21; guides 1–7)</h3>
 <table class="reftab"><thead>
 <tr><th style="width:20%">Looks alike</th><th>What separates them</th><th style="width:24%">The trap</th><th style="width:12%">Source</th><th style="width:9%">Question</th></tr></thead><tbody>
 <tr><td>Numeric/alphabetic vs SNP nomenclature</td><td>VKORC1 1173 C names one nucleotide (wild type only by capitalization); VKORC1 1173 C&gt;T writes wild type first, then the arrow, then the variant</td><td>Reading the letter after the arrow as the wild type</td><td>Intro to PGx pp. 23–24; T 10/21</td><td data-q="L18-004">L18-004</td></tr>
@@ -23,9 +23,9 @@ const TELL4_HTML = `
 <tr><td>Promoter vs exon vs intron</td><td>Promoter: expression starts; exon: becomes amino acid sequence; intron: between exons, variants occur there too</td><td>Calling introns meaningless</td><td>PGx Examples p. 8; T 10/21</td><td data-q="L18-060">L18-060</td></tr>
 </tbody></table>
 
-<h3 id="tell4-l19">Day 19: pharmacogenomics examples, drug metabolizing enzymes</h3>
+<h3 id="tell4-l19">Day 19: pharmacogenomics examples, drug metabolizing enzymes (10/22; guides 8–14)</h3>
 <table class="reftab"><thead>
-<tr><th style="width:22%">Looks alike</th><th>What separates them</th><th style="width:24%">The trap</th><th style="width:16%">Pages</th><th style="width:9%">Question</th></tr></thead><tbody>
+<tr><th style="width:22%">Looks alike</th><th>What separates them</th><th style="width:24%">The trap</th><th style="width:16%">Examples deck pages</th><th style="width:9%">Question</th></tr></thead><tbody>
 <tr><td>Active drug vs prodrug, with low enzyme activity</td><td>Active drug accumulates (toxicity); prodrug is not activated (therapeutic failure)</td><td>Assuming a poor metabolizer always has the same problem</td><td>p. 14</td><td data-q="L19-004">L19-004</td></tr>
 <tr><td>Butyrylcholinesterase vs NAT2</td><td>BChE hydrolyzes succinylcholine; NAT2 acetylates isoniazid</td><td>Swapping the enzyme and its drug</td><td>pp. 18-19</td><td data-q="L19-011">L19-011</td></tr>
 <tr><td>NAT2 slow vs fast acetylator</td><td>Slow: isoniazid nerve damage and procainamide lupus; fast: isoniazid hepatotoxicity</td><td>Thinking only one phenotype is dangerous</td><td>p. 19</td><td data-q="L19-012">L19-012</td></tr>
@@ -39,10 +39,11 @@ const TELL4_HTML = `
 <tr><td>Clopidogrel vs irinotecan (active status)</td><td>Clopidogrel is a prodrug needing activation; irinotecan is active and its metabolite SN-38 must be cleared</td><td>Calling irinotecan a prodrug</td><td>pp. 15, 30</td><td data-q="L19-038">L19-038</td></tr>
 <tr><td>DPD low activity vs TPMT low activity</td><td>Both shunt more drug to the cytotoxic metabolite and cause myelosuppression</td><td>Thinking low activity makes the drug fail</td><td>pp. 29, 32</td><td data-q="L19-042">L19-042</td></tr>
 </tbody></table>
-<h3 id="tell4-l20">Day 20: TPMT dosing, transporters, drug targets, warfarin, HLA, Furuta</h3>
+<p class="sub">Source: PGx-Examples-Students-Fall-2026.pdf; transcript 10/22.</p>
+<h3 id="tell4-l20">Day 20: TPMT dosing, transporters, drug targets, warfarin, HLA, Furuta (10/26; guides 15–22)</h3>
 <table class="reftab"><thead>
-<tr><th style="width:22%">Looks alike</th><th>What separates them</th><th style="width:24%">The trap</th><th style="width:16%">Pages</th><th style="width:9%">Question</th></tr></thead><tbody>
-<tr><td>TPMT heterozygote vs homozygous deficient dose</td><td>Heterozygote: about 35% of the wild-type dose (her words); homozygous deficient: under 10%</td><td>Giving the heterozygote half the dose</td><td>p. 35</td><td data-q="L20-008">L20-008</td></tr>
+<tr><th style="width:22%">Looks alike</th><th>What separates them</th><th style="width:24%">The trap</th><th style="width:16%">Examples deck pages</th><th style="width:9%">Question</th></tr></thead><tbody>
+<tr><td>TPMT heterozygote vs homozygous deficient dose</td><td>Heterozygote: about 35% of the wild-type dose (her words; the slide words it as 35% of heterozygotes needing a decrease); homozygous deficient: under 10%</td><td>Giving the heterozygote half the dose</td><td>p. 35</td><td data-q="L20-008">L20-008</td></tr>
 <tr><td>TPMT histogram vs a middle-heavy histogram</td><td>For TPMT most people are wild type at the high-activity end</td><td>Assuming the wild type is always in the middle</td><td>p. 34</td><td data-q="L20-006">L20-006</td></tr>
 <tr><td>Cheok and Evans: conventional vs individualized dosing</td><td>Same dose: v/v has the highest 6-TGN and toxicity; individualized: similar, low in all</td><td>Reading the conventional arm as safe</td><td>pp. 36-37</td><td data-q="L20-011">L20-011</td></tr>
 <tr><td>Low-activity P-gp vs low-activity OATP1B1</td><td>P-gp (gut efflux): more absorbed, digoxin rises; OATP1B1 (liver uptake): simvastatin stays in plasma</td><td>Putting OATP1B1 in the gut</td><td>pp. 40, 47</td><td data-q="L20-024">L20-024</td></tr>

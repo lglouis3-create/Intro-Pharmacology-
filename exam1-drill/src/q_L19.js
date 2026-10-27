@@ -471,7 +471,7 @@ QUESTIONS.push(
 
 {id:"L19-038", lecture:"L19", prof:"Smith", tier:"new", topic:"L19", sub:"ugt1a1", skill:"apply", core:true, coreWhy:"irinotecan clinical consequence; active drug not a prodrug",
  concept:"ugt1a1-irinotecan-sn38", tags:["smith"], source:"both",
- stem:"Irinotecan is an active drug whose active metabolite SN-38 is cleared by UGT1A1. What happens in a patient with UGT1A1*28?",
+ stem:"A patient with UGT1A1*28 is given irinotecan. What happens?",
  options:[
   {t:"SN-38 accumulates and causes toxicity", correct:true, why:"Low UGT1A1 activity fails to clear the active SN-38 metabolite, so it builds up and causes toxicity."},
   {t:"Irinotecan is never activated, so it fails", correct:false, why:"Irinotecan is already active and is metabolized to the active SN-38; the problem is failure to clear SN-38, not failure to activate."},

@@ -652,14 +652,14 @@ function focusCard() {
 }
 /* Exam 4: her words about her last exam, each with where it is drilled (filled from the lecture notes; verbatim). */
 const FOCUS4 = [
-  ["Where I start today is for my, my last exam.", '10/21 (the 10/21 lecture opens her Exam 4 material)', `<button type="button" class="btn ghost" data-jump="guide:guide4-l18-1">Guides</button>`],
-  ["Your colleague asked, do we need to know these specific examples? Yes, you do. OK. So, everything, every little detail I'm covering now in pharmacogenomics, you need, you need to remember. Because these examples, all of them have clinical relevance.", '10/21', `<button type="button" class="btn ghost" data-topic="L18" data-ex="4">10/21 questions</button><button type="button" class="btn ghost" data-topic="L19" data-ex="4">10/22 questions</button>`],
+  ["Where I start today is for my, my last exam.", '10/21 (the 10/21 lecture opens her Exam 4 material)', `<button type="button" class="btn ghost" data-jump="guide:guide4-l18-1">Guide 1: naming variants</button>`],
+  ["Your colleague asked, do we need to know these specific examples? Yes, you do. OK. So, everything, every little detail I'm covering now in pharmacogenomics, you need, you need to remember. Because these examples, all of them have clinical relevance.", '10/21', `<button type="button" class="btn ghost" data-topic="L18" data-ex="4">Day 18 (10/21) questions</button><button type="button" class="btn ghost" data-topic="L19" data-ex="4">Day 19 (10/22) questions</button>`],
   ["OK, so you don't have to memorize this. This is to illustrate the point that a lot of work is done trying to look at how often do these genetic versions occur", '10/21 (the allele frequency graphs)', ''],
   ["It is possible, but I will never ask you a question on this.", '10/21 (induction of CYP2C9)', ''],
-  ["you need to study to detail, OK? That will definitely be the case for this pharmacogenomics exam, your last exam in this course. There will be details on that exam.", '10/26 (opening)', ''],
+  ["you need to study to detail, OK? That will definitely be the case for this pharmacogenomics exam, your last exam in this course. There will be details on that exam.", '10/26 (opening)', `<button type="button" class="btn ghost" data-topic="L20" data-ex="4">Day 20 (10/26) questions</button>`],
   ["Now, for pharmacogenomics, it's gonna be a lot more application.", '10/26 (opening)', ''],
-  ["You do not need to memorize this table, because I will tell you the ones that I want you to.", '10/26 (the DiPiro table of drug-target variants)', `<button type="button" class="btn ghost" data-jump="guide:guide4-l20-4">Guides</button>`],
-  ["You guys have to be able to drill down from your phenotype of your patient to the molecular structure of the DNA and know what is star 2? What is star 3? Why is that enzyme not active in this person? OK, you have to know that.", '10/26 (Furuta 1998)', `<button type="button" class="btn ghost" data-jump="guide:guide4-l20-8">Guides</button>`]
+  ["You do not need to memorize this table, because I will tell you the ones that I want you to.", '10/26 (the DiPiro table of drug-target variants)', `<button type="button" class="btn ghost" data-jump="guide:guide4-l20-4">Guide 18: drug-target receptors</button>`],
+  ["You guys have to be able to drill down from your phenotype of your patient to the molecular structure of the DNA and know what is star 2? What is star 3? Why is that enzyme not active in this person? OK, you have to know that.", '10/26 (Furuta 1998)', `<button type="button" class="btn ghost" data-jump="guide:guide4-l20-8">Guide 22: Furuta 1998</button>`]
 ];
 function focusCard4() {
   if (!FOCUS4.length) return '';
