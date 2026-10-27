@@ -102,6 +102,8 @@ const COURSE = {
      facts:[['Covers', 'Oct 21 – Oct 28: pharmacogenomics examples, cases and resources, adverse drug reactions, drug interactions'],
             ['Weight', '22% of the course grade'],
             ['Format', 'Not announced yet'],
+            ['Dr. Gottlieb', 'No questions from him: "Doctor Gottlieb will not have questions on the, the last exam." (T) 10/26'],
+            ['Her emphasis', '"There will be details on that exam" and "for pharmacogenomics, it\'s gonna be a lot more application" (T) 10/26'],
             ['How she tests', 'What she says in lecture first, then the slides, then the readings; her posted keys set the depth']],
      pools:[{key:'exam4', name:'Exam 4 material', marks:null, filter:{exam:4}}]}
   ],
