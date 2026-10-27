@@ -39,5 +39,29 @@ const REFERENCE4_HTML = `
 <tr><td>Thiopurine methyltransferase (TPMT)</td><td>Azathioprine (prodrug), mercaptopurine</td><td>*3A (Caucasians, 2 SNPs); *3C (East Asians, 1 SNP)</td><td>Low activity shunts more drug to 6-thioguanine nucleotides</td><td>Myelosuppression; must reduce thiopurine dose</td></tr>
 </tbody></table>
 <p class="sub">Source: PGx-Examples-Students-Fall-2026.pdf slides 'Variations in Drug Metabolizing Enzymes' through 'Thiopurine Methyltransferase (TPMT)' (pp. 12-33); transcript 10/22. Figures: CYP2D6 debrisoquine histogram (p. 21, Golan Fig. 52-1A); CYP2C9 S-warfarin clearance (p. 24); CYP2C19 Furuta lansoprazole AUC/pH/cure-rate (p. 27).</p>
+<h3 id="ref4-l20-1">Transporter, drug-target and immune variants: gene, drug, variant, consequence (10/26)</h3>
+<table class="reftab"><thead><tr><th>Gene (protein)</th><th>Example drug(s)</th><th>Key variant(s)</th><th>Effect of variant</th><th>Clinical consequence or recommendation</th></tr></thead><tbody>
+<tr><td>TPMT</td><td>Azathioprine, mercaptopurine</td><td>*3A (Caucasians; about 5% heterozygous, 1 in 300 homozygous); *3C (East Asians)</td><td>Low activity; more 6-thioguanine nucleotides</td><td>Genotype first (standard of care). Homozygous deficient: under 10% of the dose. Heterozygous: about 35% of the dose (her words)</td></tr>
+<tr><td>ABCB1 / MDR1 (P-glycoprotein)</td><td>Digoxin; cyclosporine, tacrolimus; protease inhibitors</td><td>Exon 12 (C1236T), 21 (G2677T), 26 (C3435T)</td><td>Changed expression; low activity raises bioavailability</td><td>Exons 21 and 26: digoxin levels; exon 26: protease inhibitor levels and effects</td></tr>
+<tr><td>SLCO1B1 (OATP1B1)</td><td>Simvastatin (statins), methotrexate; bilirubin</td><td>*5 (rs4149056, 521T&gt;C, Val174Ala; about 1%); *15, *17 (5% to 15%)</td><td>Reduced hepatic uptake; large rise in simvastatin AUC</td><td>Muscle breakdown and kidney damage; lower the simvastatin dose or use another statin</td></tr>
+<tr><td>ADRB1 (beta-1 receptor)</td><td>Metoprolol, beta-blockers</td><td>Ser49Gly, Arg389Gly</td><td>Wild type (Ser49, Arg389) responds better</td><td>Genotype may guide the choice of starting drug</td></tr>
+<tr><td>ADRB2 (beta-2 receptor)</td><td>Beta-2 agonists (albuterol)</td><td>Arg16Gly; codon 27; promoter SNP</td><td>Unclear</td><td>More studies needed; not likely to lead to genotyping</td></tr>
+<tr><td>EGFR</td><td>Gefitinib</td><td>Gain-of-function, overexpressed (non-small cell lung cancer)</td><td>Variant drives tumor growth</td><td>Use only when the tumor has the variant EGFR</td></tr>
+<tr><td>G proteins (alpha subunit)</td><td>Some antidepressants</td><td>Variants in G proteins coupled to receptors</td><td>Associated with antidepressant efficacy</td><td>A new area</td></tr>
+<tr><td>ALOX5 (5-lipoxygenase)</td><td>5-lipoxygenase inhibitors (asthma)</td><td>Promoter tandem repeat; 5-repeat allele</td><td>5-repeat thought to raise expression</td><td>Only 5-repeat carriers responded; no link to asthma severity</td></tr>
+<tr><td>ACE</td><td>ACE inhibitors</td><td>Insertion/deletion in intron 16</td><td>Associated with plasma ACE levels</td><td>Probably adverse reactions (cough about 10%; angioedema 0.1% to 0.2%), not efficacy</td></tr>
+<tr><td>HLA-B*57:01</td><td>Abacavir</td><td>HLA variant</td><td>May change antigen binding</td><td>Skin toxicity, potentially fatal</td></tr>
+<tr><td>HLA-B*15:02</td><td>Carbamazepine</td><td>HLA variant</td><td>May change antigen binding</td><td>Skin toxicity, potentially fatal</td></tr>
+</tbody></table>
+<p class="sub">Source: PGx-Examples-Students-Fall-2026.pdf slides 'Thiopurine Methyltransferase (TPMT)' 3-5 (pp. 33-35), 'P-Glycoprotein' 1-2 (pp. 45-46), 'Organic anion transporter' (p. 47), 'Variations of Drug Targets' (pp. 50-56), 'Variations in Immune System Function 2' (p. 60, Katzung Table 5-4); transcript 10/26.</p>
+
+<h3 id="ref4-l20-2">Warfarin genes and dose direction (10/26)</h3>
+<table class="reftab"><thead><tr><th>Gene</th><th>Role</th><th>Low-activity variant</th><th>Warfarin dose need</th></tr></thead><tbody>
+<tr><td>CYP2C9 (*2, *3)</td><td>Clears S-warfarin to inactive 7-OH warfarin (PK)</td><td>Slower clearance (*3 lowest)</td><td>Lower</td></tr>
+<tr><td>VKORC1 (haplotypes)</td><td>Vitamin K epoxide reductase, the target (PD)</td><td>Less active target</td><td>Lower</td></tr>
+<tr><td>CYP4F2</td><td>Inactivates reduced (active) vitamin K</td><td>More active vitamin K</td><td>Higher</td></tr>
+<tr><td>Both CYP2C9*3/*3 and homozygous variant VKORC1</td><td>"double whammy" (her phrase)</td><td>Both low</td><td>Lowest (wild type for both: about 5 mg/day)</td></tr>
+</tbody></table>
+<p class="sub">Source: PGx-Examples-Students-Fall-2026.pdf slides 'Integrated: Both PK and PD' (p. 57), 'Both PK and PD 2' (p. 58, Goodman and Gilman); transcript 10/26.</p>
 
 `;

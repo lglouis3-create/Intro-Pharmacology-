@@ -9,7 +9,7 @@ import os, re, subprocess, sys, tempfile, json
 HERE = os.path.dirname(os.path.abspath(__file__))
 os.chdir(HERE)
 DATA_FILES = ['q_L01.js', 'q_L02.js', 'q_L03.js', 'q_L04.js', 'q_L05.js', 'q_L06.js', 'q_POLLS.js', 'q_JEOP.js', 'q_PQ.js', 'q_FIGS.js', 'q_DL1.js', 'q_TERMS.js',
-              'q_L07.js', 'q_L08.js', 'q_L09.js', 'q_L10.js', 'q_L11.js', 'q_L12.js', 'q_L13.js', 'q_L14.js', 'q_L15.js', 'q_L16.js', 'q_L17.js', 'q_TBL3.js', 'q_GRG3.js', 'q_RMK3.js', 'q_QZ3.js', 'q_WHY_L13.js', 'q_WHY_L14.js', 'q_WHY_L15.js', 'q_WHY_L16.js', 'q_WHY_L17.js', 'q_NEW3.js', 'q_GAP3.js', 'q_L18.js', 'q_L19.js', 'q_PE2.js', 'q_DL2.js', 'q_GAP2.js']
+              'q_L07.js', 'q_L08.js', 'q_L09.js', 'q_L10.js', 'q_L11.js', 'q_L12.js', 'q_L13.js', 'q_L14.js', 'q_L15.js', 'q_L16.js', 'q_L17.js', 'q_TBL3.js', 'q_GRG3.js', 'q_RMK3.js', 'q_QZ3.js', 'q_WHY_L13.js', 'q_WHY_L14.js', 'q_WHY_L15.js', 'q_WHY_L16.js', 'q_WHY_L17.js', 'q_NEW3.js', 'q_GAP3.js', 'q_L18.js', 'q_L19.js', 'q_L20.js', 'q_PE2.js', 'q_DL2.js', 'q_GAP2.js']
 # Exam 2 banks are written lecture by lecture; one not written yet is skipped
 DATA_FILES = [f for f in DATA_FILES if os.path.exists(f) or f in ('q_DL2.js',) and os.path.exists('gen_druglist2.py')]
 PAGES = ['graphs.js', 'diagrams.js', 'steps3a.js', 'steps3b.js', 'antinarr.js', 'glossary.js', 'reference.js', 'tell.js', 'guide.js', 'guide2.js', 'reference2.js', 'tell2.js', 'guide3.js', 'reference3.js', 'tell3.js', 'guide4.js', 'reference4.js', 'tell4.js', 'readings.js', 'drugs.js', 'poison_table.js', 'narration.js', 'narration3.js', 'narration3_l16.js', 'narration3_l17.js', 'narration3_keys.js', 'narration3_new.js', 'narration3_audit.js', 'guide_walk.js', 'audio_index.js', 'scenes.js', 'sa3.js']
