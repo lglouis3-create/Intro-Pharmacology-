@@ -2,6 +2,13 @@
 
 Newest first. The build embeds this file; the Topics page shows what is new since your last visit, and the Progress page shows all of it. Keep each bullet to one short line.
 
+## 2026-10-27 (Daily polish)
+
+- Focus card: a Day 20 (10/26) questions button; each Guides button names its section; buttons give day and date.
+- Tell apart and Reference headings give day, date and guide numbers; deck named in the page column.
+- TPMT heterozygote dose cells also give the slide's wording; the VKORC1 row points to the 10/26 warfarin table.
+- Three Exam 4 questions reworded after a simulated-student check; two guide lines added from her words.
+
 ## 2026-10-27 (10/26 lecture added)
 
 - Exam 4: the 10/26 lecture (TPMT dosing, transporters, drug targets, warfarin, HLA, Furuta 1998): 66 questions.

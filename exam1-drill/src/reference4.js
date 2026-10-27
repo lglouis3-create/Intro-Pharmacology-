@@ -2,7 +2,7 @@ const REFERENCE4_HTML = `
 <p class="sub">Deck files: Intro to PGx Lecture Students Fall 2026.pdf (Intro) and PGx-Examples-Students-Fall-2026.pdf (Examples), by page. T = transcript date.</p>
 <h3 id="ref4-l18-1">Day 18: the variant examples (gene, variant, type, effect, drugs)</h3>
 <table class="reftab"><thead><tr><th>Gene (product)</th><th>Variant and names</th><th>Type of variant</th><th>Molecular change</th><th>Functional effect / phenotype</th><th>Affected drugs (slide)</th></tr></thead><tbody>
-<tr><td>VKORC1</td><td>VKORC1 1173 C / T; 1173 C&gt;T; haplotypes A and B</td><td>SNP; haplotypes of at least 10 functional SNPs</td><td>C to T at nucleotide 1173</td><td>Functional significance (haplotypes A, B)</td><td>Warfarin (her words, to come; not on the slide)</td></tr>
+<tr><td>VKORC1</td><td>VKORC1 1173 C / T; 1173 C&gt;T; haplotypes A and B</td><td>SNP; haplotypes of at least 10 functional SNPs</td><td>C to T at nucleotide 1173</td><td>Functional significance (haplotypes A, B)</td><td>Warfarin (taught 10/26: see the Day 20 warfarin table)</td></tr>
 <tr><td>ABCB1 (P-glycoprotein)</td><td>ABCB1 3435 C&gt;T</td><td>Synonymous SNP</td><td>ATC to ATT, isoleucine unchanged</td><td>She: probably changes expression. Slide: no clear consensus on function or expression</td><td>Efavirenz, cyclosporine</td></tr>
 <tr><td>CYP2C19</td><td>*2 = 681 G&gt;A</td><td>(Truncated protein)</td><td>G to A at 681</td><td>No activity</td><td>—</td></tr>
 <tr><td>CYP2C19</td><td>*3 = 636 G&gt;A = rs4986893</td><td>Premature stop codon (non-synonymous)</td><td>TGG (tryptophan) to TAG (stop)</td><td>No activity</td><td>Proton pump inhibitors (omeprazole, lansoprazole)</td></tr>
@@ -27,7 +27,7 @@ const REFERENCE4_HTML = `
 </tbody></table>
 <p class="sub">Sources: Intro to PGx Lecture Students Fall 2026.pdf slide ‘Genotype Nomenclature’ (p. 28); PGx-Examples-Students-Fall-2026.pdf slide ‘Genotype/Phenotype Relationship 2’ (p. 6); (T) 10/21. Questions L18-021 to L18-025, L18-055 to L18-059, L18-066.</p>
 
-<h3 id="ref4-l19-1">Drug metabolizing enzyme variants: gene, drug, variant, consequence (10/22)</h3>
+<h3 id="ref4-l19-1">Day 19: drug metabolizing enzyme variants: gene, drug, variant, consequence (10/22)</h3>
 <table class="reftab"><thead><tr><th>Enzyme / gene</th><th>Example drug(s)</th><th>Key variant(s)</th><th>Effect of variant</th><th>Clinical consequence</th></tr></thead><tbody>
 <tr><td>Butyrylcholinesterase (BChE)</td><td>Succinylcholine</td><td>Slow metabolizer phenotype (about 1 in 3000)</td><td>Clears succinylcholine in 2 to 3 hours instead of about 2 min</td><td>Prolonged paralysis, including the diaphragm</td></tr>
 <tr><td>N-acetyltransferase 2 (NAT2)</td><td>Isoniazid; procainamide</td><td>Slow acetylator; fast acetylator</td><td>Changes rate of acetylation</td><td>Slow: isoniazid nerve damage, procainamide lupus; fast: isoniazid hepatotoxicity</td></tr>
@@ -39,9 +39,9 @@ const REFERENCE4_HTML = `
 <tr><td>Thiopurine methyltransferase (TPMT)</td><td>Azathioprine (prodrug), mercaptopurine</td><td>*3A (Caucasians, 2 SNPs); *3C (East Asians, 1 SNP)</td><td>Low activity shunts more drug to 6-thioguanine nucleotides</td><td>Myelosuppression; must reduce thiopurine dose</td></tr>
 </tbody></table>
 <p class="sub">Source: PGx-Examples-Students-Fall-2026.pdf slides 'Variations in Drug Metabolizing Enzymes' through 'Thiopurine Methyltransferase (TPMT)' (pp. 12-33); transcript 10/22. Figures: CYP2D6 debrisoquine histogram (p. 21, Golan Fig. 52-1A); CYP2C9 S-warfarin clearance (p. 24); CYP2C19 Furuta lansoprazole AUC/pH/cure-rate (p. 27).</p>
-<h3 id="ref4-l20-1">Transporter, drug-target and immune variants: gene, drug, variant, consequence (10/26)</h3>
+<h3 id="ref4-l20-1">Day 20: transporter, drug-target and immune variants: gene, drug, variant, consequence (10/26)</h3>
 <table class="reftab"><thead><tr><th>Gene (protein)</th><th>Example drug(s)</th><th>Key variant(s)</th><th>Effect of variant</th><th>Clinical consequence or recommendation</th></tr></thead><tbody>
-<tr><td>TPMT</td><td>Azathioprine, mercaptopurine</td><td>*3A (Caucasians; about 5% heterozygous, 1 in 300 homozygous); *3C (East Asians)</td><td>Low activity; more 6-thioguanine nucleotides</td><td>Genotype first (standard of care). Homozygous deficient: under 10% of the dose. Heterozygous: about 35% of the dose (her words)</td></tr>
+<tr><td>TPMT</td><td>Azathioprine, mercaptopurine</td><td>*3A (Caucasians; about 5% heterozygous, 1 in 300 homozygous); *3C (East Asians)</td><td>Low activity; more 6-thioguanine nucleotides</td><td>Genotype first (standard of care). Homozygous deficient: under 10% of the dose. Heterozygous: about 35% of the dose (her words; the slide words it as 35% of heterozygotes needing a decrease)</td></tr>
 <tr><td>ABCB1 / MDR1 (P-glycoprotein)</td><td>Digoxin; cyclosporine, tacrolimus; protease inhibitors</td><td>Exon 12 (C1236T), 21 (G2677T), 26 (C3435T)</td><td>Changed expression; low activity raises bioavailability</td><td>Exons 21 and 26: digoxin levels; exon 26: protease inhibitor levels and effects</td></tr>
 <tr><td>SLCO1B1 (OATP1B1)</td><td>Simvastatin (statins), methotrexate; bilirubin</td><td>*5 (rs4149056, 521T&gt;C, Val174Ala; about 1%); *15, *17 (5% to 15%)</td><td>Reduced hepatic uptake; large rise in simvastatin AUC</td><td>Muscle breakdown and kidney damage; lower the simvastatin dose or use another statin</td></tr>
 <tr><td>ADRB1 (beta-1 receptor)</td><td>Metoprolol, beta-blockers</td><td>Ser49Gly, Arg389Gly</td><td>Wild type (Ser49, Arg389) responds better</td><td>Genotype may guide the choice of starting drug</td></tr>
@@ -55,7 +55,7 @@ const REFERENCE4_HTML = `
 </tbody></table>
 <p class="sub">Source: PGx-Examples-Students-Fall-2026.pdf slides 'Thiopurine Methyltransferase (TPMT)' 3-5 (pp. 33-35), 'P-Glycoprotein' 1-2 (pp. 45-46), 'Organic anion transporter' (p. 47), 'Variations of Drug Targets' (pp. 50-56), 'Variations in Immune System Function 2' (p. 60, Katzung Table 5-4); transcript 10/26.</p>
 
-<h3 id="ref4-l20-2">Warfarin genes and dose direction (10/26)</h3>
+<h3 id="ref4-l20-2">Day 20: warfarin genes and dose direction (10/26)</h3>
 <table class="reftab"><thead><tr><th>Gene</th><th>Role</th><th>Low-activity variant</th><th>Warfarin dose need</th></tr></thead><tbody>
 <tr><td>CYP2C9 (*2, *3)</td><td>Clears S-warfarin to inactive 7-OH warfarin (PK)</td><td>Slower clearance (*3 lowest)</td><td>Lower</td></tr>
 <tr><td>VKORC1 (haplotypes)</td><td>Vitamin K epoxide reductase, the target (PD)</td><td>Less active target</td><td>Lower</td></tr>
