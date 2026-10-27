@@ -1,0 +1,33 @@
+{
+ "id": "guide4-l20-1",
+ "title": "T P M T and thiopurine dosing",
+ "segs": [
+  {
+   "text": "Section fifteen. T P M T and genotype guided thiopurine dosing. T P M T, thiopurine methyltransferase, is the last metabolizing enzyme example, and here the dose is set by genotype. T P M T sends six mercaptopurine to an inactive product, six methylmercaptopurine. When T P M T activity is low, more of the dose becomes the active six thioguanine nucleotides, called six T G N. Six T G N stops dividing cells. Blood cells stop dividing too, so the white count drops, and a standard dose can cause fatal myelosuppression. So low T P M T does not make the drug fail. It means more active metabolite and more toxicity.",
+   "slide": "pgxex:32",
+   "reading": null
+  },
+  {
+   "text": "Hair loss and gastrointestinal distress happen for a related reason. Those cells are not cancerous, but they divide rapidly, and the drugs cannot tell them apart from cancer cells. The common variant alleles are star three A and star three C. Star three A, seen in Caucasians, is a haplotype of two non synonymous S N Ps. About five percent of people are heterozygous, and about one in three hundred are homozygous. Star three C, seen in East Asians, is one S N P in the coding region.",
+   "slide": "pgxex:33",
+   "reading": null
+  },
+  {
+   "text": "Before genotyping, the phenotype came from T P M T activity in red blood cells, and doses were adjusted from that. On the activity histogram, homozygous wild type people form the largest peak at the highest activity. Heterozygotes are a smaller intermediate group, and homozygous variant patients are a very small group with the lowest activity. So for T P M T, most people are wild type at the high activity end. She said, you can't assume that the wild type is always in the middle.",
+   "slide": "pgxex:34",
+   "reading": null,
+   "table": 0
+  },
+  {
+   "text": "Wild type patients get the full mercaptopurine dose. Heterozygotes get about thirty five percent of the wild type dose. That is not half. She said, It's not half the dose, it's about thirty five percent is lower than half the dose. Homozygous deficient patients all need a reduction and tolerate less than ten percent of the wild type dose. The thiopurines were the first drugs for which the F D A held public hearings on putting pharmacogenetic information in the label. Genotyping first is now the standard of care, and she said you could be considered negligent if you did not know your patient's T P M T status.",
+   "slide": "pgxex:35",
+   "reading": null,
+   "table": 0
+  },
+  {
+   "text": "The Cheok and Evans figure, from Nature Reviews Cancer in two thousand six, shows why the dose follows genotype. When everyone gets the same dose, variant variant patients have very high six T G N and the most toxicity. When doses are individualized, six T G N and toxicity are similar and low in all groups. Matching the dose to the genotype brings exposure back into one range.",
+   "slide": "pgxex:37",
+   "reading": null
+  }
+ ]
+}

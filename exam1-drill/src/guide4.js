@@ -16,6 +16,14 @@ const GUIDE4_HTML = `
 <a href="#guide4-l19-5">12. CYP2C19: the *17 gain of function, clopidogrel, and the PPI twist</a>
 <a href="#guide4-l19-6">13. Two oncology examples: DPD (5-fluorouracil) and UGT1A1 (irinotecan)</a>
 <a href="#guide4-l19-7">14. Thiopurine methyltransferase (TPMT) and the thiopurines</a>
+<a href="#guide4-l20-1">15. TPMT: the activity histogram and genotype-guided thiopurine dosing</a>
+<a href="#guide4-l20-2">16. Drug transporters and P-glycoprotein (ABCB1)</a>
+<a href="#guide4-l20-3">17. OATP1B1 (SLCO1B1) and simvastatin</a>
+<a href="#guide4-l20-4">18. Drug-target receptors: beta-1, beta-2, EGFR and G proteins</a>
+<a href="#guide4-l20-5">19. Drug-target enzymes: 5-lipoxygenase (ALOX5) and ACE</a>
+<a href="#guide4-l20-6">20. Warfarin: CYP2C9 (PK), VKORC1 (PD) and CYP4F2</a>
+<a href="#guide4-l20-7">21. Immune system variants: HLA genes and drug hypersensitivity</a>
+<a href="#guide4-l20-8">22. The Furuta 1998 discussion: CYP2C19, omeprazole and H. pylori cure</a>
 </nav>
 <section class="guide" id="guide4-l18-1">
 <h3>1. Naming genetic variants: numeric/alphabetic, SNP, star and rs nomenclature</h3>
@@ -557,6 +565,346 @@ const GUIDE4_HTML = `
 
 <p>How she asks it: which drugs TPMT handles and the azathioprine-to-mercaptopurine link; what low activity does to the pathway and to the blood count; the two SNPs and which variant goes with which population.</p>
 <p class="sub">Sources: PGx-Examples-Students-Fall-2026.pdf slides 'Thiopurine Methyltransferase (TPMT)' (pp. 31-33); (T) 10/22. Questions L19-040 to L19-043.</p>
+</section>
+<section class="guide" id="guide4-l20-1">
+<h3>15. TPMT: the activity histogram and genotype-guided thiopurine dosing</h3>
+
+<h4>The idea</h4>
+<p>TPMT is the last metabolizing-enzyme example, and one where the dose is set by genotype. TPMT sends 6-mercaptopurine to an inactive product. When TPMT activity is low, more of the dose becomes the active 6-thioguanine nucleotides (6-TGN), and a standard dose can cause fatal myelosuppression. Genotyping before a thiopurine is now the standard of care, and she said not knowing a patient's TPMT status could be considered negligent.</p>
+
+<h4>The facts</h4>
+<table class="reftab"><thead><tr><th>TPMT genotype</th><th>Place on the RBC activity histogram</th><th>Mercaptopurine dose</th></tr></thead><tbody>
+<tr><td>Homozygous wild type (*1/*1)</td><td>Largest peak, highest activity (most people)</td><td>Full dose</td></tr>
+<tr><td>Heterozygous (*1/*3A or *1/*3C)</td><td>Smaller intermediate group</td><td>About 35% of the wild-type dose, less than half (her words)</td></tr>
+<tr><td>Homozygous *3A or *3C</td><td>Very small group, lowest activity</td><td>All need a reduction; tolerate less than 10% of the wild-type dose</td></tr>
+</tbody></table>
+<ul>
+<li>*3A (Caucasians) is a haplotype of two non-synonymous SNPs: about 5% are heterozygous and about 1 in 300 are homozygous. *3C (East Asians) is one SNP in the coding region.</li>
+<li>Before genotyping, the phenotype came from TPMT activity in red blood cells, and doses were adjusted from that.</li>
+<li>The thiopurines were the first drugs for which the FDA held public hearings on putting pharmacogenetic information in the label.</li>
+<li>Cheok and Evans (Nature Reviews Cancer, 2006): when everyone gets the same dose, v/v patients have very high 6-TGN and the most toxicity. When doses are individualized, 6-TGN and toxicity are similar and low in all groups.</li>
+</ul>
+
+<h4>Why</h4>
+<ul>
+<li><b>Why low TPMT is dangerous.</b> TPMT makes the inactive 6-methylmercaptopurine. With little TPMT activity, more 6-mercaptopurine goes to 6-TGN, and 6-TGN stops dividing cells. Blood cells stop dividing too, so the white count drops.</li>
+<li><b>Why hair loss and GI distress occur.</b> These cells are not cancerous but they divide rapidly. The drugs cannot tell them apart from cancer cells.</li>
+<li><b>Why the dose follows genotype.</b> The same dose gives very different 6-TGN exposure by genotype. Matching the dose to the genotype brings exposure back into one range, so toxicity stays low.</li>
+<li><b>Why the histogram matters.</b> For TPMT most people are wild type at the high-activity end. The wild type cannot be assumed to sit in the middle of a distribution.</li>
+</ul>
+
+<h4>Her words</h4>
+<ul>
+<li>"It's not half the dose, it's about 35% is lower than half the dose, OK?" <small>(T) 10/26</small></li>
+<li>"So we can't assume that most people are intermediate, OK, and you can't assume that the wild type is always in the middle" <small>(T) 10/26</small></li>
+<li>"You could be considered negligent if you didn't know this information about your patient before you put them on one of these medications, OK?" <small>(T) 10/26</small></li>
+</ul>
+
+<h4>Traps</h4>
+<ul>
+<li><b>Giving heterozygotes half the dose.</b> She said about 35%, which is lower than half. (The slide words it as 35% of heterozygotes needing a decrease.)</li>
+<li><b>Swapping the dose numbers.</b> Less than 10% is for homozygous deficient patients; about 35% is for heterozygotes.</li>
+<li><b>Thinking low TPMT makes the drug fail.</b> Low TPMT activity means more active metabolite and more toxicity.</li>
+<li><b>Reading the Cheok and Evans figure backward.</b> With a uniform dose, v/v (variant/variant) has the highest 6-TGN and toxicity, not wt/wt.</li>
+</ul>
+
+<p>How she asks it: what rises when TPMT*3A is present; where the wild type sits on the histogram; the dose for heterozygotes and for homozygous deficient patients; what the conventional and individualized arms of the Cheok and Evans figure show.</p>
+<p class="sub">Sources: PGx-Examples-Students-Fall-2026.pdf slides 'Thiopurine Methyltransferase (TPMT)' 2-5 (pp. 32-35), 'Dosing 6MP without pharmacogenetics' (p. 36), 'Dosing 6MP with pharmacogenetics' (p. 37), 'Acute lymphoblastic leukaemia' (p. 38); (T) 10/26. Questions L20-001 to L20-012.</p>
+</section>
+<section class="guide" id="guide4-l20-2">
+<h3>16. Drug transporters and P-glycoprotein (ABCB1)</h3>
+
+<h4>The idea</h4>
+<p>Transporters are the second big area of pharmacogenomics. P-glycoprotein (P-gp) is the best characterized of them. It is an efflux transporter in the gut wall that pumps drugs back into the lumen. A low-activity P-gp variant therefore raises the bioavailability of its substrates. Her main example is digoxin, which has a narrow therapeutic index.</p>
+
+<h4>The facts</h4>
+<ul>
+<li>Transporters move drugs across the GI tract, excrete drugs into bile and urine, and carry drugs across the blood-brain barrier. They are found in gut cells (enterocytes), liver cells (hepatocytes) and kidney proximal tubule cells, on both the luminal side and the blood (basolateral) side.</li>
+<li>P-gp is coded by ABCB1, a gene also called MDR1 (multidrug resistance-1). These are two names for one gene; ABCB1 is the newer name.</li>
+<li>P-gp affects the distribution of digoxin, cyclosporine, tacrolimus and the antiretroviral protease inhibitors.</li>
+<li>Increased intestinal P-gp expression can limit absorption. Decreased expression may give supratherapeutic plasma concentrations.</li>
+<li>Common SNPs: exon 12 (C1236T), exon 21 (G2677T), exon 26 (C3435T). Exons 21 and 26 are linked to digoxin. Exon 26 is linked to protease inhibitor levels and clinical effects. In the initial studies, exon 21 was not linked to the protease inhibitors.</li>
+</ul>
+
+<h4>Why</h4>
+<ul>
+<li><b>Why low P-gp activity raises drug levels.</b> P-gp pumps substrates out of the gut cells and back into the lumen. When P-gp works poorly, the drug stays in the cells (cellular concentration rises sharply) and more of it reaches the blood. This has the same effect as taking a P-gp inhibitor.</li>
+<li><b>Why digoxin is the example.</b> Its therapeutic index is narrow. In a low-activity P-gp patient, a normal dose can push the heart rate far too low, so the dose would be adjusted.</li>
+<li><b>Why P-gp is still hard to pin down.</b> A variant's effect changes with the drug, different lab cell systems give different results, and the partner transporters on the basolateral side are not all characterized yet.</li>
+</ul>
+
+<h4>Her words</h4>
+<ul>
+<li>"So this image is synonymous with what happens if you have a low activity variant of PGP. You will end up with higher bioavailability of drugs that are substrates for PGP." <small>(T) 10/26</small></li>
+<li>"This transporter is not coded by two different genes. It's coded by a gene that has two different names, OK." <small>(T) 10/26</small></li>
+<li>"Remember, B is for blood side, OK?" <small>(T) 10/26</small></li>
+</ul>
+
+<h4>Traps</h4>
+<ul>
+<li><b>Lower P-gp, lower absorption.</b> This is backward. Less efflux means more absorption.</li>
+<li><b>ABCB1 and MDR1 as two genes.</b> They are one gene with an old name and a new name.</li>
+<li><b>Exon 21 and the protease inhibitors.</b> Only the exon 26 SNP was tied to the protease inhibitors. Both exon 21 and exon 26 were tied to digoxin.</li>
+<li><b>Basolateral as the gut side.</b> Basolateral is the blood side.</li>
+</ul>
+
+<p>How she asks it: name the narrow-index P-gp substrate (digoxin); what a low-activity variant does to bioavailability; read the plasma and cellular curves (dashed line = variant); ABCB1 versus MDR1; which exon goes with which drug; why you characterize transporters ("to adjust the dose").</p>
+<p class="sub">Sources: PGx-Examples-Students-Fall-2026.pdf slides 'Variants in Drug Transporters' and 'Variations in Drug Transporting Genes' 1-5 (pp. 39-44), 'P-Glycoprotein' 1-2 (pp. 45-46); (T) 10/26. Questions L20-013 to L20-023.</p>
+</section>
+<section class="guide" id="guide4-l20-3">
+<h3>17. OATP1B1 (SLCO1B1) and simvastatin</h3>
+
+<h4>The idea</h4>
+<p>OATP1B1 is the second transporter she covered and a newer one than P-gp. It sits in the liver and takes statins up into liver cells. Reduced-function SLCO1B1 variants leave much more simvastatin in the plasma. High statin levels break down muscle, and the breakdown products damage the kidneys. That is why patients are now often genotyped for *5, *15 and *17.</p>
+
+<h4>The facts</h4>
+<table class="reftab"><thead><tr><th>Allele</th><th>What it is</th><th>Function</th><th>Frequency</th></tr></thead><tbody>
+<tr><td>*5</td><td>rs4149056: 521T&gt;C, Val174Ala (one SNP)</td><td>Reduced, possibly from reduced expression</td><td>Rare, about 1%</td></tr>
+<tr><td>*15, *17</td><td>Haplotypes that contain rs4149056 plus other SNPs</td><td>Reduced</td><td>Common, 5% to 15% in European and Asian populations</td></tr>
+</tbody></table>
+<ul>
+<li>Gene SLCO1B1, protein OATP1B1. It is found on the hepatocyte sinusoidal membrane and handles hepatic uptake of weakly acidic drugs and endogenous compounds (statins, methotrexate, bilirubin). At least 40 non-synonymous SNPs are known.</li>
+<li>Homozygous rs4149056 genotypes are *5/*5, *5 with *15 or *17, and *15 or *17 with *15 or *17. These patients have a large increase in simvastatin plasma AUC.</li>
+<li>Recommendation for at least one nonfunctional allele: lower the simvastatin dose or give another statin.</li>
+</ul>
+
+<h4>Why</h4>
+<ul>
+<li><b>Why exposure rises.</b> OATP1B1 takes simvastatin into the liver. A reduced-function transporter takes up less, so more simvastatin stays in the plasma.</li>
+<li><b>Why high levels are dangerous.</b> High statin levels cause muscle breakdown, and muscle pain in the large muscles is the warning symptom. In rhabdomyolysis the contents of the muscle cells enter the blood and damage the kidneys.</li>
+<li><b>Why *15 and *17 count as homozygous with *5.</b> Each of them contains the *5 SNP. So any two of these alleles give two copies of rs4149056.</li>
+<li><b>Why switch statins.</b> She said some other statins cause less rhabdomyolysis, so a different statin may be better than a lower dose.</li>
+</ul>
+
+<h4>Her words</h4>
+<ul>
+<li>"Remember, these two are haplotypes, which means they contain more than one snip." <small>(T) 10/26</small></li>
+<li>"It'll cause kidney damage, OK?" <small>(T) 10/26</small></li>
+<li>"it might be wise to, instead of just lowering the statin, maybe you want to give a different statin" <small>(T) 10/26</small></li>
+</ul>
+
+<h4>Traps</h4>
+<ul>
+<li><b>Putting OATP1B1 in the gut.</b> It is in the liver, on the sinusoidal membrane, and it handles uptake.</li>
+<li><b>Treating *15 and *17 as unrelated to *5.</b> Both contain the *5 SNP.</li>
+<li><b>Calling *5 common.</b> *5 alone is about 1%. The haplotypes *15 and *17 are the common ones.</li>
+<li><b>The 221 figure.</b> The slide gives a 221% increase in AUC. She read it aloud as "221 times". Either way the increase is large, and it applies to the homozygous rs4149056 genotypes.</li>
+</ul>
+
+<p>How she asks it: gene, protein and location; what *5 is; how *15 and *17 relate to *5; what high statin levels cause; what to do for a patient with a nonfunctional allele.</p>
+<p class="sub">Sources: PGx-Examples-Students-Fall-2026.pdf slide 'Organic anion transporter' (p. 47); (T) 10/26. Questions L20-024 to L20-029.</p>
+</section>
+<section class="guide" id="guide4-l20-4">
+<h3>18. Drug-target receptors: beta-1, beta-2, EGFR and G proteins</h3>
+
+<h4>The idea</h4>
+<p>Drug targets are the third area of pharmacogenomics. They are less well characterized than metabolizing enzymes, and she gave only what she considers good science. A target variant can change how well a drug works, as with the beta-1 receptor and metoprolol. A target variant can also cause the disease itself, so the drug is chosen because it hits that variant, as with EGFR and gefitinib.</p>
+
+<h4>The facts</h4>
+<table class="reftab"><thead><tr><th>Target (gene)</th><th>Variant</th><th>Drug</th><th>What is known</th></tr></thead><tbody>
+<tr><td>Beta-1 receptor (ADRB1)</td><td>Ser49Gly, Arg389Gly (non-synonymous)</td><td>Metoprolol, beta-blockers</td><td>Homozygous Ser49 and Arg389 (wild type) responded better; genotype may guide the choice of starting drug</td></tr>
+<tr><td>Beta-2 receptor (ADRB2)</td><td>More than 11 SNPs; 3 frequent: Arg16Gly, codon 27, promoter</td><td>Beta-2 agonists (albuterol)</td><td>Arg16Gly results unclear; not likely to lead to genotyping</td></tr>
+<tr><td>EGFR (HER1, ErbB1)</td><td>Gain-of-function; receptor overexpressed in non-small cell lung cancer</td><td>Gefitinib</td><td>Response strongly influenced by the mutation (2004); use only when the tumor has variant EGFR</td></tr>
+<tr><td>G proteins coupled to receptors</td><td>Variants, especially in the alpha subunit</td><td>Some antidepressants</td><td>A very new area; efficacy associated with the variants</td></tr>
+</tbody></table>
+<ul>
+<li>Beta-2 figure: at codon 16, A changes to G, so AGA (arginine) becomes GGA (glycine). Arg16 is called the wild type because it was identified first.</li>
+<li>The DiPiro Table 6-2 slide lists many genes and drug classes. She said it does not need to be memorized.</li>
+</ul>
+
+<h4>Why</h4>
+<ul>
+<li><b>Why a beta-1 variant changes metoprolol response.</b> The variant changes the receptor, so metoprolol may not bind as well. A patient with the variants may respond poorly, so it is worth thinking twice before starting metoprolol.</li>
+<li><b>Why gefitinib is not for every lung cancer.</b> Epidermal growth factor binds EGFR and signals the cell to divide. In some tumors a gain-of-function EGFR is overexpressed and drives division. Gefitinib binds the inside of the receptor and blocks the signal, so it works only when the tumor has that variant EGFR.</li>
+<li><b>Why G proteins matter.</b> A response that looks like it comes from the receptor may actually come from the G protein coupled to it.</li>
+</ul>
+
+<h4>Her words</h4>
+<ul>
+<li>"They found that patients that were homozygous for the serine, and then for the arginine, so the wild type, they had a better response to the drug." <small>(T) 10/26</small></li>
+<li>"So in this realm, we're using this drug to assure efficacy, right? We're individualizing their care." <small>(T) 10/26</small></li>
+<li>"This again, is not something that is likely to result in people being genotyped." <small>(T) 10/26</small> (on ADRB2)</li>
+</ul>
+
+<h4>Traps</h4>
+<ul>
+<li><b>Mixing up the beta-1 and beta-2 SNPs.</b> Ser49Gly and Arg389Gly are in ADRB1. Arg16Gly is in ADRB2.</li>
+<li><b>Thinking the variant gives the better metoprolol response.</b> The wild type responded better.</li>
+<li><b>Giving gefitinib to everyone because everyone has EGFR.</b> Only tumors with the overexpressed variant EGFR respond.</li>
+<li><b>Placing the G-protein variants in the receptor.</b> They are in the G protein coupled to the receptor, not in the receptor itself.</li>
+</ul>
+
+<p>How she asks it: the ADRB1 SNPs and which genotype responds better to metoprolol; the state of the ADRB2 evidence; the endogenous ligand of EGFR; who should not get gefitinib; how the EGFR example differs from the beta-1 example.</p>
+<p class="sub">Sources: PGx-Examples-Students-Fall-2026.pdf slides 'Variants in Drug Targets' (p. 48), 'Variations of Drug Targets' (p. 49, DiPiro Table 6-2), 'Receptors' 1-4 (pp. 50-53), 'Signaling Pathways' (p. 54, DiPiro Fig. 6-5); (T) 10/26. Questions L20-030 to L20-040.</p>
+</section>
+<section class="guide" id="guide4-l20-5">
+<h3>19. Drug-target enzymes: 5-lipoxygenase (ALOX5) and ACE</h3>
+
+<h4>The idea</h4>
+<p>Enzymes can be drug targets too. Both of her examples break the expected pattern. In the first, the ALOX5 promoter repeat changes response to 5-lipoxygenase inhibitors without changing how severe the asthma is. In the second, the ACE insertion/deletion variant does not seem to change ACE inhibitor efficacy, but it probably changes the risk of adverse effects.</p>
+
+<h4>The facts</h4>
+<table class="reftab"><thead><tr><th>Target (gene)</th><th>Variant</th><th>Drug</th><th>What the variant is linked to</th></tr></thead><tbody>
+<tr><td>5-lipoxygenase (ALOX5)</td><td>Tandem repeats in the promoter; the 5-repeat allele is thought to increase expression</td><td>5-lipoxygenase inhibitors (asthma)</td><td>Only subjects with at least one 5-repeat allele responded; no link to asthma severity</td></tr>
+<tr><td>Angiotensin-converting enzyme (ACE)</td><td>Insertion/deletion in intron 16; associated with plasma ACE levels</td><td>ACE inhibitors</td><td>Not clearly efficacy; probably adverse reactions (cough in about 10%; angioedema in 0.1% to 0.2%)</td></tr>
+</tbody></table>
+
+<h4>Why</h4>
+<ul>
+<li><b>Why a variant can change treatment without changing the disease.</b> 5-lipoxygenase has a role in asthma. The repeat alters the amount of the drug's target, so it changes how the inhibitor works, but it does not make the asthma worse or better. The slide's point is that a polymorphism need not cause a disease to influence its treatment.</li>
+<li><b>Why the ACE and angioedema link is unproven.</b> Angioedema occurs in only 0.1% to 0.2% of patients on ACE inhibitors. A study would need a very large population to enroll enough cases to genotype. Until then, genotyping cannot be used to keep at-risk patients off the drug class.</li>
+<li><b>What a proven link would allow.</b> A patient could be genotyped for the ACE InDel, and a carrier's hypertension could be treated another way.</li>
+</ul>
+
+<h4>Her words</h4>
+<ul>
+<li>"We don't always need to have a disease um being caused by that polymorphism to impact the, the treatment of it, OK?" <small>(T) 10/26</small></li>
+<li>"The genetic variant for the ACE gene. Is not seeming to impact the efficacy of ACE inhibitors. This genetic variant is impacting the risk of side effects to the ACE inhibitors." <small>(T) 10/26</small></li>
+</ul>
+
+<h4>Traps</h4>
+<ul>
+<li><b>Linking the ALOX5 repeat to asthma severity.</b> It is linked to drug response, not to severity.</li>
+<li><b>Linking the ACE variant to efficacy.</b> On the ACE slide she stressed adverse effects instead and called that "weird". (On the DiPiro Table 6-2 slide, p. 49, she read the ACE row as a change in blood-pressure response.)</li>
+<li><b>Mixing up the ACE percentages.</b> Cough is about 10%. Angioedema is 0.1% to 0.2%.</li>
+<li><b>Calling the ACE variant a SNP.</b> It is an insertion/deletion (InDel) in intron 16.</li>
+</ul>
+
+<p>How she asks it: which ALOX5 genotype responds to the inhibitor; the point that a variant need not cause a disease to change its treatment; what kind of variant ACE carries; efficacy versus adverse effects; why the angioedema link needs a very large study.</p>
+<p class="sub">Sources: PGx-Examples-Students-Fall-2026.pdf slides 'Variations of Drug Targets: Enzymes' (p. 55), 'Enzymes 2' (p. 56); (T) 10/26. Questions L20-041 to L20-045.</p>
+</section>
+<section class="guide" id="guide4-l20-6">
+<h3>20. Warfarin: CYP2C9 (PK), VKORC1 (PD) and CYP4F2</h3>
+
+<h4>The idea</h4>
+<p>Warfarin is the integrated example. Most drugs of genetic concern involve one gene at a time, but warfarin dosing depends on a metabolizing enzyme (CYP2C9, pharmacokinetics), on its target (VKORC1, pharmacodynamics), and on CYP4F2, which inactivates vitamin K. When low activity in the target and low activity in the enzyme occur together, she called it a "double whammy": the patient needs the lowest dose to prevent bleeding.</p>
+
+<h4>The facts</h4>
+<table class="reftab"><thead><tr><th>Gene</th><th>Role</th><th>Low-activity variant</th><th>Warfarin need</th></tr></thead><tbody>
+<tr><td>CYP2C9 (*2, *3)</td><td>Metabolizes S-warfarin to inactive 7-OH warfarin (PK)</td><td>Reduced activity, not absent; *3 lowest</td><td>Lower</td></tr>
+<tr><td>VKORC1 (haplotypes)</td><td>Vitamin K epoxide reductase, the drug target (PD)</td><td>Low-activity target</td><td>Lower</td></tr>
+<tr><td>CYP4F2</td><td>Metabolizes reduced (active) vitamin K to an inactive form</td><td>Active vitamin K rises</td><td>Higher</td></tr>
+</tbody></table>
+<ul>
+<li>Mechanism: warfarin inhibits vitamin K epoxide reductase, so vitamin K epoxide is not reduced back to its active form. Gamma-glutamyl carboxylase then cannot make active clotting factors. Vitamin K is the antidote in overdose.</li>
+<li>S-warfarin has the most activity and is cleared mainly by CYP2C9. R-warfarin is weak and is cleared by multiple CYPs. Both act on VKORC1.</li>
+<li>Dose example from her questions: wild type for both genes, about 5 mg/day; CYP2C9*3/*3 with wild-type VKORC1, less; homozygous variant for both, the lowest.</li>
+<li>Body weight and gender also play a role in warfarin dosing.</li>
+</ul>
+
+<h4>Why</h4>
+<ul>
+<li><b>Why a low-activity CYP2C9 means a lower dose.</b> Warfarin is cleared more slowly, so the same dose builds up higher.</li>
+<li><b>Why a low-activity VKORC1 means a lower dose.</b> When the target itself is less active, less drug is needed to inhibit it.</li>
+<li><b>Why a low-activity CYP4F2 means a higher dose.</b> Less active vitamin K is inactivated, so more active vitamin K is present. That is like having more of the antidote on board, so more warfarin is needed. A more active CYP4F2 works the other way.</li>
+</ul>
+
+<h4>Her words</h4>
+<ul>
+<li>"If the target of the drug is not very active in one patient compared to another patient, you don't need so much of the drug in that patient that has the genetic variant." <small>(T) 10/26</small></li>
+<li>"So you got kind of a double whammy here possible in patients for how much warfarin they need." <small>(T) 10/26</small></li>
+<li>"Which means you've basically got more of the antidote for warfarin on board, right?" <small>(T) 10/26</small></li>
+</ul>
+
+<h4>Traps</h4>
+<ul>
+<li><b>Saying CYP2C9*2 and *3 make no enzyme.</b> They reduce activity. It is CYP2C19*2 and *3 that make no active enzyme.</li>
+<li><b>Swapping PK and PD.</b> CYP2C9 is PK (clearance). VKORC1 is PD (the target).</li>
+<li><b>Lowering the dose for low CYP4F2.</b> Low CYP4F2 raises active vitamin K, so the warfarin need goes up.</li>
+<li><b>Swapping the enantiomers.</b> S-warfarin is the potent one and is cleared by CYP2C9. R-warfarin is weak.</li>
+</ul>
+
+<p>How she asks it: warfarin's mechanism; which gene is PK and which is PD; rank the dose needs by genotype combination; reason through low or high CYP4F2 activity; which factors affect warfarin dosing.</p>
+<p class="sub">Sources: PGx-Examples-Students-Fall-2026.pdf slides 'Integrated: Both PK and PD' (p. 57), 'Both PK and PD 2' (p. 58, Goodman and Gilman); (T) 10/26. Questions L20-046 to L20-053.</p>
+</section>
+<section class="guide" id="guide4-l20-7">
+<h3>21. Immune system variants: HLA genes and drug hypersensitivity</h3>
+
+<h4>The idea</h4>
+<p>She called immune-system variation the newest and hottest area of pharmacogenomics. Many biologicals now on the market have immunologically based side effects, some of them autoimmune, and these are hard to predict. Certain HLA variants identify people at risk for severe, sometimes fatal, hypersensitivity reactions to specific drugs.</p>
+
+<h4>The facts</h4>
+<table class="reftab"><thead><tr><th>HLA variant</th><th>Drug and adverse effect (Katzung Table 5-4)</th></tr></thead><tbody>
+<tr><td>HLA-B*57:01</td><td>Abacavir-induced skin toxicity (she said this can be fatal)</td></tr>
+<tr><td>HLA-B*15:02</td><td>Carbamazepine-induced skin toxicity (potentially fatal)</td></tr>
+<tr><td>HLA-B*58:01</td><td>Allopurinol-induced skin toxicity</td></tr>
+<tr><td>HLA-DRB1*15:01, DRB5*01:01, DQB1*06:02 haplotype</td><td>Amoxicillin-clavulanate-induced liver injury</td></tr>
+</tbody></table>
+<ul>
+<li>HLA molecules are receptors on antigen-presenting cells. They present antigen to T cells to start an immune response.</li>
+<li>HLA-B, HLA-DQ and HLA-DR polymorphisms have been associated with many drug-induced hypersensitivity reactions.</li>
+<li>Prevalence of these variants varies across populations and is not yet well defined.</li>
+<li>The two variants she said she will spend time on are HLA-B*57:01 and HLA-B*15:02.</li>
+</ul>
+
+<h4>Why</h4>
+<ul>
+<li><b>Why an HLA variant causes a drug reaction.</b> The variant may change the antigen-binding site of the HLA molecule. The molecule may then recognize peptides that are not true antigens and start an immune response against them.</li>
+<li><b>Why this area is growing.</b> As more biologicals reach the market, immune-based adverse effects become more common. More variants will be added to the table as they are identified.</li>
+</ul>
+
+<h4>Her words</h4>
+<ul>
+<li>"They are the receptor that will present the antigen to your T cell." <small>(T) 10/26</small></li>
+<li>"Probably the hottest area of pharmacogenomics. It's the newest area." <small>(T) 10/26</small></li>
+</ul>
+
+<h4>Traps</h4>
+<ul>
+<li><b>Swapping the two HLA-B variants.</b> B*57:01 goes with abacavir. B*15:02 goes with carbamazepine.</li>
+<li><b>Treating HLA variants as metabolism or transport variants.</b> They change immune recognition, not drug handling.</li>
+<li><b>Calling this the oldest area.</b> She called it the newest.</li>
+</ul>
+
+<p>How she asks it: what HLA molecules do; how a variant can cause hypersensitivity; match HLA-B*57:01 and HLA-B*15:02 to their drugs.</p>
+<p class="sub">Sources: PGx-Examples-Students-Fall-2026.pdf slides 'Variations in Immune System Function' (p. 59), 'Immune System Function 2' (p. 60, Katzung Table 5-4); (T) 10/26. Questions L20-054 to L20-056.</p>
+</section>
+<section class="guide" id="guide4-l20-8">
+<h3>22. The Furuta 1998 discussion: CYP2C19, omeprazole and H. pylori cure</h3>
+
+<h4>The idea</h4>
+<p>Furuta et al. (Annals of Internal Medicine, 1998) treated Japanese patients with H. pylori infection with omeprazole plus one antibiotic, amoxicillin, and compared cure rates by CYP2C19 genotype. Patients with no active CYP2C19 (poor metabolizers) had the best cure rate. She used the paper to make students work from the paper's old allele labels to star nomenclature, and from genotype to enzyme activity. She also asked whether a Japanese result applies in the United States.</p>
+
+<h4>The facts</h4>
+<table class="reftab"><thead><tr><th>Group (Table 1)</th><th>Genotypes (star)</th><th>CYP2C19 activity</th><th>H. pylori cure rate (Table 2)</th></tr></thead><tbody>
+<tr><td>1</td><td>wt/wt (*1/*1)</td><td>Normal (rapid-extensive)</td><td>28.6%</td></tr>
+<tr><td>2</td><td>wt/m1, wt/m2 (*1/*2, *1/*3)</td><td>Some: one *1 allele (intermediate-extensive)</td><td>60%</td></tr>
+<tr><td>3</td><td>m1/m2, m1/m1 (*2/*3, *2/*2)</td><td>None (poor metabolizer)</td><td>100%</td></tr>
+</tbody></table>
+<ul>
+<li>62 Japanese patients, mostly middle-aged men, with gastric or duodenal ulcer and H. pylori infection.</li>
+<li>Regimen: omeprazole 20 mg for 8 weeks (gastric ulcer) or 6 weeks (duodenal ulcer), plus amoxicillin 500 mg four times a day for 2 weeks.</li>
+<li>In the United States, H. pylori is usually treated with triple therapy: a PPI with two antibiotics.</li>
+<li>The paper calls the enzyme S-mephenytoin 4'-hydroxylase, an older name for CYP2C19.</li>
+<li>In star nomenclature, m1 = *2, m2 = *3 and wild type = *1. No patient was m2/m2 (*3/*3).</li>
+</ul>
+
+<h4>Why</h4>
+<ul>
+<li><b>Why group 3 has no activity.</b> CYP2C19*2 and *3 are SNPs that create a premature stop codon. Each makes a protein too short to work, so a person with any two of them has no active enzyme.</li>
+<li><b>Why the missing *3/*3 does not matter.</b> *2 and *3 are both inactive, so a *3/*3 patient would simply belong in group 3. The gap only reflects who was recruited.</li>
+<li><b>Why poor metabolizers were cured more often.</b> The discussion section gives the reasons. Omeprazole stays high, so stomach pH stays higher. Amoxicillin is unstable at low pH, so it is more stable at the higher pH. Omeprazole also helps get amoxicillin into the gastric juice, where H. pylori is. (The paper gives a fourth reason, omeprazole's own activity against H. pylori, which she did not mention.)</li>
+<li><b>Why the result does not transfer directly to the U.S.</b> *2 and *3 are relatively frequent in the Japanese population. The paper gives the poor-metabolizer genotype as 18% to 23% in Japanese persons versus 3% to 5% in white U.S. or European populations. With genotyping, the same response is expected and only the group sizes differ, so fewer antibiotics might be possible for the right genotypes.</li>
+</ul>
+
+<h4>Her words</h4>
+<ul>
+<li>"What I wanted to point out to you guys is that in this population, they were effectively using a PPI and 1 antibiotic." <small>(T) 10/26</small></li>
+<li>"You guys have to be able to drill down from your phenotype of your patient to the molecular structure of the DNA and know what is star 2? What is star 3? Why is that enzyme not active in this person?" <small>(T) 10/26</small></li>
+<li>"So can we generalize this study to the United States? Not on the face of it." <small>(T) 10/26</small></li>
+</ul>
+
+<h4>Traps</h4>
+<ul>
+<li><b>Thinking group 2 has no activity.</b> One *1 allele still makes functional enzyme.</li>
+<li><b>Swapping m1 and m2.</b> m1 is *2 and m2 is *3.</li>
+<li><b>Confusing the drugs with the 10/22 figure.</b> The 1998 paper used omeprazole with amoxicillin. Lansoprazole was the 2004 figure shown on 10/22.</li>
+<li><b>Treating the result as universal.</b> Without genotyping it does not transfer directly, because allele frequencies differ between populations.</li>
+<li><b>Expecting plasma levels from this paper.</b> She said group 3 had the highest AUC. The paper cites relative omeprazole AUCs (1:3.7:20) from earlier work but states that it did not measure plasma omeprazole levels.</li>
+</ul>
+
+<p>How she asks it: population and regimen; whether one antibiotic is U.S. practice; the enzyme's other name; translate m1 and m2; which genotype was missing and why that is acceptable; why *2 and *3 are inactive; which group had the best cure rate and the discussion's reasons; whether the result generalizes.</p>
+<p class="sub">Sources: FurutaAnnIntMed1998.pdf (reading card furuta-1998: pp. 1027-1029, Tables 1-2, Discussion); PGx-Examples-Students-Fall-2026.pdf slide 'Discussion of Furuta article' (p. 61); (T) 10/26. Questions L20-057 to L20-066.</p>
 </section>
 
 `;

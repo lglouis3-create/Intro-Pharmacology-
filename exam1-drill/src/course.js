@@ -46,6 +46,7 @@ const COURSE = {
     // Exam 4 (syllabus: Exam IV, Mon Nov 2, covers Oct 21 – Oct 28; Dr. Smith: pharmacogenomics examples, cases, adverse drug reactions, drug interactions)
     {id:'L18', deck:'Intro to PGx Lecture Students Fall 2026.pdf', decks:['Intro to PGx Lecture Students Fall 2026.pdf', 'PGx-Examples-Students-Fall-2026.pdf'], label:'Day 18 (10/21): Pharmacogenomics nomenclature and examples (Dr. Smith)', prof:'Smith', exam:4, module:4},
     {id:'L19', deck:'PGx-Examples-Students-Fall-2026.pdf', label:'Day 19 (10/22): Pharmacogenomics examples continued (Dr. Smith)', prof:'Smith', exam:4, module:4},
+    {id:'L20', deck:'PGx-Examples-Students-Fall-2026.pdf', label:'Day 20 (10/26): Pharmacogenomics examples, transporters, targets, HLA (Dr. Smith)', prof:'Smith', exam:4, module:4},
   ],
   exams: [
     {id:1, name:'Exam 1', scope:'Pharmacodynamics (9/22–9/30)', date:'Fri Oct 2, 9–11 am', when:'2026-10-02T09:00:00-05:00',  // syllabus: Exam I, Fri Oct 2, 9–11 am
@@ -101,6 +102,8 @@ const COURSE = {
      facts:[['Covers', 'Oct 21 – Oct 28: pharmacogenomics examples, cases and resources, adverse drug reactions, drug interactions'],
             ['Weight', '22% of the course grade'],
             ['Format', 'Not announced yet'],
+            ['Dr. Gottlieb', 'No questions from him: "Doctor Gottlieb will not have questions on the, the last exam." (T) 10/26'],
+            ['Her emphasis', '"There will be details on that exam" and "for pharmacogenomics, it\'s gonna be a lot more application" (T) 10/26'],
             ['How she tests', 'What she says in lecture first, then the slides, then the readings; her posted keys set the depth']],
      pools:[{key:'exam4', name:'Exam 4 material', marks:null, filter:{exam:4}}]}
   ],

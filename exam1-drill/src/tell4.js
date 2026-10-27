@@ -39,5 +39,27 @@ const TELL4_HTML = `
 <tr><td>Clopidogrel vs irinotecan (active status)</td><td>Clopidogrel is a prodrug needing activation; irinotecan is active and its metabolite SN-38 must be cleared</td><td>Calling irinotecan a prodrug</td><td>pp. 15, 30</td><td data-q="L19-038">L19-038</td></tr>
 <tr><td>DPD low activity vs TPMT low activity</td><td>Both shunt more drug to the cytotoxic metabolite and cause myelosuppression</td><td>Thinking low activity makes the drug fail</td><td>pp. 29, 32</td><td data-q="L19-042">L19-042</td></tr>
 </tbody></table>
+<h3 id="tell4-l20">Day 20: TPMT dosing, transporters, drug targets, warfarin, HLA, Furuta</h3>
+<table class="reftab"><thead>
+<tr><th style="width:22%">Looks alike</th><th>What separates them</th><th style="width:24%">The trap</th><th style="width:16%">Pages</th><th style="width:9%">Question</th></tr></thead><tbody>
+<tr><td>TPMT heterozygote vs homozygous deficient dose</td><td>Heterozygote: about 35% of the wild-type dose (her words); homozygous deficient: under 10%</td><td>Giving the heterozygote half the dose</td><td>p. 35</td><td data-q="L20-008">L20-008</td></tr>
+<tr><td>TPMT histogram vs a middle-heavy histogram</td><td>For TPMT most people are wild type at the high-activity end</td><td>Assuming the wild type is always in the middle</td><td>p. 34</td><td data-q="L20-006">L20-006</td></tr>
+<tr><td>Cheok and Evans: conventional vs individualized dosing</td><td>Same dose: v/v has the highest 6-TGN and toxicity; individualized: similar, low in all</td><td>Reading the conventional arm as safe</td><td>pp. 36-37</td><td data-q="L20-011">L20-011</td></tr>
+<tr><td>Low-activity P-gp vs low-activity OATP1B1</td><td>P-gp (gut efflux): more absorbed, digoxin rises; OATP1B1 (liver uptake): simvastatin stays in plasma</td><td>Putting OATP1B1 in the gut</td><td>pp. 40, 47</td><td data-q="L20-024">L20-024</td></tr>
+<tr><td>ABCB1 vs MDR1</td><td>One gene with two names; ABCB1 is newer</td><td>Calling them two genes</td><td>p. 45</td><td data-q="L20-019">L20-019</td></tr>
+<tr><td>ABCB1 exon 21 vs exon 26</td><td>Both: digoxin; only exon 26: protease inhibitors</td><td>Linking exon 21 to protease inhibitors</td><td>p. 46</td><td data-q="L20-022">L20-022</td></tr>
+<tr><td>SLCO1B1*5 vs *15 and *17</td><td>*5 is one SNP, about 1%; *15 and *17 are common haplotypes containing it</td><td>Treating them as unrelated alleles</td><td>p. 47</td><td data-q="L20-026">L20-026</td></tr>
+<tr><td>ADRB1 vs ADRB2 SNPs</td><td>ADRB1: Ser49Gly, Arg389Gly (metoprolol); ADRB2: Arg16Gly (beta-2 agonists)</td><td>Swapping the receptors</td><td>pp. 50-51</td><td data-q="L20-032">L20-032</td></tr>
+<tr><td>Beta-1 variant vs EGFR variant</td><td>Beta-1 variant changes drug response; EGFR variant causes the cancer the drug targets</td><td>Giving gefitinib to every lung cancer patient</td><td>pp. 50, 53</td><td data-q="L20-039">L20-039</td></tr>
+<tr><td>ALOX5 repeat: drug response vs disease severity</td><td>Linked to inhibitor response, not to asthma severity</td><td>Assuming a treatment variant must cause the disease</td><td>p. 55</td><td data-q="L20-042">L20-042</td></tr>
+<tr><td>ACE InDel: efficacy vs adverse effects</td><td>Probably predicts adverse reactions (cough, angioedema), not efficacy</td><td>Linking the InDel to ACE inhibitor efficacy</td><td>p. 56</td><td data-q="L20-044">L20-044</td></tr>
+<tr><td>CYP2C9 (PK) vs VKORC1 (PD)</td><td>CYP2C9 clears S-warfarin; VKORC1 is the target; low activity in either lowers the dose</td><td>Swapping PK and PD</td><td>p. 57</td><td data-q="L20-047">L20-047</td></tr>
+<tr><td>Low CYP2C9 or VKORC1 vs low CYP4F2</td><td>Low CYP2C9 or VKORC1: less warfarin; low CYP4F2: more active vitamin K, more warfarin</td><td>Lowering the dose for low CYP4F2</td><td>pp. 57-58</td><td data-q="L20-052">L20-052</td></tr>
+<tr><td>CYP2C9*2/*3 vs CYP2C19*2/*3</td><td>CYP2C9: reduced activity (*3 lowest); CYP2C19: no active enzyme (premature stop)</td><td>Assuming the same star number means the same effect</td><td>p. 57; p. 25</td><td data-q="L20-048">L20-048</td></tr>
+<tr><td>HLA-B*57:01 vs HLA-B*15:02</td><td>B*57:01: abacavir skin toxicity; B*15:02: carbamazepine skin toxicity</td><td>Swapping the drugs</td><td>p. 60</td><td data-q="L20-056">L20-056</td></tr>
+<tr><td>Furuta m1 vs m2</td><td>m1 = *2; m2 = *3; wt = *1</td><td>Reading m1 and m2 as phenotypes</td><td>Furuta Table 1 (p. 1028)</td><td data-q="L20-060">L20-060</td></tr>
+<tr><td>Furuta group 2 vs group 3</td><td>Group 2 has one *1 allele (some activity); group 3 has none (best cure rate)</td><td>Thinking any variant allele removes all activity</td><td>Furuta Tables 1-2 (pp. 1028-1029)</td><td data-q="L20-063">L20-063</td></tr>
+</tbody></table>
+<p class="sub">Source: PGx-Examples-Students-Fall-2026.pdf pp. 32-61; FurutaAnnIntMed1998.pdf (reading card furuta-1998); transcript 10/26.</p>
 
 `;
