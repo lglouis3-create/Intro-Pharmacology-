@@ -2,6 +2,13 @@
 
 Newest first. The build embeds this file; the Topics page shows what is new since your last visit, and the Progress page shows all of it. Keep each bullet to one short line.
 
+## 2026-10-27 (10/26 lecture added)
+
+- Exam 4: the 10/26 lecture (TPMT dosing, transporters, drug targets, warfarin, HLA, Furuta 1998): 66 questions.
+- Guides 15 to 22 for 10/26, each with a walkthrough (device voice); new tell-apart rows and two reference tables.
+- Her 10/26 words on Exam 4 added to the focus card; Exam 4 facts note that Dr. Gottlieb has no questions on it.
+- The Furuta 1998 card is marked discussed in class and links to its guide section.
+
 ## 2026-10-26 (Daily polish)
 
 - Walkthroughs on phones: the slide sits above a shorter transcript, so both show while listening.

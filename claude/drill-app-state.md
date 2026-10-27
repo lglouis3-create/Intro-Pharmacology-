@@ -207,6 +207,17 @@ See `## Conflicts / uncertain` in notes/L01.md, L02.md and L03.md. The ones that
   -> pgxex:15, guide4-l19-5 part 5 -> pgxex:25; rdLead and gwReading skip single-letter abbreviations; links for
   katzung-5 and furuta-1998; status line uses discussed_in_class; dipiro-e6 lecture line shortened; 44 px Speed select.
   Furuta status stays 'upcoming' until the 10/26 transcript arrives.
+- 10/27 (nightly ingest): L20 = 10/26 lecture, Examples deck pp. 32-61 (TPMT dosing, P-gp/ABCB1, OATP1B1/SLCO1B1,
+  ADRB1, ADRB2, EGFR, G proteins, ALOX5, ACE, warfarin CYP2C9 + VKORC1 + CYP4F2, HLA, Furuta 1998 discussion).
+  q_L20.js 66 questions (7 select-all, 2 match, 2 lowYield after fixes: L20-013, L20-031; dupOf L20-001, 009, 021, 048,
+  062, 064); notes/L20.md (cues, conflicts). Verifiers: bank 8 fixes (none to a key), guide 17 fixes. guide4-l20-1..8
+  (headings 15-22), tell4-l20 (17 rows), ref4-l20-1/2. Walkthroughs walk/guide4-l20-*.json: 38 parts, 17,919 characters,
+  15 reviewer fixes; not recorded (about $3.26; all Exam 4 walkthroughs together 45,038 characters, about $8.19).
+  FOCUS4 +4 cues; course.js Exam 4 facts: Dr. Gottlieb has no questions on Exam 4, her emphasis on detail and application.
+  furuta-1998 status 'discussed' (L19, L20). Conflicts kept in notes: TPMT heterozygote "35% of the dose" vs slide "35%
+  of heterozygotes need dose decrease"; simvastatin 221 "times" vs slide 221%; Furuta GERD vs peptic ulcer; ACE p. 49 vs
+  p. 56. Deferred by her to 10/27: resources lecture and worksheet (carbamazepine, abacavir, trastuzumab labels), HLA
+  exercise, warfarin dosing tables. Furuta take-home quiz announced (logistics, not in the drill).
 
 ## Restore after a container restart
 
