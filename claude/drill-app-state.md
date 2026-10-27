@@ -215,5 +215,7 @@ exam1-drill/notes/); transcripts in Drive, Smith's Lecture transcripts folder 1p
 Transcripts are never committed (Pages serves the repo root). At the start of each scheduled run, download any missing:
 - L18 (10/21): Drive 11x7ATwHf1kLolqRtibbgdGTsAJry-XKa, 76,165 bytes -> <scratchpad>/l18/transcript.txt
 - L19 (10/22): Drive 1IYKmaNPVlhYThg-6CETJTL5J23JndQO2, 83,752 bytes -> <scratchpad>/l19/transcript.txt
+- L20 (10/26): Drive 1iWFEnmaSLik81r8KWO2jSYFZ0FRp3SoO, 93,647 bytes -> <scratchpad>/l20/transcript.txt
+- Examples deck PDF: Drive 1lN9BKuyhTRxaP6fRYwXh7xTOAJcAAIA-; page text via pdftotext -layout per page -> <scratchpad>/l20/examples_deck.txt
 Each new lecture ingested adds its line here.
 
