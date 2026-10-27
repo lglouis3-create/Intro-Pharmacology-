@@ -1,0 +1,36 @@
+{
+ "id": "guide4-l20-6",
+ "title": "Warfarin, C Y P two C nine, V K O R C one and C Y P four F two",
+ "segs": [
+  {
+   "text": "Section twenty. Warfarin, the integrated example. Most drugs of genetic concern involve one gene at a time. Warfarin dosing depends on a metabolizing enzyme, C Y P two C nine, which is pharmacokinetics. It depends on its target, V K O R C one, which is pharmacodynamics. And it depends on C Y P four F two, which inactivates vitamin K. Body weight and gender also play a role in warfarin dosing.",
+   "slide": "pgxex:57",
+   "reading": null
+  },
+  {
+   "text": "Start with the mechanism. Warfarin inhibits vitamin K epoxide reductase, so vitamin K epoxide is not reduced back to its active form. Gamma glutamyl carboxylase then cannot make active clotting factors. That is why vitamin K is the antidote in overdose.",
+   "slide": "pgxex:57",
+   "reading": null
+  },
+  {
+   "text": "Low activity in either gene lowers the dose. With a low activity C Y P two C nine, warfarin is cleared more slowly, so the same dose builds up higher. With a low activity V K O R C one, the target itself is less active, so less drug is needed to inhibit it. She said, If the target of the drug is not very active in one patient compared to another patient, you don't need so much of the drug in that patient that has the genetic variant.",
+   "slide": "pgxex:57",
+   "reading": null
+  },
+  {
+   "text": "When both occur together, she called it a double whammy. A patient wild type for both genes needs about five milligrams a day. C Y P two C nine star three star three with wild type V K O R C one needs less. Homozygous variant for both needs the lowest dose to prevent bleeding.",
+   "slide": "pgxex:57",
+   "reading": null
+  },
+  {
+   "text": "Warfarin has two enantiomers. S warfarin has the most activity and is cleared mainly by C Y P two C nine, which turns it into inactive seven hydroxy warfarin. R warfarin is weak and is cleared by multiple C Y Ps. Both act on V K O R C one. A common trap is saying C Y P two C nine star two and star three make no enzyme. They reduce activity, and star three is lowest. It is C Y P two C nineteen star two and star three that make no active enzyme.",
+   "slide": "pgxex:58",
+   "reading": null
+  },
+  {
+   "text": "C Y P four F two runs the other way. It metabolizes reduced, active vitamin K to an inactive form. When C Y P four F two activity is low, less active vitamin K is inactivated, so more active vitamin K is present. She said, Which means you've basically got more of the antidote for warfarin on board. So the patient needs more warfarin, not less. A more active C Y P four F two works the other way.",
+   "slide": "pgxex:58",
+   "reading": null
+  }
+ ]
+}

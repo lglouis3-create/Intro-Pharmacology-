@@ -1,0 +1,31 @@
+{
+ "id": "guide4-l20-2",
+ "title": "P glycoprotein and drug transporters",
+ "segs": [
+  {
+   "text": "Section sixteen. Drug transporters and P glycoprotein. Transporters are the second big area of pharmacogenomics, and P glycoprotein, or P G P, is the best characterized of them. It is an efflux transporter in the gut wall that pumps drugs out of the gut cells and back into the lumen. So when P G P works poorly, less drug is pumped back, and more of it is absorbed. That has the same effect as taking a P G P inhibitor. Lower P G P means more absorption, not less.",
+   "slide": "pgxex:40",
+   "reading": null
+  },
+  {
+   "text": "Transporters move drugs across the gut, excrete drugs into bile and urine, and carry drugs across the blood brain barrier. They are found in gut cells, called enterocytes, in liver cells, called hepatocytes, and in kidney proximal tubule cells. They sit on both the luminal side and the blood side, which is called basolateral. She said, Remember, B is for blood side. Basolateral is never the gut side.",
+   "slide": "pgxex:41",
+   "reading": null
+  },
+  {
+   "text": "On the plasma and cellular concentration curves, the dashed line is the variant. With a low activity P G P, the drug stays in the gut cells, so the cellular concentration rises sharply, and more reaches the blood. She said, You will end up with higher bioavailability of drugs that are substrates for P G P. Increased intestinal P G P expression can limit absorption, while decreased expression may give supratherapeutic plasma concentrations.",
+   "slide": "pgxex:42",
+   "reading": null
+  },
+  {
+   "text": "P G P is coded by A B C B one, a gene also called M D R one, for multidrug resistance one. These are two names for one gene, and A B C B one is the newer name. She said, This transporter is not coded by two different genes. P G P affects the distribution of digoxin, cyclosporine, tacrolimus and the antiretroviral protease inhibitors. Digoxin is her main example because its therapeutic index is narrow. In a low activity P G P patient, a normal dose can push the heart rate far too low, so the dose would be adjusted. That is why you characterize transporters.",
+   "slide": "pgxex:45",
+   "reading": null
+  },
+  {
+   "text": "Three common S N Ps sit in exon twelve, C twelve thirty six T, exon twenty one, G twenty six seventy seven T, and exon twenty six, C thirty four thirty five T. Exons twenty one and twenty six are both linked to digoxin. Only exon twenty six is linked to protease inhibitor levels and clinical effects. In the initial studies, exon twenty one was not linked to the protease inhibitors. P G P is still hard to pin down. A variant's effect changes with the drug, different lab cell systems give different results, and the partner transporters on the blood side are not all characterized yet.",
+   "slide": "pgxex:46",
+   "reading": null
+  }
+ ]
+}
