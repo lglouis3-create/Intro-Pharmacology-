@@ -195,7 +195,7 @@ QUESTIONS.push(
 
 {id:"L20-015", lecture:"L20", prof:"Smith", tier:"new", topic:"L20", sub:"pgp", skill:"drug", core:true, coreWhy:"her in-class question",
  concept:"digoxin-pgp", tags:["smith","inclass"], source:"both",
- stem:"Name a P-gp substrate with a narrow therapeutic index that is greatly affected by low-activity P-gp: a cardiac drug that helps regulate the heartbeat, from the foxglove plant.",
+ stem:"Which narrow-therapeutic-index P-gp substrate is greatly affected by low-activity P-gp?",
  options:[
   {t:"Digoxin", correct:true, why:"Digoxin comes from foxglove, is a narrow-therapeutic-index P-gp substrate, and its bioavailability rises with low-activity P-gp."},
   {t:"Metoprolol", correct:false, why:"Metoprolol was her beta-1 receptor example, not the P-gp substrate."},
@@ -409,7 +409,7 @@ QUESTIONS.push(
 
 {id:"L20-033", lecture:"L20", prof:"Smith", tier:"new", topic:"L20", sub:"receptors", skill:"apply", core:true, coreWhy:"named drug-target variant example",
  concept:"adrb1-metoprolol", tags:["smith"], source:"both",
- stem:"A hypertensive patient is genotyped before metoprolol and carries the variant (non-wild-type) alleles at both beta-1 receptor (ADRB1) SNPs she described. What does the evidence suggest?",
+ stem:"A hypertensive patient is genotyped before metoprolol and carries the variant (non-wild-type) alleles at both beta-1 receptor (ADRB1) SNPs, at codons 49 and 389. What does the evidence suggest?",
  options:[
   {t:"Response may be poorer; consider another drug", correct:true, why:"Patients homozygous for Ser49 and Arg389 (wild type) responded better."},
   {t:"Response will be better than wild type", correct:false, why:"The wild type had the better response."},

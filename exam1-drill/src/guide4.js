@@ -57,6 +57,7 @@ const GUIDE4_HTML = `
 <h4>Traps</h4>
 <ul>
 <li><b>"The rs number tells you the wild type."</b> It does not; it only identifies one SNP. Her poll answer: rs is the method that does not easily show the wild type.</li>
+<li><b>"Most papers use the rs number for CYP2C19*3."</b> The rs number and the nucleotide change take too long to say, so papers call it CYP2C19*3 "in most papers, but not always" <small>(T) 10/21</small>.</li>
 <li><b>"Star numbers run along the gene."</b> They run in order of discovery; *3 (636) is upstream of *2 (681) in CYP2C19.</li>
 <li><b>"CYP2C19*3 is at 681."</b> *2 is 681 G&gt;A; *3 is 636 G&gt;A. She misspoke later in the day ("481 ... 263"); the slide gives 636.</li>
 <li><b>"In C&gt;T the T is the wild type."</b> The wild type is written first.</li>
@@ -698,7 +699,7 @@ const GUIDE4_HTML = `
 <h3>18. Drug-target receptors: beta-1, beta-2, EGFR and G proteins</h3>
 
 <h4>The idea</h4>
-<p>Drug targets are the third area of pharmacogenomics. They are less well characterized than metabolizing enzymes, and she gave only what she considers good science. A target variant can change how well a drug works, as with the beta-1 receptor and metoprolol. A target variant can also cause the disease itself, so the drug is chosen because it hits that variant, as with EGFR and gefitinib.</p>
+<p>Drug targets are the third area of pharmacogenomics. They are less well characterized than metabolizing enzymes and perhaps about as well characterized as transporters, and she gave only what she considers good science. A target variant can change how well a drug works, as with the beta-1 receptor and metoprolol. A target variant can also cause the disease itself, so the drug is chosen because it hits that variant, as with EGFR and gefitinib.</p>
 
 <h4>The facts</h4>
 <table class="reftab"><thead><tr><th>Target (gene)</th><th>Variant</th><th>Drug</th><th>What is known</th></tr></thead><tbody>
