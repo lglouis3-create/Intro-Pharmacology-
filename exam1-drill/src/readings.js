@@ -2463,18 +2463,24 @@ const READINGS = [
   "listen_secs": 180,
   "exam": 4,
   "lectures": [
-   "L19"
+   "L19",
+   "L20"
   ],
-  "status": "upcoming",
+  "status": "discussed",
   "links": [
+   [
+    "guide",
+    "guide4-l20-8",
+    "Guide: the Furuta 1998 discussion"
+   ],
    [
     "guide",
     "guide4-l19-5",
     "Guide: CYP2C19 and PPIs"
    ]
   ],
-  "drive": "",
-  "date": "Introduced Thu 10/22; discussion set for Mon 10/26"
+  "drive": "https://drive.google.com/file/d/1JicYDOQ8dTUK-5rsyDlEq20gArVwKc6j/view",
+  "date": "Introduced Thu 10/22; discussed Mon 10/26"
  },
  {
   "id": "katzung-1",

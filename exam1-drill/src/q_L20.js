@@ -30,7 +30,7 @@ QUESTIONS.push(
   {t:"The xanthine oxidase products only", correct:false, why:"The shift she described is toward 6-TGN, not toward the xanthine oxidase route."},
   {t:"Azathioprine", correct:false, why:"Azathioprine is the parent drug that changes to 6-mercaptopurine; it is not made from it."}],
  teach:"TPMT turns 6-mercaptopurine into the inactive 6-methylmercaptopurine. With the low-activity *3A variant that route is largely blocked, so more of the dose goes through the multi-step pathway to the 6-thioguanine nucleotides, the compounds most active in stopping cells from dividing. Too much 6-TGN stops blood cells from dividing too, giving very low white blood cell counts.",
- quote:"You can kill a patient, and we've had that happen in the past.",
+ quote:"Yeah, the 6 TGN. Because this is basically blocked here, and the 6 mercaptopurine cannot go through the metabolism by the TPMT, a lot of that dose is going to go on down through that multi-step process",
  note:"She asked the room: \"can you guys tell me what happens in this scheme when somebody has the 3A variant of TPMT?\" and accepted \"the 6 TGN\". Same fact as L19-042 (10/22), asked again on 10/26.",
  cite:"PGx-Examples-Students-Fall-2026.pdf slide 'Thiopurine Methyltransferase (TPMT) 2' (p. 32); transcript 10/26"},
 
@@ -42,7 +42,7 @@ QUESTIONS.push(
   {t:"The drugs trigger an allergic reaction in the skin and gut", correct:false, why:"She tied these effects to cell division, not to an immune reaction."},
   {t:"TPMT makes a toxic metabolite in the gut", correct:false, why:"TPMT makes the inactive 6-methylmercaptopurine."},
   {t:"The drugs block P-glycoprotein in the gut", correct:false, why:"P-glycoprotein was not part of the thiopurine explanation."}],
- teach:"The 6-thioguanine nucleotides stop cells from dividing, which is how thiopurines suppress the immune system and treat cancer. Hair follicles and the GI lining are non-cancerous cells that also divide rapidly, so they are hit as well. The most dangerous effect of too much 6-TGN is severe immunosuppression.",
+ teach:"The 6-thioguanine nucleotides stop cells from dividing, which is how thiopurines suppress the immune system and treat cancer. Hair follicles and the GI lining are non-cancerous cells that also divide rapidly, so they are hit as well. A common and dangerous effect of too much 6-TGN is significant immunosuppression.",
  quote:"And these medications can't differentiate between rapidly dividing cancer cells and the other cells in the body that normally rapidly divide, so you get these side effects, OK?",
  cite:"PGx-Examples-Students-Fall-2026.pdf slide 'Thiopurine Methyltransferase (TPMT) 2' (p. 32); (T) 10/26 transcript"},
 
@@ -166,10 +166,10 @@ QUESTIONS.push(
   {t:"Nothing changes", correct:false, why:"Individualized dosing normalized exposure and toxicity."}],
  teach:"In the individualized arm, v/v patients get a very low dose, heterozygotes an intermediate dose, and wild-type patients the full dose. The 6-TGN concentrations become similar, and cumulative toxicity stays low in all three groups. She called this the standard of care.",
  quote:"We're going to individualize their dose based on their genotypes.",
- cite:"PGx-Examples-Students-Fall-2026.pdf slides 'Dosing 6MP with pharmacogenetics' (p. 37), 'Acute lymphoblastic leukaemia' (p. 38, Cheok and Evans); transcript 10/26"},
+ cite:"PGx-Examples-Students-Fall-2026.pdf slide 'Dosing 6MP with pharmacogenetics' (p. 37, Cheok and Evans); transcript 10/26"},
 
 /* ---------------- Drug transporters: P-glycoprotein ---------------- */
-{id:"L20-013", lecture:"L20", prof:"Smith", tier:"new", topic:"L20", sub:"pgp", skill:"recall", multi:true,
+{id:"L20-013", lecture:"L20", prof:"Smith", tier:"new", topic:"L20", sub:"pgp", skill:"recall", multi:true, lowYield:true,
  concept:"transporter-roles", tags:["smith"], source:"slide",
  stem:"Which roles of drug transporters are listed on the transporter slide? Select all that apply.",
  options:[
@@ -178,7 +178,8 @@ QUESTIONS.push(
   {t:"Drug distribution across the blood-brain barrier", correct:true, why:"Listed on the slide."},
   {t:"Conjugating drugs with glucuronic acid", correct:false, why:"Glucuronidation is a metabolizing-enzyme reaction (UGT1A1), not transport."}],
  teach:"Drug transporters move substances across cell membranes. The slide lists transport across the GI tract, excretion into bile and urine, and distribution across the blood-brain barrier, so transporter variants can change drug concentrations at sites of action. P-glycoprotein is one of the most recognized transporters with genetic polymorphism.",
- cite:"PGx-Examples-Students-Fall-2026.pdf slide 'Variations in Drug Transporting Genes' (p. 40); transcript 10/26"},
+ note:"lowYield: the three roles are slide bullets she did not read; she said only that transporters move substances across cell membranes.",
+ cite:"PGx-Examples-Students-Fall-2026.pdf slide 'Variations in Drug Transporting Genes' (p. 40)"},
 
 {id:"L20-014", lecture:"L20", prof:"Smith", tier:"new", topic:"L20", sub:"pgp", skill:"apply", core:true, coreWhy:"mechanism to consequence for the best-characterized transporter",
  concept:"pgp-low-activity-bioavailability", tags:["smith"], source:"both",
@@ -213,7 +214,7 @@ QUESTIONS.push(
   {t:"Each transporter moves its drugs alone, without partner transporters", correct:false, why:"A drug that gets through often has to be moved into the blood by another transporter."},
   {t:"They are found only on the blood side", correct:false, why:"They sit on both the luminal and the blood side."}],
  teach:"The figure shows enterocytes, hepatocytes and proximal tubular cells with ABC (efflux, ATP-dependent) and SLC transporters on both the luminal and blood sides. A P-gp substrate that gets through the gut cell often has to be moved into the blood by another transporter on the basolateral side. She reminded the class that basolateral means the blood side.",
- quote:"Remember, B is for blood side, OK?",
+ quote:"These transporters we now are realizing are in places of our body, not just the gut. We know they're in our hepatocytes. We know they're in our nephrons, um, and they have to be working with partners",
  cite:"PGx-Examples-Students-Fall-2026.pdf slides 'Variations in Drug Transporting Genes 2' (p. 41), 'Genes 3' (p. 42); transcript 10/26"},
 
 {id:"L20-017", lecture:"L20", prof:"Smith", tier:"new", topic:"L20", sub:"pgp", skill:"figure",
@@ -263,8 +264,8 @@ QUESTIONS.push(
  teach:"The P-gp slide lists digoxin, cyclosporine, tacrolimus and the antiretroviral protease inhibitors. Increased intestinal P-gp expression can limit absorption; decreased expression may give supratherapeutic plasma concentrations.",
  cite:"PGx-Examples-Students-Fall-2026.pdf slide 'P-Glycoprotein' (p. 45); transcript 10/26"},
 
-{id:"L20-021", lecture:"L20", prof:"Smith", tier:"new", topic:"L20", sub:"pgp", skill:"apply",
- concept:"pgp-expression-direction", tags:["smith"], source:"slide",
+{id:"L20-021", lecture:"L20", prof:"Smith", tier:"new", topic:"L20", sub:"pgp", skill:"apply", dupOf:"L20-014",
+ concept:"pgp-expression-direction", tags:["smith"], source:"both",
  stem:"A P-gp variant decreases P-gp expression. What may happen to plasma concentrations of a P-gp substrate?",
  options:[
   {t:"They may become supratherapeutic", correct:true, why:"The slide: decreased expression may result in supratherapeutic plasma concentrations."},
@@ -390,9 +391,9 @@ QUESTIONS.push(
   {t:"Bronchodilation", correct:false, why:"That is the beta-2 receptor and beta-2 agonist row."},
   {t:"Peak-dose dyskinesias with levodopa", correct:false, why:"That is the dopamine D2 receptor and levodopa row."},
   {t:"Bone mineral density", correct:false, why:"That is the estrogen receptor row."}],
- teach:"The table (DiPiro Table 6-2) lists genes with target variants, the drugs affected, and the effect. She used the ACE row as an example: a variant in ACE in a patient on an ACE inhibitor changes blood pressure response. The table shows that many practice areas are affected.",
+ teach:"The table (DiPiro Table 6-2) lists genes with target variants, the drugs affected, and the effect. For ACE with ACE inhibitors the table lists blood pressure reduction (among other effects), and she read that row as a change in blood pressure response. The table shows that many practice areas are affected. Later, on the ACE slide, she said the ACE insertion/deletion variant does not seem to change ACE inhibitor efficacy; it changes the risk of adverse effects such as angioedema.",
  quote:"You do not need to memorize this table, because I will tell you the ones that I want you to.",
- note:"lowYield: she said the table does not need to be memorized.",
+ note:"lowYield: she said the table does not need to be memorized. Her p. 49 reading of the ACE row (BP response changes) conflicts with her p. 56 statement (I/D variant affects adverse-effect risk, not efficacy); this item keys only what the table lists.",
  cite:"PGx-Examples-Students-Fall-2026.pdf slide 'Variations of Drug Targets' (p. 49, DiPiro Table 6-2); transcript 10/26"},
 
 {id:"L20-032", lecture:"L20", prof:"Smith", tier:"new", topic:"L20", sub:"receptors", skill:"recall",
@@ -408,7 +409,7 @@ QUESTIONS.push(
 
 {id:"L20-033", lecture:"L20", prof:"Smith", tier:"new", topic:"L20", sub:"receptors", skill:"apply", core:true, coreWhy:"named drug-target variant example",
  concept:"adrb1-metoprolol", tags:["smith"], source:"both",
- stem:"A hypertensive patient is genotyped before metoprolol and carries the ADRB1 Gly49 and Gly389 variants. What does the evidence suggest?",
+ stem:"A hypertensive patient is genotyped before metoprolol and carries the variant (non-wild-type) alleles at both beta-1 receptor (ADRB1) SNPs she described. What does the evidence suggest?",
  options:[
   {t:"Response may be poorer; consider another drug", correct:true, why:"Patients homozygous for Ser49 and Arg389 (wild type) responded better."},
   {t:"Response will be better than wild type", correct:false, why:"The wild type had the better response."},
@@ -754,6 +755,7 @@ QUESTIONS.push(
   {t:"*3/*3; yes, *3 keeps more activity than *2 does", correct:false, why:"*2 and *3 both have no activity."}],
  teach:"Table 1 groups patients as wt/wt (group 1), wt/m1 or wt/m2 (group 2), and m1/m2 or m1/m1 (group 3). No one was m2/m2 (*3/*3); that is simply who was recruited. It does not matter here, because *2 and *3 are both premature-stop SNPs that make no active CYP2C19, so a *3/*3 person would belong in group 3 anyway.",
  quote:"It's just what their study is.",
+ note:"Keyed to her words (both *2 and *3 create a premature stop codon). The Goodman & Gilman figure on p. 26 marks *2 as a splice-site variant (which yields a truncated protein) and *3 as the W212X stop.",
  cite:"FurutaAnnIntMed1998.pdf (p. 1028, Table 1); PGx-Examples-Students-Fall-2026.pdf slide 'Discussion of Furuta article' (p. 61); transcript 10/26"},
 
 {id:"L20-062", lecture:"L20", prof:"Smith", tier:"new", topic:"L20", sub:"furuta", skill:"recall", readingId:"furuta-1998", dupOf:"L18-022",
@@ -766,6 +768,7 @@ QUESTIONS.push(
   {t:"Each is synonymous", correct:false, why:"A synonymous SNP would not truncate the protein."}],
  teach:"She asked the room to apply the variant table they turned in. CYP2C19*2 and *3 are SNPs that create a premature stop codon; the machinery stops at the variant, and a protein too short to function is made. She said students must be able to go from the patient's phenotype down to the DNA change and explain why the enzyme is inactive.",
  quote:"You guys have to be able to drill down from your phenotype of your patient to the molecular structure of the DNA and know what is star 2? What is star 3? Why is that enzyme not active in this person?",
+ note:"Keyed to her words (both *2 and *3 create a premature stop codon). The Goodman & Gilman figure on p. 26 marks *2 as a splice-site variant (which yields a truncated protein) and *3 as the W212X stop.",
  cite:"FurutaAnnIntMed1998.pdf (p. 1028); PGx-Examples-Students-Fall-2026.pdf slide 'Discussion of Furuta article' (p. 61); transcript 10/26"},
 
 {id:"L20-063", lecture:"L20", prof:"Smith", tier:"new", topic:"L20", sub:"furuta", skill:"apply", readingId:"furuta-1998",
