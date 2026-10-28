@@ -1,0 +1,157 @@
+{
+ "id": "label-carbamazepine",
+ "title": "Tegretol (carbamazepine USP) Tablets and Suspension; Tegretol-XR (carbamazepine extended-release tablets) — Prescribing Information",
+ "source": "Novartis Pharmaceuticals Corporation prescribing information with Medication Guide; dated 7/2026 (end of prescribing information, p. 19; Medication Guide \"Revised: 7/2026\", p. 25); Reference ID: 5835028. Sections are unnumbered; page numbers are PDF pages.",
+ "file": "Tegretol/Tegretol-XR (carbamazepine) prescribing information, 7/2026 (Canvas: pharmacogenomics resources)",
+ "lecture": "Tue 10/27 (Pharmacogenomics Resources): the label for the carbamazepine group in the in-class worksheet on the FDA Table of Pharmacogenomic Biomarkers in Drug Labeling. In class the label date was read out as 2017; the file provided is dated 7/2026 (pp. 19, 25). The transcript provided ends during the abacavir discussion, after the carbamazepine gene, variants and reaction were covered.",
+ "kind": "guideline",
+ "about": "The Tegretol prescribing information describes carbamazepine, an anticonvulsant and specific analgesic for trigeminal neuralgia, indicated for partial seizures with complex symptomatology, generalized tonic-clonic seizures and mixed seizure patterns, and for the pain of true trigeminal neuralgia (Description, p. 2; Indications and Usage, pp. 3–4). Its boxed warning, headed SERIOUS DERMATOLOGIC REACTIONS AND HLA-B*1502 ALLELE, states that TEN and SJS are estimated to occur in 1 to 6 per 10,000 new users in countries with mainly Caucasian populations, that the risk in some Asian countries is about 10 times higher, and that patients with ancestry in genetically at-risk populations should be screened for HLA-B*1502 prior to initiating treatment (p. 1). The Warnings subsection SJS/TEN and HLA-B*1502 Allele gives the allele's prevalence (greater than 15% in Hong Kong, Thailand, Malaysia and parts of the Philippines; about 10% in Taiwan; 4% in North China; 2% to 4% in South Asians; less than 1% in Japan and Korea) and states that Tegretol should not be used in patients positive for HLA-B*1502 unless the benefits clearly outweigh the risks (p. 4). A second subsection, Hypersensitivity Reactions and HLA-A*3101 Allele, reports a moderate association between HLA-A*3101 and hypersensitivity reactions (SJS/TEN, maculopapular eruptions and DRESS) in patients of European, Korean and Japanese ancestry, and says risks and benefits should be weighed in patients known to be positive (p. 5). Under Precautions, Laboratory Tests, high-resolution 'HLA-B*1502 typing' is recommended for genetically at-risk patients; the test is positive if either one or two HLA-B*1502 alleles are detected (p. 10).",
+ "sections": [
+  "Boxed Warning (Serious Dermatologic Reactions and HLA-B*1502 Allele; Aplastic Anemia and Agranulocytosis)",
+  "Description",
+  "Clinical Pharmacology (Mechanism of Action; Pharmacokinetics)",
+  "Indications and Usage (Epilepsy; Trigeminal Neuralgia)",
+  "Contraindications",
+  "Warnings (Serious Dermatologic Reactions; SJS/TEN and HLA-B*1502 Allele; Hypersensitivity Reactions and HLA-A*3101 Allele; Aplastic Anemia and Agranulocytosis; DRESS/Multiorgan Hypersensitivity; Hypersensitivity; Anaphylaxis and Angioedema; Propylene Glycol Toxicity; Suicidal Behavior and Ideation; Usage in Pregnancy)",
+  "Precautions (General; Information for Patients; Laboratory Tests; Drug Interactions; Carcinogenesis, Mutagenesis, Impairment of Fertility; Pregnancy; Pediatric Use; Geriatric Use)",
+  "Adverse Reactions",
+  "Drug Abuse and Dependence; Overdosage",
+  "Dosage and Administration",
+  "How Supplied",
+  "Medication Guide"
+ ],
+ "lecture_use": [
+  {
+   "point": "Carbamazepine is an anticonvulsant",
+   "chapter_location": "Description (p. 2); Indications and Usage: Epilepsy (p. 3)",
+   "lecture_evidence": "Carbamazepine is one of our older anti-epileptic medications that we still use.",
+   "date": "10/27"
+  },
+  {
+   "point": "The label names two genes: HLA-B (HLA-B*1502) and HLA-A (HLA-A*3101)",
+   "chapter_location": "Warnings: SJS/TEN and HLA-B*1502 Allele (p. 4); Hypersensitivity Reactions and HLA-A*3101 Allele (p. 5)",
+   "lecture_evidence": "there's actually two genes now for carbamazepine that we need to look at",
+   "date": "10/27"
+  },
+  {
+   "point": "HLA-B*1502, an inherited allelic variant of the HLA-B gene",
+   "chapter_location": "Boxed Warning (p. 1); Warnings (p. 4)",
+   "lecture_evidence": "For carbamazepine, we're worried about the HLAB gene, HLAB, the genetic variant called 1502, OK?",
+   "date": "10/27"
+  },
+  {
+   "point": "HLA-A*3101, an inherited allelic variant of the HLA-A gene",
+   "chapter_location": "Warnings: Hypersensitivity Reactions and HLA-A*3101 Allele (p. 5)",
+   "lecture_evidence": "OK, so the presence of the HLAB 1502 and the HLAA, make sure I get this right, 3101.",
+   "date": "10/27"
+  },
+  {
+   "point": "The variants raise the risk of serious and sometimes fatal dermatologic reactions, including TEN and SJS",
+   "chapter_location": "Boxed Warning (p. 1); Warnings: Serious Dermatologic Reactions (p. 4)",
+   "lecture_evidence": "OK, so it increases significantly the risk of you having a very, very, very bad hypersensitivity reaction that makes your skin burn and fall off.",
+   "date": "10/27"
+  },
+  {
+   "point": "Both alleles are associated with hypersensitivity reactions that present in the skin (SJS/TEN; for HLA-A*3101 also maculopapular eruptions and DRESS)",
+   "chapter_location": "Warnings (pp. 4–5)",
+   "lecture_evidence": "Both of those greatly increase the risk of a patient having this hypersensitivity reaction manifested by skin reactions, OK.",
+   "date": "10/27"
+  },
+  {
+   "point": "The patient is tested (inherited alleles); there is no tumor involved",
+   "chapter_location": "Boxed Warning (p. 1); Warnings (p. 4)",
+   "lecture_evidence": "Yes, you don't have, we're not dealing with tumors with these drugs for carbamazepine and abacavir.",
+   "date": "10/27"
+  },
+  {
+   "point": "Same HLA-B gene as abacavir, different allele (HLA-B*1502 for carbamazepine)",
+   "chapter_location": "Boxed Warning (p. 1)",
+   "lecture_evidence": "The HLAB gene is involved in both, but it's a different genetic variant for carbamazepine compared to abacavir, same gene.",
+   "date": "10/27"
+  }
+ ],
+ "read_for": [
+  "Boxed Warning (p. 1): SJS/TEN in 1 to 6 per 10,000 new users in countries with mainly Caucasian populations, about 10 times higher in some Asian countries; HLA-B*1502 is found almost exclusively in patients with ancestry across broad areas of Asia; screen patients with ancestry in genetically at-risk populations before starting; patients testing positive should not be treated unless the benefit clearly outweighs the risk.",
+  "Warnings, SJS/TEN and HLA-B*1502 Allele (p. 4): the association was found in retrospective case-control studies in patients of Chinese ancestry; prevalence by region; HLA-B*1502 is largely absent in individuals not of Asian origin (e.g., Caucasians, African-Americans, Hispanics, and Native Americans); tested patients found negative are thought to have a low risk of SJS/TEN.",
+  "Warnings (p. 5): over 90% of patients who will experience SJS/TEN have it within the first few months of treatment; HLA-B*1502 has not been found to predict maculopapular eruption or DRESS; it may also be a risk factor with other antiepileptic drugs associated with SJS/TEN, including phenytoin.",
+  "Warnings, Hypersensitivity Reactions and HLA-A*3101 Allele (p. 5): carried by more than 15% of patients of Japanese, Native American, Southern Indian and some Arabic ancestry; up to about 10% of Han Chinese, Korean, European, Latin American and other Indian ancestry; up to about 5% of African-Americans and patients of Thai, Taiwanese and Chinese (Hong Kong) ancestry.",
+  "Warnings (p. 5): HLA genotyping as a screening tool has important limitations and must never substitute for appropriate clinical vigilance and patient management.",
+  "Precautions, Laboratory Tests (p. 10): high-resolution 'HLA-B*1502 typing' is recommended for genetically at-risk patients.",
+  "Medication Guide (p. 20): some types of skin reactions are more likely in people of Asian descent, who may need a genetic blood test before taking TEGRETOL."
+ ],
+ "beyond_lecture": [
+  "Which patients to screen (ancestry and prevalence figures) and the named test: the transcript provided ends before the class answers to these worksheet questions for carbamazepine; the label covers them on pp. 1, 4–5 and 10.",
+  "Boxed Warning and Warnings: aplastic anemia and agranulocytosis, with complete pretreatment hematological testing as a baseline (pp. 1–2, 5).",
+  "Warnings: fixed drug eruption and generalized bullous fixed drug eruption (p. 4); anaphylaxis and angioedema, propylene glycol toxicity, suicidal behavior and ideation (p. 6).",
+  "Clinical Pharmacology, Pharmacokinetics: CYP3A4 forms carbamazepine-10,11-epoxide; autoinduction is completed after 3 to 5 weeks; usual adult therapeutic levels are between 4 and 12 mcg/mL (p. 3).",
+  "Precautions, Drug Interactions: agents that increase or decrease carbamazepine levels and decreased levels of concomitant medications (pp. 10–11).",
+  "Dosage and Administration (p. 16) and Overdosage (p. 14)."
+ ],
+ "terms": [
+  {
+   "term": "HLA-B*1502",
+   "chapter_definition": "An inherited allelic variant of the HLA-B gene; found almost exclusively in patients with ancestry across broad areas of Asia (Boxed Warning, p. 1)."
+  },
+  {
+   "term": "HLA-A*3101",
+   "chapter_definition": "An inherited allelic variant of the HLA-A gene, moderately associated with hypersensitivity reactions in patients using carbamazepine (Warnings, p. 5)."
+  },
+  {
+   "term": "SJS/TEN",
+   "chapter_definition": "Serious and sometimes fatal dermatologic reactions, including toxic epidermal necrolysis (TEN) and Stevens-Johnson syndrome (SJS) (Warnings, p. 4)."
+  },
+  {
+   "term": "High-resolution 'HLA-B*1502 typing'",
+   "chapter_definition": "Recommended for genetically at-risk patients; the test is positive if either one or two HLA-B*1502 alleles are detected and negative if no HLA-B*1502 alleles are detected (Laboratory Tests, p. 10)."
+  },
+  {
+   "term": "DRESS (multiorgan hypersensitivity)",
+   "chapter_definition": "Drug Reaction with Eosinophilia and Systemic Symptoms, which typically presents with fever, rash, lymphadenopathy, and/or facial swelling, in association with other organ system involvement (Warnings, p. 5)."
+  },
+  {
+   "term": "Fixed drug eruption (FDE)",
+   "chapter_definition": "Single or multiple, circumscribed patches that occur in the same location with each exposure to an offending drug (Warnings, p. 4)."
+  },
+  {
+   "term": "Carbamazepine-10,11-epoxide",
+   "chapter_definition": "The principal metabolite of Tegretol, which has anticonvulsant activity; CYP3A4 is the major isoform responsible for its formation (pp. 2–3)."
+  },
+  {
+   "term": "Autoinduction",
+   "chapter_definition": "Tegretol induces its own metabolism, so the half-life is variable; autoinduction is completed after 3 to 5 weeks of a fixed dosing regimen (p. 3)."
+  }
+ ],
+ "discussed_in_class": true,
+ "her_words": [
+  {
+   "t": "Carbamazepine is one of our older anti-epileptic medications that we still use.",
+   "date": "10/27"
+  },
+  {
+   "t": "New carbamazepine, 2nd, maybe even 3rd generations have come along, and some of those newer generation drugs in the same category as carbamazepine have the same issue.",
+   "date": "10/27"
+  },
+  {
+   "t": "For carbamazepine, we're worried about the HLAB gene, HLAB, the genetic variant called 1502, OK?",
+   "date": "10/27"
+  },
+  {
+   "t": "OK, so the presence of the HLAB 1502 and the HLAA, make sure I get this right, 3101.",
+   "date": "10/27"
+  },
+  {
+   "t": "Both of those greatly increase the risk of a patient having this hypersensitivity reaction manifested by skin reactions, OK.",
+   "date": "10/27"
+  },
+  {
+   "t": "These can be fatal.",
+   "date": "10/27"
+  },
+  {
+   "t": "They both cause a risk for a hypersensitivity reaction, but carbamazepine is located in the skin, and for abacavir, it's a whole organ hypersensitivity reaction.",
+   "date": "10/27"
+  }
+ ],
+ "quotes_note": "Quotes are verbatim transcript text from the 10/27 lecture recording, including filler words.",
+ "truncated": false
+}

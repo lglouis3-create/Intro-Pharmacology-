@@ -1,0 +1,250 @@
+{
+ "id": "cpic-warfarin-2017",
+ "title": "Clinical Pharmacogenetics Implementation Consortium (CPIC) Guideline for Pharmacogenetics-Guided Warfarin Dosing: 2017 Update",
+ "source": "JA Johnson, KE Caudle, L Gong, M Whirl-Carrillo, CM Stein, SA Scott, MT Lee, BF Gage, SE Kimmel, MA Perera, JL Anderson, M Pirmohamed, TE Klein, NA Limdi, LH Cavallari and M Wadelius. Clinical Pharmacology & Therapeutics 2017;102(3):397–404 (September 2017), CPIC Update; doi:10.1002/cpt.668. Page numbers are journal pages (PDF p. 1 = p. 397).",
+ "file": "CPIC warfarin guideline, 2017 update (Canvas: pharmacogenomics resources)",
+ "lecture": "Tue 10/27 (Pharmacogenomics Resources): walked through in class as the example CPIC guideline. She said warfarin's guideline had just been updated, but the newest version did not open from Canvas, so the class read this 2017 update.",
+ "kind": "guideline",
+ "about": "This CPIC update to the 2011 guideline for CYP2C9 and VKORC1 genotypes and warfarin dosing presents evidence for CYP2C9, VKORC1, CYP4F2 and rs12777823 genotype-guided warfarin dosing to achieve a target INR of 2–3 when clinical genotype results are available, and adds recommendations for adult and pediatric patients specific to continental ancestry (p. 397). It states that common variants in CYP2C9, VKORC1, CYP4F2 and the CYP2C cluster, plus known nongenetic factors, account for 50% of warfarin dose variability, and that stable doses to achieve an INR of 2–3 range from 1–20 mg/day (pp. 397–398). Figure 1 shows that S-warfarin, 3–5 times more potent than R-warfarin, is metabolized predominantly via CYP2C9; that warfarin inhibits its molecular target VKORC1, limiting reduced vitamin K; and that CYP4F2 removes vitamin K from the vitamin K cycle (p. 398). For non-African ancestry it recommends calculating the dose with a published pharmacogenetic algorithm using VKORC1-1639G>A and CYP2C9*2 and *3 (STRONG), decreasing the calculated dose by 15–30% per CYP2C9*5, *6, *8 or *11 allele (OPTIONAL) and increasing it by 5–10% if CYP4F2*3 is detected (OPTIONAL); for African ancestry it says to dose clinically if CYP2C9*5, *6, *8 and *11 are not available, and otherwise to calculate, reduce by 15–30% for those alleles, and reduce by 10–25% in African Americans with rs12777823 A/G or A/A (MODERATE) (p. 402). It also covers pediatric patients of European ancestry, potential benefits and risks, and caveats, including that pharmacogenetic-guided dosing does not alter the requirements for regular INR monitoring (pp. 402–403).",
+ "sections": [
+  "Summary (unheaded)",
+  "Focused Literature Review",
+  "Drug: Warfarin (Warfarin pharmacology and pharmacokinetics; Figure 1)",
+  "Genes: CYP2C9, VKORC1, and CYP4F2 (CYP2C9 and warfarin; VKORC1 and warfarin; CYP4F2 and warfarin; CYP2C rs12777823 and warfarin)",
+  "Genetic test interpretation (CYP2C9; VKORC1; CYP4F2; CYP2C rs12777823)",
+  "Genetic test options; Incidental findings",
+  "Linking genetic variability to variability in drug-related phenotypes (EU-PACT, COAG, GIFT)",
+  "Therapeutic Recommendations: Adults (pharmacogenetic algorithm-based dosing; Figure 2; Text Box 1; loading dose; non-African ancestry recommendation; African ancestry recommendation)",
+  "Recommendations for pediatric patients (Figure 3)",
+  "Other considerations",
+  "Potential Benefits and Risks for the Patient",
+  "Caveats: Appropriate Use and/or Potential Misuse of Genetic Tests",
+  "Disclaimer; References"
+ ],
+ "lecture_use": [
+  {
+   "point": "This document is the 2017 update (an update to the 2011 CPIC guideline)",
+   "chapter_location": "Title and summary (p. 397)",
+   "lecture_evidence": "OK, so this is the 2017 update for warfarin.",
+   "date": "10/27"
+  },
+  {
+   "point": "Each CPIC guideline opens with a summary",
+   "chapter_location": "Summary (p. 397)",
+   "lecture_evidence": "They always have a summary in the top here.",
+   "date": "10/27"
+  },
+  {
+   "point": "Figure 1: warfarin mechanism of action and metabolism",
+   "chapter_location": "Drug: Warfarin; Figure 1 (p. 398)",
+   "lecture_evidence": "The mechanism of action of warfarin and its metabolism. It's providing you a figure for that.",
+   "date": "10/27"
+  },
+  {
+   "point": "CYP2C9 is the primary metabolizing enzyme of S-warfarin; CYP2C9*2 and *3 are the two most common decreased function alleles in European ancestry",
+   "chapter_location": "CYP2C9 and warfarin (p. 398)",
+   "lecture_evidence": "It'll tell you, um, just at least background information about, you know, 2C9, the variants we're concerned about for warfarin with 2C9.",
+   "date": "10/27"
+  },
+  {
+   "point": "VKORC1 encodes vitamin K epoxide reductase, the target enzyme of warfarin",
+   "chapter_location": "VKORC1 and warfarin (p. 399)",
+   "lecture_evidence": "That's warfarin's drug target.",
+   "date": "10/27"
+  },
+  {
+   "point": "CYP4F2 metabolizes vitamin K to hydroxy-vitamin K1 and removes vitamin K from the vitamin K cycle",
+   "chapter_location": "CYP4F2 and warfarin (p. 399); Figure 1 (p. 398)",
+   "lecture_evidence": "4F2 is responsible for metabolizing and getting rid of vitamin K.",
+   "date": "10/27"
+  },
+  {
+   "point": "CYP4F2*3 carriers need higher doses (8–11% in the meta-analyses); if CYP4F2*3 is detected, increase the dose by 5–10% (OPTIONAL)",
+   "chapter_location": "CYP4F2 and warfarin (p. 399); Non-African ancestry recommendation (p. 402)",
+   "lecture_evidence": "You need to increase their warfarin dose.",
+   "date": "10/27"
+  },
+  {
+   "point": "rs12777823, a SNP in the CYP2C cluster near CYP2C18; most clinical laboratories do not currently include it in their warfarin panels",
+   "chapter_location": "CYP2C rs12777823 and warfarin; Genetic test interpretation (p. 399)",
+   "lecture_evidence": "They're not really using it yet, they say, but they're giving you information about it.",
+   "date": "10/27"
+  },
+  {
+   "point": "Genetic test interpretation section",
+   "chapter_location": "Genetic test interpretation (p. 399)",
+   "lecture_evidence": "and then here's the next section here talking about genetic test interpretation.",
+   "date": "10/27"
+  },
+  {
+   "point": "Therapeutic recommendations section",
+   "chapter_location": "Therapeutic Recommendations: Adults (pp. 400–402)",
+   "lecture_evidence": "But the next big section is the therapeutic recommendations based on your patient's genotype, OK?",
+   "date": "10/27"
+  },
+  {
+   "point": "The guideline refers to Supplemental Material and Supplemental Tables throughout",
+   "chapter_location": "Throughout, e.g., Focused Literature Review (p. 397); Genes (p. 398)",
+   "lecture_evidence": "you could see here that they are referencing supplemental material throughout their document",
+   "date": "10/27"
+  },
+  {
+   "point": "Figure 2: genotype-based dosing recommendations for adults (the algorithm)",
+   "chapter_location": "Figure 2 (p. 401)",
+   "lecture_evidence": "they often will summarize their recommendations by providing things like an algorithm like this one for warfarin dosing.",
+   "date": "10/27"
+  },
+  {
+   "point": "Without genotype, dose clinically (without genetic information)",
+   "chapter_location": "Figure 2, footnote a (p. 401)",
+   "lecture_evidence": "Dose your patient empirically.",
+   "date": "10/27"
+  },
+  {
+   "point": "The recommendations branch on self-identified ancestry (non-African versus African)",
+   "chapter_location": "Non-African and African ancestry recommendations (p. 402); Figure 2 (p. 401)",
+   "lecture_evidence": "If you have genotype, then you will do the best for your patient if you get them to uh self-identify their ancestry.",
+   "date": "10/27"
+  },
+  {
+   "point": "Non-African ancestry: calculate the dose with a published pharmacogenetic algorithm; graded STRONG",
+   "chapter_location": "Non-African ancestry recommendation (p. 402)",
+   "lecture_evidence": "You've got a strong recommendation here for calculating their dose.",
+   "date": "10/27"
+  },
+  {
+   "point": "CYP2C9*5, *6, *8 or *11: decrease the calculated dose by 15–30%",
+   "chapter_location": "Non-African and African ancestry recommendations (p. 402)",
+   "lecture_evidence": "If somebody has these genotypes, you need to decrease that calculated dose by 15 to 30%.",
+   "date": "10/27"
+  },
+  {
+   "point": "CYP2C9*5, *6, *8 and *11 are found with the highest frequency among those of African ancestry; 45–50% of individuals with self-reported African ancestry carry CYP2C9*5, *6, *8, *11, or rs12777823",
+   "chapter_location": "CYP2C9 and warfarin (pp. 398–399); Figure 2, footnote c (p. 401)",
+   "lecture_evidence": "OK, so those particular variants that we haven't touched on much, they affect the activity of 2C9, and they are of quite high frequency in people of African descent.",
+   "date": "10/27"
+  },
+  {
+   "point": "No recommendation is made for use of CYP4F2 genotype data in patients of African ancestry",
+   "chapter_location": "African ancestry recommendation (p. 402)",
+   "lecture_evidence": "they don't have the, the, um, the 4F2 for African Americans listed",
+   "date": "10/27"
+  },
+  {
+   "point": "Other patient characteristics used in the algorithms (Text Box 1: age, sex, race, weight, height, smoking status, warfarin indication, target INR, interacting drugs)",
+   "chapter_location": "Text Box 1 (p. 401); Other considerations (p. 403)",
+   "lecture_evidence": "if you were to read this guidance document, you would also know that they talk about there are other patient factors that we use as well.",
+   "date": "10/27"
+  }
+ ],
+ "read_for": [
+  "Summary (p. 397): the update covers CYP2C9, VKORC1, CYP4F2 and rs12777823 genotype-guided dosing to a target INR of 2–3, with ancestry-specific adult and pediatric recommendations.",
+  "Figure 1 (p. 398): warfarin mechanism and metabolism, with CYP2C9, VKORC1 and CYP4F2.",
+  "CYP2C9 and warfarin (p. 398): CYP2C9*2 and *3 impair S-warfarin metabolism by 30–40% and 80–90%; carriers have greater bleeding risk, need lower doses and take more time to reach a stable INR.",
+  "VKORC1 and warfarin (p. 399): c.-1639G>A (rs9923231), an upstream variant on a haplotype that affects VKORC1 protein expression; one or two -1639A alleles require progressively lower doses.",
+  "CYP4F2 and warfarin and CYP2C rs12777823 and warfarin (p. 399): CYP4F2*3 carriers need 8–11% higher doses; rs12777823 heterozygotes or homozygotes (A allele) among African Americans need 7 or 9 mg/week less.",
+  "Genetic test interpretation (p. 399): most FDA-approved CYP2C9 tests include only *2 and *3, which is not as informative for African ancestry populations.",
+  "Figure 2 and footnotes (p. 401): the adult dosing algorithm; consider an alternative agent with CYP2C9 poor metabolism genotypes, or with both increased sensitivity (VKORC1 A/G or A/A) and CYP2C9 poor metabolism.",
+  "Non-African and African ancestry recommendations (p. 402): STRONG, MODERATE and OPTIONAL steps, including the 15–30%, 20–40%, 5–10% and 10–25% adjustments.",
+  "Text Box 1 (p. 401): the clinical and genetic variables used in the Gage or IWPC algorithms."
+ ],
+ "beyond_lecture": [
+  "Linking genetic variability to variability in drug-related phenotypes (p. 400): EU-PACT, COAG and GIFT trial results, and the recommendation against pharmacogenetic dosing in blacks when only CYP2C9*2 and *3 results are available.",
+  "Pharmacogenetics-informed loading dose (p. 402): the EU-PACT loading dose algorithm, graded OPTIONAL.",
+  "Recommendations for pediatric patients and Figure 3 (pp. 402–403).",
+  "Incidental findings (p. 400): homozygosity for rare VKORC1 coding mutations causes VKCFD2, a rare bleeding disorder.",
+  "Potential Benefits and Risks for the Patient (p. 403): false security and inadequate INR monitoring, risk with *2/*3-only panels in African ancestry, cost and insurance coverage.",
+  "Caveats (p. 403): little benefit from testing in patients already on long-term stable doses; the greatest potential benefit is early in therapy."
+ ],
+ "terms": [
+  {
+   "term": "CYP2C9",
+   "chapter_definition": "A hepatic drug-metabolizing enzyme in the cytochrome P450 superfamily and the primary metabolizing enzyme of S-warfarin; it has over 60 known variant alleles (p. 398)."
+  },
+  {
+   "term": "CYP2C9*2 and *3",
+   "chapter_definition": "The two most common decreased function alleles among individuals of European ancestry: *2 (c.430C>T; p.Arg144Cys; rs1799853) and *3 (c.1075A>C; p.Ile359Leu; rs1057910) (p. 398)."
+  },
+  {
+   "term": "CYP2C9*5, *6, *8 and *11",
+   "chapter_definition": "Alleles associated with decreased CYP2C9 function, found with the highest frequency among those of African ancestry and collectively more common than *2 and *3 in that population (pp. 398–399)."
+  },
+  {
+   "term": "VKORC1",
+   "chapter_definition": "Encodes the vitamin K epoxide reductase protein, the target enzyme of warfarin; it catalyzes the conversion of vitamin K-epoxide to vitamin K, the rate-limiting step in vitamin K recycling (p. 399)."
+  },
+  {
+   "term": "VKORC1 c.-1639G>A (rs9923231)",
+   "chapter_definition": "A common variant upstream of VKORC1 significantly associated with warfarin sensitivity; patients with one or two -1639A require progressively lower doses than -1639G/G homozygotes (p. 399)."
+  },
+  {
+   "term": "CYP4F2*3 (c.1297G>A; p.Val433Met; rs2108622)",
+   "chapter_definition": "A nonsynonymous CYP4F2 variant; meta-analyses suggest 8–11% higher warfarin doses in A allele carriers (p. 399)."
+  },
+  {
+   "term": "rs12777823",
+   "chapter_definition": "A SNP in the CYP2C cluster near the CYP2C18 gene on chromosome 10, associated with warfarin dose through alterations in warfarin clearance, independent of CYP2C9*2 and *3; an association has only been detected among African Americans (p. 399)."
+  },
+  {
+   "term": "Pharmacogenetic dosing algorithm (Gage, IWPC)",
+   "chapter_definition": "Algorithms that compute the anticipated stable daily warfarin dose to one decimal from genetic and clinical information; the two were created using more than 5,000 subjects (pp. 400–401)."
+  },
+  {
+   "term": "Strength of recommendation",
+   "chapter_definition": "A three-tiered rating system in which ratings of strong, moderate, and optional are applied based on the evidence reviewed (p. 400)."
+  },
+  {
+   "term": "Dose clinically",
+   "chapter_definition": "To dose without genetic information, which may include use of a clinical dosing algorithm or standard dose approach (Figure 2, footnote a, p. 401)."
+  }
+ ],
+ "discussed_in_class": true,
+ "her_words": [
+  {
+   "t": "So, warfarin has been updated from 2017, and then for the thiopurines, that was just updated as well, and we're gonna look at both of those in a little bit today.",
+   "date": "10/27"
+  },
+  {
+   "t": "Instead of wasting time, let's look at the CPIC 2017 guideline, OK?",
+   "date": "10/27"
+  },
+  {
+   "t": "OK, so this is the 2017 update for warfarin.",
+   "date": "10/27"
+  },
+  {
+   "t": "So, basically, there's another SNP that they are genotyping people for.",
+   "date": "10/27"
+  },
+  {
+   "t": "OK, so those particular variants that we haven't touched on much, they affect the activity of 2C9, and they are of quite high frequency in people of African descent.",
+   "date": "10/27"
+  },
+  {
+   "t": "4F2 is responsible for metabolizing and getting rid of vitamin K.",
+   "date": "10/27"
+  },
+  {
+   "t": "You need to increase their warfarin dose.",
+   "date": "10/27"
+  },
+  {
+   "t": "It decreases the activity of that enzyme, increasing vitamin K, which means you need to have more drug to help your patient be anticoagulated properly.",
+   "date": "10/27"
+  },
+  {
+   "t": "They all follow the same template in the information they give you.",
+   "date": "10/27"
+  },
+  {
+   "t": "You need to be able to look at information I give you about a patient.",
+   "date": "10/27"
+  },
+  {
+   "t": "This is the detail you have to study for your exam.",
+   "date": "10/27"
+  }
+ ],
+ "quotes_note": "Quotes are verbatim transcript text from the 10/27 lecture recording, including filler words.",
+ "truncated": false
+}

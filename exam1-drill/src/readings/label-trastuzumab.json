@@ -1,0 +1,178 @@
+{
+ "id": "label-trastuzumab",
+ "title": "HERCEPTIN (trastuzumab) for injection, for intravenous use — Prescribing Information",
+ "source": "FDA-approved prescribing information, Genentech, Inc.; Revised: 05/2026; Reference ID: 5800095. Page numbers are PDF pages.",
+ "file": "HERCEPTIN (trastuzumab) prescribing information, revised 05/2026 (Canvas: pharmacogenomics resources)",
+ "lecture": "Tue 10/27 (Pharmacogenomics Resources): the label for the trastuzumab group in the in-class worksheet on the FDA Table of Pharmacogenomic Biomarkers in Drug Labeling; the class answers were discussed question by question.",
+ "kind": "guideline",
+ "about": "The HERCEPTIN prescribing information (Revised: 05/2026) describes trastuzumab, a HER2/neu receptor antagonist indicated in adults for HER2-overexpressing breast cancer (adjuvant and metastatic) and for HER2-overexpressing metastatic gastric or gastroesophageal junction adenocarcinoma (Highlights, p. 1; sections 1.1–1.3, p. 2). Each indication says to select patients for therapy based on an FDA-authorized companion diagnostic for Herceptin, and section 2.2 says to select patients based on HER2 protein overexpression or HER2 gene amplification in tumor specimens, using FDA-authorized tests specific for breast or gastric cancers by laboratories with demonstrated proficiency (pp. 2–3). Section 12.1 states that the HER2 (or c-erbB2) proto-oncogene encodes a transmembrane receptor protein of 185 kDa, structurally related to the epidermal growth factor receptor, and that Herceptin inhibits the proliferation of human tumor cells that overexpress HER2 (p. 23). The boxed warning covers cardiomyopathy, infusion reactions, embryo-fetal toxicity and pulmonary toxicity (p. 2). The clinical studies required HER2 overexpression (3+ by IHC) or gene amplification (by FISH), and the label reports that in H0648g the beneficial treatment effects were largely limited to patients with the highest level of HER2 protein overexpression (3+) (pp. 26, 33).",
+ "sections": [
+  "Highlights of Prescribing Information",
+  "Boxed Warning: Cardiomyopathy, Infusion Reactions, Embryo-Fetal Toxicity, and Pulmonary Toxicity",
+  "1 Indications and Usage (1.1 Adjuvant Breast Cancer; 1.2 Metastatic Breast Cancer; 1.3 Metastatic Gastric Cancer)",
+  "2 Dosage and Administration (2.1 Evaluation and Testing Before Initiating Herceptin; 2.2 Patient Selection; 2.3 Recommended Dosage; 2.4 Important Dosing Considerations; 2.5 Dosage Modifications for Adverse Reactions; 2.6 Preparation Instructions)",
+  "3 Dosage Forms and Strengths; 4 Contraindications (None)",
+  "5 Warnings and Precautions (5.1 Cardiomyopathy; 5.2 Infusion Reactions; 5.3 Embryo-Fetal Toxicity; 5.4 Pulmonary Toxicity; 5.5 Exacerbation of Chemotherapy-Induced Neutropenia)",
+  "6 Adverse Reactions; 7 Drug Interactions; 8 Use in Specific Populations",
+  "11 Description",
+  "12 Clinical Pharmacology (12.1 Mechanism of Action; 12.2 Pharmacodynamics; 12.3 Pharmacokinetics; 12.6 Immunogenicity)",
+  "13 Nonclinical Toxicology",
+  "14 Clinical Studies (14.1 Adjuvant Breast Cancer: NSABP B31, NCCTG N9831, HERA, BCIRG006; 14.2 Metastatic Breast Cancer: H0648g, H0649g; 14.3 Metastatic Gastric Cancer: ToGA)",
+  "16 How Supplied/Storage and Handling; 17 Patient Counseling Information"
+ ],
+ "lecture_use": [
+  {
+   "point": "Herceptin (trastuzumab) is indicated for HER2-overexpressing breast cancer",
+   "chapter_location": "Highlights (p. 1); 1.1 and 1.2 (p. 2)",
+   "lecture_evidence": "OK, trastuzumab, the brand name is Herceptin, right?",
+   "date": "10/27"
+  },
+  {
+   "point": "Trastuzumab binds HER2; the label describes it as a humanized IgG1 kappa monoclonal antibody that selectively binds the extracellular domain of HER2 and inhibits proliferation of tumor cells that overexpress HER2",
+   "chapter_location": "11 Description and 12.1 Mechanism of Action (p. 23)",
+   "lecture_evidence": "Brand name trastuzumab, the generic name, that drug is made to bind to the HER2 receptor, OK, stopping the signaling of the growth factor, so we prevent the cells being told to divide out of control.",
+   "date": "10/27"
+  },
+  {
+   "point": "The HER2 (or c-erbB2) proto-oncogene encodes a transmembrane receptor protein of 185 kDa",
+   "chapter_location": "12.1 Mechanism of Action (p. 23)",
+   "lecture_evidence": "It includes the 185, and I think the 185 is the size of it like the size.",
+   "date": "10/27"
+  },
+  {
+   "point": "Testing is done on tumor specimens (HER2 protein overexpression or HER2 gene amplification), not on the patient's germline",
+   "chapter_location": "2.2 Patient Selection (p. 3)",
+   "lecture_evidence": "So they actually don't genotype people, they're phenotyping the tumor.",
+   "date": "10/27"
+  },
+  {
+   "point": "Testing selects patients for therapy (efficacy): the drug acts on cells that overexpress HER2",
+   "chapter_location": "1.1–1.3 (p. 2); 2.2 (p. 3); 12.1 (p. 23)",
+   "lecture_evidence": "We want to be sure these patients have the drug's target, which is HER2, before we give them an expensive drug that can cause side effects.",
+   "date": "10/27"
+  },
+  {
+   "point": "HER2 status by immunohistochemistry (IHC 3+) or FISH gene amplification in the trials",
+   "chapter_location": "14.1 (p. 26); 14.2 (pp. 32–33)",
+   "lecture_evidence": "Usually we do immunohistochemistry to look for the presence of those receptors on those tumor cells.",
+   "date": "10/27"
+  },
+  {
+   "point": "The label does not name a brand of test: it calls for FDA-authorized tests by laboratories with demonstrated proficiency, listed at fda.gov/CompanionDiagnostics",
+   "chapter_location": "2.2 Patient Selection (p. 3)",
+   "lecture_evidence": "The trastuzumab label a few years ago used to name a certain brand of a kit to use for looking for the HER2 receptor on the presence of the tumor cells.",
+   "date": "10/27"
+  },
+  {
+   "point": "Tumor types: breast cancer and metastatic gastric or gastroesophageal junction adenocarcinoma",
+   "chapter_location": "1.1–1.3 (p. 2)",
+   "lecture_evidence": "Breast. And metastatic gastrointestinal tumors.",
+   "date": "10/27"
+  },
+  {
+   "point": "Gastroesophageal junction tumors are included in the gastric indication",
+   "chapter_location": "1.3 Metastatic Gastric Cancer (p. 2)",
+   "lecture_evidence": "Some esophageal tumors as well.",
+   "date": "10/27"
+  },
+  {
+   "point": "Results decide use: patients are selected for therapy based on HER2 overexpression or amplification",
+   "chapter_location": "Highlights (p. 1); 2.2 (p. 3)",
+   "lecture_evidence": "If they are HER2 positive, they're likely candidates for using trastuzumab. If they're HER2 negative, you're not going to use trastuzumab in that patient.",
+   "date": "10/27"
+  }
+ ],
+ "read_for": [
+  "Highlights and sections 1.1–1.3 (pp. 1–2): the three indications, each with \"Select patients for therapy based on an FDA-authorized companion diagnostic for Herceptin.\"",
+  "Section 2.2, Patient Selection (p. 3): HER2 protein overexpression or HER2 gene amplification in tumor specimens; FDA-authorized tests specific for breast or gastric cancers; laboratories with demonstrated proficiency; http://www.fda.gov/CompanionDiagnostics.",
+  "Section 2.2 (p. 3): gastric cancers need tests specifically for gastric cancers because of incomplete membrane staining and more frequent heterogeneous expression of HER2; improper assay performance can lead to unreliable results.",
+  "Sections 11 and 12.1 (p. 23): humanized IgG1 kappa monoclonal antibody against the extracellular domain of HER2; the HER2 (c-erbB2) proto-oncogene encodes a 185 kDa transmembrane receptor; ADCC preferentially exerted on HER2-overexpressing cancer cells.",
+  "Section 14.1 (pp. 26–27): NSABP B31, NCCTG N9831 and HERA required HER2 overexpression (3+ by IHC) or gene amplification (by FISH); BCIRG006 required FISH+ only.",
+  "Section 14.1, Table 10 (p. 32): DFS by HER2 assay result; footnote: IHC by HercepTest, FISH by PathVysion (HER2/CEP17 ratio ≥ 2.0) at a central laboratory.",
+  "Section 14.2 (pp. 32–34): IHC scored 0, 1+, 2+ or 3+; only 2+ or 3+ tumors eligible in H0648g; benefit largely limited to 3+ (Table 12); ORR 18% for CTA 3+ versus 6% for CTA 2+ in H0649g.",
+  "Section 14.3 and Table 14 (pp. 34–37): ToGA required FISH+ or IHC 3+; exploratory overall survival by HER2 status."
+ ],
+ "beyond_lecture": [
+  "Boxed Warning and 5.1 Cardiomyopathy: evaluate left ventricular function before and during treatment; risk highest with anthracycline-containing regimens (pp. 2, 5).",
+  "Sections 5.2–5.5: infusion reactions, embryo-fetal toxicity (oligohydramnios), pulmonary toxicity, exacerbation of chemotherapy-induced neutropenia (pp. 7–8).",
+  "Section 2.3, Recommended Dosage: initial 4 mg/kg then 2 mg/kg weekly, or initial 8 mg/kg then 6 mg/kg every three weeks, by indication (pp. 3–4).",
+  "Section 2.4 missed doses and 2.5 dosage modifications for adverse reactions (p. 4).",
+  "Section 6, Adverse Reactions, including the ToGA safety data (pp. 8–21).",
+  "Section 8, Use in Specific Populations: pregnancy, lactation, females and males of reproductive potential (pp. 21–23)."
+ ],
+ "terms": [
+  {
+   "term": "HER2 (c-erbB2) proto-oncogene",
+   "chapter_definition": "Encodes a transmembrane receptor protein of 185 kDa, which is structurally related to the epidermal growth factor receptor (12.1, p. 23)."
+  },
+  {
+   "term": "Trastuzumab",
+   "chapter_definition": "A humanized IgG1 kappa monoclonal antibody that selectively binds with high affinity to the extracellular domain of the human epidermal growth factor receptor 2 protein, HER2 (11, p. 23)."
+  },
+  {
+   "term": "HER2/neu receptor antagonist",
+   "chapter_definition": "The class the Highlights give for Herceptin (Highlights, p. 1)."
+  },
+  {
+   "term": "FDA-authorized companion diagnostic",
+   "chapter_definition": "The basis for selecting patients for Herceptin therapy; information on FDA-authorized tests for HER2 protein overexpression and HER2 gene amplification is at http://www.fda.gov/CompanionDiagnostics (1, 2.2, pp. 2–3)."
+  },
+  {
+   "term": "HER2 protein overexpression (IHC)",
+   "chapter_definition": "Tumor specimens tested by IHC (Clinical Trial Assay, CTA) were scored as 0, 1+, 2+, or 3+, with 3+ indicating the strongest positivity (14.2, p. 32)."
+  },
+  {
+   "term": "HER2 gene amplification (FISH)",
+   "chapter_definition": "FISH by PathVysion (HER2/CEP17 ratio ≥ 2.0) as performed at a central laboratory (Table 10 footnote, p. 32)."
+  },
+  {
+   "term": "Antibody-dependent cellular cytotoxicity (ADCC)",
+   "chapter_definition": "Herceptin is a mediator of ADCC, which in vitro is preferentially exerted on HER2-overexpressing cancer cells (12.1, p. 23)."
+  },
+  {
+   "term": "Cardiomyopathy",
+   "chapter_definition": "Herceptin administration can result in sub-clinical and clinical cardiac failure; incidence and severity were highest with anthracycline-containing chemotherapy regimens (Boxed Warning, p. 2)."
+  }
+ ],
+ "discussed_in_class": true,
+ "her_words": [
+  {
+   "t": "OK, trastuzumab, the brand name is Herceptin, right?",
+   "date": "10/27"
+  },
+  {
+   "t": "HER2 positive means the breast cancer has a receptor called HER2 that's expressed on the surface of those tumor cells.",
+   "date": "10/27"
+  },
+  {
+   "t": "That's the first time that I've seen them actually put the information in there about what makes that receptor get expressed.",
+   "date": "10/27"
+  },
+  {
+   "t": "So they actually don't genotype people, they're phenotyping the tumor.",
+   "date": "10/27"
+  },
+  {
+   "t": "So for, um, question number 3, we're not genotyping the patient, we're actually phenotyping the tumor.",
+   "date": "10/27"
+  },
+  {
+   "t": "We want to be sure these patients have the drug's target, which is HER2, before we give them an expensive drug that can cause side effects.",
+   "date": "10/27"
+  },
+  {
+   "t": "Usually we do immunohistochemistry to look for the presence of those receptors on those tumor cells.",
+   "date": "10/27"
+  },
+  {
+   "t": "The trastuzumab label a few years ago used to name a certain brand of a kit to use for looking for the HER2 receptor on the presence of the tumor cells.",
+   "date": "10/27"
+  },
+  {
+   "t": "If they are HER2 positive, they're likely candidates for using trastuzumab. If they're HER2 negative, you're not going to use trastuzumab in that patient.",
+   "date": "10/27"
+  }
+ ],
+ "quotes_note": "Quotes are verbatim transcript text from the 10/27 lecture recording, including filler words.",
+ "truncated": false
+}

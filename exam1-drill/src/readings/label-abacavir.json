@@ -1,0 +1,146 @@
+{
+ "id": "label-abacavir",
+ "title": "ZIAGEN (abacavir) tablets, for oral use; ZIAGEN (abacavir) oral solution — Prescribing Information",
+ "source": "FDA-approved prescribing information with Medication Guide and Warning Card, ViiV Healthcare; Revised: 11/2020; Reference ID: 4706849. Page numbers are the PDF pages, which match the printed page numbers.",
+ "file": "ZIAGEN (abacavir) prescribing information, revised 11/2020 (Canvas: pharmacogenomics resources)",
+ "lecture": "Tue 10/27 (Pharmacogenomics Resources): the label for the abacavir group in the in-class worksheet on the FDA Table of Pharmacogenomic Biomarkers in Drug Labeling. The transcript provided ends mid-sentence during the class discussion of abacavir.",
+ "kind": "guideline",
+ "about": "The ZIAGEN prescribing information (Revised: 11/2020) is for abacavir, a nucleoside analogue HIV-1 reverse transcriptase inhibitor indicated in combination with other antiretroviral agents for the treatment of HIV-1 infection (Highlights, p. 1; section 1, p. 2). Its boxed warning, WARNING: HYPERSENSITIVITY REACTIONS, states that serious and sometimes fatal hypersensitivity reactions, with multiple organ involvement, have occurred with ZIAGEN, and that patients who carry the HLA-B*5701 allele are at a higher risk of a hypersensitivity reaction to abacavir, although reactions have occurred in patients who do not carry the allele (p. 2). The label says to screen all patients for the HLA-B*5701 allele prior to initiating or reinitiating therapy, unless they have a previously documented HLA-B*5701 allele assessment, and makes ZIAGEN contraindicated in patients who have the HLA-B*5701 allele (sections 2.1 and 4, pp. 2–3). Section 5.1 reports hypersensitivity in approximately 206 (8%) of 2,670 patients in 9 clinical trials where HLA-B*5701 screening was not performed, and an incidence of suspected hypersensitivity of 1% when subjects carrying the HLA-B*5701 allele were excluded (p. 4). The label does not name a specific genotyping test; the Medication Guide says the healthcare provider can determine with a blood test if the patient has this gene variation (p. 27).",
+ "sections": [
+  "Highlights of Prescribing Information",
+  "Boxed Warning: Hypersensitivity Reactions",
+  "1 Indications and Usage",
+  "2 Dosage and Administration (2.1 Screening for HLA-B*5701 Allele prior to Starting ZIAGEN; 2.2 Adults; 2.3 Pediatric Patients; 2.4 Hepatic Impairment)",
+  "3 Dosage Forms and Strengths",
+  "4 Contraindications",
+  "5 Warnings and Precautions (5.1 Hypersensitivity Reactions; 5.2 Lactic Acidosis and Severe Hepatomegaly with Steatosis; 5.3 Immune Reconstitution Syndrome; 5.4 Myocardial Infarction)",
+  "6 Adverse Reactions (6.1 Adults, including Serious and Fatal Abacavir-Associated Hypersensitivity Reactions; 6.2 Pediatric; 6.3 Postmarketing)",
+  "7 Drug Interactions (7.1 Methadone; 7.2 Riociguat)",
+  "8 Use in Specific Populations",
+  "10 Overdosage; 11 Description",
+  "12 Clinical Pharmacology (12.1 Mechanism of Action; 12.3 Pharmacokinetics; 12.4 Microbiology)",
+  "13 Nonclinical Toxicology; 14 Clinical Studies (14.1 Adult Trials; 14.2 Pediatric Trials)",
+  "16 How Supplied/Storage and Handling; 17 Patient Counseling Information",
+  "Medication Guide; Warning Card"
+ ],
+ "lecture_use": [
+  {
+   "point": "The FDA biomarker table points to the abacavir label sections that hold pharmacogenomic information: the boxed warning, Dosage and Administration, Contraindications, and Warnings and Precautions",
+   "chapter_location": "Boxed Warning (p. 2); 2.1 (p. 2); 4 Contraindications (p. 3); 5.1 (p. 4)",
+   "lecture_evidence": "So let's look at abacavir. They have information about pharmacogenomics in the boxed warning section, in the dosage and administration section, in the contraindication section, in the warnings and precautions sections.",
+   "date": "10/27"
+  },
+  {
+   "point": "The label provided is the 2020 revision (Revised: 11/2020)",
+   "chapter_location": "Highlights (p. 1)",
+   "lecture_evidence": "The 2020 update for abacavir",
+   "date": "10/27"
+  },
+  {
+   "point": "Indication: HIV-1 infection, in combination with other antiretroviral agents",
+   "chapter_location": "1 Indications and Usage (p. 2)",
+   "lecture_evidence": "Antiretroviral, right, for HIV.",
+   "date": "10/27"
+  },
+  {
+   "point": "The patient is tested (the label speaks of patients who carry the HLA-B*5701 allele); there is no tumor involved",
+   "chapter_location": "Boxed Warning (p. 2); 5.1 (p. 4)",
+   "lecture_evidence": "Yes, you don't have, we're not dealing with tumors with these drugs for carbamazepine and abacavir.",
+   "date": "10/27"
+  },
+  {
+   "point": "HLA-B*5701 carriers are at higher risk of a hypersensitivity reaction; the label calls it a multi-organ clinical syndrome and lists multi-organ failure among the reactions",
+   "chapter_location": "Highlights boxed warning (p. 1); 5.1 Hypersensitivity Reactions (p. 4)",
+   "lecture_evidence": "What happens if a patient has this genotype present? Hypersensitivity reaction, where? Multi-organ failure.",
+   "date": "10/27"
+  },
+  {
+   "point": "Same gene as carbamazepine (HLA-B) but a different allele: HLA-B*5701 for abacavir",
+   "chapter_location": "Boxed Warning (p. 2); 4 Contraindications (p. 3)",
+   "lecture_evidence": "The HLAB gene is involved in both, but it's a different genetic variant for carbamazepine compared to abacavir, same gene.",
+   "date": "10/27"
+  }
+ ],
+ "read_for": [
+  "Boxed Warning (p. 2): HLA-B*5701 carriers are at higher risk of hypersensitivity; ZIAGEN is contraindicated in HLA-B*5701-positive patients and in patients with a prior hypersensitivity reaction; all patients should be screened before initiating or reinitiating therapy unless a previous HLA-B*5701 allele assessment is documented.",
+  "Section 2.1, Screening for HLA-B*5701 Allele prior to Starting ZIAGEN (p. 2): screen for the allele prior to initiating therapy.",
+  "Section 4, Contraindications (p. 3): patients who have the HLA-B*5701 allele; prior hypersensitivity reaction to abacavir; moderate or severe hepatic impairment.",
+  "Section 5.1, Hypersensitivity Reactions (p. 4): reactions have included multi-organ failure and anaphylaxis, typically within the first 6 weeks (median time to onset 9 days); 206 (8%) of 2,670 patients without screening versus 1% with HLA-B*5701 carriers excluded.",
+  "Section 5.1 bullets (p. 4): regardless of HLA-B*5701 status, discontinue immediately if a hypersensitivity reaction is suspected, and NEVER restart ZIAGEN or any other abacavir-containing product after a hypersensitivity reaction.",
+  "Section 6.1 (p. 6): the reactions have been characterized by 2 or more of fever, rash, gastrointestinal symptoms, constitutional symptoms and respiratory symptoms.",
+  "Medication Guide (p. 27): the risk of the allergic reaction is much higher with the gene variation HLA-B*5701, which the healthcare provider can determine with a blood test.",
+  "Section 17 and Warning Card (pp. 25, 32): a Medication Guide and Warning Card are dispensed with each new prescription and refill, and patients are told to carry the Warning Card."
+ ],
+ "beyond_lecture": [
+  "The worksheet questions on efficacy versus toxicity, which test to use, which population to test and how results change care were not answered for abacavir in the transcript provided, which ends mid-sentence during the abacavir discussion.",
+  "Section 5.2, Lactic Acidosis and Severe Hepatomegaly with Steatosis (p. 5).",
+  "Section 5.3, Immune Reconstitution Syndrome, and 5.4, Myocardial Infarction (p. 5).",
+  "Section 2 dosing: adults 600 mg daily as 300 mg twice daily or 600 mg once daily; pediatric dosing by body weight (Table 1); mild hepatic impairment 200 mg twice daily (pp. 2–3).",
+  "Section 7, Drug Interactions: methadone and riociguat (p. 11).",
+  "Section 12.4, Microbiology: conversion to carbovir triphosphate and inhibition of HIV-1 reverse transcriptase (p. 18).",
+  "Section 14, Clinical Studies: CNA30024 and other adult and pediatric trials (pp. 20–24)."
+ ],
+ "terms": [
+  {
+   "term": "HLA-B*5701 allele",
+   "chapter_definition": "Patients who carry the HLA-B*5701 allele are at a higher risk of a hypersensitivity reaction to abacavir; although, hypersensitivity reactions have occurred in patients who do not carry the HLA-B*5701 allele (Boxed Warning, p. 2)."
+  },
+  {
+   "term": "Abacavir hypersensitivity",
+   "chapter_definition": "Hypersensitivity to ZIAGEN is a multi-organ clinical syndrome (Highlights, p. 1); the reactions have included multi-organ failure and anaphylaxis (5.1, p. 4)."
+  },
+  {
+   "term": "Screening for HLA-B*5701",
+   "chapter_definition": "Screen for the HLA-B*5701 allele prior to initiating therapy with ZIAGEN (2.1, p. 2), or prior to reinitiation of therapy unless patients have a previously documented HLA-B*5701 allele assessment (Boxed Warning, p. 2)."
+  },
+  {
+   "term": "HLA-B*5701-positive patients",
+   "chapter_definition": "ZIAGEN is contraindicated in patients who have the HLA-B*5701 allele (4, p. 3)."
+  },
+  {
+   "term": "Signs of the reaction",
+   "chapter_definition": "Characterized by 2 or more of: (1) fever; (2) rash; (3) gastrointestinal symptoms; (4) constitutional symptoms; (5) respiratory symptoms (6.1, p. 6)."
+  },
+  {
+   "term": "Warning Card",
+   "chapter_definition": "A card summarizing the symptoms of the abacavir hypersensitivity reaction, dispensed by the pharmacist with each new prescription and refill; patients are told to carry it with them (17, p. 25)."
+  },
+  {
+   "term": "Carbovir triphosphate (CBV-TP)",
+   "chapter_definition": "The active metabolite of abacavir, an analogue of dGTP, which inhibits HIV-1 reverse transcriptase (12.4, p. 18)."
+  }
+ ],
+ "discussed_in_class": true,
+ "her_words": [
+  {
+   "t": "I've got a drug label for abacavir, I've got a drug label for carbamazepine, and I've got a drug label for trastuzumab.",
+   "date": "10/27"
+  },
+  {
+   "t": "So let's look at abacavir. They have information about pharmacogenomics in the boxed warning section, in the dosage and administration section, in the contraindication section, in the warnings and precautions sections.",
+   "date": "10/27"
+  },
+  {
+   "t": "What happens if a patient has this genotype present? Hypersensitivity reaction, where? Multi-organ failure.",
+   "date": "10/27"
+  },
+  {
+   "t": "They both cause a risk for a hypersensitivity reaction, but carbamazepine is located in the skin, and for abacavir, it's a whole organ hypersensitivity reaction.",
+   "date": "10/27"
+  },
+  {
+   "t": "Interestingly, we first identified this problem by seeing people with massive skin problems that were very similar to carbamazepine when we gave them abacavir.",
+   "date": "10/27"
+  },
+  {
+   "t": "The HLAB gene is involved in both, but it's a different genetic variant for carbamazepine compared to abacavir, same gene.",
+   "date": "10/27"
+  },
+  {
+   "t": "What does our HLAB do? It's an antigen presenting receptor, right?",
+   "date": "10/27"
+  }
+ ],
+ "quotes_note": "Quotes are verbatim transcript text from the 10/27 lecture recording, including filler words.",
+ "truncated": false
+}
