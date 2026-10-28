@@ -236,6 +236,14 @@ See `## Conflicts / uncertain` in notes/L01.md, L02.md and L03.md. The ones that
   Conflicts kept in notes/L21.md (17), including CPIC name, "optimal" vs "Optional", "5 mg per kilogram", CYP4F2
   direction, about 35 guidelines vs 29 rows, carbamazepine label date, tumor types. Adverse drug events deferred to 10/28.
 
+- 10/28 (daily polish 4): paper seed 20261028 (L18-L21): strong 40/40, average 39/40 (L18-065 by design); 3 flags fixed:
+  L19-021 stem now "Which drugs does the CYP2C9 slide list as CYP2C9 substrates?"; L18-064 stem drops "4 different genes"
+  and the azathioprine giveaway; guide4-l20-5 ACE trap quotes her p. 56 words. UX review (exam sim + Weak spots, 8 items):
+  scale-clock unticked when ex.questions is null; exam review multi marks (.missed, tick counts); scrollTo(0,0) after
+  submit; #motivcard lifted above #backbtn; .grid buttons 40 px on touch; readingId on 25 L21 items (cpic-warfarin-2017,
+  label-*); ABBR gains Exam 4 genes and terms; 5 skill:'drug' items in L19/L20 retagged; "Drill the ones I missed (closes
+  this review)"; Exam 4 blurb by date taught. Not done: concept titles from guide headings (ABBR only).
+
 ## Restore after a container restart
 
 The scratchpad is wiped on every restart. Durable copies: scripts and briefs in the repo (exam1-drill/src/daily/,

@@ -1206,7 +1206,7 @@ function conceptStats(c, list) {
 }
 /* A readable title from the concept id: a term's name, "Drug: mechanism of action" and the
    like for the common id shapes, else the id's words with the course's abbreviations. */
-const ABBR = {ache: 'AChE', ach: 'ACh', adr: 'ADR', adrs: 'ADRs', ddi: 'DDI', moa: 'MOA', soa: 'SOA', nds: 'NDS', gq: 'Gq', gs: 'Gs', kd: 'Kd', emax: 'Emax', ec50: 'EC50', ed50: 'ED50', ed99: 'ED99', ld1: 'LD1', ld50: 'LD50', ti: 'TI', gpcr: 'GPCR', rtk: 'RTK', pde: 'PDE', cgmp: 'cGMP', camp: 'cAMP', ip3: 'IP3', plc: 'PLC', ac: 'AC', sgc: 'sGC', nos: 'NOS', raas: 'RAAS', ace: 'ACE', acei: 'ACE inhibitor', arb: 'ARB', arbs: 'ARBs', at1: 'AT1', at2: 'AT2', ang2: 'Ang II', mao: 'MAO', maoi: 'MAOI', nmj: 'NMJ', nn: 'Nn', nm: 'Nm', m1: 'M1', m2: 'M2', m3: 'M3', ne: 'NE', sch: 'SCh', mh: 'malignant hyperthermia', mg: 'myasthenia gravis', pns: 'PNS', sns: 'SNS', ans: 'ANS', cns: 'CNS', bp: 'BP', hr: 'HR', map: 'MAP', oab: 'overactive bladder', skm: 'skeletal muscle', bbb: 'BBB', fa: 'full agonist', pa: 'partial agonist', pam: 'PAM', nam: 'NAM', drc: 'DRC', gtp: 'GTP', gaba: 'GABA', net: 'NET', snare: 'SNARE', ssri: 'SSRI', grk: 'GRK', mr: 'MR', na: 'Na', x: 'X', y: 'Y', alpha: 'α', alpha1: 'α1', alpha2: 'α2', beta: 'β', beta1: 'β1', beta2: 'β2', beta3: 'β3', alpha4beta2: 'α4β2', dumbbelss: 'DUMBBELSS', op: 'organophosphate', d1: 'D1', d2: 'D2', k: 'K⁺', vs: 'vs', ras: 'RAS', ia: 'inverse agonist', bbs: 'β blockers', ad: 'Alzheimer’s', pd: 'PD'};
+const ABBR = {fda: 'FDA', cpic: 'CPIC', hla: 'HLA', bche: 'BChE', egf: 'EGF', egfr: 'EGFR', slco1b1: 'SLCO1B1', abcb1: 'ABCB1', vkorc1: 'VKORC1', tpmt: 'TPMT', nat2: 'NAT2', dpd: 'DPD', dpyd: 'DPYD', ugt1a1: 'UGT1A1', cyp2c9: 'CYP2C9', cyp2c19: 'CYP2C19', cyp2d6: 'CYP2D6', cyp4f2: 'CYP4F2', cyp3a5: 'CYP3A5', snp: 'SNP', snps: 'SNPs', rs: 'rs', pgx: 'PGx', clinpgx: 'ClinPGx', pharmgkb: 'PharmGKB', her2: 'HER2', pgp: 'P-gp', oatp1b1: 'OATP1B1', adrb1: 'ADRB1', adrb2: 'ADRB2', alox5: 'ALOX5', nudt15: 'NUDT15', ppi: 'PPI', ppis: 'PPIs', auc: 'AUC', warf: 'warfarin', ache: 'AChE', ach: 'ACh', adr: 'ADR', adrs: 'ADRs', ddi: 'DDI', moa: 'MOA', soa: 'SOA', nds: 'NDS', gq: 'Gq', gs: 'Gs', kd: 'Kd', emax: 'Emax', ec50: 'EC50', ed50: 'ED50', ed99: 'ED99', ld1: 'LD1', ld50: 'LD50', ti: 'TI', gpcr: 'GPCR', rtk: 'RTK', pde: 'PDE', cgmp: 'cGMP', camp: 'cAMP', ip3: 'IP3', plc: 'PLC', ac: 'AC', sgc: 'sGC', nos: 'NOS', raas: 'RAAS', ace: 'ACE', acei: 'ACE inhibitor', arb: 'ARB', arbs: 'ARBs', at1: 'AT1', at2: 'AT2', ang2: 'Ang II', mao: 'MAO', maoi: 'MAOI', nmj: 'NMJ', nn: 'Nn', nm: 'Nm', m1: 'M1', m2: 'M2', m3: 'M3', ne: 'NE', sch: 'SCh', mh: 'malignant hyperthermia', mg: 'myasthenia gravis', pns: 'PNS', sns: 'SNS', ans: 'ANS', cns: 'CNS', bp: 'BP', hr: 'HR', map: 'MAP', oab: 'overactive bladder', skm: 'skeletal muscle', bbb: 'BBB', fa: 'full agonist', pa: 'partial agonist', pam: 'PAM', nam: 'NAM', drc: 'DRC', gtp: 'GTP', gaba: 'GABA', net: 'NET', snare: 'SNARE', ssri: 'SSRI', grk: 'GRK', mr: 'MR', na: 'Na', x: 'X', y: 'Y', alpha: 'α', alpha1: 'α1', alpha2: 'α2', beta: 'β', beta1: 'β1', beta2: 'β2', beta3: 'β3', alpha4beta2: 'α4β2', dumbbelss: 'DUMBBELSS', op: 'organophosphate', d1: 'D1', d2: 'D2', k: 'K⁺', vs: 'vs', ras: 'RAS', ia: 'inverse agonist', bbs: 'β blockers', ad: 'Alzheimer’s', pd: 'PD'};
 const capFirst = s => s.replace(/^[a-z]/, ch => ch.toUpperCase());
 function conceptWords(id) {
   const toks = id.split('-');
@@ -1577,7 +1577,7 @@ function vExam() {
     <div class="card"><div class="row"><span>Length:</span>${lens.map(n => `<button type="button" class="chip ${n === (ex.questions || lens[0]) ? 'on' : ''}" aria-pressed="${n === (ex.questions || lens[0])}" data-n="${n}">${n === max ? 'All ' + n : n}</button>`).join('')}</div>
     ${ex.blueprint ? `<div style="margin-top:10px"><label id="bplab"><input type="checkbox" id="bp" checked> Match his topic counts (the full ${ex.questions}-question paper only)</label>
       <details class="fold bpl"><summary>His topic counts</summary><ul class="bpcols">${ex.blueprint.parts.map(p => `<li>${esc(p.name)}: <b>${p.rest ? 'the rest' : p.min ? 'at least ' + p.min : Array.isArray(p.n) ? p.n.join('–') : p.n}</b></li>`).join('')}<li>Select-all items: <b>${ex.blueprint.sata}</b></li></ul></details></div>` : ''}
-    <div class="row" style="margin-top:10px"><label><input type="checkbox" id="scale" checked> Scale the clock to the length (${ex.minutes} min for the full paper)</label></div>
+    <div class="row" style="margin-top:10px"><label><input type="checkbox" id="scale" ${ex.questions ? 'checked' : ''}> ${ex.questions ? `Scale the clock to the length (${ex.minutes} min for the full ${ex.questions}-question paper)` : `Scale the clock to the length (her question count is not announced, so this assumes the whole ${max}-question bank in ${ex.minutes} min; unticked, every paper gets ${ex.minutes} min)`}</label></div>
     <div class="row" style="margin-top:10px"><span class="meta" style="margin:0">Answer:</span>${layoutToggle()}</div>
     ${ex.noBack ? `<label class="row" style="margin-top:10px;gap:6px;align-items:flex-start"><input type="checkbox" id="noback" ${store.get(COURSE.ns + ':noback') === '1' ? 'checked' : ''}><span>Her exam format: one question at a time with no going back, as she said for ExamSoft ("no backwards nav", 10/21). Leave it off to practice with Previous and either layout.</span></label>` : ''}
     <div class="row" style="margin-top:12px"><button class="btn" id="startx">Start</button></div></div>`;
@@ -1697,7 +1697,7 @@ function submitExam() {
     schedule(id, ok ? 'unsure' : 'wrong');
   });
   S.exams = S.exams || []; S.exams.push({t: Date.now(), n: EX.qs.length, score, exam: EX.exam});
-  EX.score = score; save(); saveExam(); examResult();
+  EX.score = score; save(); saveExam(); examResult(); window.scrollTo(0, 0);
   setTimeout(() => motivSuggest('exam'), 1500);
 }
 function examResult() {
@@ -1708,7 +1708,7 @@ function examResult() {
   // switching exam here opens the other exam's start page; this result stays until "New exam" and shows again on switching back
   const exr = COURSE.exams.find(e => e.id === EX.exam);
   let h = `<h2>Exam result: ${EX.score}/${EX.qs.length} (${Math.round(100 * EX.score / EX.qs.length)}%)</h2><div class="row" style="margin:-4px 0 8px">${examSwitch()}</div>${EX.name ? `<p class="sub">${esc(EX.name)}</p>` : ''}
-    <div class="row"><button class="btn" id="newx">New exam</button><button class="btn ghost" id="missx">Drill the ones I missed</button></div>
+    <div class="row"><button class="btn" id="newx">New exam</button><button class="btn ghost" id="missx">Drill the ones I missed (closes this review)</button></div>
     <h3>By topic</h3><div class="tablewrap"><table><thead><tr><th>Topic</th><th>Right</th><th>%</th></tr></thead><tbody>${by(q => q.topic, k => (TOPIC[k] || {}).name || k)}</tbody></table></div>
     <h3>By skill</h3><div class="tablewrap"><table><thead><tr><th>Skill</th><th>Right</th><th>%</th></tr></thead><tbody>${by(q => q.skill, k => (SKILL[k] || {}).label || k)}</tbody></table></div>
     ${qsx.some(q => q.level) ? `<h3>By tier</h3><div class="tablewrap"><table><thead><tr><th>Tier</th><th>Right</th><th>%</th></tr></thead><tbody>${by(q => q.level ? 'Tier ' + q.level : 'No tier', k => k)}</tbody></table></div>` : ''}
@@ -1717,9 +1717,9 @@ function examResult() {
   qsx.forEach((q, k) => {
     const a = EX.ans[q.id], ok = exRight(q, a), pickedSet = new Set([].concat(a == null ? [] : a));
     h += `<div class="card"><div class="row" style="justify-content:space-between"><span class="meta">${k + 1}. ${metaLine(q)}</span>${flagBtn(q.id)}</div><div class="stem">${esc(q.stem)}</div>${stemMedia(q)}
-      <div class="verdict ${ok ? 'ok' : 'bad'}">${ok ? '✓ Correct' : !examAnswered(q.id) ? '✗ Not answered' : '✗ Not correct'}</div>`;
+      <div class="verdict ${ok ? 'ok' : 'bad'}">${ok ? '✓ Correct' : !examAnswered(q.id) ? '✗ Not answered' : '✗ Not correct'}${q.multi && !ok && examAnswered(q.id) ? (() => { const cor = q.options.map((o, i) => o.correct ? i : -1).filter(i => i >= 0), hit = cor.filter(i => pickedSet.has(i)).length, bad = [...pickedSet].filter(i => q.options[i] && !q.options[i].correct).length; return ` · ${hit} of ${cor.length} correct options ticked${bad ? ` · ${bad} wrong tick${bad > 1 ? 's' : ''}` : ''}`; })() : ''}</div>`;
     const hidden = [];   // the figure, the notes and the cite fold behind "More", as on a quiz card
-    (q.options || []).forEach((o, oi) => { h += `<div class="opt${o.correct ? ' right' : pickedSet.has(oi) ? ' wrong' : ''}" style="cursor:default"><span>${esc(o.t)}</span></div>${o.why ? `<div class="why">${esc(o.why)}</div>` : ''}`; });
+    (q.options || []).forEach((o, oi) => { h += `<div class="opt${o.correct ? ' right' + (q.multi && examAnswered(q.id) && !pickedSet.has(oi) ? ' missed' : '') : pickedSet.has(oi) ? ' wrong' : ''}" style="cursor:default"><span>${esc(o.t)}</span></div>${o.why ? `<div class="why">${esc(o.why)}</div>` : ''}`; });
     if (!ok) {
       if (q.teach) h += `<div class="teach">${teachHTML(q.teach)}</div>`;
       if (q.note) h += `<div class="note">${esc(q.note)}</div>`;

@@ -2,6 +2,14 @@
 
 Newest first. The build embeds this file; the Topics page shows what is new since your last visit, and the Progress page shows all of it. Keep each bullet to one short line.
 
+## 2026-10-28 (Daily polish)
+
+- Exam sim: the score shows at the top after submitting; select-all review marks missed options with tick counts.
+- Exam 4 papers no longer scale the clock to the whole bank by default (her question count is not announced).
+- The 10/27 label and CPIC cards now offer their questions; Weak spots names Exam 4 genes and terms properly.
+- The break suggestion no longer covers Back; larger question-number buttons on phones; Exam 4 blurb by date taught.
+- Three Exam 4 questions or guide lines reworded after a simulated-student check.
+
 ## 2026-10-28 (10/27 lecture added)
 
 - Exam 4: the 10/27 lecture (FDA tables, CPIC, the warfarin algorithm, the drug-label worksheet): 59 questions.

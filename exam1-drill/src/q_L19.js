@@ -260,9 +260,9 @@ QUESTIONS.push(
  cite:"PGx-Examples-Students-Fall-2026.pdf slide 'CYP2D6 Polymorphisms 3' (p. 22); transcript 10/22"},
 
 /* ---------------- CYP2C9 ---------------- */
-{id:"L19-021", lecture:"L19", prof:"Smith", tier:"new", topic:"L19", sub:"cyp2c9", skill:"drug", multi:true, core:true, coreWhy:"objective: metabolizing enzyme variant example and its drugs",
+{id:"L19-021", lecture:"L19", prof:"Smith", tier:"new", topic:"L19", sub:"cyp2c9", skill:"recall", multi:true, core:true, coreWhy:"objective: metabolizing enzyme variant example and its drugs",
  concept:"cyp2c9-nti-drugs", tags:["smith"], source:"both",
- stem:"Which drugs are metabolized by CYP2C9 and are narrow-therapeutic-index drugs she named? Select all that apply.",
+ stem:"Which drugs does the CYP2C9 slide list as CYP2C9 substrates? Select all that apply.",
  options:[
   {t:"Warfarin", correct:true, why:"Warfarin is the main CYP2C9 example and a narrow-therapeutic-index anticoagulant."},
   {t:"Phenytoin", correct:true, why:"Phenytoin is a narrow-therapeutic-index drug metabolized by CYP2C9."},
@@ -322,7 +322,7 @@ QUESTIONS.push(
  cite:"PGx-Examples-Students-Fall-2026.pdf slide 'CYP2C9 Polymorphisms' (p. 23); transcript 10/22"},
 
 /* ---------------- CYP2C19 ---------------- */
-{id:"L19-026", lecture:"L19", prof:"Smith", tier:"new", topic:"L19", sub:"cyp2c19", skill:"drug", multi:true, core:true, coreWhy:"CYP2C19 substrates",
+{id:"L19-026", lecture:"L19", prof:"Smith", tier:"new", topic:"L19", sub:"cyp2c19", skill:"recall", multi:true, core:true, coreWhy:"CYP2C19 substrates",
  concept:"cyp2c19-substrates", tags:["smith"], source:"both",
  stem:"Which drugs are substrates of CYP2C19, which acts on slightly acidic medications? Select all that apply.",
  options:[

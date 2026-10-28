@@ -107,7 +107,7 @@ QUESTIONS.push(
  quote:"It's telling you in what section of the drug label you will find pharmacogenomics information.",
  cite:"PGx-Resources-and-Cases-Students-Fall-2026.pdf slides 'FDA Table of Pharmacogenomic Biomarkers in Drug Labeling' 1 and 3 (pp. 6, 8); transcript 10/27"},
 
-{id:"L21-008", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"fda-biomark", skill:"recall", multi:true,
+{id:"L21-008", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"fda-biomark", skill:"recall", readingId:"label-abacavir", multi:true,
  concept:"abacavir-label-sections", tags:["smith","label"], source:"transcript",
  stem:"For abacavir, the FDA biomarker table lists which label sections as containing pharmacogenomic information? Select all that apply.",
  options:[
@@ -332,7 +332,7 @@ QUESTIONS.push(
  cite:"PGx-Resources-and-Cases-Students-Fall-2026.pdf slide 'CPIC Guidelines 6' (p. 14); transcript 10/27"},
 
 /* ---------------- The CPIC warfarin guideline (p. 15; CPIC 2017) ---------------- */
-{id:"L21-026", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"cpic-warf", skill:"recall",
+{id:"L21-026", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"cpic-warf", skill:"recall", readingId:"cpic-warfarin-2017",
  concept:"cpic-warf-sections", tags:["smith"], source:"both",
  stem:"Reading the 2017 CPIC warfarin guideline, where do you find what to do once a patient's genotype is back from the lab?",
  options:[
@@ -344,7 +344,7 @@ QUESTIONS.push(
  quote:"So, in other words, what do you do? How do you understand what the genotypes mean when you get that data back from the lab?",
  cite:"PGx-Resources-and-Cases-Students-Fall-2026.pdf slide 'CPIC Guidelines 7' (p. 15); CPIC warfarin guideline 2017 update, sections 'Genetic test interpretation' and 'Therapeutic recommendations'; transcript 10/27"},
 
-{id:"L21-027", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"cpic-warf", skill:"recall", dupOf:"L20-047",
+{id:"L21-027", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"cpic-warf", skill:"recall", readingId:"cpic-warfarin-2017", dupOf:"L20-047",
  concept:"warfarin-pk-pd-genes", tags:["smith","inclass"], source:"both",
  stem:"At the top of the CPIC warfarin algorithm are VKORC1 and CYP2C9. What is VKORC1 in relation to warfarin?",
  options:[
@@ -357,7 +357,7 @@ QUESTIONS.push(
  note:"Same fact as L20-046/L20-047 (10/26), asked again in the guideline walk-through.",
  cite:"PGx-Resources-and-Cases-Students-Fall-2026.pdf slide 'CPIC Guidelines 7' (p. 15); CPIC warfarin guideline 2017 update, Figure 1; transcript 10/27"},
 
-{id:"L21-028", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"cpic-warf", skill:"apply",
+{id:"L21-028", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"cpic-warf", skill:"apply", readingId:"cpic-warfarin-2017",
  concept:"cpic-warf-no-genotype", tags:["smith"], source:"both",
  stem:"In the CPIC warfarin algorithm, the first question is whether the patient's genotype is available. If it is not, what does the algorithm say?",
  options:[
@@ -370,7 +370,7 @@ QUESTIONS.push(
  note:"She added \"Usually we just start with 5 mg per kilogram.\" On 10/26 she gave the usual starting dose as about 5 mg/day; the guideline gives no number on this branch. The number is not keyed.",
  cite:"PGx-Resources-and-Cases-Students-Fall-2026.pdf slide 'CPIC Guidelines 7' (p. 15); CPIC warfarin guideline 2017 update, Figure 2; transcript 10/27"},
 
-{id:"L21-029", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"cpic-warf", skill:"apply",
+{id:"L21-029", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"cpic-warf", skill:"apply", readingId:"cpic-warfarin-2017",
  concept:"cpic-warf-ancestry", tags:["smith"], source:"both",
  stem:"The genotype is available. What does the CPIC warfarin algorithm ask next, before choosing a branch?",
  options:[
@@ -382,7 +382,7 @@ QUESTIONS.push(
  quote:"If you have genotype, then you will do the best for your patient if you get them to uh self-identify their ancestry.",
  cite:"PGx-Resources-and-Cases-Students-Fall-2026.pdf slide 'CPIC Guidelines 7' (p. 15); CPIC warfarin guideline 2017 update, Figure 2; transcript 10/27"},
 
-{id:"L21-030", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"cpic-warf", skill:"recall", multi:true,
+{id:"L21-030", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"cpic-warf", skill:"recall", readingId:"cpic-warfarin-2017", multi:true,
  concept:"cpic-warf-calc-genotypes", tags:["smith"], source:"both",
  stem:"For a patient of non-African ancestry, which genotypes go into the calculated warfarin dose at the first step of the CPIC algorithm? Select all that apply.",
  options:[
@@ -395,7 +395,7 @@ QUESTIONS.push(
  quote:"So once you know their genotype status for that particular snip of EKRC1 and their 2 and 3 TC9 status, you're going to calculate their dose.",
  cite:"PGx-Resources-and-Cases-Students-Fall-2026.pdf slide 'CPIC Guidelines 7' (p. 15); CPIC warfarin guideline 2017 update, Figure 2 and 'Non-African ancestry recommendation'; transcript 10/27"},
 
-{id:"L21-031", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"cpic-warf", skill:"recall",
+{id:"L21-031", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"cpic-warf", skill:"recall", readingId:"cpic-warfarin-2017",
  concept:"vkorc1-1639-upstream", tags:["smith"], source:"both",
  stem:"What does the minus sign in VKORC1 -1639G>A indicate?",
  options:[
@@ -407,7 +407,7 @@ QUESTIONS.push(
  quote:"This is a haplotype or this is a part of a haplotype. The negative means that this variant occurs in the Um, uh, upstream untranslated region that affects expression",
  cite:"PGx-Resources-and-Cases-Students-Fall-2026.pdf slide 'CPIC Guidelines 7' (p. 15); CPIC warfarin guideline 2017 update, 'VKORC1 and warfarin'; transcript 10/27"},
 
-{id:"L21-032", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"cpic-warf", skill:"recall",
+{id:"L21-032", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"cpic-warf", skill:"recall", readingId:"cpic-warfarin-2017",
  concept:"cyp2c9-5-6-8-11-reduce", tags:["smith"], source:"both",
  stem:"A patient carries CYP2C9*5, *6, *8 or *11. How does the CPIC algorithm change the calculated warfarin dose?",
  options:[
@@ -419,7 +419,7 @@ QUESTIONS.push(
  quote:"If somebody has these genotypes, you need to decrease that calculated dose by 15 to 30%.",
  cite:"PGx-Resources-and-Cases-Students-Fall-2026.pdf slide 'CPIC Guidelines 7' (p. 15); CPIC warfarin guideline 2017 update, Figure 2; transcript 10/27"},
 
-{id:"L21-033", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"cpic-warf", skill:"apply", core:true, coreWhy:"her in-class reasoning question",
+{id:"L21-033", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"cpic-warf", skill:"apply", readingId:"cpic-warfarin-2017", core:true, coreWhy:"her in-class reasoning question",
  concept:"cyp2c9-african-upfront-why", tags:["smith","inclass"], source:"both",
  stem:"Why does the CPIC warfarin algorithm put CYP2C9*5, *6, *8 and *11 testing up front for patients of African ancestry?",
  options:[
@@ -432,7 +432,7 @@ QUESTIONS.push(
  note:"Dr. Smith's question: \"why do they put it up front here for people of African descent? Why do they make sure that you think about the 568, and 11 42C9 for your, your African ancestry patients?\" The accepted answer (frequencies) is partly lost in the caption; she then explained it.",
  cite:"PGx-Resources-and-Cases-Students-Fall-2026.pdf slide 'CPIC Guidelines 7' (p. 15); CPIC warfarin guideline 2017 update, Figure 2 and 'African ancestry recommendation'; transcript 10/27"},
 
-{id:"L21-034", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"cpic-warf", skill:"apply", dupOf:"L20-052",
+{id:"L21-034", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"cpic-warf", skill:"apply", readingId:"cpic-warfarin-2017", dupOf:"L20-052",
  concept:"cyp4f2-low-warfarin-up", tags:["smith","inclass"], source:"both",
  stem:"CYP4F2*3 makes CYP4F2 less active. What is the warfarin dosing need for a patient who carries it?",
  options:[
@@ -445,7 +445,7 @@ QUESTIONS.push(
  note:"Dr. Smith's question: \"What is their warfarin dosing need if they have the SIP 4 of 23?\" Earlier in the walk-through she said \"If they have that snip, you need to decrease the dose again\" for CYP4F2; a student raised it and she corrected it to an increase. Same fact as L20-052 (10/26).",
  cite:"PGx-Resources-and-Cases-Students-Fall-2026.pdf slide 'CPIC Guidelines 7' (p. 15); CPIC warfarin guideline 2017 update, 'CYP4F2 and warfarin' and Figure 2; transcript 10/27"},
 
-{id:"L21-035", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"cpic-warf", skill:"tell", core:true, coreWhy:"the branch difference she pointed out",
+{id:"L21-035", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"cpic-warf", skill:"tell", readingId:"cpic-warfarin-2017", core:true, coreWhy:"the branch difference she pointed out",
  concept:"cyp4f2-vs-rs12777823-branch", tags:["smith"], source:"both",
  stem:"Which variant does the CPIC warfarin algorithm apply only for non-African ancestry, and which only for African ancestry?",
  options:[
@@ -584,7 +584,7 @@ QUESTIONS.push(
  cite:"PGx-Resources-and-Cases-Students-Fall-2026.pdf slide 'Challenges for enhanced pharmacogenomic implementation' (p. 20); CPIC warfarin guideline 2017 update, Figure 2; transcript 10/27"},
 
 /* ---------------- Drug-label worksheet: trastuzumab (Herceptin) and HER2 ---------------- */
-{id:"L21-046", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"label-trast", skill:"recall",
+{id:"L21-046", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"label-trast", skill:"recall", readingId:"label-trastuzumab",
  concept:"trast-item1-gene", tags:["smith","label","inclass"], source:"transcript",
  stem:"Worksheet item 1 for trastuzumab (Herceptin) asks which gene is evaluated and for which variant. What answer did Dr. Smith give?",
  options:[
@@ -597,7 +597,7 @@ QUESTIONS.push(
  note:"Dr. Smith first said the updated label now describes \"a specific gene variant\" that makes HER2 expressed. When a student read \"185\" from the label she said \"I think the 185 is the size of it,\" and she concluded that \"the labeling is not really telling us which gene and what variant.\" The label (12.1 Mechanism of Action) gives 185 kDa as the size of the HER2 (c-erbB2) receptor protein, and 2.2 selects patients by HER2 protein overexpression or HER2 gene amplification; no named variant is printed. Keyed to her final statement, which matches the label.",
  cite:"Pharmacogenomics Questions Drug Labels Worksheet, item 1; Herceptin (trastuzumab) label, 2.2 Patient Selection and 12.1 Mechanism of Action; transcript 10/27"},
 
-{id:"L21-047", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"label-trast", skill:"recall", core:true, coreWhy:"the worksheet question Dr. Smith called weird",
+{id:"L21-047", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"label-trast", skill:"recall", readingId:"label-trastuzumab", core:true, coreWhy:"the worksheet question Dr. Smith called weird",
  concept:"trast-tumor-not-patient", tags:["smith","label","inclass"], source:"transcript",
  stem:"Worksheet item 3 for trastuzumab (Herceptin): are we genotyping the tumor or the patient?",
  options:[
@@ -609,7 +609,7 @@ QUESTIONS.push(
  quote:"So for, um, question number 3, we're not genotyping the patient, we're actually phenotyping the tumor.",
  cite:"Pharmacogenomics Questions Drug Labels Worksheet, item 3; Herceptin (trastuzumab) label, 2.2 Patient Selection; transcript 10/27"},
 
-{id:"L21-048", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"label-trast", skill:"recall",
+{id:"L21-048", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"label-trast", skill:"recall", readingId:"label-trastuzumab",
  concept:"trast-efficacy", tags:["smith","label","inclass"], source:"transcript",
  stem:"Worksheet item 4 for trastuzumab (Herceptin): is the HER2 testing done to ensure efficacy or to prevent toxicity?",
  options:[
@@ -621,7 +621,7 @@ QUESTIONS.push(
  quote:"We want to be sure these patients have the drug's target, which is HER2, before we give them an expensive drug that can cause side effects.",
  cite:"Pharmacogenomics Questions Drug Labels Worksheet, item 4; Herceptin (trastuzumab) label, 1 Indications and Usage; transcript 10/27"},
 
-{id:"L21-049", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"label-trast", skill:"recall",
+{id:"L21-049", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"label-trast", skill:"recall", readingId:"label-trastuzumab",
  concept:"trast-ihc", tags:["smith","label"], source:"transcript",
  stem:"Worksheet item 5 asks whether HER2 status for trastuzumab (Herceptin) is found by genotyping or by cytology studies. Which method did Dr. Smith name as the usual one?",
  options:[
@@ -634,7 +634,7 @@ QUESTIONS.push(
  note:"The label (2.2 Patient Selection) selects patients by \"HER2 protein overexpression or HER2 gene amplification in tumor specimens\"; the clinical studies (14) used IHC 3+ or FISH+. Dr. Smith discussed only IHC; gene amplification by FISH is a DNA test on the tumor, not a germline genotype of the patient.",
  cite:"Pharmacogenomics Questions Drug Labels Worksheet, item 5; Herceptin (trastuzumab) label, 2.2 Patient Selection and 14 Clinical Studies; transcript 10/27"},
 
-{id:"L21-050", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"label-trast", skill:"recall",
+{id:"L21-050", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"label-trast", skill:"recall", readingId:"label-trastuzumab",
  concept:"trast-test-named", tags:["smith","label","inclass"], source:"transcript",
  stem:"Worksheet item 6: does the current trastuzumab (Herceptin) label tell you which HER2 test to use?",
  options:[
@@ -647,7 +647,7 @@ QUESTIONS.push(
  note:"Dr. Smith said the label now leaves the choice to a test \"you think is good\"; the label requires an FDA-authorized test (FDA-authorized companion diagnostic) by a laboratory with demonstrated proficiency. Both agree that no brand is named. \"CLA certified\" (likely CLIA) is her addition, not label text, and she said \"You don't need to know that.\" She also said \"the answer to number 7 was\" while discussing item 6.",
  cite:"Pharmacogenomics Questions Drug Labels Worksheet, item 6; Herceptin (trastuzumab) label, Highlights (Dosage and Administration) and 2.2 Patient Selection; transcript 10/27"},
 
-{id:"L21-051", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"label-trast", skill:"recall", multi:true,
+{id:"L21-051", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"label-trast", skill:"recall", readingId:"label-trastuzumab", multi:true,
  concept:"trast-tumor-types", tags:["smith","label","inclass"], source:"transcript",
  stem:"Worksheet item 7: which tumor types should be tested for HER2 before trastuzumab (Herceptin)? Select all that apply.",
  options:[
@@ -660,7 +660,7 @@ QUESTIONS.push(
  note:"Dr. Smith and the room said \"metastatic gastrointestinal tumors\" and \"esophageal\"; the label indication (1.3) is narrower: metastatic gastric or gastroesophageal junction adenocarcinoma. Keyed to the label wording, which matches what she accepted.",
  cite:"Pharmacogenomics Questions Drug Labels Worksheet, item 7; Herceptin (trastuzumab) label, 1.1-1.3 Indications and Usage; transcript 10/27"},
 
-{id:"L21-052", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"label-trast", skill:"apply",
+{id:"L21-052", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"label-trast", skill:"apply", readingId:"label-trastuzumab",
  concept:"trast-result-use", tags:["smith","label","inclass"], source:"transcript",
  stem:"Worksheet item 8: how does a patient's HER2 result change the clinical use of trastuzumab (Herceptin)?",
  options:[
@@ -673,7 +673,7 @@ QUESTIONS.push(
  cite:"Pharmacogenomics Questions Drug Labels Worksheet, item 8; Herceptin (trastuzumab) label, 2.2 Patient Selection; transcript 10/27"},
 
 /* ---------------- Drug-label worksheet: carbamazepine and abacavir (HLA-B, HLA-A) ---------------- */
-{id:"L21-053", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"label-hla", skill:"recall", core:true, coreWhy:"Dr. Smith told the class to write it down", dupOf:"L20-056",
+{id:"L21-053", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"label-hla", skill:"recall", readingId:"label-carbamazepine", core:true, coreWhy:"Dr. Smith told the class to write it down", dupOf:"L20-056",
  concept:"carbamazepine-hla-b-1502", tags:["smith","label","inclass"], source:"transcript",
  stem:"Worksheet item 1 for carbamazepine (Tegretol), an older antiepileptic: which HLA-B variant is evaluated?",
  options:[
@@ -686,7 +686,7 @@ QUESTIONS.push(
  note:"Exam cue just before the quote: \"Make sure you write this down, everybody.\" The caption gives \"HLAB\" and \"1502\"; the label prints HLA-B*1502. Same pairing as L20-056 (10/26).",
  cite:"Pharmacogenomics Questions Drug Labels Worksheet, item 1; Tegretol (carbamazepine) label, Boxed Warning and Warnings (SJS/TEN and HLA-B*1502 Allele); transcript 10/27"},
 
-{id:"L21-054", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"label-hla", skill:"recall",
+{id:"L21-054", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"label-hla", skill:"recall", readingId:"label-carbamazepine",
  concept:"carbamazepine-hla-a-3101", tags:["smith","label","inclass"], source:"transcript",
  stem:"The carbamazepine (Tegretol) label names a second HLA gene whose variant raises the risk of hypersensitivity reactions. Which allele is it?",
  options:[
@@ -699,7 +699,7 @@ QUESTIONS.push(
  note:"Dr. Smith first said carbamazepine \"was just updated this year\", then a student read the label date as 2017 and she accepted it. The label copy provided (Medication Guide) reads \"Revised: 7/2026\". The 2017 date for HLA-A*31:01 is her statement; the label copy does not show it.",
  cite:"Pharmacogenomics Questions Drug Labels Worksheet, item 1; Tegretol (carbamazepine) label, Warnings (Hypersensitivity Reactions and HLA-A*3101 Allele); transcript 10/27"},
 
-{id:"L21-055", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"label-hla", skill:"recall",
+{id:"L21-055", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"label-hla", skill:"recall", readingId:"label-carbamazepine",
  concept:"carbamazepine-hla-effect", tags:["smith","label","inclass"], source:"transcript",
  stem:"Worksheet item 2 for carbamazepine (Tegretol): how does carrying either of its HLA risk variants affect the patient's response?",
  options:[
@@ -712,7 +712,7 @@ QUESTIONS.push(
  note:"The label's HLA-A*3101 paragraph lists SJS/TEN, maculopapular eruptions and DRESS (drug reaction with eosinophilia and systemic symptoms, 'Multiorgan hypersensitivity'), while Dr. Smith described the carbamazepine reaction as a skin reaction for both variants. Keyed to SJS/TEN, which both she and the label name.",
  cite:"Pharmacogenomics Questions Drug Labels Worksheet, item 2; Tegretol (carbamazepine) label, Boxed Warning and Warnings (SJS/TEN and HLA-B*1502 Allele; Hypersensitivity Reactions and HLA-A*3101 Allele); transcript 10/27"},
 
-{id:"L21-056", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"label-hla", skill:"recall", dupOf:"L20-056",
+{id:"L21-056", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"label-hla", skill:"recall", readingId:"label-abacavir", dupOf:"L20-056",
  concept:"abacavir-hla-b-5701", tags:["smith","label","inclass"], source:"transcript",
  stem:"Worksheet item 1 for abacavir (Ziagen), an antiretroviral for HIV (human immunodeficiency virus): which HLA-B variant is evaluated?",
  options:[
@@ -725,7 +725,7 @@ QUESTIONS.push(
  note:"The caption renders abacavir as \"back of here\" and the allele as \"HLAB 5701\"; the label prints HLA-B*5701. Same pairing as L20-056 (10/26).",
  cite:"Pharmacogenomics Questions Drug Labels Worksheet, item 1; Ziagen (abacavir) label, Boxed Warning, 2.1 and 4 Contraindications; transcript 10/27"},
 
-{id:"L21-057", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"label-hla", skill:"recall",
+{id:"L21-057", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"label-hla", skill:"recall", readingId:"label-abacavir",
  concept:"abacavir-multiorgan", tags:["smith","label","inclass"], source:"transcript",
  stem:"Worksheet item 2 for abacavir (Ziagen): what reaction is the patient with the abacavir HLA-B risk variant at higher risk of?",
  options:[
@@ -737,7 +737,7 @@ QUESTIONS.push(
  quote:"it's not just skin hypersensitivity reactions, it's a whole organ.",
  cite:"Pharmacogenomics Questions Drug Labels Worksheet, item 2; Ziagen (abacavir) label, Boxed Warning and 5.1 Hypersensitivity Reactions; transcript 10/27"},
 
-{id:"L21-058", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"label-hla", skill:"tell", core:true, coreWhy:"the comparison Dr. Smith called really weird",
+{id:"L21-058", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"label-hla", skill:"tell", readingId:"label-carbamazepine", core:true, coreWhy:"the comparison Dr. Smith called really weird",
  concept:"hla-b-same-gene-diff-variant", tags:["smith","label"], source:"transcript",
  stem:"Carbamazepine and abacavir both carry HLA warnings. Which statement describes how the two compare?",
  options:[
@@ -750,7 +750,7 @@ QUESTIONS.push(
  note:"The recording ends mid-sentence as Dr. Smith begins to explain why (HLA-B as an antigen-presenting receptor holding the drug); that explanation is not tested here.",
  cite:"Pharmacogenomics Questions Drug Labels Worksheet, items 1-2; Tegretol (carbamazepine) label, Boxed Warning; Ziagen (abacavir) label, Boxed Warning; transcript 10/27"},
 
-{id:"L21-059", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"label-hla", skill:"tell",
+{id:"L21-059", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"label-hla", skill:"tell", readingId:"label-abacavir",
  concept:"hla-patient-genotyped", tags:["smith","label","inclass"], source:"transcript",
  stem:"Worksheet item 3 for carbamazepine and abacavir: are we genotyping the tumor or the patient?",
  options:[

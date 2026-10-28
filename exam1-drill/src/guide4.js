@@ -772,7 +772,7 @@ const GUIDE4_HTML = `
 <h4>Traps</h4>
 <ul>
 <li><b>Linking the ALOX5 repeat to asthma severity.</b> It is linked to drug response, not to severity.</li>
-<li><b>Linking the ACE variant to efficacy.</b> On the ACE slide she stressed adverse effects instead and called that "weird". (On the DiPiro Table 6-2 slide, p. 49, she read the ACE row as a change in blood-pressure response.)</li>
+<li><b>Linking the ACE variant to efficacy.</b> On the ACE slide (p. 56) she said the variant "Is not seeming to impact the efficacy of ACE inhibitors" and stressed adverse effects instead, which she called "weird". Earlier, reading the ACE row of the DiPiro Table 6-2 slide (p. 49), she had described a change in blood-pressure response; the ACE slide is her later and more specific statement.</li>
 <li><b>Mixing up the ACE percentages.</b> Cough is about 10%. Angioedema is 0.1% to 0.2%.</li>
 <li><b>Calling the ACE variant a SNP.</b> It is an insertion/deletion (InDel) in intron 16.</li>
 </ul>

@@ -99,7 +99,7 @@ const COURSE = {
     {id:4, name:'Exam 4', scope:'Pharmacogenomics examples and cases, adverse drug reactions, drug interactions, Dr. Smith (10/21–10/28)', date:'Mon Nov 2, 8:30–10:30 am', when:'2026-11-02T08:30:00-06:00',  // syllabus: Exam IV, Mon Nov 2, 8:30–10:30 am (Oct 21st – 28th), 22% of the total grade
      questions:null,             // not announced yet
      minutes:120,                // syllabus: 8:30–10:30 am; two hours allotted for each major examination
-     blurb:'Covers Oct 21 through Oct 28, taught by Dr. Smith: pharmacogenomics examples (10/21, 10/22), cases and resources (10/26), adverse drug reactions (10/27) and drug interactions (10/28). 22% of the course grade. The question count and format are not announced yet.',
+     blurb:'Covers Oct 21 through Oct 28, taught by Dr. Smith: pharmacogenomics examples (10/21, 10/22, 10/26), pharmacogenomics resources and drug labels (10/27), and adverse drug events and drug interactions (planned for 10/28; on 10/27 she said adverse drug events would wrap up 10/28 along with the drug interactions lecture). 22% of the course grade. The question count and format are not announced yet.',
      facts:[['Covers', 'Oct 21 – Oct 28: pharmacogenomics examples, cases and resources, adverse drug reactions, drug interactions'],
             ['Weight', '22% of the course grade'],
             ['Format', 'Not announced yet'],
