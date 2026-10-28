@@ -262,7 +262,7 @@ QUESTIONS.push(
 /* ---------------- CYP2C9 ---------------- */
 {id:"L19-021", lecture:"L19", prof:"Smith", tier:"new", topic:"L19", sub:"cyp2c9", skill:"drug", multi:true, core:true, coreWhy:"objective: metabolizing enzyme variant example and its drugs",
  concept:"cyp2c9-nti-drugs", tags:["smith"], source:"both",
- stem:"Which drugs are metabolized by CYP2C9 and are narrow-therapeutic-index drugs she named? Select all that apply.",
+ stem:"Which drugs does the CYP2C9 slide list as CYP2C9 substrates? Select all that apply.",
  options:[
   {t:"Warfarin", correct:true, why:"Warfarin is the main CYP2C9 example and a narrow-therapeutic-index anticoagulant."},
   {t:"Phenytoin", correct:true, why:"Phenytoin is a narrow-therapeutic-index drug metabolized by CYP2C9."},

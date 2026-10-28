@@ -816,7 +816,7 @@ QUESTIONS.push(
 
 {id:"L18-064", lecture:"L18", prof:"Smith", tier:"new", topic:"L18", sub:"popfreq", skill:"figure", multi:true,
  concept:"freq-figure-genes", tags:["smith"], source:"both",
- stem:"A four-panel Goodman and Gilman's figure gives allele and phenotype frequencies in sub-Saharan African, European and East Asian populations; she said it gives examples of 4 different genes. Panel A shows allele frequencies of *1 (wild type) and the no-function *3, *6 and *7. Panel B shows allele frequencies of the -1639G>A variant (G, higher dose required; A, lower dose required). Panel C shows metabolizer phenotypes (indeterminate, normal, intermediate, poor) for the enzyme that metabolizes azathioprine. Panel D shows the same phenotypes for a gene she said will be discussed later, with sub-Saharan African frequencies marked currently unknown. Which genes are shown in this figure? Select all that apply.",
+ stem:"A four-panel Goodman and Gilman's figure gives allele and phenotype frequencies in sub-Saharan African, European and East Asian populations. Panel A shows allele frequencies of *1 (wild type) and the no-function *3, *6 and *7. Panel B shows allele frequencies of the -1639G>A variant (G, higher dose required; A, lower dose required). Panel C shows metabolizer phenotypes (indeterminate, normal, intermediate, poor) for a thiopurine-metabolizing enzyme. Panel D shows the same phenotypes for a gene she said will be discussed later, with sub-Saharan African frequencies marked currently unknown. Which genes are shown in this figure? Select all that apply.",
  options:[
   {t:"CYP3A5", correct:true, why:"Panel A, allele frequencies."},
   {t:"VKORC1", correct:true, why:"Panel B, -1639G>A allele frequencies."},
