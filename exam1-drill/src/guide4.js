@@ -24,6 +24,12 @@ const GUIDE4_HTML = `
 <a href="#guide4-l20-6">20. Warfarin: CYP2C9 (PK), VKORC1 (PD) and CYP4F2</a>
 <a href="#guide4-l20-7">21. Immune system variants: HLA genes and drug hypersensitivity</a>
 <a href="#guide4-l20-8">22. The Furuta 1998 discussion: CYP2C19, omeprazole and H. pylori cure</a>
+<a href="#guide4-l21-1">23. The FDA tables: pharmacogenetic associations and biomarkers in drug labeling</a>
+<a href="#guide4-l21-2">24. CPIC guidelines: what they answer, components, development, evidence scoring</a>
+<a href="#guide4-l21-3">25. Walking the CPIC warfarin algorithm</a>
+<a href="#guide4-l21-4">26. Other guidelines, ClinPGx and what implementation still needs</a>
+<a href="#guide4-l21-5">27. Reading a label: trastuzumab and HER2</a>
+<a href="#guide4-l21-6">28. Reading a label: carbamazepine and abacavir, one gene, two variants</a>
 </nav>
 <section class="guide" id="guide4-l18-1">
 <h3>1. Naming genetic variants: numeric/alphabetic, SNP, star and rs nomenclature</h3>
@@ -906,6 +912,354 @@ const GUIDE4_HTML = `
 
 <p>How she asks it: population and regimen; whether one antibiotic is U.S. practice; the enzyme's other name; translate m1 and m2; which genotype was missing and why that is acceptable; why *2 and *3 are inactive; which group had the best cure rate and the discussion's reasons; whether the result generalizes.</p>
 <p class="sub">Sources: FurutaAnnIntMed1998.pdf (reading card furuta-1998: pp. 1027-1029, Tables 1-2, Discussion); PGx-Examples-Students-Fall-2026.pdf slide 'Discussion of Furuta article' (p. 61); (T) 10/26. Questions L20-057 to L20-066.</p>
+</section>
+<section class="guide" id="guide4-l21-1">
+<h3>23. The FDA tables: pharmacogenetic associations and biomarkers in drug labeling</h3>
+
+<h4>The idea</h4>
+<p>The FDA keeps two online tables that list drugs with a known gene-drug link. They answer different questions. The Table of Pharmacogenetic Associations is a first look: it shows which drugs have pharmacogenetic implications, grouped by how strong the data are, but it gives no guidance on clinical use. She called it "a lightweight". The Table of Pharmacogenomic Biomarkers in Drug Labeling is the one she prefers: it lists every FDA-approved drug whose label contains pharmacogenomic information and tells you which section of the label to open. </p>
+
+<h4>The facts</h4>
+<table class="reftab"><thead><tr><th>Feature</th><th>Table of Pharmacogenetic Associations</th><th>Table of Pharmacogenomic Biomarkers in Drug Labeling</th></tr></thead><tbody>
+<tr><td>What it lists</td><td>Drugs for which the FDA believes there is sufficient evidence that certain genetic variants alter drug metabolism, therapeutic effect, or the risk of adverse events</td><td>FDA-approved drugs with pharmacogenomic information in their labeling, with specific actions based on the biomarker where appropriate</td></tr>
+<tr><td>How it is organized</td><td>Three sections (below); sortable by drug or gene; a column for the affected group (mostly phenotypes, some specific variants) and a short description of the gene-drug interaction</td><td>Columns for drug, therapeutic area, biomarker (the gene, sometimes the variant) and labeling sections; she sorted it by drug, therapeutic area and biomarker</td></tr>
+<tr><td>Application (slide)</td><td>Initial screening to understand which drugs have pharmacogenetic implications</td><td>Helps pharmacists make informed decisions on medication therapy management based on the latest labeling</td></tr>
+<tr><td>Limitation (slide)</td><td>Lacks detailed guidance on the clinical application of the information</td><td>Limited to FDA-approved drugs; may not cover emerging pharmacogenomic information</td></tr>
+<tr><td>Last update she saw</td><td>September 10 of this year</td><td>August of this year</td></tr>
+</tbody></table>
+<ul>
+<li><b>The three sections of the Associations table.</b> Section 1: the data support therapeutic management recommendations (she called it "the meatiest"). Section 2: the data indicate a potential impact on safety or response. Section 3: the data demonstrate a potential impact on pharmacokinetic properties only (the lightest).</li>
+<li><b>What a listing does not mean.</b> Being listed does not necessarily mean the FDA advocates a pharmacogenetic test before prescribing, unless the test is a companion diagnostic. The Associations table is not intended to affect current regulatory requirements or policies, to assess the safe and effective use of (or regulatory requirements for) tests that detect the variants, or to give comprehensive information on the gene-drug interactions.</li>
+<li><b>Biomarkers the labeling table includes:</b> germline or somatic gene variants, functional deficiencies, gene expression variations, chromosomal abnormalities, and protein biomarkers used to select therapy.</li>
+<li><b>Biomarkers it leaves out:</b> non-human genetic biomarkers, biomarkers used solely for diagnosis, and biomarkers related to a drug other than the referenced drug.</li>
+<li><b>Labeling sections column.</b> It names the section(s) of the official FDA-approved label that discuss pharmacogenomics. For abacavir: Boxed Warning, Dosage and Administration, Contraindications, and Warnings and Precautions.</li>
+<li><b>Biomarker column.</b> It gives the gene; sometimes it also gives the variant, but most of the time now only the gene. CYP genes are written CYP plus the family code (for example CYP2C9).</li>
+</ul>
+
+<h4>Why</h4>
+<ul>
+<li><b>Why the Associations table is only a first look.</b> It names the drug, the gene and the affected group, but it does not say what to do for a patient, so it cannot guide a dose or drug choice.</li>
+<li><b>Why the labeling table is fast in practice.</b> Every FDA label uses the same sections, and the table names the sections that hold the pharmacogenomic text. A pharmacist who needs to know whether a drug has a pharmacogenomic boxed warning or genotype-based dosing can go straight to that part of the label.</li>
+<li><b>Why only the referenced drug.</b> Label information comes from the data on that drug. The SLCO1B1 transporter data she gave on 10/26 were for simvastatin, so the table speaks only about simvastatin. Another statin may not respond the same way to the variant, and the table does not say that it does.</li>
+<li><b>Why it can be out of date.</b> The table follows the labels and is re-updated periodically. A study published weeks ago may not be in it yet, so she said to check the table first and then PubMed for the latest.</li>
+<li><b>Why she checks the update date.</b> How current a resource is matters in a field that changes quickly; some of these resources had gone a long time without updates.</li>
+</ul>
+
+<h4>Her words</h4>
+<ul>
+<li>"So in my opinion this table, uh, this first table from the FDA is kind of a lightweight." <small>(T) 10/27</small></li>
+<li>"So this is a comprehensive list of FDA approved drugs that have pharmacogenomics in their labeling." <small>(T) 10/27</small></li>
+<li>"We can't assume that the other statins are going to have a patient response just like simvastatin did in the presence of that genetic biomarker." <small>(T) 10/27</small></li>
+</ul>
+
+<h4>Traps</h4>
+<ul>
+<li><b>Reading a listing as an order to test.</b> A listing is information; testing is not necessarily advocated unless the test is a companion diagnostic.</li>
+<li><b>Swapping the two tables.</b> The section-by-section grouping and "initial screening" belong to the Associations table; the label sections and "medication therapy management" belong to the Biomarkers in Drug Labeling table.</li>
+<li><b>Ranking section 3 highest.</b> Section 1 (therapeutic management recommendations) is the strongest; section 3 is pharmacokinetic impact only.</li>
+<li><b>Extending a result to the drug class.</b> The labeling table covers only the referenced drug; simvastatin data say nothing about the other statins.</li>
+<li><b>Putting somatic variants or protein biomarkers on the excluded list.</b> Both are included. The exclusions are non-human biomarkers, diagnosis-only biomarkers, and biomarkers for a different drug.</li>
+<li><b>Giving the labeling table the Associations table's limitation.</b> The labeling table's limitation is scope (approved drugs only) and lag behind new findings, not a lack of guidance on clinical application.</li>
+</ul>
+
+<p>How she asks it: what a listing means for testing; which section holds therapeutic management recommendations; the application and limitation of each table; what the labeling table includes and excludes; which label sections hold abacavir's pharmacogenomic information; which resource to open to find a pharmacogenomic boxed warning quickly.</p>
+<p class="sub">Sources: PGx-Resources-and-Cases-Students-Fall-2026.pdf slides 'FDA Tables of Pharmacogenetic Associations' 1-3 (pp. 3-5), 'FDA Table of Pharmacogenomic Biomarkers in Drug Labeling' 1-3 (pp. 6-8); (T) 10/27. Questions L21-001 to L21-013.</p>
+</section>
+<section class="guide" id="guide4-l21-2">
+<h3>24. CPIC guidelines: what they answer, components, development, evidence scoring</h3>
+
+<h4>The idea</h4>
+<p>CPIC guidelines are evidence-based guidelines written by experts in pharmacogenomics (pharmacists, scientists, physicians). They start from a patient whose genotype is already known and answer how to use that result to optimize drug therapy. They do not answer whether a test should be ordered. Every guideline has the same sections, goes through a set development and review process, and grades both its evidence and its recommendations. She called them the best resource available for the drugs that have one; the limit is that only selected drugs have one.</p>
+
+<h4>The facts</h4>
+<ul>
+<li><b>Name.</b> The deck (p. 16) and the 2017 warfarin guideline give Clinical Pharmacogenetics Implementation Consortium. In the recording she called it the "Center for Pharmacogenomics Information Consortium"; the slide and guideline give the correct name.</li>
+<li><b>Purpose (slide, paraphrased).</b> To help clinicians understand HOW available genetic test results should be used to optimize drug therapy, rather than WHETHER tests should be ordered. A key assumption is that patients' genotypes are available even if the test was not ordered with a specific drug in mind.</li>
+<li><b>Endorsements.</b> The Association for Molecular Pathology; the American Society for Clinical Pharmacology and Therapeutics; the American Society of Health-System Pharmacists.</li>
+<li><b>Components (same order in every guideline).</b> Gene and drug background (genetic variability and its impact on drug response); dosage recommendations based on genotype; potential benefits and risks of using the genetic information; caveats on appropriate use and potential misuse of genetic tests.</li>
+<li><b>Development (Caudle et al., 2014).</b> Initial assessment: gene-drug pairs are prioritized from surveys, evidence strength and clinical actionability. Writing committee: a multidisciplinary team reviews the literature and drafts the guideline. Evidence review. Therapeutic recommendations: built from the evidence, with strength assigned by a transparent system.</li>
+<li><b>Review and updates.</b> Periodic review about every two years; public and peer review of drafts by CPIC members and external experts before publication.</li>
+<li><b>How many.</b> She said "about 35" guidelines. The current-guidelines table on p. 13 has 29 rows, several of which cover more than one drug or a drug class. She said the table does not need to be memorized, and that it had not been updated for the new warfarin and thiopurine (2026) versions.</li>
+<li><b>Classes on the list</b> (her prompt to the room): infectious disease drugs, cardiac drugs, CNS drugs, immunosuppressants, and pain medications (NSAIDs and opioids).</li>
+<li><b>Application (slide).</b> Extremely useful for pharmacists in clinical settings: clear recommendations on dosing adjustments and alternative therapies based on genetic profile. <b>Limitation:</b> only select drugs are covered, so pharmacists need to know the scope.</li>
+</ul>
+<table class="reftab"><thead><tr><th>Scale (what is graded)</th><th>Level</th><th>Definition (slide p. 12)</th></tr></thead><tbody>
+<tr><td>Evidence</td><td>High</td><td>Consistent results from well-designed, well-conducted studies</td></tr>
+<tr><td>Evidence</td><td>Moderate</td><td>Sufficient evidence to determine effects, but limited by the number, quality, or consistency of studies</td></tr>
+<tr><td>Evidence</td><td>Weak</td><td>Insufficient evidence due to limited number or power of studies, design flaws, or lack of information</td></tr>
+<tr><td>Recommendation</td><td>Strong</td><td>High-quality evidence; desirable effects clearly outweigh undesirable effects</td></tr>
+<tr><td>Recommendation</td><td>Moderate</td><td>Close or uncertain balance between desirable and undesirable effects</td></tr>
+<tr><td>Recommendation</td><td>Optional</td><td>Desirable effects closely balanced with undesirable effects, allowing for differences in opinion</td></tr>
+</tbody></table>
+<p>The third recommendation level is "Optional" on the slide and in the 2017 warfarin guideline. In the recording it came out as "optimal".</p>
+
+<h4>Why</h4>
+<ul>
+<li><b>Why "how", not "whether".</b> The guidelines assume the genotype is already in hand, for example from an earlier test ordered for another reason. Their job is to interpret that result for the drug now being prescribed, because the test data can be complicated.</li>
+<li><b>Why the fixed sections matter.</b> Every guideline has the same layout, as every FDA label does, so the background, the genes, the interpretation and the recommendations are found in the same place each time.</li>
+<li><b>Why so few guidelines.</b> A gene-drug pair gets a guideline only after an initial assessment shows the data are strong enough and the result is clinically actionable. That screening is why there are about 35 guidelines while many drugs are on the market.</li>
+<li><b>Why two separate grades.</b> The evidence grade says how strong the science is; the recommendation strength says how firmly to act, from the balance of benefit and harm. This is the same method of weighting and scoring used by other therapeutic guidelines, and it is what makes CPIC guidelines evidence based.</li>
+<li><b>Why periodic review.</b> The data keep moving. Warfarin's guideline was updated in 2017 with CYP4F2 and rs12777823, and she said it and the thiopurine guideline have been updated again since.</li>
+<li><b>What a pharmacist gets from one.</b> Which variants matter for the drug, what to test the patient for, how to interpret the result, and how to treat once the genotype is known.</li>
+</ul>
+
+<h4>Her words</h4>
+<ul>
+<li>"these guidelines help us understand how available genetic test results should be used to optimize drug therapy and not whether tests should be ordered" <small>(T) 10/27</small></li>
+<li>"So every fact that they present in these guidelines, they weigh it, and it's either high, moderate, or weak." <small>(T) 10/27</small></li>
+<li>"So the limitations for these guidelines so far is there's not every drug out there." <small>(T) 10/27</small></li>
+</ul>
+
+<h4>Traps</h4>
+<ul>
+<li><b>"CPIC tells you whether to order the test."</b> It tells you how to use a result you already have.</li>
+<li><b>Swapping the scales.</b> High, moderate, weak grade the evidence; strong, moderate, optional grade the recommendation.</li>
+<li><b>Moderate vs optional.</b> Moderate: a close or uncertain balance of desirable and undesirable effects. Optional: closely balanced, allowing differences in opinion.</li>
+<li><b>Writing "optimal".</b> The level is "Optional" on the slide and in the guideline.</li>
+<li><b>Listing the FDA as an endorser.</b> The endorsers on the slide are AMP, ASCPT and ASHP.</li>
+<li><b>Putting peer review at the start.</b> The initial assessment prioritizes gene-drug pairs; public and peer review of the draft comes before publication.</li>
+<li><b>"Not evidence based" or "no dosing recommendations" as the limitation.</b> The limitation is scope: only selected drugs.</li>
+</ul>
+
+<p>How she asks it: what CPIC stands for; the HOW versus WHETHER question; which endorsers, which components; what happens at the initial assessment; how often guidelines are reviewed; which pairing of evidence and recommendation scales is correct; which strength fits a given definition; about how many guidelines exist; the main limitation.</p>
+<p class="sub">Sources: PGx-Resources-and-Cases-Students-Fall-2026.pdf slides 'CPIC Guidelines' 1-6 (pp. 9-14), 'Other Guidelines' (p. 16, full name); CPIC warfarin guideline 2017 update (title and Therapeutic Recommendations); (T) 10/27. Questions L21-014 to L21-025.</p>
+</section>
+<section class="guide" id="guide4-l21-3">
+<h3>25. Walking the CPIC warfarin algorithm</h3>
+
+<h4>The idea</h4>
+<p>The class read the 2017 CPIC warfarin guideline (Johnson et al.) as a worked example of what a CPIC guideline contains, and then walked its adult dosing algorithm (Figure 2, "Dosing recommendations for warfarin dosing based on genotype for adult patients"). The algorithm turns a patient's genotypes into a dosing decision in a fixed order: is a genotype available, what is the patient's self-identified ancestry, calculate a dose from VKORC1 and CYP2C9, then adjust for the extra variants that apply to that ancestry. To use it, each gene's role in warfarin's action has to be known, because the role tells you whether a variant moves the dose up or down.</p>
+
+<h4>The facts</h4>
+<p><b>Layout of the guideline</b>, in order: authors and summary; focused literature review with Figure 1 (warfarin's mechanism and metabolism); the genes (CYP2C9, VKORC1, CYP4F2, and rs12777823, a SNP in the CYP2C cluster near the CYP2C18 gene); genetic test interpretation (what the genotype results mean when they come back from the lab); therapeutic recommendations by genotype, summarized in the Figure 2 algorithm; online supplemental tables.</p>
+<table class="reftab"><thead><tr><th>Gene</th><th>Role in warfarin's action (Figure 1)</th><th>Variant in the algorithm</th><th>Effect on the warfarin dose</th></tr></thead><tbody>
+<tr><td>VKORC1</td><td>Vitamin K epoxide reductase, warfarin's drug target</td><td>-1639G&gt;A, upstream of the gene, on a haplotype that affects expression</td><td>One or two -1639A alleles: progressively lower doses than G/G</td></tr>
+<tr><td>CYP2C9</td><td>Main enzyme that metabolizes S-warfarin, the more potent enantiomer</td><td>*2 and *3 (decreased function); *5, *6, *8, *11 (decreased function, highest frequency in African ancestry)</td><td>Lower</td></tr>
+<tr><td>CYP4F2</td><td>Metabolizes reduced vitamin K to hydroxyvitamin K1, removing vitamin K from the cycle</td><td>*3, less active</td><td>Higher (guideline: increase 5-10%)</td></tr>
+<tr><td>CYP2C rs12777823</td><td>Associated with altered warfarin clearance</td><td>A/G or A/A</td><td>Lower, in African Americans only (guideline: 10-25%)</td></tr>
+</tbody></table>
+<p><b>The algorithm, step by step</b> (Figure 2 and the Therapeutic Recommendations text):</p>
+<ul>
+<li><b>1. Genotype available?</b> No: dose clinically, meaning without genetic information (a clinical dosing algorithm or a standard dose approach). She said "Dose your patient empirically".</li>
+<li><b>2. Yes: self-identified ancestry.</b> The patient is asked whether they are of African or non-African ancestry, and the branch follows the answer.</li>
+<li><b>3. Non-African ancestry.</b> Calculate the dose with a published pharmacogenetic algorithm using VKORC1 -1639G&gt;A and CYP2C9*2 and *3 (STRONG). A loading dose, if used, can come from the EU-PACT algorithm (OPTIONAL). If CYP2C9*5, *6, *8 or *11 is detected, decrease the calculated dose by 15-30% per variant allele or consider an alternative agent; 20-40% for homozygotes (OPTIONAL). If CYP4F2*3 is detected, increase the dose by 5-10% (OPTIONAL). rs12777823 is not considered.</li>
+<li><b>4. African ancestry.</b> CYP2C9*5, *6, *8 and *11 come first: if they were not tested, dose clinically. If known, calculate with VKORC1 -1639G&gt;A and CYP2C9*2 and *3, then decrease by 15-30% for a *5, *6, *8 or *11 carrier (20-40% with two variant alleles), and decrease by 10-25% for rs12777823 A/G or A/A in African Americans (MODERATE). No recommendation is made for CYP4F2.</li>
+<li><b>Alternative agent.</b> For CYP2C9 poor metabolism (for example *2/*3 or *3/*3), or VKORC1 increased sensitivity together with CYP2C9 poor metabolism, an alternative oral anticoagulant should be considered (Figure 2, footnote e).</li>
+<li><b>Other patient factors.</b> She named weight, BMI and gender. The guideline's Text Box 1 lists the clinical inputs to the Gage and IWPC algorithms: age, sex, race, weight, height, smoking status, warfarin indication, target INR and interacting drugs.</li>
+</ul>
+<p><b>Her worked case.</b> A patient of non-African ancestry is CYP2C9*3/*3, VKORC1 wild type, and carries the CYP4F2 variant. She asked two questions. Was all the genotyping done that is known so far for this patient? Her answer: yes, for a patient of non-African descent. Compared with the average starting dose, does the patient need relatively more or relatively less? She asked students to reason it from what each variant does to warfarin's action and metabolism, and to explain why the CYP4F2 variant raises the dose; the recording does not contain her answer to the more-or-less question.</p>
+<p><b>What the guideline algorithm gives for this genotype</b> (guideline facts, not her stated answer): the dose is calculated with the pharmacogenetic algorithm from VKORC1 and CYP2C9; CYP2C9*3/*3 is listed as a poor-metabolism genotype, for which an alternative oral anticoagulant might be considered (Figure 2 footnote e: consider an alternative agent); carriers of CYP2C9*3 require lower doses than *1/*1, and *3 impairs S-warfarin metabolism by 80-90%; VKORC1 G/G (wild type) is the reference genotype, against which -1639A carriers need progressively lower doses; CYP4F2*3 raises the dose by 5-10% (OPTIONAL). The guideline gives no single net figure for this combination.</p>
+
+<h4>Why</h4>
+<ul>
+<li><b>Why VKORC1 lowers the dose.</b> VKORC1 is the target. The -1639A allele lies in the upstream region that affects expression, and carriers need progressively lower doses than G/G. On 10/26 she put the reasoning this way: when the target is less active, less drug is needed to inhibit it.</li>
+<li><b>Why CYP2C9 variants lower the dose.</b> CYP2C9 clears S-warfarin. Reduced activity means slower clearance, so a standard dose builds up and the bleeding risk rises.</li>
+<li><b>Why *5, *6, *8 and *11 come first on the African branch.</b> These decreased-function alleles occur at high frequency in people of African ancestry, so a patient on that branch has a higher probability of carrying one. Testing them before dosing protects the patient from starting too high. In non-African patients they are less likely, so they appear later as an adjustment if detected.</li>
+<li><b>Why CYP4F2*3 raises the dose.</b> CYP4F2 removes vitamin K. The *3 variant is less active, so more vitamin K stays in the body. Vitamin K is the antidote to warfarin; more of it means more active clotting factors are made, so more warfarin is needed to anticoagulate.</li>
+<li><b>Why each branch has its own extra variant.</b> The guideline says the data do not support a CYP4F2 effect on dosing in African ancestry, and the rs12777823 association has been detected only among African Americans. So CYP4F2 is applied on the non-African branch only, and rs12777823 on the African branch only.</li>
+</ul>
+
+<h4>Her words</h4>
+<ul>
+<li>"These variants are up high for people of African ancestry because we know that they could have a higher probability of having one of those genotypes" <small>(T) 10/27</small></li>
+<li>"Vitamin K is like the antidote for warfarin, right?" <small>(T) 10/27</small></li>
+<li>"Compared to the average starting dose, do they need relatively more or do they need relatively less?" <small>(T) 10/27</small></li>
+</ul>
+
+<h4>Where her words and the sources differ</h4>
+<ul>
+<li><b>No genotype.</b> She said to dose empirically and added "Usually we just start with 5 mg per kilogram". Figure 2 says "dose clinically" (without genetic information) and gives no number on that branch; the guideline text gives population averages of about 4-5 mg/day for the initial dose, and on 10/26 she gave about 5 mg/day. </li>
+<li><b>CYP4F2 direction.</b> Walking the non-African branch she first said that a patient with the CYP4F2 SNP needs the dose decreased again. When a student raised it she gave the increase, and the guideline says increase by 5-10%. </li>
+<li><b>Which branch has which variant.</b> Walking the African branch she first said that a patient with the CYP4F2 variant needs the dose further decreased. Answering a student she then linked an increased dose to a CYP4F2 variant on the African side, and finally stated that CYP4F2 is not on the African branch and that rs12777823 there requires a decrease. Figure 2 matches her final statement.</li>
+</ul>
+
+<h4>Traps</h4>
+<ul>
+<li><b>Calling VKORC1 the enzyme that metabolizes warfarin.</b> VKORC1 is the target; CYP2C9 metabolizes S-warfarin; CYP4F2 removes vitamin K.</li>
+<li><b>Lowering the dose for CYP4F2*3.</b> Less CYP4F2 activity leaves more vitamin K, so the dose goes up 5-10%.</li>
+<li><b>Applying CYP4F2 to African-ancestry patients, or rs12777823 to non-African patients.</b> Each is on one branch only.</li>
+<li><b>Increasing the dose for CYP2C9*5, *6, *8 or *11.</b> These are decreased-function alleles; the calculated dose goes down 15-30%.</li>
+<li><b>"These alleles raise CYP2C9 activity" as the reason they are tested first in African ancestry.</b> The reason is their higher frequency in that population.</li>
+<li><b>Waiting to genotype before starting warfarin.</b> Without a genotype the algorithm says to dose clinically.</li>
+<li><b>Reading the minus sign in -1639 as a deletion or a lower dose in mg.</b> It marks a position upstream of the gene, in a region that affects expression.</li>
+</ul>
+
+<p>How she asks it: she gives a patient's CYP2C9, VKORC1 and CYP4F2 genotypes and ancestry, then asks whether all the genotyping known so far was done, whether the patient needs relatively more or less than the average starting dose, and why the CYP4F2 variant raises the dose. Also: what VKORC1 is to warfarin; what the algorithm says with no genotype; what comes next when the genotype is available; the size and direction of each adjustment; why *5, *6, *8 and *11 are up front for African ancestry.</p>
+<p class="sub">Sources: PGx-Resources-and-Cases-Students-Fall-2026.pdf slide 'CPIC Guidelines 7' (p. 15); CPIC warfarin guideline 2017 update (Johnson et al., Clin Pharmacol Ther 2017;102:397-404): Figure 1, gene sections, Therapeutic Recommendations, Figure 2 and footnotes, Text Box 1; (T) 10/27. Questions L21-026 to L21-035.</p>
+</section>
+<section class="guide" id="guide4-l21-4">
+<h3>26. Other guidelines, ClinPGx and what implementation still needs</h3>
+
+<h4>The idea</h4>
+<p>CPIC (Clinical Pharmacogenetics Implementation Consortium) guidelines are written by American authors, but they are not the only evidence-based pharmacogenomic guidance. Dutch, Canadian and French groups publish their own. The guidelines from these countries are often quite similar to CPIC, and they differ mainly in their objectives. ClinPGx, the website that used to be called PharmGKB, lists the guidelines side by side for each drug. She closed the resources part of the lecture with what is still missing before pharmacogenomics can be used routinely: decision support systems and pharmacogenomic results in the electronic health record.</p>
+
+<h4>The facts</h4>
+<table class="reftab"><thead><tr><th>Group</th><th>Country</th><th>What the slide says about its objective</th></tr></thead><tbody>
+<tr><td>Clinical Pharmacogenetics Implementation Consortium (CPIC)</td><td>United States (she: "written by American authors")</td><td>Pharmacotherapeutic recommendations for drug and gene or phenotype combinations</td></tr>
+<tr><td>Dutch Pharmacogenetics Working Group (DPWG)</td><td>Netherlands</td><td>Pharmacotherapeutic recommendations for drug and gene or phenotype combinations; also recommends genetic testing</td></tr>
+<tr><td>Canadian Pharmacogenomics Network for Drug Safety (CPNDS)</td><td>Canada</td><td>Recommends genetic testing</td></tr>
+<tr><td>French National Network (R&eacute;seau) of Pharmacogenetics (RNPGx)</td><td>France</td><td>Recommends genetic testing; recommends genotyping for specific clinical settings or medical conditions</td></tr>
+</tbody></table>
+<ul>
+<li>All four are English-language guidelines. They have similar methodologies of development, and their objectives differed (Abdullah-Koolmees et al., 2021, p. 16). She said the differences among them do not have to be memorized; students should know that other countries have produced their own guidance documents.</li>
+<li>Where to find them (p. 17): the guideline annotations page on ClinPGx (clinpgx.org/guidelineAnnotations). A table gives the CPIC guidance documents and then lists the Dutch, Canadian and French guidance for each drug.</li>
+<li>ClinPGx (p. 18): PharmGKB has changed to ClinPGx. It is formed from the combination of the NIH (National Institutes of Health)-funded PharmGKB, CPIC and PharmCAT projects. It is designed to (1) catalog, curate, annotate, integrate, generate and disseminate pharmacogenomic knowledge, (2) advance clinical implementation, (3) facilitate integration with genomic medicine and (4) promote pharmacogenomic education. She tried to reach the CPIC warfarin guideline through it, got lost, and opened the guideline from Canvas instead. She described the site as very busy, with content that changes often, so finding information takes effort.</li>
+<li>Challenges for enhanced pharmacogenomic implementation (p. 20; p. 19 is the title slide "Future directions"):
+<ul>
+<li>Educate healthcare providers to improve their understanding of pharmacogenomics.</li>
+<li>Educate patients to help them understand the benefits and implications of pharmacogenomic testing.</li>
+<li>Expand genetic tests to include a wider array of pertinent genetic markers.</li>
+<li>The need for decision support systems (CDSS) that incorporate pharmacogenomic data.</li>
+<li>Integrate pharmacogenomics data into electronic health records (EHR).</li>
+</ul></li>
+<li>In lecture she spoke to the last two. She said these are the future directions that are agreed on: better ways of using the information clinically.</li>
+<li>Electronic records: pharmacists at Saint Jude's in Memphis were the first to push their hospital to put patients' pharmacogenomic information in the electronic medical records of their pediatric oncology patients. This is still in progress. Even in large hospital systems a genotyping result may not be in the record, or it may be buried in the lab reports.</li>
+<li>Decision support: steps to follow when genetic information is available, to help decide what to do for the patient. Her example was the CPIC warfarin dosing algorithm from earlier the same day.</li>
+</ul>
+
+<h4>Why</h4>
+<ul>
+<li><b>Why the national guidelines are similar.</b> They are built from the same published science with similar methods of development, so their recommendations for a gene-drug pair tend to agree.</li>
+<li><b>Why they still differ.</b> Their objectives differ. CPIC guidelines are about how available genetic test results should be used to optimize drug therapy, rather than whether to test (p. 9). DPWG, CPNDS and RNPGx also recommend genetic testing, and RNPGx names the clinical settings or conditions in which to genotype.</li>
+<li><b>Why decision support and the health record are the next needs.</b> She said a genotyping result may not be in the record, or may be buried in the lab reports, so it can be hard to find. A decision support system, such as the warfarin algorithm, gives steps to follow when genetic information is available, to help decide what to do for the patient.</li>
+</ul>
+
+<h4>Her words</h4>
+<ul>
+<li>"They're often quite similar. Um, which you would expect, right, because it's, they're pulling from the same science, but their differences, um, are because of some of them have different objectives from our CPIC documents" <small>(T) 10/27</small></li>
+<li>"We need to have what they call decision support systems, and we also need to have um. Patient pharmacogenomics information in their electronic health records" <small>(T) 10/27</small></li>
+<li>"And then the decision support system is things like that algorithm." <small>(T) 10/27</small></li>
+</ul>
+
+<h4>Traps</h4>
+<ul>
+<li><b>Listing British, German or Japanese guidelines.</b> The three other countries she named are the Netherlands (DPWG), Canada (CPNDS) and France (RNPGx).</li>
+<li><b>Swapping the acronyms.</b> RNPGx is French (R&eacute;seau), CPNDS is Canadian, DPWG is Dutch.</li>
+<li><b>Saying the guidelines contradict CPIC, or differ in method.</b> The slide says the methodologies of development are similar and the objectives differ; she said they are often quite similar.</li>
+<li><b>Calling PharmCAT or DPWG the old name of ClinPGx.</b> The old name is PharmGKB. PharmCAT and CPIC are the other projects combined into ClinPGx.</li>
+<li><b>Looking for the Dutch, Canadian and French guidance on the FDA tables or in the drug label.</b> They are listed with CPIC on the ClinPGx guideline annotations table.</li>
+<li><b>Calling the warfarin algorithm an electronic health record function.</b> She gave it as an example of decision support.</li>
+<li><b>Crediting the FDA or IT staff with the first pharmacogenomic results in the record.</b> She credited pharmacists at Saint Jude's in Memphis, for pediatric oncology patients.</li>
+</ul>
+
+<p>How she asks it: which other countries produce guidance and how they compare with CPIC; the RNPGx, CPNDS and DPWG names; the old name of ClinPGx and the projects it combines; where the guidelines are listed together; the two implementation needs she named; who first pushed for pharmacogenomic results in the record; what a decision support system is, with the warfarin algorithm as the example.</p>
+<p class="sub">Sources: PGx-Resources-and-Cases-Students-Fall-2026.pdf slides 'Other Guidelines' (p. 16, Abdullah-Koolmees et al., 2021), 'Other Guidelines 2' (p. 17), 'PharmGKB has changed to ClinPGx website' (p. 18), 'Future directions' (p. 19), 'Challenges for enhanced pharmacogenomic implementation' (p. 20), 'CPIC Guidelines' (p. 9); (T) 10/27. Questions L21-036 to L21-045.</p>
+</section>
+<section class="guide" id="guide4-l21-5">
+<h3>27. Reading a label: trastuzumab and HER2</h3>
+
+<h4>The idea</h4>
+<p>The drug-label worksheet asks eight questions about the pharmacogenomic information in a label, using the FDA Table of Pharmacogenomic Biomarkers in Drug Labeling to find the label sections. Trastuzumab (brand name Herceptin) is used to treat HER2-positive cancers, usually breast cancer. It is her example of a drug where the test is done on the tumor, not on the patient, and where the result decides whether the drug will work. The "genotyping" in the worksheet questions is, for this drug, phenotyping: looking for the HER2 receptor on the tumor cells.</p>
+
+<h4>The facts</h4>
+<table class="reftab"><thead><tr><th>Worksheet item</th><th>Her answer</th><th>What the label says (section)</th></tr></thead><tbody>
+<tr><td>1. What gene, which variant?</td><td>HER2. The label does not tell us which variant; we just know the tumor cells express HER2. A student read "185" from the label; she said she thinks the 185 is the size.</td><td>The HER2 (or c-erbB2) proto-oncogene encodes a transmembrane receptor protein of 185 kDa (12.1 Mechanism of Action). Patients are selected on HER2 protein overexpression or HER2 gene amplification in tumor specimens (2.2 Patient Selection).</td></tr>
+<tr><td>3. Tumor or patient?</td><td>The tumor. We are not genotyping the patient; we are phenotyping the tumor from a biopsy. Normal cells elsewhere in the body do not express HER2.</td><td>Testing is on "tumor specimens" (2.2 Patient Selection).</td></tr>
+<tr><td>4. Efficacy or toxicity?</td><td>Efficacy: be sure the patient has the drug's target, HER2, before giving an expensive drug that can cause side effects.</td><td>Each indication says to select patients for therapy based on an FDA-authorized companion diagnostic (1.1-1.3). Herceptin inhibits the proliferation of tumor cells that overexpress HER2 (12.1).</td></tr>
+<tr><td>5. Genotyping or cytology?</td><td>Cellular studies; usually immunohistochemistry (IHC) to look for the receptors on the tumor cells.</td><td>HER2 protein overexpression or HER2 gene amplification (2.2). The clinical studies used IHC 3+ or FISH (fluorescence in situ hybridization) for gene amplification (14).</td></tr>
+<tr><td>6. Does the FDA say which test?</td><td>A few years ago the label named a brand of kit. Now it does not; the test should be one that is good, probably "CLA certified" (she added "You don't need to know that"), specific and sensitive.</td><td>FDA-authorized tests specific for breast or gastric cancers, performed by laboratories with demonstrated proficiency; list at fda.gov/CompanionDiagnostics (Highlights; 2.2). No brand is named.</td></tr>
+<tr><td>7. Which population or tumor type?</td><td>A tumor type, not an ethnic group: breast, metastatic gastrointestinal, and now esophageal tumors. She said the data do not indicate that brain tumors are associated with HER2.</td><td>HER2-overexpressing breast cancer, adjuvant and metastatic (1.1, 1.2); HER2-overexpressing metastatic gastric or gastroesophageal junction adenocarcinoma (1.3).</td></tr>
+<tr><td>8. How does the result change care?</td><td>HER2-positive: likely candidate for trastuzumab. HER2-negative: trastuzumab is not used.</td><td>Select patients based on HER2 protein overexpression or gene amplification (2.2).</td></tr>
+</tbody></table>
+<ul>
+<li>Item 2 (how the variant affects response) was not answered as a separate item for trastuzumab; her answers to items 4 and 8 cover it.</li>
+<li>HER2 background (her account): everyone has the HER2 gene, but it is not normally expressed. We do not know its endogenous ligand. In HER2-positive cancer the receptor is expressed on the tumor cell surface in large numbers or is hyperactive, and growth factor binding makes the cells divide out of control. Trastuzumab is made to bind the HER2 receptor and stop that growth-factor signaling. The label describes trastuzumab as a humanized IgG1 kappa monoclonal antibody that binds the extracellular domain of HER2 (11 Description).</li>
+</ul>
+
+<h4>Where her words and the label differ</h4>
+<ul>
+<li><b>Tumor types.</b> She and the room said "metastatic gastrointestinal" and "esophageal" tumors. The label indication is narrower: metastatic gastric or gastroesophageal junction adenocarcinoma (1.3).</li>
+<li><b>Test wording.</b> She said the test should be one "you think is good", certified, specific and sensitive. The label says FDA-authorized tests specific for breast or gastric cancers, by laboratories with demonstrated proficiency (2.2). Both agree that no brand of kit is named. While answering item 6 she said "the answer to number 7 was"; the point (a named kit in older labels) belongs to item 6.</li>
+<li><b>Item 1.</b> She first said this year's label was the first she had seen give information on what makes the receptor get expressed, then concluded that the label describes the tumor phenotype, not the DNA variant. The label number she was shown (185) is the protein's size in kDa (12.1).</li>
+<li><b>Label date.</b> She said the trastuzumab label was just updated this year; the copy provided reads Revised: 05/2026.</li>
+</ul>
+
+<h4>Why</h4>
+<ul>
+<li><b>Why the tumor and not the patient.</b> HER2 is expressed on the tumor cells, not on normal cells. A sample from the rest of the body would not show HER2, so the test has to be on the tumor biopsy.</li>
+<li><b>Why it is phenotyping.</b> The question is whether the receptor protein is present on the tumor cells. IHC detects the protein, which is a phenotype, not a genotype of the patient.</li>
+<li><b>Why efficacy.</b> Trastuzumab acts only by binding HER2. If the tumor has no HER2, the drug has no target and cannot work, so the patient would get the cost and side effects without benefit. That is also why a HER2-negative result means trastuzumab is not used.</li>
+<li><b>Why tumor type, not ethnicity.</b> HER2 expression is a property of certain tumors (breast, gastric), not of an inherited population variant, so item 7 is answered with tumor types.</li>
+</ul>
+
+<h4>Her words</h4>
+<ul>
+<li>"So they actually don't genotype people, they're phenotyping the tumor." <small>(T) 10/27</small></li>
+<li>"We want to be sure these patients have the drug's target, which is HER2, before we give them an expensive drug that can cause side effects." <small>(T) 10/27</small></li>
+<li>"If they are HER2 positive, they're likely candidates for using trastuzumab. If they're HER2 negative, you're not going to use trastuzumab in that patient." <small>(T) 10/27</small></li>
+</ul>
+
+<h4>Traps</h4>
+<ul>
+<li><b>Genotyping the patient's blood.</b> Normal cells do not express HER2; the tumor is tested.</li>
+<li><b>Answering "prevent toxicity" for item 4.</b> The test confirms the drug's target is present, which is efficacy.</li>
+<li><b>Naming a specific variant or SNP for item 1.</b> The label gives none; 185 is the size of the HER2 protein in kDa.</li>
+<li><b>Confusing HER2 with EGFR.</b> The label says HER2 is structurally related to the epidermal growth factor receptor, but the gene tested for trastuzumab is HER2.</li>
+<li><b>Saying the current label requires one brand of kit.</b> That was the older label. The current label asks for an FDA-authorized test without a brand.</li>
+<li><b>Answering item 7 with an ethnic group.</b> The answer is tumor types. The data do not indicate that brain tumors are associated with HER2.</li>
+<li><b>Reversing item 8.</b> HER2-positive patients are candidates; HER2-negative patients do not get trastuzumab. The result does not change the dose.</li>
+</ul>
+
+<p>How she asks it: the worksheet items in order: which gene, tumor or patient, efficacy or toxicity, IHC versus genotyping, whether a test is named, which tumor types, and what a positive or negative result means for use of the drug.</p>
+<p class="sub">Sources: Pharmacogenomics Questions Drug Labels Worksheet, items 1 and 3-8; Herceptin (trastuzumab) label, Revised 05/2026: Highlights, 1.1-1.3 Indications and Usage, 2.2 Patient Selection, 11 Description, 12.1 Mechanism of Action, 14 Clinical Studies; PGx-Resources-and-Cases-Students-Fall-2026.pdf slide 'FDA Table of Pharmacogenomic Biomarkers in Drug Labeling 3' (p. 8); (T) 10/27. Questions L21-046 to L21-052.</p>
+</section>
+<section class="guide" id="guide4-l21-6">
+<h3>28. Reading a label: carbamazepine and abacavir, one gene, two variants</h3>
+
+<h4>The idea</h4>
+<p>Carbamazepine (Tegretol) and abacavir (Ziagen) are two different drugs in two different therapeutic classes with two different mechanisms of action. Both carry an HLA-B warning, but for a different variant of the same gene, and the hypersensitivity reaction is located in a different place: the skin for carbamazepine, multiple organs for abacavir. Unlike trastuzumab, there is no tumor: the patient's inherited HLA alleles are tested, and the concern is a severe adverse reaction. She called this pairing "really weird" and made it the main point of the discussion.</p>
+
+<h4>The facts</h4>
+<table class="reftab"><thead><tr><th>Worksheet item</th><th>Carbamazepine (Tegretol)</th><th>Abacavir (Ziagen)</th></tr></thead><tbody>
+<tr><td>Drug class</td><td>One of the older antiepileptics still in use; some newer (second- and maybe third-generation) drugs in the same category have the same issue</td><td>Antiretroviral for HIV (human immunodeficiency virus); the label calls it a nucleoside analogue HIV-1 reverse transcriptase inhibitor</td></tr>
+<tr><td>1. Gene and variant</td><td>Two genes: HLA-B, variant HLA-B*15:02 (she: "Make sure you write this down"), and HLA-A, variant HLA-A*31:01. The label prints them HLA-B*1502 and HLA-A*3101.</td><td>HLA-B, variant HLA-B*57:01 (printed HLA-B*5701)</td></tr>
+<tr><td>2. Effect on response</td><td>Either variant significantly increases the risk of a severe hypersensitivity reaction seen in the skin: Stevens-Johnson syndrome (SJS) or toxic epidermal necrolysis (TEN), which can be fatal</td><td>Higher risk of a hypersensitivity reaction involving multiple organs; the answer given in class was "Multi-organ failure"</td></tr>
+<tr><td>3. Tumor or patient?</td><td>The patient</td><td>The patient</td></tr>
+<tr><td>Label sections</td><td>Boxed Warning (Serious Dermatologic Reactions and HLA-B*1502 Allele); Warnings (SJS/TEN and HLA-B*1502 Allele; Hypersensitivity Reactions and HLA-A*3101 Allele); Precautions, Laboratory Tests</td><td>Boxed Warning (Hypersensitivity Reactions); 2.1 Screening for HLA-B*5701 Allele; 4 Contraindications; 5.1 Hypersensitivity Reactions</td></tr>
+</tbody></table>
+<ul>
+<li>She described SJS and TEN as slightly different conditions with basically the same response, in which the skin burns and falls off.</li>
+<li>Abacavir history: the problem was first identified as massive skin reactions similar to those with carbamazepine. The labeling later changed to say it is not just a skin reaction but a whole-organ hypersensitivity reaction. The label says hypersensitivity to Ziagen is a multi-organ clinical syndrome and lists multi-organ failure and anaphylaxis among the reactions (Highlights; 5.1).</li>
+<li>She said HLA-A*31:01 appeared in the carbamazepine labeling only with the 2017 revision and was not known before 2017.</li>
+<li>Label content not worked aloud (items 4-8): the carbamazepine boxed warning says patients with ancestry in genetically at-risk populations should be screened for HLA-B*1502 before starting, and patients testing positive should not be treated unless the benefit clearly outweighs the risk; Precautions recommends high-resolution "HLA-B*1502 typing". The abacavir label says to screen all patients for HLA-B*5701 before starting or restarting, and abacavir is contraindicated in HLA-B*5701-positive patients.</li>
+</ul>
+
+<h4>Where her words and the labels differ</h4>
+<ul>
+<li><b>Carbamazepine reaction types.</b> She described the reaction for both variants as a skin reaction (SJS/TEN). The label ties HLA-B*1502 to SJS/TEN and says it has not been found to predict maculopapular eruption or DRESS (drug reaction with eosinophilia and systemic symptoms). For HLA-A*3101 the label lists SJS/TEN, maculopapular eruptions and DRESS, which the label also calls multiorgan hypersensitivity, and calls the association moderate.</li>
+<li><b>Label date.</b> She first said carbamazepine was just updated this year; when the room read the date as 2017, she accepted it ("things have not changed very recently"). The carbamazepine copy provided reads Revised: 7/2026, and it does not show when HLA-A*3101 was added. The abacavir label is the 2020 revision, as she said (Revised: 11/2020).</li>
+<li><b>Allele notation.</b> She and the caption say "1502", "3101" and "5701"; the labels print HLA-B*1502, HLA-A*3101 and HLA-B*5701. The 10/26 slide (Katzung Table 5-4) writes the HLA-B alleles with a colon: HLA-B*15:02 and HLA-B*57:01.</li>
+</ul>
+
+<h4>Why</h4>
+<ul>
+<li><b>Why the patient is tested.</b> These drugs do not act on a tumor target. The risk comes from HLA alleles the patient inherited, so the patient's own DNA is genotyped.</li>
+<li><b>Why one negative HLA-B test does not clear both drugs.</b> The gene is the same, but the variant is different: HLA-B*15:02 for carbamazepine, HLA-B*57:01 for abacavir. A patient negative for one may carry the other.</li>
+<li><b>Why carbamazepine has two genes to check.</b> The label now describes a second gene, HLA-A, whose variant HLA-A*31:01 also raises the risk of hypersensitivity, so HLA-B alone no longer covers it.</li>
+<li><b>Why abacavir was first thought to be a skin problem.</b> The first reactions seen were skin reactions like those with carbamazepine; later experience showed involvement of the whole body's organs, and the labeling changed.</li>
+<li>She began to explain why one gene gives reactions in different places ("What does our HLAB do? It's an antigen presenting receptor, right?"), and the recording ends mid-sentence; her explanation is not available.</li>
+</ul>
+
+<h4>Her words</h4>
+<ul>
+<li>"The HLAB gene is involved in both, but it's a different genetic variant for carbamazepine compared to abacavir, same gene. Different variants." <small>(T) 10/27</small></li>
+<li>"They both cause a risk for a hypersensitivity reaction, but carbamazepine is located in the skin, and for abacavir, it's a whole organ hypersensitivity reaction." <small>(T) 10/27</small></li>
+<li>"we're not dealing with tumors with these drugs for carbamazepine and abacavir." <small>(T) 10/27</small></li>
+</ul>
+
+<h4>Traps</h4>
+<ul>
+<li><b>Swapping the HLA-B variants.</b> HLA-B*15:02 goes with carbamazepine; HLA-B*57:01 goes with abacavir.</li>
+<li><b>Naming only one gene for carbamazepine.</b> There are two: HLA-B (HLA-B*15:02) and HLA-A (HLA-A*31:01).</li>
+<li><b>Choosing HLA-B*58:01 or HLA-DRB1*15:01.</b> Those are the allopurinol and amoxicillin-clavulanate variants from 10/26, not carbamazepine or abacavir.</li>
+<li><b>Calling the HLA effect a loss of efficacy or a dose change.</b> The variants raise the risk of a hypersensitivity reaction; they do not make the drug less effective or change the dose needed.</li>
+<li><b>Tying carbamazepine HLA risk to aplastic anemia or slowed metabolism.</b> Aplastic anemia is a separate boxed warning; the HLA variants are tied to hypersensitivity, not to metabolism.</li>
+<li><b>Calling the abacavir reaction skin-only.</b> It was first seen as skin reactions, but the label now describes a multi-organ reaction.</li>
+<li><b>Testing a tumor.</b> There is no tumor with these drugs; the patient is genotyped.</li>
+</ul>
+
+<p>How she asks it: which HLA-B variant goes with each drug; the second carbamazepine gene; what the carbamazepine variants do (SJS/TEN) and what the abacavir variant does (multi-organ hypersensitivity); same gene, different variants, different location; tumor or patient.</p>
+<p class="sub">Sources: Pharmacogenomics Questions Drug Labels Worksheet, items 1-3; Tegretol (carbamazepine) label, 7/2026: Boxed Warning, Warnings (SJS/TEN and HLA-B*1502 Allele; Hypersensitivity Reactions and HLA-A*3101 Allele), Precautions (Laboratory Tests); Ziagen (abacavir) label, Revised 11/2020: Highlights, Boxed Warning, 1, 2.1, 4 Contraindications, 5.1; PGx-Resources-and-Cases-Students-Fall-2026.pdf slide 'FDA Table of Pharmacogenomic Biomarkers in Drug Labeling 3' (p. 8); (T) 10/27. Questions L21-053 to L21-059.</p>
 </section>
 
 `;

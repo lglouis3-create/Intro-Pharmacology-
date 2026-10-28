@@ -2632,7 +2632,13 @@ const READINGS = [
    "L21"
   ],
   "status": "discussed",
-  "links": [],
+  "links": [
+   [
+    "guide",
+    "guide4-l21-6",
+    "Guide 28: carbamazepine and abacavir"
+   ]
+  ],
   "drive": "https://drive.google.com/file/d/1sdpa2XF9pppf8hDWC7LLpJOCrbgHPaIZ/view",
   "date": "Tue 10/27"
  },
@@ -2797,7 +2803,13 @@ const READINGS = [
    "L21"
   ],
   "status": "discussed",
-  "links": [],
+  "links": [
+   [
+    "guide",
+    "guide4-l21-6",
+    "Guide 28: carbamazepine and abacavir"
+   ]
+  ],
   "drive": "https://drive.google.com/file/d/1F38CLjvV8oTnXIQAuMwd28eMflUGd-_F/view",
   "date": "Tue 10/27"
  },
@@ -2983,7 +2995,13 @@ const READINGS = [
    "L21"
   ],
   "status": "discussed",
-  "links": [],
+  "links": [
+   [
+    "guide",
+    "guide4-l21-5",
+    "Guide 27: trastuzumab and HER2"
+   ]
+  ],
   "drive": "https://drive.google.com/file/d/1b67c0c856hh9cIQN-pIzoTzC4b-ylbqn/view",
   "date": "Tue 10/27"
  },
@@ -3241,7 +3259,18 @@ const READINGS = [
    "L21"
   ],
   "status": "discussed",
-  "links": [],
+  "links": [
+   [
+    "guide",
+    "guide4-l21-3",
+    "Guide 25: the warfarin algorithm"
+   ],
+   [
+    "guide",
+    "guide4-l21-2",
+    "Guide 24: CPIC guidelines"
+   ]
+  ],
   "drive": "https://drive.google.com/file/d/1XmXKozagnU8-5rPc4aQGHy6cDL6eN6tM/view",
   "date": "Tue 10/27"
  },
