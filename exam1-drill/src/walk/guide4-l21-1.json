@@ -3,34 +3,34 @@
  "title": "The two F D A pharmacogenomic tables",
  "segs": [
   {
-   "text": "Section twenty three. The two F D A tables. The F D A keeps two online tables of drugs with a known gene drug link, and they answer different questions. The first is the Table of Pharmacogenetic Associations. It lists drugs for which the F D A believes there is sufficient evidence that certain genetic variants alter drug metabolism, therapeutic effect, or the risk of adverse events. Being listed does not necessarily mean the F D A advocates a pharmacogenetic test before prescribing, unless the test is a companion diagnostic. So a listing is information, not an order to test. The table is also not meant to change regulatory requirements, to judge the tests that detect the variants, or to give comprehensive information on the gene drug interactions.",
+   "text": "Section twenty three. The two F D A tables. The F D A keeps two online tables of drugs with a known gene drug link, and they answer different questions. The first is the Table of Pharmacogenetic Associations. It lists drugs for which the F D A believes there is sufficient evidence that certain genetic variants alter drug metabolism, therapeutic effect, or the risk of adverse events. Being listed does not necessarily mean the F D A advocates a pharmacogenetic test before prescribing, unless the test is a companion diagnostic.",
    "slide": "pgxres:3",
    "reading": null
   },
   {
-   "text": "The Associations table has three sections, grouped by how strong the data are. In section one, the data support therapeutic management recommendations. She called it the meatiest. In section two, the data indicate a potential impact on safety or response. In section three, the data show a potential impact on pharmacokinetic properties only, the lightest. A common trap is ranking section three highest. Section one is the strongest.",
+   "text": "The Associations table has three sections, grouped by how strong the data are. In section one, the data support therapeutic management recommendations. She called it the meatiest. In section two, the data indicate a potential impact on safety or response. In section three, the data show a potential impact on pharmacokinetic properties only, the lightest. So section one is the strongest, not section three.",
    "slide": "pgxres:5",
    "reading": null
   },
   {
-   "text": "Its application is initial screening, to see which drugs have pharmacogenetic implications. Its limitation is that it lacks detailed guidance on clinical application. It names the drug, the gene and the affected group, but it does not say what to do for a patient, so it cannot guide a dose or a drug choice. She said, this first table from the F D A is kind of a lightweight.",
+   "text": "Its application is initial screening, to see which drugs have pharmacogenetic implications. Its limitation is that it lacks detailed guidance on clinical application. It names the drug, the gene and the affected group, but it does not say what to do for a patient. She said, this first table from the F D A is kind of a lightweight.",
    "slide": "pgxres:4",
    "reading": null,
    "table": 0
   },
   {
-   "text": "The second table, the one she prefers, is the Table of Pharmacogenomic Biomarkers in Drug Labeling. It lists every F D A approved drug whose label contains pharmacogenomic information, with specific actions based on the biomarker where appropriate. Biomarkers it includes are germline or somatic gene variants, functional deficiencies, gene expression variations, chromosomal abnormalities, and protein biomarkers used to select therapy. It leaves out non human genetic biomarkers, biomarkers used only for diagnosis, and biomarkers related to a drug other than the referenced drug. Watch for somatic variants or protein biomarkers placed on the excluded list. Both are included.",
+   "text": "The second table, the one she prefers, is the Table of Pharmacogenomic Biomarkers in Drug Labeling. It lists every F D A approved drug whose label contains pharmacogenomic information. It includes germline or somatic gene variants, functional deficiencies, gene expression variations, chromosomal abnormalities, and protein biomarkers used to select therapy. It leaves out non human genetic biomarkers, biomarkers used only for diagnosis, and biomarkers related to a drug other than the referenced drug.",
    "slide": "pgxres:6",
    "reading": null
   },
   {
-   "text": "Why only the referenced drug? Label information comes from data on that drug. The S L C O one B one transporter data were for simvastatin, so the table speaks only about simvastatin. She said, We can't assume that the other statins are going to have a patient response just like simvastatin did in the presence of that genetic biomarker. The biomarker column gives the gene, and only sometimes the variant. The labeling sections column names the parts of the official label that discuss pharmacogenomics. For abacavir, those are the Boxed Warning, Dosage and Administration, Contraindications, and Warnings and Precautions.",
+   "text": "Why only the referenced drug? The S L C O one B one transporter data were for simvastatin, so the table speaks only about simvastatin. She said, We can't assume that the other statins are going to have a patient response just like simvastatin did in the presence of that genetic biomarker. The labeling sections column names the parts of the label that discuss pharmacogenomics. For abacavir, those are the Boxed Warning, Dosage and Administration, Contraindications, and Warnings and Precautions.",
    "slide": null,
    "reading": null,
    "table": 0
   },
   {
-   "text": "This is why the labeling table is fast in practice. Every F D A label uses the same sections, and the table tells you which ones hold the pharmacogenomic text. A pharmacist who needs to know whether a drug has a pharmacogenomic boxed warning or genotype based dosing can go straight there. Its application is helping pharmacists make informed decisions on medication therapy management from the latest labeling. Its limitation is scope and lag. It covers only F D A approved drugs and may miss emerging information, because it follows the labels and is updated periodically. So check the table first, then PubMed for the latest. Do not give it the first table's limitation. A lack of clinical guidance belongs to the Associations table.",
+   "text": "Every F D A label uses the same sections, so a pharmacist who needs to know whether a drug has a pharmacogenomic boxed warning or genotype based dosing can go straight to the section the table names. Its application is helping pharmacists make informed decisions on medication therapy management from the latest labeling. Its limitation is scope and lag. It covers only F D A approved drugs and may miss emerging information, because it follows the labels and is updated periodically.",
    "slide": "pgxres:7",
    "reading": null
   }

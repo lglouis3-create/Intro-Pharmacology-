@@ -3,7 +3,7 @@
  "title": "Reading the carbamazepine and abacavir labels",
  "segs": [
   {
-   "text": "Section twenty eight. Carbamazepine and abacavir: one gene, two variants. Carbamazepine, brand name Tegretol, is one of the older antiepileptics still in use. Abacavir, brand name Ziagen, is an antiretroviral for H I V, a nucleoside analogue reverse transcriptase inhibitor. Both carry an H L A B warning, but for a different variant of the same gene, and the hypersensitivity reaction shows up in a different place. She said, The HLAB gene is involved in both, but it's a different genetic variant for carbamazepine compared to abacavir, same gene. Different variants.",
+   "text": "Section twenty eight. Carbamazepine and abacavir: one gene, two variants. Carbamazepine, brand name Tegretol, is one of the older antiepileptics still in use. Abacavir, brand name Ziagen, is an antiretroviral for H I V, a nucleoside analogue reverse transcriptase inhibitor. Both carry an H L A B warning, but for a different variant of the same gene, and the hypersensitivity reaction shows up in a different place. She said, The H L A B gene is involved in both, but it's a different genetic variant for carbamazepine compared to abacavir, same gene. Different variants.",
    "slide": null,
    "reading": "label-carbamazepine",
    "table": 0
@@ -21,13 +21,13 @@
    "table": 0
   },
   {
-   "text": "Abacavir goes with H L A B star fifty seven oh one. The problem was first seen as massive skin reactions, similar to carbamazepine. The labeling later changed: it is a hypersensitivity reaction involving multiple organs, and the label lists multi organ failure and anaphylaxis among the reactions. So calling it skin only is a trap. The label says to screen all patients for H L A B star fifty seven oh one before starting or restarting abacavir, and the drug is contraindicated in patients who test positive.",
+   "text": "Abacavir goes with H L A B star fifty seven oh one. The problem was first seen as massive skin reactions, similar to carbamazepine. The labeling later changed: it is a hypersensitivity reaction involving multiple organs, and the label lists multi organ failure and anaphylaxis among the reactions. So it is not a skin only reaction. The label says to screen all patients for H L A B star fifty seven oh one before starting or restarting abacavir, and the drug is contraindicated in patients who test positive.",
    "slide": null,
    "reading": "label-abacavir",
    "table": 0
   },
   {
-   "text": "The main point is the pairing. She said, They both cause a risk for a hypersensitivity reaction, but carbamazepine is located in the skin, and for abacavir, it's a whole organ hypersensitivity reaction. So one negative H L A B test does not clear both drugs. A patient negative for fifteen oh two may still carry fifty seven oh one. Do not swap the variants, and do not choose H L A B star fifty eight oh one or H L A D R B one star fifteen oh one. Those go with allopurinol and amoxicillin clavulanate.",
+   "text": "The main point is the pairing. She said, They both cause a risk for a hypersensitivity reaction, but carbamazepine is located in the skin, and for abacavir, it's a whole organ hypersensitivity reaction. So one negative H L A B test does not clear both drugs. A patient negative for fifteen oh two may still carry fifty seven oh one. H L A B star fifty eight oh one and H L A D R B one star fifteen oh one belong to neither drug. Those go with allopurinol and amoxicillin clavulanate.",
    "slide": null,
    "reading": null,
    "table": 0

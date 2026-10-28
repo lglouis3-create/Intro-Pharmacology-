@@ -2,6 +2,13 @@
 
 Newest first. The build embeds this file; the Topics page shows what is new since your last visit, and the Progress page shows all of it. Keep each bullet to one short line.
 
+## 2026-10-28 (10/27 lecture added)
+
+- Exam 4: the 10/27 lecture (FDA tables, CPIC, the warfarin algorithm, the drug-label worksheet): 59 questions.
+- Guides 23 to 28 for 10/27, each with a walkthrough (device voice); new tell-apart rows and two reference tables.
+- Reading cards for the trastuzumab, carbamazepine and abacavir labels and the 2017 CPIC warfarin guideline.
+- Her 10/27 words on Exam 4 added to the focus card, with a Day 21 questions button.
+
 ## 2026-10-27 (Daily polish)
 
 - Focus card: a Day 20 (10/26) questions button; each Guides button names its section; buttons give day and date.

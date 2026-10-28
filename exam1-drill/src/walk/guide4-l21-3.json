@@ -3,34 +3,34 @@
  "title": "Walking the C P I C warfarin algorithm",
  "segs": [
   {
-   "text": "Section twenty five. Walking the C P I C warfarin algorithm. The class read the two thousand seventeen C P I C warfarin guideline by Johnson and colleagues as a worked example, then walked its adult dosing algorithm, Figure two. The algorithm runs in a fixed order. Is a genotype available? What is the patient's self identified ancestry? Calculate a dose from V K O R C one and C Y P two C nine, then adjust for the extra variants that apply to that ancestry.",
-   "slide": null,
+   "text": "Section twenty five. Walking the C P I C warfarin algorithm. The class walked the adult dosing algorithm, Figure two, of the two thousand seventeen C P I C warfarin guideline. Each gene's role tells whether a variant moves the dose up or down.",
+   "slide": "pgxres:15",
    "reading": "cpic-warfarin-2017"
   },
   {
-   "text": "Each gene's role tells you which way a variant moves the dose. V K O R C one, vitamin K epoxide reductase, is warfarin's target, not a metabolizing enzyme. Its minus sixteen thirty nine A allele sits upstream of the gene, in a region that affects expression. Carriers need progressively lower doses than G G, because a less active target needs less drug to inhibit it. C Y P two C nine metabolizes S warfarin, the more potent enantiomer. Decreased function alleles slow clearance, so a standard dose builds up, bleeding risk rises, and the dose goes down.",
+   "text": "V K O R C one, vitamin K epoxide reductase, is warfarin's target, not a metabolizing enzyme. Carriers of its minus sixteen thirty nine A allele, in a region upstream of the gene that affects expression, need progressively lower doses than G G. When the target is less active, less drug is needed to inhibit it. C Y P two C nine metabolizes S warfarin, the more potent enantiomer. Decreased function alleles slow its clearance, so a standard dose builds up and the dose goes down.",
    "slide": null,
    "reading": null,
    "table": 0
   },
   {
-   "text": "C Y P four F two works the other way. It removes reduced vitamin K from the cycle. The star three variant is less active, so more vitamin K stays in the body. She said, Vitamin K is like the antidote for warfarin, right? More vitamin K means more active clotting factors, so the dose goes up five to ten percent. The fourth marker, r s one two seven seven seven eight two three, is linked to altered warfarin clearance, and A G or A A lowers the dose, in African Americans only.",
+   "text": "C Y P four F two removes reduced vitamin K from the cycle. The star three variant is less active, so more vitamin K stays in the body. She said, Vitamin K is like the antidote for warfarin, right? More vitamin K means more active clotting factors, so the dose goes up five to ten percent.",
    "slide": null,
    "reading": null,
    "table": 0
   },
   {
-   "text": "Now the steps. With no genotype, dose clinically, without genetic information. She said, Dose your patient empirically. With a genotype, ask whether the patient is of African or non African ancestry. For non African ancestry, calculate the dose with a published pharmacogenetic algorithm from V K O R C one and C Y P two C nine star two and star three, a strong recommendation. If C Y P two C nine star five, six, eight or eleven is found, decrease fifteen to thirty percent per variant allele. If C Y P four F two star three is found, increase five to ten percent. Both are optional. The marker r s one two seven seven seven eight two three is not considered.",
+   "text": "With no genotype, dose clinically. With a genotype, the branch follows self identified ancestry, African or non African. For non African ancestry, calculate the dose from V K O R C one and C Y P two C nine star two and star three with a published pharmacogenetic algorithm. If star five, six, eight or eleven is found, decrease fifteen to thirty percent per variant allele. If C Y P four F two star three is found, increase five to ten percent. The marker r s one two seven seven seven eight two three is not considered.",
    "slide": null,
    "reading": "cpic-warfarin-2017"
   },
   {
-   "text": "For African ancestry, star five, six, eight and eleven come first, because they are more frequent there, not because they raise activity. If they were not tested, dose clinically. If known, calculate the dose, decrease fifteen to thirty percent for a carrier, then decrease ten to twenty five percent for r s one two seven seven seven eight two three A G or A A. No recommendation is made for C Y P four F two. So each extra variant belongs to one branch only. In class she first had C Y P four F two lowering the dose, then corrected it. For C Y P two C nine poor metabolizers, such as star three star three, consider an alternative oral anticoagulant.",
+   "text": "For African ancestry, star five, six, eight and eleven come first, because they are more frequent there. If they were not tested, dose clinically. If known, calculate the dose, decrease fifteen to thirty percent for a carrier, then decrease ten to twenty five percent for r s one two seven seven seven eight two three A G or A A. No recommendation is made for C Y P four F two.",
    "slide": null,
    "reading": "cpic-warfarin-2017"
   },
   {
-   "text": "Her worked case is a non African patient who is C Y P two C nine star three star three, V K O R C one wild type, and carries the C Y P four F two variant. Was all the known genotyping done? Her answer was yes, for non African descent. She then said, Compared to the average starting dose, do they need relatively more or do they need relatively less? The recording does not hold her answer, so use the guideline. Star three star three is a poor metabolism genotype, and star three impairs S warfarin metabolism by eighty to ninety percent, so the calculated dose is lower and another agent might be considered. C Y P four F two star three adds five to ten percent. The guideline gives no single net figure.",
+   "text": "Her case is a non African patient who is C Y P two C nine star three star three, V K O R C one wild type, and carries the C Y P four F two variant. She asked whether the patient needs relatively more or less than the average starting dose. Her own answer is not available. In the guideline, star three star three is a poor metabolism genotype, carriers of star three need lower doses, and an alternative oral anticoagulant might be considered. The guideline gives no single net figure.",
    "slide": null,
    "reading": "cpic-warfarin-2017"
   }

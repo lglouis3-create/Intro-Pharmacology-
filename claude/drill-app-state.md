@@ -225,6 +225,17 @@ See `## Conflicts / uncertain` in notes/L01.md, L02.md and L03.md. The ones that
   items): applied 1-4, 6, VKORC1 cell; not applied: second link for the DPD/TPMT tell row (one data-q per row) and a
   Furuta reference table (guide 22 and two tell rows cover it). glitch.js clean.
 
+- 10/28 (nightly ingest): L21 = 10/27 lecture, PGx-Resources-and-Cases deck pp. 2-20 (p. 22 PGx Cases not reached) and
+  the drug-label worksheet (trastuzumab items 1, 3-8; carbamazepine and abacavir items 1-3; recording ends mid-sentence).
+  q_L21.js 59 questions (12 select-all, 4 lowYield, 4 dupOf); first writer stopped at L21-035 (output cut), rest written
+  by two smaller agents; verifiers 27 bank fixes (none to a key), 25 guide fixes. guide4-l21-1..6 (headings 23-28),
+  tell4-l21 (33 rows), ref4-l21-1/2. Readings: label-abacavir, label-carbamazepine, label-trastuzumab, cpic-warfarin-2017
+  (status discussed, linked to guides 25, 27, 28). Slides pgxres-01..22 (the Drive copy carries the user's handwriting,
+  as the pgxex slides do). Walkthroughs 33 parts, 15,950 characters, not recorded (about $2.90; all unrecorded Exam 4
+  walkthroughs 60,988 characters, about $11.09). L20-056 note: on 10/27 she called the abacavir reaction multi-organ.
+  Conflicts kept in notes/L21.md (17), including CPIC name, "optimal" vs "Optional", "5 mg per kilogram", CYP4F2
+  direction, about 35 guidelines vs 29 rows, carbamazepine label date, tumor types. Adverse drug events deferred to 10/28.
+
 ## Restore after a container restart
 
 The scratchpad is wiped on every restart. Durable copies: scripts and briefs in the repo (exam1-drill/src/daily/,
