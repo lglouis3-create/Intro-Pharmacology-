@@ -106,6 +106,7 @@ button.xwhy{font-size:11px;padding:1px 7px;margin-left:4px;vertical-align:middle
 .timer{font-variant-numeric:tabular-nums;font-weight:600}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(34px,1fr));gap:4px;margin:10px 0}
 .grid button{border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:4px;padding:4px 0;font-size:12px;cursor:pointer}
+@media (pointer:coarse){.grid button{min-height:40px}}
 .grid button.ans{background:var(--chip)} .grid button.cur{border-color:var(--accent)} .grid button.flag{outline:2px solid var(--warn)}
 select,input[type=text],input[type=number]{font-size:15px;padding:6px 8px;border:1px solid var(--line);border-radius:6px;background:var(--panel);color:var(--ink)}
 .empty{color:var(--muted);padding:12px 0}
@@ -255,7 +256,7 @@ label:has(input:disabled){opacity:.5}
 .btn.sm{padding:4px 10px;font-size:13px}
 .notice{color:var(--warn)}
 /* the centred floating buttons sit above "Back to the question" when both are shown; the page keeps room under them */
-body:has(#backbtn) #xback, body:has(#backbtn) #tback{bottom:64px}
+body:has(#backbtn) #xback, body:has(#backbtn) #tback, body:has(#backbtn) #motivcard{bottom:64px}
 body:has(#backbtn) main, body:has(#xback) main, body:has(#tback) main{padding-bottom:96px}
 /* figure cards and guide sections off screen are not laid out until they scroll near (jumps force the target to render) */
 .fig,.guide{content-visibility:auto;contain-intrinsic-size:auto 340px} .guide{contain-intrinsic-size:auto 1400px}

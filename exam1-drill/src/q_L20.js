@@ -193,7 +193,7 @@ QUESTIONS.push(
  quote:"So this image is synonymous with what happens if you have a low activity variant of PGP. You will end up with higher bioavailability of drugs that are substrates for PGP.",
  cite:"PGx-Examples-Students-Fall-2026.pdf slide 'Variations in Drug Transporting Genes' (p. 40); transcript 10/26"},
 
-{id:"L20-015", lecture:"L20", prof:"Smith", tier:"new", topic:"L20", sub:"pgp", skill:"drug", core:true, coreWhy:"her in-class question",
+{id:"L20-015", lecture:"L20", prof:"Smith", tier:"new", topic:"L20", sub:"pgp", skill:"recall", core:true, coreWhy:"her in-class question",
  concept:"digoxin-pgp", tags:["smith","inclass"], source:"both",
  stem:"Which narrow-therapeutic-index P-gp substrate is greatly affected by low-activity P-gp?",
  options:[
@@ -253,7 +253,7 @@ QUESTIONS.push(
  quote:"This transporter is not coded by two different genes. It's coded by a gene that has two different names, OK.",
  cite:"PGx-Examples-Students-Fall-2026.pdf slide 'P-Glycoprotein' (p. 45); transcript 10/26"},
 
-{id:"L20-020", lecture:"L20", prof:"Smith", tier:"new", topic:"L20", sub:"pgp", skill:"drug", multi:true,
+{id:"L20-020", lecture:"L20", prof:"Smith", tier:"new", topic:"L20", sub:"pgp", skill:"recall", multi:true,
  concept:"pgp-substrates", tags:["smith"], source:"both",
  stem:"Which drugs are listed as having their distribution affected by P-glycoprotein? Select all that apply.",
  options:[
@@ -682,7 +682,7 @@ QUESTIONS.push(
  quote:"Probably the hottest area of pharmacogenomics. It's the newest area.",
  cite:"PGx-Examples-Students-Fall-2026.pdf slide 'Variations in Immune System Function' (p. 59); (T) 10/26 transcript"},
 
-{id:"L20-056", lecture:"L20", prof:"Smith", tier:"new", topic:"L20", sub:"hla", skill:"drug", type:"match", core:true, coreWhy:"the two HLA variants she said she would spend time on",
+{id:"L20-056", lecture:"L20", prof:"Smith", tier:"new", topic:"L20", sub:"hla", skill:"tell", type:"match", core:true, coreWhy:"the two HLA variants she said she would spend time on",
  concept:"hla-drug-pairs", tags:["smith"], source:"both",
  stem:"Match each HLA variant with its drug and adverse effect (Katzung Table 5-4).",
  left:["HLA-B*57:01", "HLA-B*15:02", "HLA-B*58:01", "HLA-DRB1*15:01, DRB5*01:01, DQB1*06:02 haplotype"],
