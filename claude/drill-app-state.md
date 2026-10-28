@@ -233,6 +233,11 @@ Transcripts are never committed (Pages serves the repo root). At the start of ea
 - L18 (10/21): Drive 11x7ATwHf1kLolqRtibbgdGTsAJry-XKa, 76,165 bytes -> <scratchpad>/l18/transcript.txt
 - L19 (10/22): Drive 1IYKmaNPVlhYThg-6CETJTL5J23JndQO2, 83,752 bytes -> <scratchpad>/l19/transcript.txt
 - L20 (10/26): Drive 1iWFEnmaSLik81r8KWO2jSYFZ0FRp3SoO, 93,647 bytes -> <scratchpad>/l20/transcript.txt
+- L21 (10/27): Drive 15Kad20K5VmUxs9-Qfck-lxcCm5y8SDkr, 68,227 bytes -> <scratchpad>/l21/transcript.txt
+- Resources deck PDF: Drive 1DnI1ksVdck1ZGUup3wYTUAcNWyG-gB_e (22 pages) -> <scratchpad>/decks/pgxres.pdf, text <scratchpad>/l21/pgxres.txt
+- 10/27 labels and guideline: abacavir 1sdpa2XF9pppf8hDWC7LLpJOCrbgHPaIZ, carbamazepine 1F38CLjvV8oTnXIQAuMwd28eMflUGd-_F,
+  trastuzumab 1b67c0c856hh9cIQN-pIzoTzC4b-ylbqn, CPIC warfarin 2017 1XmXKozagnU8-5rPc4aQGHy6cDL6eN6tM -> <scratchpad>/l21/readings/*.txt;
+  worksheet 1OQ4m7AIP409uSclXU3GHHBx7BidoPc6p (the user's filled copy: printed questions only, never the handwriting or name)
 - Examples deck PDF: Drive 1lN9BKuyhTRxaP6fRYwXh7xTOAJcAAIA-; page text via pdftotext -layout per page -> <scratchpad>/l20/examples_deck.txt
 Each new lecture ingested adds its line here.
 
