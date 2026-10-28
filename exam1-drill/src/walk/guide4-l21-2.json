@@ -1,0 +1,37 @@
+{
+ "id": "guide4-l21-2",
+ "title": "C P I C guidelines",
+ "segs": [
+  {
+   "text": "Section twenty four. C P I C guidelines. C P I C is the Clinical Pharmacogenetics Implementation Consortium. Its guidelines are evidence based and written by experts in pharmacogenomics, including pharmacists, scientists and physicians. They help clinicians understand how available genetic test results should be used to optimize drug therapy, not whether tests should be ordered. The key assumption is that the patient's genotype is already available, even if the test was not ordered with this drug in mind. Their job is to interpret that result for the drug now being prescribed. She said, these guidelines help us understand how available genetic test results should be used to optimize drug therapy and not whether tests should be ordered. The endorsers are the Association for Molecular Pathology, the American Society for Clinical Pharmacology and Therapeutics, and the American Society of Health System Pharmacists. The F D A is not one of them.",
+   "slide": "pgxres:9",
+   "reading": null
+  },
+  {
+   "text": "Every guideline has the same components in the same order. First, gene and drug background, meaning genetic variability and its impact on drug response. Second, dosage recommendations based on genotype. Third, the potential benefits and risks of using the genetic information. Fourth, caveats on appropriate use and potential misuse of genetic tests. Because the layout is fixed, as it is in every F D A label, the background, the genes, the interpretation and the recommendations sit in the same place each time.",
+   "slide": "pgxres:10",
+   "reading": null
+  },
+  {
+   "text": "Development follows a set process, described by Caudle and colleagues in two thousand fourteen. It starts with an initial assessment, where gene drug pairs are prioritized from surveys, evidence strength and clinical actionability. A multidisciplinary writing committee then reviews the literature and drafts the guideline. Next comes evidence review, then therapeutic recommendations, with strength assigned by a transparent system. Drafts get public and peer review by C P I C members and outside experts before publication, so peer review does not come first. Guidelines are reviewed about every two years, because the data keep moving. That initial screening is also why there are only about thirty five guidelines while many drugs are on the market.",
+   "slide": "pgxres:11",
+   "reading": null
+  },
+  {
+   "text": "C P I C grades two separate things. The evidence is graded high, moderate or weak. High means consistent results from well designed, well conducted studies. Moderate means enough evidence to determine effects, but limited by the number, quality or consistency of studies. Weak means insufficient evidence. The recommendation is graded strong, moderate or optional. Strong means high quality evidence where desirable effects clearly outweigh undesirable ones. Moderate means a close or uncertain balance. Optional means the effects are closely balanced, allowing differences in opinion. The evidence grade says how strong the science is, and the recommendation strength says how firmly to act. Do not swap the scales, and the third level is optional, not optimal.",
+   "slide": "pgxres:12",
+   "reading": null,
+   "table": 0
+  },
+  {
+   "text": "The current guidelines table lists the gene drug pairs, and she said it does not need to be memorized. The classes on it include infectious disease drugs, cardiac drugs, central nervous system drugs, immunosuppressants, and pain medications such as N S A I Ds and opioids. Warfarin's guideline was updated in two thousand seventeen with C Y P four F two and r s one two seven seven seven eight two three, and she said it and the thiopurine guideline have been updated again since.",
+   "slide": "pgxres:13",
+   "reading": null
+  },
+  {
+   "text": "From a guideline, a pharmacist learns which variants matter for the drug, what to test for, how to interpret the result, and how to treat once the genotype is known. The application is clear recommendations on dosing adjustments and alternative therapies based on genetic profile. She called them the best resource available for the drugs that have one. The limitation is scope, not a lack of evidence or of dosing advice. She said, So the limitations for these guidelines so far is there's not every drug out there.",
+   "slide": "pgxres:14",
+   "reading": null
+  }
+ ]
+}
