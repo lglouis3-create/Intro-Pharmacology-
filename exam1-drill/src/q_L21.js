@@ -53,7 +53,7 @@ QUESTIONS.push(
   {t:"Initial screening of drugs; no guidance on clinical use", correct:true, why:"These are the application and limitation on the slide and in her words."},
   {t:"Genotype-based dosing; limited to cancer drugs", correct:false, why:"It gives no dosing guidance, and it is not limited to cancer drugs."},
   {t:"Lists every label section; often out of date", correct:false, why:"Label sections are listed in the Biomarkers in Drug Labeling table."},
-  {t:"Ranks evidence strength; covers only about 35 drugs", correct:false, why:"Evidence grading and about 35 guidelines describe CPIC."}],
+  {t:"Ranks evidence strength; covers only a few drugs", correct:false, why:"Evidence grading and a limited drug list describe CPIC."}],
  teach:"The table is useful for a first screen of which drugs have pharmacogenetic implications. Its limitation is that it lacks detailed guidance on how to apply the information clinically. She called it a lightweight and said she finds the other FDA table more helpful.",
  quote:"So in my opinion this table, uh, this first table from the FDA is kind of a lightweight.",
  cite:"PGx-Resources-and-Cases-Students-Fall-2026.pdf slide 'FDA Tables of Pharmacogenetic Associations 2' (p. 4); transcript 10/27"},
@@ -65,19 +65,19 @@ QUESTIONS.push(
   {t:"Section 1", correct:true, why:"Section 1: data support therapeutic management recommendations; she called it the meatiest section."},
   {t:"Section 2", correct:false, why:"Section 2: data indicate a potential impact on safety or response."},
   {t:"Section 3", correct:false, why:"Section 3: data show a potential impact on pharmacokinetic properties only; she called it lighter."},
-  {t:"None; the table gives no recommendations", correct:false, why:"Section 1 is defined by data that support therapeutic management recommendations."}],
+  {t:"None; the sections are alphabetical by drug", correct:false, why:"The sections group associations by what the data show; sorting by drug or gene is done within the table."}],
  teach:"The three sections rank the strength of the association. Section 1: data support therapeutic management recommendations. Section 2: data indicate a potential impact on safety or response. Section 3: data demonstrate a potential impact on pharmacokinetic (PK) properties only.",
  quote:"So this is like the meatiest of the sections in this table.",
  cite:"PGx-Resources-and-Cases-Students-Fall-2026.pdf slide 'FDA Tables of Pharmacogenetic Associations 3' (p. 5); transcript 10/27"},
 
 {id:"L21-005", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"fda-assoc", skill:"apply",
  concept:"pgx-resource-currency", tags:["smith"], source:"transcript",
- stem:"Opening an online pharmacogenomic table, what did Dr. Smith check first to judge it?",
+ stem:"Opening an online pharmacogenomic table, what did Dr. Smith say is an important thing to look at to judge it?",
  options:[
   {t:"The date it was last updated", correct:true, why:"She checks how current the information is; both FDA tables had been updated recently."},
   {t:"The number of drugs listed", correct:false, why:"She did not use the size of the table to judge it."},
   {t:"The authors' affiliations", correct:false, why:"For the FDA tables she looked at the update date."},
-  {t:"Whether the table can be sorted", correct:false, why:"She liked the sorting, but the first check was the update date."}],
+  {t:"Whether the table can be sorted", correct:false, why:"She liked that the tables can be sorted, but what she said to look at was how current the information is."}],
  teach:"Pharmacogenomic resources change quickly. She looks for the date each table was last updated, since some of these resources had gone a long time without updates. The Table of Pharmacogenetic Associations had been updated on September 10; the Biomarkers table in August.",
  quote:"So that's kind of an important thing to look at is how current is this information",
  cite:"PGx-Resources-and-Cases-Students-Fall-2026.pdf slides 'FDA Tables of Pharmacogenetic Associations 3' (p. 5), 'FDA Table of Pharmacogenomic Biomarkers in Drug Labeling 3' (p. 8); transcript 10/27"},
@@ -159,7 +159,7 @@ QUESTIONS.push(
 
 {id:"L21-012", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"fda-biomark", skill:"tell", core:true, coreWhy:"choosing between the two FDA tables",
  concept:"fda-two-tables-choose", tags:["smith"], source:"both",
- stem:"A pharmacist needs to find out quickly whether a drug has a pharmacogenomic boxed warning or genotype-based dosing in its label. Which resource did Dr. Smith recommend for this?",
+ stem:"A pharmacist needs to find out quickly whether a drug has a pharmacogenomic-based black box warning or a pharmacogenomic discussion of dosing. Which resource did Dr. Smith recommend for this?",
  options:[
   {t:"The FDA Table of Pharmacogenomic Biomarkers in Drug Labeling", correct:true, why:"Its labeling-section column directs you to the right part of the label."},
   {t:"The FDA Table of Pharmacogenetic Associations", correct:false, why:"It gives an initial screen but no guidance on clinical use and no label sections."},
@@ -187,7 +187,7 @@ QUESTIONS.push(
  stem:"What does CPIC stand for?",
  options:[
   {t:"Clinical Pharmacogenetics Implementation Consortium", correct:true, why:"This is the name on the 'Other Guidelines' slide."},
-  {t:"Center for Pharmacogenomics Information Consortium", correct:false, why:"This is how the name came out in the 10/27 recording; the slide name is Clinical Pharmacogenetics Implementation Consortium."},
+  {t:"Consortium for Pharmacogenomic Information and Care", correct:false, why:"Not the name on the 'Other Guidelines' slide."},
   {t:"Canadian Pharmacogenomics Implementation Committee", correct:false, why:"The Canadian group is CPNDS."},
   {t:"Clinical Practice Information Center", correct:false, why:"Not the name on the slide."}],
  teach:"CPIC is the Clinical Pharmacogenetics Implementation Consortium. Its guidelines are written by experts in pharmacogenomics (pharmacists, scientists, physicians), are evidence based, and are housed on the CPIC site and ClinPGx.",
@@ -249,7 +249,7 @@ QUESTIONS.push(
  options:[
   {t:"About every two years", correct:true, why:"The slide gives approximately every two years."},
   {t:"Every month", correct:false, why:"Much more often than the slide states."},
-  {t:"Every ten years", correct:false, why:"Much less often than the slide states."},
+  {t:"Only when the FDA changes the drug label", correct:false, why:"CPIC reviews its own guidelines periodically as the data move forward; the FDA label does not set the schedule."},
   {t:"Never; they are fixed once published", correct:false, why:"They are reviewed periodically as the data move forward."}],
  teach:"Published guidelines are reviewed periodically, approximately every two years, because the data move forward. The warfarin guideline she walked through is the 2017 update of an earlier guideline.",
  quote:"also for guidelines that have already been published, they will go back and review them periodically again because the data moves forward",
@@ -268,7 +268,7 @@ QUESTIONS.push(
  note:"In the recording the third recommendation level came out as \"optimal\"; the slide reads \"Optional\". Keyed to the slide word.",
  cite:"PGx-Resources-and-Cases-Students-Fall-2026.pdf slide 'CPIC Guidelines 4' (p. 12, Caudle et al. 2014); transcript 10/27"},
 
-{id:"L21-021", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"cpic", skill:"apply",
+{id:"L21-021", lecture:"L21", prof:"Smith", tier:"new", lowYield:true, topic:"L21", sub:"cpic", skill:"apply",
  concept:"cpic-strength-moderate", tags:["smith"], source:"slide",
  stem:"A CPIC recommendation is based on a close or uncertain balance between desirable and undesirable effects. What strength is it given?",
  options:[
@@ -299,7 +299,7 @@ QUESTIONS.push(
   {t:"Infectious disease drugs", correct:true, why:"For example abacavir, efavirenz, voriconazole, aminoglycosides."},
   {t:"Cardiac drugs", correct:true, why:"For example warfarin, clopidogrel, beta-blockers."},
   {t:"CNS drugs", correct:true, why:"For example antidepressants, atomoxetine, phenytoin, carbamazepine."},
-  {t:"Immunosuppressants", correct:true, why:"For example tacrolimus and the thiopurines."},
+  {t:"Immunosuppressants", correct:true, why:"For example tacrolimus."},
   {t:"Insulins", correct:false, why:"No insulin appears on the list."}],
  teach:"She asked the class what kinds of drug classes are on the list and accepted infectious disease drugs, cardiac drugs, CNS drugs, immunosuppressants and pain medications (NSAIDs and opioids). Many therapeutic categories now have CPIC guidelines. She said the table itself does not need to be memorized.",
  quote:"So do you see? Infectious disease drugs. Do you see cardiac drugs? CNS drugs.",
@@ -374,9 +374,9 @@ QUESTIONS.push(
  concept:"cpic-warf-ancestry", tags:["smith"], source:"both",
  stem:"The genotype is available. What does the CPIC warfarin algorithm ask next, before choosing a branch?",
  options:[
-  {t:"The patient's self-identified ancestry (African or non-African)", correct:true, why:"The algorithm splits into an African-ancestry and a non-African-ancestry branch."},
+  {t:"The patient's self-identified ancestry", correct:true, why:"The algorithm splits into an African-ancestry and a non-African-ancestry branch."},
+  {t:"The patient's CYP4F2 genotype", correct:false, why:"CYP4F2*3 comes later, as an adjustment to the calculated dose on the non-African branch."},
   {t:"The patient's INR on day 1", correct:false, why:"The branch point is ancestry."},
-  {t:"Whether the patient has taken vitamin K", correct:false, why:"Not the branch point."},
   {t:"The patient's TPMT genotype", correct:false, why:"TPMT is for the thiopurines."}],
  teach:"Once the genotype is known, the patient is asked to self-identify ancestry. The branches differ because the frequency of certain variants differs by population: CYP2C9*5, *6, *8 and *11 and rs12777823 matter up front in African ancestry, while CYP4F2*3 is applied in non-African ancestry.",
  quote:"If you have genotype, then you will do the best for your patient if you get them to uh self-identify their ancestry.",
@@ -390,7 +390,7 @@ QUESTIONS.push(
   {t:"CYP2C9*2", correct:true, why:"Part of the CYP2C9*2 and *3 status."},
   {t:"CYP2C9*3", correct:true, why:"Part of the CYP2C9*2 and *3 status."},
   {t:"rs12777823", correct:false, why:"This applies only on the African-ancestry branch."},
-  {t:"TPMT*3A", correct:false, why:"TPMT is the thiopurine gene."}],
+  {t:"CYP4F2*3", correct:false, why:"Applied after the calculation: if CYP4F2*3 is found, the calculated dose is increased."}],
  teach:"On the non-African branch the dose is calculated with a published pharmacogenetic algorithm using VKORC1 -1639G>A and CYP2C9*2 and *3; the guideline grades this STRONG. Other CYP2C9 variants (*5, *6, *8, *11), if found, lower the calculated dose, and CYP4F2*3, if found, raises it.",
  quote:"So once you know their genotype status for that particular snip of EKRC1 and their 2 and 3 TC9 status, you're going to calculate their dose.",
  cite:"PGx-Resources-and-Cases-Students-Fall-2026.pdf slide 'CPIC Guidelines 7' (p. 15); CPIC warfarin guideline 2017 update, Figure 2 and 'Non-African ancestry recommendation'; transcript 10/27"},
@@ -399,9 +399,9 @@ QUESTIONS.push(
  concept:"vkorc1-1639-upstream", tags:["smith"], source:"both",
  stem:"What does the minus sign in VKORC1 -1639G>A indicate?",
  options:[
-  {t:"The variant lies upstream of the gene, in a region that affects expression", correct:true, why:"Upstream of the coding sequence; it is part of a haplotype that affects VKORC1 expression."},
+  {t:"The variant lies upstream of the coding region", correct:true, why:"Upstream of the coding sequence; it is part of a haplotype that affects VKORC1 expression."},
   {t:"The variant causes a loss of the protein", correct:false, why:"The minus gives position, not effect."},
-  {t:"The variant is on the opposite DNA strand", correct:false, why:"She explained it as upstream position."},
+  {t:"The variant is on the opposite DNA strand", correct:false, why:"Dr. Smith explained the minus sign as an upstream position."},
   {t:"The variant lowers the dose by 1639 mg", correct:false, why:"The number is a nucleotide position."}],
  teach:"VKORC1 -1639G>A is a G-to-A change at position -1639. The minus means the variant sits upstream of the gene, in an untranslated region that affects expression; it is part of a haplotype. Patients with one or two -1639A alleles need progressively lower warfarin doses.",
  quote:"This is a haplotype or this is a part of a haplotype. The negative means that this variant occurs in the Um, uh, upstream untranslated region that affects expression",
@@ -411,7 +411,7 @@ QUESTIONS.push(
  concept:"cyp2c9-5-6-8-11-reduce", tags:["smith"], source:"both",
  stem:"A patient carries CYP2C9*5, *6, *8 or *11. How does the CPIC algorithm change the calculated warfarin dose?",
  options:[
-  {t:"Decrease it by 15 to 30%", correct:true, why:"Her number and the guideline's, for these decreased-function alleles."},
+  {t:"Decrease it by 15 to 30%", correct:true, why:"Dr. Smith's number and the guideline's, for these decreased-function alleles."},
   {t:"Increase it by 15 to 30%", correct:false, why:"These alleles lower CYP2C9 activity, so less drug is needed."},
   {t:"Decrease it by 90%", correct:false, why:"Not the guideline's adjustment."},
   {t:"No change", correct:false, why:"These alleles lower CYP2C9 activity and the dose."}],
@@ -423,13 +423,13 @@ QUESTIONS.push(
  concept:"cyp2c9-african-upfront-why", tags:["smith","inclass"], source:"both",
  stem:"Why does the CPIC warfarin algorithm put CYP2C9*5, *6, *8 and *11 testing up front for patients of African ancestry?",
  options:[
-  {t:"These variants occur at higher frequency in that population", correct:true, why:"She answered with frequency: a higher chance of carrying one of these dose-lowering genotypes."},
+  {t:"These variants occur at higher frequency in that population", correct:true, why:"Dr. Smith answered with frequency: a higher chance of carrying one of these dose-lowering genotypes."},
   {t:"They raise CYP2C9 activity in that population", correct:false, why:"They decrease CYP2C9 activity."},
-  {t:"CYP2C9*2 and *3 do not exist in that population", correct:false, why:"The reason she gave was the higher frequency of *5, *6, *8 and *11."},
+  {t:"CYP2C9*2 and *3 do not exist in that population", correct:false, why:"The reason Dr. Smith gave was the higher frequency of *5, *6, *8 and *11."},
   {t:"VKORC1 does not affect warfarin in that population", correct:false, why:"VKORC1 is part of the calculation on both branches."}],
  teach:"CYP2C9*5, *6, *8 and *11 lower CYP2C9 activity and are found at quite high frequency in people of African ancestry. Knowing they affect the dose and are common in that population, the algorithm tests for them first so the starting dose is right. In non-African patients these genotypes are less likely.",
  quote:"These variants are up high for people of African ancestry because we know that they could have a higher probability of having one of those genotypes",
- note:"Her question: \"why do they put it up front here for people of African descent? Why do they make sure that you think about the 568, and 11 42C9 for your, your African ancestry patients?\" The accepted answer (frequencies) is partly lost in the caption; she then explained it.",
+ note:"Dr. Smith's question: \"why do they put it up front here for people of African descent? Why do they make sure that you think about the 568, and 11 42C9 for your, your African ancestry patients?\" The accepted answer (frequencies) is partly lost in the caption; she then explained it.",
  cite:"PGx-Resources-and-Cases-Students-Fall-2026.pdf slide 'CPIC Guidelines 7' (p. 15); CPIC warfarin guideline 2017 update, Figure 2 and 'African ancestry recommendation'; transcript 10/27"},
 
 {id:"L21-034", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"cpic-warf", skill:"apply", dupOf:"L20-052",
@@ -442,7 +442,7 @@ QUESTIONS.push(
   {t:"Warfarin is contraindicated", correct:false, why:"The dose is adjusted."}],
  teach:"CYP4F2 metabolizes vitamin K and removes it from the vitamin K cycle. The *3 variant is less active, so more vitamin K stays in the body. Vitamin K is the antidote for warfarin and drives clotting-factor production, so more warfarin is needed. The guideline's adjustment is an increase of 5 to 10% (graded OPTIONAL).",
  quote:"You're going to increase the dose, right? You got a hint of that in that algorithm, right at the bottom of the algorithm.",
- note:"Her question: \"What is their warfarin dosing need if they have the SIP 4 of 23?\" Earlier in the walk-through she said \"If they have that snip, you need to decrease the dose again\" for CYP4F2; a student raised it and she corrected it to an increase. Same fact as L20-052 (10/26).",
+ note:"Dr. Smith's question: \"What is their warfarin dosing need if they have the SIP 4 of 23?\" Earlier in the walk-through she said \"If they have that snip, you need to decrease the dose again\" for CYP4F2; a student raised it and she corrected it to an increase. Same fact as L20-052 (10/26).",
  cite:"PGx-Resources-and-Cases-Students-Fall-2026.pdf slide 'CPIC Guidelines 7' (p. 15); CPIC warfarin guideline 2017 update, 'CYP4F2 and warfarin' and Figure 2; transcript 10/27"},
 
 {id:"L21-035", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"cpic-warf", skill:"tell", core:true, coreWhy:"the branch difference she pointed out",
@@ -455,7 +455,7 @@ QUESTIONS.push(
   {t:"Non-African: CYP4F2*3 (dose down); African: rs12777823 (dose up)", correct:false, why:"The directions are reversed."}],
  teach:"CYP4F2 is listed for patients of non-African ancestry; the data do not support a CYP4F2 effect in African ancestry. rs12777823, a SNP in the CYP2C cluster near CYP2C18, appears on the African-ancestry branch and calls for a dose decrease (10 to 25% in the guideline); its association has been seen only in African Americans.",
  quote:"The SIP4F2 is mentioned for people of non-African ancestry. It's not on the algorithm for the people of African ancestry.",
- note:"In the walk-through she first said the African-branch variant needs a decrease and then, answering a student, briefly attributed an increased dose to \"4F2 variant over here on the African ancestry\" before stating that CYP4F2 is not on the African branch. Keyed to her final statement and Figure 2.",
+ note:"In the walk-through Dr. Smith first said the African-branch variant needs a decrease and then, answering a student, briefly attributed an increased dose to \"4F2 variant over here on the African ancestry\" before stating that CYP4F2 is not on the African branch. Keyed to her final statement and Figure 2.",
  cite:"PGx-Resources-and-Cases-Students-Fall-2026.pdf slide 'CPIC Guidelines 7' (p. 15); CPIC warfarin guideline 2017 update, Figure 2, 'CYP2C rs12777823 and warfarin'; transcript 10/27"},
 
 /* ---------------- Other guidelines, ClinPGx and future directions (pp. 16-20) ---------------- */
@@ -471,7 +471,7 @@ QUESTIONS.push(
  quote:"there are other guidance documents that are evidence-based that are coming out of other countries. We've got some that are Dutch, we've got some that are Canadian, and we actually have some that are French. ... I don't want you to, you don't have to memorize that, but I do want you to know that other countries have produced their own guidance documents.",
  cite:"PGx-Resources-and-Cases-Students-Fall-2026.pdf slide 'Other Guidelines' (p. 16); transcript 10/27"},
 
-{id:"L21-037", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"pgx-other", skill:"tell",
+{id:"L21-037", lecture:"L21", prof:"Smith", tier:"new", lowYield:true, topic:"L21", sub:"pgx-other", skill:"tell",
  concept:"other-guidelines-abbrev", tags:["smith"], source:"slide",
  stem:"Which pharmacogenomic guideline group is the French one?",
  options:[
@@ -481,16 +481,17 @@ QUESTIONS.push(
   {t:"CPIC", correct:false, why:"CPIC is the Clinical Pharmacogenetics Implementation Consortium, written by American authors."}],
  teach:"The 'Other Guidelines' slide lists four English-language guidelines: CPIC (Clinical Pharmacogenetics Implementation Consortium), DPWG (Dutch Pharmacogenetics Working Group), CPNDS (Canadian Pharmacogenomics Network for Drug Safety) and RNPGx (French National Network, or Réseau, of Pharmacogenetics). The country is in each group's name except CPIC, which Dr. Smith described as written by American authors.",
  quote:"So along with those CPIC guidance documents which are written by American authors, there are other guidance documents that are evidence-based that are coming out of other countries.",
+ note:"Slide detail only. Dr. Smith named the three countries but not the acronyms; marked lowYield.",
  cite:"PGx-Resources-and-Cases-Students-Fall-2026.pdf slide 'Other Guidelines' (p. 16); transcript 10/27"},
 
 {id:"L21-038", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"pgx-other", skill:"recall",
  concept:"other-guidelines-similar-objectives", tags:["smith"], source:"both",
- stem:"How do the Dutch, Canadian and French pharmacogenomic guidelines compare with CPIC (Clinical Pharmacogenetics Implementation Consortium) guidelines?",
+ stem:"How do the evidence-based pharmacogenomic guidelines from other countries compare with CPIC (Clinical Pharmacogenetics Implementation Consortium) guidelines?",
  options:[
   {t:"Similar; some objectives differ", correct:true, why:"They draw on the same science and similar methods of development; differences come from different objectives."},
   {t:"Similar objectives; methods of development differ", correct:false, why:"Reversed: the methodologies are similar and the objectives differ."},
   {t:"They are translations of the CPIC documents", correct:false, why:"Each country produced its own guidance documents."},
-  {t:"They contradict CPIC on most gene-drug pairs", correct:false, why:"She said they are often quite similar."}],
+  {t:"They contradict CPIC on most gene-drug pairs", correct:false, why:"Dr. Smith said they are often quite similar."}],
  teach:"The other countries' guidelines are often quite similar to CPIC, which is expected when they pull from the same science. The slide (Abdullah-Koolmees et al., 2021) says they have similar methodologies of development and that their objectives differed. Dr. Smith attributed the differences to some of them having different objectives from the CPIC documents.",
  quote:"They're often quite similar. Um, which you would expect, right, because it's, they're pulling from the same science, but their differences, um, are because of some of them have different objectives from our CPIC documents",
  cite:"PGx-Resources-and-Cases-Students-Fall-2026.pdf slide 'Other Guidelines' (p. 16); transcript 10/27"},
@@ -499,10 +500,10 @@ QUESTIONS.push(
  concept:"other-guidelines-recommend-testing", tags:["smith"], source:"slide",
  stem:"Which guideline groups recommend genetic testing? Select all that apply.",
  options:[
-  {t:"DPWG (Dutch)", correct:true, why:"Listed under 'DPWG, CPNDS and RNPGx recommend genetic testing'."},
-  {t:"CPNDS (Canadian)", correct:true, why:"Listed under 'DPWG, CPNDS and RNPGx recommend genetic testing'."},
-  {t:"RNPGx (French)", correct:true, why:"Listed; RNPGx recommends genotyping for specific clinical settings or medical conditions."},
-  {t:"CPIC (United States)", correct:false, why:"CPIC is not in that bullet; with DPWG it focuses on therapy recommendations for drug and gene or phenotype combinations."}],
+  {t:"DPWG", correct:true, why:"Listed under 'DPWG, CPNDS and RNPGx recommend genetic testing'."},
+  {t:"CPNDS", correct:true, why:"Listed under 'DPWG, CPNDS and RNPGx recommend genetic testing'."},
+  {t:"RNPGx", correct:true, why:"Listed; RNPGx recommends genotyping for specific clinical settings or medical conditions."},
+  {t:"CPIC", correct:false, why:"CPIC is not in that bullet; with DPWG it focuses on therapy recommendations for drug and gene or phenotype combinations."}],
  teach:"Under 'Objectives differed' the slide says DPWG and CPIC focus on pharmacotherapeutic recommendations for drug and gene or phenotype combinations, while DPWG, CPNDS and RNPGx recommend genetic testing. RNPGx recommends genotyping for specific clinical settings or medical conditions. CPIC guidelines address how to use a genetic result already in hand, not whether to order the test.",
  quote:"You can read the slide here and just know basically how they differ from each other. I don't want you to, you don't have to memorize that",
  note:"Slide detail only. Dr. Smith said the differences among the guidelines do not have to be memorized; marked lowYield.",
@@ -516,12 +517,12 @@ QUESTIONS.push(
   {t:"PharmCAT", correct:false, why:"PharmCAT is one of the projects combined into ClinPGx, not its former name."},
   {t:"DPWG", correct:false, why:"DPWG is the Dutch guideline group."},
   {t:"PubMed", correct:false, why:"PubMed is a literature database, not the former name of ClinPGx."}],
- teach:"The website that used to be called PharmGKB has changed to ClinPGx. Dr. Smith used it to reach the CPIC warfarin guideline and described it as very busy, with content that changes often, so finding information takes some effort.",
+ teach:"The website that used to be called PharmGKB has changed to ClinPGx. Dr. Smith tried to reach the CPIC warfarin guideline through it, got lost, and opened the guideline from Canvas instead. She described it as very busy, with content that changes often, so finding information takes some effort.",
  quote:"It used to be called Farm GKB and they've just changed it to this Clin PGX website.",
  note:"The caption renders PharmGKB as \"Farm GKB\" and ClinPGx as \"Clin PGX\" and \"Klin PGX\".",
  cite:"PGx-Resources-and-Cases-Students-Fall-2026.pdf slide 'PharmGKB has changed to ClinPGx website' (p. 18); transcript 10/27"},
 
-{id:"L21-041", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"pgx-other", skill:"recall", multi:true,
+{id:"L21-041", lecture:"L21", prof:"Smith", tier:"new", lowYield:true, topic:"L21", sub:"pgx-other", skill:"recall", multi:true,
  concept:"clinpgx-components", tags:["smith"], source:"slide",
  stem:"ClinPGx is formed from the combination of which NIH (National Institutes of Health)-funded projects? Select all that apply.",
  options:[
@@ -531,11 +532,12 @@ QUESTIONS.push(
   {t:"The FDA Table of Pharmacogenetic Associations", correct:false, why:"The FDA tables are a separate resource on the FDA site."}],
  teach:"ClinPGx is a comprehensive pharmacogenomics resource formed from the combination of the NIH-funded PharmGKB, CPIC and PharmCAT projects. Its stated aims are to catalog, curate, annotate, integrate, generate and disseminate pharmacogenomic knowledge, advance clinical implementation, facilitate integration with genomic medicine, and promote pharmacogenomic education.",
  quote:"There's a ton of information in it. So this is just the home page about Klin PGX",
+ note:"Slide detail only. Dr. Smith showed the ClinPGx home page but did not name the combined projects; marked lowYield.",
  cite:"PGx-Resources-and-Cases-Students-Fall-2026.pdf slide 'PharmGKB has changed to ClinPGx website' (p. 18); transcript 10/27"},
 
 {id:"L21-042", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"pgx-other", skill:"apply",
  concept:"other-guidelines-where", tags:["smith"], source:"both",
- stem:"A pharmacist wants to see the Dutch, Canadian and French guidance for a drug next to the CPIC (Clinical Pharmacogenetics Implementation Consortium) guidance. Where did Dr. Smith say these are listed together?",
+ stem:"A pharmacist wants to see other countries' pharmacogenomic guidance for a drug next to the CPIC (Clinical Pharmacogenetics Implementation Consortium) guidance. Where did Dr. Smith say these are listed together?",
  options:[
   {t:"A table on the ClinPGx website", correct:true, why:"The link on 'Other Guidelines 2' leads to a ClinPGx table that lists CPIC and the other guidance for each drug."},
   {t:"The FDA Table of Pharmacogenetic Associations", correct:false, why:"The FDA table does not list foreign guidelines."},
@@ -559,7 +561,7 @@ QUESTIONS.push(
 
 {id:"L21-044", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"pgx-other", skill:"recall",
  concept:"pgx-ehr-st-jude", tags:["smith"], source:"transcript",
- stem:"Dr. Smith described who first pushed to have patients' pharmacogenomic information put in a hospital's electronic medical records. Who was it?",
+ stem:"Dr. Smith credited one group with starting the implementation push for a hospital's pediatric oncology patients. Who was it?",
  options:[
   {t:"Pharmacists at Saint Jude's in Memphis", correct:true, why:"She said they pushed for it for their pediatric oncology patients."},
   {t:"The FDA, through its biomarker table", correct:false, why:"The FDA tables list drugs and genes; they do not place results in patient records."},
@@ -592,7 +594,7 @@ QUESTIONS.push(
   {t:"CYP2D6; the poor metabolizer genotype", correct:false, why:"Trastuzumab is an antibody against HER2; no metabolizing enzyme is tested."}],
  teach:"The gene is HER2. Dr. Smith pointed out that the label does not say which DNA variant makes the receptor appear; it describes HER2 protein overexpression or HER2 gene amplification in tumor specimens. HER2-positive means the tumor cells express the HER2 receptor on their surface, which normal cells do not.",
  quote:"So question one is, the labeling is not really telling us which gene and what variant we're dealing with. We just know these tumor cells express HER2.",
- note:"A student read \"185\" from the label; Dr. Smith said \"I think the 185 is the size of it.\" The label (12.1 Mechanism of Action) states that the HER2 (c-erbB2) proto-oncogene encodes a transmembrane receptor protein of 185 kDa, so the number is the protein's size, not a variant name.",
+ note:"Dr. Smith first said the updated label now describes \"a specific gene variant\" that makes HER2 expressed. When a student read \"185\" from the label she said \"I think the 185 is the size of it,\" and she concluded that \"the labeling is not really telling us which gene and what variant.\" The label (12.1 Mechanism of Action) gives 185 kDa as the size of the HER2 (c-erbB2) receptor protein, and 2.2 selects patients by HER2 protein overexpression or HER2 gene amplification; no named variant is printed. Keyed to her final statement, which matches the label.",
  cite:"Pharmacogenomics Questions Drug Labels Worksheet, item 1; Herceptin (trastuzumab) label, 2.2 Patient Selection and 12.1 Mechanism of Action; transcript 10/27"},
 
 {id:"L21-047", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"label-trast", skill:"recall", core:true, coreWhy:"the worksheet question Dr. Smith called weird",
@@ -640,7 +642,7 @@ QUESTIONS.push(
   {t:"Yes; the label requires one named brand-name kit", correct:false, why:"Dr. Smith said an older label named a kit; the current one does not."},
   {t:"No test is needed before treatment", correct:false, why:"Patients are selected on HER2 status before treatment."},
   {t:"A germline genotype from a blood sample", correct:false, why:"The test is done on tumor specimens."}],
- teach:"A few years ago the trastuzumab label named a brand of kit for finding HER2 on tumor cells. The current label names no brand: it asks for FDA-authorized tests specific for breast or gastric cancer, performed by laboratories with demonstrated proficiency, and points to the FDA list of companion diagnostics. Dr. Smith added that the test should be specific and sensitive.",
+ teach:"A few years ago the trastuzumab label named a brand of kit for finding HER2 on tumor cells. The current label does not direct a brand for patient selection: it asks for FDA-authorized tests specific for breast or gastric cancer, performed by laboratories with demonstrated proficiency, and points to the FDA list of companion diagnostics (brand assays appear only in section 14 as the ones used in the trials). Dr. Smith said the test should be specific and sensitive; the label's word \"specific\" refers to the cancer type.",
  quote:"Now anymore, they're not saying that, they're just saying you need to use one that you think is good, but it probably needs to be a CLA certified, it needs to be specific and sensitive.",
  note:"Dr. Smith said the label now leaves the choice to a test \"you think is good\"; the label requires an FDA-authorized test (FDA-authorized companion diagnostic) by a laboratory with demonstrated proficiency. Both agree that no brand is named. \"CLA certified\" (likely CLIA) is her addition, not label text, and she said \"You don't need to know that.\" She also said \"the answer to number 7 was\" while discussing item 6.",
  cite:"Pharmacogenomics Questions Drug Labels Worksheet, item 6; Herceptin (trastuzumab) label, Highlights (Dosage and Administration) and 2.2 Patient Selection; transcript 10/27"},
