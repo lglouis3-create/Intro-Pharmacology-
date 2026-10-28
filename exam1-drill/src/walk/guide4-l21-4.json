@@ -1,0 +1,33 @@
+{
+ "id": "guide4-l21-4",
+ "title": "Other guidelines, ClinPGx and what implementation still needs",
+ "segs": [
+  {
+   "text": "Section twenty six. Other guidelines, Clin P G x, and what implementation still needs. C P I C, the Clinical Pharmacogenetics Implementation Consortium, writes its guidelines with American authors, but it is not the only source of evidence based pharmacogenomic guidance. Three other countries publish their own English language guidelines. The Netherlands has the Dutch Pharmacogenetics Working Group, D P W G. Canada has the Canadian Pharmacogenomics Network for Drug Safety, C P N D S. France has the French National Network of Pharmacogenetics, R N P G x, where the R stands for the French word Réseau.",
+   "slide": "pgxres:16",
+   "reading": null,
+   "table": 0
+  },
+  {
+   "text": "How do they compare with C P I C? Their methods of development are similar, and their recommendations are often quite similar, because they draw on the same published science. What differs is the objective. C P I C and D P W G both focus on pharmacotherapeutic recommendations for drug and gene or phenotype combinations. C P I C is about how available test results should be used to optimize drug therapy, not whether to test, while D P W G also recommends genetic testing. C P N D S recommends genetic testing. R N P G x recommends testing and names the clinical settings or conditions in which to genotype.",
+   "slide": "pgxres:16",
+   "reading": null,
+   "table": 0
+  },
+  {
+   "text": "All four are listed side by side on the guideline annotations page of Clin P G x. For each drug, the table gives the C P I C guidance and then the Dutch, Canadian and French guidance. They are not on the F D A tables or in the drug label.",
+   "slide": "pgxres:17",
+   "reading": null
+  },
+  {
+   "text": "Clin P G x is the new name of Pharm G K B. It combines three projects: the N I H funded Pharm G K B, C P I C, and Pharm Cat. So the old name is Pharm G K B, not Pharm Cat and not D P W G. Clin P G x is designed to catalog, curate, integrate and disseminate pharmacogenomic knowledge, to advance clinical implementation, to support integration with genomic medicine, and to promote pharmacogenomic education. She described the site as very busy, with content that changes often, so finding information takes effort.",
+   "slide": "pgxres:18",
+   "reading": null
+  },
+  {
+   "text": "The challenges for enhanced pharmacogenomic implementation are five needs: educate providers, educate patients, expand genetic tests to more markers, build decision support systems, and put pharmacogenomic data into the electronic health record. She spoke to the last two, the agreed future directions. Pharmacists at Saint Jude's in Memphis were the first to push their hospital to put pharmacogenomic results into the records of pediatric oncology patients. Even in large systems, a genotype result may be missing from the record or buried in lab reports. A decision support system gives steps to follow when genetic information is available. She said, the decision support system is things like that algorithm, meaning the C P I C warfarin dosing algorithm.",
+   "slide": "pgxres:20",
+   "reading": null
+  }
+ ]
+}

@@ -2483,6 +2483,798 @@ const READINGS = [
   "date": "Introduced Thu 10/22; discussed Mon 10/26"
  },
  {
+  "id": "label-abacavir",
+  "title": "ZIAGEN (abacavir) tablets, for oral use; ZIAGEN (abacavir) oral solution — Prescribing Information",
+  "source": "FDA-approved prescribing information with Medication Guide and Warning Card, ViiV Healthcare; Revised: 11/2020; Reference ID: 4706849. Page numbers are the PDF pages, which match the printed page numbers.",
+  "file": "ZIAGEN (abacavir) prescribing information, revised 11/2020 (Canvas: pharmacogenomics resources)",
+  "lecture": "Tue 10/27 (Pharmacogenomics Resources): the label for the abacavir group in the in-class worksheet on the FDA Table of Pharmacogenomic Biomarkers in Drug Labeling. The transcript provided ends mid-sentence during the class discussion of abacavir.",
+  "kind": "guideline",
+  "about": "The ZIAGEN prescribing information (Revised: 11/2020) is for abacavir, a nucleoside analogue HIV-1 reverse transcriptase inhibitor indicated in combination with other antiretroviral agents for the treatment of HIV-1 infection (Highlights, p. 1; section 1, p. 2). Its boxed warning, WARNING: HYPERSENSITIVITY REACTIONS, states that serious and sometimes fatal hypersensitivity reactions, with multiple organ involvement, have occurred with ZIAGEN, and that patients who carry the HLA-B*5701 allele are at a higher risk of a hypersensitivity reaction to abacavir, although reactions have occurred in patients who do not carry the allele (p. 2). The label says to screen all patients for the HLA-B*5701 allele prior to initiating or reinitiating therapy, unless they have a previously documented HLA-B*5701 allele assessment, and makes ZIAGEN contraindicated in patients who have the HLA-B*5701 allele (sections 2.1 and 4, pp. 2–3). Section 5.1 reports hypersensitivity in approximately 206 (8%) of 2,670 patients in 9 clinical trials where HLA-B*5701 screening was not performed, and an incidence of suspected hypersensitivity of 1% when subjects carrying the HLA-B*5701 allele were excluded (p. 4). The label does not name a specific genotyping test; the Medication Guide says the healthcare provider can determine with a blood test if the patient has this gene variation (p. 27).",
+  "sections": [
+   "Highlights of Prescribing Information",
+   "Boxed Warning: Hypersensitivity Reactions",
+   "1 Indications and Usage",
+   "2 Dosage and Administration (2.1 Screening for HLA-B*5701 Allele prior to Starting ZIAGEN; 2.2 Adults; 2.3 Pediatric Patients; 2.4 Hepatic Impairment)",
+   "3 Dosage Forms and Strengths",
+   "4 Contraindications",
+   "5 Warnings and Precautions (5.1 Hypersensitivity Reactions; 5.2 Lactic Acidosis and Severe Hepatomegaly with Steatosis; 5.3 Immune Reconstitution Syndrome; 5.4 Myocardial Infarction)",
+   "6 Adverse Reactions (6.1 Adults, including Serious and Fatal Abacavir-Associated Hypersensitivity Reactions; 6.2 Pediatric; 6.3 Postmarketing)",
+   "7 Drug Interactions (7.1 Methadone; 7.2 Riociguat)",
+   "8 Use in Specific Populations",
+   "10 Overdosage; 11 Description",
+   "12 Clinical Pharmacology (12.1 Mechanism of Action; 12.3 Pharmacokinetics; 12.4 Microbiology)",
+   "13 Nonclinical Toxicology; 14 Clinical Studies (14.1 Adult Trials; 14.2 Pediatric Trials)",
+   "16 How Supplied/Storage and Handling; 17 Patient Counseling Information",
+   "Medication Guide; Warning Card"
+  ],
+  "lecture_use": [
+   {
+    "point": "The FDA biomarker table points to the abacavir label sections that hold pharmacogenomic information: the boxed warning, Dosage and Administration, Contraindications, and Warnings and Precautions",
+    "chapter_location": "Boxed Warning (p. 2); 2.1 (p. 2); 4 Contraindications (p. 3); 5.1 (p. 4)",
+    "lecture_evidence": "So let's look at abacavir. They have information about pharmacogenomics in the boxed warning section, in the dosage and administration section, in the contraindication section, in the warnings and precautions sections.",
+    "date": "10/27"
+   },
+   {
+    "point": "The label provided is the 2020 revision (Revised: 11/2020)",
+    "chapter_location": "Highlights (p. 1)",
+    "lecture_evidence": "The 2020 update for abacavir",
+    "date": "10/27"
+   },
+   {
+    "point": "Indication: HIV-1 infection, in combination with other antiretroviral agents",
+    "chapter_location": "1 Indications and Usage (p. 2)",
+    "lecture_evidence": "Antiretroviral, right, for HIV.",
+    "date": "10/27"
+   },
+   {
+    "point": "The patient is tested (the label speaks of patients who carry the HLA-B*5701 allele); there is no tumor involved",
+    "chapter_location": "Boxed Warning (p. 2); 5.1 (p. 4)",
+    "lecture_evidence": "Yes, you don't have, we're not dealing with tumors with these drugs for carbamazepine and abacavir.",
+    "date": "10/27"
+   },
+   {
+    "point": "HLA-B*5701 carriers are at higher risk of a hypersensitivity reaction; the label calls it a multi-organ clinical syndrome and lists multi-organ failure among the reactions",
+    "chapter_location": "Highlights boxed warning (p. 1); 5.1 Hypersensitivity Reactions (p. 4)",
+    "lecture_evidence": "What happens if a patient has this genotype present? Hypersensitivity reaction, where? Multi-organ failure.",
+    "date": "10/27"
+   },
+   {
+    "point": "Same gene as carbamazepine (HLA-B) but a different allele: HLA-B*5701 for abacavir",
+    "chapter_location": "Boxed Warning (p. 2); 4 Contraindications (p. 3)",
+    "lecture_evidence": "The HLAB gene is involved in both, but it's a different genetic variant for carbamazepine compared to abacavir, same gene.",
+    "date": "10/27"
+   }
+  ],
+  "read_for": [
+   "Boxed Warning (p. 2): HLA-B*5701 carriers are at higher risk of hypersensitivity; ZIAGEN is contraindicated in HLA-B*5701-positive patients and in patients with a prior hypersensitivity reaction; all patients should be screened before initiating or reinitiating therapy unless a previous HLA-B*5701 allele assessment is documented.",
+   "Section 2.1, Screening for HLA-B*5701 Allele prior to Starting ZIAGEN (p. 2): screen for the allele prior to initiating therapy.",
+   "Section 4, Contraindications (p. 3): patients who have the HLA-B*5701 allele; prior hypersensitivity reaction to abacavir; moderate or severe hepatic impairment.",
+   "Section 5.1, Hypersensitivity Reactions (p. 4): reactions have included multi-organ failure and anaphylaxis, typically within the first 6 weeks (median time to onset 9 days); 206 (8%) of 2,670 patients without screening versus 1% with HLA-B*5701 carriers excluded.",
+   "Section 5.1 bullets (p. 4): regardless of HLA-B*5701 status, discontinue immediately if a hypersensitivity reaction is suspected, and NEVER restart ZIAGEN or any other abacavir-containing product after a hypersensitivity reaction.",
+   "Section 6.1 (p. 6): the reactions have been characterized by 2 or more of fever, rash, gastrointestinal symptoms, constitutional symptoms and respiratory symptoms.",
+   "Medication Guide (p. 27): the risk of the allergic reaction is much higher with the gene variation HLA-B*5701, which the healthcare provider can determine with a blood test.",
+   "Section 17 and Warning Card (pp. 25, 32): a Medication Guide and Warning Card are dispensed with each new prescription and refill, and patients are told to carry the Warning Card."
+  ],
+  "beyond_lecture": [
+   "The worksheet questions on efficacy versus toxicity, which test to use, which population to test and how results change care were not answered for abacavir in the transcript provided, which ends mid-sentence during the abacavir discussion.",
+   "Section 5.2, Lactic Acidosis and Severe Hepatomegaly with Steatosis (p. 5).",
+   "Section 5.3, Immune Reconstitution Syndrome, and 5.4, Myocardial Infarction (p. 5).",
+   "Section 2 dosing: adults 600 mg daily as 300 mg twice daily or 600 mg once daily; pediatric dosing by body weight (Table 1); mild hepatic impairment 200 mg twice daily (pp. 2–3).",
+   "Section 7, Drug Interactions: methadone and riociguat (p. 11).",
+   "Section 12.4, Microbiology: conversion to carbovir triphosphate and inhibition of HIV-1 reverse transcriptase (p. 18).",
+   "Section 14, Clinical Studies: CNA30024 and other adult and pediatric trials (pp. 20–24)."
+  ],
+  "terms": [
+   {
+    "term": "HLA-B*5701 allele",
+    "chapter_definition": "Patients who carry the HLA-B*5701 allele are at a higher risk of a hypersensitivity reaction to abacavir; although, hypersensitivity reactions have occurred in patients who do not carry the HLA-B*5701 allele (Boxed Warning, p. 2)."
+   },
+   {
+    "term": "Abacavir hypersensitivity",
+    "chapter_definition": "Hypersensitivity to ZIAGEN is a multi-organ clinical syndrome (Highlights, p. 1); the reactions have included multi-organ failure and anaphylaxis (5.1, p. 4)."
+   },
+   {
+    "term": "Screening for HLA-B*5701",
+    "chapter_definition": "Screen for the HLA-B*5701 allele prior to initiating therapy with ZIAGEN (2.1, p. 2), or prior to reinitiation of therapy unless patients have a previously documented HLA-B*5701 allele assessment (Boxed Warning, p. 2)."
+   },
+   {
+    "term": "HLA-B*5701-positive patients",
+    "chapter_definition": "ZIAGEN is contraindicated in patients who have the HLA-B*5701 allele (4, p. 3)."
+   },
+   {
+    "term": "Signs of the reaction",
+    "chapter_definition": "Characterized by 2 or more of: (1) fever; (2) rash; (3) gastrointestinal symptoms; (4) constitutional symptoms; (5) respiratory symptoms (6.1, p. 6)."
+   },
+   {
+    "term": "Warning Card",
+    "chapter_definition": "A card summarizing the symptoms of the abacavir hypersensitivity reaction, dispensed by the pharmacist with each new prescription and refill; patients are told to carry it with them (17, p. 25)."
+   },
+   {
+    "term": "Carbovir triphosphate (CBV-TP)",
+    "chapter_definition": "The active metabolite of abacavir, an analogue of dGTP, which inhibits HIV-1 reverse transcriptase (12.4, p. 18)."
+   }
+  ],
+  "discussed_in_class": true,
+  "her_words": [
+   {
+    "t": "I've got a drug label for abacavir, I've got a drug label for carbamazepine, and I've got a drug label for trastuzumab.",
+    "date": "10/27"
+   },
+   {
+    "t": "So let's look at abacavir. They have information about pharmacogenomics in the boxed warning section, in the dosage and administration section, in the contraindication section, in the warnings and precautions sections.",
+    "date": "10/27"
+   },
+   {
+    "t": "What happens if a patient has this genotype present? Hypersensitivity reaction, where? Multi-organ failure.",
+    "date": "10/27"
+   },
+   {
+    "t": "They both cause a risk for a hypersensitivity reaction, but carbamazepine is located in the skin, and for abacavir, it's a whole organ hypersensitivity reaction.",
+    "date": "10/27"
+   },
+   {
+    "t": "Interestingly, we first identified this problem by seeing people with massive skin problems that were very similar to carbamazepine when we gave them abacavir.",
+    "date": "10/27"
+   },
+   {
+    "t": "The HLAB gene is involved in both, but it's a different genetic variant for carbamazepine compared to abacavir, same gene.",
+    "date": "10/27"
+   },
+   {
+    "t": "What does our HLAB do? It's an antigen presenting receptor, right?",
+    "date": "10/27"
+   }
+  ],
+  "quotes_note": "Quotes are verbatim transcript text from the 10/27 lecture recording, including filler words.",
+  "truncated": false,
+  "exam": 4,
+  "lectures": [
+   "L21"
+  ],
+  "status": "discussed",
+  "links": [
+   [
+    "guide",
+    "guide4-l21-6",
+    "Guide 28: carbamazepine and abacavir"
+   ]
+  ],
+  "drive": "https://drive.google.com/file/d/1sdpa2XF9pppf8hDWC7LLpJOCrbgHPaIZ/view",
+  "date": "Tue 10/27"
+ },
+ {
+  "id": "label-carbamazepine",
+  "title": "Tegretol (carbamazepine USP) Tablets and Suspension; Tegretol-XR (carbamazepine extended-release tablets) — Prescribing Information",
+  "source": "Novartis Pharmaceuticals Corporation prescribing information with Medication Guide; dated 7/2026 (end of prescribing information, p. 19; Medication Guide \"Revised: 7/2026\", p. 25); Reference ID: 5835028. Sections are unnumbered; page numbers are PDF pages.",
+  "file": "Tegretol/Tegretol-XR (carbamazepine) prescribing information, 7/2026 (Canvas: pharmacogenomics resources)",
+  "lecture": "Tue 10/27 (Pharmacogenomics Resources): the label for the carbamazepine group in the in-class worksheet on the FDA Table of Pharmacogenomic Biomarkers in Drug Labeling. In class the label date was read out as 2017; the file provided is dated 7/2026 (pp. 19, 25). The transcript provided ends during the abacavir discussion, after the carbamazepine gene, variants and reaction were covered.",
+  "kind": "guideline",
+  "about": "The Tegretol prescribing information describes carbamazepine, an anticonvulsant and specific analgesic for trigeminal neuralgia, indicated for partial seizures with complex symptomatology, generalized tonic-clonic seizures and mixed seizure patterns, and for the pain of true trigeminal neuralgia (Description, p. 2; Indications and Usage, pp. 3–4). Its boxed warning, headed SERIOUS DERMATOLOGIC REACTIONS AND HLA-B*1502 ALLELE, states that TEN and SJS are estimated to occur in 1 to 6 per 10,000 new users in countries with mainly Caucasian populations, that the risk in some Asian countries is about 10 times higher, and that patients with ancestry in genetically at-risk populations should be screened for HLA-B*1502 prior to initiating treatment (p. 1). The Warnings subsection SJS/TEN and HLA-B*1502 Allele gives the allele's prevalence (greater than 15% in Hong Kong, Thailand, Malaysia and parts of the Philippines; about 10% in Taiwan; 4% in North China; 2% to 4% in South Asians; less than 1% in Japan and Korea) and states that Tegretol should not be used in patients positive for HLA-B*1502 unless the benefits clearly outweigh the risks (p. 4). A second subsection, Hypersensitivity Reactions and HLA-A*3101 Allele, reports a moderate association between HLA-A*3101 and hypersensitivity reactions (SJS/TEN, maculopapular eruptions and DRESS) in patients of European, Korean and Japanese ancestry, and says risks and benefits should be weighed in patients known to be positive (p. 5). Under Precautions, Laboratory Tests, high-resolution 'HLA-B*1502 typing' is recommended for genetically at-risk patients; the test is positive if either one or two HLA-B*1502 alleles are detected (p. 10).",
+  "sections": [
+   "Boxed Warning (Serious Dermatologic Reactions and HLA-B*1502 Allele; Aplastic Anemia and Agranulocytosis)",
+   "Description",
+   "Clinical Pharmacology (Mechanism of Action; Pharmacokinetics)",
+   "Indications and Usage (Epilepsy; Trigeminal Neuralgia)",
+   "Contraindications",
+   "Warnings (Serious Dermatologic Reactions; SJS/TEN and HLA-B*1502 Allele; Hypersensitivity Reactions and HLA-A*3101 Allele; Aplastic Anemia and Agranulocytosis; DRESS/Multiorgan Hypersensitivity; Hypersensitivity; Anaphylaxis and Angioedema; Propylene Glycol Toxicity; Suicidal Behavior and Ideation; Usage in Pregnancy)",
+   "Precautions (General; Information for Patients; Laboratory Tests; Drug Interactions; Carcinogenesis, Mutagenesis, Impairment of Fertility; Pregnancy; Pediatric Use; Geriatric Use)",
+   "Adverse Reactions",
+   "Drug Abuse and Dependence; Overdosage",
+   "Dosage and Administration",
+   "How Supplied",
+   "Medication Guide"
+  ],
+  "lecture_use": [
+   {
+    "point": "Carbamazepine is an anticonvulsant",
+    "chapter_location": "Description (p. 2); Indications and Usage: Epilepsy (p. 3)",
+    "lecture_evidence": "Carbamazepine is one of our older anti-epileptic medications that we still use.",
+    "date": "10/27"
+   },
+   {
+    "point": "The label names two genes: HLA-B (HLA-B*1502) and HLA-A (HLA-A*3101)",
+    "chapter_location": "Warnings: SJS/TEN and HLA-B*1502 Allele (p. 4); Hypersensitivity Reactions and HLA-A*3101 Allele (p. 5)",
+    "lecture_evidence": "there's actually two genes now for carbamazepine that we need to look at",
+    "date": "10/27"
+   },
+   {
+    "point": "HLA-B*1502, an inherited allelic variant of the HLA-B gene",
+    "chapter_location": "Boxed Warning (p. 1); Warnings (p. 4)",
+    "lecture_evidence": "For carbamazepine, we're worried about the HLAB gene, HLAB, the genetic variant called 1502, OK?",
+    "date": "10/27"
+   },
+   {
+    "point": "HLA-A*3101, an inherited allelic variant of the HLA-A gene",
+    "chapter_location": "Warnings: Hypersensitivity Reactions and HLA-A*3101 Allele (p. 5)",
+    "lecture_evidence": "OK, so the presence of the HLAB 1502 and the HLAA, make sure I get this right, 3101.",
+    "date": "10/27"
+   },
+   {
+    "point": "The variants raise the risk of serious and sometimes fatal dermatologic reactions, including TEN and SJS",
+    "chapter_location": "Boxed Warning (p. 1); Warnings: Serious Dermatologic Reactions (p. 4)",
+    "lecture_evidence": "OK, so it increases significantly the risk of you having a very, very, very bad hypersensitivity reaction that makes your skin burn and fall off.",
+    "date": "10/27"
+   },
+   {
+    "point": "Both alleles are associated with hypersensitivity reactions that present in the skin (SJS/TEN; for HLA-A*3101 also maculopapular eruptions and DRESS)",
+    "chapter_location": "Warnings (pp. 4–5)",
+    "lecture_evidence": "Both of those greatly increase the risk of a patient having this hypersensitivity reaction manifested by skin reactions, OK.",
+    "date": "10/27"
+   },
+   {
+    "point": "The patient is tested (inherited alleles); there is no tumor involved",
+    "chapter_location": "Boxed Warning (p. 1); Warnings (p. 4)",
+    "lecture_evidence": "Yes, you don't have, we're not dealing with tumors with these drugs for carbamazepine and abacavir.",
+    "date": "10/27"
+   },
+   {
+    "point": "Same HLA-B gene as abacavir, different allele (HLA-B*1502 for carbamazepine)",
+    "chapter_location": "Boxed Warning (p. 1)",
+    "lecture_evidence": "The HLAB gene is involved in both, but it's a different genetic variant for carbamazepine compared to abacavir, same gene.",
+    "date": "10/27"
+   }
+  ],
+  "read_for": [
+   "Boxed Warning (p. 1): SJS/TEN in 1 to 6 per 10,000 new users in countries with mainly Caucasian populations, about 10 times higher in some Asian countries; HLA-B*1502 is found almost exclusively in patients with ancestry across broad areas of Asia; screen patients with ancestry in genetically at-risk populations before starting; patients testing positive should not be treated unless the benefit clearly outweighs the risk.",
+   "Warnings, SJS/TEN and HLA-B*1502 Allele (p. 4): the association was found in retrospective case-control studies in patients of Chinese ancestry; prevalence by region; HLA-B*1502 is largely absent in individuals not of Asian origin (e.g., Caucasians, African-Americans, Hispanics, and Native Americans); tested patients found negative are thought to have a low risk of SJS/TEN.",
+   "Warnings (p. 5): over 90% of patients who will experience SJS/TEN have it within the first few months of treatment; HLA-B*1502 has not been found to predict maculopapular eruption or DRESS; it may also be a risk factor with other antiepileptic drugs associated with SJS/TEN, including phenytoin.",
+   "Warnings, Hypersensitivity Reactions and HLA-A*3101 Allele (p. 5): carried by more than 15% of patients of Japanese, Native American, Southern Indian and some Arabic ancestry; up to about 10% of Han Chinese, Korean, European, Latin American and other Indian ancestry; up to about 5% of African-Americans and patients of Thai, Taiwanese and Chinese (Hong Kong) ancestry.",
+   "Warnings (p. 5): HLA genotyping as a screening tool has important limitations and must never substitute for appropriate clinical vigilance and patient management.",
+   "Precautions, Laboratory Tests (p. 10): high-resolution 'HLA-B*1502 typing' is recommended for genetically at-risk patients.",
+   "Medication Guide (p. 20): some types of skin reactions are more likely in people of Asian descent, who may need a genetic blood test before taking TEGRETOL."
+  ],
+  "beyond_lecture": [
+   "Which patients to screen (ancestry and prevalence figures) and the named test: the transcript provided ends before the class answers to these worksheet questions for carbamazepine; the label covers them on pp. 1, 4–5 and 10.",
+   "Boxed Warning and Warnings: aplastic anemia and agranulocytosis, with complete pretreatment hematological testing as a baseline (pp. 1–2, 5).",
+   "Warnings: fixed drug eruption and generalized bullous fixed drug eruption (p. 4); anaphylaxis and angioedema, propylene glycol toxicity, suicidal behavior and ideation (p. 6).",
+   "Clinical Pharmacology, Pharmacokinetics: CYP3A4 forms carbamazepine-10,11-epoxide; autoinduction is completed after 3 to 5 weeks; usual adult therapeutic levels are between 4 and 12 mcg/mL (p. 3).",
+   "Precautions, Drug Interactions: agents that increase or decrease carbamazepine levels and decreased levels of concomitant medications (pp. 10–11).",
+   "Dosage and Administration (p. 16) and Overdosage (p. 14)."
+  ],
+  "terms": [
+   {
+    "term": "HLA-B*1502",
+    "chapter_definition": "An inherited allelic variant of the HLA-B gene; found almost exclusively in patients with ancestry across broad areas of Asia (Boxed Warning, p. 1)."
+   },
+   {
+    "term": "HLA-A*3101",
+    "chapter_definition": "An inherited allelic variant of the HLA-A gene, moderately associated with hypersensitivity reactions in patients using carbamazepine (Warnings, p. 5)."
+   },
+   {
+    "term": "SJS/TEN",
+    "chapter_definition": "Serious and sometimes fatal dermatologic reactions, including toxic epidermal necrolysis (TEN) and Stevens-Johnson syndrome (SJS) (Warnings, p. 4)."
+   },
+   {
+    "term": "High-resolution 'HLA-B*1502 typing'",
+    "chapter_definition": "Recommended for genetically at-risk patients; the test is positive if either one or two HLA-B*1502 alleles are detected and negative if no HLA-B*1502 alleles are detected (Laboratory Tests, p. 10)."
+   },
+   {
+    "term": "DRESS (multiorgan hypersensitivity)",
+    "chapter_definition": "Drug Reaction with Eosinophilia and Systemic Symptoms, which typically presents with fever, rash, lymphadenopathy, and/or facial swelling, in association with other organ system involvement (Warnings, p. 5)."
+   },
+   {
+    "term": "Fixed drug eruption (FDE)",
+    "chapter_definition": "Single or multiple, circumscribed patches that occur in the same location with each exposure to an offending drug (Warnings, p. 4)."
+   },
+   {
+    "term": "Carbamazepine-10,11-epoxide",
+    "chapter_definition": "The principal metabolite of Tegretol, which has anticonvulsant activity; CYP3A4 is the major isoform responsible for its formation (pp. 2–3)."
+   },
+   {
+    "term": "Autoinduction",
+    "chapter_definition": "Tegretol induces its own metabolism, so the half-life is variable; autoinduction is completed after 3 to 5 weeks of a fixed dosing regimen (p. 3)."
+   }
+  ],
+  "discussed_in_class": true,
+  "her_words": [
+   {
+    "t": "Carbamazepine is one of our older anti-epileptic medications that we still use.",
+    "date": "10/27"
+   },
+   {
+    "t": "New carbamazepine, 2nd, maybe even 3rd generations have come along, and some of those newer generation drugs in the same category as carbamazepine have the same issue.",
+    "date": "10/27"
+   },
+   {
+    "t": "For carbamazepine, we're worried about the HLAB gene, HLAB, the genetic variant called 1502, OK?",
+    "date": "10/27"
+   },
+   {
+    "t": "OK, so the presence of the HLAB 1502 and the HLAA, make sure I get this right, 3101.",
+    "date": "10/27"
+   },
+   {
+    "t": "Both of those greatly increase the risk of a patient having this hypersensitivity reaction manifested by skin reactions, OK.",
+    "date": "10/27"
+   },
+   {
+    "t": "These can be fatal.",
+    "date": "10/27"
+   },
+   {
+    "t": "They both cause a risk for a hypersensitivity reaction, but carbamazepine is located in the skin, and for abacavir, it's a whole organ hypersensitivity reaction.",
+    "date": "10/27"
+   }
+  ],
+  "quotes_note": "Quotes are verbatim transcript text from the 10/27 lecture recording, including filler words.",
+  "truncated": false,
+  "exam": 4,
+  "lectures": [
+   "L21"
+  ],
+  "status": "discussed",
+  "links": [
+   [
+    "guide",
+    "guide4-l21-6",
+    "Guide 28: carbamazepine and abacavir"
+   ]
+  ],
+  "drive": "https://drive.google.com/file/d/1F38CLjvV8oTnXIQAuMwd28eMflUGd-_F/view",
+  "date": "Tue 10/27"
+ },
+ {
+  "id": "label-trastuzumab",
+  "title": "HERCEPTIN (trastuzumab) for injection, for intravenous use — Prescribing Information",
+  "source": "FDA-approved prescribing information, Genentech, Inc.; Revised: 05/2026; Reference ID: 5800095. Page numbers are PDF pages.",
+  "file": "HERCEPTIN (trastuzumab) prescribing information, revised 05/2026 (Canvas: pharmacogenomics resources)",
+  "lecture": "Tue 10/27 (Pharmacogenomics Resources): the label for the trastuzumab group in the in-class worksheet on the FDA Table of Pharmacogenomic Biomarkers in Drug Labeling; the class answers were discussed question by question.",
+  "kind": "guideline",
+  "about": "The HERCEPTIN prescribing information (Revised: 05/2026) describes trastuzumab, a HER2/neu receptor antagonist indicated in adults for HER2-overexpressing breast cancer (adjuvant and metastatic) and for HER2-overexpressing metastatic gastric or gastroesophageal junction adenocarcinoma (Highlights, p. 1; sections 1.1–1.3, p. 2). Each indication says to select patients for therapy based on an FDA-authorized companion diagnostic for Herceptin, and section 2.2 says to select patients based on HER2 protein overexpression or HER2 gene amplification in tumor specimens, using FDA-authorized tests specific for breast or gastric cancers by laboratories with demonstrated proficiency (pp. 2–3). Section 12.1 states that the HER2 (or c-erbB2) proto-oncogene encodes a transmembrane receptor protein of 185 kDa, structurally related to the epidermal growth factor receptor, and that Herceptin inhibits the proliferation of human tumor cells that overexpress HER2 (p. 23). The boxed warning covers cardiomyopathy, infusion reactions, embryo-fetal toxicity and pulmonary toxicity (p. 2). The clinical studies required HER2 overexpression (3+ by IHC) or gene amplification (by FISH), and the label reports that in H0648g the beneficial treatment effects were largely limited to patients with the highest level of HER2 protein overexpression (3+) (pp. 26, 33).",
+  "sections": [
+   "Highlights of Prescribing Information",
+   "Boxed Warning: Cardiomyopathy, Infusion Reactions, Embryo-Fetal Toxicity, and Pulmonary Toxicity",
+   "1 Indications and Usage (1.1 Adjuvant Breast Cancer; 1.2 Metastatic Breast Cancer; 1.3 Metastatic Gastric Cancer)",
+   "2 Dosage and Administration (2.1 Evaluation and Testing Before Initiating Herceptin; 2.2 Patient Selection; 2.3 Recommended Dosage; 2.4 Important Dosing Considerations; 2.5 Dosage Modifications for Adverse Reactions; 2.6 Preparation Instructions)",
+   "3 Dosage Forms and Strengths; 4 Contraindications (None)",
+   "5 Warnings and Precautions (5.1 Cardiomyopathy; 5.2 Infusion Reactions; 5.3 Embryo-Fetal Toxicity; 5.4 Pulmonary Toxicity; 5.5 Exacerbation of Chemotherapy-Induced Neutropenia)",
+   "6 Adverse Reactions; 7 Drug Interactions; 8 Use in Specific Populations",
+   "11 Description",
+   "12 Clinical Pharmacology (12.1 Mechanism of Action; 12.2 Pharmacodynamics; 12.3 Pharmacokinetics; 12.6 Immunogenicity)",
+   "13 Nonclinical Toxicology",
+   "14 Clinical Studies (14.1 Adjuvant Breast Cancer: NSABP B31, NCCTG N9831, HERA, BCIRG006; 14.2 Metastatic Breast Cancer: H0648g, H0649g; 14.3 Metastatic Gastric Cancer: ToGA)",
+   "16 How Supplied/Storage and Handling; 17 Patient Counseling Information"
+  ],
+  "lecture_use": [
+   {
+    "point": "Herceptin (trastuzumab) is indicated for HER2-overexpressing breast cancer",
+    "chapter_location": "Highlights (p. 1); 1.1 and 1.2 (p. 2)",
+    "lecture_evidence": "OK, trastuzumab, the brand name is Herceptin, right?",
+    "date": "10/27"
+   },
+   {
+    "point": "Trastuzumab binds HER2; the label describes it as a humanized IgG1 kappa monoclonal antibody that selectively binds the extracellular domain of HER2 and inhibits proliferation of tumor cells that overexpress HER2",
+    "chapter_location": "11 Description and 12.1 Mechanism of Action (p. 23)",
+    "lecture_evidence": "Brand name trastuzumab, the generic name, that drug is made to bind to the HER2 receptor, OK, stopping the signaling of the growth factor, so we prevent the cells being told to divide out of control.",
+    "date": "10/27"
+   },
+   {
+    "point": "The HER2 (or c-erbB2) proto-oncogene encodes a transmembrane receptor protein of 185 kDa",
+    "chapter_location": "12.1 Mechanism of Action (p. 23)",
+    "lecture_evidence": "It includes the 185, and I think the 185 is the size of it like the size.",
+    "date": "10/27"
+   },
+   {
+    "point": "Testing is done on tumor specimens (HER2 protein overexpression or HER2 gene amplification), not on the patient's germline",
+    "chapter_location": "2.2 Patient Selection (p. 3)",
+    "lecture_evidence": "So they actually don't genotype people, they're phenotyping the tumor.",
+    "date": "10/27"
+   },
+   {
+    "point": "Testing selects patients for therapy (efficacy): the drug acts on cells that overexpress HER2",
+    "chapter_location": "1.1–1.3 (p. 2); 2.2 (p. 3); 12.1 (p. 23)",
+    "lecture_evidence": "We want to be sure these patients have the drug's target, which is HER2, before we give them an expensive drug that can cause side effects.",
+    "date": "10/27"
+   },
+   {
+    "point": "HER2 status by immunohistochemistry (IHC 3+) or FISH gene amplification in the trials",
+    "chapter_location": "14.1 (p. 26); 14.2 (pp. 32–33)",
+    "lecture_evidence": "Usually we do immunohistochemistry to look for the presence of those receptors on those tumor cells.",
+    "date": "10/27"
+   },
+   {
+    "point": "The label does not name a brand of test: it calls for FDA-authorized tests by laboratories with demonstrated proficiency, listed at fda.gov/CompanionDiagnostics",
+    "chapter_location": "2.2 Patient Selection (p. 3)",
+    "lecture_evidence": "The trastuzumab label a few years ago used to name a certain brand of a kit to use for looking for the HER2 receptor on the presence of the tumor cells.",
+    "date": "10/27"
+   },
+   {
+    "point": "Tumor types: breast cancer and metastatic gastric or gastroesophageal junction adenocarcinoma",
+    "chapter_location": "1.1–1.3 (p. 2)",
+    "lecture_evidence": "Breast. And metastatic gastrointestinal tumors.",
+    "date": "10/27"
+   },
+   {
+    "point": "Gastroesophageal junction tumors are included in the gastric indication",
+    "chapter_location": "1.3 Metastatic Gastric Cancer (p. 2)",
+    "lecture_evidence": "Some esophageal tumors as well.",
+    "date": "10/27"
+   },
+   {
+    "point": "Results decide use: patients are selected for therapy based on HER2 overexpression or amplification",
+    "chapter_location": "Highlights (p. 1); 2.2 (p. 3)",
+    "lecture_evidence": "If they are HER2 positive, they're likely candidates for using trastuzumab. If they're HER2 negative, you're not going to use trastuzumab in that patient.",
+    "date": "10/27"
+   }
+  ],
+  "read_for": [
+   "Highlights and sections 1.1–1.3 (pp. 1–2): the three indications, each with \"Select patients for therapy based on an FDA-authorized companion diagnostic for Herceptin.\"",
+   "Section 2.2, Patient Selection (p. 3): HER2 protein overexpression or HER2 gene amplification in tumor specimens; FDA-authorized tests specific for breast or gastric cancers; laboratories with demonstrated proficiency; http://www.fda.gov/CompanionDiagnostics.",
+   "Section 2.2 (p. 3): gastric cancers need tests specifically for gastric cancers because of incomplete membrane staining and more frequent heterogeneous expression of HER2; improper assay performance can lead to unreliable results.",
+   "Sections 11 and 12.1 (p. 23): humanized IgG1 kappa monoclonal antibody against the extracellular domain of HER2; the HER2 (c-erbB2) proto-oncogene encodes a 185 kDa transmembrane receptor; ADCC preferentially exerted on HER2-overexpressing cancer cells.",
+   "Section 14.1 (pp. 26–27): NSABP B31, NCCTG N9831 and HERA required HER2 overexpression (3+ by IHC) or gene amplification (by FISH); BCIRG006 required FISH+ only.",
+   "Section 14.1, Table 10 (p. 32): DFS by HER2 assay result; footnote: IHC by HercepTest, FISH by PathVysion (HER2/CEP17 ratio ≥ 2.0) at a central laboratory.",
+   "Section 14.2 (pp. 32–34): IHC scored 0, 1+, 2+ or 3+; only 2+ or 3+ tumors eligible in H0648g; benefit largely limited to 3+ (Table 12); ORR 18% for CTA 3+ versus 6% for CTA 2+ in H0649g.",
+   "Section 14.3 and Table 14 (pp. 34–37): ToGA required FISH+ or IHC 3+; exploratory overall survival by HER2 status."
+  ],
+  "beyond_lecture": [
+   "Boxed Warning and 5.1 Cardiomyopathy: evaluate left ventricular function before and during treatment; risk highest with anthracycline-containing regimens (pp. 2, 5).",
+   "Sections 5.2–5.5: infusion reactions, embryo-fetal toxicity (oligohydramnios), pulmonary toxicity, exacerbation of chemotherapy-induced neutropenia (pp. 7–8).",
+   "Section 2.3, Recommended Dosage: initial 4 mg/kg then 2 mg/kg weekly, or initial 8 mg/kg then 6 mg/kg every three weeks, by indication (pp. 3–4).",
+   "Section 2.4 missed doses and 2.5 dosage modifications for adverse reactions (p. 4).",
+   "Section 6, Adverse Reactions, including the ToGA safety data (pp. 8–21).",
+   "Section 8, Use in Specific Populations: pregnancy, lactation, females and males of reproductive potential (pp. 21–23)."
+  ],
+  "terms": [
+   {
+    "term": "HER2 (c-erbB2) proto-oncogene",
+    "chapter_definition": "Encodes a transmembrane receptor protein of 185 kDa, which is structurally related to the epidermal growth factor receptor (12.1, p. 23)."
+   },
+   {
+    "term": "Trastuzumab",
+    "chapter_definition": "A humanized IgG1 kappa monoclonal antibody that selectively binds with high affinity to the extracellular domain of the human epidermal growth factor receptor 2 protein, HER2 (11, p. 23)."
+   },
+   {
+    "term": "HER2/neu receptor antagonist",
+    "chapter_definition": "The class the Highlights give for Herceptin (Highlights, p. 1)."
+   },
+   {
+    "term": "FDA-authorized companion diagnostic",
+    "chapter_definition": "The basis for selecting patients for Herceptin therapy; information on FDA-authorized tests for HER2 protein overexpression and HER2 gene amplification is at http://www.fda.gov/CompanionDiagnostics (1, 2.2, pp. 2–3)."
+   },
+   {
+    "term": "HER2 protein overexpression (IHC)",
+    "chapter_definition": "Tumor specimens tested by IHC (Clinical Trial Assay, CTA) were scored as 0, 1+, 2+, or 3+, with 3+ indicating the strongest positivity (14.2, p. 32)."
+   },
+   {
+    "term": "HER2 gene amplification (FISH)",
+    "chapter_definition": "FISH by PathVysion (HER2/CEP17 ratio ≥ 2.0) as performed at a central laboratory (Table 10 footnote, p. 32)."
+   },
+   {
+    "term": "Antibody-dependent cellular cytotoxicity (ADCC)",
+    "chapter_definition": "Herceptin is a mediator of ADCC, which in vitro is preferentially exerted on HER2-overexpressing cancer cells (12.1, p. 23)."
+   },
+   {
+    "term": "Cardiomyopathy",
+    "chapter_definition": "Herceptin administration can result in sub-clinical and clinical cardiac failure; incidence and severity were highest with anthracycline-containing chemotherapy regimens (Boxed Warning, p. 2)."
+   }
+  ],
+  "discussed_in_class": true,
+  "her_words": [
+   {
+    "t": "OK, trastuzumab, the brand name is Herceptin, right?",
+    "date": "10/27"
+   },
+   {
+    "t": "HER2 positive means the breast cancer has a receptor called HER2 that's expressed on the surface of those tumor cells.",
+    "date": "10/27"
+   },
+   {
+    "t": "That's the first time that I've seen them actually put the information in there about what makes that receptor get expressed.",
+    "date": "10/27"
+   },
+   {
+    "t": "So they actually don't genotype people, they're phenotyping the tumor.",
+    "date": "10/27"
+   },
+   {
+    "t": "So for, um, question number 3, we're not genotyping the patient, we're actually phenotyping the tumor.",
+    "date": "10/27"
+   },
+   {
+    "t": "We want to be sure these patients have the drug's target, which is HER2, before we give them an expensive drug that can cause side effects.",
+    "date": "10/27"
+   },
+   {
+    "t": "Usually we do immunohistochemistry to look for the presence of those receptors on those tumor cells.",
+    "date": "10/27"
+   },
+   {
+    "t": "The trastuzumab label a few years ago used to name a certain brand of a kit to use for looking for the HER2 receptor on the presence of the tumor cells.",
+    "date": "10/27"
+   },
+   {
+    "t": "If they are HER2 positive, they're likely candidates for using trastuzumab. If they're HER2 negative, you're not going to use trastuzumab in that patient.",
+    "date": "10/27"
+   }
+  ],
+  "quotes_note": "Quotes are verbatim transcript text from the 10/27 lecture recording, including filler words.",
+  "truncated": false,
+  "exam": 4,
+  "lectures": [
+   "L21"
+  ],
+  "status": "discussed",
+  "links": [
+   [
+    "guide",
+    "guide4-l21-5",
+    "Guide 27: trastuzumab and HER2"
+   ]
+  ],
+  "drive": "https://drive.google.com/file/d/1b67c0c856hh9cIQN-pIzoTzC4b-ylbqn/view",
+  "date": "Tue 10/27"
+ },
+ {
+  "id": "cpic-warfarin-2017",
+  "title": "Clinical Pharmacogenetics Implementation Consortium (CPIC) Guideline for Pharmacogenetics-Guided Warfarin Dosing: 2017 Update",
+  "source": "JA Johnson, KE Caudle, L Gong, M Whirl-Carrillo, CM Stein, SA Scott, MT Lee, BF Gage, SE Kimmel, MA Perera, JL Anderson, M Pirmohamed, TE Klein, NA Limdi, LH Cavallari and M Wadelius. Clinical Pharmacology & Therapeutics 2017;102(3):397–404 (September 2017), CPIC Update; doi:10.1002/cpt.668. Page numbers are journal pages (PDF p. 1 = p. 397).",
+  "file": "CPIC warfarin guideline, 2017 update (Canvas: pharmacogenomics resources)",
+  "lecture": "Tue 10/27 (Pharmacogenomics Resources): walked through in class as the example CPIC guideline. She said warfarin's guideline had just been updated, but the newest version did not open from Canvas, so the class read this 2017 update.",
+  "kind": "guideline",
+  "about": "This CPIC update to the 2011 guideline for CYP2C9 and VKORC1 genotypes and warfarin dosing presents evidence for CYP2C9, VKORC1, CYP4F2 and rs12777823 genotype-guided warfarin dosing to achieve a target INR of 2–3 when clinical genotype results are available, and adds recommendations for adult and pediatric patients specific to continental ancestry (p. 397). It states that common variants in CYP2C9, VKORC1, CYP4F2 and the CYP2C cluster, plus known nongenetic factors, account for 50% of warfarin dose variability, and that stable doses to achieve an INR of 2–3 range from 1–20 mg/day (pp. 397–398). Figure 1 shows that S-warfarin, 3–5 times more potent than R-warfarin, is metabolized predominantly via CYP2C9; that warfarin inhibits its molecular target VKORC1, limiting reduced vitamin K; and that CYP4F2 removes vitamin K from the vitamin K cycle (p. 398). For non-African ancestry it recommends calculating the dose with a published pharmacogenetic algorithm using VKORC1-1639G>A and CYP2C9*2 and *3 (STRONG), decreasing the calculated dose by 15–30% per CYP2C9*5, *6, *8 or *11 allele (OPTIONAL) and increasing it by 5–10% if CYP4F2*3 is detected (OPTIONAL); for African ancestry it says to dose clinically if CYP2C9*5, *6, *8 and *11 are not available, and otherwise to calculate, reduce by 15–30% for those alleles, and reduce by 10–25% in African Americans with rs12777823 A/G or A/A (MODERATE) (p. 402). It also covers pediatric patients of European ancestry, potential benefits and risks, and caveats, including that pharmacogenetic-guided dosing does not alter the requirements for regular INR monitoring (pp. 402–403).",
+  "sections": [
+   "Summary (unheaded)",
+   "Focused Literature Review",
+   "Drug: Warfarin (Warfarin pharmacology and pharmacokinetics; Figure 1)",
+   "Genes: CYP2C9, VKORC1, and CYP4F2 (CYP2C9 and warfarin; VKORC1 and warfarin; CYP4F2 and warfarin; CYP2C rs12777823 and warfarin)",
+   "Genetic test interpretation (CYP2C9; VKORC1; CYP4F2; CYP2C rs12777823)",
+   "Genetic test options; Incidental findings",
+   "Linking genetic variability to variability in drug-related phenotypes (EU-PACT, COAG, GIFT)",
+   "Therapeutic Recommendations: Adults (pharmacogenetic algorithm-based dosing; Figure 2; Text Box 1; loading dose; non-African ancestry recommendation; African ancestry recommendation)",
+   "Recommendations for pediatric patients (Figure 3)",
+   "Other considerations",
+   "Potential Benefits and Risks for the Patient",
+   "Caveats: Appropriate Use and/or Potential Misuse of Genetic Tests",
+   "Disclaimer; References"
+  ],
+  "lecture_use": [
+   {
+    "point": "This document is the 2017 update (an update to the 2011 CPIC guideline)",
+    "chapter_location": "Title and summary (p. 397)",
+    "lecture_evidence": "OK, so this is the 2017 update for warfarin.",
+    "date": "10/27"
+   },
+   {
+    "point": "Each CPIC guideline opens with a summary",
+    "chapter_location": "Summary (p. 397)",
+    "lecture_evidence": "They always have a summary in the top here.",
+    "date": "10/27"
+   },
+   {
+    "point": "Figure 1: warfarin mechanism of action and metabolism",
+    "chapter_location": "Drug: Warfarin; Figure 1 (p. 398)",
+    "lecture_evidence": "The mechanism of action of warfarin and its metabolism. It's providing you a figure for that.",
+    "date": "10/27"
+   },
+   {
+    "point": "CYP2C9 is the primary metabolizing enzyme of S-warfarin; CYP2C9*2 and *3 are the two most common decreased function alleles in European ancestry",
+    "chapter_location": "CYP2C9 and warfarin (p. 398)",
+    "lecture_evidence": "It'll tell you, um, just at least background information about, you know, 2C9, the variants we're concerned about for warfarin with 2C9.",
+    "date": "10/27"
+   },
+   {
+    "point": "VKORC1 encodes vitamin K epoxide reductase, the target enzyme of warfarin",
+    "chapter_location": "VKORC1 and warfarin (p. 399)",
+    "lecture_evidence": "That's warfarin's drug target.",
+    "date": "10/27"
+   },
+   {
+    "point": "CYP4F2 metabolizes vitamin K to hydroxy-vitamin K1 and removes vitamin K from the vitamin K cycle",
+    "chapter_location": "CYP4F2 and warfarin (p. 399); Figure 1 (p. 398)",
+    "lecture_evidence": "4F2 is responsible for metabolizing and getting rid of vitamin K.",
+    "date": "10/27"
+   },
+   {
+    "point": "CYP4F2*3 carriers need higher doses (8–11% in the meta-analyses); if CYP4F2*3 is detected, increase the dose by 5–10% (OPTIONAL)",
+    "chapter_location": "CYP4F2 and warfarin (p. 399); Non-African ancestry recommendation (p. 402)",
+    "lecture_evidence": "You need to increase their warfarin dose.",
+    "date": "10/27"
+   },
+   {
+    "point": "rs12777823, a SNP in the CYP2C cluster near CYP2C18; most clinical laboratories do not currently include it in their warfarin panels",
+    "chapter_location": "CYP2C rs12777823 and warfarin; Genetic test interpretation (p. 399)",
+    "lecture_evidence": "They're not really using it yet, they say, but they're giving you information about it.",
+    "date": "10/27"
+   },
+   {
+    "point": "Genetic test interpretation section",
+    "chapter_location": "Genetic test interpretation (p. 399)",
+    "lecture_evidence": "and then here's the next section here talking about genetic test interpretation.",
+    "date": "10/27"
+   },
+   {
+    "point": "Therapeutic recommendations section",
+    "chapter_location": "Therapeutic Recommendations: Adults (pp. 400–402)",
+    "lecture_evidence": "But the next big section is the therapeutic recommendations based on your patient's genotype, OK?",
+    "date": "10/27"
+   },
+   {
+    "point": "The guideline refers to Supplemental Material and Supplemental Tables throughout",
+    "chapter_location": "Throughout, e.g., Focused Literature Review (p. 397); Genes (p. 398)",
+    "lecture_evidence": "you could see here that they are referencing supplemental material throughout their document",
+    "date": "10/27"
+   },
+   {
+    "point": "Figure 2: genotype-based dosing recommendations for adults (the algorithm)",
+    "chapter_location": "Figure 2 (p. 401)",
+    "lecture_evidence": "they often will summarize their recommendations by providing things like an algorithm like this one for warfarin dosing.",
+    "date": "10/27"
+   },
+   {
+    "point": "Without genotype, dose clinically (without genetic information)",
+    "chapter_location": "Figure 2, footnote a (p. 401)",
+    "lecture_evidence": "Dose your patient empirically.",
+    "date": "10/27"
+   },
+   {
+    "point": "The recommendations branch on self-identified ancestry (non-African versus African)",
+    "chapter_location": "Non-African and African ancestry recommendations (p. 402); Figure 2 (p. 401)",
+    "lecture_evidence": "If you have genotype, then you will do the best for your patient if you get them to uh self-identify their ancestry.",
+    "date": "10/27"
+   },
+   {
+    "point": "Non-African ancestry: calculate the dose with a published pharmacogenetic algorithm; graded STRONG",
+    "chapter_location": "Non-African ancestry recommendation (p. 402)",
+    "lecture_evidence": "You've got a strong recommendation here for calculating their dose.",
+    "date": "10/27"
+   },
+   {
+    "point": "CYP2C9*5, *6, *8 or *11: decrease the calculated dose by 15–30%",
+    "chapter_location": "Non-African and African ancestry recommendations (p. 402)",
+    "lecture_evidence": "If somebody has these genotypes, you need to decrease that calculated dose by 15 to 30%.",
+    "date": "10/27"
+   },
+   {
+    "point": "CYP2C9*5, *6, *8 and *11 are found with the highest frequency among those of African ancestry; 45–50% of individuals with self-reported African ancestry carry CYP2C9*5, *6, *8, *11, or rs12777823",
+    "chapter_location": "CYP2C9 and warfarin (pp. 398–399); Figure 2, footnote c (p. 401)",
+    "lecture_evidence": "OK, so those particular variants that we haven't touched on much, they affect the activity of 2C9, and they are of quite high frequency in people of African descent.",
+    "date": "10/27"
+   },
+   {
+    "point": "No recommendation is made for use of CYP4F2 genotype data in patients of African ancestry",
+    "chapter_location": "African ancestry recommendation (p. 402)",
+    "lecture_evidence": "they don't have the, the, um, the 4F2 for African Americans listed",
+    "date": "10/27"
+   },
+   {
+    "point": "Other patient characteristics used in the algorithms (Text Box 1: age, sex, race, weight, height, smoking status, warfarin indication, target INR, interacting drugs)",
+    "chapter_location": "Text Box 1 (p. 401); Other considerations (p. 403)",
+    "lecture_evidence": "if you were to read this guidance document, you would also know that they talk about there are other patient factors that we use as well.",
+    "date": "10/27"
+   }
+  ],
+  "read_for": [
+   "Summary (p. 397): the update covers CYP2C9, VKORC1, CYP4F2 and rs12777823 genotype-guided dosing to a target INR of 2–3, with ancestry-specific adult and pediatric recommendations.",
+   "Figure 1 (p. 398): warfarin mechanism and metabolism, with CYP2C9, VKORC1 and CYP4F2.",
+   "CYP2C9 and warfarin (p. 398): CYP2C9*2 and *3 impair S-warfarin metabolism by 30–40% and 80–90%; carriers have greater bleeding risk, need lower doses and take more time to reach a stable INR.",
+   "VKORC1 and warfarin (p. 399): c.-1639G>A (rs9923231), an upstream variant on a haplotype that affects VKORC1 protein expression; one or two -1639A alleles require progressively lower doses.",
+   "CYP4F2 and warfarin and CYP2C rs12777823 and warfarin (p. 399): CYP4F2*3 carriers need 8–11% higher doses; rs12777823 heterozygotes or homozygotes (A allele) among African Americans need 7 or 9 mg/week less.",
+   "Genetic test interpretation (p. 399): most FDA-approved CYP2C9 tests include only *2 and *3, which is not as informative for African ancestry populations.",
+   "Figure 2 and footnotes (p. 401): the adult dosing algorithm; consider an alternative agent with CYP2C9 poor metabolism genotypes, or with both increased sensitivity (VKORC1 A/G or A/A) and CYP2C9 poor metabolism.",
+   "Non-African and African ancestry recommendations (p. 402): STRONG, MODERATE and OPTIONAL steps, including the 15–30%, 20–40%, 5–10% and 10–25% adjustments.",
+   "Text Box 1 (p. 401): the clinical and genetic variables used in the Gage or IWPC algorithms."
+  ],
+  "beyond_lecture": [
+   "Linking genetic variability to variability in drug-related phenotypes (p. 400): EU-PACT, COAG and GIFT trial results, and the recommendation against pharmacogenetic dosing in blacks when only CYP2C9*2 and *3 results are available.",
+   "Pharmacogenetics-informed loading dose (p. 402): the EU-PACT loading dose algorithm, graded OPTIONAL.",
+   "Recommendations for pediatric patients and Figure 3 (pp. 402–403).",
+   "Incidental findings (p. 400): homozygosity for rare VKORC1 coding mutations causes VKCFD2, a rare bleeding disorder.",
+   "Potential Benefits and Risks for the Patient (p. 403): false security and inadequate INR monitoring, risk with *2/*3-only panels in African ancestry, cost and insurance coverage.",
+   "Caveats (p. 403): little benefit from testing in patients already on long-term stable doses; the greatest potential benefit is early in therapy."
+  ],
+  "terms": [
+   {
+    "term": "CYP2C9",
+    "chapter_definition": "A hepatic drug-metabolizing enzyme in the cytochrome P450 superfamily and the primary metabolizing enzyme of S-warfarin; it has over 60 known variant alleles (p. 398)."
+   },
+   {
+    "term": "CYP2C9*2 and *3",
+    "chapter_definition": "The two most common decreased function alleles among individuals of European ancestry: *2 (c.430C>T; p.Arg144Cys; rs1799853) and *3 (c.1075A>C; p.Ile359Leu; rs1057910) (p. 398)."
+   },
+   {
+    "term": "CYP2C9*5, *6, *8 and *11",
+    "chapter_definition": "Alleles associated with decreased CYP2C9 function, found with the highest frequency among those of African ancestry and collectively more common than *2 and *3 in that population (pp. 398–399)."
+   },
+   {
+    "term": "VKORC1",
+    "chapter_definition": "Encodes the vitamin K epoxide reductase protein, the target enzyme of warfarin; it catalyzes the conversion of vitamin K-epoxide to vitamin K, the rate-limiting step in vitamin K recycling (p. 399)."
+   },
+   {
+    "term": "VKORC1 c.-1639G>A (rs9923231)",
+    "chapter_definition": "A common variant upstream of VKORC1 significantly associated with warfarin sensitivity; patients with one or two -1639A require progressively lower doses than -1639G/G homozygotes (p. 399)."
+   },
+   {
+    "term": "CYP4F2*3 (c.1297G>A; p.Val433Met; rs2108622)",
+    "chapter_definition": "A nonsynonymous CYP4F2 variant; meta-analyses suggest 8–11% higher warfarin doses in A allele carriers (p. 399)."
+   },
+   {
+    "term": "rs12777823",
+    "chapter_definition": "A SNP in the CYP2C cluster near the CYP2C18 gene on chromosome 10, associated with warfarin dose through alterations in warfarin clearance, independent of CYP2C9*2 and *3; an association has only been detected among African Americans (p. 399)."
+   },
+   {
+    "term": "Pharmacogenetic dosing algorithm (Gage, IWPC)",
+    "chapter_definition": "Algorithms that compute the anticipated stable daily warfarin dose to one decimal from genetic and clinical information; the two were created using more than 5,000 subjects (pp. 400–401)."
+   },
+   {
+    "term": "Strength of recommendation",
+    "chapter_definition": "A three-tiered rating system in which ratings of strong, moderate, and optional are applied based on the evidence reviewed (p. 400)."
+   },
+   {
+    "term": "Dose clinically",
+    "chapter_definition": "To dose without genetic information, which may include use of a clinical dosing algorithm or standard dose approach (Figure 2, footnote a, p. 401)."
+   }
+  ],
+  "discussed_in_class": true,
+  "her_words": [
+   {
+    "t": "So, warfarin has been updated from 2017, and then for the thiopurines, that was just updated as well, and we're gonna look at both of those in a little bit today.",
+    "date": "10/27"
+   },
+   {
+    "t": "Instead of wasting time, let's look at the CPIC 2017 guideline, OK?",
+    "date": "10/27"
+   },
+   {
+    "t": "OK, so this is the 2017 update for warfarin.",
+    "date": "10/27"
+   },
+   {
+    "t": "So, basically, there's another SNP that they are genotyping people for.",
+    "date": "10/27"
+   },
+   {
+    "t": "OK, so those particular variants that we haven't touched on much, they affect the activity of 2C9, and they are of quite high frequency in people of African descent.",
+    "date": "10/27"
+   },
+   {
+    "t": "4F2 is responsible for metabolizing and getting rid of vitamin K.",
+    "date": "10/27"
+   },
+   {
+    "t": "You need to increase their warfarin dose.",
+    "date": "10/27"
+   },
+   {
+    "t": "It decreases the activity of that enzyme, increasing vitamin K, which means you need to have more drug to help your patient be anticoagulated properly.",
+    "date": "10/27"
+   },
+   {
+    "t": "They all follow the same template in the information they give you.",
+    "date": "10/27"
+   },
+   {
+    "t": "You need to be able to look at information I give you about a patient.",
+    "date": "10/27"
+   },
+   {
+    "t": "This is the detail you have to study for your exam.",
+    "date": "10/27"
+   }
+  ],
+  "quotes_note": "Quotes are verbatim transcript text from the 10/27 lecture recording, including filler words.",
+  "truncated": false,
+  "exam": 4,
+  "lectures": [
+   "L21"
+  ],
+  "status": "discussed",
+  "links": [
+   [
+    "guide",
+    "guide4-l21-3",
+    "Guide 25: the warfarin algorithm"
+   ],
+   [
+    "guide",
+    "guide4-l21-2",
+    "Guide 24: CPIC guidelines"
+   ]
+  ],
+  "drive": "https://drive.google.com/file/d/1XmXKozagnU8-5rPc4aQGHy6cDL6eN6tM/view",
+  "date": "Tue 10/27"
+ },
+ {
   "id": "katzung-1",
   "kind": "chapter",
   "exam": 1,

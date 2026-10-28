@@ -1,0 +1,34 @@
+{
+ "id": "guide4-l21-5",
+ "title": "Reading the trastuzumab label",
+ "segs": [
+  {
+   "text": "Section twenty seven. Reading a label: trastuzumab and HER two. The drug label worksheet asks eight questions about the pharmacogenomic information in a label. Trastuzumab, brand name Herceptin, treats HER two positive cancers, usually breast cancer. It is the lecture's example of a drug where the test is done on the tumor, not the patient, and where the result decides whether the drug will work.",
+   "slide": null,
+   "reading": "label-trastuzumab"
+  },
+  {
+   "text": "Some background from her account. Everyone has the HER two gene, but it is not normally expressed, and its natural ligand is unknown. In HER two positive cancer the receptor appears on the tumor cell surface in large numbers or is hyperactive, and growth factor binding drives the cells to divide out of control. Trastuzumab is a humanized monoclonal antibody that binds the outside part of the HER two receptor and stops that signaling. The gene tested is HER two, not the related epidermal growth factor receptor.",
+   "slide": null,
+   "reading": "label-trastuzumab"
+  },
+  {
+   "text": "Now the worksheet. Which gene and variant? HER two, and the label gives no variant. A student read the number one hundred eighty five from the label, and that is the size of the HER two protein in kilodaltons, not a variant. Tumor or patient? The tumor, from a biopsy. Normal cells elsewhere do not express HER two, so a blood sample would not show it. She said, So they actually don't genotype people, they're phenotyping the tumor. Which test? Usually immunohistochemistry, I H C, which detects the receptor protein on the tumor cells. That is a phenotype, not the patient's genotype.",
+   "slide": null,
+   "reading": "label-trastuzumab",
+   "table": 0
+  },
+  {
+   "text": "Efficacy or toxicity? Efficacy. Trastuzumab acts only by binding HER two, so a tumor without HER two gives the drug no target. She said, We want to be sure these patients have the drug's target, which is HER two, before we give them an expensive drug that can cause side effects. Does the F D A name a test? An older label named a brand of kit. The current label asks for an F D A authorized test, specific for breast or gastric cancers, done by a laboratory with demonstrated proficiency, and no brand is named.",
+   "slide": null,
+   "reading": "label-trastuzumab",
+   "table": 0
+  },
+  {
+   "text": "Which population? Here the answer is tumor types, not an ethnic group, because HER two expression belongs to certain tumors, not to an inherited population variant. In class she said breast, metastatic gastrointestinal and esophageal tumors. The label is narrower: HER two overexpressing breast cancer, and metastatic gastric or gastroesophageal junction adenocarcinoma. The data do not tie brain tumors to HER two. Finally, how does the result change care? HER two positive patients are likely candidates for trastuzumab. HER two negative patients do not get it. The result decides use of the drug, not the dose.",
+   "slide": null,
+   "reading": "label-trastuzumab",
+   "table": 0
+  }
+ ]
+}

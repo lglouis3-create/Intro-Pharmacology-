@@ -692,8 +692,8 @@ QUESTIONS.push(
   {l:"HLA-B*15:02", r:"Carbamazepine-induced skin toxicity", why:"A potentially fatal reaction to the anti-epileptic carbamazepine."},
   {l:"HLA-B*58:01", r:"Allopurinol-induced skin toxicity", why:"She named allopurinol as another area on the table."},
   {l:"HLA-DRB1*15:01, DRB5*01:01, DQB1*06:02 haplotype", r:"Amoxicillin-clavulanate-induced liver injury", why:"She named amoxicillin on the table."}],
- teach:"Katzung Table 5-4 lists HLA variants associated with Stevens-Johnson syndrome, toxic epidermal necrolysis or drug-induced liver injury. The two she will spend time on are HLA-B*57:01 with abacavir and HLA-B*15:02 with carbamazepine, both potentially fatal skin reactions. Allopurinol (B*58:01) and amoxicillin-clavulanate (a DRB1/DRB5/DQB1 haplotype) show the list reaches other practice areas.",
- note:"The caption renders B*57:01 as \"5107\" and abacavir unclearly; the slide prints HLA-B*57:01 and abacavir, and she named abacavir later when assigning the drug labels.",
+ teach:"Katzung Table 5-4 lists HLA variants associated with Stevens-Johnson syndrome, toxic epidermal necrolysis or drug-induced liver injury. The two she will spend time on are HLA-B*57:01 with abacavir and HLA-B*15:02 with carbamazepine, both potentially fatal. The table lists the abacavir reaction under skin toxicity; on 10/27, working the abacavir label, she described it as a hypersensitivity reaction with multi-organ failure. Allopurinol (B*58:01) and amoxicillin-clavulanate (a DRB1/DRB5/DQB1 haplotype) show the list reaches other practice areas.",
+ note:"The caption renders B*57:01 as \"5107\" and abacavir unclearly; the slide prints HLA-B*57:01 and abacavir, and she named abacavir later when assigning the drug labels. Keyed to the table's wording; on 10/27 she said of HLA-B*57:01 and abacavir: \"Hypersensitivity reaction, where? Multi-organ failure.\"",
  cite:"PGx-Examples-Students-Fall-2026.pdf slide 'Variations in Immune System Function 2' (p. 60, Katzung Table 5-4); transcript 10/26"},
 
 /* ---------------- Furuta et al. 1998 ---------------- */

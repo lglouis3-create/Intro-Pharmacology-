@@ -659,7 +659,11 @@ const FOCUS4 = [
   ["you need to study to detail, OK? That will definitely be the case for this pharmacogenomics exam, your last exam in this course. There will be details on that exam.", '10/26 (opening)', `<button type="button" class="btn ghost" data-topic="L20" data-ex="4">Day 20 (10/26) questions</button>`],
   ["Now, for pharmacogenomics, it's gonna be a lot more application.", '10/26 (opening)', ''],
   ["You do not need to memorize this table, because I will tell you the ones that I want you to.", '10/26 (the DiPiro table of drug-target variants)', `<button type="button" class="btn ghost" data-jump="guide:guide4-l20-4">Guide 18: drug-target receptors</button>`],
-  ["You guys have to be able to drill down from your phenotype of your patient to the molecular structure of the DNA and know what is star 2? What is star 3? Why is that enzyme not active in this person? OK, you have to know that.", '10/26 (Furuta 1998)', `<button type="button" class="btn ghost" data-jump="guide:guide4-l20-8">Guide 22: Furuta 1998</button>`]
+  ["You guys have to be able to drill down from your phenotype of your patient to the molecular structure of the DNA and know what is star 2? What is star 3? Why is that enzyme not active in this person? OK, you have to know that.", '10/26 (Furuta 1998)', `<button type="button" class="btn ghost" data-jump="guide:guide4-l20-8">Guide 22: Furuta 1998</button>`],
+  ["You need to be able to look at information I give you about a patient.", '10/27 (the CPIC warfarin algorithm)', `<button type="button" class="btn ghost" data-jump="guide:guide4-l21-3">Guide 25: the warfarin algorithm</button>`],
+  ["This is the detail you have to study for your exam.", '10/27 (walking a patient through the warfarin algorithm)', `<button type="button" class="btn ghost" data-topic="L21" data-ex="4">Day 21 (10/27) questions</button>`],
+  ["You guys don't need to memorize this table.", '10/27 (the list of current CPIC guidelines)', ''],
+  ["Make sure you write this down, everybody. For carbamazepine, we're worried about the HLAB gene, HLAB, the genetic variant called 1502, OK?", '10/27 (the carbamazepine label)', `<button type="button" class="btn ghost" data-jump="guide:guide4-l21-6">Guide 28: carbamazepine and abacavir</button>`]
 ];
 function focusCard4() {
   if (!FOCUS4.length) return '';

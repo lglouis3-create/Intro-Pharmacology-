@@ -1,0 +1,37 @@
+{
+ "id": "guide4-l21-2",
+ "title": "C P I C guidelines",
+ "segs": [
+  {
+   "text": "Section twenty four. C P I C guidelines. C P I C is the Clinical Pharmacogenetics Implementation Consortium. Its guidelines are evidence based and written by experts in pharmacogenomics. They help clinicians understand how available genetic test results should be used to optimize drug therapy, not whether tests should be ordered. The key assumption is that the patient's genotype is already available, even if the test was not ordered with a specific drug in mind. The endorsers are the Association for Molecular Pathology, the American Society for Clinical Pharmacology and Therapeutics, and the American Society of Health System Pharmacists.",
+   "slide": "pgxres:9",
+   "reading": null
+  },
+  {
+   "text": "Every guideline has the same components in the same order. First, gene and drug background, meaning genetic variability and its impact on drug response. Second, dosage recommendations based on genotype. Third, the potential benefits and risks of using the genetic information. Fourth, caveats on appropriate use and potential misuse of genetic tests.",
+   "slide": "pgxres:10",
+   "reading": null
+  },
+  {
+   "text": "Development follows a set process. At the initial assessment, gene drug pairs are prioritized from surveys, evidence strength and clinical actionability. A multidisciplinary writing committee then reviews the literature and drafts the guideline. Evidence review and therapeutic recommendations follow, with strength assigned by a transparent system. Drafts get public and peer review by C P I C members and outside experts before publication. Guidelines are reviewed about every two years. That initial screening is why there are about thirty five guidelines while many drugs are on the market.",
+   "slide": "pgxres:11",
+   "reading": null
+  },
+  {
+   "text": "C P I C grades two separate things. The evidence is graded high, moderate or weak. High means consistent results from well designed, well conducted studies. Moderate means enough evidence to determine effects, but limited by the number, quality or consistency of studies. Weak means insufficient evidence. The recommendation is graded strong, moderate or optional. Strong means high quality evidence where desirable effects clearly outweigh undesirable ones. Moderate means a close or uncertain balance. Optional means the effects are closely balanced, allowing differences in opinion.",
+   "slide": "pgxres:12",
+   "reading": null,
+   "table": 0
+  },
+  {
+   "text": "The classes on the current guidelines table include infectious disease drugs, cardiac drugs, central nervous system drugs, immunosuppressants, and pain medications such as N S A I Ds and opioids. Warfarin's guideline was updated in two thousand seventeen with C Y P four F two and r s one two seven seven seven eight two three, and she said it and the thiopurine guideline have been updated again since.",
+   "slide": "pgxres:13",
+   "reading": null
+  },
+  {
+   "text": "The application is clear recommendations on dosing adjustments and alternative therapies based on genetic profile. She called the guidelines the best resource available for the drugs that have one. The limitation is scope, because only selected drugs are covered. She said, So the limitations for these guidelines so far is there's not every drug out there.",
+   "slide": "pgxres:14",
+   "reading": null
+  }
+ ]
+}

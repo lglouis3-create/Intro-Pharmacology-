@@ -225,6 +225,17 @@ See `## Conflicts / uncertain` in notes/L01.md, L02.md and L03.md. The ones that
   items): applied 1-4, 6, VKORC1 cell; not applied: second link for the DPD/TPMT tell row (one data-q per row) and a
   Furuta reference table (guide 22 and two tell rows cover it). glitch.js clean.
 
+- 10/28 (nightly ingest): L21 = 10/27 lecture, PGx-Resources-and-Cases deck pp. 2-20 (p. 22 PGx Cases not reached) and
+  the drug-label worksheet (trastuzumab items 1, 3-8; carbamazepine and abacavir items 1-3; recording ends mid-sentence).
+  q_L21.js 59 questions (12 select-all, 4 lowYield, 4 dupOf); first writer stopped at L21-035 (output cut), rest written
+  by two smaller agents; verifiers 27 bank fixes (none to a key), 25 guide fixes. guide4-l21-1..6 (headings 23-28),
+  tell4-l21 (33 rows), ref4-l21-1/2. Readings: label-abacavir, label-carbamazepine, label-trastuzumab, cpic-warfarin-2017
+  (status discussed, linked to guides 25, 27, 28). Slides pgxres-01..22 (the Drive copy carries the user's handwriting,
+  as the pgxex slides do). Walkthroughs 33 parts, 15,950 characters, not recorded (about $2.90; all unrecorded Exam 4
+  walkthroughs 60,988 characters, about $11.09). L20-056 note: on 10/27 she called the abacavir reaction multi-organ.
+  Conflicts kept in notes/L21.md (17), including CPIC name, "optimal" vs "Optional", "5 mg per kilogram", CYP4F2
+  direction, about 35 guidelines vs 29 rows, carbamazepine label date, tumor types. Adverse drug events deferred to 10/28.
+
 ## Restore after a container restart
 
 The scratchpad is wiped on every restart. Durable copies: scripts and briefs in the repo (exam1-drill/src/daily/,
@@ -233,6 +244,11 @@ Transcripts are never committed (Pages serves the repo root). At the start of ea
 - L18 (10/21): Drive 11x7ATwHf1kLolqRtibbgdGTsAJry-XKa, 76,165 bytes -> <scratchpad>/l18/transcript.txt
 - L19 (10/22): Drive 1IYKmaNPVlhYThg-6CETJTL5J23JndQO2, 83,752 bytes -> <scratchpad>/l19/transcript.txt
 - L20 (10/26): Drive 1iWFEnmaSLik81r8KWO2jSYFZ0FRp3SoO, 93,647 bytes -> <scratchpad>/l20/transcript.txt
+- L21 (10/27): Drive 15Kad20K5VmUxs9-Qfck-lxcCm5y8SDkr, 68,227 bytes -> <scratchpad>/l21/transcript.txt
+- Resources deck PDF: Drive 1DnI1ksVdck1ZGUup3wYTUAcNWyG-gB_e (22 pages) -> <scratchpad>/decks/pgxres.pdf, text <scratchpad>/l21/pgxres.txt
+- 10/27 labels and guideline: abacavir 1sdpa2XF9pppf8hDWC7LLpJOCrbgHPaIZ, carbamazepine 1F38CLjvV8oTnXIQAuMwd28eMflUGd-_F,
+  trastuzumab 1b67c0c856hh9cIQN-pIzoTzC4b-ylbqn, CPIC warfarin 2017 1XmXKozagnU8-5rPc4aQGHy6cDL6eN6tM -> <scratchpad>/l21/readings/*.txt;
+  worksheet 1OQ4m7AIP409uSclXU3GHHBx7BidoPc6p (the user's filled copy: printed questions only, never the handwriting or name)
 - Examples deck PDF: Drive 1lN9BKuyhTRxaP6fRYwXh7xTOAJcAAIA-; page text via pdftotext -layout per page -> <scratchpad>/l20/examples_deck.txt
 Each new lecture ingested adds its line here.
 
