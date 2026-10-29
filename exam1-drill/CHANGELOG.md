@@ -2,6 +2,13 @@
 
 Newest first. The build embeds this file; the Topics page shows what is new since your last visit, and the Progress page shows all of it. Keep each bullet to one short line.
 
+## 2026-10-29 (10/28 lecture added)
+
+- Exam 4: the 10/28 lecture (adverse drug events, the Naranjo algorithm, drug interactions): 86 questions.
+- Guides 29 to 37 for 10/28, each with a walkthrough (device voice); new tell-apart rows and two reference tables.
+- A reading card for the Naranjo algorithm, linked to guide 31.
+- Exam 4 facts from her 10/28 words: about 55 questions, cumulative to her part only (toxicology applied).
+
 ## 2026-10-28 (Daily polish)
 
 - Exam sim: the score shows at the top after submitting; select-all review marks missed options with tick counts.
