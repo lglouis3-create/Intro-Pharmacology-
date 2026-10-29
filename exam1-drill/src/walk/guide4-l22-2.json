@@ -1,0 +1,33 @@
+{
+ "id": "guide4-l22-2",
+ "title": "Drug approval and postmarketing surveillance",
+ "segs": [
+  {
+   "text": "Section thirty. Drug approval, its limits, and postmarketing surveillance. A drug passes preclinical research and three phases of clinical trials before approval. Phase one enrolls small numbers of healthy people. Phase two enrolls patients and confirms the dose developed in phase one. Phase three runs larger patient studies, but not huge numbers, and often only adults. After launch, many, many more people take the drug than were ever in the trials, so postmarketing surveillance is in effect a very large study.",
+   "slide": "ade:14",
+   "reading": null,
+   "table": 0
+  },
+  {
+   "text": "Premarketing trials have built in limits. They are short, so effects after chronic use or with a long latency cannot be detected. They are small, usually fewer than four thousand subjects, so effects rarer than one in a thousand are hard to detect. They leave out special populations such as children, women of childbearing age, and the elderly. They pursue narrow indications, and the comparison group is often limited to placebo. That small sample is why an approved drug can later be pulled. She said, we had enough people taking the drugs that the rare adverse reaction popped up.",
+   "slide": "ade:15",
+   "reading": null,
+   "table": 1
+  },
+  {
+   "text": "To make trial populations more representative, the F D A issued guidelines on including geriatric patients in phase two and three studies, and guidelines and incentives for efficacy, safety, pharmacokinetic and pharmacodynamic data in pediatric and geriatric patients. She added pharmacogenomics: companies are encouraged to study what a genetic variant does to response. These guidelines are not binding. She said, so they're not law, but they're suggestions.",
+   "slide": "ade:16",
+   "reading": null
+  },
+  {
+   "text": "The F D A postmarketing surveillance program monitors approved drug use and serious adverse drug reactions, and starts epidemiologic studies to estimate risk or test hypotheses. Those studies confirm that a rare event was caused by the drug and show who is at risk. One of its primary uses is changing the label or package insert, or the indication, and sometimes pulling the drug from the market. So surveillance does not always end in withdrawal. When a drug is withdrawn, the most common reason is liver toxicity. Clinicians feed this system through MedWatch reports.",
+   "slide": "ade:17",
+   "reading": null
+  },
+  {
+   "text": "Last, the F D A must tell every provider. Drug Safety Communications are its official messages that a label has changed or a drug has been pulled, now gathered on one F D A website that also covers shortages and recalls. MedWatch brings reports in from clinicians, and Drug Safety Communications send messages out to them. She said, If you don't know that the drug label has changed, if you don't know that the drug has been pulled from the market, then you're going to perpetuate the problem.",
+   "slide": "ade:18",
+   "reading": null
+  }
+ ]
+}

@@ -1,0 +1,32 @@
+{
+ "id": "guide4-l22-1",
+ "title": "Medication misadventures",
+ "segs": [
+  {
+   "text": "Section twenty nine. Medication misadventures. Three overlapping terms describe drug related problems, and all three sit inside the outer term, medication misadventures. Inside it, adverse drug reactions are a circle wholly within adverse drug events, and the medication error circle overlaps both. So an adverse drug reaction is always an adverse drug event, and it can also be a medication error. A medication error that injures no one lies outside the event circle and is still a medication error.",
+   "slide": "ade:4",
+   "reading": null
+  },
+  {
+   "text": "The Institute of Medicine defines an adverse drug event as injury from a medical intervention related to a drug, from preventable or non preventable causes. The key word is injury. It can happen even when the correct drug was prescribed and given, for example in a patient whose genetic background gives an unwanted effect from a drug people are not normally genotyped for. A wrong dose written but never harming anyone is only a medication error. Given and causing injury, it becomes a preventable adverse drug event.",
+   "slide": "ade:5",
+   "reading": null
+  },
+  {
+   "text": "The National Coordinating Council for Medication Error Reporting and Prevention defines a medication error as any preventable event that may cause inappropriate medication use or patient harm while the medication is in the control of the healthcare professional, patient, or consumer. So a patient can make one at home. It covers any mistake in the process, regardless of outcome. She said, Not all med errors lead to serious consequences, OK, but all medication errors are preventable. Clinicians report them to the Institute for Safe Medication Practices reporting program.",
+   "slide": "ade:10",
+   "reading": null
+  },
+  {
+   "text": "The World Health Organization defines an adverse drug reaction as any noxious, unintended, and undesired effect of a drug at doses used for prophylaxis, diagnosis, or therapy, implying a causal link to the drug. The key words are right dose. She said, it's the drug at the right dose, it's not an overdose causing symptoms. Adverse drug reactions are reported through the F D A MedWatch program, not the medication error program.",
+   "slide": "ade:12",
+   "reading": null
+  },
+  {
+   "text": "Adverse drug events fall into five types: therapeutic failure, withdrawal events, overdose, medication error, and adverse drug reaction. Therapeutic failure is too little drug, and nonadherence is probably the biggest reason. Withdrawal events follow stopping a long term drug, such as opioids, hypertension medications, or S S R Is. Accidental overdoses occur most in children and older adults. Children most often overdose on iron tablets that look like candy. Intentional overdoses are mostly young adults to adults.",
+   "slide": "ade:6",
+   "reading": null,
+   "table": 1
+  }
+ ]
+}

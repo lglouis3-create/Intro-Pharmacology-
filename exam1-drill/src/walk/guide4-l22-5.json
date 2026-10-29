@@ -1,0 +1,28 @@
+{
+ "id": "guide4-l22-5",
+ "title": "Precipitant, object and the kinds of drug interaction",
+ "segs": [
+  {
+   "text": "Section thirty three. Drug interactions and the words used to describe them. A drug interaction is an adverse drug response produced by giving a drug together with, or exposing it to, another substance. It modifies the patient's response. The other substance does not have to be a drug. It can be a food, an herbal product, a chemical, or a habit such as smoking or drinking ethanol. That is why the topic is called drug interactions and not drug drug interactions. She said, The reason I don't say drug-drug is sometimes drug interactions are not just driven by drugs and drugs. Some interactions are even used on purpose to improve a therapeutic outcome, though not often.",
+   "slide": "ddi:5",
+   "reading": null,
+   "table": 0
+  },
+  {
+   "text": "Every interaction has two players. The precipitant is the drug, chemical, or food causing the interaction. The object drug is the one affected by it. Do not swap them, and do not call a food or herb the object, because foods, chemicals and herbs act as precipitants. These are roles, not fixed properties of a drug. Valproic acid is the precipitant when it displaces phenytoin from plasma proteins, and it is the object drug when aspirin displaces it. She said, Sometimes one might be the precipitant, and sometimes that same one could be an object drug, depending on who it's playing with.",
+   "slide": "ddi:5",
+   "reading": null
+  },
+  {
+   "text": "Interactions inside the body come in two kinds. A pharmacokinetic interaction changes absorption, distribution, metabolism or excretion of the object drug, so drug levels change. It can affect absorption, distribution, and drug elimination and clearance. A pharmacodynamic interaction alters the effect of the drug, producing an antagonistic, synergistic, or additive effect. So additive, synergistic and antagonistic belong under pharmacodynamic, not pharmacokinetic. A third kind, the pharmaceutical interaction, is an incompatibility when drugs are mixed, for example when making I Vs. It happens outside the body, it is a pharmaceutics topic, and it was not covered.",
+   "slide": "ddi:6",
+   "reading": null,
+   "table": 1
+  },
+  {
+   "text": "Two terms come back throughout the topic. Clearance is the volume of plasma cleared per unit time, by the kidneys, the liver or hemodialysis, and she said clearance plays a big role in kinetic interactions. A narrow therapeutic index drug is one where small changes in systemic concentration can lead to significant changes in pharmacodynamic response. So a precipitant that moves the level only a little can make the patient toxic or subtherapeutic. Phenytoin, digoxin, lithium and warfarin are her examples of these at risk drugs.",
+   "slide": "ddi:4",
+   "reading": null
+  }
+ ]
+}

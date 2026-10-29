@@ -1,0 +1,40 @@
+{
+ "id": "guide4-l22-7",
+ "title": "Metabolism and renal excretion interactions",
+ "segs": [
+  {
+   "text": "Section thirty five. Metabolism and renal excretion. The third pharmacokinetic area is drug elimination and clearance. In the liver, a precipitant changes the object drug's clearance through four mechanisms: enzyme induction, enzyme inhibition, substrate competition for the same enzyme, and changes in hepatic blood flow. Induction speeds clearance and lowers levels. Inhibition slows clearance and raises them. She said, I always think that thinking about metabolism and clearance in the liver is a little easier.",
+   "slide": "ddi:13",
+   "reading": null
+  },
+  {
+   "text": "Two induction examples. Smoking supplies polycyclic aromatic hydrocarbons, which induce C Y P one A one and one A two, the enzymes that metabolize theophylline. So a child with asthma on theophylline in a smoking household is subtherapeutic, not overdosed. Phenytoin induces C Y P three A, which clears the immunosuppressant tacrolimus, so tacrolimus levels fall. Phenytoin is the inducer here, not an inhibitor.",
+   "slide": "ddi:14",
+   "reading": null,
+   "table": 0
+  },
+  {
+   "text": "Two inhibition examples. Cimetidine, one of the first drugs for gastroesophageal reflux disease, is the most historic inhibitor. It decreases atorvastatin clearance, so atorvastatin levels rise. Monoamine oxidase inhibitors such as pargyline and tranylcypromine block the breakdown of tyramine and other pressor substances in foods like cheddar cheese, red wine and avocado. Tyramine builds up, and the listed outcome is a serious hypertensive crisis, not hypotension.",
+   "slide": "ddi:14",
+   "reading": null,
+   "table": 0
+  },
+  {
+   "text": "The cytochrome P four fifty table lists inhibitors and inducers, which are precipitants, and substrates, which are object drugs. It does not have to be memorized, but its non drug precipitants are worth knowing. Charbroiled foods induce C Y P one A two, acting like cigarette smoke. Garlic supplements, grapefruit, Seville oranges and bitter orange sit under C Y P three A inducers, and St. John's wort is listed too. Later, with foods, she described the citrus compounds as competitors, which makes them inhibitors, so both statements were made.",
+   "slide": "ddi:15",
+   "reading": null
+  },
+  {
+   "text": "In the kidney, a precipitant can change filtration, tubular reabsorption, active tubular secretion, or cause direct injury. Methylxanthines such as caffeine and theobromine increase renal blood flow and glomerular filtration rate, which decreases time for reabsorption, so drugs are excreted faster. Probenecid uses the same active transporter as penicillin and some cephalosporins, so it blocks their secretion and their blood levels rise. That one is used clinically.",
+   "slide": "ddi:16",
+   "reading": null,
+   "table": 1
+  },
+  {
+   "text": "Urine pH works in opposite directions for two drugs. Antacids and sodium bicarbonate alkalinize the urine. Alkaline urine ionizes salicylates, which are mildly acidic, so they are reabsorbed less and cleared faster. That is the ion trapping from toxicology. For amphetamine the table gives the opposite: alkaline urine increases its reabsorption and decreases its clearance.",
+   "slide": "ddi:17",
+   "reading": null,
+   "table": 1
+  }
+ ]
+}

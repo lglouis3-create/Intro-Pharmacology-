@@ -1,0 +1,35 @@
+{
+ "id": "guide4-l22-9",
+ "title": "Herbal, food and chemical interactions",
+ "segs": [
+  {
+   "text": "Section thirty seven. Herbal, food and nondrug interactions. Herbs, foods, cigarette smoke and ethanol act as precipitants through the same mechanisms as drugs. An herbal product may be one herb or several, and a single herb may contain many compounds with many activities. Some contain prescription medications, and some contain contaminants such as metals or other toxic plants. They are not regulated, and potency varies from batch to batch with harvest stage, drying time, extraction solvents, and shelf life and storage. So herbs can interact at the same transport, metabolism, and receptor sites as prescription drugs.",
+   "slide": "ddi:23",
+   "reading": null
+  },
+  {
+   "text": "St. John's wort, used for depression, shows how many mechanisms one herb can have. It induces C Y P three A four, lowering levels of protease inhibitors, benzodiazepines, calcium channel blockers, cyclosporin and digoxin. It induces C Y P two C nine and one A two, lowering warfarin. It increases intestinal P glycoprotein efflux, giving lower digoxin, calcium channel blockers and simvastatin, so it does not raise digoxin. And it adds serotonin activity with S S R Is, triptans and monoamine oxidase inhibitors, risking serotonin toxicity.",
+   "slide": "ddi:24",
+   "reading": null,
+   "table": 0
+  },
+  {
+   "text": "Drugs with a narrow therapeutic index are at greater risk, and warfarin is the classic example. Vitamin K is warfarin's antidote. Coenzyme Q ten has a structure similar to vitamin K, and wheat grass contains high levels of it, so both may cause inadequate anticoagulation. Spinach and broccoli contain vitamin K, which pharmacodynamically antagonizes warfarin. Ginger, garlic and feverfew work another way. They directly inhibit platelets, a different mechanism from warfarin, so bleeding risk increases.",
+   "slide": "ddi:25",
+   "reading": null,
+   "table": 1
+  },
+  {
+   "text": "Food can increase, decrease, or not affect absorption, and foods that change stomach pH may change bioavailability. A common interaction is a drug complexing with food in the gut, such as quinolone antibiotics with calcium, which reduces absorption. That is complexation, not an enzyme effect. Food can also compete for metabolizing enzymes, which makes it an inhibitor, or induce them, giving toxic or subtherapeutic levels. And monoamine oxidase inhibitors block breakdown of tyramine from red wine and cheese, so tyramine builds up and may cause a hypertensive crisis.",
+   "slide": "ddi:26",
+   "reading": null,
+   "table": 2
+  },
+  {
+   "text": "Smoking and ethanol are the most common chemical drug interactions. Smoke contains polycyclic aromatic hydrocarbons that induce C Y P one A two, lowering theophylline, diazepam and tricyclic antidepressants. She said, it's really important for the theophylline in asthmatics to not be subtherapeutic. Ethanol can increase or decrease hepatic enzyme activity. Its C Y P one A two induction lowers clozapine, cyclobenzaprine, imipramine and naproxen. Its induction of C Y P two E one and three A increases the possibility of acetaminophen hepatotoxicity.",
+   "slide": "ddi:30",
+   "reading": null,
+   "table": 3
+  }
+ ]
+}

@@ -1,0 +1,34 @@
+{
+ "id": "guide4-l22-4",
+ "title": "Immunologic reactions and hypersensitivity",
+ "segs": [
+  {
+   "text": "Section thirty two. Immunologic and nonimmunologic reactions, risk factors, and hypersensitivity types. The more drugs given, the more likely an adverse drug reaction. In hospitalized patients on fewer than six drugs the probability is five percent. On more than fifteen drugs it is more than forty percent. Ambulatory patients, who usually take fewer drugs, sit at about twenty percent. Separately, a number of widely used drugs cause ninety percent of all reactions, led by opioids, cardiac medications, and diabetes medications.",
+   "slide": "ade:20",
+   "reading": null
+  },
+  {
+   "text": "Reactions fall into two groups. She said, the non-immunological reactions are predictable, where oftentimes the immunological reactions are not predictable. Predictable nonimmunologic examples are dry mouth from antihistamines, liver toxicity from methotrexate, and seizure from excessive lidocaine. But three nonimmunologic kinds are unpredictable. Pseudoallergic, such as the itch from radiocontrast dye, feels allergic but is the drug itself. Idiosyncratic, such as hemolytic anemia after primaquine in G six P D deficiency. And intolerance, whose classic example is tinnitus after a single, small dose of aspirin.",
+   "slide": "ade:23",
+   "reading": null,
+   "table": 1
+  },
+  {
+   "text": "Patient risk factors split by group. Female gender, H I V infection, and lupus appear in both columns. Renal insufficiency, liver disease, alcoholism and polypharmacy belong to general, nonimmune reactions. Asthma, previous hypersensitivity to a chemically related drug, and specific genetic polymorphisms belong only to the immune, hypersensitivity column.",
+   "slide": "ade:25",
+   "reading": null,
+   "table": 2
+  },
+  {
+   "text": "What a layperson calls a drug allergy is properly a hypersensitivity reaction. The Gell and Coombs classification gives four types, and timing is the key. Type one is I g E mediated: the drug I g E complex binds mast cells and releases histamine, within minutes to hours. Type two is cytotoxic, with variable timing. Type three deposits drug antibody complexes in tissue, causing serum sickness one to three weeks later. Type four is delayed and cell mediated through T cells, two to seven days after skin exposure, as in contact dermatitis.",
+   "slide": "ade:27",
+   "reading": null,
+   "table": 3
+  },
+  {
+   "text": "The type changes treatment. For type one, she said, probably your biggest bet would be antihistamines, right? And then steroids. For the other types, steroids for sure, and possibly other therapies. Stevens Johnson syndrome is painful and dangerous, can involve the mouth and mucosal tract, and the skin can come off. Carbamazepine puts people with a certain H L A B variant at risk.",
+   "slide": "ade:33",
+   "reading": null
+  }
+ ]
+}

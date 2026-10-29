@@ -1,0 +1,35 @@
+{
+ "id": "guide4-l22-3",
+ "title": "The Naranjo algorithm",
+ "segs": [
+  {
+   "text": "Section thirty one. Causality and the Naranjo algorithm. When a patient on drugs develops a new symptom, the cause may be a new disease, a change in the patient's health, a new drug, or an old drug the changed patient now responds badly to. The Naranjo algorithm is a ten question score that ranks how likely it is that a particular drug caused the reaction. It scores only causality. It does not pick a genotype test, a reporting route, or a hypersensitivity type.",
+   "slide": "ade:21",
+   "reading": null
+  },
+  {
+   "text": "The algorithm is highly dependent on the temporal relationship. She said, we have to think about the timing, the relationship of when they were put on this drug and when they started seeing the symptoms. The timing questions she named are two, three, four and six: did the reaction follow the drug, improve when it was stopped, return when it was given again, and reappear with a placebo. Question one is different. It asks about previous conclusive reports, so the clinician has to search the literature.",
+   "slide": null,
+   "reading": "naranjo",
+   "table": 0
+  },
+  {
+   "text": "Not every yes is worth one point. A yes on question two or four scores plus two, and a no scores minus one, because a reaction that did not follow the drug argues against it. A reaction that returns with a placebo, question six, scores minus one. Question five is reversed. If another cause could explain the reaction, that costs a point. If nothing else could, the drug gains two. Do not know is always zero, since missing information neither supports nor weakens the case.",
+   "slide": null,
+   "reading": "naranjo",
+   "table": 0
+  },
+  {
+   "text": "The total sets the category. Nine is definite, the drug is likely the true cause. Five to eight is probable, the drug is the apparent cause. One to four is possible, the drug appears to be associated. Zero is the lowest category, where the drug is not likely responsible. The slide and her words call it remote, and the Naranjo page calls it doubtful. Both name the same lowest rank.",
+   "slide": "ade:21",
+   "reading": null,
+   "table": 1
+  },
+  {
+   "text": "Try a worked score. The reaction has previous conclusive reports, plus one. It appeared after the drug was started, plus two. It improved when the drug was stopped, plus one. The drug was not given again, zero. No other cause could explain it, plus two. The rest are do not know. The total is six, probable. If another drug could have caused it, question five drops to minus one and the total falls to three, possible. If instead the reaction returned on re dosing and objective evidence confirmed it, the total reaches nine, definite.",
+   "slide": null,
+   "reading": "naranjo",
+   "table": 2
+  }
+ ]
+}
