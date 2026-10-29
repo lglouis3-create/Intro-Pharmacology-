@@ -71,8 +71,8 @@ QUESTIONS.push(
  concept:"clopidogrel-prodrug-antiplatelet", tags:["smith"], source:"both",
  stem:"Clopidogrel is used clinically for what effect?",
  options:[
-  {t:"It inhibits platelets, preventing them from sticking together", correct:true, why:"Clopidogrel is a platelet receptor inhibitor that stops platelets from aggregating, which is antiplatelet therapy."},
-  {t:"It directly dissolves a clot that has already formed in a vessel", correct:false, why:"Clopidogrel prevents platelet aggregation; it does not break down a formed clot."},
+  {t:"It prevents platelet aggregation", correct:true, why:"Clopidogrel is a platelet receptor inhibitor that stops platelets from aggregating, which is antiplatelet therapy."},
+  {t:"It dissolves a formed clot", correct:false, why:"Clopidogrel prevents platelet aggregation; it does not break down a formed clot."},
   {t:"It replaces a clotting factor", correct:false, why:"Clopidogrel is not a clotting factor product; it blocks platelet function."},
   {t:"It lowers blood pressure", correct:false, why:"Clopidogrel acts on platelets, not on blood pressure."}],
  teach:"Clopidogrel is a platelet receptor inhibitor. By keeping platelets from sticking together it provides antiplatelet therapy, a form of anticoagulation. It is also a prodrug, so it must be bioactivated before it works.",
@@ -96,7 +96,7 @@ QUESTIONS.push(
  stem:"Several CYP enzymes act on clopidogrel, but which one most affects how much active metabolite is made?",
  options:[
   {t:"CYP2C19", correct:true, why:"Variants in CYP2C19 matter most for creating the active metabolite, even though CYP1A2, 2B6, 3A and 2C9 also act on the molecule."},
-  {t:"CYP1A2, which acts only in the first activation step", correct:false, why:"CYP1A2 acts in the first step, but its variants are less important than CYP2C19 for the active metabolite."},
+  {t:"CYP1A2", correct:false, why:"CYP1A2 acts in the first step, but its variants are less important than CYP2C19 for the active metabolite."},
   {t:"CYP2B6", correct:false, why:"CYP2B6 acts in both steps, but its variants are not the key ones for clopidogrel activation."},
   {t:"CYP3A", correct:false, why:"CYP3A acts in the second step, but CYP2C19 variants most affect the amount of active metabolite."}],
  teach:"Clopidogrel is activated in two steps involving several CYPs (1A2, 2C19 and 2B6 in step one; 3A, 2C9, 2C19 and 2B6 in step two). CYP2C19 is the only one that works in both steps. Studies show that the enzyme that does the most work is not always the one that drives the clinical outcome: for clopidogrel, variants in CYP2C19 are the most important for how much active metabolite forms.",

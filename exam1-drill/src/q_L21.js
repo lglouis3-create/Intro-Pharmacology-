@@ -384,7 +384,7 @@ QUESTIONS.push(
 
 {id:"L21-030", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"cpic-warf", skill:"recall", readingId:"cpic-warfarin-2017", multi:true,
  concept:"cpic-warf-calc-genotypes", tags:["smith"], source:"both",
- stem:"For a patient of non-African ancestry, which genotypes go into the calculated warfarin dose at the first step of the CPIC algorithm? Select all that apply.",
+ stem:"For a patient of non-African ancestry, which genotypes are entered into the dosing calculation itself, before any adjustment is applied to the calculated dose? Select all that apply.",
  options:[
   {t:"VKORC1 -1639G>A", correct:true, why:"The VKORC1 variant on the algorithm."},
   {t:"CYP2C9*2", correct:true, why:"Part of the CYP2C9*2 and *3 status."},

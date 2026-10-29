@@ -1332,7 +1332,6 @@ const GUIDE4_HTML = `
 <li><b>Intentional overdose in older adults.</b> Accidental overdoses are the pediatric and geriatric problem; intentional overdoses are mostly young adults to adults.</li>
 </ul>
 
- which organization's definition and its key word; an ADE that occurs with the right drug given the right way; what must be true for a wrong dose to be an ADE; the five ADE types; the main cause of therapeutic failure; drugs that cause withdrawal events; why children and older adults overdose and on what; whose control the ME definition covers; which statement about MEs is true; how look-alike, sound-alike drugs are stored; where to report an ME versus an ADR; what a sentinel event is and what it triggers.</p>
 <p class="sub">Sources: ADE-Lecture-Students-2026.pdf slides 'Medication Misadventures' (p. 4), 'Adverse Drug Events (ADE) definition' (p. 5), 'Types of ADEs' (p. 6), 'Therapeutic Failures' (p. 7), 'Adverse Drug Withdrawal Events' (p. 8), 'Drug Overdoses' (p. 9), 'Medication Errors (MEs)' (p. 10), 'Reporting Medication Errors' (p. 11), 'Adverse Drug Reaction (ADR)' (p. 12), 'Surveillance and Management of ADRs' (p. 22); (T) 10/28. The slide prints 'Institution of Medicine'; she said Institute of Medicine. She said 'Institute for Safe Medical Practices' for the slide's Institute for Safe Medication Practices, and called MERP anonymous where the slide says confidential, voluntary. Questions L22-001 to L22-015, L22-025.</p>
 </section>
 <section class="guide" id="guide4-l22-2">
@@ -1398,6 +1397,7 @@ const GUIDE4_HTML = `
 </section>
 <section class="guide" id="guide4-l22-3">
 <h3>31. Causality and the Naranjo algorithm</h3>
+<p><button type="button" class="chip" data-jump="readings:rd-naranjo">Reading: Naranjo Algorithm</button></p>
 
 <h4>The idea</h4>
 <p>When a patient on drugs develops a new symptom, the cause is not obvious. It may be a new disease, a change in the patient's health, a new drug, or a drug taken for a long time that the changed patient now responds badly to. The Naranjo algorithm is a 10-question score that ranks how likely it is that a particular drug caused the reaction. The clinician answers the questions by sitting with the patient (when each drug was started, when the symptoms started, what else they take) and by searching the literature. Many of the questions are about timing: whether the reaction followed the drug, went away when the drug was stopped, and came back when it was given again.</p>
@@ -1470,7 +1470,6 @@ const GUIDE4_HTML = `
 <li><b>Swapping probable and possible.</b> Probable: the drug is the apparent cause (5-8). Possible: the drug appears to be associated (1-4).</li>
 </ul>
 
- which ranking matches a given meaning; a scenario to total and categorize; which questions involve time; how question 5 scores; what the clinician must do to answer question 1.</p>
 <p class="sub">Sources: ADE-Lecture-Students-2026.pdf slide 'Causality of Adverse Drug Reactions' (p. 21); Naranjo Algorithm (one page, questions 1-10 and total score); (T) 10/28. The recording renders the name as "Neuronho" and similar; the slide and page give Naranjo. Questions L22-026 to L22-031.</p>
 </section>
 <section class="guide" id="guide4-l22-4">
@@ -1554,7 +1553,6 @@ const GUIDE4_HTML = `
 <li><b>Naming abacavir for HLA-B Stevens-Johnson syndrome.</b> The drug she asked for was carbamazepine; abacavir's label was extended to the all-organ type of reaction.</li>
 </ul>
 
- which drug groups cause most ADRs; how the two buckets compare in predictability; which nonimmunologic reactions are unpredictable and the classic intolerance example; which risk factor belongs to which column; the term and number of types for a "drug allergy"; a scenario with a timing to match to type I, III or IV; whether treatment differs by type; which drug and gene go with Stevens-Johnson syndrome.</p>
 <p class="sub">Sources: ADE-Lecture-Students-2026.pdf slides 'ADR Scope of Problem' (p. 20), 'Immunologic reactions' (p. 23; Riedl and Casillas 2003, printed 'Reidl'), 'Predisposing Factors to Adverse Drug Reactions' (p. 24), 'Risk Factors' (p. 25; Table 4), 'Hypersensitivity Drug Reactions' (p. 26), 'Classification of hypersensitivity reactions' (p. 27; Gell and Coombs, Table 2), 'Uticaria' (p. 32), 'Steven Johnson Syndrome' (p. 33); (T) 10/28. She spoke only to type I and type IV timing; the type II and III rows are from the table she asked the class to remember. Questions L22-023, L22-024, L22-032 to L22-041.</p>
 </section>
 <section class="guide" id="guide4-l22-5">
