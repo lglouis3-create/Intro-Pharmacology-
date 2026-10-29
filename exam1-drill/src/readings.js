@@ -3521,7 +3521,13 @@ const READINGS = [
    "L22"
   ],
   "status": "discussed",
-  "links": [],
+  "links": [
+   [
+    "guide",
+    "guide4-l22-3",
+    "Guide 31: the Naranjo algorithm"
+   ]
+  ],
   "drive": "https://drive.google.com/file/d/1grrhx5-0rlCQBo7lpW6tbVbdCm535LPC/view",
   "date": "Wed 10/28"
  },

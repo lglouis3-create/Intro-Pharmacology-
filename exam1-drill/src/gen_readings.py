@@ -20,7 +20,7 @@ META = {
  'label-carbamazepine': dict(exam=4, lectures=['L21'], status='discussed', date='Tue 10/27', drive='1F38CLjvV8oTnXIQAuMwd28eMflUGd-_F', links=[['guide','guide4-l21-6','Guide 28: carbamazepine and abacavir']]),
  'label-trastuzumab': dict(exam=4, lectures=['L21'], status='discussed', date='Tue 10/27', drive='1b67c0c856hh9cIQN-pIzoTzC4b-ylbqn', links=[['guide','guide4-l21-5','Guide 27: trastuzumab and HER2']]),
  'cpic-warfarin-2017': dict(exam=4, lectures=['L21'], status='discussed', date='Tue 10/27', drive='1XmXKozagnU8-5rPc4aQGHy6cDL6eN6tM', links=[['guide','guide4-l21-3','Guide 25: the warfarin algorithm'],['guide','guide4-l21-2','Guide 24: CPIC guidelines']]),
- 'naranjo': dict(exam=4, lectures=['L22'], status='discussed', date='Wed 10/28', drive='1grrhx5-0rlCQBo7lpW6tbVbdCm535LPC', links=[]),
+ 'naranjo': dict(exam=4, lectures=['L22'], status='discussed', date='Wed 10/28', drive='1grrhx5-0rlCQBo7lpW6tbVbdCm535LPC', links=[['guide','guide4-l22-3','Guide 31: the Naranjo algorithm']]),
  'katzung-1': dict(exam=1, lectures=['L01'], status='his', drive='1RFWrersAluemOn2e2VoeMUUc4pomRprO', links=[['guide','guide-7','Guide 7: drug basics he tests']]),
  'katzung-2': dict(exam=1, lectures=['L01','L02','L03','L04','L05'], status='his', drive='1ZVE4Yu0CK3wgawDgzxAWAgss6l7C8kZb', links=[['guide','guide-1','Guide 1: affinity, efficacy, potency'],['guide','guide-3','Guide 3: kinds of antagonists']]),
  'katzung-6': dict(exam=1, lectures=['L06'], status='his', drive='1MyxIvcPC9-TqxR4jiC4GYCNZB5JkpzHL', links=[['guide','guide-10','Guide 10: how to read a curve']]),
