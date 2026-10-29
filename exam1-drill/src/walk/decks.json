@@ -22,5 +22,13 @@
  "pgxres": {
   "name": "Pharmacogenomics Resources",
   "n": 22
+ },
+ "ade": {
+  "name": "Adverse Drug Events",
+  "n": 35
+ },
+ "ddi": {
+  "name": "Drug-Drug Interactions",
+  "n": 32
  }
 }

@@ -253,6 +253,9 @@ Transcripts are never committed (Pages serves the repo root). At the start of ea
 - L19 (10/22): Drive 1IYKmaNPVlhYThg-6CETJTL5J23JndQO2, 83,752 bytes -> <scratchpad>/l19/transcript.txt
 - L20 (10/26): Drive 1iWFEnmaSLik81r8KWO2jSYFZ0FRp3SoO, 93,647 bytes -> <scratchpad>/l20/transcript.txt
 - L21 (10/27): Drive 15Kad20K5VmUxs9-Qfck-lxcCm5y8SDkr, 68,227 bytes -> <scratchpad>/l21/transcript.txt
+- L22 (10/28): Drive 1F2BVNSRss2sCwnPq_s5bfdB6YxFsGXWx, 98,425 bytes -> <scratchpad>/l22/transcript.txt
+- ADE deck: Drive 1ldD9jDm37LarIVDJfiPy9ZSeZZ58uBRF (35 pages), DDI deck: Drive 1VlAVVUio8ckIQHpwWun406QfNb9CTC74 (32 pages),
+  Naranjo Algorithm: Drive 1grrhx5-0rlCQBo7lpW6tbVbdCm535LPC -> <scratchpad>/decks/{ade,ddi,naranjo}.pdf, text <scratchpad>/l22/*.txt
 - Resources deck PDF: Drive 1DnI1ksVdck1ZGUup3wYTUAcNWyG-gB_e (22 pages) -> <scratchpad>/decks/pgxres.pdf, text <scratchpad>/l21/pgxres.txt
 - 10/27 labels and guideline: abacavir 1sdpa2XF9pppf8hDWC7LLpJOCrbgHPaIZ, carbamazepine 1F38CLjvV8oTnXIQAuMwd28eMflUGd-_F,
   trastuzumab 1b67c0c856hh9cIQN-pIzoTzC4b-ylbqn, CPIC warfarin 2017 1XmXKozagnU8-5rPc4aQGHy6cDL6eN6tM -> <scratchpad>/l21/readings/*.txt;
