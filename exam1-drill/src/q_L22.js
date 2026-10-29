@@ -7,21 +7,21 @@ TOPICS.push({id:"L22", name:"Day 22: Adverse drug events and drug-drug interacti
   subs:[
     {id:"ade-types", name:"Types of adverse drug events", cite:"ADE-Lecture-Students-2026.pdf pp. 4-9; (T) 10/28"},
     {id:"med-errors", name:"Medication errors", cite:"ADE-Lecture-Students-2026.pdf pp. 10-12; (T) 10/28"},
-    {id:"adr-def", name:"Adverse drug reactions: definition and reporting", cite:"ADE-Lecture-Students-2026.pdf p. 13; (T) 10/28"},
-    {id:"drug-approval", name:"The drug approval process and adverse drug events", cite:"ADE-Lecture-Students-2026.pdf pp. 14-18; (T) 10/28"},
+    {id:"adr-def", name:"Adverse drug reactions: definition and reporting", cite:"ADE-Lecture-Students-2026.pdf p. 12; (T) 10/28"},
+    {id:"drug-approval", name:"The drug approval process and adverse drug events", cite:"ADE-Lecture-Students-2026.pdf pp. 14-16; (T) 10/28"},
     {id:"postmarketing", name:"Postmarketing surveillance and safety communications", cite:"ADE-Lecture-Students-2026.pdf pp. 17-18; (T) 10/28"},
-    {id:"adr-scope", name:"Scope of the ADR problem", cite:"ADE-Lecture-Students-2026.pdf p. 20; (T) 10/28"},
+    {id:"adr-scope", name:"Scope of the ADR problem", cite:"ADE-Lecture-Students-2026.pdf pp. 20, 22; (T) 10/28"},
     {id:"naranjo", name:"Causality and the Naranjo algorithm", cite:"ADE-Lecture-Students-2026.pdf p. 21 and the Naranjo Algorithm page; (T) 10/28"},
-    {id:"immuno-nonimmuno", name:"Immunologic and nonimmunologic reactions", cite:"ADE-Lecture-Students-2026.pdf pp. 22-23; (T) 10/28"},
+    {id:"immuno-nonimmuno", name:"Immunologic and nonimmunologic reactions", cite:"ADE-Lecture-Students-2026.pdf p. 23; (T) 10/28"},
     {id:"risk-factors", name:"Predisposing and risk factors", cite:"ADE-Lecture-Students-2026.pdf pp. 24-25; (T) 10/28"},
     {id:"hypersens", name:"Hypersensitivity reactions (Gell and Coombs)", cite:"ADE-Lecture-Students-2026.pdf pp. 26-27, 30-33; (T) 10/28"},
     {id:"ddi-intro", name:"Drug interactions: terms and types", cite:"DDI Lecture Students 2026 (1).pdf pp. 2-7; (T) 10/28"},
     {id:"ddi-absorb", name:"Pharmacokinetic interactions: absorption", cite:"DDI Lecture Students 2026 (1).pdf pp. 8-10; (T) 10/28"},
     {id:"ddi-distrib", name:"Pharmacokinetic interactions: distribution", cite:"DDI Lecture Students 2026 (1).pdf pp. 11-12; (T) 10/28"},
     {id:"ddi-metab", name:"Pharmacokinetic interactions: metabolism", cite:"DDI Lecture Students 2026 (1).pdf pp. 13-15; (T) 10/28"},
-    {id:"ddi-renal", name:"Pharmacokinetic interactions: renal excretion", cite:"DDI Lecture Students 2026 (1).pdf pp. 16-17; (T) 10/28"},
+    {id:"ddi-renal", name:"Pharmacokinetic interactions: renal excretion", cite:"DDI Lecture Students 2026 (1).pdf pp. 16-17 and 21; (T) 10/28"},
     {id:"ddi-pd", name:"Pharmacodynamic interactions", cite:"DDI Lecture Students 2026 (1).pdf pp. 6-7, 18-20; (T) 10/28"},
-    {id:"ddi-benefit", name:"Beneficial drug interactions", cite:"DDI Lecture Students 2026 (1).pdf pp. 21-22, 31; (T) 10/28"},
+    {id:"ddi-benefit", name:"Beneficial drug interactions", cite:"DDI Lecture Students 2026 (1).pdf pp. 21-22 and 31; (T) 10/28"},
     {id:"ddi-herb-food", name:"Herbal, food and nondrug interactions", cite:"DDI Lecture Students 2026 (1).pdf pp. 23-30; (T) 10/28"}
   ]});
 QUESTIONS.push(
@@ -66,7 +66,7 @@ QUESTIONS.push(
 
 {id:"L22-004", lecture:"L22", prof:"Smith", tier:"new", topic:"L22", sub:"ade-types", skill:"apply",
  concept:"ade-requires-injury", tags:["smith","inclass"], source:"transcript",
- stem:"Asked for a preventable ADE, a student offered that an order was written for the wrong dose. What did Dr. Smith say must also be true for it to count as an ADE?",
+ stem:"Asked for a preventable ADE, Dr. Smith added that an order written for the wrong dose could count, then corrected herself. What did she say must also be true for it to count as an ADE?",
  options:[
   {t:"The patient must be injured", correct:true, why:"An ADE requires injury; the wrong dose actually given and causing harm is the preventable ADE."},
   {t:"The drug must be on the market for under a year", correct:false, why:"Time on the market is not part of the IOM definition."},
@@ -94,9 +94,9 @@ QUESTIONS.push(
  stem:"A patient gets suboptimal amounts of a medication, and the condition fails to stabilize. What is the most common reason for this type of ADE?",
  options:[
   {t:"Patient nonadherence", correct:true, why:"Therapeutic failures are mostly seen with nonadherence: patients not taking their medications as they are supposed to."},
-  {t:"A genetic variant", correct:false, why:"A variant can cause an ADE with the right drug and dose, but she named nonadherence as the biggest reason for therapeutic failure."},
+  {t:"A genetic variant", correct:false, why:"A variant can cause an ADE with the right drug and dose, but Dr. Smith named nonadherence as the biggest reason for therapeutic failure."},
   {t:"Abrupt stopping of a long-term drug", correct:false, why:"That causes an adverse drug withdrawal event."},
-  {t:"Drug interactions in the gut", correct:false, why:"Not the reason she gave for therapeutic failure."}],
+  {t:"Drug interactions in the gut", correct:false, why:"Not the reason Dr. Smith gave for therapeutic failure."}],
  teach:"A therapeutic failure is when suboptimal amounts of a medication are given and the condition fails to stabilize or symptoms worsen. The biggest reason is patient nonadherence. Dr. Smith asked pharmacists to reflect on their counseling and to use teach back, in which the patient repeats what they were told, to catch a patient who is not understanding.",
  quote:"a lot of times therapeutic failures are mostly seen as patient non-adherence. That's probably the biggest reason why we get therapeutic failures.",
  cite:"ADE-Lecture-Students-2026.pdf slide 'Therapeutic Failures' (p. 7); transcript 10/28"},
@@ -105,7 +105,7 @@ QUESTIONS.push(
  concept:"withdrawal-event-drugs", tags:["smith","inclass"], source:"both",
  stem:"Dr. Smith asked which medications can cause an adverse drug withdrawal event if stopped too quickly. After opioids and hypertension medications, which central nervous system (CNS) category did she accept?",
  options:[
-  {t:"Serotonin reuptake inhibitors (SSRIs)", correct:true, why:"She prompted for a CNS category and accepted SSRIs."},
+  {t:"SSRIs", correct:true, why:"She prompted for a CNS category and accepted SSRIs."},
   {t:"Over-the-counter iron supplements for anemia", correct:false, why:"Iron came up as a common accidental overdose in children."},
   {t:"Statins", correct:false, why:"Statins came up among the drugs causing most ADRs."},
   {t:"Radiocontrast dye", correct:false, why:"Radiocontrast came up as a pseudoallergic reaction."}],
@@ -145,7 +145,7 @@ QUESTIONS.push(
   {t:"Healthcare professional, patient, or consumer", correct:true, why:"All three are in the definition; Dr. Smith stressed that patients, and pharmacists, can be culpable."},
   {t:"The prescriber alone", correct:false, why:"The definition is wider than the prescriber."},
   {t:"Healthcare professionals only", correct:false, why:"Patients and consumers are included: a patient can take a drug wrongly at home despite good counseling."},
-  {t:"Only the prescriber who wrote the original order", correct:false, why:"The definition names the healthcare professional, patient or consumer."}],
+  {t:"The dispensing pharmacist alone", correct:false, why:"The definition names the healthcare professional, patient or consumer, not one role."}],
  teach:"NCCMERP defines a medication error as any preventable event that may cause or lead to inappropriate medication use or patient harm while the medication is in the control of the healthcare professional, patient or consumer. A patient can still take a drug wrongly at home after correct prescribing and counseling. All of us, pharmacists included, can be culpable.",
  quote:"while the medication is in the control of the healthcare professional, patient, or consumer.",
  cite:"ADE-Lecture-Students-2026.pdf slide 'Medication Errors (MEs)' (p. 10); transcript 10/28"},
@@ -231,7 +231,7 @@ QUESTIONS.push(
  options:[
   {t:"Liver toxicity", correct:true, why:"Dr. Smith named liver toxicity as the most common reason."},
   {t:"Cancer after long-term use", correct:false, why:"A student raised delayed effects such as cancer; Dr. Smith named a different reaction as the most common reason."},
-  {t:"Tinnitus", correct:false, why:"Tinnitus from aspirin was her example of intolerance."},
+  {t:"Tinnitus", correct:false, why:"Tinnitus from aspirin was Dr. Smith's example of intolerance."},
   {t:"Dry mouth", correct:false, why:"Dry mouth is a predictable pharmacologic side effect."}],
  teach:"Rare reactions found after launch are often very bad ones, and most of the time the reaction that prompts removal of a launched drug is liver toxicity.",
  quote:"Most of the time, the reaction that prompts us to pull drugs from the market once they've already launched our liver toxicity.",
@@ -268,7 +268,7 @@ QUESTIONS.push(
  stem:"Dr. Smith asked the class to add one item to the FDA efforts to improve the drug approval process regarding ADEs. What was it?",
  options:[
   {t:"Pharmacogenomics (PGx)", correct:true, why:"Companies are encouraged to look at what a genetic variant does to patient response, with separate FDA guidance."},
-  {t:"Longer animal studies", correct:false, why:"Delayed effects in animals came up only as a student answer about drug withdrawals."},
+  {t:"Longer animal studies", correct:false, why:"Delayed effects in short animal studies came up only as a student answer about why drugs are pulled from the market."},
   {t:"Placebo-only comparison groups", correct:false, why:"Placebo-only comparison is listed as a limitation."},
   {t:"Removing children from trials", correct:false, why:"The move is toward including pediatric patients under careful guidelines."}],
  teach:"Besides adding pediatric patients to the geriatric bullet, Dr. Smith added pharmacogenomics (PGx). When a company believes PGx should be considered, it is highly encouraged to look intentionally at what a genetic variant does to patient response in its trials, and the FDA has provided separate guidance for that.",
@@ -362,12 +362,12 @@ QUESTIONS.push(
   {t:"Remote", correct:false, why:"Remote: drug is not likely responsible."}],
  teach:"The rankings Dr. Smith gave are definite (drug is likely the true cause), probable (drug is the apparent cause), possible (drug appears to be associated) and remote (drug is not likely responsible). The one-page algorithm prints the score bands: 9 definite, 5-8 probable, 1-4 possible, 0 doubtful.",
  quote:"So these are the rankings definite, probable, possible, or remote.",
- note:"Conflict: the deck slide (p. 21) and her words name the lowest ranking 'remote'; the Naranjo Algorithm page names a score of 0 'doubtful'. Keyed to the slide and her words; 'doubtful' is not offered as an option.",
+ note:"Conflict: the deck slide (p. 21) and Dr. Smith's words name the lowest ranking 'remote'; the Naranjo Algorithm page names a score of 0 'doubtful'. Keyed to the slide and her words; 'doubtful' is not offered as an option.",
  cite:"ADE-Lecture-Students-2026.pdf slide 'Causality of Adverse Drug Reactions' (p. 21); Naranjo Algorithm (one page); transcript 10/28"},
 
 {id:"L22-028", lecture:"L22", prof:"Smith", tier:"new", topic:"L22", sub:"naranjo", skill:"calc",
  concept:"naranjo-scoring", tags:["smith"], source:"both",
- stem:"Naranjo scoring: there are previous conclusive reports of the reaction; the reaction appeared after the drug was started; it improved when the drug was stopped; the drug was not re-given; no alternative cause could explain it; every other question is answered 'do not know'. What is the total and its category?",
+ stem:"Naranjo scoring: there are previous conclusive reports of the reaction; the reaction appeared after the drug was started; it improved when the drug was stopped; the drug was never re-given, so question 4 is answered 'do not know'; no alternative cause could explain it; every other question is answered 'do not know'. What is the total and its category?",
  options:[
   {t:"6; probable", correct:true, why:"+1 (reports) +2 (appeared after) +1 (improved) +0 (not re-given) +2 (no alternative cause) = 6, in the 5-8 probable band."},
   {t:"4; possible", correct:false, why:"Scores 'no' on alternative causes as 0; a 'no' there earns +2."},
@@ -419,7 +419,7 @@ QUESTIONS.push(
  concept:"immuno-vs-nonimmuno-predictable", tags:["smith"], source:"both",
  stem:"ADRs are grouped into two big buckets, immunologic and nonimmunologic. How do the two compare in predictability?",
  options:[
-  {t:"Nonimmunologic often predictable; immunologic often not", correct:true, why:"Her contrast; some nonimmunologic reactions are still unpredictable."},
+  {t:"Nonimmunologic often predictable; immunologic often not", correct:true, why:"Dr. Smith's contrast; some nonimmunologic reactions are still unpredictable."},
   {t:"Immunologic often predictable; nonimmunologic often not", correct:false, why:"Reversed."},
   {t:"Both buckets are always predictable from the dose given", correct:false, why:"Immunologic reactions are often not predictable."},
   {t:"Both buckets are always unpredictable, whatever the drug", correct:false, why:"Nonimmunologic reactions such as pharmacologic side effects and drug toxicity are predictable."}],
@@ -433,7 +433,7 @@ QUESTIONS.push(
  options:[
   {t:"Intolerance", correct:true, why:"An unpredictable nonimmunologic reaction; Dr. Smith called this the classic example."},
   {t:"Idiosyncratic reaction", correct:false, why:"The table's idiosyncratic example is hemolytic anemia in G6PD deficiency after primaquine."},
-  {t:"Pseudoallergic reaction", correct:false, why:"Her pseudoallergic example was itching after radiocontrast dye."},
+  {t:"Pseudoallergic reaction", correct:false, why:"Dr. Smith's pseudoallergic example was itching after radiocontrast dye."},
   {t:"Type I hypersensitivity", correct:false, why:"No immune mechanism is involved in intolerance."},
   {t:"Drug overdose", correct:false, why:"A single small dose is not an overdose."}],
  teach:"True intolerance is an unpredictable, nonimmunologic reaction to a small dose, and tinnitus after one small dose of aspirin is the classic example. In the same unpredictable group are pseudoallergic reactions, such as the itch some people get from radiocontrast dye that feels allergic but is the drug itself, and idiosyncratic reactions.",
@@ -508,10 +508,10 @@ QUESTIONS.push(
  concept:"hypersens-type3-serum-sickness", tags:["smith"], source:"both",
  stem:"Two weeks after a drug is started, a patient has serum sickness with fever, arthralgias and lymphadenopathy. Which hypersensitivity type fits?",
  options:[
-  {t:"Type III (immune complex)", correct:true, why:"Immune complex: drug-antibody complexes deposit in tissue with complement activation, 1 to 3 weeks after exposure."},
-  {t:"Type I (IgE-mediated)", correct:false, why:"IgE-mediated reactions appear within minutes to hours."},
-  {t:"Type II (cytotoxic)", correct:false, why:"Cytotoxic reactions give hemolytic anemia, neutropenia or thrombocytopenia."},
-  {t:"Type IV (delayed, cell-mediated)", correct:false, why:"Delayed cell-mediated reactions give contact dermatitis or maculopapular rash, 2 to 7 days after cutaneous exposure."}],
+  {t:"Type III", correct:true, why:"Immune complex: drug-antibody complexes deposit in tissue with complement activation, 1 to 3 weeks after exposure."},
+  {t:"Type I", correct:false, why:"IgE-mediated reactions appear within minutes to hours."},
+  {t:"Type II", correct:false, why:"Cytotoxic reactions give hemolytic anemia, neutropenia or thrombocytopenia."},
+  {t:"Type IV", correct:false, why:"Delayed cell-mediated reactions give contact dermatitis or maculopapular rash, 2 to 7 days after cutaneous exposure."}],
  teach:"Type III (immune complex) reactions come from tissue deposition of drug-antibody complexes with complement activation and inflammation. Manifestations include serum sickness, fever, rash, arthralgias, lymphadenopathy, urticaria, glomerulonephritis and vasculitis, 1 to 3 weeks after exposure. The table's example is serum sickness from anti-thymocyte globulin.",
  quote:"I do want you to remember these because these are important when we talk with our patients.",
  note:"Dr. Smith spoke only to type I and type IV timing; the type II and III rows are from the table she asked the class to remember.",
@@ -539,7 +539,7 @@ QUESTIONS.push(
   {t:"Mercaptopurine", correct:false, why:"Mercaptopurine was discussed with TPMT, not an HLA-B variant."}],
  teach:"Stevens-Johnson syndrome is a really painful and dangerous reaction that can involve the mouth and mucosal tract, not just the external skin, and the skin can come off. Carbamazepine carries this risk in people with a certain HLA-B variant. Abacavir labeling once described similar skin reactions but now describes an all-organ hypersensitivity reaction.",
  quote:"which drug did we talk about that, uh, people with a certain genetic variant of the HLAB gene were really at risk for having this kind of reaction? Yeah, carbamazepine",
- note:"Shown after the break from the deck slide titled 'Steven Johnson Syndrome' (p. 33); the skin-reaction slides pp. 28-34 were otherwise skipped. Same fact as L21-055 (10/27). The handwritten 'abacavir' on the posted slide is a student's note and is not used.",
+ note:"Shown after the break from the deck slide titled 'Steven Johnson Syndrome' (p. 33), after a brief look at the list of skin reactions (p. 30) and an image of hives; the rest of the skin, liver and renal slides were skipped. Same fact as L21-055 (10/27). The handwritten 'abacavir' on the posted slide is a student's note and is not used.",
  cite:"ADE-Lecture-Students-2026.pdf slide 'Steven Johnson Syndrome' (p. 33); transcript 10/28"},
 
 // L22 part 2 — Day 22 (10/28): Drug interactions (Dr. Smith). Exam 4.
@@ -564,8 +564,8 @@ QUESTIONS.push(
  concept:"precipitant-vs-object", tags:["smith"], source:"both",
  stem:"In a drug interaction, which term names the drug, chemical or food that causes the interaction?",
  options:[
-  {t:"The precipitant drug", correct:true, why:"The precipitant causes the interaction; she called it the bad guy."},
-  {t:"The object drug", correct:false, why:"The object drug is the one affected by the interaction; she said it is the one being bullied."},
+  {t:"The precipitant drug", correct:true, why:"The precipitant causes the interaction; Dr. Smith called it the bad guy."},
+  {t:"The object drug", correct:false, why:"The object drug is the one affected by the interaction; Dr. Smith said it is the one being bullied."},
   {t:"The substrate drug", correct:false, why:"Substrate is a column in the CYP450 table; it is not the name for the cause of an interaction."},
   {t:"The incompatible drug", correct:false, why:"Incompatibility describes drugs mixed outside the body, such as in an IV bag."}],
  teach:"The precipitant drug is the drug, chemical or food that causes the interaction. The object drug is the drug whose effect or levels are changed by it. In the tables from the Engelbrecht and Shargel chapter, the middle column lists precipitants and the right column lists object drugs.",
@@ -588,12 +588,12 @@ QUESTIONS.push(
  concept:"pharmaceutical-incompatibility", tags:["smith"], source:"both",
  stem:"Drug interactions are classified as pharmacokinetic, pharmacodynamic or pharmaceutical. What is a pharmaceutical interaction?",
  options:[
-  {t:"An incompatibility when drugs are mixed, as in making IVs", correct:true, why:"Pharmaceutical interactions are incompatibilities outside the body; she gave IVs that flocculate as the example."},
+  {t:"An incompatibility when drugs are mixed, as in making IVs", correct:true, why:"Pharmaceutical interactions are incompatibilities outside the body; Dr. Smith gave incompatible drugs when making IVs as the example."},
   {t:"A change in a drug's absorption, distribution, metabolism or excretion", correct:false, why:"A change in ADME (absorption, distribution, metabolism, excretion) by another substance is a pharmacokinetic interaction."},
   {t:"A change in a drug's effect at its target by another substance", correct:false, why:"An altered effect is a pharmacodynamic interaction."},
   {t:"Any interaction between a drug and a manufactured food", correct:false, why:"Food-drug interactions in the body are pharmacokinetic or pharmacodynamic."}],
  teach:"A pharmacokinetic interaction changes the ADME of a drug; a pharmacodynamic interaction changes its effect. A pharmaceutical interaction is an incompatibility when drugs are mixed outside the body, for example when making IVs. Dr. Smith called this a pharmaceutics topic and did not cover it further.",
- quote:"Things like, you know, incompatible drugs when you're trying to make IVs causing flocking, right? We're not gonna talk about those. That's a pseudics topic, OK?",
+ quote:"you are aware that there are other kinds of drug interactions that occur outside the body. Things like, you know, incompatible drugs when you're trying to make IVs",
  cite:"DDI Lecture Students 2026 (1).pdf slides 'Objectives' (p. 3) and 'Drug Interactions Introduction' (p. 6); (T) 10/28 transcript"},
 
 {id:"L22-046", lecture:"L22", prof:"Smith", tier:"new", topic:"L22", sub:"ddi-pd", skill:"recall",
@@ -647,7 +647,7 @@ QUESTIONS.push(
 
 {id:"L22-050", lecture:"L22", prof:"Smith", tier:"new", topic:"L22", sub:"ddi-absorb", skill:"tell",
  concept:"adsorption-vs-absorption", tags:["smith"], source:"both",
- stem:"Cholestyramine lowers the bioavailability of digoxin and levothyroxine. What is this interaction called?",
+ stem:"Cholestyramine lowers the bioavailability of digoxin and levothyroxine. Under which drug interaction type does the absorption table (Table 18-1) list it?",
  options:[
   {t:"Adsorption", correct:true, why:"Adsorption, with a D: the drugs stick to cholestyramine by a looser bond, like van der Waals forces."},
   {t:"Absorption", correct:false, why:"Absorption, with a B, is the process being changed, not the name of this interaction."},
@@ -757,7 +757,7 @@ QUESTIONS.push(
  stem:"A patient at steady state on digoxin has breakthrough arrhythmias and is given quinidine. What happens to digoxin?",
  options:[
   {t:"It is displaced from muscle and free levels rise", correct:true, why:"Quinidine has an even higher volume of distribution and takes digoxin's place in muscle."},
-  {t:"It is displaced from bone and excreted faster", correct:false, why:"Digoxin binds muscle; she corrected herself from bone to muscle."},
+  {t:"It is displaced from bone and excreted faster", correct:false, why:"Digoxin binds muscle; Dr. Smith corrected herself from bone to muscle."},
   {t:"It is metabolized faster after enzyme induction by quinidine", correct:false, why:"The example is a tissue binding interaction."},
   {t:"Its absorption from the gut is blocked", correct:false, why:"Quinidine acts at the tissue binding sites, not in the gut."}],
  teach:"Many drugs bind to tissues, and at steady state that binding stays constant unless another compound competes for the binding sites. Digoxin has a very high volume of distribution and sticks to muscle; quinidine has an even higher one and displaces digoxin from the muscle tissue. Digoxin is a narrow therapeutic index drug, so the freed digoxin can slow the heart too much.",
@@ -785,7 +785,7 @@ QUESTIONS.push(
   {t:"Subtherapeutic", correct:true, why:"The smoke induces the enzymes that metabolize and clear theophylline."},
   {t:"Overdose", correct:false, why:"Induction speeds clearance, so levels fall rather than rise."},
   {t:"Neither; smoke exposure does not affect theophylline", correct:false, why:"The smoke is the precipitant in this classic example."},
-  {t:"Overdose, then subtherapeutic once smoke clears", correct:false, why:"She gave a single answer: the child is subtherapeutic."}],
+  {t:"Overdose, then subtherapeutic once smoke clears", correct:false, why:"Dr. Smith gave a single answer: the child is subtherapeutic."}],
  teach:"Cigarette smoke contains polycyclic aromatic hydrocarbons (PAHs), which induce CYP1A1 and CYP1A2. Theophylline is metabolized by these enzymes, so a child exposed to smoke clears it faster and is subtherapeutic. Dr. Smith said this was why pediatric asthma patients in smoking households were long hard to treat with theophylline.",
  quote:"And we finally realized that cigarette smoke, the PAHs, were inducing those enzymes that metabolize theophylline, so we always had a hard time treating these kids.",
  cite:"DDI Lecture Students 2026 (1).pdf slides 'Pharmacokinetic Interactions Drug Elimination and Clearance' (p. 14, Table 18-2) and 'Chemical-Drug Interactions' (p. 29); (T) 10/28 transcript"},
@@ -812,7 +812,7 @@ QUESTIONS.push(
   {t:"Chelation; less atorvastatin absorbed", correct:false, why:"Chelation is the quinolone and cation example."}],
  teach:"Dr. Smith asked the room what cimetidine is for; it was one of the first drugs for GERD and is still on the market. Cimetidine inhibits the mixed-function oxidase enzymes that clear atorvastatin, decreasing atorvastatin clearance and increasing its levels. She called it probably the most historic example used to study enzyme inhibition.",
  quote:"We did a lot of work trying to understand how inhibition happens by using cimetidine and looking at atorvastatin clearance.",
- note:"The caption reads \"It has a really wide narrowtherapeutic index\"; from context she meant cimetidine has a wide therapeutic index, so large amounts usually cause no problems. That sentence is not quoted.",
+ note:"The caption reads \"It has a really wide narrowtherapeutic index\"; from context Dr. Smith meant cimetidine has a wide therapeutic index, so large amounts usually cause no problems. That sentence is not quoted.",
  cite:"DDI Lecture Students 2026 (1).pdf slide 'Pharmacokinetic Interactions Drug Elimination and Clearance' (p. 14, Table 18-2); (T) 10/28 transcript"},
 
 {id:"L22-064", lecture:"L22", prof:"Smith", tier:"new", topic:"L22", sub:"ddi-metab", skill:"apply",
@@ -885,9 +885,9 @@ QUESTIONS.push(
  options:[
   {t:"Up; yes, for treating the infection", correct:true, why:"Probenecid blocks the active tubular secretion of penicillin, so blood levels rise, which helps treat the infection."},
   {t:"Down; no, the infection is undertreated", correct:false, why:"Secretion is blocked, so less penicillin leaves in the urine."},
-  {t:"Up; no, penicillin toxicity is the goal to avoid", correct:false, why:"She called the higher level good for fighting the infection."},
-  {t:"No change; the two use different transporters", correct:false, why:"She said probenecid goes through the same transporter as the antibiotic."}],
- teach:"Secretion of penicillins and some cephalosporins is an active transport process. Probenecid goes through the same transporter and blocks the antibiotic from being secreted, so blood concentrations go up. This is a drug interaction used clinically; historically it let patients take less penicillin when penicillin was scarce, and it prolongs the dosing interval.",
+  {t:"Up; no, penicillin toxicity is the goal to avoid", correct:false, why:"Dr. Smith called the higher level good for fighting the infection."},
+  {t:"No change; the two use different transporters", correct:false, why:"Dr. Smith said probenecid goes through the same transporter as the antibiotic."}],
+ teach:"Secretion of penicillins and some cephalosporins is an active transport process. Probenecid goes through the same transporter and blocks the antibiotic from being secreted, so blood concentrations go up. This is a drug interaction used clinically; historically it let patients take less penicillin when penicillin was scarce.",
  quote:"So what happens then? Do the blood concentrations of the antibiotic go up or down? Up. Is that good for fighting an infection? Yeah, you want your MIC to be high, right?",
  cite:"DDI Lecture Students 2026 (1).pdf slides 'Pharmacokinetic Interactions Drug Elimination and Clearance' (p. 17, Table 18-4) and 'Benefits (!) of Drug-Drug Interactions' (p. 21); (T) 10/28 transcript"},
 
@@ -896,7 +896,7 @@ QUESTIONS.push(
  stem:"Sodium bicarbonate is given to a patient with a salicylate overdose. What happens to the salicylate in the urine?",
  options:[
   {t:"More ionized, less reabsorbed, cleared faster", correct:true, why:"Alkaline urine ionizes the mildly acidic salicylate, so it is trapped in the urine."},
-  {t:"Less ionized, more reabsorbed, cleared slower", correct:false, why:"That is the direction for a weak base such as amphetamine."},
+  {t:"Less ionized, more reabsorbed, cleared slower", correct:false, why:"That is the direction Table 18-4 lists for amphetamine."},
   {t:"Bound to bicarbonate and adsorbed", correct:false, why:"The bicarbonate changes urine pH; it does not adsorb the drug."},
   {t:"Secreted faster by the probenecid transporter", correct:false, why:"Probenecid blocks secretion of penicillins; this row is about urine pH."}],
  teach:"Table 18-4 lists antacids and sodium bicarbonate under tubular reabsorption and urine pH. Alkalinizing the urine increases ionization of salicylates, decreases their reabsorption and increases their clearance. Dr. Smith pointed out that this is the ion trapping already covered in toxicology for mildly acidic poisons.",
@@ -960,7 +960,7 @@ QUESTIONS.push(
  options:[
   {t:"Different receptors in the first; same receptor in the second", correct:true, why:"Adrenaline's vasopressor action is at alpha-1 while propranolol blocks beta; naloxone and the narcotic act at the same receptor."},
   {t:"Same receptor in the first; different receptors in the second", correct:false, why:"This reverses the two pairs."},
-  {t:"Both pairs act at the same receptor", correct:false, why:"She asked whether adrenaline works at beta or alpha-1 to show the first pair uses different receptors."},
+  {t:"Both pairs act at the same receptor", correct:false, why:"Dr. Smith asked whether adrenaline works at beta or alpha-1 to show the first pair uses different receptors."},
   {t:"Both pairs are pharmacokinetic interactions", correct:false, why:"Both are pharmacodynamic; neither changes ADME."}],
  teach:"Propranolol, a beta-blocker, with adrenaline, a vasopressor, is antagonism of pharmacodynamic effects: the antihypertensive and hypertensive effects cancel. Dr. Smith asked whether adrenaline works at beta or alpha-1; it is both, but its vasopressing is at alpha-1, a different receptor from the one propranolol blocks. Naloxone with a narcotic pain medication is opposite pharmacodynamics at the same target, giving ineffectiveness of the narcotic.",
  quote:"It's both, but the alpha one aspect of adrenaline here is, is where we're talking about, it's hitting a different receptor to do the vasopressing",
@@ -1043,7 +1043,7 @@ QUESTIONS.push(
  note:"Conflict: while going over Table 18-3 Dr. Smith said the citrus fruits \"will induce\" the CYP3A family and that the non-drug examples \"all just happen to be inducers\" (the printed table places grapefruit, Seville and bitter oranges and garlic under its Inducer heading). Here, on food-drug interactions, she said they compete with metabolizing enzymes, and p. 27 says a competing food is an inhibitor. Keyed to this later statement and p. 27.",
  cite:"DDI Lecture Students 2026 (1).pdf slides 'Food-Drug Interactions' (p. 27) and 'Pharmacokinetic Interactions Drug Elimination and Clearance' (p. 15, Table 18-3); (T) 10/28 transcript"},
 
-{id:"L22-082", lecture:"L22", prof:"Smith", tier:"new", topic:"L22", sub:"ddi-herb-food", skill:"apply",
+{id:"L22-082", lecture:"L22", prof:"Smith", tier:"new", lowYield:true, topic:"L22", sub:"ddi-herb-food", skill:"apply",
  concept:"st-johns-wort-pgp", tags:["smith"], source:"both",
  stem:"St. John's wort also acts on intestinal P-glycoprotein (P-gp). What happens to a patient's digoxin levels?",
  options:[
@@ -1053,7 +1053,7 @@ QUESTIONS.push(
   {t:"Digoxin displaced from muscle", correct:false, why:"Displacement from muscle is the quinidine example."}],
  teach:"Table 18-6 lists the mechanisms by which one herbal product, St. John's wort, causes interactions. It induces CYP3A4 (lowering levels of drugs such as protease inhibitors, benzodiazepines, calcium channel blockers and cyclosporine), induces CYP2C9 and CYP1A2 (lower warfarin), and increases intestinal P-gp efflux, lowering digoxin, calcium channel blockers and simvastatin. It also has additive serotonin effects with SSRIs, serotonin agonists and MAOIs.",
  quote:"We didn't talk about the fact that it is a substrate for P glycoprotein. It'll mess up other drugs' bioavailability, OK?",
- note:"Dr. Smith called St. John's wort a substrate for P-glycoprotein; the table lists it as increasing P-gp-catalyzed efflux of substrate drugs. Keyed to the table's effect on digoxin, which matches her point that it changes other drugs' bioavailability.",
+ note:"Dr. Smith called St. John's wort a substrate for P-glycoprotein; the table lists it as increasing P-gp-catalyzed efflux of substrate drugs. Keyed to the table's effect on digoxin, which matches her point that it changes other drugs' bioavailability. The digoxin row was on screen but not discussed; marked lowYield.",
  cite:"DDI Lecture Students 2026 (1).pdf slide 'Drug-Herbal Interactions' (p. 24, Table 18-6); (T) 10/28 transcript"},
 
 {id:"L22-083", lecture:"L22", prof:"Smith", tier:"new", topic:"L22", sub:"ddi-herb-food", skill:"apply", multi:true,
@@ -1079,7 +1079,7 @@ QUESTIONS.push(
   {t:"No risk; herbs lack activity", correct:false, why:"Herbs have pharmacologic activity; these three are antiplatelet."}],
  teach:"Garlic, ginger and feverfew directly inhibit platelets. With warfarin, this adds anticoagulation from a different angle and increases the risk of bleeding. Drugs with a narrow therapeutic index, such as warfarin, are at greater risk for drug-herbal interactions.",
  quote:"Other products like garlic, ginger, feverfew, they are also antiplatelet by a different mechanism, so you could be overcoagulating your patients from a different angle when you're using these herbal products, OK?",
- note:"The caption says \"overcoagulating\"; from context and p. 25 (\"increase risk for bleeding with warfarin\") she meant over-anticoagulating.",
+ note:"The caption says \"overcoagulating\"; from context and p. 25 (\"increase risk for bleeding with warfarin\") Dr. Smith meant over-anticoagulating.",
  cite:"DDI Lecture Students 2026 (1).pdf slide 'Drug-Herbal Interactions' (p. 25); (T) 10/28 transcript"},
 
 {id:"L22-085", lecture:"L22", prof:"Smith", tier:"new", topic:"L22", sub:"ddi-herb-food", skill:"recall",
