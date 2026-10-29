@@ -660,6 +660,8 @@ const FOCUS4 = [
   ["Now, for pharmacogenomics, it's gonna be a lot more application.", '10/26 (opening)', ''],
   ["You do not need to memorize this table, because I will tell you the ones that I want you to.", '10/26 (the DiPiro table of drug-target variants)', `<button type="button" class="btn ghost" data-jump="guide:guide4-l20-4">Guide 18: drug-target receptors</button>`],
   ["You guys have to be able to drill down from your phenotype of your patient to the molecular structure of the DNA and know what is star 2? What is star 3? Why is that enzyme not active in this person? OK, you have to know that.", '10/26 (Furuta 1998)', `<button type="button" class="btn ghost" data-jump="guide:guide4-l20-8">Guide 22: Furuta 1998</button>`],
+  ["it is cumulative to my part, not to Doctor Gottlieb's part", '10/28 (Exam 4 announcement)', ''],
+  ["so it'll be more of a, uh, application of toxicology to pharmacogenomics, adverse drug events, and drug interactions", '10/28 (Exam 4 announcement)', ''],
   ["You need to be able to look at information I give you about a patient.", '10/27 (the CPIC warfarin algorithm)', `<button type="button" class="btn ghost" data-jump="guide:guide4-l21-3">Guide 25: the warfarin algorithm</button>`],
   ["This is the detail you have to study for your exam.", '10/27 (walking a patient through the warfarin algorithm)', `<button type="button" class="btn ghost" data-topic="L21" data-ex="4">Day 21 (10/27) questions</button>`],
   ["You guys don't need to memorize this table.", '10/27 (the list of current CPIC guidelines)', ''],

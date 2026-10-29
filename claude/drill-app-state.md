@@ -244,6 +244,17 @@ See `## Conflicts / uncertain` in notes/L01.md, L02.md and L03.md. The ones that
   label-*); ABBR gains Exam 4 genes and terms; 5 skill:'drug' items in L19/L20 retagged; "Drill the ones I missed (closes
   this review)"; Exam 4 blurb by date taught. Not done: concept titles from guide headings (ABBR only).
 
+- 10/29 (nightly ingest): L22 = 10/28 lecture: ADE-Lecture-Students-2026.pdf pp. 2-27 (then pp. 30, 32, 33 shown; 28-29,
+  31, 34 not reached), the one-page Naranjo Algorithm, then DDI Lecture Students 2026 (1).pdf pp. 2-30 (p. 31 left to
+  read). q_L22.js 86 questions (41 ADE, 45 DDI; 15 select-all, 2 lowYield, 3 dupOf); verifiers 27 bank fixes (none to a
+  key), 40 guide fixes; "How she asks it" lines dropped from L22 sections (she said she had not written the exam yet).
+  guide4-l22-1..9 (headings 29-37), tell4-l22 (42 rows), ref4-l22-1/2; readings/naranjo.json. Walkthroughs 45 parts,
+  23,348 characters, not recorded (about $4.25; all unrecorded Exam 4 walkthroughs 84,336 characters, about $15.33).
+  Exam 4 facts (T 10/28): "about 55 questions"; "cumulative to my part, not to Doctor Gottlieb's part"; application of
+  toxicology to PGx, ADEs and DDIs; study hints to be posted; review Friday. Asked the user whether the Exam 4 sim should
+  mix in some Exam 3 toxicology items (awaiting answer). ADE deck p. 35 on the Drive copy held the user's personal text
+  with other people's names: slide image removed and the branch history purged (filter-branch + force-push, user approved).
+
 ## Restore after a container restart
 
 The scratchpad is wiped on every restart. Durable copies: scripts and briefs in the repo (exam1-drill/src/daily/,
@@ -253,6 +264,9 @@ Transcripts are never committed (Pages serves the repo root). At the start of ea
 - L19 (10/22): Drive 1IYKmaNPVlhYThg-6CETJTL5J23JndQO2, 83,752 bytes -> <scratchpad>/l19/transcript.txt
 - L20 (10/26): Drive 1iWFEnmaSLik81r8KWO2jSYFZ0FRp3SoO, 93,647 bytes -> <scratchpad>/l20/transcript.txt
 - L21 (10/27): Drive 15Kad20K5VmUxs9-Qfck-lxcCm5y8SDkr, 68,227 bytes -> <scratchpad>/l21/transcript.txt
+- L22 (10/28): Drive 1F2BVNSRss2sCwnPq_s5bfdB6YxFsGXWx, 98,425 bytes -> <scratchpad>/l22/transcript.txt
+- ADE deck: Drive 1ldD9jDm37LarIVDJfiPy9ZSeZZ58uBRF (35 pages), DDI deck: Drive 1VlAVVUio8ckIQHpwWun406QfNb9CTC74 (32 pages),
+  Naranjo Algorithm: Drive 1grrhx5-0rlCQBo7lpW6tbVbdCm535LPC -> <scratchpad>/decks/{ade,ddi,naranjo}.pdf, text <scratchpad>/l22/*.txt
 - Resources deck PDF: Drive 1DnI1ksVdck1ZGUup3wYTUAcNWyG-gB_e (22 pages) -> <scratchpad>/decks/pgxres.pdf, text <scratchpad>/l21/pgxres.txt
 - 10/27 labels and guideline: abacavir 1sdpa2XF9pppf8hDWC7LLpJOCrbgHPaIZ, carbamazepine 1F38CLjvV8oTnXIQAuMwd28eMflUGd-_F,
   trastuzumab 1b67c0c856hh9cIQN-pIzoTzC4b-ylbqn, CPIC warfarin 2017 1XmXKozagnU8-5rPc4aQGHy6cDL6eN6tM -> <scratchpad>/l21/readings/*.txt;

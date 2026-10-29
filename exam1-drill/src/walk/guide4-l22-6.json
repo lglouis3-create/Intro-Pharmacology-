@@ -1,0 +1,35 @@
+{
+ "id": "guide4-l22-6",
+ "title": "Absorption and distribution interactions",
+ "segs": [
+  {
+   "text": "Section thirty four. Absorption and distribution interactions. An absorption interaction changes how fast and how much of the object drug reaches the systemic circulation, so bioavailability goes up or down. The gut is the most common site. Two of these interactions keep the drug in the gut. Complexation or chelation is the tighter bond: levofloxacin complexes with divalent cations such as calcium, magnesium, aluminum and iron. Adsorption, spelled with a D, is a looser bond: cholestyramine, kaolin and acarbose lower digoxin bioavailability. She said, Don't flip those B's and D's around. Magnesium with a quinolone is a counseling point: separate the doses by several hours.",
+   "slide": "ddi:9",
+   "reading": null,
+   "table": 0
+  },
+  {
+   "text": "Motility works in both directions. Laxatives and cathartics speed transit, so slowly absorbed drugs and controlled release products lose bioavailability. Anticholinergics such as propantheline slow gastric emptying, delaying acetaminophen absorption. H two blockers, antacids and proton pump inhibitors raise gastric pH, and ketoconazole dissolves less at basic pH, so therapy can fail. Antibiotics change gut flora. Erythromycin reduces the bacteria that inactivate digoxin, so digoxin rises. For estrogen and progestin birth control, antibiotics reduce the flora needed for enterohepatic circulation, so hormone levels fall and ovulation suppression can fail.",
+   "slide": "ddi:9",
+   "reading": null,
+   "table": 0
+  },
+  {
+   "text": "Two gut interactions are not in the table. In competition for carrier mediated absorption, the precipitant competes for the same carrier as the object drug, and her example of a carrier is P glycoprotein. An alteration in intestinal blood flow is rare, and she said motility changes are of more concern. Absorption interactions also happen outside the gut. A dentist gave her epinephrine with Novocaine to keep the anesthetic localized, and the epinephrine made her shaky.",
+   "slide": "ddi:10",
+   "reading": null
+  },
+  {
+   "text": "A distribution interaction happens after absorption. The precipitant pushes the object drug off its binding sites, so more is free, and only free drug reaches targets. Binding stays constant at steady state unless another compound competes for the sites. Valproic acid, added for breakthrough seizures, binds plasma proteins better than phenytoin and knocks it off. Phenytoin has a narrow therapeutic index, so more free phenytoin can cause side effects. Aspirin, in turn, decreases valproic acid protein binding, making valproic acid the object drug.",
+   "slide": "ddi:11",
+   "reading": null,
+   "table": 1
+  },
+  {
+   "text": "Tissue binding works the same way. Digoxin has a very high volume of distribution and binds muscle, not bone. Quinidine, given for breakthrough arrhythmias, has an even higher volume of distribution, displaces digoxin from muscle and binds there. Free digoxin rises, and because it has a narrow therapeutic index, digoxin toxicity can be enhanced. Displacement changes free drug, not metabolism, so it is not enzyme induction.",
+   "slide": "ddi:12",
+   "reading": null,
+   "table": 1
+  }
+ ]
+}

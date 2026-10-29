@@ -48,6 +48,7 @@ const COURSE = {
     {id:'L19', deck:'PGx-Examples-Students-Fall-2026.pdf', label:'Day 19 (10/22): Pharmacogenomics examples continued (Dr. Smith)', prof:'Smith', exam:4, module:4},
     {id:'L20', deck:'PGx-Examples-Students-Fall-2026.pdf', label:'Day 20 (10/26): Pharmacogenomics examples, transporters, targets, HLA (Dr. Smith)', prof:'Smith', exam:4, module:4},
     {id:'L21', deck:'PGx-Resources-and-Cases-Students-Fall-2026.pdf', label:'Day 21 (10/27): Pharmacogenomics resources and drug labels (Dr. Smith)', prof:'Smith', exam:4, module:4},
+    {id:'L22', deck:'ADE-Lecture-Students-2026.pdf', decks:['ADE-Lecture-Students-2026.pdf', 'DDI Lecture Students 2026 (1).pdf'], label:'Day 22 (10/28): Adverse drug events and drug-drug interactions (Dr. Smith)', prof:'Smith', exam:4, module:4},
   ],
   exams: [
     {id:1, name:'Exam 1', scope:'Pharmacodynamics (9/22–9/30)', date:'Fri Oct 2, 9–11 am', when:'2026-10-02T09:00:00-05:00',  // syllabus: Exam I, Fri Oct 2, 9–11 am
@@ -102,7 +103,8 @@ const COURSE = {
      blurb:'Covers Oct 21 through Oct 28, taught by Dr. Smith: pharmacogenomics examples (10/21, 10/22, 10/26), pharmacogenomics resources and drug labels (10/27), and adverse drug events and drug interactions (planned for 10/28; on 10/27 she said adverse drug events would wrap up 10/28 along with the drug interactions lecture). 22% of the course grade. The question count and format are not announced yet.',
      facts:[['Covers', 'Oct 21 – Oct 28: pharmacogenomics examples, cases and resources, adverse drug reactions, drug interactions'],
             ['Weight', '22% of the course grade'],
-            ['Format', 'Not announced yet'],
+            ['Format', 'Count not final: "It\'s probably gonna be again in the range of about 55 questions." (T) 10/28'],
+            ['Cumulative', 'To her part only: "it is cumulative to my part, not to Doctor Gottlieb\'s part"; "application of toxicology to pharmacogenomics, adverse drug events, and drug interactions" (T) 10/28'],
             ['Dr. Gottlieb', 'No questions from him: "Doctor Gottlieb will not have questions on the, the last exam." (T) 10/26'],
             ['Her emphasis', '"There will be details on that exam" and "for pharmacogenomics, it\'s gonna be a lot more application" (T) 10/26'],
             ['How she tests', 'What she says in lecture first, then the slides, then the readings; her posted keys set the depth']],
