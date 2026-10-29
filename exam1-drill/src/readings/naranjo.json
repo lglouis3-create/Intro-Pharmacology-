@@ -1,0 +1,243 @@
+{
+ "id": "naranjo",
+ "title": "Naranjo Algorithm",
+ "source": "",
+ "file": "Naranjo Algorithm, one-page questionnaire (Canvas: adverse drug events module)",
+ "lecture": "Wed 10/28 (Adverse Drug Events): introduced as a tool to determine causality of adverse drug reactions; after the break she had the class pull it up from Canvas, look at the 10 questions for timing, and went through the scoring and the time-related questions.",
+ "kind": "guideline",
+ "about": "The Naranjo Algorithm is a one-page questionnaire 'to assess the adverse drug reaction': the user answers ten questions and gives the pertinent score for each. Each question is answered Yes, No or Do not know, and every 'Do not know' answer scores 0. The questions cover previous conclusive reports on the reaction, whether the event appeared after the suspected drug was given, improvement on discontinuation or a specific antagonist, reappearance on re-administration, alternative causes/drugs, reappearance with a placebo, toxic drug concentrations in blood or other fluids, dose-related severity, a similar reaction on previous exposure, and confirmation by objective evidence. Points range from +2 to -1 per answer; questions 2 and 4 give +2 for yes and -1 for no, questions 5 and 6 give -1 for yes and +2 or +1 for no, and the rest give +1 for yes and 0 for no. The total score is categorized as 9 = definite, 5-8 = probable, 1-4 = possible, 0 = doubtful.",
+ "sections": [
+  "Title: Naranjo Algorithm",
+  "Instruction: To assess the adverse drug reaction, please answer the following questionnaire and give the pertinent score.",
+  "Columns: Yes, No, Do not know, Score",
+  "Questions 1-10 with point values",
+  "Total Score: 9=definite; 5-8=probable; 1-4=possible; 0=doubtful",
+  "Total Score box"
+ ],
+ "lecture_use": [
+  {
+   "point": "The algorithm is a tool for proving causality: whether a drug a patient is on is causing the problem",
+   "chapter_location": "Title and instruction line: 'To assess the adverse drug reaction, please answer the following questionnaire and give the pertinent score.'",
+   "lecture_evidence": "We have to think of, we have to try to prove the causality to know what drug might be causing the problem.",
+   "date": "10/28"
+  },
+  {
+   "point": "She named the reading in class and had the class pull it up from Canvas",
+   "chapter_location": "Title: Naranjo Algorithm",
+   "lecture_evidence": "And now I want you guys to see uh the Naranjo algorithm.",
+   "date": "10/28"
+  },
+  {
+   "point": "It is used sitting with the patient, asking when the drugs and the symptoms started and what other medications they take",
+   "chapter_location": "Questions 2, 3, 4 and 5 (timing of the event, improvement on discontinuation, reappearance on re-administration, alternative causes/drugs)",
+   "lecture_evidence": "you sit with your patient and you talk with them about when did they start the drugs, when did they start having symptoms, what other medications are they on",
+   "date": "10/28"
+  },
+  {
+   "point": "Timing matters: the relationship between starting the drug and the start of symptoms",
+   "chapter_location": "Questions 2, 3, 4 and 6",
+   "lecture_evidence": "we have to think about the timing, the relationship of when they were put on this drug and when they started seeing the symptoms",
+   "date": "10/28"
+  },
+  {
+   "point": "She asked the class to read the ten questions for the temporal aspect of exposure and response",
+   "chapter_location": "Questions 1 to 10",
+   "lecture_evidence": "So can you take a minute and just look at these 10 questions and realize that.",
+   "date": "10/28"
+  },
+  {
+   "point": "The temporal aspect of exposure and response",
+   "chapter_location": "Questions 2, 3, 4 and 6",
+   "lecture_evidence": "what they mean by the temporal aspect of the exposure and the response",
+   "date": "10/28"
+  },
+  {
+   "point": "Answering the questions gives a score that ranks causality; she listed the rankings as definite, probable, possible or remote (the page prints 'doubtful', not 'remote', for a score of 0)",
+   "chapter_location": "Total Score line: 9=definite; 5-8=probable; 1-4=possible; 0=doubtful",
+   "lecture_evidence": "By answering all those questions on this algorithm, you then come up with a score",
+   "date": "10/28"
+  },
+  {
+   "point": "The rankings as she said them",
+   "chapter_location": "Total Score line: 9=definite; 5-8=probable; 1-4=possible; 0=doubtful",
+   "lecture_evidence": "So these are the rankings definite, probable, possible, or remote.",
+   "date": "10/28"
+  },
+  {
+   "point": "Point values differ by question, and some answers score negative points",
+   "chapter_location": "Yes / No / Do not know columns: yes is +2 on questions 2 and 4, +1 on questions 1, 3, 7, 8, 9 and 10, and -1 on questions 5 and 6; no is -1 on questions 2 and 4",
+   "lecture_evidence": "Pay attention to the fact that, uh, sometimes a yes is 2 points, sometimes it's 1 point, sometimes a no is negative.",
+   "date": "10/28"
+  },
+  {
+   "point": "She said the questions are scored yes or no (the page also has a 'Do not know' column, which scores 0 on every question)",
+   "chapter_location": "Column headings: Yes, No, Do not know, Score",
+   "lecture_evidence": "all these questions you would score with a yes or no",
+   "date": "10/28"
+  },
+  {
+   "point": "Question 2 is a time question",
+   "chapter_location": "Question 2: Did the adverse event appear after the suspected drug was administered? (+2 / -1 / 0)",
+   "lecture_evidence": "So, number 2 does, right? Does, did the adverse event appear after the drug was administered?",
+   "date": "10/28"
+  },
+  {
+   "point": "Question 3 is a time question",
+   "chapter_location": "Question 3: Did the adverse reaction improve when the drug was discontinued or a specific antagonist was administered? (+1 / 0 / 0)",
+   "lecture_evidence": "And number 3, did the symptoms improve when the drug was discontinued or a specific antagonist was given? That's a time aspect.",
+   "date": "10/28"
+  },
+  {
+   "point": "Question 4 is a time question",
+   "chapter_location": "Question 4: Did the adverse reaction reappear when the drug was re-administered? (+2 / -1 / 0)",
+   "lecture_evidence": "number 4, it's definitely time did the adverse reaction reappear if the drug was re-administered.",
+   "date": "10/28"
+  },
+  {
+   "point": "She also counts question 6 (placebo) as time-related; the page wording is 'reappear', and yes scores -1",
+   "chapter_location": "Question 6: Did the reaction reappear when a placebo was given? (-1 / +1 / 0)",
+   "lecture_evidence": "I consider like 6 to be a time kind of thing.",
+   "date": "10/28"
+  },
+  {
+   "point": "Many of the questions are temporal",
+   "chapter_location": "Questions 2, 3, 4 and 6",
+   "lecture_evidence": "so many of these questions are, uh, like temporal in nature",
+   "date": "10/28"
+  },
+  {
+   "point": "Some questions require searching the literature, for example question 1",
+   "chapter_location": "Question 1: Are there previous conclusive reports on this reaction? (+1 / 0 / 0)",
+   "lecture_evidence": "for like example, number one, are there previous conclusive reports of this reaction",
+   "date": "10/28"
+  },
+  {
+   "point": "Looking for published support for the suspicion that the drug causes the reaction",
+   "chapter_location": "Question 1",
+   "lecture_evidence": "You look in the literature, try to see if you can find a published backup of your suspicion that the drug is causing the adverse drug reaction.",
+   "date": "10/28"
+  },
+  {
+   "point": "The exercise separates a drug cause from a new or changed disease state",
+   "chapter_location": "Question 5: Are there alternative causes/drugs that could on their own have caused the reaction? (-1 / +2 / 0)",
+   "lecture_evidence": "Maybe it's another disease state coming on for them. Uh, maybe it's a disease state that's changed, or it could be a drug. And so this exercise will help you delineate between that",
+   "date": "10/28"
+  }
+ ],
+ "read_for": [
+  "Instruction line: the questionnaire is used 'to assess the adverse drug reaction' by answering each question and giving the pertinent score.",
+  "Column headings Yes, No and Do not know: 'Do not know' scores 0 on all ten questions.",
+  "Question 2: Did the adverse event appear after the suspected drug was administered? Yes +2, No -1, Do not know 0.",
+  "Question 3: Did the adverse reaction improve when the drug was discontinued or a specific antagonist was administered? Yes +1, No 0, Do not know 0.",
+  "Question 4: Did the adverse reaction reappear when the drug was re-administered? Yes +2, No -1, Do not know 0.",
+  "Question 6: Did the reaction reappear when a placebo was given? Yes -1, No +1, Do not know 0.",
+  "Question 1: Are there previous conclusive reports on this reaction? Yes +1, No 0, Do not know 0.",
+  "Question 5: Are there alternative causes/drugs that could on their own have caused the reaction? Yes -1, No +2, Do not know 0.",
+  "Total Score line: 9=definite; 5-8=probable; 1-4=possible; 0=doubtful (the page says 'doubtful' for 0; the lecture said 'remote')."
+ ],
+ "beyond_lecture": [
+  "Question 5 (alternative causes/drugs that could on their own have caused the reaction; yes -1, no +2) was not read out in class, although she spoke about telling a drug cause apart from a new or changed disease state.",
+  "Question 7: Was the drug detected in the blood or other fluids in concentrations known to be toxic? Yes +1, No 0, Do not know 0. Not discussed in class.",
+  "Question 8: Was the reaction more severe when the dose was increased, or less severe when the dose was decreased? Yes +1, No 0, Do not know 0. Not discussed in class.",
+  "Question 9: Did the patient have a similar reaction to the same or similar drugs in any previous exposure? Yes +1, No 0, Do not know 0. Not discussed in class.",
+  "Question 10: Was the adverse event confirmed by any objective evidence? Yes +1, No 0, Do not know 0. Not discussed in class.",
+  "The score cut-offs (9, 5-8, 1-4, 0) were not stated in class; she named the categories only.",
+  "The 'Do not know' column (0 points on every question) was not mentioned in class.",
+  "The printed Total Score line gives categories only for 9, 5-8, 1-4 and 0; it does not print a category for totals above 9 or below 0, which the point values allow."
+ ],
+ "terms": [
+  {
+   "term": "Naranjo Algorithm",
+   "chapter_definition": "A questionnaire 'to assess the adverse drug reaction': answer the questions and give the pertinent score."
+  },
+  {
+   "term": "Score columns",
+   "chapter_definition": "Each question is scored under Yes, No or Do not know; the points are entered in the Score column and summed in the Total Score box."
+  },
+  {
+   "term": "Do not know",
+   "chapter_definition": "An answer column worth 0 points on every one of the ten questions."
+  },
+  {
+   "term": "Negative points",
+   "chapter_definition": "No scores -1 on questions 2 and 4; Yes scores -1 on questions 5 and 6."
+  },
+  {
+   "term": "Definite",
+   "chapter_definition": "Total Score: 9=definite."
+  },
+  {
+   "term": "Probable",
+   "chapter_definition": "Total Score: 5-8=probable."
+  },
+  {
+   "term": "Possible",
+   "chapter_definition": "Total Score: 1-4=possible."
+  },
+  {
+   "term": "Doubtful",
+   "chapter_definition": "Total Score: 0=doubtful."
+  },
+  {
+   "term": "Specific antagonist",
+   "chapter_definition": "Question 3: Did the adverse reaction improve when the drug was discontinued or a specific antagonist was administered? (Yes +1)."
+  },
+  {
+   "term": "Placebo (question 6)",
+   "chapter_definition": "Did the reaction reappear when a placebo was given? Yes -1, No +1, Do not know 0."
+  },
+  {
+   "term": "Objective evidence (question 10)",
+   "chapter_definition": "Was the adverse event confirmed by any objective evidence? Yes +1, No 0, Do not know 0."
+  }
+ ],
+ "discussed_in_class": true,
+ "her_words": [
+  {
+   "t": "so one thing we need to think about when we're dealing with adverse drug reactions is what's the causality.",
+   "date": "10/28"
+  },
+  {
+   "t": "It is sometimes hard to figure out if a drug a person is on is causing a symptom they're having.",
+   "date": "10/28"
+  },
+  {
+   "t": "Have you guys ever looked at this algorithm to help determine causality of adverse drug reactions?",
+   "date": "10/28"
+  },
+  {
+   "t": "So, I'll show you this algorithm.",
+   "date": "10/28"
+  },
+  {
+   "t": "And now I want you guys to see uh the Naranjo algorithm.",
+   "date": "10/28"
+  },
+  {
+   "t": "So just take a look at these questions.",
+   "date": "10/28"
+  },
+  {
+   "t": "So make sure that you are scoring the responses appropriately with this algorithm",
+   "date": "10/28"
+  },
+  {
+   "t": "how many questions did you see involved time?",
+   "date": "10/28"
+  },
+  {
+   "t": "So you need to do your due diligence and confirm your suspicions by doing a dive into the literature to answer some of these questions as well, OK.",
+   "date": "10/28"
+  },
+  {
+   "t": "Have you seen this algorithm or something like it before?",
+   "date": "10/28"
+  },
+  {
+   "t": "There's a couple others out there, different names, but this is probably the most commonly, the most well known one, OK?",
+   "date": "10/28"
+  }
+ ],
+ "quotes_note": "Quotes are verbatim transcript text from the 10/28 lecture recording, including filler words. The captions spell the name several ways ('Neuronho', 'Neuronjo', 'Neonjo'); quotes containing those spellings were not used.",
+ "truncated": false
+}
