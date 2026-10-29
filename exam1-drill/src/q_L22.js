@@ -340,7 +340,7 @@ QUESTIONS.push(
  cite:"ADE-Lecture-Students-2026.pdf slide 'Surveillance and Management of ADRs' (p. 22); transcript 10/28"},
 
 /* ---------------- Causality and the Naranjo algorithm (p. 21 and the one-page Naranjo Algorithm) ---------------- */
-{id:"L22-026", lecture:"L22", prof:"Smith", tier:"new", topic:"L22", sub:"naranjo", skill:"recall",
+{id:"L22-026", lecture:"L22", prof:"Smith", tier:"new", topic:"L22", sub:"naranjo", skill:"recall", readingId:"naranjo",
  concept:"naranjo-purpose", tags:["smith"], source:"both",
  stem:"A patient develops a new symptom while on several drugs. What does the Naranjo algorithm help the clinician decide?",
  options:[
@@ -352,7 +352,7 @@ QUESTIONS.push(
  quote:"Maybe it's another disease state coming on for them. Uh, maybe it's a disease state that's changed, or it could be a drug. And so this exercise will help you delineate between that, OK?",
  cite:"ADE-Lecture-Students-2026.pdf slide 'Causality of Adverse Drug Reactions' (p. 21); Naranjo Algorithm (one page); transcript 10/28"},
 
-{id:"L22-027", lecture:"L22", prof:"Smith", tier:"new", topic:"L22", sub:"naranjo", skill:"tell",
+{id:"L22-027", lecture:"L22", prof:"Smith", tier:"new", topic:"L22", sub:"naranjo", skill:"tell", readingId:"naranjo",
  concept:"naranjo-rankings", tags:["smith"], source:"both",
  stem:"Among the Naranjo causality rankings, which one means the drug appears to be associated with the reaction?",
  options:[
@@ -365,7 +365,7 @@ QUESTIONS.push(
  note:"Conflict: the deck slide (p. 21) and Dr. Smith's words name the lowest ranking 'remote'; the Naranjo Algorithm page names a score of 0 'doubtful'. Keyed to the slide and her words; 'doubtful' is not offered as an option.",
  cite:"ADE-Lecture-Students-2026.pdf slide 'Causality of Adverse Drug Reactions' (p. 21); Naranjo Algorithm (one page); transcript 10/28"},
 
-{id:"L22-028", lecture:"L22", prof:"Smith", tier:"new", topic:"L22", sub:"naranjo", skill:"calc",
+{id:"L22-028", lecture:"L22", prof:"Smith", tier:"new", topic:"L22", sub:"naranjo", skill:"calc", readingId:"naranjo",
  concept:"naranjo-scoring", tags:["smith"], source:"both",
  stem:"Naranjo scoring: there are previous conclusive reports of the reaction; the reaction appeared after the drug was started; it improved when the drug was stopped; the drug was never re-given, so question 4 is answered 'do not know'; no alternative cause could explain it; every other question is answered 'do not know'. What is the total and its category?",
  options:[
@@ -377,7 +377,7 @@ QUESTIONS.push(
  quote:"Pay attention to the fact that, uh, sometimes a yes is 2 points, sometimes it's 1 point, sometimes a no is negative.",
  cite:"Naranjo Algorithm (one page), questions 1-10 and total score; ADE-Lecture-Students-2026.pdf slide 'Causality of Adverse Drug Reactions' (p. 21); transcript 10/28"},
 
-{id:"L22-029", lecture:"L22", prof:"Smith", tier:"new", topic:"L22", sub:"naranjo", skill:"recall", multi:true,
+{id:"L22-029", lecture:"L22", prof:"Smith", tier:"new", topic:"L22", sub:"naranjo", skill:"recall", readingId:"naranjo", multi:true,
  concept:"naranjo-temporal-questions", tags:["smith","inclass"], source:"both",
  stem:"Dr. Smith asked how many Naranjo questions involve time. Which did she name as temporal? Select all that apply.",
  options:[
@@ -390,7 +390,7 @@ QUESTIONS.push(
  quote:"Also, I, I consider like 6 to be a time kind of thing.",
  cite:"Naranjo Algorithm (one page), questions 1-10; ADE-Lecture-Students-2026.pdf slide 'Causality of Adverse Drug Reactions' (p. 21); transcript 10/28"},
 
-{id:"L22-030", lecture:"L22", prof:"Smith", tier:"new", topic:"L22", sub:"naranjo", skill:"calc",
+{id:"L22-030", lecture:"L22", prof:"Smith", tier:"new", topic:"L22", sub:"naranjo", skill:"calc", readingId:"naranjo",
  concept:"naranjo-q5-alternative", tags:["smith"], source:"both",
  stem:"On the Naranjo algorithm, the patient has another drug that could on its own have caused the reaction. How does the answer to question 5 score?",
  options:[
@@ -402,7 +402,7 @@ QUESTIONS.push(
  quote:"So make sure that you are scoring the responses appropriately with this algorithm",
  cite:"Naranjo Algorithm (one page), question 5; ADE-Lecture-Students-2026.pdf slide 'Causality of Adverse Drug Reactions' (p. 21); transcript 10/28"},
 
-{id:"L22-031", lecture:"L22", prof:"Smith", tier:"new", topic:"L22", sub:"naranjo", skill:"apply",
+{id:"L22-031", lecture:"L22", prof:"Smith", tier:"new", topic:"L22", sub:"naranjo", skill:"apply", readingId:"naranjo",
  concept:"naranjo-literature", tags:["smith"], source:"both",
  stem:"To answer Naranjo question 1, 'Are there previous conclusive reports on this reaction?', what does the clinician need to do?",
  options:[

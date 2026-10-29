@@ -255,6 +255,13 @@ See `## Conflicts / uncertain` in notes/L01.md, L02.md and L03.md. The ones that
   mix in some Exam 3 toxicology items (awaiting answer). ADE deck p. 35 on the Drive copy held the user's personal text
   with other people's names: slide image removed and the branch history purged (filter-branch + force-push, user approved).
 
+- 10/29 (daily polish 5): paper seed 20261029 (L18-L22): strong 40/40, average 39/40 (L22-001 by design). Fixed: L21-030
+  stem (dose calculation vs adjustment), L19-005 and L19-007 option giveaways; L18-031 and L18-043 left. UX review (Day 22,
+  7 items, all applied): gwShow table index skips copies inside .gwtable; readingId naranjo on L22-026..031; guide 31 chip
+  to rd-naranjo; four stray "How she asks it" fragments in guides 29-32 removed; slides guide4-l22-9 part 5 -> ddi:29,
+  guide4-l22-8 parts 2/5 -> ddi:20/ddi:21; tell4-l22 page cells prefixed ADE/DDI; Exam 4 Covers and blurb name the applied
+  toxicology ("a conceptual cumulative aspect", T 10/28).
+
 ## Restore after a container restart
 
 The scratchpad is wiped on every restart. Durable copies: scripts and briefs in the repo (exam1-drill/src/daily/,

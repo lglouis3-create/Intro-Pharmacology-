@@ -2,6 +2,14 @@
 
 Newest first. The build embeds this file; the Topics page shows what is new since your last visit, and the Progress page shows all of it. Keep each bullet to one short line.
 
+## 2026-10-29 (Daily polish)
+
+- Walkthroughs show the right guide table when parts are tapped out of order.
+- The Naranjo card offers its six questions, and guide 31 links to the card.
+- Three 10/28 walkthrough parts now show the slide they describe; Day 22 tell rows name the deck for each page.
+- The Exam 4 card says toxicology from her Exam 3 part is applied on this exam (her 10/28 words).
+- Three Exam 4 questions reworded after a simulated-student check.
+
 ## 2026-10-29 (10/28 lecture added)
 
 - Exam 4: the 10/28 lecture (adverse drug events, the Naranjo algorithm, drug interactions): 86 questions.

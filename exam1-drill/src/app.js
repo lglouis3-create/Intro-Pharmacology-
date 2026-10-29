@@ -3128,7 +3128,7 @@ function gwShow(id, i, sel) {
       <figcaption class="row"><span class="meta" style="margin:0">${esc(dk.name)} · slide ${n} of ${dk.n}</span><span class="row" style="gap:4px;margin-left:auto"><button type="button" class="chip" data-gwslide="-1" ${+n > 1 ? '' : 'disabled'} aria-label="Previous slide">‹ Slide</button><button type="button" class="chip" data-gwslide="1" ${+n < dk.n ? '' : 'disabled'} aria-label="Next slide">Slide ›</button></span></figcaption>
       <p class="meta gwnoimg">The slide images load on the class site.</p>`;
   } else if (vis && vis.tb != null) {
-    const t = document.getElementById(id).querySelectorAll('table')[vis.tb];
+    const t = [...document.getElementById(id).querySelectorAll('table')].filter(x => !x.closest('.gwtable'))[vis.tb];
     if (t) h += `<div class="tablewrap gwtable">${t.outerHTML}</div><p class="meta" style="margin:4px 0 0">From the guide section below</p>`;
   }
   const rd = segs[i].r;
