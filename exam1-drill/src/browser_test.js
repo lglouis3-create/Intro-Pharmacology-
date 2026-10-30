@@ -304,10 +304,8 @@ const out = path.join(__dirname, '..', course.match(/output:\s*'([^']+)'/)[1]);
   if (!/map/.test(await page.textContent('#backbtn').catch(() => ''))) fail('map tile question has no back button');
   await page.waitForTimeout(380);   // a tap within 350 ms of a new question is taken as the tail of a double tap
   { const o = await page.$('[data-o]'); if (o) await o.click(); const ck = await page.$('#check'); if (ck) await ck.click(); const c = await page.$('[data-c]'); if (c) await c.click(); }
-  if (!(await page.$('#qback'))) fail('finished one-question drill offers no way back');
-  // re-audit 5: the finish card's own back button is the only one shown (the floating one is hidden)
-  if (await page.evaluate(() => { const b = document.getElementById('backbtn'); return b && getComputedStyle(b).display !== 'none'; })) fail('finish card shows two "Back to the map" buttons');
-  await page.click('#qback'); if ((await page.evaluate(() => CUR)) !== 'map') fail('back from a map question did not reopen the map');
+  // a finished one-question drill opened from elsewhere returns there directly (its card already showed the verdict)
+  await page.waitForTimeout(200); if ((await page.evaluate(() => CUR)) !== 'map') fail('finished one-question drill did not return to the map');
   // C5: Check on an untouched matching question records nothing
   const m5 = await page.evaluate(() => { const m = QUESTIONS.find(q => q.type === 'match'); if (!m) return true; startQuiz([m], 'm', 'pass'); const n = S.log.length; check(); return S.log.length === n && !Q.answered; });
   if (!m5) fail('empty matching Check was graded');

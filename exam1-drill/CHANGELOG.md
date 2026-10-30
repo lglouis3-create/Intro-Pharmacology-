@@ -2,6 +2,17 @@
 
 Newest first. The build embeds this file; the Topics page shows what is new since your last visit, and the Progress page shows all of it. Keep each bullet to one short line.
 
+## 2026-10-30 (Daily polish)
+
+- Exam 4 answers link to the reading card and the day's Tell apart table, not only the guide.
+- Nine absorption-table questions count as most likely on her exam (she said to learn the table).
+- New question L22-087: remote and doubtful name the lowest Naranjo category; its Tell apart row opens it.
+- A Day 21 or 22 drill shows how many of its questions are answered out of the total.
+- A single "Try it" question returns to the page it came from after Next.
+- Larger tap targets on phones for Drill, Likely, Check, Hear the why, Back and layout buttons.
+- "Hear the why" no longer cuts off a slow device voice.
+- L18-058 now describes patients A and D.
+
 ## 2026-10-29 (Daily polish)
 
 - Walkthroughs show the right guide table when parts are tapped out of order.

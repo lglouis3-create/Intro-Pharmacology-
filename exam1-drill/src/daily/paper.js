@@ -8,6 +8,9 @@ for (const f of fs.readdirSync(SRC).filter(f => /^q_.*\.js$/.test(f))) src += fs
 eval(src + ';global.Q=QUESTIONS;');
 let seed = seed0 % 2147483647 || 1; const r = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
 const pool = Q.filter(q => lecs.includes(q.lecture) && !q.lowYield && !q.dupOf && q.options).sort(() => r() - 0.5).slice(0, 40);
+// Options are shuffled (seeded) as the app shuffles them, so answer position carries no cue.
+const fixedOrder = q => !q.multi && q.options.every(o => /^((Drug|Curve|DRC) )?[A-E]$|^None of the above$|^All of the above$|^True$|^False$/i.test(o.t.trim()));
+for (const q of pool) if (!fixedOrder(q)) { const a = q.options.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(r() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } q.options = a; }
 let md = `# Practice paper (${pool.length} questions)\n\n`;
 pool.forEach((q, k) => { md += `## ${k + 1}. [${q.id}]${q.multi ? ' (select all that apply)' : ''}\n\n${q.stem}\n\n` + q.options.map((o, i) => String.fromCharCode(65 + i) + '. ' + o.t).join('\n') + '\n\n'; });
 fs.mkdirSync(out, {recursive: true}); fs.writeFileSync(path.join(out, 'paper.md'), md);

@@ -262,6 +262,15 @@ See `## Conflicts / uncertain` in notes/L01.md, L02.md and L03.md. The ones that
   guide4-l22-8 parts 2/5 -> ddi:20/ddi:21; tell4-l22 page cells prefixed ADE/DDI; Exam 4 Covers and blurb name the applied
   toxicology ("a conceptual cumulative aspect", T 10/28).
 
+- 10/30 (daily polish 6): paper seed 20261030: strong 40/40, average 39/40 (L21-002 by design). Fixed L18-058 stem (A, D
+  described). paper.js now shuffles options (seeded; key had A on 28/40). Left: L18-043 "synonymous" (definition item),
+  "she/Dr. Smith" in stems (134 stems). UX review (Exam 4 phone): linksFor0 Exam 4 adds reading + tell4 links; core:true on
+  L22-047..055 (her "You do need to learn this table", T 10/28; L22-056 is off-table so not core); new L22-087 (remote =
+  doubtful), tell4 row "Remote vs doubtful" -> L22-087, notes/L22.md corrected; quiz header "N answered of M"; one-question
+  Try it returns via goBack (browser_test updated); coarse-pointer 44 px on Drill/Likely/Check/Hear/Back/layout; qSay no-clip
+  safety timer 15 s + 1 s/word. Not done: per-day Tell apart drill buttons; ref4 links from Exam 4 answers; topic-scoped
+  "Study what is due" on the end screen.
+
 ## Restore after a container restart
 
 The scratchpad is wiped on every restart. Durable copies: scripts and briefs in the repo (exam1-drill/src/daily/,

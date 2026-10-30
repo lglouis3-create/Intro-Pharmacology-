@@ -742,7 +742,7 @@ QUESTIONS.push(
 
 {id:"L18-058", lecture:"L18", prof:"Smith", tier:"new", topic:"L18", sub:"dosing", skill:"tell", core:true, coreWhy:"goal of pharmacogenomics; efficacy vs toxicity",
  concept:"efficacy-vs-toxicity-ad", tags:["smith"], source:"both",
- stem:"By dosing patients A and D on their genotypes, which clinical outcome was achieved for each?",
+ stem:"Patient A has both copies of a metabolism gene non-functional and receives a lower dose; patient D has three functional copies and receives a higher dose. By dosing A and D on their genotypes, which clinical outcome was achieved for each?",
  options:[
   {t:"A: efficacy ensured; D: toxicity prevented", correct:false, why:"Reversed."},
   {t:"A: toxicity prevented; D: efficacy ensured", correct:true, why:"A's low dose kept the AUC out of the toxic zone; D's high dose kept the drug from being cleared before it worked."},

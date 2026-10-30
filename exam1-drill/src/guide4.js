@@ -1470,7 +1470,7 @@ const GUIDE4_HTML = `
 <li><b>Swapping probable and possible.</b> Probable: the drug is the apparent cause (5-8). Possible: the drug appears to be associated (1-4).</li>
 </ul>
 
-<p class="sub">Sources: ADE-Lecture-Students-2026.pdf slide 'Causality of Adverse Drug Reactions' (p. 21); Naranjo Algorithm (one page, questions 1-10 and total score); (T) 10/28. The recording renders the name as "Neuronho" and similar; the slide and page give Naranjo. Questions L22-026 to L22-031.</p>
+<p class="sub">Sources: ADE-Lecture-Students-2026.pdf slide 'Causality of Adverse Drug Reactions' (p. 21); Naranjo Algorithm (one page, questions 1-10 and total score); (T) 10/28. The recording renders the name as "Neuronho" and similar; the slide and page give Naranjo. Questions L22-026 to L22-031, L22-087.</p>
 </section>
 <section class="guide" id="guide4-l22-4">
 <h3>32. Immunologic and nonimmunologic reactions, risk factors and hypersensitivity types</h3>
