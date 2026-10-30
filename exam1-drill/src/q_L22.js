@@ -609,7 +609,7 @@ QUESTIONS.push(
  cite:"DDI Lecture Students 2026 (1).pdf slide 'Drug Interactions Introduction' (p. 6)"},
 
 /* ---------------- Pharmacokinetic interactions: absorption (pp. 8-10) ---------------- */
-{id:"L22-047", lecture:"L22", prof:"Smith", tier:"new", topic:"L22", sub:"ddi-absorb", skill:"apply",
+{id:"L22-047", lecture:"L22", prof:"Smith", tier:"new", topic:"L22", sub:"ddi-absorb", skill:"apply", core:true, coreWhy:"her absorption table (Table 18-1), which she said to learn",
  concept:"absorption-ddi-outside-gi", tags:["smith"], source:"transcript",
  stem:"Dr. Smith described always shaking in the dentist's chair after Novocaine. What did the dentist tell her was the reason?",
  options:[
@@ -621,7 +621,7 @@ QUESTIONS.push(
  quote:"She goes, no, no, we just gave you epinephrine with your Novocaine to try to keep it more localized and right there in the area. So there, that's a drug interaction, not in the GI tract, OK?",
  cite:"DDI Lecture Students 2026 (1).pdf slide 'Pharmacokinetic Interactions Absorption' (p. 8); (T) 10/28 transcript"},
 
-{id:"L22-048", lecture:"L22", prof:"Smith", tier:"new", topic:"L22", sub:"ddi-absorb", skill:"recall",
+{id:"L22-048", lecture:"L22", prof:"Smith", tier:"new", topic:"L22", sub:"ddi-absorb", skill:"recall", core:true, coreWhy:"her absorption table (Table 18-1), which she said to learn",
  concept:"chelation-levofloxacin", tags:["smith"], source:"both",
  stem:"Levofloxacin is taken with a calcium, magnesium, aluminum or iron salt. What type of interaction is this, and what is the effect?",
  options:[
@@ -633,7 +633,7 @@ QUESTIONS.push(
  quote:"The complex complexation and chelation is gonna be more of your covalent type bonding, OK?",
  cite:"DDI Lecture Students 2026 (1).pdf slides 'Pharmacokinetic Interactions: Absorption' (p. 9, Table 18-1) and 'Food-Drug Interactions' (p. 26); (T) 10/28 transcript"},
 
-{id:"L22-049", lecture:"L22", prof:"Smith", tier:"new", topic:"L22", sub:"ddi-absorb", skill:"apply",
+{id:"L22-049", lecture:"L22", prof:"Smith", tier:"new", topic:"L22", sub:"ddi-absorb", skill:"apply", core:true, coreWhy:"her absorption table (Table 18-1), which she said to learn",
  concept:"magnesium-quinolone-counsel", tags:["smith","inclass"], source:"transcript",
  stem:"A student asked about a patient who takes a magnesium supplement for sleep and is prescribed a quinolone antibiotic. What counseling did Dr. Smith give?",
  options:[
@@ -645,7 +645,7 @@ QUESTIONS.push(
  quote:"Um, you would be needing to counsel them and say you need to separate them by several hours.",
  cite:"DDI Lecture Students 2026 (1).pdf slide 'Pharmacokinetic Interactions: Absorption' (p. 9, Table 18-1); (T) 10/28 transcript"},
 
-{id:"L22-050", lecture:"L22", prof:"Smith", tier:"new", topic:"L22", sub:"ddi-absorb", skill:"tell",
+{id:"L22-050", lecture:"L22", prof:"Smith", tier:"new", topic:"L22", sub:"ddi-absorb", skill:"tell", core:true, coreWhy:"her absorption table (Table 18-1), which she said to learn",
  concept:"adsorption-vs-absorption", tags:["smith"], source:"both",
  stem:"Cholestyramine lowers the bioavailability of digoxin and levothyroxine. Under which drug interaction type does the absorption table (Table 18-1) list it?",
  options:[
@@ -657,7 +657,7 @@ QUESTIONS.push(
  quote:"Remember, adsorption means, for example, your digoxin or levothyroxine is sticking to cholestyramine, OK? It's not chemically binding to it, really.",
  cite:"DDI Lecture Students 2026 (1).pdf slide 'Pharmacokinetic Interactions: Absorption' (p. 9, Table 18-1); (T) 10/28 transcript"},
 
-{id:"L22-051", lecture:"L22", prof:"Smith", tier:"new", topic:"L22", sub:"ddi-absorb", skill:"recall", multi:true,
+{id:"L22-051", lecture:"L22", prof:"Smith", tier:"new", topic:"L22", sub:"ddi-absorb", skill:"recall", multi:true, core:true, coreWhy:"her absorption table (Table 18-1), which she said to learn",
  concept:"adsorption-precipitants", tags:["smith"], source:"slide",
  stem:"Which precipitants are listed under adsorption in the table of interactions that affect bioavailability from the GI tract? Select all that apply.",
  options:[
@@ -669,7 +669,7 @@ QUESTIONS.push(
  teach:"Table 18-1 lists four adsorbents: cholestyramine (digoxin, levothyroxine), kaolin (digoxin), activated charcoal (many drugs) and acarbose (digoxin). Each lowers the bioavailability of the object drug. Dr. Smith said this table has to be learned, including the interaction types and some examples of each.",
  cite:"DDI Lecture Students 2026 (1).pdf slide 'Pharmacokinetic Interactions: Absorption' (p. 9, Table 18-1)"},
 
-{id:"L22-052", lecture:"L22", prof:"Smith", tier:"new", topic:"L22", sub:"ddi-absorb", skill:"recall",
+{id:"L22-052", lecture:"L22", prof:"Smith", tier:"new", topic:"L22", sub:"ddi-absorb", skill:"recall", core:true, coreWhy:"her absorption table (Table 18-1), which she said to learn",
  concept:"erythromycin-digoxin-flora", tags:["smith"], source:"slide",
  stem:"How does erythromycin change the oral bioavailability of digoxin?",
  options:[
@@ -680,7 +680,7 @@ QUESTIONS.push(
  teach:"Under alteration of intestinal flora, Table 18-1 lists antibiotics as precipitants. Digoxin has better bioavailability after erythromycin, because erythromycin reduces the bacterial inactivation of digoxin. The same row lists the loss of estrogen and progestin levels with antibiotics.",
  cite:"DDI Lecture Students 2026 (1).pdf slide 'Pharmacokinetic Interactions: Absorption' (p. 9, Table 18-1)"},
 
-{id:"L22-053", lecture:"L22", prof:"Smith", tier:"new", topic:"L22", sub:"ddi-absorb", skill:"apply",
+{id:"L22-053", lecture:"L22", prof:"Smith", tier:"new", topic:"L22", sub:"ddi-absorb", skill:"apply", core:true, coreWhy:"her absorption table (Table 18-1), which she said to learn",
  concept:"antibiotics-oral-contraceptive", tags:["smith"], source:"both",
  stem:"A woman taking an estrogen/progestin oral contraceptive is given an antibiotic. What is the concern, and through what process?",
  options:[
@@ -692,7 +692,7 @@ QUESTIONS.push(
  quote:"So that's why women could be subtherapeutic on an oral contraceptive if they're taking antibiotics, OK.",
  cite:"DDI Lecture Students 2026 (1).pdf slide 'Pharmacokinetic Interactions: Absorption' (p. 9, Table 18-1); (T) 10/28 transcript"},
 
-{id:"L22-054", lecture:"L22", prof:"Smith", tier:"new", topic:"L22", sub:"ddi-absorb", skill:"apply",
+{id:"L22-054", lecture:"L22", prof:"Smith", tier:"new", topic:"L22", sub:"ddi-absorb", skill:"apply", core:true, coreWhy:"her absorption table (Table 18-1), which she said to learn",
  concept:"gastric-ph-ketoconazole", tags:["smith"], source:"both",
  stem:"A patient on a proton pump inhibitor is started on oral ketoconazole. What can happen to the ketoconazole?",
  options:[
@@ -704,7 +704,7 @@ QUESTIONS.push(
  quote:"if you are doing, uh, ingesting things that'll raise the pH of the stomach, you may change the bioavailability of drugs that need to stay at a certain valence to be absorbed from the stomach.",
  cite:"DDI Lecture Students 2026 (1).pdf slides 'Pharmacokinetic Interactions: Absorption' (p. 9, Table 18-1) and 'Food-Drug Interactions' (p. 26); (T) 10/28 transcript"},
 
-{id:"L22-055", lecture:"L22", prof:"Smith", tier:"new", topic:"L22", sub:"ddi-absorb", skill:"tell",
+{id:"L22-055", lecture:"L22", prof:"Smith", tier:"new", topic:"L22", sub:"ddi-absorb", skill:"tell", core:true, coreWhy:"her absorption table (Table 18-1), which she said to learn",
  concept:"gi-motility-rows", tags:["smith"], source:"slide",
  stem:"Propantheline, an anticholinergic agent, is given with acetaminophen. What does the absorption table say happens?",
  options:[
@@ -1105,5 +1105,17 @@ QUESTIONS.push(
   {t:"Displacement of acetaminophen from albumin", correct:false, why:"The listed mechanism is enzyme induction."}],
  teach:"Ethanol can increase or decrease the activity of hepatic drug-metabolizing enzymes. It can induce CYP2E1 and CYP3A, which increases the possibility of acetaminophen hepatotoxicity, a point from toxicology. It can also induce CYP1A2 and lower the levels of clozapine, cyclobenzaprine, imipramine and naproxen.",
  quote:"Um, and the risk for, uh, overdosing with acetaminophen, but ethanol can also induce some of these other enzymes like 1A2 as well, and I'm pointing that out on the slide",
- cite:"DDI Lecture Students 2026 (1).pdf slide 'Chemical-Drug Interactions' (p. 30); (T) 10/28 transcript"}
+ cite:"DDI Lecture Students 2026 (1).pdf slide 'Chemical-Drug Interactions' (p. 30); (T) 10/28 transcript"},
+{id:"L22-087", lecture:"L22", prof:"Smith", tier:"new", topic:"L22", sub:"naranjo", skill:"tell", readingId:"naranjo",
+ concept:"naranjo-lowest-ranking", tags:["smith"], source:"both",
+ stem:"The Naranjo algorithm page labels a total score of 0 'doubtful'. Which ranking in Dr. Smith's list (definite, probable, possible, remote) names the same lowest category?",
+ options:[
+  {t:"Remote", correct:true, why:"Remote is the lowest ranking on the slide and in her words; the page calls the same band doubtful."},
+  {t:"Possible", correct:false, why:"Possible is a score of 1 to 4: the drug appears to be associated."},
+  {t:"Probable", correct:false, why:"Probable is a score of 5 to 8: the drug is the apparent cause."},
+  {t:"None; doubtful is a fifth ranking", correct:false, why:"Doubtful and remote are two names for one lowest category."}],
+ teach:"Dr. Smith listed the Naranjo rankings as definite, probable, possible and remote. The Naranjo algorithm page prints the score bands as 9 or more definite, 5 to 8 probable, 1 to 4 possible and 0 doubtful. Remote and doubtful therefore name the same lowest category.",
+ note:"Conflict: the slide (p. 21) and her words say 'remote'; the Naranjo page says '0=doubtful'. Keyed to her list, with the page's term in the stem.",
+ quote:"So these are the rankings definite, probable, possible, or remote.",
+ cite:"ADE-Lecture-Students-2026.pdf slide 'Causality of Adverse Drug Reactions' (p. 21); Naranjo Algorithm (one page); transcript 10/28"}
 );

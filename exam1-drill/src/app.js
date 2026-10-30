@@ -449,7 +449,10 @@ function linksFor0(q) {
         for (const m of text.matchAll(/Questions? ([A-Z0-9]+-\d+(?:(?:,| to|, and| and) [A-Z0-9]+-\d+)*)/g)) m[1].split(/,\s*(?:and\s+)?|\s+and\s+/).forEach(pt => { const r = pt.trim().match(/^([A-Z0-9]+)-(\d+)(?: to [A-Z0-9]+-(\d+))?$/); if (!r) return; const w = r[2].length; for (let n = +r[2]; n <= (r[3] ? +r[3] : +r[2]); n++) qids.add(r[1] + '-' + String(n).padStart(w, '0')); });
         return {id: sec.id, h: ((sec.querySelector('h3') || sec).textContent || '').trim().replace(/^\d+\.\s*/, ''), qids}; }); }
     const hit = SEC4.find(x => x.qids.has(q.id)) || SEC4.find(x => x.id.startsWith('guide4-' + String(q.lecture || '').toLowerCase() + '-'));
-    return hit ? [['guide', hit.id, 'Guide: ' + hit.h]] : [];
+    const out = hit ? [['guide', hit.id, 'Guide: ' + hit.h]] : [], lec = String(q.lecture || '').toLowerCase();
+    if (q.readingId) { const r = (typeof READINGS !== 'undefined' ? READINGS : []).find(x => x.id === q.readingId); if (r) out.push(['readings', 'rd-' + q.readingId, 'Reading: ' + (GW_RD_SHORT[q.readingId] || r.title)]); }
+    if (typeof TELL4_HTML !== 'undefined' && TELL4_HTML.includes('id="tell4-' + lec + '"')) out.push(['tell', 'tell4-' + lec, 'Tell apart: Day ' + lec.slice(1)]);
+    return out;
   }
   if (examOf(q) === 3 && typeof GUIDE3_HTML !== 'undefined') {
     if (q.topic === 'TERMS') return termLinks3(q);
@@ -819,6 +822,7 @@ function quizDone() {
   Q.finished = true; Q.answered = false; clearView();
   if (Q.graph) return graphDone();
   if (Q.mode === 'concept') return conceptDone();
+  if (Q.list.length === 1 && Q.done === 1 && RET.length) return goBack();   // a single "Try it" question: its card already showed the verdict
   $('#view').innerHTML = `<div class="card"><h2>Pass finished</h2><p>${Q.right} of ${Q.done} correct.</p>
     <div class="row">${(Q.missed || []).length ? `<button class="btn" id="retrymiss">Retry the ${Q.missed.length} missed</button>` : ''}${RET.length ? `<button class="btn${(Q.missed || []).length ? ' ghost' : ''}" id="qback">${esc(backLabel())}</button>` : ''}<button class="btn${RET.length || (Q.missed || []).length ? ' ghost' : ''}" id="again">Study what is due</button>${RET.length && /Topics/.test(backLabel()) ? '' : '<button class="btn ghost" id="totopics">Topics</button>'}</div></div>`;
   const qb = $('#qback'); if (qb) qb.onclick = goBack;
@@ -924,7 +928,7 @@ function renderQ() {
   // (answered or not here: an answer recorded there must not be recorded again by this card's Next)
   if (Q.cur && Q.doneIds.has(Q.cur.id) && Q.rec !== Q.cur.id) return nextQ();
   const q = Q.cur; clearView();
-  let h = `<div class="row" style="justify-content:space-between"><span class="meta">${esc(Q.label || '')} · ${Q.done} answered${Q.done ? ' · ' + Q.right + ' right' : ''}</span>${layoutToggle()}</div><div class="row" style="margin:4px 0 10px">${sessStrip()}${aheadNote()}</div>`;
+  let h = `<div class="row" style="justify-content:space-between"><span class="meta">${esc(Q.label || '')} · ${Q.done} answered${Q.list && Q.list.length > 1 ? ' of ' + Q.list.length : ''}${Q.done ? ' · ' + Q.right + ' right' : ''}</span>${layoutToggle()}</div><div class="row" style="margin:4px 0 10px">${sessStrip()}${aheadNote()}</div>`;
   // a right answer: Next records "Knew it" (as Enter does); the two smaller buttons beside it downgrade it
   h += qCard(q, Q, {seen: true, single: true,
     conf: () => Q.ok ? `<div class="row" style="margin-top:12px"><button class="btn" data-c="sure">Next</button><span class="meta" style="margin:0">counts as “Knew it” · or:</span>
@@ -2882,7 +2886,7 @@ function qSay(id, btn) {
   const cur = QSAY = {id, btn, t: null}; btn.textContent = '■ Stop'; btn.setAttribute('aria-pressed', 'true');
   const finish = () => { if (QSAY !== cur) return; qSayStop(); };
   const synth = () => { if (!narrCan()) return finish(); const v = narrVoice(); let last = null; saySents(text).forEach((part0, si) => { const part = speakable(part0); if (!part.trim()) return; const u = new SpeechSynthesisUtterance(part.trim()); u.onstart = () => { if (QSAY === cur) sayMark(d, si); }; u.rate = NAR.rate; u.lang = 'en-US'; if (v) u.voice = v; last = u; speechSynthesis.speak(u); }); if (!last) return finish(); last.onend = last.onerror = finish; cur.t = setTimeout(finish, (2000 + text.split(/\s+/).length * 450) / NAR.rate); };
-  if (typeof Q_CLIPS !== 'undefined' && !Q_CLIPS.includes(id)) { cur.fell = true; synth(); cur.t = setTimeout(finish, (6000 + text.split(/\s+/).length * 500) / NAR.rate); return; }   // no recorded clip: the device voice, without a failed request
+  if (typeof Q_CLIPS !== 'undefined' && !Q_CLIPS.includes(id)) { cur.fell = true; synth(); clearTimeout(cur.t); cur.t = setTimeout(finish, (15000 + text.split(/\s+/).length * 1000) / NAR.rate); return; }   // onend resets the button; the timer is only a safety limit   // no recorded clip: the device voice, without a failed request
   const a = NARR_AUDIO || (NARR_AUDIO = new Audio()); a.preload = 'auto'; a.src = NAR_BASE() + 'q-' + id + '.mp3'; a.playbackRate = NAR.rate;
   const fallback = () => { if (QSAY !== cur || cur.fell) return; cur.fell = true; synth(); };
   a.onended = finish; a.onerror = fallback; a.ontimeupdate = () => { if (QSAY === cur && !cur.fell && isFinite(a.duration)) sayFrac(d, a.currentTime / a.duration); }; a.play().catch(fallback);
@@ -3106,7 +3110,7 @@ function gwPanelHTML(id) {
 }
 // the visual beside the transcript: the part's own slide or guide table, else the last one an earlier part named;
 // "sel" is a slide the listener browsed to with the slide buttons
-const GW_RD_SHORT = {'rodriguez-mozaz': 'Rodriguez-Mozaz and Weinberg, 2010', 'marraffa': 'Marraffa, Cohen and Howland, 2012', 'aapcc-bb': 'Beta-blocker guideline, 2005', 'aapcc-ccb': 'Calcium channel blocker guideline, 2005', 'dipiro-e9': 'DiPiro chapter e9', 'casarett-ch2': 'Casarett and Doull chapter 2', 'katzung-5': 'Katzung chapter 5', 'furuta-1998': 'Furuta and colleagues, 1998', 'dipiro-e6': 'DiPiro chapter e6'};
+const GW_RD_SHORT = {'cpic-warfarin-2017': 'CPIC warfarin guideline, 2017 update', 'label-abacavir': 'Ziagen (abacavir) prescribing information', 'label-carbamazepine': 'Tegretol (carbamazepine) prescribing information', 'label-trastuzumab': 'Herceptin (trastuzumab) prescribing information', 'rodriguez-mozaz': 'Rodriguez-Mozaz and Weinberg, 2010', 'marraffa': 'Marraffa, Cohen and Howland, 2012', 'aapcc-bb': 'Beta-blocker guideline, 2005', 'aapcc-ccb': 'Calcium channel blocker guideline, 2005', 'dipiro-e9': 'DiPiro chapter e9', 'casarett-ch2': 'Casarett and Doull chapter 2', 'katzung-5': 'Katzung chapter 5', 'furuta-1998': 'Furuta and colleagues, 1998', 'dipiro-e6': 'DiPiro chapter e6'};
 function gwShow(id, i, sel) {
   const p = document.querySelector(`.gwpanel[data-gwp="${id}"]`); if (!p) return;
   const w = GUIDE_WALK[id], segs = w.segs; if (!segs[i]) return;
