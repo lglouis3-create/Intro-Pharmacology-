@@ -2,6 +2,7 @@ const GUIDE4_HTML = `
 <p class="sub">Cites: <i>Intro</i> = Intro to PGx Lecture Students Fall 2026.pdf; <i>Examples</i> = PGx-Examples-Students-Fall-2026.pdf, both by PDF page and slide title; <i>(T) 10/21</i> = her words in the lecture transcript of that day.</p>
 <p class="sub">Source hierarchy for Exam 4: what she said in lecture first, then the slides, then the readings. Where they differ the section says so.</p>
 <nav class="guidenav">
+<span class="gday">Day 18 · 10/21 (1–7)</span>
 <a href="#guide4-l18-1">1. Naming genetic variants: numeric/alphabetic, SNP, star and rs nomenclature</a>
 <a href="#guide4-l18-2">2. Functional significance, genotype nomenclature and the gene dose effect</a>
 <a href="#guide4-l18-3">3. Haplotype nomenclature: VKORC1 haplotypes A and B; TPMT*3A</a>
@@ -9,6 +10,7 @@ const GUIDE4_HTML = `
 <a href="#guide4-l18-5">5. InDels, tandem repeats, gene deletion (CYP2D6*5) and copy number (CYP2D6*2xN)</a>
 <a href="#guide4-l18-6">6. Genotype-guided dosing: patients A to D, efficacy and toxicity</a>
 <a href="#guide4-l18-7">7. Gene structure and allele and phenotype frequencies across populations</a>
+<span class="gday">Day 19 · 10/22 (8–14)</span>
 <a href="#guide4-l19-1">8. When a metabolizing-enzyme variant matters, and the active-drug or prodrug question</a>
 <a href="#guide4-l19-2">9. The historical examples: butyrylcholinesterase and NAT2</a>
 <a href="#guide4-l19-3">10. CYP2D6: debrisoquine, poor and ultrarapid metabolizers, and codeine</a>
@@ -16,6 +18,7 @@ const GUIDE4_HTML = `
 <a href="#guide4-l19-5">12. CYP2C19: the *17 gain of function, clopidogrel, and the PPI twist</a>
 <a href="#guide4-l19-6">13. Two oncology examples: DPD (5-fluorouracil) and UGT1A1 (irinotecan)</a>
 <a href="#guide4-l19-7">14. Thiopurine methyltransferase (TPMT) and the thiopurines</a>
+<span class="gday">Day 20 · 10/26 (15–22)</span>
 <a href="#guide4-l20-1">15. TPMT: the activity histogram and genotype-guided thiopurine dosing</a>
 <a href="#guide4-l20-2">16. Drug transporters and P-glycoprotein (ABCB1)</a>
 <a href="#guide4-l20-3">17. OATP1B1 (SLCO1B1) and simvastatin</a>
@@ -24,12 +27,14 @@ const GUIDE4_HTML = `
 <a href="#guide4-l20-6">20. Warfarin: CYP2C9 (PK), VKORC1 (PD) and CYP4F2</a>
 <a href="#guide4-l20-7">21. Immune system variants: HLA genes and drug hypersensitivity</a>
 <a href="#guide4-l20-8">22. The Furuta 1998 discussion: CYP2C19, omeprazole and H. pylori cure</a>
+<span class="gday">Day 21 · 10/27 (23–28)</span>
 <a href="#guide4-l21-1">23. The FDA tables: pharmacogenetic associations and biomarkers in drug labeling</a>
 <a href="#guide4-l21-2">24. CPIC guidelines: what they answer, components, development, evidence scoring</a>
 <a href="#guide4-l21-3">25. Walking the CPIC warfarin algorithm</a>
 <a href="#guide4-l21-4">26. Other guidelines, ClinPGx and what implementation still needs</a>
 <a href="#guide4-l21-5">27. Reading a label: trastuzumab and HER2</a>
 <a href="#guide4-l21-6">28. Reading a label: carbamazepine and abacavir, one gene, two variants</a>
+<span class="gday">Day 22 · 10/28 (29–37)</span>
 <a href="#guide4-l22-1">29. Medication misadventures: ADEs, medication errors and ADRs</a>
 <a href="#guide4-l22-2">30. Drug approval, its limits and postmarketing surveillance</a>
 <a href="#guide4-l22-3">31. Causality and the Naranjo algorithm</a>
@@ -53,7 +58,7 @@ const GUIDE4_HTML = `
 <tr><td>Star</td><td>CYP2C19*1; *2 (681 G&gt;A); *3 (636 G&gt;A)</td><td>Gene, then a star and a number for the allele; *1 is always the wild type. All cytochrome P450 genes are named this way</td><td>Where the change is or what it is: a table defining each star allele is needed (papers do not add the parentheses)</td></tr>
 <tr><td>Reference SNP (rs)</td><td>rs4986893 (= CYP2C19*3 = CYP2C19 636 G&gt;A)</td><td>A number from the SNP database (dbSNP) that no other SNP has; recommended by the Human Genome Variation Society as the standard</td><td>The gene, the position, the wild type: all require searching a database that is hard to query</td></tr>
 </tbody></table>
-<p>Gene symbols are written in italics and proteins are not. This matters when they share a name: TPMT (italic) is the gene, TPMT (plain) is the enzyme thiopurine methyltransferase. ABCB1 is the gene for P-glycoprotein. <small>(T) 10/21</small></p>
+<p>Gene symbols are written in italics and proteins are not. This matters when they share a name: <i>TPMT</i> (italic) is the gene, TPMT (plain) is the enzyme thiopurine methyltransferase. <i>ABCB1</i> is the gene for P-glycoprotein. <small>(T) 10/21</small></p>
 
 <h4>Why the star system needs care</h4>
 <ul>
@@ -1392,7 +1397,6 @@ const GUIDE4_HTML = `
 <li><b>Confusing MedWatch with Drug Safety Communications.</b> MedWatch receives reports from clinicians; Drug Safety Communications sends the FDA's messages out to clinicians.</li>
 </ul>
 
- the usual reaction behind a withdrawal; which items are limitations of premarketing trials; the force of FDA enrollment guidelines; what she added to the FDA improvement list (PGx); the functions and primary use of PMS; where and how often to check for label changes, withdrawals and shortages.</p>
 <p class="sub">Sources: ADE-Lecture-Students-2026.pdf slides 'Illustration of Drug Approval Process and ADEs' (p. 14), 'Limitations to premarketing clinical trials' (p. 15), 'Improving the Drug Approval Process regarding ADEs' (p. 16), 'Drug Approval Process Post Marketing Surveillance' (p. 17), 'Drug Approval Process and ADEs Communications' (p. 18), 'Adverse Drug Reaction (ADR)' (p. 12, MedWatch); (T) 10/28. The 4,000-subject and 1/1,000 figures are on the slide; she pointed to that column without reading them. Questions L22-015 to L22-022.</p>
 </section>
 <section class="guide" id="guide4-l22-3">
@@ -1614,7 +1618,8 @@ const GUIDE4_HTML = `
 <h4>The idea</h4>
 <p>An absorption interaction changes the rate and extent to which the object drug gets from its absorption site into the systemic circulation, so its bioavailability goes up or down. The gastrointestinal (GI) tract is by far the most common and important site, but other sites can be affected. A distribution interaction happens after absorption: the precipitant pushes the object drug off its binding sites, on plasma proteins or in tissues, and more of the object drug is free. Free drug can reach targets, so the patient can become supratherapeutic or have side effects. She said the absorption table on p. 9 must be learned: the interaction types in the first column and some examples of each.</p>
 
-<h4>The facts: the absorption table (p. 9, Table 18-1; she said "You do need to learn this table")</h4>
+<h4>The facts: the absorption table (p. 9, Table 18-1)</h4>
+<p>She said: "You do need to learn this table." <small>(T) 10/28</small></p>
 <table class="reftab"><thead><tr><th>Drug interaction</th><th>Examples (precipitant drugs)</th><th>Effect (object drugs)</th></tr></thead><tbody>
 <tr><td>Complexation/chelation</td><td>Calcium, magnesium, or aluminum and iron salts</td><td>Levofloxacin complexes with divalent cations, causing decreased bioavailability</td></tr>
 <tr><td>Complexation/chelation</td><td>Sodium polystyrene sulfonate</td><td>Cations in antacids bind to sodium polystyrene sulfonate, causing reduced renal clearance of bicarbonate, resulting in systemic acidosis</td></tr>

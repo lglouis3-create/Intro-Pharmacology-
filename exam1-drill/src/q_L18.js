@@ -432,7 +432,7 @@ QUESTIONS.push(
  concept:"why-study-synonymous", tags:["smith"], source:"both",
  stem:"Why do studies of drug response keep examining ABCB1 3435C>T?",
  options:[
-  {t:"It keeps appearing in studies of drug response", correct:true, why:"It turns up repeatedly with different P-gp substrates; she thinks it probably affects how much protein is expressed."},
+  {t:"It probably alters P-glycoprotein expression levels", correct:true, why:"The amino acid is unchanged, yet the variant turns up repeatedly with different P-gp substrates; she said the expression levels of the protein are probably affected."},
   {t:"It truncates P-glycoprotein", correct:false, why:"Truncation is CYP2C19*2 and *3; this SNP leaves the protein intact."},
   {t:"It deletes the ABCB1 gene", correct:false, why:"Whole gene deletion is CYP2D6*5."},
   {t:"It changes the isoleucine at that codon to threonine", correct:false, why:"Isoleucine is unchanged; alanine to threonine is TPMT*3A."}],

@@ -2,6 +2,14 @@
 
 Newest first. The build embeds this file; the Topics page shows what is new since your last visit, and the Progress page shows all of it. Keep each bullet to one short line.
 
+## 2026-10-31 (Daily polish)
+
+- Exam 4 guide sections have Drill and Likely buttons, plus links to that day's Tell apart and Reference.
+- The guide list groups its 37 sections by lecture day.
+- Back and reload return to the same guide section on phones, not a section further down.
+- Prev/next links keep section numbers and are easier to tap; a broken sentence in guide 30 was removed.
+- L18-033's answer now states the expression reason; L20-010 names Dr. Smith.
+
 ## 2026-10-30 (Daily polish)
 
 - Exam 4 answers link to the reading card and the day's Tell apart table, not only the guide.

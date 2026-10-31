@@ -441,13 +441,21 @@ function tidyHtml(html) {
 /* "Why" questions: written to ask the reason behind a concept (tag "why"), plus any other stem that asks why or what explains */
 const WHY_RE = /\bwhy\b|what explains|best explains|what would happen|reason/i;
 const whyPool = pool => pool.filter(q => !q.lowYield && ((q.tags || []).includes('why') || WHY_RE.test(q.stem)));
+document.addEventListener('click', e => { const b = e.target.closest('[data-gdrill]'); if (!b) return; const x = sec4().find(s => s.id === b.dataset.gdrill); if (!x) return;
+  let qs = [...x.qids].map(id => byId[id]).filter(q => q && !q.lowYield); if (b.dataset.gcore) qs = qs.filter(q => q.core);
+  if (qs.length) startQuiz(shuffle(qs), (b.dataset.gcore ? '★ ' : '') + 'Guide: ' + x.h, 'pass', {back: true}); });
+function sec4() {
+  if (SEC4 || typeof GUIDE4_HTML === 'undefined') return SEC4 || [];
+  const d = new DOMParser().parseFromString('<div>' + GUIDE4_HTML + '</div>', 'text/html');
+      SEC4 = [...d.querySelectorAll('section[id^="guide4-"]')].map(sec => { const text = sec.textContent, qids = new Set();
+        for (const m of text.matchAll(/Questions? ([A-Z0-9]+-\d+(?:(?:,| to|, and| and) [A-Z0-9]+-\d+)*)/g)) m[1].split(/,\s*(?:and\s+)?|\s+and\s+/).forEach(pt => { const r = pt.trim().match(/^([A-Z0-9]+)-(\d+)(?: to [A-Z0-9]+-(\d+))?$/); if (!r) return; const w = r[2].length; for (let n = +r[2]; n <= (r[3] ? +r[3] : +r[2]); n++) qids.add(r[1] + '-' + String(n).padStart(w, '0')); });
+        return {id: sec.id, h: ((sec.querySelector('h3') || sec).textContent || '').trim().replace(/^\d+\.\s*/, ''), qids}; });
+  return SEC4;
+}
 function linksFor0(q) {
   if (examOf(q) === 4 && typeof GUIDE4_HTML !== 'undefined') {
     // the section whose Sources line lists the question ("Questions L18-010 to L18-014"), else the lecture's first section
-    if (!SEC4) { const d = new DOMParser().parseFromString('<div>' + GUIDE4_HTML + '</div>', 'text/html');
-      SEC4 = [...d.querySelectorAll('section[id^="guide4-"]')].map(sec => { const text = sec.textContent, qids = new Set();
-        for (const m of text.matchAll(/Questions? ([A-Z0-9]+-\d+(?:(?:,| to|, and| and) [A-Z0-9]+-\d+)*)/g)) m[1].split(/,\s*(?:and\s+)?|\s+and\s+/).forEach(pt => { const r = pt.trim().match(/^([A-Z0-9]+)-(\d+)(?: to [A-Z0-9]+-(\d+))?$/); if (!r) return; const w = r[2].length; for (let n = +r[2]; n <= (r[3] ? +r[3] : +r[2]); n++) qids.add(r[1] + '-' + String(n).padStart(w, '0')); });
-        return {id: sec.id, h: ((sec.querySelector('h3') || sec).textContent || '').trim().replace(/^\d+\.\s*/, ''), qids}; }); }
+    sec4();
     const hit = SEC4.find(x => x.qids.has(q.id)) || SEC4.find(x => x.id.startsWith('guide4-' + String(q.lecture || '').toLowerCase() + '-'));
     const out = hit ? [['guide', hit.id, 'Guide: ' + hit.h]] : [], lec = String(q.lecture || '').toLowerCase();
     if (q.readingId) { const r = (typeof READINGS !== 'undefined' ? READINGS : []).find(x => x.id === q.readingId); if (r) out.push(['readings', 'rd-' + q.readingId, 'Reading: ' + (GW_RD_SHORT[q.readingId] || r.title)]); }
@@ -484,8 +492,25 @@ const ladderChip = q => q.ladder && ladderQs(q.ladder).length > 1 ? `<button typ
 const explainHTML = q => { const l = linksFor(q), c = ladderChip(q), ad = antiFor(q); return l.length || c || ad.length ? `<div class="row explain"><span class="meta" style="margin:0">Explain more:</span>${l.map(([v, a, t]) => `<button type="button" class="chip" data-jump="${v}:${a}" data-jq="${q.id}">${esc(t)}</button>`).join('')}${ad.map(d => antiChip(d, 'Diagram: ' + d.short)).join('')}${c}</div>` : ''; };
 // ignored only on the exam's own pages; with an exam kept in the background, a quiz may still climb
 document.addEventListener('click', e => { const b = e.target.closest('[data-climb]'); if (!b) return; if (CUR === 'exam' && EX && !EX.done) return; climbLadder(b.dataset.climb, +b.dataset.upto || 0); });
+/* The place on a page as the nearest section (or card) at the top of the screen plus the offset into it: sections sized by
+   estimate (content-visibility) make a raw scrollY land on another section on a phone. */
+function placeNow() {
+  const r = {view: CUR, y: window.scrollY}, line = hdrOff() + 1;
+  let best = null; for (const el of document.querySelectorAll('#view section[id], #view h3[id], #view [id^="rd-"]')) { const t = el.getBoundingClientRect().top; if (t <= line) best = el; else break; }
+  if (best) { r.a = best.id; r.o = Math.round(window.scrollY - (best.getBoundingClientRect().top + window.scrollY)); }
+  return r;
+}
+function placeRestore(r) {
+  const el = r && r.a && document.getElementById(r.a);
+  if (!el) { window.scrollTo(0, r.y || 0); requestAnimationFrame(() => requestAnimationFrame(() => window.scrollTo(0, r.y || 0))); return; }
+  // sections above it render as the window passes and change size: re-aim until it holds still (own loop, so a later
+  // settleOn elsewhere does not cancel it)
+  let n = 0; const aim = () => { if (!document.body.contains(el)) return; const t = el.getBoundingClientRect().top + window.scrollY + r.o;
+    if (Math.abs(t - window.scrollY) > 2) window.scrollTo(0, t); if (n++ < 12) setTimeout(aim, n < 3 ? 30 : 100); };
+  aim();
+}
 function jump(view, anchor) {
-  RET.push({view: CUR, y: window.scrollY});
+  RET.push(placeNow());
   if (!go(view)) { RET.pop(); return; }
   const [id, step] = String(anchor).split('@'), t = document.getElementById(id);
   if (t) { openTo(t); t.scrollIntoView({block: 'start'}); const off = hdrOff(); window.scrollBy(0, -off); settleOn(t, off, 60); }
@@ -541,9 +566,7 @@ function backBtn() {
   b.textContent = backLabel();
 }
 const backLabel = () => '← Back to ' + ({topics: 'Topics', quiz: 'the question', exam: 'the exam', graphs: 'the figures', map: 'the map', terms: 'the terms', weak: 'Weak spots', tell: 'Tell apart', ref: 'the reference', guide: 'the guide', diagrams: 'the diagrams', drugs: 'the drug table', pair: 'Pair up', rxq: 'the receptor drill', ptab: 'the poisoning table drill', sa: 'short answer', scenes: 'the scenes', readings: 'the readings'}[(RET[RET.length - 1] || {}).view] || 'where you were');
-function goBack() { const r = RET.pop(); if (!r) return; backBtn(); go(r.view, true); window.scrollTo(0, r.y);
-  // cards sized by estimate (content-visibility) settle after layout: put the window back where it was, twice
-  requestAnimationFrame(() => requestAnimationFrame(() => window.scrollTo(0, r.y))); setTimeout(() => window.scrollTo(0, r.y), 150); }
+function goBack() { const r = RET.pop(); if (!r) return; backBtn(); go(r.view, true); placeRestore(r); }
 document.addEventListener('click', e => { const j = e.target.closest('[data-jump]'); if (j) { const [v, a] = j.dataset.jump.split(':'); jump(v, a); if (j.dataset.jq) markFor(j.dataset.jq, a); } });
 /* "view:anchor:group:key": jump to the page, then open that explanation card (the reference's "Why?" cards). */
 document.addEventListener('click', e => { const j = e.target.closest('[data-jumpx]'); if (!j) return; const [v, a, g, k] = j.dataset.jumpx.split(':'); jump(v, a); const out = showExplain(g, k); if (out) scrollToEl(out.closest('.xpick')); });
@@ -771,7 +794,7 @@ function startQuiz(list, label, mode, opts = {}) {
   Q = {list: list.slice(), label, mode, i: 0, done: 0, right: 0, retest: [], doneIds: new Set(), missed: [], st: {}, graph: opts.graph || null};
   // opts.back: opened from a page the learner will want to return to (a map tile, a Tell apart row)
   // a set started from Topics (a deck's Drill, Due, All, a tier) also keeps the way back to the same spot
-  const from = (opts.back || CUR === 'topics') && CUR !== 'quiz' ? {view: CUR, y: window.scrollY} : null;
+  const from = (opts.back || CUR === 'topics') && CUR !== 'quiz' ? placeNow() : null;
   RET.length = 0; if (from) RET.push(from); backBtn();
   // opened from deep in a long page (Tell apart, the map): start at the top, without the old page's floating buttons
   CUR = 'quiz'; nav(); leaveView(); nextQ(); pushNav({v: 'quiz'});
@@ -3063,11 +3086,21 @@ function vGuide() {
     const secs = [...g.querySelectorAll(':scope section.guide[id]')].filter(s => s.parentElement === g || s.closest('.exgroup') === g);
     secs.forEach((s, i) => {
       if (s.querySelector(':scope > .gnav')) return;
-      const t = x => { const w = (x.querySelector('h3') || {textContent: ''}).textContent.replace(/^\d+\.\s*/, ''); return w.length > 44 ? w.slice(0, 44).replace(/\s+\S*$/, '') + '…' : w; };
+      const t = x => { const w = (x.querySelector('h3') || {textContent: ''}).textContent; return w.length > 44 ? w.slice(0, 44).replace(/\s+\S*$/, '') + '…' : w; };
       const p = document.createElement('p'); p.className = 'gnav meta';
       p.innerHTML = (i ? `<a href="#${secs[i - 1].id}">◂ ${esc(t(secs[i - 1]))}</a>` : '<span></span>') + (i < secs.length - 1 ? `<a href="#${secs[i + 1].id}">${esc(t(secs[i + 1]))} ▸</a>` : '<span></span>');
       s.appendChild(p);
     });
+  });
+  // Exam 4: under each heading, drill the section's questions (its Sources line lists them) and open its day's tables
+  sec4().forEach(x => {
+    const s = document.getElementById(x.id), h = s && s.querySelector('h3'); if (!h || s.querySelector('.gdrill')) return;
+    const qs = [...x.qids].map(id => byId[id]).filter(q => q && !q.lowYield), core = qs.filter(q => q.core).length, lec = (x.id.match(/^guide4-(l\d+)-/) || [])[1];
+    const row = document.createElement('p'); row.className = 'row gdrill';
+    row.innerHTML = (qs.length ? `<button type="button" class="btn ghost" data-gdrill="${x.id}">Drill these ${qs.length}</button>` : '') + (core ? `<button type="button" class="btn ghost" data-gdrill="${x.id}" data-gcore="1">★ Likely: ${core}</button>` : '')
+      + (lec ? `<button type="button" class="chip" data-jump="tell:tell4-${lec}">Tell apart: Day ${lec.slice(1)}</button>` : '')
+      + (lec ? `<button type="button" class="chip" data-jump="ref:ref4-${lec}-1">Reference: Day ${lec.slice(1)}</button>` : '');
+    h.after(row);
   });
   document.querySelectorAll('.guidenav a, .gnav a').forEach(a => a.onclick = e => { const t = document.querySelector(a.getAttribute('href')); if (t) { e.preventDefault(); scrollToEl(t); } });
 }
@@ -3712,7 +3745,7 @@ document.addEventListener('keydown', e => {
 const RESUME_KEY = () => COURSE.ns + ':resume';
 function saveResume() {
   try {
-    const r = {v: CUR, y: Math.round(window.scrollY), t: Date.now()};
+    const p = placeNow(), r = {v: CUR, y: Math.round(window.scrollY), a: p.a, o: p.o, t: Date.now()};
     if (CUR === 'quiz' && Q && Q.cur && !Q.finished && (Q.mode === 'pass' || Q.mode === 'sr'))
       r.q = {ids: Q.list.map(q => q.id), label: Q.label, mode: Q.mode, i: Q.i, done: Q.done, right: Q.right, doneIds: [...Q.doneIds], cur: Q.cur.id,
         ans: Q.answered ? {ok: !!Q.ok, picked: Q.picked instanceof Set ? [...Q.picked] : Q.picked, mpick: Q.mpick, fill: Q.fill, order: Q.order, rightOrder: Q.rightOrder, box0: Q.box0} : null};
@@ -3745,7 +3778,7 @@ function resumePlace() {
     renderQ();
     return true;
   }
-  go(r.v); setTimeout(() => window.scrollTo(0, r.y || 0), 60);
+  go(r.v); setTimeout(() => placeRestore(r), 60);
   return true;
 }
 /* Break video: a suggestion card offers a short video after a finished practice exam and after every 30 minutes
