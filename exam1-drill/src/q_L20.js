@@ -133,7 +133,7 @@ QUESTIONS.push(
 
 {id:"L20-010", lecture:"L20", prof:"Smith", tier:"new", topic:"L20", sub:"tpmt-dose", skill:"recall",
  concept:"tpmt-standard-of-care", tags:["smith"], source:"both",
- stem:"What is her position on TPMT genotyping before a thiopurine is started?",
+ stem:"What position did Dr. Smith take on TPMT genotyping before a thiopurine is started?",
  options:[
   {t:"It is standard of care", correct:true, why:"She said genotyping is widely available and is now standard of care; not knowing could be considered negligent."},
   {t:"It is optional and rarely done", correct:false, why:"She called it standard of care."},
