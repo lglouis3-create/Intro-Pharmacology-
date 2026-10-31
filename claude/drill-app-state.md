@@ -271,6 +271,14 @@ See `## Conflicts / uncertain` in notes/L01.md, L02.md and L03.md. The ones that
   safety timer 15 s + 1 s/word. Not done: per-day Tell apart drill buttons; ref4 links from Exam 4 answers; topic-scoped
   "Study what is due" on the end screen.
 
+- 10/31 (daily polish 7): paper seed 20261031: strong 40/40, average 37/40 (L18-001, L21-002, L20-052 by design). Fixed:
+  L18-033 keyed option (expression levels, its quote) and L20-010 stem names Dr. Smith; L18-037 left (TPMT expanded in
+  other stems by the abbreviation rule). UX review (Exam 4 Guides page): orphan fragment in guide 30 removed; placeNow()
+  / placeRestore() keep a section id + offset for Back, reload and drills started from a page (startQuiz back); Drill
+  these N and ★ Likely per guide4 section from the Sources line (sec4()), Tell apart / Reference chips; day labels in the
+  guide list; gnav keeps numbers, 24 px+ targets; italic TPMT/ABCB1 in guide 1; absorption-table h4 quote moved to text.
+  Not done: "How she asks it" for 29-37 (dropped on 10/29 by design: she had not written the exam).
+
 ## Restore after a container restart
 
 The scratchpad is wiped on every restart. Durable copies: scripts and briefs in the repo (exam1-drill/src/daily/,
