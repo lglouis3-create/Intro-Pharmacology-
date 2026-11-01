@@ -223,6 +223,7 @@ function leaveView() {
   if (typeof playStop === 'function') playStop();
   if (typeof scenesStop === 'function') scenesStop();
   if (typeof gwStop === 'function') gwStop();
+  if (S3PLAY) { S3PLAY = null; if (typeof sayStop === 'function') sayStop(); }
 }
 /* Open a view. Returns false when the learner stays in a running exam. `back` is set by the
    "Back to …" button: the exam then reopens on its result page, not on a new paper. */
@@ -1490,7 +1491,7 @@ const EXKEY = () => COURSE.ns + ':exam:' + PROFILE;
 function saveExam() {
   if (!EX) return;
   const {exam, name, qs, i, ans, flag, orders, ends, done, score, noBack} = EX;
-  store.set(EXKEY(), JSON.stringify({exam, name, qs, i, ans, flag, orders, ends, done, score, noBack: !!noBack}));
+  if (store.set(EXKEY(), JSON.stringify({exam, name, qs, i, ans, flag, orders, ends, done, score, noBack: !!noBack})) === false) saveWarn();
 }
 function loadExam() {
   try {
@@ -3353,7 +3354,7 @@ function gwPlay(id, i) {
     if (!narrCan()) { cur.t = setTimeout(finish, (2000 + seg.t.split(/\s+/).length * 400) / NAR.rate); return; }
     cur.speaking = true; const v = narrVoice(); let last = null;
     saySents(seg.t).forEach(p0 => { const p = speakable(p0); if (!p.trim()) return; const u = new SpeechSynthesisUtterance(p.trim()); u.rate = NAR.rate; u.lang = 'en-US'; if (v) u.voice = v; last = u; speechSynthesis.speak(u); });
-    if (!last) return finish(); last.onend = () => { if (GW === cur && cur.playing) finish(); };
+    if (!last) return finish(); last.onend = last.onerror = () => { if (GW === cur && cur.playing) finish(); };
     cur.t = setTimeout(() => { if (GW === cur && cur.playing) finish(); }, (4000 + seg.t.split(/\s+/).length * 520) / NAR.rate);
   };
   if (!gwRec(id, i)) return synth();
