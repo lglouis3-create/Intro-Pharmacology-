@@ -850,5 +850,18 @@ QUESTIONS.push(
   {t:"Every patient gets 100% of the average dose", correct:false, why:"That is the gray bars: the same dose for everyone, which gives different exposures."}],
  teach:"The figure compares two ways of dosing four patients whose metabolizing gene status differs. With the same dose (gray bars, 100% of average) their concentrations differ widely. With genotype-based doses (white bars) patient A gets less and patient D much more, and every patient ends up with the same therapeutic area under the curve (AUC), so everyone is therapeutic and nobody toxic.",
  quote:"So by dosing people based on their genotype, Which would be the white dosing. You adjust the amount of drug they get, so that their metabolic capabilities result in everybody getting the gray AUC and everybody gets therapeutic",
- cite:"PGx-Examples-Students-Fall-2026.pdf slide ‘Genotype/Phenotype Relationship 2’ (p. 6); (T) 10/21 transcript"}
+ cite:"PGx-Examples-Students-Fall-2026.pdf slide ‘Genotype/Phenotype Relationship 2’ (p. 6); (T) 10/21 transcript"},
+
+{id:"L18-067", lecture:"L18", prof:"Smith", tier:"new", topic:"L18", sub:"cnv", skill:"recall", core:true, coreWhy:"her Quiz 4, question 1",
+ concept:"cyp2d6-5-deletion", tags:["smith","quiz"], source:"both", dupOf:"L18-049",
+ stem:"What is the name of the genetic variant where a copy of the gene is entirely missing from the allele?",
+ options:[
+  {t:"CYP2D6*2XN", correct:false, why:"Extra copies of the gene, not a missing one: an ultrarapid metabolizer."},
+  {t:"CYP2C19*3", correct:false, why:"A premature stop codon; the gene is present."},
+  {t:"TPMT*3A", correct:false, why:"A haplotype of two SNPs in the TPMT gene; the gene is present."},
+  {t:"CYP2D6*5", correct:true, why:"The whole CYP2D6 gene is deleted from that allele, so nothing is made from it."}],
+ teach:"In CYP2D6*5 the entire gene is missing from the allele: thousands of base pairs are deleted, not a single nucleotide changed. That allele makes no enzyme.",
+ note:"Quiz 4, question 1. The printed quiz listed CYP2D6*2 as option D and did not list CYP2D6*5. CYP2D6*2 is a fully functional allele (Examples p. 21), so it is not the answer; the drill shows CYP2D6*5 in its place as the correct choice.",
+ quote:"Total gene is gone",
+ cite:"Smith_Quiz_4_-_Intro_to_Pharmacogenomics.pdf Q1; Intro to PGx Lecture Students Fall 2026.pdf slide ‘Gene Deletion CYP2D6’ (p. 39); PGx-Examples-Students-Fall-2026.pdf p. 21; (T) 10/21 transcript"}
 );

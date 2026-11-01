@@ -133,7 +133,7 @@ See `## Conflicts / uncertain` in notes/L01.md, L02.md and L03.md. The ones that
   reading talks 23,611; why L13–15 unrecorded 111,403; L16 58,078; L17 51,593; keys 65,217; new/gap 92,011;
   antidote diagrams 12,172; step captions 6,385; total 420,470 (about $76.41). Waiting on the user's choice of batches.
 - Open with the user: her table key cites "Pharmacotherapy e6" for iron and organophosphate rows, but the posted e6 is
-  Medication Adherence; 11 class B/C slips; Quiz 4 Q1 has no correct option (Exam 4 material).
+  Medication Adherence; 11 class B/C slips; Quiz 4 Q1 has no correct option (Exam 4 material) [settled 11/01: L18-067 carries Q1 with CYP2D6*5 as the correct option in place of the printed CYP2D6*2; the user says the rest of Quiz 4 is already handled].
 - 10/23 (later): final audio review. Nine reviewers checked every Exam 3 script against the current item and the sources
   (scratchpad audit/BRIEF.md, outputs audit/out_*.json, applied by audit/apply.py): 234 Why scripts replaced, 96 added
   (narration3_audit.js: Why items, QZ3-001..023, matching items, GAP3-033/034); all 33 recorded L13–L15 clips retired

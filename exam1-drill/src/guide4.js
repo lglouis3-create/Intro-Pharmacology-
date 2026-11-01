@@ -299,7 +299,7 @@ const GUIDE4_HTML = `
 <h4>The frequency figure</h4>
 <table class="reftab"><thead><tr><th>Panel</th><th>Gene</th><th>What it shows</th></tr></thead><tbody>
 <tr><td>A</td><td>CYP3A5 allele frequencies</td><td>*1 (wild type) and non-functional *3, *6, *7. Sub-Saharan African: *1 common and *3, *6, *7 all present. European: relatively few wild type, most *3</td></tr>
-<tr><td>B</td><td>VKORC1 -1639G&gt;A</td><td>G (higher dose required) vs A (lower dose required) across African, European and North American, and East Asian populations</td></tr>
+<tr><td>B</td><td>VKORC1 -1639G&gt;A</td><td>G (higher dose required) vs A (lower dose required) across African, European and North American, and East Asian populations. The A bar is longest in East Asian, intermediate in European and North American, and shortest in African (order only; see section 25 for the warfarin populations)</td></tr>
 <tr><td>C</td><td>TPMT phenotypes</td><td>Most people normal metabolizers; only a small bar of poor metabolizers</td></tr>
 <tr><td>D</td><td>NUDT15 phenotypes</td><td>To be discussed later; sub-Saharan African data currently unknown</td></tr>
 </tbody></table>
@@ -450,6 +450,7 @@ const GUIDE4_HTML = `
 <li>CYP2C9*3/*3 homozygotes show about a 90% reduction in S-warfarin clearance versus *1/*1.</li>
 <li>Usual warfarin starting dose about 5 mg/day; lowest-dose patients need about 1.5 mg/day, and at least 80% of them carry low-activity CYP2C9 variants.</li>
 <li>Variant frequency: Caucasians about 30%; African Americans about 1 to 3%; East Asians about 0% in the population studied.</li>
+<li>The 2017 CPIC warfarin guideline agrees on the order: *2 and *3 are the two most common decreased-function alleles among individuals of European ancestry (p. 398), and *2 is virtually absent in Asians (p. 400). In African ancestry the other decreased-function alleles, *5, *6, *8 and *11, are collectively more common than *2 and *3 (p. 399). The full population table is in Reference, Day 21.</li>
 </ul>
 
 <h4>Why</h4>
@@ -465,6 +466,11 @@ const GUIDE4_HTML = `
 <li>"at least 80% of the people in that dosing category have these low activity variants of 2C9" <small>(T) 10/22</small></li>
 </ul>
 
+<h4>Where her words and the sources differ</h4>
+<ul>
+<li><b>How much activity *2 and *3 keep.</b> Her slide (p. 23) and her words: *2 has 20% and *3 has 5% of wild-type activity. The 2017 CPIC guideline (p. 398) and Katzung ch. 5: *2 and *3 impair S-warfarin metabolism by about 30-40% and 80-90%. The exam keys her numbers (20% and 5% remaining); the CPIC figures answer a question that names the guideline.</li>
+</ul>
+
 <h4>Traps</h4>
 <ul>
 <li><b>Swapping the activity numbers.</b> *2 is about 20%, *3 is about 5%; *3 is the more severe loss.</li>
@@ -473,7 +479,7 @@ const GUIDE4_HTML = `
 </ul>
 
 <p>How she asks it: name the CYP2C9 drugs; the *2 and *3 activity percentages; the 90% clearance reduction in *3/*3; the low starting dose and the 80% figure; what an inhibitor adds.</p>
-<p class="sub">Sources: PGx-Examples-Students-Fall-2026.pdf slides 'CYP2C9 Polymorphisms' (p. 23), 'CYP2C9 Polymorphisms 2' (p. 24); (T) 10/22. Questions L19-021 to L19-025.</p>
+<p class="sub">Sources: PGx-Examples-Students-Fall-2026.pdf slides 'CYP2C9 Polymorphisms' (p. 23), 'CYP2C9 Polymorphisms 2' (p. 24); CPIC warfarin guideline 2017 update (pp. 398-400); (T) 10/22. Questions L19-021 to L19-025, L19-046.</p>
 </section>
 <section class="guide" id="guide4-l19-5">
 <h3>12. CYP2C19: the *17 gain of function, clopidogrel, and the PPI twist</h3>
@@ -500,9 +506,15 @@ const GUIDE4_HTML = `
 <li>"17 has increased function. OK. The reason for that is this snip is located in the upstream region of the gene where the machinery for expressing the gene sits down on the gene and starts its work." <small>(T) 10/22</small></li>
 <li>"clopidogrel is a drug for which we should be genotyping people for their 2C19 status." <small>(T) 10/22</small></li>
 <li>"they found that people had better treatment of their disease. When you had the low activity version of the enzyme increasing drug blood concentrations, you had better cure rates." <small>(T) 10/22</small></li>
+<li>"people that are on proton pump inhibitors, if they're poor metabolizers. They actually have increased ulcer healing." <small>(T) 10/22; slide p. 25, last bullet</small></li>
 </ul>
 
-<p><b>The figure and the assigned paper.</b> The figure she showed (Examples p. 27, Furuta et al. 2004) used lansoprazole: "They were using lansoprazole, and they looked at the AUC here on this panel." <small>(T) 10/22</small> The assigned reading, Furuta et al., Annals of Internal Medicine 1998, treated 62 Japanese patients with omeprazole plus amoxicillin and reported H. pylori cure rates of 28.6%, 60% and 100% in the rapid, intermediate and poor metabolizers; its authors state that plasma omeprazole levels were not measured. Her discussion of the paper is set for Monday 10/26.</p>
+<p><b>The figure and the assigned paper.</b> The figure she showed (Examples p. 27, Furuta et al. 2004) used lansoprazole: "They were using lansoprazole, and they looked at the AUC here on this panel." <small>(T) 10/22</small> The assigned reading, Furuta et al., Annals of Internal Medicine 1998, treated 62 Japanese patients with omeprazole plus amoxicillin and reported H. pylori cure rates of 28.6%, 60% and 100% in the rapid, intermediate and poor metabolizers; its authors state that plasma omeprazole levels were not measured. Ulcer healing ran roughly parallel with the cure rates (abstract), which matches the slide's last bullet on p. 25: increased ulcer healing on PPIs with the poor-metabolizer phenotype. The genotype groups, cure and healing rates and the four reasons from the paper's discussion are in section 22 (10/26).</p>
+<h4>Where her words and the sources differ</h4>
+<ul>
+<li><b>Why *2 and *3 are inactive.</b> She said on 10/22 and 10/26 that *2 and *3 are both SNPs that create a premature stop codon, so the protein is too short to work. The Goodman and Gilman figure on Examples p. 26 marks *2 at a splice site and *3 as W212X; both are labeled "No Function". The Furuta paper only places m1 (*2) in exon 5 and m2 (*3) in exon 4. The exam keys her answer: premature stop codon, no active enzyme.</li>
+<li><b>How common poor metabolizers are.</b> Slide p. 25 lists the poor-metabolizer phenotype as Caucasians 2-5%, African 2-5%, Asians 16%; she did not read the numbers aloud. The Furuta paper (p. 1029) gives the poor-metabolizer genotype as 3% to 5% in white U.S. or European populations and 18% to 23% in Japanese persons. The groups differ (Asians vs Japanese persons), and both put poor metabolizers far more often in the Asian or Japanese group. Use the slide's numbers for the slide and the paper's for the paper.</li>
+</ul>
 <h4>Traps</h4>
 <ul>
 <li><b>Calling *17 a structural change.</b> *17 raises how much enzyme is made (expression); it does not change the enzyme's shape, and it is not extra gene copies.</li>
@@ -512,7 +524,7 @@ const GUIDE4_HTML = `
 </ul>
 
 <p>How she asks it: why *17 increases function and where the SNP sits; the clopidogrel outcome for each allele; why the PPI poor metabolizer benefits while the SSRI one does not; read the Furuta AUC/pH/cure-rate figure.</p>
-<p class="sub">Sources: PGx-Examples-Students-Fall-2026.pdf slides 'CYP2C19 Polymorphisms' (p. 25), 'CYP2C19 Polymorphisms 2' (p. 26), 'CYP2C19 Polymorphisms 3' (p. 27, Furuta et al. 2004); (T) 10/22. Questions L19-026 to L19-033.</p>
+<p class="sub">Sources: PGx-Examples-Students-Fall-2026.pdf slides 'CYP2C19 Polymorphisms' (p. 25), 'CYP2C19 Polymorphisms 2' (p. 26), 'CYP2C19 Polymorphisms 3' (p. 27, Furuta et al. 2004); FurutaAnnIntMed1998.pdf (abstract; pp. 1028-1029); (T) 10/22. Questions L19-026 to L19-033, L19-045.</p>
 </section>
 <section class="guide" id="guide4-l19-6">
 <h3>13. Two oncology examples: DPD (5-fluorouracil) and UGT1A1 (irinotecan)</h3>
@@ -809,6 +821,7 @@ const GUIDE4_HTML = `
 <ul>
 <li>Mechanism: warfarin inhibits vitamin K epoxide reductase, so vitamin K epoxide is not reduced back to its active form. Gamma-glutamyl carboxylase then cannot make active clotting factors. Vitamin K is the antidote in overdose.</li>
 <li>S-warfarin has the most activity and is cleared mainly by CYP2C9. R-warfarin is weak and is cleared by multiple CYPs. Both act on VKORC1.</li>
+<li>The CPIC guideline's Figure 1 (10/27, section 25) gives the same picture with numbers: warfarin is a racemic R/S mixture; S-warfarin is 3-5 times more potent than R-warfarin and is metabolized predominantly to 7- and 6-hydroxyl metabolites via CYP2C9; reduced vitamin K is the cofactor gamma-glutamyl carboxylase (GGCX) uses to make functional clotting factors.</li>
 <li>Dose example from her questions: wild type for both genes, about 5 mg/day; CYP2C9*3/*3 with wild-type VKORC1, less; homozygous variant for both, the lowest.</li>
 <li>Body weight and gender also play a role in warfarin dosing.</li>
 </ul>
@@ -827,6 +840,12 @@ const GUIDE4_HTML = `
 <li>"Which means you've basically got more of the antidote for warfarin on board, right?" <small>(T) 10/26</small></li>
 </ul>
 
+<h4>Where her words and the sources differ</h4>
+<ul>
+<li><b>What the VKORC1 variants do.</b> Her slide (p. 57) and her words: VKORC1 haplotypes "have low activity". The CPIC guideline (p. 399): -1639G&gt;A sits on a haplotype that affects VKORC1 protein expression. Both lead to the same answer, a lower warfarin dose; for the mechanism, her wording (low-activity target) is what she taught, and the guideline's word is expression.</li>
+<li><b>The more-active CYP4F2 case.</b> Reasoning through a more active CYP4F2 she said active vitamin K goes down and then "You may not need as much vitamin K". Following the antidote reasoning she used for the low-activity case (more active vitamin K, higher warfarin need), less active vitamin K means a lower warfarin need; the quantity that changes is the warfarin dose.</li>
+</ul>
+
 <h4>Traps</h4>
 <ul>
 <li><b>Saying CYP2C9*2 and *3 make no enzyme.</b> They reduce activity. It is CYP2C19*2 and *3 that make no active enzyme.</li>
@@ -836,7 +855,7 @@ const GUIDE4_HTML = `
 </ul>
 
 <p>How she asks it: warfarin's mechanism; which gene is PK and which is PD; rank the dose needs by genotype combination; reason through low or high CYP4F2 activity; which factors affect warfarin dosing.</p>
-<p class="sub">Sources: PGx-Examples-Students-Fall-2026.pdf slides 'Integrated: Both PK and PD' (p. 57), 'Both PK and PD 2' (p. 58, Goodman and Gilman); (T) 10/26. Questions L20-046 to L20-053.</p>
+<p class="sub">Sources: PGx-Examples-Students-Fall-2026.pdf slides 'Integrated: Both PK and PD' (p. 57), 'Both PK and PD 2' (p. 58, Goodman and Gilman); CPIC warfarin guideline 2017 update, Figure 1 (p. 398); (T) 10/26. Questions L20-046 to L20-053.</p>
 </section>
 <section class="guide" id="guide4-l20-7">
 <h3>21. Immune system variants: HLA genes and drug hypersensitivity</h3>
@@ -888,10 +907,17 @@ const GUIDE4_HTML = `
 
 <h4>The facts</h4>
 <table class="reftab"><thead><tr><th>Group (Table 1)</th><th>Genotypes (star)</th><th>CYP2C19 activity</th><th>H. pylori cure rate (Table 2)</th></tr></thead><tbody>
-<tr><td>1</td><td>wt/wt (*1/*1)</td><td>Normal (rapid-extensive)</td><td>28.6%</td></tr>
-<tr><td>2</td><td>wt/m1, wt/m2 (*1/*2, *1/*3)</td><td>Some: one *1 allele (intermediate-extensive)</td><td>60%</td></tr>
-<tr><td>3</td><td>m1/m2, m1/m1 (*2/*3, *2/*2)</td><td>None (poor metabolizer)</td><td>100%</td></tr>
+<tr><td>1</td><td>wt/wt (*1/*1)</td><td>Normal (rapid-extensive)</td><td>28.6% (8 of 28)</td></tr>
+<tr><td>2</td><td>wt/m1, wt/m2 (*1/*2, *1/*3)</td><td>Some: one *1 allele (intermediate-extensive)</td><td>60% (15 of 25)</td></tr>
+<tr><td>3</td><td>m1/m2, m1/m1 (*2/*3, *2/*2)</td><td>None (poor metabolizer)</td><td>100% (9 of 9)</td></tr>
 </tbody></table>
+<p><b>Functional significance, group by group.</b> Group 1 has two working *1 alleles, full CYP2C19 activity, the fastest omeprazole clearance and the lowest cure rate. Group 2 keeps one working *1 allele, so some activity remains, and its cure rate is in between. Group 3 has two non-functional alleles, no active CYP2C19, the highest omeprazole exposure (relative mean AUC 1:3.7:20 across groups 1 to 3, cited from earlier work, p. 1028) and every patient cured. Overall 32 of 62 patients were cured (51.6%), P &lt; 0.001 across groups (Table 2).</p>
+<table class="reftab"><thead><tr><th>Group</th><th>Gastric ulcer healed</th><th>Duodenal ulcer healed</th></tr></thead><tbody>
+<tr><td>1</td><td>58.8% (7 of 12; the paper prints 58.8%)</td><td>81.3% (13 of 16)</td></tr>
+<tr><td>2</td><td>92.9% (13 of 14)</td><td>81.8% (9 of 11)</td></tr>
+<tr><td>3</td><td>100% (7 of 7)</td><td>100% (2 of 2)</td></tr>
+</tbody></table>
+<p><b>Ulcer healing</b> (abstract; Results, pp. 1028-1029): healing rates for both gastric and duodenal ulcer ran roughly parallel with the H. pylori cure rates. Ulcers healed in 27 of 33 gastric and 24 of 29 duodenal ulcer patients, and in every patient whose H. pylori infection was cured the ulcer lesions were healed at follow-up endoscopy.</p>
 <ul>
 <li>62 Japanese patients, mostly middle-aged men, with gastric or duodenal ulcer and H. pylori infection.</li>
 <li>Regimen: omeprazole 20 mg for 8 weeks (gastric ulcer) or 6 weeks (duodenal ulcer), plus amoxicillin 500 mg four times a day for 2 weeks.</li>
@@ -904,7 +930,15 @@ const GUIDE4_HTML = `
 <ul>
 <li><b>Why group 3 has no activity.</b> CYP2C19*2 and *3 are SNPs that create a premature stop codon. Each makes a protein too short to work, so a person with any two of them has no active enzyme.</li>
 <li><b>Why the missing *3/*3 does not matter.</b> *2 and *3 are both inactive, so a *3/*3 patient would simply belong in group 3. The gap only reflects who was recruited.</li>
-<li><b>Why poor metabolizers were cured more often.</b> The discussion section gives the reasons. Omeprazole stays high, so stomach pH stays higher. Amoxicillin is unstable at low pH, so it is more stable at the higher pH. Omeprazole also helps get amoxicillin into the gastric juice, where H. pylori is. (The paper gives a fourth reason, omeprazole's own activity against H. pylori, which she did not mention.)</li>
+<li><b>Why poor metabolizers were cured more often: the four reasons.</b> The Discussion (p. 1029) numbers them First, Second, Third and Finally. On 10/26 she summarized the first three ("they say things like 1st and 2nd and 3rd"); the fourth is in the paper only.
+<ul>
+<li><b>1. First: longer high gastric pH.</b> Omeprazole's disposition follows CYP2C19 activity, so its plasma concentration-time curve (systemic availability) is markedly increased in poor metabolizers, and high intragastric pH lasts longer than in extensive metabolizers. Her version: omeprazole stays really high, so gastric pH is higher.</li>
+<li><b>2. Second: more active amoxicillin.</b> Amoxicillin is unstable and its antibacterial activity is decreased at low pH, so raising intragastric pH toward neutral with omeprazole may increase the amount of active antibiotic. Her version: amoxicillin is more stable when the stomach pH is higher.</li>
+<li><b>3. Third: more amoxicillin in gastric juice.</b> Omeprazole has been reported to increase amoxicillin concentrations in gastric juice, so with both drugs given, amoxicillin would be more stable and stay in the stomach longer at levels above its minimum inhibitory concentration in poor metabolizers. Her version: omeprazole helps get amoxicillin into the gastric juice, where H. pylori is, and helps it stay intact there.</li>
+<li><b>4. Finally: omeprazole acts on H. pylori itself.</b> Omeprazole has been reported to have anti-H. pylori activity of its own, presumably enhanced in poor metabolizers.</li>
+</ul></li>
+<li><b>Why ulcers healed best in poor metabolizers.</b> The authors credit both the higher H. pylori cure rate and the stronger acid-inhibitory effect of omeprazole in that group (p. 1029).</li>
+<li><b>Raising PPI exposure in extensive metabolizers.</b> The authors cite a study in white persons, most probably extensive metabolizers, in which omeprazole 40 mg three times daily with amoxicillin 750 mg three times daily reached a 91% cure rate, and suggest at least 120 mg of omeprazole may be needed in extensive metabolizers (p. 1029). She did not discuss this point.</li>
 <li><b>Why the result does not transfer directly to the U.S.</b> *2 and *3 are relatively frequent in the Japanese population. The paper gives the poor-metabolizer genotype as 18% to 23% in Japanese persons versus 3% to 5% in white U.S. or European populations. With genotyping, the same response is expected and only the group sizes differ, so fewer antibiotics might be possible for the right genotypes.</li>
 </ul>
 
@@ -913,6 +947,17 @@ const GUIDE4_HTML = `
 <li>"What I wanted to point out to you guys is that in this population, they were effectively using a PPI and 1 antibiotic." <small>(T) 10/26</small></li>
 <li>"You guys have to be able to drill down from your phenotype of your patient to the molecular structure of the DNA and know what is star 2? What is star 3? Why is that enzyme not active in this person?" <small>(T) 10/26</small></li>
 <li>"So can we generalize this study to the United States? Not on the face of it." <small>(T) 10/26</small></li>
+<li>"look at the discussion. And they say things like 1st and 2nd and 3rd, they're making some other points." <small>(T) 10/26</small></li>
+<li>"That's the 3rd point they make in the discussion, that something about omeprazole helps get the amoxicillin into the gastric juices and helps it stay intact there, cause you've increased the pH" <small>(T) 10/26</small></li>
+</ul>
+
+<h4>Where her words and the paper differ</h4>
+<ul>
+<li><b>What is higher in the gastric juice.</b> Just before stating the third point she said poor metabolizers "also had more omeprazole in the gastric juice". The paper's third point is that omeprazole raises <i>amoxicillin</i> concentrations in gastric juice, and her own next sentence says the same ("omeprazole helps get the amoxicillin into the gastric juices"). The exam keys amoxicillin.</li>
+<li><b>Why *2 and *3 are inactive.</b> She said both are SNPs that create a premature stop codon. The Goodman and Gilman figure (Examples p. 26) marks *2 at a splice site and *3 as W212X; the paper only gives m1 in exon 5 and m2 in exon 4. The exam keys her answer.</li>
+<li><b>Poor-metabolizer frequency.</b> The paper: 18% to 23% in Japanese persons versus 3% to 5% in white U.S. or European populations. Slide p. 25: Asians 16%, Caucasians 2-5%, African 2-5%. Different groupings; same direction.</li>
+<li><b>What was measured.</b> She described the paper as relating genotype to cure rate, stomach pH and omeprazole AUC. The 1998 paper measured genotype, H. pylori cure and ulcer healing; it cites the AUC ratio from earlier work and states that plasma omeprazole was not measured. The AUC and pH panels she showed on 10/22 are from the 2004 lansoprazole study.</li>
+<li><b>Diagnosis.</b> She said the patients "all were diagnosed with GEERRD" (GERD); the paper's 62 patients had gastric (33) or duodenal (29) ulcer.</li>
 </ul>
 
 <h4>Traps</h4>
@@ -924,8 +969,8 @@ const GUIDE4_HTML = `
 <li><b>Expecting plasma levels from this paper.</b> She said group 3 had the highest AUC. The paper cites relative omeprazole AUCs (1:3.7:20) from earlier work but states that it did not measure plasma omeprazole levels.</li>
 </ul>
 
-<p>How she asks it: population and regimen; whether one antibiotic is U.S. practice; the enzyme's other name; translate m1 and m2; which genotype was missing and why that is acceptable; why *2 and *3 are inactive; which group had the best cure rate and the discussion's reasons; whether the result generalizes.</p>
-<p class="sub">Sources: FurutaAnnIntMed1998.pdf (reading card furuta-1998: pp. 1027-1029, Tables 1-2, Discussion); PGx-Examples-Students-Fall-2026.pdf slide 'Discussion of Furuta article' (p. 61); (T) 10/26. Questions L20-057 to L20-066.</p>
+<p>How she asks it: population and regimen; whether one antibiotic is U.S. practice; the enzyme's other name; translate m1 and m2; which genotype was missing and why that is acceptable; why *2 and *3 are inactive; which group had the best cure rate and the cure rate of each group; the four reasons in the discussion; how ulcer healing followed the cure rates; whether the result generalizes.</p>
+<p class="sub">Sources: FurutaAnnIntMed1998.pdf (reading card furuta-1998: pp. 1027-1029, Tables 1-2, Discussion); PGx-Examples-Students-Fall-2026.pdf slide 'Discussion of Furuta article' (p. 61); (T) 10/22 and 10/26. Questions L20-057 to L20-066, L20-067 to L20-072.</p>
 </section>
 <section class="guide" id="guide4-l21-1">
 <h3>23. The FDA tables: pharmacogenetic associations and biomarkers in drug labeling</h3>
@@ -1052,6 +1097,24 @@ const GUIDE4_HTML = `
 <tr><td>CYP4F2</td><td>Metabolizes reduced vitamin K to hydroxyvitamin K1, removing vitamin K from the cycle</td><td>*3, less active</td><td>Higher (guideline: increase 5-10%)</td></tr>
 <tr><td>CYP2C rs12777823</td><td>Associated with altered warfarin clearance</td><td>A/G or A/A</td><td>Lower, in African Americans only (guideline: 10-25%)</td></tr>
 </tbody></table>
+<p><b>Figure 1, read as a cycle</b> (Figure 1 and legend, p. 398; gene sections, pp. 398-399). Her study list asks for the target, how vitamin K is involved, and how the drug and vitamin K are metabolized.</p>
+<ul>
+<li><b>The drug.</b> Warfarin is given as a racemic mixture of R- and S-warfarin. S-warfarin is 3-5 times more potent than R-warfarin. Both enantiomers inhibit VKORC1 (two inhibition lines in the figure).</li>
+<li><b>The target.</b> VKORC1 (vitamin K epoxide reductase) converts vitamin K epoxide back to reduced vitamin K (NADH to NAD+ in the figure). The guideline calls this the rate-limiting step in vitamin K recycling.</li>
+<li><b>How vitamin K is involved.</b> Reduced vitamin K is used by gamma-glutamyl carboxylase (GGCX), which carboxylates hypofunctional clotting factors into functional, Gla-containing clotting factors; in that step vitamin K returns to the epoxide. Calumenin (CALU), an endoplasmic reticulum chaperone, can bind and inhibit GGCX.</li>
+<li><b>What warfarin does.</b> By inhibiting VKORC1 it limits the supply of reduced vitamin K, so fewer functionally active clotting factors are formed. Vitamin K is the antidote.</li>
+<li><b>How the drug is metabolized.</b> S-warfarin is metabolized predominantly to 7- and 6-hydroxyl metabolites via CYP2C9, its primary metabolizing enzyme. R-warfarin goes to metabolites; Figure 1 does not name the enzymes (on 10/26 she said R is weak and is metabolized by multiple CYPs).</li>
+<li><b>How vitamin K is metabolized.</b> CYP4F2 converts reduced vitamin K to hydroxyvitamin K1 and removes it from the cycle; the guideline calls CYP4F2 an important counterpart to VKORC1 in limiting excessive accumulation of vitamin K.</li>
+</ul>
+<p><b>Figure 2 variants: direction, reason and who carries them.</b> The full population table, with sources, is in Reference, Day 21 (the CPIC warfarin algorithm).</p>
+<ul>
+<li><b>VKORC1 -1639G&gt;A.</b> One or two A alleles: progressively lower dose. Reason: less of the target (expression; her word: low activity), so less drug is needed. Population: A is most common in East Asian, then European and North American, least in African (Examples p. 9, order only); the guideline says this frequency largely explains the average dose differences between whites, blacks and Asians.</li>
+<li><b>CYP2C9*2 and *3.</b> Lower dose. Reason: S-warfarin is cleared more slowly. Population: the most common decreased-function alleles in European ancestry; *2 is virtually absent in Asians.</li>
+<li><b>CYP2C9*5, *6, *8, *11.</b> Decrease the calculated dose 15-30% (20-40% in homozygotes). Reason: decreased CYP2C9 function. Population: highest frequency in African ancestry, where together they are more common than *2 and *3.</li>
+<li><b>CYP4F2*3.</b> Increase 5-10%, non-African branch only. Reason: less vitamin K is removed, so more warfarin is needed. Population: the dose effect is confirmed in European and Asian ancestry, not in African ancestry.</li>
+<li><b>rs12777823.</b> Decrease 10-25%, African Americans only. Reason: associated with altered warfarin clearance, independent of CYP2C9*2 and *3. Population: the variant is common in other ethnic populations, but a dose association has been found only in African Americans.</li>
+<li>Figure 2 footnote c: 45-50% of individuals with self-reported African ancestry carry CYP2C9*5, *6, *8, *11 or rs12777823.</li>
+</ul>
 <p><b>The algorithm, step by step</b> (Figure 2 and the Therapeutic Recommendations text):</p>
 <ul>
 <li><b>1. Genotype available?</b> No: dose clinically, meaning without genetic information (a clinical dosing algorithm or a standard dose approach). She said "Dose your patient empirically".</li>
@@ -1078,6 +1141,10 @@ const GUIDE4_HTML = `
 <li>"These variants are up high for people of African ancestry because we know that they could have a higher probability of having one of those genotypes" <small>(T) 10/27</small></li>
 <li>"Vitamin K is like the antidote for warfarin, right?" <small>(T) 10/27</small></li>
 <li>"Compared to the average starting dose, do they need relatively more or do they need relatively less?" <small>(T) 10/27</small></li>
+<li>"So here's warfarin, the R and the S and tamers, they're hitting VKRC1, right?" <small>(T) 10/27; Figure 1</small></li>
+<li>"Remember you need active vitamin K to help with the final production of our clotting factors" <small>(T) 10/27</small></li>
+<li>"you should know which genetic variants we're concerned about and in which populations" <small>(T) 10/28</small></li>
+<li>"Remember, those are going to be opposite effects on the dose." <small>(T) 10/28; CYP2C9*2 with the CYP4F2 variant</small></li>
 </ul>
 
 <h4>Where her words and the sources differ</h4>
@@ -1085,6 +1152,10 @@ const GUIDE4_HTML = `
 <li><b>No genotype.</b> She said to dose empirically and added "Usually we just start with 5 mg per kilogram". Figure 2 says "dose clinically" (without genetic information) and gives no number on that branch; the guideline text gives population averages of about 4-5 mg/day for the initial dose, and on 10/26 she gave about 5 mg/day. </li>
 <li><b>CYP4F2 direction.</b> Walking the non-African branch she first said that a patient with the CYP4F2 SNP needs the dose decreased again. When a student raised it she gave the increase, and the guideline says increase by 5-10%. </li>
 <li><b>Which branch has which variant.</b> Walking the African branch she first said that a patient with the CYP4F2 variant needs the dose further decreased. Answering a student she then linked an increased dose to a CYP4F2 variant on the African side, and finally stated that CYP4F2 is not on the African branch and that rs12777823 there requires a decrease. Figure 2 matches her final statement.</li>
+<li><b>What rs12777823 is.</b> She called it "another P450 variant" that requires a decreased dose "because it's decreasing the activity of somewhere of the 2C9", not yet well identified. The guideline: a SNP in the CYP2C cluster near the CYP2C18 gene on chromosome 10, associated with altered warfarin clearance independent of CYP2C9*2 and *3, and probably not the cause itself but inherited with other variant(s) on a haplotype (p. 399). Both give a decrease; for the reason, the guideline's wording (altered clearance, independent of *2 and *3) is the exact one.</li>
+<li><b>The name of the CYP4F2 variant.</b> She called it "the 3 variant" (CYP4F2*3). Figure 2 labels it "CYP4F2 rs2108622 T allele"; the text (p. 399) names CYP4F2*3 as c.1297G&gt;A (p.Val433Met; rs2108622) and gives 8-11% higher doses in "A allele carriers". All three labels carry the same rs number, rs2108622; the exam keys CYP4F2*3.</li>
+<li><b>How much activity CYP2C9*2 and *3 keep.</b> Her slide (Examples p. 23): 20% and 5% of wild-type activity. The guideline (p. 398): S-warfarin metabolism impaired by about 30-40% and 80-90%. The exam keys her numbers; the direction (lower dose) is the same.</li>
+<li><b>VKORC1 low activity or low expression.</b> Her slide (Examples p. 57): VKORC1 haplotypes "have low activity". The guideline: -1639G&gt;A is on a haplotype that affects protein expression. Same dose direction (lower).</li>
 </ul>
 
 <h4>Traps</h4>
@@ -1095,11 +1166,14 @@ const GUIDE4_HTML = `
 <li><b>Increasing the dose for CYP2C9*5, *6, *8 or *11.</b> These are decreased-function alleles; the calculated dose goes down 15-30%.</li>
 <li><b>"These alleles raise CYP2C9 activity" as the reason they are tested first in African ancestry.</b> The reason is their higher frequency in that population.</li>
 <li><b>Waiting to genotype before starting warfarin.</b> Without a genotype the algorithm says to dose clinically.</li>
+<li><b>Calling GGCX or CYP4F2 warfarin's target.</b> VKORC1 is the target; GGCX uses reduced vitamin K to make clotting factors; CYP4F2 removes vitamin K.</li>
+<li><b>Calling R-warfarin the potent enantiomer.</b> S-warfarin is 3-5 times more potent and is cleared mainly by CYP2C9.</li>
+<li><b>Putting the most VKORC1 -1639A alleles in African ancestry.</b> The A allele (lower dose) is most common in East Asian ancestry; African ancestry carries more of the decreased-function CYP2C9*5, *6, *8 and *11.</li>
 <li><b>Reading the minus sign in -1639 as a deletion or a lower dose in mg.</b> It marks a position upstream of the gene, in a region that affects expression.</li>
 </ul>
 
-<p>How she asks it: she gives a patient's CYP2C9, VKORC1 and CYP4F2 genotypes and ancestry, then asks whether all the genotyping known so far was done, whether the patient needs relatively more or less than the average starting dose, and why the CYP4F2 variant raises the dose. Also: what VKORC1 is to warfarin; what the algorithm says with no genotype; what comes next when the genotype is available; the size and direction of each adjustment; why *5, *6, *8 and *11 are up front for African ancestry.</p>
-<p class="sub">Sources: PGx-Resources-and-Cases-Students-Fall-2026.pdf slide 'CPIC Guidelines 7' (p. 15); CPIC warfarin guideline 2017 update (Johnson et al., Clin Pharmacol Ther 2017;102:397-404): Figure 1, gene sections, Therapeutic Recommendations, Figure 2 and footnotes, Text Box 1; (T) 10/27. Questions L21-026 to L21-035.</p>
+<p>How she asks it: she gives a patient's CYP2C9, VKORC1 and CYP4F2 genotypes and ancestry, then asks whether all the genotyping known so far was done, whether the patient needs relatively more or less than the average starting dose, and why the CYP4F2 variant raises the dose. Also: what VKORC1 is to warfarin; what the algorithm says with no genotype; what comes next when the genotype is available; the size and direction of each adjustment; why *5, *6, *8 and *11 are up front for African ancestry. From Figure 1: the target, vitamin K's role with GGCX, how S-warfarin and vitamin K are metabolized. From Figure 2: which populations carry each variant.</p>
+<p class="sub">Sources: PGx-Resources-and-Cases-Students-Fall-2026.pdf slide 'CPIC Guidelines 7' (p. 15); CPIC warfarin guideline 2017 update (Johnson et al., Clin Pharmacol Ther 2017;102:397-404): Figure 1, gene sections, Therapeutic Recommendations, Figure 2 and footnotes, Text Box 1; PGx-Examples-Students-Fall-2026.pdf slides 'Allele and Phenotype Frequencies' (p. 9, panel B), 'CYP2C9 Polymorphisms' (p. 23), 'Integrated: Both PK and PD' (p. 57); (T) 10/26, 10/27 and 10/28. Questions L21-026 to L21-035, L21-060 to L21-066.</p>
 </section>
 <section class="guide" id="guide4-l21-4">
 <h3>26. Other guidelines, ClinPGx and what implementation still needs</h3>
@@ -1436,6 +1510,22 @@ const GUIDE4_HTML = `
 <tr><td>Same as the line above, plus objective evidence (Q10 yes)</td><td>8 + 1</td><td>9</td><td>Definite</td></tr>
 </tbody></table>
 
+<p><b>Two full cases, all ten questions answered.</b></p>
+<table class="reftab"><thead><tr><th>Question</th><th>Case A answer</th><th>Points</th><th>Case B answer</th><th>Points</th></tr></thead><tbody>
+<tr><td>1. Previous conclusive reports</td><td>Yes</td><td>+1</td><td>No</td><td>0</td></tr>
+<tr><td>2. Appeared after the drug</td><td>Yes</td><td>+2</td><td>Yes</td><td>+2</td></tr>
+<tr><td>3. Improved when the drug was stopped</td><td>Yes</td><td>+1</td><td>No</td><td>0</td></tr>
+<tr><td>4. Reappeared when the drug was re-given</td><td>Yes</td><td>+2</td><td>No</td><td>-1</td></tr>
+<tr><td>5. Alternative cause could explain it</td><td>No</td><td>+2</td><td>Yes (another drug)</td><td>-1</td></tr>
+<tr><td>6. Reappeared with a placebo</td><td>Do not know (no placebo given)</td><td>0</td><td>Yes</td><td>-1</td></tr>
+<tr><td>7. Toxic drug level</td><td>Do not know (no level measured)</td><td>0</td><td>Do not know</td><td>0</td></tr>
+<tr><td>8. Dose-response</td><td>No (dose never changed)</td><td>0</td><td>No</td><td>0</td></tr>
+<tr><td>9. Similar reaction on previous exposure</td><td>No</td><td>0</td><td>Yes</td><td>+1</td></tr>
+<tr><td>10. Objective evidence</td><td>Yes (lab test)</td><td>+1</td><td>No</td><td>0</td></tr>
+<tr><td><b>Total</b></td><td colspan="2"><b>9: definite</b></td><td colspan="2"><b>0: doubtful on the page, remote in her ranking</b></td></tr>
+</tbody></table>
+<p>Case B uses three of the four answers that subtract a point (Q4 no, Q5 yes, Q6 yes); a no on Q2 is the fourth. Leaving out its single +1 (Q9) would give -1, a total the page prints no band for.</p>
+
 <h4>Why</h4>
 <ul>
 <li><b>Why timing carries the most weight.</b> The yes answers worth +2 are Q2 (the reaction came after the drug) and Q4 (it came back when the drug was given again). A reaction that follows the drug, improves when the drug is stopped and returns when it is given again is tied to the drug in time. That is why the slide says the algorithm is highly dependent on the temporal relationship, and why she called a large part of it timing.</li>
@@ -1474,7 +1564,7 @@ const GUIDE4_HTML = `
 <li><b>Swapping probable and possible.</b> Probable: the drug is the apparent cause (5-8). Possible: the drug appears to be associated (1-4).</li>
 </ul>
 
-<p class="sub">Sources: ADE-Lecture-Students-2026.pdf slide 'Causality of Adverse Drug Reactions' (p. 21); Naranjo Algorithm (one page, questions 1-10 and total score); (T) 10/28. The recording renders the name as "Neuronho" and similar; the slide and page give Naranjo. Questions L22-026 to L22-031, L22-087.</p>
+<p class="sub">Sources: ADE-Lecture-Students-2026.pdf slide 'Causality of Adverse Drug Reactions' (p. 21); Naranjo Algorithm (one page, questions 1-10 and total score); (T) 10/28. The recording renders the name as "Neuronho" and similar; the slide and page give Naranjo. Questions L22-026 to L22-031, L22-087, L22-088 to L22-091.</p>
 </section>
 <section class="guide" id="guide4-l22-4">
 <h3>32. Immunologic and nonimmunologic reactions, risk factors and hypersensitivity types</h3>
