@@ -26,10 +26,10 @@ QUESTIONS.push(
  concept:"fda-assoc-not-advocating-test", tags:["smith"], source:"both",
  stem:"A drug appears in the FDA Table of Pharmacogenetic Associations. What does the listing mean for testing before prescribing?",
  options:[
-  {t:"Testing is not necessarily advocated, unless the test is a companion diagnostic", correct:true, why:"The table gives information; a listing alone is not an FDA call to test before prescribing."},
-  {t:"The FDA requires a genetic test before every prescription", correct:false, why:"Being listed does not mean the FDA advocates a test first."},
+  {t:"Testing is not necessarily advocated", correct:true, why:"The listing gives information; it is not an FDA call to test before prescribing unless the test is a companion diagnostic."},
+  {t:"A genetic test is required before the drug is prescribed", correct:false, why:"Being listed does not mean a test is required first."},
   {t:"The drug must carry a pharmacogenomic boxed warning", correct:false, why:"The table says nothing about boxed warnings; the labeling sections are in the other FDA table."},
-  {t:"The drug cannot be given to patients with the variant", correct:false, why:"The table lists associations, not contraindications."}],
+  {t:"The drug cannot be given to patients who carry the variant", correct:false, why:"The table lists associations, not contraindications."}],
  teach:"The FDA lists a drug when evidence shows that certain variants alter its metabolism, effect or adverse-event risk. The listing only gives information; it is not a call to test before prescribing unless the test is a companion diagnostic.",
  quote:"they're not necessarily advocating using pharmacogenomic testing before prescribing these drugs, but they're just providing us some information",
  cite:"PGx-Resources-and-Cases-Students-Fall-2026.pdf slide 'FDA Tables of Pharmacogenetic Associations' (p. 3); transcript 10/27"},
@@ -41,7 +41,9 @@ QUESTIONS.push(
   {t:"Changing current regulatory requirements or policies", correct:true, why:"The first of the three 'This table is not' bullets."},
   {t:"Assessing the safe and effective use of tests that detect the variants", correct:true, why:"The table does not judge the tests and does not tell you to do testing."},
   {t:"Giving comprehensive gene-drug information", correct:true, why:"The table is not meant to be complete on each gene-drug interaction."},
-  {t:"Showing which drugs have pharmacogenetic implications", correct:false, why:"This is what the table is for: a first screen of which drugs have pharmacogenetic implications."}],
+  {t:"Showing which drugs have pharmacogenetic implications", correct:false, why:"This is what the table is for: a first screen of which drugs have pharmacogenetic implications."},
+  {t:"Giving a short description of each gene-drug interaction", correct:false, why:"The table does give a short description of each association, which she liked."},
+  {t:"Grouping associations into three sections", correct:false, why:"The table does group associations into three sections."}],
  teach:"The three things the table is not: it does not change regulatory requirements or policies, it does not assess the tests that detect the variants, and it is not complete gene-drug information. It does show which drugs have pharmacogenetic implications.",
  quote:"In other words, you don't, you're not being told to do testing, genetic testing, and these tables are not intended to provide a comprehensive amount of information",
  cite:"PGx-Resources-and-Cases-Students-Fall-2026.pdf slide 'FDA Tables of Pharmacogenetic Associations' (p. 3); transcript 10/27"},
@@ -87,10 +89,10 @@ QUESTIONS.push(
  concept:"fda-biomark-what", tags:["smith"], source:"both",
  stem:"What does the FDA Table of Pharmacogenomic Biomarkers in Drug Labeling list?",
  options:[
-  {t:"FDA-approved drugs with pharmacogenomic information in their labeling", correct:true, why:"It is a comprehensive list of U.S.-marketed, FDA-approved drugs with pharmacogenomics in the label."},
-  {t:"Drugs in development with promising genetic data", correct:false, why:"Drugs in the pipeline are not included; only approved drugs."},
-  {t:"Every genetic test the FDA has cleared", correct:false, why:"It lists drugs and their biomarkers, not tests."},
-  {t:"Genotype-based dosing tables for each drug", correct:false, why:"Dosing tables by genotype come from guidelines such as CPIC."}],
+  {t:"Approved drugs whose labels carry pharmacogenomic text", correct:true, why:"A comprehensive list of U.S.-marketed, FDA-approved drugs with pharmacogenomics in the label."},
+  {t:"Drugs still in development that have promising genetic data", correct:false, why:"Pipeline drugs are not included; only approved drugs."},
+  {t:"Every genetic test the FDA has cleared for clinical use", correct:false, why:"It lists drugs and their biomarkers, not tests."},
+  {t:"Genotype-based dosing tables for each listed drug", correct:false, why:"Dosing tables by genotype come from guidelines such as CPIC."}],
  teach:"This table lists every FDA-approved drug on the U.S. market with pharmacogenomic information in its labeling, with actions to take and where in the label the information appears. It is bigger and updated more often than the Associations table.",
  quote:"So this is a comprehensive list of FDA approved drugs that have pharmacogenomics in their labeling.",
  cite:"PGx-Resources-and-Cases-Students-Fall-2026.pdf slide 'FDA Table of Pharmacogenomic Biomarkers in Drug Labeling' (p. 6); transcript 10/27"},
@@ -99,10 +101,10 @@ QUESTIONS.push(
  concept:"fda-biomark-label-section", tags:["smith"], source:"both",
  stem:"In the FDA Table of Pharmacogenomic Biomarkers in Drug Labeling, what does the last column, 'Labeling Sections', tell you?",
  options:[
-  {t:"Which sections of the drug label contain the pharmacogenomic information", correct:true, why:"It points to the part of the official label to read."},
-  {t:"Which genetic test to order", correct:false, why:"The column names label sections, not tests."},
-  {t:"The therapeutic area of the drug", correct:false, why:"Therapeutic area is a separate column."},
-  {t:"The strength of the evidence", correct:false, why:"Evidence grading belongs to the CPIC guidelines."}],
+  {t:"The label sections holding the pharmacogenomic text", correct:true, why:"It points to the part of the official label to read."},
+  {t:"The specific genetic test the FDA says to order first", correct:false, why:"The column names label sections, not tests."},
+  {t:"The therapeutic area the drug is approved in", correct:false, why:"Therapeutic area is a separate column."},
+  {t:"The strength of the evidence behind the listing", correct:false, why:"Evidence grading belongs to the CPIC guidelines."}],
  teach:"The Labeling Sections column says where in the label the pharmacogenomic information sits, such as a boxed warning or the dosing section. Every FDA label uses the same sections, so you can quickly check for a pharmacogenomic warning or dosing advice.",
  quote:"It's telling you in what section of the drug label you will find pharmacogenomics information.",
  cite:"PGx-Resources-and-Cases-Students-Fall-2026.pdf slides 'FDA Table of Pharmacogenomic Biomarkers in Drug Labeling' 1 and 3 (pp. 6, 8); transcript 10/27"},
@@ -115,7 +117,9 @@ QUESTIONS.push(
   {t:"Dosage and Administration", correct:true, why:"Section 2.1 is screening for HLA-B*5701 before starting."},
   {t:"Contraindications", correct:true, why:"Ziagen is contraindicated with the HLA-B*5701 allele."},
   {t:"Warnings and Precautions", correct:true, why:"Section 5.1 covers the hypersensitivity reactions."},
-  {t:"Overdosage", correct:false, why:"She did not list it, and it has no HLA-B*5701 content."}],
+  {t:"Overdosage", correct:false, why:"She did not list it, and it has no HLA-B*5701 content."},
+  {t:"Adverse Reactions", correct:false, why:"The abacavir row does not list the Adverse Reactions section for pharmacogenomic content."},
+  {t:"Drug Interactions", correct:false, why:"The abacavir row does not list the Drug Interactions section."}],
  teach:"Abacavir is the first drug in the table. Its row lists pharmacogenomic information in the Boxed Warning, Dosage and Administration, Contraindications, and Warnings and Precautions; the column sends you straight to those label sections.",
  quote:"They have information about pharmacogenomics in the boxed warning section, in the dosage and administration section, in the contraindication section, in the warnings and precautions sections.",
  cite:"PGx-Resources-and-Cases-Students-Fall-2026.pdf slide 'FDA Table of Pharmacogenomic Biomarkers in Drug Labeling 3' (p. 8); Ziagen (abacavir) label, Boxed Warning, 2.1, 4, 5.1; transcript 10/27"},
@@ -128,7 +132,8 @@ QUESTIONS.push(
   {t:"Biomarkers used only for diagnosis", correct:true, why:"Diagnostic-only biomarkers are a different topic; the table is about drug response."},
   {t:"Biomarkers tied to a drug other than the referenced drug", correct:true, why:"Each row speaks only to the drug in which the data were gathered."},
   {t:"Somatic gene variants", correct:false, why:"Germline or somatic variants are included."},
-  {t:"Protein biomarkers used to select therapy", correct:false, why:"These are included."}],
+  {t:"Protein biomarkers used to select therapy", correct:false, why:"These are included."},
+  {t:"Germline (inherited) variants", correct:false, why:"Germline variants are included in the table, not left out."}],
  teach:"Included: germline or somatic gene variants, functional deficiencies, gene expression variations, chromosomal abnormalities, and protein biomarkers used to select therapy. Left out: non-human genetic biomarkers, diagnosis-only biomarkers, and biomarkers tied to another drug.",
  quote:"But this table does not include non-human genetic biomarkers, so it's only providing information about human genetics.",
  cite:"PGx-Resources-and-Cases-Students-Fall-2026.pdf slide 'FDA Table of Pharmacogenomic Biomarkers in Drug Labeling' (p. 6); transcript 10/27"},
@@ -138,8 +143,8 @@ QUESTIONS.push(
  stem:"The SLCO1B1 transporter data come from simvastatin. A patient with the reduced-function variant needs a different statin. What does the FDA biomarker table say about the other statins?",
  options:[
   {t:"Nothing; it covers only the drug the data came from", correct:true, why:"Information is given only for the referenced drug, here simvastatin."},
-  {t:"All statins share simvastatin's warning", correct:false, why:"The table does not extend one drug's data to its class."},
-  {t:"All statins are contraindicated with the variant", correct:false, why:"No class-wide statement is made."},
+  {t:"The other statins share simvastatin's warning", correct:false, why:"The table does not extend one drug's data to its class."},
+  {t:"The other statins are contraindicated with the variant", correct:false, why:"No class-wide statement is made."},
   {t:"The other statins are safe with the variant", correct:false, why:"No data means no statement either way; safety cannot be assumed."}],
  teach:"The table excludes biomarkers tied to a drug other than the referenced drug. The SLCO1B1 data came from simvastatin, so the table speaks only about simvastatin. Other statins cannot be assumed to behave the same way.",
  quote:"We can't assume that the other statins are going to have a patient response just like simvastatin did in the presence of that genetic biomarker.",
@@ -159,12 +164,12 @@ QUESTIONS.push(
 
 {id:"L21-012", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"fda-biomark", skill:"tell", core:true, coreWhy:"choosing between the two FDA tables",
  concept:"fda-two-tables-choose", tags:["smith"], source:"both",
- stem:"A pharmacist needs to find out quickly whether a drug has a pharmacogenomic-based black box warning or a pharmacogenomic discussion of dosing. Which resource did Dr. Smith recommend for this?",
+ stem:"A pharmacist needs, in a hurry, the section of a drug's official prescribing information where its pharmacogenomic information sits. Which resource gives that directly?",
  options:[
-  {t:"The FDA Table of Pharmacogenomic Biomarkers in Drug Labeling", correct:true, why:"Its labeling-section column directs you to the right part of the label."},
-  {t:"The FDA Table of Pharmacogenetic Associations", correct:false, why:"It gives an initial screen but no guidance on clinical use and no label sections."},
-  {t:"The French RNPGx guidance", correct:false, why:"A foreign guideline does not index the U.S. label."},
-  {t:"The ClinPGx home page", correct:false, why:"She found ClinPGx busy and hard to navigate; the FDA biomarker table is the quick route."}],
+  {t:"The FDA biomarkers-in-drug-labeling table", correct:true, why:"Its labeling-section column points to the part of the label that carries the pharmacogenomic information."},
+  {t:"The FDA pharmacogenetic associations table", correct:false, why:"It gives a first screen of which drugs have implications but no label sections."},
+  {t:"The French RNPGx guidance document", correct:false, why:"A foreign guideline does not index the U.S. label."},
+  {t:"The ClinPGx website home page", correct:false, why:"ClinPGx is busy and hard to navigate; it is not the quick route to a label section."}],
  teach:"She prefers the Table of Pharmacogenomic Biomarkers in Drug Labeling: it is bigger, updated more often, and names the label sections that carry the pharmacogenomic information.",
  quote:"If you don't have much time and you're like, oh man, I need to see if this drug has a pharmacogenomic-based black box warning.",
  cite:"PGx-Resources-and-Cases-Students-Fall-2026.pdf slides 'FDA Table of Pharmacogenomic Biomarkers in Drug Labeling' 1-2 (pp. 6-7); transcript 10/27"},
@@ -213,7 +218,9 @@ QUESTIONS.push(
   {t:"Association for Molecular Pathology", correct:true, why:"One of the three endorsing organizations."},
   {t:"American Society for Clinical Pharmacology and Therapeutics", correct:true, why:"One of the three endorsing organizations."},
   {t:"American Society of Health-System Pharmacists", correct:true, why:"One of the three endorsing organizations."},
-  {t:"U.S. Food and Drug Administration", correct:false, why:"The FDA publishes its own tables; it is not listed as an endorser."}],
+  {t:"U.S. Food and Drug Administration", correct:false, why:"The FDA publishes its own tables; it is not listed as an endorser."},
+  {t:"American Medical Association", correct:false, why:"The AMA is not among the three endorsing organizations."},
+  {t:"Centers for Disease Control and Prevention", correct:false, why:"The CDC is not among the three endorsing organizations."}],
  teach:"Three organizations endorse CPIC guidelines: the Association for Molecular Pathology, the American Society for Clinical Pharmacology and Therapeutics, and the American Society of Health-System Pharmacists. Endorsement shows the guidelines are well regarded.",
  quote:"I think it's important that guidelines like this are endorsed by other medical organizations.",
  cite:"PGx-Resources-and-Cases-Students-Fall-2026.pdf slide 'CPIC Guidelines' (p. 9); transcript 10/27"},
@@ -226,7 +233,9 @@ QUESTIONS.push(
   {t:"Dosage recommendations", correct:true, why:"Dosing guidance based on genotype."},
   {t:"Potential benefits and risks", correct:true, why:"The clinical implications of using genetic information."},
   {t:"Caveats", correct:true, why:"Appropriate use and potential misuse of genetic tests."},
-  {t:"Drug price comparisons", correct:false, why:"Cost is not one of the components."}],
+  {t:"Drug price comparisons", correct:false, why:"Cost is not one of the components."},
+  {t:"A list of laboratories that run the test", correct:false, why:"CPIC guidelines do not list testing laboratories."},
+  {t:"The FDA label sections for the drug", correct:false, why:"Label sections come from the FDA biomarker table, not a CPIC guideline."}],
  teach:"Every CPIC guideline follows the same order: gene and drug background, dosage recommendations, potential benefits and risks, and caveats about appropriate use and misuse of genetic tests, like the fixed sections of an FDA label.",
  quote:"The same sections are always presented in each of the guidelines",
  cite:"PGx-Resources-and-Cases-Students-Fall-2026.pdf slide 'CPIC Guidelines 2' (p. 10); transcript 10/27"},
@@ -248,9 +257,9 @@ QUESTIONS.push(
  stem:"About how often are published CPIC guidelines reviewed and updated?",
  options:[
   {t:"About every two years", correct:true, why:"Guidelines are reviewed and updated approximately every two years."},
-  {t:"Every month", correct:false, why:"Far more often than the roughly two-year cycle."},
-  {t:"Only when the FDA changes the drug label", correct:false, why:"CPIC reviews its own guidelines periodically as the data move forward; the FDA label does not set the schedule."},
-  {t:"Never; they are fixed once published", correct:false, why:"They are reviewed periodically as the data move forward."}],
+  {t:"About every six months", correct:false, why:"More often than the roughly two-year cycle."},
+  {t:"When the FDA changes the drug label", correct:false, why:"CPIC reviews its own guidelines periodically; the FDA label does not set the schedule."},
+  {t:"About every ten years", correct:false, why:"They are reviewed about every two years, not once a decade."}],
  teach:"Published CPIC guidelines are reviewed and updated about every two years, as the data move forward. The warfarin guideline is the 2017 update of an earlier one.",
  quote:"also for guidelines that have already been published, they will go back and review them periodically again because the data moves forward",
  cite:"PGx-Resources-and-Cases-Students-Fall-2026.pdf slide 'CPIC Guidelines 3' (p. 11); transcript 10/27"},
@@ -292,7 +301,7 @@ QUESTIONS.push(
  note:"The table on slide p. 13 lists 29 rows (some cover several drugs or a drug class). Keyed to her spoken number.",
  cite:"PGx-Resources-and-Cases-Students-Fall-2026.pdf slide 'Current CPIC Guidelines 5' (p. 13); transcript 10/27"},
 
-{id:"L21-023", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"cpic", skill:"recall", multi:true,
+{id:"L21-023", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"cpic", skill:"recall", multi:true, lowYield:true,
  concept:"cpic-drug-classes", tags:["smith","inclass"], source:"both",
  stem:"Looking down the current CPIC guideline list, which therapeutic categories did the class find? Select all that apply.",
  options:[
@@ -326,7 +335,8 @@ QUESTIONS.push(
   {t:"What to test a patient for", correct:true, why:"She listed this question."},
   {t:"How to interpret the genetic results", correct:true, why:"The genetic test interpretation section."},
   {t:"How to treat the patient once the genotype is known", correct:true, why:"The therapeutic recommendations."},
-  {t:"Whether the insurer will pay for the test", correct:false, why:"Coverage is not addressed."}],
+  {t:"Whether the insurer will pay for the test", correct:false, why:"Coverage is not addressed."},
+  {t:"Whether to order the genetic test at all", correct:false, why:"CPIC addresses how to use a result in hand, not whether to order the test."}],
  teach:"For drugs that have one, a CPIC guideline is the best resource available. It tells you which variants matter, what to test for, how to interpret the result, and how to treat the patient once the genotype is known.",
  quote:"If I genotype people, what should I test them for for this drug?",
  cite:"PGx-Resources-and-Cases-Students-Fall-2026.pdf slide 'CPIC Guidelines 6' (p. 14); transcript 10/27"},
@@ -336,10 +346,10 @@ QUESTIONS.push(
  concept:"cpic-warf-sections", tags:["smith"], source:"both",
  stem:"Reading the 2017 CPIC warfarin guideline, where do you find what to do once a patient's genotype is back from the lab?",
  options:[
-  {t:"Genetic test interpretation, then therapeutic recommendations", correct:true, why:"Interpretation explains what the genotypes mean; the recommendations section says how to dose."},
-  {t:"The focused literature review", correct:false, why:"This reviews warfarin's mechanism and metabolism, with a figure."},
-  {t:"The author list and summary", correct:false, why:"These open the document but give no genotype guidance."},
-  {t:"The gene background section", correct:false, why:"This describes CYP2C9, VKORC1 and CYP4F2 and their variants, not what to do."}],
+  {t:"Test interpretation and therapeutic recommendations", correct:true, why:"Interpretation explains what the genotypes mean; the recommendations say how to dose."},
+  {t:"The focused literature review of the drug", correct:false, why:"This reviews warfarin's mechanism and metabolism, with a figure."},
+  {t:"The author list and the summary at the top", correct:false, why:"These open the document but give no genotype guidance."},
+  {t:"The background section describing the genes involved", correct:false, why:"This describes CYP2C9, VKORC1 and CYP4F2 and their variants, not what to do."}],
  teach:"The guideline runs in a set order: a focused literature review, the genes and variants of concern, genetic test interpretation (what the genotypes mean), and therapeutic recommendations by genotype, summarized as a dosing algorithm.",
  quote:"So, in other words, what do you do? How do you understand what the genotypes mean when you get that data back from the lab?",
  cite:"PGx-Resources-and-Cases-Students-Fall-2026.pdf slide 'CPIC Guidelines 7' (p. 15); CPIC warfarin guideline 2017 update, sections 'Genetic test interpretation' and 'Therapeutic recommendations'; transcript 10/27"},
@@ -375,9 +385,9 @@ QUESTIONS.push(
  stem:"The genotype is available. What does the CPIC warfarin algorithm ask next, before choosing a branch?",
  options:[
   {t:"The patient's self-identified ancestry", correct:true, why:"The algorithm splits into an African-ancestry and a non-African-ancestry branch."},
-  {t:"The patient's CYP4F2 genotype", correct:false, why:"CYP4F2*3 comes later, as an adjustment to the calculated dose on the non-African branch."},
-  {t:"The patient's INR on day 1", correct:false, why:"The branch point is ancestry."},
-  {t:"The patient's TPMT genotype", correct:false, why:"TPMT is for the thiopurines."}],
+  {t:"The patient's CYP4F2*3 genotype result", correct:false, why:"CYP4F2*3 comes later, as an adjustment on the non-African branch."},
+  {t:"The patient's INR after the first dose", correct:false, why:"The branch point is ancestry, not the INR."},
+  {t:"The patient's TPMT genotype result", correct:false, why:"TPMT is for the thiopurines, not warfarin."}],
  teach:"Once the genotype is known, the algorithm asks self-identified ancestry and splits into an African and a non-African branch, since variant frequencies differ: CYP2C9*5, *6, *8, *11 and rs12777823 are tested up front in African ancestry; CYP4F2*3 applies only in non-African ancestry.",
  quote:"If you have genotype, then you will do the best for your patient if you get them to uh self-identify their ancestry.",
  cite:"PGx-Resources-and-Cases-Students-Fall-2026.pdf slide 'CPIC Guidelines 7' (p. 15); CPIC warfarin guideline 2017 update, Figure 2; transcript 10/27"},
@@ -390,7 +400,8 @@ QUESTIONS.push(
   {t:"CYP2C9*2", correct:true, why:"Part of the CYP2C9*2 and *3 status."},
   {t:"CYP2C9*3", correct:true, why:"Part of the CYP2C9*2 and *3 status."},
   {t:"rs12777823", correct:false, why:"This applies only on the African-ancestry branch."},
-  {t:"CYP4F2*3", correct:false, why:"Applied after the calculation: if CYP4F2*3 is found, the calculated dose is increased."}],
+  {t:"CYP4F2*3", correct:false, why:"Applied after the calculation: if CYP4F2*3 is found, the calculated dose is increased."},
+  {t:"CYP2C9*5", correct:false, why:"CYP2C9*5 is applied as an adjustment after the calculation, not entered into it."}],
  teach:"On the non-African branch the dose is calculated with a published algorithm from VKORC1 -1639G>A and CYP2C9*2 and *3 (graded strong). Adjustments come after: CYP2C9*5, *6, *8 or *11 lower the calculated dose, and CYP4F2*3 raises it.",
  quote:"So once you know their genotype status for that particular snip of EKRC1 and their 2 and 3 TC9 status, you're going to calculate their dose.",
  cite:"PGx-Resources-and-Cases-Students-Fall-2026.pdf slide 'CPIC Guidelines 7' (p. 15); CPIC warfarin guideline 2017 update, Figure 2 and 'Non-African ancestry recommendation'; transcript 10/27"},
@@ -461,7 +472,7 @@ QUESTIONS.push(
 /* ---------------- Other guidelines, ClinPGx and future directions (pp. 16-20) ---------------- */
 {id:"L21-036", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"pgx-other", skill:"recall", core:true, coreWhy:"the one point she said to know about other guidelines",
  concept:"other-guidelines-countries", tags:["smith"], source:"both",
- stem:"Besides the CPIC (Clinical Pharmacogenetics Implementation Consortium) guidance written by American authors, which other countries' evidence-based pharmacogenomic guidance documents did Dr. Smith name?",
+ stem:"Besides the CPIC (Clinical Pharmacogenetics Implementation Consortium) guidance written by American authors, which other countries produce evidence-based pharmacogenomic guidance?",
  options:[
   {t:"Dutch, Canadian and French", correct:true, why:"Dutch (DPWG), Canadian (CPNDS) and French (RNPGx) guidance are the three she named."},
   {t:"British, Australian and Canadian", correct:false, why:"Only the Canadian guidance is among the three she named; the other two are Dutch and French."},
@@ -537,7 +548,7 @@ QUESTIONS.push(
 
 {id:"L21-042", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"pgx-other", skill:"apply",
  concept:"other-guidelines-where", tags:["smith"], source:"both",
- stem:"A pharmacist wants to see other countries' pharmacogenomic guidance for a drug next to the CPIC (Clinical Pharmacogenetics Implementation Consortium) guidance. Where did Dr. Smith say these are listed together?",
+ stem:"A pharmacist wants to see other countries' pharmacogenomic guidance for a drug next to the CPIC (Clinical Pharmacogenetics Implementation Consortium) guidance. Where are these listed together?",
  options:[
   {t:"A table on the ClinPGx website", correct:true, why:"The link on 'Other Guidelines 2' leads to a ClinPGx table that lists CPIC and the other guidance for each drug."},
   {t:"The FDA Table of Pharmacogenetic Associations", correct:false, why:"The FDA table does not list foreign guidelines."},
@@ -549,7 +560,7 @@ QUESTIONS.push(
 
 {id:"L21-043", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"pgx-other", skill:"recall", multi:true, core:true, coreWhy:"the two needs she spoke to from the challenges slide",
  concept:"pgx-future-cdss-ehr", tags:["smith"], source:"both",
- stem:"Dr. Smith said the agreed future direction is better ways of using pharmacogenomic information clinically. Which two needs did she name? Select all that apply.",
+ stem:"The agreed future direction is better ways of using pharmacogenomic information clinically. Which two needs does that include? Select all that apply.",
  options:[
   {t:"Decision support systems", correct:true, why:"She named decision support systems (CDSS) that incorporate pharmacogenomic data."},
   {t:"Pharmacogenomic information in electronic health records", correct:true, why:"She named integrating pharmacogenomic data into electronic health records (EHR)."},
@@ -561,7 +572,7 @@ QUESTIONS.push(
 
 {id:"L21-044", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"pgx-other", skill:"recall",
  concept:"pgx-ehr-st-jude", tags:["smith"], source:"transcript",
- stem:"Dr. Smith credited one group with starting the implementation push for a hospital's pediatric oncology patients. Who was it?",
+ stem:"Who first pushed to put patients' pharmacogenomic results in the electronic health record, for a hospital's pediatric oncology patients?",
  options:[
   {t:"Pharmacists at Saint Jude's in Memphis", correct:true, why:"She said they pushed for it for their pediatric oncology patients."},
   {t:"The FDA, through its biomarker table", correct:false, why:"The FDA tables list drugs and genes; they do not place results in patient records."},
@@ -573,7 +584,7 @@ QUESTIONS.push(
 
 {id:"L21-045", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"pgx-other", skill:"apply",
  concept:"pgx-cdss-example", tags:["smith"], source:"transcript",
- stem:"A clinician has a patient's genotype result and wants a set of steps to follow to decide what to do. What did Dr. Smith call this kind of tool, and what example did she give?",
+ stem:"A clinician has a patient's genotype result and wants a set of steps to follow to decide what to do. What is this kind of tool called, and which example fits?",
  options:[
   {t:"Decision support; the warfarin algorithm", correct:true, why:"She said a decision support system is things like that algorithm: steps to follow when you have genetic information."},
   {t:"Health record; the warfarin algorithm", correct:false, why:"The health record is where the result is stored; the steps to follow are decision support."},
@@ -586,7 +597,7 @@ QUESTIONS.push(
 /* ---------------- Drug-label worksheet: trastuzumab (Herceptin) and HER2 ---------------- */
 {id:"L21-046", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"label-trast", skill:"recall", readingId:"label-trastuzumab",
  concept:"trast-item1-gene", tags:["smith","label","inclass"], source:"transcript",
- stem:"Worksheet item 1 for trastuzumab (Herceptin) asks which gene is evaluated and for which variant. What answer did Dr. Smith give?",
+ stem:"For trastuzumab (Herceptin), which gene is evaluated, and does the label name a specific variant?",
  options:[
   {t:"HER2; the label names no specific variant", correct:true, why:"The label speaks of HER2 expression on tumor cells, not of a named DNA variant."},
   {t:"HER2; a single named SNP printed in the label", correct:false, why:"No single nucleotide polymorphism (SNP) is named; the label describes HER2 overexpression or gene amplification."},
@@ -599,7 +610,7 @@ QUESTIONS.push(
 
 {id:"L21-047", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"label-trast", skill:"recall", readingId:"label-trastuzumab", core:true, coreWhy:"the worksheet question Dr. Smith called weird",
  concept:"trast-tumor-not-patient", tags:["smith","label","inclass"], source:"transcript",
- stem:"Worksheet item 3 for trastuzumab (Herceptin): are we genotyping the tumor or the patient?",
+ stem:"For trastuzumab (Herceptin), are we genotyping the tumor or the patient?",
  options:[
   {t:"The tumor, by phenotyping it", correct:true, why:"A tumor biopsy is examined for the HER2 receptor on the tumor cells."},
   {t:"The patient's germline DNA from blood", correct:false, why:"Normal cells do not express HER2, so a sample of the rest of the body would not show it."},
@@ -611,7 +622,7 @@ QUESTIONS.push(
 
 {id:"L21-048", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"label-trast", skill:"recall", readingId:"label-trastuzumab",
  concept:"trast-efficacy", tags:["smith","label","inclass"], source:"transcript",
- stem:"Worksheet item 4 for trastuzumab (Herceptin): is the HER2 testing done to ensure efficacy or to prevent toxicity?",
+ stem:"For trastuzumab (Herceptin), is the HER2 testing done to ensure efficacy or to prevent toxicity?",
  options:[
   {t:"Ensure efficacy", correct:true, why:"The test confirms the tumor has the drug's target, HER2."},
   {t:"Prevent toxicity", correct:false, why:"That is the purpose for the HLA tests with carbamazepine and abacavir."},
@@ -623,7 +634,7 @@ QUESTIONS.push(
 
 {id:"L21-049", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"label-trast", skill:"recall", readingId:"label-trastuzumab",
  concept:"trast-ihc", tags:["smith","label"], source:"transcript",
- stem:"Worksheet item 5 asks whether HER2 status for trastuzumab (Herceptin) is found by genotyping or by cytology studies. Which method did Dr. Smith name as the usual one?",
+ stem:"For trastuzumab (Herceptin), is HER2 status found by genotyping or by cytology studies, and which method is usual?",
  options:[
   {t:"Immunohistochemistry (IHC)", correct:true, why:"IHC detects the HER2 receptor protein on the surface of the tumor cells."},
   {t:"Polymerase chain reaction genotyping of blood", correct:false, why:"No blood genotype is used; the tumor specimen is examined."},
@@ -636,7 +647,7 @@ QUESTIONS.push(
 
 {id:"L21-050", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"label-trast", skill:"recall", readingId:"label-trastuzumab",
  concept:"trast-test-named", tags:["smith","label","inclass"], source:"transcript",
- stem:"Worksheet item 6: what does the current trastuzumab (Herceptin) label say about which HER2 test to use?",
+ stem:"For trastuzumab (Herceptin), what does the current label say about which HER2 test to use?",
  options:[
   {t:"No brand-name kit; an FDA-authorized test", correct:true, why:"The label asks for FDA-authorized tests run by laboratories with demonstrated proficiency, without naming a brand."},
   {t:"Yes; the label requires one named brand-name kit", correct:false, why:"Dr. Smith said an older label named a kit; the current one does not."},
@@ -649,7 +660,7 @@ QUESTIONS.push(
 
 {id:"L21-051", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"label-trast", skill:"recall", readingId:"label-trastuzumab", multi:true,
  concept:"trast-tumor-types", tags:["smith","label","inclass"], source:"transcript",
- stem:"Worksheet item 7: which tumor types should be tested for HER2 before trastuzumab (Herceptin)? Select all that apply.",
+ stem:"For trastuzumab (Herceptin), which tumor types should be tested for HER2 before treatment? Select all that apply.",
  options:[
   {t:"Breast cancer", correct:true, why:"HER2-overexpressing breast cancer, adjuvant and metastatic (label 1.1, 1.2)."},
   {t:"Gastric or gastroesophageal junction cancer", correct:true, why:"Label 1.3: HER2-overexpressing metastatic gastric or gastroesophageal junction adenocarcinoma."},
@@ -662,7 +673,7 @@ QUESTIONS.push(
 
 {id:"L21-052", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"label-trast", skill:"apply", readingId:"label-trastuzumab",
  concept:"trast-result-use", tags:["smith","label","inclass"], source:"transcript",
- stem:"Worksheet item 8: how does a patient's HER2 result change the clinical use of trastuzumab (Herceptin)?",
+ stem:"For trastuzumab (Herceptin), how does a patient's HER2 result change the drug's clinical use?",
  options:[
   {t:"HER2-positive: candidate; HER2-negative: do not use", correct:true, why:"A tumor without HER2 lacks the drug's target."},
   {t:"HER2-positive: lower the dose; HER2-negative: usual dose", correct:false, why:"The result decides use, not dose."},
@@ -675,7 +686,7 @@ QUESTIONS.push(
 /* ---------------- Drug-label worksheet: carbamazepine and abacavir (HLA-B, HLA-A) ---------------- */
 {id:"L21-053", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"label-hla", skill:"recall", readingId:"label-carbamazepine", core:true, coreWhy:"Dr. Smith told the class to write it down", dupOf:"L20-056",
  concept:"carbamazepine-hla-b-1502", tags:["smith","label","inclass"], source:"transcript",
- stem:"Worksheet item 1 for carbamazepine (Tegretol), an older antiepileptic: which HLA-B variant is evaluated?",
+ stem:"For carbamazepine (Tegretol), an older antiepileptic, which HLA-B variant is evaluated?",
  options:[
   {t:"HLA-B*15:02", correct:true, why:"The boxed warning ties HLA-B*1502 to SJS/TEN with carbamazepine."},
   {t:"HLA-B*57:01", correct:false, why:"That is the abacavir variant."},
@@ -701,7 +712,7 @@ QUESTIONS.push(
 
 {id:"L21-055", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"label-hla", skill:"recall", readingId:"label-carbamazepine",
  concept:"carbamazepine-hla-effect", tags:["smith","label","inclass"], source:"transcript",
- stem:"Worksheet item 2 for carbamazepine (Tegretol): how does carrying either of its HLA risk variants affect the patient's response?",
+ stem:"For carbamazepine (Tegretol), how does carrying either HLA risk variant affect the patient's response?",
  options:[
   {t:"Higher risk of Stevens-Johnson syndrome or toxic epidermal necrolysis", correct:true, why:"A severe hypersensitivity reaction of the skin that can be fatal."},
   {t:"Higher risk of aplastic anemia and agranulocytosis from slowed metabolism of carbamazepine", correct:false, why:"Aplastic anemia is a separate boxed warning, not linked to the HLA variants."},
@@ -714,7 +725,7 @@ QUESTIONS.push(
 
 {id:"L21-056", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"label-hla", skill:"recall", readingId:"label-abacavir", dupOf:"L20-056",
  concept:"abacavir-hla-b-5701", tags:["smith","label","inclass"], source:"transcript",
- stem:"Worksheet item 1 for abacavir (Ziagen), an antiretroviral for HIV (human immunodeficiency virus): which HLA-B variant is evaluated?",
+ stem:"For abacavir (Ziagen), an antiretroviral for HIV (human immunodeficiency virus), which HLA-B variant is evaluated?",
  options:[
   {t:"HLA-B*57:01", correct:true, why:"The Ziagen boxed warning and 2.1 name HLA-B*5701."},
   {t:"HLA-B*15:02", correct:false, why:"That is the carbamazepine variant."},
@@ -727,7 +738,7 @@ QUESTIONS.push(
 
 {id:"L21-057", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"label-hla", skill:"recall", readingId:"label-abacavir",
  concept:"abacavir-multiorgan", tags:["smith","label","inclass"], source:"transcript",
- stem:"Worksheet item 2 for abacavir (Ziagen): what reaction is the patient with the abacavir HLA-B risk variant at higher risk of?",
+ stem:"For abacavir (Ziagen), what reaction is the patient with the HLA-B risk variant at higher risk of?",
  options:[
   {t:"Hypersensitivity with multi-organ involvement", correct:true, why:"The boxed warning describes hypersensitivity reactions with multiple organ involvement; 5.1 lists multi-organ failure."},
   {t:"Hypersensitivity limited to the skin", correct:false, why:"Dr. Smith said the labeling changed: it is not just skin."},
@@ -752,7 +763,7 @@ QUESTIONS.push(
 
 {id:"L21-059", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"label-hla", skill:"tell", readingId:"label-abacavir",
  concept:"hla-patient-genotyped", tags:["smith","label","inclass"], source:"transcript",
- stem:"Worksheet item 3 for carbamazepine and abacavir: are we genotyping the tumor or the patient?",
+ stem:"For carbamazepine and abacavir, are we genotyping the tumor or the patient?",
  options:[
   {t:"The patient", correct:true, why:"These drugs do not treat tumors; the patient's own HLA genotype is tested."},
   {t:"The tumor", correct:false, why:"That is the trastuzumab answer, where the tumor is phenotyped for HER2."},
@@ -801,7 +812,7 @@ QUESTIONS.push(
 
 {id:"L21-063", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"cpic-warf", skill:"recall", readingId:"cpic-warfarin-2017", core:true, coreWhy:"her Exam 4 study list item 4 (CPIC Figure 2): which populations have the highest frequencies",
  concept:"vkorc1-1639a-population", tags:["smith","reading"], source:"both",
- stem:"In the Goodman and Gilman panel of VKORC1 -1639G>A allele frequencies (G = higher dose required, A = lower dose required), which population carries the A allele most often?",
+ stem:"According to the CPIC 2017 warfarin guideline, in which ancestry group is the VKORC1 -1639A (lower dose) allele most common?",
  options:[
   {t:"East Asian", correct:true, why:"The A segment fills most of the East Asian bar."},
   {t:"European and North American", correct:false, why:"A fills a little under half of that bar, between the other two."},
@@ -856,7 +867,7 @@ QUESTIONS.push(
 /* ---------------- Exam 4 study list items 1-2 gap fill: the worksheet's purpose, trastuzumab item 2, carbamazepine and abacavir items 4-8 ---------------- */
 {id:"L21-067", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"label-trast", skill:"recall", core:true, coreWhy:"her Exam 4 study list item 1 (objectives): how the Pharmacogenomics Questions help clinicians think through pharmacogenomics",
  concept:"worksheet-purpose", tags:["smith","inclass"], source:"transcript",
- stem:"Dr. Smith wrote the eight Pharmacogenomics Questions on the drug-label worksheet herself. What are they for?",
+ stem:"What are the eight Pharmacogenomics Questions on the drug-label worksheet for?",
  options:[
   {t:"Guiding a pharmacist's thinking about a patient who needs a drug where pharmacogenomics matters", correct:true, why:"Her framing: these are the things she thinks about for such a patient, \"just questions to guide you in your thinking\"."},
   {t:"Giving the milligram dose for each genotype", correct:false, why:"Genotype-based dosing recommendations are what CPIC guidelines supply; the worksheet asks no dose."},
@@ -869,7 +880,7 @@ QUESTIONS.push(
 
 {id:"L21-068", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"label-trast", skill:"recall", multi:true, core:true, coreWhy:"her Exam 4 study list item 1 (objectives): how the Pharmacogenomics Questions help clinicians think through pharmacogenomics",
  concept:"worksheet-purpose", tags:["smith"], source:"transcript",
- stem:"Which questions does her drug-label worksheet have you answer for a drug before using it? Select all that apply.",
+ stem:"Which questions does the drug-label worksheet have you answer before using a drug? Select all that apply.",
  options:[
   {t:"Is the tumor or the patient being tested?", correct:true, why:"Item 3."},
   {t:"Is the test for efficacy or to prevent toxicity?", correct:true, why:"Item 4."},
@@ -883,7 +894,7 @@ QUESTIONS.push(
 
 {id:"L21-069", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"label-trast", skill:"recall", readingId:"label-trastuzumab", core:true, coreWhy:"her Exam 4 study list item 2 (worksheet)",
  concept:"trast-item2-response", tags:["smith","label"], source:"both",
- stem:"Worksheet item 2 for trastuzumab (Herceptin): how does the tumor's HER2 status affect the patient's response to the drug?",
+ stem:"For trastuzumab (Herceptin), how does the tumor's HER2 status affect the patient's response to the drug?",
  options:[
   {t:"The drug inhibits tumor cells that overexpress HER2", correct:true, why:"Label 12.1: Herceptin inhibits the proliferation of human tumor cells that overexpress HER2."},
   {t:"A germline HER2 variant slows trastuzumab clearance", correct:false, why:"HER2 is examined in the tumor, and its role is the drug's target, not its clearance."},
@@ -896,7 +907,7 @@ QUESTIONS.push(
 
 {id:"L21-070", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"label-hla", skill:"recall", readingId:"label-carbamazepine", core:true, coreWhy:"her Exam 4 study list item 2 (worksheet)",
  concept:"hla-toxicity-not-efficacy", tags:["smith","label"], source:"both",
- stem:"Worksheet item 4 for carbamazepine (Tegretol): is the HLA genotyping done to ensure efficacy or to prevent toxicity?",
+ stem:"For carbamazepine (Tegretol), is the HLA genotyping done to ensure efficacy or to prevent toxicity?",
  options:[
   {t:"Prevent toxicity", correct:true, why:"Both HLA variants raise the risk of a severe hypersensitivity reaction (SJS/TEN for HLA-B*1502)."},
   {t:"Ensure efficacy", correct:false, why:"That is the trastuzumab answer, where the test confirms the drug's target."},
@@ -909,7 +920,7 @@ QUESTIONS.push(
 
 {id:"L21-071", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"label-hla", skill:"recall", readingId:"label-abacavir", dupOf:"L21-070", core:true, coreWhy:"her Exam 4 study list item 2 (worksheet)",
  concept:"hla-toxicity-not-efficacy", tags:["smith","label"], source:"both",
- stem:"Worksheet item 4 for abacavir (Ziagen): is the HLA-B*57:01 screening done to ensure efficacy or to prevent toxicity?",
+ stem:"For abacavir (Ziagen), is the HLA-B*57:01 screening done to ensure efficacy or to prevent toxicity?",
  options:[
   {t:"Prevent toxicity", correct:true, why:"Boxed Warning: carriers of HLA-B*5701 are at higher risk of a hypersensitivity reaction to abacavir."},
   {t:"Ensure antiviral efficacy", correct:false, why:"The variant affects safety; the label ties it to hypersensitivity, not to viral response."},
@@ -922,7 +933,7 @@ QUESTIONS.push(
 
 {id:"L21-072", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"label-hla", skill:"tell", readingId:"label-carbamazepine", core:true, coreWhy:"her Exam 4 study list item 2 (worksheet)",
  concept:"hla-genotype-not-cytology", tags:["smith","label"], source:"both",
- stem:"Worksheet item 5 for carbamazepine and abacavir: is the test genotyping, or a cytology study of cell-surface receptors?",
+ stem:"For carbamazepine and abacavir, is the test genotyping, or a cytology study of cell-surface receptors?",
  options:[
   {t:"Genotyping the patient's inherited HLA alleles", correct:true, why:"Carbamazepine label: HLA-B*1502 typing; abacavir Medication Guide: a blood test for the gene variation."},
   {t:"Immunohistochemistry for receptors on tumor cells", correct:false, why:"That is the trastuzumab answer (HER2 on the tumor)."},
@@ -935,10 +946,10 @@ QUESTIONS.push(
 
 {id:"L21-073", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"label-hla", skill:"recall", readingId:"label-carbamazepine", core:true, coreWhy:"her Exam 4 study list item 2 (worksheet)",
  concept:"carb-test-named", tags:["smith","label"], source:"both",
- stem:"Worksheet item 6 for carbamazepine (Tegretol): does the label say which test to use for the HLA-B variant?",
+ stem:"For carbamazepine (Tegretol), does the label say which test to use for the HLA-B variant?",
  options:[
   {t:"Yes: high-resolution HLA-B*1502 typing", correct:true, why:"Precautions, Laboratory Tests: for genetically at-risk patients, high-resolution 'HLA-B*1502 typing' is recommended."},
-  {t:"No; the label names no test for any HLA gene", correct:false, why:"It names high-resolution typing for HLA-B*1502; it names none for HLA-A*3101."},
+  {t:"No; the label names no HLA test", correct:false, why:"It names high-resolution typing for HLA-B*1502; it names none for HLA-A*3101."},
   {t:"Yes: immunohistochemistry of a skin biopsy", correct:false, why:"The patient's alleles are typed; no cytology study is involved."},
   {t:"Yes: a phenotype test of CYP2C9 activity", correct:false, why:"CYP2C9 is a metabolizing enzyme; the carbamazepine warning concerns HLA-B."}],
  teach:"The carbamazepine label (Precautions, Laboratory Tests) recommends high-resolution HLA-B*1502 typing for genetically at-risk patients. The test is positive if one or two HLA-B*1502 alleles are detected. No test is named for HLA-A*3101.",
@@ -947,7 +958,7 @@ QUESTIONS.push(
 
 {id:"L21-074", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"label-hla", skill:"recall", readingId:"label-abacavir", core:true, coreWhy:"her Exam 4 study list item 2 (worksheet)",
  concept:"abac-test-named", tags:["smith","label"], source:"both",
- stem:"Worksheet item 6 for abacavir (Ziagen): does the label say which HLA-B*57:01 test to use?",
+ stem:"For abacavir (Ziagen), does the label say which HLA-B*57:01 test to use?",
  options:[
   {t:"No named test; a blood test can determine it", correct:true, why:"The label says to screen but names no test; the Medication Guide says a blood test can determine the gene variation."},
   {t:"Yes: high-resolution HLA-B*1502 typing", correct:false, why:"That is the carbamazepine label's test, for a different HLA-B variant."},
@@ -959,7 +970,7 @@ QUESTIONS.push(
 
 {id:"L21-075", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"label-hla", skill:"recall", readingId:"label-carbamazepine", core:true, coreWhy:"her Exam 4 study list item 2 (worksheet)",
  concept:"carb-population", tags:["smith","label"], source:"both",
- stem:"Worksheet item 7 for carbamazepine (Tegretol): which patients does the boxed warning say should be screened for HLA-B*15:02 before starting?",
+ stem:"For carbamazepine (Tegretol), which patients does the boxed warning say should be screened for HLA-B*15:02 before starting?",
  options:[
   {t:"Patients with ancestry in at-risk populations", correct:true, why:"Boxed Warning: HLA-B*1502 is found almost exclusively in patients with ancestry across broad areas of Asia."},
   {t:"Every patient, before starting or restarting the drug", correct:false, why:"That is the abacavir rule for HLA-B*5701."},
@@ -971,7 +982,7 @@ QUESTIONS.push(
 
 {id:"L21-076", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"label-hla", skill:"recall", readingId:"label-abacavir", core:true, coreWhy:"her Exam 4 study list item 2 (worksheet)",
  concept:"abac-population", tags:["smith","label"], source:"both",
- stem:"Worksheet item 7 for abacavir (Ziagen): which patients does the label say should be screened for HLA-B*57:01?",
+ stem:"For abacavir (Ziagen), which patients does the label say should be screened for HLA-B*57:01?",
  options:[
   {t:"All patients before starting or restarting abacavir", correct:true, why:"Boxed Warning and 5.1: all patients, unless they have a previously documented HLA-B*5701 assessment."},
   {t:"Only patients with ancestry in at-risk populations", correct:false, why:"That is the carbamazepine rule for HLA-B*1502."},
@@ -983,7 +994,7 @@ QUESTIONS.push(
 
 {id:"L21-077", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"label-hla", skill:"tell", readingId:"label-carbamazepine", core:true, coreWhy:"her Exam 4 study list item 2 (worksheet)",
  concept:"item7-three-drugs", tags:["smith","label"], source:"both",
- stem:"Worksheet item 7 asks which population or tumor type should be tested. Which pairing matches the three labels?",
+ stem:"Across the three drug labels, which population or tumor type should be tested? Which pairing matches?",
  options:[
   {t:"Trastuzumab: tumor type; carbamazepine: at-risk ancestry; abacavir: all patients", correct:true, why:"Breast and gastric tumors for HER2; ancestry in genetically at-risk populations for HLA-B*1502; every patient for HLA-B*5701."},
   {t:"Trastuzumab: all patients; carbamazepine: tumor type; abacavir: at-risk ancestry", correct:false, why:"Each answer is moved to the wrong drug."},
@@ -996,7 +1007,7 @@ QUESTIONS.push(
 
 {id:"L21-078", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"label-hla", skill:"apply", readingId:"label-carbamazepine", multi:true, core:true, coreWhy:"her Exam 4 study list item 2 (worksheet)",
  concept:"carb-result-use", tags:["smith","label"], source:"both",
- stem:"Worksheet item 8 for carbamazepine (Tegretol): what does the label say about using the drug after HLA testing? Select all that apply.",
+ stem:"For carbamazepine (Tegretol), what does the label say about using the drug after HLA testing? Select all that apply.",
  options:[
   {t:"HLA-B*1502-positive: do not treat unless the benefit clearly outweighs the risk", correct:true, why:"Boxed Warning; Warnings (SJS/TEN and HLA-B*1502 Allele)."},
   {t:"HLA-A*3101-positive: weigh the risks and benefits before considering the drug", correct:true, why:"Warnings: Hypersensitivity Reactions and HLA-A*3101 Allele."},
@@ -1008,7 +1019,7 @@ QUESTIONS.push(
 
 {id:"L21-079", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"label-hla", skill:"apply", readingId:"label-abacavir", core:true, coreWhy:"her Exam 4 study list item 2 (worksheet)",
  concept:"abac-result-use", tags:["smith","label"], source:"both",
- stem:"Worksheet item 8 for abacavir (Ziagen): a patient tests HLA-B*57:01 positive. What does the label say?",
+ stem:"For abacavir (Ziagen), a patient tests HLA-B*57:01 positive. What does the label say?",
  options:[
   {t:"Abacavir is contraindicated", correct:true, why:"4 Contraindications: patients who have the HLA-B*5701 allele."},
   {t:"Start at a reduced dose and titrate", correct:false, why:"The label gives no genotype-based dose."},
