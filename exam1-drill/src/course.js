@@ -98,12 +98,15 @@ const COURSE = {
             ['How she tests', 'What she says in lecture first, then the slides, then the readings; her posted keys set the depth']],
      pools:[{key:'exam3', name:'Exam 3 material', marks:null, filter:{exam:3}}]},
     {id:4, name:'Exam 4', scope:'Pharmacogenomics examples and cases, adverse drug reactions, drug interactions, Dr. Smith (10/21–10/28)', date:'Mon Nov 2, 8:30–10:30 am', when:'2026-11-02T08:30:00-06:00',  // syllabus: Exam IV, Mon Nov 2, 8:30–10:30 am (Oct 21st – 28th), 22% of the total grade
-     questions:null,             // not announced yet
+     questions:55,               // her Exam 4 announcement: "between 50 and 55 questions"
      minutes:120,                // syllabus: 8:30–10:30 am; two hours allotted for each major examination
-     blurb:'Covers Oct 21 through Oct 28, taught by Dr. Smith: pharmacogenomics examples (10/21, 10/22, 10/26), pharmacogenomics resources and drug labels (10/27), adverse drug events and drug interactions (10/28), with toxicology from her Exam 3 part applied to these topics. 22% of the course grade; about 55 questions per her 10/28 words.',
+     blurb:'Covers Oct 21 through Oct 28, taught by Dr. Smith: pharmacogenomics examples (10/21, 10/22, 10/26), pharmacogenomics resources and drug labels (10/27), adverse drug events and drug interactions (10/28), with toxicology from her Exam 3 part applied to these topics. 22% of the course grade; between 50 and 55 questions per her Exam 4 announcement.',
      facts:[['Covers', 'Oct 21 – Oct 28: pharmacogenomics examples, resources and drug labels, adverse drug events, drug interactions; plus toxicology (her Exam 3 part) applied to these topics, "a conceptual cumulative aspect" (T) 10/28'],
             ['Weight', '22% of the course grade'],
-            ['Format', 'Count not final: "It\'s probably gonna be again in the range of about 55 questions." (T) 10/28'],
+            ['Format', 'Her Exam 4 announcement: "The exam will consist of between 50 and 55 questions." (10/28 in class: "about 55 questions")'],
+            ['Date', 'Mon Nov 2, 8:30 am (syllabus). Her announcement printed "Monday Nov 4th"; Nov 4 is a Wednesday, so the drill keeps the syllabus date.'],
+            ['Her study list', '1. "Be able to answer all the objectives listed on the Outline/Objectives slides at the beginning of each lecture\'s slide deck." 2. The two Think Pair Share tables, the Pharmacogenomics Worksheet and past quizzes. 3. Furuta: "the functional significance of the genotypes" for H. pylori cure rate and "the four ways elevated PPI concentrations improved patient outcomes". 4. Warfarin CPIC 2017 Figure 1 (target, vitamin K, metabolism) and Figure 2 (variants, populations, dose adjustment and why). 5. "Be able to use the Naranjo algorithm."'],
+            ['Keys', '"Keys for the two Think Pair Share Tables and the Pharmacogenomics Questions Worksheet will not be posted."'],
             ['Cumulative', 'To her part only: "it is cumulative to my part, not to Doctor Gottlieb\'s part"; "application of toxicology to pharmacogenomics, adverse drug events, and drug interactions" (T) 10/28'],
             ['Dr. Gottlieb', 'No questions from him: "Doctor Gottlieb will not have questions on the, the last exam." (T) 10/26'],
             ['Her emphasis', '"There will be details on that exam" and "for pharmacogenomics, it\'s gonna be a lot more application" (T) 10/26'],
