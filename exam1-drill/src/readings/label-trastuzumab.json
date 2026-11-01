@@ -5,7 +5,7 @@
  "file": "HERCEPTIN (trastuzumab) prescribing information, revised 05/2026 (Canvas: pharmacogenomics resources)",
  "lecture": "Tue 10/27 (Pharmacogenomics Resources): the label for the trastuzumab group in the in-class worksheet on the FDA Table of Pharmacogenomic Biomarkers in Drug Labeling; the class answers were discussed question by question.",
  "kind": "guideline",
- "about": "The HERCEPTIN prescribing information (Revised: 05/2026) describes trastuzumab, a HER2/neu receptor antagonist indicated in adults for HER2-overexpressing breast cancer (adjuvant and metastatic) and for HER2-overexpressing metastatic gastric or gastroesophageal junction adenocarcinoma (Highlights, p. 1; sections 1.1–1.3, p. 2). Each indication says to select patients for therapy based on an FDA-authorized companion diagnostic for Herceptin, and section 2.2 says to select patients based on HER2 protein overexpression or HER2 gene amplification in tumor specimens, using FDA-authorized tests specific for breast or gastric cancers by laboratories with demonstrated proficiency (pp. 2–3). Section 12.1 states that the HER2 (or c-erbB2) proto-oncogene encodes a transmembrane receptor protein of 185 kDa, structurally related to the epidermal growth factor receptor, and that Herceptin inhibits the proliferation of human tumor cells that overexpress HER2 (p. 23). The boxed warning covers cardiomyopathy, infusion reactions, embryo-fetal toxicity and pulmonary toxicity (p. 2). The clinical studies required HER2 overexpression (3+ by IHC) or gene amplification (by FISH), and the label reports that in H0648g the beneficial treatment effects were largely limited to patients with the highest level of HER2 protein overexpression (3+) (pp. 26, 33).",
+ "about": "This reading is the FDA prescribing information (the drug label) for Herceptin, trastuzumab, an antibody drug for cancers whose tumor cells carry too much of the HER2 receptor; the label says to select patients by testing the tumor for HER2 overexpression or gene amplification with an FDA-authorized test. It matters for Exam 4 because it is one of the three labels on Dr. Smith's Pharmacogenomics Questions worksheet (items 1-8), and it is her example where the test is done on the tumor, not the patient, and is run to ensure efficacy rather than to prevent toxicity. Herceptin is a HER2/neu receptor antagonist indicated in adults for HER2-overexpressing breast cancer (adjuvant and metastatic) and for HER2-overexpressing metastatic gastric or gastroesophageal junction adenocarcinoma (Highlights, p. 1; sections 1.1-1.3, p. 2). Each indication says to select patients for therapy based on an FDA-authorized companion diagnostic for Herceptin, and section 2.2 says to select patients based on HER2 protein overexpression or HER2 gene amplification in tumor specimens, using FDA-authorized tests specific for breast or gastric cancers by laboratories with demonstrated proficiency (pp. 2-3). Section 12.1 states that the HER2 (or c-erbB2) proto-oncogene encodes a transmembrane receptor protein of 185 kDa, structurally related to the epidermal growth factor receptor, and that Herceptin inhibits the proliferation of human tumor cells that overexpress HER2 (p. 23). The boxed warning covers cardiomyopathy, infusion reactions, embryo-fetal toxicity and pulmonary toxicity (p. 2). The clinical studies required HER2 overexpression (3+ by IHC) or gene amplification (by FISH), and the benefit in H0648g was largely limited to patients with the highest level of HER2 protein overexpression (pp. 26, 33).",
  "sections": [
   "Highlights of Prescribing Information",
   "Boxed Warning: Cardiomyopathy, Infusion Reactions, Embryo-Fetal Toxicity, and Pulmonary Toxicity",
@@ -83,55 +83,63 @@
   }
  ],
  "read_for": [
-  "Highlights and sections 1.1–1.3 (pp. 1–2): the three indications, each with \"Select patients for therapy based on an FDA-authorized companion diagnostic for Herceptin.\"",
-  "Section 2.2, Patient Selection (p. 3): HER2 protein overexpression or HER2 gene amplification in tumor specimens; FDA-authorized tests specific for breast or gastric cancers; laboratories with demonstrated proficiency; http://www.fda.gov/CompanionDiagnostics.",
-  "Section 2.2 (p. 3): gastric cancers need tests specifically for gastric cancers because of incomplete membrane staining and more frequent heterogeneous expression of HER2; improper assay performance can lead to unreliable results.",
-  "Sections 11 and 12.1 (p. 23): humanized IgG1 kappa monoclonal antibody against the extracellular domain of HER2; the HER2 (c-erbB2) proto-oncogene encodes a 185 kDa transmembrane receptor; ADCC preferentially exerted on HER2-overexpressing cancer cells.",
-  "Section 14.1 (pp. 26–27): NSABP B31, NCCTG N9831 and HERA required HER2 overexpression (3+ by IHC) or gene amplification (by FISH); BCIRG006 required FISH+ only.",
-  "Section 14.1, Table 10 (p. 32): DFS by HER2 assay result; footnote: IHC by HercepTest, FISH by PathVysion (HER2/CEP17 ratio ≥ 2.0) at a central laboratory.",
-  "Section 14.2 (pp. 32–34): IHC scored 0, 1+, 2+ or 3+; only 2+ or 3+ tumors eligible in H0648g; benefit largely limited to 3+ (Table 12); ORR 18% for CTA 3+ versus 6% for CTA 2+ in H0649g.",
-  "Section 14.3 and Table 14 (pp. 34–37): ToGA required FISH+ or IHC 3+; exploratory overall survival by HER2 status."
+  "Item 1, gene and variant: the HER2 (or c-erbB2) proto-oncogene, which encodes a 185 kDa transmembrane receptor; the label names no variant, only HER2 protein overexpression or HER2 gene amplification in the tumor (12.1, p. 23; 2.2, p. 3). Her class answer: HER2; the label does not tell us which variant, and the 185 is the size of the protein.",
+  "Item 2, how it affects response: Herceptin inhibits the proliferation of tumor cells that overexpress HER2, and its antibody-dependent cellular cytotoxicity is preferentially exerted on HER2-overexpressing cancer cells, so a HER2-positive tumor can respond and a HER2-negative tumor lacks the target (12.1, p. 23).",
+  "Item 3, tumor or patient: the tumor; testing is on 'tumor specimens' (2.2, p. 3). Her class answer: we are not genotyping the patient, we are phenotyping the tumor; normal cells do not express HER2.",
+  "Item 4, efficacy or toxicity: efficacy; patients are selected for therapy based on an FDA-authorized companion diagnostic so the drug is given only when its target is present (1.1-1.3, p. 2; 2.2, p. 3). Her class answer: be sure the patient has the drug's target before giving an expensive drug with side effects.",
+  "Item 5, genotyping or cytology: cell studies of HER2 protein overexpression (immunohistochemistry, IHC, scored 0 to 3+) or HER2 gene amplification (FISH) in the tumor (2.2, p. 3; 14.1-14.2, pp. 26, 32-33). Her class answer: usually immunohistochemistry to look for the receptors on the tumor cells.",
+  "Item 6, does the FDA say what test: no brand is named; the label requires FDA-authorized tests specific for breast or gastric cancers, performed by laboratories with demonstrated proficiency, listed at fda.gov/CompanionDiagnostics (Highlights, p. 1; 2.2, p. 3). Her class answer: an older label named a kit; now it must be a good, specific and sensitive test.",
+  "Item 7, which population or tumor type: a tumor type, not an ethnic group; HER2-overexpressing breast cancer, adjuvant and metastatic (1.1, 1.2), and HER2-overexpressing metastatic gastric or gastroesophageal junction adenocarcinoma (1.3, p. 2). Her class answer: breast, metastatic gastrointestinal and esophageal tumors.",
+  "Item 8, what the result changes: select patients for Herceptin based on HER2 protein overexpression or gene amplification (2.2, p. 3); the result decides whether the drug is used, not its dose. Her class answer: HER2-positive, a likely candidate; HER2-negative, trastuzumab is not used."
  ],
  "beyond_lecture": [
   "Boxed Warning and 5.1 Cardiomyopathy: evaluate left ventricular function before and during treatment; risk highest with anthracycline-containing regimens (pp. 2, 5).",
-  "Sections 5.2–5.5: infusion reactions, embryo-fetal toxicity (oligohydramnios), pulmonary toxicity, exacerbation of chemotherapy-induced neutropenia (pp. 7–8).",
-  "Section 2.3, Recommended Dosage: initial 4 mg/kg then 2 mg/kg weekly, or initial 8 mg/kg then 6 mg/kg every three weeks, by indication (pp. 3–4).",
-  "Section 2.4 missed doses and 2.5 dosage modifications for adverse reactions (p. 4).",
-  "Section 6, Adverse Reactions, including the ToGA safety data (pp. 8–21).",
-  "Section 8, Use in Specific Populations: pregnancy, lactation, females and males of reproductive potential (pp. 21–23)."
+  "Sections 5.2-5.5: infusion reactions, embryo-fetal toxicity (oligohydramnios), pulmonary toxicity, exacerbation of chemotherapy-induced neutropenia (pp. 7-8).",
+  "Section 2.2, second paragraph (p. 3): gastric cancers need tests specifically for gastric cancer because of incomplete membrane staining and more heterogeneous HER2 expression; improper assay performance gives unreliable results.",
+  "Section 2.3, Recommended Dosage: initial 4 mg/kg then 2 mg/kg weekly, or initial 8 mg/kg then 6 mg/kg every three weeks, by indication (pp. 3-4); 2.4 missed doses and 2.5 dosage modifications (p. 4).",
+  "Section 14, Clinical Studies: NSABP B31, NCCTG N9831, HERA, BCIRG006, H0648g, H0649g and ToGA, including Table 10 (DFS by HER2 assay result) and the IHC 2+ versus 3+ response rates (pp. 26-37).",
+  "Section 8, Use in Specific Populations: pregnancy, lactation, females and males of reproductive potential (pp. 21-23)."
  ],
  "terms": [
   {
    "term": "HER2 (c-erbB2) proto-oncogene",
-   "chapter_definition": "Encodes a transmembrane receptor protein of 185 kDa, which is structurally related to the epidermal growth factor receptor (12.1, p. 23)."
+   "chapter_definition": "The gene that encodes the HER2 receptor, a 185 kDa protein spanning the cell membrane, structurally related to the epidermal growth factor receptor (12.1, p. 23)."
+  },
+  {
+   "term": "HER2 overexpression",
+   "chapter_definition": "A tumor making far more HER2 receptor than normal; it is the basis for selecting patients and is measured by IHC, where 3+ is the strongest positivity (2.2, p. 3; 14.2, p. 32)."
+  },
+  {
+   "term": "HER2 gene amplification",
+   "chapter_definition": "Extra copies of the HER2 gene in the tumor, measured by FISH (HER2/CEP17 ratio of 2.0 or more in the trials); the other accepted basis for selecting patients (2.2, p. 3; Table 10 footnote, p. 32)."
   },
   {
    "term": "Trastuzumab",
-   "chapter_definition": "A humanized IgG1 kappa monoclonal antibody that selectively binds with high affinity to the extracellular domain of the human epidermal growth factor receptor 2 protein, HER2 (11, p. 23)."
+   "chapter_definition": "A humanized IgG1 kappa monoclonal antibody that selectively binds with high affinity to the extracellular domain of HER2 (11, p. 23)."
   },
   {
    "term": "HER2/neu receptor antagonist",
-   "chapter_definition": "The class the Highlights give for Herceptin (Highlights, p. 1)."
+   "chapter_definition": "The drug class the Highlights give for Herceptin: it blocks the HER2 receptor (Highlights, p. 1)."
   },
   {
    "term": "FDA-authorized companion diagnostic",
-   "chapter_definition": "The basis for selecting patients for Herceptin therapy; information on FDA-authorized tests for HER2 protein overexpression and HER2 gene amplification is at http://www.fda.gov/CompanionDiagnostics (1, 2.2, pp. 2–3)."
+   "chapter_definition": "A test the FDA has authorized to identify patients for a specific drug; each Herceptin indication says to select patients with one, listed at fda.gov/CompanionDiagnostics (1, 2.2, pp. 2-3)."
   },
   {
-   "term": "HER2 protein overexpression (IHC)",
-   "chapter_definition": "Tumor specimens tested by IHC (Clinical Trial Assay, CTA) were scored as 0, 1+, 2+, or 3+, with 3+ indicating the strongest positivity (14.2, p. 32)."
+   "term": "Immunohistochemistry (IHC)",
+   "chapter_definition": "A stain for the HER2 protein on tumor tissue, scored 0, 1+, 2+ or 3+ (14.2, p. 32)."
   },
   {
-   "term": "HER2 gene amplification (FISH)",
-   "chapter_definition": "FISH by PathVysion (HER2/CEP17 ratio ≥ 2.0) as performed at a central laboratory (Table 10 footnote, p. 32)."
+   "term": "Fluorescence in situ hybridization (FISH)",
+   "chapter_definition": "A test for HER2 gene amplification in tumor cells; trials required 3+ by IHC or gene amplification by FISH (14.1, p. 26)."
   },
   {
    "term": "Antibody-dependent cellular cytotoxicity (ADCC)",
-   "chapter_definition": "Herceptin is a mediator of ADCC, which in vitro is preferentially exerted on HER2-overexpressing cancer cells (12.1, p. 23)."
+   "chapter_definition": "Immune-cell killing of a cell coated with antibody; Herceptin-mediated ADCC is preferentially exerted on HER2-overexpressing cancer cells (12.1, p. 23)."
   },
   {
    "term": "Cardiomyopathy",
-   "chapter_definition": "Herceptin administration can result in sub-clinical and clinical cardiac failure; incidence and severity were highest with anthracycline-containing chemotherapy regimens (Boxed Warning, p. 2)."
+   "chapter_definition": "Heart muscle damage; Herceptin can cause sub-clinical and clinical cardiac failure, most often with anthracycline chemotherapy (Boxed Warning, p. 2)."
   }
  ],
  "discussed_in_class": true,

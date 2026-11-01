@@ -1885,7 +1885,7 @@ const READINGS = [
   "file": "Katzung Chapter 5: Pharmacogenomics",
   "lecture": "Tue 10/20 through Thu 10/22 (Pharmacogenomics Day 1 onward). Not named in the 10/21 or 10/22 lectures; those lectures taught its nomenclature, variant types and phase I and phase II enzyme examples by content.",
   "kind": "chapter",
-  "about": "The chapter defines pharmacogenomics as the study of genetic factors that underlie variation in drug response and opens with a case of atazanavir-induced hyperbilirubinemia in a patient later found homozygous for UGT1A1*28. A glossary defines allele, allele frequency, SNPs, haplotype, Hardy-Weinberg equilibrium, linkage disequilibrium and the PM/IM/EM/UM metabolizer phenotypes, and the text explains star-allele diplotypes and activity scores. It then describes genetic variants in phase I enzymes (CYP2D6, CYP2C19, CYP2C9, CYP2B6, DPD), phase II enzymes (UGT1A1, TPMT), G6PD, transporters (OATP1B1, BCRP, OCT1), immune-system genes (HLA-B and IFNL3) and the polygenic CYP2C9/VKORC1 effect on warfarin, each paired with a drug example and CPIC dosing recommendations in Table 5-2. Table 5-1 gives major allele frequencies in African, Asian and European populations. Short sections on epigenomics and future directions and the case study answer close the chapter.",
+  "about": "This reading is the pharmacogenomics chapter of the Katzung textbook: it explains how genetic variants are named (star alleles, SNPs, indels, copy number), how a genotype is turned into a metabolizer phenotype, and then walks gene by gene through the enzymes, transporters and immune-system genes that change drug response, each with a drug example and CPIC dosing advice. It sits behind Dr. Smith's 10/21 to 10/26 slides rather than being discussed by name; use it to firm up the vocabulary and the gene-drug examples her lectures and study list test, such as CYP2C19 with PPIs and clopidogrel, CYP2C9 and VKORC1 with warfarin, TPMT, UGT1A1 and the HLA-B alleles behind the abacavir and carbamazepine labels. The chapter defines pharmacogenomics as the study of genetic factors that underlie variation in drug response and opens with a case of atazanavir-induced hyperbilirubinemia in a patient later found homozygous for UGT1A1*28. A glossary defines allele, allele frequency, SNPs, haplotype, Hardy-Weinberg equilibrium, linkage disequilibrium and the PM/IM/EM/UM metabolizer phenotypes, and the text explains star-allele diplotypes and activity scores. It then describes genetic variants in phase I enzymes (CYP2D6, CYP2C19, CYP2C9, CYP2B6, DPD), phase II enzymes (UGT1A1, TPMT), G6PD, transporters (OATP1B1, BCRP, OCT1), immune-system genes (HLA-B and IFNL3) and the polygenic CYP2C9/VKORC1 effect on warfarin, each paired with a drug example and CPIC dosing recommendations in Table 5-2. Table 5-1 gives major allele frequencies in African, Asian and European populations. Short sections on epigenomics and future directions and the case study answer close the chapter.",
   "sections": [
    "Case Study",
    "Introduction (pharmacogenomics, precision medicine, CPIC and DPWG guidelines)",
@@ -2075,12 +2075,13 @@ const READINGS = [
    "Dihydropyrimidine Dehydrogenase (DPD): 5-FU, capecitabine and tegafur; ~80% of a dose catabolized by DPD; DPD deficiency and myelosuppression, mucositis, neurotoxicity, hand-and-foot syndrome and diarrhea.",
    "UGT1A1: the *28 allele (extra TA repeat in the promoter, reduced expression), Gilbert syndrome, irinotecan/SN-38 toxicity, and the atazanavir case study answer.",
    "TPMT: *2, *3A, *3B, *3C nonfunctional alleles account for >90% of variability; azathioprine (prodrug of 6-MP), 6-MP and 6-TG; 6-thioguanine nucleotides and bone marrow toxicity; Table 5-2 dosing (tenfold reduction for low activity in malignant disease).",
-   "Table 5-2: the gene–drug–diplotype–phenotype–dosing recommendation rows for CYP2D6/codeine, CYP2C19/clopidogrel, DPYD/fluoropyrimidines, UGT1A1 and TPMT/thiopurines."
+   "Table 5-2: the gene–drug–diplotype–phenotype–dosing recommendation rows for CYP2D6/codeine, CYP2C19/clopidogrel, DPYD/fluoropyrimidines, UGT1A1 and TPMT/thiopurines.",
+   "Genetic Variations in Immune System Function and Table 5-4 (polymorphisms in HLA genes): HLA-B*57:01 and abacavir hypersensitivity, HLA-B*15:02 and carbamazepine SJS/TEN, HLA-B*58:01 and allopurinol; the colon notation (HLA-B*15:02) her 10/26 slide used for the alleles printed HLA-B*1502 and HLA-B*5701 in the drug labels."
   ],
   "beyond_lecture": [
-   "Genetic Variations in Transporters (OATP1B1/SLCO1B1 and simvastatin, BCRP/ABCG2, OCT1): not yet taught; on 10/22 she said the next section, on Monday, covers genetic variants of transporters, drug targets and genes in the immune system.",
-   "Genetic Variations in Immune System Function (HLA-B*57:01 and abacavir, HLA-B*58:01 and allopurinol, HLA-B*15:02 and carbamazepine; Table 5-4; IFNL3): not yet taught; deferred to Monday with the immune-system section.",
-   "TPMT dosing detail and NUDT15: TPMT was started at the end of 10/22; she said 'why don't we start here on Monday and we'll finish up thiopurine methyltranrase genetic variants.'",
+   "Genetic Variations in Transporters (OATP1B1/SLCO1B1 and simvastatin, BCRP/ABCG2, OCT1): her 10/26 lecture covered transporters from her own slides, centered on P-glycoprotein; the chapter's OATP1B1, BCRP and OCT1 examples go further.",
+   "IFNL3 (IL-28B) and interferon response in hepatitis C, in the immune-system section.",
+   "NUDT15 alongside TPMT in the thiopurine section.",
    "CYP2B6 and the efavirenz example (autoinduction, *6/*6 genotype, CNS adverse effects).",
    "DPYD alleles *2A, *13, rs67376798 and HapB3 and the genotype-guided dose-reduction study (25% or 50% initial reductions).",
    "G6PD: WHO classes (Table 5-3), X-linked inheritance, malaria-endemic allele distribution, and the rasburicase example.",
@@ -2176,7 +2177,7 @@ const READINGS = [
   "file": "DiPiro Chapter e6: Medication Adherence",
   "lecture": "Syllabus: “Dipiro Chapter 6” for 10/20–10/22. The posted file is chapter e6, Medication Adherence, not the pharmacogenomics chapter she referred to in the 10/21 and 10/22 lectures.",
   "kind": "chapter",
-  "about": "The chapter defines medication adherence, following the WHO, as the extent to which an individual's medication-taking behavior aligns with the recommendations from healthcare providers, and states that the estimated adherence rate for chronic illnesses in developed countries is around 50%. It describes direct methods of assessing adherence (bioassays, biomarkers, direct observation) and indirect methods (self-report surveys, pharmacy refill rates such as MPR and PDC, pill counts, clinical response, electronic monitoring with MEMS), with Table e6-1 comparing generic self-report instruments (ARMS, BMQ, HBCS, MAQ, MARS, MAR-Scale, MMAS-8). It organizes barriers to adherence into the WHO's five interacting dimensions (social and economic, healthcare team- and system-related, condition-related, therapy-related, patient-related) in Table e6-2. It then presents provider-related, patient-related and system-related strategies for improving adherence (Table e6-3), including the SIMPLE and RULE acronyms, motivational interviewing, reminders, regimen simplification, telehealth and policy reform, and ends with key resources, a bibliography and 15 self-assessment questions with answers. The chapter does not cover pharmacogenomics.",
+  "about": "This reading is DiPiro's chapter e6, Medication Adherence: what adherence means, how clinicians measure it, what gets in its way, and how pharmacists and health systems improve it. It is the file posted for the syllabus line 'DiPiro Chapter 6', but it contains no pharmacogenomics and Dr. Smith never referred to it in lecture; her slide deck cites DiPiro 13e chapter e8, Clinical Pharmacogenomics, so this may be the wrong posted chapter, and nothing from it is on her Exam 4 study list. The chapter defines medication adherence, following the WHO, as the extent to which an individual's medication-taking behavior aligns with the recommendations from healthcare providers, and states that the estimated adherence rate for chronic illnesses in developed countries is around 50%. It describes direct methods of assessing adherence (bioassays, biomarkers, direct observation) and indirect methods (self-report surveys, pharmacy refill rates such as MPR and PDC, pill counts, clinical response, electronic monitoring with MEMS), with Table e6-1 comparing generic self-report instruments (ARMS, BMQ, HBCS, MAQ, MARS, MAR-Scale, MMAS-8). It organizes barriers to adherence into the WHO's five interacting dimensions (social and economic, healthcare team- and system-related, condition-related, therapy-related, patient-related) in Table e6-2. It then presents provider-related, patient-related and system-related strategies for improving adherence (Table e6-3), including the SIMPLE and RULE acronyms, motivational interviewing, reminders, regimen simplification, telehealth and policy reform, and ends with key resources, a bibliography and 15 self-assessment questions with answers. The chapter does not cover pharmacogenomics.",
   "sections": [
    "Key Concepts",
    "Beyond the Book",
@@ -2264,6 +2265,7 @@ const READINGS = [
   "truncated": false,
   "listen": "This reading is Chapter e six, Medication Adherence, by Lin Fang Ju, Huang Yen Ming and Ho Yunn Fang, in DiPiro's Pharmacotherapy, A Pathophysiologic Approach, thirteenth edition. It was not discussed in class, and it does not cover pharmacogenomics. In the lectures of October twenty first and twenty second she did not cite it or discuss adherence. She did refer to your DiPiro textbook on pharmacogenomics, and this chapter is about adherence, not pharmacogenomics. Medication adherence, following the World Health Organization, is the extent to which a person's medication taking matches the recommendations of healthcare providers, in dose, route, frequency and duration. Adherence for chronic illness in developed countries is around fifty percent, even among patients with good access to medications. Nonadherence can be intentional or unintentional. Direct methods measure the drug or a metabolite in body fluids such as blood or urine, or observe the dose being taken. Indirect methods are self report surveys, which are the most widely used, pharmacy refill rates such as the medication possession ratio and the proportion of days covered, pill counts, clinical response, and electronic monitoring. The Medication Events Monitoring System is a container with a special cap that logs the time and date of each opening. Pill counts compare the units taken with the units received and do not work for medications used as needed. The World Health Organization groups the barriers into five dimensions: social and economic, healthcare team and system, condition, therapy, and patient related factors. The SIMPLE strategy stands for simplifying regimen characteristics, imparting knowledge, modifying patient beliefs, patient communication, leaving the bias, and evaluating adherence. Motivational interviewing uses four principles, RULE: resist the righting reflex, understand the patient's motivations, listen with empathy, and empower the patient. A drug level in blood is a direct method. A refill record or a pill count is indirect.",
   "listen_secs": 122,
+  "numbering_note": "Possible mismatch: the syllabus says 'DiPiro Chapter 6'; the posted file is chapter e6, Medication Adherence; her deck cites DiPiro 13e chapter e8, Clinical Pharmacogenomics (state doc, 10/24). Nothing in the 10/20 to 10/28 lectures resolves which chapter she meant.",
   "exam": 4,
   "lectures": [],
   "status": "assigned",
@@ -2276,9 +2278,9 @@ const READINGS = [
   "title": "Effect of Genetic Differences in Omeprazole Metabolism on Cure Rates for Helicobacter pylori Infection and Peptic Ulcer",
   "source": "Takahisa Furuta, Kyoichi Ohashi, Takashi Kamata, Misako Takashima, Kazuhiro Kosuge, Tsunehisa Kawasaki, Hiroyuki Hanai, Takahiro Kubota, Takashi Ishizaki and Eizo Kaneko. Annals of Internal Medicine 1998;129(12):1027–1030 (15 December 1998), Brief Communications",
   "file": "FurutaAnnIntMed1998.pdf",
-  "lecture": "Thu 10/22 (Pharmacogenomic Examples: CYP2C19 and proton pump inhibitors); she said the full discussion of the paper is on Monday 10/26",
+  "lecture": "Introduced Thu 10/22 (Pharmacogenomic Examples: CYP2C19 and proton pump inhibitors); discussed in detail Mon 10/26.",
   "kind": "article",
-  "about": "A prospective cohort study of 62 Japanese patients with peptic ulcer (33 gastric, 29 duodenal) and H. pylori infection, treated with dual therapy: omeprazole 20 mg once daily for 8 weeks (gastric ulcer) or 6 weeks (duodenal ulcer) plus amoxicillin 500 mg four times daily for the first 2 weeks (p. 1027). Omeprazole is metabolized in the liver by CYP2C19 (S-mephenytoin 4'-hydroxylase); patients were genotyped for two mutated alleles, CYP2C19m1 in exon 5 and CYP2C19m2 in exon 4, and grouped as no mutation (group 1, n = 28), one mutation (group 2, n = 25) or two mutations (group 3, n = 9), corresponding to rapid-extensive, intermediate-extensive and poor-metabolizer phenotypes (p. 1028). Cure rates for H. pylori infection were 28.6%, 60% and 100% in the rapid-, intermediate- and poor-metabolizer groups, and ulcer healing rates were roughly parallel (abstract; Table 2). The Discussion gives four reasons for the higher cure rate in poor metabolizers (higher omeprazole exposure and longer high intragastric pH; amoxicillin unstable at low pH; omeprazole increases amoxicillin in gastric juice; omeprazole's own anti-H. pylori activity) and notes the poor-metabolizer genotype is 3% to 5% in white U.S. or European populations versus 18% to 23% in Japanese persons (p. 1029). The authors state the limitations that plasma omeprazole levels were not measured and the sample was small (p. 1029).",
+  "about": "This reading is a short 1998 research paper from the Annals of Internal Medicine that asked whether a patient's CYP2C19 genotype, the gene for the liver enzyme that clears omeprazole, predicts whether omeprazole plus amoxicillin cures Helicobacter pylori infection and heals a peptic ulcer. It matters for Exam 4 because Dr. Smith listed two things from it: the functional significance of the three genotype groups for the H. pylori cure rate, and the four ways that higher omeprazole concentrations in poor metabolizers improved patient outcomes. The study followed 62 Japanese patients with peptic ulcer (33 gastric, 29 duodenal) and H. pylori infection, all treated with dual therapy: omeprazole 20 mg once daily for 8 weeks (gastric ulcer) or 6 weeks (duodenal ulcer) plus amoxicillin 500 mg four times daily for the first 2 weeks (p. 1027). Patients were genotyped for two mutated alleles, CYP2C19m1 in exon 5 and CYP2C19m2 in exon 4, and grouped as no mutation (group 1, n = 28), one mutation (group 2, n = 25) or two mutations (group 3, n = 9), corresponding to rapid-extensive, intermediate-extensive and poor-metabolizer phenotypes (p. 1028). Cure rates for H. pylori infection were 28.6%, 60% and 100% in the rapid-, intermediate- and poor-metabolizer groups, and ulcer healing rates were roughly parallel (abstract; Table 2). The Discussion gives four reasons for the higher cure rate in poor metabolizers and notes the poor-metabolizer genotype is 3% to 5% in white U.S. or European populations versus 18% to 23% in Japanese persons (p. 1029). The authors state the limitations that plasma omeprazole levels were not measured and the sample was small (p. 1029).",
   "sections": [
    "Abstract (Background; Objective; Design; Setting; Patients; Intervention; Measurements; Results; Conclusion)",
    "Introduction (unheaded): H. pylori eradication, triple versus dual therapy, CYP2C19 and omeprazole",
@@ -2299,18 +2301,11 @@ const READINGS = [
     "evidence_clean": "It's talking about 2C19. It's a very interesting study done in a Japanese population."
    },
    {
-    "point": "Whether a result from a Japanese population applies to everybody (to be discussed Monday)",
+    "point": "Whether a result from a Japanese population applies to everybody",
     "chapter_location": "Discussion: poor-metabolizer genotype 3% to 5% in white U.S. or European populations versus 18% to 23% in Japanese persons; dual therapy has generally not achieved adequate cure rates in white persons",
     "lecture_evidence": "because it's done in the Japanese population, can we apply it to everybody?",
     "date": "10/22",
     "evidence_clean": "Because it's done in the Japanese population, can we apply it to everybody?"
-   },
-   {
-    "point": "Which variants were genotyped, and whether any were left out (to be discussed Monday)",
-    "chapter_location": "Methods: genotyping for the wild-type gene and two mutated alleles, CYP2C19m1 (exon 5) and CYP2C19m2 (exon 4)",
-    "lecture_evidence": "What variants were they looking at? Do they leave out any, that kind of thing.",
-    "date": "10/22",
-    "evidence_clean": "What variants were they looking at? Do they leave out any?"
    },
    {
     "point": "Proton pump inhibitors are metabolized and cleared by CYP2C19",
@@ -2341,7 +2336,7 @@ const READINGS = [
     "evidence_clean": "It's a good thing to have the *2 or *3 version of 2C19, because you keep the drug in the body; the therapeutic index of your PPIs is very wide."
    },
    {
-    "point": "Other reasons beyond the CYP2C19 variants (to be discussed Monday)",
+    "point": "Other reasons beyond the CYP2C19 variants",
     "chapter_location": "Discussion, second to fourth reasons: amoxicillin stability at higher pH, omeprazole raising amoxicillin in gastric juice, omeprazole's own anti-H. pylori activity",
     "lecture_evidence": "In that paper, it's not just the variants of 2C19 that were beneficial, and we're gonna talk about why, OK.",
     "date": "10/22",
@@ -2388,120 +2383,143 @@ const READINGS = [
     "lecture_evidence": "So can we generalize this study to the United States? Not on the face of it.",
     "date": "10/26",
     "evidence_clean": "So can we generalize this study to the United States? Not on the face of it."
+   },
+   {
+    "point": "The point she wanted made: this population was treated effectively with a PPI and one antibiotic (dual therapy)",
+    "chapter_location": "Introduction and Methods, p. 1027: dual therapy with omeprazole and amoxicillin instead of triple therapy",
+    "lecture_evidence": "What I wanted to point out to you guys is that in this population, they were effectively using a PPI and 1 antibiotic.",
+    "date": "10/26"
+   },
+   {
+    "point": "Functional significance of the genotypes: go from the patient's phenotype down to the DNA and know why *2 and *3 leave no active enzyme",
+    "chapter_location": "Results, p. 1028: five allelic patterns grouped into three genotype groups with rapid-extensive, intermediate-extensive and poor-metabolizer phenotypes",
+    "lecture_evidence": "You guys have to be able to drill down from your phenotype of your patient to the molecular structure of the DNA and know what is star 2? What is star 3? Why is that enzyme not active in this person?",
+    "date": "10/26"
+   },
+   {
+    "point": "Her summary of the discussion points: omeprazole stays high, gastric pH is higher, amoxicillin is more stable, and more amoxicillin reaches the stomach lining where H. pylori is",
+    "chapter_location": "Discussion, p. 1029: First, Second and Third reasons",
+    "lecture_evidence": "keeping their omeprazole really high, their gastric pH higher. The stability of the amoxicillin in the stomach better cause the pH is higher in the stomach, and because the higher amoxicillin helps you get amoxicillin into the stomach lining, where H. pylori is. Those are the points they were making in the discussion.",
+    "date": "10/26"
+   },
+   {
+    "point": "With genotyping the result could transfer: the same genotype gives the same response, only the group sizes differ",
+    "chapter_location": "Discussion, p. 1029: ethnic differences in the poor-metabolizer genotype",
+    "lecture_evidence": "if you genotype people, know their status, you might be able to reduce the use of antibiotics in the case of H. pylori infections, if a person has the right 2C19 genotypes",
+    "date": "10/26"
    }
   ],
   "read_for": [
-   "Abstract and Methods: 62 Japanese patients (33 gastric ulcer, 29 duodenal ulcer; 61 male), omeprazole 20 mg once daily plus amoxicillin 500 mg four times daily for the first 2 weeks (p. 1027).",
-   "Introduction: omeprazole is metabolized in the liver by CYP2C19; in poor metabolizers the omeprazole AUC is markedly increased and its clinical effect should be greater (p. 1027).",
-   "Methods: the alleles genotyped, CYP2C19m1 in exon 5 and CYP2C19m2 in exon 4, by PCR restriction fragment length polymorphism (p. 1028).",
-   "Results and Table 1: the five allelic patterns and the three genotype groups (no mutation, one mutation, two mutations) and their phenotypes (rapid-extensive, intermediate-extensive, poor metabolizer); relative mean omeprazole AUC 1:3.7:20 (p. 1028).",
-   "Table 2: cure rates of H. pylori infection by genotype group and ulcer type, total 28.6% [8/28], 60.0% [15/25] and 100.0% [9/9], P < 0.001 (p. 1029).",
-   "Results: ulcer healing rates roughly parallel with the cure rates (gastric 7 of 12, 13 of 14 and 7 of 7; duodenal 13 of 16, 9 of 11 and 2 of 2 in groups 1 to 3), and all ulcer lesions healed in patients whose H. pylori infection was cured; the Discussion credits both the higher cure rates and the increased acid-inhibitory effect of omeprazole for the healing in poor metabolizers (abstract; pp. 1028-1029).",
-   "Discussion: the four reasons dual therapy works better in poor metabolizers, signposted First, Second, Third and Finally: (1) omeprazole exposure is markedly increased, so high intragastric pH lasts longer; (2) amoxicillin is unstable and less active at low pH, so a higher pH leaves more active antibiotic; (3) omeprazole increases amoxicillin concentrations in gastric juice, so amoxicillin stays in the stomach longer above its minimum inhibitory concentration; (4) omeprazole itself has anti-H. pylori activity, presumably enhanced in poor metabolizers (p. 1029).",
-   "Discussion: ethnic differences in the poor-metabolizer genotype, 3% to 5% in white U.S. or European populations versus 18% to 23% in Japanese persons (p. 1029).",
-   "Discussion: limitations (plasma omeprazole not measured; small sample; findings preliminary) (p. 1029)."
+   "1. Functional significance, group 1 (Table 1, Table 2, p. 1028-1029): wild-type/wild-type (her labels *1/*1), two working copies of CYP2C19, the rapid-extensive metabolizer; relative omeprazole AUC 1; H. pylori cured in 28.6% (8 of 28).",
+   "2. Functional significance, group 2: wild-type/m1 or wild-type/m2 (*1/*2 or *1/*3), one working copy, the intermediate-extensive metabolizer; relative AUC 3.7; cured in 60.0% (15 of 25).",
+   "3. Functional significance, group 3: m1/m2 or m1/m1 (*2/*3 or *2/*2), no working copy, the poor metabolizer; relative AUC 20; cured in 100% (9 of 9). The cure rate was highest in group 3, intermediate in group 2 and lowest in group 1, P < 0.001 (Table 2).",
+   "4. What the mutations are (Table 1 footnote; Methods, p. 1028): CYP2C19m1 is a mutation in exon 5 and CYP2C19m2 a mutation in exon 4, typed by PCR restriction fragment length polymorphism. Her 10/26 addition: m1 is *2, m2 is *3, each a SNP creating a premature stop codon, so the protein is too short to work.",
+   "5. Ulcer healing (abstract; Results, pp. 1028-1029): healing of gastric and duodenal ulcer was roughly parallel with the cure rates, and every ulcer healed in patients whose H. pylori infection was cured; the Discussion credits both the higher cure rate and the stronger acid inhibition in poor metabolizers.",
+   "6. Way 1 of 4 (Discussion, p. 1029, 'First'): omeprazole's plasma concentration-time curve is markedly increased in poor metabolizers, so high intragastric pH lasts longer than in extensive metabolizers.",
+   "7. Way 2 of 4 ('Second'): amoxicillin is unstable and less active at low pH, so raising intragastric pH toward neutral increases the amount of active antibiotic.",
+   "8. Way 3 of 4 ('Third'): omeprazole has been reported to increase amoxicillin concentrations in gastric juice, so amoxicillin stays in the stomach longer at levels above its minimum inhibitory concentration. (She said it is amoxicillin, not omeprazole, that ends up higher in the gastric juice.)",
+   "9. Way 4 of 4 ('Finally'): omeprazole itself has reported anti-H. pylori activity, presumably enhanced in poor metabolizers. She summarized the first three in class; the fourth is in the paper only.",
+   "10. Why it does not transfer to the United States on its face (Discussion, p. 1029): the poor-metabolizer genotype is 3% to 5% in white U.S. or European populations versus 18% to 23% in Japanese persons; with genotyping the same genotype is expected to respond the same way."
   ],
   "beyond_lecture": [
-   "Results: adherence to the regimen (100% in 43 patients, about 90% in 18, about 75% in 1) and eradication by adherence level (58%, 33%, 100%) (p. 1028).",
-   "Results: ulcer healing rates by ulcer type and genotype group (gastric 58.8%, 92.9%, 100.0%; duodenal 81.3%, 81.8%, 100.0%) (pp. 1028–1029).",
-   "Discussion: Bayerdorffer and associates' dual therapy with omeprazole 40 mg three times daily and amoxicillin 750 mg three times daily (91% cure in white persons) and the suggestion that at least 120 mg of omeprazole may be required in extensive metabolizers (p. 1029).",
-   "Discussion: costs of genotyping and larger omeprazole doses versus avoiding a second antibiotic; clinical usefulness and cost-effectiveness of genotyping remain to be determined (pp. 1029–1030).",
-   "Methods: how cure was determined (culture, histology, rapid urease test, 13C-urea breath test and PCR; failure defined as a positive result on any test) and the statistics (ANOVA, Fisher exact test) (p. 1028)."
+   "Results, p. 1028: adherence to the regimen (100% in 43 patients, about 90% in 18, about 75% in 1) and eradication by adherence level (58%, 33%, 100%).",
+   "Discussion, p. 1029: Bayerdorffer and associates' high-dose dual therapy (omeprazole 40 mg three times daily plus amoxicillin 750 mg three times daily, 91% cure in white persons) and the suggestion that at least 120 mg of omeprazole a day may be needed in extensive metabolizers.",
+   "Discussion, pp. 1029-1030: the cost of genotyping and of larger omeprazole doses against the savings from avoiding a second antibiotic; the clinical usefulness and cost-effectiveness of genotyping remain to be determined.",
+   "Methods, p. 1028: how cure was judged (culture, histology, rapid urease test, 13C-urea breath test and PCR; a positive result on any test meant failure) and the statistics (one-way ANOVA, Fisher exact test).",
+   "Results, p. 1028: no clinically undesirable signs or symptoms attributable to the dual therapy were recognized."
   ],
   "terms": [
    {
     "term": "CYP2C19 (S-mephenytoin 4'-hydroxylase)",
-    "chapter_definition": "A genetically determined enzyme that metabolizes omeprazole in the liver (p. 1027)."
+    "chapter_definition": "The genetically determined liver enzyme that metabolizes omeprazole; S-mephenytoin 4'-hydroxylase is the paper's older name for it (p. 1027)."
    },
    {
-    "term": "Poor-metabolizer genotype",
-    "chapter_definition": "In persons with a poor-metabolizer phenotype or genotype of CYP2C19, the area under the plasma concentration-time curve of omeprazole is markedly increased and the clinical effect of omeprazole should be greater (p. 1027)."
+    "term": "Poor metabolizer",
+    "chapter_definition": "A person whose CYP2C19 phenotype or genotype gives little or no enzyme activity; in them the area under the plasma concentration-time curve of omeprazole is markedly increased, so the clinical effect of omeprazole should be greater (p. 1027)."
    },
    {
-    "term": "CYP2C19m1 / CYP2C19m2",
-    "chapter_definition": "The two mutated alleles genotyped: CYP2C19m1, a mutation in exon 5, and CYP2C19m2, a mutation in exon 4 (Table 1 footnote; Methods)."
+    "term": "Area under the curve (AUC)",
+    "chapter_definition": "The area under the plasma concentration-time curve, the paper's measure of how much omeprazole is in circulation; the relative mean AUC in rapid, intermediate and poor metabolizers has been reported as 1:3.7:20 (p. 1028)."
    },
    {
-    "term": "Group 1 (nonmutation group)",
-    "chapter_definition": "Homozygous wild-type (wt/wt); corresponds to the rapid-extensive metabolizer phenotype (p. 1028)."
+    "term": "CYP2C19m1 and CYP2C19m2",
+    "chapter_definition": "The two mutated alleles the study genotyped: m1 is a mutation in exon 5 and m2 a mutation in exon 4 of the gene; wt is the wild-type, working allele (Table 1 footnote)."
    },
    {
-    "term": "Group 2 (one-mutation group)",
-    "chapter_definition": "wt/m1 or wt/m2; corresponds to the intermediate-extensive metabolizer phenotype (p. 1028)."
+    "term": "Group 1, nonmutation group",
+    "chapter_definition": "Wild-type/wild-type patients (n = 28), whose phenotype is the rapid-extensive metabolizer: full enzyme activity (p. 1028)."
    },
    {
-    "term": "Group 3 (two-mutation group)",
-    "chapter_definition": "m1/m2 or m1/m1; corresponds to the poor-metabolizer phenotype (p. 1028)."
+    "term": "Group 2, one-mutation group",
+    "chapter_definition": "Wild-type/m1 or wild-type/m2 patients (n = 25), the intermediate-extensive metabolizer: one working allele (p. 1028)."
+   },
+   {
+    "term": "Group 3, two-mutation group",
+    "chapter_definition": "m1/m2 or m1/m1 patients (n = 9), the poor metabolizer: no working allele (p. 1028)."
    },
    {
     "term": "Dual therapy",
-    "chapter_definition": "Omeprazole and amoxicillin; achieves somewhat lower cure rates than triple therapy but avoids many of the problems associated with clarithromycin and metronidazole (p. 1027)."
+    "chapter_definition": "Omeprazole plus one antibiotic, amoxicillin; it gives somewhat lower cure rates than triple therapy but avoids the problems of clarithromycin and metronidazole (p. 1027)."
    },
    {
     "term": "Triple therapy",
-    "chapter_definition": "A proton-pump inhibitor, amoxicillin, and clarithromycin or metronidazole; resistance of H. pylori to the latter two drugs has been reported (p. 1027)."
+    "chapter_definition": "A proton-pump inhibitor, amoxicillin, and clarithromycin or metronidazole; H. pylori resistance to the latter two drugs has been reported (p. 1027)."
    },
    {
-    "term": "Failure to cure H. pylori infection",
-    "chapter_definition": "A positive result on any of culture, histologic examination, rapid urease testing, 13C-urea breath testing, or PCR (p. 1028)."
+    "term": "Minimum inhibitory concentration",
+    "chapter_definition": "The antibiotic level needed to stop the bacterium; the third reason says amoxicillin stays in the stomach longer at levels exceeding it when omeprazole is co-administered (p. 1029)."
+   },
+   {
+    "term": "Cure of H. pylori infection",
+    "chapter_definition": "Judged one month after treatment by culture, histology, rapid urease testing, 13C-urea breath testing and PCR; a positive result on any test counted as failure (p. 1028)."
    }
   ],
   "discussed_in_class": true,
   "her_words": [
    {
-    "t": "We have another thing that we're going to get to today, maybe not until Monday: a discussion of this Furuta paper.",
-    "date": "10/22",
-    "verbatim": "We have another thing that we're gonna get to, uh, today, maybe not get to it until, um, Monday is a discussion of this Fioruda paper."
+    "t": "We have another thing that we're gonna get to, uh, today, maybe not get to it until, um, Monday is a discussion of this Fioruda paper.",
+    "date": "10/22"
    },
    {
     "t": "Have you guys looked at it yet? Do you know what gene it's talking about and what variants?",
-    "date": "10/22",
-    "verbatim": "Have you guys looked at it yet? Do you know what gene it's talking about and what variants?"
+    "date": "10/22"
    },
    {
-    "t": "We're going to go into a lot of the detail in that paper after we have our discussion about more about 2C19.",
-    "date": "10/22",
-    "verbatim": "We're gonna talk a lot about, go into a lot of the detail in that paper after we have our discussion about more about 2C19."
+    "t": "We're gonna talk a lot about, go into a lot of the detail in that paper after we have our discussion about more about 2C19.",
+    "date": "10/22"
    },
    {
     "t": "What happens to the clinical care of our patients in this scenario? How did they develop the study? Was it well run?",
-    "date": "10/22",
-    "verbatim": "What happens to the clinical care of our patients in this scenario? How did they develop the study? Was it well run?"
+    "date": "10/22"
    },
    {
-    "t": "We're going to get into all that detail with this paper, just as an exercise.",
-    "date": "10/22",
-    "verbatim": "OK, we're gonna get into all that detail with this paper, just as an exercise"
+    "t": "OK, we're gonna get into all that detail with this paper, just as an exercise",
+    "date": "10/22"
    },
    {
-    "t": "The proton pump inhibitors, and this is the Furuta paper you read about, right?",
-    "date": "10/22",
-    "verbatim": "So The proton pump inhibitors, and this is the Furuda paper you read about, right?"
+    "t": "So The proton pump inhibitors, and this is the Furuda paper you read about, right?",
+    "date": "10/22"
    },
    {
-    "t": "Talk about that paper just a little bit, then we're going to really dive into it on Monday.",
-    "date": "10/22",
-    "verbatim": "talk about that paper just a little bit, then we're going to really dive into it on Monday, OK?"
+    "t": "talk about that paper just a little bit, then we're going to really dive into it on Monday, OK?",
+    "date": "10/22"
    },
    {
-    "t": "This is the data from that Furuta paper, and we want to look at the functional significance of those variants.",
-    "date": "10/22",
-    "verbatim": "This is the data from that Fioruda paper, and we want to look at the, the functional significance of those variants, right?"
+    "t": "This is the data from that Fioruda paper, and we want to look at the, the functional significance of those variants, right?",
+    "date": "10/22"
    },
    {
     "t": "Again, on Monday when we come back, we're going to dive into that paper.",
-    "date": "10/22",
-    "verbatim": "Again, on Monday when we come back, we're going to dive into that paper."
+    "date": "10/22"
    },
    {
-    "t": "You guys will be reading a paper about a pharmacogenomics study.",
-    "date": "10/21",
-    "verbatim": "you guys will be reading a paper about a pharmacogenomics study."
+    "t": "you guys will be reading a paper about a pharmacogenomics study.",
+    "date": "10/21"
    }
   ],
-  "quotes_note": "Quotes lightly edited for reading: filler words removed and transcription errors corrected; the verbatim transcript text is kept beside each quote.",
+  "quotes_note": "Quotes are verbatim transcript text from the 10/21, 10/22 and 10/26 recordings, including filler words; the captions render the name Furuta as \"Fioruda\" or \"Furuda\".",
   "truncated": false,
-  "listen": "This reading is the brief communication Effect of Genetic Differences in Omeprazole Metabolism on Cure Rates for Helicobacter pylori Infection and Peptic Ulcer, by Takahisa Furuta and colleagues, in the Annals of Internal Medicine, December nineteen ninety eight. It is a prospective cohort study of sixty two Japanese patients with gastric or duodenal ulcer and Helicobacter pylori infection. Every patient received dual therapy: omeprazole twenty milligrams once daily, for eight weeks for gastric ulcer or six weeks for duodenal ulcer, plus amoxicillin five hundred milligrams four times daily for the first two weeks. Omeprazole is metabolized in the liver by C Y P two C nineteen. The authors genotyped two mutated alleles, m one in exon five and m two in exon four, and grouped patients by the number of mutations. Group one had no mutation and corresponds to rapid extensive metabolizers. Group two had one mutation and corresponds to intermediate extensive metabolizers. Group three had two mutations and corresponds to poor metabolizers. The relative mean area under the curve for omeprazole in these three groups has been reported as one to three point seven to twenty. Cure rates for the infection were twenty eight point six percent, sixty percent, and one hundred percent in the rapid, intermediate and poor metabolizer groups. Ulcer healing rates were roughly parallel with the cure rates. The authors give four reasons. Poor metabolizers have more omeprazole in circulation, so high intragastric pH lasts longer. Amoxicillin is unstable and less active at low pH. Omeprazole has been reported to increase amoxicillin concentrations in gastric juice. And omeprazole itself has been reported to have activity against Helicobacter pylori. The poor metabolizer genotype is found in three to five percent of white United States or European populations and eighteen to twenty three percent of Japanese persons. The limitations they state: they did not measure plasma omeprazole levels, and the sample was small. In class on October twenty second, she introduced it as a very interesting study done in a Japanese population, about two C nineteen. She said that poor metabolizers on proton pump inhibitors had better cure rates, because the drug stays in the body and proton pump inhibitors have a very wide therapeutic index. She said the detailed discussion is on Monday: whether a study in a Japanese population applies to everybody, how the study was run, which variants were studied and whether any were left out, and why it was not just the two C nineteen variants that were beneficial. The figure she showed as that paper's data used lansoprazole and plotted area under the curve, stomach pH and cure rate. The nineteen ninety eight paper used omeprazole and did not measure plasma drug levels.",
+  "listen": "This reading is the brief communication Effect of Genetic Differences in Omeprazole Metabolism on Cure Rates for Helicobacter pylori Infection and Peptic Ulcer, by Takahisa Furuta and colleagues, in the Annals of Internal Medicine, December nineteen ninety eight. It is a prospective cohort study of sixty two Japanese patients with gastric or duodenal ulcer and Helicobacter pylori infection. Every patient received dual therapy: omeprazole twenty milligrams once daily, for eight weeks for gastric ulcer or six weeks for duodenal ulcer, plus amoxicillin five hundred milligrams four times daily for the first two weeks. Omeprazole is metabolized in the liver by C Y P two C nineteen. The authors genotyped two mutated alleles, m one in exon five and m two in exon four, and grouped patients by the number of mutations. Group one had no mutation and corresponds to rapid extensive metabolizers. Group two had one mutation and corresponds to intermediate extensive metabolizers. Group three had two mutations and corresponds to poor metabolizers. The relative mean area under the curve for omeprazole in these three groups has been reported as one to three point seven to twenty. Cure rates for the infection were twenty eight point six percent, sixty percent, and one hundred percent in the rapid, intermediate and poor metabolizer groups. Ulcer healing rates were roughly parallel with the cure rates. The authors give four reasons. Poor metabolizers have more omeprazole in circulation, so high intragastric pH lasts longer. Amoxicillin is unstable and less active at low pH. Omeprazole has been reported to increase amoxicillin concentrations in gastric juice. And omeprazole itself has been reported to have activity against Helicobacter pylori. The poor metabolizer genotype is found in three to five percent of white United States or European populations and eighteen to twenty three percent of Japanese persons. The limitations they state: they did not measure plasma omeprazole levels, and the sample was small. In class on October twenty second, she introduced it as a very interesting study done in a Japanese population, about two C nineteen. She said that poor metabolizers on proton pump inhibitors had better cure rates, because the drug stays in the body and proton pump inhibitors have a very wide therapeutic index. On October twenty sixth she walked through the paper: group three, with no active enzyme, had the best cure rate; star two and star three are nonfunctional because of a premature stop codon; the discussion's first, second and third points are that omeprazole stays high so gastric pH is higher, amoxicillin is more stable at the higher pH, and more amoxicillin reaches the gastric juice where H. pylori is; and the result cannot be generalized to the United States on its face, but could be with genotyping. For the exam she listed the functional significance of the genotypes for the cure rate and the four ways elevated P P I concentrations improved outcomes. The figure she showed as that paper's data used lansoprazole and plotted area under the curve, stomach pH and cure rate. The nineteen ninety eight paper used omeprazole and did not measure plasma drug levels.",
   "listen_secs": 180,
   "exam": 4,
   "lectures": [
@@ -2529,9 +2547,9 @@ const READINGS = [
   "title": "ZIAGEN (abacavir) tablets, for oral use; ZIAGEN (abacavir) oral solution — Prescribing Information",
   "source": "FDA-approved prescribing information with Medication Guide and Warning Card, ViiV Healthcare; Revised: 11/2020; Reference ID: 4706849. Page numbers are the PDF pages, which match the printed page numbers.",
   "file": "ZIAGEN (abacavir) prescribing information, revised 11/2020 (Canvas: pharmacogenomics resources)",
-  "lecture": "Tue 10/27 (Pharmacogenomics Resources): the label for the abacavir group in the in-class worksheet on the FDA Table of Pharmacogenomic Biomarkers in Drug Labeling. The transcript provided ends mid-sentence during the class discussion of abacavir.",
+  "lecture": "Tue 10/27 (Pharmacogenomics Resources): the label for the abacavir group in the in-class worksheet on the FDA Table of Pharmacogenomic Biomarkers in Drug Labeling. In class she covered worksheet items 1-3 for abacavir (gene and variant, effect, patient not tumor); the recording ends mid-sentence before items 4-8 were worked aloud.",
   "kind": "guideline",
-  "about": "The ZIAGEN prescribing information (Revised: 11/2020) is for abacavir, a nucleoside analogue HIV-1 reverse transcriptase inhibitor indicated in combination with other antiretroviral agents for the treatment of HIV-1 infection (Highlights, p. 1; section 1, p. 2). Its boxed warning, WARNING: HYPERSENSITIVITY REACTIONS, states that serious and sometimes fatal hypersensitivity reactions, with multiple organ involvement, have occurred with ZIAGEN, and that patients who carry the HLA-B*5701 allele are at a higher risk of a hypersensitivity reaction to abacavir, although reactions have occurred in patients who do not carry the allele (p. 2). The label says to screen all patients for the HLA-B*5701 allele prior to initiating or reinitiating therapy, unless they have a previously documented HLA-B*5701 allele assessment, and makes ZIAGEN contraindicated in patients who have the HLA-B*5701 allele (sections 2.1 and 4, pp. 2–3). Section 5.1 reports hypersensitivity in approximately 206 (8%) of 2,670 patients in 9 clinical trials where HLA-B*5701 screening was not performed, and an incidence of suspected hypersensitivity of 1% when subjects carrying the HLA-B*5701 allele were excluded (p. 4). The label does not name a specific genotyping test; the Medication Guide says the healthcare provider can determine with a blood test if the patient has this gene variation (p. 27).",
+  "about": "This reading is the FDA prescribing information (the drug label) for Ziagen, abacavir, an HIV medicine; its boxed warning says patients who carry the HLA-B*5701 gene variant are at higher risk of a serious, sometimes fatal hypersensitivity reaction, so everyone must be screened for that allele before starting the drug. It matters for Exam 4 because it is one of the three labels on Dr. Smith's Pharmacogenomics Questions worksheet (items 1-8), and her point was that abacavir and carbamazepine share the HLA-B gene but carry different variants and different reactions. Abacavir is a nucleoside analogue HIV-1 reverse transcriptase inhibitor indicated in combination with other antiretroviral agents for the treatment of HIV-1 infection (Highlights, p. 1; section 1, p. 2). The boxed warning, WARNING: HYPERSENSITIVITY REACTIONS, states that serious and sometimes fatal hypersensitivity reactions, with multiple organ involvement, have occurred, that HLA-B*5701 carriers are at higher risk, and that reactions have also occurred in patients who do not carry the allele (p. 2). All patients are to be screened for HLA-B*5701 before initiating or reinitiating therapy unless they have a previously documented assessment, and Ziagen is contraindicated in patients who have the allele (sections 2.1 and 4, pp. 2-3). Section 5.1 reports hypersensitivity in approximately 206 (8%) of 2,670 patients in 9 clinical trials where screening was not performed, versus 1% when HLA-B*5701 carriers were excluded (p. 4). The label names no specific test; the Medication Guide says the healthcare provider can determine with a blood test whether the patient has this gene variation (p. 27).",
   "sections": [
    "Highlights of Prescribing Information",
    "Boxed Warning: Hypersensitivity Reactions",
@@ -2588,52 +2606,51 @@ const READINGS = [
    }
   ],
   "read_for": [
-   "Boxed Warning (p. 2): HLA-B*5701 carriers are at higher risk of hypersensitivity; ZIAGEN is contraindicated in HLA-B*5701-positive patients and in patients with a prior hypersensitivity reaction; all patients should be screened before initiating or reinitiating therapy unless a previous HLA-B*5701 allele assessment is documented.",
-   "Section 2.1, Screening for HLA-B*5701 Allele prior to Starting ZIAGEN (p. 2): screen for the allele prior to initiating therapy.",
-   "Section 4, Contraindications (p. 3): patients who have the HLA-B*5701 allele; prior hypersensitivity reaction to abacavir; moderate or severe hepatic impairment.",
-   "Section 5.1, Hypersensitivity Reactions (p. 4): reactions have included multi-organ failure and anaphylaxis, typically within the first 6 weeks (median time to onset 9 days); 206 (8%) of 2,670 patients without screening versus 1% with HLA-B*5701 carriers excluded.",
-   "Section 5.1 bullets (p. 4): regardless of HLA-B*5701 status, discontinue immediately if a hypersensitivity reaction is suspected, and NEVER restart ZIAGEN or any other abacavir-containing product after a hypersensitivity reaction.",
-   "Section 6.1 (p. 6): the reactions have been characterized by 2 or more of fever, rash, gastrointestinal symptoms, constitutional symptoms and respiratory symptoms.",
-   "Medication Guide (p. 27): the risk of the allergic reaction is much higher with the gene variation HLA-B*5701, which the healthcare provider can determine with a blood test.",
-   "Section 17 and Warning Card (pp. 25, 32): a Medication Guide and Warning Card are dispensed with each new prescription and refill, and patients are told to carry the Warning Card."
+   "Item 1, gene and variant: the HLA-B gene, allele HLA-B*5701 (Boxed Warning, p. 2; 4 Contraindications, p. 3). Her class answer: 'HLAB 5701'.",
+   "Item 2, how the variant affects response: carriers are at a higher risk of a hypersensitivity reaction, a multi-organ clinical syndrome that has included multi-organ failure and anaphylaxis, typically within the first 6 weeks (median onset 9 days); reactions also occur in non-carriers (Highlights, p. 1; 5.1, p. 4). Her class answer: hypersensitivity reaction, multi-organ failure.",
+   "Item 3, tumor or patient: the patient; the label speaks of patients who carry the allele and the Medication Guide of a blood test for the gene variation (Boxed Warning, p. 2; Medication Guide, p. 27). Her class answer: no tumors with carbamazepine or abacavir.",
+   "Item 4, efficacy or toxicity: to prevent a toxicity; the screen exists because of the serious and sometimes fatal hypersensitivity reactions, not because the drug works less well in carriers (Boxed Warning, p. 2).",
+   "Item 5, genotyping or cytology: genotyping of the patient's HLA-B allele, which the Medication Guide calls a blood test for the gene variation; no cell-surface or tissue study is involved (2.1, p. 2; Medication Guide, p. 27).",
+   "Item 6, does the FDA say what test: no test or method is named; the label says only to screen for the HLA-B*5701 allele prior to initiating therapy (2.1, p. 2).",
+   "Item 7, which population: all patients, before initiating or reinitiating Ziagen, unless they have a previously documented HLA-B*5701 allele assessment (Boxed Warning, p. 2).",
+   "Item 8, what the result changes: HLA-B*5701-positive, Ziagen is contraindicated (4, p. 3); whatever the HLA status, discontinue immediately if a hypersensitivity reaction is suspected and never restart Ziagen or any other abacavir-containing product after a reaction (Boxed Warning, p. 2; 5.1, p. 4)."
   ],
   "beyond_lecture": [
-   "The worksheet questions on efficacy versus toxicity, which test to use, which population to test and how results change care were not answered for abacavir in the transcript provided, which ends mid-sentence during the abacavir discussion.",
-   "Section 5.2, Lactic Acidosis and Severe Hepatomegaly with Steatosis (p. 5).",
-   "Section 5.3, Immune Reconstitution Syndrome, and 5.4, Myocardial Infarction (p. 5).",
-   "Section 2 dosing: adults 600 mg daily as 300 mg twice daily or 600 mg once daily; pediatric dosing by body weight (Table 1); mild hepatic impairment 200 mg twice daily (pp. 2–3).",
+   "Section 5.2, Lactic Acidosis and Severe Hepatomegaly with Steatosis; 5.3, Immune Reconstitution Syndrome; 5.4, Myocardial Infarction (p. 5).",
+   "Section 2 dosing: adults 600 mg daily as 300 mg twice daily or 600 mg once daily; pediatric dosing by body weight (Table 1); mild hepatic impairment 200 mg twice daily (pp. 2-3).",
+   "Section 6.1: the hypersensitivity reaction is characterized by 2 or more of fever, rash, gastrointestinal, constitutional and respiratory symptoms (p. 6).",
    "Section 7, Drug Interactions: methadone and riociguat (p. 11).",
    "Section 12.4, Microbiology: conversion to carbovir triphosphate and inhibition of HIV-1 reverse transcriptase (p. 18).",
-   "Section 14, Clinical Studies: CNA30024 and other adult and pediatric trials (pp. 20–24)."
+   "Section 14, Clinical Studies, and the Warning Card patients are told to carry (pp. 20-24, 32)."
   ],
   "terms": [
    {
-    "term": "HLA-B*5701 allele",
-    "chapter_definition": "Patients who carry the HLA-B*5701 allele are at a higher risk of a hypersensitivity reaction to abacavir; although, hypersensitivity reactions have occurred in patients who do not carry the HLA-B*5701 allele (Boxed Warning, p. 2)."
+    "term": "HLA-B*5701",
+    "chapter_definition": "An allele (variant) of the HLA-B gene; patients who carry it are at a higher risk of a hypersensitivity reaction to abacavir, although reactions also occur in patients who do not carry it (Boxed Warning, p. 2)."
    },
    {
-    "term": "Abacavir hypersensitivity",
-    "chapter_definition": "Hypersensitivity to ZIAGEN is a multi-organ clinical syndrome (Highlights, p. 1); the reactions have included multi-organ failure and anaphylaxis (5.1, p. 4)."
+    "term": "Hypersensitivity reaction (abacavir)",
+    "chapter_definition": "A serious and sometimes fatal immune reaction described as a multi-organ clinical syndrome; it has included multi-organ failure and anaphylaxis (Highlights, p. 1; 5.1, p. 4)."
    },
    {
     "term": "Screening for HLA-B*5701",
-    "chapter_definition": "Screen for the HLA-B*5701 allele prior to initiating therapy with ZIAGEN (2.1, p. 2), or prior to reinitiation of therapy unless patients have a previously documented HLA-B*5701 allele assessment (Boxed Warning, p. 2)."
+    "chapter_definition": "Testing every patient for the allele before starting Ziagen, or before restarting it, unless a previous HLA-B*5701 assessment is documented (2.1, p. 2; Boxed Warning, p. 2)."
    },
    {
-    "term": "HLA-B*5701-positive patients",
-    "chapter_definition": "ZIAGEN is contraindicated in patients who have the HLA-B*5701 allele (4, p. 3)."
+    "term": "Contraindicated",
+    "chapter_definition": "Must not be given: Ziagen is contraindicated in patients who have the HLA-B*5701 allele, in those with a prior hypersensitivity reaction to abacavir, and in moderate or severe hepatic impairment (4, p. 3)."
+   },
+   {
+    "term": "Nucleoside analogue HIV-1 reverse transcriptase inhibitor",
+    "chapter_definition": "The drug class of abacavir: it is used in combination with other antiretroviral agents to treat HIV-1 infection (Highlights, p. 1)."
    },
    {
     "term": "Signs of the reaction",
-    "chapter_definition": "Characterized by 2 or more of: (1) fever; (2) rash; (3) gastrointestinal symptoms; (4) constitutional symptoms; (5) respiratory symptoms (6.1, p. 6)."
+    "chapter_definition": "Two or more of: fever; rash; gastrointestinal symptoms; constitutional symptoms; respiratory symptoms (6.1, p. 6)."
    },
    {
     "term": "Warning Card",
-    "chapter_definition": "A card summarizing the symptoms of the abacavir hypersensitivity reaction, dispensed by the pharmacist with each new prescription and refill; patients are told to carry it with them (17, p. 25)."
-   },
-   {
-    "term": "Carbovir triphosphate (CBV-TP)",
-    "chapter_definition": "The active metabolite of abacavir, an analogue of dGTP, which inhibits HIV-1 reverse transcriptase (12.4, p. 18)."
+    "chapter_definition": "A card summarizing the symptoms of the hypersensitivity reaction, dispensed with each new prescription and refill; patients are told to carry it (17, p. 25)."
    }
   ],
   "discussed_in_class": true,
@@ -2689,9 +2706,9 @@ const READINGS = [
   "title": "Tegretol (carbamazepine USP) Tablets and Suspension; Tegretol-XR (carbamazepine extended-release tablets) — Prescribing Information",
   "source": "Novartis Pharmaceuticals Corporation prescribing information with Medication Guide; dated 7/2026 (end of prescribing information, p. 19; Medication Guide \"Revised: 7/2026\", p. 25); Reference ID: 5835028. Sections are unnumbered; page numbers are PDF pages.",
   "file": "Tegretol/Tegretol-XR (carbamazepine) prescribing information, 7/2026 (Canvas: pharmacogenomics resources)",
-  "lecture": "Tue 10/27 (Pharmacogenomics Resources): the label for the carbamazepine group in the in-class worksheet on the FDA Table of Pharmacogenomic Biomarkers in Drug Labeling. In class the label date was read out as 2017; the file provided is dated 7/2026 (pp. 19, 25). The transcript provided ends during the abacavir discussion, after the carbamazepine gene, variants and reaction were covered.",
+  "lecture": "Tue 10/27 (Pharmacogenomics Resources): the label for the carbamazepine group in the in-class worksheet on the FDA Table of Pharmacogenomic Biomarkers in Drug Labeling. In class the label date was read out as 2017; the file provided is dated 7/2026 (pp. 19, 25). She covered worksheet items 1-3 for carbamazepine (two genes and variants, skin reaction, patient not tumor); the recording ends before items 4-8 were worked aloud.",
   "kind": "guideline",
-  "about": "The Tegretol prescribing information describes carbamazepine, an anticonvulsant and specific analgesic for trigeminal neuralgia, indicated for partial seizures with complex symptomatology, generalized tonic-clonic seizures and mixed seizure patterns, and for the pain of true trigeminal neuralgia (Description, p. 2; Indications and Usage, pp. 3–4). Its boxed warning, headed SERIOUS DERMATOLOGIC REACTIONS AND HLA-B*1502 ALLELE, states that TEN and SJS are estimated to occur in 1 to 6 per 10,000 new users in countries with mainly Caucasian populations, that the risk in some Asian countries is about 10 times higher, and that patients with ancestry in genetically at-risk populations should be screened for HLA-B*1502 prior to initiating treatment (p. 1). The Warnings subsection SJS/TEN and HLA-B*1502 Allele gives the allele's prevalence (greater than 15% in Hong Kong, Thailand, Malaysia and parts of the Philippines; about 10% in Taiwan; 4% in North China; 2% to 4% in South Asians; less than 1% in Japan and Korea) and states that Tegretol should not be used in patients positive for HLA-B*1502 unless the benefits clearly outweigh the risks (p. 4). A second subsection, Hypersensitivity Reactions and HLA-A*3101 Allele, reports a moderate association between HLA-A*3101 and hypersensitivity reactions (SJS/TEN, maculopapular eruptions and DRESS) in patients of European, Korean and Japanese ancestry, and says risks and benefits should be weighed in patients known to be positive (p. 5). Under Precautions, Laboratory Tests, high-resolution 'HLA-B*1502 typing' is recommended for genetically at-risk patients; the test is positive if either one or two HLA-B*1502 alleles are detected (p. 10).",
+  "about": "This reading is the FDA prescribing information (the drug label) for Tegretol, carbamazepine, an anti-seizure medicine; its boxed warning says that people who carry the HLA-B*1502 gene variant, found almost only in people of Asian ancestry, have a much higher risk of the severe skin reactions Stevens-Johnson syndrome and toxic epidermal necrolysis, and a second section adds a second gene variant, HLA-A*3101. It matters for Exam 4 because it is one of the three labels on Dr. Smith's Pharmacogenomics Questions worksheet (items 1-8), and her point was that carbamazepine and abacavir share the HLA-B gene but carry different variants, with the carbamazepine reaction in the skin and the abacavir reaction in multiple organs. Carbamazepine is an anticonvulsant and specific analgesic for trigeminal neuralgia, indicated for partial seizures with complex symptomatology, generalized tonic-clonic seizures and mixed seizure patterns, and for the pain of true trigeminal neuralgia (Description, p. 2; Indications and Usage, pp. 3-4). The boxed warning, SERIOUS DERMATOLOGIC REACTIONS AND HLA-B*1502 ALLELE, states that TEN and SJS occur in 1 to 6 per 10,000 new users in countries with mainly Caucasian populations, that the risk in some Asian countries is about 10 times higher, and that patients with ancestry in genetically at-risk populations should be screened for HLA-B*1502 before starting (p. 1). The Warnings subsection SJS/TEN and HLA-B*1502 Allele gives the allele's prevalence by region and says Tegretol should not be used in patients positive for HLA-B*1502 unless the benefits clearly outweigh the risks (p. 4). The subsection Hypersensitivity Reactions and HLA-A*3101 Allele reports a moderate association between HLA-A*3101 and hypersensitivity reactions (SJS/TEN, maculopapular eruptions and DRESS) in patients of European, Korean and Japanese ancestry (p. 5). Under Precautions, Laboratory Tests, high-resolution 'HLA-B*1502 typing' is recommended for genetically at-risk patients (p. 10).",
   "sections": [
    "Boxed Warning (Serious Dermatologic Reactions and HLA-B*1502 Allele; Aplastic Anemia and Agranulocytosis)",
    "Description",
@@ -2757,54 +2774,55 @@ const READINGS = [
    }
   ],
   "read_for": [
-   "Boxed Warning (p. 1): SJS/TEN in 1 to 6 per 10,000 new users in countries with mainly Caucasian populations, about 10 times higher in some Asian countries; HLA-B*1502 is found almost exclusively in patients with ancestry across broad areas of Asia; screen patients with ancestry in genetically at-risk populations before starting; patients testing positive should not be treated unless the benefit clearly outweighs the risk.",
-   "Warnings, SJS/TEN and HLA-B*1502 Allele (p. 4): the association was found in retrospective case-control studies in patients of Chinese ancestry; prevalence by region; HLA-B*1502 is largely absent in individuals not of Asian origin (e.g., Caucasians, African-Americans, Hispanics, and Native Americans); tested patients found negative are thought to have a low risk of SJS/TEN.",
-   "Warnings (p. 5): over 90% of patients who will experience SJS/TEN have it within the first few months of treatment; HLA-B*1502 has not been found to predict maculopapular eruption or DRESS; it may also be a risk factor with other antiepileptic drugs associated with SJS/TEN, including phenytoin.",
-   "Warnings, Hypersensitivity Reactions and HLA-A*3101 Allele (p. 5): carried by more than 15% of patients of Japanese, Native American, Southern Indian and some Arabic ancestry; up to about 10% of Han Chinese, Korean, European, Latin American and other Indian ancestry; up to about 5% of African-Americans and patients of Thai, Taiwanese and Chinese (Hong Kong) ancestry.",
-   "Warnings (p. 5): HLA genotyping as a screening tool has important limitations and must never substitute for appropriate clinical vigilance and patient management.",
-   "Precautions, Laboratory Tests (p. 10): high-resolution 'HLA-B*1502 typing' is recommended for genetically at-risk patients.",
-   "Medication Guide (p. 20): some types of skin reactions are more likely in people of Asian descent, who may need a genetic blood test before taking TEGRETOL."
+   "Item 1, gene and variant: two genes; HLA-B, allele HLA-B*1502, an inherited allelic variant of the HLA-B gene (Boxed Warning, p. 1), and HLA-A, allele HLA-A*3101, an inherited allelic variant of the HLA-A gene (Warnings, p. 5). Her class answer: HLA-B 1502 ('Make sure you write this down') and HLA-A 3101.",
+   "Item 2, how the variants affect response: HLA-B*1502 has a strong association with SJS/TEN, serious and sometimes fatal skin reactions (Boxed Warning, p. 1); HLA-A*3101 has a moderate association with hypersensitivity reactions including SJS/TEN, maculopapular eruptions and DRESS (Warnings, p. 5). Her class answer: a very bad hypersensitivity reaction in the skin, which can be fatal.",
+   "Item 3, tumor or patient: the patient; the alleles are inherited variants and the label calls the test HLA genotyping (Boxed Warning, p. 1; Warnings, p. 5). Her class answer: no tumors with carbamazepine or abacavir.",
+   "Item 4, efficacy or toxicity: to prevent a toxicity, the serious dermatologic reactions SJS/TEN and other hypersensitivity reactions; the variants do not change how well the drug controls seizures (Boxed Warning, p. 1; Warnings, pp. 4-5).",
+   "Item 5, genotyping or cytology: genotyping; the label speaks of 'HLA genotyping as a screening tool' and of high-resolution HLA-B*1502 typing; no cell or tissue study (Warnings, p. 5; Precautions, Laboratory Tests, p. 10).",
+   "Item 6, does the FDA say what test: yes for HLA-B*1502, high-resolution 'HLA-B*1502 typing', positive if one or two alleles are detected and negative if none (Precautions, Laboratory Tests, p. 10); no test is named for HLA-A*3101.",
+   "Item 7, which population: patients with ancestry in genetically at-risk populations should be screened before starting; HLA-B*1502 is found almost exclusively in patients with ancestry across broad areas of Asia (greater than 15% in Hong Kong, Thailand, Malaysia and parts of the Philippines; about 10% in Taiwan; 4% in North China; 2% to 4% in South Asians; less than 1% in Japan and Korea) and is largely absent in those not of Asian origin; HLA-A*3101 is carried by more than 15% of patients of Japanese, Native American, Southern Indian and some Arabic ancestry (Boxed Warning, p. 1; Warnings, pp. 4-5).",
+   "Item 8, what the result changes: HLA-B*1502-positive patients should not be treated unless the benefit clearly outweighs the risk; tested negative patients are thought to have a low risk of SJS/TEN; in HLA-A*3101-positive patients the risks and benefits should be weighed; genotyping must never substitute for clinical vigilance, and Tegretol should be discontinued at the first sign of a rash unless the rash is clearly not drug related (Boxed Warning, p. 1; Warnings, pp. 4-5)."
   ],
   "beyond_lecture": [
-   "Which patients to screen (ancestry and prevalence figures) and the named test: the transcript provided ends before the class answers to these worksheet questions for carbamazepine; the label covers them on pp. 1, 4–5 and 10.",
-   "Boxed Warning and Warnings: aplastic anemia and agranulocytosis, with complete pretreatment hematological testing as a baseline (pp. 1–2, 5).",
+   "Boxed Warning and Warnings: aplastic anemia and agranulocytosis, with complete pretreatment hematological testing as a baseline (pp. 1-2, 5).",
+   "Warnings (p. 5): over 90% of patients who will have SJS/TEN have it within the first few months; HLA-B*1502 does not predict maculopapular eruption or DRESS and may be a risk factor with other antiepileptic drugs such as phenytoin.",
    "Warnings: fixed drug eruption and generalized bullous fixed drug eruption (p. 4); anaphylaxis and angioedema, propylene glycol toxicity, suicidal behavior and ideation (p. 6).",
-   "Clinical Pharmacology, Pharmacokinetics: CYP3A4 forms carbamazepine-10,11-epoxide; autoinduction is completed after 3 to 5 weeks; usual adult therapeutic levels are between 4 and 12 mcg/mL (p. 3).",
-   "Precautions, Drug Interactions: agents that increase or decrease carbamazepine levels and decreased levels of concomitant medications (pp. 10–11).",
-   "Dosage and Administration (p. 16) and Overdosage (p. 14)."
+   "Clinical Pharmacology, Pharmacokinetics: CYP3A4 forms carbamazepine-10,11-epoxide; autoinduction is completed after 3 to 5 weeks; usual adult therapeutic levels are 4 to 12 mcg/mL (p. 3).",
+   "Precautions, Drug Interactions: agents that raise or lower carbamazepine levels and drugs whose levels carbamazepine lowers (pp. 10-11).",
+   "Dosage and Administration (p. 16), Overdosage (p. 14) and the Medication Guide (p. 20): people of Asian descent may need a genetic blood test before taking Tegretol."
   ],
   "terms": [
    {
     "term": "HLA-B*1502",
-    "chapter_definition": "An inherited allelic variant of the HLA-B gene; found almost exclusively in patients with ancestry across broad areas of Asia (Boxed Warning, p. 1)."
+    "chapter_definition": "An inherited variant (allele) of the HLA-B gene, found almost exclusively in patients with ancestry across broad areas of Asia; it is strongly associated with SJS/TEN on carbamazepine (Boxed Warning, p. 1)."
    },
    {
     "term": "HLA-A*3101",
-    "chapter_definition": "An inherited allelic variant of the HLA-A gene, moderately associated with hypersensitivity reactions in patients using carbamazepine (Warnings, p. 5)."
+    "chapter_definition": "An inherited variant of the HLA-A gene, moderately associated with hypersensitivity reactions (SJS/TEN, maculopapular eruptions, DRESS) in patients using carbamazepine (Warnings, p. 5)."
    },
    {
     "term": "SJS/TEN",
-    "chapter_definition": "Serious and sometimes fatal dermatologic reactions, including toxic epidermal necrolysis (TEN) and Stevens-Johnson syndrome (SJS) (Warnings, p. 4)."
+    "chapter_definition": "Stevens-Johnson syndrome and toxic epidermal necrolysis, serious and sometimes fatal skin reactions; in class she described the skin burning and falling off (Boxed Warning, p. 1; Warnings, p. 4)."
    },
    {
     "term": "High-resolution 'HLA-B*1502 typing'",
-    "chapter_definition": "Recommended for genetically at-risk patients; the test is positive if either one or two HLA-B*1502 alleles are detected and negative if no HLA-B*1502 alleles are detected (Laboratory Tests, p. 10)."
+    "chapter_definition": "The genetic test the label recommends for genetically at-risk patients; positive if one or two HLA-B*1502 alleles are detected, negative if none (Precautions, Laboratory Tests, p. 10)."
+   },
+   {
+    "term": "Genetically at-risk populations",
+    "chapter_definition": "Patients with ancestry in populations in which HLA-B*1502 may be present, who should be screened before starting Tegretol (Boxed Warning, p. 1; Warnings, p. 4)."
    },
    {
     "term": "DRESS (multiorgan hypersensitivity)",
-    "chapter_definition": "Drug Reaction with Eosinophilia and Systemic Symptoms, which typically presents with fever, rash, lymphadenopathy, and/or facial swelling, in association with other organ system involvement (Warnings, p. 5)."
+    "chapter_definition": "Drug Reaction with Eosinophilia and Systemic Symptoms: fever, rash, lymphadenopathy and/or facial swelling with other organ involvement; one of the reactions linked to HLA-A*3101 (Warnings, p. 5)."
    },
    {
-    "term": "Fixed drug eruption (FDE)",
-    "chapter_definition": "Single or multiple, circumscribed patches that occur in the same location with each exposure to an offending drug (Warnings, p. 4)."
+    "term": "Maculopapular eruption (MPE)",
+    "chapter_definition": "A less severe skin rash; HLA-B*1502 has not been found to predict it, but HLA-A*3101 is associated with it (Warnings, p. 5)."
    },
    {
-    "term": "Carbamazepine-10,11-epoxide",
-    "chapter_definition": "The principal metabolite of Tegretol, which has anticonvulsant activity; CYP3A4 is the major isoform responsible for its formation (pp. 2–3)."
-   },
-   {
-    "term": "Autoinduction",
-    "chapter_definition": "Tegretol induces its own metabolism, so the half-life is variable; autoinduction is completed after 3 to 5 weeks of a fixed dosing regimen (p. 3)."
+    "term": "Anticonvulsant",
+    "chapter_definition": "A seizure medicine; Tegretol is an anticonvulsant and a specific analgesic for trigeminal neuralgia (Description, p. 2)."
    }
   ],
   "discussed_in_class": true,
@@ -2862,7 +2880,7 @@ const READINGS = [
   "file": "HERCEPTIN (trastuzumab) prescribing information, revised 05/2026 (Canvas: pharmacogenomics resources)",
   "lecture": "Tue 10/27 (Pharmacogenomics Resources): the label for the trastuzumab group in the in-class worksheet on the FDA Table of Pharmacogenomic Biomarkers in Drug Labeling; the class answers were discussed question by question.",
   "kind": "guideline",
-  "about": "The HERCEPTIN prescribing information (Revised: 05/2026) describes trastuzumab, a HER2/neu receptor antagonist indicated in adults for HER2-overexpressing breast cancer (adjuvant and metastatic) and for HER2-overexpressing metastatic gastric or gastroesophageal junction adenocarcinoma (Highlights, p. 1; sections 1.1–1.3, p. 2). Each indication says to select patients for therapy based on an FDA-authorized companion diagnostic for Herceptin, and section 2.2 says to select patients based on HER2 protein overexpression or HER2 gene amplification in tumor specimens, using FDA-authorized tests specific for breast or gastric cancers by laboratories with demonstrated proficiency (pp. 2–3). Section 12.1 states that the HER2 (or c-erbB2) proto-oncogene encodes a transmembrane receptor protein of 185 kDa, structurally related to the epidermal growth factor receptor, and that Herceptin inhibits the proliferation of human tumor cells that overexpress HER2 (p. 23). The boxed warning covers cardiomyopathy, infusion reactions, embryo-fetal toxicity and pulmonary toxicity (p. 2). The clinical studies required HER2 overexpression (3+ by IHC) or gene amplification (by FISH), and the label reports that in H0648g the beneficial treatment effects were largely limited to patients with the highest level of HER2 protein overexpression (3+) (pp. 26, 33).",
+  "about": "This reading is the FDA prescribing information (the drug label) for Herceptin, trastuzumab, an antibody drug for cancers whose tumor cells carry too much of the HER2 receptor; the label says to select patients by testing the tumor for HER2 overexpression or gene amplification with an FDA-authorized test. It matters for Exam 4 because it is one of the three labels on Dr. Smith's Pharmacogenomics Questions worksheet (items 1-8), and it is her example where the test is done on the tumor, not the patient, and is run to ensure efficacy rather than to prevent toxicity. Herceptin is a HER2/neu receptor antagonist indicated in adults for HER2-overexpressing breast cancer (adjuvant and metastatic) and for HER2-overexpressing metastatic gastric or gastroesophageal junction adenocarcinoma (Highlights, p. 1; sections 1.1-1.3, p. 2). Each indication says to select patients for therapy based on an FDA-authorized companion diagnostic for Herceptin, and section 2.2 says to select patients based on HER2 protein overexpression or HER2 gene amplification in tumor specimens, using FDA-authorized tests specific for breast or gastric cancers by laboratories with demonstrated proficiency (pp. 2-3). Section 12.1 states that the HER2 (or c-erbB2) proto-oncogene encodes a transmembrane receptor protein of 185 kDa, structurally related to the epidermal growth factor receptor, and that Herceptin inhibits the proliferation of human tumor cells that overexpress HER2 (p. 23). The boxed warning covers cardiomyopathy, infusion reactions, embryo-fetal toxicity and pulmonary toxicity (p. 2). The clinical studies required HER2 overexpression (3+ by IHC) or gene amplification (by FISH), and the benefit in H0648g was largely limited to patients with the highest level of HER2 protein overexpression (pp. 26, 33).",
   "sections": [
    "Highlights of Prescribing Information",
    "Boxed Warning: Cardiomyopathy, Infusion Reactions, Embryo-Fetal Toxicity, and Pulmonary Toxicity",
@@ -2940,55 +2958,63 @@ const READINGS = [
    }
   ],
   "read_for": [
-   "Highlights and sections 1.1–1.3 (pp. 1–2): the three indications, each with \"Select patients for therapy based on an FDA-authorized companion diagnostic for Herceptin.\"",
-   "Section 2.2, Patient Selection (p. 3): HER2 protein overexpression or HER2 gene amplification in tumor specimens; FDA-authorized tests specific for breast or gastric cancers; laboratories with demonstrated proficiency; http://www.fda.gov/CompanionDiagnostics.",
-   "Section 2.2 (p. 3): gastric cancers need tests specifically for gastric cancers because of incomplete membrane staining and more frequent heterogeneous expression of HER2; improper assay performance can lead to unreliable results.",
-   "Sections 11 and 12.1 (p. 23): humanized IgG1 kappa monoclonal antibody against the extracellular domain of HER2; the HER2 (c-erbB2) proto-oncogene encodes a 185 kDa transmembrane receptor; ADCC preferentially exerted on HER2-overexpressing cancer cells.",
-   "Section 14.1 (pp. 26–27): NSABP B31, NCCTG N9831 and HERA required HER2 overexpression (3+ by IHC) or gene amplification (by FISH); BCIRG006 required FISH+ only.",
-   "Section 14.1, Table 10 (p. 32): DFS by HER2 assay result; footnote: IHC by HercepTest, FISH by PathVysion (HER2/CEP17 ratio ≥ 2.0) at a central laboratory.",
-   "Section 14.2 (pp. 32–34): IHC scored 0, 1+, 2+ or 3+; only 2+ or 3+ tumors eligible in H0648g; benefit largely limited to 3+ (Table 12); ORR 18% for CTA 3+ versus 6% for CTA 2+ in H0649g.",
-   "Section 14.3 and Table 14 (pp. 34–37): ToGA required FISH+ or IHC 3+; exploratory overall survival by HER2 status."
+   "Item 1, gene and variant: the HER2 (or c-erbB2) proto-oncogene, which encodes a 185 kDa transmembrane receptor; the label names no variant, only HER2 protein overexpression or HER2 gene amplification in the tumor (12.1, p. 23; 2.2, p. 3). Her class answer: HER2; the label does not tell us which variant, and the 185 is the size of the protein.",
+   "Item 2, how it affects response: Herceptin inhibits the proliferation of tumor cells that overexpress HER2, and its antibody-dependent cellular cytotoxicity is preferentially exerted on HER2-overexpressing cancer cells, so a HER2-positive tumor can respond and a HER2-negative tumor lacks the target (12.1, p. 23).",
+   "Item 3, tumor or patient: the tumor; testing is on 'tumor specimens' (2.2, p. 3). Her class answer: we are not genotyping the patient, we are phenotyping the tumor; normal cells do not express HER2.",
+   "Item 4, efficacy or toxicity: efficacy; patients are selected for therapy based on an FDA-authorized companion diagnostic so the drug is given only when its target is present (1.1-1.3, p. 2; 2.2, p. 3). Her class answer: be sure the patient has the drug's target before giving an expensive drug with side effects.",
+   "Item 5, genotyping or cytology: cell studies of HER2 protein overexpression (immunohistochemistry, IHC, scored 0 to 3+) or HER2 gene amplification (FISH) in the tumor (2.2, p. 3; 14.1-14.2, pp. 26, 32-33). Her class answer: usually immunohistochemistry to look for the receptors on the tumor cells.",
+   "Item 6, does the FDA say what test: no brand is named; the label requires FDA-authorized tests specific for breast or gastric cancers, performed by laboratories with demonstrated proficiency, listed at fda.gov/CompanionDiagnostics (Highlights, p. 1; 2.2, p. 3). Her class answer: an older label named a kit; now it must be a good, specific and sensitive test.",
+   "Item 7, which population or tumor type: a tumor type, not an ethnic group; HER2-overexpressing breast cancer, adjuvant and metastatic (1.1, 1.2), and HER2-overexpressing metastatic gastric or gastroesophageal junction adenocarcinoma (1.3, p. 2). Her class answer: breast, metastatic gastrointestinal and esophageal tumors.",
+   "Item 8, what the result changes: select patients for Herceptin based on HER2 protein overexpression or gene amplification (2.2, p. 3); the result decides whether the drug is used, not its dose. Her class answer: HER2-positive, a likely candidate; HER2-negative, trastuzumab is not used."
   ],
   "beyond_lecture": [
    "Boxed Warning and 5.1 Cardiomyopathy: evaluate left ventricular function before and during treatment; risk highest with anthracycline-containing regimens (pp. 2, 5).",
-   "Sections 5.2–5.5: infusion reactions, embryo-fetal toxicity (oligohydramnios), pulmonary toxicity, exacerbation of chemotherapy-induced neutropenia (pp. 7–8).",
-   "Section 2.3, Recommended Dosage: initial 4 mg/kg then 2 mg/kg weekly, or initial 8 mg/kg then 6 mg/kg every three weeks, by indication (pp. 3–4).",
-   "Section 2.4 missed doses and 2.5 dosage modifications for adverse reactions (p. 4).",
-   "Section 6, Adverse Reactions, including the ToGA safety data (pp. 8–21).",
-   "Section 8, Use in Specific Populations: pregnancy, lactation, females and males of reproductive potential (pp. 21–23)."
+   "Sections 5.2-5.5: infusion reactions, embryo-fetal toxicity (oligohydramnios), pulmonary toxicity, exacerbation of chemotherapy-induced neutropenia (pp. 7-8).",
+   "Section 2.2, second paragraph (p. 3): gastric cancers need tests specifically for gastric cancer because of incomplete membrane staining and more heterogeneous HER2 expression; improper assay performance gives unreliable results.",
+   "Section 2.3, Recommended Dosage: initial 4 mg/kg then 2 mg/kg weekly, or initial 8 mg/kg then 6 mg/kg every three weeks, by indication (pp. 3-4); 2.4 missed doses and 2.5 dosage modifications (p. 4).",
+   "Section 14, Clinical Studies: NSABP B31, NCCTG N9831, HERA, BCIRG006, H0648g, H0649g and ToGA, including Table 10 (DFS by HER2 assay result) and the IHC 2+ versus 3+ response rates (pp. 26-37).",
+   "Section 8, Use in Specific Populations: pregnancy, lactation, females and males of reproductive potential (pp. 21-23)."
   ],
   "terms": [
    {
     "term": "HER2 (c-erbB2) proto-oncogene",
-    "chapter_definition": "Encodes a transmembrane receptor protein of 185 kDa, which is structurally related to the epidermal growth factor receptor (12.1, p. 23)."
+    "chapter_definition": "The gene that encodes the HER2 receptor, a 185 kDa protein spanning the cell membrane, structurally related to the epidermal growth factor receptor (12.1, p. 23)."
+   },
+   {
+    "term": "HER2 overexpression",
+    "chapter_definition": "A tumor making far more HER2 receptor than normal; it is the basis for selecting patients and is measured by IHC, where 3+ is the strongest positivity (2.2, p. 3; 14.2, p. 32)."
+   },
+   {
+    "term": "HER2 gene amplification",
+    "chapter_definition": "Extra copies of the HER2 gene in the tumor, measured by FISH (HER2/CEP17 ratio of 2.0 or more in the trials); the other accepted basis for selecting patients (2.2, p. 3; Table 10 footnote, p. 32)."
    },
    {
     "term": "Trastuzumab",
-    "chapter_definition": "A humanized IgG1 kappa monoclonal antibody that selectively binds with high affinity to the extracellular domain of the human epidermal growth factor receptor 2 protein, HER2 (11, p. 23)."
+    "chapter_definition": "A humanized IgG1 kappa monoclonal antibody that selectively binds with high affinity to the extracellular domain of HER2 (11, p. 23)."
    },
    {
     "term": "HER2/neu receptor antagonist",
-    "chapter_definition": "The class the Highlights give for Herceptin (Highlights, p. 1)."
+    "chapter_definition": "The drug class the Highlights give for Herceptin: it blocks the HER2 receptor (Highlights, p. 1)."
    },
    {
     "term": "FDA-authorized companion diagnostic",
-    "chapter_definition": "The basis for selecting patients for Herceptin therapy; information on FDA-authorized tests for HER2 protein overexpression and HER2 gene amplification is at http://www.fda.gov/CompanionDiagnostics (1, 2.2, pp. 2–3)."
+    "chapter_definition": "A test the FDA has authorized to identify patients for a specific drug; each Herceptin indication says to select patients with one, listed at fda.gov/CompanionDiagnostics (1, 2.2, pp. 2-3)."
    },
    {
-    "term": "HER2 protein overexpression (IHC)",
-    "chapter_definition": "Tumor specimens tested by IHC (Clinical Trial Assay, CTA) were scored as 0, 1+, 2+, or 3+, with 3+ indicating the strongest positivity (14.2, p. 32)."
+    "term": "Immunohistochemistry (IHC)",
+    "chapter_definition": "A stain for the HER2 protein on tumor tissue, scored 0, 1+, 2+ or 3+ (14.2, p. 32)."
    },
    {
-    "term": "HER2 gene amplification (FISH)",
-    "chapter_definition": "FISH by PathVysion (HER2/CEP17 ratio ≥ 2.0) as performed at a central laboratory (Table 10 footnote, p. 32)."
+    "term": "Fluorescence in situ hybridization (FISH)",
+    "chapter_definition": "A test for HER2 gene amplification in tumor cells; trials required 3+ by IHC or gene amplification by FISH (14.1, p. 26)."
    },
    {
     "term": "Antibody-dependent cellular cytotoxicity (ADCC)",
-    "chapter_definition": "Herceptin is a mediator of ADCC, which in vitro is preferentially exerted on HER2-overexpressing cancer cells (12.1, p. 23)."
+    "chapter_definition": "Immune-cell killing of a cell coated with antibody; Herceptin-mediated ADCC is preferentially exerted on HER2-overexpressing cancer cells (12.1, p. 23)."
    },
    {
     "term": "Cardiomyopathy",
-    "chapter_definition": "Herceptin administration can result in sub-clinical and clinical cardiac failure; incidence and severity were highest with anthracycline-containing chemotherapy regimens (Boxed Warning, p. 2)."
+    "chapter_definition": "Heart muscle damage; Herceptin can cause sub-clinical and clinical cardiac failure, most often with anthracycline chemotherapy (Boxed Warning, p. 2)."
    }
   ],
   "discussed_in_class": true,
@@ -3054,7 +3080,7 @@ const READINGS = [
   "file": "CPIC warfarin guideline, 2017 update (Canvas: pharmacogenomics resources)",
   "lecture": "Tue 10/27 (Pharmacogenomics Resources): walked through in class as the example CPIC guideline. She said warfarin's guideline had just been updated, but the newest version did not open from Canvas, so the class read this 2017 update.",
   "kind": "guideline",
-  "about": "This CPIC update to the 2011 guideline for CYP2C9 and VKORC1 genotypes and warfarin dosing presents evidence for CYP2C9, VKORC1, CYP4F2 and rs12777823 genotype-guided warfarin dosing to achieve a target INR of 2–3 when clinical genotype results are available, and adds recommendations for adult and pediatric patients specific to continental ancestry (p. 397). It states that common variants in CYP2C9, VKORC1, CYP4F2 and the CYP2C cluster, plus known nongenetic factors, account for 50% of warfarin dose variability, and that stable doses to achieve an INR of 2–3 range from 1–20 mg/day (pp. 397–398). Figure 1 shows that S-warfarin, 3–5 times more potent than R-warfarin, is metabolized predominantly via CYP2C9; that warfarin inhibits its molecular target VKORC1, limiting reduced vitamin K; and that CYP4F2 removes vitamin K from the vitamin K cycle (p. 398). For non-African ancestry it recommends calculating the dose with a published pharmacogenetic algorithm using VKORC1-1639G>A and CYP2C9*2 and *3 (STRONG), decreasing the calculated dose by 15–30% per CYP2C9*5, *6, *8 or *11 allele (OPTIONAL) and increasing it by 5–10% if CYP4F2*3 is detected (OPTIONAL); for African ancestry it says to dose clinically if CYP2C9*5, *6, *8 and *11 are not available, and otherwise to calculate, reduce by 15–30% for those alleles, and reduce by 10–25% in African Americans with rs12777823 A/G or A/A (MODERATE) (p. 402). It also covers pediatric patients of European ancestry, potential benefits and risks, and caveats, including that pharmacogenetic-guided dosing does not alter the requirements for regular INR monitoring (pp. 402–403).",
+  "about": "This reading is the 2017 CPIC guideline that tells a clinician how to use a patient's CYP2C9, VKORC1, CYP4F2 and rs12777823 genotype results to choose a warfarin dose aimed at an INR of 2-3. It matters for Exam 4 because Dr. Smith listed its two figures: Figure 1 (warfarin's target, vitamin K's role, and how warfarin and vitamin K are metabolized) and Figure 2 (which variants matter, which populations carry them most, and how and why to adjust the dose for each). The guideline updates the 2011 CPIC guideline for CYP2C9 and VKORC1 and adds recommendations for adults and children specific to continental ancestry (p. 397). It states that common variants in CYP2C9, VKORC1, CYP4F2 and the CYP2C cluster, plus known nongenetic factors, account for 50% of warfarin dose variability, and that stable doses to achieve an INR of 2-3 range from 1-20 mg/day (pp. 397-398). Figure 1 shows that S-warfarin, 3-5 times more potent than R-warfarin, is metabolized predominantly via CYP2C9; that warfarin inhibits its molecular target VKORC1, limiting reduced vitamin K; and that CYP4F2 removes vitamin K from the vitamin K cycle (p. 398). For non-African ancestry it recommends calculating the dose with a published pharmacogenetic algorithm using VKORC1-1639G>A and CYP2C9*2 and *3 (STRONG), decreasing the calculated dose by 15-30% per CYP2C9*5, *6, *8 or *11 allele (OPTIONAL) and increasing it by 5-10% if CYP4F2*3 is detected (OPTIONAL); for African ancestry it says to dose clinically if CYP2C9*5, *6, *8 and *11 are not available, and otherwise to calculate, reduce by 15-30% for those alleles, and reduce by 10-25% in African Americans with rs12777823 A/G or A/A (MODERATE) (p. 402). It also covers pediatric patients of European ancestry, potential benefits and risks, and caveats, including that pharmacogenetic-guided dosing does not alter the requirements for regular INR monitoring (pp. 402-403).",
   "sections": [
    "Summary (unheaded)",
    "Focused Literature Review",
@@ -3208,69 +3234,94 @@ const READINGS = [
     "chapter_location": "Figure 1 (p. 398); gene sections (pp. 398–400); Figure 2 (p. 401)",
     "lecture_evidence": "you should know which genetic variants we're concerned about and in which populations",
     "date": "10/28"
+   },
+   {
+    "point": "Figure 1, vitamin K's role: active (reduced) vitamin K is needed for the final production of clotting factors, which is why blocking VKORC1 anticoagulates",
+    "chapter_location": "Figure 1 legend (p. 398): VKORC1 inhibition limits reduced vitamin K, so GGCX makes fewer functionally active clotting factors",
+    "lecture_evidence": "Remember you need active vitamin K to help with the final production of our clotting factors, OK?",
+    "date": "10/27"
+   },
+   {
+    "point": "Why CYP4F2*3 raises the dose: less vitamin K is removed, and vitamin K works against warfarin",
+    "chapter_location": "CYP4F2 and warfarin (p. 399): CYP4F2 removes vitamin K from the vitamin K cycle and limits excessive accumulation of vitamin K; CYP4F2*3 carriers need 8-11% higher doses",
+    "lecture_evidence": "Vitamin K is like the antidote for warfarin, right? So having more vitamin K. Is gonna make it likely that you're going to be producing more coagulation factors, right?",
+    "date": "10/27"
+   },
+   {
+    "point": "A CYP2C9 decreased-function allele and CYP4F2*3 push the dose in opposite directions; she did not teach a combined answer, only each variant on its own",
+    "chapter_location": "Figure 2 (p. 401): CYP2C9*2/*3 lower the calculated dose; CYP4F2*3 adds 5-10%",
+    "lecture_evidence": "Remember, those are going to be opposite effects on the dose.",
+    "date": "10/28"
    }
   ],
   "read_for": [
-   "Summary (p. 397): the update covers CYP2C9, VKORC1, CYP4F2 and rs12777823 genotype-guided dosing to a target INR of 2–3, with ancestry-specific adult and pediatric recommendations.",
-   "Figure 1 (p. 398): warfarin is a racemic R/S mixture; S-warfarin is 3–5 times more potent than R-warfarin and is metabolized predominantly to 7- and 6-hydroxyl metabolites via CYP2C9; both enantiomers inhibit VKORC1, which converts vitamin K epoxide to reduced vitamin K (the rate-limiting step in vitamin K recycling, p. 399); gamma-glutamyl carboxylase (GGCX) uses reduced vitamin K to carboxylate hypofunctional clotting factors into functional ones; calumenin (CALU) can inhibit GGCX; CYP4F2 converts reduced vitamin K to hydroxyvitamin K1, removing it from the cycle.",
-   "CYP2C9 and warfarin (p. 398): CYP2C9*2 and *3 impair S-warfarin metabolism by 30–40% and 80–90%; carriers have greater bleeding risk, need lower doses and take more time to reach a stable INR.",
-   "VKORC1 and warfarin (p. 399): c.-1639G>A (rs9923231), an upstream variant on a haplotype that affects VKORC1 protein expression; one or two -1639A alleles require progressively lower doses.",
-   "CYP4F2 and warfarin and CYP2C rs12777823 and warfarin (p. 399): CYP4F2*3 carriers need 8–11% higher doses; rs12777823 heterozygotes or homozygotes (A allele) among African Americans need 7 or 9 mg/week less.",
-   "Who carries each Figure 2 variant (pp. 398–401): CYP2C9*2 and *3 are the most common decreased-function alleles in European ancestry, *2 virtually absent in Asians; CYP2C9*5, *6, *8, *11 are most frequent in African ancestry; the -1639A frequency varies by ancestry and largely explains average dose differences between whites, blacks and Asians; the CYP4F2*3 effect is confirmed in European and Asian, not African, ancestry; the rs12777823 dose association is seen only in African Americans; 45–50% of self-reported African ancestry carry *5, *6, *8, *11 or rs12777823 (Figure 2 footnote c).",
-   "CYP2C rs12777823 and warfarin (p. 399): a SNP in the CYP2C cluster near CYP2C18 on chromosome 10, associated with altered warfarin clearance independent of CYP2C9*2 and *3; likely not causal but inherited with other variant(s) on a haplotype.",
-   "Genetic test interpretation (p. 399): most FDA-approved CYP2C9 tests include only *2 and *3, which is not as informative for African ancestry populations.",
-   "Figure 2 and footnotes (p. 401): the adult dosing algorithm; consider an alternative agent with CYP2C9 poor metabolism genotypes, or with both increased sensitivity (VKORC1 A/G or A/A) and CYP2C9 poor metabolism.",
-   "Non-African and African ancestry recommendations (p. 402): STRONG, MODERATE and OPTIONAL steps, including the 15–30%, 20–40%, 5–10% and 10–25% adjustments.",
-   "Text Box 1 (p. 401): the clinical and genetic variables used in the Gage or IWPC algorithms."
+   "1. Figure 1, the target (p. 398; VKORC1 and warfarin, p. 399): warfarin, both R and S forms, inhibits VKORC1, the vitamin K epoxide reductase, which converts vitamin K epoxide back to reduced vitamin K, the rate-limiting step in vitamin K recycling.",
+   "2. Figure 1, vitamin K's role (legend, p. 398): reduced vitamin K is what gamma-glutamyl carboxylase (GGCX) uses to carboxylate clotting factors into functionally active ones; by limiting reduced vitamin K, warfarin decreases the formation of active clotting factors. Calumenin (CALU) can bind and inhibit GGCX.",
+   "3. Figure 1, how warfarin is metabolized (legend, p. 398): warfarin is given as a racemic mixture; S-warfarin is 3-5 times more potent than R-warfarin and is metabolized predominantly to 7- and 6-hydroxyl metabolites via CYP2C9. The figure does not name R-warfarin's enzymes.",
+   "4. Figure 1, how vitamin K is metabolized (legend, p. 398; CYP4F2 and warfarin, p. 399): CYP4F2 converts reduced vitamin K to hydroxyvitamin K1, removing it from the vitamin K cycle, so it is VKORC1's counterpart in limiting vitamin K.",
+   "5. Figure 2 variant VKORC1 c.-1639G>A (rs9923231) (p. 399): a variant upstream of the gene on a haplotype that affects VKORC1 expression; one or two -1639A alleles require progressively lower doses than G/G. Its frequency differs by ancestry and largely explains the average dose differences between whites, blacks and Asians. It goes into the algorithm calculation on both branches (STRONG).",
+   "6. Figure 2 variants CYP2C9*2 and *3 (p. 398; p. 400): the two most common decreased-function alleles in European ancestry; they impair S-warfarin metabolism by 30-40% and 80-90%, so carriers bleed more, need lower doses and take longer to reach a stable INR. *2 is virtually absent in Asians. Both enter the algorithm calculation; footnote e says to consider an alternative agent for poor-metabolism genotypes such as *2/*3 or *3/*3.",
+   "7. Figure 2 variants CYP2C9*5, *6, *8 and *11 (pp. 398-399, 402): decreased-function alleles found with the highest frequency in African ancestry, where together they are more common than *2 and *3; 45-50% of self-reported African ancestry carry one of them or rs12777823 (footnote c). Decrease the calculated dose by 15-30% per variant allele (20-40% if homozygous) or consider an alternative. On the African branch they must be tested first; if not, dose clinically.",
+   "8. Figure 2 variant CYP4F2*3 (c.1297G>A, p.Val433Met, rs2108622) (pp. 399, 402): carriers need 8-11% higher doses in meta-analyses; the recommendation is to increase the dose by 5-10% (OPTIONAL), on the non-African branch only, because the effect is confirmed in European and Asian but not African ancestry, so no CYP4F2 recommendation is made in blacks.",
+   "9. Figure 2 variant rs12777823 (pp. 399, 402): a SNP in the CYP2C cluster near CYP2C18 on chromosome 10, associated with altered warfarin clearance independent of CYP2C9*2 and *3; the dose association is seen only in African Americans. Reduce the dose 10-25% with A/G or A/A (MODERATE); do not consider it in non-African Americans even if available.",
+   "10. Figure 2, the shape of the algorithm (p. 401): no VKORC1 and CYP2C9 genotype, dose clinically (without genetic information); genotype available, ask the patient's self-identified ancestry and follow that branch; calculate with a published algorithm (Gage or IWPC, Text Box 1), then adjust for the extra variants above. Most algorithms are built for a target INR of 2-3 (footnote d)."
   ],
   "beyond_lecture": [
-   "Linking genetic variability to variability in drug-related phenotypes (p. 400): EU-PACT, COAG and GIFT trial results, and the recommendation against pharmacogenetic dosing in blacks when only CYP2C9*2 and *3 results are available.",
-   "Pharmacogenetics-informed loading dose (p. 402): the EU-PACT loading dose algorithm, graded OPTIONAL.",
-   "Recommendations for pediatric patients and Figure 3 (pp. 402–403).",
+   "Linking genetic variability to variability in drug-related phenotypes (p. 400): the EU-PACT, COAG and GIFT trial results, and why pharmacogenetic dosing is not recommended in blacks when only CYP2C9*2 and *3 results are available.",
+   "Pharmacogenetics-informed loading dose (p. 402): the EU-PACT loading dose algorithm, graded OPTIONAL and not validated in African ancestry.",
+   "Recommendations for pediatric patients and Figure 3 (pp. 402-403): children of European ancestry with CYP2C9*2/*3 and VKORC1 results.",
    "Incidental findings (p. 400): homozygosity for rare VKORC1 coding mutations causes VKCFD2, a rare bleeding disorder.",
-   "Potential Benefits and Risks for the Patient (p. 403): false security and inadequate INR monitoring, risk with *2/*3-only panels in African ancestry, cost and insurance coverage.",
-   "Caveats (p. 403): little benefit from testing in patients already on long-term stable doses; the greatest potential benefit is early in therapy."
+   "Potential Benefits and Risks for the Patient (p. 403): false security and inadequate INR monitoring, risk of *2/*3-only panels in African ancestry, cost and insurance coverage.",
+   "Caveats (p. 403): little benefit from testing patients already on long-term stable doses; the greatest potential benefit is early in therapy."
   ],
   "terms": [
    {
     "term": "CYP2C9",
-    "chapter_definition": "A hepatic drug-metabolizing enzyme in the cytochrome P450 superfamily and the primary metabolizing enzyme of S-warfarin; it has over 60 known variant alleles (p. 398)."
+    "chapter_definition": "A liver drug-metabolizing enzyme of the cytochrome P450 family and the main enzyme that clears S-warfarin; it has over 60 known variant alleles, 18 of them linked to decreased activity (p. 398)."
    },
    {
     "term": "CYP2C9*2 and *3",
-    "chapter_definition": "The two most common decreased function alleles among individuals of European ancestry: *2 (c.430C>T; p.Arg144Cys; rs1799853) and *3 (c.1075A>C; p.Ile359Leu; rs1057910) (p. 398)."
+    "chapter_definition": "The two most common decreased-function alleles in people of European ancestry; *2 (p.Arg144Cys) and *3 (p.Ile359Leu) impair S-warfarin metabolism by 30-40% and 80-90% (p. 398)."
    },
    {
     "term": "CYP2C9*5, *6, *8 and *11",
-    "chapter_definition": "Alleles associated with decreased CYP2C9 function, found with the highest frequency among those of African ancestry and collectively more common than *2 and *3 in that population (pp. 398–399)."
+    "chapter_definition": "Other decreased-function alleles, found most often in people of African ancestry, where together they outnumber *2 and *3 (pp. 398-399)."
    },
    {
     "term": "VKORC1",
-    "chapter_definition": "Encodes the vitamin K epoxide reductase protein, the target enzyme of warfarin; it catalyzes the conversion of vitamin K-epoxide to vitamin K, the rate-limiting step in vitamin K recycling (p. 399)."
+    "chapter_definition": "The gene for vitamin K epoxide reductase, warfarin's target enzyme; it turns vitamin K epoxide back into vitamin K, the rate-limiting step in vitamin K recycling (p. 399)."
    },
    {
     "term": "VKORC1 c.-1639G>A (rs9923231)",
-    "chapter_definition": "A common variant upstream of VKORC1 significantly associated with warfarin sensitivity; patients with one or two -1639A require progressively lower doses than -1639G/G homozygotes (p. 399)."
+    "chapter_definition": "A common variant upstream of VKORC1 that increases warfarin sensitivity; patients with one or two -1639A alleles need progressively lower doses than G/G patients (p. 399)."
    },
    {
-    "term": "CYP4F2*3 (c.1297G>A; p.Val433Met; rs2108622)",
-    "chapter_definition": "A nonsynonymous CYP4F2 variant; meta-analyses suggest 8–11% higher warfarin doses in A allele carriers (p. 399)."
+    "term": "CYP4F2",
+    "chapter_definition": "The main liver vitamin K oxidase; it metabolizes vitamin K to hydroxy-vitamin K1, removing it from the vitamin K cycle, and so counterbalances VKORC1 (p. 399)."
+   },
+   {
+    "term": "CYP4F2*3 (rs2108622)",
+    "chapter_definition": "A variant that changes an amino acid (Val433Met) and lowers CYP4F2 activity; carriers need 8-11% higher warfarin doses (p. 399)."
    },
    {
     "term": "rs12777823",
-    "chapter_definition": "A SNP in the CYP2C cluster near the CYP2C18 gene on chromosome 10, associated with warfarin dose through alterations in warfarin clearance, independent of CYP2C9*2 and *3; an association has only been detected among African Americans (p. 399)."
+    "chapter_definition": "A SNP in the CYP2C gene cluster near CYP2C18 on chromosome 10; it is linked to altered warfarin clearance independent of CYP2C9*2 and *3, but only in African Americans, and is probably a marker inherited with the real cause (p. 399)."
    },
    {
     "term": "Pharmacogenetic dosing algorithm (Gage, IWPC)",
-    "chapter_definition": "Algorithms that compute the anticipated stable daily warfarin dose to one decimal from genetic and clinical information; the two were created using more than 5,000 subjects (pp. 400–401)."
-   },
-   {
-    "term": "Strength of recommendation",
-    "chapter_definition": "A three-tiered rating system in which ratings of strong, moderate, and optional are applied based on the evidence reviewed (p. 400)."
+    "chapter_definition": "A formula that combines genetic and clinical information (age, sex, race, weight, height, smoking, indication, target INR, interacting drugs) to compute the expected stable daily warfarin dose to one decimal (pp. 400-401; Text Box 1)."
    },
    {
     "term": "Dose clinically",
-    "chapter_definition": "To dose without genetic information, which may include use of a clinical dosing algorithm or standard dose approach (Figure 2, footnote a, p. 401)."
+    "chapter_definition": "To dose without genetic information, using a clinical dosing algorithm or a standard starting dose (Figure 2, footnote a, p. 401)."
+   },
+   {
+    "term": "STRONG, MODERATE, OPTIONAL",
+    "chapter_definition": "CPIC's three-tiered rating of how strongly the evidence supports each recommendation (p. 400)."
+   },
+   {
+    "term": "INR",
+    "chapter_definition": "International normalized ratio, the blood test warfarin is dosed to; the guideline's algorithms target an INR of 2-3 and genotype-guided dosing does not change the need for regular INR monitoring (pp. 397, 403)."
    }
   ],
   "discussed_in_class": true,
@@ -3349,7 +3400,7 @@ const READINGS = [
   "file": "Naranjo Algorithm, one-page questionnaire (Canvas: adverse drug events module)",
   "lecture": "Wed 10/28 (Adverse Drug Events): introduced as a tool to determine causality of adverse drug reactions; after the break she had the class pull it up from Canvas, look at the 10 questions for timing, and went through the scoring and the time-related questions.",
   "kind": "guideline",
-  "about": "The Naranjo Algorithm is a one-page questionnaire 'to assess the adverse drug reaction': the user answers ten questions and gives the pertinent score for each. Each question is answered Yes, No or Do not know, and every 'Do not know' answer scores 0. The questions cover previous conclusive reports on the reaction, whether the event appeared after the suspected drug was given, improvement on discontinuation or a specific antagonist, reappearance on re-administration, alternative causes/drugs, reappearance with a placebo, toxic drug concentrations in blood or other fluids, dose-related severity, a similar reaction on previous exposure, and confirmation by objective evidence. Points range from +2 to -1 per answer; questions 2 and 4 give +2 for yes and -1 for no, questions 5 and 6 give -1 for yes and +2 or +1 for no, and the rest give +1 for yes and 0 for no. The total score is categorized as 9 = definite, 5-8 = probable, 1-4 = possible, 0 = doubtful.",
+  "about": "The Naranjo Algorithm is a one-page, ten-question scoring sheet that a clinician fills in to judge how likely it is that a particular drug caused a patient's adverse reaction. It matters for Exam 4 because Dr. Smith's study list says 'Be able to use the Naranjo algorithm': answer each question Yes, No or Do not know, add the points, and read off the band (definite, probable, possible or doubtful). The page's instruction reads 'To assess the adverse drug reaction, please answer the following questionnaire and give the pertinent score', and every 'Do not know' answer scores 0. The questions cover previous conclusive reports, whether the event appeared after the drug, improvement on discontinuation or with a specific antagonist, reappearance on re-administration, alternative causes or drugs, reappearance with a placebo, toxic drug concentrations, dose-related severity, a similar reaction on previous exposure, and confirmation by objective evidence. Points range from +2 to -1 per answer: questions 2 and 4 give +2 for Yes and -1 for No, questions 5 and 6 give -1 for Yes and +2 or +1 for No, and the rest give +1 for Yes and 0 for No. The total is categorized as 9 = definite, 5-8 = probable, 1-4 = possible, 0 = doubtful.",
   "sections": [
    "Title: Naranjo Algorithm",
    "Instruction: To assess the adverse drug reaction, please answer the following questionnaire and give the pertinent score.",
@@ -3469,70 +3520,72 @@ const READINGS = [
    }
   ],
   "read_for": [
-   "Instruction line: the questionnaire is used 'to assess the adverse drug reaction' by answering each question and giving the pertinent score.",
-   "Column headings Yes, No and Do not know: 'Do not know' scores 0 on all ten questions.",
-   "Question 2: Did the adverse event appear after the suspected drug was administered? Yes +2, No -1, Do not know 0.",
-   "Question 3: Did the adverse reaction improve when the drug was discontinued or a specific antagonist was administered? Yes +1, No 0, Do not know 0.",
-   "Question 4: Did the adverse reaction reappear when the drug was re-administered? Yes +2, No -1, Do not know 0.",
-   "Question 6: Did the reaction reappear when a placebo was given? Yes -1, No +1, Do not know 0.",
-   "Question 1: Are there previous conclusive reports on this reaction? Yes +1, No 0, Do not know 0.",
-   "Question 5: Are there alternative causes/drugs that could on their own have caused the reaction? Yes -1, No +2, Do not know 0.",
-   "Total Score line: 9=definite; 5-8=probable; 1-4=possible; 0=doubtful (the page says 'doubtful' for 0; the lecture said 'remote')."
+   "1. The instruction line and the three answer columns: answer every question Yes, No or Do not know and write the points in the Score column; Do not know is 0 on all ten questions.",
+   "2. Question 1, Are there previous conclusive reports on this reaction? Yes +1, No 0, Do not know 0. Answered from the literature; she said to do your due diligence and dive into the literature.",
+   "3. Question 2, Did the adverse event appear after the suspected drug was administered? Yes +2, No -1, Do not know 0. A timing question she named.",
+   "4. Question 3, Did the adverse reaction improve when the drug was discontinued or a specific antagonist was administered? Yes +1, No 0, Do not know 0. A timing question she named.",
+   "5. Question 4, Did the adverse reaction reappear when the drug was re-administered? Yes +2, No -1, Do not know 0. A timing question she named ('definitely time').",
+   "6. Question 5, Are there alternative causes/drugs that could on their own have caused the reaction? Yes -1, No +2, Do not know 0. The scoring is reversed because another explanation points away from the drug.",
+   "7. Question 6, Did the reaction reappear when a placebo was given? Yes -1, No +1, Do not know 0. She counts it as time-related.",
+   "8. Questions 7 to 10, each Yes +1, No 0, Do not know 0: 7, was the drug detected in the blood or other fluids in concentrations known to be toxic; 8, was the reaction more severe when the dose was increased, or less severe when the dose was decreased; 9, did the patient have a similar reaction to the same or similar drugs in any previous exposure; 10, was the adverse event confirmed by any objective evidence.",
+   "9. The Total Score bands: 9 = definite; 5-8 = probable; 1-4 = possible; 0 = doubtful. She named the bands definite, probable, possible or remote; the page prints 'doubtful' for 0.",
+   "10. Scoring in practice: the four answers that lose a point are No on question 2, No on question 4, Yes on question 5 and Yes on question 6; the two +2 answers are Yes on questions 2 and 4 (and No on question 5). Totals can exceed 9 or fall below 0, for which the page prints no band."
   ],
   "beyond_lecture": [
-   "Question 5 (alternative causes/drugs that could on their own have caused the reaction; yes -1, no +2) was not read out in class, although she spoke about telling a drug cause apart from a new or changed disease state.",
-   "Question 7: Was the drug detected in the blood or other fluids in concentrations known to be toxic? Yes +1, No 0, Do not know 0. Not discussed in class.",
-   "Question 8: Was the reaction more severe when the dose was increased, or less severe when the dose was decreased? Yes +1, No 0, Do not know 0. Not discussed in class.",
-   "Question 9: Did the patient have a similar reaction to the same or similar drugs in any previous exposure? Yes +1, No 0, Do not know 0. Not discussed in class.",
-   "Question 10: Was the adverse event confirmed by any objective evidence? Yes +1, No 0, Do not know 0. Not discussed in class.",
-   "The score cut-offs (9, 5-8, 1-4, 0) were not stated in class; she named the categories only.",
-   "The 'Do not know' column (0 points on every question) was not mentioned in class.",
-   "The printed Total Score line gives categories only for 9, 5-8, 1-4 and 0; it does not print a category for totals above 9 or below 0, which the point values allow."
+   "Questions 7 to 10 (toxic drug level, dose-response, similar reaction on previous exposure, objective evidence) were not read out in class; each scores Yes +1, No 0.",
+   "Question 5 (alternative causes or drugs; Yes -1, No +2) was not read out, although she spoke about telling a drug cause apart from a new or changed disease state.",
+   "The numeric cut-offs (9, 5-8, 1-4, 0) were not stated aloud; she named the categories only, and said 'remote' where the page prints 'doubtful'.",
+   "The 'Do not know' column (0 points on every question) was not mentioned; she said the questions are scored yes or no.",
+   "The page prints no category for totals above 9 or below 0, which the point values allow."
   ],
   "terms": [
    {
     "term": "Naranjo Algorithm",
-    "chapter_definition": "A questionnaire 'to assess the adverse drug reaction': answer the questions and give the pertinent score."
+    "chapter_definition": "A ten-question questionnaire 'to assess the adverse drug reaction': the user answers each question and gives the pertinent score, then totals the points."
    },
    {
-    "term": "Score columns",
-    "chapter_definition": "Each question is scored under Yes, No or Do not know; the points are entered in the Score column and summed in the Total Score box."
+    "term": "Causality",
+    "chapter_definition": "What the total score expresses: how likely it is that the suspected drug caused the reaction, from definite down to doubtful (Total Score line)."
    },
    {
     "term": "Do not know",
-    "chapter_definition": "An answer column worth 0 points on every one of the ten questions."
+    "chapter_definition": "The third answer column, worth 0 points on every one of the ten questions, so missing information neither helps nor hurts the case against the drug."
    },
    {
     "term": "Negative points",
-    "chapter_definition": "No scores -1 on questions 2 and 4; Yes scores -1 on questions 5 and 6."
-   },
-   {
-    "term": "Definite",
-    "chapter_definition": "Total Score: 9=definite."
-   },
-   {
-    "term": "Probable",
-    "chapter_definition": "Total Score: 5-8=probable."
-   },
-   {
-    "term": "Possible",
-    "chapter_definition": "Total Score: 1-4=possible."
-   },
-   {
-    "term": "Doubtful",
-    "chapter_definition": "Total Score: 0=doubtful."
+    "chapter_definition": "Answers that count against the drug: No on questions 2 and 4 scores -1; Yes on questions 5 and 6 scores -1."
    },
    {
     "term": "Specific antagonist",
-    "chapter_definition": "Question 3: Did the adverse reaction improve when the drug was discontinued or a specific antagonist was administered? (Yes +1)."
+    "chapter_definition": "A drug that reverses the suspected drug's effect; question 3 gives +1 if the reaction improved when the drug was stopped or a specific antagonist was given."
    },
    {
-    "term": "Placebo (question 6)",
-    "chapter_definition": "Did the reaction reappear when a placebo was given? Yes -1, No +1, Do not know 0."
+    "term": "Re-administered (rechallenge)",
+    "chapter_definition": "Giving the suspected drug again; question 4 gives +2 if the reaction reappeared and -1 if it did not."
    },
    {
-    "term": "Objective evidence (question 10)",
-    "chapter_definition": "Was the adverse event confirmed by any objective evidence? Yes +1, No 0, Do not know 0."
+    "term": "Placebo",
+    "chapter_definition": "An inactive substitute; question 6 gives -1 if the reaction reappeared when a placebo was given and +1 if it did not."
+   },
+   {
+    "term": "Objective evidence",
+    "chapter_definition": "Measurable confirmation of the event, such as a test result; question 10 gives +1 if the adverse event was confirmed by any objective evidence."
+   },
+   {
+    "term": "Definite",
+    "chapter_definition": "Total Score 9."
+   },
+   {
+    "term": "Probable",
+    "chapter_definition": "Total Score 5-8."
+   },
+   {
+    "term": "Possible",
+    "chapter_definition": "Total Score 1-4."
+   },
+   {
+    "term": "Doubtful",
+    "chapter_definition": "Total Score 0 (her word for this band: remote)."
    }
   ],
   "discussed_in_class": true,

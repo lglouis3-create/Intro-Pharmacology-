@@ -3,9 +3,9 @@
  "title": "Effect of Genetic Differences in Omeprazole Metabolism on Cure Rates for Helicobacter pylori Infection and Peptic Ulcer",
  "source": "Takahisa Furuta, Kyoichi Ohashi, Takashi Kamata, Misako Takashima, Kazuhiro Kosuge, Tsunehisa Kawasaki, Hiroyuki Hanai, Takahiro Kubota, Takashi Ishizaki and Eizo Kaneko. Annals of Internal Medicine 1998;129(12):1027–1030 (15 December 1998), Brief Communications",
  "file": "FurutaAnnIntMed1998.pdf",
- "lecture": "Thu 10/22 (Pharmacogenomic Examples: CYP2C19 and proton pump inhibitors); she said the full discussion of the paper is on Monday 10/26",
+ "lecture": "Introduced Thu 10/22 (Pharmacogenomic Examples: CYP2C19 and proton pump inhibitors); discussed in detail Mon 10/26.",
  "kind": "article",
- "about": "A prospective cohort study of 62 Japanese patients with peptic ulcer (33 gastric, 29 duodenal) and H. pylori infection, treated with dual therapy: omeprazole 20 mg once daily for 8 weeks (gastric ulcer) or 6 weeks (duodenal ulcer) plus amoxicillin 500 mg four times daily for the first 2 weeks (p. 1027). Omeprazole is metabolized in the liver by CYP2C19 (S-mephenytoin 4'-hydroxylase); patients were genotyped for two mutated alleles, CYP2C19m1 in exon 5 and CYP2C19m2 in exon 4, and grouped as no mutation (group 1, n = 28), one mutation (group 2, n = 25) or two mutations (group 3, n = 9), corresponding to rapid-extensive, intermediate-extensive and poor-metabolizer phenotypes (p. 1028). Cure rates for H. pylori infection were 28.6%, 60% and 100% in the rapid-, intermediate- and poor-metabolizer groups, and ulcer healing rates were roughly parallel (abstract; Table 2). The Discussion gives four reasons for the higher cure rate in poor metabolizers (higher omeprazole exposure and longer high intragastric pH; amoxicillin unstable at low pH; omeprazole increases amoxicillin in gastric juice; omeprazole's own anti-H. pylori activity) and notes the poor-metabolizer genotype is 3% to 5% in white U.S. or European populations versus 18% to 23% in Japanese persons (p. 1029). The authors state the limitations that plasma omeprazole levels were not measured and the sample was small (p. 1029).",
+ "about": "This reading is a short 1998 research paper from the Annals of Internal Medicine that asked whether a patient's CYP2C19 genotype, the gene for the liver enzyme that clears omeprazole, predicts whether omeprazole plus amoxicillin cures Helicobacter pylori infection and heals a peptic ulcer. It matters for Exam 4 because Dr. Smith listed two things from it: the functional significance of the three genotype groups for the H. pylori cure rate, and the four ways that higher omeprazole concentrations in poor metabolizers improved patient outcomes. The study followed 62 Japanese patients with peptic ulcer (33 gastric, 29 duodenal) and H. pylori infection, all treated with dual therapy: omeprazole 20 mg once daily for 8 weeks (gastric ulcer) or 6 weeks (duodenal ulcer) plus amoxicillin 500 mg four times daily for the first 2 weeks (p. 1027). Patients were genotyped for two mutated alleles, CYP2C19m1 in exon 5 and CYP2C19m2 in exon 4, and grouped as no mutation (group 1, n = 28), one mutation (group 2, n = 25) or two mutations (group 3, n = 9), corresponding to rapid-extensive, intermediate-extensive and poor-metabolizer phenotypes (p. 1028). Cure rates for H. pylori infection were 28.6%, 60% and 100% in the rapid-, intermediate- and poor-metabolizer groups, and ulcer healing rates were roughly parallel (abstract; Table 2). The Discussion gives four reasons for the higher cure rate in poor metabolizers and notes the poor-metabolizer genotype is 3% to 5% in white U.S. or European populations versus 18% to 23% in Japanese persons (p. 1029). The authors state the limitations that plasma omeprazole levels were not measured and the sample was small (p. 1029).",
  "sections": [
   "Abstract (Background; Objective; Design; Setting; Patients; Intervention; Measurements; Results; Conclusion)",
   "Introduction (unheaded): H. pylori eradication, triple versus dual therapy, CYP2C19 and omeprazole",
@@ -26,18 +26,11 @@
    "evidence_clean": "It's talking about 2C19. It's a very interesting study done in a Japanese population."
   },
   {
-   "point": "Whether a result from a Japanese population applies to everybody (to be discussed Monday)",
+   "point": "Whether a result from a Japanese population applies to everybody",
    "chapter_location": "Discussion: poor-metabolizer genotype 3% to 5% in white U.S. or European populations versus 18% to 23% in Japanese persons; dual therapy has generally not achieved adequate cure rates in white persons",
    "lecture_evidence": "because it's done in the Japanese population, can we apply it to everybody?",
    "date": "10/22",
    "evidence_clean": "Because it's done in the Japanese population, can we apply it to everybody?"
-  },
-  {
-   "point": "Which variants were genotyped, and whether any were left out (to be discussed Monday)",
-   "chapter_location": "Methods: genotyping for the wild-type gene and two mutated alleles, CYP2C19m1 (exon 5) and CYP2C19m2 (exon 4)",
-   "lecture_evidence": "What variants were they looking at? Do they leave out any, that kind of thing.",
-   "date": "10/22",
-   "evidence_clean": "What variants were they looking at? Do they leave out any?"
   },
   {
    "point": "Proton pump inhibitors are metabolized and cleared by CYP2C19",
@@ -68,7 +61,7 @@
    "evidence_clean": "It's a good thing to have the *2 or *3 version of 2C19, because you keep the drug in the body; the therapeutic index of your PPIs is very wide."
   },
   {
-   "point": "Other reasons beyond the CYP2C19 variants (to be discussed Monday)",
+   "point": "Other reasons beyond the CYP2C19 variants",
    "chapter_location": "Discussion, second to fourth reasons: amoxicillin stability at higher pH, omeprazole raising amoxicillin in gastric juice, omeprazole's own anti-H. pylori activity",
    "lecture_evidence": "In that paper, it's not just the variants of 2C19 that were beneficial, and we're gonna talk about why, OK.",
    "date": "10/22",
@@ -115,119 +108,142 @@
    "lecture_evidence": "So can we generalize this study to the United States? Not on the face of it.",
    "date": "10/26",
    "evidence_clean": "So can we generalize this study to the United States? Not on the face of it."
+  },
+  {
+   "point": "The point she wanted made: this population was treated effectively with a PPI and one antibiotic (dual therapy)",
+   "chapter_location": "Introduction and Methods, p. 1027: dual therapy with omeprazole and amoxicillin instead of triple therapy",
+   "lecture_evidence": "What I wanted to point out to you guys is that in this population, they were effectively using a PPI and 1 antibiotic.",
+   "date": "10/26"
+  },
+  {
+   "point": "Functional significance of the genotypes: go from the patient's phenotype down to the DNA and know why *2 and *3 leave no active enzyme",
+   "chapter_location": "Results, p. 1028: five allelic patterns grouped into three genotype groups with rapid-extensive, intermediate-extensive and poor-metabolizer phenotypes",
+   "lecture_evidence": "You guys have to be able to drill down from your phenotype of your patient to the molecular structure of the DNA and know what is star 2? What is star 3? Why is that enzyme not active in this person?",
+   "date": "10/26"
+  },
+  {
+   "point": "Her summary of the discussion points: omeprazole stays high, gastric pH is higher, amoxicillin is more stable, and more amoxicillin reaches the stomach lining where H. pylori is",
+   "chapter_location": "Discussion, p. 1029: First, Second and Third reasons",
+   "lecture_evidence": "keeping their omeprazole really high, their gastric pH higher. The stability of the amoxicillin in the stomach better cause the pH is higher in the stomach, and because the higher amoxicillin helps you get amoxicillin into the stomach lining, where H. pylori is. Those are the points they were making in the discussion.",
+   "date": "10/26"
+  },
+  {
+   "point": "With genotyping the result could transfer: the same genotype gives the same response, only the group sizes differ",
+   "chapter_location": "Discussion, p. 1029: ethnic differences in the poor-metabolizer genotype",
+   "lecture_evidence": "if you genotype people, know their status, you might be able to reduce the use of antibiotics in the case of H. pylori infections, if a person has the right 2C19 genotypes",
+   "date": "10/26"
   }
  ],
  "read_for": [
-  "Abstract and Methods: 62 Japanese patients (33 gastric ulcer, 29 duodenal ulcer; 61 male), omeprazole 20 mg once daily plus amoxicillin 500 mg four times daily for the first 2 weeks (p. 1027).",
-  "Introduction: omeprazole is metabolized in the liver by CYP2C19; in poor metabolizers the omeprazole AUC is markedly increased and its clinical effect should be greater (p. 1027).",
-  "Methods: the alleles genotyped, CYP2C19m1 in exon 5 and CYP2C19m2 in exon 4, by PCR restriction fragment length polymorphism (p. 1028).",
-  "Results and Table 1: the five allelic patterns and the three genotype groups (no mutation, one mutation, two mutations) and their phenotypes (rapid-extensive, intermediate-extensive, poor metabolizer); relative mean omeprazole AUC 1:3.7:20 (p. 1028).",
-  "Table 2: cure rates of H. pylori infection by genotype group and ulcer type, total 28.6% [8/28], 60.0% [15/25] and 100.0% [9/9], P < 0.001 (p. 1029).",
-  "Results: ulcer healing rates roughly parallel with the cure rates (gastric 7 of 12, 13 of 14 and 7 of 7; duodenal 13 of 16, 9 of 11 and 2 of 2 in groups 1 to 3), and all ulcer lesions healed in patients whose H. pylori infection was cured; the Discussion credits both the higher cure rates and the increased acid-inhibitory effect of omeprazole for the healing in poor metabolizers (abstract; pp. 1028-1029).",
-  "Discussion: the four reasons dual therapy works better in poor metabolizers, signposted First, Second, Third and Finally: (1) omeprazole exposure is markedly increased, so high intragastric pH lasts longer; (2) amoxicillin is unstable and less active at low pH, so a higher pH leaves more active antibiotic; (3) omeprazole increases amoxicillin concentrations in gastric juice, so amoxicillin stays in the stomach longer above its minimum inhibitory concentration; (4) omeprazole itself has anti-H. pylori activity, presumably enhanced in poor metabolizers (p. 1029).",
-  "Discussion: ethnic differences in the poor-metabolizer genotype, 3% to 5% in white U.S. or European populations versus 18% to 23% in Japanese persons (p. 1029).",
-  "Discussion: limitations (plasma omeprazole not measured; small sample; findings preliminary) (p. 1029)."
+  "1. Functional significance, group 1 (Table 1, Table 2, p. 1028-1029): wild-type/wild-type (her labels *1/*1), two working copies of CYP2C19, the rapid-extensive metabolizer; relative omeprazole AUC 1; H. pylori cured in 28.6% (8 of 28).",
+  "2. Functional significance, group 2: wild-type/m1 or wild-type/m2 (*1/*2 or *1/*3), one working copy, the intermediate-extensive metabolizer; relative AUC 3.7; cured in 60.0% (15 of 25).",
+  "3. Functional significance, group 3: m1/m2 or m1/m1 (*2/*3 or *2/*2), no working copy, the poor metabolizer; relative AUC 20; cured in 100% (9 of 9). The cure rate was highest in group 3, intermediate in group 2 and lowest in group 1, P < 0.001 (Table 2).",
+  "4. What the mutations are (Table 1 footnote; Methods, p. 1028): CYP2C19m1 is a mutation in exon 5 and CYP2C19m2 a mutation in exon 4, typed by PCR restriction fragment length polymorphism. Her 10/26 addition: m1 is *2, m2 is *3, each a SNP creating a premature stop codon, so the protein is too short to work.",
+  "5. Ulcer healing (abstract; Results, pp. 1028-1029): healing of gastric and duodenal ulcer was roughly parallel with the cure rates, and every ulcer healed in patients whose H. pylori infection was cured; the Discussion credits both the higher cure rate and the stronger acid inhibition in poor metabolizers.",
+  "6. Way 1 of 4 (Discussion, p. 1029, 'First'): omeprazole's plasma concentration-time curve is markedly increased in poor metabolizers, so high intragastric pH lasts longer than in extensive metabolizers.",
+  "7. Way 2 of 4 ('Second'): amoxicillin is unstable and less active at low pH, so raising intragastric pH toward neutral increases the amount of active antibiotic.",
+  "8. Way 3 of 4 ('Third'): omeprazole has been reported to increase amoxicillin concentrations in gastric juice, so amoxicillin stays in the stomach longer at levels above its minimum inhibitory concentration. (She said it is amoxicillin, not omeprazole, that ends up higher in the gastric juice.)",
+  "9. Way 4 of 4 ('Finally'): omeprazole itself has reported anti-H. pylori activity, presumably enhanced in poor metabolizers. She summarized the first three in class; the fourth is in the paper only.",
+  "10. Why it does not transfer to the United States on its face (Discussion, p. 1029): the poor-metabolizer genotype is 3% to 5% in white U.S. or European populations versus 18% to 23% in Japanese persons; with genotyping the same genotype is expected to respond the same way."
  ],
  "beyond_lecture": [
-  "Results: adherence to the regimen (100% in 43 patients, about 90% in 18, about 75% in 1) and eradication by adherence level (58%, 33%, 100%) (p. 1028).",
-  "Results: ulcer healing rates by ulcer type and genotype group (gastric 58.8%, 92.9%, 100.0%; duodenal 81.3%, 81.8%, 100.0%) (pp. 1028–1029).",
-  "Discussion: Bayerdorffer and associates' dual therapy with omeprazole 40 mg three times daily and amoxicillin 750 mg three times daily (91% cure in white persons) and the suggestion that at least 120 mg of omeprazole may be required in extensive metabolizers (p. 1029).",
-  "Discussion: costs of genotyping and larger omeprazole doses versus avoiding a second antibiotic; clinical usefulness and cost-effectiveness of genotyping remain to be determined (pp. 1029–1030).",
-  "Methods: how cure was determined (culture, histology, rapid urease test, 13C-urea breath test and PCR; failure defined as a positive result on any test) and the statistics (ANOVA, Fisher exact test) (p. 1028)."
+  "Results, p. 1028: adherence to the regimen (100% in 43 patients, about 90% in 18, about 75% in 1) and eradication by adherence level (58%, 33%, 100%).",
+  "Discussion, p. 1029: Bayerdorffer and associates' high-dose dual therapy (omeprazole 40 mg three times daily plus amoxicillin 750 mg three times daily, 91% cure in white persons) and the suggestion that at least 120 mg of omeprazole a day may be needed in extensive metabolizers.",
+  "Discussion, pp. 1029-1030: the cost of genotyping and of larger omeprazole doses against the savings from avoiding a second antibiotic; the clinical usefulness and cost-effectiveness of genotyping remain to be determined.",
+  "Methods, p. 1028: how cure was judged (culture, histology, rapid urease test, 13C-urea breath test and PCR; a positive result on any test meant failure) and the statistics (one-way ANOVA, Fisher exact test).",
+  "Results, p. 1028: no clinically undesirable signs or symptoms attributable to the dual therapy were recognized."
  ],
  "terms": [
   {
    "term": "CYP2C19 (S-mephenytoin 4'-hydroxylase)",
-   "chapter_definition": "A genetically determined enzyme that metabolizes omeprazole in the liver (p. 1027)."
+   "chapter_definition": "The genetically determined liver enzyme that metabolizes omeprazole; S-mephenytoin 4'-hydroxylase is the paper's older name for it (p. 1027)."
   },
   {
-   "term": "Poor-metabolizer genotype",
-   "chapter_definition": "In persons with a poor-metabolizer phenotype or genotype of CYP2C19, the area under the plasma concentration-time curve of omeprazole is markedly increased and the clinical effect of omeprazole should be greater (p. 1027)."
+   "term": "Poor metabolizer",
+   "chapter_definition": "A person whose CYP2C19 phenotype or genotype gives little or no enzyme activity; in them the area under the plasma concentration-time curve of omeprazole is markedly increased, so the clinical effect of omeprazole should be greater (p. 1027)."
   },
   {
-   "term": "CYP2C19m1 / CYP2C19m2",
-   "chapter_definition": "The two mutated alleles genotyped: CYP2C19m1, a mutation in exon 5, and CYP2C19m2, a mutation in exon 4 (Table 1 footnote; Methods)."
+   "term": "Area under the curve (AUC)",
+   "chapter_definition": "The area under the plasma concentration-time curve, the paper's measure of how much omeprazole is in circulation; the relative mean AUC in rapid, intermediate and poor metabolizers has been reported as 1:3.7:20 (p. 1028)."
   },
   {
-   "term": "Group 1 (nonmutation group)",
-   "chapter_definition": "Homozygous wild-type (wt/wt); corresponds to the rapid-extensive metabolizer phenotype (p. 1028)."
+   "term": "CYP2C19m1 and CYP2C19m2",
+   "chapter_definition": "The two mutated alleles the study genotyped: m1 is a mutation in exon 5 and m2 a mutation in exon 4 of the gene; wt is the wild-type, working allele (Table 1 footnote)."
   },
   {
-   "term": "Group 2 (one-mutation group)",
-   "chapter_definition": "wt/m1 or wt/m2; corresponds to the intermediate-extensive metabolizer phenotype (p. 1028)."
+   "term": "Group 1, nonmutation group",
+   "chapter_definition": "Wild-type/wild-type patients (n = 28), whose phenotype is the rapid-extensive metabolizer: full enzyme activity (p. 1028)."
   },
   {
-   "term": "Group 3 (two-mutation group)",
-   "chapter_definition": "m1/m2 or m1/m1; corresponds to the poor-metabolizer phenotype (p. 1028)."
+   "term": "Group 2, one-mutation group",
+   "chapter_definition": "Wild-type/m1 or wild-type/m2 patients (n = 25), the intermediate-extensive metabolizer: one working allele (p. 1028)."
+  },
+  {
+   "term": "Group 3, two-mutation group",
+   "chapter_definition": "m1/m2 or m1/m1 patients (n = 9), the poor metabolizer: no working allele (p. 1028)."
   },
   {
    "term": "Dual therapy",
-   "chapter_definition": "Omeprazole and amoxicillin; achieves somewhat lower cure rates than triple therapy but avoids many of the problems associated with clarithromycin and metronidazole (p. 1027)."
+   "chapter_definition": "Omeprazole plus one antibiotic, amoxicillin; it gives somewhat lower cure rates than triple therapy but avoids the problems of clarithromycin and metronidazole (p. 1027)."
   },
   {
    "term": "Triple therapy",
-   "chapter_definition": "A proton-pump inhibitor, amoxicillin, and clarithromycin or metronidazole; resistance of H. pylori to the latter two drugs has been reported (p. 1027)."
+   "chapter_definition": "A proton-pump inhibitor, amoxicillin, and clarithromycin or metronidazole; H. pylori resistance to the latter two drugs has been reported (p. 1027)."
   },
   {
-   "term": "Failure to cure H. pylori infection",
-   "chapter_definition": "A positive result on any of culture, histologic examination, rapid urease testing, 13C-urea breath testing, or PCR (p. 1028)."
+   "term": "Minimum inhibitory concentration",
+   "chapter_definition": "The antibiotic level needed to stop the bacterium; the third reason says amoxicillin stays in the stomach longer at levels exceeding it when omeprazole is co-administered (p. 1029)."
+  },
+  {
+   "term": "Cure of H. pylori infection",
+   "chapter_definition": "Judged one month after treatment by culture, histology, rapid urease testing, 13C-urea breath testing and PCR; a positive result on any test counted as failure (p. 1028)."
   }
  ],
  "discussed_in_class": true,
  "her_words": [
   {
-   "t": "We have another thing that we're going to get to today, maybe not until Monday: a discussion of this Furuta paper.",
-   "date": "10/22",
-   "verbatim": "We have another thing that we're gonna get to, uh, today, maybe not get to it until, um, Monday is a discussion of this Fioruda paper."
+   "t": "We have another thing that we're gonna get to, uh, today, maybe not get to it until, um, Monday is a discussion of this Fioruda paper.",
+   "date": "10/22"
   },
   {
    "t": "Have you guys looked at it yet? Do you know what gene it's talking about and what variants?",
-   "date": "10/22",
-   "verbatim": "Have you guys looked at it yet? Do you know what gene it's talking about and what variants?"
+   "date": "10/22"
   },
   {
-   "t": "We're going to go into a lot of the detail in that paper after we have our discussion about more about 2C19.",
-   "date": "10/22",
-   "verbatim": "We're gonna talk a lot about, go into a lot of the detail in that paper after we have our discussion about more about 2C19."
+   "t": "We're gonna talk a lot about, go into a lot of the detail in that paper after we have our discussion about more about 2C19.",
+   "date": "10/22"
   },
   {
    "t": "What happens to the clinical care of our patients in this scenario? How did they develop the study? Was it well run?",
-   "date": "10/22",
-   "verbatim": "What happens to the clinical care of our patients in this scenario? How did they develop the study? Was it well run?"
+   "date": "10/22"
   },
   {
-   "t": "We're going to get into all that detail with this paper, just as an exercise.",
-   "date": "10/22",
-   "verbatim": "OK, we're gonna get into all that detail with this paper, just as an exercise"
+   "t": "OK, we're gonna get into all that detail with this paper, just as an exercise",
+   "date": "10/22"
   },
   {
-   "t": "The proton pump inhibitors, and this is the Furuta paper you read about, right?",
-   "date": "10/22",
-   "verbatim": "So The proton pump inhibitors, and this is the Furuda paper you read about, right?"
+   "t": "So The proton pump inhibitors, and this is the Furuda paper you read about, right?",
+   "date": "10/22"
   },
   {
-   "t": "Talk about that paper just a little bit, then we're going to really dive into it on Monday.",
-   "date": "10/22",
-   "verbatim": "talk about that paper just a little bit, then we're going to really dive into it on Monday, OK?"
+   "t": "talk about that paper just a little bit, then we're going to really dive into it on Monday, OK?",
+   "date": "10/22"
   },
   {
-   "t": "This is the data from that Furuta paper, and we want to look at the functional significance of those variants.",
-   "date": "10/22",
-   "verbatim": "This is the data from that Fioruda paper, and we want to look at the, the functional significance of those variants, right?"
+   "t": "This is the data from that Fioruda paper, and we want to look at the, the functional significance of those variants, right?",
+   "date": "10/22"
   },
   {
    "t": "Again, on Monday when we come back, we're going to dive into that paper.",
-   "date": "10/22",
-   "verbatim": "Again, on Monday when we come back, we're going to dive into that paper."
+   "date": "10/22"
   },
   {
-   "t": "You guys will be reading a paper about a pharmacogenomics study.",
-   "date": "10/21",
-   "verbatim": "you guys will be reading a paper about a pharmacogenomics study."
+   "t": "you guys will be reading a paper about a pharmacogenomics study.",
+   "date": "10/21"
   }
  ],
- "quotes_note": "Quotes lightly edited for reading: filler words removed and transcription errors corrected; the verbatim transcript text is kept beside each quote.",
+ "quotes_note": "Quotes are verbatim transcript text from the 10/21, 10/22 and 10/26 recordings, including filler words; the captions render the name Furuta as \"Fioruda\" or \"Furuda\".",
  "truncated": false,
- "listen": "This reading is the brief communication Effect of Genetic Differences in Omeprazole Metabolism on Cure Rates for Helicobacter pylori Infection and Peptic Ulcer, by Takahisa Furuta and colleagues, in the Annals of Internal Medicine, December nineteen ninety eight. It is a prospective cohort study of sixty two Japanese patients with gastric or duodenal ulcer and Helicobacter pylori infection. Every patient received dual therapy: omeprazole twenty milligrams once daily, for eight weeks for gastric ulcer or six weeks for duodenal ulcer, plus amoxicillin five hundred milligrams four times daily for the first two weeks. Omeprazole is metabolized in the liver by C Y P two C nineteen. The authors genotyped two mutated alleles, m one in exon five and m two in exon four, and grouped patients by the number of mutations. Group one had no mutation and corresponds to rapid extensive metabolizers. Group two had one mutation and corresponds to intermediate extensive metabolizers. Group three had two mutations and corresponds to poor metabolizers. The relative mean area under the curve for omeprazole in these three groups has been reported as one to three point seven to twenty. Cure rates for the infection were twenty eight point six percent, sixty percent, and one hundred percent in the rapid, intermediate and poor metabolizer groups. Ulcer healing rates were roughly parallel with the cure rates. The authors give four reasons. Poor metabolizers have more omeprazole in circulation, so high intragastric pH lasts longer. Amoxicillin is unstable and less active at low pH. Omeprazole has been reported to increase amoxicillin concentrations in gastric juice. And omeprazole itself has been reported to have activity against Helicobacter pylori. The poor metabolizer genotype is found in three to five percent of white United States or European populations and eighteen to twenty three percent of Japanese persons. The limitations they state: they did not measure plasma omeprazole levels, and the sample was small. In class on October twenty second, she introduced it as a very interesting study done in a Japanese population, about two C nineteen. She said that poor metabolizers on proton pump inhibitors had better cure rates, because the drug stays in the body and proton pump inhibitors have a very wide therapeutic index. She said the detailed discussion is on Monday: whether a study in a Japanese population applies to everybody, how the study was run, which variants were studied and whether any were left out, and why it was not just the two C nineteen variants that were beneficial. The figure she showed as that paper's data used lansoprazole and plotted area under the curve, stomach pH and cure rate. The nineteen ninety eight paper used omeprazole and did not measure plasma drug levels.",
+ "listen": "This reading is the brief communication Effect of Genetic Differences in Omeprazole Metabolism on Cure Rates for Helicobacter pylori Infection and Peptic Ulcer, by Takahisa Furuta and colleagues, in the Annals of Internal Medicine, December nineteen ninety eight. It is a prospective cohort study of sixty two Japanese patients with gastric or duodenal ulcer and Helicobacter pylori infection. Every patient received dual therapy: omeprazole twenty milligrams once daily, for eight weeks for gastric ulcer or six weeks for duodenal ulcer, plus amoxicillin five hundred milligrams four times daily for the first two weeks. Omeprazole is metabolized in the liver by C Y P two C nineteen. The authors genotyped two mutated alleles, m one in exon five and m two in exon four, and grouped patients by the number of mutations. Group one had no mutation and corresponds to rapid extensive metabolizers. Group two had one mutation and corresponds to intermediate extensive metabolizers. Group three had two mutations and corresponds to poor metabolizers. The relative mean area under the curve for omeprazole in these three groups has been reported as one to three point seven to twenty. Cure rates for the infection were twenty eight point six percent, sixty percent, and one hundred percent in the rapid, intermediate and poor metabolizer groups. Ulcer healing rates were roughly parallel with the cure rates. The authors give four reasons. Poor metabolizers have more omeprazole in circulation, so high intragastric pH lasts longer. Amoxicillin is unstable and less active at low pH. Omeprazole has been reported to increase amoxicillin concentrations in gastric juice. And omeprazole itself has been reported to have activity against Helicobacter pylori. The poor metabolizer genotype is found in three to five percent of white United States or European populations and eighteen to twenty three percent of Japanese persons. The limitations they state: they did not measure plasma omeprazole levels, and the sample was small. In class on October twenty second, she introduced it as a very interesting study done in a Japanese population, about two C nineteen. She said that poor metabolizers on proton pump inhibitors had better cure rates, because the drug stays in the body and proton pump inhibitors have a very wide therapeutic index. On October twenty sixth she walked through the paper: group three, with no active enzyme, had the best cure rate; star two and star three are nonfunctional because of a premature stop codon; the discussion's first, second and third points are that omeprazole stays high so gastric pH is higher, amoxicillin is more stable at the higher pH, and more amoxicillin reaches the gastric juice where H. pylori is; and the result cannot be generalized to the United States on its face, but could be with genotyping. For the exam she listed the functional significance of the genotypes for the cure rate and the four ways elevated P P I concentrations improved outcomes. The figure she showed as that paper's data used lansoprazole and plotted area under the curve, stomach pH and cure rate. The nineteen ninety eight paper used omeprazole and did not measure plasma drug levels.",
  "listen_secs": 180
 }
