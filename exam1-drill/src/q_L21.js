@@ -53,7 +53,7 @@ QUESTIONS.push(
  stem:"What are the application and the main limitation of the FDA Table of Pharmacogenetic Associations?",
  options:[
   {t:"Initial screening of drugs; no guidance on clinical use", correct:true, why:"A first screen of which drugs have pharmacogenetic implications, with no guidance on clinical use."},
-  {t:"Genotype-based dosing; limited to cancer drugs", correct:false, why:"It gives no dosing guidance, and it is not limited to cancer drugs."},
+  {t:"Genotype-based dosing for each drug; limited to cancer drugs", correct:false, why:"It gives no dosing guidance, and it is not limited to cancer drugs."},
   {t:"Lists every label section; often out of date", correct:false, why:"Label sections are listed in the Biomarkers in Drug Labeling table."},
   {t:"Ranks evidence strength; covers only a few drugs", correct:false, why:"Evidence grading and a limited drug list describe CPIC."}],
  teach:"The table is a first screen of which drugs have pharmacogenetic implications. Its limitation: no detailed guidance on clinical use. Dr. Smith called it a lightweight and prefers the other FDA table.",
@@ -179,7 +179,7 @@ QUESTIONS.push(
  stem:"In the FDA biomarker table, what does the 'Biomarker' column usually give?",
  options:[
   {t:"The gene of concern, sometimes with the variant", correct:true, why:"Most of the time now it lists only the gene."},
-  {t:"The exact nucleotide change for each variant", correct:false, why:"Specific variants appear only sometimes."},
+  {t:"The exact nucleotide change and frequency for each variant", correct:false, why:"Specific variants appear only sometimes."},
   {t:"The protein's molecular weight", correct:false, why:"The column names the gene."},
   {t:"The test kit to use", correct:false, why:"Tests are not named in this column."}],
  teach:"The Biomarker column gives the gene, and sometimes the variant, though most entries now give only the gene (for example ABCB11, a transporter). The gene names are the same codes used for each gene-drug pair.",
@@ -204,7 +204,7 @@ QUESTIONS.push(
  stem:"CPIC guidelines are designed to help clinicians with which question?",
  options:[
   {t:"How to use genetic test results that are available", correct:true, why:"CPIC addresses HOW available results should be used, not WHETHER to order tests."},
-  {t:"Whether a genetic test should be ordered", correct:false, why:"CPIC is about how to use a result, rather than whether to test."},
+  {t:"Whether a genetic test should be ordered for the patient", correct:false, why:"CPIC is about how to use a result, rather than whether to test."},
   {t:"Which laboratory to send the sample to", correct:false, why:"Laboratory choice is not the purpose."},
   {t:"Whether a drug should be approved", correct:false, why:"Approval is the FDA's role."}],
  teach:"CPIC guidelines tell clinicians how to use genetic results that are already available, not whether to order a test. A patient's genotype may already be on file even if no test was ordered for this drug.",
@@ -247,7 +247,7 @@ QUESTIONS.push(
   {t:"Gene-drug pairs are prioritized for a guideline", correct:true, why:"Prioritized by surveys, strength of evidence and clinical actionability."},
   {t:"The final dosing tables are published", correct:false, why:"Recommendations come later, after the writing committee and evidence review."},
   {t:"Patients are genotyped in a trial", correct:false, why:"CPIC reviews published literature; it does not run trials."},
-  {t:"External experts peer review the draft", correct:false, why:"Public and peer review happen after drafting."}],
+  {t:"External experts peer review the draft guideline text", correct:false, why:"Public and peer review happen after drafting."}],
  teach:"The initial assessment prioritizes gene-drug pairs by surveys, strength of evidence and clinical actionability. Then a writing committee reviews the literature and drafts, recommendations are graded, and the draft goes through public and peer review.",
  quote:"So this team will write it, the writing committee, after a previous team has decided which drug gene pairs should be written next, OK.",
  cite:"PGx-Resources-and-Cases-Students-Fall-2026.pdf slide 'CPIC Guidelines 3' (p. 11, Caudle et al. 2014); transcript 10/27"},
@@ -303,7 +303,7 @@ QUESTIONS.push(
 
 {id:"L21-023", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"cpic", skill:"recall", multi:true, lowYield:true,
  concept:"cpic-drug-classes", tags:["smith","inclass"], source:"both",
- stem:"Looking down the current CPIC guideline list, which therapeutic categories did the class find? Select all that apply.",
+ stem:"Which therapeutic categories appear on the current CPIC guideline list? Select all that apply.",
  options:[
   {t:"Infectious disease drugs", correct:true, why:"For example abacavir, efavirenz, voriconazole, aminoglycosides."},
   {t:"Cardiac drugs", correct:true, why:"For example warfarin, clopidogrel, beta-blockers."},
@@ -372,7 +372,7 @@ QUESTIONS.push(
  stem:"In the CPIC warfarin algorithm, the first question is whether the patient's genotype is available. If it is not, what does the algorithm say?",
  options:[
   {t:"Dose clinically, without genetic information", correct:true, why:"The 'no' branch is to dose empirically, as warfarin is usually dosed."},
-  {t:"Do not start warfarin until genotyped", correct:false, why:"The algorithm does not hold therapy for a genotype."},
+  {t:"Do not start warfarin until the genotype result returns", correct:false, why:"The algorithm does not hold therapy for a genotype."},
   {t:"Use the lowest possible dose", correct:false, why:"No genotype-based reduction is applied on the 'no' branch."},
   {t:"Ask the patient's ancestry and adjust", correct:false, why:"Ancestry is the next question only when a genotype is available."}],
  teach:"The first question is whether the genotype is available. If not, the patient is dosed clinically: without genetic information, by a clinical algorithm or a standard dose. If it is, the next step is self-identified ancestry.",
@@ -412,7 +412,7 @@ QUESTIONS.push(
  options:[
   {t:"The variant lies upstream of the coding region", correct:true, why:"Upstream of the coding sequence; it is part of a haplotype that affects VKORC1 expression."},
   {t:"The variant causes a loss of the protein", correct:false, why:"The minus gives position, not effect."},
-  {t:"The variant is on the opposite DNA strand", correct:false, why:"Dr. Smith explained the minus sign as an upstream position."},
+  {t:"The variant is on the opposite DNA strand of the gene", correct:false, why:"Dr. Smith explained the minus sign as an upstream position."},
   {t:"The variant lowers the dose by 1639 mg", correct:false, why:"The number is a nucleotide position."}],
  teach:"VKORC1 -1639G>A is a G-to-A change at position -1639. The minus sign means the variant sits upstream of the gene, in an untranslated region that affects how much VKORC1 is expressed. One or two -1639A alleles call for progressively lower doses.",
  quote:"This is a haplotype or this is a part of a haplotype. The negative means that this variant occurs in the Um, uh, upstream untranslated region that affects expression",
@@ -435,7 +435,7 @@ QUESTIONS.push(
  stem:"Why does the CPIC warfarin algorithm put CYP2C9*5, *6, *8 and *11 testing up front for patients of African ancestry?",
  options:[
   {t:"These variants occur at higher frequency in that population", correct:true, why:"Dr. Smith answered with frequency: a higher chance of carrying one of these dose-lowering genotypes."},
-  {t:"They raise CYP2C9 activity in that population", correct:false, why:"They decrease CYP2C9 activity."},
+  {t:"They raise CYP2C9 enzyme activity in patients of that population", correct:false, why:"They decrease CYP2C9 activity."},
   {t:"CYP2C9*2 and *3 do not exist in that population", correct:false, why:"The reason Dr. Smith gave was the higher frequency of *5, *6, *8 and *11."},
   {t:"VKORC1 does not affect warfarin in that population", correct:false, why:"VKORC1 is part of the calculation on both branches."}],
  teach:"CYP2C9*5, *6, *8 and *11 lower CYP2C9 activity, so carriers need a lower dose, and they are common in people of African ancestry. Testing for them first gets the starting dose right. In non-African patients these alleles are uncommon.",
@@ -812,7 +812,7 @@ QUESTIONS.push(
 
 {id:"L21-063", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"cpic-warf", skill:"recall", readingId:"cpic-warfarin-2017", core:true, coreWhy:"her Exam 4 study list item 4 (CPIC Figure 2): which populations have the highest frequencies",
  concept:"vkorc1-1639a-population", tags:["smith","reading"], source:"both",
- stem:"According to the CPIC 2017 warfarin guideline, in which ancestry group is the VKORC1 -1639A (lower dose) allele most common?",
+ stem:"In which ancestry group is the VKORC1 -1639A (lower dose) allele most common?",
  options:[
   {t:"East Asian", correct:true, why:"The A segment fills most of the East Asian bar."},
   {t:"European and North American", correct:false, why:"A fills a little under half of that bar, between the other two."},
@@ -820,7 +820,7 @@ QUESTIONS.push(
   {t:"All three about equally", correct:false, why:"The bars differ sharply; the guideline says the -1639A frequency varies among ancestral populations."}],
  teach:"VKORC1 -1639A lowers the warfarin dose. The A allele is most common in East Asian, intermediate in European and North American, and least common in African populations, where G (higher dose) dominates. This largely explains the groups' different average doses.",
  quote:"you should know which genetic variants we're concerned about and in which populations",
- note:"On 10/21 she said of the frequency figure: \"OK, so you don't have to memorize this.\" On 10/28 she said to know which variants matter in which populations. Her in-class remark (\"OK, so you don't have to memorize this. This is to illustrate the point that a lot of work is done trying to look at how often do these genetic versions occur in different populations\") is superseded by her written Exam 4 study list, item 4b: \"know which populations have the highest frequencies of these genetic variants\". Keyed to the order only, no percentages.",
+ note:"On 10/21 she said of the frequency figure: \"OK, so you don't have to memorize this.\" Her fuller remark: \"OK, so you don't have to memorize this. This is to illustrate the point that a lot of work is done trying to look at how often do these genetic versions occur in different populations\". On 10/28 she said to know which variants matter in which populations; that later instruction is followed here. Keyed to the order only, no percentages.",
  cite:"PGx-Examples-Students-Fall-2026.pdf slide 'Allele and Phenotype Frequencies' (p. 9, panel B); CPIC warfarin guideline 2017 update, 'VKORC1 and warfarin' (p. 399); PGx-Resources-and-Cases-Students-Fall-2026.pdf slide 'Current CPIC Guidelines 5' (p. 13); transcript 10/28"},
 
 {id:"L21-064", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"cpic-warf", skill:"recall", readingId:"cpic-warfarin-2017", multi:true, core:true, coreWhy:"her Exam 4 study list item 4 (CPIC Figure 2): which populations have the highest frequencies",
@@ -1032,9 +1032,9 @@ QUESTIONS.push(
  concept:"cpic-african-branch-apply", tags:["smith"], source:"both",
  stem:"A patient who self-identifies as of African ancestry is about to start warfarin. The lab reports VKORC1 -1639G>A and CYP2C9 *2 and *3 genotypes only. Per the CPIC 2017 algorithm, is the genotyping complete?",
  options:[
-  {t:"No; *5, *6, *8 and *11 are frequent in this population and are tested up front", correct:true, why:"On the African-ancestry branch the algorithm asks for CYP2C9*5, *6, *8 and *11 (and rs12777823) up front because they are more frequent there."},
+  {t:"No; CYP2C9 *5, *6, *8 and *11 are also tested up front", correct:true, why:"On the African-ancestry branch the algorithm asks for CYP2C9*5, *6, *8 and *11 (and rs12777823) up front because they are more frequent there."},
   {t:"Yes; VKORC1 and CYP2C9 are the two genes the algorithm uses for every patient", correct:false, why:"On the African-ancestry branch the algorithm also asks for CYP2C9*5, *6, *8 and *11."},
-  {t:"No; CYP4F2*3 must be tested on this branch", correct:false, why:"CYP4F2*3 is on the non-African branch, not the African one."},
+  {t:"No; CYP4F2*3 must be tested on this branch", correct:false, why:"CYP4F2*3 is on the non-African branch only; she said 'It's not on the algorithm for the people of African ancestry.'"},
   {t:"No; TPMT must be tested before warfarin", correct:false, why:"TPMT governs thiopurine dosing, not warfarin."}],
  teach:"The CPIC warfarin algorithm splits by self-identified ancestry. On the African-ancestry branch CYP2C9*5, *6, *8, *11 and rs12777823 are tested up front because they are more frequent there; CYP4F2*3 belongs to the non-African branch.",
  quote:"up front here for people of African descent",
@@ -1060,5 +1060,6 @@ QUESTIONS.push(
   {t:"The FDA label section", correct:false, why:"Label sections come from the FDA biomarker table, not a CPIC grade."}],
  teach:"CPIC scores evidence as high, moderate or weak, and recommendations as strong, moderate or optional. 'Optional' is therefore a recommendation grade.",
  quote:"strong, moderate, or optimal",
+ note:"In the recording the third recommendation level came out as \"optimal\"; the slide reads \"Optional\". Keyed to the slide word.",
  cite:"PGx-Resources-and-Cases-Students-Fall-2026.pdf slide 'CPIC Guidelines 4' (p. 12); transcript 10/27"}
 );

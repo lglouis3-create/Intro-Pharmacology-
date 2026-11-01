@@ -74,7 +74,7 @@ QUESTIONS.push(
  stem:"Clopidogrel is used clinically for what effect?",
  options:[
   {t:"It prevents platelet aggregation", correct:true, why:"Clopidogrel is a platelet receptor inhibitor that stops platelets from aggregating, which is antiplatelet therapy."},
-  {t:"It dissolves a formed clot", correct:false, why:"Clopidogrel prevents platelet aggregation; it does not break down a formed clot."},
+  {t:"It dissolves a clot that has already formed", correct:false, why:"Clopidogrel prevents platelet aggregation; it does not break down a formed clot."},
   {t:"It replaces a clotting factor", correct:false, why:"Clopidogrel is not a clotting factor product; it blocks platelet function."},
   {t:"It lowers blood pressure", correct:false, why:"Clopidogrel acts on platelets, not on blood pressure."}],
  teach:"Clopidogrel is a platelet receptor inhibitor. Keeping platelets from sticking together is antiplatelet therapy, a form of anticoagulation. It is also a prodrug, so it must be activated to work.",
@@ -245,7 +245,7 @@ QUESTIONS.push(
  options:[
   {t:"A cleared drug may need super-doses; a prodrug may overdose", correct:true, why:"Fast clearance removes an ordinary drug before it works, so more is needed; fast activation makes too much active drug from a prodrug."},
   {t:"A cleared drug may overdose; a prodrug may need high doses", correct:false, why:"This reverses them: fast clearance removes an ordinary drug too soon, while fast activation makes too much active drug from a prodrug."},
-  {t:"Both situations lead to therapeutic failure", correct:false, why:"A prodrug that is activated too fast causes overdose, not failure."},
+  {t:"Both situations lead to therapeutic failure at the usual dose", correct:false, why:"A prodrug that is activated too fast causes overdose, not failure."},
   {t:"Neither situation changes the dose needed", correct:false, why:"Ultrarapid metabolism changes both; the direction depends on whether the enzyme clears or activates the drug."}],
  teach:"A drug that CYP2D6 clears is removed so fast that the patient may need very large doses to reach a therapeutic level. A prodrug that CYP2D6 activates, such as codeine, is activated so fast that too much active drug forms: overdose.",
  cite:"PGx-Examples-Students-Fall-2026.pdf slide 'CYP2D6 Polymorphisms 3' (p. 22); transcript 10/22"},
@@ -369,8 +369,8 @@ QUESTIONS.push(
  concept:"cyp2c19-clopidogrel-genotype", tags:["smith"], source:"both",
  stem:"Clopidogrel is a prodrug activated partly by CYP2C19. How do the CYP2C19 variants change its effect?",
  options:[
-  {t:"*2 or *3 under-activate it, keeping platelets sticky; *17 over-activates it", correct:true, why:"Inactive alleles make too little active drug, so platelets stay sticky; the gain-of-function allele makes too much, so the patient is over-anticoagulated."},
-  {t:"*2 or *3 carriers over-activate it, while *17 carriers under-activate it", correct:false, why:"This reverses the alleles; *2 and *3 are inactive, so they under-activate the prodrug."},
+  {t:"*2 or *3 under-activate it; *17 over-activates it", correct:true, why:"Inactive alleles make too little active drug, so platelets stay sticky; the gain-of-function allele makes too much, so the patient gets too much antiplatelet effect."},
+  {t:"*2 or *3 over-activate it; *17 under-activates it", correct:false, why:"This reverses the alleles; *2 and *3 are inactive, so they under-activate the prodrug."},
   {t:"All CYP2C19 variants raise the active drug level", correct:false, why:"Inactive *2 and *3 lower the active metabolite; only *17 raises it."},
   {t:"CYP2C19 variants do not affect clopidogrel", correct:false, why:"Clopidogrel is a leading CYP2C19 example; variants strongly change its activation."}],
  teach:"Clopidogrel must be bioactivated, partly by CYP2C19. A patient with *2 or *3 makes too little active metabolite, so platelets stay sticky (therapeutic failure). A patient with *17 makes too much and is over-anticoagulated. Genotype first.",
@@ -430,7 +430,7 @@ QUESTIONS.push(
  stem:"The gene DPYD codes for dihydropyrimidine dehydrogenase (DPD). Which drugs does DPD activity most affect?",
  options:[
   {t:"Antimetabolites such as 5-fluorouracil and capecitabine", correct:true, why:"DPD catabolizes most of a 5-fluorouracil dose; capecitabine and tegafur are in the same antimetabolite group."},
-  {t:"Proton pump inhibitors", correct:false, why:"PPIs are CYP2C19 substrates, not DPD substrates."},
+  {t:"Proton pump inhibitors such as omeprazole and lansoprazole", correct:false, why:"PPIs are CYP2C19 substrates, not DPD substrates."},
   {t:"Beta blockers", correct:false, why:"Beta blockers are not the DPD example; the DPD drugs are fluoropyrimidine antimetabolites."},
   {t:"Thiopurines such as azathioprine and mercaptopurine", correct:false, why:"Thiopurines are the TPMT example, not DPD."}],
  teach:"DPD, coded by DPYD, catabolizes about 80% of a 5-fluorouracil dose; capecitabine and tegafur are the other fluoropyrimidine antimetabolites. These drugs stop rapidly dividing cells, so they treat cancer but also hit blood, gut and hair follicle cells.",
@@ -517,7 +517,7 @@ QUESTIONS.push(
  stem:"How is azathioprine related to 6-mercaptopurine?",
  options:[
   {t:"Azathioprine is a prodrug converted in the body to 6-mercaptopurine", correct:true, why:"Azathioprine is given for immunosuppression and is metabolized to 6-mercaptopurine, the active thiopurine."},
-  {t:"6-mercaptopurine is the prodrug converted into azathioprine", correct:false, why:"The direction is reversed; azathioprine is the prodrug that becomes 6-mercaptopurine."},
+  {t:"6-mercaptopurine is the prodrug that the body converts into azathioprine", correct:false, why:"The direction is reversed; azathioprine is the prodrug that becomes 6-mercaptopurine."},
   {t:"They are unrelated drugs with different targets", correct:false, why:"They are directly linked; azathioprine becomes 6-mercaptopurine."},
   {t:"Both are inactive metabolites of TPMT", correct:false, why:"They are parent drugs; TPMT acts on 6-mercaptopurine to make an inactive methylated product."}],
  teach:"Azathioprine is a prodrug for immunosuppression; the body changes it to 6-mercaptopurine, which itself is used for cancer. 6-mercaptopurine then meets competing routes: xanthine oxidase and TPMT make inactive products; another pathway makes active 6-thioguanine nucleotides.",
@@ -529,7 +529,7 @@ QUESTIONS.push(
  stem:"In a patient with a low-activity TPMT variant taking a standard thiopurine dose, what is the main risk?",
  options:[
   {t:"More drug becomes 6-thioguanine nucleotides, causing myelosuppression", correct:true, why:"With little TPMT activity, more 6-mercaptopurine goes down the active pathway to 6-thioguanine nucleotides, which suppress bone marrow."},
-  {t:"The drug is fully inactivated, so it has no effect on the patient", correct:false, why:"Low TPMT activity shifts more drug toward the active metabolite, not toward inactivation."},
+  {t:"The drug is fully inactivated and has no effect on the patient's marrow", correct:false, why:"Low TPMT activity shifts more drug toward the active metabolite, not toward inactivation."},
   {t:"Red blood cell production speeds up", correct:false, why:"The active metabolite suppresses blood cell division; it does not speed production."},
   {t:"The drug is cleared too fast to work", correct:false, why:"Low TPMT activity leaves more active metabolite on board, not less."}],
  teach:"TPMT normally diverts some 6-mercaptopurine to an inactive methylated product. With low TPMT activity, more drug becomes 6-thioguanine nucleotides, the active metabolite, which stop cancer cells dividing but also suppress blood cells, so the dose must be reduced.",

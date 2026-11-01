@@ -302,6 +302,14 @@ See `## Conflicts / uncertain` in notes/L01.md, L02.md and L03.md. The ones that
   data-ti for walkthrough indexes); stackTables skips table.keep; .gwslide hides step nav/caption; steps ghost:true
   (warfarin-genotype) draws the final chart faintly; term groups ordered active exam first; content restructured in
   guide 8, 22, 25, 27, 28, 31 and ref4 tables (blank = not given). Checks: browser_test, glitch clean.
+- 11/01 (question standard + verify): applier made 165 fixes across L18-L22 and 16 gap items (L18-070/071, L19-052..055,
+  L20-073/074, L21-080..082, L22-094..098); bank 2999. bank-verifiers (scratchpad prep/verify4_*.json): L18-19 8+14,
+  L20-21 17, L22 22 findings, all applied. Keys changed: L20-031 (p.56: ACE I/D variant predicts side effects; dupOf
+  L20-044) and L22-004 (p.5 potential ADE). Conflicts noted both ways: simvastatin 221% AUC (about 3.2x) vs her "221
+  times"; TPMT 35% of heterozygotes vs her "35% of the dose"; grapefruit "will induce" vs p.27 and FDA (blocks
+  intestinal CYP3A4); carbamazepine "greatly increase" vs label strong (B*1502) / moderate (A*3101). test.js skips the
+  longest-option check for Smith items; a manual scan leaves only L18-015, L18-069 (True/False), L19-007, L22-039.
+  Checks: build, test, style, browser_test, glitch clean. Recording not started; waiting for the user's approval.
 
 ## Restore after a container restart
 

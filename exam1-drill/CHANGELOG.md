@@ -2,6 +2,14 @@
 
 Newest first. The build embeds this file; the Topics page shows what is new since your last visit, and the Progress page shows all of it. Keep each bullet to one short line.
 
+## 2026-11-01 (Exam 4 questions checked)
+
+- Exam 4 questions rewritten to her exam standard: 165 fixes, 16 new items on her study list points.
+- Every changed item checked against her transcripts, slides and labels; 61 further fixes applied.
+- Two keys changed: L20-031 (variant affects ACE inhibitor side effects, not efficacy) and L22-004 (potential ADE).
+- Where she differs from a label or slide, the note gives both: simvastatin 221%, TPMT 35%, grapefruit, carbamazepine.
+- Correct options are no longer the longest choice in 13 more items.
+
 ## 2026-11-01 (Variant drill)
 
 - New Variant drill tab for Exam 4: her 24 variant rows in four modes, from her think/pair/share table.
