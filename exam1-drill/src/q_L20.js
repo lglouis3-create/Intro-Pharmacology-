@@ -818,5 +818,84 @@ QUESTIONS.push(
   {t:"Only for U.S. patients who are also taking clopidogrel", correct:false, why:"Clopidogrel is unrelated to this study."}],
  teach:"The Japanese population has a relatively high frequency of CYP2C19*2 and *3; the card gives the poor-metabolizer genotype as 18% to 23% in Japanese persons versus 3% to 5% in white U.S. or European populations. So the result cannot be applied to the U.S. at face value. If patients are genotyped, the response is the same; only the numbers in each group differ, and it might reduce antibiotic use in the right genotypes.",
  quote:"So can we generalize this study to the United States? Not on the face of it.",
- cite:"FurutaAnnIntMed1998.pdf (p. 1029, Discussion); PGx-Examples-Students-Fall-2026.pdf slide 'Discussion of Furuta article' (p. 61); transcript 10/26"}
+ cite:"FurutaAnnIntMed1998.pdf (p. 1029, Discussion); PGx-Examples-Students-Fall-2026.pdf slide 'Discussion of Furuta article' (p. 61); transcript 10/26"},
+
+/* ---------------- Exam 4 study list item 3: Furuta 1998 (genotype groups, cure and healing, the four reasons) ---------------- */
+{id:"L20-067", lecture:"L20", prof:"Smith", tier:"new", topic:"L20", sub:"furuta", skill:"recall", readingId:"furuta-1998", dupOf:"L20-065", multi:true, core:true, coreWhy:"her Exam 4 study list item 3 (Furuta): the four ways",
+ concept:"furuta-four-reasons", tags:["smith","reading"], source:"both",
+ stem:"The Furuta discussion gives four reasons (First, Second, Third, Finally) that omeprazole plus amoxicillin cured more poor metabolizers. Which are among them? Select all that apply.",
+ options:[
+  {t:"High intragastric pH lasts longer", correct:true, why:"First: omeprazole's plasma concentration-time curve is markedly increased in poor metabolizers, so high intragastric pH lasts longer."},
+  {t:"More amoxicillin stays active at the higher pH", correct:true, why:"Second: amoxicillin is unstable and less active at low pH, so raising the pH may increase the active antibiotic."},
+  {t:"Omeprazole raises amoxicillin in gastric juice", correct:true, why:"Third: amoxicillin would then stay in the stomach longer at levels above its minimum inhibitory concentration."},
+  {t:"Omeprazole has its own anti-H. pylori activity", correct:true, why:"Finally: this activity is presumably enhanced in poor metabolizers."},
+  {t:"Poor metabolizers clear omeprazole faster", correct:false, why:"Poor metabolizers have no active CYP2C19, so they clear omeprazole slowly and its exposure is markedly increased."},
+  {t:"Amoxicillin works best at low gastric pH", correct:false, why:"The paper says amoxicillin is unstable and its antibacterial activity is decreased under low pH."}],
+ teach:"The four reasons in the Discussion (p. 1029): (1) omeprazole exposure is markedly increased in poor metabolizers, so high intragastric pH lasts longer; (2) amoxicillin is unstable and less active at low pH, so a higher pH leaves more active antibiotic; (3) omeprazole raises amoxicillin concentrations in gastric juice, so amoxicillin stays in the stomach longer above its minimum inhibitory concentration; (4) omeprazole itself has anti-H. pylori activity, presumably enhanced in poor metabolizers. On 10/26 she summarized the first three.",
+ quote:"look at the discussion. And they say things like 1st and 2nd and 3rd, they're making some other points.",
+ note:"She summarized reasons 1 to 3 on 10/26; reason 4 is from the paper. Her Exam 4 study list asks for the four ways elevated PPI concentrations improved outcomes.",
+ cite:"FurutaAnnIntMed1998.pdf (p. 1029, Discussion); PGx-Examples-Students-Fall-2026.pdf slide 'Discussion of Furuta article' (p. 61); transcript 10/26"},
+
+{id:"L20-068", lecture:"L20", prof:"Smith", tier:"new", topic:"L20", sub:"furuta", skill:"recall", readingId:"furuta-1998", dupOf:"L20-065", core:true, coreWhy:"her Exam 4 study list item 3 (Furuta): the four ways",
+ concept:"furuta-reason3-amoxicillin-gastric-juice", tags:["smith","reading"], source:"both",
+ stem:"The third reason in the Furuta discussion concerns amoxicillin in the stomach. What does omeprazole do to it?",
+ options:[
+  {t:"Raises its concentration in gastric juice", correct:true, why:"Third reason (p. 1029); her restatement: omeprazole helps get amoxicillin into the gastric juices and helps it stay intact there."},
+  {t:"Speeds its clearance by CYP2C19", correct:false, why:"CYP2C19 metabolizes omeprazole; the paper does not link amoxicillin to CYP2C19."},
+  {t:"Breaks it down at the raised pH", correct:false, why:"Amoxicillin is unstable at low pH; a higher pH keeps it more stable."},
+  {t:"Speeds its absorption out of the stomach into plasma", correct:false, why:"The point is that amoxicillin stays in the stomach longer, where H. pylori is."}],
+ teach:"Third reason (p. 1029): omeprazole has been reported to increase amoxicillin concentrations in gastric juice. With both drugs given, amoxicillin would be more stable and would stay in the stomach longer at levels above its minimum inhibitory concentration in poor metabolizers. She put it as omeprazole helping get amoxicillin into the gastric juices and helping it stay intact there, at the raised pH.",
+ quote:"That's the 3rd point they make in the discussion, that something about omeprazole helps get the amoxicillin into the gastric juices and helps it stay intact there, cause you've increased the pH",
+ note:"Just before this she said poor metabolizers \"also had more omeprazole in the gastric juice\". The paper's third point, and her own next sentence, is about amoxicillin in gastric juice; keyed to amoxicillin.",
+ cite:"FurutaAnnIntMed1998.pdf (p. 1029, Discussion); PGx-Examples-Students-Fall-2026.pdf slide 'Discussion of Furuta article' (p. 61); transcript 10/26"},
+
+{id:"L20-069", lecture:"L20", prof:"Smith", tier:"new", topic:"L20", sub:"furuta", skill:"recall", readingId:"furuta-1998", core:true, coreWhy:"her Exam 4 study list item 3 (Furuta): genotypes and cure rate",
+ concept:"furuta-cure-rates-by-group", tags:["smith","reading"], source:"both",
+ stem:"In Furuta et al. (1998), what were the H. pylori cure rates in group 1 (wt/wt, normal CYP2C19), group 2 (one mutant allele) and group 3 (two mutant alleles, no active CYP2C19)?",
+ options:[
+  {t:"28.6%, 60% and 100%", correct:true, why:"Table 2 totals: 8 of 28, 15 of 25 and 9 of 9."},
+  {t:"100%, 60% and 28.6%", correct:false, why:"Reversed: the wt/wt group, with full CYP2C19 activity, had the lowest cure rate."},
+  {t:"60%, 28.6% and 100%", correct:false, why:"Group 2 (one working *1 allele) fell between groups 1 and 3."},
+  {t:"About 50% in every group", correct:false, why:"About half of all patients were cured (32 of 62), but the rate differed sharply by genotype, P < 0.001."}],
+ teach:"Group 1 (*1/*1, rapid-extensive) has full CYP2C19 activity and cleared omeprazole fastest: 28.6% cured. Group 2 (*1/*2 or *1/*3, intermediate-extensive) keeps one working allele: 60%. Group 3 (*2/*2 or *2/*3, poor metabolizers) has no active CYP2C19 and the highest omeprazole exposure (relative AUC 1:3.7:20 from earlier work): 100%. The cure rate rose with each lost functional allele.",
+ quote:"So Group 3 has the best cure rate.",
+ cite:"FurutaAnnIntMed1998.pdf (abstract; p. 1028; p. 1029, Table 2); PGx-Examples-Students-Fall-2026.pdf slide 'Discussion of Furuta article' (p. 61); transcript 10/26"},
+
+{id:"L20-070", lecture:"L20", prof:"Smith", tier:"new", topic:"L20", sub:"furuta", skill:"recall", readingId:"furuta-1998", core:true, coreWhy:"her Exam 4 study list item 3 (Furuta): the infections causing ulcers",
+ concept:"furuta-ulcer-healing", tags:["smith","reading"], source:"both",
+ stem:"In Furuta et al. (1998), how did ulcer healing compare with the H. pylori cure rates across the three genotype groups?",
+ options:[
+  {t:"It ran roughly parallel to the cure rates", correct:true, why:"The abstract's words; every patient whose infection was cured had healed ulcer lesions."},
+  {t:"It was highest in group 1", correct:false, why:"Group 1 had the lowest gastric ulcer healing (7 of 12) and group 3 the highest (7 of 7)."},
+  {t:"It was the same in every group", correct:false, why:"Gastric ulcer healing rose from group 1 to group 3 (58.8%, 92.9%, 100% as printed)."},
+  {t:"It ran opposite to the cure rates, best in group 1", correct:false, why:"Healing followed the cure rates, best in the poor metabolizers."}],
+ teach:"Healing rates for both gastric and duodenal ulcer were roughly parallel with the H. pylori cure rates (abstract). Gastric ulcer healed in 7 of 12, 13 of 14 and 7 of 7 patients in groups 1 to 3; duodenal ulcer in 13 of 16, 9 of 11 and 2 of 2. In every patient whose H. pylori infection was cured, the ulcer lesions were healed at follow-up endoscopy. Her slide on CYP2C19 lists increased ulcer healing on PPIs with the poor-metabolizer phenotype.",
+ quote:"They actually have increased ulcer healing.",
+ note:"The paper prints 58.8% for 7 of 12 gastric ulcer patients in group 1.",
+ cite:"FurutaAnnIntMed1998.pdf (abstract; Results, pp. 1028-1029); PGx-Examples-Students-Fall-2026.pdf slide 'CYP2C19 Polymorphisms' (p. 25); transcript 10/22"},
+
+{id:"L20-071", lecture:"L20", prof:"Smith", tier:"new", topic:"L20", sub:"furuta", skill:"recall", readingId:"furuta-1998", multi:true, core:true, coreWhy:"her Exam 4 study list item 3 (Furuta): improved patient outcomes",
+ concept:"furuta-ulcer-healing-why", tags:["smith","reading"], source:"both",
+ stem:"To what do Furuta et al. attribute the excellent ulcer healing in poor metabolizers? Select all that apply.",
+ options:[
+  {t:"Higher H. pylori cure rates", correct:true, why:"Discussion, p. 1029: the higher cure rates for H. pylori infection."},
+  {t:"Stronger acid inhibition by omeprazole", correct:true, why:"Discussion, p. 1029: an increased acid-inhibitory effect of omeprazole."},
+  {t:"A second antibiotic added for them", correct:false, why:"All patients received the same dual therapy; the authors suggest a second antibiotic may be unnecessary for poor metabolizers."},
+  {t:"Lower omeprazole exposure", correct:false, why:"Poor metabolizers have markedly increased omeprazole exposure."}],
+ teach:"The Discussion (p. 1029) closes the four reasons with: both the higher cure rates for H. pylori infection and an increased acid-inhibitory effect of omeprazole may contribute to the excellent ulcer healing rates in poor metabolizers with gastric or duodenal ulcer. Both trace back to the same cause: no active CYP2C19, so omeprazole stays high.",
+ quote:"When you had the low activity version of the enzyme increasing drug blood concentrations, you had better cure rates.",
+ cite:"FurutaAnnIntMed1998.pdf (p. 1029, Discussion); PGx-Examples-Students-Fall-2026.pdf slide 'CYP2C19 Polymorphisms' (p. 25); transcript 10/22"},
+
+{id:"L20-072", lecture:"L20", prof:"Smith", tier:"new", topic:"L20", sub:"furuta", skill:"recall", readingId:"furuta-1998",
+ concept:"furuta-pm-frequency", tags:["smith","reading"], source:"both",
+ stem:"The Furuta discussion compares how often the CYP2C19 poor-metabolizer genotype occurs. What are its frequencies in Japanese persons and in white U.S. or European populations?",
+ options:[
+  {t:"18-23% vs 3-5%", correct:true, why:"Discussion, p. 1029: much lower (3% to 5%) in white U.S. or European populations than in Japanese persons (18% to 23%)."},
+  {t:"3-5% vs 18-23%", correct:false, why:"Reversed."},
+  {t:"About 16% in both", correct:false, why:"16% is the slide's figure for Asians; the two groups differ several-fold."},
+  {t:"Absent in Japanese persons, 18-23% in white populations", correct:false, why:"Group 3 in this Japanese study had 9 poor metabolizers."}],
+ teach:"The paper gives the poor-metabolizer genotype as 18% to 23% in Japanese persons and 3% to 5% in white U.S. or European populations, and notes that dual therapy has generally not achieved adequate cure rates in white persons. That is why she said the result does not transfer to the United States on its face, but would with genotyping. Her slide (p. 25) gives the phenotype as Asians 16% PM, Caucasians 2-5%, African 2-5%.",
+ quote:"This was done in a Japanese population. Where they have a relatively high frequency of 2 and 3 present",
+ note:"Slide p. 25 (Asians 16% PM) and the paper (Japanese persons 18% to 23%) use different groupings; both put poor metabolizers far more often in the Asian or Japanese group.",
+ cite:"FurutaAnnIntMed1998.pdf (p. 1029, Discussion); PGx-Examples-Students-Fall-2026.pdf slides 'CYP2C19 Polymorphisms' (p. 25), 'Discussion of Furuta article' (p. 61); transcript 10/26"}
 );

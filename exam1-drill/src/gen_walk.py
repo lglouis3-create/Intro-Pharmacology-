@@ -4,6 +4,7 @@ import json, os, glob, re
 HERE = os.path.dirname(os.path.abspath(__file__))
 decks = json.load(open(os.path.join(HERE, 'walk', 'decks.json')))
 walk = {}
+STEPSRC = ''.join(open(os.path.join(HERE, f)).read() for f in ('steps3a.js', 'steps3b.js', 'steps4.js') if os.path.exists(os.path.join(HERE, f)))
 G3 = ''.join(open(os.path.join(HERE, f)).read() for f in ('guide3.js', 'guide4.js') if os.path.exists(os.path.join(HERE, f)))
 for f in sorted(glob.glob(os.path.join(HERE, 'walk', 'guide[34]-*.json'))):
     w = json.load(open(f)); sid = w['id']
@@ -21,8 +22,12 @@ for f in sorted(glob.glob(os.path.join(HERE, 'walk', 'guide[34]-*.json'))):
         if tb is not None:
             m = re.search(r'<section class="guide" id="%s">(.*?)</section>' % re.escape(sid), G3, re.S)
             assert m and isinstance(tb, int) and 0 <= tb < m.group(1).count('<table'), (sid, 'table', tb)
+        st = s.get('step')   # "key@i": step i (0-based) of a step-through diagram
+        if st:
+            k, i = st.split('@'); assert "STEPS3['%s']" % k in STEPSRC and int(i) >= 0, (sid, 'step', st)
         seg = {'t': t, 's': sl, 'r': rd}
         if tb is not None: seg['tb'] = tb
+        if st: seg['st'] = st
         segs.append(seg)
     words = sum(len(s['t'].split()) for s in segs)
     walk[sid] = {'title': w['title'], 'segs': segs, 'mins': max(1, round(words / 150))}

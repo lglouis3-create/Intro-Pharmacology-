@@ -3,12 +3,12 @@
  "title": "Metabolism and renal excretion interactions",
  "segs": [
   {
-   "text": "Section thirty five. Metabolism and renal excretion. The third pharmacokinetic area is drug elimination and clearance. In the liver, a precipitant changes the object drug's clearance through four mechanisms: enzyme induction, enzyme inhibition, substrate competition for the same enzyme, and changes in hepatic blood flow. Induction speeds clearance and lowers levels. Inhibition slows clearance and raises them. She said, I always think that thinking about metabolism and clearance in the liver is a little easier.",
+   "text": "Section thirty five. Metabolism and renal excretion. The third pharmacokinetic area is drug elimination and clearance. In the liver, a precipitant changes the object drug's clearance through four mechanisms: enzyme induction, enzyme inhibition, substrate competition for the same enzyme, and changes in hepatic blood flow. Induction speeds clearance and lowers levels. Inhibition slows clearance and raises them.",
    "slide": "ddi:13",
    "reading": null
   },
   {
-   "text": "Two induction examples. Smoking supplies polycyclic aromatic hydrocarbons, which induce C Y P one A one and one A two, the enzymes that metabolize theophylline. So a child with asthma on theophylline in a smoking household is subtherapeutic, not overdosed. Phenytoin induces C Y P three A, which clears the immunosuppressant tacrolimus, so tacrolimus levels fall. Phenytoin is the inducer here, not an inhibitor.",
+   "text": "Two induction examples. Smoking supplies polycyclic aromatic hydrocarbons, which induce C Y P one A one and one A two, the enzymes that metabolize theophylline. So a child with asthma on theophylline in a smoking household is subtherapeutic, below the therapeutic range, not overdosed. Phenytoin induces C Y P three A, which clears the immunosuppressant tacrolimus, so tacrolimus levels fall. Phenytoin is the inducer here, not an inhibitor.",
    "slide": "ddi:14",
    "reading": null,
    "table": 0
@@ -20,7 +20,7 @@
    "table": 0
   },
   {
-   "text": "The cytochrome P four fifty table lists inhibitors and inducers, which are precipitants, and substrates, which are object drugs. Several of its precipitants are not drugs. Charbroiled foods induce C Y P one A two, acting like cigarette smoke. Garlic supplements, grapefruit, Seville oranges and bitter orange sit under C Y P three A inducers, and St. John's wort is listed too. Later, with foods, she described the citrus compounds as competitors, which makes them inhibitors, so both statements were made.",
+   "text": "The cytochrome P four fifty table lists inhibitors and inducers, which are precipitants, and substrates, which are object drugs. Several of its precipitants are not drugs. Charbroiled foods induce C Y P one A two, because the polycyclic aromatic hydrocarbons in burnt meat act like cigarette smoke. Garlic supplements, grapefruit, Seville oranges and bitter orange are printed under C Y P three A inducers. St. John's wort, an herbal product used for depression, is listed under C Y P two D six and the C Y P three A family. She called the citrus compounds competitors for the metabolizing enzymes, and a food that competes is counted as an inhibitor.",
    "slide": "ddi:15",
    "reading": null
   },
@@ -31,7 +31,7 @@
    "table": 1
   },
   {
-   "text": "Urine pH works in opposite directions for two drugs. Antacids and sodium bicarbonate alkalinize the urine. Alkaline urine ionizes salicylates, which are mildly acidic, so they are reabsorbed less and cleared faster. That is the ion trapping from toxicology. For amphetamine the table gives the opposite: alkaline urine increases its reabsorption and decreases its clearance.",
+   "text": "Urine pH works in opposite directions for two drugs. Antacids and sodium bicarbonate alkalinize the urine. Alkaline urine ionizes salicylates, which are mildly acidic, so they are reabsorbed less and cleared faster. For amphetamine the table gives the opposite: alkaline urine increases its reabsorption and decreases its clearance.",
    "slide": "ddi:17",
    "reading": null,
    "table": 1

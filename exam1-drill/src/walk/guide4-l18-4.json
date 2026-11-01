@@ -3,7 +3,7 @@
  "title": "Synonymous, non-synonymous and premature stop S N Ps",
  "segs": [
   {
-   "text": "Section four. S N P types in coding regions. A single nucleotide polymorphism is one base pair changed in a gene. Several million are known, and many change nothing about the gene's product. Coding regions are the parts of a gene translated to R N A and then to protein. A coding S N P is classed by what the base change does to the codon. It can give the same amino acid, which is synonymous, a different amino acid, which is non-synonymous, or a stop codon early in the sequence, a premature stop.",
+   "text": "Section four. S N P types in coding regions. A single nucleotide polymorphism is one base pair changed in a gene. Several million are known, and many change nothing about the gene's product. Coding regions are the parts of a gene translated to R N A and then to protein. A codon is three bases that code for one amino acid, and a coding S N P is classed by what the base change does to the codon. It can give the same amino acid, which is synonymous, a different amino acid, which is non-synonymous, or a stop codon early in the sequence, a premature stop.",
    "slide": "pgx:32",
    "reading": null
   },
@@ -18,7 +18,7 @@
    "reading": null
   },
   {
-   "text": "The premature stop codon example is C Y P two C nineteen star three. A G to A change turns T G G, tryptophan, into T A G, a stop codon. T A G tells the cell's machinery to stop translating the R N A, and here it comes far earlier than the normal stop codon. The protein is truncated, so the activity is none, not low. She first called this S N P synonymous and corrected herself, because it changes the sequence by creating a stop codon. The affected drugs are the proton pump inhibitors omeprazole and lansoprazole.",
+   "text": "The premature stop codon example is C Y P two C nineteen star three. A G to A change turns T G G, tryptophan, into T A G, a stop codon. T A G tells the cell's machinery to stop translating the R N A, and here it comes far earlier than the normal stop codon. The protein is truncated, so the activity is none, not low. This is not a synonymous S N P. Creating a stop codon changes the protein, so a premature stop is a kind of non-synonymous change. The affected drugs are the proton pump inhibitors omeprazole and lansoprazole.",
    "slide": "pgx:36",
    "reading": null
   }

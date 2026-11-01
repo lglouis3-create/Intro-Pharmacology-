@@ -3,12 +3,12 @@
  "title": "Immunologic reactions and hypersensitivity",
  "segs": [
   {
-   "text": "Section thirty two. Immunologic and nonimmunologic reactions, risk factors, and hypersensitivity types. The more drugs given, the more likely an adverse drug reaction. In hospitalized patients on fewer than six drugs the probability is five percent. On more than fifteen drugs it is more than forty percent. Ambulatory patients, who usually take fewer drugs, sit at about twenty percent. Separately, a number of widely used drugs cause ninety percent of all reactions, led by opioids, cardiac medications, and diabetes medications.",
+   "text": "Section thirty two. Immunologic and nonimmunologic reactions, risk factors, and hypersensitivity types. The more drugs given, the more likely an adverse drug reaction. In hospitalized patients on fewer than six drugs the probability is five percent. On more than fifteen drugs it is more than forty percent. Ambulatory patients, who usually take fewer drugs, sit at about twenty percent. Separately, a number of widely used drugs cause ninety percent of all reactions, and she named opioids, cardiac medications and diabetes medications as the big three.",
    "slide": "ade:20",
    "reading": null
   },
   {
-   "text": "Reactions fall into two groups. She said, the non-immunological reactions are predictable, where oftentimes the immunological reactions are not predictable. Predictable nonimmunologic examples are dry mouth from antihistamines, liver toxicity from methotrexate, and seizure from excessive lidocaine. But three nonimmunologic kinds are unpredictable. Pseudoallergic, such as the itch from radiocontrast dye, feels allergic but is the drug itself. Idiosyncratic, such as hemolytic anemia after primaquine in G six P D deficiency. And intolerance, whose classic example is tinnitus after a single, small dose of aspirin.",
+   "text": "Reactions fall into two groups. She said, the non-immunological reactions are predictable, where oftentimes the immunological reactions are not predictable. Predictable nonimmunologic examples are dry mouth from antihistamines, liver toxicity from methotrexate, and seizure from excessive lidocaine. But three nonimmunologic kinds are unpredictable. Pseudoallergic, such as the itch from radiocontrast dye, feels allergic but is the drug itself. Idiosyncratic, such as hemolytic anemia after primaquine in G six P D deficiency. And intolerance, whose classic example is ringing in the ears, tinnitus, after a single, small dose of aspirin.",
    "slide": "ade:23",
    "reading": null,
    "table": 1
@@ -20,13 +20,18 @@
    "table": 2
   },
   {
-   "text": "What a layperson calls a drug allergy is properly a hypersensitivity reaction. The Gell and Coombs classification gives four types, and timing is the key. Type one is I g E mediated: the drug I g E complex binds mast cells and releases histamine, within minutes to hours. Type two is cytotoxic, with variable timing. Type three deposits drug antibody complexes in tissue, causing serum sickness one to three weeks later. Type four is delayed and cell mediated through T cells, two to seven days after skin exposure, as in contact dermatitis.",
+   "text": "What a layperson calls a drug allergy is properly a hypersensitivity reaction. The Gell and Coombs classification gives four types, and timing is the key. Type one is mediated by the antibody I g E: the drug I g E complex binds mast cells and releases histamine, within minutes to hours. Type two is cytotoxic, with variable timing. Type three deposits drug antibody complexes in tissue, causing serum sickness one to three weeks later. Type four is delayed and cell mediated: the drug has to be presented to T cells and cytokines released, so it appears two to seven days after skin exposure, as in contact dermatitis. So the time from the dose to the reaction points to the type. More than one type can occur at the same time, and a reaction that looks like immune hypersensitivity may actually be idiosyncratic.",
    "slide": "ade:27",
    "reading": null,
    "table": 3
   },
   {
-   "text": "The type changes treatment. For type one, she said, probably your biggest bet would be antihistamines, right? And then steroids. For the other types, steroids for sure, and possibly other therapies. Stevens Johnson syndrome is painful and dangerous, can involve the mouth and mucosal tract, and the skin can come off. Carbamazepine puts people with a certain H L A B variant at risk.",
+   "text": "The type changes treatment. Type one works through histamine released from mast cells, so for type one, she said, probably your biggest bet would be antihistamines, right? And then steroids. The other types work through antibodies against cells, immune complexes or T cells, and for those she said steroids for sure, and possibly other therapies.",
+   "slide": "ade:27",
+   "reading": null
+  },
+  {
+   "text": "Stevens Johnson syndrome is painful and dangerous, can involve the mouth and mucosal tract, and the skin can come off. Carbamazepine puts people with a certain H L A B variant at risk.",
    "slide": "ade:33",
    "reading": null
   }

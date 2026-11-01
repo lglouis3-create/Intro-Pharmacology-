@@ -3,7 +3,7 @@
  "title": "Functional significance and the gene dose effect",
  "segs": [
   {
-   "text": "Section two. Functional significance and the gene dose effect. An allele name is only useful once its functional significance is known, meaning what the variant does to the activity of the protein the gene codes for, whether an enzyme, a transporter or a receptor. Functional significance is about activity, not about how common the variant is. For these variants, labs have expressed the variant enzymes and measured their activity against the wild type, so genotype and phenotype are tightly linked.",
+   "text": "Section two. Functional significance and the gene dose effect. An allele name is only useful once its functional significance is known, meaning what the variant does to the activity of the protein the gene codes for, whether an enzyme, a transporter or a receptor. Functional significance is about activity, not about how common the variant is. For these variants, labs have made the variant enzymes and measured their activity against the wild type, so genotype, the alleles, and phenotype, the activity, are tightly linked.",
    "slide": "pgx:26",
    "reading": null
   },
@@ -13,12 +13,12 @@
    "reading": null
   },
   {
-   "text": "Each person carries two alleles of each gene, one from each parent, and the pair is the genotype, written as C Y P two C nineteen star one, star two. The activity of the two copies adds up. Star one, star one is normal, because both copies make active enzyme. Star one with star two, or star one with star three, is reduced, about halfway, because one copy makes active enzyme and the other makes none. She said, If you were to add it up, they look halfway in the range of two C nineteen activity. She called this the gene dose effect. There is no dominance in these drug-response variants.",
+   "text": "Each person carries two alleles of each gene, one from each parent, and the pair is the genotype, written as C Y P two C nineteen star one, star two. Two different alleles make a person heterozygous, and two of the same make them homozygous. The activity of the two copies adds up. Star one, star one is normal, because both copies make active enzyme. Star one with star two, or star one with star three, is reduced, about halfway, because one copy makes active enzyme and the other makes none. She said, If you were to add it up, they look halfway in the range of two C nineteen activity. She called this the gene dose effect. There is no dominance in these drug-response variants.",
    "slide": "pgx:28",
    "reading": null
   },
   {
-   "text": "Any pairing of the two inactive alleles, star two, star two, star two, star three, or star three, star three, has no activity. Being heterozygous does not by itself mean partial activity; star two, star three has none, because neither copy works. Her own true or false example is that someone homozygous for the star three variant of C Y P two C nineteen has C Y P two C nineteen activity. That is false. Induction by diet or other drugs cannot rescue star two either. No activity comes from star two, because that protein is too short to function.",
+   "text": "Any pairing of the two inactive alleles, star two, star two, star two, star three, or star three, star three, has no activity. Being heterozygous does not by itself mean partial activity; star two, star three has none, because neither copy works. Someone homozygous for star three has no C Y P two C nineteen activity. Induction, raising the amount of enzyme with diet or other drugs, cannot rescue star two either, because the star two protein is too short to function.",
    "slide": "pgx:28",
    "reading": null
   }

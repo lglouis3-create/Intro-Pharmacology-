@@ -133,7 +133,7 @@ See `## Conflicts / uncertain` in notes/L01.md, L02.md and L03.md. The ones that
   reading talks 23,611; why L13–15 unrecorded 111,403; L16 58,078; L17 51,593; keys 65,217; new/gap 92,011;
   antidote diagrams 12,172; step captions 6,385; total 420,470 (about $76.41). Waiting on the user's choice of batches.
 - Open with the user: her table key cites "Pharmacotherapy e6" for iron and organophosphate rows, but the posted e6 is
-  Medication Adherence; 11 class B/C slips; Quiz 4 Q1 has no correct option (Exam 4 material).
+  Medication Adherence; 11 class B/C slips; Quiz 4 Q1 has no correct option (Exam 4 material) [settled 11/01: L18-067 carries Q1 with CYP2D6*5 as the correct option in place of the printed CYP2D6*2; the user says the rest of Quiz 4 is already handled].
 - 10/23 (later): final audio review. Nine reviewers checked every Exam 3 script against the current item and the sources
   (scratchpad audit/BRIEF.md, outputs audit/out_*.json, applied by audit/apply.py): 234 Why scripts replaced, 96 added
   (narration3_audit.js: Why items, QZ3-001..023, matching items, GAP3-033/034); all 33 recorded L13–L15 clips retired
@@ -286,6 +286,15 @@ See `## Conflicts / uncertain` in notes/L01.md, L02.md and L03.md. The ones that
   added to FOCUS_VIEWS; empty-search message; flashcard fcFocus(); coarse-pointer 44 px on nav/chips/flash, 40 px
   letters; focus label short under 480 px; map counts labelled all exams. Not done: Exam 4 glossary entries (L18-L22),
   per-exam map counts, flashcard group chips as a select.
+
+- 11/01 (her Exam 4 announcement, user request): course.js Exam 4 questions 55 ("between 50 and 55"), study list and
+  keys-not-posted facts; date kept Mon Nov 2 (user decision; her note printed "Monday Nov 4th"). Audits SP/prep/
+  cov_objectives.json (85 items) and cov_readings.json (33 sub-points). Added: 42 questions (L18-067..069, L19-045..051,
+  L20-067..072, L21-060..079, L22-088..093; bank-verifier 15 minor fixes, no key changed); ref4-l18-3, ref4-l19-2 (TPS
+  tables), ref4-l21-1 Figure 2 population table; steps4.js (warfarin-target 7, warfarin-genotype 8, naranjo-case 8),
+  markers in guide 25 and 31; walkthrough parts may show "step": "key@i" (gen_walk.py, gwShow); 67 Exam 4 glossary terms
+  (termBorrow keeps Exam 3 terms on Exam 4); guide 11, 12, 20, 22, 25, 31 rewritten for a beginner; 67 + second-pass
+  walkthrough edits (392 segments; 92,617 spoken characters, about $16.84 to record). Quiz 4 Q1 = L18-067 (CYP2D6*5).
 
 ## Restore after a container restart
 

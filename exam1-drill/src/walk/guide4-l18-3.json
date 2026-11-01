@@ -3,7 +3,7 @@
  "title": "Haplotypes: V K O R C one and T P M T star three A",
  "segs": [
   {
-   "text": "Section three. Haplotype nomenclature. A haplotype is a set of variants at several loci on one allele that occur together in the population more often than random chance. When the same combination of changes keeps turning up in different people, it is common enough to be worth one name, and one name is easier to say and read than the list of changes. Whoever discovers a haplotype names it, so the naming differs from gene to gene.",
+   "text": "Section three. Haplotype nomenclature. A haplotype is a set of variants at several positions, called loci, on one allele that occur together in the population more often than random chance. When the same combination of changes keeps turning up in different people, it is common enough to be worth one name, and one name is easier to say and read than the list of changes. Whoever discovers a haplotype names it, so the naming differs from gene to gene.",
    "slide": "pgx:29",
    "reading": null
   },
@@ -18,8 +18,8 @@
    "reading": null
   },
   {
-   "text": "A haplotype is several variants together on one allele, while a genotype is the two alleles a person carries. Not every gene's haplotypes are lettered. Naming is up to the discoverers, and some get star names, like T P M T star three A. V K O R C one is the gene she pairs with warfarin, and T P M T goes with azathioprine and six mercaptopurine.",
-   "slide": null,
+   "text": "A haplotype is not a genotype. A haplotype is several variants together on one allele, such as the two changes in T P M T star three A. A genotype is the pair of alleles a person carries, one from each parent.",
+   "slide": "pgx:29",
    "reading": null
   }
  ]

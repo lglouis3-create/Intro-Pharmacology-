@@ -1766,8 +1766,8 @@ function examResult() {
 /* ---------- Terms: glossary with figures, flashcards, generated questions ---------- */
 let TM = {mode: 'glossary', group: 'all', card: null, shown: false, scope: 'exam'};   // scope: the glossary lists this exam's terms, or both exams'
 const termExam = t => lecExam(t.lecture) || 1;
-// Exam 4 has no glossary of its own; it is "cumulative to my part" (course.js Exam 4 facts), so it uses her Exam 3 terms
-const termBorrow = () => activeId() === 4 && !(typeof TERMS === 'undefined' ? [] : TERMS).some(t => termExam(t) === 4) ? 3 : 0;
+// Exam 4 is "cumulative to my part" (course.js Exam 4 facts): its terms list carries her Exam 3 terms too
+const termBorrow = () => activeId() === 4 ? 3 : 0;
 const termIn = t => termExam(t) === activeId() || termExam(t) === termBorrow();
 const termList = () => (typeof TERMS === 'undefined' ? [] : TERMS).filter(t => termIn(t) && (TM.group === 'all' || t.group === TM.group));
 const termKey = t => 'term:' + t.id;
@@ -1856,7 +1856,7 @@ function vTerms() {
   if (focusOn()) TM.scope = 'exam';   // focus hides the other exams' groups, so the all-exams view would be empty
   const chipGroups = TM.mode === 'glossary' && TM.scope === 'both' ? groups : [...new Set(mine.map(t => t.group))];
   if (TM.group !== 'all' && !chipGroups.includes(TM.group)) TM.group = 'all';
-  let h = `<h2>Terms</h2><div class="row" style="margin:-4px 0 8px">${examSwitch()}</div><p class="sub">${mine.length} terms for ${esc(active().name)}${termBorrow() ? ` (her Exam ${termBorrow()} terms: she said Exam 4 is “cumulative to my part”)` : ''}, each with its source (${all.length} across all exams; ${focusOn() ? 'turn Smith focus off to show them all' : 'the glossary can show them all'}). Each term has a one-line meaning, a situation that shows it in action, and, where one applies, a figure.</p>
+  let h = `<h2>Terms</h2><div class="row" style="margin:-4px 0 8px">${examSwitch()}</div><p class="sub">${mine.length} terms for ${esc(active().name)}${termBorrow() ? ` (with her Exam ${termBorrow()} terms: she said Exam 4 is “cumulative to my part”)` : ''}, each with its source (${all.length} across all exams; ${focusOn() ? 'turn Smith focus off to show them all' : 'the glossary can show them all'}). Each term has a one-line meaning, a situation that shows it in action, and, where one applies, a figure.</p>
   <div class="card"><div class="row">${[['glossary', 'Glossary'], ['flash', 'Flashcards'], ['quiz', 'Quiz me']].map(([k, l]) => `<button type="button" class="chip ${TM.mode === k ? 'on' : ''}" aria-pressed="${TM.mode === k}" data-mode="${k}">${l}</button>`).join('')}
    <span class="meta" style="margin:0 0 0 12px">Group:</span>${['all'].concat(chipGroups).map(g => `<button type="button" class="chip ${TM.group === g ? 'on' : ''}" aria-pressed="${TM.group === g}" data-group="${esc(g)}">${g === 'all' ? 'All' : esc(g)}</button>`).join('')}</div></div>`;
   const list = termList();
@@ -3161,7 +3161,7 @@ function gwShow(id, i, sel) {
   if (li && changed && GW && GW.id === id && GW.playing) { const r = p.getBoundingClientRect(), lr = li.getBoundingClientRect(); if (r.bottom > 0 && r.top < innerHeight && (lr.top < hdrOff() || lr.bottom > innerHeight)) li.scrollIntoView({block: 'nearest'}); }
   p.querySelector('.gwpos').textContent = `Part ${i + 1} of ${segs.length}`;
   let vis = sel ? {s: sel} : null;
-  for (let k = i; k >= 0 && !vis; k--) if (segs[k].s || segs[k].tb != null) vis = segs[k].s ? {s: segs[k].s} : {tb: segs[k].tb};
+  for (let k = i; k >= 0 && !vis; k--) if (segs[k].st || segs[k].s || segs[k].tb != null) vis = segs[k].st ? {st: segs[k].st} : segs[k].s ? {s: segs[k].s} : {tb: segs[k].tb};
   if (!vis) { const f0 = segs.find(x => x.s || x.tb != null); if (f0) vis = f0.s ? {s: f0.s} : {tb: f0.tb}; }
   const f = p.querySelector('.gwslide');
   let h = '';
@@ -3170,6 +3170,8 @@ function gwShow(id, i, sel) {
     h += `<a href="${src}" target="_blank" rel="noopener" title="Open the slide full size"><img src="${src}" alt="${esc(dk.name)}, slide ${n}" decoding="async" onerror="this.closest('figure').classList.add('noimg')"></a>
       <figcaption class="row"><span class="meta" style="margin:0">${esc(dk.name)} · slide ${n} of ${dk.n}</span><span class="row" style="gap:4px;margin-left:auto"><button type="button" class="chip" data-gwslide="-1" ${+n > 1 ? '' : 'disabled'} aria-label="Previous slide">‹ Slide</button><button type="button" class="chip" data-gwslide="1" ${+n < dk.n ? '' : 'disabled'} aria-label="Next slide">Slide ›</button></span></figcaption>
       <p class="meta gwnoimg">The slide images load on the class site.</p>`;
+  } else if (vis && vis.st) {
+    const [k, n] = vis.st.split('@'); h += stepHTML(k, Math.min(+n, ((STEPS()[k] || {}).steps || [0]).length - 1));
   } else if (vis && vis.tb != null) {
     const t = [...document.getElementById(id).querySelectorAll('table')].filter(x => !x.closest('.gwtable'))[vis.tb];
     if (t) h += `<div class="tablewrap gwtable">${t.outerHTML}</div><p class="meta" style="margin:4px 0 0">From the guide section below</p>`;

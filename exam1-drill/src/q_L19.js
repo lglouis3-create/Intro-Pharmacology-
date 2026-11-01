@@ -551,5 +551,93 @@ QUESTIONS.push(
   {t:"The drug has no genetic influence on patient response at all", correct:false, why:"Clear peaks are a strong hint of genetic control, not its absence."},
   {t:"The histogram was measured incorrectly", correct:false, why:"Distinct peaks are a meaningful pattern, not an error."}],
  teach:"When a drug-response frequency curve has distinct peaks, each peak is a phenotype and the pattern points to a single gene driving the response (monogenic), as with CYP2D6 and debrisoquine. A smooth bell-shaped curve means many genes contribute (polygenic), which fuzzes the data together. She also cautioned that monogenic curves do not all look the same from gene to gene.",
- cite:"PGx-Examples-Students-Fall-2026.pdf slides 'Monogenic and Polygenic Effects' (p. 10), 'CYP2D6 Polymorphisms 2' (p. 21); transcript 10/22"}
+ cite:"PGx-Examples-Students-Fall-2026.pdf slides 'Monogenic and Polygenic Effects' (p. 10), 'CYP2D6 Polymorphisms 2' (p. 21); transcript 10/22"},
+
+/* ---------------- Exam 4 study list: Furuta (item 3) and CYP2C9 populations (item 4) ---------------- */
+{id:"L19-045", lecture:"L19", prof:"Smith", tier:"new", topic:"L19", sub:"cyp2c19", skill:"recall", readingId:"furuta-1998", core:true, coreWhy:"her Exam 4 study list item 3 (Furuta): cure of the H. pylori infections causing ulcers",
+ concept:"cyp2c19-pm-ppi-ulcer-healing", tags:["smith","reading"], source:"both",
+ stem:"For a patient taking a proton pump inhibitor (PPI), what does the CYP2C19 poor-metabolizer phenotype do to ulcer healing?",
+ options:[
+  {t:"Increases it", correct:true, why:"The last bullet on the CYP2C19 slide and her words: poor metabolizers on PPIs have increased ulcer healing."},
+  {t:"Decreases it", correct:false, why:"A poor metabolizer clears the PPI slowly, so PPI levels stay higher, not lower."},
+  {t:"No effect on healing", correct:false, why:"The slide lists increased ulcer healing as a clinical consequence of the poor-metabolizer phenotype."},
+  {t:"Decreases it, with a sharp rise in adverse effects", correct:false, why:"PPIs have a very wide therapeutic index; the rise in adverse drug responses with poor metabolism is her SSRI and diazepam example."}],
+ teach:"CYP2C19 clears PPIs such as omeprazole. A poor metabolizer (two inactive alleles, *2 or *3) keeps PPI concentrations higher, so gastric pH rises more. With the wide therapeutic index of PPIs this is a benefit, not a toxicity. In the Furuta paper, ulcer healing ran roughly parallel with the H. pylori cure rates, and every ulcer healed in the poor-metabolizer group.",
+ quote:"people that are on proton pump inhibitors, if they're poor metabolizers. They actually have increased ulcer healing.",
+ cite:"PGx-Examples-Students-Fall-2026.pdf slide 'CYP2C19 Polymorphisms' (p. 25); FurutaAnnIntMed1998.pdf (abstract; pp. 1028-1029); transcript 10/22"},
+
+{id:"L19-046", lecture:"L19", prof:"Smith", tier:"new", topic:"L19", sub:"cyp2c9", skill:"recall", readingId:"cpic-warfarin-2017", core:true, coreWhy:"her Exam 4 study list item 4 (CPIC Figure 2): which populations carry each variant",
+ concept:"cyp2c9-2-3-population", tags:["smith","reading"], source:"both",
+ stem:"Which population has the highest frequency of the low-activity CYP2C9 variants *2 and *3?",
+ options:[
+  {t:"Caucasians (European ancestry)", correct:true, why:"Her slide: about 30% of Caucasians carry a variant. The CPIC guideline calls *2 and *3 the two most common decreased-function alleles in European ancestry."},
+  {t:"African Americans", correct:false, why:"Her slide gives 1-3%. In African ancestry the other decreased-function alleles, *5, *6, *8 and *11, are the more common ones."},
+  {t:"East Asians", correct:false, why:"Her slide gives 0% in the population studied; the guideline says *2 is virtually absent in Asians."},
+  {t:"All populations at about the same frequency", correct:false, why:"The frequencies differ sharply between populations."}],
+ teach:"Her slide (p. 23) gives the frequency of a low-activity CYP2C9 variant as Caucasians 30%, African Americans 1-3% and East Asians 0% in the population studied. The 2017 CPIC warfarin guideline agrees on the order: *2 and *3 are the two most common decreased-function alleles in European ancestry, and *2 is virtually absent in Asians. In African ancestry *5, *6, *8 and *11 are collectively more common than *2 and *3, which is why the algorithm tests them first on that branch.",
+ quote:"Caucasians, about 30% of Caucasians have, have one or both variants.",
+ cite:"PGx-Examples-Students-Fall-2026.pdf slide 'CYP2C9 Polymorphisms' (p. 23); CPIC warfarin guideline 2017 update ('CYP2C9 and warfarin', pp. 398-399; p. 400); transcript 10/22"},
+/* ---------------- Exam 4 study list item 1 gap fill: expected frequency of the variants (objective, Examples p. 3) ---------------- */
+{id:"L19-047", lecture:"L19", prof:"Smith", tier:"new", topic:"L19", sub:"nat2", skill:"apply", multi:true, core:true, coreWhy:"her Exam 4 study list item 1 (objectives): expected frequency of the clinically significant variants",
+ concept:"nat2-frequency-monitoring", tags:["smith","inclass"], source:"both",
+ stem:"Based on the NAT2 population frequencies, which patients on isoniazid might we be most concerned about monitoring for hepatotoxicity? Select all that apply.",
+ options:[
+  {t:"Japanese patients", correct:true, why:"Only about 10% are slow acetylators, so the rest are probably fast acetylators, the phenotype with isoniazid hepatotoxicity."},
+  {t:"Caucasian patients", correct:true, why:"About 30 to 45% are fast acetylators; she said about half could be fast."},
+  {t:"Middle Eastern patients", correct:false, why:"About 80% are slow acetylators; for them she named peripheral nerve damage on isoniazid as the concern."},
+  {t:"Slow acetylators of any population", correct:false, why:"Slow acetylators on isoniazid get peripheral nerve damage; hepatotoxicity is the fast-acetylator risk."}],
+ teach:"Fast acetylators on isoniazid are at risk of hepatotoxicity, and slow acetylators of peripheral nerve damage. Her slide gives Caucasian 30-45% fast, Japanese 10% slow and Middle East 80% slow. She asked the room which patients to monitor for hepatotoxicity and answered from those numbers: most of a Japanese population and about half of a Caucasian population could be fast acetylators, so their liver health is watched on isoniazid.",
+ quote:"So if only about 10% of a Japanese population are slow acetylators, that means the rest of them are probably fast acetylators, and then about half of your Caucasian population could be fast acetylators",
+ cite:"PGx-Examples-Students-Fall-2026.pdf slide 'N-acetyltransferase 2 (NAT2)' (p. 19); transcript 10/22"},
+
+{id:"L19-048", lecture:"L19", prof:"Smith", tier:"new", topic:"L19", sub:"nat2", skill:"recall", core:true, coreWhy:"her Exam 4 study list item 1 (objectives): expected frequency of the clinically significant variants",
+ concept:"nat2-frequencies", tags:["smith"], source:"both",
+ stem:"Which pair of NAT2 phenotype frequencies matches the population data she gave?",
+ options:[
+  {t:"Caucasian 30-45% fast; Japanese 10% slow", correct:true, why:"Both numbers as printed on p. 19 and read aloud on 10/22."},
+  {t:"Caucasian 30-45% slow; Japanese 10% fast", correct:false, why:"The phenotypes are swapped: 30-45% of Caucasians are fast, 10% of the Japanese population slow."},
+  {t:"Caucasian 80% slow; Japanese 30-45% fast", correct:false, why:"80% slow is the Middle East figure; 30-45% fast is the Caucasian figure."},
+  {t:"Caucasian 10% slow; Japanese 80% slow", correct:false, why:"10% slow is the Japanese figure and 80% slow the Middle East figure."}],
+ teach:"NAT2 acetylator phenotype frequency on her slide: Caucasian 30-45% fast, Japanese 10% slow, Middle East 80% slow. Each figure is given for one phenotype only, so read which phenotype is named before comparing groups. Slow acetylators risk procainamide lupus and isoniazid peripheral nerve damage; fast acetylators risk isoniazid hepatotoxicity.",
+ quote:"In Caucasians, 30 to 45% of us are fast fast settllators. In the Japanese population, about 10% of us are slow acetylators.",
+ note:"The caption renders acetylators as \"settllators\".",
+ cite:"PGx-Examples-Students-Fall-2026.pdf slide 'N-acetyltransferase 2 (NAT2)' (p. 19); transcript 10/22"},
+
+{id:"L19-049", lecture:"L19", prof:"Smith", tier:"new", topic:"L19", sub:"cyp2c19", skill:"recall", core:true, coreWhy:"her Exam 4 study list item 1 (objectives): expected frequency of the clinically significant variants",
+ concept:"cyp2c19-pm-frequency", tags:["smith"], source:"both",
+ stem:"Which population has the highest frequency of the CYP2C19 poor metabolizer phenotype in her population data?",
+ options:[
+  {t:"Asians, about 16%", correct:true, why:"Her slide: Asians 16% PM, against 2-5% in Caucasians and in Africans."},
+  {t:"Caucasians, about 2-5%", correct:false, why:"2-5% is lower than the 16% given for Asians."},
+  {t:"Africans, about 2-5%", correct:false, why:"Same 2-5% as Caucasians; lower than Asians."},
+  {t:"Caucasians, about 30%", correct:false, why:"30% is the Caucasian frequency of the low-activity CYP2C9 variants, not CYP2C19 poor metabolizers."}],
+ teach:"Her CYP2C19 slide gives the ethnic frequency of the poor metabolizer (PM) phenotype: Caucasians 2-5%, African 2-5%, Asians 16%. She said all of these frequencies list the poor metabolizers. Poor metabolizers have more adverse drug responses with SSRIs and more sedation with diazepam, and better ulcer healing on proton pump inhibitors.",
+ quote:"These are the frequencies of these phenotypes in these particular populations. All these, these frequencies are listing the poor metabolizers.",
+ note:"The Furuta 1998 paper discussed on 10/26 gives the poor-metabolizer genotype as 18% to 23% in Japanese persons and 3% to 5% in white U.S. or European populations (L20-072); the slide groups by Asians and gives 16%. Both put poor metabolizers far more often in the Asian group.",
+ cite:"PGx-Examples-Students-Fall-2026.pdf slide 'CYP2C19 Polymorphisms' (p. 25); transcript 10/22"},
+
+{id:"L19-050", lecture:"L19", prof:"Smith", tier:"new", topic:"L19", sub:"cyp2c19", skill:"recall", multi:true, dupOf:"L19-049", core:true, coreWhy:"her Exam 4 study list item 1 (objectives): expected frequency of the clinically significant variants",
+ concept:"cyp2c19-pm-frequency", tags:["smith"], source:"both",
+ stem:"Which CYP2C19 poor metabolizer frequencies match her population data? Select all that apply.",
+ options:[
+  {t:"Caucasians: 2-5%", correct:true, why:"As printed on p. 25."},
+  {t:"African: 2-5%", correct:true, why:"As printed on p. 25; the same range as Caucasians."},
+  {t:"Asians: 16%", correct:true, why:"As printed on p. 25; the highest of the three."},
+  {t:"Asians: 2-5%", correct:false, why:"Asians are 16%."},
+  {t:"Caucasians: 16%", correct:false, why:"16% is the Asian figure; Caucasians are 2-5%."}],
+ teach:"Ethnic frequency of the CYP2C19 poor metabolizer phenotype on her slide: Caucasians 2-5%, African 2-5%, Asians 16%. She read the slide as \"listing the poor metabolizers\" and gave no caveat that the numbers would not be tested (contrast CYP2D6, where she said she would not test the numbers).",
+ quote:"All these, these frequencies are listing the poor metabolizers.",
+ cite:"PGx-Examples-Students-Fall-2026.pdf slide 'CYP2C19 Polymorphisms' (p. 25); transcript 10/22"},
+
+{id:"L19-051", lecture:"L19", prof:"Smith", tier:"new", topic:"L19", sub:"cyp2c9", skill:"recall", dupOf:"L19-046", core:true, coreWhy:"her Exam 4 study list item 1 (objectives): expected frequency of the clinically significant variants",
+ concept:"cyp2c9-2-3-population", tags:["smith"], source:"both",
+ stem:"About what share of Caucasians carry one or both of the low-activity CYP2C9 variants (*2, *3)?",
+ options:[
+  {t:"About 30%", correct:true, why:"Her slide: Caucasians 30% variants; she said about 30% of Caucasians have one or both."},
+  {t:"About 1-3%", correct:false, why:"1-3% is the African American figure."},
+  {t:"About 0%", correct:false, why:"0% is the East Asian figure in the population studied."},
+  {t:"About 80%", correct:false, why:"80% is the share of slow NAT2 acetylators in the Middle East."}],
+ teach:"Her CYP2C9 slide gives the frequency of a low-activity variant: Caucasians 30%, African Americans 1-3%, East Asians 0% in the population studied. CYP2C9*2 keeps about 20% and *3 about 5% of wild-type activity, so carriers clear warfarin, phenytoin, glipizide and tolbutamide more slowly.",
+ quote:"Caucasians, about 30% of Caucasians have, have one or both variants.",
+ cite:"PGx-Examples-Students-Fall-2026.pdf slide 'CYP2C9 Polymorphisms' (p. 23); transcript 10/22"}
 );
