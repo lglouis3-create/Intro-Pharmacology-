@@ -1,14 +1,14 @@
 {
  "id": "guide4-l18-4",
- "title": "Synonymous, non-synonymous and premature stop S N Ps",
+ "title": "Synonymous, non-synonymous and premature stop snips",
  "segs": [
   {
-   "text": "Section four. S N P types in coding regions. A single nucleotide polymorphism is one base pair changed in a gene. Several million are known, and many change nothing about the gene's product. Coding regions are the parts translated to R N A and then protein. A codon is three bases coding one amino acid, and a coding S N P is classed by what it does to the codon: same amino acid, synonymous; different amino acid, non-synonymous; early stop codon, premature stop.",
+   "text": "Section four. snip types in coding regions. A single nucleotide polymorphism is one base pair changed in a gene. Several million are known, and many change nothing about the gene's product. Coding regions are the parts translated to R N A and then protein. A codon is three bases coding one amino acid, and a coding snip is classed by what it does to the codon: same amino acid, synonymous; different amino acid, non-synonymous; early stop codon, premature stop.",
    "slide": "pgx:32",
    "reading": null
   },
   {
-   "text": "Synonymous example: A B C B one, thirty four thirty five, C to T, the gene for P-glycoprotein. A T C becomes A T T, but several codons code the same amino acid, and both give isoleucine. She said, Synonymous means the same. It does not mean harmless: this S N P keeps turning up in drug-response studies; she thinks expression is probably affected, but there is no consensus on function or expression. Affected drugs: efavirenz and cyclosporine.",
+   "text": "Synonymous example: A B C B one, thirty four thirty five, C to T, the gene for P-glycoprotein. A T C becomes A T T, but several codons code the same amino acid, and both give isoleucine. She said, Synonymous means the same. It does not mean harmless: this snip keeps turning up in drug-response studies; she thinks expression is probably affected, but there is no consensus on function or expression. Affected drugs: efavirenz and cyclosporine.",
    "slide": "pgx:34",
    "reading": null
   },
@@ -18,7 +18,7 @@
    "reading": null
   },
   {
-   "text": "Premature stop example: C Y P two C nineteen star three. G to A turns T G G, tryptophan, into T A G, a stop codon, far earlier than the normal stop. The protein is truncated and activity is none, not low. A stop codon changes the protein, so a premature stop counts as non-synonymous. Affected drugs: the proton pump inhibitors omeprazole and lansoprazole.",
+   "text": "Premature stop example: sip two C nineteen star three. G to A turns T G G, tryptophan, into T A G, a stop codon, far earlier than the normal stop. The protein is truncated and activity is none, not low. A stop codon changes the protein, so a premature stop counts as non-synonymous. Affected drugs: the proton pump inhibitors omeprazole and lansoprazole.",
    "slide": "pgx:36",
    "reading": null
   }
