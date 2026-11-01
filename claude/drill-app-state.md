@@ -309,7 +309,7 @@ See `## Conflicts / uncertain` in notes/L01.md, L02.md and L03.md. The ones that
   times"; TPMT 35% of heterozygotes vs her "35% of the dose"; grapefruit "will induce" vs p.27 and FDA (blocks
   intestinal CYP3A4); carbamazepine "greatly increase" vs label strong (B*1502) / moderate (A*3101). test.js skips the
   longest-option check for Smith items; a manual scan leaves only L18-015, L18-069 (True/False), L19-007, L22-039.
-  Checks: build, test, style, browser_test, glitch clean. Recording not started; waiting for the user's approval.
+  Checks: build, test, style, browser_test, glitch clean. Recording approved 11/01; blocked on ElevenLabs credits (notes/REC4.md).
 
 ## Restore after a container restart
 
