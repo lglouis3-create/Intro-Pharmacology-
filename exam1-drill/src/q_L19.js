@@ -30,7 +30,7 @@ QUESTIONS.push(
   {t:"The drug requires metabolic activation", correct:true, why:"A prodrug depends on the enzyme to make the active form, so a variant can cause therapeutic failure or, for a fast variant, too much active drug."},
   {t:"An altered metabolic pathway or the parent compound causes toxicity or side effects", correct:true, why:"When a variant shifts metabolism down a pathway that makes a toxic product, the variant drives the adverse effect."},
   {t:"The drug is excreted unchanged by the kidney", correct:false, why:"A drug cleared unchanged by the kidney does not depend on a metabolizing enzyme, so an enzyme variant does not change its handling."},
-  {t:"The drug has a wide therapeutic index and is given intravenously", correct:false, why:"A wide margin means a change in clearance rarely reaches a harmful level, so the variant does not matter clinically."},
+  {t:"The drug has a wide therapeutic index and is given intravenously", correct:false, why:"Neither a wide therapeutic index nor the IV route is one of the three conditions: major route of elimination, need for activation, or an altered pathway that causes toxicity."},
   {t:"The drug is cleared by a transporter rather than by metabolism", correct:false, why:"A drug handled by a transporter does not depend on the metabolizing enzyme, so its variant does not change clearance."}],
  teach:"An enzyme variant matters when the enzyme is the major route of elimination, the drug is a prodrug needing activation, or the altered pathway or parent compound causes toxicity. A drug cleared unchanged by the kidney does not depend on the enzyme.",
  cite:"PGx-Examples-Students-Fall-2026.pdf slide 'Variations in Drug Metabolizing Enzymes' (p. 12); transcript 10/22"},
@@ -172,7 +172,7 @@ QUESTIONS.push(
  stem:"In which population are about 80% of people slow acetylators?",
  options:[
   {t:"Middle Eastern", correct:true, why:"About 80% of people of Middle Eastern descent are slow acetylators, the highest of the groups."},
-  {t:"Japanese", correct:false, why:"About 10% of the Japanese population are slow acetylators, so most are fast."},
+  {t:"Japanese population", correct:false, why:"About 10% of the Japanese population are slow acetylators, so most are fast."},
   {t:"Caucasian", correct:false, why:"About 30 to 45% of Caucasians are fast acetylators; the slow fraction is not 80%."},
   {t:"East African", correct:false, why:"The 80% slow figure is for Middle Eastern descent, not East Africans."}],
  teach:"About 30 to 45% of Caucasians are fast acetylators, about 10% of the Japanese population are slow, and about 80% of people of Middle Eastern descent are slow. This helps decide whom to monitor on isoniazid.",
@@ -231,8 +231,8 @@ QUESTIONS.push(
  concept:"cyp2d6-codeine-um", tags:["smith"], source:"both",
  stem:"Why can a standard codeine dose be dangerous in an ultrarapid CYP2D6 metabolizer?",
  options:[
-  {t:"Codeine is converted to morphine too quickly, causing respiratory depression", correct:true, why:"CYP2D6 activates codeine to morphine, so an ultrarapid metabolizer makes a large amount of morphine fast and can suppress breathing."},
-  {t:"Codeine is converted to morphine too slowly, so pain relief fails", correct:false, why:"That is the poor metabolizer outcome; an ultrarapid metabolizer over-activates codeine."},
+  {t:"Codeine becomes morphine too fast, suppressing breathing", correct:true, why:"CYP2D6 activates codeine to morphine, so an ultrarapid metabolizer makes a large amount of morphine fast and can suppress breathing."},
+  {t:"Codeine is converted to morphine too slowly; pain relief fails", correct:false, why:"That is the poor metabolizer outcome; an ultrarapid metabolizer over-activates codeine."},
   {t:"Codeine builds up unchanged to toxic levels", correct:false, why:"The danger is the active metabolite morphine, not accumulation of unchanged codeine."},
   {t:"Codeine blocks its own metabolism in these patients", correct:false, why:"The problem is fast activation to morphine, not self-inhibition."}],
  teach:"Codeine is a prodrug activated by CYP2D6 to morphine. An ultrarapid metabolizer quickly converts a normal dose into a large amount of morphine, which causes respiratory depression. Children died after codeine for cough, so kids no longer get it.",
@@ -244,7 +244,7 @@ QUESTIONS.push(
  stem:"For an ultrarapid CYP2D6 metabolizer, how does the risk differ between a drug that CYP2D6 clears and a prodrug that CYP2D6 activates?",
  options:[
   {t:"A cleared drug may need super-doses; a prodrug may overdose", correct:true, why:"Fast clearance removes an ordinary drug before it works, so more is needed; fast activation makes too much active drug from a prodrug."},
-  {t:"Both situations lead to overdose", correct:false, why:"A drug that is only cleared is removed too fast, giving therapeutic failure, not overdose."},
+  {t:"A cleared drug may overdose; a prodrug may need high doses", correct:false, why:"This reverses them: fast clearance removes an ordinary drug too soon, while fast activation makes too much active drug from a prodrug."},
   {t:"Both situations lead to therapeutic failure", correct:false, why:"A prodrug that is activated too fast causes overdose, not failure."},
   {t:"Neither situation changes the dose needed", correct:false, why:"Ultrarapid metabolism changes both; the direction depends on whether the enzyme clears or activates the drug."}],
  teach:"A drug that CYP2D6 clears is removed so fast that the patient may need very large doses to reach a therapeutic level. A prodrug that CYP2D6 activates, such as codeine, is activated so fast that too much active drug forms: overdose.",
@@ -254,7 +254,7 @@ QUESTIONS.push(
  concept:"cyp2d6-pm-consequences", tags:["smith"], source:"both",
  stem:"A CYP2D6 poor metabolizer is given a standard dose of a drug that CYP2D6 normally clears. What is the likely result?",
  options:[
-  {t:"Adverse effects as the drug concentration climbs", correct:true, why:"With little CYP2D6 activity the drug is not cleared, so it accumulates and causes adverse effects at standard doses."},
+  {t:"Adverse effects from drug buildup", correct:true, why:"With little CYP2D6 activity the drug is not cleared, so it accumulates and causes adverse effects at standard doses."},
   {t:"Therapeutic failure from too little drug", correct:false, why:"Too little drug is the ultrarapid-metabolizer problem for a cleared drug, not the poor metabolizer's."},
   {t:"The usual response to a standard dose", correct:false, why:"A poor metabolizer handles the drug differently, so a standard dose is not safe."},
   {t:"Faster onset with a shorter duration", correct:false, why:"Slow clearance prolongs exposure; it does not shorten the drug's duration."}],
@@ -306,7 +306,7 @@ QUESTIONS.push(
  concept:"cyp2c9-warfarin-low-dose", tags:["smith"], source:"both",
  stem:"Patients who need the lowest starting warfarin dose (about 1.5 mg/day, versus the usual 5 mg/day) tend to share what?",
  options:[
-  {t:"At least 80% carry low-activity CYP2C9 variants", correct:true, why:"In that lowest-dose group, at least 80% of patients carried the reduced-function CYP2C9 variants, strengthening the dose-response data."},
+  {t:"Most carry low-activity CYP2C9 variants", correct:true, why:"In that lowest-dose group, at least 80% of patients carried the reduced-function CYP2C9 variants, strengthening the dose-response data."},
   {t:"Most carry two wild-type CYP2C9 alleles", correct:false, why:"Wild-type patients clear warfarin normally and need the usual dose, not the lowest."},
   {t:"Most are ultrarapid metabolizers of S-warfarin", correct:false, why:"Ultrarapid metabolism would raise, not lower, the dose needed; CYP2C9 variants here are reduced-function."},
   {t:"They have no identifiable genetic pattern", correct:false, why:"A clear pattern was found: most carried low-activity CYP2C9 variants."}],
@@ -318,7 +318,7 @@ QUESTIONS.push(
  concept:"cyp2c9-inhibitor-plus-variant", tags:["smith"], source:"transcript",
  stem:"CYP2C9 is also inhibited by many drugs. What happens when an inhibitor is present in a patient who also has a low-activity CYP2C9 variant?",
  options:[
-  {t:"The two effects add up, leaving even less activity", correct:true, why:"Enzyme inhibition on top of a low-activity variant compounds the loss, so a substrate can reach dangerously high concentrations."},
+  {t:"The effects add; activity drops further", correct:true, why:"Enzyme inhibition on top of a low-activity variant compounds the loss, so a substrate can reach dangerously high concentrations."},
   {t:"The inhibitor restores normal activity", correct:false, why:"An inhibitor reduces activity further; it cannot restore it."},
   {t:"The variant offsets the inhibitor's effect", correct:false, why:"They do not offset; both lower activity, so the effect is additive."},
   {t:"Clearance of the substrate speeds up", correct:false, why:"Both the inhibitor and the variant slow metabolism, so clearance falls."}],
@@ -420,7 +420,7 @@ QUESTIONS.push(
   {t:"Poor, intermediate, extensive, and ultrarapid", correct:true, why:"CYP2C19 drug response shows four peaks, so four phenotype groups are named."},
   {t:"Slow and fast acetylators", correct:false, why:"Slow and fast acetylator is the NAT2 naming, not CYP2C19."},
   {t:"Extensive and poor metabolizers", correct:false, why:"CYP2C19 adds intermediate and ultrarapid groups, not just these two."},
-  {t:"Normal and abnormal metabolizers", correct:false, why:"That is not the convention; CYP2C19 uses poor, intermediate, extensive, and ultrarapid."}],
+  {t:"Poor, intermediate, normal, and fast acetylators", correct:false, why:"Acetylator terms belong to NAT2; CYP2C19 phenotypes are poor, intermediate, extensive and ultrarapid metabolizers."}],
  teach:"CYP2C19 drug response shows four peaks across the population, so four phenotypes are named: poor, intermediate, extensive and ultrarapid metabolizers. Poor metabolizers are about 16% of Asians.",
  cite:"PGx-Examples-Students-Fall-2026.pdf slide 'CYP2C19 Polymorphisms' (p. 25); transcript 10/22"},
 
@@ -442,8 +442,8 @@ QUESTIONS.push(
  concept:"dpd-low-activity-consequence", tags:["smith"], source:"both",
  stem:"What happens when a patient with a low-activity DPYD variant is given 5-fluorouracil?",
  options:[
-  {t:"More drug is shunted to cytotoxic metabolites, causing toxicity", correct:true, why:"Less drug is catabolized to inactive products, so more becomes active cytotoxic metabolite, which can cause severe myelosuppression and other toxicity."},
-  {t:"Less active metabolite forms, so the tumor response is weaker", correct:false, why:"Low DPD activity shifts more drug toward the active cytotoxic route, not away from it."},
+  {t:"More cytotoxic metabolite forms, causing toxicity", correct:true, why:"Less drug is catabolized to inactive products, so more becomes active cytotoxic metabolite, which can cause severe myelosuppression and other toxicity."},
+  {t:"Less active metabolite forms; the tumor response weakens", correct:false, why:"Low DPD activity shifts more drug toward the active cytotoxic route, not away from it."},
   {t:"The drug is cleared faster and has no effect", correct:false, why:"Low activity slows the inactivating route, so the drug and its toxic metabolites accumulate."},
   {t:"The drug is degraded to inactive metabolites faster", correct:false, why:"The opposite occurs: more active cytotoxic metabolite is made, raising toxicity."}],
  teach:"Normally about 80% of a 5-FU dose is catabolized by DPD to non-toxic products. With a low-activity DPYD variant much less goes that way, so more drug becomes active cytotoxic metabolite: severe myelosuppression (which can be lethal), mucositis, neurotoxicity, hand-foot syndrome and diarrhea.",
@@ -480,7 +480,7 @@ QUESTIONS.push(
  stem:"A patient with UGT1A1*28 is given irinotecan. What happens?",
  options:[
   {t:"SN-38 accumulates and causes toxicity", correct:true, why:"Low UGT1A1 activity fails to clear the active SN-38 metabolite, so it builds up and causes toxicity."},
-  {t:"Irinotecan is not converted to SN-38, so it fails", correct:false, why:"Irinotecan is already active and is metabolized to the active SN-38; the problem is failure to clear SN-38, not failure to make it."},
+  {t:"Irinotecan is not converted to SN-38 and fails", correct:false, why:"Irinotecan is already active and is metabolized to the active SN-38; the problem is failure to clear SN-38, not failure to make it."},
   {t:"SN-38 is cleared faster, lowering toxicity", correct:false, why:"The variant lowers clearance, so SN-38 rises, not falls."},
   {t:"The patient needs a higher dose to respond", correct:false, why:"These patients are at risk of toxicity, so dose reduction, not escalation, is the concern."}],
  teach:"Irinotecan is already active and is metabolized to the active metabolite SN-38, which UGT1A1 clears. With UGT1A1*28 too little enzyme is made to clear SN-38, so it accumulates and causes toxicity such as bone marrow suppression.",
@@ -544,16 +544,17 @@ QUESTIONS.push(
   {t:"One SNP accounts for over 90%; it is common in every population studied", correct:false, why:"Two SNPs account for over 90%, and the common variant differs by population."},
   {t:"Two SNPs account for over 90%; both are gain-of-function alleles", correct:false, why:"Both are inactivating alleles, not gain-of-function."}],
  teach:"Two SNPs account for over 90% of inactivating TPMT alleles. In Caucasians the common variant is TPMT*3A, two nonsynonymous SNPs; in East Asians it is TPMT*3C, a single SNP. Phenotype (extensive, intermediate, poor) is enzyme activity in red blood cells.",
- note:"Transcript renders star as \"TPMTAR\"/\"SAR\" (garbled captions); the slide prints TPMT*3A and TPMT*3C. She began TPMT on 10/22 and said the TPMT discussion finishes Monday 10/26. Keyed to her slide and words (two variants, *3A and *3C, over 90%). Katzung ch. 5 credits four alleles (*2, *3A, *3B, *3C) with more than 90% of variability.",
- cite:"PGx-Examples-Students-Fall-2026.pdf slide 'Thiopurine Methyltransferase (TPMT) 3' (p. 33); transcript 10/22"},
+ quote:"So in Caucasians, we mostly see the 3A variant, and in um East Asians, we often will find the 3C.",
+ note:"Transcript renders star as \"TPMTAR\"/\"SAR\" (garbled captions); the slide prints TPMT*3A and TPMT*3C. She began TPMT on 10/22 (two variants, *3A and *3C, over 90%) and gave the population split on 10/26 (L20): *3A mostly in Caucasians, *3C in East Asians. Keyed to her slide and words. Katzung ch. 5 credits four alleles (*2, *3A, *3B, *3C) with more than 90% of variability.",
+ cite:"PGx-Examples-Students-Fall-2026.pdf slide 'Thiopurine Methyltransferase (TPMT) 3' (p. 33); transcript 10/22; transcript 10/26"},
 
 /* ---------------- recap: monogenic vs polygenic curve shape (CYP2D6-specific) ---------------- */
 {id:"L19-044", lecture:"L19", prof:"Smith", tier:"new", topic:"L19", sub:"cyp2d6", skill:"figure",
  concept:"monogenic-vs-polygenic-shape", tags:["smith"], source:"both",
  stem:"A drug-response histogram shows several distinct peaks rather than one smooth bell curve. What does that indicate?",
  options:[
-  {t:"The response is driven mainly by one gene (monogenic)", correct:true, why:"Distinct peaks separate phenotype groups, which points to one gene controlling the response."},
-  {t:"The response is driven by many genes (polygenic)", correct:false, why:"A smooth bell-shaped curve, not distinct peaks, indicates many genes blurring the data together."},
+  {t:"One gene drives the response (monogenic)", correct:true, why:"Distinct peaks separate phenotype groups, which points to one gene controlling the response."},
+  {t:"Many genes drive the response (polygenic)", correct:false, why:"A smooth bell-shaped curve, not distinct peaks, indicates many genes blurring the data together."},
   {t:"The response has no genetic component", correct:false, why:"Clear peaks are a strong hint of genetic control, not its absence."},
   {t:"The histogram was measured incorrectly", correct:false, why:"Distinct peaks are a meaningful pattern, not an error."}],
  teach:"Distinct peaks mean each peak is a phenotype and one gene drives the response (monogenic), as with CYP2D6 and debrisoquine. A smooth bell curve means many genes contribute (polygenic) and blur the data. Monogenic curves differ gene to gene.",
@@ -577,12 +578,12 @@ QUESTIONS.push(
  stem:"Which population has the highest frequency of the low-activity CYP2C9 variants *2 and *3?",
  options:[
   {t:"Caucasians (European ancestry)", correct:true, why:"About 30% of Caucasians carry a variant; the CPIC guideline calls *2 and *3 the most common decreased-function alleles in European ancestry."},
-  {t:"African Americans", correct:false, why:"About 1-3%. In African ancestry the other decreased-function alleles, *5, *6, *8 and *11, are more common."},
+  {t:"African Americans", correct:false, why:"About 1-3%. In African ancestry the other decreased-function alleles, *5, *6, *8 and *11, occur at high frequency."},
   {t:"East Asians", correct:false, why:"0% in the population studied; the guideline says *2 is virtually absent in Asians."},
   {t:"East Asians and Caucasians at the same frequency", correct:false, why:"The frequencies differ sharply: about 30% in Caucasians versus 0% in the East Asian group studied."}],
- teach:"Low-activity CYP2C9 variant frequency: Caucasians 30%, African Americans 1-3%, East Asians 0% in the population studied. The 2017 CPIC warfarin guideline agrees: *2 and *3 are most common in European ancestry and *2 is virtually absent in Asians; in African ancestry *5, *6, *8 and *11 are together more common.",
+ teach:"Low-activity CYP2C9 variant frequency: Caucasians 30%, African Americans 1-3%, East Asians 0% in the population studied. The 2017 CPIC warfarin guideline agrees: *2 and *3 are most common in European ancestry and *2 is virtually absent in Asians; on 10/27 she added that the other CYP2C9 variants *5, *6, *8 and *11 occur at high frequency in people of African descent.",
  quote:"Caucasians, about 30% of Caucasians have, have one or both variants.",
- cite:"PGx-Examples-Students-Fall-2026.pdf slide 'CYP2C9 Polymorphisms' (p. 23); CPIC warfarin guideline 2017 update ('CYP2C9 and warfarin', pp. 398-399; p. 400); transcript 10/22"},
+ cite:"PGx-Examples-Students-Fall-2026.pdf slide 'CYP2C9 Polymorphisms' (p. 23); CPIC warfarin guideline 2017 update ('CYP2C9 and warfarin', pp. 398-399; p. 400); transcript 10/22; transcript 10/27 (\"those particular variants that we haven't touched on much, they affect the activity of 2C9, and they are of quite high frequency in people of African descent\")"},
 /* ---------------- Exam 4 study list item 1 gap fill: expected frequency of the variants (objective, Examples p. 3) ---------------- */
 {id:"L19-047", lecture:"L19", prof:"Smith", tier:"new", topic:"L19", sub:"nat2", skill:"apply", multi:true, core:true, coreWhy:"her Exam 4 study list item 1 (objectives): expected frequency of the clinically significant variants",
  concept:"nat2-frequency-monitoring", tags:["smith","inclass"], source:"both",

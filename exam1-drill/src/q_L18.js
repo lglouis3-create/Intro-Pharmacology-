@@ -56,7 +56,7 @@ QUESTIONS.push(
  stem:"What is the main weakness of allele numeric/alphabetic names such as VKORC1 1173 C?",
  options:[
   {t:"They name the gene with an unofficial gene symbol", correct:false, why:"The gene symbol is standard; the weakness is not knowing which nucleotide is the wild type."},
-  {t:"It does not clearly show which allele is the wild type", correct:true, why:"Capitalizing the wild type and lowercasing the variant is the convention, but it is not reliably followed."},
+  {t:"They do not clearly show the wild type allele", correct:true, why:"Capitalizing the wild type and lowercasing the variant is the convention, but it is not reliably followed."},
   {t:"They give no location on the gene", correct:false, why:"The number (1173) is the location."},
   {t:"Each name can refer to more than one SNP", correct:false, why:"Uniqueness is the strength of the rs system; it is not the weakness here."}],
  teach:"The system is supposed to capitalize the wild type nucleotide and lowercase the variant, but writers do not always do that, so VKORC1 1173C alone does not tell a reader which version is wild type. SNP nomenclature writes wild type > variant.",
@@ -852,11 +852,11 @@ QUESTIONS.push(
   {t:"CYP2C19*3", correct:true, why:"A premature stop codon (TGG to TAG) truncates the protein."},
   {t:"CYP2D6*5", correct:true, why:"The whole gene is deleted, so nothing is made from that allele."},
   {t:"CYP2D6*2xN", correct:false, why:"Extra copies: more activity, an ultrarapid metabolizer."},
-  {t:"TPMT*3A", correct:false, why:"TPMT*3A sharply reduces activity but does not completely stop enzyme production."},
+  {t:"CYP2C9*3", correct:false, why:"CYP2C9*3 keeps about 5% of wild-type activity: decreased, not none."},
   {t:"SLCO1B1*5", correct:false, why:"SLCO1B1*5 is a reduced-function transporter variant, not a null allele."}],
  teach:"Three mechanisms give no activity: CYP2C19*2 makes a short non-functional protein, CYP2C19*3 has a premature stop codon, and CYP2D6*5 has no gene at all. CYP2C9*2 and *3 only decrease activity, and CYP2D6*2xN increases it.",
  quote:"So, it's a whole gene is gone. They just don't have it.",
- cite:"Intro to PGx Lecture Students Fall 2026.pdf slides ‘More Allele “Star” Nomenclature’ (p. 26), ‘Premature Stop Codon SNP: CYP2C19’ (p. 36), ‘Gene Deletion CYP2D6’ (p. 39), ‘Copy Number Variant CYP2D6’ (p. 40); (T) 10/21 transcript"},
+ cite:"Intro to PGx Lecture Students Fall 2026.pdf slides ‘More Allele “Star” Nomenclature’ (p. 26), ‘Premature Stop Codon SNP: CYP2C19’ (p. 36), ‘Gene Deletion CYP2D6’ (p. 39), ‘Copy Number Variant CYP2D6’ (p. 40); (T) 10/21 transcript (\"Same thing with the 3 allele of 2C9, you get a decrease in the enzyme function, it's not obliterated\"); (T) 10/22 transcript (CYP2C9*3 \"has 5% of the activity of the wild type\")"},
 
 {id:"L18-066", lecture:"L18", prof:"Smith", tier:"new", topic:"L18", sub:"dosing", skill:"figure", multi:true,
  concept:"genotype-dosing-results", tags:["smith"], source:"both",
