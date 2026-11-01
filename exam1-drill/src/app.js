@@ -181,7 +181,7 @@ let CUR = 'topics';
    exams' groups and puts her own words about what to study at the top of Topics. Remembered per browser. */
 // her current exam: the latest exam she teaches (Exam 3, then Exam 4); the poisoning table and short-answer pages are Exam 3 only
 const FOCUS_KEY = COURSE.ns + ':focus', FOCUS_EXAM = Math.max(...COURSE.exams.filter(e => COURSE.lectures.some(l => l.exam === e.id && l.prof === 'Smith')).map(e => e.id));
-const FOCUS_VIEWS = ['topics', 'quiz', 'terms', 'weak', 'exam', 'guide', 'readings', 'ref', 'tell', 'data'].concat(FOCUS_EXAM === 3 ? ['sa', 'ptab'] : []);
+const FOCUS_VIEWS = ['topics', 'quiz', 'terms', 'weak', 'exam', 'map', 'guide', 'readings', 'ref', 'tell', 'data'].concat(FOCUS_EXAM === 3 ? ['sa', 'ptab'] : []);
 const focusOn = () => (store.get(FOCUS_KEY) || '1') === '1' && COURSE.exams.some(e => e.id === FOCUS_EXAM);
 function setFocus(on) {
   store.set(FOCUS_KEY, on ? '1' : '0');
@@ -191,7 +191,7 @@ function setFocus(on) {
   if (on && !FOCUS_VIEWS.includes(CUR)) { go('topics'); return; }
   nav(); VIEWFN[CUR] && VIEWFN[CUR]();
 }
-const focusBtn = () => COURSE.exams.some(e => e.id === FOCUS_EXAM) ? `<button type="button" id="focusbtn" class="focusbtn ${focusOn() ? 'on' : ''}" aria-pressed="${focusOn()}" title="Show only Dr. Smith's Exam ${FOCUS_EXAM}: the other exams' sections and the Exam 3-only tabs are hidden while this is on">${focusOn() ? '★ Smith focus: on' : '☆ Smith focus'}</button>` : '';
+const focusBtn = () => COURSE.exams.some(e => e.id === FOCUS_EXAM) ? `<button type="button" id="focusbtn" class="focusbtn ${focusOn() ? 'on' : ''}" aria-pressed="${focusOn()}" title="Show only Dr. Smith's Exam ${FOCUS_EXAM}: the other exams' sections and the Exam 3-only tabs are hidden while this is on">${focusOn() ? '★ Smith<span class="long"> focus: on</span>' : '☆ Smith<span class="long"> focus</span>'}</button>` : '';
 function nav() {
   const fo = focusOn();
   $('#nav').innerHTML = focusBtn() + VIEWS.filter(([k]) => (k !== 'guide' || (typeof GUIDE_HTML !== 'undefined' && GUIDE_HTML.trim())) && (!fo || FOCUS_VIEWS.includes(k)))
@@ -1766,7 +1766,10 @@ function examResult() {
 /* ---------- Terms: glossary with figures, flashcards, generated questions ---------- */
 let TM = {mode: 'glossary', group: 'all', card: null, shown: false, scope: 'exam'};   // scope: the glossary lists this exam's terms, or both exams'
 const termExam = t => lecExam(t.lecture) || 1;
-const termList = () => (typeof TERMS === 'undefined' ? [] : TERMS).filter(t => (lecExam(t.lecture) || 1) === activeId() && (TM.group === 'all' || t.group === TM.group));
+// Exam 4 has no glossary of its own; it is "cumulative to my part" (course.js Exam 4 facts), so it uses her Exam 3 terms
+const termBorrow = () => activeId() === 4 && !(typeof TERMS === 'undefined' ? [] : TERMS).some(t => termExam(t) === 4) ? 3 : 0;
+const termIn = t => termExam(t) === activeId() || termExam(t) === termBorrow();
+const termList = () => (typeof TERMS === 'undefined' ? [] : TERMS).filter(t => termIn(t) && (TM.group === 'all' || t.group === TM.group));
 const termKey = t => 'term:' + t.id;
 /* Glossary search and A–Z: the search box filters as you type (term, one-line
    meaning, definition, example), the letter bar jumps to a letter (switching to
@@ -1782,11 +1785,11 @@ function glossWire(all, groups) {
   const draw = () => {
     const q = (TM.q || '').trim().toLowerCase();
     const both = TM.scope === 'both';
-    let pool = all.filter(t => (both || termExam(t) === activeId()) && (TM.group === 'all' || t.group === TM.group));
+    let pool = all.filter(t => (both || termIn(t)) && (TM.group === 'all' || t.group === TM.group));
     if (q) pool = pool.filter(t => [t.term, t.gist, t.def, t.scene].join(' ').toLowerCase().includes(q));
     const az = q || TM.order === 'az';
     let h = '';
-    if (!pool.length) h = `<div class="card empty">No term matches “${esc(TM.q)}”. Try a shorter word, or pick a letter above.</div>`;
+    if (!pool.length) h = q ? `<div class="card empty">No term matches “${esc(TM.q)}”. Try a shorter word, or pick a letter above.</div>` : `<div class="card empty">No terms for ${esc(active().name)} yet.</div>`;
     else if (q) {
       // a search lists terms whose name matches first, then terms that only mention the word
       const named = pool.filter(t => t.term.toLowerCase().includes(q)), rest = pool.filter(t => !named.includes(t));
@@ -1809,7 +1812,7 @@ function glossWire(all, groups) {
         const mine = pool.filter(t => termExam(t) === e.id);
         const body = groups.filter(g => TM.group === 'all' || g === TM.group).map(g => { const ts = mine.filter(t => t.group === g); return ts.length ? `<h3>${esc(g)}</h3><div class="card">${ts.map(t => termHTML(t)).join('')}</div>` : ''; }).join('');
         const open = TM.group === 'all' ? null : has(e);
-        return exGroup(e, body || (TM.group === 'all' ? '<div class="empty">This exam\'s terms are added as its lectures are written.</div>' : '<div class="empty">No terms of this group in this exam.</div>'), open);
+        return exGroup(e, body || (TM.group === 'all' ? '<div class="empty">No glossary terms of its own.</div>' : '<div class="empty">No terms of this group in this exam.</div>'), open);
       }).join('');
     }
     list.innerHTML = h;
@@ -1848,11 +1851,12 @@ function vTerms() {
   if (!all.length) { $('#view').innerHTML = '<h2>Terms</h2><div class="empty">No glossary in this build.</div>'; return; }
   const groups = [...new Set(all.map(t => t.group))];
   // flashcards and the term quiz use the exam being studied; the glossary shows both exams
-  const tq = QUESTIONS.filter(q => q.topic === 'TERMS' && (TM.mode === 'glossary' || examOf(q) === activeId()));
-  const mine = all.filter(t => termExam(t) === activeId());
+  const tq = QUESTIONS.filter(q => q.topic === 'TERMS' && (TM.mode === 'glossary' || examOf(q) === activeId() || examOf(q) === termBorrow()));
+  const mine = all.filter(termIn);
+  if (focusOn()) TM.scope = 'exam';   // focus hides the other exams' groups, so the all-exams view would be empty
   const chipGroups = TM.mode === 'glossary' && TM.scope === 'both' ? groups : [...new Set(mine.map(t => t.group))];
   if (TM.group !== 'all' && !chipGroups.includes(TM.group)) TM.group = 'all';
-  let h = `<h2>Terms</h2><div class="row" style="margin:-4px 0 8px">${examSwitch()}</div><p class="sub">${mine.length} terms for ${esc(active().name)}, each with its source (${all.length} across all exams; the glossary can show them all). Each term has a one-line meaning, a situation that shows it in action, and, where one applies, a figure.</p>
+  let h = `<h2>Terms</h2><div class="row" style="margin:-4px 0 8px">${examSwitch()}</div><p class="sub">${mine.length} terms for ${esc(active().name)}${termBorrow() ? ` (her Exam ${termBorrow()} terms: she said Exam 4 is “cumulative to my part”)` : ''}, each with its source (${all.length} across all exams; ${focusOn() ? 'turn Smith focus off to show them all' : 'the glossary can show them all'}). Each term has a one-line meaning, a situation that shows it in action, and, where one applies, a figure.</p>
   <div class="card"><div class="row">${[['glossary', 'Glossary'], ['flash', 'Flashcards'], ['quiz', 'Quiz me']].map(([k, l]) => `<button type="button" class="chip ${TM.mode === k ? 'on' : ''}" aria-pressed="${TM.mode === k}" data-mode="${k}">${l}</button>`).join('')}
    <span class="meta" style="margin:0 0 0 12px">Group:</span>${['all'].concat(chipGroups).map(g => `<button type="button" class="chip ${TM.group === g ? 'on' : ''}" aria-pressed="${TM.group === g}" data-group="${esc(g)}">${g === 'all' ? 'All' : esc(g)}</button>`).join('')}</div></div>`;
   const list = termList();
@@ -1862,7 +1866,7 @@ function vTerms() {
     h += `<div class="card tbar" id="tbar"><div class="row" style="flex-wrap:nowrap"><input id="tsearch" type="search" placeholder="Search the terms (name, meaning or example)…" value="${esc(TM.q || '')}" autocomplete="off" aria-label="Search the terms">
       <button class="btn ghost" id="tclear" type="button" ${TM.q ? '' : 'hidden'}>Clear</button></div>
       <div class="letters" role="navigation" aria-label="Jump to a letter">${LETTERS_AZ.filter(L => L !== '#' || have.has('#')).map(L => `<button type="button" class="lt" data-lt="${L}" ${have.has(L) ? '' : 'disabled'}>${L}</button>`).join('')}</div>
-      <div class="row" style="margin-top:6px"><span class="meta" style="margin:0">Order:</span>${[['group', 'By group'], ['az', 'A–Z']].map(([k, l]) => `<button type="button" class="chip ${(TM.order || 'group') === k ? 'on' : ''}" aria-pressed="${(TM.order || 'group') === k}" data-order="${k}">${l}</button>`).join('')}${COURSE.exams.length > 1 ? `<span class="meta" style="margin:0 0 0 8px">Show:</span>${[['exam', esc(active().name) + ' only'], ['both', 'Both exams']].map(([k, l]) => `<button type="button" class="chip ${TM.scope === k ? 'on' : ''}" aria-pressed="${TM.scope === k}" data-scope="${k}">${l}</button>`).join('')}` : ''}<span class="meta" id="tcount" aria-live="polite" style="margin:0 0 0 auto"></span></div></div>
+      <div class="row" style="margin-top:6px"><span class="meta" style="margin:0">Order:</span>${[['group', 'By group'], ['az', 'A–Z']].map(([k, l]) => `<button type="button" class="chip ${(TM.order || 'group') === k ? 'on' : ''}" aria-pressed="${(TM.order || 'group') === k}" data-order="${k}">${l}</button>`).join('')}${COURSE.exams.length > 1 && !focusOn() ? `<span class="meta" style="margin:0 0 0 8px">Show:</span>${[['exam', esc(active().name) + ' only'], ['both', 'All exams']].map(([k, l]) => `<button type="button" class="chip ${TM.scope === k ? 'on' : ''}" aria-pressed="${TM.scope === k}" data-scope="${k}">${l}</button>`).join('')}` : ''}<span class="meta" id="tcount" aria-live="polite" style="margin:0 0 0 auto"></span></div></div>
       <div id="glist"></div>`;
   } else if (TM.mode === 'flash' && !list.length) {
     h += `<div class="card empty">No flashcards for ${esc(active().name)} in this group yet.</div>`;
@@ -1895,12 +1899,14 @@ function vTerms() {
   if (TM.mode === 'glossary') glossWire(all, groups);
   document.querySelectorAll('[data-mode]').forEach(c => c.onclick = () => { TM.mode = c.dataset.mode; vTerms(); });
   document.querySelectorAll('[data-group]').forEach(c => c.onclick = () => { TM.group = c.dataset.group; TM.card = null; vTerms(); });
-  const sh = $('#fcshow'); if (sh) sh.onclick = () => { TM.shown = true; vTerms(); };
+  // on a phone the card's buttons start below the screen: bring the next button into view and give it focus
+  const fcFocus = () => { const b = $('[data-fc]') || $('#fcshow'); if (b) { b.scrollIntoView({block: 'center'}); b.focus({preventScroll: true}); } };
+  const sh = $('#fcshow'); if (sh) sh.onclick = () => { TM.shown = true; vTerms(); fcFocus(); };
   document.querySelectorAll('[data-fc]').forEach(b => b.onclick = () => {
     const k = termKey(TM.card), st = qs(k), ok = b.dataset.fc !== 'wrong';
     st.n++; if (ok) st.ok++;   // "Not sure" counts as right, as it does in the quiz (the box is held, not raised)
     schedule(k, ok ? b.dataset.fc : 'wrong'); save();
-    TM.last = TM.card.id; TM.card = null; vTerms();
+    TM.last = TM.card.id; TM.card = null; vTerms(); fcFocus();
   });
   const tqb = $('#tq'); if (tqb) tqb.onclick = () => {
     const pool = tq.filter(q => TM.group === 'all' || (TOPIC.TERMS.subs.find(s => s.id === q.sub) || {}).name === TM.group);
@@ -3639,7 +3645,7 @@ function vMap() {
   const mark = {unseen: '', right: '✓', wrong: '✗'};
   const tile = q => { const k = state[q.id], st = S.q[q.id]; return `<button class="qt ${k}${isFlagged(q.id) ? ' flagged' : ''}" data-q="${q.id}" title="${esc(q.stem)}"><span class="qm">${mark[k]}</span><span class="qid">${esc(q.id)}${isFlagged(q.id) ? ' ⚑' : ''}</span>${st && st.n ? `<span class="qn">${st.ok}/${st.n}</span>` : ''}<span class="qs">${esc(q.stem.slice(0, 64))}${q.stem.length > 64 ? '…' : ''}</span></button>`; };
   let h = `<h2>Question map</h2>
-  <p class="sub">Every question in the bank, grouped by lecture and concept. The colour and mark show the most recent answer; a count shows correct answers over attempts. Click a tile to open that question.</p>
+  <p class="sub">Every question in the bank, grouped by lecture and concept. The colour and mark show the most recent answer; a count shows correct answers over attempts. Tap or click a tile to open that question. The filter counts cover every exam in the bank.</p>
   <div class="card"><div class="row">
     ${[['all', `All ${pool.length}`], ['unseen', `Unseen ${counts.unseen}`], ['right', `Right ${counts.right}`], ['wrong', `Wrong ${counts.wrong}`], ['flagged', `⚑ Flagged ${pool.filter(q => isFlagged(q.id)).length}`]].map(([k, l]) => `<button type="button" class="chip ${MAPF.show === k ? 'on' : ''} lg-${k}" aria-pressed="${MAPF.show === k}" data-show="${k}">${l}</button>`).join('')}
   </div>
