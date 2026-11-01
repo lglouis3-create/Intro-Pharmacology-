@@ -3,22 +3,22 @@
  "title": "Synonymous, non-synonymous and premature stop S N Ps",
  "segs": [
   {
-   "text": "Section four. S N P types in coding regions. A single nucleotide polymorphism is one base pair changed in a gene. Several million are known, and many change nothing about the gene's product. Coding regions are the parts of a gene translated to R N A and then to protein. A codon is three bases that code for one amino acid, and a coding S N P is classed by what the base change does to the codon. It can give the same amino acid, which is synonymous, a different amino acid, which is non-synonymous, or a stop codon early in the sequence, a premature stop.",
+   "text": "Section four. S N P types in coding regions. A single nucleotide polymorphism is one base pair changed in a gene. Several million are known, and many change nothing about the gene's product. Coding regions are the parts translated to R N A and then protein. A codon is three bases coding one amino acid, and a coding S N P is classed by what it does to the codon: same amino acid, synonymous; different amino acid, non-synonymous; early stop codon, premature stop.",
    "slide": "pgx:32",
    "reading": null
   },
   {
-   "text": "The synonymous example is A B C B one, thirty four thirty five, C to T, in the gene for P-glycoprotein. The codon changes from A T C to A T T, but several codons code for the same amino acid, and both give isoleucine. She said, Synonymous means the same. Synonymous does not mean harmless, though. This S N P keeps turning up in drug-response studies with different P-glycoprotein substrates, so it is studied. She thinks expression of the protein is probably affected, but there is no clear consensus on an effect on function or expression. The affected drugs are efavirenz and cyclosporine.",
+   "text": "Synonymous example: A B C B one, thirty four thirty five, C to T, the gene for P-glycoprotein. A T C becomes A T T, but several codons code the same amino acid, and both give isoleucine. She said, Synonymous means the same. It does not mean harmless: this S N P keeps turning up in drug-response studies; she thinks expression is probably affected, but there is no consensus on function or expression. Affected drugs: efavirenz and cyclosporine.",
    "slide": "pgx:34",
    "reading": null
   },
   {
-   "text": "The non-synonymous example is T P M T star three A. At six fifteen, G to A turns G C A, alanine, into A C A, threonine. At eight seventy four, A to G turns T A T, tyrosine, into T G T, cysteine. Each change puts a different amino acid into the enzyme, so its activity is significantly reduced. Azathioprine and six mercaptopurine depend on T P M T. She said, if you don't know the genotype of your patient, you could kill your patient if you didn't genotype them for this snip.",
+   "text": "Non-synonymous example: T P M T star three A. At six fifteen, G to A turns G C A, alanine, into A C A, threonine. At eight seventy four, A to G turns T A T, tyrosine, into T G T, cysteine. Each puts a different amino acid into the enzyme, so activity is significantly reduced. Azathioprine and six mercaptopurine depend on T P M T. She said, you could kill your patient if you didn't genotype them for this snip.",
    "slide": "pgx:35",
    "reading": null
   },
   {
-   "text": "The premature stop codon example is C Y P two C nineteen star three. A G to A change turns T G G, tryptophan, into T A G, a stop codon. T A G tells the cell's machinery to stop translating the R N A, and here it comes far earlier than the normal stop codon. The protein is truncated, so the activity is none, not low. This is not a synonymous S N P. Creating a stop codon changes the protein, so a premature stop is a kind of non-synonymous change. The affected drugs are the proton pump inhibitors omeprazole and lansoprazole.",
+   "text": "Premature stop example: C Y P two C nineteen star three. G to A turns T G G, tryptophan, into T A G, a stop codon, far earlier than the normal stop. The protein is truncated and activity is none, not low. A stop codon changes the protein, so a premature stop counts as non-synonymous. Affected drugs: the proton pump inhibitors omeprazole and lansoprazole.",
    "slide": "pgx:36",
    "reading": null
   }
