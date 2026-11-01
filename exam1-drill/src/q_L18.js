@@ -418,7 +418,7 @@ QUESTIONS.push(
   {t:"Microsatellite", correct:false, why:"A microsatellite is a tandem repeat of a short sequence, not a single base change."},
   {t:"Non-coding (intronic) SNP", correct:false, why:"SNPs split into coding and non-coding; a non-coding SNP is not a coding type."},
   {t:"Small insertion/deletion", correct:false, why:"An InDel adds or removes bases and is not a single nucleotide polymorphism."}],
- teach:"Coding regions are the parts of a gene translated to RNA and then protein. Coding SNPs are synonymous, non-synonymous or premature stop codons; these are the ones of interest in pharmacogenomics.",
+ teach:"Coding regions are the parts of a gene that are transcribed to RNA and then translated to protein. Coding SNPs are synonymous, non-synonymous or premature stop codons; these are the ones of interest in pharmacogenomics.",
  quote:"within the coding regions of genes, we'll classify snips as being synonymous or non-synonymous. Or being premature stop codons.",
  cite:"Intro to PGx Lecture Students Fall 2026.pdf slide ‘SNPs’ (p. 32); (T) 10/21 transcript"},
 

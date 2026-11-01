@@ -7,6 +7,8 @@ Newest first. The build embeds this file; the Topics page shows what is new sinc
 - New step-through figure in Guide 1: how to read and say CYP2C19*2, *1/*2, TPMT*3A, CYP2D6*2xN, C>T, rs and HLA names.
 - Narration scripts now say "sip" for CYP and "snip" for SNP, as she says them in class.
 - Katzung Ch. 5 talk: the out-of-date "next on Monday" sentence removed.
+- Narration scripts reviewed clip by clip: pronunciation, by-ear clarity and facts fixed before recording.
+- L18 explanations: star numbers reflect discovery order; coding DNA is transcribed to RNA, then translated.
 
 ## 2026-11-01 (Exam 4 questions checked)
 
