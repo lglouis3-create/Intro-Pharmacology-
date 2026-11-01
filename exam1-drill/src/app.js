@@ -3058,7 +3058,7 @@ function stepHTML(k, i = 0) {
   const d = STEPS()[k]; if (!d) return '';
   const st = d.steps[i];
   return `<figure class="fig step3" data-s3="${esc(k)}" data-i="${i}"><figcaption><b>${esc(d.title)}</b> <span class="meta" style="margin:0">step ${i + 1} of ${d.steps.length}</span></figcaption>
-    <div class="s3svg">${st.svg}</div><p class="s3cap" aria-live="polite">${st.t}</p>
+    <div class="s3svg">${st.svg}${d.ghost && i < d.steps.length - 1 ? `<div class="s3ghost" aria-hidden="true">${d.steps[d.steps.length - 1].svg}</div>` : ''}</div><p class="s3cap" aria-live="polite">${st.t}</p>
     <div class="row s3nav"><button type="button" class="btn ghost" data-s3go="-1" ${i ? '' : 'disabled'}>◂ Back</button>${d.steps.map((x, j) => `<button type="button" class="sdot${j === i ? ' on' : ''}" data-s3to="${j}" aria-label="Step ${j + 1}"></button>`).join('')}<button type="button" class="btn ghost" data-s3go="1" ${i < d.steps.length - 1 ? '' : 'disabled'}>Next ▸</button><button type="button" class="btn ghost" data-s3play>${S3PLAY && S3PLAY.k === k ? '■ Stop' : '🔊 Play'}</button></div>
     ${d.src ? `<div class="cite">${esc(d.src)}</div>` : ''}</figure>`;
 }
@@ -3094,6 +3094,7 @@ function vGuide() {
   fillImgs($('#view')); stackTables($('#view')); gwBars($('#view'));
   // Exam 4: her quotes and the source differences fold closed and sit after Traps, so the facts and traps come first
   document.querySelectorAll('#view section.guide[id^="guide4-"]').forEach(sec => {
+    sec.querySelectorAll('table').forEach((t, i) => { t.dataset.ti = i; });   // walkthrough table numbers follow the source order, before the folds move tables
     const src = [...sec.children].find(c => c.matches('p.sub') && /^Sources/.test(c.textContent.trim()));
     [...sec.querySelectorAll(':scope > h4')].filter(h => /^(Her words|Where her words)/i.test(h.textContent.trim())).forEach(h => {
       const d = document.createElement('details'); d.className = 'fold gfold';
@@ -3188,7 +3189,7 @@ function gwShow(id, i, sel) {
   } else if (vis && vis.st) {
     const [k, n] = vis.st.split('@'); h += stepHTML(k, Math.min(+n, ((STEPS()[k] || {}).steps || [0]).length - 1));
   } else if (vis && vis.tb != null) {
-    const t = [...document.getElementById(id).querySelectorAll('table')].filter(x => !x.closest('.gwtable'))[vis.tb];
+    const sec = document.getElementById(id), t = sec.querySelector(`table[data-ti="${vis.tb}"]:not(.gwtable table)`) || [...sec.querySelectorAll('table')].filter(x => !x.closest('.gwtable'))[vis.tb];
     if (t) h += `<div class="tablewrap gwtable">${t.outerHTML}</div><p class="meta" style="margin:4px 0 0">From the guide section below</p>`;
   }
   const rd = segs[i].r;

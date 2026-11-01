@@ -953,13 +953,12 @@ const GUIDE4_HTML = `
 <p>AUC is the area under the plasma concentration-time curve, a measure of total drug exposure. The 1:3.7:20 ratio is cited from earlier work (p. 1028); this paper did not measure plasma omeprazole. Overall 32 of 62 patients were cured (51.6%), P &lt; 0.001 across groups (Table 2). A *3/*3 patient would simply belong in group 3, since *2 and *3 are both inactive; the gap reflects who was recruited.</p>
 
 <h4>The four ways higher omeprazole levels improved cure (Discussion, p. 1029)</h4>
-<p class="sub">In the paper's order (first, second, third, finally). Bold: her version (10/26); after the dash: what the paper says.</p>
-<ol>
-<li><b>Omeprazole stays really high, so gastric pH is higher.</b> — Omeprazole's plasma concentration-time curve is markedly increased in poor metabolizers, so high intragastric pH lasts longer than in extensive metabolizers.</li>
-<li><b>Amoxicillin is more stable when the stomach pH is higher.</b> — Amoxicillin is unstable and less active at low pH, so raising intragastric pH toward neutral may increase the amount of active antibiotic.</li>
-<li><b>Omeprazole helps get amoxicillin into the gastric juice, where H. pylori is, and helps it stay intact there.</b> — Omeprazole has been reported to increase amoxicillin concentrations in gastric juice, so amoxicillin stays in the stomach longer at levels above its minimum inhibitory concentration.</li>
-<li><b>Not stated; she summarized the first three.</b> — Omeprazole has its own reported anti-H. pylori activity, presumably enhanced in poor metabolizers.</li>
-</ol>
+<table class="reftab keep"><thead><tr><th>Paper's order</th><th><b>Her version (10/26)</b> — what the paper says</th></tr></thead><tbody>
+<tr><td>1. First</td><td><b>Omeprazole stays really high, so gastric pH is higher.</b> — Omeprazole's plasma concentration-time curve is markedly increased in poor metabolizers, so high intragastric pH lasts longer than in extensive metabolizers.</td></tr>
+<tr><td>2. Second</td><td><b>Amoxicillin is more stable when the stomach pH is higher.</b> — Amoxicillin is unstable and less active at low pH, so raising intragastric pH toward neutral may increase the amount of active antibiotic.</td></tr>
+<tr><td>3. Third</td><td><b>Omeprazole helps get amoxicillin into the gastric juice, where H. pylori is, and helps it stay intact there.</b> — Omeprazole has been reported to increase amoxicillin concentrations in gastric juice, so amoxicillin stays in the stomach longer at levels above its minimum inhibitory concentration.</td></tr>
+<tr><td>4. Finally</td><td><b>Not stated; she summarized the first three.</b> — Omeprazole has its own reported anti-H. pylori activity, presumably enhanced in poor metabolizers.</td></tr>
+</tbody></table>
 
 <h4>Ulcer healing</h4>
 <table class="reftab keep"><thead><tr><th>Group</th><th>Gastric ulcer healed</th><th>Duodenal ulcer healed</th></tr></thead><tbody>
@@ -1292,20 +1291,20 @@ const GUIDE4_HTML = `
 <li>HER2 background (her account): everyone has the HER2 gene, but it is not normally expressed. We do not know its endogenous ligand. In HER2-positive cancer the receptor is expressed on the tumor cell surface in large numbers or is hyperactive, and growth factor binding makes the cells divide out of control. Trastuzumab is made to bind the HER2 receptor and stop that growth-factor signaling. The label describes trastuzumab as a humanized IgG1 kappa monoclonal antibody that binds the extracellular domain of HER2 (11 Description).</li>
 </ul>
 
-<h4>Where her words and the label differ</h4>
-<ul>
-<li><b>Tumor types.</b> She and the room said "metastatic gastrointestinal" and "esophageal" tumors. The label indication is narrower: metastatic gastric or gastroesophageal junction adenocarcinoma (1.3).</li>
-<li><b>Test wording.</b> She said the test should be one "you think is good", certified, specific and sensitive. The label says FDA-authorized tests specific for breast or gastric cancers, by laboratories with demonstrated proficiency (2.2). Both agree that no brand of kit is named. While answering item 6 she said "the answer to number 7 was"; the point (a named kit in older labels) belongs to item 6.</li>
-<li><b>Item 1.</b> She first said this year's label was the first she had seen give information on what makes the receptor get expressed, then concluded that the label describes the tumor phenotype, not the DNA variant. The label number she was shown (185) is the protein's size in kDa (12.1).</li>
-<li><b>Label date.</b> She said the trastuzumab label was just updated this year; the copy provided reads Revised: 05/2026.</li>
-</ul>
-
 <h4>Why</h4>
 <ul>
 <li><b>Why the tumor and not the patient.</b> HER2 is expressed on the tumor cells, not on normal cells. A sample from the rest of the body would not show HER2, so the test has to be on the tumor biopsy.</li>
 <li><b>Why it is phenotyping.</b> The question is whether the receptor protein is present on the tumor cells. IHC detects the protein, which is a phenotype, not a genotype of the patient.</li>
 <li><b>Why efficacy.</b> Trastuzumab acts only by binding HER2. If the tumor has no HER2, the drug has no target and cannot work, so the patient would get the cost and side effects without benefit. That is also why a HER2-negative result means trastuzumab is not used.</li>
 <li><b>Why tumor type, not ethnicity.</b> HER2 expression is a property of certain tumors (breast, gastric), not of an inherited population variant, so item 7 is answered with tumor types.</li>
+</ul>
+
+<h4>Where her words and the label differ</h4>
+<ul>
+<li><b>Tumor types.</b> She and the room said "metastatic gastrointestinal" and "esophageal" tumors. The label indication is narrower: metastatic gastric or gastroesophageal junction adenocarcinoma (1.3).</li>
+<li><b>Test wording.</b> She said the test should be one "you think is good", certified, specific and sensitive. The label says FDA-authorized tests specific for breast or gastric cancers, by laboratories with demonstrated proficiency (2.2). Both agree that no brand of kit is named. While answering item 6 she said "the answer to number 7 was"; the point (a named kit in older labels) belongs to item 6.</li>
+<li><b>Item 1.</b> She first said this year's label was the first she had seen give information on what makes the receptor get expressed, then concluded that the label describes the tumor phenotype, not the DNA variant. The label number she was shown (185) is the protein's size in kDa (12.1).</li>
+<li><b>Label date.</b> She said the trastuzumab label was just updated this year; the copy provided reads Revised: 05/2026.</li>
 </ul>
 
 <h4>Her words</h4>
@@ -1358,13 +1357,6 @@ const GUIDE4_HTML = `
 </tbody></table>
 <p>Item 7 has a different kind of answer for each worksheet drug: a tumor type for trastuzumab, at-risk ancestry for carbamazepine, every patient for abacavir.</p>
 
-<h4>Where her words and the labels differ</h4>
-<ul>
-<li><b>Carbamazepine reaction types.</b> She described the reaction for both variants as a skin reaction (SJS/TEN). The label ties HLA-B*1502 to SJS/TEN and says it has not been found to predict maculopapular eruption or DRESS (drug reaction with eosinophilia and systemic symptoms). For HLA-A*3101 the label lists SJS/TEN, maculopapular eruptions and DRESS, which the label also calls multiorgan hypersensitivity, and calls the association moderate.</li>
-<li><b>Label date.</b> She first said carbamazepine was just updated this year; when the room read the date as 2017, she accepted it ("things have not changed very recently"). The carbamazepine copy provided reads Revised: 7/2026, and it does not show when HLA-A*3101 was added. The abacavir label is the 2020 revision, as she said (Revised: 11/2020).</li>
-<li><b>Allele notation.</b> She and the caption say "1502", "3101" and "5701"; the labels print HLA-B*1502, HLA-A*3101 and HLA-B*5701. The 10/26 slide (Katzung Table 5-4) writes the HLA-B alleles with a colon: HLA-B*15:02 and HLA-B*57:01.</li>
-</ul>
-
 <h4>Why</h4>
 <ul>
 <li><b>Why the patient is tested.</b> These drugs do not act on a tumor target. The risk comes from HLA alleles the patient inherited, so the patient's own DNA is genotyped.</li>
@@ -1372,6 +1364,13 @@ const GUIDE4_HTML = `
 <li><b>Why carbamazepine has two genes to check.</b> The label now describes a second gene, HLA-A, whose variant HLA-A*31:01 also raises the risk of hypersensitivity, so HLA-B alone no longer covers it.</li>
 <li><b>Why abacavir was first thought to be a skin problem.</b> The first reactions seen were skin reactions like those with carbamazepine; later experience showed involvement of the whole body's organs, and the labeling changed.</li>
 <li>She began to explain why one gene gives reactions in different places ("What does our HLAB do? It's an antigen presenting receptor, right?"), and the recording ends mid-sentence; her explanation is not available.</li>
+</ul>
+
+<h4>Where her words and the labels differ</h4>
+<ul>
+<li><b>Carbamazepine reaction types.</b> She described the reaction for both variants as a skin reaction (SJS/TEN). The label ties HLA-B*1502 to SJS/TEN and says it has not been found to predict maculopapular eruption or DRESS (drug reaction with eosinophilia and systemic symptoms). For HLA-A*3101 the label lists SJS/TEN, maculopapular eruptions and DRESS, which the label also calls multiorgan hypersensitivity, and calls the association moderate.</li>
+<li><b>Label date.</b> She first said carbamazepine was just updated this year; when the room read the date as 2017, she accepted it ("things have not changed very recently"). The carbamazepine copy provided reads Revised: 7/2026, and it does not show when HLA-A*3101 was added. The abacavir label is the 2020 revision, as she said (Revised: 11/2020).</li>
+<li><b>Allele notation.</b> She and the caption say "1502", "3101" and "5701"; the labels print HLA-B*1502, HLA-A*3101 and HLA-B*5701. The 10/26 slide (Katzung Table 5-4) writes the HLA-B alleles with a colon: HLA-B*15:02 and HLA-B*57:01.</li>
 </ul>
 
 <h4>Her words</h4>

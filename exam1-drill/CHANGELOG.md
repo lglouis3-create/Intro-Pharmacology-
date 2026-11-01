@@ -2,6 +2,16 @@
 
 Newest first. The build embeds this file; the Topics page shows what is new since your last visit, and the Progress page shows all of it. Keep each bullet to one short line.
 
+## 2026-11-01 (Cleaner Exam 4 pages)
+
+- Exam 4 card: her study list as a numbered list with a link per item; the other facts fold under "More".
+- Guide sections show the idea, facts, why and traps first; her words and source differences fold below.
+- Short number tables stay as grids on phones (the Naranjo points table is one table, not ten cards).
+- Naranjo, warfarin and Furuta sections reordered: the diagram first, slimmer tables, folded extras.
+- Walkthrough panel shows the diagram without its own buttons; the warfarin chart is never half empty.
+- Reference tables: blank cells instead of "Not given", fewer columns on the worksheet table.
+- Terms list the Exam 4 groups first.
+
 ## 2026-11-01 (Her Exam 4 study list)
 
 - Exam 4 card: her announcement (50 to 55 questions), her five study items, and that the keys are not posted.
