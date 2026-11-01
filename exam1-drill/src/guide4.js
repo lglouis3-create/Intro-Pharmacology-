@@ -511,7 +511,7 @@ const GUIDE4_HTML = `
 </ul>
 <table class="reftab"><thead><tr><th>Genotype</th><th>Clopidogrel (prodrug)</th><th>PPI (wide index)</th><th>SSRI, diazepam</th></tr></thead><tbody>
 <tr><td>*2 or *3 (poor metabolizer)</td><td>Too little active drug: platelets stay sticky (therapeutic failure)</td><td>Higher PPI level, higher gastric pH, better cure rate and increased ulcer healing</td><td>Higher levels: more adverse drug responses (more sedation with diazepam)</td></tr>
-<tr><td>*17 (increased function)</td><td>Too much active drug: over-anticoagulated</td><td colspan="2">&mdash;</td></tr>
+<tr><td>*17 (increased function)</td><td>Too much active drug: over-anticoagulated</td><td>Not covered</td><td>Not covered</td></tr>
 </tbody></table>
 
 <h4>Why</h4>
@@ -851,6 +851,7 @@ const GUIDE4_HTML = `
 <tr><td>VKORC1 (haplotypes)</td><td>Vitamin K epoxide reductase, the drug target (PD)</td><td>Low-activity target</td><td>Lower</td><td>A less active target needs less drug to inhibit it</td></tr>
 <tr><td>CYP4F2</td><td>Metabolizes reduced (active) vitamin K to an inactive form</td><td>Active vitamin K rises</td><td>Higher</td><td>Less vitamin K is broken down, so more of warfarin's antidote is present and more warfarin is needed; a more active CYP4F2 works the other way</td></tr>
 </tbody></table>
+<p>The three genotypes she asked about, ranked by the dose they need.</p>
 <table class="reftab"><thead><tr><th>Genotype (her questions)</th><th>Warfarin dose</th></tr></thead><tbody>
 <tr><td>Wild type for VKORC1 and CYP2C9</td><td>About 5 mg/day</td></tr>
 <tr><td>CYP2C9*3/*3, wild-type VKORC1</td><td>Less</td></tr>
@@ -945,7 +946,7 @@ const GUIDE4_HTML = `
 </ul>
 
 <h4>Functional significance of the genotypes</h4>
-<table class="reftab keep"><thead><tr><th>Group (Table 1)</th><th>CYP2C19 activity</th><th>Omeprazole exposure (relative mean AUC, earlier work)</th><th>H. pylori cure rate (Table 2)</th></tr></thead><tbody>
+<table class="reftab keep"><thead><tr><th>Group</th><th>CYP2C19 activity</th><th>Omeprazole exposure (relative AUC)</th><th>H. pylori cure rate</th></tr></thead><tbody>
 <tr><td><b>1</b><br><small>wt/wt (*1/*1)</small></td><td>Normal: two working alleles (rapid-extensive)</td><td>1</td><td>28.6% (8 of 28)</td></tr>
 <tr><td><b>2</b><br><small>wt/m1, wt/m2 (*1/*2, *1/*3)</small></td><td>Some: one working *1 allele (intermediate-extensive)</td><td>3.7</td><td>60% (15 of 25)</td></tr>
 <tr><td><b>3</b><br><small>m1/m2, m1/m1 (*2/*3, *2/*2)</small></td><td>None (poor metabolizer)</td><td>20</td><td>100% (9 of 9)</td></tr>
@@ -1144,6 +1145,7 @@ const GUIDE4_HTML = `
 
 <h4>Figure 2: the algorithm</h4>
 <!--STEP:warfarin-genotype-->
+<p>The same algorithm as the figure above, written out branch by branch.</p>
 <table class="reftab"><thead><tr><th>Step</th><th>Non-African ancestry</th><th>African ancestry</th></tr></thead><tbody>
 <tr><td>1. VKORC1 and CYP2C9 genotype available?</td><td colspan="2">No: dose clinically, meaning without genetic information (a clinical dosing algorithm or a standard dose). Her words: "Dose your patient empirically".</td></tr>
 <tr><td>2. Yes: self-identified ancestry</td><td colspan="2">Ask the patient whether they are of African or non-African ancestry; follow that branch.</td></tr>
@@ -1527,7 +1529,7 @@ const GUIDE4_HTML = `
 <!--STEP:naranjo-case-->
 
 <h4>The ten questions and their points</h4>
-<table class="reftab keep"><thead><tr><th>Question (Naranjo page) and what it tests</th><th>Yes</th><th>No</th><th>Do not know</th></tr></thead><tbody>
+<table class="reftab keep"><thead><tr><th>Question (Naranjo page) and what it tests</th><th>Yes</th><th>No</th><th>Do not know<br><small>(DK)</small></th></tr></thead><tbody>
 <tr><td>1. Are there previous conclusive reports on this reaction?<br><small>Tests: Literature search</small></td><td>+1</td><td>0</td><td>0</td></tr>
 <tr><td>2. Did the adverse event appear after the suspected drug was administered?<br><small>Tests: Timing (she named it)</small></td><td>+2</td><td>-1</td><td>0</td></tr>
 <tr><td>3. Did the adverse reaction improve when the drug was discontinued or a specific antagonist was administered?<br><small>Tests: Timing (she named it)</small></td><td>+1</td><td>0</td><td>0</td></tr>
@@ -1539,6 +1541,7 @@ const GUIDE4_HTML = `
 <tr><td>9. Did the patient have a similar reaction to the same or similar drugs in any previous exposure?<br><small>Tests: Past exposure</small></td><td>+1</td><td>0</td><td>0</td></tr>
 <tr><td>10. Was the adverse event confirmed by any objective evidence?<br><small>Tests: Objective evidence</small></td><td>+1</td><td>0</td><td>0</td></tr>
 </tbody></table>
+<p>What each total is called, on the page and in her ranking.</p>
 <table class="reftab keep"><thead><tr><th>Total (Naranjo page)</th><th>Category on the page</th><th>Ranking on slide p. 21 and in her words</th><th>Meaning (slide p. 21)</th></tr></thead><tbody>
 <tr><td>9</td><td>Definite</td><td>Definite</td><td>Drug is likely the true cause</td></tr>
 <tr><td>5-8</td><td>Probable</td><td>Probable</td><td>Drug is the apparent cause</td></tr>

@@ -3150,7 +3150,7 @@ function stepHTML(k, i = 0) {
   const d = STEPS()[k]; if (!d) return '';
   const st = d.steps[i];
   return `<figure class="fig step3" data-s3="${esc(k)}" data-i="${i}"><figcaption><b>${esc(d.title)}</b> <span class="meta" style="margin:0">step ${i + 1} of ${d.steps.length}</span></figcaption>
-    <div class="s3svg">${st.svg}${d.ghost && i < d.steps.length - 1 ? `<div class="s3ghost" aria-hidden="true">${d.steps[d.steps.length - 1].svg}</div>` : ''}</div><p class="s3cap" aria-live="polite">${st.t}</p>
+    <div class="s3svg">${st.svg}${d.ghost && i < d.steps.length - 1 ? `<div class="s3ghost" aria-hidden="true">${d.steps[d.steps.length - 1].svg.replace(/class="s3hi"/g, 'class="s3box"').replace(/class="s3acc"/g, 'class="s3line"')}</div>` : ''}</div><p class="s3cap" aria-live="polite">${st.t}</p>
     <div class="row s3nav"><button type="button" class="btn ghost" data-s3go="-1" ${i ? '' : 'disabled'}>◂ Back</button>${d.steps.map((x, j) => `<button type="button" class="sdot${j === i ? ' on' : ''}" data-s3to="${j}" aria-label="Step ${j + 1}"></button>`).join('')}<button type="button" class="btn ghost" data-s3go="1" ${i < d.steps.length - 1 ? '' : 'disabled'}>Next ▸</button><button type="button" class="btn ghost" data-s3play>${S3PLAY && S3PLAY.k === k ? '■ Stop' : '🔊 Play'}</button></div>
     ${d.src ? `<div class="cite">${esc(d.src)}</div>` : ''}</figure>`;
 }

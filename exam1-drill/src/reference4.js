@@ -109,19 +109,20 @@ const REFERENCE4_HTML = `
 <p class="sub">Source: PGx-Examples-Students-Fall-2026.pdf slides 'Integrated: Both PK and PD' (p. 57), 'Both PK and PD 2' (p. 58, Goodman and Gilman); transcript 10/26.</p>
 <h3 id="ref4-l21-1">Day 21: The CPIC warfarin algorithm for adults, step by step (2017 guideline, Figure 2)</h3>
 <table class="reftab"><thead><tr><th>Branch</th><th>Genotype or finding</th><th>What the algorithm gives</th><th>Strength</th></tr></thead><tbody>
-<tr><td>Any</td><td>No genotype available</td><td>Dose clinically (without genetic information: a clinical dosing algorithm or a standard dose approach)</td><td></td></tr>
-<tr><td>Any</td><td>Genotype available</td><td>Ask the patient's self-identified ancestry (African or non-African) and follow that branch</td><td></td></tr>
+<tr><td>Any</td><td>No genotype available</td><td>Dose clinically (without genetic information: a clinical dosing algorithm or a standard dose approach)</td><td>No rating</td></tr>
+<tr><td>Any</td><td>Genotype available</td><td>Ask the patient's self-identified ancestry (African or non-African) and follow that branch</td><td>No rating</td></tr>
 <tr><td>Non-African</td><td>VKORC1 -1639G&gt;A, CYP2C9*2 and *3</td><td>Calculate the dose with a published pharmacogenetic algorithm (Gage or IWPC)</td><td>Strong</td></tr>
 <tr><td>Non-African</td><td>Loading dose to be used</td><td>EU-PACT loading dose algorithm with genetic information could be used</td><td>Optional</td></tr>
 <tr><td>Non-African</td><td>CYP2C9*5, *6, *8 or *11 detected</td><td>Decrease the calculated dose 15-30% per variant allele or consider an alternative agent; 20-40% in homozygotes</td><td>Optional</td></tr>
 <tr><td>Non-African</td><td>CYP4F2*3 detected</td><td>Increase the dose 5-10%</td><td>Optional</td></tr>
-<tr><td>Non-African</td><td>rs12777823</td><td>Not considered, even if available</td><td></td></tr>
-<tr><td>African</td><td>CYP2C9*5, *6, *8, *11 not tested</td><td>Dose clinically</td><td></td></tr>
+<tr><td>Non-African</td><td>rs12777823</td><td>Not considered, even if available</td><td>No rating</td></tr>
+<tr><td>African</td><td>CYP2C9*5, *6, *8, *11 not tested</td><td>Dose clinically</td><td>No rating</td></tr>
 <tr><td>African</td><td>*5, *6, *8, *11 known</td><td>Calculate with VKORC1 -1639G&gt;A and CYP2C9*2 and *3; decrease 15-30% for a *5, *6, *8 or *11 carrier, 20-40% with two variant alleles</td><td>Moderate</td></tr>
 <tr><td>African</td><td>rs12777823 A/G or A/A (African Americans)</td><td>Decrease the dose 10-25%</td><td>Moderate</td></tr>
-<tr><td>African</td><td>CYP4F2</td><td>No recommendation (data do not support an effect in African ancestry)</td><td></td></tr>
-<tr><td>Either</td><td>CYP2C9 poor metabolism (e.g. *2/*3, *3/*3), or VKORC1 increased sensitivity plus CYP2C9 poor metabolism</td><td>Consider an alternative oral anticoagulant</td><td></td></tr>
+<tr><td>African</td><td>CYP4F2</td><td>No recommendation (data do not support an effect in African ancestry)</td><td>No rating</td></tr>
+<tr><td>Either</td><td>CYP2C9 poor metabolism (e.g. *2/*3, *3/*3), or VKORC1 increased sensitivity plus CYP2C9 poor metabolism</td><td>Consider an alternative oral anticoagulant</td><td>No rating</td></tr>
 </tbody></table>
+<p class="sub">"No rating": the guideline attaches a strength only to a dosing recommendation, not to a branch point or to clinical dosing.</p>
 <p class="sub">Source: CPIC warfarin guideline 2017 update (Johnson et al.), Figure 2 and footnotes, Therapeutic Recommendations; PGx-Resources-and-Cases-Students-Fall-2026.pdf slide 'CPIC Guidelines 7' (p. 15); (T) 10/27. In class she said "Dose your patient empirically" for the no-genotype branch, and the walk-through briefly gave a decrease for CYP4F2 before she corrected it to an increase. Footnote (c): 45-50% of individuals with self-reported African ancestry carry CYP2C9*5, *6, *8, *11 or rs12777823.</p>
 <p><b>Figure 2 variants: dose direction, reason and population frequency</b></p>
 <table class="reftab"><thead><tr><th>Variant</th><th>Dose effect (Figure 2)</th><th>Why</th><th>Who carries it</th><th>Source</th></tr></thead><tbody>
