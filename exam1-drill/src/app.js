@@ -1766,8 +1766,8 @@ function examResult() {
 /* ---------- Terms: glossary with figures, flashcards, generated questions ---------- */
 let TM = {mode: 'glossary', group: 'all', card: null, shown: false, scope: 'exam'};   // scope: the glossary lists this exam's terms, or both exams'
 const termExam = t => lecExam(t.lecture) || 1;
-// Exam 4 has no glossary of its own; it is "cumulative to my part" (course.js Exam 4 facts), so it uses her Exam 3 terms
-const termBorrow = () => activeId() === 4 && !(typeof TERMS === 'undefined' ? [] : TERMS).some(t => termExam(t) === 4) ? 3 : 0;
+// Exam 4 is "cumulative to my part" (course.js Exam 4 facts): its terms list carries her Exam 3 terms too
+const termBorrow = () => activeId() === 4 ? 3 : 0;
 const termIn = t => termExam(t) === activeId() || termExam(t) === termBorrow();
 const termList = () => (typeof TERMS === 'undefined' ? [] : TERMS).filter(t => termIn(t) && (TM.group === 'all' || t.group === TM.group));
 const termKey = t => 'term:' + t.id;
@@ -1856,7 +1856,7 @@ function vTerms() {
   if (focusOn()) TM.scope = 'exam';   // focus hides the other exams' groups, so the all-exams view would be empty
   const chipGroups = TM.mode === 'glossary' && TM.scope === 'both' ? groups : [...new Set(mine.map(t => t.group))];
   if (TM.group !== 'all' && !chipGroups.includes(TM.group)) TM.group = 'all';
-  let h = `<h2>Terms</h2><div class="row" style="margin:-4px 0 8px">${examSwitch()}</div><p class="sub">${mine.length} terms for ${esc(active().name)}${termBorrow() ? ` (her Exam ${termBorrow()} terms: she said Exam 4 is “cumulative to my part”)` : ''}, each with its source (${all.length} across all exams; ${focusOn() ? 'turn Smith focus off to show them all' : 'the glossary can show them all'}). Each term has a one-line meaning, a situation that shows it in action, and, where one applies, a figure.</p>
+  let h = `<h2>Terms</h2><div class="row" style="margin:-4px 0 8px">${examSwitch()}</div><p class="sub">${mine.length} terms for ${esc(active().name)}${termBorrow() ? ` (with her Exam ${termBorrow()} terms: she said Exam 4 is “cumulative to my part”)` : ''}, each with its source (${all.length} across all exams; ${focusOn() ? 'turn Smith focus off to show them all' : 'the glossary can show them all'}). Each term has a one-line meaning, a situation that shows it in action, and, where one applies, a figure.</p>
   <div class="card"><div class="row">${[['glossary', 'Glossary'], ['flash', 'Flashcards'], ['quiz', 'Quiz me']].map(([k, l]) => `<button type="button" class="chip ${TM.mode === k ? 'on' : ''}" aria-pressed="${TM.mode === k}" data-mode="${k}">${l}</button>`).join('')}
    <span class="meta" style="margin:0 0 0 12px">Group:</span>${['all'].concat(chipGroups).map(g => `<button type="button" class="chip ${TM.group === g ? 'on' : ''}" aria-pressed="${TM.group === g}" data-group="${esc(g)}">${g === 'all' ? 'All' : esc(g)}</button>`).join('')}</div></div>`;
   const list = termList();
