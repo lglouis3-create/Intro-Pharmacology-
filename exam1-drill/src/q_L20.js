@@ -821,7 +821,7 @@ QUESTIONS.push(
  cite:"FurutaAnnIntMed1998.pdf (p. 1029, Discussion); PGx-Examples-Students-Fall-2026.pdf slide 'Discussion of Furuta article' (p. 61); transcript 10/26"},
 
 /* ---------------- Exam 4 study list item 3: Furuta 1998 (genotype groups, cure and healing, the four reasons) ---------------- */
-{id:"L20-067", lecture:"L20", prof:"Smith", tier:"new", topic:"L20", sub:"furuta", skill:"recall", readingId:"furuta-1998", multi:true, core:true, coreWhy:"her Exam 4 study list item 3 (Furuta): the four ways",
+{id:"L20-067", lecture:"L20", prof:"Smith", tier:"new", topic:"L20", sub:"furuta", skill:"recall", readingId:"furuta-1998", dupOf:"L20-065", multi:true, core:true, coreWhy:"her Exam 4 study list item 3 (Furuta): the four ways",
  concept:"furuta-four-reasons", tags:["smith","reading"], source:"both",
  stem:"The Furuta discussion gives four reasons (First, Second, Third, Finally) that omeprazole plus amoxicillin cured more poor metabolizers. Which are among them? Select all that apply.",
  options:[
@@ -836,7 +836,7 @@ QUESTIONS.push(
  note:"She summarized reasons 1 to 3 on 10/26; reason 4 is from the paper. Her Exam 4 study list asks for the four ways elevated PPI concentrations improved outcomes.",
  cite:"FurutaAnnIntMed1998.pdf (p. 1029, Discussion); PGx-Examples-Students-Fall-2026.pdf slide 'Discussion of Furuta article' (p. 61); transcript 10/26"},
 
-{id:"L20-068", lecture:"L20", prof:"Smith", tier:"new", topic:"L20", sub:"furuta", skill:"recall", readingId:"furuta-1998", core:true, coreWhy:"her Exam 4 study list item 3 (Furuta): the four ways",
+{id:"L20-068", lecture:"L20", prof:"Smith", tier:"new", topic:"L20", sub:"furuta", skill:"recall", readingId:"furuta-1998", dupOf:"L20-065", core:true, coreWhy:"her Exam 4 study list item 3 (Furuta): the four ways",
  concept:"furuta-reason3-amoxicillin-gastric-juice", tags:["smith","reading"], source:"both",
  stem:"The third reason in the Furuta discussion concerns amoxicillin in the stomach. What does omeprazole do to it?",
  options:[

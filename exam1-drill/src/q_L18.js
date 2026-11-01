@@ -861,9 +861,9 @@ QUESTIONS.push(
   {t:"TPMT*3A", correct:false, why:"A haplotype of two SNPs in the TPMT gene; the gene is present."},
   {t:"CYP2D6*5", correct:true, why:"The whole CYP2D6 gene is deleted from that allele, so nothing is made from it."}],
  teach:"In CYP2D6*5 the entire gene is missing from the allele: thousands of base pairs are deleted, not a single nucleotide changed. That allele makes no enzyme.",
- note:"Quiz 4, question 1. The printed quiz listed CYP2D6*2 as option D and did not list CYP2D6*5. CYP2D6*2 is a fully functional allele (Examples p. 21), so it is not the answer; the drill shows CYP2D6*5 in its place as the correct choice.",
+ note:"Quiz 4, question 1. The printed quiz listed CYP2D6*2 as option D and did not list CYP2D6*5. CYP2D6*2 is a fully functional allele (Examples p. 22), so it is not the answer; the drill shows CYP2D6*5 in its place as the correct choice.",
  quote:"Total gene is gone",
- cite:"Smith_Quiz_4_-_Intro_to_Pharmacogenomics.pdf Q1; Intro to PGx Lecture Students Fall 2026.pdf slide ‘Gene Deletion CYP2D6’ (p. 39); PGx-Examples-Students-Fall-2026.pdf p. 21; (T) 10/21 transcript"},
+ cite:"Smith_Quiz_4_-_Intro_to_Pharmacogenomics.pdf Q1; Intro to PGx Lecture Students Fall 2026.pdf slide ‘Gene Deletion CYP2D6’ (p. 39); PGx-Examples-Students-Fall-2026.pdf slide ‘CYP2D6 Polymorphisms 3’ (p. 22); transcript 10/22; (T) 10/21 transcript"},
 /* ---------------- Exam 4 study list item 1 gap fill: the rest of her variant list (p. 31) and the p. 42 poll ---------------- */
 {id:"L18-068", lecture:"L18", prof:"Smith", tier:"new", topic:"L18", sub:"snp", skill:"tell", lowYield:true, core:true, coreWhy:"her Exam 4 study list item 1 (objectives): describe the different types of polymorphisms",
  concept:"splicing-variant-types", tags:["smith"], source:"both",

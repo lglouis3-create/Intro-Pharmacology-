@@ -773,7 +773,7 @@ QUESTIONS.push(
   {t:"Hypofunctional to functional clotting factors", correct:false, why:"That is gamma-glutamyl carboxylase (GGCX), which uses reduced vitamin K."}],
  teach:"VKORC1 (vitamin K epoxide reductase) converts vitamin K epoxide to reduced vitamin K, which the guideline calls the rate-limiting step in vitamin K recycling. Both warfarin enantiomers inhibit VKORC1, so reduced vitamin K runs short and fewer functionally active clotting factors are formed. In the same figure CYP4F2 converts reduced vitamin K to hydroxyvitamin K1, CYP2C9 metabolizes S-warfarin, and GGCX makes the functional clotting factors.",
  quote:"So here's warfarin, the R and the S and tamers, they're hitting VKRC1, right? That helps reduce the production of active coagulation factors because by inhibiting VKRC1, you don't get as much active vitamin K.",
- cite:"CPIC warfarin guideline 2017 update, Figure 1 and legend (p. 398), 'VKORC1 and warfarin' (p. 399); PGx-Resources-and-Cases-Students-Fall-2026.pdf slide 'CPIC Guidelines 7' (p. 15); transcript 10/27"},
+ cite:"CPIC warfarin guideline 2017 update, Figure 1 and legend (p. 398), 'VKORC1 and warfarin' (p. 399); PGx-Resources-and-Cases-Students-Fall-2026.pdf slide 'Current CPIC Guidelines 5' (p. 13); transcript 10/27"},
 
 {id:"L21-061", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"cpic-warf", skill:"recall", readingId:"cpic-warfarin-2017", core:true, coreWhy:"her Exam 4 study list item 4 (CPIC Figure 1): how vitamin K is involved",
  concept:"cpic-fig1-vitk-ggcx", tags:["smith","reading"], source:"both",
@@ -785,7 +785,7 @@ QUESTIONS.push(
   {t:"It turns functional clotting factors back into hypofunctional ones", correct:false, why:"The step runs the other way: hypofunctional to functional."}],
  teach:"In Figure 1, reduced vitamin K is the cofactor gamma-glutamyl carboxylase (GGCX) uses to carboxylate hypofunctional clotting factors into functional, Gla-containing clotting factors; in that step it becomes vitamin K epoxide. VKORC1 then reduces the epoxide back, the step warfarin blocks. Calumenin (CALU), an endoplasmic reticulum chaperone, can bind and inhibit GGCX. CYP4F2 converts reduced vitamin K to hydroxyvitamin K1, removing it from the cycle. Vitamin K is the antidote for warfarin.",
  quote:"vitamin K got um. Change to the vitamin K epoxide in active form when it was used as a cofactor for the vitamin K dependent uh uh glutamyl carboxylase enzyme, which created those active clotting factors that we need to coagulate our blood.",
- cite:"CPIC warfarin guideline 2017 update, Figure 1 and legend (p. 398); PGx-Resources-and-Cases-Students-Fall-2026.pdf slide 'CPIC Guidelines 7' (p. 15); transcript 10/26 and 10/27"},
+ cite:"CPIC warfarin guideline 2017 update, Figure 1 and legend (p. 398); PGx-Resources-and-Cases-Students-Fall-2026.pdf slide 'Current CPIC Guidelines 5' (p. 13); transcript 10/26 and 10/27"},
 
 {id:"L21-062", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"cpic-warf", skill:"recall", readingId:"cpic-warfarin-2017", core:true, coreWhy:"her Exam 4 study list item 4 (CPIC Figure 1): how the drug is metabolized",
  concept:"cpic-fig1-s-warfarin", tags:["smith","reading"], source:"both",
@@ -797,7 +797,7 @@ QUESTIONS.push(
   {t:"As potent as R-warfarin; both cleared by VKORC1", correct:false, why:"VKORC1 is the target both enantiomers inhibit, not a clearing enzyme."}],
  teach:"Figure 1 legend: warfarin is administered as a racemic mixture of the R- and S-stereoisomers. S-warfarin is 3-5 times more potent than R-warfarin and is metabolized predominantly to 7- and 6-hydroxyl metabolites via CYP2C9; the text calls CYP2C9 the primary metabolizing enzyme of S-warfarin. Both enantiomers inhibit VKORC1. The figure does not name R-warfarin's enzymes; she said R is weak and is metabolized by multiple CYPs. This is why CYP2C9 variants change the warfarin dose.",
  quote:"We know already the SNHammer is highly metabolized by 2C9, OK. Both these anatommers work on the VKRC1.",
- cite:"CPIC warfarin guideline 2017 update, Figure 1 legend and 'CYP2C9 and warfarin' (p. 398); PGx-Resources-and-Cases-Students-Fall-2026.pdf slide 'CPIC Guidelines 7' (p. 15); transcript 10/26"},
+ cite:"CPIC warfarin guideline 2017 update, Figure 1 legend and 'CYP2C9 and warfarin' (p. 398); PGx-Examples-Students-Fall-2026.pdf slide 'Integrated Both PK and PD 2' (p. 58); PGx-Resources-and-Cases-Students-Fall-2026.pdf slide 'Current CPIC Guidelines 5' (p. 13); transcript 10/26"},
 
 {id:"L21-063", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"cpic-warf", skill:"recall", readingId:"cpic-warfarin-2017", core:true, coreWhy:"her Exam 4 study list item 4 (CPIC Figure 2): which populations have the highest frequencies",
  concept:"vkorc1-1639a-population", tags:["smith","reading"], source:"both",
@@ -809,8 +809,8 @@ QUESTIONS.push(
   {t:"All three about equally", correct:false, why:"The bars differ sharply; the guideline says the -1639A frequency varies among ancestral populations."}],
  teach:"VKORC1 -1639A lowers the warfarin dose. In the panel the A allele is most common in East Asian, intermediate in European and North American, and least common in African populations. The CPIC guideline says the -1639A frequency varies among ancestral populations and largely explains the differences in average dose requirements between whites, blacks and Asians. On 10/21 she said the frequency graphs do not have to be memorized; the order is what is keyed here.",
  quote:"you should know which genetic variants we're concerned about and in which populations",
- note:"On 10/21 she said of the frequency figure: \"OK, so you don't have to memorize this.\" On 10/28 she said to know which variants matter in which populations. Keyed to the order only, no percentages.",
- cite:"PGx-Examples-Students-Fall-2026.pdf slide 'Allele and Phenotype Frequencies' (p. 9, panel B); CPIC warfarin guideline 2017 update, 'VKORC1 and warfarin' (p. 399); PGx-Resources-and-Cases-Students-Fall-2026.pdf slide 'CPIC Guidelines 7' (p. 15); transcript 10/28"},
+ note:"On 10/21 she said of the frequency figure: \"OK, so you don't have to memorize this.\" On 10/28 she said to know which variants matter in which populations. Her in-class remark (\"OK, so you don't have to memorize this. This is to illustrate the point that a lot of work is done trying to look at how often do these genetic versions occur in different populations\") is superseded by her written Exam 4 study list, item 4b: \"know which populations have the highest frequencies of these genetic variants\". Keyed to the order only, no percentages.",
+ cite:"PGx-Examples-Students-Fall-2026.pdf slide 'Allele and Phenotype Frequencies' (p. 9, panel B); CPIC warfarin guideline 2017 update, 'VKORC1 and warfarin' (p. 399); PGx-Resources-and-Cases-Students-Fall-2026.pdf slide 'Current CPIC Guidelines 5' (p. 13); transcript 10/28"},
 
 {id:"L21-064", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"cpic-warf", skill:"recall", readingId:"cpic-warfarin-2017", multi:true, core:true, coreWhy:"her Exam 4 study list item 4 (CPIC Figure 2): which populations have the highest frequencies",
  concept:"cpic-fig2-populations", tags:["smith","reading"], source:"both",
@@ -851,7 +851,7 @@ QUESTIONS.push(
   {t:"VKORC1 G/G on its own lowers the dose", correct:false, why:"G/G is the reference genotype; -1639A carriers are the ones who need progressively lower doses."}],
  teach:"On the non-African branch the dose is calculated from VKORC1 -1639G>A and CYP2C9*2 and *3, then CYP4F2*3 adds 5-10%. CYP2C9*3/*3 pushes the dose down and puts the patient in the poor-metabolism group, for which an alternative oral anticoagulant may be considered; VKORC1 G/G is the reference; CYP4F2*3 pushes the dose up. Neither she nor the guideline gives a single net figure for this combination; on 10/28 she said the CYP2C9 variants and the CYP4F2 variant have opposite effects on the dose and that each variant's effect alone must be explained.",
  quote:"did we do all the genotyping we should for this patient that we know of yet so far? You'd say, yeah, for that patient, non-African American descent, yeah, we, we checked all the genotypes we should have.",
- note:"Her worked case on 10/27. She also asked whether the patient needs relatively more or less than the average starting dose; the recording does not contain her answer, so only each variant's direction is keyed.",
+ note:"Her worked case on 10/27. She also asked whether the patient needs relatively more or less than the average starting dose; the recording does not contain her answer, so only each variant's direction is keyed. During the algorithm walk-through she twice said the CYP4F2 SNP needs a decreased dose, then corrected it to an increased dose ('You're going to increase the dose, right?'); the key follows her correction and Figure 2 (+5-10%, non-African branch only).",
  cite:"CPIC warfarin guideline 2017 update, 'CYP2C9 and warfarin' (p. 398), 'VKORC1 and warfarin' (p. 399), Figure 2 and footnote e (p. 401); PGx-Resources-and-Cases-Students-Fall-2026.pdf slide 'CPIC Guidelines 7' (p. 15); transcript 10/27 and 10/28"},
 /* ---------------- Exam 4 study list items 1-2 gap fill: the worksheet's purpose, trastuzumab item 2, carbamazepine and abacavir items 4-8 ---------------- */
 {id:"L21-067", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"label-trast", skill:"recall", core:true, coreWhy:"her Exam 4 study list item 1 (objectives): how the Pharmacogenomics Questions help clinicians think through pharmacogenomics",
@@ -867,7 +867,7 @@ QUESTIONS.push(
  note:"She invited students to email her other questions or other wordings for the worksheet. 10/28 transcript: \"I, I think those questions help us all think the way we need to think when we're dealing with pharmacogenomics.\"",
  cite:"Pharmacogenomics Questions Drug Labels Worksheet, items 1-8 and instructions; PGx-Resources-and-Cases-Students-Fall-2026.pdf Outline and Objectives (p. 2); transcript 10/27 and 10/28"},
 
-{id:"L21-068", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"label-trast", skill:"recall", multi:true, dupOf:"L21-067", core:true, coreWhy:"her Exam 4 study list item 1 (objectives): how the Pharmacogenomics Questions help clinicians think through pharmacogenomics",
+{id:"L21-068", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"label-trast", skill:"recall", multi:true, core:true, coreWhy:"her Exam 4 study list item 1 (objectives): how the Pharmacogenomics Questions help clinicians think through pharmacogenomics",
  concept:"worksheet-purpose", tags:["smith"], source:"transcript",
  stem:"Which questions does her drug-label worksheet have you answer for a drug before using it? Select all that apply.",
  options:[
@@ -888,7 +888,7 @@ QUESTIONS.push(
   {t:"The drug inhibits tumor cells that overexpress HER2", correct:true, why:"Label 12.1: Herceptin inhibits the proliferation of human tumor cells that overexpress HER2."},
   {t:"A germline HER2 variant slows trastuzumab clearance", correct:false, why:"HER2 is examined in the tumor, and its role is the drug's target, not its clearance."},
   {t:"HER2 overexpression raises the risk of Stevens-Johnson syndrome", correct:false, why:"SJS/TEN is the carbamazepine HLA-B*15:02 risk."},
-  {t:"HER2-negative tumors respond best, having no receptor to block", correct:false, why:"Reversed: a HER2-negative tumor lacks the drug's target, and trastuzumab is not used."}],
+  {t:"HER2-negative tumors respond best", correct:false, why:"Reversed: a HER2-negative tumor lacks the drug's target, and trastuzumab is not used."}],
  teach:"Trastuzumab is made to bind the HER2 receptor. The label says it inhibits the proliferation of human tumor cells that overexpress HER2, and that its antibody-dependent cellular cytotoxicity (ADCC) is preferentially exerted on HER2-overexpressing cancer cells. So HER2 status decides whether the drug has a target: a HER2-positive tumor can respond; a HER2-negative tumor lacks the target.",
  quote:"We want to be sure these patients have the drug's target, which is HER2, before we give them an expensive drug that can cause side effects.",
  note:"Item 2 was not answered as a separate item for trastuzumab in class; her answers to items 4 (efficacy) and 8 (HER2-negative: not used) cover it. Keyed to label 12.1 Mechanism of Action.",
@@ -907,7 +907,7 @@ QUESTIONS.push(
  note:"Item 4 was not worked aloud for carbamazepine before the recording ends; the answer follows from her item 2 answer and the boxed warning.",
  cite:"Pharmacogenomics Questions Drug Labels Worksheet, item 4; Tegretol (carbamazepine) label, Boxed Warning (Serious Dermatologic Reactions and HLA-B*1502 Allele); PGx-Resources-and-Cases-Students-Fall-2026.pdf slide 'FDA Table of Pharmacogenomic Biomarkers in Drug Labeling 3' (p. 8); transcript 10/27"},
 
-{id:"L21-071", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"label-hla", skill:"recall", readingId:"label-abacavir", core:true, coreWhy:"her Exam 4 study list item 2 (worksheet)",
+{id:"L21-071", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"label-hla", skill:"recall", readingId:"label-abacavir", dupOf:"L21-070", core:true, coreWhy:"her Exam 4 study list item 2 (worksheet)",
  concept:"hla-toxicity-not-efficacy", tags:["smith","label"], source:"both",
  stem:"Worksheet item 4 for abacavir (Ziagen): is the HLA-B*57:01 screening done to ensure efficacy or to prevent toxicity?",
  options:[
@@ -961,10 +961,10 @@ QUESTIONS.push(
  concept:"carb-population", tags:["smith","label"], source:"both",
  stem:"Worksheet item 7 for carbamazepine (Tegretol): which patients does the boxed warning say should be screened for HLA-B*15:02 before starting?",
  options:[
-  {t:"Patients with ancestry in genetically at-risk populations", correct:true, why:"Boxed Warning: HLA-B*1502 is found almost exclusively in patients with ancestry across broad areas of Asia."},
+  {t:"Patients with ancestry in at-risk populations", correct:true, why:"Boxed Warning: HLA-B*1502 is found almost exclusively in patients with ancestry across broad areas of Asia."},
   {t:"Every patient, before starting or restarting the drug", correct:false, why:"That is the abacavir rule for HLA-B*5701."},
   {t:"Only patients with breast or gastric tumors", correct:false, why:"Tumor type is the trastuzumab answer to item 7."},
-  {t:"Patients of European ancestry, the group with the most carriers", correct:false, why:"The label says HLA-B*1502 is largely absent in individuals not of Asian origin, e.g. Caucasians."}],
+  {t:"Patients of European ancestry", correct:false, why:"The label says HLA-B*1502 is largely absent in individuals not of Asian origin, e.g. Caucasians."}],
  teach:"The carbamazepine boxed warning says patients with ancestry in genetically at-risk populations should be screened for HLA-B*1502 before starting, because the allele is found almost exclusively in patients with ancestry across broad areas of Asia. The Warnings section lists prevalence rates across Asian populations as a rough guide and says the allele is largely absent in individuals not of Asian origin.",
  note:"Item 7 was not worked aloud for carbamazepine before the recording ends; keyed to the label. Label detail not taught: more than 15% positive in Hong Kong, Thailand, Malaysia and parts of the Philippines, about 10% in Taiwan, 4% in North China, 2% to 4% in South Asians, under 1% in Japan and Korea.",
  cite:"Pharmacogenomics Questions Drug Labels Worksheet, item 7; Tegretol (carbamazepine) label, Boxed Warning and Warnings (SJS/TEN and HLA-B*1502 Allele); PGx-Resources-and-Cases-Students-Fall-2026.pdf slide 'FDA Table of Pharmacogenomic Biomarkers in Drug Labeling 3' (p. 8); transcript 10/27"},
@@ -990,8 +990,8 @@ QUESTIONS.push(
   {t:"Trastuzumab: at-risk ancestry; carbamazepine: all patients; abacavir: tumor type", correct:false, why:"Each answer is moved to the wrong drug."},
   {t:"Trastuzumab: tumor type; carbamazepine: all patients; abacavir: at-risk ancestry", correct:false, why:"Carbamazepine and abacavir are swapped."}],
  teach:"Item 7 has a different kind of answer for each worksheet drug. Trastuzumab: a tumor type (HER2-overexpressing breast cancer and metastatic gastric or gastroesophageal junction adenocarcinoma), not an ethnic group. Carbamazepine: patients with ancestry in genetically at-risk populations for HLA-B*1502. Abacavir: all patients before starting or restarting, for HLA-B*5701.",
- quote:"I have chosen those three drugs, uh, for a few years now because of the fact that I can point out some interesting differences between them",
- note:"Her trastuzumab answer was given aloud on 10/27; the carbamazepine and abacavir answers are label text (not worked aloud before the recording ends). The quote is from 10/28.",
+ quote:"Number 7, is there a particular patient population or tumor type that should be genotyped? So that's Not really a patient population, right? Like not an ethnic group, what kind of tumors? Breast.",
+ note:"Her trastuzumab answer was given aloud on 10/27; the carbamazepine and abacavir answers are label text (not worked aloud before the recording ends).",
  cite:"Pharmacogenomics Questions Drug Labels Worksheet, item 7; Herceptin (trastuzumab) label, 1.1-1.3; Tegretol (carbamazepine) label, Boxed Warning; Ziagen (abacavir) label, Boxed Warning; PGx-Resources-and-Cases-Students-Fall-2026.pdf slide 'FDA Table of Pharmacogenomic Biomarkers in Drug Labeling 3' (p. 8); transcript 10/27 and 10/28"},
 
 {id:"L21-078", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"label-hla", skill:"apply", readingId:"label-carbamazepine", multi:true, core:true, coreWhy:"her Exam 4 study list item 2 (worksheet)",

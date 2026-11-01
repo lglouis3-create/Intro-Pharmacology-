@@ -1172,7 +1172,7 @@ QUESTIONS.push(
   {t:"Q2 yes: the event followed the drug", correct:false, why:"Q2 yes is +2."},
   {t:"Q5 no: no other cause could explain it", correct:false, why:"Q5 no is +2."}],
  teach:"The +1 answers on the page are Q1 yes, Q3 yes, Q6 no and Q7 to Q10 yes. The +2 answers are Q2 yes, Q4 yes and Q5 no. Questions 7 to 10 (toxic level, dose-response, previous similar reaction, objective evidence) never subtract: no and do not know are both 0.",
- quote:"Also, I, I consider like 6 to be a time kind of thing.",
+ quote:"sometimes a yes is 2 points, sometimes it's 1 point, sometimes a no is negative.",
  cite:"Naranjo Algorithm (one page), questions 1-10; ADE-Lecture-Students-2026.pdf slide 'Causality of Adverse Drug Reactions' (p. 21); transcript 10/28"},
 /* ---------------- Exam 4 study list item 1 gap fill: cutaneous reactions (pp. 29-34, on the objectives, skipped in class) ---------------- */
 {id:"L22-092", lecture:"L22", prof:"Smith", tier:"new", topic:"L22", sub:"hypersens", skill:"apply", lowYield:true, core:true, coreWhy:"her Exam 4 study list item 1 (objectives): common drug-induced cutaneous reactions and basic treatments",
