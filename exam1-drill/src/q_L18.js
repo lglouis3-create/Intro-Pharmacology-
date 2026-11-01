@@ -907,5 +907,27 @@ QUESTIONS.push(
  teach:"SNPs are not the only clinically relevant variants. CYP2D6*5 deletes the whole gene (poor metabolizer); CYP2D6*2xN adds copies (ultrarapid metabolizer). Neither is a SNP, and both change response to SSRIs, tamoxifen, codeine and beta blockers.",
  quote:"Because these examples, all of them have clinical relevance.",
  note:"The PollEv is printed on p. 42 with the options True and False and no key; it was not run on the recording. Keyed False from her slides pp. 39-40 (non-SNP variants with affected drugs) and her statement that all of her examples have clinical relevance.",
- cite:"Intro to PGx Lecture Students Fall 2026.pdf slides ‘Gene Deletion CYP2D6’ (p. 39), ‘Copy Number Variant CYP2D6’ (p. 40), PollEv ‘SNP polymorphisms are the only type that have clinical relevance’ (p. 42); (T) 10/21 transcript"}
+ cite:"Intro to PGx Lecture Students Fall 2026.pdf slides ‘Gene Deletion CYP2D6’ (p. 39), ‘Copy Number Variant CYP2D6’ (p. 40), PollEv ‘SNP polymorphisms are the only type that have clinical relevance’ (p. 42); (T) 10/21 transcript"},
+{id:"L18-070", lecture:"L18", prof:"Smith", tier:"new", topic:"L18", sub:"aachange", skill:"apply", core:true, coreWhy:"her Exam 4 study list item 1 (objectives): recognize TPMT*3A as a haplotype",
+ concept:"tpmt3a-haplotype-apply", tags:["smith"], source:"both",
+ stem:"A genotyping report shows that one of a patient's TPMT alleles carries two changes together, 615 G>A and 874 A>G. What is this allele, and what is the term for several variants travelling together on one allele?",
+ options:[
+  {t:"TPMT*3A; a haplotype", correct:true, why:"TPMT*3A is two non-synonymous SNPs on one allele, which is a haplotype."},
+  {t:"TPMT*3C; a copy number variant", correct:false, why:"TPMT*3C is a single SNP, and no gene copies are gained or lost."},
+  {t:"TPMT*1; a synonymous SNP", correct:false, why:"Both changes alter an amino acid, and *1 is the wild type."},
+  {t:"TPMT*3A; a tandem repeat", correct:false, why:"The allele is TPMT*3A, but nothing is repeated; it is a haplotype."}],
+ teach:"TPMT*3A carries two non-synonymous SNPs on the same allele. Two or more variants travelling together on one allele are a haplotype; TPMT*3C is a single SNP.",
+ quote:"by definition has two nucleotide changes",
+ cite:"Intro to PGx Lecture Students Fall 2026.pdf slide 'Non-Synonymous SNP: TPMT' (p. 35); transcript 10/21"},
+{id:"L18-071", lecture:"L18", prof:"Smith", tier:"new", topic:"L18", sub:"snp", skill:"apply", core:true, coreWhy:"her Exam 4 study list item 1 (objectives): describe the types of polymorphisms; her think/pair/share classification",
+ concept:"classify-synonymous-codon", tags:["smith"], source:"both",
+ stem:"In the coding region of a gene, a SNP changes the codon GAA (glutamic acid) to GAG (glutamic acid). In general terms, what kind of variant is this, and what happens to the protein?",
+ options:[
+  {t:"Synonymous; the amino acid sequence is unchanged", correct:true, why:"The DNA base changes but the codon still codes glutamic acid, so the protein is unchanged."},
+  {t:"Non-synonymous; one amino acid is replaced", correct:false, why:"A non-synonymous SNP swaps the amino acid; here the amino acid stays glutamic acid."},
+  {t:"Premature stop codon; a truncated protein is made", correct:false, why:"No stop codon is created; GAG codes an amino acid."},
+  {t:"Frameshift; the sequence changes from that point on", correct:false, why:"A single base substitution does not shift the reading frame."}],
+ teach:"A synonymous SNP changes the DNA sequence while the amino acid sequence stays the same as the wild type, as with ABCB1 3435C>T. GAA and GAG both code glutamic acid.",
+ quote:"A synonymous snip is a change to the DNA sequence, a base pair gets changed",
+ cite:"Intro to PGx Lecture Students Fall 2026.pdf slides 'SNPs' (p. 32), 'Synonymous SNP: P-Glycoprotein (P-gp)' (p. 34), 'Think/Pair/Share exercise' (p. 41); transcript 10/21"}
 );

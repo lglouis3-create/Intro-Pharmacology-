@@ -163,7 +163,7 @@ const GUIDE4_HTML = `
 </ul>
 
 <p>How she asks it: name VKORC1's common haplotypes; say why haplotypes get names; recognize TPMT*3A as two changes on one allele.</p>
-<p class="sub">Sources: Intro to PGx slides ‘Haplotype Nomenclature’ (p. 29), ‘Non-Synonymous SNP: TPMT’ (p. 35); (T) 10/21. Questions L18-027 to L18-029, L18-039.</p>
+<p class="sub">Sources: Intro to PGx slides ‘Haplotype Nomenclature’ (p. 29), ‘Non-Synonymous SNP: TPMT’ (p. 35); (T) 10/21. Questions L18-027 to L18-029, L18-039, L18-070.</p>
 </section>
 <section class="guide" id="guide4-l18-4">
 <h3>4. SNP types in coding regions: synonymous, non-synonymous, premature stop codon</h3>
@@ -203,7 +203,7 @@ const GUIDE4_HTML = `
 <p><b>Her first think/pair/share table</b> ("Types of genetic variant", p. 41) asks, for each variant type, what the variant is at the molecular level and what might happen to the gene's product. She asked for general terms, not the specific examples: "So just don't use the specific examples, use like in general terms, what does a synonymous snip mean?" <small>(T) 10/21</small> A general-terms version of the table, built from her slides and her model answer, is in the Reference tab. <button type="button" class="chip" data-jump="ref:ref4-l18-3">Reference: types of genetic variants in general terms</button></p>
 
 <p>How she asks it: "have we had a change in the amino acid sequence?" (no, for ABCB1 3435C&gt;T); "Is it low or no activity?" (no activity, CYP2C19*3); classify a SNP from a codon change; fill in the think/pair/share table in general terms.</p>
-<p class="sub">Sources: Intro to PGx slides ‘Types of Genetic Variants’ (p. 30), ‘List of genetic variant types’ (p. 31), ‘SNPs’ (p. 32), ‘SNP’ (p. 33), ‘Synonymous SNP: P-Glycoprotein (P-gp)’ (p. 34), ‘Non-Synonymous SNP: TPMT’ (p. 35), ‘Premature Stop Codon SNP: CYP2C19’ (p. 36), ‘Think/Pair/Share exercise’ (p. 41); (T) 10/21. Questions L18-030 to L18-043, L18-065.</p>
+<p class="sub">Sources: Intro to PGx slides ‘Types of Genetic Variants’ (p. 30), ‘List of genetic variant types’ (p. 31), ‘SNPs’ (p. 32), ‘SNP’ (p. 33), ‘Synonymous SNP: P-Glycoprotein (P-gp)’ (p. 34), ‘Non-Synonymous SNP: TPMT’ (p. 35), ‘Premature Stop Codon SNP: CYP2C19’ (p. 36), ‘Think/Pair/Share exercise’ (p. 41); (T) 10/21. Questions L18-030 to L18-043, L18-065, L18-071.</p>
 </section>
 <section class="guide" id="guide4-l18-5">
 <h3>5. InDels, tandem repeats, gene deletion (CYP2D6*5) and copy number (CYP2D6*2xN)</h3>
@@ -407,7 +407,7 @@ const GUIDE4_HTML = `
 </ul>
 
 <p>How she asks it: which drug each enzyme handles; the slow-metabolizer succinylcholine time and the 1 in 3000 frequency; match NAT2 phenotype and drug to the adverse effect; which population is mostly slow acetylators; which populations to monitor for isoniazid hepatotoxicity (Japanese and Caucasian, the groups with many fast acetylators); the Caucasian and Japanese figures.</p>
-<p class="sub">Sources: PGx-Examples-Students-Fall-2026.pdf slides 'Butyrylcholinesterase (BChE)' (p. 18), 'N-acetyltransferase 2 (NAT2)' (p. 19); (T) 10/22. Questions L19-008 to L19-013, L19-047, L19-048.</p>
+<p class="sub">Sources: PGx-Examples-Students-Fall-2026.pdf slides 'Butyrylcholinesterase (BChE)' (p. 18), 'N-acetyltransferase 2 (NAT2)' (p. 19); (T) 10/22. Questions L19-008 to L19-013, L19-047, L19-048, L19-052, L19-053.</p>
 </section>
 <section class="guide" id="guide4-l19-3">
 <h3>10. CYP2D6: debrisoquine, poor and ultrarapid metabolizers, and codeine</h3>
@@ -444,7 +444,7 @@ const GUIDE4_HTML = `
 </ul>
 
 <p>How she asks it: the 15 to 25% figure; read the debrisoquine histogram and name the three phenotypes; match genotype to phenotype; the codeine respiratory-depression story; the functional groups of the nine alleles.</p>
-<p class="sub">Sources: PGx-Examples-Students-Fall-2026.pdf slides 'CYP2D6 Polymorphisms' (pp. 20-22), 'Monogenic and Polygenic Effects' (p. 10); (T) 10/22. Questions L19-014 to L19-020, L19-044.</p>
+<p class="sub">Sources: PGx-Examples-Students-Fall-2026.pdf slides 'CYP2D6 Polymorphisms' (pp. 20-22), 'Monogenic and Polygenic Effects' (p. 10); (T) 10/22. Questions L19-014 to L19-020, L19-044, L19-055.</p>
 </section>
 <section class="guide" id="guide4-l19-4">
 <h3>11. CYP2C9: warfarin and the narrow-therapeutic-index drugs</h3>
@@ -548,7 +548,7 @@ const GUIDE4_HTML = `
 </ul>
 
 <p>How she asks it: why *17 increases function and where the SNP sits; the clopidogrel outcome for each allele; why the PPI poor metabolizer benefits while the SSRI one does not; read the Furuta AUC/pH/cure-rate figure.</p>
-<p class="sub">Sources: PGx-Examples-Students-Fall-2026.pdf slides 'CYP2C19 Polymorphisms' (p. 25), 'CYP2C19 Polymorphisms 2' (p. 26), 'CYP2C19 Polymorphisms 3' (p. 27, Furuta et al. 2004); FurutaAnnIntMed1998.pdf (abstract; pp. 1028-1029); (T) 10/22. Questions L19-026 to L19-033, L19-045, L19-049, L19-050.</p>
+<p class="sub">Sources: PGx-Examples-Students-Fall-2026.pdf slides 'CYP2C19 Polymorphisms' (p. 25), 'CYP2C19 Polymorphisms 2' (p. 26), 'CYP2C19 Polymorphisms 3' (p. 27, Furuta et al. 2004); FurutaAnnIntMed1998.pdf (abstract; pp. 1028-1029); (T) 10/22. Questions L19-026 to L19-033, L19-045, L19-049, L19-050, L19-054.</p>
 </section>
 <section class="guide" id="guide4-l19-6">
 <h3>13. Two oncology examples: DPD (5-fluorouracil) and UGT1A1 (irinotecan)</h3>
@@ -749,7 +749,7 @@ const GUIDE4_HTML = `
 </ul>
 
 <p>How she asks it: gene, protein and location; what *5 is; how *15 and *17 relate to *5; what high statin levels cause; what to do for a patient with a nonfunctional allele.</p>
-<p class="sub">Sources: PGx-Examples-Students-Fall-2026.pdf slide 'Organic anion transporter' (p. 47); (T) 10/26. Questions L20-024 to L20-029.</p>
+<p class="sub">Sources: PGx-Examples-Students-Fall-2026.pdf slide 'Organic anion transporter' (p. 47); (T) 10/26. Questions L20-024 to L20-029, L20-074.</p>
 </section>
 <section class="guide" id="guide4-l20-4">
 <h3>18. Drug-target receptors: beta-1, beta-2, EGFR and G proteins</h3>
@@ -1002,7 +1002,7 @@ const GUIDE4_HTML = `
 </ul>
 
 <p>How she asks it: population and regimen; whether one antibiotic is U.S. practice; the enzyme's other name; translate m1 and m2; which genotype was missing and why that is acceptable; why *2 and *3 are inactive; the cure rate of each group; the four reasons in the discussion; how ulcer healing followed the cure rates; whether the result generalizes.</p>
-<p class="sub">Sources: FurutaAnnIntMed1998.pdf (reading card furuta-1998: pp. 1027-1029, Tables 1-2, Discussion); PGx-Examples-Students-Fall-2026.pdf slide 'Discussion of Furuta article' (p. 61); (T) 10/22 and 10/26. Questions L20-057 to L20-066, L20-067 to L20-072.</p>
+<p class="sub">Sources: FurutaAnnIntMed1998.pdf (reading card furuta-1998: pp. 1027-1029, Tables 1-2, Discussion); PGx-Examples-Students-Fall-2026.pdf slide 'Discussion of Furuta article' (p. 61); (T) 10/22 and 10/26. Questions L20-057 to L20-066, L20-067 to L20-072, L20-073.</p>
 </section>
 <section class="guide" id="guide4-l21-1">
 <h3>23. The FDA tables: pharmacogenetic associations and biomarkers in drug labeling</h3>
@@ -1113,7 +1113,7 @@ const GUIDE4_HTML = `
 </ul>
 
 <p>How she asks it: what CPIC stands for; the HOW versus WHETHER question; which endorsers, which components; what happens at the initial assessment; how often guidelines are reviewed; which pairing of evidence and recommendation scales is correct; which strength fits a given definition; about how many guidelines exist; the main limitation.</p>
-<p class="sub">Sources: PGx-Resources-and-Cases-Students-Fall-2026.pdf slides 'CPIC Guidelines' 1-6 (pp. 9-14), 'Other Guidelines' (p. 16, full name); CPIC warfarin guideline 2017 update (title and Therapeutic Recommendations); (T) 10/27. Questions L21-014 to L21-025.</p>
+<p class="sub">Sources: PGx-Resources-and-Cases-Students-Fall-2026.pdf slides 'CPIC Guidelines' 1-6 (pp. 9-14), 'Other Guidelines' (p. 16, full name); CPIC warfarin guideline 2017 update (title and Therapeutic Recommendations); (T) 10/27. Questions L21-014 to L21-025, L21-081, L21-082.</p>
 </section>
 <section class="guide" id="guide4-l21-3">
 <h3>25. Walking the CPIC warfarin algorithm</h3>
@@ -1205,7 +1205,7 @@ const GUIDE4_HTML = `
 <details class="fold"><summary>Layout of the guideline</summary>
 <p>In order: authors and summary; focused literature review with Figure 1; the genes: CYP2C9 and CYP4F2 (cytochrome P450 2C9 and 4F2), VKORC1 (the gene for vitamin K epoxide reductase) and rs12777823 (a single-nucleotide polymorphism, SNP, near the CYP2C18 gene); genetic test interpretation (what the genotype results mean when they come back from the lab); therapeutic recommendations by genotype, summarized in the Figure 2 algorithm; online supplemental tables.</p>
 </details>
-<p class="sub">Sources: PGx-Resources-and-Cases-Students-Fall-2026.pdf slide 'CPIC Guidelines 7' (p. 15); CPIC warfarin guideline 2017 update (Johnson et al., Clin Pharmacol Ther 2017;102:397-404): Figure 1, gene sections, Therapeutic Recommendations, Figure 2 and footnotes, Text Box 1; PGx-Examples-Students-Fall-2026.pdf slides 'Allele and Phenotype Frequencies' (p. 9, panel B), 'CYP2C9 Polymorphisms' (p. 23), 'Integrated: Both PK and PD' (p. 57); (T) 10/26, 10/27 and 10/28. Questions L21-026 to L21-035, L21-060 to L21-066.</p>
+<p class="sub">Sources: PGx-Resources-and-Cases-Students-Fall-2026.pdf slide 'CPIC Guidelines 7' (p. 15); CPIC warfarin guideline 2017 update (Johnson et al., Clin Pharmacol Ther 2017;102:397-404): Figure 1, gene sections, Therapeutic Recommendations, Figure 2 and footnotes, Text Box 1; PGx-Examples-Students-Fall-2026.pdf slides 'Allele and Phenotype Frequencies' (p. 9, panel B), 'CYP2C9 Polymorphisms' (p. 23), 'Integrated: Both PK and PD' (p. 57); (T) 10/26, 10/27 and 10/28. Questions L21-026 to L21-035, L21-060 to L21-066, L21-080.</p>
 </section>
 <section class="guide" id="guide4-l21-4">
 <h3>26. Other guidelines, ClinPGx and what implementation still needs</h3>
@@ -1458,7 +1458,7 @@ const GUIDE4_HTML = `
 <li><b>Intentional overdose in older adults.</b> Accidental overdoses are the pediatric and geriatric problem; intentional overdoses are mostly young adults to adults.</li>
 </ul>
 
-<p class="sub">Sources: ADE-Lecture-Students-2026.pdf slides 'Medication Misadventures' (p. 4), 'Adverse Drug Events (ADE) definition' (p. 5), 'Types of ADEs' (p. 6), 'Therapeutic Failures' (p. 7), 'Adverse Drug Withdrawal Events' (p. 8), 'Drug Overdoses' (p. 9), 'Medication Errors (MEs)' (p. 10), 'Reporting Medication Errors' (p. 11), 'Adverse Drug Reaction (ADR)' (p. 12), 'Surveillance and Management of ADRs' (p. 22); (T) 10/28. The slide prints 'Institution of Medicine'; she said Institute of Medicine. She said 'Institute for Safe Medical Practices' for the slide's Institute for Safe Medication Practices, and called MERP anonymous where the slide says confidential, voluntary. Questions L22-001 to L22-015, L22-025.</p>
+<p class="sub">Sources: ADE-Lecture-Students-2026.pdf slides 'Medication Misadventures' (p. 4), 'Adverse Drug Events (ADE) definition' (p. 5), 'Types of ADEs' (p. 6), 'Therapeutic Failures' (p. 7), 'Adverse Drug Withdrawal Events' (p. 8), 'Drug Overdoses' (p. 9), 'Medication Errors (MEs)' (p. 10), 'Reporting Medication Errors' (p. 11), 'Adverse Drug Reaction (ADR)' (p. 12), 'Surveillance and Management of ADRs' (p. 22); (T) 10/28. The slide prints 'Institution of Medicine'; she said Institute of Medicine. She said 'Institute for Safe Medical Practices' for the slide's Institute for Safe Medication Practices, and called MERP anonymous where the slide says confidential, voluntary. Questions L22-001 to L22-015, L22-025, L22-094, L22-095, L22-096.</p>
 </section>
 <section class="guide" id="guide4-l22-2">
 <h3>30. Drug approval, its limits and postmarketing surveillance</h3>
@@ -1711,7 +1711,7 @@ const GUIDE4_HTML = `
 <li><b>Naming abacavir for HLA-B Stevens-Johnson syndrome.</b> The drug she asked for was carbamazepine; abacavir's label was extended to the all-organ type of reaction.</li>
 </ul>
 
-<p class="sub">Sources: ADE-Lecture-Students-2026.pdf slides 'ADR Scope of Problem' (p. 20), 'Immunologic reactions' (p. 23; Riedl and Casillas 2003, printed 'Reidl'), 'Predisposing Factors to Adverse Drug Reactions' (p. 24), 'Risk Factors' (p. 25; Table 4), 'Hypersensitivity Drug Reactions' (p. 26), 'Classification of hypersensitivity reactions' (p. 27; Gell and Coombs, Table 2), 'Cutaneous Drug Reactions' (p. 29), 'Drug-Induced Skin Eruptions' (p. 30, Dipiro Table 99-2), 'Maculopapular eruptions' (p. 31), 'Uticaria' (p. 32), 'Steven Johnson Syndrome' (p. 33), 'Photosensitivity Drug Reactions' (p. 34); (T) 10/28. She spoke only to type I and type IV timing; the type II and III rows are from the table she asked the class to remember. The cutaneous slides (pp. 29-31, 34) were not covered aloud. Questions L22-023, L22-024, L22-032 to L22-041, L22-092, L22-093.</p>
+<p class="sub">Sources: ADE-Lecture-Students-2026.pdf slides 'ADR Scope of Problem' (p. 20), 'Immunologic reactions' (p. 23; Riedl and Casillas 2003, printed 'Reidl'), 'Predisposing Factors to Adverse Drug Reactions' (p. 24), 'Risk Factors' (p. 25; Table 4), 'Hypersensitivity Drug Reactions' (p. 26), 'Classification of hypersensitivity reactions' (p. 27; Gell and Coombs, Table 2), 'Cutaneous Drug Reactions' (p. 29), 'Drug-Induced Skin Eruptions' (p. 30, Dipiro Table 99-2), 'Maculopapular eruptions' (p. 31), 'Uticaria' (p. 32), 'Steven Johnson Syndrome' (p. 33), 'Photosensitivity Drug Reactions' (p. 34); (T) 10/28. She spoke only to type I and type IV timing; the type II and III rows are from the table she asked the class to remember. The cutaneous slides (pp. 29-31, 34) were not covered aloud. Questions L22-023, L22-024, L22-032 to L22-041, L22-092, L22-093, L22-098.</p>
 </section>
 <section class="guide" id="guide4-l22-5">
 <h3>33. Drug interactions: object and precipitant drugs, kinds of interaction</h3>
@@ -1988,7 +1988,7 @@ const GUIDE4_HTML = `
 <li><b>Counting the p. 31 combinations as taught examples.</b> They are on a slide she left for reading.</li>
 </ul>
 
-<p class="sub">Sources: DDI Lecture Students 2026 (1).pdf slides 'Drug Interactions Introduction' (pp. 6-7), 'Pharmacodynamic Interactions' (p. 18), 'Pharmacodynamic Interactions Examples' (pp. 19-20), 'Benefits (!) of Drug-Drug Interactions' (pp. 21-22), 'Pharmacokinetic Interactions Drug Elimination and Clearance' (p. 17), 'Clinical Significance' (p. 31, not taught); (T) 10/28. Questions L22-046, L22-069, L22-072 to L22-079 (L22-079 lowYield).</p>
+<p class="sub">Sources: DDI Lecture Students 2026 (1).pdf slides 'Drug Interactions Introduction' (pp. 6-7), 'Pharmacodynamic Interactions' (p. 18), 'Pharmacodynamic Interactions Examples' (pp. 19-20), 'Benefits (!) of Drug-Drug Interactions' (pp. 21-22), 'Pharmacokinetic Interactions Drug Elimination and Clearance' (p. 17), 'Clinical Significance' (p. 31, not taught); (T) 10/28. Questions L22-046, L22-069, L22-072 to L22-079, L22-097 (L22-079 lowYield).</p>
 </section>
 <section class="guide" id="guide4-l22-9">
 <h3>37. Herbal, food and nondrug interactions</h3>

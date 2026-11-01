@@ -910,5 +910,27 @@ QUESTIONS.push(
  teach:"The paper gives the poor-metabolizer genotype as 18% to 23% in Japanese persons and 3% to 5% in white U.S. or European populations, where dual therapy has generally not achieved adequate cure rates. So the result does not transfer to the United States on its face, but would with genotyping.",
  quote:"This was done in a Japanese population. Where they have a relatively high frequency of 2 and 3 present",
  note:"lowYield: the exact paper percentages were not stated in class (she said only a \"relatively high frequency of 2 and 3\" in Japan); L19-049 carries the population point. Slide p. 25 (Asians 16% PM) and the paper (Japanese persons 18% to 23%) use different groupings; both put poor metabolizers far more often in the Asian or Japanese group.",
- cite:"FurutaAnnIntMed1998.pdf (p. 1029, Discussion); PGx-Examples-Students-Fall-2026.pdf slides 'CYP2C19 Polymorphisms' (p. 25), 'Discussion of Furuta article' (p. 61); transcript 10/26"}
+ cite:"FurutaAnnIntMed1998.pdf (p. 1029, Discussion); PGx-Examples-Students-Fall-2026.pdf slides 'CYP2C19 Polymorphisms' (p. 25), 'Discussion of Furuta article' (p. 61); transcript 10/26"},
+{id:"L20-073", lecture:"L20", prof:"Smith", tier:"new", topic:"L20", sub:"furuta", skill:"apply", readingId:"furuta-1998", core:true, coreWhy:"her Exam 4 study list item 3 (Furuta): functional significance of the genotypes for the H. pylori cure rate",
+ concept:"furuta-two-patients-apply", tags:["smith"], source:"both",
+ stem:"Two Japanese patients with H. pylori receive omeprazole 20 mg plus amoxicillin. Patient 1 is CYP2C19 *1/*1; patient 2 is *2/*3. Which outcome fits Furuta et al.?",
+ options:[
+  {t:"Patient 2 has the higher omeprazole exposure and the better cure rate", correct:true, why:"*2/*3 has no active CYP2C19, so omeprazole and gastric pH stay high; group 3 had the best cure rate."},
+  {t:"Patient 1 has the higher omeprazole exposure and the better cure rate", correct:false, why:"*1/*1 clears omeprazole fastest, giving the lowest exposure and the lowest cure rate."},
+  {t:"Both have the same cure rate; only the antibiotic matters", correct:false, why:"Cure rate differed sharply by CYP2C19 genotype in the study."},
+  {t:"Patient 2 has more omeprazole side effects and a worse cure rate", correct:false, why:"PPIs have a wide therapeutic index, so the higher level helped rather than harmed."}],
+ teach:"*2 and *3 are premature stop codons, so *2/*3 makes no CYP2C19: omeprazole stays high, gastric pH stays high, and group 3 had the best cure rate. PPIs have a wide therapeutic index, so the high level is a benefit.",
+ quote:"who had the best cure rate? Group 3",
+ cite:"FurutaAnnIntMed1998.pdf (p. 1029, Table 2); PGx-Examples-Students-Fall-2026.pdf slide 'Discussion of Furuta article' (p. 61); transcript 10/26"},
+{id:"L20-074", lecture:"L20", prof:"Smith", tier:"new", topic:"L20", sub:"oatp", skill:"apply", core:true, coreWhy:"her Exam 4 study list item 2 (worksheet): efficacy versus toxicity and tumor versus patient, applied to SLCO1B1",
+ concept:"slco1b1-worksheet-apply", tags:["smith"], source:"both",
+ stem:"A hospital protocol genotypes SLCO1B1 before high-dose simvastatin. Using the worksheet questions, is the test to ensure efficacy or to prevent toxicity, and is the tumor or the patient tested?",
+ options:[
+  {t:"Prevent toxicity; the patient", correct:true, why:"Reduced-function SLCO1B1 raises simvastatin exposure about 221-fold, risking muscle breakdown, and the inherited variant is in the patient."},
+  {t:"Ensure efficacy; the patient is tested", correct:false, why:"The test guards against muscle toxicity, not against the statin failing to work."},
+  {t:"Prevent toxicity; the tumor", correct:false, why:"SLCO1B1 is an inherited transporter variant in the patient; no tumor is tested."},
+  {t:"Ensure efficacy; the tumor", correct:false, why:"Both parts are wrong: the aim is to prevent toxicity, and the patient, not a tumor, is genotyped."}],
+ teach:"Reduced-function SLCO1B1 raises simvastatin plasma exposure about 221 times, which can cause muscle breakdown, so the test prevents toxicity; the inherited variant is genotyped in the patient. Contrast trastuzumab, where the tumor is tested for efficacy.",
+ quote:"221 times, that's huge",
+ cite:"PGx-Examples-Students-Fall-2026.pdf slide 'Organic anion transporter' (p. 47); Pharmacogenomics Questions Drug Labels Worksheet items 3-4; transcript 10/26"}
 );
