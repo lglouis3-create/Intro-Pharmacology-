@@ -69,7 +69,7 @@ function stackTables(root) {
     let heads = [...t.querySelectorAll('thead th')].map(th => th.textContent.trim()), headRow = null;
     // a read-strip carries its headings in its first row (no thead); on a phone it stacks too, so words are not split mid-word
     if (!heads.length && t.classList.contains('readstrip')) { const r0 = t.querySelector('tr'); if (r0 && r0.children.length > 1 && [...r0.children].every(c => c.tagName === 'TH')) { headRow = r0; heads = [...r0.children].map(th => th.textContent.trim()); } }
-    if (!heads.length) return;
+    if (!heads.length || t.classList.contains('keep')) return;   // a short numeric table reads better as a grid
     t.classList.add('stack'); if (headRow) headRow.classList.add('shead');
     t.querySelectorAll('tbody tr').forEach(tr => { if (tr !== headRow) [...tr.children].forEach((td, i) => { if (heads[i]) td.setAttribute('data-label', heads[i]); }); });
   });
@@ -648,10 +648,13 @@ function newsCard() {
 function examCard(ex, pool) {
   const rows = [['Paper', `${ex.name}${ex.questions ? ': ' + ex.questions + ' questions' : ''}${ex.minutes ? ' · ' + ex.minutes + ' minutes' : ''}`],
     ['When', `${esc(ex.date)} <b>${esc(examCountdown())}</b>`, true]];
-  if (ex.facts && ex.facts.length) ex.facts.forEach(f => rows.push(f)); else if (ex.blurb) rows.push(['About', ex.blurb]);
+  // an exam that names its main facts shows those; the rest fold under "More about this exam"
+  const main = ex.factsMain || null, more = [];
+  if (ex.facts && ex.facts.length) ex.facts.forEach(f => (main && !main.includes(f[0]) ? more : rows).push(f)); else if (ex.blurb) rows.push(['About', ex.blurb]);
   const concepts = new Set(pool.map(q => q.concept || q.id)).size;
-  rows.push(['Bank', `${pool.length} questions across ${concepts} concepts`]);
-  return `<div class="card facts"><table class="factstab"><tbody>${rows.map(([k, v, raw]) => `<tr><th scope="row">${esc(k)}</th><td>${raw ? v : esc(v)}</td></tr>`).join('')}</tbody></table></div>`;
+  (more.length ? more : rows).push(['Bank', `${pool.length} questions across ${concepts} concepts`]);
+  const tr = ([k, v, raw]) => `<tr><th scope="row">${esc(k)}</th><td>${raw ? v : esc(v)}</td></tr>`;
+  return `<div class="card facts"><table class="factstab"><tbody>${rows.map(tr).join('')}</tbody></table>${more.length ? `<details class="fold"><summary>More about this exam (${more.length})</summary><table class="factstab"><tbody>${more.map(tr).join('')}</tbody></table></details>` : ''}</div>`;
 }
 /* Each lecture's card under an exam folds; the open ones are remembered per browser. */
 const TF_KEY = COURSE.ns + ':tfold';
@@ -695,7 +698,7 @@ const FOCUS4 = [
 ];
 function focusCard4() {
   if (!FOCUS4.length) return '';
-  return `<div class="card focuscard"><b>Where to focus for Dr. Smith's Exam 4</b><ul class="focuslist">${FOCUS4.map(([q, d, btns]) => `<li><span>"${esc(tidySpeech(q))}" <small>(T) ${d}</small></span>${btns ? `<div class="row" style="gap:6px;margin-top:4px">${btns}</div>` : ''}</li>`).join('')}</ul><p class="sub" style="margin:6px 0 0">Smith focus is on: only Exam ${FOCUS_EXAM} shows. The other exams' sections on Guides, Tell apart and Reference, and the Exam 3-only tabs, are hidden until you turn it off with the ★ button in the tab bar.</p></div>`;
+  return `<details class="card focuscard fold" ${PHONE && PHONE.matches ? '' : 'open'}><summary><b>Where to focus for Dr. Smith's Exam 4</b> <span class="meta" style="margin:0">· her words from lecture (${FOCUS4.length})</span></summary><ul class="focuslist">${FOCUS4.map(([q, d, btns]) => `<li><span>"${esc(tidySpeech(q))}" <small>(T) ${d}</small></span>${btns ? `<div class="row" style="gap:6px;margin-top:4px">${btns}</div>` : ''}</li>`).join('')}</ul><p class="sub" style="margin:6px 0 0">Smith focus is on: only Exam ${FOCUS_EXAM} shows. The other exams' sections on Guides, Tell apart and Reference, and the Exam 3-only tabs, are hidden until you turn it off with the ★ button in the tab bar.</p></details>`;
 }
 if (typeof NARR_Q !== 'undefined') QUESTIONS.forEach(q => { if (examOf(q) === 4 && !NARR_Q[q.id] && q.teach) { const t = Array.isArray(q.teach) ? q.teach.map(x => x.t).join(' ') : String(q.teach); NARR_Q[q.id] = t; } });
 /* ---------- Topics ---------- */
@@ -1849,12 +1852,14 @@ function vTerms() {
   { const tb = document.getElementById('tback'); if (tb) tb.remove(); if (TIO) { TIO.disconnect(); TIO = null; } }
   const all = typeof TERMS === 'undefined' ? [] : TERMS;
   if (!all.length) { $('#view').innerHTML = '<h2>Terms</h2><div class="empty">No glossary in this build.</div>'; return; }
-  const groups = [...new Set(all.map(t => t.group))];
+  // the exam being studied lists its own groups first, then the borrowed (cumulative) exam's, then the rest
+  const gRank = t => termExam(t) === activeId() ? 0 : termExam(t) === termBorrow() ? 1 : 2;
+  const groups = [...new Set(all.slice().sort((x, y) => gRank(x) - gRank(y)).map(t => t.group))];
   // flashcards and the term quiz use the exam being studied; the glossary shows both exams
   const tq = QUESTIONS.filter(q => q.topic === 'TERMS' && (TM.mode === 'glossary' || examOf(q) === activeId() || examOf(q) === termBorrow()));
   const mine = all.filter(termIn);
   if (focusOn()) TM.scope = 'exam';   // focus hides the other exams' groups, so the all-exams view would be empty
-  const chipGroups = TM.mode === 'glossary' && TM.scope === 'both' ? groups : [...new Set(mine.map(t => t.group))];
+  const chipGroups = TM.mode === 'glossary' && TM.scope === 'both' ? groups : groups.filter(g => mine.some(t => t.group === g));
   if (TM.group !== 'all' && !chipGroups.includes(TM.group)) TM.group = 'all';
   let h = `<h2>Terms</h2><div class="row" style="margin:-4px 0 8px">${examSwitch()}</div><p class="sub">${mine.length} terms for ${esc(active().name)}${termBorrow() ? ` (with her Exam ${termBorrow()} terms: she said Exam 4 is “cumulative to my part”)` : ''}, each with its source (${all.length} across all exams; ${focusOn() ? 'turn Smith focus off to show them all' : 'the glossary can show them all'}). Each term has a one-line meaning, a situation that shows it in action, and, where one applies, a figure.</p>
   <div class="card"><div class="row">${[['glossary', 'Glossary'], ['flash', 'Flashcards'], ['quiz', 'Quiz me']].map(([k, l]) => `<button type="button" class="chip ${TM.mode === k ? 'on' : ''}" aria-pressed="${TM.mode === k}" data-mode="${k}">${l}</button>`).join('')}
@@ -3087,6 +3092,16 @@ function expandFigs(html) {
 function vGuide() {
   $('#view').innerHTML = `<div class="tablewrap">${examPage(typeof GUIDE_HTML === 'undefined' ? '' : GUIDE_HTML, 'guide')}</div>`;
   fillImgs($('#view')); stackTables($('#view')); gwBars($('#view'));
+  // Exam 4: her quotes and the source differences fold closed and sit after Traps, so the facts and traps come first
+  document.querySelectorAll('#view section.guide[id^="guide4-"]').forEach(sec => {
+    const src = [...sec.children].find(c => c.matches('p.sub') && /^Sources/.test(c.textContent.trim()));
+    [...sec.querySelectorAll(':scope > h4')].filter(h => /^(Her words|Where her words)/i.test(h.textContent.trim())).forEach(h => {
+      const d = document.createElement('details'); d.className = 'fold gfold';
+      const s = document.createElement('summary'); s.textContent = h.textContent.trim(); d.appendChild(s);
+      let n = h.nextElementSibling; while (n && n.tagName !== 'H4' && n !== src && !n.matches('.gnav')) { const nx = n.nextElementSibling; d.appendChild(n); n = nx; }
+      h.remove(); src ? sec.insertBefore(d, src) : sec.appendChild(d);
+    });
+  });
   // previous / next at the foot of each section, within its exam group
   document.querySelectorAll('#view .exgroup, #view').forEach(g => {
     const secs = [...g.querySelectorAll(':scope section.guide[id]')].filter(s => s.parentElement === g || s.closest('.exgroup') === g);
