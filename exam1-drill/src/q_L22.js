@@ -1173,5 +1173,31 @@ QUESTIONS.push(
   {t:"Q5 no: no other cause could explain it", correct:false, why:"Q5 no is +2."}],
  teach:"The +1 answers on the page are Q1 yes, Q3 yes, Q6 no and Q7 to Q10 yes. The +2 answers are Q2 yes, Q4 yes and Q5 no. Questions 7 to 10 (toxic level, dose-response, previous similar reaction, objective evidence) never subtract: no and do not know are both 0.",
  quote:"Also, I, I consider like 6 to be a time kind of thing.",
- cite:"Naranjo Algorithm (one page), questions 1-10; ADE-Lecture-Students-2026.pdf slide 'Causality of Adverse Drug Reactions' (p. 21); transcript 10/28"}
+ cite:"Naranjo Algorithm (one page), questions 1-10; ADE-Lecture-Students-2026.pdf slide 'Causality of Adverse Drug Reactions' (p. 21); transcript 10/28"},
+/* ---------------- Exam 4 study list item 1 gap fill: cutaneous reactions (pp. 29-34, on the objectives, skipped in class) ---------------- */
+{id:"L22-092", lecture:"L22", prof:"Smith", tier:"new", topic:"L22", sub:"hypersens", skill:"apply", lowYield:true, core:true, coreWhy:"her Exam 4 study list item 1 (objectives): common drug-induced cutaneous reactions and basic treatments",
+ concept:"urticaria-no-rechallenge", tags:["smith"], source:"slide",
+ stem:"A patient develops drug-induced urticaria (hives), which is IgE mediated. What follows for re-challenge with the drug?",
+ options:[
+  {t:"Do not re-challenge the patient with the drug", correct:true, why:"Urticaria slide (p. 32): IgE mediated; therefore do not re-challenge."},
+  {t:"Re-challenge at a lower dose to confirm the cause", correct:false, why:"An IgE-mediated reaction can recur on re-exposure; the slide says not to re-challenge."},
+  {t:"Re-challenge after a course of antihistamines", correct:false, why:"Antihistamines (often with oral corticosteroids) treat the hives; they do not make re-challenge safe."},
+  {t:"Re-challenge freely; urticaria is non-immunologic", correct:false, why:"The slide calls it IgE mediated, an immunologic (type I) reaction."}],
+ teach:"Drug-induced urticaria is patchy, flat, red and spreading, starts on the trunk, and can appear within a few hours or days of the offending agent. It often needs oral corticosteroids and antihistamines. It is IgE mediated, so the patient is not re-challenged with the drug.",
+ quote:"That's hives. Has anybody ever had hives? That's the worst.",
+ note:"lowYield: on 10/28 she showed only the hives and Stevens-Johnson images from this section and said she would not cover the skin, liver and renal slides. The slide title is printed 'Uticaria'.",
+ cite:"ADE-Lecture-Students-2026.pdf slide 'Uticaria' (p. 32); transcript 10/28"},
+
+{id:"L22-093", lecture:"L22", prof:"Smith", tier:"new", topic:"L22", sub:"hypersens", skill:"tell", lowYield:true, core:true, coreWhy:"her Exam 4 study list item 1 (objectives): common drug-induced cutaneous reactions and basic treatments",
+ concept:"phototoxic-vs-photoallergic", tags:["smith"], source:"slide",
+ stem:"Photosensitivity drug reactions look like sunburn. How does phototoxicity differ from a photoallergic reaction?",
+ options:[
+  {t:"Phototoxicity is non-immunologic; photoallergy is immunologic and rare", correct:true, why:"Photosensitivity slide (p. 34)."},
+  {t:"Phototoxicity is immunologic; photoallergy is non-immunologic", correct:false, why:"Reversed."},
+  {t:"Both are IgE mediated and need a re-challenge to confirm", correct:false, why:"Phototoxicity is non-immunologic; IgE mediation and no re-challenge are on the urticaria slide."},
+  {t:"Phototoxicity is the rare one; photoallergy is the common non-immune kind", correct:false, why:"The slide calls the photoallergic reaction immunologic and rare."}],
+ teach:"Photosensitivity drug reactions appear similar to sunburn. Phototoxicity is non-immunologic; a photoallergic reaction is an immunologic reaction and is rare. They benefit from topical corticosteroids and oral antihistamines but often need oral steroids, and sunscreen against UVA and UVB is encouraged. Common causes on the slide: fluoroquinolones, NSAIDs, sulfonamides, thiazide diuretics and TCAs.",
+ quote:"I'm not gonna cover all the slides that I had for like skin reactions",
+ note:"lowYield: slide text she did not cover (10/28); the quote is her statement that she skipped the section.",
+ cite:"ADE-Lecture-Students-2026.pdf slide 'Photosensitivity Drug Reactions' (p. 34); transcript 10/28"}
 );

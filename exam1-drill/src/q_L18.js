@@ -863,5 +863,29 @@ QUESTIONS.push(
  teach:"In CYP2D6*5 the entire gene is missing from the allele: thousands of base pairs are deleted, not a single nucleotide changed. That allele makes no enzyme.",
  note:"Quiz 4, question 1. The printed quiz listed CYP2D6*2 as option D and did not list CYP2D6*5. CYP2D6*2 is a fully functional allele (Examples p. 21), so it is not the answer; the drill shows CYP2D6*5 in its place as the correct choice.",
  quote:"Total gene is gone",
- cite:"Smith_Quiz_4_-_Intro_to_Pharmacogenomics.pdf Q1; Intro to PGx Lecture Students Fall 2026.pdf slide ‘Gene Deletion CYP2D6’ (p. 39); PGx-Examples-Students-Fall-2026.pdf p. 21; (T) 10/21 transcript"}
+ cite:"Smith_Quiz_4_-_Intro_to_Pharmacogenomics.pdf Q1; Intro to PGx Lecture Students Fall 2026.pdf slide ‘Gene Deletion CYP2D6’ (p. 39); PGx-Examples-Students-Fall-2026.pdf p. 21; (T) 10/21 transcript"},
+/* ---------------- Exam 4 study list item 1 gap fill: the rest of her variant list (p. 31) and the p. 42 poll ---------------- */
+{id:"L18-068", lecture:"L18", prof:"Smith", tier:"new", topic:"L18", sub:"snp", skill:"tell", lowYield:true, core:true, coreWhy:"her Exam 4 study list item 1 (objectives): describe the different types of polymorphisms",
+ concept:"splicing-variant-types", tags:["smith"], source:"both",
+ stem:"Her list of genetic variant types names both defective splicing and aberrant splice site. Which describes defective splicing?",
+ options:[
+  {t:"An internal polypeptide segment is abnormally removed and the remaining ends are joined", correct:true, why:"Item 5 of the list (p. 31)."},
+  {t:"Processing of the protein occurs at an alternate site", correct:false, why:"That is item 6, aberrant splice site."},
+  {t:"Entire copies of genes or gene segments over 1 kb are duplicated, deleted or rearranged", correct:false, why:"That is item 8, copy number variants (CYP2D6*5 and CYP2D6*2xN are her examples)."},
+  {t:"A stop codon terminates the polypeptide chain early", correct:false, why:"That is item 7, premature stop codon (CYP2C19*3 is her example)."}],
+ teach:"Her printed list (p. 31) has eight types: SNP, insertion-deletion, tandem repeats, frameshift, defective splicing, aberrant splice site, premature stop codon, and copy number variants. Defective splicing is defined as an internal polypeptide segment being abnormally removed, with the ends of the remaining polypeptide chain joined; aberrant splice site is defined as processing of the protein occurring at an alternate site. She said she would not touch on every type and taught in detail only the ones with drug examples; the two splicing types have no drug example in her slides.",
+ quote:"this is a list of many kinds of genetic variants. I will not be touching on all of these",
+ note:"lowYield: the two splicing types appear only as printed items 5 and 6 on p. 31; she did not go over the list ('I'm not gonna go over this right now') and gave no example for them. On 10/22 she named 'a splice site' as one kind of entry for the type-of-variant column of her second think/pair/share table.",
+ cite:"Intro to PGx Lecture Students Fall 2026.pdf slide ‘List of genetic variant types’ (p. 31), items 4-8; (T) 10/21 transcript"},
+
+{id:"L18-069", lecture:"L18", prof:"Smith", tier:"new", topic:"L18", sub:"cnv", skill:"recall", core:true, coreWhy:"her Exam 4 study list item 1 (objectives): her PollEv on the types of polymorphisms",
+ concept:"non-snp-variants-matter", tags:["smith","pollev"], source:"both",
+ stem:"True or false: SNP polymorphisms are the only type that have clinical relevance.",
+ options:[
+  {t:"True", correct:false, why:"CYP2D6*5 is a whole-gene deletion and CYP2D6*2xN a copy number variant; neither is a SNP, and both change the response to SSRIs, tamoxifen, codeine and beta blockers (pp. 39-40)."},
+  {t:"False", correct:true, why:"Gene deletions and copy number variants also have clinical relevance: CYP2D6*5 gives a poor metabolizer and CYP2D6*2xN an ultrarapid metabolizer."}],
+ teach:"A single nucleotide polymorphism (SNP) is only one of the variant types on her list. The two CYP2D6 examples that end the section are not SNPs: CYP2D6*5 deletes the whole gene and gives a poor metabolizer phenotype, and CYP2D6*2xN adds extra copies of the gene and gives an ultrarapid metabolizer phenotype. Both list affected drugs: SSRIs, tamoxifen, codeine and beta blockers.",
+ quote:"Because these examples, all of them have clinical relevance.",
+ note:"The PollEv is printed on p. 42 with the options True and False and no key; it was not run on the recording. Keyed False from her slides pp. 39-40 (non-SNP variants with affected drugs) and her statement that all of her examples have clinical relevance.",
+ cite:"Intro to PGx Lecture Students Fall 2026.pdf slides ‘Gene Deletion CYP2D6’ (p. 39), ‘Copy Number Variant CYP2D6’ (p. 40), PollEv ‘SNP polymorphisms are the only type that have clinical relevance’ (p. 42); (T) 10/21 transcript"}
 );

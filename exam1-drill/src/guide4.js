@@ -200,6 +200,8 @@ const GUIDE4_HTML = `
 <li><b>Mixing up the drug lists.</b> P-gp: efavirenz, cyclosporine. TPMT: azathioprine, 6-mercaptopurine. CYP2C19: PPIs.</li>
 </ul>
 
+<p><b>Her first think/pair/share table</b> ("Types of genetic variant", p. 41) asks, for each variant type, what the variant is at the molecular level and what might happen to the gene's product. She asked for general terms, not the specific examples: "So just don't use the specific examples, use like in general terms, what does a synonymous snip mean?" <small>(T) 10/21</small> A general-terms version of the table, built from her slides and her model answer, is in the Reference tab. <button type="button" class="chip" data-jump="ref:ref4-l18-3">Reference: types of genetic variants in general terms</button></p>
+
 <p>How she asks it: "have we had a change in the amino acid sequence?" (no, for ABCB1 3435C&gt;T); "Is it low or no activity?" (no activity, CYP2C19*3); classify a SNP from a codon change; fill in the think/pair/share table in general terms.</p>
 <p class="sub">Sources: Intro to PGx slides ‘Types of Genetic Variants’ (p. 30), ‘List of genetic variant types’ (p. 31), ‘SNPs’ (p. 32), ‘SNP’ (p. 33), ‘Synonymous SNP: P-Glycoprotein (P-gp)’ (p. 34), ‘Non-Synonymous SNP: TPMT’ (p. 35), ‘Premature Stop Codon SNP: CYP2C19’ (p. 36), ‘Think/Pair/Share exercise’ (p. 41); (T) 10/21. Questions L18-030 to L18-043, L18-065.</p>
 </section>
@@ -217,6 +219,8 @@ const GUIDE4_HTML = `
 <tr><td>Copy number variant: CYP2D6*2xN</td><td>Extra copies of the whole CYP2D6 gene (slide: N = 2, 3, 4, 5, 13); two copies written CYP2D6*2x2</td><td>A lot of CYP2D6 enzyme activity. Ultrarapid metabolizer (UM)</td></tr>
 </tbody></table>
 <p>Both CYP2D6 variants affect the same drugs: SSRIs, tamoxifen, codeine and beta blockers. <small>(T) 10/21; slides ‘Gene Deletion CYP2D6’, ‘Copy Number Variant CYP2D6’</small></p>
+<p><b>The rest of her list (p. 31).</b> Two printed types have no drug example and were not taught: <b>defective splicing</b>, in which an internal polypeptide segment is abnormally removed and the ends of the remaining polypeptide chain are joined, and <b>aberrant splice site</b>, in which processing of the protein occurs at an alternate site. She said "I will not be touching on all of these" <small>(T) 10/21</small> and taught in detail the types for which drugs are affected. Low yield.</p>
+<div class="poll"><b>PollEv (p. 42): "SNP polymorphisms are the only type that have clinical relevance."</b> True / False. Not run on the recording, and no key is printed. Answer from her slides: <b>False</b>. CYP2D6*5 (whole-gene deletion, poor metabolizer) and CYP2D6*2xN (copy number variant, ultrarapid metabolizer) are not SNPs, and both change the response to SSRIs, tamoxifen, codeine and beta blockers (pp. 39-40). Her words on the examples: "Because these examples, all of them have clinical relevance." <small>(T) 10/21</small></div>
 
 <h4>Why</h4>
 <ul>
@@ -241,7 +245,7 @@ const GUIDE4_HTML = `
 </ul>
 
 <p>How she asks it: what happens after an InDel; micro vs minisatellite; name the gene deletion; PM vs UM for *5 and *2xN; the drugs affected by CYP2D6 variants; how many copies the drawn person has ("2D6 2 x 2").</p>
-<p class="sub">Sources: Intro to PGx slides ‘List of genetic variant types’ (p. 31), ‘Small Insertion/Deletion (InDel)’ (p. 37), ‘Tandem Repeats’ (p. 38), ‘Gene Deletion CYP2D6’ (p. 39), ‘Copy Number Variant CYP2D6’ (p. 40); (T) 10/21. Questions L18-044 to L18-053.</p>
+<p class="sub">Sources: Intro to PGx slides ‘List of genetic variant types’ (p. 31), ‘Small Insertion/Deletion (InDel)’ (p. 37), ‘Tandem Repeats’ (p. 38), ‘Gene Deletion CYP2D6’ (p. 39), ‘Copy Number Variant CYP2D6’ (p. 40), PollEv (p. 42); (T) 10/21. Questions L18-044 to L18-053, L18-068, L18-069.</p>
 </section>
 <section class="guide" id="guide4-l18-6">
 <h3>6. Genotype-guided dosing: patients A to D, efficacy and toxicity</h3>
@@ -362,6 +366,8 @@ const GUIDE4_HTML = `
 <li><b>Picking a renally cleared drug as enzyme-dependent.</b> A drug excreted unchanged by the kidney does not depend on a metabolizing enzyme, so a variant does not change its handling.</li>
 </ul>
 
+<p><b>Her second think/pair/share table</b> ("Clinically important pharmacogenomics examples", started 10/22) has six columns: gene; variant; type of variant (premature stop codon, splice site, promoter or coding region); what happens to the gene product; drugs affected; and what we do for the patient (reduce the dose, or never use the drug). Her model entry: CYP2C19*2 and *3 are premature stop codon variants, and the gene product is "a really tiny little short protein that is so short it's not functional." <small>(T) 10/22</small> On the drugs column: "the drugs that I spend time on are the ones that I expect you to know." <small>(T) 10/22</small> The table, filled from her slides and words for every gene of Days 19 and 20, is in the Reference tab. <button type="button" class="chip" data-jump="ref:ref4-l19-2">Reference: clinically important pharmacogenomics examples</button></p>
+
 <p>How she asks it: when does an enzyme variant matter; for a given drug type, does low activity give toxicity or failure; which enzyme matters most for clopidogrel.</p>
 <p class="sub">Sources: PGx-Examples-Students-Fall-2026.pdf slides 'Variations in Drug Metabolizing Enzymes' (pp. 12-15); (T) 10/22. Questions L19-001 to L19-007.</p>
 </section>
@@ -388,6 +394,7 @@ const GUIDE4_HTML = `
 <ul>
 <li>"this enzyme, it will hydrolyze, um, a drug called succinylcholine. That's a very short acting muscle relaxant used in, used in the, for anesthesia" <small>(T) 10/22</small></li>
 <li>"the frequency of being a slow metabolizer is only 1 in 3000 patients" <small>(T) 10/22</small></li>
+<li>Her question to the room, which patients on isoniazid to monitor for hepatotoxicity, and her answer: "So if only about 10% of a Japanese population are slow acetylators, that means the rest of them are probably fast acetylators, and then about half of your Caucasian population could be fast acetylators" <small>(T) 10/22</small></li>
 </ul>
 
 <h4>Traps</h4>
@@ -397,8 +404,8 @@ const GUIDE4_HTML = `
 <li><b>Reading the frequency backward.</b> In the Middle Eastern group about 80% are slow, so that is the group to watch for slow-acetylator problems.</li>
 </ul>
 
-<p>How she asks it: which drug each enzyme handles; the slow-metabolizer succinylcholine time and the 1 in 3000 frequency; match NAT2 phenotype and drug to the adverse effect; which population is mostly slow acetylators.</p>
-<p class="sub">Sources: PGx-Examples-Students-Fall-2026.pdf slides 'Butyrylcholinesterase (BChE)' (p. 18), 'N-acetyltransferase 2 (NAT2)' (p. 19); (T) 10/22. Questions L19-008 to L19-013.</p>
+<p>How she asks it: which drug each enzyme handles; the slow-metabolizer succinylcholine time and the 1 in 3000 frequency; match NAT2 phenotype and drug to the adverse effect; which population is mostly slow acetylators; which populations to monitor for isoniazid hepatotoxicity (Japanese and Caucasian, the groups with many fast acetylators); the Caucasian and Japanese figures.</p>
+<p class="sub">Sources: PGx-Examples-Students-Fall-2026.pdf slides 'Butyrylcholinesterase (BChE)' (p. 18), 'N-acetyltransferase 2 (NAT2)' (p. 19); (T) 10/22. Questions L19-008 to L19-013, L19-047, L19-048.</p>
 </section>
 <section class="guide" id="guide4-l19-3">
 <h3>10. CYP2D6: debrisoquine, poor and ultrarapid metabolizers, and codeine</h3>
@@ -479,7 +486,7 @@ const GUIDE4_HTML = `
 </ul>
 
 <p>How she asks it: name the CYP2C9 drugs; the *2 and *3 activity percentages; the 90% clearance reduction in *3/*3; the low starting dose and the 80% figure; what an inhibitor adds.</p>
-<p class="sub">Sources: PGx-Examples-Students-Fall-2026.pdf slides 'CYP2C9 Polymorphisms' (p. 23), 'CYP2C9 Polymorphisms 2' (p. 24); CPIC warfarin guideline 2017 update (pp. 398-400); (T) 10/22. Questions L19-021 to L19-025, L19-046.</p>
+<p class="sub">Sources: PGx-Examples-Students-Fall-2026.pdf slides 'CYP2C9 Polymorphisms' (p. 23), 'CYP2C9 Polymorphisms 2' (p. 24); CPIC warfarin guideline 2017 update (pp. 398-400); (T) 10/22. Questions L19-021 to L19-025, L19-046, L19-051.</p>
 </section>
 <section class="guide" id="guide4-l19-5">
 <h3>12. CYP2C19: the *17 gain of function, clopidogrel, and the PPI twist</h3>
@@ -524,7 +531,7 @@ const GUIDE4_HTML = `
 </ul>
 
 <p>How she asks it: why *17 increases function and where the SNP sits; the clopidogrel outcome for each allele; why the PPI poor metabolizer benefits while the SSRI one does not; read the Furuta AUC/pH/cure-rate figure.</p>
-<p class="sub">Sources: PGx-Examples-Students-Fall-2026.pdf slides 'CYP2C19 Polymorphisms' (p. 25), 'CYP2C19 Polymorphisms 2' (p. 26), 'CYP2C19 Polymorphisms 3' (p. 27, Furuta et al. 2004); FurutaAnnIntMed1998.pdf (abstract; pp. 1028-1029); (T) 10/22. Questions L19-026 to L19-033, L19-045.</p>
+<p class="sub">Sources: PGx-Examples-Students-Fall-2026.pdf slides 'CYP2C19 Polymorphisms' (p. 25), 'CYP2C19 Polymorphisms 2' (p. 26), 'CYP2C19 Polymorphisms 3' (p. 27, Furuta et al. 2004); FurutaAnnIntMed1998.pdf (abstract; pp. 1028-1029); (T) 10/22. Questions L19-026 to L19-033, L19-045, L19-049, L19-050.</p>
 </section>
 <section class="guide" id="guide4-l19-6">
 <h3>13. Two oncology examples: DPD (5-fluorouracil) and UGT1A1 (irinotecan)</h3>
@@ -1090,6 +1097,7 @@ const GUIDE4_HTML = `
 <p>The class read the 2017 CPIC warfarin guideline (Johnson et al.) as a worked example of what a CPIC guideline contains, and then walked its adult dosing algorithm (Figure 2, "Dosing recommendations for warfarin dosing based on genotype for adult patients"). The algorithm turns a patient's genotypes into a dosing decision in a fixed order: is a genotype available, what is the patient's self-identified ancestry, calculate a dose from VKORC1 and CYP2C9, then adjust for the extra variants that apply to that ancestry. To use it, each gene's role in warfarin's action has to be known, because the role tells you whether a variant moves the dose up or down.</p>
 
 <h4>The facts</h4>
+<!--STEP:warfarin-target-->
 <p><b>Layout of the guideline</b>, in order: authors and summary; focused literature review with Figure 1 (warfarin's mechanism and metabolism); the genes (CYP2C9, VKORC1, CYP4F2, and rs12777823, a SNP in the CYP2C cluster near the CYP2C18 gene); genetic test interpretation (what the genotype results mean when they come back from the lab); therapeutic recommendations by genotype, summarized in the Figure 2 algorithm; online supplemental tables.</p>
 <table class="reftab"><thead><tr><th>Gene</th><th>Role in warfarin's action (Figure 1)</th><th>Variant in the algorithm</th><th>Effect on the warfarin dose</th></tr></thead><tbody>
 <tr><td>VKORC1</td><td>Vitamin K epoxide reductase, warfarin's drug target</td><td>-1639G&gt;A, upstream of the gene, on a haplotype that affects expression</td><td>One or two -1639A alleles: progressively lower doses than G/G</td></tr>
@@ -1127,6 +1135,7 @@ const GUIDE4_HTML = `
 <p><b>Her worked case.</b> A patient of non-African ancestry is CYP2C9*3/*3, VKORC1 wild type, and carries the CYP4F2 variant. She asked two questions. Was all the genotyping done that is known so far for this patient? Her answer: yes, for a patient of non-African descent. Compared with the average starting dose, does the patient need relatively more or relatively less? She asked students to reason it from what each variant does to warfarin's action and metabolism, and to explain why the CYP4F2 variant raises the dose; the recording does not contain her answer to the more-or-less question.</p>
 <p><b>What the guideline algorithm gives for this genotype</b> (guideline facts, not her stated answer): the dose is calculated with the pharmacogenetic algorithm from VKORC1 and CYP2C9; CYP2C9*3/*3 is listed as a poor-metabolism genotype, for which an alternative oral anticoagulant might be considered (Figure 2 footnote e: consider an alternative agent); carriers of CYP2C9*3 require lower doses than *1/*1, and *3 impairs S-warfarin metabolism by 80-90%; VKORC1 G/G (wild type) is the reference genotype, against which -1639A carriers need progressively lower doses; CYP4F2*3 raises the dose by 5-10% (OPTIONAL). The guideline gives no single net figure for this combination.</p>
 
+<!--STEP:warfarin-genotype-->
 <h4>Why</h4>
 <ul>
 <li><b>Why VKORC1 lowers the dose.</b> VKORC1 is the target. The -1639A allele lies in the upstream region that affects expression, and carriers need progressively lower doses than G/G. On 10/26 she put the reasoning this way: when the target is less active, less drug is needed to inhibit it.</li>
@@ -1239,6 +1248,13 @@ const GUIDE4_HTML = `
 <h4>The idea</h4>
 <p>The drug-label worksheet asks eight questions about the pharmacogenomic information in a label, using the FDA Table of Pharmacogenomic Biomarkers in Drug Labeling to find the label sections. Trastuzumab (brand name Herceptin) is used to treat HER2-positive cancers, usually breast cancer. It is her example of a drug where the test is done on the tumor, not on the patient, and where the result decides whether the drug will work. The "genotyping" in the worksheet questions is, for this drug, phenotyping: looking for the HER2 receptor on the tumor cells.</p>
 
+<h4>Why the worksheet (objective: how the Pharmacogenomics Questions help clinicians think)</h4>
+<p>She wrote the eight questions herself as the things she thinks about when a patient needs a drug for which pharmacogenomics is important. Worked in order, they sort a case into: which gene and variant (1); how the variant changes response (2); whether the tumor or the patient is tested (3); whether testing is for efficacy or to prevent toxicity (4); genotyping or cytology such as immunohistochemistry (5); whether the FDA names a test (6); which population or tumor type is tested (7); and what the result changes in the use of the drug or the care of the patient (8). She chose trastuzumab, carbamazepine and abacavir because their answers differ.</p>
+<ul>
+<li>"Is get you guys thinking like a pharmacist. Dealing with pharmacogenomics." ... "these are the things I think about when I am. Wondering about a patient and what I need to do about. The fact that we need to put this patient on a drug that pharmacogenomics is important for, so these are my own questions." ... "So again, these are just questions to guide you in your thinking." <small>(T) 10/27</small></li>
+<li>"I, I think those questions help us all think the way we need to think when we're dealing with pharmacogenomics." <small>(T) 10/28</small></li>
+</ul>
+
 <h4>The facts</h4>
 <table class="reftab"><thead><tr><th>Worksheet item</th><th>Her answer</th><th>What the label says (section)</th></tr></thead><tbody>
 <tr><td>1. What gene, which variant?</td><td>HER2. The label does not tell us which variant; we just know the tumor cells express HER2. A student read "185" from the label; she said she thinks the 185 is the size.</td><td>The HER2 (or c-erbB2) proto-oncogene encodes a transmembrane receptor protein of 185 kDa (12.1 Mechanism of Action). Patients are selected on HER2 protein overexpression or HER2 gene amplification in tumor specimens (2.2 Patient Selection).</td></tr>
@@ -1250,7 +1266,7 @@ const GUIDE4_HTML = `
 <tr><td>8. How does the result change care?</td><td>HER2-positive: likely candidate for trastuzumab. HER2-negative: trastuzumab is not used.</td><td>Select patients based on HER2 protein overexpression or gene amplification (2.2).</td></tr>
 </tbody></table>
 <ul>
-<li>Item 2 (how the variant affects response) was not answered as a separate item for trastuzumab; her answers to items 4 and 8 cover it.</li>
+<li>Item 2 (how the variant affects response) was not answered as a separate item for trastuzumab; her answers to items 4 and 8 cover it. Label answer: Herceptin inhibits the proliferation of human tumor cells that overexpress HER2, and its antibody-dependent cellular cytotoxicity is preferentially exerted on HER2-overexpressing cancer cells (12.1). A HER2-positive tumor can respond; a HER2-negative tumor lacks the target.</li>
 <li>HER2 background (her account): everyone has the HER2 gene, but it is not normally expressed. We do not know its endogenous ligand. In HER2-positive cancer the receptor is expressed on the tumor cell surface in large numbers or is hyperactive, and growth factor binding makes the cells divide out of control. Trastuzumab is made to bind the HER2 receptor and stop that growth-factor signaling. The label describes trastuzumab as a humanized IgG1 kappa monoclonal antibody that binds the extracellular domain of HER2 (11 Description).</li>
 </ul>
 
@@ -1288,8 +1304,8 @@ const GUIDE4_HTML = `
 <li><b>Reversing item 8.</b> HER2-positive patients are candidates; HER2-negative patients do not get trastuzumab. The result does not change the dose.</li>
 </ul>
 
-<p>How she asks it: the worksheet items in order: which gene, tumor or patient, efficacy or toxicity, IHC versus genotyping, whether a test is named, which tumor types, and what a positive or negative result means for use of the drug.</p>
-<p class="sub">Sources: Pharmacogenomics Questions Drug Labels Worksheet, items 1 and 3-8; Herceptin (trastuzumab) label, Revised 05/2026: Highlights, 1.1-1.3 Indications and Usage, 2.2 Patient Selection, 11 Description, 12.1 Mechanism of Action, 14 Clinical Studies; PGx-Resources-and-Cases-Students-Fall-2026.pdf slide 'FDA Table of Pharmacogenomic Biomarkers in Drug Labeling 3' (p. 8); (T) 10/27. Questions L21-046 to L21-052.</p>
+<p>How she asks it: the worksheet items in order: which gene, tumor or patient, efficacy or toxicity, IHC versus genotyping, whether a test is named, which tumor types, and what a positive or negative result means for use of the drug; what the eight questions are for.</p>
+<p class="sub">Sources: Pharmacogenomics Questions Drug Labels Worksheet, instructions and items 1-8; PGx-Resources-and-Cases-Students-Fall-2026.pdf Outline and Objectives (p. 2); Herceptin (trastuzumab) label, Revised 05/2026: Highlights, 1.1-1.3 Indications and Usage, 2.2 Patient Selection, 11 Description, 12.1 Mechanism of Action, 14 Clinical Studies; PGx-Resources-and-Cases-Students-Fall-2026.pdf slide 'FDA Table of Pharmacogenomic Biomarkers in Drug Labeling 3' (p. 8); (T) 10/27 and 10/28. Questions L21-046 to L21-052, L21-067 to L21-069.</p>
 </section>
 <section class="guide" id="guide4-l21-6">
 <h3>28. Reading a label: carbamazepine and abacavir, one gene, two variants</h3>
@@ -1309,8 +1325,16 @@ const GUIDE4_HTML = `
 <li>She described SJS and TEN as slightly different conditions with basically the same response, in which the skin burns and falls off.</li>
 <li>Abacavir history: the problem was first identified as massive skin reactions similar to those with carbamazepine. The labeling later changed to say it is not just a skin reaction but a whole-organ hypersensitivity reaction. The label says hypersensitivity to Ziagen is a multi-organ clinical syndrome and lists multi-organ failure and anaphylaxis among the reactions (Highlights; 5.1).</li>
 <li>She said HLA-A*31:01 appeared in the carbamazepine labeling only with the 2017 revision and was not known before 2017.</li>
-<li>Label content not worked aloud (items 4-8): the carbamazepine boxed warning says patients with ancestry in genetically at-risk populations should be screened for HLA-B*1502 before starting, and patients testing positive should not be treated unless the benefit clearly outweighs the risk; Precautions recommends high-resolution "HLA-B*1502 typing". The abacavir label says to screen all patients for HLA-B*5701 before starting or restarting, and abacavir is contraindicated in HLA-B*5701-positive patients.</li>
+<li>Items 4-8 were not worked aloud before the recording ends. She told the class to come to the 10/27 session having searched the three labels for their pharmacogenomic information; the answers below are label text, and item 4 follows from her item 2 answers.</li>
 </ul>
+<table class="reftab"><thead><tr><th>Worksheet item (label answer)</th><th>Carbamazepine (Tegretol)</th><th>Abacavir (Ziagen)</th></tr></thead><tbody>
+<tr><td>4. Efficacy or toxicity?</td><td>Prevent toxicity (SJS/TEN; Boxed Warning)</td><td>Prevent toxicity (hypersensitivity with multiple organ involvement; Boxed Warning)</td></tr>
+<tr><td>5. Genotyping or cytology?</td><td>Genotyping of the patient's HLA alleles; no cell-surface receptor study</td><td>Genotyping; the Medication Guide says a blood test can determine the gene variation</td></tr>
+<tr><td>6. Does the FDA say which test?</td><td>Yes for HLA-B*1502: high-resolution "HLA-B*1502 typing", positive if one or two alleles are detected (Precautions, Laboratory Tests). None named for HLA-A*3101</td><td>No test or method named; screening is required (2.1)</td></tr>
+<tr><td>7. Which population?</td><td>Patients with ancestry in genetically at-risk populations; HLA-B*1502 is found almost exclusively in patients with ancestry across broad areas of Asia and is largely absent in individuals not of Asian origin (Boxed Warning; Warnings)</td><td>All patients, before starting or restarting, unless there is a previously documented HLA-B*5701 assessment (Boxed Warning; 5.1)</td></tr>
+<tr><td>8. What changes?</td><td>HLA-B*1502-positive: do not treat unless the benefit clearly outweighs the risk. HLA-A*3101-positive: weigh risks and benefits before considering the drug. Genotyping never substitutes for clinical vigilance; stop at the first sign of a rash unless it is clearly not drug related (Warnings)</td><td>HLA-B*5701-positive: contraindicated (4). Stop at once if a hypersensitivity reaction is suspected, whatever the HLA status; never restart after a reaction (Boxed Warning; 5.1)</td></tr>
+</tbody></table>
+<p>Item 7 has a different kind of answer for each worksheet drug: a tumor type for trastuzumab, at-risk ancestry for carbamazepine, every patient for abacavir.</p>
 
 <h4>Where her words and the labels differ</h4>
 <ul>
@@ -1346,8 +1370,8 @@ const GUIDE4_HTML = `
 <li><b>Testing a tumor.</b> There is no tumor with these drugs; the patient is genotyped.</li>
 </ul>
 
-<p>How she asks it: which HLA-B variant goes with each drug; the second carbamazepine gene; what the carbamazepine variants do (SJS/TEN) and what the abacavir variant does (multi-organ hypersensitivity); same gene, different variants, different location; tumor or patient.</p>
-<p class="sub">Sources: Pharmacogenomics Questions Drug Labels Worksheet, items 1-3; Tegretol (carbamazepine) label, 7/2026: Boxed Warning, Warnings (SJS/TEN and HLA-B*1502 Allele; Hypersensitivity Reactions and HLA-A*3101 Allele), Precautions (Laboratory Tests); Ziagen (abacavir) label, Revised 11/2020: Highlights, Boxed Warning, 1, 2.1, 4 Contraindications, 5.1; PGx-Resources-and-Cases-Students-Fall-2026.pdf slide 'FDA Table of Pharmacogenomic Biomarkers in Drug Labeling 3' (p. 8); (T) 10/27. Questions L21-053 to L21-059.</p>
+<p>How she asks it: which HLA-B variant goes with each drug; the second carbamazepine gene; what the carbamazepine variants do (SJS/TEN) and what the abacavir variant does (multi-organ hypersensitivity); same gene, different variants, different location; tumor or patient. Items 4-8 are on her printed worksheet, which she listed for Exam 4.</p>
+<p class="sub">Sources: Pharmacogenomics Questions Drug Labels Worksheet, items 1-8; Tegretol (carbamazepine) label, 7/2026: Boxed Warning, Warnings (SJS/TEN and HLA-B*1502 Allele; Hypersensitivity Reactions and HLA-A*3101 Allele), Precautions (Laboratory Tests); Ziagen (abacavir) label, Revised 11/2020: Highlights, Boxed Warning, 1, 2.1, 4 Contraindications, 5.1, Medication Guide; PGx-Resources-and-Cases-Students-Fall-2026.pdf slide 'FDA Table of Pharmacogenomic Biomarkers in Drug Labeling 3' (p. 8); (T) 10/26 and 10/27. Questions L21-053 to L21-059, L21-070 to L21-079.</p>
 </section>
 <section class="guide" id="guide4-l22-1">
 <h3>29. Medication misadventures: ADEs, medication errors and ADRs</h3>
@@ -1502,6 +1526,7 @@ const GUIDE4_HTML = `
 <p>The page prints the bands exactly as "9=definite; 5-8=probable; 1-4=possible;0=doubtful". The point values add up to at most 13 and can go below 0; the page prints no band for those totals.</p>
 
 <h4>A worked score</h4>
+<!--STEP:naranjo-case-->
 <p>A patient's reaction has previous conclusive reports in the literature (Q1 yes, +1), appeared after the suspected drug was started (Q2 yes, +2) and improved when the drug was stopped (Q3 yes, +1). The drug was not re-given (Q4 do not know, 0). No other cause or drug could on its own explain the reaction (Q5 no, +2). Questions 6 to 10 are do not know (0 each).</p>
 <table class="reftab"><thead><tr><th>Variation</th><th>Points</th><th>Total</th><th>Category</th></tr></thead><tbody>
 <tr><td>As described</td><td>1 + 2 + 1 + 0 + 2</td><td>6</td><td>Probable</td></tr>
@@ -1617,6 +1642,19 @@ const GUIDE4_HTML = `
 <li><b>Stevens-Johnson syndrome</b> (p. 33). A painful, dangerous reaction that can involve the mouth and mucosal tract, not just the external skin; the skin can come off. Carbamazepine puts people with a certain HLA-B variant at risk. Abacavir labeling once warned of these skin reactions and was extended to the all-organ type of reaction. She also showed the hives (urticaria) image on p. 32; the other skin, liver and kidney slides were not covered.</li>
 </ul>
 
+<h4>Cutaneous reactions (pp. 29-34): on the objectives, skipped in class, low yield</h4>
+<p>"I'm not gonna cover all the slides that I had for like skin reactions" <small>(T) 10/28</small>. The slide text: 2-3% of hospitalized patients experience an adverse cutaneous drug reaction, with a higher incidence in older patients. Almost every commonly used drug has been implicated. Most are unpredictable, ranging from mild and self-limiting to severe and life-threatening; some are non-allergenic, but most tend to be immunologically based.</p>
+<table class="reftab"><thead><tr><th>Reaction (slide)</th><th>What it looks like</th><th>Basic treatment</th><th>Drugs named</th></tr></thead><tbody>
+<tr><td>Maculopapular eruption (p. 31)</td><td>Diffuse, symmetrical, red, raised, itchy; within a few hours or days of the offending agent</td><td>Most are self-limiting; treat symptoms; topical steroids and antihistamines; sometimes oral steroids</td><td>Amoxicillin commonly causes it</td></tr>
+<tr><td>Urticaria (p. 32, printed 'Uticaria')</td><td>Patchy, flat, red, spread, starts on the trunk; within a few hours or days</td><td>Often oral corticosteroids and antihistamines. IgE mediated, so do not re-challenge the patient with the drug</td><td>None named</td></tr>
+<tr><td>Photosensitivity (p. 34)</td><td>Similar to sunburn. Phototoxicity: non-immunologic. Photoallergic: immunologic, rare</td><td>Topical corticosteroids and oral antihistamines, often oral steroids; encourage sunscreen against UVA and UVB</td><td>Fluoroquinolones, NSAIDs, sulfonamides, thiazide diuretics, TCAs</td></tr>
+<tr><td>Erythema multiforme (p. 30, Dipiro Table 99-2)</td><td>Target lesions, limbs; mucous membranes not involved</td><td>Supportive</td><td>Anticonvulsants, sulfonamides, antibiotics, allopurinol, NSAIDs, dapsone</td></tr>
+<tr><td>Stevens-Johnson syndrome (p. 30)</td><td>Atypical targets, widespread; mucous membranes involved</td><td>IV immunoglobulins, cyclosporine</td><td>As for erythema multiforme</td></tr>
+<tr><td>Toxic epidermal necrolysis (p. 30)</td><td>Epidermal necrosis with skin detachment; mucous membranes involved</td><td>Supportive</td><td>As for erythema multiforme</td></tr>
+</tbody></table>
+<p>The p. 30 table also lists pseudoporphyria (tetracycline, furosemide, naproxen), linear IgA disease (printed 'Linger'; vancomycin, lithium, diclofenac, piroxicam, amiodarone), pemphigus (penicillamine, captopril, piroxicam, penicillin, rifampin) and bullous pemphigoid (furosemide, penicillamine, penicillin, sulfasalazine, captopril), all treated supportively.</p>
+<p><b>Liver and kidney.</b> The objectives list drug-induced hepatotoxicity and nephrotoxicity, but the student deck has no liver or renal slides (after the skin slides it ends at the Questions slide), and she said on 10/28 she would not cover them: "I had this next little bit of slides, uh, about skin, liver, and renal drug induced adverse drug, drug reactions because of the time I spent on genomics, we had a little more content this year than we've had in the past. Um, I wasn't sure we'd get to this, and we we're not going to" <small>(T) 10/28</small>.</p>
+
 <h4>Why</h4>
 <ul>
 <li><b>Why nonimmunologic reactions are usually predictable.</b> The table lists the predictable ones: a pharmacologic side effect (dry mouth from antihistamines), drug toxicity (hepatotoxicity from methotrexate), an interaction (seizure from theophylline with erythromycin), an overdose (seizure from excessive lidocaine). The unpredictable ones, with what she said about them: a pseudoallergic reaction feels allergic but is the drug itself acting, an idiosyncratic reaction is unpredictable by its name, and intolerance appears after a single small dose.</li>
@@ -1647,7 +1685,7 @@ const GUIDE4_HTML = `
 <li><b>Naming abacavir for HLA-B Stevens-Johnson syndrome.</b> The drug she asked for was carbamazepine; abacavir's label was extended to the all-organ type of reaction.</li>
 </ul>
 
-<p class="sub">Sources: ADE-Lecture-Students-2026.pdf slides 'ADR Scope of Problem' (p. 20), 'Immunologic reactions' (p. 23; Riedl and Casillas 2003, printed 'Reidl'), 'Predisposing Factors to Adverse Drug Reactions' (p. 24), 'Risk Factors' (p. 25; Table 4), 'Hypersensitivity Drug Reactions' (p. 26), 'Classification of hypersensitivity reactions' (p. 27; Gell and Coombs, Table 2), 'Uticaria' (p. 32), 'Steven Johnson Syndrome' (p. 33); (T) 10/28. She spoke only to type I and type IV timing; the type II and III rows are from the table she asked the class to remember. Questions L22-023, L22-024, L22-032 to L22-041.</p>
+<p class="sub">Sources: ADE-Lecture-Students-2026.pdf slides 'ADR Scope of Problem' (p. 20), 'Immunologic reactions' (p. 23; Riedl and Casillas 2003, printed 'Reidl'), 'Predisposing Factors to Adverse Drug Reactions' (p. 24), 'Risk Factors' (p. 25; Table 4), 'Hypersensitivity Drug Reactions' (p. 26), 'Classification of hypersensitivity reactions' (p. 27; Gell and Coombs, Table 2), 'Cutaneous Drug Reactions' (p. 29), 'Drug-Induced Skin Eruptions' (p. 30, Dipiro Table 99-2), 'Maculopapular eruptions' (p. 31), 'Uticaria' (p. 32), 'Steven Johnson Syndrome' (p. 33), 'Photosensitivity Drug Reactions' (p. 34); (T) 10/28. She spoke only to type I and type IV timing; the type II and III rows are from the table she asked the class to remember. The cutaneous slides (pp. 29-31, 34) were not covered aloud. Questions L22-023, L22-024, L22-032 to L22-041, L22-092, L22-093.</p>
 </section>
 <section class="guide" id="guide4-l22-5">
 <h3>33. Drug interactions: object and precipitant drugs, kinds of interaction</h3>
