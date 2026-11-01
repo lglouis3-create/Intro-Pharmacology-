@@ -1885,7 +1885,7 @@ const GUIDE4_HTML = `
 
 <h4>Where her words and the slides differ</h4>
 <ul>
-<li><b>Citrus fruits: inducer or competitor.</b> On p. 15 grapefruit, Seville oranges and bitter orange are printed under the inducer heading for CYP3A, and she said they "will induce" the 3A family and that the non-drug examples "all just happen to be inducers". Later, on food-drug interactions, she said the compounds in these citrus fruits compete with metabolizing enzymes, and p. 27 says a food that is a competitor is therefore an inhibitor. Both statements were made.</li>
+<li><b>Citrus fruits: inducer or competitor.</b> On p. 15 grapefruit, Seville oranges and bitter orange are printed under the inducer heading for CYP3A, and she said they "will induce" the 3A family and that the non-drug examples "all just happen to be inducers". Later, on food-drug interactions, she said the compounds in these citrus fruits compete with metabolizing enzymes, and p. 27 says a food that is a competitor is therefore an inhibitor. Both statements were made. The FDA states that grapefruit juice "can block the action of intestinal CYP3A4" (FDA consumer update "Grapefruit Juice and Some Drugs Don't Mix"), which is inhibition.</li>
 <li><b>Garlic.</b> P. 15 lists garlic supplements under CYP3A inducers, and she grouped it with the inducers. P. 25 gives garlic a different action: it directly inhibits platelets (section 37).</li>
 <li><b>Smoking enzymes.</b> P. 29 names CYP1A2; she said PAHs induce CYP1A1 and CYP1A2 and added 1A1 by hand on the screen.</li>
 <li><b>St. John's wort enzymes.</b> She read p. 15 as CYP2D6 and CYP3A4. The St. John's wort table on p. 24 lists induction of CYP3A4, CYP2C9 and CYP1A2 (section 37).</li>
@@ -2047,7 +2047,7 @@ const GUIDE4_HTML = `
 <ul>
 <li><b>St. John's wort and P-gp.</b> She said St. John's wort "is a substrate for P glycoprotein" and that it changes other drugs' bioavailability. The table (p. 24) says it increases P-gp-catalyzed efflux of substrate drugs, giving lower levels of digoxin, calcium channel blockers and simvastatin.</li>
 <li><b>St. John's wort enzymes.</b> From the P450 table (p. 15) she read it as an inducer of CYP2D6 and CYP3A4. This table (p. 24) lists induction of CYP3A4, CYP2C9 and CYP1A2.</li>
-<li><b>Citrus fruits.</b> With the P450 table she said grapefruit, Seville and bitter oranges "will induce" the CYP3A family, and the table prints them under inducers. With food-drug interactions she said the citrus compounds compete with metabolizing enzymes, and p. 27 calls a competing food an inhibitor.</li>
+<li><b>Citrus fruits.</b> With the P450 table she said grapefruit, Seville and bitter oranges "will induce" the CYP3A family, and the table prints them under inducers. With food-drug interactions she said the citrus compounds compete with metabolizing enzymes, and p. 27 calls a competing food an inhibitor. The FDA states that grapefruit juice "can block the action of intestinal CYP3A4" (FDA consumer update "Grapefruit Juice and Some Drugs Don't Mix"), which is inhibition.</li>
 <li><b>Garlic.</b> In the P450 table it sits under CYP3A inducers; on p. 25 it is an antiplatelet herb that increases bleeding risk with warfarin.</li>
 <li><b>Smoking.</b> P. 29 names CYP1A2 (and prints "CYPA2" once); she said 1A2 and 1A1.</li>
 </ul>
