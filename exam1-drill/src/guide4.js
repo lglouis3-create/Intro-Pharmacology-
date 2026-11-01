@@ -50,6 +50,7 @@ const GUIDE4_HTML = `
 
 <h4>The idea</h4>
 <p>The same genetic variant can be written four ways, depending on which system the scientists who first described it chose. Papers, guidance documents and genotype reports use all four, so a pharmacist has to read each one and know what it does and does not tell: where the change is, what the wild type is, and what the variant is. The examples (VKORC1, ABCB1, CYP2C19) are real genes that come back later as drug examples.</p>
+<!--STEP:pgx-names-->
 
 <h4>The four systems</h4>
 <table class="reftab"><thead><tr><th>System</th><th>Example</th><th>What it shows</th><th>What it does not show</th></tr></thead><tbody>

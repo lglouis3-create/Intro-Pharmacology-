@@ -3,7 +3,7 @@
  "title": "Walking the C P I C warfarin algorithm",
  "segs": [
   {
-   "text": "Section twenty five. The C P I C warfarin algorithm. C P I C, the Clinical Pharmacogenetics Implementation Consortium, publishes guidelines on using a patient's genotype to choose a drug or dose. Its two thousand seventeen warfarin guideline has two figures. Figure one shows how warfarin works: V K O R C one is warfarin's target, C Y P two C nine clears S warfarin, the potent form, and C Y P four F two removes vitamin K, warfarin's antidote.",
+   "text": "Section twenty five. The C P I C warfarin algorithm. C P I C, the Clinical Pharmacogenetics Implementation Consortium, publishes guidelines on using a patient's genotype to choose a drug or dose. Its two thousand seventeen warfarin guideline has two figures. Figure one shows how warfarin works: V K O R C one is warfarin's target, sip two C nine clears S warfarin, the potent form, and sip four F two removes vitamin K, warfarin's antidote.",
    "slide": null,
    "reading": null,
    "step": "warfarin-target@6"
@@ -51,7 +51,7 @@
    "step": "warfarin-genotype@6"
   },
   {
-   "text": "The marker r s one two seven seven seven eight two three is used on the African branch only. An A G or A A result in African Americans lowers the dose ten to twenty five percent. It is a single nucleotide polymorphism near the C Y P two C genes, linked to altered warfarin clearance separately from star two and star three, and a dose effect has been found only in African Americans. One more rule: for two C nine poor metabolism, such as star three star three, a different oral anticoagulant may be considered.",
+   "text": "The marker r s one two seven seven seven eight two three is used on the African branch only. An A G or A A result in African Americans lowers the dose ten to twenty five percent. It is a single nucleotide polymorphism near the sip two C genes, linked to altered warfarin clearance separately from star two and star three, and a dose effect has been found only in African Americans. One more rule: for two C nine poor metabolism, such as star three star three, a different oral anticoagulant may be considered.",
    "slide": null,
    "reading": null,
    "step": "warfarin-genotype@7"

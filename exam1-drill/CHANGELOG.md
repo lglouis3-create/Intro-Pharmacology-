@@ -2,6 +2,12 @@
 
 Newest first. The build embeds this file; the Topics page shows what is new since your last visit, and the Progress page shows all of it. Keep each bullet to one short line.
 
+## 2026-11-01 (Reading a variant name)
+
+- New step-through figure in Guide 1: how to read and say CYP2C19*2, *1/*2, TPMT*3A, CYP2D6*2xN, C>T, rs and HLA names.
+- Narration scripts now say "sip" for CYP and "snip" for SNP, as she says them in class.
+- Katzung Ch. 5 talk: the out-of-date "next on Monday" sentence removed.
+
 ## 2026-11-01 (Exam 4 questions checked)
 
 - Exam 4 questions rewritten to her exam standard: 165 fixes, 16 new items on her study list points.

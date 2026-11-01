@@ -13,10 +13,10 @@ const RULES = [
   [/\*(\d+)x(N|\d+)/g, (m, a, b) => ` star ${num(a)} times ${b === 'N' ? 'N' : num(b)}`],
   [/(\d+)([ACGT])>([ACGT])\b/g, '$1 $2 to $3'],
   [/\(\s*>\s*\)|,\s*>\s*,/g, ', the greater-than sign,'], [/\s>\s/g, ' to '],
-  [/\bCYPs\b/g, 'C Y Ps'], [/\bCYP-/g, 'C Y P '],
+  [/\bCYPs\b/g, 'sips'], [/\bCYP\b/g, 'C Y P'], [/\bCYP-/g, 'sip '],
   [/HLA-([ABC]|DRB1|DQA1|DQB1)\*(\d{2}):?(\d{2})/g, (m, l, a, b) => `H L A ${l.length > 1 ? gene(l) : l} ${num(a)} oh ${num(+b)}`],
-  [/\bCYP(\d)([A-Z])(\d+)\b/g, (m, a, b, c) => `C Y P ${num(a)} ${b} ${num(c)}`],
-  [/\bCYP(\d)([A-Z])\b/g, (m, a, b) => `C Y P ${num(a)} ${b}`],
+  [/\bCYP(\d)([A-Z])(\d+)\b/g, (m, a, b, c) => `sip ${num(a)} ${b} ${num(c)}`],
+  [/\bCYP(\d)([A-Z])\b/g, (m, a, b) => `sip ${num(a)} ${b}`],
   [/\b(VKORC1|SLCO1B1|UGT1A1|NUDT15|ABCB1|NAT2|CYP4F2|GGCX|UGT2B17|MT-RNR1)\b/g, m => gene(m.replace('-', ''))],
   [/\b(TPMT|DPYD|DPD|BChE|SNPs?|CPIC|FDA|ADRs?|ADEs?|DDIs?|PPIs?|IHC|FISH|SJS|TEN|DRESS|INR|AUC|IOM|ISMP|MERP|PGx|ACE|HER2|DNA|RNA|PD|PK|IV|MI)\b/g, m => ({SNP:'snip',SNPs:'snips',HER2:'her two',PGx:'P G X',BChE:'B C H E',CPIC:'C pick',ADRs:'A D Rs',ADEs:'A D Es',DDIs:'D D Is',PPIs:'P P Is'})[m] || letters(m)],
   [/-(\d{3,4})([ACGT])>([ACGT])/g, (m, n, a, b) => ` minus ${n} ${a} to ${b}`],
@@ -43,7 +43,7 @@ for (const l of ['L18', 'L19', 'L20', 'L21', 'L22']) vm.runInContext(fs.readFile
 for (const x of ctx.QUESTIONS) { if (!x.teach || x.lowYield || x.dupOf) continue;
   const t = Array.isArray(x.teach) ? x.teach.map(y => y.t).join(' ') : x.teach; q.push({file: `q-${x.id}.mp3`, text: say(t)}); }
 const sx = {console}; vm.createContext(sx); vm.runInContext(fs.readFileSync('steps4.js', 'utf8') + ';this.R=STEPS3', sx);
-for (const k of ['warfarin-target', 'warfarin-genotype', 'naranjo-case']) sx.R[k].steps.forEach((s, i) => q.push({file: `s3-${k}-${i}.mp3`, text: say(s.t)}));
+for (const k of ['pgx-names', 'warfarin-target', 'warfarin-genotype', 'naranjo-case']) sx.R[k].steps.forEach((s, i) => q.push({file: `s3-${k}-${i}.mp3`, text: say(s.t)}));
 for (const id of ['furuta-1998', 'katzung-5']) { const l = JSON.parse(fs.readFileSync(`readings/${id}.json`)).listen;
   q.push({file: `rd-${id}.mp3`, text: (typeof l === 'string' ? l : l.map(y => typeof y === 'string' ? y : y.t).join(' ')).replace(/\s+/g, ' ').trim()}); }
 process.stdout.write(JSON.stringify(q, null, 0));
