@@ -24,13 +24,13 @@
    "reading": null
   },
   {
-   "text": "Why only the referenced drug? The S L C O one B one transporter data were for simvastatin, so the table speaks only about simvastatin. She said, We can't assume that the other statins are going to have a patient response just like simvastatin did in the presence of that genetic biomarker. The labeling sections column names the parts of the label that discuss pharmacogenomics. For abacavir, those are the Boxed Warning, Dosage and Administration, Contraindications, and Warnings and Precautions.",
-   "slide": null,
+   "text": "Why does the table speak only about the referenced drug? Label information comes from the data on that drug. The S L C O one B one transporter data were for simvastatin, so the table speaks only about simvastatin, and another statin may not respond the same way to the variant. She said, We can't assume that the other statins are going to have a patient response just like simvastatin did in the presence of that genetic biomarker.",
+   "slide": "pgxres:6",
    "reading": null,
    "table": 0
   },
   {
-   "text": "Every F D A label uses the same sections, so a pharmacist who needs to know whether a drug has a pharmacogenomic boxed warning or genotype based dosing can go straight to the section the table names. Its application is helping pharmacists make informed decisions on medication therapy management from the latest labeling. Its limitation is scope and lag. It covers only F D A approved drugs and may miss emerging information, because it follows the labels and is updated periodically.",
+   "text": "The labeling sections column names the parts of the label that discuss pharmacogenomics. For abacavir, those are the Boxed Warning, Dosage and Administration, Contraindications, and Warnings and Precautions. Every F D A label uses the same sections, so a pharmacist who needs to know whether a drug has a pharmacogenomic boxed warning or genotype based dosing can go straight to the section the table names. Its application is helping pharmacists make informed decisions on medication therapy management from the latest labeling. Its limitation is scope and lag. It covers only F D A approved drugs and may miss emerging information, because it follows the labels and is updated periodically.",
    "slide": "pgxres:7",
    "reading": null
   }

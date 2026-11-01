@@ -3,7 +3,7 @@
  "title": "The Naranjo algorithm",
  "segs": [
   {
-   "text": "Section thirty one. Causality and the Naranjo algorithm. When a patient on drugs develops a new symptom, the cause may be a new disease, a change in the patient's health, a new drug, or an old drug the changed patient now responds badly to. The Naranjo algorithm is a ten question score that ranks how likely it is that a particular drug caused the reaction. It scores only causality. It does not pick a genotype test, a reporting route, or a hypersensitivity type.",
+   "text": "Section thirty one. Causality and the Naranjo algorithm. When a patient on drugs develops a new symptom, the cause may be a new disease, a change in the patient's health, a new drug, or an old drug the changed patient now responds badly to. The Naranjo algorithm is a ten question score that ranks how likely it is that a particular drug caused the reaction. The clinician answers the questions by sitting with the patient, asking when each drug was started, when the symptoms started and what else they take, and by searching the literature.",
    "slide": "ade:21",
    "reading": null
   },
@@ -14,14 +14,14 @@
    "table": 0
   },
   {
-   "text": "Not every yes is worth one point. A yes on question two or four scores plus two, and a no scores minus one, because a reaction that did not follow the drug argues against it. A reaction that returns with a placebo, question six, scores minus one. Question five is reversed. If another cause could explain the reaction, that costs a point. If nothing else could, the drug gains two. Do not know is always zero, since missing information neither supports nor weakens the case.",
+   "text": "Not every yes is worth one point, and the weights follow the logic of cause. A yes on question two or four scores plus two, because a reaction that follows the drug and comes back when the drug is given again is tied to the drug in time. A no on those two scores minus one, because a reaction that did not follow the drug argues against it. A reaction that returns with a placebo, question six, points away from the drug, so a yes scores minus one. Question five is reversed. If another cause or drug could explain the reaction, the suspected drug is less likely, so a yes costs a point. If nothing else could, the drug is more likely, and a no gains two. Do not know is always zero, since missing information neither supports nor weakens the case.",
    "slide": null,
    "reading": "naranjo",
    "table": 0
   },
   {
-   "text": "The total sets the category. Nine is definite, the drug is likely the true cause. Five to eight is probable, the drug is the apparent cause. One to four is possible, the drug appears to be associated. Zero is the lowest category, where the drug is not likely responsible. This lowest category has two names, remote and doubtful, and both mean the same rank.",
-   "slide": "ade:21",
+   "text": "The total sets the category. Nine is definite, the drug is likely the true cause. Five to eight is probable, the drug is the apparent cause. One to four is possible, the drug appears to be associated. Zero is the lowest category, where the drug is not likely responsible. The slide and her words call this lowest category remote. The Naranjo page calls it doubtful. Both name the same rank.",
+   "slide": null,
    "reading": null,
    "table": 1
   },

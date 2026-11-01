@@ -3,7 +3,7 @@
  "title": "P glycoprotein and drug transporters",
  "segs": [
   {
-   "text": "Section sixteen. Drug transporters and P glycoprotein. Transporters are the second big area of pharmacogenomics, and P glycoprotein, or P G P, is the best characterized of them. It is an efflux transporter in the gut wall that pumps drugs out of the gut cells and back into the lumen. So when P G P works poorly, less drug is pumped back, and more of it is absorbed. That has the same effect as taking a P G P inhibitor. Lower P G P means more absorption, not less.",
+   "text": "Section sixteen. Drug transporters and P glycoprotein. Transporters are the second big area of pharmacogenomics, and P glycoprotein, or P G P, is the best characterized of them. It is an efflux transporter in the gut wall. It pumps drugs out of the gut cells and back into the lumen, which limits how much of a drug is absorbed.",
    "slide": "pgxex:40",
    "reading": null
   },
@@ -13,7 +13,7 @@
    "reading": null
   },
   {
-   "text": "On the plasma and cellular concentration curves, the dashed line is the variant. With a low activity P G P, the drug stays in the gut cells, so the cellular concentration rises sharply, and more reaches the blood. She said, You will end up with higher bioavailability of drugs that are substrates for P G P. Increased intestinal P G P expression can limit absorption, while decreased expression may give supratherapeutic plasma concentrations.",
+   "text": "On the plasma and cellular concentration curves, the dashed line is the variant. With a low activity P G P, less drug is pumped back into the lumen. The drug stays in the gut cells, so the cellular concentration rises sharply, and more reaches the blood. That has the same effect as taking a P G P inhibitor. Lower P G P means more absorption, not less. She said, You will end up with higher bioavailability of drugs that are substrates for P G P. Increased intestinal P G P expression can limit absorption, while decreased expression may give supratherapeutic plasma concentrations.",
    "slide": "pgxex:42",
    "reading": null
   },

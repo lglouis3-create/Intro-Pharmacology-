@@ -20,16 +20,21 @@
    "table": 1
   },
   {
-   "text": "Food can increase, decrease, or not affect absorption, and foods that change stomach pH may change bioavailability. A common interaction is a drug complexing with food in the gut, such as quinolone antibiotics with calcium, which reduces absorption. That is complexation, not an enzyme effect. Food can also compete for metabolizing enzymes, which makes it an inhibitor, or induce them, giving toxic or subtherapeutic levels. And monoamine oxidase inhibitors block breakdown of tyramine from red wine and cheese, so tyramine builds up and may cause a hypertensive crisis.",
+   "text": "Food can increase, decrease, or not affect absorption, and foods that change stomach pH may change bioavailability. A common interaction is a drug complexing with food in the gut, such as quinolone antibiotics with calcium, which reduces absorption. That is complexation, not an enzyme effect. Food can also compete for metabolizing enzymes, which makes it an inhibitor, or induce them, giving toxic or subtherapeutic levels. And monoamine oxidase inhibitors are meant to block the breakdown of catecholamines. Tyramine from red wine and cheese is broken down by the same enzyme, so it builds up and may cause a hypertensive crisis.",
    "slide": "ddi:26",
    "reading": null,
    "table": 2
   },
   {
-   "text": "Smoking and ethanol are the most common chemical drug interactions. Smoke contains polycyclic aromatic hydrocarbons that induce C Y P one A two, lowering theophylline, diazepam and tricyclic antidepressants. She said, it's really important for the theophylline in asthmatics to not be subtherapeutic. Ethanol can increase or decrease hepatic enzyme activity. Its C Y P one A two induction lowers clozapine, cyclobenzaprine, imipramine and naproxen. Its induction of C Y P two E one and three A increases the possibility of acetaminophen hepatotoxicity.",
+   "text": "Smoking and ethanol are the most common chemical drug interactions. Smoke contains polycyclic aromatic hydrocarbons that induce C Y P one A two, lowering theophylline, diazepam and tricyclic antidepressants. She said, it's really important for the theophylline in asthmatics to not be subtherapeutic.",
    "slide": "ddi:29",
    "reading": null,
    "table": 3
+  },
+  {
+   "text": "Ethanol can increase or decrease hepatic enzyme activity. Its C Y P one A two induction lowers clozapine, cyclobenzaprine, imipramine and naproxen. Its induction of C Y P two E one and three A increases the possibility of acetaminophen hepatotoxicity. So the acetaminophen risk comes from the two E one and three A induction, not from one A two.",
+   "slide": "ddi:30",
+   "reading": null
   }
  ]
 }
