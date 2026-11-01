@@ -551,5 +551,30 @@ QUESTIONS.push(
   {t:"The drug has no genetic influence on patient response at all", correct:false, why:"Clear peaks are a strong hint of genetic control, not its absence."},
   {t:"The histogram was measured incorrectly", correct:false, why:"Distinct peaks are a meaningful pattern, not an error."}],
  teach:"When a drug-response frequency curve has distinct peaks, each peak is a phenotype and the pattern points to a single gene driving the response (monogenic), as with CYP2D6 and debrisoquine. A smooth bell-shaped curve means many genes contribute (polygenic), which fuzzes the data together. She also cautioned that monogenic curves do not all look the same from gene to gene.",
- cite:"PGx-Examples-Students-Fall-2026.pdf slides 'Monogenic and Polygenic Effects' (p. 10), 'CYP2D6 Polymorphisms 2' (p. 21); transcript 10/22"}
+ cite:"PGx-Examples-Students-Fall-2026.pdf slides 'Monogenic and Polygenic Effects' (p. 10), 'CYP2D6 Polymorphisms 2' (p. 21); transcript 10/22"},
+
+/* ---------------- Exam 4 study list: Furuta (item 3) and CYP2C9 populations (item 4) ---------------- */
+{id:"L19-045", lecture:"L19", prof:"Smith", tier:"new", topic:"L19", sub:"cyp2c19", skill:"recall", readingId:"furuta-1998", core:true, coreWhy:"her Exam 4 study list item 3 (Furuta): cure of the H. pylori infections causing ulcers",
+ concept:"cyp2c19-pm-ppi-ulcer-healing", tags:["smith","reading"], source:"both",
+ stem:"For a patient taking a proton pump inhibitor (PPI), what does the CYP2C19 poor-metabolizer phenotype do to ulcer healing?",
+ options:[
+  {t:"Increases it", correct:true, why:"The last bullet on the CYP2C19 slide and her words: poor metabolizers on PPIs have increased ulcer healing."},
+  {t:"Decreases it", correct:false, why:"A poor metabolizer clears the PPI slowly, so PPI levels stay higher, not lower."},
+  {t:"No effect on healing", correct:false, why:"The slide lists increased ulcer healing as a clinical consequence of the poor-metabolizer phenotype."},
+  {t:"Decreases it, with a sharp rise in adverse effects", correct:false, why:"PPIs have a very wide therapeutic index; the rise in adverse drug responses with poor metabolism is her SSRI and diazepam example."}],
+ teach:"CYP2C19 clears PPIs such as omeprazole. A poor metabolizer (two inactive alleles, *2 or *3) keeps PPI concentrations higher, so gastric pH rises more. With the wide therapeutic index of PPIs this is a benefit, not a toxicity. In the Furuta paper, ulcer healing ran roughly parallel with the H. pylori cure rates, and every ulcer healed in the poor-metabolizer group.",
+ quote:"people that are on proton pump inhibitors, if they're poor metabolizers. They actually have increased ulcer healing.",
+ cite:"PGx-Examples-Students-Fall-2026.pdf slide 'CYP2C19 Polymorphisms' (p. 25); FurutaAnnIntMed1998.pdf (abstract; pp. 1028-1029); transcript 10/22"},
+
+{id:"L19-046", lecture:"L19", prof:"Smith", tier:"new", topic:"L19", sub:"cyp2c9", skill:"recall", readingId:"cpic-warfarin-2017", core:true, coreWhy:"her Exam 4 study list item 4 (CPIC Figure 2): which populations carry each variant",
+ concept:"cyp2c9-2-3-population", tags:["smith","reading"], source:"both",
+ stem:"Which population has the highest frequency of the low-activity CYP2C9 variants *2 and *3?",
+ options:[
+  {t:"Caucasians (European ancestry)", correct:true, why:"Her slide: about 30% of Caucasians carry a variant. The CPIC guideline calls *2 and *3 the two most common decreased-function alleles in European ancestry."},
+  {t:"African Americans", correct:false, why:"Her slide gives 1-3%. In African ancestry the other decreased-function alleles, *5, *6, *8 and *11, are the more common ones."},
+  {t:"East Asians", correct:false, why:"Her slide gives 0% in the population studied; the guideline says *2 is virtually absent in Asians."},
+  {t:"All populations at about the same frequency", correct:false, why:"The frequencies differ sharply between populations."}],
+ teach:"Her slide (p. 23) gives the frequency of a low-activity CYP2C9 variant as Caucasians 30%, African Americans 1-3% and East Asians 0% in the population studied. The 2017 CPIC warfarin guideline agrees on the order: *2 and *3 are the two most common decreased-function alleles in European ancestry, and *2 is virtually absent in Asians. In African ancestry *5, *6, *8 and *11 are collectively more common than *2 and *3, which is why the algorithm tests them first on that branch.",
+ quote:"Caucasians, about 30% of Caucasians have, have one or both variants.",
+ cite:"PGx-Examples-Students-Fall-2026.pdf slide 'CYP2C9 Polymorphisms' (p. 23); CPIC warfarin guideline 2017 update ('CYP2C9 and warfarin', pp. 398-399; p. 400); transcript 10/22"}
 );

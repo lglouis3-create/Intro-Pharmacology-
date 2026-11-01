@@ -2327,6 +2327,13 @@ const READINGS = [
     "evidence_clean": "When you had the low-activity version of the enzyme increasing drug blood concentrations, you had better cure rates."
    },
    {
+    "point": "Poor metabolizers on PPIs have increased ulcer healing",
+    "chapter_location": "Abstract (healing rates roughly parallel with cure rates); Results (all ulcers healed in patients cured of H. pylori), pp. 1028-1029",
+    "lecture_evidence": "people that are on proton pump inhibitors, if they're poor metabolizers. They actually have increased ulcer healing.",
+    "date": "10/22",
+    "evidence_clean": "People on proton pump inhibitors who are poor metabolizers actually have increased ulcer healing."
+   },
+   {
     "point": "Why lower CYP2C19 activity helped here: drug stays in the body; PPIs have a wide therapeutic index",
     "chapter_location": "Discussion, first reason: omeprazole AUC markedly increased in poor metabolizers, so high intragastric pH lasts longer; Results: no clinically undesirable signs or symptoms attributable to the dual therapy",
     "lecture_evidence": "it's a good thing to have the 2 or 3 version of 2C19, because you keep the drug in the body, the therapeutic index of your PPIs is very wide",
@@ -2346,6 +2353,41 @@ const READINGS = [
     "lecture_evidence": "They were using lansoprazole, and they looked at the AUC here on this panel.",
     "date": "10/22",
     "evidence_clean": "They were using lansoprazole, and they looked at the AUC here on this panel."
+   },
+   {
+    "point": "Why *2 and *3 make no active enzyme (her answer: a premature stop codon; the paper gives only m1 in exon 5 and m2 in exon 4)",
+    "chapter_location": "Methods and Table 1 footnote: CYP2C19m1 (exon 5), CYP2C19m2 (exon 4)",
+    "lecture_evidence": "It's non-functional because it's a premature stop codon. You guys have to know this.",
+    "date": "10/26",
+    "evidence_clean": "It's non-functional because it's a premature stop codon. You have to know this."
+   },
+   {
+    "point": "Group 3 (no active CYP2C19) had the best cure rate",
+    "chapter_location": "Table 2: 28.6%, 60.0% and 100% in groups 1 to 3 (p. 1029)",
+    "lecture_evidence": "So Group 3 has the best cure rate.",
+    "date": "10/26",
+    "evidence_clean": "So group 3 has the best cure rate."
+   },
+   {
+    "point": "The numbered reasons in the Discussion (First, Second, Third, Finally); she summarized the first three",
+    "chapter_location": "Discussion, p. 1029: longer high intragastric pH; amoxicillin unstable at low pH; omeprazole raises amoxicillin in gastric juice; omeprazole's own anti-H. pylori activity",
+    "lecture_evidence": "look at the discussion. And they say things like 1st and 2nd and 3rd, they're making some other points.",
+    "date": "10/26",
+    "evidence_clean": "Look at the discussion. They say things like first, second and third; they're making some other points."
+   },
+   {
+    "point": "Third reason: omeprazole and amoxicillin in the gastric juice",
+    "chapter_location": "Discussion, p. 1029: omeprazole has been reported to increase amoxicillin concentrations in gastric juice",
+    "lecture_evidence": "That's the 3rd point they make in the discussion, that something about omeprazole helps get the amoxicillin into the gastric juices and helps it stay intact there, cause you've increased the pH",
+    "date": "10/26",
+    "evidence_clean": "That's the third point they make in the discussion: something about omeprazole helps get the amoxicillin into the gastric juices and helps it stay intact there, because you've increased the pH."
+   },
+   {
+    "point": "Generalizing to the United States: not on its face; possible with genotyping",
+    "chapter_location": "Discussion, p. 1029: poor-metabolizer genotype 3% to 5% in white U.S. or European populations versus 18% to 23% in Japanese persons",
+    "lecture_evidence": "So can we generalize this study to the United States? Not on the face of it.",
+    "date": "10/26",
+    "evidence_clean": "So can we generalize this study to the United States? Not on the face of it."
    }
   ],
   "read_for": [
@@ -2354,12 +2396,12 @@ const READINGS = [
    "Methods: the alleles genotyped, CYP2C19m1 in exon 5 and CYP2C19m2 in exon 4, by PCR restriction fragment length polymorphism (p. 1028).",
    "Results and Table 1: the five allelic patterns and the three genotype groups (no mutation, one mutation, two mutations) and their phenotypes (rapid-extensive, intermediate-extensive, poor metabolizer); relative mean omeprazole AUC 1:3.7:20 (p. 1028).",
    "Table 2: cure rates of H. pylori infection by genotype group and ulcer type, total 28.6% [8/28], 60.0% [15/25] and 100.0% [9/9], P < 0.001 (p. 1029).",
-   "Discussion: the four reasons dual therapy works better in poor metabolizers (longer high intragastric pH; amoxicillin unstable at low pH; omeprazole raises amoxicillin in gastric juice; omeprazole's anti-H. pylori activity) (p. 1029).",
+   "Results: ulcer healing rates roughly parallel with the cure rates (gastric 7 of 12, 13 of 14 and 7 of 7; duodenal 13 of 16, 9 of 11 and 2 of 2 in groups 1 to 3), and all ulcer lesions healed in patients whose H. pylori infection was cured; the Discussion credits both the higher cure rates and the increased acid-inhibitory effect of omeprazole for the healing in poor metabolizers (abstract; pp. 1028-1029).",
+   "Discussion: the four reasons dual therapy works better in poor metabolizers, signposted First, Second, Third and Finally: (1) omeprazole exposure is markedly increased, so high intragastric pH lasts longer; (2) amoxicillin is unstable and less active at low pH, so a higher pH leaves more active antibiotic; (3) omeprazole increases amoxicillin concentrations in gastric juice, so amoxicillin stays in the stomach longer above its minimum inhibitory concentration; (4) omeprazole itself has anti-H. pylori activity, presumably enhanced in poor metabolizers (p. 1029).",
    "Discussion: ethnic differences in the poor-metabolizer genotype, 3% to 5% in white U.S. or European populations versus 18% to 23% in Japanese persons (p. 1029).",
    "Discussion: limitations (plasma omeprazole not measured; small sample; findings preliminary) (p. 1029)."
   ],
   "beyond_lecture": [
-   "Full discussion of the paper: not yet taught; she said 'on Monday when we come back, we're going to dive into that paper.'",
    "Results: adherence to the regimen (100% in 43 patients, about 90% in 18, about 75% in 1) and eradication by adherence level (58%, 33%, 100%) (p. 1028).",
    "Results: ulcer healing rates by ulcer type and genotype group (gastric 58.8%, 92.9%, 100.0%; duodenal 81.3%, 81.8%, 100.0%) (pp. 1028–1029).",
    "Discussion: Bayerdorffer and associates' dual therapy with omeprazole 40 mg three times daily and amoxicillin 750 mg three times daily (91% cure in white persons) and the suggestion that at least 120 mg of omeprazole may be required in extensive metabolizers (p. 1029).",
@@ -3048,6 +3090,12 @@ const READINGS = [
     "date": "10/27"
    },
    {
+    "point": "Figure 1: both enantiomers inhibit VKORC1, so less active vitamin K is available and fewer active clotting factors are made",
+    "chapter_location": "Figure 1 and legend (p. 398); VKORC1 and warfarin (p. 399)",
+    "lecture_evidence": "So here's warfarin, the R and the S and tamers, they're hitting VKRC1, right? That helps reduce the production of active coagulation factors because by inhibiting VKRC1, you don't get as much active vitamin K.",
+    "date": "10/27"
+   },
+   {
     "point": "CYP2C9 is the primary metabolizing enzyme of S-warfarin; CYP2C9*2 and *3 are the two most common decreased function alleles in European ancestry",
     "chapter_location": "CYP2C9 and warfarin (p. 398)",
     "lecture_evidence": "It'll tell you, um, just at least background information about, you know, 2C9, the variants we're concerned about for warfarin with 2C9.",
@@ -3142,14 +3190,34 @@ const READINGS = [
     "chapter_location": "Text Box 1 (p. 401); Other considerations (p. 403)",
     "lecture_evidence": "if you were to read this guidance document, you would also know that they talk about there are other patient factors that we use as well.",
     "date": "10/27"
+   },
+   {
+    "point": "rs12777823 requires a decreased dose (her wording: another P450 variant decreasing activity somewhere in the 2C9 area; guideline: altered warfarin clearance independent of CYP2C9*2 and *3)",
+    "chapter_location": "CYP2C rs12777823 and warfarin (p. 399); Figure 2 (p. 401)",
+    "lecture_evidence": "this RS 1227823, it's another P450 variant, and it is requiring a decreased dose because it's decreasing the activity of somewhere of the 2C9.",
+    "date": "10/27"
+   },
+   {
+    "point": "Her case format: genotypes and ancestry given; was all the genotyping done, and does the patient need relatively more or less than the average starting dose?",
+    "chapter_location": "Figure 2 and footnote e (p. 401)",
+    "lecture_evidence": "did we do all the genotyping we should for this patient that we know of yet so far? You'd say, yeah, for that patient, non-African American descent, yeah, we, we checked all the genotypes we should have.",
+    "date": "10/27"
+   },
+   {
+    "point": "Know the mechanism and metabolism in Figure 1, which variants matter in which populations, and what each variant alone does to the dose",
+    "chapter_location": "Figure 1 (p. 398); gene sections (pp. 398–400); Figure 2 (p. 401)",
+    "lecture_evidence": "you should know which genetic variants we're concerned about and in which populations",
+    "date": "10/28"
    }
   ],
   "read_for": [
    "Summary (p. 397): the update covers CYP2C9, VKORC1, CYP4F2 and rs12777823 genotype-guided dosing to a target INR of 2–3, with ancestry-specific adult and pediatric recommendations.",
-   "Figure 1 (p. 398): warfarin mechanism and metabolism, with CYP2C9, VKORC1 and CYP4F2.",
+   "Figure 1 (p. 398): warfarin is a racemic R/S mixture; S-warfarin is 3–5 times more potent than R-warfarin and is metabolized predominantly to 7- and 6-hydroxyl metabolites via CYP2C9; both enantiomers inhibit VKORC1, which converts vitamin K epoxide to reduced vitamin K (the rate-limiting step in vitamin K recycling, p. 399); gamma-glutamyl carboxylase (GGCX) uses reduced vitamin K to carboxylate hypofunctional clotting factors into functional ones; calumenin (CALU) can inhibit GGCX; CYP4F2 converts reduced vitamin K to hydroxyvitamin K1, removing it from the cycle.",
    "CYP2C9 and warfarin (p. 398): CYP2C9*2 and *3 impair S-warfarin metabolism by 30–40% and 80–90%; carriers have greater bleeding risk, need lower doses and take more time to reach a stable INR.",
    "VKORC1 and warfarin (p. 399): c.-1639G>A (rs9923231), an upstream variant on a haplotype that affects VKORC1 protein expression; one or two -1639A alleles require progressively lower doses.",
    "CYP4F2 and warfarin and CYP2C rs12777823 and warfarin (p. 399): CYP4F2*3 carriers need 8–11% higher doses; rs12777823 heterozygotes or homozygotes (A allele) among African Americans need 7 or 9 mg/week less.",
+   "Who carries each Figure 2 variant (pp. 398–401): CYP2C9*2 and *3 are the most common decreased-function alleles in European ancestry, *2 virtually absent in Asians; CYP2C9*5, *6, *8, *11 are most frequent in African ancestry; the -1639A frequency varies by ancestry and largely explains average dose differences between whites, blacks and Asians; the CYP4F2*3 effect is confirmed in European and Asian, not African, ancestry; the rs12777823 dose association is seen only in African Americans; 45–50% of self-reported African ancestry carry *5, *6, *8, *11 or rs12777823 (Figure 2 footnote c).",
+   "CYP2C rs12777823 and warfarin (p. 399): a SNP in the CYP2C cluster near CYP2C18 on chromosome 10, associated with altered warfarin clearance independent of CYP2C9*2 and *3; likely not causal but inherited with other variant(s) on a haplotype.",
    "Genetic test interpretation (p. 399): most FDA-approved CYP2C9 tests include only *2 and *3, which is not as informative for African ancestry populations.",
    "Figure 2 and footnotes (p. 401): the adult dosing algorithm; consider an alternative agent with CYP2C9 poor metabolism genotypes, or with both increased sensitivity (VKORC1 A/G or A/A) and CYP2C9 poor metabolism.",
    "Non-African and African ancestry recommendations (p. 402): STRONG, MODERATE and OPTIONAL steps, including the 15–30%, 20–40%, 5–10% and 10–25% adjustments.",

@@ -41,6 +41,12 @@
    "date": "10/27"
   },
   {
+   "point": "Figure 1: both enantiomers inhibit VKORC1, so less active vitamin K is available and fewer active clotting factors are made",
+   "chapter_location": "Figure 1 and legend (p. 398); VKORC1 and warfarin (p. 399)",
+   "lecture_evidence": "So here's warfarin, the R and the S and tamers, they're hitting VKRC1, right? That helps reduce the production of active coagulation factors because by inhibiting VKRC1, you don't get as much active vitamin K.",
+   "date": "10/27"
+  },
+  {
    "point": "CYP2C9 is the primary metabolizing enzyme of S-warfarin; CYP2C9*2 and *3 are the two most common decreased function alleles in European ancestry",
    "chapter_location": "CYP2C9 and warfarin (p. 398)",
    "lecture_evidence": "It'll tell you, um, just at least background information about, you know, 2C9, the variants we're concerned about for warfarin with 2C9.",
@@ -135,14 +141,34 @@
    "chapter_location": "Text Box 1 (p. 401); Other considerations (p. 403)",
    "lecture_evidence": "if you were to read this guidance document, you would also know that they talk about there are other patient factors that we use as well.",
    "date": "10/27"
+  },
+  {
+   "point": "rs12777823 requires a decreased dose (her wording: another P450 variant decreasing activity somewhere in the 2C9 area; guideline: altered warfarin clearance independent of CYP2C9*2 and *3)",
+   "chapter_location": "CYP2C rs12777823 and warfarin (p. 399); Figure 2 (p. 401)",
+   "lecture_evidence": "this RS 1227823, it's another P450 variant, and it is requiring a decreased dose because it's decreasing the activity of somewhere of the 2C9.",
+   "date": "10/27"
+  },
+  {
+   "point": "Her case format: genotypes and ancestry given; was all the genotyping done, and does the patient need relatively more or less than the average starting dose?",
+   "chapter_location": "Figure 2 and footnote e (p. 401)",
+   "lecture_evidence": "did we do all the genotyping we should for this patient that we know of yet so far? You'd say, yeah, for that patient, non-African American descent, yeah, we, we checked all the genotypes we should have.",
+   "date": "10/27"
+  },
+  {
+   "point": "Know the mechanism and metabolism in Figure 1, which variants matter in which populations, and what each variant alone does to the dose",
+   "chapter_location": "Figure 1 (p. 398); gene sections (pp. 398–400); Figure 2 (p. 401)",
+   "lecture_evidence": "you should know which genetic variants we're concerned about and in which populations",
+   "date": "10/28"
   }
  ],
  "read_for": [
   "Summary (p. 397): the update covers CYP2C9, VKORC1, CYP4F2 and rs12777823 genotype-guided dosing to a target INR of 2–3, with ancestry-specific adult and pediatric recommendations.",
-  "Figure 1 (p. 398): warfarin mechanism and metabolism, with CYP2C9, VKORC1 and CYP4F2.",
+  "Figure 1 (p. 398): warfarin is a racemic R/S mixture; S-warfarin is 3–5 times more potent than R-warfarin and is metabolized predominantly to 7- and 6-hydroxyl metabolites via CYP2C9; both enantiomers inhibit VKORC1, which converts vitamin K epoxide to reduced vitamin K (the rate-limiting step in vitamin K recycling, p. 399); gamma-glutamyl carboxylase (GGCX) uses reduced vitamin K to carboxylate hypofunctional clotting factors into functional ones; calumenin (CALU) can inhibit GGCX; CYP4F2 converts reduced vitamin K to hydroxyvitamin K1, removing it from the cycle.",
   "CYP2C9 and warfarin (p. 398): CYP2C9*2 and *3 impair S-warfarin metabolism by 30–40% and 80–90%; carriers have greater bleeding risk, need lower doses and take more time to reach a stable INR.",
   "VKORC1 and warfarin (p. 399): c.-1639G>A (rs9923231), an upstream variant on a haplotype that affects VKORC1 protein expression; one or two -1639A alleles require progressively lower doses.",
   "CYP4F2 and warfarin and CYP2C rs12777823 and warfarin (p. 399): CYP4F2*3 carriers need 8–11% higher doses; rs12777823 heterozygotes or homozygotes (A allele) among African Americans need 7 or 9 mg/week less.",
+  "Who carries each Figure 2 variant (pp. 398–401): CYP2C9*2 and *3 are the most common decreased-function alleles in European ancestry, *2 virtually absent in Asians; CYP2C9*5, *6, *8, *11 are most frequent in African ancestry; the -1639A frequency varies by ancestry and largely explains average dose differences between whites, blacks and Asians; the CYP4F2*3 effect is confirmed in European and Asian, not African, ancestry; the rs12777823 dose association is seen only in African Americans; 45–50% of self-reported African ancestry carry *5, *6, *8, *11 or rs12777823 (Figure 2 footnote c).",
+  "CYP2C rs12777823 and warfarin (p. 399): a SNP in the CYP2C cluster near CYP2C18 on chromosome 10, associated with altered warfarin clearance independent of CYP2C9*2 and *3; likely not causal but inherited with other variant(s) on a haplotype.",
   "Genetic test interpretation (p. 399): most FDA-approved CYP2C9 tests include only *2 and *3, which is not as informative for African ancestry populations.",
   "Figure 2 and footnotes (p. 401): the adult dosing algorithm; consider an alternative agent with CYP2C9 poor metabolism genotypes, or with both increased sensitivity (VKORC1 A/G or A/A) and CYP2C9 poor metabolism.",
   "Non-African and African ancestry recommendations (p. 402): STRONG, MODERATE and OPTIONAL steps, including the 15–30%, 20–40%, 5–10% and 10–25% adjustments.",

@@ -1114,8 +1114,64 @@ QUESTIONS.push(
   {t:"Possible", correct:false, why:"Possible is a score of 1 to 4: the drug appears to be associated."},
   {t:"Probable", correct:false, why:"Probable is a score of 5 to 8: the drug is the apparent cause."},
   {t:"None; doubtful is a fifth ranking", correct:false, why:"Doubtful and remote are two names for one lowest category."}],
- teach:"Dr. Smith listed the Naranjo rankings as definite, probable, possible and remote. The Naranjo algorithm page prints the score bands as 9 or more definite, 5 to 8 probable, 1 to 4 possible and 0 doubtful. Remote and doubtful therefore name the same lowest category.",
+ teach:"Dr. Smith listed the Naranjo rankings as definite, probable, possible and remote. The Naranjo algorithm page prints the score bands as 9 definite (the page prints 9=definite), 5 to 8 probable, 1 to 4 possible and 0 doubtful. Remote and doubtful therefore name the same lowest category.",
  note:"Conflict: the slide (p. 21) and her words say 'remote'; the Naranjo page says '0=doubtful'. Keyed to her list, with the page's term in the stem.",
  quote:"So these are the rankings definite, probable, possible, or remote.",
- cite:"ADE-Lecture-Students-2026.pdf slide 'Causality of Adverse Drug Reactions' (p. 21); Naranjo Algorithm (one page); transcript 10/28"}
+ cite:"ADE-Lecture-Students-2026.pdf slide 'Causality of Adverse Drug Reactions' (p. 21); Naranjo Algorithm (one page); transcript 10/28"},
+
+/* ---------------- Exam 4 study list item 5: using the Naranjo algorithm (full ten-question cases) ---------------- */
+{id:"L22-088", lecture:"L22", prof:"Smith", tier:"new", topic:"L22", sub:"naranjo", skill:"calc", readingId:"naranjo", core:true, coreWhy:"her Exam 4 study list item 5 (Naranjo)",
+ concept:"naranjo-case-definite", tags:["smith"], source:"both",
+ stem:"Naranjo scoring, all ten questions: previous conclusive reports exist (Q1 yes); the reaction appeared after the drug was given (Q2 yes); it improved when the drug was stopped (Q3 yes); it reappeared when the drug was given again (Q4 yes); no other cause or drug could on its own explain it (Q5 no); no placebo was given (Q6 do not know); no drug level was measured (Q7 do not know); the dose was never changed (Q8 no); the patient never had a similar reaction before (Q9 no); a lab test confirmed the reaction (Q10 yes). What is the total and its category?",
+ options:[
+  {t:"9; definite", correct:true, why:"+1 +2 +1 +2 +2 +0 +0 +0 +0 +1 = 9, the page's definite band."},
+  {t:"8; probable", correct:false, why:"Leaves out the +1 for objective evidence (Q10 yes)."},
+  {t:"7; probable", correct:false, why:"Scores Q5 no as 0; with no alternative cause, a no on Q5 earns +2."},
+  {t:"10; definite", correct:false, why:"Scores Q6 as +1; no placebo was given, so Q6 is do not know, worth 0."}],
+ teach:"Score each answer from its own row: Q1 yes +1; Q2 yes +2; Q3 yes +1; Q4 yes +2; Q5 no +2 (reversed row); Q6 do not know 0; Q7 do not know 0; Q8 no 0; Q9 no 0; Q10 yes +1. Total 9. The page prints 9 = definite; the slide's meaning for definite is that the drug is likely the true cause. The two timing questions worth +2 (Q2 and Q4) and the reversed Q5 carry most of the total.",
+ quote:"So make sure that you are scoring the responses appropriately with this algorithm",
+ cite:"Naranjo Algorithm (one page), questions 1-10 and total score; ADE-Lecture-Students-2026.pdf slide 'Causality of Adverse Drug Reactions' (p. 21); transcript 10/28"},
+
+{id:"L22-089", lecture:"L22", prof:"Smith", tier:"new", topic:"L22", sub:"naranjo", skill:"calc", readingId:"naranjo", core:true, coreWhy:"her Exam 4 study list item 5 (Naranjo)",
+ concept:"naranjo-case-doubtful", tags:["smith"], source:"both",
+ stem:"Naranjo scoring, all ten questions: no previous reports (Q1 no); the reaction appeared after the drug was given (Q2 yes); it did not improve when the drug was stopped (Q3 no); it did not reappear when the drug was given again (Q4 no); another drug could on its own explain it (Q5 yes); it reappeared when a placebo was given (Q6 yes); no drug level was measured (Q7 do not know); the dose was never changed (Q8 no); the patient had a similar reaction to a similar drug before (Q9 yes); no objective evidence (Q10 no). What is the total and its category?",
+ options:[
+  {t:"0; doubtful, which she calls remote", correct:true, why:"0 + 2 + 0 - 1 - 1 - 1 + 0 + 0 + 1 + 0 = 0: doubtful on the page, remote in her ranking."},
+  {t:"-1; doubtful, which she calls remote", correct:false, why:"Leaves out the +1 for a similar reaction on previous exposure (Q9 yes)."},
+  {t:"3; possible, the drug appears associated", correct:false, why:"Scores Q5 yes as +2; Q5 is reversed, so another possible cause is -1."},
+  {t:"1; possible, the drug appears associated", correct:false, why:"Scores Q4 no as 0; a no on Q4 (re-given, no reaction) is -1."}],
+ teach:"Score each answer from its own row: Q1 no 0; Q2 yes +2; Q3 no 0; Q4 no -1; Q5 yes -1; Q6 yes -1; Q7 do not know 0; Q8 no 0; Q9 yes +1; Q10 no 0. Total 0. The page labels a total of 0 doubtful; her ranking (slide p. 21 and spoken) calls the lowest category remote: the drug is not likely responsible. Three negative answers cancel the +2 for timing and the +1 for a previous reaction.",
+ quote:"So these are the rankings definite, probable, possible, or remote.",
+ note:"The page prints \"0=doubtful\"; the slide and her words say remote. The page prints no band for totals below 0.",
+ cite:"Naranjo Algorithm (one page), questions 1-10 and total score; ADE-Lecture-Students-2026.pdf slide 'Causality of Adverse Drug Reactions' (p. 21); transcript 10/28"},
+
+{id:"L22-090", lecture:"L22", prof:"Smith", tier:"new", topic:"L22", sub:"naranjo", skill:"recall", readingId:"naranjo", multi:true, core:true, coreWhy:"her Exam 4 study list item 5 (Naranjo); she said some answers are negative",
+ concept:"naranjo-negative-answers", tags:["smith"], source:"both",
+ stem:"Which Naranjo answers subtract a point from the total? Select all that apply.",
+ options:[
+  {t:"Q2 no: the event did not follow the drug", correct:true, why:"Q2 scores +2 for yes, -1 for no."},
+  {t:"Q4 no: it did not return when the drug was re-given", correct:true, why:"Q4 scores +2 for yes, -1 for no."},
+  {t:"Q5 yes: another cause could explain it", correct:true, why:"Q5 is reversed: -1 for yes, +2 for no."},
+  {t:"Q6 yes: it reappeared with a placebo", correct:true, why:"Q6 scores -1 for yes, +1 for no."},
+  {t:"Q6 no: it did not reappear with a placebo", correct:false, why:"A no on Q6 adds a point (+1)."},
+  {t:"Q3 no: it did not improve when the drug was stopped", correct:false, why:"Q3 scores +1 for yes and 0 for no."},
+  {t:"Q7 do not know: no drug level was measured", correct:false, why:"Do not know is 0 on every question."}],
+ teach:"Four answers on the Naranjo page are -1: Q2 no, Q4 no, Q5 yes and Q6 yes. Each points away from the drug: the reaction did not follow it, did not return with it, has another explanation, or came back with a placebo. Every other no scores 0, except Q5 no (+2) and Q6 no (+1), and do not know is always 0.",
+ quote:"sometimes a no is negative",
+ cite:"Naranjo Algorithm (one page), questions 1-10; ADE-Lecture-Students-2026.pdf slide 'Causality of Adverse Drug Reactions' (p. 21); transcript 10/28"},
+
+{id:"L22-091", lecture:"L22", prof:"Smith", tier:"new", topic:"L22", sub:"naranjo", skill:"recall", readingId:"naranjo", multi:true, core:true, coreWhy:"her Exam 4 study list item 5 (Naranjo)",
+ concept:"naranjo-plus-one-answers", tags:["smith"], source:"both",
+ stem:"Which Naranjo answers add exactly one point? Select all that apply.",
+ options:[
+  {t:"Q7 yes: toxic drug level detected", correct:true, why:"Q7 to Q10 score +1 for yes, 0 for no or do not know."},
+  {t:"Q8 yes: worse at a higher dose or better at a lower one", correct:true, why:"Dose-response, +1 for yes."},
+  {t:"Q9 yes: a similar reaction on previous exposure", correct:true, why:"+1 for yes."},
+  {t:"Q10 yes: confirmed by objective evidence", correct:true, why:"+1 for yes."},
+  {t:"Q6 no: no reaction with a placebo", correct:true, why:"Q6 scores +1 for no (and -1 for yes)."},
+  {t:"Q2 yes: the event followed the drug", correct:false, why:"Q2 yes is +2."},
+  {t:"Q5 no: no other cause could explain it", correct:false, why:"Q5 no is +2."}],
+ teach:"The +1 answers on the page are Q1 yes, Q3 yes, Q6 no and Q7 to Q10 yes. The +2 answers are Q2 yes, Q4 yes and Q5 no. Questions 7 to 10 (toxic level, dose-response, previous similar reaction, objective evidence) never subtract: no and do not know are both 0.",
+ quote:"Also, I, I consider like 6 to be a time kind of thing.",
+ cite:"Naranjo Algorithm (one page), questions 1-10; ADE-Lecture-Students-2026.pdf slide 'Causality of Adverse Drug Reactions' (p. 21); transcript 10/28"}
 );

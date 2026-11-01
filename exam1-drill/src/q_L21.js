@@ -760,5 +760,97 @@ QUESTIONS.push(
   {t:"Neither; no test is described", correct:false, why:"Both labels call for screening for the HLA-B variant."}],
  teach:"For carbamazepine and abacavir the patient is genotyped: the drugs do not act on a tumor target, and the risk lies in the patient's inherited HLA alleles. Trastuzumab is the contrast, where the tumor is examined for HER2.",
  quote:"So you need to answer them for yourself, are you genotyping the patient? Yes, you don't have, we're not dealing with tumors with these drugs for carbamazepine and abacavir.",
- cite:"Pharmacogenomics Questions Drug Labels Worksheet, item 3; Tegretol (carbamazepine) label, Precautions (Laboratory Tests); Ziagen (abacavir) label, 2.1; transcript 10/27"}
+ cite:"Pharmacogenomics Questions Drug Labels Worksheet, item 3; Tegretol (carbamazepine) label, Precautions (Laboratory Tests); Ziagen (abacavir) label, 2.1; transcript 10/27"},
+
+/* ---------------- Exam 4 study list item 4: CPIC warfarin Figure 1 and Figure 2 ---------------- */
+{id:"L21-060", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"cpic-warf", skill:"recall", readingId:"cpic-warfarin-2017", core:true, coreWhy:"her Exam 4 study list item 4 (CPIC Figure 1): the therapeutic target",
+ concept:"cpic-fig1-vkorc1-step", tags:["smith","reading"], source:"both",
+ stem:"In CPIC Figure 1, which conversion does VKORC1, warfarin's target, catalyze?",
+ options:[
+  {t:"Vitamin K epoxide to reduced vitamin K", correct:true, why:"VKORC1 converts the epoxide back to reduced vitamin K (NADH to NAD+), the rate-limiting step in vitamin K recycling."},
+  {t:"Reduced vitamin K to hydroxyvitamin K1", correct:false, why:"That is CYP4F2, which removes vitamin K from the cycle."},
+  {t:"S-warfarin to hydroxyl metabolites", correct:false, why:"That is CYP2C9, the primary metabolizing enzyme of S-warfarin."},
+  {t:"Hypofunctional to functional clotting factors", correct:false, why:"That is gamma-glutamyl carboxylase (GGCX), which uses reduced vitamin K."}],
+ teach:"VKORC1 (vitamin K epoxide reductase) converts vitamin K epoxide to reduced vitamin K, which the guideline calls the rate-limiting step in vitamin K recycling. Both warfarin enantiomers inhibit VKORC1, so reduced vitamin K runs short and fewer functionally active clotting factors are formed. In the same figure CYP4F2 converts reduced vitamin K to hydroxyvitamin K1, CYP2C9 metabolizes S-warfarin, and GGCX makes the functional clotting factors.",
+ quote:"So here's warfarin, the R and the S and tamers, they're hitting VKRC1, right? That helps reduce the production of active coagulation factors because by inhibiting VKRC1, you don't get as much active vitamin K.",
+ cite:"CPIC warfarin guideline 2017 update, Figure 1 and legend (p. 398), 'VKORC1 and warfarin' (p. 399); PGx-Resources-and-Cases-Students-Fall-2026.pdf slide 'CPIC Guidelines 7' (p. 15); transcript 10/27"},
+
+{id:"L21-061", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"cpic-warf", skill:"recall", readingId:"cpic-warfarin-2017", core:true, coreWhy:"her Exam 4 study list item 4 (CPIC Figure 1): how vitamin K is involved",
+ concept:"cpic-fig1-vitk-ggcx", tags:["smith","reading"], source:"both",
+ stem:"In CPIC Figure 1, what does reduced vitamin K do in the clotting pathway?",
+ options:[
+  {t:"GGCX uses it to make functional clotting factors", correct:true, why:"Gamma-glutamyl carboxylase (GGCX) uses reduced vitamin K to carboxylate hypofunctional clotting factors into functional, Gla-containing ones; vitamin K returns to the epoxide."},
+  {t:"It inhibits VKORC1 directly", correct:false, why:"Warfarin inhibits VKORC1; reduced vitamin K is VKORC1's product."},
+  {t:"CYP2C9 uses it to clear S-warfarin", correct:false, why:"CYP2C9 metabolizes S-warfarin; vitamin K is not part of that step."},
+  {t:"It turns functional clotting factors back into hypofunctional ones", correct:false, why:"The step runs the other way: hypofunctional to functional."}],
+ teach:"In Figure 1, reduced vitamin K is the cofactor gamma-glutamyl carboxylase (GGCX) uses to carboxylate hypofunctional clotting factors into functional, Gla-containing clotting factors; in that step it becomes vitamin K epoxide. VKORC1 then reduces the epoxide back, the step warfarin blocks. Calumenin (CALU), an endoplasmic reticulum chaperone, can bind and inhibit GGCX. CYP4F2 converts reduced vitamin K to hydroxyvitamin K1, removing it from the cycle. Vitamin K is the antidote for warfarin.",
+ quote:"vitamin K got um. Change to the vitamin K epoxide in active form when it was used as a cofactor for the vitamin K dependent uh uh glutamyl carboxylase enzyme, which created those active clotting factors that we need to coagulate our blood.",
+ cite:"CPIC warfarin guideline 2017 update, Figure 1 and legend (p. 398); PGx-Resources-and-Cases-Students-Fall-2026.pdf slide 'CPIC Guidelines 7' (p. 15); transcript 10/26 and 10/27"},
+
+{id:"L21-062", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"cpic-warf", skill:"recall", readingId:"cpic-warfarin-2017", core:true, coreWhy:"her Exam 4 study list item 4 (CPIC Figure 1): how the drug is metabolized",
+ concept:"cpic-fig1-s-warfarin", tags:["smith","reading"], source:"both",
+ stem:"Warfarin is given as a racemic mixture of R- and S-warfarin. Which statement about S-warfarin matches the CPIC Figure 1 legend?",
+ options:[
+  {t:"3-5 times more potent; mainly CYP2C9", correct:true, why:"Legend: S-warfarin is 3-5 times more potent than R-warfarin and is metabolized predominantly to 7- and 6-hydroxyl metabolites via CYP2C9."},
+  {t:"Less potent than R-warfarin; mainly CYP2C9", correct:false, why:"S is the more potent enantiomer; she called R weak."},
+  {t:"3-5 times more potent; mainly CYP4F2", correct:false, why:"CYP4F2 metabolizes reduced vitamin K, not warfarin."},
+  {t:"As potent as R-warfarin; both cleared by VKORC1", correct:false, why:"VKORC1 is the target both enantiomers inhibit, not a clearing enzyme."}],
+ teach:"Figure 1 legend: warfarin is administered as a racemic mixture of the R- and S-stereoisomers. S-warfarin is 3-5 times more potent than R-warfarin and is metabolized predominantly to 7- and 6-hydroxyl metabolites via CYP2C9; the text calls CYP2C9 the primary metabolizing enzyme of S-warfarin. Both enantiomers inhibit VKORC1. The figure does not name R-warfarin's enzymes; she said R is weak and is metabolized by multiple CYPs. This is why CYP2C9 variants change the warfarin dose.",
+ quote:"We know already the SNHammer is highly metabolized by 2C9, OK. Both these anatommers work on the VKRC1.",
+ cite:"CPIC warfarin guideline 2017 update, Figure 1 legend and 'CYP2C9 and warfarin' (p. 398); PGx-Resources-and-Cases-Students-Fall-2026.pdf slide 'CPIC Guidelines 7' (p. 15); transcript 10/26"},
+
+{id:"L21-063", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"cpic-warf", skill:"recall", readingId:"cpic-warfarin-2017", core:true, coreWhy:"her Exam 4 study list item 4 (CPIC Figure 2): which populations have the highest frequencies",
+ concept:"vkorc1-1639a-population", tags:["smith","reading"], source:"both",
+ stem:"In the Goodman and Gilman panel of VKORC1 -1639G>A allele frequencies (G = higher dose required, A = lower dose required), which population carries the A allele most often?",
+ options:[
+  {t:"East Asian", correct:true, why:"The A segment fills most of the East Asian bar."},
+  {t:"European and North American", correct:false, why:"A fills a little under half of that bar, between the other two."},
+  {t:"African", correct:false, why:"A is least common in the African bar, where G (higher dose required) dominates."},
+  {t:"All three about equally", correct:false, why:"The bars differ sharply; the guideline says the -1639A frequency varies among ancestral populations."}],
+ teach:"VKORC1 -1639A lowers the warfarin dose. In the panel the A allele is most common in East Asian, intermediate in European and North American, and least common in African populations. The CPIC guideline says the -1639A frequency varies among ancestral populations and largely explains the differences in average dose requirements between whites, blacks and Asians. On 10/21 she said the frequency graphs do not have to be memorized; the order is what is keyed here.",
+ quote:"you should know which genetic variants we're concerned about and in which populations",
+ note:"On 10/21 she said of the frequency figure: \"OK, so you don't have to memorize this.\" On 10/28 she said to know which variants matter in which populations. Keyed to the order only, no percentages.",
+ cite:"PGx-Examples-Students-Fall-2026.pdf slide 'Allele and Phenotype Frequencies' (p. 9, panel B); CPIC warfarin guideline 2017 update, 'VKORC1 and warfarin' (p. 399); PGx-Resources-and-Cases-Students-Fall-2026.pdf slide 'CPIC Guidelines 7' (p. 15); transcript 10/28"},
+
+{id:"L21-064", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"cpic-warf", skill:"recall", readingId:"cpic-warfarin-2017", multi:true, core:true, coreWhy:"her Exam 4 study list item 4 (CPIC Figure 2): which populations have the highest frequencies",
+ concept:"cpic-fig2-populations", tags:["smith","reading"], source:"both",
+ stem:"Which statements about who carries the CPIC Figure 2 variants match the 2017 guideline? Select all that apply.",
+ options:[
+  {t:"CYP2C9*5, *6, *8 and *11 are most frequent in African ancestry", correct:true, why:"Found with the highest frequency in African ancestry, and collectively more common there than *2 and *3 (p. 399)."},
+  {t:"CYP2C9*2 is virtually absent in Asians", correct:true, why:"The guideline's words (p. 400)."},
+  {t:"45-50% of self-reported African ancestry carry *5, *6, *8, *11 or rs12777823", correct:true, why:"Figure 2 footnote c."},
+  {t:"The rs12777823 dose association has been found only in African Americans", correct:true, why:"The variant is common in other populations, but the dose association has only been detected among African Americans (p. 399)."},
+  {t:"The CYP4F2*3 dose effect is confirmed in African ancestry", correct:false, why:"Confirmed in European and Asian ancestry, not African; no CYP4F2 recommendation on the African branch."},
+  {t:"CYP2C9*2 and *3 are most common in East Asian ancestry", correct:false, why:"They are the most common decreased-function alleles in European ancestry."}],
+ teach:"Population by variant: VKORC1 -1639A is most common in East Asian ancestry; CYP2C9*2 and *3 are the most common decreased-function alleles in European ancestry, with *2 virtually absent in Asians; CYP2C9*5, *6, *8 and *11 are most frequent in African ancestry; the CYP4F2*3 dose effect is confirmed in European and Asian, not African, ancestry; the rs12777823 dose association is seen only in African Americans. Together, 45-50% of people with self-reported African ancestry carry *5, *6, *8, *11 or rs12777823, which is why those are tested on the African branch.",
+ quote:"These variants are up high for people of African ancestry because we know that they could have a higher probability of having one of those genotypes",
+ cite:"CPIC warfarin guideline 2017 update, gene sections (pp. 398-400), Figure 2 and footnote c (p. 401); PGx-Resources-and-Cases-Students-Fall-2026.pdf slide 'CPIC Guidelines 7' (p. 15); transcript 10/27"},
+
+{id:"L21-065", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"cpic-warf", skill:"recall", readingId:"cpic-warfarin-2017", core:true, coreWhy:"her Exam 4 study list item 4 (CPIC Figure 2): how and why the dose is adjusted for each variant",
+ concept:"rs12777823-why", tags:["smith","reading"], source:"both",
+ stem:"Why does the CPIC algorithm lower the warfarin dose 10-25% in African Americans who carry the rs12777823 A allele?",
+ options:[
+  {t:"Altered warfarin clearance, independent of CYP2C9*2 and *3", correct:true, why:"The guideline's reason (p. 399); carriers need 7 (heterozygous) or 9 (homozygous) mg/week less."},
+  {t:"Lower CYP4F2 activity, leaving more vitamin K", correct:false, why:"That is CYP4F2*3, which raises the dose and is applied only on the non-African branch."},
+  {t:"Higher VKORC1 expression", correct:false, why:"rs12777823 lies in the CYP2C cluster near CYP2C18, not in VKORC1."},
+  {t:"It is a CYP2C9 gain-of-function allele that speeds S-warfarin clearance", correct:false, why:"Faster clearance would call for a higher dose; the algorithm lowers it."}],
+ teach:"rs12777823 is a SNP in the CYP2C cluster near the CYP2C18 gene on chromosome 10. It is associated with significant alterations in warfarin clearance, independent of CYP2C9*2 and *3, and African Americans who carry the A allele need lower doses. The variant is common in other ethnic populations, but a dose association has been found only in African Americans, which suggests it is not the cause itself but is inherited with other variant(s) on a haplotype. She described it as another P450 variant that lowers the dose by decreasing activity somewhere in the 2C9 area, not yet well identified.",
+ quote:"this RS 1227823, it's another P450 variant, and it is requiring a decreased dose because it's decreasing the activity of somewhere of the 2C9.",
+ note:"Her wording (\"another P450 variant\", \"decreasing the activity of somewhere of the 2C9\") is looser than the guideline's (a SNP in the CYP2C cluster near CYP2C18, altered clearance independent of *2 and *3, likely not causal). Both give a dose decrease; the option uses the guideline's wording. The transcript renders the rs number as \"RS 1227823\".",
+ cite:"CPIC warfarin guideline 2017 update, 'CYP2C rs12777823 and warfarin' (p. 399), Figure 2 (p. 401); PGx-Resources-and-Cases-Students-Fall-2026.pdf slide 'CPIC Guidelines 7' (p. 15); transcript 10/27"},
+
+{id:"L21-066", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"cpic-warf", skill:"apply", readingId:"cpic-warfarin-2017", multi:true, core:true, coreWhy:"her stated case format; Exam 4 study list item 4 (CPIC Figure 2)",
+ concept:"cpic-warf-her-case", tags:["smith","inclass"], source:"both",
+ stem:"A patient of non-African ancestry is CYP2C9*3/*3, VKORC1 wild type (-1639G/G) and carries CYP4F2*3. Which statements fit the CPIC 2017 algorithm? Select all that apply.",
+ options:[
+  {t:"All genotypes known for this branch were tested", correct:true, why:"Her answer: for a patient of non-African descent, all the genotypes that should be checked were checked."},
+  {t:"CYP2C9*3/*3 on its own lowers the dose", correct:true, why:"*3 is decreased function; carriers need lower doses (p. 398)."},
+  {t:"CYP4F2*3 on its own raises the dose 5-10%", correct:true, why:"Less vitamin K is removed, so more warfarin is needed (Figure 2, OPTIONAL)."},
+  {t:"An alternative anticoagulant may be considered", correct:true, why:"Figure 2 footnote e: consider an alternative agent for CYP2C9 poor metabolism, e.g. *3/*3."},
+  {t:"rs12777823 must be tested before dosing", correct:false, why:"rs12777823 is on the African-ancestry branch only."},
+  {t:"VKORC1 G/G on its own lowers the dose", correct:false, why:"G/G is the reference genotype; -1639A carriers are the ones who need progressively lower doses."}],
+ teach:"On the non-African branch the dose is calculated from VKORC1 -1639G>A and CYP2C9*2 and *3, then CYP4F2*3 adds 5-10%. CYP2C9*3/*3 pushes the dose down and puts the patient in the poor-metabolism group, for which an alternative oral anticoagulant may be considered; VKORC1 G/G is the reference; CYP4F2*3 pushes the dose up. Neither she nor the guideline gives a single net figure for this combination; on 10/28 she said the CYP2C9 variants and the CYP4F2 variant have opposite effects on the dose and that each variant's effect alone must be explained.",
+ quote:"did we do all the genotyping we should for this patient that we know of yet so far? You'd say, yeah, for that patient, non-African American descent, yeah, we, we checked all the genotypes we should have.",
+ note:"Her worked case on 10/27. She also asked whether the patient needs relatively more or less than the average starting dose; the recording does not contain her answer, so only each variant's direction is keyed.",
+ cite:"CPIC warfarin guideline 2017 update, 'CYP2C9 and warfarin' (p. 398), 'VKORC1 and warfarin' (p. 399), Figure 2 and footnote e (p. 401); PGx-Resources-and-Cases-Students-Fall-2026.pdf slide 'CPIC Guidelines 7' (p. 15); transcript 10/27 and 10/28"}
 );
