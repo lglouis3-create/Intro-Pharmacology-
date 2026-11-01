@@ -3,7 +3,7 @@
  "title": "Synonymous, non-synonymous and premature stop snips",
  "segs": [
   {
-   "text": "Section four. snip types in coding regions. A single nucleotide polymorphism is one base pair changed in a gene. Several million are known, and many change nothing about the gene's product. Coding regions are the parts translated to R N A and then protein. A codon is three bases coding one amino acid, and a coding snip is classed by what it does to the codon: same amino acid, synonymous; different amino acid, non-synonymous; early stop codon, premature stop.",
+   "text": "Section four. snip types in coding regions. A single nucleotide polymorphism is one base pair changed in a gene. Several million are known, and many change nothing about the gene's product. Coding regions are the parts transcribed to R N A and then translated to protein. A codon is three bases coding one amino acid, and a coding snip is classed by what it does to the codon: same amino acid, synonymous; different amino acid, non-synonymous; early stop codon, premature stop.",
    "slide": "pgx:32",
    "reading": null
   },

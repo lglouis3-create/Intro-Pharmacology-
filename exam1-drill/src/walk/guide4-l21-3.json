@@ -3,13 +3,13 @@
  "title": "Walking the C P I C warfarin algorithm",
  "segs": [
   {
-   "text": "Section twenty five. The C P I C warfarin algorithm. C P I C, the Clinical Pharmacogenetics Implementation Consortium, publishes guidelines on using a patient's genotype to choose a drug or dose. Its two thousand seventeen warfarin guideline has two figures. Figure one shows how warfarin works: V K O R C one is warfarin's target, sip two C nine clears S warfarin, the potent form, and sip four F two removes vitamin K, warfarin's antidote.",
+   "text": "Section twenty five. The C P I C warfarin algorithm. C P I C, the Clinical Pharmacogenetics Implementation Consortium, publishes guidelines on using a patient's genotype to choose a drug or dose. Its two thousand seventeen warfarin guideline has two figures. The first figure shows how warfarin works: V K O R C one is warfarin's target, sip two C nine clears S warfarin, the potent form, and sip four F two removes vitamin K, warfarin's antidote.",
    "slide": null,
    "reading": null,
    "step": "warfarin-target@6"
   },
   {
-   "text": "Figure two turns genotypes into a starting dose. Each gene's place in Figure one tells you which way its variant moves the dose: a weaker target or slower clearance of warfarin means less warfarin; slower removal of vitamin K means more. The algorithm starts with one question: are the V K O R C one and two C nine genotypes available? If not, the patient is dosed clinically, without genetic information, by a clinical dosing algorithm or a standard dose. Nobody waits for a genotype to start warfarin.",
+   "text": "The second figure, a dosing algorithm, turns genotypes into a starting dose. Each gene's role in warfarin's action tells you which way its variant moves the dose: a weaker target or slower clearance of warfarin means less warfarin; slower removal of vitamin K means more. The algorithm starts with one question: are the V K O R C one and sip two C nine genotypes available? If not, the patient is dosed clinically, without genetic information, by a clinical dosing algorithm or a standard dose. Nobody waits for a genotype to start warfarin.",
    "slide": null,
    "reading": null,
    "step": "warfarin-genotype@0"
@@ -21,31 +21,31 @@
    "step": "warfarin-genotype@1"
   },
   {
-   "text": "On the non African branch, the dose is calculated with a published pharmacogenetic algorithm from V K O R C one and two C nine star two and star three. On the African branch, two C nine star five, six, eight and eleven must be tested first; if not, the patient is dosed clinically. They come first because they are common in African ancestry, not because they raise enzyme activity: forty five to fifty percent of people with self reported African ancestry carry one of them or a marker called r s one two seven seven seven eight two three.",
+   "text": "On the non African branch, the dose is calculated with a published pharmacogenetic algorithm from V K O R C one and sip two C nine star two and star three. On the African branch, two C nine star five, six, eight and eleven must be tested first; if they have not been tested, the patient is dosed clinically. They come first because they are common in African ancestry, not because they raise enzyme activity. Forty five to fifty percent of people with self reported African ancestry carry one of them or a marker called r s one two seven seven seven eight two three.",
    "slide": null,
    "reading": null,
    "step": "warfarin-genotype@2"
   },
   {
-   "text": "The first variant, on both branches, is V K O R C one minus sixteen thirty nine A. The minus sign marks a position upstream of the gene, in a region that sets how much V K O R C one protein is made; it is not a deletion. One A copy lowers the dose, two A copies lower it further, because the target is less active, so less drug is needed to block it. The A allele is most common in East Asian ancestry, then European, least in African.",
+   "text": "The first variant, on both branches, is V K O R C one minus sixteen thirty nine A. The minus sign marks a position upstream of the gene, in a region that sets how much V K O R C one protein is made; it is not a deletion. One copy of the A allele lowers the dose, two copies lower it further, because the target is less active, so less drug is needed to block it. The allele with A is most common in East Asian ancestry, then European, least in African.",
    "slide": null,
    "reading": null,
    "step": "warfarin-genotype@3"
   },
   {
-   "text": "Next, two C nine star two and star three, also on both branches, lower the dose. They are decreased function alleles, so S warfarin builds up and bleeding risk rises at a standard dose. Her slide gives the activity left as twenty percent for star two and five percent for star three. They are the most common decreased function alleles in European ancestry, and star two is virtually absent in Asians.",
+   "text": "Next, sip two C nine star two and star three, also on both branches, lower the dose. They are decreased function alleles, so S warfarin builds up and bleeding risk rises at a standard dose. Her slide gives the activity left as twenty percent for star two and five percent for star three. They are the most common decreased function alleles in European ancestry, and star two is virtually absent in Asians.",
    "slide": null,
    "reading": null,
    "step": "warfarin-genotype@4"
   },
   {
-   "text": "Two C nine star five, six, eight and eleven are also decreased function alleles; the calculated dose is lowered fifteen to thirty percent with one variant allele and twenty to forty percent with two. They are most frequent in African ancestry. On the non African branch this applies only if one is found.",
+   "text": "Sip two C nine star five, six, eight and eleven are also decreased function alleles; the calculated dose is lowered fifteen to thirty percent with one variant allele and twenty to forty percent with two. They are most frequent in African ancestry. On the non African branch this applies only if one is found.",
    "slide": null,
    "reading": null,
    "step": "warfarin-genotype@5"
   },
   {
-   "text": "Four F two star three is used on the non African branch only, and it raises the dose five to ten percent. The star three enzyme removes less vitamin K, so more antidote stays and more warfarin is needed against it. The effect is confirmed in European and Asian ancestry but not African, so the African branch makes no four F two recommendation.",
+   "text": "Sip four F two star three is used on the non African branch only, and it raises the dose five to ten percent. The star three enzyme removes less vitamin K, so more antidote stays and more warfarin is needed against it. The effect is confirmed in European and Asian ancestry but not African, so the African branch makes no four F two recommendation.",
    "slide": null,
    "reading": null,
    "step": "warfarin-genotype@6"
@@ -57,7 +57,7 @@
    "step": "warfarin-genotype@7"
   },
   {
-   "text": "Her case: a non African patient, two C nine star three star three, V K O R C one G G, the reference genotype, carrying four F two star three. Was all the known genotyping done? Yes, for a non African patient. More or less than the average starting dose? Gene by gene: star three cuts S warfarin metabolism eighty to ninety percent, so star three star three lowers the dose, and a different anticoagulant may be considered. V K O R C one G G changes nothing. Four F two star three raises the dose five to ten percent. Those are opposite effects, and the guideline gives no single net figure.",
+   "text": "Her case: a non African patient, sip two C nine star three star three, V K O R C one G G, the reference genotype, carrying four F two star three. Was all the known genotyping done? Yes, for a non African patient. More or less than the average starting dose? Gene by gene: by the guideline, star three cuts S warfarin metabolism eighty to ninety percent, so star three star three lowers the dose, and a different anticoagulant may be considered. V K O R C one G G changes nothing. Four F two star three raises the dose five to ten percent. Those are opposite effects, and the guideline gives no single net figure.",
    "slide": null,
    "reading": null,
    "table": 2

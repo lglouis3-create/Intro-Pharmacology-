@@ -3,7 +3,7 @@
  "title": "When a metabolizing enzyme variant matters",
  "segs": [
   {
-   "text": "Section eight. When a metabolizing enzyme variant matters. Variation in metabolizing enzymes is the biggest reason for variation in drug response. A variant is clinically important in three cases: the enzyme is the major route that eliminates the drug or ends its action; the drug is a prodrug, given inactive, that an enzyme must activate; or an altered pathway, or the parent drug itself, causes toxicity. A drug excreted unchanged by the kidney does not depend on a metabolizing enzyme, so a variant there does not change how it is handled.",
+   "text": "Section eight. When a metabolizing enzyme variant matters. Variation in metabolizing enzymes is the biggest reason for variation in drug response. A variant is clinically important in three cases. First, the enzyme is the major route that eliminates the drug or ends its action. Second, the drug is a prodrug, given inactive, that an enzyme must activate. Third, an altered pathway, or the parent drug itself, causes toxicity. A drug excreted unchanged by the kidney does not depend on a metabolizing enzyme, so a variant there does not change how it is handled.",
    "slide": "pgxex:12",
    "reading": null
   },
@@ -13,7 +13,7 @@
    "reading": null
   },
   {
-   "text": "Clopidogrel shows that the busiest enzyme is not always the one that decides. It is a platelet receptor inhibitor, which stops platelets sticking together, and a prodrug. About eighty five percent of a dose is inactivated by esterases and only about fifteen percent is activated in two sip steps, yet variants in sip two C nineteen most change how much active drug forms.",
+   "text": "Clopidogrel shows that the busiest enzyme is not always the one that decides. It is a platelet receptor inhibitor, which stops platelets sticking together, and a prodrug. About eighty five percent of a dose is inactivated by esterases and only about fifteen percent is activated in two steps by sip enzymes, yet variants in sip two C nineteen most change how much active drug forms.",
    "slide": "pgxex:15",
    "reading": null
   }

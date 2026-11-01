@@ -3,7 +3,7 @@
  "title": "Four ways to name a genetic variant",
  "segs": [
   {
-   "text": "Section one. Naming genetic variants. One variant can be written four ways, depending on which system its discoverers chose. Reports use all four, so you must know what each tells you: where the change is, which version is the wild type, meaning the normal version, and which is the variant. One rule for every gene: the gene symbol is in italics, the protein is not. T P M T in italics is the gene; in plain type it is the enzyme, thiopurine methyltransferase.",
+   "text": "Section one. Naming genetic variants. One variant can be written four ways, depending on which system its discoverers chose. Reports use all four, and each tells you different things: where the change is, which version is the wild type, meaning the normal version, and which is the variant. One rule for every gene: the gene symbol is in italics, the protein is not. T P M T in italics is the gene; in plain type it is the enzyme, thiopurine methyltransferase.",
    "slide": "pgx:22",
    "reading": null
   },
@@ -13,7 +13,7 @@
    "reading": null
   },
   {
-   "text": "Second, the snip system, for single nucleotide polymorphism: V K O R C one, eleven seventy three, C to T. Gene, position, wild type nucleotide first, an arrow, then the variant. Another example is A B C B one, thirty four thirty five, C to T; A B C B one codes P-glycoprotein. The trap is reading the order backward: C is the wild type, because the wild type is always written first.",
+   "text": "Second, the snip system, for single nucleotide polymorphism: V K O R C one, eleven seventy three, C to T. Gene, position, wild type nucleotide first, an arrow, then the variant. Another example is A B C B one, thirty four thirty five, C to T; A B C B one codes P-glycoprotein. C is the wild type, because the wild type is always written first.",
    "slide": "pgx:24",
    "reading": null
   },

@@ -159,7 +159,7 @@ QUESTIONS.push(
   {t:"*3 is a deletion that shifted the numbering", correct:false, why:"*3 is a single G to A change."},
   {t:"*3 is the more common allele", correct:false, why:"Frequency does not set the number."},
   {t:"*3 was identified after *2", correct:true, why:"Star numbers follow the order in which variants were characterized, so their locations can be scrambled along the gene."}],
- teach:"Star numbers follow the order of discovery, not position. *3 (nucleotide 636) is closer to the start codon than *2 (nucleotide 681) because it was found later. In a table the numbers run in order while the locations are scrambled.",
+ teach:"Star numbers follow the order of discovery, not position. *3 (nucleotide 636) is closer to the start codon than *2 (nucleotide 681), yet it has the higher number because it was found later. In a table the numbers run in order while the locations are scrambled.",
  quote:"it's because they identified the star 2 variant first. And later they characterized the star 3 variant, so it was the next one.",
  note:"Her questions: \"Is 3 to the right or the left?\" and \"why did they put 3? To the left\"; the accepted answer: \"Yes, it was found later.\"",
  cite:"Intro to PGx Lecture Students Fall 2026.pdf slide ‘Allele “Star” Nomenclature’ (p. 25); (T) 10/21 transcript"},
@@ -418,7 +418,7 @@ QUESTIONS.push(
   {t:"Microsatellite", correct:false, why:"A microsatellite is a tandem repeat of a short sequence, not a single base change."},
   {t:"Non-coding (intronic) SNP", correct:false, why:"SNPs split into coding and non-coding; a non-coding SNP is not a coding type."},
   {t:"Small insertion/deletion", correct:false, why:"An InDel adds or removes bases and is not a single nucleotide polymorphism."}],
- teach:"Coding regions are the parts of a gene translated to RNA and then protein. Coding SNPs are synonymous, non-synonymous or premature stop codons; these are the ones of interest in pharmacogenomics.",
+ teach:"Coding regions are the parts of a gene that are transcribed to RNA and then translated to protein. Coding SNPs are synonymous, non-synonymous or premature stop codons; these are the ones of interest in pharmacogenomics.",
  quote:"within the coding regions of genes, we'll classify snips as being synonymous or non-synonymous. Or being premature stop codons.",
  cite:"Intro to PGx Lecture Students Fall 2026.pdf slide ‘SNPs’ (p. 32); (T) 10/21 transcript"},
 

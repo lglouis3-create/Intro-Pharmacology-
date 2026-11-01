@@ -34,6 +34,15 @@ const RULES = [
   [/\be\.g\./g, 'for example'], [/\bi\.e\./g, 'that is'], [/\bvs\.?\b/g, 'versus'], [/ \/ /g, ' or '],
   [/[()]/g, ', '], [/\s*;\s*/g, '; '], [/\s+([,.;:])/g, '$1'], [/,([.;:])/g, '$1'], [/;\s*,/g, ';'], [/,\s*,/g, ','], [/\s+/g, ' ']];
 const say = t => RULES.reduce((x, [re, r]) => x.replace(re, r), strip(t)).trim();
+const PATCH = JSON.parse(fs.readFileSync(path.join(__dirname, 'say4_patches.json'), 'utf8')), MISS = [];
+// reviewer fixes, written against the rule output, then a few rules for what no patch covered
+const patch = (file, t) => { for (const [a, b] of PATCH[file] || []) { if (t.includes(a)) t = t.replace(a, b); else MISS.push(file + ': ' + a.slice(0, 50)); } return t; };
+const ABBR = {'P450': 'P four fifty', 'SSRIs': 'S S R I drugs', 'SSRI': 'S S R I', 'NSAIDs': 'N S A I D drugs', 'NSAID': 'N S A I D', 'MAOIs': 'M A O I drugs', 'MAOI': 'M A O I', 'P-gp': 'P glycoprotein', 'OATP1B1': 'O A T P one B one', 'MDR1': 'M D R one',
+  'dbSNP': 'd b snip', 'VNTRs': 'V N T R repeats', 'VNTR': 'V N T R', 'ClinPGx': 'Clin P G X', 'PharmGKB': 'Pharm G K B', 'JCAHO': 'the Joint Commission', 'OTC': 'over the counter', 'ADME': 'A D M E', 'PAHs': 'P A H compounds', 'ATPase': 'A T P ase',
+  '5-FU': 'five F U', 'SN-38': 'S N thirty eight', 'WHO': 'W H O', 'U.S.': 'U S', 'IVs': 'intravenous solutions'};
+const POST = [[/\b(\d+)-(\d+)\b/g, '$1 to $2'], [/,\s*(PM|UM|IM|EM|NM|RM),/g, ','], [/\b[Tt]ype IV\b/g, 'type four'], [/\b[Tt]ype III\b/g, 'type three'], [/\b[Tt]ype II\b/g, 'type two'], [/\b[Tt]ype I\b/g, 'type one'],
+  [/\bphase II\b/g, 'phase two'], [/\bphase III\b/g, 'phase three'], [/\+(\d)/g, 'plus $1'], [/\bQ(\d+)\b/g, 'question $1'], [/H\. pylori/g, 'H pylori'], [/\bpH\b/g, 'p H'], [/\bm([12])\b/g, (m, d) => 'm ' + num(d)], [/\b([Gg]roup) ([123])\b/g, (m, g, d) => g + ' ' + num(d)], [/\s+([,.;:])/g, '$1'], [/,([.;:])/g, '$1'], [/\s+/g, ' ']];
+const post = t => POST.reduce((x, [re, r]) => x.replace(re, r), Object.entries(ABBR).reduce((x, [a, b]) => x.split(a).join(b), t)).replace(/ = /g, ' is ').trim();
 const q = [];
 for (const f of fs.readdirSync('walk').filter(f => f.startsWith('guide4-')).sort()) {
   const d = JSON.parse(fs.readFileSync('walk/' + f)); d.segs.forEach((s, i) => q.push({file: `gw-${d.id}-${i}.mp3`, text: s.text.replace(/\s+/g, ' ').trim()}));
@@ -41,9 +50,10 @@ for (const f of fs.readdirSync('walk').filter(f => f.startsWith('guide4-')).sort
 const ctx = {TOPICS: [], QUESTIONS: [], console}; vm.createContext(ctx);
 for (const l of ['L18', 'L19', 'L20', 'L21', 'L22']) vm.runInContext(fs.readFileSync(`q_${l}.js`, 'utf8'), ctx);
 for (const x of ctx.QUESTIONS) { if (!x.teach || x.lowYield || x.dupOf) continue;
-  const t = Array.isArray(x.teach) ? x.teach.map(y => y.t).join(' ') : x.teach; q.push({file: `q-${x.id}.mp3`, text: say(t)}); }
+  const t = Array.isArray(x.teach) ? x.teach.map(y => y.t).join(' ') : x.teach; q.push({file: `q-${x.id}.mp3`, text: post(patch(`q-${x.id}.mp3`, say(t)))}); }
 const sx = {console}; vm.createContext(sx); vm.runInContext(fs.readFileSync('steps4.js', 'utf8') + ';this.R=STEPS3', sx);
-for (const k of ['pgx-names', 'warfarin-target', 'warfarin-genotype', 'naranjo-case']) sx.R[k].steps.forEach((s, i) => q.push({file: `s3-${k}-${i}.mp3`, text: say(s.t)}));
+for (const k of ['pgx-names', 'warfarin-target', 'warfarin-genotype', 'naranjo-case']) sx.R[k].steps.forEach((s, i) => q.push({file: `s3-${k}-${i}.mp3`, text: post(patch(`s3-${k}-${i}.mp3`, say(s.t)))}));
 for (const id of ['furuta-1998', 'katzung-5']) { const l = JSON.parse(fs.readFileSync(`readings/${id}.json`)).listen;
   q.push({file: `rd-${id}.mp3`, text: (typeof l === 'string' ? l : l.map(y => typeof y === 'string' ? y : y.t).join(' ')).replace(/\s+/g, ' ').trim()}); }
+if (MISS.length) process.stderr.write('patches not applied: ' + MISS.length + '\n' + MISS.join('\n') + '\n');
 process.stdout.write(JSON.stringify(q, null, 0));

@@ -8,7 +8,7 @@
    "reading": null
   },
   {
-   "text": "It has three sections, by strength of data. Section one: the data support therapeutic management recommendations; she called it the meatiest. Section two: the data indicate a potential impact on safety or response. Section three: the data show a potential impact on pharmacokinetic properties only, the lightest. So section one is the strongest, not section three.",
+   "text": "It has three sections, by strength of data. Section one: the data support therapeutic management recommendations; she called it the most substantial. Section two: the data indicate a potential impact on safety or response. Section three: the data show a potential impact on pharmacokinetic properties only, the lightest. So section one is the strongest, not section three.",
    "slide": "pgxres:5",
    "reading": null
   },
@@ -19,7 +19,7 @@
    "table": 0
   },
   {
-   "text": "The second table, the one she prefers, is the Table of Pharmacogenomic Biomarkers in Drug Labeling: every F D A approved drug whose label contains pharmacogenomic information, including germline or somatic gene variants, functional deficiencies, gene expression variations, chromosomal abnormalities, and protein biomarkers used to select therapy. It leaves out non human genetic biomarkers, biomarkers used only for diagnosis, and biomarkers related to a drug other than the referenced drug.",
+   "text": "The second table, the one she prefers, is the Table of Pharmacogenomic Biomarkers in Drug Labeling. It lists every F D A approved drug whose label contains pharmacogenomic information. That includes germline or somatic gene variants, functional deficiencies, gene expression variations, chromosomal abnormalities, and protein biomarkers used to select therapy. It leaves out non human genetic biomarkers, biomarkers used only for diagnosis, and biomarkers related to a drug other than the referenced drug.",
    "slide": "pgxres:6",
    "reading": null
   },
@@ -30,7 +30,7 @@
    "table": 0
   },
   {
-   "text": "The labeling sections column names the parts of the label that discuss pharmacogenomics. For abacavir: Boxed Warning, Dosage and Administration, Contraindications, and Warnings and Precautions. Every F D A label uses the same sections, so a pharmacist checking for a pharmacogenomic boxed warning or genotype based dosing goes straight to the section named. Its application is helping pharmacists make informed decisions on medication therapy management from the latest labeling. Its limitation is scope and lag: only F D A approved drugs, and it may miss emerging information, because it follows the labels and is updated periodically.",
+   "text": "For each drug, this table also names the sections of the label that discuss pharmacogenomics. For abacavir: Boxed Warning, Dosage and Administration, Contraindications, and Warnings and Precautions. Every F D A label uses the same sections, so a pharmacist checking for a pharmacogenomic boxed warning or genotype based dosing goes straight to the section named. Its application is helping pharmacists make informed decisions on medication therapy management from the latest labeling. Its limitation is scope and lag: only F D A approved drugs, and it may miss emerging information, because it follows the labels and is updated periodically.",
    "slide": "pgxres:7",
    "reading": null
   }
