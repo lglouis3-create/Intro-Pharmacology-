@@ -9,6 +9,7 @@ Newest first. The build embeds this file; the Topics page shows what is new sinc
 - Two keys changed: L20-031 (variant affects ACE inhibitor side effects, not efficacy) and L22-004 (potential ADE).
 - Where she differs from a label or slide, the note gives both: simvastatin 221%, TPMT 35%, grapefruit, carbamazepine.
 - Correct options are no longer the longest choice in 13 more items.
+- FDA Associations table checked against the live FDA page (updated 9/10/2026); "no detailed guidance" per her slide.
 
 ## 2026-11-01 (Variant drill)
 

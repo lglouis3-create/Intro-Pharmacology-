@@ -1008,7 +1008,7 @@ const GUIDE4_HTML = `
 <h3>23. The FDA tables: pharmacogenetic associations and biomarkers in drug labeling</h3>
 
 <h4>The idea</h4>
-<p>The FDA keeps two online tables that list drugs with a known gene-drug link. They answer different questions. The Table of Pharmacogenetic Associations is a first look: it shows which drugs have pharmacogenetic implications, grouped by how strong the data are, but it gives no guidance on clinical use. She called it "a lightweight". The Table of Pharmacogenomic Biomarkers in Drug Labeling is the one she prefers: it lists every FDA-approved drug whose label contains pharmacogenomic information and tells you which section of the label to open. </p>
+<p>The FDA keeps two online tables that list drugs with a known gene-drug link. They answer different questions. The Table of Pharmacogenetic Associations is a first look: it shows which drugs have pharmacogenetic implications, grouped by how strong the data are, but it gives no detailed guidance on clinical use. She called it "a lightweight". The Table of Pharmacogenomic Biomarkers in Drug Labeling is the one she prefers: it lists every FDA-approved drug whose label contains pharmacogenomic information and tells you which section of the label to open. </p>
 
 <h4>The facts</h4>
 <table class="reftab"><thead><tr><th>Feature</th><th>Table of Pharmacogenetic Associations</th><th>Table of Pharmacogenomic Biomarkers in Drug Labeling</th></tr></thead><tbody>

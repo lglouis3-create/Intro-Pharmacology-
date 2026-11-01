@@ -52,13 +52,14 @@ QUESTIONS.push(
  concept:"fda-assoc-app-limit", tags:["smith"], source:"both",
  stem:"What are the application and the main limitation of the FDA Table of Pharmacogenetic Associations?",
  options:[
-  {t:"Initial screening of drugs; no guidance on clinical use", correct:true, why:"A first screen of which drugs have pharmacogenetic implications, with no guidance on clinical use."},
-  {t:"Genotype-based dosing for each drug; limited to cancer drugs", correct:false, why:"It gives no dosing guidance, and it is not limited to cancer drugs."},
+  {t:"Initial screening of drugs; no detailed clinical guidance", correct:true, why:"A first screen of which drugs have pharmacogenetic implications, without detailed guidance on clinical use."},
+  {t:"Genotype-based dosing for each drug; limited to cancer drugs", correct:false, why:"Its short entries refer to the FDA labeling for specific dosing, and it is not limited to cancer drugs."},
   {t:"Lists every label section; often out of date", correct:false, why:"Label sections are listed in the Biomarkers in Drug Labeling table."},
-  {t:"Ranks evidence strength; covers only a few drugs", correct:false, why:"Evidence grading and a limited drug list describe CPIC."}],
+  {t:"Names the test kit to use; covers only a few drugs", correct:false, why:"The table does not assess the tests that detect the variants, and it lists many drugs."}],
  teach:"The table is a first screen of which drugs have pharmacogenetic implications. Its limitation: no detailed guidance on clinical use. Dr. Smith called it a lightweight and prefers the other FDA table.",
  quote:"So in my opinion this table, uh, this first table from the FDA is kind of a lightweight.",
- cite:"PGx-Resources-and-Cases-Students-Fall-2026.pdf slide 'FDA Tables of Pharmacogenetic Associations 2' (p. 4); transcript 10/27"},
+ note:"The slide words the limitation as \"Lacks detailed guidance on the clinical application of the information\". The current FDA page (updated September 10, 2026) gives a one-line description for each pair; some Section 1 entries carry a brief management statement, such as \"Do not use abacavir in patients positive for HLA-B*57:01\", and many refer to FDA labeling for specific dosing. It lists 82 entries in Section 1, 25 in Section 2 and 40 in Section 3.",
+ cite:"PGx-Resources-and-Cases-Students-Fall-2026.pdf slide 'FDA Tables of Pharmacogenetic Associations 2' (p. 4); transcript 10/27; FDA Table of Pharmacogenetic Associations (fda.gov, updated 9/10/2026)"},
 
 {id:"L21-004", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"fda-assoc", skill:"tell",
  concept:"fda-assoc-sections", tags:["smith"], source:"both",
