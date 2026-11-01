@@ -14,25 +14,25 @@
    "table": 0
   },
   {
-   "text": "Narrow therapeutic index drugs are at greater risk, and warfarin is the classic example. Vitamin K is warfarin's antidote. Coenzyme Q ten has a structure similar to vitamin K, and wheat grass contains high levels of it, so both may cause inadequate anticoagulation. Spinach and broccoli contain vitamin K, which pharmacodynamically antagonizes warfarin. Ginger, garlic and feverfew work another way: they directly inhibit platelets, a different mechanism from warfarin, so bleeding risk increases.",
+   "text": "Narrow therapeutic index drugs are at greater risk, and warfarin is the classic example. Vitamin K is warfarin's antidote. Coenzyme Q ten has a structure similar to vitamin K, and wheat grass contains high levels of vitamin K, so both may cause inadequate anticoagulation. Spinach and broccoli contain vitamin K, which pharmacodynamically antagonizes warfarin. Ginger, garlic and feverfew work another way: they directly inhibit platelets, a different mechanism from warfarin, so bleeding risk increases.",
    "slide": "ddi:25",
    "reading": null,
    "table": 1
   },
   {
-   "text": "Food can increase, decrease, or not affect absorption, and foods that change stomach pH may change bioavailability. A common interaction is a drug complexing with food in the gut, such as quinolone antibiotics with calcium, which reduces absorption; that is complexation, not an enzyme effect. Food can also compete for metabolizing enzymes, making it an inhibitor, or induce them, giving toxic or subtherapeutic levels. Monoamine oxidase inhibitors block the breakdown of catecholamines; tyramine from red wine and cheese uses the same enzyme, so it builds up and may cause a hypertensive crisis.",
+   "text": "Food can increase, decrease, or not affect absorption, and foods that change stomach p H may change bioavailability. A common interaction is a drug complexing with food in the gut, such as quinolone antibiotics with calcium, which reduces absorption; that is complexation, not an enzyme effect. Food can also compete for metabolizing enzymes, making it an inhibitor, or induce them, giving toxic or subtherapeutic levels. Monoamine oxidase inhibitors block the breakdown of catecholamines; tyramine from red wine and cheese uses the same enzyme, so it builds up and may cause a hypertensive crisis.",
    "slide": "ddi:26",
    "reading": null,
    "table": 2
   },
   {
-   "text": "Smoking and ethanol are the most common chemical drug interactions. Smoke contains polycyclic aromatic hydrocarbons that induce one A two, lowering theophylline, diazepam and tricyclic antidepressants; theophylline in asthmatics must not go subtherapeutic.",
+   "text": "Smoking and ethanol are the most common chemical drug interactions. Smoke contains polycyclic aromatic hydrocarbons that induce sip one A two, lowering theophylline, diazepam and tricyclic antidepressants; theophylline in asthmatics must not go subtherapeutic.",
    "slide": "ddi:29",
    "reading": null,
    "table": 3
   },
   {
-   "text": "Ethanol can increase or decrease hepatic enzyme activity. Its one A two induction lowers clozapine, cyclobenzaprine, imipramine and naproxen. Its induction of two E one and three A increases the possibility of acetaminophen liver damage, hepatotoxicity. So the acetaminophen risk comes from two E one and three A, not one A two.",
+   "text": "Ethanol can increase or decrease hepatic enzyme activity. Its sip one A two induction lowers clozapine, cyclobenzaprine, imipramine and naproxen. Its induction of two E one and three A increases the possibility of acetaminophen liver damage, hepatotoxicity. So the acetaminophen risk comes from two E one and three A, not one A two.",
    "slide": "ddi:30",
    "reading": null
   }

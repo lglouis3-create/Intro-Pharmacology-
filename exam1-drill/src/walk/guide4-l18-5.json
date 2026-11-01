@@ -3,12 +3,12 @@
  "title": "InDels, tandem repeats, gene deletion and copy number",
  "segs": [
   {
-   "text": "Section five. Insertions, deletions, repeats and copy number. In a small insertion or deletion, an indel, one, two, three or a few more nucleotides are added or removed in a coding region, as when A T G C becomes A T G G C. Codons are read three bases at a time, so a change that is not a multiple of three shifts every later codon, a frame shift: the amino acids from that point are wrong, a premature stop may appear, and activity can change. Exactly three nucleotides adds or removes one amino acid.",
+   "text": "Section five. Insertions, deletions, repeats and copy number. In a small insertion or deletion, an indel, one, two, three or a few more nucleotides are added or removed in a coding region, as when A T G C becomes A T G G C. Codons are read three bases at a time. A change that is not a multiple of three shifts every later codon, which is called a frame shift. The amino acids from that point are wrong, a premature stop may appear, and activity can change. Exactly three nucleotides adds or removes one amino acid.",
    "slide": "pgx:37",
    "reading": null
   },
   {
-   "text": "Tandem repeats, or variable number tandem repeats, are a short sequence repeated in a row, and the repeat count differs between people. Microsatellites have a repeat unit under five base pairs, also called short tandem repeats or simple sequence repeats; minisatellites have units over five. Between genes, repeats often change no function, because there is no protein sequence to change. Inside a coding sequence, a repeat adds bases like an indel and can change the protein. Repeats are used in forensic and paternity testing.",
+   "text": "Tandem repeats, or variable number tandem repeats, are a short sequence repeated in a row, and the repeat count differs between people. Microsatellites, also called short tandem repeats or simple sequence repeats, have a repeat unit under five base pairs; minisatellites have units over five. Between genes, repeats often change no function, because there is no protein sequence to change. Inside a coding sequence, a repeat adds bases like an indel and can change the protein. Repeats are used in forensic and paternity testing.",
    "slide": "pgx:38",
    "reading": null
   },

@@ -3,17 +3,17 @@
  "title": "Gene structure and frequencies across populations",
  "segs": [
   {
-   "text": "Section seven. Gene structure and frequencies across populations. The first figure shows where in a gene variants occur. The promoter is where the machinery for expressing the gene starts. Exons are the D N A that ends up as amino acid sequence. Introns were once thought meaningless, but variations occur there too. A stop codon sits at the end. Variants are sorted into those changing protein abundance, those changing the protein product, and markers for nearby or distant functional variation.",
+   "text": "Section seven. Gene structure and frequencies across populations. Variants can occur in any part of a gene. The promoter is where the machinery for expressing the gene starts. Exons are the D N A that ends up as amino acid sequence. Introns were once thought meaningless, but variations occur there too. A stop codon sits at the end. Variants are sorted into those changing protein abundance, those changing the protein product, and markers for nearby or distant functional variation.",
    "slide": "pgxex:8",
    "reading": null
   },
   {
-   "text": "The second figure shows that allele and phenotype frequencies differ widely between populations. For sip three A five, star one is the wild type and star three, six and seven are non-functional. In sub-Saharan African populations star one is common and all three variants are present; in European populations few alleles are wild type, and most are star three.",
+   "text": "Allele and phenotype frequencies differ widely between populations. For sip three A five, star one is the wild type and star three, six and seven are non-functional. In sub-Saharan African populations star one is common and all three variants are present; in European populations few alleles are wild type, and most are star three.",
    "slide": "pgxex:9",
    "reading": null
   },
   {
-   "text": "For V K O R C one minus sixteen thirty nine, G to A, the G allele means a higher dose is required and the A allele a lower dose, compared across African, European and North American, and East Asian populations. For T P M T, most people are normal metabolizers, with only a small bar of poor metabolizers.",
+   "text": "For V K O R C one minus sixteen thirty nine, G to A, the G allele means a higher dose is required and the A allele a lower dose, compared across three groups: African; European and North American; and East Asian populations. For T P M T, most people are normal metabolizers, with only a small fraction of poor metabolizers.",
    "slide": "pgxex:9",
    "reading": null
   },

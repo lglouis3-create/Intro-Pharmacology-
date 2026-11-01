@@ -3,7 +3,7 @@
  "title": "T P M T and thiopurine dosing",
  "segs": [
   {
-   "text": "Section fifteen. T P M T and genotype guided thiopurine dosing. T P M T, thiopurine methyltransferase, sends six mercaptopurine to an inactive product, six methylmercaptopurine. When T P M T activity is low, more of the dose becomes the active six thioguanine nucleotides, six T G N, which stop dividing cells, blood cells included, so the white count drops and a standard dose can cause fatal myelosuppression. Hair loss and gastrointestinal distress happen for a related reason: those cells divide rapidly, and the drug cannot tell them from cancer cells. So low T P M T means more toxicity, not drug failure.",
+   "text": "Section fifteen. T P M T and genotype guided thiopurine dosing. T P M T, thiopurine methyltransferase, sends six mercaptopurine to an inactive product, six methylmercaptopurine. When T P M T activity is low, more of the dose becomes the active six thioguanine nucleotides, six T G N. These stop dividing cells, blood cells included. The white count drops, and a standard dose can cause fatal myelosuppression. Hair loss and gastrointestinal distress happen for a related reason: those cells divide rapidly, and the drug cannot tell them from cancer cells. So low T P M T means more toxicity, not drug failure.",
    "slide": "pgxex:32",
    "reading": null
   },
@@ -13,7 +13,7 @@
    "reading": null
   },
   {
-   "text": "Before genotyping, the phenotype came from T P M T activity in red blood cells, and doses were adjusted from that. On the activity histogram, homozygous wild type people form the largest peak at the highest activity, heterozygotes a smaller intermediate group, and homozygous variant patients a very small group with the lowest activity. She said, you can't assume that the wild type is always in the middle.",
+   "text": "Before genotyping, the phenotype came from T P M T activity in red blood cells, and doses were adjusted from that. When patients are grouped by activity, homozygous wild type people form the largest group at the highest activity, heterozygotes a smaller intermediate group, and homozygous variant patients a very small group with the lowest activity. She said, you can't assume that the wild type is always in the middle.",
    "slide": "pgxex:34",
    "reading": null,
    "table": 0
@@ -25,7 +25,7 @@
    "table": 0
   },
   {
-   "text": "A figure from Cheok and Evans shows why. With the same dose for everyone, patients with two variant copies have very high six T G N and the most toxicity. With individualized doses, six T G N and toxicity are similar and low in all groups.",
+   "text": "Work by Cheok and Evans shows why. With the same dose for everyone, patients with two variant copies have very high six T G N and the most toxicity. With individualized doses, six T G N and toxicity are similar and low in all groups.",
    "slide": "pgxex:37",
    "reading": null
   }

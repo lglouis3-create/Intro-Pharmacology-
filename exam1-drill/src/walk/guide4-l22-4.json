@@ -14,7 +14,7 @@
    "table": 1
   },
   {
-   "text": "Patient risk factors split by group. Female gender, H I V infection, and lupus appear in both columns. Renal insufficiency, liver disease, alcoholism and polypharmacy belong to general, nonimmune reactions. Asthma, previous hypersensitivity to a chemically related drug, and specific genetic polymorphisms belong only to the immune, hypersensitivity column.",
+   "text": "Patient risk factors split by group. Female gender, H I V infection, and lupus are risk factors for both kinds of reaction. Renal insufficiency, liver disease, alcoholism and polypharmacy belong to general, nonimmune reactions. Asthma, previous hypersensitivity to a chemically related drug, and specific genetic polymorphisms are risk factors only for immune, hypersensitivity reactions.",
    "slide": "ade:25",
    "reading": null,
    "table": 2
@@ -26,7 +26,7 @@
    "table": 3
   },
   {
-   "text": "The type changes treatment. Type one works through histamine, so antihistamines are the biggest bet, then steroids. The other types work through antibodies against cells, immune complexes or T cells, so steroids for sure, and possibly other therapies.",
+   "text": "The type changes treatment. Type one works through histamine, so antihistamines are the main treatment, then steroids. The other types work through antibodies against cells, immune complexes or T cells, so steroids are used, and possibly other therapies.",
    "slide": "ade:27",
    "reading": null
   },

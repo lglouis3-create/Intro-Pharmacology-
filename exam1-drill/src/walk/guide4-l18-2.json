@@ -3,7 +3,7 @@
  "title": "Functional significance and the gene dose effect",
  "segs": [
   {
-   "text": "Section two. Functional significance and the gene dose effect. An allele name is useful only once its functional significance is known: what the variant does to the activity of the protein the gene codes for, an enzyme, transporter or receptor. It is about activity, not how common the variant is. Labs made these variant enzymes and measured their activity against the wild type, so genotype, the alleles, and phenotype, the activity, are tightly linked.",
+   "text": "Section two. Functional significance and the gene dose effect. An allele name is useful only once its functional significance is known: what the variant does to the activity of the protein the gene codes for, an enzyme, transporter or receptor. It is about activity, not how common the variant is. Labs made these variant enzymes and measured their activity against the wild type, so genotype, meaning the alleles, and phenotype, meaning the activity, are tightly linked.",
    "slide": "pgx:26",
    "reading": null
   },
@@ -18,7 +18,7 @@
    "reading": null
   },
   {
-   "text": "Any pair of inactive alleles, star two, star two, star two, star three, or star three, star three, has no activity. Heterozygous does not by itself mean partial activity; star two, star three has none. Induction, raising the amount of enzyme with diet or other drugs, cannot rescue star two, because the protein is too short to function.",
+   "text": "Any pair of inactive alleles has no activity: star two with star two, star two with star three, or star three with star three. Heterozygous does not by itself mean partial activity; star two with star three has none. Induction, raising the amount of enzyme with diet or other drugs, cannot rescue star two, because the protein is too short to function.",
    "slide": "pgx:28",
    "reading": null
   }

@@ -9,7 +9,7 @@
    "table": 0
   },
   {
-   "text": "Their methods are similar and their recommendations often quite similar, because they draw on the same published science. What differs is the objective. C P I C and D P W G both focus on pharmacotherapeutic recommendations for drug and gene or phenotype combinations, but C P I C is about how available results should be used, not whether to test, while D P W G also recommends genetic testing. C P N D S recommends genetic testing. R N P G x recommends testing and names the clinical settings or conditions in which to genotype.",
+   "text": "Their methods are similar and their recommendations often quite similar, because they draw on the same published science. What differs is the objective. C P I C and D P W G both focus on pharmacotherapeutic recommendations for drug and gene or phenotype combinations. But C P I C is about how available results should be used, not whether to test, while D P W G also recommends genetic testing. C P N D S recommends genetic testing. R N P G x recommends testing and names the clinical settings or conditions in which to genotype.",
    "slide": "pgxres:16",
    "reading": null,
    "table": 0
@@ -25,7 +25,7 @@
    "reading": null
   },
   {
-   "text": "The challenges for enhanced implementation are five needs: educate providers, educate patients, expand genetic tests to more markers, build decision support systems, and put pharmacogenomic data into the electronic health record. Pharmacists at Saint Jude's in Memphis were the first to push their hospital to put pharmacogenomic results into the records of pediatric oncology patients; even in large systems, a genotype result may be missing from the record or buried in lab reports. A decision support system gives steps to follow when genetic information is available; she said it means things like the C P I C warfarin dosing algorithm.",
+   "text": "The challenges for enhanced implementation are five needs: educate providers, educate patients, expand genetic tests to more markers, build decision support systems, and put pharmacogenomic data into the electronic health record. Pharmacists at Saint Jude's in Memphis were the first to push their hospital to put pharmacogenomic results into the records of pediatric oncology patients. Even in large systems, a genotype result may be missing from the record or buried in lab reports. A decision support system gives steps to follow when genetic information is available; she said it means things like the C P I C warfarin dosing algorithm.",
    "slide": "pgxres:20",
    "reading": null
   }
