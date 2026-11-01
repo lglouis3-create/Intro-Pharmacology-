@@ -488,7 +488,7 @@ QUESTIONS.push(
  concept:"other-guidelines-similar-objectives", tags:["smith"], source:"both",
  stem:"How do the evidence-based pharmacogenomic guidelines from other countries compare with CPIC (Clinical Pharmacogenetics Implementation Consortium) guidelines?",
  options:[
-  {t:"Similar; some objectives differ", correct:true, why:"They draw on the same science and similar methods of development; differences come from different objectives."},
+  {t:"Similar methods; some objectives differ", correct:true, why:"They draw on the same science and similar methods of development; differences come from different objectives."},
   {t:"Similar objectives; methods of development differ", correct:false, why:"Reversed: the methodologies are similar and the objectives differ."},
   {t:"They are translations of the CPIC documents", correct:false, why:"Each country produced its own guidance documents."},
   {t:"They contradict CPIC on most gene-drug pairs", correct:false, why:"Dr. Smith said they are often quite similar."}],
@@ -636,7 +636,7 @@ QUESTIONS.push(
 
 {id:"L21-050", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"label-trast", skill:"recall", readingId:"label-trastuzumab",
  concept:"trast-test-named", tags:["smith","label","inclass"], source:"transcript",
- stem:"Worksheet item 6: does the current trastuzumab (Herceptin) label tell you which HER2 test to use?",
+ stem:"Worksheet item 6: what does the current trastuzumab (Herceptin) label say about which HER2 test to use?",
  options:[
   {t:"No brand-name kit; an FDA-authorized test", correct:true, why:"The label asks for FDA-authorized tests run by laboratories with demonstrated proficiency, without naming a brand."},
   {t:"Yes; the label requires one named brand-name kit", correct:false, why:"Dr. Smith said an older label named a kit; the current one does not."},

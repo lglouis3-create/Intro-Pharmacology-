@@ -279,6 +279,14 @@ See `## Conflicts / uncertain` in notes/L01.md, L02.md and L03.md. The ones that
   guide list; gnav keeps numbers, 24 px+ targets; italic TPMT/ABCB1 in guide 1; absorption-table h4 quote moved to text.
   Not done: "How she asks it" for 29-37 (dropped on 10/29 by design: she had not written the exam).
 
+- 11/01 (daily polish 8): paper seed 20261101: strong 40/40, average 37/40 (L20-053, L21-009, L22-029 by design). Fixed:
+  L21-050 stem ("what does the label say"), L21-038 keyed option "Similar methods; some objectives differ". UX review
+  (Terms, Question map, header): Exam 4 has no glossary terms (glossary.js L13-L17 only); termBorrow()/termIn() show the
+  Exam 3 terms for Exam 4 with her "cumulative to my part" (course.js Exam 4 facts); scope chips hidden in focus; 'map'
+  added to FOCUS_VIEWS; empty-search message; flashcard fcFocus(); coarse-pointer 44 px on nav/chips/flash, 40 px
+  letters; focus label short under 480 px; map counts labelled all exams. Not done: Exam 4 glossary entries (L18-L22),
+  per-exam map counts, flashcard group chips as a select.
+
 ## Restore after a container restart
 
 The scratchpad is wiped on every restart. Durable copies: scripts and briefs in the repo (exam1-drill/src/daily/,

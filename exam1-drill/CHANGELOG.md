@@ -2,6 +2,13 @@
 
 Newest first. The build embeds this file; the Topics page shows what is new since your last visit, and the Progress page shows all of it. Keep each bullet to one short line.
 
+## 2026-11-01 (Daily polish)
+
+- Terms for Exam 4 show her Exam 3 terms (she said Exam 4 is "cumulative to my part"); Exam 4 has no terms of its own.
+- The Question map stays in the menu with Smith focus on.
+- Flashcards bring the next button into view on phones; larger tap targets for tabs, chips and letters.
+- L21-050 stem matches its options; L21-038's answer says what is similar.
+
 ## 2026-10-31 (Daily polish)
 
 - Exam 4 guide sections have Drill and Likely buttons, plus links to that day's Tell apart and Reference.
