@@ -3,12 +3,12 @@
  "title": "Reading the trastuzumab label",
  "segs": [
   {
-   "text": "Section twenty seven. Reading a label: trastuzumab and HER two. The drug label worksheet asks eight questions about the pharmacogenomic information in a label. Trastuzumab, brand name Herceptin, treats HER two positive cancers, usually breast cancer. It is the lecture's example of a drug where the test is done on the tumor, not the patient, and where the result decides whether the drug will work.",
+   "text": "Section twenty seven. Reading a label: trastuzumab and HER two. The drug label worksheet asks eight questions about the pharmacogenomic information in a label. Trastuzumab, brand name Herceptin, treats HER two positive cancers, usually breast cancer. It is an example of a drug where the test is done on the tumor, not the patient, and where the result decides whether the drug will work.",
    "slide": null,
    "reading": "label-trastuzumab"
   },
   {
-   "text": "Some background from her account. Everyone has the HER two gene, but it is not normally expressed, and its natural ligand is unknown. In HER two positive cancer the receptor appears on the tumor cell surface in large numbers or is hyperactive, and growth factor binding drives the cells to divide out of control. Trastuzumab is a humanized monoclonal antibody that binds the outside part of the HER two receptor and stops that signaling. The gene tested is HER two, not the related epidermal growth factor receptor.",
+   "text": "Everyone has the HER two gene, but it is not normally expressed, and the molecule that normally binds it is unknown. In HER two positive cancer the receptor appears on the tumor cell surface in large numbers or is hyperactive, and growth factor binding drives the cells to divide out of control. Trastuzumab is a humanized monoclonal antibody that binds the outside part of the HER two receptor and stops that signaling. The gene tested is HER two, not the related epidermal growth factor receptor.",
    "slide": null,
    "reading": "label-trastuzumab"
   },
@@ -25,7 +25,7 @@
    "table": 0
   },
   {
-   "text": "Which population? Here the answer is tumor types, not an ethnic group, because HER two expression belongs to certain tumors, not to an inherited population variant. In class she said breast, metastatic gastrointestinal and esophageal tumors. The label is narrower: HER two overexpressing breast cancer, and metastatic gastric or gastroesophageal junction adenocarcinoma. The data do not tie brain tumors to HER two. Finally, how does the result change care? HER two positive patients are likely candidates for trastuzumab. HER two negative patients do not get it. The result decides use of the drug, not the dose.",
+   "text": "Which population? Here the answer is tumor types, not an ethnic group, because HER two expression belongs to certain tumors, not to an inherited population variant. She named breast, metastatic gastrointestinal and esophageal tumors. The label is narrower: HER two overexpressing breast cancer, and metastatic gastric or gastroesophageal junction adenocarcinoma. The data do not tie brain tumors to HER two. Finally, how does the result change care? HER two positive patients are likely candidates for trastuzumab. HER two negative patients do not get it. The result decides use of the drug, not the dose.",
    "slide": null,
    "reading": "label-trastuzumab",
    "table": 0

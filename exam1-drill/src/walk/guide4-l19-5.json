@@ -3,27 +3,32 @@
  "title": "C Y P two C nineteen, clopidogrel, and proton pump inhibitors",
  "segs": [
   {
-   "text": "Section twelve. C Y P two C nineteen, the star seventeen gain of function, clopidogrel, and proton pump inhibitors. This enzyme drives two opposite clinical stories. Its substrates are slightly acidic drugs, such as proton pump inhibitors, fluoxetine, sertraline, and diazepam. There are over thirty alleles, but four drive most phenotypes, which run from poor and intermediate to extensive and ultrarapid.",
+   "text": "Section twelve. C Y P two C nineteen. This liver enzyme metabolizes slightly acidic drugs: proton pump inhibitors, which lower stomach acid, and also fluoxetine, sertraline and diazepam. Patients are grouped by how much of the enzyme's activity they have, from poor metabolizers, with the least, through intermediate and extensive, to ultrarapid.",
    "slide": "pgxex:25",
    "reading": null
   },
   {
-   "text": "Star two and star three carry a premature stop codon, so no active enzyme is made. Star seventeen is the first gain of function variant in this lecture. She said, The reason for that is this snip is located in the upstream region of the gene where the machinery for expressing the gene sits down on the gene and starts its work. So more C Y P two C nineteen is made and total activity rises. Star seventeen does not change the enzyme's shape, and it is not extra gene copies.",
+   "text": "Two variants, star two and star three, are single base changes that create a premature stop codon. The protein stops too early, is too short to work, and no active enzyme is made. A third variant, star seventeen, does the opposite. Its change sits in the upstream region of the gene, where the machinery that expresses the gene binds. More enzyme is made, so activity rises. Star seventeen does not change the enzyme's shape, and it is not extra gene copies.",
    "slide": "pgxex:26",
    "reading": null
   },
   {
-   "text": "Clopidogrel is a prodrug that C Y P two C nineteen helps activate, so both directions are dangerous. A star two or star three carrier makes too little active drug and keeps sticky platelets, which is therapeutic failure. A star seventeen carrier makes too much and is over anticoagulated. That is why she said, clopidogrel is a drug for which we should be genotyping people for their two C nineteen status.",
+   "text": "Clopidogrel, a drug that stops platelets from sticking together, is a prodrug: C Y P two C nineteen helps turn it into its active form. So both directions cause harm. A star two or star three carrier makes too little active drug, and the platelets stay sticky. That is therapeutic failure. A star seventeen carrier makes too much active drug and is over anticoagulated. She said, clopidogrel is a drug for which we should be genotyping people for their two C nineteen status.",
    "slide": "pgxex:15",
    "reading": null
   },
   {
-   "text": "With proton pump inhibitors, being a poor metabolizer is good. Low activity keeps drug levels higher, which raises gastric p H more and improves cure rates. This is safe because the therapeutic index of these drugs is very wide. She said, When you had the low activity version of the enzyme increasing drug blood concentrations, you had better cure rates. In the figure from Furuta and colleagues, two thousand four, which used lansoprazole, poor metabolizers had the highest area under the curve, the highest gastric p H, and the highest cure rate, not the extensive metabolizers. The assigned reading, Furuta and colleagues in nineteen ninety eight, found the same pattern with omeprazole plus amoxicillin. Cure rates were twenty eight point six percent in the rapid metabolizers, sixty percent in the intermediate, and one hundred percent in the poor metabolizers.",
+   "text": "With proton pump inhibitors, being a poor metabolizer helps. C Y P two C nineteen clears these drugs, so low activity keeps the drug level higher. A higher level suppresses more acid, raises the stomach p H, and gives a better cure rate. This is safe because these drugs have a very wide therapeutic index. A two thousand four study by Furuta and colleagues gave lansoprazole and plotted three panels by phenotype: the total drug exposure, called area under the curve, the stomach p H over twenty four hours, and the cure rate. Poor metabolizers had the highest of all three.",
    "slide": "pgxex:27",
+   "reading": null
+  },
+  {
+   "text": "The assigned reading is a different paper, Furuta and colleagues, nineteen ninety eight. Patients took omeprazole, a proton pump inhibitor, plus the antibiotic amoxicillin to cure H pylori, a stomach infection. The less C Y P two C nineteen activity a patient had, the higher the cure rate. Rapid metabolizers were cured twenty eight point six percent of the time, intermediate metabolizers sixty percent, and poor metabolizers, who make no active enzyme, one hundred percent. Poor metabolizers on a proton pump inhibitor also had more ulcer healing.",
+   "slide": null,
    "reading": "furuta-1998"
   },
   {
-   "text": "The same high levels are a problem with the other substrates. A poor metabolizer on a selective serotonin reuptake inhibitor or on diazepam has more adverse drug responses, and more sedation with diazepam. So the poor metabolizer benefits only where the therapeutic index is wide, as with proton pump inhibitors.",
+   "text": "The same high levels cause harm with the other substrates. A poor metabolizer on a selective serotonin reuptake inhibitor, such as fluoxetine or sertraline, or on diazepam, has more adverse drug responses, including more sedation with diazepam. The poor metabolizer benefits only when the drug's therapeutic index is wide.",
    "slide": "pgxex:25",
    "reading": null
   }

@@ -2,6 +2,18 @@
 
 Newest first. The build embeds this file; the Topics page shows what is new since your last visit, and the Progress page shows all of it. Keep each bullet to one short line.
 
+## 2026-11-01 (Her Exam 4 study list)
+
+- Exam 4 card: her announcement (50 to 55 questions), her five study items, and that the keys are not posted.
+- Warfarin: step-through diagrams of how it works (CPIC Figure 1) and of dosing by genotype (Figure 2).
+- Naranjo: a step-through of one case scored question by question, and two full worked cases.
+- Furuta: the four reasons, cure rate and ulcer healing for each genotype group, and what each group means.
+- 42 new questions on her study list: worksheet items, frequencies, CPIC figures, Naranjo cases, Furuta.
+- Both Think Pair Share tables in Reference, laid out in her columns; 67 Exam 4 terms in Terms.
+- Guide sections 11, 12, 20, 22, 25 and 31 rewritten to build from the basics; filler cut.
+- All 37 Exam 4 walkthroughs revised for a beginner; warfarin and Naranjo step through the diagrams.
+- Quiz 4 question 1 with CYP2D6*5 as the answer to select.
+
 ## 2026-11-01 (Daily polish)
 
 - Terms for Exam 4 show her Exam 3 terms (she said Exam 4 is "cumulative to my part"); Exam 4 has no terms of its own.

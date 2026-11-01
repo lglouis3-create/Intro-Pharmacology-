@@ -3,7 +3,7 @@
  "title": "Synonymous, non-synonymous and premature stop S N Ps",
  "segs": [
   {
-   "text": "Section four. S N P types in coding regions. A single nucleotide polymorphism is one base pair changed in a gene. Several million are known, and many change nothing about the gene's product. Coding regions are the parts of a gene translated to R N A and then to protein. A coding S N P is classed by what the base change does to the codon. It can give the same amino acid, which is synonymous, a different amino acid, which is non-synonymous, or a stop codon early in the sequence, a premature stop.",
+   "text": "Section four. S N P types in coding regions. A single nucleotide polymorphism is one base pair changed in a gene. Several million are known, and many change nothing about the gene's product. Coding regions are the parts of a gene translated to R N A and then to protein. A codon is three bases that code for one amino acid, and a coding S N P is classed by what the base change does to the codon. It can give the same amino acid, which is synonymous, a different amino acid, which is non-synonymous, or a stop codon early in the sequence, a premature stop.",
    "slide": "pgx:32",
    "reading": null
   },

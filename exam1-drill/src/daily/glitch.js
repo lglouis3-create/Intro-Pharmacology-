@@ -26,7 +26,7 @@ for (const vp of [{width: 390, height: 844}, {width: 1200, height: 900}]) {
   await p.evaluate(() => go('guide')); await p.waitForTimeout(400);
   for (const id of await p.evaluate(() => [...document.querySelectorAll('#view [data-gwopen]')].map(b => b.dataset.gwopen))) {
     await p.evaluate(id => { scrollToEl(document.getElementById(id)); document.querySelector(`[data-gwopen="${id}"]`).click(); gwPause(); }, id);
-    try { await p.waitForFunction(id => { const q = document.querySelector(`.gwpanel[data-gwp="${id}"]`); const im = q && q.querySelector('.gwslide img'); return q && (!im || (im.complete && im.naturalWidth > 0)) && (im || q.querySelector('.gwslide table')); }, id, {timeout: 6000}); }
+    try { await p.waitForFunction(id => { const q = document.querySelector(`.gwpanel[data-gwp="${id}"]`); const im = q && q.querySelector('.gwslide img'); return q && (!im || (im.complete && im.naturalWidth > 0)) && (im || q.querySelector('.gwslide table') || q.querySelector('.gwslide figure.step3')); }, id, {timeout: 6000}); }
     catch (e) { issues.push(`${tag} walkthrough ${id}: panel, slide or table missing`); }
     await p.evaluate(id => gwClose(id), id);
   }

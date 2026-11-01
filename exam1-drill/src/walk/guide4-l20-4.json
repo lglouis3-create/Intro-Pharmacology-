@@ -3,9 +3,10 @@
  "title": "Drug target receptors",
  "segs": [
   {
-   "text": "Section eighteen. Drug target receptors. Drug targets are the third area of pharmacogenomics. They are less well characterized than metabolizing enzymes. A target variant can change how well a drug works, as with the beta one receptor and metoprolol. Or a target variant can cause the disease itself, so the drug is chosen because it hits that variant, as with E G F R and gefitinib.",
+   "text": "Section eighteen. Drug target receptors. Drug targets, the molecules a drug acts on, are the third area of pharmacogenomics. They are less well characterized than metabolizing enzymes. A target variant can change how well a drug works, as with the beta one receptor and metoprolol. Or a target variant can cause the disease itself, so the drug is chosen because it hits that variant, as with E G F R and gefitinib.",
    "slide": null,
-   "reading": null
+   "reading": null,
+   "table": 0
   },
   {
    "text": "The beta one receptor gene is A D R B one. Its non synonymous S N Ps are serine forty nine to glycine, and arginine three eighty nine to glycine. The variant changes the receptor, so metoprolol may not bind as well. Patients homozygous for serine forty nine and arginine three eighty nine, the wild type, had the better response, not the variant carriers. So a patient with the variants may respond poorly, and genotype may guide the choice of starting drug.",

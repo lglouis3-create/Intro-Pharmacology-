@@ -3,7 +3,7 @@
  "title": "Absorption and distribution interactions",
  "segs": [
   {
-   "text": "Section thirty four. Absorption and distribution interactions. An absorption interaction changes how fast and how much of the object drug reaches the systemic circulation, so bioavailability goes up or down. The gut is the most common site. Two of these interactions keep the drug in the gut. Complexation or chelation is the tighter bond: levofloxacin complexes with divalent cations such as calcium, magnesium, aluminum and iron. Adsorption, spelled with a D, is a looser bond: digoxin sticks to cholestyramine, kaolin or acarbose, so less digoxin is absorbed. Adsorption with a D is the name of the interaction. Absorption with a B is the process it changes. Magnesium is a divalent cation, so it can complex a quinolone in the gut. Separating the two doses by several hours lets one get through before the next is taken.",
+   "text": "Section thirty four. Absorption and distribution interactions. An absorption interaction changes how fast and how much of the object drug reaches the systemic circulation, so bioavailability goes up or down. The gut is the most common site. Two of these interactions keep the drug in the gut. Complexation or chelation is the tighter bond: levofloxacin complexes with divalent cations such as calcium, magnesium, aluminum and iron. Adsorption, spelled with a D, is a looser bond: digoxin sticks to cholestyramine, kaolin or acarbose, so less digoxin is absorbed. Adsorption with a D is the name of the interaction. Absorption with a B is the process it changes. Levofloxacin is a quinolone, so magnesium, a divalent cation, can complex a quinolone in the gut. Separating the two doses by several hours lets one get through before the next is taken.",
    "slide": "ddi:9",
    "reading": null,
    "table": 0
@@ -15,7 +15,7 @@
    "table": 0
   },
   {
-   "text": "Two gut interactions are not in the table. In competition for carrier mediated absorption, the precipitant competes for the same carrier as the object drug, and her example of a carrier is P glycoprotein. A precipitant that interferes with how P glycoprotein handles the object drug changes the object drug's bioavailability. An alteration in intestinal blood flow is rare, and she said motility changes are of more concern. Absorption interactions also happen outside the gut. A dentist gave her epinephrine with Novocaine to keep the anesthetic localized, and the epinephrine made her shaky.",
+   "text": "Two gut interactions are not in the table. In competition for carrier mediated absorption, the precipitant competes for the same carrier as the object drug, and her example of a carrier is P glycoprotein. A precipitant that interferes with how P glycoprotein handles the object drug changes the object drug's bioavailability. An alteration in intestinal blood flow is rare, and she said motility changes are of more concern. Absorption interactions also happen outside the gut. For example, epinephrine is given with the local anesthetic Novocaine to keep the anesthetic localized.",
    "slide": "ddi:10",
    "reading": null
   },

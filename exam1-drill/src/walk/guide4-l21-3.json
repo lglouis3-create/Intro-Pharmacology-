@@ -3,36 +3,64 @@
  "title": "Walking the C P I C warfarin algorithm",
  "segs": [
   {
-   "text": "Section twenty five. Walking the C P I C warfarin algorithm. The adult dosing algorithm, Figure two of the two thousand seventeen C P I C warfarin guideline, turns a patient's genotypes into a dose in a fixed order. First, is a genotype available. Second, what is the patient's self identified ancestry. Third, calculate a dose from V K O R C one and C Y P two C nine. Fourth, adjust for the extra variants that apply to that ancestry. To use it, you need each gene's role in warfarin's action, because the role tells you whether a variant moves the dose up or down.",
-   "slide": "pgxres:15",
-   "reading": "cpic-warfarin-2017"
-  },
-  {
-   "text": "V K O R C one, vitamin K epoxide reductase, is warfarin's target, not a metabolizing enzyme. Carriers of its minus sixteen thirty nine A allele, in a region upstream of the gene that affects expression, need progressively lower doses than G G. When the target is less active, less drug is needed to inhibit it. C Y P two C nine metabolizes S warfarin, the more potent enantiomer. Decreased function alleles slow its clearance, so a standard dose builds up and the bleeding risk rises. That is why the dose goes down.",
+   "text": "Section twenty five. The C P I C warfarin algorithm. C P I C, the Clinical Pharmacogenetics Implementation Consortium, publishes guidelines on how to use a patient's genotype to choose a drug or a dose. Its two thousand seventeen warfarin guideline has two figures. Figure one shows how warfarin works. V K O R C one is warfarin's target. C Y P two C nine clears S warfarin, the potent form. C Y P four F two removes vitamin K, which is warfarin's antidote.",
    "slide": null,
    "reading": null,
-   "table": 0
+   "step": "warfarin-target@6"
   },
   {
-   "text": "C Y P four F two removes reduced vitamin K from the cycle. The star three variant is less active, so more vitamin K stays in the body. She said, Vitamin K is like the antidote for warfarin, right? More vitamin K means more active clotting factors, so the dose goes up five to ten percent.",
+   "text": "Figure two turns a patient's genotypes into a starting dose. Each gene's place in Figure one tells you which way its variant moves the dose. A weaker target or slower clearance of warfarin means less warfarin. Slower removal of vitamin K means more warfarin. The algorithm starts with one question: are the V K O R C one and C Y P two C nine genotypes available? If not, the patient is dosed clinically, meaning without genetic information, using a clinical dosing algorithm or a standard dose. The patient does not wait for a genotype to start warfarin.",
    "slide": null,
    "reading": null,
-   "table": 0
+   "step": "warfarin-genotype@0"
   },
   {
-   "text": "With no genotype, dose clinically. With a genotype, the branch follows self identified ancestry, African or non African. For non African ancestry, calculate the dose from V K O R C one and C Y P two C nine star two and star three with a published pharmacogenetic algorithm. If star five, six, eight or eleven is found, decrease fifteen to thirty percent per variant allele. If C Y P four F two star three is found, increase five to ten percent. The marker r s one two seven seven seven eight two three is not considered on this branch, because its association has been detected only among African Americans.",
+   "text": "If a genotype is available, the next step is to ask the patient's self identified ancestry, African or non African, and follow that branch. There are two branches because some variants are common, or have a proven effect on the dose, in only one of the two groups.",
    "slide": null,
-   "reading": "cpic-warfarin-2017"
+   "reading": null,
+   "step": "warfarin-genotype@1"
   },
   {
-   "text": "For African ancestry, star five, six, eight and eleven come first. These decreased function alleles are more frequent in people of African ancestry, so testing them before dosing keeps the patient from starting too high. If they were not tested, dose clinically. If known, calculate the dose, decrease fifteen to thirty percent for a carrier, then decrease ten to twenty five percent for r s one two seven seven seven eight two three A G or A A. No recommendation is made for C Y P four F two, because the guideline says the data do not support a C Y P four F two effect on dosing in African ancestry.",
+   "text": "On the non African branch, the dose is calculated with a published pharmacogenetic algorithm from V K O R C one and C Y P two C nine star two and star three. On the African branch, C Y P two C nine star five, six, eight and eleven must be tested first. If they were not tested, the patient is dosed clinically. They come first because they are common in African ancestry, not because they raise enzyme activity. Forty five to fifty percent of people with self reported African ancestry carry one of them or a marker called r s one two seven seven seven eight two three.",
    "slide": null,
-   "reading": "cpic-warfarin-2017"
+   "reading": null,
+   "step": "warfarin-genotype@2"
   },
   {
-   "text": "Her case is a non African patient who is C Y P two C nine star three star three, V K O R C one wild type, and carries the C Y P four F two variant. First question: was all the genotyping done that is known so far? For a non African patient, yes. Second question: does the patient need relatively more or less than the average starting dose? Work it gene by gene. Star three impairs S warfarin metabolism, so carriers need lower doses, and star three star three is a poor metabolism genotype for which an alternative oral anticoagulant might be considered. V K O R C one wild type is the reference genotype, so it does not lower the dose. The C Y P four F two variant raises the dose five to ten percent. The guideline gives no single net figure for this combination.",
+   "text": "The first variant, used on both branches, is V K O R C one minus sixteen thirty nine A. The minus sign marks a position upstream of the gene, in a region that affects how much V K O R C one protein is made. It is not a deletion. One A copy lowers the dose, and two A copies lower it further. The reason: the target is less active, so less drug is needed to block it. The A allele is most common in East Asian ancestry, then European, and least common in African ancestry.",
    "slide": null,
-   "reading": "cpic-warfarin-2017"
+   "reading": null,
+   "step": "warfarin-genotype@3"
+  },
+  {
+   "text": "Next, C Y P two C nine star two and star three, also on both branches, lower the dose. They are decreased function alleles, so S warfarin is cleared more slowly, builds up, and raises the bleeding risk at a standard dose. Her slide gives the activity left as twenty percent for star two and five percent for star three. They are the most common decreased function alleles in European ancestry, and star two is virtually absent in Asians.",
+   "slide": null,
+   "reading": null,
+   "step": "warfarin-genotype@4"
+  },
+  {
+   "text": "C Y P two C nine star five, six, eight and eleven are also decreased function alleles, so the calculated dose is lowered fifteen to thirty percent with one variant allele and twenty to forty percent with two. They are most frequent in African ancestry. On the non African branch, this adjustment applies only if one of them is found.",
+   "slide": null,
+   "reading": null,
+   "step": "warfarin-genotype@5"
+  },
+  {
+   "text": "C Y P four F two star three is used on the non African branch only, and it raises the dose five to ten percent. C Y P four F two removes vitamin K from the cycle. The star three enzyme is less active, so more vitamin K stays, and more warfarin is needed against it. She said, Vitamin K is like the antidote for warfarin, right? This effect is confirmed in European and Asian ancestry but not in African ancestry, so the African branch makes no C Y P four F two recommendation.",
+   "slide": null,
+   "reading": null,
+   "step": "warfarin-genotype@6"
+  },
+  {
+   "text": "The marker r s one two seven seven seven eight two three is used on the African branch only. An A G or A A result in African Americans lowers the dose ten to twenty five percent. It is a single nucleotide polymorphism, one base pair changed, near the C Y P two C genes. It is linked to altered warfarin clearance, separate from star two and star three. A dose effect has been found only in African Americans, so the non African branch does not use it. One more rule: for C Y P two C nine poor metabolism, such as star three star three, the guideline says a different oral anticoagulant may be considered.",
+   "slide": null,
+   "reading": null,
+   "step": "warfarin-genotype@7"
+  },
+  {
+   "text": "Her case: a non African patient who is C Y P two C nine star three star three, V K O R C one G G, which is the reference genotype, and who carries C Y P four F two star three. Was all the known genotyping done? Yes, for a non African patient. Does the patient need more or less than the average starting dose? Work gene by gene. Star three cuts S warfarin metabolism by eighty to ninety percent, so star three star three lowers the dose, and a different anticoagulant may be considered. V K O R C one G G changes nothing. C Y P four F two star three raises the dose five to ten percent. She said, Remember, those are going to be opposite effects on the dose. The guideline gives no single net figure for this combination.",
+   "slide": null,
+   "reading": null,
+   "table": 2
   }
  ]
 }
