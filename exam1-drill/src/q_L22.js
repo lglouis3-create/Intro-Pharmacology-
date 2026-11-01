@@ -47,7 +47,7 @@ QUESTIONS.push(
   {t:"Injury from a drug-related intervention, preventable or not", correct:true, why:"The two parts Dr. Smith pointed out: there is injury, and the cause may be preventable or non-preventable."},
   {t:"Any preventable event that may lead to inappropriate medication use or patient harm", correct:false, why:"That is the NCCMERP definition of a medication error; every medication error is preventable."},
   {t:"Any noxious, unintended effect of a drug at normal doses", correct:false, why:"That is the World Health Organization definition of an adverse drug reaction (ADR)."},
-  {t:"An injury that a clinician could have prevented", correct:false, why:"The IOM definition includes non-preventable causes."}],
+  {t:"Injury from a drug, excluding preventable causes", correct:false, why:"The IOM definition includes preventable as well as non-preventable causes."}],
  teach:"The IOM defines an ADE as injury resulting from medical intervention related to a drug, from preventable or non-preventable causes. Two features matter: there is injury, and the cause may or may not be preventable. So an ADE can occur with the right drug given correctly.",
  quote:"the things that jump out to me are, these are a medication problem that causes injury. And sometimes they could be preventable and caught. Other times, they are not preventable",
  note:"The slide prints 'Institution of Medicine (IOM)'; Dr. Smith said 'Institute of Medicine'.",
@@ -69,11 +69,11 @@ QUESTIONS.push(
  concept:"ade-requires-injury", tags:["smith","inclass"], source:"transcript",
  stem:"An order is written for ten times the intended dose, but the pharmacist catches it and the patient never receives it. Is this an adverse drug event?",
  options:[
-  {t:"No; an ADE requires an injury, though it is a medication error", correct:true, why:"No injury occurred, so it is a medication error but not an ADE."},
+  {t:"No; with no injury it is a medication error (a potential ADE)", correct:true, why:"An ADE requires injury. A caught error with no injury is a medication error, which the slide calls a potential ADE."},
   {t:"Yes; any wrong-dose order is an ADE", correct:false, why:"A wrong-dose order with no injury is only a medication error."},
   {t:"Yes; it is an adverse drug reaction", correct:false, why:"No drug was given and no injury occurred, so there is no ADR."},
   {t:"No; a prescribing mistake like this is not even a medication error", correct:false, why:"A wrong-dose order is itself a medication error; it is simply not an ADE without injury."}],
- teach:"An ADE requires injury. A wrong-dose order that never harms anyone is a medication error but not an ADE. When the wrong dose is actually given and injures the patient, it is a preventable ADE.",
+ teach:"An ADE requires injury. A wrong-dose order that never harms anyone is a medication error but not an ADE; the slide calls an ADE that has not actually occurred a potential ADE. When the wrong dose is actually given and injures the patient, it is a preventable ADE.",
  quote:"well, no, that has the, has to have injury here for it to be an average drug event, right, but the wrong dose is given, yeah, mhm.",
  cite:"ADE-Lecture-Students-2026.pdf slide 'Adverse Drug Events (ADE) definition' (p. 5); transcript 10/28"},
 
@@ -86,7 +86,7 @@ QUESTIONS.push(
   {t:"Overdoses", correct:true, why:"The third of the five types."},
   {t:"Medication errors", correct:true, why:"The fourth type; ADRs are the fifth."},
   {t:"Medication misadventures", correct:false, why:"This is the umbrella term that encloses ADEs, medication errors and ADRs, not a type of ADE."},
-  {t:"Drug interactions", correct:false, why:"A drug interaction is not one of the five ADE categories."},
+  {t:"Sentinel events", correct:false, why:"A sentinel event is an ADR severe enough to risk death or serious injury, not one of the five categories."},
   {t:"Pharmaceutical incompatibilities", correct:false, why:"A pharmaceutical incompatibility is not one of the five ADE categories."}],
  teach:"ADEs are classified into five categories: therapeutic failures, adverse drug withdrawal events, overdoses, medication errors and adverse drug reactions (ADRs). Medication misadventures is the umbrella term over ADEs, errors and ADRs, not a category.",
  quote:"They're classified into these 5 different categories usually, so therapeutic failure, uh, withdrawals, overdoses, med errors, and then ADRs, adverse drug reactions",
@@ -130,7 +130,7 @@ QUESTIONS.push(
 
 {id:"L22-009", lecture:"L22", prof:"Smith", tier:"new", topic:"L22", sub:"ade-types", skill:"recall",
  concept:"overdose-pediatric-iron", tags:["smith","inclass"], source:"transcript",
- stem:"Which over-the-counter product is one of the most common accidental pediatric overdoses, partly because the tablets look like candy?",
+ stem:"Which medication is one of the most common accidental overdoses in young children?",
  options:[
   {t:"Iron tablets", correct:true, why:"Coated, smooth, colorful tablets that look like candy."},
   {t:"Prescription opioids", correct:false, why:"Opioids came up for withdrawal and for ADRs, not as her pediatric example."},
@@ -328,7 +328,7 @@ QUESTIONS.push(
   {t:"Diabetes medications", correct:true, why:"On her list; with opioids and cardiac meds, the big three."},
   {t:"Antidepressants", correct:true, why:"She added antidepressants from the CNS realm."},
   {t:"Topical antihistamines", correct:false, why:"Not named; contact dermatitis from a topical antihistamine is only a table example of type IV reactions."},
-  {t:"Beta-lactam antibiotics", correct:false, why:"Not among the groups she named as causing most ADRs."},
+  {t:"H2-blockers", correct:false, why:"Not among the groups named as causing most ADRs."},
   {t:"Proton pump inhibitors", correct:false, why:"Not among the groups she named as causing most ADRs."}],
  teach:"A handful of widely used drugs cause about 90% of ADRs. Her list: opioids, cardiac medications (statins included) and diabetes medications as the big three, plus antidepressants.",
  quote:"I, I put on the list opioids now, especially cardiac meds, diabetic medications.",
@@ -456,7 +456,7 @@ QUESTIONS.push(
   {t:"Intolerance", correct:true, why:"Tinnitus after a small aspirin dose; often unpredictable."},
   {t:"Pharmacologic side effect, such as dry mouth from antihistamines", correct:false, why:"Listed under predictable nonimmunologic reactions."},
   {t:"Drug-drug interaction", correct:false, why:"Listed under predictable nonimmunologic reactions."},
-  {t:"Secondary effect, such as antibiotic-associated diarrhea", correct:false, why:"A secondary effect is a predictable nonimmunologic reaction."}],
+  {t:"Secondary side effect, such as thrush while taking antibiotics", correct:false, why:"Listed under predictable nonimmunologic reactions."}],
  teach:"Nonimmunologic reactions split into predictable ones (pharmacologic side effect, secondary side effect, drug toxicity, drug-drug interactions, overdose) and unpredictable ones (pseudoallergic, idiosyncratic, intolerance). Be able to tell the two groups apart.",
  quote:"Sometimes it makes you itchy. People think that that's an allergic reaction. It's not, it's just the drug doing it.",
  cite:"ADE-Lecture-Students-2026.pdf slide 'Immunologic reactions' (p. 23; Riedl and Casillas 2003 table); transcript 10/28"},
@@ -464,12 +464,12 @@ QUESTIONS.push(
 /* ---------------- Predisposing and risk factors (pp. 24-25) ---------------- */
 {id:"L22-035", lecture:"L22", prof:"Smith", tier:"new", topic:"L22", sub:"risk-factors", skill:"tell",
  concept:"risk-immune-only", tags:["smith"], source:"both",
- stem:"In the table of patient risk factors for ADRs, which factor is listed only for hypersensitivity (immune) reactions?",
+ stem:"Which patient factor raises the risk of hypersensitivity (immune) drug reactions but not of general (nonimmune) reactions?",
  options:[
   {t:"Asthma", correct:true, why:"Listed under hypersensitivity reactions, with use of beta blockers."},
   {t:"Renal insufficiency", correct:false, why:"Listed only for general (nonimmune) reactions."},
   {t:"Liver disease", correct:false, why:"Listed only for general (nonimmune) reactions."},
-  {t:"Female gender", correct:false, why:"Listed in both columns."}],
+  {t:"Female gender", correct:false, why:"A risk factor for both immune and nonimmune reactions."}],
  teach:"Nonimmune risk factors: female gender, serious illness, renal insufficiency, liver disease, polypharmacy, HIV infection, herpes infection, alcoholism, lupus. Immune (hypersensitivity) risk factors: female gender, adult, HIV infection, viral infection, previous hypersensitivity to a related drug, asthma (with beta blockers), genetic polymorphisms, lupus.",
  quote:"Categorizing the risk based on whether the reaction is non-immunologically based or immunologically based, OK?",
  cite:"ADE-Lecture-Students-2026.pdf slides 'Predisposing Factors to Adverse Drug Reactions' (p. 24), 'Risk Factors' (p. 25; Riedl and Casillas 2003 Table 4); transcript 10/28"},
@@ -547,7 +547,7 @@ QUESTIONS.push(
  teach:"Stevens-Johnson syndrome is a painful and dangerous reaction that can involve the mouth and mucosal tract, not just the skin, and the skin can come off. Carbamazepine carries this risk in people with its HLA-B risk variant. Abacavir labeling now describes an all-organ hypersensitivity.",
  quote:"which drug did we talk about that, uh, people with a certain genetic variant of the HLAB gene were really at risk for having this kind of reaction? Yeah, carbamazepine",
  note:"Shown after the break from the deck slide titled 'Steven Johnson Syndrome' (p. 33), after a brief look at the list of skin reactions (p. 30) and an image of hives; the rest of the skin, liver and renal slides were skipped. Same fact as L21-055 (10/27). The handwritten 'abacavir' on the posted slide is a student's note and is not used.",
- cite:"ADE-Lecture-Students-2026.pdf slide 'Steven Johnson Syndrome' (p. 33); transcript 10/28"},
+ cite:"ADE-Lecture-Students-2026.pdf slide 'Steven Johnson Syndrome' (p. 33); transcript 10/28; Tegretol label HLA-B*1502 boxed warning (L21, see L21-055); transcript 10/27"},
 
 // L22 part 2 — Day 22 (10/28): Drug interactions (Dr. Smith). Exam 4.
 // Sources, in her order of authority: the 10/28 Echo transcript (SPEAKER 0 is Dr. Smith; auto-captions, slips kept; a garbled
@@ -557,7 +557,7 @@ QUESTIONS.push(
 /* ---------------- Introduction: definitions and classification (pp. 2-7) ---------------- */
 {id:"L22-042", lecture:"L22", prof:"Smith", tier:"new", topic:"L22", sub:"ddi-intro", skill:"recall",
  concept:"ddi-not-only-drug-drug", tags:["smith"], source:"both",
- stem:"Dr. Smith titled the topic \"drug interactions\" rather than \"drug-drug interactions\". What was her reason?",
+ stem:"Why is this topic called \"drug interactions\" rather than \"drug-drug interactions\"?",
  options:[
   {t:"The precipitant can be a food, herb or habit", correct:true, why:"She said interactions can be drugs with food, with herbal products or with habits such as smoking and drinking."},
   {t:"A second drug is the precipitant by definition", correct:false, why:"An interaction needs the object drug plus a second substance; the second substance just need not be a drug."},
@@ -581,9 +581,9 @@ QUESTIONS.push(
 
 {id:"L22-044", lecture:"L22", prof:"Smith", tier:"new", topic:"L22", sub:"ddi-intro", skill:"recall",
  concept:"same-drug-both-roles", tags:["smith"], source:"both",
- stem:"Dr. Smith used valproic acid in two plasma protein binding examples, one with phenytoin and one with aspirin. What point did she make about valproic acid?",
+ stem:"Valproic acid displaces phenytoin from plasma proteins, and aspirin displaces valproic acid. What do the two pairs show about valproic acid?",
  options:[
-  {t:"One drug can be precipitant in one pair and object in another", correct:true, why:"Valproic acid is the precipitant with phenytoin and the object drug with aspirin."},
+  {t:"Its role depends on which drug it pairs with", correct:true, why:"Valproic acid is the precipitant with phenytoin and the object drug with aspirin."},
   {t:"Valproic acid is the object drug in both pairs", correct:false, why:"With phenytoin, valproic acid does the displacing, so there it is the precipitant."},
   {t:"Valproic acid is the precipitant drug in both pairs", correct:false, why:"Aspirin displaces valproic acid, so in that pair valproic acid is the object drug."},
   {t:"A drug's role in an interaction is set by its drug class", correct:false, why:"The role depends on which drug it is paired with, not its class."}],
@@ -666,7 +666,7 @@ QUESTIONS.push(
 
 {id:"L22-051", lecture:"L22", prof:"Smith", tier:"new", topic:"L22", sub:"ddi-absorb", skill:"recall", multi:true, core:true, coreWhy:"her absorption table (Table 18-1), which she said to learn",
  concept:"adsorption-precipitants", tags:["smith"], source:"slide",
- stem:"Which precipitants are listed under adsorption in the table of interactions that affect bioavailability from the GI tract? Select all that apply.",
+ stem:"Which precipitants lower an object drug's bioavailability from the GI tract by adsorption? Select all that apply.",
  options:[
   {t:"Kaolin", correct:true, why:"Listed under adsorption: decreased bioavailability of digoxin."},
   {t:"Activated charcoal", correct:true, why:"Listed under adsorption: decreased bioavailability of many drugs."},
@@ -674,7 +674,7 @@ QUESTIONS.push(
   {t:"Erythromycin", correct:false, why:"Erythromycin is under alteration of intestinal flora, and it raises digoxin bioavailability."},
   {t:"Sodium polystyrene sulfonate", correct:false, why:"Listed under complexation/chelation: it binds the cations in antacids."},
   {t:"Levofloxacin", correct:false, why:"Levofloxacin is an object drug chelated by cations, not an adsorbent precipitant."}],
- teach:"Table 18-1 lists four adsorbents: cholestyramine (digoxin, levothyroxine), kaolin (digoxin), activated charcoal (many drugs) and acarbose (digoxin). Each lowers the object drug's bioavailability. Learn this table.",
+ teach:"Table 18-1 lists four adsorbents: cholestyramine (digoxin, levothyroxine), kaolin (digoxin), activated charcoal (many drugs) and acarbose (digoxin). Each lowers the object drug's bioavailability.",
  cite:"DDI Lecture Students 2026 (1).pdf slide 'Pharmacokinetic Interactions: Absorption' (p. 9, Table 18-1)"},
 
 {id:"L22-052", lecture:"L22", prof:"Smith", tier:"new", topic:"L22", sub:"ddi-absorb", skill:"recall", core:true, coreWhy:"her absorption table (Table 18-1), which she said to learn",
@@ -725,7 +725,7 @@ QUESTIONS.push(
 
 {id:"L22-056", lecture:"L22", prof:"Smith", tier:"new", topic:"L22", sub:"ddi-absorb", skill:"recall",
  concept:"carrier-competition-pgp", tags:["smith"], source:"both",
- stem:"Besides changes in intestinal blood flow, which other GI absorption interaction involves a carrier such as P-gp?",
+ stem:"Besides changes in intestinal blood flow, which other interaction affects absorption of an object drug from the GI tract?",
  options:[
   {t:"Competition for the same carrier, such as P-gp", correct:true, why:"A precipitant that competes for the object drug's carrier, such as P-glycoprotein (P-gp), changes its bioavailability."},
   {t:"Displacement from plasma proteins", correct:false, why:"Plasma protein displacement is a distribution interaction."},
@@ -838,17 +838,17 @@ QUESTIONS.push(
 
 {id:"L22-065", lecture:"L22", prof:"Smith", tier:"new", topic:"L22", sub:"ddi-metab", skill:"recall", multi:true,
  concept:"non-drug-cyp-precipitants", tags:["smith","inclass"], source:"both",
- stem:"Which of these non-drug precipitants appear in the cytochrome P450 inducer and inhibitor table? Select all that apply.",
+ stem:"Which of these non-drug precipitants induce or inhibit cytochrome P450 enzymes? Select all that apply.",
  options:[
   {t:"Garlic", correct:true, why:"A student named garlic first; the table lists garlic supplements in the CYP3A row."},
   {t:"Charbroiled foods", correct:true, why:"Named by a student; she compared them with cigarette smoke as CYP1A2 inducers."},
   {t:"Grapefruit and Seville oranges", correct:true, why:"She named grapefruit, Seville oranges and bitter oranges in the CYP3A row."},
   {t:"St. John's wort", correct:true, why:"The herbal product the class named; it is listed for CYP2D6 and CYP3A."},
   {t:"Cimetidine, fluoxetine and ritonavir", correct:false, why:"These are drugs, listed as CYP inhibitors."},
-  {t:"Red wine and cheddar cheese", correct:false, why:"Tyramine in red wine and aged cheese is the MAOI interaction, not a CYP table entry."}],
+  {t:"Avocado and cheddar cheese", correct:false, why:"Tyramine in these foods is the MAOI interaction, not a CYP table entry."}],
  teach:"Table 18-3 lists drug, herb and food actions on cytochrome P450 enzymes. The non-drug precipitants worth knowing: garlic supplements (CYP3A), charbroiled foods (CYP1A2 inducers, like smoke), grapefruit, Seville oranges and bitter oranges (CYP3A), and St. John's wort (CYP2D6 and CYP3A).",
  quote:"Can you find some of the precipitants, ones that are either inhibitors or inducers that are not drugs? Hmm. Garlic, yeah.",
- note:"She said the non-drug examples \"all just happen to be inducers\" and that the citrus fruits \"will induce\" the 3A family. In the printed table these items sit under the Inducer heading for CYP3A. Later, on food-drug interactions, she said the citrus compounds \"compete with metabolizing enzymes\", and p. 27 says a competing food acts as an inhibitor. This question does not key the direction; see L22-081.",
+ note:"She said the non-drug examples \"all just happen to be inducers\" and that the citrus fruits \"will induce\" the 3A family. In the printed table these items sit under the Inducer heading for CYP3A. Later, on food-drug interactions, she said the citrus compounds \"compete with metabolizing enzymes\", and p. 27 says a competing food acts as an inhibitor. This question does not key the direction; see L22-081. The FDA states that grapefruit juice \"can block the action of intestinal CYP3A4\" (FDA consumer update \"Grapefruit Juice and Some Drugs Don't Mix\"), which is inhibition.",
  cite:"DDI Lecture Students 2026 (1).pdf slide 'Pharmacokinetic Interactions Drug Elimination and Clearance' (p. 15, Table 18-3); (T) 10/28 transcript"},
 
 {id:"L22-066", lecture:"L22", prof:"Smith", tier:"new", topic:"L22", sub:"ddi-metab", skill:"recall",
@@ -962,7 +962,7 @@ QUESTIONS.push(
   {t:"Urinary retention", correct:true, why:"An anticholinergic effect listed for this pair."},
   {t:"Diarrhea", correct:false, why:"Anticholinergic effects slow the gut; diarrhea is not listed."},
   {t:"Excess salivation", correct:false, why:"Anticholinergic effects dry the mouth."},
-  {t:"Bradycardia", correct:false, why:"Anticholinergic effects tend to raise heart rate, not slow it."}],
+  {t:"Bradycardia", correct:false, why:"Not among the anticholinergic effects listed for this pair (dry mouth, blurred vision, urinary retention)."}],
  teach:"Promethazine and antihistamines both have anticholinergic actions. Together they increase anticholinergic effects: excessive dry mouth, blurred vision and urinary retention. This is an example of similar pharmacodynamic actions.",
  quote:"Another common example would be the increased anticholinergic effects, so, you know, dry mouth, blurred vision, urinary retention that can happen with something like promethazine and antihistamines, OK?",
  cite:"DDI Lecture Students 2026 (1).pdf slide 'Pharmacodynamic Interactions Examples' (p. 19); (T) 10/28 transcript"},
@@ -1050,10 +1050,10 @@ QUESTIONS.push(
   {t:"As an inhibitor; citrus fruits", correct:true, why:"A competitor for the enzymes is an inhibitor; she named the compounds in citrus fruits."},
   {t:"As an inducer; charbroiled meat", correct:false, why:"Charbroiled foods induce CYP1A2; they do not compete for the enzyme."},
   {t:"As an adsorbent; spinach and broccoli", correct:false, why:"Spinach and broccoli are the vitamin K example, a pharmacodynamic antagonism of warfarin."},
-  {t:"As a chelator; dairy calcium", correct:false, why:"Calcium complexes quinolones in the gut; it does not act on enzymes."}],
+  {t:"As a chelator; calcium", correct:false, why:"Calcium complexes quinolones in the gut; it does not act on enzymes."}],
  teach:"Food may affect a drug's metabolizing enzymes. A food that competes for the enzymes acts as an inhibitor; a food may also induce them. The compounds in citrus fruits are the competing foods.",
  quote:"Other issues are, uh, you get some food products that will compete with metabolizing enzymes. That's the issue for a lot of those, um, compounds in those citric, uh, citrus fruits that we mentioned.",
- note:"Conflict: while going over Table 18-3 Dr. Smith said the citrus fruits \"will induce\" the CYP3A family and that the non-drug examples \"all just happen to be inducers\" (the printed table places grapefruit, Seville and bitter oranges and garlic under its Inducer heading). Here, on food-drug interactions, she said they compete with metabolizing enzymes, and p. 27 says a competing food is an inhibitor. Keyed to this later statement and p. 27.",
+ note:"Conflict: while going over Table 18-3 Dr. Smith said the citrus fruits \"will induce\" the CYP3A family and that the non-drug examples \"all just happen to be inducers\" (the printed table places grapefruit, Seville and bitter oranges and garlic under its Inducer heading). Here, on food-drug interactions, she said they compete with metabolizing enzymes, and p. 27 says a competing food is an inhibitor. Keyed to this later statement and p. 27. The FDA states that grapefruit juice \"can block the action of intestinal CYP3A4\" (FDA consumer update \"Grapefruit Juice and Some Drugs Don't Mix\"), which is inhibition.",
  cite:"DDI Lecture Students 2026 (1).pdf slides 'Food-Drug Interactions' (p. 27) and 'Pharmacokinetic Interactions Drug Elimination and Clearance' (p. 15, Table 18-3); (T) 10/28 transcript"},
 
 {id:"L22-082", lecture:"L22", prof:"Smith", tier:"new", lowYield:true, topic:"L22", sub:"ddi-herb-food", skill:"apply",
@@ -1122,7 +1122,7 @@ QUESTIONS.push(
  cite:"DDI Lecture Students 2026 (1).pdf slide 'Chemical-Drug Interactions' (p. 30); (T) 10/28 transcript"},
 {id:"L22-087", lecture:"L22", prof:"Smith", tier:"new", topic:"L22", sub:"naranjo", skill:"tell", readingId:"naranjo",
  concept:"naranjo-lowest-ranking", tags:["smith"], source:"both",
- stem:"The Naranjo algorithm page labels a total score of 0 'doubtful'. In the ranking definite, probable, possible, remote, which names the same lowest category?",
+ stem:"The Naranjo scale labels a total score of 0 'doubtful'. In the ranking definite, probable, possible, remote, which names the same lowest category?",
  options:[
   {t:"Remote", correct:true, why:"Remote is her lowest ranking; the algorithm page calls the same band doubtful."},
   {t:"Possible", correct:false, why:"Possible is a score of 1 to 4: the drug appears to be associated."},
@@ -1216,18 +1216,18 @@ QUESTIONS.push(
  cite:"ADE-Lecture-Students-2026.pdf slide 'Photosensitivity Drug Reactions' (p. 34); transcript 10/28"},
 {id:"L22-094", lecture:"L22", prof:"Smith", tier:"new", topic:"L22", sub:"ade-types", skill:"apply", core:true, coreWhy:"her Exam 4 study list item 1 (objectives): the five ADE types",
  concept:"adwe-apply", tags:["smith"], source:"both",
- stem:"A patient on long-term paroxetine stops it abruptly and develops dizziness and flu-like symptoms. Which type of adverse drug event is this?",
+ stem:"A patient on long-term SSRI therapy stops the drug abruptly and feels unwell within days. Which type of adverse drug event is this?",
  options:[
   {t:"Adverse drug withdrawal event", correct:true, why:"Stopping a long-term drug too quickly produces withdrawal symptoms; she named SSRIs as a class to counsel."},
   {t:"Therapeutic failure", correct:false, why:"The drug was not failing to work at a suboptimal dose; it was stopped."},
   {t:"Adverse drug reaction at a normal dose", correct:false, why:"An ADR is a noxious effect of the drug at a normal dose, not a withdrawal effect from stopping it."},
   {t:"Medication error", correct:false, why:"No process mistake in prescribing, dispensing or giving the drug is described."}],
- teach:"Stopping a long-term drug too quickly gives an adverse drug withdrawal event. She accepted SSRIs such as paroxetine as a class to counsel patients about before stopping.",
+ teach:"Stopping a long-term drug too quickly, especially abruptly, gives an adverse drug withdrawal event. She accepted SSRIs as a CNS class to counsel patients about before stopping.",
  quote:"you can definitely get withdrawal symptoms",
  cite:"ADE-Lecture-Students-2026.pdf slides 'Types of ADEs' (p. 6), 'Adverse Drug Withdrawal Events' (p. 8); transcript 10/28"},
 {id:"L22-095", lecture:"L22", prof:"Smith", tier:"new", topic:"L22", sub:"ade-types", skill:"apply", core:true, coreWhy:"her Exam 4 study list item 1 (objectives): the medication misadventures relationships of ADE, ADR and medication error",
  concept:"venn-error-ade-apply", tags:["smith"], source:"both",
- stem:"A nurse gives ten times the ordered dose of morphine and the patient stops breathing. Which terms apply?",
+ stem:"A nurse gives ten times the ordered dose of an opioid and the patient is seriously injured. Which terms apply?",
  options:[
   {t:"A medication error that is also an adverse drug event", correct:true, why:"A preventable mistake in the medication process is a medication error, and the injury makes it an adverse drug event."},
   {t:"An adverse drug reaction from the resulting harm", correct:false, why:"An ADR is a noxious effect at a normal dose; a tenfold overdose is not an ADR."},
@@ -1242,12 +1242,12 @@ QUESTIONS.push(
  options:[
   {t:"Rash: MedWatch; near-miss: ISMP MERP", correct:true, why:"An ADR at a normal dose goes to MedWatch; a medication error, even a near miss, goes to the ISMP Medication Errors Reporting Program."},
   {t:"Rash: ISMP MERP; near-miss: MedWatch", correct:false, why:"Reversed: the ADR goes to MedWatch and the error to ISMP MERP."},
-  {t:"Both: MedWatch", correct:false, why:"MedWatch takes the ADR; the medication error goes to ISMP MERP."},
+  {t:"Both: ISMP MERP", correct:false, why:"ISMP MERP takes the medication error; the ADR at a normal dose goes to MedWatch."},
   {t:"Rash: MedWatch; near-miss: nowhere, with no harm done", correct:false, why:"A near miss is still reported to ISMP MERP; no harm does not excuse it."}],
  teach:"An adverse drug reaction at a normal dose is reported to MedWatch. A medication error, including a near miss that is caught, is reported to the ISMP Medication Errors Reporting Program.",
  quote:"medication error about to, about to happen",
  cite:"ADE-Lecture-Students-2026.pdf slides 'Reporting Medication Errors' (p. 11), 'Adverse Drug Reaction (ADR)' (p. 12); transcript 10/28"},
-{id:"L22-097", lecture:"L22", prof:"Smith", tier:"new", topic:"L22", sub:"ddi-pd", skill:"apply", core:true, coreWhy:"her Exam 4 study list item 1 (objectives): precipitant versus object and pharmacokinetic versus pharmacodynamic interactions",
+{id:"L22-097", lecture:"L22", prof:"Smith", tier:"new", topic:"L22", sub:"ddi-pd", skill:"apply", dupOf:"L22-076", core:true, coreWhy:"her Exam 4 study list item 1 (objectives): precipitant versus object and pharmacokinetic versus pharmacodynamic interactions",
  concept:"digoxin-diuretic-pd-apply", tags:["smith"], source:"both",
  stem:"A patient stable on digoxin is started on a potassium-wasting diuretic; the potassium falls and the heart rate drops. Name the precipitant drug and the kind of interaction.",
  options:[
@@ -1260,7 +1260,7 @@ QUESTIONS.push(
  cite:"DDI Lecture Students 2026 (1).pdf slides 'Drug Interactions Introduction' (pp. 5, 7), 'Pharmacodynamic Interactions Examples' (p. 20); (T) 10/28 transcript"},
 {id:"L22-098", lecture:"L22", prof:"Smith", tier:"new", topic:"L22", sub:"immuno-nonimmuno", skill:"apply", core:true, coreWhy:"her Exam 4 study list item 1 (objectives): the nonimmunologic reaction types, including pseudoallergic",
  concept:"pseudoallergic-apply", tags:["smith"], source:"both",
- stem:"Minutes after a radiocontrast dye injection a patient itches and flushes; later testing finds no IgE antibody to the dye. Which classification fits?",
+ stem:"Minutes after a radiocontrast dye injection a patient becomes itchy; later testing finds no IgE antibody to the dye. Which classification fits?",
  options:[
   {t:"Nonimmunologic, unpredictable: pseudoallergic", correct:true, why:"It looks allergic but the drug itself causes it, with no immune mechanism: a pseudoallergic reaction."},
   {t:"Immunologic: type I hypersensitivity", correct:false, why:"No IgE antibody was found, so it is not an immune type I reaction."},

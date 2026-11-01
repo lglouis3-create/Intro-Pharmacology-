@@ -2520,7 +2520,7 @@ const TERMS = [
  src:'both'},
 
 {id:'tpmt', term:'Thiopurine methyltransferase (TPMT)', lecture:'L20', group:'Pharmacogenes, transporters and targets',
- def:'The enzyme that sends 6-mercaptopurine (azathioprine\'s active form) to an inactive methylated product; low activity sends more drug to the active 6-thioguanine nucleotides and PMs get increased myelosuppression at standard doses. Two SNPs account for over 90% of inactivating alleles: *3A (two non-synonymous SNPs) in Caucasians, about 5% heterozygous and 1 in 300 homozygous; *3C (one SNP) in East Asians. Homozygous deficient patients tolerate under 10% of the wild type dose; heterozygotes about 35% (her words).',
+ def:'The enzyme that sends 6-mercaptopurine (azathioprine\'s active form) to an inactive methylated product; low activity sends more drug to the active 6-thioguanine nucleotides and PMs get increased myelosuppression at standard doses. Two SNPs account for over 90% of inactivating alleles: *3A (two non-synonymous SNPs) in Caucasians, about 5% heterozygous and 1 in 300 homozygous; *3C (one SNP) in East Asians. Homozygous deficient patients tolerate under 10% of the wild type dose; heterozygotes about 35% (her words; also printed as \"35% of heterozygotes need dose decrease\").',
  hook:'Genotyping first is now standard of care; she said not knowing a patient\'s TPMT status could be considered negligent. The first drugs for which the FDA held public hearings on pharmacogenetic labeling.',
  gist:'Inactivates mercaptopurine; poor metabolizers need under 10% of the dose.',
  scene:'A child with leukemia homozygous for *3A tolerates less than 10% of the usual mercaptopurine dose.',

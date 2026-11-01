@@ -53,7 +53,7 @@ const PGX_TABLE = [
   why:'*28 is a promoter variant that lowers expression, so the active metabolite SN-38 is not glucuronidated and accumulates, so irinotecan is started lower and titrated by the neutrophil count.'},
  {id:'tpmt', gene:'TPMT (thiopurine methyltransferase)', variant:'*3A (Caucasians: about 5% heterozygous, 1 in 300 homozygous); *3C (East Asians)', type:'*3A: two non-synonymous SNPs on one allele (a haplotype); *3C: one SNP in the coding region',
   product:'Significantly reduced activity; more drug goes to 6-thioguanine nucleotides', drugs:'Azathioprine, 6-mercaptopurine',
-  todo:'Genotype first (standard of care). Homozygous deficient: under 10% of the dose; heterozygous: about 35% of the dose (her words)',
+  todo:'Genotype first (standard of care). Homozygous deficient: under 10% of the dose; heterozygous: about 35% of the dose (her words; the slide words it as 35% of heterozygotes needing a dose decrease)',
   quote:'It’s not half the dose, it’s about 35% is lower than half the dose, OK?',
   why:'*3A carries two non-synonymous SNPs on one allele and is the Caucasian variant; *3C is one SNP and the East Asian variant; both shunt more drug to 6-thioguanine nucleotides.'},
  {id:'abcb1', gene:'ABCB1 (P-glycoprotein)', variant:'3435C>T (exon 26); C1236T (exon 12); G2677T (exon 21)', type:'3435C>T: synonymous SNP (ATC to ATT); the others: not given on her slides',

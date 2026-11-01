@@ -632,7 +632,7 @@ const GUIDE4_HTML = `
 <h4>The facts</h4>
 <table class="reftab"><thead><tr><th>TPMT genotype</th><th>Place on the RBC activity histogram</th><th>Mercaptopurine dose</th></tr></thead><tbody>
 <tr><td>Homozygous wild type (*1/*1)</td><td>Largest peak, highest activity (most people)</td><td>Full dose</td></tr>
-<tr><td>Heterozygous (*1/*3A or *1/*3C)</td><td>Smaller intermediate group</td><td>About 35% of the wild-type dose, less than half (her words)</td></tr>
+<tr><td>Heterozygous (*1/*3A or *1/*3C)</td><td>Smaller intermediate group</td><td>About 35% of the wild-type dose, less than half (her words; the slide: 35% of heterozygotes need a dose decrease)</td></tr>
 <tr><td>Homozygous *3A or *3C</td><td>Very small group, lowest activity</td><td>All need a reduction; tolerate less than 10% of the wild-type dose</td></tr>
 </tbody></table>
 <ul>
