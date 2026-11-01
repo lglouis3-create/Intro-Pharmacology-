@@ -3,60 +3,60 @@
  "title": "The Naranjo algorithm",
  "segs": [
   {
-   "text": "Section thirty one. The Naranjo algorithm. When a patient on drugs develops a new symptom, the cause may be a new disease, a change in the patient's health, a new drug, or a long used drug that the changed patient now responds badly to. The Naranjo algorithm scores how likely it is that one particular drug caused the adverse reaction. It depends heavily on timing. She said, we have to think about the timing, the relationship of when they were put on this drug and when they started seeing the symptoms.",
+   "text": "Section thirty one. The Naranjo algorithm. When a patient on drugs develops a new symptom, the cause may be a new disease, a change in the patient's health, a new drug, or a long used drug the changed patient now responds badly to. The Naranjo algorithm scores how likely it is that one particular drug caused the adverse reaction, and it depends heavily on timing: when the patient was put on the drug and when the symptoms started.",
    "slide": "ade:21",
    "reading": null
   },
   {
-   "text": "The algorithm has ten questions. Each is answered yes, no, or do not know. Each answer earns a set number of points: some yes answers earn two, some earn one, and some answers take a point away. The points are added, and the total gives a category. The clinician gets the answers by sitting with the patient, asking when each drug was started, when the symptoms started and what else they take, and by searching the published literature. Here is one case, scored question by question.",
+   "text": "Ten questions, each answered yes, no, or do not know. Each answer earns set points: some yes answers earn two, some one, and some answers take a point away. The total gives a category. The clinician gets the answers by asking the patient when each drug started, when the symptoms started and what else they take, and by searching the published literature. Here is one case.",
    "slide": null,
    "reading": null,
    "step": "naranjo-case@0"
   },
   {
-   "text": "Question one: are there previous conclusive reports of this reaction? Yes, plus one. This is answered by searching the literature, so it is not a timing question. Question two: did the reaction appear after the suspected drug was given? Yes, plus two. A reaction that comes after the drug can be tied to it, so this timing answer is worth two. The total is three.",
+   "text": "Question one: are there previous conclusive reports of this reaction? Yes, plus one. This comes from the literature, not timing. Question two: did the reaction appear after the suspected drug was given? Yes, plus two. A reaction that follows the drug can be tied to it, so this timing answer is worth two. Total three.",
    "slide": null,
    "reading": null,
    "step": "naranjo-case@1"
   },
   {
-   "text": "Question three: did the reaction improve when the drug was stopped? Yes, plus one. Question four: did it come back when the drug was given again? Yes, plus two. This is the second timing answer worth two. A no on question two or four would take away one point, because a reaction that did not follow the drug, or did not come back with it, points away from the drug. The total is six.",
+   "text": "Question three: did the reaction improve when the drug was stopped? Yes, plus one. Question four: did it come back when the drug was given again? Yes, plus two, the second timing answer worth two. A no on question two or four takes away one point, because a reaction that did not follow the drug, or did not return with it, points away from the drug. Total six.",
    "slide": null,
    "reading": null,
    "step": "naranjo-case@2"
   },
   {
-   "text": "Question five: could another cause or another drug on its own explain the reaction? No, plus two. This question is scored the other way round. If nothing else could explain the reaction, the suspected drug is more likely, so no earns two. If something else could, yes takes away one point. The total is eight.",
+   "text": "Question five: could another cause or another drug alone explain the reaction? No, plus two. This one is scored the other way round: if nothing else could explain it, the suspected drug is more likely, so no earns two, and yes takes away one. Total eight.",
    "slide": null,
    "reading": null,
    "step": "naranjo-case@3"
   },
   {
-   "text": "Question six: did the reaction come back when a placebo was given? Do not know, zero, because no placebo was given. A yes here would take away one point, since a reaction that returns with a placebo points away from the drug. Question seven: was the drug found in the blood at a toxic level? Do not know, zero, because no level was measured. Do not know always scores zero, because missing information neither supports nor weakens the case. The total stays eight.",
+   "text": "Question six: did the reaction come back with a placebo? Do not know, zero, because no placebo was given; a yes would take away one, since a reaction that returns with placebo points away from the drug. Question seven: was the drug found in the blood at a toxic level? Do not know, zero, no level was measured. Do not know always scores zero, because missing information neither supports nor weakens the case. Total stays eight.",
    "slide": null,
    "reading": null,
    "step": "naranjo-case@4"
   },
   {
-   "text": "Question eight: did the reaction get worse with a higher dose or milder with a lower dose? No, zero, because the dose was never changed. Question nine: did the patient have a similar reaction to the same or similar drugs before? No, zero. A no on these questions scores zero, not minus one. The total stays eight.",
+   "text": "Question eight: was the reaction worse with a higher dose or milder with a lower dose? No, zero, the dose was never changed. Question nine: did the patient have a similar reaction to the same or similar drugs before? No, zero. A no on these two scores zero, not minus one. Total stays eight.",
    "slide": null,
    "reading": null,
    "step": "naranjo-case@5"
   },
   {
-   "text": "Question ten: was the reaction confirmed by objective evidence, such as a lab test? Yes, plus one. The total is nine.",
+   "text": "Question ten: was the reaction confirmed by objective evidence, such as a lab test? Yes, plus one. Total nine.",
    "slide": null,
    "reading": null,
    "step": "naranjo-case@6"
   },
   {
-   "text": "The total sets the category. Nine is definite: the drug is likely the true cause. Five to eight is probable: the drug is the apparent cause. One to four is possible: the drug appears to be associated. Zero is the lowest category: the drug is not likely responsible. Her slide and her words call it remote, and the Naranjo page calls it doubtful. This case scores nine, so it is definite.",
+   "text": "The total sets the category. Nine is definite: the drug is likely the true cause. Five to eight is probable: the apparent cause. One to four is possible: the drug appears to be associated. Zero is the lowest: the drug is not likely responsible; her slide calls it remote, the Naranjo page doubtful. This case scores nine, definite.",
    "slide": null,
    "reading": null,
    "step": "naranjo-case@7"
   },
   {
-   "text": "One answer can change the category. In a shorter case, questions one, two and three are yes, question four is do not know, and question five is no. That scores one plus two plus one plus zero plus two, which is six, probable. If another drug could have caused the reaction, question five becomes yes, minus one, and the total falls three points to three, possible.",
+   "text": "One answer can change the category. In a shorter case, questions one, two and three are yes, four is do not know, five is no: one plus two plus one plus zero plus two, six, probable. If another drug could have caused the reaction, question five becomes yes, minus one, and the total falls three points to three, possible.",
    "slide": null,
    "reading": null,
    "table": 2

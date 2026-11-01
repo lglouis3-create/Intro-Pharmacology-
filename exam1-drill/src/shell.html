@@ -49,10 +49,10 @@ nav button{border:1px solid var(--line);background:var(--chip);color:var(--ink);
 }
 nav button.on{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
 main{max-width:880px;margin:0 auto;padding:16px}
-@media (max-width:700px){main{padding-bottom:72px} .step3.fig{padding-left:2px;padding-right:2px}}
+@media (max-width:700px){main{padding-bottom:72px} main .step3.fig{margin-left:-20px;margin-right:-20px;padding-left:2px;padding-right:2px}}
 .step3 .s3svg{position:relative} .s3ghost{position:absolute;inset:0;opacity:.2;pointer-events:none} .s3ghost svg{width:100%;height:auto;max-width:560px;display:block;margin:0 auto}
 .gwslide .step3 .s3nav,.gwslide .step3 figcaption .meta,.gwslide .step3 .s3cap{display:none}
-details.gfold{margin:10px 0;border:1px solid var(--line);border-radius:10px;padding:6px 10px} details.gfold>summary{cursor:pointer;font-weight:600;font-size:14px;color:var(--muted);min-height:32px}
+table.reftab td small,table.reftab th small{font-size:12px} details.gfold{margin:10px 0;border:1px solid var(--line);border-radius:10px;padding:6px 10px} details.gfold>summary{cursor:pointer;font-weight:600;font-size:14px;color:var(--muted);min-height:32px}
 .focuscard>summary{cursor:pointer}
 .factstab ol{margin:0;padding-left:1.2em} .factstab ol li{margin:0 0 4px}
 h2{font-size:20px;margin:6px 0 8px}
@@ -148,9 +148,9 @@ select,input[type=text],input[type=number]{font-size:15px;padding:6px 8px;border
 .fig .st-out{pointer-events:none}
 .sdot{transition:background-color .3s cubic-bezier(.65,0,.35,1)}
 @media (prefers-reduced-motion:reduce){.fig .st-out{display:none} .sdot{transition:none}}
-.sdots{display:inline-flex;gap:6px;align-items:center;margin-left:auto} .sdot{position:relative;width:12px;height:12px;border-radius:50%;background:var(--line);border:none;padding:0;cursor:pointer} .sdot.on{background:var(--accent)} .sdot:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.sdots{display:inline-flex;gap:10px;align-items:center;margin-left:auto} .sdot{position:relative;width:12px;height:12px;border-radius:50%;background:var(--line);border:none;padding:0;cursor:pointer} .sdot.on{background:var(--accent)} .sdot:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 /* a step dot is drawn 12 px wide but takes a 24 px tap */
-.sdot::after{content:'';position:absolute;inset:-6px;border-radius:50%}
+.sdot::after{content:'';position:absolute;inset:-16px;border-radius:50%}
 .fig .arrow{stroke:var(--muted);stroke-width:1.6;fill:none;marker-end:url(#arw)}
 .shiftgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(400px,1fr));gap:12px;margin:8px 0 18px} .shiftgrid .fig{max-width:none;margin:0}
 .pair{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:8px 0 18px} .pair .fig{max-width:none;margin:0} .pair h4{grid-column:1/-1;margin:0}
@@ -206,11 +206,11 @@ body{padding-bottom:64px}
 .fillin{flex:1 1 240px;font:inherit;padding:8px 10px;border:1px solid var(--line);border-radius:6px;background:var(--panel);color:var(--ink)} .fillbank{gap:6px;margin:6px 0} .fillans{border:1px solid var(--line);border-radius:6px;padding:8px 10px;margin-top:6px;display:grid;gap:4px} .corebtn{white-space:nowrap}
 .saybox{max-height:16em;overflow:auto;line-height:1.5} .ssent.on{background:var(--chip);outline:1px solid var(--accent);border-radius:3px} .rdtx{margin-top:8px;font-size:15px}
 .step3 .s3svg svg{width:100%;height:auto;max-width:560px;display:block;margin:0 auto} .step3 .s3cap{margin:6px 2px;font-size:15px;line-height:1.45} .s3nav{gap:6px;align-items:center} .step3 .sdot{width:12px;height:12px;border-radius:50%;border:1px solid var(--accent);background:var(--panel);padding:0} .step3 .sdot.on{background:var(--accent)}
-.s3box{fill:var(--panel);stroke:var(--line);stroke-width:1.5} .s3txt{fill:var(--ink);font:12px system-ui,sans-serif} .s3sub{fill:var(--muted);font:11px system-ui,sans-serif} .s3acc{stroke:var(--accent);fill:none;stroke-width:2} .s3accf{fill:var(--accent)} .s3bad{stroke:var(--bad);fill:none;stroke-width:2} .s3badf{fill:var(--bad)} .s3okf{fill:var(--ok)} .s3line{stroke:var(--ink);fill:none;stroke-width:1.5} .s3hi{fill:var(--chip);stroke:var(--accent);stroke-width:2}
+.s3box{fill:var(--panel);stroke:var(--line);stroke-width:1.5} .s3txt{fill:var(--ink);font:13px system-ui,sans-serif} .s3sub{fill:var(--muted);font:12px system-ui,sans-serif} .s3acc{stroke:var(--accent);fill:none;stroke-width:2} .s3accf{fill:var(--accent)} .s3bad{stroke:var(--bad);fill:none;stroke-width:2} .s3badf{fill:var(--bad)} .s3okf{fill:var(--ok)} .s3line{stroke:var(--ink);fill:none;stroke-width:1.5} .s3hi{fill:var(--chip);stroke:var(--accent);stroke-width:2}
 .sayside{display:grid;gap:6px;margin:6px 0} .sayside details>summary{font-size:13px;color:var(--muted)} .saymov{width:100%;height:420px;border:1px solid var(--line);border-radius:6px;background:var(--panel)} .sayfig{margin:0} .sayfig img{max-height:240px;width:auto;max-width:100%;cursor:zoom-in;display:block;margin:0 auto;background:#fff} .sayfig figcaption{font-size:12px;color:var(--muted);text-align:center} .saykey{border:1px solid var(--line);border-radius:6px;padding:6px 8px;font-size:13px;background:var(--panel)}
 #totop{position:fixed;left:14px;bottom:14px;z-index:20;box-shadow:0 2px 10px rgba(0,0,0,.25)}
 .opt.right.missed::after{content:"missed";margin-left:auto;font-size:12px;color:var(--bad);font-weight:600}
-@media (pointer:coarse){[data-c],.qmore>summary,[data-topic],[data-core],[data-check],[data-qsay],#backbtn,.layoutsel .chip,#nav button,[data-mode],[data-group],[data-order],[data-scope],[data-show],[data-fc],#fcshow,[data-drill]{min-height:44px} .letters .lt{min-width:40px;height:40px}}
+@media (pointer:coarse){[data-c],.qmore>summary,[data-topic],[data-core],[data-check],[data-qsay],#backbtn,.layoutsel .chip,#nav button,[data-mode],[data-group],[data-order],[data-scope],[data-show],[data-fc],#fcshow,[data-drill],[data-pgxmode],[data-pgxshow],[data-pgxgot],[data-pgxans],#pgxhide,#pgxshowall,#pgxnext,#pgxskip{min-height:44px} .letters .lt{min-width:40px;height:40px}}
 @media (max-width:480px){#focusbtn .long{display:none}}
 #updbar{display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:8px 16px;background:var(--warn-bg);color:var(--ink);border-bottom:1px solid var(--line);font-size:14px}
 #updbar span{flex:1 1 220px}

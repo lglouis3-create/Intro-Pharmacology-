@@ -3,27 +3,27 @@
  "title": "Four ways to name a genetic variant",
  "segs": [
   {
-   "text": "Section one. Naming genetic variants. The same genetic variant can be written four ways, depending on which system the scientists who first described it chose. Papers, guidance documents and genotype reports use all four, so a pharmacist has to read each one and know what each one tells you: where in the gene the change is, which version is the wild type, meaning the normal version, and which is the variant. One more rule applies to every gene: the gene symbol is written in italics and the protein is not. So T P M T in italics is the gene, and T P M T in plain type is the enzyme, thiopurine methyltransferase.",
+   "text": "Section one. Naming genetic variants. One variant can be written four ways, depending on which system its discoverers chose. Reports use all four, so you must know what each tells you: where the change is, which version is the wild type, meaning the normal version, and which is the variant. One rule for every gene: the gene symbol is in italics, the protein is not. T P M T in italics is the gene; in plain type it is the enzyme, thiopurine methyltransferase.",
    "slide": "pgx:22",
    "reading": null
   },
   {
-   "text": "The first system is allele numeric or alphabetic nomenclature. V K O R C one, eleven seventy three C, and V K O R C one, eleven seventy three T, name two versions of the same spot. You get the gene symbol, the position of the nucleotide, meaning the D N A base, counted from the start codon where the gene's protein code begins, and the base found there. You do not get which one is the wild type. Only a writer who follows the convention, wild type in a capital letter and the variant in lowercase, tells you that.",
+   "text": "First, allele numeric or alphabetic nomenclature: V K O R C one, eleven seventy three C, and V K O R C one, eleven seventy three T. You get the gene, the nucleotide position, meaning the D N A base counted from the start codon where the protein code begins, and the base found there. It does not say which is the wild type, unless the writer follows the convention: capital letter for wild type, lowercase for variant.",
    "slide": "pgx:23",
    "reading": null
   },
   {
-   "text": "The S N P system, for single nucleotide polymorphism, fixes that. V K O R C one, eleven seventy three, C to T, gives the gene, the position, the wild type nucleotide first, an arrow, and then the variant. A second example is A B C B one, thirty four thirty five, C to T. A B C B one is the gene for P-glycoprotein. The trap is reading the order backward. In C to T, C is the wild type, because the wild type is always written first.",
+   "text": "Second, the S N P system, for single nucleotide polymorphism: V K O R C one, eleven seventy three, C to T. Gene, position, wild type nucleotide first, an arrow, then the variant. Another example is A B C B one, thirty four thirty five, C to T; A B C B one codes P-glycoprotein. The trap is reading the order backward: C is the wild type, because the wild type is always written first.",
    "slide": "pgx:24",
    "reading": null
   },
   {
-   "text": "The star system writes the gene, then a star and a number for the allele. She said, We always call star one for whatever gene we're talking about, that's the wild type version. The name does not say where the change is or what it is, so you need a table that defines each star allele. Star numbers follow the order of discovery, not position. C Y P two C nineteen star two, six eighty one G to A, was characterized first. Star three, six thirty six G to A, was found later, yet lies closer to the start codon. And each lab numbers its own gene's variants, so C Y P two C nine star two is not at six eighty one.",
+   "text": "Third, the star system: gene, star, allele number. She said, We always call star one for whatever gene we're talking about, that's the wild type version. The name does not say where or what the change is, so you need a table defining each star allele. Star numbers follow order of discovery, not position: C Y P two C nineteen star two, six eighty one G to A, was characterized first; star three, six thirty six G to A, came later yet lies closer to the start codon. Each lab numbers its own gene, so two C nine star two is not at six eighty one.",
    "slide": "pgx:25",
    "reading": null
   },
   {
-   "text": "The reference S N P system, or r s, gives each S N P a number from the S N P database, d b S N P, that no other S N P has. The Human Genome Variation Society recommends it as the standard. C Y P two C nineteen star three, which is C Y P two C nineteen six thirty six G to A, is r s four nine eight, six eight nine three. The number names one S N P and nothing more. To learn the gene, the position or the wild type, you must search a database that is hard to query. So of the four systems, r s is the one that does not easily tell you which allele is the wild type.",
+   "text": "Fourth, the reference S N P system, or r s: each S N P gets a unique number from the S N P database, d b S N P, and the Human Genome Variation Society recommends it as the standard. Two C nineteen star three, six thirty six G to A, is r s four nine eight, six eight nine three. The number names one S N P and nothing more; gene, position and wild type must be looked up in a database that is hard to query. So r s is the system that does not easily tell you the wild type.",
    "slide": "pgx:27",
    "reading": null
   }

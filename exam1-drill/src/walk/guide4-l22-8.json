@@ -3,25 +3,25 @@
  "title": "Pharmacodynamic and beneficial interactions",
  "segs": [
   {
-   "text": "Section thirty six. Pharmacodynamic and beneficial interactions. A pharmacodynamic interaction alters the effect of the object drug, producing an antagonistic, synergistic, or additive effect. There are four situations, each with an example pair. In the first, drugs with similar actions produce excessive or toxic responses. Narcotics and antihistamines both depress the central nervous system, so the patient is very drowsy. Promethazine and antihistamines both have anticholinergic effects, so dry mouth, blurred vision and urinary retention increase. Similar actions add. They do not cancel.",
+   "text": "Section thirty six. Pharmacodynamic and beneficial interactions. A pharmacodynamic interaction alters the effect of the object drug, producing an antagonistic, synergistic, or additive effect. There are four situations, each with an example pair. First, drugs with similar actions produce excessive or toxic responses. Narcotics and antihistamines both depress the central nervous system, so the patient is very drowsy. Promethazine and antihistamines both have anticholinergic effects, so dry mouth, blurred vision and urinary retention increase. Similar actions add; they do not cancel.",
    "slide": "ddi:19",
    "reading": null,
    "table": 0
   },
   {
-   "text": "The key distinction is the target. In the second situation, one drug's effect is antagonized by the opposite effect of another at a different receptor. Propranolol blocks beta receptors, while adrenaline raises blood pressure through alpha one, so the antihypertensive and hypertensive effects cancel. In the fourth situation, opposite effects on the same target cause therapeutic failure. Naloxone and a narcotic pain medicine hit the same receptor, so the narcotic does not work. She said, They're hitting the same receptor, canceling each other out.",
+   "text": "The key distinction is the target. Second, one drug's effect is antagonized by the opposite effect of another at a different receptor: propranolol blocks beta receptors while adrenaline raises blood pressure through alpha one, so the antihypertensive and hypertensive effects cancel. Fourth, opposite effects on the same target cause therapeutic failure: naloxone and a narcotic pain medicine hit the same receptor and cancel each other out, so the narcotic does not work.",
    "slide": "ddi:20",
    "reading": null,
    "table": 0
   },
   {
-   "text": "In the third situation, an adverse effect of the precipitant increases sensitivity to the object drug. Digoxin works by blocking the sodium potassium A T P ase in heart cells, and low potassium blocks that pump further. A potassium wasting diuretic lowers blood potassium, so the patient becomes more sensitive to digoxin, with potential for severe toxicity. She said, If they're on digoxin, you don't want it to go too low, because that will make you sensitive to too much heart block by digoxin.",
+   "text": "Third, an adverse effect of the precipitant increases sensitivity to the object drug. Digoxin works by blocking the sodium potassium A T P ase in heart cells, and low potassium blocks that pump further. A potassium wasting diuretic lowers blood potassium, so the patient becomes more sensitive to digoxin, with potential for severe toxicity, too much heart block.",
    "slide": "ddi:20",
    "reading": null,
    "table": 0
   },
   {
-   "text": "Lithium follows the same pattern. Lithium is a positive ion like sodium and is reabsorbed from the urine by the same mechanisms. When a sodium wasting diuretic lowers sodium, the body reabsorbs more lithium, not less. Lithium has a very narrow therapeutic index, so levels can reach the toxic zone. She placed both of these diuretic examples under pharmacodynamic interactions, because the precipitant's own adverse effect changes the response to the object drug.",
+   "text": "Lithium follows the same pattern. Lithium is a positive ion like sodium and is reabsorbed from the urine by the same mechanisms. When a sodium wasting diuretic lowers sodium, the body reabsorbs more lithium, not less, and with lithium's very narrow therapeutic index levels can reach the toxic zone. She placed both diuretic examples under pharmacodynamic interactions, because the precipitant's own adverse effect changes the response to the object drug.",
    "slide": "ddi:20",
    "reading": null,
    "table": 0
@@ -33,7 +33,7 @@
    "table": 1
   },
   {
-   "text": "Levodopa, for Parkinson's disease, must reach the brain unchanged, but it is metabolized in the periphery. Without help, enough levodopa has to be given that some is left after peripheral metabolism. Carbidopa inhibits that peripheral metabolism, so levodopa stays intact and more of it reaches the central nervous system. Levodopa crosses the blood brain barrier itself, and carbidopa does not carry it.",
+   "text": "Levodopa, for Parkinson's disease, must reach the brain unchanged, but it is metabolized in the periphery, so without help enough has to be given that some is left over. Carbidopa inhibits that peripheral metabolism, so levodopa stays intact and more reaches the central nervous system. Levodopa crosses the blood brain barrier itself; carbidopa does not carry it.",
    "slide": "ddi:22",
    "reading": null
   }

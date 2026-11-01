@@ -174,14 +174,14 @@ function schedule(id, outcome) {
 /* ---------- views ---------- */
 const VIEWS = [
   ['topics', 'Topics'], ['quiz', 'Quiz'], ['terms', 'Terms'], ['weak', 'Weak spots'], ['exam', 'Exam sim'], ['sa', 'Short answer'],
-  ['graphs', 'Graphs'], ['diagrams', 'Diagrams'], ['scenes', 'Scenes'], ['map', 'Question map'], ['drugs', 'All drugs'], ['ref', 'Reference'], ['tell', 'Tell apart'], ['pair', 'Pair up'], ['rxq', 'Drug ↔ receptor'], ['ptab', 'Poisoning table'], ['guide', 'Guides'], ['readings', 'Readings'], ['data', 'Progress']
+  ['graphs', 'Graphs'], ['diagrams', 'Diagrams'], ['scenes', 'Scenes'], ['map', 'Question map'], ['drugs', 'All drugs'], ['ref', 'Reference'], ['tell', 'Tell apart'], ['pair', 'Pair up'], ['rxq', 'Drug ↔ receptor'], ['ptab', 'Poisoning table'], ['pgx', 'Variant drill'], ['guide', 'Guides'], ['readings', 'Readings'], ['data', 'Progress']
 ];
 let CUR = 'topics';
 /* Smith focus: one switch that keeps only the pages her exam uses, locks the exam to Exam 3, hides the other
    exams' groups and puts her own words about what to study at the top of Topics. Remembered per browser. */
 // her current exam: the latest exam she teaches (Exam 3, then Exam 4); the poisoning table and short-answer pages are Exam 3 only
 const FOCUS_KEY = COURSE.ns + ':focus', FOCUS_EXAM = Math.max(...COURSE.exams.filter(e => COURSE.lectures.some(l => l.exam === e.id && l.prof === 'Smith')).map(e => e.id));
-const FOCUS_VIEWS = ['topics', 'quiz', 'terms', 'weak', 'exam', 'map', 'guide', 'readings', 'ref', 'tell', 'data'].concat(FOCUS_EXAM === 3 ? ['sa', 'ptab'] : []);
+const FOCUS_VIEWS = ['topics', 'quiz', 'terms', 'weak', 'exam', 'map', 'guide', 'readings', 'ref', 'tell', 'data'].concat(FOCUS_EXAM === 3 ? ['sa', 'ptab'] : FOCUS_EXAM === 4 ? ['pgx'] : []);
 const focusOn = () => (store.get(FOCUS_KEY) || '1') === '1' && COURSE.exams.some(e => e.id === FOCUS_EXAM);
 function setFocus(on) {
   store.set(FOCUS_KEY, on ? '1' : '0');
@@ -223,6 +223,7 @@ function leaveView() {
   if (typeof playStop === 'function') playStop();
   if (typeof scenesStop === 'function') scenesStop();
   if (typeof gwStop === 'function') gwStop();
+  if (S3PLAY) { S3PLAY = null; if (typeof sayStop === 'function') sayStop(); }
 }
 /* Open a view. Returns false when the learner stays in a running exam. `back` is set by the
    "Back to …" button: the exam then reopens on its result page, not on a new paper. */
@@ -565,12 +566,12 @@ function backBtn() {
   if (!b) { b = document.createElement('button'); b.id = 'backbtn'; b.type = 'button'; b.className = 'btn'; document.body.appendChild(b); b.onclick = goBack; }
   b.textContent = backLabel();
 }
-const backLabel = () => '← Back to ' + ({topics: 'Topics', quiz: 'the question', exam: 'the exam', graphs: 'the figures', map: 'the map', terms: 'the terms', weak: 'Weak spots', tell: 'Tell apart', ref: 'the reference', guide: 'the guide', diagrams: 'the diagrams', drugs: 'the drug table', pair: 'Pair up', rxq: 'the receptor drill', ptab: 'the poisoning table drill', sa: 'short answer', scenes: 'the scenes', readings: 'the readings'}[(RET[RET.length - 1] || {}).view] || 'where you were');
+const backLabel = () => '← Back to ' + ({topics: 'Topics', quiz: 'the question', exam: 'the exam', graphs: 'the figures', map: 'the map', terms: 'the terms', weak: 'Weak spots', tell: 'Tell apart', ref: 'the reference', guide: 'the guide', diagrams: 'the diagrams', drugs: 'the drug table', pair: 'Pair up', rxq: 'the receptor drill', ptab: 'the poisoning table drill', pgx: 'the variant drill', sa: 'short answer', scenes: 'the scenes', readings: 'the readings'}[(RET[RET.length - 1] || {}).view] || 'where you were');
 function goBack() { const r = RET.pop(); if (!r) return; backBtn(); go(r.view, true); placeRestore(r); }
 document.addEventListener('click', e => { const j = e.target.closest('[data-jump]'); if (j) { const [v, a] = j.dataset.jump.split(':'); jump(v, a); if (j.dataset.jq) markFor(j.dataset.jq, a); } });
 /* "view:anchor:group:key": jump to the page, then open that explanation card (the reference's "Why?" cards). */
 document.addEventListener('click', e => { const j = e.target.closest('[data-jumpx]'); if (!j) return; const [v, a, g, k] = j.dataset.jumpx.split(':'); jump(v, a); const out = showExplain(g, k); if (out) scrollToEl(out.closest('.xpick')); });
-const VIEWFN = {topics: vTopics, quiz: vQuiz, terms: vTerms, weak: vWeak, exam: vExam, map: vMap, graphs: vGraphs, diagrams: vDiagrams, scenes: vScenes, drugs: vDrugs, ref: vRef, tell: vTell, pair: vPair, rxq: vRxq, ptab: vPtab, sa: vSa, guide: vGuide, readings: vReadings, data: vData};
+const VIEWFN = {topics: vTopics, quiz: vQuiz, terms: vTerms, weak: vWeak, exam: vExam, map: vMap, graphs: vGraphs, diagrams: vDiagrams, scenes: vScenes, drugs: vDrugs, ref: vRef, tell: vTell, pair: vPair, rxq: vRxq, ptab: vPtab, pgx: vPgx, sa: vSa, guide: vGuide, readings: vReadings, data: vData};
 const rerender = () => { const y = window.scrollY; if (CUR === 'quiz' && Q) renderQ(); else if (CUR === 'exam' && EX && !EX.done) renderExam(); else if (CUR === 'exam' && EX && EX.done) examResult(); else VIEWFN[CUR](); window.scrollTo(0, y); };
 document.addEventListener('click', e => {
   const f = e.target.closest('[data-flag]');
@@ -1490,7 +1491,7 @@ const EXKEY = () => COURSE.ns + ':exam:' + PROFILE;
 function saveExam() {
   if (!EX) return;
   const {exam, name, qs, i, ans, flag, orders, ends, done, score, noBack} = EX;
-  store.set(EXKEY(), JSON.stringify({exam, name, qs, i, ans, flag, orders, ends, done, score, noBack: !!noBack}));
+  if (store.set(EXKEY(), JSON.stringify({exam, name, qs, i, ans, flag, orders, ends, done, score, noBack: !!noBack})) === false) saveWarn();
 }
 function loadExam() {
   try {
@@ -2305,6 +2306,98 @@ function ptAdvance() {
 }
 document.addEventListener('keydown', e => { if (ANTI) return; if (CUR === 'ptab' && e.key === 'Enter' && !e.target.closest('button, input, select, textarea')) { const b = $('#ptnext'); if (b) b.click(); } });
 
+/* ===== Variant drill (Exam 4): the pharmacogene variants and what separates them (pgx_table.js) =====
+   Rows are the six columns of her second think/pair/share table (reference4.js ref4-l19-2) plus the two
+   branch-specific warfarin variants from the CPIC table (ref4-l21-1). Four ways in: fill the row's other
+   four cells one at a time, name the variant from a patient line, tell a confusable pair apart, and a
+   cover-and-reveal copy of the table. A round is at most 12 items; misses come back at the end of the round
+   and lead the next one; the best first-round score per mode is kept under COURSE.ns + ':pgx'. */
+const PGX_MODES = [['fill', 'Fill the row'], ['which', 'Which variant?'], ['tell', 'Tell apart'], ['table', 'Table recall']];
+const PGX_FIELDS = [['type', 'Type of variant'], ['product', 'What happens to the gene product'], ['drugs', 'Drugs affected'], ['todo', 'What we do for the patient']];
+const PGX_ROUND = 12;
+const pgxRows = () => (typeof PGX_TABLE === 'undefined' ? [] : PGX_TABLE);
+const pgxRow = id => pgxRows().find(r => r.id === id);
+const pgxLabel = r => r.gene + ' ' + r.variant;
+const pgxQuote = r => r.quote ? `<div class="sub">What she said: "${esc(r.quote)}"</div>` : '';
+const pgxRowHTML = r => `<b>${esc(pgxLabel(r))}</b>${PGX_FIELDS.map(([k, lab]) => r[k] ? `<div class="sub">${lab}: ${esc(r[k])}</div>` : '').join('')}${r.why ? `<div class="sub">Why: ${esc(r.why)}</div>` : ''}${pgxQuote(r)}`;
+function pgxItems(mode) {   // [{id, ask, sub, ans, row, extra}]
+  const rows = pgxRows(), out = [];
+  if (mode === 'fill') rows.forEach(r => PGX_FIELDS.forEach(([k, lab]) => { if (r[k]) out.push({id: 'f:' + r.id + ':' + k, ask: pgxLabel(r), sub: lab + '?', ans: r[k], row: r, field: k}); }));
+  if (mode === 'which') (typeof PGX_CASES === 'undefined' ? [] : PGX_CASES).forEach(c => { const r = pgxRow(c.row); if (r) out.push({id: 'w:' + c.id, ask: c.line, sub: 'Which gene and variant explains this?', ans: pgxLabel(r), row: r}); });
+  if (mode === 'tell') (typeof PGX_PAIRS === 'undefined' ? [] : PGX_PAIRS).forEach(p => out.push({id: 't:' + p.id, ask: p.ask, sub: 'Which one separates them?', ans: p.feature, row: pgxRow(p.a) || pgxRow(p.b), pair: p}));
+  return out;
+}
+const PGX = {mode: 'fill', queue: [], i: 0, opts: null, pick: null, result: null, right: 0, redo: [], round: 1, shown: {}, got: null};
+function pgxGot() { if (!PGX.got) PGX.got = storeObj(COURSE.ns + ':pgx:got'); return PGX.got; }
+function pgxStart(ids) {
+  const all = pgxItems(PGX.mode), miss = new Set(ids || (store.get(COURSE.ns + ':pgx:miss:' + PGX.mode) || '').split(',').filter(Boolean));
+  const got = pgxGot(), notyet = x => x.row && got[x.row.id] === 'n';   // a row marked "Not yet" in Table recall comes back first
+  const first = shuffle(all.filter(x => miss.has(x.id))), rest = ids ? [] : shuffle(all.filter(x => !miss.has(x.id)));
+  rest.sort((a, b) => (notyet(b) ? 1 : 0) - (notyet(a) ? 1 : 0));
+  PGX.queue = first.concat(rest).slice(0, Math.max(PGX_ROUND, first.length));
+  PGX.i = 0; PGX.opts = null; PGX.pick = null; PGX.result = null; PGX.right = 0; PGX.redo = []; PGX.round = ids ? PGX.round + 1 : 1;
+}
+function pgxOptions(it) {   // the right cell and up to three plausible wrong ones from the other rows, same column
+  const pool = pgxItems(PGX.mode).filter(x => (PGX.mode !== 'fill' || x.field === it.field) && x.ans !== it.ans);
+  const seen = new Set([it.ans]), out = [it.ans];
+  shuffle(pool).forEach(x => { if (out.length < 4 && !seen.has(x.ans)) { seen.add(x.ans); out.push(x.ans); } });
+  return shuffle(out);
+}
+function pgxTable() {
+  const covered = k => !PGX.shown[k], got = pgxGot();
+  const cell = (k, txt) => covered(k) ? `<button type="button" class="chip" data-pgxshow="${k}">Show</button>` : esc(txt);
+  const fld = (lab, html) => `<div style="margin-top:6px"><div class="meta" style="margin:0">${lab}</div><div>${html}</div></div>`;
+  return `<div class="card"><div class="row"><button type="button" class="btn ghost" id="pgxhide">Hide all</button><button type="button" class="btn ghost" id="pgxshowall">Show all</button></div><p class="sub" style="margin:6px 0 0">Say the covered cell aloud, then tap Show. "Not yet" brings that row back first next time.</p></div>
+    ${pgxRows().map(r => `<div class="card"><b>${esc(pgxLabel(r))}</b>
+      ${PGX_FIELDS.map(([k, lab]) => r[k] ? fld(lab, cell(r.id + ':' + k, r[k])) : fld(lab, '<span class="sub">Not given on her slides</span>')).join('')}
+      ${r.why ? `<div class="sub" style="margin-top:6px">Why: ${esc(r.why)}</div>` : ''}${pgxQuote(r)}
+      <div class="row" style="gap:6px;margin-top:6px"><button type="button" class="chip${got[r.id] === 'y' ? ' on' : ''}" data-pgxgot="${r.id}:y">Got it</button><button type="button" class="chip${got[r.id] === 'n' ? ' on' : ''}" data-pgxgot="${r.id}:n">Not yet</button></div></div>`).join('')}`;
+}
+function vPgx() {
+  let h = `<h2 id="pgx-top">Variant drill</h2><p class="sub">The pharmacogene variants for her Exam 4 and what separates them: her second think/pair/share table, column by column, with the two branch-specific warfarin variants from the CPIC table. A cell her slides and words do not supply reads "Not given on her slides". Pick a mode; a round is up to ${PGX_ROUND} items and a miss comes back at the end of the round.</p>
+    <div class="card"><div class="row">${PGX_MODES.map(([k, l]) => `<button type="button" class="chip ${PGX.mode === k ? 'on' : ''}" aria-pressed="${PGX.mode === k}" data-pgxmode="${k}">${esc(l)}</button>`).join('')}</div></div>`;
+  if (PGX.mode === 'table') h += pgxTable();
+  else {
+    if (!PGX.queue.length) pgxStart();
+    const it = PGX.queue[PGX.i], total = PGX.queue.length, best = storeObj(COURSE.ns + ':pgx')[PGX.mode];
+    if (!it) { h += '<div class="card"><p class="sub">Nothing to drill in this mode yet.</p></div>'; $('#view').innerHTML = h; return; }
+    if (!PGX.opts) PGX.opts = pgxOptions(it);
+    h += `<div class="card rxcard"><div class="meta">${PGX.round > 1 ? `redo round ${PGX.round} · ` : ''}${Math.min(PGX.i + 1, total)} of ${total} · ${PGX.right} right${PGX.redo.length ? ` · ${PGX.redo.length} to redo` : ''}${best ? ` · best ${best}` : ''}</div>
+      <div class="rxdrug">${esc(it.ask)}</div><div class="rxq">${esc(it.sub)}</div>
+      <div class="rxopts">${PGX.opts.map((t, n) => `<button type="button" class="rxopt ${PGX.result ? (t === it.ans ? 'ok' : PGX.pick === n ? 'bad' : '') : ''}" data-pgxans="${n}" ${PGX.result ? 'disabled' : ''}>${esc(t)}</button>`).join('')}</div>
+      <div class="row" style="margin-top:10px">${PGX.result ? `<button type="button" class="btn" id="pgxnext">${PGX.i + 1 < total ? 'Next' : PGX.redo.length ? `Redo the ${PGX.redo.length} missed` : 'New round'}</button>` : ''}<button type="button" class="btn ghost" id="pgxskip">${PGX.result ? 'Start over' : 'Skip'}</button></div>`;
+    if (PGX.result) h += `<div class="pfb"><div class="pfbr ${PGX.result.ok ? 'ok' : 'bad'}">${PGX.result.ok ? '✓' : '✗'} ${it.pair ? `<b>${esc(it.pair.ask)}</b><div class="sub">${esc(it.pair.feature)}</div><div class="sub">The trap: ${esc(it.pair.trap)}</div>${it.row ? pgxQuote(it.row) : ''}` : pgxRowHTML(it.row)}<div class="row" style="gap:6px;margin-top:6px"><button type="button" class="chip" data-jump="ref:ref4-l19-2">The whole table</button><button type="button" class="chip" data-jump="ref:ref4-l21-1">The warfarin variants</button><button type="button" class="chip" data-jump="tell:tell4-l19">Tell apart: Day 19</button></div></div></div>`;
+    h += `</div>`;
+  }
+  h += `<p class="sub" style="margin-top:8px">Source: her second think/pair/share table as set out in the Reference (Days 19-20), the CPIC warfarin table (Day 21), and the guides and Terms for Days 18-22. Blank cell = not given on her slides.</p>`;
+  $('#view').innerHTML = h;
+  document.querySelectorAll('[data-pgxmode]').forEach(b => b.onclick = () => { if (PGX.mode === b.dataset.pgxmode) return; PGX.mode = b.dataset.pgxmode; PGX.queue = []; PGX.opts = null; vPgx(); });
+  document.querySelectorAll('[data-pgxans]').forEach(b => b.onclick = () => pgxCheck(+b.dataset.pgxans));
+  document.querySelectorAll('[data-pgxshow]').forEach(b => b.onclick = () => { PGX.shown[b.dataset.pgxshow] = true; vPgx(); });
+  document.querySelectorAll('[data-pgxgot]').forEach(b => b.onclick = () => { const [id, v] = b.dataset.pgxgot.split(':'); const g = pgxGot(); if (g[id] === v) delete g[id]; else g[id] = v; store.set(COURSE.ns + ':pgx:got', JSON.stringify(g)); vPgx(); });
+  const hd = $('#pgxhide'); if (hd) hd.onclick = () => { PGX.shown = {}; vPgx(); };
+  const sa = $('#pgxshowall'); if (sa) sa.onclick = () => { pgxRows().forEach(r => PGX_FIELDS.forEach(([k]) => { if (r[k]) PGX.shown[r.id + ':' + k] = true; })); vPgx(); };
+  PGX.t0 = Date.now();
+  const nx = $('#pgxnext'); if (nx) { nx.onclick = e => { if (e.detail > 1) return; pgxAdvance(); }; nx.focus(); }
+  const sk = $('#pgxskip'); if (sk) sk.onclick = () => { if (Date.now() - PGX.t0 < 350) return; if (PGX.result) { if (confirm('Start over? This round and its missed list are cleared.')) { PGX.queue = []; PGX.opts = null; vPgx(); } } else { PGX.redo.push(PGX.queue[PGX.i]); pgxAdvance(); } };
+}
+function pgxCheck(n) {
+  if (PGX.result || Date.now() - (PGX.t0 || 0) < 350) return;
+  const it = PGX.queue[PGX.i]; PGX.pick = n; const ok = PGX.opts[n] === it.ans;
+  PGX.result = {ok}; if (ok) PGX.right++; else PGX.redo.push(it);
+  vPgx();
+}
+function pgxAdvance() {
+  PGX.opts = null; PGX.pick = null; PGX.result = null;
+  if (PGX.i + 1 < PGX.queue.length) { PGX.i++; vPgx(); return; }
+  const all = storeObj(COURSE.ns + ':pgx'), score = `${PGX.right}/${PGX.queue.length}`;
+  if (PGX.round === 1 && (!all[PGX.mode] || +all[PGX.mode].split('/')[0] / +all[PGX.mode].split('/')[1] < PGX.right / PGX.queue.length)) { all[PGX.mode] = score; store.set(COURSE.ns + ':pgx', JSON.stringify(all)); }
+  store.set(COURSE.ns + ':pgx:miss:' + PGX.mode, PGX.redo.map(x => x.id).join(','));
+  if (PGX.redo.length) pgxStart(PGX.redo.map(x => x.id)); else pgxStart();
+  vPgx();
+}
+document.addEventListener('keydown', e => { if (ANTI) return; if (CUR === 'pgx' && e.key === 'Enter' && !e.target.closest('button, input, select, textarea')) { const b = $('#pgxnext'); if (b) b.click(); } });
+
 /* ---------- Short answer (Exam 3) ----------
    Her exam has short-answer items graded with partial credit. Each prompt: write an answer, then compare it with the
    model answer and tick the key points it covers. Drafts and ticks are kept per browser. */
@@ -3058,7 +3151,7 @@ function stepHTML(k, i = 0) {
   const d = STEPS()[k]; if (!d) return '';
   const st = d.steps[i];
   return `<figure class="fig step3" data-s3="${esc(k)}" data-i="${i}"><figcaption><b>${esc(d.title)}</b> <span class="meta" style="margin:0">step ${i + 1} of ${d.steps.length}</span></figcaption>
-    <div class="s3svg">${st.svg}${d.ghost && i < d.steps.length - 1 ? `<div class="s3ghost" aria-hidden="true">${d.steps[d.steps.length - 1].svg}</div>` : ''}</div><p class="s3cap" aria-live="polite">${st.t}</p>
+    <div class="s3svg">${st.svg}${d.ghost && i < d.steps.length - 1 ? `<div class="s3ghost" aria-hidden="true">${d.steps[d.steps.length - 1].svg.replace(/class="s3hi"/g, 'class="s3box"').replace(/class="s3acc"/g, 'class="s3line"')}</div>` : ''}</div><p class="s3cap" aria-live="polite">${st.t}</p>
     <div class="row s3nav"><button type="button" class="btn ghost" data-s3go="-1" ${i ? '' : 'disabled'}>◂ Back</button>${d.steps.map((x, j) => `<button type="button" class="sdot${j === i ? ' on' : ''}" data-s3to="${j}" aria-label="Step ${j + 1}"></button>`).join('')}<button type="button" class="btn ghost" data-s3go="1" ${i < d.steps.length - 1 ? '' : 'disabled'}>Next ▸</button><button type="button" class="btn ghost" data-s3play>${S3PLAY && S3PLAY.k === k ? '■ Stop' : '🔊 Play'}</button></div>
     ${d.src ? `<div class="cite">${esc(d.src)}</div>` : ''}</figure>`;
 }
@@ -3261,7 +3354,7 @@ function gwPlay(id, i) {
     if (!narrCan()) { cur.t = setTimeout(finish, (2000 + seg.t.split(/\s+/).length * 400) / NAR.rate); return; }
     cur.speaking = true; const v = narrVoice(); let last = null;
     saySents(seg.t).forEach(p0 => { const p = speakable(p0); if (!p.trim()) return; const u = new SpeechSynthesisUtterance(p.trim()); u.rate = NAR.rate; u.lang = 'en-US'; if (v) u.voice = v; last = u; speechSynthesis.speak(u); });
-    if (!last) return finish(); last.onend = () => { if (GW === cur && cur.playing) finish(); };
+    if (!last) return finish(); last.onend = last.onerror = () => { if (GW === cur && cur.playing) finish(); };
     cur.t = setTimeout(() => { if (GW === cur && cur.playing) finish(); }, (4000 + seg.t.split(/\s+/).length * 520) / NAR.rate);
   };
   if (!gwRec(id, i)) return synth();

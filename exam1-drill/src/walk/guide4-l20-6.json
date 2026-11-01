@@ -3,65 +3,65 @@
  "title": "Warfarin, C Y P two C nine, V K O R C one and C Y P four F two",
  "segs": [
   {
-   "text": "Section twenty. Warfarin and its three genes. Warfarin is an anticoagulant: it lowers the number of working clotting factors. Clotting factors are proteins that are first made in an inactive form. An enzyme called gamma glutamyl carboxylase, G G C X for short, turns them into active clotting factors.",
+   "text": "Section twenty. Warfarin and its three genes. Warfarin is an anticoagulant: it lowers the number of working clotting factors. Clotting factors are proteins first made in an inactive form. An enzyme called gamma glutamyl carboxylase, G G C X, turns them into active clotting factors.",
    "slide": null,
    "reading": null,
    "step": "warfarin-target@0"
   },
   {
-   "text": "G G C X cannot do this alone. It needs reduced vitamin K, which is the active form of vitamin K. With no active vitamin K, G G C X cannot make active clotting factors.",
+   "text": "G G C X cannot do this alone. It needs reduced vitamin K, the active form of vitamin K. No active vitamin K, no active clotting factors.",
    "slide": null,
    "reading": null,
    "step": "warfarin-target@1"
   },
   {
-   "text": "Each time G G C X uses active vitamin K, the vitamin K is turned into vitamin K epoxide. G G C X cannot use the epoxide, so the epoxide must be converted back before the vitamin K can be used again.",
+   "text": "Each time G G C X uses active vitamin K, the vitamin K becomes vitamin K epoxide, which G G C X cannot use. The epoxide must be converted back before it can be used again.",
    "slide": null,
    "reading": null,
    "step": "warfarin-target@2"
   },
   {
-   "text": "The enzyme that converts the epoxide back to active vitamin K is vitamin K epoxide reductase. Its gene is called V K O R C one, and this enzyme is warfarin's target.",
+   "text": "The enzyme that converts the epoxide back to active vitamin K is vitamin K epoxide reductase. Its gene is V K O R C one, and this enzyme is warfarin's target.",
    "slide": null,
    "reading": null,
    "step": "warfarin-target@3"
   },
   {
-   "text": "Warfarin is a mixture of two forms, R warfarin and S warfarin, and both block V K O R C one. With the enzyme blocked, the epoxide is not converted back, active vitamin K runs short, and G G C X cannot make active clotting factors. That is how warfarin works, and it is why vitamin K is the antidote in a warfarin overdose.",
+   "text": "Warfarin is a mixture of two forms, R warfarin and S warfarin, and both block V K O R C one. With it blocked, the epoxide is not converted back, active vitamin K runs short, and G G C X cannot make active clotting factors. That is how warfarin works, and why vitamin K is the antidote in a warfarin overdose.",
    "slide": null,
    "reading": null,
    "step": "warfarin-target@4"
   },
   {
-   "text": "S warfarin has most of the activity. It is three to five times more potent than R warfarin. The enzyme C Y P two C nine clears S warfarin by turning it into inactive metabolites. R warfarin is weak and is cleared by several C Y P enzymes.",
+   "text": "S warfarin has most of the activity, three to five times more potent than R. C Y P two C nine clears S warfarin into inactive metabolites. R warfarin is weak and is cleared by several C Y P enzymes.",
    "slide": null,
    "reading": null,
    "step": "warfarin-target@5"
   },
   {
-   "text": "The third gene, C Y P four F two, breaks down active vitamin K and removes it from the cycle. It does not act on warfarin. It acts on vitamin K, the antidote.",
+   "text": "The third gene, C Y P four F two, breaks down active vitamin K and removes it from the cycle. It acts on vitamin K, the antidote, not on warfarin.",
    "slide": null,
    "reading": null,
    "step": "warfarin-target@6"
   },
   {
-   "text": "Now the variants. A gene that changes how fast a drug is cleared is a pharmacokinetic gene, and C Y P two C nine is one. Its variants star two and star three lower the enzyme's activity, star three the most, but they do not remove it. With less activity, S warfarin is cleared more slowly, so the same dose builds up higher and the risk of bleeding rises. These patients need a lower dose.",
+   "text": "A gene that changes how fast a drug is cleared is a pharmacokinetic gene; two C nine is one. Its variants star two and star three lower activity, star three the most, but do not remove it. S warfarin is cleared more slowly, so the same dose builds up higher and bleeding risk rises. These patients need a lower dose.",
    "slide": "pgxex:57",
    "reading": null
   },
   {
-   "text": "A gene for the drug's target is a pharmacodynamic gene, and V K O R C one is one. Some V K O R C one variants have low activity. A less active target needs less drug to block it, so the dose is again lower. She said, If the target of the drug is not very active in one patient compared to another patient, you don't need so much of the drug in that patient that has the genetic variant.",
+   "text": "A gene for the drug's target is a pharmacodynamic gene; V K O R C one is one. Some V K O R C one variants have low activity, and a less active target needs less drug to block it, so the dose is again lower.",
    "slide": "pgxex:57",
    "reading": null
   },
   {
-   "text": "C Y P four F two goes the other way. When its activity is low, less active vitamin K is broken down, so more vitamin K, the antidote, is present. She said, Which means you've basically got more of the antidote for warfarin on board. The patient needs more warfarin, not less. A more active C Y P four F two works the other way.",
+   "text": "Four F two goes the other way. With low activity, less active vitamin K is broken down, so more of the antidote is on board, and the patient needs more warfarin, not less. A more active four F two works the other way.",
    "slide": null,
    "reading": null,
    "table": 0
   },
   {
-   "text": "A patient can carry low activity variants in both the target and the clearing enzyme. She called this a double whammy. A patient with no variants in either gene needs about five milligrams of warfarin a day. A patient who is C Y P two C nine star three star three, with no V K O R C one variant, needs less. Star three star three means both copies of the gene are star three. A patient with two variant copies of V K O R C one who is also C Y P two C nine star three star three needs the lowest dose to avoid bleeding. Body weight and gender also affect the dose.",
+   "text": "A patient can carry low activity variants in both the target and the clearing enzyme; she called this a double whammy. No variants in either gene: about five milligrams of warfarin a day. Two C nine star three star three, both copies star three, with no V K O R C one variant: less. Two variant copies of V K O R C one plus two C nine star three star three: the lowest dose, to avoid bleeding. Body weight and gender also affect the dose.",
    "slide": null,
    "reading": null,
    "table": 1

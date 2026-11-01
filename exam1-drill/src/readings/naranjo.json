@@ -5,7 +5,7 @@
  "file": "Naranjo Algorithm, one-page questionnaire (Canvas: adverse drug events module)",
  "lecture": "Wed 10/28 (Adverse Drug Events): introduced as a tool to determine causality of adverse drug reactions; after the break she had the class pull it up from Canvas, look at the 10 questions for timing, and went through the scoring and the time-related questions.",
  "kind": "guideline",
- "about": "The Naranjo Algorithm is a one-page questionnaire 'to assess the adverse drug reaction': the user answers ten questions and gives the pertinent score for each. Each question is answered Yes, No or Do not know, and every 'Do not know' answer scores 0. The questions cover previous conclusive reports on the reaction, whether the event appeared after the suspected drug was given, improvement on discontinuation or a specific antagonist, reappearance on re-administration, alternative causes/drugs, reappearance with a placebo, toxic drug concentrations in blood or other fluids, dose-related severity, a similar reaction on previous exposure, and confirmation by objective evidence. Points range from +2 to -1 per answer; questions 2 and 4 give +2 for yes and -1 for no, questions 5 and 6 give -1 for yes and +2 or +1 for no, and the rest give +1 for yes and 0 for no. The total score is categorized as 9 = definite, 5-8 = probable, 1-4 = possible, 0 = doubtful.",
+ "about": "The Naranjo Algorithm is a one-page, ten-question scoring sheet that a clinician fills in to judge how likely it is that a particular drug caused a patient's adverse reaction. It matters for Exam 4 because Dr. Smith's study list says 'Be able to use the Naranjo algorithm': answer each question Yes, No or Do not know, add the points, and read off the band (definite, probable, possible or doubtful). The page's instruction reads 'To assess the adverse drug reaction, please answer the following questionnaire and give the pertinent score', and every 'Do not know' answer scores 0. The questions cover previous conclusive reports, whether the event appeared after the drug, improvement on discontinuation or with a specific antagonist, reappearance on re-administration, alternative causes or drugs, reappearance with a placebo, toxic drug concentrations, dose-related severity, a similar reaction on previous exposure, and confirmation by objective evidence. Points range from +2 to -1 per answer: questions 2 and 4 give +2 for Yes and -1 for No, questions 5 and 6 give -1 for Yes and +2 or +1 for No, and the rest give +1 for Yes and 0 for No. The total is categorized as 9 = definite, 5-8 = probable, 1-4 = possible, 0 = doubtful.",
  "sections": [
   "Title: Naranjo Algorithm",
   "Instruction: To assess the adverse drug reaction, please answer the following questionnaire and give the pertinent score.",
@@ -125,70 +125,72 @@
   }
  ],
  "read_for": [
-  "Instruction line: the questionnaire is used 'to assess the adverse drug reaction' by answering each question and giving the pertinent score.",
-  "Column headings Yes, No and Do not know: 'Do not know' scores 0 on all ten questions.",
-  "Question 2: Did the adverse event appear after the suspected drug was administered? Yes +2, No -1, Do not know 0.",
-  "Question 3: Did the adverse reaction improve when the drug was discontinued or a specific antagonist was administered? Yes +1, No 0, Do not know 0.",
-  "Question 4: Did the adverse reaction reappear when the drug was re-administered? Yes +2, No -1, Do not know 0.",
-  "Question 6: Did the reaction reappear when a placebo was given? Yes -1, No +1, Do not know 0.",
-  "Question 1: Are there previous conclusive reports on this reaction? Yes +1, No 0, Do not know 0.",
-  "Question 5: Are there alternative causes/drugs that could on their own have caused the reaction? Yes -1, No +2, Do not know 0.",
-  "Total Score line: 9=definite; 5-8=probable; 1-4=possible; 0=doubtful (the page says 'doubtful' for 0; the lecture said 'remote')."
+  "1. The instruction line and the three answer columns: answer every question Yes, No or Do not know and write the points in the Score column; Do not know is 0 on all ten questions.",
+  "2. Question 1, Are there previous conclusive reports on this reaction? Yes +1, No 0, Do not know 0. Answered from the literature; she said to do your due diligence and dive into the literature.",
+  "3. Question 2, Did the adverse event appear after the suspected drug was administered? Yes +2, No -1, Do not know 0. A timing question she named.",
+  "4. Question 3, Did the adverse reaction improve when the drug was discontinued or a specific antagonist was administered? Yes +1, No 0, Do not know 0. A timing question she named.",
+  "5. Question 4, Did the adverse reaction reappear when the drug was re-administered? Yes +2, No -1, Do not know 0. A timing question she named ('definitely time').",
+  "6. Question 5, Are there alternative causes/drugs that could on their own have caused the reaction? Yes -1, No +2, Do not know 0. The scoring is reversed because another explanation points away from the drug.",
+  "7. Question 6, Did the reaction reappear when a placebo was given? Yes -1, No +1, Do not know 0. She counts it as time-related.",
+  "8. Questions 7 to 10, each Yes +1, No 0, Do not know 0: 7, was the drug detected in the blood or other fluids in concentrations known to be toxic; 8, was the reaction more severe when the dose was increased, or less severe when the dose was decreased; 9, did the patient have a similar reaction to the same or similar drugs in any previous exposure; 10, was the adverse event confirmed by any objective evidence.",
+  "9. The Total Score bands: 9 = definite; 5-8 = probable; 1-4 = possible; 0 = doubtful. She named the bands definite, probable, possible or remote; the page prints 'doubtful' for 0.",
+  "10. Scoring in practice: the four answers that lose a point are No on question 2, No on question 4, Yes on question 5 and Yes on question 6; the two +2 answers are Yes on questions 2 and 4 (and No on question 5). Totals can exceed 9 or fall below 0, for which the page prints no band."
  ],
  "beyond_lecture": [
-  "Question 5 (alternative causes/drugs that could on their own have caused the reaction; yes -1, no +2) was not read out in class, although she spoke about telling a drug cause apart from a new or changed disease state.",
-  "Question 7: Was the drug detected in the blood or other fluids in concentrations known to be toxic? Yes +1, No 0, Do not know 0. Not discussed in class.",
-  "Question 8: Was the reaction more severe when the dose was increased, or less severe when the dose was decreased? Yes +1, No 0, Do not know 0. Not discussed in class.",
-  "Question 9: Did the patient have a similar reaction to the same or similar drugs in any previous exposure? Yes +1, No 0, Do not know 0. Not discussed in class.",
-  "Question 10: Was the adverse event confirmed by any objective evidence? Yes +1, No 0, Do not know 0. Not discussed in class.",
-  "The score cut-offs (9, 5-8, 1-4, 0) were not stated in class; she named the categories only.",
-  "The 'Do not know' column (0 points on every question) was not mentioned in class.",
-  "The printed Total Score line gives categories only for 9, 5-8, 1-4 and 0; it does not print a category for totals above 9 or below 0, which the point values allow."
+  "Questions 7 to 10 (toxic drug level, dose-response, similar reaction on previous exposure, objective evidence) were not read out in class; each scores Yes +1, No 0.",
+  "Question 5 (alternative causes or drugs; Yes -1, No +2) was not read out, although she spoke about telling a drug cause apart from a new or changed disease state.",
+  "The numeric cut-offs (9, 5-8, 1-4, 0) were not stated aloud; she named the categories only, and said 'remote' where the page prints 'doubtful'.",
+  "The 'Do not know' column (0 points on every question) was not mentioned; she said the questions are scored yes or no.",
+  "The page prints no category for totals above 9 or below 0, which the point values allow."
  ],
  "terms": [
   {
    "term": "Naranjo Algorithm",
-   "chapter_definition": "A questionnaire 'to assess the adverse drug reaction': answer the questions and give the pertinent score."
+   "chapter_definition": "A ten-question questionnaire 'to assess the adverse drug reaction': the user answers each question and gives the pertinent score, then totals the points."
   },
   {
-   "term": "Score columns",
-   "chapter_definition": "Each question is scored under Yes, No or Do not know; the points are entered in the Score column and summed in the Total Score box."
+   "term": "Causality",
+   "chapter_definition": "What the total score expresses: how likely it is that the suspected drug caused the reaction, from definite down to doubtful (Total Score line)."
   },
   {
    "term": "Do not know",
-   "chapter_definition": "An answer column worth 0 points on every one of the ten questions."
+   "chapter_definition": "The third answer column, worth 0 points on every one of the ten questions, so missing information neither helps nor hurts the case against the drug."
   },
   {
    "term": "Negative points",
-   "chapter_definition": "No scores -1 on questions 2 and 4; Yes scores -1 on questions 5 and 6."
-  },
-  {
-   "term": "Definite",
-   "chapter_definition": "Total Score: 9=definite."
-  },
-  {
-   "term": "Probable",
-   "chapter_definition": "Total Score: 5-8=probable."
-  },
-  {
-   "term": "Possible",
-   "chapter_definition": "Total Score: 1-4=possible."
-  },
-  {
-   "term": "Doubtful",
-   "chapter_definition": "Total Score: 0=doubtful."
+   "chapter_definition": "Answers that count against the drug: No on questions 2 and 4 scores -1; Yes on questions 5 and 6 scores -1."
   },
   {
    "term": "Specific antagonist",
-   "chapter_definition": "Question 3: Did the adverse reaction improve when the drug was discontinued or a specific antagonist was administered? (Yes +1)."
+   "chapter_definition": "A drug that reverses the suspected drug's effect; question 3 gives +1 if the reaction improved when the drug was stopped or a specific antagonist was given."
   },
   {
-   "term": "Placebo (question 6)",
-   "chapter_definition": "Did the reaction reappear when a placebo was given? Yes -1, No +1, Do not know 0."
+   "term": "Re-administered (rechallenge)",
+   "chapter_definition": "Giving the suspected drug again; question 4 gives +2 if the reaction reappeared and -1 if it did not."
   },
   {
-   "term": "Objective evidence (question 10)",
-   "chapter_definition": "Was the adverse event confirmed by any objective evidence? Yes +1, No 0, Do not know 0."
+   "term": "Placebo",
+   "chapter_definition": "An inactive substitute; question 6 gives -1 if the reaction reappeared when a placebo was given and +1 if it did not."
+  },
+  {
+   "term": "Objective evidence",
+   "chapter_definition": "Measurable confirmation of the event, such as a test result; question 10 gives +1 if the adverse event was confirmed by any objective evidence."
+  },
+  {
+   "term": "Definite",
+   "chapter_definition": "Total Score 9."
+  },
+  {
+   "term": "Probable",
+   "chapter_definition": "Total Score 5-8."
+  },
+  {
+   "term": "Possible",
+   "chapter_definition": "Total Score 1-4."
+  },
+  {
+   "term": "Doubtful",
+   "chapter_definition": "Total Score 0 (her word for this band: remote)."
   }
  ],
  "discussed_in_class": true,
