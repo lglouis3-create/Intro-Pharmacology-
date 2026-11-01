@@ -1054,7 +1054,8 @@ const GUIDE4_HTML = `
 </ul>
 
 <p>How she asks it: what a listing means for testing; which section holds therapeutic management recommendations; the application and limitation of each table; what the labeling table includes and excludes; which label sections hold abacavir's pharmacogenomic information; which resource to open to find a pharmacogenomic boxed warning quickly.</p>
-<p class="sub">Sources: PGx-Resources-and-Cases-Students-Fall-2026.pdf slides 'FDA Tables of Pharmacogenetic Associations' 1-3 (pp. 3-5), 'FDA Table of Pharmacogenomic Biomarkers in Drug Labeling' 1-3 (pp. 6-8); (T) 10/27. Questions L21-001 to L21-013.</p>
+<p><b>The live FDA pages.</b> Both tables are linked from her slides, and she opened them in class on 10/27: <a href="https://www.fda.gov/medical-devices/precision-medicine/table-pharmacogenetic-associations" target="_blank" rel="noopener">Table of Pharmacogenetic Associations ↗</a> (FDA page updated September 10, 2026; 82 entries in Section 1, 25 in Section 2, 40 in Section 3) and <a href="https://www.fda.gov/drugs/science-and-research-drugs/table-pharmacogenomic-biomarkers-drug-labeling" target="_blank" rel="noopener">Table of Pharmacogenomic Biomarkers in Drug Labeling ↗</a> (FDA page updated August 12, 2026). The FDA updates both pages, so counts and entries can differ from her slides.</p>
+<p class="sub">Sources: PGx-Resources-and-Cases-Students-Fall-2026.pdf slides 'FDA Tables of Pharmacogenetic Associations' 1-3 (pp. 3-5), 'FDA Table of Pharmacogenomic Biomarkers in Drug Labeling' 1-3 (pp. 6-8); (T) 10/27; fda.gov pages as linked above, read 11/01. Questions L21-001 to L21-013.</p>
 </section>
 <section class="guide" id="guide4-l21-2">
 <h3>24. CPIC guidelines: what they answer, components, development, evidence scoring</h3>
