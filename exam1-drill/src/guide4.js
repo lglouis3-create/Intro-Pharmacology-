@@ -352,6 +352,10 @@ const GUIDE4_HTML = `
 <li><b>Why metabolism is more complex than one enzyme, one drug.</b> Clopidogrel is a platelet receptor inhibitor; she said it prevents the platelets from sticking together. It is a prodrug: about 85% of a dose is inactivated by esterases, and only about 15% is bioactivated in two CYP steps to the active thiol metabolite that blocks the platelet receptor. Several CYPs act on it, but variants in CYP2C19 most change how much active metabolite forms, so the enzyme that does the most work is not always the one that drives the outcome.</li>
 </ul>
 
+<h4>The second Think Pair Share table</h4>
+<p>Her second think/pair/share table ("Clinically important pharmacogenomics examples", started 10/22) has six columns: gene; variant; type of variant (premature stop codon, splice site, promoter or coding region); what happens to the gene product; drugs affected; and what we do for the patient (reduce the dose, or never use the drug). Her model entry: CYP2C19*2 and *3 are premature stop codon variants, and the gene product is "a really tiny little short protein that is so short it's not functional." <small>(T) 10/22</small> On the drugs column: "the drugs that I spend time on are the ones that I expect you to know." <small>(T) 10/22</small> The table, filled from her slides and words for every gene of Days 19 and 20, is in the Reference tab.</p>
+<p><button type="button" class="chip" data-jump="ref:ref4-l19-2">Reference: the table in her columns</button></p>
+
 <h4>Her words</h4>
 <ul>
 <li>"Variations in our metabolizing enzymes are the biggest reason why we would see variation in drug response" <small>(T) 10/22</small></li>
@@ -365,8 +369,6 @@ const GUIDE4_HTML = `
 <li><b>Thinking the busiest enzyme controls the outcome.</b> For clopidogrel the key is CYP2C19, not the esterases that handle most of the dose.</li>
 <li><b>Picking a renally cleared drug as enzyme-dependent.</b> A drug excreted unchanged by the kidney does not depend on a metabolizing enzyme, so a variant does not change its handling.</li>
 </ul>
-
-<p><b>Her second think/pair/share table</b> ("Clinically important pharmacogenomics examples", started 10/22) has six columns: gene; variant; type of variant (premature stop codon, splice site, promoter or coding region); what happens to the gene product; drugs affected; and what we do for the patient (reduce the dose, or never use the drug). Her model entry: CYP2C19*2 and *3 are premature stop codon variants, and the gene product is "a really tiny little short protein that is so short it's not functional." <small>(T) 10/22</small> On the drugs column: "the drugs that I spend time on are the ones that I expect you to know." <small>(T) 10/22</small> The table, filled from her slides and words for every gene of Days 19 and 20, is in the Reference tab. <button type="button" class="chip" data-jump="ref:ref4-l19-2">Reference: clinically important pharmacogenomics examples</button></p>
 
 <p>How she asks it: when does an enzyme variant matter; for a given drug type, does low activity give toxicity or failure; which enzyme matters most for clopidogrel.</p>
 <p class="sub">Sources: PGx-Examples-Students-Fall-2026.pdf slides 'Variations in Drug Metabolizing Enzymes' (pp. 12-15); (T) 10/22. Questions L19-001 to L19-007.</p>
@@ -943,23 +945,23 @@ const GUIDE4_HTML = `
 </ul>
 
 <h4>Functional significance of the genotypes</h4>
-<table class="reftab"><thead><tr><th>Group (Table 1)</th><th>Genotypes (star)</th><th>CYP2C19 activity</th><th>Omeprazole exposure (relative mean AUC, earlier work)</th><th>H. pylori cure rate (Table 2)</th></tr></thead><tbody>
-<tr><td>1</td><td>wt/wt (*1/*1)</td><td>Normal: two working alleles (rapid-extensive)</td><td>1</td><td>28.6% (8 of 28)</td></tr>
-<tr><td>2</td><td>wt/m1, wt/m2 (*1/*2, *1/*3)</td><td>Some: one working *1 allele (intermediate-extensive)</td><td>3.7</td><td>60% (15 of 25)</td></tr>
-<tr><td>3</td><td>m1/m2, m1/m1 (*2/*3, *2/*2)</td><td>None (poor metabolizer)</td><td>20</td><td>100% (9 of 9)</td></tr>
+<table class="reftab keep"><thead><tr><th>Group (Table 1)</th><th>CYP2C19 activity</th><th>Omeprazole exposure (relative mean AUC, earlier work)</th><th>H. pylori cure rate (Table 2)</th></tr></thead><tbody>
+<tr><td><b>1</b><br><small>wt/wt (*1/*1)</small></td><td>Normal: two working alleles (rapid-extensive)</td><td>1</td><td>28.6% (8 of 28)</td></tr>
+<tr><td><b>2</b><br><small>wt/m1, wt/m2 (*1/*2, *1/*3)</small></td><td>Some: one working *1 allele (intermediate-extensive)</td><td>3.7</td><td>60% (15 of 25)</td></tr>
+<tr><td><b>3</b><br><small>m1/m2, m1/m1 (*2/*3, *2/*2)</small></td><td>None (poor metabolizer)</td><td>20</td><td>100% (9 of 9)</td></tr>
 </tbody></table>
 <p>AUC is the area under the plasma concentration-time curve, a measure of total drug exposure. The 1:3.7:20 ratio is cited from earlier work (p. 1028); this paper did not measure plasma omeprazole. Overall 32 of 62 patients were cured (51.6%), P &lt; 0.001 across groups (Table 2). A *3/*3 patient would simply belong in group 3, since *2 and *3 are both inactive; the gap reflects who was recruited.</p>
 
 <h4>The four ways higher omeprazole levels improved cure (Discussion, p. 1029)</h4>
-<table class="reftab"><thead><tr><th>Paper's order</th><th>What the paper says</th><th>Her version (10/26)</th></tr></thead><tbody>
-<tr><td>1. First</td><td>Omeprazole's plasma concentration-time curve is markedly increased in poor metabolizers, so high intragastric pH lasts longer than in extensive metabolizers.</td><td>Omeprazole stays really high, so gastric pH is higher.</td></tr>
-<tr><td>2. Second</td><td>Amoxicillin is unstable and less active at low pH, so raising intragastric pH toward neutral may increase the amount of active antibiotic.</td><td>Amoxicillin is more stable when the stomach pH is higher.</td></tr>
-<tr><td>3. Third</td><td>Omeprazole has been reported to increase amoxicillin concentrations in gastric juice, so amoxicillin stays in the stomach longer at levels above its minimum inhibitory concentration.</td><td>Omeprazole helps get amoxicillin into the gastric juice, where H. pylori is, and helps it stay intact there.</td></tr>
-<tr><td>4. Finally</td><td>Omeprazole has its own reported anti-H. pylori activity, presumably enhanced in poor metabolizers.</td><td>Not stated; she summarized the first three.</td></tr>
+<table class="reftab keep"><thead><tr><th>Paper's order</th><th><b>Her version (10/26)</b> — what the paper says</th></tr></thead><tbody>
+<tr><td>1. First</td><td><b>Omeprazole stays really high, so gastric pH is higher.</b> — Omeprazole's plasma concentration-time curve is markedly increased in poor metabolizers, so high intragastric pH lasts longer than in extensive metabolizers.</td></tr>
+<tr><td>2. Second</td><td><b>Amoxicillin is more stable when the stomach pH is higher.</b> — Amoxicillin is unstable and less active at low pH, so raising intragastric pH toward neutral may increase the amount of active antibiotic.</td></tr>
+<tr><td>3. Third</td><td><b>Omeprazole helps get amoxicillin into the gastric juice, where H. pylori is, and helps it stay intact there.</b> — Omeprazole has been reported to increase amoxicillin concentrations in gastric juice, so amoxicillin stays in the stomach longer at levels above its minimum inhibitory concentration.</td></tr>
+<tr><td>4. Finally</td><td><b>Not stated; she summarized the first three.</b> — Omeprazole has its own reported anti-H. pylori activity, presumably enhanced in poor metabolizers.</td></tr>
 </tbody></table>
 
 <h4>Ulcer healing</h4>
-<table class="reftab"><thead><tr><th>Group</th><th>Gastric ulcer healed</th><th>Duodenal ulcer healed</th></tr></thead><tbody>
+<table class="reftab keep"><thead><tr><th>Group</th><th>Gastric ulcer healed</th><th>Duodenal ulcer healed</th></tr></thead><tbody>
 <tr><td>1</td><td>7 of 12 (the paper prints 58.8%; 7 of 12 is 58.3%)</td><td>81.3% (13 of 16)</td></tr>
 <tr><td>2</td><td>92.9% (13 of 14)</td><td>81.8% (9 of 11)</td></tr>
 <tr><td>3</td><td>100% (7 of 7)</td><td>100% (2 of 2)</td></tr>
@@ -1118,20 +1120,26 @@ const GUIDE4_HTML = `
 <h4>The idea</h4>
 <p>CPIC (the Clinical Pharmacogenetics Implementation Consortium) publishes guidelines on how to use a patient's genotype to choose a drug or a dose. The 2017 CPIC warfarin guideline (Johnson et al.) has two figures she asked about. Figure 1 shows how warfarin works and how warfarin and vitamin K are broken down. Figure 2 is an algorithm that turns a patient's genotypes into a starting dose. Each gene's place in Figure 1 tells you which way its variant moves the dose in Figure 2: a weaker target or slower warfarin clearance means less warfarin; slower removal of vitamin K means more warfarin.</p>
 
-<p><b>Layout of the guideline</b>, in order: authors and summary; focused literature review with Figure 1; the genes: CYP2C9 and CYP4F2 (cytochrome P450 2C9 and 4F2), VKORC1 (the gene for vitamin K epoxide reductase) and rs12777823 (a single-nucleotide polymorphism, SNP, near the CYP2C18 gene); genetic test interpretation (what the genotype results mean when they come back from the lab); therapeutic recommendations by genotype, summarized in the Figure 2 algorithm; online supplemental tables.</p>
-
 <h4>Figure 1: the target, vitamin K, and metabolism</h4>
 <!--STEP:warfarin-target-->
 <p>Also in Figure 1: VKORC1's reaction runs with NADH going to NAD+, and calumenin (CALU), an endoplasmic reticulum chaperone, can bind and inhibit GGCX (gamma-glutamyl carboxylase). Figure 1 does not name the enzymes for R-warfarin (on 10/26 she said multiple CYPs). <small>Figure 1 and legend, p. 398</small></p>
 
 <h4>The genes in the algorithm</h4>
-<table class="reftab"><thead><tr><th>Gene</th><th>Role (Figure 1)</th><th>Variant in Figure 2</th><th>Dose effect</th><th>Who carries it, or where it applies</th></tr></thead><tbody>
-<tr><td>VKORC1</td><td>Warfarin's drug target; converts vitamin K epoxide back to reduced vitamin K, which GGCX needs to make functional clotting factors</td><td>-1639G&gt;A, upstream of the gene, on a haplotype that affects expression</td><td>One or two A alleles: progressively lower than G/G</td><td>A most common in East Asian, then European and North American, least in African ancestry (Examples p. 9, order only); this largely explains average dose differences between whites, blacks and Asians</td></tr>
-<tr><td>CYP2C9</td><td>Main enzyme that clears S-warfarin, the more potent enantiomer</td><td>*2, *3 (decreased function)</td><td>Lower</td><td>Most common decreased-function alleles in European ancestry; *2 virtually absent in Asians</td></tr>
-<tr><td>CYP2C9</td><td>Same</td><td>*5, *6, *8, *11 (decreased function)</td><td>Lower: 15-30% per variant allele (20-40% in homozygotes)</td><td>Highest frequency in African ancestry, where together they are more common than *2 and *3</td></tr>
-<tr><td>CYP4F2</td><td>Converts reduced vitamin K to hydroxyvitamin K1, removing it from the cycle</td><td>*3, less active</td><td>Higher: 5-10%</td><td>Non-African branch only; dose effect confirmed in European and Asian, not African, ancestry</td></tr>
-<tr><td>rs12777823, a SNP in the CYP2C gene cluster near CYP2C18</td><td>Associated with altered warfarin clearance, independent of CYP2C9*2 and *3</td><td>A/G or A/A</td><td>Lower: 10-25%</td><td>African branch only; common in other populations, but the dose association is found only in African Americans</td></tr>
+<table class="reftab"><thead><tr><th>Gene</th><th>Variant in Figure 2</th><th>Dose effect</th><th>Why it is in the algorithm (its role in Figure 1)</th></tr></thead><tbody>
+<tr><td>VKORC1</td><td>-1639G&gt;A, upstream of the gene, on a haplotype that affects expression</td><td>One or two A alleles: progressively lower than G/G</td><td>Warfarin's drug target; converts vitamin K epoxide back to reduced vitamin K, which GGCX needs to make functional clotting factors</td></tr>
+<tr><td>CYP2C9</td><td>*2, *3 (decreased function)</td><td>Lower</td><td>Main enzyme that clears S-warfarin, the more potent enantiomer</td></tr>
+<tr><td>CYP2C9</td><td>*5, *6, *8, *11 (decreased function)</td><td>Lower: 15-30% per variant allele (20-40% in homozygotes)</td><td>Main enzyme that clears S-warfarin, the more potent enantiomer</td></tr>
+<tr><td>CYP4F2</td><td>*3, less active</td><td>Higher: 5-10%</td><td>Converts reduced vitamin K to hydroxyvitamin K1, removing it from the cycle</td></tr>
+<tr><td>rs12777823, a SNP in the CYP2C gene cluster near CYP2C18</td><td>A/G or A/A</td><td>Lower: 10-25%</td><td>Associated with altered warfarin clearance, independent of CYP2C9*2 and *3</td></tr>
 </tbody></table>
+<p><b>Who carries each variant, or where it applies</b></p>
+<ul>
+<li><b>VKORC1 -1639A:</b> most common in East Asian, then European and North American, least in African ancestry (Examples p. 9, order only); this largely explains average dose differences between whites, blacks and Asians.</li>
+<li><b>CYP2C9*2, *3:</b> most common decreased-function alleles in European ancestry; *2 virtually absent in Asians.</li>
+<li><b>CYP2C9*5, *6, *8, *11:</b> highest frequency in African ancestry, where together they are more common than *2 and *3.</li>
+<li><b>CYP4F2*3:</b> non-African branch only; dose effect confirmed in European and Asian, not African, ancestry.</li>
+<li><b>rs12777823:</b> African branch only; common in other populations, but the dose association is found only in African Americans.</li>
+</ul>
 <p>Figure 2 footnote c: 45-50% of individuals with self-reported African ancestry carry CYP2C9*5, *6, *8, *11 or rs12777823. The full population table, with sources, is in Reference, Day 21.</p>
 
 <h4>Figure 2: the algorithm</h4>
@@ -1192,6 +1200,9 @@ const GUIDE4_HTML = `
 </ul>
 
 <p>How she asks it: give a patient's CYP2C9, VKORC1 and CYP4F2 genotypes and ancestry, then ask whether all known genotyping was done, whether the patient needs relatively more or less than the average starting dose, and why the CYP4F2 variant raises the dose. Also: what VKORC1 is to warfarin; the no-genotype branch; the next step once a genotype is available; the size and direction of each adjustment; why *5, *6, *8 and *11 come first for African ancestry; Figure 1's target, vitamin K's role with GGCX, and how S-warfarin and vitamin K are metabolized; which populations carry each variant.</p>
+<details class="fold"><summary>Layout of the guideline</summary>
+<p>In order: authors and summary; focused literature review with Figure 1; the genes: CYP2C9 and CYP4F2 (cytochrome P450 2C9 and 4F2), VKORC1 (the gene for vitamin K epoxide reductase) and rs12777823 (a single-nucleotide polymorphism, SNP, near the CYP2C18 gene); genetic test interpretation (what the genotype results mean when they come back from the lab); therapeutic recommendations by genotype, summarized in the Figure 2 algorithm; online supplemental tables.</p>
+</details>
 <p class="sub">Sources: PGx-Resources-and-Cases-Students-Fall-2026.pdf slide 'CPIC Guidelines 7' (p. 15); CPIC warfarin guideline 2017 update (Johnson et al., Clin Pharmacol Ther 2017;102:397-404): Figure 1, gene sections, Therapeutic Recommendations, Figure 2 and footnotes, Text Box 1; PGx-Examples-Students-Fall-2026.pdf slides 'Allele and Phenotype Frequencies' (p. 9, panel B), 'CYP2C9 Polymorphisms' (p. 23), 'Integrated: Both PK and PD' (p. 57); (T) 10/26, 10/27 and 10/28. Questions L21-026 to L21-035, L21-060 to L21-066.</p>
 </section>
 <section class="guide" id="guide4-l21-4">
@@ -1280,20 +1291,20 @@ const GUIDE4_HTML = `
 <li>HER2 background (her account): everyone has the HER2 gene, but it is not normally expressed. We do not know its endogenous ligand. In HER2-positive cancer the receptor is expressed on the tumor cell surface in large numbers or is hyperactive, and growth factor binding makes the cells divide out of control. Trastuzumab is made to bind the HER2 receptor and stop that growth-factor signaling. The label describes trastuzumab as a humanized IgG1 kappa monoclonal antibody that binds the extracellular domain of HER2 (11 Description).</li>
 </ul>
 
-<h4>Where her words and the label differ</h4>
-<ul>
-<li><b>Tumor types.</b> She and the room said "metastatic gastrointestinal" and "esophageal" tumors. The label indication is narrower: metastatic gastric or gastroesophageal junction adenocarcinoma (1.3).</li>
-<li><b>Test wording.</b> She said the test should be one "you think is good", certified, specific and sensitive. The label says FDA-authorized tests specific for breast or gastric cancers, by laboratories with demonstrated proficiency (2.2). Both agree that no brand of kit is named. While answering item 6 she said "the answer to number 7 was"; the point (a named kit in older labels) belongs to item 6.</li>
-<li><b>Item 1.</b> She first said this year's label was the first she had seen give information on what makes the receptor get expressed, then concluded that the label describes the tumor phenotype, not the DNA variant. The label number she was shown (185) is the protein's size in kDa (12.1).</li>
-<li><b>Label date.</b> She said the trastuzumab label was just updated this year; the copy provided reads Revised: 05/2026.</li>
-</ul>
-
 <h4>Why</h4>
 <ul>
 <li><b>Why the tumor and not the patient.</b> HER2 is expressed on the tumor cells, not on normal cells. A sample from the rest of the body would not show HER2, so the test has to be on the tumor biopsy.</li>
 <li><b>Why it is phenotyping.</b> The question is whether the receptor protein is present on the tumor cells. IHC detects the protein, which is a phenotype, not a genotype of the patient.</li>
 <li><b>Why efficacy.</b> Trastuzumab acts only by binding HER2. If the tumor has no HER2, the drug has no target and cannot work, so the patient would get the cost and side effects without benefit. That is also why a HER2-negative result means trastuzumab is not used.</li>
 <li><b>Why tumor type, not ethnicity.</b> HER2 expression is a property of certain tumors (breast, gastric), not of an inherited population variant, so item 7 is answered with tumor types.</li>
+</ul>
+
+<h4>Where her words and the label differ</h4>
+<ul>
+<li><b>Tumor types.</b> She and the room said "metastatic gastrointestinal" and "esophageal" tumors. The label indication is narrower: metastatic gastric or gastroesophageal junction adenocarcinoma (1.3).</li>
+<li><b>Test wording.</b> She said the test should be one "you think is good", certified, specific and sensitive. The label says FDA-authorized tests specific for breast or gastric cancers, by laboratories with demonstrated proficiency (2.2). Both agree that no brand of kit is named. While answering item 6 she said "the answer to number 7 was"; the point (a named kit in older labels) belongs to item 6.</li>
+<li><b>Item 1.</b> She first said this year's label was the first she had seen give information on what makes the receptor get expressed, then concluded that the label describes the tumor phenotype, not the DNA variant. The label number she was shown (185) is the protein's size in kDa (12.1).</li>
+<li><b>Label date.</b> She said the trastuzumab label was just updated this year; the copy provided reads Revised: 05/2026.</li>
 </ul>
 
 <h4>Her words</h4>
@@ -1346,13 +1357,6 @@ const GUIDE4_HTML = `
 </tbody></table>
 <p>Item 7 has a different kind of answer for each worksheet drug: a tumor type for trastuzumab, at-risk ancestry for carbamazepine, every patient for abacavir.</p>
 
-<h4>Where her words and the labels differ</h4>
-<ul>
-<li><b>Carbamazepine reaction types.</b> She described the reaction for both variants as a skin reaction (SJS/TEN). The label ties HLA-B*1502 to SJS/TEN and says it has not been found to predict maculopapular eruption or DRESS (drug reaction with eosinophilia and systemic symptoms). For HLA-A*3101 the label lists SJS/TEN, maculopapular eruptions and DRESS, which the label also calls multiorgan hypersensitivity, and calls the association moderate.</li>
-<li><b>Label date.</b> She first said carbamazepine was just updated this year; when the room read the date as 2017, she accepted it ("things have not changed very recently"). The carbamazepine copy provided reads Revised: 7/2026, and it does not show when HLA-A*3101 was added. The abacavir label is the 2020 revision, as she said (Revised: 11/2020).</li>
-<li><b>Allele notation.</b> She and the caption say "1502", "3101" and "5701"; the labels print HLA-B*1502, HLA-A*3101 and HLA-B*5701. The 10/26 slide (Katzung Table 5-4) writes the HLA-B alleles with a colon: HLA-B*15:02 and HLA-B*57:01.</li>
-</ul>
-
 <h4>Why</h4>
 <ul>
 <li><b>Why the patient is tested.</b> These drugs do not act on a tumor target. The risk comes from HLA alleles the patient inherited, so the patient's own DNA is genotyped.</li>
@@ -1360,6 +1364,13 @@ const GUIDE4_HTML = `
 <li><b>Why carbamazepine has two genes to check.</b> The label now describes a second gene, HLA-A, whose variant HLA-A*31:01 also raises the risk of hypersensitivity, so HLA-B alone no longer covers it.</li>
 <li><b>Why abacavir was first thought to be a skin problem.</b> The first reactions seen were skin reactions like those with carbamazepine; later experience showed involvement of the whole body's organs, and the labeling changed.</li>
 <li>She began to explain why one gene gives reactions in different places ("What does our HLAB do? It's an antigen presenting receptor, right?"), and the recording ends mid-sentence; her explanation is not available.</li>
+</ul>
+
+<h4>Where her words and the labels differ</h4>
+<ul>
+<li><b>Carbamazepine reaction types.</b> She described the reaction for both variants as a skin reaction (SJS/TEN). The label ties HLA-B*1502 to SJS/TEN and says it has not been found to predict maculopapular eruption or DRESS (drug reaction with eosinophilia and systemic symptoms). For HLA-A*3101 the label lists SJS/TEN, maculopapular eruptions and DRESS, which the label also calls multiorgan hypersensitivity, and calls the association moderate.</li>
+<li><b>Label date.</b> She first said carbamazepine was just updated this year; when the room read the date as 2017, she accepted it ("things have not changed very recently"). The carbamazepine copy provided reads Revised: 7/2026, and it does not show when HLA-A*3101 was added. The abacavir label is the 2020 revision, as she said (Revised: 11/2020).</li>
+<li><b>Allele notation.</b> She and the caption say "1502", "3101" and "5701"; the labels print HLA-B*1502, HLA-A*3101 and HLA-B*5701. The 10/26 slide (Katzung Table 5-4) writes the HLA-B alleles with a colon: HLA-B*15:02 and HLA-B*57:01.</li>
 </ul>
 
 <h4>Her words</h4>
@@ -1513,21 +1524,22 @@ const GUIDE4_HTML = `
 
 <h4>The idea</h4>
 <p>When a patient on drugs develops a new symptom, the cause may be a new disease, a change in the patient's health, a new drug, or a long-used drug that the changed patient now responds badly to. The Naranjo algorithm scores how likely it is that one particular drug caused the adverse reaction. It has ten questions. Each is answered yes, no, or do not know; each answer earns set points; the points are added; and the total gives a category: definite, probable, possible, or doubtful (her word: remote). The clinician gets the answers by sitting with the patient (when each drug was started, when the symptoms started, what else they take) and by searching the literature. Many questions are about timing: did the reaction follow the drug, go away when the drug was stopped, and come back when it was given again.</p>
+<!--STEP:naranjo-case-->
 
 <h4>The ten questions and their points</h4>
-<table class="reftab"><thead><tr><th>Question (Naranjo page)</th><th>Yes</th><th>No</th><th>Do not know</th><th>What it tests</th></tr></thead><tbody>
-<tr><td>1. Are there previous conclusive reports on this reaction?</td><td>+1</td><td>0</td><td>0</td><td>Literature search</td></tr>
-<tr><td>2. Did the adverse event appear after the suspected drug was administered?</td><td>+2</td><td>-1</td><td>0</td><td>Timing (she named it)</td></tr>
-<tr><td>3. Did the adverse reaction improve when the drug was discontinued or a specific antagonist was administered?</td><td>+1</td><td>0</td><td>0</td><td>Timing (she named it)</td></tr>
-<tr><td>4. Did the adverse reaction reappear when the drug was re-administered?</td><td>+2</td><td>-1</td><td>0</td><td>Timing (she named it)</td></tr>
-<tr><td>5. Are there alternative causes/drugs that could on their own have caused the reaction?</td><td>-1</td><td>+2</td><td>0</td><td>Other explanations (scoring reversed)</td></tr>
-<tr><td>6. Did the reaction reappear when a placebo was given?</td><td>-1</td><td>+1</td><td>0</td><td>Timing (she called it time related)</td></tr>
-<tr><td>7. Was the drug detected in the blood or other fluids in concentrations known to be toxic?</td><td>+1</td><td>0</td><td>0</td><td>Drug level</td></tr>
-<tr><td>8. Was the reaction more severe when the dose was increased, or less severe when the dose was decreased?</td><td>+1</td><td>0</td><td>0</td><td>Dose-response</td></tr>
-<tr><td>9. Did the patient have a similar reaction to the same or similar drugs in any previous exposure?</td><td>+1</td><td>0</td><td>0</td><td>Past exposure</td></tr>
-<tr><td>10. Was the adverse event confirmed by any objective evidence?</td><td>+1</td><td>0</td><td>0</td><td>Objective evidence</td></tr>
+<table class="reftab keep"><thead><tr><th>Question (Naranjo page) and what it tests</th><th>Yes</th><th>No</th><th>Do not know</th></tr></thead><tbody>
+<tr><td>1. Are there previous conclusive reports on this reaction?<br><small>Tests: Literature search</small></td><td>+1</td><td>0</td><td>0</td></tr>
+<tr><td>2. Did the adverse event appear after the suspected drug was administered?<br><small>Tests: Timing (she named it)</small></td><td>+2</td><td>-1</td><td>0</td></tr>
+<tr><td>3. Did the adverse reaction improve when the drug was discontinued or a specific antagonist was administered?<br><small>Tests: Timing (she named it)</small></td><td>+1</td><td>0</td><td>0</td></tr>
+<tr><td>4. Did the adverse reaction reappear when the drug was re-administered?<br><small>Tests: Timing (she named it)</small></td><td>+2</td><td>-1</td><td>0</td></tr>
+<tr><td>5. Are there alternative causes/drugs that could on their own have caused the reaction?<br><small>Tests: Other explanations (scoring reversed)</small></td><td>-1</td><td>+2</td><td>0</td></tr>
+<tr><td>6. Did the reaction reappear when a placebo was given?<br><small>Tests: Timing (she called it time related)</small></td><td>-1</td><td>+1</td><td>0</td></tr>
+<tr><td>7. Was the drug detected in the blood or other fluids in concentrations known to be toxic?<br><small>Tests: Drug level</small></td><td>+1</td><td>0</td><td>0</td></tr>
+<tr><td>8. Was the reaction more severe when the dose was increased, or less severe when the dose was decreased?<br><small>Tests: Dose-response</small></td><td>+1</td><td>0</td><td>0</td></tr>
+<tr><td>9. Did the patient have a similar reaction to the same or similar drugs in any previous exposure?<br><small>Tests: Past exposure</small></td><td>+1</td><td>0</td><td>0</td></tr>
+<tr><td>10. Was the adverse event confirmed by any objective evidence?<br><small>Tests: Objective evidence</small></td><td>+1</td><td>0</td><td>0</td></tr>
 </tbody></table>
-<table class="reftab"><thead><tr><th>Total (Naranjo page)</th><th>Category on the page</th><th>Ranking on slide p. 21 and in her words</th><th>Meaning (slide p. 21)</th></tr></thead><tbody>
+<table class="reftab keep"><thead><tr><th>Total (Naranjo page)</th><th>Category on the page</th><th>Ranking on slide p. 21 and in her words</th><th>Meaning (slide p. 21)</th></tr></thead><tbody>
 <tr><td>9</td><td>Definite</td><td>Definite</td><td>Drug is likely the true cause</td></tr>
 <tr><td>5-8</td><td>Probable</td><td>Probable</td><td>Drug is the apparent cause</td></tr>
 <tr><td>1-4</td><td>Possible</td><td>Possible</td><td>Drug appears to be associated</td></tr>
@@ -1545,9 +1557,10 @@ const GUIDE4_HTML = `
 </ul>
 
 <h4>Scoring a case</h4>
-<!--STEP:naranjo-case-->
-<p><b>A shorter case, and what one answer changes.</b> The reaction has previous conclusive reports (Q1 yes, +1), appeared after the drug was started (Q2 yes, +2) and improved when the drug was stopped (Q3 yes, +1). The drug was not re-given (Q4 do not know, 0). No other cause or drug could explain it (Q5 no, +2). Questions 6 to 10 are do not know (0 each).</p>
-<table class="reftab"><thead><tr><th>Variation</th><th>Points</th><th>Total</th><th>Category</th></tr></thead><tbody>
+<p><b>Case A: a shorter case, and what one answer changes</b></p>
+<p><i>The answers.</i> The reaction has previous conclusive reports (Q1 yes, +1), appeared after the drug was started (Q2 yes, +2) and improved when the drug was stopped (Q3 yes, +1). The drug was not re-given (Q4 do not know, 0). No other cause or drug could explain it (Q5 no, +2). Questions 6 to 10 are do not know (0 each).</p>
+<p><i>Change one answer at a time.</i></p>
+<table class="reftab keep"><thead><tr><th>Variation</th><th>Points</th><th>Total</th><th>Category</th></tr></thead><tbody>
 <tr><td>As described</td><td>1 + 2 + 1 + 0 + 2</td><td>6</td><td>Probable</td></tr>
 <tr><td>Another drug could on its own have caused it (Q5 yes)</td><td>1 + 2 + 1 + 0 - 1</td><td>3</td><td>Possible</td></tr>
 <tr><td>As described, and the reaction reappeared when the drug was re-administered (Q4 yes)</td><td>1 + 2 + 1 + 2 + 2</td><td>8</td><td>Probable</td></tr>
@@ -1555,8 +1568,8 @@ const GUIDE4_HTML = `
 </tbody></table>
 <p>The Q5 answer alone moves the total 3 points, from probable to possible.</p>
 
-<p><b>A case that scores 0.</b></p>
-<table class="reftab"><thead><tr><th>Question</th><th>Answer</th><th>Points</th></tr></thead><tbody>
+<p><b>Case B: a case that scores 0</b></p>
+<table class="reftab keep"><thead><tr><th>Question</th><th>Answer</th><th>Points</th></tr></thead><tbody>
 <tr><td>1. Previous conclusive reports</td><td>No</td><td>0</td></tr>
 <tr><td>2. Appeared after the drug</td><td>Yes</td><td>+2</td></tr>
 <tr><td>3. Improved when the drug was stopped</td><td>No</td><td>0</td></tr>

@@ -296,6 +296,13 @@ See `## Conflicts / uncertain` in notes/L01.md, L02.md and L03.md. The ones that
   (termBorrow keeps Exam 3 terms on Exam 4); guide 11, 12, 20, 22, 25, 31 rewritten for a beginner; 67 + second-pass
   walkthrough edits (392 segments; 92,617 spoken characters, about $16.84 to record). Quiz 4 Q1 = L18-067 (CYP2D6*5).
 
+- 11/01 (layout, user request "presented cleanly"): review SP/ux_layout/. examCard factsMain (Covers, Her study list;
+  rest under "More about this exam"); study list <ol> with data-jump chips (course.js); focus card <details> closed on
+  phones; vGuide folds guide4 "Her words"/"Where her words" h4 blocks into details.gfold before Sources (tables keep
+  data-ti for walkthrough indexes); stackTables skips table.keep; .gwslide hides step nav/caption; steps ghost:true
+  (warfarin-genotype) draws the final chart faintly; term groups ordered active exam first; content restructured in
+  guide 8, 22, 25, 27, 28, 31 and ref4 tables (blank = not given). Checks: browser_test, glitch clean.
+
 ## Restore after a container restart
 
 The scratchpad is wiped on every restart. Durable copies: scripts and briefs in the repo (exam1-drill/src/daily/,
