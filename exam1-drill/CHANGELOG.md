@@ -2,6 +2,12 @@
 
 Newest first. The build embeds this file; the Topics page shows what is new since your last visit, and the Progress page shows all of it. Keep each bullet to one short line.
 
+## 2026-11-01 (Variant drill)
+
+- New Variant drill tab for Exam 4: her 24 variant rows in four modes, from her think/pair/share table.
+- Fill the row, Which variant?, Tell apart and Table recall; misses come back at the end of a round.
+- Exam 4 study list item 2 links to the new drill beside the two tables and the worksheet.
+
 ## 2026-11-01 (Cleaner Exam 4 pages)
 
 - Exam 4 card: her study list as a numbered list with a link per item; the other facts fold under "More".
