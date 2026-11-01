@@ -831,7 +831,7 @@ QUESTIONS.push(
 
 {id:"L18-064", lecture:"L18", prof:"Smith", tier:"new", topic:"L18", sub:"popfreq", skill:"figure", multi:true, lowYield:true,
  concept:"freq-figure-genes", tags:["smith"], source:"both",
- stem:"A four-panel Goodman and Gilman's figure gives allele and phenotype frequencies in sub-Saharan African, European and East Asian populations. Panel A shows allele frequencies of *1 (wild type) and the no-function *3, *6 and *7. Panel B shows allele frequencies of the -1639G>A variant (G, higher dose required; A, lower dose required). Panel C shows metabolizer phenotypes (indeterminate, normal, intermediate, poor) for a thiopurine-metabolizing enzyme. Panel D shows the same phenotypes for a gene she said will be discussed later, with sub-Saharan African frequencies marked currently unknown. Which genes are shown in this figure? Select all that apply.",
+ stem:"A four-panel Goodman and Gilman's figure gives allele and phenotype frequencies in sub-Saharan African, European and East Asian populations. Panel A shows allele frequencies of *1 (wild type) and the no-function *3, *6 and *7. Panel B shows allele frequencies of the -1639G>A variant (G, higher dose required; A, lower dose required). Panel C shows metabolizer phenotypes (indeterminate, normal, intermediate, poor) for a thiopurine-metabolizing enzyme. Panel D shows the same phenotypes for a second gene, with sub-Saharan African frequencies marked currently unknown. Which genes are shown in this figure? Select all that apply.",
  options:[
   {t:"CYP3A5", correct:true, why:"Panel A, allele frequencies."},
   {t:"VKORC1", correct:true, why:"Panel B, -1639G>A allele frequencies."},
@@ -918,10 +918,10 @@ QUESTIONS.push(
   {t:"TPMT*3A; a tandem repeat", correct:false, why:"The allele is TPMT*3A, but nothing is repeated; it is a haplotype."}],
  teach:"TPMT*3A carries two non-synonymous SNPs on the same allele. Two or more variants travelling together on one allele are a haplotype; TPMT*3C is a single SNP.",
  quote:"by definition has two nucleotide changes",
- cite:"Intro to PGx Lecture Students Fall 2026.pdf slide 'Non-Synonymous SNP: TPMT' (p. 35); transcript 10/21"},
+ cite:"Intro to PGx Lecture Students Fall 2026.pdf slide 'Non-Synonymous SNP: TPMT' (p. 35); PGx-Examples-Students-Fall-2026.pdf slide 'Thiopurine Methyltransferase (TPMT) 3' (p. 33, for *3C); transcript 10/21"},
 {id:"L18-071", lecture:"L18", prof:"Smith", tier:"new", topic:"L18", sub:"snp", skill:"apply", core:true, coreWhy:"her Exam 4 study list item 1 (objectives): describe the types of polymorphisms; her think/pair/share classification",
  concept:"classify-synonymous-codon", tags:["smith"], source:"both",
- stem:"In the coding region of a gene, a SNP changes the codon GAA (glutamic acid) to GAG (glutamic acid). In general terms, what kind of variant is this, and what happens to the protein?",
+ stem:"In the coding region of a gene, a SNP changes the codon GAA to GAG. In general terms, what kind of variant is this, and what happens to the protein?",
  options:[
   {t:"Synonymous; the amino acid sequence is unchanged", correct:true, why:"The DNA base changes but the codon still codes glutamic acid, so the protein is unchanged."},
   {t:"Non-synonymous; one amino acid is replaced", correct:false, why:"A non-synonymous SNP swaps the amino acid; here the amino acid stays glutamic acid."},

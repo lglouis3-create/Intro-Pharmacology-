@@ -598,7 +598,7 @@ QUESTIONS.push(
 
 {id:"L19-048", lecture:"L19", prof:"Smith", tier:"new", topic:"L19", sub:"nat2", skill:"recall", lowYield:true, dupOf:"L19-047",
  concept:"nat2-frequencies", tags:["smith"], source:"both",
- stem:"Which pair of NAT2 phenotype frequencies matches the population data she gave?",
+ stem:"Which pair of NAT2 phenotype frequencies is correct?",
  options:[
   {t:"Caucasian 30-45% fast; Japanese 10% slow", correct:true, why:"Caucasians 30-45% fast and Japanese 10% slow are the matching pair."},
   {t:"Caucasian 30-45% slow; Japanese 10% fast", correct:false, why:"The phenotypes are swapped: 30-45% of Caucasians are fast, 10% of the Japanese population slow."},
@@ -624,7 +624,7 @@ QUESTIONS.push(
 
 {id:"L19-050", lecture:"L19", prof:"Smith", tier:"new", topic:"L19", sub:"cyp2c19", skill:"recall", multi:true, dupOf:"L19-049", lowYield:true,
  concept:"cyp2c19-pm-frequency", tags:["smith"], source:"both",
- stem:"Which CYP2C19 poor metabolizer frequencies match her population data? Select all that apply.",
+ stem:"Which CYP2C19 poor metabolizer phenotype frequencies are correct? Select all that apply.",
  options:[
   {t:"Caucasians: 2-5%", correct:true, why:"Caucasians 2-5%."},
   {t:"African: 2-5%", correct:true, why:"African 2-5%, the same range as Caucasians."},
@@ -633,7 +633,7 @@ QUESTIONS.push(
   {t:"Caucasians: 16%", correct:false, why:"16% is the Asian figure; Caucasians are 2-5%."}],
  teach:"CYP2C19 poor metabolizer frequency: Caucasians 2-5%, African 2-5%, Asians 16%. All the numbers list poor metabolizers, with no caveat that they would not be tested, unlike the CYP2D6 numbers.",
  quote:"All these, these frequencies are listing the poor metabolizers.",
- note:"lowYield: number recall duplicating L19-049; she set these phenotype frequencies aside (\"not going to test you on these numbers\").",
+ note:"lowYield: number recall duplicating L19-049. Her \"not going to test you on these numbers\" referred to the CYP2D6 frequencies, not these.",
  cite:"PGx-Examples-Students-Fall-2026.pdf slide 'CYP2C19 Polymorphisms' (p. 25); transcript 10/22"},
 
 {id:"L19-051", lecture:"L19", prof:"Smith", tier:"new", topic:"L19", sub:"cyp2c9", skill:"recall", dupOf:"L19-046", core:true, coreWhy:"her Exam 4 study list item 1 (objectives): expected frequency of the clinically significant variants",
@@ -673,11 +673,11 @@ QUESTIONS.push(
  concept:"clopidogrel-genotype-apply", tags:["smith"], source:"both",
  stem:"A surgeon plans to start clopidogrel after a heart valve replacement. What should the pharmacist ask first, and why?",
  options:[
-  {t:"Has the CYP2C19 genotype been checked? Activation of the prodrug depends on it", correct:true, why:"Clopidogrel is a prodrug activated by CYP2C19, so *2/*3 carriers stay at risk of clots and *17 carriers over-anticoagulate."},
-  {t:"Has the CYP2C9 genotype been checked? Clearance of the active drug depends on it", correct:false, why:"CYP2C9 is the warfarin enzyme, not the activator of clopidogrel."},
+  {t:"Has the CYP2C19 genotype been checked? Activation of the prodrug depends on it", correct:true, why:"Clopidogrel is a prodrug activated by CYP2C19, so *2/*2, *3/*3 or *2/*3 patients keep sticky platelets and *17 carriers get too much antiplatelet effect."},
+  {t:"Has the CYP2C9 genotype been checked? Clearance of the active drug depends on it", correct:false, why:"CYP2C9 helps with one activation step, but the CYP2C19 variants decide how much active drug is made; clearing the active drug is not the issue."},
   {t:"Has the HLA-B*57:01 test been done? Hypersensitivity depends on it", correct:false, why:"HLA-B*57:01 flags abacavir hypersensitivity, not clopidogrel response."},
   {t:"Has TPMT activity been measured? Myelosuppression depends on it", correct:false, why:"TPMT governs thiopurine dosing, not clopidogrel."}],
- teach:"Clopidogrel is a prodrug that CYP2C19 activates. CYP2C19*2 and *3 carriers keep sticky platelets and *17 carriers are over-anticoagulated, so the CYP2C19 genotype should be checked before starting it.",
+ teach:"Clopidogrel is a prodrug that CYP2C19 activates. Patients who are *2/*2, *3/*3 or *2/*3 cannot activate it and keep sticky platelets; *17 carriers get too much antiplatelet effect. Check the CYP2C19 genotype before starting it.",
  quote:"genotype your patients for their 2C19 status before you put them on clopidogrel",
  cite:"PGx-Examples-Students-Fall-2026.pdf slide 'CYP2C19 Polymorphisms' (p. 25); transcript 10/22"},
 {id:"L19-055", lecture:"L19", prof:"Smith", tier:"new", topic:"L19", sub:"cyp2d6", skill:"apply", core:true, coreWhy:"her Exam 4 study list item 1 (objectives): the codeine CYP2D6 ultrarapid example; application of toxicology to adverse drug events",
@@ -690,5 +690,5 @@ QUESTIONS.push(
   {t:"An off-target toxicity of codeine at the mu-opioid receptor", correct:false, why:"Morphine acts on its intended mu-opioid target, so this is on-target, not off-target."}],
  teach:"Codeine is a prodrug; an ultrarapid CYP2D6 metabolizer converts a normal dose into a flood of morphine, which suppresses breathing at its own receptor. The dose was correct, so it is an adverse drug reaction and on-target toxicity, not a medication error.",
  quote:"the child died because they were an ultra rapid metabolizer",
- cite:"PGx-Examples-Students-Fall-2026.pdf slide 'CYP2D6 Polymorphisms 3' (p. 22); transcript 10/22"}
+ cite:"PGx-Examples-Students-Fall-2026.pdf slide 'CYP2D6 Polymorphisms 3' (p. 22); transcript 10/22; Toxic Responses Students Fall 2026 WCAG21A.pdf slide ‘On-target and off-target adverse drug effects’ (transcript 10/13); ADE-Lecture-Students-2026.pdf slides 'Medication Errors (MEs)' (p. 10) and 'Adverse Drug Reaction (ADR)' (p. 12)"}
 );
