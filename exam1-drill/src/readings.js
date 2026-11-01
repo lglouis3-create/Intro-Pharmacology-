@@ -2477,15 +2477,7 @@ const READINGS = [
   "discussed_in_class": true,
   "her_words": [
    {
-    "t": "We have another thing that we're gonna get to, uh, today, maybe not get to it until, um, Monday is a discussion of this Fioruda paper.",
-    "date": "10/22"
-   },
-   {
     "t": "Have you guys looked at it yet? Do you know what gene it's talking about and what variants?",
-    "date": "10/22"
-   },
-   {
-    "t": "We're gonna talk a lot about, go into a lot of the detail in that paper after we have our discussion about more about 2C19.",
     "date": "10/22"
    },
    {
@@ -2501,20 +2493,20 @@ const READINGS = [
     "date": "10/22"
    },
    {
-    "t": "talk about that paper just a little bit, then we're going to really dive into it on Monday, OK?",
-    "date": "10/22"
-   },
-   {
     "t": "This is the data from that Fioruda paper, and we want to look at the, the functional significance of those variants, right?",
-    "date": "10/22"
-   },
-   {
-    "t": "Again, on Monday when we come back, we're going to dive into that paper.",
     "date": "10/22"
    },
    {
     "t": "you guys will be reading a paper about a pharmacogenomics study.",
     "date": "10/21"
+   },
+   {
+    "t": "So can we generalize this study to the United States? Not on the face of it.",
+    "date": "10/26"
+   },
+   {
+    "t": "look at the discussion. And they say things like 1st and 2nd and 3rd, they're making some other points.",
+    "date": "10/26"
    }
   ],
   "quotes_note": "Quotes are verbatim transcript text from the 10/21, 10/22 and 10/26 recordings, including filler words; the captions render the name Furuta as \"Fioruda\" or \"Furuda\".",
