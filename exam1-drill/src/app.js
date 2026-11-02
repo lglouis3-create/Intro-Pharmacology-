@@ -2929,8 +2929,7 @@ const SAYFIG = [
   [/neuronopathy|axonopathy|myelinopathy|neurotransmission/i, 'smith-neuro-types', 'Types of neurotoxic injury'],
   [/zone (1|3|one|three)|Kupffer|acinus|central vein|portal/i, 'smith-liver', 'Liver blood flow and the lobule'],
   [/twin/i, 'smith-twins', 'Twin studies: antipyrine half-life'],
-  [/haplotype|linkage/i, 'smith-haplotype', 'Her slide: haplotypes'],
-  [/homozygous|heterozygous|genotype|allele/i, 'smith-zygosity', 'Her slide: alleles and genotype']];
+  [/haplotype|linkage/i, 'smith-haplotype', 'Her slide: haplotypes']];
 const SAYMOV = [
   [/cyanide|rhodanese|thiosulfate|methemoglobin|amyl nitrite|methylene blue/i, 'ad:03-cyanide-antidote-stepper', 'Cyanide antidotes, step by step'],
   [/acetaminophen|NAPQI|acetylcysteine|glutathione/i, 's3:apap-nac', ''],
@@ -2941,8 +2940,7 @@ const SAYMOV = [
   [/naloxone|flumazenil/i, 'ad:04-receptor-antagonist-naloxone-flumazenil', 'Naloxone and flumazenil'],
   [/ion trapping|bicarbonate|weak acid|urine (more )?basic/i, 's3:ion-trapping', ''],
   [/zone (1|3|one|three)|Kupffer|acinus|central vein|CYP2E1/i, 's3:liver-zones', ''],
-  [/haplotype|linkage/i, 's3:haplotype', ''],
-  [/homozygous|heterozygous|genotype|allele|phenotype/i, 's3:allele-genotype', '']];
+  [/haplotype|linkage/i, 's3:haplotype', '']];
 const SAYROW = [[/acetaminophen/i, 'apap'], [/methanol|ethylene glycol|toxic alcohol/i, 'alc'], [/benzodiazepine|flumazenil/i, 'bzd'], [/beta.?blocker/i, 'bb'], [/calcium channel blocker/i, 'ccb'], [/digoxin/i, 'dig'], [/tricyclic/i, 'tca'], [/opioid|naloxone|opiate/i, 'opi'], [/salicylate|aspirin/i, 'sal'], [/sulfonylurea|octreotide/i, 'su'], [/\biron\b|deferoxamine/i, 'fe'], [/organophosphate|pralidoxime|sludge/i, 'op']];
 function movHTML(ref, label) {
   if (ref.startsWith('s3:')) return stepHTML(ref.slice(3));
@@ -2951,8 +2949,50 @@ function movHTML(ref, label) {
 }
 /* The panel above a transcript: the moving diagram, her full slide and her key row for what the current sentence is about.
    Each part is a fold the reader opens or closes; its content changes only when the topic changes. */
-function saySide(box, text) {
+/* Content words of a text, for matching a spoken sentence to the walkthrough step that shows it. */
+const SAYSTOP = new Set('about after also because been before being between both does each from have into just more most much only other over same some such than that their them then there these they this those through very what when where which while will with would your'.split(' '));
+/* Spoken scripts write names as they are said ("sip two C nineteen", "Her two", "Item three"); captions write them as
+   printed (CYP2C19, HER2, "3."). Both are brought to one form before words are compared. */
+const SAYNUM = 'zero one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen twenty'.split(' ');
+const sayNorm = t => String(t).replace(/<[^>]*>/g, ' ').toLowerCase()
+  .replace(/\b(zero|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty)\b/g, w => String(SAYNUM.indexOf(w)))
+  .replace(/^\s*(\d)\.\s/, ' item$1 ').replace(/\bitem (\d)\b/g, 'item$1')
+  .replace(/\bsip (\d+) ([a-z]) (\d+)\b/g, 'cyp$1$2$3').replace(/\bher 2\b/g, 'her2').replace(/\*/g, ' ')
+  .replace(/\b(?:[a-z0-9] ){2,}[a-z0-9]\b/g, m => m.replace(/ /g, ''));
+const sayWords = t => new Set(sayNorm(t).match(/[a-z0-9*]{4,}|item\d/g)?.filter(w => !SAYSTOP.has(w)).map(w => w.replace(/s$/, '')) || []);
+const sayOverlap = (a, b) => { let n = 0; for (const w of a) if (b.has(w)) n += /^item\d$/.test(w) ? 4 : 1; return n; };   // a numbered item named aloud ('Item three') marks its step
+/* The walkthrough for a Hear-the-why explanation comes only from a reviewed list (QVIS, qvis.js: question id -> step
+   figure set made or chosen for that explanation). No keyword guessing: a figure that only shares a word with the
+   explanation does not show what is being said. */
+function sayWalkFor(id) { const k = typeof QVIS !== 'undefined' && QVIS[id]; return k && STEPS()[k] ? k : null; }
+/* With a walkthrough attached (data-walk), the panel shows that walkthrough and moves to the step whose caption
+   shares the most words with the sentence being read; it stays on the current step when no step matches. */
+/* Each sentence gets a step; steps only move forward through the script, and the order chosen is the one whose
+   sentences share the most words with their steps' captions (dynamic programming over sentences × steps). */
+function sayWalkMap(k, sents) {
+  const d = STEPS()[k], n = sents.length, m = d.steps.length, cw = d.steps.map(x => sayWords(x.t));
+  const sc = sents.map(t => { const w = sayWords(t); return cw.map(c => sayOverlap(w, c)); });
+  const best = Array.from({length: n}, () => new Array(m).fill(-1)), from = Array.from({length: n}, () => new Array(m).fill(0));
+  for (let j = 0; j < m; j++) best[0][j] = sc[0][j] - j * 0.5;
+  for (let i = 1; i < n; i++) { let bv = -Infinity, bj = 0; for (let j = 0; j < m; j++) { if (best[i - 1][j] > bv) { bv = best[i - 1][j]; bj = j; } best[i][j] = bv + sc[i][j]; from[i][j] = bj; } }
+  let j = best[n - 1].indexOf(Math.max(...best[n - 1])); const map = new Array(n);
+  for (let i = n - 1; i >= 0; i--) { map[i] = j; j = from[i][j]; }
+  return map;
+}
+function sayWalkStep(side, k, box, si) {
+  const d = STEPS()[k]; if (!d) return;
+  if (!box._walk || box._walk.k !== k) box._walk = {k, map: sayWalkMap(k, [...box.querySelectorAll('.ssent')].map(x => x.textContent))};
+  const cur = side.dataset.m === 'w:' + k ? +side.dataset.wi : -1;
+  const i = box._walk.map[si] ?? 0; if (i === cur) return;
+  side.dataset.m = 'w:' + k; side.dataset.wi = i;
+  const p = side.querySelector('.saymovd'); p.hidden = false; p.querySelector('summary').textContent = 'Walkthrough: ' + d.title;
+  p.querySelector('.sbody').innerHTML = stepHTML(k, i);
+}
+const RD_EX4 = new Set(['furuta-1998', 'katzung-5', 'dipiro-e6', 'cpic-warfarin-2017', 'label-abacavir', 'label-carbamazepine', 'label-trastuzumab', 'naranjo']);   // Exam 4 readings
+function saySide(box, text, si = 0) {
   const side = box && box.previousElementSibling; if (!side || !side.classList.contains('sayside')) return;
+  if (box.dataset.walk) { sayWalkStep(side, box.dataset.walk, box, si); return; }
+  if (box.dataset.nokw) return;   // Exam 4 scripts: no keyword-matched figure (it would show something the sentence is not about)
   const f = SAYFIG.find(([re, k]) => re.test(text) && IMG[k]), mv = SAYMOV.find(([re, k]) => re.test(text) && (k.startsWith('ad:') || STEPS()[k.slice(3)])), rw = SAYROW.find(([re]) => re.test(text)), r = rw && ptRows().find(x => x.id === rw[1]);
   const part = (cls, html, label) => { const d = side.querySelector('.' + cls); d.hidden = false; d.querySelector('summary').textContent = label; d.querySelector('.sbody').innerHTML = html; };
   if (mv && side.dataset.m !== mv[1]) { const html = movHTML(mv[1], mv[2]); if (html) { side.dataset.m = mv[1]; part('saymovd', html, 'Moving diagram: ' + (mv[2] || (STEPS()[mv[1].slice(3)] || {}).title || '')); } }
@@ -2963,7 +3003,7 @@ const sideHTML = () => `<div class="sayside">${['saymovd', 'sayfigd', 'saykeyd']
 function sayMark(box, i) {
   if (!box) return; const ss = box.querySelectorAll('.ssent'); if (!ss.length) return;
   ss.forEach((x, k) => x.classList.toggle('on', k === i));
-  if (ss[i]) saySide(box, ss[i].textContent);
+  if (ss[i]) saySide(box, ss[i].textContent, i);
   const on = ss[i]; if (on && box.scrollHeight > box.clientHeight) box.scrollTop = Math.max(0, on.offsetTop - box.offsetTop - 24);
 }
 /* Sentence start times for a recorded clip, from its measured pauses (clip_pauses.js, rec/pauses.py).
@@ -3046,7 +3086,7 @@ function qSay(id, btn) {
   if (QSAY && QSAY.id === id) { qSayStop(); return; }
   qSayStop(); narrStop();
   const card = btn.closest('.qcard') || btn.parentElement, row = btn.closest('.qsay');
-  let d = row.querySelector('.nsaid'); if (!d) { row.insertAdjacentHTML('beforeend', sideHTML().replace('class="sayside"', 'class="sayside" style="flex:1 1 100%"')); d = document.createElement('div'); d.className = 'nsaid saybox'; d.style.flex = '1 1 100%'; row.appendChild(d); } d.innerHTML = sayHTML(text); sayMark(d, 0);
+  let d = row.querySelector('.nsaid'); if (!d) { row.insertAdjacentHTML('beforeend', sideHTML().replace('class="sayside"', 'class="sayside" style="flex:1 1 100%"')); d = document.createElement('div'); d.className = 'nsaid saybox'; d.style.flex = '1 1 100%'; row.appendChild(d); } d.innerHTML = sayHTML(text); d._walk = null; const wk = sayWalkFor(id); if (wk) d.dataset.walk = wk; else delete d.dataset.walk; { const q0 = QUESTIONS.find(x => x.id === id); if (q0 && examOf(q0) >= 4) d.dataset.nokw = '1'; else delete d.dataset.nokw; } sayMark(d, 0);
   const cur = QSAY = {id, btn, t: null}; btn.textContent = '■ Stop'; btn.setAttribute('aria-pressed', 'true');
   const finish = () => { if (QSAY !== cur) return; qSayStop(); };
   const synth = () => { if (!narrCan()) return finish(); const v = narrVoice(); let last = null; saySents(text).forEach((part0, si) => { const part = speakable(part0); if (!part.trim()) return; const u = new SpeechSynthesisUtterance(part.trim()); u.onstart = () => { if (QSAY === cur) sayMark(d, si); }; u.rate = NAR.rate; u.lang = 'en-US'; if (v) u.voice = v; last = u; speechSynthesis.speak(u); }); if (!last) return finish(); last.onend = last.onerror = finish; cur.t = setTimeout(finish, (2000 + text.split(/\s+/).length * 450) / NAR.rate); };
@@ -3474,7 +3514,7 @@ function rdCard(r) {
       ${quiz.length ? `<button class="btn ghost" data-rdquiz="${esc(r.id)}">Her quiz items (${quiz.length})</button>` : ''}
       ${r.listen ? `<button class="btn ghost" data-rdlisten="${esc(r.id)}">🔊 Listen${r.listen_secs ? ' · ' + rdClock(r.listen_secs) : ''}</button>` : ''}
       ${(r.links || []).map(([v, a, l]) => `<button type="button" class="chip" data-jump="${esc(v)}:${esc(a)}">${esc(l)}</button>`).join('')}</div>
-    ${r.listen ? `<div class="rdplayer" data-rdp="${esc(r.id)}" hidden><div class="row"><button type="button" class="btn ghost" data-rdpp>❚❚ Pause</button><button type="button" class="btn ghost" data-rdpn hidden>Next ▸</button><button type="button" class="btn ghost" data-rdps>■ Stop</button><button type="button" class="btn ghost" data-rdtx aria-pressed="false">Show transcript</button><span class="meta rdpt" aria-live="off">0:00</span></div><input type="range" class="rdseek" min="0" max="1000" step="1" value="0" aria-label="Position in the talk"><div class="rdside" hidden>${sideHTML()}<div class="nsaid saybox rdtx">${sayHTML(r.listen)}</div></div></div>` : ''}
+    ${r.listen ? `<div class="rdplayer" data-rdp="${esc(r.id)}" hidden><div class="row"><button type="button" class="btn ghost" data-rdpp>❚❚ Pause</button><button type="button" class="btn ghost" data-rdpn hidden>Next ▸</button><button type="button" class="btn ghost" data-rdps>■ Stop</button><button type="button" class="btn ghost" data-rdtx aria-pressed="false">Show transcript</button><span class="meta rdpt" aria-live="off">0:00</span></div><input type="range" class="rdseek" min="0" max="1000" step="1" value="0" aria-label="Position in the talk"><div class="rdside" hidden>${sideHTML()}<div class="nsaid saybox rdtx"${RD_EX4.has(r.id) ? ' data-nokw="1"' : ''}${typeof STEPS3 !== 'undefined' && STEPS3['rd-' + r.id] ? ` data-walk="rd-${esc(r.id)}"` : ''}>${sayHTML(r.listen)}</div></div></div>` : ''}
     ${typeof STEPS3 !== 'undefined' && STEPS3['rd-' + r.id] ? `<details class="fold rdwalk"${window.innerWidth >= 700 ? ' open' : ''}><summary>Narrated walkthrough · ${STEPS3['rd-' + r.id].steps.length} steps · press Play</summary>${stepHTML('rd-' + r.id)}</details>` : ''}
     ${fold('About, in full', rdLead(r.about || '')[1] ? `<p>${esc(r.about)}</p>` : '')}
     ${fold('Read for', li(r.read_for))}
