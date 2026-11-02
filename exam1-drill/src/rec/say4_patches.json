@@ -479,6 +479,10 @@
   [
    "“H L A-B 1502”, “H L A-B 5701”, “H L A-A 3101”",
    "“H L A-B fifteen oh two”, “H L A-B fifty seven oh one”, “H L A-A thirty one oh one”"
+  ],
+  [
+   "the Tegretol label prints H L A B fifteen oh two, the same allele.",
+   "the Tegretol label prints the same allele without the colon."
   ]
  ],
  "s3-warfarin-target-1.mp3": [
@@ -697,15 +701,9 @@
    "both involve H L A B through"
   ]
  ],
- "q-L21-060.mp3": [
-  [
-   "and GGCX do the other steps.",
-   "and G G C X do the other steps."
-  ]
- ],
  "q-L21-061.mp3": [
   [
-   "the cofactor gamma-glutamyl carboxylase, GGCX, uses to carboxylate",
+   "the cofactor gamma-glutamyl carboxylase, G G C X, uses to carboxylate",
    "the cofactor that gamma-glutamyl carboxylase, G G C X, uses to carboxylate"
   ]
  ],
