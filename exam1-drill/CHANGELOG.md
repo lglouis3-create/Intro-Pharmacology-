@@ -2,6 +2,10 @@
 
 Newest first. The build embeds this file; the Topics page shows what is new since your last visit, and the Progress page shows all of it. Keep each bullet to one short line.
 
+## 2026-11-02 (Exam 4 core listen)
+
+- Readings: one 53-minute listen in her study-list order (table, worksheet, Furuta, warfarin, Naranjo), with chapters.
+
 ## 2026-11-02 (Sorting the enzyme examples)
 
 - Guide 8: a narrated grid sorts each Day 19 example by less or more enzyme and active drug or prodrug.
