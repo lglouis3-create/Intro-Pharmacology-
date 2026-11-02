@@ -198,7 +198,8 @@ QUESTIONS.push(
     {t:"How quickly the kidneys will clear the ACE inhibitor from the body", correct:false, why:"The variant affects adverse-effect risk, not clearance."},
     {t:"Whether the drug can cross into the central nervous system", correct:false, why:"Central penetration is unrelated to the ACE insertion/deletion variant."}
   ],
-  teach:"The ACE gene carries an insertion/deletion variant in intron 16 that is associated with plasma ACE concentration. For patients on ACE inhibitors it does not seem to predict how well blood pressure is controlled; instead it probably predicts adverse reactions. About 10% of patients develop a persistent dry cough, and angioedema, though rare at 0.1 to 0.2%, is dangerous, so this is an adverse-effect marker.",
+  note:"Two statements from her: reading the ACE row of the DiPiro Table 6-2 slide (p. 49) she described a change in blood-pressure response; on the later ACE slide (p. 56) she said the variant \"Is not seeming to impact the efficacy of ACE inhibitors\" and stressed adverse effects. The key follows the later, more specific ACE slide.",
+    teach:"The ACE gene carries an insertion/deletion variant in intron 16 that is associated with plasma ACE concentration. For patients on ACE inhibitors it does not seem to predict how well blood pressure is controlled; instead it probably predicts adverse reactions. About 10% of patients develop a persistent dry cough, and angioedema, though rare at 0.1 to 0.2%, is dangerous, so this is an adverse-effect marker.",
   quote:"about 10% of people develop that, that persistent little dry cough",
   cite:"PGx-Examples-Students-Fall-2026.pdf slide 'Variations of Drug Targets: Enzymes 2' (p. 56); transcript 10/26"
 },
@@ -256,7 +257,7 @@ QUESTIONS.push(
   options:[
     {t:"Complete for this branch; a higher-than-average dose is needed", correct:true, why:"CYP4F2*3 lowers vitamin K clearance, so more vitamin K competes with warfarin and more drug is required."},
     {t:"Complete, but a lower-than-average dose is needed here", correct:false, why:"Less vitamin K is removed, so more warfarin, not less, is needed."},
-    {t:"Incomplete; rs12777823 must also be tested before dosing this non-African patient first", correct:false, why:"rs12777823 is applied only on the African-ancestry branch."},
+    {t:"Incomplete; rs12777823 must also be tested for this non-African patient", correct:false, why:"rs12777823 is applied only on the African-ancestry branch."},
     {t:"Complete, with no change from the average starting dose", correct:false, why:"CYP4F2*3 raises the needed dose by about 5 to 10%, so it is not unchanged."}
   ],
   teach:"CYP4F2 metabolizes vitamin K to remove it from the vitamin K cycle. The CYP4F2*3 variant lowers that activity, so more vitamin K accumulates, and vitamin K works against warfarin, so more warfarin is needed to anticoagulate the patient. On the non-African branch CYP4F2*3 adds about 5 to 10% to the calculated dose; with VKORC1, CYP2C9 and CYP4F2 reported, the branch inputs are complete.",

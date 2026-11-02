@@ -2,6 +2,10 @@
 
 Newest first. The build embeds this file; the Topics page shows what is new since your last visit, and the Progress page shows all of it. Keep each bullet to one short line.
 
+## 2026-11-02 (Daily check)
+
+- Two Exam 4 cases reworded (warfarin CYP4F2 distractor; ACE note on her two statements).
+
 ## 2026-11-02 (Exam 4 core listen)
 
 - Readings: one 53-minute listen in her study-list order (table, worksheet, Furuta, warfarin, Naranjo), with chapters.
