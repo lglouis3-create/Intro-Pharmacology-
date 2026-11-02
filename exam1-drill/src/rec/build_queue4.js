@@ -7,7 +7,7 @@ const N = {0:'zero',1:'one',2:'two',3:'three',4:'four',5:'five',6:'six',7:'seven
 const num = n => N[+n] !== undefined ? N[+n] : String(+n);
 const letters = s => s.split('').join(' ');
 // gene symbols spelled letter by letter, with trailing numbers spoken
-const gene = g => g.replace(/([A-Z]+)(\d+)([A-Z]?)(\d*)([A-Z]?)(\d*)/, (m, a, b, c, d, e, f) =>
+const gene = g => !/\d/.test(g) ? letters(g) : g.replace(/([A-Z]+)(\d+)([A-Z]?)(\d*)([A-Z]?)(\d*)/, (m, a, b, c, d, e, f) =>
   [letters(a), num(b), c, d && num(d), e, f && num(f)].filter(Boolean).join(' '));
 const RULES = [
   [/\*(\d+)x(N|\d+)/g, (m, a, b) => ` star ${num(a)} times ${b === 'N' ? 'N' : num(b)}`],
@@ -39,10 +39,12 @@ const PATCH = JSON.parse(fs.readFileSync(path.join(__dirname, 'say4_patches.json
 const patch = (file, t) => { for (const [a, b] of PATCH[file] || []) { if (t.includes(a)) t = t.replace(a, b); else MISS.push(file + ': ' + a.slice(0, 50)); } return t; };
 const ABBR = {'P450': 'P four fifty', 'SSRIs': 'S S R I drugs', 'SSRI': 'S S R I', 'NSAIDs': 'N S A I D drugs', 'NSAID': 'N S A I D', 'MAOIs': 'M A O I drugs', 'MAOI': 'M A O I', 'P-gp': 'P glycoprotein', 'OATP1B1': 'O A T P one B one', 'MDR1': 'M D R one',
   'dbSNP': 'd b snip', 'VNTRs': 'V N T R repeats', 'VNTR': 'V N T R', 'ClinPGx': 'Clin P G X', 'PharmGKB': 'Pharm G K B', 'JCAHO': 'the Joint Commission', 'OTC': 'over the counter', 'ADME': 'A D M E', 'PAHs': 'P A H compounds', 'ATPase': 'A T P ase',
-  '5-FU': 'five F U', 'SN-38': 'S N thirty eight', 'WHO': 'W H O', 'U.S.': 'U S', 'IVs': 'intravenous solutions'};
+  '5-FU': 'five F U', 'SN-38': 'S N thirty eight', 'WHO': 'W H O', 'U.S.': 'U S', 'IVs': 'intravenous solutions', 'H L A-': 'H L A ', '6-TGN': 'six T G N', 'HER1': 'her one', 'ErbB1': 'erb B one'};
 const POST = [[/\b(\d+)-(\d+)\b/g, '$1 to $2'], [/,\s*(PM|UM|IM|EM|NM|RM),/g, ','], [/\b[Tt]ype IV\b/g, 'type four'], [/\b[Tt]ype III\b/g, 'type three'], [/\b[Tt]ype II\b/g, 'type two'], [/\b[Tt]ype I\b/g, 'type one'],
   [/\bphase II\b/g, 'phase two'], [/\bphase III\b/g, 'phase three'], [/\+(\d)/g, 'plus $1'], [/\bQ(\d+)\b/g, 'question $1'], [/H\. pylori/g, 'H pylori'], [/\bpH\b/g, 'p H'], [/\bm([12])\b/g, (m, d) => 'm ' + num(d)], [/\b([Gg]roup) ([123])\b/g, (m, g, d) => g + ' ' + num(d)], [/\s+([,.;:])/g, '$1'], [/,([.;:])/g, '$1'], [/\s+/g, ' ']];
-const post = t => POST.reduce((x, [re, r]) => x.replace(re, r), Object.entries(ABBR).reduce((x, [a, b]) => x.split(a).join(b), t)).replace(/ = /g, ' is ').trim();
+const KEEP = new Set(['GERD']);
+const caps = t => t.replace(/\b([ACGT])(\d{3,4})([ACGT])\b/g, '$1 $2 $3').replace(/\b([A-Z]{2,})(\d*)\b/g, (m, a, d) => KEEP.has(m) ? m : letters(a) + (d ? ' ' + num(d) : ''));
+const post = t => caps(POST.reduce((x, [re, r]) => x.replace(re, r), Object.entries(ABBR).reduce((x, [a, b]) => x.split(a).join(b), t)).replace(/ = /g, ' is ')).trim();
 const q = [];
 for (const f of fs.readdirSync('walk').filter(f => f.startsWith('guide4-')).sort()) {
   const d = JSON.parse(fs.readFileSync('walk/' + f)); d.segs.forEach((s, i) => q.push({file: `gw-${d.id}-${i}.mp3`, text: s.text.replace(/\s+/g, ' ').trim()}));
