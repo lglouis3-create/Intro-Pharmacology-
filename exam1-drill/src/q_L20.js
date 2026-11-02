@@ -421,7 +421,7 @@ QUESTIONS.push(
   {t:"Response will be better than wild type", correct:false, why:"The wild type had the better response."},
   {t:"Metoprolol will be metabolized faster", correct:false, why:"ADRB1 is the drug target, not a metabolizing enzyme."},
   {t:"Genotype has no bearing on beta-blocker response", correct:false, why:"Beta-1 genotype may determine blood pressure response to beta-blockers."}],
- teach:"Hypertensive patients on metoprolol who were homozygous for Ser49 and Arg389 (wild type) responded better. Beta-1 receptor genotype may determine blood pressure response to beta-blockers and help choose the drug; with the variants, think twice about metoprolol.",
+ teach:"Hypertensive patients on metoprolol who were homozygous for Ser49 and Arg389 (wild type) responded better. Beta-1 receptor genotype may determine blood pressure response to beta-blockers and help choose the drug; a patient with the variants may not respond as well to metoprolol.",
  quote:"They found that patients that were homozygous for the serine, and then for the arginine, so the wild type, they had a better response to the drug.",
  cite:"PGx-Examples-Students-Fall-2026.pdf slide 'Variations of Drug Targets: Receptors' (p. 50); transcript 10/26"},
 

@@ -98,8 +98,9 @@ const GUIDE4_HTML = `
 <table class="reftab"><thead><tr><th>Allele</th><th>CYP2C19</th><th>CYP2C9</th></tr></thead><tbody>
 <tr><td>*1</td><td>Normal (wild type) activity</td><td>Normal (wild type) activity</td></tr>
 <tr><td>*2</td><td>No activity: a really short (truncated), non-functional protein</td><td>Decreased activity</td></tr>
-<tr><td>*3</td><td>No activity: also truncated (a premature stop codon, section 4)</td><td>Decreased activity</td></tr>
+<tr><td>*3</td><td>No activity: also a really short (truncated), non-functional protein</td><td>Decreased activity</td></tr>
 </tbody></table>
+<p class="sub">Both CYP2C19 *2 and *3 make a truncated protein with no activity. She grouped both as premature stop codon SNPs (10/22; section 4). The mechanism differs: *3 is the stop codon W212X, while *2 is a splice-site variant (Goodman and Gilman figure, Examples p. 26; Katzung Table 5&ndash;1 lists *2 as a "splicing defect"). The exam keys her grouping; both give no activity.</p>
 <p>For these variants the genotype-phenotype relationship is tight: labs have expressed the variant enzymes and measured their activity against the wild type. <small>(T) 10/21; slide ‘More Allele “Star” Nomenclature’</small></p>
 
 <h4>CYP2C19 genotypes</h4>
