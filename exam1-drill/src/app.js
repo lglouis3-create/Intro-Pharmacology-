@@ -210,7 +210,7 @@ function nav() {
   hdrVar();
 }
 /* The header's height, for things that stick under it (the exam clock on the all-on-one-page paper). */
-const hdrVar = () => { const hd = document.querySelector('header'); if (hd) document.documentElement.style.setProperty('--hdr', hd.getBoundingClientRect().height + 'px'); };
+const hdrVar = () => { document.documentElement.style.setProperty('--hdr', '0px'); }; // header scrolls away with the page (11/02), so sticky bars sit at the top
 window.addEventListener('resize', hdrVar);
 const clearView = () => { const v = $('#view'); v.onclick = null; v.onchange = null; v.oninput = null; const t = document.getElementById('totop'); if (t) t.hidden = true; };
 /* Leaving a page: back to the top, and the floating buttons and scroll watcher of the old page go. */
@@ -1357,7 +1357,8 @@ ensureC();
    the answer as its subject ("Phenoxybenzamine is the one irreversible …") reads "It is …", and one that
    opens "Answer: definition" keeps the definition.
    Nothing left, or only the answer again: no line. */
-const firstSentence = t => { const m = String(t || '').replace(/<[^>]+>/g, '').match(/^(.*?[.!?](\s|$)){1,2}/); const r = (m ? m[0] : String(t || '')).trim(); return r.length > 320 ? r.slice(0, 317) + '…' : r; };
+// first one or two sentences; a period after a title or abbreviation (Dr., St., e.g., p.) does not end a sentence
+const firstSentence = t => { const x = String(t || '').replace(/<[^>]+>/g, '').replace(/\b(Dr|Mr|Ms|Mrs|St|vs|pp|p|Fig|al|e\.g|i\.e)\./g, '$1\u2024'); const two = x.match(/^(.*?[.!?](\s|$)){1,2}/), one = x.match(/^.*?[.!?](\s|$)/); let r = (two ? two[0] : x).trim(); if (r.length > 320 && one) r = one[0].trim(); if (r.length > 320) r = r.slice(0, 318).replace(/\s+\S*$/, '') + '…'; return r.replace(/\u2024/g, '.'); };
 const bareTxt = x => String(x).toLowerCase().replace(/[^a-z0-9α-ω]+/g, '');
 function planIdea(q) {
   let t = String(q.teach || '').replace(/<[^>]+>/g, '').trim();
