@@ -2592,7 +2592,7 @@ function geneCards(root) {
       const td = tr.cells[0]; if (!td || td.querySelector('.genecard')) return;
       const k = keys.find(g => new RegExp('(^|[^A-Za-z0-9])' + g.replace(/[-]/g, '\\-') + '([^A-Za-z0-9]|$)').test(td.textContent)); if (!k) return;
       const g = GENES4[k];
-      td.insertAdjacentHTML('beforeend', `<details class="genecard"><summary>What ${esc(k)} does</summary><div class="gcard"><p><b>${esc(g.name)}</b> <span class="meta" style="margin:0">${esc(g.kind)}</span></p><p><b>Normally:</b> ${esc(g.normal)}</p><p><b>The variant:</b> ${esc(g.variant)}</p><p><b>Drugs:</b> ${esc(g.drugs)}</p><p><b>Tell apart:</b> ${esc(g.tell)}</p>${g.fig && STEPS()[g.fig] ? `<div class="gfig" data-gfig="${esc(g.fig)}"></div>` : ''}<p class="cite">${esc(g.src)}</p></div></details>`);
+      td.insertAdjacentHTML('beforeend', `<details class="genecard"><summary>What ${esc(k)} does</summary><div class="gcard"><p><b>${esc(g.name)}</b> <span class="meta" style="margin:0">${esc(g.kind)}</span></p><p><b>Normally:</b> ${esc(g.normal)}</p><p><b>The variant:</b> ${esc(g.variant)}</p><p><b>Drugs:</b> ${esc([].concat(g.drugs).join(", "))}</p><p><b>Tell apart:</b> ${esc(g.tell)}</p>${g.fig && STEPS()[g.fig] ? `<div class="gfig" data-gfig="${esc(g.fig)}"></div>` : ''}<p class="cite">${esc(g.src)}</p></div></details>`);
     });
   });
   root.addEventListener('toggle', e => { const d = e.target; if (!d.classList || !d.classList.contains('genecard') || !d.open) return; const f = d.querySelector('[data-gfig]'); if (f && !f.innerHTML) f.innerHTML = stepHTML(f.dataset.gfig); }, true);
