@@ -337,3 +337,11 @@ Each new lecture ingested adds its line here.
 - New files: q_GAP4.js (GAP4-001..023, 101..114), q_QZ4.js (Quiz 4 Q2,3,5,7 verbatim; lecture QZ4 exam 4; sub quiz5), sa4.js (SHORT4, SA4-01..06; app lists SHORT4 before SHORT3). Verified 0 findings. New items have no narration clips yet.
 - Reading walkthroughs: 47 s3-rd-* clips + 5 rd-* talks recorded (~$4.59); listen_secs set.
 - Open: source conflict raised by verifier, not checked against a source this session: some texts link isoniazid hepatotoxicity to slow acetylators; bank follows her (fast → hepatotoxicity).
+
+## 2026-11-02 later (PRs #139–#144, artifact v114)
+- Narration panels: reading talks follow their own walkthrough (strict order); Hear-the-why uses QVIS (qvis.js) → 99 sets in steps4v.js (generated from SP/vis/steps_L*.js by SP/vis/integrate.sh; shared arrowheads s4m0-2); no keyword matching for Exam 4.
+- Guide 8: enz-grid (9 steps) and tps2-table (22 steps), both narrated; Naranjo step 2 caption fixed and re-recorded.
+- Exam 4 core listen: audio/exam4-core.mp3 (53.5 min, 16 chapters) via src/rec/build_book.py; player on Readings (book_exam4.js).
+- Paid audio this stretch: grid 46.27¢, table 89.05¢, Naranjo fix 5.80¢.
+- Build is 16.29 MB; artifact limit near 16.78 MB.
+- Daily check 11/02: paper seed 20261102, both simulated students 40/40; GAP4-017 wording, GAP4-013 note.
