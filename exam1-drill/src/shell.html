@@ -382,6 +382,15 @@ body.antiopen{overflow:hidden}
 @media (max-width:560px){.antiview{padding:0}.antibox{border-radius:0;min-height:100%}}
 /* large screens (iPad 13", laptops): wider page and figures; kept last so it overrides the 520px figure caps */
 @media (min-width:1024px){main{max-width:1080px} .bar{max-width:1080px} .fig,.seqrow .fig{max-width:760px} .step3 .s3svg svg{max-width:720px}}
+/* large screens: a step diagram puts its picture on the left and the written point, controls and source on the right,
+   so picture, words and controls stay on one screen (inside a walkthrough slide the controls stay hidden) */
+@media (min-width:1024px){.step3.fig{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,2fr);grid-template-rows:auto auto auto auto 1fr;column-gap:18px;max-width:none;align-items:start}
+.step3.fig>figcaption{grid-column:1/-1}
+.step3.fig>.s3svg{grid-column:1;grid-row:2/6}
+.step3.fig>.s3cap{grid-column:2;grid-row:2;font-size:15px;line-height:1.5;margin-top:8px}
+.step3.fig>.s3nav{grid-column:2;grid-row:3;align-self:start}
+.step3.fig>.cite{grid-column:2;grid-row:4;align-self:start}
+.gwslide .step3.fig{display:block}}
 </style>
 </head>
 <body>

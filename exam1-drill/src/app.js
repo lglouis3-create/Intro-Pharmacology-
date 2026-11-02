@@ -3456,7 +3456,7 @@ const rdQs = r => QUESTIONS.filter(q => q.readingId === r.id && !(q.tags || []).
 const rdQuiz = r => QUESTIONS.filter(q => q.readingId === r.id && (q.tags || []).includes('quiz'));
 const rdLecLabel = r => (r.lectures || []).map(id => (COURSE.lectures.find(l => l.id === id) || {}).label || id).map(l => l.replace(/ \(Dr\. [^)]*\)$/, '')).join('; ');
 /* The first two sentences of the summary sit on the card; the rest opens under "About, in full". */
-const rdLead = t0 => { const t = t0.replace(/\b([A-Z])\. /g, '$1\u2024 '), m = t.match(/^((?:[^.!?]*[.!?]\)?\s*){1,2})([\s\S]*)$/); const un = x => x.replace(/\u2024/g, '.'); return m && m[2].trim() ? [un(m[1].trim()), un(m[2].trim())] : [t0, '']; };
+const rdLead = t0 => { const t = t0.replace(/\b([A-Z]|Dr|Mr|Ms|Mrs|St|vs|pp|p|Fig|al|e\.g|i\.e)\. /g, '$1\u2024 '), m = t.match(/^((?:[^.!?]*[.!?]\)?\s*){1,2})([\s\S]*)$/); const un = x => x.replace(/\u2024/g, '.'); return m && m[2].trim() ? [un(m[1].trim()), un(m[2].trim())] : [t0, '']; };
 function rdCard(r) {
   const qs = rdQs(r), quiz = rdQuiz(r);
   const fold = (title, inner) => inner ? `<details class="fold rdfold"><summary>${title}</summary>${inner}</details>` : '';
