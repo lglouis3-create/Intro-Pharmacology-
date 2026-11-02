@@ -2399,10 +2399,10 @@ function pgxAdvance() {
 }
 document.addEventListener('keydown', e => { if (ANTI) return; if (CUR === 'pgx' && e.key === 'Enter' && !e.target.closest('button, input, select, textarea')) { const b = $('#pgxnext'); if (b) b.click(); } });
 
-/* ---------- Short answer (Exam 3) ----------
+/* ---------- Short answer (Exam 4 first, then Exam 3) ----------
    Her exam has short-answer items graded with partial credit. Each prompt: write an answer, then compare it with the
    model answer and tick the key points it covers. Drafts and ticks are kept per browser. */
-const SA_LIST = typeof SHORT3 === 'undefined' ? [] : SHORT3;
+const SA_LIST = [...(typeof SHORT4 === 'undefined' ? [] : SHORT4), ...(typeof SHORT3 === 'undefined' ? [] : SHORT3)];
 const SA_KEY = COURSE.ns + ':sa';
 let SA = {i: 0, order: null, shown: false};
 const saLec = id => { const l = COURSE.lectures.find(x => x.id === id); return l ? l.label : id; };
