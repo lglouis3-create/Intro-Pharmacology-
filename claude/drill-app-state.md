@@ -330,3 +330,10 @@ Transcripts are never committed (Pages serves the repo root). At the start of ea
 - Examples deck PDF: Drive 1lN9BKuyhTRxaP6fRYwXh7xTOAJcAAIA-; page text via pdftotext -layout per page -> <scratchpad>/l20/examples_deck.txt
 Each new lecture ingested adds its line here.
 
+
+## 2026-11-02 (PR #138, artifact v109)
+- Exam 4 explanation depth pass: 68 L18–L22 items rewritten (teach/whys give the reason chain), verified (9 fixes), 35 q- clips re-recorded (251.87 cents). Patches in rec/say4_patches.json; baseline queue SP/queue4.json updated.
+- Core: 53 added, 8 unmarked (coverage audit SP/depth/coverage.json); core pools exclude dupOf. Exam 4 Most likely pool = 208 of 421.
+- New files: q_GAP4.js (GAP4-001..023, 101..114), q_QZ4.js (Quiz 4 Q2,3,5,7 verbatim; lecture QZ4 exam 4; sub quiz5), sa4.js (SHORT4, SA4-01..06; app lists SHORT4 before SHORT3). Verified 0 findings. New items have no narration clips yet.
+- Reading walkthroughs: 47 s3-rd-* clips + 5 rd-* talks recorded (~$4.59); listen_secs set.
+- Open: source conflict raised by verifier, not checked against a source this session: some texts link isoniazid hepatotoxicity to slow acetylators; bank follows her (fast → hepatotoxicity).
