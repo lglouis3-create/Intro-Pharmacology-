@@ -3535,9 +3535,17 @@ function vReadings() {
     <div class="row"><button class="btn" id="rdplay">▶ Play all</button><button class="btn ghost" id="rdshuffle">⇄ Shuffle</button><button class="btn ghost" id="rdpause" hidden>❚❚ Pause</button><button class="btn ghost" id="rdnext" hidden>Next ▸</button><button class="btn ghost" id="rdstop" hidden>■ Stop</button><span class="meta rdtime" id="rdtime" style="margin:0" hidden></span><label class="meta" style="margin:0 0 0 6px">Speed <select id="rdrate">${[0.8, 1, 1.15, 1.3, 1.5].map(v => `<option value="${v}" ${v === NAR.rate ? 'selected' : ''}>${v}×</option>`).join('')}</select></label></div>
     <ol class="rdlist">${deck.map(r => `<li><button type="button" class="rdtrack" data-rdplay="${esc(r.id)}">${esc(r.title.split(' (')[0])}</button>${r.listen_secs ? ` <span class="meta" style="margin:0">${rdClock(r.listen_secs)}</span>` : ''}</li>`).join('')}</ol>
     <div class="nsaid rdsaid" id="rdsaid" hidden></div></div>` : '';
+  /* The Exam 4 core listen (book_exam4.js, rec/build_book.py): one recorded file in her study-list order, with a chapter list that seeks. */
+  const bk = typeof BOOK4 !== 'undefined' && activeId() === 4 ? BOOK4 : null;
+  const bookHtml = bk ? `<div class="card rddeck" id="rdbook"><div class="row" style="justify-content:space-between"><b>Exam 4 core: one listen, in her study-list order</b><span class="meta" style="margin:0">${bk.chapters.length} chapters, ${rdClock(bk.secs)}</span></div>
+    <p class="sub" style="margin:4px 0 8px">Her second think/pair/share table, the worksheet labels, Furuta, the CPIC warfarin guideline and Naranjo, joined from the recorded walkthroughs and talks. Tap a chapter to jump to it.</p>
+    <audio controls preload="none" style="width:100%" src="${NAR_BASE() + bk.file}"></audio>
+    <ol class="rdlist">${bk.chapters.map(c => `<li><button type="button" class="rdtrack" data-bookch="${c.s}">${esc(c.t)}</button> <span class="meta" style="margin:0">${rdClock(Math.round(c.s))}</span></li>`).join('')}</ol>
+    <div class="row"><a class="btn ghost" href="${NAR_BASE() + bk.file}" download>Download the MP3</a></div></div>` : '';
   $('#view').innerHTML = `<h2>Readings</h2>
-    <p class="sub">Each assigned reading: what it covers, what she drew from it in class, and the questions on it. Her rule (10/9): a reading is tested on what was read and discussed in class, not on dates or numbers from the text. Folded sections open on tap.</p>${deckHtml}${groups}`;
+    <p class="sub">Each assigned reading: what it covers, what she drew from it in class, and the questions on it. Her rule (10/9): a reading is tested on what was read and discussed in class, not on dates or numbers from the text. Folded sections open on tap.</p>${bookHtml}${deckHtml}${groups}`;
   $('#view').onclick = e => {
+    const bc = e.target.closest('[data-bookch]'); if (bc) { rdStop(); narrStop(); const au = $('#rdbook audio'), at = +bc.dataset.bookch, seek = () => { au.currentTime = at; au.play().catch(() => {}); }; if (au.readyState >= 1) seek(); else { au.preload = 'metadata'; au.addEventListener('loadedmetadata', seek, {once: true}); au.load(); } return; }
     if (e.target.closest('[data-rdpp]')) return rdPause();
     if (e.target.closest('[data-rdps]')) return rdStop();
     const tx = e.target.closest('[data-rdtx]'); if (tx) { const box = tx.closest('.rdplayer').querySelector('.rdside'); box.hidden = !box.hidden; RD_TX = !box.hidden; tx.textContent = box.hidden ? 'Show transcript' : 'Hide transcript'; tx.setAttribute('aria-pressed', String(!box.hidden)); return; }
