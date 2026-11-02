@@ -705,7 +705,7 @@ if (typeof NARR_Q !== 'undefined') QUESTIONS.forEach(q => { if (examOf(q) === 4 
 /* ---------- Topics ---------- */
 let FILT = {skill: 'all'};
 /* ★ Most likely on her exam: items marked core (her quiz or poll concept, her words that it is testable, her posted keys, an objective tested directly). */
-const coreBtn = (qs, tid, sid, ex) => { const n = qs.filter(q => q.core && !q.lowYield).length; return n ? `<button class="btn ghost corebtn" data-core="${tid}" ${sid ? `data-sub="${sid}" ` : ''}data-ex="${ex}" title="Most likely on her exam: her quiz and poll concepts, what she said to know, her keys, her objectives">★ Likely: ${n}</button>` : ''; };
+const coreBtn = (qs, tid, sid, ex) => { const n = qs.filter(q => q.core && !q.lowYield && !q.dupOf).length; return n ? `<button class="btn ghost corebtn" data-core="${tid}" ${sid ? `data-sub="${sid}" ` : ''}data-ex="${ex}" title="Most likely on her exam: her quiz and poll concepts, what she said to know, her keys, her objectives">★ Likely: ${n}</button>` : ''; };
 function vTopics() {
   // the skill filter applies to the counts, both study buttons, the tier buttons and the topic list; flags and the ladders
   // (each one a chain across skills, climbed whole) use the whole bank
@@ -718,7 +718,7 @@ function vTopics() {
   ${examCard(ex, pool0)}${focusOn() ? focusCard() : ''}${newsCard()}
   <div class="card"><div class="row" style="justify-content:space-between">
    <div><b>${pool.length}</b> ${FILT.skill === 'all' ? '' : esc((SKILL[FILT.skill] || {}).short || '') + ' '}questions in the bank · <b>${seen}</b> seen · accuracy <b>${a.pct == null ? '—' : a.pct + '%'}</b></div>
-   <div class="row"><button class="btn" id="due">Study what is due</button><button class="btn ghost" id="all">One pass, all questions</button>${pool.filter(q => q.core && !q.lowYield).length ? `<button class="btn ghost" id="coreall" title="Her quiz and poll concepts, what she said to know, her posted keys and her objectives">★ Most likely on her exam · ${pool.filter(q => q.core && !q.lowYield).length}</button>` : ''}${whyPool(pool).length ? `<button class="btn ghost" id="whyq" title="Questions that ask for the reason behind a concept">Why questions · ${whyPool(pool).length}</button>` : ''}</div></div>
+   <div class="row"><button class="btn" id="due">Study what is due</button><button class="btn ghost" id="all">One pass, all questions</button>${pool.filter(q => q.core && !q.lowYield && !q.dupOf).length ? `<button class="btn ghost" id="coreall" title="Her quiz and poll concepts, what she said to know, her posted keys and her objectives">★ Most likely on her exam · ${pool.filter(q => q.core && !q.lowYield && !q.dupOf).length}</button>` : ''}${whyPool(pool).length ? `<button class="btn ghost" id="whyq" title="Questions that ask for the reason behind a concept">Why questions · ${whyPool(pool).length}</button>` : ''}</div></div>
    <div class="row" style="margin-top:10px;justify-content:space-between"><span class="row"><span class="meta" style="margin:0">Answer:</span>${layoutToggle()}</span>
    <span class="row"><span class="meta" style="margin:0">⚑ Flagged: <b>${flaggedPool().length}</b></span>${flaggedPool().length ? `<button class="btn ghost" id="drillflag">Drill flagged</button><button class="btn ghost" id="clearflag">Clear flags</button>` : ''}</span></div>
    <div class="row" style="margin-top:10px"><span class="meta" style="margin:0">Skill:</span>
@@ -777,10 +777,10 @@ function vTopics() {
   const df = $('#drillflag'); if (df) df.onclick = () => startQuiz(flaggedPool(), 'Flagged questions', 'pass');
   const cf = $('#clearflag'); if (cf) cf.onclick = () => { if (confirm('Remove every flag?')) { S.flags = {}; save(); vTopics(); } };
   document.querySelectorAll('[data-sk]').forEach(c => c.onclick = () => { FILT.skill = c.dataset.sk; vTopics(); });
-  const ca = $('#coreall'); if (ca) ca.onclick = () => startQuiz(shuffle(pool.filter(q => q.core && !q.lowYield)), '★ Most likely on her exam', 'pass');
+  const ca = $('#coreall'); if (ca) ca.onclick = () => startQuiz(shuffle(pool.filter(q => q.core && !q.lowYield && !q.dupOf)), '★ Most likely on her exam', 'pass');
   document.querySelectorAll('[data-core]').forEach(b => b.onclick = e => {
     e.preventDefault(); e.stopPropagation();
-    const list = QUESTIONS.filter(q => q.core && !q.lowYield && q.topic === b.dataset.core && examOf(q) === +b.dataset.ex && (!b.dataset.sub || q.sub === b.dataset.sub));
+    const list = QUESTIONS.filter(q => q.core && !q.lowYield && !q.dupOf && q.topic === b.dataset.core && examOf(q) === +b.dataset.ex && (!b.dataset.sub || q.sub === b.dataset.sub));
     const t = TOPIC[b.dataset.core] || {}, sb = b.dataset.sub && (t.subs || []).find(x => x.id === b.dataset.sub);
     startQuiz(shuffle(list), '★ Most likely: ' + (sb ? `${t.name}: ${sb.name}` : t.name), 'pass');
   });
@@ -2399,10 +2399,10 @@ function pgxAdvance() {
 }
 document.addEventListener('keydown', e => { if (ANTI) return; if (CUR === 'pgx' && e.key === 'Enter' && !e.target.closest('button, input, select, textarea')) { const b = $('#pgxnext'); if (b) b.click(); } });
 
-/* ---------- Short answer (Exam 3) ----------
+/* ---------- Short answer (Exam 4 first, then Exam 3) ----------
    Her exam has short-answer items graded with partial credit. Each prompt: write an answer, then compare it with the
    model answer and tick the key points it covers. Drafts and ticks are kept per browser. */
-const SA_LIST = typeof SHORT3 === 'undefined' ? [] : SHORT3;
+const SA_LIST = [...(typeof SHORT4 === 'undefined' ? [] : SHORT4), ...(typeof SHORT3 === 'undefined' ? [] : SHORT3)];
 const SA_KEY = COURSE.ns + ':sa';
 let SA = {i: 0, order: null, shown: false};
 const saLec = id => { const l = COURSE.lectures.find(x => x.id === id); return l ? l.label : id; };
@@ -2966,6 +2966,42 @@ function sayMark(box, i) {
   if (ss[i]) saySide(box, ss[i].textContent);
   const on = ss[i]; if (on && box.scrollHeight > box.clientHeight) box.scrollTop = Math.max(0, on.offsetTop - box.offsetTop - 24);
 }
+/* Sentence start times for a recorded clip, from its measured pauses (clip_pauses.js, rec/pauses.py).
+   Each sentence boundary on screen is matched to a pause in the recording near where the character count puts it
+   (dynamic programming; a boundary may also have no pause, e.g. at a semicolon), so the highlight moves when the
+   narrator actually reaches the sentence instead of running ahead of the voice. */
+function clipStarts(clip, lens) {
+  const P = typeof CLIP_PAUSES !== 'undefined' && CLIP_PAUSES[String(clip).replace(/\.mp3$/, '')]; if (!P || lens.length < 2) return null;
+  const dur = P[0], pz = []; for (let j = 1; j + 1 < P.length; j += 2) pz.push([P[j], P[j + 1]]);
+  let s0 = 0, s1 = dur; const lead = pz.find(q => q[0] < 0.06), tail = pz.find(q => q[1] > dur - 0.06);
+  if (lead) s0 = lead[1]; if (tail) s1 = tail[0];
+  const C = pz.filter(q => q[0] > s0 + 0.2 && q[1] < s1 - 0.1), M = C.length, N = lens.length - 1, tot = lens.reduce((a, b) => a + b, 0);
+  let acc = 0; const b = []; for (let k = 0; k < N; k++) { acc += lens[k]; b.push(s0 + (s1 - s0) * acc / tot); }
+  const NONE = 0.9, cost = (k, j) => Math.abs(C[j][1] - b[k]) - 0.8 * Math.min(C[j][1] - C[j][0], 0.6);
+  // best[k][j]: min cost for boundaries 0..k with boundary k at pause j (j = M means no pause); back-pointers keep pause order
+  const best = [], from = [];
+  for (let k = 0; k < N; k++) {
+    best.push(new Array(M + 1).fill(Infinity)); from.push(new Array(M + 1).fill(-1));
+    for (let j = 0; j <= M; j++) {
+      const c = j === M ? NONE : cost(k, j);
+      if (k === 0) { best[k][j] = c; continue; }
+      for (let p = 0; p <= M; p++) { if (best[k - 1][p] === Infinity) continue; if (j < M && p < M && p >= j) continue; const v = best[k - 1][p] + c; if (v < best[k][j]) { best[k][j] = v; from[k][j] = p; } }
+    }
+  }
+  let j = 0; for (let x = 1; x <= M; x++) if (best[N - 1][x] < best[N - 1][j]) j = x;
+  const st = new Array(N + 1); st[0] = 0;
+  for (let k = N - 1; k >= 0; k--) { st[k + 1] = j === M ? b[k] : C[j][1]; j = from[k][j]; }
+  for (let k = 1; k <= N; k++) if (st[k] < st[k - 1]) st[k] = st[k - 1];
+  return st;
+}
+function sayAt(box, t, clip, frac) {
+  if (!box) return; const ss = [...box.querySelectorAll('.ssent')]; if (!ss.length) return;
+  const key = clip + '|' + ss.length;
+  if (box._syncKey !== key) { box._syncKey = key; box._sync = clipStarts(clip, ss.map(x => x.textContent.length)); }
+  if (!box._sync) return sayFrac(box, frac);
+  let i = 0; while (i + 1 < box._sync.length && box._sync[i + 1] <= t + 0.05) i++;
+  sayMark(box, i);
+}
 function sayFrac(box, frac) {
   if (!box) return; const ss = [...box.querySelectorAll('.ssent')]; if (!ss.length) return;
   const lens = ss.map(x => x.textContent.length), tot = lens.reduce((a, b) => a + b, 0); let acc = 0, i = 0;
@@ -2995,7 +3031,7 @@ function sayPlay(text, box, btn, clip, done) {
   const a = cur.audio = NARR_AUDIO || (NARR_AUDIO = new Audio()); a.src = NAR_BASE() + clip; a.playbackRate = NAR.rate;
   const fallback = () => { if (SAY !== cur || cur.fell) return; cur.fell = true; cur.audio = null; synth(); };
   a.onended = finish; a.onerror = fallback;
-  a.ontimeupdate = () => { if (SAY === cur && !cur.fell && isFinite(a.duration)) sayFrac(box, a.currentTime / a.duration); };
+  a.ontimeupdate = () => { if (SAY === cur && !cur.fell && isFinite(a.duration)) sayAt(box, a.currentTime, clip, a.currentTime / a.duration); };
   a.play().catch(fallback);
 }
 document.addEventListener('click', e => {
@@ -3017,7 +3053,7 @@ function qSay(id, btn) {
   if (typeof Q_CLIPS !== 'undefined' && !Q_CLIPS.includes(id)) { cur.fell = true; synth(); clearTimeout(cur.t); cur.t = setTimeout(finish, (15000 + text.split(/\s+/).length * 1000) / NAR.rate); return; }   // onend resets the button; the timer is only a safety limit   // no recorded clip: the device voice, without a failed request
   const a = NARR_AUDIO || (NARR_AUDIO = new Audio()); a.preload = 'auto'; a.src = NAR_BASE() + 'q-' + id + '.mp3'; a.playbackRate = NAR.rate;
   const fallback = () => { if (QSAY !== cur || cur.fell) return; cur.fell = true; synth(); };
-  a.onended = finish; a.onerror = fallback; a.ontimeupdate = () => { if (QSAY === cur && !cur.fell && isFinite(a.duration)) sayFrac(d, a.currentTime / a.duration); }; a.play().catch(fallback);
+  a.onended = finish; a.onerror = fallback; a.ontimeupdate = () => { if (QSAY === cur && !cur.fell && isFinite(a.duration)) sayAt(d, a.currentTime, 'q-' + id, a.currentTime / a.duration); }; a.play().catch(fallback);
   a.onloadedmetadata = () => { if (QSAY === cur && !cur.fell && isFinite(a.duration)) { clearTimeout(cur.t); cur.t = setTimeout(finish, a.duration * 1000 / NAR.rate + 4000); } };
   cur.t = setTimeout(finish, (6000 + text.split(/\s+/).length * 500) / NAR.rate);
 }
@@ -3420,7 +3456,7 @@ const rdQs = r => QUESTIONS.filter(q => q.readingId === r.id && !(q.tags || []).
 const rdQuiz = r => QUESTIONS.filter(q => q.readingId === r.id && (q.tags || []).includes('quiz'));
 const rdLecLabel = r => (r.lectures || []).map(id => (COURSE.lectures.find(l => l.id === id) || {}).label || id).map(l => l.replace(/ \(Dr\. [^)]*\)$/, '')).join('; ');
 /* The first two sentences of the summary sit on the card; the rest opens under "About, in full". */
-const rdLead = t0 => { const t = t0.replace(/\b([A-Z])\. /g, '$1\u2024 '), m = t.match(/^((?:[^.!?]*[.!?]\)?\s*){1,2})([\s\S]*)$/); const un = x => x.replace(/\u2024/g, '.'); return m && m[2].trim() ? [un(m[1].trim()), un(m[2].trim())] : [t0, '']; };
+const rdLead = t0 => { const t = t0.replace(/\b([A-Z]|Dr|Mr|Ms|Mrs|St|vs|pp|p|Fig|al|e\.g|i\.e)\. /g, '$1\u2024 '), m = t.match(/^((?:[^.!?]*[.!?]\)?\s*){1,2})([\s\S]*)$/); const un = x => x.replace(/\u2024/g, '.'); return m && m[2].trim() ? [un(m[1].trim()), un(m[2].trim())] : [t0, '']; };
 function rdCard(r) {
   const qs = rdQs(r), quiz = rdQuiz(r);
   const fold = (title, inner) => inner ? `<details class="fold rdfold"><summary>${title}</summary>${inner}</details>` : '';
@@ -3439,6 +3475,7 @@ function rdCard(r) {
       ${r.listen ? `<button class="btn ghost" data-rdlisten="${esc(r.id)}">🔊 Listen${r.listen_secs ? ' · ' + rdClock(r.listen_secs) : ''}</button>` : ''}
       ${(r.links || []).map(([v, a, l]) => `<button type="button" class="chip" data-jump="${esc(v)}:${esc(a)}">${esc(l)}</button>`).join('')}</div>
     ${r.listen ? `<div class="rdplayer" data-rdp="${esc(r.id)}" hidden><div class="row"><button type="button" class="btn ghost" data-rdpp>❚❚ Pause</button><button type="button" class="btn ghost" data-rdpn hidden>Next ▸</button><button type="button" class="btn ghost" data-rdps>■ Stop</button><button type="button" class="btn ghost" data-rdtx aria-pressed="false">Show transcript</button><span class="meta rdpt" aria-live="off">0:00</span></div><input type="range" class="rdseek" min="0" max="1000" step="1" value="0" aria-label="Position in the talk"><div class="rdside" hidden>${sideHTML()}<div class="nsaid saybox rdtx">${sayHTML(r.listen)}</div></div></div>` : ''}
+    ${typeof STEPS3 !== 'undefined' && STEPS3['rd-' + r.id] ? `<details class="fold rdwalk"${window.innerWidth >= 700 ? ' open' : ''}><summary>Narrated walkthrough · ${STEPS3['rd-' + r.id].steps.length} steps · press Play</summary>${stepHTML('rd-' + r.id)}</details>` : ''}
     ${fold('About, in full', rdLead(r.about || '')[1] ? `<p>${esc(r.about)}</p>` : '')}
     ${fold('Read for', li(r.read_for))}
     ${fold('Where her lecture used it', use)}
@@ -3493,7 +3530,7 @@ function rdTime(cur, total) {
   if (RDK && RDK.fell) { t.textContent = 'Read by the device voice (no time bar)'; sk.hidden = true; return; }
   sk.hidden = false; t.textContent = total ? `${rdClock(cur)} / ${rdClock(total)} · ${rdClock(total - cur)} left` : rdClock(cur);
   if (!RDK || !RDK.seeking) sk.value = total ? Math.round(1000 * cur / total) : 0;
-  if (total) sayFrac(p.querySelector('.rdtx'), cur / total);
+  if (total) sayAt(p.querySelector('.rdtx'), cur, 'rd-' + RDK.list[RDK.i].id, cur / total);
 }
 /* The player on the card of the talk now playing: pause, stop, next, a seek bar and the time left. */
 let RD_TX = false;   // the transcript stays open from one talk to the next once shown

@@ -102,7 +102,7 @@ QUESTIONS.push(
  cite:"Intro to PGx Lecture Students Fall 2026.pdf slides ‘Synonymous SNP: P-Glycoprotein’ (p. 34), ‘Non-Synonymous SNP: TPMT’ (p. 35); (T) 10/21 transcript"},
 
 /* ---------------- Star nomenclature (pp. 25–26) ---------------- */
-{id:"L18-007", lecture:"L18", prof:"Smith", tier:"new", topic:"L18", sub:"star", skill:"recall", core:true, coreWhy:"star nomenclature convention",
+{id:"L18-007", lecture:"L18", prof:"Smith", tier:"new", topic:"L18", sub:"star", skill:"recall",
  concept:"star1-wildtype", tags:["smith","inclass"], source:"both",
  stem:"In star nomenclature, which allele is the wild type for any gene?",
  options:[
@@ -168,11 +168,11 @@ QUESTIONS.push(
  concept:"same-star-different-gene", tags:["smith"], source:"both",
  stem:"What is the functional effect of the *2 allele in cytochrome P450 2C19 (CYP2C19) compared with CYP2C9?",
  options:[
-  {t:"CYP2C19*2: decreased activity; CYP2C9*2: no activity", correct:false, why:"Reversed: CYP2C19*2 has no activity, CYP2C9*2 some."},
+  {t:"CYP2C19*2: decreased activity; CYP2C9*2: no activity", correct:false, why:"Reversed: the CYP2C19*2 protein is truncated and cannot work (no activity), while the CYP2C9*2 enzyme still works, only less (decreased activity)."},
   {t:"CYP2C19*2: no activity; CYP2C9*2: decreased activity", correct:true, why:"CYP2C19*2 makes a truncated, non-functional protein; CYP2C9*2 lowers the enzyme's activity without removing it."},
-  {t:"Both: no activity", correct:false, why:"CYP2C9*2 keeps some activity."},
-  {t:"Both: decreased activity", correct:false, why:"CYP2C19*2 has none."}],
- teach:"CYP2C19*1 is normal, *2 and *3 have no activity. CYP2C9*1 is normal, *2 and *3 have decreased activity. Same labels, but the functional effect depends on the specific protein.",
+  {t:"Both: no activity", correct:false, why:"Only CYP2C19*2 makes a truncated protein that cannot work; CYP2C9*2 decreases the enzyme's activity without obliterating it, so it keeps some activity."},
+  {t:"Both: decreased activity", correct:false, why:"CYP2C19*2 does not just slow the enzyme: its protein is too short to function, so there is no activity at all."}],
+ teach:"CYP2C19*2 (and *3) makes a really short, truncated protein that cannot function, so that copy gives no enzyme activity. CYP2C9*2 (and *3) is a change that decreases the enzyme's activity without removing it. A star number only records the order in which a lab found that gene's variants, so the same label (*2) says nothing about the effect; the effect has to be looked up for each gene.",
  quote:"2C192 has no enzyme activity. 2C92 has decreased enzyme activity.",
  note:"\"2C192\" and \"2C92\" are the caption's renderings of CYP2C19*2 and CYP2C9*2.",
  cite:"Intro to PGx Lecture Students Fall 2026.pdf slide ‘More Allele “Star” Nomenclature’ (p. 26); (T) 10/21 transcript"},
@@ -185,19 +185,19 @@ QUESTIONS.push(
   {t:"*2 sits at the same nucleotide in both genes", correct:false, why:"CYP2C9*2 is not at the same locus as CYP2C19*2; each gene numbers its variants as found."},
   {t:"*2 has the same functional effect in both genes", correct:false, why:"CYP2C19*2 has no activity while CYP2C9*2 keeps some, so the effect must be looked up."},
   {t:"*2 was found after *3 in both genes", correct:false, why:"*2 was identified before *3; the number reflects order of discovery."}],
- teach:"A star number does not mark the same spot or the same functional effect across genes: CYP2C19*2 (nucleotide 681) and CYP2C9*2 are at different loci, and CYP2C19*2 has no activity while CYP2C9*2 has some. Only *1 as wild type is shared.",
+ teach:"*1 as the wild type is a convention used for every gene, so it needs no lookup. The other numbers were given by whichever lab characterized that gene, in the order the variants were found, so CYP2C9*2 is not at CYP2C19*2's nucleotide 681. The number also says nothing about the effect: CYP2C19*2 has no activity while CYP2C9*2 has decreased activity.",
  quote:"just because 2 is at one place in one gene doesn't mean it's in the same place in another gene, right? And just because 2 in one gene means that gene's product is inactive, doesn't mean star 2 is going to be inactive in another gene's product",
  note:"She asked the class to turn to a buddy and explain \"the two points I just made\": \"They deal with location and functional significance of the gene.\"",
  cite:"Intro to PGx Lecture Students Fall 2026.pdf slide ‘More Allele “Star” Nomenclature’ (p. 26); (T) 10/21 transcript"},
 
-{id:"L18-014", lecture:"L18", prof:"Smith", tier:"new", topic:"L18", sub:"star", skill:"recall",
+{id:"L18-014", lecture:"L18", prof:"Smith", tier:"new", topic:"L18", sub:"star", skill:"recall", core:true, coreWhy:"furuta: she said 'you have to know ... what is star 2? ... Why is that enzyme not active'",
  concept:"cyp2c19-star2-truncated", tags:["smith"], source:"transcript",
  stem:"Why does the CYP2C19*2 (cytochrome P450 2C19) allele produce no active enzyme?",
  options:[
-  {t:"The whole CYP2C19 gene is deleted from the allele", correct:false, why:"Whole gene deletion is CYP2D6*5."},
+  {t:"The whole CYP2C19 gene is deleted from the allele", correct:false, why:"In *2 the gene is still there; one base is changed (681 G>A) and the protein it makes is too short to work. Losing the whole gene is a different variant type, the CYP2D6*5 example."},
   {t:"It codes for a short, truncated protein", correct:true, why:"*2 results in a protein too short to function; *3 also gives a truncated protein."},
   {t:"It is a tandem repeat in the gene", correct:false, why:"Tandem repeats are a different variant type; *2 is a single G to A change at 681."},
-  {t:"It adds extra copies of the gene", correct:false, why:"Extra copies raise activity (CYP2D6*2xN)."}],
+  {t:"It adds extra copies of the gene", correct:false, why:"Extra copies would make more enzyme and raise activity (CYP2D6*2xN, ultrarapid metabolizers); *2 has no activity because its one protein is truncated."}],
  teach:"CYP2C19*2 produces a very short protein that cannot function, so the allele makes no active enzyme; *3 also gives a truncated protein. CYP2C9*2 and *3 instead lower the enzyme's activity without removing it.",
  quote:"The star 2 Allele. Actually results in a really short nonfunctional protein.",
  cite:"Intro to PGx Lecture Students Fall 2026.pdf slide ‘More Allele “Star” Nomenclature’ (p. 26); (T) 10/21 transcript"},
@@ -294,7 +294,7 @@ QUESTIONS.push(
  quote:"Star 23 have no activity, so any combination of 2 and 3 together will have no activity.",
  cite:"Intro to PGx Lecture Students Fall 2026.pdf slide ‘Genotype Nomenclature’ (p. 28); (T) 10/21 transcript"},
 
-{id:"L18-022", lecture:"L18", prof:"Smith", tier:"new", topic:"L18", sub:"gtype", skill:"apply",
+{id:"L18-022", lecture:"L18", prof:"Smith", tier:"new", topic:"L18", sub:"gtype", skill:"apply", core:true, coreWhy:"same Furuta cue (why *2/*3 gives no activity)",
  concept:"cyp2c19-23-why-none", tags:["smith","inclass"], source:"transcript",
  stem:"Why does a person who is CYP2C19*2/*3 (cytochrome P450 2C19) have no CYP2C19 activity even though the two alleles differ?",
  options:[
@@ -357,7 +357,7 @@ QUESTIONS.push(
  cite:"Intro to PGx Lecture Students Fall 2026.pdf slide ‘Genotype Nomenclature’ (p. 28); (T) 10/21 transcript"},
 
 /* ---------------- Haplotype nomenclature (p. 29) ---------------- */
-{id:"L18-027", lecture:"L18", prof:"Smith", tier:"new", topic:"L18", sub:"haplonom", skill:"recall", core:true, coreWhy:"VKORC1 haplotypes, to return with warfarin",
+{id:"L18-027", lecture:"L18", prof:"Smith", tier:"new", topic:"L18", sub:"haplonom", skill:"recall",
  concept:"vkorc1-haplotypes", tags:["smith"], source:"both",
  stem:"VKORC1 has at least 10 SNPs that may have a functional effect. How are its most common combinations of these SNPs named?",
  options:[
@@ -377,7 +377,7 @@ QUESTIONS.push(
   {t:"It is simpler than listing each SNP", correct:true, why:"Saying \"haplotype A\" replaces naming several changes in a row."},
   {t:"Each haplotype is a single SNP", correct:false, why:"A haplotype is several variants together."},
   {t:"The name gives each SNP's position", correct:false, why:"The letter carries no position information."}],
- teach:"Several SNPs can co-exist on one allele. Naming the haplotype replaces listing each change in turn. VKORC1 haplotypes A and B have functional significance and return with warfarin dosing.",
+ teach:"A haplotype is several changes on one allele that are seen together in many people, more often than random chance, so the combination is common enough in the population to be worth a name. Saying \"haplotype A\" is much easier than listing each VKORC1 change in turn. VKORC1 haplotypes A and B have functional significance and return with warfarin dosing.",
  quote:"We just say it's haplotype A, and this person's haplotype B.",
  note:"She tried to list the changes in a VKORC1 haplotype from memory (\"281, G to C, and ... 263 or 463 C to T\"); these are not on the slide and are not tested.",
  cite:"Intro to PGx Lecture Students Fall 2026.pdf slide ‘Haplotype Nomenclature’ (p. 29); (T) 10/21 transcript"},
@@ -566,11 +566,11 @@ QUESTIONS.push(
  concept:"synonymous-table-answer", tags:["smith"], source:"transcript",
  stem:"In general terms, what is a synonymous SNP?",
  options:[
-  {t:"A base pair changes but the amino acid sequence stays the same", correct:true, why:"Her model answer, in general terms without a specific gene."},
+  {t:"A base pair changes but the amino acid sequence stays the same", correct:true, why:"The changed codon still codes for the same amino acid, so the DNA differs but the protein's amino acid sequence matches the wild type."},
   {t:"A base pair changes and a different amino acid is put into the protein", correct:false, why:"That is non-synonymous."},
   {t:"A base pair changes and translation stops early", correct:false, why:"That is a premature stop codon."},
   {t:"A few base pairs are added and the frame shifts", correct:false, why:"That is an InDel causing a frameshift."}],
- teach:"The variant table asked for general terms, not specific genes. Her model answer for a synonymous SNP: a base pair in the DNA is changed, but the protein's amino acid sequence stays the same as wild type.",
+ teach:"Each amino acid is coded by a three-base codon, and several codons code for the same amino acid. A synonymous SNP changes one base but the new codon still brings in the same amino acid (ATC and ATT both give isoleucine in ABCB1 3435C>T), so the protein's amino acid sequence stays the same as wild type. Synonymous means the same.",
  quote:"A synonymous snip is a change to the DNA sequence, a base pair gets changed. But the amino acid sequence in the protein stays the same compared to the wild type.",
  cite:"Intro to PGx Lecture Students Fall 2026.pdf slide ‘Think/Pair/Share exercise for Types of Genetic Variants’ (p. 41); (T) 10/21 transcript"},
 
@@ -642,8 +642,8 @@ QUESTIONS.push(
  concept:"cyp2d6-5-deletion", tags:["smith"], source:"both",
  stem:"What is CYP2D6*5 (cytochrome P450 2D6)?",
  options:[
-  {t:"A premature stop codon in CYP2D6", correct:false, why:"The premature stop example is CYP2C19*3."},
-  {t:"Extra copies of the CYP2D6 gene on one chromosome", correct:false, why:"That is CYP2D6*2xN."},
+  {t:"A premature stop codon in CYP2D6", correct:false, why:"A premature stop codon changes one base and leaves the gene in place (the example is CYP2C19*3); in *5 the whole CYP2D6 gene is gone from that allele."},
+  {t:"Extra copies of the CYP2D6 gene on one chromosome", correct:false, why:"That is the opposite change, CYP2D6*2xN: the gene is multiplied, not missing, and gives a lot of enzyme instead of none."},
   {t:"The whole CYP2D6 gene deleted from one allele", correct:true, why:"Thousands of base pairs that make up the gene are gone."},
   {t:"A synonymous SNP in CYP2D6", correct:false, why:"A SNP changes one base; *5 removes the gene."}],
  teach:"In CYP2D6*5 the entire gene is missing from that allele: thousands of base pairs deleted, not one nucleotide changed. The allele makes no enzyme: loss of function (null activity).",
@@ -692,14 +692,14 @@ QUESTIONS.push(
  concept:"cyp2d6-affected-drugs", tags:["smith"], source:"both",
  stem:"Which drugs or drug classes are affected by CYP2D6*5 (cytochrome P450 2D6) and CYP2D6*2xN? Select all that apply.",
  options:[
-  {t:"SSRIs", correct:true, why:"SSRIs are affected by both CYP2D6 variants."},
-  {t:"Tamoxifen", correct:true, why:"Tamoxifen is affected by both CYP2D6 variants."},
-  {t:"Codeine", correct:true, why:"Codeine is affected by both CYP2D6 variants."},
-  {t:"Beta blockers", correct:true, why:"Beta blockers are affected by both CYP2D6 variants."},
+  {t:"SSRIs", correct:true, why:"SSRIs depend on CYP2D6, so having no CYP2D6 (*5) or a lot of it (*2xN) changes how they are handled."},
+  {t:"Tamoxifen", correct:true, why:"Tamoxifen depends on CYP2D6, so both the deletion and the extra copies change its handling."},
+  {t:"Codeine", correct:true, why:"Codeine depends on CYP2D6, so both the deletion and the extra copies change its handling."},
+  {t:"Beta blockers", correct:true, why:"Beta blockers depend on CYP2D6, so both the deletion and the extra copies change their handling."},
   {t:"Azathioprine", correct:false, why:"Azathioprine is affected by TPMT variants."},
   {t:"Proton pump inhibitors", correct:false, why:"Proton pump inhibitors go with CYP2C19 variants."},
   {t:"Warfarin", correct:false, why:"Warfarin dosing follows CYP2C9, not CYP2D6."}],
- teach:"Both CYP2D6 variants, the deletion (*5) and the extra copies (*2xN), affect the same drugs: SSRIs, tamoxifen, codeine and beta blockers. One gives too little CYP2D6 activity, the other too much.",
+ teach:"CYP2D6*5 and CYP2D6*2xN are variants of the same gene, and both change how much CYP2D6 enzyme a person has: none from a deleted copy, a lot from extra copies. Any drug that depends on CYP2D6 is therefore affected by both, in opposite directions: SSRIs, tamoxifen, codeine and beta blockers. Azathioprine goes with TPMT, proton pump inhibitors with CYP2C19.",
  quote:"Some drugs that we'll talk about, SSRIs and tamoxifen and codeine and beta blockers, they're all affected by the presence of a 2D6 5.",
  cite:"Intro to PGx Lecture Students Fall 2026.pdf slides ‘Gene Deletion CYP2D6’ (p. 39), ‘Copy Number Variant CYP2D6’ (p. 40); (T) 10/21 transcript"},
 
@@ -708,11 +708,11 @@ QUESTIONS.push(
  concept:"warfarin-clearance-genotype", tags:["smith"], source:"slide",
  stem:"A bar graph (Scordo et al. 2002) plots S-warfarin unbound clearance (mL/min, axis 0 to 1000) on the y-axis against six cytochrome P450 2C9 (CYP2C9) genotypes on the x-axis: *1/*1, *1/*2, *1/*3, *2/*2, *2/*3 and *3/*3. Which genotype has the lowest clearance?",
  options:[
-  {t:"CYP2C9*1/*1", correct:false, why:"Wild type has the highest clearance."},
-  {t:"CYP2C9*1/*3", correct:false, why:"One wild type allele keeps clearance in the middle."},
-  {t:"CYP2C9*2/*2", correct:false, why:"Low, but above *3/*3."},
-  {t:"CYP2C9*3/*3", correct:true, why:"*3/*3 has the lowest unbound clearance of the six genotypes, under 100 mL/min."}],
- teach:"Unbound S-warfarin clearance is highest in *1/*1, lower with one variant allele (*1/*2, *1/*3), lower still in *2/*2 and *2/*3, and lowest in *3/*3. Each variant allele decreases clearance: metabolism follows CYP2C9 genotype.",
+  {t:"CYP2C9*1/*1", correct:false, why:"Two wild type copies make fully active enzyme, so S-warfarin clearance is the highest of the six."},
+  {t:"CYP2C9*1/*3", correct:false, why:"The *1 copy still makes fully active enzyme, so clearance stays in the middle rather than at the bottom."},
+  {t:"CYP2C9*2/*2", correct:false, why:"Both copies have decreased activity, so clearance is low, but *2 keeps more activity than *3, so *2/*2 clears more than *3/*3."},
+  {t:"CYP2C9*3/*3", correct:true, why:"Both copies are *3, the variant with the greatest loss of activity, so this genotype clears S-warfarin most slowly: under 100 mL/min."}],
+ teach:"S-warfarin is metabolized by CYP2C9, so its clearance follows how much working CYP2C9 a person has. The *2 and *3 alleles make enzyme with decreased activity, and *3 is the more severe loss. Clearance therefore drops with each variant allele: highest in *1/*1, lower in *1/*2 and *1/*3, lower again in *2/*2 and *2/*3, and lowest, under 100 mL/min, in *3/*3, which has two of the weakest copies.",
  note:"This slide fell in the part of 10/21 missing from the lecture capture (she offered to record and post it); on 10/22 she referred back to it (\"we looked at that already in a graph and we looked at warfarin, uh, clearance\").",
  cite:"PGx-Examples-Students-Fall-2026.pdf slide ‘Genotype/Phenotype Relationship’ (p. 5); not captured in the 10/21 transcript"},
 
@@ -741,7 +741,7 @@ QUESTIONS.push(
  quote:"If you just gave them the regular old dose, they've got so many copies of the enzyme that if you give them the regular old dose, not based on their genotype. They just metabolize it so quickly.",
  cite:"PGx-Examples-Students-Fall-2026.pdf slide ‘Genotype/Phenotype Relationship 2’ (p. 6); (T) 10/21 transcript"},
 
-{id:"L18-057", lecture:"L18", prof:"Smith", tier:"new", topic:"L18", sub:"dosing", skill:"figure",
+{id:"L18-057", lecture:"L18", prof:"Smith", tier:"new", topic:"L18", sub:"dosing", skill:"figure", core:true, coreWhy:"her spoken question on the genotype-guided dosing figure she said she really likes",
  concept:"same-auc-why", tags:["smith","inclass"], source:"both",
  stem:"In a figure comparing four patients, A to D, the allele status of a metabolism gene is drawn under each: A has both copies crossed out, B one copy crossed out, C two intact copies and D three intact copies. A bar chart of percentage of average dose (axis 0 to 300) gives each patient a gray bar at 100% and a white bar for a dose based on genotype, and above each patient two concentration-versus-time curves show the resulting levels, one solid and one dashed with the area under it shaded gray. With genotype-based dosing, all four patients reach the same therapeutic area under the curve (AUC). Why are their doses different?",
  options:[

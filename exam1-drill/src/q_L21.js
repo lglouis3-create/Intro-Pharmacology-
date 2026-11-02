@@ -27,9 +27,9 @@ QUESTIONS.push(
  stem:"A drug appears in the FDA Table of Pharmacogenetic Associations. What does the listing mean for testing before prescribing?",
  options:[
   {t:"Testing is not necessarily advocated", correct:true, why:"The listing gives information; it is not an FDA call to test before prescribing unless the test is a companion diagnostic."},
-  {t:"A genetic test is required before the drug is prescribed", correct:false, why:"Being listed does not mean a test is required first."},
+  {t:"A genetic test is required before the drug is prescribed", correct:false, why:"The table only provides information. The FDA says being listed does not necessarily mean it advocates a pharmacogenetic test before prescribing, unless the test is a companion diagnostic, so a listing is not a testing requirement."},
   {t:"The drug must carry a pharmacogenomic boxed warning", correct:false, why:"The table says nothing about boxed warnings; the labeling sections are in the other FDA table."},
-  {t:"The drug cannot be given to patients who carry the variant", correct:false, why:"The table lists associations, not contraindications."}],
+  {t:"The drug cannot be given to patients who carry the variant", correct:false, why:"A listing says the variant may alter the drug's metabolism, effect or adverse-event risk, but the table gives no guidance on clinical use, so it cannot rule the drug out for carriers."}],
  teach:"The FDA lists a drug when evidence shows that certain variants alter its metabolism, effect or adverse-event risk. The listing only gives information; it is not a call to test before prescribing unless the test is a companion diagnostic.",
  quote:"they're not necessarily advocating using pharmacogenomic testing before prescribing these drugs, but they're just providing us some information",
  cite:"PGx-Resources-and-Cases-Students-Fall-2026.pdf slide 'FDA Tables of Pharmacogenetic Associations' (p. 3); transcript 10/27"},
@@ -38,7 +38,7 @@ QUESTIONS.push(
  concept:"fda-assoc-not-intended", tags:["smith"], source:"both",
  stem:"Which uses does the FDA say the Table of Pharmacogenetic Associations is not intended for? Select all that apply.",
  options:[
-  {t:"Changing current regulatory requirements or policies", correct:true, why:"The first of the three 'This table is not' bullets."},
+  {t:"Changing current regulatory requirements or policies", correct:true, why:"The FDA states the table is not intended to affect current regulatory requirements or policies. It only provides information on which drugs have pharmacogenetic implications, so it changes no rule about any drug."},
   {t:"Assessing the safe and effective use of tests that detect the variants", correct:true, why:"The table does not judge the tests and does not tell you to do testing."},
   {t:"Giving comprehensive gene-drug information", correct:true, why:"The table is not meant to be complete on each gene-drug interaction."},
   {t:"Showing which drugs have pharmacogenetic implications", correct:false, why:"This is what the table is for: a first screen of which drugs have pharmacogenetic implications."},
@@ -56,7 +56,7 @@ QUESTIONS.push(
   {t:"Genotype-based dosing for each drug; limited to cancer drugs", correct:false, why:"Its short entries refer to the FDA labeling for specific dosing, and it is not limited to cancer drugs."},
   {t:"Lists every label section; often out of date", correct:false, why:"Label sections are listed in the Biomarkers in Drug Labeling table."},
   {t:"Names the test kit to use; covers only a few drugs", correct:false, why:"The table does not assess the tests that detect the variants, and it lists many drugs."}],
- teach:"The table is a first screen of which drugs have pharmacogenetic implications. Its limitation: no detailed guidance on clinical use. Dr. Smith called it a lightweight and prefers the other FDA table.",
+ teach:"The Associations table is a first screen: it shows which drugs have pharmacogenetic implications. It names the drug, the gene and the affected group, but it does not say what to do for a patient, so it cannot guide a dose or a drug choice. That missing clinical guidance is its limitation, and why Dr. Smith called it a lightweight and prefers the other FDA table.",
  quote:"So in my opinion this table, uh, this first table from the FDA is kind of a lightweight.",
  note:"The slide words the limitation as \"Lacks detailed guidance on the clinical application of the information\". The current FDA page (updated September 10, 2026) gives a one-line description for each pair; some Section 1 entries carry a brief management statement, such as \"Do not use abacavir in patients positive for HLA-B*57:01\", and many refer to FDA labeling for specific dosing. It lists 82 entries in Section 1, 25 in Section 2 and 40 in Section 3.",
  cite:"PGx-Resources-and-Cases-Students-Fall-2026.pdf slide 'FDA Tables of Pharmacogenetic Associations 2' (p. 4); transcript 10/27; FDA Table of Pharmacogenetic Associations (fda.gov, updated 9/10/2026)"},
@@ -91,7 +91,7 @@ QUESTIONS.push(
  stem:"What does the FDA Table of Pharmacogenomic Biomarkers in Drug Labeling list?",
  options:[
   {t:"Approved drugs whose labels carry pharmacogenomic text", correct:true, why:"A comprehensive list of U.S.-marketed, FDA-approved drugs with pharmacogenomics in the label."},
-  {t:"Drugs still in development that have promising genetic data", correct:false, why:"Pipeline drugs are not included; only approved drugs."},
+  {t:"Drugs still in development that have promising genetic data", correct:false, why:"The table lists FDA-approved drugs on the U.S. market whose labels carry pharmacogenomic information. A drug still in development has no approved label, so it cannot be listed."},
   {t:"Every genetic test the FDA has cleared for clinical use", correct:false, why:"It lists drugs and their biomarkers, not tests."},
   {t:"Genotype-based dosing tables for each listed drug", correct:false, why:"Dosing tables by genotype come from guidelines such as CPIC."}],
  teach:"This table lists every FDA-approved drug on the U.S. market with pharmacogenomic information in its labeling, with actions to take and where in the label the information appears. It is bigger and updated more often than the Associations table.",
@@ -273,7 +273,7 @@ QUESTIONS.push(
   {t:"Evidence: strong, moderate, optional; recommendations: high, moderate, weak", correct:false, why:"The two scales are swapped."},
   {t:"Evidence: A, B, C; recommendations: 1, 2, 3", correct:false, why:"CPIC uses words, not letters and numbers."},
   {t:"One scale for both: high, moderate, low", correct:false, why:"There are two scales with different words."}],
- teach:"CPIC uses two word scales. Each piece of evidence is scored high, moderate or weak. The recommendations built on that evidence are rated strong, moderate or optional. This grading makes the guidelines evidence based.",
+ teach:"CPIC grades two different things, so it uses two scales. The evidence grade says how strong the science is: high, moderate or weak. The recommendation grade says how firmly to act, from the balance of desirable and undesirable effects: strong, moderate or optional. In the recording the last level came out as \"optimal\"; the slide says optional.",
  quote:"So every fact that they present in these guidelines, they weigh it, and it's either high, moderate, or weak.",
  note:"In the recording the third recommendation level came out as \"optimal\"; the slide reads \"Optional\". Keyed to the slide word.",
  cite:"PGx-Resources-and-Cases-Students-Fall-2026.pdf slide 'CPIC Guidelines 4' (p. 12, Caudle et al. 2014); transcript 10/27"},
@@ -324,7 +324,7 @@ QUESTIONS.push(
   {t:"They are not evidence based", correct:false, why:"They are evidence based and graded."},
   {t:"They give no dosing recommendations", correct:false, why:"Dosing recommendations are a fixed component."},
   {t:"They tell clinicians whether to order a test", correct:false, why:"They address how to use results, not whether to test; and this is not a limitation."}],
- teach:"CPIC guidelines are very useful: clear recommendations on dose adjustments and alternative therapies based on genotype. Their limitation is scope: only about 35 exist.",
+ teach:"CPIC guidelines give clear recommendations on dose adjustments and alternative therapies by genotype. A gene-drug pair gets a guideline only after the initial assessment shows the data are strong and clinically actionable, so only about 35 exist. The limitation is therefore scope: many drugs have none, so pharmacists need to know which drugs are covered.",
  quote:"So the limitations for these guidelines so far is there's not every drug out there.",
  cite:"PGx-Resources-and-Cases-Students-Fall-2026.pdf slide 'CPIC Guidelines 6' (p. 14); transcript 10/27"},
 
@@ -333,7 +333,7 @@ QUESTIONS.push(
  stem:"For a drug that has a CPIC guideline, which questions can the guideline help a pharmacist answer? Select all that apply.",
  options:[
   {t:"Which variants matter for this drug", correct:true, why:"The genes and variants section."},
-  {t:"What to test a patient for", correct:true, why:"She listed this question."},
+  {t:"What to test a patient for", correct:true, why:"The guideline's genes section names the variants that change response to the drug, so it tells you which variants to test the patient for."},
   {t:"How to interpret the genetic results", correct:true, why:"The genetic test interpretation section."},
   {t:"How to treat the patient once the genotype is known", correct:true, why:"The therapeutic recommendations."},
   {t:"Whether the insurer will pay for the test", correct:false, why:"Coverage is not addressed."},
@@ -362,13 +362,13 @@ QUESTIONS.push(
   {t:"Warfarin's drug target", correct:true, why:"Warfarin inhibits VKORC1, so less active vitamin K is made."},
   {t:"The enzyme that metabolizes warfarin", correct:false, why:"That is CYP2C9, which metabolizes S-warfarin."},
   {t:"The enzyme that removes vitamin K", correct:false, why:"That is CYP4F2."},
-  {t:"A transporter that carries warfarin into the liver", correct:false, why:"VKORC1 is not a transporter."}],
+  {t:"A transporter that carries warfarin into the liver", correct:false, why:"VKORC1 is an enzyme, vitamin K epoxide reductase, that converts vitamin K epoxide back to reduced vitamin K. Warfarin works by inhibiting it; it does not carry warfarin anywhere."}],
  teach:"VKORC1 is warfarin's target. Inhibiting it cuts the supply of active, reduced vitamin K, which is needed to finish making clotting factors. CYP2C9 metabolizes warfarin, mainly the more potent S-enantiomer; CYP4F2 removes vitamin K.",
  quote:"What is VKRC1 in relationship to warfarin? It's the target That's warfarin's drug target.",
  note:"Same fact as L20-046/L20-047 (10/26), asked again in the guideline walk-through.",
  cite:"PGx-Resources-and-Cases-Students-Fall-2026.pdf slide 'CPIC Guidelines 7' (p. 15); CPIC warfarin guideline 2017 update, Figure 1; transcript 10/27"},
 
-{id:"L21-028", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"cpic-warf", skill:"apply", readingId:"cpic-warfarin-2017",
+{id:"L21-028", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"cpic-warf", skill:"apply", core:true, coreWhy:"her algorithm walk-through ('This is the detail you have to study for your exam')", readingId:"cpic-warfarin-2017",
  concept:"cpic-warf-no-genotype", tags:["smith"], source:"both",
  stem:"In the CPIC warfarin algorithm, the first question is whether the patient's genotype is available. If it is not, what does the algorithm say?",
  options:[
@@ -381,7 +381,7 @@ QUESTIONS.push(
  note:"She added \"Usually we just start with 5 mg per kilogram.\" On 10/26 she gave the usual starting dose as about 5 mg/day; the guideline gives no number on this branch. The number is not keyed.",
  cite:"PGx-Resources-and-Cases-Students-Fall-2026.pdf slide 'CPIC Guidelines 7' (p. 15); CPIC warfarin guideline 2017 update, Figure 2; transcript 10/27"},
 
-{id:"L21-029", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"cpic-warf", skill:"apply", readingId:"cpic-warfarin-2017",
+{id:"L21-029", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"cpic-warf", skill:"apply", core:true, coreWhy:"same walk-through", readingId:"cpic-warfarin-2017",
  concept:"cpic-warf-ancestry", tags:["smith"], source:"both",
  stem:"The genotype is available. What does the CPIC warfarin algorithm ask next, before choosing a branch?",
  options:[
@@ -393,14 +393,14 @@ QUESTIONS.push(
  quote:"If you have genotype, then you will do the best for your patient if you get them to uh self-identify their ancestry.",
  cite:"PGx-Resources-and-Cases-Students-Fall-2026.pdf slide 'CPIC Guidelines 7' (p. 15); CPIC warfarin guideline 2017 update, Figure 2; transcript 10/27"},
 
-{id:"L21-030", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"cpic-warf", skill:"recall", readingId:"cpic-warfarin-2017", multi:true,
+{id:"L21-030", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"cpic-warf", skill:"recall", core:true, coreWhy:"same walk-through", readingId:"cpic-warfarin-2017", multi:true,
  concept:"cpic-warf-calc-genotypes", tags:["smith"], source:"both",
  stem:"For a patient of non-African ancestry, which genotypes are entered into the dosing calculation itself, before any adjustment is applied to the calculated dose? Select all that apply.",
  options:[
   {t:"VKORC1 -1639G>A", correct:true, why:"The VKORC1 variant on the algorithm."},
   {t:"CYP2C9*2", correct:true, why:"Part of the CYP2C9*2 and *3 status."},
   {t:"CYP2C9*3", correct:true, why:"Part of the CYP2C9*2 and *3 status."},
-  {t:"rs12777823", correct:false, why:"This applies only on the African-ancestry branch."},
+  {t:"rs12777823", correct:false, why:"Its dose association has been found only in African Americans, so the algorithm applies it only on the African-ancestry branch, as an adjustment there; it is not entered for non-African patients."},
   {t:"CYP4F2*3", correct:false, why:"Applied after the calculation: if CYP4F2*3 is found, the calculated dose is increased."},
   {t:"CYP2C9*5", correct:false, why:"CYP2C9*5 is applied as an adjustment after the calculation, not entered into it."}],
  teach:"On the non-African branch the dose is calculated with a published algorithm from VKORC1 -1639G>A and CYP2C9*2 and *3 (graded strong). Adjustments come after: CYP2C9*5, *6, *8 or *11 lower the calculated dose, and CYP4F2*3 raises it.",
@@ -415,11 +415,11 @@ QUESTIONS.push(
   {t:"The variant causes a loss of the protein", correct:false, why:"The minus gives position, not effect."},
   {t:"The variant is on the opposite DNA strand of the gene", correct:false, why:"Dr. Smith explained the minus sign as an upstream position."},
   {t:"The variant lowers the dose by 1639 mg", correct:false, why:"The number is a nucleotide position."}],
- teach:"VKORC1 -1639G>A is a G-to-A change at position -1639. The minus sign means the variant sits upstream of the gene, in an untranslated region that affects how much VKORC1 is expressed. One or two -1639A alleles call for progressively lower doses.",
+ teach:"In VKORC1 -1639G>A, the minus sign means the variant sits upstream of the gene, in a region that affects how much VKORC1 is expressed. VKORC1 is warfarin's target, and a weaker target means less warfarin is needed, so carriers of one or two -1639A alleles need progressively lower doses. Her slide says these haplotypes have low activity; the guideline says they affect expression.",
  quote:"This is a haplotype or this is a part of a haplotype. The negative means that this variant occurs in the Um, uh, upstream untranslated region that affects expression",
  cite:"PGx-Resources-and-Cases-Students-Fall-2026.pdf slide 'CPIC Guidelines 7' (p. 15); CPIC warfarin guideline 2017 update, 'VKORC1 and warfarin'; transcript 10/27"},
 
-{id:"L21-032", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"cpic-warf", skill:"recall", readingId:"cpic-warfarin-2017",
+{id:"L21-032", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"cpic-warf", skill:"recall", core:true, coreWhy:"10/28 each-variant-alone cue", readingId:"cpic-warfarin-2017",
  concept:"cyp2c9-5-6-8-11-reduce", tags:["smith"], source:"both",
  stem:"A patient carries CYP2C9*5, *6, *8 or *11. How does the CPIC algorithm change the calculated warfarin dose?",
  options:[
@@ -437,7 +437,7 @@ QUESTIONS.push(
  options:[
   {t:"These variants occur at higher frequency in that population", correct:true, why:"Dr. Smith answered with frequency: a higher chance of carrying one of these dose-lowering genotypes."},
   {t:"They raise CYP2C9 enzyme activity in patients of that population", correct:false, why:"They decrease CYP2C9 activity."},
-  {t:"CYP2C9*2 and *3 do not exist in that population", correct:false, why:"The reason Dr. Smith gave was the higher frequency of *5, *6, *8 and *11."},
+  {t:"CYP2C9*2 and *3 do not exist in that population", correct:false, why:"They do occur there: the guideline says *5, *6, *8 and *11 are together more common than *2 and *3 in African ancestry, and *2 and *3 are still entered into the dose calculation on that branch. *5, *6, *8 and *11 come first because of their high frequency."},
   {t:"VKORC1 does not affect warfarin in that population", correct:false, why:"VKORC1 is part of the calculation on both branches."}],
  teach:"CYP2C9*5, *6, *8 and *11 lower CYP2C9 activity, so carriers need a lower dose, and they are common in people of African ancestry. Testing for them first gets the starting dose right. In non-African patients these alleles are uncommon.",
  quote:"These variants are up high for people of African ancestry because we know that they could have a higher probability of having one of those genotypes",
@@ -559,7 +559,7 @@ QUESTIONS.push(
  quote:"you will get into a table on this Clin pharmacogenomics website, and it'll put the CPIC guidance documents, and then it'll list the other ones like the Dutch and the Canadian and the French for each drug.",
  cite:"PGx-Resources-and-Cases-Students-Fall-2026.pdf slide 'Other Guidelines 2' (p. 17); transcript 10/27"},
 
-{id:"L21-043", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"pgx-other", skill:"recall", multi:true, core:true, coreWhy:"the two needs she spoke to from the challenges slide",
+{id:"L21-043", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"pgx-other", skill:"recall", multi:true,
  concept:"pgx-future-cdss-ehr", tags:["smith"], source:"both",
  stem:"The agreed future direction is better ways of using pharmacogenomic information clinically. Which two needs does that include? Select all that apply.",
  options:[
@@ -596,7 +596,7 @@ QUESTIONS.push(
  cite:"PGx-Resources-and-Cases-Students-Fall-2026.pdf slide 'Challenges for enhanced pharmacogenomic implementation' (p. 20); CPIC warfarin guideline 2017 update, Figure 2; transcript 10/27"},
 
 /* ---------------- Drug-label worksheet: trastuzumab (Herceptin) and HER2 ---------------- */
-{id:"L21-046", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"label-trast", skill:"recall", readingId:"label-trastuzumab",
+{id:"L21-046", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"label-trast", skill:"recall", core:true, coreWhy:"worksheet item 1 (study list item 2)", readingId:"label-trastuzumab",
  concept:"trast-item1-gene", tags:["smith","label","inclass"], source:"transcript",
  stem:"For trastuzumab (Herceptin), which gene is evaluated, and does the label name a specific variant?",
  options:[
@@ -615,30 +615,30 @@ QUESTIONS.push(
  options:[
   {t:"The tumor, by phenotyping it", correct:true, why:"A tumor biopsy is examined for the HER2 receptor on the tumor cells."},
   {t:"The patient's germline DNA from blood", correct:false, why:"Normal cells do not express HER2, so a sample of the rest of the body would not show it."},
-  {t:"Both the tumor and the patient's germline DNA", correct:false, why:"Only the tumor specimen is examined."},
+  {t:"Both the tumor and the patient's germline DNA", correct:false, why:"Only the tumor is examined because only the tumor cells express HER2. A sample of the patient's normal cells would not show HER2, so testing it would add nothing."},
   {t:"Neither; HER2 is not tested", correct:false, why:"The label directs selection of patients by HER2 status of the tumor."}],
  teach:"For trastuzumab the patient is not genotyped. A tumor biopsy is examined for HER2 receptors on the tumor cells, a phenotype of the tumor. Normal cells do not express HER2, so testing them would show nothing.",
  quote:"So for, um, question number 3, we're not genotyping the patient, we're actually phenotyping the tumor.",
  cite:"Pharmacogenomics Questions Drug Labels Worksheet, item 3; Herceptin (trastuzumab) label, 2.2 Patient Selection; transcript 10/27"},
 
-{id:"L21-048", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"label-trast", skill:"recall", readingId:"label-trastuzumab",
+{id:"L21-048", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"label-trast", skill:"recall", core:true, coreWhy:"worksheet item 4 (study list item 2), with her answer", readingId:"label-trastuzumab",
  concept:"trast-efficacy", tags:["smith","label","inclass"], source:"transcript",
  stem:"For trastuzumab (Herceptin), is the HER2 testing done to ensure efficacy or to prevent toxicity?",
  options:[
   {t:"Ensure efficacy", correct:true, why:"The test confirms the tumor has the drug's target, HER2."},
   {t:"Prevent toxicity", correct:false, why:"That is the purpose for the HLA tests with carbamazepine and abacavir."},
-  {t:"Choose the dose", correct:false, why:"The result decides whether the drug is used, not its dose."},
+  {t:"Choose the dose", correct:false, why:"The test asks whether the tumor has the drug's target. Trastuzumab acts by binding HER2, so without HER2 it cannot work at any dose; the result decides whether to use the drug, not how much."},
   {t:"Predict drug interactions", correct:false, why:"HER2 status says nothing about interactions."}],
  teach:"HER2 testing for trastuzumab ensures efficacy. The drug was made to bind HER2, so the tumor must carry that target. Testing first avoids giving an expensive drug with side effects to a tumor that cannot respond.",
  quote:"We want to be sure these patients have the drug's target, which is HER2, before we give them an expensive drug that can cause side effects.",
  cite:"Pharmacogenomics Questions Drug Labels Worksheet, item 4; Herceptin (trastuzumab) label, 1 Indications and Usage; transcript 10/27"},
 
-{id:"L21-049", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"label-trast", skill:"recall", readingId:"label-trastuzumab",
+{id:"L21-049", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"label-trast", skill:"recall", core:true, coreWhy:"worksheet item 5 (study list item 2)", readingId:"label-trastuzumab",
  concept:"trast-ihc", tags:["smith","label"], source:"transcript",
  stem:"For trastuzumab (Herceptin), is HER2 status found by genotyping or by cytology studies, and which method is usual?",
  options:[
   {t:"Immunohistochemistry (IHC)", correct:true, why:"IHC detects the HER2 receptor protein on the surface of the tumor cells."},
-  {t:"Polymerase chain reaction genotyping of blood", correct:false, why:"No blood genotype is used; the tumor specimen is examined."},
+  {t:"Polymerase chain reaction genotyping of blood", correct:false, why:"HER2 status means whether HER2 receptor protein is present on the tumor cells. The patient's normal cells do not express HER2, so a blood genotype cannot show it; the tumor specimen is examined, usually by IHC."},
   {t:"HLA typing", correct:false, why:"HLA typing is the carbamazepine and abacavir test."},
   {t:"Therapeutic drug monitoring", correct:false, why:"Drug levels do not show whether the tumor has HER2."}],
  teach:"HER2 status is found by cellular studies of the tumor, usually immunohistochemistry (IHC), which shows whether HER2 receptors are present on the tumor cells. The label also allows gene amplification testing, done by FISH in its trials.",
@@ -646,7 +646,7 @@ QUESTIONS.push(
  note:"The label (2.2 Patient Selection) selects patients by \"HER2 protein overexpression or HER2 gene amplification in tumor specimens\"; the clinical studies (14) used IHC 3+ or FISH+. Dr. Smith discussed only IHC; gene amplification by FISH is a DNA test on the tumor, not a germline genotype of the patient.",
  cite:"Pharmacogenomics Questions Drug Labels Worksheet, item 5; Herceptin (trastuzumab) label, 2.2 Patient Selection and 14 Clinical Studies; transcript 10/27"},
 
-{id:"L21-050", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"label-trast", skill:"recall", readingId:"label-trastuzumab",
+{id:"L21-050", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"label-trast", skill:"recall", core:true, coreWhy:"worksheet item 6 (study list item 2)", readingId:"label-trastuzumab",
  concept:"trast-test-named", tags:["smith","label","inclass"], source:"transcript",
  stem:"For trastuzumab (Herceptin), what does the current label say about which HER2 test to use?",
  options:[
@@ -659,25 +659,25 @@ QUESTIONS.push(
  note:"Dr. Smith said the label now leaves the choice to a test \"you think is good\"; the label requires an FDA-authorized test (FDA-authorized companion diagnostic) by a laboratory with demonstrated proficiency. Both agree that no brand is named. \"CLA certified\" (likely CLIA) is her addition, not label text, and she said \"You don't need to know that.\" She also said \"the answer to number 7 was\" while discussing item 6.",
  cite:"Pharmacogenomics Questions Drug Labels Worksheet, item 6; Herceptin (trastuzumab) label, Highlights (Dosage and Administration) and 2.2 Patient Selection; transcript 10/27"},
 
-{id:"L21-051", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"label-trast", skill:"recall", readingId:"label-trastuzumab", multi:true,
+{id:"L21-051", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"label-trast", skill:"recall", core:true, coreWhy:"worksheet item 7 (study list item 2)", readingId:"label-trastuzumab", multi:true,
  concept:"trast-tumor-types", tags:["smith","label","inclass"], source:"transcript",
  stem:"For trastuzumab (Herceptin), which tumor types should be tested for HER2 before treatment? Select all that apply.",
  options:[
   {t:"Breast cancer", correct:true, why:"HER2-overexpressing breast cancer, adjuvant and metastatic (label 1.1, 1.2)."},
   {t:"Gastric or gastroesophageal junction cancer", correct:true, why:"Label 1.3: HER2-overexpressing metastatic gastric or gastroesophageal junction adenocarcinoma."},
   {t:"Brain tumors", correct:false, why:"Dr. Smith said the data do not link brain tumors with HER2."},
-  {t:"Patients of Asian ancestry, whatever the tumor type", correct:false, why:"Item 7 here is about tumor type, not an ancestry group."}],
- teach:"Item 7 asks for a tumor type, not an ethnic group. Older labels covered breast tumors; the current label adds metastatic gastric or gastroesophageal junction adenocarcinoma. Brain tumors are not associated with HER2.",
+  {t:"Patients of Asian ancestry, whatever the tumor type", correct:false, why:"HER2 status belongs to the tumor, not to an inherited variant common in an ancestry group, so ancestry does not decide who is tested; the tumor type does."}],
+ teach:"Item 7 is answered with tumor types, not an ethnic group, because HER2 expression is a property of certain tumors, not an inherited variant that runs in a population. The current label covers HER2-overexpressing breast cancer and metastatic gastric or gastroesophageal junction adenocarcinoma; she said gastrointestinal and esophageal tumors. The data do not link brain tumors with HER2.",
  quote:"The data is not indicating that brain tumors are associated with the presence of HER2, but definitely breast, gastrointestinal, and now esophageal tumors.",
  note:"Dr. Smith and the room said \"metastatic gastrointestinal tumors\" and \"esophageal\"; the label indication (1.3) is narrower: metastatic gastric or gastroesophageal junction adenocarcinoma. Keyed to the label wording, which matches what she accepted.",
  cite:"Pharmacogenomics Questions Drug Labels Worksheet, item 7; Herceptin (trastuzumab) label, 1.1-1.3 Indications and Usage; transcript 10/27"},
 
-{id:"L21-052", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"label-trast", skill:"apply", readingId:"label-trastuzumab",
+{id:"L21-052", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"label-trast", skill:"apply", core:true, coreWhy:"worksheet item 8 (study list item 2)", readingId:"label-trastuzumab",
  concept:"trast-result-use", tags:["smith","label","inclass"], source:"transcript",
  stem:"For trastuzumab (Herceptin), how does a patient's HER2 result change the drug's clinical use?",
  options:[
   {t:"HER2-positive: candidate; HER2-negative: do not use", correct:true, why:"A tumor without HER2 lacks the drug's target."},
-  {t:"HER2-positive: lower the dose; HER2-negative: usual dose", correct:false, why:"The result decides use, not dose."},
+  {t:"HER2-positive: lower the dose; HER2-negative: usual dose", correct:false, why:"HER2 is the drug's target. A HER2-negative tumor has no target, so trastuzumab cannot work at any dose and is not used; a HER2-positive tumor makes the patient a candidate. The result decides use, not dose."},
   {t:"HER2-negative: candidate; HER2-positive: do not use", correct:false, why:"Reversed; the drug needs HER2 on the tumor."},
   {t:"The result changes only the infusion rate", correct:false, why:"The result decides whether the drug is given."}],
  teach:"A HER2-positive tumor makes the patient a candidate for trastuzumab. A HER2-negative tumor lacks the target, so trastuzumab is not used. The result decides use, not dose.",
@@ -698,7 +698,7 @@ QUESTIONS.push(
  note:"Exam cue just before the quote: \"Make sure you write this down, everybody.\" The caption gives \"HLAB\" and \"1502\"; the label prints HLA-B*1502. Same pairing as L20-056 (10/26).",
  cite:"Pharmacogenomics Questions Drug Labels Worksheet, item 1; Tegretol (carbamazepine) label, Boxed Warning and Warnings (SJS/TEN and HLA-B*1502 Allele); transcript 10/27"},
 
-{id:"L21-054", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"label-hla", skill:"recall", readingId:"label-carbamazepine",
+{id:"L21-054", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"label-hla", skill:"recall", core:true, coreWhy:"said in the same breath as 'Make sure you write this down'", readingId:"label-carbamazepine",
  concept:"carbamazepine-hla-a-3101", tags:["smith","label","inclass"], source:"transcript",
  stem:"The carbamazepine (Tegretol) label names a second HLA gene whose variant raises the risk of hypersensitivity reactions. Which allele is it?",
  options:[
@@ -711,14 +711,14 @@ QUESTIONS.push(
  note:"Dr. Smith first said carbamazepine \"was just updated this year\", then a student read the label date as 2017 and she accepted it. The label copy provided (Medication Guide) reads \"Revised: 7/2026\". The 2017 date for HLA-A*31:01 is her statement; the label copy does not show it.",
  cite:"Pharmacogenomics Questions Drug Labels Worksheet, item 1; Tegretol (carbamazepine) label, Warnings (Hypersensitivity Reactions and HLA-A*3101 Allele); transcript 10/27"},
 
-{id:"L21-055", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"label-hla", skill:"recall", readingId:"label-carbamazepine",
+{id:"L21-055", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"label-hla", skill:"recall", core:true, coreWhy:"worksheet item 2 for carbamazepine, her spoken question", readingId:"label-carbamazepine",
  concept:"carbamazepine-hla-effect", tags:["smith","label","inclass"], source:"transcript",
  stem:"For carbamazepine (Tegretol), how does carrying either HLA risk variant affect the patient's response?",
  options:[
   {t:"Higher risk of Stevens-Johnson syndrome or toxic epidermal necrolysis", correct:true, why:"A severe hypersensitivity reaction of the skin that can be fatal."},
   {t:"Higher risk of aplastic anemia and agranulocytosis from slowed metabolism of carbamazepine", correct:false, why:"Aplastic anemia is a separate boxed warning, not linked to the HLA variants."},
-  {t:"Loss of antiseizure efficacy", correct:false, why:"The variants affect safety, not efficacy."},
-  {t:"A lower dose requirement", correct:false, why:"The label advises against use unless benefit clearly outweighs risk, not a dose change."}],
+  {t:"Loss of antiseizure efficacy", correct:false, why:"The label ties the HLA variants to hypersensitivity reactions (SJS/TEN for HLA-B*1502), a safety problem; they do not make the drug less effective at controlling seizures."},
+  {t:"A lower dose requirement", correct:false, why:"The variants raise the risk of a hypersensitivity reaction; they are not tied to metabolism, so they do not change the dose needed. The label says an HLA-B*1502-positive patient should not get the drug unless the benefits clearly outweigh the risks."}],
  teach:"Both carbamazepine HLA variants raise the risk of a severe hypersensitivity reaction of the skin: Stevens-Johnson syndrome (SJS) or toxic epidermal necrolysis (TEN), two slightly different conditions in which the skin blisters and comes off. They can be fatal.",
  quote:"it increases significantly the risk of you having a very, very, very bad hypersensitivity reaction that makes your skin burn and fall off.",
  note:"The label's HLA-A*3101 paragraph lists SJS/TEN, maculopapular eruptions and DRESS (drug reaction with eosinophilia and systemic symptoms, 'Multiorgan hypersensitivity'), while Dr. Smith described the carbamazepine reaction as a skin reaction for both variants. Keyed to SJS/TEN, which both she and the label name. Size of the risk: Dr. Smith said both variants \"greatly increase the risk\"; the label calls the HLA-A*3101 link a \"moderate association\" from retrospective case-control studies, while its boxed warning calls the HLA-B*1502 link a \"strong association\".",
@@ -737,7 +737,7 @@ QUESTIONS.push(
  note:"The caption renders abacavir as \"back of here\" and the allele as \"HLAB 5701\"; the label prints HLA-B*5701. Same pairing as L20-056 (10/26).",
  cite:"Pharmacogenomics Questions Drug Labels Worksheet, item 1; Ziagen (abacavir) label, Boxed Warning, 2.1 and 4 Contraindications; transcript 10/27"},
 
-{id:"L21-057", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"label-hla", skill:"recall", readingId:"label-abacavir",
+{id:"L21-057", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"label-hla", skill:"recall", core:true, coreWhy:"worksheet item 2 for abacavir, her spoken question", readingId:"label-abacavir",
  concept:"abacavir-multiorgan", tags:["smith","label","inclass"], source:"transcript",
  stem:"For abacavir (Ziagen), what reaction is the patient with the HLA-B risk variant at higher risk of?",
  options:[
@@ -819,7 +819,7 @@ QUESTIONS.push(
   {t:"European and North American", correct:false, why:"A fills a little under half of that bar, between the other two."},
   {t:"African", correct:false, why:"A is least common in the African bar, where G (higher dose required) dominates."},
   {t:"All three about equally", correct:false, why:"The bars differ sharply; the guideline says the -1639A frequency varies among ancestral populations."}],
- teach:"VKORC1 -1639A lowers the warfarin dose. The A allele is most common in East Asian, intermediate in European and North American, and least common in African populations, where G (higher dose) dominates. This largely explains the groups' different average doses.",
+ teach:"VKORC1 -1639A sits on a haplotype that affects expression of VKORC1, warfarin's target, and carriers of one or two A alleles need progressively lower doses. The A allele is most common in East Asian, intermediate in European and North American, and least common in African populations, where G (higher dose) dominates. So its frequency largely explains the groups' different average doses.",
  quote:"you should know which genetic variants we're concerned about and in which populations",
  note:"On 10/21 she said of the frequency figure: \"OK, so you don't have to memorize this.\" Her fuller remark: \"OK, so you don't have to memorize this. This is to illustrate the point that a lot of work is done trying to look at how often do these genetic versions occur in different populations\". On 10/28 she said to know which variants matter in which populations; that later instruction is followed here. Keyed to the order only, no percentages.",
  cite:"PGx-Examples-Students-Fall-2026.pdf slide 'Allele and Phenotype Frequencies' (p. 9, panel B); CPIC warfarin guideline 2017 update, 'VKORC1 and warfarin' (p. 399); PGx-Resources-and-Cases-Students-Fall-2026.pdf slide 'Current CPIC Guidelines 5' (p. 13); transcript 10/28"},
@@ -883,10 +883,10 @@ QUESTIONS.push(
  concept:"worksheet-purpose", tags:["smith"], source:"transcript",
  stem:"Which questions does the drug-label worksheet have you answer before using a drug? Select all that apply.",
  options:[
-  {t:"Is the tumor or the patient being tested?", correct:true, why:"Item 3."},
-  {t:"Is the test for efficacy or to prevent toxicity?", correct:true, why:"Item 4."},
-  {t:"Does the FDA say which test to use?", correct:true, why:"Item 6."},
-  {t:"How do the results change care of the patient?", correct:true, why:"Item 8."},
+  {t:"Is the tumor or the patient being tested?", correct:true, why:"Item 3. A target made only by the tumor (HER2 for trastuzumab) is looked for in the tumor; an inherited risk variant (HLA-B for carbamazepine and abacavir) is looked for in the patient."},
+  {t:"Is the test for efficacy or to prevent toxicity?", correct:true, why:"Item 4. It separates a test that confirms the drug's target is present (trastuzumab) from a test that finds patients at risk of a severe reaction (carbamazepine, abacavir)."},
+  {t:"Does the FDA say which test to use?", correct:true, why:"Item 6. The labels differ: the current trastuzumab label names no brand of kit, while the carbamazepine label recommends high-resolution HLA-B*1502 typing."},
+  {t:"How do the results change care of the patient?", correct:true, why:"Item 8. It turns the result into an action: HER2-negative means trastuzumab is not used; HLA-B*5701-positive means abacavir is contraindicated."},
   {t:"What CPIC level of evidence does the pair have?", correct:false, why:"Not a worksheet item; evidence grading is part of the CPIC guidelines."},
   {t:"How many milligrams does each genotype need?", correct:false, why:"Not a worksheet item; the questions decide who is tested, why, how, and what the result changes."}],
  teach:"The eight items: (1) which gene and variant; (2) how the variant affects response; (3) tumor or patient; (4) efficacy or toxicity; (5) genotyping or cytology such as immunohistochemistry; (6) does the FDA say which test to use; (7) which population or tumor type to test; (8) how the results affect use of the drug or care of the patient.",
@@ -1023,7 +1023,7 @@ QUESTIONS.push(
  stem:"For abacavir (Ziagen), a patient tests HLA-B*57:01 positive. What does the label say?",
  options:[
   {t:"Abacavir is contraindicated", correct:true, why:"4 Contraindications: patients who have the HLA-B*5701 allele."},
-  {t:"Start at a reduced dose and titrate", correct:false, why:"The label gives no genotype-based dose."},
+  {t:"Start at a reduced dose and titrate", correct:false, why:"HLA-B*5701 raises the risk of a hypersensitivity reaction; it does not change the dose needed, so a lower dose does not remove the risk. The label lists the allele under Contraindications."},
   {t:"Give with antihistamine premedication", correct:false, why:"No premedication route is given; the allele is listed under Contraindications."},
   {t:"Use it, but monitor liver enzymes", correct:false, why:"The positive result rules the drug out."}],
  teach:"Abacavir is contraindicated in HLA-B*5701-positive patients and in anyone with a prior hypersensitivity reaction to it. It is stopped at once if hypersensitivity is suspected and never restarted.",
@@ -1040,7 +1040,7 @@ QUESTIONS.push(
  teach:"The CPIC warfarin algorithm splits by self-identified ancestry. On the African-ancestry branch CYP2C9*5, *6, *8, *11 and rs12777823 are tested up front because they are more frequent there; CYP4F2*3 belongs to the non-African branch.",
  quote:"up front here for people of African descent",
  cite:"CPIC warfarin guideline 2017 update, Figure 2; PGx-Resources-and-Cases-Students-Fall-2026.pdf slide 'CPIC Guidelines 7' (p. 15); transcript 10/27"},
-{id:"L21-081", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"cpic", skill:"tell", core:true, coreWhy:"her Exam 4 study list: CPIC answers how to use a result, not whether to test",
+{id:"L21-081", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"cpic", skill:"tell",
  concept:"cpic-how-not-whether-apply", tags:["smith"], source:"both",
  stem:"A physician asks whether to order a CYP2C19 test before starting clopidogrel. Does the CPIC clopidogrel guideline answer that question?",
  options:[
@@ -1051,7 +1051,7 @@ QUESTIONS.push(
  teach:"CPIC guidelines help clinicians understand how available genetic test results should be used to optimize therapy; they do not decide whether tests should be ordered.",
  quote:"and not whether tests should be ordered",
  cite:"PGx-Resources-and-Cases-Students-Fall-2026.pdf slide 'CPIC Guidelines' (p. 9); transcript 10/27"},
-{id:"L21-082", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"cpic", skill:"tell", core:true, coreWhy:"her Exam 4 study list: the CPIC evidence versus recommendation scales",
+{id:"L21-082", lecture:"L21", prof:"Smith", tier:"new", topic:"L21", sub:"cpic", skill:"tell",
  concept:"cpic-recommendation-scale-apply", tags:["smith"], source:"both",
  stem:"A CPIC guideline statement is labeled 'optional'. What is being graded?",
  options:[
