@@ -2967,21 +2967,22 @@ const sayOverlap = (a, b) => { let n = 0; for (const w of a) if (b.has(w)) n += 
 function sayWalkFor(id) { const k = typeof QVIS !== 'undefined' && QVIS[id]; return k && STEPS()[k] ? k : null; }
 /* With a walkthrough attached (data-walk), the panel shows that walkthrough and moves to the step whose caption
    shares the most words with the sentence being read; it stays on the current step when no step matches. */
-/* Each sentence gets a step; steps only move forward through the script, and the order chosen is the one whose
-   sentences share the most words with their steps' captions (dynamic programming over sentences × steps). */
-function sayWalkMap(k, sents) {
+/* Each sentence gets a step. The assignment chosen is the one whose sentences share the most words with their steps'
+   captions, with moving back to an earlier step allowed only when a sentence clearly belongs there (dynamic programming
+   over sentences × steps). */
+function sayWalkMap(k, sents, back = Infinity) {
   const d = STEPS()[k], n = sents.length, m = d.steps.length, cw = d.steps.map(x => sayWords(x.t));
   const sc = sents.map(t => { const w = sayWords(t); return cw.map(c => sayOverlap(w, c)); });
   const best = Array.from({length: n}, () => new Array(m).fill(-1)), from = Array.from({length: n}, () => new Array(m).fill(0));
   for (let j = 0; j < m; j++) best[0][j] = sc[0][j] - j * 0.5;
-  for (let i = 1; i < n; i++) { let bv = -Infinity, bj = 0; for (let j = 0; j < m; j++) { if (best[i - 1][j] > bv) { bv = best[i - 1][j]; bj = j; } best[i][j] = bv + sc[i][j]; from[i][j] = bj; } }
+  for (let i = 1; i < n; i++) for (let j = 0; j < m; j++) { let bv = -Infinity, bj = 0; for (let h = 0; h < m; h++) { const v = best[i - 1][h] - (h > j ? back : 0); if (v > bv) { bv = v; bj = h; } } best[i][j] = bv + sc[i][j]; from[i][j] = bj; }   // going back to an earlier step costs `back` shared words (never, for a reading talk)
   let j = best[n - 1].indexOf(Math.max(...best[n - 1])); const map = new Array(n);
   for (let i = n - 1; i >= 0; i--) { map[i] = j; j = from[i][j]; }
   return map;
 }
 function sayWalkStep(side, k, box, si) {
   const d = STEPS()[k]; if (!d) return;
-  if (!box._walk || box._walk.k !== k) box._walk = {k, map: sayWalkMap(k, [...box.querySelectorAll('.ssent')].map(x => x.textContent))};
+  if (!box._walk || box._walk.k !== k) box._walk = {k, map: sayWalkMap(k, [...box.querySelectorAll('.ssent')].map(x => x.textContent), box.classList.contains('rdtx') ? Infinity : 3)};
   const cur = side.dataset.m === 'w:' + k ? +side.dataset.wi : -1;
   const i = box._walk.map[si] ?? 0; if (i === cur) return;
   side.dataset.m = 'w:' + k; side.dataset.wi = i;
