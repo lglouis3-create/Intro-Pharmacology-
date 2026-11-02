@@ -6,6 +6,7 @@ Newest first. The build embeds this file; the Topics page shows what is new sinc
 
 - Reading talks show their own walkthrough, moving to the step being read.
 - Exam 4 narration no longer shows an unrelated slide picked by a shared word.
+- Hear the why on 339 Exam 4 questions shows a step figure drawn for that explanation, moving with the voice.
 
 ## 2026-11-02 (Exam 4: explanations, likely questions, new cases)
 
