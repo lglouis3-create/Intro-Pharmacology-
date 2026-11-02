@@ -35,7 +35,7 @@ QUESTIONS.push(
  teach:"An enzyme variant matters when the enzyme is the major route of elimination, the drug is a prodrug needing activation, or the altered pathway or parent compound causes toxicity. A drug cleared unchanged by the kidney does not depend on the enzyme.",
  cite:"PGx-Examples-Students-Fall-2026.pdf slide 'Variations in Drug Metabolizing Enzymes' (p. 12); transcript 10/22"},
 
-{id:"L19-002", lecture:"L19", prof:"Smith", tier:"new", topic:"L19", sub:"dme-overview", skill:"recall", core:true, coreWhy:"objective: the impact of metabolizing enzyme variants",
+{id:"L19-002", lecture:"L19", prof:"Smith", tier:"new", topic:"L19", sub:"dme-overview", skill:"recall",
  concept:"dme-biggest-factor", tags:["smith"], source:"both",
  stem:"What is the single biggest factor responsible for variation in drug response between people?",
  options:[
@@ -58,7 +58,7 @@ QUESTIONS.push(
  teach:"Butyrylcholinesterase (BChE) and N-acetyltransferase 2 (NAT2) metabolize few drugs, but patients responded variably to those drugs and the gene structures were worked out early, so their polymorphisms were found first. CYP2D6 and TPMT came next.",
  cite:"PGx-Examples-Students-Fall-2026.pdf slide 'Variations in Drug Metabolizing Enzymes 2' (p. 13); transcript 10/22"},
 
-{id:"L19-004", lecture:"L19", prof:"Smith", tier:"new", topic:"L19", sub:"dme-overview", skill:"figure", type:"match",
+{id:"L19-004", lecture:"L19", prof:"Smith", tier:"new", topic:"L19", sub:"dme-overview", skill:"figure", core:true, coreWhy:"objective (general effects / metabolizing enzymes) plus her repeated 'don't forget prodrugs'", type:"match",
  concept:"active-vs-prodrug-decreasing-activity", tags:["smith"], source:"both",
  stem:"As enzyme activity decreases from ultrarapid to poor metabolizer, match each drug type with the clinical result.",
  left:["Active drug converted to an inactive metabolite", "Prodrug (inactive) converted to an active metabolite"],
@@ -93,7 +93,7 @@ QUESTIONS.push(
  quote:"85% of the clopidogrel dose we give is metabolized by esterases to inactive metabolites",
  cite:"PGx-Examples-Students-Fall-2026.pdf slide 'Variations in Drug Metabolizing Enzymes 4' (p. 15); transcript 10/22"},
 
-{id:"L19-007", lecture:"L19", prof:"Smith", tier:"new", topic:"L19", sub:"dme-overview", skill:"apply",
+{id:"L19-007", lecture:"L19", prof:"Smith", tier:"new", topic:"L19", sub:"dme-overview", skill:"apply", core:true, coreWhy:"her stated take-home of the clopidogrel figure",
  concept:"clopidogrel-2c19-most-important", tags:["smith"], source:"both",
  stem:"Several CYP enzymes act on clopidogrel, but which one most affects how much active metabolite is made?",
  options:[
@@ -173,13 +173,13 @@ QUESTIONS.push(
  options:[
   {t:"Middle Eastern", correct:true, why:"About 80% of people of Middle Eastern descent are slow acetylators, the highest of the groups."},
   {t:"Japanese population", correct:false, why:"About 10% of the Japanese population are slow acetylators, so most are fast."},
-  {t:"Caucasian", correct:false, why:"About 30 to 45% of Caucasians are fast acetylators; the slow fraction is not 80%."},
-  {t:"East African", correct:false, why:"The 80% slow figure is for Middle Eastern descent, not East Africans."}],
- teach:"About 30 to 45% of Caucasians are fast acetylators, about 10% of the Japanese population are slow, and about 80% of people of Middle Eastern descent are slow. This helps decide whom to monitor on isoniazid.",
+  {t:"Caucasian", correct:false, why:"The slide gives Caucasians as 30-45% fast acetylators. Patients are classed as either slow or fast, so the slow share is the remainder, which cannot reach 80% when 30-45% are fast."},
+  {t:"East African", correct:false, why:"Her NAT2 slide gives acetylator figures only for Caucasian, Japanese and Middle Eastern populations, so no East African figure exists to support 80% slow; 80% slow is the Middle Eastern figure."}],
+ teach:"Her NAT2 slide gives Caucasian 30-45% fast, Japanese 10% slow, Middle East 80% slow. Patients are classed as either slow or fast, so 10% slow in Japanese means most are fast. The population matters on isoniazid because slow acetylators keep the drug and risk peripheral nerve damage, while fast acetylators make metabolites that can cause hepatotoxicity.",
  cite:"PGx-Examples-Students-Fall-2026.pdf slide 'N-acetyltransferase 2 (NAT2)' (p. 19); transcript 10/22"},
 
 /* ---------------- CYP2D6 ---------------- */
-{id:"L19-014", lecture:"L19", prof:"Smith", tier:"new", topic:"L19", sub:"cyp2d6", skill:"recall", core:true, coreWhy:"objective: metabolizing enzyme variant example, well characterized",
+{id:"L19-014", lecture:"L19", prof:"Smith", tier:"new", topic:"L19", sub:"cyp2d6", skill:"recall",
  concept:"cyp2d6-fraction-metabolized", tags:["smith"], source:"both",
  stem:"CYP2D6 is the best-characterized CYP variant. About what share of marketed medications does it help metabolize?",
  options:[
@@ -191,7 +191,7 @@ QUESTIONS.push(
  quote:"It metabolizes about 15 to 25% of the medications on the market, so that's a lot of work that it does",
  cite:"PGx-Examples-Students-Fall-2026.pdf slide 'CYP2D6 Polymorphisms' (p. 20); transcript 10/22"},
 
-{id:"L19-015", lecture:"L19", prof:"Smith", tier:"new", topic:"L19", sub:"cyp2d6", skill:"figure",
+{id:"L19-015", lecture:"L19", prof:"Smith", tier:"new", topic:"L19", sub:"cyp2d6", skill:"figure", core:true, coreWhy:"her spoken questions on the debrisoquine histogram (genotype for each peak)",
  concept:"cyp2d6-debrisoquine-trimodal", tags:["smith"], source:"both",
  stem:"The classic debrisoquine study plotted the ratio of parent drug to its 4-hydroxy metabolite across people. What did the three peaks of that histogram represent?",
  options:[
@@ -296,21 +296,21 @@ QUESTIONS.push(
  stem:"In the warfarin clearance study, how did CYP2C9*3/*3 homozygotes compare with *1/*1 homozygotes?",
  options:[
   {t:"About a 90% reduction in S-warfarin clearance", correct:true, why:"Star 3 homozygotes had about a 90% lower S-warfarin clearance than wild-type homozygotes, a clear gene-dose effect."},
-  {t:"About a 20% reduction in S-warfarin clearance", correct:false, why:"The reduction for *3/*3 was far larger, about 90%."},
+  {t:"About a 20% reduction in S-warfarin clearance", correct:false, why:"A 20% drop would leave most clearance intact, which does not fit two copies of an allele that keeps only about 5% of wild-type activity; the measured reduction for *3/*3 was about 90%."},
   {t:"No measurable difference in clearance", correct:false, why:"There was a large, clear difference; *3/*3 cleared warfarin much slower."},
   {t:"Increased S-warfarin clearance", correct:false, why:"Clearance fell, not rose; the variant reduces enzyme activity."}],
- teach:"S-warfarin clearance drops progressively from *1/*1 through the variant genotypes, and CYP2C9*3/*3 homozygotes show about a 90% reduction versus *1/*1: a clean gene-dose effect, which is why CYP2C9 is called well characterized.",
+ teach:"CYP2C9 clears S-warfarin, and CYP2C9*3 keeps only about 5% of wild-type activity, so a person with two *3 copies clears S-warfarin far more slowly: about a 90% reduction in clearance versus *1/*1. Clearance falls step by step with the variant genotypes, a clear gene-dose effect, which is why she calls CYP2C9 well characterized.",
  cite:"PGx-Examples-Students-Fall-2026.pdf slide 'CYP2C9 Polymorphisms 2' (p. 24, Scordo et al. 2002); transcript 10/22"},
 
 {id:"L19-024", lecture:"L19", prof:"Smith", tier:"new", topic:"L19", sub:"cyp2c9", skill:"apply",
  concept:"cyp2c9-warfarin-low-dose", tags:["smith"], source:"both",
  stem:"Patients who need the lowest starting warfarin dose (about 1.5 mg/day, versus the usual 5 mg/day) tend to share what?",
  options:[
-  {t:"Most carry low-activity CYP2C9 variants", correct:true, why:"In that lowest-dose group, at least 80% of patients carried the reduced-function CYP2C9 variants, strengthening the dose-response data."},
+  {t:"Most carry low-activity CYP2C9 variants", correct:true, why:"These variants clear warfarin slowly, so a smaller dose reaches the same level. At least 80% of the patients needing the lowest dose carried them, which agrees with the clearance study."},
   {t:"Most carry two wild-type CYP2C9 alleles", correct:false, why:"Wild-type patients clear warfarin normally and need the usual dose, not the lowest."},
   {t:"Most are ultrarapid metabolizers of S-warfarin", correct:false, why:"Ultrarapid metabolism would raise, not lower, the dose needed; CYP2C9 variants here are reduced-function."},
   {t:"They have no identifiable genetic pattern", correct:false, why:"A clear pattern was found: most carried low-activity CYP2C9 variants."}],
- teach:"The usual warfarin starting dose is about 5 mg/day, but some patients need only about 1.5 mg/day, and at least 80% of them carried low-activity CYP2C9 variants: low-activity genotypes need lower doses.",
+ teach:"CYP2C9 clears S-warfarin. The low-activity variants (*2 about 20%, *3 about 5% of wild-type activity) clear it slowly, so warfarin builds up, and with its narrow therapeutic index the patient moves into the bleeding range unless the dose is lowered. That is why at least 80% of patients needing only about 1.5 mg/day, versus the usual 5 mg/day, carried these variants.",
  quote:"at least 80% of the people in that dosing category have these low activity variants of 2C9",
  cite:"PGx-Examples-Students-Fall-2026.pdf slide 'CYP2C9 Polymorphisms 2' (p. 24); transcript 10/22"},
 
@@ -390,7 +390,7 @@ QUESTIONS.push(
  note:"Transcript renders Furuta as \"Furuda\"/\"Fioruda\" (garbled captions); the slide cites Furuta et al. The AUC and gastric-pH results come from the 2004 lansoprazole figure on p. 27, which she presented as that paper's data. The assigned 1998 Furuta paper (omeprazole plus amoxicillin) reported cure rates of 28.6%, 60% and 100% by genotype but did not measure drug levels. The exam keys her words.",
  cite:"PGx-Examples-Students-Fall-2026.pdf slides 'CYP2C19 Polymorphisms' (p. 25), 'CYP2C19 Polymorphisms 3' (p. 27); transcript 10/22"},
 
-{id:"L19-031", lecture:"L19", prof:"Smith", tier:"new", topic:"L19", sub:"cyp2c19", skill:"figure",
+{id:"L19-031", lecture:"L19", prof:"Smith", tier:"new", topic:"L19", sub:"cyp2c19", skill:"figure", core:true, coreWhy:"study list item 3 (Furuta) and her spoken question on this figure",
  concept:"cyp2c19-furuta-figure", tags:["smith"], source:"both",
  stem:"Furuta et al. (2004) gave lansoprazole 30 mg and plotted three bar panels: area under the curve (AUC) for the proton pump inhibitor (PPI) in ng-h/mL, intragastric pH (24 h mean), and cure rate (%). Each panel has one bar each for cytochrome P450 2C19 (CYP2C19) homozygous extensive metabolizers (homEM), heterozygotes (hetEM) and poor metabolizers (PM). Which phenotype showed the highest drug AUC and the highest gastric pH?",
  options:[
@@ -488,7 +488,7 @@ QUESTIONS.push(
   note:"Keyed to her words: irinotecan is not a prodrug; it is active and is further metabolized to the active SN-38. Katzung ch. 5 calls irinotecan a prodrug hydrolyzed to SN-38. For her exam, answer that it is not a prodrug.",
  cite:"PGx-Examples-Students-Fall-2026.pdf slide 'UDP-Glucuronosyl-transferase (UGT1A1)' (p. 30); transcript 10/22"},
 
-{id:"L19-039", lecture:"L19", prof:"Smith", tier:"new", topic:"L19", sub:"ugt1a1", skill:"tell",
+{id:"L19-039", lecture:"L19", prof:"Smith", tier:"new", topic:"L19", sub:"ugt1a1", skill:"tell", core:true, coreWhy:"she singled out what is new on the UGT1A1*28 slide versus CYP2C19*17",
  concept:"ugt1a1-28-vs-2c19-17", tags:["smith"], source:"both",
  stem:"UGT1A1*28 and CYP2C19*17 are both promoter-region variants. How do their effects differ?",
  options:[
@@ -565,9 +565,9 @@ QUESTIONS.push(
  concept:"cyp2c19-pm-ppi-ulcer-healing", tags:["smith","reading"], source:"both",
  stem:"For a patient taking a proton pump inhibitor (PPI), what does the CYP2C19 poor-metabolizer phenotype do to ulcer healing?",
  options:[
-  {t:"Increases it", correct:true, why:"Poor metabolizers on PPIs have increased ulcer healing."},
+  {t:"Increases it", correct:true, why:"A poor metabolizer clears the PPI slowly, so PPI levels stay higher and gastric pH rises more. PPIs have a very wide therapeutic index, so the higher level brings better healing without side effects."},
   {t:"Decreases it", correct:false, why:"A poor metabolizer clears the PPI slowly, so PPI levels stay higher, not lower."},
-  {t:"No effect on healing", correct:false, why:"Increased ulcer healing is a clinical consequence of the poor-metabolizer phenotype."},
+  {t:"No effect on healing", correct:false, why:"CYP2C19 clears PPIs, so a phenotype that clears them slowly changes the drug level and therefore the response; in poor metabolizers, healing increases."},
   {t:"Decreases it, with a sharp rise in adverse effects", correct:false, why:"PPIs have a very wide therapeutic index; more adverse responses with poor metabolism is the SSRI and diazepam pattern."}],
  teach:"A CYP2C19 poor metabolizer clears PPIs slowly, so PPI levels stay higher and gastric pH rises more. With the wide therapeutic index of PPIs this is a benefit: in the Furuta paper ulcer healing ran parallel with H. pylori cure, and every ulcer healed in poor metabolizers.",
  quote:"people that are on proton pump inhibitors, if they're poor metabolizers. They actually have increased ulcer healing.",
@@ -589,11 +589,11 @@ QUESTIONS.push(
  concept:"nat2-frequency-monitoring", tags:["smith","inclass"], source:"both",
  stem:"Based on the NAT2 population frequencies, which patients on isoniazid might we be most concerned about monitoring for hepatotoxicity? Select all that apply.",
  options:[
-  {t:"Japanese patients", correct:true, why:"Only about 10% are slow acetylators, so the rest are probably fast acetylators, the phenotype with isoniazid hepatotoxicity."},
-  {t:"Caucasian patients", correct:true, why:"About 30 to 45% are fast acetylators, so about half could be fast."},
-  {t:"Middle Eastern patients", correct:false, why:"About 80% are slow acetylators; their isoniazid concern is peripheral nerve damage."},
-  {t:"Slow acetylators of any population", correct:false, why:"Slow acetylators on isoniazid get peripheral nerve damage; hepatotoxicity is the fast-acetylator risk."}],
- teach:"Fast acetylators on isoniazid risk hepatotoxicity; slow acetylators risk peripheral nerve damage. Caucasians are 30-45% fast, Japanese 10% slow, Middle East 80% slow. So most of a Japanese population and about half of a Caucasian population could be fast acetylators.",
+  {t:"Japanese patients", correct:true, why:"Only about 10% of the Japanese population are slow acetylators, so the rest are probably fast acetylators, and fast acetylators make the isoniazid metabolites that can cause hepatotoxicity."},
+  {t:"Caucasian patients", correct:true, why:"The slide gives 30-45% of Caucasians as fast acetylators, which she rounded to \"about half.\" That many patients making the hepatotoxic isoniazid metabolites quickly is why she would monitor their liver."},
+  {t:"Middle Eastern patients", correct:false, why:"About 80% are slow acetylators. A slow acetylator does not metabolize isoniazid quickly, so the drug stays in the body and the concern is peripheral nerve damage, not the liver damage caused by fast-acetylator metabolites."},
+  {t:"Slow acetylators of any population", correct:false, why:"Slow acetylators do not metabolize isoniazid quickly, so their problem is the drug staying in the body and causing peripheral nerve damage. Hepatotoxicity comes from the metabolites that fast acetylators make."}],
+ teach:"Fast acetylators metabolize isoniazid quickly, and \"some of the metabolites of that metabolism can cause hepatotoxicity,\" so liver monitoring targets populations with many fast acetylators. Only about 10% of Japanese are slow, so the rest are probably fast; the slide gives 30-45% of Caucasians as fast, which she rounded to \"about half.\" About 80% of Middle Eastern patients are slow, so their concern is nerve damage.",
  quote:"So if only about 10% of a Japanese population are slow acetylators, that means the rest of them are probably fast acetylators, and then about half of your Caucasian population could be fast acetylators",
  cite:"PGx-Examples-Students-Fall-2026.pdf slide 'N-acetyltransferase 2 (NAT2)' (p. 19); transcript 10/22"},
 
@@ -637,7 +637,7 @@ QUESTIONS.push(
  note:"lowYield: number recall duplicating L19-049. Her \"not going to test you on these numbers\" referred to the CYP2D6 frequencies, not these.",
  cite:"PGx-Examples-Students-Fall-2026.pdf slide 'CYP2C19 Polymorphisms' (p. 25); transcript 10/22"},
 
-{id:"L19-051", lecture:"L19", prof:"Smith", tier:"new", topic:"L19", sub:"cyp2c9", skill:"recall", dupOf:"L19-046", core:true, coreWhy:"her Exam 4 study list item 1 (objectives): expected frequency of the clinically significant variants",
+{id:"L19-051", lecture:"L19", prof:"Smith", tier:"new", topic:"L19", sub:"cyp2c9", skill:"recall", dupOf:"L19-046",
  concept:"cyp2c9-2-3-population", tags:["smith"], source:"both",
  stem:"About what share of Caucasians carry one or both of the low-activity CYP2C9 variants (*2, *3)?",
  options:[
@@ -656,18 +656,18 @@ QUESTIONS.push(
   {t:"Fast acetylator of NAT2; about 1 in 3000", correct:false, why:"NAT2 acetylates isoniazid, not succinylcholine."},
   {t:"Ultrarapid CYP2D6 metabolizer; about 15 to 25%", correct:false, why:"CYP2D6 does not clear succinylcholine, and ultrarapid status would speed clearance, not slow it."},
   {t:"Extensive metabolizer of butyrylcholinesterase; most patients", correct:false, why:"Extensive metabolizers clear the drug in about 2 minutes; this child did not."}],
- teach:"Butyrylcholinesterase hydrolyzes succinylcholine. Extensive metabolizers clear it in about 2 minutes; slow metabolizers take 2 to 3 hours, a phenotype in about 1 in 3000 patients.",
+ teach:"Butyrylcholinesterase hydrolyzes succinylcholine, a muscle paralyzer that also stops the diaphragm. An extensive metabolizer clears it in about 2 minutes, so breathing returns quickly; a slow metabolizer takes 2 to 3 hours, so the patient cannot breathe on their own until the drug is cleared. The slow phenotype occurs in about 1 in 3000 patients.",
  quote:"Slow metabolizers take a lot longer to clear the drug, so 2 to 3 hours",
  cite:"PGx-Examples-Students-Fall-2026.pdf slide 'Butyrylcholinesterase (BChE)' (p. 18); transcript 10/22"},
 {id:"L19-053", lecture:"L19", prof:"Smith", tier:"new", topic:"L19", sub:"nat2", skill:"apply", core:true, coreWhy:"her Exam 4 study list item 1 (objectives): the NAT2 acetylator example and whom to monitor",
  concept:"nat2-middle-east-apply", tags:["smith"], source:"both",
  stem:"A patient of Middle Eastern descent is started on isoniazid for tuberculosis. Based on the NAT2 phenotype frequencies, which adverse effect should the pharmacist watch for first?",
  options:[
-  {t:"Peripheral nerve damage from slow acetylation", correct:true, why:"About 80% of people of Middle Eastern descent are slow acetylators; unacetylated isoniazid causes nerve damage."},
-  {t:"Hepatotoxicity from fast acetylation", correct:false, why:"Hepatotoxicity goes with fast acetylators, common in Japanese and about half of Caucasians."},
-  {t:"Drug-induced lupus erythematosus", correct:false, why:"That is the slow-acetylator effect of procainamide, not isoniazid nerve damage."},
-  {t:"Respiratory depression from rapid drug activation", correct:false, why:"Isoniazid is not activated to a respiratory depressant by acetylation."}],
- teach:"About 80% of people of Middle Eastern descent are slow acetylators. Isoniazid that is not acetylated quickly causes peripheral nerve damage, so that is the first concern in a slow acetylator.",
+  {t:"Peripheral nerve damage from slow acetylation", correct:true, why:"About 80% of people of Middle Eastern descent are slow acetylators. A slow acetylator does not metabolize isoniazid quickly, so the drug stays in the body, and that causes peripheral nerve damage."},
+  {t:"Hepatotoxicity from fast acetylation", correct:false, why:"Hepatotoxicity comes from the metabolites that fast acetylators make from isoniazid. With about 80% slow, only the remaining minority of a Middle Eastern population would be fast, so it is not the first concern here. It is the concern for Japanese patients (about 10% slow, so the rest probably fast) and, in her words, \"about half\" of Caucasians (the slide gives 30-45% fast)."},
+  {t:"Drug-induced lupus erythematosus", correct:false, why:"Drug-induced lupus is a slow-acetylator effect, but of procainamide: an immunologically based reaction when procainamide is not acetylated fast enough. This patient is on isoniazid, whose slow-acetylator effect is peripheral nerve damage."},
+  {t:"Respiratory depression from rapid drug activation", correct:false, why:"Respiratory depression from fast activation is the codeine example: a CYP2D6 ultrarapid metabolizer turns codeine into a large amount of morphine quickly. The isoniazid effects she gives for NAT2 are peripheral nerve damage (slow acetylators) and hepatotoxicity (fast acetylators), not breathing suppression."}],
+ teach:"NAT2 acetylates isoniazid. In a slow acetylator isoniazid \"doesn't get metabolized very quickly,\" so it stays in the body and causes peripheral nerve damage; in a fast acetylator the metabolites of that acetylation cause hepatotoxicity. About 80% of people of Middle Eastern descent are slow acetylators, so this patient is most likely slow, and nerve damage is the first thing to watch for.",
  quote:"Middle Eastern descent, um, and you need to put them on isoniazide, you might be concerned about watching for some of the nerve damage that can happen",
  cite:"PGx-Examples-Students-Fall-2026.pdf slide 'N-acetyltransferase 2 (NAT2)' (p. 19); transcript 10/22"},
 {id:"L19-054", lecture:"L19", prof:"Smith", tier:"new", topic:"L19", sub:"cyp2c19", skill:"apply", core:true, coreWhy:"her Exam 4 study list item 1 (objectives): the clopidogrel CYP2C19 example",

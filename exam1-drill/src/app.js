@@ -705,7 +705,7 @@ if (typeof NARR_Q !== 'undefined') QUESTIONS.forEach(q => { if (examOf(q) === 4 
 /* ---------- Topics ---------- */
 let FILT = {skill: 'all'};
 /* ★ Most likely on her exam: items marked core (her quiz or poll concept, her words that it is testable, her posted keys, an objective tested directly). */
-const coreBtn = (qs, tid, sid, ex) => { const n = qs.filter(q => q.core && !q.lowYield).length; return n ? `<button class="btn ghost corebtn" data-core="${tid}" ${sid ? `data-sub="${sid}" ` : ''}data-ex="${ex}" title="Most likely on her exam: her quiz and poll concepts, what she said to know, her keys, her objectives">★ Likely: ${n}</button>` : ''; };
+const coreBtn = (qs, tid, sid, ex) => { const n = qs.filter(q => q.core && !q.lowYield && !q.dupOf).length; return n ? `<button class="btn ghost corebtn" data-core="${tid}" ${sid ? `data-sub="${sid}" ` : ''}data-ex="${ex}" title="Most likely on her exam: her quiz and poll concepts, what she said to know, her keys, her objectives">★ Likely: ${n}</button>` : ''; };
 function vTopics() {
   // the skill filter applies to the counts, both study buttons, the tier buttons and the topic list; flags and the ladders
   // (each one a chain across skills, climbed whole) use the whole bank
@@ -718,7 +718,7 @@ function vTopics() {
   ${examCard(ex, pool0)}${focusOn() ? focusCard() : ''}${newsCard()}
   <div class="card"><div class="row" style="justify-content:space-between">
    <div><b>${pool.length}</b> ${FILT.skill === 'all' ? '' : esc((SKILL[FILT.skill] || {}).short || '') + ' '}questions in the bank · <b>${seen}</b> seen · accuracy <b>${a.pct == null ? '—' : a.pct + '%'}</b></div>
-   <div class="row"><button class="btn" id="due">Study what is due</button><button class="btn ghost" id="all">One pass, all questions</button>${pool.filter(q => q.core && !q.lowYield).length ? `<button class="btn ghost" id="coreall" title="Her quiz and poll concepts, what she said to know, her posted keys and her objectives">★ Most likely on her exam · ${pool.filter(q => q.core && !q.lowYield).length}</button>` : ''}${whyPool(pool).length ? `<button class="btn ghost" id="whyq" title="Questions that ask for the reason behind a concept">Why questions · ${whyPool(pool).length}</button>` : ''}</div></div>
+   <div class="row"><button class="btn" id="due">Study what is due</button><button class="btn ghost" id="all">One pass, all questions</button>${pool.filter(q => q.core && !q.lowYield && !q.dupOf).length ? `<button class="btn ghost" id="coreall" title="Her quiz and poll concepts, what she said to know, her posted keys and her objectives">★ Most likely on her exam · ${pool.filter(q => q.core && !q.lowYield && !q.dupOf).length}</button>` : ''}${whyPool(pool).length ? `<button class="btn ghost" id="whyq" title="Questions that ask for the reason behind a concept">Why questions · ${whyPool(pool).length}</button>` : ''}</div></div>
    <div class="row" style="margin-top:10px;justify-content:space-between"><span class="row"><span class="meta" style="margin:0">Answer:</span>${layoutToggle()}</span>
    <span class="row"><span class="meta" style="margin:0">⚑ Flagged: <b>${flaggedPool().length}</b></span>${flaggedPool().length ? `<button class="btn ghost" id="drillflag">Drill flagged</button><button class="btn ghost" id="clearflag">Clear flags</button>` : ''}</span></div>
    <div class="row" style="margin-top:10px"><span class="meta" style="margin:0">Skill:</span>
@@ -777,10 +777,10 @@ function vTopics() {
   const df = $('#drillflag'); if (df) df.onclick = () => startQuiz(flaggedPool(), 'Flagged questions', 'pass');
   const cf = $('#clearflag'); if (cf) cf.onclick = () => { if (confirm('Remove every flag?')) { S.flags = {}; save(); vTopics(); } };
   document.querySelectorAll('[data-sk]').forEach(c => c.onclick = () => { FILT.skill = c.dataset.sk; vTopics(); });
-  const ca = $('#coreall'); if (ca) ca.onclick = () => startQuiz(shuffle(pool.filter(q => q.core && !q.lowYield)), '★ Most likely on her exam', 'pass');
+  const ca = $('#coreall'); if (ca) ca.onclick = () => startQuiz(shuffle(pool.filter(q => q.core && !q.lowYield && !q.dupOf)), '★ Most likely on her exam', 'pass');
   document.querySelectorAll('[data-core]').forEach(b => b.onclick = e => {
     e.preventDefault(); e.stopPropagation();
-    const list = QUESTIONS.filter(q => q.core && !q.lowYield && q.topic === b.dataset.core && examOf(q) === +b.dataset.ex && (!b.dataset.sub || q.sub === b.dataset.sub));
+    const list = QUESTIONS.filter(q => q.core && !q.lowYield && !q.dupOf && q.topic === b.dataset.core && examOf(q) === +b.dataset.ex && (!b.dataset.sub || q.sub === b.dataset.sub));
     const t = TOPIC[b.dataset.core] || {}, sb = b.dataset.sub && (t.subs || []).find(x => x.id === b.dataset.sub);
     startQuiz(shuffle(list), '★ Most likely: ' + (sb ? `${t.name}: ${sb.name}` : t.name), 'pass');
   });

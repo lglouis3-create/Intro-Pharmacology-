@@ -39,9 +39,9 @@ QUESTIONS.push(
  stem:"Patients on thiopurines can lose their hair and have GI distress. What explains these side effects?",
  options:[
   {t:"The drugs also stop normal rapidly dividing cells", correct:true, why:"The drugs cannot tell rapidly dividing cancer cells from normal cells that also divide rapidly."},
-  {t:"The drugs trigger an allergic reaction in the skin and gut", correct:false, why:"These effects come from blocked cell division, not an immune reaction."},
-  {t:"TPMT makes a toxic metabolite in the gut", correct:false, why:"TPMT makes the inactive 6-methylmercaptopurine."},
-  {t:"The drugs block P-glycoprotein in the gut", correct:false, why:"P-glycoprotein was not part of the thiopurine explanation."}],
+  {t:"The drugs trigger an allergic reaction in the skin and gut", correct:false, why:"Hair follicles and the gut lining are cells that normally divide rapidly. 6-TGN stops dividing cells, so these cells are hit by the same action that treats the disease; no immune reaction is needed to explain it."},
+  {t:"TPMT makes a toxic metabolite in the gut", correct:false, why:"TPMT's product, 6-methylmercaptopurine, is inactive and is cleared. The active compound that stops cell division is 6-TGN, made by the other pathway."},
+  {t:"The drugs block P-glycoprotein in the gut", correct:false, why:"The side effects come from 6-TGN stopping rapidly dividing normal cells; a transporter in the gut wall plays no part in that explanation."}],
  teach:"The 6-thioguanine nucleotides stop cells from dividing, which is how thiopurines suppress the immune system and treat cancer. Hair follicles and the GI lining also divide rapidly, so they are hit too. Too much 6-TGN also causes significant immunosuppression.",
  quote:"And these medications can't differentiate between rapidly dividing cancer cells and the other cells in the body that normally rapidly divide, so you get these side effects, OK?",
  cite:"PGx-Examples-Students-Fall-2026.pdf slide 'Thiopurine Methyltransferase (TPMT) 2' (p. 32); (T) 10/26 transcript"},
@@ -75,10 +75,10 @@ QUESTIONS.push(
  stem:"A histogram of TPMT activity in red blood cells (298 unrelated adults) has three groups. Where are the homozygous wild-type (TPMT*1/*1) people?",
  options:[
   {t:"In the largest peak, at the highest activity", correct:true, why:"Most people have the highest activity, and they are homozygous wild type."},
-  {t:"In the smaller middle peak, at intermediate activity", correct:false, why:"The middle, smaller group is the heterozygotes (*1 with *3A or *3C)."},
-  {t:"At the very lowest activity", correct:false, why:"The lowest activity is the homozygous *3A or *3C group."},
+  {t:"In the smaller middle peak, at intermediate activity", correct:false, why:"The middle group has one working allele and one inactivating allele (*1 with *3A or *3C), so its activity is in between, not the highest."},
+  {t:"At the very lowest activity", correct:false, why:"The lowest activity belongs to people with two inactivating alleles (homozygous *3A or *3C), who have very little working enzyme."},
   {t:"Spread evenly across all three groups", correct:false, why:"Each group corresponds to one genotype class."}],
- teach:"The large high-activity peak is homozygous wild type (*1/*1); a smaller intermediate group is the heterozygotes (*1/*3A or *1/*3C); a very small lowest-activity group is homozygous *3A or *3C. The *3A SNPs are G460A and A719G.",
+ teach:"*3A and *3C are inactivating alleles: they greatly lower TPMT activity. Most people carry two wild-type alleles, so the largest peak is at the highest activity (*1/*1). Heterozygotes (*1 with *3A or *3C) have one working allele and fall in the smaller intermediate group. The very small lowest group carries two inactivating alleles. The *3A SNPs are G460A and A719G.",
  quote:"Most people are homozygous wild type for TPMT, OK.",
  cite:"PGx-Examples-Students-Fall-2026.pdf slide 'Thiopurine Methyltransferase (TPMT) 4' (p. 34); transcript 10/26"},
 
@@ -111,10 +111,10 @@ QUESTIONS.push(
  stem:"A patient about to start mercaptopurine is TPMT*1/*3A (heterozygous for an inactivating allele). About what fraction of the standard dose does this patient usually need?",
  options:[
   {t:"About 35% of the standard dose", correct:true, why:"Heterozygotes usually need about 35% of the wild-type dose, lower than half."},
-  {t:"About 50% of the standard dose", correct:false, why:"She stressed it is not half; about 35% is lower than half."},
+  {t:"About 50% of the standard dose", correct:false, why:"Half sounds logical for one working allele, but she stressed the usual need is about 35%, lower than half; a 50% dose can still leave too much 6-TGN."},
   {t:"Less than 10% of the standard dose", correct:false, why:"Less than 10% is for homozygous deficient patients."},
-  {t:"The full standard dose", correct:false, why:"Heterozygotes still need a large dose reduction."}],
- teach:"Homozygous deficient patients all need a dose reduction and tolerate less than 10% of the wild-type mercaptopurine dose. Heterozygotes also need a large reduction: about 35% of the wild-type dose, lower than half, with more variability.",
+  {t:"The full standard dose", correct:false, why:"With one inactivating allele, a full dose sends more drug down the 6-TGN pathway than in a wild-type patient, raising the risk of myelosuppression."}],
+ teach:"A heterozygote has one inactivating TPMT allele, so less of each dose is turned into the inactive methyl product and more becomes 6-TGN, which stops dividing cells. To keep 6-TGN out of the toxic range the dose must drop: about 35% of the wild-type dose, lower than half, with more variability. Homozygous deficient patients have almost no TPMT and tolerate less than 10%.",
  quote:"It's not half the dose, it's about 35% is lower than half the dose, OK?",
  note:"Transcript and slide differ. The slide (p. 35) says \"35% of heterozygotes need dose decrease\" (a share of patients). She said heterozygotes \"usually need about 35% of the dose that homozygous wild type patients need\", and confirmed \"about 35% of the standard dose\" when a student asked. Keyed to what she said.",
  cite:"PGx-Examples-Students-Fall-2026.pdf slide 'Thiopurine Methyltransferase (TPMT) 5' (p. 35); transcript 10/26"},
@@ -126,12 +126,12 @@ QUESTIONS.push(
   {t:"100%; less than 10% of the wild-type dose", correct:true, why:"100% of homozygous deficient patients need dose reduction and tolerate under 10% of the wild-type dose."},
   {t:"50% of them; about half of the wild-type dose", correct:false, why:"All homozygous deficient patients need a reduction, to under 10%."},
   {t:"35%; about a third of the dose", correct:false, why:"35% is the heterozygote figure."},
-  {t:"None; the standard dose", correct:false, why:"A standard dose risks dangerous myelosuppression in these patients."}],
- teach:"All (100%) homozygous deficient patients need a dose reduction and tolerate less than 10% of the mercaptopurine dose that homozygous wild-type patients tolerate; a standard dose means more myelosuppression.",
+  {t:"None; the standard dose", correct:false, why:"With the TPMT route blocked, a standard dose produces a large build-up of 6-TGN, which stops blood cell division; patients have died this way."}],
+ teach:"Homozygous deficient patients have two inactivating TPMT alleles, so almost none of the drug is methylated to the inactive product and most of the dose becomes 6-TGN. At a standard dose that much 6-TGN stops blood cells dividing, causing dangerous myelosuppression. So all (100%) of them need a reduction and tolerate less than 10% of the wild-type dose.",
  note:"The caption renders the 100% as \"1 to 100%\"; the slide prints 100%.",
  cite:"PGx-Examples-Students-Fall-2026.pdf slide 'Thiopurine Methyltransferase (TPMT) 5' (p. 35); transcript 10/26"},
 
-{id:"L20-010", lecture:"L20", prof:"Smith", tier:"new", topic:"L20", sub:"tpmt-dose", skill:"apply",
+{id:"L20-010", lecture:"L20", prof:"Smith", tier:"new", topic:"L20", sub:"tpmt-dose", skill:"apply", core:true, coreWhy:"her strongest 10/26 statement on TPMT",
  concept:"tpmt-standard-of-care", tags:["smith"], source:"both",
  stem:"A transplant patient is about to start azathioprine; no TPMT result is on file. What is the standard of care?",
  options:[
@@ -149,22 +149,22 @@ QUESTIONS.push(
  options:[
   {t:"Homozygous variant (v/v)", correct:true, why:"With the same dose, v/v patients had much higher 6-TGN levels and toxicity far above the others."},
   {t:"Heterozygous (wt/v)", correct:false, why:"Heterozygotes were in between."},
-  {t:"Homozygous wild type (wt/wt)", correct:false, why:"Wild-type patients had the lowest 6-TGN and the least toxicity."},
-  {t:"All three groups were equal", correct:false, why:"Equal doses gave very unequal exposure and toxicity."}],
- teach:"With the same mercaptopurine dose for all, v/v patients have very high 6-TGN in red blood cells and toxicity off the chart, wt/v are in between, and wt/wt have low 6-TGN and low toxicity. Do not dose everyone alike.",
+  {t:"Homozygous wild type (wt/wt)", correct:false, why:"Two working TPMT alleles send the most drug to the inactive product, so wild-type patients had the lowest 6-TGN and the least toxicity."},
+  {t:"All three groups were equal", correct:false, why:"The same dose was handled differently by each genotype: less TPMT activity meant more 6-TGN, so exposure and toxicity were very unequal."}],
+ teach:"On the same mercaptopurine dose, v/v patients have little TPMT activity, so the drug cannot be sent to the inactive methyl product and more becomes 6-TGN. Their 6-TGN in red blood cells is very high and their toxicity (immunosuppression) off the chart. wt/v patients, with one working allele, are in between; wt/wt patients inactivate the most drug and have the lowest 6-TGN and toxicity.",
  quote:"So if we dosed everybody. With the same dose, no matter what their genotype is, which is what this is showing, everybody's getting the same dose.",
  note:"\"v\" in the figure means variant; she said this notation is no longer used.",
  cite:"PGx-Examples-Students-Fall-2026.pdf slide 'Dosing 6MP without pharmacogenetics' (p. 36, Cheok and Evans); transcript 10/26"},
 
-{id:"L20-012", lecture:"L20", prof:"Smith", tier:"new", topic:"L20", sub:"tpmt-dose", skill:"figure",
+{id:"L20-012", lecture:"L20", prof:"Smith", tier:"new", topic:"L20", sub:"tpmt-dose", skill:"figure", core:true, coreWhy:"second arm of the Cheok and Evans figure",
  concept:"cheok-evans-individualized", tags:["smith"], source:"both",
  stem:"In the individualized arm of the Cheok and Evans figure, doses are set by TPMT genotype. What happens to 6-TGN levels and toxicity?",
  options:[
   {t:"Both become similar and low across genotypes", correct:true, why:"Lower doses for v/v and wt/v brought 6-TGN levels into the same range, and toxicity stayed low in all groups."},
   {t:"Toxicity rises in wild-type patients given the full dose", correct:false, why:"Wild-type patients keep the full dose and low toxicity."},
-  {t:"v/v patients still have the most toxicity", correct:false, why:"Individualizing the dose brought v/v toxicity down with the others."},
+  {t:"v/v patients still have the most toxicity", correct:false, why:"Their high toxicity came from too much 6-TGN at a full dose; a much lower dose lowers 6-TGN, so their toxicity fell to the level of the others."},
   {t:"Nothing changes", correct:false, why:"Individualized dosing normalized exposure and toxicity."}],
- teach:"In the individualized arm, v/v patients get a very low dose, heterozygotes an intermediate dose and wild-type patients the full dose. The 6-TGN levels become similar and cumulative toxicity stays low in all groups: the standard of care.",
+ teach:"Patients with less TPMT turn more of each dose into 6-TGN. Giving v/v patients a very low dose, heterozygotes an intermediate dose and wild-type patients the full dose offsets that difference, so 6-TGN levels become similar and cumulative toxicity stays low in all groups. This genotype-based dosing is now the standard of care.",
  quote:"We're going to individualize their dose based on their genotypes.",
  cite:"PGx-Examples-Students-Fall-2026.pdf slide 'Dosing 6MP with pharmacogenetics' (p. 37, Cheok and Evans); transcript 10/26"},
 
@@ -198,9 +198,9 @@ QUESTIONS.push(
  stem:"Which narrow-therapeutic-index P-gp substrate is greatly affected by low-activity P-gp?",
  options:[
   {t:"Digoxin", correct:true, why:"Digoxin comes from foxglove, is a narrow-therapeutic-index P-gp substrate, and its bioavailability rises with low-activity P-gp."},
-  {t:"Metoprolol", correct:false, why:"Metoprolol is the beta-1 receptor example, not a P-gp substrate."},
-  {t:"Warfarin", correct:false, why:"Warfarin is the CYP2C9 and VKORC1 example."},
-  {t:"Simvastatin", correct:false, why:"Simvastatin is the OATP1B1 (SLCO1B1) example."}],
+  {t:"Metoprolol", correct:false, why:"Metoprolol was her drug-target example: its response changes with beta-1 receptor (ADRB1) variants that change the receptor, not with a gut efflux transporter."},
+  {t:"Warfarin", correct:false, why:"Warfarin is narrow-index, but its genetic dose needs come from CYP2C9 (clearance) and VKORC1 (the target), not from P-gp efflux."},
+  {t:"Simvastatin", correct:false, why:"Simvastatin is affected by the liver uptake transporter OATP1B1 (SLCO1B1); low function there raises plasma levels and muscle toxicity, which is a different transporter and toxicity."}],
  teach:"Digoxin is the key P-gp substrate. Its therapeutic index is very narrow, and its bioavailability rises with low-activity P-gp, so a normal dose can give a heart rate that is far too low.",
  quote:"We know that digoxin's bioavailability goes up if people have a low activity version of PGP.",
  cite:"PGx-Examples-Students-Fall-2026.pdf slides 'Variations in Drug Transporting Genes' (p. 40), 'P-Glycoprotein' (p. 45); transcript 10/26"},
@@ -229,7 +229,7 @@ QUESTIONS.push(
  quote:"If you've got a low activity version of PGP going on, the concentration of the drug within the cell here increases, but until these people did this work, we hadn't proven that",
  cite:"PGx-Examples-Students-Fall-2026.pdf slides 'Variations in Drug Transporting Genes 3' (p. 42), 'Genes 4' (p. 43); transcript 10/26"},
 
-{id:"L20-018", lecture:"L20", prof:"Smith", tier:"new", topic:"L20", sub:"pgp", skill:"apply",
+{id:"L20-018", lecture:"L20", prof:"Smith", tier:"new", topic:"L20", sub:"pgp", skill:"apply", core:true, coreWhy:"her spoken question with her answer",
  concept:"why-characterize-transporters", tags:["smith","inclass"], source:"transcript",
  stem:"Why spend time and money characterizing all the transporters involved in the bioavailability of oral drugs?",
  options:[
@@ -371,9 +371,9 @@ QUESTIONS.push(
  options:[
   {t:"Lower the simvastatin dose or use another statin", correct:true, why:"Either is recommended; switching statin may be the wiser choice."},
   {t:"Double the simvastatin dose", correct:false, why:"Exposure is already high; a higher dose raises the risk of muscle breakdown."},
-  {t:"No change", correct:false, why:"A change is recommended."},
-  {t:"Keep the dose and add a P-glycoprotein inhibitor", correct:false, why:"That would not address OATP1B1 uptake."}],
- teach:"Patients are often genotyped for SLCO1B1 (*5, *15, *17). With at least one nonfunctional allele, lower the simvastatin dose or give an alternative statin; some other statins cause less rhabdomyolysis, so changing drugs may be better.",
+  {t:"No change", correct:false, why:"A usual dose already gives higher plasma levels in these patients, raising the risk of muscle breakdown, so a change is recommended."},
+  {t:"Keep the dose and add a P-glycoprotein inhibitor", correct:false, why:"The problem is reduced uptake by OATP1B1 into the liver; changing P-gp efflux does not restore that uptake, so plasma simvastatin stays high."}],
+ teach:"OATP1B1 takes simvastatin up into the liver. With a nonfunctional SLCO1B1 allele less is taken up, so plasma simvastatin rises and can break down muscle (rhabdomyolysis) and damage the kidneys. So the recommendation is a lower simvastatin dose or another statin; she said some other statins cause less rhabdomyolysis, so switching may be the better choice.",
  quote:"it might be wise to, instead of just lowering the statin, maybe you want to give a different statin",
  cite:"PGx-Examples-Students-Fall-2026.pdf slide 'Organic anion transporter' (p. 47); transcript 10/26"},
 
@@ -417,11 +417,11 @@ QUESTIONS.push(
  concept:"adrb1-metoprolol", tags:["smith"], source:"both",
  stem:"A hypertensive patient is genotyped before metoprolol and carries the variant (non-wild-type) alleles at both beta-1 receptor (ADRB1) SNPs, at codons 49 and 389. What does the evidence suggest?",
  options:[
-  {t:"Response may be poorer; consider another drug", correct:true, why:"Patients homozygous for Ser49 and Arg389 (wild type) responded better."},
+  {t:"Response may be poorer; consider another drug", correct:true, why:"The variants change the receptor metoprolol binds, and wild-type patients had the better response, so this patient may not respond as well."},
   {t:"Response will be better than wild type", correct:false, why:"The wild type had the better response."},
-  {t:"Metoprolol will be metabolized faster", correct:false, why:"ADRB1 is the drug target, not a metabolizing enzyme."},
+  {t:"Metoprolol will be metabolized faster", correct:false, why:"ADRB1 codes the receptor metoprolol acts on (its target), so its variants change binding and response, not how fast the drug is cleared."},
   {t:"Genotype has no bearing on beta-blocker response", correct:false, why:"Beta-1 genotype may determine blood pressure response to beta-blockers."}],
- teach:"Hypertensive patients on metoprolol who were homozygous for Ser49 and Arg389 (wild type) responded better. Beta-1 receptor genotype may determine blood pressure response to beta-blockers and help choose the drug; a patient with the variants may not respond as well to metoprolol.",
+ teach:"Metoprolol works by binding the beta-1 receptor, coded by ADRB1. The Ser49Gly and Arg389Gly variants change the receptor, so metoprolol may not bind it as well. In hypertensive patients, those homozygous wild type (Ser49 and Arg389) responded better, so a patient with the variants may respond poorly and another drug may be considered.",
  quote:"They found that patients that were homozygous for the serine, and then for the arginine, so the wild type, they had a better response to the drug.",
  cite:"PGx-Examples-Students-Fall-2026.pdf slide 'Variations of Drug Targets: Receptors' (p. 50); transcript 10/26"},
 
@@ -453,10 +453,10 @@ QUESTIONS.push(
  stem:"Which statement about the EGFR gene in non-small cell lung cancer (NSCLC) is correct?",
  options:[
   {t:"A gain-of-function variant makes the receptor overexpressed", correct:true, why:"The EGFR gain-of-function mutation gives an overexpressed or overactive receptor in NSCLC."},
-  {t:"A loss-of-function variant silences the receptor in the tumor", correct:false, why:"It is a gain-of-function change."},
-  {t:"EGFR is a drug transporter", correct:false, why:"EGFR is a receptor, the drug target."},
+  {t:"A loss-of-function variant silences the receptor in the tumor", correct:false, why:"A silenced receptor would not drive division. The tumor variant is gain-of-function: an overactive receptor that makes cells divide too rapidly."},
+  {t:"EGFR is a drug transporter", correct:false, why:"EGFR is a receptor that signals cell division and is the target gefitinib blocks; it does not move drugs across membranes."},
   {t:"EGFR is a metabolizing enzyme", correct:false, why:"EGFR is a receptor, the drug target."}],
- teach:"EGFR (also HER1 or ErbB1) codes for the epidermal growth factor receptor. In some non-small cell lung cancers it carries a gain-of-function mutation, so the receptor is overexpressed or overactive. In 2004 response to the EGFR inhibitor gefitinib was found to depend on it.",
+ teach:"EGFR (also HER1 or ErbB1) codes the epidermal growth factor receptor, whose normal signal tells the cell to divide. In some non-small cell lung cancers a gain-of-function mutation makes the receptor overexpressed or overactive, so the cells divide too much. Gefitinib blocks that receptor's signal, which is why its response (2004) depends on the mutation.",
  cite:"PGx-Examples-Students-Fall-2026.pdf slide 'Variations of Drug Targets: Receptors 4' (p. 53); transcript 10/26"},
 
 {id:"L20-037", lecture:"L20", prof:"Smith", tier:"new", topic:"L20", sub:"receptors", skill:"recall",
@@ -513,9 +513,9 @@ QUESTIONS.push(
  options:[
   {t:"Those with at least one copy of the 5-repeat ALOX5 allele", correct:true, why:"Only subjects with at least one copy of the 5-repeat allele responded."},
   {t:"Those with no tandem repeats in the ALOX5 promoter region", correct:false, why:"Responders carried the 5-repeat allele."},
-  {t:"Those subjects with the most severe asthma at entry", correct:false, why:"Repeat number was not related to asthma severity."},
-  {t:"All subjects equally", correct:false, why:"Only 5-repeat carriers responded."}],
- teach:"ALOX5, coding 5-lipoxygenase, has a tandem-repeat variation in its promoter; the 5-repeat allele is thought to increase expression. In 5-lipoxygenase inhibitor trials, only subjects with at least one 5-repeat allele responded. This is the first enzyme drug target.",
+  {t:"Those subjects with the most severe asthma at entry", correct:false, why:"The repeat number had no apparent relationship with asthma severity; it was tied to response to the inhibitor, not to how bad the asthma was."},
+  {t:"All subjects equally", correct:false, why:"Response depended on the ALOX5 promoter repeat: only carriers of at least one 5-repeat allele responded."}],
+ teach:"5-lipoxygenase (gene ALOX5) is the enzyme the inhibitor drugs block, and it has a role in asthma. The ALOX5 promoter has tandem repeats, and the 5-repeat allele is thought to increase expression of the enzyme. In 5-lipoxygenase inhibitor trials only subjects with at least one 5-repeat allele responded; those with other repeat numbers did not respond as well. It is her first enzyme drug target.",
  cite:"PGx-Examples-Students-Fall-2026.pdf slide 'Variations of Drug Targets: Enzymes' (p. 55); transcript 10/26"},
 
 {id:"L20-042", lecture:"L20", prof:"Smith", tier:"new", topic:"L20", sub:"target-enz", skill:"tell",
@@ -586,10 +586,10 @@ QUESTIONS.push(
  left:["CYP2C9*2 and *3", "VKORC1 haplotypes", "CYP4F2"],
  right:["Decreased metabolism of S-warfarin (pharmacokinetic)", "Low activity of the drug target (pharmacodynamic)", "Metabolizes reduced (active) vitamin K to an inactive form"],
  pairs:[
-  {l:"CYP2C9*2 and *3", r:"Decreased metabolism of S-warfarin (pharmacokinetic)", why:"CYP2C9 is the PK gene: the variants clear S-warfarin more slowly."},
-  {l:"VKORC1 haplotypes", r:"Low activity of the drug target (pharmacodynamic)", why:"VKORC1 is the target; low-activity haplotypes are the PD part."},
-  {l:"CYP4F2", r:"Metabolizes reduced (active) vitamin K to an inactive form", why:"CYP4F2 inactivates reduced vitamin K."}],
- teach:"Warfarin is the integrated example: CYP2C9*2 and *3 decrease S-warfarin metabolism (PK), VKORC1 haplotypes lower the activity of the target (PD), and CYP4F2 metabolizes active vitamin K. All three affect warfarin dosing.",
+  {l:"CYP2C9*2 and *3", r:"Decreased metabolism of S-warfarin (pharmacokinetic)", why:"CYP2C9 is the PK gene: the variants metabolize S-warfarin more slowly, so it is cleared slowly and less is needed."},
+  {l:"VKORC1 haplotypes", r:"Low activity of the drug target (pharmacodynamic)", why:"VKORC1 is warfarin's target, vitamin K epoxide reductase (PD); a low-activity target needs less drug to inhibit it."},
+  {l:"CYP4F2", r:"Metabolizes reduced (active) vitamin K to an inactive form", why:"CYP4F2 breaks down active vitamin K, the antidote to warfarin; less CYP4F2 activity leaves more active vitamin K, so more warfarin is needed."}],
+ teach:"CYP2C9*2 and *3 clear S-warfarin more slowly (PK), so the same dose builds up and less warfarin is needed. VKORC1 haplotypes lower the activity of warfarin's target (PD), and a less active target needs less drug to inhibit it. CYP4F2 inactivates reduced (active) vitamin K, which opposes warfarin, so CYP4F2 activity also changes the dose.",
  cite:"PGx-Examples-Students-Fall-2026.pdf slides 'Integrated: Both PK and PD' (p. 57), 'Both PK and PD 2' (p. 58); transcript 10/26"},
 
 {id:"L20-048", lecture:"L20", prof:"Smith", tier:"new", topic:"L20", sub:"warfarin", skill:"recall", dupOf:"L19-022",
@@ -616,7 +616,7 @@ QUESTIONS.push(
  quote:"So you got kind of a double whammy here possible in patients for how much warfarin they need.",
  cite:"PGx-Examples-Students-Fall-2026.pdf slide 'Integrated: Both PK and PD' (p. 57); transcript 10/26"},
 
-{id:"L20-050", lecture:"L20", prof:"Smith", tier:"new", topic:"L20", sub:"warfarin", skill:"apply",
+{id:"L20-050", lecture:"L20", prof:"Smith", tier:"new", topic:"L20", sub:"warfarin", skill:"apply", core:true, coreWhy:"10/28: each warfarin variant's effect alone",
  concept:"low-target-less-drug", tags:["smith"], source:"both",
  stem:"Why does a patient with a low-activity VKORC1 haplotype need less warfarin?",
  options:[
@@ -668,7 +668,7 @@ QUESTIONS.push(
  cite:"PGx-Examples-Students-Fall-2026.pdf slides 'Integrated: Both PK and PD' 1-2 (pp. 57-58); transcript 10/26"},
 
 /* ---------------- Immune system: HLA ---------------- */
-{id:"L20-054", lecture:"L20", prof:"Smith", tier:"new", topic:"L20", sub:"hla", skill:"recall",
+{id:"L20-054", lecture:"L20", prof:"Smith", tier:"new", topic:"L20", sub:"hla", skill:"recall", core:true, coreWhy:"her direct instruction to know what HLAs do (needed for the HLA-B 'weird' comparison)",
  concept:"hla-what", tags:["smith","inclass"], source:"both",
  stem:"What do HLA genes code for, and how may a variant cause drug hypersensitivity?",
  options:[
@@ -698,16 +698,16 @@ QUESTIONS.push(
  left:["HLA-B*57:01", "HLA-B*15:02", "HLA-B*58:01", "HLA-DRB1*15:01, DRB5*01:01, DQB1*06:02 haplotype"],
  right:["Abacavir-induced skin toxicity", "Carbamazepine-induced skin toxicity", "Allopurinol-induced skin toxicity", "Amoxicillin-clavulanate-induced liver injury"],
  pairs:[
-  {l:"HLA-B*57:01", r:"Abacavir-induced skin toxicity", why:"Definitely associated, and potentially fatal."},
+  {l:"HLA-B*57:01", r:"Abacavir-induced skin toxicity", why:"The HLA-B*57:01 protein appears to recognize an abacavir-associated peptide that other HLA-B variants do not, so carriers are at risk of a potentially fatal reaction."},
   {l:"HLA-B*15:02", r:"Carbamazepine-induced skin toxicity", why:"A potentially fatal reaction to the anti-epileptic carbamazepine."},
   {l:"HLA-B*58:01", r:"Allopurinol-induced skin toxicity", why:"Allopurinol shows the table reaches another practice area."},
   {l:"HLA-DRB1*15:01, DRB5*01:01, DQB1*06:02 haplotype", r:"Amoxicillin-clavulanate-induced liver injury", why:"Amoxicillin-clavulanate is on the table."}],
- teach:"Katzung Table 5-4 links HLA variants to Stevens-Johnson syndrome, toxic epidermal necrolysis or drug-induced liver injury. The two main examples, both potentially fatal: HLA-B*57:01 with abacavir (a hypersensitivity reaction with multi-organ failure) and HLA-B*15:02 with carbamazepine. Allopurinol and amoxicillin-clavulanate show the list reaches other practice areas.",
+ teach:"HLA molecules present antigen to T cells. A variant HLA-B may have an altered antigen-binding site that recognizes different peptides, including drug-bound peptides, starting an immune reaction. Katzung Table 5-4 lists such pairs, causing skin toxicity or liver injury. The two main, potentially fatal examples: HLA-B*57:01 with abacavir and HLA-B*15:02 with carbamazepine; allopurinol and amoxicillin-clavulanate show other practice areas.",
  note:"The caption renders B*57:01 as \"5107\" and abacavir unclearly; the slide prints HLA-B*57:01 and abacavir, and she named abacavir later when assigning the drug labels. Keyed to the table's wording; on 10/27 she said of HLA-B*57:01 and abacavir: \"Hypersensitivity reaction, where? Multi-organ failure.\"",
  cite:"PGx-Examples-Students-Fall-2026.pdf slide 'Variations in Immune System Function 2' (p. 60, Katzung Table 5-4); transcript 10/26"},
 
 /* ---------------- Furuta et al. 1998 ---------------- */
-{id:"L20-057", lecture:"L20", prof:"Smith", tier:"new", topic:"L20", sub:"furuta", skill:"recall", readingId:"furuta-1998",
+{id:"L20-057", lecture:"L20", prof:"Smith", tier:"new", topic:"L20", sub:"furuta", skill:"recall", core:true, coreWhy:"furuta take-home quiz detail and the basis of 20-066 (generalizing)", readingId:"furuta-1998",
  concept:"furuta-design", tags:["smith","reading","inclass"], source:"transcript",
  stem:"Furuta et al. (1998): in what population was the study done, and what drugs were used?",
  options:[
@@ -755,7 +755,7 @@ QUESTIONS.push(
  quote:"M1 is 2, M2 is 3, right? Wild type is 1, right?",
  cite:"FurutaAnnIntMed1998.pdf (p. 1028, Methods); PGx-Examples-Students-Fall-2026.pdf slide 'Discussion of Furuta article' (p. 61); transcript 10/26"},
 
-{id:"L20-061", lecture:"L20", prof:"Smith", tier:"new", topic:"L20", sub:"furuta", skill:"apply", readingId:"furuta-1998",
+{id:"L20-061", lecture:"L20", prof:"Smith", tier:"new", topic:"L20", sub:"furuta", skill:"apply", core:true, coreWhy:"furuta spoken question", readingId:"furuta-1998",
  concept:"furuta-missing-33", tags:["smith","reading","inclass"], source:"transcript",
  stem:"Which CYP2C19 genotype did the Furuta study not capture, and does the gap matter?",
  options:[
@@ -781,7 +781,7 @@ QUESTIONS.push(
  note:"Keyed to her words (both *2 and *3 create a premature stop codon). The Goodman & Gilman figure on p. 26 marks *2 as a splice-site variant (which yields a truncated protein) and *3 as the W212X stop.",
  cite:"FurutaAnnIntMed1998.pdf (p. 1028); PGx-Examples-Students-Fall-2026.pdf slide 'Discussion of Furuta article' (p. 61); transcript 10/26"},
 
-{id:"L20-063", lecture:"L20", prof:"Smith", tier:"new", topic:"L20", sub:"furuta", skill:"apply", readingId:"furuta-1998",
+{id:"L20-063", lecture:"L20", prof:"Smith", tier:"new", topic:"L20", sub:"furuta", skill:"apply", core:true, coreWhy:"furuta spoken question", readingId:"furuta-1998",
  concept:"furuta-group2-activity", tags:["smith","reading","inclass"], source:"transcript",
  stem:"Do Furuta group 2 patients (wt/m1 or wt/m2) have CYP2C19 activity?",
  options:[
@@ -798,10 +798,10 @@ QUESTIONS.push(
  stem:"In the Furuta study, which group had the best H. pylori cure rate?",
  options:[
   {t:"Group 3, the poor metabolizers", correct:true, why:"Table 2: 100% cure in group 3."},
-  {t:"Group 1, the homozygous wild type (wt/wt)", correct:false, why:"Group 1 had the lowest cure rate, 28.6%."},
-  {t:"Group 2, the heterozygotes", correct:false, why:"Group 2 was in between, 60%."},
+  {t:"Group 1, the homozygous wild type (wt/wt)", correct:false, why:"Two working CYP2C19 alleles clear omeprazole fastest, so stomach pH rises least and amoxicillin is least protected: the lowest cure rate, 28.6%."},
+  {t:"Group 2, the heterozygotes", correct:false, why:"One working *1 allele clears omeprazole at an in-between rate, so the cure rate was in between, 60%."},
   {t:"All groups were equal", correct:false, why:"Cure rates differed sharply by genotype."}],
- teach:"Cure rates: 28.6% in group 1 (rapid-extensive), 60% in group 2 (intermediate-extensive), 100% in group 3 (poor metabolizers). Group 3 has no active CYP2C19, keeps omeprazole longer, and did best.",
+ teach:"Cure rates: 28.6% in group 1 (rapid-extensive), 60% in group 2 (intermediate-extensive), 100% in group 3 (poor metabolizers). Group 3 has no active CYP2C19, so omeprazole stays high and stomach pH stays high longer. Amoxicillin is unstable at low pH, so more of it stays active, and omeprazole raises amoxicillin in the gastric juice where H. pylori is.",
  quote:"So Group 3 has the best cure rate.",
  note:"She also said group 3 had \"the highest AUC\". The card notes the 1998 paper did not measure plasma omeprazole and cites the relative AUC (1:3.7:20) from earlier work; the AUC figure she showed on 10/22 was the 2004 lansoprazole study.",
  cite:"FurutaAnnIntMed1998.pdf (p. 1029, Table 2); PGx-Examples-Students-Fall-2026.pdf slide 'Discussion of Furuta article' (p. 61); transcript 10/26"},
