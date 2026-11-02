@@ -2,6 +2,10 @@
 
 Newest first. The build embeds this file; the Topics page shows what is new since your last visit, and the Progress page shows all of it. Keep each bullet to one short line.
 
+## 2026-11-02 (Gene cards)
+
+- Reference: each Exam 4 gene opens a card: normal role, the variant, look-alikes, its figure.
+
 ## 2026-11-02 (Daily check)
 
 - Two Exam 4 cases reworded (warfarin CYP4F2 distractor; ACE note on her two statements).
