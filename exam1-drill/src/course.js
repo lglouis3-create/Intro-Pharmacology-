@@ -49,6 +49,7 @@ const COURSE = {
     {id:'L20', deck:'PGx-Examples-Students-Fall-2026.pdf', label:'Day 20 (10/26): Pharmacogenomics examples, transporters, targets, HLA (Dr. Smith)', prof:'Smith', exam:4, module:4},
     {id:'L21', deck:'PGx-Resources-and-Cases-Students-Fall-2026.pdf', label:'Day 21 (10/27): Pharmacogenomics resources and drug labels (Dr. Smith)', prof:'Smith', exam:4, module:4},
     {id:'L22', deck:'ADE-Lecture-Students-2026.pdf', decks:['ADE-Lecture-Students-2026.pdf', 'DDI Lecture Students 2026 (1).pdf'], label:'Day 22 (10/28): Adverse drug events and drug-drug interactions (Dr. Smith)', prof:'Smith', exam:4, module:4},
+    {id:'QZ4', deck:'Smith_Quiz_4_-_Intro_to_Pharmacogenomics.pdf', label:'Quiz 4, questions on 10/21 material (verbatim), Dr. Smith', prof:'Smith', exam:4, module:4},
   ],
   exams: [
     {id:1, name:'Exam 1', scope:'Pharmacodynamics (9/22–9/30)', date:'Fri Oct 2, 9–11 am', when:'2026-10-02T09:00:00-05:00',  // syllabus: Exam I, Fri Oct 2, 9–11 am
