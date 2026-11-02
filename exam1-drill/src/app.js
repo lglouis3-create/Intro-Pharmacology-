@@ -210,7 +210,7 @@ function nav() {
   hdrVar();
 }
 /* The header's height, for things that stick under it (the exam clock on the all-on-one-page paper). */
-const hdrVar = () => { const hd = document.querySelector('header'); if (hd) document.documentElement.style.setProperty('--hdr', hd.getBoundingClientRect().height + 'px'); };
+const hdrVar = () => { document.documentElement.style.setProperty('--hdr', '0px'); }; // header scrolls away with the page (11/02), so sticky bars sit at the top
 window.addEventListener('resize', hdrVar);
 const clearView = () => { const v = $('#view'); v.onclick = null; v.onchange = null; v.oninput = null; const t = document.getElementById('totop'); if (t) t.hidden = true; };
 /* Leaving a page: back to the top, and the floating buttons and scroll watcher of the old page go. */

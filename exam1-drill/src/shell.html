@@ -32,7 +32,7 @@
 *{box-sizing:border-box}
 html,body{margin:0;background:var(--bg);color:var(--ink);
   font:16px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
-header{position:sticky;top:0;z-index:5;background:var(--panel);border-bottom:1px solid var(--line)}
+header{position:relative;z-index:5;background:var(--panel);border-bottom:1px solid var(--line)}
 .bar{max-width:880px;margin:0 auto;padding:10px 16px;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
 .bar h1{font-size:15px;margin:0 10px 0 0;white-space:nowrap}
 .bar h1 .stamp{margin-left:6px}
@@ -380,6 +380,8 @@ body.antiopen{overflow:hidden}
 .antibox iframe{display:block;width:100%;height:900px;border:0;background:var(--panel)}
 .antibox .note{margin:0 0 8px}
 @media (max-width:560px){.antiview{padding:0}.antibox{border-radius:0;min-height:100%}}
+/* large screens (iPad 13", laptops): wider page and figures; kept last so it overrides the 520px figure caps */
+@media (min-width:1024px){main{max-width:1080px} .bar{max-width:1080px} .fig,.seqrow .fig{max-width:760px} .step3 .s3svg svg{max-width:720px}}
 </style>
 </head>
 <body>

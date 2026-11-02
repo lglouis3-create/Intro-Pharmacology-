@@ -2,6 +2,12 @@
 
 Newest first. The build embeds this file; the Topics page shows what is new since your last visit, and the Progress page shows all of it. Keep each bullet to one short line.
 
+## 2026-11-02 (Layout on large screens)
+
+- The header scrolls away with the page instead of staying on top of what you are reading.
+- On iPads and laptops the page and its diagrams use more of the screen width.
+- Reading summaries no longer stop at "Dr."
+
 ## 2026-11-02 (Exam 4 narration recorded)
 
 - Every Exam 4 walkthrough, Hear-the-why explanation and diagram step is now read by the narrator (JK voice).
