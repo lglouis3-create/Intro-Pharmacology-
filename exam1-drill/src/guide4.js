@@ -1555,7 +1555,7 @@ const GUIDE4_HTML = `
 
 <h4>Why the points are set this way</h4>
 <ul>
-<li><b>Timing carries the most weight.</b> The two +2 yes answers are Q2 (the reaction came after the drug) and Q4 (it came back when the drug was given again). A reaction that follows the drug, improves when it is stopped and returns when it is given again is tied to the drug in time; the slide says the algorithm is highly dependent on this temporal relationship.</li>
+<li><b>Timing runs through the questions.</b> The two +2 yes answers are Q2 (the reaction came after the drug) and Q4 (it came back when the drug was given again); Q5 no (nothing else explains it) is also +2. A reaction that follows the drug, improves when it is stopped and returns when it is given again is tied to the drug in time; the slide says the algorithm is highly dependent on this temporal relationship.</li>
 <li><b>Four answers subtract a point.</b> Q2 no and Q4 no (the reaction did not follow the drug, or did not come back with it); Q5 yes (another cause or drug could explain it); Q6 yes (the reaction came back with a placebo). Each points away from the drug.</li>
 <li><b>Q5 is reversed.</b> It asks about other causes, so no (nothing else could explain it) is +2 and yes is -1.</li>
 <li><b>"Do not know" is always 0.</b> Missing information neither supports nor weakens the case.</li>
