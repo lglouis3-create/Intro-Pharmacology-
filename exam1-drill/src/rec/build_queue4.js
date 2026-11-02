@@ -54,7 +54,7 @@ for (const l of ['L18', 'L19', 'L20', 'L21', 'L22']) vm.runInContext(fs.readFile
 for (const x of ctx.QUESTIONS) { if (!x.teach || x.lowYield || x.dupOf) continue;
   const t = Array.isArray(x.teach) ? x.teach.map(y => y.t).join(' ') : x.teach; q.push({file: `q-${x.id}.mp3`, text: post(patch(`q-${x.id}.mp3`, say(t)))}); }
 const sx = {console}; vm.createContext(sx); vm.runInContext(fs.readFileSync('steps4.js', 'utf8') + ';this.R=STEPS3', sx);
-for (const k of ['pgx-names', 'warfarin-target', 'warfarin-genotype', 'naranjo-case']) sx.R[k].steps.forEach((s, i) => q.push({file: `s3-${k}-${i}.mp3`, text: post(patch(`s3-${k}-${i}.mp3`, say(s.t)))}));
+for (const k of ['pgx-names', 'warfarin-target', 'warfarin-genotype', 'naranjo-case', 'enz-grid', 'tps2-table']) sx.R[k].steps.forEach((s, i) => q.push({file: `s3-${k}-${i}.mp3`, text: post(patch(`s3-${k}-${i}.mp3`, say(s.t)))}));
 for (const id of ['furuta-1998', 'katzung-5']) { const l = JSON.parse(fs.readFileSync(`readings/${id}.json`)).listen;
   q.push({file: `rd-${id}.mp3`, text: (typeof l === 'string' ? l : l.map(y => typeof y === 'string' ? y : y.t).join(' ')).replace(/\s+/g, ' ').trim()}); }
 if (MISS.length) process.stderr.write('patches not applied: ' + MISS.length + '\n' + MISS.join('\n') + '\n');
