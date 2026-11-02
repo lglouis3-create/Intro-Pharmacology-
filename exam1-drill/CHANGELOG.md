@@ -4,7 +4,7 @@ Newest first. The build embeds this file; the Topics page shows what is new sinc
 
 ## 2026-11-02 (Gene cards)
 
-- Reference: each Exam 4 gene row opens a card: what the gene product normally does, the variant, look-alikes, its figure.
+- Reference: each Exam 4 gene opens a card: normal role, the variant, look-alikes, its figure.
 
 ## 2026-11-02 (Daily check)
 
