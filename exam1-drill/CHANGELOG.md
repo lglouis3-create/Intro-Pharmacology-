@@ -2,6 +2,11 @@
 
 Newest first. The build embeds this file; the Topics page shows what is new since your last visit, and the Progress page shows all of it. Keep each bullet to one short line.
 
+## 2026-11-02 (Exam 4 narration recorded)
+
+- Every Exam 4 walkthrough, Hear-the-why explanation and diagram step is now read by the narrator (JK voice).
+- 567 clips, about 3.5 hours; the Furuta talk is new and the Katzung Ch. 5 talk was re-recorded.
+
 ## 2026-11-01 (Reading a variant name)
 
 - New step-through figure in Guide 1: how to read and say CYP2C19*2, *1/*2, TPMT*3A, CYP2D6*2xN, C>T, rs and HLA names.

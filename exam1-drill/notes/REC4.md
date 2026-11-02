@@ -9,3 +9,5 @@
 - 11/02: credits added; test clip s3-warfarin-target-0 recorded (18.4 s, 272 credits). Earlier, 11/01: blocked. The first test clip failed: "This request exceeds your quota of 1231000. You have 0 credits remaining".
   Nothing was generated. Start when the workspace has about 176,000 credits.
 - After recording: set listen_secs on furuta-1998 and katzung-5 from the clip lengths, rebuild, run the checks, publish.
+
+- 11/02: all 567 clips recorded (JK, eleven_v4, one take each, none regenerated): 207.9 minutes, 182,648 credits, $33.21. Furuta talk 197 s, Katzung Ch. 5 talk 162 s (re-recorded without the stale Monday line).
