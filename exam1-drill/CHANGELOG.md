@@ -2,6 +2,15 @@
 
 Newest first. The build embeds this file; the Topics page shows what is new since your last visit, and the Progress page shows all of it. Keep each bullet to one short line.
 
+## 2026-11-02 (Exam 4: explanations, likely questions, new cases)
+
+- Hear-the-why explanations on 68 Exam 4 questions now give the reason behind each fact (for example, why slow and fast acetylators get different isoniazid harms); 35 clips re-recorded.
+- ★ Most likely now holds 208 Exam 4 questions, built from what she said to know, her spoken questions, worksheet items and objectives; duplicates count once.
+- 37 new application cases: each gene–drug pair she taught, warfarin cases in her format, the Furuta chain, hypersensitivity type then treatment, interaction mechanisms, Naranjo scoring.
+- Her Quiz 4 questions on 10/21 material, word for word.
+- Six Exam 4 short-answer prompts, two parts each, on the Short answer page.
+- Reading walkthroughs: all step clips and the five card talks recorded; the highlight follows the voice.
+
 ## 2026-11-02 (Layout on large screens)
 
 - The header scrolls away with the page instead of staying on top of what you are reading.
