@@ -335,6 +335,10 @@ const GUIDE4_HTML = `
 <h4>The idea</h4>
 <p>Inherited variation in drug-metabolizing enzymes is the single biggest reason people respond differently to the same drug. Whether a variant helps or harms depends on two things: whether the enzyme is the main way the drug leaves the body, and whether the drug is already active or is a prodrug that needs activating. Getting those two straight lets you predict toxicity versus therapeutic failure before you memorize any single example.</p>
 
+<h4>Sorting the examples</h4>
+<p>Two questions place each Day 19 example: does the variant leave less enzyme activity or more, and is the drug active (the enzyme clears it) or a prodrug (the enzyme activates it)? Press Play to place them one at a time.</p>
+<!--STEP:enz-grid-->
+
 <h4>The facts</h4>
 <p>A polymorphism in a metabolizing-enzyme gene becomes clinically important when any of these is true:</p>
 <ul>
@@ -356,6 +360,7 @@ const GUIDE4_HTML = `
 
 <h4>The second Think Pair Share table</h4>
 <p>Her second think/pair/share table ("Clinically important pharmacogenomics examples", started 10/22) has six columns: gene; variant; type of variant (premature stop codon, splice site, promoter or coding region); what happens to the gene product; drugs affected; and what we do for the patient (reduce the dose, or never use the drug). Her model entry: CYP2C19*2 and *3 are premature stop codon variants, and the gene product is "a really tiny little short protein that is so short it's not functional." <small>(T) 10/22</small> On the drugs column: "the drugs that I spend time on are the ones that I expect you to know." <small>(T) 10/22</small> The table, filled from her slides and words for every gene of Days 19 and 20, is in the Reference tab.</p>
+<!--STEP:tps2-table-->
 <p><button type="button" class="chip" data-jump="ref:ref4-l19-2">Reference: the table in her columns</button></p>
 
 <h4>Her words</h4>
