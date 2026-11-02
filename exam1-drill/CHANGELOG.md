@@ -5,7 +5,7 @@ Newest first. The build embeds this file; the Topics page shows what is new sinc
 ## 2026-11-02 (Sorting the enzyme examples)
 
 - Guide 8: a narrated grid sorts each Day 19 example by less or more enzyme and active drug or prodrug.
-- Guide 8: her second think/pair/share table, drawn one gene at a time (22 rows).
+- Guide 8: her second think/pair/share table, one gene at a time (22 rows), narrated.
 - Tell apart: CYP2D6 poor vs ultrarapid metabolizer on codeine.
 
 ## 2026-11-02 (Pictures beside the narration)
